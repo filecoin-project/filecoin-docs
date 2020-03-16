@@ -1,9 +1,10 @@
 # New Filecoin Docs Site (WORK IN PROGRESS)
 
-This repo is a **work in progress** by the Filecoin Storage & Dev Tools team, building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their new [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta). 
+This repo is a **work in progress** by the Filecoin Storage & Dev Tools team, building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their new [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
 
 **Please visit [docs.filecoin.io](https://docs.filecoin.io/) to reference current documentation.**
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3586cdd-c0e3-404c-b451-875025e0e990/deploy-status)](https://app.netlify.com/sites/filecoin-docs/deploys)
 
 ## Working on this beta platform
 
@@ -26,4 +27,4 @@ To spin up a local instance of this beta VuePress site, see below:
 
 ## License
 
-All software code is copyright (c) Protocol Labs, Inc. under the **MIT license**. Other written documentation and content is copyright (c) Protocol Labs, Inc. under the [**Creative Commons Attribution-Share-Alike License**](https://creativecommons.org/licenses/by/4.0/). See [LICENSE file](https://github.com/ipfs/docs/blob/master/LICENSE) for details.
+All software code is copyright (c) Protocol Labs, Inc. under the **MIT license**. Other written documentation and content is copyright (c) Protocol Labs, Inc. under the [**Creative Commons Attribution-Share-Alike License**](https://creativecommons.org/licenses/by/4.0/). See [LICENSE file](./LICENSE.md) for details.
