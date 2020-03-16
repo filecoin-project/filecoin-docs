@@ -6,7 +6,7 @@ This repo is a **work in progress** by the Filecoin Storage & Dev Tools team, bu
 
 
 ## View a live demo of the new docs site (WIP)
-You can view the [live demo](https://filecoin-docs.netlify.com/) of this new site (WIP), compiled from the `master` branch, on Netlify. 
+You can view the [live demo](https://filecoin-docs.netlify.com/) of this new site (WIP), compiled from the `master` branch, on Netlify. During this transition period, you'll see a mix of new Filecoin content, stubs for planned Filecoin content, and old IPFS content that needs to be replaced with similar articles. 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3586cdd-c0e3-404c-b451-875025e0e990/deploy-status)](https://app.netlify.com/sites/filecoin-docs/deploys)
 
