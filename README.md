@@ -4,11 +4,15 @@ This repo is a **work in progress** by the Filecoin Storage & Dev Tools team, bu
 
 **Please visit [docs.filecoin.io](https://docs.filecoin.io/) to reference current documentation.**
 
+
+## View a live demo of the new docs site (WIP)
+You can view the [live demo](https://filecoin-docs.netlify.com/) of this new site (WIP), compiled from the `master` branch, on Netlify. 
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3586cdd-c0e3-404c-b451-875025e0e990/deploy-status)](https://app.netlify.com/sites/filecoin-docs/deploys)
 
 ## Working on this beta platform
 
-To spin up a local instance of this beta VuePress site, see below:
+To spin up a local instance of this new VuePress site, see below:
 
 1. Install the NPM dependencies:
 
