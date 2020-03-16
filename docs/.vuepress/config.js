@@ -64,54 +64,45 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: [
-          '/install/',
+          {
+            title: 'Introduction',
+            path: '/introduction/',
+            children: [
+              {
+                title: 'What is Filecoin?',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/introduction/what-is-filecoin',
+                  '/introduction/decentralized-web',
+                  '/introduction/ipfs-and-filecoin'
+                ]
+              },
+              {
+                title: 'How Filecoin Works',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/introduction/storage-lifecycle'
+                ]
+              },
+              {
+                title: 'The Filecoin Ecosystem',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/introduction/ecosystem'
+                ]
+              }
+            ]
+          },
           {
             title: 'Concepts',
             path: '/concepts/',
             children: [
-              {
-                title: 'IPFS 101',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/concepts/what-is-ipfs',
-                  '/concepts/how-ipfs-works',
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/glossary',
-                  '/concepts/faq'
-                ]
-              },
-              {
-                title: 'Content-addressed data',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/concepts/content-addressing',
-                  '/concepts/hashing',
-                  '/concepts/immutability',
-                  '/concepts/persistence'
-                ]
-              },
-              {
-                title: 'Peer-to-peer sharing',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/concepts/dht',
-                  '/concepts/merkle-dag',
-                  '/concepts/bitswap',
-                  '/concepts/ipld',
-                  '/concepts/ipns',
-                  '/concepts/libp2p',
-                  '/concepts/file-systems'
-                ]
-              },
-              {
-                title: 'Integrating with the Web',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/concepts/ipfs-gateway', '/concepts/dnslink']
-              }
+              '/concepts/content-addressed-data',
+              '/concepts/proofs',
+              '/concepts/mining'
             ]
           },
           {
@@ -119,155 +110,38 @@ module.exports = {
             path: '/how-to/',
             children: [
               {
-                title: 'Quick start',
+                title: 'Install Filecoin',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-to/command-line-quick-start']
+                children: ['/how-to/install-filecoin']
               },
               {
-                title: 'Customize your install',
+                title: 'Store Data',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/configure-node',
-                  '/how-to/modify-bootstrap-list',
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs/examples/custom-ipfs-repo',
-                    'Customize an IPFS repo'
-                  ]
+                  '/how-to/store-prepare-data',
+                  '/how-to/store-tokens',
+                  '/how-to/store-making-deals',
+                  '/how-to/store-retrieving-data',
+                  '/how-to/store-large-files'
                 ]
               },
               {
-                title: 'Manage files',
+                title: 'Build Apps',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs/examples/ipfs-101',
-                    'Use js-ipfs as a library'
-                  ],
-                  [
-                    'https://github.com/ipfs/go-ipfs/tree/master/docs/examples/go-ipfs-as-a-library/README.md',
-                    'Use go-ipfs as a library'
-                  ],
-                  '/how-to/work-with-blocks',
-                  '/how-to/pin-files',
-                  [
-                    'https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md',
-                    'Troubleshoot file transfers'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/traverse-ipld-graphs',
-                    'Traverse IPLD graphs'
-                  ],
-                  '/how-to/take-snapshot',
-                  '/how-to/store-play-videos',
-                  '/how-to/host-git-style-repo',
-                  [
-                    'https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets',
-                    'Replicate large datasets'
-                  ],
-                  '/how-to/move-ipfs-installation',
-                ]
-              },
-              {
-                title: 'Work with peers',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/observe-peers',
-                  [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/custom-libp2p',
-                    'Customize libp2p bundles'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/circuit-relaying',
-                    'Use circuit relay'
-                  ]
-                ]
-              },
-              {
-                title: 'Host websites',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/how-to/host-single-page-site']
-              },
-              {
-                title: 'Work with blockchains',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/explore-ethereum-blockchain',
-                    'Explore the Ethereum chain'
-                  ]
-                ]
-              },
-              {
-                title: 'Build apps',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/make-service',
-                  [
-                    'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C',
-                    'Build with the IPFS API'
-                  ],
-                  [
-                    'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B',
-                    'Make a basic libp2p app'
-                  ]
-                ]
-              },
-              {
-                title: 'IPFS in the browser',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  'how-to/address-ipfs-on-web',
-                  [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/exchange-files-in-browser',
-                    'Exchange files between nodes'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs/examples/browser-mfs',
-                    'Use MFS in the browser'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-add-readable-stream',
-                    'Add directories using streams'
-                  ],
-                  [
-                    'https://www.youtube.com/watch?v=Nv_Teb--1zg',
-                    'Make a pubsub room'
-                  ],
-                  [
-                    'https://www.youtube.com/watch?v=-kdx8rJd8rQ',
-                    'Edit collaboratively with CRDT'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-readablestream',
-                    'Stream video'
-                  ],
-                  '/how-to/browser-tools-frameworks'
+                  '/how-to/build-sample-architectures',
+                  '/how-to/build-wallets-signing-tools-sdks',
+                  '/how-to/build-interacting-with-the-network'
                 ]
               }
             ]
           },
           {
-            title: 'API & CLI',
-            path: '/reference/',
-            children: [
-              '/reference/go/api',
-              '/reference/js/api',
-              '/reference/http/api',
-              '/reference/cli'
-            ]
-          },
-          {
             title: 'Community',
             path: '/community/',
-
             children: [
               {
                 title: 'Join the community',
