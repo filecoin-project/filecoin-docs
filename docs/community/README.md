@@ -2,8 +2,7 @@
 title: Community
 description: Become part of the Filecoin community! Learn how here.
 ---
-# TODO: UPDATE/REPLACE/REMOVE THIS ARTICLE (only ProtoSchool section has been updated)
-
+#TODO REPLACE OR REMOVE FULL SECTION (only ProtoSchool section on this page has been updated)
 # Community
 
 IPFS is home to a vibrant, diverse community of thousands of contributors and participants from all over the globe! Here's how to get help, support, or just hang out with other folks who are helping to build the distributed web.

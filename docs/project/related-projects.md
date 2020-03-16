@@ -1,7 +1,8 @@
 ---
 title: Related projects
-description: Learn about the modular projects that help make up IPFS, the InterPlanetary File System.
+description: Learn about the modular projects that help make up Filecoin.
 ---
+# TODO: REPLACE/REUSE CONTENT
 
 # Related projects
 

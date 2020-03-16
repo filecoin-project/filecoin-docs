@@ -1,10 +1,11 @@
 ---
-title: Install IPFS
+title: Install Filecoin
 sidebarDepth: 0
 legacyUrl: https://docs.ipfs.io/introduction/usage/
 description: Get started installing and using IPFS, the InterPlanetary File System, and become part of the decentralized web today.
 ---
 
+# TODO: REPLACE CONTENT
 # Install IPFS
 
 We're glad you're interested in giving IPFS a try! There are a lot of different ways to install and use IPFS — the best way to find the right one for you is to first consider what you want to accomplish or try out with IPFS. Take a look at the guide below to find the flavor of IPFS that's best for your needs.
