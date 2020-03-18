@@ -21,7 +21,7 @@ See [TODO add link when ready] for a list of available signing libraries.
 
 ## API Clients
 
-API clients take care of the low-level details of making requests and handling responses and lets you focus on writing code specific to your project. They can also translate between different programming languages. Filecoin API clients are currently available:
+API clients take care of the low-level details of making requests and handling responses and let you focus on writing code specific to your project. They can also translate between different programming languages. Filecoin API clients are currently available:
 
 - [js-filecoin-api-client](https://github.com/filecoin-shipyard/js-filecoin-api-client) (Javascript, compatible with go-filecoin)
 - [js-lotus-client](https://github.com/filecoin-shipyard/js-lotus-client) (Javascript, compatible with lotus)
