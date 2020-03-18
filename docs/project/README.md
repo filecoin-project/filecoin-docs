@@ -20,9 +20,9 @@ See the overall roadmap of [IPFS project requirements](https://github.com/ipfs/i
 
 Want to know the current state of your favorite IPFS feature? See the [current implementation status](https://github.com/ipfs/ipfs/blob/master/IMPLEMENTATION_STATUS.md) for go-ipfs and js-ipfs, listed by commands and endpoints.
 
-## IPFS specifications
+## Filecoin specification
 
-[Technical specifications](https://github.com/ipfs/specs) for the IPFS protocol and its associated subsystems.
+[Technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
 
 ## Research
 
