@@ -192,7 +192,7 @@ module.exports = {
               ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
               '/project/related-projects',
               [
-                'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
+                'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
                 'Code of conduct'
               ]
             ]
