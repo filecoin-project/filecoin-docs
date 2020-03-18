@@ -180,12 +180,8 @@ module.exports = {
             children: [
               'project/history',
               [
-                'https://github.com/ipfs/ipfs/blob/master/REQUIREMENTS.md',
+                'https://app.instagantt.com/shared/s/1152992274307505/latest',
                 'Roadmap'
-              ],
-              [
-                'https://github.com/ipfs/ipfs/blob/master/IMPLEMENTATION_STATUS.md',
-                'Implementation status'
               ],
               ['https://github.com/filecoin-project/specs', 'Specifications'],
               ['https://research.filecoin.io/', 'Research'],
