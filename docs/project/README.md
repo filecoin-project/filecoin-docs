@@ -16,7 +16,7 @@ The latest timing information is available in the [Filecoin Mainnet Roadmap](htt
 
 ## Filecoin specification
 
-[Technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
+View the [technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
 
 ## Research
 
