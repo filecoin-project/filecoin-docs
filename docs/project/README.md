@@ -24,7 +24,7 @@ Learn about the ongoing work to design the predicates that enable Filecoin by ex
 
 ## Related projects
 
-Filecoin is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [Filecoin-related projects](/project/related-projects/) under the overall support of Protocol Labs.
+Filecoin is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [Filecoin-related projects](/project/related-projects/) supported by Protocol Labs.
 
 ## Code of conduct
 
