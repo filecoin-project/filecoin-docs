@@ -133,7 +133,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/how-to/build-sample-architectures',
-                  '/how-to/build-wallets-signing-tools-sdks',
+                  '/how-to/build-wallets-signing-tools-api-clients',
                   '/how-to/build-interacting-with-the-network'
                 ]
               }
