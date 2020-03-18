@@ -188,7 +188,7 @@ module.exports = {
                 'Implementation status'
               ],
               ['https://github.com/filecoin-project/specs', 'Specifications'],
-              ['https://github.com/filecoin-project/research', 'Research'],
+              ['https://research.filecoin.io/', 'Research'],
               '/project/related-projects',
               [
                 'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
