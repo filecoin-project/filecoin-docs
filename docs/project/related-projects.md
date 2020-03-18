@@ -2,27 +2,21 @@
 title: Related projects
 description: Learn about the modular projects that help make up Filecoin.
 ---
-# TODO: REPLACE/REUSE CONTENT
-
 # Related projects
 
-IPFS is a highly modular project that is itself made out of many different protocols and tools. Many of these exist as their own projects under the overall support of [Protocol Labs](https://protocol.ai). Learn more about them below.
-
-## IPLD
-
-IPLD is the data model of the content-addressable web. It allows us to treat all hash-linked data structures as subsets of a unified information space, unifying all data models that link data with hashes as instances of IPLD. Learn more at [https://ipld.io/](https://ipld.io/).
+Filecoin is a highly modular project that is itself made out of many different protocols and tools. Many of these exist as their own projects, supported by [Protocol Labs](https://protocol.ai). Learn more about them below.
 
 ## libp2p
 
 A modular network stack, libp2p enables you to run your network applications free from runtime and address services, independently of their location. Learn more at [http://libp2p.io/](http://libp2p.io/).
 
-## IPFS Cluster
+## IPLD
 
-IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating and tracking a global pinset distributed among multiple peers. Learn more at [https://cluster.ipfs.io/](https://cluster.ipfs.io/).
+IPLD is the data model of the content-addressable web. It allows us to treat all hash-linked data structures as subsets of a unified information space, unifying all data models that link data with hashes as instances of IPLD. Learn more at [https://ipld.io/](https://ipld.io/).
 
-## DNSLink
+## IPFS
 
-DNSLink is a very simple protocol to link content and services directly from DNS, leveraging the powerful distributed architecture of DNS for a variety of systems that require internet-scale mutable names or pointers. Learn more at [http://dnslink.io/](http://dnslink.io/).
+IPFS is a distributed system for storing and accessing files, websites, applications, and data. However, it does not have support for incentivization or guarantees of this distributed storage; Filecoin provides the incentive layer. Learn more at [https://ipfs.io/](https://ipfs.io/).
 
 ## Multiformats
 
