@@ -26,11 +26,7 @@ Want to know the current state of your favorite IPFS feature? See the [current i
 
 ## Research
 
-Learn more about the exploratory research work and prototyping being done for inclusion in IPFS by exploring our [research repo on GitHub](https://github.com/ipfs/research).
-
-## IPFS team org planning
-
-See how IPFS team planning, management and coordination happens, and learn how to take part in the weekly open call, by visiting the [IPFS team management GitHub repo](https://github.com/ipfs/team-mgmt).
+Learn about the ongoing work to design and build the predicates that enable Filecoin by exploring our [research repo on GitHub](https://github.com/filecoin-project/research).
 
 ## Related projects
 
