@@ -26,7 +26,7 @@ Want to know the current state of your favorite IPFS feature? See the [current i
 
 ## Research
 
-Learn about the ongoing work to design and build the predicates that enable Filecoin by exploring our [research repo on GitHub](https://github.com/filecoin-project/research).
+Learn about the ongoing work to design the predicates that enable Filecoin by exploring our [Filecoin Research website](https://research.filecoin.io/).
 
 ## Related projects
 
