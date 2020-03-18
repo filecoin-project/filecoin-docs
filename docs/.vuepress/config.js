@@ -188,8 +188,7 @@ module.exports = {
                 'Implementation status'
               ],
               ['https://github.com/ipfs/specs', 'Specifications'],
-              ['https://github.com/ipfs/research', 'Research'],
-              ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
+              ['https://github.com/filecoin-project/research', 'Research'],
               '/project/related-projects',
               [
                 'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
