@@ -20,7 +20,7 @@ View the [technical specification](https://github.com/filecoin-project/specs) fo
 
 ## Research
 
-Learn about the ongoing work to design the predicates that enable Filecoin by exploring our [Filecoin Research website](https://research.filecoin.io/).
+Learn about the ongoing cryptography research and design efforts that underpin the Filecoin protocol on the [Filecoin Research website](https://research.filecoin.io/).
 
 ## Related projects
 
