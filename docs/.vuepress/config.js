@@ -187,7 +187,7 @@ module.exports = {
                 'https://github.com/ipfs/ipfs/blob/master/IMPLEMENTATION_STATUS.md',
                 'Implementation status'
               ],
-              ['https://github.com/ipfs/specs', 'Specifications'],
+              ['https://github.com/filecoin-project/specs', 'Specifications'],
               ['https://github.com/filecoin-project/research', 'Research'],
               '/project/related-projects',
               [
