@@ -6,7 +6,7 @@ description: Learn where to find Filecoin on your favorite social media platform
 
 # Social media
 
-IPFS is everywhere on the internet — and that includes social media. Find your favorite flavor here.
+Filecoin is everywhere on the internet — and that includes social media. Find your favorite flavor here.
 
 ## YouTube
 
