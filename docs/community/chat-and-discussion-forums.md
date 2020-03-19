@@ -4,7 +4,7 @@ description: Connect with the Filecoin community in dicussion forums or on IRC
 ---
 # Chat & Discussion Forums
 
-The Filecoin community is active and here to answer your questions in your channel of choice. Please use Slack or IRC for X. For longer-lived discussions and support, our Discussion Forums are the better choice.
+The Filecoin community is active and here to answer your questions in your channel of choice.
 
 ## Discussion Forums
 
