@@ -14,7 +14,7 @@ The [Filecoin YouTube channel](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUy
 
 ## Blog
 
-Explore the latest news, events and other happenings in the IPFS multiverse on the official [Filecoin Blog](https://filecoin.io/blog/).
+Explore the latest news, events and other happenings on the official [Filecoin Blog](https://filecoin.io/blog/).
 
 ## Newsletter
 
