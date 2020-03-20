@@ -149,16 +149,9 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/community/contribute/ways-to-contribute',
-                  ['https://discuss.ipfs.io/', 'IPFS forums'],
-                  '/community/irc',
-                  [
-                    'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
-                    'Community video calls'
-                  ],
+                  '/community/chat-and-discussion-forums',
                   ['https://proto.school/#/events', 'ProtoSchool workshops'],
-                  ['https://www.meetup.com/members/249142444/', 'Meetups'],
-                  '/community/social-media',
-                  ['https://awesome.ipfs.io', 'Awesome IPFS']
+                  '/community/social-media/social-media'
                 ]
               },
               {
