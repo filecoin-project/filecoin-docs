@@ -15,14 +15,14 @@ No matter your area of specialty or level of expertise, there are many [ways to 
 
 The official [Filecoin forums](https://discuss.filecoin.io/) are the primary home of Filecoin-related discussion. Join the conversation on [https://discuss.filecoin.io/](https://discuss.filecoin.io/) for everything from technical questions and project brainstorming to discussion of Filecoin use cases and more.
 
-## IRC
+## Community chat
 
-IRC fan? Here how to [get connected](chat-and-discussion-forums/#internet-relay-chat-irc). New to IRC? There's getting-started advice for you here, too.
+For short-lived discussions, join our community chat directly on  [Slack](https://join.slack.com/t/filecoinproject/shared_invite/enQtNTUwNTI1Mzk5MDYwLTY4YmFjMzRlZjFiNDc0NmI2N2JjMjk5YTAyMDUyODljODg3MGI0ZGRhZTI5ZDNkZTAyNjkyMzI1ODM1YjA1MWI) or via a bridge from [Matrix](https://riot.im/app/#/group/+filecoin:matrix.org).
 
-## ProtoSchool chapters
+## ProtoSchool workshops
 
 ProtoSchool isn't just home to interactive tutorials on DWeb topics — it's also a vibrant community of makers and do-ers around the globe! Community groups worldwide host [ProtoSchool workshops](https://proto.school/#/events) regularly, offering you the opportunity to complete our interactive tutorials with the support of local mentors.
 
 ## Social media
 
-We're in a lot of places. Here's [how to find them all](social-media) for your favorite platforms.
+We're in a lot of places. Here's [how to find them all](social-media/social-media) for your favorite platforms.
