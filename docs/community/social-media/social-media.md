@@ -1,7 +1,7 @@
 ---
 title: Social media
 sidebarDepth: 0
-description: Learn where to find Filecoin on your favorite social media platform.
+description: Find Filecoin on your favorite social media platform.
 ---
 
 # Social media
@@ -29,6 +29,7 @@ Get your Filecoin news in tweet-sized bites. Follow these accounts for the lates
 
 ## WeChat
 
-Follow [FilecoinOfficial](https://weixin.qq.com/r/1xz54Y-EctINrcuC90nF) on WeChat for **TODO: some stuff**. (Teri has no idea what happens on WeChat.)
+Follow [FilecoinOfficial](https://weixin.qq.com/r/1xz54Y-EctINrcuC90nF) on WeChat.
+TODO: Describe what type of updates or discussion are available on WeChat.
 
 <img src="./images/wechat-qr.jpg" />
