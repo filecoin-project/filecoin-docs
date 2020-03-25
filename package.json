@@ -2,7 +2,7 @@
   "name": "filecoin-docs",
   "version": "1.0.0",
   "description": "Filecoin Docs platform",
-  "author": "cwaring",
+  "author": "cwaring & terichadbourne",
   "license": "MIT",
   "devDependencies": {
     "@centerforopenscience/markdown-it-video": "^1.0.0",
