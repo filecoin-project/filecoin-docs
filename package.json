@@ -1,7 +1,7 @@
 {
-  "name": "ipfs-docs",
-  "version": "2.0.0-beta.1",
-  "description": "IPFS Docs platform",
+  "name": "filecoin-docs",
+  "version": "1.0.0",
+  "description": "Filecoin Docs platform",
   "author": "cwaring",
   "license": "MIT",
   "devDependencies": {
