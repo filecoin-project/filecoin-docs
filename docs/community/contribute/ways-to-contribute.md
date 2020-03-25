@@ -1,11 +1,12 @@
 ---
 title: Ways to contribute
-description: Learn about how to contribute to Filecoin
+description: How to contribute to Filecoin
 ---
 
-# TODO: UPDATE OR REPLACE THIS ARTICLE (no updates made yet)
-
 # Ways to contribute
+
+**TODO: Replace content**
+
 So you want to contribute to IPFS and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open a issue.
 
 ## Code

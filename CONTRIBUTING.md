@@ -1,6 +1,6 @@
-# TODO: UPDATE/REPLACE/REMOVE - have replaced most IPFS and repo refrences except just ask section 
-
 # Contribution guidelines
+
+**TODO: Replace contents** - have replaced most IPFS and repo refrences except just ask section
 
 This article serves as the guideline for contributing to the [Filecoin Docs](https://github.com/filecoin-project/filecoin-docs) repository. This guide is only concerned with documentation within this repository and does not contain any information regarding changes to VuePress or the HTML of the site. It also includes some general tips, tools, and workflows for creating helpful docs.
 

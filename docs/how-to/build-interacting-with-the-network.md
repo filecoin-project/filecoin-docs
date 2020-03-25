@@ -5,6 +5,8 @@ description: Learn how to interface with the Filecoin network.
 
 # Interacting with the Network
 
+**TODO: Replace content.** - Note that second-level headers are surfaced in the left nav. 
+
 ## Local networks
 
 Some content!
