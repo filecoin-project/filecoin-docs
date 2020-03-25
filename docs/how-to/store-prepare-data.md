@@ -19,6 +19,7 @@ Each storage deal is for a single file. To store many files within a directory s
 Block data structures like IPLD must be serialized into flat string files. We recommend the CAR format. (Add car files reference)
 
 **Helpers and utilities**
-For simple operations, you can use the `split` or `zip` Unix commands. (Insert reference to documentation.) Or, choose a client application that handles data preparation for you, such as Starling Storage CLI & REST API, or [hide until future] Filecoin Desktop.
+For simple operations, you can use the `split` or `zip` Unix commands. (_TODO: Insert reference to documentation._) Or, choose a client application that handles data preparation for you, such as Starling Storage CLI & REST API (**_TODO: Add link_**).
+**_TODO: Add mention/linik for Filecoin Desktop when available._**
 
-Note: See Very Large Files if you plan to store files larger than 1TB.
+Note: See [Very Large Files](/how-to/store-large-files) if you plan to store files larger than 1TB.

@@ -1,12 +1,11 @@
 ---
 title: Concepts
-legacyUrl: https://docs.ipfs.io/guides/concepts/
-description: Get started on understanding the key ingredients in the decentralized web, and how IPFS works.
+description: Explore the key ingredients that make Filecoin work.
 ---
 
-# TODO: REPLACE CONTENTS
+# Filecoin concepts
 
-# IPFS concepts
+**TODO: Replace contents**
 
 New to IPFS or the distributed web? Here's where to get started on understanding the key ingredients in what makes IPFS work. Because IPFS is a system that hopes to change how we use the Internet, it comes with many new concepts! This section aims to get you up to speed quickly.
 

@@ -3,9 +3,9 @@ title: Writing guide
 description: Learn the specifics of how to write documentation for the Filecoin project.
 ---
 
-# TODO: UPDATE OR REPLACE THIS ARTICLE (updated some IPFS references to Filecoin but examples can be improved)
-
 # Writing guide
+
+**TODO: Replace IPFS references in examples with Filecoin ones**
 
 This guide explains how to write an article. While the [grammar, formatting, and style guide](/community/contribute/grammar-formatting-and-style/) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 

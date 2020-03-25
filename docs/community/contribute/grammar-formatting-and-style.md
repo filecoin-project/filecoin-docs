@@ -2,9 +2,10 @@
 title: Grammar, formatting, and style
 description: Learn the syntax and formatting rules for writing documentation for the Filecoin project.
 ---
-# TODO: UPDATE OR REPLACE THIS ARTICLE (useful but some examples still reference IPFS)
 
 # Grammar, formatting, and style
+
+**TODO: Replace IPFS references in examples with Filecoin ones**
 
 This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide](/community/contribute/writing-guide/).
 

@@ -1,12 +1,11 @@
 ---
 title: How-tos
-legacyUrl: https://docs.ipfs.io/guides/examples/
 description: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
 ---
 
-# TODO: REPLACE CONTENTS
+# Filecoin how-tos and tutorials
 
-# IPFS how-tos and tutorials
+**TODO: Replace contents**
 
 ::: tip
 Want to find even more resources for learning about IPFS and the technologies that power it? [Visit ProtoSchool](https://proto.school) for interactive tutorials that help you learn about the decentralized web by writing code and solving challenges, all from your browser!

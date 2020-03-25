@@ -6,6 +6,8 @@ description: Learn what the heck Filecoin is.
 
 # Overview
 
+**TODO: Replace content and description**
+
 Put some content here abour Filecoin basics. Anything you put with a level two header will be accessible in the nav.
 
 ## Filecoin as a decentralized storage system

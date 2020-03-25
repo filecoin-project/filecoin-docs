@@ -5,6 +5,8 @@ description: Learn how to store very large files.
 
 # Very large files
 
+**TODO: Replace content.** - Note that second-level headers are surfaced in the left nav.
+
 What do I do with ginormous files??
 
 ## Recommended file format: CAR
@@ -17,4 +19,4 @@ More useful info
 
 ## Parallelizing Deals
 
-Does the useful info never end? 
+Does the useful info never end?
