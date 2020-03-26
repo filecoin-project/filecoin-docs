@@ -29,7 +29,6 @@ Get your Filecoin news in tweet-sized bites. Follow these accounts for the lates
 
 ## WeChat
 
-Follow [FilecoinOfficial](https://weixin.qq.com/r/1xz54Y-EctINrcuC90nF) on WeChat.
-**_TODO: Describe what type of updates or discussion are available on WeChat._**
+Follow [FilecoinOfficial](https://weixin.qq.com/r/1xz54Y-EctINrcuC90nF) on WeChat for project updates and announcements.
 
 <img src="./images/wechat-qr.jpg" />
