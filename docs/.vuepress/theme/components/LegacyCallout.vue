@@ -55,15 +55,10 @@ export default {
 
 <style lang="stylus" scoped>
 .legacy-callout {
-  background-color: lighten($badgeTipColor, 95%);
+  background-color: $accentColorLight
   color: lighten($textColor, 20%);
-  border-color: $badgeTipColor;
   padding: 1rem 2rem;
   margin-top: 3rem;
-}
-
-.legacy-links a {
-  font-weight: 400;
 }
 
 section {

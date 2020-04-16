@@ -1,0 +1,102 @@
+<template>
+  <main class="home page">
+    <div class="theme-default-content">
+      <h1>{{ this.$page.frontmatter.title }}</h1>
+      <Content class="intro"/>
+      <div class="grid">
+        <div
+          v-for="(category, i) in sidebarItems"
+          :key="i"
+          v-bind:class="{'category': true, 'meta': category.title === 'Community' || category.title === 'Project'}"
+        >
+          <h2>{{ category.title }}</h2>
+          <p v-for="(item, j) in category.children" :key="j">
+            <RouterLink :to="item.path">
+              {{ item.title }}
+            </RouterLink>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
+
+<script>
+import NavLink from '@theme/components/NavLink.vue'
+
+export default {
+  name: 'Home',
+  components: { NavLink },
+  props: ['sidebar-items']
+}
+</script>
+
+<style lang="stylus">
+.home .theme-default-content:not(.custom) {
+    margin: auto;
+    padding: 2rem 2.5rem 6rem;
+    max-width: 920px;
+    background: no-repeat url("/images/main-page-background.png") 600px 34px;
+    background-size: 400px 480px;
+}
+
+.home .theme-default-content:not(.custom) > h1:first-child {
+    font-weight: normal;
+    margin: 0 0 3rem;
+}
+
+.home {
+    .intro {
+        max-width: 500px;
+    }
+
+    .grid {
+        margin-top: 6rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row dense;
+        grid-auto-rows: 16rem;
+        grid-gap: 32px;
+    }
+
+    .category {
+        background: linear-gradient(-50deg, #effcf5, #e2f6f7);
+        padding: 1em;
+    }
+
+    .category.meta {
+        background: linear-gradient(-50deg, #dbe7f4, #e9dbf4);
+    }
+
+    .category h2 {
+        font-weight: normal;
+        font-size: 1.4rem;
+        border-bottom: none;
+        margin: 0 0 0.5rem;
+    }
+
+    .category p {
+        margin: 0;
+    }
+
+    .category a {
+        font-weight: normal;
+    }
+
+    .category.meta a {
+        color: #5c456e;
+    }
+
+    @media (max-width: $MQMobile) {
+        .grid {
+            grid-template-columns: 1fr;
+            grid-auto-rows: minmax(16rem, max-content);
+        }
+
+        .category {
+            grid-column: auto !important;
+            grid-row: auto !important;
+        }
+    }
+}
+</style>

@@ -18,7 +18,8 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist'))
-    }
+    },
+    extractHeaders: []
   },
   themeConfig: {
     algolia: {
@@ -62,127 +63,36 @@ module.exports = {
             buttonText: 'Refresh'
           }
         },
-        nav: require('./nav/en'),
+        nav: [],
         sidebar: [
           {
-            title: 'Introduction',
-            path: '/introduction/',
-            children: [
-              {
-                title: 'What is Filecoin?',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/introduction/what-is-filecoin',
-                  '/introduction/decentralized-web',
-                  '/introduction/ipfs-and-filecoin'
-                ]
-              },
-              {
-                title: 'How Filecoin Works',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/introduction/storage-lifecycle'
-                ]
-              },
-              {
-                title: 'The Filecoin Ecosystem',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/introduction/ecosystem'
-                ]
-              }
-            ]
-          },
-          {
             title: 'Concepts',
-            path: '/concepts/',
             children: [
-              '/concepts/content-addressed-data',
-              '/concepts/proofs',
-              '/concepts/mining'
             ]
           },
           {
-            title: 'How-tos',
-            path: '/how-to/',
+            title: 'Getting started',
             children: [
-              {
-                title: 'Install Filecoin',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/how-to/install-filecoin']
-              },
-              {
-                title: 'Store Data',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/store-prepare-data',
-                  '/how-to/store-tokens',
-                  '/how-to/store-making-deals',
-                  '/how-to/store-retrieving-data',
-                  '/how-to/store-large-files'
-                ]
-              },
-              {
-                title: 'Build Apps',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/build-sample-architectures',
-                  '/how-to/build-wallets-signing-tools-api-clients',
-                  '/how-to/build-interacting-with-the-network'
-                ]
-              }
+            ]
+          },
+          {
+            title: 'How-to',
+            children: [
+            ]
+          },
+          {
+            title: 'Reference',
+            children: [
             ]
           },
           {
             title: 'Community',
-            path: '/community/',
             children: [
-              {
-                title: 'Join the community',
-                sidebarDepth: 2,
-                collapsable: false,
-                children: [
-                  '/community/contribute/ways-to-contribute',
-                  '/community/chat-and-discussion-forums',
-                  ['https://proto.school/#/events', 'ProtoSchool workshops'],
-                  '/community/social-media/social-media'
-                ]
-              },
-              {
-                title: 'Write the docs',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/community/contribute/grammar-formatting-and-style',
-                  '/community/contribute/writing-guide',
-                  '/community/contribute/code-persona',
-                  '/community/contribute/contribution-tutorial'
-                ]
-              }
             ]
           },
           {
             title: 'Project',
-            path: '/project/',
             children: [
-              'project/history',
-              [
-                'https://app.instagantt.com/shared/s/1152992274307505/latest',
-                'Roadmap'
-              ],
-              ['https://github.com/filecoin-project/specs', 'Specifications'],
-              ['https://research.filecoin.io/', 'Research'],
-              '/project/related-projects',
-              [
-                'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
-                'Code of conduct'
-              ]
             ]
           }
         ]
@@ -190,15 +100,6 @@ module.exports = {
     }
   },
   plugins: [
-    ['@vuepress/plugin-back-to-top', true],
-    [
-      '@vuepress/active-header-links',
-      {
-        sidebarLinkSelector: '.sidebar-link',
-        headerAnchorSelector: '.header-anchor',
-        headerTopOffset: 120
-      }
-    ],
     '@vuepress/plugin-last-updated',
     [
       'vuepress-plugin-clean-urls',
