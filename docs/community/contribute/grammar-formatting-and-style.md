@@ -147,7 +147,7 @@ Write command-line inputs without any other characters. Precede outputs from the
     ```bash
     lotus-storage-miner info
 
-    > why@computer ~/lotus> lotus-storage-miner info
+    > ~/lotus> lotus-storage-miner info
     > Miner: t0103
     > Sector Size: 16.0 MiB
     > Power: 0 B / 16.0 MiB (0%)
@@ -165,7 +165,7 @@ Command-line examples can be truncated with three periods `...` to remove extran
     ```bash
     lotus-storage-miner info
 
-    > why@computer ~/lotus> lotus-storage-miner info
+    > ~/lotus> lotus-storage-miner info
     > Miner: t0103
     > Sector Size: 16.0 MiB
     > ...
