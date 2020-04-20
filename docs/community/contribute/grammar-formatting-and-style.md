@@ -5,8 +5,6 @@ description: Learn the syntax and formatting rules for writing documentation for
 
 # Grammar, formatting, and style
 
-**TODO: Replace IPFS references in examples with Filecoin ones**
-
 This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide](/community/contribute/writing-guide/).
 
 ## Grammar and spelling
@@ -32,7 +30,7 @@ Follow each list of three or more items with a comma `,`:
 
 ### Acronyms
 
-If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside [docs.ipfs.io](https://docs.ipfs.io).
+If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside project documentation.
 
 > Virtual Machine (VM), Decentralized Web (DWeb).
 
@@ -42,7 +40,7 @@ How the Markdown syntax looks, and code formatting rules to follow.
 
 ### Syntax
 
-The IPFS Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs-beta.Filecoin.io) or [its GitHub repo](https://github.com/filecoin-project/filecoin-docs).
+The Filecoin Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://filecoin-docs.netflify.io) or [its GitHub repo](https://github.com/filecoin-project/filecoin-docs).
 
 ### Rules
 
@@ -147,15 +145,17 @@ Write command-line inputs without any other characters. Precede outputs from the
 
 ````markdown
     ```bash
-    ping ipfs.io
+    lotus-storage-miner info
 
-    > PING ipfs.io (209.94.90.1): 56 data bytes
-    > 64 bytes from 209.94.90.1: icmp_seq=0 ttl=53 time=15.830 ms
-    > 64 bytes from 209.94.90.1: icmp_seq=1 ttl=53 time=19.779 ms
-    > 64 bytes from 209.94.90.1: icmp_seq=2 ttl=53 time=20.778 ms
-    > 64 bytes from 209.94.90.1: icmp_seq=3 ttl=53 time=20.578 ms
-    > --- ipfs.io ping statistics ---
-    > 4 packets transmitted, 4 packets received, 0.0% packet loss
+    > ~/lotus> lotus-storage-miner info
+    > Miner: t0103
+    > Sector Size: 16.0 MiB
+    > Power: 0 B / 16.0 MiB (0%)
+    > Worker use:
+            Local: 0 / 2 (+1 reserved)
+            **Remote: 0 / 1**
+    > PoSt Submissions: Not Proving
+    > Sectors:  map[Committing:0 Proving:0 Total:0]
     ```
 ````
 
@@ -163,12 +163,13 @@ Command-line examples can be truncated with three periods `...` to remove extran
 
 ````markdown
     ```bash
-    ping ipfs.io
+    lotus-storage-miner info
 
-    > PING ipfs.io (209.94.90.1): 56 data bytes
-    > 64 bytes from 209.94.90.1: icmp_seq=0 ttl=53 time=15.830 ms
+    > ~/lotus> lotus-storage-miner info
+    > Miner: t0103
+    > Sector Size: 16.0 MiB
     > ...
-    > 4 packets transmitted, 4 packets received, 0.0% packet loss
+    > Sectors:  map[Committing:0 Proving:0 Total:0]
     ```
 ````
 
@@ -237,42 +238,41 @@ The following rules and guidelines define how to use and store images.
 All images contain alt text so that screen-reading programs can describe the image to users with limited sight:
 
 ```markdown
-![Screenshot of an image being uploaded through the IPFS desktop application.](images/ipfs-desktop-image-upload-screen.png)
+![Screenshot of an image being uploaded through the Filecoin command line.](images/filecoin-image-upload-screen.png)
 ```
 
 #### Storage location
 
-Store images in a folder called `images` within the same directory as the article the image is presented in. If there are several articles within the same directory, create a new folder within `images` for each article. For example the article `upload-a-photo.md` contains the following line:
+Store images in a folder called `images` within the same directory as the article the image is presented in. If there are several articles within the same directory, create a new folder within `images` for each article. For example the article `proof-of-spacetime.md` contains the following line:
 
 ```markdown
-![Screenshot of an image being uploaded through the IPFS desktop application.](images/upload-a-photo/ipfs-desktop-image-upload-screen.png)
+![Proof of Spacetime diagram.](images/proof-of-spacetime/post-diagram.png)
 ```
 
 The directory structure of this article looks like this:
 
 ```text
-ipfs-desktop/
-├── download-the-config.md
+concepts/
+├── content-addressed-data.md
 ├── images
-│   └── upload-a-photo
-│       └── ipfs-desktop-image-upload-screen.png
-└── upload-a-photo.md
+│   └── proof-of-spacetime
+│       └── post-diagram.png
+└── proof-of-replication.md
+└── proof-of-spacetime.md
 ```
 
-There are no images within the `download-the-config.md` article, so there is no folder within the `images` directory for that article.
+There are no images within the `proof-of-replication.md` article, so there is no folder within the `images` directory for that article.
 
 ### File names
 
 All file names are lower-case with dashes `-` between words, including image files:
 
 ```text
-ipfs-desktop/
-├── add-a-user.md
-├── enable-debug-mode.md
+concepts/
+├── content-addressed-data.md
 ├── images
-│  ├── additional-information-screen.png
-│  ├── dark-mode-enabled.png
-│  └── user-profile-image.png
-├── log-into-the-application.md
-└── upload-a-photo.md
+│   └── proof-of-spacetime
+│       └── post-diagram.png
+└── proof-of-replication.md
+└── proof-of-spacetime.md
 ```
