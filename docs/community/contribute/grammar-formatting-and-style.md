@@ -243,35 +243,36 @@ All images contain alt text so that screen-reading programs can describe the ima
 
 #### Storage location
 
-Store images in a folder called `images` within the same directory as the article the image is presented in. If there are several articles within the same directory, create a new folder within `images` for each article. For example the article `upload-a-photo.md` contains the following line:
+Store images in a folder called `images` within the same directory as the article the image is presented in. If there are several articles within the same directory, create a new folder within `images` for each article. For example the article `proof-of-spacetime.md` contains the following line:
 
 ```markdown
-![Screenshot of an image being uploaded through the Filecoin command line.](images/upload-a-photo/filecoin-image-upload-screen.png)
+![Proof of Spacetime diagram.](images/proof-of-spacetime/post-diagram.png)
 ```
 
 The directory structure of this article looks like this:
 
 ```text
-filecoin-cli/
-├── download-the-config.md
+concepts/
+├── content-addressed-data.md
 ├── images
-│   └── upload-a-photo
-│       └── filecoin-image-upload-screen.png
-└── upload-a-photo.md
+│   └── proof-of-spacetime
+│       └── post-diagram.png
+└── proof-of-replication.md
+└── proof-of-spacetime.md
 ```
 
-There are no images within the `download-the-config.md` article, so there is no folder within the `images` directory for that article.
+There are no images within the `proof-of-replication.md` article, so there is no folder within the `images` directory for that article.
 
 ### File names
 
 All file names are lower-case with dashes `-` between words, including image files:
 
 ```text
-filecoin-cli/
-├── enable-debug-mode.md
+concepts/
+├── content-addressed-data.md
 ├── images
-│  ├── additional-information-screen.png
-│  ├── dark-mode-enabled.png
-│  └── user-profile-image.png
-└── upload-a-photo.md
+│   └── proof-of-spacetime
+│       └── post-diagram.png
+└── proof-of-replication.md
+└── proof-of-spacetime.md
 ```
