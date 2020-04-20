@@ -145,15 +145,17 @@ Write command-line inputs without any other characters. Precede outputs from the
 
 ````markdown
     ```bash
-    ping ipfs.io
+    lotus-storage-miner info
 
-    > PING ipfs.io (209.94.90.1): 56 data bytes
-    > 64 bytes from 209.94.90.1: icmp_seq=0 ttl=53 time=15.830 ms
-    > 64 bytes from 209.94.90.1: icmp_seq=1 ttl=53 time=19.779 ms
-    > 64 bytes from 209.94.90.1: icmp_seq=2 ttl=53 time=20.778 ms
-    > 64 bytes from 209.94.90.1: icmp_seq=3 ttl=53 time=20.578 ms
-    > --- ipfs.io ping statistics ---
-    > 4 packets transmitted, 4 packets received, 0.0% packet loss
+    > why@computer ~/lotus> lotus-storage-miner info
+    > Miner: t0103
+    > Sector Size: 16.0 MiB
+    > Power: 0 B / 16.0 MiB (0%)
+    > Worker use:
+            Local: 0 / 2 (+1 reserved)
+            **Remote: 0 / 1**
+    > PoSt Submissions: Not Proving
+    > Sectors:  map[Committing:0 Proving:0 Total:0]
     ```
 ````
 
@@ -161,12 +163,13 @@ Command-line examples can be truncated with three periods `...` to remove extran
 
 ````markdown
     ```bash
-    ping ipfs.io
+    lotus-storage-miner info
 
-    > PING ipfs.io (209.94.90.1): 56 data bytes
-    > 64 bytes from 209.94.90.1: icmp_seq=0 ttl=53 time=15.830 ms
+    > why@computer ~/lotus> lotus-storage-miner info
+    > Miner: t0103
+    > Sector Size: 16.0 MiB
     > ...
-    > 4 packets transmitted, 4 packets received, 0.0% packet loss
+    > Sectors:  map[Committing:0 Proving:0 Total:0]
     ```
 ````
 
