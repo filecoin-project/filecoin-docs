@@ -4,6 +4,8 @@ title: Why Filecoin?
 
 # Why Filecoin?
 
+This is an overview of features offered by Filecoin that make it a compelling system for storing files. This overview is intended for people already involved in large-scale data storage, for example cloud storage or peer-to-peer storage networks.
+
 ## Open market
 
 In Filecoin, file storage and retrieval is negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a miner only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
@@ -14,7 +16,7 @@ Prices for storage and retrieval are determined by supply and demand, not corpor
 
 ## Reliable storage
 
-Because storage is paid for, Filecoin provides a viable economic reason for files to stay available over time. Files are stored on computers that are reliable and well-connected to the internet. Although Filecoin is a peer-to-peer network, it does not rely solely on an ephemeral swarm of peers for files to stay online.
+Because storage is paid for, Filecoin provides a viable economic reason for files to stay available over time. Files are stored on computers that are reliable and well-connected to the internet.
 
 ## Self-healing
 
@@ -46,19 +48,17 @@ In Filecoin, miners are rewarded for providing storage, not for performing waste
 
 ## Provides storage to other blockchains
 
-Filecoin excels at storing large files, whereas other blockchains can typically only store very small amounts of data, very expensively. Filecoin can provide its storage to other blockchains, allowing them to store large files. In the future, mechanisms will be added to Filecoin enabling transactions on Filecoin’s blockchain to interoperate with transactions on other blockchains.
+Filecoin’s blockchain is designed to facilitate the storing of large files, whereas other blockchains can typically only store very small amounts of data, very expensively. Filecoin can provide storage to other blockchains, allowing them to store large files. In the future, mechanisms will be added to Filecoin enabling transactions on Filecoin’s blockchain to interoperate with transactions on other blockchains.
 
 ## Content addressing
 
-Files are referred to by the data they contain, not by fragile identifiers such as URLs. Files remain available no matter where they are hosted or who they are hosted by. When a file becomes popular it can be quickly distributed by swarms of computers instead of relying on a central computer which easily becomes overloaded by network traffic.
+Files are referred to by the data they contain, not by fragile identifiers such as URLs. Files remain available no matter where they are hosted or who they are hosted by. When a file becomes popular it can be quickly distributed by swarms of computers instead of relying on a central computer which can become overloaded by network traffic.
 
 When multiple users store the same file (and choose to make the file public by not encrypting it), everyone who wants to download the file benefits from Filecoin keeping it available. No matter where a file is downloaded from, downloaders can verify that they have received the correct file and that it is intact.
 
 ## Content distribution network
 
 Retrieval miners are computers that have good network connections to lots of users who want to download files. By prefetching popular files and distributing them to nearby users, retrieval miners are rewarded for making network traffic flow smoothly and files download quickly.
-
-Filecoin’s retrieval market incentives the creation of an open, global, self-organized content distribution network. Filecoin bypasses the need for written agreements between every ISP and every content provider in order for content distribution to work. Instead, Filecoin makes its content distribution network available to anyone who wants to join, without needing to seek permission.
 
 ## Single protocol
 
@@ -76,4 +76,4 @@ The code that runs both clients and storage providers is open source. Storage pr
 
 ## Active community
 
-Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers and storage providers. If you need help, you will likely be able to reach the person who designed or built the system in question.
+Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers and storage providers. If you need help, you will likely be able to reach the person who designed or built the system in question. Reach out on [Filecoin’s chat and forums](/community/chat-and-forums).
