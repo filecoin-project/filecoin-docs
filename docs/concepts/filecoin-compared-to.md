@@ -4,6 +4,12 @@ title: Filecoin compared to…
 
 # Filecoin compared to…
 
+Filecoin combines many elements of other file storage and distribution systems. What makes Filecoin unique is that it runs on an open, peer-to-peer network while still providing economic incentives and proofs to ensure files are being stored correctly. This page compares Filecoin against other technologies which share some of the same properties.
+
+* [Filecoin vs. Bitcoin](#filecoin-vs-bitcoin)
+* [Filecoin vs. Amazon S3, Google Cloud Storage](#filecoin-vs-amazon-s3-google-cloud-storage)
+* [Filecoin vs. BitTorrent](#filecoin-vs-bittorrent)
+
 ## Filecoin vs. Bitcoin
 
 <table class="comparison">
