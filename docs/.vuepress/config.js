@@ -68,42 +68,8 @@ module.exports = {
             title: 'Introduction',
             path: '/introduction/',
             children: [
-              {
-                title: 'What is Filecoin?',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/introduction/what-is-filecoin',
-                  '/introduction/decentralized-web',
-                  '/introduction/ipfs-and-filecoin'
-                ]
-              },
-              {
-                title: 'How Filecoin Works',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/introduction/storage-lifecycle'
-                ]
-              },
-              {
-                title: 'The Filecoin Ecosystem',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/introduction/ecosystem'
-                ]
-              }
-            ]
-          },
-          {
-            title: 'Concepts',
-            path: '/concepts/',
-            children: [
-              '/concepts/content-addressed-data',
-              '/concepts/proofs',
-              '/concepts/mining'
-            ]
+                '/introduction/what-is-filecoin',
+              ]
           },
           {
             title: 'How-tos',
