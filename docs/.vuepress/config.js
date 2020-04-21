@@ -36,7 +36,7 @@ module.exports = {
       'Filecoin, crypto, mining, blockchain, IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'filecoin-project/filecoin-docs',
-    domain: 'https://filecoin-docs.netlify.com/', // TODO: replace when we host at filecoin.io
+    domain: 'https://filecoin-docs.netlify.app/', // TODO: replace when we host at filecoin.io
     docsRepo: 'filecoin-project/filecoin-docs',
     docsDir: 'docs',
     docsBranch: 'master',
@@ -218,7 +218,7 @@ module.exports = {
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
-        baseURL: 'https://filecoin-docs.netlify.com/'
+        baseURL: 'https://filecoin-docs.netlify.app/' // TODO: replace when we host at filecoin.io
       }
     ]
   ],
