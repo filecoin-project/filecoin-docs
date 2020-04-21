@@ -171,12 +171,11 @@ module.exports = {
             title: 'Project',
             path: '/project/',
             children: [
-              'project/history',
+              ['https://github.com/filecoin-project/specs', 'Specification'],
               [
                 'https://app.instagantt.com/shared/s/1152992274307505/latest',
                 'Roadmap'
               ],
-              ['https://github.com/filecoin-project/specs', 'Specifications'],
               ['https://research.filecoin.io/', 'Research'],
               '/project/related-projects',
               [
