@@ -5,8 +5,6 @@ description: Learn the specifics of how to write documentation for the Filecoin 
 
 # Writing guide
 
-**TODO: Replace IPFS references in examples with Filecoin ones**
-
 This guide explains how to write an article. While the [grammar, formatting, and style guide](/community/contribute/grammar-formatting-and-style/) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
 ## Walkthroughs
@@ -80,13 +78,10 @@ When writing a tutorial, you're teaching a reader how to achieve a complex end-g
 Take the hypothetical tutorial _Get up and running with Filecoin_, for example. This tutorial will likely have the following pages:
 
 1. A brief introduction to what Filecoin is.
-2. Install the Filecoin Desktop application.
-3. Upload and serve a file through the Filecoin Desktop application.
-4. Install the Filecoin daemon through the command line.
-5. Upload and serve a file through the Filecoin daemon.
-6. Pinning and why it's useful.
-7. How to pin a file on Filecoin.
+2. Choose and install a command line client.
+3. Understanding storage deals. 
+4. Import and store a file.
 
-Pages `1` and `6` are conceptual articles, describing particular design patterns and ideas to the reader. All the other pages are walkthroughs instructing the user how to perform one specific action.
+Pages `1` and `3` are conceptual articles, describing particular design patterns and ideas to the reader. All the other pages are walkthroughs instructing the user how to perform one specific action.
 
 When designing a tutorial, keep in mind the walkthroughs and articles that already exist, and note down any additional content items that would need to be completed before creating the tutorial.
