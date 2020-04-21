@@ -28,6 +28,9 @@ To spin up a local instance of this new VuePress site, see below:
 
 3. Open [localhost:8080](http://localhost:8080) in your browser.
 
+## Code organization
+- Navigation is automatically generated from [docs/.vuepress/config.js](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/.vuepress/config.js)
+- Content lives in Markdown files in the `docs` folder. Each major section has its own subfolder.
 
 ## License
 
