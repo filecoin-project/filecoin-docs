@@ -85,14 +85,6 @@ module.exports = {
                 children: [
                   '/introduction/storage-lifecycle'
                 ]
-              },
-              {
-                title: 'The Filecoin Ecosystem',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/introduction/ecosystem'
-                ]
               }
             ]
           },
