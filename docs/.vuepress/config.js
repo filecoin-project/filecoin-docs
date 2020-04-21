@@ -127,7 +127,6 @@ module.exports = {
                 children: [
                   '/community/contribute/grammar-formatting-and-style',
                   '/community/contribute/writing-guide',
-                  '/community/contribute/code-persona',
                   '/community/contribute/contribution-tutorial'
                 ]
               }
