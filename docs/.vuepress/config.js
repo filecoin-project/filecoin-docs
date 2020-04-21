@@ -171,7 +171,6 @@ module.exports = {
             title: 'Project',
             path: '/project/',
             children: [
-              'project/history',
               [
                 'https://app.instagantt.com/shared/s/1152992274307505/latest',
                 'Roadmap'
