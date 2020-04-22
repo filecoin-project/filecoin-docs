@@ -47,3 +47,36 @@ html.smooth-scroll {
 	--code-bg-color: $codeBgColor;
 	--highlight-color: $highlightColor;
 }
+
+th, td {
+    text-align: left;
+    vertical-align: top;
+}
+
+table.comparison {
+    table-layout: fixed;
+}
+
+table.comparison > tr, table.comparison > tr > th, table.comparison > tr > td {
+    border: none;
+}
+
+table.comparison > tr > td:nth-child(1) {
+    font-weight: bold;
+}
+
+table.comparison > tr > th:nth-child(1) {
+    width: 25%;
+}
+
+table.comparison > tr > th {
+    width: calc((100% - 25%)/2);
+}
+
+table.comparison table {
+    margin: 0.4rem 0;
+}
+
+table.comparison table th, table.comparison table td {
+    padding: 0.2em 0.5em;
+}
