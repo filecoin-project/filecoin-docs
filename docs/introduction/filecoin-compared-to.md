@@ -1,6 +1,6 @@
 ---
 title: Filecoin compared to…
-description: 
+description: Compare Filecoin to other file storage and distribution systems that share similar properties, including Bitcoin, BitTorrent, Amazon S3, and Google Cloud.
 ---
 
 # Filecoin compared to…
