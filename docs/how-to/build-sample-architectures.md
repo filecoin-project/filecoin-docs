@@ -13,14 +13,15 @@ No matter what you wish to build on Filecoin, you'll generally need a few basic 
 
 ### Examples
 
-- Example Usage 1
-  - 
-  - 
-  - 
-- Example Usage 2
-  - 
-  - 
-  - 
+#### Example Usage 1
+Description of example application or service.
+- Resource
+- Resource 
+
+#### Example Usage 2
+Description of example application or service.
+- Resource
+- Resource 
 
 ### Additional Resources
 
