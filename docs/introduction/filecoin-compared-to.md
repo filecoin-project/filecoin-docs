@@ -1,5 +1,6 @@
 ---
 title: Filecoin compared to…
+description: Compare Filecoin to other file storage and distribution systems that share similar properties, including Bitcoin, BitTorrent, Amazon S3, and Google Cloud.
 ---
 
 # Filecoin compared to…
@@ -10,7 +11,7 @@ Filecoin combines many elements of other file storage and distribution systems. 
 * [Filecoin vs. Amazon S3, Google Cloud Storage](#filecoin-vs-amazon-s3-google-cloud-storage)
 * [Filecoin vs. BitTorrent](#filecoin-vs-bittorrent)
 
-## Filecoin vs. Bitcoin
+### Filecoin vs. Bitcoin
 
 <table class="comparison">
     <tr>
@@ -86,7 +87,7 @@ Filecoin combines many elements of other file storage and distribution systems. 
     </tr>
 </table>
 
-## Filecoin vs. Amazon S3, Google Cloud Storage
+### Filecoin vs. Amazon S3, Google Cloud Storage
 
 <table class="comparison">
     <tr>
@@ -146,7 +147,7 @@ Filecoin combines many elements of other file storage and distribution systems. 
     </tr>
 </table>
 
-## Filecoin vs. BitTorrent
+### Filecoin vs. BitTorrent
 
 <table class="comparison">
     <tr>
@@ -200,4 +201,3 @@ Filecoin combines many elements of other file storage and distribution systems. 
         <td>New files can start being shared immediately</td>
     </tr>
 </table>
-
