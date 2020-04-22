@@ -69,6 +69,7 @@ module.exports = {
             path: '/introduction/',
             children: [
                 '/introduction/what-is-filecoin',
+                '/introduction/why-filecoin'
               ]
           },
           {
