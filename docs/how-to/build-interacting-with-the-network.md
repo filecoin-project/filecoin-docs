@@ -13,7 +13,7 @@ You can run this node yourself or choose a hosted option. Running your own node 
 
 ## Local networks
 
-Here are some ways to spin up a network, for quick testing and development:
+Here are some ways to spin up a mock version of the Filecoin network, for quick testing and development:
 - [Filecoin Node Hosting Quick Start](https://paper.dropbox.com/doc/Filecoin-Node-Hosting-Quick-Start-7RBPjls1Bz6WLkT634NEN) for k8s and Docker
 - [Containerized devnet using mocked sectorbuilder](https://github.com/textileio/lotus-devnet) (aka mocked mining)
 - [Additional containers & virtualization scripts](https://github.com/filecoin-project/docs/wiki#containers--virtualization)
