@@ -3,7 +3,9 @@
     <slot name="top" />
 
     <Content class="theme-default-content" />
-
+    <Home v-if="isHome"
+      v-bind="{ sidebarItems }"
+      magicNumber="42"/>
     <div class="content-footer" v-if="!isContentStatus">
       <Feedback
         class="content-feedback"
@@ -30,6 +32,7 @@ import Feedback from './Feedback.vue'
 import LegacyCallout from './LegacyCallout.vue'
 import Analytics from './Analytics.vue'
 import ScrollPatch from './ScrollPatch.vue'
+import Home from './Home.vue'
 
 export default {
   name: 'Page',
@@ -39,13 +42,17 @@ export default {
     Feedback,
     LegacyCallout,
     Analytics,
-    ScrollPatch
+    ScrollPatch,
+    Home
   },
   props: ['sidebarItems'],
   computed: {
     isContentStatus: function() {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
     }
+    // isHome: function() {
+    //   return !!(this.$frontmatter && this.$frontmatter.home)
+    // }
   },
   methods: {
     smoothScroll: function() {
