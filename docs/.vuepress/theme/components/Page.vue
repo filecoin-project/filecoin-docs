@@ -3,9 +3,7 @@
     <slot name="top" />
 
     <Content class="theme-default-content" />
-    <Home v-if="isHome"
-      v-bind="{ sidebarItems }"
-      magicNumber="42"/>
+    <Home v-if="isHome"/>
     <div class="content-footer" v-if="!isContentStatus">
       <Feedback
         class="content-feedback"
@@ -49,10 +47,10 @@ export default {
   computed: {
     isContentStatus: function() {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
+    },
+    isHome: function() {
+      return !!(this.$frontmatter && this.$frontmatter.home)
     }
-    // isHome: function() {
-    //   return !!(this.$frontmatter && this.$frontmatter.home)
-    // }
   },
   methods: {
     smoothScroll: function() {
