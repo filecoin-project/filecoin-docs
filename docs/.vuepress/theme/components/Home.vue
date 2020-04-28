@@ -1,7 +1,6 @@
 <template>
-  <main class="home page">
+  <main class="home">
     <div class="theme-default-content">
-      <h1>{{ this.$page.frontmatter.title }}</h1>
       <Content class="intro"/>
       <div class="grid">
         <div

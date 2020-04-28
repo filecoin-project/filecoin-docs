@@ -2,9 +2,10 @@
   <main class="page">
     <slot name="top" />
 
-    <Content class="theme-default-content" />
-    <Home v-if="isHome"/>
-    <div class="content-footer" v-if="!isContentStatus">
+    <Content v-if="!isHome"
+    class="theme-default-content" />
+    <Home v-else-if="isHome"/>
+    <div class="content-footer" v-if="!isContentStatus && !isHome">
       <Feedback
         class="content-feedback"
         evtYes="information_helpful"
@@ -49,7 +50,7 @@ export default {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
     },
     isHome: function() {
-      return !!(this.$frontmatter && this.$frontmatter.home)
+      return !!(this.$frontmatter && this.$frontmatter.homepage)
     }
   },
   methods: {
