@@ -21,8 +21,6 @@
 </template>
 
 <script>
-// import NavLink from '@theme/components/NavLink.vue'
-import config from '../../config.js'
 
 export default {
   name: 'Home',
@@ -82,11 +80,6 @@ export default {
           ]
         }
       ]
-    }
-  },
-  computed: {
-    configSidebar: function() {
-      return config.sidebar
     }
   }
 }
