@@ -14,7 +14,7 @@ To simplify or automate how users make payments, you can integrate one or more o
 - Mobile and other wallet integrations (to come)
 
 
-## Signing Libaries
+## Signing Libraries
 
 Signing libraries can be used to sign transactions without requiring a dedicated node. This allows you to create signed transactions in an application that is running offline, on a mobile device, or anywhere. The signed transaction can then be submitted to any Filecoin API endpoint.
 
