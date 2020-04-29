@@ -14,11 +14,12 @@
             </RouterLink>
           </h2>
           <p v-for="(item, j) in category.children" :key="j">
-            <RouterLink v-if="!item.path.startsWith('http')"  :to="item.path">
+            <RouterLink v-if="!isExternal(item.path)"  :to="item.path">
               {{ item.title }}
             </RouterLink>
             <a v-else :href="item.path" target="_blank">
               {{ item.title }}
+              <OutboundLink/>
             </a>
           </p>
         </div>
@@ -28,6 +29,8 @@
 </template>
 
 <script>
+
+import { isExternal } from '@parent-theme/util/'
 
 export default {
   name: 'Home',
@@ -157,16 +160,19 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    isExternal
   }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .home .theme-default-content:not(.custom) {
     margin: auto;
     padding: 2rem 2.5rem 6rem;
     max-width: 920px;
-    background: no-repeat url("../../public/images/main-page-background.png") 600px 34px;
+    background: no-repeat url("/images/main-page-background.png") 600px 34px;
     background-size: 400px 480px;
 }
 .home .theme-default-content:not(.custom) > h1:first-child {
