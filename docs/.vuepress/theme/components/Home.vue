@@ -10,9 +10,12 @@
         >
           <h2>{{ category.title }}</h2>
           <p v-for="(item, j) in category.children" :key="j">
-            <RouterLink :to="item.path">
+            <RouterLink v-if="!item.path.startsWith('http')"  :to="item.path">
               {{ item.title }}
             </RouterLink>
+            <a v-else :href="item.path" target="_blank">
+              {{ item.title }}
+            </a>
           </p>
         </div>
       </div>
@@ -29,53 +32,122 @@ export default {
       manualSidebar: [
         {
           title: 'Introduction',
+          path: '/introduction',
           children: [
             {
-              title: 'Writing Guide',
-              path: '/community/contribute/writing-guide'
+              title: 'What is Filecoin?',
+              path: '/introduction/what-is-filecoin'
             },
             {
-              title: 'Grammar, Formatting and Style',
-              path: '/community/contribute/grammar-formatting-and-style'
+              title: 'Why Filecoin?',
+              path: '/introduction/why-filecoin'
+            },
+            {
+              title: 'Filecoin compared to...',
+              path: '/introduction/filecoin-compared-to'
             }
           ]
         },
         {
           title: 'How-Tos',
+          path: '/how-to',
           children: [
             {
-              title: 'Writing Guide',
-              path: '/community/contribute/writing-guide'
+              title: 'Install Filecoin',
+              path: '/how-to/install-filecoin'
             },
             {
-              title: 'Grammar, Formatting and Style',
-              path: '/community/contribute/grammar-formatting-and-style'
+              title: 'Prepare Data',
+              path: '/how-to/store-prepare-data'
+            },
+            {
+              title: 'Tokens',
+              path: '/how-to/store-tokens'
+            },
+            {
+              title: 'Making Deals',
+              path: '/how-to/store-making-deals'
+            },
+            {
+              title: 'Retrieving Data',
+              path: '/how-to/store-retrieving-data'
+            },
+            {
+              title: 'Very Large Files',
+              path: '/how-to/store-large-files'
+            },
+            {
+              title: 'Sample Architectures',
+              path: '/how-to/build-sample-architectures'
+            },
+            {
+              title: 'Wallets, Signing Tools, and API Clients',
+              path: '/how-to/build-wallets-signing-tools-api-clients'
+            },
+            {
+              title: 'Interacting with the Network',
+              path: '/how-to/build-interacting-with-the-network'
             }
           ]
         },
         {
           title: 'Community',
+          path: '/community',
           children: [
             {
-              title: 'Writing Guide',
+              title: 'Ways to Contribute',
+              path: '/community/contribute/ways-to-contribute'
+            },
+            {
+              title: 'Chat & Discussion Forums',
+              path: '/community/chat-and-discussion-forums'
+            },
+            {
+              title: 'ProtoSchool Workshops',
+              path: 'https://proto.school/#/events'
+            },
+            {
+              title: 'Social Media',
+              path: '/community/social-media/social-media'
+            },
+            {
+              title: 'Docs: Grammar, Formatting and Style',
+              path: '/community/contribute/grammar-formatting-and-style'
+            },
+            {
+              title: 'Docs: Writing Guide',
               path: '/community/contribute/writing-guide'
             },
             {
-              title: 'Grammar, Formatting and Style',
-              path: '/community/contribute/grammar-formatting-and-style'
+              title: 'Docs: Contribution Tutorial',
+              path: '/community/contribute/contribution-tutorial'
             }
+
           ]
         },
         {
           title: 'Project',
+          path: '/project',
           children: [
             {
-              title: 'Writing Guide',
-              path: '/community/contribute/writing-guide'
+              title: 'Specification',
+              path: 'https://github.com/filecoin-project/specs'
             },
             {
-              title: 'Grammar, Formatting and Style',
-              path: '/community/contribute/grammar-formatting-and-style'
+              title: 'Roadmap',
+              path: 'https://app.instagantt.com/shared/s/1152992274307505/latest'
+            },
+            {
+              title: 'Research',
+              path: 'https://research.filecoin.io/'
+            },
+            {
+              title: 'Related Projects',
+              path: '/project/related-projects'
+            },
+            {
+              title: 'Code of Conduct',
+              path: 'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md'
             }
           ]
         }
@@ -106,7 +178,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-auto-flow: row dense;
-        grid-auto-rows: 16rem;
+        grid-auto-rows: auto;
         grid-gap: 32px;
     }
     .category {

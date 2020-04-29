@@ -1,6 +1,6 @@
 ---
 title: Filecoin Documentation
-description: The home page for developer documentation for Filecoin.
+description: The homepage for Filecoin documentation.
 homepage: true
 ---
 # Filecoin Documentation
