@@ -33,7 +33,7 @@ TODO: Additional tips.
 [Filecoin Testnet](https://filecoin.io/testnet/) is a live community test network, under active development.
 
 ### Hosted nodes for Testnet
-The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet) available to developers actively building storage services or applications. They are intended to jump-start development, not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
+The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
 
 ## Mainnet
 
