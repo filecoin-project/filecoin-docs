@@ -8,7 +8,11 @@
           :key="i"
           v-bind:class="{'category': true, 'meta': category.title === 'Community' || category.title === 'Project'}"
         >
-          <h2>{{ category.title }}</h2>
+          <h2>
+            <RouterLink :to="category.path" class="title">
+              {{ category.title }}
+            </RouterLink>
+          </h2>
           <p v-for="(item, j) in category.children" :key="j">
             <RouterLink v-if="!item.path.startsWith('http')"  :to="item.path">
               {{ item.title }}
@@ -203,6 +207,11 @@ export default {
     .category.meta a {
         color: #5c456e;
     }
+
+    .category a.title {
+        color: black;
+    }
+
     @media (max-width: $MQMobile) {
         .grid {
             grid-template-columns: 1fr;
