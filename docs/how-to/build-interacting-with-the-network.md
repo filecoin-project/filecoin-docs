@@ -28,8 +28,13 @@ The same containerization scripts for [local networks](#local-networks) can also
 
 TODO: Additional tips.
 
-## Testnets / Mainnet
+## Testnet
 
 [Filecoin Testnet](https://filecoin.io/testnet/) is a live community test network, under active development.
+
+### Hosted nodes for Testnet
+The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
+
+## Mainnet
 
 Filecoin Mainnet launch is currently planned for Q3 2020. See the [Filecoin blog](https://filecoin.io/blog/roadmap-update-april-2020/) for more information.
