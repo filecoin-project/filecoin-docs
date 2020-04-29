@@ -108,6 +108,20 @@ module.exports = {
             ]
           },
           {
+            title: 'Reference',
+            path: '/reference/',
+            children: [
+              ['https://github.com/filecoin-project/specs',
+                'Specification'],
+              [
+                'https://docs.filecoin.io/go-filecoin-tutorial/Home.html',
+                'go-filecoin tutorial'
+              ],
+              ['https://lotu.sh/',
+              'lotus tutorial']
+            ]
+          },
+          {
             title: 'Community',
             path: '/community/',
             children: [
@@ -138,7 +152,6 @@ module.exports = {
             title: 'Project',
             path: '/project/',
             children: [
-              ['https://github.com/filecoin-project/specs', 'Specification'],
               [
                 'https://app.instagantt.com/shared/s/1152992274307505/latest',
                 'Roadmap'

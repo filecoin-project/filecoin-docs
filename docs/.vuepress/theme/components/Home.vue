@@ -98,6 +98,24 @@ export default {
           ]
         },
         {
+          title: 'Reference',
+          path: '/reference',
+          children: [
+            {
+              title: 'Specification',
+              path: 'https://github.com/filecoin-project/specs'
+            },
+            {
+              title: 'go-filecoin tutorial',
+              path: 'https://app.instagantt.com/shared/s/1152992274307505/latest'
+            },
+            {
+              title: 'lotus tutorial',
+              path: 'https://research.filecoin.io/'
+            }
+          ]
+        },
+        {
           title: 'Community',
           path: '/community',
           children: [
@@ -136,10 +154,6 @@ export default {
           title: 'Project',
           path: '/project',
           children: [
-            {
-              title: 'Specification',
-              path: 'https://github.com/filecoin-project/specs'
-            },
             {
               title: 'Roadmap',
               path: 'https://app.instagantt.com/shared/s/1152992274307505/latest'
