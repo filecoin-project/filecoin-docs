@@ -183,11 +183,11 @@ export default {
 
 <style lang="stylus" scoped>
 .home .theme-default-content:not(.custom) {
-    margin: auto;
     padding: 2rem 2.5rem 6rem;
-    max-width: 920px;
-    background: no-repeat url("/images/main-page-background.png") 600px 34px;
-    background-size: 400px 480px;
+    max-width: 740px;
+    background: no-repeat url("/images/main-page-background.png");
+    background-position: 550px 34px;
+    background-size: 280px 336px;
 }
 .home .theme-default-content:not(.custom) > h1:first-child {
     font-weight: normal;
@@ -196,9 +196,10 @@ export default {
 .home {
     .intro {
         max-width: 500px;
+        margin-top: 3rem;
     }
     .grid {
-        margin-top: 6rem;
+        margin-top: 4rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-auto-flow: row dense;
@@ -232,14 +233,20 @@ export default {
         color: black;
     }
 
-    @media (max-width: $MQMobile) {
+    @media (max-width: $MQNarrow) {
         .grid {
             grid-template-columns: 1fr;
-            grid-auto-rows: minmax(16rem, max-content);
+            /* grid-auto-rows: minmax(16rem, max-content); */
+            grid-auto-rows: auto;
+
         }
         .category {
             grid-column: auto !important;
             grid-row: auto !important;
+        }
+
+        .intro {
+          margin-top: 0;
         }
     }
 }
