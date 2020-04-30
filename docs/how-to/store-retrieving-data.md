@@ -37,7 +37,7 @@ Before the exchange of data for payment can begin, the miner and client each com
 
 Because neither the client nor the provider have any specific reason to trust the other, fulfillment and payment for retrieval is done incrementally. The client begins by requesting a small portion of the file and including a payment channel voucher for a proportional amount of the total payment. The miner receives this, and sends back the data that was requested. When the client receives the data and validates that it was correct, they send another request for the next piece of data, with a bit more payment, and this repeats until the retrieval is complete.
 
-This pattern continues till the end of the retrieval, when the last payment will simply be for the remainder of bytes. Now, the retrieval deal is complete.
+This pattern continues till the end of the retrieval, when the last payment will simply be for the remainder of bytes. Now the retrieval deal is complete.
 
 ### Usage
 
