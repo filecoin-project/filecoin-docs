@@ -18,9 +18,11 @@ Here are some ways to spin up a mock version of the Filecoin network on your own
 - [Containerized devnet using mocked sectorbuilder](https://github.com/textileio/lotus-devnet) (aka mocked mining)
 - [Additional containers & virtualization scripts](https://github.com/filecoin-project/docs/wiki#containers--virtualization)
 
-## Running your own remote nodes or networks
+## Running your own remote network
 
-- [Filecoin Node Hosting Quick Start](https://paper.dropbox.com/doc/Filecoin-Node-Hosting-Quick-Start-7RBPjls1Bz6WLkT634NEN) for remotely hosting your own node(s) using Kubernetes and Docker
+Here are some scripts to set up your own remote networks for development:
+- [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container
+- [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
 
 ## Testnet
 
