@@ -6,10 +6,6 @@ description: Learn about the history, roadmap, current status and more for Filec
 
 Curious about how it all got started, or where we're headed? Learn about the history, current state, and future trajectory of the Filecoin project here.
 
-## Filecoin specification
-
-View the [technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
-
 ## Roadmap
 
 The latest timing information is available in the [Filecoin Mainnet Roadmap](https://app.instagantt.com/shared/s/1152992274307505/latest).

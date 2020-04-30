@@ -2,9 +2,10 @@
   <main class="page">
     <slot name="top" />
 
-    <Content class="theme-default-content" />
-
-    <div class="content-footer" v-if="!isContentStatus">
+    <Content v-if="!isHome"
+    class="theme-default-content" />
+    <Home v-else-if="isHome"/>
+    <div class="content-footer" v-if="!isContentStatus && !isHome">
       <Feedback
         class="content-feedback"
         evtYes="information_helpful"
@@ -30,6 +31,7 @@ import Feedback from './Feedback.vue'
 import LegacyCallout from './LegacyCallout.vue'
 import Analytics from './Analytics.vue'
 import ScrollPatch from './ScrollPatch.vue'
+import Home from './Home.vue'
 
 export default {
   name: 'Page',
@@ -39,12 +41,16 @@ export default {
     Feedback,
     LegacyCallout,
     Analytics,
-    ScrollPatch
+    ScrollPatch,
+    Home
   },
   props: ['sidebarItems'],
   computed: {
     isContentStatus: function() {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
+    },
+    isHome: function() {
+      return !!(this.$frontmatter && this.$frontmatter.homepage)
     }
   },
   methods: {
