@@ -1,5 +1,3 @@
 # all redirects use 301 unless otherwise specified
-/introduction/  /how-to/
-/go-filecoin-tutorial/Home.html   https://docs.filecoin.io/go-filecoin-tutorial/Home.html
+
 /go-filecoin-tutorial/*  https://docs.filecoin.io/go-filecoin-tutorial/:splat
-/teri.html  https://teri.dev
