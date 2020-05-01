@@ -1,6 +1,6 @@
 # New Filecoin Docs Site (WORK IN PROGRESS)
 
-This repo is a **work in progress** by the Filecoin Storage & Dev Tools team, building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta). This sentence is a test edit.
+This repo is a **work in progress** by the Filecoin Storage & Dev Tools team, building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
 
 **Please visit [docs.filecoin.io](https://docs.filecoin.io/) to reference current documentation.**
 
