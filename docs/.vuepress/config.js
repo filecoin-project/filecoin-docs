@@ -90,7 +90,7 @@ module.exports = {
                 children: [
                   '/how-to/store-prepare-data',
                   '/how-to/store-tokens',
-                  '/how-to/store-making-deals',
+                  '/how-to/store-making-storage-deals',
                   '/how-to/store-retrieving-data',
                   '/how-to/store-large-files'
                 ]
