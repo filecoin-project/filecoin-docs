@@ -25,7 +25,7 @@ To store multiple copies of the same data, clients make multiple storage deals.
 
 ### Transferring data and beginning storage
 
-After the deal is published, the client begins transferring data to the miner. Upon receiving all of the data, the miner packs the data into a sector (TODO: define sector), seals it, and begins submitting proofs to the chain. Once the first proof makes it onto the chain, the client has certainty that the miner is correctly storing the data, and the storage deal is officially begun.
+After the deal is published, the client begins transferring data to the miner. Upon receiving all of the data, the miner packs the data into a [sector](https://filecoin-project.github.io/specs/#systems__filecoin_mining__sector), seals it, and begins submitting proofs to the chain. Once the first proof makes it onto the chain, the client has certainty that the miner is correctly storing the data, and the storage deal is officially begun.
 
 ### Ongoing storage and verification
 
