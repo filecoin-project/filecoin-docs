@@ -36,7 +36,7 @@ module.exports = {
       'Filecoin, crypto, mining, blockchain, IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'filecoin-project/filecoin-docs',
-    domain: 'https://filecoin-docs.netlify.app/', // TODO: replace when we host at filecoin.io
+    domain: 'https://docs.filecoin.io/',
     docsRepo: 'filecoin-project/filecoin-docs',
     docsDir: 'docs',
     docsBranch: 'master',
