@@ -31,7 +31,7 @@ After the deal is published, the client begins transferring data to the miner. U
 
 Throughout the lifetime of the deal, the miner submits ongoing proofs to the chain. Clients pay incrementally using the funds they previously locked up. If a proof is missing or delayed, the miner is penalized.
 
-Deals have a start and end time, specified by epoch (aka block height) in the client's original storage deal proposal. Once the blockchain reaches the ending block height, the storage deal is complete and miners have no more obligation. To continue storing their data, storage clients must make a new deal.
+Deals have a start and end time, specified by epoch (aka block height) in the client's original storage deal proposal. Once the blockchain reaches the ending block height, the storage deal is complete and miners have no further obligation. To continue storing their data, storage clients must make a new deal.
 
 ### Usage
 
