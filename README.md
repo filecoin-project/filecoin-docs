@@ -1,12 +1,11 @@
 # New Filecoin Docs Site (WORK IN PROGRESS)
 
-This repo is a **work in progress** by the Filecoin Storage & Dev Tools team, building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
+This repo is a **work in progress**, building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
 
 **Please visit [docs.filecoin.io](https://docs.filecoin.io/) to reference current documentation.**
 
-
 ## View a live demo of the new docs site (WIP)
-You can view the [live demo](https://filecoin-docs.netlify.app/) of this new site (WIP), compiled from the `master` branch, on Netlify. During this transition period, you'll see a mix of new Filecoin content, stubs for planned Filecoin content, and old IPFS content that needs to be replaced with similar articles.
+You can view the [live demo](https://filecoin-docs.netlify.app/) of this new site (WIP), compiled from the `master` branch, on Netlify. During this transition period, you'll see a mix of new content and stubs for planned future content.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3586cdd-c0e3-404c-b451-875025e0e990/deploy-status)](https://app.netlify.com/sites/filecoin-docs/deploys)
 
