@@ -1,5 +1,6 @@
 module.exports = [
-  ['meta', { robots: 'noindex' }], // deny search indexing for now
+  // commented out to allow search indexing for redirects via Netlify
+  // ['meta', { robots: 'noindex' }], 
   [
     'link',
     {
