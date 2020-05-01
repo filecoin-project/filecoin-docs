@@ -72,8 +72,8 @@ export default {
               path: '/how-to/store-tokens'
             },
             {
-              title: 'Making Deals',
-              path: '/how-to/store-making-deals'
+              title: 'Making Storage Deals',
+              path: '/how-to/store-making-storage-deals'
             },
             {
               title: 'Retrieving Data',
