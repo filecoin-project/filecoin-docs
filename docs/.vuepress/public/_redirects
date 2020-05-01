@@ -4,4 +4,4 @@
 # since we're replacing the contents of docs.filecoin.io
 # TODO: fix the destination url (before :splat) when we pick a new location
 
-/go-filecoin-tutorial/*  https://docs.filecoin.io/go-filecoin-tutorial/:splat
+/go-filecoin-tutorial/*  https://go.filecoin.io/:splat
