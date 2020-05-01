@@ -1,0 +1,3 @@
+# all redirects use 301 unless otherwise specified
+
+/go-filecoin-tutorial/*  https://docs.filecoin.io/go-filecoin-tutorial/:splat
