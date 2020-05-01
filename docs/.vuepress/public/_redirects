@@ -1,5 +1,7 @@
 # all redirects use 301 unless otherwise specified
-/introduction/  /how-to/
-/go-filecoin-tutorial/Home.html   https://docs.filecoin.io/go-filecoin-tutorial/Home.html
+
+# redirect folks who try to visit docs.filecoin.io/go-filecoin/tutorial
+# since we're replacing the contents of docs.filecoin.io
+# TODO: fix the destination url (before :splat) when we pick a new location
+
 /go-filecoin-tutorial/*  https://docs.filecoin.io/go-filecoin-tutorial/:splat
-/teri.html  https://teri.dev
