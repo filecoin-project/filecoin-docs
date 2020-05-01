@@ -17,7 +17,7 @@ The storage ask contains details such as price, duration, and available storage 
 
 ### Negotiating the storage deal
 
-Next, the client locks up sufficient funds in their wallet to pay for the deal. The client also calculates the unique piece commitment (CommP) for the data it intends to store, which is used for confirmation in later phases.
+Next, the client locks up sufficient funds in their wallet to pay for the deal. The client also runs the data through a hash-based process to generate the piece commitment (CommP), which is used for confirmation in later phases.
 
 Now, the client reaches out to the miner and proposes the storage deal. The storage deal proposal contains a price, the size of the data, how long the data will be stored for, a reference to the data and how it will be transferred, and a number of other fields. If the miner accepts, they sign the deal proposal and publish it to the chain.
 
