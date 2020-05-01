@@ -5,6 +5,11 @@
 @import 'sidebar';
 @import 'video';
 
+// stop sidebar taking up horizontal width and adjusting layout position
+html {
+	margin-left: calc(100vw - 100%);
+}
+
 // apply scrolling by default excluding firefox due to trigger issues
 html.smooth-scroll {
 	scroll-behavior: smooth;
@@ -49,34 +54,34 @@ html.smooth-scroll {
 }
 
 th, td {
-    text-align: left;
-    vertical-align: top;
+	text-align: left;
+	vertical-align: top;
 }
 
 table.comparison {
-    table-layout: fixed;
+	table-layout: fixed;
 }
 
 table.comparison > tr, table.comparison > tr > th, table.comparison > tr > td {
-    border: none;
+	border: none;
 }
 
 table.comparison > tr > td:nth-child(1) {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 table.comparison > tr > th:nth-child(1) {
-    width: 25%;
+	width: 25%;
 }
 
 table.comparison > tr > th {
-    width: calc((100% - 25%)/2);
+	width: calc(((100% - 25%) / 2));
 }
 
 table.comparison table {
-    margin: 0.4rem 0;
+	margin: 0.4rem 0;
 }
 
 table.comparison table th, table.comparison table td {
-    padding: 0.2em 0.5em;
+	padding: 0.2em 0.5em;
 }
