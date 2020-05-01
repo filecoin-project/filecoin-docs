@@ -1,7 +1,6 @@
 # all redirects use 301 unless otherwise specified
 
-# redirect folks who try to visit docs.filecoin.io/go-filecoin/tutorial
-# since we're replacing the contents of docs.filecoin.io
-# TODO: fix the destination url (before :splat) when we pick a new location
+# redirect folks who try to visit the go tutorial at its old location,
+# docs.filecoin.io/go-filecoin/tutorial
 
 /go-filecoin-tutorial/*  https://go.filecoin.io/:splat
