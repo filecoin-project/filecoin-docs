@@ -1,91 +1,15 @@
 ---
 title: Filecoin compared to…
-description: Compare Filecoin to other file storage and distribution systems that share similar properties, including Bitcoin, BitTorrent, Amazon S3, and Google Cloud.
+description: Compare Filecoin to other file storage and distribution systems that share similar properties.
 ---
 
 # Filecoin compared to…
 
 Filecoin combines many elements of other file storage and distribution systems. What makes Filecoin unique is that it runs on an open, peer-to-peer network while still providing economic incentives and proofs to ensure files are being stored correctly. This page compares Filecoin against other technologies which share some of the same properties.
 
-* [Filecoin vs. Bitcoin](#filecoin-vs-bitcoin)
 * [Filecoin vs. Amazon S3, Google Cloud Storage](#filecoin-vs-amazon-s3-google-cloud-storage)
+* [Filecoin vs. Bitcoin](#filecoin-vs-bitcoin)
 * [Filecoin vs. BitTorrent](#filecoin-vs-bittorrent)
-
-### Filecoin vs. Bitcoin
-
-<table class="comparison">
-    <tr>
-        <th></th>
-        <th>Filecoin</th>
-        <th>Bitcoin</th>
-    </tr>
-    <tr>
-        <td>Main use case</td>
-        <td>File storage</td>
-        <td>Payment network</td>
-    </tr>
-    <tr>
-        <td>Data storage</td>
-        <td>Good at storing large amounts of data inexpensively</td>
-        <td>Small amounts of data can be stored on blockchain at significant cost</td>
-    </tr>
-    <tr>
-        <td>Smart contracts</td>
-        <td>Flexible, actor based smart contracts</td>
-        <td>Limited scripting ability</td>
-    </tr>
-    <tr>
-        <td>Proof</td>
-        <td>Blockchain secured using proof of replication and proof of spacetime</td>
-        <td>Blockchain secured using proof of work</td>
-    </tr>
-    <tr>
-        <td>Consensus power</td>
-        <td>Miners with the most storage have the most power</td>
-        <td>Miners with the most computational speed have the most power</td>
-    </tr>
-    <tr>
-        <td>Mining hardware</td>
-        <td>Hard drives</td>
-        <td>GPUs, FPGAs, ASICs</td>
-    </tr>
-    <tr>
-        <td>Mining usefulness</td>
-        <td>Mining results in peoples’ files being stored</td>
-        <td>Mining results in heat</td>
-    </tr>
-    <tr>
-        <td>Types of miner</td>
-        <td>Storage miners, retrieval miners, repair miners</td>
-        <td>All miners perform proof of work</td>
-    </tr>
-    <tr>
-        <td>Uptime requirements</td>
-        <td>Storage miners rewarded for uptime, penalized for downtime</td>
-        <td>Miners can go offline without being penalized</td>
-    </tr>
-    <tr>
-        <td>Token allocation</td>
-        <td>
-            <table>
-                <tr><td>70%</td><td>Miners</td></tr>
-                <tr><td>15%</td><td>Protocol Labs</td></tr>
-                <tr><td>10%</td><td>Investors</td></tr>
-                <tr><td>5%</td><td>Filecoin Foundation</td></tr>
-            </table>
-        </td>
-        <td>
-            <table>
-                <tr><td>100%</td><td>Miners</td></tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td>Network status</td>
-        <td>Currently in testnet</td>
-        <td>Mainnet running since 2009</td>
-    </tr>
-</table>
 
 ### Filecoin vs. Amazon S3, Google Cloud Storage
 
@@ -146,6 +70,63 @@ Filecoin combines many elements of other file storage and distribution systems. 
         <td>High barrier to entry for storage providers (legal agreements, marketing, support staff)</td>
     </tr>
 </table>
+
+
+### Filecoin vs. Bitcoin
+
+<table class="comparison">
+    <tr>
+        <th></th>
+        <th>Filecoin</th>
+        <th>Bitcoin</th>
+    </tr>
+    <tr>
+        <td>Main use case</td>
+        <td>File storage</td>
+        <td>Payment network</td>
+    </tr>
+    <tr>
+        <td>Data storage</td>
+        <td>Good at storing large amounts of data inexpensively</td>
+        <td>Small amounts of data can be stored on blockchain at significant cost</td>
+    </tr>
+    <tr>
+        <td>Proof</td>
+        <td>Blockchain secured using proof of replication and proof of spacetime</td>
+        <td>Blockchain secured using proof of work</td>
+    </tr>
+    <tr>
+        <td>Consensus power</td>
+        <td>Miners with the most storage have the most power</td>
+        <td>Miners with the most computational speed have the most power</td>
+    </tr>
+    <tr>
+        <td>Mining hardware</td>
+        <td>Hard drives</td>
+        <td>GPUs, FPGAs, ASICs</td>
+    </tr>
+    <tr>
+        <td>Mining usefulness</td>
+        <td>Mining results in peoples’ files being stored</td>
+        <td>Mining results in heat</td>
+    </tr>
+    <tr>
+        <td>Types of miner</td>
+        <td>Storage miners, retrieval miners, repair miners</td>
+        <td>All miners perform proof of work</td>
+    </tr>
+    <tr>
+        <td>Uptime requirements</td>
+        <td>Storage miners rewarded for uptime, penalized for downtime</td>
+        <td>Miners can go offline without being penalized</td>
+    </tr>
+    <tr>
+        <td>Network status</td>
+        <td>Currently in testnet</td>
+        <td>Mainnet running since 2009</td>
+    </tr>
+</table>
+
 
 ### Filecoin vs. BitTorrent
 
