@@ -1,6 +1,6 @@
 # all redirects use 301 unless otherwise specified
 
 # redirect folks who try to visit the go tutorial at its old location,
-# docs.filecoin.io/go-filecoin/tutorial
+# docs.filecoin.io/go-filecoin-tutorial
 
 /go-filecoin-tutorial/*  https://go.filecoin.io/go-filecoin-tutorial/:splat

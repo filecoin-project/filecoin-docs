@@ -114,7 +114,7 @@ module.exports = {
               ['https://github.com/filecoin-project/specs',
                 'Specification'],
               [
-                'https://docs.filecoin.io/go-filecoin-tutorial/Home.html',
+                'https://go.filecoin.io/go-filecoin-tutorial/Home.html',
                 'go-filecoin tutorial'
               ],
               ['https://lotu.sh/',

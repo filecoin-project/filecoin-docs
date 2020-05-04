@@ -37,10 +37,10 @@ This pattern continues until the end of the retrieval, when the last payment wil
 
 ### Usage
 
-If you are using a Filecoin full node implementation, you will not need to manage each of these incremental steps. Instead, they are wrapped into a single CLI or API call. For specific CLI commands, see the [Retrieving Data tutorial for lotus](https://lotu.sh/en+retrieving-data) or the [Retrieving Data tutorial for go-filecoin](https://docs.filecoin.io/go-filecoin-tutorial/Storing-on-Filecoin.html#retrieve-your-data).
+If you are using a Filecoin full node implementation, you will not need to manage each of these incremental steps. Instead, they are wrapped into a single CLI or API call. For specific CLI commands, see the [Retrieving Data tutorial for lotus](https://lotu.sh/en+retrieving-data) or the [Retrieving Data tutorial for go-filecoin](https://go.filecoin.io/go-filecoin-tutorial/Storing-on-Filecoin.html#retrieve-your-data).
 
 ### References
 
 - Filecoin Specification: [2.7.2 Retrieval Market](https://filecoin-project.github.io/specs/#systems__filecoin_markets__retrieval_market)
 - [Retrieving Data tutorial for lotus](https://lotu.sh/en+retrieving-data)
-- [Retrieving Data tutorial for go-filecoin](https://docs.filecoin.io/go-filecoin-tutorial/Storing-on-Filecoin.html#retrieve-your-data)
+- [Retrieving Data tutorial for go-filecoin](https://go.filecoin.io/go-filecoin-tutorial/Storing-on-Filecoin.html#retrieve-your-data)
