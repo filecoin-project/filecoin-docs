@@ -11,7 +11,7 @@ Filecoin currently has 2 full-node, command-line implementations:
 - [lotus](https://github.com/filecoin-project/lotus) (Go) 
   - [Tutorial to install lotus](https://docs.lotu.sh/)
 - [go-filecoin](https://github.com/filecoin-project/go-filecoin) (Go) 
-  - [Tutorial to install go-filecoin](https://docs.filecoin.io/go-filecoin-tutorial/Home.html)
+  - [Tutorial to install go-filecoin](https://go.filecoin.io/go-filecoin-tutorial/Home.html)
 
 For more ways to install and use Filecoin, including user-friendly graphical interfaces and JavaScript API clients, see [Community Resources](https://github.com/filecoin-project/docs/wiki#community-resources).
 

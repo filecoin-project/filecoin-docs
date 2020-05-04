@@ -107,11 +107,11 @@ export default {
             },
             {
               title: 'go-filecoin tutorial',
-              path: 'https://app.instagantt.com/shared/s/1152992274307505/latest'
+              path: 'https://go.filecoin.io/go-filecoin-tutorial'
             },
             {
               title: 'lotus tutorial',
-              path: 'https://research.filecoin.io/'
+              path: 'https://lotu.sh'
             }
           ]
         },
