@@ -1,15 +1,13 @@
-# New Filecoin Docs Site (WORK IN PROGRESS)
+# Filecoin Docs
 
-This repo is a **work in progress**, building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
 
-**Please visit [docs.filecoin.io](https://docs.filecoin.io/) to reference current documentation.**
+**View conceptual documenation for the Filecoin project at [docs.filecoin.io](https://docs.filecoin.io/).** You may also be interested in Filecoin's [technical specifcation](https://filecoin-project.github.io/specs/) or the implementation details provided in the [go-filecoin tutorial](https://go.filecoin.io/go-filecoin-tutorial) or [lotus tutorial](https://lotu.sh). 
 
-## View a live demo of the new docs site (WIP)
-You can view the [live demo](https://filecoin-docs.netlify.app/) of this new site (WIP), compiled from the `master` branch, on Netlify. During this transition period, you'll see a mix of new content and stubs for planned future content.
+This repo generates the new conceptual Filecoin documentation at [docs.filecoin.io](https://docs.filecoin.io/), building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3586cdd-c0e3-404c-b451-875025e0e990/deploy-status)](https://app.netlify.com/sites/filecoin-docs/deploys)
 
-## Working on this beta platform
+## Working on this platform
 
 To spin up a local instance of this new VuePress site, see below:
 
@@ -28,8 +26,11 @@ To spin up a local instance of this new VuePress site, see below:
 3. Open [localhost:8080](http://localhost:8080) in your browser.
 
 ## Code organization
-- Navigation is generated from [docs/.vuepress/config.js](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/.vuepress/config.js) and the metadata within each Markdown file. Be sure to create an entry in this config file when adding new content.
 - Content lives in Markdown files in the `docs` folder. Each major section has its own subfolder.
+- Navigation is generated from [docs/.vuepress/config.js](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/.vuepress/config.js) and the metadata within each Markdown file. Be sure to create an entry in this config file when adding new content.
+
+## Contributing
+Learn more about [contributing to this docs site](https://docs.filecoin.io/community/contribute/ways-to-contribute/#documentation). 
 
 ## License
 
