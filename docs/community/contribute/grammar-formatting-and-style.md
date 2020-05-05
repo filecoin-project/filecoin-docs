@@ -40,7 +40,7 @@ How the Markdown syntax looks, and code formatting rules to follow.
 
 ### Syntax
 
-The Filecoin Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://filecoin-docs.netlify.app) or [its GitHub repo](https://github.com/filecoin-project/filecoin-docs).
+The Filecoin Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs.filecoin.io) or [its GitHub repo](https://github.com/filecoin-project/filecoin-docs).
 
 ### Rules
 
