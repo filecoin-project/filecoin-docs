@@ -17,7 +17,7 @@ The official [Filecoin forums](https://discuss.filecoin.io/) are the primary hom
 
 ## Community chat
 
-For short-lived discussions, join our community chat directly on  [Slack](https://join.slack.com/t/filecoinproject/shared_invite/enQtNTUwNTI1Mzk5MDYwLTY4YmFjMzRlZjFiNDc0NmI2N2JjMjk5YTAyMDUyODljODg3MGI0ZGRhZTI5ZDNkZTAyNjkyMzI1ODM1YjA1MWI) or via a bridge from [Matrix](https://riot.im/app/#/group/+filecoin:matrix.org).
+For short-lived discussions, join our community chat directly on [Slack](https://join.slack.com/t/filecoinproject/shared_invite/zt-dj58b7fq-weyaTEvjHoYF_ENkQHR6Ig) or via a bridge from [Matrix](https://riot.im/app/#/group/+filecoin:matrix.org).
 
 ## ProtoSchool workshops
 
