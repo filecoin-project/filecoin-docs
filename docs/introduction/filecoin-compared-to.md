@@ -9,7 +9,6 @@ Filecoin combines many elements of other file storage and distribution systems. 
 
 * [Filecoin vs. Amazon S3, Google Cloud Storage](#filecoin-vs-amazon-s3-google-cloud-storage)
 * [Filecoin vs. Bitcoin](#filecoin-vs-bitcoin)
-* [Filecoin vs. BitTorrent](#filecoin-vs-bittorrent)
 
 ### Filecoin vs. Amazon S3, Google Cloud Storage
 
@@ -102,8 +101,8 @@ Filecoin combines many elements of other file storage and distribution systems. 
     </tr>
     <tr>
         <td>Mining hardware</td>
-        <td>Hard drives</td>
-        <td>GPUs, FPGAs, ASICs</td>
+        <td>Hard drives, GPUs, and CPUs</td>
+        <td>ASICs</td>
     </tr>
     <tr>
         <td>Mining usefulness</td>
@@ -124,61 +123,5 @@ Filecoin combines many elements of other file storage and distribution systems. 
         <td>Network status</td>
         <td>Currently in testnet</td>
         <td>Mainnet running since 2009</td>
-    </tr>
-</table>
-
-
-### Filecoin vs. BitTorrent
-
-<table class="comparison">
-    <tr>
-        <th></th>
-        <th>Filecoin</th>
-        <th>BitTorrent</th>
-    </tr>
-    <tr>
-        <td>Main use case</td>
-        <td>Reliably storing files over time</td>
-        <td>Quickly distributing popular files</td>
-    </tr>
-    <tr>
-        <td>Incentives</td>
-        <td>Miners are paid to be available and send files to users</td>
-        <td>Users exchange files using a tit-for-tat algorithm, some peers keep uploading after they have finished downloading out of goodwill</td>
-    </tr>
-    <tr>
-        <td>Throttling</td>
-        <td>ISPs are incentivised to run retrieval miners on their networks, improving their customer’s experience</td>
-        <td>ISPs regularly block or throttle BitTorrent traffic on their networks, degrading their customer’s experience</td>
-    </tr>
-    <tr>
-        <td>Obscure files</td>
-        <td>Still available from miners which are reliably online</td>
-        <td>Have few or no peers and get harder to download over time</td>
-    </tr>
-    <tr>
-        <td>Peer locations</td>
-        <td>Incentivizes high-bandwidth peers in data centres to join the network</td>
-        <td>Most peers have residential internet connections</td>
-    </tr>
-    <tr>
-        <td>Data usage</td>
-        <td>File only downloaded once during retrieval</td>
-        <td>File uploaded and downloaded simultaneously during retrieval, increasing the total data required to retrieve a file</td>
-    </tr>
-    <tr>
-        <td>Retrieval price</td>
-        <td>Users pay or spend prepaid tickets to retrieve files</td>
-        <td>Retrieving files is free of charge</td>
-    </tr>
-    <tr>
-        <td>File discovery</td>
-        <td>A public blockchain records all of the files stored by the network</td>
-        <td>Files can be shared without recording their existence on a public ledger</td>
-    </tr>
-    <tr>
-        <td>Storage time</td>
-        <td>New files must be sealed, which takes a long time</td>
-        <td>New files can start being shared immediately</td>
     </tr>
 </table>
