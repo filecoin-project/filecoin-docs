@@ -64,7 +64,7 @@ export default {
               path: '/how-to/install-filecoin'
             },
             {
-              title: 'Preparing Data',
+              title: 'Preparing data',
               path: '/how-to/store-prepare-data'
             },
             {
