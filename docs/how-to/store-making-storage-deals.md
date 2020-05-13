@@ -1,9 +1,9 @@
 ---
-title: Making Storage Deals
+title: Making storage deals
 description: Learn how to use Filecoin tokens to pay for storage.
 ---
 
-# Making Storage Deals
+# Making storage deals
 
 Once a client has prepared their data and added tokens to their wallet, they can make storage deals with miners. There are several distinct phases:
 

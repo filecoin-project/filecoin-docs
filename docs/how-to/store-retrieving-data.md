@@ -1,9 +1,9 @@
 ---
-title: Retrieving Data
+title: Retrieving data
 description: Learn how to retrieve your data from storage
 ---
 
-# Retrieving Data
+# Retrieving data
 
 To fetch previously stored data from the Filecoin network, clients and miners make **retrieval deals**. A retrieval deal is an agreement between a client and a retrieval miner, where the client agrees to pay a certain amount for a given piece of data. Unlike storage deals, retrieval deals are entirely off-chain.
 
@@ -26,7 +26,7 @@ Once the client knows which miner(s) to ask for their data, the negotiation goes
 
 ### Fulfilling the retrieval deal
 
-Before the exchange of data for payment can begin, the miner and client each complete final preparations. The miner unseals the data, which may take some time. If the client does not already have a payment channel open to that miner, they create one now. 
+Before the exchange of data for payment can begin, the miner and client each complete final preparations. The miner unseals the data, which may take some time. If the client does not already have a payment channel open to that miner, they create one now.
 
 Because neither the client nor the miner have any specific reason to trust the other, fulfillment and payment for retrieval is done incrementally. The miner and client alternate these steps:
 

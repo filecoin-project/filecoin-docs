@@ -1,11 +1,11 @@
 ---
-title: Wallets, Signing Tools, and API Clients
+title: Wallets, signing tools and API clients
 description: Additional building blocks for Filecoin applications
 ---
 
-# Wallets, Signing Tools, and API Clients
+# Wallets, signing tools and API clients
 
-## Wallet Integrations
+## Wallet integrations
 
 To simplify or automate how users make payments, you can integrate one or more of these wallets directly into your application or service:
 
@@ -14,13 +14,13 @@ To simplify or automate how users make payments, you can integrate one or more o
 - Mobile and other wallet integrations (to come)
 
 
-## Signing Libraries
+## Signing libraries
 
 Signing libraries can be used to sign transactions without requiring a dedicated node. This allows you to create signed transactions in an application that is running offline, on a mobile device, or anywhere. The signed transaction can then be submitted to any Filecoin API endpoint.
 
 - [Filecoin Signing Tools](https://github.com/zondax/filecoin-rs) - a Rust/WASM/JSONRPC service for sending signed messages to the network
 
-## API Clients
+## API clients
 
 API clients take care of the low-level details of making requests and handling responses and let you focus on writing code specific to your project. They can also translate between different programming languages. These Filecoin API clients are currently available:
 

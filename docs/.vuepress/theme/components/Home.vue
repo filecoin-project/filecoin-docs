@@ -60,39 +60,39 @@ export default {
           path: '/how-to',
           children: [
             {
-              title: 'Install Filecoin',
+              title: 'Installing Filecoin',
               path: '/how-to/install-filecoin'
             },
             {
-              title: 'Prepare Data',
+              title: 'Preparing data',
               path: '/how-to/store-prepare-data'
             },
             {
-              title: 'Tokens',
+              title: 'Token payments',
               path: '/how-to/store-tokens'
             },
             {
-              title: 'Making Storage Deals',
+              title: 'Making storage deals',
               path: '/how-to/store-making-storage-deals'
             },
             {
-              title: 'Retrieving Data',
+              title: 'Retrieving data',
               path: '/how-to/store-retrieving-data'
             },
             {
-              title: 'Very Large Files',
+              title: 'Very large files',
               path: '/how-to/store-large-files'
             },
             {
-              title: 'Sample Architectures',
+              title: 'Sample architectures',
               path: '/how-to/build-sample-architectures'
             },
             {
-              title: 'Wallets, Signing Tools, and API Clients',
+              title: 'Wallets, signing tools and API clients',
               path: '/how-to/build-wallets-signing-tools-api-clients'
             },
             {
-              title: 'Interacting with the Network',
+              title: 'Interacting with the network',
               path: '/how-to/build-interacting-with-the-network'
             }
           ]
@@ -120,31 +120,31 @@ export default {
           path: '/community',
           children: [
             {
-              title: 'Ways to Contribute',
+              title: 'Ways to contribute',
               path: '/community/contribute/ways-to-contribute'
             },
             {
-              title: 'Chat & Discussion Forums',
+              title: 'Chat & discussion forums',
               path: '/community/chat-and-discussion-forums'
             },
             {
-              title: 'ProtoSchool Workshops',
+              title: 'ProtoSchool workshops',
               path: 'https://proto.school/#/events'
             },
             {
-              title: 'Social Media',
+              title: 'Social media',
               path: '/community/social-media/social-media'
             },
             {
-              title: 'Docs: Grammar, Formatting and Style',
+              title: 'Docs: Grammar, formatting and style',
               path: '/community/contribute/grammar-formatting-and-style'
             },
             {
-              title: 'Docs: Writing Guide',
+              title: 'Docs: Writing guide',
               path: '/community/contribute/writing-guide'
             },
             {
-              title: 'Docs: Contribution Tutorial',
+              title: 'Docs: Contribution tutorial',
               path: '/community/contribute/contribution-tutorial'
             }
 
@@ -163,11 +163,11 @@ export default {
               path: 'https://research.filecoin.io/'
             },
             {
-              title: 'Related Projects',
+              title: 'Related projects',
               path: '/project/related-projects'
             },
             {
-              title: 'Code of Conduct',
+              title: 'Code of conduct',
               path: 'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md'
             }
           ]

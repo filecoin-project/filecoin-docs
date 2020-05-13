@@ -1,9 +1,9 @@
 ---
-title: Interacting with the Network
+title: Interacting with the network
 description: Learn how to interface with the Filecoin network.
 ---
 
-# Interacting with the Network
+# Interacting with the network
 
 This page outlines various options for connecting to local and remote test networks while building and operating your service or application.
 
@@ -28,7 +28,7 @@ Here are some scripts to set up your own remote networks for development:
 
 [Filecoin Testnet](https://filecoin.io/testnet/) is a live community test network, under active development.
 
-### Hosted nodes for Testnet
+### Hosted nodes for testnet
 The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
 
 ## Mainnet
