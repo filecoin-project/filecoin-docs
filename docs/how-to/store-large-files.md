@@ -3,7 +3,7 @@ title: Very large files
 description: Learn how to store very large files.
 ---
 
-# Very Large Files
+# Very large files
 
 If you plan to store very large files (over 1TB), here are some additional considerations:
 

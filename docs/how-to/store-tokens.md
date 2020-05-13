@@ -3,7 +3,7 @@ title: Token payments
 description: Learn how to use Filecoin tokens to pay for storage.
 ---
 
-# Tokens
+# Token payments
 
 You’ll need Filecoin tokens (FIL) to pay for storage. Tokens are stored in digital wallets. Access to your tokens is governed by private cryptographic keys (basically, long random alphanumeric values). Digital wallets store these private keys for you, using a combination of software and/or hardware.
 

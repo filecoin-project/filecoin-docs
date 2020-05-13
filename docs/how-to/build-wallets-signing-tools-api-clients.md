@@ -3,7 +3,7 @@ title: Wallets, signing tools and API clients
 description: Additional building blocks for Filecoin applications
 ---
 
-# Wallets, Signing Tools, and API Clients
+# Wallets, signing tools and API clients
 
 ## Wallet integrations
 

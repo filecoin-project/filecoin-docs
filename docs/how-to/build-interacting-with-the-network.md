@@ -3,7 +3,7 @@ title: Interacting with the network
 description: Learn how to interface with the Filecoin network.
 ---
 
-# Interacting with the Network
+# Interacting with the network
 
 This page outlines various options for connecting to local and remote test networks while building and operating your service or application.
 

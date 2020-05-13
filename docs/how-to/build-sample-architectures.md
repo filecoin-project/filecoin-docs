@@ -3,7 +3,7 @@ title: Sample architectures
 description: Learn how you might build an app on top of Filecoin.
 ---
 
-# Sample Architectures
+# Sample architectures
 
 No matter what you wish to build on Filecoin, you'll generally need a few basic elements:
 

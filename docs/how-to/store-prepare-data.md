@@ -3,7 +3,7 @@ title: Preparing data
 description: Learn how to prepare data for storage.
 ---
 
-# Prepare Data
+# Preparing data
 
 Depending on the size and structure of your data, you may need to make some formatting adjustments before storing it on Filecoin.
 
