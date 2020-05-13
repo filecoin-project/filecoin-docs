@@ -1,5 +1,5 @@
 ---
-title: Prepare Data
+title: Preparing data
 description: Learn how to prepare data for storage.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Sample Architectures
+title: Sample architectures
 description: Learn how you might build an app on top of Filecoin.
 ---
 
@@ -13,16 +13,16 @@ No matter what you wish to build on Filecoin, you'll generally need a few basic 
 
 ### Examples
 
-#### Example Usage 1
+#### Example usage 1
 Description of example application or service.
 - Resource
-- Resource 
+- Resource
 
-#### Example Usage 2
+#### Example usage 2
 Description of example application or service.
 - Resource
-- Resource 
+- Resource
 
-### Additional Resources
+### Additional resources
 
 See [Filecoin Community Resources](https://github.com/filecoin-project/docs/wiki#community-resources) for a full list of applications, libraries, and tools to aid in installing, using & building on Filecoin.

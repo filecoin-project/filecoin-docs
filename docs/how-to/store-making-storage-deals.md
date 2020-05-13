@@ -1,5 +1,5 @@
 ---
-title: Making Storage Deals
+title: Making storage deals
 description: Learn how to use Filecoin tokens to pay for storage.
 ---
 

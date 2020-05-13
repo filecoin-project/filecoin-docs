@@ -1,5 +1,5 @@
 ---
-title: Very Large Files
+title: Very large files
 description: Learn how to store very large files.
 ---
 

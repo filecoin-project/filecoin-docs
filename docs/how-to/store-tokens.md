@@ -1,5 +1,5 @@
 ---
-title: Tokens
+title: Tokens: paying for storage
 description: Learn how to use Filecoin tokens to pay for storage.
 ---
 
@@ -7,7 +7,7 @@ description: Learn how to use Filecoin tokens to pay for storage.
 
 You’ll need Filecoin tokens (FIL) to pay for storage. Tokens are stored in digital wallets. Access to your tokens is governed by private cryptographic keys (basically, long random alphanumeric values). Digital wallets store these private keys for you, using a combination of software and/or hardware.
 
-If you are using a core protocol implementation such as lotus or go-filecoin, each node automatically provisions a new Filecoin wallet with a balance of 0 FIL. 
+If you are using a core protocol implementation such as lotus or go-filecoin, each node automatically provisions a new Filecoin wallet with a balance of 0 FIL.
 
 If you are using a different application, follow their instructions.
 
