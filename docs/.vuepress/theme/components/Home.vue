@@ -163,11 +163,11 @@ export default {
               path: 'https://research.filecoin.io/'
             },
             {
-              title: 'Related Projects',
+              title: 'Related projects',
               path: '/project/related-projects'
             },
             {
-              title: 'Code of Conduct',
+              title: 'Code of conduct',
               path: 'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md'
             }
           ]
