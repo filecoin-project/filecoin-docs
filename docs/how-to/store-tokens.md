@@ -1,5 +1,5 @@
 ---
-title: Tokens: paying for storage
+title: Paying for storage (tokens)
 description: Learn how to use Filecoin tokens to pay for storage.
 ---
 
