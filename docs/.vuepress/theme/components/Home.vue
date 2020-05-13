@@ -68,7 +68,7 @@ export default {
               path: '/how-to/store-prepare-data'
             },
             {
-              title: 'Paying for storage (tokens)',
+              title: 'Token payments',
               path: '/how-to/store-tokens'
             },
             {
