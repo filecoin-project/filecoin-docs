@@ -3,7 +3,7 @@
 
 **View conceptual documenation for the Filecoin project at [docs.filecoin.io](https://docs.filecoin.io/).** You may also be interested in Filecoin's [technical specifcation](https://filecoin-project.github.io/specs/) or the implementation details provided in the [go-filecoin tutorial](https://go.filecoin.io/go-filecoin-tutorial) or [lotus tutorial](https://lotu.sh). 
 
-This repo generates the new conceptual Filecoin documentation at [docs.filecoin.io](https://docs.filecoin.io/), building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
+This repo generates the new conceptual Filecoin documentation at [docs.filecoin.io](https://docs.filecoin.io/), building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create the [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3586cdd-c0e3-404c-b451-875025e0e990/deploy-status)](https://app.netlify.com/sites/filecoin-docs/deploys)
 
