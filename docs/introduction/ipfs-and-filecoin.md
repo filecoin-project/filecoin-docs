@@ -1,10 +1,9 @@
 ---
-title: What is Filecoin?
+title: IPFS and Filecoin
 description: Learn more about the relationship and different use-cases between IPFS and Filecoin.
 ---
 
-
-# IPFS & Filecoin
+# IPFS and Filecoin
 
 Filecoin and IPFS are complementary protocols for storing and sharing data in the decentralized web. While users aren’t required to use Filecoin and IPFS together, the two combined solve significant failings of the current web 2.0 infrastructure. This page aims to explain the relationship between the two protocols and assist users in deciding which option, or combination of options, is best suited for their use-case.
 
