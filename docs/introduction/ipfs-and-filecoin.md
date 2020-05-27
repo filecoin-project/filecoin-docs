@@ -4,7 +4,7 @@ Filecoin and IPFS are complementary protocols for storing and sharing data in th
 
 ## Incentivizing data reliability
 
-IPFS is a free and open-source network stack protocol that allows users to store and transfer verifiable data with each other. IPFS users persist data on the network by  [pinning](https://docs-beta.ipfs.io/concepts/persistence/#pinning-in-context) data on their own hardware, to a third-party cloud service (known as Pinning Services), or through community-oriented systems where a group of individual IPFS users share resources to ensure the content remains live.
+IPFS is a free and open-source network stack protocol that allows users to store and transfer verifiable data with each other. IPFS users persist data on the network by [pinning](https://docs-beta.ipfs.io/concepts/persistence/#pinning-in-context) data on their own hardware, to a third-party cloud service (known as Pinning Services), or through community-oriented systems where a group of individual IPFS users share resources to ensure the content remains live.
 
 The lack of a built-in incentive mechanism is the challenge that Filecoin hopes to solve by allowing users to incentivize long-term distributed storage at competitive prices through a marketplace of storage nodes, while maintaining the efficiency and resiliency provided by the IPFS network. 
 
@@ -20,7 +20,7 @@ Relying on peers to altruistically cache data might work well where one -- or mu
 
 ### Using Filecoin
 
-The final option is to use a decentralized storage marketplace, such as Filecoin. In Filecoin's structure, clients make regular small payments to store data at a specified availability, while miners earn these payments by continuously verifying this data's integrity, storing it, and ensuring it can be retrieved quickly. This allows users to incentivize Filecoin miners to ensure their content will be live when it's needed, a clear advantage over depending solely on the generosity of other network users as required with IPFS.
+The final option is to pin your data to a decentralized storage marketplace, such as Filecoin. In Filecoin's structure, clients make regular small payments to store data at a specified availability, while miners earn these payments by continuously verifying this data's integrity, storing it, and ensuring it can be retrieved quickly. This allows users to incentivize Filecoin miners to ensure their content will be live when it's needed, a clear advantage over depending solely on the generosity of other network users as required with using IPFS on its own.
 
 ## Filecoin, powered by IPFS
 
