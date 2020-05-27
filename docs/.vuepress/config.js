@@ -70,6 +70,7 @@ module.exports = {
             children: [
                 '/introduction/what-is-filecoin',
                 '/introduction/why-filecoin',
+                '/introduction/ipfs-and-filecoin',
                 '/introduction/filecoin-compared-to'
               ]
           },
