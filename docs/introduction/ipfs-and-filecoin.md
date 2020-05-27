@@ -1,8 +1,3 @@
----
-title: IPFS and Filecoin
-description: Learn more about the relationship and different use-cases between IPFS and Filecoin.
----
-
 # IPFS and Filecoin
 
 Filecoin and IPFS are complementary protocols for storing and sharing data in the decentralized web. While users aren’t required to use Filecoin and IPFS together, the two combined solve significant failings of the current web 2.0 infrastructure. This page aims to explain the relationship between the two protocols and assist users in deciding which option, or combination of options, is best suited for their use-case.
@@ -11,9 +6,7 @@ Filecoin and IPFS are complementary protocols for storing and sharing data in th
 
 IPFS is a free and open-source network stack protocol that allows users to store and transfer verifiable data with each other. IPFS users persist data on the network by  [pinning](https://docs-beta.ipfs.io/concepts/persistence/#pinning-in-context) data on their own hardware, to a third-party cloud service (known as Pinning Services), or through community-oriented systems where a group of individual IPFS users share resources to ensure the content remains live.
 
-The lack of a built-in incentive mechanism is the challenge that Filecoin hopes to solve by maintaining the efficiency and resiliency provided by the IPFS network, while also allowing users to incentivize long-term distributed storage at competitive prices through a marketplace of storage nodes. 
-
-Development around FIlecoin was and continues to be fully integrated with IPFS, including many shared core team members on both projects; and while other storage markets do exist, including on IPFS, this close relationship under the Protocol Labs umbrella ensures far better guarantees on longevity, reliability and overall user experience.
+The lack of a built-in incentive mechanism is the challenge that Filecoin hopes to solve by allowing users to incentivize long-term distributed storage at competitive prices through a marketplace of storage nodes, while maintaining the efficiency and resiliency provided by the IPFS network. 
 
 ## Different persistence strategies: which should I use?
 
@@ -21,7 +14,9 @@ Depending on your use case, one or multiple of these persistence strategies migh
 
 ### Using IPFS
 
-As mentioned: in IPFS, data is hosted via network pinning, primarily performed on an entirely voluntary, altruistic basis by other IPFS users. The secondary option is to use a centralized pinning service that utilizes AWS buckets or a similar cloud-service provider to store the data.  This situation is useful where one -- or multiple -- organizations share popular files on an internal network (intranet). For cases where the data isn't shared on an internal network, social contracts can be used to ensure the content remains hosted and maintained long-term.
+As mentioned: in IPFS, data is hosted by nodes pinning the desired data. To persist data when a user’s node is offline - users must either rely on other peers to voluntarily/altruistically pin their data, or  use a centralized pinning service (often running long lived host nodes on a  cloud-service provider) to store the data.  
+
+Relying on peers to altruistically cache data might work well where one -- or multiple -- organizations share popular files on an internal network (intranet). Or where strong social contracts can be used to ensure the content remains hosted and maintained long-term. Most users in the IPFS Network use a pinning service.
 
 ### Using Filecoin
 
