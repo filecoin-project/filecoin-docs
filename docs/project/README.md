@@ -12,7 +12,7 @@ The latest timing information is available in the [Filecoin Mainnet Roadmap](htt
 
 ## Research
 
-Learn about the ongoing cryptography research and design efforts that underpin the Filecoin protocol on the [Filecoin Research website](https://research.filecoin.io/).
+Learn about the ongoing cryptography research and design efforts that underpin the Filecoin protocol on the [Filecoin Research website](https://research.filecoin.io/). The [CryptoLab at Protocol Labs](https://research.protocol.ai/groups/cryptolab/) also actively researches improvements.
 
 ## Related projects
 
