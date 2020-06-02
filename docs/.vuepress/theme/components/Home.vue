@@ -50,6 +50,10 @@ export default {
               path: '/introduction/why-filecoin'
             },
             {
+              title: 'IPFS and Filecoin',
+              path: '/introduction/ipfs-and-filecoin'
+            },
+            {
               title: 'Filecoin compared to...',
               path: '/introduction/filecoin-compared-to'
             }
