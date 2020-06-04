@@ -24,7 +24,7 @@ Here are some scripts to set up your own remote networks for development:
 - [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container
 - [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
 
-## Developer network
+## Devnet
 In order to make testing easier, a live devnet (developer network) is now available for use. It features 512MB sectors and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
 To connect to the Devnet:
