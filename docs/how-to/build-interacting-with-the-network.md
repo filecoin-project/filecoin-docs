@@ -25,7 +25,7 @@ Here are some scripts to set up your own remote networks for development:
 - [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
 
 ## Developer network
-In order to speed up seal times and make testing easier, a live developer network is now available for use. It features 512MB sectors, which seal much faster than in the full Testnet version.
+In order to make testing easier, a live devnet (developer network) is now available for use. It features 512MB sectors and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
 In order to set up the developer network:
 
