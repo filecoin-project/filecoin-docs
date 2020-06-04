@@ -27,7 +27,7 @@ Here are some scripts to set up your own remote networks for development:
 ## Developer network
 In order to make testing easier, a live devnet (developer network) is now available for use. It features 512MB sectors and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
-In order to set up the developer network:
+To connect to the Devnet:
 
 1. Delete any existing local Lotus repository, if one is present.
 2. Build and run Lotus from the `interop.6.1` tag. This should automatically connect you to the proper bootstrappers.
