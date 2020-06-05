@@ -34,6 +34,10 @@ To connect to the Devnet:
 3. Once running, several miners are configured to auto-accept any proposed deals. A complete list is currently in the works, but miners `t01725`, `t01473` and `t01608` are a few to get you started.
 
  > **NOTICE:** At the moment, there are no guarantees on uptime for any of the auto-accepting miners. If one has gone offline or become unresponsive, please let us know in the Filecoin Slack.
+
+To tap the faucet or see dashboard for the devnet:
+- Devnet Faucet (to obtain mock FIL): https://t01000.miner.interopnet.kittyhawk.wtf
+- Devnet Dashboard (to check network and block status): https://interopnet.filscan.io
  
 ## Testnet
 
