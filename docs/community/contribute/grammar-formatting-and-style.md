@@ -21,7 +21,7 @@ While Filecoin is a global project, the fact is that American English is the mos
 
 ### The Oxford comma
 
-Follow each list of three or more items with a comma `,`:
+In a list of three or more items, follow each item except the last with a comma `,`:
 
 | Use                           | Don't use                    |
 | ----------------------------- | ---------------------------- |
