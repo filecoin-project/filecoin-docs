@@ -43,14 +43,14 @@ This section outlines the steps required to perform a storage deal through an of
 #### Generate a unique piece CID
 
 1. Use the Lotus client to generate a CAR file of the input:
-        ```
+    ```
     lotus client generate-car <inputPath> <outputPath>.
-        ```
+    ```
     
 2. Use the Lotus client to generate the piece CID:
-        ```
-        lotus client commP <inputCarFilePath> <minerAddress>
-        ```
+    ```
+    lotus client commP <inputCarFilePath> <minerAddress>
+    ```
 
 #### Identify a suitable miner
 (TODO how?)
