@@ -56,19 +56,20 @@ This section outlines the steps required to perform a storage deal through an of
 (TODO how?)
 
 ####  Propose an offline deal
+Propose the offline deal with the miner:
 
-1. Propose the offline deal with the miner:
-      ```
-      lotus client deal --manual-piece-cid=CID --manual-piece-size=datasize
-      ```
+```
+lotus client deal --manual-piece-cid=CID --manual-piece-size=datasize
+```
 #### Transfer the data to the miner offline
 This can be done many ways, such as shipping hard drives from the client to the storage miner.
 (TODO how do they get the miner's physical address?)
 
 #### Finalizing: The miner's role
-Once the first Proof of Spacetime (PoSt) hits the chain, the storage deal is considered active. The
-miner can import the data and deal manually with:
-        ```
-        lotus-storage-miner deals import-data <dealCid> <filePath>
-        ```
-        
+The miner can import the data and deal manually with:
+
+```            
+lotus-storage-miner deals import-data <dealCid> <filePath>
+```
+
+Once the first Proof of Spacetime (PoSt) hits the chain, the storage deal is considered active. 
