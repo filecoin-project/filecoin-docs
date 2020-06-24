@@ -68,11 +68,11 @@ module.exports = {
             title: 'Introduction',
             path: '/introduction/',
             children: [
-                '/introduction/what-is-filecoin',
-                '/introduction/why-filecoin',
-                '/introduction/ipfs-and-filecoin',
-                '/introduction/filecoin-compared-to'
-              ]
+              '/introduction/what-is-filecoin',
+              '/introduction/why-filecoin',
+              '/introduction/ipfs-and-filecoin',
+              '/introduction/filecoin-compared-to'
+            ]
           },
           {
             title: 'How-tos',
@@ -89,11 +89,11 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/store-prepare-data',
-                  '/how-to/store-tokens',
-                  '/how-to/store-making-storage-deals',
-                  '/how-to/store-retrieving-data',
-                  '/how-to/store-large-files'
+                  '/how-to/store/prepare-data',
+                  '/how-to/store/tokens',
+                  '/how-to/store/making-storage-deals',
+                  '/how-to/store/retrieving-data',
+                  '/how-to/store/large-files'
                 ]
               },
               {
@@ -101,25 +101,24 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/build-sample-architectures',
-                  '/how-to/build-wallets-signing-tools-api-clients',
-                  '/how-to/build-interacting-with-the-network'
+                  '/how-to/build/sample-architectures',
+                  '/how-to/build/wallets-signing-tools-api-clients',
+                  '/how-to/build/interacting-with-the-network'
                 ]
               }
             ]
           },
+
           {
             title: 'Reference',
             path: '/reference/',
             children: [
-              ['https://github.com/filecoin-project/specs',
-                'Specification'],
+              ['https://github.com/filecoin-project/specs', 'Specification'],
               [
                 'https://go.filecoin.io/go-filecoin-tutorial/Home.html',
                 'go-filecoin tutorial'
               ],
-              ['https://lotu.sh/',
-              'lotus tutorial']
+              ['https://lotu.sh/', 'lotus tutorial']
             ]
           },
           {

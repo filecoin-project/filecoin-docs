@@ -22,7 +22,7 @@ Once the client knows which miner(s) to ask for their data, the negotiation goes
 1. Client sends a `RetrievalDealProposal` (_Yes I like those terms, go ahead._)
 1. Miner sends a `RetrievalDealResponse` (_I accept your deal._)
 
-*Note: Today, retrieval deals must include all the data in a given storage deal. In the future, you’ll be able to use* [*IPLD selectors*](https://github.com/ipld/specs/blob/master/selectors/selectors.md) *in the RetrievalQuery to retrieve subsets of stored data.*
+_Note: Today, retrieval deals must include all the data in a given storage deal. In the future, you’ll be able to use_ [_IPLD selectors_](https://github.com/ipld/specs/blob/master/selectors/selectors.md) _in the RetrievalQuery to retrieve subsets of stored data._
 
 ### Fulfilling the retrieval deal
 

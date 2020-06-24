@@ -13,7 +13,6 @@ To simplify or automate how users make payments, you can integrate one or more o
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) (in progress) - web wallet built with Next.js that supports sending & receiving FIL from a Ledger device
 - Mobile and other wallet integrations (to come)
 
-
 ## Signing libraries
 
 Signing libraries can be used to sign transactions without requiring a dedicated node. This allows you to create signed transactions in an application that is running offline, on a mobile device, or anywhere. The signed transaction can then be submitted to any Filecoin API endpoint.
