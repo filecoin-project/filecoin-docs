@@ -68,6 +68,7 @@ module.exports = {
             title: 'Introduction',
             path: '/introduction/',
             children: [
+              '/introduction/new-to-web3',
               '/introduction/what-is-filecoin',
               '/introduction/why-filecoin',
               '/introduction/ipfs-and-filecoin',
@@ -95,15 +96,83 @@ module.exports = {
                   '/how-to/store/retrieving-data',
                   '/how-to/store/large-files'
                 ]
-              },
+              }
+            ]
+          },
+
+          {
+            title: 'Build',
+            path: '/build/',
+            children: [
               {
-                title: 'Build Apps',
+                title: 'Start Building',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/build/sample-architectures',
-                  '/how-to/build/wallets-signing-tools-api-clients',
-                  '/how-to/build/interacting-with-the-network'
+                  '/build/start-building/choose-the-right-architecture',
+                  '/build/start-building/interacting-with-the-network'
+                ]
+              },
+              {
+                title: 'Filecoin-backed Pinning Services',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/build/filecoin-backed-pinning-services/']
+              },
+              {
+                title: 'Powergate',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/build/powergate/']
+              },
+              {
+                title: 'Protocol Implementations',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/build/protocol-implementations/']
+              },
+              {
+                title: 'Developer Tools',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/build/developer-tools/wallets-signing-tools-api-clients'
+                ]
+              },
+              {
+                title: 'Examples',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/build/examples/sample-architectures',
+
+                  {
+                    title: 'Meme Marketplace',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/meme-marketplace/']
+                  },
+                  {
+                    title: 'Simple Pinning Service',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/pinning-service/']
+                  },
+                  {
+                    title: 'Filecoin GUI',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: [
+                      'build/examples/filecoin-gui/page-1',
+                      'build/examples/filecoin-gui/page-2'
+                    ]
+                  },
+                  {
+                    title: 'Network Inspector',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/network-inspector/']
+                  }
                 ]
               }
             ]
@@ -114,10 +183,6 @@ module.exports = {
             path: '/reference/',
             children: [
               ['https://github.com/filecoin-project/specs', 'Specification'],
-              [
-                'https://go.filecoin.io/go-filecoin-tutorial/Home.html',
-                'go-filecoin tutorial'
-              ],
               ['https://lotu.sh/', 'lotus tutorial']
             ]
           },

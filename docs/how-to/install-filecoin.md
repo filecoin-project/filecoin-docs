@@ -1,10 +1,10 @@
 ---
-title: Installing Filecoin
+title: Install Filecoin
 sidebarDepth: 0
-description: Learn how to install Filecoin.
+description: Learn how to get started with Filecoin.
 ---
 
-# Installing Filecoin
+# Install Filecoin
 
 Filecoin currently has 2 full-node, command-line implementations:
 
