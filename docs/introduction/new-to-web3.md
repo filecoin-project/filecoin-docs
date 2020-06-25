@@ -20,9 +20,24 @@ We recommend getting started by perusing the following resources.
 
 ## IPFS, libp2p, and Filecoin
 
-- IPFS - [A beginner's guide to IPFS](https://hackernoon.com/a-beginners-guide-to-ipfs-20673fedd3f) - [IPFS concepts](https://docs.ipfs.io/concepts/) - [ProtoSchool tutorials](https://proto.school/#/tutorials)
-- libp2p - [Why libp2p?](https://www.parity.io/why-libp2p/) - [lib2p: A Modular, p2p Networking Stack](https://www.youtube.com/watch?v=xqVmEzsin3Y)
-- Filecoin - [Introducing Filecoin, a decentralized storage network](https://www.youtube.com/watch?v=EClPAFPeXIQ) - [What is Filecoin?](/introduction/what-is-filecoin) - [Why Filecoin?](/introduction/why-filecoin) - [Filecoin primer](https://ipfs.io/ipfs/QmWimYyZHzChb35EYojGduWHBdhf9SD5NHqf8MjZ4n3Qrr/Filecoin-Primer.7-25.pdf) - [Building the Filecoin ecosystem](https://youtu.be/SXlTBvcqzz8)
+### IPFS
+
+- [A beginner's guide to IPFS](https://hackernoon.com/a-beginners-guide-to-ipfs-20673fedd3f)
+- [IPFS concepts](https://docs.ipfs.io/concepts/)
+- [ProtoSchool tutorials](https://proto.school/#/tutorials)
+
+### libp2p
+
+- [Why libp2p?](https://www.parity.io/why-libp2p/)
+- [lib2p: A Modular, p2p Networking Stack](https://www.youtube.com/watch?v=xqVmEzsin3Y)
+
+### Filecoin
+
+- [Introducing Filecoin, a decentralized storage network](https://www.youtube.com/watch?v=EClPAFPeXIQ)
+- [What is Filecoin?](/introduction/what-is-filecoin)
+- [Why Filecoin?](/introduction/why-filecoin)
+- [Filecoin primer](https://ipfs.io/ipfs/QmWimYyZHzChb35EYojGduWHBdhf9SD5NHqf8MjZ4n3Qrr/Filecoin-Primer.7-25.pdf)
+- [Building the Filecoin ecosystem](https://youtu.be/SXlTBvcqzz8)
 
 ## What's next
 

@@ -117,19 +117,19 @@ module.exports = {
                 title: 'Filecoin-backed Pinning Services',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/build/filecoin-backed-pinning-services/']
+                children: ['/build/filecoin-backed-pinning-services/overview']
               },
               {
                 title: 'Powergate',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/build/powergate/']
+                children: ['/build/powergate/overview']
               },
               {
                 title: 'Protocol Implementations',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/build/protocol-implementations/']
+                children: ['/build/protocol-implementations/overview']
               },
               {
                 title: 'Developer Tools',
@@ -154,28 +154,25 @@ module.exports = {
                     title: 'Meme Marketplace',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/meme-marketplace/']
+                    children: ['build/examples/meme-marketplace/overview']
                   },
                   {
                     title: 'Simple Pinning Service',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/pinning-service/']
+                    children: ['build/examples/simple-pinning-service/overview']
                   },
                   {
                     title: 'Filecoin GUI',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: [
-                      'build/examples/filecoin-gui/page-1',
-                      'build/examples/filecoin-gui/page-2'
-                    ]
+                    children: ['build/examples/filecoin-gui/overview']
                   },
                   {
                     title: 'Network Inspector',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/network-inspector/']
+                    children: ['build/examples/network-inspector/overview']
                   }
                 ]
               }
