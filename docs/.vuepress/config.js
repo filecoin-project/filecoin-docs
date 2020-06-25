@@ -136,7 +136,11 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/build/developer-tools/wallets-signing-tools-api-clients'
+                  '/build/developer-tools/wallets-signing-tools-api-clients',
+                  [
+                    'https://github.com/filecoin-project/docs/wiki#community-resources',
+                    'Filecoin Community Resources'
+                  ]
                 ]
               },
               {
