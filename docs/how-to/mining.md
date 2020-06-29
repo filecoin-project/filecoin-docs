@@ -21,7 +21,7 @@ In the current implementation, the focus is mostly on storage miners, which sell
 ### Coming from another ecosystem?
 <-- TBD -->
 
-## Hardware requirements
+## Hardware recommendations
 
 The current recommended system specifications for operating a storage miner are:
 
