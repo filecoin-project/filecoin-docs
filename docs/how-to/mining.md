@@ -51,9 +51,11 @@ For comprehensive information on how deals are performed on the Filecoin network
 
 ## Getting rewards
 
-Rewards are automatically deposited into a miner's associated withdrawl wallet as they continue to perform their duties over time. Miners also have a chance at recieving a block reward, allowing them to receive the collected fees associated with it. Their chance at receiving this reward is directly proportional to the amount of storage space the miner is contributing to the network.
+In Filecoin, miners are able to received two different types of rewards for their efforts: storage fees, and block rewards.
 
-All rewards are briefly locked upon being received <-- until certain confirmation count or? -->
+**Storage fees** are the fees paid regularly by clients after a deal has been reached. These fees are automatically deposited into a miner's associated withdrawl wallet as they continue to perform their duties over time, and  are briefly locked upon being received <-- until certain confirmation count or? -->
+
+**Block rewards** are large sums that are given to the miner credited for a new block. Unlike storage fees, these rewards do not come from an associated client; rather, the network "prints" new FIL as both an inflationary measure and an incentive to miners advancing the chain. All active miners on the network have a chance at recieving a block reward, their chance at such being directly proportional to the amount of storage space currently being contributed to the network.
 
 <-- checking rewards --> 
 
@@ -62,12 +64,15 @@ All rewards are briefly locked upon being received <-- until certain confirmatio
 ## Uptime, slashing and penalties
 <-- intro and links to slashing resources -->
 
-### PoSt challenge windows
+"Slashing" is a feature present in most blockchain protocols, and is used to penalise miners that either fail to provide reliable uptime or act maliciously against the network.
 
-In order to test miners uptime quality, PoSt challenges are issued every 24 hours. A miner can miss several of these challenges before eventually being penalized for their inactivity.
+In Filecoin, miners are succeptible to two different kinds of slashing: **storage fault slashing**, and **consensus fault slashing**.
 
-<-- checking PoSt window? ->
+**Storage fault slashing** is a term that is used to encompass a broader set of penalties, including (but not limited to) **fault fees**, **sector penalties** and **termination fees**. These penalties are to be paid by miners if they fail to provide sector reliability or decide to voluntarily exit the network.
 
-### Slashing for malicious actions
+* A **fault fee** is a penalty that a miner incurs for each day a miner’s sector is offline.
+* A **sector penalty:** is a penalty that a miner incurs for a faulted sector that was not declared faulted before a [WindowPoSt check](#window-post-checks) occurs.
+   * The sector will pay a Fault Fee after a Sector Penalty once the fault is detected
+* A **termination fee:** is a penalty that a miner incurs when a sector is voluntarily or involuntarily terminated and is removed from the network.
 
-Miners may also recieve a heavy slashing for performing an action that goes against the network itself, such as submitting 2 blocks built on the same parent tipset. 
+**Consensus fault slashing** is the penalty that a miner incurs for committing consensus faults. This penalty is applied to miners that have acted maliciously against the network’s consensus functionality.
