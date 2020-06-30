@@ -18,9 +18,6 @@ The Filecoin network will have multiple types of miners:
 
 In the current implementation, the focus is mostly on storage miners, which sell storage capacity in exchange for FIL. The below sections discuss how to initiate, maintain and receive rewards for a storage miner.
 
-### Coming from another ecosystem?
-<-- TBD -->
-
 ## Hardware recommendations
 
 The current recommended system specifications for operating a storage miner are:
@@ -30,22 +27,13 @@ The current recommended system specifications for operating a storage miner are:
 * A dedicated SSD to act as a large cache store (512GB+)
 * A large amount of RAM for computing data replication (128GB+)
 
-### Aren't these requirements comparatively high?
-
-<-- still need to think about how to phrase this -->
-
 ## Getting started as a miner
 
 For instructions on getting the Filecoin network running and a miner initialized, see the [Lotus client manual](https://lotu.sh/).
 
 ## All about deals
 
-<-- bckground -->
-
-<-- instructions, setting up ask - need advising here -->
-
-By default, all Filecoin miners are set to auto-accept any deal that meets their criteria. For those that wish to curate the deals being stored on their system, it is possible to disable the auto-accepting feature with:
-<-- need lotus instructions-->
+By default, all Filecoin miners are set to auto-accept any deal that meets their criteria. For those that wish to curate the deals being stored on their system, it is possible to disable the auto-accepting feature.
 
 For comprehensive information on how deals are performed on the Filecoin network, see [this section of the documentation](https://docs.filecoin.io/how-to/store-making-storage-deals/).
 
@@ -53,16 +41,11 @@ For comprehensive information on how deals are performed on the Filecoin network
 
 In Filecoin, miners earn two different types of rewards for their efforts: storage fees and block rewards.
 
-**Storage fees** are the fees paid regularly by clients after a deal has been reached, in exchange for storing data. These fees are automatically deposited into a miner's associated withdrawal wallet as they continue to perform their duties over time, and are briefly locked upon being received <-- until certain confirmation count or? -->
+**Storage fees** are the fees paid regularly by clients after a deal has been reached, in exchange for storing data. These fees are automatically deposited into a miner's associated withdrawal wallet as they continue to perform their duties over time, and are briefly locked upon being received.
 
 **Block rewards** are large sums that are given to the miner credited for a new block. Unlike storage fees, these rewards do not come from an associated client; rather, the network "prints" new FIL as both an inflationary measure and an incentive to miners advancing the chain. All active miners on the network have a chance at recieving a block reward, their chance at such being directly proportional to the amount of storage space currently being contributed to the network.
 
-<-- checking rewards --> 
-
-<-- withdraw instructions -->
-
 ## Uptime, slashing and penalties
-<-- intro and links to slashing resources -->
 
 "Slashing" is a feature present in most blockchain protocols, and is used to penalise miners that either fail to provide reliable uptime or act maliciously against the network.
 
