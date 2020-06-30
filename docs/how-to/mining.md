@@ -68,7 +68,7 @@ In Filecoin, miners are able to received two different types of rewards for thei
 
 In Filecoin, miners are succeptible to two different kinds of slashing: **storage fault slashing**, and **consensus fault slashing**.
 
-**Storage fault slashing** is a term that is used to encompass a broader set of penalties, including (but not limited to) **fault fees**, **sector penalties** and **termination fees**. These penalties are to be paid by miners if they fail to provide sector reliability or decide to voluntarily exit the network.
+**Storage fault slashing** is a term that is used to encompass a broader set of penalties, including (but not limited to) fault fees, sector penalties and termination fees. These penalties are to be paid by miners if they fail to provide sector reliability or decide to voluntarily exit the network.
 
 * A **fault fee** is a penalty that a miner incurs for each day a miner’s sector is offline.
 * A **sector penalty:** is a penalty that a miner incurs for a faulted sector that was not declared faulted before a [WindowPoSt check](#window-post-checks) occurs.
