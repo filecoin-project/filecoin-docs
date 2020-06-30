@@ -1,3 +1,8 @@
+---
+title: Mining in Filecoin
+description: An overview of everything mining-related on the Filecoin network.
+---
+
 # Mining in Filecoin
 
 In most blockchain protocols, "miners" are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency. The term "miner" emerged in the initial Proof-of-Work era, comparing the work done by hardware miners using computational power to secure blockchains with that of gold miners whom expended vast physical resources for a chance at a large payout.
