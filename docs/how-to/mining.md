@@ -51,9 +51,9 @@ For comprehensive information on how deals are performed on the Filecoin network
 
 ## Getting rewards
 
-In Filecoin, miners are able to received two different types of rewards for their efforts: storage fees, and block rewards.
+In Filecoin, miners earn two different types of rewards for their efforts: storage fees and block rewards.
 
-**Storage fees** are the fees paid regularly by clients after a deal has been reached. These fees are automatically deposited into a miner's associated withdrawl wallet as they continue to perform their duties over time, and  are briefly locked upon being received <-- until certain confirmation count or? -->
+**Storage fees** are the fees paid regularly by clients after a deal has been reached, in exchange for storing data. These fees are automatically deposited into a miner's associated withdrawal wallet as they continue to perform their duties over time, and are briefly locked upon being received <-- until certain confirmation count or? -->
 
 **Block rewards** are large sums that are given to the miner credited for a new block. Unlike storage fees, these rewards do not come from an associated client; rather, the network "prints" new FIL as both an inflationary measure and an incentive to miners advancing the chain. All active miners on the network have a chance at recieving a block reward, their chance at such being directly proportional to the amount of storage space currently being contributed to the network.
 
