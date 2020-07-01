@@ -23,16 +23,16 @@ Those who prefer to maintain their own infrastructure can look to solutions like
 The following FPS solutions are live today:
 
 - [**Textile Buckets**](https://docs.textile.io/buckets/): Textile Buckets is a hosted service that allows development teams to build software projects end-to-end on a decentralized DB and storage stack. Check out this recent blog post for some relevant features of Textile Buckets.
-- **ChainSafe**: Coming soon (August 2020)
-- **Pinata**: Filecoin persistence coming soon (August 2020), IPFS pinning available today
+- **ChainSafe**: Coming soon (August 2020).
+- **Pinata**: Filecoin persistence coming soon (August 2020), IPFS pinning available today.
 
 While each FPS provider will have slightly different instructions for utilizing the service, the general flow remains the same:
 
-- Create and configure your account with the FPS provider
-- Retrieve your auth token for the FPS provider
-- Make storage requests through the API of the service you are using
-- Maintain and monitor your data storage
-- Retrieve your data through the API of the service you are using
+- Create and configure your account with the FPS provider.
+- Retrieve your auth token for the FPS provider.
+- Make storage requests through the API of the service you are using.
+- Maintain and monitor your data storage.
+- Retrieve your data through the API of the service you are using.
 
 This section will be updated with documentation links for additional FPS providers as they come online.
 
