@@ -4,3 +4,5 @@ description: Choose the right architecture to integrate Filecoin into your appli
 ---
 
 # Choose the right architecture
+
+TODO
