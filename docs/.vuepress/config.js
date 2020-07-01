@@ -133,7 +133,7 @@ module.exports = {
                     'https://github.com/filecoin-project/docs/wiki#community-resources',
                     'Filecoin Community Resources'
                   ],
-                  ['http://filecoin.onrender.com/', 'Filecoin Design System']
+                  ['http://filecoin.onrender.com/', 'Component Design System']
                 ]
               },
               {
