@@ -114,22 +114,14 @@ module.exports = {
                 ]
               },
               {
-                title: 'Filecoin-backed Pinning Services',
+                title: 'Core Products',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/build/filecoin-backed-pinning-services/overview']
-              },
-              {
-                title: 'Powergate',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/build/powergate/overview']
-              },
-              {
-                title: 'Protocol Implementations',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/build/protocol-implementations/overview']
+                children: [
+                  '/build/core-products/filecoin-backed-pinning-services',
+                  '/build/core-products/powergate',
+                  '/build/core-products/protocol-implementations'
+                ]
               },
               {
                 title: 'Developer Tools',
@@ -140,7 +132,8 @@ module.exports = {
                   [
                     'https://github.com/filecoin-project/docs/wiki#community-resources',
                     'Filecoin Community Resources'
-                  ]
+                  ],
+                  ['http://filecoin.onrender.com/', 'Filecoin Design System']
                 ]
               },
               {
