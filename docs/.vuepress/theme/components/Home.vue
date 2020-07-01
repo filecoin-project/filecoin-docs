@@ -1,12 +1,15 @@
 <template>
   <main class="home">
     <div class="theme-default-content">
-      <Content class="intro"/>
+      <Content class="intro" />
       <div class="grid">
         <div
           v-for="(category, i) in manualSidebar"
           :key="i"
-          v-bind:class="{'category': true, 'meta': category.title === 'Community' || category.title === 'Project'}"
+          v-bind:class="{
+            category: true,
+            meta: category.title === 'Community' || category.title === 'Project'
+          }"
         >
           <h2>
             <RouterLink :to="category.path" class="title">
@@ -14,12 +17,12 @@
             </RouterLink>
           </h2>
           <p v-for="(item, j) in category.children" :key="j">
-            <RouterLink v-if="!isExternal(item.path)"  :to="item.path">
+            <RouterLink v-if="!isExternal(item.path)" :to="item.path">
               {{ item.title }}
             </RouterLink>
             <a v-else :href="item.path" target="_blank">
               {{ item.title }}
-              <OutboundLink/>
+              <OutboundLink />
             </a>
           </p>
         </div>
@@ -29,7 +32,6 @@
 </template>
 
 <script>
-
 import { isExternal } from '@parent-theme/util/'
 
 export default {
@@ -86,18 +88,6 @@ export default {
             {
               title: 'Very large files',
               path: '/how-to/store-large-files'
-            },
-            {
-              title: 'Sample architectures',
-              path: '/how-to/build-sample-architectures'
-            },
-            {
-              title: 'Wallets, signing tools and API clients',
-              path: '/how-to/build-wallets-signing-tools-api-clients'
-            },
-            {
-              title: 'Interacting with the network',
-              path: '/how-to/build-interacting-with-the-network'
             }
           ]
         },
@@ -151,7 +141,6 @@ export default {
               title: 'Docs: Contribution tutorial',
               path: '/community/contribute/contribution-tutorial'
             }
-
           ]
         },
         {
@@ -160,7 +149,8 @@ export default {
           children: [
             {
               title: 'Roadmap',
-              path: 'https://app.instagantt.com/shared/s/1152992274307505/latest'
+              path:
+                'https://app.instagantt.com/shared/s/1152992274307505/latest'
             },
             {
               title: 'Research',
@@ -172,7 +162,8 @@ export default {
             },
             {
               title: 'Code of conduct',
-              path: 'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md'
+              path:
+                'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md'
             }
           ]
         }

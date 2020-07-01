@@ -10,14 +10,7 @@ homepage: true
 
 Available storage and pricing is not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in.
 
-There are many ways to participate in the Filecoin network, and several libraries, tools, products, and services to choose from. You can start by checking out the pathways in the page below, or by exploring the main site menu to [learn about Filecoin](/introduction), work through our [guides](/how-to) and [examples](), or utilize our API and CLI references, among other resources.
+There are many ways to participate in the Filecoin network, and several libraries, tools, products, and services to choose from:
 
-## New to web3?
-
-Welcome! Check out some of the resources in [this guide](/introduction/new-to-web3).
-
-## Filecoin-backed pinning services
-
-## Powergate
-
-## Core Protocol Implementations
+- If you're new to web3 and Filecoin, we recommend checking out the resources in [this guide](/introduction/new-to-web3).
+- If you're a developer looking to get started building on Filecoin, check out the [Build section](/build/).

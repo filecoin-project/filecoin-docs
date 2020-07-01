@@ -8,7 +8,7 @@ description: Learn how to get started with Filecoin.
 
 To install and run a Filecoin protocol implementation from the command-line, we recommend you install [lotus](https://github.com/filecoin-project/lotus), a Filecoin protocol implementation in Go. You can find installation instructions on the [lotus documentation site](https://lotu.sh/en+getting-started).
 
-For more ways to install and use Filecoin, check out the [Build section](../build).
+For more ways to install and use Filecoin, check out the [Build section](../build/).
 
 ### Before you begin:
 

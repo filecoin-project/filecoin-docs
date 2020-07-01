@@ -156,10 +156,10 @@ module.exports = {
                     children: ['build/examples/simple-pinning-service/overview']
                   },
                   {
-                    title: 'Filecoin GUI',
+                    title: 'Slate',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/filecoin-gui/overview']
+                    children: ['build/examples/slate/overview']
                   },
                   {
                     title: 'Network Inspector',
