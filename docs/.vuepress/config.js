@@ -108,10 +108,7 @@ module.exports = {
                 title: 'Start Building',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: [
-                  '/build/start-building/choose-the-right-architecture',
-                  '/build/start-building/interacting-with-the-network'
-                ]
+                children: ['/build/start-building/interacting-with-the-network']
               },
               {
                 title: 'Core Products',

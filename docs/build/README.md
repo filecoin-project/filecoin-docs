@@ -9,7 +9,6 @@ Filecoin is for the builders. If you are excited about the potential of leveragi
 
 Read the resources in the **Start Building** section before you begin for helpful pointers on application architecture and networks to use when interacting and testing with Filecoin.
 
-- [Choose the right architecture](./start-building/choose-the-right-architecture/)
 - [Interacting with the network](./start-building/interacting-with-the-network/)
 
 **Core Products** gives you an overview of the three main categories of products that we recommend to developers, and high-level pointers on how to run and integrate them in your application.
