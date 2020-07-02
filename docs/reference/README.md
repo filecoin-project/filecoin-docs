@@ -5,7 +5,7 @@ description: Helpful reference materials for the Filecoin specification and impl
 
 # Reference
 
-Ready to dig deeper into the Filecoin specification and implementations? We've got you covered. 
+Ready to dig deeper into the Filecoin specification and implementations? We've got you covered.
 
 ## Filecoin specification
 
@@ -19,3 +19,11 @@ Explore Filecoin's 2 full-node, command-line implementations:
   - [Tutorial to install lotus](https://docs.lotu.sh/)
 - [go-filecoin](https://github.com/filecoin-project/go-filecoin) (Go)
   - [Tutorial to install go-filecoin](https://go.filecoin.io/go-filecoin-tutorial/Home.html)
+
+## API Reference
+
+[TODO]
+
+## CLI Reference
+
+[TODO]

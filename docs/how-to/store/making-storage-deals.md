@@ -9,11 +9,11 @@ Once a client has prepared their data and added tokens to their wallet, they can
 
 ### Discovering storage miners
 
-In the discovery phase, clients identify the miners who might be able to store their data. They start by querying the chain for the list of registered miners, and sends each miner a request for its storage ask (short for *asking price*).
+In the discovery phase, clients identify the miners who might be able to store their data. They start by querying the chain for the list of registered miners, and sends each miner a request for its storage ask (short for _asking price_).
 
 The storage ask contains details such as price, duration, and available storage capacity. Clients use these details to choose their preferred miner.
 
-*Note: In the near future, 3rd party reputation systems will allow clients to check for geography, miner reputation, and other factors.*
+_Note: In the near future, 3rd party reputation systems will allow clients to check for geography, miner reputation, and other factors._
 
 ### Negotiating the storage deal
 

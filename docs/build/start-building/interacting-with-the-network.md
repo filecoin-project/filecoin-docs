@@ -14,6 +14,7 @@ You can run this node yourself or choose a hosted option. Running your own node 
 ## Local networks
 
 Here are some ways to spin up a mock version of the Filecoin network on your own machine(s), for quick testing and development:
+
 - [Simple local devnet for lotus](https://lotu.sh/en+setup-local-dev-net)
 - [Containerized devnet using mocked sectorbuilder](https://github.com/textileio/lotus-devnet) (aka mocked mining)
 - [Additional containers & virtualization scripts](https://github.com/filecoin-project/docs/wiki#containers--virtualization)
@@ -21,10 +22,12 @@ Here are some ways to spin up a mock version of the Filecoin network on your own
 ## Running your own remote network
 
 Here are some scripts to set up your own remote networks for development:
+
 - [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container
 - [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
 
 ## Devnet
+
 In order to make testing easier, a live devnet (developer network) is now available for use. It features 512MB sectors and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
 To connect to the Devnet:
@@ -33,17 +36,19 @@ To connect to the Devnet:
 2. Build and run Lotus from branch `interopnet (bead3bf)`, `tag interop.6.16.0`. This should automatically connect you to the proper bootstrappers.
 3. Once running, several miners are configured to auto-accept any proposed deals.
 
- > **NOTICE:** At the moment, there are no guarantees on uptime for any of the auto-accepting miners. If one has gone offline or become unresponsive, please let us know in the Filecoin Slack.
+> **NOTICE:** At the moment, there are no guarantees on uptime for any of the auto-accepting miners. If one has gone offline or become unresponsive, please let us know in the Filecoin Slack.
 
 To tap the faucet or see dashboard for the devnet:
+
 - Devnet Faucet (to obtain mock FIL): https://t01000.miner.interopnet.kittyhawk.wtf
 - Devnet Dashboard (to check network and block status): https://interopnet.filscan.io
- 
+
 ## Testnet
 
 [Filecoin Testnet](https://filecoin.io/testnet/) is a live community test network, under active development.
 
 ### Hosted nodes for testnet
+
 The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
 
 ## Mainnet

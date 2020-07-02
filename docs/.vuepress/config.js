@@ -68,11 +68,12 @@ module.exports = {
             title: 'Introduction',
             path: '/introduction/',
             children: [
-                '/introduction/what-is-filecoin',
-                '/introduction/why-filecoin',
-                '/introduction/ipfs-and-filecoin',
-                '/introduction/filecoin-compared-to'
-              ]
+              '/introduction/new-to-web3',
+              '/introduction/what-is-filecoin',
+              '/introduction/why-filecoin',
+              '/introduction/ipfs-and-filecoin',
+              '/introduction/filecoin-compared-to'
+            ]
           },
           {
             title: 'How-tos',
@@ -90,37 +91,91 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/how-to/mining',
-                  '/how-to/store-prepare-data',
-                  '/how-to/store-tokens',
-                  '/how-to/store-making-storage-deals',
-                  '/how-to/store-retrieving-data',
-                  '/how-to/store-large-files'
-                ]
-              },
-              {
-                title: 'Build Apps',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/build-sample-architectures',
-                  '/how-to/build-wallets-signing-tools-api-clients',
-                  '/how-to/build-interacting-with-the-network'
+                  '/how-to/store/prepare-data',
+                  '/how-to/store/tokens',
+                  '/how-to/store/making-storage-deals',
+                  '/how-to/store/retrieving-data',
+                  '/how-to/store/large-files'
                 ]
               }
             ]
           },
+
+          {
+            title: 'Build',
+            path: '/build/',
+            children: [
+              {
+                title: 'Start Building',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/build/start-building/interacting-with-the-network']
+              },
+              {
+                title: 'Core Products',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/build/core-products/filecoin-backed-pinning-services',
+                  '/build/core-products/powergate',
+                  '/build/core-products/protocol-implementations'
+                ]
+              },
+              {
+                title: 'Developer Tools',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/build/developer-tools/wallets-signing-tools-api-clients',
+                  [
+                    'https://github.com/filecoin-project/docs/wiki#community-resources',
+                    'Filecoin Community Resources'
+                  ],
+                  ['http://filecoin.onrender.com/', 'Component Design System']
+                ]
+              },
+              {
+                title: 'Examples',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/build/examples/sample-architectures',
+
+                  {
+                    title: 'Meme Marketplace',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/meme-marketplace/overview']
+                  },
+                  {
+                    title: 'Simple Pinning Service',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/simple-pinning-service/overview']
+                  },
+                  {
+                    title: 'Slate',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/slate/overview']
+                  },
+                  {
+                    title: 'Network Inspector',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/network-inspector/overview']
+                  }
+                ]
+              }
+            ]
+          },
+
           {
             title: 'Reference',
             path: '/reference/',
             children: [
-              ['https://github.com/filecoin-project/specs',
-                'Specification'],
-              [
-                'https://go.filecoin.io/go-filecoin-tutorial/Home.html',
-                'go-filecoin tutorial'
-              ],
-              ['https://lotu.sh/',
-              'lotus tutorial']
+              ['https://github.com/filecoin-project/specs', 'Specification'],
+              ['https://lotu.sh/', 'lotus tutorial']
             ]
           },
           {
