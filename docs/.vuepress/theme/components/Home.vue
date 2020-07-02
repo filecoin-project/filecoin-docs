@@ -91,6 +91,16 @@ export default {
             }
           ]
         },
+                {
+          title: 'Mine',
+          path: '/mine',
+          children: [
+            {
+              title: 'Mining overview',
+              path: '/mine/mining'
+            }
+          ]
+        },
         {
           title: 'Reference',
           path: '/reference',
