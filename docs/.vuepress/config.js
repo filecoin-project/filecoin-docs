@@ -100,7 +100,14 @@ module.exports = {
               }
             ]
           },
-
+          {
+            title: 'Mine',
+            path: '/mine/',
+            children: [
+              ['mine/mining'
+              
+            ]
+          },
           {
             title: 'Build',
             path: '/build/',
