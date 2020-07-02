@@ -38,7 +38,3 @@ We recommend getting started by perusing the following resources.
 - [Why Filecoin?](/introduction/why-filecoin)
 - [Filecoin primer](https://ipfs.io/ipfs/QmWimYyZHzChb35EYojGduWHBdhf9SD5NHqf8MjZ4n3Qrr/Filecoin-Primer.7-25.pdf)
 - [Building the Filecoin ecosystem](https://youtu.be/SXlTBvcqzz8)
-
-## What's next
-
-Once you're ready to dive in and start using or integrating Filecoin, you can jump into our [Getting Started guide]().

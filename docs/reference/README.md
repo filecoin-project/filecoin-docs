@@ -13,17 +13,4 @@ View the [technical specification](https://github.com/filecoin-project/specs) fo
 
 ## Implementations
 
-Explore Filecoin's 2 full-node, command-line implementations:
-
-- [lotus](https://github.com/filecoin-project/lotus) (Go)
-  - [Tutorial to install lotus](https://docs.lotu.sh/)
-- [go-filecoin](https://github.com/filecoin-project/go-filecoin) (Go)
-  - [Tutorial to install go-filecoin](https://go.filecoin.io/go-filecoin-tutorial/Home.html)
-
-## API Reference
-
-[TODO]
-
-## CLI Reference
-
-[TODO]
+Read more about Filecoin's protocol implementations [here](../build/core-products/protocol-implementations).
