@@ -90,7 +90,6 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/mining',
                   '/how-to/store/prepare-data',
                   '/how-to/store/tokens',
                   '/how-to/store/making-storage-deals',
