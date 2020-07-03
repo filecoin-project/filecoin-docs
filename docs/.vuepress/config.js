@@ -48,8 +48,8 @@ module.exports = {
     },
     editLinks: false,
     // page nav
-    nextLinks: false,
-    prevLinks: false,
+    nextLinks: true,
+    prevLinks: true,
     // ui/ux
     logo: '/images/filecoin-symbol-color.svg',
     locales: {
