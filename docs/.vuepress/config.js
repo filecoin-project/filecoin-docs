@@ -102,10 +102,7 @@ module.exports = {
           {
             title: 'Mine',
             path: '/mine/',
-            children: [
-              'mine/mining'
-              
-            ]
+            children: ['mine/mining']
           },
           {
             title: 'Build',
@@ -232,7 +229,7 @@ module.exports = {
     }
   },
   plugins: [
-    ['@vuepress/plugin-back-to-top', true],
+    '@vuepress/plugin-back-to-top',
     [
       '@vuepress/active-header-links',
       {
@@ -300,12 +297,5 @@ module.exports = {
       }
     ]
   ],
-  extraWatchFiles: ['.vuepress/nav/en.js'],
-  configureWebpack: (config, isServer) => {
-    if (!isServer) {
-      config.entry = {
-        app: ['./docs/.vuepress/public-path.js', config.entry.app[0]]
-      }
-    }
-  }
+  extraWatchFiles: ['.vuepress/nav/en.js']
 }
