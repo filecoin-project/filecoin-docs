@@ -1,4 +1,7 @@
 // .vuepress/config.js
+
+const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
+
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -36,7 +39,7 @@ module.exports = {
       'Filecoin, crypto, mining, blockchain, IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'filecoin-project/filecoin-docs',
-    domain: 'https://docs.filecoin.io/',
+    domain: DEPLOY_DOMAIN,
     docsRepo: 'filecoin-project/filecoin-docs',
     docsDir: 'docs',
     docsBranch: 'master',
@@ -293,7 +296,7 @@ module.exports = {
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
-        baseURL: 'https://docs.filecoin.io/'
+        baseURL: DEPLOY_DOMAIN
       }
     ],
     'vuepress-plugin-ipfs'
