@@ -59,8 +59,9 @@ This section outlines the steps required to perform a storage deal through an of
 Propose the offline deal with the miner:
 
 ```
-lotus client deal --manual-piece-cid=CID --manual-piece-size=datasize
+lotus client deal <Data CID> <miner> <price> <duration>
 ```
+
 #### Transfer the data to the miner offline
 This can be done many ways, such as shipping hard drives from the client to the storage miner.
 (TODO how do they get the miner's physical address?)
