@@ -292,6 +292,18 @@ module.exports = {
       }
     ],
     [
+      'vuepress-plugin-sitemap',
+      {
+        hostname: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      'vuepress-plugin-robots',
+      {
+        host: DEPLOY_DOMAIN
+      }
+    ],
+    [
       'vuepress-plugin-canonical',
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
