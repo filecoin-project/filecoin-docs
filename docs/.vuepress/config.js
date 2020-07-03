@@ -90,7 +90,6 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/mining',
                   '/how-to/store/prepare-data',
                   '/how-to/store/tokens',
                   '/how-to/store/making-storage-deals',
@@ -100,7 +99,14 @@ module.exports = {
               }
             ]
           },
-
+          {
+            title: 'Mine',
+            path: '/mine/',
+            children: [
+              'mine/mining'
+              
+            ]
+          },
           {
             title: 'Build',
             path: '/build/',
