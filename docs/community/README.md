@@ -9,7 +9,7 @@ Filecoin is home to a vibrant, diverse community of thousands of contributors an
 
 ## Ways to contribute
 
-No matter your area of specialty or level of expertise, there are many [ways to contribute](/community/contribute/ways-to-contribute/) to Filecoin and make a real difference in the Filecoin community at large.
+No matter your area of specialty or level of expertise, there are many [ways to contribute](./contribute/ways-to-contribute/) to Filecoin and make a real difference in the Filecoin community at large.
 
 ## Filecoin forums
 
