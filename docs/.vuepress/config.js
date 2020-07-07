@@ -311,6 +311,7 @@ module.exports = {
         baseURL: DEPLOY_DOMAIN
       }
     ],
+    'vuepress-plugin-check-md',
     'vuepress-plugin-ipfs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']

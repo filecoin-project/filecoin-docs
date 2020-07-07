@@ -13,9 +13,9 @@ Mining in Filecoin works quite differently however -- instead of contributing co
 
 The Filecoin network will have multiple types of miners:
 
-* Storage miners, responsible for storing files and data on the network.
-* Retrieval miners, responsible for providing quick pipes to retrieve files.
-* Repair miners, which are to be implemented.
+- Storage miners, responsible for storing files and data on the network.
+- Retrieval miners, responsible for providing quick pipes to retrieve files.
+- Repair miners, which are to be implemented.
 
 **Storage miners** are the heart of the network. They earn Filecoin by storing data for clients, and computing cryptographic proofs to verify storage across time. The probability of earning the block reward and transaction fees is proportional to the amount of storage the miner contributes to the Filecoin network, and not hashing power.
 
@@ -27,10 +27,10 @@ In the current implementation, the focus is mostly on storage miners, which sell
 
 The current recommended system specifications for operating a storage miner are:
 
-* An 8+ core CPU
-* A NVIDIA-manufactured GPU chip (to be expanded on)
-* A dedicated SSD to act as a large cache store (512GB+)
-* A large amount of RAM for computing data replication (128GB+)
+- An 8+ core CPU
+- A NVIDIA-manufactured GPU chip (to be expanded on)
+- A dedicated SSD to act as a large cache store (512GB+)
+- A large amount of RAM for computing data replication (128GB+)
 
 ## Getting started as a miner
 
@@ -58,9 +58,9 @@ In Filecoin, miners are succeptible to two different kinds of slashing: **storag
 
 **Storage fault slashing** is a term that is used to encompass a broader set of penalties, including (but not limited to) fault fees, sector penalties and termination fees. These penalties are to be paid by miners if they fail to provide sector reliability or decide to voluntarily exit the network.
 
-* A **fault fee** is a penalty that a miner incurs for each day a miner’s sector is offline.
-* A **sector penalty:** is a penalty that a miner incurs for a faulted sector that was not declared faulted before a [WindowPoSt check](#window-post-checks) occurs.
-   * The sector will pay a Fault Fee after a Sector Penalty once the fault is detected
-* A **termination fee:** is a penalty that a miner incurs when a sector is voluntarily or involuntarily terminated and is removed from the network.
+- A **fault fee** is a penalty that a miner incurs for each day a miner’s sector is offline.
+- A **sector penalty:** is a penalty that a miner incurs for a faulted sector that was not declared faulted before a `WindowPoSt` check occurs.
+  - The sector will pay a Fault Fee after a Sector Penalty once the fault is detected
+- A **termination fee:** is a penalty that a miner incurs when a sector is voluntarily or involuntarily terminated and is removed from the network.
 
 **Consensus fault slashing** is the penalty that a miner incurs for committing consensus faults. This penalty is applied to miners that have acted maliciously against the network’s consensus functionality.
