@@ -58,7 +58,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "docs:links && vuepress build docs",
+    "docs:build": "npm run docs:links && vuepress build docs",
     "docs:links": "vuepress check-md docs"
   }
 }
