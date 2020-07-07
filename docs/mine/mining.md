@@ -1,5 +1,5 @@
 ---
-title: Mining in Filecoin
+title: Mining in Filecoin: An Overview
 description: An overview of everything mining-related on the Filecoin network.
 ---
 
@@ -23,6 +23,10 @@ The Filecoin network will have multiple types of miners:
 
 In the current implementation, the focus is mostly on storage miners, which sell storage capacity in exchange for FIL. The below sections discuss how to initiate, maintain and receive rewards for a storage miner.
 
+### Coming from another ecosystem?
+
+First, welcome! For those coming from Proof-of-Stake or Proof-of-Work development communities, there are a number of concepts and considerations that are unique to Filecoin. While this page provides an overview of the concepts related to mining in particular, more introductory information on what Filecoin is and how it works can be found in [introduction section](/introduction/) of this manual, or head over and try out some related [ProtoSchool tutorials](https://proto.school/#/tutorials)!
+
 ## Hardware recommendations
 
 The current recommended system specifications for operating a storage miner are:
@@ -31,6 +35,10 @@ The current recommended system specifications for operating a storage miner are:
 * A NVIDIA-manufactured GPU chip (to be expanded on)
 * A dedicated SSD to act as a large cache store (512GB+)
 * A large amount of RAM for computing data replication (128GB+)
+
+### Aren't these requirements relatively high?
+
+Indeed, compared to the hardware requirements of running a Proof-of-Stake validator, these benchmarks are much higher -- though are certainly worth it. As these will not increase for the presumable future, money spent on hardware for Filecoin mining will provide users with many years of reliable service, paying for themselves several times over. Think of the investment as running a small cloud storage business; to launch one on the existing data hosting model, it would cost millions of dollars in infrastructure and logistics to get off the ground. With Filecoin, you are able to do the exact same for only a few thousand dollars, and can also be run out of the comfort of your own home.
 
 ## Getting started as a miner
 
@@ -64,3 +72,8 @@ In Filecoin, miners are succeptible to two different kinds of slashing: **storag
 * A **termination fee:** is a penalty that a miner incurs when a sector is voluntarily or involuntarily terminated and is removed from the network.
 
 **Consensus fault slashing** is the penalty that a miner incurs for committing consensus faults. This penalty is applied to miners that have acted maliciously against the network’s consensus functionality.
+
+### Window PoSt checks
+
+PoSt (Proof-of-Spacetime) window checks are done to regularly ensure that miners are continuing to host their required sectors as normal. These checks are performed in 24 hour intervals on the network. For each day a miner is inactive it will receive a fault fee, continuing until the associated wallet is empty and the miner is removed from the network. In the case of a faulted sector, there will be an additional sector penalty added immediately following the fault fee.
+
