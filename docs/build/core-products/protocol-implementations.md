@@ -49,7 +49,7 @@ If interacting with the implementation’s RPC APIs, the general development pat
 Filecoin protocol implementations provide access to core Filecoin protocol workflows, with very few abstractions of the core concepts. This can be very useful, as it allows flexibility and precision in interacting with Filecoin network functionality. However, integrating nodes directly can require greater familiarity with how Filecoin works. To learn more about the various workflows enabled by the core Filecoin protocol, check-out the [How-tos](../../how-to).
 
 ::: tip
-See a walkthrough of an end-to-end example application (the Filecoin Network Inspector) built using Lotus’ JS API client [here](../../examples/network-inspector/overview).
+See a walkthrough of an end-to-end example application (the Filecoin Network Inspector) built using [Lotus’ JS API client](../examples/network-inspector/overview).
 :::
 
 ## Resources
