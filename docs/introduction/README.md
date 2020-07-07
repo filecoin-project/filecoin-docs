@@ -10,8 +10,8 @@ Filecoin’s mission is to create a decentralized, efficient, and robust foundat
 
 Read on to learn more about the Filecoin network:
 
-- [New to web3](new-to-web3/)
-- [What is Filecoin?](what-is-filecoin/)
-- [Why Filecoin?](why-filecoin/)
-- [IPFS and Filecoin](ipfs-and-filecoin/)
-- [Filecoin compared to...](filecoin-compared-to/)
+- [New to web3](new-to-web3.md)
+- [What is Filecoin?](what-is-filecoin.md)
+- [Why Filecoin?](why-filecoin.md)
+- [IPFS and Filecoin](ipfs-and-filecoin.md)
+- [Filecoin compared to...](filecoin-compared-to.md)

@@ -25,4 +25,4 @@ Block data structures must be serialized into flat string files before importing
 
 For simple operations, you can use the `split` or `zip` Unix commands. Or, choose a client application that handles data preparation for you, such as the [Starling Storage CLI & REST API](https://github.com/filecoin-project/starling).
 
-Note: See [Very Large Files](./large-files) if you plan to store files larger than 1TB.
+Note: See [Very Large Files](./large-files.md) if you plan to store files larger than 1TB.
