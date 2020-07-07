@@ -26,7 +26,7 @@ Read the resources in the **Start Building** section before you begin for helpfu
 
 - [Meme Marketplace](./examples/meme-marketplace/overview/): An example application built on Textile Hub, a Filecoin-backed IPFS Pinning Service.
 - [Simple Pinning Service](./examples/simple-pinning-service/overview/): An example application built on Powergate.
-- [Slate](./examples/filecoin-gui/overview/): A production application built on Powergate.
+- [Slate](./examples/slate/overview/): A production application built on Powergate.
 - [Network Inspector](./examples/network-inspector/overview/): An example application built on lotus.
 
 Please suggest any additional content that you would find useful using the links below.

@@ -5,7 +5,7 @@ description: Learn the specifics of how to write documentation for the Filecoin 
 
 # Writing guide
 
-This guide explains how to write an article. While the [grammar, formatting, and style guide](/community/contribute/grammar-formatting-and-style/) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
+This guide explains how to write an article. While the [grammar, formatting, and style guide](./grammar-formatting-and-style) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
 ## Walkthroughs
 
@@ -17,7 +17,7 @@ The vast majority of documentation within the Filecoin Docs project falls under 
 
 Use the following goals when writing walkthroughs:
 
-| Goal | Keyword | Explanation |
+| Goal          | Keyword     | Explanation                                                       |
 | ------------- | ----------- | ----------------------------------------------------------------- |
 | **Audience**  | _General_   | Easy for anyone to read with minimal effort.                      |
 | **Formality** | _Neutral_   | Slang is restricted, but standard casual expressions are allowed. |
@@ -53,7 +53,7 @@ These articles are vastly different in tone when compared to walkthroughs. Some 
 
 Use the following goals when writing conceptual articles:
 
-| Goal | Keyword | Explanation |
+| Goal          | Keyword                  | Explanation                                                                      |
 | ------------- | ------------------------ | -------------------------------------------------------------------------------- |
 | **Audience**  | _Knowledgeable_          | Requires a certain amount of focus to understand.                                |
 | **Formality** | _Neutral_                | Slang is restricted, but standard casual expressions are allowed.                |
@@ -79,7 +79,7 @@ Take the hypothetical tutorial _Get up and running with Filecoin_, for example. 
 
 1. A brief introduction to what Filecoin is.
 2. Choose and install a command line client.
-3. Understanding storage deals. 
+3. Understanding storage deals.
 4. Import and store a file.
 
 Pages `1` and `3` are conceptual articles, describing particular design patterns and ideas to the reader. All the other pages are walkthroughs instructing the user how to perform one specific action.
