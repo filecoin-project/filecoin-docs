@@ -1,5 +1,5 @@
 ---
-title: Mining in Filecoin: An Overview
+title: Mining in Filecoin
 description: An overview of everything mining-related on the Filecoin network.
 ---
 
