@@ -92,10 +92,44 @@ export default {
           ]
         },
                 {
-          title: 'Mine',
-          path: '/mine',
+          title: 'Build',
+          path: '/build',
           children: [
             {
+              title: 'Interacting with the network',
+              path: '/build/start-building/interacting-with-the-network/'
+            },
+            {
+              title: 'IPFS-backed pinning services',
+              path: '/build/core-products/filecoin-backed-pinning-services/'
+            },
+            {
+              title: 'Powergate',
+              path: '/build/core-products/powergate/'
+            },
+            {
+              title: 'Protocol Implementations',
+              path: '/build/core-products/protocol-implementations/'
+            },
+            {
+              title: 'Wallets, signing tools and API clients',
+              path: '/build/developer-tools/wallets-signing-tools-api-clients/'
+            },
+            {
+              title: 'Filecoin community resources',
+              path: 'https://github.com/filecoin-project/docs/wiki#community-resources'
+            },
+            {
+              title: 'Component design system',
+              path: 'http://filecoin.onrender.com/'
+            }
+          ]
+        },
+               {
+         title: 'Mine',
+         path: '/mine',
+         children: [
+           {
               title: 'Mining overview',
               path: '/mine/mining'
             }
