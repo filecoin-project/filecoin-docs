@@ -5,7 +5,7 @@ description: A brief description of the Simple Pinning Service Example.
 
 # Overview
 
-In this tutorial, we will build a simple pinning service using [Powergate](../../core-products/powergate).
+In this tutorial, we will build a simple pinning service using [Powergate](../../core-products/powergate.md).
 
 A pinning service is a remote service that helps you manage your data (like a decentralized Google Drive). In this tutorial's context, the data will be managed on Filecoin & IPFS.
 

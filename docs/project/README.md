@@ -17,7 +17,7 @@ Learn about the ongoing cryptography research and design efforts that underpin t
 
 ## Related projects
 
-Filecoin is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [Filecoin-related projects](related-projects) supported by Protocol Labs.
+Filecoin is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [Filecoin-related projects](related-projects.md) supported by Protocol Labs.
 
 ## Code of conduct
 

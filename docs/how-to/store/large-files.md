@@ -15,7 +15,7 @@ Filecoin can store any file format, but for very large files we recommend using 
 
 ### Maximizing storage
 
-The [simple recommendation](./prepare-data) is that files must be smaller than a sector. Colloquially, we refer to sectors as 1MB, 32GB, etc. To fully maximize storage usage, chunks can be fractionally larger. This is due to a combination of quirks:
+The [simple recommendation](./prepare-data.md) is that files must be smaller than a sector. Colloquially, we refer to sectors as 1MB, 32GB, etc. To fully maximize storage usage, chunks can be fractionally larger. This is due to a combination of quirks:
 
 - **Binary size:** Filecoin uses base 2 (binary) sizes. A "1MB sector" is actually 1MiB, or 1,048,576 bytes not 1,000,000 bytes.
 - **Padding:** For every 256 bits, subtract 2 bits (used by the Proofs processes). The remainder, 254 bits, is the usable storage space.

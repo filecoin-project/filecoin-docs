@@ -18,9 +18,9 @@ From the [Textile docs](https://docs.textile.io/powergate/):
 > - Easily configure, connect, and deploy Powergate, [Lotus](https://lotu.sh), and [IPFS](https://ipfs.io) together.
 > - Much more!
 
-**_Powergate is the recommended solution for developers who want an easier interface and better performance from Filecoin, but who prefer to manage their own nodes._** For most developers, we recommend using an [FPS](./filecoin-backed-pinning-services). For very low-level or advanced developers, you can integrate [lotus](https://lotu.sh) directly into your application.
+**_Powergate is the recommended solution for developers who want an easier interface and better performance from Filecoin, but who prefer to manage their own nodes._** For most developers, we recommend using an [FPS](./filecoin-backed-pinning-services.md). For very low-level or advanced developers, you can integrate [lotus](https://lotu.sh) directly into your application.
 
-The Powergate project is built and maintained by Textile. You can see the full Powergate docs [here](https://docs.textile.io/powergate/).
+The Powergate project is built and maintained by Textile. You can see the full [Powergate docs](https://docs.textile.io/powergate/).
 
 ## How to use Powergate
 
@@ -33,8 +33,8 @@ There are many ways to interact with the Powergate. These pathways are well-docu
 ::: tip
 Sometimes the best way to learn is through examples.
 
-- See a walkthrough of an example application (the Simple Pinning Service) built on the Powergate JS Client [here](../examples/simple-pinning-service/overview).
-- See a full production application (Slate) built on the Powergate JS Client [here](https://github.com/filecoin-project/slate/).
+- See a walkthrough of an example application (the Simple Pinning Service) built on the [Powergate JS Client](../examples/simple-pinning-service/overview.md).
+- See a full production application (Slate) built on the [Powergate JS Client](https://github.com/filecoin-project/slate/).
   :::
 
 ## How Powergate works

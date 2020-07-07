@@ -34,7 +34,7 @@ We recommend getting started by perusing the following resources.
 ### Filecoin
 
 - [Introducing Filecoin, a decentralized storage network](https://www.youtube.com/watch?v=EClPAFPeXIQ)
-- [What is Filecoin?](/introduction/what-is-filecoin)
-- [Why Filecoin?](/introduction/why-filecoin)
+- [What is Filecoin?](./what-is-filecoin.md)
+- [Why Filecoin?](./why-filecoin.md)
 - [Filecoin primer](https://ipfs.io/ipfs/QmWimYyZHzChb35EYojGduWHBdhf9SD5NHqf8MjZ4n3Qrr/Filecoin-Primer.7-25.pdf)
 - [Building the Filecoin ecosystem](https://youtu.be/SXlTBvcqzz8)
