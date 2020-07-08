@@ -59,7 +59,7 @@ This section outlines the steps required to perform a storage deal through an of
 Propose the offline deal with the miner:
 
 ```
-lotus client deal --manual-piece-cid=CID --manual-piece-size=datasize
+lotus client deal --manual-piece-cid=CID --manual-piece-size=datasize <Data CID> <miner> <price> <duration>
 ```
 
 #### Transfer the data to the miner offline
