@@ -46,9 +46,15 @@ For instructions on getting the Filecoin network running and a miner initialized
 
 ## All about deals
 
-By default, all Filecoin miners are set to auto-accept any deal that meets their criteria. For those that wish to curate the deals being stored on their system, it is possible to disable the auto-accepting feature.
+Deals are the core function of the Filecoin network, and represent an agreement made between a client and a miner for a storage 'contract'.
 
-For comprehensive information on how deals are performed on the Filecoin network, see [this section of the documentation](https://docs.filecoin.io/how-to/store-making-storage-deals/).
+Once a client has decided on a miner to store with based on their available capacity, duration, and desired price, they lock up sufficient funds in an associated wallet to cover the total cost of the deal. The deal is then published once the miner has accepted the storage agreement. By default, all Filecoin miners are set to auto-accept any deal that meets their criteria, though it is possible to disable this for miners that would prefer to manually curate their deals. 
+
+After the deal is published, the client then prepares the data for storage and then transfers it to the miner. Upon receiving all of the data, the miner packs the data into a sector , seals it, and begins submitting proofs to the chain. Once the first confirmation has been hit, the client can be certain the data is being stored properly, and the deal has officially begun.
+
+Throughout the lifetime of the deal, the miner submits ongoing proofs to the chain. Clients pay incrementally using the funds they previously locked up. If a proof is missing or delayed, the miner is penalized. More information on this can be found in the [uptime, slashing and penalties](#uptime-slashing-and-penalties) section of this page.
+
+For more comprehensive information on how deals are performed on the Filecoin network, see [this section of the documentation](https://docs.filecoin.io/how-to/store/making-storage-deals/).
 
 ## Getting rewards
 
