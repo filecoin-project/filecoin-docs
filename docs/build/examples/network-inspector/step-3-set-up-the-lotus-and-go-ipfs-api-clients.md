@@ -48,7 +48,7 @@ export const getClient = (options = { nodeOrMiner: "node", nodeNumber: 0 }) => {
 };
 ```
 
-If you are using the local-devnet setup mentioned in [Step 1: Start lotus-devnet and go-ipfs](../step-1-start-lotus-devnet-and-go-ipfs.md), then the value of `API` is correct. Note that if you are using another setup, you may need to change this value (depends on the setup).
+If you are using the local-devnet setup mentioned in [Step 1 - Start lotus-devnet and go-ipfs](./step-1-start-lotus-devnet-and-go-ipfs.md), then the value of `API` is correct. Note that if you are using another setup, you may need to change this value (depends on the setup).
 
 The `wsUrl` shown in the code example above depends on which node you want to connect to:
 
