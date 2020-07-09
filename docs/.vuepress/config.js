@@ -167,14 +167,15 @@ module.exports = {
                   },
                   {
                     title: 'Network Inspector',
-                    sidebarDepth: 1,
+                    sidebarDepth: 2,
                     collapsable: false,
                     children: [
                       'build/examples/network-inspector/overview',
                       'build/examples/network-inspector/lotus-and-go-ipfs-interactions',
                       'build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
                       'build/examples/network-inspector/step-2-run-the-react-app',
-                      'build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients'
+                      'build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
+                      'build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app'
                     ]
                   }
                 ]
