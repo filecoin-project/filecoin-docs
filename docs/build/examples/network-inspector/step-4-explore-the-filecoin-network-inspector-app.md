@@ -1,3 +1,8 @@
+---
+title: Step 4 - Explore the Filecoin Network Inspector App
+description: This article describes the major sections of the Network Inspector App and how they interact with lotus and go-ipfs nodes.
+---
+
 # Step 4: Explore the Filecoin Network Inspector App
 
 This section provides an overview of the pages in the Filecoin Network Inspector App:
