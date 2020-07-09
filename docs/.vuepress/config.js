@@ -169,7 +169,10 @@ module.exports = {
                     title: 'Network Inspector',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/network-inspector/overview']
+                    children: [
+                      'build/examples/network-inspector/overview',
+                      'build/examples/network-inspector/lotus-and-go-ipfs-interactions'
+                    ]
                   }
                 ]
               }
