@@ -173,7 +173,8 @@ module.exports = {
                       'build/examples/network-inspector/overview',
                       'build/examples/network-inspector/lotus-and-go-ipfs-interactions',
                       'build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
-                      'build/examples/network-inspector/step-2-run-the-react-app'
+                      'build/examples/network-inspector/step-2-run-the-react-app',
+                      'build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients'
                     ]
                   }
                 ]
