@@ -2,18 +2,17 @@
   <main class="page">
     <slot name="top" />
 
-    <Content v-if="!isHome"
-    class="theme-default-content" />
-    <Home v-else-if="isHome"/>
+    <Content v-if="!isHome" class="theme-default-content" />
+    <Home v-else-if="isHome" />
     <div class="content-footer" v-if="!isContentStatus && !isHome">
       <Feedback
         class="content-feedback"
         evtYes="information_helpful"
         evtNo="information_not_helpful"
       />
+      <PageNav v-bind="{ sidebarItems }" />
       <LegacyCallout />
       <PageEdit />
-      <PageNav v-bind="{ sidebarItems }" />
     </div>
 
     <Analytics />
@@ -46,15 +45,15 @@ export default {
   },
   props: ['sidebarItems'],
   computed: {
-    isContentStatus: function() {
+    isContentStatus: function () {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
     },
-    isHome: function() {
+    isHome: function () {
       return !!(this.$frontmatter && this.$frontmatter.homepage)
     }
   },
   methods: {
-    smoothScroll: function() {
+    smoothScroll: function () {
       var root = document.getElementsByTagName('html')[0]
       // only enable smooth-scrolling on pages shorter that 15000 px
       return root.scrollHeight < 15000
@@ -62,10 +61,10 @@ export default {
         : root.classList.remove('smooth-scroll')
     }
   },
-  mounted: function() {
+  mounted: function () {
     this.smoothScroll()
   },
-  updated: function() {
+  updated: function () {
     this.smoothScroll()
   }
 }
