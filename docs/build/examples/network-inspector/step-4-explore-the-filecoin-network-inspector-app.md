@@ -562,5 +562,3 @@ And voila! A successful deal.
 ## Step 4d: Deals Page
 
 The Deals page of the application displays the same information as the Deal Status page, but feel free to poke around the [Deals page source code](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/pages/Deals/index.js) as well.
-
-And that's it! Congratulations on reading the tutorial until the end. You deserve a pat on the back!

@@ -176,7 +176,8 @@ module.exports = {
                       'build/examples/network-inspector/step-2-run-the-react-app',
                       'build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
                       'build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
-                      'build/examples/network-inspector/step-5-shut-down-the-application'
+                      'build/examples/network-inspector/step-5-shut-down-the-application',
+                      'build/examples/network-inspector/summary'
                     ]
                   }
                 ]
