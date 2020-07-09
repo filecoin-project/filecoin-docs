@@ -24,7 +24,7 @@ After completing this tutorial, you will be able to:
 
 Here is a sneak-peek of how the final application will look:
 
-![Demo video of the application](./images/lotus-network-inspector.mp4)
+@[youtube](https://youtu.be/lkx2Z3T649Y)
 
 If you are just looking for the code, [you can visit the GitHub repo](https://github.com/filecoin-shipyard/filecoin-network-inspector/).
 

@@ -21,4 +21,4 @@ The main topics covered:
 - Retrieving data from an IPFS node.
 - Retrieving data from a lotus node.
 
-Congratulations!
+If you're interested in diving into more of the details, visit the [Filecoin Network Inspector repo](https://github.com/filecoin-shipyard/filecoin-network-inspector/).
