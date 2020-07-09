@@ -9,13 +9,13 @@ You can install and run lotus from source, as described in the [lotus docs](http
 
 For this tutorial, please use the [lotus-devnet fork](https://github.com/filecoin-shipyard/lotus-devnet). For your own applications, please use [Textile’s localnet](https://github.com/textileio/lotus-devnet). See the full localnet docs [here](https://docs.textile.io/powergate/localnet/).
 
-### Requirements
+## Requirements
 
 - Operating Systems: Linux or Mac
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (latest version)
 - [Docker Compose](https://docs.docker.com/compose/) (latest version)
 
-### Steps
+## Steps
 
 1. In your terminal, clone the lotus-devnet repo and create a local lotus-devnet.
 
