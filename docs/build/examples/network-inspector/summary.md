@@ -3,7 +3,7 @@ title: Summary
 description: This article summarizes what we learned from the FilecoinNetwork Inspector tutorial.
 ---
 
-## Summary
+# Summary
 
 This tutorial walked you through building a React application that interacts with an IPFS node and a lotus node to store data on the Filecoin network and inspect information about the Filecoin blockchain.
 
