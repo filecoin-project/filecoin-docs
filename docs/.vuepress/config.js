@@ -171,7 +171,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                       'build/examples/network-inspector/overview',
-                      'build/examples/network-inspector/lotus-and-go-ipfs-interactions'
+                      'build/examples/network-inspector/lotus-and-go-ipfs-interactions',
+                      'build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs'
                     ]
                   }
                 ]

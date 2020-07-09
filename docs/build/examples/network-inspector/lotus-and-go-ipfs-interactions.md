@@ -13,6 +13,7 @@ lotus and go-ipfs nodes speak several of the same protocols: [libp2p](https://li
 
 ![IPFS and Filecoin nodes interact with each other via libp2p and IPLD, among other protocols.](./images/ipfs-filecoin.png)
 
-- [More on lotus](https://lotu.sh/)
+## Resources
 
+- [More on lotus](https://lotu.sh/)
 - [More on go-ipfs](https://docs.ipfs.io)
