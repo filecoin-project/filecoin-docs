@@ -32,7 +32,7 @@ This starts the Filecoin network inspector app and opens the application in your
 ![Image of the Filecoin Network Inspector application](./images/network-inspector-app.png)
 
 ::: tip
-We have used[ React](https://reactjs.org/) as our UI library and[ Redux](https://redux.js.org/) for application state management. You can use any other library or framework to build such an app.
+We have used [React](https://reactjs.org/) as our UI library an [Redux](https://redux.js.org/) for application state management. You can use any other library or framework to build such an app.
 :::
 
 Next, we walk through the different parts of the application to see how to integrate Filecoin features and functionality into your application.
