@@ -25,7 +25,7 @@ In the current implementation, the focus is mostly on storage miners, which sell
 
 ### Coming from another ecosystem?
 
-First, welcome! For those coming from Proof-of-Stake or Proof-of-Work development communities, there are a number of concepts and considerations that are unique to Filecoin. While this page provides an overview of the concepts related to mining in particular, more introductory information on what Filecoin is and how it works can be found in [introduction section](/introduction/) of this manual, or head over and try out some related [ProtoSchool tutorials](https://proto.school/#/tutorials)!
+First, welcome! For those coming from Proof-of-Stake or Proof-of-Work development communities, there are a number of concepts and considerations that are unique to Filecoin. While this page provides an overview of the concepts related to mining in particular, more introductory information on what Filecoin is and how it works can be found in [introduction section](../introduction/README.md) of this manual, or head over and try out some related [ProtoSchool tutorials](https://proto.school/#/tutorials)!
 
 ## Hardware recommendations
 
@@ -48,7 +48,7 @@ For instructions on getting the Filecoin network running and a miner initialized
 
 Deals are the core function of the Filecoin network, and represent an agreement made between a client and a miner for a storage 'contract'.
 
-Once a client has decided on a miner to store with based on their available capacity, duration, and desired price, they lock up sufficient funds in an associated wallet to cover the total cost of the deal. The deal is then published once the miner has accepted the storage agreement. By default, all Filecoin miners are set to auto-accept any deal that meets their criteria, though it is possible to disable this for miners that would prefer to manually curate their deals. 
+Once a client has decided on a miner to store with based on their available capacity, duration, and desired price, they lock up sufficient funds in an associated wallet to cover the total cost of the deal. The deal is then published once the miner has accepted the storage agreement. By default, all Filecoin miners are set to auto-accept any deal that meets their criteria, though it is possible to disable this for miners that would prefer to manually curate their deals.
 
 After the deal is published, the client then prepares the data for storage and then transfers it to the miner. Upon receiving all of the data, the miner packs the data into a sector , seals it, and begins submitting proofs to the chain. Once the first confirmation has been hit, the client can be certain the data is being stored properly, and the deal has officially begun.
 
@@ -82,4 +82,3 @@ In Filecoin, miners are succeptible to two different kinds of slashing: **storag
 ### Window PoSt checks
 
 PoSt (Proof-of-Spacetime) window checks are done to regularly ensure that miners are continuing to host their required sectors as normal. These checks are performed in 24 hour intervals on the network. For each day a miner is inactive it will receive a fault fee, continuing until the associated wallet is empty and the miner is removed from the network. In the case of a faulted sector, there will be an additional sector penalty added immediately following the fault fee.
-
