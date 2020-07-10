@@ -14,7 +14,7 @@ description: This article describes how to run the React app for the Filecoin Ne
 
 1. In a third terminal window, clone the React sample application and check out the `local` branch.
 
-```
+```bash
 git clone https://github.com/filecoin-shipyard/filecoin-network-inspector
 cd filecoin-network-inspector
 git checkout local
@@ -22,7 +22,7 @@ git checkout local
 
 2. Start the app.
 
-```
+```bash
 npm install
 npm start
 ```
