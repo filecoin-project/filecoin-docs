@@ -87,7 +87,7 @@ For mainnet, you will need a public IP address, but it doesn’t need to be fixe
 
 If you lost the data itself, then no, there’s no way to recover that, and you will be slashed for it. If the data itself is recoverable, though (say you just missed a Windowed PoSt), then the Recovery process will let you regain the sector.
 
-### How likely is the NSE algorithm to come on line later?Is AMD's configuration the most consistent with the current SDR algorithm
+### How likely is the NSE algorithm to come on line later? Is AMD's configuration the most consistent with the current SDR algorithm
 
 About NSE: NSE is one of the best candidates for a proof upgrade, and teams are working on implementation. But there are other candidates too, which are promising as well. It may be that another algorithm ends up better than NSE -- we don’t know yet. Proof upgrades will arrive after mainnet launch and will coexist.
 
@@ -99,11 +99,11 @@ In addition to Filecoin Discover, a number of groups are actively building tools
 
 A number of other programs, like Filecoin Ignite, will also contribute additional demand, tooling, and usage.
 
-### Why not implement the scheme that the white paper says "miners and clients automatically match orders through order books"？Is it because the LIMITS of TPS ?
+### Why not implement the scheme that the white paper says "miners and clients automatically match orders through order books"？Is it because the LIMITS of TPS?
 
 There will be off-chain orderbooks and miner marketplaces -- some are in development now from some teams. They will work mostly off-chain, because TPS on chain is not enough for the volume of usage we expect on Filecoin. These orderbooks build on the basic deal-flow on chain. These orderbooks will arrive in their own development trajectory -- most likely around or soon after mainnet launch.
 
-### Does the committed capacity sector still need to be sealed before it upgrades to one with real data ?
+### Does the committed capacity sector still need to be sealed before it upgrades to one with real data?
 
 For the first iteration of the protocol, yes. We have plans to make it cheaper and more economically attractive after Mainnet with no resealing required and other perks.
 
