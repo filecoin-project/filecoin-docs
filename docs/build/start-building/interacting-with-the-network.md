@@ -28,20 +28,20 @@ Here are some scripts to set up your own remote networks for development:
 
 ## Devnet
 
-In order to make testing easier, a live devnet (developer network) is now available for use. It features 512MB sectors and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
+In order to make testing easier, a live devnet (developer network) is now available for use. We call this network the Nerpa Devnet (the nerpa is a species of seal, and one of the smallest true seals). The Nerpa Devnet features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version. This devnet is currently primarily intended for participants in the [HackFS hackathon](https://hackfs.com).
 
-To connect to the Devnet:
+To connect to the [Nerpa Devnet](http://www.nerpa.fildev.network/):
 
 1. Delete any existing local Lotus repository, if one is present.
-2. Build and run Lotus from branch `interopnet (bead3bf)`, `tag interop.6.16.0`. This should automatically connect you to the proper bootstrappers.
-3. Once running, several miners are configured to auto-accept any proposed deals.
+2. Build and run Lotus from branch `ntwk-nerpa`, [`tag ntwk-nerpa-7.7.0`](https://github.com/filecoin-project/lotus/tree/ntwk-nerpa-7.7.0). When you run `lotus daemon` on the build from this branch, you should automatically be connected to the proper bootstrappers.
+3. There should be a few miners on the network that are configured to accept storage deals. If you are having trouble finding a miner to accept your storage deal, please ping for support in the #hfs-sponsor-filecoin-team channel on the [Filecoin slack](https://filecoin.io/slack).
 
-> **NOTICE:** At the moment, there are no guarantees on uptime for any of the auto-accepting miners. If one has gone offline or become unresponsive, please let us know in the Filecoin Slack.
+> **NOTICE:** At the moment, there are no guarantees on uptime for any of the auto-accepting miners. If one has gone offline or become unresponsive, please let us know in the same channel on Filecoin Slack.
 
 To tap the faucet or see dashboard for the devnet:
 
-- Devnet Faucet (to obtain mock FIL): https://t01000.miner.interopnet.kittyhawk.wtf
-- Devnet Dashboard (to check network and block status): https://interopnet.filscan.io
+- Nerpa Devnet Faucet (to obtain mock FIL): https://faucet.nerpa.fildev.network/
+- Other Nerpa Devnet Information: https://nerpa.fildev.network/
 
 ## Testnet
 
@@ -53,4 +53,4 @@ The Filecoin project has a limited number of dedicated, up-to-date nodes (synced
 
 ## Mainnet
 
-Filecoin Mainnet launch is currently planned for Q3 2020. See the [Filecoin blog](https://filecoin.io/blog/roadmap-update-april-2020/) for more information.
+Filecoin Mainnet launch is currently planned for Q3 2020. See the [Filecoin blog](https://filecoin.io/blog/roadmap-update-june-2020) for more information.
