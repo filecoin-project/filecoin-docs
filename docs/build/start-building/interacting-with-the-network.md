@@ -41,6 +41,7 @@ To connect to the [Nerpa Devnet](http://www.nerpa.fildev.network/):
 To tap the faucet or see dashboard for the devnet:
 
 - Nerpa Devnet Faucet (to obtain mock FIL): https://faucet.nerpa.fildev.network/
+- Nerpa Stats Dashboard: https://stats.nerpa.fildev.network/
 - Other Nerpa Devnet Information: https://nerpa.fildev.network/
 
 ## Testnet
