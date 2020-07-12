@@ -11,7 +11,7 @@ Depending on the size and structure of your data, you may need to make some form
 
 When you store data on the Filecoin Network, each file must be smaller than a sector. If an individual file is larger, you’ll have to split it into multiple smaller files first.
 
-How big is a sector? The Filecoin network supports several sector sizes, and storage miners will specify which size(s) they’re offering so you can select the best option for you. Smaller sectors are faster, while larger sectors are more cost-effective. (Testnet supports 2KiB, 8MiB, 512MiB and 32GiB sectors as of March 2, 2020).
+How big is a sector? The Filecoin network supports several sector sizes, and storage miners will specify which size(s) they’re offering so you can select the best option for you. Smaller sectors are faster, while larger sectors are more cost-effective. (Testnet supports 32GiB and 64GiB sectors as of July 12, 2020).
 
 ### For files within a directory
 
