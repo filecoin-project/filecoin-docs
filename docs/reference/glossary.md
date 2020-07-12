@@ -6,21 +6,49 @@ description: Definitions and usage for Filecoin terminology
 # Glossary
 
 ## Address
+
 ## Block
+
 ## Blockchain
+
 ## Blockchain Height
-## Capacity Commitments
+
+## Capacity Commitment
+
+If a storage miner doesn't find any available deal proposals appealing, they
+can alternatively make a _capacity commitment_, filling a [sector](#sector)
+with arbitrary data, rather than with client data. Maintaining this sector
+allows the storage miner to provably demonstrate that they are reserving space
+on behalf of the network. 
+
 ## Deals
+
 ## Declared Fault
+
 ## Election
+
 ## Epoch
+
 ## FIL
+
 ## Faucet
+
 ## Fault
+
 ## Filecoin
+
 ## Gas
+
 ## Mainnet
+
 ## Message
+
+## Miner
+
+The Filecoin project uses the term _miner_ to refer to an actor in the network
+providing a service of value to a client. At present, the Filecoin
+specification recognizes two miner types: [storage miners](#storage-miner) and
+[retrieval miners](#retrieval-miners).
 
 ## Pledged Storage
 
@@ -52,18 +80,44 @@ storing a _particular file_, without requiring that one have a
 copy of the file itself.
 
 ## Proof-of-Replication (PoRep)
+
 ## Proof-of-Spacetime (PoSt)
+
 ## Quality-Adjusted Storage Power
-## Retrieval Mining
+
+## Retrieval Miner
+
 ## Seal
+
+_Sealing_ is one of the fundamental building blocks of the Filecoin protocol.
+It is a computation-intensive process performed over a [sector](#sector) that
+results in a unique representation of the sector. The properties of this new
+representation are essential to the
+[Proof-of-Replication](#proof-of-replication-porep) and the
+[Proof-of-Spacetime](#proof-of-spacetime-post) procedures.
+
 ## Sector
+
+Storage miners store data on behalf of the Filecoin network in fixed-size
+blocks of data called _sectors_. Currently, only 32GiB and 64GiB sectors
+are supported.  
+
 ## Slash
-## Storage Mining
+
+## Storage Miner
+
 ## Storage Power
+
 ## Succinct Non-interactive Argument of Knowledge (SNARK)
+
 ## Testnet
+
 ## Tipset
+
 ## Verified Client
+
 ## Window Proof-of-Spacetime (WindowPoSt)
+
 ## Winning Proof-of-Spacetime (WinningPoSt)
+
 ## Zero-Knowledge SNARK (zk-SNARK)
