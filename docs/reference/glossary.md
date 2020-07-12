@@ -88,6 +88,11 @@ specification recognizes two miner types: [storage miners](#storage-miner) and
 
 ## Pledged Storage
 
+Storage capacity that a miner has promised to reserve for the
+Filecoin network via
+[Proof-of-Replication](#proof-of-replication-porep) is termed
+_pledged storage_.
+
 ## Proof-of-Storage
 
 Many blockchain networks are underpinned by the notion that
