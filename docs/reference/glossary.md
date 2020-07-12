@@ -21,7 +21,7 @@ with arbitrary data, rather than with client data. Maintaining this sector
 allows the storage miner to provably demonstrate that they are reserving space
 on behalf of the network. 
 
-## Deals
+## Deal
 
 ## Declared Fault
 
@@ -81,9 +81,23 @@ copy of the file itself.
 
 ## Proof-of-Replication (PoRep)
 
+_Proof-of-Replication_ is a procedure by which a [storage
+miner](#storage-miner) can prove to the Filecoin network that they have created
+a unique copy of some piece of data on the network's behalf.
+
 ## Proof-of-Spacetime (PoSt)
 
+_Proof-of-Spacetime_ is a procedure by which a [storage-miner](#storage-miner)
+can prove to the Filecoin network they continue to store a unique copy of some
+data on behalf of the network. Proof-of-Spacetime manifests in two distinct
+varieties in the present Filecoin specification: [Window
+Proof-of-Spacetime](window-proof-of-spacetime-windowpost) and [Winning
+Proof-of-Spacetime](winning-proof-of-spacetime-winningpost).
+
 ## Quality-Adjusted Storage Power
+
+A storage deal offered by a [verified client](#verified-client) will be
+augmented by a multiplier.
 
 ## Retrieval Miner
 
@@ -107,15 +121,21 @@ are supported.
 ## Storage Miner
 
 A _storage miner_ is a Filecoin actor that stores data on behalf of the
-network. Storage miners are rewarded for this service by periodically being
-granted the ability to extend the Filecoin blockchain with blocks of their own
-creation. When they create a block, storage miners are rewarded with newly
-minted filecoin, and by the transaction fees they can levy on other nodes
-seeking to include messages in the block. The frequency with which a storage
-miner is selected for this reward is roughly proportional to the storage they
-contribute to the network.
+network. Storage miners are rewarded for this service through payments by
+clients that contract their services, as well as by periodic authorization to
+extend the Filecoin blockchain with blocks of their own creation. When they
+create a block, storage miners are rewarded with newly minted filecoin, and by
+the transaction fees they can levy on other nodes seeking to include messages
+in the block. The frequency with which a storage miner is selected for this
+reward is roughly proportional to the storage they contribute to the network.
 
 ## Storage Power
+
+A [storage miner's](#storage-miner) _storage power_ is a value roughly
+proportional to the amount of storage capacity they make available on behalf of
+the network via [capacity commitments](#-capacity-commitment) or [storage
+deals](#deal). Storage power is used to select storage miners for rewards
+in proportion to their contributions to the network.
 
 ## Succinct Non-interactive Argument of Knowledge (SNARK)
 
