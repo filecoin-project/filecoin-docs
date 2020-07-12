@@ -106,6 +106,15 @@ are supported.
 
 ## Storage Miner
 
+A _storage miner_ is a Filecoin actor that stores data on behalf of the
+network. Storage miners are rewarded for this service by periodically being
+granted the ability to extend the Filecoin blockchain with blocks of their own
+creation. When they create a block, storage miners are rewarded with newly
+minted filecoin, and by the transaction fees they can levy on other nodes
+seeking to include messages in the block. The frequency with which a storage
+miner is selected for this reward is roughly proportional to the storage they
+contribute to the network.
+
 ## Storage Power
 
 ## Succinct Non-interactive Argument of Knowledge (SNARK)
