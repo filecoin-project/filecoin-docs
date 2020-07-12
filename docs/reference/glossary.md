@@ -33,6 +33,10 @@ on behalf of the network.
 
 ## Faucet
 
+A _faucet_ is a service that provides free filecoin. Typically, facuets are run
+for the benefit of new users in a network, providing them with the necessary
+seed capital to begin making transactions.
+
 ## Fault
 
 ## Filecoin
