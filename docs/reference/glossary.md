@@ -67,6 +67,16 @@ the message in the block.
 
 ## Mainnet
 
+A portmanteau of "main" and "network, _mainnet_ is a term used to refer to the
+predominant public-facing network of the Filecoin project and community. The
+mainnet embodies an expectation of widespread adoption and permanence; changes
+to its protocol are subject to the adoption of the network participants.
+
+### Note on style
+
+If referred to as a proper noun, capitalize the term. For example, "I am
+mining on Mainnet."
+
 ## Message
 
 ## Miner
@@ -166,6 +176,15 @@ in proportion to their contributions to the network.
 ## Succinct Non-interactive Argument of Knowledge (SNARK)
 
 ## Testnet
+
+A portmanteau of "test" and "network, _testnet_ is a term used to refer to
+Filecoin networks that are set up for the purposes of development,
+experimentation, and assessment.
+
+### Note on style
+
+If referred to as a proper noun, capitalize the term. For example, "I am
+mining on Testnet."
 
 ## Tipset
 
