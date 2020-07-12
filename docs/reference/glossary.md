@@ -11,7 +11,12 @@ description: Definitions and usage for Filecoin terminology
 
 ## Blockchain
 
-## Blockchain Height
+## Block Height
+
+The _height_ of a [block](#block) corresponds to the number of [epochs](#epoch)
+elapsed before the block was added to the blockchain. The height of the
+Filecoin [blockchain](#blockchain) is defined to be the maximum height
+of any block in the blockchain.
 
 ## Capacity Commitment
 
@@ -35,6 +40,12 @@ to transmit a particular file to the other).
 ## Election
 
 ## Epoch
+
+Time in the Filecoin blockchain is discretized into _epochs_ that
+are currently twenty-five seconds in length. Each epoch, a subset
+of storage miners are elected to each add a new block to the
+Filecoin blockchain via [Winning
+Proof-of-Spacetime](#winning-proof-of-spacetime-post).
 
 ## FIL
 
