@@ -23,6 +23,13 @@ on behalf of the network.
 
 ## Deal
 
+Two actors in the Filecoin network can enter into a _deal_ in
+which one party contracts the services of the other. The Filecoin
+specification currently details _storage deals_ (in which one
+party agrees to store a file for the other for a specified
+lengtht of time) and _retrieval deals_ (in which one party agrees
+to transmit a particular file to the other).
+
 ## Declared Fault
 
 ## Election
@@ -42,6 +49,10 @@ seed capital to begin making transactions.
 ## Filecoin
 
 ## Gas
+
+_Gas_ is a transaction fee associated with a [message](#message),
+paid to the creator of a [block](#block) in return for including
+the message in the block.
 
 ## Mainnet
 
