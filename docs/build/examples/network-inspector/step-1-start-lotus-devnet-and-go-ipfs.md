@@ -19,7 +19,7 @@ For this tutorial, please use the [lotus-devnet fork](https://github.com/filecoi
 
 1. In your terminal, clone the lotus-devnet repo and create a local lotus-devnet.
 
-```
+```bash
 git clone https://github.com/filecoin-shipyard/lotus-devnet
 cd lotus-devnet
 make devnet BIGSECTORS=true
@@ -33,7 +33,7 @@ Note on `BIGSECTORS`: When running the devnet setup, the Lotus node is configure
 
 3. Initialize the go-ipfs daemon, configure IPFS to accept CORS requests, and start running the IPFS daemon.
 
-```
+```bash
 ipfs init
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["GET", "POST"]'

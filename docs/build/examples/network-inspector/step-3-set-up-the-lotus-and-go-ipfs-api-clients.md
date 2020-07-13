@@ -21,31 +21,31 @@ Use any text editor to open the `filecoin-network-inspector` project. Multiple p
 
 In your terminal, run the following commands:
 
-```
+```bash
 npm i @filecoin-shipyard/lotus-client-rpc @filecoin-shipyard/lotus-client-provider-browser @filecoin-shipyard/lotus-client-schema
 ```
 
 2. In [src/utils/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/utils/lotus.js), you can see how we use the above 3 libraries to create a lotus client for use anywhere in the application.
 
-```
-import { LotusRPC } from "@filecoin-shipyard/lotus-client-rpc";
-import { BrowserProvider } from "@filecoin-shipyard/lotus-client-provider-browser";
-import { testnet } from "@filecoin-shipyard/lotus-client-schema";
+```js
+import { LotusRPC } from '@filecoin-shipyard/lotus-client-rpc'
+import { BrowserProvider } from '@filecoin-shipyard/lotus-client-provider-browser'
+import { testnet } from '@filecoin-shipyard/lotus-client-schema'
 
-export const getClient = (options = { nodeOrMiner: "node", nodeNumber: 0 }) => {
+export const getClient = (options = { nodeOrMiner: 'node', nodeNumber: 0 }) => {
   // API endpoint for local Lotus devnet
-  const API = "ws://localhost:7777";
+  const API = 'ws://localhost:7777'
 
   // Websocket endpoint for local Lotus devnet
-  const wsUrl = API + `/${options.nodeNumber}/${options.nodeOrMiner}/rpc/v0`;
+  const wsUrl = API + `/${options.nodeNumber}/${options.nodeOrMiner}/rpc/v0`
 
   // Creating and returning a Lotus client that can be used anywhere in the app
-  const provider = new BrowserProvider(wsUrl);
+  const provider = new BrowserProvider(wsUrl)
   return new LotusRPC(provider, {
     schema:
-      options.nodeOrMiner === "node" ? testnet.fullNode : testnet.storageMiner,
-  });
-};
+      options.nodeOrMiner === 'node' ? testnet.fullNode : testnet.storageMiner
+  })
+}
 ```
 
 If you are using the local-devnet setup mentioned in [Step 1 - Start lotus-devnet and go-ipfs](./step-1-start-lotus-devnet-and-go-ipfs.md), then the value of `API` is correct. Note that if you are using another setup, you may need to change this value (depends on the setup).
@@ -63,16 +63,16 @@ In this case, set `nodeNumber` to 0 as this is the first (and only) lotus node y
 
 In your terminal, run the following command to install the library.
 
-```
+```bash
 npm install --save ipfs-http-client
 ```
 
 2. In [src/utils/ipfs.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/utils/ipfs.js), set `IPFS_API_ENDPOINT` to the port of your running go-ipfs node.
 
-```
-import IpfsHttpClient from "ipfs-http-client";
-const IPFS_API_ENDPOINT = "http://localhost:5001"; // you can replace this with any other IPFS endpoint
-export const ipfs = IpfsHttpClient(IPFS_API_ENDPOINT);
+```js
+import IpfsHttpClient from 'ipfs-http-client'
+const IPFS_API_ENDPOINT = 'http://localhost:5001' // you can replace this with any other IPFS endpoint
+export const ipfs = IpfsHttpClient(IPFS_API_ENDPOINT)
 ```
 
 Note that your IPFS API endpoint may differ, depending on your node setup.

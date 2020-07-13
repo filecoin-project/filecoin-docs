@@ -18,9 +18,9 @@ You can look at [src/redux/actions/lotus.js](https://github.com/filecoin-shipyar
 
 1. In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L3), import the lotus client.
 
-```
-import { getClient } from "../../utils/lotus";
-const client = getClient();
+```jsx
+import { getClient } from '../../utils/lotus'
+const client = getClient()
 ```
 
 All pages in the application will make use of the client API for various types of chain data.
@@ -34,46 +34,46 @@ The Chain page is a simple chain explorer that displays the JSON information con
 
 1. **Create a method to get Filecoin blocks:** In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L36), create a method called `getChainStats`, which uses `client.chainNotify` and a callback function to listen for any changes in chain state. Each change is a new block containing information, such as block number (height), block CID, miner, parent block CID, messages contained in the block, and much more. You can read more about Filecoin data structures, including blocks, in the [Filecoin spec](https://filecoin-project.github.io/specs/#systems__filecoin_blockchain__struct).
 
-```
-export const getChainStats = () => async (dispatch) => {
-  client.chainNotify((changes) => {
+```jsx
+export const getChainStats = () => async dispatch => {
+  client.chainNotify(changes => {
     dispatch({
       type: types.GET_CHAIN_STATS,
-      payload: changes,
-    });
-  });
-};
+      payload: changes
+    })
+  })
+}
 ```
 
 2. **Create a method to get the most recent Filecoin block:** In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L191), create a method called `getChainHead`, which uses `client.chainHead` to retrieve only the most recent block, rather than the entire chain.
 
-```
-export const getChainHead = () => async (dispatch) => {
-  const chainHead = await client.chainHead();
+```jsx
+export const getChainHead = () => async dispatch => {
+  const chainHead = await client.chainHead()
   dispatch({
     type: types.GET_CHAIN_HEAD,
-    payload: chainHead,
-  });
-};
+    payload: chainHead
+  })
+}
 ```
 
 3. **Display the chain data in the UI:** In [src/pages/Chain/index.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/pages/Chain/index.js), use the `getChainStats` method you created to display the chain information on the Chain page.
 
-```
-import React from "react";
-import { connect } from "react-redux";
-import { getChainStats } from "../../redux/actions/lotus";
-import { Link } from "react-router-dom";
-import FilecoinGIF from "../../assets/filecoin.gif";
-import ReactJson from "react-json-view";
+```jsx
+import React from 'react'
+import { connect } from 'react-redux'
+import { getChainStats } from '../../redux/actions/lotus'
+import { Link } from 'react-router-dom'
+import FilecoinGIF from '../../assets/filecoin.gif'
+import ReactJson from 'react-json-view'
 
 function Chain(props) {
-  const { chain, getChainStats } = props;
+  const { chain, getChainStats } = props
   if (chain.length === 0) {
-    getChainStats();
+    getChainStats()
   }
   return (
-    <div style={{ margin: "18px" }}>
+    <div style={{ margin: '18px' }}>
       <h1>Chain Explorer</h1>
       <div>
         {chain.length === 0 ? (
@@ -82,25 +82,25 @@ function Chain(props) {
           </center>
         ) : (
           chain.map((block, index) => (
-            <div key={index} className="card" style={{ width: "52rem" }}>
+            <div key={index} className="card" style={{ width: '52rem' }}>
               <div className="card-body">
                 <h5 className="card-title">
                   Block {block[0].Val.Blocks[0].Height}
                 </h5>
                 <h6 className="card-subtitle mb-2 text-muted">
-                  {block[0].Val.Cids[0]["/"]}
+                  {block[0].Val.Cids[0]['/']}
                 </h6>
                 <p className="card-text">
                   <b>TimeStamp: </b> {block[0].Val.Blocks[0].Timestamp} <br />
-                  <b>Parent Block: </b> {block[0].Val.Blocks[0].Parents[0]["/"]}{" "}
-                  <br />
-                  <b>ParentWeight: </b> {block[0].Val.Blocks[0].ParentWeight}{" "}
+                  <b>Parent Block: </b> {
+                    block[0].Val.Blocks[0].Parents[0]['/']
+                  } <br />
+                  <b>ParentWeight: </b> {block[0].Val.Blocks[0].ParentWeight}{' '}
                   <br />
                   <b>Miner: </b>
                   <Link
                     to={`/miner/${block[0].Val.Blocks[0].Miner}`}
-                    className="card-link"
-                  >
+                    className="card-link">
                     {block[0].Val.Blocks[0].Miner}
                   </Link>
                 </p>
@@ -112,18 +112,18 @@ function Chain(props) {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-const mapStateToProps = (state) => ({
-  chain: state.app.chain,
-});
+const mapStateToProps = state => ({
+  chain: state.app.chain
+})
 
-const mapDispatchToProps = (dispatch) => ({
-  getChainStats: () => dispatch(getChainStats()),
-});
+const mapDispatchToProps = dispatch => ({
+  getChainStats: () => dispatch(getChainStats())
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Chain);
+export default connect(mapStateToProps, mapDispatchToProps)(Chain)
 ```
 
 ## Step 4b: Miners Page
@@ -136,35 +136,35 @@ The Miners page displays information about the active miners in the connected Fi
 
 1. **Create a method to list all miners:** In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L177), create a method called `stateListMiners`, which uses `client.stateListMiners` and `client.stateMinerPower` from the lotus API. The `client.stateListMiners` function displays each miner’s ID and its power in the current network. Mining power is a reflection of the proven storage capacity of the miner based on their activity in the network over time.
 
-```
-export const stateListMiners = () => async (dispatch) => {
-  let result = await client.stateListMiners([]);
-  result = result.map(async (miner) => {
-    let minerPow = await client.stateMinerPower(miner, []);
-    return { name: miner, power: minerPow };
-  });
-  Promise.all(result).then((values) => {
+```jsx
+export const stateListMiners = () => async dispatch => {
+  let result = await client.stateListMiners([])
+  result = result.map(async miner => {
+    let minerPow = await client.stateMinerPower(miner, [])
+    return { name: miner, power: minerPow }
+  })
+  Promise.all(result).then(values => {
     dispatch({
       type: types.STATE_LIST_MINERS,
-      payload: values,
-    });
-  });
-};
+      payload: values
+    })
+  })
+}
 ```
 
 2. **Display the mining data in the UI:** In [src/pages/Miners/index.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/pages/Miners/index.js), use the `stateListMiners` method you created to display information about Filecoin miners on the Miners page.
 
-```
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
-import { stateListMiners } from "../../redux/actions/lotus";
-import FilecoinGIF from "../../assets/filecoin.gif";
-import ReactJson from "react-json-view";
+```jsx
+import React, { Fragment } from 'react'
+import { connect } from 'react-redux'
+import { stateListMiners } from '../../redux/actions/lotus'
+import FilecoinGIF from '../../assets/filecoin.gif'
+import ReactJson from 'react-json-view'
 
 function Miners(props) {
-  const { miner, stateListMiners } = props;
+  const { miner, stateListMiners } = props
   if (Object.keys(miner).length === 0) {
-    stateListMiners();
+    stateListMiners()
   }
 
   return (
@@ -172,7 +172,7 @@ function Miners(props) {
       <h1>Miner Stats</h1>
       {miner.minerList ? (
         miner.minerList.map((miner, index) => (
-          <div key={index} className="card" style={{ width: "42rem" }}>
+          <div key={index} className="card" style={{ width: '42rem' }}>
             <div className="card-body">
               <h5 className="card-title">Name: {miner.name}</h5>
               <h6 className="card-subtitle mb-2 text-muted">Miner Details</h6>
@@ -184,19 +184,18 @@ function Miners(props) {
         <img src={FilecoinGIF} />
       )}
     </Fragment>
-  );
+  )
 }
 
-const mapStateToProps = (state) => ({
-  miner: state.app.miner,
-});
+const mapStateToProps = state => ({
+  miner: state.app.miner
+})
 
-const mapDispatchToProps = (dispatch) => ({
-  stateListMiners: () => dispatch(stateListMiners()),
-});
+const mapDispatchToProps = dispatch => ({
+  stateListMiners: () => dispatch(stateListMiners())
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Miners);
-
+export default connect(mapStateToProps, mapDispatchToProps)(Miners)
 ```
 
 ## Step 4c: Markets Page
@@ -226,7 +225,7 @@ The filecoin token (FIL) is the medium of exchange for storage on the Filecoin n
 
 1. **Install a Filecoin unit conversion library:** In the core lotus API, most methods concerning balances return values in attoFIL (where 1 FIL = 10^18 attoFIL). To display the balance in FIL, install and import the [filecoin-number library](https://github.com/openworklabs/filecoin-number) using [NPM](https://www.npmjs.com/package/@openworklabs/filecoin-number) (`@openworklabs/filecoin-number`).
 
-```
+```bash
 npm i @openworklabs/filecoin-number
 ```
 
@@ -240,37 +239,41 @@ npm i @openworklabs/filecoin-number
 import { FilecoinNumber } from "@openworklabs/filecoin-number";
 ```
 
-```
-export const getWalletDetails = () => async (dispatch) => {
-  const nodeClient = getClient({ nodeNumber: 0, nodeOrMiner: "node" });
-  const defaultWalletAddress = await nodeClient.walletDefaultAddress();
-  const balance = await nodeClient.walletBalance(defaultWalletAddress);
-  const filBalance = new FilecoinNumber(balance, "attofil");
+```jsx
+export const getWalletDetails = () => async dispatch => {
+  const nodeClient = getClient({ nodeNumber: 0, nodeOrMiner: 'node' })
+  const defaultWalletAddress = await nodeClient.walletDefaultAddress()
+  const balance = await nodeClient.walletBalance(defaultWalletAddress)
+  const filBalance = new FilecoinNumber(balance, 'attofil')
   dispatch({
     type: types.GET_WALLET_DETAILS,
     payload: {
       address: defaultWalletAddress,
-      balance: filBalance.toFil(),
-    },
-  });
-};
+      balance: filBalance.toFil()
+    }
+  })
+}
 ```
 
 The wallet balance on this page will update as you create deals and pay for storage.
 
 3. **Display your wallet information in the UI:** In [src/pages/Market/index.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/pages/Market/index.js#L50), use `getWalletDetails` to display your wallet address and balance.
 
-```
-<h3>Your Balance</h3>
-{/* <button onClick={getWalletDetails}>Refresh Balance</button> */}
-{wallet ? (
-  <div>
-    <b>Wallet Address: </b> {wallet.address} <br />
-    <b>Balance: </b> {wallet.balance} {" FIL"}
-  </div>
-) : (
-  <span>Loading...</span>
-)}
+```jsx
+;<h3>Your Balance</h3>
+{
+  /* <button onClick={getWalletDetails}>Refresh Balance</button> */
+}
+{
+  wallet ? (
+    <div>
+      <b>Wallet Address: </b> {wallet.address} <br />
+      <b>Balance: </b> {wallet.balance} {' FIL'}
+    </div>
+  ) : (
+    <span>Loading...</span>
+  )
+}
 ```
 
 ### Markets Page: Store File on Filecoin Network
@@ -303,42 +306,42 @@ import { ipfs } from "../../utils/ipfs";
 
 2. **Create a method to upload the file to Filecoin:** In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L59), create a method called `uploadToFilecoin`.
 
-```
-export const uploadToFilecoin = (payload) => async (dispatch) => {
+```jsx
+export const uploadToFilecoin = payload => async dispatch => {
   // Adding file to IPFS
-  const nodeClient = getClient({ nodeNumber: 0, nodeOrMiner: "node" });
+  const nodeClient = getClient({ nodeNumber: 0, nodeOrMiner: 'node' })
 
   for await (const result of ipfs.add(payload.fileBuffer)) {
     // Creating a Storage Deal with a Miner
     const dataRef = {
       Data: {
-        TransferType: "graphsync",
+        TransferType: 'graphsync',
         Root: {
-          "/": result.path,
+          '/': result.path
         },
         PieceCid: null,
-        PieceSize: 0,
+        PieceSize: 0
       },
       Wallet: payload.defaultWalletAddress,
       Miner: payload.targetMiner,
       EpochPrice: payload.epochPrice,
-      MinBlocksDuration: 300,
-    };
+      MinBlocksDuration: 300
+    }
 
-    const deal = await nodeClient.clientStartDeal(dataRef);
+    const deal = await nodeClient.clientStartDeal(dataRef)
 
-    document.getElementById("uploadToFilecoin").innerText =
-      "Upload to Filecoin Network";
+    document.getElementById('uploadToFilecoin').innerText =
+      'Upload to Filecoin Network'
 
     dispatch({
       type: types.ADD_DATA_TO_FILECOIN,
       payload: {
-        id: deal["/"],
-        cid: result.path,
-      },
-    });
+        id: deal['/'],
+        cid: result.path
+      }
+    })
   }
-};
+}
 ```
 
 In this method, notice that you:
@@ -359,7 +362,7 @@ In this method, notice that you:
 
 3. **Display file storage information in the UI:** In [src/pages/Market/index.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/pages/Market/index.js#L62), use `uploadToFilecoin` to trigger the file storage workflow for storage on IPFS and Filecoin.
 
-```
+```jsx
 <h3>Store File on Filecoin Network</h3>
 <input type="file" id="fileToUpload"></input>
 <button
@@ -404,63 +407,63 @@ Look at:
 
 1. **Create a method to list all deals for your node:** In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L94), create a method called `getClientDeals`. Use the `nodeClient.clientListDeals` function to return the `clientDeals` array of all storage deals made through your lotus node (i.e. `nodeNumber: 0`).
 
-```
-export const getClientDeals = () => async (dispatch) => {
-  const nodeClient = getClient({ nodeNumber: 0, nodeOrMiner: "node" });
-  let clientDeals = await nodeClient.clientListDeals();
-  clientDeals = clientDeals.map((deal) => {
-    let color;
+```jsx
+export const getClientDeals = () => async dispatch => {
+  const nodeClient = getClient({ nodeNumber: 0, nodeOrMiner: 'node' })
+  let clientDeals = await nodeClient.clientListDeals()
+  clientDeals = clientDeals.map(deal => {
+    let color
     switch (deal.State) {
       case 6:
-        color = "green";
-        break;
+        color = 'green'
+        break
       case 22:
-        color = "red";
-        break;
+        color = 'red'
+        break
       default:
-        color = "grey";
-        break;
+        color = 'grey'
+        break
     }
-    return { ...deal, stateName: dealStateNames[deal.State], color: color };
-  });
+    return { ...deal, stateName: dealStateNames[deal.State], color: color }
+  })
   dispatch({
     type: types.GET_CLIENT_DEALS,
-    payload: clientDeals.sort(dynamicsort("DealID")),
-  });
-};
+    payload: clientDeals.sort(dynamicsort('DealID'))
+  })
+}
 ```
 
 Once the storage deal has been triggered, it goes through various stages (listed in [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L7)):
 
-```
+```js
 const dealStateNames = [
   // go-fil-markets/storagemarket/types.go
-  "Unknown", // 0
-  "ProposalNotFound", // 1
-  "ProposalRejected", // 2
-  "ProposalAccepted", // 3
-  "Staged", // 4
-  "Sealing", // 5
-  "Active", // 6
-  "Failing", // 7
-  "NotFound", // 8
+  'Unknown', // 0
+  'ProposalNotFound', // 1
+  'ProposalRejected', // 2
+  'ProposalAccepted', // 3
+  'Staged', // 4
+  'Sealing', // 5
+  'Active', // 6
+  'Failing', // 7
+  'NotFound', // 8
   // Internal
-  "FundsEnsured", // 9 Deposited funds as neccesary to create a deal, ready to move forward
-  "WaitingForDataRequest", // 10 Client is waiting for a request for the deal data
-  "Validating", // 11 Verifying that deal parameters are good
-  "AcceptWait", // 12 Deciding whether or not to accept the deal
-  "Transferring", // 13 Moving data
-  "WaitingForData", // 14 Manual transfer
-  "VerifyData", // 15 Verify transferred data - generate CAR / piece data
-  "EnsureProviderFunds", // 16 Ensuring that provider collateral is sufficient
-  "EnsureClientFunds", // 17 Ensuring that client funds are sufficient
-  "ProviderFunding", // 18 Waiting for funds to appear in Provider balance
-  "ClientFunding", // 19 Waiting for funds to appear in Client balance
-  "Publish", // 20 Publishing deal to chain
-  "Publishing", // 21 Waiting for deal to appear on chain
-  "Error", // 22 deal failed with an unexpected error
-  "Completed", // 23 on provider side, indicates deal is active and info for retrieval is recorded
-];
+  'FundsEnsured', // 9 Deposited funds as neccesary to create a deal, ready to move forward
+  'WaitingForDataRequest', // 10 Client is waiting for a request for the deal data
+  'Validating', // 11 Verifying that deal parameters are good
+  'AcceptWait', // 12 Deciding whether or not to accept the deal
+  'Transferring', // 13 Moving data
+  'WaitingForData', // 14 Manual transfer
+  'VerifyData', // 15 Verify transferred data - generate CAR / piece data
+  'EnsureProviderFunds', // 16 Ensuring that provider collateral is sufficient
+  'EnsureClientFunds', // 17 Ensuring that client funds are sufficient
+  'ProviderFunding', // 18 Waiting for funds to appear in Provider balance
+  'ClientFunding', // 19 Waiting for funds to appear in Client balance
+  'Publish', // 20 Publishing deal to chain
+  'Publishing', // 21 Waiting for deal to appear on chain
+  'Error', // 22 deal failed with an unexpected error
+  'Completed' // 23 on provider side, indicates deal is active and info for retrieval is recorded
+]
 ```
 
 The `getClientDeals` function contains a switch case that determines the color of the state text in the UI according to the value of `deal.State` (`Active` = green, `Error` = red, all other states are grey). To poll deal state at regular intervals, use the `setInterval` function with `getClientDeals`.
@@ -469,64 +472,62 @@ If the deal is successful, the button will show an "Active" deal state (`deal.St
 
 2. **Display deal state information in the UI:** In [src/pages/Market/index.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/702255e6add860843d33bbd8373c5db8e3ad40ac/src/pages/Market/index.js#L87), use the `deals` object to display information from `getClientDeals`.
 
-```
-<h3>Deal Status</h3>
-{market.length !== 0 ? (
-  deals.map((deal, index) => {
-    if (recentProposalCIDs.includes(deal.ProposalCid["/"])) {
-      return (
-        <div key={index} className="card" style={{ width: "48rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">DealID: {deal.DealID}</h5>
-            <h6 className="card-subtitle mb-2 text-muted">
-              Status: <font color={deal.color}>{deal.stateName}</font>
-            </h6>
-            <div className="card-text">
-              {deal.Message.length !== 0 ? (
+```jsx
+;<h3>Deal Status</h3>
+{
+  market.length !== 0 ? (
+    deals.map((deal, index) => {
+      if (recentProposalCIDs.includes(deal.ProposalCid['/'])) {
+        return (
+          <div key={index} className="card" style={{ width: '48rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">DealID: {deal.DealID}</h5>
+              <h6 className="card-subtitle mb-2 text-muted">
+                Status: <font color={deal.color}>{deal.stateName}</font>
+              </h6>
+              <div className="card-text">
+                {deal.Message.length !== 0 ? (
+                  <p>
+                    <font color="red">
+                      <b>Error: {deal.Message}</b>
+                    </font>
+                  </p>
+                ) : null}
                 <p>
-                  <font color="red">
-                    <b>Error: {deal.Message}</b>
-                  </font>
+                  <b>CID: </b>
+                  <a
+                    href={`https://ipfs.io/ipfs/${
+                      proposalCidToCID[deal.ProposalCid['/']]
+                    }`}
+                    target="_blank">
+                    {proposalCidToCID[deal.ProposalCid['/']]}
+                  </a>
                 </p>
-              ) : null}
-              <p>
-                <b>CID: </b>
-                <a
-                  href={`https://ipfs.io/ipfs/${
-                    proposalCidToCID[deal.ProposalCid["/"]]
-                  }`}
-                  target="_blank"
-                >
-                  {proposalCidToCID[deal.ProposalCid["/"]]}
-                </a>
-              </p>
-              <p>
-                <b>Piece CID: </b>
-                {deal.PieceCID["/"]}
-              </p>
-              <p>
-                <b>Duration: </b>
-                {deal.Duration}
-              </p>
-              <p>
-                <b>Price Per Epoch: </b>
-                {deal.PricePerEpoch}
-              </p>
-              <p>
-                <b>Provider: </b>
-                <Link to={`/miner/${deal.Provider}`}>
-                  {deal.Provider}
-                </Link>
-              </p>
-              <p>
-                <b>File Size: </b>
-                {deal.Size}
-              </p>
-            </div>
-            <ReactJson src={deal} collapsed={true} name="Deal Details" />
-            <br />
-            <br />
-            {/* {deal.stateName === "Active" ? (
+                <p>
+                  <b>Piece CID: </b>
+                  {deal.PieceCID['/']}
+                </p>
+                <p>
+                  <b>Duration: </b>
+                  {deal.Duration}
+                </p>
+                <p>
+                  <b>Price Per Epoch: </b>
+                  {deal.PricePerEpoch}
+                </p>
+                <p>
+                  <b>Provider: </b>
+                  <Link to={`/miner/${deal.Provider}`}>{deal.Provider}</Link>
+                </p>
+                <p>
+                  <b>File Size: </b>
+                  {deal.Size}
+                </p>
+              </div>
+              <ReactJson src={deal} collapsed={true} name="Deal Details" />
+              <br />
+              <br />
+              {/* {deal.stateName === "Active" ? (
               <button
                 className="btn btn-primary mb-2"
                 onClick={() => {
@@ -542,17 +543,18 @@ If the deal is successful, the button will show an "Active" deal state (`deal.St
                 Get Data from Filecoin
               </button>
             ) : null} */}
+            </div>
           </div>
-        </div>
-      );
-    }
-  })
-) : (
-  <p>
-    No Recent Deals. Upload something to Filecoin Network to see
-    sweet-sweet deals :)
-  </p>
-)}
+        )
+      }
+    })
+  ) : (
+    <p>
+      No Recent Deals. Upload something to Filecoin Network to see sweet-sweet
+      deals :)
+    </p>
+  )
+}
 ```
 
 And voila! A successful deal.
