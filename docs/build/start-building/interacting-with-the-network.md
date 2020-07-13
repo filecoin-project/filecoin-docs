@@ -28,13 +28,13 @@ Here are some scripts to set up your own remote networks for development:
 
 ## Devnet
 
-In order to make testing easier, a live devnet (developer network) is now available for use. We call this network the Nerpa Devnet (the nerpa is a species of seal, and one of the smallest true seals). The Nerpa Devnet features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version. This devnet is currently primarily intended for participants in the [HackFS hackathon](https://hackfs.com).
+In order to make testing easier, a live devnet (developer network) is now available for use. We call this network the Nerpa Devnet (the 'nerpa' is a species of seal, and one of the smallest true seals). The Nerpa Devnet features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
 To connect to the [Nerpa Devnet](http://www.nerpa.fildev.network/):
 
 1. Delete any existing local Lotus repository, if one is present.
 2. Build and run Lotus from branch `ntwk-nerpa`, [`tag ntwk-nerpa-7.7.0`](https://github.com/filecoin-project/lotus/tree/ntwk-nerpa-7.7.0). When you run `lotus daemon` on the build from this branch, you should automatically be connected to the proper bootstrappers.
-3. There should be a few miners on the network that are configured to accept storage deals. If you are having trouble finding a miner to accept your storage deal, please ping for support in the #hfs-sponsor-filecoin-team channel on the [Filecoin slack](https://filecoin.io/slack).
+3. There should be a few miners on the network that are configured to accept storage deals. If you are having trouble finding a miner to accept your storage deal, please ping for support in the #fil-storage-dev channel on the [Filecoin slack](https://filecoin.io/slack).
 
 > **NOTICE:** At the moment, there are no guarantees on uptime for any of the auto-accepting miners. If one has gone offline or become unresponsive, please let us know in the same channel on Filecoin Slack.
 
