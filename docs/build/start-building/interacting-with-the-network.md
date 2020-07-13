@@ -28,7 +28,7 @@ Here are some scripts to set up your own remote networks for development:
 
 ## Devnet
 
-In order to make testing easier, a live devnet (developer network) is now available for use. We call this network the Nerpa Devnet (the nerpa is a species of seal, and one of the smallest true seals). The Nerpa Devnet features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
+In order to make testing easier, a live devnet (developer network) is now available for use. We call this network the Nerpa Devnet (the 'nerpa' is a species of seal, and one of the smallest true seals). The Nerpa Devnet features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
 To connect to the [Nerpa Devnet](http://www.nerpa.fildev.network/):
 
