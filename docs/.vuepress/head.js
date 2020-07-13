@@ -1,12 +1,14 @@
 module.exports = [
   // commented out to allow search indexing for redirects via Netlify
-  // ['meta', { robots: 'noindex' }], 
+  // ['meta', { robots: 'noindex' }],
+  ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
   [
     'link',
     {
-      rel: 'apple-touch-icon',
-      sizes: '180x180',
-      href: '/apple-touch-icon.png'
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/favicon-16x16.png'
     }
   ],
   [
@@ -18,16 +20,15 @@ module.exports = [
       href: '/favicon-32x32.png'
     }
   ],
+  ['link', { rel: 'manifest', href: '/manifest.json' }],
   [
     'link',
     {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      href: '/favicon-16x16.png'
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/apple-touch-icon.png'
     }
   ],
-  ['link', { rel: 'manifest', href: '/manifest.json' }],
   [
     'link',
     {
@@ -36,7 +37,6 @@ module.exports = [
       color: '#3a0839'
     }
   ],
-  ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
   ['meta', { name: 'msapplication-TileColor', content: '#3a0839' }],
   [
     'meta',
