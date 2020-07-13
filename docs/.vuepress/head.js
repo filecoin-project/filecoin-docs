@@ -1,7 +1,5 @@
 module.exports = [
-  // commented out to allow search indexing for redirects via Netlify
-  // ['meta', { robots: 'noindex' }],
-  ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
+  ['link', { rel: 'icon', href: '/favicon.ico' }],
   [
     'link',
     {
