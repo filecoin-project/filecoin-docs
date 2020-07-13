@@ -266,6 +266,18 @@ module.exports = {
       }
     ],
     [
+      'vuepress-plugin-medium-zoom',
+      {
+        selector: 'img',
+        delay: 1000,
+        options: {
+          margin: 24,
+          background: '#5dbcd2',
+          scrollOffset: 0
+        }
+      }
+    ],
+    [
       'vuepress-plugin-seo',
       {
         siteTitle: ($page, $site) => $site.title,
