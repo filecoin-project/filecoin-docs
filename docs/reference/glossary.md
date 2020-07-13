@@ -7,9 +7,29 @@ description: Definitions and usage for Filecoin terminology
 
 ## Address
 
+In the Filecoin network, an _address_ is a unique cryptographic
+value that serves to publicly identify a user. This value, a
+public key, is paired with a corresponding private key. The
+mathematical relationship between the two keys is such that
+access to the private key allows the creation of a signature that
+can be verified with the public key. Filecoin specifically
+employs the Boneh–Lynn–Shacham (BLS) signature scheme for this
+purpose.
+
 ## Block
 
+In a blockchain, a _block_ is the fundamental unit of record.
+Each block is cryptographically linked to one or more previous
+blocks. Blocks typically contain [messages](#message) relating
+changes to some state (for example, financial records) tracked by
+the blockchain.
+
 ## Blockchain
+
+Fundamentally, a _blockchain_ is a system of record in which new
+records, or [blocks](#block) are cryptographically linked to
+preceding records. This construction is a foundational component
+of secure, verifiable, and distributed transaction ledgers.
 
 ## Block Height
 
@@ -32,7 +52,7 @@ Two actors in the Filecoin network can enter into a _deal_ in
 which one party contracts the services of the other. The Filecoin
 specification currently details _storage deals_ (in which one
 party agrees to store a file for the other for a specified
-lengtht of time) and _retrieval deals_ (in which one party agrees
+length of time) and _retrieval deals_ (in which one party agrees
 to transmit a particular file to the other).
 
 ## Declared Fault
@@ -192,6 +212,12 @@ If referred to as a proper noun, capitalize the term. For example, "I am
 mining on Testnet."
 
 ## Tipset
+
+Filecoin utilizes a novel blockchain variant called a
+[_tipset_](https://filecoin.io/blog/tipsets-family-based-approach-to-consensus/).
+Tipsets are less strict chains than directed, acyclic graphs;
+this construction allows multiple blocks to be mined at the same
+height.
 
 ## Verified Client
 
