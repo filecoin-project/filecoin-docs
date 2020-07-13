@@ -71,23 +71,23 @@ export default {
             },
             {
               title: 'Preparing data',
-              path: '/how-to/store-prepare-data'
+              path: '/how-to/store/prepare-data'
             },
             {
               title: 'Token payments',
-              path: '/how-to/store-tokens'
+              path: '/how-to/store/tokens'
             },
             {
               title: 'Making storage deals',
-              path: '/how-to/store-making-storage-deals'
+              path: '/how-to/store/making-storage-deals'
             },
             {
               title: 'Retrieving data',
-              path: '/how-to/store-retrieving-data'
+              path: '/how-to/store/retrieving-data'
             },
             {
               title: 'Very large files',
-              path: '/how-to/store-large-files'
+              path: '/how-to/store/large-files'
             }
           ]
         },
