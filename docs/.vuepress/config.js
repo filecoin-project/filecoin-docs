@@ -268,11 +268,11 @@ module.exports = {
     [
       'vuepress-plugin-medium-zoom',
       {
-        selector: 'img',
-        delay: 1000,
+        selector: '.theme-default-content img',
+        delay: 500,
         options: {
-          margin: 24,
-          background: '#5dbcd2',
+          margin: 20,
+          background: 'rgba(255,255,255,0.8)',
           scrollOffset: 0
         }
       }
