@@ -173,6 +173,14 @@ augmented by a multiplier.
 
 ## Retrieval Miner
 
+A _retrieval miner_ is a Filecoin actor that enters retrieval
+[deals](#deal) with clients, agreeing to supply a client with a
+particular file in exchange for filecoin.  Note that unlike
+[storage miners](#storage-miner), retrieval miners are not
+additionally rewarded for this service with the ability to add
+blocks to the Filecoin blockchain; their only reward is the fee
+they extract from the client.
+
 ## Seal
 
 _Sealing_ is one of the fundamental building blocks of the Filecoin protocol.
