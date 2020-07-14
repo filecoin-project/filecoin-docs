@@ -45,7 +45,7 @@ To tap the faucet or see dashboard for Nerpa:
 
 - Nerpa Devnet Faucet (to obtain mock FIL): https://faucet.nerpa.fildev.network/
 - Nerpa Stats Dashboard: https://stats.nerpa.fildev.network/
-- Other Nerpa Devnet Info: https://nerpa.fildev.network/
+- Other Nerpa Devnet Info: http://www.nerpa.fildev.network/
 
 #### Butterfly Devnet
 *best for Miners testing new Lotus features*
