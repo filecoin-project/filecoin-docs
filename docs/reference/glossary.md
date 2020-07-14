@@ -69,6 +69,9 @@ Proof-of-Spacetime](#winning-proof-of-spacetime-post).
 
 ## FIL
 
+_FIL_ is the filecoin unit symbol; it is alternatively denoted by
+the Unicode symbol for an integral with a double stroke (⨎).
+
 ## Faucet
 
 A _faucet_ is a service that provides free filecoin. Typically, facuets are run
@@ -78,6 +81,11 @@ seed capital to begin making transactions.
 ## Fault
 
 ## Filecoin
+
+The term _Filecoin_, in the sense of a proper noun, is used
+generically to refer to the Filecoin project, network, broader
+ecosystem and community. As a common noun, the singular form,
+filecoin, is used to denote amounts of Filecoin currency.
 
 ## Gas
 
@@ -98,6 +106,9 @@ If referred to as a proper noun, capitalize the term. For example, "I am
 mining on Mainnet."
 
 ## Message
+
+The term _message_ is used to refer to data stored as part of a
+[block](#block). A block can contain several messages.
 
 ## Miner
 
