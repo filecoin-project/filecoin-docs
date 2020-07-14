@@ -138,7 +138,7 @@ so vanishingly slight as to border on impossibility.
 Blockchains based in this approach are often said to require
 "Proof-of-_X_", where _X_ is the valued contribution. The
 Filecoin blockchain values contributions of storage capacity; it
-is predicated upon a novel Proof-of-Storage construction,
+is predicated upon a novel _Proof-of-Storage_ construction,
 distinguishing it from other blockchains that, as is most often
 the case, require a contribution of computing power.
 
@@ -197,6 +197,13 @@ blocks of data called _sectors_. Currently, only 32GiB and 64GiB sectors
 are supported.  
 
 ## Slash
+
+When a [Storage miners](#storage-miner) fails to provide consistent
+storage (as determined by their ability to produce
+[proofs](#proof-of-spacetime-post) to this effect) the Filecoin network,
+per the Filecoin consensus protocol, will _slash_ that miner; that is,
+it will assess penalties to the miner for their failure to uphold their
+pledge of storage.
 
 ## Storage Miner
 
