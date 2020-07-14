@@ -13,4 +13,4 @@ Want to find even more resources for learning about Filecoin and the technologie
 
 ## Don't see what you're looking for?
 
-We're adding more documentation all the time and making ongoing revisions to existing docs, but if you don't see what you need, please [file an issue](https://github.com/filecoin-project/filecoin-docs/issues/new/choose) to let us know! We also recommend visiting the [Filecoin chat](/community/#community-chat) for support and discussion with Filecoin enthusiasts and experts worldwide.
+We're adding more documentation all the time and making ongoing revisions to existing docs, but if you don't see what you need, please [file an issue](https://github.com/filecoin-project/filecoin-docs/issues/new/choose) to let us know! We also recommend visiting the [Filecoin chat](../community/README.md#community-chat) for support and discussion with Filecoin enthusiasts and experts worldwide.

@@ -1,4 +1,7 @@
 // .vuepress/config.js
+
+const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
+
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -36,7 +39,7 @@ module.exports = {
       'Filecoin, crypto, mining, blockchain, IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'filecoin-project/filecoin-docs',
-    domain: 'https://docs.filecoin.io/',
+    domain: DEPLOY_DOMAIN,
     docsRepo: 'filecoin-project/filecoin-docs',
     docsDir: 'docs',
     docsBranch: 'master',
@@ -45,8 +48,8 @@ module.exports = {
     },
     editLinks: false,
     // page nav
-    nextLinks: false,
-    prevLinks: false,
+    nextLinks: true,
+    prevLinks: true,
     // ui/ux
     logo: '/images/filecoin-symbol-color.svg',
     locales: {
@@ -68,11 +71,12 @@ module.exports = {
             title: 'Introduction',
             path: '/introduction/',
             children: [
-                '/introduction/what-is-filecoin',
-                '/introduction/why-filecoin',
-                '/introduction/ipfs-and-filecoin',
-                '/introduction/filecoin-compared-to'
-              ]
+              '/introduction/new-to-web3',
+              '/introduction/what-is-filecoin',
+              '/introduction/why-filecoin',
+              '/introduction/ipfs-and-filecoin',
+              '/introduction/filecoin-compared-to'
+            ]
           },
           {
             title: 'How-tos',
@@ -89,37 +93,104 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/store-prepare-data',
-                  '/how-to/store-tokens',
-                  '/how-to/store-making-storage-deals',
-                  '/how-to/store-retrieving-data',
-                  '/how-to/store-large-files'
-                ]
-              },
-              {
-                title: 'Build Apps',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/build-sample-architectures',
-                  '/how-to/build-wallets-signing-tools-api-clients',
-                  '/how-to/build-interacting-with-the-network'
+                  '/how-to/store/prepare-data',
+                  '/how-to/store/tokens',
+                  '/how-to/store/making-storage-deals',
+                  '/how-to/store/retrieving-data',
+                  '/how-to/store/large-files'
                 ]
               }
             ]
           },
           {
+            title: 'Mine',
+            path: '/mine/',
+            children: ['mine/mining']
+          },
+          {
+            title: 'Build',
+            path: '/build/',
+            children: [
+              {
+                title: 'Start Building',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/build/start-building/interacting-with-the-network']
+              },
+              {
+                title: 'Core Products',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/build/core-products/filecoin-backed-pinning-services',
+                  '/build/core-products/powergate',
+                  '/build/core-products/protocol-implementations'
+                ]
+              },
+              {
+                title: 'Developer Tools',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/build/developer-tools/wallets-signing-tools-api-clients',
+                  [
+                    'https://github.com/filecoin-project/docs/wiki#community-resources',
+                    'Filecoin Community Resources'
+                  ],
+                  ['http://filecoin.onrender.com/', 'Component Design System']
+                ]
+              },
+              {
+                title: 'Examples',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/build/examples/sample-architectures',
+
+                  {
+                    title: 'Meme Marketplace',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/meme-marketplace/overview']
+                  },
+                  {
+                    title: 'Simple Pinning Service',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/simple-pinning-service/overview']
+                  },
+                  {
+                    title: 'Slate',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/slate/overview']
+                  },
+                  {
+                    title: 'Network Inspector',
+                    sidebarDepth: 2,
+                    collapsable: false,
+                    children: [
+                      'build/examples/network-inspector/overview',
+                      'build/examples/network-inspector/lotus-and-go-ipfs-interactions',
+                      'build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
+                      'build/examples/network-inspector/step-2-run-the-react-app',
+                      'build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
+                      'build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
+                      'build/examples/network-inspector/step-5-shut-down-the-application',
+                      'build/examples/network-inspector/summary'
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+
+          {
             title: 'Reference',
             path: '/reference/',
             children: [
-              ['https://github.com/filecoin-project/specs',
-                'Specification'],
-              [
-                'https://go.filecoin.io/go-filecoin-tutorial/Home.html',
-                'go-filecoin tutorial'
-              ],
-              ['https://lotu.sh/',
-              'lotus tutorial']
+              ['https://github.com/filecoin-project/specs', 'Specification'],
+              ['https://lotu.sh/', 'lotus tutorial']
             ]
           },
           {
@@ -170,7 +241,7 @@ module.exports = {
     }
   },
   plugins: [
-    ['@vuepress/plugin-back-to-top', true],
+    '@vuepress/plugin-back-to-top',
     [
       '@vuepress/active-header-links',
       {
@@ -192,6 +263,18 @@ module.exports = {
       '@vuepress/google-analytics',
       {
         ga: 'UA-148766289-2'
+      }
+    ],
+    [
+      'vuepress-plugin-medium-zoom',
+      {
+        selector: '.theme-default-content img',
+        delay: 500,
+        options: {
+          margin: 20,
+          background: 'rgba(255,255,255,0.8)',
+          scrollOffset: 0
+        }
       }
     ],
     [
@@ -230,20 +313,27 @@ module.exports = {
       }
     ],
     [
+      'vuepress-plugin-sitemap',
+      {
+        hostname: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      'vuepress-plugin-robots',
+      {
+        host: DEPLOY_DOMAIN
+      }
+    ],
+    [
       'vuepress-plugin-canonical',
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
-        baseURL: 'https://docs.filecoin.io/'
+        baseURL: DEPLOY_DOMAIN
       }
-    ]
+    ],
+    'vuepress-plugin-check-md',
+    'vuepress-plugin-ipfs'
   ],
-  extraWatchFiles: ['.vuepress/nav/en.js'],
-  configureWebpack: (config, isServer) => {
-    if (!isServer) {
-      config.entry = {
-        app: ['./docs/.vuepress/public-path.js', config.entry.app[0]]
-      }
-    }
-  }
+  extraWatchFiles: ['.vuepress/nav/en.js']
 }

@@ -1,12 +1,15 @@
 <template>
   <main class="home">
     <div class="theme-default-content">
-      <Content class="intro"/>
+      <Content class="intro" />
       <div class="grid">
         <div
           v-for="(category, i) in manualSidebar"
           :key="i"
-          v-bind:class="{'category': true, 'meta': category.title === 'Community' || category.title === 'Project'}"
+          v-bind:class="{
+            category: true,
+            meta: category.title === 'Community' || category.title === 'Project'
+          }"
         >
           <h2>
             <RouterLink :to="category.path" class="title">
@@ -14,12 +17,12 @@
             </RouterLink>
           </h2>
           <p v-for="(item, j) in category.children" :key="j">
-            <RouterLink v-if="!isExternal(item.path)"  :to="item.path">
+            <RouterLink v-if="!isExternal(item.path)" :to="item.path">
               {{ item.title }}
             </RouterLink>
             <a v-else :href="item.path" target="_blank">
               {{ item.title }}
-              <OutboundLink/>
+              <OutboundLink />
             </a>
           </p>
         </div>
@@ -29,7 +32,6 @@
 </template>
 
 <script>
-
 import { isExternal } from '@parent-theme/util/'
 
 export default {
@@ -69,35 +71,67 @@ export default {
             },
             {
               title: 'Preparing data',
-              path: '/how-to/store-prepare-data'
+              path: '/how-to/store/prepare-data'
             },
             {
               title: 'Token payments',
-              path: '/how-to/store-tokens'
+              path: '/how-to/store/tokens'
             },
             {
               title: 'Making storage deals',
-              path: '/how-to/store-making-storage-deals'
+              path: '/how-to/store/making-storage-deals'
             },
             {
               title: 'Retrieving data',
-              path: '/how-to/store-retrieving-data'
+              path: '/how-to/store/retrieving-data'
             },
             {
               title: 'Very large files',
-              path: '/how-to/store-large-files'
+              path: '/how-to/store/large-files'
+            }
+          ]
+        },
+                {
+          title: 'Build',
+          path: '/build',
+          children: [
+            {
+              title: 'Interacting with the network',
+              path: '/build/start-building/interacting-with-the-network/'
             },
             {
-              title: 'Sample architectures',
-              path: '/how-to/build-sample-architectures'
+              title: 'IPFS-backed pinning services',
+              path: '/build/core-products/filecoin-backed-pinning-services/'
+            },
+            {
+              title: 'Powergate',
+              path: '/build/core-products/powergate/'
+            },
+            {
+              title: 'Protocol Implementations',
+              path: '/build/core-products/protocol-implementations/'
             },
             {
               title: 'Wallets, signing tools and API clients',
-              path: '/how-to/build-wallets-signing-tools-api-clients'
+              path: '/build/developer-tools/wallets-signing-tools-api-clients/'
             },
             {
-              title: 'Interacting with the network',
-              path: '/how-to/build-interacting-with-the-network'
+              title: 'Filecoin community resources',
+              path: 'https://github.com/filecoin-project/docs/wiki#community-resources'
+            },
+            {
+              title: 'Component design system',
+              path: 'http://filecoin.onrender.com/'
+            }
+          ]
+        },
+               {
+         title: 'Mine',
+         path: '/mine',
+         children: [
+           {
+              title: 'Mining overview',
+              path: '/mine/mining'
             }
           ]
         },
@@ -151,7 +185,6 @@ export default {
               title: 'Docs: Contribution tutorial',
               path: '/community/contribute/contribution-tutorial'
             }
-
           ]
         },
         {
@@ -160,7 +193,8 @@ export default {
           children: [
             {
               title: 'Roadmap',
-              path: 'https://app.instagantt.com/shared/s/1152992274307505/latest'
+              path:
+                'https://app.instagantt.com/shared/s/1152992274307505/latest'
             },
             {
               title: 'Research',
@@ -172,7 +206,8 @@ export default {
             },
             {
               title: 'Code of conduct',
-              path: 'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md'
+              path:
+                'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md'
             }
           ]
         }

@@ -2,6 +2,7 @@
 title: The Filecoin Project
 description: Learn about the history, roadmap, current status and more for Filecoin
 ---
+
 # The Filecoin Project
 
 Curious about how it all got started, or where we're headed? Learn about the history, current state, and future trajectory of the Filecoin project here.
@@ -16,7 +17,7 @@ Learn about the ongoing cryptography research and design efforts that underpin t
 
 ## Related projects
 
-Filecoin is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [Filecoin-related projects](/project/related-projects/) supported by Protocol Labs.
+Filecoin is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [Filecoin-related projects](related-projects.md) supported by Protocol Labs.
 
 ## Code of conduct
 

@@ -6,23 +6,27 @@
   "license": "MIT",
   "devDependencies": {
     "@centerforopenscience/markdown-it-video": "^1.0.0",
-    "@vuepress/plugin-active-header-links": "^1.3.1",
-    "@vuepress/plugin-back-to-top": "^1.3.1",
-    "@vuepress/plugin-google-analytics": "^1.3.1",
-    "@vuepress/plugin-last-updated": "^1.3.1",
-    "all-relative": "^1.0.1",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
+    "@vuepress/plugin-active-header-links": "^1.5.2",
+    "@vuepress/plugin-back-to-top": "^1.5.2",
+    "@vuepress/plugin-google-analytics": "^1.5.2",
+    "@vuepress/plugin-last-updated": "^1.5.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-video": "^0.6.3",
-    "prettier": "^1.19.1",
-    "stylus-supremacy": "^2.14.0",
-    "vuepress": "^1.3.1",
+    "prettier": "^2.0.5",
+    "stylus-supremacy": "^2.14.5",
+    "vuepress": "^1.5.2",
     "vuepress-plugin-canonical": "^1.0.0",
+    "vuepress-plugin-check-md": "0.0.2",
     "vuepress-plugin-clean-urls": "^1.1.1",
-    "vuepress-plugin-seo": "^0.1.2"
+    "vuepress-plugin-ipfs": "^1.0.2",
+    "vuepress-plugin-medium-zoom": "^1.1.8",
+    "vuepress-plugin-robots": "^1.0.1",
+    "vuepress-plugin-seo": "^0.1.3",
+    "vuepress-plugin-sitemap": "^2.3.1"
   },
   "prettier": {
     "arrowParens": "avoid",
@@ -47,7 +51,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run docs:links"
     }
   },
   "scripts": {
@@ -55,8 +60,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:all-relative": "cd ./docs/.vuepress/dist && all-relative",
-    "docs:build:ipfs": "npm run docs:build && npm run docs:all-relative"
+    "docs:build": "npm run docs:links && vuepress build docs",
+    "docs:links": "vuepress check-md docs"
   }
 }
