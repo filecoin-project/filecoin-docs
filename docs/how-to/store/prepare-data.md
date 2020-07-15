@@ -5,7 +5,7 @@ description: Learn how to prepare data for storage.
 
 # Is this section for you?
 
-Most likely you will use Filecoin as a part of a larger system (eg. [Textile Hub](https://docs.textile.io/hub/), [Starling](https://github.com/filecoin-project/starling), [Space Daemon](https://blog.fleek.co/posts/daemon-release)) that takes care of many details for you.
+Most likely you will use Filecoin as a part of a larger system such as a [Filecoin-backed IPFS Pinning Service](../../build/core-products/filecoin-backed-pinning-services/) that takes care of many details for you.
 
 If you would like to store data directly onto Filecoin using a Filecoin implementation such as [Lotus](https://lotu.sh/), you will need to understand some basic concepts and limits.
 
