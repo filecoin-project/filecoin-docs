@@ -5,6 +5,11 @@ description: Definitions and usage for Filecoin terminology
 
 # Glossary
 
+## Actor
+
+_Actor_ is a term used generically to indicate a participant in the
+Filecoin network.
+
 ## Address
 
 In the Filecoin network, an _address_ is a unique cryptographic
@@ -31,14 +36,14 @@ records, or [blocks](#block) are cryptographically linked to
 preceding records. This construction is a foundational component
 of secure, verifiable, and distributed transaction ledgers.
 
-## Block Height
+## Block height
 
 The _height_ of a [block](#block) corresponds to the number of [epochs](#epoch)
 elapsed before the block was added to the blockchain. The height of the
 Filecoin [blockchain](#blockchain) is defined to be the maximum height
 of any block in the blockchain.
 
-## Capacity Commitment
+## Capacity commitment
 
 If a storage miner doesn't find any available deal proposals appealing, they
 can alternatively make a _capacity commitment_, filling a [sector](#sector)
@@ -46,18 +51,30 @@ with arbitrary data, rather than with client data. Maintaining this sector
 allows the storage miner to provably demonstrate that they are reserving space
 on behalf of the network. 
 
+## Collateral
+
+In order to enter into a [storage deal](#deal), a [storage
+miner](#storage-miner) is required to provide filecoin as
+_collateral_, to be paid out as compensation to a client in the
+event that the miner fails to uphold their storage commitment.
+
 ## Deal
 
 Two actors in the Filecoin network can enter into a _deal_ in
 which one party contracts the services of the other. The Filecoin
 specification currently details _storage deals_ (in which one
-party agrees to store a file for the other for a specified
+party agrees to store data for the other for a specified
 length of time) and _retrieval deals_ (in which one party agrees
 to transmit a particular file to the other).
 
-## Declared Fault
-
 ## Election
+
+Every [epoch](#epoch), a small subset of Filecoin [storage
+miners](#storage-miner) are _elected_ to mine a new
+[block](#block) for the Filecoin blockchain. A miner's
+probability of being elected is roughly proportional to the share
+of the Filecoin network's total storage capacity that they
+contribute.
 
 ## Epoch
 
@@ -79,6 +96,13 @@ for the benefit of new users in a network, providing them with the necessary
 seed capital to begin making transactions.
 
 ## Fault
+
+When a [storage miner](#storage-miner) fails to complete [Window
+Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) for a
+given sector, a _fault_ the Filecoin network registers a _fault_
+for that sector, and the miner is [_slashed_](#slash). Storage
+miners must work to resolve faults quickly, lest they be
+considered to have abandoned their commitment. 
 
 ## Filecoin
 
@@ -117,45 +141,48 @@ providing a service of value to a client. At present, the Filecoin
 specification recognizes two miner types: [storage miners](#storage-miner) and
 [retrieval miners](#retrieval-miners).
 
-## Pledged Storage
+## Pledged storage
 
 Storage capacity that a miner has promised to reserve for the
 Filecoin network via
 [Proof-of-Replication](#proof-of-replication-porep) is termed
 _pledged storage_.
 
-## Proof-of-Storage
+## Proof-of-Storage (PoSt)
 
 Many blockchain networks are underpinned by the notion that
-constituent nodes supply something of value to the blockchain - 
+participating actors supply something of value to the blockchain - 
 a contribution that is hard to fake, but which, if actually made,
-can be trivially verified. Typically, this takes the form of a
-probabilistic argument, rather than a concrete proof; that is,
-it might _technically_ be possible to convince other nodes that
-one is making a contribution one is not, but the possibility is
-so vanishingly slight as to border on impossibility.
-
-Blockchains based in this approach are often said to require
-"Proof-of-_X_", where _X_ is the valued contribution. The
-Filecoin blockchain values contributions of storage capacity; it
-is predicated upon a novel _Proof-of-Storage_ construction,
-distinguishing it from other blockchains that, as is most often
-the case, require a contribution of computing power.
+can be trivially verified. Blockchains based in this approach are
+often said to require "Proof-of-_X_", where _X_ is the valued
+contribution. The Filecoin blockchain values contributions of
+storage capacity; it is predicated upon a novel
+_Proof-of-Storage_ (PoSt) construction, distinguishing it from other
+blockchains that, as is most often the case, require a
+contribution of computing power.
 
 As a term, Proof-of-Storage refers to the design elements of the
 Filecoin protocol that allow one to guarantee (to some very high
-tolerance) that nodes that claim to be contributing a given
+tolerance) that actors that claim to be contributing a given
 amount of storage are indeed fulfilling that pledge. In fact,
 Filecoin's Proof-of-Storage construction provides for a much
-stronger claim, allowing one to efficiently verify that a node is
-storing a _particular file_, without requiring that one have a
+stronger claim, allowing one to efficiently verify that a actor is
+storing a _particular piece of data, without requiring that one have a
 copy of the file itself.
+
+*Note*: "proof" here is used in an informal sense - typically,
+these proofs take the form of a probabilistic argument, rather
+than a concrete proof; that is, it might _technically_ be
+possible to convince other actors that one is making a
+contribution one is not, but the possibility is so vanishingly
+slight as to border on impossibility.
 
 ## Proof-of-Replication (PoRep)
 
 _Proof-of-Replication_ is a procedure by which a [storage
-miner](#storage-miner) can prove to the Filecoin network that they have created
-a unique copy of some piece of data on the network's behalf.
+miner](#storage-miner) can prove to the Filecoin network that
+they have created a unique copy of some piece of data on the
+network's behalf.
 
 ## Proof-of-Spacetime (PoSt)
 
@@ -166,12 +193,14 @@ varieties in the present Filecoin specification: [Window
 Proof-of-Spacetime](window-proof-of-spacetime-windowpost) and [Winning
 Proof-of-Spacetime](winning-proof-of-spacetime-winningpost).
 
-## Quality-Adjusted Storage Power
+## Quality-adjusted storage power
 
-A storage deal offered by a [verified client](#verified-client) will be
-augmented by a multiplier.
+The storage power a [storage miner](#storage-miner) earns from a
+storage deal offered by a [verified client](#verified-client)
+will be augmented by a multiplier. Power totals that take into
+account this multiplier are termed _quality_adjusted_.
 
-## Retrieval Miner
+## Retrieval miner
 
 A _retrieval miner_ is a Filecoin actor that enters retrieval
 [deals](#deal) with clients, agreeing to supply a client with a
@@ -194,37 +223,65 @@ representation are essential to the
 
 Storage miners store data on behalf of the Filecoin network in fixed-size
 blocks of data called _sectors_. Currently, only 32GiB and 64GiB sectors
-are supported.  
+are supported.
 
 ## Slash
 
-When a [Storage miners](#storage-miner) fails to provide consistent
-storage (as determined by their ability to produce
-[proofs](#proof-of-spacetime-post) to this effect) the Filecoin network,
-per the Filecoin consensus protocol, will _slash_ that miner; that is,
-it will assess penalties to the miner for their failure to uphold their
-pledge of storage.
+When a [fault](#fault) is registered , the Filecoin network will
+_slash_ that miner; that is, it will assess penalties to the
+miner for their failure to uphold their pledge of storage. When
+slashing takes place, the power a miner earns for the associated
+sector is subtracted from the miner's total power for the purposes
+of [election](#election).
 
-## Storage Miner
+When a [Storage miners](#storage-miner) fails to provide
+consistent storage (as determined by their ability to produce
+[proofs](#proof-of-spacetime-post) to this effect) the Filecoin
+network registers a [fault](#fault). When this occurs, the
+
+## Storage miner
 
 A _storage miner_ is a Filecoin actor that stores data on behalf of the
 network. Storage miners are rewarded for this service through payments by
 clients that contract their services, as well as by periodic authorization to
-extend the Filecoin blockchain with blocks of their own creation. When they
-create a block, storage miners are rewarded with newly minted filecoin, and by
-the transaction fees they can levy on other nodes seeking to include messages
-in the block. The frequency with which a storage miner is selected for this
-reward is roughly proportional to the storage they contribute to the network.
+extend the Filecoin blockchain with blocks of their own creation.
+When they create a block, storage miners are rewarded with newly
+minted filecoin, and by the transaction fees they can levy on
+other actors seeking to include messages in the block. 
 
-## Storage Power
+## Storage power
 
 A [storage miner's](#storage-miner) _storage power_ is a value roughly
 proportional to the amount of storage capacity they make available on behalf of
 the network via [capacity commitments](#-capacity-commitment) or [storage
 deals](#deal). Storage power is used to select storage miners for rewards
-in proportion to their contributions to the network.
+in proportion to their contributions to the total network storage capacity.
 
-## Succinct Non-interactive Argument of Knowledge (SNARK)
+## Zero-knowledge succinct non-interactive argument of knowledge (zk-SNARK)
+
+An _argument of knowledge_ is a construction by which one party,
+called the _prover_, can convince another, the _verifier_, that
+the prover has access to some piece of information. There are several
+possible constraints on such constructions:
+
+- A _non-interactive_ argument of knowledge has the requirement
+  that just a single message, sent from the prover to the verifier,
+  should serve as a sufficient argument.
+
+- A _zero-knowledge_ argument of knowledge has the requirement that
+  the verifier should not need access to the knowledge the prover
+  has access to in order to verify the prover's claim.
+
+- A _succinct_ argument of knowledge is one that can be "quickly"
+  verified, and which is "small", for appropriate definitions of
+  both of those terms.
+
+A zero-knowledge, succinct non-interactive argument of knowledge
+(zk-SNARK) embodies all of these properties. Filecoin utilizes
+these constructions to enable its distributed network to
+efficiently verify that [storage miners](#storage-miner) are
+storing files they pledged to store, without requiring the verifiers
+to maintain copies of these files themselves.
 
 ## Testnet
 
@@ -245,10 +302,54 @@ Tipsets are less strict chains than directed, acyclic graphs;
 this construction allows multiple blocks to be mined at the same
 height.
 
-## Verified Client
+## Verified client
+
+To further incentivize the storage of "useful" data over simple
+[capacity commitments](#capacity-commitment), [storage
+miners](#storage-miner) have the additional opportunity to
+compete for special [deals](#deal) offered by verified clients.
+Such clients are certified with respect to their intent to offer
+deals involving the storage of meaningful data, and the power a
+storage miner earns for these deals is augmented by a multiplier.
 
 ## Window Proof-of-Spacetime (WindowPoSt)
 
+_Window Proof-of-Spacetime_ (WindowPoSt) is the the mechanism by
+which the commitments made by [storage miners](#storage-miner)
+are audited. It sees each 24-hour period broken down into a
+series of windows. Correspondingly, each storage miner’s set of
+pledged [sectors](#sector) is partitioned into subsets, one
+subset for each window. Within a given window, each storage miner
+must submit a [Proof-of-Spacetime](#proof-of-spacetime-post) for
+each sector in their respective subset. This requires ready
+access to each of the challenged sectors, and will result in a
+[zk-SNARK](#zero-knowledge-succinct-non-interactive-argument-of-knowledge-zk-snark)
+-compressed proof published to the Filecoin
+[blockchain](#blockchain) as a [message](#message) in a
+[block](#blockc). In this way, every sector of [pledged
+storage](#pledged-storage) is audited at least once in any
+24-hour period, and a permanent, verifiable, and public record
+attesting to each storage miner’s continued commitment is kept.
+
+The Filecoin network expects constant availability of stored
+data. Failing to submit WindowPoSt for a sector will result in a
+[fault](#fault), and the storage miner supplying the sector will
+be [slashed](#slash).
+
 ## Winning Proof-of-Spacetime (WinningPoSt)
 
-## Zero-Knowledge SNARK (zk-SNARK)
+_Winning Proof-of-Spacetime_ (WinningPoSt) is the mechanism by
+which [storage miners](#storage-miner) are rewarded for their
+contributions to the Filecoin network. At the beginning of each
+[epoch](#epoch), a small number of storage miners are
+[elected](#election) to each mine a new [block](#block). As a
+requirement for doing so, each miner is tasked with submitting a
+compressed [Proof-of-Storage](#proof-of-storage-post) for a
+specified [sector](#sector). Each elected miner who successfully
+creates a block is granted filecoin, as well as the opportunity
+to charge other Filecoin actors fees to include
+[messages](#message) in the block.
+
+Storage miners who fail to do this in the necessary window will
+forfeit their opportunity to mine a block, but will not otherwise
+incur penalties for their failure to do so.
