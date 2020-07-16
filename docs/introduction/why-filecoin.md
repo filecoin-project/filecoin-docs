@@ -27,6 +27,11 @@ The Filecoin network continually verifies that files are stored correctly. The F
 
 In the process of self-healing, Filecoin generates verifiable traces that files have been stored correctly over time. Clients can efficiently scan these traces to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any miner’s track record and will notice if the miner has been faulty or offline in the past.
 
+::: callout
+[Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
+:::
+
+
 ### Reputation, not marketing
 
 In Filecoin, storage providers prove their reliability through their track record published on the blockchain, not through marketing claims published by the provider themselves. Users don’t need to rely on status pages or self-reported statistics from storage providers.
