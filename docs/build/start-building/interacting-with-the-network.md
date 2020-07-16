@@ -28,10 +28,12 @@ Here are some scripts to set up your own remote networks for development:
 
 ## Devnets
 
-#### Nerpa Devnet
-*best for Developers*
+There are currently two developer networks available for users to try out: the Nerpa Devnet, which is recommended for developers building dapps, and the Butterfly Devnet, which is best suited for miners interested in testing out new Lotus features and is reset more often.
 
-To make development and testing easier, a live, long-lived devnet (developer network) is available for use. We call this network the Nerpa Devnet (the 'nerpa' is a species of seal, and one of the smallest true seals). The Nerpa Devnet features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
+### Nerpa Devnet
+*best for Developers building apps*
+
+A long-lived devnet for developers building storage apps. We call this network the Nerpa Devnet (the 'nerpa' is a species of seal, and one of the smallest true seals). It features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
 To connect to the [Nerpa Devnet](http://www.nerpa.fildev.network/):
 
@@ -47,10 +49,10 @@ To tap the faucet or see dashboard for Nerpa:
 - Nerpa Stats Dashboard: https://stats.nerpa.fildev.network/
 - Other Nerpa Devnet Info: http://www.nerpa.fildev.network/
 
-#### Butterfly Devnet
+### Butterfly Devnet
 *best for Miners testing new Lotus features*
 
-Butterfly Devnet is intended to test recent Lotus updates and also has small 512MB sectors available for faster sealing in addition to 32GB and 64GB sectors (for mainnet 32GB will be the minimum sector size as a security parameter). Currently it has:
+Butterfly Devnet is intended to test recent Lotus updates so is updated more frequently. It also has small 512MB sectors available for faster sealing in addition to 32GB and 64GB sectors (for mainnet 32GB will be the minimum sector size as a security parameter). Currently it has:
 
    - Committed Capacity Sector Upgrading: You can declare sectors as “Committed Capacity”, pledge them with junk data, and then upgrade them with real data if a deal comes in!
    - Fast-retrieval: Miners can accept deals marked “fast-retrieval”, which will make them store an extra, unsealed copy of the deal’s data. This can then be quickly retrieved without unsealing the sector!
