@@ -89,6 +89,13 @@ module.exports = {
                 children: ['/how-to/install-filecoin']
               },
               {
+                title: 'Create Filecoin Applications',
+                sidebarDepth: 1,
+                children: [
+                  '/how-to/build-filecoin-web-applications-with-textile-and-react'
+                ]
+              },
+              {
                 title: 'Store Data',
                 sidebarDepth: 1,
                 collapsable: false,
