@@ -131,7 +131,7 @@ export default {
          children: [
            {
               title: 'Mining overview',
-              path: '/mine/mining'
+              path: '/mine/'
             }
           ]
         },
