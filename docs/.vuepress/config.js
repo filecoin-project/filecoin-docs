@@ -89,6 +89,13 @@ module.exports = {
                 children: ['/how-to/install-filecoin']
               },
               {
+                title: 'Create Filecoin Applications',
+                sidebarDepth: 1,
+                children: [
+                  '/how-to/build-filecoin-web-applications-with-textile-and-react'
+                ]
+              },
+              {
                 title: 'Store Data',
                 sidebarDepth: 1,
                 collapsable: false,
@@ -178,6 +185,21 @@ module.exports = {
                       'build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
                       'build/examples/network-inspector/step-5-shut-down-the-application',
                       'build/examples/network-inspector/summary'
+                    ]
+                  },
+                  {
+                    title: 'Simple Pinning Service',
+                    sidebarDepth: 2,
+                    collapsable: false,
+                    children: [
+                      'build/examples/simple-pinning-service/overview.md',
+                      'build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions.md',
+                      'build/examples/simple-pinning-service/step-1-powergate-setup.md',
+                      'build/examples/simple-pinning-service/step-2-react-app-setup.md',
+                      'build/examples/simple-pinning-service/step-3-connecting-powergate-to-app.md',
+                      'build/examples/simple-pinning-service/step-4-explore-pinning-service-app.md',
+                      'build/examples/simple-pinning-service/step-5-shut-down-the-application.md',
+                      'docs/build/examples/simple-pinning-service/summary.md'
                     ]
                   }
                 ]
