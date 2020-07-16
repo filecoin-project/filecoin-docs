@@ -1,0 +1,15 @@
+**Closing down**
+
+After you have explored the app, feel free to shut down the docker containers using the following steps:
+
+1. Go into the powergate-docker-v0.0.1-beta folder
+
+```bash
+cd powergate-docker-v0.0.1-beta
+```
+
+1. Run the following command to stop all the containers gracefully
+
+```bash
+make down
+```
