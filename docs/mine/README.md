@@ -82,3 +82,7 @@ In Filecoin, miners are succeptible to two different kinds of slashing: **storag
 ### Window PoSt checks
 
 PoSt (Proof-of-Spacetime) window checks are done to regularly ensure that miners are continuing to host their required sectors as normal. These checks are performed in 24 hour intervals on the network. For each day a miner is inactive it will receive a fault fee, continuing until the associated wallet is empty and the miner is removed from the network. In the case of a faulted sector, there will be an additional sector penalty added immediately following the fault fee.
+
+::: callout
+[Learn about PoSt and other verification methods at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
+:::
