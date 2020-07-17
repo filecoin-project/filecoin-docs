@@ -338,6 +338,27 @@ module.exports = {
         baseURL: DEPLOY_DOMAIN
       }
     ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'callout',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'right',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'left',
+        defaultTitle: ''
+      }
+    ],
     'vuepress-plugin-check-md',
     'vuepress-plugin-ipfs'
   ],

@@ -21,6 +21,10 @@ Users can choose their preferred trade-off between cost, redundancy and speed by
 
 At any time, users can verify that their files are being stored correctly by looking at proofs on Filecoin’s blockchain.
 
+::: callout
+[Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
+:::
+
 ### For storage providers
 
 Filecoin enables storage providers to sell their storage on an open market.
