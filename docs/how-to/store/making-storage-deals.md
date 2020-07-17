@@ -3,11 +3,11 @@ title: Making storage deals
 description: Learn how to use Filecoin tokens to pay for storage.
 ---
 
+# Making storage deals
+
 ::: callout
 [Learn about verifiable storage deals at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
 :::
-
-# Making storage deals
 
 Once a client has prepared their data and added tokens to their wallet, they can make storage deals with miners. There are several distinct phases:
 
