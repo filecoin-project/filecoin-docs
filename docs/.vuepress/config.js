@@ -111,8 +111,7 @@ module.exports = {
           },
           {
             title: 'Mine',
-            path: '/mine/',
-            children: ['mine/mining']
+            path: '/mine/'
           },
           {
             title: 'Build',
