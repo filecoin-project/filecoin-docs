@@ -1,4 +1,9 @@
-### Powergate and Its Interactions with Lotus and go-ipfs
+---
+title: powergate, lotus, and go-ipfs interactions
+description: This article describes how powergate interacts with lotus and go-ipfs nodes in general, with links to further resources.
+---
+
+# Powergate and Its Interactions with Lotus and go-ipfs
 
 Both Lotus and IPFS have several implementations for development in different environments, such as Go, JavaScript, Rust, etc. This tutorial focuses on the Go implementation.
 
