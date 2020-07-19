@@ -31,3 +31,9 @@ Benefits of using the Powergate include (from [Textile’s documentation](https:
 - Make use of network indices to improve miner selection and deal creation.
 - Manage Filecoin wallet addresses for one or many users.
 - Easily configure, connect, and deploy Powergate, [Lotus](https://lotu.sh/), and [IPFS](https://ipfs.io/) together.
+
+## Resources
+
+- [More on lotus](https://lotu.sh/)
+- [More on go-ipfs](https://docs.ipfs.io)
+- [More on powergate](https://docs.textile.io/powergate/)
