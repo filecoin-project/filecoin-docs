@@ -48,24 +48,49 @@ To tap the faucet or see dashboard for Nerpa:
 - Nerpa Devnet Faucet (to obtain mock FIL): https://faucet.nerpa.fildev.network/
 - Nerpa Stats Dashboard: https://stats.nerpa.fildev.network/
 - Other Nerpa Devnet Info: http://www.nerpa.fildev.network/
+- For updates see: [#fil-net-nerpa](https://filecoinproject.slack.com/archives/C016VJSJNTH) (in Filecoin Slack)
+
 
 ### Butterfly Devnet
 *best for Miners testing new Lotus features*
 
-Butterfly Devnet is intended to test recent Lotus updates so is updated more frequently. It also has small 512MB sectors available for faster sealing in addition to 32GB and 64GB sectors (for mainnet 32GB will be the minimum sector size as a security parameter). Currently it has:
-
-   - Committed Capacity Sector Upgrading: You can declare sectors as “Committed Capacity”, pledge them with junk data, and then upgrade them with real data if a deal comes in!
-   - Fast-retrieval: Miners can accept deals marked “fast-retrieval”, which will make them store an extra, unsealed copy of the deal’s data. This can then be quickly retrieved without unsealing the sector!
+Butterfly Devnet is intended to test recent Lotus updates so is updated more frequently. It also has small 512MB sectors available for faster sealing in addition to 32GB and 64GB sectors (for mainnet 32GB will be the minimum sector size as a security parameter).
    
 To tap the faucet or see dashboard for Butterfly:
 
 - Butterfly Devnet Faucet: https://faucet.butterfly.fildev.network/
 - Butterfly Stats Dashboard: https://stats.butterfly.fildev.network/
-- Other Butterfly Devnet Info: [Slack announcement](https://filecoinproject.slack.com/archives/CPFTWMY7N/p1594351253402500)
+- For updates see: [#fil-net-butterfly](https://filecoinproject.slack.com/archives/C017AB80CTC) (in Filecoin Slack)
+
 
 ## Testnet
+*the primary live testnet before mainnet launch*
 
-[Filecoin Testnet](https://filecoin.io/testnet/) is a live community test network, under active development.
+The Filecoin testnet is a live, longer-running community test network. Filecoin is under active development and the testnet is being used for a period of significant testing, benchmarking, and optimizations. The purpose of the testnet is to evaluate Filecoin at meaningful scale before mainnet and to fix any issues that may arise.
+
+The testnet is the most realistic simulation of the Filecoin mainnet to date:
+
+- Prospective storage miners can experience more realistic sealing performance and hardware requirements due to the use of near-final proofs constructions and parameters
+- Prospective storage clients can store and retrieve real data on the testnet. Clients can participate in deal-making workflows and storage + retrieval functionality.
+- As planned for mainnet, the minimum sector size on testnet is 32 GB and 64 GB sectors are also available.
+
+
+Currently, the Filecoin testnet operates with the [lotus Filecoin implementation](https://lotu.sh). You can use the `master` branch of lotus to join the current live testnet.
+
+To tap the faucet, see the dashboard or search a block explorer for testnet:
+
+- tesnet Faucet: https://faucet.testnet.filecoin.io/
+- testnet Stats Dashboard: https://stats.testnet.filecoin.io/
+- testnet block explorers: See [block explorers on the Resources wiki](https://github.com/filecoin-project/docs/wiki#block-explorers)
+- For updates see: [#fil-testnet](https://filecoinproject.slack.com/archives/C0144HM4AM7) (in Filecoin Slack)
+- For lotus questions see: [#fil-lotus](https://filecoinproject.slack.com/archives/CPFTWMY7N) and for general help: [#fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
+
+#### Filecoin SpaceRace
+
+The testnet will be used for the [Filecoin Testnet Incentives Program](https://filecoin.io/blog/getting-ready-testnet-incentives/) - nicknamed the *Filecoin Space Race*, a 3-week competition period that will begin in early August. This collaborative competition is intended to stress-test the network, encourage participation all over the world, and help miners get ready to run the world’s biggest decentralized storage network.
+
+In this competition, miners will compete to onboard as much storage capacity as possible to the network. The top 100 miners globally, as well as the top 50 miners from each continent, will earn Filecoin rewards based on how much storage they and the network achieve during the competition period. 
+
 
 ### Hosted nodes for testnet
 
@@ -73,4 +98,6 @@ The Filecoin project has a limited number of dedicated, up-to-date nodes (synced
 
 ## Mainnet
 
-Filecoin Mainnet launch is currently planned for Q3 2020. See the [Filecoin blog](https://filecoin.io/blog/roadmap-update-june-2020) for more information.
+Filecoin mainnet has not yet launched and the FIL token does not yet exist. The network is and always will be open for anyone to access and join without restriction, and the Filecoin Project codebase is free and open-source. Anyone can install the software, connect to the network, and explore Filecoin.
+
+Filecoin mainnet launch is currently planned for Q3 2020. Visit the [Filecoin blog](https://filecoin.io/blog/) for updates and the [current Gantt chart](https://app.instagantt.com/shared/s/1152992274307505/latest).
