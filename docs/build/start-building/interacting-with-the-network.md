@@ -85,7 +85,7 @@ To tap the faucet, see the dashboard or search a block explorer for testnet:
 - For updates see: [#fil-testnet](https://filecoinproject.slack.com/archives/C0144HM4AM7) (in Filecoin Slack)
 - For lotus questions see: [#fil-lotus](https://filecoinproject.slack.com/archives/CPFTWMY7N) and for general help: [#fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 
-#### Filecoin SpaceRace
+### Filecoin Space Race
 
 The testnet will be used for the [Filecoin Testnet Incentives Program](https://filecoin.io/blog/getting-ready-testnet-incentives/) - nicknamed the *Filecoin Space Race*, a 3-week competition period that will begin in early August. This collaborative competition is intended to stress-test the network, encourage participation all over the world, and help miners get ready to run the world’s biggest decentralized storage network.
 
