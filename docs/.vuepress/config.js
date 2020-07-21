@@ -111,7 +111,10 @@ module.exports = {
           },
           {
             title: 'Mine',
-            path: '/mine/'
+            path: '/mine/',
+             children: [
+               ['/mine/spacerace']
+          ]
           },
           {
             title: 'Build',

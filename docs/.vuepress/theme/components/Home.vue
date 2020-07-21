@@ -132,6 +132,10 @@ export default {
            {
               title: 'Mining overview',
               path: '/mine/'
+            },
+           {
+              title: 'Space Race',
+              path: '/mine/spacerace'
             }
           ]
         },
