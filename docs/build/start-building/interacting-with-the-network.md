@@ -1,9 +1,22 @@
 ---
 title: Interacting with the network
 description: Learn how to interface with the Filecoin network.
----
-
+---  
+  
 # Interacting with the network
+
+  - [Local networks](#local-networks)
+     - [Running your own remote network](#running-your-own-remote-network)
+  - [Mainnet](#mainnet)
+  - [Testnet](#testnet)
+     - [Filecoin Space Race](#filecoin-space-race)
+     - [Hosted nodes for testnet](#hosted-nodes-for-testnet)
+  - [Devnets](#devnets)
+     - [Nerpa Devnet](#nerpa-devnet) - <sub>*for Developers building apps*</sub>
+     - [Butterfly Devnet](#butterfly-devnet) - <sub>*for testing new Lotus feature*</sub>
+     - [Calibration Devnet](#calibration-devnet) - <sub>*for Miners preparing for the Space Race*</sub>
+
+<br>
 
 This page outlines various options for connecting to local and remote test networks while building and operating your service or application.
 
@@ -19,16 +32,63 @@ Here are some ways to spin up a mock version of the Filecoin network on your own
 - [Containerized devnet using mocked sectorbuilder](https://github.com/textileio/lotus-devnet) (aka mocked mining)
 - [Additional containers & virtualization scripts](https://github.com/filecoin-project/docs/wiki#containers--virtualization)
 
-## Running your own remote network
+### Running your own remote network
 
 Here are some scripts to set up your own remote networks for development:
 
 - [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container
 - [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
 
+------  
+
+## Mainnet
+
+Filecoin mainnet has not yet launched and the FIL token does not yet exist. The network is and always will be open for anyone to access and join without restriction, and the Filecoin Project codebase is free and open-source. Anyone can install the software, connect to the network, and explore Filecoin.
+
+Filecoin mainnet launch is currently planned for Q3 2020. Visit the [Filecoin blog](https://filecoin.io/blog/) for updates and the [current Gantt chart](https://app.instagantt.com/shared/s/1152992274307505/latest).
+
+------ 
+
+## Testnet
+*the primary live testnet before mainnet launch*
+
+The Filecoin testnet is a live, longer-running community test network. Filecoin is under active development and the testnet is being used for a period of significant testing, benchmarking, and optimizations. The purpose of the testnet is to evaluate Filecoin at meaningful scale before mainnet and to fix any issues that may arise.
+
+> Note: If you're a storage application developer who would like accelerated storage deal lifecycles you may want to try a **Devnet** with smaller minimum sectors below.
+
+The testnet is the most realistic simulation of the Filecoin mainnet to date:
+
+- Prospective storage miners can experience more realistic sealing performance and hardware requirements due to the use of near-final proofs constructions and parameters
+- Prospective storage clients can store and retrieve real data on the testnet. Clients can participate in deal-making workflows and storage + retrieval functionality.
+- As planned for mainnet, the minimum sector size on testnet is 32 GB and 64 GB sectors are also available.
+
+
+Currently, the Filecoin testnet operates with the [lotus Filecoin implementation](https://lotu.sh). You can use the `master` branch of lotus to join the current live testnet.
+
+To tap the faucet, see the dashboard or search a block explorer for testnet:
+
+- testnet Faucet: https://faucet.testnet.filecoin.io/
+- testnet Stats Dashboard: https://stats.testnet.filecoin.io/
+- testnet Block Explorers: See [block explorers on the Resources wiki](https://github.com/filecoin-project/docs/wiki#block-explorers)
+- For updates see: [#fil-testnet](https://filecoinproject.slack.com/archives/C0144HM4AM7) (in Filecoin Slack)
+- For lotus questions see: [#fil-lotus](https://filecoinproject.slack.com/archives/CPFTWMY7N) and for general help: [#fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
+
+### Filecoin Space Race
+
+The testnet will be used for the [Filecoin Testnet Incentives Program](https://filecoin.io/blog/getting-ready-testnet-incentives/) - nicknamed the *Filecoin Space Race*, a 3-week competition period that will begin in early August. This collaborative competition is intended to stress-test the network, encourage participation all over the world, and help miners get ready to run the world’s biggest decentralized storage network.
+
+In this competition, miners will compete to onboard as much storage capacity as possible to the network. The top 100 miners globally, as well as the top 50 miners from each continent, will earn Filecoin rewards based on how much storage they and the network achieve during the competition period. 
+
+
+### Hosted nodes for testnet
+
+The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
+
+------ 
+
 ## Devnets
 
-There are currently two developer networks available for users to try out: the Nerpa Devnet, which is recommended for developers building dapps, and the Butterfly Devnet, which is best suited for miners interested in testing out new Lotus features and is reset more often.
+There are currently several developer networks available to try out: the Nerpa Devnet, which is recommended for developers building applications, and the Butterfly Devnet, which is best suited for miners interested in testing out new Lotus features and is reset more often. There is also a Calibration Devnet for miners to practice Space Race testing.
 
 ### Nerpa Devnet
 *best for Developers building apps*
@@ -48,29 +108,34 @@ To tap the faucet or see dashboard for Nerpa:
 - Nerpa Devnet Faucet (to obtain mock FIL): https://faucet.nerpa.fildev.network/
 - Nerpa Stats Dashboard: https://stats.nerpa.fildev.network/
 - Other Nerpa Devnet Info: http://www.nerpa.fildev.network/
+- For updates see: [#fil-net-nerpa](https://filecoinproject.slack.com/archives/C016VJSJNTH) (in Filecoin Slack)
+
 
 ### Butterfly Devnet
-*best for Miners testing new Lotus features*
+*best for testing new Lotus features*
 
-Butterfly Devnet is intended to test recent Lotus updates so is updated more frequently. It also has small 512MB sectors available for faster sealing in addition to 32GB and 64GB sectors (for mainnet 32GB will be the minimum sector size as a security parameter). Currently it has:
-
-   - Committed Capacity Sector Upgrading: You can declare sectors as “Committed Capacity”, pledge them with junk data, and then upgrade them with real data if a deal comes in!
-   - Fast-retrieval: Miners can accept deals marked “fast-retrieval”, which will make them store an extra, unsealed copy of the deal’s data. This can then be quickly retrieved without unsealing the sector!
+Butterfly Devnet is intended to test recent Lotus updates so is updated more frequently. It also has small 512MB sectors available for faster sealing in addition to 32GB and 64GB sectors (for mainnet 32GB will be the minimum sector size as a security parameter).
    
 To tap the faucet or see dashboard for Butterfly:
 
 - Butterfly Devnet Faucet: https://faucet.butterfly.fildev.network/
 - Butterfly Stats Dashboard: https://stats.butterfly.fildev.network/
-- Other Butterfly Devnet Info: [Slack announcement](https://filecoinproject.slack.com/archives/CPFTWMY7N/p1594351253402500)
+- For updates see: [#fil-net-butterfly](https://filecoinproject.slack.com/archives/C017AB80CTC) (in Filecoin Slack)
 
-## Testnet
 
-[Filecoin Testnet](https://filecoin.io/testnet/) is a live community test network, under active development.
+### Calibration Devnet
+*best for Miners preparing for the Space Race competition*
 
-### Hosted nodes for testnet
+The Filecoin Space Race Calibration Period is a 2-week period where miners can practice in real competition conditions and see how their performance influences hypothetical testnet incentives competition standings. This takes place on the Calibration Devnet.
 
-The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
+> Note: As issues are discovered this Devnet will be regularly reset to the latest code during this calibration window. Stay tuned in the Slack channels below for reset announcements.
 
-## Mainnet
+To tap the faucet or see dashboard for the Calibration Devnet:
 
-Filecoin Mainnet launch is currently planned for Q3 2020. See the [Filecoin blog](https://filecoin.io/blog/roadmap-update-june-2020) for more information.
+- Calibration Devnet Faucet: https://faucet.calibration.fildev.network/
+- Calibration Stats Dashboard: https://stats.calibration.fildev.network/
+- Other Calibration Devnet info: http://www.calibration.fildev.network/
+- For updates see: [#fil-net-calibration](https://filecoinproject.slack.com/archives/C017CCH1MHB) and [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) (in Filecoin Slack)
+
+
+
