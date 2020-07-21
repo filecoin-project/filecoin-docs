@@ -7,14 +7,14 @@ description: Learn how to interface with the Filecoin network.
 
   - [Local networks](#local-networks)
      - [Running your own remote network](#running-your-own-remote-network)
+  - [Mainnet](#mainnet)
   - [Testnet](#testnet)
      - [Filecoin Space Race](#filecoin-space-race)
      - [Hosted nodes for testnet](#hosted-nodes-for-testnet)
-  - [Mainnet](#mainnet)
   - [Devnets](#devnets)
-     - [Nerpa Devnet](#nerpa-devnet) - *for Developers building apps*
-     - [Butterfly Devnet](#butterfly-devnet) - *for testing new Lotus feature*
-     - [Calibration Devnet](#calibration-devnet) - *for Miners preparing for the Space Race*
+     - [Nerpa Devnet](#nerpa-devnet) - <sub>*for Developers building apps*</sub>
+     - [Butterfly Devnet](#butterfly-devnet) - <sub>*for testing new Lotus feature*</sub>
+     - [Calibration Devnet](#calibration-devnet) - <sub>*for Miners preparing for the Space Race*</sub>
 
 This page outlines various options for connecting to local and remote test networks while building and operating your service or application.
 
@@ -36,6 +36,16 @@ Here are some scripts to set up your own remote networks for development:
 
 - [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container
 - [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
+
+------  
+
+## Mainnet
+
+Filecoin mainnet has not yet launched and the FIL token does not yet exist. The network is and always will be open for anyone to access and join without restriction, and the Filecoin Project codebase is free and open-source. Anyone can install the software, connect to the network, and explore Filecoin.
+
+Filecoin mainnet launch is currently planned for Q3 2020. Visit the [Filecoin blog](https://filecoin.io/blog/) for updates and the [current Gantt chart](https://app.instagantt.com/shared/s/1152992274307505/latest).
+
+------ 
 
 ## Testnet
 *the primary live testnet before mainnet launch*
@@ -72,12 +82,7 @@ In this competition, miners will compete to onboard as much storage capacity as 
 
 The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
 
-
-## Mainnet
-
-Filecoin mainnet has not yet launched and the FIL token does not yet exist. The network is and always will be open for anyone to access and join without restriction, and the Filecoin Project codebase is free and open-source. Anyone can install the software, connect to the network, and explore Filecoin.
-
-Filecoin mainnet launch is currently planned for Q3 2020. Visit the [Filecoin blog](https://filecoin.io/blog/) for updates and the [current Gantt chart](https://app.instagantt.com/shared/s/1152992274307505/latest).
+------ 
 
 ## Devnets
 
