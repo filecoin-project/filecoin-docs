@@ -1,15 +1,17 @@
 ---
 title: Interacting with the network
 description: Learn how to interface with the Filecoin network.
----  
-  
+---   
+ 
 # Interacting with the network
+
+<br>
 
   - [Local networks](#local-networks)
      - [Running your own remote network](#running-your-own-remote-network)
   - [Mainnet](#mainnet)
   - [Testnet](#testnet)
-     - [Filecoin Space Race](#filecoin-space-race)
+     - [Filecoin Space Race competition](#filecoin-space-race-competition)
      - [Hosted nodes for testnet](#hosted-nodes-for-testnet)
   - [Devnets](#devnets)
      - [Nerpa Devnet](#nerpa-devnet) - <sub>*for Developers building apps*</sub>
@@ -32,9 +34,9 @@ Here are some ways to spin up a mock version of the Filecoin network on your own
 - [Containerized devnet using mocked sectorbuilder](https://github.com/textileio/lotus-devnet) (aka mocked mining)
 - [Additional containers & virtualization scripts](https://github.com/filecoin-project/docs/wiki#containers--virtualization)
 
-### Running your own remote network
+### Running hosted endpoints
 
-Here are some scripts to set up your own remote networks for development:
+To support wallets and hosted API endpoint services, devops scripts are available for running a remote lotus JSON RPC API endpoint as a scalable cluster of nodes. Remote storage API endpoints however, do not yet exist: currently node keys are required to execute storage deals.
 
 - [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container
 - [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
@@ -73,7 +75,7 @@ To tap the faucet, see the dashboard or search a block explorer for testnet:
 - For updates see: [#fil-testnet](https://filecoinproject.slack.com/archives/C0144HM4AM7) (in Filecoin Slack)
 - For lotus questions see: [#fil-lotus](https://filecoinproject.slack.com/archives/CPFTWMY7N) and for general help: [#fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 
-### Filecoin Space Race
+### Filecoin Space Race competition
 
 The testnet will be used for the [Filecoin Testnet Incentives Program](https://filecoin.io/blog/getting-ready-testnet-incentives/) - nicknamed the *Filecoin Space Race*, a 3-week competition period that will begin in early August. This collaborative competition is intended to stress-test the network, encourage participation all over the world, and help miners get ready to run the world’s biggest decentralized storage network.
 
