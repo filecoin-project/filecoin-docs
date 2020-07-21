@@ -125,6 +125,8 @@ To tap the faucet or see dashboard for Nerpa:
 ### Butterfly Devnet
 *best for testing new Lotus features*
 
+> **NOTICE:** The butterfly network is now deprecated and has some known bugs.
+
 Butterfly Devnet is intended to test recent Lotus updates so is updated more frequently. It also has small 512MB sectors available for faster sealing in addition to 32GB and 64GB sectors (for mainnet 32GB will be the minimum sector size as a security parameter).
    
 To tap the faucet or see dashboard for Butterfly:
