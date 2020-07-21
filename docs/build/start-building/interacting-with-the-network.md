@@ -7,16 +7,17 @@ description: Learn how to interface with the Filecoin network.
 
 <br>
 
-  - [Local networks](#local-networks)
-     - [Running your own remote network](#running-your-own-remote-network)
   - [Mainnet](#mainnet)
   - [Testnet](#testnet)
      - [Filecoin Space Race competition](#filecoin-space-race-competition)
+     - [Running hosted endpoints](#running-hosted-endpoints)
      - [Hosted nodes for testnet](#hosted-nodes-for-testnet)
+     - [Running a local network](#running-a-local-network)
+     - [Running Powergate](#running-powergate)
   - [Devnets](#devnets)
-     - [Nerpa Devnet](#nerpa-devnet) - <sub>*for Developers building apps*</sub>
-     - [Butterfly Devnet](#butterfly-devnet) - <sub>*for testing new Lotus feature*</sub>
-     - [Calibration Devnet](#calibration-devnet) - <sub>*for Miners preparing for the Space Race*</sub>
+     - [Nerpa Devnet](#nerpa-devnet) - `for Developers building apps`
+     - [Butterfly Devnet](#butterfly-devnet) - `for testing new Lotus features`
+     - [Calibration Devnet](#calibration-devnet) - `for preparing for the Space Race`
 
 <br>
 
@@ -25,21 +26,6 @@ This page outlines various options for connecting to local and remote test netwo
 Each Filecoin-based service or application will need to use at least one Filecoin node that maintains consensus. All interactions with the network must flow through an up-to-date node: sending and receiving market deals, sending and receiving data, and more.
 
 You can run this node yourself or choose a hosted option. Running your own node offers more decentralized control, but it requires non-trivial time and resources. Choosing a hosted node makes it easier to get started quickly, but you’ll need to trust the hosting provider.
-
-## Local networks
-
-Here are some ways to spin up a mock version of the Filecoin network on your own machine(s), for quick testing and development:
-
-- [Simple local devnet for lotus](https://lotu.sh/en+setup-local-dev-net)
-- [Containerized devnet using mocked sectorbuilder](https://github.com/textileio/lotus-devnet) (aka mocked mining)
-- [Additional containers & virtualization scripts](https://github.com/filecoin-project/docs/wiki#containers--virtualization)
-
-### Running hosted endpoints
-
-To support wallets and hosted API endpoint services, devops scripts are available for running a remote lotus JSON RPC API endpoint as a scalable cluster of nodes. Remote storage API endpoints however, do not yet exist: currently node keys are required to execute storage deals.
-
-- [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container
-- [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
 
 ------  
 
@@ -82,9 +68,32 @@ The testnet will be used for the [Filecoin Testnet Incentives Program](https://f
 In this competition, miners will compete to onboard as much storage capacity as possible to the network. The top 100 miners globally, as well as the top 50 miners from each continent, will earn Filecoin rewards based on how much storage they and the network achieve during the competition period. 
 
 
+### Running hosted endpoints
+
+To support wallets and hosted API endpoint services, devops scripts are available for running a remote lotus JSON RPC API endpoint as a scalable cluster of nodes. Remote storage API endpoints however, do not yet exist: currently node keys are required to execute storage deals.
+
+- [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container*
+- [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
+
+To use a remote node on a server, you will need to set up a reverse proxy (using an Nginx or Caddy server, for example). Also see the [lotus docs on using JWT](https://lotu.sh/en+api#curl-authorization-157570). The lotus JSON RPC API requires [permissions](https://github.com/filecoin-project/lotus/blob/master/api/apistruct/struct.go#L34) for write and admin methods.
+
 ### Hosted nodes for testnet
 
 The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
+
+## Running a Local network
+
+Here are some ways to spin up a mock version of the Filecoin network on your own machine(s), for quick testing and development:
+
+- [Simple local devnet for lotus](https://lotu.sh/en+setup-local-dev-net)
+- [Containerized devnet using mocked sectorbuilder](https://github.com/textileio/lotus-devnet) (aka mocked mining)
+- [Additional containers & virtualization scripts](https://github.com/filecoin-project/docs/wiki#containers--virtualization)
+
+## Running Powergate
+
+You can also run an IPFS node + Filecoin lotus node + Powergate ([more info about Powergate](https://docs.filecoin.io/build/core-products/powergate/)) which enables using IPFS for hot storage and retrieval. For dapp developers who want some of the details of Filecoin's storage market abstracted as a convenience, Powergate also offers a storage deal agent, multi-tenant wallets mapped to the node's key (required to execute storage deals), automated deal renewal and other additional features. 
+
+Powergate is open source ([Github](https://github.com/textileio/powergate)) or you can request [managed Powergate instances from Textile](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/) running on a devnet or testnet.
 
 ------ 
 
