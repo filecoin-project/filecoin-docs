@@ -118,7 +118,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: ['/mine/spacerace']
-              
+              ]
           },
           {
             title: 'Build',
