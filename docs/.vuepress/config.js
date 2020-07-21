@@ -113,12 +113,8 @@ module.exports = {
             title: 'Mine',
             path: '/mine/',
              children: [
-              {
-                title: 'Space Race',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/mine/spacerace']
-              ]
+               ['/mine/spacerace']
+          ]
           },
           {
             title: 'Build',
