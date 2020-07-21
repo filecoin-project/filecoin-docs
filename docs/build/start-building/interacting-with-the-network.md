@@ -16,6 +16,8 @@ description: Learn how to interface with the Filecoin network.
      - [Butterfly Devnet](#butterfly-devnet) - <sub>*for testing new Lotus feature*</sub>
      - [Calibration Devnet](#calibration-devnet) - <sub>*for Miners preparing for the Space Race*</sub>
 
+<br>
+
 This page outlines various options for connecting to local and remote test networks while building and operating your service or application.
 
 Each Filecoin-based service or application will need to use at least one Filecoin node that maintains consensus. All interactions with the network must flow through an up-to-date node: sending and receiving market deals, sending and receiving data, and more.
