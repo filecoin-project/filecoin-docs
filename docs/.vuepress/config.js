@@ -111,7 +111,14 @@ module.exports = {
           },
           {
             title: 'Mine',
-            path: '/mine/'
+            path: '/mine/',
+             children: [
+              {
+                title: 'Space Race',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/mine/spacerace']
+              
           },
           {
             title: 'Build',
