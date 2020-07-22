@@ -15,7 +15,8 @@ Filecoin miners, like participants in all peer-to-peer protocols, require a stea
 The following steps are highly recommended for all miners who wish to successfully accept storage and retrieval deals.
 
 ## Checking peer count
-To ensure storage and retrieval deals operate smoothly, it is recommended to regularly check how many peers a miner is connected to. In the Lotus client, a manual peer check can be performed with the command:
+
+To ensure storage and retrieval deals operate smoothly, it is recommended to check how many peers a miner is connected to after each start-up. In the Lotus client, a manual peer check can be performed with the command:
 
 ```
 lotus-miner net peers
@@ -25,7 +26,7 @@ If a very low peer count is present (1-5), it is possible to manually connect th
 
 ## Port forwarding
 
-It is highly recommended to use port forwarding for a miner's `libp2p` address. By default, this port is randomised; for optimal connectivity, ensure that it is set to a static IP. 
+In order to ensure that Filecoin packets are able to passs freely and unfiltered through a local firewall, it is highly recommended to set up port forwarding for a miner's `libp2p` address. By default, this port is randomised; for optimal connectivity, ensure that it is set to a static IP. 
 
 To enable port forwarding on your local router:
 
@@ -40,7 +41,7 @@ To enable port forwarding on your local router:
 
 ## Setting a public IP address
 
-It is important to ensure that the public IP address as well as the port that was configured above is listed in the miner configuration file's `AnnounceAddresses` address list. DNS4 multi-address or IPV6 formats are also valid.
+To help ensure storage and retrieval deals operate smoothly, it is recommended to add the host system's public IP address, as well as the port that was configured above, to the miner configuration file's `AnnounceAddresses` address list. DNS4 multi-address or IPV6 formats are also acceptable.
 
 Below is an example configuration file in which the public IP address is `1.2.3.4`:
 
