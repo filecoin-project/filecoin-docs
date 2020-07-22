@@ -48,7 +48,7 @@ Below is an example configuration file in which the public IP address is `1.2.3.
 [Libp2p]
    ListenAddresses = ["/ip4/0.0.0.0/tcp/5472"]
    AnnounceAddresses = ["/ip4/1.2.3.4/tcp/10240"]
-In the example port 10240 is forwarded to <internal-miner-host-ip>:5472
-Miners can verify that things are working by running by using telnet eg: telnet 1.2.3.4 10240 (nc also works)
-Miners should see a plaintext  `/multistream/1.0.0` in the response.
 ```
+In the above example, port `10240` is forwarded to `<internal-miner-host-ip>:5472`.
+
+It is possible to verify that the port is listening by using telnet (eg: `telnet 1.2.3.4 10240`. `nc` is also sufficient.) If successful, a plaintext `/multistream/1.0.0` line will be within the response.
