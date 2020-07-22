@@ -1,5 +1,5 @@
 // .vuepress/config.js
-
+  
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 
 module.exports = {
