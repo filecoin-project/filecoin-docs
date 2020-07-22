@@ -64,15 +64,13 @@ const getIdentity = async () => {
 
 The example above creates a new identity using `Libp2pCryptoIdentity.fromRandom()` and then converts it into string format to store it in the browser `localStorage` for later use, when the user returns to the app.
 
-The identity stored above is the user's private-key and therefore should remain private between your app and your user.
-
 ::: tip
 `localStorage` isn't guaranteed and may be cleared by the browser, the system, or the users. Even more important, localStorage isn't a secure place to store secrets. You should provide alternative storage mechanisms if maintaining persistent identity (and therefore data ownership and access) over time is important. (from [Textile's documentation](https://docs.textile.io/tutorials/hub/libp2p-identities/#caching-user-identity))
 :::
 
 ### Signing Challenges
 
-Challenges are designed to validate that a user is actually who they claim to be using a private key. The challenge requires the user to expose the private key that matches their public key identifier.
+Challenges are designed to validate that a user is actually who they claim to be, by signing the challenge with a private key.
 
 To sign data, use the `identity.sign` method exposed by the `Libp2pCryptoIdentity` object. This will be [used by the React app](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L107) to sign random challenges from the server to verify the ownership of the user's identity (user's private key).
 
@@ -162,7 +160,35 @@ app.ws.use(wss);
 app.listen(PORT, () => console.log("Server started."));
 ```
 
-TODO: Explain the code
+Here we import multiple modules:
+
+- [`koa`](https://www.npmjs.com/package/koa): Expressive HTTP middleware framework for node.js to make web applications and APIs.
+- [`koa-router`](https://www.npmjs.com/package/koa-router): Router middleware for Koa framework.
+- [`koa-logger`](https://www.npmjs.com/package/koa-logger): Development style logger middleware for koa.
+- [`koa-json`](https://www.npmjs.com/package/koa-json): JSON pretty-printed response middleware. Also converts node object streams to binary.
+- [`koa-bodyparser`](https://www.npmjs.com/package/koa-bodyparser): A body parser for koa. Supports `json`, `form` and `text` type body.
+- [`koa-websocket`](https://www.npmjs.com/package/koa-websocket): Light wrapper around Koa providing a websocket middleware handler that is koa-route compatible.
+- [`@koa/cors`](https://www.npmjs.com/package/@koa/cors): Cross-Origin Resource Sharing(CORS) for koa.
+- [`dotenv`](https://www.npmjs.com/package/dotenv): Dotenv is a zero-dependency module that loads environment variables from a _.env_ file into `process.env`.
+
+We also import the following files:
+
+- [./wss](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts): This file creates Websocket endpoint for client-side token challenge.
+- [./api](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/api.ts): This file creates REST endpoint for server-side token issue.
+
+`dotenv.config()` loads the environment variables from a _.env_ file into `process.env`. If `process.env.USER_API_KEY` or `process.env.USER_API_SECRET` is not defined, then the application exits automatically.
+
+The `PORT` variable is set to `process.env.PORT` if present, otherwise defaults to `3001`.
+
+`websockify(new koa())` wraps koa object providing websocket middleware handler that is `koa-route` compatible.
+
+Middlewares and (REST and Websocket) routes are registered using `app.use` method.
+
+The server is started using `app.listen` method which listens on the port: `PORT`.
+
+::: tip
+This example uses `koa` web framework, but you can use `express` too.
+:::
 
 ### Add a WebSocket login handler
 

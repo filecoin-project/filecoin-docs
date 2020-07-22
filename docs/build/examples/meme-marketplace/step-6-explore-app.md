@@ -44,7 +44,6 @@ export const loginAndCreateBucket = () => async dispatch => {
 
   // Creating & Opening a Bucket
   const bucket = await hubClient.createBucket()
-  console.log(bucket)
 
   dispatch({
     type: types.CREATE_BUCKET,
@@ -57,7 +56,7 @@ In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/m
 
 - Authenticates with the hub auth server by:
 
-  - Calling `hubClient.setupIdentity()` which calls `getIdentity()` (discussed in [Step 4](./step-4-connecting-app-with-auth-server.md#generating-an-identity)). `this.id` contains the user identity including user's private key. `this.id` is converted into string format to create `identity`. `setupIdentity` returns `publicKey` which is the public key in string format.
+  - Calling `hubClient.setupIdentity()` which calls `getIdentity()` (discussed in [Step 4](./step-4-connecting-app-with-auth-server.md#generating-an-identity)). `this.id` is a `Libp2pCryptoIdentity` object containing the user identity including user's private key. `this.id` is converted into string format to create `identity`. The `setupIdentity` function returns `publicKey` which is the public key in string format.
 
   ```js
   setupIdentity = async () => {
@@ -100,39 +99,28 @@ In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/m
   }
   ```
 
-- Creates a bucket
+- Intialize and opens a bucket: In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L342) `hubClient.createBucket()` method is used to:
 
-The hubClient.setupIdentity() function creates the identities using the Libp2pCryptoIdentity library, as you set them up in the previous sections.
+  - Initialize a the Bucket API using `Buckets.withUserAuth(this.auth)`.
+  - Open a bucket named `memes` using `this.buckets.open('memes')`.
 
-The hubClient.login() handles the challenge signing process set up above.
+  `hubClient.createBucket()` returns `this.buckets` which can be used to access the open bucket.
 
-You can now create buckets.
-
-#### Creating Buckets
-
-The following hubClient.createBucket() function creates and opens a bucket named memes.
-
+```js
 createBucket = async () => {
-
-/\*\* Authenticate and open a Bucket \*/
-
-this.buckets = await Buckets.withUserAuth(this.auth);
-
-const root = await this.buckets.open("memes");
-
-this.bucketKey = root.key;
-
-return this.buckets;
-
-};
-
-You can now add memes to your memes bucket.
+  /** Initialize and open a Bucket */
+  this.buckets = await Buckets.withUserAuth(this.auth)
+  const root = await this.buckets.open('memes')
+  this.bucketKey = root.key
+  return this.buckets
+}
+```
 
 ## Step 6b: Create Meme
 
 The create a Meme page:
 
-- Collects the user input, uploads the meme to the meme bucket and returns the CID of the uploaded meme.
+- Collects the user input, uploads the meme to the Textile Bucket and returns the CID of the uploaded meme.
 - Creates an NFT to register the meme on the blockchain so that it can be uniquely identified by anyone with access to the blockchain.
 
 Look at:
@@ -244,30 +232,7 @@ When the user clicks the "Create Meme" button, Metamask plugin will pop up askin
 </Fragment>
 ```
 
-In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L387), `registerMeme` uses `hubClient.addFileToBucket` function to add a meme to a bucket. `hubClient.addFileToBucket` function uses `this.buckets.pushPath` which takes: - `this.bucketKey`: The bucket key from [`createBucket`](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L346) function. - `path`: The path where it will be stored in the bucket. - `content`: The content to be stored in the bucket.
-The `raw` is a JSON object containing information about the uploaded data, such as, the CID of the data.
-
-```js
-addFileToBucket = async (path, content) => {
-  /**
-   * Push the file to the root of the Files Bucket.
-   */
-
-  // Check if the Bucket Exists or not
-  if (this.buckets) {
-    const raw = await this.buckets.pushPath(this.bucketKey, path, content)
-    return raw
-  } else {
-    console.error('Bucket does not exist')
-    return null
-  }
-}
-```
-
-The `awardMemeToken` function discussed in [Step 5](./step-5-connecting-app-with-blockchain.md#sending-transaction-to-register-memes-on-blockchain) registers a meme on the contract. `awardMemeToken` takes:
-
-- `address`: The address of the owner of the NFT token.
-- `${name},${price},${result.path.path}`: This is the `tokenMetadata` which is a comma separated string containing the details of the meme, such as, `name`, `price`, and CID (`result.path.path`) of the uploaded meme.
+In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L387), `registerMeme` uses `hubClient.addFileToBucket` function to add a meme to a bucket.
 
 ```js
 export const registerMeme = payload => async dispatch => {
@@ -299,6 +264,35 @@ export const registerMeme = payload => async dispatch => {
 }
 ```
 
+`hubClient.addFileToBucket` function uses `this.buckets.pushPath` which takes:
+
+- `this.bucketKey`: The bucket key from [`createBucket`](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L346) function.
+- `path`: The path where it will be stored in the bucket.
+- `content`: The content to be stored in the bucket.
+  The `raw` is a JSON object containing information about the uploaded data, such as, the CID of the data.
+
+```js
+addFileToBucket = async (path, content) => {
+  /**
+   * Push the file to the root of the Files Bucket.
+   */
+
+  // Check if the Bucket Exists or not
+  if (this.buckets) {
+    const raw = await this.buckets.pushPath(this.bucketKey, path, content)
+    return raw
+  } else {
+    console.error('Bucket does not exist')
+    return null
+  }
+}
+```
+
+The `awardMemeToken` function discussed in [Step 5](./step-5-connecting-app-with-blockchain.md/#sending-transaction-to-register-memes-on-blockchain) registers a meme on the contract. `awardMemeToken` takes:
+
+- `address`: The address of the owner of the NFT token.
+- `${name},${price},${result.path.path}`: This is the `tokenMetadata` which is a comma separated string containing the details of the meme, such as, `name`, `price`, and CID (`result.path.path`) of the uploaded meme.
+
 The meme is now uploaded to the hub and an associated NFT token is registered on the blockchain. The user now owns the meme on the blockchain.
 
 ## Step 6c: Marketplace
@@ -316,7 +310,7 @@ Look at:
 
 **1. Retrieve the meme data back from blockchain**: In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L416), `getMemeTokenList`:
 
-- Fetches the total count (`totalSupply`) of the registered memes using `getTotalSupply` function discussed in [Step 5](./step-5-connecting-app-with-blockchain.md#sending-calls-to-fetch-meme-details-form-the-blockchain).
+- Fetches the total count (`totalSupply`) of the registered memes using `getTotalSupply` function discussed in [Step 5](./step-5-connecting-app-with-blockchain.md/#sending-calls-to-fetch-meme-details-form-the-blockchain).
 - Creates arrays of promises `metadataPromiseArr`, `ownerPromiseArr` and uses `Promise.all` to resolve all the promises. The `memesTokenList` is an array of comma separated `tokenMetadata` (as discusses above). The `memesOwnerList` is an array of the owners of the NFT tokens.
 - Maps the data from `memesTokenList` and `memesOwnerList` into a single array containing information like `name`, `price`, `path`, and `owner` for each meme.
 
