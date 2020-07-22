@@ -70,7 +70,7 @@ export default {
               path: '/how-to/install-filecoin'
             },
             {
-              title: 'Connecting to networks',
+              title: 'Connect to a network',
               path: '/how-to/networks'
             },
             {
