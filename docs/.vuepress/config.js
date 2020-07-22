@@ -24,7 +24,6 @@ module.exports = {
     }
   },
   themeConfig: {
-    algolia: {
       apiKey: '6c3d7635474cdcd0a0aaf8ca397a4c44',
       indexName: 'filecoin'
     },
@@ -113,7 +112,7 @@ module.exports = {
             title: 'Mine',
             path: '/mine/',
              children: [
-               ['/mine/spacerace']
+               '/mine/spacerace'
           ]
           },
           {
