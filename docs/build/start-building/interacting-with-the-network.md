@@ -147,7 +147,9 @@ To tap the faucet or see dashboard for the Calibration Devnet:
 
 - Calibration Devnet Faucet: https://faucet.calibration.fildev.network/
 - Calibration Stats Dashboard: https://stats.calibration.fildev.network/
-- Calibration Block Explorer: https://calibration.filfox.io/
+- Calibration Block Explorers: 
+    - https://calibration.filfox.io/
+    - https://calibration.filscan.io/
 - Other Calibration Devnet info: http://www.calibration.fildev.network/
 - For updates see: [#fil-net-calibration](https://filecoinproject.slack.com/archives/C017CCH1MHB) and [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) (in Filecoin Slack)
 
