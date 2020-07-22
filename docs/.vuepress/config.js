@@ -85,7 +85,10 @@ module.exports = {
                 title: 'Install Filecoin',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-to/install-filecoin']
+                children: [
+                    '/how-to/install-filecoin',
+                    '/how-to/networks'
+                ]
               },
               {
                 title: 'Create Filecoin Applications',
