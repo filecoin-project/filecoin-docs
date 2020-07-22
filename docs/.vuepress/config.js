@@ -1,5 +1,5 @@
 // .vuepress/config.js
-
+  
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 
 module.exports = {
@@ -113,9 +113,8 @@ module.exports = {
             title: 'Mine',
             path: '/mine/',
              children: [
-               ['/mine/connectivity',
+               '/mine/connectivity',
                 '/mine/spacerace',
-               ]
           ]
           },
           {
