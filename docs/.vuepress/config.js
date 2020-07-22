@@ -114,7 +114,7 @@ module.exports = {
             path: '/mine/',
              children: [
                '/mine/connectivity',
-                '/mine/spacerace',
+                '/mine/spacerace'
           ]
           },
           {
