@@ -6,13 +6,13 @@ description: Tips and tricks for improving a miner's connectivity to the Filecoi
 
 # Improving connectivity
 
-Filecoin miners, like participants in all P2P protocols, require a steady and quality pool of peers to communicate with in order to perform their various functions. For other participants on the network to establish incoming P2P connections with a miner, a few conditions must be met:
+Filecoin miners, like participants in all peer-to-peer protocols, require a steady and quality pool of peers to communicate with in order to perform their various functions. For other participants on the network to establish incoming P2P connections with a miner, a few conditions must be met:
 
 * The miner's public IP address must be known
 * The protocol (TCP/UDP) and port number (0-65535) on which the miner is listening must be known 
 * All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination
 
-The below sections assist in performing these tasks.
+The following steps are highly recommended for all miners who wish to successfully accept storage and retrieval deals.
 
 ## Checking peer count
 To ensure storage and retrieval deals operate smoothly, it is recommended to regularly check how many peers a miner is connected to. In the Lotus client, a manual peer check can be performed with the command:
