@@ -22,7 +22,13 @@ The steps below simplify the flow with the Hub’s token generation endpoint, wh
 
 Generate an identity by using the following code from [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L17) in React app, using the `@textile/threads-core` library.
 
-You can use the `Libp2pCryptoIdentity` utility to generate random new identities (private and public keys) and later, to sign challenges to prove private key ownership.
+You can install `@textile/threads-core` using node package mananger (NPM):
+
+```bash
+npm i @textile/threads-core
+```
+
+You can use the `Libp2pCryptoIdentity` utility exported from `@textile/threads-core` to generate random new identities (private and public keys) and later, to sign challenges to prove private key ownership.
 
 ```js
 import { Libp2pCryptoIdentity } from '@textile/threads-core'
@@ -136,7 +142,7 @@ In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/m
 
 - Initiates login request with the hub auth server by:
 
-  - Calling `hubClient.setupIdentity()` which calls `getIdentity()` (discussed above) to create PKI identies for the app user. `this.id` is a `Libp2pCryptoIdentity` object containing the user identity including user's private key. `this.id` is converted into string format to create `identity`. The `setupIdentity` function returns `publicKey` which is the public key in string format.
+  - Calling `hubClient.setupIdentity()` which calls `getIdentity()` (discussed above) to create PKI identity for the app user. `this.id` is a `Libp2pCryptoIdentity` object containing the user identity including user's private key. `this.id` is converted into string format to create `identity`. The `setupIdentity` function returns `publicKey` which is the public key in string format.
 
   ```js
   setupIdentity = async () => {
@@ -459,6 +465,12 @@ Here we import multiple modules:
 - `emittery`: A simple and modern async event emitter.
 - `@textile/hub`: Provides access to Textile APIs in apps based on Account Keys or User Group Keys.
 
+You can install these modules using Node Package Manager (NPM):
+
+```bash
+npm i koa-route emittery @textile/hub
+```
+
 We also import [`hub-helpers.ts`](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/hub-helpers.ts) which exports helper functions like:
 
 - `newClientDB`: Creates a Client (remote DB) connection to the Textile Hub.
@@ -504,26 +516,28 @@ After importing the modules and helper functions, [hub-browser-auth-app/src/serv
 In an actual app you may like to use a database to store the app user details.
 :::
 
-We then register a Websocket route `/ws/userauth`. Whenever the server receives a `'message'` with `data.type` as `token` (as sent by the react app above), the server first checks if `data.pubkey` is present. If yes, a new `db` is intialized using the `newClientDB()` function. The server then requests a `challenge` for a public key (`data.pubkey`) using `db.getTokenChallenge` which takes a callback function that accepts a `Uint8Array` type `challenge` and returns a Promise (that resolves to the value of `token`). This `challenge` is then converted to JSON data type using `Buffer.from(challenge).toJSON()` and sent to the react app using `ctx.websocket.send`.
+We then register a Websocket route `/ws/userauth`. Whenever the server receives a `'message'` with `data.type` as `token` (as sent by the react app above), the server first checks if `data.pubkey` is present. If yes, a new `db` is intialized using the `newClientDB()` function. The server then requests a `challenge` for a public key (`data.pubkey`) using `db.getTokenChallenge` which takes a callback function that accepts a `Uint8Array` type `challenge` and returns a Promise (that resolves to the value of `token`).
+
+3. **The server passes the challenge to the client**: This `challenge` is then converted to JSON data type using `Buffer.from(challenge).toJSON()` and sent to the react app using `ctx.websocket.send`.
 
 The server waits for `1500` milliseconds for the react app to respond to the challenge.
 
-This challenge is handled by the react app in the `loginWithChallenge` in the [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L91) file.
+4. **The client uses the private key to sign the challenge**: This challenge is handled by the react app in the `loginWithChallenge` in the [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L91) file.
 
 The challenge (`data.value`) is converted to `Buffer` type using `const buf = Buffer.from(data.value)` and then signed using `const signed = await id.sign(buf)`.
 
-This signed challenge is sent back to the server, which is handled by the `"challenge"` case in the switch case in [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L113). The server check for the challenge response (`data.sig`) and if present it emits a challenge event by `emitter.emit("challenge", data.sig)`.
+This signed challenge is sent back to the server, which is handled by the `"challenge"` case in the switch case in [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L113). The server checks for the challenge response (`data.sig`) and if present it emits a challenge event by `emitter.emit("challenge", data.sig)`.
 
-This event is [captured](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L67) and the Promise is reolved to `Buffer.from(sig)`, thus setting the value of the `token` variable to `Buffer.from(sig)`.
+5. **The server passes the signed challenge to the Hub**: This event is [captured](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L67) and the Promise is reolved to `Buffer.from(sig)`, thus setting the value of the `token` variable to `Buffer.from(sig)`.
 
 ::: tip
 The token provided in the response should be considered a secret that only should be shared with a single user. It does not expire.
 :::
 
-Now, as the app user has verified they own the `pubkey`, the server saves the `pubkey` and `lastSeen` time in the `UserDB`.
+6. **The server generates API credentials and passes credentials, token, and API key back to the client**: Now, as the app user has verified they own the `pubkey`, the server saves the `pubkey` and `lastSeen` time in the `UserDB`.
 
 The server then generates an API authorization signature (`auth`) for the user using `getAPISig()`, and sends it back to the react app along with the `token` and `process.env.USER_API_KEY`.
 
-This payload is [captured by the react app](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L107) which resolves the Promise returned by the `loginWithChallenge` function and set as a value of `this.auth` which can be used in the react app.
+7. **The client can use the Hub APIs directly**: This payload is [captured by the react app](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L107) which resolves the Promise returned by the `loginWithChallenge` function and set as a value of `this.auth` which can be used in the react app to use the Textile Hub APIs directly without the hub auth server.
 
 Now, your users have identities and they've verified themselves. In the login page section, we will explore how we can connect to the hub APIs to create buckets.
