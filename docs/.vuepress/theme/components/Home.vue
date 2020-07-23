@@ -138,6 +138,10 @@ export default {
               path: '/mine/'
             },
            {
+              title: 'Improving connectivity',
+              path: '/mine/connectivity'
+            },
+           {
               title: 'Space Race',
               path: '/mine/spacerace'
             }
