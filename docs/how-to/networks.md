@@ -63,7 +63,7 @@ Several developer networks (also called devnets) are available with various conf
 
 ### Calibration Devnet
 
-Calibration is an up-to-date devnet, best for miners preparing for the [Space Race]() mining competition. Miners can practice in real competition conditions and see how their performance influences hypothetical competition standings. 
+Calibration is an up-to-date devnet, best for miners preparing for the [Space Race](https://filecoin.io/blog/getting-ready-testnet-incentives/) mining competition. Miners can practice in real competition conditions and see how their performance influences hypothetical competition standings. 
 
 #### Calibration Devnet Details
 
@@ -134,5 +134,4 @@ Butterfly is a devnet that features the absolute latest changes, and is consider
 | Stats dashboard                            | https://stats.butterfly.fildev.network/                          |
 | Block explorers                            | n/a                                                          |
 | [Slack](https://filecoin.io/slack) channel | [#fil-net-butterfly](https://filecoinproject.slack.com/archives/C017AB80CTC) |
-
 
