@@ -20,7 +20,7 @@ The steps below simplify the flow with the Hub’s token generation endpoint, wh
 
 ### Generating an identity
 
-Generate an identity by using the following code from [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L37) in React app, using the `@textile/threads-core` library.
+Generate an identity by using the following code from [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L17) in React app, using the `@textile/threads-core` library.
 
 You can use the `Libp2pCryptoIdentity` utility to generate random new identities (private and public keys) and later, to sign challenges to prove private key ownership.
 
@@ -72,7 +72,7 @@ The example above creates a new identity using `Libp2pCryptoIdentity.fromRandom(
 
 Challenges are designed to validate that a user is actually who they claim to be, by signing the challenge with a private key.
 
-To sign data, use the `identity.sign` method exposed by the `Libp2pCryptoIdentity` object. This will be [used by the React app](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L107) to sign random challenges from the server to verify the ownership of the user's identity (user's private key).
+To sign data, use the `identity.sign` method exposed by the `Libp2pCryptoIdentity` object. This will be [used by the React app](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L95) to sign random challenges from the server to verify the ownership of the user's identity (user's private key).
 
 ```js
 import { Libp2pCryptoIdentity } from '@textile/threads-core'
@@ -98,24 +98,171 @@ To identify users, the server needs to handle two-way communication with the cli
 6. If successful, the **server generates API credentials and passes credentials, token, and API key back to the client**.
 7. The **client** can use the Hub APIs directly.
 
-In [hub-browser-auth-app/src/server/index.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/index.ts), to facilitate this two-way communication between the server and the client, we use Websockets as follows:
+Look at:
+
+- [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L41): To understand how Login UI works. Involved in Step 1.
+- [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L322) To understand how the react app connects and communicates with the hub auth server using Websockets to complete the login process. Involved in Step 1,4,7.
+- [hub-browser-auth-app/src/server/index.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/index.ts): To understand different modules used in the hub auth server.
+- [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts): Creates Websocket endpoint for client-side token challenge. Involved in Step 2,3,5,6.
+
+1. **The client initiates a login request:** In [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L41), `loginAndCreateBucket` is called if Metamask plugin is available.
+
+```js
+export const loginAndCreateBucket = () => async dispatch => {
+  document.getElementById('login').innerHTML = 'Creating Hub Identity...'
+
+  // Logging In
+  await hubClient.setupIdentity()
+  const auth = await hubClient.login()
+
+  dispatch({
+    type: types.LOGIN,
+    payload: auth
+  })
+
+  document.getElementById('login').innerHTML = 'Creating a Bucket...'
+
+  // Creating & Opening a Bucket
+  const bucket = await hubClient.createBucket()
+
+  dispatch({
+    type: types.CREATE_BUCKET,
+    payload: bucket
+  })
+}
+```
+
+In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L198), `loginAndCreateBucket`:
+
+- Initiates login request with the hub auth server by:
+
+  - Calling `hubClient.setupIdentity()` which calls `getIdentity()` (discussed above) to create PKI identies for the app user. `this.id` is a `Libp2pCryptoIdentity` object containing the user identity including user's private key. `this.id` is converted into string format to create `identity`. The `setupIdentity` function returns `publicKey` which is the public key in string format.
+
+  ```js
+  setupIdentity = async () => {
+    /** Create or get identity */
+    this.id = await getIdentity()
+    /** Contains the full identity (including private key) */
+    const identity = this.id.toString()
+
+    /** Get the public key */
+    const publicKey = this.id.public.toString()
+
+    /** Return the publicKey short ID */
+    return publicKey
+  }
+  ```
+
+  - Calling `hubClient.login()` which first checks if `this.id` is defined or not. `this.id` is passed into the `loginWithChallenge` function.
+
+  ```js
+  /**
+   * Provides a full login where
+   * - pubkey is shared with the server
+   * - identity challenge is fulfilled here, on client
+   * - hub api token is sent from the server
+   *
+   * see index.html for example running this method
+   */
+  login = async () => {
+    if (!this.id) {
+      throw Error('No user ID found')
+    }
+
+    /** Use the identity to request a new API token */
+    this.auth = await loginWithChallenge(this.id)
+
+    console.log('Verified on Textile API')
+
+    /* Return auth details */
+    return this.auth
+  }
+  ```
+
+The `loginWithChallenge` function in [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L56) uses Websockets to communicate with the hub authentication server.
+
+The react app connects to the `socketUrl = ws://localhost:3001/ws/userauth`. After the socket connection is open, the public key is stringified using `id.public.toString()`, and a token request is sent to the hub auth server.
+
+```js
+/**
+ * More secure method for getting token & API auth.
+ *
+ * Keeps private key locally in the app.
+ */
+const loginWithChallenge = async id => {
+  return new Promise((resolve, reject) => {
+    /**
+     * Configured for our development server
+     *
+     * Note: this should be upgraded to wss for production environments.
+     */
+    const socketUrl = `ws://localhost:3001/ws/userauth`
+
+    /** Initialize our websocket connection */
+    const socket = new WebSocket(socketUrl)
+
+    /** Wait for our socket to open successfully */
+    socket.onopen = () => {
+      /** Get public key string */
+      const publicKey = id.public.toString()
+
+      /** Send a new token request */
+      socket.send(
+        JSON.stringify({
+          pubkey: publicKey,
+          type: 'token'
+        })
+      )
+
+      /** Listen for messages from the server */
+      socket.onmessage = async event => {
+        const data = JSON.parse(event.data)
+        switch (data.type) {
+          /** Error never happen :) */
+          case 'error': {
+            reject(data.value)
+            break
+          }
+          /** The server issued a new challenge */
+          case 'challenge': {
+            /** Convert the challenge json to a Buffer */
+            const buf = Buffer.from(data.value)
+            /** User our identity to sign the challenge */
+            const signed = await id.sign(buf)
+            /** Send the signed challenge back to the server */
+            socket.send(
+              JSON.stringify({
+                type: 'challenge',
+                sig: Buffer.from(signed).toJSON()
+              })
+            )
+            break
+          }
+          /** New token generated */
+          case 'token': {
+            resolve(data.value)
+            break
+          }
+        }
+      }
+    }
+  })
+}
+```
+
+2. **Hub auth server contacts the Hub APIs to get a challenge for the requesting client**
+   In [hub-browser-auth-app/src/server/index.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/index.ts), to facilitate this two-way communication between the server and the client, we use Websockets as follows:
 
 ```js
 /** Provides nodejs access to a global Websocket value, required by Hub API */
 (global as any).WebSocket = require("isomorphic-ws");
 
 import koa from "koa";
-import Router from "koa-router";
-import logger from "koa-logger";
-import json from "koa-json";
-import bodyParser from "koa-bodyparser";
 import websockify from "koa-websocket";
-import cors from "@koa/cors";
 
 import dotenv from "dotenv";
 
 import wss from "./wss";
-import api from "./api";
 
 dotenv.config();
 
@@ -126,28 +273,6 @@ if (!process.env.USER_API_KEY || !process.env.USER_API_SECRET) {
 const PORT = parseInt(process.env.PORT, 10) || 3001;
 
 const app = websockify(new koa());
-
-/** Middlewares */
-app.use(json());
-app.use(logger());
-app.use(bodyParser());
-
-/* Not safe in production */
-app.use(cors());
-
-/**
- * Start HTTP Routes
- */
-const router = new Router();
-app.use(router.routes()).use(router.allowedMethods());
-
-/**
- * Create Rest endpoint for server-side token issue
- *
- * See ./api.ts
- */
-app.use(api.routes());
-app.use(api.allowedMethods());
 
 /**
  * Create Websocket endpoint for client-side token challenge
@@ -162,19 +287,20 @@ app.listen(PORT, () => console.log("Server started."));
 
 Here we import multiple modules:
 
+- [`isomorphic-ws`](https://www.npmjs.com/package/isomorphic-ws): Isomorphic implementation of WebSocket. It uses:
+  - `ws` on Node
+  - `global.WebSocket` in browsers
 - [`koa`](https://www.npmjs.com/package/koa): Expressive HTTP middleware framework for node.js to make web applications and APIs.
-- [`koa-router`](https://www.npmjs.com/package/koa-router): Router middleware for Koa framework.
-- [`koa-logger`](https://www.npmjs.com/package/koa-logger): Development style logger middleware for koa.
-- [`koa-json`](https://www.npmjs.com/package/koa-json): JSON pretty-printed response middleware. Also converts node object streams to binary.
-- [`koa-bodyparser`](https://www.npmjs.com/package/koa-bodyparser): A body parser for koa. Supports `json`, `form` and `text` type body.
 - [`koa-websocket`](https://www.npmjs.com/package/koa-websocket): Light wrapper around Koa providing a websocket middleware handler that is koa-route compatible.
-- [`@koa/cors`](https://www.npmjs.com/package/@koa/cors): Cross-Origin Resource Sharing(CORS) for koa.
 - [`dotenv`](https://www.npmjs.com/package/dotenv): Dotenv is a zero-dependency module that loads environment variables from a _.env_ file into `process.env`.
 
-We also import the following files:
+You can install these modules using Node Package Manager (NPM):
 
-- [./wss](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts): This file creates Websocket endpoint for client-side token challenge.
-- [./api](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/api.ts): This file creates REST endpoint for server-side token issue.
+```bash
+npm i isomorphic-ws koa koa-websocket dotenv
+```
+
+We also import the following Websocket file, [wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) which creates Websocket endpoint for client-side token challenge.
 
 `dotenv.config()` loads the environment variables from a _.env_ file into `process.env`. If `process.env.USER_API_KEY` or `process.env.USER_API_SECRET` is not defined, then the application exits automatically.
 
@@ -182,24 +308,18 @@ The `PORT` variable is set to `process.env.PORT` if present, otherwise defaults 
 
 `websockify(new koa())` wraps koa object providing websocket middleware handler that is `koa-route` compatible.
 
-Middlewares and (REST and Websocket) routes are registered using `app.use` method.
-
 The server is started using `app.listen` method which listens on the port: `PORT`.
 
 ::: tip
 This example uses `koa` web framework, but you can use `express` too.
 :::
 
-### Add a WebSocket login handler
-
 In the code above, the second to last section reads `Create Websocket endpoint for client-side token challenge`. That section points to the [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) file which contains functionality to:
 
-- Handle the public key supplied by the client and request a challenge for the public key from the Hub.
-- Send the challenge back to the client via Websocket.
-- Handle the response from the client with the signed challenge, which is passed to the Hub for verification.
-- Create credentials and store client details for future logins to the app, after successful validation.
-
-TODO: Explain the code with the variables invloved.
+- Handle the public key supplied by the client and request a challenge for the public key from the Hub. (Step 2)
+- Send the challenge back to the client via Websocket. (Step 3)
+- Handle the response from the client with the signed challenge, which is passed to the Hub for verification. (Step 5)
+- Create credentials and store client details for future logins to the app, after successful validation. (Step 6)
 
 ```js
 import route from "koa-route";
@@ -333,104 +453,77 @@ const wss = route.all('/ws/userauth', (ctx) => {
 export default wss;
 ```
 
+Here we import multiple modules:
+
+- `koa-route`: A simple route middleware for koa.
+- `emittery`: A simple and modern async event emitter.
+- `@textile/hub`: Provides access to Textile APIs in apps based on Account Keys or User Group Keys.
+
+We also import [`hub-helpers.ts`](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/hub-helpers.ts) which exports helper functions like:
+
+- `newClientDB`: Creates a Client (remote DB) connection to the Textile Hub.
+- `getAPISig`: uses a helper function `createAPISig` exported from `@textile/hub` to create a new API signature which expires in 300 seconds by default.
+
+```js
+// hub-helpers.ts file
+
+import { createAPISig, Client } from '@textile/hub'
+
+/**
+ * getAPISig uses helper function to create a new sig
+ *
+ * seconds (300) time until the sig expires
+ */
+export const getAPISig = async (seconds: number = 300) => {
+  const expiration = new Date(Date.now() + 1000 * seconds)
+  return await createAPISig(process.env.USER_API_SECRET, expiration)
+}
+
+/**
+ * newClientDB creates a Client (remote DB) connection to the Hub
+ *
+ * A Hub connection is required to use the getToken API
+ */
+export const newClientDB = async () => {
+  const API = process.env.API || undefined
+  const db = await Client.withKeyInfo(
+    {
+      key: process.env.USER_API_KEY,
+      secret: process.env.USER_API_SECRET,
+      type: 0
+    },
+    API
+  )
+  return db
+}
+```
+
+After importing the modules and helper functions, [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) creates an `UserModel` interface which stores public key (`pubkey`) and last visit time (`lastSeen`) of an app user.
+
+::: tip
+In an actual app you may like to use a database to store the app user details.
+:::
+
+We then register a Websocket route `/ws/userauth`. Whenever the server receives a `'message'` with `data.type` as `token` (as sent by the react app above), the server first checks if `data.pubkey` is present. If yes, a new `db` is intialized using the `newClientDB()` function. The server then requests a `challenge` for a public key (`data.pubkey`) using `db.getTokenChallenge` which takes a callback function that accepts a `Uint8Array` type `challenge` and returns a Promise (that resolves to the value of `token`). This `challenge` is then converted to JSON data type using `Buffer.from(challenge).toJSON()` and sent to the react app using `ctx.websocket.send`.
+
+The server waits for `1500` milliseconds for the react app to respond to the challenge.
+
+This challenge is handled by the react app in the `loginWithChallenge` in the [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L91) file.
+
+The challenge (`data.value`) is converted to `Buffer` type using `const buf = Buffer.from(data.value)` and then signed using `const signed = await id.sign(buf)`.
+
+This signed challenge is sent back to the server, which is handled by the `"challenge"` case in the switch case in [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L113). The server check for the challenge response (`data.sig`) and if present it emits a challenge event by `emitter.emit("challenge", data.sig)`.
+
+This event is [captured](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L67) and the Promise is reolved to `Buffer.from(sig)`, thus setting the value of the `token` variable to `Buffer.from(sig)`.
+
 ::: tip
 The token provided in the response should be considered a secret that only should be shared with a single user. It does not expire.
 :::
 
-### Create a client
+Now, as the app user has verified they own the `pubkey`, the server saves the `pubkey` and `lastSeen` time in the `UserDB`.
 
-In the React app, you can now make requests to your login endpoint using a WebSocket. A basic client needs to handle a challenge request from the server, where the challenge will be signed and returned over WebSocket.
+The server then generates an API authorization signature (`auth`) for the user using `getAPISig()`, and sends it back to the react app along with the `token` and `process.env.USER_API_KEY`.
 
-[View the full code here](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L63).
-
-```js
-/**
- * More secure method for getting token & API auth.
- *
- * Keeps private key locally in the app.
- */
-const loginWithChallenge = async id => {
-  return new Promise((resolve, reject) => {
-    /**
-     * Configured for our development server
-     *
-     * Note: this should be upgraded to wss for production environments.
-     */
-    const socketUrl = `ws://localhost:3001/ws/userauth`
-
-    /** Initialize our websocket connection */
-    const socket = new WebSocket(socketUrl)
-
-    /** Wait for our socket to open successfully */
-    socket.onopen = () => {
-      /** Get public key string */
-      const publicKey = id.public.toString()
-
-      /** Send a new token request */
-      socket.send(
-        JSON.stringify({
-          pubkey: publicKey,
-          type: 'token'
-        })
-      )
-
-      /** Listen for messages from the server */
-      socket.onmessage = async event => {
-        const data = JSON.parse(event.data)
-        switch (data.type) {
-          /** Error never happen :) */
-          case 'error': {
-            reject(data.value)
-            break
-          }
-          /** The server issued a new challenge */
-          case 'challenge': {
-            /** Convert the challenge json to a Buffer */
-            const buf = Buffer.from(data.value)
-            /** User our identity to sign the challenge */
-            const signed = await id.sign(buf)
-            /** Send the signed challenge back to the server */
-            socket.send(
-              JSON.stringify({
-                type: 'challenge',
-                sig: Buffer.from(signed).toJSON()
-              })
-            )
-            break
-          }
-          /** New token generated */
-          case 'token': {
-            resolve(data.value)
-            break
-          }
-        }
-      }
-    }
-  })
-}
-```
-
-By passing the user identity (`id`) to the function above, your app can authenticate and verify the user in one step, granting them access to the Hub resources.
-
-### Generate API credentials
-
-Once the credentials endpoint is set up, you need to generate new credentials for each user's identity.
-
-Use the `createCredentials` function provided in the setup above in the _client_ React app.
-
-```js
-/**
- * Method for using the server to create credentials without identity
- */
-const createCredentials = async () => {
-  const response = await fetch(`/api/userauth`, {
-    method: 'GET'
-  })
-  const userAuth = await response.json()
-  return userAuth
-}
-```
-
-The `userAuth` object returned from `createCredentials` allows your app to start creating and editing Buckets and Threads owned by your user.
+This payload is [captured by the react app](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L107) which resolves the Promise returned by the `loginWithChallenge` function and set as a value of `this.auth` which can be used in the react app.
 
 Now, your users have identities and they've verified themselves. In the login page section, we will explore how we can connect to the hub APIs to create buckets.
