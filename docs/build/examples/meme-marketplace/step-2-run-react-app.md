@@ -1,5 +1,5 @@
 ---
-title: Step 2 - Run the React app
+title: Step 2 - Run the Meme Marketplace React app
 description: This article describes how to run the React app for the Meme Marketplace tutorial.
 ---
 

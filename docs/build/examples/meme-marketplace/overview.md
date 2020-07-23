@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Meme Marketplace Overview
 description: A brief description of the Meme Marketplace Example.
 ---
 

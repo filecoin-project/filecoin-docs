@@ -1,5 +1,5 @@
 ---
-title: textile buckets, hub, and erc 721 token interactions
+title: Textile buckets, hub, and erc 721 token interactions
 description: This article describes how textile buckets, hub, and erc 721 token interact, with links to further resources.
 ---
 

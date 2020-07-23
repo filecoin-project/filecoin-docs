@@ -1,5 +1,5 @@
 ---
-title: Step 7 - Shut down the application
+title: Step 7 - Shut down the Meme Marketplace application
 description: This article describes how to shut down the application.
 ---
 

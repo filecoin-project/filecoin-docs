@@ -1,5 +1,5 @@
 ---
-title: Summary
+title: Meme Marketplace Summary
 description: This article summarizes what we learned from the Meme Marketplace tutorial.
 ---
 
