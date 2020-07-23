@@ -22,11 +22,17 @@ To ensure storage and retrieval deals operate smoothly, it is recommended to che
 lotus-miner net peers
 ``` 
 
-If a very low peer count is present (1-5), it is possible to manually connect the miner to the DHT by utilising one of the bootstrap peers listed in the branch's `./build/bootstrap/bootstrappers.pi` file.
+If a very low peer count is present (1-5), it is possible to manually connect the miner to the DHT by utilising one of the bootstrap peers listed in the branch's `./build/bootstrap/bootstrappers.pi` file with the commmand:
+
+```
+lotus net connect <address from bootstrappers>
+```
 
 ## Port forwarding
 
-In order to ensure that Filecoin packets are able to passs freely and unfiltered through a local firewall, it is highly recommended to set up port forwarding for a miner's `libp2p` address. By default, this port is randomised; for optimal connectivity, ensure that it is set to a static IP. 
+In order to ensure that Filecoin packets are able to pass freely and unfiltered through a local firewall, it is highly recommended to set up port forwarding for a miner's `libp2p` address. By default, this port is randomised; for optimal connectivity, make sure that it is set to a static IP. 
+
+#### Option 1: Standard port forwarding
 
 To enable port forwarding on your local router:
 
@@ -39,9 +45,13 @@ To enable port forwarding on your local router:
     * Protocol: TCP
     * IP Address: Private IP address of the host system running the miner
 
+#### Option 2: UPnP setup
+
+Alternatively, users with routers that support universal plug n' play (UPnP) can set up their firewalling automatically by configuring their client's daemon to use the address `0.0.0.0`. Note that, if using UPnP, **standard port forwarding does not need to be set up,** and can cause issues if used in parallel.  
+
 ## Setting a public IP address
 
-To help ensure storage and retrieval deals operate smoothly, it is recommended to add the host system's public IP address, as well as the port that was configured above, to the miner configuration file's `AnnounceAddresses` address list. DNS4 multi-address or IPV6 formats are also acceptable.
+To help storage and retrieval deals operate smoothly, it is recommended to add the host system's public IP address, as well as the port that was configured above, to the miner configuration file's `AnnounceAddresses` address list. DNS4 multi-address or IPV6 formats are also acceptable.
 
 Below is an example configuration file in which the public IP address is `1.2.3.4`:
 
