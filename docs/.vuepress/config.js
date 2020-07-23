@@ -188,21 +188,6 @@ module.exports = {
                     ]
                   },
                   {
-                    title: 'Simple Pinning Service',
-                    sidebarDepth: 2,
-                    collapsable: false,
-                    children: [
-                      'build/examples/simple-pinning-service/overview',
-                      'build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
-                      'build/examples/simple-pinning-service/step-1-powergate-setup',
-                      'build/examples/simple-pinning-service/step-2-react-app-setup',
-                      'build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
-                      'build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
-                      'build/examples/simple-pinning-service/step-5-shut-down-the-application',
-                      'build/examples/simple-pinning-service/summary'
-                    ]
-                  },
-                  {
                     title: 'Meme Marketplace',
                     sidebarDepth: 2,
                     collapsable: false,
