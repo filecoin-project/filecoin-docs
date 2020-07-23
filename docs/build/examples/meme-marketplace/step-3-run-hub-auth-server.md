@@ -35,7 +35,7 @@ hub org create
 ```
 
 The command line will prompt you to add an organisation name. For example: `spacex`.
-Confirm your inout by pressing `y`.
+Confirm your input by pressing `y`.
 
 ::: tip
 You need to use the organisation name other than `spacex`.
@@ -47,7 +47,7 @@ Your org is now created.
 
 3. Create a user group key
 
-After you have successfully create an organisation, run the following command to create a user group key for your org:
+After you have successfully created an organisation, run the following command to create a user group key for your org:
 
 ```bash
 hub keys create --org spacex

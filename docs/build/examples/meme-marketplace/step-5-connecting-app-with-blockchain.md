@@ -5,16 +5,16 @@ description: This article describes how to connect meme marketplace frontend wit
 
 # Step 5: Connecting React app with a local blockchain
 
-Take a look at following files:
+Take a look at the following files:
 
-- [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js): The Login page connects the react app with Metamask plugin.
+- [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js): The Login page connects the react app with the Metamask plugin.
 - [marketplace/src/utils/blockchain/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/utils/blockchain/index.js): The blockchain utils file:
   - Includes code for connecting the react app with the local blockchain and interacting with the deployed smart contract.
   - Uses Metamask plugin and [web3.js](https://web3js.readthedocs.io/) library to send transactions and calls to the blockchain network.
 
 ## Step 5a: Connecting with Metamask
 
-[web3.js](https://web3js.readthedocs.io/) is a collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC or WebSocket.
+[web3.js](https://web3js.readthedocs.io/) is a collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC, or WebSocket.
 
 You can install web3.js by running the following command:
 
@@ -24,10 +24,10 @@ npm i web3
 
 The Metamask plugin injects `ethereum` object in the browser page, which can be used by web3.js to access Metamask plugin functionality.
 
-In [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js), we check if `window.ethereum` is available (in case Metamask plugin is installed). If not, then we alert the user to install the Metamask plugin. If Metamask plugin is available:
+In [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js), we check if `window.ethereum` is available (in case the Metamask plugin is installed). If not, then we alert the user to install the Metamask plugin. If Metamask plugin is available:
 
 - Set `window.web3 = new Web3(window.ethereum)` (using `window.ethereum` as a provider object). `window.web3` can be used to access Metamask plugin functionality.
-- Call `loginAndCreateBucket` function, which will be explored in the Step 6.
+- Call `loginAndCreateBucket` function, which will be explored in Step 6.
 
 ```jsx
 const loadWeb3 = async loginAndCreateBucket => {
@@ -47,7 +47,7 @@ const loadWeb3 = async loginAndCreateBucket => {
 
 In [marketplace/src/utils/blockchain/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/utils/blockchain/index.js) we use:
 
-- `window.web3` which was set in the [Login page](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L39). This will be used to send transactions to Metamask plugin.
+- `window.web3` which was set in the [Login page](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L39). This will be used to send transactions to the Metamask plugin.
 - `web3 = new Web3(new Web3.providers.HttpProvider(NETWORK_URL))` which is used for accessing some functions supported by newer versions of web3.js. Here `NETWORK_URL` is the RPC endpoint from `ganache-cli` from [Step 1](./step-1-blockchain-and-contracts-setup.md).
 
 ::: tip
@@ -67,7 +67,7 @@ The frontend is now connected with the blockchain.
 
 ## Step 5c: Connecting to and the deployed smart contract
 
-In [marketplace/src/utils/blockchain/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/utils/blockchain/index.js#L8) import the `contract` object from `marketplace/src/utils/blockchain/contract.js` initialize the contract object `MemeMarketplace` using `new web3.eth.Contract` constructor which takes following parameters:
+In [marketplace/src/utils/blockchain/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/utils/blockchain/index.js#L8) import the `contract` object from `marketplace/src/utils/blockchain/contract.js` initialize the contract object `MemeMarketplace` using `new web3.eth.Contract` constructor which takes the following parameters:
 
 - `contract.abi`: In Ethereum, the [ABI Specification](https://solidity.readthedocs.io/en/develop/abi-spec.html) is a way to encode the interface of a smart contract in a way that your user interface can make sense of. The ABI contains all the details of the contract methods in an array.
 - `contract.address`: The address of the deployed contract.
@@ -107,14 +107,14 @@ export const awardMemeToken = (address, tokenMetadata, callback) => {
 }
 ```
 
-We access the contract's `awardMemeToken` function using `MemeMarketplace.methods.awardMemeToken`, which takes 2 paramters:
+We access the contract's `awardMemeToken` function using `MemeMarketplace.methods.awardMemeToken`, which takes 2 parameters:
 
 - `address`: The address of the owner of the NFT token.
 - `tokenMetadata`: Token details like name, price, and the CID of the meme.
 
 The `data` is a hex string that contains information about the function to be called and it's parameters.
 
-The `metamask.eth.sendTransaction` method is used to send a transaction to be signed and deployed by Metamask plugin. It is provided with the following following parameters:
+The `metamask.eth.sendTransaction` method is used to send a transaction to be signed and deployed by the Metamask plugin. It is provided with the following parameters:
 
 - `from`: The account address from which the transaction will be signed.
 - `to`: The account to which the transaction is sent to. In this case it the contract's address.
@@ -125,7 +125,7 @@ The `metamask.eth.sendTransaction` method is used to send a transaction to be si
 Metamask manages the keys securely for the app user and can be used to sign any data using on behalf of the user.
 :::
 
-On calling the `sendTransaction` method, the Metamask plugin will pop up and ask for user's consent to sign and send the transaction to the blockchain on the user's behalf.
+On calling the `sendTransaction` method, the Metamask plugin will pop up and ask for the user's consent to sign and send the transaction to the blockchain on the user's behalf.
 
 The `callback` method passed in `awardMemeToken` is used to capture the `receipt`.
 

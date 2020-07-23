@@ -82,7 +82,7 @@ NOTE: The "Mnemonic" will be different for you, so use yours. Read this [article
 
 Now, as you have the local blockchain running you need to point your Truffle to the local blockchain RPC URL. In our case, the endpoint is `127.0.0.1:8545` (as shown in the above image). This is already configured on the project in the [truffle-config.js](https://github.com/filecoin-shipyard/meme-nft-token/blob/master/truffle-config.js) file.
 
-8. To deploy the smart contract, open your terminal and go into the root folder of the project. Run the following command:.
+8. To deploy the smart contract, open your terminal, and go into the root folder of the project. Run the following command:
 
 ```bash
 truffle migrate

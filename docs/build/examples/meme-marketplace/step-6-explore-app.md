@@ -15,19 +15,19 @@ This section provides an overview of the pages in the Meme Marketplace App:
 
 The login page:
 
-- Connects the app with Metamask plugin.
+- Connects the app with the Metamask plugin.
 - Initiates the authentication process with the authentication server.
 - Creates buckets that will be used to store memes.
 
 Look at:
 
 - [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js) to understand how UI works.
-- [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js) to see how app authenticates with the hub auth server.
-- [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) to see how hub auth server communicates with Textile Hub to authenticate a client.
+- [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js) to see how the app authenticates with the hub auth server.
+- [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) to see how the hub auth server communicates with Textile Hub to authenticate a client.
 
-Here is a screen shot of the login page:
+Here is a screenshot of the login page:
 
-![Screen shot of a Metamask enabled Meme marketplace login page](./images/hub-login.png)
+![Screenshot of a Metamask enabled Meme marketplace login page](./images/hub-login.png)
 
 1. **Login and Create Bucket:** As discussed in Step 5, in [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L41), `loginAndCreateBucket` is called if Metamask plugin is available.
 
@@ -73,7 +73,7 @@ createBucket = async () => {
 
 The create a Meme page:
 
-- Collects the user input, uploads the meme to the Textile Bucket and returns the CID of the uploaded meme.
+- Collects the user input, uploads the meme to the Textile Bucket, and returns the CID of the uploaded meme.
 - Creates an NFT to register the meme on the blockchain so that it can be uniquely identified by anyone with access to the blockchain.
 
 Look at:
@@ -81,13 +81,13 @@ Look at:
 - [marketplace/src/pages/CreateMeme/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/CreateMeme/index.js) to understand how to capture meme details from the UI.
 - [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js) to understand how to upload and register meme on hub and blockchain respectively.
 
-Here is a screen shot of the Create meme page:
+Here is a screenshot of the Create meme page:
 
-![Screen shot of create meme page of Meme marketplace app](./images/create-meme.png)
+![Screenshot of create meme page of Meme marketplace app](./images/create-meme.png)
 
-**1: Uploading a meme to the bucket**: In [marketplace/src/pages/CreateMeme/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/CreateMeme/index.js#L87), we use HTML form to collect `name` and `price` of the meme. `Dropzone` component is used to capture meme file. The captured file `Blob` is converted to `Uint8Array`. The `registerMeme` function takes `name`, `price`, `fileBuffer`, and `address` as parameters. Here the `address` is the connected account address from the Metamask plugin. The `await window.web3.eth.getAccounts()` function resolves to an array of connected account addresses, from which we take the first address: `addressArr[0]`.
+**1: Uploading a meme to the bucket**: In [marketplace/src/pages/CreateMeme/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/CreateMeme/index.js#L87), we use the HTML form to collect the `name` and `price` of the meme. The `Dropzone` component is used to capture the meme file. The captured file `Blob` is converted to `Uint8Array`. The `registerMeme` function takes `name`, `price`, `fileBuffer`, and `address` as parameters. Here the `address` is the connected account address from the Metamask plugin. The `await window.web3.eth.getAccounts()` function resolves to an array of connected account addresses, from which we take the first address: `addressArr[0]`.
 
-When the user clicks the "Create Meme" button, Metamask plugin will pop up asking for user's consent to sign and deploy the transaction to the blockchain on the user's behalf.
+When the user clicks the "Create Meme" button, the Metamask plugin will pop up asking for user's consent to sign and deploy the transaction to the blockchain on the user's behalf.
 
 ```jsx
 <Fragment>
@@ -226,7 +226,7 @@ export const registerMeme = payload => async dispatch => {
 - `this.bucketKey`: The bucket key from [`createBucket`](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L346) function.
 - `path`: The path where it will be stored in the bucket.
 - `content`: The content to be stored in the bucket.
-  The `raw` is a JSON object containing information about the uploaded data, such as, the CID of the data.
+  The `raw` is a JSON object containing information about the uploaded data, such as the CID of the data.
 
 ```js
 addFileToBucket = async (path, content) => {
@@ -248,7 +248,7 @@ addFileToBucket = async (path, content) => {
 The `awardMemeToken` function discussed in [Step 5](./step-5-connecting-app-with-blockchain.md/#step-5d-sending-transaction-to-register-memes-on-blockchain) registers a meme on the contract. `awardMemeToken` takes:
 
 - `address`: The address of the owner of the NFT token.
-- `${name},${price},${result.path.path}`: This is the `tokenMetadata` which is a comma separated string containing the details of the meme, such as, `name`, `price`, and CID (`result.path.path`) of the uploaded meme.
+- `${name},${price},${result.path.path}`: This is the `tokenMetadata` which is a comma-separated string containing the details of the meme, such as, `name`, `price`, and CID (`result.path.path`) of the uploaded meme.
 
 The meme is now uploaded to the hub and an associated NFT token is registered on the blockchain. The user now owns the meme on the blockchain.
 
@@ -265,14 +265,14 @@ Look at:
 - [marketplace/src/pages/Marketplace/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Marketplace/index.js) to understand how the UI works.
 - [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js) to understand how to fetch data back from blockchain and Textile Hub.
 
-Here is a screen shot of the marketplace page:
+Here is a screenshot of the marketplace page:
 
-![Screen shot of marketplace page of Meme marketplace app](./images/memes.png)
+![Screenshot of marketplace page of Meme marketplace app](./images/memes.png)
 
 **1. Retrieve the meme data back from blockchain**: In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L416), `getMemeTokenList`:
 
 - Fetches the total count (`totalSupply`) of the registered memes using `getTotalSupply` function discussed in [Step 5](./step-5-connecting-app-with-blockchain.md/#step-5e-sending-calls-to-fetch-meme-details-form-the-blockchain).
-- Creates arrays of promises `metadataPromiseArr`, `ownerPromiseArr` and uses `Promise.all` to resolve all the promises. The `memesTokenList` is an array of comma separated `tokenMetadata` (as discusses above). The `memesOwnerList` is an array of the owners of the NFT tokens.
+- Creates arrays of promises `metadataPromiseArr`, `ownerPromiseArr`, and uses `Promise.all` to resolve all the promises. The `memesTokenList` is an array of comma-separated `tokenMetadata` (as discusses above). The `memesOwnerList` is an array of the owners of the NFT tokens.
 - Maps the data from `memesTokenList` and `memesOwnerList` into a single array containing information like `name`, `price`, `path`, and `owner` for each meme.
 
 ```js
@@ -317,8 +317,8 @@ export const getMemeTokenList = () => async dispatch => {
 
 The UI displays:
 
-- The total number of registrated memes (`totalMemes`)
-- Memes with details like meme name (`meme.name`), price (`meme.price`), owner address (`meme.owner`) and the meme image using the URL `https://hub.textile.io${meme.path}`.
+- The total number of registered memes (`totalMemes`).
+- Memes with details like meme name (`meme.name`), price (`meme.price`), owner address (`meme.owner`), and the meme image using the URL `https://hub.textile.io${meme.path}`.
 
 The `meme.path` looks something like `/ipfs/bafkreiahrqbz4crhkgdaryw2uov6qi4k6ebq6kqnz2bux75cmcy54754wa`. By concatinating this `meme.path` with `https://hub.textile.io`, we get a URL that resolves to the meme image: [`https://hub.textile.io/ipfs/bafkreiahrqbz4crhkgdaryw2uov6qi4k6ebq6kqnz2bux75cmcy54754wa`](https://hub.textile.io/ipfs/bafkreiahrqbz4crhkgdaryw2uov6qi4k6ebq6kqnz2bux75cmcy54754wa)
 

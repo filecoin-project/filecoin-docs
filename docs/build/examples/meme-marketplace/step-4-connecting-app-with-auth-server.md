@@ -5,7 +5,7 @@ description: This article describes how to connect meme marketplace frontend wit
 
 # Step 4: Starting and Connecting the Authentication Server
 
-This section covers how the React app authenticates with the Hub auth server. This tutorial uses a custom private-key identity in React app to manage users. The Textile Hub supports public-key infrastructure (PKI) allowing your app to support different user identity providers based on PKI (e.g. 3Box, uPort, Blockstack), or derive your own.
+This section covers how the React app authenticates with the Hub auth server. This tutorial uses a custom private-key identity in the React app to manage users. The Textile Hub supports public-key infrastructure (PKI) allowing your app to support different user identity providers based on PKI (e.g. 3Box, uPort, Blockstack), or derive your own.
 
 Users get access to the Hub APIs easily using this configuration. The Hub uses encryption to verify that the users are who they claim to be.
 
@@ -22,7 +22,7 @@ The steps below simplify the flow with the Hub’s token generation endpoint, wh
 
 Generate an identity by using the following code from [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L17) in React app, using the `@textile/threads-core` library.
 
-You can install `@textile/threads-core` using node package mananger (NPM):
+You can install `@textile/threads-core` using the Node Package Manager (NPM):
 
 ```bash
 npm i @textile/threads-core
@@ -109,9 +109,9 @@ Look at:
 - [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L41): To understand how Login UI works. Involved in Step 1.
 - [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L322) To understand how the react app connects and communicates with the hub auth server using Websockets to complete the login process. Involved in Step 1,4,7.
 - [hub-browser-auth-app/src/server/index.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/index.ts): To understand different modules used in the hub auth server.
-- [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts): Creates Websocket endpoint for client-side token challenge. Involved in Step 2,3,5,6.
+- [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts): Creates WebSocket endpoint for the client-side token challenge. Involved in Step 2,3,5,6.
 
-1. **The client initiates a login request:** In [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L41), `loginAndCreateBucket` is called if Metamask plugin is available.
+1. **The client initiates a login request:** In [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L41), `loginAndCreateBucket` is called if the Metamask plugin is available.
 
 ```js
 export const loginAndCreateBucket = () => async dispatch => {
@@ -204,7 +204,7 @@ const loginWithChallenge = async id => {
      */
     const socketUrl = `ws://localhost:3001/ws/userauth`
 
-    /** Initialize our websocket connection */
+    /** Initialize our WebSocket connection */
     const socket = new WebSocket(socketUrl)
 
     /** Wait for our socket to open successfully */
@@ -260,11 +260,11 @@ const loginWithChallenge = async id => {
    In [hub-browser-auth-app/src/server/index.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/index.ts), to facilitate this two-way communication between the server and the client, we use Websockets as follows:
 
 ```js
-/** Provides nodejs access to a global Websocket value, required by Hub API */
+/** Provides nodejs access to a global WebSocket value, required by Hub API */
 (global as any).WebSocket = require("isomorphic-ws");
 
 import koa from "koa";
-import websockify from "koa-websocket";
+import websockify from "koa-WebSocket";
 
 import dotenv from "dotenv";
 
@@ -281,7 +281,7 @@ const PORT = parseInt(process.env.PORT, 10) || 3001;
 const app = websockify(new koa());
 
 /**
- * Create Websocket endpoint for client-side token challenge
+ * Create WebSocket endpoint for client-side token challenge
  *
  * See ./wss.ts
  */
@@ -297,22 +297,22 @@ Here we import multiple modules:
   - `ws` on Node
   - `global.WebSocket` in browsers
 - [`koa`](https://www.npmjs.com/package/koa): Expressive HTTP middleware framework for node.js to make web applications and APIs.
-- [`koa-websocket`](https://www.npmjs.com/package/koa-websocket): Light wrapper around Koa providing a websocket middleware handler that is koa-route compatible.
+- [`koa-WebSocket`](https://www.npmjs.com/package/koa-WebSocket): Light wrapper around Koa providing a WebSocket middleware handler that is koa-route compatible.
 - [`dotenv`](https://www.npmjs.com/package/dotenv): Dotenv is a zero-dependency module that loads environment variables from a _.env_ file into `process.env`.
 
-You can install these modules using Node Package Manager (NPM):
+You can install these modules using the Node Package Manager (NPM):
 
 ```bash
-npm i isomorphic-ws koa koa-websocket dotenv
+npm i isomorphic-ws koa koa-WebSocket dotenv
 ```
 
-We also import the following Websocket file, [wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) which creates Websocket endpoint for client-side token challenge.
+We also import the following WebSocket file, [wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) which creates WebSocket endpoint for the client-side token challenge.
 
 `dotenv.config()` loads the environment variables from a _.env_ file into `process.env`. If `process.env.USER_API_KEY` or `process.env.USER_API_SECRET` is not defined, then the application exits automatically.
 
 The `PORT` variable is set to `process.env.PORT` if present, otherwise defaults to `3001`.
 
-`websockify(new koa())` wraps koa object providing websocket middleware handler that is `koa-route` compatible.
+`websockify(new koa())` wraps koa object providing WebSocket middleware handler that is `koa-route` compatible.
 
 The server is started using `app.listen` method which listens on the port: `PORT`.
 
@@ -320,10 +320,10 @@ The server is started using `app.listen` method which listens on the port: `PORT
 This example uses `koa` web framework, but you can use `express` too.
 :::
 
-In the code above, the second to last section reads `Create Websocket endpoint for client-side token challenge`. That section points to the [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) file which contains functionality to:
+In the code above, the second to last section reads `Create WebSocket endpoint for client-side token challenge`. That section points to the [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts) file which contains functionality to:
 
 - Handle the public key supplied by the client and request a challenge for the public key from the Hub. (Step 2)
-- Send the challenge back to the client via Websocket. (Step 3)
+- Send the challenge back to the client via WebSocket. (Step 3)
 - Handle the response from the client with the signed challenge, which is passed to the Hub for verification. (Step 5)
 - Create credentials and store client details for future logins to the app, after successful validation. (Step 6)
 
@@ -361,7 +361,7 @@ const UserDB: {[key: string]: UserModel} = {}
 const wss = route.all('/ws/userauth', (ctx) => {
   /** Emittery allows us to wait for the challenge response event */
   const emitter = new Emittery();
-  ctx.websocket.on('message', async (msg) => {
+  ctx.WebSocket.on('message', async (msg) => {
     try {
       /** All messages from client contain {type: string} */
       const data = JSON.parse(msg);
@@ -385,7 +385,7 @@ const wss = route.all('/ws/userauth', (ctx) => {
             (challenge: Uint8Array) => {
             return new Promise((resolve, reject) => {
               /** Pass the challenge to the client */
-              ctx.websocket.send(JSON.stringify({
+              ctx.WebSocket.send(JSON.stringify({
                 type: 'challenge',
                 value: Buffer.from(challenge).toJSON(),
               }))
@@ -427,7 +427,7 @@ const wss = route.all('/ws/userauth', (ctx) => {
           };
 
           /** Return the result to the client */
-          ctx.websocket.send(JSON.stringify({
+          ctx.WebSocket.send(JSON.stringify({
             type: 'token',
             value: payload,
           }))
@@ -448,7 +448,7 @@ const wss = route.all('/ws/userauth', (ctx) => {
       }
     } catch (error) {
       /** Notify our client of any errors */
-      ctx.websocket.send(JSON.stringify({
+      ctx.WebSocket.send(JSON.stringify({
         type: 'error',
         value: error.message,
       }))
@@ -465,7 +465,7 @@ Here we import multiple modules:
 - `emittery`: A simple and modern async event emitter.
 - `@textile/hub`: Provides access to Textile APIs in apps based on Account Keys or User Group Keys.
 
-You can install these modules using Node Package Manager (NPM):
+You can install these modules using the Node Package Manager (NPM):
 
 ```bash
 npm i koa-route emittery @textile/hub
@@ -516,9 +516,9 @@ After importing the modules and helper functions, [hub-browser-auth-app/src/serv
 In an actual app you may like to use a database to store the app user details.
 :::
 
-We then register a Websocket route `/ws/userauth`. Whenever the server receives a `'message'` with `data.type` as `token` (as sent by the react app above), the server first checks if `data.pubkey` is present. If yes, a new `db` is intialized using the `newClientDB()` function. The server then requests a `challenge` for a public key (`data.pubkey`) using `db.getTokenChallenge` which takes a callback function that accepts a `Uint8Array` type `challenge` and returns a Promise (that resolves to the value of `token`).
+We then register a WebSocket route `/ws/userauth`. Whenever the server receives a `'message'` with `data.type` as `token` (as sent by the react app above), the server first checks if `data.pubkey` is present. If yes, a new `db` is initialized using the `newClientDB()` function. The server then requests a `challenge` for a public key (`data.pubkey`) using `db.getTokenChallenge` which takes a callback function that accepts a `Uint8Array` type `challenge` and returns a Promise (that resolves to the value of `token`).
 
-3. **The server passes the challenge to the client**: This `challenge` is then converted to JSON data type using `Buffer.from(challenge).toJSON()` and sent to the react app using `ctx.websocket.send`.
+3. **The server passes the challenge to the client**: This `challenge` is then converted to JSON data type using `Buffer.from(challenge).toJSON()` and sent to the react app using `ctx.WebSocket.send`.
 
 The server waits for `1500` milliseconds for the react app to respond to the challenge.
 
@@ -528,7 +528,7 @@ The challenge (`data.value`) is converted to `Buffer` type using `const buf = Bu
 
 This signed challenge is sent back to the server, which is handled by the `"challenge"` case in the switch case in [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L113). The server checks for the challenge response (`data.sig`) and if present it emits a challenge event by `emitter.emit("challenge", data.sig)`.
 
-5. **The server passes the signed challenge to the Hub**: This event is [captured](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L67) and the Promise is reolved to `Buffer.from(sig)`, thus setting the value of the `token` variable to `Buffer.from(sig)`.
+5. **The server passes the signed challenge to the Hub**: This event is [captured](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L67) and the Promise is resolved to `Buffer.from(sig)`, thus setting the value of the `token` variable to `Buffer.from(sig)`.
 
 ::: tip
 The token provided in the response should be considered a secret that only should be shared with a single user. It does not expire.

@@ -7,7 +7,7 @@ In this tutorial, we learned how to create a Meme Marketplace on Filecoin and an
 
 We learned about:
 
-- What is Textile Hub and Bucket.
+- What is Textile Hub and Bucket?
 - How to set up a local blockchain.
 - How to create and deploy an NFT smart contract.
 - How to connect to the hub and create buckets.
