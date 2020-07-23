@@ -70,6 +70,10 @@ export default {
               path: '/how-to/install-filecoin'
             },
             {
+              title: 'Connect to a network',
+              path: '/how-to/networks'
+            },
+            {
               title: 'Preparing data',
               path: '/how-to/store/prepare-data'
             },
