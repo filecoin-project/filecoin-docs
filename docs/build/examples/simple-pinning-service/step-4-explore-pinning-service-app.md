@@ -666,9 +666,9 @@ export const addFileToFFS = payload => async dispatch => {
 3. **Displaying the deal status on the UI**: In [src/pages/Pin/index.js](https://github.com/filecoin-shipyard/powergate-pinning-service/blob/master/src/pages/Pin/index.js#L293), the `watchLogs` from `pow.ffs.watchLogs` are displayed on the UI to monitor the events (status) of the current storage deal. The file can be fetched back from the HTTP gateway of the IPFS node using the link `http://localhost:8080/ipfs/${log.cid}`.
 
 ```jsx
-;<h3>4. Deal Status</h3>
-{
-  watchLogs.length > 0 ? (
+<Fragment>
+  <h3>4. Deal Status</h3>
+  {watchLogs.length > 0 ? (
     <div>
       {watchLogs.map((log, index) => (
         <div key={index} className="card" style={{ width: '48rem' }}>
@@ -694,8 +694,8 @@ export const addFileToFFS = payload => async dispatch => {
       No Recent Deals. Upload something to Filecoin Network to see sweet-sweet
       deals :)
     </p>
-  )
-}
+  )}
+</Fragment>
 ```
 
 ## Step 4f: Fetch data back from IPFS and FFS via powergate instance
@@ -727,9 +727,9 @@ The files can be accessed using the IPFS HTTP Gateway exposed on port `8080`.
 2. **Displaying links to files on UI**: In [src/pages/Gallery/index.js](https://github.com/filecoin-shipyard/powergate-pinning-service/blob/master/src/pages/Gallery/index.js#L49), the files can be accessed using the link `http://localhost:8080/ipfs/${pin}`, where `pin` is the CID of a file.
 
 ```jsx
-;<h3>Get data from IPFS</h3>
-{
-  user.ffsInfo ? (
+<Fragment>
+  <h3>Get data from IPFS</h3>
+  {user.ffsInfo ? (
     user.ffsInfo.pinsList.length > 0 ? (
       <div>
         {user.ffsInfo.pinsList.map((pin, index) => (
@@ -756,8 +756,8 @@ The files can be accessed using the IPFS HTTP Gateway exposed on port `8080`.
     )
   ) : (
     <img src={FilecoinGIF} />
-  )
-}
+  )}
+</Fragment>
 ```
 
 3. **Fetching files back from FFS**: In [src/redux/actions/powergate.js](https://github.com/filecoin-shipyard/powergate-pinning-service/blob/master/src/redux/actions/powergate.js#L200), the `getDataFromFFS` function uses `pow.ffs.get` takes the CID of the data as input, and fetches the data back in `Uint8Array` format. This `Uint8Array` data is then converted into [DOMString](https://developer.mozilla.org/en-US/docs/Web/API/DOMString) (containing a URL representing the object given in the parameter) so that it can be downloaded in the browser.
@@ -783,31 +783,32 @@ export const getDataFromFFS = payload => async dispatch => {
 4. **Downloading files from FFS using UI**: In [src/pages/Gallery/index.js](https://github.com/filecoin-shipyard/powergate-pinning-service/blob/master/src/pages/Gallery/index.js#L80), the CID of the data is accepted as an input from the user and then passed to `getDataFromFFS` to fetch back the data from FFS. The [DOMString](https://developer.mozilla.org/en-US/docs/Web/API/DOMString) is displayed on the UI as a link which lets the user to download or view the file.
 
 ```jsx
-<h3>Get Data from Filecoin File System (FFS)</h3>
-<input type="text" id="getFromFFS" placeholder="Add CID here" />
-<button
-className="btn btn-primary mb-2"
-onClick={() => {
-    const cid = document.getElementById("getFromFFS").value;
-    getDataFromFFS({ cid: cid });
-}}
->
-Get Data from FFS
-</button>
-<br />
-{ffsFiles ? (
-<div>
-    {ffsFiles.map((file, index) => (
-    <p key={index}>
-        <a href={file.url} target="_blank">
-        Download {file.cid} from Filecoin
-        </a>
-        <br />
-        <br />
-    </p>
-    ))}
-</div>
-) : null}
+<Fragment>
+  <h3>Get Data from Filecoin File System (FFS)</h3>
+  <input type="text" id="getFromFFS" placeholder="Add CID here" />
+  <button
+    className="btn btn-primary mb-2"
+    onClick={() => {
+      const cid = document.getElementById('getFromFFS').value
+      getDataFromFFS({ cid: cid })
+    }}>
+    Get Data from FFS
+  </button>
+  <br />
+  {ffsFiles ? (
+    <div>
+      {ffsFiles.map((file, index) => (
+        <p key={index}>
+          <a href={file.url} target="_blank">
+            Download {file.cid} from Filecoin
+          </a>
+          <br />
+          <br />
+        </p>
+      ))}
+    </div>
+  ) : null}
+</Fragment>
 ```
 
 And that's it! Congratulations on reading the tutorial until the end. You deserve a pat on the back!

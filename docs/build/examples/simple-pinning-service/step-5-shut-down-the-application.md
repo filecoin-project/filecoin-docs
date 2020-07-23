@@ -1,5 +1,5 @@
 ---
-title: Step 5 - Shut down the application
+title: Step 5 - Shut down the Simple Pinning Service application
 description: This article describes how to shut down the application.
 ---
 

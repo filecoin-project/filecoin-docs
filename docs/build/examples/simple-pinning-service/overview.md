@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Simple Pinning Service Overview
 description: A brief description of the Simple Pinning Service Example.
 ---
 

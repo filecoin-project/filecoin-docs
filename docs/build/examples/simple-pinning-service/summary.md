@@ -1,5 +1,5 @@
 ---
-title: Summary
+title: Simple Pinning Service App Summary
 description: This article summarizes what we learned from the Simple Powergate Service tutorial.
 ---
 
