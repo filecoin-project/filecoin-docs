@@ -26,23 +26,49 @@ Once you have set up these resources, you can start the server. The directions b
 
 Follow the [Textile documentation](https://docs.textile.io/hub/accounts/) to download, install, and initialize the latest Hub CLI.
 
-2. Create a user group key
+2. Create an organisation
 
-After you have successfully installed the Hub CLI, run the following command to create a user group key for your org:
+Execute the following command to create an organisation.
 
 ```bash
-hub keys create --org company-name
+hub org create
+```
+
+The command line will prompt you to add an organisation name. For example: `spacex`.
+Confirm your inout by pressing `y`.
+
+::: tip
+You need to use the organisation name other than `spacex`.
+:::
+
+![Creating an organisation using hub CLI](./images/create-org.png)
+
+Your org is now created.
+
+3. Create a user group key
+
+After you have successfully create an organisation, run the following command to create a user group key for your org:
+
+```bash
+hub keys create --org spacex
 ```
 
 1. You will be prompted to select either `account` or `user group`. Select the `user group`.
-2. If everything goes as expected, you will receive a `KEY` and a `SECRET`.
-3. **Copy and save these details somewhere safe**. You will need them to start the authentication server.
+2. You will be prompted to select if you require Signature Authentication. Press `y` and enter.
+3. If everything goes as expected, you will receive a `KEY` and a `SECRET`.
+4. **Copy and save these details somewhere safe**. You will need them to start the authentication server.
 
-**Do not share any API Key Secrets. This includes User Group Key secret and Account key Secrets. Be sure you never commit them into public repos or share them in published apps.**
+::: tip
+You need to use the organisation name that you created above.
+:::
 
-![Creating Hub creadentials using hub CLI](./images/create-hub-credentials.png)
+![Creating Hub creadentials using hub CLI](./images/credentials.png)
 
-3. Install Typescript
+::: tip
+Do not share any API Key Secrets. This includes User Group Key secret and Account key Secrets. Be sure you never commit them into public repos or share them in published apps.
+:::
+
+4. Install Typescript
 
 Run the following command to install typescript:
 
@@ -60,7 +86,15 @@ Linux and Mac users will have to use sudo
 git clone https://github.com/filecoin-shipyard/meme-marketplace
 ```
 
-5. Open the [meme-marketplace](https://github.com/filecoin-shipyard/meme-marketplace) project in a text editor.
+5. Open the _hub-browser-auth-app_ folder of the [meme-marketplace](https://github.com/filecoin-shipyard/meme-marketplace) project in a text editor.
+
+```bash
+cd meme-marketplace/hub-browser-auth-app
+
+// now open the hub-browser-auth-app folder
+```
+
+![hub-browser-auth-app opened in VSCode editor](./images/hub-auth-server-codebase.png)
 
 6. Start the Server
 
@@ -77,17 +111,8 @@ Replace the `your_api_key` and `your_api_secret` with `KEY` and `SECRET` generat
 Run the following command to start the server:
 
 ```bash
+npm run build:server
 npm run start:server
 ```
 
-The server is now set up. The rest of this tutorial shows the functionality available in the Meme Marketplace app.
-
-3. Run the following commands to start the app:
-
-```bash
-cd hub-browser-auth-app
-npm install
-npm start
-```
-
-The hub auth server starts.
+The hub auth server is now up and running. The rest of this tutorial shows the functionality available in the Meme Marketplace app.
