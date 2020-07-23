@@ -89,13 +89,6 @@ module.exports = {
                 children: ['/how-to/install-filecoin']
               },
               {
-                title: 'Create Filecoin Applications',
-                sidebarDepth: 1,
-                children: [
-                  '/how-to/build-filecoin-web-applications-with-textile-and-react'
-                ]
-              },
-              {
                 title: 'Store Data',
                 sidebarDepth: 1,
                 collapsable: false,
@@ -168,6 +161,12 @@ module.exports = {
                     sidebarDepth: 1,
                     collapsable: false,
                     children: ['build/examples/simple-pinning-service/overview']
+                  },
+                  {
+                    title: 'Web Applications',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/web-applications/overview']
                   },
                   {
                     title: 'Slate',
