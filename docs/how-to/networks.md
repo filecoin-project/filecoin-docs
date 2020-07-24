@@ -71,9 +71,9 @@ Calibration is an up-to-date devnet, best for miners preparing for the [Space Ra
 | ------------------- | ------------------------------------------------------------ |
 | Sector Sizes        | 512MiB, 32GiB, 64GiB                                         |
 | Branch              | `ntwk-calibration`                                           |
-| Tag                 | [`ntwk-calibration-7.21.1`](https://github.com/filecoin-project/lotus/tree/ntwk-calibration-7.21.1) |
+| Tag                 | [`ntwk-calibration-7.24.0`](https://github.com/filecoin-project/lotus/tree/ntwk-calibration-7.24.0) |
 | Details page        | [calibration.fildev.network](http://www.calibration.fildev.network/) |
-| Next expected reset | July 23, 2020, with frequent resets through Aug 3. See Slack channels below for reset announcements. |
+| Next expected reset | July 24, 2020, with frequent resets through Aug 3. See Slack channels below for reset announcements. |
 
 #### Calibration Devnet Resources
 
