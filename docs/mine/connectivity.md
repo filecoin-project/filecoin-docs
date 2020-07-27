@@ -14,6 +14,27 @@ Filecoin miners, like participants in all peer-to-peer protocols, require a stea
 
 The following steps are highly recommended for all miners who wish to successfully accept storage and retrieval deals.
 
+## Setting multiaddresses
+
+You can set the multiaddresses that your miner listens on in a miner's `config.toml` file 
+(by default located at `~/.lotusminer/config.toml`). 
+
+Once you've done so, you can set the on-chain record
+of your miner's listen addresses with the command:
+ 
+ ```
+ lotus-miner set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
+```
+
+This updates the `MinerInfo` object in your miner's actor, which will be looked up
+when a client attempts to make a deal with you. You can provide any number of addresses.
+
+As an example, you could run:
+
+```
+ lotus-miner set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456 
+```
+
 ## Checking peer count
 
 To ensure storage and retrieval deals operate smoothly, it is recommended to check how many peers a miner is connected to after each start-up. In the Lotus client, a manual peer check can be performed with the command:
