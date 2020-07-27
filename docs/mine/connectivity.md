@@ -23,7 +23,7 @@ Once you've done so, you can set the on-chain record
 of your miner's listen addresses with the command:
  
  ```
- lotus-miner set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
+ lotus-miner actor set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
 ```
 
 This updates the `MinerInfo` object in your miner's actor, which will be looked up
@@ -32,7 +32,7 @@ when a client attempts to make a deal with you. You can provide any number of ad
 As an example, you could run:
 
 ```
- lotus-miner set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456 
+ lotus-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456 
 ```
 
 ## Checking peer count
