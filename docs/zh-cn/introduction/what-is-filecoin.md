@@ -1,34 +1,34 @@
 ---
-title: What is Filecoin?
-description: Explore Filecoin, a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time.
+title: 什么是 Filecoin？
+description: 探索 Filecoin，一种点对点的文件存储网络，它内建了经济激励机制，使得文件可以始终被妥善存储。
 ---
 
-# What is Filecoin?
+# 什么是 Filecoin？
 
-**Filecoin is a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time.**
+**Filecoin 是一种点对点的文件存储网络，它内建了经济激励机制，使得文件可以始终被妥善存储。**
 
-In Filecoin, users pay to store their files on storage miners. Storage miners are computers responsible for storing files and proving they have stored the files correctly over time. Anyone who wants to store their files or get paid for storing other users’ files can join Filecoin. Available storage and pricing is not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in.
+在 Filecoin 网络中，用户向为他们存储文件的存储矿工付钱。存储矿工是负责存储文件并能够证明它们正确存储了文件的计算机。任何有文件存储需求，或想通过提供存储空间赚钱的人都可以加入到 Filecoin。可用存储空间和价格不受任何单一的公司控制。恰恰相反，Filecoin 的开放市场让任何人都可以参与提供文件存储和检索服务。
 
-Filecoin includes a blockchain and native cryptocurrency (FIL). Storage miners earn units of FIL for storing files. Filecoin’s blockchain records transactions to send and receive FIL, along with proofs from storage miners that they are storing their files correctly.
+Filecoin 包括一个区块链和本地的加密货币（FIL）。存储矿工通过存储文件赚取一定单位的 FIL。Filecoin 的区块链记录着发送和接收 FIL 的交易，同时也记录着代表存储矿工妥善存储了文件的证明。
 
-![Diagram showing a four-step process for storing files with Filecoin. First step: User who wants to store a file pays miner to store their file. Second step: Miner commits publicly via Filecoin’s blockchain to storing the file. Third step: The network constantly verifies that miners are storing files correctly. Fourth step: User pays miner to retrieve their file.](./images/what-is-filecoin/what-is-filecoin-diagram.png)
+![图表展现了在 Filecoin 存储文件的四个步骤。第一步，用户付钱给存储了他们文件的矿工。第二步，矿工向区块链公开承诺他们存储了文件。第三步，网络持续验证矿工是否正妥善存储了文件。第四步，用户向矿工付钱并取回自己的文件。](./images/what-is-filecoin/what-is-filecoin-diagram.png)
 
-### For users
+### 对于用户
 
-Filecoin enables users to store their files at hypercompetitive prices and verify that their files are being stored correctly.
+Filecoin 使用户能够以极具竞争力的价格存储他们的文件，并验证他们的文件被正确存储。
 
-Users can choose their preferred trade-off between cost, redundancy and speed by selecting the miner whose storage offer is best suited for their needs. Applications that implement Filecoin can negotiate storage with any miner on the network. Unlike centralized storage systems, there is no need to implement a different API for each provider.
+用户可以在成本、冗余和速度之间选择最符合需求的存储矿工。Filecoin 的软件程序可以与网络上的任何矿工协商存储。与中心化存储系统不同，Filecoin 不需要为每一个提供者实现不同的 API。
 
-At any time, users can verify that their files are being stored correctly by looking at proofs on Filecoin’s blockchain.
+用户可以随时在 Filecoin 的区块链上查看证明信息，去验证他们文件是否被妥善的存储。
 
 ::: callout
-[Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
+[在 ProtoSchool 了解存储验证相关内容](https://proto.school/#/verifying-storage-on-filecoin)
 :::
 
-### For storage providers
+### 对于存储提供者
 
-Filecoin enables storage providers to sell their storage on an open market.
+Filecoin 使存储提供者能够在一个开放的市场中销售他们的存储空间。
 
-Storage providers are people and organizations that run miners, earning Filecoin tokens for doing so. A miner could be any internet-connected computer with spare disk space, or a dedicated system with lots of storage built specifically for Filecoin. Filecoin’s blockchain rewards miners for contributing useful storage to the internet, not for completing wasteful proof-of-work computations.
+存储提供者是那些运行矿机赚取加密货币的个人或组织。矿机可以是任何具有空闲磁盘空间的联网计算机，也可以是具有大量专门为 Filecoin 构建的存储空间的专用系统。Filecoin 的区块链奖励的是那些为网络提供有用存储的矿工，而不是用来完成浪费资源的工作量证明的计算。
 
-Once a storage provider implements the Filecoin protocol, they gain access to the entire market of Filecoin users. Providers don’t need to design their own storage API or advertise their offering themselves as this is handled by Filecoin’s protocol and network. Filecoin enables a thriving, decentralized ecosystem of independent storage providers by removing barriers to entry.
+存储提供者实现 Filecoin 协议后就可以访问整个市场的 Filecoin 用户。他们不需要设计自己的存储 API，也不需要宣传自己的产品，因为这些事务都由 Filecoin 的协议和网络进行处理。Filecoin 通过消除准入壁垒，联结独立的存储提供者实现繁荣的去中心化生态系统。
