@@ -194,7 +194,7 @@ Proof-of-Spacetime](winning-proof-of-spacetime-winningpost).
 The storage power a [storage miner](#storage-miner) earns from a
 storage deal offered by a [verified client](#verified-client)
 will be augmented by a multiplier. Power totals that take into
-account this multiplier are termed _quality_adjusted_.
+account this multiplier are termed _quality adjusted_.
 
 ## Retrieval miner
 
