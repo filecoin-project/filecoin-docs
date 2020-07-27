@@ -5,11 +5,6 @@ description: Definitions and usage for Filecoin terminology
 
 # Glossary
 
-## Actor
-
-_Actor_ is a term used generically to indicate a participant in the
-Filecoin network.
-
 ## Address
 
 In the Filecoin network, an _address_ is a unique cryptographic
@@ -60,7 +55,7 @@ event that the miner fails to uphold their storage commitment.
 
 ## Deal
 
-Two actors in the Filecoin network can enter into a _deal_ in
+Two participants in the Filecoin network can enter into a _deal_ in
 which one party contracts the services of the other. The Filecoin
 specification currently details _storage deals_ (in which one
 party agrees to store data for the other for a specified
@@ -99,7 +94,7 @@ seed capital to begin making transactions.
 
 When a [storage miner](#storage-miner) fails to complete [Window
 Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) for a
-given sector, a _fault_ the Filecoin network registers a _fault_
+given sector, the Filecoin network registers a _fault_
 for that sector, and the miner is [_slashed_](#slash). Storage
 miners must work to resolve faults quickly, lest they be
 considered to have abandoned their commitment. 
@@ -136,10 +131,11 @@ The term _message_ is used to refer to data stored as part of a
 
 ## Miner
 
-The Filecoin project uses the term _miner_ to refer to an actor in the network
-providing a service of value to a client. At present, the Filecoin
-specification recognizes two miner types: [storage miners](#storage-miner) and
-[retrieval miners](#retrieval-miners).
+The Filecoin project uses the term _miner_ to refer to
+participant in the network providing a service of value to a
+client. At present, the Filecoin specification recognizes two
+miner types: [storage miners](#storage-miner) and [retrieval
+miners](#retrieval-miners).
 
 ## Pledged storage
 
@@ -151,7 +147,7 @@ _pledged storage_.
 ## Proof-of-Storage (PoSt)
 
 Many blockchain networks are underpinned by the notion that
-participating actors supply something of value to the blockchain - 
+participants supply something of value to the blockchain - 
 a contribution that is hard to fake, but which, if actually made,
 can be trivially verified. Blockchains based in this approach are
 often said to require "Proof-of-_X_", where _X_ is the valued
@@ -163,17 +159,17 @@ contribution of computing power.
 
 As a term, Proof-of-Storage refers to the design elements of the
 Filecoin protocol that allow one to guarantee (to some very high
-tolerance) that actors that claim to be contributing a given
+tolerance) that participants that claim to be contributing a given
 amount of storage are indeed fulfilling that pledge. In fact,
 Filecoin's Proof-of-Storage construction provides for a much
-stronger claim, allowing one to efficiently verify that a actor is
+stronger claim, allowing one to efficiently verify that a participant is
 storing a _particular piece of data, without requiring that one have a
 copy of the file itself.
 
 *Note*: "proof" here is used in an informal sense - typically,
 these proofs take the form of a probabilistic argument, rather
 than a concrete proof; that is, it might _technically_ be
-possible to convince other actors that one is making a
+possible to convince other participants that one is making a
 contribution one is not, but the possibility is so vanishingly
 slight as to border on impossibility.
 
@@ -202,13 +198,13 @@ account this multiplier are termed _quality_adjusted_.
 
 ## Retrieval miner
 
-A _retrieval miner_ is a Filecoin actor that enters retrieval
-[deals](#deal) with clients, agreeing to supply a client with a
-particular file in exchange for filecoin.  Note that unlike
-[storage miners](#storage-miner), retrieval miners are not
-additionally rewarded for this service with the ability to add
-blocks to the Filecoin blockchain; their only reward is the fee
-they extract from the client.
+A _retrieval miner_ is a Filecoin participant that enters
+retrieval [deals](#deal) with clients, agreeing to supply a
+client with a particular file in exchange for filecoin.  Note
+that unlike [storage miners](#storage-miner), retrieval miners
+are not additionally rewarded for this service with the ability
+to add blocks to the Filecoin blockchain; their only reward is
+the fee they extract from the client.
 
 ## Seal
 
@@ -241,13 +237,13 @@ network registers a [fault](#fault). When this occurs, the
 
 ## Storage miner
 
-A _storage miner_ is a Filecoin actor that stores data on behalf of the
+A _storage miner_ is a Filecoin participant that stores data on behalf of the
 network. Storage miners are rewarded for this service through payments by
 clients that contract their services, as well as by periodic authorization to
 extend the Filecoin blockchain with blocks of their own creation.
 When they create a block, storage miners are rewarded with newly
 minted filecoin, and by the transaction fees they can levy on
-other actors seeking to include messages in the block. 
+other participants seeking to include messages in the block. 
 
 ## Storage power
 
@@ -347,7 +343,7 @@ requirement for doing so, each miner is tasked with submitting a
 compressed [Proof-of-Storage](#proof-of-storage-post) for a
 specified [sector](#sector). Each elected miner who successfully
 creates a block is granted filecoin, as well as the opportunity
-to charge other Filecoin actors fees to include
+to charge other Filecoin participants fees to include
 [messages](#message) in the block.
 
 Storage miners who fail to do this in the necessary window will
