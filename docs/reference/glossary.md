@@ -163,7 +163,7 @@ tolerance) that participants that claim to be contributing a given
 amount of storage are indeed fulfilling that pledge. In fact,
 Filecoin's Proof-of-Storage construction provides for a much
 stronger claim, allowing one to efficiently verify that a participant is
-storing a _particular piece of data, without requiring that one have a
+storing a _particular piece of data_, without requiring that one have a
 copy of the file itself.
 
 *Note*: "proof" here is used in an informal sense - typically,
