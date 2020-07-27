@@ -15,7 +15,13 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 ## How do I participate?
 
-You must be able to run at least 1 miner to participate. The competition will include a dashboard where miners can view global and regional reward tiers, as well as individual miner storage power, deal success rate, and sector life cycle command completion, in real-time. Miners will also be able to display their names (individual or company) alongside their miner ID on the leaderboard. 
+You must be able to run at least 1 miner to participate. 
+
+**The calibration period is currently open.** To join, run at least 1 miner on the [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet). A preview of calibration standings is available on the [Preview Dashboard](https://calibration.spacerace.filecoin.io/). 
+
+The competition period is not yet open. The competition will include a full dashboard where miners can view global and regional reward tiers, as well as individual miner storage power, deal success rate, and sector life cycle command completion, in real-time. Miners will also be able to submit information for location verification, and display their names (individual or company) alongside their miner ID.
+
+For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the Filecoin Slack. 
 
 ## What are the possible rewards?
 
@@ -48,7 +54,7 @@ Any rewards earned will be encoded into the genesis block and will vest linearly
 
 #### What branch and network will be used for the Space Race?
 
-The [caliberation devnet(https://docs.filecoin.io/how-to/networks/#calibration-devnet) is designed to be used prior to the testnet phase in order to prepare equipment and client setups. Once the competition has started, the main [testnet](https://docs.filecoin.io/how-to/networks/#testnet) will be the used network.
+The [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet) is designed for the initial calibration phase in order to prepare equipment and client setups. Once the competition has started, the [testnet](https://docs.filecoin.io/how-to/networks/#testnet) will be the used network.
 
 #### How is the "location" of a mining operation determined?
 
@@ -56,11 +62,11 @@ The “location” of a storage mining operation is the location of the storage 
 
 Thus, to verify location claims, the Filecoin team will be implementing a custom-built software suite running during the competition, and will be doing hands-on verification during and after the competition. **Please do not try to “spoof” your location – we have many layers of detection in place and a team in place to ensure fairness**; if you are thinking about using a proxy or a VPN to hide your location, think again.
 
-Any miner found misrepresenting their location will result in a *total forfeiture of all rewards*, across all associated miners**.
+Any miner found misrepresenting their location will result in a *total forfeiture of all rewards*, across all associated miners.
 
 #### Is a static IP required?
 
-No; though your system must be able to access peers over libp2p. See the [improving connectivity](https://docs.filecoin.io/mine/connectivity/) page for more tips on improving peer count.
+No; though your system must be able to access peers over libp2p. See the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) page for more tips on improving peer count.
 
 ## Additional notes
 
