@@ -32,7 +32,7 @@ description: 了解 web3
 ### Filecoin
 
 - [Introducing Filecoin, a decentralized storage network](https://www.youtube.com/watch?v=EClPAFPeXIQ)
-- [什么是 Filecoin？](./zh-cn/what-is-filecoin.md)
-- [为何选择 Filecoin？](./zh-cn/why-filecoin.md)
+- [什么是 Filecoin？](/zh-cn/introduction/what-is-filecoin.md)
+- [为何选择 Filecoin？](/zh-cn/introduction/why-filecoin.md)
 - [Filecoin primer](https://ipfs.io/ipfs/QmWimYyZHzChb35EYojGduWHBdhf9SD5NHqf8MjZ4n3Qrr/Filecoin-Primer.7-25.pdf)
 - [Building the Filecoin ecosystem](https://youtu.be/SXlTBvcqzz8)
