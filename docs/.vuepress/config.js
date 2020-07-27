@@ -1,5 +1,5 @@
 // .vuepress/config.js
-  
+
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 
 module.exports = {
@@ -10,6 +10,11 @@ module.exports = {
       lang: 'en-US',
       title: 'Filecoin Docs',
       description: 'Filecoin Documentation'
+    },
+    '/zh-cn/': {
+      lang: 'zh-CN',
+      title: 'Filecoin 文档',
+      description: 'Filecoin 中文文档'
     }
   },
   markdown: {
@@ -86,10 +91,7 @@ module.exports = {
                 title: 'Install Filecoin',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: [
-                    '/how-to/install-filecoin',
-                    '/how-to/networks'
-                ]
+                children: ['/how-to/install-filecoin', '/how-to/networks']
               },
               {
                 title: 'Store Data',
@@ -108,10 +110,7 @@ module.exports = {
           {
             title: 'Mine',
             path: '/mine/',
-             children: [
-               '/mine/connectivity',
-                '/mine/spacerace'
-          ]
+            children: ['/mine/connectivity', '/mine/spacerace']
           },
           {
             title: 'Build',
@@ -245,6 +244,254 @@ module.exports = {
               [
                 'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
                 'Code of conduct'
+              ]
+            ]
+          }
+        ]
+      },
+      '/zh-cn/': {
+        label: '简体中文',
+        selectText: '语言',
+        ariaLabel: '选择语言',
+        editLinkText: '编辑页面',
+        lastUpdated: '最近更新',
+        serviceWorker: {
+          updatePopup: {
+            message: '有新内容啦！',
+            buttonText: '刷新'
+          }
+        },
+        nav: require('./nav/en'),
+        sidebar: [
+          {
+            title: '介绍',
+            path: '/zh-cn/introduction/',
+            children: [
+              ['/zh-cn/introduction/new-to-web3', 'web3 入门'],
+              ['/zh-cn/introduction/what-is-filecoin', '什么是 Filecoin？'],
+              ['/zh-cn/introduction/why-filecoin', '为何选择 Filecoin？'],
+              ['/zh-cn/introduction/ipfs-and-filecoin', 'IPFS 与 Filecoin'],
+              ['/zh-cn/introduction/filecoin-compared-to', 'Filecoin 对比...']
+            ]
+          },
+          {
+            title: '新手上路',
+            path: '/zh-cn/how-to/',
+            children: [
+              {
+                title: '安装 Filecoin',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  ['/zh-cn/how-to/install-filecoin', '安装 Filecoin'],
+                  ['/zh-cn/how-to/networks', '连接到网络']
+                ]
+              },
+              {
+                title: '存储数据',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  ['/zh-cn/how-to/store/prepare-data', '准备数据'],
+                  ['/zh-cn/how-to/store/tokens', '代币支付'],
+                  ['/zh-cn/how-to/store/making-storage-deals', '进行存储交易'],
+                  ['/zh-cn/how-to/store/retrieving-data', '检索数据'],
+                  ['/zh-cn/how-to/store/large-files', '大文件']
+                ]
+              }
+            ]
+          },
+          {
+            title: '挖矿',
+            path: '/zh-cn/mine/',
+            children: [
+              ['/zh-cn/mine/connectivity', '改善连接'],
+              ['/zh-cn/mine/spacerace', 'Filecoin 太空竞赛']
+            ]
+          },
+          {
+            title: '构建',
+            path: '/zh-cn/build/',
+            children: [
+              {
+                title: '开始构建',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/zh-cn/build/start-building/interacting-with-the-network',
+                  '与网络交互'
+                ]
+              },
+              {
+                title: '核心产品',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  [
+                    '/zh-cn/build/core-products/filecoin-backed-pinning-services',
+                    'Filecoin 支持的 pinning 服务'
+                  ],
+                  '/zh-cn/build/core-products/powergate',
+                  [
+                    '/zh-cn/build/core-products/protocol-implementations',
+                    '协议实现'
+                  ]
+                ]
+              },
+              {
+                title: '开发工具',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  [
+                    '/zh-cn/build/developer-tools/wallets-signing-tools-api-clients',
+                    '钱包，签名工具和 API 客户端'
+                  ],
+                  [
+                    'https://github.com/filecoin-project/docs/wiki#community-resources',
+                    'Filecoin 社区资源'
+                  ],
+                  ['http://filecoin.onrender.com/', '组件设计系统']
+                ]
+              },
+              {
+                title: '示例',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  ['/zh-cn/build/examples/sample-architectures', '示例架构'],
+
+                  {
+                    title: 'Meme Marketplace',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: [
+                      '/zh-cnbuild/examples/meme-marketplace/overview',
+                      '概览'
+                    ]
+                  },
+                  {
+                    title: 'Simple Pinning Service',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: [
+                      '/zh-cnbuild/examples/simple-pinning-service/overview',
+                      '概览'
+                    ]
+                  },
+                  {
+                    title: 'Web Applications',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: [
+                      '/zh-cnbuild/examples/web-applications/overview',
+                      '概览'
+                    ]
+                  },
+                  {
+                    title: 'Slate',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['/zh-cnbuild/examples/slate/overview', '概览']
+                  },
+                  {
+                    title: 'Network Inspector',
+                    sidebarDepth: 2,
+                    collapsable: false,
+                    children: [
+                      [
+                        '/zh-cnbuild/examples/network-inspector/overview',
+                        '概览'
+                      ],
+                      [
+                        '/zh-cnbuild/examples/network-inspector/lotus-and-go-ipfs-interactions',
+                        'lotus 与 go-ipfs 交互'
+                      ],
+                      [
+                        '/zh-cnbuild/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
+                        '第一步 启动 lotus-devnet 和 go-ipfs'
+                      ],
+                      [
+                        '/zh-cnbuild/examples/network-inspector/step-2-run-the-react-app',
+                        '第二步 运行 React 应用'
+                      ],
+                      [
+                        '/zh-cnbuild/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
+                        '第三步 设置 lotus 和 go-ipfs API 客户端'
+                      ],
+                      [
+                        '/zh-cnbuild/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
+                        '第四步 探索 Filecoin 网络检查程序'
+                      ],
+                      [
+                        '/zh-cnbuild/examples/network-inspector/step-5-shut-down-the-application',
+                        '第五步 关闭应用'
+                      ],
+                      ['/zh-cnbuild/examples/network-inspector/summary', '总结']
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+
+          {
+            title: '参考',
+            path: '/reference/',
+            children: [
+              ['https://github.com/filecoin-project/specs', '规格说明书'],
+              ['https://lotu.sh/', 'lotus 指南']
+            ]
+          },
+          {
+            title: '社区',
+            path: '/zh-cn/community/',
+            children: [
+              {
+                title: '加入社区',
+                sidebarDepth: 2,
+                collapsable: false,
+                children: [
+                  [
+                    '/zh-cn/community/contribute/ways-to-contribute',
+                    '如何贡献'
+                  ],
+                  ['/zh-cn/community/chat-and-discussion-forums', '聊天&讨论'],
+                  ['https://proto.school/#/events', 'ProtoSchool workshops'],
+                  ['/zh-cn/community/social-media/social-media', '社交媒体']
+                ]
+              },
+              {
+                title: '编写文档',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  [
+                    '/zh-cn/community/contribute/grammar-formatting-and-style',
+                    '风格指南'
+                  ],
+                  ['/zh-cn/community/contribute/writing-guide', '写作指南'],
+                  [
+                    '/zh-cn/community/contribute/contribution-tutorial',
+                    '贡献指南'
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            title: '项目',
+            path: '/zh-cn/project/',
+            children: [
+              [
+                'https://app.instagantt.com/shared/s/1152992274307505/latest',
+                '路线图'
+              ],
+              ['https://research.filecoin.io/', '研究'],
+              ['/zh-cn/project/related-projects', '相关项目'],
+              [
+                'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
+                '编码规范'
               ]
             ]
           }
