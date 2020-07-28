@@ -77,7 +77,7 @@ Time in the Filecoin blockchain is discretized into _epochs_ that
 are currently twenty-five seconds in length. Each epoch, a subset
 of storage miners are elected to each add a new block to the
 Filecoin blockchain via [Winning
-Proof-of-Spacetime](#winning-proof-of-spacetime-post).
+Proof-of-Spacetime](#winning-proof-of-spacetime-winningpost).
 
 ## FIL
 
