@@ -249,7 +249,7 @@ levy on other participants seeking to include
 
 A [storage miner's](#storage-miner) _storage power_ is a value roughly
 proportional to the amount of storage capacity they make available on behalf of
-the network via [capacity commitments](#-capacity-commitment) or [storage
+the network via [capacity commitments](#capacity-commitment) or [storage
 deals](#deal). Storage power is used to select storage miners for rewards
 in proportion to their contributions to the total network storage capacity.
 
