@@ -223,17 +223,15 @@ are supported.
 
 ## Slash
 
-When a [fault](#fault) is registered , the Filecoin network will
-_slash_ that miner; that is, it will assess penalties to the
-miner for their failure to uphold their pledge of storage. When
-slashing takes place, the power a miner earns for the associated
-sector is subtracted from the miner's total power for the purposes
-of [election](#election).
-
-When a [Storage miners](#storage-miner) fails to provide
-consistent storage (as determined by their ability to produce
-[proofs](#proof-of-spacetime-post) to this effect) the Filecoin
-network registers a [fault](#fault). When this occurs, the
+When a [fault](#fault) is registered for a [sector](#sector), the
+Filecoin network will _slash_ the [storage miner](#storage-miner)
+that is supposed to be storing the sector; that is, it will
+assess penalties to the miner (to be paid out of the
+[collateral](#collateral) fronted by te miner) for their failure
+to uphold their pledge of storage. When slashing takes place, the
+power a miner earns for the associated sector is subtracted from
+the miner's total power for the purposes of
+[election](#election).
 
 ## Storage miner
 
