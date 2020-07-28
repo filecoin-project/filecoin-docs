@@ -186,8 +186,8 @@ _Proof-of-Spacetime_ is a procedure by which a [storage-miner](#storage-miner)
 can prove to the Filecoin network they continue to store a unique copy of some
 data on behalf of the network. Proof-of-Spacetime manifests in two distinct
 varieties in the present Filecoin specification: [Window
-Proof-of-Spacetime](window-proof-of-spacetime-windowpost) and [Winning
-Proof-of-Spacetime](winning-proof-of-spacetime-winningpost).
+Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) and [Winning
+Proof-of-Spacetime](#winning-proof-of-spacetime-winningpost).
 
 ## Quality-adjusted storage power
 
