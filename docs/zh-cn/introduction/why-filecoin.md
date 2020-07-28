@@ -5,7 +5,7 @@ description: 探索使 Filecoin 成为引人注目的文件存储系统的功能
 
 # 为何选择 Filecoin？
 
-这时一个功能概览，它们让 Filecoin 成为引人注目的文件存储系统。本概览面向那些已经接触过大规模数据存储（例如：云存储或点对点存储网络）的人。
+这是一个功能概览，它们让 Filecoin 成为引人注目的文件存储系统。本概览面向那些已经接触过大规模数据存储（例如：云存储或点对点存储网络）的人。
 
 ### 开放的市场
 
@@ -23,62 +23,62 @@ description: 探索使 Filecoin 成为引人注目的文件存储系统的功能
 
 Filecoin 网络持续验证文件是否被妥善存储。Filecoin 区块链拥有内建的自愈功能，探测到故障矿机时，文件会被自动分发到其他可用的矿机上。
 
-### 可验证性追踪
+### 追踪验证
 
-In the process of self-healing, Filecoin generates verifiable traces that files have been stored correctly over time. Clients can efficiently scan these traces to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any miner’s track record and will notice if the miner has been faulty or offline in the past.
+Filecoin 会在自愈过程中生成可验证的追踪信息，证明文件始终被妥善存储。客户可以高效的扫描那些追踪信息去确认文件是否被妥善的存储，即使客户当前处于离线状态。任何人都可以检查任何矿机的追踪信息，了解它过去是否存在故障或离线的情况。
 
 ::: callout
-[Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
+[去 ProtoSchool 了解存储验证相关内容](https://proto.school/#/verifying-storage-on-filecoin)
 :::
 
 ### 重声誉，轻营销
 
-In Filecoin, storage providers prove their reliability through their track record published on the blockchain, not through marketing claims published by the provider themselves. Users don’t need to rely on status pages or self-reported statistics from storage providers.
+在 Filecoin 网络中，存储提供者通过区块链上公开的追踪记录去证明他们的可靠性，而不是依靠自我营销。用户也不需要存储提供者自己生成的状态页面或统计报告去了解情况。
 
 ### 自由交易
 
-Users get to choose their own tradeoffs between cost, redundancy and speed. Users are not limited to a set list of data centers offered by their provider, but can choose to store their files on any miner participating in Filecoin.
+用户根据实际需求权衡交易的成本、冗余和速度，没有任何选择限制，用户可以在 Filecoin 网络中的所有矿工中进行选择。
 
-### 使用清空的存储
+### 使用空闲的存储
 
-Filecoin puts disk space that would otherwise sit empty to use. Miners are incentivized to join Filecoin because they get paid for their participation, unlike other distributed networks where there is no economic incentive. Filecoin also makes it easy to join because miners self-manage their storage, earning Filecoin tokens without needing human supervision.
+Filecoin 把磁盘中空闲的部分拿来使用。矿工被鼓励加入 Filecoin，是因为他们能因此而获得报酬，这与那些没有经济激励的分布式网络孑然不同。加入 Filecoin 也非常简单，因为存储由矿工自己管理，无需人工监督即可赚取数字货币。
 
-### 审查免疫
+### 安全免疫
 
-Filecoin resists censorship because there is no central provider that can be coerced into deleting files or withholding service. The network is made up of many different computers run by many different people and organizations. Faulty or malicious actors are noticed by the network and removed automatically.
+Filecoin 的去中心化特性让文件存储更放心，存入的文件不会被强制删除或扣留。Filecoin 网络由许许多多个人和组织的海量计算机组合而成。网络会自动删除发现的错误及恶意行为。
 
 ### 有用的区块链
 
-In Filecoin, miners are rewarded for providing storage, not for performing wasteful computations. Filecoin secures its blockchain using proof of file replication and proof of storage over time. It doesn’t rely on energy-intensive proof-of-work schemes like other blockchains. Miners are incentivized to amass hard drives and put them to use by storing files. Filecoin doesn’t incentivize hoarding of graphics cards or application-specific integrated circuits for the sole purpose of mining.
+在 Filecoin 网络中，对矿工的奖励来自于提供存储，而不是执行浪费资源的计算。Filecoin 通过采用持续的文件复制证明和存储证明来保护它的区块链，这与其它区块链惯用的能耗极大的工作量证明孑然不同。矿工通过整合硬盘并将其用于文件存储而获得激励。Filecoin 不鼓励囤积显卡，也不鼓励转为挖矿设计的专用硬件。
 
 ### 为其他区块链提供存储
 
-Filecoin’s blockchain is designed to facilitate the storing of large files, whereas other blockchains can typically only store very small amounts of data, very expensively. Filecoin can provide storage to other blockchains, allowing them to store large files. In the future, mechanisms will be added to Filecoin enabling transactions on Filecoin’s blockchain to interoperate with transactions on other blockchains.
+Filecoin 的设计是为了方便存储大文件，与此相反的是其它区块链通常只能存储小量的数据且非常代价高昂。Filecoin 可以为其它区块链提供存储，让它们可以存储大文件。未来，Filecoin 将会添加与其它区块链进行事务交互的功能。
 
 ### 内容寻址
 
-Files are referred to by the data they contain, not by fragile identifiers such as URLs. Files remain available no matter where they are hosted or who they are hosted by. When a file becomes popular it can be quickly distributed by swarms of computers instead of relying on a central computer which can become overloaded by network traffic.
+文件由其包含的数据所引用，而不是由像 URL 这种脆弱的标识符所引用。文件的可用性并不取决于文件存储的位置或由谁来存储。当一个文件变得流行时，它会在计算机集群之间快速分发。相比于中心化网络，这种结构可以避免网络流量超载。
 
-When multiple users store the same file (and choose to make the file public by not encrypting it), everyone who wants to download the file benefits from Filecoin keeping it available. No matter where a file is downloaded from, downloaders can verify that they have received the correct file and that it is intact.
+当多个用户存储了相同的文件（该文件被设置为公开且未经加密），任何想要下载该文件的人都会因 Filecoin 的可用性机制而受益。无论 Filecoin 网络中的这个文件从哪里被下载，下载者都可以验证他们接受到的是正确且完整的文件。
 
 ### 内容分发网络
 
-Retrieval miners are computers that have good network connections to lots of users who want to download files. By prefetching popular files and distributing them to nearby users, retrieval miners are rewarded for making network traffic flow smoothly and files download quickly.
+检索矿工是那些拥有良好网络连接的计算机。通过预先取回流行的文件，并将这些文件分发给附近想要下载这些文件的用户。检索矿工因提供流畅快速的文件下载服务而获得奖励。
 
 ### 单一协议
 
-Applications implementing Filecoin can store their data on any miner using the same protocol. There isn’t a different API to implement for each provider. Applications wishing to support several different providers aren’t limited to the lowest-common-denominator set of features supported by all their providers.
+实现 Filecoin 的应用程序可以使用相同的协议在任何矿机上存储它们的数据，无需为每个提供者实现不同的 API。希望支持多个不同提供商的应用程序不仅限于它们所有支持的最低公分母功能集。
 
 ### 没有壁垒
 
-Migrating to a different storage provider is made easier because they all offer the same set of services and API. Users aren’t locked in to providers because they rely on a particular feature of the provider. In addition, files are content-addressed, which enables them to be transferred directly between miners without the user having to download and re-upload the files.
+在不同的存储提供者之间迁移非常容易，因为大家都采用相同的服务配置和 API，用户不会因为依赖于提供者的某一特殊的功能而被锁定。另外，文件是基于内容寻址的，这让用户可以直接在矿工之间传输文件，不需要重新下载再上传。
 
-Traditional cloud storage providers lock users in by making it cheap to store files but expensive to retrieve them again. Filecoin avoids this by facilitating a retrieval market where miners compete to give users their files back as fast as possible, at the lowest possible price.
+传统的云存储服务商通过低价存入，高价取回的策略锁定用户。而 Filecoin 会通过检索市场来规避这种情况，矿工们会在竞相以尽可能快的速度和尽可能低的价格为用户取回文件。
 
 ### 开放源代码
 
-The code that runs both clients and storage providers is open source. Storage providers don’t have to develop their own software for managing their infrastructure. Everyone benefits from improvements made to Filecoin’s code.
+用户和存储提供者运行的程序代码都是开源的。存储提供者无需开发他们自己的软件去管理基础架构。每个人都能从 Filecoin 的代码改进中受益。
 
 ### 活跃的社区
 
-Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers and storage providers. If you need help, you will likely be able to reach the person who designed or built the system in question. Reach out on [Filecoin’s chat and forums](../community/chat-and-discussion-forums.md).
+Filecoin 拥有一个活跃的社区，这里有热心的成员解答问题，帮助新人起步。在这里，用户、开发者和存储矿工得以进行开放的对话。如果你需要帮助，你几乎可以直接向设计或构建系统的人提问。你可以在 [Filecoin 聊天&论坛](../community/chat-and-discussion-forums.md) 找到他们。
