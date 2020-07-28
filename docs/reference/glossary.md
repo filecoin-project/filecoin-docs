@@ -323,7 +323,7 @@ each sector in their respective subset. This requires ready
 access to each of the challenged sectors, and will result in a
 [zk-SNARK-compressed](#zero-knowledge-succinct-non-interactive-argument-of-knowledge-zk-snark)
 proof published to the Filecoin [blockchain](#blockchain) as a
-[message](#message) in a [block](#blockc). In this way, every
+[message](#message) in a [block](#block). In this way, every
 sector of [pledged storage](#pledged-storage) is audited at least
 once in any 24-hour period, and a permanent, verifiable, and
 public record attesting to each storage miner’s continued
