@@ -70,24 +70,28 @@ export default {
               path: '/how-to/install-filecoin'
             },
             {
+              title: 'Connect to a network',
+              path: '/how-to/networks'
+            },
+            {
               title: 'Preparing data',
-              path: '/how-to/store-prepare-data'
+              path: '/how-to/store/prepare-data'
             },
             {
               title: 'Token payments',
-              path: '/how-to/store-tokens'
+              path: '/how-to/store/tokens'
             },
             {
               title: 'Making storage deals',
-              path: '/how-to/store-making-storage-deals'
+              path: '/how-to/store/making-storage-deals'
             },
             {
               title: 'Retrieving data',
-              path: '/how-to/store-retrieving-data'
+              path: '/how-to/store/retrieving-data'
             },
             {
               title: 'Very large files',
-              path: '/how-to/store-large-files'
+              path: '/how-to/store/large-files'
             }
           ]
         },
@@ -131,7 +135,15 @@ export default {
          children: [
            {
               title: 'Mining overview',
-              path: '/mine/mining'
+              path: '/mine/'
+            },
+           {
+              title: 'Improving connectivity',
+              path: '/mine/connectivity'
+            },
+           {
+              title: 'Space Race',
+              path: '/mine/spacerace'
             }
           ]
         },

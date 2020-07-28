@@ -1,5 +1,5 @@
 // .vuepress/config.js
-
+  
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 
 module.exports = {
@@ -86,7 +86,10 @@ module.exports = {
                 title: 'Install Filecoin',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-to/install-filecoin']
+                children: [
+                    '/how-to/install-filecoin',
+                    '/how-to/networks'
+                ]
               },
               {
                 title: 'Store Data',
@@ -105,7 +108,10 @@ module.exports = {
           {
             title: 'Mine',
             path: '/mine/',
-            children: ['mine/mining']
+             children: [
+               '/mine/connectivity',
+                '/mine/spacerace'
+          ]
           },
           {
             title: 'Build',
@@ -160,6 +166,12 @@ module.exports = {
                     children: ['build/examples/simple-pinning-service/overview']
                   },
                   {
+                    title: 'Web Applications',
+                    sidebarDepth: 1,
+                    collapsable: false,
+                    children: ['build/examples/web-applications/overview']
+                  },
+                  {
                     title: 'Slate',
                     sidebarDepth: 1,
                     collapsable: false,
@@ -167,9 +179,18 @@ module.exports = {
                   },
                   {
                     title: 'Network Inspector',
-                    sidebarDepth: 1,
+                    sidebarDepth: 2,
                     collapsable: false,
-                    children: ['build/examples/network-inspector/overview']
+                    children: [
+                      'build/examples/network-inspector/overview',
+                      'build/examples/network-inspector/lotus-and-go-ipfs-interactions',
+                      'build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
+                      'build/examples/network-inspector/step-2-run-the-react-app',
+                      'build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
+                      'build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
+                      'build/examples/network-inspector/step-5-shut-down-the-application',
+                      'build/examples/network-inspector/summary'
+                    ]
                   }
                 ]
               }
@@ -257,6 +278,18 @@ module.exports = {
       }
     ],
     [
+      'vuepress-plugin-medium-zoom',
+      {
+        selector: '.theme-default-content img',
+        delay: 500,
+        options: {
+          margin: 20,
+          background: 'rgba(255,255,255,0.8)',
+          scrollOffset: 0
+        }
+      }
+    ],
+    [
       'vuepress-plugin-seo',
       {
         siteTitle: ($page, $site) => $site.title,
@@ -309,6 +342,27 @@ module.exports = {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
         baseURL: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'callout',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'right',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'left',
+        defaultTitle: ''
       }
     ],
     'vuepress-plugin-check-md',
