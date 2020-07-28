@@ -35,6 +35,8 @@ As an example, you could run:
  lotus-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456 
 ```
 
+This step is the best way to ensure your miner is dial-able for storage and retrieval deals!
+
 ## Checking peer count
 
 To ensure storage and retrieval deals operate smoothly, it is recommended to check how many peers a miner is connected to after each start-up. In the Lotus client, a manual peer check can be performed with the command:
