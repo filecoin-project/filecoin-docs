@@ -292,21 +292,23 @@ mining on Testnet."
 
 ## Tipset
 
-Filecoin utilizes a novel blockchain variant called a
+Filecoin utilizes a novel [blockchain](#blockchain) variant
+called a
 [_tipset_](https://filecoin.io/blog/tipsets-family-based-approach-to-consensus/).
 Tipsets are less strict chains than directed, acyclic graphs;
 this construction allows multiple blocks to be mined at the same
-height.
+[height](#block-height).
 
 ## Verified client
 
 To further incentivize the storage of "useful" data over simple
 [capacity commitments](#capacity-commitment), [storage
 miners](#storage-miner) have the additional opportunity to
-compete for special [deals](#deal) offered by verified clients.
-Such clients are certified with respect to their intent to offer
-deals involving the storage of meaningful data, and the power a
-storage miner earns for these deals is augmented by a multiplier.
+compete for special [deals](#deal) offered by [verified
+clients](#verified-client). Such clients are certified with
+respect to their intent to offer deals involving the storage of
+meaningful data, and the power a storage miner earns for these
+deals is augmented by a multiplier.
 
 ## Window Proof-of-Spacetime (WindowPoSt)
 
