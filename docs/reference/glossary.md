@@ -3,7 +3,6 @@ title: Glossary
 description: Definitions and usage for Filecoin terminology
 ---
 
-# Glossary
 
 ## Address
 
@@ -44,7 +43,7 @@ If a storage miner doesn't find any available deal proposals appealing, they
 can alternatively make a _capacity commitment_, filling a [sector](#sector)
 with arbitrary data, rather than with client data. Maintaining this sector
 allows the storage miner to provably demonstrate that they are reserving space
-on behalf of the network. 
+on behalf of the network.
 
 ## Collateral
 
@@ -97,7 +96,7 @@ Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) for a
 given sector, the Filecoin network registers a _fault_
 for that sector, and the miner is [_slashed_](#slash). Storage
 miners must work to resolve faults quickly, lest they be
-considered to have abandoned their commitment. 
+considered to have abandoned their commitment.
 
 ## Filecoin
 
@@ -119,9 +118,7 @@ predominant public-facing network of the Filecoin project and community. The
 mainnet embodies an expectation of widespread adoption and permanence; changes
 to its protocol are subject to the adoption of the network participants.
 
-### Note on style
-
-If referred to as a proper noun, capitalize the term. For example, "I am
+Note: if as a proper noun, capitalize the term. For example, "I am
 mining on Mainnet."
 
 ## Message
@@ -147,7 +144,7 @@ _pledged storage_.
 ## Proof-of-Storage (PoSt)
 
 Many blockchain networks are underpinned by the notion that
-participants supply something of value to the blockchain - 
+participants supply something of value to the blockchain -
 a contribution that is hard to fake, but which, if actually made,
 can be trivially verified. Blockchains based in this approach are
 often said to require "Proof-of-_X_", where _X_ is the valued
@@ -243,7 +240,7 @@ as well as by periodic authorization to extend the Filecoin
 creation.  When they create a block, storage miners are rewarded
 with newly minted filecoin, and by the transaction fees they can
 levy on other participants seeking to include
-[messages](#message) in the block. 
+[messages](#message) in the block.
 
 ## Storage power
 
@@ -285,9 +282,7 @@ A portmanteau of "test" and "network, _testnet_ is a term used to refer to
 Filecoin networks that are set up for the purposes of development,
 experimentation, and assessment.
 
-### Note on style
-
-If referred to as a proper noun, capitalize the term. For example, "I am
+Note: if used as a proper noun, capitalize the term. For example, "I am
 mining on Testnet."
 
 ## Tipset
