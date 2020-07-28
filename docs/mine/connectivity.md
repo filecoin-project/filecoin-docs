@@ -35,6 +35,8 @@ As an example, you could run:
  lotus-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456 
 ```
 
+This step is the best way to ensure your miner is dial-able for storage and retrieval deals!
+
 ## Checking peer count
 
 To ensure storage and retrieval deals operate smoothly, it is recommended to check how many peers a miner is connected to after each start-up. In the Lotus client, a manual peer check can be performed with the command:
@@ -46,7 +48,7 @@ lotus-miner net peers
 If a very low peer count is present (1-5), it is possible to manually connect the miner to the DHT by utilising one of the bootstrap peers listed in the branch's `./build/bootstrap/bootstrappers.pi` file with the commmand:
 
 ```
-lotus net connect <address from bootstrappers>
+lotus-miner net connect <address1> <address2>…
 ```
 
 ## Port forwarding
@@ -74,7 +76,7 @@ Alternatively, users with routers that support universal plug n' play (UPnP) can
 
 To help storage and retrieval deals operate smoothly, it is recommended to add the host system's public IP address, as well as the port that was configured above, to the miner configuration file's `AnnounceAddresses` address list. DNS4 multi-address or IPV6 formats are also acceptable.
 
-Below is an example configuration file in which the public IP address is `1.2.3.4`:
+Below is an example `~/.lotusminer/config.toml` configuration file in which the public IP address is `1.2.3.4`:
 
 ```
 [Libp2p]
