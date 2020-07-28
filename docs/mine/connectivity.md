@@ -74,7 +74,7 @@ Alternatively, users with routers that support universal plug n' play (UPnP) can
 
 To help storage and retrieval deals operate smoothly, it is recommended to add the host system's public IP address, as well as the port that was configured above, to the miner configuration file's `AnnounceAddresses` address list. DNS4 multi-address or IPV6 formats are also acceptable.
 
-Below is an example configuration file in which the public IP address is `1.2.3.4`:
+Below is an example `~/.lotusminer/config.toml` configuration file in which the public IP address is `1.2.3.4`:
 
 ```
 [Libp2p]
