@@ -112,7 +112,7 @@ Storage miners store data on behalf of the Filecoin network in fixed-size blocks
 
 ## Slash
 
-When a [fault](#fault) is registered for a [sector](#sector), the Filecoin network will _slash_ the [storage miner](#storage-miner) that is supposed to be storing the sector; that is, it will assess penalties to the miner (to be paid out of the [collateral](#collateral) fronted by te miner) for their failure to uphold their pledge of storage. When slashing takes place, the power a miner earns for the associated sector is subtracted from the miner's total power for the purposes of [election](#election).
+When a [fault](#fault) is registered for a [sector](#sector), the Filecoin network will _slash_ the [storage miner](#storage-miner) that is supposed to be storing the sector; that is, it will assess penalties to the miner (to be paid out of the [collateral](#collateral) fronted by the miner) for their failure to uphold their pledge of storage. When slashing takes place, the power a miner earns for the associated sector is subtracted from the miner's total power for the purposes of [election](#election).
 
 ## Storage miner
 
