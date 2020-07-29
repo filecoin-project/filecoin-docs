@@ -66,7 +66,7 @@ Any miner found misrepresenting their location will result in a *total forfeitur
 
 #### Is a static IP required?
 
-No; though your system must be able to access peers over libp2p. See the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) page for more tips on improving peer count.
+A public IP is required so that your miner can make storage and retrieval deals and compete in Space Race. This can achieved through a static IP, or a relay or VPN. See the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) page for more details.
 
 #### Can I run multiple miners?
 Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards.
