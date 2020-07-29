@@ -66,11 +66,15 @@ To enable port forwarding on your local router:
 
 #### Option 2: UPnP setup
 
-Alternatively, users with routers that support universal plug n' play (UPnP) can set up their firewalling automatically by configuring their client's daemon to use the address `0.0.0.0`. Note that, if using UPnP, **standard port forwarding does not need to be set up,** and can cause issues if used in parallel.  
+Alternatively, users with routers that support universal plug and play (UPnP) can set up their firewalling automatically by configuring their client's daemon to use the address `0.0.0.0`. Note that, if using UPnP, **standard port forwarding does not need to be set up,** and can cause issues if used in parallel.  
 
-## Setting a public IP address
+## Establishing a public IP address
 
-To help storage and retrieval deals operate smoothly, it is recommended to add the host system's public IP address, as well as the port that was configured above, to the miner configuration file's `AnnounceAddresses` address list. DNS4 multi-address or IPV6 formats are also acceptable.
+To help storage and retrieval deals operate smoothly, your miner will need to be dialable from a public IP address. Below are multiple ways to achieve this, from manually setting an IP address for your miner, to using software or hardware to set up a relay endpoint.
+
+### Manually setting an IP address
+
+To manually set an IP address for your miner, edit the `~/.lotusminer/config.toml` configuration file's `AnnounceAddresses` address list. You will need to include the port number. DNS4 multi-address or IPV6 formats are also acceptable.
 
 Below is an example `~/.lotusminer/config.toml` configuration file in which the public IP address is `1.2.3.4`:
 
@@ -81,59 +85,53 @@ Below is an example `~/.lotusminer/config.toml` configuration file in which the 
 ```
 In the above example, port `10240` is forwarded to `<internal-miner-host-ip>:5472`.
 
-It is possible to verify that the port is listening by using telnet (eg: `telnet 1.2.3.4 10240`. `nc` is also sufficient.) If successful, a plaintext `/multistream/1.0.0` line will be within the response.
+Verify that the port is listening by using telnet (eg: `telnet 1.2.3.4 10240`. `nc` is also sufficient.) If successful, a plaintext `/multistream/1.0.0` line will be within the response.
 
-## Setting up a relay endpoint
+### Using relay endpoints
 
-If you need to set a public IP address on your machine (e.g. Residential Networks) and/or you do not control the NAT/Firewall that your device is behind (e.g. Entreprise Networks and other Firewalls), there is an alternative solution for you. You can set up a **Relay endpoint** so that your miner can relay its internet traffic through an external, publicly diable endpoint.
+If you do not control the NAT/Firewall that your device is behind (such as within enterprise networks and other firewalls), there is an alternative solution for you. You can set up a **relay endpoint** so that your miner can relay its internet traffic through an external, publicly dialable endpoint.
 
-Below you can find multiple ways to achieve this.
+There are multiple ways to achieve this.
 
-_Note: Remember that libp2p (the underlaying network stack of the Filecoin miner) listens on multiple addresses simultaneously. This means that adding a Relay endpoint is not a tradeoff but an advantage, as it will be used as a last resort when direct connectivity can't be achieved._
+_Note: Remember that libp2p (the underlying network stack of the Filecoin miner) listens on multiple addresses simultaneously. This means that adding a relay endpoint is not a tradeoff but an advantage, as it will be used as a last resort when direct connectivity can't be achieved._
 
-### libp2p Relay
+#### libp2p relay
 
-The [libp2p Circuit Relay (docs here)](https://docs.libp2p.io/concepts/circuit-relay/) is a standard libp2p node that offers a service to any other Relay node to route their traffic through it. You can deploy a libp2p Circuit Relay in a machine with a Public IP address (e.g. a standard Cloud Provider) and by adding a libp2p Relay multiaddr to your miner node, you will instruct the miner to route all of its traffic through the libp2p Relay.
+The [libp2p circuit relay](https://docs.libp2p.io/concepts/circuit-relay/) is a standard libp2p node that offers a service to any other relay node to route their traffic through it. You can deploy a libp2p circuit relay on a machine with a public IP address (e.g. a standard cloud provider), then instruct your miner to route all of its traffic through the libp2p relay by adding the new multiaddr to your miner.
 
-You can learn:
-- How it works [here](https://docs.libp2p.io/concepts/circuit-relay)
+- [libp2p circuit relay: How it works](https://docs.libp2p.io/concepts/circuit-relay)
 - How to write a simple program that uses the relay [here](https://github.com/libp2p/go-libp2p-examples/blob/master/relay/main.go)
 
-### Wireguard
+#### Wireguard
 
-[Wireguard](https://www.wireguard.com) is a VPN service that uses state of the art cryptography to offer an easy to setup VPN service through a secure connection. Once setup, Wireguard is transparent for applications and presents itself as yet another network interface for your machine.
-
-Similar to the libp2p Relay, you will need to deploy a Wireguard endpoint in a public machine so that your miner can route its traffic to the machine with the public IP.
-
-Alternatively, you can benefit from service providers that offer you this VPN service setup, so that the only thing you have to do is setup the client on your miner machine.
+[Wireguard](https://www.wireguard.com) is a fast, simple, lean VPN. It is transparent for applications and presents itself as yet another network interface for your machine. Similar to the libp2p relay, you will need to deploy a Wireguard endpoint on a public machine, and route your miner's traffic through it.
 
 #### Ungleich IPv6 VPN Service
 
-[Ungleich](https://ungleich.ch) is a Swiss company that has a [IPv6 VPN service powered by Wireguard](https://ungleich.ch/ipv6/vpn/). The instructions are quite simple:
+[Ungleich](https://ungleich.ch) is a Swiss company offering a hosted [IPv6 VPN service powered by Wireguard](https://ungleich.ch/ipv6/vpn/).
 
-- 1. contract the service from [Ungleich](https://ungleich.ch)
-- 2. [install wireguard](https://www.wireguard.com/install) in your machine
-- 3. create a Wireguard keypair using the command `umask 077; wg genkey > privkey`
-- 4. send the public key associated with your private key to Ungleich. You can get the public key using `wg pubkey < privkey`
-- 5. wait to receive the wireguard configuration from Ungleich, then set it up on your machine
+- 1. Contract the service from [Ungleich](https://ungleich.ch)
+- 2. [Install Wireguard](https://www.wireguard.com/install) on your machine
+- 3. Create a Wireguard keypair using the command `umask 077; wg genkey > privkey`
+- 4. Send the public key associated with your private key to Ungleich. You can get the public key using `wg pubkey < privkey`
+- 5. Wait to receive the Wireguard configuration from Ungleich, then set it up on your machine
+- 6. Follow the [Setting multiaddresses](#setting-multiaddresses) steps to add this multiaddr to your miner and announce it on-chain.
 
-Voilá, now you have a new network interface with an IPv6 address. All traffic that gets used by that interface will be routed through Ungleich IPv6 VPN, which means that your machine, independent of where it is, will be publicly diable through that IPv6 address. 
+Voilà, now you have a new network interface with an IPv6 address. All traffic using that interface will be routed through Ungleich IPv6 VPN, which means that your machine, no matter where it is, will be publicly dialable through that IPv6 address. 
 
-Remember: You will need to add this multiaddr to the list of the multiaddrs used by your miner and then perform the steps above to announce that multiaddr on-chain.
+#### VPN IPv6 Router Box (VIIRB)
 
-#### VPN IPv6 IoT Router Box (VIIRB)
-
-Recently, Ungleich announced an even simpler setup that can be done by installing a network box in your network. This box is known as the VIIRB.
+Recently, Ungleich announced an even simpler setup: a VPN contained in a hardware box. This box is known as the VIIRB.
 
 You can order a VIIRB at:
 
 - [VIIRB](https://ungleich.ch/u/products/viirb-ipv6-box/)
 - [PIB (for faster connectivity)](https://ungleich.ch/u/products/pro-ipv6-box/)
 
-Note: VIIRB uses open source software and hardware. You can build your own, [specs here](https://ungleich.ch/u/products/viirb-ipv6-box) and [here](https://vocore.io/v2u.html)
+Note: VIIRB uses open source software and hardware. You can also build your own using the specifications for the [VIIRB box](https://ungleich.ch/u/products/viirb-ipv6-box) and its microcomputer, the [VoCore](https://vocore.io/v2u.html).
 
-### SSH Reverse Tunnel
+#### SSH Reverse Tunnel
 
-Another option is to use an [ssh reverse tunnel](https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it) to setup the proxy between your miner machine and the public IP machine.
+Another option is to use an [ssh reverse tunnel](https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it) to set up a proxy between your miner machine and a public IP machine.
 
-With this approach, you would link a local port in your local address to a public port in the public IP machine, and then would announce the public port + public IP address to the world. When peers dial back to you on your public multiaddr, the traffic is relayed through that tunnel to your miner machine.
+With this approach, you link a local port in your local address to a public port in the public IP machine, and then announce the public port + public IP address to the world. When peers dial back to you on your public multiaddr, the traffic is relayed through that tunnel to your miner machine.
