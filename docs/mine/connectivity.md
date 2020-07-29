@@ -126,7 +126,7 @@ Recently, Ungleich announced an even simpler setup that can be done by installin
 You can order a VIIRB at:
 
 - [VIIRB](https://ungleich.ch/u/products/viirb-ipv6-box/)
-- [VIIRB Pro (for faster connectivity)](https://ungleich.ch/u/products/pro-ipv6-box/)
+- [PIB (for faster connectivity)](https://ungleich.ch/u/products/pro-ipv6-box/)
 
 ## SSH Reverse Tunnel
 
