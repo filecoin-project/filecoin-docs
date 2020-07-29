@@ -14,3 +14,7 @@ homepage: true
 
 - 如果你刚刚接触 web3 和 Filecoin，推荐阅读 [这篇指南](/introduction/new-to-web3.md).
 - 如果你正打算在 Filecoin 之上进行开发，可以查阅 [这篇指南](./build/README.md).
+
+::: warning
+中文版文档本由 Filecoin 社区用户`于鸿儒 Herald Yu` 发起翻译，受限于翻译水平和理解的主观性，其中不乏疏漏和错误，欢迎大家积极纠正，帮助更多中文用户更好的了解 Filecoin 及相关项目。
+:::
