@@ -130,6 +130,8 @@ You can order a VIIRB at:
 - [VIIRB](https://ungleich.ch/u/products/viirb-ipv6-box/)
 - [PIB (for faster connectivity)](https://ungleich.ch/u/products/pro-ipv6-box/)
 
+Note: VIIRB uses open source software and hardware. You can build your own, [specs here](https://vocore.io/v2u.html)
+
 ### SSH Reverse Tunnel
 
 Another option is to use an [ssh reverse tunnel](https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it) to setup the proxy between your miner machine and the public IP machine.
