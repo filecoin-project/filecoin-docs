@@ -83,7 +83,7 @@ In the above example, port `10240` is forwarded to `<internal-miner-host-ip>:547
 
 It is possible to verify that the port is listening by using telnet (eg: `telnet 1.2.3.4 10240`. `nc` is also sufficient.) If successful, a plaintext `/multistream/1.0.0` line will be within the response.
 
-## Setting up a Relay endpoint
+## Setting up a relay endpoint
 
 If you need to set a public IP address on your machine (e.g. Residential Networks) and/or you do not control the NAT/Firewall that your device is behind (e.g. Entreprise Networks and other Firewalls), there is an alternative solution for you. You can set up a **Relay endpoint** so that your miner can relay its internet traffic through an external, publicly diable endpoint.
 
