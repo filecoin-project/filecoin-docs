@@ -128,6 +128,8 @@ You can order a VIIRB at:
 - [VIIRB](https://ungleich.ch/u/products/viirb-ipv6-box/)
 - [VIIRB Pro (for faster connectivity)](https://ungleich.ch/u/products/pro-ipv6-box/)
 
-## SSH Tunnel
+## SSH Reverse Tunnel
 
-TBW
+Another option is to use an [ssh reverse tunnel](https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it) to setup the proxy between your miner machine and the public IP machine.
+
+With this approach, you would like a local port in your local address to a public port in the public IP machine and then would announce the public port + public IP address to the world using the right multiaddr, but when peers dial back to you, they are dialing through that tunnel to your miner machine.
