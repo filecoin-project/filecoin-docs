@@ -51,7 +51,7 @@ lotus-miner net connect <address1> <address2>…
 
 In order to ensure that Filecoin packets are able to pass freely and unfiltered through a local firewall, it is highly recommended to set up port forwarding for a miner's `libp2p` address. By default, this port is randomised; for optimal connectivity, make sure that it is set to a static IP. 
 
-### Option 1: Standard port forwarding
+#### Option 1: Standard port forwarding
 
 To enable port forwarding on your local router:
 
@@ -64,7 +64,7 @@ To enable port forwarding on your local router:
     * Protocol: TCP
     * IP Address: Private IP address of the host system running the miner
 
-### Option 2: UPnP setup
+#### Option 2: UPnP setup
 
 Alternatively, users with routers that support universal plug n' play (UPnP) can set up their firewalling automatically by configuring their client's daemon to use the address `0.0.0.0`. Note that, if using UPnP, **standard port forwarding does not need to be set up,** and can cause issues if used in parallel.  
 
