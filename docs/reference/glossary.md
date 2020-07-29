@@ -136,7 +136,7 @@ A zero-knowledge, succinct non-interactive argument of knowledge (zk-SNARK) embo
 
 ## Testnet
 
-A portmanteau of "test" and "network, _testnet_ is a term used to refer to Filecoin networks that are set up for the purposes of development, experimentation, and assessment.
+A portmanteau of "test" and "network, _testnet_ is a term used to refer to the [primary Filecoin testing network](https://docs.filecoin.io/how-to/networks/#testnet).
 
 Note: if used as a proper noun, capitalize the term. For example, "I am mining on Testnet."
 
