@@ -108,7 +108,7 @@ _Sealing_ is one of the fundamental building blocks of the Filecoin protocol. It
 
 ## Sector
 
-Storage miners store data on behalf of the Filecoin network in fixed-size blocks of data called _sectors_. Currently, only 32GiB and 64GiB sectors are supported.
+Storage miners store data on behalf of the Filecoin network in fixed-size blocks of data called _sectors_.
 
 ## Slash
 
