@@ -130,7 +130,7 @@ You can order a VIIRB at:
 - [VIIRB](https://ungleich.ch/u/products/viirb-ipv6-box/)
 - [PIB (for faster connectivity)](https://ungleich.ch/u/products/pro-ipv6-box/)
 
-Note: VIIRB uses open source software and hardware. You can build your own, [specs here](https://vocore.io/v2u.html)
+Note: VIIRB uses open source software and hardware. You can build your own, [specs here](https://ungleich.ch/u/products/viirb-ipv6-box) and [here](https://vocore.io/v2u.html)
 
 ### SSH Reverse Tunnel
 
