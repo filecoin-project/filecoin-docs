@@ -68,6 +68,12 @@ Any miner found misrepresenting their location will result in a *total forfeitur
 
 No; though your system must be able to access peers over libp2p. See the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) page for more tips on improving peer count.
 
+#### Can I run multiple miners?
+Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards.
+
+#### How are rewards distributed?
+If you’re eligible for rewards, someone from CoinList will reach out to your provided email address shortly after the competition to conduct AML/KYC and coordinate delivery of the tokens. You will have the option to receive rewards directly to your wallet.
+
 ## Additional notes
 
 * If a bug is identified during the competition that threatens the validity of the power table, the Filecoin team may end the competition early. Rewards will still be awarded for the period prior to the discovery of the bug. If such a bug is responsibly disclosed to the Filecoin team, the team reporting it will be eligible for rewards of up to 250k FIL, depending on the severity and practicality of the bug, as determined by the Filecoin team.
