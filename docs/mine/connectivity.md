@@ -89,6 +89,8 @@ If you find yourself in a situation in which you set a public IP address on your
 
 Below you can find multiple ways in how to achieve this.
 
+Note: Remember that libp2p (the underlaying network stack of the Filecoin miner) will be listening on multiple addresses simultaneously. What this means is that adding a Relay endpoint is not a tradeoff but an advantage, as it will be used for last resort when direct connectivity can't be achieved.
+
 ## libp2p Relay
 
 The [libp2p Circuit Relay (docs here)](https://docs.libp2p.io/concepts/circuit-relay/) is just a standard libp2p node that offers a service to any other Relay node to route their traffic through it. With it, you can deploy a libp2p Circuit Relay in a machine with a Public IP address (e.g. a standard Cloud Provider) and by adding a libp2p relay multiaddr to your miner node, you will instruct the miner to route all of its traffic through the libp2p Relay.
