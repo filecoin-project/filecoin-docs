@@ -87,6 +87,12 @@ In the above example, port `10240` is forwarded to `<internal-miner-host-ip>:547
 
 Verify that the port is listening by using telnet (eg: `telnet 1.2.3.4 10240`. `nc` is also sufficient.) If successful, a plaintext `/multistream/1.0.0` line will be within the response.
 
+As an additional litmus test, you should be able to:
+- Ping your Public IP address using https://ping.eu/ping
+- Establish a TCP socket to your Public IP address and port using https://ping.eu/port-chk/
+
+If any of these tests fail, then your IP is not publicly dialable.
+
 ### Using relay endpoints
 
 If you do not control the NAT/Firewall that your device is behind (such as within enterprise networks and other firewalls), there is an alternative solution for you. You can set up a **relay endpoint** so that your miner can relay its internet traffic through an external, publicly dialable endpoint.
