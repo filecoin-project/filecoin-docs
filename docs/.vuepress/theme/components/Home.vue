@@ -156,12 +156,16 @@ export default {
               path: 'https://github.com/filecoin-project/specs'
             },
             {
-              title: 'go-filecoin tutorial',
-              path: 'https://go.filecoin.io/go-filecoin-tutorial'
+              title: 'Glossary',
+              path: '/reference/glossary'
             },
             {
               title: 'lotus tutorial',
               path: 'https://lotu.sh'
+            },
+            {
+              title: 'go-filecoin tutorial',
+              path: 'https://go.filecoin.io/go-filecoin-tutorial'
             }
           ]
         },

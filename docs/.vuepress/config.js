@@ -201,9 +201,9 @@ module.exports = {
             title: 'Reference',
             path: '/reference/',
             children: [
+              ['/reference/glossary', 'Glossary'],
               ['https://github.com/filecoin-project/specs', 'Specification'],
-              ['https://lotu.sh/', 'lotus tutorial'],
-              ['/reference/glossary', 'Glossary']
+              ['https://lotu.sh/', 'lotus tutorial']
             ]
           },
           {
