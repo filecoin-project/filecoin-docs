@@ -36,6 +36,8 @@ The current recommended system specifications for operating a storage miner are:
 - A dedicated SSD to act as a large cache store (512GB+)
 - A large amount of RAM for computing data replication (128GB+)
 
+For users that only wish to use the Lotus client for the purposes of keeping a wallet or interfacing with the network, **a system with 2-4 CPU cores, 8GiB of RAM, and enough storage for the Filecoin blockchain** should be sufficient (the current testnet chain grows at about 12GiB per week; improvements to reduce this storage requirement are ongoing).
+
 ### Aren't these requirements relatively high?
 
 Indeed, compared to the hardware requirements of running a Proof-of-Stake validator, these benchmarks are much higher -- though are certainly worth it. As these will not increase for the presumable future, money spent on hardware for Filecoin mining will provide users with many years of reliable service, paying for themselves several times over. Think of the investment as running a small cloud storage business; to launch one on the existing data hosting model, it would cost millions of dollars in infrastructure and logistics to get off the ground. With Filecoin, you are able to do the exact same for only a few thousand dollars, and can also be run out of the comfort of your own home.
@@ -64,6 +66,12 @@ In Filecoin, miners earn two different types of rewards for their efforts: stora
 
 **Block rewards** are large sums that are given to the miner credited for a new block. Unlike storage fees, these rewards do not come from an associated client; rather, the network "prints" new FIL as both an inflationary measure and an incentive to miners advancing the chain. All active miners on the network have a chance at recieving a block reward, their chance at such being directly proportional to the amount of storage space currently being contributed to the network.
 
+### WinningPoSt
+WinningPoSt is the mechanism by which storage miners are rewarded for their contributions. In the Filecoin network, time is discretized into a series of epochs – the blockchain’s height corresponds to the number of elapsed epochs. At the beginning of each epoch, a small number of storage miners are elected to mine new blocks (Filecoin utilizes tipsets, which permit multiple blocks to be mined at the same height). Each elected miner who successfully creates a block is granted filecoin, as well as the opportunity to charge other nodes fees to include messages in the block.
+
+To further incentivize the storage of “useful” data over simple capacity commitments, storage miners have the additional opportunity to compete for special deals offered by verified clients. Such clients are certified with respect to their intent to offer deals involving the storage of meaningful data, and the power a storage miner earns for these deals is augmented by a multiplier. The total amount of power a given storage miner has, after accounting for this multiplier, is known as **quality-adjusted power**.
+
+
 ## Uptime, slashing and penalties
 
 "Slashing" is a feature present in most blockchain protocols, and is used to penalise miners that either fail to provide reliable uptime or act maliciously against the network.
@@ -81,7 +89,7 @@ In Filecoin, miners are succeptible to two different kinds of slashing: **storag
 
 ### Window PoSt checks
 
-PoSt (Proof-of-Spacetime) window checks are done to regularly ensure that miners are continuing to host their required sectors as normal. These checks are performed in 24 hour intervals on the network. For each day a miner is inactive it will receive a fault fee, continuing until the associated wallet is empty and the miner is removed from the network. In the case of a faulted sector, there will be an additional sector penalty added immediately following the fault fee.
+PoSt (Proof-of-Spacetime) window checks are performed on 24 hour intervals across the network to ensure that miners are continuing to host their required sectors as normal. Correspondingly, each storage miner’s set of pledged sectors is partitioned into subsets, one subset for each window. Within a given window, each storage miner must submit a PoSt for each sector in their respective subset. For each day a miner is inactive it will receive a fault fee, continuing until the associated wallet is empty and the miner is removed from the network. In the case of a faulted sector, there will be an additional sector penalty added immediately following the fault fee.
 
 ::: callout
 [Learn about PoSt and other verification methods at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
