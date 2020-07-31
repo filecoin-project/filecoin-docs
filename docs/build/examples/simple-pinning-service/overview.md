@@ -3,7 +3,7 @@ title: Simple Pinning Service Overview
 description: A brief description of the Simple Pinning Service Example.
 ---
 
-# Overview
+# Simple Pinning Service Overview
 
 This tutorial shows how to build a [simple pinning service](https://github.com/filecoin-shipyard/powergate-pinning-service) using [Textile Powergate](../../core-products/powergate.md) via Textile's Powergate [Docker+ devnet](https://github.com/textileio/powergate/releases/download/v0.0.1-beta.10/powergate-docker-v0.0.1-beta.10.zip) setup (including a Powergate instance, a Lotus node and miner, and a go-ipfs node), and Textile [JS powergate-client](https://www.npmjs.com/package/@textile/powergate-client).
 

@@ -3,6 +3,8 @@ title: Simple Pinning Service App Summary
 description: This article summarizes what we learned from the Simple Powergate Service tutorial.
 ---
 
+# Summary
+
 In this tutorial, you learned to manage data on IPFS and Filecoin using Powergate.
 
 We learned about:

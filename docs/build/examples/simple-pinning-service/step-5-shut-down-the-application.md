@@ -3,7 +3,7 @@ title: Step 5 - Shut down the Simple Pinning Service application
 description: This article describes how to shut down the application.
 ---
 
-**Closing down**
+# Shutting down
 
 After you have explored the app, feel free to shut down the docker containers using the following steps:
 
