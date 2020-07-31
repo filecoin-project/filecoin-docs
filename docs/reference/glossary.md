@@ -100,7 +100,7 @@ The storage power a [storage miner](#storage-miner) earns from a storage deal of
 
 ## Retrieval miner
 
-A _retrieval miner_ is a Filecoin participant that enters retrieval [deals](#deal) with clients, agreeing to supply a client with a particular file in exchange for filecoin.  Note that unlike [storage miners](#storage-miner), retrieval miners are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
+A _retrieval miner_ is a Filecoin participant that enters retrieval [deals](#deal) with clients, agreeing to supply a client with a particular file in exchange for Filecoin.  Note that unlike [storage miners](#storage-miner), retrieval miners are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
 
 ## Seal
 
