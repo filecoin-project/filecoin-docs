@@ -36,7 +36,7 @@ The current recommended system specifications for operating a storage miner are:
 - A dedicated SSD to act as a large cache store (512GB+)
 - A large amount of RAM for computing data replication (128GB+)
 
-For users that only wish to use the Lotus client for the purposes of keeping a wallet or interfacing with the network, **a system with 2-4 CPU cores, 8GiB of RAM, and enough storage for the Filecoin blockchain** should be sufficient (the current testnet chain grows at about 12GiB per week; improvements to reduce this storage requirement are ongoing).
+For users wishing to use the Lotus client for the purposes of keeping a wallet or interfacing with the network (and not mining), **a system with 2-4 CPU cores, 8GiB of RAM, and enough storage for the Filecoin blockchain** should be sufficient. (The current testnet chain grows at about 12GiB per week; improvements to reduce this storage requirement are ongoing.)
 
 ### Aren't these requirements relatively high?
 
