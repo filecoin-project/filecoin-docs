@@ -112,7 +112,7 @@ If you lost the data itself, then no, there’s no way to recover that, and you 
 
 SDR is confirmed for mainnet launch, and we have no evidence of malicious construction. The algorithm is also going through both internal and external security audits.
 
-If you have any information about any potential security problem or malicious construction, reach out to our team at security@filecoin.org.
+If you have any information about any potential security problem or malicious construction, reach out to our team at [security@filecoin.org](mailto:security@filecoin.org).
 
 ### How likely is it that the Filecoin protocol will switch to the NSE Proof-of-Replication construction later?
 
