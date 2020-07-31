@@ -64,7 +64,7 @@ _Gas_ is a transaction fee associated with a [message](#message), paid to the cr
 
 A portmanteau of "main" and "network, _mainnet_ is a term used to refer to the predominant public-facing network of the Filecoin project and community. The mainnet embodies an expectation of widespread adoption and permanence; changes to its protocol are subject to the adoption of the network participants.
 
-Note: if as a proper noun, capitalize the term. For example, "I am mining on Mainnet."
+If used as a proper noun, capitalize the term: _"I am mining on Mainnet."_
 
 ## Message
 
