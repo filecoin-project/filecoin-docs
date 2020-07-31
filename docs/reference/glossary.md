@@ -42,7 +42,7 @@ Time in the Filecoin blockchain is discretized into _epochs_ that are currently 
 
 ## FIL
 
-_FIL_ is the filecoin unit symbol; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
+`FIL` is the filecoin unit symbol; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
 
 ## Faucet
 
