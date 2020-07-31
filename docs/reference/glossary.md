@@ -46,7 +46,7 @@ _FIL_ is the filecoin unit symbol; it is alternatively denoted by the Unicode sy
 
 ## Faucet
 
-A _faucet_ is a service that provides free filecoin. Typically, facuets are run for the benefit of new users in a network, providing them with the necessary seed capital to begin making transactions.
+A _faucet_ is a service that provides free filecoin. Typically, faucets are run for the benefit of new users in a network, providing them with the necessary seed capital to begin making transactions.
 
 ## Fault
 
