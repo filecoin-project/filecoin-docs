@@ -116,7 +116,7 @@ When a [fault](#fault) is registered for a [sector](#sector), the Filecoin netwo
 
 ## Storage miner
 
-A _storage miner_ is a Filecoin participant that stores data on behalf of the network. Storage miners are rewarded for this service through payments by clients that contract their services, as well as by periodic authorization to extend the Filecoin [blockchain](#blockchain) with [blocks](#block) of their own creation. When they create a block, storage miners are rewarded with newly minted filecoin, and by the transaction fees they can levy on other participants seeking to include [messages](#message) in the block.
+A _storage miner_ is a Filecoin participant that stores data on behalf of the network. Storage miners are rewarded for this service through payments by clients that contract their services, as well as by periodic authorization to extend the Filecoin [blockchain](#blockchain) with [blocks](#block) of their own creation. When they create a block, storage miners are rewarded with newly minted Filecoin, as well as the transaction fees they can levy on other participants seeking to include [messages](#message) in the block.
 
 ## Storage power
 
