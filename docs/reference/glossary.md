@@ -72,7 +72,7 @@ The term _message_ is used to refer to data stored as part of a [block](#block).
 
 ## Miner
 
-The Filecoin project uses the term _miner_ to refer to participant in the network providing a service of value to a client. At present, the Filecoin specification recognizes two miner types: [storage miners](#storage-miner) and [retrieval miners](#retrieval-miner).
+The Filecoin project uses the term _miner_ to refer to participants in the network who provide a service of value to a client. At present, the Filecoin specification recognizes two miner types: [storage miners](#storage-miner) and [retrieval miners](#retrieval-miner).
 
 ## Pledged storage
 
