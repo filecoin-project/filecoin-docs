@@ -125,6 +125,8 @@ The [libp2p circuit relay](https://docs.libp2p.io/concepts/circuit-relay/) is a 
 
 Voilà, now you have a new network interface with an IPv6 address. All traffic using that interface will be routed through Ungleich IPv6 VPN, which means that your machine, no matter where it is, will be publicly dialable through that IPv6 address. 
 
+You can test your IPv6 connectivity using the service https://www.ultratools.com/tools/ping6
+
 #### VPN IPv6 Router Box (VIIRB)
 
 Recently, Ungleich announced an even simpler setup: a VPN contained in a hardware box. This box is known as the VIIRB.
