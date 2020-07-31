@@ -50,7 +50,7 @@ A _faucet_ is a service that provides free filecoin. Typically, facuets are run 
 
 ## Fault
 
-When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) for a given sector, the Filecoin network registers a _fault_ for that sector, and the miner is [_slashed_](#slash). Storage miners must work to resolve faults quickly, lest they be considered to have abandoned their commitment.
+When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) for a given sector, the Filecoin network registers a _fault_ for that sector, and the miner is [_slashed_](#slash). If a storage miner does not resolve the fault quickly, the network assumes they have abandoned their commitment.
 
 ## Filecoin
 
