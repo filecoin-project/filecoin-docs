@@ -3,6 +3,8 @@ title: Meme Marketplace Summary
 description: This article summarizes what we learned from the Meme Marketplace tutorial.
 ---
 
+# Summary
+
 In this tutorial, we learned how to create a Meme Marketplace on Filecoin and an Ethereum blockchain.
 
 We learned about:

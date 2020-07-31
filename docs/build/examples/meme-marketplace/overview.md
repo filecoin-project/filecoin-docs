@@ -3,7 +3,7 @@ title: Meme Marketplace Overview
 description: A brief description of the Meme Marketplace Example.
 ---
 
-# Overview
+# Meme Marketplace Overview
 
 In this tutorial, we will build a [meme marketplace](https://github.com/filecoin-shipyard/meme-marketplace) using [Textile Hub](https://docs.textile.io/hub/), which is a [Filecoin-backed IPFS Pinning Service](../../core-products/filecoin-backed-pinning-services.md), and Ethereum ERC 721 standard.
 

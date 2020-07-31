@@ -3,7 +3,7 @@ title: Step 7 - Shut down the Meme Marketplace application
 description: This article describes how to shut down the application.
 ---
 
-**Closing down**
+# Shutting down
 
 After you have explored the app, feel free to close down the app using the following steps:
 

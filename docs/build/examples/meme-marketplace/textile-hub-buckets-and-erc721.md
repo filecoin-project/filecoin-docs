@@ -3,6 +3,8 @@ title: Textile buckets, hub, and erc 721 token interactions
 description: This article describes how textile buckets, hub, and erc 721 token interact, with links to further resources.
 ---
 
+# Textile Hub, Bucket, and ERC 721 token interactions
+
 ## Textile Hub
 
 [Textile Hub](https://docs.textile.io/hub/) is a portal where teams and individual developers can access IPFS and _soon_ Filecoin resources easily. The Hub makes it simple to manage and update [Buckets](https://docs.textile.io/hub/buckets/) on IPFS, persist data for your users on IPFS, deploy and scale [Threads databases](https://docs.textile.io/threads/) for your app users, and collaborate on all of it with your team!
