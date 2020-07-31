@@ -26,7 +26,7 @@ If a storage miner doesn't find any available deal proposals appealing, they can
 
 ## Collateral
 
-In order to enter into a [storage deal](#deal), a [storage miner](#storage-miner) is required to provide filecoin as _collateral_, to be paid out as compensation to a client in the event that the miner fails to uphold their storage commitment.
+In order to enter into a [storage deal](#deal), a [storage miner](#storage-miner) is required to provide Filecoin as _collateral_, to be paid out as compensation to a client in the event that the miner fails to uphold their storage commitment.
 
 ## Deal
 
