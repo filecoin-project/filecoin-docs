@@ -75,7 +75,8 @@ module.exports = {
               '/introduction/what-is-filecoin',
               '/introduction/why-filecoin',
               '/introduction/ipfs-and-filecoin',
-              '/introduction/filecoin-compared-to'
+              '/introduction/filecoin-compared-to',
+              '/introduction/faq'
             ]
           },
           {
