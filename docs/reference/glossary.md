@@ -54,7 +54,7 @@ When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacet
 
 ## Filecoin
 
-The term _Filecoin_, in the sense of a proper noun, is used generically to refer to the Filecoin project, network, broader ecosystem and community. As a common noun, the singular form, filecoin, is used to denote amounts of Filecoin currency.
+The term _Filecoin_, in the sense of a proper noun, is used generically to refer to the Filecoin project, network, broader ecosystem, and community. As a common noun, the singular form, Filecoin, is used to denote amounts of Filecoin currency.
 
 ## Gas
 
