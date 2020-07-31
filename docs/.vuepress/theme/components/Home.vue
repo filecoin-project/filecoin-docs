@@ -162,10 +162,6 @@ export default {
             {
               title: 'lotus tutorial',
               path: 'https://lotu.sh'
-            },
-            {
-              title: 'go-filecoin tutorial',
-              path: 'https://go.filecoin.io/go-filecoin-tutorial'
             }
           ]
         },
