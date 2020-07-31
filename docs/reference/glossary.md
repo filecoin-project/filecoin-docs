@@ -50,11 +50,11 @@ A _faucet_ is a service that provides free filecoin. Typically, faucets are run 
 
 ## Fault
 
-When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) for a given sector, the Filecoin network registers a _fault_ for that sector, and the miner is [_slashed_](#slash). Storage miners must work to resolve faults quickly, lest they be considered to have abandoned their commitment.
+When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) for a given sector, the Filecoin network registers a _fault_ for that sector, and the miner is [_slashed_](#slash). If a storage miner does not resolve the fault quickly, the network assumes they have abandoned their commitment.
 
 ## Filecoin
 
-The term _Filecoin_, in the sense of a proper noun, is used generically to refer to the Filecoin project, network, broader ecosystem and community. As a common noun, the singular form, filecoin, is used to denote amounts of Filecoin currency.
+The term _Filecoin_, in the sense of a proper noun, is used generically to refer to the Filecoin project, network, broader ecosystem, and community. As a common noun, the singular form, Filecoin, is used to denote amounts of Filecoin currency.
 
 ## Gas
 
@@ -72,7 +72,7 @@ The term _message_ is used to refer to data stored as part of a [block](#block).
 
 ## Miner
 
-The Filecoin project uses the term _miner_ to refer to participant in the network providing a service of value to a client. At present, the Filecoin specification recognizes two miner types: [storage miners](#storage-miner) and [retrieval miners](#retrieval-miner).
+The Filecoin project uses the term _miner_ to refer to participants in the network who provide a service of value to a client. At present, the Filecoin specification recognizes two miner types: [storage miners](#storage-miner) and [retrieval miners](#retrieval-miner).
 
 ## Pledged storage
 
