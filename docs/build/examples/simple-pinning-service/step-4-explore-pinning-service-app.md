@@ -306,7 +306,7 @@ export const getNetworkStats = () => async dispatch => {
 </Fragment>
 ```
 
-## Step 4d: Profile data
+## Step 4d - Profile data
 
 The profile page shows the data related to your FFS and wallets. The profile page allows you to list all the wallets that a user controls. By default, a user has a single wallet, with a `name`, `address`, `type`, and `balance`.
 
