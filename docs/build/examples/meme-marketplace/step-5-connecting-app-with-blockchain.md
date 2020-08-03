@@ -3,7 +3,7 @@ title: Step 4 - Connecting frontend with blockchain
 description: This article describes how to connect meme marketplace frontend with blockchain.
 ---
 
-# Step 5: Connecting React app with a local blockchain
+# Step 5 - Connecting React app with a local blockchain
 
 Take a look at the following files:
 
