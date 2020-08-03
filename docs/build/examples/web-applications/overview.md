@@ -1,6 +1,5 @@
 ---
 title: Web Applications With Textile & React
-sidebarDepth: 1
 description: Learn how to build a Filecoin Web Application with Textile & React
 ---
 
@@ -18,16 +17,16 @@ This tutorial is a **step by step guide** for how to build your own [Filecoin we
 
 There are some other concepts you will be exposed to as you work through this tutorial:
 
-* Writing applications with [React](https://reactjs.org/)
-* Using a server side rendering framework known as [NextJS](https://nextjs.org/)
-* Styling React components with [Emotion](https://emotion.sh/docs/introduction)
-* Gaining additional language features using [Babel](https://babeljs.io/)
+- Writing applications with [React](https://reactjs.org/)
+- Using a server side rendering framework known as [NextJS](https://nextjs.org/)
+- Styling React components with [Emotion](https://emotion.sh/docs/introduction)
+- Gaining additional language features using [Babel](https://babeljs.io/)
 
 ## Set up your environment (MacOS)
 
-* You need to install `node` and `go` to build all the necessary dependencies.
-* You need to install XCode Command Line Tools if you haven't already.
-* Visit [https://brew.sh/](https://brew.sh/) if you need a dependency manager. This will make it easier to install `node` and `go`.
+- You need to install `node` and `go` to build all the necessary dependencies.
+- You need to install XCode Command Line Tools if you haven't already.
+- Visit [https://brew.sh/](https://brew.sh/) if you need a dependency manager. This will make it easier to install `node` and `go`.
 
 First check if MacOS XCode Command Line Tools are installed (You may have done it already):
 
@@ -83,8 +82,8 @@ You will need to add contents to both `package.json` and `.babelrc`, for the sak
     "next": "latest",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "@textile/powergate-client": "0.1.0-beta.13",
-    "slate-react-system": "0.0.4"
+    "@textile/powergate-client": "0.1.0",
+    "slate-react-system": "0.0.6"
   }
 }
 
@@ -108,9 +107,9 @@ You will need to add contents to both `package.json` and `.babelrc`, for the sak
 }
 ```
 
-* This tutorial is not time proof, as updates occur to the libraries you may have to update the dependencies.
-* It may feel like a lot, but this is the last time we need to worry about this in the tutorial.
-* Feel free to ask us if any of this is confusing! We're more than willing to help.
+- This tutorial is not time proof, as updates occur to the libraries you may have to update the dependencies.
+- It may feel like a lot, but this is the last time we need to worry about this in the tutorial.
+- Feel free to ask us if any of this is confusing! We're more than willing to help.
 
 Now run `npm install`. Once that command has finished, you can create a `pages` directory and the necessary files for `NextJS` to function properly:
 
@@ -124,28 +123,28 @@ touch _document.js
 
 For the sake of time, populate the files with the contents below:
 
-#### /pages/_document.js
+#### /pages/\_document.js
 
 ```js
-import Document, { Head, Main, NextScript } from "next/document";
-import { extractCritical } from "@emotion/server";
+import Document, { Head, Main, NextScript } from 'next/document'
+import { extractCritical } from '@emotion/server'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    const styles = extractCritical(initialProps.html);
+    const initialProps = await Document.getInitialProps(ctx)
+    const styles = extractCritical(initialProps.html)
     return {
       ...initialProps,
       styles: (
         <>
           {initialProps.styles}
           <style
-            data-emotion-css={styles.ids.join(" ")}
+            data-emotion-css={styles.ids.join(' ')}
             dangerouslySetInnerHTML={{ __html: styles.css }}
           />
         </>
-      ),
-    };
+      )
+    }
   }
 
   render() {
@@ -157,43 +156,43 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </html>
-    );
+    )
   }
 }
 ```
 
-#### /pages/_app.js
+#### /pages/\_app.js
 
 ```js
-import { CacheProvider } from "@emotion/react";
-import { cache } from "@emotion/css";
+import { CacheProvider } from '@emotion/react'
+import { cache } from '@emotion/css'
 
 function MyApp({ Component, pageProps }) {
   return (
     <CacheProvider value={cache}>
       <Component {...pageProps} />
     </CacheProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
 ```
 
 In your index.js
 
 ```js
-import * as React from "react";
+import * as React from 'react'
 
-import { css } from "@emotion/react";
+import { css } from '@emotion/react'
 
 const STYLES_PAGE = css`
   margin: 0;
   padding: 0;
-`;
+`
 
 export default class TestPage extends React.Component {
   render() {
-    return <div css={STYLES_PAGE}>Hey everyone!</div>;
+    return <div css={STYLES_PAGE}>Hey everyone!</div>
   }
 }
 ```
@@ -219,27 +218,27 @@ If you visit `localhost:3000` in your browser, it should render a web page.
 In `/pages/index.js` you can import `slate-react-system`.
 
 ```js
-import * as React from "react";
-import * as System from "slate-react-system";
+import * as React from 'react'
+import * as System from 'slate-react-system'
 ```
 
-Once you add `slate-react-system`. There are a ton of components you can use in your web application!  A list of design system components live here: [https://slate.host/system](https://slate.host/system).
+Once you add `slate-react-system`. There are a ton of components you can use in your web application! A list of design system components live here: [https://slate.host/system](https://slate.host/system).
 
 Lets start with a button:
 
 ```js
-import * as React from "react";
-import * as System from "slate-react-system";
+import * as React from 'react'
+import * as System from 'slate-react-system'
 
-import { css } from "@emotion/react";
+import { css } from '@emotion/react'
 
 const STYLES_PAGE = css`
   margin: 0;
   padding: 0;
-`;
+`
 
 export default class TestPage extends React.Component {
-  _handleClick = () => alert('You clicked me!');
+  _handleClick = () => alert('You clicked me!')
 
   render() {
     return (
@@ -248,10 +247,9 @@ export default class TestPage extends React.Component {
           Hello There
         </System.ButtonPrimary>
       </div>
-    );
+    )
   }
 }
-
 ```
 
 <img width="967" alt="Screen Shot 2020-07-14 at 7 07 10 PM" src="https://user-images.githubusercontent.com/310223/87495012-3c7a3700-c605-11ea-815b-7b1eeb48c01d.png">
@@ -275,7 +273,7 @@ Once your localnet is running, you can add this code to `/pages/index.js`.
 // NOTE:
 // This is how you use the createPow constructor:
 // createPow({ host: "http://0.0.0.0:6002" });
-import { createPow } from "@textile/powergate-client";
+import { createPow } from '@textile/powergate-client'
 ```
 
 Now we can use `slate-react-system` components that depend on Powergate running.
@@ -285,30 +283,30 @@ Now we can use `slate-react-system` components that depend on Powergate running.
 Here is how we add a component that can generate an authentication token.
 
 ```js
-import * as React from "react";
-import * as System from "slate-react-system";
+import * as React from 'react'
+import * as System from 'slate-react-system'
 
-import { css } from "@emotion/react";
-import { createPow } from "@textile/powergate-client";
+import { css } from '@emotion/react'
+import { createPow } from '@textile/powergate-client'
 
 const STYLES_PAGE = css`
   margin: 0;
   padding: 0;
-`;
+`
 
 export default class TestPage extends React.Component {
-  PG = null;
-  state = { token: null };
+  PG = null
+  state = { token: null }
 
   _handleCreateToken = async () => {
-    this.PG = createPow({ host: "http://0.0.0.0:6002" });
+    this.PG = createPow({ host: 'http://0.0.0.0:6002' })
 
-    const FFS = await this.PG.ffs.create();
+    const FFS = await this.PG.ffs.create()
 
-    this.setState({ token: FFS.token ? FFS.token : null });
+    this.setState({ token: FFS.token ? FFS.token : null })
 
-    this.PG.setToken(FFS.token);
-  };
+    this.PG.setToken(FFS.token)
+  }
 
   render() {
     return (
@@ -317,7 +315,7 @@ export default class TestPage extends React.Component {
           Hello There
         </System.CreateToken>
       </div>
-    );
+    )
   }
 }
 ```
@@ -325,35 +323,35 @@ export default class TestPage extends React.Component {
 Here is how we add a refresh button and get the updated Powergate state once you have a token.
 
 ```js
-import * as React from "react";
-import * as System from "slate-react-system";
+import * as React from 'react'
+import * as System from 'slate-react-system'
 
-import { css } from "@emotion/react";
-import { createPow } from "@textile/powergate-client";
+import { css } from '@emotion/react'
+import { createPow } from '@textile/powergate-client'
 
 const STYLES_PAGE = css`
   margin: 0;
   padding: 0;
-`;
+`
 
 export default class TestPage extends React.Component {
-  PG = null;
-  state = { token : null, info: null, addrsList: [] };
+  PG = null
+  state = { token: null, info: null, addrsList: [] }
 
   _handleCreateToken = async () => {
-    this.PG = createPow({ host: "http://0.0.0.0:6002" });
+    this.PG = createPow({ host: 'http://0.0.0.0:6002' })
 
-    const FFS = await this.PG.ffs.create();
+    const FFS = await this.PG.ffs.create()
 
-    this.setState({ token: FFS.token ? FFS.token : null });
+    this.setState({ token: FFS.token ? FFS.token : null })
 
-    this.PG.setToken(FFS.token);
-  };
+    this.PG.setToken(FFS.token)
+  }
 
   _handleRefresh = async () => {
-    const { addrsList } = await this.PG.ffs.addrs();
-    const { info } = await this.PG.ffs.info();
-    this.setState({ addrsList, info });
+    const { addrsList } = await this.PG.ffs.addrs()
+    const { info } = await this.PG.ffs.info()
+    this.setState({ addrsList, info })
   }
 
   render() {
@@ -366,7 +364,7 @@ export default class TestPage extends React.Component {
           Refresh
         </System.ButtonPrimary>
       </div>
-    );
+    )
   }
 }
 ```
@@ -375,45 +373,45 @@ Your screen should look something like this:
 
 <img width="967" alt="Screen Shot 2020-07-14 at 7 08 14 PM" src="https://user-images.githubusercontent.com/310223/87495118-70555c80-c605-11ea-8e7f-fea0928f2518.png">
 
-* Some components require a Powergate Token to function.
-* All components will render even if you don't have a Powergate Token.
+- Some components require a Powergate Token to function.
+- All components will render even if you don't have a Powergate Token.
 
 Let's add a component to see a list of Filecoin addresses:
 
 ```js
-import * as React from "react";
-import * as System from "slate-react-system";
+import * as React from 'react'
+import * as System from 'slate-react-system'
 
-import { css } from "@emotion/react";
-import { createPow } from "@textile/powergate-client";
+import { css } from '@emotion/react'
+import { createPow } from '@textile/powergate-client'
 
 const STYLES_PAGE = css`
   margin: 0;
   padding: 0;
-`;
+`
 
 export default class TestPage extends React.Component {
-  PG = null;
-  state = { token : null, info: null, addrsList: [] };
+  PG = null
+  state = { token: null, info: null, addrsList: [] }
 
   _handleCreateToken = async () => {
-    this.PG = createPow({ host: "http://0.0.0.0:6002" });
+    this.PG = createPow({ host: 'http://0.0.0.0:6002' })
 
-    const FFS = await this.PG.ffs.create();
+    const FFS = await this.PG.ffs.create()
 
-    this.setState({ token: FFS.token ? FFS.token : null });
+    this.setState({ token: FFS.token ? FFS.token : null })
 
-    this.PG.setToken(FFS.token);
-  };
+    this.PG.setToken(FFS.token)
+  }
 
   _handleRefresh = async () => {
-    const { addrsList } = await this.PG.ffs.addrs();
-    const { info } = await this.PG.ffs.info();
-    this.setState({ addrsList, info });
+    const { addrsList } = await this.PG.ffs.addrs()
+    const { info } = await this.PG.ffs.info()
+    this.setState({ addrsList, info })
   }
 
   render() {
-    const { token, info } = this.state;
+    const { token, info } = this.state
 
     return (
       <div css={STYLES_PAGE}>
@@ -425,17 +423,15 @@ export default class TestPage extends React.Component {
           Refresh
         </System.ButtonPrimary>
 
-        {info ? (
-          <System.FilecoinBalancesList data={info.balancesList} />
-        ) : null}
+        {info ? <System.FilecoinBalancesList data={info.balancesList} /> : null}
       </div>
-    );
+    )
   }
 }
 ```
 
-* Whenever you make changes such as add a new address or send Filecoin, you can hit refresh and see updates!
-* This is a good starting point for adding other state altering components.
+- Whenever you make changes such as add a new address or send Filecoin, you can hit refresh and see updates!
+- This is a good starting point for adding other state altering components.
 
 ## Create a new Filecoin address
 
@@ -443,7 +439,7 @@ Create a class member function for the create address handler.
 
 ```js
 _handleCreateAddress = async ({ name, type, makeDefault }) => {
-  const response = await this.PG.ffs.newAddr(name, type, makeDefault);
+  const response = await this.PG.ffs.newAddr(name, type, makeDefault)
 }
 ```
 
@@ -461,7 +457,7 @@ Create a class member function for the send Filecoin address handler.
 
 ```js
 _handleSendFilecoin = async ({ source, target, amount }) => {
-  const response = await this.PG.ffs.sendFil(source, target, amount);
+  const response = await this.PG.ffs.sendFil(source, target, amount)
 }
 ```
 
@@ -469,7 +465,7 @@ Add the component to the return value of `render()`
 
 ```js
 <System.SendAddressFilecoin onSubmit={this._handleSendFilecoin} />
-````
+```
 
 Now when you hit **Refresh** you should see the balances have been updated for Filecoin you are sending between addresses.
 
@@ -478,47 +474,47 @@ Now when you hit **Refresh** you should see the balances have been updated for F
 Here is a complete snippet for your `/pages/index.js` if you followed all the steps.
 
 ```js
-import * as React from "react";
-import * as System from "slate-react-system";
+import * as React from 'react'
+import * as System from 'slate-react-system'
 
-import { css } from "@emotion/react";
-import { createPow } from "@textile/powergate-client";
+import { css } from '@emotion/react'
+import { createPow } from '@textile/powergate-client'
 
 const STYLES_PAGE = css`
   margin: 0;
   padding: 0;
-`;
+`
 
 export default class TestPage extends React.Component {
-  PG = null;
-  state = { token : null, info: null, addrsList: [] };
+  PG = null
+  state = { token: null, info: null, addrsList: [] }
 
   _handleCreateToken = async () => {
-    this.PG = createPow({ host: "http://0.0.0.0:6002" });
+    this.PG = createPow({ host: 'http://0.0.0.0:6002' })
 
-    const FFS = await this.PG.ffs.create();
+    const FFS = await this.PG.ffs.create()
 
-    this.setState({ token: FFS.token ? FFS.token : null });
+    this.setState({ token: FFS.token ? FFS.token : null })
 
-    this.PG.setToken(FFS.token);
-  };
+    this.PG.setToken(FFS.token)
+  }
 
   _handleCreateAddress = async ({ name, type, makeDefault }) => {
-    const response = await this.PG.ffs.newAddr(name, type, makeDefault);
+    const response = await this.PG.ffs.newAddr(name, type, makeDefault)
   }
 
   _handleSendFilecoin = async ({ source, target, amount }) => {
-    const response = await this.PG.ffs.sendFil(source, target, amount);
+    const response = await this.PG.ffs.sendFil(source, target, amount)
   }
 
   _handleRefresh = async () => {
-    const { addrsList } = await this.PG.ffs.addrs();
-    const { info } = await this.PG.ffs.info();
-    this.setState({ addrsList, info });
+    const { addrsList } = await this.PG.ffs.addrs()
+    const { info } = await this.PG.ffs.info()
+    this.setState({ addrsList, info })
   }
 
   render() {
-    const { token, info } = this.state;
+    const { token, info } = this.state
 
     return (
       <div css={STYLES_PAGE}>
@@ -530,26 +526,24 @@ export default class TestPage extends React.Component {
           Refresh
         </System.ButtonPrimary>
 
+        {info ? <System.FilecoinBalancesList data={info.balancesList} /> : null}
+
         {info ? (
-          <System.FilecoinBalancesList data={info.balancesList} />
+          <System.CreateFilecoinAddress onSubmit={this._handleCreateAddress} />
         ) : null}
 
         {info ? (
-          <System.CreateFilecoinAddress onSubmit={this._handleCreateAddress} /> 
-        ) : null}
-
-        {info ? (
-          <System.SendAddressFilecoin onSubmit={this._handleSendFilecoin} /> 
+          <System.SendAddressFilecoin onSubmit={this._handleSendFilecoin} />
         ) : null}
       </div>
-    );
+    )
   }
 }
 ```
 
 That should get your started!
 
-* For more components, check out [https://slate.host/system](https://slate.host/system)
-* To see more of whats possible, check out the [JS-Powergate-Library](https://github.com/textileio/js-powergate-client)!
+- For more components, check out [https://slate.host/system](https://slate.host/system)
+- To see more of whats possible, check out the [JS-Powergate-Library](https://github.com/textileio/js-powergate-client)!
 
 Thank you taking the time to read this! Happy hacking :)
