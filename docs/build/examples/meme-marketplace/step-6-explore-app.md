@@ -3,7 +3,7 @@ title: Step 6 - Explore the Meme Marketplace App
 description: This article describes the major sections of the Meme Marketplace App.
 ---
 
-# Step 6: Explore the Meme Marketplace App
+# Step 6 - Explore the Meme Marketplace App
 
 This section provides an overview of the pages in the Meme Marketplace App:
 
