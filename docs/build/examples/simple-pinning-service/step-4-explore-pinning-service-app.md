@@ -12,7 +12,7 @@ This section provides an overview of the pages in the Powergate Pinning Service 
 - **Pin**: Allows a user to choose a file, customise Filecoin File System (FFS) configuration, upload the file to FFS, and monitor the status of the file.
 - **Gallery**: Displays a list of all the files uploaded by the user and lets you download the files from the IPFS node or Filecoin node.
 
-## Step 4a: Import the powergate client and database functions
+## Step 4a - Import the powergate client and database functions
 
 You can look at [src/redux/actions/powergate.js](https://github.com/filecoin-shipyard/powergate-pinning-service/blob/master/src/redux/actions/powergate.js) to understand how data is captured from the powergate instance.
 
