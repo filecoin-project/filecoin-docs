@@ -75,7 +75,8 @@ module.exports = {
               '/introduction/what-is-filecoin',
               '/introduction/why-filecoin',
               '/introduction/ipfs-and-filecoin',
-              '/introduction/filecoin-compared-to'
+              '/introduction/filecoin-compared-to',
+              '/introduction/faq'
             ]
           },
           {
@@ -86,14 +87,7 @@ module.exports = {
                 title: 'Install Filecoin',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-to/install-filecoin']
-              },
-              {
-                title: 'Create Filecoin Applications',
-                sidebarDepth: 1,
-                children: [
-                  '/how-to/build-filecoin-web-applications-with-textile-and-react'
-                ]
+                children: ['/how-to/install-filecoin', '/how-to/networks']
               },
               {
                 title: 'Store Data',
@@ -112,7 +106,7 @@ module.exports = {
           {
             title: 'Mine',
             path: '/mine/',
-            children: ['mine/mining']
+            children: ['/mine/connectivity', '/mine/spacerace']
           },
           {
             title: 'Build',
@@ -158,19 +152,28 @@ module.exports = {
                     title: 'Meme Marketplace',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/meme-marketplace/overview']
+                    children: ['/build/examples/meme-marketplace/overview']
                   },
                   {
                     title: 'Simple Pinning Service',
-                    sidebarDepth: 1,
+                    sidebarDepth: 2,
                     collapsable: false,
-                    children: ['build/examples/simple-pinning-service/overview']
+                    children: [
+                      '/build/examples/simple-pinning-service/overview',
+                      '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
+                      '/build/examples/simple-pinning-service/step-1-powergate-setup',
+                      '/build/examples/simple-pinning-service/step-2-react-app-setup',
+                      '/build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
+                      '/build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
+                      '/build/examples/simple-pinning-service/step-5-shut-down-the-application',
+                      '/build/examples/simple-pinning-service/summary'
+                    ]
                   },
                   {
-                    title: 'Slate',
+                    title: 'Web Applications',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/slate/overview']
+                    children: ['/build/examples/web-applications/overview']
                   },
                   {
                     title: 'Network Inspector',
@@ -354,6 +357,27 @@ module.exports = {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
         baseURL: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'callout',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'right',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'left',
+        defaultTitle: ''
       }
     ],
     'vuepress-plugin-check-md',
