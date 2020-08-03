@@ -58,7 +58,7 @@ The term _Filecoin_, in the sense of a proper noun, is used generically to refer
 
 ## Gas
 
-_Gas_ is a transaction fee associated with a [message](#message), paid to the creator of a [block](#block) in return for including the message in the block.
+_Gas_ is a property of a [message](#message), corresponding to the resources involved in including that message in a given [block](#block). For each message included in a block, the block's creator extracts a fee from the message's sender; this fee is proportional to the message's gas.
 
 ## Mainnet
 
