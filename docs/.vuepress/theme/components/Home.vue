@@ -152,15 +152,15 @@ export default {
           path: '/reference',
           children: [
             {
-              title: 'Specification',
-              path: 'https://github.com/filecoin-project/specs'
-            },
-            {
               title: 'Glossary',
               path: '/reference/glossary'
             },
             {
-              title: 'lotus tutorial',
+              title: 'Specification',
+              path: 'https://github.com/filecoin-project/specs'
+            },
+            {
+              title: 'Lotus tutorial',
               path: 'https://lotu.sh'
             }
           ]
