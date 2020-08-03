@@ -18,7 +18,7 @@ The general flow of authentication is as follows:
 
 The steps below simplify the flow with the Hub’s token generation endpoint, which includes credential validation.
 
-### Generating an identity
+## Generating an identity
 
 Generate an identity by using the following code from [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L17) in React app, using the `@textile/threads-core` library.
 
@@ -74,7 +74,7 @@ The example above creates a new identity using `Libp2pCryptoIdentity.fromRandom(
 `localStorage` isn't guaranteed and may be cleared by the browser, the system, or the users. Even more important, localStorage isn't a secure place to store secrets. You should provide alternative storage mechanisms if maintaining persistent identity (and therefore data ownership and access) over time is important. (from [Textile's documentation](https://docs.textile.io/tutorials/hub/libp2p-identities/#caching-user-identity))
 :::
 
-### Signing Challenges
+## Signing Challenges
 
 Challenges are designed to validate that a user is actually who they claim to be, by signing the challenge with a private key.
 
@@ -92,7 +92,7 @@ async function sign(identity) {
 
 This way the app can support PKI and can prove the user's identity to a server. The app only needs to expose its public key which will be used by the server as a way to uniquely identify a user. But as the public key is "public" in nature, anybody can mock any user if we don't have any way to prove to the server that we are actually who we claim to be. To prove our identity the server will ask us to sign a challenge with our private key, and on successful verification, provide us with a token that can be used for a limited period of time to access the Hub APIs.
 
-### Creating the Authentication server
+## Creating and connecting the Authentication server
 
 To identify users, the server needs to handle two-way communication with the client during identity verification. The flow is as follows:
 
@@ -111,7 +111,9 @@ Look at:
 - [hub-browser-auth-app/src/server/index.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/index.ts): To understand different modules used in the hub auth server.
 - [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts): Creates WebSocket endpoint for the client-side token challenge. Involved in Step 2,3,5,6.
 
-1. **The client initiates a login request:** In [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L41), `loginAndCreateBucket` is called if the Metamask plugin is available.
+### Step 1: The client initiates a login request
+
+In [marketplace/src/pages/Login/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/pages/Login/index.js#L41), `loginAndCreateBucket` is called if the Metamask plugin is available.
 
 ```js
 export const loginAndCreateBucket = () => async dispatch => {
@@ -256,8 +258,9 @@ const loginWithChallenge = async id => {
 }
 ```
 
-2. **Hub auth server contacts the Hub APIs to get a challenge for the requesting client**
-   In [hub-browser-auth-app/src/server/index.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/index.ts), to facilitate this two-way communication between the server and the client, we use Websockets as follows:
+### Step 2: Hub auth server contacts the Hub APIs
+
+In [hub-browser-auth-app/src/server/index.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/index.ts), to facilitate this two-way communication between the server and the client, we use Websockets as follows:
 
 ```js
 /** Provides nodejs access to a global WebSocket value, required by Hub API */
@@ -518,26 +521,36 @@ In an actual app you may like to use a database to store the app user details.
 
 We then register a WebSocket route `/ws/userauth`. Whenever the server receives a `'message'` with `data.type` as `token` (as sent by the react app above), the server first checks if `data.pubkey` is present. If yes, a new `db` is initialized using the `newClientDB()` function. The server then requests a `challenge` for a public key (`data.pubkey`) using `db.getTokenChallenge` which takes a callback function that accepts a `Uint8Array` type `challenge` and returns a Promise (that resolves to the value of `token`).
 
-3. **The server passes the challenge to the client**: This `challenge` is then converted to JSON data type using `Buffer.from(challenge).toJSON()` and sent to the react app using `ctx.WebSocket.send`.
+### Step 3: The server passes the challenge to the client
+
+This `challenge` is then converted to JSON data type using `Buffer.from(challenge).toJSON()` and sent to the react app using `ctx.WebSocket.send`.
 
 The server waits for `1500` milliseconds for the react app to respond to the challenge.
 
-4. **The client uses the private key to sign the challenge**: This challenge is handled by the react app in the `loginWithChallenge` in the [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L91) file.
+### Step 4. The client uses the private key to sign the challenge
+
+This challenge is handled by the react app in the `loginWithChallenge` in the [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L91) file.
 
 The challenge (`data.value`) is converted to `Buffer` type using `const buf = Buffer.from(data.value)` and then signed using `const signed = await id.sign(buf)`.
 
 This signed challenge is sent back to the server, which is handled by the `"challenge"` case in the switch case in [hub-browser-auth-app/src/server/wss.ts](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L113). The server checks for the challenge response (`data.sig`) and if present it emits a challenge event by `emitter.emit("challenge", data.sig)`.
 
-5. **The server passes the signed challenge to the Hub**: This event is [captured](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L67) and the Promise is resolved to `Buffer.from(sig)`, thus setting the value of the `token` variable to `Buffer.from(sig)`.
+### Step 5. The server passes the signed challenge to the Hub
+
+This event is [captured](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/hub-browser-auth-app/src/server/wss.ts#L67) and the Promise is resolved to `Buffer.from(sig)`, thus setting the value of the `token` variable to `Buffer.from(sig)`.
 
 ::: tip
 The token provided in the response should be considered a secret that only should be shared with a single user. It does not expire.
 :::
 
-6. **The server generates API credentials and passes credentials, token, and API key back to the client**: Now, as the app user has verified they own the `pubkey`, the server saves the `pubkey` and `lastSeen` time in the `UserDB`.
+### Step 6: The server generates API credentials
+
+The server generates API credentials and passes credentials, token, and API key back to the client. Now, as the app user has verified they own the `pubkey`, the server saves the `pubkey` and `lastSeen` time in the `UserDB`.
 
 The server then generates an API authorization signature (`auth`) for the user using `getAPISig()`, and sends it back to the react app along with the `token` and `process.env.USER_API_KEY`.
 
-7. **The client can use the Hub APIs directly**: This payload is [captured by the react app](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L107) which resolves the Promise returned by the `loginWithChallenge` function and set as a value of `this.auth` which can be used in the react app to use the Textile Hub APIs directly without the hub auth server.
+### Step 7: The client can use the Hub APIs directly
+
+This payload is [captured by the react app](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L107) which resolves the Promise returned by the `loginWithChallenge` function and set as a value of `this.auth` which can be used in the react app to use the Textile Hub APIs directly without the hub auth server.
 
 Now, your users have identities and they've verified themselves. In the login page section, we will explore how we can connect to the hub APIs to create buckets.

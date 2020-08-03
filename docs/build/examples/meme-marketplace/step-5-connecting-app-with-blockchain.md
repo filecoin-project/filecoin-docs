@@ -1,5 +1,5 @@
 ---
-title: Step 4 - Connecting frontend with blockchain
+title: Step 5 - Connecting frontend with blockchain
 description: This article describes how to connect meme marketplace frontend with blockchain.
 ---
 
