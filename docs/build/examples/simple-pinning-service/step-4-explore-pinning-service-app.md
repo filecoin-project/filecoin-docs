@@ -147,7 +147,7 @@ This tutorial uses PouchDB for storing user data, but you can use any other meth
 
 Once you are logged in, you are directed to the _Networks_ page.
 
-## Step 4c: Network Data
+## Step 4c - Network Data
 
 The networks page shows all the data that can be accessed by any **unauthenticated** user.
 
