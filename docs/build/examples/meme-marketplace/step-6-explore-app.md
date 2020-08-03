@@ -11,7 +11,7 @@ This section provides an overview of the pages in the Meme Marketplace App:
 - **Create**: Interface to upload and register your memes.
 - **Marketplace**: Displays a list of all the registered memes.
 
-## Step 6a: Logging in
+## Step 6a - Logging in
 
 The login page:
 
