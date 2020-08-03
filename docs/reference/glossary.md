@@ -26,7 +26,7 @@ If a storage miner doesn't find any available deal proposals appealing, they can
 
 ## Collateral
 
-In order to enter into a [storage deal](#deal), a [storage miner](#storage-miner) is required to provide Filecoin as _collateral_, to be paid out as compensation to a client in the event that the miner fails to uphold their storage commitment.
+In order to enter into a [storage deal](#deal), a [storage miner](#storage-miner) is required to provide [FIL](#fil) as _collateral_, to be paid out as compensation to a client in the event that the miner fails to uphold their storage commitment.
 
 ## Deal
 
@@ -42,11 +42,11 @@ Time in the Filecoin blockchain is discretized into _epochs_ that are currently 
 
 ## FIL
 
-`FIL` is the filecoin unit symbol; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
+`FIL` is the unit symbol for the Filecoin currency; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
 
 ## Faucet
 
-A _faucet_ is a service that provides free filecoin. Typically, faucets are run for the benefit of new users in a network, providing them with the necessary seed capital to begin making transactions.
+A _faucet_ is a service that provides free [FIL](#fil). Typically, faucets are run for the benefit of new users in a network, providing them with the necessary seed capital to begin making transactions.
 
 ## Fault
 
@@ -54,7 +54,7 @@ When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacet
 
 ## Filecoin
 
-The term _Filecoin_, in the sense of a proper noun, is used generically to refer to the Filecoin project, network, broader ecosystem, and community. As a common noun, the singular form, Filecoin, is used to denote amounts of Filecoin currency.
+The term _Filecoin_, in the sense of a proper noun, is used generically to refer to the Filecoin project, network, broader ecosystem, and community. As a common noun, the singular form, filecoin, is used to refer to the Filecoin currency.
 
 ## Gas
 
@@ -100,7 +100,7 @@ The storage power a [storage miner](#storage-miner) earns from a storage deal of
 
 ## Retrieval miner
 
-A _retrieval miner_ is a Filecoin participant that enters retrieval [deals](#deal) with clients, agreeing to supply a client with a particular file in exchange for Filecoin.  Note that unlike [storage miners](#storage-miner), retrieval miners are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
+A _retrieval miner_ is a Filecoin participant that enters retrieval [deals](#deal) with clients, agreeing to supply a client with a particular file in exchange for [FIL](#fil).  Note that unlike [storage miners](#storage-miner), retrieval miners are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
 
 ## Seal
 
@@ -116,7 +116,7 @@ When a [fault](#fault) is registered for a [sector](#sector), the Filecoin netwo
 
 ## Storage miner
 
-A _storage miner_ is a Filecoin participant that stores data on behalf of the network. Storage miners are rewarded for this service through payments by clients that contract their services, as well as by periodic authorization to extend the Filecoin [blockchain](#blockchain) with [blocks](#block) of their own creation. When they create a block, storage miners are rewarded with newly minted Filecoin, as well as the transaction fees they can levy on other participants seeking to include [messages](#message) in the block.
+A _storage miner_ is a Filecoin participant that stores data on behalf of the network. Storage miners are rewarded for this service through payments by clients that contract their services, as well as by periodic authorization to extend the Filecoin [blockchain](#blockchain) with [blocks](#block) of their own creation. When they create a block, storage miners are rewarded with newly minted [FIL](#fil), as well as the transaction fees they can levy on other participants seeking to include [messages](#message) in the block.
 
 ## Storage power
 
@@ -160,6 +160,6 @@ The Filecoin network expects constant availability of stored data. Failing to su
 
 ## Winning Proof-of-Spacetime (WinningPoSt)
 
-_Winning Proof-of-Spacetime_ (WinningPoSt) is the mechanism by which [storage miners](#storage-miner) are rewarded for their contributions to the Filecoin network. At the beginning of each [epoch](#epoch), a small number of storage miners are [elected](#election) to each mine a new [block](#block). As a requirement for doing so, each miner is tasked with submitting a compressed [Proof-of-Storage](#proof-of-storage-post) for a specified [sector](#sector). Each elected miner who successfully creates a block is granted filecoin, as well as the opportunity to charge other Filecoin participants fees to include [messages](#message) in the block.
+_Winning Proof-of-Spacetime_ (WinningPoSt) is the mechanism by which [storage miners](#storage-miner) are rewarded for their contributions to the Filecoin network. At the beginning of each [epoch](#epoch), a small number of storage miners are [elected](#election) to each mine a new [block](#block). As a requirement for doing so, each miner is tasked with submitting a compressed [Proof-of-Storage](#proof-of-storage-post) for a specified [sector](#sector). Each elected miner who successfully creates a block is granted [FIL](#FIL), as well as the opportunity to charge other Filecoin participants fees to include [messages](#message) in the block.
 
 Storage miners who fail to do this in the necessary window will forfeit their opportunity to mine a block, but will not otherwise incur penalties for their failure to do so.
