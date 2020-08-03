@@ -43,7 +43,7 @@ const loadWeb3 = async loginAndCreateBucket => {
 }
 ```
 
-## Step 5b: Connecting to blockchain
+## Step 5b - Connecting to blockchain
 
 In [marketplace/src/utils/blockchain/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/utils/blockchain/index.js) we use:
 
