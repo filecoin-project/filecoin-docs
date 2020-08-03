@@ -3,7 +3,7 @@ title: Step 3 - Connecting Powergate instance with React app
 description: This article describes how to connect the Powergate instance with the React app.
 ---
 
-# Step 3: Connecting to the Powergate & PouchDB Instance
+# Step 3 - Connecting to the Powergate & PouchDB Instance
 
 The React app contains several pages which all interact with the Powergate instance. Before using the Powergate Pinning service, you need to connect to the running Powergate instance.
 
