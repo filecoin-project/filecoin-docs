@@ -152,15 +152,15 @@ export default {
           path: '/reference',
           children: [
             {
+              title: 'Glossary',
+              path: '/reference/glossary'
+            },
+            {
               title: 'Specification',
               path: 'https://github.com/filecoin-project/specs'
             },
             {
-              title: 'go-filecoin tutorial',
-              path: 'https://go.filecoin.io/go-filecoin-tutorial'
-            },
-            {
-              title: 'lotus tutorial',
+              title: 'Lotus tutorial',
               path: 'https://lotu.sh'
             }
           ]
