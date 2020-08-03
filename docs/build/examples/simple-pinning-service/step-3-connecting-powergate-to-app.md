@@ -56,7 +56,7 @@ Notice the POW_HOST is set to "http://0.0.0.0:6002" (exposed by Powergate instan
 
 The Powergate instance is connected and you can use it in the app.
 
-## Step 3b: Connecting to the PouchDB Instance
+## Step 3b - Connecting to the PouchDB Instance
 
 1. To connect the React app to the PouchDB instance, install the following JavaScript module using the [node package manager](http://npmjs.com/):
 
