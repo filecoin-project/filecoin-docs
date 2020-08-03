@@ -65,7 +65,7 @@ const web3 = new Web3(new Web3.providers.HttpProvider(NETWORK_URL))
 
 The frontend is now connected with the blockchain.
 
-## Step 5c: Connecting to and the deployed smart contract
+## Step 5c - Connecting to and the deployed smart contract
 
 In [marketplace/src/utils/blockchain/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/utils/blockchain/index.js#L8) import the `contract` object from `marketplace/src/utils/blockchain/contract.js` initialize the contract object `MemeMarketplace` using `new web3.eth.Contract` constructor which takes the following parameters:
 
