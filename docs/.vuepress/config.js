@@ -147,13 +147,6 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/build/examples/sample-architectures',
-
-                  {
-                    title: 'Meme Marketplace',
-                    sidebarDepth: 1,
-                    collapsable: false,
-                    children: ['/build/examples/meme-marketplace/overview']
-                  },
                   {
                     title: 'Simple Pinning Service',
                     sidebarDepth: 2,
