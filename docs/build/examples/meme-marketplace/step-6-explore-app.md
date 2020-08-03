@@ -252,7 +252,7 @@ The `awardMemeToken` function discussed in [Step 5](./step-5-connecting-app-with
 
 The meme is now uploaded to the hub and an associated NFT token is registered on the blockchain. The user now owns the meme on the blockchain.
 
-## Step 6c: Marketplace
+## Step 6c - Marketplace
 
 The marketplace displays of the memes available. The marketplace page:
 
