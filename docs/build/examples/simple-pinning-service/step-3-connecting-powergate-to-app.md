@@ -13,7 +13,7 @@ Use any text editor to open the `powergate-pinning-client` project. Multiple pag
 
 ![VSCode editor with powergate-pinning-client project open.](./images/pinning-service-app-code.png)
 
-## Step 3a: Connecting to the Powergate Instance
+## Step 3a - Connecting to the Powergate Instance
 
 To connect the React app to the Powergate instance:
 
