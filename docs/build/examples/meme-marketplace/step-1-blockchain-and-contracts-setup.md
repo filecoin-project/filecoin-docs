@@ -108,6 +108,6 @@ The following video explains how to:
 - Importing an existing wallet (using the mnemonic that we saved above).
 - Configuring the Metamask plugin to connect to the local blockchain network (`127.0.0.1:8545`)
 
-@[youtube](https://youtu.be/vbcy55J5xlU)
+@[youtube](https://youtube.com/watch?v=vbcy55J5xlU)
 
 This completes the creation and deployment of the smart contract on a local blockchain.
