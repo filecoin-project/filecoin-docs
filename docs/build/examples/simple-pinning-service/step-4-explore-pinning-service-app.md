@@ -34,7 +34,7 @@ const pow = getPowergateInstance()
 import { addUser, getUser } from '../../utils/database'
 ```
 
-### Step 4b: Log in and create an FFS instance for the logged-in user
+### Step 4b - Log in and create an FFS instance for the logged-in user
 
 The Login page allows Powergate to manage data for multiple users using separate FFS for each user of the Pinning service. Login allows any kind of authentication service: OAuth services like Github, Google, Facebook, or an email-password database.
 
