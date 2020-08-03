@@ -84,7 +84,7 @@ In [marketplace/src/utils/blockchain/contract.js](https://github.com/filecoin-sh
 
 The frontend is now connected with the deployed contract.
 
-## Step 5d: Sending transaction to register memes on blockchain
+## Step 5d - Sending transaction to register memes on blockchain
 
 In [marketplace/src/utils/blockchain/index.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/utils/blockchain/index.js#L13) the `awardMemeToken` is used to register NFT token for a meme.
 
