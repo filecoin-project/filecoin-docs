@@ -3,7 +3,7 @@ title: Overview
 description: A brief description of the Simple Pinning Service Example.
 ---
 
-# Overview
+# Simple Pinning Service Overview
 
 In this tutorial, we will build a [simple pinning service](https://github.com/filecoin-shipyard/powergate-pinning-service) using [Powergate](../../core-products/powergate.md).
 
