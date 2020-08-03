@@ -12,7 +12,7 @@ Take a look at the following files:
   - Includes code for connecting the react app with the local blockchain and interacting with the deployed smart contract.
   - Uses Metamask plugin and [web3.js](https://web3js.readthedocs.io/) library to send transactions and calls to the blockchain network.
 
-## Step 5a: Connecting with Metamask
+## Step 5a - Connecting with Metamask
 
 [web3.js](https://web3js.readthedocs.io/) is a collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC, or WebSocket.
 
