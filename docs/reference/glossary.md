@@ -142,7 +142,11 @@ Note: if used as a proper noun, capitalize the term. For example, "I am mining o
 
 ## Tipset
 
-Filecoin utilizes a novel [blockchain](#blockchain) variant called a [_tipset_](https://filecoin.io/blog/tipsets-family-based-approach-to-consensus/). Tipsets are less strict chains than directed, acyclic graphs; this construction allows multiple blocks to be mined at the same [height](#block-height).
+A [tipset](https://filecoin.io/blog/tipsets-family-based-approach-to-consensus/) is a set of [blocks](#block) that each have the same [height](#block-height) and parent tipset; the Filecoin [blockchain](#blockchain) is a chain of tipsets, rather than a chain of blocks.
+
+Each tipset is assigned a weight corresponding to the amount of storage the network is provided per the commitments encoded in the tipset's blocks. The consensus protocol of the network directs nodes to build on top of the heaviest chain.
+
+By basing its blockchain on tipsets, Filecoin can allow multiple [storage miners](#storage-miner) to create blocks in the same [epoch](#epoch), increasing network throughput. By construction, this also provides network security: a node that attempts to intentionally prevent the valid blocks of a second node from making it onto the canonical chain runs up against the consensus preference for heavier chains.
 
 ## Verified client
 
