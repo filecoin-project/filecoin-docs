@@ -698,7 +698,7 @@ export const addFileToFFS = payload => async dispatch => {
 </Fragment>
 ```
 
-## Step 4f: Fetch data back from IPFS and FFS via powergate instance
+## Step 4f - Fetch data back from IPFS and FFS via powergate instance
 
 The Gallery page displays the files stored. The page has 2 sections:
 
