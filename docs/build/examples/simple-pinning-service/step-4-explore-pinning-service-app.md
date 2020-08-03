@@ -3,7 +3,7 @@ title: Step 4 - Explore the Powergate Pinning Service App
 description: This article describes the major sections of the Pinning Service App and how they interact with powergate instance.
 ---
 
-# Step 4: Explore the Powergate Pinning Service App
+# Step 4 - Explore the Powergate Pinning Service App
 
 This section provides an overview of the pages in the Powergate Pinning Service App:
 
