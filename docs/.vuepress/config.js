@@ -1,5 +1,5 @@
 // .vuepress/config.js
-  
+
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 
 module.exports = {
@@ -87,10 +87,7 @@ module.exports = {
                 title: 'Install Filecoin',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: [
-                    '/how-to/install-filecoin',
-                    '/how-to/networks'
-                ]
+                children: ['/how-to/install-filecoin', '/how-to/networks']
               },
               {
                 title: 'Store Data',
@@ -109,10 +106,7 @@ module.exports = {
           {
             title: 'Mine',
             path: '/mine/',
-             children: [
-               '/mine/connectivity',
-                '/mine/spacerace'
-          ]
+            children: ['/mine/connectivity', '/mine/spacerace']
           },
           {
             title: 'Build',
@@ -158,54 +152,42 @@ module.exports = {
                     title: 'Meme Marketplace',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/meme-marketplace/overview']
+                    children: ['/build/examples/meme-marketplace/overview']
                   },
                   {
                     title: 'Simple Pinning Service',
-                    sidebarDepth: 1,
+                    sidebarDepth: 2,
                     collapsable: false,
-                    children: ['build/examples/simple-pinning-service/overview']
+                    children: [
+                      '/build/examples/simple-pinning-service/overview',
+                      '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
+                      '/build/examples/simple-pinning-service/step-1-powergate-setup',
+                      '/build/examples/simple-pinning-service/step-2-react-app-setup',
+                      '/build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
+                      '/build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
+                      '/build/examples/simple-pinning-service/step-5-shut-down-the-application',
+                      '/build/examples/simple-pinning-service/summary'
+                    ]
                   },
                   {
                     title: 'Web Applications',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/web-applications/overview']
-                  },
-                  {
-                    title: 'Slate',
-                    sidebarDepth: 1,
-                    collapsable: false,
-                    children: ['build/examples/slate/overview']
+                    children: ['/build/examples/web-applications/overview']
                   },
                   {
                     title: 'Network Inspector',
                     sidebarDepth: 2,
                     collapsable: false,
                     children: [
-                      'build/examples/network-inspector/overview',
-                      'build/examples/network-inspector/lotus-and-go-ipfs-interactions',
-                      'build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
-                      'build/examples/network-inspector/step-2-run-the-react-app',
-                      'build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
-                      'build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
-                      'build/examples/network-inspector/step-5-shut-down-the-application',
-                      'build/examples/network-inspector/summary'
-                    ]
-                  },
-                  {
-                    title: 'Simple Pinning Service',
-                    sidebarDepth: 2,
-                    collapsable: false,
-                    children: [
-                      'build/examples/simple-pinning-service/overview',
-                      'build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
-                      'build/examples/simple-pinning-service/step-1-powergate-setup',
-                      'build/examples/simple-pinning-service/step-2-react-app-setup',
-                      'build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
-                      'build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
-                      'build/examples/simple-pinning-service/step-5-shut-down-the-application',
-                      'build/examples/simple-pinning-service/summary'
+                      '/build/examples/network-inspector/overview',
+                      '/build/examples/network-inspector/lotus-and-go-ipfs-interactions',
+                      '/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
+                      '/build/examples/network-inspector/step-2-run-the-react-app',
+                      '/build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
+                      '/build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
+                      '/build/examples/network-inspector/step-5-shut-down-the-application',
+                      '/build/examples/network-inspector/summary'
                     ]
                   }
                 ]
