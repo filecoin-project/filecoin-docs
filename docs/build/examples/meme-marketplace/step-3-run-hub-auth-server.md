@@ -91,7 +91,7 @@ git clone https://github.com/filecoin-shipyard/meme-marketplace
 ```bash
 cd meme-marketplace/hub-browser-auth-app
 
-// now open the hub-browser-auth-app folder
+# now open the hub-browser-auth-app folder
 ```
 
 ![hub-browser-auth-app opened in VSCode editor](./images/hub-auth-server-codebase.png)
