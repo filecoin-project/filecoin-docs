@@ -436,7 +436,7 @@ The `pow.ffs.newAddr` function uses `pow.ffs.newAddr` function which takes 3 par
 </Fragment>
 ```
 
-## Step 4e: Adding data to IPFS and Filecoin
+## Step 4e - Adding data to IPFS and Filecoin
 
 The Pin page shows how you can add data to your FFS and provides the data storage control features that are exposed through Powergate.
 
