@@ -153,4 +153,9 @@ Connectivity issues? Please run the following steps:
 1. Go to [https://calibration.spacerace.filecoin.io/check](https://calibration.spacerace.filecoin.io/check) to check if the dealbot can successfully get a query-ask from your miner
 1. Check deal details page for your miner at [https://calibration.spacerace.filecoin.io/](https://calibration.spacerace.filecoin.io/). If it shows an error “routing: not found”, follow the steps in [Setting Multiaddresses](#setting-multiaddresses) to set your `lotus-miner actor set-addrs`.
 
+| Error | What it means | How to fix |
+|---|---|---|
+| Failed: failed to open stream to miner: routing: not found | This error means the dealbot was not able to... | fix | 
+| StorageDealError: error reading Response message: stream reset | This means a connection was initially made, but changed unexpectedly (disappeared, lost, unroutable, power failure, anything) during the storage deal process. | fix | 
+
 If you fail to succeed in any of these steps, please start a thread on #fil-net-calibration in the [Filecoin Slack](http://filecoin.io/slack). Please include all of the steps you have tried, their output, and your miner ID.
