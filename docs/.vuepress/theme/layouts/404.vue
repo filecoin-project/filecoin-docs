@@ -2,16 +2,19 @@
   <div class="theme-container">
     <Navbar />
     <div class="theme-default-content">
-      <h1>🤷‍♀️ 404</h1>
+      <h1>😯 404</h1>
+      <h3>Oops, this page has moved or no longer exists</h3>
 
-      <blockquote>
-        Oops, it seems that this page has moved or no longer exists.
-      </blockquote>
-
-      <RouterLink to="/">
-        Return home
-      </RouterLink>
-      or <a href="#" @click="searchFocus">try to search</a>.
+      <p>
+        We've logged this issue and invite you to choose your next adventure
+        below.
+      </p>
+      <p>
+        <RouterLink to="/">
+          Return home
+        </RouterLink>
+        or <a href="#" @click="searchFocus">try our superb search</a>
+      </p>
     </div>
   </div>
 </template>
