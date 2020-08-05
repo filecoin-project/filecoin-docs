@@ -13,6 +13,7 @@ Filecoin miners, like participants in all peer-to-peer protocols, require a stea
 
 The following steps are highly recommended for all miners who wish to successfully accept storage and retrieval deals.
 
+**Prefer a more visual approach?** Check out [this fantastic video](https://www.youtube.com/watch?v=POFsRfnb-lo) for a walkthrough on the processes of testing and debugging connectivity issues, as well as setting up port forwarding via UPnP on a local router.  
 ## Setting multiaddresses
 
 You can set the multiaddresses that your miner listens on in a miner's `config.toml` file (by default located at `~/.lotusminer/config.toml`). 
