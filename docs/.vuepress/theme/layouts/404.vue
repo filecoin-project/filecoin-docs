@@ -28,6 +28,12 @@ export default {
     Navbar
   },
 
+  created() {
+    if (typeof this.$ssrContext !== 'undefined') {
+      this.$ssrContext.userHeadTags += `<base href="/" />`
+    }
+  },
+
   mounted() {
     // bail if ga is not enabled
     if (!window.ga) return
