@@ -1,0 +1,34 @@
+<template>
+  <div class="theme-container">
+    <Navbar />
+    <div class="theme-default-content">
+      <h1>🤷‍♀️ 404</h1>
+
+      <blockquote>
+        Oops, it seems that this page has moved or no longer exists.
+      </blockquote>
+
+      <RouterLink to="/">
+        Return home
+      </RouterLink>
+      or <a href="#" @click="searchFocus">try to search</a>.
+    </div>
+  </div>
+</template>
+
+<script>
+import Navbar from '@theme/components/Navbar.vue'
+
+export default {
+  name: 'NotFound',
+  components: {
+    Navbar
+  },
+  methods: {
+    searchFocus(e) {
+      e.preventDefault()
+      document.querySelector('#search-form input').focus()
+    }
+  }
+}
+</script>
