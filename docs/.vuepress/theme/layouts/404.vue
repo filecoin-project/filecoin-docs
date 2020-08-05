@@ -34,7 +34,7 @@ export default {
 
     window.ga('send', 'event', {
       eventCategory: '404',
-      eventAction: this.currentPath,
+      eventAction: this.$route.path,
       eventLabel: document.referrer
     })
   },
