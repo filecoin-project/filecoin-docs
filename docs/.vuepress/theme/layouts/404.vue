@@ -24,6 +24,17 @@ export default {
   components: {
     Navbar
   },
+
+  mounted() {
+    // bail if ga is not enabled
+    if (!window.ga) return
+
+    window.ga('send', 'event', {
+      eventCategory: '404',
+      eventAction: this.currentPath,
+      eventLabel: document.referrer
+    })
+  },
   methods: {
     searchFocus(e) {
       e.preventDefault()
