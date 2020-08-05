@@ -143,3 +143,14 @@ Note: VIIRB uses open source software and hardware. You can also build your own 
 Another option is to use an [ssh reverse tunnel](https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it) to set up a proxy between your miner machine and a public IP machine.
 
 With this approach, you link a local port in your local address to a public port in the public IP machine, and then announce the public port + public IP address to the world. When peers dial back to you on your public multiaddr, the traffic is relayed through that tunnel to your miner machine.
+
+## Troubleshooting
+
+Connectivity issues? Please run the following steps:
+1. Go to [https://ping.eu/ping/](https://ping.eu/ping/) and check if the service can ping your public IP address
+1. Go to [https://ping.eu/port-chk/](https://ping.eu/port-chk/) and check if the port that leads to your miner is accessible
+1. From another network (another computer in another house, datacenter, etc), do telnet or netcat to the ip+port and a `/multistream/1.0.0` should come out
+1. Go to [https://calibration.spacerace.filecoin.io/check](https://calibration.spacerace.filecoin.io/check) to check if the dealbot can successfully get a query-ask from your miner
+1. Check deal details page for your miner at [https://calibration.spacerace.filecoin.io/](https://calibration.spacerace.filecoin.io/). If it shows an error “routing: not found”, follow the steps in [Setting Multiaddresses](#setting-multiaddresses) to set your `lotus-miner actor set-addrs`.
+
+If you fail to succeed in any of these steps, please start a thread on #fil-net-calibration in the [Filecoin Slack](http://filecoin.io/slack). Please include all of the steps you have tried, their output, and your miner ID.
