@@ -5,5 +5,5 @@
 /questions.html https://go.filecoin.io/questions.html
 /go-filecoin-tutorial/*  https://go.filecoin.io/go-filecoin-tutorial/:splat
 
-# SPA router redirects to catch 404s
-/* /index.html 200
+# use a custom 404 for any pages that are not rendered
+/* /404/index.html 404
