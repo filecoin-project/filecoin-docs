@@ -66,17 +66,3 @@ go version
 
 > go version go1.14.6 linux/amd64
 ```
-
-## Quickstart
-
-If you've ran through the Lotus installation before, and just want the commands to run quickly, here they are:
-
-```bash
-wget lotus binary from github.
-get the sha512 from github.
-check them against each other.
-unpack the tar.
-move the executable to /usr/local/bin.
-add executable to path.
-check lotus version.
-```
