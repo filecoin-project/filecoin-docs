@@ -112,14 +112,12 @@ The Lotus team periodically build and upload binaries to the `filecoin-project/l
 
 If you'd rather build the project from source, follow these steps.
 
-1. Install the following dependencies:
+1.  Install the following dependencies:
 
-
-    ```bash
-    sudo apt update
-    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y
-    sudo apt upgrade -y
-    ```
+    | Operating system | Dependency list                                                                                                                                                                                                | Install command                                                                         |
+    | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+    | Ubuntu           | go (`1.14` or higher)<br>gcc (`7.4.0` or higher)<br>git (`2.0` or higher)<br>bzr<br>jq<br>pkg-config<br>opencl-icd-loader<br>opencl driver (for GPU acceleration)<br>opencl-headers<br>rustup<br>llvm<br>clang | `sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y` |
+    | macOS            | go<br>bzr<br>jq<br>pkg-config<br>rustup                                                                                                                                                                        | `brew install go bzr jq pkg-config rustup git`                                          |
 
 1.  Clone the Lotus repository:
 
