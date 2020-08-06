@@ -4,9 +4,9 @@ title: Set up
 
 <!-- Add table of different distros here. -->
 
-| macOS                                                  | Linux                                                       | Build from source                                             |
-| ------------------------------------------------------ | ----------------------------------------------------------- | ------------------------------------------------------------- |
-| [![The macOS logo.](./images/apple-icon.png)](#mac-os) | [![The Linux "Tux" logo.](./images/linux-icon.png)](#linux) | [![Code brackets icon.](./images/build-from-source-icon.png)] |
+| macOS                                                  | Linux                                                       | Build from source                                        |
+| ------------------------------------------------------ | ----------------------------------------------------------- | -------------------------------------------------------- |
+| [![The macOS logo.](./images/apple-icon.png)](#mac-os) | [![The Linux "Tux" logo.](./images/linux-icon.png)](#linux) | [![Code brackets icon.](./images/manual-build-icon.png)] |
 
 ## macOS
 
