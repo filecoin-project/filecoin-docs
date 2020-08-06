@@ -45,14 +45,14 @@ The name can also be used as an adjective:
 
 > I love contributing to Filecoin documentation!
 
-When referring to the token used as Filecoin's currency, the unit symbol, `FIL`, is preferred; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎). These symbols can be used as suffixes or prefixes, as seen fit:
+When referring to the token used as Filecoin's currency, the name `FIL`, is preferred; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎). These symbols can be used as suffixes or prefixes, as seen fit:
 
-- Code prefix: **100 FIL**.
-- Code suffix: **FIL 100**.
+- Unit prefix: **100 FIL**.
+- Unit suffix: **FIL 100**.
 - Symbol prefix: **⨎100**.
 - Symbol suffix: **100 ⨎**.
 
-The singular form of the common noun "filecoin" is also sometimes used for this purpose - this form should not be used as an adjective.
+The smallest and most common denomination of FIL is the `attoFIL` (10^-18 FIL).
 
 > The collateral for this storage deal is five FIL.
 
