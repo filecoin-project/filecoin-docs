@@ -14,6 +14,19 @@ title: Overview
 
 <!-- Hardware needed -->
 <!-- Software needed -->
+
+### Golang
+
+You need to have Go installed on your system. Head over to the [Golang Install docs](https://golang.org/doc/install) to find out how to install Go for your operating system.
+
+You can check that you have Go install properly by asking for the version number in a terminal window:
+
+```bash
+go version
+
+> go version go1.14.6 linux/amd64
+```
+
 <!-- Network issues (The Great Firewall) -->
 
 Lorem ipsum.
