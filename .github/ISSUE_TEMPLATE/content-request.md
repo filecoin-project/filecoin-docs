@@ -1,9 +1,9 @@
 ---
 name: Content Request
-about: Suggest a new item for the Filecoin docs
-title: "[CONTENT REQUEST] (add your title here!)"
-labels: 'Content Improvement'
-assignees: ''
+about: Suggest a new page or section.
+title: "Describe the content you'd like to see in a single sentence"
+labels: 'need/triage, feature-request'
+assignees: 'johnnymatthews'
 
 ---
 
