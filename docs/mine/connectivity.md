@@ -155,7 +155,10 @@ Connectivity issues? Please run the following steps:
 
 | Error | What it means | How to fix |
 |---|---|---|
-| Failed: failed to open stream to miner: routing: not found | This error means the dealbot was not able to... | fix | 
-| StorageDealError: error reading Response message: stream reset | This means a connection was initially made, but changed unexpectedly (disappeared, lost, unroutable, power failure, anything) during the storage deal process. | fix | 
+| ClientQueryAsk failed : failed to open stream to miner: dial backoff | The connection to the remote host was attempted, but failed. | This may be due to issues with porting, IPs set within the config file, or simply no internet connectivity. |
+| ClientQueryAsk failed : failed to open stream to miner: failed to dial | The deal-bot was unable to open a network socket to the miner. | This is likely because the miner's IP is not publicly dialable, or a port issue. |
+| ClientQueryAsk failed : failed to open stream to miner: routing: not found | The deal-bot was unable to locate the miners IP and/or port. | Follow the instructions under the [multiaddresses section](#setting-multiaddresses) of this page. |
+| ClientQueryAsk failed : failed to read ask response: stream reset | Connectivity loss, usually due to a high packet droprate. | Check your internet connectivity and available bandwidth. |
+
 
 If you fail to succeed in any of these steps, please start a thread on #fil-net-calibration in the [Filecoin Slack](http://filecoin.io/slack). Please include all of the steps you have tried, their output, and your miner ID.
