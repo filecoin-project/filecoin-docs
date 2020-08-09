@@ -72,12 +72,11 @@ That's it! You've now got Lotus installed on your system. If you'd like to be ab
 
 ## Linux
 
-If you'd rather build the project from source, follow these steps.
-
 1.  Install the dependencies:
 
     ```bash
-    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y
+    sudo apt update
+    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl build-essential -y
     ```
 
 1.  Clone the Lotus repository:
@@ -138,4 +137,4 @@ bash: go: command not found
 make: *** [Makefile:68: lotus] Error 127
 ```
 
-This means that you do not have Go installed properly. Run `go version` to see which version of Go you have installed. If you don't get a response, it's likley that Go has not been installed properly for your system. If you _think_ you've already downloaded and installed Go, check that the Go binary has been added to your system PATH. You may need to reboot your machine after adding the Go binary to your system PATH. See the [Go documentation for more details](https://golang.org/doc/install#install).
+This error means that you do not have Go installed properly. Run `go version` to see which version of Go you have installed. If you don't get a response, Go has not been installed correctly. If you _think_ you've already downloaded and installed Go, check that the Go binary has been added to your system PATH. You may need to reboot your machine after adding the Go binary to your system PATH. See the [Go documentation for more details](https://golang.org/doc/install#install).
