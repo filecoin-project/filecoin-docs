@@ -1,5 +1,6 @@
 ---
 title: Overview
+description: Learn about the Lotus Filecoin implementation, why it exists, and how to install it.
 ---
 
 # Overview
@@ -8,11 +9,11 @@ Lotus is an implementation of the Filecoin specification written in Go. You can 
 
 There are three types of Lotus client available:
 
-| Client        | Purpose                                                                                                                                                            |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Lotus node    | An interface between your computer and the Filecoin network. All transactions, queries, and interactions with the Filecoin network must pass through a Lotus node. |
-| Storage miner | The client that processes deals, and actually stores blocks on your hardware.                                                                                      |
-| Seal worker   | An extra process that can offload heavy processing tasks from your Lotus Storage miner.                                                                            |
+| Client | Purpose |
+| ------------- | ---------- |
+| Lotus node | An interface between your computer and the Filecoin network. All transactions, queries, and interactions with the Filecoin network must pass through a Lotus node. |
+| Storage miner | The Lotus storage miner queries a Lotus node for the latest tipset on-chain, produces a block on that tipset, and submits it to the node to be broadcast to the entire network. |
+| Seal worker | An extra process that can offload heavy processing tasks from your Lotus Storage miner. |
 
 ## Requirements
 
@@ -22,13 +23,13 @@ The requirements of your system will change depending on the type of client you 
 
 #### Lotus node
 
-Since the Filecoin network is constantly growing and being developed, hardware requirements keep changing. The requirements table below is correct as of writing, but may change in the future. The amount of memory (RAM) required is expected to drop significantly as the Lotus client uses Badger FS more efficently. This is expected to come down to about 1GB in the near future.
+Since the Filecoin network is constantly growing and being developed, hardware requirements keep changing. The requirements table below is correct as of writing but may change in the future. The amount of memory (RAM) required is expected to drop significantly as the Lotus client uses Badger FS more efficiently. This is expected to come down to about 1GB in the near future.
 
 | Processor                                      | Memory   | Storage space         |
 | ---------------------------------------------- | -------- | --------------------- |
 | 4 cores<br>8 threads<br> 2.5GHz base frequency | 8GB DDR4 | 200GB (SSD preferred) |
 
-Again, these requirement will change in the near future.
+Again, these requirements will change in the near future.
 
 #### Storage miner
 
@@ -59,7 +60,7 @@ GPUs are a must for getting block rewards. These graphics cards have been confir
 
 You need to have Go installed on your system. Head over to the [Golang Install docs](https://golang.org/doc/install) to find out how to install Go for your operating system.
 
-You can check that you have Go install properly by asking for the version number in a terminal window:
+You can check that you have Go installed properly by asking for the version number in a terminal window:
 
 ```bash
 go version
