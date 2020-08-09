@@ -45,7 +45,7 @@ AMD processors have access to the [Intel SHA Extensions](https://en.wikipedia.or
 
 ##### Graphics cards
 
-GPUs are a must for getting block rewards. These graphics cards have been confirmed to generate SNARKs quickly enough to successfully mine blocks on the Lotus Testnet: asdasdas
+GPUs are a must for getting block rewards. These graphics cards have been confirmed to generate SNARKs quickly enough to successfully mine blocks on the Lotus Testnet:
 
 - GeForce RTX 2080 Ti
 - GeForce RTX 2080 SUPER
