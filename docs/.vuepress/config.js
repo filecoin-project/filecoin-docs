@@ -1,5 +1,5 @@
 // .vuepress/config.js
-  
+
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 
 module.exports = {
@@ -80,18 +80,14 @@ module.exports = {
             ]
           },
           {
+            title: 'Install Filecoin',
+            path: '/install-filecoin',
+            children: ['/install-filecoin/set-up']
+          },
+          {
             title: 'How-tos',
             path: '/how-to/',
             children: [
-              {
-                title: 'Install Filecoin',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                    '/how-to/install-filecoin',
-                    '/how-to/networks'
-                ]
-              },
               {
                 title: 'Store Data',
                 sidebarDepth: 1,
@@ -109,10 +105,7 @@ module.exports = {
           {
             title: 'Mine',
             path: '/mine/',
-             children: [
-               '/mine/connectivity',
-                '/mine/spacerace'
-          ]
+            children: ['/mine/connectivity', '/mine/spacerace']
           },
           {
             title: 'Build',

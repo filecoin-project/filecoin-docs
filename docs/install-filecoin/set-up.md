@@ -1,74 +1,74 @@
 ---
 title: Set up
-description: Set up the Lotus Filecoin client on your computer, ready to be used as a node or in a mining operation.
+description: Set up the Lotus Filecoin client on your computer, ready to be used as a single node or in a mining operation.
 ---
 
-| macOS                                                  | Linux                                                       |
-| ------------------------------------------------------ | ----------------------------------------------------------- |
-| [![The macOS logo.](./images/apple-icon.png)](#mac-os) | [![The Linux "Tux" logo.](./images/linux-icon.png)](#linux) |
+# Set up
+
+Install the Lotus Filecoin client on your system, ready to be used as a single node or in a mining operation.
 
 ## macOS
 
 1. Make sure you have `xcode-select` and Homebrew installed:
 
-    ```bash
-    $ xcode-select --install
+   ```bash
+   $ xcode-select --install
 
-    $ brew --version
-    ```
+   $ brew --version
+   ```
 
 1. Install the dependencies for Lotus:
 
-    ```bash
-    $ brew install go bzr jq pkg-config rustup git
-    ```
+   ```bash
+   $ brew install go bzr jq pkg-config rustup git
+   ```
 
-1.  Clone the Lotus repository:
+1. Clone the Lotus repository:
 
-    ```bash
-    git clone https://github.com/filecoin-project/lotus.git
-    ```
+   ```bash
+   git clone https://github.com/filecoin-project/lotus.git
+   ```
 
-1.  _Build_ and _Make_ the Lotus project:
+1. _Build_ and _Make_ the Lotus project:
 
-    ```bash
-    make clean && make all
-    sudo make install
-    ```
+   ```bash
+   make clean && make all
+   sudo make install
+   ```
 
-    This process might take a while
+   This process might take a while
 
-1.  Once the build process has finished, you're left with a `lotus` executable:
+1. Once the build process has finished, you're left with a `lotus` executable:
 
-    ```bash
-    ./lotus --version
+   ```bash
+   ./lotus --version
 
-    > lotus version 0.4.1+git.7d7496e1
-    ```
+   > lotus version 0.4.1+git.7d7496e1
+   ```
 
 That's it! You've now got Lotus installed on your system. If you'd like to be able to run `lotus` from anywhere on your system:
 
 1. Move the `lotus` executable to `/usr/local`:
 
-    ```bash
-    sudo mv lotus /usr/local/bin
-    ```
+   ```bash
+   sudo mv lotus /usr/local/bin
+   ```
 
 1. Add `lotus` to your system PATH:
 
-    ```bash
-    echo "export PATH=\$PATH:/usr/local/bin/lotus" >> ~/.profile
-    source ~/.profile
-    ```
+   ```bash
+   echo "export PATH=\$PATH:/usr/local/bin/lotus" >> ~/.profile
+   source ~/.profile
+   ```
 
 1. You can now run `lotus` commands from anywhere:
 
-    ```bash
-    cd ~
-    lotus --version
+   ```bash
+   cd ~
+   lotus --version
 
-    > lotus version 0.4.1+git.7d7496e1
-    ```
+   > lotus version 0.4.1+git.7d7496e1
+   ```
 
 ## Linux
 
@@ -106,25 +106,25 @@ That's it! You've now got Lotus installed on your system. If you'd like to be ab
 
 1. Move the `lotus` executable to `/usr/local`:
 
-    ```bash
-    sudo mv lotus /usr/local/bin
-    ```
+   ```bash
+   sudo mv lotus /usr/local/bin
+   ```
 
 1. Add `lotus` to your system PATH:
 
-    ```bash
-    echo "export PATH=\$PATH:/usr/local/bin/lotus" >> ~/.profile
-    source ~/.profile
-    ```
+   ```bash
+   echo "export PATH=\$PATH:/usr/local/bin/lotus" >> ~/.profile
+   source ~/.profile
+   ```
 
 1. You can now run `lotus` commands from anywhere:
 
-    ```bash
-    cd ~
-    lotus --version
+   ```bash
+   cd ~
+   lotus --version
 
-    > lotus version 0.4.1+git.7d7496e1
-    ```
+   > lotus version 0.4.1+git.7d7496e1
+   ```
 
 ## Troubleshooting
 

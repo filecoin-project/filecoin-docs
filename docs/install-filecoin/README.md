@@ -9,11 +9,11 @@ Lotus is an implementation of the Filecoin specification written in Go. You can 
 
 There are three types of Lotus client available:
 
-| Client | Purpose |
-| ------------- | ---------- |
-| Lotus node | An interface between your computer and the Filecoin network. All transactions, queries, and interactions with the Filecoin network must pass through a Lotus node. |
+| Client        | Purpose                                                                                                                                                                         |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Lotus node    | An interface between your computer and the Filecoin network. All transactions, queries, and interactions with the Filecoin network must pass through a Lotus node.              |
 | Storage miner | The Lotus storage miner queries a Lotus node for the latest tipset on-chain, produces a block on that tipset, and submits it to the node to be broadcast to the entire network. |
-| Seal worker | An extra process that can offload heavy processing tasks from your Lotus Storage miner. |
+| Seal worker   | An extra process that can offload heavy processing tasks from your Lotus Storage miner.                                                                                         |
 
 ## Requirements
 
@@ -45,7 +45,7 @@ AMD processors have access to the [Intel SHA Extensions](https://en.wikipedia.or
 
 ##### Graphics cards
 
-GPUs are a must for getting block rewards. These graphics cards have been confirmed to generate [SNARKs](https://en.wikipedia.org/wiki/SNARK_(theorem_prover)) quickly enough to successfully mine blocks on the Lotus Testnet:
+GPUs are a must for getting block rewards. These graphics cards have been confirmed to generate [SNARKs](<https://en.wikipedia.org/wiki/SNARK_(theorem_prover)>) quickly enough to successfully mine blocks on the Lotus Testnet:
 
 - GeForce RTX 2080 Ti
 - GeForce RTX 2080 SUPER
@@ -53,7 +53,6 @@ GPUs are a must for getting block rewards. These graphics cards have been confir
 - GeForce GTX 1080 Ti
 - GeForce GTX 1080
 - GeForce GTX 1060
-
 
 #### Seal worker
 
