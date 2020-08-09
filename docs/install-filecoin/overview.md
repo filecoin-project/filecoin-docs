@@ -17,7 +17,7 @@ There are three types of Lotus client available:
 
 ## Requirements
 
-The requirements of your system will change depending on the type of client you are running: a node, seal worker, or a storage worker.
+The requirements of your system will change depending on the type of client you are running: a node, a storage miner, or seal worker.
 
 ### Hardware
 
@@ -53,6 +53,17 @@ GPUs are a must for getting block rewards. These graphics cards have been confir
 - GeForce GTX 1080 Ti
 - GeForce GTX 1080
 - GeForce GTX 1060
+
+
+#### Seal worker
+
+The specifications for a system running a seal worker are similar to those of a standard Lotus node:
+
+| Processor                                      | Memory   | Storage space         |
+| ---------------------------------------------- | -------- | --------------------- |
+| 4 cores<br>8 threads<br> 2.5GHz base frequency | 8GB DDR4 | 200GB (SSD preferred) |
+
+It is common to run both a Lotus node and a seal worker on the same system.
 
 ### Software
 
