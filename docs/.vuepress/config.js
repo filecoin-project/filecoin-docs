@@ -121,8 +121,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Examples',
-              collapsable: false,
+              title: 'Example Apps',
               sidebarDepth: 2,
               path: '/build/examples/sample-architectures/',
               children: [
