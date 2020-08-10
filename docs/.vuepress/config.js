@@ -2,6 +2,19 @@
 
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 
+const getStoreSection = () => ({
+  title: 'Store Data',
+  collapsable: false,
+  path: '/how-to/store/prepare-data/',
+  children: [
+    '/how-to/store/prepare-data',
+    '/how-to/store/tokens',
+    '/how-to/store/making-storage-deals',
+    '/how-to/store/retrieving-data',
+    '/how-to/store/large-files'
+  ]
+})
+
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -77,35 +90,27 @@ module.exports = {
             '/mine/mining-troubleshooting'
           ],
           '/build/': [
-            '',
             {
               title: 'Start Building',
               collapsable: false,
+              path: '/build/start-building/interacting-with-the-network/',
               children: ['start-building/interacting-with-the-network']
             },
             {
               title: 'Core Products',
               collapsable: false,
+              path: '/build/core-products/filecoin-backed-pinning-services/',
               children: [
                 'core-products/filecoin-backed-pinning-services',
                 'core-products/powergate',
                 'core-products/protocol-implementations'
               ]
             },
-            {
-              title: 'Store Data',
-              collapsable: false,
-              children: [
-                '/how-to/store/prepare-data',
-                '/how-to/store/tokens',
-                '/how-to/store/making-storage-deals',
-                '/how-to/store/retrieving-data',
-                '/how-to/store/large-files'
-              ]
-            },
+            getStoreSection(),
             {
               title: 'Developer Tools',
               collapsable: false,
+              path: '/build/developer-tools/wallets-signing-tools-api-clients/',
               children: [
                 'developer-tools/wallets-signing-tools-api-clients',
                 [
@@ -119,12 +124,13 @@ module.exports = {
               title: 'Examples',
               collapsable: false,
               sidebarDepth: 2,
+              path: '/build/examples/sample-architectures/',
               children: [
                 'examples/sample-architectures',
                 ['examples/web-applications/overview', 'Web Applications'],
                 {
                   title: 'Simple Pinning Service',
-                  path: '/build/examples/simple-pinning-service/overview',
+                  path: '/build/examples/simple-pinning-service/overview/',
                   collapsable: false,
                   children: [
                     '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
@@ -138,7 +144,7 @@ module.exports = {
                 },
                 {
                   title: 'Network Inspector',
-                  path: '/build/examples/network-inspector/overview',
+                  path: '/build/examples/network-inspector/overview/',
                   collapsable: false,
                   children: [
                     '/build/examples/network-inspector/lotus-and-go-ipfs-interactions',
@@ -152,7 +158,7 @@ module.exports = {
                 },
                 {
                   title: 'Meme Marketplace',
-                  path: '/build/examples/meme-marketplace/overview',
+                  path: '/build/examples/meme-marketplace/overview/',
                   collapsable: false,
                   children: [
                     '/build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
@@ -196,7 +202,8 @@ module.exports = {
                   sidebarDepth: 1,
                   collapsable: false,
                   children: ['/how-to/install-filecoin', '/how-to/networks']
-                }
+                },
+                getStoreSection()
               ]
             },
             {
