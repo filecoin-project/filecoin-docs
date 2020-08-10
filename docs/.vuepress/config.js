@@ -66,205 +66,190 @@ module.exports = {
           }
         },
         nav: require('./nav/en'),
-        sidebar: [
-          {
-            title: 'Introduction',
-            path: '/introduction/',
-            children: [
-              '/introduction/new-to-web3',
-              '/introduction/what-is-filecoin',
-              '/introduction/why-filecoin',
-              '/introduction/ipfs-and-filecoin',
-              '/introduction/filecoin-compared-to',
-              '/introduction/faq'
-            ]
-          },
-          {
-            title: 'How-tos',
-            path: '/how-to/',
-            children: [
-              {
-                title: 'Install Filecoin',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/how-to/install-filecoin', '/how-to/networks']
-              },
-              {
-                title: 'Store Data',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/store/prepare-data',
-                  '/how-to/store/tokens',
-                  '/how-to/store/making-storage-deals',
-                  '/how-to/store/retrieving-data',
-                  '/how-to/store/large-files'
-                ]
-              }
-            ]
-          },
-          {
-            title: 'Mine',
-            path: '/mine/',
-            children: [
-              '/mine/storage-mining',
-              '/mine/lotus-seal-worker',
-              '/mine/setting-a-static-port',
-              '/mine/connectivity',
-              '/mine/spacerace',
-              '/mine/mining-troubleshooting'
-            ]
-          },
-          {
-            title: 'Build',
-            path: '/build/',
-            children: [
-              {
-                title: 'Start Building',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/build/start-building/interacting-with-the-network']
-              },
-              {
-                title: 'Core Products',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/build/core-products/filecoin-backed-pinning-services',
-                  '/build/core-products/powergate',
-                  '/build/core-products/protocol-implementations'
-                ]
-              },
-              {
-                title: 'Developer Tools',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/build/developer-tools/wallets-signing-tools-api-clients',
-                  [
-                    'https://github.com/filecoin-project/docs/wiki#community-resources',
-                    'Filecoin Community Resources'
-                  ],
-                  ['http://filecoin.onrender.com/', 'Component Design System']
-                ]
-              },
-              {
-                title: 'Examples',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/build/examples/sample-architectures',
-                  {
-                    title: 'Simple Pinning Service',
-                    sidebarDepth: 2,
-                    collapsable: false,
-                    children: [
-                      '/build/examples/simple-pinning-service/overview',
-                      '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
-                      '/build/examples/simple-pinning-service/step-1-powergate-setup',
-                      '/build/examples/simple-pinning-service/step-2-react-app-setup',
-                      '/build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
-                      '/build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
-                      '/build/examples/simple-pinning-service/step-5-shut-down-the-application',
-                      '/build/examples/simple-pinning-service/summary'
-                    ]
-                  },
-                  {
-                    title: 'Web Applications',
-                    sidebarDepth: 1,
-                    collapsable: false,
-                    children: ['/build/examples/web-applications/overview']
-                  },
-                  {
-                    title: 'Network Inspector',
-                    sidebarDepth: 2,
-                    collapsable: false,
-                    children: [
-                      'build/examples/network-inspector/overview',
-                      'build/examples/network-inspector/lotus-and-go-ipfs-interactions',
-                      'build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
-                      'build/examples/network-inspector/step-2-run-the-react-app',
-                      'build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
-                      'build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
-                      'build/examples/network-inspector/step-5-shut-down-the-application',
-                      'build/examples/network-inspector/summary'
-                    ]
-                  },
-                  {
-                    title: 'Meme Marketplace',
-                    sidebarDepth: 2,
-                    collapsable: false,
-                    children: [
-                      'build/examples/meme-marketplace/overview',
-                      'build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
-                      'build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
-                      'build/examples/meme-marketplace/step-2-run-react-app',
-                      'build/examples/meme-marketplace/step-3-run-hub-auth-server',
-                      'build/examples/meme-marketplace/step-4-connecting-app-with-auth-server',
-                      'build/examples/meme-marketplace/step-5-connecting-app-with-blockchain',
-                      'build/examples/meme-marketplace/step-6-explore-app',
-                      'build/examples/meme-marketplace/step-7-shut-down-the-application',
-                      'build/examples/meme-marketplace/summary'
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-
-          {
-            title: 'Reference',
-            path: '/reference/',
-            children: [
-              ['/reference/glossary', 'Glossary'],
-              ['https://github.com/filecoin-project/specs', 'Specification'],
-              ['https://lotu.sh/', 'Lotus tutorial']
-            ]
-          },
-          {
-            title: 'Community',
-            path: '/community/',
-            children: [
-              {
-                title: 'Join the community',
-                sidebarDepth: 2,
-                collapsable: false,
-                children: [
-                  '/community/contribute/ways-to-contribute',
-                  '/community/chat-and-discussion-forums',
-                  ['https://proto.school/#/events', 'ProtoSchool workshops'],
-                  '/community/social-media/social-media'
-                ]
-              },
-              {
-                title: 'Write the docs',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/community/contribute/grammar-formatting-and-style',
-                  '/community/contribute/writing-guide',
-                  '/community/contribute/contribution-tutorial'
-                ]
-              }
-            ]
-          },
-          {
-            title: 'Project',
-            path: '/project/',
-            children: [
-              [
-                'https://app.instagantt.com/shared/s/1152992274307505/latest',
-                'Roadmap'
-              ],
-              ['https://research.filecoin.io/', 'Research'],
-              '/project/related-projects',
-              [
-                'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
-                'Code of conduct'
+        sidebar: {
+          '/mine/': [
+            '/mine/storage-mining',
+            '/mine/lotus-seal-worker',
+            '/mine/setting-a-static-port',
+            '/mine/connectivity',
+            '/mine/spacerace',
+            '/mine/mining-troubleshooting'
+          ],
+          '/build/': [
+            {
+              title: 'Start Building',
+              sidebarDepth: 1,
+              collapsable: false,
+              children: ['/build/start-building/interacting-with-the-network']
+            },
+            {
+              title: 'Core Products',
+              sidebarDepth: 1,
+              collapsable: false,
+              children: [
+                '/build/core-products/filecoin-backed-pinning-services',
+                '/build/core-products/powergate',
+                '/build/core-products/protocol-implementations'
               ]
-            ]
-          }
-        ]
+            },
+            {
+              title: 'Store Data',
+              sidebarDepth: 1,
+              collapsable: false,
+              children: [
+                '/how-to/store/prepare-data',
+                '/how-to/store/tokens',
+                '/how-to/store/making-storage-deals',
+                '/how-to/store/retrieving-data',
+                '/how-to/store/large-files'
+              ]
+            },
+            {
+              title: 'Developer Tools',
+              sidebarDepth: 1,
+              collapsable: false,
+              children: [
+                '/build/developer-tools/wallets-signing-tools-api-clients',
+                [
+                  'https://github.com/filecoin-project/docs/wiki#community-resources',
+                  'Filecoin Community Resources'
+                ],
+                ['http://filecoin.onrender.com/', 'Component Design System']
+              ]
+            },
+            {
+              title: 'Examples',
+              sidebarDepth: 2,
+              collapsable: false,
+              children: [
+                '/build/examples/sample-architectures',
+                {
+                  title: 'Web Applications',
+                  sidebarDepth: 2,
+                  path: '/build/examples/web-applications/overview'
+                },
+                {
+                  title: 'Simple Pinning Service',
+                  sidebarDepth: 2,
+                  path: '/build/examples/simple-pinning-service/overview',
+                  children: [
+                    '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
+                    '/build/examples/simple-pinning-service/step-1-powergate-setup',
+                    '/build/examples/simple-pinning-service/step-2-react-app-setup',
+                    '/build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
+                    '/build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
+                    '/build/examples/simple-pinning-service/step-5-shut-down-the-application',
+                    '/build/examples/simple-pinning-service/summary'
+                  ]
+                },
+                {
+                  title: 'Network Inspector',
+                  sidebarDepth: 2,
+                  path: '/build/examples/network-inspector/overview',
+                  children: [
+                    '/build/examples/network-inspector/lotus-and-go-ipfs-interactions',
+                    '/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
+                    '/build/examples/network-inspector/step-2-run-the-react-app',
+                    '/build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
+                    '/build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
+                    '/build/examples/network-inspector/step-5-shut-down-the-application',
+                    '/build/examples/network-inspector/summary'
+                  ]
+                },
+                {
+                  title: 'Meme Marketplace',
+                  sidebarDepth: 2,
+                  path: '/build/examples/meme-marketplace/overview',
+                  children: [
+                    '/build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
+                    '/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
+                    '/build/examples/meme-marketplace/step-2-run-react-app',
+                    '/build/examples/meme-marketplace/step-3-run-hub-auth-server',
+                    '/build/examples/meme-marketplace/step-4-connecting-app-with-auth-server',
+                    '/build/examples/meme-marketplace/step-5-connecting-app-with-blockchain',
+                    '/build/examples/meme-marketplace/step-6-explore-app',
+                    '/build/examples/meme-marketplace/step-7-shut-down-the-application',
+                    '/build/examples/meme-marketplace/summary'
+                  ]
+                }
+              ]
+            }
+          ],
+          '/reference/': [
+            ['/reference/glossary', 'Glossary'],
+            ['https://github.com/filecoin-project/specs', 'Specification'],
+            ['https://lotu.sh/', 'Lotus tutorial']
+          ],
+          '/': [
+            {
+              title: 'Introduction',
+              path: '/introduction/',
+              children: [
+                '/introduction/new-to-web3',
+                '/introduction/what-is-filecoin',
+                '/introduction/why-filecoin',
+                '/introduction/ipfs-and-filecoin',
+                '/introduction/filecoin-compared-to',
+                '/introduction/faq'
+              ]
+            },
+            {
+              title: 'How-tos',
+              path: '/how-to/',
+              children: [
+                {
+                  title: 'Install Filecoin',
+                  sidebarDepth: 1,
+                  collapsable: false,
+                  children: ['/how-to/install-filecoin', '/how-to/networks']
+                }
+              ]
+            },
+            {
+              title: 'Community',
+              path: '/community/',
+              children: [
+                {
+                  title: 'Join the community',
+                  sidebarDepth: 2,
+                  collapsable: false,
+                  children: [
+                    '/community/contribute/ways-to-contribute',
+                    '/community/chat-and-discussion-forums',
+                    ['https://proto.school/#/events', 'ProtoSchool workshops'],
+                    '/community/social-media/social-media'
+                  ]
+                },
+                {
+                  title: 'Write the docs',
+                  sidebarDepth: 1,
+                  collapsable: false,
+                  children: [
+                    '/community/contribute/grammar-formatting-and-style',
+                    '/community/contribute/writing-guide',
+                    '/community/contribute/contribution-tutorial'
+                  ]
+                }
+              ]
+            },
+            {
+              title: 'Project',
+              path: '/project/',
+              children: [
+                [
+                  'https://app.instagantt.com/shared/s/1152992274307505/latest',
+                  'Roadmap'
+                ],
+                ['https://research.filecoin.io/', 'Research'],
+                '/project/related-projects',
+                [
+                  'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
+                  'Code of conduct'
+                ]
+              ]
+            }
+          ]
+        }
       }
     }
   },
