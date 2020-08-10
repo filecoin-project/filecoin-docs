@@ -1,9 +1,9 @@
 ---
 name: Documentation Issue
-about: Report a problem with existing documentation
-title: "[DOCS ISSUE] (add your title here!)"
-labels: 'Content Improvement'
-assignees: ''
+about: Report a problem with existing documentation.
+title: "Describe the problem, bug, typo, or other issue in one sentence."
+labels: 'need/triage'
+assignees: 'johnnymatthews'
 
 ---
 

@@ -300,8 +300,8 @@ To make a storage deal for data that is stored in IPFS:
 
 1. **Setup IPFS API client:** In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L4), import the ipfs object returned by the `js-ipfs-http-client` in the [src/utils/ipfs.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/utils/ipfs.js#L3) file.
 
-```
-import { ipfs } from "../../utils/ipfs";
+```js
+import { ipfs } from '../../utils/ipfs'
 ```
 
 2. **Create a method to upload the file to Filecoin:** In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L59), create a method called `uploadToFilecoin`.
@@ -525,24 +525,6 @@ If the deal is successful, the button will show an "Active" deal state (`deal.St
                 </p>
               </div>
               <ReactJson src={deal} collapsed={true} name="Deal Details" />
-              <br />
-              <br />
-              {/* {deal.stateName === "Active" ? (
-              <button
-                className="btn btn-primary mb-2"
-                onClick={() => {
-                  console.log({
-                    cid: proposalCidToCID[deal.ProposalCid["/"]],
-                  });
-                  getDataFromFilecoinNetwork({
-                    cid: proposalCidToCID[deal.ProposalCid["/"]],
-                    walletAddress: wallet.address,
-                  });
-                }}
-              >
-                Get Data from Filecoin
-              </button>
-            ) : null} */}
             </div>
           </div>
         )
@@ -560,6 +542,134 @@ If the deal is successful, the button will show an "Active" deal state (`deal.St
 And voila! A successful deal.
 
 ![When a deal has been successfully made, the application shows the deal information in the "Deal Status" section.](./images/active-deal.png)
+
+## Markets Page: Fetching Data
+
+Look at:
+
+- [filecoin-network-inspector/local/src/pages/Market/index.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/pages/Market/index.js): To understand how the UI works.
+- [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js): To understand how to create and execute a retrieval deal.
+
+1. **Fetching Data from the IPFS Network**: In [filecoin-network-inspector/src/pages/Market/index.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/pages/Market/index.js#L111), a link redirects the user to the HTTP gateway, which fetches the CID (`proposalCidToCID[deal.ProposalCid['/']]`) data from the go-ipfs IPFS node.
+
+```jsx
+<a
+  href={`http://localhost:8080/ipfs/${proposalCidToCID[deal.ProposalCid['/']]}`}
+  target="_blank">
+  {proposalCidToCID[deal.ProposalCid['/']]}
+</a>
+```
+
+::: tip
+There is no fee for retrieving data from IPFS.
+:::
+
+2. **Fetching data from the Filecoin Network**
+
+To fetch data from Filecoin, you must create a retrieval deal with a node. It’s best to create a deal with a node that is storing the file, but you can create the retrieval deal with any Lotus node. Usually you will first scan the nodes to find the best one for making the deal, but that is unnecessary on the devnet as there is only one node.
+
+To fetch data from Filecoin you will perform the following functions, described below:
+
+1. Check for nodes that host the data you wish to receive.
+2. Choose several nodes that could retrieve the data, and ask them for an offer for the retrieval.
+3. Choose the node you want to fetch the data.
+4. Create and execute an retreival offer.
+
+### Step 1: Checking for nodes that host the data
+
+In [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js#L134), to check if a lotus node has your data locally, use the `nodeClient.clientHasLocal` function.
+
+```js
+// Check if the cid is available locally on the node or not
+const hasLocal = await nodeClient.clientHasLocal({ '/': payload.cid })
+```
+
+This function will return `hasLocal`, a boolean value indicating whether a particular node has your data or not.
+
+### Step 2: Request offers for data retrieval
+
+In [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js#L137), to check what node gives you the best deal for data retrieval, select a suitable nodes to query via `nodeClient.clientFindData` function to get an offer.
+
+::: tip
+As the setup used in this example only has 1 node, we query only 1 node. In case of devnet or mainnet, you would need to query more nodes to find a suitable retrieval offer.
+:::
+
+```js
+// Fetch the retrieval offer from the lotus node
+const offers = await nodeClient.clientFindData({ '/': payload.cid })
+```
+
+The `offers` array can have multiple offers. Following is an example of a single offer:
+
+```json
+{
+  "Err": "",
+  "Root": { "/": "QmZvDXX1ng6hKocK1HsnE2Ma8tTNBeSwoGjKLBqSfXuvjt" },
+  "Size": 2032,
+  "MinPrice": "4064",
+  "PaymentInterval": 1048576,
+  "PaymentIntervalIncrease": 1048576,
+  "Miner": "t0100",
+  "MinerPeerID": "12D3KooWQ2uwA1r6X3Gb2iYvChhHQXLzLEdKfwrv3uZiRMCssRTM"
+}
+```
+
+Following is an explanation of the fields in the offer:
+
+- `Err`: Error message.
+- `Root`: The CID of the data to be retrieved.
+- `Size`: Size of data to be retrieved in bytes.
+- `MinPrice`: The minimum price at which the lotus node is willing to create a retrieval deal in FIL.
+- `PaymentInterval`: TODO
+- `PaymentIntervalIncrease`: TODO
+- `Miner`: The name of the miner.
+- `MinerPeerID`: PeerID of the miner.
+
+### Step 3: Choose the node for data retrieval
+
+Based on the offers you receive choose the node (`Miner`, `MinerPeerID`) for the retrieval deal.
+
+### Step 4: Create a retrieval offer
+
+In [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js#L139), the retrieval offer is your order for the data retrieval. When it is executed, the file is retrieved and you are charged the fee that you agreed upon for the retrieval. Following is an example of a `retrievalOffer`:
+
+```js
+const retrievalOffer = {
+  Root: offers[0].Root,
+  Size: offers[0].Size,
+  Total: offers[0].MinPrice,
+  PaymentInterval: offers[0].PaymentInterval,
+  PaymentIntervalIncrease: offers[0].PaymentIntervalIncrease,
+  Client: payload.walletAddress,
+  Miner: offers[0].Miner,
+  MinerPeerID: offers[0].MinerPeerID
+}
+```
+
+The retrieval offer contains the data of the node you choose, based on the `offers` array.
+
+### Step 5: Create the retrieval deal
+
+In [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js#L150),create the retrieval deal using `retrieveClient.clientRetrieve` function:
+
+```js
+const error = await nodeClient.clientRetrieve(retrievalOffer, null)
+if (!error) {
+  document.getElementById('fetchData').innerText = 'Data fetched Successfully'
+  window.open(`http://localhost:7070/ipfs/${payload.cid}`, '_blank')
+} else {
+  document.getElementById('fetchData').innerText =
+    'Error while fetching data. Try again.'
+}
+```
+
+The `nodeClient.clientRetrieve` function executes the retrieval deal according to the conditions in `retrievalOffer` parameter and returns `error`, if there is one.
+
+If there is no error, open a new browser tab using `window.open` with the URL: `http://localhost:7070/ipfs/${payload.cid}`. This URL fetches the retrieved data from the HTTP gateway endpoint exposed on port `7070` via the IPFS integration, [as discussed in step 1](./step-1-start-lotus-devnet-and-go-ipfs.md).
+
+::: tip
+This may take a few seconds on devnet, but it will take much longer on the mainnet.
+:::
 
 ## Step 4d: Deals Page
 

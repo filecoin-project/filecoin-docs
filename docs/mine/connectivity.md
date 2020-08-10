@@ -13,6 +13,10 @@ Filecoin miners, like participants in all peer-to-peer protocols, require a stea
 
 The following steps are highly recommended for all miners who wish to successfully accept storage and retrieval deals.
 
+**Prefer a more visual approach?** Check out this fantastic video for a walkthrough on the processes of testing and debugging connectivity issues, as well as setting up port forwarding via UPnP on a local router:
+
+@[youtube](https://www.youtube.com/watch?v=POFsRfnb-lo)
+
 ## Setting multiaddresses
 
 You can set the multiaddresses that your miner listens on in a miner's `config.toml` file (by default located at `~/.lotusminer/config.toml`). 
@@ -51,8 +55,6 @@ lotus-miner net connect <address1> <address2>…
 
 In order to ensure that Filecoin packets are able to pass freely and unfiltered through a local firewall, it is highly recommended to set up port forwarding for a miner's `libp2p` address. By default, this port is randomised; for optimal connectivity, make sure that it is set to a static IP. 
 
-#### Option 1: Standard port forwarding
-
 To enable port forwarding on your local router:
 
 1. Browse to the management website for your home router (typically http://192.168.1.1)
@@ -63,10 +65,6 @@ To enable port forwarding on your local router:
     * Internal port: [CHOSEN PORT]
     * Protocol: TCP
     * IP Address: Private IP address of the host system running the miner
-
-#### Option 2: UPnP setup
-
-Alternatively, users with routers that support universal plug and play (UPnP) can set up their firewalling automatically by configuring their client's daemon to use the address `0.0.0.0`. Note that, if using UPnP, **standard port forwarding does not need to be set up,** and can cause issues if used in parallel.  
 
 ## Establishing a public IP address
 
@@ -143,3 +141,22 @@ Note: VIIRB uses open source software and hardware. You can also build your own 
 Another option is to use an [ssh reverse tunnel](https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it) to set up a proxy between your miner machine and a public IP machine.
 
 With this approach, you link a local port in your local address to a public port in the public IP machine, and then announce the public port + public IP address to the world. When peers dial back to you on your public multiaddr, the traffic is relayed through that tunnel to your miner machine.
+
+## Troubleshooting
+
+Connectivity issues? Please run the following steps:
+1. Go to [https://ping.eu/ping/](https://ping.eu/ping/) and check if the service can ping your public IP address
+1. Go to [https://ping.eu/port-chk/](https://ping.eu/port-chk/) and check if the port that leads to your miner is accessible
+1. From another network (another computer in another house, datacenter, etc), do telnet or netcat to the ip+port and a `/multistream/1.0.0` should come out
+1. Go to [https://calibration.spacerace.filecoin.io/check](https://calibration.spacerace.filecoin.io/check) to check if the dealbot can successfully get a query-ask from your miner
+1. Check deal details page for your miner at [https://calibration.spacerace.filecoin.io/](https://calibration.spacerace.filecoin.io/). If it shows an error “routing: not found”, follow the steps in [Setting Multiaddresses](#setting-multiaddresses) to set your `lotus-miner actor set-addrs`.
+
+| Error | What it means | How to fix |
+|---|---|---|
+| ClientQueryAsk failed : failed to open stream to miner: dial backoff | The connection to the remote host was attempted, but failed. | This may be due to issues with porting, IPs set within the config file, or simply no internet connectivity. |
+| ClientQueryAsk failed : failed to open stream to miner: failed to dial | The deal-bot was unable to open a network socket to the miner. | This is likely because the miner's IP is not publicly dialable, or a port issue. |
+| ClientQueryAsk failed : failed to open stream to miner: routing: not found | The deal-bot was unable to locate the miners IP and/or port. | Follow the instructions under the [multiaddresses section](#setting-multiaddresses) of this page. |
+| ClientQueryAsk failed : failed to read ask response: stream reset | Connectivity loss, usually due to a high packet droprate. | Check your internet connectivity and available bandwidth. |
+
+
+If you fail to succeed in any of these steps, please start a thread on #fil-net-calibration in the [Filecoin Slack](http://filecoin.io/slack). Please include all of the steps you have tried, their output, and your miner ID.

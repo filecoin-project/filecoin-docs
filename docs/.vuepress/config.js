@@ -146,30 +146,26 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/build/examples/sample-architectures',
-
-                  {
-                    title: 'Meme Marketplace',
-                    sidebarDepth: 1,
-                    collapsable: false,
-                    children: ['build/examples/meme-marketplace/overview']
-                  },
                   {
                     title: 'Simple Pinning Service',
-                    sidebarDepth: 1,
+                    sidebarDepth: 2,
                     collapsable: false,
-                    children: ['build/examples/simple-pinning-service/overview']
+                    children: [
+                      '/build/examples/simple-pinning-service/overview',
+                      '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
+                      '/build/examples/simple-pinning-service/step-1-powergate-setup',
+                      '/build/examples/simple-pinning-service/step-2-react-app-setup',
+                      '/build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
+                      '/build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
+                      '/build/examples/simple-pinning-service/step-5-shut-down-the-application',
+                      '/build/examples/simple-pinning-service/summary'
+                    ]
                   },
                   {
                     title: 'Web Applications',
                     sidebarDepth: 1,
                     collapsable: false,
-                    children: ['build/examples/web-applications/overview']
-                  },
-                  {
-                    title: 'Slate',
-                    sidebarDepth: 1,
-                    collapsable: false,
-                    children: ['build/examples/slate/overview']
+                    children: ['/build/examples/web-applications/overview']
                   },
                   {
                     title: 'Network Inspector',
@@ -185,6 +181,23 @@ module.exports = {
                       'build/examples/network-inspector/step-5-shut-down-the-application',
                       'build/examples/network-inspector/summary'
                     ]
+                  },
+                  {
+                    title: 'Meme Marketplace',
+                    sidebarDepth: 2,
+                    collapsable: false,
+                    children: [
+                      'build/examples/meme-marketplace/overview',
+                      'build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
+                      'build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
+                      'build/examples/meme-marketplace/step-2-run-react-app',
+                      'build/examples/meme-marketplace/step-3-run-hub-auth-server',
+                      'build/examples/meme-marketplace/step-4-connecting-app-with-auth-server',
+                      'build/examples/meme-marketplace/step-5-connecting-app-with-blockchain',
+                      'build/examples/meme-marketplace/step-6-explore-app',
+                      'build/examples/meme-marketplace/step-7-shut-down-the-application',
+                      'build/examples/meme-marketplace/summary'
+                    ]
                   }
                 ]
               }
@@ -195,8 +208,9 @@ module.exports = {
             title: 'Reference',
             path: '/reference/',
             children: [
+              ['/reference/glossary', 'Glossary'],
               ['https://github.com/filecoin-project/specs', 'Specification'],
-              ['https://lotu.sh/', 'lotus tutorial']
+              ['https://lotu.sh/', 'Lotus tutorial']
             ]
           },
           {
