@@ -68,6 +68,7 @@ module.exports = {
         nav: require('./nav/en'),
         sidebar: {
           '/mine/': [
+            '',
             '/mine/storage-mining',
             '/mine/lotus-seal-worker',
             '/mine/setting-a-static-port',
@@ -76,25 +77,23 @@ module.exports = {
             '/mine/mining-troubleshooting'
           ],
           '/build/': [
+            '',
             {
               title: 'Start Building',
-              sidebarDepth: 1,
               collapsable: false,
-              children: ['/build/start-building/interacting-with-the-network']
+              children: ['start-building/interacting-with-the-network']
             },
             {
               title: 'Core Products',
-              sidebarDepth: 1,
               collapsable: false,
               children: [
-                '/build/core-products/filecoin-backed-pinning-services',
-                '/build/core-products/powergate',
-                '/build/core-products/protocol-implementations'
+                'core-products/filecoin-backed-pinning-services',
+                'core-products/powergate',
+                'core-products/protocol-implementations'
               ]
             },
             {
               title: 'Store Data',
-              sidebarDepth: 1,
               collapsable: false,
               children: [
                 '/how-to/store/prepare-data',
@@ -106,10 +105,9 @@ module.exports = {
             },
             {
               title: 'Developer Tools',
-              sidebarDepth: 1,
               collapsable: false,
               children: [
-                '/build/developer-tools/wallets-signing-tools-api-clients',
+                'developer-tools/wallets-signing-tools-api-clients',
                 [
                   'https://github.com/filecoin-project/docs/wiki#community-resources',
                   'Filecoin Community Resources'
@@ -119,19 +117,15 @@ module.exports = {
             },
             {
               title: 'Examples',
-              sidebarDepth: 2,
               collapsable: false,
+              sidebarDepth: 2,
               children: [
-                '/build/examples/sample-architectures',
-                {
-                  title: 'Web Applications',
-                  sidebarDepth: 2,
-                  path: '/build/examples/web-applications/overview'
-                },
+                'examples/sample-architectures',
+                ['examples/web-applications/overview', 'Web Applications'],
                 {
                   title: 'Simple Pinning Service',
-                  sidebarDepth: 2,
                   path: '/build/examples/simple-pinning-service/overview',
+                  collapsable: false,
                   children: [
                     '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
                     '/build/examples/simple-pinning-service/step-1-powergate-setup',
@@ -144,8 +138,8 @@ module.exports = {
                 },
                 {
                   title: 'Network Inspector',
-                  sidebarDepth: 2,
                   path: '/build/examples/network-inspector/overview',
+                  collapsable: false,
                   children: [
                     '/build/examples/network-inspector/lotus-and-go-ipfs-interactions',
                     '/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
@@ -158,8 +152,8 @@ module.exports = {
                 },
                 {
                   title: 'Meme Marketplace',
-                  sidebarDepth: 2,
                   path: '/build/examples/meme-marketplace/overview',
+                  collapsable: false,
                   children: [
                     '/build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
                     '/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
@@ -176,7 +170,7 @@ module.exports = {
             }
           ],
           '/reference/': [
-            ['/reference/glossary', 'Glossary'],
+            'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
             ['https://lotu.sh/', 'Lotus tutorial']
           ],
