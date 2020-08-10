@@ -82,7 +82,10 @@ module.exports = {
           {
             title: 'Install Filecoin',
             path: '/install-filecoin',
-            children: ['/install-filecoin/install']
+            children: [
+              '/install-filecoin/requirements',
+              '/install-filecoin/install'
+            ]
           },
           {
             title: 'How-tos',
