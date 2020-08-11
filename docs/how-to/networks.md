@@ -37,7 +37,7 @@ Testnet is the most realistic simulation of the Filecoin mainnet to date:
 - Prospective storage clients can store and retrieve real data on the testnet. Clients can participate in deal-making workflows and storage + retrieval functionality.
 - As planned for mainnet, the minimum sector size on testnet is 32 GB.  and 64 GB sectors are also available.
 
-> Testnet is the network of record for the [Filecoin Space Race](https://filecoin.io/blog/getting-ready-testnet-incentives/), a 3-week incentivized mining competition taking place in August 2020. 
+> Testnet is currently significantly behind latest code. It will the network of record for the [Filecoin Space Race](https://filecoin.io/blog/getting-ready-testnet-incentives/), a 3-week incentivized mining competition taking place in August 2020. When the competition begins, we will launch the latest calibration net changes onto testnet.
 
 #### Testnet Details
 |Description  | Details |
@@ -71,9 +71,9 @@ Calibration is an up-to-date devnet, best for miners preparing for the [Space Ra
 | ------------------- | ------------------------------------------------------------ |
 | Sector Sizes        | 512MiB, 32GiB, 64GiB                                         |
 | Branch              | `ntwk-calibration`                                           |
-| Tag                 | [`ntwk-calibration-8.1.0`](https://github.com/filecoin-project/lotus/tree/ntwk-calibration-8.1.0) |
+| Tag                 | [`ntwk-calibration-8.8.0`](https://github.com/filecoin-project/lotus/tree/ntwk-calibration-8.8.0) |
 | Details page        | [calibration.fildev.network](http://www.calibration.fildev.network/) |
-| Next expected reset | July 31, 2020, with frequent resets through Aug 3. See Slack channels below for reset announcements. |
+| Next expected reset | Aug 14, 2020, with frequent resets until competition begins. See Slack channels below for reset announcements. |
 
 #### Calibration Devnet Resources
 
@@ -95,7 +95,7 @@ Nerpa is a long-lived devnet, **best for developers building storage apps**. Ner
 |Branch | `ntwk-nerpa` |
 |Tag | [`tag ntwk-nerpa-7.7.0`](https://github.com/filecoin-project/lotus/tree/ntwk-nerpa-7.7.0) |
 |Details page | [nerpa.fildev.network](http://www.nerpa.fildev.network/) |
-|Next expected reset | July 23, 2020 |
+|Next expected reset | August 12, 2020 |
 
 #### Nerpa Devnet Resources
 
