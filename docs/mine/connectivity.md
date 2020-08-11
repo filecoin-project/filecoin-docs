@@ -99,17 +99,6 @@ There are multiple ways to achieve this.
 
 _Note: Remember that libp2p (the underlying network stack of the Filecoin miner) listens on multiple addresses simultaneously. This means that adding a relay endpoint is not a tradeoff but an advantage, as it will be used as a last resort when direct connectivity can't be achieved._
 
-#### libp2p relay
-
-The [libp2p circuit relay](https://docs.libp2p.io/concepts/circuit-relay/) is a standard libp2p node that offers a service to any other relay node to route their traffic through it. You can deploy a libp2p circuit relay on a machine with a public IP address (e.g. a standard cloud provider), then instruct your miner to route all of its traffic through the libp2p relay by adding the new multiaddr to your miner.
-
-- [libp2p circuit relay: How it works](https://docs.libp2p.io/concepts/circuit-relay)
-- How to write a simple program that uses the relay [here](https://github.com/libp2p/go-libp2p-examples/blob/master/relay/main.go)
-
-#### Wireguard
-
-[Wireguard](https://www.wireguard.com) is a fast, simple, lean VPN. It is transparent for applications and presents itself as yet another network interface for your machine. Similar to the libp2p relay, you will need to deploy a Wireguard endpoint on a public machine, and route your miner's traffic through it.
-
 #### Ungleich IPv6 VPN Service
 
 [Ungleich](https://ungleich.ch) is a Swiss company offering a hosted [IPv6 VPN service powered by Wireguard](https://ungleich.ch/ipv6/vpn/).
@@ -125,9 +114,13 @@ Voilà, now you have a new network interface with an IPv6 address. All traffic u
 
 You can test your IPv6 connectivity using the service https://www.ultratools.com/tools/ping6
 
+#### Wireguard
+
+[Wireguard](https://www.wireguard.com) is a fast, simple, lean VPN. It is transparent for applications and presents itself as yet another network interface for your machine. Similar to the libp2p relay, you will need to deploy a Wireguard endpoint on a public machine, and route your miner's traffic through it.
+
 #### VPN IPv6 Router Box (VIIRB)
 
-Recently, Ungleich announced an even simpler setup: a VPN contained in a hardware box. This box is known as the VIIRB.
+Recently, Ungleich announced a VPN contained in a hardware box. This box is known as the VIIRB.
 
 You can order a VIIRB at:
 
@@ -135,6 +128,13 @@ You can order a VIIRB at:
 - [PIB (for faster connectivity)](https://ungleich.ch/u/products/pro-ipv6-box/)
 
 Note: VIIRB uses open source software and hardware. You can also build your own using the specifications for the [VIIRB box](https://ungleich.ch/u/products/viirb-ipv6-box) and its microcomputer, the [VoCore](https://vocore.io/v2u.html).
+
+#### libp2p relay
+
+The [libp2p circuit relay](https://docs.libp2p.io/concepts/circuit-relay/) is a standard libp2p node that offers a service to any other relay node to route their traffic through it. You can deploy a libp2p circuit relay on a machine with a public IP address (e.g. a standard cloud provider), then instruct your miner to route all of its traffic through the libp2p relay by adding the new multiaddr to your miner.
+
+- [libp2p circuit relay: How it works](https://docs.libp2p.io/concepts/circuit-relay)
+- How to write a simple program that uses the relay [here](https://github.com/libp2p/go-libp2p-examples/blob/master/relay/main.go)
 
 #### SSH Reverse Tunnel
 
@@ -149,14 +149,18 @@ Connectivity issues? Please run the following steps:
 1. Go to [https://ping.eu/port-chk/](https://ping.eu/port-chk/) and check if the port that leads to your miner is accessible
 1. From another network (another computer in another house, datacenter, etc), do telnet or netcat to the ip+port and a `/multistream/1.0.0` should come out
 1. Go to [https://calibration.spacerace.filecoin.io/check](https://calibration.spacerace.filecoin.io/check) to check if the dealbot can successfully get a query-ask from your miner
-1. Check deal details page for your miner at [https://calibration.spacerace.filecoin.io/](https://calibration.spacerace.filecoin.io/). If it shows an error “routing: not found”, follow the steps in [Setting Multiaddresses](#setting-multiaddresses) to set your `lotus-miner actor set-addrs`.
+1. Check deal details page for your miner at [https://calibration.spacerace.filecoin.io/](https://calibration.spacerace.filecoin.io/), and follow the [Common Errors](#common-errors) table below.
+
+## Common Errors
 
 | Error | What it means | How to fix |
 |---|---|---|
-| ClientQueryAsk failed : failed to open stream to miner: dial backoff | The connection to the remote host was attempted, but failed. | This may be due to issues with porting, IPs set within the config file, or simply no internet connectivity. |
-| ClientQueryAsk failed : failed to open stream to miner: failed to dial | The deal-bot was unable to open a network socket to the miner. | This is likely because the miner's IP is not publicly dialable, or a port issue. |
-| ClientQueryAsk failed : failed to open stream to miner: routing: not found | The deal-bot was unable to locate the miners IP and/or port. | Follow the instructions under the [multiaddresses section](#setting-multiaddresses) of this page. |
-| ClientQueryAsk failed : failed to read ask response: stream reset | Connectivity loss, usually due to a high packet droprate. | Check your internet connectivity and available bandwidth. |
+| ClientQueryAsk failed : failed to open stream to miner: dial backoff | The connection to the remote host was attempted, but failed. | This may be due to issues with porting, IPs set within the config file, or simply no internet connectivity. To fix, [establish a public IP address](https://docs.filecoin.io/mine/connectivity/#establishing-a-public-ip-address).|
+| ClientQueryAsk failed : failed to open stream to miner: failed to dial | The deal-bot was unable to open a network socket to the miner. | This is likely because the miner's IP is not publicly dialable, or a port issue. To fix, [establish a public IP address](https://docs.filecoin.io/mine/connectivity/#establishing-a-public-ip-address).|
+| ClientQueryAsk failed : failed to open stream to miner: routing: not found | The deal-bot was unable to locate the miners IP and/or port. | Follow the instructions under the [setting multiaddresses section](#setting-multiaddresses) on this page. |
+| ClientQueryAsk failed : failed to read ask response: stream reset | Connectivity loss, either due to a high packet loss rate or libp2p too aggressively dropping/failing connections. | [Fix underway.] Lotus team is currently working on a change to use libp2p's connection tagging feature, which will retry connections if dropped. ([go-fil-markets/#361](https://github.com/filecoin-project/go-fil-markets/issues/361)). No action needed from miners. |
+| StorageDealError PublishStorageDeals: found message with equal nonce as the one we are looking for | [Under investigation.] We suspect a chain validation error | No action needed from miners. |
+| ClientMinerQueryOffer - Retrieval query offer errored: get cid info: No state for /bafk2bz... | [Under investigation.] | No action needed from miners. |
 
 
 If you fail to succeed in any of these steps, please start a thread on #fil-net-calibration in the [Filecoin Slack](http://filecoin.io/slack). Please include all of the steps you have tried, their output, and your miner ID.
