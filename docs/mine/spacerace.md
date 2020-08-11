@@ -68,6 +68,11 @@ Any miner found misrepresenting their location will result in a *total forfeitur
 
 A public IP is required so that your miner can make storage and retrieval deals and compete in Space Race. This can achieved through a static IP, or a relay or VPN. See the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) page for more details.
 
+#### How exactly is deal success measured?
+Once your miner is online, the dealbot will automatically begin making storage and retrieval deals. Only deals made through the dealbot count towards deal success rate for this competition. To qualify for rewards, your miner must show >90% success in both storage and retreival deals during the competition period.
+
+To see a detailed log of all deal attempts for your miner, visit the [Calibration Dashboard](https://calibration.spacerace.filecoin.io/) and search for your miner ID.
+
 #### Can I run multiple miners?
 Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards.
 
