@@ -124,13 +124,13 @@ module.exports = {
               title: 'Example Apps',
               sidebarDepth: 2,
               path: '/build/examples/sample-architectures/',
+              collapsable: false,
               children: [
                 'examples/sample-architectures',
                 ['examples/web-applications/overview', 'Web Applications'],
                 {
                   title: 'Simple Pinning Service',
                   path: '/build/examples/simple-pinning-service/overview/',
-                  collapsable: false,
                   children: [
                     '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
                     '/build/examples/simple-pinning-service/step-1-powergate-setup',
@@ -144,7 +144,6 @@ module.exports = {
                 {
                   title: 'Network Inspector',
                   path: '/build/examples/network-inspector/overview/',
-                  collapsable: false,
                   children: [
                     '/build/examples/network-inspector/lotus-and-go-ipfs-interactions',
                     '/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
@@ -158,7 +157,6 @@ module.exports = {
                 {
                   title: 'Meme Marketplace',
                   path: '/build/examples/meme-marketplace/overview/',
-                  collapsable: false,
                   children: [
                     '/build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
                     '/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
@@ -175,9 +173,59 @@ module.exports = {
             }
           ],
           '/reference/': [
+            ['/', '<- Home'],
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
             ['https://lotu.sh/', 'Lotus tutorial']
+          ],
+          '/project/': [
+            {
+              title: 'Project',
+              path: '/project/',
+              collapsable: false,
+              children: [
+                [
+                  'https://app.instagantt.com/shared/s/1152992274307505/latest',
+                  'Roadmap'
+                ],
+                ['https://research.filecoin.io/', 'Research'],
+                '/project/related-projects',
+                [
+                  'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
+                  'Code of conduct'
+                ]
+              ]
+            }
+          ],
+          '/community/': [
+            {
+              title: 'Community',
+              path: '/community/',
+              collapsable: false,
+              children: [
+                {
+                  title: 'Join the community',
+                  sidebarDepth: 2,
+                  collapsable: false,
+                  children: [
+                    '/community/contribute/ways-to-contribute',
+                    '/community/chat-and-discussion-forums',
+                    ['https://proto.school/#/events', 'ProtoSchool workshops'],
+                    '/community/social-media/social-media'
+                  ]
+                },
+                {
+                  title: 'Write the docs',
+                  sidebarDepth: 1,
+                  collapsable: false,
+                  children: [
+                    '/community/contribute/grammar-formatting-and-style',
+                    '/community/contribute/writing-guide',
+                    '/community/contribute/contribution-tutorial'
+                  ]
+                }
+              ]
+            }
           ],
           '/': [
             {
@@ -205,49 +253,9 @@ module.exports = {
                 getStoreSection()
               ]
             },
-            {
-              title: 'Community',
-              path: '/community/',
-              children: [
-                {
-                  title: 'Join the community',
-                  sidebarDepth: 2,
-                  collapsable: false,
-                  children: [
-                    '/community/contribute/ways-to-contribute',
-                    '/community/chat-and-discussion-forums',
-                    ['https://proto.school/#/events', 'ProtoSchool workshops'],
-                    '/community/social-media/social-media'
-                  ]
-                },
-                {
-                  title: 'Write the docs',
-                  sidebarDepth: 1,
-                  collapsable: false,
-                  children: [
-                    '/community/contribute/grammar-formatting-and-style',
-                    '/community/contribute/writing-guide',
-                    '/community/contribute/contribution-tutorial'
-                  ]
-                }
-              ]
-            },
-            {
-              title: 'Project',
-              path: '/project/',
-              children: [
-                [
-                  'https://app.instagantt.com/shared/s/1152992274307505/latest',
-                  'Roadmap'
-                ],
-                ['https://research.filecoin.io/', 'Research'],
-                '/project/related-projects',
-                [
-                  'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
-                  'Code of conduct'
-                ]
-              ]
-            }
+            ['/mine/', 'Mine'],
+            ['/build/', 'Build'],
+            ['/reference/', 'Reference']
           ]
         }
       }
