@@ -1,9 +1,9 @@
 ---
-title: Meme Marketplace
+title: Meme marketplace
 description: Build a marketplace for sharing memes across the decentralized web using Filecoin, Textile, and IPFS!
 ---
 
-# Meme Marketplace
+# Meme marketplace
 
 In this tutorial, we will build a [meme marketplace](https://github.com/filecoin-shipyard/meme-marketplace) using [Textile Hub](https://docs.textile.io/hub/), which is a [Filecoin-backed IPFS Pinning Service](/build/core-products/filecoin-backed-pinning-services.md), and Ethereum ERC 721 standard.
 

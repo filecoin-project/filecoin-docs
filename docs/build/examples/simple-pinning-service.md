@@ -1,5 +1,5 @@
 ---
-title: Simple Pinning Service
+title: Simple pinning service
 description: Build a simple pinning service using Textile's Powergate.
 ---
 
