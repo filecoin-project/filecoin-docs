@@ -10,7 +10,7 @@
 
 * **Pledging sectors is not currently an easily automatable process.** This is something that we hope to improve on over the coming weeks.
 
-* **Pledging will often consume too much of the miner’s resources.** This can starve other tasks the miner is performing of computational power, and thus will fail to keep up with ChainNotify events (e.g. Wait Seed -- the one before commit), and keep pledging over and over again.
+* **Pledging will often consume too much of the miner’s resources.** This can starve other tasks the miner is performing of computational power, and thus will fail to keep up with ChainNotify events (e.g. Wait Seed -- the one before commit), and keep pledging over and over again. 
 
 
 
@@ -30,8 +30,10 @@
 ## Environment configuration
 <-- finishing up instruction set for these 3 -->
 * Importance of how chain data is stored and handled
-* Currently difficult to do remote lotus daemon
 * Proofs lib must be configured via environment variables
+
+* **It is currently difficult to use the Lotus daemon remotely.** This is something the Lotus team is looking to improve 
+
 
 
 ### Fork recovery
