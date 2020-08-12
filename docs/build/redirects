@@ -29,3 +29,6 @@
 /build/examples/simple-pinning-service/step-4-explore-pinning-service-app/ > /build/examples/simple-pinning-service/#step-4-explore-the-powergate-pinning-service-app
 /build/examples/simple-pinning-service/step-5-shut-down-the-application/ > /build/examples/simple-pinning-service/#shutting-down
 /build/examples/simple-pinning-service/summary/ > /build/examples/simple-pinning-service/#summary
+
+# Slate and powergate
+/build/examples/web-applications/overview/ > /build/examples/slate-and-powergate/
