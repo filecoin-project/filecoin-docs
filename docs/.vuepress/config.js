@@ -142,7 +142,7 @@ module.exports = {
                 ]
               },
               {
-                title: 'Examples',
+                title: 'Tutorials',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
