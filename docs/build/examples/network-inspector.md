@@ -206,7 +206,7 @@ export const getClient = (options = { nodeOrMiner: 'node', nodeNumber: 0 }) => {
 }
 ```
 
-If you are using the local-devnet setup mentioned in [Step 1 - Start lotus-devnet and go-ipfs](#step-1-start-lotus-devnet-and-go-ipfs.md), then the value of `API` is correct. Note that if you are using another setup, you may need to change this value (depends on the setup).
+If you are using the local-devnet setup mentioned in [Step 1 - Start lotus-devnet and go-ipfs](#step-1-start-lotus-devnet-and-go-ipfs), then the value of `API` is correct. Note that if you are using another setup, you may need to change this value (depends on the setup).
 
 The `wsUrl` shown in the code example above depends on which node you want to connect to:
 
@@ -897,7 +897,7 @@ if (!error) {
 
 The `nodeClient.clientRetrieve` function executes the retrieval deal according to the conditions in `retrievalOffer` parameter and returns `error`, if there is one.
 
-If there is no error, open a new browser tab using `window.open` with the URL: `http://localhost:7070/ipfs/${payload.cid}`. This URL fetches the retrieved data from the HTTP gateway endpoint exposed on port `7070` via the IPFS integration, [as discussed in step 1](#step-1-start-lotus-devnet-and-go-ipfs.md).
+If there is no error, open a new browser tab using `window.open` with the URL: `http://localhost:7070/ipfs/${payload.cid}`. This URL fetches the retrieved data from the HTTP gateway endpoint exposed on port `7070` via the IPFS integration, [as discussed in step 1](#step-1-start-lotus-devnet-and-go-ipfs).
 
 ::: tip
 This may take a few seconds on devnet, but it will take much longer on the mainnet.
