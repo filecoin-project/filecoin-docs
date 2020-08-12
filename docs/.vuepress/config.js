@@ -146,7 +146,6 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/build/examples/sample-architectures',
                   '/build/examples/meme-marketplace',
                   {
                     title: 'Simple Pinning Service',
