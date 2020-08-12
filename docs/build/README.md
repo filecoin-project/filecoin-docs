@@ -25,8 +25,8 @@ Read the resources in the **Start Building** section before you begin for helpfu
 **Examples** includes end-to-end code examples, tutorials, and walkthroughs for applications built on Filecoin. The examples section currently features:
 
 - [Meme Marketplace](./examples/meme-marketplace): An example application built on Textile Hub, a Filecoin-backed IPFS Pinning Service.
-- [Simple Pinning Service](./examples/simple-pinning-service/overview.md): An example application built on Powergate.
+- [Simple Pinning Service](./examples/simple-pinning-service): An example application built on Powergate.
 - [Slate](./examples/slate/overview.md): A production application built on Powergate.
-- [Network Inspector](./examples/network-inspector/overview.md): An example application built on lotus.
+- [Network Inspector](./examples/network-inspector): An example application built on lotus.
 
 Please suggest any additional content that you would find useful using the links below.
