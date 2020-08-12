@@ -5,7 +5,7 @@ description: Build a simple pinning service using Textile's Powergate.
 
 # Simple pinning service
 
-This tutorial shows how to build a [simple pinning service](https://github.com/filecoin-shipyard/powergate-pinning-service) using [Textile Powergate](../../core-products/powergate.md) via Textile's Powergate [Docker+ devnet](https://github.com/textileio/powergate/releases/download/v0.0.1-beta.10/powergate-docker-v0.0.1-beta.10.zip) setup (including a Powergate instance, a Lotus node and miner, and a go-ipfs node), and Textile [JS powergate-client](https://www.npmjs.com/package/@textile/powergate-client).
+This tutorial shows how to build a [simple pinning service](https://github.com/filecoin-shipyard/powergate-pinning-service) using [Textile Powergate](/build/core-products/powergate.md) via Textile's Powergate [Docker+ devnet](https://github.com/textileio/powergate/releases/download/v0.0.1-beta.10/powergate-docker-v0.0.1-beta.10.zip) setup (including a Powergate instance, a Lotus node and miner, and a go-ipfs node), and Textile [JS powergate-client](https://www.npmjs.com/package/@textile/powergate-client).
 
 ## Overview
 
@@ -48,7 +48,7 @@ Both Lotus and IPFS have several implementations for development in different en
 - [go-ipfs](https://github.com/ipfs/go-ipfs) is a Go implementation of the [IPFS protocol](https://ipfs.io/).
 - [Lotus](https://github.com/filecoin-project/lotus) is a Go implementation of the Filecoin protocol.
 
-There are several [protocol implementations](../../core-products/protocol-implementations.md) for Lotus, including implementations in other languages such as Rust ([forest](https://github.com/chainsafe/forest) implementation) and C++ ([fuhon](https://github.com/filecoin-project/cpp-filecoin) implementation). The core Lotus node runs the blockchain system, makes storage and retrieval deals, performs data transfers, supports block producer logic, and syncs and validates the chain. Lotus also provides a separate process for storage mining. Filecoin storage miners contribute to the network by producing sector commitments and _Proofs-of-Spacetime_ to prove they have been correctly storing storage client data. You can read more about the [interactions between storage miners and storage clients](../../../introduction/what-is-filecoin.md).
+There are several [protocol implementations](/build/core-products/protocol-implementations.md) for Lotus, including implementations in other languages such as Rust ([forest](https://github.com/chainsafe/forest) implementation) and C++ ([fuhon](https://github.com/filecoin-project/cpp-filecoin) implementation). The core Lotus node runs the blockchain system, makes storage and retrieval deals, performs data transfers, supports block producer logic, and syncs and validates the chain. Lotus also provides a separate process for storage mining. Filecoin storage miners contribute to the network by producing sector commitments and _Proofs-of-Spacetime_ to prove they have been correctly storing storage client data. You can read more about the [interactions between storage miners and storage clients](/introduction/what-is-filecoin.md).
 
 [go-ipfs](https://github.com/ipfs/go-ipfs) is a Go implementation of the [IPFS protocol](https://ipfs.io). There are also several IPFS implementations, including [js-ipfs](https://github.com/ipfs/js-ipfs).
 

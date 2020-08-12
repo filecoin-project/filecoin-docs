@@ -42,7 +42,7 @@ Before diving into the tutorial for this sample application, the next section gi
 
 ## Lotus and go-ipfs interactions
 
-[lotus](https://github.com/filecoin-project/lotus) is a Go implementation of the Filecoin protocol. There are several [protocol implementations](../../core-products/protocol-implementations.md), including implementations in other languages such as Rust ([forest](https://github.com/chainsafe/forest) implementation) and C++ ([fuhon](https://github.com/filecoin-project/cpp-filecoin) implementation). The core lotus node runs the blockchain system, executes storage and retrieval deals, performs data transfers, supports block producer logic, and syncs and validates the Filecoin blockchain. Lotus also provides a separate process for storage mining. Filecoin storage miners contribute to the network by producing sector commitments and _Proofs-of-Spacetime_ to prove they have been correctly storing storage client data. Read more about the interactions between [storage miners and storage clients](../../../introduction/what-is-filecoin.md).
+[lotus](https://github.com/filecoin-project/lotus) is a Go implementation of the Filecoin protocol. There are several [protocol implementations](/build/core-products/protocol-implementations.md), including implementations in other languages such as Rust ([forest](https://github.com/chainsafe/forest) implementation) and C++ ([fuhon](https://github.com/filecoin-project/cpp-filecoin) implementation). The core lotus node runs the blockchain system, executes storage and retrieval deals, performs data transfers, supports block producer logic, and syncs and validates the Filecoin blockchain. Lotus also provides a separate process for storage mining. Filecoin storage miners contribute to the network by producing sector commitments and _Proofs-of-Spacetime_ to prove they have been correctly storing storage client data. Read more about the interactions between [storage miners and storage clients](/introduction/what-is-filecoin.md).
 
 [go-ipfs](https://github.com/ipfs/go-ipfs) is a Go implementation of the [IPFS protocol](https://ipfs.io). There are also several IPFS implementations, including [js-ipfs](https://github.com/ipfs/js-ipfs).
 
@@ -206,7 +206,7 @@ export const getClient = (options = { nodeOrMiner: 'node', nodeNumber: 0 }) => {
 }
 ```
 
-If you are using the local-devnet setup mentioned in [Step 1 - Start lotus-devnet and go-ipfs](./step-1-start-lotus-devnet-and-go-ipfs.md), then the value of `API` is correct. Note that if you are using another setup, you may need to change this value (depends on the setup).
+If you are using the local-devnet setup mentioned in [Step 1 - Start lotus-devnet and go-ipfs](#step-1-start-lotus-devnet-and-go-ipfs.md), then the value of `API` is correct. Note that if you are using another setup, you may need to change this value (depends on the setup).
 
 The `wsUrl` shown in the code example above depends on which node you want to connect to:
 
@@ -897,7 +897,7 @@ if (!error) {
 
 The `nodeClient.clientRetrieve` function executes the retrieval deal according to the conditions in `retrievalOffer` parameter and returns `error`, if there is one.
 
-If there is no error, open a new browser tab using `window.open` with the URL: `http://localhost:7070/ipfs/${payload.cid}`. This URL fetches the retrieved data from the HTTP gateway endpoint exposed on port `7070` via the IPFS integration, [as discussed in step 1](./step-1-start-lotus-devnet-and-go-ipfs.md).
+If there is no error, open a new browser tab using `window.open` with the URL: `http://localhost:7070/ipfs/${payload.cid}`. This URL fetches the retrieved data from the HTTP gateway endpoint exposed on port `7070` via the IPFS integration, [as discussed in step 1](#step-1-start-lotus-devnet-and-go-ipfs.md).
 
 ::: tip
 This may take a few seconds on devnet, but it will take much longer on the mainnet.
