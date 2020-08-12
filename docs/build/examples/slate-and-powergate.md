@@ -1,9 +1,9 @@
 ---
-title: Web Applications With Textile & React
-description: Learn how to build a Filecoin Web Application with Textile & React
+title: Slate and Powergate
+description: Learn how to build a Filecoin Web Application with Textile's Powergate, and the Slate React component librarys.
 ---
 
-# How to build a Filecoin application using Slate React System and Textile's Powergate. (MacOS)
+# Build a Filecoin app using Slate Powergate.
 
 This tutorial is a **step by step guide** for how to build your own [Filecoin web application](https://filecoin.io) using [Textile's Powergate](https://github.com/textileio/powergate) and Slate's [React Component Library](https://slate.host/system). After following these steps you will learn how to:
 
@@ -22,7 +22,7 @@ There are some other concepts you will be exposed to as you work through this tu
 - Styling React components with [Emotion](https://emotion.sh/docs/introduction)
 - Gaining additional language features using [Babel](https://babeljs.io/)
 
-## Set up your environment (MacOS)
+## Set up your environment
 
 - You need to install `node` and `go` to build all the necessary dependencies.
 - You need to install XCode Command Line Tools if you haven't already.

@@ -149,12 +149,7 @@ module.exports = {
                   '/build/examples/meme-marketplace',
                   '/build/examples/network-inspector',
                   '/build/examples/simple-pinning-service',
-                  {
-                    title: 'Web Applications',
-                    sidebarDepth: 1,
-                    collapsable: false,
-                    children: ['/build/examples/web-applications/overview']
-                  }
+                  '/build/examples/slate-and-powergate'
                 ]
               }
             ]
