@@ -147,6 +147,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/build/examples/sample-architectures',
+                  '/build/examples/meme-marketplace',
                   {
                     title: 'Simple Pinning Service',
                     sidebarDepth: 2,
@@ -182,29 +183,11 @@ module.exports = {
                       'build/examples/network-inspector/step-5-shut-down-the-application',
                       'build/examples/network-inspector/summary'
                     ]
-                  },
-                  {
-                    title: 'Meme Marketplace',
-                    sidebarDepth: 2,
-                    collapsable: false,
-                    children: [
-                      'build/examples/meme-marketplace/overview',
-                      'build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
-                      'build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
-                      'build/examples/meme-marketplace/step-2-run-react-app',
-                      'build/examples/meme-marketplace/step-3-run-hub-auth-server',
-                      'build/examples/meme-marketplace/step-4-connecting-app-with-auth-server',
-                      'build/examples/meme-marketplace/step-5-connecting-app-with-blockchain',
-                      'build/examples/meme-marketplace/step-6-explore-app',
-                      'build/examples/meme-marketplace/step-7-shut-down-the-application',
-                      'build/examples/meme-marketplace/summary'
-                    ]
                   }
                 ]
               }
             ]
           },
-
           {
             title: 'Reference',
             path: '/reference/',
