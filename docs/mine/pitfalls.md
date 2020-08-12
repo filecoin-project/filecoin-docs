@@ -1,3 +1,7 @@
+# Mining pitfalls
+
+This page houses a list of the known limitations and actionable problems with current Filecoin implementations, as well as potential temporary workarounds and solutions. **Have a tip that's not present here?** Stop by Slack and let us know!
+
 ## Fund management
 ### Pledges
 
