@@ -28,7 +28,7 @@
 * **Having a quality mining rig is critical, and no simple nor stock options exist.** <-- not done -->
 
 ## Environment configuration
-
+<-- finishing up instruction set for these 3 -->
 * Importance of how chain data is stored and handled
 * Currently difficult to do remote lotus daemon
 * Proofs lib must be configured via environment variables
@@ -36,13 +36,13 @@
 
 ### Fork recovery
 
-* difficult to know what fork currently on
-* difficult to acknowledge when behind
-* Fork recovery instructions
+* **It is currently difficult to know when a miner is behind on their fork.** If they are running Chainwatch for a dashboard however, it will identify forks to simplify finding the heaviest tipset and chain.
+
+* **If there has been a fork, and you are on the wrong one, how this is fixed is critical.** O<-- Fork recovery instructions --> 
 
 ## Key backups and best security practices
 
-* Secure storage and backup of private keys
-* Hardening OS configuration
-* Key migration process
-* hardware wallets
+* Secure storage and backup of private keys <-- probs needs its own page -->
+* Hardening OS configuration <-- with above? -->
+* Key migration process <-- needs info -->
+* hardware wallets <-- needs info -->
