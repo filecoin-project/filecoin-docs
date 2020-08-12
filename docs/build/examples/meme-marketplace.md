@@ -154,16 +154,16 @@ If everything went as it should, your terminal displays messages like those belo
 
 ![Ganache CLI initialization output](./images/meme-marketplace/ganache-cli.png)
 
-6. For use later in this tutorial, copy the "Mnemonic" and save that somewhere you can refer to it later as needed.
+6. For use later in this tutorial, copy the _mnemonic_ and save that somewhere you can refer to it later as needed.
 
-In the above screenshot, the "Mnemonic" is:
+In the above screenshot, the _mnemonic_ is:
 
 ```bash
 congress elder barrel spice tent advance head manual dragon spice boring bone
 ```
 
 ::: tip
-NOTE: The "Mnemonic" will be different for you, so use yours. Read this [article](https://kb.myetherwallet.com/en/security-and-privacy/what-is-a-mnemonic-phrase/) to learn more about mnemonics.
+NOTE: The _mnemonic_ will be different for you, so use yours. Read this [article](https://kb.myetherwallet.com/en/security-and-privacy/what-is-a-mnemonic-phrase/) to learn more about mnemonics.
 :::
 
 7. Note that the local blockchain exposes an RPC endpoint at `127.0.0.1:8545`. Copy this as well where you can save it, so you can use this endpoint to deploy the contract and interact with the smart contract deployed on the blockchain via this RPC endpoint.
