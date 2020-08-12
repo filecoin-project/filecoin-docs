@@ -1,9 +1,241 @@
 ---
-title: Step 4 - Explore the Filecoin Network Inspector App
-description: This article describes the major sections of the Network Inspector App and how they interact with lotus and go-ipfs nodes.
+title: Network inspector
+description: Build a Filecoin network inspector using Lotus, Textile, and IPFS.
 ---
 
-# Step 4: Explore the Filecoin Network Inspector App
+# Network inspector
+
+This tutorial shows how to build a Filecoin network inspector using [lotus](https://github.com/filecoin-project/lotus/) via a [fork](https://github.com/filecoin-shipyard/lotus-devnet) of Textile’s [lotus-devnet](https://github.com/textileio/lotus-devnet), the [Lotus JS API client](https://github.com/filecoin-shipyard/js-lotus-client), and [go-ipfs](https://github.com/ipfs/go-ipfs/).
+
+## Overview
+
+The Filecoin network inspector interacts with several aspects of the Filecoin network that are exposed through Lotus’ JS API. The sample app in this tutorial will include:
+
+- A simple chain explorer, showing information about Filecoin blocks.
+- A miner explorer, showing information about all the active miners in the Filecoin network (in this example, this shows the miners in the local devnet).
+- A marketplace, where you can add your files on the connected Filecoin network and see how storage and retrieval deals occur under the hood.
+- A deals page, where you can see all your previous deals and their details.
+
+After completing this tutorial, you will be able to:
+
+- Setup your own local Filecoin development network (devnet).
+- Connect to the running Filecoin network using different JavaScript-based libraries.
+- Use the JavaScript libraries to query the endpoints for chain and miner data.
+- Use JavaScript libraries to create storage and retrieval deals.
+- Use JavaScript libraries to fetch details about your previous deals.
+
+Here is a sneak-peek of how the final application will look:
+
+@[youtube](https://youtu.be/lkx2Z3T649Y)
+
+If you are just looking for the code, [you can visit the GitHub repo](https://github.com/filecoin-shipyard/filecoin-network-inspector/).
+
+A high-level overview of our application architecture:
+
+1. Docker script to run a [lotus](https://github.com/filecoin-project/lotus) node (Filecoin client) and local-devnet to mock interactions on a live network, like [testnet or mainnet](https://docs.filecoin.io/build/start-building/interacting-with-the-network/).
+2. Active [go-ipfs](https://github.com/ipfs/go-ipfs/) daemon (IPFS client) to generate data CIDs and import to store on Filecoin.
+3. React dashboard shows different features of the Filecoin network inspector. The dashboard uses various JavaScript libraries to interact with the lotus node and the go-ipfs node.
+
+![The application includes a Docker script to run a lotus node, a go-ipfs daemon, and a React dashboard.](./images/network-inspector/app-arch.png)
+
+Before diving into the tutorial for this sample application, the next section gives you an understanding of how lotus and go-ipfs nodes interact.
+
+## Lotus and go-ipfs interactions
+
+[lotus](https://github.com/filecoin-project/lotus) is a Go implementation of the Filecoin protocol. There are several [protocol implementations](../../core-products/protocol-implementations.md), including implementations in other languages such as Rust ([forest](https://github.com/chainsafe/forest) implementation) and C++ ([fuhon](https://github.com/filecoin-project/cpp-filecoin) implementation). The core lotus node runs the blockchain system, executes storage and retrieval deals, performs data transfers, supports block producer logic, and syncs and validates the Filecoin blockchain. Lotus also provides a separate process for storage mining. Filecoin storage miners contribute to the network by producing sector commitments and _Proofs-of-Spacetime_ to prove they have been correctly storing storage client data. Read more about the interactions between [storage miners and storage clients](../../../introduction/what-is-filecoin.md).
+
+[go-ipfs](https://github.com/ipfs/go-ipfs) is a Go implementation of the [IPFS protocol](https://ipfs.io). There are also several IPFS implementations, including [js-ipfs](https://github.com/ipfs/js-ipfs).
+
+lotus and go-ipfs nodes speak several of the same protocols: [libp2p](https://libp2p.io/) for networking, [bitswap](https://docs.ipfs.io/concepts/bitswap/#bitswap) and [graphsync](https://github.com/ipld/specs/blob/master/block-layer/graphsync/graphsync.md) for data transfer, [IPLD](https://ipld.io/) for data structures and formats, and more. Having active lotus and go-ipfs daemons on your machine enables a number of features. For example, you can import and preserve data that is discoverable through the IPFS public network [DHT](https://docs.ipfs.io/concepts/dht/#distributed-hash-tables-dhts) directly into your lotus node and onto the Filecoin network. To learn more about how Filecoin and IPFS interact, read our page on [IPFS and Filecoin](https://docs.filecoin.io/introduction/ipfs-and-filecoin/). To learn about how to enable IPFS/Filecoin node integrations, check out the [lotus docs](https://lotu.sh/en+ipfs-client-integration).
+
+![IPFS and Filecoin nodes interact with each other via libp2p and IPLD, among other protocols.](./images/network-inspector/ipfs-filecoin.png)
+
+### Resources
+
+- [More on lotus](https://lotu.sh/)
+- [More on go-ipfs](https://docs.ipfs.io)
+
+## Step 1 - Start lotus-devnet and go-ipfs
+
+You can install and run lotus from source, as described in the [lotus docs](https://lotu.sh/en+getting-started), and then run a [local devnet](https://lotu.sh/en+setup-local-dev-net). For faster development cycles, this example uses a [fork](https://github.com/filecoin-shipyard/lotus-devnet) of Textile’s [localnet](https://github.com/textileio/lotus-devnet), which can be used to spin up lotus full nodes and lotus miners with mocked sector-builders (for faster storage mining processes), and to run a network with tunable parameters (e.g. block time). lotus-devnet is recommended for easier and faster development.
+
+For this tutorial, please use the [lotus-devnet fork](https://github.com/filecoin-shipyard/lotus-devnet). For your own applications, please use [Textile’s localnet](https://github.com/textileio/lotus-devnet). See the full localnet docs [here](https://docs.textile.io/powergate/localnet/).
+
+### Requirements
+
+- Operating Systems: Linux or Mac
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) (latest version)
+- [Docker Compose](https://docs.docker.com/compose/) (latest version)
+
+### Steps
+
+1. In your terminal, clone the lotus-devnet repo and create a local lotus-devnet.
+
+```bash
+git clone https://github.com/filecoin-shipyard/lotus-devnet
+cd lotus-devnet
+make devnet BIGSECTORS=true
+```
+
+In [filecoin-shipyard/lotus-devnet/docker-compose-devnet.yaml](https://github.com/filecoin-shipyard/lotus-devnet/blob/master/docker-compose-devnet.yaml), both the `services`: `lotus` and `ipfs` are started. In this setup, we are using [IPFS integration](https://lotu.sh/en+ipfs-client-integration), which supports making deals with data stored in IPFS, without having to re-import it into lotus.
+
+The IPFS HTTP gateway running on `8080` within the container is exposed on `7070` on the host machine. This will be used to fetch data via filecoin retrieval deal.
+
+```yaml
+version: '3.7'
+
+services:
+  lotus:
+    image: textile/lotus-devnet:v0.4.0
+    ports:
+      - 7777:7777
+    environment:
+      - TEXLOTUSDEVNET_SPEED=1500
+      - TEXLOTUSDEVNET_BIGSECTORS=${BIGSECTORS}
+      - TEXLOTUSDEVNET_IPFSADDR=/dns4/ipfs/tcp/5001
+  ipfs:
+    ports:
+      - 7070:8080
+```
+
+::: tip
+Note on `BIGSECTORS`: When running the devnet setup, the Lotus node is configured with a mocked sector builder, using either "small" or "big" sector sizes. The practical effects of this configuration are on the size of files you can store in the devnet and how quickly the storage deals will complete. Using `BIGSECTORS=false` will limit you to storing files of around 700 bytes and deals will complete in 30-60 seconds. Using `BIGSECTORS=true` will allow you to store files anywhere from 1Mb to 400Mb, but deals will complete in 3-4 minutes. Be sure to choose the value that makes sense for your development scenario (from [Textile’s documentation](https://docs.textile.io/powergate/localnet/)).
+:::
+
+2. In a new terminal window, install go-ipfs following these [docs](https://docs.ipfs.io/how-to/command-line-quick-start/).
+
+3. Initialize the go-ipfs daemon, configure IPFS to accept CORS requests, and start running the IPFS daemon.
+
+```bash
+ipfs init
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["GET", "POST"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Headers '["Authorization"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Expose-Headers '["Location"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials '["true"]'
+ipfs daemon
+```
+
+This IPFS node exposes:
+
+- API endpoint on port `5001`.
+- HTTP gateway on port `8080`.
+
+::: tip
+This IPFS node is used to demonstrate how to fetch data from an IPFS node which is not connected to a lotus node.
+:::
+
+You now have a running local devnet with lotus nodes and a local go-ipfs node.
+
+## Step 2 - Run the React app
+
+### Requirements
+
+1. [Node.js](https://nodejs.org/en/download/)
+2. [Xcode CommandLineTools](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-WHAT_IS_THE_COMMAND_LINE_TOOLS_PACKAGE_)
+
+### Steps
+
+1. In a third terminal window, clone the React sample application and check out the `local` branch.
+
+```bash
+git clone https://github.com/filecoin-shipyard/filecoin-network-inspector
+cd filecoin-network-inspector
+git checkout local
+```
+
+2. Start the app.
+
+```bash
+npm install
+npm start
+```
+
+This starts the Filecoin network inspector app and opens the application in your browser at [https://localhost:3000](https://localhost:3000).
+
+![Image of the Filecoin Network Inspector application](./images/network-inspector/network-inspector-app.png)
+
+::: tip
+We have used [React](https://reactjs.org/) as our UI library an [Redux](https://redux.js.org/) for application state management. You can use any other library or framework to build such an app.
+:::
+
+Next, we walk through the different parts of the application to see how to integrate Filecoin features and functionality into your application.
+
+## Step 3: Set up the lotus and go-ipfs API clients
+
+In this and later sections, you will walk through the various parts of the sample application to see how the data from your local lotus node connects to the React frontend. You will start by connecting your application to the lotus and go-ipfs nodes.
+
+Use any text editor to open the `filecoin-network-inspector` project. Multiple pages in the React app interact with the lotus instance.
+
+![Sublime editor with filecoin-network-inspector project open.](./images/network-inspector/network-inspector-code.png)
+
+### Step 3a: Set up the lotus API client
+
+1. To connect the React app to the running lotus instance, install the following three JavaScript modules using the [node package manager](http://npmjs.com/):
+
+- [@filecoin-shipyard/lotus-client-rpc](https://www.npmjs.com/package/@filecoin-shipyard/lotus-client-rpc): A low-level interface for making calls to the [lotus JSON-RPC API](https://lotu.sh/en+api).
+- [@filecoin-shipyard/lotus-client-provider-browser](http://npmjs.com/package/filecoin-shipyard/lotus-client-provider-browser): An implementation of the lotus JS Client provider interface that connects to a lotus JSON-RPC API endpoint using WebSockets or HTTP.
+- [@filecoin-shipyard/lotus-client-schema](https://www.npmjs.com/package/@filecoin-shipyard/lotus-client-schema): Package of .js files that describe methods exported by the lotus JSON-RPC API.
+
+In your terminal, run the following commands:
+
+```bash
+npm i @filecoin-shipyard/lotus-client-rpc @filecoin-shipyard/lotus-client-provider-browser @filecoin-shipyard/lotus-client-schema
+```
+
+2. In [src/utils/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/utils/lotus.js), you can see how we use the above 3 libraries to create a lotus client for use anywhere in the application.
+
+```js
+import { LotusRPC } from '@filecoin-shipyard/lotus-client-rpc'
+import { BrowserProvider } from '@filecoin-shipyard/lotus-client-provider-browser'
+import { testnet } from '@filecoin-shipyard/lotus-client-schema'
+
+export const getClient = (options = { nodeOrMiner: 'node', nodeNumber: 0 }) => {
+  // API endpoint for local Lotus devnet
+  const API = 'ws://localhost:7777'
+
+  // Websocket endpoint for local Lotus devnet
+  const wsUrl = API + `/${options.nodeNumber}/${options.nodeOrMiner}/rpc/v0`
+
+  // Creating and returning a Lotus client that can be used anywhere in the app
+  const provider = new BrowserProvider(wsUrl)
+  return new LotusRPC(provider, {
+    schema:
+      options.nodeOrMiner === 'node' ? testnet.fullNode : testnet.storageMiner
+  })
+}
+```
+
+If you are using the local-devnet setup mentioned in [Step 1 - Start lotus-devnet and go-ipfs](./step-1-start-lotus-devnet-and-go-ipfs.md), then the value of `API` is correct. Note that if you are using another setup, you may need to change this value (depends on the setup).
+
+The `wsUrl` shown in the code example above depends on which node you want to connect to:
+
+- `nodeNumber`: The number/index of the lotus node
+- `nodeOrMiner`: Type of lotus node, either miner or full node
+
+In this case, set `nodeNumber` to 0 as this is the first (and only) lotus node you will be running. Set the `nodeOrMiner` option to `"node”` as you will run a lotus full node, but not a mining node.
+
+### Step 3b: Set up the IPFS API client
+
+1. To connect the React app to the IPFS instance, use [js-ipfs-http-client](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client#readme), a JS library that implements the IPFS [Core API](https://github.com/ipfs/js-ipfs/tree/master/docs/core-api) commands and executes them through a running IPFS node (whether go-ipfs or js-ipfs). This client library also implements a set of utility functions, described in detail[ here](https://www.npmjs.com/package/ipfs-http-client).
+
+In your terminal, run the following command to install the library.
+
+```bash
+npm install --save ipfs-http-client
+```
+
+2. In [src/utils/ipfs.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/utils/ipfs.js), set `IPFS_API_ENDPOINT` to the port of your running go-ipfs node.
+
+```js
+import IpfsHttpClient from 'ipfs-http-client'
+const IPFS_API_ENDPOINT = 'http://localhost:5001' // you can replace this with any other IPFS endpoint
+export const ipfs = IpfsHttpClient(IPFS_API_ENDPOINT)
+```
+
+Note that your IPFS API endpoint may differ, depending on your node setup.
+
+## Step 4: Explore the Filecoin Network Inspector App
 
 This section provides an overview of the pages in the Filecoin Network Inspector App:
 
@@ -12,7 +244,7 @@ This section provides an overview of the pages in the Filecoin Network Inspector
 - **Markets**: Fetch your wallet address and balance, store files, monitor storage and retrieval deals, and fetch data from the network.
 - **Deals**: Monitor storage deals on the local network.
 
-## Step 4a: Import the lotus client
+### Step 4a: Import the lotus client
 
 You can look at [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js) to understand how data is captured from the lotus node.
 
@@ -25,7 +257,7 @@ const client = getClient()
 
 All pages in the application will make use of the client API for various types of chain data.
 
-## Step 4b: Chain Page
+### Step 4b: Chain Page
 
 The Chain page is a simple chain explorer that displays the JSON information contained in Filecoin blocks. Look at:
 
@@ -126,7 +358,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Chain)
 ```
 
-## Step 4b: Miners Page
+### Step 4b: Miners Page
 
 The Miners page displays information about the active miners in the connected Filecoin network. The local devnet you are running contains only a single miner (with miner ID `t01000`), while [public networks](https://docs.filecoin.io/build/start-building/interacting-with-the-network/) will contain many more miners. Look at:
 
@@ -198,11 +430,11 @@ const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Miners)
 ```
 
-## Step 4c: Markets Page
+### Step 4c: Markets Page
 
 The Markets page allows you to store files directly through the UI. It also allows you to see information on your wallet balance and status of recent deals.
 
-![Market Page of the Network Inspector application](./images/market-page.png)
+![Market Page of the Network Inspector application](./images/network-inspector/market-page.png)
 
 The Markets page contains the following functions:
 
@@ -219,7 +451,7 @@ Look at:
 
 The following instructions illustrate how to perform these functions.
 
-### Markets Page: Your Balance
+#### Markets Page: Your Balance
 
 The filecoin token (FIL) is the medium of exchange for storage on the Filecoin network. When you spin up [lotus-devnet](https://github.com/filecoin-shipyard/lotus-devnet) (and thus a local lotus node), your lotus node’s default wallet is seeded with a 500,000 FIL balance for testing on the devnet. FIL can be used to transact with other Filecoin network participants.
 
@@ -276,7 +508,7 @@ The wallet balance on this page will update as you create deals and pay for stor
 }
 ```
 
-### Markets Page: Store File on Filecoin Network
+#### Markets Page: Store File on Filecoin Network
 
 Look at:
 
@@ -398,7 +630,7 @@ Note that the local devnet has only 1 (fake) miner that can store your data -- a
 Once you have started a storage deal, notice that your wallet balance is slightly reduced. This is to pay both for the gas cost of the message that goes on-chain and to pay for the actual cost of storage. To check your wallet balance at regular intervals, use the `setInterval` function with `getWalletDetails`.
 :::
 
-### Markets Page: Deal Status
+#### Markets Page: Deal Status
 
 Look at:
 
@@ -541,9 +773,9 @@ If the deal is successful, the button will show an "Active" deal state (`deal.St
 
 And voila! A successful deal.
 
-![When a deal has been successfully made, the application shows the deal information in the "Deal Status" section.](./images/active-deal.png)
+![When a deal has been successfully made, the application shows the deal information in the "Deal Status" section.](./images/network-inspector/active-deal.png)
 
-## Markets Page: Fetching Data
+### Markets Page: Fetching Data
 
 Look at:
 
@@ -575,7 +807,7 @@ To fetch data from Filecoin you will perform the following functions, described 
 3. Choose the node you want to fetch the data.
 4. Create and execute an retreival offer.
 
-### Step 1: Checking for nodes that host the data
+#### Step 1: Checking for nodes that host the data
 
 In [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js#L134), to check if a lotus node has your data locally, use the `nodeClient.clientHasLocal` function.
 
@@ -586,7 +818,7 @@ const hasLocal = await nodeClient.clientHasLocal({ '/': payload.cid })
 
 This function will return `hasLocal`, a boolean value indicating whether a particular node has your data or not.
 
-### Step 2: Request offers for data retrieval
+#### Step 2: Request offers for data retrieval
 
 In [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js#L137), to check what node gives you the best deal for data retrieval, select a suitable nodes to query via `nodeClient.clientFindData` function to get an offer.
 
@@ -625,11 +857,11 @@ Following is an explanation of the fields in the offer:
 - `Miner`: The name of the miner.
 - `MinerPeerID`: PeerID of the miner.
 
-### Step 3: Choose the node for data retrieval
+#### Step 3: Choose the node for data retrieval
 
 Based on the offers you receive choose the node (`Miner`, `MinerPeerID`) for the retrieval deal.
 
-### Step 4: Create a retrieval offer
+#### Step 4: Create a retrieval offer
 
 In [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js#L139), the retrieval offer is your order for the data retrieval. When it is executed, the file is retrieved and you are charged the fee that you agreed upon for the retrieval. Following is an example of a `retrievalOffer`:
 
@@ -648,7 +880,7 @@ const retrievalOffer = {
 
 The retrieval offer contains the data of the node you choose, based on the `offers` array.
 
-### Step 5: Create the retrieval deal
+#### Step 5: Create the retrieval deal
 
 In [filecoin-network-inspector/src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/redux/actions/lotus.js#L150),create the retrieval deal using `retrieveClient.clientRetrieve` function:
 
@@ -671,6 +903,37 @@ If there is no error, open a new browser tab using `window.open` with the URL: `
 This may take a few seconds on devnet, but it will take much longer on the mainnet.
 :::
 
-## Step 4d: Deals Page
+### Step 4d: Deals Page
 
 The Deals page of the application displays the same information as the Deal Status page, but feel free to poke around the [Deals page source code](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/pages/Deals/index.js) as well.
+
+## Step 5: Shut down the application
+
+To shut down the application:
+
+1. Type `CTRL+C` in the terminal window running the lotus-devnet
+2. Type `CTRL+C` in the terminal window running the ipfs daemon
+3. Type `CTRL+C` in the terminal window running the React application
+4. Exit the open browser window
+
+And that's it! Congratulations on reading the tutorial until the end. You deserve a pat on the back!
+
+## Summary
+
+This tutorial walked you through building a React application that interacts with an IPFS node and a lotus node to store data on the Filecoin network and inspect information about the Filecoin blockchain.
+
+The main topics covered:
+
+- What is Lotus and how it interacts with an IPFS node.
+- Setting up your own local Filecoin devnet.
+- Using different JavaScript libraries to connect with any running Filecoin network.
+- Using the JavaScript libraries to query the lotus node endpoints for wallet data.
+- Using the JavaScript libraries to query the lotus node endpoints for chain data.
+- Using the JavaScript libraries to query the lotus node endpoints for miner data.
+- Using the JavaScript libraries to create storage deals.
+- Using the JavaScript libraries to monitor storage deal status.
+- Using the JavaScript libraries to create retrieval deals.
+- Retrieving data from an IPFS node.
+- Retrieving data from a lotus node.
+
+If you're interested in diving into more of the details, visit the [Filecoin Network Inspector repo](https://github.com/filecoin-shipyard/filecoin-network-inspector/).
