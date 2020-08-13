@@ -109,26 +109,10 @@ To connect to the [Calibration Devnet](http://www.calibration.fildev.network/):
 
 For updates see [#fil-net-calibration](https://filecoinproject.slack.com/archives/C017CCH1MHB) and [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) in the Filecoin Slack.
 
-<!--
-
-### Running hosted endpoints
-
-To support wallets and hosted API endpoint services, devops scripts are available for running a remote lotus JSON RPC API endpoint as a scalable cluster of nodes. Remote storage API endpoints however, do not yet exist: currently node keys are required to execute storage deals.
-
-- [Lotus Docker Image](https://github.com/openworklabs/filecoin-docker) for a simple Lotus node Docker container*
-- [Filecoin Chart](https://github.com/openworklabs/filecoin-chart) for more complex Lotus node architectures managed with Kubernetes
-
-To use a remote node on a server, you will need to set up a reverse proxy (using an Nginx or Caddy server, for example). Also see the [lotus docs on using JWT](https://lotu.sh/en+api#curl-authorization-157570). The lotus JSON RPC API requires [permissions](https://github.com/filecoin-project/lotus/blob/master/api/apistruct/struct.go#L34) for write and admin methods.
-
-### Hosted nodes for testnet
-
-The Filecoin project has a limited number of dedicated, up-to-date nodes (synced with the latest Testnet chain) available to developers actively building storage services or applications. They are intended to jump-start development instead of waiting for your own node to sync, and not for production usage. To request a dedicated hosted node, please email [filecoin-collabs@protocol.ai](mailto:filecoin-collabs@protocol.ai?subject=Requesting20%a20%hosted20%node).
-
-### Local networks
+## Local networks
 
 There are several ways to spin up a _mock_ version of the Filecoin network on your own machine for quick testing and development:
 
 - [Simple local devnet for lotus](https://lotu.sh/en+setup-local-dev-net)
 - [Containerized devnet using mocked sectorbuilder](https://github.com/textileio/lotus-devnet) (aka mocked mining)
 - [Additional containers & virtualization scripts](https://github.com/filecoin-project/docs/wiki#containers--virtualization)
--->
