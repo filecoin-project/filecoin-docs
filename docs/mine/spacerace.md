@@ -92,8 +92,7 @@ This param should be a shell command that will be run when processing a deal pro
 Filter = <shell command>
 ```
 
-The deal info is piped into `stdin` as JSON. Deals are accepted if the `Filter`'s
- exit code is 0. For any other exit code, deals will be rejected. Examples:
+Deals are accepted if the `Filter`'s exit code is 0. For any other exit code, deals will be rejected. Examples:
 
 ```
 ## Reject all deals
@@ -105,6 +104,9 @@ Filter = "true"
 ### Only accept deals from client t3abcd
 Filter = "jq -e '.Proposal.Client == \"t3abcd\"'"
 ```
+
+You can also write advanced deal filters based on any field in deal info (for example, you may wish to accept only `VerifiedClient` deals). Deal info is piped into `stdin` as JSON.
+
 #### How do I change gas fees?
 
 If you would like to change the default gas fees to accelerate your messages, edit the `~/.lotusminer/config.toml` config file.
