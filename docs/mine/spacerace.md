@@ -79,6 +79,33 @@ Yes, you can combine your competition results from multiple miners. Once the com
 #### How are rewards distributed?
 If you’re eligible for rewards, someone from CoinList will reach out to your provided email address shortly after the competition to conduct AML/KYC and coordinate delivery of the tokens. You will have the option to receive rewards directly to your wallet.
 
+#### How do I prioritizing deals from the competition bots?
+By default, lotus nodes accept all inbound deals that match their criteria. However, during the Space Race miners may want to limit the clients they accept deals from to avoid any malicious spamming with faucet filecoin. To do this, modify the `~/.lotusminer/config.toml` file to add a "Filter" param a shell command to be run when processing a deal proposal. Deal info is piped into stdin as json. Deal are accepted if commands exit code is 0, for any other exit code they will be rejected. Examples:
+
+```
+~/.lotusminer/config.toml
+
+[Dealmaking]
+Filter = "shell command"
+```
+
+- Reject all deals
+```
+Filter = "false"
+```
+
+- Accept all deals
+```
+Filter = "true"
+```
+
+- Only accept deals from client t3abcd
+```
+Filter = "jq -e '.Proposal.Client == \"t3abcd\"'"
+```
+
+
+
 ## Additional notes
 
 * If a bug is identified during the competition that threatens the validity of the power table, the Filecoin team may end the competition early. Rewards will still be awarded for the period prior to the discovery of the bug. If such a bug is responsibly disclosed to the Filecoin team, the team reporting it will be eligible for rewards of up to 250k FIL, depending on the severity and practicality of the bug, as determined by the Filecoin team.
