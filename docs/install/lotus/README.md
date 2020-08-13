@@ -15,11 +15,9 @@ There are three types of Lotus client available:
 | Storage miner | The Lotus storage miner queries a Lotus node for the latest tipset on-chain, produces a block on that tipset, and submits it to the node to be broadcast to the entire network. |
 | Seal worker   | An extra process that can offload heavy processing tasks from your Lotus Storage miner.                                                                                         |
 
-## Install steps
-
 Install the Lotus Filecoin client on your system, ready to be used as a single node or in a mining operation. To make the install go as smoothly as possible, read through the [software and hardware requirements](./requirements) first.
 
-### Linux
+## Linux
 
 1.  Install the dependencies:
 
@@ -75,7 +73,7 @@ That's it! You've now got Lotus installed on your system. If you'd like to be ab
    > lotus version 0.4.1+git.7d7496e1
    ```
 
-### macOS
+## macOS
 
 1. Make sure you have `xcode-select` and Homebrew installed:
 
