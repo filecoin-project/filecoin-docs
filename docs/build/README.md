@@ -1,17 +1,15 @@
 ---
 title: Build
-description: A guide to getting started with building applications on Filecoin.
+description: Design, create, and build applications on the Filecoin network with IPFS, Slate's React component library, and Textile's Powergate.
 ---
 
 # Build
 
-Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you’ve come to the right place. In this section, you will find some helpful resources as you get started building applications on Filecoin.
+This section covers how to build applications using Filecoin.
 
-Read the resources in the **Start Building** section before you begin for helpful pointers on application architecture and networks to use when interacting and testing with Filecoin.
+## Core products
 
-- [Interacting with the network](./start-building/interacting-with-the-network.md)
-
-**Core Products** gives you an overview of the three main categories of products that we recommend to developers, and high-level pointers on how to run and integrate them in your application.
+Here you'll find an overview of the three main categories of products that we recommend to developers, and high-level pointers on how to run and integrate them in your application.
 
 - **For most developers**, we recommend getting started with [Filecoin-backed IPFS Pinning Services](./core-products/filecoin-backed-pinning-services.md). This is especially true if you’re coming to Filecoin from IPFS or other web3 ecosystems.
 - **For some developers who want to manage their own nodes**, we recommend using [Powergate](./core-products/powergate.md).
