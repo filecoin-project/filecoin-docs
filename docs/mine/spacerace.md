@@ -107,12 +107,12 @@ Filter = "jq -e '.Proposal.Client == \"t3abcd\"'"
 ```
 #### How do I change gas fees?
 
-To change your default gas fees, edit the `~/.lotusminer/config.toml` config file. 
+If you would like to change the default gas fees to accelerate your messages, edit the `~/.lotusminer/config.toml` config file.
 
 ```
 [Fees]
-  MaxPreCommitGasFee = "1 FIL"
-  MaxCommitGasFee = "1 FIL"
+  MaxPreCommitGasFee = 0.05 FIL"
+  MaxCommitGasFee = "0.05 FIL"
   MaxWindowPoStGasFee = "50 FIL"
 ```
 
