@@ -81,8 +81,7 @@ If you’re eligible for rewards, someone from CoinList will reach out to your p
 
 #### How do I prioritize deals from the competition bots?
 By default, Lotus nodes accept all inbound deals that match their criteria. 
-However, during the Space Race competition, miners may want to limit the clients that 
-they accept deals from, so to avoid any malicious agents creating spam deals. 
+However, during the Space Race competition, miners may want to limit the clients to avoid spam deals from malicious agents.
 To do this, modify the `~/.lotusminer/config.toml` file to include a `Filter` param.
 This param should be a shell command that will be run when processing a deal proposal. 
 
@@ -93,21 +92,17 @@ This param should be a shell command that will be run when processing a deal pro
 Filter = <shell command>
 ```
 
-The deal info is piped into stdin as JSON. Deals are accepted if the `Filter`'s
- exit code is 0, for any other exit code they will be rejected. Examples:
+The deal info is piped into `stdin` as JSON. Deals are accepted if the `Filter`'s
+ exit code is 0. For any other exit code, deals will be rejected. Examples:
 
-- Reject all deals
 ```
+## Reject all deals
 Filter = "false"
-```
 
-- Accept all deals
-```
+## Accept all deals
 Filter = "true"
-```
 
-- Only accept deals from client t3abcd
-```
+### Only accept deals from client t3abcd
 Filter = "jq -e '.Proposal.Client == \"t3abcd\"'"
 ```
 
