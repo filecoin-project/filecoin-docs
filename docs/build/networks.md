@@ -5,7 +5,7 @@ description: Filecoin has various options for connecting to local and remote tes
 
 # Networks
 
-Filecoin nodes collect and store information about transactions happening across the network. To interact with the Filecoin network, applications must pass their requests through a Filecoin node. This section covers the different networks available and how to connect to them. If you want to learn how to spin up your own Filecoin node, check out the [Install Filecoin section →](#). There are three types of networks available for Filecoin:
+Filecoin nodes collect and store information about transactions happening across the network. To interact with the Filecoin network, applications must pass their requests through a Filecoin node. This section covers the different networks available and how to connect to them. There are three types of networks available for Filecoin:
 
 | Name    | Description                                                                                                                                                                                                                                                                                                                   |
 | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
