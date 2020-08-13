@@ -79,7 +79,7 @@ Yes, you can combine your competition results from multiple miners. Once the com
 #### How are rewards distributed?
 If you’re eligible for rewards, someone from CoinList will reach out to your provided email address shortly after the competition to conduct AML/KYC and coordinate delivery of the tokens. You will have the option to receive rewards directly to your wallet.
 
-#### How do I prioritize deals from the competition bots?
+#### How do I prioritize deals from competition bots?
 By default, Lotus nodes accept all inbound deals that match their criteria. 
 However, during the Space Race competition, miners may want to limit the clients to avoid spam deals from malicious agents.
 To do this, modify the `~/.lotusminer/config.toml` file to include a `Filter` param.
@@ -105,8 +105,16 @@ Filter = "true"
 ### Only accept deals from client t3abcd
 Filter = "jq -e '.Proposal.Client == \"t3abcd\"'"
 ```
+#### How do I change gas fees?
 
+To change your default gas fees, edit the `~/.lotusminer/config.toml` config file. 
 
+```
+[Fees]
+  MaxPreCommitGasFee = "1 FIL"
+  MaxCommitGasFee = "1 FIL"
+  MaxWindowPoStGasFee = "50 FIL"
+```
 
 ## Additional notes
 
