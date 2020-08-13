@@ -1,34 +1,38 @@
-# Meme marketplace
-/build/examples/meme-marketplace/overview/ > /build/examples/meme-marketplace/#overview
-/build/examples/meme-marketplace/textile-hub-buckets-and-erc721/ > /build/examples/meme-marketplace/#textile-hub
-/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup > /build/examples/meme-marketplace/#step-1-starting-a-blockchain-network-and-deploying-contracts
-/build/examples/meme-marketplace/step-2-run-react-app/ > /build/examples/meme-marketplace/#step-2-run-the-react-app
-/build/examples/meme-marketplace/step-3-run-hub-auth-server/ > /build/examples/meme-marketplace/#step-3-run-the-hub-auth-server
-/build/examples/meme-marketplace/step-4-connecting-app-with-auth-server/ > /build/examples/meme-marketplace/#step-4-starting-and-connecting-the-authentication-server
-/build/examples/meme-marketplace/step-5-connecting-app-with-blockchain/ > /build/examples/meme-marketplace/#step-5-connecting-react-app-with-a-local-blockchain
-/build/examples/meme-marketplace/step-6-explore-app/ > /build/examples/meme-marketplace/#step-6-explore-the-meme-marketplace-app
-/build/examples/meme-marketplace/step-7-shut-down-the-application/ > /build/examples/meme-marketplace/#shutting-down
-/build/examples/meme-marketplace/summary/ > /build/examples/meme-marketplace/#summary
+# /build
+    /build/start-building/interacting-with-the-network > /build/networks
 
-# Network inspector
-/build/examples/network-inspector/overview/ > /build/examples/network-inspector/#overview
-/build/examples/network-inspector/lotus-and-go-ipfs-interactions/ > /build/examples/network-inspector/#lotus-and-go-ipfs-interactions
-/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs/ > /build/examples/network-inspector/#step-1-start-lotus-devnet-and-go-ipfs
-/build/examples/network-inspector/step-2-run-the-react-app/ > /build/examples/network-inspector/#step-2-run-the-react-app
-/build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients/ > /build/examples/network-inspector/#step-3-set-up-the-lotus-and-go-ipfs-api-clients
-/build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app/ > /build/examples/network-inspector/#step-4-explore-the-filecoin-network-inspector-app
-/build/examples/network-inspector/step-5-shut-down-the-application/ > /build/examples/network-inspector/#step-5-shut-down-the-application
-/build/examples/network-inspector/summary/ > /build/examples/network-inspector/#summary
+# /build/examples
+    # Meme marketplace
+    /build/examples/meme-marketplace/overview/ > /build/examples/meme-marketplace/#overview
+    /build/examples/meme-marketplace/textile-hub-buckets-and-erc721/ > /build/examples/meme-marketplace/#textile-hub
+    /build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup > /build/examples/meme-marketplace/#step-1-starting-a-blockchain-network-and-deploying-contracts
+    /build/examples/meme-marketplace/step-2-run-react-app/ > /build/examples/meme-marketplace/#step-2-run-the-react-app
+    /build/examples/meme-marketplace/step-3-run-hub-auth-server/ > /build/examples/meme-marketplace/#step-3-run-the-hub-auth-server
+    /build/examples/meme-marketplace/step-4-connecting-app-with-auth-server/ > /build/examples/meme-marketplace/#step-4-starting-and-connecting-the-authentication-server
+    /build/examples/meme-marketplace/step-5-connecting-app-with-blockchain/ > /build/examples/meme-marketplace/#step-5-connecting-react-app-with-a-local-blockchain
+    /build/examples/meme-marketplace/step-6-explore-app/ > /build/examples/meme-marketplace/#step-6-explore-the-meme-marketplace-app
+    /build/examples/meme-marketplace/step-7-shut-down-the-application/ > /build/examples/meme-marketplace/#shutting-down
+    /build/examples/meme-marketplace/summary/ > /build/examples/meme-marketplace/#summary
 
-# Simple pinning service
-/build/examples/simple-pinning-service/overview/ > /build/examples/simple-pinning-service/#overview
-/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions/ > /build/examples/simple-pinning-service/#powergate-and-its-interactions-with-lotus-and-go-ipfs
-/build/examples/simple-pinning-service/step-1-powergate-setup/ > /build/examples/simple-pinning-service/#step-1-start-powergate-docker-compose-scripts
-/build/examples/simple-pinning-service/step-2-react-app-setup/ > /build/examples/simple-pinning-service/#step-2-run-the-react-app
-/build/examples/simple-pinning-service/step-3-connecting-powergate-to-app/ > /build/examples/simple-pinning-service/#step-3-connecting-to-the-powergate-pouchdb-instance
-/build/examples/simple-pinning-service/step-4-explore-pinning-service-app/ > /build/examples/simple-pinning-service/#step-4-explore-the-powergate-pinning-service-app
-/build/examples/simple-pinning-service/step-5-shut-down-the-application/ > /build/examples/simple-pinning-service/#shutting-down
-/build/examples/simple-pinning-service/summary/ > /build/examples/simple-pinning-service/#summary
+    # Network inspector
+    /build/examples/network-inspector/overview/ > /build/examples/network-inspector/#overview
+    /build/examples/network-inspector/lotus-and-go-ipfs-interactions/ > /build/examples/network-inspector/#lotus-and-go-ipfs-interactions
+    /build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs/ > /build/examples/network-inspector/#step-1-start-lotus-devnet-and-go-ipfs
+    /build/examples/network-inspector/step-2-run-the-react-app/ > /build/examples/network-inspector/#step-2-run-the-react-app
+    /build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients/ > /build/examples/network-inspector/#step-3-set-up-the-lotus-and-go-ipfs-api-clients
+    /build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app/ > /build/examples/network-inspector/#step-4-explore-the-filecoin-network-inspector-app
+    /build/examples/network-inspector/step-5-shut-down-the-application/ > /build/examples/network-inspector/#step-5-shut-down-the-application
+    /build/examples/network-inspector/summary/ > /build/examples/network-inspector/#summary
 
-# Slate and powergate
-/build/examples/web-applications/overview/ > /build/examples/slate-and-powergate/
+    # Simple pinning service
+    /build/examples/simple-pinning-service/overview/ > /build/examples/simple-pinning-service/#overview
+    /build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions/ > /build/examples/simple-pinning-service/#powergate-and-its-interactions-with-lotus-and-go-ipfs
+    /build/examples/simple-pinning-service/step-1-powergate-setup/ > /build/examples/simple-pinning-service/#step-1-start-powergate-docker-compose-scripts
+    /build/examples/simple-pinning-service/step-2-react-app-setup/ > /build/examples/simple-pinning-service/#step-2-run-the-react-app
+    /build/examples/simple-pinning-service/step-3-connecting-powergate-to-app/ > /build/examples/simple-pinning-service/#step-3-connecting-to-the-powergate-pouchdb-instance
+    /build/examples/simple-pinning-service/step-4-explore-pinning-service-app/ > /build/examples/simple-pinning-service/#step-4-explore-the-powergate-pinning-service-app
+    /build/examples/simple-pinning-service/step-5-shut-down-the-application/ > /build/examples/simple-pinning-service/#shutting-down
+    /build/examples/simple-pinning-service/summary/ > /build/examples/simple-pinning-service/#summary
+
+    # Slate and powergate
+    /build/examples/web-applications/overview/ > /build/examples/slate-and-powergate/
