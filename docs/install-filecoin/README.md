@@ -1,16 +1,23 @@
 ---
-title: Install Filecoin
-description: Learn about the Lotus Filecoin implementation, why it exists, and how to install it.
+title: Install
+description: Get up and running quickly by installing a Filecoin node to your system.
 ---
 
-# Overview
+# Install Filecoin
 
-Lotus is an implementation of the Filecoin specification written in Go. You can run the Lotus client to interact with the Filecoin networks. The Lotus project is created and maintained by Protocol Labs, the creators of IPFS, libp2p, and Filecoin. This section covers how to install the Lotus client on your machine.
+Filecoin is a specification for how a computer should interact with the Filecoin network, and individual implementations of the Filecoin specification exist. Lotus is currently the _only_ Filecoin implementation you can install; all other implementations are still in the early stages of development and are not stable enough to participate in the network.
 
-There are three types of Lotus client available:
+For more information on the Filecoin , check out the [specifications website →](https://filecoin-project.github.io/specs/).
 
-| Client        | Purpose                                                                                                                                                                         |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Lotus node    | An interface between your computer and the Filecoin network. All transactions, queries, and interactions with the Filecoin network must pass through a Lotus node.              |
-| Storage miner | The Lotus storage miner queries a Lotus node for the latest tipset on-chain, produces a block on that tipset, and submits it to the node to be broadcast to the entire network. |
-| Seal worker   | An extra process that can offload heavy processing tasks from your Lotus Storage miner.                                                                                         |
+## Lotus
+
+specification
+Lotus is an implementation of the Filecoin specification written in Go. You can run the Lotus client to interact with the Filecoin network. The Lotus project is created and maintained by Protocol Labs, the creators of IPFS, libp2p, and Filecoin. This section covers how to install the Lotus client on your machine.
+
+## Forest
+
+A Rust implementation of Filecoin, currently being developed by Chainsafe. [See the `ChainSafe/forest` GitHub repository for more information →](https://github.com/ChainSafe/forest)
+
+## Fuhon
+
+A C++ implementation of Filecoin, currently in development. [See the `filecoin-project/cpp-filecoin` GitHub repository for more information →](https://github.com/filecoin-project/cpp-filecoin)

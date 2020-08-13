@@ -83,8 +83,16 @@ module.exports = {
             title: 'Install Filecoin',
             path: '/install-filecoin',
             children: [
-              '/install-filecoin/requirements',
-              '/install-filecoin/install'
+              {
+                title: 'Lotus',
+                sidebarDepth: 2,
+                collapsable: true,
+                children: [
+                  ['/install-filecoin/lotus/', 'Install'],
+                  ['/install-filecoin/lotus/requirements', 'Requirements'],
+                  ['/install-filecoin/lotus/troubleshooting', 'Troubleshooting']
+                ]
+              }
             ]
           },
           {

@@ -54,7 +54,7 @@ It is common to run both a Lotus node and a seal worker on the same system.
 
 ## Software
 
-### Golang
+### Go
 
 You need to have Go installed on your system. Head over to the [Golang Install docs](https://golang.org/doc/install) to find out how to install Go for your operating system.
 
