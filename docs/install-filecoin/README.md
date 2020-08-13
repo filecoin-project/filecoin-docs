@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Install Filecoin
 description: Learn about the Lotus Filecoin implementation, why it exists, and how to install it.
 ---
 
