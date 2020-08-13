@@ -1,5 +1,5 @@
 ---
-title: Install
+title: Install Lotus
 description: Set up the Lotus Filecoin client on your computer, ready to be used as a single node or in a mining operation.
 ---
 
