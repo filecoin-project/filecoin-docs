@@ -1,11 +1,11 @@
 ---
-title: Install
+title: Install Lotus
 description: Set up the Lotus Filecoin client on your computer, ready to be used as a single node or in a mining operation.
 ---
 
 # Install
 
-Install the Lotus Filecoin client on your system, ready to be used as a single node or in a mining operation. To make the install go as smoothly as possible, read through the [software and hardware requirements](/install-filecoin/requirements) first.
+Install the Lotus Filecoin client on your system, ready to be used as a single node or in a mining operation. To make the install go as smoothly as possible, read through the [software and hardware requirements](./requirements.md) first.
 
 ## macOS
 
