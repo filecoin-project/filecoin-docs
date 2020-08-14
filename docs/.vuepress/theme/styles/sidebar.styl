@@ -51,23 +51,54 @@ header.navbar .nav-links {
 }
 
 // sidebar scrollbar style
-.sidebar::-webkit-scrollbar {
+.sidebar-links::-webkit-scrollbar {
 	width: 5px;
 	position: fixed;
 	right: 0;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+.sidebar-links::-webkit-scrollbar-thumb {
 	background: transparent;
 	transition: background-color 2s;
 }
 
-.sidebar::-webkit-scrollbar-thumb:hover, .sidebar:hover::-webkit-scrollbar-thumb {
+.sidebar-links::-webkit-scrollbar-thumb:hover, .sidebar-links:hover::-webkit-scrollbar-thumb {
 	background: $borderColor;
 }
 
 @media (max-width: $MQMobile) {
 	.sidebar {
 		width: 80vw;
+	}
+}
+
+@media (min-width: $MQMobile) {
+	aside.sidebar {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		overflow: hidden;
+
+		> .sidebar-links {
+			overflow: auto;
+			padding-bottom: 6em;
+		}
+
+		.nav-links, .nav-links a {
+			display: block;
+
+			&:hover, &.router-link-active {
+				color: $textColor;
+			}
+		}
+
+		.nav-item > a:not(.external) {
+			&:hover, &.router-link-active {
+				margin-bottom: 0px;
+				// background: lighten($accentColor, 95%);
+				border-bottom: none;
+				color: $accentColor;
+			}
+		}
 	}
 }
