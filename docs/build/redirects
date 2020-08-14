@@ -1,6 +1,14 @@
 # /build
     /build/start-building/interacting-with-the-network > /build/networks
 
+# /build/tools
+    /build/core-products/filecoin-backed-pinning-services/ > /build/tools/filecoin-backed-pinning-service/
+    /build/core-products/powergate/ > /build/tools/powergate/
+    /build/core-products/protocol-implementations/ > /build/implementations/
+    /build/developer-tools/wallets-signing-tools-api-clients/ > /build/tools/wallets
+
+    /build/examples/sample-architectures/ > /build/
+
 # /build/examples
     # Meme marketplace
     /build/examples/meme-marketplace/overview/ > /build/examples/meme-marketplace/#overview
