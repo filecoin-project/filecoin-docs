@@ -177,7 +177,34 @@ module.exports = {
             ['https://github.com/filecoin-project/specs', 'Specification'],
             ['https://lotu.sh/', 'Lotus tutorial']
           ],
-          '/project/': [
+          '/': [
+            {
+              title: 'Introduction',
+              path: '/introduction/',
+              collapsable: false,
+              children: [
+                '/introduction/new-to-web3',
+                '/introduction/what-is-filecoin',
+                '/introduction/why-filecoin',
+                '/introduction/ipfs-and-filecoin',
+                '/introduction/filecoin-compared-to',
+                '/introduction/faq'
+              ]
+            },
+            {
+              title: 'How-tos',
+              path: '/how-to/',
+              collapsable: false,
+              children: [
+                {
+                  title: 'Install Filecoin',
+                  sidebarDepth: 1,
+                  collapsable: false,
+                  children: ['/how-to/install-filecoin', '/how-to/networks']
+                },
+                getStoreSection()
+              ]
+            },
             {
               title: 'Project',
               path: '/project/',
@@ -194,9 +221,8 @@ module.exports = {
                   'Code of conduct'
                 ]
               ]
-            }
-          ],
-          '/community/': [
+            },
+
             {
               title: 'Community',
               path: '/community/',
@@ -223,33 +249,6 @@ module.exports = {
                     '/community/contribute/contribution-tutorial'
                   ]
                 }
-              ]
-            }
-          ],
-          '/': [
-            {
-              title: 'Introduction',
-              path: '/introduction/',
-              children: [
-                '/introduction/new-to-web3',
-                '/introduction/what-is-filecoin',
-                '/introduction/why-filecoin',
-                '/introduction/ipfs-and-filecoin',
-                '/introduction/filecoin-compared-to',
-                '/introduction/faq'
-              ]
-            },
-            {
-              title: 'How-tos',
-              path: '/how-to/',
-              children: [
-                {
-                  title: 'Install Filecoin',
-                  sidebarDepth: 1,
-                  collapsable: false,
-                  children: ['/how-to/install-filecoin', '/how-to/networks']
-                },
-                getStoreSection()
               ]
             }
           ]
