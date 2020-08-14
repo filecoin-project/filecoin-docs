@@ -5,19 +5,18 @@ description: Get up and running quickly by installing a Filecoin node to your sy
 
 # Install Filecoin
 
-Filecoin is a specification for how a computer should interact with the Filecoin network, and individual implementations of the Filecoin specification exist. Lotus is currently the _only_ Filecoin implementation you can install; all other implementations are still in the early stages of development and are not stable enough to participate in the network.
+| Mine Filecoin                                                                                                                                     | Build with Filecoin                                                                                                                                                              | Play around with Filecoin                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Placeholder.](./images/placeholder.jpg)<br> Are you setting up a miner to mine Filecoin? This section is for you!<br>[Find out more ↓](#miners) | ![Placeholder.](./images/placeholder.jpg)<br>Are you a developer looking to build an application on Filecoin? This section _might_ be for you.<br>[Find out more ↓](#developers) | ![Placeholder.](./images/placeholder.jpg)<br>Are you just looking to play around with Filecoin to see what all the fuss is about? This section is not for you.<br>[Find out more ↓](#players) |
 
-For more information on the Filecoin , check out the [specifications website →](https://filecoin-project.github.io/specs/).
+## Miners
 
-## Lotus
+Miners host the infrastructure that holds the Filecoin network together! Without miners there would only be a handful of, very centralized, bootstrap servers being hosted by Protocol Labs. The first step to building a miner is [setting up a Lotus node ->](./lotus/)
 
-specification
-Lotus is an implementation of the Filecoin specification written in Go. You can run the Lotus client to interact with the Filecoin network. The Lotus project is created and maintained by Protocol Labs, the creators of IPFS, libp2p, and Filecoin. This section covers how to install the Lotus client on your machine.
+## Developers
 
-## Forest
+The entire Filecoin ecosystem is open to developers to build interesting and revolutionary applications with! However, depending on your use-case and experience you may not need to host your own Filecoin node. If you've never built anything with Filecoin before, we recommend checking out the [Getting started](../build/) section to learn the ropes. In that guide you'll use Powergate, a service that hosts Filecoin nodes for you, so you don't have to worry about spinning one up. Smaller scale projects may also benefit from using Powergate since there's very little set up time. If, however, you've done all this before and are building a fairly complex project, then you'll absolutely benefit from [setting up a Filecoin node ->](./lotus)
 
-A Rust implementation of Filecoin, currently being developed by Chainsafe. [See the `ChainSafe/forest` GitHub repository for more information →](https://github.com/ChainSafe/forest)
+## Players
 
-## Fuhon
-
-A C++ implementation of Filecoin, currently in development. [See the `filecoin-project/cpp-filecoin` GitHub repository for more information →](https://github.com/filecoin-project/cpp-filecoin)
+Are you here just to play around with this whole _Filecoin, IPFS, decentralized web_ thingy? Then you absolutely don't need to install a Filecoin node. [You can if you want to, by all means](./lotus)! But you might be better of having a look at Slate: it's a website that lets you interact with the Filecoin network _without_ having to install anything. [All you have to do is sign up ->](https://slate.host)
