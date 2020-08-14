@@ -1,9 +1,9 @@
 ---
-title: Protocol Implementations
+title: Implementations
 description: A brief description of Filecoin protocol implementations and how to use them.
 ---
 
-# Protocol Implementations
+# Implementations
 
 There are 4 Filecoin protocol implementations (or “node software”) currently in progress:
 

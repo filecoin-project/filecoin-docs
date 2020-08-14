@@ -112,12 +112,7 @@ module.exports = {
             title: 'Build',
             path: '/build/',
             children: [
-              {
-                title: 'Start Building',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/build/start-building/interacting-with-the-network']
-              },
+              '/build/getting-started',
               {
                 title: 'Core Products',
                 sidebarDepth: 1,
@@ -133,12 +128,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/build/developer-tools/wallets-signing-tools-api-clients',
-                  [
-                    'https://github.com/filecoin-project/docs/wiki#community-resources',
-                    'Filecoin Community Resources'
-                  ],
-                  ['http://filecoin.onrender.com/', 'Component Design System']
+                  '/build/developer-tools/wallets-signing-tools-api-clients'
                 ]
               },
               {

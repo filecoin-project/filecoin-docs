@@ -5,7 +5,7 @@ description: Design, create, and build applications on the Filecoin network with
 
 # Build
 
-This section covers how to build applications using Filecoin.
+Design, create, and build applications on the Filecoin network with IPFS, Slate's React component library, and Textile's Powergate.
 
 ## Core products
 
