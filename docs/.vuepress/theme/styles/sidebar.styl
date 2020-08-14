@@ -69,10 +69,20 @@ header.navbar .nav-links {
 		overflow: hidden;
 
 		> .sidebar-links {
-			opacity: 0.5;
-			transition: opacity 0.5s;
+			a {
+				&.active {
+					opacity: 1;
 
-			&:hover {
+					a {
+						opacity: 1;
+					}
+				}
+
+				opacity: 0.5;
+				transition: opacity 0.5s;
+			}
+
+			&:hover a {
 				opacity: 1;
 			}
 
