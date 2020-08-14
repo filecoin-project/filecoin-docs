@@ -41,7 +41,7 @@ Sometimes the best way to learn is through examples.
 
 Powergate can be configured to work with any IPFS or Filecoin node (whether local or remote), as long as the configured nodes expose the expected APIs. Additionally, Powergate itself can be run on your local machine (easiest installation is through Docker) or hosted in the cloud as the storage backend for your application.
 
-![This diagram shows the high-level architecture of the Powergate binary. Powergate embeds a Lotus and IPFS node (go-ipfs), which interact with the Filecoin Network and IPFS Network respectively. Powergate also includes modules that maintain Filecoin deals and indices of miner reputation. Powergate functionality is accessible via its gRPC APIs.](../images/powergate/powergate-binary.png)
+![This diagram shows the high-level architecture of the Powergate binary. Powergate embeds a Lotus and IPFS node (go-ipfs), which interact with the Filecoin Network and IPFS Network respectively. Powergate also includes modules that maintain Filecoin deals and indices of miner reputation. Powergate functionality is accessible via its gRPC APIs.](./images/powergate/powergate-binary.png)
 Source: [Filecoin Developer Tools](https://blog.textile.io/filecoin-developer-tools-concepts/)
 
 For a more detailed description of how Powergate works, we recommend reading the following docs:
