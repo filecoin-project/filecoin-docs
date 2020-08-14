@@ -251,10 +251,7 @@ module.exports = {
                 },
                 getStoreSection()
               ]
-            },
-            ['/mine/', 'Mine'],
-            ['/build/', 'Build'],
-            ['/reference/', 'Reference']
+            }
           ]
         }
       }
