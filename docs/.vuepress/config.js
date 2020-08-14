@@ -121,7 +121,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/build/tools/',
-                  '/build/tools/filecoin-backed-pinning-service',
+                  '/build/tools/filecoin-backed-pinning',
                   '/build/tools/api-clients',
                   '/build/tools/powergate',
                   '/build/tools/signing-libraries',
