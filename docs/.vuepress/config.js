@@ -113,22 +113,20 @@ module.exports = {
             path: '/build/',
             children: [
               '/build/getting-started',
+              '/build/implementations',
+              '/build/networks',
               {
-                title: 'Core Products',
+                title: 'Tools',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/build/core-products/filecoin-backed-pinning-services',
-                  '/build/core-products/powergate',
-                  '/build/core-products/protocol-implementations'
-                ]
-              },
-              {
-                title: 'Developer Tools',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/build/developer-tools/wallets-signing-tools-api-clients'
+                  '/build/tools/',
+                  '/build/tools/filecoin-backed-pinning-service',
+                  '/build/tools/api-clients',
+                  '/build/tools/powergate',
+                  '/build/tools/signing-libraries',
+                  '/build/tools/slate',
+                  '/build/tools/wallets'
                 ]
               },
               {
