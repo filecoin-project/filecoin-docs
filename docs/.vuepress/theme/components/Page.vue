@@ -1,7 +1,7 @@
 <template>
   <main class="page">
     <slot name="top" />
-
+    <Breadcrumbs />
     <Content v-if="!isHome" class="theme-default-content" />
     <Home v-else-if="isHome" />
     <div class="content-footer" v-if="!isContentStatus && !isHome">
@@ -26,6 +26,7 @@
 import PageEdit from '@parent-theme/components/PageEdit.vue'
 import PageNav from '@parent-theme/components/PageNav.vue'
 
+import Breadcrumbs from './Breadcrumbs.vue'
 import Feedback from './Feedback.vue'
 import LegacyCallout from './LegacyCallout.vue'
 import Analytics from './Analytics.vue'
@@ -37,6 +38,7 @@ export default {
   components: {
     PageEdit,
     PageNav,
+    Breadcrumbs,
     Feedback,
     LegacyCallout,
     Analytics,
@@ -74,6 +76,10 @@ export default {
 .page {
   padding-bottom: 2rem;
   display: block;
+}
+
+.breadcrumbs.fixed + .theme-default-content {
+  padding-top: 6em;
 }
 
 .content-footer {

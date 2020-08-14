@@ -173,7 +173,6 @@ module.exports = {
             }
           ],
           '/reference/': [
-            ['/', '<- Home'],
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
             ['https://lotu.sh/', 'Lotus tutorial']
