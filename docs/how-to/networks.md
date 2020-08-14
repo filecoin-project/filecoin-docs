@@ -73,7 +73,7 @@ Calibration is an up-to-date devnet, best for miners preparing for the [Space Ra
 | Branch              | `ntwk-calibration`                                           |
 | Tag                 | [`ntwk-calibration-8.13.1`](https://github.com/filecoin-project/lotus/tree/ntwk-calibration-8.13.1) |
 | Details page        | [calibration.json](https://github.com/filecoin-project/network-info/blob/master/networks/calibration.json) |
-| Next expected reset | Aug 14, 2020, with frequent resets until competition begins. See Slack channels below for reset announcements. |
+| Next expected reset | Frequent resets until competition begins. See Slack channels below for reset announcements. |
 
 #### Calibration Devnet Resources
 
