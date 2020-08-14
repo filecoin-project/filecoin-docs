@@ -3,15 +3,11 @@ ul > li > a.sidebar-link {
 	font-weight: 500;
 }
 
-ul.sidebar-links > li > a {
-	color: inherit;
-}
-
 header.navbar .nav-links {
 	display: none;
 }
 
-.sidebar {
+#app .sidebar {
 	.nav-links {
 		display: block !important;
 
@@ -20,8 +16,17 @@ header.navbar .nav-links {
 		}
 	}
 
-	.sidebar-heading {
+	.sidebar-group-items {
+		font-size: 1em !important;
+
+		> li .sidebar-link {
+			font-size: 0.95em !important;
+		}
+	}
+
+	> .sidebar-links > li > a.sidebar-link, .sidebar-heading {
 		font-weight: bold !important;
+		font-size: 1em;
 	}
 
 	.sidebar-group.is-sub-group a.sidebar-link {

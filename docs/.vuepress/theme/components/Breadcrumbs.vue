@@ -50,7 +50,7 @@ nav
 
   @media (min-width: $MQMobile)
     padding: 1.5rem 0
-    margin: 0 2.5em
+    margin: 0 2.5rem
 
   &.fixed
     position fixed
@@ -61,6 +61,10 @@ nav
     display flex
 .breadcrumb
   margin-right: 0.5em
+  color: $sidebarTextColor;
+  opacity: 0.5;
+  font-weight 600
+  transition: opacity 0.5s;
   &:not(:first-child)::before
     margin-right: 0.5em
     content "/"
@@ -68,5 +72,7 @@ nav
     font-size inherit
 
   &:last-child
-    cursor default
+  &:hover
+    opacity 1
+    color: $accentColor
 </style>
