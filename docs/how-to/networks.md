@@ -71,9 +71,9 @@ Calibration is an up-to-date devnet, best for miners preparing for the [Space Ra
 | ------------------- | ------------------------------------------------------------ |
 | Sector Sizes        | 512MiB, 32GiB, 64GiB                                         |
 | Branch              | `ntwk-calibration`                                           |
-| Tag                 | [`ntwk-calibration-8.8.0`](https://github.com/filecoin-project/lotus/tree/ntwk-calibration-8.8.0) |
-| Details page        | [calibration.fildev.network](http://www.calibration.fildev.network/) |
-| Next expected reset | Aug 14, 2020, with frequent resets until competition begins. See Slack channels below for reset announcements. |
+| Tag                 | [`ntwk-calibration-8.13.1`](https://github.com/filecoin-project/lotus/tree/ntwk-calibration-8.13.1) |
+| Details page        | [calibration.json](https://github.com/filecoin-project/network-info/blob/master/networks/calibration.json) |
+| Next expected reset | Frequent resets until competition begins. See Slack channels below for reset announcements. |
 
 #### Calibration Devnet Resources
 
@@ -83,6 +83,15 @@ Calibration is an up-to-date devnet, best for miners preparing for the [Space Ra
 | Stats dashboard                             | https://stats.calibration.fildev.network/                    |
 | Block explorers                             | https://calibration.filfox.io/ <br />https://calibration.filscan.io/ |
 | [Slack](https://filecoin.io/slack) channels | [#fil-net-calibration](https://filecoinproject.slack.com/archives/C017CCH1MHB) <br /> [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) |
+
+#### Calibration Faucet Notes
+The faucet issues small amounts of mock FIL to jump-start devnets and testnets. Previous faucet designs let a few bad actors spam and abuse the network, or pay massive, unrealistic transaction and gas fees instead of setting fees properly. Here is how the calibration faucet works:
+
+* To fairly distribute FIL to all users, you'll need to log in with a Github account at least 7 days old.
+* You can get a one time initial balance transfer of 5000 FIL to any address, to initialize your miner and pledge some sectors. (This amount should be good for about 500 32GiB sectors.)
+* Generally, you should use block rewards to pledge additional sectors.
+* However, once you have a miner with at least one sector, you can use the faucet to send additional FIL to that miner every 4 hours. The amount of FIL is proportional to the rate of storage growth for the miner over the last 24h. For every GiB of power, you will receive 0.5 FIL (or minimum of 2000 FIL).
+* The goal is to create a minimal “proof of work” for the faucet. We’re hoping this faucet design will create more realistic conditions compared to how Filecoin will work at mainnet. If you have suggestions on how to improve the faucet while still meeting the anti-spam goals described there, we’re all ears!
 
 ### Nerpa Devnet
 Nerpa is a long-lived devnet, **best for developers building storage apps**. Nerpa uses small sectors and reduced proofs parameters, so sealing is much faster than in the full Testnet version. The name comes from [a species of seal](https://en.wikipedia.org/wiki/Baikal_seal), one of the smallest true seals. 
