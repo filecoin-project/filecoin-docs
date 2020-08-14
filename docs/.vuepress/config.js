@@ -208,7 +208,6 @@ module.exports = {
             {
               title: 'Project',
               path: '/project/',
-              collapsable: false,
               children: [
                 [
                   'https://app.instagantt.com/shared/s/1152992274307505/latest',
@@ -226,7 +225,6 @@ module.exports = {
             {
               title: 'Community',
               path: '/community/',
-              collapsable: false,
               children: [
                 {
                   title: 'Join the community',
