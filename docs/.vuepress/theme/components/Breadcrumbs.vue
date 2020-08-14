@@ -46,16 +46,19 @@ export default {
 nav
   border-bottom 1px solid #eaecef
   font-size 0.9em
-  padding: 2em 0
-  margin: 0 2.5em
+  padding: 1.5rem 2rem
+
+  @media (min-width: $MQMobile)
+    padding: 1.5rem 0
+    margin: 0 2.5em
+
   &.fixed
     position fixed
-    z-index 10
+    z-index 5
     background-color #fff
     width 100%
     max-width 740px
     display flex
-
 .breadcrumb
   margin-right: 0.5em
   &:not(:first-child)::before

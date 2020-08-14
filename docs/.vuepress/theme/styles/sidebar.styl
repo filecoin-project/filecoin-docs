@@ -21,27 +21,16 @@ header.navbar .nav-links {
 	}
 
 	.sidebar-heading {
-		font-weight: 700 !important;
+		font-weight: bold !important;
 	}
 
 	.sidebar-group.is-sub-group a.sidebar-link {
 		margin-bottom: 0.2rem;
 	}
 
-	.sidebar-group.is-sub-group {
-		margin-bottom: 0.5rem;
-	}
-
-	.sidebar-links.sidebar-group-items li:last-child .sidebar-group.is-sub-group {
-		margin-bottom: 0;
-	}
-
 	.sidebar-group.is-sub-group > .sidebar-heading:not(.clickable) {
-		opacity: 1;
-		font-weight: bold;
 		text-transform: uppercase;
 		font-size: 0.8rem;
-		letter-spacing: 0.05em;
 		line-height: 2em;
 	}
 }
@@ -80,6 +69,13 @@ header.navbar .nav-links {
 		overflow: hidden;
 
 		> .sidebar-links {
+			opacity: 0.5;
+			transition: opacity 0.5s;
+
+			&:hover {
+				opacity: 1;
+			}
+
 			overflow: auto;
 			padding-bottom: 6em;
 		}
@@ -95,7 +91,6 @@ header.navbar .nav-links {
 		.nav-item > a:not(.external) {
 			&:hover, &.router-link-active {
 				margin-bottom: 0px;
-				// background: lighten($accentColor, 95%);
 				border-bottom: none;
 				color: $accentColor;
 			}
