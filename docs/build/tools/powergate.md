@@ -33,7 +33,7 @@ There are many ways to interact with the Powergate. These pathways are well-docu
 ::: tip
 Sometimes the best way to learn is through examples.
 
-- See a walkthrough of an example application (the Simple Pinning Service) built on the [Powergate JS Client](/build/examples/simple-pinning-service).
+- See a walkthrough of an example application (the Simple Pinning Service) built on the [Powergate JS Client](../examples/simple-pinning-service).
 - See a full production application (Slate) built on the [Powergate JS Client](https://github.com/filecoin-project/slate/).
   :::
 
