@@ -1,11 +1,11 @@
 ---
 title: Troubleshooting Lotus installation
-description: If you're having issues install Lotus on your system, try running through some of these troubleshooting steps.
+description: If you're having issues installing Lotus on your system, try running through some of these troubleshooting steps.
 ---
 
 # Troubleshooting
 
-If you're having trouble installing Lotus, try running through some of these troubleshooting steps. If you're still having trouble, feel free to reach out to the team on the `#fil-help` channel in the Filecoin Slack.
+If you're having trouble installing Lotus, try running through some of these troubleshooting steps. If you're still having trouble, feel free to reach out on the `#fil-help` channel in the Filecoin Slack.
 
 ## Update your system
 
@@ -13,7 +13,7 @@ This sounds simple, but a common reason users aren't able to run Filecoin is bec
 
 ## Check the dependencies
 
-Lotus has several dependencies that need to be installed and working _before_ the software can run. Run the command below for your operating system to make sure everything is installed and up-to-date.
+Lotus has several dependencies that must be installed _before_ the software can run. Run the command below for your operating system to make sure everything is installed and up-to-date.
 
 | Operating system | Update command                                                                                                             |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -46,4 +46,4 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.2()
 	/home/infra/go/pkg/mod/github.com/lucas-clemente/quic-go@v0.17.3/internal/handshake/unsafe.go:26 +0x205
 ```
 
-The current Lotus client `0.4.2` has issues with Go version `1.15`. If you have Go `1.15` installed, roll back to version `1.14.6`.
+The current Lotus client `0.4.2` is not compatible with Go version `1.15`. If you have Go `1.15` installed, roll back to version `1.14.6`.

@@ -11,17 +11,16 @@ The requirements of your system will change depending on the type of client you 
 
 ### Lotus node
 
-Since the Filecoin network is constantly growing and being developed, hardware requirements keep changing. The requirements table below is correct as of writing but may change in the future. The amount of memory (RAM) required is expected to drop significantly as the Lotus client uses Badger FS more efficiently. This is expected to come down to about 1GB in the near future.
+The requirements table below is correct as of August 2020 but may change in the future as software development continues. The amount of memory (RAM) required is expected to drop significantly to about 1GB in the future as the Lotus client uses Badger FS more efficiently. 
 
 | Processor                                      | Memory   | Storage space         |
 | ---------------------------------------------- | -------- | --------------------- |
 | 4 cores<br>8 threads<br> 2.5GHz base frequency | 8GB DDR4 | 200GB (SSD preferred) |
 
-Again, these requirements will change in the near future.
 
 ### Storage miner
 
-Miners require a significant amount of hardware to run. The setup below is a minimal example for sealing 32GB sectors on Lotus:
+Miners require a significant amount of hardware to run. The setup below is a minimal example for sealing 32GiB sectors on Lotus:
 
 | Processor                                      | Memory     | Storage space |
 | ---------------------------------------------- | ---------- | ------------- |
