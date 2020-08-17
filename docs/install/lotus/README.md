@@ -7,7 +7,7 @@ description: Set up the Lotus Filecoin client on your computer, ready to be used
 
 Lotus is an implementation of the Filecoin specification written in Go. You can run the Lotus client to interact with the Filecoin network. The Lotus project is created and maintained by Protocol Labs, the creators of IPFS, libp2p, and Filecoin. This section covers how to install the Lotus client on your machine.
 
-There are three types of Lotus client available:
+The Lotus client can be used for one of three use-cases:
 
 | Client        | Purpose                                                                                                                                                                         |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -15,7 +15,7 @@ There are three types of Lotus client available:
 | Storage miner | The Lotus storage miner queries a Lotus node for the latest tipset on-chain, produces a block on that tipset, and submits it to the node to be broadcast to the entire network. |
 | Seal worker   | An extra process that can offload heavy processing tasks from your Lotus Storage miner.                                                                                         |
 
-Install the Lotus Filecoin client on your system, ready to be used as a single node or in a mining operation. To make the install go as smoothly as possible, read through the [software and hardware requirements](./requirements) first.
+All three of these use-cases use the same Lotus client, but they differ in how they are configured _after_ the client has been installed. To make the install go as smoothly as possible, read through the [software and hardware requirements](./requirements) first.
 
 ## Linux
 
