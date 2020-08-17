@@ -20,7 +20,7 @@ Filecoin has several networks for various testing, benchmarking, and optimizatio
 
 To connect to any of these networks:
 
-1. Choose the network that best suits your needs. As of July 22, we recommend [calibration](#calibration-devnet) for most miners and [nerpa](#nerpa-devnet) for most developers. 
+1. Choose the network that best suits your needs. As of Aug 17, we recommend [calibration](#calibration-devnet) for most miners and [nerpa](#nerpa-devnet) for most developers. 
 2. Delete any existing local Lotus repository, if one is present.
 3. Build Lotus from the **branch** and **tag** listed for each network (example: `ntwk-nerpa`, [`tag ntwk-nerpa-7.7.0`](https://github.com/filecoin-project/lotus/tree/ntwk-nerpa-7.7.0)).
 4. When you run `lotus daemon` on the build you've created from the listed branch, you should automatically be connected to the proper bootstrap nodes.
@@ -102,16 +102,16 @@ Nerpa is a long-lived devnet, **best for developers building storage apps**. Ner
 | --- | --- |
 |Sector Sizes | 512MiB |
 |Branch | `ntwk-nerpa` |
-|Tag | [`tag ntwk-nerpa-7.7.0`](https://github.com/filecoin-project/lotus/tree/ntwk-nerpa-7.7.0) |
-|Details page | [nerpa.fildev.network](http://www.nerpa.fildev.network/) |
-|Next expected reset | August 12, 2020 |
+|Tag | n/a |
+|Details page | n/a |
+|Next expected reset | Last reset Aug 17, 2020. Next reset TBD. |
 
 #### Nerpa Devnet Resources
 
 | Description                                | Details                                                      |
 | ------------------------------------------ | ------------------------------------------------------------ |
 | Faucet                                     | https://faucet.nerpa.fildev.network/                         |
-| Stats dashboard                            | https://stats.nerpa.fildev.network/                          |
+| Stats dashboard                            | Coming Aug 18.                        |
 | Block explorers                            | n/a                                                          |
 | [Slack](https://filecoin.io/slack) channel | [#fil-net-nerpa](https://filecoinproject.slack.com/archives/C016VJSJNTH) |
 
