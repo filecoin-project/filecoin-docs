@@ -32,7 +32,7 @@ export default {
         if (page != null) {
           crumbs.push({
             path: page.path,
-            title: i == 0 ? 'Home' : page.frontmatter.breadcrumb || page.title
+            title: page.frontmatter.breadcrumb || page.title
           })
         }
       }
