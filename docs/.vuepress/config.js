@@ -81,7 +81,6 @@ module.exports = {
         nav: require('./nav/en'),
         sidebar: {
           '/mine/': [
-            '',
             '/mine/storage-mining',
             '/mine/lotus-seal-worker',
             '/mine/setting-a-static-port',
