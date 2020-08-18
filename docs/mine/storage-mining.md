@@ -111,7 +111,7 @@ The addresses passed to `set-addrs` parameter in the commands below should be cu
 Once the config file has been updated, set the on-chain record of the miner's listen addresses:
 
 ```
-lotus-miner actor set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
+lotus-storage-miner actor set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
 ```
 
 This updates the `MinerInfo` object in the miner's actor, which will be looked up
@@ -120,5 +120,5 @@ when a client attempts to make a deal. Any number of addresses can be provided.
 Example:
 
 ```
-$ lotus-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456
+$ lotus-storage-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456
 ```
