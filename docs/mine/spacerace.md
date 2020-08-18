@@ -113,6 +113,16 @@ If you would like to change the default gas fees to accelerate your messages, ed
   MaxWindowPoStGasFee = "50 FIL"
 ```
 
+#### How do I demonstrate a sector upgrade?
+
+To be eligible for Space Race rewards, you will need to demonstrate at least _one_ sector upgrade per miner.
+
+* Run `lotus-miner sectors list`.
+* From the results, find a CommittedCapacity sector. It will look like this: `1: Proving sSet: YES active: YES tktH: XXXX seedH: YYYY deals: [0]`. In this case, `1` represents the sector number.
+* Use that sector number to run `./lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER`.
+
+There is no immediate feedback that `mark-for-upgrade` has succeeded or failed. However, within 24 hours, the `active: YES` should change to `active: NO`. This result will also be visible on the calibration/competition Dashboard.
+
 ## Additional notes
 
 * If a bug is identified during the competition that threatens the validity of the power table, the Filecoin team may end the competition early. Rewards will still be awarded for the period prior to the discovery of the bug. If such a bug is responsibly disclosed to the Filecoin team, the team reporting it will be eligible for rewards of up to 250k FIL, depending on the severity and practicality of the bug, as determined by the Filecoin team.
