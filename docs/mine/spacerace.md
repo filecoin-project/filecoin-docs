@@ -115,13 +115,13 @@ If you would like to change the default gas fees to accelerate your messages, ed
 
 #### How do I demonstrate a sector upgrade?
 
-To be eligible for Space Race rewards, you will will need to demonstrate they they can execute _one_ sector upgrade per miner.
+To be eligible for Space Race rewards, you will need to demonstrate at least _one_ sector upgrade per miner.
 
 * Run `lotus-miner sectors list`.
 * From the results, find a CommittedCapacity sector. It will look like this: `1: Proving sSet: YES active: YES tktH: XXXX seedH: YYYY deals: [0]`. In this case, `1` represents the sector number.
 * Use that sector number to run `./lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER`.
 
-There is no immediate feedback that `mark-for-upgrade` has succeeded or failed. However, within 24 hours, the `active: YES` should change. and this result will be visible on the calibration/competition Dashboard.
+There is no immediate feedback that `mark-for-upgrade` has succeeded or failed. However, within 24 hours, the `active: YES` should change to `active: NO`. This result will also be visible on the calibration/competition Dashboard.
 
 ## Additional notes
 
