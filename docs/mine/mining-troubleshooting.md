@@ -50,7 +50,7 @@ If you see this, that means `pledge-sector` wrote too much data to `$TMPDIR` whi
 
 ## Error: GPU unused
 
-If you suspect that your GPU is not being used, first make sure it is properly configured as described in the [testing configuration page](hardware-mining.md). Once you've done that (and set the `BELLMAN_CUSTOM_GPU` as appropriate if necessary) you can verify your GPU is being used by running a quick lotus-bench benchmark.
+If you suspect that your GPU is not being used, first make sure it is properly configured as described in the [testing configuration page](https://lotu.sh/en+hardware-mining). Once you've done that (and set the `BELLMAN_CUSTOM_GPU` as appropriate if necessary) you can verify your GPU is being used by running a quick lotus-bench benchmark.
 
 First, to watch GPU utilization run `nvtop` in one terminal, then in a separate terminal, run:
 
