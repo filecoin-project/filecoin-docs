@@ -74,6 +74,10 @@ export default {
               path: '/how-to/networks'
             },
             {
+              title: 'Join a network',
+              path: '/how-to/join-a-network'
+            },
+            {
               title: 'Preparing data',
               path: '/how-to/store/prepare-data'
             },
