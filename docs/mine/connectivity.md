@@ -7,9 +7,9 @@ description: Tips and tricks for improving a miner's connectivity to the Filecoi
 
 Filecoin miners, like participants in all peer-to-peer protocols, require a steady and quality pool of peers to communicate with in order to perform their various functions. For other participants on the network to establish incoming P2P connections with a miner, a few conditions must be met:
 
-* The miner's public IP address must be known
-* The protocol (TCP/UDP) and port number (0-65535) on which the miner is listening must be known 
-* All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination
+- The miner's public IP address must be known
+- The protocol (TCP/UDP) and port number (0-65535) on which the miner is listening must be known
+- All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination
 
 The following steps are highly recommended for all miners who wish to successfully accept storage and retrieval deals.
 
@@ -19,12 +19,12 @@ The following steps are highly recommended for all miners who wish to successful
 
 ## Setting multiaddresses
 
-You can set the multiaddresses that your miner listens on in a miner's `config.toml` file (by default located at `~/.lotusminer/config.toml`). 
+You can set the multiaddresses that your miner listens on in a miner's `config.toml` file (by default located at `~/.lotusminer/config.toml`).
 
 Once you've done so, you can set the on-chain record of your miner's listen addresses with the command:
- 
- ```
- lotus-miner actor set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
+
+```
+lotus-storage-miner actor set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
 ```
 
 This updates the `MinerInfo` object in your miner's actor, which will be looked up when a client attempts to make a deal with you. You can provide any number of addresses.
@@ -32,7 +32,7 @@ This updates the `MinerInfo` object in your miner's actor, which will be looked 
 As an example, you could run:
 
 ```
- lotus-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456 
+lotus-storage-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456
 ```
 
 This step is the best way to ensure your miner is dial-able for storage and retrieval deals!
@@ -42,18 +42,18 @@ This step is the best way to ensure your miner is dial-able for storage and retr
 To ensure storage and retrieval deals operate smoothly, it is recommended to check how many peers a miner is connected to after each start-up. In the Lotus client, a manual peer check can be performed with the command:
 
 ```
-lotus-miner net peers
-``` 
+lotus-storage-miner net peers
+```
 
 If a very low peer count is present (1-5), it is possible to manually connect the miner to the DHT by utilising one of the bootstrap peers listed in the branch's `./build/bootstrap/bootstrappers.pi` file with the commmand:
 
 ```
-lotus-miner net connect <address1> <address2>…
+lotus-storage-miner net connect <address1> <address2>…
 ```
 
 ## Port forwarding
 
-In order to ensure that Filecoin packets are able to pass freely and unfiltered through a local firewall, it is highly recommended to set up port forwarding for a miner's `libp2p` address. By default, this port is randomised; for optimal connectivity, make sure that it is set to a static IP. 
+In order to ensure that Filecoin packets are able to pass freely and unfiltered through a local firewall, it is highly recommended to set up port forwarding for a miner's `libp2p` address. By default, this port is randomised; for optimal connectivity, make sure that it is set to a static IP.
 
 To enable port forwarding on your local router:
 
@@ -61,10 +61,10 @@ To enable port forwarding on your local router:
 2. Log in as admin / root
 3. Find the section to configure port forwarding
 4. Choose a port, and configure a port forwarding rule with the following values:
-    * External port: [CHOSEN PORT]
-    * Internal port: [CHOSEN PORT]
-    * Protocol: TCP
-    * IP Address: Private IP address of the host system running the miner
+   - External port: [CHOSEN PORT]
+   - Internal port: [CHOSEN PORT]
+   - Protocol: TCP
+   - IP Address: Private IP address of the host system running the miner
 
 ## Establishing a public IP address
 
@@ -81,11 +81,13 @@ Below is an example `~/.lotusminer/config.toml` configuration file in which the 
    ListenAddresses = ["/ip4/0.0.0.0/tcp/5472"]
    AnnounceAddresses = ["/ip4/1.2.3.4/tcp/10240"]
 ```
+
 In the above example, port `10240` is forwarded to `<internal-miner-host-ip>:5472`.
 
 Verify that the port is listening by using telnet (eg: `telnet 1.2.3.4 10240`. `nc` is also sufficient.) If successful, a plaintext `/multistream/1.0.0` line will be within the response.
 
 As an additional litmus test, you should be able to:
+
 - Ping your Public IP address using https://ping.eu/ping
 - Establish a TCP socket to your Public IP address and port using https://ping.eu/port-chk/
 
@@ -110,7 +112,7 @@ _Note: Remember that libp2p (the underlying network stack of the Filecoin miner)
 - 5. Wait to receive the Wireguard configuration from Ungleich, then set it up on your machine
 - 6. Follow the [Setting multiaddresses](#setting-multiaddresses) steps to add this multiaddr to your miner and announce it on-chain.
 
-Voilà, now you have a new network interface with an IPv6 address. All traffic using that interface will be routed through Ungleich IPv6 VPN, which means that your machine, no matter where it is, will be publicly dialable through that IPv6 address. 
+Voilà, now you have a new network interface with an IPv6 address. All traffic using that interface will be routed through Ungleich IPv6 VPN, which means that your machine, no matter where it is, will be publicly dialable through that IPv6 address.
 
 You can test your IPv6 connectivity using the service https://www.ultratools.com/tools/ping6
 
@@ -145,6 +147,7 @@ With this approach, you link a local port in your local address to a public port
 ## Troubleshooting
 
 Connectivity issues? Please run the following steps:
+
 1. Go to [https://ping.eu/ping/](https://ping.eu/ping/) and check if the service can ping your public IP address
 1. Go to [https://ping.eu/port-chk/](https://ping.eu/port-chk/) and check if the port that leads to your miner is accessible
 1. From another network (another computer in another house, datacenter, etc), do telnet or netcat to the ip+port and a `/multistream/1.0.0` should come out
@@ -153,15 +156,14 @@ Connectivity issues? Please run the following steps:
 
 ## Common Errors
 
-| Error | What it means | How to fix |
-|---|---|---|
-| N/A | If you see "N/A" for deal success rate, this may be why. Once your miner seals its first sector, the dealbot will start attempting storage deals. From the moment a miner seals its first sector, you should have a storage deal result in max 48 hours (current timeout value for storage deals). For retrieval deals you should see a result in maxim 12 hours after the storage deal is reported successful (current timeout for retrieval deals ). The dashboard currently logs deal **results** only. If you have a storage or retrieval deal in progress you’ll still see “N/A” until it propagates to the chain. | No miner action needed. |
-| ClientQueryAsk failed : failed to open stream to miner: dial backoff | The connection to the remote host was attempted, but failed. | This may be due to issues with porting, IPs set within the config file, or simply no internet connectivity. To fix, [establish a public IP address](https://docs.filecoin.io/mine/connectivity/#establishing-a-public-ip-address).|
-| ClientQueryAsk failed : failed to open stream to miner: failed to dial | The deal-bot was unable to open a network socket to the miner. | This is likely because the miner's IP is not publicly dialable, or a port issue. To fix, [establish a public IP address](https://docs.filecoin.io/mine/connectivity/#establishing-a-public-ip-address).|
-| ClientQueryAsk failed : failed to open stream to miner: routing: not found | The deal-bot was unable to locate the miners IP and/or port. | Follow the instructions under the [setting multiaddresses section](#setting-multiaddresses) on this page. |
-| ClientQueryAsk failed : failed to read ask response: stream reset | Connectivity loss, either due to a high packet loss rate or libp2p too aggressively dropping/failing connections. | [Fix underway.] Lotus team is currently working on a change to use libp2p's connection tagging feature, which will retry connections if dropped. ([go-fil-markets/#361](https://github.com/filecoin-project/go-fil-markets/issues/361)). No action needed from miners. |
-| StorageDealError PublishStorageDeals: found message with equal nonce as the one we are looking for | [Under investigation.] We suspect a chain validation error | No action needed from miners. |
-| ClientMinerQueryOffer - Retrieval query offer errored: get cid info: No state for /bafk2bz... | [Under investigation.] | No action needed from miners. |
-
+| Error                                                                                              | What it means                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | How to fix                                                                                                                                                                                                                                                             |
+| -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| N/A                                                                                                | If you see "N/A" for deal success rate, this may be why. Once your miner seals its first sector, the dealbot will start attempting storage deals. From the moment a miner seals its first sector, you should have a storage deal result in max 48 hours (current timeout value for storage deals). For retrieval deals you should see a result in maxim 12 hours after the storage deal is reported successful (current timeout for retrieval deals ). The dashboard currently logs deal **results** only. If you have a storage or retrieval deal in progress you’ll still see “N/A” until it propagates to the chain. | No miner action needed.                                                                                                                                                                                                                                                |
+| ClientQueryAsk failed : failed to open stream to miner: dial backoff                               | The connection to the remote host was attempted, but failed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | This may be due to issues with porting, IPs set within the config file, or simply no internet connectivity. To fix, [establish a public IP address](https://docs.filecoin.io/mine/connectivity/#establishing-a-public-ip-address).                                     |
+| ClientQueryAsk failed : failed to open stream to miner: failed to dial                             | The deal-bot was unable to open a network socket to the miner.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | This is likely because the miner's IP is not publicly dialable, or a port issue. To fix, [establish a public IP address](https://docs.filecoin.io/mine/connectivity/#establishing-a-public-ip-address).                                                                |
+| ClientQueryAsk failed : failed to open stream to miner: routing: not found                         | The deal-bot was unable to locate the miners IP and/or port.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Follow the instructions under the [setting multiaddresses section](#setting-multiaddresses) on this page.                                                                                                                                                              |
+| ClientQueryAsk failed : failed to read ask response: stream reset                                  | Connectivity loss, either due to a high packet loss rate or libp2p too aggressively dropping/failing connections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | [Fix underway.] Lotus team is currently working on a change to use libp2p's connection tagging feature, which will retry connections if dropped. ([go-fil-markets/#361](https://github.com/filecoin-project/go-fil-markets/issues/361)). No action needed from miners. |
+| StorageDealError PublishStorageDeals: found message with equal nonce as the one we are looking for | [Under investigation.] We suspect a chain validation error                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | No action needed from miners.                                                                                                                                                                                                                                          |
+| ClientMinerQueryOffer - Retrieval query offer errored: get cid info: No state for /bafk2bz...      | [Under investigation.]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No action needed from miners.                                                                                                                                                                                                                                          |
 
 If you fail to succeed in any of these steps, please start a thread on #fil-net-calibration in the [Filecoin Slack](http://filecoin.io/slack). Please include all of the steps you have tried, their output, and your miner ID.

@@ -106,7 +106,14 @@ module.exports = {
           {
             title: 'Mine',
             path: '/mine/',
-            children: ['/mine/connectivity', '/mine/spacerace']
+            children: [
+              '/mine/storage-mining',
+              '/mine/lotus-seal-worker',
+              '/mine/setting-a-static-port',
+              '/mine/connectivity',
+              '/mine/spacerace',
+              '/mine/mining-troubleshooting'
+            ]
           },
           {
             title: 'Build',
