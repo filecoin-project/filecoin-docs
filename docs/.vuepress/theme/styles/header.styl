@@ -1,14 +1,24 @@
 @media (min-width: $MQNarrow) {
-	header.navbar .links {
+	header.navbar {
 		display: flex;
-		flex-direction: row-reverse;
 
-		input, .suggestions {
-			width: 10em;
+		.home-link {
+			padding-right: 4rem;
 		}
 
-		input:focus, .suggestions {
-			width: 20em;
+		.links {
+			position: static;
+			flex: 1 1 auto;
+			justify-content: space-between;
+			flex-direction: row-reverse;
+
+			input, .suggestions {
+				width: 10em;
+			}
+
+			input:focus, .suggestions {
+				width: 20em;
+			}
 		}
 	}
 }
