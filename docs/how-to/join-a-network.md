@@ -6,7 +6,7 @@ description: Learn how to join one of the various Filecoin testnets.
 
 # Joining a network
 
-Once a Lotus node has been initialised on the appropriate [Filecoin network option](/how-to/networks/), the instructions within this section will 
+Once a Lotus node has been initialised on the appropriate [Filecoin network option](https://docs.filecoin.io/how-to/networks/), the instructions within this section will 
 
 ### Note: Using the Lotus Node from China
 
@@ -30,9 +30,9 @@ In another terminal window, check your connection with peers:
 lotus net peers | wc -l
 ```
 
-In order to connect to the network, you need to be connected to at least 1 peer. If you’re seeing 0 peers, read our [troubleshooting instructions](/mine/mining-troubleshooting/).
+In order to connect to the network, you need to be connected to at least 1 peer. If you’re seeing 0 peers, read our [troubleshooting instructions](https://docs.filecoin.io/mine/mining-troubleshooting/).
 
-Make sure that you have a reasonable "open files limit" set on your machine, such as 10000. If you're seeing a lower value, such as 256 (default on macOS), read our [troubleshooting instructions](/mine/mining-troubleshooting/) on how to update it prior to starting the Lotus daemon.
+Make sure that you have a reasonable "open files limit" set on your machine, such as 10000. If you're seeing a lower value, such as 256 (default on macOS), read our [troubleshooting instructions](https://docs.filecoin.io/mine/mining-troubleshooting/) on how to update it prior to starting the Lotus daemon.
 
 ## Chain sync
 
