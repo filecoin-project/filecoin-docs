@@ -67,6 +67,15 @@ header.navbar .nav-links {
 	}
 }
 
+// style selected sidebar item based on route class
+html.route-index {
+	.sidebar .nav-links .nav-item:first-child {
+		a.nav-link {
+			color: $accentColor;
+		}
+	}
+}
+
 @media (min-width: $MQMobile) {
 	aside.sidebar {
 		display: flex;
@@ -100,10 +109,6 @@ header.navbar .nav-links {
 
 		.nav-links, .nav-links a {
 			display: block;
-
-			&:hover, &.router-link-active {
-				color: $textColor;
-			}
 		}
 
 		.nav-item > a:not(.external) {
