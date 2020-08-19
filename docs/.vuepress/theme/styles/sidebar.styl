@@ -3,37 +3,40 @@ ul > li > a.sidebar-link {
 	font-weight: 500;
 }
 
-ul.sidebar-links > li > a {
-	color: inherit;
+header.navbar .nav-links {
+	display: none;
 }
 
-.sidebar {
-	.sidebar-heading {
-		font-weight: 700 !important;
+#app .sidebar {
+	.nav-links {
+		display: block !important;
+
+		.nav-item {
+			margin-left: 0;
+			font-size: 1em;
+		}
 	}
 
-	.sidebar-group .arrow {
-		display: none;
+	.sidebar-group-items {
+		font-size: 1em !important;
+
+		> li .sidebar-link {
+			font-size: 0.95em !important;
+		}
+	}
+
+	> .sidebar-links > li > a.sidebar-link, .sidebar-heading {
+		font-weight: bold !important;
+		font-size: 1em;
 	}
 
 	.sidebar-group.is-sub-group a.sidebar-link {
 		margin-bottom: 0.2rem;
 	}
 
-	.sidebar-group.is-sub-group {
-		margin-bottom: 0.5rem;
-	}
-
-	.sidebar-links.sidebar-group-items li:last-child .sidebar-group.is-sub-group {
-		margin-bottom: 0;
-	}
-
 	.sidebar-group.is-sub-group > .sidebar-heading:not(.clickable) {
-		opacity: 1;
-		font-weight: bold;
 		text-transform: uppercase;
 		font-size: 0.8rem;
-		letter-spacing: 0.05em;
 		line-height: 2em;
 	}
 }
@@ -43,23 +46,77 @@ ul.sidebar-links > li > a {
 }
 
 // sidebar scrollbar style
-.sidebar::-webkit-scrollbar {
+.sidebar-links::-webkit-scrollbar {
 	width: 5px;
 	position: fixed;
 	right: 0;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+.sidebar-links::-webkit-scrollbar-thumb {
 	background: transparent;
 	transition: background-color 2s;
 }
 
-.sidebar::-webkit-scrollbar-thumb:hover, .sidebar:hover::-webkit-scrollbar-thumb {
+.sidebar-links::-webkit-scrollbar-thumb:hover, .sidebar-links:hover::-webkit-scrollbar-thumb {
 	background: $borderColor;
 }
 
 @media (max-width: $MQMobile) {
 	.sidebar {
 		width: 80vw;
+	}
+}
+
+// style selected sidebar item based on route class
+html.route-index {
+	.sidebar .nav-links .nav-item:first-child {
+		a.nav-link {
+			color: $accentColor;
+		}
+	}
+}
+
+@media (min-width: $MQMobile) {
+	aside.sidebar {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		overflow: hidden;
+
+		> .sidebar-links {
+			padding: 1rem 0;
+
+			a {
+				&.active {
+					opacity: 1;
+
+					a {
+						opacity: 1;
+					}
+				}
+
+				opacity: 0.7;
+				transition: opacity 0.5s;
+			}
+
+			&:hover a {
+				opacity: 1;
+			}
+
+			overflow: auto;
+			padding-bottom: 6em;
+		}
+
+		.nav-links, .nav-links a {
+			display: block;
+		}
+
+		.nav-item > a:not(.external) {
+			&:hover, &.router-link-active {
+				margin-bottom: 0px;
+				border-bottom: none;
+				color: $accentColor;
+			}
+		}
 	}
 }
