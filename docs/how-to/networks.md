@@ -111,7 +111,7 @@ Nerpa is a long-lived devnet, **best for developers building storage apps**. Ner
 | Description                                | Details                                                      |
 | ------------------------------------------ | ------------------------------------------------------------ |
 | Faucet                                     | https://faucet.nerpa.fildev.network/                         |
-| Stats dashboard                            | Coming Aug 18.                        |
+| Stats dashboard                            | https://stats.nerpa.interplanetary.dev/                      |
 | Block explorers                            | n/a                                                          |
 | [Slack](https://filecoin.io/slack) channel | [#fil-net-nerpa](https://filecoinproject.slack.com/archives/C016VJSJNTH) |
 
