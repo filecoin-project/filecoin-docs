@@ -98,6 +98,7 @@ module.exports = {
             title: 'How-tos',
             path: '/how-to/',
             children: [
+              ['/how-to/networks', 'Connect to a network'],
               {
                 title: 'Store Data',
                 sidebarDepth: 1,
