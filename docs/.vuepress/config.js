@@ -2,19 +2,6 @@
 
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 
-const getStoreSection = () => ({
-  title: 'Store Data',
-  collapsable: false,
-  path: '/how-to/store/prepare-data/',
-  children: [
-    '/how-to/store/prepare-data',
-    '/how-to/store/tokens',
-    '/how-to/store/making-storage-deals',
-    '/how-to/store/retrieving-data',
-    '/how-to/store/large-files'
-  ]
-})
-
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -105,7 +92,6 @@ module.exports = {
                 'core-products/protocol-implementations'
               ]
             },
-            getStoreSection(),
             {
               title: 'Developer Tools',
               collapsable: false,
@@ -201,7 +187,18 @@ module.exports = {
                   collapsable: false,
                   children: ['/how-to/install-filecoin', '/how-to/networks']
                 },
-                getStoreSection()
+                {
+                  title: 'Store Data',
+                  collapsable: false,
+                  path: '/how-to/store/prepare-data/',
+                  children: [
+                    '/how-to/store/prepare-data',
+                    '/how-to/store/tokens',
+                    '/how-to/store/making-storage-deals',
+                    '/how-to/store/retrieving-data',
+                    '/how-to/store/large-files'
+                  ]
+                }
               ]
             },
             {
