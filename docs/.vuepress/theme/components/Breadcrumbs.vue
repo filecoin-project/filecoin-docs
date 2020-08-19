@@ -62,7 +62,7 @@ nav
 .breadcrumb
   margin-right: 0.5em
   color: $sidebarTextColor;
-  opacity: 0.5;
+  opacity: 0.7;
   font-weight 600
   transition: opacity 0.5s;
   &:not(:first-child)::before
