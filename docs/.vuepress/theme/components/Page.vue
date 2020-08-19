@@ -64,15 +64,17 @@ export default {
     },
     htmlRouteClass: function () {
       // patch to apply a root class for styling elements
+      // any path that isn't a primary nav item will add the route-index class
       const root = document.getElementsByTagName('html')[0]
-      const parts = this.$page.path.split('/')
-      const index = ['introduction', 'how-to', 'project', 'community']
-      index.includes(parts[1])
-        ? root.classList.add('route-index')
-        : root.classList.remove('route-index')
+      const path = this.$page.path
+      const navItems = this.$themeConfig.locales['/'].nav
+        .slice(1)
+        .map(a => a.link)
+      navItems.some(i => path.includes(i))
+        ? root.classList.remove('route-index')
+        : root.classList.add('route-index')
     }
   },
-
   mounted: function () {
     this.smoothScroll()
     this.htmlRouteClass()
