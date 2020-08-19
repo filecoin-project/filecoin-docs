@@ -48,9 +48,9 @@ nav
   font-size 0.9em
   padding: 1.5rem 2rem
 
-  @media (min-width: $MQMobile)
-    padding: 1.5rem 0
+  @media (min-width: $MQNarrow)
     margin: 0 2.5rem
+    padding: 1.5rem 0
 
   &.fixed
     position fixed
