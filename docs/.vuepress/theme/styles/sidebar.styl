@@ -80,11 +80,17 @@ html.route-index {
 	aside.sidebar {
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
 		overflow: hidden;
+		box-sizing: border-box;
 
 		> .sidebar-links {
 			padding: 1rem 0;
+			box-sizing: border-box;
+			flex-grow: 1;
+
+			> li:last-child {
+				margin-bottom: 1rem;
+			}
 
 			a {
 				&.active {
@@ -104,7 +110,6 @@ html.route-index {
 			}
 
 			overflow: auto;
-			padding-bottom: 6em;
 		}
 
 		.nav-links, .nav-links a {
