@@ -19,12 +19,14 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 **The competition period will begin Monday, August 24th at 20:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the Testnet. You'll also need to complete these steps to be eligible for rewards:
 - Maintain a deal success average of 80% or greater for both storage and retrieval deals.
-- Demonstrate at least one sector upgrade per miner.
-- Register your miner(s) by submitting your individual or company info via the Dashboard. It will generate a message for your miner to sign and submit via the competition dashboard. Miners that qualify for rewards will also need to pass an AML/KYC check once the competition ends. (See [Can I run multiple miners?](#can-i-run-multiple-miners) if you are running multiple miners.)
+- Demonstrate at least one [sector upgrade](#how-do-i-demonstrate-a-sector-upgrade) per miner.
+- Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/), which will go live shortly after competition start. It will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
 
 For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the Filecoin Slack. 
 
 ## What are the possible rewards?
+
+Prizes will be awarded for both [storage](#storage-rewards] and [block rewards](#block-rewards].
 
 ### Storage Rewards
 The top 50 miners in each region and globally are eligible to split a reward pool of up to 4mm FIL, depending on regional network storage achieved.
@@ -38,7 +40,7 @@ The top 50 miners in each region and globally are eligible to split a reward poo
 | 1MM FIL *	| 100 PiB| 
 * Only unlocked if each region achieves at least 1PiB of storage
 
-|	Total FIL rewards (regional pool)|		Regional network storage achieved|	
+|	Total FIL rewards (regional pool) |	Regional network storage achieved|	
 |------|------|
 |	25k FIL |	100 TiB|	
 |	50k FIL	|	500 TiB|	
@@ -67,12 +69,15 @@ Any miner found misrepresenting their location will result in a *total forfeitur
 
 #### Is a static IP required?
 
-A public IP is required so that your miner can make storage and retrieval deals and compete in Space Race. This can achieved through a static IP, or a relay or VPN. See the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) page for more details.
+A public IP is required so that your miner can make storage and retrieval deals and compete in Space Race. This can achieved through a static IP, or a relay or VPN. The majority of deal errors found during calibration period werre caused by IP address and other connectivity issues, so we highly recommend following the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) steps.
 
 #### How exactly is deal success measured?
-Once your miner is online, the dealbot will automatically begin making storage and retrieval deals. Only deals made through the dealbot count towards deal success rate for this competition. To qualify for rewards, your miner must show >90% success in both storage and retreival deals during the competition period.
+Once your miner is online, the dealbot will automatically begin making storage and retrieval deals. Only deals made through the dealbot count towards deal success rate for this competition. To qualify for rewards, your miner must show >=80% success in both storage and retrieval deals during the competition period.
 
 To see a detailed log of all deal attempts for your miner, visit the [Calibration Dashboard](https://calibration.spacerace.filecoin.io/) and search for your miner ID.
+
+#### How are regional and global storage achieved measured?
+Each region (regional or global) unlocks additional FIL rewards by collectively adding more storage to the network. Deal success rates are not measured . However, winners in each region will need to meet deal success rate minimums to be eligible for rewards.
 
 #### Can I run multiple miners?
 Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards.
@@ -119,7 +124,7 @@ If you would like to change the default gas fees to accelerate your messages, ed
 To be eligible for Space Race rewards, you will need to demonstrate at least _one_ sector upgrade per miner.
 
 * Run `lotus-miner sectors list`.
-* From the results, find a CommittedCapacity sector. It will look like this: `1: Proving sSet: YES active: YES tktH: XXXX seedH: YYYY deals: [0]`. In this case, `1` represents the sector number.
+* From the results, find a CommittedCapacity sector. It will look like this: `1: Proving sSet: YES active: YES tktH: XXXX seedH: YYYY deals: [0]`. In this case, `1` represents the sector number. 
 * Use that sector number to run `./lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER`.
 
 There is no immediate feedback that `mark-for-upgrade` has succeeded or failed. However, within 24 hours, the `active: YES` should change to `active: NO`. This result will also be visible on the calibration/competition Dashboard.
