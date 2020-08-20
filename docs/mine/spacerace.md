@@ -108,7 +108,7 @@ If you would like to change the default gas fees to accelerate your messages, ed
 
 ```
 [Fees]
-  MaxPreCommitGasFee = 0.05 FIL"
+  MaxPreCommitGasFee = "0.05 FIL"
   MaxCommitGasFee = "0.05 FIL"
   MaxWindowPoStGasFee = "50 FIL"
 ```
