@@ -15,21 +15,19 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 ## How do I participate?
 
-You must be able to run at least 1 miner to participate. 
-
 **The calibration period is currently open.** To join, run at least 1 miner on the [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet). A preview of calibration standings is available on the [Preview Dashboard](https://calibration.spacerace.filecoin.io/). 
 
-The competition period is not yet open. The competition will include a full dashboard where miners can view global and regional reward tiers, as well as individual miner storage power, deal success rate, and sector life cycle command completion, in real-time. Miners will also be able to submit information for location verification, and display their names (individual or company) alongside their miner ID.
+**The competition period will begin Monday, August 24th at 20:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the Testnet. You'll also need to complete these steps to be eligible for rewards:
+- Maintain a deal success average of 80% or greater for both storage and retrieval deals.
+- Demonstrate at least one sector upgrade per miner.
+- Register your miner(s) by submitting your individual or company info via the Dashboard. It will generate a message for your miner to sign and submit via the competition dashboard. Miners that qualify for rewards will also need to pass an AML/KYC check once the competition ends. (See [Can I run multiple miners?](#can-i-run-multiple-miners) if you are running multiple miners.)
 
 For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the Filecoin Slack. 
 
 ## What are the possible rewards?
 
-  > **NOTICE:** In order to qualify for rewards, users must “claim” their miner ID from the dashboard following the provided instructions before the competition ends, and pass an AML/KYC check.
-
-There are two ways miners can earn additional rewards outside their mining efforts:
-* The total size of the reward pool increases alongside total network storage capacity.
-* The total pool of rewards is split between eligible mining operations pro rata, based on how much storage they add as a percentage of total network storage.
+### Storage Rewards
+The top 50 miners in each region and globally are eligible to split a reward pool of up to 4mm FIL, depending on regional network storage achieved.
 
 | Total FIL rewards (global pool)	| Global network storage achieved |
 |------|------|
@@ -48,13 +46,16 @@ There are two ways miners can earn additional rewards outside their mining effor
 |	250k FIL	|	5 PiB|	
 |	500k FIL	|	10 PiB|	
 
+### Block Rewards
+The top 20 FIL-denominated block reward producers who are also eligible to receive Space Race rewards will share a reward pool of 100k FIL on a pro rata basis. For example, if you receive 100,000 FIL in block rewards, and the top 20 producers cumulatively receive 2,000,000 FIL, you would be eligible to receive an additional 5,000 FIL. Like other competition rewards, any FIL received will vest linearly over six months. During the calibration period, miners can check their total block rewards mined at https://reward.calibration.fildev.network.
+
 Any rewards earned will be encoded into the genesis block and will vest linearly over six months from mainnet launch.
 
 ## Frequently asked questions
 
 #### What branch and network will be used for the Space Race?
 
-The [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet) is designed for the initial calibration phase in order to prepare equipment and client setups. Once the competition has started, the [testnet](https://docs.filecoin.io/how-to/networks/#testnet) will be the used network.
+The [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet) is designed for the initial calibration phase in order to prepare equipment and client setups. Once the competition starts, the [testnet](https://docs.filecoin.io/how-to/networks/#testnet) will be the used network.
 
 #### How is the "location" of a mining operation determined?
 
@@ -78,6 +79,50 @@ Yes, you can combine your competition results from multiple miners. Once the com
 
 #### How are rewards distributed?
 If you’re eligible for rewards, someone from CoinList will reach out to your provided email address shortly after the competition to conduct AML/KYC and coordinate delivery of the tokens. You will have the option to receive rewards directly to your wallet.
+
+#### How do I prioritize deals from competition bots?
+By default, Lotus nodes accept all inbound deals that match their criteria. However, during the Space Race competition, miners may want to limit the clients to avoid spam deals from malicious agents.
+
+To filter deals based on certain parameters, modify the `~/.lotusminer/config.toml` file to include a `Filter` param. This param should be a shell command that will be run when processing a deal proposal. Deals are accepted if the `Filter`'s exit code is 0. For any other exit code, deals will be rejected. 
+
+```
+~/.lotusminer/config.toml
+
+[Dealmaking]
+Filter = <shell command>
+
+## Reject all deals
+Filter = "false"
+
+## Accept all deals
+Filter = "true"
+
+## Only accept deals from the 3 competition dealbots
+Filter = "jq -e '.Proposal.Client == \"t1capnpwjvm4gfbdlbavblmvjldwqzdo6ukh7mmqq\" or .Proposal.Client == \"t12thv7e3x3tomo5nuunsvzqnl5txflpztdqcbtai\" or .Proposal.Client == \"t12heuwfbg654jgdnctywyafxrqbmcidwj6osecha\" '"
+```
+
+You can also write advanced deal filters based on any field in deal info (for example, you may wish to accept only `VerifiedClient` deals). Deal info is piped into `stdin` as JSON.
+
+#### How do I change gas fees?
+
+If you would like to change the default gas fees to accelerate your messages, edit the `~/.lotusminer/config.toml` config file.
+
+```
+[Fees]
+  MaxPreCommitGasFee = "0.05 FIL"
+  MaxCommitGasFee = "0.05 FIL"
+  MaxWindowPoStGasFee = "50 FIL"
+```
+
+#### How do I demonstrate a sector upgrade?
+
+To be eligible for Space Race rewards, you will need to demonstrate at least _one_ sector upgrade per miner.
+
+* Run `lotus-miner sectors list`.
+* From the results, find a CommittedCapacity sector. It will look like this: `1: Proving sSet: YES active: YES tktH: XXXX seedH: YYYY deals: [0]`. In this case, `1` represents the sector number.
+* Use that sector number to run `./lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER`.
+
+There is no immediate feedback that `mark-for-upgrade` has succeeded or failed. However, within 24 hours, the `active: YES` should change to `active: NO`. This result will also be visible on the calibration/competition Dashboard.
 
 ## Additional notes
 
