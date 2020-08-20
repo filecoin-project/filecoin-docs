@@ -1,6 +1,7 @@
 ---
 title: Mining in Filecoin
 description: An overview of everything mining-related on the Filecoin network.
+breadcrumb: Mine
 ---
 
 # Mining in Filecoin
@@ -67,10 +68,10 @@ In Filecoin, miners earn two different types of rewards for their efforts: stora
 **Block rewards** are large sums that are given to the miner credited for a new block. Unlike storage fees, these rewards do not come from an associated client; rather, the network "prints" new FIL as both an inflationary measure and an incentive to miners advancing the chain. All active miners on the network have a chance at recieving a block reward, their chance at such being directly proportional to the amount of storage space currently being contributed to the network.
 
 ### WinningPoSt
+
 WinningPoSt is the mechanism by which storage miners are rewarded for their contributions. In the Filecoin network, time is discretized into a series of epochs – the blockchain’s height corresponds to the number of elapsed epochs. At the beginning of each epoch, a small number of storage miners are elected to mine new blocks (Filecoin utilizes tipsets, which permit multiple blocks to be mined at the same height). Each elected miner who successfully creates a block is granted FIL, as well as the opportunity to charge other nodes fees to include messages in the block.
 
 To further incentivize the storage of “useful” data over simple capacity commitments, storage miners have the additional opportunity to compete for special deals offered by verified clients. Such clients are certified with respect to their intent to offer deals involving the storage of meaningful data, and the power a storage miner earns for these deals is augmented by a multiplier. The total amount of power a given storage miner has, after accounting for this multiplier, is known as **quality-adjusted power**.
-
 
 ## Uptime, slashing and penalties
 

@@ -1,7 +1,7 @@
 <template>
   <main class="page">
     <slot name="top" />
-
+    <Breadcrumbs />
     <Content v-if="!isHome" class="theme-default-content" />
     <Home v-else-if="isHome" />
     <div class="content-footer" v-if="!isContentStatus && !isHome">
@@ -26,6 +26,7 @@
 import PageEdit from '@parent-theme/components/PageEdit.vue'
 import PageNav from '@parent-theme/components/PageNav.vue'
 
+import Breadcrumbs from './Breadcrumbs.vue'
 import Feedback from './Feedback.vue'
 import LegacyCallout from './LegacyCallout.vue'
 import Analytics from './Analytics.vue'
@@ -37,6 +38,7 @@ export default {
   components: {
     PageEdit,
     PageNav,
+    Breadcrumbs,
     Feedback,
     LegacyCallout,
     Analytics,
@@ -54,18 +56,32 @@ export default {
   },
   methods: {
     smoothScroll: function () {
-      var root = document.getElementsByTagName('html')[0]
+      const root = document.getElementsByTagName('html')[0]
       // only enable smooth-scrolling on pages shorter that 15000 px
       return root.scrollHeight < 15000
         ? root.classList.add('smooth-scroll')
         : root.classList.remove('smooth-scroll')
+    },
+    htmlRouteClass: function () {
+      // patch to apply a root class for styling elements
+      // any path that isn't a primary nav item will add the route-index class
+      const root = document.getElementsByTagName('html')[0]
+      const path = this.$page.path
+      const navItems = this.$themeConfig.locales['/'].nav
+        .slice(1)
+        .map(a => a.link)
+      navItems.some(i => path.includes(i))
+        ? root.classList.remove('route-index')
+        : root.classList.add('route-index')
     }
   },
   mounted: function () {
     this.smoothScroll()
+    this.htmlRouteClass()
   },
   updated: function () {
     this.smoothScroll()
+    this.htmlRouteClass()
   }
 }
 </script>
@@ -74,6 +90,10 @@ export default {
 .page {
   padding-bottom: 2rem;
   display: block;
+}
+
+.breadcrumbs.fixed + .theme-default-content {
+  padding-top: 6em;
 }
 
 .content-footer {

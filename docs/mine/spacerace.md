@@ -80,29 +80,24 @@ Yes, you can combine your competition results from multiple miners. Once the com
 If you’re eligible for rewards, someone from CoinList will reach out to your provided email address shortly after the competition to conduct AML/KYC and coordinate delivery of the tokens. You will have the option to receive rewards directly to your wallet.
 
 #### How do I prioritize deals from competition bots?
-By default, Lotus nodes accept all inbound deals that match their criteria. 
-However, during the Space Race competition, miners may want to limit the clients to avoid spam deals from malicious agents.
-To do this, modify the `~/.lotusminer/config.toml` file to include a `Filter` param.
-This param should be a shell command that will be run when processing a deal proposal. 
+By default, Lotus nodes accept all inbound deals that match their criteria. However, during the Space Race competition, miners may want to limit the clients to avoid spam deals from malicious agents.
+
+To filter deals based on certain parameters, modify the `~/.lotusminer/config.toml` file to include a `Filter` param. This param should be a shell command that will be run when processing a deal proposal. Deals are accepted if the `Filter`'s exit code is 0. For any other exit code, deals will be rejected. 
 
 ```
 ~/.lotusminer/config.toml
 
 [Dealmaking]
 Filter = <shell command>
-```
 
-Deals are accepted if the `Filter`'s exit code is 0. For any other exit code, deals will be rejected. Examples:
-
-```
 ## Reject all deals
 Filter = "false"
 
 ## Accept all deals
 Filter = "true"
 
-### Only accept deals from client t3abcd
-Filter = "jq -e '.Proposal.Client == \"t3abcd\"'"
+## Only accept deals from the 3 competition dealbots
+Filter = "jq -e '.Proposal.Client == \"t1capnpwjvm4gfbdlbavblmvjldwqzdo6ukh7mmq\" or .Proposal.Client == \"t12thv7e3x3tomo5nuunsvzqnl5txflpztdqcbtai\" or .Proposal.Client == \"t12heuwfbg654jgdnctywyafxrqbmcidwj6osecha\" '"
 ```
 
 You can also write advanced deal filters based on any field in deal info (for example, you may wish to accept only `VerifiedClient` deals). Deal info is piped into `stdin` as JSON.
@@ -117,6 +112,16 @@ If you would like to change the default gas fees to accelerate your messages, ed
   MaxCommitGasFee = "0.05 FIL"
   MaxWindowPoStGasFee = "50 FIL"
 ```
+
+#### How do I demonstrate a sector upgrade?
+
+To be eligible for Space Race rewards, you will need to demonstrate at least _one_ sector upgrade per miner.
+
+* Run `lotus-miner sectors list`.
+* From the results, find a CommittedCapacity sector. It will look like this: `1: Proving sSet: YES active: YES tktH: XXXX seedH: YYYY deals: [0]`. In this case, `1` represents the sector number.
+* Use that sector number to run `./lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER`.
+
+There is no immediate feedback that `mark-for-upgrade` has succeeded or failed. However, within 24 hours, the `active: YES` should change to `active: NO`. This result will also be visible on the calibration/competition Dashboard.
 
 ## Additional notes
 
