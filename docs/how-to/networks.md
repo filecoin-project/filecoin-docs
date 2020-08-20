@@ -1,10 +1,10 @@
 ---
-title: Connect to a network
+title: Network information
 sidebarDepth: 0
 description: Learn about the various networks and their connection instructions.
 ---
 
-# Connect to a network
+# Network information
 
 Filecoin has several networks for various testing, benchmarking, and optimization needs. This page describes the available networks, their key characteristics, and usage instructions.
 
