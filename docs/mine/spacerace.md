@@ -15,21 +15,19 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 ## How do I participate?
 
-You must be able to run at least 1 miner to participate. 
-
 **The calibration period is currently open.** To join, run at least 1 miner on the [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet). A preview of calibration standings is available on the [Preview Dashboard](https://calibration.spacerace.filecoin.io/). 
 
-The competition period is not yet open. The competition will include a full dashboard where miners can view global and regional reward tiers, as well as individual miner storage power, deal success rate, and sector life cycle command completion, in real-time. Miners will also be able to submit information for location verification, and display their names (individual or company) alongside their miner ID.
+**The competition period will begin Monday, August 24th at 20:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the Testnet. You'll also need to complete these steps to be eligible for rewards:
+- Maintain a deal success average of 80% or greater for both storage and retrieval deals.
+- Demonstrate at least one sector upgrade per miner.
+- Register your miner(s) by submitting your individual or company info via the Dashboard. It will generate a message for your miner to sign and submit via the competition dashboard. Miners that qualify for rewards will also need to pass an AML/KYC check once the competition ends. (See [Can I run multiple miners?](#can-i-run-multiple-miners) if you are running multiple miners.)
 
 For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the Filecoin Slack. 
 
 ## What are the possible rewards?
 
-  > **NOTICE:** In order to qualify for rewards, users must “claim” their miner ID from the dashboard following the provided instructions before the competition ends, and pass an AML/KYC check.
-
-There are two ways miners can earn additional rewards outside their mining efforts:
-* The total size of the reward pool increases alongside total network storage capacity.
-* The total pool of rewards is split between eligible mining operations pro rata, based on how much storage they add as a percentage of total network storage.
+### Storage Rewards
+The top 50 miners in each region and globally are eligible to split a reward pool of up to 4mm FIL, depending on regional network storage achieved.
 
 | Total FIL rewards (global pool)	| Global network storage achieved |
 |------|------|
@@ -48,13 +46,16 @@ There are two ways miners can earn additional rewards outside their mining effor
 |	250k FIL	|	5 PiB|	
 |	500k FIL	|	10 PiB|	
 
+### Block Rewards
+The top 20 FIL-denominated block reward producers who are also eligible to receive Space Race rewards will share a reward pool of 100k FIL on a pro rata basis. For example, if you receive 100,000 FIL in block rewards, and the top 20 producers cumulatively receive 2,000,000 FIL, you would be eligible to receive an additional 5,000 FIL. Like other competition rewards, any FIL received will vest linearly over six months. During the calibration period, miners can check their total block rewards mined at https://reward.calibration.fildev.network.
+
 Any rewards earned will be encoded into the genesis block and will vest linearly over six months from mainnet launch.
 
 ## Frequently asked questions
 
 #### What branch and network will be used for the Space Race?
 
-The [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet) is designed for the initial calibration phase in order to prepare equipment and client setups. Once the competition has started, the [testnet](https://docs.filecoin.io/how-to/networks/#testnet) will be the used network.
+The [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet) is designed for the initial calibration phase in order to prepare equipment and client setups. Once the competition starts, the [testnet](https://docs.filecoin.io/how-to/networks/#testnet) will be the used network.
 
 #### How is the "location" of a mining operation determined?
 
