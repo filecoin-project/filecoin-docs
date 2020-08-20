@@ -42,6 +42,18 @@ export default {
 }
 </script>
 
+<style lang="stylus">
+// offset hash position for breadcrumb bar
+h1, h2, h3, h4, h5, h6
+  {$contentClass}:not(.custom) > &
+    margin-top (0.5rem - ($navbarHeight + $breadcrumbsHeight)) !important
+    padding-top $navbarHeight + $breadcrumbsHeight + 1rem !important
+
+.breadcrumbs.fixed + {$contentClass} {
+  padding-top: $breadcrumbsHeight - 0.5rem;
+}
+</style>
+
 <style lang="stylus" scoped>
 nav
   border-bottom 1px solid #eaecef
