@@ -87,7 +87,7 @@ Calibration is an up-to-date devnet, best for miners preparing for the [Space Ra
 #### Calibration Faucet Notes
 The faucet issues small amounts of mock FIL to jump-start devnets and testnets. Previous faucet designs let a few bad actors spam and abuse the network, or pay massive, unrealistic transaction and gas fees instead of setting fees properly. Here is how the calibration faucet works:
 
-* To fairly distribute FIL to all users, you'll need to log in with a Github account at least 7 days old.
+* To fairly distribute FIL to all users, you'll need to log in with a Github account at least 48 hours old.
 * You can get a one time initial balance transfer of 5000 FIL to any address, to initialize your miner and pledge some sectors. (This amount should be good for about 500 32GiB sectors.)
 * Generally, you should use block rewards to pledge additional sectors.
 * However, once you have a miner with at least one sector, you can use the faucet to send additional FIL to that miner every 4 hours. The amount of FIL is proportional to the rate of storage growth for the miner over the last 24h. For every GiB of power, you will receive 0.5 FIL (or minimum of 2000 FIL).
