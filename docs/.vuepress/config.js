@@ -185,7 +185,7 @@ module.exports = {
                   title: 'Install Filecoin',
                   sidebarDepth: 1,
                   collapsable: false,
-                  children: ['/how-to/install-filecoin', '/how-to/networks']
+                  children: ['/how-to/install-filecoin', '/how-to/networks', '/how-to/join-a-network']
                 },
                 {
                   title: 'Store Data',
