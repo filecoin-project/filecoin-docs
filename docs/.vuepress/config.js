@@ -21,7 +21,7 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist'))
-    } 
+    }
   },
   themeConfig: {
     algolia: {
@@ -87,7 +87,11 @@ module.exports = {
                 title: 'Install Filecoin',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-to/install-filecoin', '/how-to/networks', '/how-to/join-a-network']
+                children: [
+                  '/how-to/install-filecoin',
+                  '/how-to/networks',
+                  '/lotus/documentation/en/join-testnet'
+                ]
               },
               {
                 title: 'Store Data',

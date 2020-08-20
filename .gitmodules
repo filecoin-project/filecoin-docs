@@ -1,0 +1,3 @@
+[submodule "docs/lotus"]
+	path = docs/lotus
+	url = git@github.com:filecoin-project/lotus.git
