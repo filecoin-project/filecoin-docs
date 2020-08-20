@@ -77,7 +77,7 @@ Once your miner is online, the dealbot will automatically begin making storage a
 To see a detailed log of all deal attempts for your miner, visit the [Calibration Dashboard](https://calibration.spacerace.filecoin.io/) and search for your miner ID.
 
 #### How are regional and global storage achieved measured?
-Each region (regional or global) unlocks additional FIL rewards by collectively adding more storage to the network. Deal success rates are not measured . However, winners in each region will need to meet deal success rate minimums to be eligible for rewards.
+Each region (regional or global) unlocks additional FIL rewards by collectively adding more storage to the network. Miners with any deal success rate count toward the regional and global storage mounts. However, winners in each region will need to meet deal success rate minimums (described above) to be eligible for rewards.
 
 #### Can I run multiple miners?
 Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards.
