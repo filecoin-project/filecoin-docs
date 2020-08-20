@@ -42,7 +42,7 @@ Time in the Filecoin blockchain is discretized into _epochs_ that are currently 
 
 ## FIL
 
-`FIL` is the unit symbol for the Filecoin currency; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
+_FIL_ is the name of the Filecoin unit of currency; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
 
 ## Faucet
 
@@ -54,7 +54,7 @@ When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacet
 
 ## Filecoin
 
-The term _Filecoin_, in the sense of a proper noun, is used generically to refer to the Filecoin project, network, broader ecosystem, and community. As a common noun, the singular form, filecoin, is used to refer to the Filecoin currency.
+The term _Filecoin_ is used generically to refer to the Filecoin project, protocol, and network.
 
 ## Gas
 
