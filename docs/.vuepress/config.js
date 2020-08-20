@@ -76,84 +76,31 @@ module.exports = {
             '/mine/mining-troubleshooting'
           ],
           '/build/': [
+            '/build/getting-started',
+            '/build/implementations',
             {
-              title: 'Start Building',
+              title: 'Tools',
               collapsable: false,
-              path: '/build/start-building/interacting-with-the-network/',
-              children: ['start-building/interacting-with-the-network']
-            },
-            {
-              title: 'Core Products',
-              collapsable: false,
-              path: '/build/core-products/filecoin-backed-pinning-services/',
+              path: '/build/tools/',
               children: [
-                'core-products/filecoin-backed-pinning-services',
-                'core-products/powergate',
-                'core-products/protocol-implementations'
+                '/build/tools/api-clients',
+                '/build/tools/filecoin-backed-pinning',
+                '/build/tools/powergate',
+                '/build/tools/signing-libraries',
+                '/build/tools/slate',
+                '/build/tools/wallets'
               ]
             },
             {
-              title: 'Developer Tools',
-              collapsable: false,
-              path: '/build/developer-tools/wallets-signing-tools-api-clients/',
-              children: [
-                'developer-tools/wallets-signing-tools-api-clients',
-                [
-                  'https://github.com/filecoin-project/docs/wiki#community-resources',
-                  'Filecoin Community Resources'
-                ],
-                ['http://filecoin.onrender.com/', 'Component Design System']
-              ]
-            },
-            {
-              title: 'Example Apps',
+              title: 'Examples',
               sidebarDepth: 2,
-              path: '/build/examples/sample-architectures/',
+              path: '/build/examples/',
               collapsable: false,
               children: [
-                'examples/sample-architectures',
-                ['examples/web-applications/overview', 'Web Applications'],
-                {
-                  title: 'Simple Pinning Service',
-                  path: '/build/examples/simple-pinning-service/overview/',
-                  children: [
-                    '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
-                    '/build/examples/simple-pinning-service/step-1-powergate-setup',
-                    '/build/examples/simple-pinning-service/step-2-react-app-setup',
-                    '/build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
-                    '/build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
-                    '/build/examples/simple-pinning-service/step-5-shut-down-the-application',
-                    '/build/examples/simple-pinning-service/summary'
-                  ]
-                },
-                {
-                  title: 'Network Inspector',
-                  path: '/build/examples/network-inspector/overview/',
-                  children: [
-                    '/build/examples/network-inspector/lotus-and-go-ipfs-interactions',
-                    '/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
-                    '/build/examples/network-inspector/step-2-run-the-react-app',
-                    '/build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
-                    '/build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
-                    '/build/examples/network-inspector/step-5-shut-down-the-application',
-                    '/build/examples/network-inspector/summary'
-                  ]
-                },
-                {
-                  title: 'Meme Marketplace',
-                  path: '/build/examples/meme-marketplace/overview/',
-                  children: [
-                    '/build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
-                    '/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
-                    '/build/examples/meme-marketplace/step-2-run-react-app',
-                    '/build/examples/meme-marketplace/step-3-run-hub-auth-server',
-                    '/build/examples/meme-marketplace/step-4-connecting-app-with-auth-server',
-                    '/build/examples/meme-marketplace/step-5-connecting-app-with-blockchain',
-                    '/build/examples/meme-marketplace/step-6-explore-app',
-                    '/build/examples/meme-marketplace/step-7-shut-down-the-application',
-                    '/build/examples/meme-marketplace/summary'
-                  ]
-                }
+                '/build/examples/meme-marketplace',
+                '/build/examples/network-inspector',
+                '/build/examples/simple-pinning-service',
+                '/build/examples/slate-and-powergate'
               ]
             }
           ],
