@@ -103,7 +103,7 @@ Nerpa is a long-lived devnet, **best for developers building storage apps**. Ner
 |Sector Sizes | 512MiB |
 |Branch | `ntwk-nerpa` |
 |Tag | `ntwk-nerpa-8.17.0` |
-|Details page | n/a |
+|Details page | https://network.filecoin.io/ |
 |Next expected reset | Last reset Aug 17, 2020. Next reset TBD. |
 
 #### Nerpa Devnet Resources
