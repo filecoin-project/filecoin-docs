@@ -24,6 +24,22 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the Filecoin Slack. 
 
+### NOTICE
+
+At the moment, there is a small bug that causes to the `lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER` command ro **possibly** be ignored when attempting to seal said sector. This will be fixed after the race begins, but in the meantime, have no fear: sealing can be attempted multiple times without any adverse effects.
+
+#### Sealing steps
+1. Choose a CC sector number in a `Proving` state. Any sector will work, recognizable by the `deals: [0]` suffixed
+2. Run the command 
+```lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER
+```
+3.  After the next a sector featuring deals from the dealbot completes sealing, find out which sector was replaced with a CC sector:
+```
+for s in $( seq $( lotus-miner sectors list | wc -l ) ) ; do lotus-miner sectors status --log $s | grep -Eo 'ReplaceCapacity":true' && echo $s; done`
+4.  Once the above happens, the replaced CC sector will have the chain-height at which it will become inactive as `lotus-miner sectors status --on-chain-info $SECTOR_NUMBER | grep OnTime
+```
+5. If the deal is marked as successful on the dashboard but the above commands do not return the expected result, simply repeat the above steps.
+
 ## What are the possible rewards?
 
 ### Storage Rewards
