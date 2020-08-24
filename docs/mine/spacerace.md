@@ -17,7 +17,7 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 **The calibration period is currently open.** To join, run at least 1 miner on the [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet). A preview of calibration standings is available on the [Preview Dashboard](https://calibration.spacerace.filecoin.io/). 
 
-**The competition period will begin Monday, August 24th at 20:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the Testnet. You'll also need to complete these steps to be eligible for rewards:
+**The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the Testnet. You'll also need to complete these steps to be eligible for rewards:
 - Maintain a deal success average of 80% or greater for both storage and retrieval deals.
 - Demonstrate at least one [sector upgrade](#how-do-i-demonstrate-a-sector-upgrade) per miner.
 - Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/), which will go live shortly after competition start. It will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
@@ -119,7 +119,7 @@ Filter = "false"
 Filter = "true"
 
 ## Only accept deals from the 3 competition dealbots
-Filter = "jq -e '.Proposal.Client == \"t1capnpwjvm4gfbdlbavblmvjldwqzdo6ukh7mmqq\" or .Proposal.Client == \"t12thv7e3x3tomo5nuunsvzqnl5txflpztdqcbtai\" or .Proposal.Client == \"t12heuwfbg654jgdnctywyafxrqbmcidwj6osecha\" '"
+Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" '"
 ```
 
 You can also write advanced deal filters based on any field in deal info (for example, you may wish to accept only `VerifiedClient` deals). Deal info is piped into `stdin` as JSON.

@@ -10,8 +10,8 @@ Filecoin has several networks for various testing, benchmarking, and optimizatio
 
 | Network | Purpose | Sector Sizes | Stability |
 |---|---|---|---|
-| [Testnet](#testnet) | Evaluate Filecoin at a meaningful scale. | 32GiB, 64GiB | High |
-| [Calibration Devnet](#calibration-devnet) | For miners to prepare for the Space Race (*recommended for most miners*) | 512MiB, 32GiB, 64GiB | Moderate |
+| [Testnet](#testnet) | Evaluate Filecoin at a meaningful scale. (*recommended for most miners*) | 32GiB, 64GiB | High |
+| [Calibration Devnet](#calibration-devnet) | For miners to prepare for the Space Race | 512MiB, 32GiB, 64GiB | Moderate |
 | [Nerpa Devnet](#nerpa-devnet) | For developers building apps, with small sector sizes and reduced proofs parameters. Sealing time is ~15-20 minutes. (*recommended for most developers*) | 512MiB | Moderate |
 | [Walrus Devnet](#walrus-devnet) | For developers testing large storage deals only | 32GiB, 64GiB | High |
 | [Butterfly Devnet](#butterfly-devnet) | For core implementers testing new code. (*frequent resets and not recommended for most users*) | 512MiB, 32GiB, 64GiB | Low |
@@ -20,7 +20,7 @@ Filecoin has several networks for various testing, benchmarking, and optimizatio
 
 To connect to any of these networks:
 
-1. Choose the network that best suits your needs. As of Aug 17, we recommend [calibration](#calibration-devnet) for most miners and [nerpa](#nerpa-devnet) for most developers. 
+1. Choose the network that best suits your needs. As of Aug 24, we recommend [testnet](#testnet) for most miners and [nerpa](#nerpa-devnet) for most developers. 
 2. Delete any existing local Lotus repository, if one is present.
 3. Build Lotus from the **branch** and **tag** listed for each network (example: `ntwk-nerpa`, [`tag ntwk-nerpa-7.7.0`](https://github.com/filecoin-project/lotus/tree/ntwk-nerpa-7.7.0)).
 4. When you run `lotus daemon` on the build you've created from the listed branch, you should automatically be connected to the proper bootstrap nodes.
@@ -35,25 +35,36 @@ Testnet is the most realistic simulation of the Filecoin mainnet to date:
 
 - Prospective storage miners can experience more realistic sealing performance and hardware requirements due to the use of near-final proofs constructions and parameters
 - Prospective storage clients can store and retrieve real data on the testnet. Clients can participate in deal-making workflows and storage + retrieval functionality.
-- As planned for mainnet, the minimum sector size on testnet is 32 GB.  and 64 GB sectors are also available.
+- As planned for mainnet, testnet supports 32 GiB and 64 GiB sectors.
 
-> Testnet is currently significantly behind latest code. It will the network of record for the [Filecoin Space Race](https://filecoin.io/blog/getting-ready-testnet-incentives/), a 3-week incentivized mining competition taking place in August 2020. When the competition begins, we will launch the latest calibration net changes onto testnet.
+Testnet is the network of record for the [Filecoin Space Race](https://filecoin.io/blog/getting-ready-testnet-incentives/), a 3-week incentivized mining competition that will begin at 22:00 UTC on Monday, 24 August 2020. The network will be reset at this time.
 
 #### Testnet Details
 |Description  | Details |
 | --- | --- |
 |Sector Sizes | 32GiB, 64GiB |
-|Branch | `master` |
-|Tag | n/a |
-|Next expected reset | Aug 3, 2020 |
+|Branch | to be announced |
+|Tag | to be announced |
+|Next expected reset | Aug 24, 2020 at 22:00:00 UTC |
 
 #### Testnet Resources
 |Description  | Details |
 | --- | --- |
-|Faucet | https://faucet.testnet.filecoin.io/ |
+|Faucet | https://spacerace.faucet.glif.io  |
 |Stats dashboard | https://stats.testnet.filecoin.io/ |
 |Block explorers | [Filscan](https://filscan.io/)<br />[Filscout](https://filscout.io/)<br />[Filplorer](https://filplorer.com/)<br />[1475 Explorer](https://1475ipfs.com/#/blockBrowser)<br />[Filfox](https://filfox.io/)|
 |[Slack](https://filecoin.io/slack) channel | #fil-testnet |
+
+#### Testnet Faucet Notes
+The faucet issues small amounts of mock FIL to jump-start testing. Previous faucet designs let a few bad actors spam and abuse the network, or pay massive, unrealistic transaction and gas fees instead of setting fees properly. Here is how the Testnet faucet works:
+
+* To fairly distribute FIL to all users, you’ll need to log in with a Github account at least 48 hours old.
+* You can get a one time initial balance transfer of 100 FIL to any address to initialize your node.
+* Additional notes for miners:
+  * Miners can additionally use the faucet to send 1,000 FIL to a miner address once, and an additional 200 FIL every 24 hours. This should be enough to seal more 500 sectors in parallel.
+  * To make collateral management easier for the Space Race, the Filecoin team is running a bot that reimburses 103% of `PreCommitSector` and `ProveCommitSector` messages (i.e., miners’ collateral payments). This means your miner can continue operating indefinitely once it’s received a small amount of initial funds.
+  * Very large miners may need additional collateral. To do so, you should have multiple team members use the faucet. 
+  * To preserve fairness, the Filecoin team *will not* be able to provide additional funds to any miners. Use your testnet FIL carefully! Accounts that abuse the faucet (for example, by sending far more FIL than is needed to a miner) may be suspended.
 
 ------
 
