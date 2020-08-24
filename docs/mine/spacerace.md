@@ -26,7 +26,7 @@ For help or additional questions, join the [#space-race](https://filecoinproject
 
 ## What are the possible rewards?
 
-Prizes will be awarded for both [storage](#storage-rewards] and [block rewards](#block-rewards].
+Prizes will be awarded for both storage rewards and block rewards.
 
 ### Storage Rewards
 The top 50 miners in each region and globally are eligible to split a reward pool of up to 4mm FIL, depending on regional network storage achieved.
