@@ -17,7 +17,7 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 **The calibration period is currently open.** To join, run at least 1 miner on the [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet). A preview of calibration standings is available on the [Preview Dashboard](https://calibration.spacerace.filecoin.io/). 
 
-**The competition period will begin Monday, August 24th at 20:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the Testnet. You'll also need to complete these steps to be eligible for rewards:
+**The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the Testnet. You'll also need to complete these steps to be eligible for rewards:
 - Maintain a deal success average of 80% or greater for both storage and retrieval deals.
 - Demonstrate at least one sector upgrade per miner.
 - Register your miner(s) by submitting your individual or company info via the Dashboard. It will generate a message for your miner to sign and submit via the competition dashboard. Miners that qualify for rewards will also need to pass an AML/KYC check once the competition ends. (See [Can I run multiple miners?](#can-i-run-multiple-miners) if you are running multiple miners.)
