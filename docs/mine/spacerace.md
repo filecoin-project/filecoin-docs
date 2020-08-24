@@ -108,6 +108,11 @@ Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i
 
 You can also write advanced deal filters based on any field in deal info (for example, you may wish to accept only `VerifiedClient` deals). Deal info is piped into `stdin` as JSON.
 
+#### Will the bot retry a deal if it fails mid-way?
+The answer is no — the bot will do a new deal later instead. It is difficult to tell the exact retry times, because the timings scale up and down with the power of individual miners. Moreover we reserve the right to change some of the retry parameters as the race progresses. All in all, remember that the race is designed to maximally stress-test the network layer, and reveal various failure modes, so that future applications built on top will be able to make correct risk tradeoffs. The 80% success rate has been selected by careful evaluation of the current state of lotus.
+
+In short, it is expected that you may not be able to hit 100% throughout the entire competition. Focus on keeping your head above 90%, and keeping your PoSTs flowing!
+
 #### How do I change gas fees?
 
 If you would like to change the default gas fees to accelerate your messages, edit the `~/.lotusminer/config.toml` config file.
