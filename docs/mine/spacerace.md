@@ -98,7 +98,7 @@ Filter = "false"
 Filter = "true"
 
 ## Only accept deals from the 3 competition dealbots
-Filter = "jq -e '.Proposal.Client == \"t1capnpwjvm4gfbdlbavblmvjldwqzdo6ukh7mmqq\" or .Proposal.Client == \"t12thv7e3x3tomo5nuunsvzqnl5txflpztdqcbtai\" or .Proposal.Client == \"t12heuwfbg654jgdnctywyafxrqbmcidwj6osecha\" '"
+Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" '"
 ```
 
 You can also write advanced deal filters based on any field in deal info (for example, you may wish to accept only `VerifiedClient` deals). Deal info is piped into `stdin` as JSON.
