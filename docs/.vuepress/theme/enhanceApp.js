@@ -5,7 +5,9 @@ export default ({ router, isServer }) => {
     window.addEventListener('unhandledrejection', function (evt) {
       if (/loading chunk \d* failed./i.test(evt.reason)) {
         const targetPath = router.history.pending.fullPath
-        document.location.pathname = targetPath
+        if (targetPath) {
+          document.location.pathname = targetPath
+        }
       }
     })
 }
