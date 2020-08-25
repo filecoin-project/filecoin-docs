@@ -69,7 +69,7 @@ This can be done several ways, such as shipping hard drives from the client to t
 The miner can import the data and deal manually with:
 
 ```            
-lotus-storage-miner deals import-data <dealCid> <filePath>
+lotus-miner deals import-data <dealCid> <filePath>
 ```
 
 Once the first Proof of Spacetime (PoSt) hits the chain, the storage deal is considered active. 
