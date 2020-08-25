@@ -27,7 +27,9 @@ Here is a snapshot of each implementation’s progress across the primary parts 
 | 7. Storage Mining  | ✅    | 🔄          | 🔄     | 🔄 🔶 |
 | 8. Market          | ✅    | ✅          | 🔄     | ✅    |
 
-✅ : fully featured implementation | 🔄 : reuses components from another implementation | 🔶 : partial implementation
+✅ : fully featured implementation
+🔄 : reuses components from another implementation
+🔶 : partial implementation
 
 **_We recommend that developers only build directly on Filecoin protocol implementations if they are very advanced developers or need to build at a very low level of the stack._** Filecoin protocol implementations expose low-level APIs that developers can use to integrate Filecoin directly into their applications. These APIs and their underlying functionality are still under heavy, active development, and require familiarity with blockchains and the Filecoin protocol. For most applications, we recommend developers use [FPS](./tools/filecoin-backed-pinning) or [Powergate](./tools/powergate).
 
