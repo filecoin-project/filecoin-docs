@@ -15,9 +15,9 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 ## How do I participate?
 
-To join, run at least 1 miner on the [testnet](https://docs.filecoin.io/how-to/networks/#testnet). A preview of Space Race standings is available on the [Dashboard](https://spacerace.filecoin.io/). 
+**The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet). You can track your progress on the [Space Race Competition Dashboard](https://spacerace.filecoin.io/). 
 
-**The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the Testnet. You'll also need to complete these steps to be eligible for rewards:
+You'll also need to complete these steps to be eligible for rewards:
 - Maintain a deal success average of 80% or greater for both storage and retrieval deals.
 - Demonstrate at least one [sector upgrade](#how-do-i-demonstrate-a-sector-upgrade) per miner.
 - Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/), which will go live shortly after competition start. It will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
@@ -49,7 +49,7 @@ The top 50 miners in each region and globally are eligible to split a reward poo
 |	500k FIL	|	10 PiB|	
 
 ### Block Rewards
-The top 20 FIL-denominated block reward producers who are also eligible to receive Space Race rewards will share a reward pool of 100k FIL on a pro rata basis. For example, if you receive 100,000 FIL in block rewards, and the top 20 producers cumulatively receive 2,000,000 FIL, you would be eligible to receive an additional 5,000 FIL. Like other competition rewards, any FIL received will vest linearly over six months. During the calibration period, miners can check their total block rewards mined at the [reward dashboard](https://reward.testnet.filecoin.io/d/P_Q13JnMz/top-miners-by-block-reward?orgId=1&refresh=25s&from=now-30m&to=now&kiosk).
+The top 20 FIL-denominated block reward producers who are also eligible to receive Space Race rewards will share a reward pool of 100k FIL on a pro rata basis. For example, if you receive 100,000 FIL in block rewards, and the top 20 producers cumulatively receive 2,000,000 FIL, you would be eligible to receive an additional 5,000 FIL. Like other competition rewards, any FIL received will vest linearly over six months. During the Space Race, miners can check their total block rewards mined on the [Block Reward Dashboard](https://reward.testnet.filecoin.io/d/P_Q13JnMz/top-miners-by-block-reward?orgId=1&refresh=25s&from=now-30m&to=now&kiosk).
 
 Any rewards earned will be encoded into the genesis block and will vest linearly over six months from mainnet launch.
 
@@ -57,15 +57,17 @@ Any rewards earned will be encoded into the genesis block and will vest linearly
 
 #### What branch and network will be used for the Space Race?
 
-The [testnet](https://docs.filecoin.io/how-to/networks/#testnet) is the used network.
+The Space Race competition will run on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet) network.
 
 #### Where can I get test FIL?
 
-You can get FILs from the [faucet](https://spacerace.faucet.glif.io).
+You can get FIL from the [faucet](https://spacerace.faucet.glif.io).
 
-#### Where can I find the stats of the network and progress of Space Race?
+#### Where can I track Space Race progress and Testnet network stats?
 
-Network stats for the testnet can be found on the [dashboard](https://stats.testnet.filecoin.io/d/z6FtI92Zz/chain?orgId=1&refresh=45s&from=now-30m&to=now&kiosk), and Space Race standings is available on [this dashboard](https://spacerace.filecoin.io).
+The [Competition Dashboard](https://spacerace.filecoin.io/) is where you can track Space Race storage progress and register your miner(s).
+
+Block Rewards standings are listed on the [Block Rewards Dashboard](https://reward.testnet.filecoin.io/), and network stats on the [Testnet Network Stats](https://stats.testnet.filecoin.io/) page.
 
 #### How is the "location" of a mining operation determined?
 
