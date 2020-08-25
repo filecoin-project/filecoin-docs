@@ -186,9 +186,9 @@ Write command-line inputs without any other characters. Precede outputs from the
 
 ````markdown
     ```bash
-    lotus-storage-miner info
+    lotus-miner info
 
-    > ~/lotus> lotus-storage-miner info
+    > ~/lotus> lotus-miner info
     > Miner: t0103
     > Sector Size: 16.0 MiB
     > Power: 0 B / 16.0 MiB (0%)
@@ -204,9 +204,9 @@ Command-line examples can be truncated with three periods `...` to remove extran
 
 ````markdown
     ```bash
-    lotus-storage-miner info
+    lotus-miner info
 
-    > ~/lotus> lotus-storage-miner info
+    > ~/lotus> lotus-miner info
     > Miner: t0103
     > Sector Size: 16.0 MiB
     > ...

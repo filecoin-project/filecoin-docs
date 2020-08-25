@@ -24,7 +24,7 @@ You can set the multiaddresses that your miner listens on in a miner's `config.t
 Once you've done so, you can set the on-chain record of your miner's listen addresses with the command:
 
 ```
-lotus-storage-miner actor set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
+lotus-miner actor set-addrs <multiaddr_1> <multiaddr_2> ... <multiaddr_n>
 ```
 
 This updates the `MinerInfo` object in your miner's actor, which will be looked up when a client attempts to make a deal with you. You can provide any number of addresses.
@@ -32,7 +32,7 @@ This updates the `MinerInfo` object in your miner's actor, which will be looked 
 As an example, you could run:
 
 ```
-lotus-storage-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456
+lotus-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456
 ```
 
 This step is the best way to ensure your miner is dial-able for storage and retrieval deals!
@@ -42,13 +42,13 @@ This step is the best way to ensure your miner is dial-able for storage and retr
 To ensure storage and retrieval deals operate smoothly, it is recommended to check how many peers a miner is connected to after each start-up. In the Lotus client, a manual peer check can be performed with the command:
 
 ```
-lotus-storage-miner net peers
+lotus-miner net peers
 ```
 
 If a very low peer count is present (1-5), it is possible to manually connect the miner to the DHT by utilising one of the bootstrap peers listed in the branch's `./build/bootstrap/bootstrappers.pi` file with the commmand:
 
 ```
-lotus-storage-miner net connect <address1> <address2>…
+lotus-miner net connect <address1> <address2>…
 ```
 
 ## Port forwarding
