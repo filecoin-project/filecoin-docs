@@ -112,7 +112,7 @@ Filter = "false"
 ## Accept all deals
 Filter = "true"
 
-## Only accept deals from the 4 competition dealbots
+## Only accept deals from the 4 competition dealbots (requires jq installed)
 Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" or .Proposal.Client == \"t1qiqdbbmrdalbntnuapriirduvxu5ltsc5mhy7si\" '"
 ```
 
