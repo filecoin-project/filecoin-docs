@@ -181,7 +181,6 @@ module.exports = {
               path: '/install/',
               collapsable: false,
               children: [
-                '/install/',
                 '/install/lotus/requirements',
                 '/install/lotus/',
                 '/install/lotus/join-a-network',
