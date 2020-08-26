@@ -99,10 +99,11 @@ module.exports = {
               collapsable: false,
               path: '/build/developer-tools/wallets-signing-tools-api-clients/',
               children: [
-                'developer-tools/wallets-signing-tools-api-clients',
-                [
-                  'https://github.com/filecoin-project/docs/wiki#community-resources',
-                  'Filecoin Community Resources'
+                '/build/developer-tools/api-clients',
+                '/build/developer-tools/signing-libraries',
+                '/build/developer-tools/wallets'[
+                  ('https://github.com/filecoin-project/docs/wiki#community-resources',
+                  'Filecoin Community Resources')
                 ],
                 ['http://filecoin.onrender.com/', 'Component Design System']
               ]
