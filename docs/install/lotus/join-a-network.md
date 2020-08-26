@@ -1,10 +1,10 @@
 ---
-title: Joining a network
+title: Join a network
 sidebarDepth: 0
 description: Learn how to join one of the various Filecoin testnets.
 ---
 
-# Joining a network
+# Join a network
 
 Once a Lotus node has been initialised on the appropriate [Filecoin network option](https://docs.filecoin.io/how-to/networks/), this section provides setup instructions for syncing the chain, creating a wallet, checking balances and sending FIL to other addresses.
 
