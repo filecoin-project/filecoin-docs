@@ -15,7 +15,7 @@ Miners host the infrastructure that holds the Filecoin network together! Without
 
 ## Developers
 
-The entire Filecoin ecosystem is open to developers to build interesting and revolutionary applications with! However, depending on your use-case and experience, you may not need to host your own Filecoin node. If you've never built anything with Filecoin before, we recommend checking out the [Getting started](../build/) section to learn the ropes. In that guide, you'll use Powergate, a service that hosts Filecoin nodes for you, so you don't have to worry about spinning one up. Smaller-scale projects like weekend jams or hackathons may also benefit from using Powergate since there's very little set up time. If, however, you've done all this before and are building a fairly complex project, then you'll absolutely benefit from [setting up a Filecoin node ->](./lotus)
+The entire Filecoin ecosystem is open to developers to build interesting and revolutionary applications with! However, depending on your use-case and experience, you may not need to host your own Filecoin node. If you've never built anything with Filecoin before, we recommend checking out the [Getting started](../build/README.md) section to learn the ropes. In that guide, you'll use Powergate, a service that hosts Filecoin nodes for you, so you don't have to worry about spinning one up. Smaller-scale projects like weekend jams or hackathons may also benefit from using Powergate since there's very little set up time. If, however, you've done all this before and are building a fairly complex project, then you'll absolutely benefit from [setting up a Filecoin node ->](./lotus/README.md)
 
 ## For everyone else
 
