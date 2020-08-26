@@ -9,7 +9,7 @@ If you're having trouble installing Lotus, try running through some of these tro
 
 ## Update your system
 
-This sounds simple, but a common reason users aren't able to run Filecoin is because their system isn't up to date.
+This sounds simple, but a common reason users aren't able to run Filecoin is because their operating system isn't up to date.
 
 ## Check the dependencies
 
