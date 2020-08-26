@@ -63,6 +63,12 @@ The Space Race competition will run on the [Testnet](https://docs.filecoin.io/ho
 
 You can get FIL from the [faucet](https://spacerace.faucet.glif.io).
 
+#### How do I register for the Space Race?
+
+Start mining and once you've committed at least one sector, go to [Space Race Dashboard](https://spacerace.filecoin.io/) and click `Register` in the top right corner!
+
+![register](img/space-race-register.png)
+
 #### Where can I track Space Race progress and Testnet network stats?
 
 The [Competition Dashboard](https://spacerace.filecoin.io/) is where you can track Space Race storage progress and register your miner(s).
@@ -90,10 +96,16 @@ To see a detailed log of all deal attempts for your miner, visit the [Space Race
 Each region (regional or global) unlocks additional FIL rewards by collectively adding more storage to the network. Miners with any deal success rate count toward the regional and global storage mounts. However, winners in each region will need to meet deal success rate minimums (described above) to be eligible for rewards.
 
 #### Can I run multiple miners?
-Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards.
+
+Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards. 
 
 #### How are rewards distributed?
-If you’re eligible for rewards, someone from CoinList will reach out to your provided email address shortly after the competition to conduct AML/KYC and coordinate delivery of the tokens. You will have the option to receive rewards directly to your wallet.
+
+If you’re eligible for rewards, someone from CoinList will reach out to your provided email address shortly after the competition to conduct AML/KYC and coordinate delivery of the tokens. You will have the option to receive rewards directly to your wallet. You will need to provide a government photo ID and may be asked for additional details.
+
+#### Is there a minimum miner size to receive rewards?
+
+There's no hard minimum for the Space Race.
 
 #### How do I prioritize deals from competition bots?
 By default, Lotus nodes accept all inbound deals that match their criteria. However, during the Space Race competition, miners may want to limit the clients to avoid spam deals from malicious agents.
