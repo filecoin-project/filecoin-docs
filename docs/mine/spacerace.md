@@ -20,7 +20,7 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 You'll also need to complete these steps to be eligible for rewards:
 - Maintain a deal success average of 80% or greater for both storage and retrieval deals.
 - Demonstrate at least one [sector upgrade](#how-do-i-demonstrate-a-sector-upgrade) per miner.
-- Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/), which will go live shortly after competition start. It will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
+- Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/),  **before 22:00 UTC, Monday, August 31st**. It will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
 
 For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the Filecoin Slack. 
 
