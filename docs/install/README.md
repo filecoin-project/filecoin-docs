@@ -11,7 +11,7 @@ description: Get up and running quickly by installing a Filecoin node to your sy
 
 ## Miners
 
-Miners host the infrastructure that holds the Filecoin network together! Without miners, there would only be a handful of very centralized, bootstrap servers being hosted by Protocol Labs. The first step to building a miner is [setting up a Lotus node ->](./lotus/)
+Miners host the infrastructure that holds the Filecoin network together! Without miners, there would only be a handful of very centralized, bootstrap servers being hosted by Protocol Labs. The first step to building a miner is [setting up a Lotus node ->](./lotus/README.md)
 
 ## Developers
 
