@@ -13,5 +13,5 @@ Available storage and pricing is not controlled by any single company. Instead, 
 
 There are many ways to participate in the Filecoin network, and several libraries, tools, products, and services to choose from:
 
-- If you're new to web3 and Filecoin, we recommend checking out [What is Filecoin?](/introduction/what-is-filecoin.md).
+- If you're new to web3 and Filecoin, we recommend checking out [What is Filecoin?](./introduction/what-is-filecoin.md).
 - If you're a developer looking to get started building on Filecoin, check out the [Build section](./build/README.md).
