@@ -177,16 +177,23 @@ module.exports = {
               ]
             },
             {
+              title: 'Install Filecoin',
+              path: '/install/',
+              collapsable: false,
+              children: [
+                '/install/',
+                '/install/lotus/requirements',
+                '/install/lotus/',
+                '/install/lotus/join-a-network',
+                '/install/lotus/troubleshooting'
+              ]
+            },
+            {
               title: 'How-tos',
               path: '/how-to/',
               collapsable: false,
               children: [
-                {
-                  title: 'Install Filecoin',
-                  sidebarDepth: 1,
-                  collapsable: false,
-                  children: ['/how-to/install-filecoin', '/how-to/networks', '/how-to/join-a-network']
-                },
+                '/how-to/networks',
                 {
                   title: 'Store Data',
                   collapsable: false,
