@@ -28,6 +28,47 @@ In a list of three or more items, follow each item except the last with a comma 
 | One, two, three, and four.    | One, two, three and four.    |
 | Henry, Elizabeth, and George. | Henry, Elizabeth and George. |
 
+### References to Filecoin
+
+As a proper noun, the name "Filecoin" (capitalized) should be used only to refer to the overarching project, to the protocol, or to the project's canonical network:
+
+> Filecoin [the project] has attracted contributors from around the globe!
+
+> Filecoin [the protocol] rewards contributions of data storage instead of computation!
+
+> Filecoin [the network] is currently storing 50 PiB of data!
+
+The name can also be used as an adjective:
+
+> The Filecoin ecosystem is thriving!
+
+> I love contributing to Filecoin documentation!
+
+When referring to the token used as Filecoin's currency, the name `FIL`, is preferred; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎). These symbols can be used as suffixes or prefixes, as seen fit:
+
+- Unit prefix: **100 FIL**.
+- Unit suffix: **FIL 100**.
+- Symbol prefix: **⨎100**.
+- Symbol suffix: **100 ⨎**.
+
+The smallest and most common denomination of FIL is the `attoFIL` (10^-18 FIL).
+
+> The collateral for this storage deal is five FIL.
+
+> I generated ⨎100 as a storage miner last month!
+
+> My wallet has thirty filecoin.
+
+Examples of discouraged usage:
+
+> Filecoin rewards miners with Filecoin.
+
+> There are many ways to participate in the filecoin community.
+
+> My wallet has thirty filecoins.
+
+Consistency in the usage of these terms helps keep these various concepts distinct.
+
 ### Acronyms
 
 If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside project documentation.
@@ -145,9 +186,9 @@ Write command-line inputs without any other characters. Precede outputs from the
 
 ````markdown
     ```bash
-    lotus-storage-miner info
+    lotus-miner info
 
-    > ~/lotus> lotus-storage-miner info
+    > ~/lotus> lotus-miner info
     > Miner: t0103
     > Sector Size: 16.0 MiB
     > Power: 0 B / 16.0 MiB (0%)
@@ -163,9 +204,9 @@ Command-line examples can be truncated with three periods `...` to remove extran
 
 ````markdown
     ```bash
-    lotus-storage-miner info
+    lotus-miner info
 
-    > ~/lotus> lotus-storage-miner info
+    > ~/lotus> lotus-miner info
     > Miner: t0103
     > Sector Size: 16.0 MiB
     > ...

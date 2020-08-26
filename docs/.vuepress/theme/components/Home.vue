@@ -1,6 +1,6 @@
 <template>
   <main class="home">
-    <div class="theme-default-content">
+    <div class="home-container theme-default-content">
       <Content class="intro" />
       <div class="grid">
         <div
@@ -36,7 +36,7 @@ import { isExternal } from '@parent-theme/util/'
 
 export default {
   name: 'Home',
-  data: function() {
+  data: function () {
     return {
       manualSidebar: [
         {
@@ -70,8 +70,12 @@ export default {
               path: '/how-to/install-filecoin'
             },
             {
-              title: 'Connect to a network',
+              title: 'Network information',
               path: '/how-to/networks'
+            },
+            {
+              title: 'Join a network',
+              path: '/how-to/join-a-network'
             },
             {
               title: 'Preparing data',
@@ -95,7 +99,7 @@ export default {
             }
           ]
         },
-                {
+        {
           title: 'Build',
           path: '/build',
           children: [
@@ -121,7 +125,8 @@ export default {
             },
             {
               title: 'Filecoin community resources',
-              path: 'https://github.com/filecoin-project/docs/wiki#community-resources'
+              path:
+                'https://github.com/filecoin-project/docs/wiki#community-resources'
             },
             {
               title: 'Component design system',
@@ -129,19 +134,19 @@ export default {
             }
           ]
         },
-               {
-         title: 'Mine',
-         path: '/mine',
-         children: [
-           {
+        {
+          title: 'Mine',
+          path: '/mine',
+          children: [
+            {
               title: 'Mining overview',
               path: '/mine/'
             },
-           {
+            {
               title: 'Improving connectivity',
               path: '/mine/connectivity'
             },
-           {
+            {
               title: 'Space Race',
               path: '/mine/spacerace'
             }
@@ -232,15 +237,21 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.home .theme-default-content:not(.custom) {
-    padding: 2rem 2.5rem 6rem;
-    max-width: 740px;
-    background: no-repeat url("/images/main-page-background.png");
-    background-position: 550px 34px;
-    background-size: 280px 336px;
+<style lang="stylus">
+.home .header-anchor {
+  display: none
 }
-.home .theme-default-content:not(.custom) > h1:first-child {
+</style>
+
+<style lang="stylus" scoped>
+@media (min-width: $MQNarrow) {
+  .home {$contentClass}:not(.custom) {
+      background: no-repeat url("/images/main-page-background.png");
+      background-position: right 3rem;
+      background-size: 280px 336px;
+  }
+}
+.home {$contentClass}:not(.custom) > h1:first-child {
     font-weight: normal;
     margin: 0 0 3rem;
 }

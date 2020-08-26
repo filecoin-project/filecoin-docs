@@ -1,5 +1,6 @@
-// IPFS Docs theme
+// PL Docs theme
 
 module.exports = {
-  extend: '@vuepress/theme-default'
+  extend: '@vuepress/theme-default',
+  plugins: [require('./plugins/vuepress-plugin-chunkload-redirect')]
 }

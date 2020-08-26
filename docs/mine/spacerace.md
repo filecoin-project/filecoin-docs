@@ -25,12 +25,11 @@ For help or additional questions, join the [#space-race](https://filecoinproject
 
 ## What are the possible rewards?
 
-> To qualify for rewards, users must _claim_ their miner ID from the dashboard following the provided instructions before the competition ends, and pass an AML/KYC check.
+Prizes will be awarded for both storage rewards and block rewards.
 
-There are two ways miners can earn additional rewards outside their mining efforts:
+### Storage Rewards
 
-- The total size of the reward pool increases alongside total network storage capacity.
-- The total pool of rewards is split between eligible mining operations pro-rata, based on how much storage they add as a percentage of total network storage.
+The top 50 miners in each region and globally are eligible to split a reward pool of up to 4mm FIL, depending on regional network storage achieved.
 
 | Total FIL rewards (global pool) | Global network storage achieved |
 | ------------------------------- | ------------------------------- |
@@ -40,7 +39,7 @@ There are two ways miners can earn additional rewards outside their mining effor
 | 500k FIL                        | 50 PiB                          |
 | 1MM FIL \*                      | 100 PiB                         |
 
-\* Only unlocked if each region achieves at least 1PiB of storage
+- Only unlocked if each region achieves at least 1PiB of storage
 
 | Total FIL rewards (regional pool) | Regional network storage achieved |
 | --------------------------------- | --------------------------------- |
@@ -50,13 +49,27 @@ There are two ways miners can earn additional rewards outside their mining effor
 | 250k FIL                          | 5 PiB                             |
 | 500k FIL                          | 10 PiB                            |
 
-Any rewards earned will be encoded into the genesis block and vest linearly over six months from mainnet launch.
+### Block Rewards
+
+The top 20 FIL-denominated block reward producers who are also eligible to receive Space Race rewards will share a reward pool of 100k FIL on a pro rata basis. For example, if you receive 100,000 FIL in block rewards, and the top 20 producers cumulatively receive 2,000,000 FIL, you would be eligible to receive an additional 5,000 FIL. Like other competition rewards, any FIL received will vest linearly over six months. During the Space Race, miners can check their total block rewards mined on the [Block Reward Dashboard](https://reward.testnet.filecoin.io/d/P_Q13JnMz/top-miners-by-block-reward?orgId=1&refresh=25s&from=now-30m&to=now&kiosk).
+
+Any rewards earned will be encoded into the genesis block and will vest linearly over six months from mainnet launch.
 
 ## Frequently asked questions
 
 #### What branch and network will be used for the Space Race?
 
-The [calibration devnet](https://docs.filecoin.io/how-to/networks/#calibration-devnet) is designed for the initial calibration phase in order to prepare equipment and client setups. Once the competition has started, the [testnet](https://docs.filecoin.io/how-to/networks/#testnet) will be the used network.
+The Space Race competition will run on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet) network.
+
+#### Where can I get test FIL?
+
+You can get FIL from the [faucet](https://spacerace.faucet.glif.io).
+
+#### Where can I track Space Race progress and Testnet network stats?
+
+The [Competition Dashboard](https://spacerace.filecoin.io/) is where you can track Space Race storage progress and register your miner(s).
+
+Block Rewards standings are listed on the [Block Rewards Dashboard](https://reward.testnet.filecoin.io/), and network stats on the [Testnet Network Stats](https://stats.testnet.filecoin.io/) page.
 
 #### How is the "location" of a mining operation determined?
 
@@ -68,13 +81,17 @@ Any miner found misrepresenting their location will result in a _total forfeitur
 
 #### Is a static IP required?
 
-A public IP is required so that your miner can make storage and retrieval deals and compete in Space Race. This can be achieved through a static IP, or a relay or VPN. See the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) page for more details.
+A public IP is required so that your miner can make storage and retrieval deals and compete in Space Race. This can achieved through a static IP, or a relay or VPN. The majority of deal errors found during calibration period werre caused by IP address and other connectivity issues, so we highly recommend following the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) steps.
 
 #### How exactly is deal success measured?
 
-Once your miner is online, the dealbot will automatically begin making storage and retrieval deals. Only deals made through the dealbot count towards deal success rate for this competition. To qualify for rewards, your miner must show >90% success in both storage and retreival deals during the competition period.
+Once your miner is online, the dealbot will automatically begin making storage and retrieval deals. Only deals made through the dealbot count towards deal success rate for this competition. To qualify for rewards, your miner must show >=80% success in both storage and retrieval deals during the competition period.
 
-To see a detailed log of all deal attempts for your miner, visit the [Calibration Dashboard](https://calibration.spacerace.filecoin.io/) and search for your miner ID.
+To see a detailed log of all deal attempts for your miner, visit the [Space Race Dashboard](https://spacerace.filecoin.io) and search for your miner ID.
+
+#### How are regional and global storage achieved measured?
+
+Each region (regional or global) unlocks additional FIL rewards by collectively adding more storage to the network. Miners with any deal success rate count toward the regional and global storage mounts. However, winners in each region will need to meet deal success rate minimums (described above) to be eligible for rewards.
 
 #### Can I run multiple miners?
 
@@ -102,11 +119,17 @@ Filter = "false"
 ## Accept all deals
 Filter = "true"
 
-## Only accept deals from the 3 competition dealbots
-Filter = "jq -e '.Proposal.Client == \"t1capnpwjvm4gfbdlbavblmvjldwqzdo6ukh7mmq\" or .Proposal.Client == \"t12thv7e3x3tomo5nuunsvzqnl5txflpztdqcbtai\" or .Proposal.Client == \"t12heuwfbg654jgdnctywyafxrqbmcidwj6osecha\" '"
+## Only accept deals from the 4 competition dealbots
+Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" or .Proposal.Client == \"t1qiqdbbmrdalbntnuapriirduvxu5ltsc5mhy7si\" '"
 ```
 
 You can also write advanced deal filters based on any field in deal info (for example, you may wish to accept only `VerifiedClient` deals). Deal info is piped into `stdin` as JSON.
+
+#### Will the bot retry a deal if it fails mid-way?
+
+The answer is no — the bot will do a new deal later instead. It is difficult to tell the exact retry times, because the timings scale up and down with the power of individual miners. Moreover we reserve the right to change some of the retry parameters as the race progresses. All in all, remember that the race is designed to maximally stress-test the network layer, and reveal various failure modes, so that future applications built on top will be able to make correct risk tradeoffs. The 80% success rate has been selected by careful evaluation of the current state of lotus.
+
+In short, it is expected that you may not be able to hit 100% throughout the entire competition. Focus on keeping your head above 90%, and keeping your PoSTs flowing!
 
 #### How do I change gas fees?
 
@@ -114,7 +137,7 @@ If you would like to change the default gas fees to accelerate your messages, ed
 
 ```
 [Fees]
-  MaxPreCommitGasFee = 0.05 FIL"
+  MaxPreCommitGasFee = "0.05 FIL"
   MaxCommitGasFee = "0.05 FIL"
   MaxWindowPoStGasFee = "50 FIL"
 ```
@@ -123,11 +146,28 @@ If you would like to change the default gas fees to accelerate your messages, ed
 
 To be eligible for Space Race rewards, you will need to demonstrate at least _one_ sector upgrade per miner.
 
-- Run `lotus-miner sectors list`.
-- From the results, find a CommittedCapacity sector. It will look like this: `1: Proving sSet: YES active: YES tktH: XXXX seedH: YYYY deals: [0]`. In this case, `1` represents the sector number.
-- Use that sector number to run `./lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER`.
+1. Run `lotus-miner sectors list`.
+2. From the results, find a CommittedCapacity sector. It will look like this: `1: Proving sSet: YES active: YES tktH: XXXX seedH: YYYY deals: [0]`. In this case, `1` represents the sector number.
+3. Use that sector number to run `./lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER`.
+4. There is **no immediate feedback** that `mark-for-upgrade` has succeeded or failed. However, within 24 hours, the `active: YES` should change to `active: NO`. This result will also be visible on the calibration/competition Dashboard.
 
-There is no immediate feedback that `mark-for-upgrade` has succeeded or failed. However, within 24 hours, the `active: YES` should change to `active: NO`. This result will also be visible on the calibration/competition Dashboard.
+**Notice:** At the moment, there is a small bug that causes to the `lotus-miner sectors mark-for-upgrade $SECTOR_NUMBER` command to **possibly** be ignored when attempting to seal said sector. This will be fixed after the race begins, but in the meantime, have no fear: sealing can be attempted multiple times without any adverse effects.
+
+To check if your sector upgrade was successful:
+
+- After the next sector featuring deals from the dealbot completes sealing, find out which sector was replaced with a CC sector:
+
+```
+for s in $( seq $( lotus-miner sectors list | wc -l ) ) ; do lotus-miner sectors status --log $s | grep -Eo 'ReplaceCapacity":true' && echo $s; done`
+```
+
+- The replaced CC sector should list the chain-height at which it will become inactive:
+
+```
+lotus-miner sectors status --on-chain-info $SECTOR_NUMBER | grep OnTime
+```
+
+- If the deal is marked as successful on the dashboard but the above commands do not return the expected result, simply repeat steps #1-3 above.
 
 ## Additional notes
 

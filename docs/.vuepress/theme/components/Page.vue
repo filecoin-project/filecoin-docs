@@ -92,10 +92,6 @@ export default {
   display: block;
 }
 
-.breadcrumbs.fixed + .theme-default-content {
-  padding-top: 6em;
-}
-
 .content-footer {
   padding-top: 0;
   max-width: $contentWidth;

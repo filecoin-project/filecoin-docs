@@ -3,7 +3,6 @@ title: Glossary
 description: Definitions and usage for Filecoin terminology
 ---
 
-
 ## Address
 
 In the Filecoin network, an _address_ is a unique cryptographic value that serves to publicly identify a user. This value, a public key, is paired with a corresponding private key. The mathematical relationship between the two keys is such that access to the private key allows the creation of a signature that can be verified with the public key. Filecoin specifically employs the Boneh–Lynn–Shacham (BLS) signature scheme for this purpose.
@@ -42,7 +41,7 @@ Time in the Filecoin blockchain is discretized into _epochs_ that are currently 
 
 ## FIL
 
-`FIL` is the unit symbol for the Filecoin currency; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
+_FIL_ is the name of the Filecoin unit of currency; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
 
 ## Faucet
 
@@ -54,7 +53,7 @@ When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacet
 
 ## Filecoin
 
-The term _Filecoin_, in the sense of a proper noun, is used generically to refer to the Filecoin project, network, broader ecosystem, and community. As a common noun, the singular form, filecoin, is used to refer to the Filecoin currency.
+The term _Filecoin_ is used generically to refer to the Filecoin project, protocol, and network.
 
 ## Gas
 
@@ -84,7 +83,7 @@ Many blockchain networks are underpinned by the notion that participants supply 
 
 As a term, Proof-of-Storage refers to the design elements of the Filecoin protocol that allow one to guarantee (to some very high tolerance) that participants that claim to be contributing a given amount of storage are indeed fulfilling that pledge. In fact, Filecoin's Proof-of-Storage construction provides for a much stronger claim, allowing one to efficiently verify that a participant is storing a _particular piece of data_, without requiring that one have a copy of the file itself.
 
-*Note*: "proof" here is used in an informal sense - typically, these proofs take the form of a probabilistic argument, rather than a concrete proof; that is, it might _technically_ be possible to convince other participants that one is making a contribution one is not, but the possibility is so vanishingly slight as to border on impossibility.
+_Note_: "proof" here is used in an informal sense - typically, these proofs take the form of a probabilistic argument, rather than a concrete proof; that is, it might _technically_ be possible to convince other participants that one is making a contribution one is not, but the possibility is so vanishingly slight as to border on impossibility.
 
 ## Proof-of-Replication (PoRep)
 
@@ -100,7 +99,7 @@ The storage power a [storage miner](#storage-miner) earns from a storage deal of
 
 ## Retrieval miner
 
-A _retrieval miner_ is a Filecoin participant that enters retrieval [deals](#deal) with clients, agreeing to supply a client with a particular file in exchange for [FIL](#fil).  Note that unlike [storage miners](#storage-miner), retrieval miners are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
+A _retrieval miner_ is a Filecoin participant that enters retrieval [deals](#deal) with clients, agreeing to supply a client with a particular file in exchange for [FIL](#fil). Note that unlike [storage miners](#storage-miner), retrieval miners are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
 
 ## Seal
 
