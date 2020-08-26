@@ -1,9 +1,9 @@
 ---
-title: Getting started
+title: Start buiding
 description: Jump into building your Filecoin application by following this simple workflow.
 ---
 
-# Getting started
+# Start buiding
 
 Jump into building your Filecoin application by following this simple workflow.
 
