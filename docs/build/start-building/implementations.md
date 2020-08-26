@@ -31,11 +31,11 @@ Here is a snapshot of each implementation’s progress across the primary parts 
 🔄 : reuses components from another implementation
 🔶 : partial implementation
 
-**_We recommend that developers only build directly on Filecoin protocol implementations if they are very advanced developers or need to build at a very low level of the stack._** Filecoin protocol implementations expose low-level APIs that developers can use to integrate Filecoin directly into their applications. These APIs and their underlying functionality are still under heavy, active development, and require familiarity with blockchains and the Filecoin protocol. For most applications, we recommend developers use [FPS](./tools/filecoin-backed-pinning) or [Powergate](./tools/powergate).
+**_We recommend that developers only build directly on Filecoin protocol implementations if they are very advanced developers or need to build at a very low level of the stack._** Filecoin protocol implementations expose low-level APIs that developers can use to integrate Filecoin directly into their applications. These APIs and their underlying functionality are still under heavy, active development, and require familiarity with blockchains and the Filecoin protocol. For most applications, we recommend developers use [FPS](../tools/filecoin-backed-pinning) or [Powergate](../tools/powergate).
 
 ## Using implementations
 
-Generally speaking, you can use a Filecoin protocol implementation as a “client” (user) or a “miner” (storage provider) _(see [What is Filecoin?](../introduction/what-is-filecoin) for more information)_. Most implementations separate out the storage miner functionality into a separate process from the core node functionality. The core node runs the blockchain system, makes storage and retrieval deals, performs data transfers, supports block producer logic, and syncs and validates the chain. The storage miner process produces sector commitments and _Proofs-of-Spacetime_ to prove they have been correctly storing storage client data, among other important functions. To be a Filecoin “client,” you need to run a full node. To be a Filecoin "miner," you must run a full node and the storage mining process.
+Generally speaking, you can use a Filecoin protocol implementation as a “client” (user) or a “miner” (storage provider) _(see [What is Filecoin?](../../introduction/what-is-filecoin) for more information)_. Most implementations separate out the storage miner functionality into a separate process from the core node functionality. The core node runs the blockchain system, makes storage and retrieval deals, performs data transfers, supports block producer logic, and syncs and validates the chain. The storage miner process produces sector commitments and _Proofs-of-Spacetime_ to prove they have been correctly storing storage client data, among other important functions. To be a Filecoin “client,” you need to run a full node. To be a Filecoin "miner," you must run a full node and the storage mining process.
 
 Each protocol implementation can be run and integrated in a few different ways:
 
@@ -51,7 +51,7 @@ If interacting with the implementation’s RPC APIs, the general development pat
 Filecoin protocol implementations provide access to core Filecoin protocol workflows, with very few abstractions of the core concepts. This can be very useful, as it allows flexibility and precision in interacting with Filecoin network functionality. However, integrating nodes directly can require greater familiarity with how Filecoin works.
 
 ::: tip
-See a walkthrough of an end-to-end example application (the Filecoin Network Inspector) built using [Lotus’ JS API client](./examples/network-inspector).
+See a walkthrough of an end-to-end example application (the Filecoin Network Inspector) built using [Lotus’ JS API client](../examples/network-inspector).
 :::
 
 ## Resources
