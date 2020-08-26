@@ -15,7 +15,7 @@ The Lotus client can be used for one of three use-cases:
 | Storage miner | The Lotus storage miner queries a Lotus node for the latest tipset on-chain, produces a block on that tipset, and submits it to the node to be broadcast to the entire network. |
 | Seal worker   | An extra process that can offload heavy processing tasks from your Lotus Storage miner.                                                                                         |
 
-All three of these use-cases use the same Lotus client, but they differ in how they are configured _after_ the client has been installed. To make the install go as smoothly as possible, read through the [software and hardware requirements](./requirements) first.
+All three of these use-cases use the same Lotus client, but they differ in how they are configured _after_ the client has been installed. To make the install go as smoothly as possible, read through the [software and hardware requirements](./requirements.md) first.
 
 ## Linux
 
