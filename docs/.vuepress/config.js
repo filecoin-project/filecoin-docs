@@ -77,6 +77,7 @@ module.exports = {
           ],
           '/build/': [
             '/build/getting-started',
+            '/build/implementations',
             {
               title: 'Start Building',
               collapsable: false,
