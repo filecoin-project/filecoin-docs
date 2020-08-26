@@ -82,7 +82,7 @@ module.exports = {
               path: '/build/start-building',
               children: [
                 'start-building/interacting-with-the-network',
-                '/build/implementations'
+                'start-building/implementations'
               ]
             },
             {
