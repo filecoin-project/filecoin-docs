@@ -101,7 +101,8 @@ module.exports = {
               children: [
                 '/build/developer-tools/api-clients',
                 '/build/developer-tools/signing-libraries',
-                '/build/developer-tools/wallets'[
+                '/build/developer-tools/wallets',
+                [
                   ('https://github.com/filecoin-project/docs/wiki#community-resources',
                   'Filecoin Community Resources')
                 ],
