@@ -76,13 +76,14 @@ module.exports = {
             '/mine/mining-troubleshooting'
           ],
           '/build/': [
-            '/build/getting-started',
-            '/build/implementations',
             {
               title: 'Start Building',
               collapsable: false,
-              path: '/build/start-building/interacting-with-the-network/',
-              children: ['start-building/interacting-with-the-network']
+              path: '/build/start-building',
+              children: [
+                'start-building/interacting-with-the-network',
+                '/build/implementations'
+              ]
             },
             {
               title: 'Tools',
