@@ -19,4 +19,4 @@ The entire Filecoin ecosystem is open to developers to build interesting and rev
 
 ## For everyone else
 
-Are you here just to play around with this whole _Filecoin, IPFS, decentralized web_ thing? Then you absolutely don't need to install a Filecoin node. [You can if you want to, by all means](./lotus)! But you might be better of having a look at Slate: it's a website that lets you interact with the Filecoin network _without_ having to install anything. [All you have to do is sign up ->](https://slate.host)
+Are you here just to play around with this whole _Filecoin, IPFS, decentralized web_ thing? Then you absolutely don't need to install a Filecoin node. [You can if you want to, by all means](./lotus/README.md)! But you might be better of having a look at Slate: it's a website that lets you interact with the Filecoin network _without_ having to install anything. [All you have to do is sign up ->](https://slate.host)
