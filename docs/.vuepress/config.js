@@ -76,6 +76,7 @@ module.exports = {
             '/mine/mining-troubleshooting'
           ],
           '/build/': [
+            '/build/getting-started',
             {
               title: 'Start Building',
               collapsable: false,
@@ -185,7 +186,11 @@ module.exports = {
                   title: 'Install Filecoin',
                   sidebarDepth: 1,
                   collapsable: false,
-                  children: ['/how-to/install-filecoin', '/how-to/networks', '/how-to/join-a-network']
+                  children: [
+                    '/how-to/install-filecoin',
+                    '/how-to/networks',
+                    '/how-to/join-a-network'
+                  ]
                 },
                 {
                   title: 'Store Data',
