@@ -1,10 +1,10 @@
 ---
-title: Joining a network
+title: Join a network
 sidebarDepth: 0
 description: Learn how to join one of the various Filecoin testnets.
 ---
 
-# Joining a network
+# Join a network
 
 Once a Lotus node has been initialised on the appropriate [Filecoin network option](https://docs.filecoin.io/how-to/networks/), this section provides setup instructions for syncing the chain, creating a wallet, checking balances and sending FIL to other addresses.
 
@@ -30,7 +30,7 @@ In another terminal window, check your connection with peers:
 lotus net peers | wc -l
 ```
 
- > **NOTICE:** Make sure there is a reasonable "open files limit" set on the machine, such as 10000. If you're seeing a lower value, such as 256 (default on macOS), read our [troubleshooting instructions](https://docs.filecoin.io/mine/mining-troubleshooting/) on how to update it prior to starting the Lotus daemon.
+> **NOTICE:** Make sure there is a reasonable "open files limit" set on the machine, such as 10000. If you're seeing a lower value, such as 256 (default on macOS), read our [troubleshooting instructions](https://docs.filecoin.io/mine/mining-troubleshooting/) on how to update it prior to starting the Lotus daemon.
 
 ## Chain sync
 
@@ -83,7 +83,7 @@ lotus send <target> <amount>
 
 ## Configure your node's connectivity
 
-To effectively accept incoming storage & retrieval deals, your Lotus node needs to be accessible to other nodes on the network. To improve your connectivity, be sure to: 
+To effectively accept incoming storage & retrieval deals, your Lotus node needs to be accessible to other nodes on the network. To improve your connectivity, be sure to:
 
 - [Set the multiaddresses for you miner to listen on](https://docs.filecoin.io/mine/connectivity/#setting-multiaddresses)
 - [Maintain a healthy peer count](https://docs.filecoin.io/mine/connectivity/#checking-peer-count)
@@ -95,13 +95,16 @@ To effectively accept incoming storage & retrieval deals, your Lotus node needs 
 To see the latest network activity, including **chain block height**, **block height**, **blocktime**, **total network power**, largest **block producer miner**, check out the network's monitoring dashboard.
 
 ## Upgrade in place
+
 Here’s how to upgrade in place, with minimum impact:
-* Back up your wallet, just in case: `lotus wallet export t3… > path/wallet.keyinfo`
-* Build the new binary.
-* If you are running miner(s), check if your miner is safe to shut down and restart: `lotus-miner proving info`. If any deadline shows a block height in the past, do not restart. See examples below.
-* Otherwise, you can safely restart your daemon and miner(s). This will replace and update the binary, and should preserve your config, wallets, and anything else on disk.
+
+- Back up your wallet, just in case: `lotus wallet export t3… > path/wallet.keyinfo`
+- Build the new binary.
+- If you are running miner(s), check if your miner is safe to shut down and restart: `lotus-miner proving info`. If any deadline shows a block height in the past, do not restart. See examples below.
+- Otherwise, you can safely restart your daemon and miner(s). This will replace and update the binary, and should preserve your config, wallets, and anything else on disk.
 
 In the following example, Deadline Open is 454 which is earlier than Current Epoch of 500. This miner should **not** be shut down or restarted.
+
 ```
 $ sudo lotus-miner proving info
 Miner: t01001
@@ -120,6 +123,7 @@ Deadline FaultCutoff: 384 (58m0s ago)
 ```
 
 In this next example, the miner can be safely restarted because no Deadlines are earlier than Current Epoch of 497. You have ~45 minutes before the miner must be back online to declare faults (FaultCutoff). If the miner has no faults, you have about an hour.
+
 ```
 $ sudo lotus-miner proving info
 Miner: t01000
