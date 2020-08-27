@@ -37,7 +37,7 @@ While each FBP provider will have slightly different instructions for utilizing 
 This section will be updated with documentation links for additional FBP providers as they come online.
 
 ::: tip
-See a walkthrough of an end-to-end example application (the Meme Marketplace) built on Textile Buckets [here](../examples/meme-marketplace/overview).
+See a walkthrough of an end-to-end example application (the Meme Marketplace) built on Textile Buckets [here](../examples/meme-marketplace/overview.md).
 :::
 
 ## How FBP solutions work

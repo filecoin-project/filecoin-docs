@@ -18,7 +18,7 @@ From the [Textile docs](https://docs.textile.io/powergate/):
 > - Easily configure, connect, and deploy Powergate, [Lotus](https://lotu.sh), and [IPFS](https://ipfs.io) together.
 > - Much more!
 
-**_Powergate is the recommended solution for developers who want an easier interface and better performance from Filecoin, but who prefer to manage their own nodes._** For most developers, we recommend using an [FPS](./filecoin-backed-pinning). For very low-level or advanced developers, you can integrate [lotus](https://lotu.sh) directly into your application.
+**_Powergate is the recommended solution for developers who want an easier interface and better performance from Filecoin, but who prefer to manage their own nodes._** For most developers, we recommend using an [FBP](./filecoin-backed-pinning.md). For very low-level or advanced developers, you can integrate [lotus](https://lotu.sh) directly into your application.
 
 The Powergate project is built and maintained by Textile. You can see the full [Powergate docs](https://docs.textile.io/powergate/).
 
