@@ -168,7 +168,6 @@ module.exports = {
               path: '/introduction/',
               collapsable: false,
               children: [
-                '/introduction/new-to-web3',
                 '/introduction/what-is-filecoin',
                 '/introduction/why-filecoin',
                 '/introduction/ipfs-and-filecoin',
@@ -185,7 +184,11 @@ module.exports = {
                   title: 'Install Filecoin',
                   sidebarDepth: 1,
                   collapsable: false,
-                  children: ['/how-to/install-filecoin', '/how-to/networks', '/how-to/join-a-network']
+                  children: [
+                    '/how-to/install-filecoin',
+                    '/how-to/networks',
+                    '/how-to/join-a-network'
+                  ]
                 },
                 {
                   title: 'Store Data',
