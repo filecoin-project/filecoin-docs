@@ -1,42 +1,32 @@
 ---
-title: Start buiding
-description: Jump into building your Filecoin application by following this simple workflow.
+title: Build
+description: A guide to getting started with building applications on Filecoin.
 ---
 
-# Start buiding
+# Build
 
-Jump into building your Filecoin application by following this simple workflow.
+Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you’ve come to the right place. In this section, you will find some helpful resources as you get started building applications on Filecoin.
 
-## Get a node
+Read the resources in the **Start Building** section before you begin for helpful pointers on application architecture and networks to use when interacting and testing with Filecoin.
 
-All requests to the Filecoin network must go through a Filecoin node. You can either manage a node yourself, or use a hosting service.
+- [Interacting with the network](./start-building/interacting-with-the-network.md)
 
-## Ping the node
+**Core Products** gives you an overview of the three main categories of products that we recommend to developers, and high-level pointers on how to run and integrate them in your application.
 
-Make sure you can access the network by _pinging_ the node.
+- **For most developers**, we recommend getting started with [Filecoin-backed IPFS Pinning Services](./tools/filecoin-backed-pinning.md). This is especially true if you’re coming to Filecoin from IPFS or other web3 ecosystems.
+- **For some developers who want to manage their own nodes**, we recommend using [Powergate](./tools/powergate.md).
+- **For very advanced, protocol-level developers**, we recommend using [Filecoin protocol implementations](./tools/protocol-implementations.md), e.g. [lotus](https://lotu.sh).
 
-## Create a request
+**Developer Tools** provides brief descriptions and links to tools and libraries that provide important functionality for application developers.
 
-To interact with the Filecoin network you must _package_ your request properly. The basic process to creating a request is:
+- [Wallets](./tools/wallets), [signing tools](./tools/signing-tools), [API clients](./tools/api-clients), and [Filecoin Community Resources](https://github.com/filecoin-project/docs/wiki#community-resources) will direct you to various resources you can use in your applications
+- The Filecoin [Component Design System](http://filecoin.onrender.com/) is a design system that includes Filecoin-branded web UI components and tutorials that you can integrate into your application.
 
-1. Create an account.
-2. Package a request.
-3. Sign the request using your account.
-4. Get gas money to pay for the network to process your request.
-5. Send the signed request to the network.
+**Examples** includes end-to-end code examples, tutorials, and walkthroughs for applications built on Filecoin. The examples section currently features:
 
-## Deal with the response
+- [Meme Marketplace](./examples/meme-marketplace/overview.md): An example application built on Textile Hub, a Filecoin-backed IPFS Pinning Service.
+- [Simple Pinning Service](./examples/simple-pinning-service/overview.md): An example application built on Powergate.
+- [Slate](./examples/slate/overview.md): A production application built on Powergate.
+- [Network Inspector](./examples/network-inspector/overview.md): An example application built on lotus.
 
-Once you've got a response from the network you can carry on with your application.
-
-<!--
-
-## Nodes
-
-A Filecoin node is kind of like the router in your home network. When you send a request to the internet to view this website, it must first pass through your home router. Your router makes sure the request your sending is correctly packaged and structured before sending it off to the network. This is what Filecoin nodes do. When your application requests information about a transaction from the Filecoin network, it sends that request to a Filecoin node. That Filecoin node then either replies with the answer, and pings your request off to another node that might know the answer.
-
-<!-- How to set up a node once you've follow the Install section -->
-<!-- Ping the node from an application. -->
-<!-- Some config stuff you might want to try. -->
-
--->
+Please suggest any additional content that you would find useful using the links below.
