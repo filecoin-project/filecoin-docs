@@ -30,7 +30,7 @@ In another terminal window, check your connection with peers:
 lotus net peers | wc -l
 ```
 
-> **NOTICE:** Make sure there is a reasonable "open files limit" set on the machine, such as 10000. If you're seeing a lower value, such as 256 (default on macOS), read our [troubleshooting instructions](https://docs.filecoin.io/mine/mining-troubleshooting/) on how to update it prior to starting the Lotus daemon.
+> **NOTICE:** Make sure there is a reasonable "open files limit" set on the machine, such as 10000. If you're seeing a lower value, such as 256 (default on macOS), read our [troubleshooting instructions](../../mine/mining-troubleshooting.md) on how to update it prior to starting the Lotus daemon.
 
 ## Chain sync
 
