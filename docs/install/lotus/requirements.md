@@ -5,7 +5,7 @@ description: There are specific system and hardware requirements for running a L
 
 # Requirements
 
-The requirements of your system will change depending on the type of client you are running: a node, a storage miner, or seal worker.
+Your system's requirements will change depending on the type of client you are running: a node, a storage miner, or seal worker.
 
 ## Hardware
 
@@ -56,10 +56,22 @@ It is common to run both a Lotus node and a seal worker on the same system.
 
 You need to have Go `1.14.6` installed on your system. Head over to the [Golang Install docs](https://golang.org/doc/install) to find out how to install Go for your operating system.
 
-You can check that you have Go installed properly by asking for the version number in a terminal window:
+You can check that you have Go installed correctly by asking for the version number:
 
 ```bash
-go version
+$ go version
 
-> go version go1.14.6 linux/amd64
+go version go1.14.6 linux/amd64
+```
+
+### Jq
+
+[Jq](https://stedolan.github.io/jq/) is an open-source JSON processor. It's like `sed`, but for JSON data. You can use it to slice and filter and map and transform structured data.
+
+You can check that you have Jq installed correctly by asking for the version number:
+
+```bash
+$ jq --version
+
+jq-1.6
 ```
