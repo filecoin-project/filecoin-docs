@@ -5,9 +5,6 @@ description: Get up and running quickly by installing a Filecoin node to your sy
 
 # Install Filecoin
 
-| Mine Filecoin                                                                                       | Build with Filecoin                                                                                                                 | For everyone else                                                                                                                                          |
-| --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Are you setting up a miner to mine Filecoin? This section is for you!<br>[Find out more ↓](#miners) | Are you a developer looking to build an application on Filecoin? This section _might_ be for you.<br>[Find out more ↓](#developers) | Are you just looking to play around with Filecoin to see what all the fuss is about? This section is not for you.<br>[Find out more ↓](#for-everyone-else) |
 
 ## Miners
 
