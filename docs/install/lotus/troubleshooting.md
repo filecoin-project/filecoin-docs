@@ -7,7 +7,7 @@ description: If you're having issues installing Lotus on your system, try runnin
 
 If you're having trouble installing Lotus, try running through some of these troubleshooting steps. If you're still having trouble, feel free to reach out on the `#fil-help` channel in the Filecoin Slack.
 
-## Update your system
+## Update your operating system
 
 This sounds simple, but a common reason users aren't able to run Filecoin is because their operating system isn't up to date.
 
