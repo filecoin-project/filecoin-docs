@@ -49,30 +49,6 @@ All three of these use-cases use the same Lotus client, but they differ in how t
     > lotus version 0.4.1+git.7d7496e1
     ```
 
-That's it! You've now got Lotus installed on your system. If you'd like to be able to run `lotus` from anywhere on your system:
-
-1. Move the `lotus` executable to `/usr/local`:
-
-   ```bash
-   sudo mv lotus /usr/local/bin
-   ```
-
-1. Add `lotus` to your system PATH:
-
-   ```bash
-   echo "export PATH=\$PATH:/usr/local/bin/lotus" >> ~/.profile
-   source ~/.profile
-   ```
-
-1. You can now run `lotus` commands from anywhere:
-
-   ```bash
-   cd ~
-   lotus --version
-
-   > lotus version 0.4.1+git.7d7496e1
-   ```
-
 ## macOS
 
 1. Make sure you have `xcode-select` and Homebrew installed:
