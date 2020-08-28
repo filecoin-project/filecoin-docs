@@ -46,4 +46,4 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.2()
 	/home/infra/go/pkg/mod/github.com/lucas-clemente/quic-go@v0.17.3/internal/handshake/unsafe.go:26 +0x205
 ```
 
-The current Lotus client `0.4.2` is not compatible with Go version `1.15`. If you have Go `1.15` installed, roll back to version `1.14.6`.
+The current Lotus client `0.4.2` is not compatible with Go version `1.15`. If you have Go `1.15` installed, roll back to version `1.14.7`.
