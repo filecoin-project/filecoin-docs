@@ -11,6 +11,8 @@ The requirements of your system will change depending on the type of client you 
 
 ### Lotus node
 
+Here's what you need to run a single lotus node for non-mining functions such as chain syncing, wallet transactions, storage or retrieval client, or building on Filecoin. (If you plan to mine, see the additional [Storage miner]{#storage-miner) requirements below.)
+
 The requirements table below is correct as of August 2020 but may change in the future as software development continues. The amount of memory (RAM) required is expected to drop significantly to about 1GB in the future as the Lotus client uses Badger FS more efficiently.
 
 | Processor                                      | Memory   | Storage space         |
