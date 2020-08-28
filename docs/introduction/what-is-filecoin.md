@@ -37,7 +37,7 @@ Once a storage provider implements the Filecoin protocol, they gain access to th
 
 If you are new to Filecoin or to the web3 space, welcome! We think you will enjoy getting to learn about some of the core concepts that make [IPFS](https://ipfs.io), [Filecoin](https://filecoin.io), [Powergate](https://github.com/textileio/powergate), and other technologies possible as well as how to use them in your projects and applications.
 
-Web3 or Web 3.0 is turning centralized apps into decentralized protocols. Essentially instead of having a single point of control, it removes the middle man reducing the risk of censorship by big corporations and Distributed Denial of Services (DDoS). It is a trustless infrastructure that allows users to have ownership and control over their data.
+Web3 is a movement within software development that is turning centralized applications into _decentralized_ protocols. Instead of having a single point of control, applications built on web3 architecture can remove the _middle-man,_ reducing the risk of censorship by big corporations and services vulnerability to denial-of-service attacks. Web3 is a _trustless_ infrastructure that allows users to have ownership and reclaim control over their data.
 
 Web3 is essentially what allows Filecoin to exist by allowing files to be shared between peers.
 
