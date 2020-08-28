@@ -79,6 +79,10 @@ The [Competition Dashboard](https://spacerace.filecoin.io/) is where you can tra
 
 Block Rewards standings are listed on the [Block Rewards Dashboard](https://reward.testnet.filecoin.io/), and network stats on the [Testnet Network Stats](https://stats.testnet.filecoin.io/) page.
 
+#### I can't find my miner on the Space Race dashboard. Anything else I need to do?
+
+The [Space Race Dashboard](https://spacerace.filecoin.io) only shows miners after they have at least one sealed sector. To check if your miner has finished sealing its first sector, run `lotus state active-sectors <minerId>` and the output is a list of sectors that have finished sealing. Therefore, as long as the output is not empty, it means you have a sector sealed and your miner id should be shown on the dashboard up to 5 minutes after you get the power.
+
 #### How is the "location" of a mining operation determined?
 
 The “location” of a storage mining operation is the location of the storage and sealing hardware for the operation. Since the hardware is what matters, it is not acceptable to relay from hardware in Continent A to a Lotus node in Continent B and try to claim Continent B rewards.
@@ -103,7 +107,7 @@ Each region (regional or global) unlocks additional FIL rewards by collectively 
 
 #### Can I run multiple miners?
 
-Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards.
+Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as **ONE** miner for purposes of calculating rankings and rewards.
 
 #### How are rewards distributed?
 
