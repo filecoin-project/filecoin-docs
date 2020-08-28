@@ -6,7 +6,7 @@
 /go-filecoin-tutorial/*  https://go.filecoin.io/go-filecoin-tutorial/:splat
 
 # install redirects
-/how-to/install-filecoin/   /install/lotus/
+/how-to/install-filecoin/   /install/
 /how-to/join-a-network/   /install/lotus/join-a-network/
 
 # use a custom 404 for any pages that are not rendered
