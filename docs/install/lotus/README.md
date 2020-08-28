@@ -17,7 +17,7 @@ The Lotus client can be used for one of three use-cases:
 
 All three of these use-cases use the same Lotus client, but they differ in how they are configured _after_ the client has been installed. To make the install go as smoothly as possible, read through the [software and hardware requirements](./requirements.md) first.
 
-## Linux
+## Ubuntu
 
 1.  Install the dependencies:
 
