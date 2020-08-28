@@ -9,24 +9,24 @@ Filecoin is for the builders. If you are excited about the potential of leveragi
 
 Read the resources in the **Start Building** section before you begin for helpful pointers on application architecture and networks to use when interacting and testing with Filecoin.
 
-- [Interacting with the network](./start-building/interacting-with-the-network.md)
+- [Interacting with the network](./interacting-with-the-network.md)
 
 **Core Products** gives you an overview of the three main categories of products that we recommend to developers, and high-level pointers on how to run and integrate them in your application.
 
-- **For most developers**, we recommend getting started with [Filecoin-backed IPFS Pinning Services](./tools/filecoin-backed-pinning.md). This is especially true if you’re coming to Filecoin from IPFS or other web3 ecosystems.
-- **For some developers who want to manage their own nodes**, we recommend using [Powergate](./tools/powergate.md).
-- **For very advanced, protocol-level developers**, we recommend using [Filecoin protocol implementations](./tools/protocol-implementations.md), e.g. [lotus](https://lotu.sh).
+- **For most developers**, we recommend getting started with [Filecoin-backed IPFS Pinning Services](../tools/filecoin-backed-pinning.md). This is especially true if you’re coming to Filecoin from IPFS or other web3 ecosystems.
+- **For some developers who want to manage their own nodes**, we recommend using [Powergate](../tools/powergate.md).
+- **For very advanced, protocol-level developers**, we recommend using [Filecoin protocol implementations](../tools/protocol-implementations.md), e.g. [lotus](https://lotu.sh).
 
 **Developer Tools** provides brief descriptions and links to tools and libraries that provide important functionality for application developers.
 
-- [Wallets](./tools/wallets), [signing tools](./tools/signing-tools), [API clients](./tools/api-clients), and [Filecoin Community Resources](https://github.com/filecoin-project/docs/wiki#community-resources) will direct you to various resources you can use in your applications
+- [Wallets](../tools/wallets), [signing tools](../tools/signing-tools), [API clients](../tools/api-clients), and [Filecoin Community Resources](https://github.com/filecoin-project/docs/wiki#community-resources) will direct you to various resources you can use in your applications
 - The Filecoin [Component Design System](http://filecoin.onrender.com/) is a design system that includes Filecoin-branded web UI components and tutorials that you can integrate into your application.
 
 **Examples** includes end-to-end code examples, tutorials, and walkthroughs for applications built on Filecoin. The examples section currently features:
 
-- [Meme Marketplace](./examples/meme-marketplace/overview.md): An example application built on Textile Hub, a Filecoin-backed IPFS Pinning Service.
-- [Simple Pinning Service](./examples/simple-pinning-service/overview.md): An example application built on Powergate.
-- [Slate](./examples/slate/overview.md): A production application built on Powergate.
-- [Network Inspector](./examples/network-inspector/overview.md): An example application built on lotus.
+- [Meme Marketplace](../examples/meme-marketplace/overview.md): An example application built on Textile Hub, a Filecoin-backed IPFS Pinning Service.
+- [Simple Pinning Service](../examples/simple-pinning-service/overview.md): An example application built on Powergate.
+- [Slate](../examples/slate/overview.md): A production application built on Powergate.
+- [Network Inspector](../examples/network-inspector/overview.md): An example application built on lotus.
 
 Please suggest any additional content that you would find useful using the links below.
