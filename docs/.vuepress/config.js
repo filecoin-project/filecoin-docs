@@ -77,9 +77,9 @@ module.exports = {
           ],
           '/build/': [
             {
-              title: 'Start Building',
+              title: 'Start building',
               collapsable: false,
-              path: '/build/start-building',
+              path: '/build/start-building/interacting-with-the-network',
               children: [
                 'start-building/interacting-with-the-network',
                 'start-building/implementations'
