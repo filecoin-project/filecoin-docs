@@ -44,7 +44,7 @@ All three of these use-cases use the same Lotus client, but they differ in how t
 1.  Once the build process has finished, you're left with a `lotus` executable:
 
     ```bash
-    ./lotus --version
+    lotus version
 
     > lotus version 0.4.1+git.7d7496e1
     ```
