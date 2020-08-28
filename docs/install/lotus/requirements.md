@@ -5,7 +5,7 @@ description: There are specific system and hardware requirements for running a L
 
 # Requirements
 
-The requirements of your system will change depending on the type of client you are running: a node, a storage miner, or seal worker.
+The requirements of your system will change depending on the type of client you are running: a basic node, a storage miner, or seal worker.
 
 ## Hardware
 
