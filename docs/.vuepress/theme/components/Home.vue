@@ -58,6 +58,10 @@ export default {
             {
               title: 'Filecoin compared to...',
               path: '/introduction/filecoin-compared-to'
+            },
+            {
+              title: 'Filecoin FAQ',
+              path: '/introduction/faq'
             }
           ]
         },
@@ -239,7 +243,7 @@ export default {
 
 <style lang="stylus">
 .home .header-anchor {
-  display: none
+  display: none;
 }
 </style>
 

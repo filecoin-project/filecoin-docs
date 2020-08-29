@@ -5,21 +5,6 @@ description: Learn how to interface with the Filecoin network.
 
 # Interacting with the network
 
-<br>
-
-- [Mainnet](#mainnet)
-- [Testnet](#testnet)
-  - [Filecoin Space Race competition](#filecoin-space-race-competition)
-  - [Running hosted endpoints](#running-hosted-endpoints)
-  - [Hosted nodes for testnet](#hosted-nodes-for-testnet)
-  - [Running a local network](#running-a-local-network)
-  - [Running Powergate](#running-powergate)
-- [Devnets](#devnets)
-  - [Nerpa Devnet](#nerpa-devnet) - `for Developers building apps`
-  - [Calibration Devnet](#calibration-devnet) - `for preparing for the Space Race`
-
-<br>
-
 This page outlines various options for connecting to local and remote test networks while building and operating your service or application.
 
 Each Filecoin-based service or application will need to use at least one Filecoin node that maintains consensus. All interactions with the network must flow through an up-to-date node: sending and receiving market deals, sending and receiving data, and more.

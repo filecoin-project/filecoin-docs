@@ -13,7 +13,7 @@ Filecoin includes a blockchain and native cryptocurrency (FIL). Storage miners e
 
 ![Diagram showing a four-step process for storing files with Filecoin. First step: User who wants to store a file pays miner to store their file. Second step: Miner commits publicly via Filecoin’s blockchain to storing the file. Third step: The network constantly verifies that miners are storing files correctly. Fourth step: User pays miner to retrieve their file.](./images/what-is-filecoin/what-is-filecoin-diagram.png)
 
-### For users
+## For users
 
 Filecoin enables users to store their files at hypercompetitive prices and verify that their files are being stored correctly.
 
@@ -25,10 +25,49 @@ At any time, users can verify that their files are being stored correctly by loo
 [Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
 :::
 
-### For storage providers
+## For storage providers
 
 Filecoin enables storage providers to sell their storage on an open market.
 
 Storage providers are people and organizations that run miners, earning Filecoin tokens for doing so. A miner could be any internet-connected computer with spare disk space, or a dedicated system with lots of storage built specifically for Filecoin. Filecoin’s blockchain rewards miners for contributing useful storage to the internet, not for completing wasteful proof-of-work computations.
 
 Once a storage provider implements the Filecoin protocol, they gain access to the entire market of Filecoin users. Providers don’t need to design their own storage API or advertise their offering themselves as this is handled by Filecoin’s protocol and network. Filecoin enables a thriving, decentralized ecosystem of independent storage providers by removing barriers to entry.
+
+## New to web3
+
+If you are new to Filecoin or to the web3 space, welcome! We think you will enjoy getting to learn about some of the core concepts that make [IPFS](https://ipfs.io), [Filecoin](https://filecoin.io), [Powergate](https://github.com/textileio/powergate), and other technologies possible as well as how to use them in your projects and applications.
+
+Web3 is a movement within software development that is turning centralized applications into _decentralized_ protocols. Instead of having a single point of control, applications built on web3 architecture can remove the _middle-man,_ reducing the risk of censorship by big corporations and services vulnerability to denial-of-service attacks. Web3 is a _trustless_ infrastructure that allows users to have ownership and reclaim control over their data.
+
+Web3 is essentially what allows Filecoin to exist by allowing files to be shared between peers.
+
+You can find out more about it in [IPFS and Filecoin section](./ipfs-and-filecoin.md).
+
+### Vision
+
+- [Long-term Information Structure](http://longnow.org/seminars/02018/aug/06/long-term-info-structure/)
+- [What exactly is web3?](https://youtu.be/l44z35vabvA)
+- [The next Internet Revolution](https://youtu.be/2RCwZDRwk48)
+- [Protocol Labs: Creating New Networks](https://protocol.ai/blog/protocol-labs-creating-new-networks/)
+- [a16z Podcast: Getting Applications into People's Hands](https://a16z.com/2017/09/14/networks-protocols-labs-tokens/)
+
+## IPFS, libp2p, and Filecoin
+
+### IPFS
+
+- [A beginner's guide to IPFS](https://hackernoon.com/a-beginners-guide-to-ipfs-20673fedd3f)
+- [IPFS concepts](https://docs.ipfs.io/concepts/)
+- [ProtoSchool tutorials](https://proto.school/#/tutorials)
+
+### libp2p
+
+- [Why libp2p?](https://www.parity.io/why-libp2p/)
+- [lib2p: A Modular, p2p Networking Stack](https://www.youtube.com/watch?v=xqVmEzsin3Y)
+
+### Filecoin
+
+- [Introducing Filecoin, a decentralized storage network](https://www.youtube.com/watch?v=EClPAFPeXIQ)
+- [What is Filecoin?](./what-is-filecoin.md)
+- [Why Filecoin?](./why-filecoin.md)
+- [Filecoin primer](https://ipfs.io/ipfs/QmWimYyZHzChb35EYojGduWHBdhf9SD5NHqf8MjZ4n3Qrr/Filecoin-Primer.7-25.pdf)
+- [Building the Filecoin ecosystem](https://youtu.be/SXlTBvcqzz8)

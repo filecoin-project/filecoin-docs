@@ -161,7 +161,6 @@ module.exports = {
               path: '/introduction/',
               collapsable: false,
               children: [
-                '/introduction/new-to-web3',
                 '/introduction/what-is-filecoin',
                 '/introduction/why-filecoin',
                 '/introduction/ipfs-and-filecoin',
