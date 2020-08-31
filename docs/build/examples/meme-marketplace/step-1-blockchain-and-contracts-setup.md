@@ -13,6 +13,8 @@ To create the Meme Marketplace, you first set up three components:
 
 This section takes you through the setup of the blockchain network.
 
+In case you run into any problems check out the [Troubleshooting section](./step-1-blockchain-and-contracts-setup.md#troubleshooting).
+
 ## Blockchain and Smart Contract Setup
 
 The ERC 721 token contract can be written and deployed in [Truffle](https://www.trufflesuite.com/docs/truffle/getting-started/installation) or [Remix IDE](https://remix.ethereum.org/#optimize=false&evmVersion=null&version=soljson-v0.6.6+commit.6c089d02.js). This tutorial uses Truffle. If you wish to use Remix IDE, refer to their [documentation](https://remix-ide.readthedocs.io/en/latest).
@@ -35,19 +37,19 @@ git clone https://github.com/filecoin-shipyard/meme-nft-token
 cd meme-nft-token
 ```
 
-The contract lives in [contract/MemeMarketplace.sol](https://github.com/filecoin-shipyard/meme-nft-token/blob/master/contracts/MemeMarketplace.sol).
+This repository includes a contract required by Truffle, it lives in [contract/MemeMarketplace.sol](https://github.com/filecoin-shipyard/meme-nft-token/blob/master/contracts/MemeMarketplace.sol).
 
 ::: tip
 To learn more about the truffle project structure, see Truffle's [documentation](https://www.trufflesuite.com/docs/truffle/getting-started/creating-a-project).
 :::
 
-4. Install the OpenZeppelin contracts library by running the following command to install the `@openzeppelin/contracts` library.
+4. Install the project dependencies with the command bellow. This includes the OpenZeppelin contracts library (`@openzeppelin/contracts`).
 
 ```bash
-npm i
+npm ci
 ```
 
-5. You can deploy the [MemeMarketplace.sol](https://github.com/filecoin-shipyard/meme-nft-token/blob/master/contracts/MemeMarketplace.sol) contract to any network, but for development purposes, this tutorial uses [ganache-cli](https://www.npmjs.com/package/ganache-cli), which is a CLI-based local blockchain client that is built for development purposes.
+5. Install a CLI to deploy. You can deploy the [MemeMarketplace.sol](https://github.com/filecoin-shipyard/meme-nft-token/blob/master/contracts/MemeMarketplace.sol) contract to any network, but for development purposes, this tutorial uses [ganache-cli](https://www.npmjs.com/package/ganache-cli), which is a CLI-based local blockchain client that is built for development purposes.
 
 Install [ganache-cli](https://www.npmjs.com/package/ganache-cli) using the Node Package Manager (NPM). Run the following command to install and start the local development blockchain.
 
@@ -71,18 +73,18 @@ If everything went as it should, your terminal displays messages like those belo
 In the above screenshot, the "Mnemonic" is:
 
 ```bash
-congress elder barrel spice tent advance head manual dragon spice boring bone
+wing relax champion spatial rough weird bottom transfer slice dragon flower drill
 ```
 
 ::: tip
 NOTE: The "Mnemonic" will be different for you, so use yours. Read this [article](https://kb.myetherwallet.com/en/security-and-privacy/what-is-a-mnemonic-phrase/) to learn more about mnemonics.
 :::
 
-7. Note that the local blockchain exposes an RPC endpoint at `127.0.0.1:8545`. Copy this as well where you can save it, so you can use this endpoint to deploy the contract and interact with the smart contract deployed on the blockchain via this RPC endpoint.
+Note that the local blockchain exposes an RPC endpoint at `127.0.0.1:8545`. Copy this as well where you can save it, so you can use this endpoint to deploy the contract and interact with the smart contract deployed on the blockchain via this RPC endpoint.
 
 Now, as you have the local blockchain running you need to point your Truffle to the local blockchain RPC URL. In our case, the endpoint is `127.0.0.1:8545` (as shown in the above image). This is already configured on the project in the [truffle-config.js](https://github.com/filecoin-shipyard/meme-nft-token/blob/master/truffle-config.js) file.
 
-8. To deploy the smart contract, open your terminal, and go into the root folder of the project. Run the following command:
+7. To deploy the smart contract, open your terminal, and go into the root folder of the project. Run the following command:
 
 ```bash
 truffle migrate
@@ -98,9 +100,9 @@ If everything went as it should, your terminal returns something similar to the 
 
 The thing to note here is the "contract address", which is `0x69137609f09bE9eA3C82022D2122642a27a1d7a8` in our case. **This will be different for you.**
 
-9. Copy **and save the contract address somewhere safe**. You will need it in the next sections of the tutorial.
+8. Copy **and save the contract address somewhere safe**. You will need it in the next sections of the tutorial.
 
-10. To manage the keys and sign transactions, we will use [Metamask](http://metamask.io/). [Download and install Metamask](https://metamask.io/download.html) from their website.
+9. To manage the keys and sign transactions, we will use [Metamask](http://metamask.io/). [Download and install Metamask](https://metamask.io/download.html) from their website.
 
 The following video explains how to:
 
@@ -111,3 +113,57 @@ The following video explains how to:
 @[youtube](https://youtube.com/watch?v=vbcy55J5xlU)
 
 This completes the creation and deployment of the smart contract on a local blockchain.
+
+## Troubleshooting
+
+### ganache-cli: Error: Callback was already called
+
+When trying to start `ganache-cli` you might run into this error:
+
+```
+Ganache CLI v6.10.1 (ganache-core: 2.11.2)
+Error: Callback was already called.
+    at /usr/src/meme-nft-token/node_modules/ganache-cli/build/ganache-core.node.cli.js:19:276
+    at s.<anonymous> (/usr/src/meme-nft-token/node_modules/ganache-cli/build/ganache-core.node.cli.js:19:2238)
+    at s.emit (events.js:314:20)
+    at s.destroy (/usr/src/meme-nft-token/node_modules/ganache-cli/build/ganache-core.node.cli.js:39:744230)
+    at finish (_stream_writable.js:658:14)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+```
+
+This project is not compatible with Node v14. Try rolling back to Node v12.
+
+### Truffle is currently using solc 0.5.16, but one or more of your contracts specify "pragma solidity ^0.6.0"
+
+If you see the following error
+
+```
+Compiling your contracts...
+===========================
+> Compiling ./contracts/MemeMarketplace.sol
+> Compiling ./contracts/Migrations.sol
+> Compiling ./node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol
+> Compiling ./node_modules/@openzeppelin/contracts/utils/Counters.sol
+
+/usr/src/meme-nft-token/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol:3:1: ParserError: Source file requires different compiler version (current compiler is 0.5.16+commit.9c3226ce.Emscripten.clang - note that nightly builds are considered to be strictly less than the released version
+pragma solidity ^0.6.0;
+^---------------------^
+,/usr/src/meme-nft-token/node_modules/@openzeppelin/contracts/utils/Counters.sol:3:1: ParserError: Source file requires different compiler version (current compiler is 0.5.16+commit.9c3226ce.Emscripten.clang - note that nightly builds are considered to be strictly less than the released version
+pragma solidity ^0.6.0;
+^---------------------^
+
+Error: Truffle is currently using solc 0.5.16, but one or more of your contracts specify "pragma solidity ^0.6.0".
+Please update your truffle config or pragma statement(s).
+(See https://truffleframework.com/docs/truffle/reference/configuration#compiler-configuration for information on
+configuring Truffle to use a specific solc compiler version.)
+
+Compilation failed. See above.
+Truffle v5.1.42 (core: 5.1.42)
+Node v12.18.3
+```
+
+Then
+
+```
+do something
+```
