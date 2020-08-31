@@ -5,13 +5,13 @@ description: Jump into building your Filecoin application by following this simp
 
 # Start building
 
-Want to quickly host your website on Filecoin? Textile is the easiest way to get up and running quickly. Everything you need is contained in one executable you can run from the command-line. By the end of this guide you'll have a website hosted on IPFS and Filecoin.
+Want to quickly host your website on Filecoin? Textile is the easiest way to get up and running quickly. Everything is ran from one executable from the command-line.Follow this guide to host a static website on IPFS and Filecoin.
 
 ## Get Textile
 
-Textile is an executable run from the command-line that gives you access to various APIs and commands. Essentially, Textile makes it incredibly easy to start building on the Filecoin network by abstracting away the deal making process and upload procedure. All you, the developer, needs to know is how to add code into a folder.
+Textile is command-line application that hooks into Libp2p, IPFS, and Filecoin. Essentially, Textile makes it incredibly easy to start building on the Filecoin network by abstracting away the deal making process and upload procedure. All you, need to know is how to add code into a folder and enter a few commands into a terminal.
 
-1. Download the latest release of [Textile Hub from GitHub](https://github.com/textileio/textile/releases/latest). Ignore the `buck` packages for now. We'll download them later:
+1. Download the latest release of [Textile **Hub** from GitHub](https://github.com/textileio/textile/releases/latest). Ignore the `buck` packages for now:
 
    ```bash
    wget https://github.com/textileio/textile/releases/download/v1.0.14/hub_v1.0.14_linux-amd64.tar.gz
@@ -48,20 +48,20 @@ Textile is an executable run from the command-line that gives you access to vari
 
 ## Create an account
 
-Textile requires you to have an account before you can interact with it's APIs.
+Textile requires you to have an account before you can interact with it's APIs. The process is very simple, and just requires an email address.
 
-1. Create a new account:
+1. Request a new account from the hub:
 
    ```bash
    hub init
    ```
 
 1. Choose a username and enter your email address.
-1. Follow the link in the confirmation email from Textfile to complete your account.
+1. Follow the link in the confirmation email from Textfile to complete your account set up.
 
 ## Create a bucket
 
-Buckets are essentially folders that contain all the data you want to store on Filecoin. This section assumes that you already have a site that you want to upload. If you don't have a site ready to upload but still want to play around with Textile, you can download the [Random Planet Facts site from GitHub](https://github.com/johnnymatthews/random-planet-facts).
+Buckets are essentially folders that contain all the data you want to store. This section assumes that you already have a site that you want to upload. If you don't have a site ready to upload but still want to play around with Textile, you can download the [Random Planet Facts site from GitHub](https://github.com/johnnymatthews/random-planet-facts).
 
 1. Move to the folder where you will be storing your code:
 
@@ -92,6 +92,8 @@ Buckets are essentially folders that contain all the data you want to store on F
 
 ## Push your files
 
+Now that we've got our bucket set up, we need to give it some files to host.
+
 1. Tell hub to grab all the files in this directory and push them into the bucket:
 
    ```bash
@@ -109,6 +111,8 @@ Buckets are essentially folders that contain all the data you want to store on F
    > + style.css: bafkreiblwodafe2vsgs6ex5ikis5rmft7gyrniigcgyi3y24kvjeezhyd4
    > bafybeifledeasvymgvy6jrn7grlvpjepk7rpnx5jm7ons4kzoyforwp5ji
    ```
+
+   Keep in mind that _everything_ within this folder will be pushed online and made available to anyone with the address. So **do not push private API keys or passwords**.
 
 1. That's it!
 
@@ -132,3 +136,5 @@ Now that all your stuff is ready, we should be able to view it in a browser!
    ![A Firefox window showing the Random Planet Facts website.](./images/README/firefox-window-showing-random-planet-facts.png)
 
 ## Next steps
+
+Sure, storing a static website on Filecoin is pretty cool, but what about storing actual data? For that, [head on over to Textile's documentation](https://docs.textile.io/). There, you do stuff like create a photo album organizer with multiple users and multiple buckets!
