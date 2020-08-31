@@ -5,11 +5,11 @@ description: Jump into building your Filecoin application by following this simp
 
 # Start building
 
-Want to quickly host your website on Filecoin? Textile is the easiest way to get up and running quickly. Everything is ran from one executable from the command-line.Follow this guide to host a static website on IPFS and Filecoin.
+Want to host your site on Filecoin quickly? Textile is the easiest way to get up and running quickly. Follow this guide to host a static website on IPFS and Filecoin.
 
 ## Get Textile
 
-Textile is command-line application that hooks into Libp2p, IPFS, and Filecoin. Essentially, Textile makes it incredibly easy to start building on the Filecoin network by abstracting away the deal making process and upload procedure. All you, need to know is how to add code into a folder and enter a few commands into a terminal.
+Textile is a command-line application that hooks into Libp2p, IPFS, and Filecoin. Essentially, Textile makes it incredibly easy to start building on the Filecoin network by abstracting away the deal-making process and upload procedure. All you need to know is how to add code into a folder and enter a few commands into a terminal.
 
 1. Download the latest release of [Textile **Hub** from GitHub](https://github.com/textileio/textile/releases/latest). Ignore the `buck` packages for now:
 
@@ -46,9 +46,13 @@ Textile is command-line application that hooks into Libp2p, IPFS, and Filecoin. 
    > ...
    ```
 
+### MacOS users
+
+If you're running macOS, you may run into some issues installing Textile. Take a look at the [official Textile documentation](https://docs.textile.io/hub/accounts/#mac-installation) to find out how to deal with any problems you experience.
+
 ## Create an account
 
-Textile requires you to have an account before you can interact with it's APIs. The process is very simple, and just requires an email address.
+Textile requires you to have an account before you can interact with it's APIs. The process is straightforward and only requires an email address.
 
 1. Request a new account from the hub:
 
@@ -61,7 +65,7 @@ Textile requires you to have an account before you can interact with it's APIs. 
 
 ## Create a bucket
 
-Buckets are essentially folders that contain all the data you want to store. This section assumes that you already have a site that you want to upload. If you don't have a site ready to upload but still want to play around with Textile, you can download the [Random Planet Facts site from GitHub](https://github.com/johnnymatthews/random-planet-facts).
+Buckets are essentially folders that contain all the data you want to store. This section assumes that you already have a site that you wish to upload. If you don't have a site ready to upload but still want to play around with Textile, you can download the [Random Planet Facts site from GitHub](https://github.com/johnnymatthews/random-planet-facts).
 
 1. Move to the folder where you will be storing your code:
 
