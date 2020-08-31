@@ -79,7 +79,7 @@ module.exports = {
             {
               title: 'Start Building',
               collapsable: false,
-              path: '/build/start-building/interacting-with-the-network/',
+              path: '/build/start-building/',
               children: ['start-building/interacting-with-the-network']
             },
             {
