@@ -77,6 +77,12 @@ module.exports = {
           ],
           '/build/': [
             {
+              title: 'Getting Started',
+              collapsable: false,
+              path: '/build/getting-started/configure-lotus-for-development/',
+              children: ['getting-started/configure-lotus-for-development']
+            },
+            {
               title: 'Start Building',
               collapsable: false,
               path: '/build/start-building/interacting-with-the-network/',
