@@ -45,8 +45,8 @@ The top 50 miners in each region and globally are eligible to split a reward poo
 
 | Total FIL rewards (regional pool) | Regional network storage achieved |
 | --------------------------------- | --------------------------------- |
-| 25k FIL                           | 100 TiB                           |
-| 50k FIL                           | 500 TiB                           |
+| 25k FIL                           | 10 TiB                           |
+| 50k FIL                           | 100 TiB                           |
 | 100k FIL                          | 1 PiB                             |
 | 250k FIL                          | 5 PiB                             |
 | 500k FIL                          | 10 PiB                            |
