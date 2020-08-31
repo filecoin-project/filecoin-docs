@@ -9,7 +9,7 @@ Want to quickly host your website on Filecoin? Textile is the easiest way to get
 
 ## Get Textile
 
-Textile is an executable run from the command-line that gives you access to APIs and CLIs. Essentially, Textile makes it incredibly easy to start building on the Filecoin network.
+Textile is an executable run from the command-line that gives you access to various APIs and commands. Essentially, Textile makes it incredibly easy to start building on the Filecoin network by abstracting away the deal making process and upload procedure. All you, the developer, needs to know is how to add code into a folder.
 
 1. Download the latest release of [Textile Hub from GitHub](https://github.com/textileio/textile/releases/latest). Ignore the `buck` packages for now. We'll download them later:
 
@@ -61,7 +61,7 @@ Textile requires you to have an account before you can interact with it's APIs.
 
 ## Create a bucket
 
-Now we're ready to put your site into a bucket. Buckets are kind of like code repositories.
+Buckets are essentially folders that contain all the data you want to store on Filecoin. This section assumes that you already have a site that you want to upload. If you don't have a site ready to upload but still want to play around with Textile, you can download the [Random Planet Facts site from GitHub](https://github.com/johnnymatthews/random-planet-facts).
 
 1. Move to the folder where you will be storing your code:
 
@@ -69,21 +69,11 @@ Now we're ready to put your site into a bucket. Buckets are kind of like code re
    cd ~/code/random-planet-facts
    ```
 
-   If you don't have a site ready to upload but still want to play around with Textile, you can download the Random Planet Facts site:
-
-   ```bash
-   wget https://github.com/johnnymatthews/random-planet-facts/archive/master.zip
-   unzip master
-   cd random-planet-facts-master
-   ```
-
 1. Create the bucket:
 
    ```bash
    hub bucket init
    ```
-
-   You can also use the shorter `buck` command if you prefer.
 
 1. Choose a name for your bucket. This step is optional, but it makes it easier to manage multiple buckets if they all have descriptive names.
 1. Do not encrypt your bucket. Since we need the files to be publically readable, encrypting them would be problematic.
