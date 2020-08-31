@@ -5,7 +5,7 @@ description: How to configure Lotus for Development
 
 # Configure Lotus for Development
 
-After you have [installed](./TODO: Link to install docs) you can start configuring Lotus.
+After you have installed you can start configuring Lotus.
 
 Requests to Lotus API are made against `127.0.0.1:1234` by default.
 
