@@ -112,7 +112,7 @@ export default {
               path: '/build/start-building/interacting-with-the-network/'
             },
             {
-              title: 'IPFS-backed pinning services',
+              title: 'Filecoin-backed pinning services',
               path: '/build/tools/filecoin-backed-pinning-services/'
             },
             {
