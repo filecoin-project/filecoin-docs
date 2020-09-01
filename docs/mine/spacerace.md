@@ -21,7 +21,7 @@ You'll also need to complete these steps to be eligible for rewards:
 
 - Maintain a deal success average of 80% or greater for both storage and retrieval deals.
 - Demonstrate at least one [sector upgrade](#how-do-i-demonstrate-a-sector-upgrade) per miner.
-- Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/), **before 22:00 UTC, Monday, August 31st**. It will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
+- Late registration is now open, register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/), **before 22:00 UTC, Thursday, Sept 10th**. Note that late registration is **only** open for new miners(those not seen on chain before and who don't have another miner in the race). After subitting the registration form, it will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
 
 For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the [Filecoin Slack](https://filecoin.io/slack).
 
