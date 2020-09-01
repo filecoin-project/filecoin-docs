@@ -7,7 +7,7 @@ description: Jump into building your Filecoin application by following this simp
 
 Jump into building your Filecoin application by following this simple workflow.
 
-## Get a node
+## Get access to a node
 
 All requests to the Filecoin network must go through a Filecoin node. You can either manage a node yourself, or use a hosting service.
 
