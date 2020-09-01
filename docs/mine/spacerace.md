@@ -21,7 +21,7 @@ You'll also need to complete these steps to be eligible for rewards:
 
 - Maintain a deal success average of 80% or greater for both storage and retrieval deals.
 - Demonstrate at least one [sector upgrade](#how-do-i-demonstrate-a-sector-upgrade) per miner.
-- Late registration is now open, register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/), **before 22:00 UTC, Thursday, Sept 10th**. Note that late registration is **only** open for new miners(those not seen on chain before and who don't have another miner in the race). After subitting the registration form, it will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
+- Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/). After submitting the registration form, it will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends. [**Note:** Standard registration (for miners already mining) closed at 22:00 UTC, Monday, August 31. Late registration (for new miners not seen on chain before and who don't have another miner in the race) is open until **22:00 UTC, Thursday, Sept 10th**.]
 
 For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the [Filecoin Slack](https://filecoin.io/slack).
 
@@ -81,7 +81,9 @@ Block Rewards standings are listed on the [Block Rewards Dashboard](https://rewa
 
 #### I can't find my miner on the Space Race dashboard. Anything else I need to do?
 
-The [Space Race Dashboard](https://spacerace.filecoin.io) only shows miners after they have at least one sealed sector. To check if your miner has finished sealing its first sector, run `lotus state active-sectors <minerId>` and the output is a list of sectors that have finished sealing. Therefore, as long as the output is not empty, it means you have a sector sealed and your miner id should be shown on the dashboard up to 5 minutes after you get the power.
+The [Space Race Dashboard](https://spacerace.filecoin.io) shows miners with at least one sealed sector. 
+
+To check if your miner has finished sealing its first sector, run `lotus state active-sectors <minerId>`. This will return a list of sectors that have finished sealing. As long as the output is not empty, it means you have a sector sealed. Your miner id should show up on the dashboard within 5 minutes of sealing its first sector.
 
 #### How is the "location" of a mining operation determined?
 
@@ -107,7 +109,7 @@ Each region (regional or global) unlocks additional FIL rewards by collectively 
 
 #### Can I run multiple miners?
 
-Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as **ONE** miner for purposes of calculating rankings and rewards.
+Yes, you can combine your competition results from multiple miners within the same region. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as **ONE** miner for purposes of calculating rankings and rewards.
 
 #### How are rewards distributed?
 

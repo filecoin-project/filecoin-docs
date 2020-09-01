@@ -45,7 +45,7 @@ Testnet is the network of record for the [Filecoin Space Race](https://filecoin.
 |Sector Sizes | 32GiB, 64GiB |
 |Branch | `master` |
 |Tag | [`v0.5.7`](https://github.com/filecoin-project/lotus/releases/tag/v0.5.7) |
-|Next expected reset | Aug 24, 2020 at 22:00:00 UTC |
+|Next expected reset | n/a |
 
 #### Testnet Resources
 |Description  | Details |
@@ -154,4 +154,3 @@ Butterfly is a devnet that features the absolute latest changes, and is consider
 | Stats dashboard                            | https://stats.butterfly.fildev.network/                          |
 | Block explorers                            | n/a                                                          |
 | [Slack](https://filecoin.io/slack) channel | [#fil-net-butterfly](https://filecoinproject.slack.com/archives/C017AB80CTC) |
-
