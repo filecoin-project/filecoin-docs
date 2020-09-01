@@ -1,6 +1,6 @@
 ---
 title: Signing libraries
-description:
+description: Signing libraries can be used to sign transactions without requiring a dedicated node.
 ---
 
 # Signing libraries

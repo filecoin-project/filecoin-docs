@@ -20,7 +20,7 @@ Read the resources in the **Start Building** section before you begin for helpfu
 **Developer Tools** provides brief descriptions and links to tools and libraries that provide important functionality for application developers.
 
 - [Wallets, signing tools, and API clients](./tools/) and [Filecoin Community Resources](https://github.com/filecoin-project/docs/wiki#community-resources) will direct you to various resources you can use in your applications
-- The Filecoin [Component Design System](http://filecoin.onrender.com/) is a design system that includes Filecoin-branded web UI components and tutorials that you can integrate into your application.
+- The [Slate Component Design System](https://slate.host/_/system) is a design system that includes Filecoin-branded web UI components and tutorials that you can integrate into your application.
 
 **Examples** includes end-to-end code examples, tutorials, and walkthroughs for applications built on Filecoin. The examples section currently features:
 
