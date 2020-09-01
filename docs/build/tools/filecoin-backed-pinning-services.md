@@ -44,7 +44,7 @@ See a walkthrough of an end-to-end example application (the Meme Marketplace) bu
 
 FPS solutions run IPFS and Filecoin software clients (e.g. [go-ipfs](https://github.com/ipfs/go-ipfs) and [lotus](https://github.com/filecoin-project/lotus)) under the hood, either communicating directly with these software clients through their native APIs or through tools like the [Powergate](https://github.com/textileio/powergate) APIs. IPFS/Filecoin nodes speak libp2p protocols and transfer IPLD data back and forth. FPS services manage the flow of data between the IPFS DHT and Filecoin miners, employing intelligent caching strategies to keep popular data readily available.
 
-![Diagram showing a simplified architecture for a Filecoin IPFS Pinning Service (FPS). User makes API request to the FPS. The FPS stores and retrieves data from embedded go-ipfs and lotus nodes, which communicate with each other via libp2p and IPLD data formats.](./images/FPS/FPS-data-flows.png)
+![Diagram showing a simplified architecture for a Filecoin IPFS Pinning Service (FPS). User makes API request to the FPS. The FPS stores and retrieves data from embedded go-ipfs and lotus nodes, which communicate with each other via libp2p and IPLD data formats.](./images/filecoin-backed-pinning-services/fps-data-flows.png)
 
 While the specific architecture of each service will look different, most FPS solutions follow similar flows behind-the-scenes.
 
