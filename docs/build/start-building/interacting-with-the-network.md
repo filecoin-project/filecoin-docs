@@ -102,7 +102,7 @@ To tap the faucet or see dashboard for Nerpa:
 
 - Nerpa Devnet Faucet (to obtain mock FIL): https://faucet.nerpa.fildev.network/
 - Nerpa Stats Dashboard: https://stats.nerpa.fildev.network/
-- Other Nerpa Devnet Info: http://www.nerpa.fildev.network/
+See more Nerpa Devnet information here: https://network.filecoin.io/#nerpa
 - For updates see: [#fil-net-nerpa](https://filecoinproject.slack.com/archives/C016VJSJNTH) (in Filecoin Slack)
 
 ### Calibration Devnet
