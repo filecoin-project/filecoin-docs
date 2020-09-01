@@ -39,12 +39,11 @@ Deals have a start and end time, specified by epoch (aka block height) in the cl
 
 ### Usage
 
-If you are using a common Filecoin node implementation, you will not need to manage each of these incremental steps. Instead, they are wrapped into a small handful of CLI commands or API calls. For details, see the [Storing Data tutorial for go-filecoin](https://go.filecoin.io/go-filecoin-tutorial/Storing-on-Filecoin.html#table-of-contents) or [Storing Data tutorial for lotus](https://lotu.sh/en+storing-data).
+If you are using Lotus, you will not need to manage each of these incremental steps. Instead, they are wrapped into a small handful of CLI commands or API calls. For details, see [Storing Data tutorial for lotus](https://lotu.sh/en+storing-data).
 
 You can also check out [Filecoin Community Resources](https://github.com/filecoin-project/docs/wiki#community-resources) for libraries, tools, and applications that simplify storage or add additional capabilities.
 
 ### References
 
 - Filecoin Specification: [2.7.1 Storage Market](https://filecoin-project.github.io/specs/#systems__filecoin_markets__storage_market)
-- [Storing Data tutorial for go-filecoin](https://go.filecoin.io/go-filecoin-tutorial/Storing-on-Filecoin.html#table-of-contents)
 - [Storing Data tutorial for lotus](https://lotu.sh/en+storing-data)
