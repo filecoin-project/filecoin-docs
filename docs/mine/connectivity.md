@@ -151,8 +151,8 @@ Connectivity issues? Please run the following steps:
 1. Go to [https://ping.eu/ping/](https://ping.eu/ping/) and check if the service can ping your public IP address
 1. Go to [https://ping.eu/port-chk/](https://ping.eu/port-chk/) and check if the port that leads to your miner is accessible
 1. From another network (another computer in another house, datacenter, etc), do telnet or netcat to the ip+port and a `/multistream/1.0.0` should come out
-1. Go to [https://calibration.spacerace.filecoin.io/check](https://calibration.spacerace.filecoin.io/check) to check if the dealbot can successfully get a query-ask from your miner
-1. Check deal details page for your miner at [https://calibration.spacerace.filecoin.io/](https://calibration.spacerace.filecoin.io/), and follow the [Common Errors](#common-errors) table below.
+1. Go to [https://spacerace.filecoin.io/check](https://spacerace.filecoin.io/check) to check if the dealbot can successfully get a query-ask from your miner
+1. Check deal details page for your miner at [https://spacerace.filecoin.io/](https://spacerace.filecoin.io/), and follow the [Common Errors](#common-errors) table below.
 
 ## Common Errors
 
