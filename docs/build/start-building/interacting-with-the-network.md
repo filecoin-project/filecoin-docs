@@ -86,7 +86,7 @@ There are currently several developer networks available to try out: the Nerpa D
 
 ### Nerpa Devnet
 
-_best for Developers building apps_
+_best for small-scale testing for app developers_
 
 A long-lived devnet for developers building storage apps. We call this network the Nerpa Devnet (the 'nerpa' is a species of seal, and one of the smallest true seals). It features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
