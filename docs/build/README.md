@@ -13,7 +13,7 @@ Read the resources in the **Start Building** section before you begin for helpfu
 
 **Core Products** gives you an overview of the three main categories of products that we recommend to developers, and high-level pointers on how to run and integrate them in your application.
 
-- **For most developers**, we recommend getting started with [Filecoin-backed IPFS Pinning Services](./tools/filecoin-backed-pinning.md). This is especially true if you’re coming to Filecoin from IPFS or other web3 ecosystems.
+- **For most developers**, we recommend getting started with [Filecoin-backed IPFS Pinning Services](./tools/filecoin-backed-pinning-services.md). This is especially true if you’re coming to Filecoin from IPFS or other web3 ecosystems.
 - **For some developers who want to manage their own nodes**, we recommend using [Powergate](./tools/powergate.md).
 - **For very advanced, protocol-level developers**, we recommend using [Filecoin protocol implementations](./start-building/implementations.md), e.g. [lotus](https://lotu.sh).
 

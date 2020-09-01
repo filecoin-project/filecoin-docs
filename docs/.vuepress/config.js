@@ -91,7 +91,7 @@ module.exports = {
               path: '/build/tools/',
               children: [
                 '/build/tools/api-clients',
-                '/build/tools/filecoin-backed-pinning',
+                '/build/tools/filecoin-backed-pinning-services',
                 '/build/tools/powergate',
                 '/build/tools/signing-libraries',
                 '/build/tools/slate',

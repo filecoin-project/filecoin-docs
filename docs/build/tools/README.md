@@ -13,7 +13,7 @@ API clients take care of the low-level details of making requests and handling r
 
 ## Filecoin-backed pinning
 
-Filecoin-backed pinning services are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin’s decentralized storage network. [Find out more →](./filecoin-backed-pinning.md)
+Filecoin-backed pinning services are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin’s decentralized storage network. [Find out more →](./filecoin-backed-pinning-services.md)
 
 ## Powergate
 
