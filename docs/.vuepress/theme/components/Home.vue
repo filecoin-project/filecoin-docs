@@ -121,7 +121,7 @@ export default {
             },
             {
               title: 'Protocol Implementations',
-              path: '/build/tools/protocol-implementations/'
+              path: '/build/start-building/implementations/'
             },
             {
               title: 'Wallets, signing tools and API clients',
