@@ -112,16 +112,16 @@ export default {
               path: '/build/start-building/interacting-with-the-network/'
             },
             {
-              title: 'IPFS-backed pinning services',
-              path: '/build/core-products/filecoin-backed-pinning-services/'
+              title: 'Filecoin-backed pinning services',
+              path: '/build/tools/filecoin-backed-pinning-services/'
             },
             {
               title: 'Powergate',
-              path: '/build/core-products/powergate/'
+              path: '/build/tools/powergate/'
             },
             {
               title: 'Protocol Implementations',
-              path: '/build/core-products/protocol-implementations/'
+              path: '/build/start-building/implementations/'
             },
             {
               title: 'Wallets, signing tools and API clients',

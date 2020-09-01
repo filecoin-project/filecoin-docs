@@ -13,4 +13,4 @@ View the [technical specification](https://github.com/filecoin-project/specs) fo
 
 ## Implementations
 
-Read more about Filecoin's protocol implementations [here](../build/core-products/protocol-implementations.md).
+Read more about Filecoin's protocol implementations [here](../build/start-building/implementations.md).

@@ -45,7 +45,7 @@ The top 50 miners in each region and globally are eligible to split a reward poo
 
 | Total FIL rewards (regional pool) | Regional network storage achieved |
 | --------------------------------- | --------------------------------- |
-| 25k FIL                           | 10 TiB                           |
+| 25k FIL                           | 10 TiB                            |
 | 50k FIL                           | 100 TiB                           |
 | 100k FIL                          | 1 PiB                             |
 | 250k FIL                          | 5 PiB                             |
@@ -81,7 +81,7 @@ Block Rewards standings are listed on the [Block Rewards Dashboard](https://rewa
 
 #### I can't find my miner on the Space Race dashboard. Anything else I need to do?
 
-The [Space Race Dashboard](https://spacerace.filecoin.io) shows miners with at least one sealed sector. 
+The [Space Race Dashboard](https://spacerace.filecoin.io) shows miners with at least one sealed sector.
 
 To check if your miner has finished sealing its first sector, run `lotus state active-sectors <minerId>`. This will return a list of sectors that have finished sealing. As long as the output is not empty, it means you have a sector sealed. Your miner id should show up on the dashboard within 5 minutes of sealing its first sector.
 
