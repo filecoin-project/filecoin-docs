@@ -82,7 +82,7 @@ Powergate is open source ([Github](https://github.com/textileio/powergate)) or y
 
 ## Devnets
 
-There are currently several developer networks available to try out: the Nerpa Devnet, which is recommended for developers building applications, and the Butterfly Devnet, which is best suited for miners interested in testing out new Lotus features and is reset more often. There is also a Calibration Devnet for miners to practice Space Race testing.
+You can see the latest information about active devnets at the [Filecoin Network Information page](https://network.filecoin.io). In addition to the testnet, there is currently one developer network available to try out: the Nerpa Devnet, which is recommended for small-scale testing for developers building applications.
 
 ### Nerpa Devnet
 
