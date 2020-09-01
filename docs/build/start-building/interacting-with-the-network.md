@@ -82,7 +82,7 @@ Powergate is open source ([Github](https://github.com/textileio/powergate)) or y
 
 ## Devnets
 
-There are currently several developer networks available to try out: the Nerpa Devnet, which is recommended for developers building applications, and the Butterfly Devnet, which is best suited for miners interested in testing out new Lotus features and is reset more often. There is also a Calibration Devnet for miners to practice Space Race testing.
+There are currently several developer networks available to try out: the Nerpa Devnet, which is recommended for developers building applications, and the Butterfly Devnet, which is best suited for miners interested in testing out new Lotus features and is reset more often.
 
 ### Nerpa Devnet
 
@@ -104,26 +104,3 @@ To tap the faucet or see dashboard for Nerpa:
 - Nerpa Stats Dashboard: https://stats.nerpa.fildev.network/
 - Other Nerpa Devnet Info: http://www.nerpa.fildev.network/
 - For updates see: [#fil-net-nerpa](https://filecoinproject.slack.com/archives/C016VJSJNTH) (in Filecoin Slack)
-
-### Calibration Devnet
-
-_best for Miners preparing for the Space Race competition_
-
-The Filecoin Space Race Calibration Period is a 2-week period where miners can practice in real competition conditions and see how their performance influences hypothetical testnet incentives competition standings. This takes place on the Calibration Devnet.
-
-> Note: As issues are discovered this Devnet will be regularly reset to the latest code during this calibration window. Stay tuned in the Slack channels below for reset announcements.
-
-To connect to the [Calibration Devnet](http://www.calibration.fildev.network/):
-
-1. Delete any existing local Lotus repository, if one is present.
-2. Build and run Lotus from branch `ntwk-calibration`. When you run `lotus daemon` on the build from this branch, you should automatically be connected to the proper bootstrappers.
-
-To tap the faucet or see dashboard for the Calibration Devnet:
-
-- Calibration Devnet Faucet: https://faucet.calibration.fildev.network/
-- Calibration Stats Dashboard: https://stats.calibration.fildev.network/
-- Calibration Block Explorers:
-  - https://calibration.filfox.io/
-  - https://calibration.filscan.io/
-- Other Calibration Devnet info: http://www.calibration.fildev.network/
-- For updates see: [#fil-net-calibration](https://filecoinproject.slack.com/archives/C017CCH1MHB) and [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) (in Filecoin Slack)
