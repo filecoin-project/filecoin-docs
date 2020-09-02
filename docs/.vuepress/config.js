@@ -81,6 +81,7 @@ module.exports = {
               collapsable: false,
               path: '/build/start-building/interacting-with-the-network',
               children: [
+                'start-building/deploy-your-application-to-the-filecoin-testnet',
                 'start-building/interacting-with-the-network',
                 'start-building/implementations'
               ]
