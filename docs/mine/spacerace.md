@@ -187,6 +187,31 @@ lotus-miner sectors status --on-chain-info $SECTOR_NUMBER | grep OnTime
 
 - If the deal is marked as successful on the dashboard but the above commands do not return the expected result, simply repeat steps #1-3 above.
 
+#### How do I force a WaitDeals sector to start sealing?
+
+Run `lotus-miner sectors seal <sector id>`.
+
+#### How is the deal rate of the combined miners being calculated?
+
+The deal rate is calculated based on the sum of all the deals across the miners.
+
+#### If I rent a server in EU from US, can I compete in the EU region?
+
+The definition of the `mining operation` can be found [here](https://spacerace.filecoin.io/rules), in short, it is the physical location of the storage and sealing hardware. It might not be cost effective, but you can rent cloud service anywhere in the world. However, it is NOT acceptable to do something like running a proxy or anything of that nature.
+
+#### Why is my deal success rate below 80%?
+
+Deals can fail due to various reasons. To see the deal logs for your miner, go to [Space Race Dashboard](https://spacerace.filecoin.io/), search for your miner id, and click `Open Logs`. See the [Improving Connectivity > Common Errors](https://docs.filecoin.io/mine/connectivity/#common-errors) section for detailed explanations and recommended fixes for each error.
+
+#### My sector is stuck in X stage. How can I remove it?
+
+In lotus v0.5.6 and later, you can remove a sector by running `lotus-miner sectors remove --really-do-it <sector id>`. Warning: This will cause you to lose all power and collateral for the removed sector.
+
+
+#### Why is my miner receiving any deals?
+
+You need to seal at least one sector before starting to receive deals.
+
 ## Additional notes
 
 - If a bug is identified during the competition that threatens the validity of the power table, the Filecoin team may end the competition early. Rewards will still be awarded for the period prior to the discovery of the bug. If such a bug is responsibly disclosed to the Filecoin team, the team reporting it will be eligible for rewards of up to 250k FIL, depending on the severity and practicality of the bug, as determined by the Filecoin team.
