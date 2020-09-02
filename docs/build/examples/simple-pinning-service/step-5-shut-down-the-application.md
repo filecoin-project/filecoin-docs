@@ -7,10 +7,10 @@ description: This article describes how to shut down the application.
 
 After you have explored the app, feel free to shut down the docker containers using the following steps:
 
-1. Go into the powergate-docker-v0.0.1-beta folder
+1. Go into the powergate-docker-v0.4.1 folder
 
 ```bash
-cd powergate-docker-v0.0.1-beta
+cd powergate-docker-v0.4.1
 ```
 
 1. Run the following command to stop all the containers gracefully

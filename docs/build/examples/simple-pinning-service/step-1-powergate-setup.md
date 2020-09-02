@@ -1,11 +1,11 @@
 ---
 title: Step 1 - Start Powergate docker compose scripts
-description: This article describes how to spin up a lotus-devnet, a go-ipfs node, and a powergate instance for the purpose of this tutorial.
+description: This article describes how to spin up a lotus-localnet, a go-ipfs node, and a powergate instance for the purpose of this tutorial.
 ---
 
 # Step 1 - Start Powergate docker compose scripts
 
-The Powergate [documentation](https://docs.textile.io/powergate/) describes several ways to set up the Powergate. For the purpose of this tutorial, the easiest and fastest way is to run a **Docker + local devnet** setup. This configuration of Lotus runs a local devnet at high speed, specifically designed local testing and development. It's easy to use via a [devnet Docker compose configuration](https://github.com/textileio/powergate#devnet-mode).
+The Powergate [documentation](https://docs.textile.io/powergate/) describes several ways to set up the Powergate. For the purpose of this tutorial, the easiest and fastest way is to run a **Docker + localnet** setup. This configuration of Lotus runs a localnet at high speed, specifically designed local testing and development. It's easy to use via a [localnet Docker compose configuration](https://github.com/textileio/powergate#localnet-mode).
 
 ## Requirements
 
@@ -18,16 +18,16 @@ To follow this tutorial you will need:
 
 To set up Powergate:
 
-1. Download the `powergate-docker-<version>.zip` from the appropriate release, in this case, [version v0.0.1-beta.10](https://github.com/textileio/powergate/releases/download/v0.0.1-beta.10/powergate-docker-v0.0.1-beta.10.zip).
+1. Download the `powergate-docker-<version>.zip` from the appropriate release, in this case, [version v0.4.1](https://github.com/textileio/powergate/releases/download/v0.4.1/powergate-docker-v0.4.1.zip).
 2. Unzip the release, go into the created folder:
 
 ```bash
-unzip powergate-docker-v0.0.1-beta.10.zip
-cd powergate-docker-v0.0.1-beta
+unzip powergate-docker-v0.4.1.zip
+cd powergate-docker-v0.4.1
 ```
 
 3. Expose port `8080` on the go-ipfs daemon so that we can access the HTTP gateway. (We use the HTTP gateway to fetch the files in our browser)
-4. Open the _docker-compose-devnet.yaml_ file in your favorite editor, and add `- 8080:8080` in the `ports` section of `ipfs`
+4. Open the _docker-compose-localnet.yaml_ file in your favorite editor, and add `- 8080:8080` in the `ports` section of `ipfs`
 
 ```yaml
 ipfs:
@@ -40,11 +40,11 @@ ipfs:
 6. Open the [Docker Desktop](https://www.docker.com/products/docker-desktop) and start Powergate using the provided Makefile:
 
 ```bash
-BIGSECTORS=true make devnet
+BIGSECTORS=true make localnet
 ```
 
 Powergate is now running.
 
 ::: tip
-**Important note on BIGSECTORS:** When running the devnet setup, the Lotus node is configured with a mocked sector builder, using either "small" or "big" sector sizes. The configuration has practical effects on the size of files you can store in the devnet and how quickly the storage deals will complete. Using BIGSECTORS=false limits storage to files of approximately 700 bytes and deals execute in 30-60 seconds. Using BIGSECTORS=true allows storage of files from 1Mb to 400Mb, but deals execute in 3-4 minutes. Be sure to choose the value that makes sense for your development scenario.
+**Important note on BIGSECTORS:** When running the localnet setup, the Lotus node is configured with a mocked sector builder, using either "small" or "big" sector sizes. The configuration has practical effects on the size of files you can store in the localnet and how quickly the storage deals will complete. Using BIGSECTORS=false limits storage to files of approximately 700 bytes and deals execute in 30-60 seconds. Using BIGSECTORS=true allows storage of files from 1Mb to 400Mb, but deals execute in 3-4 minutes. Be sure to choose the value that makes sense for your development scenario.
 :::
