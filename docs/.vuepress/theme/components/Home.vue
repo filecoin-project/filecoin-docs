@@ -108,6 +108,11 @@ export default {
           path: '/build',
           children: [
             {
+              title: 'Deploy your application to the Filecoin testnet',
+              path:
+                '/build/start-building/deploy-your-application-to-the-filecoin-testnet/'
+            },
+            {
               title: 'Interacting with the network',
               path: '/build/start-building/interacting-with-the-network/'
             },
