@@ -59,6 +59,7 @@ The miners are available at the following addresses (more may be added over time
 t016303
 t016304
 t016305
+t016306
 t016309
 ```
 
