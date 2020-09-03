@@ -94,6 +94,10 @@ Thus, to verify location claims, the Filecoin team will be implementing a custom
 
 Any miner found misrepresenting their location will result in a _total forfeiture of all rewards_, across all associated miners.
 
+#### If I rent a server in EU from US, can I compete in the EU region?
+
+Your region is determined by the physical location of the storage and sealing hardware. It might not be cost effective, but yes, it is permissible to run your mining operation on a rented service anywhere in the world. However, it is NOT acceptable to obscure your miner location via a proxy or similar service."
+
 #### Is a static IP required?
 
 A public IP is required so that your miner can make storage and retrieval deals and compete in Space Race. This can achieved through a static IP, or a relay or VPN. The majority of deal errors found during calibration period werre caused by IP address and other connectivity issues, so we highly recommend following the [Improving connectivity](https://docs.filecoin.io/mine/connectivity/) steps.
@@ -191,10 +195,6 @@ lotus-miner sectors status --on-chain-info $SECTOR_NUMBER | grep OnTime
 #### How do I force a WaitDeals sector to start sealing?
 
 Run `lotus-miner sectors seal <sector id>`.
-
-#### If I rent a server in EU from US, can I compete in the EU region?
-
-The definition of the `mining operation` can be found [here](https://spacerace.filecoin.io/rules), in short, it is the physical location of the storage and sealing hardware. It might not be cost effective, but you can rent cloud service anywhere in the world. However, it is NOT acceptable to do something like running a proxy or anything of that nature.
 
 #### Why is my deal success rate below 80%?
 
