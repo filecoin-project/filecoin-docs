@@ -45,7 +45,7 @@ Testnet is the network of record for the [Filecoin Space Race](https://filecoin.
 | ------------------- | ------------------------------------------------------------------------- |
 | Sector Sizes        | 32GiB, 64GiB                                                              |
 | Branch              | `master`                                                                  |
-| Tag                 | [`v0.5.7`](https://github.com/filecoin-project/lotus/releases/tag/v0.5.7) |
+| Tag                 | [`v0.5.8`](https://github.com/filecoin-project/lotus/releases/tag/v0.5.8) |
 | Next expected reset | n/a                                                                       |
 
 #### Testnet Resources
