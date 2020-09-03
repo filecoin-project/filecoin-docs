@@ -34,7 +34,7 @@ version: '3.7'
 
 services:
   lotus:
-    image: textile/lotus-devnet:v0.4.0
+    image: textile/lotus-devnet:v0.5.3
     ports:
       - 7777:7777
     environment:
