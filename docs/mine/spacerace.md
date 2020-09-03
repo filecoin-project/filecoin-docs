@@ -109,7 +109,7 @@ Each region (regional or global) unlocks additional FIL rewards by collectively 
 
 #### Can I run multiple miners?
 
-Yes, you can combine your competition results from multiple miners within the same region. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as **ONE** miner for purposes of calculating rankings and rewards.
+Yes, you can combine your competition results from multiple miners within the same region. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as **ONE** miner for purposes of calculating rankings, average deal success rates, and rewards.
 
 #### How are rewards distributed?
 
@@ -190,10 +190,6 @@ lotus-miner sectors status --on-chain-info $SECTOR_NUMBER | grep OnTime
 #### How do I force a WaitDeals sector to start sealing?
 
 Run `lotus-miner sectors seal <sector id>`.
-
-#### How is the deal rate of the combined miners being calculated?
-
-The deal rate is calculated based on the sum of all the deals across the miners.
 
 #### If I rent a server in EU from US, can I compete in the EU region?
 
