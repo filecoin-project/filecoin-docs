@@ -15,7 +15,8 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 ## How do I participate?
 
-**The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet). You can track your progress on the [Space Race Competition Dashboard](https://spacerace.filecoin.io/).
+**The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks, ending Monday, September 14th at 21:59 UTC. To participate in the competition, run 1 or more miners on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet). You can track your progress on the [Space Race Competition Dashboard](https://spacerace.filecoin.io/).
+
 
 You'll also need to complete these steps to be eligible for rewards:
 
