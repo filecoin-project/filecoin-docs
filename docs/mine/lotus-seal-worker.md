@@ -26,7 +26,7 @@ make lotus-seal-worker
 
 First, you will need to ensure your `lotus-miner`'s API is accessible over the network.
 
-To do this, open up `~/.lotusstorage/config.toml` (Or if you manually set `LOTUS_STORAGE_PATH`, look under that directory) and look for the API field.
+To do this, open up `~/.lotusminer/config.toml` (Or if you manually set `LOTUS_STORAGE_PATH`, look under that directory) and look for the API field.
 
 Default config:
 
@@ -34,13 +34,14 @@ Default config:
 [API]
 ListenAddress = "/ip4/127.0.0.1/tcp/2345/http"
 RemoteListenAddress = "127.0.0.1:2345"
+Timeout = "30s"
 ```
 
 To make your node accessible over the local area network, you will need to determine your machines IP on the LAN, and change the `127.0.0.1` in the file to that address.
 
 A more permissive and less secure option is to change it to `0.0.0.0`. This will allow anyone who can connect to your computer on that port to access the [API](https://docs.lotu.sh/en+api). They will still need an auth token.
 
-`RemoteListenAddress` must be set to an address which other nodes on your network will be able to reach.
+`RemoteListenAddress` must be set to an address which other nodes on your network will be able to reach. 
 
 Next, you will need to [create an authentication token](https://docs.lotu.sh/en+api-scripting-support#generate-a-jwt-46). All Lotus APIs require authentication tokens to ensure your processes are as secure against attackers attempting to make unauthenticated requests to them.
 

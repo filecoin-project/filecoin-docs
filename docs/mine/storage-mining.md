@@ -122,3 +122,107 @@ Example:
 ```
 $ lotus-miner actor set-addrs /ip4/123.123.73.123/tcp/12345 /ip4/223.223.83.223/tcp/23456
 ```
+
+
+## Configuration
+
+### API
+
+Default config:
+
+```toml
+[API]
+ListenAddress = "/ip4/127.0.0.1/tcp/2345/http" 
+RemoteListenAddress = "127.0.0.1:2345"
+Timeout = "30s"
+```
+
+To make your node accessible over the local area network, you will need to determine your machine's IP on the LAN, and change the `127.0.0.1` in the file to that address.
+
+A more permissive and less secure option is to change it to `0.0.0.0`. This will allow anyone who can connect to your computer on that port to access the [API](https://docs.lotu.sh/en+api). They will still need an auth token.
+
+`RemoteListenAddress` must be set to an address which other nodes on your network will be able to reach.
+
+### Libp2p
+
+Default config:
+
+```toml
+ListenAddresses = ["/ip4/0.0.0.0/tcp/0", "/ip6/::/tcp/0"]
+AnnounceAddresses = []
+NoAnnounceAddresses = []
+ConnMgrLow = 150
+ConnMgrHigh = 180
+ConnMgrGrace = "20s"
+```
+
+`AnnounceAddresses` is the address list that you miner can be dialable from other IP addresses in the network. Follow the [guide](https://docs.filecoin.io/mine/connectivity/#manually-setting-an-ip-address) to manually setting an IP address.
+On the other hand, `NoAnnounceAddress` is the address list that cannot be dialable from any other public IP address.
+
+Connection manager will start to prune the existing connection if the number of the connection established hits the value set for `ConnMgrHigh` until it hits the value set for `ConnMgrLow`. During the pruning process, the ones that has been connected less then the duration set in `ConnMgrGrace` will be automatically closed.
+
+### Dealmaking
+
+Default config:
+
+```toml
+ConsiderOnlineStorageDeals = true
+ConsiderOfflineStorageDeals = true
+ConsiderOnlineRetrievalDeals = true
+ConsiderOfflineRetrievalDeals = true
+PieceCidBlocklist = []
+ExpectedSealDuration = "12h0m0s"
+Filter = ""
+```
+
+If you have specific deals that you don't want to store/retrieve, you can block them by adding the cids in `PieceCidBlocklist`.
+
+`ExpectedSealDuration` is an estimate of how long sealing will take, and is used to reject deals whose start epoch might be earlier than the expected completion of sealing.
+
+To filter deals based on certain parameters, modify the `Filter` param. This param should be a shell command that will be run when processing a deal proposal. Deals are accepted if the Filter's exit code is 0. For any other exit code, deals will be rejected. Set `Filter` to `false` to reject all deals and `true` to accept all deals.
+
+### Sealing
+
+Default config:
+
+```toml
+MaxWaitDealsSectors = 2
+MaxSealingSectors = 0
+MaxSealingSectorsForDeals = 0
+WaitDealsDelay = "1h0m0s"
+```
+
+`MaxWaitDealsSectors` is the upper bound on how many sectors can be waiting for more deals to be packed in it before it begins sealing at any given time. `MaxSealingSectors`/`MaxSealingSectorForDeal` is the the upper bound on how many sectors can be sealing(for deals) at any given time. Note that if the value is set to 0, it means infinity.
+
+`WaitDealsDealy` is the period of time that a newly created sector will wait for more deals to be packed in to before it starts to seal.
+
+
+###  Storage
+
+Default config:
+
+```toml
+ParallelFetchLimit = 10
+AllowAddPiece = true
+AllowPreCommit1 = true
+AllowPreCommit2 = true
+AllowCommit = true
+AllowUnseal = true
+```
+
+`ParallelFetchLimit` is the upper bound on how many sectors can fetch sector data at the same time.
+
+Set the rest of the params to `true` if you want to enable the miner to do the operation, and set the value to `false` to disable.
+
+
+### Fees
+
+Default config:
+
+```toml
+MaxPreCommitGasFee = "0.05 FIL"
+MaxCommitGasFee = "0.05 FIL"
+MaxWindowPoStGasFee = "50 FIL"
+```
+
+These are the max gas fee the miner is willing to pay for a specific operation. Increase the gas fee can accelerate your messages.
