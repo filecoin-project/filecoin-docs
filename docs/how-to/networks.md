@@ -8,13 +8,12 @@ description: Learn about the various networks and their connection instructions.
 
 Filecoin has several networks for various testing, benchmarking, and optimization needs. This page describes the available networks, their key characteristics, and usage instructions.
 
-| Network                                   | Purpose                                                                                                                                                  | Sector Sizes         | Stability |
-| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | --------- |
-| [Testnet](#testnet)                       | Evaluate Filecoin at a meaningful scale. (_recommended for most miners_)                                                                                 | 32GiB, 64GiB         | High      |
-| [Calibration Devnet](#calibration-devnet) | For miners to prepare for the Space Race                                                                                                                 | 512MiB, 32GiB, 64GiB | Moderate  |
-| [Nerpa Devnet](#nerpa-devnet)             | For developers building apps, with small sector sizes and reduced proofs parameters. Sealing time is ~15-20 minutes. (_recommended for most developers_) | 512MiB               | Moderate  |
-| [Walrus Devnet](#walrus-devnet)           | For developers testing large storage deals only                                                                                                          | 32GiB, 64GiB         | High      |
-| [Butterfly Devnet](#butterfly-devnet)     | For core implementers testing new code. (_frequent resets and not recommended for most users_)                                                           | 512MiB, 32GiB, 64GiB | Low       |
+| Network                               | Purpose                                                                                                                                                  | Sector Sizes         | Stability |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | --------- |
+| [Testnet](#testnet)                   | Evaluate Filecoin at a meaningful scale. (_recommended for most miners_)                                                                                 | 32GiB, 64GiB         | High      |
+| [Nerpa Devnet](#nerpa-devnet)         | For developers building apps, with small sector sizes and reduced proofs parameters. Sealing time is ~15-20 minutes. (_recommended for most developers_) | 512MiB               | Moderate  |
+| [Walrus Devnet](#walrus-devnet)       | For developers testing large storage deals only                                                                                                          | 32GiB, 64GiB         | High      |
+| [Butterfly Devnet](#butterfly-devnet) | For core implementers testing new code. (_frequent resets and not recommended for most users_)                                                           | 512MiB, 32GiB, 64GiB | Low       |
 
 ### Connection Instructions
 
@@ -46,8 +45,8 @@ Testnet is the network of record for the [Filecoin Space Race](https://filecoin.
 | ------------------- | ------------------------------------------------------------------------- |
 | Sector Sizes        | 32GiB, 64GiB                                                              |
 | Branch              | `master`                                                                  |
-| Tag                 | [`v0.5.4`](https://github.com/filecoin-project/lotus/releases/tag/v0.5.4) |
-| Next expected reset | Aug 24, 2020 at 22:00:00 UTC                                              |
+| Tag                 | [`v0.5.7`](https://github.com/filecoin-project/lotus/releases/tag/v0.5.7) |
+| Next expected reset | n/a                                                                       |
 
 #### Testnet Resources
 
@@ -74,7 +73,7 @@ The faucet issues small amounts of mock FIL to jump-start testing. Previous fauc
 
 ## Devnets
 
-Several developer networks (also called devnets) are available with various configurations and performance characteristics. The recommended networks for most users are [calibration](#calibration-devnet) (for miners) and [nerpa](#nerpa-devnet) (for developers).
+Several developer networks (also called devnets) are available with various configurations and performance characteristics.
 
 ### Nerpa Devnet
 

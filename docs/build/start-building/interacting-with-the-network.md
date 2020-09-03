@@ -74,7 +74,7 @@ Here are some ways to spin up a mock version of the Filecoin network on your own
 
 ## Running Powergate
 
-You can also run an IPFS node + Filecoin lotus node + Powergate ([more info about Powergate](https://docs.filecoin.io/build/core-products/powergate/)) which enables using IPFS for hot storage and retrieval. For dapp developers who want some of the details of Filecoin's storage market abstracted as a convenience, Powergate also offers a storage deal agent, multi-tenant wallets mapped to the node's key (required to execute storage deals), automated deal renewal and other additional features.
+You can also run an IPFS node + Filecoin lotus node via Powergate ([more info about Powergate](https://docs.filecoin.io/build/tools/powergate.md)) which enables using IPFS for hot storage and retrieval. For dapp developers who want some of the details of Filecoin's storage market abstracted as a convenience, Powergate also offers a storage deal agent, multi-tenant wallets mapped to the node's key (required to execute storage deals), automated deal renewal and other additional features.
 
 Powergate is open source ([Github](https://github.com/textileio/powergate)) or you can request [managed Powergate instances from Textile](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/) running on a devnet or testnet.
 
@@ -82,11 +82,11 @@ Powergate is open source ([Github](https://github.com/textileio/powergate)) or y
 
 ## Devnets
 
-There are currently several developer networks available to try out: the Nerpa Devnet, which is recommended for developers building applications, and the Butterfly Devnet, which is best suited for miners interested in testing out new Lotus features and is reset more often. There is also a Calibration Devnet for miners to practice Space Race testing.
+You can see the latest information about active devnets at the [Filecoin Network Information page](https://network.filecoin.io). In addition to the testnet, there is currently one developer network available to try out: the Nerpa Devnet, which is recommended for small-scale testing for developers building applications.
 
 ### Nerpa Devnet
 
-_best for Developers building apps_
+_best for small-scale testing for app developers_
 
 A long-lived devnet for developers building storage apps. We call this network the Nerpa Devnet (the 'nerpa' is a species of seal, and one of the smallest true seals). It features 512MB sectors (in addition to 32GB and 64GB sectors) and reduced proofs parameters, so sealing is much faster than in the full Testnet version.
 
@@ -102,5 +102,5 @@ To tap the faucet or see dashboard for Nerpa:
 
 - Nerpa Devnet Faucet (to obtain mock FIL): https://faucet.nerpa.fildev.network/
 - Nerpa Stats Dashboard: https://stats.nerpa.fildev.network/
-- Other Nerpa Devnet Info: http://www.nerpa.fildev.network/
+  See more Nerpa Devnet information here: https://network.filecoin.io/#nerpa
 - For updates see: [#fil-net-nerpa](https://filecoinproject.slack.com/archives/C016VJSJNTH) (in Filecoin Slack)

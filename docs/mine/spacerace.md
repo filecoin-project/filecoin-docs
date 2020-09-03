@@ -15,15 +15,15 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 
 ## How do I participate?
 
-**The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks. To participate in the competition, run 1 or more miners on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet). You can track your progress on the [Space Race Competition Dashboard](https://spacerace.filecoin.io/).
+**The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks, ending Monday, September 14th at 21:59 UTC. To participate in the competition, run 1 or more miners on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet). You can track your progress on the [Space Race Competition Dashboard](https://spacerace.filecoin.io/).
 
 You'll also need to complete these steps to be eligible for rewards:
 
 - Maintain a deal success average of 80% or greater for both storage and retrieval deals.
 - Demonstrate at least one [sector upgrade](#how-do-i-demonstrate-a-sector-upgrade) per miner.
-- Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/), **before 22:00 UTC, Monday, August 31st**. It will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends.
+- Register your miner(s) by submitting your individual or company info via the [Competition Dashboard](https://spacerace.filecoin.io/). After submitting the registration form, it will generate a message for your miner to sign and submit. Miners that qualify for rewards will also need to pass an AML/KYC check after the competition ends. [**Note:** Standard registration (for miners already mining) closed at 22:00 UTC, Monday, August 31. Late registration (for new miners not seen on chain before and who don't have another miner in the race) is open until **22:00 UTC, Thursday, Sept 10th**.]
 
-For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the Filecoin Slack.
+For help or additional questions, join the [#space-race](https://filecoinproject.slack.com/archives/C0179RNEMU4) channel on the [Filecoin Slack](https://filecoin.io/slack).
 
 ## What are the possible rewards?
 
@@ -45,8 +45,8 @@ The top 50 miners in each region and globally are eligible to split a reward poo
 
 | Total FIL rewards (regional pool) | Regional network storage achieved |
 | --------------------------------- | --------------------------------- |
-| 25k FIL                           | 100 TiB                           |
-| 50k FIL                           | 500 TiB                           |
+| 25k FIL                           | 10 TiB                            |
+| 50k FIL                           | 100 TiB                           |
 | 100k FIL                          | 1 PiB                             |
 | 250k FIL                          | 5 PiB                             |
 | 500k FIL                          | 10 PiB                            |
@@ -79,6 +79,12 @@ The [Competition Dashboard](https://spacerace.filecoin.io/) is where you can tra
 
 Block Rewards standings are listed on the [Block Rewards Dashboard](https://reward.testnet.filecoin.io/), and network stats on the [Testnet Network Stats](https://stats.testnet.filecoin.io/) page.
 
+#### I can't find my miner on the Space Race dashboard. Anything else I need to do?
+
+The [Space Race Dashboard](https://spacerace.filecoin.io) shows miners with at least one sealed sector.
+
+To check if your miner has finished sealing its first sector, run `lotus state active-sectors <minerId>`. This will return a list of sectors that have finished sealing. As long as the output is not empty, it means you have a sector sealed. Your miner id should show up on the dashboard within 5 minutes of sealing its first sector.
+
 #### How is the "location" of a mining operation determined?
 
 The “location” of a storage mining operation is the location of the storage and sealing hardware for the operation. Since the hardware is what matters, it is not acceptable to relay from hardware in Continent A to a Lotus node in Continent B and try to claim Continent B rewards.
@@ -86,6 +92,10 @@ The “location” of a storage mining operation is the location of the storage 
 Thus, to verify location claims, the Filecoin team will be implementing a custom-built software suite running during the competition, and will be doing hands-on verification during and after the competition. **Please do not try to “spoof” your location – we have many layers of detection in place and a team in place to ensure fairness**; if you are thinking about using a proxy or a VPN to hide your location, think again.
 
 Any miner found misrepresenting their location will result in a _total forfeiture of all rewards_, across all associated miners.
+
+#### If I rent a server in EU from US, can I compete in the EU region?
+
+Your region is determined by the physical location of the storage and sealing hardware. It might not be cost effective, but yes, it is permissible to run your mining operation on a rented service anywhere in the world. However, it is NOT acceptable to obscure your miner location via a proxy or similar service."
 
 #### Is a static IP required?
 
@@ -103,7 +113,7 @@ Each region (regional or global) unlocks additional FIL rewards by collectively 
 
 #### Can I run multiple miners?
 
-Yes, you can combine your competition results from multiple miners. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as one miner for purposes of calculating rankings and rewards.
+Yes, you can combine your competition results from multiple miners within the same region. Once the competition begins, register all your miners with the same email address. Then, email mining@filecoin.io during the first week of the competition and ask for those miners to be combined on the leaderboard. **The deadline for combining actors is Wednesday, September 2nd at 22:00 UTC.** The miners will be displayed together under a common name (your company name, for example) and treated as **ONE** miner for purposes of calculating rankings, average deal success rates, and rewards.
 
 #### How are rewards distributed?
 
@@ -180,6 +190,22 @@ lotus-miner sectors status --on-chain-info $SECTOR_NUMBER | grep OnTime
 ```
 
 - If the deal is marked as successful on the dashboard but the above commands do not return the expected result, simply repeat steps #1-3 above.
+
+#### How do I force a WaitDeals sector to start sealing?
+
+Run `lotus-miner sectors seal <sector id>`.
+
+#### Why is my deal success rate below 80%?
+
+Deals can fail due to various reasons. To see the deal logs for your miner, go to [Space Race Dashboard](https://spacerace.filecoin.io/), search for your miner id, and click `Open Logs`. See the [Improving Connectivity > Common Errors](https://docs.filecoin.io/mine/connectivity/#common-errors) section for detailed explanations and recommended fixes for each error.
+
+#### My sector is stuck in X stage. How can I remove it?
+
+In lotus v0.5.6 and later, you can remove a sector by running `lotus-miner sectors remove --really-do-it <sector id>`. Warning: This will cause you to lose all power and collateral for the removed sector.
+
+#### Why is my miner receiving any deals?
+
+You need to seal at least one sector before starting to receive deals.
 
 ## Additional notes
 

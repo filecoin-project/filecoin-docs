@@ -77,32 +77,26 @@ module.exports = {
           ],
           '/build/': [
             {
-              title: 'Start Building',
+              title: 'Start building',
               collapsable: false,
               path: '/build/start-building/',
-              children: ['start-building/interacting-with-the-network']
-            },
-            {
-              title: 'Core Products',
-              collapsable: false,
-              path: '/build/core-products/filecoin-backed-pinning-services/',
               children: [
-                'core-products/filecoin-backed-pinning-services',
-                'core-products/powergate',
-                'core-products/protocol-implementations'
+                'start-building/deploy-your-application-to-the-filecoin-testnet',
+                'start-building/interacting-with-the-network',
+                'start-building/implementations'
               ]
             },
             {
-              title: 'Developer Tools',
+              title: 'Tools',
               collapsable: false,
-              path: '/build/developer-tools/wallets-signing-tools-api-clients/',
+              path: '/build/tools/',
               children: [
-                'developer-tools/wallets-signing-tools-api-clients',
-                [
-                  'https://github.com/filecoin-project/docs/wiki#community-resources',
-                  'Filecoin Community Resources'
-                ],
-                ['http://filecoin.onrender.com/', 'Component Design System']
+                '/build/tools/api-clients',
+                '/build/tools/filecoin-backed-pinning-services',
+                '/build/tools/powergate',
+                '/build/tools/signing-libraries',
+                '/build/tools/slate',
+                '/build/tools/wallets'
               ]
             },
             {
