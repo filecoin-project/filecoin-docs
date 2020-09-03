@@ -1,11 +1,11 @@
 ---
-title: Filecoin-backed IPFS Pinning Services
-description: A brief description of Filecoin-backed IPFS pinning services and how to use them.
+title: Filecoin-backed pinning services
+description: A brief description of Filecoin IPFS pinning services and how to use them.
 ---
 
-# Filecoin-backed IPFS Pinning Services (FPS)
+# Filecoin-backed pinning services
 
-Filecoin-backed IPFS Pinning Services (FPS) are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin’s decentralized storage network (DSN). FPS solutions offer this functionality behind a single easy-to-use API.
+Filecoin-backed pinning service (FPS) services are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin’s decentralized storage network (DSN). FPS solutions offer this functionality behind a single easy-to-use API.
 
 FPS services offer a number of key benefits.
 
@@ -44,7 +44,7 @@ See a walkthrough of an end-to-end example application (the Meme Marketplace) bu
 
 FPS solutions run IPFS and Filecoin software clients (e.g. [go-ipfs](https://github.com/ipfs/go-ipfs) and [lotus](https://github.com/filecoin-project/lotus)) under the hood, either communicating directly with these software clients through their native APIs or through tools like the [Powergate](https://github.com/textileio/powergate) APIs. IPFS/Filecoin nodes speak libp2p protocols and transfer IPLD data back and forth. FPS services manage the flow of data between the IPFS DHT and Filecoin miners, employing intelligent caching strategies to keep popular data readily available.
 
-![Diagram showing a simplified architecture for a Filecoin-backed IPFS Pinning Service (FPS). User makes API request to the FPS. The FPS stores and retrieves data from embedded go-ipfs and lotus nodes, which communicate with each other via libp2p and IPLD data formats.](../images/fps/fps-data-flows.png)
+![Diagram showing a simplified architecture for a Filecoin IPFS Pinning Service (FPS). User makes API request to the FPS. The FPS stores and retrieves data from embedded go-ipfs and lotus nodes, which communicate with each other via libp2p and IPLD data formats.](./images/filecoin-backed-pinning-services/fps-data-flows.png)
 
 While the specific architecture of each service will look different, most FPS solutions follow similar flows behind-the-scenes.
 
