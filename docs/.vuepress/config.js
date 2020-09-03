@@ -69,7 +69,7 @@ module.exports = {
         sidebar: {
           '/mine/': [
             '/mine/storage-mining',
-            '/mine/lotus-seal-worker',
+            '/mine/lotus-worker',
             '/mine/setting-a-static-port',
             '/mine/connectivity',
             '/mine/spacerace',
