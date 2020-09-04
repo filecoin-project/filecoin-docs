@@ -74,7 +74,7 @@ Here are some ways to spin up a mock version of the Filecoin network on your own
 
 ## Running Powergate
 
-You can also run an IPFS node + Filecoin lotus node via Powergate ([more info about Powergate](https://docs.filecoin.io/build/tools/powergate.md)) which enables using IPFS for hot storage and retrieval. For dapp developers who want some of the details of Filecoin's storage market abstracted as a convenience, Powergate also offers a storage deal agent, multi-tenant wallets mapped to the node's key (required to execute storage deals), automated deal renewal and other additional features.
+You can also run an IPFS node + Filecoin lotus node via Powergate ([more info about Powergate](../tools/powergate.md)) which enables using IPFS for hot storage and retrieval. For dapp developers who want some of the details of Filecoin's storage market abstracted as a convenience, Powergate also offers a storage deal agent, multi-tenant wallets mapped to the node's key (required to execute storage deals), automated deal renewal and other additional features.
 
 Powergate is open source ([Github](https://github.com/textileio/powergate)) or you can request [managed Powergate instances from Textile](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/) running on a devnet or testnet.
 
