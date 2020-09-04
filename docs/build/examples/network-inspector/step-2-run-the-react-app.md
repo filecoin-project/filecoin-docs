@@ -23,7 +23,7 @@ git checkout local
 2. Start the app.
 
 ```bash
-npm install
+npm ci
 npm start
 ```
 
