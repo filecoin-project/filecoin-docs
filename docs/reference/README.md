@@ -10,7 +10,3 @@ Ready to dig deeper into the Filecoin specification and implementations? We've g
 ## Filecoin specification
 
 View the [technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
-
-## Implementations
-
-Read more about Filecoin's protocol implementations [here](../build/start-building/implementations.md).

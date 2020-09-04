@@ -1,13 +1,12 @@
 ---
-title: Space Race
-description: An overview of the 'Space Race', the Filecoin testnet incentive program.
+title: 'The Filecoin Space Race'
+description: "The testnet incentives program (also known as the 'Space Race') is a collaborative competition intended to stress-test the network, encourage participation all over the world, and help miners get ready to run the world's biggest decentralized storage network."
+breadcrumb: 'Space Race'
 ---
 
-# The Filecoin Space Race
+# {{ $frontmatter.title }}
 
-The testnet incentives program (also known as the 'Space Race') is a collaborative competition intended to stress-test the network, encourage participation all over the world, and help miners get ready to run the world’s biggest decentralized storage network.
-
-## Structure and rules
+{{ $frontmatter.description }}
 
 The competition’s basic structure is simple: for three weeks, miners will compete to onboard as much storage capacity as possible to the network. The top 100 miners globally, as well as the top 50 miners from each continent, will earn Filecoin rewards based on how much storage they and the network achieve during the test period.
 
@@ -16,7 +15,6 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 ## How do I participate?
 
 **The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks, ending Monday, September 14th at 21:59 UTC. To participate in the competition, run 1 or more miners on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet). You can track your progress on the [Space Race Competition Dashboard](https://spacerace.filecoin.io/).
-
 
 You'll also need to complete these steps to be eligible for rewards:
 
@@ -203,7 +201,6 @@ Deals can fail due to various reasons. To see the deal logs for your miner, go t
 #### My sector is stuck in X stage. How can I remove it?
 
 In lotus v0.5.6 and later, you can remove a sector by running `lotus-miner sectors remove --really-do-it <sector id>`. Warning: This will cause you to lose all power and collateral for the removed sector.
-
 
 #### Why is my miner receiving any deals?
 

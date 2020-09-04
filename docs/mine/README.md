@@ -1,10 +1,10 @@
 ---
-title: Mining in Filecoin
-description: An overview of everything mining-related on the Filecoin network.
+title: Filecoin Mining
+description: Miners in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 breadcrumb: Mine
 ---
 
-# Mining in Filecoin
+# Mine
 
 In most blockchain protocols, "miners" are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency. The term "miner" emerged in the initial Proof-of-Work era, comparing the work done by hardware miners using computational power to secure blockchains with that of gold miners whom expended vast physical resources for a chance at a large payout.
 
@@ -26,7 +26,7 @@ In the current implementation, the focus is mostly on storage miners, which sell
 
 ### Coming from another ecosystem?
 
-First, welcome! For those coming from Proof-of-Stake or Proof-of-Work development communities, there are a number of concepts and considerations that are unique to Filecoin. While this page provides an overview of the concepts related to mining in particular, more introductory information on what Filecoin is and how it works can be found in [introduction section](../introduction/README.md) of this manual, or head over and try out some related [ProtoSchool tutorials](https://proto.school/#/tutorials)!
+First, welcome! For those coming from Proof-of-Stake or Proof-of-Work development communities, there are a number of concepts and considerations that are unique to Filecoin. While this page provides an overview of the concepts related to mining in particular, more introductory information on what Filecoin is and how it works can be found in [introduction section](../about-filecoin/) of this manual, or head over and try out some related [ProtoSchool tutorials](https://proto.school/#/tutorials)!
 
 ## Hardware recommendations
 

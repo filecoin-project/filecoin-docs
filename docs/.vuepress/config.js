@@ -67,49 +67,100 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: {
-          '/mine/': [
-            '/mine/storage-mining',
-            '/mine/lotus-seal-worker',
-            '/mine/setting-a-static-port',
-            '/mine/connectivity',
-            '/mine/spacerace',
-            '/mine/mining-troubleshooting'
-          ],
-          '/build/': [
+          //'/software/': 'auto',
+          '/networks/': 'auto',
+
+          '/store/': [
+            'how-filecoin-works',
+            ['filecoin-pinning-services', 'Filecoin-backed pinning services'],
             {
-              title: 'Start building',
-              collapsable: false,
-              path: '/build/start-building/interacting-with-the-network',
-              children: [
-                'start-building/deploy-your-application-to-the-filecoin-testnet',
-                'start-building/interacting-with-the-network',
-                'start-building/implementations'
-              ]
-            },
-            {
-              title: 'Tools',
-              collapsable: false,
-              path: '/build/tools/',
-              children: [
-                '/build/tools/api-clients',
-                '/build/tools/filecoin-backed-pinning-services',
-                '/build/tools/powergate',
-                '/build/tools/signing-libraries',
-                '/build/tools/slate',
-                '/build/tools/wallets'
-              ]
-            },
-            {
-              title: 'Example Apps',
+              title: 'LOTUS',
+              path: '/store/lotus/',
               sidebarDepth: 2,
-              path: '/build/examples/sample-architectures/',
               collapsable: false,
               children: [
-                'examples/sample-architectures',
-                ['examples/web-applications/overview', 'Web Applications'],
+                ['lotus/installation', 'Installation'],
+                ['lotus/switch-networks', 'Switch networks'],
+                ['lotus/upgrades', 'Upgrades'],
+                ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
+                ['lotus/store-data', 'Store data'],
+                ['lotus/retrieve-data', 'Retrieve data'],
+                ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
+                ['lotus/tips-running-in-china', 'Tips when running in China'],
+                ['lotus/configuration-and-advanced-usage', 'Advanced options'],
+                ['lotus/node-troubleshooting', 'Node troubleshooting']
+              ]
+            }
+          ],
+
+          '/mine/': [
+            'how-mining-works',
+            ['spacerace', 'Space Race'],
+            'hardware-requirements',
+            //'storage-sector-lifecycle',
+            //'mining-rewards',
+            //'miner-slashing',
+            {
+              title: 'LOTUS MINER',
+              path: '/mine/lotus/',
+              sidebarDepth: 2,
+              collapsable: false,
+              children: [
+                ['lotus/miner-setup', 'Miner setup'],
+                ['lotus/miner-configuration', 'Configuration reference'],
+                ['lotus/manage-storage-deals', 'Manage storage deals'],
+                ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
+                ['lotus/custom-storage-layout', 'Custom storage layout'],
+                ['lotus/sector-pledging', 'Sector pledging'],
+                ['lotus/miner-connectivity', 'Connectivity'],
+                [
+                  'lotus/separate-address-window-post',
+                  'Separate address for WindowPoSt messages'
+                ],
+                //'lotus/fees-control-and-limits',
+                [
+                  'lotus/replace-messages-in-mpool',
+                  'Replace messages in the message pool'
+                ],
+                ['lotus/seal-workers', 'Seal workers'],
+                ['lotus/gpu-benchmarking', 'GPU benchmarking'],
+                //'lotus/disaster-recovery',
+                ['lotus/tips-running-in-china', 'Tips for running in China'],
+                ['lotus/miner-troubleshooting', 'Troubleshooting']
+              ]
+            }
+          ],
+
+          '/build/': [
+            'the-filecoin-ecosystem',
+            //'textile-buckets',
+            'powergate',
+            {
+              title: 'LOTUS',
+              path: '/build/lotus/',
+              sidebarDepth: 2,
+              collapsable: false,
+              children: [
+                ['lotus/enable-remote-api-access', 'Enable remote API access'],
+                ['lotus/api-token-generation', 'API token generation'],
+                ['lotus/api-client-libraries', 'API client libraries'],
+                ['lotus/go-json-rpc', 'Use Go with JSON-RPC APIs'],
+                ['lotus/payment-channels', 'Payment channels'],
+                ['lotus/hosted-nodes', 'Hosted nodes'],
+                ['lotus/troubleshooting', 'Troubleshotting']
+              ]
+            },
+            'signing-libraries',
+            'local-devnet',
+            {
+              title: 'Example apps',
+              sidebarDepth: 2,
+              collapsable: false,
+              children: [
                 {
                   title: 'Simple Pinning Service',
                   path: '/build/examples/simple-pinning-service/overview/',
+                  collapsable: true,
                   children: [
                     '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
                     '/build/examples/simple-pinning-service/step-1-powergate-setup',
@@ -123,6 +174,7 @@ module.exports = {
                 {
                   title: 'Network Inspector',
                   path: '/build/examples/network-inspector/overview/',
+                  collapsable: true,
                   children: [
                     '/build/examples/network-inspector/lotus-and-go-ipfs-interactions',
                     '/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
@@ -136,6 +188,7 @@ module.exports = {
                 {
                   title: 'Meme Marketplace',
                   path: '/build/examples/meme-marketplace/overview/',
+                  collapsable: true,
                   children: [
                     '/build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
                     '/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
@@ -151,53 +204,19 @@ module.exports = {
               ]
             }
           ],
+
           '/reference/': [
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
-            ['https://lotu.sh/', 'Lotus tutorial']
+            ['lotus-api', 'Lotus JSON-RPC API reference']
           ],
+
           '/': [
-            {
-              title: 'Introduction',
-              path: '/introduction/',
-              collapsable: false,
-              children: [
-                '/introduction/what-is-filecoin',
-                '/introduction/why-filecoin',
-                '/introduction/ipfs-and-filecoin',
-                '/introduction/filecoin-compared-to',
-                '/introduction/faq'
-              ]
-            },
-            {
-              title: 'How-tos',
-              path: '/how-to/',
-              collapsable: false,
-              children: [
-                {
-                  title: 'Install Filecoin',
-                  sidebarDepth: 1,
-                  collapsable: false,
-                  children: [
-                    '/how-to/install-filecoin',
-                    '/how-to/networks',
-                    '/how-to/join-a-network'
-                  ]
-                },
-                {
-                  title: 'Store Data',
-                  collapsable: false,
-                  path: '/how-to/store/prepare-data/',
-                  children: [
-                    '/how-to/store/prepare-data',
-                    '/how-to/store/tokens',
-                    '/how-to/store/making-storage-deals',
-                    '/how-to/store/retrieving-data',
-                    '/how-to/store/large-files'
-                  ]
-                }
-              ]
-            },
+            '/about-filecoin/what-is-filecoin',
+            '/about-filecoin/why-filecoin',
+            '/about-filecoin/ipfs-and-filecoin',
+            '/about-filecoin/filecoin-compared-to',
+            '/about-filecoin/faq',
             {
               title: 'Project',
               path: '/project/',
