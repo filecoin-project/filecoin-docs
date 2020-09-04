@@ -51,7 +51,7 @@ In order to store your data on the Filecoin network, you need miners who are ava
 
 ### Option 1: Protocol Labs Filecoin miners (recommended)
 
-The Protocol Labs Filecoin team is maintaining a few high-availability miners on the Filecoin testnet. These miners will only accept deals from whitelisted addresses. In order to make successful storage deals with these miners, please fill out this [Google Form](https://forms.gle/f5Vd5kTNYTKrmj1D8) and include the node address from which you will be making your storage deals. If your Google Form submission is valid, within 24 hours of your form submission, you will receive a message on Slack/email from a Protocol Labs teammate notifying you that your node has been whitelisted. You will then be able to freely make deals with these Filecoin miners.
+The Protocol Labs Filecoin team is maintaining a few high-availability miners on the Filecoin testnet. These miners will only accept deals from whitelisted addresses. In order to make successful storage deals with these miners, please fill out this [Google Form](https://forms.gle/f5Vd5kTNYTKrmj1D8) and include **either** the wallet (`lotus wallet list`) **or** the lotus node peerid (`lotus net id`) from which you will be making your storage deals. If your Google Form submission is valid, within 24 hours of your form submission, you will receive a message on Slack/email from a Protocol Labs teammate notifying you that your node has been whitelisted. You will then be able to freely make deals with these Filecoin miners.
 
 The miners are available at the following addresses (more may be added over time). You will only be able to make deals with these miners if you have been whitelisted according to the process above.
 
