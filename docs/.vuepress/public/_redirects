@@ -5,11 +5,11 @@
 /questions.html https://go.filecoin.io/questions.html
 /go-filecoin-tutorial/*  https://go.filecoin.io/go-filecoin-tutorial/:splat
 
+# /build/tools
+/build/core-products/filecoin-backed-pinning-services/ /build/tools/filecoin-backed-pinning-services/
+/build/core-products/powergate/ /build/tools/powergate/
+/build/core-products/protocol-implementations/ /build/start-building/implementations/
+/build/developer-tools/wallets-signing-tools-api-clients/ /build/tools/
+
 # use a custom 404 for any pages that are not rendered
 /* /404/index.html 404
-
-# /build/tools
-/build/core-products/filecoin-backed-pinning-services/ /build/tools/filecoin-backed-pinning-service/
-/build/core-products/powergate/ /build/tools/powergate/
-/build/core-products/protocol-implementations/ /build/implementations/
-/build/developer-tools/wallets-signing-tools-api-clients/ /build/tools/
