@@ -5,12 +5,12 @@ description: We recommend all developers deploy their applications to the Fileco
 
 # Deploy your application to the Filecoin testnet
 
-If you have built your application and tested it on smaller-scale Filecoin networks (e.g. a [local network](https://docs.filecoin.io/build/start-building/interacting-with-the-network/#running-a-local-network) or the [Filecoin Nerpa network](https://docs.filecoin.io/build/start-building/interacting-with-the-network/#devnets)), you are now ready to deploy your application to the Filecoin testnet. We currently recommend all developers deploy their applications to the Filecoin testnet for many reasons, one of which is that this network is actively being monitored by the Protocol Labs team.
+For small-scale testing of your application, you can use smaller-scale Filecoin networks, such as a [local network](https://docs.filecoin.io/build/start-building/interacting-with-the-network/#running-a-local-network) or the [Filecoin Nerpa network](https://docs.filecoin.io/build/start-building/interacting-with-the-network/#devnets). This guide shows you how to deploy your application to the Filecoin testnet. We currently recommend _all developers_ deploy their applications to the Filecoin testnet in order to receive direct support from the Protocol Labs team and to be eligible for upcoming data storage rewards.
 
 The Filecoin testnet is a network with parameters and activity levels as close as possible to the expected early state of the Filecoin main network (mainnet). The testnet is currently being used for the Filecoin testnet incentives, or [Space Race](https://docs.filecoin.io/mine/spacerace/), competition. As a developer on the Filecoin testnet, there are some important things you should know about development on the testnet.
 
 ::: tip
-If you are using a hosted service like [hosted Powergate](https://blog.textile.io/prepare-to-launch-expanding-free-access-to-filecoin-through-hosted-powergates/) or [Textile Buckets](https://docs.textile.io/buckets/), you don’t need to worry about any of this. Textile’s services are soon to be deployed against the Filecoin testnet, so if you are using hosted Textile products, your application will also be deployed on the Filecoin testnet.
+**We recommend that most developers use a hosted service** like [hosted Powergates or Textile Buckets](https://blog.textile.io/prepare-to-launch-expanding-free-access-to-filecoin-through-hosted-powergates/) to store application data to the Filecoin testnet. These services are by far the fastest and friendliest way to get your application working with Filecoin. If you are using either a hosted Powergate or Textile Buckets, you don’t need to worry about any of the information in this guide. Textile’s services are soon to be deployed against the Filecoin testnet. If you are using hosted Textile products, your application will also be deployed on the Filecoin testnet.
 
 If you would like accelerated access to a hosted Powergate instance, please fill out [this form](https://forms.gle/f5Vd5kTNYTKrmj1D8). We will work with the Textile team to get you access to a hosted Powergate asap.
 :::
@@ -21,7 +21,9 @@ If you would like accelerated access to a hosted Powergate instance, please fill
 
 The high-level steps required to join the testnet are:
 
-1. [**Install lotus or Powergate.**](https://docs.filecoin.io/how-to/install-filecoin/) While the current installation instructions say to use a machine with 8GB memory and 4 cores, we find that installation on a machine with 32GB memory and 8 cores leads to much faster and more successful chain sync (step 3). Therefore, we recommend the following starter configuration:
+### (1) Install lotus or Powergate
+
+[**Install lotus or Powergate using these instructions.**](https://docs.filecoin.io/how-to/install-filecoin/) While the current installation instructions say to use a machine with 8GB memory and 4 cores, we find that installation on a machine with 32GB memory and 8 cores leads to much faster and more successful chain sync (step 4). Therefore, we recommend the following starter configuration:
 
 - Type: Standard
 - CPU Type: Shared CPU
@@ -31,17 +33,45 @@ The high-level steps required to join the testnet are:
 
 Our teammates have also had success running `m5ad.2xlarge` instances on AWS. In order to significantly boost the initial chain sync speed, make sure to keep `~/.lotus` on a fast drive (ideally a SSD -- nvme is best!) and consider temporarily applying the patch listed in [this issue comment](https://github.com/filecoin-project/lotus/issues/3263#issue-684587473).
 
-2. [**Run the lotus daemon.**](https://docs.filecoin.io/how-to/join-a-network/#get-started)
+### (2) Download the latest Filecoin chain state export
 
-3. [**Wait for the Filecoin chain to sync.**](https://docs.filecoin.io/how-to/join-a-network/#chain-sync) This process can be extremely unwieldy and lengthy. At present, chainsync takes about 1/50th of the lifetime of the network to complete. That is, a network 100 days old will take about 2 days to sync from scratch. Efforts are underway to significantly reduce this! We highly recommend using a beefy machine (such as the hardware specs listed on this page) in order to get to the testing stage in a reasonable timeframe.
+Syncing the Filecoin chain from scratch can be a time-consuming process. Currently, chainsync takes about 1/4th of the lifetime of the network to complete. That is, a network 100 days old will take about 25 days to sync from scratch. Instead of syncing from scratch, we recommend that developers looking to deploy their applications quickly download a chain state export generated by the Protocol Labs team and initiate their lotus nodes with this state export. We are working on a more robust solution for mainnet. For now, this is the easiest way to avoid a multi-day setup process to get onto the Filecoin testnet.
 
-4. [**Create your first wallet address.**](https://docs.filecoin.io/how-to/join-a-network/#create-your-first-address) You need to create a wallet address in order to create storage deals on the Filecoin network. Remember that wallet address for future steps.
+Download the latest state snapshot here: [https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car)
 
-5. [**Request funds from the testnet faucet.**](https://spacerace.faucet.glif.io/) You need some FIL tokens in your testnet wallet in order to make storage deals on the network. You can request some test tokens in your testnet wallet by going to the testnet faucet, connecting your GitHub account, and then making the funds request.
+This snapshot will be updated at least once every 6 hours until a more-long-term method of distribution is put in place.
 
-6. [**Check your testnet wallet balance to make sure it contains >0 FIL.**](https://docs.filecoin.io/how-to/join-a-network/#check-wallet-address-balance) You will not see any funds in your testnet wallet until your node is fully synced (which may take several days, as noted above). Once you have a >0 FIL balance in your testnet wallet, you can proceed to the next step.
+### (3) Run the lotus daemon with the state snapshot
 
-If you are running into any issues joining the testnet, please join the [Filecoin Slack](http://filecoin.io/slack) and leave a message in the [#fil-storage-dev channel](https://app.slack.com/client/TEHTVS1L6/CRK2LKYHW). Our team will respond asap in the channel.
+Make sure you have a clean lotus install, and that **you have backed up all your wallet keys!!!**
+
+```
+rm -rf ~/.lotus
+```
+
+Then run the lotus daemon passing in the file name for the state snapshot you just downloaded.
+
+```
+lotus daemon --import-snapshot Spacerace_stateroots_snapshot_latest.car
+```
+
+### (4) Wait for the Filecoin chain to sync
+
+Because you are running the lotus daemon from a known chain-state snapshot, the chain sync process will be significantly faster than if you were syncing the chain from scratch. However, you will still need to sync the chain from the point at which the snapshot was generated to the current chain head. [You can run `lotus sync wait` to see the current sync status](https://docs.filecoin.io/how-to/join-a-network/#chain-sync).
+
+### (5) Create your first wallet address
+
+You need to create a wallet address in order to create storage deals on the Filecoin network. You can [follow the steps here to generate your first wallet address](https://docs.filecoin.io/how-to/join-a-network/#create-your-first-address). Remember that wallet address for future steps.
+
+### (6) Request funds from the testnet faucet
+
+You need some FIL tokens in your testnet wallet in order to make storage deals on the network. You can request some test tokens in your testnet wallet by going to the testnet faucet, connecting your GitHub account, and then making the funds request.
+
+Request funds here: [Faucet](https://spacerace.faucet.glif.io/)
+
+### (7) Check your wallet balance
+
+[Check your testnet wallet balance to make sure it contains more than 0 FIL.](https://docs.filecoin.io/how-to/join-a-network/#check-wallet-address-balance) You will not see any funds in your testnet wallet until your node is fully synced, which may take several days depending on how you started chain sync. If you are syncing from a snapshot, it should take less than 1 day for the balance to show up. Once you have more than 0 FIL in your testnet wallet, you can proceed to the next step.
 
 ## Make deals with Filecoin miners
 
