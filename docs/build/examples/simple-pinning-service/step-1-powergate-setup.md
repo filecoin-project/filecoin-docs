@@ -18,12 +18,12 @@ To follow this tutorial you will need:
 
 To set up Powergate:
 
-1. Download the `powergate-docker-<version>.zip` from the appropriate release, in this case, [version v0.4.1](https://github.com/textileio/powergate/releases/download/v0.4.1/powergate-docker-v0.4.1.zip).
+1. Download the `powergate-docker-<version>.zip` from the [releases page](https://github.com/textileio/powergate/releases/).
 2. Unzip the release, go into the created folder:
 
 ```bash
-unzip powergate-docker-v0.4.1.zip
-cd powergate-docker-v0.4.1
+unzip powergate-docker-v*.zip
+cd powergate-docker-v*
 ```
 
 3. Expose port `8080` on the go-ipfs daemon so that we can access the HTTP gateway. (We use the HTTP gateway to fetch the files in our browser)
