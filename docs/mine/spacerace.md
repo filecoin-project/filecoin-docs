@@ -175,7 +175,7 @@ Here are some of the common reasons that your power can suddenly drop:
 
 3. For smaller miners, when all sectors are put into a single window, missing just one deadline/window wipes out all the power for 24 hours. Power will automatically recover if a valid WindowPoSt is submitted 24 hours later, when the missed deadline reopens. Just make sure that your miner is running and has enough CPU for PoSt.
 
-4. Chain/miner nodes crashed. Check `lotus sync wait` in this case, if your `Taget Height` is not equal to `Height` or status is not `Completed`, that means you are not fully synced.
+4. Chain/miner nodes crashed. Run `lotus sync wait` and check the output. If your `Target Height` is not equal to `Height` or status is not `Completed`, that means you are not fully synced.
    
 #### How do I demonstrate a sector upgrade?
 
