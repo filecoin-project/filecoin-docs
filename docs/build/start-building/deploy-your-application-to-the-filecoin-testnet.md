@@ -71,7 +71,7 @@ Request funds here: [Faucet](https://spacerace.faucet.glif.io/)
 
 ### (7) Check your wallet balance
 
-[Check your testnet wallet balance to make sure it contains more than 0 FIL.](https://docs.filecoin.io/how-to/join-a-network/#check-wallet-address-balance) You will not see any funds in your testnet wallet until your node is fully synced, which may take several days depending on how you started chain sync. For example, if you are syncing from a snapshot, it should take less than 1 day for the balance to show up. Once you have more than 0 FIL in your testnet wallet, you can proceed to the next step.
+[Check your testnet wallet balance to make sure it contains more than 0 FIL.](https://docs.filecoin.io/how-to/join-a-network/#check-wallet-address-balance) You will not see any funds in your testnet wallet until your node is fully synced, which may take several days depending on how you started chain sync. If you are syncing from a snapshot, it should take less than 1 day for the balance to show up. Once you have more than 0 FIL in your testnet wallet, you can proceed to the next step.
 
 ## Make deals with Filecoin miners
 
