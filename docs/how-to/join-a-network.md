@@ -155,7 +155,8 @@ Here’s how to upgrade in place, with minimum impact:
   * Navigate  to your lotus directory
   * run:
     ```bash
-    git pull && git checkout <tag>
+    git pull && git checkout <tag> 
+    git submodule update
     make all && make install
     ``` 
     This should preserve your config, wallets, and anything else on disk.
