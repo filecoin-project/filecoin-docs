@@ -23,7 +23,7 @@ The high-level steps required to join the testnet are:
 
 ### (1) Install lotus or Powergate
 
-[**Install lotus or Powergate using these instructions.**](https://docs.filecoin.io/how-to/install-filecoin/) While the current installation instructions say to use a machine with 8GB memory and 4 cores, we find that installation on a machine with 32GB memory and 8 cores leads to much faster and more successful chain sync (step 3). Therefore, we recommend the following starter configuration:
+[**Install lotus or Powergate using these instructions.**](https://docs.filecoin.io/how-to/install-filecoin/) While the current installation instructions say to use a machine with 8GB memory and 4 cores, we find that installation on a machine with 32GB memory and 8 cores leads to much faster and more successful chain sync (step 4). Therefore, we recommend the following starter configuration:
 
 - Type: Standard
 - CPU Type: Shared CPU
