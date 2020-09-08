@@ -157,7 +157,7 @@ Here’s how to upgrade in place, with minimum impact:
     ```bash
     git pull && git checkout <tag> 
     git submodule update
-    make all && make install
+    make clean && make all && make install
     ``` 
     This should preserve your config, wallets, and anything else on disk.
 * `Start daemon`: 
