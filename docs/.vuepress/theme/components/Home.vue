@@ -40,106 +40,62 @@ export default {
     return {
       manualSidebar: [
         {
-          title: 'Introduction',
-          path: '/introduction',
+          title: 'About',
+          path: '/about-filecoin',
           children: [
             {
               title: 'What is Filecoin?',
-              path: '/introduction/what-is-filecoin'
+              path: '/about-filecoin/what-is-filecoin'
             },
             {
               title: 'Why Filecoin?',
-              path: '/introduction/why-filecoin'
+              path: '/about-filecoin/why-filecoin'
             },
             {
               title: 'IPFS and Filecoin',
-              path: '/introduction/ipfs-and-filecoin'
+              path: '/about-filecoin/ipfs-and-filecoin'
             },
             {
               title: 'Filecoin compared to...',
-              path: '/introduction/filecoin-compared-to'
+              path: '/about-filecoin/filecoin-compared-to'
             },
             {
               title: 'Filecoin FAQ',
-              path: '/introduction/faq'
+              path: '/about-filecion/faq'
+            },
+            {
+              title: 'Glossary',
+              path: '/reference/glossary'
             }
           ]
         },
         {
-          title: 'How-Tos',
-          path: '/how-to',
+          title: 'Store',
+          path: '/store',
           children: [
             {
-              title: 'Installing Filecoin',
-              path: '/how-to/install-filecoin'
-            },
-            {
-              title: 'Network information',
-              path: '/how-to/networks'
-            },
-            {
-              title: 'Join a network',
-              path: '/how-to/join-a-network'
-            },
-            {
-              title: 'Preparing data',
-              path: '/how-to/store/prepare-data'
-            },
-            {
-              title: 'Token payments',
-              path: '/how-to/store/tokens'
-            },
-            {
-              title: 'Making storage deals',
-              path: '/how-to/store/making-storage-deals'
-            },
-            {
-              title: 'Retrieving data',
-              path: '/how-to/store/retrieving-data'
-            },
-            {
-              title: 'Very large files',
-              path: '/how-to/store/large-files'
-            }
-          ]
-        },
-        {
-          title: 'Build',
-          path: '/build',
-          children: [
-            {
-              title: 'Deploy your application to the Filecoin testnet',
-              path:
-                '/build/start-building/deploy-your-application-to-the-filecoin-testnet/'
-            },
-            {
-              title: 'Interacting with the network',
-              path: '/build/start-building/interacting-with-the-network/'
+              title: 'How Filecoin Works',
+              path: '/store/how-filecoin-works'
             },
             {
               title: 'Filecoin-backed pinning services',
-              path: '/build/tools/filecoin-backed-pinning-services/'
+              path: '/store/filecoin-pinning-services'
             },
             {
-              title: 'Powergate',
-              path: '/build/tools/powergate/'
+              title: 'Store data with Slate',
+              path: '/store/slate'
             },
             {
-              title: 'Protocol Implementations',
-              path: '/build/start-building/implementations/'
+              title: 'Lotus user guides',
+              path: '/store/lotus'
             },
             {
-              title: 'Wallets, signing tools and API clients',
-              path: '/build/developer-tools/wallets-signing-tools-api-clients/'
+              title: 'Lotus installation',
+              path: '/store/lotus/installation'
             },
             {
-              title: 'Filecoin community resources',
-              path:
-                'https://github.com/filecoin-project/docs/wiki#community-resources'
-            },
-            {
-              title: 'Component design system',
-              path: 'http://filecoin.onrender.com/'
+              title: 'Store data with Lotus',
+              path: '/store/lotus/store-data'
             }
           ]
         },
@@ -148,34 +104,51 @@ export default {
           path: '/mine',
           children: [
             {
-              title: 'Mining overview',
-              path: '/mine/'
-            },
-            {
-              title: 'Improving connectivity',
-              path: '/mine/connectivity'
+              title: 'How mining works',
+              path: '/mine/how-mining-works'
             },
             {
               title: 'Space Race',
               path: '/mine/spacerace'
+            },
+            {
+              title: 'Lotus guides for miners',
+              path: '/mine/lotus'
+            },
+            {
+              title: 'Lotus miner setup',
+              path: '/mine/lotus/miner-setup'
             }
           ]
         },
         {
-          title: 'Reference',
-          path: '/reference',
+          title: 'Build',
+          path: '/build',
           children: [
             {
-              title: 'Glossary',
-              path: '/reference/glossary'
+              title: 'The Filecoin ecosystem',
+              path: '/build/the-filecoin-ecosystem/'
             },
             {
-              title: 'Specification',
+              title: 'Lotus guides for builders',
+              path: '/build/lotus'
+            },
+            {
+              title: 'Lotus API',
+              path: '/reference/lotus-api'
+            },
+            {
+              title: 'Example applications',
+              path: '/build/examples'
+            },
+            {
+              title: 'Filecoin community resources',
+              path:
+                'https://github.com/filecoin-project/docs/wiki#community-resources'
+            },
+            {
+              title: 'Protocol specification',
               path: 'https://github.com/filecoin-project/specs'
-            },
-            {
-              title: 'Lotus tutorial',
-              path: 'https://lotu.sh'
             }
           ]
         },
@@ -190,10 +163,6 @@ export default {
             {
               title: 'Chat & discussion forums',
               path: '/community/chat-and-discussion-forums'
-            },
-            {
-              title: 'ProtoSchool workshops',
-              path: 'https://proto.school/#/events'
             },
             {
               title: 'Social media',
@@ -266,59 +235,59 @@ export default {
 }
 .home {
     .intro {
-        max-width: 500px;
-        margin-top: 3rem;
+	max-width: 500px;
+	margin-top: 3rem;
     }
     .grid {
-        margin-top: 4rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-flow: row dense;
-        grid-auto-rows: auto;
-        grid-gap: 32px;
+	margin-top: 4rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-flow: row dense;
+	grid-auto-rows: auto;
+	grid-gap: 32px;
     }
     .category {
-        background: linear-gradient(-50deg, #effcf5, #e2f6f7);
-        padding: 1em;
+	background: linear-gradient(-50deg, #effcf5, #e2f6f7);
+	padding: 1em;
     }
     .category.meta {
-        background: linear-gradient(-50deg, #dbe7f4, #e9dbf4);
+	background: linear-gradient(-50deg, #dbe7f4, #e9dbf4);
     }
     .category h2 {
-        font-weight: normal;
-        font-size: 1.4rem;
-        border-bottom: none;
-        margin: 0 0 0.5rem;
+	font-weight: normal;
+	font-size: 1.4rem;
+	border-bottom: none;
+	margin: 0 0 0.5rem;
     }
     .category p {
-        margin: 0;
+	margin: 0;
     }
     .category a {
-        font-weight: normal;
+	font-weight: normal;
     }
     .category.meta a {
-        color: #5c456e;
+	color: #5c456e;
     }
 
     .category a.title {
-        color: black;
+	color: black;
     }
 
     @media (max-width: $MQNarrow) {
-        .grid {
-            grid-template-columns: 1fr;
-            /* grid-auto-rows: minmax(16rem, max-content); */
-            grid-auto-rows: auto;
+	.grid {
+	    grid-template-columns: 1fr;
+	    /* grid-auto-rows: minmax(16rem, max-content); */
+	    grid-auto-rows: auto;
 
-        }
-        .category {
-            grid-column: auto !important;
-            grid-row: auto !important;
-        }
+	}
+	.category {
+	    grid-column: auto !important;
+	    grid-row: auto !important;
+	}
 
-        .intro {
-          margin-top: 0;
-        }
+	.intro {
+	  margin-top: 0;
+	}
     }
 }
 </style>

@@ -72,7 +72,12 @@ module.exports = {
 
           '/store/': [
             'how-filecoin-works',
-            ['filecoin-pinning-services', 'Filecoin-backed pinning services'],
+            [
+              'https://proto.school/verifying-storage-on-filecoin/',
+              'Protoschool tutorial'
+            ][
+              ('filecoin-pinning-services', 'Filecoin-backed pinning services')
+            ],
             {
               title: 'LOTUS',
               path: '/store/lotus/',
