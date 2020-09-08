@@ -61,14 +61,12 @@ Testnet is the network of record for the [Filecoin Space Race](https://filecoin.
 
 The faucet issues small amounts of mock FIL to jump-start testing. Previous faucet designs let a few bad actors spam and abuse the network, or pay massive, unrealistic transaction and gas fees instead of setting fees properly. Here is how the Testnet faucet works:
 
-- To fairly distribute FIL to all users, you’ll need to log in with a Github account at least 48 hours old.
-- You can get a one time initial balance transfer of 100 FIL to any address to initialize your node.
+- To fairly distribute FIL to all users, you’ll need to log in with a Github account at least 1 year old.
+- You can get a one time initial balance transfer of 1 FIL to any address to initialize your node.
 - Additional notes for miners:
-  - Miners can additionally use the faucet to send 1,000 FIL to a miner address once, and an additional 200 FIL every 24 hours. This should be enough to seal more 500 sectors in parallel.
   - To make collateral management easier for the Space Race, the Filecoin team is running a bot that reimburses 103% of `PreCommitSector` and `ProveCommitSector` messages (i.e., miners’ collateral payments). This means your miner can continue operating indefinitely once it’s received a small amount of initial funds.
-  - Very large miners may need additional collateral. To do so, you should have multiple team members use the faucet.
   - To preserve fairness, the Filecoin team _will not_ be able to provide additional funds to any miners. Use your testnet FIL carefully! Accounts that abuse the faucet (for example, by sending far more FIL than is needed to a miner) may be suspended.
-
+  - Previously, miners could request additional FIL transfers to miner addresses. This caused significant inflation and unrealistic gas fees, and is disabled as of 8 Sept 2020.
 ---
 
 ## Devnets
