@@ -43,12 +43,6 @@ This snapshot will be updated at least once every 6 hours until a more-long-term
 
 ### (3) Run the lotus daemon with the state snapshot
 
-Make sure you have a clean lotus install, and that **you have backed up all your wallet keys!!!**
-
-```
-rm -rf ~/.lotus
-```
-
 Then run the lotus daemon passing in the file name for the state snapshot you just downloaded.
 
 ```
