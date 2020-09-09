@@ -5,7 +5,7 @@ description: Start storing data on the Filecoin network.
 
 # Get started on Filecoin
 
-Welcome to the starting point to start interacting with the Filecoin Network. Content in this section will help you to:
+Welcome to the starting point to begin interacting with the Filecoin Network. Content in this section will help you to:
 
 - Understand [how Filecoin works](how-filecoin-works/), what different actors participate in the network and what roles they play.
 - Get familiar with the Filecoin terminology: deals, messages, blocks, miners...

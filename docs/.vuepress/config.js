@@ -103,8 +103,8 @@ module.exports = {
             ['spacerace', 'Space Race'],
             'hardware-requirements',
             //'storage-sector-lifecycle',
-            //'mining-rewards',
-            //'miner-slashing',
+            ['mining-rewards', 'Mining rewards'],
+            ['slashing', 'Slashing'],
             {
               title: 'LOTUS MINER',
               path: '/mine/lotus/',
