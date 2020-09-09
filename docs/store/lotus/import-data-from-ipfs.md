@@ -8,18 +8,18 @@ breadcrumb: 'Import data from IPFS'
 
 {{ $frontmatter.description }}
 
-Lotus supports making deals with data stored in IPFS, without having to re-import it into lotus.
+Lotus supports making deals with data stored in [IPFS](https://ipfs.io), without having to re-import it into lotus.
 
-To enable this integration, you need to have an IPFS daemon running in the background.
+To enable this integration, you need to have an [IPFS daemon running in the background](https://docs.ipfs.io/how-to/command-line-quick-start/#take-your-node-online).
 
-Then, open up `~/.lotus/config.toml` (or if you manually set `LOTUS_PATH`, look under that directory) and look for the Client field, and set UseIpfs to true.
+Then, open up `~/.lotus/config.toml` (or if you manually set `$LOTUS_PATH`, look under that directory) and look for the Client field, and set UseIpfs to true.
 
 ```bash
 [Client]
 UseIpfs = true
 ```
 
-After restarting the lotus daemon, you should be able to make deals with data in your IPFS node:
+After restarting the lotus daemon, you should be able to [make deals](store-data.md) with data in your IPFS node:
 
 ```bash
 $ ipfs add -r SomeData
