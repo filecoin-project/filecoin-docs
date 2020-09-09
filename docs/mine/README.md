@@ -12,21 +12,7 @@ Mining in Filecoin works quite differently however -- instead of contributing co
 
 # Table of Contents
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-- [Types of miners](#types-of-miners)
-  - [Coming from another ecosystem?](#coming-from-another-ecosystem)
-- [Getting started as a miner](#getting-started-as-a-miner)
-  - [Hardware recommendations](#hardware-recommendations)
-  - [All about deals](#all-about-deals)
-- [Getting rewards](#getting-rewards)
-  - [WinningPoSt](#winningpost)
-  - [Uptime, slashing and penalties](#uptime-slashing-and-penalties)
-  - [Window PoSt checks](#window-post-checks)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[[TOC]]
 
 ## Types of miners
 
