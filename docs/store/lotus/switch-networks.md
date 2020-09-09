@@ -28,7 +28,7 @@ If you plan to return to your current network, you may want to back up your data
 Alternatively, you can also [export your wallets](send-and-receive-fil.md) and [export the chain](chain-snapshots.md) for later re-import.
 :::
 
-## Rebuild and install Lotus on the branch
+## Rebuild and install Lotus on the right branch
 
 Find which Lotus branch or release corresponds to the desired network in the [Networks dashboard](https://networks.filecoin.io).
 

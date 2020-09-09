@@ -1,13 +1,13 @@
 ---
 title: Lotus
-description: Lotus is a Filecoin implementation written by Protocol Labs.
+description: Lotus is a Filecoin implementation written by Protocol Labs, the creators of IPFS, libp2p, and Filecoin.
 ---
 
 # Lotus
 
 {{ $frontmatter.description }}
 
-Lotus is a suite of command-line applications:
+It is written in [Go](https://golang.org) and it is actually a suite of command-line applications:
 
 - Lotus Node (`lotus`): a Filecoin Node: validates network transactions, manages a FIL wallet, can perform storage and retrieval deals.
 - Lotus Miner (`lotus-miner`): a Filecoin miner. See the the respective [Lotus Miner](../../mine/lotus/) section in the [Mine](../../mine/) documentation.
