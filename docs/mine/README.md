@@ -10,10 +10,6 @@ In most blockchain protocols, "miners" are the participants on the network that 
 
 Mining in Filecoin works quite differently however -- instead of contributing computational power, miners contribute storage capacity to be used in deals with clients looking to store data.
 
-# Table of Contents
-
-[[TOC]]
-
 ## Types of miners
 
 The Filecoin network will have multiple types of miners:

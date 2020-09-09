@@ -10,7 +10,7 @@ Any service accessible to the Internet is exposed to a multitude of potential at
 
 When running your Miner from a Public IP address, every single port on your machine will be accessible from the Internet by default. We recommend that you block all incoming traffic except for the ports that are essential, namely SSH and the Lotus listen addresses.
 
-First, [set a static port for your Miner using the guide]./setting-a-static-port.md)
+First, [set a static port for your Miner using the guide](./setting-a-static-port.md)
 
 Then use the following command to block a specific port:
 
@@ -42,12 +42,12 @@ sudo /sbin/iptables-save
 # for Red Hat / CentOS –
 sudo /sbin/service iptables save
 # or
-sudo  /etc/init.d/iptables save 
+sudo  /etc/init.d/iptables save
 ```
 
 ## IP based protection
 
-If you detect incoming traffic from an IP address, you can block all incoming traffic coming from that location. 
+If you detect incoming traffic from an IP address, you can block all incoming traffic coming from that location.
 
 ```
 # Blocking 192.168.1.100 to exemplify.
@@ -63,7 +63,7 @@ sudo /sbin/iptables-save
 # for Red Hat / CentOS –
 sudo /sbin/service iptables save
 # or
-sudo  /etc/init.d/iptables save 
+sudo  /etc/init.d/iptables save
 ```
 
 Learn more how to maintain a denylist of IPs at [Blocking IP Addresses in Linux with IPTables](https://linux-audit.com/blocking-ip-addresses-in-linux-with-iptables)
@@ -101,7 +101,7 @@ In order to be more effective when blocking incoming traffic, we recommend using
 
 Additionally, you can also consider setting up a Bastion to avoid direct access to your Miner machines. This will enable you to better control who has access and when operators access these machines.
 
-![](/images/filecoin-miner-operation.png)
+![Filecoin miner operations diagram.](./images/mitigating-dos/filecoin-miner-operation.png)
 
 ## Final remarks
 
