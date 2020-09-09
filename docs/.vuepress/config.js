@@ -91,6 +91,7 @@ module.exports = {
                 ['lotus/retrieve-data', 'Retrieve data'],
                 ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
                 ['lotus/tips-running-in-china', 'Tips when running in China'],
+                ['lotus/chain-snapshots', 'Chain snapshots'],
                 ['lotus/configuration-and-advanced-usage', 'Advanced options'],
                 ['lotus/node-troubleshooting', 'Node troubleshooting']
               ]
@@ -112,6 +113,7 @@ module.exports = {
               children: [
                 ['lotus/miner-setup', 'Miner setup'],
                 ['lotus/miner-configuration', 'Configuration reference'],
+                ['lotus/daemon-lifecycle', 'Daemon lifecycle'],
                 ['lotus/manage-storage-deals', 'Manage storage deals'],
                 ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
                 ['lotus/custom-storage-layout', 'Custom storage layout'],

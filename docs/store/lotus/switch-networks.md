@@ -8,117 +8,40 @@ breadcrumb: Switch networks
 
 {{ $frontmatter.description }}
 
-1. Shutdown any Lotus daemons that are currently running. If you are running a miner, see the [Miner deadline](#miner-deadline) section to see if it is safe to shutdown your miner.
-1. Backup `~/.lotus` and `~/.lotusminer` data before doing anything else:
+## Shutdown running Lotus daemons
 
-   ```bash
-   mkdir ~/.lotus-backups
-   cp -r ~/.lotus ~/.lotus-backups/
-   cp -r ~/.lotusminer ~/.lotus-backups/
-   ```
+Shutdown any Lotus daemons that are currently running. This includes `lotus` and potentially `lotus-miner` and `lotus-worker` daemons.
 
-   If anything breaks during this guide, you can restore your wallets, settings, and chain data by copying these folders back to their original destination.
+::: warning
+If you are running a miner, see the [instructions to safely stop a miner](../../mine/lotus/daemon-lifecycle.md).
+:::
 
-1. Move to where you have the Lotus git repository stored:
+## Backup your data (optional)
 
-   ```bash
-   cd ~/lotus
-   ```
+If you plan to return to your current network, you may want to back up your data. These are the configuration folders for the different Lotus applications:
 
-   If you no longer have the Lotus git repository, download it:
+- `~/.lotus` (or `$LOTUS_PATH`)
+- `~/.lotusminer` (or `$LOTUS_MINER_PATH`)
+- `~/.lotusworker` (or `$LOTUS_WORKER_PATH`)
 
-   ```bash
-   cd ~/
-   git clone https://github.com/filecoin-project/lotus.git
-   cd lotus
-   ```
+::: tip
+Alternatively, you can also [export your wallets](send-and-receive-fil.md) and [export the chain](chain-snapshots.md) for later re-import.
+:::
 
-1. Each network has it's own branch. Find the branch that you need to checkout to:
+## Rebuild and install Lotus on the branch
 
-   | Network name | Branch           |
-   | ------------ | ---------------- |
-   | Testnet      | `master`         |
-   | Nerpa        | `ntwk-nerpa`     |
-   | Butterfly    | `ntwk-butterfly` |
+Find which Lotus branch or release corresponds to the desired network in the [Networks dashboard](https://networks.filecoin.io).
 
-1. Checkout to the branch of the network you want to use:
+Follow the [installation instructions](installation) and install lotus from the right branch/release. To check it out with git you have to run:
 
-   ```bash
-   git checkout ntwk-nerpa
-   ```
-
-1. Rebuild the Lotus package for the new network:
-
-   ```bash
-   make clean && make build
-   ```
-
-1. Install the binaries in the correct location:
-
-   ```bash
-   make install
-   ```
-
-   You may have to run this command as root, depending on your operating system:
-
-   ```bash
-   sudo make install
-   ```
-
-1. You can now restart your Lotus daemons.
-
-   Lotus daemon:
-
-   ```bash
-   lotus daemon
-   ```
-
-   Lotus miner:
-
-   ```bash
-   lotus-miner run
-   ```
-
-## Miner deadline
-
-Check that your miners are safe to shutdown before attempting to do so. Run `lotus-miner proving info`. If any deadline shows a block height in the past, do not restart.
-
-In the following example, Deadline Open is 454 which is earlier than Current Epoch of 500. This miner should not be shut down or restarted:
-
-```bash
-$ sudo lotus-miner proving info
-
-Miner: t01001
-Current Epoch:           500
-Proving Period Boundary: 154
-Proving Period Start:    154 (2h53m0s ago)
-Next Period Start:       3034 (in 21h7m0s)
-Faults:      768 (100.00%)
-Recovering:  768
-Deadline Index:       5
-Deadline Sectors:     0
-Deadline Open:        454 (23m0s ago)
-Deadline Close:       514 (in 7m0s)
-Deadline Challenge:   434 (33m0s ago)
-Deadline FaultCutoff: 384 (58m0s ago)
+```sh
+git checkout <branch/release>
 ```
 
-In this next example, the miner can be safely restarted because no Deadlines are earlier than Current Epoch of 497. You have ~45 minutes before the miner must be back online to declare faults (FaultCutoff). If the miner has no faults, you have about an hour.
+## Start the Lotus daemon
 
-```bash
-$ sudo lotus-miner proving info
+Start the Lotus daemons normally. It will start running on the network for which it was built.
 
-Miner: t01000
-Current Epoch:           497
-Proving Period Boundary: 658
-Proving Period Start:    658 (in 1h20m30s)
-Next Period Start:       3538 (in 25h20m30s)
-Faults:      0 (0.00%)
-Recovering:  0
-Deadline Index:       0
-Deadline Sectors:     768
-Deadline Open:        658 (in 1h20m30s)
-Deadline Close:       718 (in 1h50m30s)
-Deadline Challenge:   638 (in 1h10m30s)
-Deadline FaultCutoff: 588 (in 45m30s)
-```
+::: warning
+Make sure to not mix configuration folders between Lotus builds for different networks or for a network that has been reset as things will break badly.
+:::
