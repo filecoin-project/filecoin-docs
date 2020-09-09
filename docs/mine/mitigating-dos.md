@@ -10,7 +10,7 @@ Any service accessible to the Internet is exposed to a multitude of potential at
 
 When running your Miner from a Public IP address, every single port on your machine will be accessible from the Internet by default. We recommend that you block all incoming traffic except for the ports that are essential, namely SSH and the Lotus listen addresses.
 
-First, [set a static port for your Miner using the guide](/mine/setting-a-static-port)
+First, [set a static port for your Miner using the guide]./setting-a-static-port.md)
 
 Then use the following command to block a specific port:
 
@@ -106,4 +106,3 @@ Additionally, you can also consider setting up a Bastion to avoid direct access 
 ## Final remarks
 
 There is no ultimate way to prevent DoS attacks, in the end, it is a numbers game in which the malicious actor will try to overload the target by investing more resources than the target in order to cause an outage. Of course, this is an expensive operation and the best proctection is to make it as expensive as possible by running performant machines, having good filtering rules and being in the alert for any suspicious pattern.
-
