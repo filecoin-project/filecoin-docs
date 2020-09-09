@@ -10,6 +10,24 @@ In most blockchain protocols, "miners" are the participants on the network that 
 
 Mining in Filecoin works quite differently however -- instead of contributing computational power, miners contribute storage capacity to be used in deals with clients looking to store data.
 
+# Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Types of miners](#types-of-miners)
+  - [Coming from another ecosystem?](#coming-from-another-ecosystem)
+- [Getting started as a miner](#getting-started-as-a-miner)
+  - [Hardware recommendations](#hardware-recommendations)
+  - [All about deals](#all-about-deals)
+- [Getting rewards](#getting-rewards)
+  - [WinningPoSt](#winningpost)
+  - [Uptime, slashing and penalties](#uptime-slashing-and-penalties)
+  - [Window PoSt checks](#window-post-checks)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Types of miners
 
 The Filecoin network will have multiple types of miners:
@@ -28,7 +46,11 @@ In the current implementation, the focus is mostly on storage miners, which sell
 
 First, welcome! For those coming from Proof-of-Stake or Proof-of-Work development communities, there are a number of concepts and considerations that are unique to Filecoin. While this page provides an overview of the concepts related to mining in particular, more introductory information on what Filecoin is and how it works can be found in [introduction section](../introduction/README.md) of this manual, or head over and try out some related [ProtoSchool tutorials](https://proto.school/#/tutorials)!
 
-## Hardware recommendations
+## Getting started as a miner
+
+For instructions on getting the Filecoin network running and a miner initialized, see the [Lotus client manual](https://lotu.sh/).
+
+### Hardware recommendations
 
 The current recommended system specifications for operating a storage miner are:
 
@@ -39,15 +61,11 @@ The current recommended system specifications for operating a storage miner are:
 
 For users wishing to use the Lotus client for the purposes of keeping a wallet or interfacing with the network (and not mining), **a system with 2-4 CPU cores, 8GiB of RAM, and enough storage for the Filecoin blockchain** should be sufficient. (The current testnet chain grows at about 12GiB per week; improvements to reduce this storage requirement are ongoing.)
 
-### Aren't these requirements relatively high?
+**Aren't these requirements relatively high?**
 
 Indeed, compared to the hardware requirements of running a Proof-of-Stake validator, these benchmarks are much higher -- though are certainly worth it. As these will not increase for the presumable future, money spent on hardware for Filecoin mining will provide users with many years of reliable service, paying for themselves several times over. Think of the investment as running a small cloud storage business; to launch one on the existing data hosting model, it would cost millions of dollars in infrastructure and logistics to get off the ground. With Filecoin, you are able to do the exact same for only a few thousand dollars, and can also be run out of the comfort of your own home.
 
-## Getting started as a miner
-
-For instructions on getting the Filecoin network running and a miner initialized, see the [Lotus client manual](https://lotu.sh/).
-
-## All about deals
+### All about deals
 
 Deals are the core function of the Filecoin network, and represent an agreement made between a client and a miner for a storage 'contract'.
 
@@ -73,7 +91,7 @@ WinningPoSt is the mechanism by which storage miners are rewarded for their cont
 
 To further incentivize the storage of “useful” data over simple capacity commitments, storage miners have the additional opportunity to compete for special deals offered by verified clients. Such clients are certified with respect to their intent to offer deals involving the storage of meaningful data, and the power a storage miner earns for these deals is augmented by a multiplier. The total amount of power a given storage miner has, after accounting for this multiplier, is known as **quality-adjusted power**.
 
-## Uptime, slashing and penalties
+### Uptime, slashing and penalties
 
 "Slashing" is a feature present in most blockchain protocols, and is used to penalise miners that either fail to provide reliable uptime or act maliciously against the network.
 
@@ -95,3 +113,4 @@ PoSt (Proof-of-Spacetime) window checks are performed on 24 hour intervals acros
 ::: callout
 [Learn about PoSt and other verification methods at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
 :::
+

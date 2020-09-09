@@ -70,10 +70,10 @@ module.exports = {
           '/mine/': [
             '/mine/storage-mining',
             '/mine/lotus-seal-worker',
-            '/mine/setting-a-static-port',
+            '/mine/mining-troubleshooting',
             '/mine/connectivity',
-            '/mine/spacerace',
-            '/mine/mining-troubleshooting'
+            '/mine/setting-a-static-port',
+            '/mine/spacerace'
           ],
           '/build/': [
             {
