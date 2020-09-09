@@ -112,6 +112,6 @@ Running a public service on the Internet brings a series of challenges that ever
 
 In order to support you, Filecoin Miner Operators, we've prepared a few guides to walk you through steps in order to improve your operation. Note, these are just a starting point and not the destination, you will need to customize your own deployment to your own infrastructure and network conditions. The guides are:
 
-- [Improving connectivity](/mine/connectivity) through a series of techniques such as port forwaring, relay and VPNs.
-- [Setting a static port](/mine/setting-a-static-port) so that your firewall and port forwarding stay valid.
-- [Proactive mitigation of DoS attacks](/mine/mitigating-dos)
+- [Improving connectivity](./connectivity.md) through a series of techniques such as port forwarding, relay and VPNs.
+- [Setting a static port](./setting-a-static-port.md) so that your firewall and port forwarding stay valid.
+- [Proactive mitigation of DoS attacks](./mitigating-dos.md)
