@@ -73,6 +73,7 @@ module.exports = {
             '/mine/mining-troubleshooting',
             '/mine/connectivity',
             '/mine/setting-a-static-port',
+            '/mine/mitigating-dos',
             '/mine/spacerace'
           ],
           '/build/': [

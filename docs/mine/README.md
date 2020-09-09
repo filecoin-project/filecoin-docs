@@ -114,3 +114,18 @@ PoSt (Proof-of-Spacetime) window checks are performed on 24 hour intervals acros
 [Learn about PoSt and other verification methods at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
 :::
 
+## Guildelines for Filecoin Miner operators
+
+Running a public service on the Internet brings a series of challenges that every miner should be aware, specially if it is the first time they are running an Internet service. Filecoin Miner operators are responsible for:
+
+- Running a secure operation following the [Least Priveledge Principle](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+- Protecting the Miner from [DoS (Denial of Service)](https://en.wikipedia.org/wiki/Denial-of-service_attack) attacks.
+- Set the miner to be diable by the rest of the network so that it can participate in the deal market.
+- Keep the Miner running up to date software that includes all the latest security patches.
+- Monitor their node and set up alerts in the case of a undesired event happen, be alerted right away.
+
+In order to support you, Filecoin Miner Operators, we've prepared a few guides to walk you through steps in order to improve your operation. Note, these are just a starting point and not the destination, you will need to customize your own deployment to your own infrastructure and network conditions. The guides are:
+
+- [Improving connectivity](/mine/connectivity) through a series of techniques such as port forwaring, relay and VPNs.
+- [Setting a static port](/mine/setting-a-static-port) so that your firewall and port forwarding stay valid.
+- [Proactive mitigation of DoS attacks](/mine/mitigating-dos)
