@@ -25,7 +25,7 @@ From that point, an storage deal is live on the network.
 
 ## Importing data
 
-To locally import a file into lotus run:
+To locally import a regular file from your filesystem into lotus run:
 
 ```sh
 lotus client import ./your-example-file.txt
@@ -40,6 +40,18 @@ lotus client local
 ```
 
 If you need to import a full folder or many files, it is best to _tar_ or _zip_ them up first into a single archive.
+
+## Importing custom DAGs
+
+Advance IPLD users may want to import custom DAGs into Lotus (you may skip this section if that is not you).
+
+The CAR file format allows to serialize any IPLD-DAG (i.e. a IPLD-CBOR). Custom IPLD-DAGs should be encoded in a well-known format (like CBOR) as otherwise Lotus will not know how to interpret them.
+
+::: warning
+CAR files must contain the full DAG. Partial DAGs are not supported!
+:::
+
+If you built your own CAR file, make sure to import it directly with the `--car` flag.
 
 ### Files bigger than a sector
 
