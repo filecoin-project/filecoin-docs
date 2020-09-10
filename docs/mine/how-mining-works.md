@@ -38,4 +38,4 @@ Each Filecoin miner as an associated _power_ in the network that is proportional
 
 Additionally, miners submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
-Additional details about this can be found in the [mining rewards](mining-rewards.md)) section.
+Additional details about this can be found in the [mining rewards](mining-rewards.md) section.
