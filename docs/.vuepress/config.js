@@ -76,7 +76,6 @@ module.exports = {
               'https://proto.school/verifying-storage-on-filecoin/',
               'Protoschool tutorial'
             ],
-            ['filecoin-pinning-services', 'Filecoin-backed pinning services'],
             {
               title: 'LOTUS',
               path: '/store/lotus/',
@@ -95,7 +94,8 @@ module.exports = {
                 ['lotus/configuration-and-advanced-usage', 'Advanced options'],
                 ['lotus/node-troubleshooting', 'Node troubleshooting']
               ]
-            }
+            },
+            ['filecoin-pinning-services', 'Filecoin-backed pinning services']
           ],
 
           '/mine/': [
