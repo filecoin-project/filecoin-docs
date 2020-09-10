@@ -8,21 +8,40 @@ breadcrumb: 'Upgrades'
 
 {{ $frontmatter.description }}
 
-If you installed Lotus on your machine, first you have to delete the configuration folder located at `~/.lotus` (or if you manually set `LOTUS_PATH`, look under that directory).
+## Installing an update
+
+Usually, if you are updating Lotus, it as simple as rebuilding and re-installing the software as [explained in the previous section](installation.md), after pulling the latest state for the chosen branch and repository:
+
+```sh
+git fetch origin
+git checkout <branch or release>
+## If you had the repository around and are on a branch
+# git pull origin <branch>
+```
+
+You can verify your current version with:
+
+```sh
+lotus --version # for the lotus binary
+lotus version   # for the currently running daemon
+```
+
+:::callout
+**You will need to stop and start the daemon again after installing the new version**.
+:::
+
+## Nuking the Lotus data
+
+In some occasions, for example in the case of a network reset (where an existing chain is rebooted from scratch), you will need to delete the [lotus configuration](configuration-and-advanced-usage.md) folder located at `~/.lotus` (or, if manually set, at `$LOTUS_PATH`):
 
 ```bash
 rm -rf ~/.lotus # or $LOTUS_PATH
 ```
 
-Then you can upgrade to the latest version by going to Lotus directory and executing the following commands:
+::: warning
+This will delete all chain data and wallets! [Be very careful](send-and-receive-fil.md#exporting-and-importing-a-wallet) with this on mainnet if you have FIL in your wallets!
+:::
 
-```bash
-# get the latest
-git pull origin master
+## Switching networks
 
-# clean and remake the binaries
-make clean && make build
-
-# instal binaries in correct location
-make install # or sudo make install if necessary
-```
+If you want to switch networks, read [this guide](switch-networks.md).
