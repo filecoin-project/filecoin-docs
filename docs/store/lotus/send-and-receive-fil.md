@@ -10,6 +10,8 @@ breadcrumb: 'Send and receive ⨎'
 
 In order to receive and send FIL with Lotus you will need to have [installed and be running a Lotus Node](installation.md).
 
+[[TOC]]
+
 ## Creating a wallet
 
 ```bash

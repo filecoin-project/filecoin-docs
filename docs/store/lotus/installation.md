@@ -126,7 +126,9 @@ export RUSTFLAGS="-C target-cpu=native -g"
 export FFI_BUILD_FROM_SOURCE=1
 ```
 
-> **NOTE**: This method of building does not produce portable binaries! Make sure you run the binary in the same machine as you built it.
+::: warning
+This method of building does not produce portable binaries! Make sure you run the binary in the same machine as you built it.
+:::
 
 ### Systemd service files
 
