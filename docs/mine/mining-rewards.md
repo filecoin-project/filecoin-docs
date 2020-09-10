@@ -20,8 +20,14 @@ _PoSt (Proof-of-Spacetime)_ window checks are performed on 24 hour intervals acr
 
 **Block rewards** are large sums that are given to the miner credited for a new block. Unlike storage fees, these rewards do not come from an associated client; rather, the network "prints" new FIL as both an inflationary measure and an incentive to miners advancing the chain. All active miners on the network have a chance at recieving a block reward, their chance at such being directly proportional to the amount of storage space currently being contributed to the network.
 
-The mechanism to earn the right to mine a new block is called _WinningPoSt_. In the Filecoin network, time is discretized into a series of epochs – the blockchain's height corresponds to the number of elapsed epochs. At the beginning of each epoch, a small number of storage miners are elected to mine new blocks (Filecoin utilizes tipsets, which permit multiple blocks to be mined at the same height). Additionally to the block reward, each miner can collect the fees associated to each message included in the block.
+The mechanism to earn the right to mine a new block is called _WinningPoSt_. In the Filecoin network, time is discretized into a series of epochs – the blockchain's height corresponds to the number of elapsed epochs. At the beginning of each epoch, a small number of storage miners are elected to mine new blocks. Additionally to the block reward, each miner can collect the fees associated to each message included in the block.
+
+The number of blocks on every tipset is based on based on a Poisson distribution of a random variable with λ = 5. Miner implementations may use several strategies to choose which messages to include in every block to minimize overlap. Only the "first execution" of each message will collect the associated fees, with executions ordered per the hash of the VFR (Verfiable Random Funcion) ticket associated to the block.
 
 ## Verified clients
 
 To further incentivize the storage of "useful" data over simple capacity commitments, storage miners have the additional opportunity to compete for special deals offered by _verified clients_. Such clients are certified with respect to their intent to offer deals involving the storage of meaningful data, and the power a storage miner earns for these deals is augmented by a multiplier. The total amount of power a given storage miner has, after accounting for this multiplier, is known as **quality-adjusted power**.
+
+## Retrieval fees
+
+Retrieval fees are paid incrementally using _payment channels_ as the retrieval deals are fulfilled (by sending portions of the data to the cl. This happens off-chain.

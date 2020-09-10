@@ -15,3 +15,7 @@ Welcome to the Filecoin documentation for **Miners**.
 - Setup and run a high performant [Lotus Miner](lotus/README.md).
 
 The documentation you will be reading assumes you are familiar with the documentation in the [Get started](../store) section, have a general grasp of how Filecoin works and are familiar with Filecoin node software and tooling.
+
+:::warning
+Running a successful mining operation on Filecoin has high [hardware requirements](hardware-requirements.md) and, apart from a strong familiarity with Filecoin, requires experience in systems deployment and administration.
+:::
