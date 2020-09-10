@@ -87,6 +87,7 @@ module.exports = {
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
                 ['lotus/store-data', 'Store data'],
+                ['lotus/very-large-files', 'Very large files'],
                 ['lotus/retrieve-data', 'Retrieve data'],
                 ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
                 ['lotus/tips-running-in-china', 'Tips when running in China'],
