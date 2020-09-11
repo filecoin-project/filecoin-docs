@@ -97,7 +97,7 @@ Note that these miners:
 
 - Offer 32GiB sectors only ([about large files](very-large-files.md)).
 - Seal sectors only every 8 hours so the deal become active after 20 hours (8 hours to start sealing + 12 hours to seal).
-- Retrieval is available almost immediately after the deal has been accepted and data transferred to the miner.
+- These miners will be storing unsealed copies of your data in addition to the sealed copies. This makes it possible to retrieve data quickly starting almost immediately after your deal has been accepted and your data has successfully transferred to the miner machine.
 
 ### Find the price and conditions
 

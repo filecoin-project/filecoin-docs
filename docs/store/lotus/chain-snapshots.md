@@ -13,7 +13,7 @@ breadcrumb: 'Chain snapshots'
 The `chain export` command will export your chain data into `.car` file:
 
 ```sh
-lotus chain export <file>
+lotus chain export <filename>
 ```
 
 ## Restore a snapshot
@@ -21,7 +21,7 @@ lotus chain export <file>
 To import chain data from a `.car` snapshot file, run:
 
 ```sh
-lotus daemon --import-snapshot
+lotus daemon --import-snapshot <filename>
 ```
 
 If you do not want the daemon to resume once the snapshot has finished, add the `--halt-alter-import` flag to the command:
@@ -29,3 +29,8 @@ If you do not want the daemon to resume once the snapshot has finished, add the 
 ```bash
 lotus daemon --import-snapshot --halt-after-import
 ```
+
+## Testnet chain snapshots
+
+Snapshots for the Lotus testnet created every 6 hours are available for download in [here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car).
+
