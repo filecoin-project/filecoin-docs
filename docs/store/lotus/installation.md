@@ -6,61 +6,43 @@ breadcrumb: 'Installation'
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.description }}. Sucessfully completing the instructions below will install all `lotus`, `lotus-miner` and `lotus-worker` in your system. However, after that guide focuses in running `lotus`. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
+{{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
 
-[[TOC]]
+## Requirements
 
-## Minimal requirements
+To run a Lotus node, your computer must have:
+
+- macOS or Linux installed. Windows is not yet supported.
+- a quad-core CPU. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake) will significantly speed things up.
+- 8 GiB RAM
+- Enough space to store the current Lotus chain. The chain grows at approximately 12 GiB per week.
 
 :::warning
-These are the minimal requirements for a Lotus Node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
+These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
 :::
-
-- Lotus only runs on **Linux** and **MacOS** systems.
-- Minimal hardware requirements:
-  - 4-core CPU. A CPU model with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake) will speed things up significantly.
-  - 8 GiB RAM
-  - Enough space to store the Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 12 GiB per week.
 
 ## Linux
 
-### Dependencies
+The following instructions are specific to Linux installations. Head to the [macOS](#mac-os) section if you want to install Lotus on a Mac.
 
-#### System dependencies
+### Software dependencies
 
-First of all, building Lotus will require installing some system dependencies, usually provided by your distribution (all below running in recent versions).
+You will need the following software installed to install and run Lotus.
 
-For Arch Linux:
+#### System-specific
 
-```sh
-sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers
-```
+Building Lotus requires some system dependencies, usually provided by your distribution.
 
-For Ubuntu (and probably any Debian-flavoured system):
-
-```sh
-sudo apt update
-sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl
-sudo apt upgrade
-```
-
-For Fedora:
-
-```sh
-sudo dnf -y update
-sudo dnf -y install gcc git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm
-```
-
-For OpenSUSE:
-
-```sh
-sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm
-sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so
-```
+| Linux distribution | Dependency install command                                                                                                                               |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                          |
+| Ubuntu             | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y && sudo apt upgrade -y`                        |
+| Fedora             | `sudo dnf -y update && sudo dnf -y install gcc git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm` |
+| OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`      |
 
 #### Rustup
 
-Lotus needs [rustup](https://rustup.rs/). The offical installation as last time this guide was updated amounted to:
+Lotus needs Rust. The easiest way to install Rust is to use [Rustup](https://rustup.rs).
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -72,63 +54,67 @@ Make sure your `$PATH` variable is correctly configured after the rustup install
 
 #### Go
 
-To build lotus you will need a working installation of **[Go >= 1.14](https://golang.org/dl/)**. Follow the [installation instructions](https://golang.org/doc/install), which generally amount to:
+To build Lotus, you need a working installation of [Go 1.14or higher](https://golang.org/dl/). For most operating systems, the installation instructions are:
 
 ```sh
 # Example! Check the installation instructions.
 wget -c https://dl.google.com/go/go1.14.7.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
-:::tip
-Feel free to replace the version if newer versions of Go have come out.
-:::
+If you are running into problems, check the [official Go installation instructions](https://golang.org/doc/install) for your operating system.
 
 ### Build and install Lotus
 
-With all the above, you are ready to build and install the Lotus suite (`lotus`, `lotus-miner` and `lotus-worker`):
+Once all the dependencies are installed, you can build and install the Lotus suite (`lotus`, `lotus-miner`, and `lotus-worker`).
 
-```sh
-git clone https://github.com/filecoin-project/lotus.git
-cd lotus/
-```
+1. Clone the repository:
 
-::: warning
-At this point, you can checkout the branch corresponding to the [network you want to join](switch-networks.md#rebuild-and-install-lotus-on-the-right-branch). Lookup the right branch or tag for network in the [networks dashboard](https://networks.filecoin.io) and do:
+   ```sh
+   git clone https://github.com/filecoin-project/lotus.git
+   cd lotus/
+   ```
 
-```sh
-git checkout <branch_or_tag>
-```
+1. Checkout the branch corresponding to the [network you want to join](./switch-networks.md#rebuild-and-install-lotus-on-the-right-branch). You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
 
-Currently the _master_ branch corresponds to **testnet**.
-:::
+   ```sh
+   git checkout <branch_or_tag>
+   ```
 
-::: tip
-If you are in China, check out the specific [tips](tips-running-in-china.md). They will save you hours.
-:::
+   Currently, the _master_ branch corresponds to **testnet**.
 
-To build Lotus do:
+1. If you are in China, check out the specific [tips](tips-running-in-china.md).
+1. If you have an AMD Zen or Intel Ice Lake CPU, enable SHA extensions by adding these two environment variables:
 
-```sh
-make clean all
-sudo make install
-```
+   ```sh
+   export RUSTFLAGS="-C target-cpu=native -g"
+   export FFI_BUILD_FROM_SOURCE=1
+   ```
 
-This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
+   See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-`lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets...). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
+1. Build Lotus:
+
+   ```sh
+   make clean all
+   sudo make install
+   ```
+
+   This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
+
+   `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
+
+1. Lotus should now be installed on your computer.
 
 #### Native Filecoin FFI
 
-Some newer processors (AMD Zen (and later), Intel Ice Lake) have support SHA extensions. To make full use of your processor's capabilities, make sure you set the following variables BEFORE building from source (as described above):
+Some newer CPU architectures like AMD's Zen and Intel's Ice Lake, have support for SHA extensions. Having these extensions enabled significantly speeds up your Lotus node. To make full use of your processor's capabilities, make sure you set the following variables **before building from source**:
 
 ```sh
 export RUSTFLAGS="-C target-cpu=native -g"
 export FFI_BUILD_FROM_SOURCE=1
 ```
 
-::: warning
-This method of building does not produce portable binaries! Make sure you run the binary in the same machine as you built it.
-:::
+This method of building does not produce portable binaries. Make sure you run the binary on the same computer as you built it.
 
 ### Systemd service files
 
@@ -139,110 +125,101 @@ make install-daemon-service
 make install-miner-service
 ```
 
-After that, you should be able to control Lotus using `systemctl [start|stop] lotus-daemon`.
+Once installed, you should be able to control Lotus using `systemctl [start|stop] lotus-daemon`.
 
 ::: tip
 By default, the `lotus-daemon` service file redirects the logging output to `/var/log/lotus/daemon.log`, so `journalctl` displays nothing.
 :::
 
-## MacOS
+## macOS
 
-### Install XCode Command Line Tools
+These instructions are specific to macOS. If you are installing Lotus on a Linux distribution, head over to the [Linux section](#linux).
 
-To check if you already have the XCode Command Line Tools installed via the CLI, run:
+### XCode Command Line Tools
 
-```sh
-xcode-select -p
-```
+Lotus requires that X-Code CLI tools be installed before building the Lotus binaries.
 
-If this command returns a path, you can move on to the next step. Otherwise, to install via the CLI, run:
+1. Check if you already have the XCode Command Line Tools installed via the CLI, run:
 
-```sh
-xcode-select --install
-```
+   ```sh
+   xcode-select -p
+   ```
 
-To update, run:
+   If this command returns a path, you can move on to the [next step](#install-homebrew). Otherwise, to install via the CLI, run:
 
-```sh
-sudo rm -rf /Library/Developer/CommandLineTools
-xcode-select --install
-```
+   ```sh
+   xcode-select --install
+   ```
 
-### Install HomeBrew
+1. To update, run:
 
-We recommend that MacOS users use [HomeBrew](https://brew.sh) to install each the necessary packages.
+   ```sh
+   sudo rm -rf /Library/Developer/CommandLineTools
+   xcode-select --install
+   ```
 
-Check if you have HomeBrew:
+### Install Homebrew
 
-```sh
-brew -v
-```
+We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of the necessary packages.
 
-This command returns a version number if you have HomeBrew installed and nothing otherwise.
+1. Use the command `brew install` to install the following packages:
 
-In your terminal, enter this command to install Homebrew:
+   ```sh
+   brew install go bzr jq pkg-config rustup
+   ```
 
-```sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+1. Clone the repository:
 
-Use the command `brew install` to install the following packages:
+   ```sh
+   git clone https://github.com/filecoin-project/lotus.git
+   cd lotus/
+   ```
 
-```sh
-brew install go bzr jq pkg-config rustup
-```
+1. Checkout the branch corresponding to the [network you want to join](./switch-networks.md#rebuild-and-install-lotus-on-the-right-branch). You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
 
-Clone:
+   ```sh
+   git checkout <branch_or_tag>
+   ```
 
-```sh
-git clone https://github.com/filecoin-project/lotus.git
-cd lotus/
-```
+   Currently, the _master_ branch corresponds to **testnet**.
 
-::: warning
-At this point, you can checkout the branch corresponding to the [network you want to join](switch-networks.md#rebuild-and-install-lotus-on-the-right-branch). Lookup the right branch or tag for network in the [networks dashboard](https://networks.filecoin.io) and do:
+1. If you are in China, check out the specific [tips](tips-running-in-china.md).
+1. Build Lotus:
 
-```sh
-git checkout <branch_or_tag>
-```
+   ```sh
+   make clean && make all
+   sudo make install
+   ```
 
-Currently the _master_ branch corresponds to **testnet**.
-:::
-
-Build:
-
-```sh
-make clean && make all
-sudo make install
-```
+1. You should now have Lotus installed.
 
 ## Start the Lotus daemon
 
-Your Lotus binaries (particularly `lotus`) have been installed and be ready to be launched.
+The `lotus` application runs as a daemon and a client to control and interact with that daemon. A daemon is a long-running program that is usually run in the background.
 
-The `lotus` application both runs as a daemon (a long-running program, usually run in the background) and as a client to control and interact with that daemon. To start the Lotus daemon run:
+To start the Lotus daemon run:
 
-```sh
-lotus daemon
-## When running with systemd do:
-# systemctl start lotus-daemon
-```
+    ```sh
+    lotus daemon
+    ## When running with systemd do:
+    # systemctl start lotus-daemon
+    ```
 
-During the first start Lotus will:
+During the first run, Lotus will:
 
-- Setup its data folder at `~/.lotus`
-- Download the necessary proof parameters (a few gigabytes of data that needs to be fetched only once)
-- Start syncing the Lotus chain
+- Setup its data folder at `~/.lotus`.
+- Download the necessary proof parameters. This is a few gigabytes of data that is downloaded once.
+- Start syncing the Lotus chain.
 
-The daemon will start producing a lot of log messages right away.
+The daemon will start producing lots of log messages right away.
 
 :::tip
-Do not be appalled by the amount of warnings and sometimes errors showing in the logs, there are usually part of the usual functioning of the daemon as part of a distributed network.
+Do not be concerned by the number of warnings and sometimes errors showing in the logs. They are usually part of the usual functioning of the daemon as part of a distributed network.
 :::
 
 ## Chain sync
 
-As in many other blockchains, the Lotus Node will need to sync to the _tip_ of the chain after learning about this. We call this process _chain sync_. First the headers for every block will be synced from tip to bottom, afterwards blocks will be fetched and verified (slow!) from bottom to top. To inspect the current sync status run:
+As in many other blockchains, the Lotus Node will need to sync to the _tip_ of the chain after learning about this. We call this process _chain sync_. First, the headers for every block will be synced from tip to bottom. Afterward, blocks will be fetched and verified from bottom to top. To inspect the current sync status run:
 
 ```sh
 lotus sync status
@@ -255,11 +232,9 @@ lotus sync wait
 ```
 
 :::tip
-Syncing the Filecoin chain is a VERY slow process and the chain grows at a very fast pace. A network 100 days old will take about 25 days to sync from scratch.
+Syncing the Filecoin chain is a _very_ slow process, and the chain grows at a very fast pace. A network 100 days old will take about 25 days to sync from scratch.
 
-As a temporal workaround (until the syncing mechanism is improved), we are offering chain state snapshots that can be downloaded and used to initialize the daemon.
-
-You can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car)
+As a workaround, we are offering chain state snapshots that can be downloaded and used to initialize the daemon. This workaround is temporary until the syncing mechanism is improved. You can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car)
 
 Then start your lotus daemon with:
 
@@ -267,10 +242,10 @@ Then start your lotus daemon with:
 lotus daemon --import-snapshot <snapshot>.car
 ```
 
-For more information about chain snapshots, read [this](chain-snapshots.md).
+For more information about chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
 :::
 
-To check how far behind you are when syncing the chain you can use the following command:
+To check how far behind you are when syncing the chain, run the following command:
 
 ```sh
 date -d @$(./lotus chain getblock $(./lotus chain head) | jq .Timestamp)
@@ -278,9 +253,9 @@ date -d @$(./lotus chain getblock $(./lotus chain head) | jq .Timestamp)
 
 ## Interact with the daemon
 
-As shown in a few examples above, the `lotus` command allows to interact with the running daemon and it will be used profusely through the documentation (`lotus-miner` and `lotus-worker` are the same).
+The `lotus` command allows you to interact with a _running_ Lotus daemon. The `lotus-miner` and `lotus-worker` commands work in the same way.
 
-This _command-line-interface (CLI)_ is self-documenting:
+Lotus comes with built-in CLI documentation:
 
 ```sh
 # Show general help
