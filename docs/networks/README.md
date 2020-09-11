@@ -10,17 +10,20 @@ Filecoin has several networks for various testing, benchmarking, and optimizatio
 
 ## Network dashboard
 
+::: callout
 The [Filecoin Network Dashboard](https://network.filecoin.io/) lists current existing networks and includes the latest information for each network, including:
 
 - Block sizes
 - Links to faucets
 - Links to stats dashboards
 - Lotus version to use
+  :::
 
-| Network                       | Purpose                                                                                                                                                  | Sector Sizes | Stability                      |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------ |
-| [Testnet](#testnet)           | Evaluate Filecoin at a meaningful scale. (_recommended for most miners_)                                                                                 | 32GiB, 64GiB | Moderate (ongoing Space Race!) |
-| [Nerpa Devnet](#nerpa-devnet) | For developers building apps, with small sector sizes and reduced proofs parameters. Sealing time is ~15-20 minutes. (_recommended for most developers_) | 512MiB       | Moderate                       |
+| Network                        | Purpose                                                                                                                                                  | Sector Sizes         | Stability                      |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ------------------------------ |
+| [Testnet](#testnet)            | Evaluate Filecoin at a meaningful scale. (_recommended for most miners_)                                                                                 | 32GiB, 64GiB         | Moderate (ongoing Space Race!) |
+| [Nerpa Devnet](#nerpa-devnet)  | For developers building apps, with small sector sizes and reduced proofs parameters. Sealing time is ~15-20 minutes. (_recommended for most developers_) | 512MiB               | Moderate                       |
+| [Butterfly](#butterfly-devnet) | For core implementers testing new code. (_recommended for most developers_)                                                                              | 512MiB, 32GiB, 64GiB | Low (frequent resets)          |
 
 ### Connection Instructions
 
@@ -75,3 +78,15 @@ Nerpa is a long-lived devnet, **best for developers building storage apps**. Ner
 | Next expected reset                        | Last reset Aug 17, 2020. Next reset TBD.                                 |
 | Block explorers                            | n/a                                                                      |
 | [Slack](https://filecoin.io/slack) channel | [#fil-net-nerpa](https://filecoinproject.slack.com/archives/C016VJSJNTH) |
+
+### Butterfly Devnet
+
+This network is for core developers testing new code. It is reset often.
+
+| Description                                | Details                                                                          |
+| ------------------------------------------ | -------------------------------------------------------------------------------- |
+| Sector Sizes                               | 512MiB, 32GiB, 64GiB                                                             |
+| Details page                               | [https://network.filecoin.io/#butterfly](https://network.filecoin.io/#butterfly) |
+| Next expected reset                        | TBD.                                                                             |
+| Block explorers                            | n/a                                                                              |
+| [Slack](https://filecoin.io/slack) channel | `#fil-net-butterfly`                                                             |
