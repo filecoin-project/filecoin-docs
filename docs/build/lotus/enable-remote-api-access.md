@@ -35,26 +35,3 @@ To access the API remotely, Lotus needs to listen on the right IP/interface. The
 :::
 
 After making these changes, please restart the affected process.
-
-## Issuing tokens
-
-Any client wishing to talk to the API endpoints will need a token. Tokens can be generated with:
-
-```sh
-lotus auth create-token --perm <read,write,sign,admin>
-```
-
-(similarly for the Lotus Miner).
-
-The permissions work as follows:
-
-- `read` - Read node state, no private data.
-- `write` - Write to local store / chain, and `read` permissions.
-- `sign` - Use private keys stored in wallet for signing, `read` and `write` permissions.
-- `admin` - Manage permissions, `read`, `write`, and `sign` permissions.
-
-Tokens can then be used in applications by setting an Authorization header as:
-
-```
-Authorization: Bearer <token>
-```
