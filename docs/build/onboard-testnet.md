@@ -70,9 +70,20 @@ You will not see any funds in your testnet wallet until your node is fully synce
 
 ### (6) Make deals with Filecoin miners
 
-You can now start [making deals to store your data](../store/lotus/store-data.md).
+You can now start [making deals to store your data](../store/lotus/store-data.md). When it comes to choosing a miner, you have two options:
 
-We recommend signing up for the [Protocol Labs miners in testnet](../store/lotus/store-data/#protocol-labs-miners-in-testnet), as most other miners in the Space Race only accept deals from the deal bots.
+#### Option 1: Protocol Labs miners
+
+We recommend signing up for the [Protocol Labs miners in testnet](../store/lotus/store-data/#protocol-labs-miners-in-testnet) as mentioned in the instructions to make deals.
+
+#### Option 2: Community miners
+
+One Filecoin community member maintains a list of miners on the testnet who are currently accepting storage deals. You can try your luck with these miners as well.
+
+- [List of miners](https://github.com/jimpick/workshop-client-testnet/blob/spacerace/src/annotations-spacerace.js)
+- In this list, `active` means a deal got to the `active` state, i.e. it was successfully sealed into a sector that appeared on chain.
+- In this list, `sealing` means a deal got to the `sealing` state, i.e. the deal got through the initial funds and data transfer stages and was accepted by a miner to be sealed into a sector. If all goes well, `sealing` stage deals get to `active` state. However, currently, it is not the case that all deals that have successfully made it to the `sealing` stage also make it to the `active` stage. We estimate that currently only about 20-30% of `sealing` deals eventually become `active`.
+- This list is frequently updated, so keep an eye out for new miners who appear on the list.
 
 ## Support and troubleshooting
 
