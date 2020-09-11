@@ -270,6 +270,12 @@ lotus daemon --import-snapshot <snapshot>.car
 For more information about chain snapshots, read [this](chain-snapshots.md).
 :::
 
+To check how far behind you are when syncing the chain you can use the following command:
+
+```sh
+date -d @$(./lotus chain getblock $(./lotus chain head) | jq .Timestamp)
+```
+
 ## Interact with the daemon
 
 As shown in a few examples above, the `lotus` command allows to interact with the running daemon and it will be used profusely through the documentation (`lotus-miner` and `lotus-worker` are the same).
