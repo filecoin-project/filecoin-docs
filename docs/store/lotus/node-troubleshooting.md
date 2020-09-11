@@ -8,6 +8,12 @@ breadcrumb: 'node troubleshooting'
 
 {{ $frontmatter.description }}
 
+::: callout
+**Have you successfully overcome other Lotus Node-related problems?** Please contribute to this page by editing it with the link at the bottom!
+:::
+
+[[TOC]]
+
 ## Build errors
 
 Please check the build logs closely. If you have a dirty state in your git branch make sure to do something like:

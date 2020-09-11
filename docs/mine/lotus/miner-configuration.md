@@ -12,9 +12,13 @@ The Lotus Miner configutation is created after the [initialization step](miner-s
 
 The _default configuration_ has all the items commented, so in order to customize one of the items the leading `# ` need to be removed.
 
+::: tip
+For any **configuration changes to take effect**, the miner must be [restarted](daemon-lifecycle.md).
+:::
+
 [[TOC]]
 
-### API section
+## API section
 
 The API section controls the settings of the [miner API](../../reference/lotus-api.md):
 
@@ -32,7 +36,7 @@ As you see, the listen address is bound to the local loopback interface by defau
 
 Configure `RemoteListenAddress` to the value that a different node would have to use to reach this API. Usually it is the miner's IP address and API port, but depending on your setup (proxies, public IPs etc.), it might be a different IP.
 
-### Libp2p section
+## Libp2p section
 
 This section configures the miner's embedded Libp2p node. As noted in the [setup instructions](miner-setup.md#connectivity-to-the-miner), it is very important to adjust this section with the miner's public IP and a fixed port:
 
@@ -55,7 +59,7 @@ This section configures the miner's embedded Libp2p node. As noted in the [setup
 
 The connection manager will start to prune the existing connections if the number of established crosses the value set for `ConnMgrHigh` until it hits the value set for `ConnMgrLow`. Connections younger than `ConnMgrGrace` will be kept.
 
-### Pubsub section
+## Pubsub section
 
 This section controls some Pubsub settings. Pubsub is used to distribute messages in the network:
 
@@ -67,7 +71,7 @@ This section controls some Pubsub settings. Pubsub is used to distribute message
   RemoteTracer = ""
 ```
 
-### Dealmaking section
+## Dealmaking section
 
 This section controls parameters for making storage and retrieval deals:
 
@@ -83,14 +87,13 @@ This section controls parameters for making storage and retrieval deals:
   ConsiderOfflineRetrievalDeals = true
   # A list made of Data CIDs to reject when making deals
   PieceCidBlocklist = []
-  # How long the sealing process for a sector should take. This needs to be
-  # configured for your miner and can be estimated by pledging one sector.
+  # How long the sealing process for a sector should take (see below)
   ExpectedSealDuration = "12h0m0s"
   # A filter expression to only accept very specific deals (see below)
   Filter = ""
 ```
 
-`ExpectedSealDuration` is an estimate of how long sealing will take, and is used to reject deals whose start epoch might be earlier than the expected completion of sealing.
+`ExpectedSealDuration` is an estimate of how long sealing will take, and is used to reject deals whose start epoch might be earlier than the expected completion of sealing. It can be estimated by [benchmarking](benchmarks.md) or by [pledging a sector](sector-pledging.md).
 
 To filter deals based on certain parameters, modify the `Filter` param. This param should be a shell command that will be run when processing a deal proposal. Deals are accepted if the Filter's exit code is 0. For any other exit code, deals will be rejected. Set `Filter` to `false` to reject all deals and `true` to accept all deals. For example, the following filter only accepts deals from clients with specific addresses:
 
@@ -98,7 +101,7 @@ To filter deals based on certain parameters, modify the `Filter` param. This par
 Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" or .Proposal.Client == \"t1qiqdbbmrdalbntnuapriirduvxu5ltsc5mhy7si\" '"
 ```
 
-### Sealing section
+## Sealing section
 
 This section controls some of the behaviour around sector sealing:
 
@@ -114,7 +117,7 @@ This section controls some of the behaviour around sector sealing:
   WaitDealsDelay = "1h0m0s"
 ```
 
-### Storage section
+## Storage section
 
 The storage sector controls whether the miner can perform certain sealing actions. Depending on the setup and the use of additional [seal workers](seal-workers.md), you may want to modify some of the options.
 
@@ -129,7 +132,7 @@ The storage sector controls whether the miner can perform certain sealing action
   AllowUnseal = true
 ```
 
-### Fees section
+## Fees section
 
 The fees section allows to set limits to the gas consumption for the different messages that are submitted to the chain by the miner:
 

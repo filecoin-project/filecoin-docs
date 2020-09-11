@@ -28,7 +28,9 @@ To pledge a sector use:
 lotus-miner sectors pledge
 ```
 
+::: warning
 This will write data to `$TMPDIR` so make sure that there is enough space available.
+:::
 
 Check that the sealing job has started with:
 
@@ -50,24 +52,13 @@ When sealing for the new is complete, `pSet: NO` will become `pSet: YES`.
 
 ## Adjusting the expected seal duration setting
 
-Once the sealing is finished, the total time of the process can be used to configure the miner `ExpectedSealDuration` setting.
+If you pledged a sector, you can use the duration of the operation to update the [`ExpectedSealDuration` setting](miner-configuration.md#dealmaking-section).
 
 To find out this value, run:
 
 ```
 lotus-miner sectors status --log 0
 ```
-
-Once known, edit the Miner's `~/.lotusminer/config.toml` accordingly:
-
-```
-...
-[Dealmaking]
-...
-  ExpectedSealDuration = "12h0m0s" # The time it took your miner
-```
-
-Once you are done editing the configuration, [restart your miner](daemon-lifecycle.md).
 
 ## Upgrading pledged sectors
 

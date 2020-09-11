@@ -144,6 +144,6 @@ Your miner should now be preliminarly setup and running, but **there are still a
 - Setup your [custom storage layout](custom-storage-layout.md) (required if you used `--no-local-storage`).
 - Edit the miner [configuration settings](miner-configuration.md) to fit your requirements.
 - Learn what is a right moment to [shutdown/restart your miner](daemon-lifecycle.md)
-- [Pledge one sector](sector-pledging.md) and update `ExpectedSealDuration` with the time it took you to seal it (and then optionally upgrade it).
+- Update `ExpectedSealDuration` with the time it takes your miner to seal a sector: discover it by [running a benchmark](benchmarks.md) or by [pledging a sector](sector-pledging.md) and noting down the time.
 - Configure additional [seal workers](seal-workers.md) to increase the miner's capacity to seal sectors.
 - Configure a [separate address for WindowPost messages](separate-address-window-post.md).

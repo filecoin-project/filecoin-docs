@@ -130,7 +130,8 @@ module.exports = {
                   'Replace messages in the message pool'
                 ],
                 ['lotus/seal-workers', 'Seal workers'],
-                ['lotus/gpu-benchmarking', 'GPU benchmarking'],
+                ['lotus/benchmarks', 'Benchmarks'],
+                ['lotus/gpus', 'Custom GPUs'],
                 //'lotus/disaster-recovery',
                 ['lotus/tips-running-in-china', 'Tips for running in China'],
                 ['lotus/miner-troubleshooting', 'Troubleshooting']
