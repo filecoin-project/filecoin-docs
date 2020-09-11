@@ -23,7 +23,7 @@ These are the minimal requirements to run a Lotus node. [Hardware requirements f
 
 ## Linux
 
-The following instructions are specific to Linux installations. Head to the [macOS](#mac-os) section if you want to install Lotus on a Mac.
+The following instructions are specific to Linux installations. Head to the [macOS](#macos) section if you want to install Lotus on a Mac.
 
 ### Software dependencies
 
