@@ -82,10 +82,6 @@ export default {
               path: '/store/filecoin-pinning-services'
             },
             {
-              title: 'Store data with Slate',
-              path: '/store/slate'
-            },
-            {
               title: 'Lotus user guides',
               path: '/store/lotus'
             },
@@ -125,10 +121,6 @@ export default {
           title: 'Build',
           path: '/build',
           children: [
-            {
-              title: 'The Filecoin ecosystem',
-              path: '/build/the-filecoin-ecosystem/'
-            },
             {
               title: 'Lotus guides for builders',
               path: '/build/lotus'
