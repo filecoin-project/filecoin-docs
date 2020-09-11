@@ -7,3 +7,33 @@ breadcrumb: 'Powergate'
 # {{ $frontmatter.title }}
 
 {{ $frontmatter.description }}
+
+Powergate exposes higher-level APIs for developers that facilitate easier interaction with IPFS and Filecoin nodes. Powergate also handles wallet management, long-term deal management, and provides many features that improve the overall experience of being a storage client on Filecoin.
+
+You can read more about Powergate in the [Textile docs](https://docs.textile.io/powergate/).
+
+Powergate is the **recommended solution** for developers who want an easier interface and better performance from Filecoin, but who prefer to manage their own nodes.
+
+## How to use Powergate
+
+There are many ways to interact with the Powergate. These pathways are well-documented on Textile’s Powergate docs. The high-level pathways are summarized here for a quick reference:
+
+- **Powergate CLI**: You can [install](https://docs.textile.io/powergate/#getting-started), run, and interact directly with the [Powergate CLI](https://docs.textile.io/powergate/cli/pow/).
+- **Powergate JS API**: If you would like to use Powergate in your JS application, you can use the [Powergate JS Client](https://textileio.github.io/js-powergate-client/).
+- **Powergate Go API**: If you would like to use Powergate in your Go application, you can use the [Powergate Go Client](https://godoc.org/github.com/textileio/powergate/api/client).
+
+::: tip
+Sometimes the best way to learn is through examples.
+
+- See a walkthrough of an example application (the Simple Pinning Service) built on the [Powergate JS Client](examples/simple-pinning-service/overview).
+- See a full production application (Slate) built on the [Powergate JS Client](https://github.com/filecoin-project/slate/).
+  :::
+
+## Additional Powergate resources
+
+For a more detailed description of how Powergate works, we recommend reading the following docs:
+
+- [Filecoin Developer Tools](https://blog.textile.io/filecoin-developer-tools-concepts/)
+- [Powergate Introduction](https://docs.textile.io/powergate/)
+- [Storing Data on Powergate through FFS](https://docs.textile.io/powergate/ffs/)
+- [FFS Design Overview](https://github.com/textileio/powergate/blob/master/ffs/Design.md)

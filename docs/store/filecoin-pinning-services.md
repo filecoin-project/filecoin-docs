@@ -13,11 +13,12 @@ Filecoin-backed pinning services are still in early stages. We plan to update th
 
 ## Existing services
 
-| Name                                                |                                                                                                                               |
-| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [Textile Buckets](https://docs.textile.io/buckets/) | A hosted service that allows development teams to build software projects end-to-end on a decentralized DB and storage stack. |
-| **Chainsafe**                                       | Coming soon.                                                                                                                  |
-| [Pinata](https://pinata.cloud)                      | IPFS pinning service, with Filecoin coming soon.                                                                              |
+| Name                                                                                                             |                                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| [Textile Buckets](https://docs.textile.io/buckets/)                                                              | A hosted service that allows development teams to build software projects end-to-end on a decentralized DB and storage stack. |
+| **Chainsafe**                                                                                                    | Coming soon.                                                                                                                  |
+| [Pinata](https://pinata.cloud)                                                                                   | IPFS pinning service, with Filecoin coming soon.                                                                              |
+| [Hosted Powergate](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/) | The Textile team offers hosted [Powergate](../build/powergate.md) instances.                                                  |
 
 ## Key benefits of FPSs
 

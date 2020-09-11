@@ -75,7 +75,8 @@ t0xxxz
 ...
 ```
 
-:::tip
+#### Protocol Labs miners in testnet
+
 In _testnet_ and during Space Race, most community miners will not accept any deals from random clients (they are prioritizing deals from the deal bot).
 
 Protocol Labs runs some miners with client-whitelisting upon request:
@@ -88,8 +89,15 @@ t016306
 t016309
 ```
 
+::: callout
 If you want to use these miners please [fill in this Google form](https://forms.gle/f5Vd5kTNYTKrmj1D8) including information from our daemon (`lotus wallet list` and `lotus net id`). You will be contacted via Slack/email when your Lotus Node has been whitelisted.
 :::
+
+Note that these miners:
+
+- Offer 32GiB sectors only ([about large files](very-large-files.md)).
+- Seal sectors only every 8 hours so the deal become active after 20 hours (8 hours to start sealing + 12 hours to seal).
+- Retrieval is available almost immediately after the deal has been accepted and data transferred to the miner.
 
 ### Find the price and conditions
 

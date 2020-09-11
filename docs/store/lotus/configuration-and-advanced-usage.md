@@ -84,6 +84,14 @@ Variables specific to the _Lotus daemon_:
 - `LOTUS_CHAIN_INDEX_CACHE`: Sets the size for the epoch index cache. Defaults to `32768`. Increase if you perform frequent deep chain lookups for block heights far from the latest height.
 - `LOTUS_BSYNC_MSG_WINDOW`: Sets the initial maximum window size for message fetching blocksync request. Set to 10-20 if you have an internet connection with low bandwidth.
 
+## Controlling a remote daemon
+
+The `lotus` application, as a client to the lotus daemon, can talk to a Lotus daemon running on any location (not just the local one), by setting the following environment variable:
+
+```sh
+FULLNODE_API_INFO="TOKEN:/ip4/<IP>/tcp/<PORT>/http"
+```
+
 ## Log level control
 
 ```sh

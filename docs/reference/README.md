@@ -5,7 +5,7 @@ description: Helpful reference materials for the Filecoin specification and impl
 
 # Reference
 
-Ready to dig deeper into the Filecoin specification and implementations? We've got you covered.
+This section contains links and reference materials for Filecoin.
 
 ## Filecoin specification
 

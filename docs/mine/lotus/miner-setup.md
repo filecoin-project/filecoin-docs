@@ -53,6 +53,12 @@ export FULLNODE_API_INFO=<api_token>:/ip4/<lotus_daemon_ip>/tcp/<lotus_daemon_po
 
 and **make sure the `ListenAddress` has [remote access enabled](../../build/lotus/enable-remote-api-access.md)**.
 
+Similarly, `lotus-miner` (as a client application to the Lotus Miner daemon), can talk to a remote miner by setting:
+
+```sh
+export MINER_API_INFO="TOKEN:/ip4/<IP>/tcp/<PORT>/http"
+```
+
 ### Adding the necessary swap
 
 If you have only 128GiB of RAM, you will need to make sure your system provides at least an extra 256GiB of very fast swap (preferably NVMe SSD) or you will be unable to seal sectors:

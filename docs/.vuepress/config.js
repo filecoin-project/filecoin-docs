@@ -140,7 +140,7 @@ module.exports = {
           ],
 
           '/build/': [
-            'the-filecoin-ecosystem',
+            //'the-filecoin-ecosystem',
             //'textile-buckets',
             'powergate',
             {
@@ -162,6 +162,7 @@ module.exports = {
             'local-devnet',
             {
               title: 'Example apps',
+              path: '/build/examples/',
               sidebarDepth: 2,
               collapsable: false,
               children: [
@@ -170,13 +171,13 @@ module.exports = {
                   path: '/build/examples/simple-pinning-service/overview/',
                   collapsable: true,
                   children: [
-                    '/build/examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
-                    '/build/examples/simple-pinning-service/step-1-powergate-setup',
-                    '/build/examples/simple-pinning-service/step-2-react-app-setup',
-                    '/build/examples/simple-pinning-service/step-3-connecting-powergate-to-app',
-                    '/build/examples/simple-pinning-service/step-4-explore-pinning-service-app',
-                    '/build/examples/simple-pinning-service/step-5-shut-down-the-application',
-                    '/build/examples/simple-pinning-service/summary'
+                    'examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
+                    'examples/simple-pinning-service/step-1-powergate-setup',
+                    'examples/simple-pinning-service/step-2-react-app-setup',
+                    'examples/simple-pinning-service/step-3-connecting-powergate-to-app',
+                    'examples/simple-pinning-service/step-4-explore-pinning-service-app',
+                    'examples/simple-pinning-service/step-5-shut-down-the-application',
+                    'examples/simple-pinning-service/summary'
                   ]
                 },
                 {
@@ -216,7 +217,7 @@ module.exports = {
           '/reference/': [
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
-            ['lotus-api', 'Lotus JSON-RPC API reference']
+            ['lotus-api', 'Lotus JSON-RPC API']
           ],
 
           '/': [
