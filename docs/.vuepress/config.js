@@ -142,6 +142,7 @@ module.exports = {
           '/build/': [
             //'the-filecoin-ecosystem',
             //'textile-buckets',
+            ['onboard-testnet', 'Onboard the testnet'],
             ['filecoin-pinning-services', 'Filecoin-backed pinning services'],
             'powergate',
             {

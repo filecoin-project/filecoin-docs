@@ -19,20 +19,3 @@ For most developers, the easiest path is to rely on a [Filecoin-backed pinning s
 
 Additionally, Protocol Labs offers [hosted Lotus nodes](lotus/hosted-nodes.md).
 :::
-
-## Quickstart to testnet
-
-1. Install [Lotus](../store/lotus/installation.md) or [Powergate](powergate.md).
-2. Wait for the [chain to finish syncing](../store/lotus/installation.md#chain-sync) (use a snapshot for faster sync).
-3. [Create a wallet](../store/lotus/send-and-receive-fil.md).
-4. Request funds from the [faucet](https://spacerace.faucet.glif.io/).
-5. Check your wallet balance until the funds show.
-6. [Make deals with miners](../store/lotus/store-data) (see the note about Protocol Labs miners and how to sign up).
-
-::: tip
-If you need help:
-
-- Join [Filecoin Slack](http://filecoin.io/slack) and post a message in the [#fil-storage-dev channel](https://app.slack.com/client/TEHTVS1L6/CRK2LKYHW).
-- If you haven’t received a message within 24 hours\_, please tag `@pooja` directly in your message thread.
-- If the issue persists or cannot be solved by the support team, please [create an issue in the lotus repo](https://github.com/filecoin-project/lotus/issues/new). Include reproducible steps and any log outputs in the issue itself so we can help debug.
-  :::
