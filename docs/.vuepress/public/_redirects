@@ -11,38 +11,36 @@
 /introduction/ipfs-and-filecoin/ /about-filecoin/ipfs-and-filecoin/
 /introduction/filecoin-compared-to/ /about-filecoin/filecoin-compared-to/
 /introduction/faq/ /about-filecoin/faq/
+
 /how-to/install-filecoin/ /store/lotus/installation/
 /how-to/networks/ /networks/
-/how-to/join-a-network/ /store/lotus/switch-networks/
+/how-to/join-a-network/ /store/lotus//installation/
 /how-to/store/prepare-data/ /store/lotus/store-data/
 /how-to/store/tokens/ /store/lotus/send-and-receive-fil/
-/how-to/store/making-storage-deals/ /mine/lotus/manage-storage-deals/
+/how-to/store/making-storage-deals/ /mine/lotus/storage-data/
 /how-to/store/retrieving-data/ /store/lotus/retrieve-data/
 /how-to/store/large-files/ /store/lotus/very-large-files/
-/community/contribute/ways-to-contribute/ /community/contribute/ways-to-contribute/
-/community/chat-and-discussion-forums/ /community/chat-and-discussion-forums/
-/community/social-media/social-media/ /community/social-media/social-media/
-/community/contribute/grammar-formatting-and-style/ /community/contribute/grammar-formatting-and-style/
-/community/contribute/writing-guide/ /community/contribute/writing-guide/
-/community/contribute/contribution-tutorial/ /community/contribute/contribution-tutorial/
-/mine/storage-mining/ /mine/lotus/miner-setup/
+
+/mine/storage-mining/ /mine/lotus/
 /mine/lotus-seal-worker/ /mine/lotus/seal-workers/
-/mine/setting-a-static-port/ /
+/mine/setting-a-static-port/ /mine/lotus/miner-setup/#miner-initialization
 /mine/connectivity/ /mine/lotus/connectivity/
 /mine/spacerace/ /mine/spacerace/
 /mine/mining-troubleshooting/ /mine/lotus/miner-troubleshooting/
-/build/start-building/ /store/
-/build/start-building/interacting-with-the-network/ /store/
-/build/start-building/deploy-your-application-to-the-filecoin-testnet/ /store/
-/build/start-building/interacting-with-the-network/	/
-/build/start-building/implementations/ /software/
-/build/tools/ /
+
+/build/start-building/ /build/
+/build/start-building/interacting-with-the-network/ /build/
+/build/start-building/deploy-your-application-to-the-filecoin-testnet/ /build/
+/build/start-building/implementations/ /store/
+
+/build/tools/ /build/
 /build/tools/api-clients/ /build/lotus/api-client-libraries/
 /build/tools/filecoin-backed-pinning-services/ /store/filecoin-pinning-services/
 /build/tools/powergate/ /build/powergate/
 /build/tools/signing-libraries/ /build/signing-libraries/
-/build/tools/slate/ /build/the-filecoin-ecosystem/#slate
+/build/tools/slate/ /store/#filecoin-software
 /build/tools/wallets/ /store/lotus/send-and-receive-fil/
+
 /build/core-products/filecoin-backed-pinning-services/ /store/filecoin-pinning-services/
 /build/core-products/powergate/ /build/powergate/
 /build/core-products/protocol-implementations/ /software/
