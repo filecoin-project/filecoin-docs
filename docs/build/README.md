@@ -15,7 +15,7 @@ This section groups documentation to help developers integrate with applications
 - Learn from [example applications](examples/README.md) that teach how you step by step how to build a Filecoin powered application.
 
 ::: tip
-For most developers, the easiest path is to rely on a [Filecoin-backed pinning services (FPS)](../store/filecoin-pinning-services.md), as they do not require running any infrastructure.
+For most developers, the easiest path is to rely on a [Filecoin-backed pinning services (FPS)](filecoin-pinning-services.md), as they do not require running any infrastructure.
 
 Additionally, Protocol Labs offers [hosted Lotus nodes](lotus/hosted-nodes.md).
 :::

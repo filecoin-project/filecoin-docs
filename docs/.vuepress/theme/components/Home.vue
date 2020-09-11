@@ -48,6 +48,10 @@ export default {
               path: '/about-filecoin/what-is-filecoin'
             },
             {
+              title: 'How Filecoin Works',
+              path: '/about-filecoin/how-filecoin-works'
+            },
+            {
               title: 'Why Filecoin?',
               path: '/about-filecoin/why-filecoin'
             },
@@ -73,10 +77,6 @@ export default {
           title: 'Store',
           path: '/store',
           children: [
-            {
-              title: 'How Filecoin Works',
-              path: '/store/how-filecoin-works'
-            },
             {
               title: 'Filecoin-backed pinning services',
               path: '/store/filecoin-pinning-services'

@@ -1,6 +1,6 @@
 ---
 title: 'Filecoin-backed pinning services'
-description: Filecoin-backed pinning service (FPS) services are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin’s decentralized storage network (DSN).
+description: "Filecoin-backed pinning service (FPS) services are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin's decentralized storage network (DSN)."
 ---
 
 # Filecoin-backed pinning services (FPS)

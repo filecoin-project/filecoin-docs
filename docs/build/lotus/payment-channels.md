@@ -10,7 +10,7 @@ breadcrumb: 'Payment channels'
 
 Payment channels are used to transfer funds between two actors.
 
-For example, in Lotus a payment channel is created when a client wants to [fetch data from a provider](../../store/how-filecoin-works.md#deals). The client sends vouchers for the payment channel, and the provider sends data in response. Payment channels and vouchers can be used for any situation in which two parties need to incrementally transfer value between each other off-chain.
+For example, in Lotus a payment channel is created when a client wants to [fetch data from a provider](../../about-filecoin/how-filecoin-works.md#deals). The client sends vouchers for the payment channel, and the provider sends data in response. Payment channels and vouchers can be used for any situation in which two parties need to incrementally transfer value between each other off-chain.
 
 ## Working principles
 

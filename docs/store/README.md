@@ -1,13 +1,13 @@
 ---
-title: Get started on Filecoin
-description: Start storing data on the Filecoin network.
+title: 'Store data on Filecoin'
+description: 'Start storing data on the Filecoin network.'
+breadcrumb: 'Store'
 ---
 
-# Get started on Filecoin
+# Store data on Filecoin
 
 Welcome to the starting point to begin interacting with the Filecoin Network. Content in this section will help you to:
 
-- Understand [how Filecoin works](how-filecoin-works/), what different actors participate in the network and what roles they play.
 - Learn about the different implentations and existing utilities to interact with the Filecoin network and store data in it.
 - Install and run a [Lotus Node](lotus/README.md), using it to manage a Filecoin wallet and to store data on the network.
 

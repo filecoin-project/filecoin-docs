@@ -19,7 +19,7 @@ _Filecoin Nodes_ or _Filecoin clients_ are peers that sync the Filecoin blockcha
 
 Filecoin Nodes can also publish different types of _messages_ to the network by broadcasting them. For example, a client can publish a message to send FIL from one address to a different one. Nodes can propose [storage and retrieval deals](#deals) to Filecoin miners and pay for them as they are executed.
 
-Running a Filecoin Node is a low-level task, that usually implies keeping a program running 24/7. There are several Filecoin Node implementations in the works, with [Lotus](lotus/README.md) being the most advanced.
+Running a Filecoin Node is a low-level task, that usually implies keeping a program running 24/7. There are several Filecoin Node implementations in the works, with [Lotus](../store/lotus/README.md) being the most advanced.
 
 ## Filecoin miners
 

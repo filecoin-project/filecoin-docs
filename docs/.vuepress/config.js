@@ -71,7 +71,6 @@ module.exports = {
           '/networks/': 'auto',
 
           '/store/': [
-            'how-filecoin-works',
             'explore-the-network',
             [
               'https://proto.school/verifying-storage-on-filecoin/',
@@ -96,8 +95,7 @@ module.exports = {
                 ['lotus/configuration-and-advanced-usage', 'Advanced options'],
                 ['lotus/node-troubleshooting', 'Node troubleshooting']
               ]
-            },
-            ['filecoin-pinning-services', 'Filecoin-backed pinning services']
+            }
           ],
 
           '/mine/': [
@@ -144,6 +142,7 @@ module.exports = {
           '/build/': [
             //'the-filecoin-ecosystem',
             //'textile-buckets',
+            ['filecoin-pinning-services', 'Filecoin-backed pinning services'],
             'powergate',
             {
               title: 'LOTUS',
@@ -224,6 +223,7 @@ module.exports = {
 
           '/': [
             '/about-filecoin/what-is-filecoin',
+            '/about-filecoin/how-filecoin-works',
             '/about-filecoin/why-filecoin',
             '/about-filecoin/ipfs-and-filecoin',
             '/about-filecoin/filecoin-compared-to',
