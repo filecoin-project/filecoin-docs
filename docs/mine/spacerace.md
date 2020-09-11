@@ -163,6 +163,18 @@ If you would like to change the default gas fees to accelerate your messages, ed
   MaxWindowPoStGasFee = "50 FIL"
 ```
 
+## Why did my miner power suddenly drop?
+
+Here are some of the common reasons that your power can suddenly drop:
+
+1. Your PoSt messages are blocked by other messages which leads to not submitting PoSt for a deadline/window. To fix this, you can follow this [guide](https://github.com/filecoin-project/lotus/blob/master/documentation/en/mining.md#separate-address-for-windowpost-messages) and setup an separate address just for windowPoSt messages.
+
+2. Your sector data is corrupted and PoSt cannot be generated with bad underlying data. Unfortunately, we currently have no easy way to detect corrupted sectors, and the entire _runPost_ fails even if only one sector is marked as faulty with the current proof APIs. However, the proofs team is working on getting our miners better APIs to mitigate this issue!
+
+3. For smaller miners, when all sectors are put into a single window, missing just one deadline/window wipes out all the power for 24 hours. Power will automatically recover if a valid WindowPoSt is submitted 24 hours later, when the missed deadline reopens. Just make sure that your miner is running and has enough CPU for PoSt.
+
+4. Chain/miner nodes crashed. Run `lotus sync wait` and check the output. If your `Target Height` is not equal to `Height` or status is not `Completed`, that means you are not fully synced.
+
 #### How do I demonstrate a sector upgrade?
 
 To be eligible for Space Race rewards, you will need to demonstrate at least _one_ sector upgrade per miner.
