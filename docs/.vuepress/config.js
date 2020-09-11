@@ -72,7 +72,7 @@ module.exports = {
 
           '/store/': [
             'how-filecoin-works',
-            'explore-the-filecoin-chain',
+            'explore-the-network',
             [
               'https://proto.school/verifying-storage-on-filecoin/',
               'Protoschool tutorial'

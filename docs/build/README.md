@@ -24,7 +24,7 @@ Additionally, Protocol Labs offers [hosted Lotus nodes](lotus/hosted-nodes.md).
 
 1. Install [Lotus](../store/lotus/installation.md) or [Powergate](powergate.md).
 2. Wait for the [chain to finish syncing](../store/lotus/installation.md#chain-sync) (use a snapshot for faster sync).
-3. [Create an wallet](../store/lotus/send-and-receive-fil.md).
+3. [Create a wallet](../store/lotus/send-and-receive-fil.md).
 4. Request funds from the [faucet](https://spacerace.faucet.glif.io/).
 5. Check your wallet balance until the funds show.
 6. [Make deals with miners](../store/lotus/store-data) (see the note about Protocol Labs miners and how to sign up).
