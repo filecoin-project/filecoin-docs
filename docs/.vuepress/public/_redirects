@@ -30,18 +30,18 @@
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
-/build/start-building/deploy-your-application-to-the-filecoin-testnet/ /build/
+/build/start-building/deploy-your-application-to-the-filecoin-testnet/ /build/onboard-testnet/
 /build/start-building/implementations/ /store/
 
 /build/tools/ /build/
 /build/tools/api-clients/ /build/lotus/api-client-libraries/
-/build/tools/filecoin-backed-pinning-services/ /store/filecoin-pinning-services/
+/build/tools/filecoin-backed-pinning-services/ /build/filecoin-pinning-services/
 /build/tools/powergate/ /build/powergate/
 /build/tools/signing-libraries/ /build/signing-libraries/
 /build/tools/slate/ /store/#filecoin-software
 /build/tools/wallets/ /store/lotus/send-and-receive-fil/
 
-/build/core-products/filecoin-backed-pinning-services/ /store/filecoin-pinning-services/
+/build/core-products/filecoin-backed-pinning-services/ /build/filecoin-pinning-services/
 /build/core-products/powergate/ /build/powergate/
 /build/core-products/protocol-implementations/ /software/
 /build/developer-tools/wallets-signing-tools-api-clients/ /build/signing-libraries/
