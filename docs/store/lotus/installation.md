@@ -8,14 +8,16 @@ breadcrumb: 'Installation'
 
 {{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
 
-## Requirements
+[[TOC]]
+
+## Minimal requirements
 
 To run a Lotus node, your computer must have:
 
 - macOS or Linux installed. Windows is not yet supported.
 - a quad-core CPU. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake) will significantly speed things up.
 - 8 GiB RAM
-- Enough space to store the current Lotus chain. The chain grows at approximately 12 GiB per week.
+- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 12 GiB per week.
 
 :::warning
 These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
@@ -36,13 +38,13 @@ Building Lotus requires some system dependencies, usually provided by your distr
 | Linux distribution | Dependency install command                                                                                                                               |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                          |
-| Ubuntu             | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y && sudo apt upgrade -y`                        |
+| Ubuntu/Debian      | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y && sudo apt upgrade -y`                        |
 | Fedora             | `sudo dnf -y update && sudo dnf -y install gcc git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm` |
 | OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`      |
 
 #### Rustup
 
-Lotus needs Rust. The easiest way to install Rust is to use [Rustup](https://rustup.rs).
+Lotus needs [rustup](https://rustup.rs). The easiest way to install it is:
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -54,14 +56,13 @@ Make sure your `$PATH` variable is correctly configured after the rustup install
 
 #### Go
 
-To build Lotus, you need a working installation of [Go 1.14or higher](https://golang.org/dl/). For most operating systems, the installation instructions are:
+To build Lotus, you need a working installation of [Go 1.14 or higher](https://golang.org/dl/):
 
 ```sh
-# Example! Check the installation instructions.
 wget -c https://dl.google.com/go/go1.14.7.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
-If you are running into problems, check the [official Go installation instructions](https://golang.org/doc/install) for your operating system.
+Make sure that `/usr/local/go/bin` is in your `PATH`. If you are running into problems, check the [official Go installation instructions](https://golang.org/doc/install) for your operating system.
 
 ### Build and install Lotus
 
@@ -83,7 +84,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    Currently, the _master_ branch corresponds to **testnet**.
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
-1. If you have an AMD Zen or Intel Ice Lake CPU, enable SHA extensions by adding these two environment variables:
+1. If you have an AMD Zen or Intel Ice Lake CPU (or later), enable the use of SHA extensions by adding these two environment variables:
 
    ```sh
    export RUSTFLAGS="-C target-cpu=native -g"
@@ -199,11 +200,11 @@ The `lotus` application runs as a daemon and a client to control and interact wi
 
 To start the Lotus daemon run:
 
-    ```sh
-    lotus daemon
-    ## When running with systemd do:
-    # systemctl start lotus-daemon
-    ```
+```sh
+lotus daemon
+## When running with systemd do:
+# systemctl start lotus-daemon
+```
 
 During the first run, Lotus will:
 
