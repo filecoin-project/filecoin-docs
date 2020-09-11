@@ -115,6 +115,7 @@ module.exports = {
               children: [
                 ['lotus/miner-setup', 'Miner setup'],
                 ['lotus/miner-configuration', 'Configuration reference'],
+                ['lotus/miner-upgrades', 'Upgrades'],
                 ['lotus/daemon-lifecycle', 'Daemon lifecycle'],
                 ['lotus/manage-storage-deals', 'Manage storage deals'],
                 ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],

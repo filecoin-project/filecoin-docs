@@ -53,3 +53,11 @@ Deadline Close:       718 (in 1h50m30s)
 Deadline Challenge:   638 (in 1h10m30s)
 Deadline FaultCutoff: 588 (in 45m30s)
 ```
+
+Once you have verified that your miner is safe to shutdown you can run:
+
+```sh
+lotus-miner stop
+# when using systemd run:
+# systemctl stop lotus-miner
+```

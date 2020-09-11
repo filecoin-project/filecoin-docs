@@ -10,14 +10,14 @@ breadcrumb: 'Upgrades'
 
 ## Installing an update
 
-Usually, if you are updating Lotus, it as simple as rebuilding and re-installing the software as [explained in the previous section](installation.md), after pulling the latest state for the chosen branch and repository:
+Usually, if you are updating Lotus, it as simple as rebuilding and re-installing the software after pulling the latest state for the chosen branch and repository. You can do that with:
 
 ```sh
-git fetch origin
-git checkout <branch or release>
-## If you had the repository around and are on a branch
-# git pull origin <branch>
+git pull
+git checkout <branch or tag>
 ```
+
+Once the new version is checked-out, rebuild and re-installas [explained in the installation guide](installation.md)in the guide.
 
 You can verify your current version with:
 
