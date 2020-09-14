@@ -5,11 +5,46 @@
 /questions.html https://go.filecoin.io/questions.html
 /go-filecoin-tutorial/*  https://go.filecoin.io/go-filecoin-tutorial/:splat
 
-# /build/tools
-/build/core-products/filecoin-backed-pinning-services/ /build/tools/filecoin-backed-pinning-services/
-/build/core-products/powergate/ /build/tools/powergate/
-/build/core-products/protocol-implementations/ /build/start-building/implementations/
-/build/developer-tools/wallets-signing-tools-api-clients/ /build/tools/
+/introduction/ /
+/introduction/what-is-filecoin/ /about-filecoin/what-is-filecoin/
+/introduction/why-filecoin/ /about-filecoin/why-filecoin/
+/introduction/ipfs-and-filecoin/ /about-filecoin/ipfs-and-filecoin/
+/introduction/filecoin-compared-to/ /about-filecoin/filecoin-compared-to/
+/introduction/faq/ /about-filecoin/faq/
+
+/how-to/install-filecoin/ /get-started/lotus/installation/
+/how-to/networks/ /networks/
+/how-to/join-a-network/ /get-started/lotus/installation/
+/how-to/store/prepare-data/ /store/lotus/store-data/
+/how-to/store/tokens/ /get-started/lotus/send-and-receive-fil/
+/how-to/store/making-storage-deals/ /mine/lotus/storage-data/
+/how-to/store/retrieving-data/ /store/lotus/retrieve-data/
+/how-to/store/large-files/ /store/lotus/very-large-files/
+
+/mine/storage-mining/ /mine/lotus/
+/mine/lotus-seal-worker/ /mine/lotus/seal-workers/
+/mine/setting-a-static-port/ /mine/lotus/miner-setup/#miner-initialization
+/mine/connectivity/ /mine/lotus/connectivity/
+/mine/spacerace/ /mine/spacerace/
+/mine/mining-troubleshooting/ /mine/lotus/miner-troubleshooting/
+
+/build/start-building/ /build/
+/build/start-building/interacting-with-the-network/ /build/
+/build/start-building/deploy-your-application-to-the-filecoin-testnet/ /build/onboard-testnet/
+/build/start-building/implementations/ /get-started/
+
+/build/tools/ /build/
+/build/tools/api-clients/ /build/lotus/api-client-libraries/
+/build/tools/filecoin-backed-pinning-services/ /build/filecoin-pinning-services/
+/build/tools/powergate/ /build/powergate/
+/build/tools/signing-libraries/ /build/signing-libraries/
+/build/tools/slate/ /store/#filecoin-software
+/build/tools/wallets/ /store/lotus/send-and-receive-fil/
+
+/build/core-products/filecoin-backed-pinning-services/ /build/filecoin-pinning-services/
+/build/core-products/powergate/ /build/powergate/
+/build/core-products/protocol-implementations/ /software/
+/build/developer-tools/wallets-signing-tools-api-clients/ /build/signing-libraries/
 
 # use a custom 404 for any pages that are not rendered
 /* /404/index.html 404

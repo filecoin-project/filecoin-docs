@@ -1,13 +1,12 @@
 ---
-title: Space Race
-description: An overview of the 'Space Race', the Filecoin testnet incentive program.
+title: 'The Filecoin Space Race'
+description: "The testnet incentives program (also known as the 'Space Race') is a collaborative competition intended to stress-test the network, encourage participation all over the world, and help miners get ready to run the world's biggest decentralized storage network."
+breadcrumb: 'Space Race'
 ---
 
-# The Filecoin Space Race
+# {{ $frontmatter.title }}
 
-The testnet incentives program (also known as the 'Space Race') is a collaborative competition intended to stress-test the network, encourage participation all over the world, and help miners get ready to run the world’s biggest decentralized storage network.
-
-## Structure and rules
+{{ $frontmatter.description }}
 
 The competition’s basic structure is simple: for three weeks, miners will compete to onboard as much storage capacity as possible to the network. The top 100 miners globally, as well as the top 50 miners from each continent, will earn Filecoin rewards based on how much storage they and the network achieve during the test period.
 
@@ -16,7 +15,6 @@ A miner’s “location,” for regional leaderboards, is the physical location 
 ## How do I participate?
 
 **The competition period will begin Monday, August 24th at 22:00 UTC** and is open for 3 weeks, ending Monday, September 14th at 21:59 UTC. To participate in the competition, run 1 or more miners on the [Testnet](https://docs.filecoin.io/how-to/networks/#testnet). You can track your progress on the [Space Race Competition Dashboard](https://spacerace.filecoin.io/).
-
 
 You'll also need to complete these steps to be eligible for rewards:
 
@@ -171,12 +169,12 @@ Here are some of the common reasons that your power can suddenly drop:
 
 1. Your PoSt messages are blocked by other messages which leads to not submitting PoSt for a deadline/window. To fix this, you can follow this [guide](https://github.com/filecoin-project/lotus/blob/master/documentation/en/mining.md#separate-address-for-windowpost-messages) and setup an separate address just for windowPoSt messages.
 
-2. Your sector data is corrupted and PoSt cannot be generated with bad underlying data. Unfortunately, we currently have no easy way to detect corrupted sectors, and the entire *runPost* fails even if only one sector is marked as faulty with the current proof APIs. However, the proofs team is working on getting our miners better APIs to mitigate this issue!
+2. Your sector data is corrupted and PoSt cannot be generated with bad underlying data. Unfortunately, we currently have no easy way to detect corrupted sectors, and the entire _runPost_ fails even if only one sector is marked as faulty with the current proof APIs. However, the proofs team is working on getting our miners better APIs to mitigate this issue!
 
 3. For smaller miners, when all sectors are put into a single window, missing just one deadline/window wipes out all the power for 24 hours. Power will automatically recover if a valid WindowPoSt is submitted 24 hours later, when the missed deadline reopens. Just make sure that your miner is running and has enough CPU for PoSt.
 
 4. Chain/miner nodes crashed. Run `lotus sync wait` and check the output. If your `Target Height` is not equal to `Height` or status is not `Completed`, that means you are not fully synced.
-   
+
 #### How do I demonstrate a sector upgrade?
 
 To be eligible for Space Race rewards, you will need to demonstrate at least _one_ sector upgrade per miner.
@@ -215,7 +213,6 @@ Deals can fail due to various reasons. To see the deal logs for your miner, go t
 #### My sector is stuck in X stage. How can I remove it?
 
 In lotus v0.5.6 and later, you can remove a sector by running `lotus-miner sectors remove --really-do-it <sector id>`. Warning: This will cause you to lose all power and collateral for the removed sector.
-
 
 #### Why is my miner receiving any deals?
 
