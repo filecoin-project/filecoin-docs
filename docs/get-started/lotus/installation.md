@@ -1,7 +1,7 @@
 ---
-title: 'Lotus: installation'
+title: 'Lotus: install and setup'
 description: 'This guide covers how to install the Lotus applications and launch a Lotus Node.'
-breadcrumb: 'Installation'
+breadcrumb: 'Install and setup'
 ---
 
 # {{ $frontmatter.title }}

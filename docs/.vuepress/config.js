@@ -82,7 +82,7 @@ module.exports = {
               sidebarDepth: 2,
               collapsable: false,
               children: [
-                ['lotus/installation', 'Installation'],
+                ['lotus/installation', 'Install + Setup'],
                 ['lotus/switch-networks', 'Switch networks'],
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],

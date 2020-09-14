@@ -40,8 +40,8 @@ export default {
     return {
       manualSidebar: [
         {
-          title: 'About',
-          path: '/about-filecoin',
+          title: 'Get Started',
+          path: '/get-started',
           children: [
             {
               title: 'What is Filecoin?',
@@ -52,16 +52,12 @@ export default {
               path: '/about-filecoin/how-filecoin-works'
             },
             {
-              title: 'Why Filecoin?',
-              path: '/about-filecoin/why-filecoin'
+              title: 'Lotus installation and setup',
+              path: '/get-started/lotus/installation.md'
             },
             {
-              title: 'IPFS and Filecoin',
-              path: '/about-filecoin/ipfs-and-filecoin'
-            },
-            {
-              title: 'Filecoin compared to...',
-              path: '/about-filecoin/filecoin-compared-to'
+              title: 'Lotus wallets',
+              path: '/get-started/lotus/send-and-receive-fil.md'
             },
             {
               title: 'Filecoin FAQ',
@@ -78,20 +74,20 @@ export default {
           path: '/store',
           children: [
             {
-              title: 'Filecoin-backed pinning services',
-              path: '/store/filecoin-pinning-services'
-            },
-            {
-              title: 'Lotus user guides',
-              path: '/store/lotus'
-            },
-            {
-              title: 'Lotus installation',
-              path: '/store/lotus/installation'
-            },
-            {
               title: 'Store data with Lotus',
               path: '/store/lotus/store-data'
+            },
+            {
+              title: 'Very large files',
+              path: '/store/lotus/very-large-files'
+            },
+            {
+              title: 'Retrieve data with Lotus',
+              path: '/store/lotus/retrieve-data'
+            },
+            {
+              title: 'Import data from IPFS',
+              path: '/store/lotus/import-data-from-ipfs'
             }
           ]
         },
@@ -114,13 +110,26 @@ export default {
             {
               title: 'Lotus miner setup',
               path: '/mine/lotus/miner-setup'
-            }
+            },
+            {
+              title: 'Configuration reference',
+              path: '/mine/lotus/miner-configuration'
+            },
+            { title: 'Seal workers', path: '/mine/lotus/seal-workers' }
           ]
         },
         {
           title: 'Build',
           path: '/build',
           children: [
+            {
+              title: 'Onboard the testnet',
+              path: '/build/onboard-the-testnet'
+            },
+            {
+              title: 'Filecoin-backed pinning services',
+              path: '/build/filecoin-pinning-services'
+            },
             {
               title: 'Lotus guides for builders',
               path: '/build/lotus'
