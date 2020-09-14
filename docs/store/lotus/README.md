@@ -1,31 +1,21 @@
 ---
 title: Lotus
-description: Lotus is a Filecoin implementation written by Protocol Labs, the creators of IPFS, libp2p, and Filecoin.
+description: Lotus is a full-featured client capable of performing storage and retrieval deals on the Filecoin Network.
 ---
 
 # Lotus
 
-{{ $frontmatter.description }}
+{{ $frontmatter.description }}.
 
-It is written in [Go](https://golang.org) and it is actually a suite of command-line applications:
+This section covers how to make and manage deals using Lotus. In order to use this functionality, you will need to have [installed Lotus](../../get-started/lotus/installation.md) and keep it running in the background as a daemon. For more information about how to install and operate with Lotus check the [Get Started section](../../get-started/lotus/README.md).
 
-- Lotus Node (`lotus`): a Filecoin Node: validates network transactions, manages a FIL wallet, can perform storage and retrieval deals.
-- Lotus Miner (`lotus-miner`): a Filecoin miner. See the the respective [Lotus Miner](../../mine/lotus/) section in the [Mine](../../mine/) documentation.
-- Lotus Worker (`lotus-worker`): a worker that assists miners to perform mining-related tasks. See its respective [guide](../../mine/lotus/seal-workers) for more information.
+## Store data with Lotus
 
-While the installation instructions are common to all three, this section contains guides to interact with the **Lotus Node** only. Additional documentation is available for [miners](../../mine/lotus/) and [developers](../../build/lotus/).
+Learn how to:
 
-::: warning
-Lotus is a command line application that **works on Linux and MacOS only**, and needs to be **built from source**. Users should be familiar with how command-line applications work.
-:::
-
-## Getting started with Lotus
-
-These are the main guides to switfly get started with Lotus:
-
-- [Install and launch a Lotus node](installation/)
-- [Create a wallet and send or receive FIL to your address](send-and-receive-fil/)
-- [Perform an storage deal and store some data in the network](store-data/)
-- [Perform a retrieval deal and obtain some data from the network](retrieve-data/)
+- [Perform an storage deal and store some data in the network](store-data.md)
+- [Manage very large files](very-large-files.md)
+- [Import data from IPFS](import-data-from-ipfs.md)
+- [Perform a retrieval deal and obtain some data from the network](retrieve-data.md)
 
 Please check the side menu for additional guides!

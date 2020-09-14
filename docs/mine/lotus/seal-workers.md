@@ -14,7 +14,7 @@ The sealing process automatically runs in the **Lotus Miner** process, but you c
 
 ## Installation
 
-The `lotus-worker` application should have been built and installed along with the others when following the [installation guide](../../store/lotus/installation.md). For simplicity, we recommend following the same procedure in the machines that will run the Lotus Workers (even if the Lotus miner and the Lotus daemon are not used there).
+The `lotus-worker` application should have been built and installed along with the others when following the [installation guide](../../get-started/lotus/installation.md). For simplicity, we recommend following the same procedure in the machines that will run the Lotus Workers (even if the Lotus miner and the Lotus daemon are not used there).
 
 ## Setting up the Miner
 

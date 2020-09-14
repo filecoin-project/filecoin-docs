@@ -12,7 +12,7 @@ Lotus comes with a [benchmarking tool](https://github.com/filecoin-project/lotus
 
 ## Installation
 
-Run the following command in the Lotus repository folder (that you checked out during the [installation](../../store/lotus/installation.md):
+Run the following command in the Lotus repository folder (that you checked out during the [installation](../../get-started/lotus/installation.md):
 
 ```
 make lotus-bench

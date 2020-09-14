@@ -17,7 +17,7 @@ The are two types of upgrades. The _upgrade in-place_ is the default procedure a
 1. Safely shutdown your Lotus Miner as explained [here](daemon-lifecycle.md).
 1. Shutdown any seal workers
 1. Shutdown your Lotus Node (`lotus daemon stop` or `systemctl stop lotus-daemon`)
-1. Pull the new version and rebuild. For more information read the [Lotus installation guide](../../store/lotus/installation.md) again:
+1. Pull the new version and rebuild. For more information read the [Lotus installation guide](../../get-started/lotus/installation.md) again:
 
 ```sh
 export RUSTFLAGS="-C target-cpu=native -g"
@@ -58,9 +58,9 @@ lotus-worker run
 This upgrade procedure should only be used as a last resort or when the chain has been upgraded and requires such action to be taken.
 :::
 
-It is similar to re-installing everything from scratch, so you can follow the usual [installation](../../store/lotus/installation.md) and [miner-setup](miner-setup.md) guides after it. Before you do this, consider:
+It is similar to re-installing everything from scratch, so you can follow the usual [installation](../../get-started/lotus/installation.md) and [miner-setup](miner-setup.md) guides after it. Before you do this, consider:
 
-- [Backing up your Lotus wallets](../../store/lotus/send-and-receive-fil/#exporting-and-importing-a-wallet)
+- [Backing up your Lotus wallets](../../get-started/lotus/send-and-receive-fil/#exporting-and-importing-a-wallet)
 - You may want to backup your Lotus Node and Miner configurations as well.
 
 Once you are ready, stop everything and delete the data folders (or rename them):

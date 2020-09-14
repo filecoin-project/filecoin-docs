@@ -29,7 +29,7 @@ The [Filecoin Network Dashboard](https://network.filecoin.io/) lists current exi
 
 Instructions on how to join each of these networks depends on the software that you are using:
 
-- [Instructions for Lotus](/store/lotus/switch-networks)
+- [Instructions for Lotus](/get-started/lotus/switch-networks)
 
 ---
 

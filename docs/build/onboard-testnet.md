@@ -1,7 +1,7 @@
 ---
-title: 'Onboard the testnet'
+title: 'Onboard to testnet'
 description: "This guide shows you how start storing your application's data on the Filecoin testnet."
-breadcrumb: 'Onboard the testnet'
+breadcrumb: 'Onboard to testnet'
 ---
 
 # {{ $frontmatter.title }}
@@ -26,7 +26,7 @@ The high-level steps required to join the testnet are:
 
 ### (1) Install lotus or Powergate
 
-For Lotus follow [these instructions](../store/lotus/installation.md) closely.
+For Lotus follow [these instructions](../get-started/lotus/installation.md) closely.
 
 For Powergate check the [Textile documentation](https://docs.textile.io/powergate/).
 
@@ -41,18 +41,18 @@ While the current installation instructions say to use a machine with 8GB memory
 Our teammates have also had success running `m5ad.2xlarge` instances on AWS. In order to significantly boost the initial chain sync speed, make sure to keep `~/.lotus` on a fast drive (ideally a SSD -- nvme is best!) and consider temporarily applying the patch listed in [this issue comment](https://github.com/filecoin-project/lotus/issues/3263#issue-684587473).
 
 :::tip
-Make sure you start your Lotus daemon using the latest Filecoin chain state export as explain in the [chain sync section](../store/lotus/installation/#chain-sync)
+Make sure you start your Lotus daemon using the latest Filecoin chain state export as explain in the [chain sync section](../get-started/lotus/installation.md#chain-sync)
 :::
 
 ### (2) Use the chain snapshot and wait for the chain to be fully synced
 
-Make sure you start your Lotus daemon using the latest Filecoin chain state export as explain in the [chain sync section](../store/lotus/installation/#chain-sync).
+Make sure you start your Lotus daemon using the latest Filecoin chain state export as explain in the [chain sync section](../get-started/lotus/installation.md#chain-sync).
 
 Wait until the syncing process completes.
 
 ### (3) Create your first wallet address
 
-Generate a new wallet address as [explained here](../store/lotus/send-and-receive-fil.md). Remember it for future steps.
+Generate a new wallet address as [explained here](../get-started/lotus/send-and-receive-fil.md). Remember it for future steps.
 
 ### (4) Request funds from the testnet faucet
 

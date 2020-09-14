@@ -70,7 +70,7 @@ module.exports = {
           //'/software/': 'auto',
           '/networks/': 'auto',
 
-          '/store/': [
+          '/get-started/': [
             'explore-the-network',
             [
               'https://proto.school/verifying-storage-on-filecoin/',
@@ -78,7 +78,7 @@ module.exports = {
             ],
             {
               title: 'LOTUS',
-              path: '/store/lotus/',
+              path: '/get-started/lotus/',
               sidebarDepth: 2,
               collapsable: false,
               children: [
@@ -86,14 +86,26 @@ module.exports = {
                 ['lotus/switch-networks', 'Switch networks'],
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
+                ['lotus/tips-running-in-china', 'Tips when running in China'],
+                ['lotus/chain-snapshots', 'Chain snapshots'],
+                ['lotus/configuration-and-advanced-usage', 'Advanced options'],
+                ['lotus/troubleshooting', 'Troubleshooting']
+              ]
+            }
+          ],
+
+          '/store/': [
+            {
+              title: 'LOTUS',
+              path: '/store/lotus/',
+              sidebarDepth: 2,
+              collapsable: false,
+              children: [
                 ['lotus/store-data', 'Store data'],
                 ['lotus/very-large-files', 'Very large files'],
                 ['lotus/retrieve-data', 'Retrieve data'],
                 ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
-                ['lotus/tips-running-in-china', 'Tips when running in China'],
-                ['lotus/chain-snapshots', 'Chain snapshots'],
-                ['lotus/configuration-and-advanced-usage', 'Advanced options'],
-                ['lotus/node-troubleshooting', 'Node troubleshooting']
+                ['lotus/store-troubleshooting', 'Troubleshooting']
               ]
             }
           ],
@@ -142,7 +154,7 @@ module.exports = {
           '/build/': [
             //'the-filecoin-ecosystem',
             //'textile-buckets',
-            ['onboard-testnet', 'Onboard the testnet'],
+            ['onboard-testnet', 'Onboard to testnet'],
             ['filecoin-pinning-services', 'Filecoin-backed pinning services'],
             'powergate',
             {

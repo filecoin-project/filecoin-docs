@@ -17,7 +17,7 @@ Lotus Mining for _testnet_ and _mainnet_ has stringent minimal **[hardware requi
 
 The following guides are essential starting points for those willing to launch a Lotus miner:
 
-- Miner installation is covered in the [Installation guide](../../store/lotus/installation.md) along with that of the Lotus Node. Once installation is completed all three application (node, miner and worker) should be installed.
+- Miner installation is covered in the [Installation guide](../../get-started/lotus/installation.md) along with that of the Lotus Node. Once installation is completed all three application (node, miner and worker) should be installed.
 - The [Miner setup](miner-setup.md) covers all the details to configure your miner to achieve the maximum performance and avoid common pitfalls.
 - The [Configuration reference](miner-configuration.md) explains what the different miner configuration options mean.
 - The [Seal workers](seal-workers.md) guide covers how to run additional seal workers co-located or not with the Lotus Miner.

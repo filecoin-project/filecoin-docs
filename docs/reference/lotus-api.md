@@ -20,7 +20,7 @@ The API can be accessed on:
 - `ws://[api:port]/rpc/v0` - Websocket RPC-API endpoint
 - `http://[api:port]/rest/v0/import` (PUT only) - REST endpoint for file import (multipart upload). It requires write permissions.
 
-The _Lotus Node_ configures its listen interface and port in its [configuration](../store/lotus/configuration-and-advanced-usage) and the _Lotus Miner_ [own config file](../mine/lotus/miner-configuration).
+The _Lotus Node_ configures its listen interface and port in its [configuration](../get-started/lotus/configuration-and-advanced-usage) and the _Lotus Miner_ [own config file](../mine/lotus/miner-configuration).
 
 ## Methods
 

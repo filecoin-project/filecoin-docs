@@ -19,7 +19,7 @@ Mining will only work if you fully cover the [minimal hardware requirements](../
 Before attempting to follow this guide:
 
 - Make sure you meet the [minimal hardware requirements](../hardware-requirements.md).
-- Make sure you have followed the instructions to [install the Lotus suite](../../store/lotus/installation.md) and make sure you have built Lotus with ["Native Filecoin FFI"](../../store/lotus/installation.md#native-filecoin-ffi). Once the installation is complete, `lotus`, `lotus-miner` and `lotus-worker` will be installed.
+- Make sure you have followed the instructions to [install the Lotus suite](../../get-started/lotus/installation.md) and make sure you have built Lotus with ["Native Filecoin FFI"](../../get-started/lotus/installation.md#native-filecoin-ffi). Once the installation is complete, `lotus`, `lotus-miner` and `lotus-worker` will be installed.
 - Make sure your Lotus Node is running as the miner will communicate with it and cannot work otherwise.
 - If you are in China, read the [tips for running in China](tips-running-in-china.md) page first.
 
@@ -85,10 +85,10 @@ You will need a BLS wallet (`t3...`) for mining. To create it, if you don't have
 lotus wallet new bls
 ```
 
-Next make sure to [send some funds](../../store/lotus/send-and-receive-fil.md) to this address so that the miner setup can be completed.
+Next make sure to [send some funds](../../get-started/lotus/send-and-receive-fil.md) to this address so that the miner setup can be completed.
 
 ::: tip
-Safely [backup your wallets](../../store/lotus/send-and-receive-fil.md#exporting-and-importing-a-wallet)!
+Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-a-wallet)!
 :::
 
 ## Miner initialization
