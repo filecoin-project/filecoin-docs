@@ -28,7 +28,7 @@ Set `ListenAddress` and `RemoteListenAddress` to the IP of a non-local interface
 lotus-miner auth api-info --perm admin
 ```
 
-The Lotus Workers will need this token to connect to the miner. For more info check the [API docs](../../build/lotus/api-token-generation).
+The Lotus Workers will need this token to connect to the miner. For more info check the [API docs](../../build/lotus/api-token-generation.md).
 
 ### Connect the Lotus Workers
 

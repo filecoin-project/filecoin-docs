@@ -34,7 +34,7 @@ You can either make a backup of those folders or set their respective environmen
 
 Find which Lotus branch or release corresponds to the desired network in the [Networks dashboard](https://networks.filecoin.io).
 
-Follow the [installation instructions](installation) and install lotus from the right branch/release. To check it out with git you have to run:
+Follow the [installation instructions](./installation.md) and install lotus from the right branch/release. To check it out with git you have to run:
 
 ```sh
 git checkout <branch or release>

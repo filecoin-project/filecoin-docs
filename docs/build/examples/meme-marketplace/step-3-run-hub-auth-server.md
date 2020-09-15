@@ -17,7 +17,7 @@ Before starting the setup for the authentication server, you need to create API 
 To do that, you’ll need:
 
 - [An account](https://docs.textile.io/hub/accounts/). This is your developer account on the Hub.
-- [A user group key](https://docs.textile.io/hub/app-apis/). This is how your users will be able to access your Hub APIs. Consider creating the key in an organization, not as your personal account, so that you can invite collaborators later. You only need to create one _user group key_ for all the users of your app.
+- [A user group key](https://docs.textile.io/hub/apis/). This is how your users will be able to access your Hub APIs. Consider creating the key in an organization, not as your personal account, so that you can invite collaborators later. You only need to create one _user group key_ for all the users of your app.
 - [Typescript](https://webpack.js.org/guides/typescript/). The server is written in typescript.
 
 Once you have set up these resources, you can start the server. The directions below walk you through this process.

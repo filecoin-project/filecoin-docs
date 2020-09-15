@@ -300,7 +300,7 @@ Here we import multiple modules:
   - `ws` on Node
   - `global.WebSocket` in browsers
 - [`koa`](https://www.npmjs.com/package/koa): Expressive HTTP middleware framework for node.js to make web applications and APIs.
-- [`koa-WebSocket`](https://www.npmjs.com/package/koa-WebSocket): Light wrapper around Koa providing a WebSocket middleware handler that is koa-route compatible.
+- [`koa-WebSocket`](https://www.npmjs.com/package/koa-websocket): Light wrapper around Koa providing a WebSocket middleware handler that is koa-route compatible.
 - [`dotenv`](https://www.npmjs.com/package/dotenv): Dotenv is a zero-dependency module that loads environment variables from a _.env_ file into `process.env`.
 
 You can install these modules using the Node Package Manager (NPM):
