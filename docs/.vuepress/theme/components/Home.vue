@@ -53,15 +53,15 @@ export default {
             },
             {
               title: 'Lotus installation and setup',
-              path: '/get-started/lotus/installation.md'
+              path: '/get-started/lotus/installation'
             },
             {
               title: 'Lotus wallets',
-              path: '/get-started/lotus/send-and-receive-fil.md'
+              path: '/get-started/lotus/send-and-receive-fil'
             },
             {
               title: 'Filecoin FAQ',
-              path: '/about-filecion/faq'
+              path: '/about-filecoin/faq'
             },
             {
               title: 'Glossary',
@@ -124,7 +124,7 @@ export default {
           children: [
             {
               title: 'Onboard the testnet',
-              path: '/build/onboard-the-testnet'
+              path: '/build/onboard-testnet'
             },
             {
               title: 'Filecoin-backed pinning services',
