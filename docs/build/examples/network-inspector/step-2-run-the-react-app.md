@@ -27,7 +27,7 @@ npm ci
 npm start
 ```
 
-This starts the Filecoin network inspector app and opens the application in your browser at [https://localhost:3000](https://localhost:3000).
+This starts the Filecoin network inspector app and opens the application in your browser at `localhost:3000`.
 
 ![Image of the Filecoin Network Inspector application](./images/network-inspector-app.png)
 

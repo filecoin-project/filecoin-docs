@@ -245,7 +245,7 @@ addFileToBucket = async (path, content) => {
 }
 ```
 
-The `awardMemeToken` function discussed in [Step 5](./step-5-connecting-app-with-blockchain.md/#step-5d-sending-transaction-to-register-memes-on-blockchain) registers a meme on the contract. `awardMemeToken` takes:
+The `awardMemeToken` function discussed in [Step 5](./step-5-connecting-app-with-blockchain/#step-5d-sending-transaction-to-register-memes-on-blockchain) registers a meme on the contract. `awardMemeToken` takes:
 
 - `address`: The address of the owner of the NFT token.
 - `${name},${price},${result.path.path}`: This is the `tokenMetadata` which is a comma-separated string containing the details of the meme, such as, `name`, `price`, and CID (`result.path.path`) of the uploaded meme.
@@ -271,7 +271,7 @@ Here is a screenshot of the marketplace page:
 
 **1. Retrieve the meme data back from blockchain**: In [marketplace/src/redux/actions/hub.js](https://github.com/filecoin-shipyard/meme-marketplace/blob/master/marketplace/src/redux/actions/hub.js#L416), `getMemeTokenList`:
 
-- Fetches the total count (`totalSupply`) of the registered memes using `getTotalSupply` function discussed in [Step 5](./step-5-connecting-app-with-blockchain.md/#step-5e-sending-calls-to-fetch-meme-details-form-the-blockchain).
+- Fetches the total count (`totalSupply`) of the registered memes using `getTotalSupply` function discussed in [Step 5](./step-5-connecting-app-with-blockchain/#step-5e-sending-calls-to-fetch-meme-details-form-the-blockchain).
 - Creates arrays of promises `metadataPromiseArr`, `ownerPromiseArr`, and uses `Promise.all` to resolve all the promises. The `memesTokenList` is an array of comma-separated `tokenMetadata` (as discusses above). The `memesOwnerList` is an array of the owners of the NFT tokens.
 - Maps the data from `memesTokenList` and `memesOwnerList` into a single array containing information like `name`, `price`, `path`, and `owner` for each meme.
 

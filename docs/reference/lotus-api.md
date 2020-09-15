@@ -20,11 +20,11 @@ The API can be accessed on:
 - `ws://[api:port]/rpc/v0` - Websocket RPC-API endpoint
 - `http://[api:port]/rest/v0/import` (PUT only) - REST endpoint for file import (multipart upload). It requires write permissions.
 
-The _Lotus Node_ configures its listen interface and port in its [configuration](../get-started/lotus/configuration-and-advanced-usage) and the _Lotus Miner_ [own config file](../mine/lotus/miner-configuration).
+The _Lotus Node_ configures its listen interface and port in its [configuration](../get-started/lotus/configuration-and-advanced-usage.md) and the _Lotus Miner_ [own config file](../mine/lotus/miner-configuration.md).
 
 ## Methods
 
-The [JSON-RPC](https://www.jsonrpc.org/specification) API matches directly the methods defined in the _Lotus API package_ ([link to the Go documentation](https://github.com/filecoin-project/lotus/api). This is the best place to discover what methods and types exist for the Lotus and the Lotus Miner APIs. For information on how to jump from a Go method definition to the JSON-RPC method see cURL examples below.
+The [JSON-RPC](https://www.jsonrpc.org/specification) API matches directly the methods defined in the _Lotus API package_ ([link to the Go documentation](https://github.com/filecoin-project/lotus/blob/master/documentation/en/api.md). This is the best place to discover what methods and types exist for the Lotus and the Lotus Miner APIs. For information on how to jump from a Go method definition to the JSON-RPC method see cURL examples below.
 
 ### Common methods
 
@@ -46,9 +46,9 @@ The following methods are specific to the Lotus Miner API:
 
 ## API client libraries
 
-Read the [Lotus client libraries page](../build/lotus/api-client-libraries) for an overview of existing clients.
+Read the [Lotus client libraries page](../build/lotus/api-client-libraries.md) for an overview of existing clients.
 
-Lotus uses its own Go library implementation of [JSON-RPC](https://github.com/filecoin-project/go-jsonrpc). An example on how to use the client side of it is available [here](../build/lotus/go-json-rpc).
+Lotus uses its own Go library implementation of [JSON-RPC](https://github.com/filecoin-project/go-jsonrpc). An example on how to use the client side of it is available [here](../build/lotus/go-json-rpc.md).
 
 ## cURL examples
 

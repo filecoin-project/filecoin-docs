@@ -24,7 +24,7 @@ For example, in Lotus a payment channel is created when a client wants to [fetch
 
 ## CLI example
 
-For quick understanding, we can use the Lotus CLI to show how payment channels work. The Lotus CLI is a client to the Lotus daemon, and therefore each command run here corresponds to an [API call](../../reference/lotus-api) to Lotus.
+For quick understanding, we can use the Lotus CLI to show how payment channels work. The Lotus CLI is a client to the Lotus daemon, and therefore each command run here corresponds to an [API call](../../reference/lotus-api.md) to Lotus.
 
 A client creates a payment channel to a provider with value 10 FIL:
 
