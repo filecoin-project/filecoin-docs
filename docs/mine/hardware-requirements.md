@@ -19,7 +19,7 @@ Minimal sector sizes for testnet is 32GB. The minimal requirements are as follow
 - The Lotus node may or may not run in the same machine as the miner, but it should also have enough storage to hold the Filecoin chain, which grows at a rate of 12GiB per week.
 
 ::: warning
-Mixing AMD and NVidia GPUs in the same machine is known to cause issues with OpenCL and should be avoided.
+Mixing AMD and Nvidia GPUs in the same machine is known to cause issues with OpenCL and should be avoided.
 :::
 
 ## About hardware requirements
