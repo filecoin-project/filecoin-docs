@@ -126,7 +126,7 @@ module.exports = {
                 ['lotus/miner-setup', 'Miner setup'],
                 ['lotus/miner-configuration', 'Configuration reference'],
                 ['lotus/miner-upgrades', 'Upgrades'],
-                ['lotus/daemon-lifecycle', 'Daemon lifecycle'],
+                ['lotus/miner-lifecycle', 'Miner lifecycle'],
                 ['lotus/manage-storage-deals', 'Manage storage deals'],
                 ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
                 ['lotus/custom-storage-layout', 'Custom storage layout'],
