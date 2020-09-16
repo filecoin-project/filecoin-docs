@@ -132,38 +132,3 @@ Error: Callback was already called.
 ```
 
 This project is not compatible with Node v14. Try rolling back to Node v12.
-
-### Truffle is currently using solc 0.5.16, but one or more of your contracts specify "pragma solidity ^0.6.0"
-
-If you see the following error
-
-```
-Compiling your contracts...
-===========================
-> Compiling ./contracts/MemeMarketplace.sol
-> Compiling ./contracts/Migrations.sol
-> Compiling ./node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol
-> Compiling ./node_modules/@openzeppelin/contracts/utils/Counters.sol
-
-/usr/src/meme-nft-token/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol:3:1: ParserError: Source file requires different compiler version (current compiler is 0.5.16+commit.9c3226ce.Emscripten.clang - note that nightly builds are considered to be strictly less than the released version
-pragma solidity ^0.6.0;
-^---------------------^
-,/usr/src/meme-nft-token/node_modules/@openzeppelin/contracts/utils/Counters.sol:3:1: ParserError: Source file requires different compiler version (current compiler is 0.5.16+commit.9c3226ce.Emscripten.clang - note that nightly builds are considered to be strictly less than the released version
-pragma solidity ^0.6.0;
-^---------------------^
-
-Error: Truffle is currently using solc 0.5.16, but one or more of your contracts specify "pragma solidity ^0.6.0".
-Please update your truffle config or pragma statement(s).
-(See https://truffleframework.com/docs/truffle/reference/configuration#compiler-configuration for information on
-configuring Truffle to use a specific solc compiler version.)
-
-Compilation failed. See above.
-Truffle v5.1.42 (core: 5.1.42)
-Node v12.18.3
-```
-
-Then
-
-```
-do something
-```
