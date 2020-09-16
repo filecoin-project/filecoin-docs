@@ -12,7 +12,7 @@ If you used the `--no-local-storage` flag during the [miner initialization](mine
 
 The Lotus Miner keeps track of defined storage locations in in `~/lotusminer/storage.json` (or `$LOTUS_MINER_PATH/storage.json`) and uses `~/lotusminer` path as default.
 
-Upon initialization of a storage location, a `<path-to-storage>/sectorstorage.json` file is created and contains the UUID assigned to this location long with its features (whether it can be used for sealing or storing).
+Upon initialization of a storage location, a `<path-to-storage>/sectorstorage.json` file is created that contains the UUID assigned to this location, along with whether it can be used for sealing or storing.
 
 [[TOC]]
 
@@ -42,6 +42,6 @@ lotus-miner storage list
 
 ## Updating locations
 
-If you wish to move data from one location to a different one you should follow the instructions in the [Miner lifecycle guide](miner-lifecycle.md#changing-storage-locations).
+To move data from one location to another, follow the instructions in the [Miner lifecycle guide](miner-lifecycle.md#changing-storage-locations).
 
-If you wish to fully remove one location you have to edit the `storage.json` manually and re-start your miner.
+To fully remove one location, edit the `storage.json` manually and re-start your miner.
