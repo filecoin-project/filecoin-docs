@@ -9,6 +9,7 @@ description: This article describes how to run the React app for the Powergate P
 
 1. [Node.js](https://nodejs.org/en/download/)
 2. [Xcode CommandLineTools](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-WHAT_IS_THE_COMMAND_LINE_TOOLS_PACKAGE_)
+3. [Metamask Plugin](https://metamask.io/)
 
 ## Steps
 
@@ -22,7 +23,7 @@ git clone https://github.com/dappkit/powergate-pinning-service
 3. Run the following commands to start the app:
 
 ```bash
-npm install
+npm ci
 npm start
 ```
 

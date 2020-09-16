@@ -62,9 +62,7 @@ Look at:
 if (typeof window.ethereum !== 'undefined') {
   console.log('MetaMask is installed!')
 } else {
-  alert(
-    'Metamask is not installed. Get Metamask Plugin https://https://metamask.io/'
-  )
+  alert('Metamask is not installed. Get Metamask Plugin https://metamask.io/')
 }
 ```
 
