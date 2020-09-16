@@ -42,7 +42,7 @@ While each FPS provider will have slightly different instructions for utilizing 
 
 ## How FPS solutions work
 
-FPS solutions run IPFS (for hot storage) and Filecoin (for cold storage) software clients under the hood, either communicating directly with these software clients through their native APIs or through tools like [Powergate](../build/powergate). FPS services manage the flow of data between the different networks, employing intelligent caching strategies to keep popular data readily available.
+FPS solutions run IPFS (for hot storage) and Filecoin (for cold storage) software clients under the hood, either communicating directly with these software clients through their native APIs or through tools like [Powergate](./powergate.md). FPS services manage the flow of data between the different networks, employing intelligent caching strategies to keep popular data readily available.
 
 ![Diagram showing a simplified architecture for a Filecoin IPFS Pinning Service (FPS). User makes API request to the FPS. The FPS stores and retrieves data from embedded go-ipfs and lotus nodes, which communicate with each other via libp2p and IPLD data formats.](./images/filecoin-pinning-services/fps-data-flows.png)
 
