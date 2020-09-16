@@ -1,6 +1,6 @@
 ---
 title: 'Lotus Miner: lifecycle'
-description: 'This guide contains information on how to safely perform some maintenance operations with Lotus miners.'
+description: 'How to safely perform maintenance on a Lotus miner.'
 breadcrumb: Lifecycle'
 ---
 
@@ -8,17 +8,17 @@ breadcrumb: Lifecycle'
 
 {{ $frontmatter.description }}
 
-These operations are normally related to maintenances and upgrades. Given that miners are expected to submit proofs to the chain in a continuous fashion and have to run long, expensive operations, it is important that operators become familiar with how to manage some of the events in the miner lifecycle so that they can be performed with the maximum guarantees.
+These operations are normally related to maintenances and upgrades. Given that miners are expected to submit proofs to the chain in a continuous fashion while running long and expensive operations, it is important that operators become familiar with how to manage some of the events in the miner lifecycle so that they can be performed with the maximum guarantees.
 
 [[TOC]]
 
 ## Safely restarting the miner daemon
 
-Before shutting down your miner daemon, make sure that they have no pending operations that could get your miner slashed.
+Before shutting down your miner daemon, make sure that there are no pending operations that could get your miner _slashed_.
 
-Run `lotus-miner proving info`. If any deadline shows a block height in the past, do not restart.
+Run `lotus-miner proving info`. If any deadline shows a _block height_ in the past, do not restart.
 
-In the following example, Deadline Open is 454 which is earlier than Current Epoch of 500. This miner should not be shut down or restarted:
+In the following example, `Deadline Open` is 454, which is earlier than `Current Epoch` of 500. This miner should not be shut down or restarted:
 
 ```bash
 $ sudo lotus-miner proving info
@@ -38,7 +38,7 @@ Deadline Challenge:   434 (33m0s ago)
 Deadline FaultCutoff: 384 (58m0s ago)
 ```
 
-In this next example, the miner can be safely restarted because no Deadlines are earlier than Current Epoch of 497. You have ~45 minutes before the miner must be back online to declare faults (FaultCutoff). If the miner has no faults, you have about an hour.
+In this next example, the miner can be safely restarted because no `Deadlines` are earlier than `Current Epoch`. You have about 45 minutes before the miner must be back online to declare faults. This is known as the `Deadline FaultCutoff`. If the miner has no faults, you have about an hour.
 
 ```bash
 $ sudo lotus-miner proving info
@@ -58,29 +58,23 @@ Deadline Challenge:   638 (in 1h10m30s)
 Deadline FaultCutoff: 588 (in 45m30s)
 ```
 
-Once you have verified that your miner is safe to shutdown you can run:
+Once you have verified that your miner is safe to shut down, you can run `lotus-miner stop`. If you are using systemd, run `systemctl stop lotus-miner`.
 
-```sh
-lotus-miner stop
-# when using systemd run:
-# systemctl stop lotus-miner
-```
+You can restart the miner as soon as you wish. Any sealing operations that were ongoing will be reset to the last checkpoint and continue.
 
-You can re-start the miner as soon as you wish. Any sealing operations that were ongoing will be reset to the last checkpoint and continue.
-
-Note that workers do not need to be re-started (unless you also want to when performing an upgrade etc), as they will reconnect to the miner automatically when it comes back up.
+Workers do not need to be restarted as they will reconnect to the miner automatically when it comes back up. However, if you are upgrading your node at the same time as shutting down your miner, you will need to restart the machine.
 
 ## Restarting workers
 
-Lotus [seal workers](seal-workers.md) can be re-started any time, but they are in the middle of one of the sealing steps, the operation will start again (from the last checkpoint).
+Lotus [seal workers](seal-workers.md) can be restarted any time, but if they are in the middle of one of the sealing steps, then the operation will start again (from the last checkpoint).
 
 ::: warning
-There is a maximum of 3 attempts to complete a sealing operation before it is fully started from scratch (_pre-commit1_ phase).
+There is a maximum of three attempts to complete a sealing operation before it is fully started from scratch (_pre-commit1_ phase).
 :::
 
 ## Changing storage locations
 
-If you wish to change the location of your miner-related storage (for the miner or the seal workers) to a different path (for example, to move things to a larger disk etc), you will need to make sure that the Lotus miner (and potentially seal workers) become aware of the new location.
+If you wish to change the location of your miner-related storage to a different path, for the miner or the seal workers, make sure that the Lotus miner and any seal workers are aware of the new location.
 
 ```sh
 lotus-miner storage list
@@ -88,31 +82,31 @@ lotus-miner storage list
 
 The above command will give you an overview of [storage locations known to the miner](custom-storage-layout.md). This information is stored in `~/lotusminer/storage.json` (or `$LOTUS_MINER_PATH/storage.json` if defined). Lotus seal workers store all the data in the `~/lotusworker` folder (or `$LOTUS_WORKER_PATH` if defined).
 
-If you wish to change any of the storage locations of the **lotus miner** follow these steps:
+If you wish to change any of the storage locations of the Lotus miner, follow these steps:
 
 1. [Stop the miner](#safely-restarting-the-miner-daemon)
-2. Copy/move the data. Note that **you should move the data folder "as-is" from the original location to the destination**.
+2. Copy or move the data. You should move the data folder from the original location to the destination without changing any of the content.
 3. Edit `storage.json` with the new location.
 4. Start the miner.
 
-Note that you can always [add additional storage locations to a Lotus miner](custom-storage-layout) with `lotus storage attach`.
+You can always [add additional storage locations to a Lotus miner](custom-storage-layout) with `lotus storage attach`.
 
-If you wish to change the storage location for any of the **lotus workers**:
+If you wish to change the storage location for any of the lotus workers:
 
 1. Stop the Lotus Worker.
 2. Move the data to the new location.
 3. Set `$LOTUS_WORKER_PATH` accordingly.
 4. Start the worker again.
 
-Note that any operations that the worker was performing before stopping will be restarted from the last checkpoint.
+Any operations that the worker was performing before stopping will be restarted from the last checkpoint.
 
 :::warning
-Right now it is not supported to move data between different workers. Moving the worker storage folder to a different worker machine will not work as the miner expects the ongoing sealing operations to be completed by the worker they were assigned to in the first place and will not recognize if the data appears in a different worker.
+Moving data between different workers is not currently supported. Moving the worker storage folder to a different worker machine will not work as the miner expects the ongoing sealing operations to be completed by the worker they were assigned to in the first place.
 :::
 
 ## Using a different Lotus Node
 
-If you are planning to run a maintenance on the Lotus Node used by the miner, of if you need to failover to a different Lotus Node because the current one does not work, follow these steps:
+If you are planning to run maintenance on the Lotus node used by the miner, or if you need to failover to a different Lotus node because the current one does not work, follow these steps:
 
 1. [Stop the miner](#safely-restarting-the-miner-daemon)
 2. Set the `FULLNODE_API_INFO` environment variable to the location of the new node:
@@ -121,9 +115,9 @@ If you are planning to run a maintenance on the Lotus Node used by the miner, of
 export FULLNODE_API_INFO=<api_token>:/ip4/<lotus_daemon_ip>/tcp/<lotus_daemon_port>/http
 ```
 
-Instructions on how to obtain a token are [available here](../../build/lotus/api-token-generation.md).
+Follow these steps to learn [how to obtain a token](../../build/lotus/api-token-generation.md).
 
-3. If you have not done it before, export the wallets from the old node and re-import them to the new Lotus Node. [Instructions are here](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-a-wallet).
+3. If you have not exported your wallets yet, export them now from the old node and re-import them to the new Lotus node.
 4. Start the miner. It should now communicate with the new Lotus Node and, since it has the same wallets as the older one, it should be able to perform the necessary operations on behalf of the miner.
 
 ::: callout
