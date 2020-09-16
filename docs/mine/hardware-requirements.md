@@ -14,17 +14,13 @@ Minimal sector sizes for testnet is 32GB. The minimal requirements are as follow
 
 - An **8+ core CPU**. Strongly recommended: a CPU model with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake). Lack of SHA Extensions results in a significant slow down.
 - **128 GiB of RAM** at the very least. This **must** be complemented with **256 GiB of swap on a very fast NVMe SSD** storage medium.
-- An Nvidia GPU. The following models are tested and known to be fast enough:
-  - GeForce RTX 2080 Ti
-    GeForce RTX 2080 SUPER
-    GeForce RTX 2080
-    GeForce GTX 1080 Ti
-    GeForce GTX 1080
-    GeForce GTX 1060
+- A powerful GPU. The [authoritative list](https://github.com/filecoin-project/bellman#supported--tested-cards) of supported GPUs is in the [Bellman repository](https://github.com/filecoin-project/bellman#supported--tested-cards). Additional GPU models need to be enabled manually ([instructions for Lotus](lotus/gpus.md)).
 - A dedicated SSD of at least 512GB+ for cache storage.
 - The Lotus node may or may not run in the same machine as the miner, but it should also have enough storage to hold the Filecoin chain, which grows at a rate of 12GiB per week.
 
-
+::: warning
+Mixing AMD and NVidia GPUs in the same machine is known to cause issues with OpenCL and should be avoided.
+:::
 
 ## About hardware requirements
 
