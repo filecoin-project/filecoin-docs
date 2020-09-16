@@ -109,3 +109,23 @@ Note that any operations that the worker was performing before stopping will be 
 :::warning
 Right now it is not supported to move data between different workers. Moving the worker storage folder to a different worker machine will not work as the miner expects the ongoing sealing operations to be completed by the worker they were assigned to in the first place and will not recognize if the data appears in a different worker.
 :::
+
+## Using a different Lotus Node
+
+If you are planning to run a maintenance on the Lotus Node used by the miner, of if you need to failover to a different Lotus Node because the current one does not work, follow these steps:
+
+1. [Stop the miner](#safely-restarting-the-miner-daemon)
+2. Set the `FULLNODE_API_INFO` environment variable to the location of the new node:
+
+```sh
+export FULLNODE_API_INFO=<api_token>:/ip4/<lotus_daemon_ip>/tcp/<lotus_daemon_port>/http
+```
+
+Instructions on how to obtain a token are [available here](../../build/lotus/api-token-generation.md).
+
+3. If you have not done it before, export the wallets from the old node and re-import them to the new Lotus Node. [Instructions are here](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-a-wallet).
+4. Start the miner. It should now communicate with the new Lotus Node and, since it has the same wallets as the older one, it should be able to perform the necessary operations on behalf of the miner.
+
+::: callout
+Make sure your new Lotus Node is fully synced.
+:::
