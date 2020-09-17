@@ -44,15 +44,42 @@ Remember that your will only see the latest balance when your daemon is fully sy
 
 ## Sending FIL
 
-Sending some FIL can be achieved by running:
+Sending some FIL from default wallet can be achieved by running:
 
 ```bash
 lotus wallet send <address> <amount>
+```
+To get default wallet address:
+
+```bash
+lotus wallet default
+```
+
+To set default wallet address to a different address:
+
+```bash
+lotus wallet set-default <address>
+```
+
+To send some FIL from a specific wallet can be achieved by running:
+
+```bash
+lotus send --from=<sender address> <target address> <amount>
 ```
 
 :::tip
 Make sure to check `lotus wallet send --help` for advanced options.
 :::
+
+## Withdraw FIL from the miner actor
+
+To withdraw available balance from miner actor to worker address, run
+
+```bash
+lotus-miner actor withdraw <amount>
+```
+
+> Note: Make sure that your worker address has sufficient balance to pay for the withdraw message's gas fee.
 
 ## Exporting and importing a wallet
 
