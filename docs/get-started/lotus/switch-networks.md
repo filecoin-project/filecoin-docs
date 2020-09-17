@@ -34,8 +34,8 @@ In this approach you keep all the data from the old network where it was, and in
 3. Set `LOTUS_PATH` to a new location. i.e. `export LOTUS_PATH=~/.lotus2` (for example)
 4. Start the Lotus daemon again and let it sync to the new network
 
-## Backing up lotus data
+## Backing up Lotus data
 
-If you wish to back up Lotus data you can also move your `~/.lotus` (or `$LOTUS_PATH`) folder somewhere else (though this might take time if it is very large).
+If you wish to backup Lotus data, you can also move your `~/.lotus` (or `$LOTUS_PATH`) folder somewhere else (though this might take time if it is very large).
 
-An alternative is to [export your wallets](send-and-receive-fil.md) and also [export the chain](chain-snapshots.md) for later re-import, if needed, on a newly installed Lotus Node.
+Another alternative is to [export your wallets](send-and-receive-fil.md) and also [export the chain](chain-snapshots.md) for later re-import, if needed, on a newly installed Lotus Node.
