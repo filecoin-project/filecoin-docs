@@ -7,9 +7,9 @@ description: 'The following _syllabus_ of instructional videos and materials cov
 
 The following “syllabus” of instructional videos and materials covers all aspects of the Filecoin network – from mining to storage to application development. This resource is designed for anyone interested in learning about the history and development of the network, as well as how to leverage the network at all levels: mining, building, and storing.
 
-## Filecoin Fundamentals
+## Filecoin fundamentals
 
-### [History of the Filecoin Project](https://www.zeroknowledge.fm/106) and [The Benefits of Decentralized Storage](https://www.youtube.com/watch?v=aW6CZh3EKSw)
+### [History of the Filecoin project](https://www.zeroknowledge.fm/106) and [The Benefits of Decentralized Storage](https://www.youtube.com/watch?v=aW6CZh3EKSw)
 
 Protocol Labs Founder and CEO Juan Benet joined the teams at _Hackernoon_ and _ZeroKnowledge_ to talk about the history and future of Filecoin, IPFS, and Web3. These two interviews offer perspective on the Filecoin project, including how it has evolved since its inception and where it’s headed.
 
@@ -21,7 +21,7 @@ Supplemental Materials:
 - [The Future of Decentralized Social Media with Balaji Srinivasan, Vitalik Buterin, Juan Benet](https://www.youtube.com/watch?v=DTxE9KV3YrE&list=PLXzKMXK2aHh43-aCLLuGnny7nhnsf49LO&index=7&t=9s)
 - [ProtoSchool: Decentralized Data Structures](https://proto.school/data-structures/)
 
-### [How Filecoin Works](https://www.youtube.com/watch?v=P28aNAdZDi4)
+### [How Filecoin works](https://www.youtube.com/watch?v=P28aNAdZDi4)
 
 This workshop is a conceptual overview of how Filecoin works, including background on the project’s mission, a spec system overview, the key players in the network, and an overview of the Web3 ecosystem.
 
@@ -33,7 +33,7 @@ Supplemental Materials:
 - [Power Fault Tolerance - Technical Report](https://research.protocol.ai/publications/power-fault-tolerance/)
 - [Proof of Replication - Technical Report](https://filecoin.io/proof-of-replication.pdf)
 
-### [Intro to Filecoin Mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/)
+### [Intro to Filecoin mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/)
 
 There are two primary roles a node can play in the Filecoin network: storage and retrieval. In this session, Filecoin Software Engineer Łukasz Magiera explains how to mine on the Filecoin Network, walking through key concepts including storage sectors, storage proofs, and mining power. He offers a high-level overview of the network’s architecture and covers how to set up a mining node.
 
@@ -58,9 +58,9 @@ Supplemental Materials:
 - [Engineering Filecoin’s Economy](https://filecoin.io/2020-engineering-filecoins-economy-en.pdf)
 - [Filecoin’s Cryptoeconomics Constructions](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/)
 
-## The Filecoin Ecosystem
+## The Filecoin ecosystem
 
-### [Filecoin Integrations for Web3 Infrastructure](https://www.youtube.com/watch?v=Q0oe6i7d1u4)
+### [Filecoin integrations for web3 infrastructure](https://www.youtube.com/watch?v=Q0oe6i7d1u4)
 
 Filecoin presents many promising business opportunities. This session explores a few key Filecoin integration opportunities for pinning services and other businesses looking to integrate Filecoin.
 
@@ -85,7 +85,7 @@ Supplemental Materials:
 - [Filecoin Docs: lotus and go-ipfs interactions](https://docs.filecoin.io/build/examples/network-inspector/lotus-and-go-ipfs-interactions/)
 - [How to set up the lotus and go-ipfs API clients](https://docs.filecoin.io/build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients/)
 
-### [Textile’s Tools for the Filecoin Network](https://www.youtube.com/watch?v=IZ8M9m9_uJY)
+### [Textile’s tools for the Filecoin network](https://www.youtube.com/watch?v=IZ8M9m9_uJY)
 
 Textile is a set of open-source tools that provide a decentralized database, IPFS-based storage, content hosting, and more, over libp2p, IPFS, and Filecoin. This workshop covers how to use Textiles Threads, Buckets, and Hub tools to build apps for the Filecoin network (focus on JavaScript). The session includes an introduction to Textile’s suites of tools, basic command-line (CLI) actions, and Textile’s JavaScript Client(s). To prepare, we encourage you to install a few things before we get started:
 
@@ -124,7 +124,7 @@ Supplemental Materials:
 
 - [Slate GitHub Repo](https://github.com/filecoin-project/slate#readme)
 
-### [Building decentralized apps using Fleek’s Space Daemon](https://www.youtube.com/watch?v=pWJ5fty-7mA)
+### [Building decentralized apps using Fleek’s Space daemon](https://www.youtube.com/watch?v=pWJ5fty-7mA)
 
 Fleek’s [Space](https://blog.space.storage/posts/Introducing-Space) Daemon is an open-source file storage, sharing, and collaboration platform built on the distributed web. It’s a private, encrypted, p2p version of standard storage tools like Dropbox or Google Drive. This session will explain how to build decentralized apps using Space Daemon.
 
