@@ -240,6 +240,7 @@ module.exports = {
             '/about-filecoin/why-filecoin',
             '/about-filecoin/ipfs-and-filecoin',
             '/about-filecoin/filecoin-compared-to',
+            '/about-filecoin/primer',
             '/about-filecoin/faq',
             {
               title: 'Project',
