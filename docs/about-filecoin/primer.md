@@ -35,7 +35,7 @@ Supplemental Materials:
 
 ### [Intro to Filecoin Mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/)
 
-There are two primary roles a node can play in the Filecoin network: storage and retrieval. In this session, Filecoin software engineer Łukasz Magiera explains how to mine on the Filecoin Network, walking through key concepts including storage sectors, storage proofs, and mining power. He offers a high-level overview of the network’s architecture and covers how to set up a mining node.
+There are two primary roles a node can play in the Filecoin network: storage and retrieval. In this session, Filecoin Software Engineer Łukasz Magiera explains how to mine on the Filecoin Network, walking through key concepts including storage sectors, storage proofs, and mining power. He offers a high-level overview of the network’s architecture and covers how to set up a mining node.
 
 Length: 1 hour
 
@@ -48,7 +48,7 @@ Supplemental Materials:
 
 ### [Economics of Filecoin](https://www.youtube.com/watch?v=fzGlen-LkKA)
 
-In this live Zoom presentation, we discuss the mechanisms and models presented in the recent report Engineering Filecoin’s Economy. We will also discuss a number of questions submitted by the community. To have your questions covered, please submit your questions in the linked form below.
+In this Zoom presentation, the Filecoin team discusses the mechanisms and models presented in the recent report _Engineering Filecoin’s Economy_. We will also discuss a number of questions submitted by the community. To have your questions covered, please submit your questions in the linked form below.
 
 Length: 2 hours
 
@@ -135,13 +135,13 @@ Supplemental Materials:
 - [Fleek documentation](https://docs.fleek.co/)
 - [IPFS Case Study: Fleek](https://docs.ipfs.io/concepts/case-study-fleek/)
 
-## Extra Credit: Filecoin features
+## Extra credit: Filecoin features
 
 - [Distributed Randomness & Leader Elections](https://filecoin.io/blog/distributed-randomness-and-leader-elections/)
 - [Filecoin’s Proof System](https://filecoin.io/blog/filecoin-proof-system/)
 - [Tipsets - A closer look at Filecoin building blocks](https://filecoin.io/blog/tipsets-family-based-approach-to-consensus/)
 - [Filecoin’s Verifiable Storage](https://filecoin.io/blog/filecoin-features-verifiable-storage/#:~:text=To%20verify%20storage%20on%20Filecoin's,a%20given%20period%20of%20time.)
-- Offline Data Transfer for Large-Scale Data and [Preserving Critical Data with Filecoin Discover](https://www.youtube.com/watch?v=UXmQfnwzhtQ)
+- [Offline Data Transfer for Large-Scale Data](https://filecoin.io/blog/offline-data-transfer-for-large-scale-data/) and [Preserving Critical Data with Filecoin Discover](https://www.youtube.com/watch?v=UXmQfnwzhtQ)
 - [ProtoSchool: Anatomy of a Content Identifier (CID)](https://proto.school/anatomy-of-a-cid)
 - [How to build a Filecoin Network Inspector using React, lotus, and go-ipfs](https://www.youtube.com/watch?v=lkx2Z3T649Y)
 - [Protoschool’s Verifying Storage on Filecoin](https://proto.school/verifying-storage-on-filecoin)
