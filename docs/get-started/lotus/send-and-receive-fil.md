@@ -61,7 +61,7 @@ To set default wallet address to a different address:
 lotus wallet set-default <address>
 ```
 
-To send some FIL from a specific wallet can be achieved by running:
+To send some FIL from a specific wallet:
 
 ```bash
 lotus send --from=<sender address> <target address> <amount>
