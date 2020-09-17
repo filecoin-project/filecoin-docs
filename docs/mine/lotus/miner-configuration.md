@@ -95,6 +95,10 @@ This section controls parameters for making storage and retrieval deals:
 
 `ExpectedSealDuration` is an estimate of how long sealing will take, and is used to reject deals whose start epoch might be earlier than the expected completion of sealing. It can be estimated by [benchmarking](benchmarks.md) or by [pledging a sector](sector-pledging.md).
 
+:::warning
+The final value of `ExpectedSealDuration` should equal `(TIME_TO_SEAL_A_SECTOR + WaitDealsDelay) * 1.5`. This equation ensures that the miner does not commit to having the sector sealed too soon.
+:::
+
 To filter deals based on certain parameters, modify the `Filter` param. This param should be a shell command that will be run when processing a deal proposal. Deals are accepted if the Filter's exit code is 0. For any other exit code, deals will be rejected. Set `Filter` to `false` to reject all deals and `true` to accept all deals. For example, the following filter only accepts deals from clients with specific addresses:
 
 ```sh

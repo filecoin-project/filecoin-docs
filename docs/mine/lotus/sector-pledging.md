@@ -54,11 +54,13 @@ When sealing for the new is complete, `pSet: NO` will become `pSet: YES`.
 
 If you pledged a sector, you can use the duration of the operation to update the [`ExpectedSealDuration` setting](miner-configuration.md#dealmaking-section).
 
-To find out this value, run:
+To find out how long it took to seal the sector, run:
 
 ```
 lotus-miner sectors status --log 0
 ```
+
+Then follow the instructions in the configuration reference linked above.
 
 ## Upgrading pledged sectors
 
