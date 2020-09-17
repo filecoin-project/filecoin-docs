@@ -44,10 +44,27 @@ Remember that your will only see the latest balance when your daemon is fully sy
 
 ## Sending FIL
 
-Sending some FIL can be achieved by running:
+Sending some FIL from default wallet can be achieved by running:
 
 ```bash
-lotus wallet send <address> <amount>
+lotus wallet send <target address> <amount>
+```
+To get default wallet address:
+
+```bash
+lotus wallet default
+```
+
+To set default wallet address to a different address:
+
+```bash
+lotus wallet set-default <address>
+```
+
+To send some FIL from a specific wallet:
+
+```bash
+lotus send --from=<sender address> <target address> <amount>
 ```
 
 :::tip
