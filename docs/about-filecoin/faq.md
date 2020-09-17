@@ -7,48 +7,46 @@ description: Filecoin frequently asked questions.
 
 ### How do I get started with Filecoin and the broader web3 space?
 
-- You can start from checking out the tutorials from [Protoschool](https://proto.school/#/tutorials)
-- Participate in the hackathon and future events of [Filecoin Ignite](https://ignite.fil.events/)
-- Check out the different tools to [build dApps on Filecoin](https://blog.textile.io/)
+We've put a [Filecoin Primer](./primer.md) together for you. It contains lots of videos, papers, interview, and other resources to help you fully understand the Filecoin ecosystem.
 
 ### What are some of the primary use cases for Filecoin at mainnet launch?
 
-Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include cryptographic storage proofs (that are publicly verifiable so you can trust that when a miner says they're storing your data, they actually are), crypto-economic mechanisms (see our recent description of Filecoin's crypto-economics [here](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/)), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a truly trustless decentralized storage network.
+Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include publicly verifiable cryptographic storage proofs, [crypto-economic mechanisms](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a trustless decentralized storage network.
 
-On top of the core Filecoin protocol, there are a number of "layer 2 solutions" -- many incorporating [IPFS](https://ipfs.io/) -- that enable a broad array of use cases and applications. These solutions include Powergate, Textile Hub, and more. Using these solutions, any use case that can be built on top of IPFS can also be built on Filecoin.
+On top of the core Filecoin protocol, there are a number of layer 2 solutions that enable a broad array of use cases and applications. Many of these solutions use [IPFS](https://ipfs.io). These solutions include [Powergate](https://docs.textile.io/powergate/), [Textile Hub](https://blog.textile.io/announcing-the-textile-protocol-hub/), and more. Using these solutions, any use case that can be built on top of IPFS can also be built on Filecoin!
 
 Some of the primary areas for development expected on Filecoin around mainnet launch are:
 
-- Additional developer tools and layer-2 solutions/libraries that strengthen Filecoin as a developer platform and ecosystem
-- IPFS apps that rely on decentralized storage solutions and want a decentralized data persistence solution as well
-- Financial tools and services on Filecoin, e.g., wallets, signing libraries, and more
-- Beginnings of verified storage solutions -- applications that use Filecoin's publicly verifiable cryptographic proofs in order to provide trustless and timestamped guarantees of storage to their users
+- Additional developer tools and layer-2 solutions and libraries that strengthen Filecoin as a developer platform and ecosystem.
+- IPFS apps that rely on decentralized storage solutions and want a decentralized data persistence solution as well.
+- Financial tools and services on Filecoin, like wallets, signing libraries, and more.
+- Applications that use Filecoin's publicly verifiable cryptographic proofs in order to provide trustless and timestamped guarantees of storage to their users.
 
-### How can a website app be free on a network where retrieval is monetary?
+### How can a website or app be free if it costs to retrieve data from the Filecoin network?
 
-Several existing websites support file downloads entirely through ads. All of those types of websites could be easily replaced with a Filecoin incentivized retrieval setup, paying small amounts of FIL (Filecoin tokens) directly for whatever files you were hoping to download (e.g., trying to download mods for games). Several large datasets are hosted through Amazon's "pay per download" S3 buckets, which Filecoin retrieval could also easily augment or replace.
+Most websites and apps make money by displaying ads. This type of income-model could be replaced with a Filecoin incentivized retrieval setup, where users pay small amounts of FIL for whatever files they're hoping to download. Several large datasets are hosted through Amazon's _pay per download_ S3 buckets, which Filecoin retrieval could also easily augment or replace.
 
 ### How will Filecoin attract developers to use Filecoin for storage?
 
-It's going to require a pretty major shift in how we think about the internet. But at the same time, it is a very exciting shift, and things are heading that way (slowly) in general. Browser vendors and major tech companies are getting more into decentralized tech and crypto (see Brave, Opera, and Firefox's d-web experiments).
+It's going to require a major shift in how we think about the internet. At the same time, it is a very exciting shift, and things are slowly heading that way. Browser vendors like Brave, Opera, and Firefox are investing into decentralized infrastructure.
 
-We think the internet must return to its decentralized roots in order to be resilient, robust, and efficient enough for the challenges of the next several decades. Early developers in the Filecoin ecosystem are those who believe in that same vision and potential for the internet, and we're excited to work with them to build this space.
+We think that the internet must return to its _decentralized roots_ to be resilient, robust, and efficient enough for the challenges of the next several decades. Early developers in the Filecoin ecosystem are those who believe in that same vision and potential for the internet, and we're excited to work with them to build this space.
 
-### When shall we expect to get the detailed params of the Filecoin's crypto-economics?
+### What are the detailed parameters of Filecoin's crypto-economics?
 
 We are still finalizing our crypto-economic parameters, and they will continue to evolve. We will post on our blog when the parameters have been finalized.
 
 ### How expensive will Filecoin storage be at launch?
 
-As Filecoin is a free market, the price will be determined by a number of variables related to the supply and demand for storage, so it's difficult to predict before launch. However, a few design elements of the network helps support inexpensive storage, especially initially.
+As Filecoin is a free market, the price will be determined by a number of variables related to the supply and demand for storage. It's difficult to predict before launch. However, a few design elements of the network helps support inexpensive storage.
 
-Along with revenue from active storage deals, Storage Miners receive block rewards, where the expected value of winning a given block reward is proportional to the amount of storage they have on the network. These block rewards are weighted heavily towards the early days of the network (with the frequency of block rewards exponentially decaying over time). As a result, Storage Miners are relatively incentivized to charge less for storage to win more deals, which would increase their expected block reward - and this is especially true in the early days.
+Along with revenue from active storage deals, Storage Miners receive block rewards, where the expected value of winning a given block reward is proportional to the amount of storage they have on the network. These block rewards are weighted heavily towards the early days of the network (with the frequency of block rewards exponentially decaying over time). As a result, Storage Miners are relatively incentivized to charge less for storage to win more deals, which would increase their expected block reward.
 
-Further, Filecoin introduces a concept called "Verified Clients", where clients can be verified to actually be storing useful data. Storage Miners who store data from Verified Clients also increase their expected block reward. Anyone running a Filecoin-backed IPFS Pinning Services should qualify as a Verified Client. We do not have the process of verification finalized, but we expect it to be lightweight (e.g., submitting a GitHub profile).
+Further, Filecoin introduces a concept called _Verified Clients_, where clients can be verified to actually be storing useful data. Storage Miners who store data from _Verified Clients_ also increase their expected block reward. Anyone running a Filecoin-backed IPFS Pinning Services should qualify as a _Verified Client_. We do not have the process of verification finalized, but we expect it to be similar to submitting a GitHub profile.
 
 ### Will it be cheaper to store data on Filecoin than other centralized cloud services?
 
-Filecoin creates a hyper-competitive market for data storage – there will be many miners offering many prices, rather than one fixed price on the network. We expect Filecoin's permissionless model and low barriers to entry to result in some very efficient operations and low-priced storage, but it's impossible to say what exact prices will be until the network is live.
+Filecoin creates a hyper-competitive market for data storage. There will be many miners offering many prices, rather than one fixed price on the network. We expect Filecoin's permissionless model and low barriers to entry to result in some very efficient operations and low-priced storage, but it's impossible to say what exact prices will be until the network is live.
 
 ### When will Filecoin mainnet launch?
 
