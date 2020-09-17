@@ -80,7 +80,7 @@ If you wish to change the location of your miner-related storage to a different 
 lotus-miner storage list
 ```
 
-The above command will give you an overview of [storage locations known to the miner](custom-storage-layout.md). This information is stored in `~/lotusminer/storage.json` (or `$LOTUS_MINER_PATH/storage.json` if defined). Lotus seal workers store all the data in the `~/lotusworker` folder (or `$LOTUS_WORKER_PATH` if defined).
+The above command will give you an overview of [storage locations known to the miner](custom-storage-layout.md). This information is stored in `~/.lotusminer/storage.json` (or `$LOTUS_MINER_PATH/storage.json` if defined). Lotus seal workers store all the data in the `~/.lotusworker` folder (or `$LOTUS_WORKER_PATH` if defined).
 
 If you wish to change any of the storage locations of the Lotus miner, follow these steps:
 
