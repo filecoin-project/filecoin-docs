@@ -71,16 +71,6 @@ lotus send --from=<sender address> <target address> <amount>
 Make sure to check `lotus wallet send --help` for advanced options.
 :::
 
-## Withdraw FIL from the miner actor
-
-To withdraw available balance from miner actor to worker address, run
-
-```bash
-lotus-miner actor withdraw <amount>
-```
-
-> Note: Make sure that your worker address has sufficient balance to pay for the withdraw message's gas fee.
-
 ## Exporting and importing a wallet
 
 ::: warning
