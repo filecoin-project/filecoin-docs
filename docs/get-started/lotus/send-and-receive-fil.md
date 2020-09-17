@@ -72,4 +72,6 @@ and:
 lotus wallet import wallet.private
 ```
 
-Copying the files in `~/.lotus/keystore` directly should also work.
+::: tip
+If one of the nodes is offline, copying the files in `~/.lotus/keystore` directly should also work.
+:::
