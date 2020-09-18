@@ -84,12 +84,14 @@ The above command will give you an overview of [storage locations known to the m
 
 If you wish to change any of the storage locations of the Lotus miner, follow these steps:
 
-1. [Stop the miner](#safely-restarting-the-miner-daemon)
-2. Copy or move the data. You should move the data folder from the original location to the destination without changing any of the content.
-3. Edit `storage.json` with the new location.
-4. Start the miner.
+1. Set your miner to reject any new storage and retrieval deals so the storage is not modified during the copy.
+2. Copy the data **as is**, keeping it in the original location, while the miner is running. Since this usually involves moving large amounts of storage, it will take time. In the meatime our miner will keep tending to its tasks.
+3. Once the data is copied, [stop the miner](#safely-restarting-the-miner-daemon), following the recommendations above.
+4. Edit `storage.json` with the new location for the data and make the old data unavailable for the miner (by renaming, or unmounting) to make sure it is not going to be used anymore when you start it.
+5. Start the miner.
+6. Verify that things are working correctly. If so, you can discard the old copy.
 
-You can always [add additional storage locations to a Lotus miner](custom-storage-layout) with `lotus storage attach`.
+If you wish to expand your storage, while keeping the current, you can always [add additional storage locations to a Lotus miner](custom-storage-layout) with `lotus storage attach` (see `--help`).
 
 If you wish to change the storage location for any of the lotus workers:
 
@@ -98,7 +100,7 @@ If you wish to change the storage location for any of the lotus workers:
 3. Set `$LOTUS_WORKER_PATH` accordingly.
 4. Start the worker again.
 
-Any operations that the worker was performing before stopping will be restarted from the last checkpoint.
+Any operations that the worker was performing before stopping will be restarted from the last checkpoint (a point in which they can be restarted, which may correspond to the start of the current sealing phase).
 
 :::warning
 Moving data between different workers is not currently supported. Moving the worker storage folder to a different worker machine will not work as the miner expects the ongoing sealing operations to be completed by the worker they were assigned to in the first place.
