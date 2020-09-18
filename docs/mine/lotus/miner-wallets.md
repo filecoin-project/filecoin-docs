@@ -1,6 +1,6 @@
 ---
 title: 'Lotus Miner: Wallets'
-description: 'Miners make use of wallets managed by the Lotus Node to both send and receive FIL during the normal course of operation (sending proofs, collecting deal payments etc.). This guides explains how to configure different wallets so the miner can use them for different operations.'
+description: 'A miner can be configured with an owner address, a worker address and additional control addresses. These allow granularity in how the funds sent and received from the miner are managed and provide additional security to the mining operation.'
 breadcrumb: 'Miner Wallets'
 ---
 
@@ -8,25 +8,25 @@ breadcrumb: 'Miner Wallets'
 
 {{ $frontmatter.description }}
 
-As mentioned during the [init phase](miner-setup.md) of the Lotus Miner, it is required to provide an owner address with some funds that the miner will use for all the operations needed (or it will use the [Lotus Node default wallet](../../get-started/lotus/send-and-receive-fil.md)). This address will be used by the miner for all the operations, but in many cases, it makes sense to use dedicated wallets:
+During miner initialization, a miner actor is created on the chain. This actor gives the miner its ID (and looks like `t0...`). The miner actor be in charge of collecting all the payments sent to the miner (as identified by its ID).
 
-However, different components of the miners can be configured to use different wallets:
+The Lotus Miner daemon, in turn, performs the operations as required by the network during and can use different Lotus Node wallets to pay the fees or interact with the Miner actor. Information on how to manage Lotus wallets [can be found here](../../get-started/lotus/send-and-receive-fil.md).
+
+The different types of wallets associated to a miner are described below:
 
 [[TOC]]
 
 ## The owner address
 
-The owner address is used to receive payments and to pay the fees for any miner-actor triggered changes like changing its information on changing addresses (TODO: actually list exactly what it is used for).
+The owner address corresponds to a Lotus Node wallet address that is provided during the [miner initialization](miner-setup.md). It is a privilegdged address since it is the only one able to withdraw funds from the miner actor and pay for any miner-actor-triggered changes.
 
-You should have specified it during the `lotus-miner init` phase (otherwise, the default Lotus wallet will be used).
+The owner address will be used as worker and control address if none are defined.
 
-This wallet should have enough balance to pay for actor-actions like changing the information.
-
-Given the high value of this wallet, we recommend taking special measures to keep it safe (i.e. keep it in cold storage as long as there are no miner actions to take and the address is not re-used for something else).
+Given the high value of this wallet, we recommend using a separate worker address and keeping the owner address offline as a cold wallet.
 
 ## The worker address
 
-The worker address is used to sign blocks and submit proofs associated with this miner. It must be a BLS address and can be specified during `init` with the `--worker` flag.
+Then provided, the worker address is used to sign blocks and submit proofs associated with this miner (otherwise the owner address is used). It must be a BLS address and can be specified during `init` with the `--worker` flag.
 
 The worker address is used to sign and send various types of messages (WHICH ONES? including the createStorageMiner message), which means it needs to pay for the gas of those messages. Make sure you keep an eye on its balance!
 
@@ -112,14 +112,14 @@ Here, miner id is `t01000`, and it has total balance of `10582.32150153068559653
 Since the worker address pays for the gas of the send message as well, so don't send the full amount of your worker balance!
 :::
 
-### Withdrawing funds from the miner address
+### Withdrawing miner funds to the owner address
 
-To withdraw funds from the miner address to the worker address you can use the following shortcut:
+To withdraw funds from the Miner actor to the owner address run:
 
 ```bash
 lotus-miner actor withdraw <amount>
 ```
 
 ::: tip
-The owner wallet will need to be available in the Lotus Node and will need to have enough funds to pay for the desired amount and the gas for the transaction.
+Note that the owner address will need to be available in the Lotus Node and have enough funds to pay for the gas for this transaction.
 :::
