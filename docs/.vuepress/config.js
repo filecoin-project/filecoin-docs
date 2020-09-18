@@ -315,6 +315,7 @@ module.exports = {
         ga: 'UA-148766289-2'
       }
     ],
+    ['vuepress-plugin-code-copy', { align: 'bottom', color: '#fff' }],
     [
       'vuepress-plugin-medium-zoom',
       {

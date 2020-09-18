@@ -22,6 +22,7 @@
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-check-md": "0.0.2",
     "vuepress-plugin-clean-urls": "^1.1.2",
+    "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-ipfs": "^1.0.2",
     "vuepress-plugin-medium-zoom": "^1.1.9",
     "vuepress-plugin-robots": "^1.0.1",
