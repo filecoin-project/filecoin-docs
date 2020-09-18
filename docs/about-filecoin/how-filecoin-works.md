@@ -15,7 +15,7 @@ Peers communicate over secure channels that they use to distribute information t
 
 ## Filecoin nodes
 
-_Filecoin Nodes_ or _Filecoin clients_ are peers that sync the Filecoin blockchain and validate the messages in every block, which once applied, provide a global state. Nodes can manage Filecoin wallets (addresses start with `t1...` or `t3...` and receive FIL on them.
+_Filecoin Nodes_ or _Filecoin clients_ are peers that sync the Filecoin blockchain and validate the messages in every block, which once applied, provide a global state. Nodes can manage Filecoin wallets (addresses start with `t1...` or `t3...`) and receive FIL on them.
 
 Filecoin Nodes can also publish different types of _messages_ to the network by broadcasting them. For example, a client can publish a message to send FIL from one address to a different one. Nodes can propose [storage and retrieval deals](#deals) to Filecoin miners and pay for them as they are executed.
 
@@ -23,7 +23,7 @@ Running a Filecoin Node is a low-level task, that usually implies keeping a prog
 
 ## Filecoin miners
 
-The miners provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds) to the chain, for which they collect FIL rewards. Additional details about types of miners, rewards and deals execution from the miner perspective can be found in the [How mining works](../mine/how-mining-works.md) section.
+The miners provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds), for which they collect FIL rewards. Additional details about types of miners, rewards and deals execution from the miner perspective can be found in the [How mining works](../mine/how-mining-works.md) section.
 
 Running a Filecoin miner is a highly-technical task with strong [hardware requirements](../mine/hardware-requirements.md), as needed to complete the necessary [proofs](#proofs). The [Lotus Miner](../mine/lotus/README.md) is the most advanced implementation of a Filecoin miner to this day.
 
@@ -60,12 +60,12 @@ Here are some links to useful introductory materials about the technology that p
 
   - [A beginner's guide to IPFS](https://hackernoon.com/a-beginners-guide-to-ipfs-20673fedd3f)
   - [IPFS concepts](https://docs.ipfs.io/concepts/)
-  - ProtoSchool tutorials](https://proto.school/#/tutorials)
+  - [ProtoSchool tutorials](https://proto.school/#/tutorials)
 
 - libp2p:
 
   - [Why libp2p?](https://www.parity.io/why-libp2p/)
-  - [lib2p: A Modular, p2p Networking Stack](https://www.youtube.com/watch?v=xqVmEzsin3Y)
+  - [libp2p: A Modular, p2p Networking Stack](https://www.youtube.com/watch?v=xqVmEzsin3Y)
 
 - Filecoin:
   - [Introducing Filecoin, a decentralized storage network](https://www.youtube.com/watch?v=EClPAFPeXIQ)
