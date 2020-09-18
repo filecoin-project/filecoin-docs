@@ -24,7 +24,7 @@ To import chain data from a `.car` snapshot file, run:
 lotus daemon --import-snapshot <filename>
 ```
 
-If you do not want the daemon to resume once the snapshot has finished, add the `--halt-alter-import` flag to the command:
+If you do not want the daemon to resume once the snapshot has finished, add the `--halt-after-import` flag to the command:
 
 ```bash
 lotus daemon --import-snapshot --halt-after-import
