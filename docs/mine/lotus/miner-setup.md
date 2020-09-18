@@ -51,7 +51,7 @@ If you opt to run a miner on a different machine as the Lotus Node, set:
 export FULLNODE_API_INFO=<api_token>:/ip4/<lotus_daemon_ip>/tcp/<lotus_daemon_port>/http
 ```
 
-and **make sure the `ListenAddress` has [remote access enabled](../../build/lotus/enable-remote-api-access.md)**.
+and **make sure the `ListenAddress` has [remote access enabled](../../build/lotus/enable-remote-api-access.md)**. Instructions on how to obtain a token are [available here](../../build/lotus/api-token-generation.md).
 
 Similarly, `lotus-miner` (as a client application to the Lotus Miner daemon), can talk to a remote miner by setting:
 
@@ -100,7 +100,7 @@ lotus-miner init --owner=<bls address>  --no-local-storage
 ```
 
 - The `--no-local-storage` flag is used so that we can later configure [specific locations for storage](custom-storage-layout.md). This is optional but recommended.
-- The init process will download over **100GiB of initialization parameters** to /var/tmp/filecoin-proof-parameters. Make sure there is space or set `FIL_PROOFS_PARAMETER_CACHE` to somewhere else.
+- The init process will download over **100GiB of initialization parameters** to /var/tmp/filecoin-proof-parameters. Make sure there is space or set `FIL_PROOFS_PARAMETER_CACHE` to somewhere else. We additionally recommend that this corresponds to an NVMe drive, as reading and verifying the proofs affects how quickly a miner becomes fully booted every time it is started.
 - The Lotus Miner configuration folder is created at `~/.lotusminer/` or `$LOTUS_MINER_PATH` if set.
 
 ## Connectivity to the miner
@@ -149,7 +149,7 @@ Your miner should now be preliminarly setup and running, but **there are still a
 
 - Setup your [custom storage layout](custom-storage-layout.md) (required if you used `--no-local-storage`).
 - Edit the miner [configuration settings](miner-configuration.md) to fit your requirements.
-- Learn what is a right moment to [shutdown/restart your miner](daemon-lifecycle.md)
+- Learn what is a right moment to [shutdown/restart your miner](miner-lifecycle.md)
 - Update `ExpectedSealDuration` with the time it takes your miner to seal a sector: discover it by [running a benchmark](benchmarks.md) or by [pledging a sector](sector-pledging.md) and noting down the time.
 - Configure additional [seal workers](seal-workers.md) to increase the miner's capacity to seal sectors.
 - Configure a [separate address for WindowPost messages](separate-address-window-post.md).

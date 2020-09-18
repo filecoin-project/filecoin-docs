@@ -14,7 +14,7 @@ The are two types of upgrades. The _upgrade in-place_ is the default procedure a
 
 ## Upgrade in-place
 
-1. Safely shutdown your Lotus Miner as explained [here](daemon-lifecycle.md).
+1. Safely shutdown your Lotus Miner as explained [here](miner-lifecycle.md).
 1. Shutdown any seal workers
 1. Shutdown your Lotus Node (`lotus daemon stop` or `systemctl stop lotus-daemon`)
 1. Pull the new version and rebuild. For more information read the [Lotus installation guide](../../get-started/lotus/installation.md) again:

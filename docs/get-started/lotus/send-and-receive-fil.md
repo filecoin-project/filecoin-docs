@@ -77,7 +77,7 @@ Make sure to check `lotus wallet send --help` for advanced options.
 Keep your wallets' private keys safe!
 :::
 
-You can export and re-import a wallet with:
+You can export and re-import a wallet, potentially to a different Lotus node, with:
 
 ```bash
 lotus wallet export <address> > wallet.private
@@ -88,3 +88,7 @@ and:
 ```bash
 lotus wallet import wallet.private
 ```
+
+::: tip
+If one of the nodes is offline, copying the files in `~/.lotus/keystore` directly should also work.
+:::

@@ -10,6 +10,10 @@ breadcrumb: 'Custom storage layout'
 
 If you used the `--no-local-storage` flag during the [miner initialization](miner-setup.md#miner-initialization), you should specify the disk locations for sealing (fast SSD recommended) and long-term storage.
 
+The Lotus Miner keeps track of defined storage locations in in `~/.lotusminer/storage.json` (or `$LOTUS_MINER_PATH/storage.json`) and uses `~/.lotusminer` path as default.
+
+Upon initialization of a storage location, a `<path-to-storage>/sectorstorage.json` file is created that contains the UUID assigned to this location, along with whether it can be used for sealing or storing.
+
 [[TOC]]
 
 ## Custom location for sealing
@@ -35,3 +39,9 @@ This location can be made of large capacity, albeit slower, spinning-disks.
 ```sh
 lotus-miner storage list
 ```
+
+## Updating locations
+
+To move data from one location to another, follow the instructions in the [Miner lifecycle guide](miner-lifecycle.md#changing-storage-locations).
+
+To fully remove one location, edit the `storage.json` manually and re-start your miner.

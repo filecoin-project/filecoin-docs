@@ -13,7 +13,7 @@ breadcrumb: Switch networks
 Shutdown any Lotus daemons that are currently running. This includes `lotus` and potentially `lotus-miner` and `lotus-worker` daemons.
 
 ::: warning
-If you are running a miner, see the [instructions to safely stop a miner](../../mine/lotus/daemon-lifecycle.md).
+If you are running a miner, see the [instructions to safely stop a miner](../../mine/lotus/miner-lifecycle.md).
 :::
 
 ## Move your data (optional)

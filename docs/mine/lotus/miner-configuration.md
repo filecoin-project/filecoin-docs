@@ -13,7 +13,7 @@ The Lotus Miner configutation is created after the [initialization step](miner-s
 The _default configuration_ has all the items commented, so in order to customize one of the items the leading `# ` need to be removed.
 
 ::: tip
-For any **configuration changes to take effect**, the miner must be [restarted](daemon-lifecycle.md).
+For any configuration changes to take effect, the miner must be [restarted](miner-lifecycle.md).
 :::
 
 [[TOC]]

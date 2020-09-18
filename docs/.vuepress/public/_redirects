@@ -27,6 +27,7 @@
 /mine/connectivity/ /mine/lotus/connectivity/
 /mine/spacerace/ /mine/spacerace/
 /mine/mining-troubleshooting/ /mine/lotus/miner-troubleshooting/
+/mine/lotus/daemon-lifecycle/ /mine/lotus/miner-lifecycle/
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/

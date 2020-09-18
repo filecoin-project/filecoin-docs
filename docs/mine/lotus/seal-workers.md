@@ -18,6 +18,10 @@ The `lotus-worker` application should have been built and installed along with t
 
 ## Setting up the Miner
 
+### Choosing a data directory for the worker
+
+The Lotus Worker stores all the necessary data in the `~/.lotusworker` folder. You can customize that by setting the `$LOTUS_WORKER_PATH` environment variable. It is recommended to put this folder on a NVMe SSD so that it gets faster disk performance.
+
 ### Allow external connections to the miner API
 
 Set `ListenAddress` and `RemoteListenAddress` to the IP of a non-local interface (or `0.0.0.0`) as [documented here](miner-configuration.md#api-section). [Check connectivity to the RemoteListenAddress](connectivity.md) from the worker machine.
