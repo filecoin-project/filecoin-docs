@@ -100,7 +100,7 @@ lotus-miner init --owner=<bls address>  --no-local-storage
 ```
 
 - The `--no-local-storage` flag is used so that we can later configure [specific locations for storage](custom-storage-layout.md). This is optional but recommended.
-- The init process will download over **100GiB of initialization parameters** to /var/tmp/filecoin-proof-parameters. Make sure there is space or set `FIL_PROOFS_PARAMETER_CACHE` to somewhere else. We additionally recommend that this corresponds to an NVMe drive, as reading and verifying the proofs affects how quickly a miner becomes fully booted every time it is started.
+- The init process will download over **100GiB of initialization parameters** to `/var/tmp/filecoin-proof-parameters`. Make sure there is space or set `FIL_PROOFS_PARAMETER_CACHE` to somewhere else. We additionally recommend that this corresponds to an NVMe drive, as reading and verifying the proofs affects how quickly a miner becomes fully booted every time it is started.
 - The Lotus Miner configuration folder is created at `~/.lotusminer/` or `$LOTUS_MINER_PATH` if set.
 
 ## Connectivity to the miner
