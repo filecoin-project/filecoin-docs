@@ -85,7 +85,7 @@ You will need a BLS wallet (`t3...`) for mining. To create it, if you don't have
 lotus wallet new bls
 ```
 
-Next make sure to [send some funds](../../get-started/lotus/send-and-receive-fil.md) to this address so that the miner setup can be completed.
+Next make sure to [send some funds](../../get-started/lotus/send-and-receive-fil.md) to this address so that the miner setup can be completed. For additional information about the different wallets that a miner can use and how to configure them, read the [miner wallets guide](miner-wallets.md).
 
 ::: tip
 Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-a-wallet)!
@@ -147,6 +147,7 @@ lotus-miner init --owner=<bls address>  --no-local-storage
 
 - The `--no-local-storage` flag is used so that we can later configure [specific locations for storage](custom-storage-layout.md). This is optional but recommended.
 - The Lotus Miner configuration folder is created at `~/.lotusminer/` or `$LOTUS_MINER_PATH` if set.
+- The _owner address_ is used to create the miner on the chain (by submitting a message), upon which the miner receives a unique miner ID which is both human-readable and can act as an alias to the ower-address.
 
 ## Connectivity to the miner
 
@@ -197,4 +198,4 @@ Your miner should now be preliminarly setup and running, but **there are still a
 - Learn what is a right moment to [shutdown/restart your miner](miner-lifecycle.md)
 - Update `ExpectedSealDuration` with the time it takes your miner to seal a sector: discover it by [running a benchmark](benchmarks.md) or by [pledging a sector](sector-pledging.md) and noting down the time.
 - Configure additional [seal workers](seal-workers.md) to increase the miner's capacity to seal sectors.
-- Configure a [separate address for WindowPost messages](separate-address-window-post.md).
+- Configure a [separate address for WindowPost messages](miner-wallets.md).
