@@ -102,7 +102,7 @@ Market (Locked):  0 FIL
 
 Here, miner id is `t01000`, and it has total balance of `10582.321501530685596531 FIL` with an available balance of `0.000051276650676449 FIL` that can be used as collateral/pay for the pledge. The worker balance is `49999999.999834359275302423 FIL`.
 
-### Adding funds to the owner address
+## Adding funds to the owner address
 
 ```bash
 ./lotus send --from=<worker_address> <miner_id> <amount>
@@ -112,7 +112,7 @@ Here, miner id is `t01000`, and it has total balance of `10582.32150153068559653
 Since the worker address pays for the gas of the send message as well, so don't send the full amount of your worker balance!
 :::
 
-### Withdrawing miner funds to the owner address
+## Withdrawing miner funds to the owner address
 
 To withdraw funds from the Miner actor to the owner address run:
 
