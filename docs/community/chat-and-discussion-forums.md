@@ -9,7 +9,7 @@ The Filecoin community is active and here to answer your questions in your chann
 ## Chat (Slack or Matrix)
 
 For shorter-lived discussions, our community chat open to all on both Slack and Matrix, with bridged channels allowing you to particate in the same conversations from either platform:
-- [Slack](filecoin.io/slack/)
+- [Slack](https://filecoin.io/slack/)
 - [Matrix](https://riot.im/app/#/group/+filecoin:matrix.org)
 
 ## Discussion Forums
