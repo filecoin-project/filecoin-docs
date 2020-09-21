@@ -82,7 +82,7 @@ Every row corresponds to a deadline (a period of 30 minutes covering 24 hours). 
 
 ### Checking and temporally disabling deals
 
-Before stopping the miner, you may check the state of your deals to make sure the miner is not receiving data or retrieving data for a client:
+Before stopping the miner, check the state of your deals to make sure the miner is not receiving data or retrieving data for a client:
 
 ```bash
 lotus-miner storage-deals list
