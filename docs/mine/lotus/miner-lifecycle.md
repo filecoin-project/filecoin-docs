@@ -112,7 +112,7 @@ To get an overview of your current sectors and states, run:
 lotus-miner sectors list
 ```
 
-Any ongoing sealing operation will be restarted from the last checkpoint (usually corresponds to the start of the current sealing phase). Given that sealing is time consuming, you may decide to wait for some soon-to-finish stages to happen before the restart.
+Any ongoing sealing operation will be restarted from the last checkpoint, and usually corresponds to the start of the current sealing phase. Given that sealing is time consuming, you should wait for some stages that are close to finishing before restarting your miner.
 
 ### Restarting the miner
 
