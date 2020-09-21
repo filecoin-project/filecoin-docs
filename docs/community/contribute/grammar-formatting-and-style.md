@@ -270,6 +270,50 @@ Press `ctrl` + `c` to copy the highlighted text.
 
 The plus symbol `+` stays outside of the code tags.
 
+#### Custom containers
+
+Custom containers can be defined by their types, titles, and contents.
+
+##### Input
+
+```markdown
+::: tip
+This is a tip
+:::
+
+::: warning
+This is a warning
+:::
+
+::: danger
+This is a dangerous warning
+:::
+
+::: details
+This is a details block, which does not work in IE / Edge
+:::
+```
+
+##### Output
+
+This output is not supported by Github Flavoured Markdown (GFM). However, they render properly when viewed through VuePress at [docs.filecoin.io/community/contribute/grammar-formatting-and-style](https://docs.filecoin.io/community/contribute/grammar-formatting-and-style/#style).
+
+::: tip
+This is a tip
+:::
+
+::: warning
+This is a warning
+:::
+
+::: danger
+This is a dangerous warning
+:::
+
+::: details
+This is a details block, which does not work in IE / Edge
+:::
+
 ### Images
 
 The following rules and guidelines define how to use and store images.
