@@ -23,7 +23,7 @@ The process of shutting down a miner and starting it again is complicated. Sever
 
 ### Reducing the time offline
 
-Usually, the miner should be offline as little as possible, given the need to continuously send proofs to the network. This includes the time it takes for the miner to fully boot up once it is restarted. For these reasons, it is recommended to:
+Given the need to continuously send proofs to the network, the miner should be offline as little as possible. _Offline-time_ includes the time it takes for the computer to restart the miner daemon fully. For these reasons, we recommend you follow these steps:
 
 1. Rebuild, install any upgrades before restarting the Lotus Miner process.
 2. Make sure that the proof parameters that are downloaded the first time the miner is started to `/var/tmp/filecoin-proof-parameters` (or to `$FIL_PROOFS_PARAMETER_CACHE` when defined) are in a fast storage drive (NVMe), as they need to be read and verified every time the miner starts.
