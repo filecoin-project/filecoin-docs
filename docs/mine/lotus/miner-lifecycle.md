@@ -30,9 +30,7 @@ Given the need to continuously send proofs to the network, the miner should be o
 
 ### Ensuring proofs for the current deadline have been sent
 
-Before shutting down the miner daemon, verify that no pending operations that could get your miner _[slashed](../slashing.md)_.
-
-Run `lotus-miner proving info`: If any deadline shows a _block height_ in the past, do not restart.
+Shutting down your miner while there are still pending operations could get your [miner slashed](../slashing.md). Check that there are no pending operations by running `lotus-miner proving info`. If any deadline shows a _block height_ in the past, do not restart yet.
 
 In the following example, `Deadline Open` is 454, which is earlier than `Current Epoch` of 500. This miner should not be shut down or restarted:
 
