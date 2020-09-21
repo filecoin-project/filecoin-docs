@@ -106,7 +106,7 @@ lotus-miner retrieval-deals selection reset
 
 ### Checking ongoing seal operations
 
-You should get an overview of your current sectors and states with:
+To get an overview of your current sectors and states, run:
 
 ```bash
 lotus-miner sectors list
