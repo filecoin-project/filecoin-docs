@@ -5,10 +5,6 @@ description: Filecoin frequently asked questions.
 
 # Filecoin FAQ
 
-### How do I get started with Filecoin and the broader web3 space?
-
-We've put a [Filecoin Primer](./primer.md) together for you. It contains lots of videos, papers, interview, and other resources to help you fully understand the Filecoin ecosystem.
-
 ### What are some of the primary use cases for Filecoin at mainnet launch?
 
 Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include publicly verifiable cryptographic storage proofs, [crypto-economic mechanisms](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a trustless decentralized storage network.
