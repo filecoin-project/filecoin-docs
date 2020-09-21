@@ -233,9 +233,9 @@ lotus sync wait
 ```
 
 :::tip
-Syncing the Filecoin chain is a _very_ slow process, and the chain grows at a very fast pace. A network 100 days old will take about 25 days to sync from scratch.
+Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest just pulling a recent snapshot and using that to skip syncing older sections of the chain.
 
-As a workaround, we are offering chain state snapshots that can be downloaded and used to initialize the daemon. This workaround is temporary until the syncing mechanism is improved. You can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car)
+For now, you can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car)
 
 Then start your lotus daemon with:
 
