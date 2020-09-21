@@ -14,7 +14,7 @@ These operations are normally related to maintenances and upgrades. Given that m
 
 ## Safely restarting the miner daemon
 
-The process of shutting down a miner and starting it again is complex as there are several factors that need to be taken into account to be able to do it with all the guarantees:
+The process of shutting down a miner and starting it again is complicated. Several factors need to be taken into account to be able to do it with all the guarantees:
 
 - How long the miner plans to be offline
 - The existence and distribution of proving deadlines for the miner
