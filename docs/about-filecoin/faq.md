@@ -160,7 +160,7 @@ To avoid extortion, always ensure you store your data with a fairly decentralize
 
 Miners currently provide a 'dumb box' interface and will serve anyone any data they have. Maybe in the future, miners will offer ACLs and logins and such, but that requires that you trust the miner. The recommended (and safest) approach here is to encrypt data you don't want others to see yourself before storing it.
 
-### How do you update date stored on Filecoin?
+### How do you update data stored on Filecoin?
 
 We have some really good ideas around 'warm' storage (that is mutable and provable) that we will probably implement in the near future. But for now, your app will have to treat Filecoin as an append-only log. If you want to change your data, you just write new data.
 
