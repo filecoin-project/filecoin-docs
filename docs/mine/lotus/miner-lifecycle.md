@@ -97,7 +97,7 @@ lotus-miner storage-deals selection reject --online --offline
 lotus-miner retrieval-deals selection reject --online --offline
 ```
 
-After re-start, they can be reset with:
+After the miner has finished rebooting, the deals can be reset with:
 
 ```bash
 lotus-miner storage-deals selection reset
