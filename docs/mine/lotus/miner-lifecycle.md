@@ -90,7 +90,7 @@ lotus-miner retrieval-deals list
 lotus-miner data-transfers list
 ```
 
-To prevent new deals from coming in while you wait to finish work for the current deadline etc, you may want to disable storage and retrieval deals so that the miner does not find itself in the middle of a new one when shutdown:
+To prevent new deals from coming in while you wait to finish work for the current deadline, you can disable storage and retrieval deals. This ensures that the miner does not find itself in the middle of a new deal when shutting down:
 
 ```bash
 lotus-miner storage-deals selection reject --online --offline
