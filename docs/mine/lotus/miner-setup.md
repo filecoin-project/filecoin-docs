@@ -91,6 +91,29 @@ Next make sure to [send some funds](../../get-started/lotus/send-and-receive-fil
 Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-a-wallet)!
 :::
 
+### Downloading parameters
+
+For the miner to start, it will need to read and verify the Filecoin proof parameters. These can be downloaded in advance (recommended), or otherwise the init process will. Proof parameters consist of several files totalling **over 100GiB**.
+
+To set the location on which the parameters should be stored do:
+
+```sh
+export FIL_PROOFS_PARAMETER_CACHE=/path/to/fast/mount
+```
+
+We recommend to download and store them in an NVMe drive with very fast access, as this will affect how fast the miner can (re)boot (parameters are read on start). `/var/tmp/filecoin-proof-parameters` will be otherwise used by default.
+
+To download the parameters do:
+
+```sh
+# Use sectors supported by the Filecoin network that the miner will join and use.
+# lotus-miner fetch-params <sector-size>
+lotus-miner fetch-params 32GiB
+lotus-miner fetch-params 64GiB
+```
+
+You can verify sectors sizes for a network in the [network dashboard](https://networks.filecoin.io). The `FIL_PROOFS_PARAMETER_CACHE` variable should stay defined not only for download, but also when starting the Lotus miner.
+
 ## Miner initialization
 
 Before starting your miner for the first time run:
@@ -100,7 +123,6 @@ lotus-miner init --owner=<bls address>  --no-local-storage
 ```
 
 - The `--no-local-storage` flag is used so that we can later configure [specific locations for storage](custom-storage-layout.md). This is optional but recommended.
-- The init process will download over **100GiB of initialization parameters** to /var/tmp/filecoin-proof-parameters. Make sure there is space or set `FIL_PROOFS_PARAMETER_CACHE` to somewhere else. We additionally recommend that this corresponds to an NVMe drive, as reading and verifying the proofs affects how quickly a miner becomes fully booted every time it is started.
 - The Lotus Miner configuration folder is created at `~/.lotusminer/` or `$LOTUS_MINER_PATH` if set.
 
 ## Connectivity to the miner

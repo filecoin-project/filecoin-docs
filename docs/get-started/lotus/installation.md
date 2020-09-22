@@ -235,7 +235,7 @@ lotus sync wait
 :::tip
 Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest just pulling a recent snapshot and using that to skip syncing older sections of the chain.
 
-For now, you can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car)
+For now, you can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car) (about 4GiB).
 
 Then start your lotus daemon with:
 
