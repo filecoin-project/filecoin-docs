@@ -15,7 +15,7 @@ The Filecoin testnet is a network with parameters and activity levels as close a
 ::: tip
 **We recommend that most developers use a hosted service** like [hosted Powergates or Textile Buckets](filecoin-pinning-services.md) to store application data to the Filecoin testnet. These services are by far the fastest and friendliest way to get your application working with Filecoin. If you are using either a hosted [Powergate](powergate.md) or Textile Buckets, you don’t need to worry about any of the information in this guide. Textile’s services are soon to be deployed against the Filecoin testnet. If you are using hosted Textile products, your application will also be deployed on the Filecoin testnet.
 
-If you would like accelerated access to a hosted Powergate instance, please fill out [this form](https://forms.gle/f5Vd5kTNYTKrmj1D8). We will work with the Textile team to get you access to a hosted Powergate asap.
+If you would like accelerated access to a hosted Powergate instance, please fill out [this form](https://blog.textile.io/hosted-powergate//f5Vd5kTNYTKrmj1D8). We will work with the Textile team to get you access to a hosted Powergate asap.
 :::
 
 **If you are managing your own Filecoin nodes, whether your own lotus node or Powergate node, please read on for these important details.**
