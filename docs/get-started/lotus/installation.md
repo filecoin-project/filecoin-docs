@@ -76,7 +76,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-1. Checkout the branch corresponding to the [network you want to join](./switch-networks.md#rebuild-and-install-lotus-on-the-right-branch). You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+1. Checkout the branch corresponding to the network you want to join. If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
 
    ```sh
    git checkout <branch_or_tag>
@@ -177,7 +177,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    cd lotus/
    ```
 
-1. Checkout the branch corresponding to the [network you want to join](./switch-networks.md#rebuild-and-install-lotus-on-the-right-branch). You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+1. Checkout the branch corresponding to the network you want to join. If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
 
    ```sh
    git checkout <branch_or_tag>
