@@ -1,11 +1,11 @@
 ---
-title: Filecoin compared to…
-description: Compare Filecoin to other file storage and distribution systems that share similar properties.
+title: Comparing Filecoin
+description: While Filecoin shares some similarities to other file storage solutions, the protocol has significant differences that one should consider.
 ---
 
-# Filecoin compared to…
+# Comparing Filecoin
 
-Filecoin combines many elements of other file storage and distribution systems. What makes Filecoin unique is that it runs on an open, peer-to-peer network while still providing economic incentives and proofs to ensure files are being stored correctly. This page compares Filecoin against other technologies which share some of the same properties.
+Filecoin combines many elements of other file storage and distribution systems. What makes Filecoin unique is that it runs on an open, peer-to-peer network while still providing economic incentives and proofs to ensure files are being stored correctly. This page compares Filecoin against other technologies that share some of the same properties.
 
 - [Filecoin vs. Amazon S3, Google Cloud Storage](#filecoin-vs-amazon-s3-google-cloud-storage)
 - [Filecoin vs. Bitcoin](#filecoin-vs-bitcoin)
