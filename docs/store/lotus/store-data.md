@@ -90,7 +90,7 @@ t016309
 ```
 
 ::: callout
-If you want to use these miners please [fill in this Google form](https://forms.gle/f5Vd5kTNYTKrmj1D8) including information from our daemon (`lotus wallet list` and `lotus net id`). You will be contacted via Slack/email when your Lotus Node has been whitelisted.
+If you want to use these miners please [fill in this Google form](https://blog.textile.io/hosted-powergate//f5Vd5kTNYTKrmj1D8) including information from our daemon (`lotus wallet list` and `lotus net id`). You will be contacted via Slack/email when your Lotus Node has been whitelisted.
 :::
 
 Note that these miners:
