@@ -35,12 +35,13 @@ You will need the following software installed to install and run Lotus.
 
 Building Lotus requires some system dependencies, usually provided by your distribution.
 
-| Linux distribution | Dependency install command                                                                                                                               |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                          |
-| Ubuntu/Debian      | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y && sudo apt upgrade -y`                        |
-| Fedora             | `sudo dnf -y update && sudo dnf -y install gcc git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm` |
-| OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`      |
+| Linux distribution | Dependency install command                                                                                                                                                                    |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                                                               |
+| Ubuntu/Debian      | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y && sudo apt upgrade -y`                                                             |
+| Fedora             | `sudo dnf -y update && sudo dnf -y install gcc git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm`                                      |
+| OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`                                           |
+| Amazon Linux 2     | `sudo yum install -y https://dl.fedoraproject.org/pub/epel/epest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel` |
 
 #### Rustup
 
