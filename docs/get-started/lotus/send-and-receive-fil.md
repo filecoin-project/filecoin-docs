@@ -80,7 +80,7 @@ Keep your wallets' private keys safe!
 You can export and re-import a wallet, potentially to a different Lotus node, with:
 
 ```bash
-lotus wallet export <address> > wallet.private
+lotus wallet export <address> wallet.private
 ```
 
 and:
