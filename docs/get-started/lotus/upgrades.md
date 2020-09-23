@@ -17,7 +17,7 @@ git pull
 git checkout <branch or tag>
 ```
 
-Once the new version is checked-out, rebuild and re-installas [explained in the installation guide](installation.md)in the guide.
+Once the new version is checked-out, rebuild and re-install as explained in the [installation guide](installation.md).
 
 You can verify your current version with:
 
