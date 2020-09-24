@@ -31,6 +31,18 @@ There are different methods to test this:
 - Also Telnet: `telnet <PUBLIC_IP> <PORT>`.
 - You can use your favourite search engine for more ways specifically related to your setup and environment.
 
+## Lotus miner reachability
+
+When the lotus miner is running and reachable, it should report it with:
+
+```sh
+$ lotus-miner net reachability
+AutoNAT status:  Public
+Public address:  /ip4/<IP>/tcp/<port>
+```
+
+Verify that the Public address corresponds to what you expect. `AutoNAT status: Private` means that the Lotus Miner is not reachable on any of the announced addresses.
+
 ## Checking peer count
 
 To ensure storage and retrieval deals operate smoothly, it is recommended to check how many peers a miner is connected to after each start-up:
