@@ -1,5 +1,5 @@
 ---
-title: Comparing Filecoin
+title: Filecoin compared to...
 description: While Filecoin shares some similarities to other file storage solutions, the protocol has significant differences that one should consider.
 ---
 
