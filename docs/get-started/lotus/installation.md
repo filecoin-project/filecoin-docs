@@ -85,7 +85,9 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    Currently, the _master_ branch corresponds to **testnet**.
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
-1. If you have an AMD Zen or Intel Ice Lake CPU (or later), enable the use of SHA extensions by adding these two environment variables:
+1. Depending on your CPU model, you will need to export additional environment variables:
+
+   If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
 
    ```sh
    export RUSTFLAGS="-C target-cpu=native -g"
@@ -94,16 +96,27 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-1. Build Lotus:
+   If you are building Lotus 0.7.1 and have an **older Intel or AMD processor**, set:
 
    ```sh
-   make clean all
-   sudo make install
+   export CGO_CFLAGS="-D__BLST_PORTABLE__"
    ```
 
-   This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
+   This is due to a Lotus bug that prevents Lotus from running on processor without `axd` instruction support, and should be fixed soon.
 
-   `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
+1. Build Lotus:
+
+::: warning
+Lotus 0.7.1 has a bug and will crash on processors without support for `adx` instruction (Intel, older AMD)not work
+
+```sh
+make clean all
+sudo make install
+```
+
+This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
+
+`lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
 
 1. Lotus should now be installed on your computer.
 

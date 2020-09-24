@@ -70,15 +70,7 @@ You will not see any funds in your testnet wallet until your node is fully synce
 
 ### (6) Make deals with Filecoin miners
 
-You can now start [making deals to store your data](../store/lotus/store-data.md). When it comes to choosing a miner, you have two options:
-
-#### Option 1: Protocol Labs miners
-
-We recommend signing up for the [Protocol Labs miners in testnet](../store/lotus/store-data/#protocol-labs-miners-in-testnet) as mentioned in the instructions to make deals.
-
-#### Option 2: Community miners
-
-One Filecoin community member maintains a list of miners on the testnet who are currently accepting storage deals. You can try your luck with these miners as well.
+You can now start [making deals to store your data](../store/lotus/store-data.md). To do this you will need to find a miner willing to store your data. One Filecoin community member maintains a list of miners on the testnet who are currently accepting storage deals:
 
 - [List of miners](https://github.com/jimpick/workshop-client-testnet/blob/spacerace/src/annotations-spacerace.js)
 - In this list, `active` means a deal got to the `active` state, i.e. it was successfully sealed into a sector that appeared on chain.
