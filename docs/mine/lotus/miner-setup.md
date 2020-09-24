@@ -95,13 +95,14 @@ Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exp
 
 For the miner to start, it will need to read and verify the Filecoin proof parameters. These can be downloaded in advance (recommended), or otherwise the init process will. Proof parameters consist of several files totalling **over 100GiB**.
 
-To set the location on which the parameters should be stored do:
+We recommend setting a custom location to store parameters and proofs parent cache -created during the first run- with:
 
 ```sh
-export FIL_PROOFS_PARAMETER_CACHE=/path/to/fast/mount
+export FIL_PROOFS_PARAMETER_CACHE=/path/to/folder/in/fast/disk
+export FIL_PROOFS_PARENT_CACHE=/path/to/folder/in/fast/disk2
 ```
 
-We recommend to download and store them in an NVMe drive with very fast access, as this will affect how fast the miner can (re)boot (parameters are read on start). `/var/tmp/filecoin-proof-parameters` will be otherwise used by default.
+Parameters are read on every (re)start, so using disks with very fast access, like NVMe drives, will speed up miners and workers (re)boots. When the above variables are not set, things will end up in `/var/tmp/` by default.
 
 To download the parameters do:
 
@@ -112,7 +113,29 @@ lotus-miner fetch-params 32GiB
 lotus-miner fetch-params 64GiB
 ```
 
-You can verify sectors sizes for a network in the [network dashboard](https://networks.filecoin.io). The `FIL_PROOFS_PARAMETER_CACHE` variable should stay defined not only for download, but also when starting the Lotus miner.
+You can verify sectors sizes for a network in the [network dashboard](https://networks.filecoin.io). The `FIL_PROOFS_*_CACHE` variables should stay defined not only for download, but also when starting the Lotus miner (or workers).
+
+## Checklist before launch
+
+To summarize all of the above, make sure that:
+
+- A BLS address exists and has some funds so that he miner can be initialized
+- The following environment variables have been defined and will be available for any Lotus miner runs:
+
+  ```
+  export LOTUS_MINER_PATH=/path/to/miner/config/storage
+  export LOTUS_PATH=/path/to/lotus/node/folder # when using a local node
+  export BELLMAN_CPU_UTILIZATION=0.875
+  export FIL_PROOFS_MAXIMIZE_CACHING=1
+  export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 # when having GPU
+  export FIL_PROOFS_USE_GPU_TREE_BUILDER=1   # when having GPU
+  export FIL_PROOFS_PARAMETER_CACHE=/fast/disk/folder # > 100GiB!
+  export FIL_PROOFS_PARENT_CACHE=/fast/disk/folder2   # > 50GiB!
+  export TMPDIR=/fast/disk/folder3                    # Used when sealing.
+  ```
+
+- Parameters have been prefetched to the cache folders specified above.
+- The systems has enough swap and it is active.
 
 ## Miner initialization
 
