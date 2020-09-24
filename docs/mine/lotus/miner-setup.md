@@ -119,7 +119,7 @@ You can verify sectors sizes for a network in the [network dashboard](https://ne
 
 To summarize all of the above, make sure that:
 
-- A BLS address exists and has some funds so that he miner can be initialized
+- A BLS address exists and has some funds so that he miner can be initialized.
 - The following environment variables have been defined and will be available for any Lotus miner runs:
 
   ```
