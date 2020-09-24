@@ -106,17 +106,18 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
 1. Build Lotus:
 
-::: warning
-Lotus 0.7.1 has a bug and will crash on processors without support for `adx` instruction (Intel, older AMD)not work
+   ```sh
+   make clean all
+   sudo make install
+   ```
 
-```sh
-make clean all
-sudo make install
-```
+   ::: warning
+   Lotus 0.7.1 has a bug and will crash on processors without support for `adx` instruction (Intel, older AMD) not work.
+   :::
 
-This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
+   This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
 
-`lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
+   `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
 
 1. Lotus should now be installed on your computer.
 
