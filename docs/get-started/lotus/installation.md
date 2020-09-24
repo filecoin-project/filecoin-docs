@@ -75,7 +75,7 @@ To build Lotus, you need a working installation of [Go 1.14 or higher](https://g
    If you get an error saying that Go is not installed, you may just need to add `/usr/local/go/bin` to your `PATH` variable:
 
    ```bash
-   export PATH=$PATH:/usr/local/go/bin
+   echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc
    ```
 
    Once you've done that try running `go version` again. If you're still facing issues, head over to the [official Go documnetation](https://golang.org/doc/install) for further support.
