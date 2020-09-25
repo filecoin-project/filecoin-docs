@@ -39,71 +39,13 @@ Building Lotus requires some system dependencies, usually provided by your distr
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                                                               |
 | Ubuntu/Debian      | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl build-essential -y && sudo apt upgrade -y`                                             |
-| Fedora             | `sudo dnf -y update && sudo dnf -y install gcc make git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm wget`          |
+| Fedora             | `sudo dnf -y update && sudo dnf -y install gcc make git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm wget`                            |
 | OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`                                           |
 | Amazon Linux 2     | `sudo yum install -y https://dl.fedoraproject.org/pub/epel/epest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel` |
 
-#### Rustup
+#### Rustup and Go
 
-Lotus needs [rustup](https://rustup.rs).
-
-1. Download and run the installer:
-
-   ```bash
-   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-   ```
-
-1. Select the `default` installation option:
-
-   ```bash
-   > 1) Proceed with installation (default)
-   > 2) Customize installation
-   > 3) Cancel installation
-
-   1
-   ```
-
-1. Check that Rust is installed properly by checking the version:
-
-   ```bash
-   rustc --version
-
-   > rustc 1.46.0 (04488afe3 2020-08-24)
-   ```
-
-   You may need to log in and log out for Rust to install fully. This installer automatically adds `cargo`, `rustc` and `rustup` to your `PATH`. If you are still running into issues after logging out and back in, check the [official Rust documentation](https://www.rust-lang.org/tools/install) for support.
-
-1. With Rust installed, you can continue with the rest of the installation.
-
-#### Go
-
-To build Lotus, you need a working installation of [Go 1.14 or higher](https://golang.org/dl/).
-
-1. Download and install Go:
-
-   ```sh
-   wget -c https://dl.google.com/go/go1.14.7.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
-   ```
-
-1. Check that Go installed correctly:
-
-   ```bash
-   $ go version
-
-   go version go1.14.7 linux/amd64
-   ```
-
-   :::tip
-   If you get an error saying that Go is not installed, you may just need to add `/usr/local/go/bin` to your `PATH` variable:
-
-   ```bash
-   echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc
-   ```
-
-   Once you've done that try running `go version` again. If you're still facing issues, head over to the [official Go documnetation](https://golang.org/doc/install) for further support.
-   :::
-
-1. With Go installed, you can move onto building and installing Lotus.
+Lotus needs both [Rust](https://rustup.rs) and [Go](https://golang.org/) to run. See the offical documentation for both those projects to get the install instructions for you operating system.
 
 ### Build and install Lotus
 
