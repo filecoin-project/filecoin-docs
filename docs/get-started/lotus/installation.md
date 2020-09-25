@@ -130,17 +130,17 @@ This method of building does not produce portable binaries. Make sure you run th
 
 ### Systemd service files
 
-Lotus provides Systemd service files. They can be installed with:
+Lotus provides **generic** Systemd service files. They can be installed with:
 
 ```sh
 make install-daemon-service
 make install-miner-service
 ```
 
-Once installed, you should be able to control Lotus using `systemctl [start|stop] lotus-daemon`.
+::: warning
+Provided service files should be **inspected and edited** according to user needs as they are very generic and may lack specific environment variabes and settings needed by the users.
 
-::: tip
-By default, the `lotus-daemon` service file redirects the logging output to `/var/log/lotus/daemon.log`, so `journalctl` displays nothing.
+One example is that logs are redirected to files in `/var/log/lotus` by default and not visible in `journalctl`.
 :::
 
 ## macOS
