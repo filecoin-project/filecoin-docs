@@ -8,7 +8,7 @@ breadcrumb: 'Seal workers'
 
 {{ $frontmatter.description }}
 
-While the **Lotus Miner** can run every of the sealing phases itself (and is configured to do so by default), Lotus workers allow to create a _sealing pipeline_ that can improve resource utilization and free the main miner from CPU-intensive tasks so that it can focus on performing and submitting WindowPoSTs to the chain.
+While the **Lotus Miner** can run every of the sealing phases itself (and is configured to do so by default), Lotus workers allow to create a _sealing pipeline_ that can improve resource utilization and free the main miner from CPU-intensive tasks so that it can focus on performing and submitting _WindowPoSTs_ and _WinningPoSTs_ to the chain.
 
 [[TOC]]
 
@@ -25,7 +25,7 @@ If the worker process has only 1 available CPU-core (because of CPU-affinity con
 
 Note that, at all moments, the miner controls the total number of sectors that can be sealing at the same time via `MaxSealingSectors` and/or `MaxSealingSectorsForDeals` in the Miner's `config.toml`.
 
-All of the above serves to setup custom _sealing pipelines_ where available hardware can be utilized in the most performance fashion, for example, by having co-located workers on a single machine to perform _PreCommit1_ only, and then having a dedicated GPU worker for the _PreCommit2_ and _Commit_ phases on a different hardware, leaving the miner to do the rest of the operations. The final setup will depend on the available hardware and its specifications.
+All of the above serves to setup custom _sealing pipelines_ where available hardware can be utilized in the most performant fashion, for example, by having co-located workers on a single machine to perform _PreCommit1_ only, and then having a dedicated GPU worker for the _PreCommit2_ and _Commit_ phases on a different hardware, leaving the miner to do the rest of the operations. The final setup will depend on the available hardware and its specifications.
 
 ::: callout
 Remember during sealing, significant amounts of data are moved/copied accross workers, so good network connectivity among them is a must.

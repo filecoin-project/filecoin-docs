@@ -102,7 +102,7 @@ export FIL_PROOFS_PARAMETER_CACHE=/path/to/folder/in/fast/disk
 export FIL_PROOFS_PARENT_CACHE=/path/to/folder/in/fast/disk2
 ```
 
-Parameters are read on every (re)start, so using disks with very fast access, like NVMe drives, will speed up miners and workers (re)boots. When the above variables are not set, things will end up in `/var/tmp/` by default.
+Parameters are read on every (re)start, so using disks with very fast access, like NVMe drives, will speed up miners and workers (re)boots. When the above variables are not set, things will end up in `/var/tmp/` by default, which **often lacks enough space**.
 
 To download the parameters do:
 
