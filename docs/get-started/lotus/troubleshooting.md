@@ -70,3 +70,12 @@ WARN  main  lotus/main.go:72  routing: not found
 ```
 
 This error means that the miner you are trying to talk to is offline.
+
+## Signal killed
+
+```bash
+/usr/local/go/pkg/tool/linux_amd64/link: signal: killed
+make: *** [Makefile:68: lotus] Error 1
+```
+
+Double check that your computer meets the [minimum hardware requirements](./installation#minimal-requirements) for Lotus.
