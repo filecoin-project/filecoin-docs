@@ -73,6 +73,8 @@ This error means that the miner you are trying to talk to is offline.
 
 ## Signal killed
 
+If you get a `signal killed` error, it could indcate that there was an error during the build process.
+
 ```bash
 /usr/local/go/pkg/tool/linux_amd64/link: signal: killed
 make: *** [Makefile:68: lotus] Error 1
