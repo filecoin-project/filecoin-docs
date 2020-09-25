@@ -81,3 +81,20 @@ make: *** [Makefile:68: lotus] Error 1
 ```
 
 Double check that your computer meets the [minimum hardware requirements](./installation#minimal-requirements) for Lotus.
+
+## Go command not found
+
+You may encounter an error saying that the `go` command was not found:
+
+```bash
+sudo make install
+
+> bash: go: command not found
+> expr: syntax error: unexpected argument '14'
+> install -C ./lotus /usr/local/bin/lotus
+> install -C ./lotus-miner /usr/local/bin/lotus-miner
+> install -C ./lotus-worker /usr/local/bin/lotus-worker
+> ...
+```
+
+You can ignore this error during the `sudo make install` step; it does not affect the install.
