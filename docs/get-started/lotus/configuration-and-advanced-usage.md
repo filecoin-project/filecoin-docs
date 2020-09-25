@@ -75,6 +75,9 @@ Variables common to most Lotus binaries:
 - `LOTUS_FD_MAX`: Sets the file descriptor limit for the process
 - `LOTUS_JAEGER`: Sets the Jaeger URL to send traces. See TODO.
 - `LOTUS_DEV`: Any non-empty value will enable more verbose logging, useful only for developers.
+- `GOLOG_OUTPUT`: Controls where the program logs. Possible values: `stdout`, `stderr`, `file`. Multiple values can be combined with '+'.
+- `GOLOG_FILE`: Path to file to log to.
+- `GOLOG_LOG_FMT`: Logging format (json, nocolor).
 
 Variables specific to the _Lotus daemon_:
 
@@ -109,3 +112,7 @@ To see the various logging systems, run:
 ```sh
 lotus log list
 ```
+
+::: tip
+The [Environment variables section](#environment-variables) section above documents some `GOLOG_*` variables that allow to control logging locations and formats.
+:::

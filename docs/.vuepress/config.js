@@ -95,6 +95,7 @@ module.exports = {
           ],
 
           '/store/': [
+            ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             {
               title: 'LOTUS',
               path: '/store/lotus/',
@@ -112,7 +113,6 @@ module.exports = {
 
           '/mine/': [
             'how-mining-works',
-            ['spacerace', 'Space Race'],
             'hardware-requirements',
             //'storage-sector-lifecycle',
             ['mining-rewards', 'Mining rewards'],
