@@ -39,19 +39,41 @@ Building Lotus requires some system dependencies, usually provided by your distr
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                                                               |
 | Ubuntu/Debian      | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl build-essential -y && sudo apt upgrade -y`                                             |
-| Fedora             | `sudo dnf -y update && sudo dnf -y install gcc git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm`                                      |
+| Fedora             | `sudo dnf -y update && sudo dnf -y install gcc make git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm && yum install wget -y`          |
 | OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`                                           |
 | Amazon Linux 2     | `sudo yum install -y https://dl.fedoraproject.org/pub/epel/epest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel` |
 
 #### Rustup
 
-Lotus needs [rustup](https://rustup.rs). The easiest way to install it is:
+Lotus needs [rustup](https://rustup.rs).
 
-```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+1. Download and run the installer:
 
-Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.
+   ```bash
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   ```
+
+1. Select the `default` installation option:
+
+   ```bash
+   > 1) Proceed with installation (default)
+   > 2) Customize installation
+   > 3) Cancel installation
+
+   1
+   ```
+
+1. Check that Rust is installed properly by checking the version:
+
+   ```bash
+   rustc --version
+
+   > rustc 1.46.0 (04488afe3 2020-08-24)
+   ```
+
+   You may need to log in and log out for Rust to install fully. This installer automatically adds `cargo`, `rustc` and `rustup` to your `PATH`. If you are still running into issues after logging out and back in, check the [official Rust documentation](https://www.rust-lang.org/tools/install) for support.
+
+1. With Rust installed, you can continue with the rest of the installation.
 
 #### Go
 
@@ -81,7 +103,7 @@ To build Lotus, you need a working installation of [Go 1.14 or higher](https://g
    Once you've done that try running `go version` again. If you're still facing issues, head over to the [official Go documnetation](https://golang.org/doc/install) for further support.
    :::
 
-1. Go should now be installed.
+1. With Go installed, you can move onto building and installing Lotus.
 
 ### Build and install Lotus
 
@@ -114,7 +136,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-   If you are building Lotus 0.7.1 and have an **older Intel or AMD processor**, set:
+   If you are building Lotus 0.7.1 and have an Intel or AMD processor without the AXD instruction set, add the `CGO_CFLAGS` environment variable:
 
    ```sh
    export CGO_CFLAGS="-D__BLST_PORTABLE__"
@@ -122,21 +144,27 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    This is due to a Lotus bug that prevents Lotus from running on processor without `axd` instruction support, and should be fixed soon.
 
-1. Build Lotus:
+1. Build and install Lotus:
 
-::: warning
-Lotus 0.7.1 has a bug and will crash on processors without support for `adx` instruction (Intel, older AMD)not work
+   ```sh
+   make clean all
+   sudo make install
+   ```
 
-```sh
-make clean all
-sudo make install
-```
+   This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
 
-This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
+   `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
 
-`lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
+1. Check that Lotus installed properly by checking the version:
 
-1. Lotus should now be installed on your computer.
+   ```bash
+   cd ~
+   lotus --version
+
+   > lotus version 0.7.2+git.e5873d5d
+   ```
+
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon).
 
 #### Native Filecoin FFI
 
@@ -224,7 +252,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    sudo make install
    ```
 
-1. You should now have Lotus installed.
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon).
 
 ## Start the Lotus daemon
 
