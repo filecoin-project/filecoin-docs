@@ -10,9 +10,9 @@ breadcrumb: 'API token generation'
 
 [[TOC]]
 
-## Generating new tokens
+## Obtaining tokens
 
-Any client wishing to talk to the [API endpoints](../../reference/lotus-api.md) (exposed by either the Lotus Node or the Lotus Miner), will need a token. Tokens can be generated as follows.
+Any client wishing to talk to the [API endpoints](../../reference/lotus-api.md) (exposed by either the Lotus Node or the Lotus Miner), will need a token. Tokens can be obtained as follows.
 
 For the Lotus Node:
 
