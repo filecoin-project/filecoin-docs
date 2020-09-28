@@ -8,9 +8,19 @@ breadcrumb: 'Miner Wallets'
 
 {{ $frontmatter.description }}
 
-During miner initialization, a miner actor is created on the chain. This actor gives the miner its ID (and looks like `t0...`). The miner actor be in charge of collecting all the payments sent to the miner (as identified by its ID).
+During miner initialization, a _miner actor_ is created on the chain. This actor gives the miner its ID: `t0...`. The miner actor is in charge of collecting all the payments sent to the miner when, for example, honoring the different types of deals.
 
-The Lotus Miner daemon, in turn, performs the operations as required by the network during and can use different Lotus Node wallets to pay the fees or interact with the Miner actor. Information on how to manage Lotus wallets [can be found here](../../get-started/lotus/send-and-receive-fil.md).
+The Lotus Miner daemon, in turn, performs the operations as required by the network during and can use different Lotus Node wallets to pay the fees or interact with the _miner actor_. Information on how to manage Lotus wallets [can be found here](../../get-started/lotus/send-and-receive-fil.md).
+
+::: tip
+We use the terms _wallet_ and _address_ rather interchangeably in this document. A Lotus _wallet_ is identified by its _address_.
+:::
+
+The currently configured wallets used by a miner can be listed with:
+
+```sh
+lotus-miner actor control list
+```
 
 The different types of wallets associated to a miner are described below:
 
@@ -18,39 +28,49 @@ The different types of wallets associated to a miner are described below:
 
 ## The owner address
 
-The owner address corresponds to a Lotus Node wallet address that is provided during the [miner initialization](miner-setup.md). It is a privilegdged address since it is the only one able to withdraw funds from the miner actor and pay for any miner-actor-triggered changes.
+The owner address corresponds to a Lotus Node wallet address that is provided during the [miner initialization](miner-setup.md). The _owner address_ is only needed when:
 
-The owner address will be used as worker and control address if none are defined.
+- Changing the worker address in the _miner actor_
+- Withdrawing balance from the _miner actor_
+- Submit _WindowPoSts_ (**unless _control addresses_ are defined and have enough balance**, see below)
 
-Given the high value of this wallet, we recommend using a separate worker address and keeping the owner address offline as a cold wallet.
+The wallet associated to the _owner address_ is designed to be kept offline as a cold wallet, given that it should not be used often and it is critical to safeguard the miner's funds. In production environments, we strongly recommend using separate _owner_ and _worker_ addresses.
 
 ## The worker address
 
-Then provided, the worker address is used to sign blocks and submit proofs associated with this miner (otherwise the owner address is used). It must be a BLS address and can be specified during `init` with the `--worker` flag.
+The _worker address_ is used to send and pay for day-to-day operations performed by the miner:
 
-The worker address is used to sign and send various types of messages (WHICH ONES? including the createStorageMiner message), which means it needs to pay for the gas of those messages. Make sure you keep an eye on its balance!
+- Initializing the miner on the chain
+- Changing the miner peer id or the multiaddresses
+- Interacting with market and payment channel actors
+- Signing new blocks
+- Submitting proofs, declaring faults. _WindowPoSts_ are submitted using the _worker address_ if:
+  - Control addresses are not defined or do not have enough balance
+  - The _owner address_ does not have enough balance
+
+Thus, unlike the _owner wallet_, the _worker wallet_ must necessarily be a _hot_ wallet. The Lotus Miner will trigger all the necessary transactions using the Lotus Node to which it is connected. The _worker address_ must have enough funds to pay for the day-to-day operations of the miner, including initialization.
 
 ## Control addresses
 
-Control addresses can be used to pay for WindowPoSt messages (ONLY?).
+_Control addresses_ can be used to submit _WindowPoSts_ proofs to the chain. _WindowPoSt_ is the mechanism through which storage is verified in Filecoin and which requires miners to submit proofs for all sectors every 24h. Those proofs are submitted as messages to the chain and therefore need to pay the respective fees.
 
-WindowPoSt is the mechanism through which storage is verified in Filecoin and which requires miners to submit proofs for all sectors every 24h. Those proofs are submitted as messages to the chain which pay the respective fees.
+Many mining related actions require sending messages to the chain but not all of those are as "high value" as _WindowPoSts_. For this reason, it is recommended to use _control addresses_ as a way to avoid head-of-line blocking problems in congested chain conditions.
 
-Because many other mining related actions require sending messages to the chain, and not all of those are "high value", it may be desirable to use a separate account to send PoSt messages from. This allows for setting lower GasFeeCaps on the lower value messages without creating head-of-line blocking problems for the PoSt messages in congested chain conditions.
+Multiple _control addresses_ can be created and configured in a Lotus Miner. The first _control address_ found to have enough funds to submit a _WindowPoSt_ transaction will be used. Otherwise Lotus fails over to the _owner_ and ultimately to the _worker_ address.
 
-To set this up, first create a new wallet, and send it some funds to it for gas fees:
+To set up a _control address_, first, create a new wallet and send it some funds to it for gas fees:
 
 ```sh
 lotus wallet new bls
 t3defg...
 
-lotus send t3defg... 100
+lotus send --from <address> t3defg... 100
 ```
 
-Next add the control address:
+Next, let the miner know about the new address:
 
 ```sh
-lotus-miner actor control set --really-do-it t3defg...
+$ lotus-miner actor control set --really-do-it t3defg...
 Add t3defg...
 Message CID: bafy2..
 ```
@@ -64,15 +84,17 @@ Exit Code: 0
 ...
 ```
 
-Finally, check the miner control address list to make sure the address was correctly setup:
+Finally, check the miner control address list to make sure the address was correctly added:
 
 ```sh
-lotus-miner actor control list
+$ lotus-miner actor control list
 name       ID      key           use    balance
 owner      t01111  t3abcd...  other  300 FIL
 worker     t01111  t3abcd...  other  300 FIL
 control-0  t02222  t3defg...  post   100 FIL
 ```
+
+You can repeat this procedure to add additional addresses.
 
 ## Managing balances
 
@@ -102,24 +124,14 @@ Market (Locked):  0 FIL
 
 Here, miner id is `t01000`, and it has total balance of `10582.321501530685596531 FIL` with an available balance of `0.000051276650676449 FIL` that can be used as collateral/pay for the pledge. The worker balance is `49999999.999834359275302423 FIL`.
 
-## Adding funds to the owner address
+## Withdrawing funds from the Miner actor
 
-```bash
-./lotus send --from=<worker_address> <miner_id> <amount>
-```
-
-::: tip
-Since the worker address pays for the gas of the send message as well, so don't send the full amount of your worker balance!
-:::
-
-## Withdrawing miner funds to the owner address
-
-To withdraw funds from the Miner actor to the owner address run:
+The funds in the _Miner actor_ can be withdrawn to the _owner address_ using:
 
 ```bash
 lotus-miner actor withdraw <amount>
 ```
 
 ::: tip
-Note that the owner address will need to be available in the Lotus Node and have enough funds to pay for the gas for this transaction.
+Note that the owner address will need to be available in the Lotus Node and have enough funds to pay for the gas for this transaction. Thus, cold wallets will need to be temporally imported for the operation to succeed.
 :::

@@ -77,15 +77,25 @@ sudo reboot
 swapon --show
 ```
 
-### Creating a new BLS wallet
+### Creating wallets for the miner
 
-You will need a BLS wallet (`t3...`) for mining. To create it, if you don't have one already, run:
+You will need at least a BLS wallet (`t3...`) for mining. We recommend using [separate owner and worker wallets](miner-wallets.md) though. Thus, create at least two wallets (unless you have some already):
 
 ```sh
+# A new BLS address to use as owner address:
 lotus wallet new bls
+t3...
+
+# A new BLS address to use as worker address:
+lotus wallet new bls
+t3...
 ```
 
-Next make sure to [send some funds](../../get-started/lotus/send-and-receive-fil.md) to this address so that the miner setup can be completed. For additional information about the different wallets that a miner can use and how to configure them, read the [miner wallets guide](miner-wallets.md).
+::: callout
+Next make sure to [send some funds](../../get-started/lotus/send-and-receive-fil.md) to the **worker address** so that the miner setup can be completed.
+:::
+
+For additional information about the different wallets that a miner can use and how to configure them, read the [miner wallets guide](miner-wallets.md).
 
 ::: tip
 Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-a-wallet)!
@@ -93,7 +103,7 @@ Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exp
 
 ### Downloading parameters
 
-For the miner to start, it will need to read and verify the Filecoin proof parameters. These can be downloaded in advance (recommended), or otherwise the init process will. Proof parameters consist of several files totalling **over 100GiB**.
+For the miner to start, it will need to read and verify the Filecoin proof parameters. These can be downloaded in advance (recommended), or otherwise the init process will. Proof parameters consist of several files, which in the case of 32GiB sectors, total **over 100GiB**.
 
 We recommend setting a custom location to store parameters and proofs parent cache -created during the first run- with:
 
@@ -119,7 +129,7 @@ You can verify sectors sizes for a network in the [network dashboard](https://ne
 
 To summarize all of the above, make sure that:
 
-- A BLS address exists and has some funds so that the miner can be initialized.
+- The _worker address_ has some funds so that the miner can be initialized.
 - The following environment variables have been defined and will be available for any Lotus miner runs:
 
   ```
@@ -142,12 +152,12 @@ To summarize all of the above, make sure that:
 Before starting your miner for the first time run:
 
 ```sh
-lotus-miner init --owner=<bls address>  --no-local-storage
+lotus-miner init --owner=<bls address>  --worker=<other_address> --no-local-storage
 ```
 
 - The `--no-local-storage` flag is used so that we can later configure [specific locations for storage](custom-storage-layout.md). This is optional but recommended.
 - The Lotus Miner configuration folder is created at `~/.lotusminer/` or `$LOTUS_MINER_PATH` if set.
-- The _owner address_ is used to create the miner on the chain (by submitting a message), upon which the miner receives a unique miner ID which is both human-readable and can act as an alias to the ower-address.
+- The difference between _owner_ and _worker_ addresses is explained in the [miner wallets guide](miner-wallets.md). As mentioned above, we recommend using two separate addresses. If the `--worker` flag is not provided, the owner address will be used. _Control addresses_ can be added later when the miner is running.
 
 ## Connectivity to the miner
 
