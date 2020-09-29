@@ -244,17 +244,21 @@ lotus sync wait
 ```
 
 :::tip
-Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest just pulling a recent snapshot and using that to skip syncing older sections of the chain.
-
-For now, you can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car) (about 4GiB).
-
-Then start your lotus daemon with:
+Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest importing a pruned chain snapshot when the Lotus daemon starts:
 
 ```sh
-lotus daemon --import-snapshot <snapshot>.car
+# The snapshot size is about 4GiB
+lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car
 ```
 
-For more information about chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
+Alternatively, you can also import a non-pruned snapshot:
+
+```sh
+# Snapshot size ~40GiB
+https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car
+```
+
+For more information about creating chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
 :::
 
 To check how far behind you are when syncing the chain, run the following command:
