@@ -255,7 +255,7 @@ Alternatively, you can also import a non-pruned snapshot:
 
 ```sh
 # Snapshot size ~40GiB
-https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car
+lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car
 ```
 
 For more information about creating chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
