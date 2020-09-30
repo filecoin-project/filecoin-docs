@@ -20,6 +20,12 @@ You can read documentation, instructions and support options in the source repos
 
 This approach uses stock Lotus binaries (see the [installation instructions](../get-started/lotus/installation.md) for reference) and will launch Lotus using small 2KiB sectors, which allow regular workstations to perform mining operations.
 
+*If you are running your local devnet on **MacOS** and having trouble building, you'll need to set the following ENV variables before running `make 2k`:*
+```
+export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+export CGO_CFLAGS="-D__BLST_PORTABLE__"
+```
+
 To get started, build the Lotus binaries in debug mode, enabling the use of 2048 byte sectors:
 
 ```sh
