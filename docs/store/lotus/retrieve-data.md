@@ -38,7 +38,7 @@ lotus client find <Data CID>
 The _retrieval deal_ process is simplified on a simple command:
 
 ```sh
-lotus client retrieve <Data CID> <outfile>
+lotus client retrieve --miner <miner ID> <Data CID> <outfile>
 ```
 
 This commands take other optional flags (check `--help`).
