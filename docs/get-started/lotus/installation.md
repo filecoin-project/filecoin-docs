@@ -96,9 +96,10 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-   If you are building Lotus 0.7.1 and have an **older Intel or AMD processor**, set:
+   If you are building Lotus >= 0.7.1 and have an **older Intel or AMD processor**, set:
 
    ```sh
+   export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
    export CGO_CFLAGS="-D__BLST_PORTABLE__"
    ```
 
