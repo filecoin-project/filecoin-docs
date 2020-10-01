@@ -49,6 +49,7 @@ Send FIL from the default wallet by running:
 ```bash
 lotus send <target address> <amount>
 ```
+
 To get the current default wallet address:
 
 ```bash
