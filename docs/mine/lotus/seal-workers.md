@@ -154,16 +154,16 @@ lotus-worker run --listen 0.0.0.0:X --add-piece=false --precommit1=true --unseal
 
 By default, the _PreCommit1_ base will _use a single CPU core_. This means that several workers process can use remaining cores and perform the work in parallel for this phase, as long as there is enough memory available for all of them to run.
 
-Alternatively, it is also possible to speed up _PreCommit1_ by setting `FIL_PROOFS_USE_MULTICORE_SDR=1`. This enables [optimizations to memory access](https://github.com/filecoin-project/rust-fil-proofs/), but each worker will need access to a full CPU core-complex (usually 4 adjacent cores). This reduces the number of workers that could run in parallel, but allows workers to be faster and saves the memory footprint of other workers.
+Alternatively, it is also possible to speed up _PreCommit1_ by setting `FIL_PROOFS_USE_MULTICORE_SDR=1`. This enables [optimizations to memory access](https://github.com/filecoin-project/rust-fil-proofs/), but each worker will need access to a full CPU core-complex (usually 4 adjacent cores). This reduces the number of workers that could run in parallel, but allows them to be faster and saves the memory footprint of running additional processes.
 
-In both cases, whether using the single-core or the multicore _PreCommit1_ worker, the process should be restricted to the use of a **single CPU** or a **single, full core-complex**. This can be achieved with `taskset`:
+In both cases, whether using the single-core or the multicore _PreCommit1_ worker, the process should be restricted to the use of a **single CPU** or a **single, full core-complex** respectivly. This can be achieved with `taskset`:
 
 ```sh
 # Restrict to single core number 0
 taskset -c 0 <worker_pid | command>
 # Restrict to a single core complex (example)
 # Check your CPU model documentation to verify how many
-# core complexes it includes and what cores they include:
+# core complexes it has and how many cores in each:
 taskset -c 0,1,2,3 <worker_pid | command>
 ```
 
