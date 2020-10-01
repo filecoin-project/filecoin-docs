@@ -38,7 +38,7 @@ Building Lotus requires some system dependencies, usually provided by your distr
 | Linux distribution | Dependency install command                                                                                                                                                                    |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                                                               |
-| Ubuntu/Debian      | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl -y && sudo apt upgrade -y`                                                             |
+| Ubuntu/Debian      | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev pkg-config build-essential libclang-dev gcc git bzr jq curl -y && sudo apt upgrade -y`                                |
 | Fedora             | `sudo dnf -y update && sudo dnf -y install gcc git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm`                                      |
 | OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`                                           |
 | Amazon Linux 2     | `sudo yum install -y https://dl.fedoraproject.org/pub/epel/epest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel` |
@@ -96,9 +96,10 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-   If you are building Lotus 0.7.1 and have an **older Intel or AMD processor**, set:
+   If you are building Lotus >= 0.7.1 and have an **older Intel or AMD processor**, set:
 
    ```sh
+   export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
    export CGO_CFLAGS="-D__BLST_PORTABLE__"
    ```
 
@@ -244,17 +245,21 @@ lotus sync wait
 ```
 
 :::tip
-Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest just pulling a recent snapshot and using that to skip syncing older sections of the chain.
-
-For now, you can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car) (about 4GiB).
-
-Then start your lotus daemon with:
+Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest importing a pruned chain snapshot when the Lotus daemon starts:
 
 ```sh
-lotus daemon --import-snapshot <snapshot>.car
+# The snapshot size is about 4GiB
+lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car
 ```
 
-For more information about chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
+Alternatively, you can also import a non-pruned snapshot:
+
+```sh
+# Snapshot size ~40GiB
+lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car
+```
+
+For more information about creating chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
 :::
 
 To check how far behind you are when syncing the chain, run the following command:

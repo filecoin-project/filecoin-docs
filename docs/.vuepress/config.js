@@ -114,6 +114,7 @@ module.exports = {
           '/mine/': [
             'how-mining-works',
             'hardware-requirements',
+            'mining-architectures',
             //'storage-sector-lifecycle',
             ['mining-rewards', 'Mining rewards'],
             ['slashing', 'Slashing'],

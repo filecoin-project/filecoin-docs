@@ -74,6 +74,10 @@ export default {
           path: '/store',
           children: [
             {
+              title: 'Slingshot competition',
+              path: 'http://slingshot.filecoin.io/'
+            },
+            {
               title: 'Store data with Lotus',
               path: '/store/lotus/store-data'
             },
@@ -100,8 +104,12 @@ export default {
               path: '/mine/how-mining-works'
             },
             {
-              title: 'Space Race',
-              path: '/mine/spacerace'
+              title: 'Hardware requirements',
+              path: '/mine/hardware-requirements'
+            },
+            {
+              title: 'Mining architectures',
+              path: '/mine/mining-architectures'
             },
             {
               title: 'Lotus guides for miners',

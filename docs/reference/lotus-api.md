@@ -81,7 +81,7 @@ curl -X POST \
 	 'http://127.0.0.1:1234/rpc/v0'
 ```
 
-The response will be a JSON object corresponding to the [Typset type](https://pkg.go.dev/github.com/filecoin-project/lotus/chain/types?tab=doc#TipSet) (which is actually serialized to JSON from the [ExpTipSet type](https://pkg.go.dev/github.com/filecoin-project/lotus/chain/types?tab=doc#ExpTipSet)).
+The response will be a JSON object corresponding to the [Tipset type](https://pkg.go.dev/github.com/filecoin-project/lotus/chain/types?tab=doc#TipSet) (which is actually serialized to JSON from the [ExpTipSet type](https://pkg.go.dev/github.com/filecoin-project/lotus/chain/types?tab=doc#ExpTipSet)).
 
 Let us now make a request with parameters using the [ChainGetMessage method](https://pkg.go.dev/github.com/filecoin-project/lotus/api?tab=doc#FullNode) for a message with CID `bafy2bzacedcdedrghloawlwkntdhqnknqzxgh26ddwix7ld2a5ygagco3ngee`. Per the above, the JSON-RPC request payload will look like:
 
