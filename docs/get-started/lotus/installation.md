@@ -286,3 +286,12 @@ For example, after your Lotus daemon has been running for a few minutes, use `lo
 ```sh
 lotus net peers
 ```
+
+
+## Stop the Lotus daemon
+
+In order to gracefully stop the running lotus daemon (required when restarting the daemon to update Lotus), use the following command:
+
+```sh
+lotus daemon stop
+```
