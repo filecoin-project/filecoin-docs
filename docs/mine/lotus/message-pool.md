@@ -30,6 +30,10 @@ If the ticket quality is sufficiently high, then a greedy selection algorithm is
 
 When a message is executed it consumes _gas_. The total gas by a message directly affects the cost to place that message in the blockchain, that the sender will have to pay.
 
+::: tip
+Lotus can be configured with several addresses to have more granular control over fees and limits depending on the operation and avoid head-of-line blocking, particularly for high value operations such as _WindowPoSts_. Check the [miner wallets guide](miner-wallets.md).
+:::
+
 In the Filecoin Network, a dynamic **_BaseFee_**, measured in attoFIL/gas units, specifies how much FIL gets burned for every message based on the _gas_ they used for their execution. The _BaseFee_ gets automatically updated according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../../get-started/explore-the-network.md) or by looking at the current head:
 
 ```sh
@@ -39,11 +43,11 @@ lotus chain head | xargs lotus chain getblock | jq -r .ParentBaseFee
 
 Apart from the _BaseFee_, every message in the message pool has the following gas-related fields:
 
-- **_GasLimit_**: it is measured in gas units. It a hard limit on the amount of gas that a message's execution can consume. A message consumes gas for every fundamental operation it takes (see [prices](https://github.com/filecoin-project/lotus/blob/d678fe4bfa5b4c70bcebd46cdc38aafc452b42d1/chain/vm/gas.go#L87)). Messages can fail if they runs out of gas fails, at which point every modification to the state is reverted. Whether the execution is successful or not, the miner is given a reward calculated as _GasLimit _ GasPremium\*.
+- **_GasLimit_**: it is measured in gas units. It a hard limit on the amount of gas that a message's execution can consume. A message consumes gas for every fundamental operation it takes (see [prices](https://github.com/filecoin-project/lotus/blob/d678fe4bfa5b4c70bcebd46cdc38aafc452b42d1/chain/vm/gas.go#L87)). Messages will fail if they runs out of gas fails, at which point every modification to the state is reverted. Whether the execution is successful or not, the miner is given a reward calculated as _GasLimit _ GasPremium\*.
 - **_GasPremium_**: it is measured in attoFIL/gas units. It indicates how much a miner earns as their reward for including a message. A message typically earns its miner _GasLimit \* GasPremium_ attoFIL.
 - **_GasFeeCap_**: it is measured attoFIL/gas units. Its purpose is to establish a hard limit on the amount of FIL a message can cost its sender. A sender is guaranteed that a message will never cost them more than _GasLimit \* GasFeeCap_, not including any value that the message includes for its recipient. The total fee (in attoFIL/gas) for a message is _GasPremium + BaseFee_. Given that _GasPremium_ is set by the sender, _GasFeeCap_ essentially serves as a safeguard against a high, unexpected _BaseFee_.
 
-Note that if a message's _GasFeeCap_ is lower than the _BaseFee_, then the remainder comes from the miner (as a penalty). If _BaseFee + GasPremium_ is less than the message's _GasFeeCap_, then the miner might not earn the entire _GasLimit \* GasPremium_ reward.
+If _BaseFee + GasPremium_ is greater than the message's _GasFeeCap_, the miner's reward becomes _GasLimit \* (GasFeeCap - BaseFee)_. Note that if a message's _GasFeeCap_ is lower than the _BaseFee_, then the remainder comes from the miner (as a penalty).
 
 ## Checking for pending messages in the local pool
 
@@ -56,6 +60,8 @@ lotus mpool pending --local
 ```
 
 For each message you will be able to see key information like the _GasLimit_, the _GasFeeCap_ and the _GasPremium_ values, explained above.
+
+In order to avoid messages from getting stuck in the local pool, it is possible to adjust the [Lotus Miner fees in the configuration](miner-configuration.md) and use [additional control addresses for _WindowPoSts_](miner-wallets.md). Stuck messages can be replaced with the procedure explained below.
 
 ## Replacing messages in the messages pool
 
