@@ -294,4 +294,6 @@ In order to gracefully stop the running lotus daemon (required when restarting t
 
 ```sh
 lotus daemon stop
+## When running with systemd do:
+# systemctl stop lotus-daemon
 ```
