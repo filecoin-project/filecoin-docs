@@ -20,7 +20,7 @@ Lotus provides the tooling to interact with the message pool with the `lotus mpo
 
 ## Message selection
 
-When mining a new block, miners must select a set of messages inclusion in a way that maximizes the reward. Given how message distribution works, using pubsub, and that miners do not communicate their tickets to each other, it is not possible to fully determine if a different miner will also include the message on a different block in the new tipset, and perhaps get the reward instead if their block executes first. The problem is NP-hard (a instance of knapsack packing) so, at best, an approximation can be made to the optimal selection in a reasonable amount of time.
+When mining a new block, miners must select a set of messages for inclusion in a way that maximizes the reward. Given how message distribution works, using pubsub, and that miners do not communicate their tickets to each other, it is not possible to fully determine if a different miner will also include the message on a different block in the new tipset, and perhaps get the reward instead if their block executes first. The problem is NP-hard (an instance of knapsack packing) so, at best, an approximation can be made to the optimal selection in a reasonable amount of time.
 
 Lotus employs a sophisticated algorithm for selecting messages for inclusion from the pool, given the ticket quality of a miner. The ticket quality reflects the probability of execution order for a block in the tipset. Given the ticket quality the algorithm computes the probability of each block, and picks dependent chains of messages such that the reward is maximized, while also optimizing the capacity of the chain.
 
@@ -71,7 +71,7 @@ You can replace messages in the pool by pushing a new message with the same `Non
 lotus mpool replace --auto <from> <nonce>
 ```
 
-The above command will replace the associated message in the pool and automatically reprice it with a new _GasPremium_ and _GasFeeCap_ as estimated from the current network conditions. You can also set `--max-fee` if you wish to limit the total amoun to spend for the message. All other flags are ignored.
+The above command will replace the associated message in the pool and automatically reprice it with a new _GasPremium_ and _GasFeeCap_ as estimated from the current network conditions. You can also set `--max-fee` if you wish to limit the total amount to spend for the message. All other flags are ignored.
 
 Alternatively, the _GasPremium_, _GasFeeCap_ and, optionally, _GasLimit_ can be set manually with their respective flags:
 
