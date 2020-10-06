@@ -28,11 +28,10 @@ Since restarting the miner is a delicate operation, it is best to let Lotus hand
 To disable storage deals, run:
 
 ```sh
-lotus-miner storage-deals selection reject --online
-lotus-miner storage-deals selection reject --offline
+lotus-miner storage-deals selection reject --online --offline
 ```
 
-The commands above will automatically update the values in the `config.toml` file.
+The commands above will automatically update the values in the `config.toml` file for offline and online deals, according to the flags used above.
 
 You can verify the current status with:
 
@@ -43,9 +42,11 @@ lotus-miner storage-deals selection list
 To _re-enable_ storage deals, run:
 
 ```sh
-lotus-miner storage-deals selection reset
-# Verify that they have been enabled
-lotus-miner storage-deals selection list
+$ lotus-miner storage-deals selection reset
+$ # Verify that they have been enabled
+$ lotus-miner storage-deals selection list
+considering online storage deals: true
+considering offline storage deals: true
 ```
 
 Note that the values above affect to new deals. Ongoing deals will still have to be honored.
@@ -88,11 +89,11 @@ Current deals and their current state can be found by running:
 lotus-miner storage-deals list -v
 ```
 
-The list displays: 
+The list displays:
 
 - When the deal was created.
-- The DataCID that is being stored. 
-- The wallet address of client that submitted it. 
+- The DataCID that is being stored.
+- The wallet address of client that submitted it.
 - The size and the duration in epochs (30 seconds per epoch).
 
 ## Using filters to limit deals
@@ -137,7 +138,7 @@ The delay can be set using the `WaitDealsDelay` option in the `[Sealing]` sectio
 
 ## Offline storage deals
 
-When the amount of data to be transmitted is [very large](../../store/lotus/very-large-files#deals-with-offline-data-transfer), it may be more effective to ship some hard-drives directly to the miner and complete the deal in an **offline** fashion.
+When the amount of data to be transmitted is [very large](../../store/lotus/very-large-files.md#deals-with-offline-data-transfer), it may be more effective to ship some hard-drives directly to the miner and complete the deal in an **offline** fashion.
 
 In this case, the miner will have to import the storage deal data manually with the following command:
 
