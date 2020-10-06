@@ -18,10 +18,12 @@ The following sections provide insights into the different ways Lotus can be use
 
 ## Enabling and disabling deals
 
-There are two ways to enable and disable new storage deals in the miner:
+There are two ways to enable and disable new storage deals in the miner. Either:
 
-- Editing the `[DealMaking]` options in the [miner configuration file](miner-configuration.md) and [restarting the miner](miner-lifecycle.md). Since re-starting the miner is a delicate operation, it is better to let Lotus handle it by:
+- Edit the `[DealMaking]` options in the [miner configuration file](miner-configuration.md) and [restarting the miner](miner-lifecycle.md).
 - Using the `lotus-miner storage-deals selection` commands.
+
+Since restarting the miner is a delicate operation, it is best to let Lotus handle things by using the `lotus-miner storage-deals selection` commands.
 
 To disable storage deals, run:
 
