@@ -73,7 +73,8 @@ If you want to fully delegate any of these operations to workers, set them to `f
 Ensure that workers have access to the following environment variables when they run. These are similar to those used by the Miner daemon ([explained in the setup guide](miner-setup.md):
 
 ```
-# As obtained before
+# MINER_API_INFO as obtained before
+export TMPDIR=/fast/disk/folder3                    # Used when sealing.
 export MINER_API_INFO:<TOKEN>:/ip4/<miner_api_address>/tcp/<port>`
 export BELLMAN_CPU_UTILIZATION=0.875
 export FIL_PROOFS_MAXIMIZE_CACHING=1
@@ -81,7 +82,12 @@ export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 # when GPU is available
 export FIL_PROOFS_USE_GPU_TREE_BUILDER=1   # when GPU is available
 export FIL_PROOFS_PARAMETER_CACHE=/fast/disk/folder # > 100GiB!
 export FIL_PROOFS_PARENT_CACHE=/fast/disk/folder2   # > 50GiB!
-export TMPDIR=/fast/disk/folder3                    # Used when sealing.
+
+# The following increases speed of PreCommit1 at the cost of using a full
+# CPU core-complex rather than a single core. Should be used with CPU affinities set!
+# See https://github.com/filecoin-project/rust-fil-proofs/ and the
+# "Worker co-location" section below.
+export FIL_PROOFS_USE_MULTICORE_SDR=1
 ```
 
 ::: tip
@@ -135,7 +141,9 @@ Note that if you co-locate miner and worker(s), you do not need to open up the m
 
 ### Worker co-location for PreCommit1
 
-Since some operations are bound to a single CPU-core (namely _PreCommit1_), it is possible to run multiple workers on a single machine in order to maximize CPU utilization. For example, to run a _PreCommit1_ worker in a way that it does not conflict with others, do:
+Since some operations are bound to a single CPU-core or core-complex (namely _PreCommit1_), it is possible to run multiple workers on a single machine in order to maximize CPU utilization.
+
+For example, to run a _PreCommit1_ worker in a way that it does not conflict with others, do:
 
 ```sh
 # Use a unique storage location for each worker
@@ -144,15 +152,28 @@ export LOTUS_WORKER_PATH=/path/to/worker/storage/N
 lotus-worker run --listen 0.0.0.0:X --add-piece=false --precommit1=true --unseal=true --precommit2=false --commit=false
 ```
 
-Next, it is important to make sure each worker is limited to use a **single CPU**. This will limit the available tasks that each _PreCommit1_ workers can perform to 1. This limit can be enforced by creating systemd services for every worker and [setting _CPU affinity_ with systemd](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html):
+By default, the _PreCommit1_ base will _use a single CPU core_. This means that several workers process can use remaining cores and perform the work in parallel for this phase, as long as there is enough memory available for all of them to run.
+
+Alternatively, it is also possible to speed up _PreCommit1_ by setting `FIL_PROOFS_USE_MULTICORE_SDR=1`. This enables [optimizations to memory access](https://github.com/filecoin-project/rust-fil-proofs/), but each worker will need access to a full CPU core-complex (usually 4 adjacent cores). This reduces the number of workers that could run in parallel, but allows them to be faster and saves the memory footprint of running additional processes.
+
+In both cases, whether using the single-core or the multicore _PreCommit1_ worker, the process should be restricted to the use of a **single CPU** or a **single, full core-complex** respectivly. This can be achieved with `taskset`:
+
+```sh
+# Restrict to single core number 0
+taskset -c 0 <worker_pid | command>
+# Restrict to a single core complex (example)
+# Check your CPU model documentation to verify how many
+# core complexes it has and how many cores in each:
+taskset -c 0,1,2,3 <worker_pid | command>
+```
+
+It is also possible to set [_CPU affinity_ with systemd](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html):
 
 ```text
 # workerN.service
 ...
-CPUAffinity=N # Specify the core number that this worker will use.
+CPUAffinity=C1,C2... # Specify the core number that this worker will use.
 ...
 ```
-
-Alternatively, setting `export GOMAXPROCS=1` should also work, although the process may be moved among different cores during its lifetime, incurring in a performance cost.
 
 Finally, remember that `MaxSealingSectors` and/or `MaxSealingSectorsForDeals` in the Miner's `config.toml` affect how many sectors can be sealing at the same time, so they should be set as needed and accordingly to the worker configuration.
