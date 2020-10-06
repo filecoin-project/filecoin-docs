@@ -43,9 +43,27 @@ Building Lotus requires some system dependencies, usually provided by your distr
 | OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`                                           |
 | Amazon Linux 2     | `sudo yum install -y https://dl.fedoraproject.org/pub/epel/epest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel` |
 
-#### Rustup and Go
+#### Rustup
 
-Lotus needs both [Rust](https://rustup.rs) and [Go](https://golang.org/) to run. See the offical documentation for both those projects to get the install instructions for you operating system.
+Lotus needs [rustup](https://rustup.rs). The easiest way to install it is:
+
+```sh	
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh	
+```
+
+:::tip	
+Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.	
+:::
+
+#### Go
+
+To build Lotus, you need a working installation of [Go 1.14 or higher](https://golang.org/dl/):
+
+```bash
+wget -c https://dl.google.com/go/go1.14.7.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+```
+
+Make sure that `/usr/local/go/bin` is in your `PATH`. If you are running into problems, check the [official Go installation instructions](https://golang.org/doc/install) for your operating system.
 
 ### Build and install Lotus
 
