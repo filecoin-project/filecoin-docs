@@ -51,7 +51,7 @@ If _BaseFee + GasPremium_ is greater than the message's _GasFeeCap_, the miner's
 
 ## Checking for pending messages in the local pool
 
-If messages are not deemed attractive enough by miners to be included in new blocks, they may become stuck in the local message pool. This is usually a consequence of the _GasFeeCap_ being too low, for example, when the Network's _BaseFee_ is high. It can also be a consequence of the _GasPremium_ being too low if the network is congested.
+If messages are not deemed attractive enough by miners to be included in new blocks, they may become stuck in the message pool. This is usually a consequence of the _GasFeeCap_ being too low, for example, when the Network's _BaseFee_ is high. It can also be a consequence of the _GasPremium_ being too low if the network is congested.
 
 You can check for messages currently in the local pool with:
 
