@@ -52,6 +52,10 @@ export default {
               path: '/about-filecoin/how-filecoin-works'
             },
             {
+              title: 'Filecoin networks',
+              path: 'https://networks.filecoin.io'
+            },
+            {
               title: 'Lotus installation and setup',
               path: '/get-started/lotus/installation'
             },
