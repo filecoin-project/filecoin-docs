@@ -34,7 +34,7 @@ When a message is executed it consumes _gas_. The total gas by a message directl
 Lotus can be configured with several addresses to have more granular control over fees and limits depending on the operation and avoid head-of-line blocking, particularly for high value operations such as _WindowPoSts_. Check the [miner wallets guide](miner-wallets.md).
 :::
 
-In the Filecoin Network, a dynamic **_BaseFee_**, measured in attoFIL/gas units, specifies how much FIL gets burned for every message based on the _gas_ they used for their execution. The _BaseFee_ gets automatically updated according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../../get-started/explore-the-network.md) or by looking at the current head:
+In the Filecoin Network, a dynamic **_BaseFee_**, measured in attoFIL/gas units, specifies how much FIL gets burned _per unit of gas consumed_ for the execution of every message based. The total amount of FIL burnt per message is, therefore, given by `BaseFee*GasUsed`. The _BaseFee_ gets automatically updated according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../../get-started/explore-the-network.md) or by looking at the current head:
 
 ```sh
 # Will print the last BaseFee in attoFIL
