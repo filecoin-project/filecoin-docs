@@ -77,13 +77,13 @@ This section controls parameters for making storage and retrieval deals:
 
 ```toml
 [Dealmaking]
-  # When enabled, the miner can potentially accept online deals
+  # When enabled, the miner can accept online deals
   ConsiderOnlineStorageDeals = true
-  # When enabled, the miner can potentially accept offline deals
+  # When enabled, the miner can accept offline deals
   ConsiderOfflineStorageDeals = true
-  # When enabled, the miner can potentially accept retrieval deals
+  # When enabled, the miner can accept retrieval deals
   ConsiderOnlineRetrievalDeals = true
-  # When enabled, the miner can potentially accept offline retrieval deals
+  # When enabled, the miner can accept offline retrieval deals
   ConsiderOfflineRetrievalDeals = true
   # A list made of Data CIDs to reject when making deals
   PieceCidBlocklist = []
@@ -99,11 +99,9 @@ This section controls parameters for making storage and retrieval deals:
 The final value of `ExpectedSealDuration` should equal `(TIME_TO_SEAL_A_SECTOR + WaitDealsDelay) * 1.5`. This equation ensures that the miner does not commit to having the sector sealed too soon.
 :::
 
-To filter deals based on certain parameters, modify the `Filter` param. This param should be a shell command that will be run when processing a deal proposal. Deals are accepted if the Filter's exit code is 0. For any other exit code, deals will be rejected. Set `Filter` to `false` to reject all deals and `true` to accept all deals. For example, the following filter only accepts deals from clients with specific addresses:
+To filter deals based on certain parameters, modify the `Filter` param. This param should be a shell command that will be run when processing a deal proposal. Deals are accepted if the Filter's exit code is 0. For any other exit code, deals will be rejected.
 
-```sh
-Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" or .Proposal.Client == \"t1qiqdbbmrdalbntnuapriirduvxu5ltsc5mhy7si\" '"
-```
+For information on how to enable and disable deals and examples on filter usage see the [Storage Deals guide](manage-storage-deals.md).
 
 ## Sealing section
 
