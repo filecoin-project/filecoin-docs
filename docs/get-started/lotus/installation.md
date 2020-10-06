@@ -99,6 +99,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    If you are building Lotus 0.7.1 and have an Intel or AMD processor without the AXD instruction set, add the `CGO_CFLAGS` environment variable:
 
    ```sh
+   export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
    export CGO_CFLAGS="-D__BLST_PORTABLE__"
    ```
 
@@ -244,17 +245,21 @@ lotus sync wait
 ```
 
 :::tip
-Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest just pulling a recent snapshot and using that to skip syncing older sections of the chain.
-
-For now, you can [download the latest state snapshot here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car) (about 4GiB).
-
-Then start your lotus daemon with:
+Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest importing a pruned chain snapshot when the Lotus daemon starts:
 
 ```sh
-lotus daemon --import-snapshot <snapshot>.car
+# The snapshot size is about 4GiB
+lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car
 ```
 
-For more information about chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
+Alternatively, you can also import a non-pruned snapshot:
+
+```sh
+# Snapshot size ~40GiB
+lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car
+```
+
+For more information about creating chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
 :::
 
 To check how far behind you are when syncing the chain, run the following command:
@@ -280,4 +285,15 @@ For example, after your Lotus daemon has been running for a few minutes, use `lo
 
 ```sh
 lotus net peers
+```
+
+
+## Stop the Lotus daemon
+
+In order to gracefully stop the running lotus daemon (required when restarting the daemon to update Lotus), use the following command:
+
+```sh
+lotus daemon stop
+## When running with systemd do:
+# systemctl stop lotus-daemon
 ```

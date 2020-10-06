@@ -95,6 +95,14 @@ The `lotus` application, as a client to the lotus daemon, can talk to a Lotus da
 FULLNODE_API_INFO="TOKEN:/ip4/<IP>/tcp/<PORT>/http"
 ```
 
+On the _Lotus Node_, the full variable string, including a new token, can be produced with:
+
+```sh
+lotus auth api-info --perm admin
+```
+
+Note that you may need to edit the result to place the right IP for the remote node. See the [docs about API tokens](../../build/lotus/api-token-generation.md) for more information about tokens.
+
 ## Log level control
 
 ```sh

@@ -114,6 +114,7 @@ module.exports = {
           '/mine/': [
             'how-mining-works',
             'hardware-requirements',
+            'mining-architectures',
             //'storage-sector-lifecycle',
             ['mining-rewards', 'Mining rewards'],
             ['slashing', 'Slashing'],
@@ -132,10 +133,7 @@ module.exports = {
                 ['lotus/custom-storage-layout', 'Custom storage layout'],
                 ['lotus/sector-pledging', 'Sector pledging'],
                 ['lotus/connectivity', 'Connectivity'],
-                [
-                  'lotus/separate-address-window-post',
-                  'Separate address for WindowPoSt messages'
-                ],
+                ['lotus/miner-wallets', 'Miner wallets'],
                 //'lotus/fees-control-and-limits',
                 [
                   'lotus/replace-messages-in-mpool',
