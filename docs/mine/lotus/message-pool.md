@@ -10,7 +10,7 @@ breadcrumb: 'Message Pool'
 
 When messages are executed, they use _gas_. The amount of _gas_ used, the parameters attached to each message and the Network's current _BaseFee_ determine how much FIL will be spent to include that message in the chain and how much of that expense will be given to the miner as reward, or burned.
 
-The different caps and fees for messages are explained below, along with instructions on how to inspect and modify the current local message pool.
+The different caps and fees for messages are explained below, along with instructions on how to inspect and intract with the message pool.
 
 ::: tip
 Lotus provides the tooling to interact with the message pool with the `lotus mpool` subcommands.
@@ -49,11 +49,11 @@ Apart from the _BaseFee_, every message in the message pool has the following ga
 
 If _BaseFee + GasPremium_ is greater than the message's _GasFeeCap_, the miner's reward becomes _GasLimit \* (GasFeeCap - BaseFee)_. Note that if a message's _GasFeeCap_ is lower than the _BaseFee_, then the remainder comes from the miner (as a penalty).
 
-## Checking for pending messages in the local pool
+## Checking for pending messages
 
 If messages are not deemed attractive enough by miners to be included in new blocks, they may become stuck in the message pool. This is usually a consequence of the _GasFeeCap_ being too low, for example, when the Network's _BaseFee_ is high. It can also be a consequence of the _GasPremium_ being too low if the network is congested.
 
-You can check for messages currently in the local pool with:
+You can check for messages currently in the pool and specifically sent by your node with:
 
 ```sh
 lotus mpool pending --local
@@ -61,9 +61,9 @@ lotus mpool pending --local
 
 For each message you will be able to see key information like the _GasLimit_, the _GasFeeCap_ and the _GasPremium_ values, explained above.
 
-In order to avoid messages from getting stuck in the local pool, it is possible to adjust the [Lotus Miner fees in the configuration](miner-configuration.md) and use [additional control addresses for _WindowPoSts_](miner-wallets.md). Stuck messages can be replaced with the procedure explained below.
+In order to avoid messages from staying long periods in the pool when they are sent, it is possible to adjust the [Lotus Miner fees in the configuration](miner-configuration.md) and use [additional control addresses for _WindowPoSts_](miner-wallets.md). Existing messages can be replaced at any time with the procedure explained below.
 
-## Replacing messages in the messages pool
+## Replacing messages in the pool
 
 You can replace messages in the pool by pushing a new message with the same `Nonce` that has a **new `GasPremium` that is at least 25% larger than that of the original message**. To this effect, the easiest is to use:
 
