@@ -16,6 +16,14 @@ The `chain export` command will export your chain data into `.car` file:
 lotus chain export <filename>
 ```
 
+## Create a simplified snapshot
+
+You can also create a faster, simpified snapshot using the `lotus-shed` tool. The `--skip-old-msgs` flag will skip messages from before the included stateroots, making the snapshots significantly faster to generate and smaller in filesize. Note: your node must be offline to run this command. Additionally, the simplified snapshot is not suitable for nodes that need to serve more complex chain queries, such as block explorers.
+
+```sh
+./lotus-shed export --skip-old-msgs --recent-stateroots=900 <filename>
+```
+
 ## Restore a snapshot
 
 To import chain data from a `.car` snapshot file, run:
@@ -32,5 +40,5 @@ lotus daemon --import-snapshot --halt-after-import
 
 ## Testnet chain snapshots
 
-Snapshots for the Lotus testnet created every 6 hours are available for download in [here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car).
+Snapshots for the Lotus testnet created every 6 hours are available for download [here](https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car).
 
