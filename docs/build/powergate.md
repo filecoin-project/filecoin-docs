@@ -34,6 +34,6 @@ Sometimes the best way to learn is through examples.
 For a more detailed description of how Powergate works, we recommend reading the following docs:
 
 - [Filecoin Developer Tools](https://blog.textile.io/filecoin-developer-tools-concepts/)
-- [Powergate Introduction](https://docs.textile.io/powergate/)
+- Powergate introduction: [docs](https://docs.textile.io/powergate/) and [video](https://www.youtube.com/watch?v=aiOTSkz_6aY)
 - [Storing Data on Powergate through FFS](https://docs.textile.io/powergate/ffs/)
 - [FFS Design Overview](https://github.com/textileio/powergate/blob/master/ffs/Design.md)
