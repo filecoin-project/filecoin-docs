@@ -28,7 +28,7 @@ If the ticket quality is sufficiently high, then a greedy selection algorithm is
 
 ## Gas, fees, limits and caps
 
-When a message is executed it consumes _gas_. The total gas by a message directly affects the cost to place that message in the blockchain, that the sender will have to pay.
+When a message is executed it consumes _gas_. The total gas consumed by a message directly affects the cost to place that message in the blockchain, which is a price that the sender will have to pay.
 
 ::: tip
 Lotus can be configured with several addresses to have more granular control over fees and limits depending on the operation and avoid head-of-line blocking, particularly for high value operations such as _WindowPoSts_. Check the [miner wallets guide](miner-wallets.md).
