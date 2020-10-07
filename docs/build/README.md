@@ -9,9 +9,9 @@ Filecoin is for the builders. If you are excited about the potential of leveragi
 
 [[TOC]]
 
-## Testnet
+## Onboard the testnet
 
-We have a specific guide for people wanting to interact with the Filecoin testnet using Lotus or Powergate and start performing storage deals on it: [onboard the testnet](onboard-testnet.md).
+The Filecoin testnet is a network with parameters and activity levels as close as possible to the expected early state of the Filecoin main network (mainnet). To get up to speed quickly on how to start storing data on the testnet, check the [onboard the testnet](onboard-testnet.md) guide.
 
 ## Pinning Services
 
@@ -19,13 +19,13 @@ We have a specific guide for people wanting to interact with the Filecoin testne
 Providers for **_Filecoin-backed pinning services_** are still in early stages. We plan to update this list regularly.
 :::
 
-| Name                                                                                                             | Description                                                                                                                                         | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
-| ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Textile Buckets](https://docs.textile.io/buckets/)                                                              | A hosted service that allows development teams to build software projects end-to-end on a decentralized DB and storage stack.                       | No                                                                            |
-| **Chainsafe**                                                                                                    | Coming soon.                                                                                                                                        | No                                                                            |
-| [Pinata](https://pinata.cloud)                                                                                   | IPFS pinning service, with Filecoin coming soon.                                                                                                    | No                                                                            |
-| [Hosted Powergate](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/) | The Textile team offers hosted [Powergate](./powergate.md) instances.                                                                               | No                                                                            |
-| [Lotus hosted nodes](lotus/hosted-nodes.md)                                                                      | Protocol Labs in partnership with [Protofire](https://protofire.io) provides hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint. | No                                                                            |
+| Name                                                          | Description                                                                                                                                                                                       | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Textile Buckets](https://docs.textile.io/buckets/)           | A hosted service that allows development teams to build software projects end-to-end on a decentralized DB and storage stack.                                                                     | No                                                                            |
+| **Chainsafe**                                                 | Coming soon.                                                                                                                                                                                      | No                                                                            |
+| [Pinata](https://pinata.cloud)                                | IPFS pinning service, with Filecoin coming soon.                                                                                                                                                  | No                                                                            |
+| [Hosted Powergate](https://blog.textile.io/hosted-powergate/) | The Textile team offers hosted [Powergate](./powergate.md) instances. Read the announcement [here](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/). | No                                                                            |
+| [Lotus hosted nodes](lotus/hosted-nodes.md)                   | Protocol Labs in partnership with [Protofire](https://protofire.io) provides hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint.                                               | No                                                                            |
 
 For more information about the benefits and the architecture of Filecoin-backed Pinning Services, check the [FPS page](filecoin-pinning-services.md).
 
