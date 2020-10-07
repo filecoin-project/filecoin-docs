@@ -38,8 +38,8 @@ Building Lotus requires some system dependencies, usually provided by your distr
 | Linux distribution | Dependency install command                                                                                                                                                                    |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                                                               |
-| Ubuntu/Debian      | `sudo apt update && sudo apt install mesa-opencl-icd ocl-icd-opencl-dev pkg-config build-essential libclang-dev gcc git bzr jq curl -y && sudo apt upgrade -y`                                |
-| Fedora             | `sudo dnf -y update && sudo dnf -y install gcc git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm`                                      |
+| Ubuntu/Debian      | `sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential -y && sudo apt upgrade -y`                                                                |
+| Fedora             | `sudo dnf -y install gcc make git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm wget`                                                  |
 | OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`                                           |
 | Amazon Linux 2     | `sudo yum install -y https://dl.fedoraproject.org/pub/epel/epest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel` |
 
@@ -47,19 +47,19 @@ Building Lotus requires some system dependencies, usually provided by your distr
 
 Lotus needs [rustup](https://rustup.rs). The easiest way to install it is:
 
-```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```sh	
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh	
 ```
 
-:::tip
-Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.
+:::tip	
+Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.	
 :::
 
 #### Go
 
 To build Lotus, you need a working installation of [Go 1.14 or higher](https://golang.org/dl/):
 
-```sh
+```bash
 wget -c https://dl.google.com/go/go1.14.7.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
@@ -96,7 +96,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-   If you are building Lotus >= 0.7.1 and have an **older Intel or AMD processor**, set:
+   If you are building Lotus 0.7.1 and have an Intel or AMD processor without the AXD instruction set, add the `CGO_CFLAGS` environment variable:
 
    ```sh
    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
@@ -105,7 +105,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    This is due to a Lotus bug that prevents Lotus from running on processor without `axd` instruction support, and should be fixed soon.
 
-1. Build Lotus:
+1. Build and install Lotus:
 
    ```sh
    make clean all
@@ -116,7 +116,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
 
-1. Lotus should now be installed on your computer.
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon).
 
 #### Native Filecoin FFI
 
@@ -204,7 +204,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    sudo make install
    ```
 
-1. You should now have Lotus installed.
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon).
 
 ## Start the Lotus daemon
 
