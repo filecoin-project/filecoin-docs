@@ -153,7 +153,7 @@ If you wish to change any of the storage locations of the Lotus miner, follow th
 5. Start the miner.
 6. Verify that things are working correctly. If so, you can discard the old copy.
 
-If you wish to expand your storage, while keeping the current, you can always [add additional storage locations to a Lotus miner](custom-storage-layout) with `lotus storage attach` (see `--help`).
+If you wish to expand your storage, while keeping the current, you can always [add additional storage locations to a Lotus miner](custom-storage-layout.md) with `lotus storage attach` (see `--help`).
 
 If you wish to change the storage location for any of the lotus workers:
 
