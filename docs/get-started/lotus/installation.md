@@ -203,6 +203,9 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    make clean && make all
    sudo make install
    ```
+   :::tip
+   If you run into issues with `sudo make install` because `go` is not found in the root path, you can run this command instead `sudo env PATH-"$PATH" make install`, or add `export PATH=/usr/local/go/bin::$PATH` to `/root/.bashrc`.
+   :::
 
 1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon).
 
