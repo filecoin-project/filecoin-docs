@@ -135,10 +135,7 @@ module.exports = {
                 ['lotus/connectivity', 'Connectivity'],
                 ['lotus/miner-wallets', 'Miner wallets'],
                 //'lotus/fees-control-and-limits',
-                [
-                  'lotus/replace-messages-in-mpool',
-                  'Replace messages in the message pool'
-                ],
+                ['lotus/message-pool', 'The Message Pool'],
                 ['lotus/seal-workers', 'Seal workers'],
                 ['lotus/benchmarks', 'Benchmarks'],
                 ['lotus/gpus', 'Custom GPUs'],

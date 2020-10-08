@@ -29,6 +29,7 @@
 /mine/mining-troubleshooting/ /mine/lotus/miner-troubleshooting/
 /mine/lotus/daemon-lifecycle/ /mine/lotus/miner-lifecycle/
 /mine/lotus/separate-address-window-post/ /mine/lotus/miner-wallets/
+/mine/lotus/replace-messages-in-mpool/ /mine/lotus/message-pool/
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
