@@ -8,7 +8,7 @@ breadcrumb: 'Message Pool'
 
 {{ $frontmatter.description }} Messages are added to the mpool either directly for locally published messages or through pubsub propagation. Whenever a miner is ready to create a block for a tipset, it invokes the mpool selection algorithm which selects an appropriate set of messages such that it optimizes miner reward and chain capacity.
 
-When messages are executed, they use _gas_. The amount of _gas_ used, the parameters attached to each message and the Network's current _BaseFee_ determine how much FIL will be spent to include that message in the chain and how much of that expense will be given to the miner as reward, or burned.
+When messages are executed, they use _gas_. The amount of _gas_ used, the parameters attached to each message and the Network's current _BaseFee_ determine the final FIL-cost to include the transaction in the chain. Part of that cost is burned by the network. The other part is given to the miner of the first block that includes the transaction as a reward.
 
 The different caps and fees for messages are explained below, along with instructions on how to inspect and intract with the message pool.
 
