@@ -167,7 +167,7 @@ module.exports = {
                 ['lotus/go-json-rpc', 'Use Go with JSON-RPC APIs'],
                 ['lotus/payment-channels', 'Payment channels'],
                 ['lotus/hosted-nodes', 'Hosted nodes'],
-                ['lotus/troubleshooting', 'Troubleshotting']
+                ['lotus/troubleshooting', 'Troubleshooting']
               ]
             },
             'signing-libraries',
