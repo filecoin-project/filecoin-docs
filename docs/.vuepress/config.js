@@ -96,6 +96,7 @@ module.exports = {
 
           '/store/': [
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
+            'slate',
             {
               title: 'LOTUS',
               path: '/store/lotus/',
@@ -150,8 +151,8 @@ module.exports = {
             //'the-filecoin-ecosystem',
             //'textile-buckets',
             ['onboard-testnet', 'Onboard to testnet'],
-            ['filecoin-pinning-services', 'Filecoin-backed pinning services'],
             'powergate',
+            ['filecoin-pinning-services', 'FPS architecture'],
             {
               title: 'LOTUS',
               path: '/build/lotus/',

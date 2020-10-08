@@ -1,34 +1,18 @@
 ---
-title: 'Filecoin-backed pinning services'
-description: "Filecoin-backed pinning service (FPS) services are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin's decentralized storage network (DSN)."
+title: 'Filecoin-backed Pinning Services'
+description: "Filecoin-backed pinning services (FPS) are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin's decentralized storage network."
+breadcrumb: 'FPSs architecture'
 ---
 
-# Filecoin-backed pinning services (FPS)
+# {{ $frontmatter.title }}
 
-{{ $frontmatter.description }} FPS solutions offer this functionality behind a single, easy-to-use API.
+{{ $frontmatter.description }}
 
 ::: tip
-Filecoin-backed pinning services are still in early stages. We plan to update this page regularly.
+You can find a list of [existing FPS providers here](README.md).
 :::
 
-## Existing services
-
-| Name                                                                                                             |                                                                                                                               |
-| ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [Textile Buckets](https://docs.textile.io/buckets/)                                                              | A hosted service that allows development teams to build software projects end-to-end on a decentralized DB and storage stack. |
-| **Chainsafe**                                                                                                    | Coming soon.                                                                                                                  |
-| [Pinata](https://pinata.cloud)                                                                                   | IPFS pinning service, with Filecoin coming soon.                                                                              |
-| [Hosted Powergate](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/) | The Textile team offers hosted [Powergate](./powergate.md) instances.                                                         |
-
-## Key benefits of FPSs
-
-1. Data backed up by decentralized storage network (the Filecoin network) for data persistence.
-
-2. Single [FPS API](https://ipfs.github.io/pinning-services-api-spec/) that can interface with both IPFS and Filecoin nodes, abstracting most of the Filecoin-specific workflows (deal-making) without sacrifizing features (i.e. different geographies, redundant copies, and cryptographic storage receipts).
-
-3. Perfect for developers that do not want to worry about maintaining their own decentralized infrastructure while avoiding vendor lock-in. All providers contribute to the same storage network.
-
-If you are a developer and want to learn more about integration possibilities on top of Filecoin, check the [Build](../build/) section.
+[[TOC]]
 
 ## How to use an FPS
 
@@ -39,6 +23,14 @@ While each FPS provider will have slightly different instructions for utilizing 
 - Make storage requests through the API of the service you are using.
 - Maintain and monitor your data storage.
 - Retrieve your data through the API of the service you are using.
+
+## Key benefits of FPSs
+
+1. Data is backed up on the Filecoin network for data persistence.
+
+2. Developers do not need to worry about maintaining their own decentralized infrastructure. Using an FPS also avoids _vendor lock-in_, since all providers contribute to the same storage network.
+
+3. FPSs are working towards the adoption of the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/). This common API is designed to work flexibly with any content-addressed storage solution, be it Filecoin, IPFS, or a service integrating both. Filecoin-specific workflows are abstracted from the users without sacrificing features like different geographies, redundant copies, and cryptographic storage receipts.
 
 ## How FPS solutions work
 

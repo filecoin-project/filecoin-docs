@@ -10,10 +10,10 @@ breadcrumb: 'Onboard to testnet'
 
 For small-scale testing of your application, you can use smaller-scale Filecoin networks, such as a [local network](local-devnet.md) or the [Filecoin Nerpa network](../networks/README.md#nerpa-devnet). We currently recommend _all developers_ use the Filecoin testnet in order to receive direct support from the Protocol Labs team and to be eligible for upcoming data storage rewards.
 
-The Filecoin testnet is a network with parameters and activity levels as close as possible to the expected early state of the Filecoin main network (mainnet). The testnet is currently being used for the Filecoin testnet incentives, or [Space Race](../mine/spacerace.md), competition. As a developer on the Filecoin testnet, there are some important things you should know about development on the testnet.
+The Filecoin testnet is a network with parameters and activity levels _as close as possible_ to the expected state of the Filecoin mainnet once it launches. There are some important things developers should know before building on the testnet.
 
 ::: tip
-**We recommend that most developers use a hosted service** like [hosted Powergates or Textile Buckets](filecoin-pinning-services.md) to store application data to the Filecoin testnet. These services are by far the fastest and friendliest way to get your application working with Filecoin. If you are using either a hosted [Powergate](powergate.md) or Textile Buckets, you don’t need to worry about any of the information in this guide. Textile’s services are soon to be deployed against the Filecoin testnet. If you are using hosted Textile products, your application will also be deployed on the Filecoin testnet.
+**We recommend that most developers use a hosted service** like [hosted Powergates or Textile Buckets](README.md#filecoin-backed-storage-providers) to store application data to the Filecoin testnet. These services are by far the fastest and friendliest way to get your application working with Filecoin. If you are using either a hosted [Powergate](powergate.md) or Textile Buckets, you don’t need to worry about any of the information in this guide. Textile’s services are soon to be deployed against the Filecoin testnet. If you are using hosted Textile products, your application will also be deployed on the Filecoin testnet.
 
 If you would like accelerated access to a hosted Powergate instance, please fill out [this form](https://blog.textile.io/hosted-powergate//f5Vd5kTNYTKrmj1D8). We will work with the Textile team to get you access to a hosted Powergate asap.
 :::
