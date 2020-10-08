@@ -35,6 +35,7 @@
 /build/start-building/interacting-with-the-network/ /build/
 /build/start-building/deploy-your-application-to-the-filecoin-testnet/ /build/onboard-testnet/
 /build/start-building/implementations/ /get-started/
+/build/examples/sample-architectures/ /build/examples/ 
 
 /build/tools/ /build/
 /build/tools/api-clients/ /build/lotus/api-client-libraries/
