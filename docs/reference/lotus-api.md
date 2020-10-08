@@ -24,7 +24,7 @@ The _Lotus Node_ configures its listen interface and port in its [configuration]
 
 ## Methods
 
-The [JSON-RPC](https://www.jsonrpc.org/specification) API matches directly the methods defined in the _Lotus API package_ ([link to the Go documentation](https://github.com/filecoin-project/lotus/blob/master/documentation/en/api.md). This is the best place to discover what methods and types exist for the Lotus and the Lotus Miner APIs. For information on how to jump from a Go method definition to the JSON-RPC method see cURL examples below.
+The [JSON-RPC](https://www.jsonrpc.org/specification) API matches directly the methods defined in the _Lotus API package_ ([link to the Go documentation](https://github.com/filecoin-project/lotus/blob/master/documentation/en/api-methods.md). This is the best place to discover what methods and types exist for the Lotus and the Lotus Miner APIs. For information on how to jump from a Go method definition to the JSON-RPC method see cURL examples below.
 
 ### Common methods
 
