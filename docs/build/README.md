@@ -11,12 +11,12 @@ Filecoin is for the builders. If you are excited about the potential of leveragi
 
 ## Onboard the testnet
 
-The Filecoin testnet is a network with parameters and activity levels as close as possible to the expected early state of the Filecoin main network (mainnet). To get up to speed quickly on how to start storing data on the testnet, check the [onboard the testnet](onboard-testnet.md) guide.
+The Filecoin testnet is a network with parameters and activity levels _as close as possible_ to the expected state of the Filecoin mainnet once it launches. To get up to speed quickly on how to start storing data on the testnet, check the [onboard the testnet](onboard-testnet.md) guide.
 
 ## Pinning Services
 
 ::: tip
-Providers for **_Filecoin-backed pinning services_** are still in early stages. We plan to update this list regularly.
+Providers for [Filecoin-backed pinning services](filecoin-pinning-services.md) are still in early stages. We plan to update this list regularly.
 :::
 
 | Name                                                          | Description                                                                                                                                                                                       | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |

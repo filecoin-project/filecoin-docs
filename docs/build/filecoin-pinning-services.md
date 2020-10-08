@@ -26,11 +26,11 @@ While each FPS provider will have slightly different instructions for utilizing 
 
 ## Key benefits of FPSs
 
-1. Data backed up by decentralized storage network (the Filecoin network) for data persistence.
+1. Data is backed up on the Filecoin network for data persistence.
 
-2. Perfect for developers that do not want to worry about maintaining their own decentralized infrastructure while avoiding vendor lock-in. All providers contribute to the same storage network.
+2. Developers do not need to worry about maintaining their own decentralized infrastructure. Using an FPS also avoids _vendor lock-in_, since all providers contribute to the same storage network.
 
-3. FPSs are working towards the adoption of the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/). This common API is designed to work flexibly with any content-addressed storage solution, be it Filecoin, IPFS or services integrating both. Thus, Filecoin-specific workflows like deal-making are abstracted from the users without sacrifizing features (i.e. different geographies, redundant copies, and cryptographic storage receipts).
+3. FPSs are working towards the adoption of the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/). This common API is designed to work flexibly with any content-addressed storage solution, be it Filecoin, IPFS, or a service integrating both. Filecoin-specific workflows are abstracted from the users without sacrificing features like different geographies, redundant copies, and cryptographic storage receipts.
 
 ## How FPS solutions work
 
