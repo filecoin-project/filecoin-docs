@@ -11,7 +11,7 @@ In Filecoin, users pay to store their files on storage miners. Storage miners ar
 
 Filecoin includes a blockchain and native cryptocurrency (FIL). Storage miners earn units of FIL for storing files. Filecoin’s blockchain records transactions to send and receive FIL, along with proofs from storage miners that they are storing their files correctly.
 
-![The four-step process for storing files with Filecoin.](./images/what-is-filecoin/what-is-filecoin-diagram.png)
+![Diagram showing a four-step process for storing files with Filecoin. First step: User who wants to store a file pays miner to store their file. Second step: Miner commits publicly via Filecoin’s blockchain to storing the file. Third step: The network constantly verifies that miners are storing files correctly. Fourth step: User pays miner to retrieve their file.](./images/what-is-filecoin/what-is-filecoin-diagram.png)
 
 ## For users
 
