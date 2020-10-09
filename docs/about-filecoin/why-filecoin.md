@@ -9,7 +9,7 @@ This is an overview of features offered by Filecoin that make it a compelling sy
 
 ### Open market
 
-In Filecoin, file storage and retrieval services are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a miner only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
+In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a miner only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
 
 ### Competitive prices
 
