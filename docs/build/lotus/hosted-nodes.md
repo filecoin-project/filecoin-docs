@@ -14,6 +14,9 @@ These are hosted Lotus JSON RPC API endpoints intended to jump-start development
 
 - Let us know if you only require recent chain state (good for most applications) or full chain history from genesis (for deeper analysis).
 - The Lotus JSON RPC API has [variable permissions](https://docs.filecoin.io/build/lotus/api-token-generation/#permissions). Read calls and [`MPoolPush()`](https://github.com/filecoin-project/lotus/blob/master/api/api_full.go#L192) are supported. (Some transaction types can be signed apart from a node using the [Filecoin Signing Tools library](https://github.com/Zondax/filecoin-signing-tools) and `MPoolPush()`).
-- Remote storage deals via API signed apart from a node are not yet fully supported in Lotus: the node's keys are currently required for storage deals. We recommend using Powergate and IPFS for this. (Lotus supports interactions with IPFS nodes, see the [IPFS config](https://github.com/filecoin-project/lotus/blob/master/node/config/def.go#L106) settings and [PR 1843](https://github.com/filecoin-project/lotus/pull/1843).)
+- Remote storage deals via API signed apart from a node are not yet fully supported in Lotus (it's a Roadmap item): the node's keys are currently required for storage deals. We recommend using Powergate and IPFS for this. (Lotus also supports interactions with IPFS nodes, see the [IPFS config](https://github.com/filecoin-project/lotus/blob/master/node/config/def.go#L106) settings and [PR 1843](https://github.com/filecoin-project/lotus/pull/1843).)
+- If you need advanced permissions or additional infra, complete the request form and we'll see if it can be supported. Your use cases are always interesting to us.
 
-To request access to a Glif Hosted Lotus Node endpoint, please complete [this request form](https://forms.gle/rfXx2yKbhgrwUv837).
+To request access to a Glif Hosted Lotus Node endpoint, please complete [**this request form**](https://forms.gle/rfXx2yKbhgrwUv837).
+
+For questions and current status, visit the [#fil-glif-node-hosting](https://filecoinproject.slack.com/archives/C017HM9BJ8Z) channel in [Filecoin Community Slack](https://filecoin.io/slack).
