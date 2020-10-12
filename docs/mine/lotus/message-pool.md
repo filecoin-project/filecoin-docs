@@ -34,20 +34,12 @@ When a message is executed it consumes _gas_. The total gas consumed by a messag
 Lotus can be configured with several addresses to have more granular control over fees and limits depending on the operation and avoid head-of-line blocking, particularly for high value operations such as _WindowPoSts_. Check the [miner wallets guide](miner-wallets.md).
 :::
 
-In the Filecoin Network, a dynamic **_BaseFee_**, measured in attoFIL/gas units, specifies how much FIL gets burned _per unit of gas consumed_ for the execution of every message based. The total amount of FIL burnt per message is, therefore, given by _BaseFee \* GasUsed_. The _BaseFee_ gets automatically updated according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../../get-started/explore-the-network.md) or by looking at the current head:
+Gas usage and fees are explained in detail in [how-filecoin-works](../../about-filecoin/how-filecoin-works.md). As an additional tip, you can use Lotus to find out about the current _BaseFee_:
 
 ```sh
 # Will print the last BaseFee in attoFIL
 lotus chain head | xargs lotus chain getblock | jq -r .ParentBaseFee
 ```
-
-Apart from the _BaseFee_, every message in the message pool has the following gas-related fields:
-
-- **_GasLimit_**: it is measured in gas units. It is a hard limit on the amount of gas that a message's execution can consume. A message consumes gas for every fundamental operation it takes (see [prices](https://github.com/filecoin-project/lotus/blob/d678fe4bfa5b4c70bcebd46cdc38aafc452b42d1/chain/vm/gas.go#L87)). Messages will fail if they run out of gas fails, at which point every modification to the state is reverted. Whether the execution is successful or not, the miner is given a reward calculated as _GasLimit \* GasPremium_.
-- **_GasPremium_**: it is measured in attoFIL/gas units. It indicates how much a miner earns as their reward for including a message. A message typically earns its miner _GasLimit \* GasPremium_ attoFIL.
-- **_GasFeeCap_**: it is measured in attoFIL/gas units. Its purpose is to establish a hard limit on the amount of FIL a message can cost its sender. A sender is guaranteed that a message will never cost them more than _GasLimit \* GasFeeCap_, not including any value that the message includes for its recipient (in terms of GasPremium). The total fee (in attoFIL/gas) for a message is _GasPremium + BaseFee_. Given that _GasPremium_ is set by the sender, _GasFeeCap_ essentially serves as a safeguard against a high, unexpected _BaseFee_.
-
-If _BaseFee + GasPremium_ is greater than the message's _GasFeeCap_, the miner's reward becomes _GasLimit \* (GasFeeCap - BaseFee)_. Note that if a message's _GasFeeCap_ is lower than the _BaseFee_, then the remainder comes from the miner (as a penalty).
 
 ## Checking for pending messages
 
