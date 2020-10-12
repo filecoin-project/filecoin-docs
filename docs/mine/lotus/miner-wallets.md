@@ -30,11 +30,19 @@ The different types of wallets associated to a miner are described below:
 
 The owner address corresponds to a Lotus Node wallet address that is provided during the [miner initialization](miner-setup.md). The _owner address_ is only needed when:
 
-- Changing the worker address in the _miner actor_
+- Changing the owner or the worker address in the _miner actor_
 - Withdrawing balance from the _miner actor_
 - Submit _WindowPoSts_ (**unless _control addresses_ are defined and have enough balance**, see below)
 
 The wallet associated to the _owner address_ is designed to be kept offline as a cold wallet, given that it should not be used often and it is critical to safeguard the miner's funds. In production environments, we strongly recommend using separate _owner_ and _worker_ addresses.
+
+The owner address can be updated with the following command:
+
+```sh
+lotus-miner actor set-owner --really-do-it <address>
+```
+
+The old and the new address must be available in the Lotus node. For the new address, you can [create a new one or import an existing one](../../get-started/lotus/send-and-receive-fil.md).
 
 ## The worker address
 
