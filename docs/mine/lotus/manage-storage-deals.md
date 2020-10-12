@@ -59,13 +59,13 @@ Storage prices, and other conditions, are set with the `lotus-miner storage-deal
 
 ```sh
 lotus-miner storage-deals set-ask \
-  --price 100000000000 \
-  --verified-price  100000000000 \
+  --price 0.0000001 \
+  --verified-price 0.0000001  \
   --min-piece-size 56KiB \
   --max-piece-size 32GB
 ```
 
-The above command sets the price for deals to `100000000000 attoFIL` (`100 nanoFIL`) per GiB, per epoch. This means, a client will have to pay `100 nanoFIL` every 30 seconds for each GiB stored. If the client wants 5GiB stored over the course of a week, the total price will be: `5GiB * 100nanoFIL/GiB_Epoch * 20160 Epochs = 10080 microFIL`.
+The above command sets the price for deals to `0.0000001 attoFIL` (`100 nanoFIL`) per GiB, per epoch. This means, a client will have to pay `100 nanoFIL` every 30 seconds for each GiB stored. If the client wants 5GiB stored over the course of a week, the total price will be: `5GiB * 100nanoFIL/GiB_Epoch * 20160 Epochs = 10080 microFIL`.
 
 The command also serves to set the minimum and maximum deal sizes. Be sure to check `lotus-miner storage-deals set-ask --help` to see all options.
 
