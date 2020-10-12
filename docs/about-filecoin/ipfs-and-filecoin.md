@@ -19,7 +19,7 @@ Data stored on the Filecoin network is _cryptographically guaranteed_ so that th
 
 Filecoin can be seen as a _cold_ storage layer, perfect to safely store large batches of data. IPFS would be the _hot_ storage layer, designed for the quick retrieval and distribution of content.
 
-## Which should I use?
+## Which system should I use?
 
 ### Using IPFS
 
