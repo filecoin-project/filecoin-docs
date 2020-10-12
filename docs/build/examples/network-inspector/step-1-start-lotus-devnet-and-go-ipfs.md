@@ -5,7 +5,7 @@ description: This article describes how to spin up lotus-devnet and go-ipfs node
 
 # Step 1 - Start lotus-devnet and go-ipfs
 
-You can install and run lotus from source, as described in the [lotus docs](https://lotu.sh/en+getting-started), and then run a [local devnet](https://lotu.sh/en+setup-local-dev-net). For faster development cycles, this example uses a [fork](https://github.com/filecoin-shipyard/lotus-devnet) of Textile’s [localnet](https://github.com/textileio/lotus-devnet), which can be used to spin up lotus full nodes and lotus miners with mocked sector-builders (for faster storage mining processes), and to run a network with tunable parameters (e.g. block time). lotus-devnet is recommended for easier and faster development.
+You can install and run lotus from source, and then run a local devnet. For faster development cycles, this example uses a [fork](https://github.com/filecoin-shipyard/lotus-devnet) of Textile’s [localnet](https://github.com/textileio/lotus-devnet), which can be used to spin up lotus full nodes and lotus miners with mocked sector-builders (for faster storage mining processes), and to run a network with tunable parameters (e.g. block time). lotus-devnet is recommended for easier and faster development.
 
 For this tutorial, please use the [lotus-devnet fork](https://github.com/filecoin-shipyard/lotus-devnet). For your own applications, please use [Textile’s localnet](https://github.com/textileio/lotus-devnet). See the full localnet docs [here](https://docs.textile.io/powergate/localnet/).
 
@@ -25,7 +25,7 @@ cd lotus-devnet
 make devnet BIGSECTORS=true
 ```
 
-In [filecoin-shipyard/lotus-devnet/docker-compose-devnet.yaml](https://github.com/filecoin-shipyard/lotus-devnet/blob/master/docker-compose-devnet.yaml), both the `services`: `lotus` and `ipfs` are started. In this setup, we are using [IPFS integration](https://lotu.sh/en+ipfs-client-integration), which supports making deals with data stored in IPFS, without having to re-import it into lotus.
+In [filecoin-shipyard/lotus-devnet/docker-compose-devnet.yaml](https://github.com/filecoin-shipyard/lotus-devnet/blob/master/docker-compose-devnet.yaml), both the `services`: `lotus` and `ipfs` are started. In this setup, we are using IPFS integration, which supports making deals with data stored in IPFS, without having to re-import it into lotus.
 
 The IPFS HTTP gateway running on `8080` within the container is exposed on `7070` on the host machine. This will be used to fetch data via filecoin retrieval deal.
 

@@ -289,14 +289,14 @@ Remember that the devnet is a local network that has been configured to work wit
 
 There are two main ways to store a file on the Filecoin network:
 
-- [Importing a local file into the lotus node for storage](https://lotu.sh/en+storing-data#adding-a-file-locally-164086), then make a storage deal
-- [Make a storage deal for data that is stored in IPFS](https://lotu.sh/en+ipfs-client-integration) -- This is the process used in the sample application.
+- Importing a local file into the lotus node for storage, then make a storage deal
+- Make a storage deal for data that is stored in IPFS. This is the process used in the sample application.
 
 To make a storage deal for data that is stored in IPFS:
 
 - First store the file on the public IPFS network.
 - This will return a CID for the file.
-- Using the [IPFS/lotus integration](https://lotu.sh/en+ipfs-client-integration), create a Filecoin storage deal for the file using the same CID.
+- Using the IPFS & lotus integration, create a Filecoin storage deal for the file using the same CID.
 
 1. **Setup IPFS API client:** In [src/redux/actions/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/a94747f4967db2cde8bc563aa96675926d9c3193/src/redux/actions/lotus.js#L4), import the ipfs object returned by the `js-ipfs-http-client` in the [src/utils/ipfs.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/utils/ipfs.js#L3) file.
 
