@@ -7,17 +7,17 @@ description: Learn more about the relationship and different use-cases between I
 
 Filecoin and IPFS are complementary systems for storing and sharing data in the distributed web. Both systems are free, open-source, and share several building blocks, including data representation formats and certain network communication protocols. However, the Filecoin and the IPFS networks are otherwise fully independent. Software that interacts with IPFS does not require Filecoin, and vice-versa, although some solutions may use both.
 
-This page aims to explain the relationship between the IPFS and Filecoin and assist users in deciding which option, or combination of options, is best suited for their use-case.
+This page aims to explain the relationship between the IPFS and Filecoin projects and help users decide which option is best suited for their use-case.
 
 ## Data storage incentives
 
-[IPFS](https://ipfs.io) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users persist the data they want **on their own IPFS nodes**. This is referred as [pinning](https://docs.ipfs.io/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service, or through groups of individual IPFS users. The data exists in the network as long as one user is storing it and able to provide it to others when they request it.
+[IPFS](https://ipfs.io) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users persist the data they want on their own IPFS nodes, referred to as [pinning](https://docs.ipfs.io/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service or through groups of individual IPFS users. The data exists in the network as long as one user is storing it and can provide it to others when requested.
 
-However, IPFS does not include a built-in mechanism to incentivize the storage of data for _other_ people. This is the challenge Filecoin hopes to solve: the Filecoin network creates a distributed storage market place for long-term storage where nodes with large storage capacity can rent it to users with data-storage needs, and get paid for it.
+IPFS does not include a built-in mechanism to incentivize the storage of data for _other_ people. This is the challenge Filecoin hopes to solve. The Filecoin network creates a distributed storage marketplace for long-term storage. Nodes with a large storage capacity can rent storage to users with and get paid for it.
 
-The cryptographic guarantees ensuring that data is safely stored by the Filecoin network make the storage and retrieval of data a computationally and time-expensive operation. For this reason, Filecoin enables an additional retrieval market where dedicated nodes can help quickly delivering content from the network for a payment. This delivery mechanism may make use of IPFS.
+Data stored on the Filecoin network is _cryptographically guaranteed_ so that the user can ensure that their data is retrievable. While this guarantee helps secure data on the network, data retrieval is a computationally and time-expensive operation. For this reason, Filecoin enables an additional retrieval market where dedicated nodes can help quickly deliver content from the network. This delivery mechanism may make use of IPFS.
 
-In that sense, Filecoin can be seen as a "cold" storage layer, perfect to safely store large batches of data, while IPFS would be the "hot" storage layer, designed for the quick retrieval and distribution of content.
+Filecoin can be seen as a _cold_ storage layer, perfect to safely store large batches of data. IPFS would be the _hot_ storage layer, designed for the quick retrieval and distribution of content.
 
 ## Which should I use?
 
@@ -29,14 +29,14 @@ In that sense, Filecoin can be seen as a "cold" storage layer, perfect to safely
 
 ### Using Filecoin
 
-- Clients make deals with miners to store data. The network verifies that the data is indeed stored by the miners, and regular, small payments are made for the duration of the deal.
-- Miners that are unable to honor the storage conditions they offered have to pay a penalty.
-- Content retrieval might be offered by storage miners directly or by specialized retrieval miners, for a price.
-- Filecoin by itself work very well for large amounts of data to be stored for longer periods of time.
+- Clients make _storage deals_ with miners to store data. The network verifies that the miners are correctly storing the data. Small payments are made on a regular basis for the duration of the _storage deal_.
+- Miners that do not honor the storage deal are penalised.
+- Content retrieval might be offered by storage miners directly, or by specialized retrieval miners. The user requesting the data pays for this service.
+- Filecoin excels at storing large amounts of data for long periods of time.
 
 ### Using both
 
-Some solutions like [Powergate](../build/powergate.md) combine the best of the two worlds, backing up data on the Filecoin network and at the same time providing it through the IPFS network. This ensures availability and fast retrieval while knowing, at the same time, that the data is safely backed up by one or several Filecoin miners.
+Some solutions combine the best of the to systems, backing up data on the Filecoin network and at the same time providing the data through the IPFS network. This ensures that data is constantly available and can be retrieved quickly, while also making sure that the data is safely backed up on the Filecoin network. [Powergate](../build/powergate.md) is a service that does this.
 
 ## The technology behind IPFS and Filecoin
 
@@ -47,4 +47,4 @@ Filecoin and IPFS share are powered by the same technology at many levels:
 - [Multiformats](https://multiformats.io) define future-proof identifiers and data-types.
 - [Graphsync](https://github.com/ipfs/go-graphsync) and [Bitswap](https://github.com/ipfs/go-bitswap) enable fast an efficient IPLD data transfers between nodes.
 
-**Interested in learning more?** Check some of our [application examples](../build/examples/README.md).
+Interested in learning more? Check some of our [application examples](../build/examples/README.md).
