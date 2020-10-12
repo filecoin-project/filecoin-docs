@@ -5,7 +5,7 @@ description: Learn more about the relationship and different use-cases between I
 
 # IPFS and Filecoin
 
-Filecoin and IPFS are complementary systems for storing and sharing data in the distributed web. Both are free, open-source and share a number of building blocks, including data representation formats and certain protocols for network communication. However, the Filecoin and the IPFS networks are otherwise fully independent. Software that interacts with IPFS does not require Filecoin, and vice-versa, although some solutions may make use of both.
+Filecoin and IPFS are complementary systems for storing and sharing data in the distributed web. Both systems are free, open-source, and share several building blocks, including data representation formats and certain network communication protocols. However, the Filecoin and the IPFS networks are otherwise fully independent. Software that interacts with IPFS does not require Filecoin, and vice-versa, although some solutions may use both.
 
 This page aims to explain the relationship between the IPFS and Filecoin and assist users in deciding which option, or combination of options, is best suited for their use-case.
 
