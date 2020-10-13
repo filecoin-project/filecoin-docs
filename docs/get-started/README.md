@@ -10,7 +10,7 @@ The Filecoin Network is made by miners and clients. They [make deals](../about-f
 
 In order to get started on Filecoin:
 
-1. **Explore the different [networks](https://networks.filecoin.io) using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for miners. the self-adjusting base fee, the deals and all the things tracked by the chain.**
+1. **Explore the different [networks](https://networks.filecoin.io) using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for miners, the self-adjusting base fee, the deals, and all the things tracked by the chain.**
 
 2. **Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look to how Filecoin works.**
 
