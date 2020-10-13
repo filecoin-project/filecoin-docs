@@ -68,7 +68,6 @@ module.exports = {
         nav: require('./nav/en'),
         sidebar: {
           //'/software/': 'auto',
-          '/networks/': 'auto',
 
           '/get-started/': [
             'explore-the-network',

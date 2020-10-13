@@ -8,7 +8,7 @@ breadcrumb: 'Onboard to testnet'
 
 {{ $frontmatter.description }}
 
-For small-scale testing of your application, you can use smaller-scale Filecoin networks, such as a [local network](local-devnet.md) or the [Filecoin Nerpa network](../networks/README.md#nerpa-devnet). We currently recommend _all developers_ use the Filecoin testnet in order to receive direct support from the Protocol Labs team and to be eligible for upcoming data storage rewards.
+For small-scale testing of your application, you can use smaller-scale Filecoin networks, such as a [local network](local-devnet.md) or the [Filecoin Nerpa network](https://networks.filecoin.io/#nerpa). We currently recommend _all developers_ use the Filecoin testnet in order to receive direct support from the Protocol Labs team and to be eligible for upcoming data storage rewards.
 
 The Filecoin testnet is a network with parameters and activity levels _as close as possible_ to the expected state of the Filecoin mainnet once it launches. There are some important things developers should know before building on the testnet.
 
