@@ -11,7 +11,7 @@ This page aims to explain the relationship between the IPFS and Filecoin project
 
 ## Data storage incentives
 
-[IPFS](https://ipfs.io) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users persist the data they want on their own IPFS nodes, referred to as [pinning](https://docs.ipfs.io/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service or through groups of individual IPFS users. The data exists in the network as long as one user is storing it and can provide it to others when requested.
+[IPFS](https://ipfs.io) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users persist the data they want **on their own IPFS nodes**. This is referred as [pinning](https://docs.ipfs.io/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service, or through groups of individual IPFS users. The data exists in the network as long as one user is storing it and able to provide it to others when they request it.
 
 IPFS does not include a built-in mechanism to incentivize the storage of data for _other_ people. This is the challenge Filecoin hopes to solve. The Filecoin network creates a distributed storage marketplace for long-term storage. Nodes with a large storage capacity can rent storage to users with and get paid for it.
 
