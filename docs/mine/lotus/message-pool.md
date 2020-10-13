@@ -34,7 +34,7 @@ When a message is executed it consumes _gas_. The total gas consumed by a messag
 Lotus can be configured with several addresses to have more granular control over fees and limits depending on the operation and avoid head-of-line blocking, particularly for high value operations such as _WindowPoSts_. Check the [miner wallets guide](miner-wallets.md).
 :::
 
-Gas usage and fees are explained in detail in [how-filecoin-works](../../about-filecoin/how-filecoin-works.md). As an additional tip, you can use Lotus to find out about the current _BaseFee_:
+The [How Filecoin works page](../../about-filecoin/how-filecoin-works.md) explains gas-usage and fee in more detail. As an additional tip, you can use Lotus to find out about the current _BaseFee_:
 
 ```sh
 # Will print the last BaseFee in attoFIL
