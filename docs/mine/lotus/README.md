@@ -10,7 +10,7 @@ description: The Lotus Miner is a Filecoin miner implementation written by Proto
 This sections contains guides to setup and run succesful mining operations using Lotus and should be approached by **advanced users only**, familiar with [how Filecoin works](../../about-filecoin/how-filecoin-works.md), [how mining works](../how-mining-works.md) and the operation of the [Lotus Node](../../store/lotus/README.md).
 
 ::: warning
-Lotus Mining for _testnet_ and _mainnet_ has stringent minimal **[hardware requirements](../hardware-requirements.md)**. If you do not reach the minimum requirements for the network you plan to use, you should not even attempt it.
+Lotus Mining for _mainnet_ has stringent minimal **[hardware requirements](../hardware-requirements.md)**. If you do not reach the minimum requirements for the network you plan to use, you should not even attempt it.
 :::
 
 ## Getting started with Lotus Miner

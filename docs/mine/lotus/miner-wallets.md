@@ -70,16 +70,16 @@ To set up a _control address_, first, create a new wallet and send it some funds
 
 ```sh
 lotus wallet new bls
-t3defg...
+f3defg...
 
-lotus send --from <address> t3defg... 100
+lotus send --from <address> f3defg... 100
 ```
 
 Next, let the miner know about the new address:
 
 ```sh
-$ lotus-miner actor control set --really-do-it t3defg...
-Add t3defg...
+$ lotus-miner actor control set --really-do-it f3defg...
+Add f3defg...
 Message CID: bafy2..
 ```
 
@@ -97,9 +97,9 @@ Finally, check the miner control address list to make sure the address was corre
 ```sh
 $ lotus-miner actor control list
 name       ID      key           use    balance
-owner      t01111  t3abcd...  other  300 FIL
-worker     t01111  t3abcd...  other  300 FIL
-control-0  t02222  t3defg...  post   100 FIL
+owner      t01111  f3abcd...  other  300 FIL
+worker     t01111  f3abcd...  other  300 FIL
+control-0  t02222  f3defg...  post   100 FIL
 ```
 
 You can repeat this procedure to add additional addresses.

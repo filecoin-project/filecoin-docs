@@ -84,7 +84,7 @@ swapon --show
 
 ### Creating wallets for the miner
 
-You will need at least a BLS wallet (`t3...`) for mining. We recommend using [separate owner and worker wallets](miner-wallets.md) though. Thus, create at least two wallets (unless you have some already):
+You will need at least a BLS wallet (`f3...` for mainnet) for mining. We recommend using [separate owner and worker wallets](miner-wallets.md) though. Thus, create at least two wallets (unless you have some already):
 
 ```sh
 # A new BLS address to use as owner address:

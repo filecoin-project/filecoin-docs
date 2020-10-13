@@ -32,5 +32,4 @@ lotus daemon --import-snapshot --halt-after-import
 
 ## Testnet chain snapshots
 
-Snapshots for the Lotus testnet created every 6 hours are available for download in [here](https://very-temporary-spacerace-chain-snapshot.s3.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car).
-
+Snapshots for the Lotus _mainnet_ created every 6 hours are available for download in [here](https://very-temporary-spacerace-chain-snapshot.s3.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car).

@@ -38,7 +38,7 @@ Building Lotus requires some system dependencies, usually provided by your distr
 | Linux distribution | Dependency install command                                                                                                                                                                    |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers`                                                                                               |
-| Ubuntu/Debian      | `sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential -y && sudo apt upgrade -y`                                                                |
+| Ubuntu/Debian      | `sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential -y && sudo apt upgrade -y`                                                          |
 | Fedora             | `sudo dnf -y install gcc make git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm wget`                                                  |
 | OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`                                           |
 | Amazon Linux 2     | `sudo yum install -y https://dl.fedoraproject.org/pub/epel/epest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel` |
@@ -47,12 +47,12 @@ Building Lotus requires some system dependencies, usually provided by your distr
 
 Lotus needs [rustup](https://rustup.rs). The easiest way to install it is:
 
-```sh	
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh	
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-:::tip	
-Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.	
+:::tip
+Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.
 :::
 
 #### Go
@@ -80,12 +80,16 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    ```sh
    git checkout <branch_or_tag>
+   # For example:
+   git checkout master # mainnet
+   git checkout ntwk-calibration # calibration-net
+   git checkout ntwk-nerpa # nerpa-net
    ```
 
-   Currently, the _master_ branch corresponds to **testnet**.
+   Currently, the _master_ branch corresponds to **mainnet**.
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
-1. Depending on your CPU model, you will need to export additional environment variables:
+1. Depending on your CPU model, you will want to export additional environment variables:
 
    If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
 
@@ -96,14 +100,14 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-   If you are building Lotus 0.7.1 and have an Intel or AMD processor without the AXD instruction set, add the `CGO_CFLAGS` environment variable:
+   If you are building Lotus 0.7.1 or older and have an Intel or AMD processor without the ADX instruction set, add the `CGO_CFLAGS` environment variable:
 
    ```sh
    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
    export CGO_CFLAGS="-D__BLST_PORTABLE__"
    ```
 
-   This is due to a Lotus bug that prevents Lotus from running on processor without `axd` instruction support, and should be fixed soon.
+   This is due to a Lotus bug that prevents Lotus from running on processor without `adx` instruction support, and should be fixed soon.
 
 1. Build and install Lotus:
 
@@ -192,11 +196,25 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
    ```sh
    git checkout <branch_or_tag>
+   # For example:
+   git checkout master # mainnet
+   git checkout ntwk-calibration # calibration-net
+   git checkout ntwk-nerpa # nerpa-net
    ```
 
-   Currently, the _master_ branch corresponds to **testnet**.
+   Currently, the _master_ branch corresponds to **mainnet**.
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
+
+1. If you are building Lotus 0.7.1 or older and have an Intel or AMD processor without the ADX instruction set, add the `CGO_CFLAGS` environment variable:
+
+   ```sh
+   export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+   export CGO_CFLAGS="-D__BLST_PORTABLE__"
+   ```
+
+   This is due to a Lotus bug that prevents Lotus from running on processor without `adx` instruction support, and should be fixed soon.
+
 1. Build Lotus:
 
    ```sh
@@ -286,7 +304,6 @@ For example, after your Lotus daemon has been running for a few minutes, use `lo
 ```sh
 lotus net peers
 ```
-
 
 ## Stop the Lotus daemon
 

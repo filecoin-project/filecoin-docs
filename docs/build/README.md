@@ -9,9 +9,9 @@ Filecoin is for the builders. If you are excited about the potential of leveragi
 
 [[TOC]]
 
-## Onboard the testnet
+## Onboard a testing network
 
-The Filecoin testnet is a network with parameters and activity levels _as close as possible_ to the expected state of the Filecoin mainnet once it launches. To get up to speed quickly on how to start storing data on the testnet, check the [onboard the testnet](onboard-testnet.md) guide.
+There are [several testing networks](https://network.filecoin.io) for Filecoin. The Filecoin _calibration-net_ is a network with parameters and stability _as close as possible_ to the the Filecoin mainnet. To get up to speed quickly on how to start storing data on one of the testing networks, check the [onboarding a testing network](onboard-testnet.md) guide.
 
 ## Filecoin-backed storage providers
 

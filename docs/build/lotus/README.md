@@ -10,7 +10,7 @@ breadcrumb: 'Build on Lotus'
 
 If you wish to interact with the Lotus Node API, you will need to either:
 
-- Run your own [Lotus daemon](../../store/lotus/README.md) (on the Lotus network of your choice - testnet recommended), or
+- Run your own [Lotus daemon](../../store/lotus/README.md) (on the Lotus network of your choice - calibration-net recommended), or
 - Run a [local devnet](../local-devnet.md), or
 - Use a [hosted Lotus node](hosted-nodes.md) provided by Protocol Labs.
 
