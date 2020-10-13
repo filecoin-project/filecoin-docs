@@ -36,7 +36,7 @@ Filecoin can be seen as a _cold_ storage layer, perfect to safely store large ba
 
 ### Using both
 
-Some solutions combine the best of the to systems, backing up data on the Filecoin network and at the same time providing the data through the IPFS network. This ensures that data is constantly available and can be retrieved quickly, while also making sure that the data is safely backed up on the Filecoin network. [Powergate](../build/powergate.md) is a service that does this.
+Some solutions combine the best of the two systems, backing up data on the Filecoin network and at the same time providing the data through the IPFS network. This ensures that data is constantly available and can be retrieved quickly, while also making sure that the data is safely backed up on the Filecoin network. [Powergate](../build/powergate.md) is a service that does this.
 
 ## The technology behind IPFS and Filecoin
 
