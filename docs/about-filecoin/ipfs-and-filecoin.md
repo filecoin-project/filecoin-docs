@@ -15,7 +15,7 @@ This page aims to explain the relationship between the IPFS and Filecoin project
 
 IPFS does not include a built-in mechanism to incentivize the storage of data for _other_ people. This is the challenge Filecoin hopes to solve. The Filecoin network creates a distributed storage marketplace for long-term storage. Nodes with a large storage capacity can rent storage to users with and get paid for it.
 
-Data stored on the Filecoin network is _cryptographically guaranteed_ so that the user can ensure that their data is retrievable. While this guarantee helps secure data on the network, data retrieval is a computationally and time-expensive operation. For this reason, Filecoin enables an additional retrieval market where dedicated nodes can help quickly deliver content from the network. This delivery mechanism may make use of IPFS.
+The Filecoin network ensures that data is safely stored. However, the processes of storing (sealing), verifying (proving) and unsealing (for retrieval) are computationally expensive and can take time. This is specially relevant for the retrieval of data, which should happen as fast as possible. For this reason, Filecoin enables an additional retrieval market where dedicated nodes can help quickly deliver content from the network for a payment by keeping unsealed, cached copies. This delivery mechanism may make use of IPFS.
 
 Filecoin can be seen as a _cold_ storage layer, perfect to safely store large batches of data. IPFS would be the _hot_ storage layer, designed for the quick retrieval and distribution of content.
 
