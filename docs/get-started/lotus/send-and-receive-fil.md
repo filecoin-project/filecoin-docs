@@ -63,17 +63,17 @@ Remember that your will only see the latest balance when your daemon is fully sy
 Send FIL from the _default wallet_ by running:
 
 ```bash
-lotus send <target address> <amount>
+lotus send <target address> <FIL_amount>
 ```
 
 To send FIL from a specific wallet:
 
 ```bash
-lotus send --from=<sender address> <target address> <amount>
+lotus send --from=<sender address> <target address> <FIL_amount>
 ```
 
 :::tip
-Make sure to check `lotus send --help` for advanced options, like setting a limit to the price of fees.
+Make sure to check `lotus send --help` for advanced options, like setting [limits for fees](../../about-filecoin/how-filecoin-works/#gas-fees).
 :::
 
 Every transaction sending FIL pays an additional fee based on its _gas_ usage. Gas and fees are explained in the [How Filecoin Works guide](../../about-filecoin/how-filecoin-works.md). By default, Lotus automatically sets all the necessary values, but you may want to use the `--gas-feecap` flag in the `send` command to avoid surprises when network congestion is high. For more information about messages, see the [Message Pool guide](../../mine/lotus/message-pool.md).
