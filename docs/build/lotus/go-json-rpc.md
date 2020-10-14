@@ -19,7 +19,7 @@ $ go get github.com/filecoin-project/go-jsonrpc
 ## Preparation
 
 - If your Lotus instance is hosted remotely, ensure that you have [enabled remote API access](enable-remote-api-access.md).
-- You will need to [generate an API token](api-token-generation.md)
+- You will need to [obtain an API token](api-tokens.md)
 
 ## Use the client
 

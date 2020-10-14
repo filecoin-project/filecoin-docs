@@ -32,7 +32,7 @@ The API section controls the settings of the [miner API](../../reference/lotus-a
   Timeout = "30s"
 ```
 
-As you see, the listen address is bound to the local loopback interface by default. If you need to open access to the miner API to other machines, you will need to set this to the IP address of the network interface you want to use, or to `0.0.0.0` (which means "all interfaces"). Note that API access is still protected by [JWT tokens](../../build/lotus/api-token-generation.md) even when exposed.
+As you see, the listen address is bound to the local loopback interface by default. If you need to open access to the miner API to other machines, you will need to set this to the IP address of the network interface you want to use, or to `0.0.0.0` (which means "all interfaces"). Note that API access is still protected by [JWT tokens](../../build/lotus/api-tokens.md) even when exposed.
 
 Configure `RemoteListenAddress` to the value that a different node would have to use to reach this API. Usually it is the miner's IP address and API port, but depending on your setup (proxies, public IPs etc.), it might be a different IP.
 

@@ -56,7 +56,7 @@ If you opt to run a miner on a different machine as the Lotus Node, set:
 export FULLNODE_API_INFO=<api_token>:/ip4/<lotus_daemon_ip>/tcp/<lotus_daemon_port>/http
 ```
 
-and **make sure the `ListenAddress` has [remote access enabled](../../build/lotus/enable-remote-api-access.md)**. Instructions on how to obtain a token are [available here](../../build/lotus/api-token-generation.md).
+and **make sure the `ListenAddress` has [remote access enabled](../../build/lotus/enable-remote-api-access.md)**. Instructions on how to obtain a token are [available here](../../build/lotus/api-tokens.md).
 
 Similarly, `lotus-miner` (as a client application to the Lotus Miner daemon), can talk to a remote miner by setting:
 

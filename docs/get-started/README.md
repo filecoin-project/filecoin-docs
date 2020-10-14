@@ -22,7 +22,7 @@ The Filecoin Network is made by miners and clients. They [make deals](../about-f
 ### 2. Store content on Filecoin
 
 - Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser
-- Install and launch your [Lotus Node](lotus/README.md). Setup your first wallet and learn how to [send and receive ⨎](lotus/send-and-receive-fil.md) and [make storage deals](lotus/storage-deals.md).
+- Install and launch your [Lotus Node](lotus/README.md). Setup your first wallet and learn how to [send and receive ⨎](lotus/send-and-receive-fil.md) and [make storage deals](../store/lotus/store-data.md).
 
 ### 3. Contribute to Filecoin
 

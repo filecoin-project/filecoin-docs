@@ -43,13 +43,13 @@ The Lotus miner needs to be ready to accept API connections from workers.
 
 Set `ListenAddress` and `RemoteListenAddress` to the IP of a non-local interface (or `0.0.0.0`) as [documented here](miner-configuration.md#api-section). [Check connectivity to the RemoteListenAddress](connectivity.md) from the worker machine.
 
-### Create an authentication token
+### Obtain an authentication token
 
 ```sh
 lotus-miner auth api-info --perm admin
 ```
 
-The Lotus Workers will need this token to connect to the miner. For more info check the [API docs](../../build/lotus/api-token-generation.md). Write down the output so that you can use it in the next step.
+The Lotus Workers will need this token to connect to the miner. For more info check the [API docs](../../build/lotus/api-tokens.md). Write down the output so that you can use it in the next step.
 
 ### Configuring the miner sealing capabilities
 
