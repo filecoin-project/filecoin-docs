@@ -48,6 +48,9 @@
 /build/tools/signing-libraries/ /build/signing-libraries/
 /build/tools/slate/ /store/#filecoin-software
 /build/tools/wallets/ /store/lotus/send-and-receive-fil/
+/build/lotus/hosted-nodes/ /build/hosted-lotus/
+/build/lotus/api-token-generation/ /build/lotus/api-tokens/
+/build/powergate/ /store/powergate/
 
 /build/core-products/filecoin-backed-pinning-services/ /build/filecoin-pinning-services/
 /build/core-products/powergate/ /build/powergate/

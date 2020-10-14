@@ -96,6 +96,7 @@ module.exports = {
           '/store/': [
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             'slate',
+            'powergate',
             {
               title: 'LOTUS',
               path: '/store/lotus/',
@@ -149,24 +150,24 @@ module.exports = {
           '/build/': [
             //'the-filecoin-ecosystem',
             //'textile-buckets',
-            ['onboard-testnet', 'Onboard to testnet'],
-            'powergate',
-            ['filecoin-pinning-services', 'FPS architecture'],
+            'textile-buckets',
+            'hosted-powergate',
+            'hosted-lotus',
             {
-              title: 'LOTUS',
+              title: 'Lotus',
               path: '/build/lotus/',
               sidebarDepth: 2,
               collapsable: false,
               children: [
                 ['lotus/enable-remote-api-access', 'Enable remote API access'],
-                ['lotus/api-token-generation', 'API token generation'],
+                ['lotus/api-tokens', 'API tokens'],
                 ['lotus/api-client-libraries', 'API client libraries'],
                 ['lotus/go-json-rpc', 'Use Go with JSON-RPC APIs'],
                 ['lotus/payment-channels', 'Payment channels'],
-                ['lotus/hosted-nodes', 'Hosted nodes'],
                 ['lotus/troubleshooting', 'Troubleshooting']
               ]
             },
+            'filecoin-pinning-services',
             'signing-libraries',
             'local-devnet',
             {
@@ -249,6 +250,10 @@ module.exports = {
                 [
                   'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
                   'Code of conduct'
+                ],
+                [
+                  'https://github.com/filecoin-project/community/blob/master/SECURITY.md',
+                  'Security issues'
                 ]
               ]
             },
