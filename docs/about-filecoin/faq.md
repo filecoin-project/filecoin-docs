@@ -44,23 +44,11 @@ Further, Filecoin introduces a concept called _Verified Clients_, where clients 
 
 Filecoin creates a hyper-competitive market for data storage. There will be many miners offering many prices, rather than one fixed price on the network. We expect Filecoin's permissionless model and low barriers to entry to result in some very efficient operations and low-priced storage, but it's impossible to say what exact prices will be until the network is live.
 
-### When will Filecoin mainnet launch?
-
-As we announced in our [roadmap update](https://filecoin.io/blog/roadmap-update-june-2020/), we're continuing to make good progress towards mainnet launch, aiming towards the end of our mainnet launch window. However, all dates are still best-effort optimistic estimates - our top priority is to launch a secure and successful network.
-
 ### What happens to the existing content on IPFS once Filecoin launches? What if nodes continue to host content for free and undermine the Filecoin incentive layer?
 
 IPFS will continue to exist as it is, enhanced with Filecoin nodes. There are many use cases that require no financial incentive. Think of it like IPFS is HTTP, and Filecoin is a storage cloud-like S3 – only a fraction of IPFS content will be there.
 
 People with unused storage who want to earn monetary rewards should pledge that storage to Filecoin, and clients who want guaranteed storage should store that data with Filecoin miners.
-
-### How big will the deals be that the bot tries to make with miners during Incentivized Testnet?
-
-You can expect data ranges from a few kilobytes up to full 32GiB sectors.
-
-### Will the 5PB big miner incentive be included or excluded in the 4M incentives?
-
-The mechanisms for the incentive competition are [here](https://filecoin.io/blog/announcing-testnet-incentives/).
 
 ### Lotus or Go-Filecoin, which is better for miners?
 
@@ -68,11 +56,11 @@ Lotus is the primary reference implementation for the Filecoin protocol. At this
 
 ### What is your recommendation on the right hardware to use?
 
-While the Filecoin team does not recommend any specific hardware configuration, [we did share some setups](https://filecoin.io/blog/announcing-testnet-incentives/#hardware) setups, we've used for various types of testing. We also recently published [this guide to storage mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/) that we recommend miners read through before deciding to storage mine. However, it is overwhelmingly likely that there are more efficient setups, and we strongly encourage miners to test and experiment to find the best combinations.
+While the Filecoin team does not recommend any specific hardware configuration, [we have shared some setups](../mine/mining-architectures.md) setups. We also published [this guide to storage mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/) that we recommend miners read through before deciding to storage mine. However, it is overwhelmingly likely that there are more efficient setups, and we strongly encourage miners to test and experiment to find the best combinations.
 
 ### We are worried about the ability of our network to handle the additional overhead of running a Filecoin node and still provide fast services for our customers. What are the computational demands of a Lotus node? Are there any metrics for node performance given various requirements?
 
-As we approach launch, our Testground team is prioritizing getting metrics to understand the performance of Lotus nodes; we will share these as they are determined. We are also still tweaking node and network design parameters, so these numbers will continue to improve significantly over the next few months.
+See the hardware requirements for [Lotus nodes](../get-started/lotus/installation/#minimal-requirements) and [Filecoin miners](../mine/hardware-requirements/).
 
 ### We bought a lot of hard drives of data through the Discover project. When will they be shipped to China?
 
@@ -80,21 +68,7 @@ There are a number of details that are still being finalized between the verifie
 
 Our aim is to allow these details to finalize before shipping, but given timelines, we're considering enabling teams to take receipt of these drives before the parameters are set. We will publish updates on the status of the Discover project on the Filecoin blog.
 
-### Is there a KYC certification process for miners? How does it work? How will you verify the geographical location of miners?
-
-Miners will be required to verify their identity by providing passports or similar identity documents to receive tokens. We may need to request additional information in rare cases.
-
-We'll use a variety of technical and non-technical mechanisms. They may also be different for different miners. To avoid cheating, we're not revealing the specific mechanisms until verification begins.
-
-When we verify miners' locations, we'll reach out by email and coordinate a time that the miner will be standing by to provide verification. We'll ask for some specific evidence and require submission within a short time period.
-
-Location verification is not required to participate in either (i) the global leaderboard or (ii) the regional leaderboard for the most competitive region (i.e., the region with the most storage).
-
-We consider the location of the storage and sealing hardware to be the location of the miner.
-
-Please note that miners who attempt to "spoof" their location will be completely ineligible for all rewards.
-
-### Does Filecoin reward network or main network line machine need a fixed IP?
+### Do Filecoin miners need a fixed IP?
 
 For mainnet, you will need a public IP address, but it doesn't need to be fixed (just accessible).
 
@@ -104,7 +78,7 @@ If you lost the data itself, then no, there's no way to recover that, and you wi
 
 ### Has Filecoin confirmed the use of the SDR algorithm? Is there any evidence of malicious construction?
 
-SDR is confirmed for mainnet launch, and we have no evidence of malicious construction. The algorithm is also going through both internal and external security audits.
+SDR is confirmed and used, and we have no evidence of malicious construction. The algorithm is also going through both internal and external security audits.
 
 If you have any information about any potential security problem or malicious construction, reach out to our team at [security@filecoin.org](mailto:security@filecoin.org).
 
@@ -126,21 +100,13 @@ There will be off-chain order books and miner marketplaces -- some are in develo
 
 Currently, Filecoin's Proof of Replication (PoRep) prefers to be run on AMD processors. See this description of Filecoin sealing for more information. More accurately, it runs much much slower on Intel CPUs. It runs competitively fast on some ARM processors, like the ones in newer Samsung phones, but they lack the RAM to seal the larger sector sizes. The main reason that we see this benefit on AMD processors is due to their implementation of the SHA hardware instructions.
 
-### What are the changes to the algorithm and logic layer of lotus and go-filecoin before going online?
-
-There will be no changes to algorithm and logic before we go live -- from here on out, all we're doing is fixing bugs (so please report them!), improving performance (our sync is much faster on the latest Testnet), and improving the UX with new APIs and documentation.
-
-### How will network retrieval of real data be measured and assessed on an incentivized testnet?
-
-During the competition, once your miner has > 0 storage power, many bots will begin attempting storage and retrieval deals with your miner. The competition dashboard will display your deal success rate in near-real-time. Miners below a certain high threshold will be ineligible to receive rewards.
-
 ### What do miners have to do to change a committed capacity (CC) sector into a "real-data" sector?
 
-We are reusing much of the existing code path for this first iteration. Miners will publish storage deals that they will upgrade the CC sector with, announce to the chain that they are doing an upgrade, and prove to the chain that a new sector has been sealed correctly. We expect to evolve and make this cheaper and more attractive overtime after the mainnet launch.
+Miners will publish storage deals that they will upgrade the CC sector with, announce to the chain that they are doing an upgrade, and prove to the chain that a new sector has been sealed correctly. We expect to evolve and make this cheaper and more attractive overtime after the mainnet launch.
 
-### For the incentive phase, a miner has to execute the full sector life cycle and terminate the sectors. What does "terminating the sectors" mean?
+### What does "terminating a sector" mean?
 
-When a committed capacity sector is added to the chain, it can upgrade to a sector with deals, extend its lifetime, or terminate through either faults or voluntary actions. While we don't expect this to happen very often on mainnet, a miner may deem it rational to terminate their promise to the network and their clients but accept a penalty for doing so. We want miners to execute the full sector lifecycle to get a flavor of providing long-term and useful storage on Filecoin.
+When a committed capacity sector is added to the chain, it can upgrade to a sector with deals, extend its lifetime, or terminate through either faults or voluntary actions. While we don't expect this to happen very often on mainnet, a miner may deem it rational to terminate their promise to the network and their clients but accept a penalty for doing so.
 
 ### Does the committed capacity sector still need to be sealed before it upgrades to one with real data?
 

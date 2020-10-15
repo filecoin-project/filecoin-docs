@@ -7,11 +7,14 @@ description: Documentation to start building applications on Filecoin.
 
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
 
-[[TOC]]
+## Get started
 
-## Onboard the testnet
+There are several options to start integrating with Filecoin. Here are some guides to get you started:
 
-The Filecoin testnet is a network with parameters and activity levels _as close as possible_ to the expected state of the Filecoin mainnet once it launches. To get up to speed quickly on how to start storing data on the testnet, check the [onboard the testnet](onboard-testnet.md) guide.
+- [Build with hosted powergate](hosted-powergate.md), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
+- [Build with textile buckets](textile-buckets.md), for users looking for simple IPFS storage with Filecoin-based archival, with encryption and shared buckets support.
+- [Build with Glif-nodes](hosted-lotus.md), for users looking for and endpoint to submit messages to the chain. Standalone Lotus, with optional Powergate, are also vailable).
+- [Build with Lotus](lotus/README.md), for users looking to interact with their own, local Lotus nodes.
 
 ## Filecoin-backed storage providers
 
@@ -33,10 +36,10 @@ For more information about the benefits and the architecture of Filecoin-backed 
 
 Hosted node providers take care of running Filecoin node software for you so that you can focus on integrating and building on top of it.
 
-| Name                                                          | Description                                                                                                                                                                                       | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Hosted Powergate](https://blog.textile.io/hosted-powergate/) | The Textile team offers hosted [Powergate](./powergate.md) instances. Read the announcement [here](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/). | No                                                                            |
-| [Lotus hosted nodes](lotus/hosted-nodes.md)                   | Protocol Labs in partnership with [Protofire](https://protofire.io) provides hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint.                                               | No                                                                            |
+| Name                                                          | Description                                                                                                                                                                                     | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Hosted Powergate](https://blog.textile.io/hosted-powergate/) | The Textile team offers hosted [Powergate](powergate.md) instances. Read the announcement [here](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/). | No                                                                            |
+| [Glif Nodes](hosted-lotus.md)                                 | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint.                                                                                                           | No                                                                            |
 
 ## Developer references
 

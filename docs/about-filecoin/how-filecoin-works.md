@@ -15,7 +15,7 @@ Peers communicate over secure channels that they use to distribute information t
 
 ## Filecoin nodes
 
-_Filecoin Nodes_ or _Filecoin clients_ are peers that sync the Filecoin blockchain and validate the messages in every block, which, once applied, provide a global state. Nodes can manage Filecoin wallets (addresses start with `t1...` or `t3...`) and receive FIL on them.
+_Filecoin Nodes_ or _Filecoin clients_ are peers that sync the Filecoin blockchain and validate the messages in every block, which, once applied, provide a global state. Nodes can manage [Filecoin wallets](../get-started/lotus/send-and-receive-fil.md) and receive FIL on them.
 
 Filecoin Nodes can also publish different types of _messages_ to the network by broadcasting them. For example, a client can publish a message to send FIL from one address to a different one. Nodes can propose [storage and retrieval deals](#deals) to Filecoin miners and pay for them as they are executed.
 

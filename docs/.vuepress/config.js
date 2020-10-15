@@ -85,8 +85,8 @@ module.exports = {
                 ['lotus/switch-networks', 'Switch networks'],
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
+                ['lotus/chain', 'Chain management'],
                 ['lotus/tips-running-in-china', 'Tips when running in China'],
-                ['lotus/chain-snapshots', 'Chain snapshots'],
                 ['lotus/configuration-and-advanced-usage', 'Advanced options'],
                 ['lotus/troubleshooting', 'Troubleshooting']
               ]
@@ -96,6 +96,7 @@ module.exports = {
           '/store/': [
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             'slate',
+            'starling',
             {
               title: 'LOTUS',
               path: '/store/lotus/',
@@ -149,26 +150,27 @@ module.exports = {
           '/build/': [
             //'the-filecoin-ecosystem',
             //'textile-buckets',
-            ['onboard-testnet', 'Onboard to testnet'],
+            'textile-buckets',
+            'hosted-powergate',
+            'hosted-lotus',
             'powergate',
-            ['filecoin-pinning-services', 'FPS architecture'],
             {
-              title: 'LOTUS',
+              title: 'Lotus',
               path: '/build/lotus/',
               sidebarDepth: 2,
               collapsable: false,
               children: [
                 ['lotus/enable-remote-api-access', 'Enable remote API access'],
-                ['lotus/api-token-generation', 'API token generation'],
+                ['lotus/api-tokens', 'API tokens'],
                 ['lotus/api-client-libraries', 'API client libraries'],
                 ['lotus/go-json-rpc', 'Use Go with JSON-RPC APIs'],
                 ['lotus/payment-channels', 'Payment channels'],
-                ['lotus/hosted-nodes', 'Hosted nodes'],
                 ['lotus/troubleshooting', 'Troubleshooting']
               ]
             },
+            'filecoin-pinning-services',
             'signing-libraries',
-            'local-devnet',
+            ['local-devnet', 'Local devnet'],
             {
               title: 'Example apps',
               path: '/build/examples/',
@@ -249,6 +251,10 @@ module.exports = {
                 [
                   'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
                   'Code of conduct'
+                ],
+                [
+                  'https://github.com/filecoin-project/community/blob/master/SECURITY.md',
+                  'Security issues'
                 ]
               ]
             },

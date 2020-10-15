@@ -101,7 +101,7 @@ On the _Lotus Node_, the full variable string, including a new token, can be pro
 lotus auth api-info --perm admin
 ```
 
-Note that you may need to edit the result to place the right IP for the remote node. See the [docs about API tokens](../../build/lotus/api-token-generation.md) for more information about tokens.
+Note that you may need to edit the result to place the right IP for the remote node. See the [docs about API tokens](../../build/lotus/api-tokens.md) for more information about tokens.
 
 ## Log level control
 

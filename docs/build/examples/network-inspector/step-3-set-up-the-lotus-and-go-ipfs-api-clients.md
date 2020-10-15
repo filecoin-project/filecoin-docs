@@ -28,9 +28,9 @@ npm i @filecoin-shipyard/lotus-client-rpc @filecoin-shipyard/lotus-client-provid
 2. In [src/utils/lotus.js](https://github.com/filecoin-shipyard/filecoin-network-inspector/blob/local/src/utils/lotus.js), you can see how we use the above 3 libraries to create a lotus client for use anywhere in the application.
 
 ```js
-import { LotusRPC } from '@filecoin-shipyard/lotus-client-rpc'
-import { BrowserProvider } from '@filecoin-shipyard/lotus-client-provider-browser'
-import { testnet } from '@filecoin-shipyard/lotus-client-schema'
+import { LotusRPC } from '@filecoin-shipyard/js-lotus-client-rpc'
+import { BrowserProvider } from '@filecoin-shipyard/js-lotus-client-provider-browser'
+import { testnet } from '@filecoin-shipyard/js-lotus-client-schema'
 
 export const getClient = (options = { nodeOrMiner: 'node', nodeNumber: 0 }) => {
   // API endpoint for local Lotus devnet

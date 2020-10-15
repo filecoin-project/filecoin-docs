@@ -71,7 +71,7 @@ Thus, `ChainHead` will translate as the following [JSON-RPC](https://www.jsonrpc
 
 Note the `id` is an arbitrary **number**.
 
-In order to make a cURL request we will also need an [authorization token, which can be easily generated](../build/lotus/api-token-generation.md).
+In order to make a cURL request we will also need an [authorization token, which can be easily obtained](../build/lotus/api-tokens.md).
 
 ```sh
 curl -X POST \

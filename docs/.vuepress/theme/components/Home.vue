@@ -82,6 +82,10 @@ export default {
               path: 'http://slingshot.filecoin.io/'
             },
             {
+              title: 'Store data with Slate',
+              path: '/store/slate'
+            },
+            {
               title: 'Store data with Lotus',
               path: '/store/lotus/store-data'
             },
@@ -135,16 +139,20 @@ export default {
           path: '/build',
           children: [
             {
-              title: 'Onboard the testnet',
-              path: '/build/onboard-testnet'
+              title: 'Build with Textile Buckets',
+              path: '/build/textile-buckets'
+            },
+            {
+              title: 'Build with Hosted Powergate',
+              path: '/build/hosted-powergate'
+            },
+            {
+              title: 'Build with Glif Nodes',
+              path: '/build/hosted-lotus'
             },
             {
               title: 'Filecoin-backed pinning services',
               path: '/build/filecoin-pinning-services'
-            },
-            {
-              title: 'Lotus guides for builders',
-              path: '/build/lotus'
             },
             {
               title: 'Lotus API',
@@ -199,6 +207,11 @@ export default {
           title: 'Project',
           path: '/project',
           children: [
+            {
+              title: 'Security issues',
+              path:
+                'https://github.com/filecoin-project/community/blob/master/SECURITY.md'
+            },
             {
               title: 'Roadmap',
               path:

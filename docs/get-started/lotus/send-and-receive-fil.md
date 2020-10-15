@@ -18,7 +18,7 @@ In order to receive and send FIL with Lotus you will need to have [installed and
 lotus wallet new bls
 ```
 
-This will create a new wallet and print its Filecoin address.
+This will create a new wallet and print its Filecoin address. You can distinguish mainnet from testnet addresses because they start with `f` for mainnet and with `t` for testnets.
 
 ::: tip
 Your wallet information is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/keystore`). For instructions on export/import, see below.
@@ -26,7 +26,7 @@ Your wallet information is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/ke
 
 ## Listing wallets
 
-You can create as many wallets as you need. One of them, will be the _default wallet_. 
+You can create as many wallets as you need. One of them, will be the _default wallet_.
 
 You can see a list of all wallets for your current node:
 
@@ -73,6 +73,7 @@ lotus send --from=<sender address> <target address> <FIL_amount>
 ```
 
 For advanced sending options:
+
 ```bash
 lotus send --help
 ```
