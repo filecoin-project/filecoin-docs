@@ -98,3 +98,15 @@ sudo make install
 ```
 
 You can ignore this error during the `sudo make install` step; it does not affect the install.
+
+## chain linked to block marked previously as bad
+
+This may appear if Lotus is following a bad fork. The solution is to:
+
+- unmark all bad blocks
+- reset the head to a known good epoch
+
+```sh
+lotus sync unmark-bad --all
+lotus chain sethead --epoch <epochNumber>
+```
