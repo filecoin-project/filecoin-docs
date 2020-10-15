@@ -17,15 +17,15 @@ This section covers an "online" data import and is mostly suitable for smaller p
 In order to successfully add data to the Filecoin network the following steps need to be completed successfully:
 
 1. Data must be packed into a [CAR file](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md).
-2. An storage deal between a miner and a client (in this case the running Lotus Node) must be initiated and accepted by the miner.
+2. A storage deal between a miner and a client (in this case the running Lotus Node) must be initiated and accepted by the miner.
 3. The data must be transferred to the miner.
 4. The miner must place the data in a sector, seal it and start submitting proofs to the network.
 
-From that point, an storage deal is live on the network.
+From that point, a storage deal is live on the network.
 
 ## Importing data
 
-To locally import a regular file from your filesystem into lotus run:
+To locally import a regular file from your filesystem into Lotus run:
 
 ```sh
 lotus client import ./your-example-file.txt
