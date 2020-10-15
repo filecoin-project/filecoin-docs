@@ -96,6 +96,7 @@ module.exports = {
           '/store/': [
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             'slate',
+            'starling',
             {
               title: 'LOTUS',
               path: '/store/lotus/',
