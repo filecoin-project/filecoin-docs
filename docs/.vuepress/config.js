@@ -96,7 +96,6 @@ module.exports = {
           '/store/': [
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             'slate',
-            'powergate',
             {
               title: 'LOTUS',
               path: '/store/lotus/',
@@ -153,6 +152,7 @@ module.exports = {
             'textile-buckets',
             'hosted-powergate',
             'hosted-lotus',
+            'powergate',
             {
               title: 'Lotus',
               path: '/build/lotus/',

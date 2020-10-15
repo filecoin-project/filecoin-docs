@@ -7,16 +7,14 @@ description: Documentation to start building applications on Filecoin.
 
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
 
-[[TOC]]
-
 ## Get started
 
 There are several options to start integrating with Filecoin. Here are some guides to get you started:
 
-- [Build with hosted powergate](hosted-powergate.md)
-- [Build with textile buckets](textile-buckets.md)
-- [Build with Glif-nodes](hosted-lotus.md)
-- [Build with Lotus](lotus/README.md)
+- [Build with hosted powergate](hosted-powergate.md), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
+- [Build with textile buckets](textile-buckets.md), for users looking for simple IPFS storage with Filecoin-based archival, with encryption and shared buckets support.
+- [Build with Glif-nodes](hosted-lotus.md), for users looking for and endpoint to submit messages to the chain. Standalone Lotus, with optional Powergate, are also vailable).
+- [Build with Lotus](lotus/README.md), for users looking to interact with their own, local Lotus nodes.
 
 ## Filecoin-backed storage providers
 
