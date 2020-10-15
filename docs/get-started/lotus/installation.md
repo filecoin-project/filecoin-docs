@@ -17,7 +17,7 @@ To run a Lotus node, your computer must have:
 - macOS or Linux installed. Windows is not yet supported.
 - a quad-core CPU. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake) will significantly speed things up.
 - 8-core CPU and 32 GiB RAM
-- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 12 GiB per week. The chain can be also [synced from pruned snapshots and compacted](chain.md).
+- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 12 GiB per week. The chain can be also [synced from trusted state snapshots and compacted](chain.md).
 
 :::warning
 These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
@@ -228,11 +228,11 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
 The `lotus` application runs as a daemon and a client to control and interact with that daemon. A daemon is a long-running program that is usually run in the background.
 
-When using _mainnet_, we recommend to start the daemon [syncing from a pruned snapshot](chain.md#syncing-from-a-pruned-snapshot-mainnet):
+When using _mainnet_, we recommend to start the daemon [syncing from a trusted state snapshot](chain.md#syncing-from-a-trusted-state-snapshot-mainnet):
 
 ```sh
 # For mainnet only:
-lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car
+lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
 # For other networks:
 lotus daemon
 ```
@@ -246,7 +246,7 @@ During the first run, Lotus will:
 The daemon will start producing lots of log messages right away. From this point, you will have to work on a new terminal and `lotus` commands will communicate with the running daemon.
 
 :::tip
-Do not be concerned by the number of warnings and sometimes errors showing in the logs. They are usually part of the usual functioning of the daemon as part of a distributed network.
+Do not be concerned by the number of warnings and sometimes errors showing in the logs. They are a normal part of the daemon lifecycle as it participates in the global distributed consensus network.
 :::
 
 If you used snapshots, subsequent daemon starts can proceed as normal without any options:
@@ -259,7 +259,7 @@ lotus daemon
 
 For more information about syncing and snapshots, [see the Chain management section](./chain.md).
 
-We recommend waiting until the syncing process has completed, which should be relatively fast when using pruned snapshots:
+We recommend waiting until the syncing process has completed, which should be relatively fast when using trusted state snapshot imports:
 
 ```sh
 lotus sync wait
