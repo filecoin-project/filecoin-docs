@@ -34,7 +34,7 @@ lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s
 lotus daemon --import-snapshot <filename.car>
 ```
 
-::: danger
+::: warning
 If you do not trust the source of the snapshot and want Lotus to validate the chain, use `--import-chain` instead of `--import-snapshot`. This will be significantly slower.
 :::
 
@@ -46,7 +46,7 @@ An alternative to pruned snapshots are full chain snapshots ([available here](ht
 lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car
 ```
 
-::: danger
+::: warning
 If you do not trust the source of the snapshot and want Lotus to validate the chain, use `--import-chain` instead of `--import-snapshot`. This will be significantly slower.
 :::
 
