@@ -22,6 +22,8 @@
 /how-to/store/retrieving-data/ /store/lotus/retrieve-data/
 /how-to/store/large-files/ /store/lotus/very-large-files/
 
+/get-started/lotus/chain-snapshots/ /get-started/lotus/chain/
+
 /mine/storage-mining/ /mine/lotus/
 /mine/lotus-seal-worker/ /mine/lotus/seal-workers/
 /mine/setting-a-static-port/ /mine/lotus/miner-setup/#miner-initialization

@@ -16,8 +16,8 @@ To run a Lotus node, your computer must have:
 
 - macOS or Linux installed. Windows is not yet supported.
 - a quad-core CPU. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake) will significantly speed things up.
-- 8 GiB RAM
-- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 12 GiB per week.
+- 8-core CPU and 32 GiB RAM
+- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 12 GiB per week. The chain can be also [synced from pruned snapshots and compacted](chain.md).
 
 :::warning
 These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
@@ -120,7 +120,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
 
-1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon).
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
 #### Native Filecoin FFI
 
@@ -224,11 +224,32 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
 1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon).
 
-## Start the Lotus daemon
+## Start the Lotus daemon and sync the chain
 
 The `lotus` application runs as a daemon and a client to control and interact with that daemon. A daemon is a long-running program that is usually run in the background.
 
-To start the Lotus daemon run:
+When using _mainnet_, we recommend to start the daemon [syncing from a pruned snapshot](chain.md#syncing-from-a-pruned-snapshot-mainnet):
+
+```sh
+# For mainnet only:
+lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car
+# For other networks:
+lotus daemon
+```
+
+During the first run, Lotus will:
+
+- Setup its data folder at `~/.lotus`.
+- Download the necessary proof parameters. This is a few gigabytes of data that is downloaded once.
+- Import the snapshot (if specified) and start syncing the Lotus chain.
+
+The daemon will start producing lots of log messages right away. From this point, you will have to work on a new terminal and `lotus` commands will communicate with the running daemon.
+
+:::tip
+Do not be concerned by the number of warnings and sometimes errors showing in the logs. They are usually part of the usual functioning of the daemon as part of a distributed network.
+:::
+
+If you used snapshots, subsequent daemon starts can proceed as normal without any options:
 
 ```sh
 lotus daemon
@@ -236,54 +257,12 @@ lotus daemon
 # systemctl start lotus-daemon
 ```
 
-During the first run, Lotus will:
+For more information about syncing and snapshots, [see the Chain management section](./chain.md).
 
-- Setup its data folder at `~/.lotus`.
-- Download the necessary proof parameters. This is a few gigabytes of data that is downloaded once.
-- Start syncing the Lotus chain.
-
-The daemon will start producing lots of log messages right away.
-
-:::tip
-Do not be concerned by the number of warnings and sometimes errors showing in the logs. They are usually part of the usual functioning of the daemon as part of a distributed network.
-:::
-
-## Chain sync
-
-As in many other blockchains, the Lotus Node will need to sync to the _tip_ of the chain after learning about this. We call this process _chain sync_. First, the headers for every block will be synced from tip to bottom. Afterward, blocks will be fetched and verified from bottom to top. To inspect the current sync status run:
+We recommend waiting until the syncing process has completed, which should be relatively fast when using pruned snapshots:
 
 ```sh
-lotus sync status
-```
-
-You can also interactively wait for the chain to be fully synced:
-
-```
 lotus sync wait
-```
-
-:::tip
-Syncing the Filecoin chain can be a very slow process, and the state size is quite large. Unless you need the full historical chain state, we suggest importing a pruned chain snapshot when the Lotus daemon starts:
-
-```sh
-# The snapshot size is about 4GiB
-lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_pruned_stateroots_snapshot_latest.car
-```
-
-Alternatively, you can also import a non-pruned snapshot:
-
-```sh
-# Snapshot size ~40GiB
-lotus daemon --import-snapshot https://very-temporary-spacerace-chain-snapshot.s3-us-west-2.amazonaws.com/Spacerace_stateroots_snapshot_latest.car
-```
-
-For more information about creating chain snapshots, [see the Chain snapshots section](./chain-snapshots.md).
-:::
-
-To check how far behind you are when syncing the chain, run the following command:
-
-```sh
-date -d @$(./lotus chain getblock $(./lotus chain head) | jq .Timestamp)
 ```
 
 ## Interact with the daemon

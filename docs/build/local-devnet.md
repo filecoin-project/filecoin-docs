@@ -27,6 +27,14 @@ export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
 export CGO_CFLAGS="-D__BLST_PORTABLE__"
 ```
 
+If you have a running installation of Lotus, make sure that configuration paths do not conflict by setting custom ones:
+
+```sh
+# Make sure these are always set before running the commands.
+export LOTUS_PATH=~/.lotusDevnet
+export LOTUS_MINER_PATH=~/.lotusminerDevnet
+```
+
 To get started, build the Lotus binaries in debug mode, enabling the use of 2048 byte sectors:
 
 ```sh

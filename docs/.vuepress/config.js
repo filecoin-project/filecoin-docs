@@ -85,8 +85,8 @@ module.exports = {
                 ['lotus/switch-networks', 'Switch networks'],
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
+                ['lotus/chain', 'Chain management'],
                 ['lotus/tips-running-in-china', 'Tips when running in China'],
-                ['lotus/chain-snapshots', 'Chain snapshots'],
                 ['lotus/configuration-and-advanced-usage', 'Advanced options'],
                 ['lotus/troubleshooting', 'Troubleshooting']
               ]
@@ -169,7 +169,7 @@ module.exports = {
             },
             'filecoin-pinning-services',
             'signing-libraries',
-            'local-devnet',
+            ['local-devnet', 'Local devnet'],
             {
               title: 'Example apps',
               path: '/build/examples/',

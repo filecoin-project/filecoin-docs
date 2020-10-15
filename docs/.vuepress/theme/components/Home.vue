@@ -82,6 +82,10 @@ export default {
               path: 'http://slingshot.filecoin.io/'
             },
             {
+              title: 'Store data with Slate',
+              path: '/store/slate'
+            },
+            {
               title: 'Store data with Lotus',
               path: '/store/lotus/store-data'
             },
