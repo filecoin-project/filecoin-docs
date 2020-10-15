@@ -18,7 +18,7 @@ In order to receive and send FIL with Lotus you will need to have [installed and
 lotus wallet new bls
 ```
 
-This will print your Filecoin address.
+This will create a new wallet and print its Filecoin address.
 
 ::: tip
 Your wallet information is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/keystore`). For instructions on export/import, see below.
@@ -26,9 +26,9 @@ Your wallet information is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/ke
 
 ## Listing wallets
 
-You can create as many wallets as you need. One of them, will be the _default wallet_. You can list all wallets with:
+You can create as many wallets as you need. One of them, will be the _default wallet_. 
 
-You can create multiple wallets and list them with:
+You can see a list of all wallets for your current node:
 
 ```bash
 lotus wallet list
@@ -48,7 +48,7 @@ lotus wallet set-default <address>
 
 ## Obtaining FIL
 
-FIL for non-mainnet networks can usually be obtained by using one of the Faucets (check URLs in the [Networks dashboard](https://networks.filecoin.io). For mainnet, the easiest is to buy FIL from an exchange supporting FIL-trading.
+FIL for non-mainnet networks can usually be obtained by using one of the Faucets (check URLs in the [Networks dashboard](https://networks.filecoin.io). For mainnet, the easiest is to buy FIL from an exchange supporting FIL trading.
 
 Once you have received some FIL, you can check your balance with:
 
@@ -56,7 +56,7 @@ Once you have received some FIL, you can check your balance with:
 lotus wallet balance
 ```
 
-Remember that your will only see the latest balance when your daemon is fully synced to the current tip of the chain.
+Remember that you will only see the latest balance when your daemon is fully synced to the current tip of the chain.
 
 ## Sending FIL
 
@@ -72,11 +72,12 @@ To send FIL from a specific wallet:
 lotus send --from=<sender address> <target address> <FIL_amount>
 ```
 
-:::tip
-Make sure to check `lotus send --help` for advanced options, like setting [limits for fees](../../about-filecoin/how-filecoin-works/#gas-fees).
-:::
+For advanced sending options:
+```bash
+lotus send --help
+```
 
-Every transaction sending FIL pays an additional fee based on its _gas_ usage. Gas and fees are explained in the [How Filecoin Works guide](../../about-filecoin/how-filecoin-works.md). By default, Lotus automatically sets all the necessary values, but you may want to use the `--gas-feecap` flag in the `send` command to avoid surprises when network congestion is high. For more information about messages, see the [Message Pool guide](../../mine/lotus/message-pool.md).
+Every transaction that sends FIL pays an additional fee based on its _gas_ usage. Gas and fees are explained in the [How Filecoin Works guide](../../about-filecoin/how-filecoin-works.md). By default, Lotus automatically sets all the necessary values, but you may want to use the `--gas-feecap` flag in the `send` command to avoid surprises when network congestion is high. For more information about messages and fees, see the [Message Pool guide](../../mine/lotus/message-pool.md) and [Gas fees](../../about-filecoin/how-filecoin-works/#gas-fees) sections.
 
 ## Exporting and importing a wallet
 
@@ -84,7 +85,7 @@ Every transaction sending FIL pays an additional fee based on its _gas_ usage. G
 Keep your wallets' private keys safe!
 :::
 
-You can export and re-import a wallet, potentially to a different Lotus node, with:
+You can export and re-import a wallet, including to a different Lotus node, with:
 
 ```bash
 lotus wallet export <address> > wallet.private
@@ -97,5 +98,5 @@ lotus wallet import wallet.private
 ```
 
 ::: tip
-If one of the nodes is offline, copying the files in `~/.lotus/keystore` directly should also work.
+If one of the nodes is offline, you can also copy the files in `~/.lotus/keystore` directly.
 :::
