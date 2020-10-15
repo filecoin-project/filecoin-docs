@@ -28,7 +28,6 @@ In a list of three or more items, follow each item except the last with a comma 
 | One, two, three, and four.    | One, two, three and four.    |
 | Henry, Elizabeth, and George. | Henry, Elizabeth and George. |
 
-
 ### References to Filecoin
 
 As a proper noun, the name "Filecoin" (capitalized) should be used only to refer to the overarching project, to the protocol, or to the project's canonical network:
@@ -39,7 +38,7 @@ As a proper noun, the name "Filecoin" (capitalized) should be used only to refer
 
 > Filecoin [the network] is currently storing 50 PiB of data!
 
-The name can also be used as an adjective: 
+The name can also be used as an adjective:
 
 > The Filecoin ecosystem is thriving!
 
@@ -56,11 +55,12 @@ The smallest and most common denomination of FIL is the `attoFIL` (10^-18 FIL).
 
 > The collateral for this storage deal is five FIL.
 
-> I generated ⨎100 as a storage miner last month! 
+> I generated ⨎100 as a storage miner last month!
 
 > My wallet has thirty filecoin.
 
 Examples of discouraged usage:
+
 > Filecoin rewards miners with Filecoin.
 
 > There are many ways to participate in the filecoin community.
@@ -68,6 +68,34 @@ Examples of discouraged usage:
 > My wallet has thirty filecoins.
 
 Consistency in the usage of these terms helps keep these various concepts distinct.
+
+### References to Lotus
+
+Lotus is the main implementation of Filecoin. As such, it is frequently referenced in the Filecoin documentation. When referring to the Lotus implementation, use a capital _L_. A lowercase _l_ should only be used when referring to the Lotus executable commands such as `lotus daemon`. Lotus executable commands should always be within code blocks:
+
+````markdown
+1. Start the Lotus daemon:
+
+   ```bash
+   lotus daemon
+   ```
+
+2. After your Lotus daemon has been running for a few minutes, use `lotus` to check the number of other peers that it is connected to in the Filecoin network:
+
+   ```bash
+   lotus net peers
+   ```
+````
+
+Lotus Miner follows the same rules. Capitalize the _L_ and the _M_ when referring to the application, and use lowercase letters within code blocks when referring to the executable commands:
+
+````markdown
+You are now ready to start your Lotus Miner:
+
+```markdown
+lotus-miner run
+```
+````
 
 ### Acronyms
 
