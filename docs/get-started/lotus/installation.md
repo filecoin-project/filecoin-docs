@@ -222,7 +222,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    sudo make install
    ```
 
-1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon).
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
 ## Start the Lotus daemon and sync the chain
 

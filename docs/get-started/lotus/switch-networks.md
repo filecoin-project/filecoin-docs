@@ -38,4 +38,4 @@ This method allows you to keep all the data from the old network where it was, a
 
 If you wish to backup Lotus data, simply copy the `~/.lotus` (or `$LOTUS_PATH`) folder somewhere. This copy might take time if it is very large, especially if you've synced the full network.
 
-Another alternative is to [export your wallets](send-and-receive-fil.md) and also [export the chain](chain-snapshots.md) for later re-import on a newly installed Lotus Node.
+Another alternative is to [export your wallets](send-and-receive-fil.md) and also [export the chain](chain.md) for later re-import on a newly installed Lotus Node.
