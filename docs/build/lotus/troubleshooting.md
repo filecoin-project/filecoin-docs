@@ -4,7 +4,7 @@ description: 'This page offers some troubleshooting advice for Lotus API users b
 breadcrumb: 'API troubleshooting'
 ---
 
-# # {{ $frontmatter.title }}
+# {{ $frontmatter.title }}
 
 {{ $frontmatter.description }}
 
