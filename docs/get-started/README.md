@@ -21,8 +21,9 @@ The Filecoin Network is made by miners and clients. They [make deals](../about-f
 
 ### 2. Store content on Filecoin
 
-- Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser
+- Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](lotus/README.md). Setup your first wallet and learn how to [send and receive ⨎](lotus/send-and-receive-fil.md) and [make storage deals](../store/lotus/store-data.md).
+- Use [Starling](../store/starling.md) to simplify the management of storage deals in Lotus.
 
 ### 3. Contribute to Filecoin
 
@@ -33,11 +34,11 @@ The Filecoin Network is made by miners and clients. They [make deals](../about-f
 
 | Name                                                             |                                                                                                                                                                                                                                                                                         |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Lotus](lotus/)                                                  | Implementation of Filecoin node and miner by Protocol Labs. <br /><br />For users that want to participate in the Filecoin network validating blocks, manage a wallet and perform deals on the command line.                                                                            |
-| [Slate](https://slate.host)                                      | Slate is a fully open-source file sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.io) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
+| [Lotus](lotus/README.md)                                         | Implementation of Filecoin node and miner by Protocol Labs. <br /><br />For users that want to participate in the Filecoin network validating blocks, manage a wallet and perform deals on the command line.                                                                            |
+| [Slate](../store/slate.md)                                       | Slate is a fully open-source file sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.io) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
 | [Powergate](../build/powergate.md)                               | A multitiered storage solution that stores data with IPFS ("Hot" storage layer) and Filecoin ("Cold" storage layer).                                                                                                                                                                    |
 | [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets and Powergate.                                                                                                                      |
-| [Starling](https://github.com/filecoin-project/starling)         | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
+| [Starling](../store/starling.md)                                 | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
 
 ### Filecoin implementations
 
