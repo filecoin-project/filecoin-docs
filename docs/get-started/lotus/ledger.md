@@ -30,10 +30,21 @@ breadcrumb: 'Ledger wallet'
    ```
 
 1. Unlock your Ledger device, open the Filecoin app in your Ledger device and keep it connected to your USB port.
+
 1. Create a ledger-backed wallet in Lotus with:
 
-```sh
-lotus wallet secp256k1-ledger
-```
+   ```sh
+   lotus wallet new secp256k1-ledger
+   ```
 
-You will have to confirm creation on your Ledger device. From that point, any [send operation](send-and-receive-fil.md) from that wallet, will have to be approved on the Ledger device.
+   You will have to confirm creation on your Ledger device.
+
+   ::: tip
+   `lotus wallet new secp256k1-ledger` will provide a new Ledger-backed key every time when called. When called on a different Lotus node, or in one that has been reset, the same keys will be generated as they are based in the Ledger device master key.
+   :::
+
+1. From this point, any [FIL send operation](send-and-receive-fil.md) from a Ledger wallet will have to be approved (signed) on the Ledger device. Make sure it is connected, unlocked, and running the Filecoin app then.
+
+::: tip
+The `lotus-shed` application provides additional Ledger functionality, like listing the keys in the device and providing information about them.
+:::
