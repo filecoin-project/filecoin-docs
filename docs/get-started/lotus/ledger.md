@@ -36,4 +36,4 @@ breadcrumb: 'Ledger wallet'
 lotus wallet secp256k1-ledger
 ```
 
-You will have to confirm creation on your Ledger device. From that point, any send operation from that wallet, will have to be approved on the Ledger device.
+You will have to confirm creation on your Ledger device. From that point, any [send operation](send-and-receive-fil.md) from that wallet, will have to be approved on the Ledger device.
