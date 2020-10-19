@@ -86,6 +86,7 @@ module.exports = {
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
                 ['lotus/chain', 'Chain management'],
+                ['lotus/ledger', 'Ledger wallet'],
                 ['lotus/tips-running-in-china', 'Tips when running in China'],
                 ['lotus/configuration-and-advanced-usage', 'Advanced options'],
                 ['lotus/troubleshooting', 'Troubleshooting']

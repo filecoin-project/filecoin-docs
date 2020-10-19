@@ -40,6 +40,14 @@ The Filecoin Network is made by miners and clients. They [make deals](../about-f
 | [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets and Powergate.                                                                                                                      |
 | [Starling](../store/starling.md)                                 | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
 
+### Wallets
+
+| Name                                             |                                                                                                                                                                                            |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Lotus](lotus/README.md)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](lotus/ledger.md).                                                                                               |
+| [Glif wallet](https://wallet.glif.io/?network=f) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX). |
+| [Filfox Wallet](https://wallet.filfox.info/en)   | A web-based wallet.                                                                                                                                                                        |
+
 ### Filecoin implementations
 
 There are 4 Filecoin protocol implementations (or “node software”) currently in progress:

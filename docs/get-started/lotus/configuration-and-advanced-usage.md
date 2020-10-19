@@ -54,6 +54,10 @@ The Lotus daemon stores a configuration file in `~/.lotus/config.toml`. Note tha
 [Metrics]
   Nickname = ""
   HeadNotifs = false
+
+# Wallet configuration
+[Wallet]
+  EnableLedger = false
 ```
 
 ## Connectivity
