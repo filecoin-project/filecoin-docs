@@ -20,8 +20,8 @@ lotus wallet new bls
 
 This will create a new wallet and print its Filecoin address. You can distinguish mainnet from testnet addresses because they start with `f` for mainnet and with `t` for testnets.
 
-::: tip
-Your wallet information is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/keystore`). For instructions on export/import, see below.
+::: warning
+Your wallet information is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/keystore`). Removing these folders will remove the keys too and you will lose control of any funds in those wallets. We recommend [backing up your wallets](#exporting-and-importing-a-wallet) as soon as they have been created or using a [hardware wallet](ledger.md).
 :::
 
 ## Listing wallets
