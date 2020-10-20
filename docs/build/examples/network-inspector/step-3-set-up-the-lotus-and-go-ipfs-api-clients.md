@@ -30,7 +30,7 @@ npm i @filecoin-shipyard/lotus-client-rpc @filecoin-shipyard/lotus-client-provid
 ```js
 import { LotusRPC } from '@filecoin-shipyard/js-lotus-client-rpc'
 import { BrowserProvider } from '@filecoin-shipyard/js-lotus-client-provider-browser'
-import { testnet } from '@filecoin-shipyard/js-lotus-client-schema'
+import { mainnet } from '@filecoin-shipyard/js-lotus-client-schema'
 
 export const getClient = (options = { nodeOrMiner: 'node', nodeNumber: 0 }) => {
   // API endpoint for local Lotus devnet
@@ -43,7 +43,7 @@ export const getClient = (options = { nodeOrMiner: 'node', nodeNumber: 0 }) => {
   const provider = new BrowserProvider(wsUrl)
   return new LotusRPC(provider, {
     schema:
-      options.nodeOrMiner === 'node' ? testnet.fullNode : testnet.storageMiner
+      options.nodeOrMiner === 'node' ? mainnet.fullNode : mainnet.storageMiner
   })
 }
 ```
