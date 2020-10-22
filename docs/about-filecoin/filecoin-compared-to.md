@@ -120,7 +120,7 @@ Filecoin combines many elements of other file storage and distribution systems. 
     </tr>
     <tr>
         <td>Network status</td>
-        <td>Currently in testnet</td>
+        <td>Mainnet running since 2020</td>
         <td>Mainnet running since 2009</td>
     </tr>
 </table>
