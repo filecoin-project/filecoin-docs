@@ -45,7 +45,7 @@ The Filecoin Network is made by miners and clients. They [make deals](../about-f
 | Name                                             |                                                                                                                                                                                            |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Lotus](lotus/README.md)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](lotus/ledger.md).                                                                                               |
-| [Glif wallet](https://wallet.glif.io/?network=f) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX). |
+| [Glif wallet](https://wallet.glif.io/?network=f) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
 | [Filfox Wallet](https://wallet.filfox.info/en)   | A web-based wallet.                                                                                                                                                                        |
 
 ### Filecoin implementations
