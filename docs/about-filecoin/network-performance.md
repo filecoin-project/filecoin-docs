@@ -12,17 +12,17 @@ It is difficult to provide highly reliable benchmarks for Filecoin network perfo
 
 ## Financial transfers
 
-A message that requires [transferring FIL](../get-started/lotus/send-and-receive-fil.md#sending-fil) is often extremely fast, and will take on average ~1 blocktime (or around 30 seconds) to succeed.
+A message that requires [transferring FIL](../get-started/lotus/send-and-receive-fil.md#sending-fil) is often extremely fast, and will take on average ~1 blocktime (or around 30 seconds) to be reflected on chain. We consider 120 blocks (1 hour) a conservative number of confirmations for high-value transfers.
 
 ## Data storage
 
 The Filecoin [data storage protocol](../store/lotus/store-data.md) has a few key components once a deal is proposed and accepted:
 
-1. Funding the payment channel: This process takes ~3-5 minutes if this is the first payment channel between a client and a miner. If this is the second or later payment channel between a given client and miner, the payment channel funding process takes ~X minutes.
+1. Funding the storage market actor: This process takes ~1-2 minutes and ensures that both the client and the miner have funds and collateral to pay for the deal.
 
-2. Data transfer: This portion of the deal flow involves the client’s node sending the relevant pieces of data to the mining node. Assuming all goes well -- no broken connections -- this process can transfer at a rate of ~Y MB/s. This data transfer rate varies widely, depending on the bandwidth of both the client and the miner, the geographic distance that the data has to travel, and more. Please take all of these estimates as heuristics, not hard-and-fast rules or guaranteed SLA!
+2. Data transfer: This portion of the deal flow involves the client's node sending the relevant pieces of data to the mining node. The data transfer rate varies widely, depending on the network and disk bandwidths of both the client and the miner. Usually, the network speed between client and miner will be the key determining factor.
 
-3. Deal shows up on-chain: Once the data has successfully transferred, the miner must complete a critical step before the storage deal can show up on-chain. This step is referred to as “PreCommit”, and takes around ~Z time to complete for a minimum viable mining machine for one sector.
+3. Deal shows up on-chain: once the data is received by the miner, it will be verified to make sure it matches the deal parameters and the deal with be published on the chain.
 
 4. Sector sealing: Once the deal shows up on-chain, the miner must still complete [generating a Proof-of-Replication and sealing the sector](https://spec.filecoin.io/#systems__filecoin_mining__sector__adding_storage). This process is currently estimated to take ~1.5hours for a 32GB sector on a machine that meets these [minimum hardware requirements for mining](../mine/hardware-requirements.md#general-hardware-requirements).
 
@@ -39,7 +39,7 @@ In both methods, the data retrieval process after a retrieval deal is accepted i
 
 1. **Funding the payment channel for retrieval**: Similar to the storage deal payment channel funding above, except for the purpose of data retrieval. The timing estimates for payment channel creation and funding are roughly the same as noted above.
 
-2. **Unsealing (if needed)**: The miner unseals (decodes) the data so it can be read by the data requester. Sealing and unsealing are symmetric processes, which means they take roughly the same amount of time in either direction. Thus, the unsealing step is estimated to take around as long as the sealing step listed above, or around ~1.5hours for a 32GiB sector on a machine running minimum hardware requirements.
+2. **Unsealing (if needed)**: The miner unseals (decodes) the data so it can be read by the data requester. Sealing and unsealing are symmetric processes, which means they take roughly the same amount of time in either direction. Thus, the unsealing step is estimated to take around as long as the sealing step listed above, or around ~3hours for a 32GiB sector on a machine running minimum hardware requirements.
 
 3. **Data transfer**: The miner begins transferring the data back to the data requester. This is also transferred back at a rate similar to the original data transfer rate, which is highly variable depending on a number of different factors.
 
