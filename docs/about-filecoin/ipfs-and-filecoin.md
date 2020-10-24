@@ -5,7 +5,7 @@ description: Learn more about the relationship and different use-cases between I
 
 # IPFS and Filecoin
 
-Filecoin and IPFS are complementary systems for storing and sharing data in the distributed web. Both systems are free, open-source, and share several building blocks, including data representation formats and certain network communication protocols. However, the Filecoin and the IPFS networks are otherwise fully independent. Software that interacts with IPFS does not require Filecoin, and vice-versa, although some solutions may use both.
+Filecoin and IPFS are complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks, including data representation formats (IPLD) and network communication protocols (libp2p). While interacting with IPFS does not require using Filecoin, all Filecoin nodes _are_ IPFS nodes under the hood, and can connect to and fetch IPLD-formatted data from other IPFS nodes using libp2p. However, Filecoin nodes don't join or participate in the public IPFS DHT.
 
 This page aims to explain the relationship between the IPFS and Filecoin projects and help users decide which option is best suited for their use-case.
 
@@ -36,11 +36,11 @@ Filecoin can be seen as a _cold_ storage layer, perfect to safely store large ba
 
 ### Using both
 
-Some solutions combine the best of the two systems, backing up data on the Filecoin network and at the same time providing the data through the IPFS network. This ensures that data is constantly available and can be retrieved quickly, while also making sure that the data is safely backed up on the Filecoin network. [Powergate](../build/powergate.md) is a multitiered file storage API built on Filecoin and IPFS, and and index builder for Filecoin data.
+Some solutions combine the best of the two systems, backing up data on the Filecoin network and at the same time providing the data through the IPFS network. This ensures that data is constantly available and can be retrieved quickly, while also making sure that the data is safely backed up on the Filecoin network. [Powergate](../build/powergate.md) is a multitiered file storage API built on Filecoin and IPFS, and an index builder for Filecoin data.
 
 ## The technology behind IPFS and Filecoin
 
-Filecoin and IPFS share are powered by the same technology at many levels:
+Filecoin and IPFS are powered by the same technology at many levels:
 
 - [IPLD](https://ipld.io/) specifies data formats for content-addressed data like the blockchain or the way in which IPFS stores files.
 - [libp2p](https://libp2p.io/) provides peer-to-peer network capabilities, connection security and key discovery and data distribution features like the DHT and Pubsub.
