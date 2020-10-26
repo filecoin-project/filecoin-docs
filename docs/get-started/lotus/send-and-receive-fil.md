@@ -86,7 +86,7 @@ Every transaction that sends `FIL` pays an additional fee based on its _gas_ usa
 Keep your private keys safe! Do not share them with anyone! Store them in a secure location!
 :::
 
-You can export and re-import a wallet, including a different Lotus node. Use `wallet export` to export a wallet from a node:
+You can export and re-import a wallet, including a different Lotus node. Use `wallet export` to export an address from a node:
 
 ```bash
 lotus wallet export <address> > wallet.private
