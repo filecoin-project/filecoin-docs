@@ -80,19 +80,19 @@ lotus send --help
 
 Every transaction that sends `FIL` pays an additional fee based on its _gas_ usage. Gas and fees are explained in the [How Filecoin Works guide](../../about-filecoin/how-filecoin-works.md). By default, Lotus automatically sets all the necessary values. However, you may want to use the `--gas-feecap` flag in the `send` command to avoid surprises when network congestion is high. For more information about messages and fees, see the [Message Pool guide](../../mine/lotus/message-pool.md) and [Gas fees](../../about-filecoin/how-filecoin-works/#gas-fees) sections.
 
-## Exporting and importing a wallet
+## Exporting and importing addresses
 
 ::: warning
-Keep your private keys safe! Do not share them with anyone! Store them in a secure location!
+Keep your addresses' private keys safe! Do not share them with anyone! Store them in a secure location!
 :::
 
 You can export and re-import a wallet, including a different Lotus node. Use `wallet export` to export an address from a node:
 
 ```bash
-lotus wallet export <address> > wallet.private
+lotus wallet export <address> > <address>.key
 ```
 
-Use `wallet import` to import a wallet into a node:
+Use `wallet import` to import an address into a node:
 
 ```bash
 lotus wallet import wallet.private
@@ -102,7 +102,7 @@ and:
 
 ### Offline nodes
 
-Each node stores it's wallet in `~/.lotus/keystore`:
+Each node stores its wallet in `~/.lotus/keystore`:
 
 ```
 ~/.lotus/keystore/
