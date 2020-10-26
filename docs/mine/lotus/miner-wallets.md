@@ -145,5 +145,5 @@ lotus-miner actor withdraw <amount>
 ```
 
 ::: tip
-The owner's address will need to be available in the Lotus node and have enough funds to pay for the gas for this transaction. Cold wallets will need to be temporally imported for the operation to succeed.
+The owner's address will need to be available in the Lotus node and have enough funds to pay for the gas for this transaction. Cold addresses will need to be temporally imported for the operation to succeed.
 :::
