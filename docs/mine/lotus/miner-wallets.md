@@ -54,7 +54,7 @@ The _worker address_ is used to send and pay for day-to-day operations performed
   - Control addresses are not defined or do not have enough balance.
   - The _owner address_ does not have enough balance.
 
-Unlike the _owner wallet_, the _worker wallet_ must be a _hot_ wallet. The Lotus Miner will trigger all the necessary transactions using the Lotus node to which it is connected. The _worker address_ must have enough funds to pay for the day-to-day operations of the miner, including initialization.
+Unlike the _owner address_, the address set as the miner's _worker address_ should be part of the Lotus local wallet and accessible by the miner. The Lotus Miner will trigger all the necessary transactions using the Lotus node to which it is connected. The _worker address_ must have enough funds to pay for the day-to-day operations of the miner, including initialization.
 
 ## Control addresses
 
