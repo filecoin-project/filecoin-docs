@@ -60,7 +60,7 @@ This upgrade procedure should only be used as a last resort or when the chain ha
 
 It is similar to re-installing everything from scratch, so you can follow the usual [installation](../../get-started/lotus/installation.md) and [miner-setup](miner-setup.md) guides after it. Before you do this, consider:
 
-- [Backing up your Lotus wallets](../../get-started/lotus/send-and-receive-fil/#exporting-and-importing-an-address)
+- [Backing up your Lotus wallets](../../get-started/lotus/send-and-receive-fil/#exporting-and-importing-addresses)
 - You may want to backup your Lotus Node and Miner configurations as well.
 
 Once you are ready, stop everything and delete the data folders (or rename them):

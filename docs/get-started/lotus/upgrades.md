@@ -39,7 +39,7 @@ rm -rf ~/.lotus # or $LOTUS_PATH
 ```
 
 ::: warning
-This will delete all chain data and wallets! [Make sure you have exported your wallets and safely backed them up](send-and-receive-fil.md#exporting-and-importing-an-address).
+This will delete all chain data and wallets! [Make sure you have exported your wallets and safely backed them up](send-and-receive-fil.md#exporting-and-importing-addresses).
 :::
 
 ## Switching networks
