@@ -103,7 +103,7 @@ Next make sure to [send some funds](../../get-started/lotus/send-and-receive-fil
 For additional information about the different wallets that a miner can use and how to configure them, read the [miner wallets guide](miner-wallets.md).
 
 ::: tip
-Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-a-wallet)!
+Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-an-address)!
 :::
 
 ### Downloading parameters

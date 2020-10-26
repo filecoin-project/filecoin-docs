@@ -21,7 +21,7 @@ lotus wallet new bls
 This will create a new address and print it. You can distinguish mainnet from testnet addresses because they start with `f` for mainnet and `t` for testnets.
 
 ::: warning
-The information for the addresses in your wallet is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/keystore`). Removing these folders will also remove the keys, and you will lose control of any funds in those wallets. We recommend [backing up your wallets](#exporting-and-importing-a-wallet) as soon as they have been created or using a [hardware wallet](ledger.md).
+The information for the addresses in your wallet is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/keystore`). Removing these folders will also remove the keys, and you will lose control of any funds in those wallets. We recommend [backing up your wallets](#exporting-and-importing-an-address) as soon as they have been created or using a [hardware wallet](ledger.md).
 :::
 
 ## Listing addresses
