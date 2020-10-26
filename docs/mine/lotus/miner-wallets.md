@@ -1,7 +1,7 @@
 ---
 title: 'Lotus Miner: Wallets'
 description: 'A miner can be configured with an owner address, a worker address, and additional control addresses. This separation of addresses allows for more secure transfers and more granual management of each address.'
-breadcrumb: 'Miner Wallets'
+breadcrumb: 'Miner addresses'
 ---
 
 # {{ $frontmatter.title }}
