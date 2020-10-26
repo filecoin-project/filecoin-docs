@@ -12,10 +12,6 @@ During miner initialization, a _miner actor_ is created on the chain, and this a
 
 The Lotus Miner daemon performs the operations required by the network and can use different Lotus node wallets to pay the fees or interact with the _miner actor_. Check out the [Lotus Getting Started guide](../../get-started/lotus/send-and-receive-fil.md) for more information on how to manage Lotus wallets.
 
-::: tip
-Each node can only have one wallet, but each wallet can have multiple addresses.
-:::
-
 The currently configured addresses used by a miner can be listed with:
 
 ```sh
