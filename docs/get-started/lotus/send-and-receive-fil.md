@@ -18,7 +18,7 @@ To receive and send FIL with Lotus, you will need to have a [Lotus node installe
 lotus wallet new bls
 ```
 
-This will create a new wallet and print its Filecoin address. You can distinguish mainnet from testnet addresses because they start with `f` for mainnet and `t` for testnets.
+This will create a new address and print it. You can distinguish mainnet from testnet addresses because they start with `f` for mainnet and `t` for testnets.
 
 ::: warning
 Your wallet information is stored in the `~/.lotus/keystore` (or `$LOTUS_PATH/keystore`). Removing these folders will also remove the keys, and you will lose control of any funds in those wallets. We recommend [backing up your wallets](#exporting-and-importing-a-wallet) as soon as they have been created or using a [hardware wallet](ledger.md).
