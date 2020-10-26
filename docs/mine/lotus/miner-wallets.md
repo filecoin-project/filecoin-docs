@@ -66,7 +66,7 @@ Multiple _control addresses_ can be created and configured in a Lotus miner. The
 
 To set up a _control address_:
 
-1. Create a new wallet and send it some funds for gas fees:
+1. Create a new address and send it some funds for gas fees:
 
    ```sh
    lotus wallet new bls
