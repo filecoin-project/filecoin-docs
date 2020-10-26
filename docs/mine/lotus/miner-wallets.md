@@ -32,7 +32,7 @@ The owner address corresponds to a Lotus node address provided during the [miner
 - Withdrawing balance from the _miner actor_.
 - Submit _WindowPoSts_, **unless _control addresses_ are defined and have enough balance** (continued below).
 
-The wallet associated with the _owner address_ is designed to be kept offline as a cold wallet since it should not be used often. It is critical to safeguard the miner's funds. In production environments, we strongly recommend using separate _owner_ and _worker_ addresses.
+The address chosen to be the miner's _owner address_ is designed to be kept offline in _cold storage_, or backed up by a [hardware wallet](../../get-started/lotus/ledger). In production environments, we strongly recommend using separate _owner_ and _worker_ addresses.
 
 The owner address can be updated with the following command:
 
