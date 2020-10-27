@@ -6,7 +6,7 @@ breadcrumb: ''
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.description }} It is the first open source file storage application designed to encourage collaboration and research across a distributed network. The creation of Slate is a first step towards enabling a thriving network for data storage and transactions powered by IPFS, Filecoin, and Textile that is open and usable for everyone.
+{{ $frontmatter.description }} It is the first open-source file storage application designed to encourage collaboration and research across a distributed network. Slate's creation is a first step towards enabling a thriving network for data storage and transactions powered by IPFS, Filecoin, and Textile that is open and usable for everyone.
 
 You can try out Slate at [slate.host](https://slate.host). Early members get 50GB of free storage!
 

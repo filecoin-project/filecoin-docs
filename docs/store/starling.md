@@ -12,61 +12,92 @@ breadcrumb: 'Starling'
 <a href="https://starlingstorage.io" target="_blank"><img src="./images/starling.gif" alt="starling" /></a>
 </center>
 
-## Get started with Starling
+## Getting started
 
-1. Starling uses [Lotus](../get-started/lotus/README.md) to interact with the Filecoin network. [download, install and run a Lotus daemon](../get-started/lotus/installation.md):
+This guide will quickly set up Starling on your computer. For more information on Starling and how to use it, check out the [official Starling documentation](https://starlingstorage.io/).
 
-   Make sure that Lotus is running and the find out about your Lotus API token and endpoint with:
+### Prerequisites
 
-   ```sh
-   lotus auth api-info --perm admin
-   ```
+You need to have a couple of things installed before you can interact with Starling:
 
-   This will print a `FULLNODE_API_INFO=<token>:/ip4/127.0.0.1/tcp/<port>/http` string that we will use later.
+1. [Lotus](../get-started/lotus/installation.md).
+1. [NodeJS](https://nodejs.org/en/download/)
 
-2. [Install NodeJS](https://nodejs.org/en/download/):
+### Steps
 
-   You will need a recent version of nodejs and npm (>=2.19).
+1.  Start the Lotus daemon:
 
-3. Install **Starling**:
+    ```bash
+    lotus daemon
+    ```
 
-   You can do it from source with:
+1.  In a new terminal window, get your Lotus API token and endpoint with:
 
-   ```sh
-   # Checkout the repository
-   git clone https://github.com/filecoin-project/starling
-   cd starling
-   # Install dependencies
-   npm install
-   sudo npm link
-   ```
+    ```bash
+    lotus auth api-info --perm admin
 
-4. Configure Starling:
+    > FULLNODE_API_INFO=eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc:/ip4/127.0.0.1/tcp/1234/http
 
-   Make sure your environment defines the location of the Lotus API and the token to use:
+    ```
 
-   ```sh
-   # As provided by the `api-info` command we ran before
-   export LOTUS_URL=ws://127.0.0.1/1234/rpc/v0
-   export LOTUS_AUTH_TOKEN=<token>
-   ```
+    This will print a **token** and **port** that we will use later. In this case, our **token** is `eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc`, and our **port** is `1234`.
 
-   Configure startling settings by running:
+1.  Clone the Starling repository:
 
-   ```sh
-   starling config
-   ```
+    ```bash
+    git clone https://github.com/filecoin-project/starling
+    ```
 
-5. You are ready to run Starling!
+1.  Move into the `starling` directory and install the dependencies:
 
-   ```sh
-   # Store a single file
-   starling store full/path/to/file
-   # Store a folder
-   starling store full/path/to/folder
-   # Launch interactive monitoring interface
-   starling monitor
-   ...
-   ```
+    ```bash
+    cd starling
+    npm install
+    sudo npm link
+    ```
 
-   Check the [official documentation](https://starlingstorage.io/commands.html) for a list of commands and what they can do.
+1.  Create an environment variable called `LOTUS_AUTH_TOKEN` and supply it with the **s** we received from running `api-info` earlier:
+
+    ```bash
+    # export LOTUS_AUTH_TOKEN=<token>
+    export LOTUS_AUTH_TOKEN=eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc
+    ```
+
+    Add this line into your `~/.bashrc` file if you want to keep this token after closing your terminal.
+
+1.  Create an environment variable called `LOTUS_URL` and supply it with the **port** we received from running `api-info` earlier:
+
+    ```bash
+    # export LOTUS_URL=ws://127.0.0.1/<PORT>/rpc/v0
+    export LOTUS_URL=ws://127.0.0.1/1234/rpc/v0
+    ```
+
+    Add this line into your `~/.bashrc` file if you want to keep this token after closing your terminal.
+
+1.  Configure Starling settings:
+
+    ```bash
+    starling config
+    ```
+
+1.  You are ready to run Starling!
+
+    a. Store a single file run:
+
+        ```bash
+        starling store full/path/to/file
+        ```
+
+    b. Store a folder run:
+
+        ```bash
+        starling store full/path/to/folder
+        ```
+
+    c. Launch the interactive monitoring interface:
+
+        ```bash
+        starling monitor
+        ```
+
+Check the [official documentation](https://starlingstorage.io/commands.html) for a more in-depth look into what Starling can do.
