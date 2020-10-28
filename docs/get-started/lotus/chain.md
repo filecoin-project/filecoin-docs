@@ -30,8 +30,14 @@ A recent minimal trusted state chain snapshot is available [here](https://fil-ch
 ```sh
 # The snapshot size is about 7GiB. This works for mainnet.
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
+
 # An alternative is to download first and use the file
 lotus daemon --import-snapshot <filename.car>
+
+# The sha256sum is stored alongside the interim snapshot and can be obtained via
+curl -sI https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car \
+| perl -ne '/^x-amz-website-redirect-location:(.+)\.car\s*$/ && print "$1.sha256sum"' \
+| xargs curl -s
 ```
 
 ::: warning
