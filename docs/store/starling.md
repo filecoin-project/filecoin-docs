@@ -14,7 +14,7 @@ breadcrumb: 'Starling'
 
 ## Getting started
 
-This guide will quickly set up Starling on your computer. For more information on Starling and how to use it, check out the [official Starling documentation](https://starlingstorage.io/).
+This guide will quickly set up Starling on your computer.
 
 ### Prerequisites
 
