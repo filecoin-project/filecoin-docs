@@ -25,11 +25,8 @@ You need to have a couple of things installed before you can interact with Starl
 
 ### Steps
 
-1.  Start the Lotus daemon:
+1.  Ensure that the Lotus daemon is running, and has fully synced.
 
-    ```bash
-    lotus daemon
-    ```
 
 1.  In a new terminal window, get your Lotus API token and endpoint with:
 
@@ -40,7 +37,6 @@ You need to have a couple of things installed before you can interact with Starl
 
     ```
 
-    This will print a **token** and **port** that we will use later. In this case, our **token** is `eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc`, and our **port** is `1234`.
 
 1.  Clone the Starling repository:
 
@@ -56,23 +52,6 @@ You need to have a couple of things installed before you can interact with Starl
     sudo npm link
     ```
 
-1.  Create an environment variable called `LOTUS_AUTH_TOKEN` and supply it with the **s** we received from running `api-info` earlier:
-
-    ```bash
-    # export LOTUS_AUTH_TOKEN=<token>
-    export LOTUS_AUTH_TOKEN=eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc
-    ```
-
-    Add this line into your `~/.bashrc` file if you want to keep this token after closing your terminal.
-
-1.  Create an environment variable called `LOTUS_URL` and supply it with the **port** we received from running `api-info` earlier:
-
-    ```bash
-    # export LOTUS_URL=ws://127.0.0.1/<PORT>/rpc/v0
-    export LOTUS_URL=ws://127.0.0.1/1234/rpc/v0
-    ```
-
-    Add this line into your `~/.bashrc` file if you want to keep this token after closing your terminal.
 
 1.  Configure Starling settings:
 
