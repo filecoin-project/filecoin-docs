@@ -6,14 +6,14 @@ breadcrumb: 'Store'
 
 # Store data on Filecoin
 
-Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers, or miners.
+Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers or miners.
 
 ## Get started
 
 Users can use the following software solutions to store data on the Filecoin network:
 
-- [Slate](slate.md) allows uploading and storing content on the Filecoin network directly from your browser. It supports one time deals and it is perfect to create image galleries.
-- [Lotus](lotus/README.md) import data and perform deals on the chain using its daemon and its CLI. Lotus users get full control of the deals, the chosen miners and the wallets used to pay. Make sure you are familiar with [Lotus](../get-started/lotus/README.md) and have it [installed and running](../get-started/lotus/installation.md).
+- [Slate](slate.md) allows uploading and storing content on the Filecoin network directly from your browser. It supports one time deals, and it is perfect to create image galleries.
+- [Lotus](lotus/README.md) import data and perform deals on the chain using its daemon and CLI. Lotus users get full control of the deals, the chosen miners, and the wallets used to pay. Make sure you are familiar with [Lotus](../get-started/lotus/README.md) and have it [installed and running](../get-started/lotus/installation.md).
 - [Starling](starling.md) provides simplified decentralized storage for preservation, using Lotus but simplifying the usage.
 
 ## Additional resources
