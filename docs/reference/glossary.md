@@ -77,9 +77,9 @@ The Filecoin project uses the term _miner_ to refer to participants in the netwo
 
 Storage capacity that a miner has promised to reserve for the Filecoin network via [Proof-of-Replication](#proof-of-replication-porep) is termed _pledged storage_.
 
-## Proof-of-Storage (PoSt)
+## Proof-of-Storage
 
-Many blockchain networks are underpinned by the notion that participants supply something of value to the blockchain - a contribution that is hard to fake, but which, if actually made, can be trivially verified. Blockchains based in this approach are often said to require "Proof-of-_X_", where _X_ is the valued contribution. The Filecoin blockchain values contributions of storage capacity; it is predicated upon a novel _Proof-of-Storage_ (PoSt) construction, distinguishing it from other blockchains that, as is most often the case, require a contribution of computing power.
+Many blockchain networks are underpinned by the notion that participants supply something of value to the blockchain - a contribution that is hard to fake, but which, if actually made, can be trivially verified. Blockchains based in this approach are often said to require "Proof-of-_X_", where _X_ is the valued contribution. The Filecoin blockchain values contributions of storage capacity; it is predicated upon a novel _Proof-of-Storage_ construction, distinguishing it from other blockchains that, as is most often the case, require a contribution of computing power.
 
 As a term, Proof-of-Storage refers to the design elements of the Filecoin protocol that allow one to guarantee (to some very high tolerance) that participants that claim to be contributing a given amount of storage are indeed fulfilling that pledge. In fact, Filecoin's Proof-of-Storage construction provides for a much stronger claim, allowing one to efficiently verify that a participant is storing a _particular piece of data_, without requiring that one have a copy of the file itself.
 
@@ -159,6 +159,6 @@ The Filecoin network expects constant availability of stored data. Failing to su
 
 ## Winning Proof-of-Spacetime (WinningPoSt)
 
-_Winning Proof-of-Spacetime_ (WinningPoSt) is the mechanism by which [storage miners](#storage-miner) are rewarded for their contributions to the Filecoin network. At the beginning of each [epoch](#epoch), a small number of storage miners are [elected](#election) to each mine a new [block](#block). As a requirement for doing so, each miner is tasked with submitting a compressed [Proof-of-Storage](#proof-of-storage-post) for a specified [sector](#sector). Each elected miner who successfully creates a block is granted [FIL](#fil), as well as the opportunity to charge other Filecoin participants fees to include [messages](#message) in the block.
+_Winning Proof-of-Spacetime_ (WinningPoSt) is the mechanism by which [storage miners](#storage-miner) are rewarded for their contributions to the Filecoin network. At the beginning of each [epoch](#epoch), a small number of storage miners are [elected](#election) to each mine a new [block](#block). As a requirement for doing so, each miner is tasked with submitting a compressed [Proof-of-Storage](#proof-of-storage) for a specified [sector](#sector). Each elected miner who successfully creates a block is granted [FIL](#fil), as well as the opportunity to charge other Filecoin participants fees to include [messages](#message) in the block.
 
 Storage miners who fail to do this in the necessary window will forfeit their opportunity to mine a block, but will not otherwise incur penalties for their failure to do so.
