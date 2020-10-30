@@ -74,7 +74,7 @@ For mainnet, you will need a public IP address, but it doesn't need to be fixed 
 
 ### What if we lost a sector accidentally, is there any way to fix that?
 
-If you lost the data itself, then no, there's no way to recover that, and you will be slashed for it. If the data itself is recoverable, though (say you just missed a Windowed PoSt), then the Recovery process will let you regain the sector.
+If you lost the data itself, then no, there's no way to recover that, and you will be slashed for it. If the data itself is recoverable, though (say you just missed a _WindowPoSt_), then the Recovery process will let you regain the sector.
 
 ### Has Filecoin confirmed the use of the SDR algorithm? Is there any evidence of malicious construction?
 

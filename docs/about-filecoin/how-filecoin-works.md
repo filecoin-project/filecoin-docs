@@ -46,7 +46,7 @@ Cryptographic proofs are used to these ends, as explained in this article about 
 
 Using _Proof Of Replication (PoRep)_, miners demonstrate that they have received all the data and that they have encoded it in a way unique to that miner using their physical storage in a way that no other miner can replicate (so two deals for the same data cannot end up re-using the same disk). This proof is provided when the deal starts, and the _sealing_ operation completes.
 
-Once a deal is active and during its full lifetime, the miner will use _Proof of Spacetime (PoSt)_ to prove that it is _still_ storing the data associated with a deal. For PoST, random miners need to prove that random parts of the data they store are still there.
+Once a deal is active and during its full lifetime, the miner will use _Proof of Spacetime (PoSt)_ to prove that it is _still_ storing the data associated with a deal. For PoSt, random miners need to prove that random parts of the data they store are still there.
 
 Filecoin clients and other miners continuously verify that the proofs included in each block are valid, providing the necessary security and penalizing miners that do not honor their deals.
 
