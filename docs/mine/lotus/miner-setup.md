@@ -84,7 +84,7 @@ swapon --show
 
 ### Creating wallets for the miner
 
-You will need at least a BLS wallet (`f3...` for mainnet) for mining. We recommend using [separate owner and worker wallets](miner-wallets.md) though. Thus, create at least two wallets (unless you have some already):
+You will need at least a BLS wallet (`f3...` for mainnet) for mining. We recommend using [separate owner and worker addresses](miner-addresses.md) though. Thus, create at least two wallets (unless you have some already):
 
 ```sh
 # A new BLS address to use as owner address:
@@ -100,7 +100,7 @@ t3...
 Next make sure to [send some funds](../../get-started/lotus/send-and-receive-fil.md) to the **worker address** so that the miner setup can be completed.
 :::
 
-For additional information about the different wallets that a miner can use and how to configure them, read the [miner wallets guide](miner-wallets.md).
+For additional information about the different wallets that a miner can use and how to configure them, read the [miner addresses guide](miner-addresses.md).
 
 ::: tip
 Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exporting-and-importing-addresses)!
@@ -162,7 +162,7 @@ lotus-miner init --owner=<bls address>  --worker=<other_address> --no-local-stor
 
 - The `--no-local-storage` flag is used so that we can later configure [specific locations for storage](custom-storage-layout.md). This is optional but recommended.
 - The Lotus Miner configuration folder is created at `~/.lotusminer/` or `$LOTUS_MINER_PATH` if set.
-- The difference between _owner_ and _worker_ addresses is explained in the [miner wallets guide](miner-wallets.md). As mentioned above, we recommend using two separate addresses. If the `--worker` flag is not provided, the owner address will be used. _Control addresses_ can be added later when the miner is running.
+- The difference between _owner_ and _worker_ addresses is explained in the [miner addresses guide](miner-addresses.md). As mentioned above, we recommend using two separate addresses. If the `--worker` flag is not provided, the owner address will be used. _Control addresses_ can be added later when the miner is running.
 
 ## Connectivity to the miner
 
@@ -213,4 +213,4 @@ Your miner should now be preliminarly setup and running, but **there are still a
 - Learn what is a right moment to [shutdown/restart your miner](miner-lifecycle.md)
 - Update `ExpectedSealDuration` with the time it takes your miner to seal a sector: discover it by [running a benchmark](benchmarks.md) or by [pledging a sector](sector-pledging.md) and noting down the time.
 - Configure additional [seal workers](seal-workers.md) to increase the miner's capacity to seal sectors.
-- Configure a [separate address for WindowPost messages](miner-wallets.md).
+- Configure a [separate address for WindowPost messages](miner-addresses.md).
