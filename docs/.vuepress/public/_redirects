@@ -31,9 +31,10 @@
 /mine/spacerace/ /mine/spacerace/
 /mine/mining-troubleshooting/ /mine/lotus/miner-troubleshooting/
 /mine/lotus/daemon-lifecycle/ /mine/lotus/miner-lifecycle/
-/mine/lotus/separate-address-window-post/ /mine/lotus/miner-wallets/
+/mine/lotus/separate-address-window-post/ /mine/lotus/miner-addresses/
 /mine/lotus/replace-messages-in-mpool/ /mine/lotus/message-pool/
 /mine/spacerace/ https://spacerace.filecoin.io
+/mine/lotus/miner-wallets/ /mine/lotus/miner-addresses/
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
