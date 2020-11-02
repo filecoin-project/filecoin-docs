@@ -31,7 +31,7 @@ If the ticket quality is sufficiently high, then a greedy selection algorithm is
 When a message is executed it consumes _gas_. The total gas consumed by a message directly affects the cost to place that message in the blockchain, which is a price that the sender will have to pay.
 
 ::: tip
-Lotus can be configured with several addresses to have more granular control over fees and limits depending on the operation and avoid head-of-line blocking, particularly for high value operations such as _WindowPoSts_. Check the [miner wallets guide](miner-wallets.md).
+Lotus can be configured with several addresses to have more granular control over fees and limits depending on the operation and avoid head-of-line blocking, particularly for high value operations such as _WindowPoSts_. Check the [miner addresses guide](miner-addresses.md).
 :::
 
 The [How Filecoin works page](../../about-filecoin/how-filecoin-works.md) explains gas-usage and fee in more detail. As an additional tip, you can use Lotus to find out about the current _BaseFee_:
@@ -53,7 +53,7 @@ lotus mpool pending --local
 
 For each message you will be able to see key information like the _GasLimit_, the _GasFeeCap_ and the _GasPremium_ values, explained above.
 
-In order to avoid messages from staying long periods in the pool when they are sent, it is possible to adjust the [Lotus Miner fees in the configuration](miner-configuration.md) and use [additional control addresses for _WindowPoSts_](miner-wallets.md). Existing messages can be replaced at any time with the procedure explained below.
+In order to avoid messages from staying long periods in the pool when they are sent, it is possible to adjust the [Lotus Miner fees in the configuration](miner-configuration.md) and use [additional control addresses for _WindowPoSts_](miner-addresses.md). Existing messages can be replaced at any time with the procedure explained below.
 
 ## Replacing messages in the pool
 

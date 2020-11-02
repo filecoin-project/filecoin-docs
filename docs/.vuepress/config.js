@@ -135,7 +135,7 @@ module.exports = {
                 ['lotus/custom-storage-layout', 'Custom storage layout'],
                 ['lotus/sector-pledging', 'Sector pledging'],
                 ['lotus/connectivity', 'Connectivity'],
-                ['lotus/miner-wallets', 'Miner wallets'],
+                ['lotus/miner-addresses', 'Miner addresses'],
                 //'lotus/fees-control-and-limits',
                 ['lotus/message-pool', 'The Message Pool'],
                 ['lotus/seal-workers', 'Seal workers'],
