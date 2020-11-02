@@ -31,3 +31,7 @@ Use the self-documenting feature of the tool to explore the different commands. 
 ```sh
 ./lotus-bench sealing --sector-size=2KiB
 ```
+
+Note that benchmarking can take a few sector sizes in storage (e.g. up to 100s of GiB). You can change the directory into which the benchmark stores data using the `storage-dir` flag, set to `~/.lotus-bench` by default.
+
+Check out the other flags for `./lotus-bench` [here](https://github.com/filecoin-project/lotus/blob/master/cmd/lotus-bench/main.go#L96)
