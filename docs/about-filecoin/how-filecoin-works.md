@@ -79,7 +79,7 @@ Filecoin implementations may choose the heuristics of how their miners select me
 
 ## Additional materials
 
-Filecoin is built on top of [mature projects](../project/related-projects/) like libp2p (networking, addressing, message distribution), IPLD (data formats, encoding, and content-addressed data structures), IPFS (data transfers), and multiformats (future-proof data types).
+Filecoin is built on top of [mature projects](../project/related-projects.md) like libp2p (networking, addressing, message distribution), IPLD (data formats, encoding, and content-addressed data structures), IPFS (data transfers), and multiformats (future-proof data types).
 
 Here are some links to useful introductory materials about the technology that powers Filecoin and about Filecoin itself:
 

@@ -60,7 +60,7 @@ While the Filecoin team does not recommend any specific hardware configuration, 
 
 ### We are worried about the ability of our network to handle the additional overhead of running a Filecoin node and still provide fast services for our customers. What are the computational demands of a Lotus node? Are there any metrics for node performance given various requirements?
 
-See the hardware requirements for [Lotus nodes](../get-started/lotus/installation/#minimal-requirements) and [Filecoin miners](../mine/hardware-requirements/).
+See the hardware requirements for [Lotus nodes](../get-started/lotus/installation.md#minimal-requirements) and [Filecoin miners](../mine/hardware-requirements.md).
 
 ### We bought a lot of hard drives of data through the Discover project. When will they be shipped to China?
 
@@ -146,4 +146,4 @@ Also, note that world location matters for mining: many clients will prefer mine
 
 ### Even though Filecoin will be backed up to our normal IPFS pinning layer, we still need to know how quickly we can access data from the Filecoin network. How fast will retrieval be from the Filecoin network?
 
-If you are retrieving your data from IPFS or a remote pinning layer such as an [FPS](../build/filecoin-pinning-services/), retrieval should take on the order of milliseconds to seconds in the worst case. Our latest tests for retrieval from the Filecoin network directly show that a sealed sector holding data takes ~1 hour to unseal. 1-5 hours is our best real-world estimate to go from sector unsealing to delivery of the data. If you need faster data retrieval for your application, we recommend building on Powergate or an FPS.
+If you are retrieving your data from IPFS or a remote pinning layer such as an [FPS](../build/filecoin-pinning-services.md), retrieval should take on the order of milliseconds to seconds in the worst case. Our latest tests for retrieval from the Filecoin network directly show that a sealed sector holding data takes ~1 hour to unseal. 1-5 hours is our best real-world estimate to go from sector unsealing to delivery of the data. If you need faster data retrieval for your application, we recommend building on Powergate or an FPS.
