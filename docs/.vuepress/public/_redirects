@@ -35,12 +35,15 @@
 /mine/lotus/replace-messages-in-mpool/ /mine/lotus/message-pool/
 /mine/spacerace/ https://spacerace.filecoin.io
 /mine/lotus/miner-wallets/ /mine/lotus/miner-addresses/
+/mine/lotus/miner-lifecycle/custom-storage-layout /mine/lotus/custom-storage-layout/
+
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
-/build/start-building/deploy-your-application-to-the-filecoin-testnet/ /build/onboard-testnet/
+/build/start-building/deploy-your-application-to-the-filecoin-testnet/ / 404
 /build/start-building/implementations/ /get-started/
 /build/examples/sample-architectures/ /build/examples/
+/build/reference/lotus-api/ /reference/lotus-api/
 
 /store/lotus/send-and-receive-fil/ /get-started/lotus/send-and-receive-fil/
 

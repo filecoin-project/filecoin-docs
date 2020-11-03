@@ -8,7 +8,7 @@ breadcrumb: 'Hosted nodes'
 
 {{ $frontmatter.description }}
 
-Developers can interact directly a pool of synced nodes using the [JSON RPC API](../reference/lotus-api) on the `https://api.node.glif.io` endpoint (or `https://api.node.glif.io/rpc/v0`).
+Developers can interact directly a pool of synced nodes using the [JSON RPC API](../reference/lotus-api.md) on the `https://api.node.glif.io` endpoint (or `https://api.node.glif.io/rpc/v0`).
 
 Unlike bare Lotus, the endpoint above is hardened and limited:
 
@@ -81,7 +81,7 @@ Here are some steps to get started on Glif Nodes:
 
    Your application will very probably interact with the Lotus JSON-RPC API directly. Here are the first steps to gain operative knowledge on this API:
 
-   - Read the instructions in the [Lotus API reference](https://docs.filecoin.io/reference/lotus-api/). Understand how calls are performed, how authentication works and how parameters and responses are encoded in JSON-RPC. Try out some `curl` examples.
+   - Read the instructions in the [Lotus API reference](../reference/lotus-api.md). Understand how calls are performed, how authentication works and how parameters and responses are encoded in JSON-RPC. Try out some `curl` examples.
    - From the above, learn how to obtain the parameters and expected format for every endpoint from the Lotus Go documentation. This will be the first place to check if something does not work or the format of some parameter is not understood.
    - You can also use this [Lotus API documentation](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) which covers the Glif Node-supported methods in a more readable form, with additional tips.
    - If you are planning to send transactions, you will need to manage wallets and create signatures for your messages. See the [signing libraries](signing-libraries.md) page for different solutions.
