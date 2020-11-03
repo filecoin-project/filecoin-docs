@@ -14,8 +14,22 @@ To receive and send FIL with Lotus, you will need to have a [Lotus node installe
 
 ## Creating a wallet
 
+### Create a BLS wallet
+
 ```bash
 lotus wallet new bls
+```
+
+### Create a secp256k1 wallet
+
+```bash
+lotus wallet new
+```
+
+### Create a multisig wallet
+
+```bash
+lotus msig create address1 address2..
 ```
 
 This will create a new address and print it. You can distinguish mainnet from testnet addresses because they start with `f` for mainnet and `t` for testnets.
