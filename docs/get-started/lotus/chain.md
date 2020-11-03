@@ -108,7 +108,11 @@ lotus daemon --import-snapshot --halt-after-import <filename>
 
 ## Compacting the chain data
 
-It is possible to "prune" the current chain data used by Lotus to reduce the disk footprint of a Lotus node by resyncing from a minimal snapshot. This is a quick overview of the steps:
+It is possible to "prune" the current chain data used by Lotus to reduce the disk footprint of a Lotus node by resyncing from a minimal snapshot.
+
+> Note: A minimal snapshot only has the full state trees from some recent tipset onward and nothing before that tipset. To have all historical states, sync from the full snapshot above.
+
+This is a quick overview of the steps:
 
 1. Stop the lotus daemon, i.e. `lotus daemon stop`)
 2. Remove the contents of the `datastore/chain/` folder in the Lotus path, i.e. `rm -rf ~/.lotus/datastore/chain/*`.
