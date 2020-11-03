@@ -48,6 +48,6 @@ If you wish to interact with the Lotus Node API, you will need to either:
 
 1. **Start using the JSON-API**
 
-   Learn how the JSON-RPC API works, where to contact it and how to obtain documentation for every method in the [reference](../../reference/lotus-api).
+   Learn how the JSON-RPC API works, where to contact it and how to obtain documentation for every method in the [reference](../../reference/lotus-api.md).
 
    This will allow you to become familiar with how the API operates. From that point, you can start leveraging any of the [existing client libraries](api-client-libraries.md) or writing your own!
