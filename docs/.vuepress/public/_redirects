@@ -35,7 +35,7 @@
 /mine/lotus/replace-messages-in-mpool/ /mine/lotus/message-pool/
 /mine/spacerace/ https://spacerace.filecoin.io
 /mine/lotus/miner-wallets/ /mine/lotus/miner-addresses/
-/mine/lotus/miner-lifecycle/custom-storage-layout /mine/lotus/custom-storage-layout/
+/mine/lotus/miner-lifecycle/custom-storage-layout/ /mine/lotus/custom-storage-layout/
 
 
 /build/start-building/ /build/
