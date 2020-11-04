@@ -68,7 +68,7 @@ If you want to fully delegate any of these operations to workers, set them to `f
 
 ## Launching Lotus workers
 
-### Enviroment variables
+### Environment variables
 
 Ensure that workers have access to the following environment variables when they run. These are similar to those used by the Miner daemon ([explained in the setup guide](miner-setup.md):
 
