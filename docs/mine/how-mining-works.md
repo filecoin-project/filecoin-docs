@@ -6,7 +6,7 @@ breadcrumb: 'How mining works'
 
 # {{ $frontmatter.title }}
 
-In most blockchain protocols, "miners" are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency. The term "miner" emerged in the initial Proof-of-Work era, comparing the work done by hardware miners using computational power to secure blockchains with that of gold miners whom expended vast physical resources for a chance at a large payout.
+In most blockchain protocols, "miners" are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency. The term "miner" emerged in the initial Proof-of-Work era, comparing the work done by hardware miners using computational power to secure blockchains with that of gold miners who expended vast physical resources for a chance at a large payout.
 
 Mining in Filecoin works quite differently however -- instead of contributing computational power, miners contribute storage capacity to be used in deals with clients looking to store data.
 
@@ -34,7 +34,7 @@ Throughout the lifetime of the deal, the miner submits ongoing proofs to the cha
 
 ## Power and rewards
 
-Each Filecoin miner as an associated _power_ in the network that is proportional to the amount of space contributed and determines the chances to win the right to mine a block in every epoch. By mining blocks, miners obtain _block rewards_ and collect fees for the messages included in that block.
+Each Filecoin miner has an associated _power_ in the network that is proportional to the amount of space contributed and determines the chances to win the right to mine a block in every epoch. By mining blocks, miners obtain _block rewards_ and collect fees for the messages included in that block.
 
 Additionally, miners submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
