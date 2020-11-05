@@ -19,7 +19,7 @@ This page provides an overview of software solutions in the Filecoin ecosystem.
 | Name                                                | Description                                                                                         |
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | [Slate](https://slate.host)                         | An open source storage system for your files and data.                                              |
-| [Powergate](https://github.com/textileio/powergate) | A multitiered file storage API built on Filecoin and IPFS, and and index builder for Filecoin data. |
+| [Powergate](https://github.com/textileio/powergate) | A multitiered file storage API built on Filecoin and IPFS, and an index builder for Filecoin data. |
 
 ## API clients
 
