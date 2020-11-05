@@ -34,7 +34,7 @@ We are still finalizing our crypto-economic parameters, and they will continue t
 
 ### How expensive will Filecoin storage be at launch?
 
-As Filecoin is a free market, the price will be determined by a number of variables related to the supply and demand for storage. It's difficult to predict before launch. However, a few design elements of the network helps support inexpensive storage.
+As Filecoin is a free market, the price will be determined by a number of variables related to the supply and demand for storage. It's difficult to predict before launch. However, a few design elements of the network help support inexpensive storage.
 
 Along with revenue from active storage deals, Storage Miners receive block rewards, where the expected value of winning a given block reward is proportional to the amount of storage they have on the network. These block rewards are weighted heavily towards the early days of the network (with the frequency of block rewards exponentially decaying over time). As a result, Storage Miners are relatively incentivized to charge less for storage to win more deals, which would increase their expected block reward.
 
