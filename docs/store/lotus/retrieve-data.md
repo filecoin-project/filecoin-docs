@@ -1,6 +1,6 @@
 ---
 title: 'Lotus: retrieve data'
-description: 'This guide will show you how to use Lotus to retreive data that has been stored on the Filecoin network.'
+description: 'This guide will show you how to use Lotus to retrieve data that has been stored on the Filecoin network.'
 breadcrumb: 'Retrieve data'
 ---
 
@@ -16,7 +16,7 @@ Currently, Lotus supports direct retrieval from the storage miners which origina
 
 To retrieve data from the Filecoin network, a Lotus Node needs to:
 
-1. Perform a retrieval query using the desired _Data CID_ agains the miner storing the data.
+1. Perform a retrieval query using the desired _Data CID_ against the miner storing the data.
 2. Receive confirmation from the miner that it is holding that data and that it can provide it for a price.
 3. Send a deal proposal agreeing with the proposed terms.
 4. Receive the data from the miner, verify that it is correct and send incremental payments on the payment channel until the transfer is complete.
@@ -41,7 +41,7 @@ The _retrieval deal_ process is simplified on a simple command:
 lotus client retrieve --miner <miner ID> <Data CID> <outfile>
 ```
 
-This commands take other optional flags (check `--help`).
+This command takes other optional flags (check `--help`).
 
 If the outfile does not exist it will be created in the Lotus repository directory. This process may take 2 to 10 minutes.
 
