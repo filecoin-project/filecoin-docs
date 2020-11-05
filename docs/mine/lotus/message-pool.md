@@ -10,7 +10,7 @@ breadcrumb: 'Message Pool'
 
 When messages are executed, they use _gas_. The amount of _gas_ used, the parameters attached to each message and the Network's current _BaseFee_ determine the final FIL-cost to include the transaction in the chain. Part of that cost is burned by the network. The other part is given to the miner of the first block that includes the transaction as a reward.
 
-The different caps and fees for messages are explained below, along with instructions on how to inspect and intract with the message pool.
+The different caps and fees for messages are explained below, along with instructions on how to inspect and interact with the message pool.
 
 ::: tip
 Lotus provides the tooling to interact with the message pool with the `lotus mpool` subcommands.
