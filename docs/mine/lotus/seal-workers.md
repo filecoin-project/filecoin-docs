@@ -68,14 +68,14 @@ If you want to fully delegate any of these operations to workers, set them to `f
 
 ## Launching Lotus workers
 
-### Environmet variables
+### Environment variables
 
 Ensure that workers have access to the following environment variables when they run. These are similar to those used by the Miner daemon ([explained in the setup guide](miner-setup.md):
 
 ```
 # MINER_API_INFO as obtained before
 export TMPDIR=/fast/disk/folder3                    # Used when sealing.
-export MINER_API_INFO:<TOKEN>:/ip4/<miner_api_address>/tcp/<port>`
+export MINER_API_INFO:<TOKEN>:/ip4/<miner_api_address>/tcp/<port>/http`
 export BELLMAN_CPU_UTILIZATION=0.875
 export FIL_PROOFS_MAXIMIZE_CACHING=1
 export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 # when GPU is available
