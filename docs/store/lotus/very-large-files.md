@@ -1,6 +1,6 @@
 ---
 title: 'Lotus: very large files'
-description: 'This guide goes into more depth for storing very large files (over 1TiB), provinding more insights into how data is stored and some best pracices'
+description: 'This guide goes into more depth for storing very large files (over 1TiB), providing more insights into how data is stored and some best practices'
 breadcrumb: ''
 ---
 
