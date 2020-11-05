@@ -33,7 +33,7 @@ In the process of self-healing, Filecoin generates verifiable traces that files 
 
 ### Reputation, not marketing
 
-In Filecoin, storage providers prove their reliability through their track record published on the blockchain, not through marketing claims published by the provider themselves. Users don’t need to rely on status pages or self-reported statistics from storage providers.
+In Filecoin, storage providers prove their reliability through their track record published on the blockchain, not through marketing claims published by the providers themselves. Users don’t need to rely on status pages or self-reported statistics from storage providers.
 
 ### Choice of tradeoffs
 
