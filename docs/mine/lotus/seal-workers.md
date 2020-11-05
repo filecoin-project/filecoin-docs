@@ -28,7 +28,7 @@ Note that, at all moments, the miner controls the total number of sectors that c
 All of the above serves to setup custom _sealing pipelines_ where available hardware can be utilized in the most performant fashion, for example, by having co-located workers on a single machine to perform _PreCommit1_ only, and then having a dedicated GPU worker for the _PreCommit2_ and _Commit_ phases on a different hardware, leaving the miner to do the rest of the operations. The final setup will depend on the available hardware and its specifications.
 
 ::: callout
-Remember during sealing, significant amounts of data are moved/copied accross workers, so good network connectivity among them is a must.
+Remember during sealing, significant amounts of data are moved/copied across workers, so good network connectivity among them is a must.
 :::
 
 ## Installation
@@ -152,7 +152,7 @@ export LOTUS_WORKER_PATH=/path/to/worker/storage/N
 lotus-worker run --listen 0.0.0.0:X --add-piece=false --precommit1=true --unseal=true --precommit2=false --commit=false
 ```
 
-By default, the _PreCommit1_ base will _use a single CPU core_. This means that several workers process can use remaining cores and perform the work in parallel for this phase, as long as there is enough memory available for all of them to run.
+By default, the _PreCommit1_ base will _use a single CPU core_. This means that several worker processes can use remaining cores and perform the work in parallel for this phase, as long as there is enough memory available for all of them to run.
 
 Alternatively, it is also possible to speed up _PreCommit1_ by setting `FIL_PROOFS_USE_MULTICORE_SDR=1`. This enables [optimizations to memory access](https://github.com/filecoin-project/rust-fil-proofs/), but each worker will need access to a full CPU core-complex (usually 4 adjacent cores). This reduces the number of workers that could run in parallel, but allows them to be faster and saves the memory footprint of running additional processes.
 
