@@ -28,6 +28,8 @@ To pledge a sector use:
 lotus-miner sectors pledge
 ```
 
+This will, by default, pledge the space for 546 days.
+
 ::: warning
 This will write data to `$TMPDIR` so make sure that there is enough space available.
 :::
@@ -64,10 +66,10 @@ Then follow the instructions in the configuration reference linked above.
 
 ## Upgrading pledged sectors
 
-The pledge period for the sector is 6 months. The _upgrading_ process allows however to recover pledged sectors for re-use much more quickly. The following command marks a sector for _upgrade_:
+The minimum pledge period is 6 months. However, the pledged sector can be replaced before then by replacing it with a new sector containing deals, as long as the replacement sector expires after the pledged sector. The following command marks a sector for _upgrade_:
 
 ```sh
 lotus-miner sectors mark-for-upgrade <sector number>
 ```
 
-The sector should become inactive within 24 hours. From that point, the pledged storage can be re-used to store real data associated with real storage deals.
+The sector should become inactive within 24 hours after a new replacement sector has sealed. From that point, the pledged storage can be re-used for new sectors.
