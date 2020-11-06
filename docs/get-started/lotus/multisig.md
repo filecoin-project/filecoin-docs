@@ -42,7 +42,7 @@ Transaction ID: 0
 
 where the `bafy2bzaceajm2mghc5rludlbcr3bnpqgcz5m6gmldq6ycrc4trkejz36tnrqe` is the `messageID` and `0` is the transaction id.
 
-Other signers can approved the messages by running:
+Other signers can use `lotus msig approve` to approve the messages:
 
 ```bash
 lotus msig approve walletAddress transactionID proposerAddress destinationAddress value
