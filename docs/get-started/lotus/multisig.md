@@ -15,7 +15,7 @@ lotus msig create signerAddress1 signerAddress2 signerAddress3...
 
 In the above example, `f01002` is the id address and `f24mscgjtgymb3dqtm4ycwydh4nhygktgxm3nbgva` is the actor address. Both addresses represent the newly created multisig wallet.
 
-By default, signatures from all signers are required for approving a transaction, however, the number of required approvals can be customized by passing in the `--required` option upon creation:
+By default, signatures from all signers are required for approving a transaction. However, you can change the number of required approvals by using the `--required` option:
 
 ```bash
 lotus msig create --required=2 signerAddress1 signerAddress2 signerAddress3
