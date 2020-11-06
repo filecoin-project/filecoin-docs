@@ -5,7 +5,7 @@ A multisig (multi-signature) wallet refers to a wallet that requires multiple ke
 
 ## Create a multsig wallet
 
-To create a multisig, run
+Use `lotus msig create` to a multisig wallet:
 
 ```bash
 lotus msig create signerAddress1 signerAddress2 signerAddress3...
