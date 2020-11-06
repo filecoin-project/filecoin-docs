@@ -31,14 +31,9 @@ Use `lotus msig propose` to propose a transaction:
 
 ```bash
 lotus msig propose --from=proposerAddress walletAddress destinationAddress value
-```
 
-A message CID and the transaction id will be returned:
-
-```bash
-send proposal in message:  bafy2bzaceajm2mghc5rludlbcr3bnpqgcz5m6gmldq6ycrc4trkejz36tnrqe
+> send proposal in message:  bafy2bzaceajm2mghc5rludlbcr3bnpqgcz5m6gmldq6ycrc4trkejz36tnrqe
 Transaction ID: 0
-```
 
 where the `bafy2bzaceajm2mghc5rludlbcr3bnpqgcz5m6gmldq6ycrc4trkejz36tnrqe` is the `messageID` and `0` is the transaction id.
 
