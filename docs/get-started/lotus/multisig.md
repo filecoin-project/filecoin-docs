@@ -56,20 +56,15 @@ To get the information of a multisig wallet, run
 
 ```bash
 lotus msign inspect walletaddress
-```
 
-and below is a sample output:
-
-```bash
-Balance: 0 FIL
-Spendable: 0 FIL
-Threshold: 2 / 3 # amount of signature required / amount of signers the wallet has
-Signers:
-ID      Address
-t01001  t1ai2gcr2xlpyxcbjlegojbpr3ovdyfdyzigjoyza
-t0100   t3r4d3avth4agwxy6ko35reeuydcqaa6cq4mt6owg3zjq23pxqc6xvn7scb43dyhaf2cjnjhtioek6innbpgda
-t01003  t3rpukrggza4jjt6vpihiqoekth6tiopzhvxbp36qhrzfu4xpk6n3mxo5geh6bdavkkkhqk7owt2an2wrundtq
-Transactions:  1
-ID      State    Approvals  To                                         Value   Method   Params
-0       pending  1          t1fjswymsauvfh5zxw34t2pgz7iev2fn56unyw6ci  20 FIL  Send(0)
-```
+> Balance: 0 FIL
+> Spendable: 0 FIL
+> Threshold: 2 / 3 # amount of signature required / amount of signers the wallet has
+> Signers:
+> ID      Address
+> t01001  t1ai2gcr2xlpyxcbjlegojbpr3ovdyfdyzigjoyza
+> t0100   t3r4d3avth4agwxy6ko35reeuydcqaa6cq4mt6owg3zjq23pxqc6xvn7scb43dyhaf2cjnjhtioek6innbpgda
+> t01003  t3rpukrggza4jjt6vpihiqoekth6tiopzhvxbp36qhrzfu4xpk6n3mxo5geh6bdavkkkhqk7owt2an2wrundtq
+> Transactions:  1
+> ID      State    Approvals  To                                         Value   Method   Params
+> 0       pending  1          t1fjswymsauvfh5zxw34t2pgz7iev2fn56unyw6ci  20 FIL  Send(0)
