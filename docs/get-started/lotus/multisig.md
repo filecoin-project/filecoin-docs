@@ -21,7 +21,7 @@ By default, signatures from all signers are required for approving a transaction
 lotus msig create --required=2 signerAddress1 signerAddress2 signerAddress3
 ````
 
-The above command creates a multisig wallet that has 3 signers, and 2 approvals are required for a transaction to be executed.
+The above example creates a multisig wallet with three signers, but only requires two approvals for the transaction to be executed.
 
 ## Propose and approve a transaction
 
