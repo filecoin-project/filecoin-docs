@@ -9,12 +9,8 @@ Use `lotus msig create` to a multisig wallet:
 
 ```bash
 lotus msig create signerAddress1 signerAddress2 signerAddress3...
-```
 
-When a multisig wallet is successfully created, the output will be something like
-
-```bash
-Created new multisig:  f01002 f24mscgjtgymb3dqtm4ycwydh4nhygktgxm3nbgva
+> Created new multisig:  f01002 f24mscgjtgymb3dqtm4ycwydh4nhygktgxm3nbgva
 ```
 
 where `f01002` is the id address and `f24mscgjtgymb3dqtm4ycwydh4nhygktgxm3nbgva` is the actor address, both addresses represent the newly created multisig wallet.
