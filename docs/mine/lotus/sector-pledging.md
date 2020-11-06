@@ -64,7 +64,7 @@ Then follow the instructions in the configuration reference linked above.
 
 ## Upgrading pledged sectors
 
-The pledge period for the sector is 6 months. The _upgrading_ process allows however to recover pledged sectors for re-use much more quickly. The following command marks a sector for _upgrade_:
+The pledge period for the sector is around 6-18 months. The _upgrading_ process allows however to recover pledged sectors for re-use much more quickly. The following command marks a sector for _upgrade_:
 
 ```sh
 lotus-miner sectors mark-for-upgrade <sector number>
