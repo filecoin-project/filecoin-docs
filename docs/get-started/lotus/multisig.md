@@ -25,7 +25,7 @@ The above example creates a multisig wallet with three signers, but only require
 
 ## Propose and approve a transaction
 
-Any signer of the multisig wallet can propose a transaction. The proposer approves the transaction upon proposal. The transaction will only be executed when the amount of approvals received equals to the amount of required approvals(see the inspect the wallet session for getting the threshold). If the multisig wallet only requires one signer, then the transaction will be executed once the transaction is proposed.
+Any signer of the multisig wallet can _propose_ a transaction. The _proposer_ automatically approves the transaction upon proposal. The transaction will only be executed when the amount of approvals received equals to the amount of required approvals. A [multisig wallet can be inspected](#inspect-a-multisig-wallet) to get the number of required approvals. If the multisig wallet only requires one signer, then the transaction will be executed once the transaction is proposed.
 
 You can propose a transaction to a multisig wallet that you are a signer of by running
 
