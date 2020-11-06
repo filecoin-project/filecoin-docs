@@ -96,23 +96,9 @@ The list displays:
 - The wallet address of client that submitted it.
 - The size and the duration in epochs (30 seconds per epoch).
 
-## Using filters to limit deals
+## Blocking storage deals by PieceCID
 
-Lotus Miners may want to customize the conditions that deals are accepted. This can be achieved by providing an external program or script in the `Filter` option of the `[Dealmaking]` [section in the configuration](miner-configuration.md).
-
-If the external program exists with a **success status code (0)**, the deal is accepted. Otherwise, the deal gets rejected.
-
-For example, the following filter only accepts deals from clients with specific addresses:
-
-```sh
-Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" or .Proposal.Client == \"t1qiqdbbmrdalbntnuapriirduvxu5ltsc5mhy7si\" '"
-```
-
-[This Perl script](https://gist.github.com/ribasushi/53b7383aeb6e6f9b030210f4d64351d5/9bd6e898f94d20b50e7c7586dc8b8f3a45dab07c#file-dealfilter-pl) is another example. It lets the miner deny specific clients, and to only accept deals that are set to start soon.
-
-## Blocking content
-
-The Lotus Miner provides tooling to import a DataCID-blocklist:
+The Lotus Miner provides internal tooling to import a PieceCID-blocklist:
 
 ```sh
 lotus-miner storage-deals set-blocklist blocklist-file.txt
