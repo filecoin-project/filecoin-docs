@@ -1,6 +1,6 @@
 # Multisig wallet
 
-Multisig(multi-signature) wallet refers to a wallet that requires multiple keys to authorize a FIL transactions.
+A multisig (multi-signature) wallet refers to a wallet that requires multiple keys to authorize a `FIL` transactions.
 
 
 ## Create a multsig wallet
@@ -77,4 +77,3 @@ Transactions:  1
 ID      State    Approvals  To                                         Value   Method   Params
 0       pending  1          t1fjswymsauvfh5zxw34t2pgz7iev2fn56unyw6ci  20 FIL  Send(0)
 ```
-
