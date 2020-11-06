@@ -55,7 +55,7 @@ The value of `transactionID`, `proposerAddress`, `destinationAddress` and `value
 To get the information of a multisig wallet, run
 
 ```bash
-lotus msign inspect walletaddress
+lotus msig inspect walletaddress
 
 > Balance: 0 FIL
 > Spendable: 0 FIL
