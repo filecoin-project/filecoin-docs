@@ -48,7 +48,7 @@ Other signers can use `lotus msig approve` to approve the messages:
 lotus msig approve walletAddress transactionID proposerAddress destinationAddress value
 ```
 
-Note that the value of `transactionID`, `proposerAddress`, `destinationAddress` and `value` must all match the proposal params.
+The value of `transactionID`, `proposerAddress`, `destinationAddress` and `value` must match the values used in the proposal.
 
 ## Inspect a multisig wallet
 
