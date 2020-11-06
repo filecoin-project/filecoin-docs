@@ -52,7 +52,7 @@ The value of `transactionID`, `proposerAddress`, `destinationAddress` and `value
 
 ## Inspect a multisig wallet
 
-To get the information of a multisig wallet, run
+Use `lotus msig inspect` to get information about the multisig wallet:
 
 ```bash
 lotus msig inspect walletaddress
