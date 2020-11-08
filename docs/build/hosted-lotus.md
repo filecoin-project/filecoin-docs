@@ -48,7 +48,7 @@ Here are some steps to get started on Glif Nodes:
 
    :::
 
-   Once downloaded, it order to let the Lotus binary talk to the Lotus remote endpoint, export the following environment variable:
+   Once downloaded, in order to let the Lotus binary talk to the Lotus remote endpoint, export the following environment variable:
 
    ```sh
    export FULLNODE_API_INFO=<token>:<endpoint>
