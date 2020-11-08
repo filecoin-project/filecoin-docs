@@ -3,6 +3,9 @@ title: Filecoin Documentation
 description: The homepage for Filecoin documentation.
 homepage: true
 breadcrumb: Home
+meta:
+  - name: google-site-verification
+    content: emWvbfbFeJZC-qyTitVSeHneuhng4RIaw31c-nb0QZg
 ---
 
 # Filecoin Documentation
