@@ -120,8 +120,7 @@ either exit with 0 (success, proceed with deal) or with non-0 (failure, reject d
 
 - [This Perl script](https://gist.github.com/ribasushi/53b7383aeb6e6f9b030210f4d64351d5/9bd6e898f94d20b50e7c7586dc8b8f3a45dab07c#file-dealfilter-pl) is another example. It lets the miner deny specific clients, and to only accept deals that are set to start relatively soon.
 
-- You could also rely on a third party filtering framework like `bitscreen`
-by Murmuration Labs:
+- You can also use a third party content policy framework like `bitscreen` by Murmuration Labs:
 ```sh
 # grab filter program
 go get -u -v github.com/Murmuration-Labs/bitscreen
