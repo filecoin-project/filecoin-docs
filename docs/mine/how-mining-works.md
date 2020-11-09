@@ -34,7 +34,7 @@ Throughout the lifetime of the deal, the miner submits ongoing proofs to the cha
 
 ## Power and rewards
 
-Each Filecoin miner has an associated _power_ in the network that is proportional to the amount of space contributed and determines the chances to win the right to mine a block in every epoch. By mining blocks, miners obtain _block rewards_ and collect fees for the messages included in that block.
+Each Filecoin miner has an associated _power_ value in the network that is proportional to the amount of space contributed and determines the chances to win the right to mine a block in every epoch. By mining blocks, miners obtain _block rewards_ and collect fees for the messages included in that block.
 
 Additionally, miners submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
