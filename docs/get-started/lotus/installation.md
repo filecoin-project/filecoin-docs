@@ -8,8 +8,6 @@ breadcrumb: 'Install and setup'
 
 {{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
 
-[[TOC]]
-
 ## Minimal requirements
 
 To run a Lotus node, your computer must have:
