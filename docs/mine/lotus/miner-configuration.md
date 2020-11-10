@@ -103,7 +103,7 @@ This section controls parameters for making storage and retrieval deals:
 The final value of `ExpectedSealDuration` should equal `(TIME_TO_SEAL_A_SECTOR + WaitDealsDelay) * 1.5`. This equation ensures that the miner does not commit to having the sector sealed too soon.
 :::
 
-## Using filters for fine-grained Storage and Retrieval Deal acceptance
+## Using filters for fine-grained storage and retrieval deal acceptance
 
 In certain situations it is desirable to have more precise and dynamic control over a combination of deal parameters like for example:
 - cryptographic identity of client
@@ -111,16 +111,23 @@ In certain situations it is desirable to have more precise and dynamic control o
 - content
 - etc.
 
-Lotus provides two IPC hooks allowing you to name a command to execute for
-every deal before it is accepted by the miner: `Filter` for storage deals and `RetrievalFilter` for retrieval deals. The executed command receives a JSON representation of the deal parameters on standard input, and is expected to
-either exit with 0 (success, proceed with deal) or with non-0 (failure, reject deal).
+Lotus provides two IPC hooks allowing you to name a command to execute for every deal before the miner accepts it: 
 
-- The most trivial filter rejecting any retrieval deal would be something like:
-`RetrievalFilter = "/bin/false"`
+- `Filter` for storage deals.
+- `RetrievalFilter` for retrieval deals. 
 
-- [This Perl script](https://gist.github.com/ribasushi/53b7383aeb6e6f9b030210f4d64351d5/9bd6e898f94d20b50e7c7586dc8b8f3a45dab07c#file-dealfilter-pl) is another example. It lets the miner deny specific clients, and to only accept deals that are set to start relatively soon.
+The executed command receives a JSON representation of the deal parameters on standard input, and upon completion its exit code is interpreted as: 
 
-- You can also use a third party content policy framework like `bitscreen` by Murmuration Labs:
+- `0`: success, proceed with the deal. 
+- `non-0`: failure, reject the deal.
+
+The most trivial filter rejecting any retrieval deal would be something like:
+`RetrievalFilter = "/bin/false"`. `/bin/false` is binary that immediately exits with a code of `1`.
+
+[This Perl script](https://gist.github.com/ribasushi/53b7383aeb6e6f9b030210f4d64351d5/9bd6e898f94d20b50e7c7586dc8b8f3a45dab07c#file-dealfilter-pl) lets the miner deny specific clients and only accept deals that are set to start relatively soon.
+
+You can also use a third party content policy framework like `bitscreen` by Murmuration Labs:
+
 ```sh
 # grab filter program
 go get -u -v github.com/Murmuration-Labs/bitscreen
@@ -128,7 +135,6 @@ go get -u -v github.com/Murmuration-Labs/bitscreen
 # add it to both filters
 Filter = "/path/to/go/bin/bitscreen"
 RetrievalFilter = "/path/to/go/bin/bitscreen"
-```
 
 
 ## Sealing section
