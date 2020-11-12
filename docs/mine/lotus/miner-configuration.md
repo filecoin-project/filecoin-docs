@@ -105,11 +105,7 @@ The final value of `ExpectedSealDuration` should equal `(TIME_TO_SEAL_A_SECTOR +
 
 ## Using filters for fine-grained storage and retrieval deal acceptance
 
-In certain situations it is desirable to have more precise and dynamic control over a combination of deal parameters like for example:
-- cryptographic identity of client
-- time of day / resource utilization
-- content
-- etc.
+Your use-case might demand very precise and dynamic control over a combination of deal parameters.
 
 Lotus provides two IPC hooks allowing you to name a command to execute for every deal before the miner accepts it: 
 
