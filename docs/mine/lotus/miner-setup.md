@@ -157,7 +157,7 @@ To summarize all of the above, make sure that:
 Before starting your miner for the first time run:
 
 ```sh
-lotus-miner init --owner=<bls address>  --worker=<other_address> --no-local-storage
+lotus-miner init --owner=<address>  --worker=<address> --no-local-storage
 ```
 
 - The `--no-local-storage` flag is used so that we can later configure [specific locations for storage](custom-storage-layout.md). This is optional but recommended.
