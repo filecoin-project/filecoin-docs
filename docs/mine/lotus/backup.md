@@ -8,10 +8,6 @@ breadcrumb: 'Backup and restore'
 
 {{ $frontmatter.description }}
 
-Always follow the 3-2-1 rule when storing backups:
-
-> Keep at least three (3) copies of your data, and store two (2) backup copies on different storage media, with one (1) of them located offsite. - [Nakivo, 2017](https://www.nakivo.com/blog/3-2-1-backup-rule-efficient-data-protection-strategy/)
-
 ## Backup
 
 1. Create a directory for this backup:
@@ -42,7 +38,9 @@ Always follow the 3-2-1 rule when storing backups:
    cp ~/.lotusminer/config.toml ~/.lotusminer/storage.json /root/lotus-backups/2020-11-15
    ```
 
-The backup is now complete.
+The backup is now complete. Always follow the 3-2-1 rule when storing backups:
+
+> Keep at least three (3) copies of your data, and store two (2) backup copies on different storage media, with one (1) of them located offsite. - [Nakivo, 2017](https://www.nakivo.com/blog/3-2-1-backup-rule-efficient-data-protection-strategy/)
 
 ## Restore
 
