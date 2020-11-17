@@ -54,7 +54,7 @@ lotus msig inspect walletaddress
 
 > Balance: 0 FIL
 > Spendable: 0 FIL
-> Threshold: 2 / 3 # amount of signature required / amount of signers the wallet has
+> Threshold: 2 / 3 # number of signature required / number of signers the wallet has
 > Signers:
 > ID      Address
 > t01001  t1ai2gcr2xlpyxcbjlegojbpr3ovdyfdyzigjoyza
