@@ -99,7 +99,7 @@ lotus client deal <data CID> <miner> <price> <duration>
 
 where the `duration` is expressed in blocks (1 block is equivalent to 30s).
 
-### Multiple deals
+### Securing a deal
 
 Given the network's current speed and stability, users may find that individual deals with miners fail unexpectedly. For this reason, we suggest making up to 10 deals for each [CAR file](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) you want to store. While this may seem a bit over-kill, it's a simple way to increase the chances of a successful deal and your data being stored. This work-around will become less and less necessary as the network matures.
 
