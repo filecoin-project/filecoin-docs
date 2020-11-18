@@ -85,6 +85,7 @@ module.exports = {
                 ['lotus/switch-networks', 'Switch networks'],
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
+                ['lotus/multisig', 'Multi-signature wallets'],
                 ['lotus/chain', 'Chain management'],
                 ['lotus/ledger', 'Ledger wallet'],
                 ['lotus/tips-running-in-china', 'Tips when running in China'],
