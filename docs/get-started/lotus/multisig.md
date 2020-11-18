@@ -2,7 +2,6 @@
 
 A multi-signature (multisig) wallet refers to a wallet that requires multiple keys to authorize a `FIL` transactions.
 
-
 ## Create a multsig wallet
 
 Use `lotus msig create` to a multisig wallet:
@@ -19,7 +18,7 @@ By default, signatures from all signers are required for approving a transaction
 
 ```bash
 lotus msig create --required=2 signerAddress1 signerAddress2 signerAddress3
-````
+```
 
 The above example creates a multisig wallet with three signers, but only requires two approvals for a transaction to be executed.
 
@@ -29,7 +28,7 @@ Any signer of a multisig wallet can _propose_ a transaction. The _proposer_ auto
 
 Use `lotus msig propose` to propose a transaction:
 
-```bash
+````bash
 lotus msig propose --from=proposerAddress walletAddress destinationAddress value
 
 > send proposal in message:  bafy2bzaceajm2mghc5rludlbcr3bnpqgcz5m6gmldq6ycrc4trkejz36tnrqe
@@ -41,7 +40,7 @@ Other signers can use `lotus msig approve` to approve the messages:
 
 ```bash
 lotus msig approve walletAddress transactionID proposerAddress destinationAddress value
-```
+````
 
 The value of `transactionID`, `proposerAddress`, `destinationAddress` and `value` must match the values used in the proposal.
 
@@ -63,3 +62,4 @@ lotus msig inspect walletaddress
 > Transactions:  1
 > ID      State    Approvals  To                                         Value   Method   Params
 > 0       pending  1          t1fjswymsauvfh5zxw34t2pgz7iev2fn56unyw6ci  20 FIL  Send(0)
+```
