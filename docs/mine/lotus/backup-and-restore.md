@@ -10,6 +10,8 @@ breadcrumb: 'Backup and restore'
 
 ## Backup
 
+This process backs-up metadata of the Lotus miner, which is needed to restore the operation. This backup does not include sector data.
+
 1. Create a directory for this backup:
 
    ```bash
