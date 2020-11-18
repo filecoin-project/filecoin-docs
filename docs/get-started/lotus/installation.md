@@ -76,7 +76,7 @@ Make sure your `$PATH` variable is correctly configured after the rustup install
 
 #### Go
 
-To build Lotus, you need a working installation of [Go 1.14 or higher](https://golang.org/dl/):
+To build Lotus, you need a working installation of [Go 1.15.5 or higher](https://golang.org/dl/):
 
 ```bash
 wget -c https://dl.google.com/go/go1.14.7.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
