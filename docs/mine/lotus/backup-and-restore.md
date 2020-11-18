@@ -16,7 +16,7 @@ breadcrumb: 'Backup and restore'
    mkdir -p ~/lotus-backups/2020-11-15
    ```
 
-1. Call `backup` to backup your miner:
+1. Call `backup` to backup your miner and supply the destination for the `backup.cbor` file:
 
    ```bash
    lotus-miner backup /root/lotus-backups/2020-11-15/backup.cbor
@@ -44,10 +44,10 @@ The backup is now complete. Always follow the 3-2-1 rule when storing backups:
 
 ## Restore
 
-1. Copy your backup file to the miner if it is on another computer.
+1. Copy your `backup.cbor`, `config.toml`, and `storage.json` files to the miner if it is on another computer.
 1. Call `restore` to restore your miner from a backup file:
 
-   ```bash
+   ```bash/
    lotus-miner init restore /root/lotus-backups/2020-11-15/backup.cbor
 
    > ...
