@@ -30,6 +30,28 @@ lotus version   # for the currently running daemon
 **You will need to stop and start the daemon again after installing the new version**.
 :::
 
+## Soft-delete the Lotus data
+
+At some point, you may need to soft-delete the [lotus configuration](configuration-and-advanced-usage.md) folder located at `~/.lotus` (or, if manually set, at `$LOTUS_PATH`).  For example, in the case of a network reset where an existing chain is rebooted from scratch. The best way to do this is to move `~/.lotus` into another directory that will not interfere with the Lotus application. Without a `~/.lotus` folder, the Lotus daemon will create a new one on boot, along with a new wallet and chain data.
+
+```bash
+mv ~/.lotus ~/.lotus-pre-reset
+```
+
+If you manually set your `$LOTUS_PATH` variable, find out what the variable is set to, and update it accordingly:
+
+```bash
+echo $LOTUS_PATH
+
+> /root/lotus/.config/lotus
+
+mv /root/lotus/.config/lotus /root/lotus/.config/lotus-pre-reset
+```
+
+::: warning
+Do not **delete** your `~/.lotus` folder unless you are sure you do not need it. It is much safer to _soft-delete_ your `~/.lotus` directory so you can easily recover anything in the future.
+:::
+
 ## Switching networks
 
 If you want to switch networks, read [this guide](switch-networks.md).
