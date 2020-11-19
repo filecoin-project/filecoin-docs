@@ -38,7 +38,7 @@ At some point, you may need to soft-delete the [lotus configuration](configurati
 mv ~/.lotus ~/.lotus-pre-reset
 ```
 
-If you manually set your `$LOTUS_PATH` variable, find out what the variable is set to, and update it accordingly:
+If you manually set your `$LOTUS_PATH` variable, find out what the variable is set to, and move your Lotus data accordingly:
 
 ```bash
 echo $LOTUS_PATH
