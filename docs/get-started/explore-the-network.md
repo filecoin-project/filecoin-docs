@@ -27,19 +27,19 @@ Once you are [setup with Lotus](lotus/README.md) you can use the command line to
 Get the head tipset:
 
 ```sh
-lotus chain get-head
+lotus chain head
 ```
 
 Print a block:
 
 ```sh
-lotus chain get-block <block_cid>
+lotus chain getblock <block_cid>
 ```
 
 Print message information:
 
 ```sh
-lotus chain get-message <message_cid>
+lotus chain getmessage <message_cid>
 ```
 
 For additional chain-related commands check:
