@@ -90,6 +90,8 @@ Benchmark a proof computation using `lotus-bench prove [command options] [argume
 ./lotus-bench prove
 ```
 
+Available options:
+
 | Options              | Description                                                                              |
 | -------------------- | ---------------------------------------------------------------------------------------- |
 | `--no-gpu`           | Disable gpu usage for the benchmark run (default: false).                                |
@@ -127,6 +129,8 @@ Benchmark a sealing computation using `lotus-bench sealing [command options] [ar
 > verify window post proof (hot): 5.629919ms
 ```
 
+Available options:
+
 | Option                                     | Description                                                                                  |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------- |
 | `--storage-dir value`                      | Path to the storage directory that will store sectors long term (default: "~/.lotus-bench"). |
@@ -143,3 +147,39 @@ Benchmark a sealing computation using `lotus-bench sealing [command options] [ar
 | `--help, -h`                               | show help (default: false)                                                                   |
 
 ### Import
+
+Benchmark chain import and validation using `lotus-bench import command [command options] [arguments...]`. For example:
+
+```bash
+./lotus-bench import analyze import.car
+```
+
+Available commands:
+
+| Command   | Description                |
+| --------- | -------------------------- |
+| `analyze` | Analyze a `.car` file.     |
+| `help`    | Show the help information. |
+
+Available options:
+
+| Option                              | Description                                                                                                                                                                                                                             |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--start-tipset value`              | start validation at the given tipset key; in format cid1,cid2,cid3...                                                                                                                                                                   |
+| `--end-tipset value`                | halt validation at the given tipset key; in format cid1,cid2,cid3...                                                                                                                                                                    |
+| `--genesis-tipset value`            | genesis tipset key; in format cid1,cid2,cid3...                                                                                                                                                                                         |
+| `--start-height value`              | start validation at given height; beware that chain traversal by height is very slow (default: 0)                                                                                                                                       |
+| `--end-height value`                | halt validation after given height; beware that chain traversal by height is very slow (default: 0)                                                                                                                                     |
+| `--batch-seal-verify-threads value` | set the parallelism factor for batch seal verification (default: 4)                                                                                                                                                                     |
+| `--repodir value`                   | set the repo directory for the lotus bench run (defaults to /tmp)                                                                                                                                                                       |
+| `--syscall-cache value`             | read and write syscall results from datastore                                                                                                                                                                                           |
+| `--export-traces`                   | should we export execution traces (default: true)                                                                                                                                                                                       |
+| `--no-import`                       | should we import the chain? if set to true chain has to be previously imported (default: false)                                                                                                                                         |
+| `--global-profile`                  | (default: true)                                                                                                                                                                                                                         |
+| `--only-import`                     | (default: false)                                                                                                                                                                                                                        |
+| `--use-pebble`                      | (default: false)                                                                                                                                                                                                                        |
+| `--use-native-badger`               | (default: false)                                                                                                                                                                                                                        |
+| `--car value`                       | path to CAR file; required for import; on validation, either a CAR path or the --head flag are required                                                                                                                                 |
+| `--head value`                      | tipset key of the head, useful when benchmarking validation on an existing chain store, where a CAR is not available; if both --car and --head are provided, --head takes precedence over the CAR root; the format is cid1,cid2,cid3... |
+| `--help, -h`                        | show help (default: false)                                                                                                                                                                                                              |
+| `--version, -v`                     | print the version (default: false)                                                                                                                                                                                                      |
