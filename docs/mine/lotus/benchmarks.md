@@ -8,30 +8,88 @@ breadcrumb: 'Benchmarks'
 
 {{ $frontmatter.description }}
 
-Lotus comes with a [benchmarking tool](https://github.com/filecoin-project/lotus/tree/master/cmd/lotus-bench) that can be used to test how long the different, resource-intensive mining operations take.
+Lotus comes with a [benchmarking tool](https://github.com/filecoin-project/lotus/tree/master/cmd/lotus-bench) that can be used to test how long each resource-intensive mining operation takes.
 
 ## Installation
 
-Run the following command in the Lotus repository folder (that you checked out during the [installation](../../get-started/lotus/installation.md):
+1. You must have the Lotus repository on your computer. If you do not have an existing copy of the repository, [clone it from GitHub](https://github.com/filecoin-project/lotus/):
 
-```
-make lotus-bench
-```
+   ```bash
+   git clone https://github.com/filecoin-project/lotus.git ~/lotus
 
-This will produce a `lotus-bench` binary in the current folder.
+   > Cloning into '/root/lotus'...
+   > remote: Enumerating objects: 93, done.
+   > ...
+   > Resolving deltas: 100% (51531/51531), done.
+   ```
+
+1. The `lotus` binary must be built and within the `~/lotus` repository folder. If you just cloned the repository now, or have misplaced the `lotus` binary, build the project:
+
+   ```bash
+   cd ~/lotus
+   make clean all && make install
+
+
+   > rm -rf  build/.filecoin-install build/.update-modules  lotus lotus-miner lotus-worker lotus-shed lotus-gateway lotus-seed lotus-pond lotus-townhall lotus-fountain lotus-chainwatch lotus-bench lotus-stats lotus-pcr lotus-health lotus-wallet testground
+   > make -C extern/filecoin-ffi/ clean
+   > ...
+   > install -C ./lotus /usr/local/bin/lotus
+   > install -C ./lotus-miner /usr/local/bin/lotus-miner
+   > install -C ./lotus-worker /usr/local/bin/lotus-worker
+   ```
+
+1. Call `make lotus-bench` to build the Lotus benchmark binary:
+
+   ```bash
+   make lotus-bench
+
+   > rm -f lotus-bench
+   > go build -o lotus-bench ./cmd/lotus-bench
+   > ...
+   > go run github.com/GeertJohan/go.rice/rice append --exec lotus-bench -i ./build
+   ```
+
+   This will produce a `lotus-bench` binary in the current folder.
+
+1. You can now run `lotus-bench` against your system.
 
 ## Usage
 
-```sh
-./lotus-bench --help
+Use the self-documenting feature of the tool to explore the different commands.
+
+```bash
+    ./lotus-bench --help
+
+    > NAME:
+    > lotus-bench - Benchmark performance of lotus on your hardware
+    >
+    > USAGE:
+    > lotus-bench [global options] command [command options] [arguments...]
+    >
+    > VERSION:
+    > 1.2.0
+    >
+    > COMMANDS:
+    > prove    Benchmark a proof computation
+    > sealing
+    > import   benchmark chain import and validation
+    > help, h  Shows a list of commands or help for one command
+    >
+    > GLOBAL OPTIONS:
+    > --help, -h     show help (default: false)
+    > --version, -v  print the version (default: false)
 ```
 
-Use the self-documenting feature of the tool to explore the different commands. For example, you can test sealing by running:
+## Commands
 
-```sh
-./lotus-bench sealing --sector-size=2KiB
+### Prove
+
+Benchmark a proof computation using `lotus-bench prove [command options] [arguments...]`. For example:
+
+```bash
+./lotus-bench prove
 ```
 
-Note that benchmarking can take a few sector sizes in storage (e.g. up to 100s of GiB). You can change the directory into which the benchmark stores data using the `storage-dir` flag, set to `~/.lotus-bench` by default.
+### Sealing
 
-Check out the other flags for `./lotus-bench` [here](https://github.com/filecoin-project/lotus/blob/master/cmd/lotus-bench/main.go#L96)
+### Import
