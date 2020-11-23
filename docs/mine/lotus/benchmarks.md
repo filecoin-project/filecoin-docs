@@ -90,6 +90,56 @@ Benchmark a proof computation using `lotus-bench prove [command options] [argume
 ./lotus-bench prove
 ```
 
+| Options              | Description                                                                              |
+| -------------------- | ---------------------------------------------------------------------------------------- |
+| `--no-gpu`           | Disable gpu usage for the benchmark run (default: false).                                |
+| `--miner-addr value` | Pass miner address (only necessary if using existing sectorbuilder) (default: "t01000"). |
+| `--help, -h`         | Show help (default: false).                                                              |
+
 ### Sealing
+
+Benchmark a sealing computation using `lotus-bench sealing [command options] [arguments...]`. For example:
+
+```bash
+./lotus-bench sealing
+
+> 2020-11-23T18:05:22.028Z        INFO    lotus-bench     lotus-bench/main.go:78  Starting lotus-bench
+> ...
+> ----
+> results (v28) (536870912)
+> seal: addPiece: 21.783625761s (23.5 MiB/s)
+> seal: preCommit phase 1: 4m45.456592593s (1.794 MiB/s)
+> seal: preCommit phase 2: 5m39.64126859s (1.507 MiB/s)
+> seal: commit phase 1: 48.158372ms (10.38 GiB/s)
+> seal: commit phase 2: 2m10.561079144s (3.922 MiB/s)
+> seal: verify: 6.236412ms
+> unseal: 3m52.85376877s  (2.199 MiB/s)
+>
+> generate candidates: 231.814µs (2.106 TiB/s)
+> compute winning post proof (cold): 23.405645045s
+> compute winning post proof (hot): 22.507299071s
+> verify winning post proof (cold): 257.502167ms
+> verify winning post proof (hot): 7.473581ms
+>
+> compute window post proof (cold): 7.132316755s
+> compute window post proof (hot): 6.893502363s
+> verify window post proof (cold): 57.524992ms
+> verify window post proof (hot): 5.629919ms
+```
+
+| Option                                     | Description                                                                                  |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------- |
+| `--storage-dir value`                      | Path to the storage directory that will store sectors long term (default: "~/.lotus-bench"). |
+| `--sector-size value`                      | Size of the sectors in bytes, i.e. 32GiB (default: "512MiB").                                |
+| `--no-gpu`                                 | Disable gpu usage for the benchmark run (default: false).                                    |
+| `--miner-addr value`                       | Pass miner address (only necessary if using existing sectorbuilder) (default: "t01000")      |
+| `--benchmark-existing-sectorbuilder value` | pass a directory to run post timings on an existing sectorbuilder                            |
+| `--json-out`                               | output results in json format (default: false)                                               |
+| `--skip-commit2`                           | skip the commit2 (snark) portion of the benchmark (default: false)                           |
+| `--skip-unseal`                            | skip the unseal portion of the benchmark (default: false)                                    |
+| `--save-commit2-input value`               | Save commit2 input to a file                                                                 |
+| `--num-sectors value`                      | (default: 1)                                                                                 |
+| `--parallel value`                         | (default: 1)                                                                                 |
+| `--help, -h`                               | show help (default: false)                                                                   |
 
 ### Import
