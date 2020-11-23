@@ -71,6 +71,14 @@ WARN  main  lotus/main.go:72  routing: not found
 
 This error means that the miner you are trying to talk to is offline.
 
+## RPC Error: request bigger than maximum
+
+```
+ERROR	rpc	go-jsonrpc/server.go:90	RPC Error: request bigger than maximum 104857600 allowed
+```
+
+There is a maximum request size for security reasons in case the RPC server is exposed to external requests. The default is 100 MiB, but that can be adjusted with the `api-max-req-size` CLI argument of the respective CLI command that started the server. In case the command does not have the CLI argument to adjust this, please submit an [issue](https://github.com/filecoin-project/lotus/issues/new?assignees=&labels=area/api&template=bug_report.md&title=Missing api-max-req-size option in Lotus command) requesting it.
+
 ## Signal killed
 
 If you get a `signal killed` error, it could indcate that there was an error during the build process.
