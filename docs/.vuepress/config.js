@@ -141,6 +141,7 @@ module.exports = {
                 ['lotus/message-pool', 'The Message Pool'],
                 ['lotus/seal-workers', 'Seal workers'],
                 ['lotus/benchmarks', 'Benchmarks'],
+                ['lotus/backup-and-restore', 'Backup and restore'],
                 ['lotus/gpus', 'Custom GPUs'],
                 //'lotus/disaster-recovery',
                 ['lotus/tips-running-in-china', 'Tips for running in China'],
