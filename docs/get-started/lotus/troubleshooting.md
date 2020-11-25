@@ -45,14 +45,6 @@ WARN  peermgr peermgr/peermgr.go:131  failed to connect to bootstrap peer: faile
 
 Try running the build steps again and make sure that you have the latest code from GitHub.
 
-## Error: other peer has different genesis!
-
-```sh
-ERROR hello hello/hello.go:81 other peer has different genesis!
-```
-
-Try [reseting the Lotus data folder to a clean state](upgrades.md#nuking-the-lotus-data).
-
 ## Error: repo is already locked
 
 You already have another lotus daemon running. Stop it first (`lotus daemon stop`).
