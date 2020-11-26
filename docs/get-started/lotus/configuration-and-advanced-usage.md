@@ -1,6 +1,6 @@
 ---
 title: 'Lotus: configuration and advanced usage'
-description: 'This guides documents environment variables, configuration and other advanced features in the Lotus Node.'
+description: 'This guide documents environment variables, configuration and other advanced features in the Lotus Node.'
 breadcrumb: 'Configuration and advanced usage'
 ---
 
@@ -44,11 +44,14 @@ The Lotus daemon stores a configuration file in `~/.lotus/config.toml`. Note tha
   Bootstrapper = false
   RemoteTracer = "/dns4/pubsub-tracer.filecoin.io/tcp/4001/p2p/QmTd6UvR47vUidRNZ1ZKXHrAFhqTJAD27rKL9XYghEKgKX"
 
-# This section can be used to enable adding and retriving files from IPFS
+# This section can be used to enable adding and retrieving files from IPFS
 [Client]
   UseIpfs = false
   IpfsMAddr = ""
   IpfsUseForRetrieval = false
+  # The maximum number of simultaneous data transfers between the client
+  # and storage providers
+  SimultaneousTransfers = 20
 
 # Metrics configuration
 [Metrics]
