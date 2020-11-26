@@ -119,6 +119,15 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
+   Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
+
+   ```sh
+   export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+   export CGO_CFLAGS="-D__BLST_PORTABLE__"
+   ```
+
+   This is due to a Lotus bug that prevents Lotus from running on processor without `adx` instruction support, and should be fixed soon.
+
 1. Build and install Lotus:
 
    ```sh
