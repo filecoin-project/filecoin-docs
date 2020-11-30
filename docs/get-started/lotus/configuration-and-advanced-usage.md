@@ -66,7 +66,7 @@ Usually your lotus daemon will establish connectivity with others in the network
 
 - Set a fixed port of your choice in the `ListenAddresses` in the Libp2p section (i.e. 6665).
 - Open a port in your router that is forwarded to this port. This is usually called featured as "Port forwarding" and the instructions differ from router model to model but there are many guides online.
-- Add your public IP/port to `AnnounceAddresses`. i.e. `/ip4/<yourIP>/tcp/6665/`.
+- Add your public IP/port to `AnnounceAddresses`. i.e. `/ip4/<yourIP>/tcp/6665`.
 
 Note that **it is not a requirement to use Lotus as a client to the network to be fully reachable**, as your node already dials-out to others nodes and miners directly.
 
