@@ -21,7 +21,8 @@ Unlike bare Lotus, the endpoint above is hardened and limited:
 For synced testnet node endpoints using the [JSON RPC API](../reference/lotus-api.md), `https://calibration.node.glif.io` is available.
 
 #### Custom endpoints
-Additionally, custom endpoints can be requested, including advanced permission settings. Let us know your use case.
+
+Custom endpoints can be requested, including advanced permission settings. Let us know your use case.
 
 ::: tip
 For support, questions and current status, visit the [#fil-glif-node-hosting](https://filecoinproject.slack.com/archives/C017HM9BJ8Z) channel in [Filecoin Community Slack](https://filecoin.io/slack).
