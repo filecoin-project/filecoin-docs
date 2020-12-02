@@ -227,7 +227,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
 
-1. If you are building Lotus 0.7.1 or older and have an Intel or AMD processor without the ADX instruction set, add the `CGO_CFLAGS` environment variable:
+1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
 
    ```sh
    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
