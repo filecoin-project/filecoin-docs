@@ -89,6 +89,8 @@ Variables common to most Lotus binaries:
 Variables specific to the _Lotus daemon_:
 
 - `LOTUS_PATH`: Location to store Lotus data (defaults to `~/.lotus`).
+- `LOTUS_MAX_HEAP` (v1.2.3+): Maximum heap size that the [memory watchdog](https://github.com/raulk/go-watchdog) will try to respect. Values are a numeric byte amount (`12345678`) or a storage unit in metric system (e.g. `16GiB`). If not set, the memory watchdog will use the total system memory as a limit for the memory watchdog. The memory watchdog is necessary to overcome [GC-related shortcomings](https://github.com/golang/go/issues/42805) in the Go runtime.
+- `LOTUS_DISABLE_WATCHDOG=1` (v1.2.3+): If set, will disable the memory watchdog. May be necessary in environments where the OS/kernel doesn't report correct information.
 - `LOTUS_SKIP_GENESIS_CHECK=_yes_`: Set only if you wish to run a lotus network with a different genesis block.
 - `LOTUS_CHAIN_TIPSET_CACHE`: Sets the size for the chainstore tipset cache. Defaults to `8192`. Increase if you perform frequent arbitrary tipset lookups.
 - `LOTUS_CHAIN_INDEX_CACHE`: Sets the size for the epoch index cache. Defaults to `32768`. Increase if you perform frequent deep chain lookups for block heights far from the latest height.
