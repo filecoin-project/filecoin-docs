@@ -129,5 +129,5 @@ When the amount of data to be transmitted is [very large](../../store/lotus/very
 In this case, the miner will have to import the storage deal data manually with the following command:
 
 ```sh
-lotus-miner deals import-data <dealCid> <filePath>
+lotus-miner storage-deals import-data <dealCid> <filePath>
 ```
