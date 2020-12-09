@@ -136,7 +136,9 @@ As of 2020-12-09, this feature is enabled within the [`master` branch of `fileco
    ```bash
    lotus wallet list -i
 
-
+    > Address                                                                                 ID        Balance                   Nonce  Default
+    > f3rhtyuum2xia4nrtvfghqqa4aivpanc4cur22k3elrmqy25siyjw7d35rcykwzvc35htbog2b7dwy66d227kq  f0100933  0.59466768102284489 FIL   1      X
+    > f3sxsxqo2i2efw5oco7ml6mdzby42porzbnbkw7xbqkzzstrvk3aybvcuxwtcd6lib2osqxls62msb6iioocoq  f0100939  0.4 FIL                   0
    ```
 
 1. Add control addresses:
