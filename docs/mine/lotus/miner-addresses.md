@@ -137,8 +137,8 @@ As of 2020-12-09, this feature is enabled within the [`master` branch of `fileco
    lotus wallet list -i
 
     > Address                                                                                 ID        Balance                   Nonce  Default
-    > f3rhtyuum2xia4nrtvfghqqa4aivpanc4cur22k3elrmqy25siyjw7d35rcykwzvc35htbog2b7dwy66d227kq  f0100933  0.59466768102284489 FIL   1      X
-    > f3sxsxqo2i2efw5oco7ml6mdzby42porzbnbkw7xbqkzzstrvk3aybvcuxwtcd6lib2osqxls62msb6iioocoq  f0100939  0.4 FIL                   0
+    > f3rht...  f0100933  0.59466768102284489 FIL   1      X
+    > f3sxs...  f0100939  0.4 FIL                   0
    ```
 
 1. Add control addresses:
@@ -156,18 +156,19 @@ As of 2020-12-09, this feature is enabled within the [`master` branch of `fileco
    ```
 
 1. Restart `lotus-miner`.
-1. Check `lotus-miner actor control list`:
 
-   ```bash
-   lotus-miner actor control list
+You can run `lotus-miner actor control list` to check all the accounts that you have set up:
 
-   > name       ID      key           use        balance
-   > owner      t0100   t3qjeopnj...  other      4999939.999818471486715073 FIL
-   > worker     t0100   t3qjeopnj...  other      4999939.999818471486715073 FIL
-   > control-0  t01003  t1jmtyeyi...  post       19.999968525034269047 FIL
-   > control-1  t01002  t1ssrtzxf...  commit     19.999995140976892322 FIL
-   > control-2  t01001  t1yqcbo2a...  precommit  19.999998703067058983 FIL
-   ```
+```bash
+lotus-miner actor control list
+
+> name       ID      key           use        balance
+> owner      t0100   t3qjeopnj...  other      4999939.999818471486715073 FIL
+> worker     t0100   t3qjeopnj...  other      4999939.999818471486715073 FIL
+> control-0  t01003  t1jmtyeyi...  post       19.999968525034269047 FIL
+> control-1  t01002  t1ssrtzxf...  commit     19.999995140976892322 FIL
+> control-2  t01001  t1yqcbo2a...  precommit  19.999998703067058983 FIL
+```
 
 ## Managing balances
 
