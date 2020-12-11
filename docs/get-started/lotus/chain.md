@@ -84,7 +84,7 @@ lotus chain export <filename>
 A pruned snapshot can be created with:
 
 ```sh
-lotus export --skip-old-msgs --recent-stateroots=900 <filename>
+lotus chain export --skip-old-msgs --recent-stateroots=2000 <filename>
 ```
 
 where the `--recent-stateroots` flag specifies how many state roots to export. `--skip-old-msgs` will only include blocks directly referenced by the exported state roots.

@@ -6,7 +6,6 @@
 /go-filecoin-tutorial/*  https://go.filecoin.io/go-filecoin-tutorial/:splat
 /networks/ https://networks.filecoin.io
 
-/introduction/ /
 /introduction/what-is-filecoin/ /about-filecoin/what-is-filecoin/
 /introduction/why-filecoin/ /about-filecoin/why-filecoin/
 /introduction/ipfs-and-filecoin/ /about-filecoin/ipfs-and-filecoin/
@@ -40,7 +39,6 @@
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
-/build/start-building/deploy-your-application-to-the-filecoin-testnet/ / 404
 /build/start-building/implementations/ /get-started/
 /build/examples/sample-architectures/ /build/examples/
 /build/reference/lotus-api/ /reference/lotus-api/
@@ -62,6 +60,11 @@
 /build/core-products/powergate/ /build/powergate/
 /build/core-products/protocol-implementations/ /software/
 /build/developer-tools/wallets-signing-tools-api-clients/ /build/signing-libraries/
+
+# removed pages, 301 index redirect
+/introduction/ /
+/build/start-building/deploy-your-application-to-the-filecoin-testnet/ /
+/build/onboard-testnet/ /
 
 # use a custom 404 for any pages that are not rendered
 /* /404/index.html 404

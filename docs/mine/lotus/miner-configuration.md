@@ -89,8 +89,12 @@ This section controls parameters for making storage and retrieval deals:
   PieceCidBlocklist = []
   # How long the sealing process for a sector should take (see below)
   ExpectedSealDuration = "12h0m0s"
-  # A filter expression to only accept very specific deals (see below)
-  Filter = ""
+
+  # A command used for fine-grained evaluation of storage deals (see below)
+  Filter = "/absolute/path/to/storage_filter_program"
+
+  # A command used for fine-grained evaluation of retrieval deals (see below)
+  RetrievalFilter = "/absolute/path/to/retrieval_filter_program"
 ```
 
 `ExpectedSealDuration` is an estimate of how long sealing will take, and is used to reject deals whose start epoch might be earlier than the expected completion of sealing. It can be estimated by [benchmarking](benchmarks.md) or by [pledging a sector](sector-pledging.md).
@@ -99,9 +103,35 @@ This section controls parameters for making storage and retrieval deals:
 The final value of `ExpectedSealDuration` should equal `(TIME_TO_SEAL_A_SECTOR + WaitDealsDelay) * 1.5`. This equation ensures that the miner does not commit to having the sector sealed too soon.
 :::
 
-To filter deals based on certain parameters, modify the `Filter` param. This param should be a shell command that will be run when processing a deal proposal. Deals are accepted if the Filter's exit code is 0. For any other exit code, deals will be rejected.
+## Using filters for fine-grained storage and retrieval deal acceptance
 
-For information on how to enable and disable deals and examples on filter usage see the [Storage Deals guide](manage-storage-deals.md).
+Your use-case might demand very precise and dynamic control over a combination of deal parameters.
+
+Lotus provides two IPC hooks allowing you to name a command to execute for every deal before the miner accepts it: 
+
+- `Filter` for storage deals.
+- `RetrievalFilter` for retrieval deals. 
+
+The executed command receives a JSON representation of the deal parameters on standard input, and upon completion its exit code is interpreted as: 
+
+- `0`: success, proceed with the deal. 
+- `non-0`: failure, reject the deal.
+
+The most trivial filter rejecting any retrieval deal would be something like:
+`RetrievalFilter = "/bin/false"`. `/bin/false` is binary that immediately exits with a code of `1`.
+
+[This Perl script](https://gist.github.com/ribasushi/53b7383aeb6e6f9b030210f4d64351d5/9bd6e898f94d20b50e7c7586dc8b8f3a45dab07c#file-dealfilter-pl) lets the miner deny specific clients and only accept deals that are set to start relatively soon.
+
+You can also use a third party content policy framework like `bitscreen` by Murmuration Labs:
+
+```sh
+# grab filter program
+go get -u -v github.com/Murmuration-Labs/bitscreen
+
+# add it to both filters
+Filter = "/path/to/go/bin/bitscreen"
+RetrievalFilter = "/path/to/go/bin/bitscreen"
+
 
 ## Sealing section
 

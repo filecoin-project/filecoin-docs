@@ -17,7 +17,7 @@ This section covers an "online" data import and is mostly suitable for smaller p
 In order to successfully add data to the Filecoin network the following steps need to be completed successfully:
 
 1. Data must be packed into a [CAR file](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md).
-2. A storage deal between a miner and a client (in this case the running Lotus Node) must be initiated and accepted by the miner.
+2. A storage deal between a miner and a client must be initiated and accepted by the miner.
 3. The data must be transferred to the miner.
 4. The miner must place the data in a sector, seal it and start submitting proofs to the network.
 
@@ -98,6 +98,10 @@ lotus client deal <data CID> <miner> <price> <duration>
 ```
 
 where the `duration` is expressed in blocks (1 block is equivalent to 30s).
+
+### Securing a deal
+
+Given the network's current speed and stability, users may find that individual deals with miners fail unexpectedly. For this reason, we suggest making up to 10 deals for each [CAR file](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) you want to store. While this may seem a bit over-kill, it's a simple way to increase the chances of a successful deal and your data being stored. This work-around will become less and less necessary as the network matures.
 
 ## Checking deal status
 

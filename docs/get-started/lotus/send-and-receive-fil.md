@@ -14,8 +14,22 @@ To receive and send FIL with Lotus, you will need to have a [Lotus node installe
 
 ## Creating a wallet
 
+### Create a BLS wallet
+
 ```bash
 lotus wallet new bls
+```
+
+### Create a secp256k1 wallet
+
+```bash
+lotus wallet new
+```
+
+### Create a multisig wallet
+
+```bash
+lotus msig create address1 address2..
 ```
 
 This will create a new address and print it. You can distinguish mainnet from testnet addresses because they start with `f` for mainnet and `t` for testnets.
@@ -60,16 +74,24 @@ Remember that you will only see the latest balance when your daemon is fully syn
 
 ## Sending FIL
 
-Send FIL from the _default addresss_ by running:
+Use the `send` command followed by the receiving address and the amount of `FIL` you want to send
 
 ```bash
-lotus send <target address> <FIL amount>
+# lotus send <target address> <FIL amount>
+lotus send f1zp2... 3
+
+> bafy1...
 ```
 
-To send FIL from a specific address:
+Lotus will output a transaction hash after a successful transaction. You can view details of this transaction using a [Filecoin explorer](https://docs.filecoin.io/get-started/explore-the-network/#block-explorers).
+
+Lotus assumes you want to send `FIL` from the _default address_. To send FIL from a specific address, use `--from` followed by the address you want to send `FIL` from. This address must have been created or imported to your Lotus node.
 
 ```bash
-lotus send --from=<sender address> <target address> <FIL amount>
+# lotus send --from=<sender address> <target address> <FIL amount>
+lotus send --from f1zp2... f15zt... 3.141
+
+> bafy2...
 ```
 
 For advanced sending options:
@@ -77,6 +99,8 @@ For advanced sending options:
 ```bash
 lotus send --help
 ```
+
+### Transaction fees
 
 Every transaction that sends `FIL` pays an additional fee based on its _gas_ usage. Gas and fees are explained in the [How Filecoin Works guide](../../about-filecoin/how-filecoin-works.md). By default, Lotus automatically sets all the necessary values. However, you may want to use the `--gas-feecap` flag in the `send` command to avoid surprises when network congestion is high. For more information about messages and fees, see the [Message Pool guide](../../mine/lotus/message-pool.md) and [Gas fees](../../about-filecoin/how-filecoin-works/#gas-fees) sections.
 

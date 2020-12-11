@@ -65,7 +65,7 @@ lotus-miner storage-deals set-ask \
   --max-piece-size 32GB
 ```
 
-The above command sets the price for deals to `0.0000001 attoFIL` (`100 nanoFIL`) per GiB, per epoch. This means, a client will have to pay `100 nanoFIL` every 30 seconds for each GiB stored. If the client wants 5GiB stored over the course of a week, the total price will be: `5GiB * 100nanoFIL/GiB_Epoch * 20160 Epochs = 10080 microFIL`.
+The above command sets the price for deals to `0.0000001 FIL` (`100 nanoFIL`) per GiB, per epoch. This means, a client will have to pay `100 nanoFIL` every 30 seconds for each GiB stored. If the client wants 5GiB stored over the course of a week, the total price will be: `5GiB * 100nanoFIL/GiB_Epoch * 20160 Epochs = 10080 microFIL`.
 
 The command also serves to set the minimum and maximum deal sizes. Be sure to check `lotus-miner storage-deals set-ask --help` to see all options.
 
@@ -96,23 +96,9 @@ The list displays:
 - The wallet address of client that submitted it.
 - The size and the duration in epochs (30 seconds per epoch).
 
-## Using filters to limit deals
+## Blocking storage deals by PieceCID
 
-Lotus Miners may want to customize the conditions that deals are accepted. This can be achieved by providing an external program or script in the `Filter` option of the `[Dealmaking]` [section in the configuration](miner-configuration.md).
-
-If the external program exists with a **success status code (0)**, the deal is accepted. Otherwise, the deal gets rejected.
-
-For example, the following filter only accepts deals from clients with specific addresses:
-
-```sh
-Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" or .Proposal.Client == \"t1qiqdbbmrdalbntnuapriirduvxu5ltsc5mhy7si\" '"
-```
-
-[This Perl script](https://gist.github.com/ribasushi/53b7383aeb6e6f9b030210f4d64351d5/9bd6e898f94d20b50e7c7586dc8b8f3a45dab07c#file-dealfilter-pl) is another example. It lets the miner deny specific clients, and to only accept deals that are set to start soon.
-
-## Blocking content
-
-The Lotus Miner provides tooling to import a DataCID-blocklist:
+The Lotus Miner provides internal tooling to import a PieceCID-blocklist:
 
 ```sh
 lotus-miner storage-deals set-blocklist blocklist-file.txt
@@ -143,5 +129,5 @@ When the amount of data to be transmitted is [very large](../../store/lotus/very
 In this case, the miner will have to import the storage deal data manually with the following command:
 
 ```sh
-lotus-miner deals import-data <dealCid> <filePath>
+lotus-miner storage-deals import-data <dealCid> <filePath>
 ```

@@ -65,5 +65,3 @@ Note that the [Lotus](lotus/README.md) implementation allows to configure and de
 ## About hardware requirements
 
 The above requirements will not increase in the presumable future, and money spent on hardware should provide users with many years of reliable service, paying for themselves several times over.
-
-Filecoin allows to launch a small cloud storage business for a few thousand dollars directly from home, where it would cost millions in infrastructure and logistics to get off the ground in the current data hosting model.

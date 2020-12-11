@@ -1,6 +1,6 @@
 ---
 title: 'Lotus: configuration and advanced usage'
-description: 'This guides documents environment variables, configuration and other advanced features in the Lotus Node.'
+description: 'This guide documents environment variables, configuration and other advanced features in the Lotus Node.'
 breadcrumb: 'Configuration and advanced usage'
 ---
 
@@ -44,11 +44,14 @@ The Lotus daemon stores a configuration file in `~/.lotus/config.toml`. Note tha
   Bootstrapper = false
   RemoteTracer = "/dns4/pubsub-tracer.filecoin.io/tcp/4001/p2p/QmTd6UvR47vUidRNZ1ZKXHrAFhqTJAD27rKL9XYghEKgKX"
 
-# This section can be used to enable adding and retriving files from IPFS
+# This section can be used to enable adding and retrieving files from IPFS
 [Client]
   UseIpfs = false
   IpfsMAddr = ""
   IpfsUseForRetrieval = false
+  # The maximum number of simultaneous data transfers between the client
+  # and storage providers
+  SimultaneousTransfers = 20
 
 # Metrics configuration
 [Metrics]
@@ -66,7 +69,7 @@ Usually your lotus daemon will establish connectivity with others in the network
 
 - Set a fixed port of your choice in the `ListenAddresses` in the Libp2p section (i.e. 6665).
 - Open a port in your router that is forwarded to this port. This is usually called featured as "Port forwarding" and the instructions differ from router model to model but there are many guides online.
-- Add your public IP/port to `AnnounceAddresses`. i.e. `/ip4/<yourIP>/tcp/6665/`.
+- Add your public IP/port to `AnnounceAddresses`. i.e. `/ip4/<yourIP>/tcp/6665`.
 
 Note that **it is not a requirement to use Lotus as a client to the network to be fully reachable**, as your node already dials-out to others nodes and miners directly.
 
@@ -86,6 +89,8 @@ Variables common to most Lotus binaries:
 Variables specific to the _Lotus daemon_:
 
 - `LOTUS_PATH`: Location to store Lotus data (defaults to `~/.lotus`).
+- `LOTUS_MAX_HEAP` (v1.2.3+): Maximum heap size that the [memory watchdog](https://github.com/raulk/go-watchdog) will try to respect. Values are a numeric byte amount (`12345678`) or a storage unit in metric system (e.g. `16GiB`). If not set, the memory watchdog will use the total system memory as a limit for the memory watchdog. The memory watchdog is necessary to overcome [GC-related shortcomings](https://github.com/golang/go/issues/42805) in the Go runtime.
+- `LOTUS_DISABLE_WATCHDOG=1` (v1.2.3+): If set, will disable the memory watchdog. May be necessary in environments where the OS/kernel doesn't report correct information.
 - `LOTUS_SKIP_GENESIS_CHECK=_yes_`: Set only if you wish to run a lotus network with a different genesis block.
 - `LOTUS_CHAIN_TIPSET_CACHE`: Sets the size for the chainstore tipset cache. Defaults to `8192`. Increase if you perform frequent arbitrary tipset lookups.
 - `LOTUS_CHAIN_INDEX_CACHE`: Sets the size for the epoch index cache. Defaults to `32768`. Increase if you perform frequent deep chain lookups for block heights far from the latest height.

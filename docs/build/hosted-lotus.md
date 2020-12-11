@@ -1,6 +1,6 @@
 ---
 title: 'Glif Nodes'
-description: 'Glif provides a limited number of dedicated, up-to-date Lotus nodes on the Filecoin testnets and mainnet.'
+description: 'Glif provides a number of synced Lotus node endpoints on the Filecoin testnets and mainnet.'
 breadcrumb: 'Hosted nodes'
 ---
 
@@ -8,14 +8,21 @@ breadcrumb: 'Hosted nodes'
 
 {{ $frontmatter.description }}
 
-Developers can interact directly a pool of synced nodes using the [JSON RPC API](../reference/lotus-api.md) on the `https://api.node.glif.io` endpoint (or `https://api.node.glif.io/rpc/v0`).
+#### Mainnet endpoint
+Developers can interact directly with load-balanced, synced mainnet nodes using the [JSON RPC API](../reference/lotus-api.md) on the `https://api.node.glif.io` endpoint (or `https://api.node.glif.io/rpc/v0`).
 
 Unlike bare Lotus, the endpoint above is hardened and limited:
 
 - Only read calls and `MPoolPush()` are supported.
+- Only POST requests are supported.
 - The [Filecoin signing tools](signing-libraries.md) can be used to sign messages before submission when needed.
 
-Additionally, custom nodes can be requested, including nodes with [Powergate](hosted-powergate.md) and advanced permission settings.
+#### Testnet endpoint
+For synced testnet node endpoints using the [JSON RPC API](../reference/lotus-api.md), `https://calibration.node.glif.io` is available.
+
+#### Custom endpoints
+
+Custom endpoints can be requested, including advanced permission settings. Let us know your use case.
 
 ::: tip
 For support, questions and current status, visit the [#fil-glif-node-hosting](https://filecoinproject.slack.com/archives/C017HM9BJ8Z) channel in [Filecoin Community Slack](https://filecoin.io/slack).
@@ -48,7 +55,7 @@ Here are some steps to get started on Glif Nodes:
 
    :::
 
-   Once downloaded, it order to let the Lotus binary talk to the Lotus remote endpoint, export the following environment variable:
+   Once downloaded, in order to let the Lotus binary talk to the Lotus remote endpoint, export the following environment variable:
 
    ```sh
    export FULLNODE_API_INFO=<token>:<endpoint>

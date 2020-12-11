@@ -8,8 +8,6 @@ breadcrumb: 'Install and setup'
 
 {{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
 
-[[TOC]]
-
 ## Minimal requirements
 
 To run a Lotus node, your computer must have:
@@ -34,13 +32,35 @@ You will need the following software installed to install and run Lotus.
 
 Building Lotus requires some system dependencies, usually provided by your distribution.
 
-| Linux distribution | Dependency install command                                                                                                                                                                          |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Arch Linux         | `sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers hwloc`                                                                                               |
-| Ubuntu/Debian      | `sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential libhwloc-dev -y && sudo apt upgrade -y`                                                   |
-| Fedora             | `sudo dnf -y install gcc make git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm wget hwloc`                                                  |
-| OpenSUSE           | `sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm hwloc && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so`                                           |
-| Amazon Linux 2     | `sudo yum install -y https://dl.fedoraproject.org/pub/epel/epest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel hwloc` |
+Arch:
+
+```bash
+sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers hwloc
+```
+
+Ubuntu/Debian:
+
+```bash
+sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev -y && sudo apt upgrade -y
+```
+
+Fedora:
+
+```bash
+sudo dnf -y install gcc make git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm wget hwloc libhwloc-dev
+```
+
+OpenSUSE:
+
+```bash
+sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm hwloc && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so
+```
+
+Amazon Linux 2:
+
+```bash
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel hwloc-devel
+```
 
 #### Rustup
 
@@ -56,10 +76,10 @@ Make sure your `$PATH` variable is correctly configured after the rustup install
 
 #### Go
 
-To build Lotus, you need a working installation of [Go 1.14 or higher](https://golang.org/dl/):
+To build Lotus, you need a working installation of [Go 1.15.5 or higher](https://golang.org/dl/):
 
 ```bash
-wget -c https://dl.google.com/go/go1.14.7.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+wget -c https://golang.org/dl/go1.15.5.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
 Make sure that `/usr/local/go/bin` is in your `PATH`. If you are running into problems, check the [official Go installation instructions](https://golang.org/doc/install) for your operating system.
@@ -75,7 +95,9 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-1. Checkout the branch corresponding to the network you want to join. If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+1. Checkout the branch corresponding to the network you want to join. If you want to run the _latest_ version of Lotus on `mainnet`, checkout to the `master` branch. If you want to use a specific release, then see the [Releases section in GitHub](https://github.com/filecoin-project/lotus/releases/tag/v1.2.1).
+
+    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
 
    ```sh
    git checkout <branch_or_tag>
@@ -99,7 +121,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-   If you are building Lotus 0.7.1 or older and have an Intel or AMD processor without the ADX instruction set, add the `CGO_CFLAGS` environment variable:
+   Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
 
    ```sh
    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
@@ -205,7 +227,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
 
-1. If you are building Lotus 0.7.1 or older and have an Intel or AMD processor without the ADX instruction set, add the `CGO_CFLAGS` environment variable:
+1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
 
    ```sh
    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
