@@ -97,7 +97,7 @@ To set up a _control address_:
    ```sh
    lotus-miner actor control list
 
-   > name       ID      key           use    balance
+   > name       ID      key        use    balance
    > owner      t01111  f3abcd...  other  300 FIL
    > worker     t01111  f3abcd...  other  300 FIL
    > control-0  t02222  f3defg...  post   100 FIL
@@ -109,9 +109,9 @@ Repeat this procedure to add additional addresses.
 
 Clean up the tasks required for your worker address by setting your control addresses to perform pre-commits and commits. With this, only market messages are sent from the worker address. If the basefee is high, then you can still put sectors on chain without those messages being blocked by things like publishing deals.
 
-As of 2020-12-09, this feature is enabled within the [`master` branch of `filecoin-project/lotus`](https://github.com/filecoin-project/lotus/), but is not yet within a tagged release. You need to build Lotus from GitHub using the `master` branch to use this feature.
+This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoin-project/lotus`](https://github.com/filecoin-project/lotus/), but is not yet within a tagged release. You need to build Lotus from GitHub using the `master` branch to use this feature.
 
-1. Create 2 control addresses:
+1. Create two control addresses. Control addresses can be any _type_ of address: `secp256k1 ` or `bls`:
 
    ```bash
    lotus wallet new bls
@@ -124,30 +124,42 @@ As of 2020-12-09, this feature is enabled within the [`master` branch of `fileco
 
    lotus wallet list
 
-   > Address                                                                                 Balance  Nonce  Default
+   > Address   Balance  Nonce  Default
    > f3rht...  0 FIL    0      X
    > f3sxs...  0 FIL    0
    ```
 
-1. Add some funds into those two addresses.
-1. Wait for around 5 minutes for the addresses to be assigned IDs.
-1. Get ID of those addresses:
+2. Add some funds into those two addresses.
+3. Wait for around 5 minutes for the addresses to be assigned IDs.
+4. Get ID of those addresses:
 
    ```bash
    lotus wallet list -i
 
-    > Address                                                                                 ID        Balance                   Nonce  Default
+    > Address   ID        Balance                   Nonce  Default
     > f3rht...  f0100933  0.59466768102284489 FIL   1      X
     > f3sxs...  f0100939  0.4 FIL                   0
    ```
 
-1. Add control addresses:
+5. Add control addresses:
 
    ```bash
-   lotus-miner actor control set [old + existing addresses] --really-do-it
+   lotus-miner actor control set --really-do-it=true f0100933 f0100939
+
+    > Add f3rht...
+    > Add f3sxs...
+    > Message CID: bafy2bzacecfryzmwe5ghsazmfzporuybm32yw5q6q75neyopifps3c3gll6aq
+
+    lotus actor control list
+
+    > name       ID      key        use    balance
+    > owner      t01...  f3abcd...  other  15 FIL
+    > worker     t01...  f3abcd...  other  10 FIL
+    > control-0  t02...  f3defg...  post   100 FIL
+    > control-1  t02...  f3defg...  post   100 FIL
    ```
 
-1. Add the newly created addresses into the miner config under the `[Addresses]` section:
+6. Add the newly created addresses into the miner config under the `[Addresses]` section:
 
    ```yaml
    [Addresses]
@@ -155,20 +167,7 @@ As of 2020-12-09, this feature is enabled within the [`master` branch of `fileco
        CommitControl = ["f3sxs..."]
    ```
 
-1. Restart `lotus-miner`.
-
-You can run `lotus-miner actor control list` to check all the accounts that you have set up:
-
-```bash
-lotus-miner actor control list
-
-> name       ID      key           use        balance
-> owner      t0100   t3qjeopnj...  other      4999939.999818471486715073 FIL
-> worker     t0100   t3qjeopnj...  other      4999939.999818471486715073 FIL
-> control-0  t01003  t1jmtyeyi...  post       19.999968525034269047 FIL
-> control-1  t01002  t1ssrtzxf...  commit     19.999995140976892322 FIL
-> control-2  t01001  t1yqcbo2a...  precommit  19.999998703067058983 FIL
-```
+7. Restart `lotus-miner`.
 
 ## Managing balances
 
