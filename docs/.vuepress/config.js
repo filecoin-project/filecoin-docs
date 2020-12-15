@@ -144,8 +144,7 @@ module.exports = {
           ],
 
           '/build/': [
-            //'the-filecoin-ecosystem',
-            //'textile-buckets',
+            'get-started',
             'textile-buckets',
             'hosted-powergate',
             'hosted-lotus',
@@ -154,7 +153,7 @@ module.exports = {
               title: 'Lotus',
               path: '/build/lotus/',
               sidebarDepth: 2,
-              collapsable: false,
+              collapsable: true,
               children: [
                 ['lotus/enable-remote-api-access', 'Enable remote API access'],
                 ['lotus/api-tokens', 'API tokens'],
@@ -171,7 +170,7 @@ module.exports = {
               title: 'Example apps',
               path: '/build/examples/',
               sidebarDepth: 2,
-              collapsable: false,
+              collapsable: true,
               children: [
                 {
                   title: 'Simple Pinning Service',
