@@ -6,24 +6,22 @@ breadcrumb: ''
 
 # {{ $frontmatter.title }}
 
-# {{ $frontmatter.description }}
+{{ $frontmatter.description }}
 
-## Ready, set, go!
-
-### Become familiar with the concepts
+## Become familiar with the concepts
 
 - Read [How Filecoin Works](../about-filecoin/how-filecoin-works.md) and [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md).
 - Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look.
 - Check out the [existing networks](https://networks.filecoin.io).
 - Explore the mainnet using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for miners. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
 
-### Store content on Filecoin
+## Store content on Filecoin
 
 - Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](lotus/README.md). Setup your first wallet and learn how to [send and receive ⨎](lotus/send-and-receive-fil.md) and [make storage deals](../store/lotus/store-data.md).
 - Use [Starling](../store/starling.md) to simplify the management of storage deals in Lotus.
 
-### Contribute to Filecoin
+## Contribute to Filecoin
 
 - [Mine Filecoin](../mine/README.md): for those wanting to provide storage and retrieval capabilities to the Network.
 - [Build on Filecoin](../build/README.md): for those wanting to build applications that interact with the Filecoin network.
@@ -38,7 +36,7 @@ breadcrumb: ''
 | [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets and Powergate.                                                                                                                      |
 | [Starling](../store/starling.md)                                 | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
 
-### Wallets
+## Wallets
 
 | Name                                             |                                                                                                                                                                                             |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -46,7 +44,7 @@ breadcrumb: ''
 | [Glif wallet](https://wallet.glif.io/?network=f) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
 | [Filfox Wallet](https://wallet.filfox.info/en)   | A web-based wallet.                                                                                                                                                                         |
 
-### Filecoin implementations
+## Filecoin implementations
 
 There are 4 Filecoin protocol implementations (or “node software”) currently in progress:
 
