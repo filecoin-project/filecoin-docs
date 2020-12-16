@@ -20,6 +20,20 @@ breadcrumb: 'Ledger wallet'
 
 1. You should now be able to search and install the **Filecoin** app in the _manager_ section of the application.
 
+
+## Ledger Wallet UI Options
+
+
+#### Glif Wallet
+Ledger Live does not support Filecoin in the official UI yet, but you can use Ledger hardware with the Glif wallet at https://www.glif.io. Glif is open source, plus it and the [Filecoin Ledger integration library](https://github.com/Zondax/ledger-filecoin/) it uses have both been security audited by a 3rd party.
+
+#### Lotus 
+You can also use a Filecoin Lotus node with Ledger hardware, see the instructions below.
+
+#### Note about BLS
+The Ledger Hardware Filecoin integration does not currently support BLS addresses, only secp256k1, but BLS support will be added in the near future.
+
+
 ## Setup Lotus
 
 1. In the [Lotus configuration](configuration-and-advanced-usage.md) (`~/.lotus/config.toml`), add or edit the `[Wallet]` section as follows:
