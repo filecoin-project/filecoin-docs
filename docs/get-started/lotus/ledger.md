@@ -24,7 +24,7 @@ You can either use the [browser-based Glif wallet](#glif-wallet) or manually man
 
 ### Glif Wallet
 
-Filecoin is not accessible directly through the Ledger Live application. However, you can use your Ledger hardware with the Glif wallet at [glif.io](https://glif.io). Glif is an open-source Filecoin wallet you can use in the browser. It uses the [Filecoin Ledger integration library](https://github.com/Zondax/ledger-filecoin/), which has been [security audited by a third-party]().
+Filecoin is not accessible directly through the Ledger Live application. However, you can use your Ledger hardware with the Glif wallet at [glif.io](https://glif.io). Glif is an open-source Filecoin wallet you can use in the browser. It uses the [Filecoin Ledger integration library](https://github.com/Zondax/ledger-filecoin/), which has been security audited by a third-party.
 
 ### Lotus
 
