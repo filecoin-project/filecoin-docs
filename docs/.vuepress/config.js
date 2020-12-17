@@ -111,6 +111,13 @@ module.exports = {
                 ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
                 ['lotus/store-troubleshooting', 'Troubleshooting']
               ]
+            },
+            {
+              title: 'Filecoin Plus',
+              path: '/store/filecoin-plus',
+              sidebarDepth: 2,
+              collapsable: true,
+              children: ['filecoin-plus/secondary-page']
             }
           ],
 
