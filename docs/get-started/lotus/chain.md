@@ -110,7 +110,7 @@ lotus daemon --import-snapshot --halt-after-import <filename>
 
 It is possible to _prune_ the current chain data used by Lotus to reduce the disk footprint of a Lotus node by resyncing from a minimal snapshot.
 
-1. Stop the `lotus` daemon:
+1. Stop the Lotus daemon:
 
   ```bash
   lotus daemon stop
