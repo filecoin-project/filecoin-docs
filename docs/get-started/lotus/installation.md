@@ -41,7 +41,7 @@ sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader o
 Ubuntu/Debian:
 
 ```bash
-sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev -y && sudo apt upgrade -y
+sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
 ```
 
 Fedora:
