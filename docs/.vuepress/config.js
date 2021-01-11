@@ -1,6 +1,7 @@
 // .vuepress/config.js
 
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
+const pageSuffix = '/'
 
 module.exports = {
   base: '/',
@@ -13,6 +14,7 @@ module.exports = {
     }
   },
   markdown: {
+    pageSuffix,
     extendMarkdown: md => {
       md.set({
         breaks: true
@@ -309,8 +311,8 @@ module.exports = {
     [
       'vuepress-plugin-clean-urls',
       {
-        normalSuffix: '/',
-        indexSuffix: '/',
+        normalSuffix: pageSuffix,
+        indexSuffix: pageSuffix,
         notFoundPath: '/404/'
       }
     ],
