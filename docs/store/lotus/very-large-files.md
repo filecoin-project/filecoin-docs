@@ -48,10 +48,10 @@ It is implemented via a flag on the storage deal command that tells the client n
 lotus client generate-car <inputPath> <outputPath>
 ```
 
-2. Use the Lotus client to generate the piece CID for the chosen miner:
+2. Use the Lotus client to generate the piece CID:
 
 ```sh
-lotus client commP <inputCarFilePath> <minerAddress>
+lotus client commP <inputCarFilePath>
 ```
 
 ### Propose an offline deal
