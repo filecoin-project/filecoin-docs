@@ -1,14 +1,12 @@
 ---
 title: 'Lotus Miner: Benchmarks'
-description: 'This guides describe how to perform some benchmarks using Lotus.'
+description: 'Lotus comes with a benchmarking tool that can be used to test how long each resource-intensive mining operation takes. This guide describes how to install the benchmarking tool, and some basic operations.'
 breadcrumb: 'Benchmarks'
 ---
 
 # {{ $frontmatter.title }}
 
 {{ $frontmatter.description }}
-
-Lotus comes with a [benchmarking tool](https://github.com/filecoin-project/lotus/tree/master/cmd/lotus-bench) that can be used to test how long each resource-intensive mining operation takes.
 
 ## Installation
 
@@ -23,7 +21,7 @@ Lotus comes with a [benchmarking tool](https://github.com/filecoin-project/lotus
    > Resolving deltas: 100% (51531/51531), done.
    ```
 
-1. The `lotus` binary must be built and within the `~/lotus` repository folder. If you just cloned the repository now, or have misplaced the `lotus` binary, build the project:
+1. The `lotus` binary must be built and within the `~/lotus` repository folder. If you just cloned the repository or have misplaced the `lotus` binary, build the project:
 
    ```bash
    cd ~/lotus
@@ -183,3 +181,4 @@ Available options:
 | `--head value`                      | tipset key of the head, useful when benchmarking validation on an existing chain store, where a CAR is not available; if both --car and --head are provided, --head takes precedence over the CAR root; the format is cid1,cid2,cid3... |
 | `--help, -h`                        | show help (default: false)                                                                                                                                                                                                              |
 | `--version, -v`                     | print the version (default: false)                                                                                                                                                                                                      |
+
