@@ -1,6 +1,7 @@
 // .vuepress/config.js
 
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
+const pageSuffix = '/'
 
 module.exports = {
   base: '/',
@@ -13,6 +14,7 @@ module.exports = {
     }
   },
   markdown: {
+    pageSuffix,
     extendMarkdown: md => {
       md.set({
         breaks: true
@@ -141,6 +143,7 @@ module.exports = {
                 ['lotus/message-pool', 'The Message Pool'],
                 ['lotus/seal-workers', 'Seal workers'],
                 ['lotus/benchmarks', 'Benchmarks'],
+                ['lotus/backup-and-restore', 'Backup and restore'],
                 ['lotus/gpus', 'Custom GPUs'],
                 //'lotus/disaster-recovery',
                 ['lotus/tips-running-in-china', 'Tips for running in China'],
@@ -308,8 +311,8 @@ module.exports = {
     [
       'vuepress-plugin-clean-urls',
       {
-        normalSuffix: '/',
-        indexSuffix: '/',
+        normalSuffix: pageSuffix,
+        indexSuffix: pageSuffix,
         notFoundPath: '/404/'
       }
     ],

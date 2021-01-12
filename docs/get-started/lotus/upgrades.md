@@ -30,18 +30,6 @@ lotus version   # for the currently running daemon
 **You will need to stop and start the daemon again after installing the new version**.
 :::
 
-## Nuking the Lotus data
-
-In some occasions, for example in the case of a network reset (where an existing chain is rebooted from scratch), you will need to delete the [lotus configuration](configuration-and-advanced-usage.md) folder located at `~/.lotus` (or, if manually set, at `$LOTUS_PATH`):
-
-```bash
-rm -rf ~/.lotus # or $LOTUS_PATH
-```
-
-::: warning
-This will delete all chain data and wallets! [Make sure you have exported your wallets and safely backed them up](send-and-receive-fil.md#exporting-and-importing-addresses).
-:::
-
 ## Switching networks
 
 If you want to switch networks, read [this guide](switch-networks.md).

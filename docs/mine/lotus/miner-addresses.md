@@ -54,11 +54,13 @@ Unlike the _owner address_, the address set as the miner's _worker address_ shou
 
 ## Control addresses
 
-_Control addresses_ can be used to submit _WindowPoSts_ proofs to the chain. _WindowPoSt_ is the mechanism through which storage is verified in Filecoin and which requires miners to submit proofs for all sectors every 24 hours. Those proofs are submitted as messages to the blockchain and therefore need to pay the respective fees.
+_Control addresses_ are used to submit _WindowPoSts_ proofs to the chain. _WindowPoSt_ is the mechanism through which storage is verified in Filecoin and is required by miners to submit proofs for all sectors every 24 hours. Those proofs are submitted as messages to the blockchain and therefore need to pay the respective fees.
 
-Many mining-related actions require sending messages to the chain, but not all of those are as high-value as _WindowPoSts_. We recommended using _control addresses_ to avoid head-of-line blocking problems in congested chain conditions. [Head-of-line blocking](https://en.wikipedia.org/wiki/Head-of-line_blocking) is a performance-limiting phenomenon that occurs when the first transaction holds up a line of transactions.
+Many mining-related actions require sending messages to the chain, but not all of those are as high-value as _WindowPoSts_. By using _control addresses_ you can stop the first transaction holding up a line of transactions. This blocking problem is known as [head-of-line blocking.](https://en.wikipedia.org/wiki/Head-of-line_blocking)
 
-Multiple _control addresses_ can be created and configured in a Lotus miner. The first _control address_ found to have enough funds to submit a _WindowPoSt_ transaction will be used. Otherwise, Lotus fails over to the _owner_ and ultimately to the _worker_ address.
+Multiple _control addresses_ can be created and configured. The first _control address_ that has enough funds to submit a _WindowPoSt_ transaction will be used. If there are no control addresses with sufficent funds then the owner address will be used. If the owner address has insufficent funds, or is unavailable, then the worker address will be used to submit a _WindowPoSt_.
+
+Otherwise, Lotus fails over to the _owner_ and ultimately to the _worker_ address.
 
 To set up a _control address_:
 
@@ -71,7 +73,7 @@ To set up a _control address_:
    lotus send --from <address> f3defg... 100
    ```
 
-1. Inform the miner of the new address:
+2. Inform the miner of the new address:
 
    ```sh
    lotus-miner actor control set --really-do-it f3defg...
@@ -80,7 +82,7 @@ To set up a _control address_:
    > Message CID: bafy2...
    ```
 
-1. Wait for the message to land on chain:
+3. Wait for the message to land on chain:
 
    ```sh
    lotus state wait-msg bafy2...
@@ -90,18 +92,82 @@ To set up a _control address_:
    > ...
    ```
 
-1. Check the miner control address list to make sure the address was correctly added:
+4. Check the miner control address list to make sure the address was correctly added:
 
    ```sh
    lotus-miner actor control list
 
-   > name       ID      key           use    balance
+   > name       ID      key        use    balance
    > owner      t01111  f3abcd...  other  300 FIL
    > worker     t01111  f3abcd...  other  300 FIL
    > control-0  t02222  f3defg...  post   100 FIL
    ```
 
 Repeat this procedure to add additional addresses.
+
+### Use control addresses for commits
+
+Clean up the tasks required for your worker address by setting your control addresses to perform pre-commits and commits. With this, only market messages are sent from the worker address. If the basefee is high, then you can still put sectors on chain without those messages being blocked by things like publishing deals.
+
+This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoin-project/lotus`](https://github.com/filecoin-project/lotus/), but is not yet within a tagged release. You need to build Lotus from GitHub using the `master` branch to use this feature.
+
+1. Create two control addresses. Control addresses can be any _type_ of address: `secp256k1 ` or `bls`:
+
+   ```bash
+   lotus wallet new bls
+
+   > f3rht...
+
+   lotus wallet new bls
+
+   > f3sxs...
+
+   lotus wallet list
+
+   > Address   Balance  Nonce  Default
+   > f3rht...  0 FIL    0      X
+   > f3sxs...  0 FIL    0
+   ```
+
+2. Add some funds into those two addresses.
+3. Wait for around 5 minutes for the addresses to be assigned IDs.
+4. Get ID of those addresses:
+
+   ```bash
+   lotus wallet list -i
+
+    > Address   ID        Balance                   Nonce  Default
+    > f3rht...  f0100933  0.59466768102284489 FIL   1      X
+    > f3sxs...  f0100939  0.4 FIL                   0
+   ```
+
+5. Add control addresses:
+
+   ```bash
+   lotus-miner actor control set --really-do-it=true f0100933 f0100939
+
+    > Add f3rht...
+    > Add f3sxs...
+    > Message CID: bafy2bzacecfryzmwe5ghsazmfzporuybm32yw5q6q75neyopifps3c3gll6aq
+
+    lotus actor control list
+
+    > name       ID      key        use    balance
+    > owner      t01...  f3abcd...  other  15 FIL
+    > worker     t01...  f3abcd...  other  10 FIL
+    > control-0  t02...  f3defg...  post   100 FIL
+    > control-1  t02...  f3defg...  post   100 FIL
+   ```
+
+6. Add the newly created addresses into the miner config under the `[Addresses]` section:
+
+   ```yaml
+   [Addresses]
+       PreCommitControl = ["f3rht..."]
+       CommitControl = ["f3sxs..."]
+   ```
+
+7. Restart `lotus-miner`.
 
 ## Managing balances
 
