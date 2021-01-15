@@ -17,7 +17,7 @@ Lotus will automatically sync to the latest _chain head_ by:
 
 Once Lotus is synced, it will learn about new blocks as they are mined for every epoch and verify them accordingly. Every epoch might see a variable number of mined blocks.
 
-Filecoin's blockchain grows relatively fast, so a full sync will take long time. For this reason, Lotus offers a faster way to sync using trusted state snapshots. There are two types of snapshot available:
+Filecoin's blockchain grows relatively fast, so a full sync will take a long time. For this reason, Lotus offers a faster way to sync using trusted state snapshots. There are two types of snapshot available:
 
 | Name                                 | Description | End height    | Message start height        | State start height          |
 | ------------------------------------ | ----------- | ------------- | --------------------------- | --------------------------- |
@@ -29,7 +29,7 @@ Filecoin's blockchain grows relatively fast, so a full sync will take long time.
 We recommend most users perform the initial node sync from a lightweight snapshot. These snapshots do not contain the full chain and are not suitable for nodes that need to perform queries against historical state information, such as block explorers. However, they are significantly smaller than full chain snapshots and should be sufficient for most use-cases.
 
 :::warning
-These lightweight state snapshots **do not contain any message receipts**. To get message receipts you need to sync your Lotus node from the genesis block without using any of these snapshots.
+These lightweight state snapshots **do not contain any message receipts**. To get message receipts, you need to sync your Lotus node from the genesis block without using any of these snapshots.
 :::
 
 1.  Download the most recent lightweight snapshot:
@@ -50,7 +50,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
     lotus daemon --import-snapshot minimal_finality_stateroots_latest.car
     ```
 
-You can skip the `sha256sum` check and use the snapshot URL directly, if you'd prefer:
+You can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
 
 ```bash
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
@@ -58,13 +58,13 @@ lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws
 
 ### Full chain snapshot
 
-An alternative to lightweight snapshots are full chain snapshots. Full snapshots contain every block from genesis until the current tipset. These complete snapshots can be trustlessly imported by supplying the `--import-chain` option to fully recalculate the state during import:
+Alternatively, you can use full chain snapshots. Full chain snapshots contain every block from genesis until the current tipset. You can trustlessly import these complete snapshots by supplying the `--import-chain` option to recalculate the state during import fully:
 
 ```sh
 lotus daemon --import-chain https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car
 ```
 
-This operation will take multiple days due the size and complexity of the Filecoin blockchain.
+This operation will take multiple days due to the size and complexity of the Filecoin blockchain.
 
 ### Checking sync status
 
@@ -111,7 +111,7 @@ A full chain CAR-snapshot can be created `chain export`:
 lotus chain export <filename>
 ```
 
-To backup a certain number of the most recent state roots, use the `--recent-stateroots` option, along with how many state roots you could like to backup:
+To back up a certain number of the most recent state roots, use the `--recent-stateroots` option, along with how many state roots you could like to backup:
 
 ```bash
 lotus chain export --recent-stateroots=2000 <filename>
@@ -125,7 +125,7 @@ lotus chain export --skip-old-msgs <filename>
 
 ## Restoring a custom snapshot
 
-Snapshots can be restored by starting the daemon with the `--import-snapshot` option:
+You can restore snapshots by starting the daemon with the `--import-snapshot` option:
 
 ```bash
 # Without verification
@@ -135,7 +135,7 @@ lotus daemon --import-snapshot <filename>
 lotus daemon --import-chain <filename>
 ```
 
-If you do not want the daemon to start once the snapshot has finished add the `--halt-after-import` flag to the command:
+If you do not want the daemon to start once the snapshot has finished, add the `--halt-after-import` flag to the command:
 
 ```bash
 lotus daemon --import-snapshot --halt-after-import <filename>
@@ -143,7 +143,7 @@ lotus daemon --import-snapshot --halt-after-import <filename>
 
 ## Compacting the chain data
 
-It is possible to _prune_ the current chain data used by Lotus to reduce the disk footprint of a Lotus node by resyncing from a minimal snapshot.
+It is possible to _prune_ the current chain data used by Lotus to reduce the node's disk footprint by resyncing from a minimal snapshot.
 
 1. Stop the Lotus daemon:
 
