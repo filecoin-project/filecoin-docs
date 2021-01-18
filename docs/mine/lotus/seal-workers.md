@@ -149,7 +149,7 @@ For example, to run a _PreCommit1_ worker in a way that it does not conflict wit
 # Use a unique storage location for each worker
 export LOTUS_WORKER_PATH=/path/to/worker/storage/N
 # Replace X with a different port for each worker.
-lotus-worker run --listen 0.0.0.0:X --add-piece=false --precommit1=true --unseal=true --precommit2=false --commit=false
+lotus-worker run --listen 0.0.0.0:X --addpiece=false --precommit1=true --unseal=true --precommit2=false --commit=false
 ```
 
 By default, the _PreCommit1_ base will _use a single CPU core_. This means that several worker processes can use remaining cores and perform the work in parallel for this phase, as long as there is enough memory available for all of them to run.
