@@ -17,7 +17,7 @@ Lotus Mining for _mainnet_ has stringent minimal **[hardware requirements](../ha
 
 The following guides are essential starting points for those willing to launch a Lotus miner:
 
-- Miner installation is covered in the [Installation guide](../../get-started/lotus/installation.md) along with that of the Lotus Node. Once the installation is complete, the Lotus node, Lotus miner, and Lotus worker applications should all be installed.
+- The miner installation is covered in the [Installation guide](../../get-started/lotus/installation.md). Once the installation is complete, the Lotus node, Lotus miner, and Lotus worker applications should all be installed.
 
 - The [Miner setup](miner-setup.md) covers all the details to configure your miner to achieve the maximum performance and avoid common pitfalls.
 - The [Configuration reference](miner-configuration.md) explains what the different miner configuration options mean.
