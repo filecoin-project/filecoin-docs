@@ -24,9 +24,178 @@ Make sure you have both [Node.js](https://nodejs.org/) and [NPM](https://www.npm
 
 To interact with the Infura API you need to register on the Infura website:
 
-1.
+1. Go to [infura.io/register](https://infura.io/register) and sign up to Infura.
+1. Select **Filecoin** from the sidebar and click **CREATE NEW PROJECT**.
+1. Enter _Filcoin - Get started_ as the project name and click **CREATE**.
+1. You should now be able to see your `Project ID` and `Project Secret`. Take a note of these two fields; we'll use them later.
 
-## The script in fulll
+   ![Project ID and Project secret within Infura.](./images/get-started/infura-keys.png)
+
+That's everything set up on the Infura side. Next, let's create our project.
+
+## Create your project
+
+1. To kick things off, create a new project directory and move into it:
+
+   ```bash
+   mkdir ~/Code/filecoin-wallet-checker -p
+   cd ~/Code/filecoin-wallet-checker
+   ```
+
+1. Create a file called `index.js` and add this starting code:
+
+   ```javascript
+   let request = require('request')
+
+   // 1. Get and check that project_id and project_secret are defined.
+
+   // 2. Get and check Filecoin address from user.
+
+   // 3. Calls the Infura API and checks that the address is valid.
+
+   // Run the request.
+   request(options, callback)
+
+   function callback(error, response, body) {
+     if (!error && response.statusCode == 200) {
+       console.log(body[0])
+     } else {
+       console.error('There was an error: ', body)
+       process.exit()
+     }
+   }
+   ```
+
+   We're going to adding our code under the comments numbered `1`, `2`, and `3`.
+
+1. Add the `request` package to this project:
+
+   ```bash
+   npm install request
+   ```
+
+Now that we've got a project set up, and our Infura information, we can start to build things!
+
+## Call the Infura API
+
+1. To call the Infura API, we'll use the `request` package that we added to our project:
+
+   ```javascript
+   // 1. Calls the Infura API and checks that the address is valid.
+   request(options, callback)
+   ```
+
+   The `request` function takes two arguments, `options` and `callback`. We've already defined `callback` in our project, so we can move onto creating the `options` object.
+
+1. Create a new variable called options:
+
+   ```javascript
+   // 1. Calls the Infura API and checks that the address is valid.
+   let options = {}
+   ```
+
+1. We need to supply five values to this `options` object. The first three are pretty standard for API POST requests:
+
+   | Key     | Description                                           | Value                             |
+   | ------- | ----------------------------------------------------- | --------------------------------- |
+   | URL     | The endpoint that we want to target with our request. | `https://filecoin.infura.io`      |
+   | method  | The type of request that we're going to send.         | `POST`                            |
+   | headers | Any headers attached to this request.                 | `'Content-Type: application/json` |
+
+   ```javascript
+   // 1. Calls the Infura API and checks that the address is valid.
+   let options = {
+     url: 'https://filecoin.infura.io',
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json'
+     }
+   }
+   ```
+
+   The two object values we're more interested in are `body` and `auth`:
+
+1. The `body` object defines an ID used by the API endpoint, the version of JSON to use, and the method you want to call.
+
+   ```javascript
+   // 1. Calls the Infura API and checks that the address is valid.
+   let options = {
+       url: 'https://filecoin.infura.io',
+       method: 'POST',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body {
+           "id": 0,
+           "jsonrpc": "2.0",
+       }
+   }
+   ```
+
+   Set `id` as `0` and `jsonrpc` as `2.0`. These two remain the same for pretty much every request sent to the Infura API.
+
+1. The `body` object also defines the method we want to call:
+
+   ```javascript
+   // 1. Calls the Infura API and checks that the address is valid.
+   let options = {
+       url: 'https://filecoin.infura.io',
+       method: 'POST',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body {
+           "id": 0,
+           "jsonrpc": "2.0",
+           "method": "Filecoin.WalletValidateAddress"
+       }
+   }
+   ```
+
+   Infura have listed all the [available methods in their documentation](https://infura.io/docs/filecoin). The method we're using is `WalletValidateAddress` which, as the name suggests, checks if a given address is valid.
+
+1. The [`WalletValidateAddress` method](https://infura.io/docs/filecoin#operation/WalletValidateAddress)] requires at least one address to validate. Let's add an address to check into the `params` value within the `body` object:
+
+   ```javascript
+   // 1. Calls the Infura API and checks that the address is valid.
+   let options = {
+       url: 'https://filecoin.infura.io',
+       method: 'POST',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body {
+           "id": 0,
+           "jsonrpc": "2.0",
+           "method": "Filecoin.WalletValidateAddress",
+           "params": "bafy2bzaceci2dbesg7byetl4ro7fz727gf47h4kixtkrygnvuwa3yqhpc7jxk"
+       }
+   }
+   ```
+
+1. Infura has some authentication steps we need to follow in order to access the API. Luckily, it's pretty simple. All we have to do is create an `auth` object containing our project ID and secret in the `user` and `pass` fields respectivly:
+
+   ```javascript
+   // 1. Calls the Infura API and checks that the address is valid.
+   let options = {
+       url: 'https://filecoin.infura.io',
+       method: 'POST',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body {
+           "id": 0,
+           "jsonrpc": "2.0",
+           "method": "Filecoin.WalletValidateAddress",
+           "params": "bafy2bzaceci2dbesg7byetl4ro7fz727gf47h4kixtkrygnvuwa3yqhpc7jxk"
+       },
+       auth: {
+           'user': asd,
+           'pass': asd
+   }
+   ```
+
+## Full script
 
 Here's our script, in full:
 
