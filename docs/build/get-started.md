@@ -18,7 +18,7 @@ In this tutorial you will:
 
 ## Before we begin
 
-Make sure you have both [Node.js]() and [NPM]() installed.
+Make sure you have both [Node.js](https://nodejs.org/) and [NPM](https://www.npmjs.com/) installed.
 
 ## Infura API
 
