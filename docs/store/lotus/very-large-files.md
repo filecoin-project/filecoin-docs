@@ -48,10 +48,10 @@ It is implemented via a flag on the storage deal command that tells the client n
 lotus client generate-car <inputPath> <outputPath>
 ```
 
-2. Use the Lotus client to generate the piece CID for the chosen miner:
+2. Use the Lotus client to generate the piece CID:
 
 ```sh
-lotus client commP <inputCarFilePath> <minerAddress>
+lotus client commP <inputCarFilePath>
 ```
 
 ### Propose an offline deal
@@ -71,7 +71,7 @@ This can be done several ways, such as shipping hard drives from the client to t
 The miner can import the data and deal manually with:
 
 ```sh
-lotus-miner deals import-data <dealCid> <filePath>
+lotus-miner storage-deals import-data <dealCid> <carFilePath>
 ```
 
 Once the first Proof of Spacetime (PoSt) hits the chain, the storage deal is considered active.

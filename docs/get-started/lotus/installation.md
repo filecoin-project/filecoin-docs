@@ -41,7 +41,7 @@ sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader o
 Ubuntu/Debian:
 
 ```bash
-sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev -y && sudo apt upgrade -y
+sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
 ```
 
 Fedora:
@@ -95,9 +95,9 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-1. Checkout the branch corresponding to the network you want to join. If you want to run the _latest_ version of Lotus on `mainnet`, checkout to the `master` branch. If you want to use a specific release, then see the [Releases section in GitHub](https://github.com/filecoin-project/lotus/releases/tag/v1.2.1).
+2. Checkout the branch corresponding to the network you want to join. If you want to run the _latest_ version of Lotus on `mainnet`, checkout to the `master` branch. If you want to use a specific release, then see the [Releases section in GitHub](https://github.com/filecoin-project/lotus/releases).
 
-    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
 
    ```sh
    git checkout <branch_or_tag>
@@ -109,8 +109,8 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    Currently, the _master_ branch corresponds to **mainnet**.
 
-1. If you are in China, check out the specific [tips](tips-running-in-china.md).
-1. Depending on your CPU model, you will want to export additional environment variables:
+3. If you are in China, check out the specific [tips](tips-running-in-china.md).
+4. Depending on your CPU model, you will want to export additional environment variables:
 
    If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
 
@@ -130,7 +130,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    This is due to a Lotus bug that prevents Lotus from running on processor without `adx` instruction support, and should be fixed soon.
 
-1. Build and install Lotus:
+5. Build and install Lotus:
 
    ```sh
    make clean all
@@ -141,7 +141,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
 
-1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
+6. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
 #### Native Filecoin FFI
 
