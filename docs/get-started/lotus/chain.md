@@ -26,7 +26,7 @@ Filecoin's blockchain grows relatively fast, so a full sync will take a long tim
 
 ### Lightweight snapshot
 
-We recommend most users perform the initial node sync from a lightweight snapshot. These snapshots do not contain the full chain and are not suitable for nodes that need to perform queries against historical state information, such as block explorers. However, they are significantly smaller than full chain snapshots and should be sufficient for most use-cases.
+We recommend most users perform the initial node sync from a lightweight snapshot. These snapshots do not contain the full states of the chain and are not suitable for nodes that need to perform queries against historical state information, such as block explorers. However, they are significantly smaller than full chain snapshots and should be sufficient for most use-cases.
 
 :::warning
 These lightweight state snapshots **do not contain any message receipts**. To get message receipts, you need to sync your Lotus node from the genesis block without using any of these snapshots.
