@@ -47,15 +47,13 @@ That's everything set up on the Infura side. Next, let's create our project.
    ```javascript
    let request = require('request')
 
-   // 1. Get and check that project_id and project_secret are defined.
+   // 1. Calls the Infura API and checks that the address is valid.
 
-   // 2. Get and check Filecoin address from user.
+   // 2. Get and check that project_id and project_secret are defined.
 
-   // 3. Calls the Infura API and checks that the address is valid.
+   // 3. Get and check Filecoin address from user.
 
-   // Run the request.
-   request(options, callback)
-
+   // Default callback function for request()
    function callback(error, response, body) {
      if (!error && response.statusCode == 200) {
        console.log(body[0])
@@ -115,7 +113,7 @@ Now that we've got a project set up, and our Infura information, we can start to
 
    The two object values we're more interested in are `body` and `auth`:
 
-1. The `body` object defines an ID used by the API endpoint, the version of JSON to use, and the method you want to call.
+1. The `body` object defines an ID used by the API endpoint, the version of JSON to use, and the method you want to call. Set `id` as `0` and `jsonrpc` as `2.0`:
 
    ```javascript
    // 1. Calls the Infura API and checks that the address is valid.
@@ -131,8 +129,6 @@ Now that we've got a project set up, and our Infura information, we can start to
        }
    }
    ```
-
-   Set `id` as `0` and `jsonrpc` as `2.0`. These two remain the same for pretty much every request sent to the Infura API.
 
 1. The `body` object also defines the method we want to call:
 
@@ -190,10 +186,53 @@ Now that we've got a project set up, and our Infura information, we can start to
            "params": "bafy2bzaceci2dbesg7byetl4ro7fz727gf47h4kixtkrygnvuwa3yqhpc7jxk"
        },
        auth: {
-           'user': asd,
-           'pass': asd
+           'user': "1nLHYlp8sCepTChk15cgwQDyyLD",
+           'pass': "8a750751e51111387522969ac8442a44"
    }
    ```
+
+1. The last step is to call the `request` function we imported with NPM:
+
+   ```javascript
+   // 1. Calls the Infura API and checks that the address is valid.
+   let options = {
+       url: 'https://filecoin.infura.io',
+       method: 'POST',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body {
+           "id": 0,
+           "jsonrpc": "2.0",
+           "method": "Filecoin.WalletValidateAddress",
+           "params": "bafy2bzaceci2dbesg7byetl4ro7fz727gf47h4kixtkrygnvuwa3yqhpc7jxk"
+       },
+       auth: {
+           'user': "1nLHYlp8sCepTChk15cgwQDyyLD",
+           'pass': "8a750751e51111387522969ac8442a44"
+   }
+   request(options, callback);
+   ```
+
+   This is all a bit messy, and we'll clean it up in a moment. All that matters right now is that we can run this script and send the request to the Infura API
+
+## Test run
+
+We've got some basic functionality in our script. We should run everything to make sure it's all working!
+
+1. In your project directory call the script using `node`:
+
+   ```bash
+   node index.js
+
+   >
+   ```
+
+## Check balance
+
+Right now, our script checks that a given string is a valid Filecoin address, but doesn't do much else. Let's have the script tell us what the balance of a given Filecoin address is.
+
+<!-- Add steps for checking the balance of a Filecoin address. -->
 
 ## Full script
 
