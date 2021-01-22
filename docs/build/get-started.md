@@ -1,6 +1,6 @@
 ---
 title: Get started
-description: Want to jump into Filecoin and start building something? This section gets you up and running quickly by creating a simple application using Infura and the Filecoin network.
+description: Want to jump into Filecoin and start building something? This section gets you up and running quickly by creating a simple Node.js script using Infura and the Filecoin network.
 breadcrumb: 'Get started'
 ---
 
@@ -13,7 +13,7 @@ In this tutorial you will:
 1. Sign up to the Infura API.
 1. Create a Node.js script that:
    a. Checks if a given string is a valid Filecoin address.
-   b. Returns the balance of that address, if it is valid.
+   a. Returns the balance of that address, if it is valid.
 1. Discover more ways to interact with the Filecoin network using the Infura API.
 
 ## Before we begin
@@ -24,12 +24,12 @@ Make sure you have both [Node.js](https://nodejs.org/) and [NPM](https://www.npm
 
 To interact with the Infura API you need to register on the Infura website:
 
-1. Go to [infura.io/register](https://infura.io/register) and sign up to Infura.
-1. Select **Filecoin** from the sidebar and click **CREATE NEW PROJECT**.
-1. Enter _Filcoin - Get started_ as the project name and click **CREATE**.
+1. Go to [infura.io/register](https://infura.io/register) and sign up.
+1. Select **Filecoin** from the sidebar and click **Create new project**.
+1. Enter _Filcoin - Get started_ as the project name and click **Create**.
 1. You should now be able to see your `Project ID` and `Project Secret`. Take a note of these two fields; we'll use them later.
 
-   ![Project ID and Project secret within Infura.](./images/get-started/infura-keys.png)
+![Project ID and Project secret within Infura.](./images/get-started/infura-keys.png)
 
 That's everything set up on the Infura side. Next, let's create our project.
 
@@ -42,252 +42,273 @@ That's everything set up on the Infura side. Next, let's create our project.
    cd ~/Code/filecoin-wallet-checker
    ```
 
-1. Create a file called `index.js` and add this starting code:
+1. Create a file called `index.js` and add this boilerplate code:
 
    ```javascript
    let request = require('request')
 
-   // 1. Calls the Infura API and checks that the address is valid.
+   // Call the Infura API and check that the address is valid.
 
-   // 2. Get and check that project_id and project_secret are defined.
-
-   // 3. Get and check Filecoin address from user.
-
-   // Default callback function for request()
-   function callback(error, response, body) {
-     if (!error && response.statusCode == 200) {
-       console.log(body[0])
+   request(options, (error, response, body) => {
+     if (error) {
+       console.error('Error: ', error)
      } else {
-       console.error('There was an error: ', body)
-       process.exit()
+       console.log('Response: ', body)
      }
-   }
+   })
    ```
-
-   We're going to adding our code under the comments numbered `1`, `2`, and `3`.
 
 1. Add the `request` package to this project:
 
-   ```bash
-   npm install request
-   ```
+```bash
+npm install request
+```
 
 Now that we've got a project set up, and our Infura information, we can start to build things!
 
-## Call the Infura API
+## Design the basic script
 
-1. To call the Infura API, we'll use the `request` package that we added to our project:
+We've got our project directory set up, and have our `index.js` file ready to go. Let's start fleshing out our script by creating a basic API call.
 
-   ```javascript
-   // 1. Calls the Infura API and checks that the address is valid.
-   request(options, callback)
-   ```
-
-   The `request` function takes two arguments, `options` and `callback`. We've already defined `callback` in our project, so we can move onto creating the `options` object.
-
-1. Create a new variable called options:
+1. First up, let's create the `options` object that we're going to put in our request:
 
    ```javascript
-   // 1. Calls the Infura API and checks that the address is valid.
+   // Call the Infura API and check that the address is valid.
    let options = {}
    ```
 
-1. We need to supply five values to this `options` object. The first three are pretty standard for API POST requests:
-
-   | Key     | Description                                           | Value                             |
-   | ------- | ----------------------------------------------------- | --------------------------------- |
-   | URL     | The endpoint that we want to target with our request. | `https://filecoin.infura.io`      |
-   | method  | The type of request that we're going to send.         | `POST`                            |
-   | headers | Any headers attached to this request.                 | `'Content-Type: application/json` |
+1. Next, enter the `url`, `method`, and `headers` values into the object:
 
    ```javascript
-   // 1. Calls the Infura API and checks that the address is valid.
+   // Call the Infura API and check that the address is valid.
    let options = {
      url: 'https://filecoin.infura.io',
-     method: 'POST',
+     method: 'post',
      headers: {
-       'Content-Type': 'application/json'
+       'content-type': 'application/json'
      }
    }
    ```
 
-   The two object values we're more interested in are `body` and `auth`:
+   These are pretty self explanitory, so we won't delve into what they mean here. The two object values we're more interested in are `body` and `auth`:
+
+1. Create a new value called `auth`, and within it create a new object:
+
+   ```javascript
+   // Call the Infura API and check that the address is valid.
+   let options = {
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {}
+   }
+   ```
+
+   This object is what the Infura API uses to authenticate your request.
+
+1. Add your Infura project ID and project secret into to `user` and `pass` fields:
+
+   ```javascript
+   // Call the Infura API and check that the address is valid.
+   let options = {
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {
+       user: '1nO7B...',
+       pass: 'bda4a...'
+     }
+   }
+   ```
+
+   You can find your Infura details by going to `infura.io/dashboard/filecoin`, selecting your project, and clicking on the **Settings** tab.
+
+1. The final value we need to add to our `options` object is the `body` of our request:
+
+   ```javascript
+   // Call the Infura API and check that the address is valid.
+   let options = {
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {
+       user: '1nO7B...',
+       pass: 'bda4a...'
+     },
+     body: ''
+   }
+   ```
 
 1. The `body` object defines an ID used by the API endpoint, the version of JSON to use, and the method you want to call. Set `id` as `0` and `jsonrpc` as `2.0`:
 
    ```javascript
-   // 1. Calls the Infura API and checks that the address is valid.
+   // Call the Infura API and check that the address is valid.
    let options = {
-       url: 'https://filecoin.infura.io',
-       method: 'POST',
-       headers: {
-           'Content-Type': 'application/json'
-       },
-       body {
-           "id": 0,
-           "jsonrpc": "2.0",
-       }
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {
+       user: '1nO7B...',
+       pass: 'bda4a...'
+     },
+     body: `{"jsonrpc": "2.0", "id": 0}`
    }
    ```
 
-1. The `body` object also defines the method we want to call:
+1. Set the `method` to `Filecoin.ChainHead`:
 
    ```javascript
-   // 1. Calls the Infura API and checks that the address is valid.
+   // Call the Infura API and check that the address is valid.
    let options = {
-       url: 'https://filecoin.infura.io',
-       method: 'POST',
-       headers: {
-           'Content-Type': 'application/json'
-       },
-       body {
-           "id": 0,
-           "jsonrpc": "2.0",
-           "method": "Filecoin.WalletValidateAddress"
-       }
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {
+       user: '1nO7B...',
+       pass: 'bda4a...'
+     },
+     body: `{"jsonrpc": "2.0", "id": 0, "method": "Filecoin.ChainHead"}`
    }
    ```
 
-   Infura have listed all the [available methods in their documentation](https://infura.io/docs/filecoin). The method we're using is `WalletValidateAddress` which, as the name suggests, checks if a given address is valid.
+   The method `Filecoin.ChainHead` simply returns the current head of the chain. While it's not the final method that we're going to use, it's a good way to test that our script is working.
 
-1. The [`WalletValidateAddress` method](https://infura.io/docs/filecoin#operation/WalletValidateAddress)] requires at least one address to validate. Let's add an address to check into the `params` value within the `body` object:
-
-   ```javascript
-   // 1. Calls the Infura API and checks that the address is valid.
-   let options = {
-       url: 'https://filecoin.infura.io',
-       method: 'POST',
-       headers: {
-           'Content-Type': 'application/json'
-       },
-       body {
-           "id": 0,
-           "jsonrpc": "2.0",
-           "method": "Filecoin.WalletValidateAddress",
-           "params": "bafy2bzaceci2dbesg7byetl4ro7fz727gf47h4kixtkrygnvuwa3yqhpc7jxk"
-       }
-   }
-   ```
-
-1. Infura has some authentication steps we need to follow in order to access the API. Luckily, it's pretty simple. All we have to do is create an `auth` object containing our project ID and secret in the `user` and `pass` fields respectivly:
-
-   ```javascript
-   // 1. Calls the Infura API and checks that the address is valid.
-   let options = {
-       url: 'https://filecoin.infura.io',
-       method: 'POST',
-       headers: {
-           'Content-Type': 'application/json'
-       },
-       body {
-           "id": 0,
-           "jsonrpc": "2.0",
-           "method": "Filecoin.WalletValidateAddress",
-           "params": "bafy2bzaceci2dbesg7byetl4ro7fz727gf47h4kixtkrygnvuwa3yqhpc7jxk"
-       },
-       auth: {
-           'user': "1nLHYlp8sCepTChk15cgwQDyyLD",
-           'pass': "8a750751e51111387522969ac8442a44"
-   }
-   ```
-
-1. The last step is to call the `request` function we imported with NPM:
-
-   ```javascript
-   // 1. Calls the Infura API and checks that the address is valid.
-   let options = {
-       url: 'https://filecoin.infura.io',
-       method: 'POST',
-       headers: {
-           'Content-Type': 'application/json'
-       },
-       body {
-           "id": 0,
-           "jsonrpc": "2.0",
-           "method": "Filecoin.WalletValidateAddress",
-           "params": "bafy2bzaceci2dbesg7byetl4ro7fz727gf47h4kixtkrygnvuwa3yqhpc7jxk"
-       },
-       auth: {
-           'user': "1nLHYlp8sCepTChk15cgwQDyyLD",
-           'pass': "8a750751e51111387522969ac8442a44"
-   }
-   request(options, callback);
-   ```
-
-   This is all a bit messy, and we'll clean it up in a moment. All that matters right now is that we can run this script and send the request to the Infura API
+This code is a bit messy, and we'll clean it up in a moment. All that matters right now is that we can run this script and send the request to the Infura API.
 
 ## Test run
 
-We've got some basic functionality in our script. We should run everything to make sure it's all working!
+We've got some basic functionality in our script, so we should run everything to make sure it's all working!
 
 1. In your project directory call the script using `node`:
+
+```bash
+node index.js
+
+> Post successful: response:  {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceamdit67mnlyozufeaptmhmti6dv ...
+```
+
+Excellent! Our request was received by the Infura API, and it sent us back the latest chain head information. But we're not interested in the chain head, we want to get information about addresses!
+
+## Validate an address
+
+Instead of asking for the chain head information, lets ask the API if a given string is a valid Filecoin address.
+
+1. Within the `body` section of the `options` object, change the `method` from `Filecoin.ChainHead` to `Filecoin.WalletValidateAddress`:
+
+   ```javascript
+   // Call the Infura API and check that the address is valid.
+   let options = {
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {
+       user: '1nO7B...',
+       pass: 'bda4a...'
+     },
+     body: `{"jsonrpc": "2.0", "id": 0, "method": "Filecoin.WalletValidateAddress"}`
+   }
+   ```
+
+   If we ran the script now, we'd get an error back from the Infura API. This is because the `WalletValidateAddress` method requires at least one string as a parameter. You can find out more about what methods are available and what their requirements are over on the [Infura Filecoin API documentation](https://infura.io/docs/filecoin)
+
+1. Add an array called `params` into the `body` object:
+
+   ```javascript
+   // Call the Infura API and check that the address is valid.
+   let options = {
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {
+       user: '1nO7B...',
+       pass: 'bda4a...'
+     },
+     body: `{"jsonrpc": "2.0", "id": 0, "method": "Filecoin.WalletValidateAddress", "params": []}`
+   }
+   ```
+
+1. Inside the `params` array, add an address that you want to check:
+
+   ```javascript
+   // Call the Infura API and check that the address is valid.
+   let options = {
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {
+       user: '1nO7B...',
+       pass: 'bda4a...'
+     },
+     body: `{"jsonrpc": "2.0", "id": 0, "method": "Filecoin.WalletValidateAddress", "params": ["f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi"]}`
+   }
+   ```
+
+1. Let's run the script again to see what respose we get:
 
    ```bash
    node index.js
 
-   >
+   > Response:  {"jsonrpc":"2.0","result":"f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi","id":0}
+   ```
+
+   Great! The fact that we got our address back in the `result` field means that our address is valid. If we had sent over an invalid address, we'd get something like this:
+
+   ```bash
+   Response:  {"jsonrpc":"2.0","id":0,"error":{"code":1,"message":"invalid address payload"}}
    ```
 
 ## Check balance
 
-Right now, our script checks that a given string is a valid Filecoin address, but doesn't do much else. Let's have the script tell us what the balance of a given Filecoin address is.
+Our script checks that a given string is a valid Filecoin address, but doesn't do much else. Let's have the script tell us what the balance of a given Filecoin address is.
 
-<!-- Add steps for checking the balance of a Filecoin address. -->
+1. The only change we have to make is to request the `WalletBalance` method from the Infura API:
+
+   ```javascript
+   // Call the Infura API and check that the address is valid.
+   let options = {
+     url: 'https://filecoin.infura.io',
+     method: 'post',
+     headers: {
+       'content-type': 'application/json'
+     },
+     auth: {
+       user: '1nO7B...',
+       pass: 'bda4a...'
+     },
+     body: `{"jsonrpc": "2.0", "id": 0, "method": "Filecoin.WalletBalance", "params": [""f3uw3an7ofqrfpawustkdkot6zupx6ic7nljwvbmttkpg5i4ahdimjmgerbxy6ommamtapd5hcb2ld4gmwjs7q]}`
+   }
+   ```
+
+1. The Infura API will let us know the balance:
+
+   ```bash
+   node index.js
+
+   > ADDRESS:  {"jsonrpc":"2.0","result":"7182015146934547358774","id":0}
+   ```
+
+   The Infura API returns the value of the address in `attoFIL`. If the address you are requesting doesn't have a balance, the response from Infura will be blank:
+
+## Cleaning things up
+
+This script is a bit messy, and isn't exactly production ready. Let's clean things up by adding some error checking, putting API calls into their own functions, and .
 
 ## Full script
 
-Here's our script, in full:
-
-```javascript
-let request = require('request')
-
-// Get and check that project_id and project_secret are defined.
-const project_id = '1lhQxl9eD7XZMkjy7aB6pkSzWsj'
-const project_secret = '2e57c70d6fef946d42493e7317a8208a'
-if (
-  typeof project_id == 'undefined' ||
-  typeof project_secret == 'undefined' ||
-  project_id == null ||
-  project_secret == null
-) {
-  console.error(
-    'You must add your project_id and project_secret to this script.'
-  )
-  process.exit()
-}
-
-// Get and check Filecoin address from user.
-if (typeof process.argv[2] == 'undefined' || process.argv[2] == null) {
-  console.error(
-    'You must supply a wallet address to check as an argument when calling node index.js.'
-  )
-  process.exit()
-} else {
-  var input_address = process.argv[2]
-}
-
-// Calls the Infura API and checks that the address is valid.
-let data_string = `{ "id": 0, "jsonrpc": "2.0", "method": "Filecoin.WalletValidateAddress", "params": ["${input_address}"] }`
-let options = {
-  url: 'https://filecoin.infura.io',
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: data_string,
-  auth: {
-    user: project_id,
-    pass: project_secret
-  }
-}
-request(options, callback)
-
-function callback(error, response, body) {
-  if (!error && response.statusCode == 200) {
-    console.log(body[0])
-  } else {
-    console.error('There was an error: ', body)
-    process.exit()
-  }
-}
-```
+<!-- TODO: add full script here after we've built everything. -->
