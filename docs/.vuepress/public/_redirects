@@ -2,8 +2,8 @@
 
 # redirect folks who try to visit the old go-filecoin docs site previously hosted at docs.filecoin.io
 
-/questions.html https://go.filecoin.io/questions.html
-/go-filecoin-tutorial/*  https://go.filecoin.io/go-filecoin-tutorial/:splat
+/questions.html https://venus.filecoin.io/questions.html
+/go-filecoin-tutorial/*  https://venus.filecoin.io/Getting-Started.html
 /networks/ https://networks.filecoin.io
 
 /introduction/what-is-filecoin/ /about-filecoin/what-is-filecoin/
