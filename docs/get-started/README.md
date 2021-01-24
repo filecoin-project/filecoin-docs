@@ -51,22 +51,22 @@ There are 4 Filecoin protocol implementations (or “node software”) currently
 - [lotus](https://github.com/filecoin-project/lotus/) (Go): This implementation is closest to feature-complete and is therefore, the recommended Filecoin protocol implementation.
 - [forest](https://github.com/chainsafe/forest) (Rust)
 - [fuhon](https://github.com/filecoin-project/cpp-filecoin) (C++)
-- [go-filecoin](https://github.com/filecoin-project/go-filecoin) (Go)
+- [venus](https://github.com/filecoin-project/venus) (Go)
 
 Each of these software clients implements the Filecoin protocol as described in the [Filecoin protocol specification](https://filecoin-project.github.io/specs). To learn more about why there are multiple Filecoin implementations, please read [this blog post](https://filecoin.io/blog/announcing-filecoin-implementations-in-rust-and-c++/).
 
 Here is a snapshot of each implementation’s progress across the primary parts of the Filecoin protocol (updated June 24, 2020):
 
-|                    | lotus | go-filecoin | forest | fuhon |
-| ------------------ | ----- | ----------- | ------ | ----- |
-| 1. Node            | ✅    | ✅          | ✅     | ✅    |
-| 2. Files & data    | ✅    | 🔶          | 🔶     | ✅    |
-| 3. Virtual Machine | ✅    | ✅          | 🔶     | 🔶    |
-| 4. VM Actors       | 🔶    | 🔶          | 🔶     | 🔶    |
-| 5. Blockchain      | ✅    | ✅          | ✅     | ✅    |
-| 6. Token           | ✅    | ✅          | ✅     | ✅    |
-| 7. Storage Mining  | ✅    | 🔄          | 🔄     | 🔄 🔶 |
-| 8. Market          | ✅    | ✅          | 🔄     | ✅    |
+|                    | lotus | venus | forest | fuhon |
+| ------------------ | ----- | ----- | ------ | ----- |
+| 1. Node            | ✅    | ✅     | ✅     | ✅    |
+| 2. Files & data    | ✅    | 🔶     | 🔶     | ✅    |
+| 3. Virtual Machine | ✅    | ✅     | 🔶     | 🔶    |
+| 4. VM Actors       | 🔶    | 🔶     | 🔶     | 🔶    |
+| 5. Blockchain      | ✅    | ✅     | ✅     | ✅    |
+| 6. Token           | ✅    | ✅     | ✅     | ✅    |
+| 7. Storage Mining  | ✅    | 🔄     | 🔄     | 🔄 🔶 |
+| 8. Market          | ✅    | ✅     | 🔄     | ✅    |
 
 ✅ : fully featured implementation
 🔄 : reuses components from another implementation

@@ -5,19 +5,20 @@ description: The Lotus Miner is a Filecoin miner implementation written by Proto
 
 # Lotus Miner
 
-{{ $frontmatter.description }}. It is optionally complemented by the Lotus Worker.
+{{ $frontmatter.description }}.
 
 This sections contains guides to setup and run succesful mining operations using Lotus and should be approached by **advanced users only**, familiar with [how Filecoin works](../../about-filecoin/how-filecoin-works.md), [how mining works](../how-mining-works.md) and the operation of the [Lotus Node](../../store/lotus/README.md).
 
 ::: warning
-Lotus Mining for _mainnet_ has stringent minimal **[hardware requirements](../hardware-requirements.md)**. If you do not reach the minimum requirements for the network you plan to use, you should not even attempt it.
+Lotus Mining for _mainnet_ has stringent minimal **[hardware requirements](../hardware-requirements.md)**. Do not attempt this installation if your computer does not meet the minimum requirements.
 :::
 
 ## Getting started with Lotus Miner
 
 The following guides are essential starting points for those willing to launch a Lotus miner:
 
-- Miner installation is covered in the [Installation guide](../../get-started/lotus/installation.md) along with that of the Lotus Node. Once installation is completed all three application (node, miner and worker) should be installed.
+- The miner installation is covered in the [Installation guide](../../get-started/lotus/installation.md). Once the installation is complete, the Lotus node, Lotus miner, and Lotus worker applications should all be installed.
+
 - The [Miner setup](miner-setup.md) covers all the details to configure your miner to achieve the maximum performance and avoid common pitfalls.
 - The [Configuration reference](miner-configuration.md) explains what the different miner configuration options mean.
 - The [Seal workers](seal-workers.md) guide covers how to run additional seal workers co-located or not with the Lotus Miner.
