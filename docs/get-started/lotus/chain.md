@@ -50,11 +50,24 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
     lotus daemon --import-snapshot minimal_finality_stateroots_latest.car
     ```
 
-You can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
+We strongly recommend you verify the checksum of the download. However, you can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
 
 ```bash
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
 ```
+
+#### Get message receipts
+
+The lightweight snapshot does not contain any message receipts. However, you can get them retroactively once you have imported the lightweight snapshot:
+
+1. Import the lightweight snapshot [as normal](#lightweight-snapshot).
+1. Create a new environment variable called `LOTUS_ENABLE_CHAINSTORE_FALLBACK` and set it to `1`:
+
+   ```profile
+   $LOTUS_ENABLE_CHAINSTORE_FALLBACK=1
+   ```
+
+1. <!-- USE LOTUS SET-HEAD TO DO SOMETHING -->
 
 ### Full chain snapshot
 
