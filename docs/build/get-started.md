@@ -6,14 +6,14 @@ breadcrumb: 'Get started'
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.description }} The Infura API makes it easier to interact with the Filecoin Network by abstracting away some of the complex workflows and requirements, there's no need to spin up a node or directly call a Lotus daemon!
+{{ $frontmatter.description }} The Infura API makes it easier to interact with the Filecoin Network by abstracting away some of the complex workflows and requirements. There's no need to spin up a node or directly call a Lotus daemon!
 
-In this tutorial you will:
+In this tutorial, you will:
 
 1. Sign up to the Infura API.
 1. Create a Node.js script to:
    a. Check if a given string is a valid Filecoin address.
-   a. Return the balance of that address, if it is valid.
+   a. Return the balance of that address if it is valid.
 1. Discover more ways to interact with the Filecoin network using the Infura API.
 
 ## Prerequisites
@@ -22,12 +22,12 @@ Make sure you have both [Node.js](https://nodejs.org/) and [NPM](https://www.npm
 
 ## Infura API
 
-To interact with the Infura API you need to register on the Infura website. It's a free API, and all you need to do is sign up with your email:
+To interact with the Infura API, you need to register on the Infura website. It's a free API, and all you need to do is sign up with your email:
 
 1. Go to [infura.io/register](https://infura.io/register) and sign up.
 1. Select **Filecoin** from the sidebar and click **Create new project**.
 1. Enter _Filecoin - Get started_ as the project name and click **Create**.
-1. You should now be able to see your `Project ID` and `Project Secret`. Take a note of these two fields; we'll use them later.
+1. You should now see your `Project ID` and `Project Secret`. Take a note of these two fields; we'll use them later.
 
 ![Project ID and Project secret within Infura.](./images/get-started/infura-keys.png)
 
@@ -71,11 +71,11 @@ npm install request
 > ...
 ```
 
-Now that we've got a project set up we can start to build our script!
+Now that we've got a project set up, we can start to build our script!
 
 ## Design the basic script
 
-We've got our project directory set up, and have our `index.js` file ready to go. Let's start fleshing out our script by creating a basic API call.
+We've got our project directory set up and have our `index.js` file ready to go. Let's start fleshing out our script by creating a basic API call.
 
 1. As a refresher, this is what our boilerplate code looks like:
 
@@ -113,7 +113,7 @@ We've got our project directory set up, and have our `index.js` file ready to go
    }
    ```
 
-   These are pretty self explanitory, so we won't delve into what they mean here. The two object values we're more interested in are `body` and `auth`:
+   These are pretty self-explanatory, so we won't delve into what they mean here. The two object values we're more interested in are `body` and `auth`:
 
 1. Create a new value called `auth`, and within it create a new object:
 
@@ -171,7 +171,7 @@ We've got our project directory set up, and have our `index.js` file ready to go
    }
    ```
 
-   Make sure to use backticks `` ` `` since they let us span the `body` object over a few lines. This doesn't do anything _functionally_, but it keep our code fairly tidy.
+   Make sure to use backticks `` ` `` since they let us span the `body` object over a few lines. This doesn't do anything _functionally_, but it keeps our code fairly tidy.
 
 1. Set the `method` to `Filecoin.ChainHead`:
 
@@ -195,13 +195,13 @@ We've got our project directory set up, and have our `index.js` file ready to go
    }
    ```
 
-   The method `Filecoin.ChainHead` simply returns the current head of the chain. While it's not the final method that we're going to use, it's a good way to test that our script is working.
+   The method `Filecoin.ChainHead` returns the current head of the chain. While it's not the final method that we're going to use, it's a good way to test that our script is working.
 
 ## Test run
 
 We've got some basic functionality in our script, so we should run everything to make sure it's all working!
 
-1. In your project directory call the script using `node`:
+1. In your project directory, call the script using `node`:
 
 ```bash
 node index.js
@@ -209,11 +209,11 @@ node index.js
 > Post successful: response:  {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceamdit67mnlyozufeaptmhmti6dv ...
 ```
 
-Excellent! Our request was received by the Infura API, and it sent us back the latest chain head information. But we're not interested in the chain head, we want to get information about addresses!
+Excellent! The Infura API received our request, and it sent us back the latest chain head information. But we're not interested in the chain head. We want to get information about addresses!
 
 ## Validate an address
 
-Instead of asking for the chain head information, lets see if a given string is a valid Filecoin address:
+Instead of asking for the chain head information, let's see if a given string is a valid Filecoin address:
 
 1. Within the `body` section of the `options` object, change the `method` from `Filecoin.ChainHead` to `Filecoin.WalletValidateAddress`:
 
@@ -287,7 +287,7 @@ Instead of asking for the chain head information, lets see if a given string is 
 
    This example uses `f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi` as the address in the `params` field.
 
-1. Let's run the script again to see what respose we get:
+1. Let's rerun the script to see what response we get:
 
    ```bash
    node index.js
@@ -303,7 +303,7 @@ Instead of asking for the chain head information, lets see if a given string is 
 
 ## Check balance
 
-Our script checks that a given string is a valid Filecoin address, but doesn't do much else. Let's have the script tell us what the balance of a given Filecoin address is.
+Our script checks that a given string is a valid Filecoin address but doesn't do much else. Let's have the script tell us what the balance of a given Filecoin address is.
 
 1. The only change we have to make is to request the `WalletBalance` method from the Infura API:
 
@@ -374,4 +374,4 @@ request(options, (error, response, body) => {
 
 ## Next steps
 
-We've only really dipped out toes into what you can do with this API. The [Infura documentation](https://infura.io/docs/filecoin) is a great resource to fnd out what you can build. Why not try generating a transaction and sending `FIL` between two account using the API?
+We've only really dipped our toes into what you can do with this API. The [Infura documentation](https://infura.io/docs/filecoin) is a great resource to determine what you can build. Why not try generating a transaction and sending `FIL` between two accounts using the API? Or get information about a particular miner?
