@@ -121,4 +121,6 @@ Once a deal is sucessful and the data is _sealed_, it can be [retrieved](retriev
 
 ## Additional tools
 
+[Filecoin.tools](https://filecoin.tools/) also allows you to check the status of your deal
+
 [Starling](https://github.com/filecoin-project/starling) provides a set of utilities to add and monitor content to the Filecoin network, using a running Lotus Node.
