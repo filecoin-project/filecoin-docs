@@ -79,7 +79,7 @@ Filecoin implementations may choose the heuristics of how their miners select me
 
 ## Actors
 
-Actors are a [software design pattern](https://en.wikipedia.org/wiki/Actor_model) for managing state. Accounts, Multisigs, Miners, and anything that has state like an account balance, is implemented as an Actor.
+Actors are a [software design pattern](https://en.wikipedia.org/wiki/Actor_model) for managing state. Accounts, Multisigs, Miners, and anything with a state, such as an account balance, are implemented as an _actor_.
 
 Actors are the Filecoin equivalent of smart contracts in the Ethereum Virtual Machine. As such, Actors are very central components of the system. Any change to the current state of the Filecoin blockchain has to be triggered through an Actor.
 
@@ -96,29 +96,29 @@ In Filecoin, addresses are used to identify actors. There are 4 address types:
 
 ### ID addresses - `f0`
 
-All actors have an ID e.g. `99` which is a short integer assigned to it by the InitActor when the actor is created. An "ID address" is an actor's ID prefixed with the network (`f` for mainnet), and address type `0` for ID.
+All actors have an ID such as '99`, a short integer assigned to it by the InitActor when the actor is created. An _ID address_ is an actor's ID prefixed with the network (`f` for mainnet) and address type `0` for ID.
 
-For example the [Burn Account](https://filfox.info/en/address/f099) Actor on the mainnet has the ID `99` and the ID Address `f099`.
+For example, the [Burn Account](https://filfox.info/en/address/f099) actor on the mainnet has the ID `99` and the ID Address `f099`.
 
 ### Public key addresses - `f1` and `f3`
 
-Actors and that are managed directly by users, like Accounts, are derived from a public/private key pair. If you have access to private key you can sign messages sent from that actor. The public key is used to derive an address for the actor.
+Actors managed directly by users, like accounts, are derived from a public-private key pair. If you have access to a private key, you can sign messages sent from that actor. The public key is used to derive an address for the actor.
 
-For example the [Huobi Hot Wallet](https://filfox.info/en/address/f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za) has the SECP256K1 Public Key Address `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za` and the ID Address `f033259`. Both addresses identify the same Account actor. Messages sent to either address will be applied to the same Account.
+For example, the [Huobi Hot Wallet](https://filfox.info/en/address/f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za) has the SECP256K1 Public Key Address `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za` and the ID Address `f033259`. Both addresses identify the same Account actor. Messages sent to either address will be applied to the same Account.
 
 Public key addresses allow devices like the Ledger to derive a valid Filecoin address for your account from just the public key. It doens't need to ask a remote node what your ID address is.
 
-### Robust addresses vs ID addresses
+### Robust addresses versus ID addresses
 
 Public key addresses are referred to as "Robust Addresses" as they do not depend on the filecoin chain state.
 
-Actor IDs are defined on-chain by the InitActor. A actor ID can change for a brief window of time after its creation, if the same ID is assigned to different actors on different forks. You can think of ID addresses like a monotonically increasing numeric primary key in a relational database. Where a chain reorg occurs, or a rollback in sql terms, you can end up referring to same id for different rows. The [Expected Consensus](https://spec.filecoin.io/#section-algorithms.expected_consensus) algorithm will resolve the conflict, and once the state that defines a new ID is old enough (_reaches finality_ in consensus terms) no changes can occur; the ID is bound to that actor forever.
+Actor IDs are defined on-chain by the InitActor. An actor ID can change for a brief time after its creation if the same ID is assigned to different actors on different forks. You can think of ID addresses like a monotonically increasing numeric primary key in a relational database. Where a chain reorg occurs or a rollback in SQL terms, you can end up referring to the same id for different rows. The [Expected Consensus](https://spec.filecoin.io/#section-algorithms.expected_consensus) algorithm will resolve the conflict, and once the state that defines a new ID is old enough (_reaches finality_ in consensus terms), no changes can occur; the ID is bound to that actor forever.
 
-Robust addresses provide a safe way to reference actors before the chain state is final. ID Addresses are used as a space efficient way to identify actors in the filecoin chain state, where every byte matters, and as a human friendly, concise form.
+Robust addresses provide a safe way to reference actors before the chain state is final. ID Addresses are used as a space-efficient way to identify actors in the filecoin chain state, where every byte matters, and as a human-friendly, concise form.
 
 ### Actor addresses `f2`
 
-Actor addresses provide a way to create robust addresses for actors that are not associated with a public key. They are the essentially random sha256 hash of the output of the account creation. The [ZH Storage Miner](https://filfox.info/en/address/f01248) has the Actor Address `f2plku564ddywnmb5b2ky7dhk4mb6uacsxuuev3pi` and the ID address `f01248`.
+Actor addresses provide a way to create robust addresses for actors not associated with a public key. They are the essentially random sha256 hash of the output of the account creation. The [ZH Storage Miner](https://filfox.info/en/address/f01248) has the Actor Address `f2plku564ddywnmb5b2ky7dhk4mb6uacsxuuev3pi` and the ID address `f01248`.
 
 ## Additional materials
 
