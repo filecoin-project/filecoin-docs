@@ -137,6 +137,7 @@ module.exports = {
                 ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
                 ['lotus/custom-storage-layout', 'Custom storage layout'],
                 ['lotus/sector-pledging', 'Sector pledging'],
+                ['lotus/disputer', 'Disputer'],
                 ['lotus/connectivity', 'Connectivity'],
                 ['lotus/miner-addresses', 'Miner addresses'],
                 //'lotus/fees-control-and-limits',
