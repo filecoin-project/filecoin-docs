@@ -85,10 +85,14 @@ This section controls parameters for making storage and retrieval deals:
   ConsiderOnlineRetrievalDeals = true
   # When enabled, the miner can accept offline retrieval deals
   ConsiderOfflineRetrievalDeals = true
+  # When enabled, the miner can accept verified deals
+  ConsiderVerifiedStorageDeals = true
+  # When enabled, the miner can accept unverified deals
+  ConsiderUnverifiedStorageDeals = true
   # A list made of Data CIDs to reject when making deals
   PieceCidBlocklist = []
   # How long the sealing process for a sector should take (see below)
-  ExpectedSealDuration = "12h0m0s"
+  ExpectedSealDuration = "24h0m0s"
 
   # A command used for fine-grained evaluation of storage deals (see below)
   Filter = "/absolute/path/to/storage_filter_program"
@@ -146,7 +150,7 @@ This section controls some of the behaviour around sector sealing:
   # Same, but for deal-related sealing (pledge sectors not included)
   MaxSealingSectorsForDeals = 0
   # Period of time that a newly created sector will wait for more deals to be packed in to before it starts to seal.
-  WaitDealsDelay = "1h0m0s"
+  WaitDealsDelay = "6h0m0s"
 ```
 
 ## Storage section
@@ -171,10 +175,13 @@ The fees section allows to set limits to the gas consumption for the different m
 ```toml
 [Fees]
   # Maximum fees to pay
-  MaxPreCommitGasFee = "0.05 FIL"
+  MaxPreCommitGasFee = "0.025 FIL"
   MaxCommitGasFee = "0.05 FIL"
+  MaxTerminateGasFee = "0.5 FIL"
   # This is a high-value operation, so the default fee is higher.
-  MaxWindowPoStGasFee = "50 FIL"
+  MaxWindowPoStGasFee = "5 FIL"
+  MaxPublishDealsFee = "0.05 FIL"
+  MaxMarketBalanceAddFee = "0.007 FIL"
 ```
 
-Depending on the network congestion the base fee for a transaction may grow or decrease. Your gas limits will have to be at any case larger than the base fee for the messages to be included. A very large max fee can however result in the quick burning of funds when the base fees are very high, as the miner automatically submits messages during normal operation, so be careful about this.
+Depending on the network congestion the base fee for a transaction may grow or decrease. Your gas limits will have to be at any case larger than the base fee for the messages to be included. A very large max fee can however result in the quick burning of funds when the base fees are very high, as the miner automatically submits messages during normal operation, so be careful about this. It is also necessary to have more funds available then any max fee set, even if the actual fee will be far less then the max fee set. *MaxWindowPostGasFee is currently reduced, but the setting used should remain fairly high, eg. 2FIL. 
