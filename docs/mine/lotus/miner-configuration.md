@@ -93,6 +93,11 @@ This section controls parameters for making storage and retrieval deals:
   PieceCidBlocklist = []
   # How long the sealing process for a sector should take (see below)
   ExpectedSealDuration = "24h0m0s"
+  # When a deal is ready to publish, the amount of time to wait for more
+  # deals to be ready to publish, before publishing them all as a batch
+  PublishMsgPeriod = "1h0m0s"
+  # The maximum number of deals to include in a single publish deals message
+  MaxDealsPerPublishMsg = 8
 
   # A command used for fine-grained evaluation of storage deals (see below)
   Filter = "/absolute/path/to/storage_filter_program"
