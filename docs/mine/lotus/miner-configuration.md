@@ -112,6 +112,25 @@ This section controls parameters for making storage and retrieval deals:
 The final value of `ExpectedSealDuration` should equal `(TIME_TO_SEAL_A_SECTOR + WaitDealsDelay) * 1.5`. This equation ensures that the miner does not commit to having the sector sealed too soon.
 :::
 
+### Publishing several deals in one message
+
+The `PublishStorageDeals` message can publish many deals in a single message.
+When a deal is ready to be published, lotus will wait up to `PublishMsgPeriod`
+for other deals to be ready before sending the `PublishStorageDeals` message.
+
+However once `MaxDealsPerPublishMsg` are ready, lotus will immediately publish all the deals.
+
+For example if `PublishMsgPeriod` is 1 hour:
+- At 1:00pm Deal 1 is ready to publish.
+  Lotus will wait until 2:00pm for other deals to be ready before sending `PublishStorageDeals`
+- At 1:30pm Deal 2 is ready to publish
+- At 1:45pm Deal 3 is ready to publish
+- At 2:00pm lotus publishes Deals 1, 2 and 3 in a single `PublishStorageDeals` message.
+
+If `MaxDealsPerPublishMsg` is 2, then in the above example when deal 2 is ready to be published at 1:30,
+lotus would immediately publish Deals 1 & 2 in a single `PublishStorageDeals` message.
+Deal 3 would be published in a subsequent `PublishStorageDeals` message.
+
 ## Using filters for fine-grained storage and retrieval deal acceptance
 
 Your use-case might demand very precise and dynamic control over a combination of deal parameters.
