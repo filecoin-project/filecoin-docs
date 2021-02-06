@@ -131,6 +131,8 @@ If `MaxDealsPerPublishMsg` is 2, then in the above example when deal 2 is ready 
 lotus would immediately publish Deals 1 & 2 in a single `PublishStorageDeals` message.
 Deal 3 would be published in a subsequent `PublishStorageDeals` message.
 
+> Note: If any of the deal in the `PublishStorageDeals` fails validation upon executation, i.e: start epoch has passed, all deals will fail to be published.
+
 ## Using filters for fine-grained storage and retrieval deal acceptance
 
 Your use-case might demand very precise and dynamic control over a combination of deal parameters.
