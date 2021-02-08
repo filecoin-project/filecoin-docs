@@ -68,7 +68,7 @@ The above command will replace the associated message in the pool and automatica
 Alternatively, the _GasPremium_, _GasFeeCap_ and, optionally, _GasLimit_ can be set manually with their respective flags:
 
 ```sh
-lotus mpool replace --gas-feecap <feecap> --gas-premuim <premium> --gas-limit <limit> <from> <nonce>
+lotus mpool replace --gas-feecap <feecap> --gas-premium <premium> --gas-limit <limit> <from> <nonce>
 ```
 
 If the new _gas premium_ is lower than the 1.25 ratio to the original, the message will not be included in the pool. Additional message fields, like the recipient of the transaction, can be changed when using the [`MpoolPush` API method](../../reference/lotus-api.md) directly. In this case the new message will need to be locally signed first.
