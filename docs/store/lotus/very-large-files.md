@@ -54,10 +54,11 @@ lotus client generate-car <inputPath> <outputPath>
 lotus client commP <inputCarFilePath>
 ```
 
-### Calculate the datasize:
+### Calculate the datasize
+
 1. Take the final car size `ls -l data.car`
-2. Round it up to the nearest power of 2 ( this is your padded piece size ) 
-3. Divide by 128, multiply by 127 ( this is your unpadded piece size )
+2. Round it up to the nearest power of 2. This is your padded piece size.
+3. Divide by 128, multiply by 127. this is your unpadded piece size.
 
 ### Propose an offline deal
 
