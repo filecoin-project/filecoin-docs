@@ -57,13 +57,13 @@ lotus client commP <inputCarFilePath>
 ### Calculate the datasize
 
 1. Take the final car size `ls -l data.car`
-2. Round it up to the nearest power of 2. This is your padded piece size.
-3. Divide by 128, multiply by 127. this is your unpadded piece size.
+1. Round it up to the nearest power of 2. This is your padded piece size.
+1. Divide by 128, multiply by 127. this is your unpadded piece size.
+1. Go to [Wolfram Alpha](https://www.wolframalpha.com).
+1. Enter `x = SIZE_IN_BYTES; 127*( 2^( ceil( log2( ceil ( x /127 ) ) ) ) )` and changing `SIZE_IN_BYTES` to your value.
+1. You solution can be found under **Substitution**:
 
-### Propose an offline deal
-
-The following link implement that formula :
-[datasize = 127*( 2^( ceil( log2( ceil ( CAR_FILE_SIZE_IN_BYTES /127 ) ) ) ) )](https://www.wolframalpha.com/input/?i=x+%3D+SIZE_IN_BYTES%3B+127*%28+2%5E%28+ceil%28+log2%28+ceil+%28+x+%2F127+%29+%29+%29+%29+%29)
+  ![](./images/very-large-files/wolfram-alpha.png)
 
 Propose the offline deal with the miner:
 
