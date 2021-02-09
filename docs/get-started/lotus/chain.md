@@ -19,10 +19,10 @@ Once Lotus is synced, it will learn about new blocks as they are mined for every
 
 Filecoin's blockchain grows relatively fast, so a full sync will take a long time. For this reason, Lotus offers a faster way to sync using trusted state snapshots. There are two types of snapshot available:
 
-| Name                                 | Description | End height    | Message start height        | State start height          |
-| ------------------------------------ | ----------- | ------------- | --------------------------- | --------------------------- |
-| [Lightweight](#lightweight-snapshot) | asd         | Current block | Current block - 2000 blocks | Current block - 2000 blocks |
-| [Full chain](#full-chain-snapshot)   | asd         | Current block | Genesis block               | Current block - 2000 blocks |
+| Name                                 | End height    | Message start height        | State start height          |
+| ------------------------------------ | ------------- | --------------------------- | --------------------------- |
+| [Lightweight](#lightweight-snapshot) | Current block | Current block - 2000 blocks | Current block - 2000 blocks |
+| [Full chain](#full-chain-snapshot)   | Current block | Genesis block               | Current block - 2000 blocks |
 
 ### Lightweight snapshot
 
