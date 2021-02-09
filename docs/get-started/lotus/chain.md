@@ -56,19 +56,6 @@ We strongly recommend you verify the checksum of the download. However, you can 
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
 ```
 
-#### Get message receipts
-
-The lightweight snapshot does not contain any message receipts. However, you can get them retroactively once you have imported the lightweight snapshot:
-
-1. Import the lightweight snapshot [as normal](#lightweight-snapshot).
-1. Create a new environment variable called `LOTUS_ENABLE_CHAINSTORE_FALLBACK` and set it to `1`:
-
-   ```profile
-   $LOTUS_ENABLE_CHAINSTORE_FALLBACK=1
-   ```
-
-1. <!-- USE LOTUS SET-HEAD TO DO SOMETHING -->
-
 ### Full chain snapshot
 
 Alternatively, you can use full chain snapshots. Full chain snapshots contain every block from genesis until the current tipset. You can trustlessly import these complete snapshots by supplying the `--import-chain` option to recalculate the state during import fully:
