@@ -28,7 +28,7 @@ We recommend most users to perform the initial node sync from a minimal, lightwe
 A recent minimal trusted state chain snapshot is available [here](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car). We can instruct lotus to start the daemon and directly import from the URL:
 
 ```sh
-# The snapshot size is about 7GiB. This works for mainnet.
+# The snapshot size is about 20GiB (as of 2021-02-10). This works for mainnet.
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
 
 # An alternative is to download first and use the file
