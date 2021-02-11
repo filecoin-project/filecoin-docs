@@ -1,6 +1,6 @@
 ---
 title: Reference
-description: Helpful reference materials for the Filecoin specification, implementations and Ecosystem
+description: Helpful reference materials for the Filecoin specification, implementations, and ecosystem.
 ---
 
 # Reference
@@ -19,12 +19,11 @@ View the [technical specification](https://github.com/filecoin-project/specs) fo
 
 #### Filecoin Plus for Verified Data
 
-The [Filecoin Plus Client Onboarding](https://github.com/filecoin-project/filecoin-plus-client-onboarding) Github repo describes how to participate in the Fil+ program.
-Also see page 12 of [Engineering Filecoin's Economy](https://filecoin.io/2020-engineering-filecoins-economy-en.pdf) for additional info about the Fil+ verified data program that earns 10x in miner rewards.
+The [Filecoin Plus Client Onboarding](https://github.com/filecoin-project/filecoin-plus-client-onboarding) Github repo describes how to participate in the Fil+ program. See the [Engineering Filecoin's Economy](https://filecoin.io/2020-engineering-filecoins-economy-en.pdf) report for additional info about the Fil+ verified data program that earns 10x in miner rewards.
 
 #### Videos
 
-Visit the [Filecoin Youtube channel](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) to view past presentations from various Filecoin workshops, conference talks and Filecoin meetups.
+Visit the [Filecoin Youtube channel](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) to view past presentations from various Filecoin workshops, conference talks, and Filecoin meetups.
 
 
 ## Filecoin Community Resources and Tools
@@ -54,7 +53,7 @@ Resources, tooling, and other community projects in the ecosystem to aid in inst
 ##### Devnets & Testnets
 
 - [**network.filecoin.io**](https://network.filecoin.io)
-    - lists all current Filecoin networks including devnets for testing
+    - lists all current Filecoin networks, including devnets for testing
     - **Calibration** (currently disabled) 
       - largest testnet 
       - See [#fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC) for announcements and [#fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack) 
@@ -65,7 +64,7 @@ Resources, tooling, and other community projects in the ecosystem to aid in inst
 #### Local Devnets (on your local machine)
    - See [**Run a Local Devnet** in Filecoin Docs](https://docs.filecoin.io/build/local-devnet/)
    - [Textile's Local Devnet with mocked sectorbuilder](https://docs.textile.io/powergate/localnet/#localnet-with-lotus-client)
-       - for faster storage app prototyping, has a mocked sectorbuilder for faster API usage and deal confirmation
+       - for faster storage app prototyping, it has a mocked sector builder for faster API usage and deal confirmation
 
 
 #### Containers & Virtualization
@@ -112,7 +111,7 @@ Tools and resources to check status & details for the network & chain.
 - [GraphQL Explorer for Filecoin's Chain](https://node.glif.io/service/statediff/graphql.html) - see the Docs tab for query types
 - [Statediff](https://node.glif.io/space07/statediff/rpc/)
   - Uses [filecoin-project/statediff](https://github.com/filecoin-project/statediff) to explore and compare changes to Filecoin chain state
-  - Also see [keyko-io/filecoin-verifier-tools](https://github.com/keyko-io/filecoin-verifier-tools) for a JS tool to walk the state HAMT
+  - See [keyko-io/filecoin-verifier-tools](https://github.com/keyko-io/filecoin-verifier-tools) for a JS tool to walk the state HAMT
 
 #### Chain Ingest Tools
 - [Sentinel-Visor](https://github.com/filecoin-project/sentinel-visor) - has custom hooks into the VM of Lotus for parsing chain data
@@ -143,7 +142,7 @@ Tools and resources to check status & details for the network & chain.
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - a good JS example of using `filecoin-signing-tools` and Ledger integration, live Filecoin wallet at [Glif.io](https://glif.io)
 
 #### Additional Tools
-- [**Powergate**](https://docs.textile.io/powergate/) - leverages IPFS alongside Filecoin for hot storage and retrieval, storage deal helpers and many other convenience features for developers - **_recommended_**
+- [**Powergate**](https://docs.textile.io/powergate/) - leverages IPFS alongside Filecoin for hot storage and retrieval, storage deal helpers, and many other convenience features for developers - **_recommended_**
 
 #### Developer Tools
 - [js-rle](https://github.com/willscott/js-rle) - RLE+ Spec. Learn about [rle-bitset-encoding in the Filecoin Spec](https://spec.filecoin.io/#section-appendix.data_structures.rle-bitset-encoding)
@@ -159,7 +158,7 @@ Tools and resources to check status & details for the network & chain.
 #### Ecosystem Projects
 - [Filecoin Ecosystem Map](http://ipfs.io/ipfs/QmQhjHgWzaW7obwDzBnTErQvAJY6cbKu5WUKXBzYPjuxto)
 - [Awesome Filecoin](https://www.awesomefilecoin.com/) - awesome projects on Filecoin
-- [**Filecoin Shipyard**](https://github.com/filecoin-shipyard) - collection of open source community projects on Filecoin 
+- [**Filecoin Shipyard**](https://github.com/filecoin-shipyard) - a collection of open source community projects on Filecoin 
 
 #### Grant Programs, Accelerators, etc.
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - on-going quarterly dev grant program to support open source projects + new RFPs on Filecoin
@@ -170,7 +169,7 @@ Tools and resources to check status & details for the network & chain.
 - [Apollo - Gitcoin x Filecoin](https://gitcoin.co/blog/apollo/#:~:text=APOLLO%20will%20run%20from%20August,using%20Filecoin%20and%20Web3%20ecosystem) - Summer 2020
 - [Gitcoin Grants Round 9](https://gitcoin.co/grants/) - upcoming grants round and online hackathon in mid-March 2021
 
-Also keep a look out for other upcoming hackathons. Previous ones involving Filecoin included [EthOnline](https://ethonline.org/), [HackFS](https://hackfs.com/), [Spark University Hackathon](https://filecoin.io/blog/spark-university-hackathon/)...
+Keep a lookout for other upcoming hackathons. Previous ones involving Filecoin included [EthOnline](https://ethonline.org/), [HackFS](https://hackfs.com/), [Spark University Hackathon](https://filecoin.io/blog/spark-university-hackathon/)...
 
 
 ## 4. Mining
@@ -178,7 +177,7 @@ Also keep a look out for other upcoming hackathons. Previous ones involving File
 #### Dashboards and Reputation Systems
 - [SpaceGap](https://spacegap.github.io/)
   - shows storage proof deadlines and sector details for the top 50 miners
-- [Codefi Miner Reputation System](https://www.storage.codefi.network/) - miner info, asking price, deals they’ve completed
+- [Codefi Miner Reputation System](https://www.storage.codefi.network/) - miner info, asking price, deals they've completed
 - [FIL Swan](https://www.filswan.com/) - miner info, prices, offline deal acceptance
 
 #### Miner Tools
@@ -190,7 +189,7 @@ Also keep a look out for other upcoming hackathons. Previous ones involving File
 
 #### Storage Client / Miner Programs
 - [Slingshot Competition](https://slingshot.filecoin.io/) - currently in Phase 2 to store [these curated datasets](https://github.com/filecoin-project/slingshot/blob/master/datasets.md)
-- [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding) - to incentivize useful storage on Filecoin with a social trust network for verified data. Clients can apply to Notaries to receive DataCap, which can be used to incentivize Miners at 10x to their quality adjusted power - increasing their probability of winning block rewards.
+- [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding) - to incentivize useful storage on Filecoin with a social trust network for verified data. Clients can apply to Notaries to receive DataCap, which can be used to incentivize Miners at 10x to their quality-adjusted power - increasing their probability of winning block rewards.
 
 
 - [Filecoin Discover Store](https://store.filecoin-discover.com/)
@@ -199,21 +198,23 @@ Also keep a look out for other upcoming hackathons. Previous ones involving File
 
 ## 5. Wallets
 
-Tools for sending and receiving FIL tokens.
-- _Wallets that have conducted third-party audits of their open source code by a reputable security auditor are **recommended** below._
+Tools for sending and receiving FIL tokens:
 
-- [**Ledger HW wallet** in Filecoin Docs](https://docs.filecoin.io/get-started/lotus/ledger/#setup-your-ledger-device) - **recommended** - the Ledger Live UI does not have Filecoin support yet but Ledger HW can be used with the Glif.io web wallet or a Lotus node.
+- _Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are **recommended** below._
+
+- [**Ledger HW wallet** in Filecoin Docs](https://docs.filecoin.io/get-started/lotus/ledger/#setup-your-ledger-device) - **recommended** - the Ledger Live UI does not have Filecoin support yet, but Ledger HW can be used with the Glif.io web wallet or a Lotus node.
 
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **recommended** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger HW (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below)
 
 - [FilSnap MetaMask Plugin](https://filsnap.netlify.app/) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
-- A [Filecoin lightwallet example is in the Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
+- A [Filecoin light wallet example is in the Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
 
 - [Filecoin Rosetta proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
 
 #### Other Wallets & Multi-currency Wallets with Filecoin support
 
-(We do **not** know if the wallets below have been security audited so _**please verify these for security and use at your own discretion**_.)
+We do not know if the wallets below have been security audited, so please verify these for security and use them at your discretion.
+
 - [TrustWallet](https://trustwallet.com/) - [open source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 - [ImToken](https://token.im/)
 - [MathWallet](https://mathwallet.org/)
