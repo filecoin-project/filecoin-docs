@@ -53,6 +53,12 @@ lotus mpool pending --local
 
 For each message you will be able to see key information like the _GasLimit_, the _GasFeeCap_ and the _GasPremium_ values, explained above.
 
+To reduce the output to the messages key values you can use:
+
+ ```sh
+lotus mpool pending --local | grep "Nonce" -A5
+```
+
 In order to avoid messages from staying long periods in the pool when they are sent, it is possible to adjust the [Lotus Miner fees in the configuration](miner-configuration.md) and use [additional control addresses for _WindowPoSts_](miner-addresses.md). Existing messages can be replaced at any time with the procedure explained below.
 
 ## Replacing messages in the pool
