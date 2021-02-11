@@ -38,7 +38,7 @@ It is recommended to set the following environment variables in your environment
 export BELLMAN_CPU_UTILIZATION=0.875
 ```
 
-`BELLMAN_CPU_UTILIZATION` can be set in the interval [0,1] to designate a proportion of the multi exponentiation calculation to be moved to CPU in parallel to the GPU to keep all hardware occupied. The value 0.875 is a good starting point, but you should experiment with it if you want an optimal setting. Different hardware setups will result in different values being optimal. Omitting this environment variable might also be optimal.
+The `BELLMAN_CPU_UTILIZATION` is an optional variable to designate a proportion of the multi-exponentiation calculation to be moved to a CPU in parallel to the GPU. This is an effort to keep all the hardware occupied. The interval must be a number between `0` and `1`. The value `0.875` is a good starting point, but you should experiment with it if you want an optimal setting. Different hardware setups will result in different values being optimal. Omitting this environment variable might also be optimal.
 
 ```sh
 # See https://github.com/filecoin-project/rust-fil-proofs/
