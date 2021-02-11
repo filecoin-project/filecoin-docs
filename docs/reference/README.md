@@ -52,7 +52,7 @@ Resources, tooling, and other community projects in the ecosystem to aid in inst
     - See [#fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC) for announcements and [#fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack)
   - **Nerpa**
     - a devnet for developers with smaller 512MB sectors that can seal in ~25 min
-    - See [#fil-net-nerpa-discuss](https://filecoinproject.slack.com/archives/C016VJSJNTH) in [Filecoin Slack](filecoin.io/slack)
+    - See [#fil-net-nerpa-discuss](https://filecoinproject.slack.com/archives/C016VJSJNTH) in [Filecoin Slack](https://filecoin.io/slack)
 
 ### Local devnets on your local machine
 
