@@ -14,19 +14,18 @@ Users can use the following software solutions to store data on the Filecoin net
 
 ### Apps
 
-Users can use the following software solutions to store data on the Filecoin network with no technical setup:
+The following applications allow you to store data on the Filecoin network with no technical setup:
 
-- [Slate](slate.md) allows uploading and storing content on the Filecoin network directly from your browser. It supports one time deals, and it is perfect to create image galleries. The first 50 GB of storage is free.
-- [ChainSafe Files](https://files.chainsafe.io/) provides decentralized cloud storage with end-to-end encryption in a Dropbox-like interface ([more info](https://medium.com/chainsafe-systems/introducing-chainsafe-files-3eedabdec922)).
+- [Slate](slate.md) allows uploading and storing content on the Filecoin network directly from your browser. It supports one time deals, is perfect for creating image galleries, and the first 50 GB of storage is free!
+- [ChainSafe Files](https://files.chainsafe.io/) provides decentralized cloud storage with end-to-end encryption in a Dropbox-like interface. Check out the [blog post put out by ChainSafe](https://medium.com/chainsafe-systems/introducing-chainsafe-files-3eedabdec922) for a quick overview of the service.
 
 ### Filecoin Node Client
 
 - [Lotus](lotus/README.md) imports data and performs deals on the chain using its daemon and CLI. Lotus users get full control of the deals, the chosen miners, and the wallets used to pay. Make sure you are familiar with [Lotus](../get-started/lotus/README.md) and have it [installed and running](../get-started/lotus/installation.md).
-- []()
 
 ### Digital Preservation
 
-- [Starling](starling.md) provides decentralized storage for preservation, using Lotus but simplifying the usage for digital preservationists managing archives hosted on servers.
+- [Starling](starling.md) uses Lotus to simplify decentralized storage for digital _preservationists_ and archivists.
 
 ### Video
 
