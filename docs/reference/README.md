@@ -214,9 +214,7 @@ Wallets that have conducted third-party audits of their open-source code by a re
 
 - [**Ledger HW wallet** in Filecoin Docs](https://docs.filecoin.io/get-started/lotus/ledger/#setup-your-ledger-device) - **_recommended_** - Ledger Live does not have Filecoin support yet, but Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node.
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **_recommended_** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger hardware (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below)
-- [FilSnap MetaMask Plugin](https://filsnap.netlify.app/) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
-- A Filecoin light wallet example is in the [Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
-- [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
+
 
 ### Other wallets
 
@@ -227,6 +225,12 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [MathWallet](https://mathwallet.org/)
 - [Cobo](https://cobo.com/)
 - [FilWallet.ai](https://filwallet.ai/) - by the team behind Filscan.io
+
+### Wallet tools for developers
+
+- [FilSnap MetaMask Plugin](https://filsnap.netlify.app/) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
+- A Filecoin light wallet example is in the [Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
+- [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
 
 ### Filecoin signing tools
 
