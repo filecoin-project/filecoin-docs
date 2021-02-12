@@ -7,6 +7,8 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 This section contains links and reference materials for Filecoin.
 
+[[TOC]]
+
 ## About the protocol
 
 ### Filecoin specification
@@ -58,21 +60,21 @@ Community projects to aid in installing, using & building on Filecoin.
 
 - See [**Run a Local Devnet** in Filecoin Docs](https://docs.filecoin.io/build/local-devnet/)
 - [Textile's Local Devnet with mocked sectorbuilder](https://docs.textile.io/powergate/localnet/#localnet-with-lotus-client)
-  - for faster storage app prototyping, uses a mocked sector builder for faster API usage and deal confirmation
+  - for storage app prototyping, uses a mocked sector builder for faster deal confirmation
 
 ### Containers and virtualization
 
 - Unofficial Docker Hub images:
-  - https://hub.docker.com/r/textile/lotus
-  - https://hub.docker.com/r/glif/lotus
-  - https://hub.docker.com/r/ognots/lotus
-  - https://hub.docker.com/r/textile/lotus-devnet (mocked sectorbuilder)
+  - [https://hub.docker.com/r/textile/lotus](https://hub.docker.com/r/textile/lotus)
+  - [https://hub.docker.com/r/glif/lotus](https://hub.docker.com/r/glif/lotus)
+  - [https://hub.docker.com/r/ognots/lotus](https://hub.docker.com/r/ognots/lotus)
+  - [https://hub.docker.com/r/textile/lotus-devnet](https://hub.docker.com/r/textile/lotus-devnet) (mocked sectorbuilder)
 
 ### Scalable endpoint hosting scripts
 
 - For running a node cluster of load balanced Lotus JSON RPC API endpoints
-- https://github.com/glifio/filecoin-chart (k8 cluster)
-- https://github.com/glifio/filecoin-docker
+- [https://github.com/glifio/filecoin-chart](https://github.com/glifio/filecoin-chart) (k8 cluster)
+- [https://github.com/glifio/filecoin-docker](https://github.com/glifio/filecoin-docker)
 - [filecoin-rpc-proxy](https://github.com/protofire/filecoin-rpc-proxy) - cache any [JSON RPC API](https://docs.filecoin.io/reference/lotus-api/) request to reduce request load
 
 ## Network status
@@ -121,7 +123,7 @@ Tools to check status and details of the network and chain.
 
 ### Core dev calls
 
-- https://github.com/filecoin-project/tpm - core dev meeting agendas, notes and recordings
+- [https://github.com/filecoin-project/tpm](https://github.com/filecoin-project/tpm) - core dev meeting agendas, notes and recordings
 
 ## APIs and developer tools
 
@@ -130,7 +132,7 @@ Tools to check status and details of the network and chain.
 - [filecoin.js](https://github.com/filecoin-shipyard/filecoin.js) - active higher-level JS library for Lotus JSON RPC API with many convenience features ([Docs](https://filecoin-shipyard.github.io/filecoin.js/))
 - [js-lotus-client](https://github.com/filecoin-shipyard/js-lotus-client) - lower-level JS wrapper for basic parsing of the Lotus JSON RPC API
 - [lotus-json-rpc-provider](https://www.npmjs.com/package/@coinsummer/lotus-jsonrpc-provider) - wraps the Lotus API in TypeScript
-- [lotus JSON RPC Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
+- [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 - [filecoin-ruby](https://github.com/subvisual/filecoin-ruby) - older interface to Lotus Filecoin in Ruby
 
 ### Storage Deal tools
@@ -161,7 +163,9 @@ Tools to check status and details of the network and chain.
 - [**Filecoin Shipyard**](https://github.com/filecoin-shipyard) - a collection of open source community projects on Filecoin
 - [Filecoin Ecosystem Map](http://ipfs.io/ipfs/QmQhjHgWzaW7obwDzBnTErQvAJY6cbKu5WUKXBzYPjuxto)
 - [Awesome Filecoin](https://www.awesomefilecoin.com/) - awesome projects on Filecoin
-- [Starling Framework for Data Integrity](https://www.starlinglab.org/) - to securely capture, store and verify human history (learn more at [starlinglab.org/78days](https://www.starlinglab.org/78days/) or the [Filecoin blog](https://filecoin.io/blog/starling-framework/))
+- [Starling Framework for Data Integrity](https://www.starlinglab.org/)
+  - to securely capture, store and verify human history
+  - learn more at [starlinglab.org/78days](https://www.starlinglab.org/78days/) or the [Filecoin blog interview](https://filecoin.io/blog/starling-framework/)
 
 ### Grant programs and accelerators
 
@@ -173,7 +177,7 @@ Tools to check status and details of the network and chain.
 - [Filecoin Launchpad Accelerator](https://consensys.net/blog/press-release/filecoin-launchpad-accelerator-powered-by-tachyon/) - from Fall 2020
 - [Apollo - Gitcoin x Filecoin](https://gitcoin.co/blog/apollo/#:~:text=APOLLO%20will%20run%20from%20August,using%20Filecoin%20and%20Web3%20ecosystem) - from Summer 2020
 
-Keep a lookout for other upcoming hackathons. Previous ones involving Filecoin included [EthDenver](https://ethdenver.com), [EthOnline](https://ethonline.org/), [HackFS](https://hackfs.com/), [Spark University Hackathon](https://filecoin.io/blog/spark-university-hackathon/)...
+Keep a lookout for other upcoming hackathons! Previous ones involving Filecoin included [EthDenver](https://ethdenver.com), [EthOnline](https://ethonline.org/), [HackFS](https://hackfs.com/), [Spark University Hackathon](https://filecoin.io/blog/spark-university-hackathon/)...
 
 ## Mining
 
@@ -195,7 +199,9 @@ Keep a lookout for other upcoming hackathons. Previous ones involving Filecoin i
 ### Storage client and miner programs
 
 - [Slingshot Competition](https://slingshot.filecoin.io/)
-- [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding) - incentivizes storage of valuable data on Filecoin with a social trust network for verified data. Clients can apply to Notaries to receive DataCap, which is used to incentivize Miners at 10x to their quality-adjusted power, increasing their probability of winning block rewards.
+- [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding)
+  - incentivizes valuable data stored on Filecoin with a social trust network for verified data
+  - Clients can apply to Notaries to receive DataCap and incentivize Miners at 10x to their quality-adjusted power, increasing probability of block rewards
 - [Filecoin Discover Store](https://store.filecoin-discover.com/)
   - where Storage miners can buy hard drives with offline data filled with valuable datasets - ([blog post](https://filecoin.io/blog/offline-data-transfer-for-large-scale-data/))
 - [Miner X Fellowship](https://docs.google.com/document/d/1iqZ2xV5tlOJMrPQAg7V1XJQZz6CF1LYDHkwRGtoV5-g/edit) - to support and learn from small-to-medium miner experience
@@ -210,7 +216,7 @@ Wallets that have conducted third-party audits of their open-source code by a re
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **_recommended_** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger hardware (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below)
 - [FilSnap MetaMask Plugin](https://filsnap.netlify.app/) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
 - A Filecoin light wallet example is in the [Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
-- [Filecoin Rosetta Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
+- [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
 
 ### Other wallets
 
