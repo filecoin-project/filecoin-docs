@@ -169,7 +169,7 @@ taskset -c 0,1,2,3 <worker_pid | command>
 
 It is also possible to set [_CPU affinity_ with systemd](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html):
 
-```text
+```
 # workerN.service
 ...
 CPUAffinity=C1,C2... # Specify the core number that this worker will use.
