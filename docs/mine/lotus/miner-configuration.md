@@ -161,7 +161,7 @@ go get -u -v github.com/Murmuration-Labs/bitscreen
 # add it to both filters
 Filter = "/path/to/go/bin/bitscreen"
 RetrievalFilter = "/path/to/go/bin/bitscreen"
-
+```
 
 ## Sealing section
 
