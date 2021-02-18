@@ -7,13 +7,11 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 This section contains links and reference materials for Filecoin.
 
-[[TOC]]
-
 ## About the protocol
 
 ### Filecoin specification
 
-View the [technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
+View the official [Filecoin technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
 
 ### Filecoin's economy
 
@@ -29,9 +27,9 @@ Visit the [Filecoin Youtube channel](https://www.youtube.com/channel/UCPyYmtJYQw
 
 ## Filecoin community resources and tools
 
-## Community projects to aid in installing, using & building on Filecoin.
+Community projects to aid in installing, using & building on Filecoin.
 
-##### Filecoin Resources in Chinese
+##### Filecoin resources in Chinese
 
 [Filecoin 资源分享目录](https://github.com/Coinsummer/filecoin) - community-maintained repo
 
@@ -131,40 +129,54 @@ Tools to check status and details of the network and chain.
 
 ## APIs and developer tools
 
-### API clients
+- Filecoin Lotus has a [JSON RPC API](https://docs.filecoin.io/build/lotus/#getting-started-with-lotus-apis) that will likely become the default for all node implementations.
+- Hosted endpoints to mainnet and a testnet are currently available from [Glif nodes](https://docs.filecoin.io/build/hosted-lotus/) and [Infura](https://infura.io/docs/filecoin).
+  - These endpoints support read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Filecoin Signing Tools library](https://docs.filecoin.io/reference/#filecoin-signing-tools)).
+- Note that making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
-- [filecoin.js](https://github.com/filecoin-shipyard/filecoin.js) - active higher-level JS library for Lotus JSON RPC API with many convenience features ([Docs](https://filecoin-shipyard.github.io/filecoin.js/))
+### Filecoin API clients
+
+- [Filecoin.js](https://github.com/filecoin-shipyard/filecoin.js) - active higher-level JS library for Lotus JSON RPC API with many convenience features ([Docs](https://filecoin-shipyard.github.io/filecoin.js/))
 - [js-lotus-client](https://github.com/filecoin-shipyard/js-lotus-client) - lower-level JS wrapper for basic parsing of the Lotus JSON RPC API
 - [lotus-json-rpc-provider](https://www.npmjs.com/package/@coinsummer/lotus-jsonrpc-provider) - wraps the Lotus API in TypeScript
 - [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 - [filecoin-ruby](https://github.com/subvisual/filecoin-ruby) - older interface to Lotus Filecoin in Ruby
+- [Starling Storage API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
 
-### Storage Deal tools
+Currently for Filecoin storage deals we recommend using Powergate to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.)
 
-- [**Powergate**](https://docs.textile.io/powergate/) - **recommended** - leverages IPFS alongside Filecoin for hot storage and retrieval, has additional storage deal helpers and other convenience features for app developers
+### Storage tools for apps
+
+- [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood, hosted by Textile
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account
+- [Space SDK from Fleek](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
+- [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers
+
+### Databases using IPFS & Filecoin
+- [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS with Filecoin integration coming soon
+- [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [orbit-db-powergate-io](https://github.com/filecoin-shipyard/orbit-db-powergate-io)
+
+### Storage apps on Filecoin
+
+- [**Slate.host**](https://slate.host) - - **_recommended_**
+  - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
+- [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with Oauth or general Metamask
+- [File.video](https://file.video/) and [Voodfy](https://beta.voodfy.com/) - video hosting with decentralized transcoding from LivePeer
+- More are in progress - also see [Ecosystem Projects](#ecosystem-projects) below
 
 ### Wallet-related
 
-- [filecoin-signing-tools](https://github.com/filecoin-project/filecoin-docs/wiki#remote-signing-tools) - **_recommended_** - for signing Filecoin messages without a full node, has a pure JS and Rust to WASM version for use in browsers, see the [Wallets](#wallets) section below
+- [Filecoin Signing Tools](https://github.com/filecoin-project/filecoin-docs/wiki#remote-signing-tools) - ***recommended*** - for signing Filecoin messages without a full node, has a pure JS and Rust to WASM version for use in browsers, see the [Wallets](#wallets) section below
 - [Glif web wallet on Github](https://github.com/glifio/wallet) - a good JS example of using `filecoin-signing-tools` and Ledger hardware integration, live Filecoin wallet at [Glif.io](https://glif.io)
 
 ### Developer tools
 
 - [js-rle](https://github.com/willscott/js-rle) - RLE+ Spec. Learn about [rle-bitset-encoding in the Filecoin Spec](https://spec.filecoin.io/#section-appendix.data_structures.rle-bitset-encoding)
 
-### REST clients
-
-- [Starling Storage REST API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
-
-### Storage client applications
-
-- [**Slate**](https://slate.host/) - **_recommended_**
-  - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862)
-
 ### Ecosystem projects
 
 - [**Filecoin Shipyard**](https://github.com/filecoin-shipyard) - a collection of open source community projects on Filecoin
+- [Community Projects Showcase](https://github.com/filecoin-project/community/#ecosystem-projects)
 - [Filecoin Ecosystem Map](http://ipfs.io/ipfs/QmQhjHgWzaW7obwDzBnTErQvAJY6cbKu5WUKXBzYPjuxto)
 - [Awesome Filecoin](https://www.awesomefilecoin.com/) - awesome projects on Filecoin
 - [Starling Framework for Data Integrity](https://www.starlinglab.org/)
@@ -240,3 +252,13 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
+
+### Retrieval Market resources (WIP experiments)
+
+The Retrieval Market in Filecoin is currently a basic version and research and development teams are actively exploring enhancements.
+
+- [Decentralized Data Delivery Markets - Open Problems and RFCs](https://github.com/protocol/ResNetLab/blob/master/OPEN_PROBLEMS/DECENTRALIZED_DATA_DELIVERY_MARKETS.md)
+- [ChainSafe's Full Node Retrieval Client](https://github.com/ChainSafe/fil-secondary-retrieval-markets)
+- [Browser Retrieval Client](https://github.com/filecoin-shipyard/browser-retrieval)
+- [Browser Retrieval Client using WASM](https://github.com/jimpick/lotus-retrieve-api-daemon)
+- [July 2020 Retrieval Markets Workshop](https://www.youtube.com/watch?v=eUcsZ1JS9pM) - list of [Sessions](https://docs.google.com/document/d/17bEHP2CHkQFYYQnl7YpatAOh6kWxjlNgihdc4F66SVM/edit)
