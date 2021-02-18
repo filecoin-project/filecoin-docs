@@ -1,16 +1,20 @@
 ---
 title: Get started
 description: Want to jump into Filecoin and start building something? This section gets you up and running quickly by creating a simple Node.js script using Infura and the Filecoin network.
-breadcrumb: 'Get started'
+breadcrumb: 'Get started.'
 ---
 
 # {{ $frontmatter.title }}
 
 {{ $frontmatter.description }} The Infura API makes it easier to interact with the Filecoin Network by abstracting away some of the complex workflows and requirements. There's no need to spin up a node or directly call a Lotus daemon!
 
+:::warning
+The Infura API requires all users to sign-up to a waitlist to get access to the API. The sign-up process is simple, and most users get access to the API within minutes. You need access to this API to complete this tutorial. Infura plans to remove the waitlist process in the next few weeks.
+:::
+
 In this tutorial, you will:
 
-1. Sign up to the Infura API.
+1. Sign in to the Infura API.
 1. Create a Node.js script to:
    a. Check if a given string is a valid Filecoin address.
    a. Return the balance of that address if it is valid.
@@ -24,7 +28,7 @@ Make sure you have both [Node.js](https://nodejs.org/) and [NPM](https://www.npm
 
 To interact with the Infura API, you need to register on the Infura website. It's a free API, and all you need to do is sign up with your email:
 
-1. Go to [infura.io/register](https://infura.io/register) and sign up.
+1. Go to [infura.io/](https://infura.io/) and log in.
 1. Select **Filecoin** from the sidebar and click **Create new project**.
 1. Enter _Filecoin - Get started_ as the project name and click **Create**.
 1. You should now see your `Project ID` and `Project Secret`. Take a note of these two fields; we'll use them later.
