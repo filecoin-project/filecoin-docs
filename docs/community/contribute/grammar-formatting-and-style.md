@@ -364,7 +364,7 @@ Store images in a folder called `images` within the same directory as the articl
 
 The directory structure of this article looks like this:
 
-```text
+```
 concepts/
 ├── content-addressed-data.md
 ├── images
@@ -380,7 +380,7 @@ There are no images within the `proof-of-replication.md` article, so there is no
 
 All file names are lower-case with dashes `-` between words, including image files:
 
-```text
+```
 concepts/
 ├── content-addressed-data.md
 ├── images

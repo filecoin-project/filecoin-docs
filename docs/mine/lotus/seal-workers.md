@@ -74,9 +74,9 @@ Ensure that workers have access to the following environment variables when they
 
 ```
 # MINER_API_INFO as obtained before
-export TMPDIR=/fast/disk/folder3                    # Used when sealing.
+export TMPDIR=/fast/disk/folder3                    # used when sealing
 export MINER_API_INFO:<TOKEN>:/ip4/<miner_api_address>/tcp/<port>/http`
-export BELLMAN_CPU_UTILIZATION=0.875
+export BELLMAN_CPU_UTILIZATION=0.875      # optimal value depends on exact hardware
 export FIL_PROOFS_MAXIMIZE_CACHING=1
 export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 # when GPU is available
 export FIL_PROOFS_USE_GPU_TREE_BUILDER=1   # when GPU is available
@@ -169,7 +169,7 @@ taskset -c 0,1,2,3 <worker_pid | command>
 
 It is also possible to set [_CPU affinity_ with systemd](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html):
 
-```text
+```
 # workerN.service
 ...
 CPUAffinity=C1,C2... # Specify the core number that this worker will use.

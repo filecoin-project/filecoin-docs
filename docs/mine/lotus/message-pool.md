@@ -53,6 +53,12 @@ lotus mpool pending --local
 
 For each message you will be able to see key information like the _GasLimit_, the _GasFeeCap_ and the _GasPremium_ values, explained above.
 
+To reduce the output to the messages key values you can use:
+
+```sh
+lotus mpool pending --local | grep "Nonce" -A5
+```
+
 In order to avoid messages from staying long periods in the pool when they are sent, it is possible to adjust the [Lotus Miner fees in the configuration](miner-configuration.md) and use [additional control addresses for _WindowPoSts_](miner-addresses.md). Existing messages can be replaced at any time with the procedure explained below.
 
 ## Replacing messages in the pool
@@ -65,10 +71,16 @@ lotus mpool replace --auto <from> <nonce>
 
 The above command will replace the associated message in the pool and automatically reprice it with a new _GasPremium_ and _GasFeeCap_ as estimated from the current network conditions. You can also set `--max-fee` if you wish to limit the total amount to spend for the message. All other flags are ignored.
 
-Alternatively, the _GasPremium_, _GasFeeCap_ and, optionally, _GasLimit_ can be set manually with their respective flags:
+Alternatively, the _GasPremium_, _GasFeeCap_ can be set manually with their respective flags:
 
 ```sh
-lotus mpool replace --gas-feecap <feecap> --gas-premuim <premium> --gas-limit <limit> <from> <nonce>
+lotus mpool replace --gas-feecap <feecap> --gas-premium <premium> <from> <nonce>
 ```
 
 If the new _gas premium_ is lower than the 1.25 ratio to the original, the message will not be included in the pool. Additional message fields, like the recipient of the transaction, can be changed when using the [`MpoolPush` API method](../../reference/lotus-api.md) directly. In this case the new message will need to be locally signed first.
+
+The _GasLimit_ should not be changed under normal circumstances. For instructions on how to use the optional flag to replace the _GasLimit_ please consult
+
+```sh
+lotus mpool replace --help
+```
