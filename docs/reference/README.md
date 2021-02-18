@@ -9,7 +9,7 @@ This section contains links and reference materials for Filecoin.
 
 ## About the protocol
 
-### Filecoin spec
+### Filecoin specification
 
 View the official [Filecoin technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
 
@@ -145,7 +145,7 @@ Tools to check status and details of the network and chain.
 
 Currently for Filecoin storage deals we recommend using Powergate to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.)
 
-### Storage tools for Apps
+### Storage tools for apps
 
 - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option, hosted by Textile
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account
@@ -156,7 +156,7 @@ Currently for Filecoin storage deals we recommend using Powergate to simplify yo
 - [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS with Filecoin integration coming soon
 - [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [orbit-db-powergate-io](https://github.com/filecoin-shipyard/orbit-db-powergate-io)
 
-### Storage Apps on Filecoin
+### Storage apps on Filecoin
 
 - [**Slate.host**](https://slate.host) - - **_recommended_**
   - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
