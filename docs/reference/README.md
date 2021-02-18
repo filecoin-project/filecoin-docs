@@ -141,7 +141,7 @@ Tools to check status and details of the network and chain.
 
 ### Storage Deal tools
 
-- [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - leverages IPFS alongside Filecoin for hot storage and retrieval, has additional storage deal helpers and other convenience features for app developers
+- [**Powergate**](https://docs.textile.io/powergate/) - **recommended** - leverages IPFS alongside Filecoin for hot storage and retrieval, has additional storage deal helpers and other convenience features for app developers
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account
 
 ### Wallet-related
