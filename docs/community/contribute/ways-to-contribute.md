@@ -13,7 +13,7 @@ Filecoin and its sister-projects are big, with lots of code written in multiple 
 
 The biggest and most active repositories we have today are:
 
-- [filecoin-project/go-filecoin](https://github.com/filecoin-project/go-filecoin)
+- [filecoin-project/venus](https://github.com/filecoin-project/venus)
 - [filecoin-project/lotus](https://github.com/filecoin-project/lotus)
 - [filecoin-project/rust-fil-proofs](https://github.com/filecoin-project/rust-fil-proofs)
 

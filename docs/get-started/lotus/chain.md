@@ -10,14 +10,9 @@ breadcrumb: 'Chain management'
 
 ## Syncing
 
-Lotus will automatically sync to the latest _chain head_ by:
+Lotus will automatically sync to the latest _chain head_ by fetching the block headers from the current _head_ down to the last synced epoch. The node then retrieves and verifies all the blocks from the last synced epoch to the current head. Once Lotus is synced, it will learn about new blocks as they are mined for every epoch and verify them accordingly. Every epoch might see a variable number of mined blocks.
 
-- Fetching the block headers from the current _head_ down to the last synced epoch.
-- Retrieving and verifying all the blocks from the last synced epoch to the current head.
-
-Once Lotus is synced, it will learn about new blocks as they are mined for every epoch and verify them accordingly. Every epoch might see a variable number of mined blocks.
-
-Filecoin's blockchain grows relatively fast, so a full sync will take a long time. For this reason, Lotus offers a faster way to sync using trusted state snapshots. There are two types of snapshot available:
+Filecoin's blockchain grows relatively fast and a full sync will take a long time. Lotus offers a faster way to sync by using trusted state snapshots. There are two types of snapshot available:
 
 | Name                                 | End height    | Message start height        | State start height          |
 | ------------------------------------ | ------------- | --------------------------- | --------------------------- |
@@ -38,11 +33,15 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
     wget https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
     ```
 
+    [This URL](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car) always contains the latest snapshot available.
+
 1.  Check the sha256sum of the download:
 
     ```bash
     curl -sI https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car | perl -ne '/^x-amz-website-redirect-location:(.+)\.car\s\*$/ && print "$1.sha256sum"' | xargs curl -s
     ```
+
+    This step it optional, but highly recommended.
 
 1.  Start the Lotus daemon using `--import-snapshot`:
 
@@ -58,7 +57,7 @@ lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws
 
 ### Full chain snapshot
 
-Alternatively, you can use full chain snapshots. Full chain snapshots contain every block from genesis until the current tipset. You can trustlessly import these complete snapshots by supplying the `--import-chain` option to recalculate the state during import fully:
+Full chain snapshots contain every block from genesis until the current tipset. You can trustlessly import these complete snapshots by supplying the `--import-chain` option to recalculate the state during import fully:
 
 ```sh
 lotus daemon --import-chain https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car
@@ -69,6 +68,8 @@ This operation will take multiple days due to the size and complexity of the Fil
 ### Checking sync status
 
 There are two ways to track whether the Lotus daemon is correctly syncing the chain and how far it has yet to go to complete the syncing.
+
+#### Sync status
 
 Use `sync status` to output the current state of your local chain:
 
@@ -83,6 +84,8 @@ lotus sync status
 >         Stage: header sync
 >         Height: 414300
 >         Elapsed: 765.267091ms
+
+#### Sync wait
 
 Use `sync wait` to constantly output the state of your current chain as an ongoing process:
 

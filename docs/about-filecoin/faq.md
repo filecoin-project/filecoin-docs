@@ -50,7 +50,7 @@ IPFS will continue to exist as it is, enhanced with Filecoin nodes. There are ma
 
 People with unused storage who want to earn monetary rewards should pledge that storage to Filecoin, and clients who want guaranteed storage should store that data with Filecoin miners.
 
-### Lotus or Go-Filecoin, which is better for miners?
+### Lotus or Venus, which is better for miners?
 
 Lotus is the primary reference implementation for the Filecoin protocol. At this stage, we would recommend most miners use lotus to participate in the Filecoin network.
 

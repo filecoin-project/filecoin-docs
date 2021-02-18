@@ -74,9 +74,9 @@ Ensure that workers have access to the following environment variables when they
 
 ```
 # MINER_API_INFO as obtained before
-export TMPDIR=/fast/disk/folder3                    # Used when sealing.
+export TMPDIR=/fast/disk/folder3                    # used when sealing
 export MINER_API_INFO:<TOKEN>:/ip4/<miner_api_address>/tcp/<port>/http`
-export BELLMAN_CPU_UTILIZATION=0.875
+export BELLMAN_CPU_UTILIZATION=0.875      # optimal value depends on exact hardware
 export FIL_PROOFS_MAXIMIZE_CACHING=1
 export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 # when GPU is available
 export FIL_PROOFS_USE_GPU_TREE_BUILDER=1   # when GPU is available
@@ -149,7 +149,7 @@ For example, to run a _PreCommit1_ worker in a way that it does not conflict wit
 # Use a unique storage location for each worker
 export LOTUS_WORKER_PATH=/path/to/worker/storage/N
 # Replace X with a different port for each worker.
-lotus-worker run --listen 0.0.0.0:X --add-piece=false --precommit1=true --unseal=true --precommit2=false --commit=false
+lotus-worker run --listen 0.0.0.0:X --addpiece=false --precommit1=true --unseal=true --precommit2=false --commit=false
 ```
 
 By default, the _PreCommit1_ base will _use a single CPU core_. This means that several worker processes can use remaining cores and perform the work in parallel for this phase, as long as there is enough memory available for all of them to run.
@@ -169,7 +169,7 @@ taskset -c 0,1,2,3 <worker_pid | command>
 
 It is also possible to set [_CPU affinity_ with systemd](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html):
 
-```text
+```
 # workerN.service
 ...
 CPUAffinity=C1,C2... # Specify the core number that this worker will use.
