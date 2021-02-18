@@ -7,8 +7,6 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 This section contains links and reference materials for Filecoin.
 
-[[TOC]]
-
 ## About the protocol
 
 ### Filecoin spec
@@ -31,7 +29,7 @@ Visit the [Filecoin Youtube channel](https://www.youtube.com/channel/UCPyYmtJYQw
 
 Community projects to aid in installing, using & building on Filecoin.
 
-##### Filecoin resources in Chinese
+##### Filecoin Resources in Chinese
 
 [Filecoin 资源分享目录](https://github.com/Coinsummer/filecoin) - community-maintained repo
 
@@ -131,6 +129,11 @@ Tools to check status and details of the network and chain.
 
 ## APIs and developer tools
 
+- Filecoin Lotus has a [JSON RPC API](https://docs.filecoin.io/build/lotus/#getting-started-with-lotus-apis) that will likely become the default for all node implementations.
+- Hosted endpoints to mainnet and a testnet are currently available from [Glif nodes](https://docs.filecoin.io/build/hosted-lotus/) and [Infura](https://infura.io/docs/filecoin).
+  - These endpoints support read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Filecoin Signing Tools library](https://docs.filecoin.io/reference/#filecoin-signing-tools)).
+- Note that making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
+
 ### Filecoin API clients
 
 - [Filecoin.js](https://github.com/filecoin-shipyard/filecoin.js) - active higher-level JS library for Lotus JSON RPC API with many convenience features ([Docs](https://filecoin-shipyard.github.io/filecoin.js/))
@@ -140,7 +143,9 @@ Tools to check status and details of the network and chain.
 - [filecoin-ruby](https://github.com/subvisual/filecoin-ruby) - older interface to Lotus Filecoin in Ruby
 - [Starling Storage API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
 
-### Storage tools for apps
+Currently for Filecoin storage deals we recommend using Powergate to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.)
+
+### Storage tools for Apps
 
 - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option, hosted by Textile
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account
@@ -151,7 +156,7 @@ Tools to check status and details of the network and chain.
 - [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS with Filecoin integration coming soon
 - [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [orbit-db-powergate-io](https://github.com/filecoin-shipyard/orbit-db-powergate-io)
 
-### Storage apps on Filecoin
+### Storage Apps on Filecoin
 
 - [**Slate.host**](https://slate.host) - - **_recommended_**
   - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
@@ -249,7 +254,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
 
-### Retrieval market resources (WIP experiments)
+### Retrieval Market resources (WIP experiments)
 
 The Retrieval Market in Filecoin is currently a basic version and research and development teams are actively exploring enhancements.
 
