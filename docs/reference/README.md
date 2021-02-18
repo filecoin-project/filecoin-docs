@@ -11,11 +11,11 @@ This section contains links and reference materials for Filecoin.
 
 ## About the protocol
 
-### Filecoin Spec
+### Filecoin spec
 
 View the official [Filecoin technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
 
-### Filecoin's Economy
+### Filecoin's economy
 
 [Engineering Filecoin's Economy](https://filecoin.io/2020-engineering-filecoins-economy-en.pdf) - discusses the design of Filecoin's economic incentives.
 
@@ -31,7 +31,7 @@ Visit the [Filecoin Youtube channel](https://www.youtube.com/channel/UCPyYmtJYQw
 
 Community projects to aid in installing, using & building on Filecoin.
 
-##### Filecoin Resources in Chinese
+##### Filecoin resources in Chinese
 
 [Filecoin 资源分享目录](https://github.com/Coinsummer/filecoin) - community-maintained repo
 
@@ -140,7 +140,7 @@ Tools to check status and details of the network and chain.
 - [filecoin-ruby](https://github.com/subvisual/filecoin-ruby) - older interface to Lotus Filecoin in Ruby
 - [Starling Storage API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
 
-### Storage tools for Apps
+### Storage tools for apps
 
 - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option, hosted by Textile
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account
@@ -151,7 +151,7 @@ Tools to check status and details of the network and chain.
 - [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS with Filecoin integration coming soon
 - [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [orbit-db-powergate-io](https://github.com/filecoin-shipyard/orbit-db-powergate-io)
 
-### Storage Apps on Filecoin
+### Storage apps on Filecoin
 
 - [**Slate.host**](https://slate.host) - - **_recommended_**
   - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
@@ -249,7 +249,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
 
-### Retrieval Market resources (WIP experiments)
+### Retrieval market resources (WIP experiments)
 
 The Retrieval Market in Filecoin is currently a basic version and research and development teams are actively exploring enhancements.
 
