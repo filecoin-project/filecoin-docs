@@ -11,32 +11,36 @@ This page aims to explain the relationship between the IPFS and Filecoin project
 
 ## Data storage incentives
 
-[IPFS](https://ipfs.io) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users persist the data they want **on their own IPFS nodes**. This is referred as [pinning](https://docs.ipfs.io/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service, or through groups of individual IPFS users. The data exists in the network as long as one user is storing it and able to provide it to others when they request it.
+[IPFS](https://ipfs.io) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users usually persist the data they want **on their own IPFS nodes**. This is called [pinning](https://docs.ipfs.io/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service or through groups of individual IPFS users (like [IPFS Collaborative Clusters](https://collab.ipfscluster.io/)). The data exists in the network as long as one user is storing it and can provide it to others when they request it.
 
-IPFS does not include a built-in mechanism to incentivize the storage of data for _other_ people. This is the challenge Filecoin hopes to solve. The Filecoin network creates a distributed storage marketplace for long-term storage. Nodes with a large storage capacity can rent storage to users with and get paid for it.
+IPFS alone does not include a built-in mechanism to incentivize the storage of data for _other_ people. This is the challenge Filecoin aims to solve. Filecoin is built on IPFS to create a distributed storage marketplace for long-term storage. Nodes with a large storage capacity can rent their storage to users and get paid for it.
 
-The Filecoin network ensures that data is safely stored. However, the processes of storing (sealing), verifying (proving) and unsealing (for retrieval) are computationally expensive and can take time. This is specially relevant for the retrieval of data, which should happen as fast as possible. For this reason, Filecoin enables an additional retrieval market where dedicated nodes can help quickly deliver content from the network for a payment by keeping unsealed, cached copies. This delivery mechanism may make use of IPFS.
+The Filecoin network ensures that data is safely stored. However, the processes of storing, verifying, and unsealing (referred to as sealing, proving, and retrieving, respectively) are computationally expensive and can take time. This is especially relevant for the retrieval of data, which should happen as fast as possible. For this reason, Filecoin enables an additional retrieval market where dedicated nodes can help quickly deliver content from the network for payment by keeping unsealed, cached copies. This delivery mechanism may make use of IPFS but is still in design. See [ResNetLab's Decentralized Data Delivery Market research](https://github.com/protocol/ResNetLab/blob/master/OPEN_PROBLEMS/DECENTRALIZED_DATA_DELIVERY_MARKETS.md) for more information on delivery mechanisms.
 
-Filecoin can be seen as a _cold_ storage layer, perfect to safely store large batches of data. IPFS would be the _hot_ storage layer, designed for the quick retrieval and distribution of content.
+Filecoin aims to add longer-term persistence to safely store large batches of data, while IPFS optimizes for the quick retrieval and distribution of content.
 
-## Which system should I use?
+## Using IPFS and Filecoin
 
-### Using IPFS
+### Content addressing with IPFS
 
-- Data provided by user's own nodes. Otherwise must rely on other peers to voluntarily/altruistically storing data or on a centralized pinning service.
+IPFS is great for getting started using content addressing for all sorts of distributed web applications. In the majority of these cases:
+
+- Data is provided by the user's own nodes. Otherwise, must rely on other peers to voluntarily/altruistically storing data or on a centralized pinning service.
 - Centralized IPFS pinning services must be trusted to do their job. IPFS brings no built-in provisions to verify that data is being stored and correctly provided by the pinning service.
-- IPFS by itself works very well for popular content (with many providers), for organizations where there are incentives to sync and store data in multiple nodes and for situation where strong social contracts can be used to ensure the content remains hosted and maintained long-term.
+- Popular content is more easily accessible. Popular content (with many providers) naturally becomes faster/easier to retrieve in IPFS, which is great when there are external incentives to sync and store data in multiple nodes, and for situation where strong social contracts can be used to ensure the content remains hosted and maintained long-term.
 
-### Using Filecoin
+### Data persistence with Filecoin
+
+Filecoin builds on the content addressing of IPFS to add longer term data persistence using cryptoeconomic incentives. With Filecoin:
 
 - Clients make _storage deals_ with miners to store data. The network verifies that the miners are correctly storing the data. Small payments are made on a regular basis for the duration of the _storage deal_.
 - Miners that do not honor the storage deal are penalised.
 - Content retrieval might be offered by storage miners directly, or by specialized retrieval miners. The user requesting the data pays for this service.
 - Filecoin excels at storing large amounts of data for long periods of time.
 
-### Using both
+### Using IPFS and Filecoin together
 
-Some solutions combine the best of the two systems, backing up data on the Filecoin network and at the same time providing the data through the IPFS network. This ensures that data is constantly available and can be retrieved quickly, while also making sure that the data is safely backed up on the Filecoin network. [Powergate](../build/powergate.md) is a multitiered file storage API built on Filecoin and IPFS, and an index builder for Filecoin data.
+Many solutions combine the two networks to get the best of both worlds: IPFS for content addressing & data discovery, and Filecoin for longer-term persistence. To achieve this, services like [Powergate](../build/powergate.md) back up data on the Filecoin network while also ensuring content is discoverable in the IPFS Public DHT. Data is constantly available and can be retrieved quickly, while also making sure that it is safely and verifiably backed up on the Filecoin network over time.
 
 ## The technology behind IPFS and Filecoin
 
