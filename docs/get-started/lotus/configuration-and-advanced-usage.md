@@ -61,7 +61,7 @@ The Lotus daemon stores a configuration file in `~/.lotus/config.toml`. Note tha
 # Wallet configuration
 [Wallet]
   EnableLedger = false
-  
+
 # Fee configuration
 [Fees]
   DefaultMaxFee = 0.007

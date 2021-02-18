@@ -63,7 +63,7 @@ lotus client commP <inputCarFilePath>
 1. Enter `x = SIZE_IN_BYTES; 127*( 2^( ceil( log2( ceil ( x /127 ) ) ) ) )` and changing `SIZE_IN_BYTES` to your value.
 1. You solution can be found under **Substitution**:
 
-  ![](./images/very-large-files/wolfram-alpha.png)
+![](./images/very-large-files/wolfram-alpha.png)
 
 Propose the offline deal with the miner:
 

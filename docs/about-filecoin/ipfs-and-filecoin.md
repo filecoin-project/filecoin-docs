@@ -23,7 +23,7 @@ Filecoin aims to add longer-term persistence to safely store large batches of da
 
 ### Content addressing with IPFS
 
-IPFS is great for getting started using content addressing for all sorts of distributed web applications. In the majority of these cases: 
+IPFS is great for getting started using content addressing for all sorts of distributed web applications. In the majority of these cases:
 
 - Data is provided by the user's own nodes. Otherwise, must rely on other peers to voluntarily/altruistically storing data or on a centralized pinning service.
 - Centralized IPFS pinning services must be trusted to do their job. IPFS brings no built-in provisions to verify that data is being stored and correctly provided by the pinning service.
@@ -31,7 +31,7 @@ IPFS is great for getting started using content addressing for all sorts of dist
 
 ### Data persistence with Filecoin
 
-Filecoin builds on the content addressing of IPFS to add longer term data persistence using cryptoeconomic incentives. With Filecoin: 
+Filecoin builds on the content addressing of IPFS to add longer term data persistence using cryptoeconomic incentives. With Filecoin:
 
 - Clients make _storage deals_ with miners to store data. The network verifies that the miners are correctly storing the data. Small payments are made on a regular basis for the duration of the _storage deal_.
 - Miners that do not honor the storage deal are penalised.

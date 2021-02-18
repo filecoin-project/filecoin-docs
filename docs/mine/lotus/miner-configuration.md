@@ -121,6 +121,7 @@ for other deals to be ready before sending the `PublishStorageDeals` message.
 However once `MaxDealsPerPublishMsg` are ready, lotus will immediately publish all the deals.
 
 For example if `PublishMsgPeriod` is 1 hour:
+
 - At 1:00pm Deal 1 is ready to publish.
   Lotus will wait until 2:00pm for other deals to be ready before sending `PublishStorageDeals`
 - At 1:30pm Deal 2 is ready to publish
@@ -137,14 +138,14 @@ Deal 3 would be published in a subsequent `PublishStorageDeals` message.
 
 Your use-case might demand very precise and dynamic control over a combination of deal parameters.
 
-Lotus provides two IPC hooks allowing you to name a command to execute for every deal before the miner accepts it: 
+Lotus provides two IPC hooks allowing you to name a command to execute for every deal before the miner accepts it:
 
 - `Filter` for storage deals.
-- `RetrievalFilter` for retrieval deals. 
+- `RetrievalFilter` for retrieval deals.
 
-The executed command receives a JSON representation of the deal parameters on standard input, and upon completion its exit code is interpreted as: 
+The executed command receives a JSON representation of the deal parameters on standard input, and upon completion its exit code is interpreted as:
 
-- `0`: success, proceed with the deal. 
+- `0`: success, proceed with the deal.
 - `non-0`: failure, reject the deal.
 
 The most trivial filter rejecting any retrieval deal would be something like:
@@ -210,4 +211,4 @@ The fees section allows to set limits to the gas consumption for the different m
   MaxMarketBalanceAddFee = "0.007 FIL"
 ```
 
-Depending on the network congestion the base fee for a transaction may grow or decrease. Your gas limits will have to be at any case larger than the base fee for the messages to be included. A very large max fee can however result in the quick burning of funds when the base fees are very high, as the miner automatically submits messages during normal operation, so be careful about this. It is also necessary to have more funds available then any max fee set, even if the actual fee will be far less then the max fee set. *MaxWindowPostGasFee is currently reduced, but the setting used should remain fairly high, eg. 2FIL. 
+Depending on the network congestion the base fee for a transaction may grow or decrease. Your gas limits will have to be at any case larger than the base fee for the messages to be included. A very large max fee can however result in the quick burning of funds when the base fees are very high, as the miner automatically submits messages during normal operation, so be careful about this. It is also necessary to have more funds available then any max fee set, even if the actual fee will be far less then the max fee set. \*MaxWindowPostGasFee is currently reduced, but the setting used should remain fairly high, eg. 2FIL.
