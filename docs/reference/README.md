@@ -29,7 +29,7 @@ Visit the [Filecoin Youtube channel](https://www.youtube.com/channel/UCPyYmtJYQw
 
 Community projects to aid in installing, using & building on Filecoin.
 
-##### Filecoin Resources in Chinese
+##### Filecoin resources in Chinese
 
 [Filecoin 资源分享目录](https://github.com/Coinsummer/filecoin) - community-maintained repo
 
