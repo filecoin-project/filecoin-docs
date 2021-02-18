@@ -42,9 +42,9 @@ The Filecoin Network is made by miners and clients. They [make deals](../about-f
 
 ### Wallets
 
-| Name                                             |                                                                                                                                                                                            |
-| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Lotus](lotus/README.md)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](lotus/ledger.md).                                                                                               |
+| Name                                             |                                                                                                                                                                                             |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Lotus](lotus/README.md)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](lotus/ledger.md).                                                                                                |
 | [Glif wallet](https://wallet.glif.io/?network=f) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
 
 There are a number of [additional wallets](https://docs.filecoin.io/reference/#other-wallets) that support Filecoin tokens including mobile wallets.
@@ -64,14 +64,14 @@ Here is a snapshot of each implementation’s progress across the primary parts 
 
 |                    | lotus | venus | forest | fuhon |
 | ------------------ | ----- | ----- | ------ | ----- |
-| 1. Node            | ✅    | ✅     | ✅     | ✅    |
-| 2. Files & data    | ✅    | 🔶     | 🔶     | ✅    |
-| 3. Virtual Machine | ✅    | ✅     | 🔶     | 🔶    |
-| 4. VM Actors       | 🔶    | 🔶     | 🔶     | 🔶    |
-| 5. Blockchain      | ✅    | ✅     | ✅     | ✅    |
-| 6. Token           | ✅    | ✅     | ✅     | ✅    |
-| 7. Storage Mining  | ✅    | 🔄     | 🔄     | 🔄 🔶 |
-| 8. Market          | ✅    | ✅     | 🔄     | ✅    |
+| 1. Node            | ✅    | ✅    | ✅     | ✅    |
+| 2. Files & data    | ✅    | 🔶    | 🔶     | ✅    |
+| 3. Virtual Machine | ✅    | ✅    | 🔶     | 🔶    |
+| 4. VM Actors       | 🔶    | 🔶    | 🔶     | 🔶    |
+| 5. Blockchain      | ✅    | ✅    | ✅     | ✅    |
+| 6. Token           | ✅    | ✅    | ✅     | ✅    |
+| 7. Storage Mining  | ✅    | 🔄    | 🔄     | 🔄 🔶 |
+| 8. Market          | ✅    | ✅    | 🔄     | ✅    |
 
 ✅ : fully featured implementation
 🔄 : reuses components from another implementation

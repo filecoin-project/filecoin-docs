@@ -141,12 +141,12 @@ Tools to check status and details of the network and chain.
 
 ### Storage Deal tools
 
-- [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - leverages IPFS alongside Filecoin for hot storage and retrieval, has additional storage deal helpers and other convenience features for app developers
+- [**Powergate**](https://docs.textile.io/powergate/) - **recommended** - leverages IPFS alongside Filecoin for hot storage and retrieval, has additional storage deal helpers and other convenience features for app developers
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account
 
 ### Wallet-related
 
-- [filecoin-signing-tools](https://github.com/filecoin-project/filecoin-docs/wiki#remote-signing-tools) - ***recommended*** - for signing Filecoin messages without a full node, has a pure JS and Rust to WASM version for use in browsers, see the [Wallets](#wallets) section below
+- [filecoin-signing-tools](https://github.com/filecoin-project/filecoin-docs/wiki#remote-signing-tools) - **_recommended_** - for signing Filecoin messages without a full node, has a pure JS and Rust to WASM version for use in browsers, see the [Wallets](#wallets) section below
 - [Glif web wallet on Github](https://github.com/glifio/wallet) - a good JS example of using `filecoin-signing-tools` and Ledger hardware integration, live Filecoin wallet at [Glif.io](https://glif.io)
 
 ### Developer tools
@@ -218,7 +218,6 @@ Wallets that have conducted third-party audits of their open-source code by a re
 
 - [**Ledger HW wallet** in Filecoin Docs](https://docs.filecoin.io/get-started/lotus/ledger/#setup-your-ledger-device) - **_recommended_** - Ledger Live does not have Filecoin support yet, but Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node.
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **_recommended_** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger hardware (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below)
-
 
 ### Other wallets
 

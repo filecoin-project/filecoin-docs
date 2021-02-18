@@ -55,7 +55,7 @@ For each message you will be able to see key information like the _GasLimit_, th
 
 To reduce the output to the messages key values you can use:
 
- ```sh
+```sh
 lotus mpool pending --local | grep "Nonce" -A5
 ```
 
@@ -79,7 +79,7 @@ lotus mpool replace --gas-feecap <feecap> --gas-premium <premium> <from> <nonce>
 
 If the new _gas premium_ is lower than the 1.25 ratio to the original, the message will not be included in the pool. Additional message fields, like the recipient of the transaction, can be changed when using the [`MpoolPush` API method](../../reference/lotus-api.md) directly. In this case the new message will need to be locally signed first.
 
-The _GasLimit_ should not be changed under normal circumstances. For instructions on how to use the optional flag to replace the _GasLimit_ please consult 
+The _GasLimit_ should not be changed under normal circumstances. For instructions on how to use the optional flag to replace the _GasLimit_ please consult
 
 ```sh
 lotus mpool replace --help
