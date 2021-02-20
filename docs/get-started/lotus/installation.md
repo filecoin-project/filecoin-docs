@@ -249,12 +249,9 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
 The `lotus` application runs as a daemon and a client to control and interact with that daemon. A daemon is a long-running program that is usually run in the background.
 
-When using _mainnet_, we recommend to start the daemon [syncing from a trusted state snapshot](chain.md#lightweight-snapshot):
+When using _mainnet_, we recommend to start the daemon [syncing from a trusted state snapshot](chain.md#lightweight-snapshot). In any case, you can start the deamon with the following command:
 
 ```sh
-# For mainnet only:
-lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
-# For other networks:
 lotus daemon
 ```
 
