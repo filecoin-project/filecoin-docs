@@ -17,7 +17,7 @@ The penalty for submitting an invalid Window PoSt and the reward for submitting 
 
 | Fee/Reward              | Value                                                      |
 | ----------------------- | ---------------------------------------------------------- |
-| Invalid proof fee (IPF) | `5.51 *` the expected block reward per sector in 24 hours. |
+| Invalid proof fee (IPF) | (5.51 * the expected block reward per sector in 24 hours) + 20 FIL |
 | Valid dispute reward    | 4 FIL                                                      |
 
 ## Run the disputer
