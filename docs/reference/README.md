@@ -51,7 +51,7 @@ Community projects to aid in installing, using & building on Filecoin.
 
 - [**Network.filecoin.io**](https://network.filecoin.io)
   - lists all current Filecoin networks, including devnets for testing
-  - **Calibration** (currently disabled)
+  - **Calibration**
     - largest testnet
     - See [#fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC) for announcements and [#fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack)
   - **Nerpa**
@@ -96,7 +96,7 @@ Tools to check status and details of the network and chain.
 
 ### Testnet explorers
 
-- [Calibration Testnet Filscan explorer](https://calibration.filscan.io/) - (currently Calibration is disabled)
+- [Calibration Testnet Filscan explorer](https://calibration.filscan.io/) 
 
 ### Chain data and monitoring
 
