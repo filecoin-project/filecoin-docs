@@ -51,7 +51,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
     lotus daemon --import-snapshot minimal_finality_stateroots_517061_2021-02-20_11-00-00.car
     ```
 
-_Optional._ We strongly recommend you to download and verify the checksum of the snapshot before importing it. However, you can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
+We strongly recommend you to download and verify the checksum of the snapshot before importing it. However, you can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
 
 ```bash
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
