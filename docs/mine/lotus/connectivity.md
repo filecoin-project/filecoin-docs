@@ -57,7 +57,7 @@ The peer count should increase soon after starting the miner. You can also manua
 lotus-miner net connect <address1> <address2>...
 ```
 
-An list of bootstrap peers is [available here](https://github.com/filecoin-project/lotus/blob/master/build/bootstrap/bootstrappers.pi) (make sure you are on the branch corresponding to your desired network).
+An list of bootstrap peers is available for [mainnet](https://github.com/filecoin-project/lotus/blob/master/build/bootstrap/mainnet.pi) Bootstrap peers are unique per network, so be sure to use the list corresponding to your desired network.  Other bootstrap lists are located [here](https://github.com/filecoin-project/lotus/blob/master/build/bootstrap/).
 
 ## Port forwarding
 
