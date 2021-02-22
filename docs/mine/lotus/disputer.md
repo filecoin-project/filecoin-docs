@@ -7,13 +7,13 @@ description: Verifying submitted Window PoSts is expensive, and that cost can dr
 
 [Window PoSt](../../reference/glossary.md#window-proof-of-spacetime-windowpost) messages are necessary for ongoing maintenance of storage power. Verifying the submitted proofs is expensive, and when the gas base fee rises due to congestion, these messages become even more costly. For miners with mostly empty partitions, this cost can exceed their expected rewards from maintaining power. We need to ensure that these messages are cheap for miners, even when specifying a very high gas fee cap.
 
-The Filecoin Improvement Proposal 0010 (FIP0010) allows miners to _optimistically_ accept Window Proof of Spacetime proofs (Windows PoSt) on-chain without verification, allowing them to be disputed later by off-chain verifiers. Any third party that has a lotus node may dispute onchain storage proofs that were submitted in the past 1800 epochs (~15h)  by invoking DisputeWindowedPoSt.
+The Filecoin Improvement Proposal 0010 (FIP0010) allows miners to _optimistically_ accept Window Proof of Spacetime proofs (Windows PoSt) on-chain without verification, allowing them to be disputed later by off-chain verifiers. Any Lotus node may dispute any on-chain storage proofs submitted in the past 1800 epochs (~15h) by invoking `DisputeWindowedPoSt`.
 
-When a dispute successfully refutes an optimistically accepted Window PoSt, the miner is fined one invalid proof fee (IPF) per active sector in the partition at the moment when the proof was submitted, plus a flat fee of 20 FIL. All incorrectly proved sectors are marked faulty, and the address that submitted the dispute is awarded a fixed `DipsuteReward`.
+When a dispute successfully refutes an optimistically accepted Window PoSt, the miner is fined one invalid proof fee (IPF) per active sector in the partition at the moment when said miner submitted the proof, plus a flat fee of 20 FIL. All incorrectly proved sectors are marked faulty, and the address that submitted the dispute is awarded a fixed `DipsuteReward`.
 
 ## Penalties and rewards
 
-The penalty for submitting an invaild Window PoSt, and the reward for submitting a valid dispute are subject to change. At the time of writing, those values are:
+The penalty for submitting an invalid Window PoSt and the reward for submitting a valid dispute are both subject to change. At the time of writing, those values are:
 
 | Fee/Reward              | Value                                                      |
 | ----------------------- | ---------------------------------------------------------- |
@@ -59,5 +59,5 @@ You can send a specific dispute message by running `.lotus chain disputer disput
 | Variable name  | Description                                                                                                      |
 | -------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `minerAddress` | The miner id that submitted the proof you want to dispute. The same address is also the recipient of the message |
-| `index`        | The deadline index of the proof you want to dispute for the miner, it should be in.                              |
+| `index`        | The deadline index of the proof you want to dispute for the miner.                                               |
 | `postIndex`    | The post snapshot index.                                                                                         |
