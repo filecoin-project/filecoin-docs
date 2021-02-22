@@ -122,6 +122,21 @@ A delay between the moment the deals are received and the start of the sealing o
 
 The delay can be set using the `WaitDealsDelay` option in the `[Sealing]` section of the [configuration](miner-configuration.md).
 
+## Deals that are pending publishing
+The default configuration on the miner is set to batch multiple deals and publish the message every hour, or at at max of 8 deals in a `PublishStorageDeals`. You can change the `PublishMsgPeriod` and `MaxDealsPerPublishMsg` in your [configuration file](miner-configuration.md#publishing-several-deals-in-one-message).
+
+To list the deals waiting in your publish queue:
+
+```sh
+lotus-miner storage-deals pending-publish
+```
+
+You can publish the deals whenever you want with the `--publish-now` option:
+
+```sh
+lotus-miner storage-deals pending-publish --publish-now
+```
+
 ## Offline storage deals
 
 When the amount of data to be transmitted is [very large](../../store/lotus/very-large-files.md#deals-with-offline-data-transfer), it may be more effective to ship some hard-drives directly to the miner and complete the deal in an **offline** fashion.
