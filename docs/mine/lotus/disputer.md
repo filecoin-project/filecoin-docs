@@ -1,13 +1,24 @@
 ---
 title: Disputer
-description: Help secure the Filecoin network by checking blocks from other miners and disputing invalid blocks.
+description: Verifying submitted Window PoSts is expensive, and that cost can drastically increase when network congestion causes the gas base fee to rise. To address this, Filecoin Improvement Proposal allows miners to optimistically accept Window PoSts on-chain without verification, allowing them to be disputed later by off-chain-verifiers.
 ---
 
 # Disputer
 
-[Window PoSt](../../reference/glossary.md#window-proof-of-spacetime-windowpost) messages are necessary for ongoing maintenance of storage power. Verifying the submitted proofs is expensive, and when the gas base fee rises due to congestion, these messages become even more expensive. For miners with mostly empty partitions, this cost can exceed the miner's expected reward from maintaining power. We need to ensure that these messages are cheap for miners, even when specifying a very high gas fee cap.
+[Window PoSt](../../reference/glossary.md#window-proof-of-spacetime-windowpost) messages are necessary for ongoing maintenance of storage power. Verifying the submitted proofs is expensive, and when the gas base fee rises due to congestion, these messages become even more costly. For miners with mostly empty partitions, this cost can exceed their expected rewards from maintaining power. We need to ensure that these messages are cheap for miners, even when specifying a very high gas fee cap.
 
-The Filecoin Improvement Proposal 0010 (FIP0010) allows miners to _optimistically_ accept Window Proof of Spacetime proofs (Windows PoSt) on-chain without verification, allowing them to be disputed later by off-chain verifiers.
+The Filecoin Improvement Proposal 0010 (FIP0010) allows miners to _optimistically_ accept Window Proof of Spacetime proofs (Windows PoSt) on-chain without verification, allowing them to be disputed later by off-chain verifiers. Any third party that has a lotus node may dispute onchain storage proofs that were submitted in the past 1800 epochs (~15h)  by invoking DisputeWindowedPoSt.
+
+When a dispute successfully refutes an optimistically accepted Window PoSt, the miner is fined one invalid proof fee (IPF) per active sector in the partition at the moment when the proof was submitted, plus a flat fee of 20 FIL. All incorrectly proved sectors are marked faulty, and the address that submitted the dispute is awarded a fixed `DipsuteReward`.
+
+## Penalties and rewards
+
+The penalty for submitting an invaild Window PoSt, and the reward for submitting a valid dispute are subject to change. At the time of writing, those values are:
+
+| Fee/Reward              | Value                                                      |
+| ----------------------- | ---------------------------------------------------------- |
+| Invalid proof fee (IPF) | `5.51 *` the expected block reward per sector in 24 hours. |
+| Valid dispute reward    | 4 FIL                                                      |
 
 ## Run the disputer
 
