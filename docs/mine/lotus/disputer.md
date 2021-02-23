@@ -22,7 +22,7 @@ The penalty for submitting an invalid Window PoSt and the reward for submitting 
 
 ## Run the disputer
 
-You can run the disputer by using the `chain disputer` command within Lotus.
+You can run the disputer by using the `chain disputer` command within Lotus. The following examples were ran on a local devnet.
 
 1. Fully sync a Lotus node.
 1. Call the `chain disputer` function with the following variables, following by the `stat` command:
