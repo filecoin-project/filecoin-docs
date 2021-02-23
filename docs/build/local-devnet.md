@@ -70,7 +70,7 @@ This process requires you to use multiple terminal windows, so you might find a 
 
    > sector-id: {{1000 0} 0}, piece info: {2048 baga6ea4seaqoej3hzxzqr5y25ibovtjrhed7yba5vm6gwartr5hsgcbao7aluki}
    > ...
-   > 2021-02-23T10:59:36.937-0500    INFO    preseal seed/seed.go:232        Writing preseal manifest to /home/johnny/.genesis-sectors/pre-seal-t01000.json
+   > 2021-02-23T10:59:36.937-0500    INFO    preseal seed/seed.go:232        Writing preseal manifest to /home/user/.genesis-sectors/pre-seal-t01000.json
    ```
 
 1. Create the genesis block:
