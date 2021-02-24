@@ -1,6 +1,6 @@
 ---
 title: Disputer
-description: Verifying submitted Window PoSts is expensive, and that cost can drastically increase when network congestion causes the gas base fee to rise. To address this, Filecoin Improvement Proposal allows miners to optimistically accept Window PoSts on-chain without verification, allowing them to be disputed later by off-chain-verifiers.
+description: Verifying submitted Window PoSts is expensive, and that cost can drastically increase when network congestion causes the gas base fee to rise. To address this, Filecoin Improvement Proposal FIP-0010 enables node operators to optimistically accept Window PoSts on-chain without verification, allowing them to be disputed later by off-chain-verifiers.
 ---
 
 # Disputer
@@ -22,10 +22,10 @@ The penalty for submitting an invalid Window PoSt and the reward for submitting 
 
 ## Run the disputer
 
-You can run the disputer by using the `chain disputer` command within Lotus. The following examples were ran on a local devnet.
+You can run the disputer by using the `chain disputer` command within Lotus. The following examples were run on a local devnet.
 
 1. Fully sync a Lotus node.
-1. Call the `chain disputer` function with the following variables, following by the `stat` command:
+1. Call the `chain disputer` function with the following options, following by the `start` command:
 
    | Name        | Description                                                                                                         |
    | ----------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +54,7 @@ You can run the disputer by using the `chain disputer` command within Lotus. The
 
 ## Manual dispute
 
-You can send a specific dispute message by running `.lotus chain disputer dispute [minerAddress] [index] [postIndex]`, where:
+You can manually send a specific dispute message using the `dispute` command. This feature has a very narrow use-case and is for advanced users only. To perform a manual dispute run `lotus chain disputer dispute [minerAddress] [index] [postIndex]`, where:
 
 | Variable name  | Description                                                                                                      |
 | -------------- | ---------------------------------------------------------------------------------------------------------------- |
