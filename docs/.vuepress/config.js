@@ -1,5 +1,4 @@
 // .vuepress/config.js
-
 const DEPLOY_DOMAIN = 'https://docs.filecoin.io'
 const pageSuffix = '/'
 
@@ -39,8 +38,6 @@ module.exports = {
     },
     keywords:
       'Filecoin, crypto, mining, blockchain, IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
-    // edit links
-    // repo: 'filecoin-project/filecoin-docs',
     domain: DEPLOY_DOMAIN,
     docsRepo: 'filecoin-project/filecoin-docs',
     docsDir: 'docs',
@@ -49,10 +46,8 @@ module.exports = {
       docsRepoIssue: 'filecoin-project/filecoin-docs'
     },
     editLinks: false,
-    // page nav
     nextLinks: true,
     prevLinks: true,
-    // ui/ux
     logo: '/images/filecoin-symbol-color.svg',
     locales: {
       '/': {
@@ -69,8 +64,6 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: {
-          //'/software/': 'auto',
-
           '/get-started/': [
             'explore-the-network',
             [
@@ -153,8 +146,7 @@ module.exports = {
           ],
 
           '/build/': [
-            //'the-filecoin-ecosystem',
-            //'textile-buckets',
+            'get-started',
             'textile-buckets',
             'hosted-powergate',
             'hosted-lotus',
@@ -163,7 +155,7 @@ module.exports = {
               title: 'Lotus',
               path: '/build/lotus/',
               sidebarDepth: 2,
-              collapsable: false,
+              collapsable: true,
               children: [
                 ['lotus/enable-remote-api-access', 'Enable remote API access'],
                 ['lotus/api-tokens', 'API tokens'],
@@ -180,7 +172,7 @@ module.exports = {
               title: 'Example apps',
               path: '/build/examples/',
               sidebarDepth: 2,
-              collapsable: false,
+              collapsable: true,
               children: [
                 {
                   title: 'Simple Pinning Service',
