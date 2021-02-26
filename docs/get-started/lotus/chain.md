@@ -123,7 +123,7 @@ lotus chain export --recent-stateroots=2000 <filename>
 To create a _pruned_ snapshot and only include blocks directly referenced by the exported state roots, add the `skip-old-msgs` option:
 
 ```bash
-lotus chain export --skip-old-msgs <filename>
+lotus chain export --recent-stateroots=2000 --skip-old-msgs <filename>
 ```
 
 ## Restoring a custom snapshot
