@@ -17,7 +17,9 @@ Users can use the following software solutions to store data on the Filecoin net
 The following applications allow you to store data on the Filecoin network with no technical setup:
 
 - [Slate](slate.md) allows uploading and storing content on the Filecoin network directly from your browser. It supports one time deals, is perfect for creating image galleries, and the first 50 GB of storage is free!
-- [ChainSafe Files](https://files.chainsafe.io/) provides decentralized cloud storage with end-to-end encryption in a Dropbox-like interface. Check out the [blog post put out by ChainSafe](https://medium.com/chainsafe-systems/introducing-chainsafe-files-3eedabdec922) for a quick overview of the service.
+- [ChainSafe Files](https://files.chainsafe.io/) provides decentralized cloud storage with end-to-end encryption in a Dropbox-like interface. Check out the [blog post by ChainSafe](https://medium.com/chainsafe-systems/introducing-chainsafe-files-3eedabdec922) for a quick overview of the service.
+- [Space Storage](https://space.storage/) by Fleek is an open-source, user-controlled, encrypted file storage and sharing platform using IPFS and Filecoin, tied to Ethereum accounts or common web OAuth options.
+
 
 ### Filecoin Node Client
 
