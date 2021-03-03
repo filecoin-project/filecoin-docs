@@ -146,7 +146,14 @@ Tools to check status and details of the network and chain.
 - [filecoin-ruby](https://github.com/subvisual/filecoin-ruby) - older interface to Lotus Filecoin in Ruby
 - [Starling Storage API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
 
-Currently for Filecoin storage deals we recommend using Powergate to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.)
+Currently for Filecoin storage deals we recommend using [Powergate](https://docs.textile.io/powergate/) to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.)
+
+#### Powergate clients
+
+- [Powergate JS](https://github.com/textileio/js-powergate-client) - JS client built on top of Powergate gRPC APIs 
+- [PyGate](https://pypi.org/project/pygate-grpc/) - Python interface to Powergate gRPC API
+
+
 
 ### Storage tools for apps
 
