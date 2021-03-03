@@ -72,6 +72,9 @@ Community projects to aid in installing, using & building on Filecoin.
   - [https://hub.docker.com/r/ognots/lotus](https://hub.docker.com/r/ognots/lotus)
   - [https://hub.docker.com/r/textile/lotus-devnet](https://hub.docker.com/r/textile/lotus-devnet) (mocked sectorbuilder)
 
+- Other OSes
+  - [Lotus for nixOS flake](https://github.com/mkg20001/lotus-flake)
+
 ### Scalable endpoint hosting scripts
 
 - For running a node cluster of load balanced Lotus JSON RPC API endpoints
