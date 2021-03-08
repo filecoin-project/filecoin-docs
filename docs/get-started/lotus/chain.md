@@ -27,29 +27,31 @@ We recommend most users perform the initial node sync from a lightweight snapsho
 These lightweight state snapshots **do not contain any message receipts**. To get message receipts, you need to sync your Lotus node from the genesis block without using any of these snapshots.
 :::
 
-1.  Download the most recent lightweight snapshot:
+1. Download the most recent lightweight snapshot and its checksum:
 
     ```bash
-    wget https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
+    curl -sI https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car | perl -ne '/x-amz-website-redirect-location:\s(.+)\.car/ && print "$1.sha256sum\n$1.car"' | xargs wget
     ```
 
     [This URL](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car) always contains the latest snapshot available.
 
-1.  Check the sha256sum of the download:
+1. Check the `sha256sum` of the downloaded snapshot:
 
     ```bash
-    curl -sI https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car | perl -ne '/^x-amz-website-redirect-location:(.+)\.car\s\*$/ && print "$1.sha256sum"' | xargs curl -s
+    # Please change the file name accordingly to the actual downloaded snapshot and sha256sum, in this example it is `minimal_finality_stateroots_517061_2021-02-20_11-00-00.car and minimal_finality_stateroots_517061_2021-02-20_11-00-00.sha256sum`
+    echo "$(cut -c 1-64 minimal_finality_stateroots_517061_2021-02-20_11-00-00.sha256sum) minimal_finality_stateroots_517061_2021-02-20_11-00-00.car" | sha256sum --check
+    
+    > minimal_finality_stateroots_517061_2021-02-20_11-00-00.car: OK
     ```
 
-    This step it optional, but highly recommended.
-
-1.  Start the Lotus daemon using `--import-snapshot`:
+1. Start the Lotus daemon using `--import-snapshot`:
 
     ```bash
-    lotus daemon --import-snapshot minimal_finality_stateroots_latest.car
+    #Please change the file name accordingly to the actual downloaded snapshot, in this example it is `minimal_finality_stateroots_517061_2021-02-20_11-00-00.car`
+    lotus daemon --import-snapshot minimal_finality_stateroots_517061_2021-02-20_11-00-00.car
     ```
 
-We strongly recommend you verify the checksum of the download. However, you can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
+We strongly recommend you to download and verify the checksum of the snapshot before importing it. However, you can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
 
 ```bash
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
