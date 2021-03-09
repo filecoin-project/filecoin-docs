@@ -123,7 +123,7 @@ Tools to check status and details of the network and chain.
 - [**Filecoin Storage Stats**](https://storage.filecoin.io/) - [storage.filecoin.io](https://storage.filecoin.io)
 - [CID Checker - filecoin.tools](https://filecoin.tools)
   - Check your CID's storage deal status
-- [Filstats.com](https://filstats.com/) - general statistics about deals
+- [Filstats.com](https://filstats.com/) - statistics on deals ([Github](https://github.com/Anish-Agnihotri/filstats.com) last updated Oct 2020 so may be out of date)
 - [Deals list at Filfox.io](https://filfox.info/en/deal)
 
 ### Core dev calls
