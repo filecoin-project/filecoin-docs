@@ -41,3 +41,6 @@ The high-level overview of the application architecture:
 ![Meme marketplace app architecture showing how the react app, authentication server, and remote hub APIs work together](./images/app-arch.png)
 
 Before diving into the tutorial for this sample application, the following section provides an understanding of Textile Hub and ERC 721 standard token contract.
+
+## Continue
+ → [Textile Hub, Bucket, and ERC 721 token interactions](https://docs.filecoin.io/build/examples/meme-marketplace/textile-hub-buckets-and-erc721/)
