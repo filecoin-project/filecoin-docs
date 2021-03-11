@@ -27,7 +27,12 @@ cd powergate-docker-v*
 ```
 
 3. Expose port `8080` on the go-ipfs daemon so that we can access the HTTP gateway. (We use the HTTP gateway to fetch the files in our browser)
-4. Open the _docker-compose-localnet.yaml_ file in your favorite editor, and add `- 8080:8080` in the `ports` section of `ipfs`
+
+:::tip
+Make sure that port `8080` is not already in use by some other service. You can do this by visiting `localhost:8080` on your favorite browser and checking that it can't connect to any server. For example, Firefox users will see a message titled "Unable to connect".
+:::
+
+5. Open the _docker-compose-localnet.yaml_ file in your favorite editor, and add `- 8080:8080` in the `ports` section of `ipfs`
 
 ```yaml
 ipfs:
