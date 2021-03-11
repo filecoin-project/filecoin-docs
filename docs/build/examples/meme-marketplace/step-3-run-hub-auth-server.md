@@ -24,7 +24,7 @@ Once you have set up these resources, you can start the server. The directions b
 
 1. Create an Account
 
-Follow the [Textile documentation](https://docs.textile.io/hub/accounts/) to download, install, and initialize the latest Hub CLI.
+Follow the [Textile documentation](https://docs.textile.io/hub/accounts/) to download, install, and initialize the latest Hub CLI. After installing Textile you will need to setup an account with a username, verify your email, and to log in(instructions are on the link just look for `Account Setup`) 
 
 2. Create an organisation
 
