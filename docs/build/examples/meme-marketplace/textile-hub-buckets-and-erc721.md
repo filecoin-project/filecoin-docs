@@ -51,3 +51,7 @@ The following diagram explains the data flow in the application.
 - [More on Textile Hub](https://docs.textile.io/hub/)
 - [More on Textile Buckets](https://docs.textile.io/buckets/)
 - [More on Textile ERC 721](https://docs.openzeppelin.com/contracts/2.x/erc721)
+
+## Start Coding
+ → [Starting a blockchain network and deploying contracts
+](https://docs.filecoin.io/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup/#blockchain-and-smart-contract-setup)
