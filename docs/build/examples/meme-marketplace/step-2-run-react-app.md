@@ -27,8 +27,8 @@ cd marketplace
 npm install
 npm start
 ```
-
-The meme marketplace app starts.
+When the meme marketplace app starts, it might break but that's okay that will get fix on step five just move on to the next step.  
+ 
 
 ::: tip
 This tutorial uses [React](https://reactjs.org/) as the UI library and [Redux](https://redux.js.org/) for application state management. You can use any other library or framework to build such an app.
