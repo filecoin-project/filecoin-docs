@@ -98,7 +98,7 @@ cd meme-marketplace/hub-browser-auth-app
 
 6. Start the Server
 
-Now that the resources are set up, you can start the server.
+Before starting the server don't forget to ```npm install```. Now that the resources are set up, you can start the server.
 
 Run the following command to create a copy of _example.env_ file:
 
