@@ -105,9 +105,7 @@ Each encryption method comes with pros and cons, but GPG is a good all-rounder.
     ```shell
     lotus client import ~/lotr-fotr.tar.gz.gpg 
 
-    > 
-    >
-    >
+    > Import 3, Root bafykb...
     ```
 
 1. That's it! Super simple.
@@ -122,7 +120,43 @@ Each encryption method comes with pros and cons, but GPG is a good all-rounder.
 
     The interactive deal assistant will now as you some questions.
 
-1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/lotr-fotr.tar.gz.gpg`
+1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/lotr-fotr.tar.gz.gpg`:
+
+    ```shell
+    Data CID (from lotus client import): bafykbz...
+    ```
+
+1. Wait for Lotus to finish building the `.car` file.
+
+    ```shell
+    > .. calculating data size 
+    ```
+
+    The duration of this process depends on the size of your file and the specification of your Lotus node. Lotus took around 25 minutes to build the `.car` file of a ~7.5GB file with an 8-core CPU and 16GB RAM.
+
+1. Enter the number of days you want to keep this file on Filecoin for. The minimum is 180 days:
+
+    ```shell
+    > Deal duration (days): 300 
+    ``` 
+
+1. Tell Lotus whether or not this is a Filecoin+ deal. Since we signed up to Filecoin+ and added some DataCap to our wallet in an earlier step, we select `yes` here:
+
+    ```shell
+    > Make this a verified deal? (yes/no): yes
+    ```
+
+1. If you have a particular miner you want to use, enter their miner ID now. Otherwise, press `enter` and have Lotus query all available miners: 
+
+    ```shell
+    > Miner Addresses (f0.. f0..), none to find: 
+    > .. getting miner list
+    > * Found 1422 miners with power[k1;5A
+    > .. querying asks
+    > * Queried 1372 asks, got 402 responses
+    > Found 356 candidate asks
+    > Proposing from f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq, Current Balance: 2 FIL
+    ```
 
 <!--
 ## Notes
@@ -157,7 +191,7 @@ root@ubuntu-s-4vcpu-8gb-tor1-01:~# lotus client deal
 Data CID (from lotus client import): bafykbzacec2qg6o25kxnyx7hndxdfcfj2qlnv3bzb4pjefuf42dsx5wj
 jmc2g                                                                                         
 .. calculating data size                                                                      
-Deal duration (days): ^CERROR: EOF                                                            
+Deal duration (days): ^CERROR: EOF 
 root@ubuntu-s-4vcpu-8gb-tor1-01:~# lotus client deal                                          
 Data CID (from lotus client import): bafykbzacec2qg6o25kxnyx7hndxdfcfj2qlnv3bzb4pjefuf42dsx5wj
 jmc2g                                                                                         
