@@ -24,7 +24,7 @@ Once you have set up these resources, you can start the server. The directions b
 
 1. Create an Account
 
-Follow the [Textile documentation](https://docs.textile.io/hub/accounts/) to download, install, and initialize the latest Hub CLI.
+Follow the [Textile documentation](https://docs.textile.io/hub/accounts/) to download, install, and initialize the latest Hub CLI. After installing Textile you will need to setup an account with a username, verify your email, and to log in(instructions are on the link just look for `Account Setup`)
 
 2. Create an organisation
 
@@ -98,7 +98,7 @@ cd meme-marketplace/hub-browser-auth-app
 
 6. Start the Server
 
-Now that the resources are set up, you can start the server.
+Before starting the server don't forget to ```npm install```. Now that the resources are set up, you can start the server.
 
 Run the following command to create a copy of _example.env_ file:
 

@@ -28,7 +28,7 @@ npm install
 npm start
 ```
 
-The meme marketplace app starts.
+When the meme marketplace app starts, it might break because we need to add a few things like an `api key, and api secrete`. In the next steps we will get add them. For now, just move on to the next step.
 
 ::: tip
 This tutorial uses [React](https://reactjs.org/) as the UI library and [Redux](https://redux.js.org/) for application state management. You can use any other library or framework to build such an app.
