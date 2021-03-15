@@ -1,9 +1,9 @@
 ---
-title: Storage and retrieval guide
+title: Storage and retrieval using Filecoin+
 description: This guide covers how to sign up to the Filecoin+ program, store some data on the Filecoin network using a miner, and how to retrieve that data from the miner.
 ---
 
-# Storage and retrieval
+# Storage and retrieval using Filecoin+
 
 This guide is split into six steps:
 
@@ -19,8 +19,8 @@ This guide is split into six steps:
 
 <!-- 
     Where should a dev create their address?
-        Can we expect them to spin up a node _just_ to create an address?
-        Probably not.
+        Can we expect them to spin up a node _just_ to create an address? Probably not.
+        The easiest way is to use Filfox.io's _hot wallet_ feature. Although, I'm not super sure how secure this method is.
 -->
 
 ## Get FIL
@@ -48,6 +48,11 @@ This guide is split into six steps:
 1. Go to [plus.fil.org](plus.fil.org).
 1. Select **Clients**.
 1. Get verified through GitHub.
+
+### Get DataCap
+
+DataCap is a value assigned to your wallet that tells miners how much bonus storage you have available.
+
 1. Enter the Filecoin address you want to send the DataCap to.  
 
 ### Encrypt your data
@@ -56,7 +61,7 @@ Filecoin does not encrypt any of your data for you. You are responsible for encr
 
 Each encryption method comes with pros and cons, but GPG is a good all-rounder.
 
-1. Create a GPG key-pair:
+1. Create a GPG key-pair, entering in your name and email address:
 
     ```shell
     gpg --gen-key
@@ -65,24 +70,22 @@ Each encryption method comes with pros and cons, but GPG is a good all-rounder.
     > ...
     > GnuPG needs to construct a user ID to identify your key.
     >
-    > Real name: Orthanc
-    > Email address: saruman@orthanc.me
+    > Real name: Laika 
+    > Email address: laika@protocol.labs
     > ...
     ```
-
-    Follow the promts to name the key and enter an email address. In this example we created a key called `Orthanc`.
 
 1. GPG will ask you to supply a password for this key. **Your password is incredibly important**. If someone gains access to your GPG keys, they can't do anything without the password. However, the shorter your password, the easier it is for an attacker to unlock your GPG key and gain access to your encrypted files.
 1. Compress your file or files into a single `.tar.gz` file:
 
     ```shell
-    tar czf lotr-fotr.tar.gz "~/Videos/The Lord of the Rings/The Fellowship of the Ring"
+    tar czf space-walk.tar.gz "~/Videos/1954/Space Walk"
     ```
 
-1. Encrypt your `.tar.gz` file with your GPG key, replacing `Orthanc` and `lotr-fotr` with your GPG key name and name of the file you want to encrypt:
+1. Encrypt your `.tar.gz` file with your GPG key. In this example `Laika` is they key I want to use to encrypt the data and `space-walk.tar.gz` is the data itself:
 
     ```shell
-    gpg --encrypt --recipient Orthanc lotr-fotr.tar.gz 
+    gpg --encrypt --recipient Laika space-walk.tar.gz 
 
     > gpg: checking the trustdb
     > gpg: marginals needed: 3  completes needed: 1  trust model: pgp
@@ -90,10 +93,10 @@ Each encryption method comes with pros and cons, but GPG is a good all-rounder.
     > gpg: next trustdb check due at 2023-03-11
     ```
 
-1. You should now have an encrypted version of that file with a `.gpg` extensios. You may want to delete the unencrypted version of the file from your computer, just to make sure that you don't accidentally upload the wrong version:
+1. You should now have an encrypted version of that file with a `.gpg` extensios. You may want to delete the unencrypted version of the file from your computer:
 
     ```shell
-    rm lotr-fotr.tar.gz
+    rm space-walk.tar.gz
     ```
 
 1. That's it!
@@ -103,8 +106,12 @@ Each encryption method comes with pros and cons, but GPG is a good all-rounder.
 1. Tell Lotus that you'd like to add a file to the Filecoin network:
 
     ```shell
-    lotus client import ~/lotr-fotr.tar.gz.gpg 
+    lotus client import ~/space-walk.tar.gz.gpg 
+    ```
 
+    Keep a note of the root CID that Lotus outputs:
+
+    ```shell
     > Import 3, Root bafykb...
     ```
 
@@ -120,7 +127,7 @@ Each encryption method comes with pros and cons, but GPG is a good all-rounder.
 
     The interactive deal assistant will now as you some questions.
 
-1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/lotr-fotr.tar.gz.gpg`:
+1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/space-walk.tar.gz.gpg`:
 
     ```shell
     Data CID (from lotus client import): bafykbz...
@@ -137,7 +144,7 @@ Each encryption method comes with pros and cons, but GPG is a good all-rounder.
 1. Enter the number of days you want to keep this file on Filecoin for. The minimum is 180 days:
 
     ```shell
-    > Deal duration (days): 300 
+    > Deal duration (days): 365 
     ``` 
 
 1. Tell Lotus whether or not this is a Filecoin+ deal. Since we signed up to Filecoin+ and added some DataCap to our wallet in an earlier step, we select `yes` here:
@@ -146,16 +153,69 @@ Each encryption method comes with pros and cons, but GPG is a good all-rounder.
     > Make this a verified deal? (yes/no): yes
     ```
 
+    Make sure that your [wallet has DataCap](#get-datacap) before attempting to create a verified deal.
+
+
 1. If you have a particular miner you want to use, enter their miner ID now. Otherwise, press `enter` and have Lotus query all available miners: 
 
     ```shell
     > Miner Addresses (f0.. f0..), none to find: 
     > .. getting miner list
-    > * Found 1422 miners with power[k1;5A
+    > * Found 1422 miners with power
+    ```
+
+    Once Lotus finds all available miners, it asks them if they are willing to accept your `.car` file:
+
+    ```shell
     > .. querying asks
     > * Queried 1372 asks, got 402 responses
     > Found 356 candidate asks
     > Proposing from f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq, Current Balance: 2 FIL
+    ```
+
+1. Specify how much you are willing to spend to host this file on Filecoin:
+
+    ```shell
+    > Maximum budget (FIL): 0.5
+    > 298 asks within budget
+    ```
+
+    Lotus has found 298 miners that are willing to take our file for a price _below_ our maxium spend.
+
+1. Specify how many miners you want your file to be replicated over. The default it one. 
+    
+    ```shell
+    Deals to make (1): 1
+    ```
+
+    The more deals you want to make, the more this transaction will cost. If you want to pay 0.5 FIL to store 1 file over 3 miners, then the transaction will cost 1.5 FIL in total (`0.5 * 3 = 1.5)`.
+
+1. Lotus will select a miner to use:
+
+    ```shell
+    .. Picking miners
+    ```
+
+1. Confirm your transaction:
+
+    ```shell
+    > -----
+    > Proposing from f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq
+    >         Balance: 2 FIL
+    > 
+    > Piece size: 8GiB (Payload size: 7.445GiB)
+    > Duration: 7200h0m0s
+    > Total price: ~0 FIL (0 FIL per epoch)
+    > Verified: true
+    > 
+    > Accept (yes/no): yes
+    ```
+
+1. Lotus sends your transaction to the blockchain, and returns a transaction ID:
+
+    ```shell
+    .. executing
+    Deal (f023978) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     ```
 
 <!--
