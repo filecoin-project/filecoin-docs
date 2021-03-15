@@ -219,7 +219,7 @@ Keep a lookout for other upcoming hackathons! Previous ones involving Filecoin i
 - [Mining Benchmarks](https://filecoin-benchmarks.on.fleek.co/)
 - [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - _**recommended**_ Prometheus, Grafana and Python monitoring dashboard
 - [Filgas.io](https://fgas.io/) - real-time Filecoin mining gas queries
-- [Gasoline](https://nikkolasg.github.io/gasoline/)
+- [Filecoin Ticker Collection](https://tick.li.factor8.io/)
 - [Hactar](https://www.hactar.app/) - analytics for your Filecoin miner node
 
 ### Storage client and miner programs
