@@ -66,7 +66,7 @@ npm i pouchdb
 
 The module `pouchdb` lets you connect to PouchDB in javascript environments such as Node, React Native, and web browsers.
 
-2. In [src/utils/powergate.js](https://github.com/filecoin-shipyard/powergate-pinning-service/blob/master/src/utils/powergate.js), create a PouchDB object and initilize a database named `my_database`:
+2. In [src/utils/database.js](https://github.com/filecoin-shipyard/powergate-pinning-service/blob/master/src/utils/powergate.js), create a PouchDB object and initilize a database named `my_database`:
 
 ```js
 import PouchDB from 'pouchdb'
