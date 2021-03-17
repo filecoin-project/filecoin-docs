@@ -27,7 +27,7 @@ ListenAddress = "/ip4/0.0.0.0/tcp/28001/http"
 2. On your lite-node clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) and create the binary, but do not run anything yet:
 
 ```
-git clone <https://github.com/filecoin-project/lotus>
+git clone https://github.com/filecoin-project/lotus
 cd lotus
 make clean all
 sudo make install
