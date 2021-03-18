@@ -7,12 +7,30 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 This section contains links and reference materials for Filecoin.
 
-- [About the protocol](#about-the-protocol)
 - [Filecoin community resources and tools](#filecoin-community-resources-and-tools)
+  - [Node implementations](#node-implementations)
+  - [Devnets and testnets](#devnets-and-testnets)
+  - [Containers and virtualization](#containers-and-virtualization)
 - [Network status](#network-status)
+  - [Block explorers](#block-explorers)
+  - [Chain data and monitoring](#chain-data-and-monitoring)
+  - [Miner reputation systems](#miner-reputation-systems)
+  - [Storage status](#storage-status)
+  - [Core dev calls](#core-dev-calls)
 - [APIs and developer tools](#apis-and-developer-tools)
+  - [Filecoin API clients](#filecoin-api-clients)
+  - [Storage tools for apps](#storage-tools-for-apps)
+  - [Storage apps on Filecoin](#storage-apps-on-filecoin)
+  - [Ecosystem projects](#ecosystem-projects)
+  - [Grant programs and accelerators](#grant-programs-and-accelerators)
 - [Mining](#mining)
+  - [Dashboards and reputation systems](#dashboards-and-reputation-systems)
+  - [Storage client and miner programs](#storage-client-and-miner-programs)
 - [Wallets](#wallets)
+  - [List of Filecoin wallets](#wallets)
+  - [Wallet tools for developers](#wallet-tools-for-developers)
+  - [Filecoin signing tools](#filecoin-signing-tools)
+  - [Retrieval Market resources](#retrieval-market-resources-wip-experiments)
 
 ## About the protocol
 
@@ -126,11 +144,14 @@ Tools to check status and details of the network and chain.
 - [Sentinel-Visor](https://github.com/filecoin-project/sentinel-visor) - has custom hooks into the VM of Lotus for parsing chain data
 - [Filecoin ChainInfo npm library](https://www.npmjs.com/package/filecoin-chaininfo) - mainly for data extraction
 
-### Miner Reputation Systems
+### Miner reputation systems
 
-- [Filrep.io](https://filrep.io/) - find online miners to store with, ranked by power and reputation score
+- [Textile Miner Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find miners by price, observed deals, speed from North American nodes
+- [Filrep.io](https://filrep.io/) - Index of online miners and their pricing, ranked by power and reputation score
 - [Codefi Storage](https://storage.codefi.network/) - view the Filecoin Storage Market
 - [Figment.io Datahub - Miner Reputation System API](https://learn.figment.io/network-documentation/filecoin/rpc-and-rest-api/miner-reputation-system-api) - reputation score based on miner storage capacity, sector faults and deal slashes
+
+- [FIL Swan](https://www.filswan.com/) - for offline deals, miner info, prices, offline deal acceptance
 
 ### Storage status
 
@@ -198,8 +219,8 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 
 ### Ecosystem projects
 
-- [**Filecoin Shipyard**](https://github.com/filecoin-shipyard) - a collection of open source community projects on Filecoin
-- [Community Projects Showcase](https://github.com/filecoin-project/community/#ecosystem-projects)
+- [**Community Projects Showcase**](https://github.com/filecoin-project/community/#ecosystem-projects) - updated news about ecosystem projects
+- [**Filecoin Shipyard**](https://github.com/filecoin-shipyard) - open source community projects on Filecoin
 - [Filecoin Ecosystem Map](http://ipfs.io/ipfs/QmQhjHgWzaW7obwDzBnTErQvAJY6cbKu5WUKXBzYPjuxto)
 - [Awesome Filecoin](https://www.awesomefilecoin.com/) - awesome projects on Filecoin
 - [Starling Framework for Data Integrity](https://www.starlinglab.org/)
@@ -227,8 +248,11 @@ Keep a lookout for other upcoming hackathons! Previous ones involving Filecoin i
 
 - [SpaceGap](https://spacegap.github.io/)
   - shows storage proof deadlines and sector details for the top 50 miners
-- [Codefi Miner Reputation System](https://www.storage.codefi.network/) - miner info, asking price, deals they've completed
-- [FIL Swan](https://www.filswan.com/) - miner info, prices, offline deal acceptance
+- [FIL Swan](https://www.filswan.com/) - for offline deals, miner info, prices, offline deal acceptance
+- [Textile Miner Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find miners by price, observed deals, speed from North American nodes
+- [Filrep.io](https://filrep.io/) - Index of online miners and their pricing, ranked by power and reputation score
+- [Codefi Storage](https://storage.codefi.network/) - view the Filecoin Storage Market, miner info, asking price, completed deals
+- [Figment.io Datahub - Miner Reputation System API](https://learn.figment.io/network-documentation/filecoin/rpc-and-rest-api/miner-reputation-system-api) - reputation score based on miner storage capacity, sector faults and deal slashes
 
 ### Miner tools
 
