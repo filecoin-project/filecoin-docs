@@ -21,6 +21,7 @@ To spin up a Lotus lite-node, you will need:
 
 1. A [Lotus full-node](../../get-started/lotus). For best results, make sure that this node is fully synced. 
 2. A computer with at least 2GB RAM and a dual-core CPU to act as the Lotus lite-node. This can be your local machine. This computer must have Rust and Go 1.15 or higher installed.
+3. You must have [all the software dependencies required](../../get-started/lotus/installation##software-dependencies) to build Lotus.
 
 ## Full-node preparation
 
@@ -48,6 +49,13 @@ Next up you'll create the Lotus executable on your lite-node and running it in _
 ## Create the Lotus executable 
 
 You need to create the Lotus executable to run your lite-node with. This process is the same as when creating a full-node.
+
+```
+git clone https://github.com/filecoin-project/lotus
+cd lotus
+make clean all
+sudo make install
+```
 
 1. On your lite-node clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) and create the executable, but do not run anything yet:
 
