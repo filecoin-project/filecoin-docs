@@ -50,13 +50,6 @@ Next up you'll create the Lotus executable on your lite-node and running it in _
 
 You need to create the Lotus executable to run your lite-node with. This process is the same as when creating a full-node.
 
-```
-git clone https://github.com/filecoin-project/lotus
-cd lotus
-make clean all
-sudo make install
-```
-
 1. On your lite-node clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) and create the executable, but do not run anything yet:
 
     ```shell
@@ -66,13 +59,13 @@ sudo make install
     sudo make install
     ```
 
-    If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](/get-started/lotus/installation/#software-dependencies) and double check that you have all the dependencies installed, along with Golang and Rust.
+If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](/get-started/lotus/installation/#software-dependencies) and double check that you have all the dependencies installed, along with Golang and Rust.
 
 ## Start the lite-node
 
 You've got the Lotus executables ready to go, and you have access to a Lotus full-node. All that's left is connecting your Lotus lite-node to the full-node!
 
-1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`:
+1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`. Make sure to replace `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node:
 
     ```shell
     FULLNODE_API_INFO=/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/28001 lotus daemon --lite
@@ -81,11 +74,9 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
     > ...
     ```
 
-  Make sure to replace `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node.
-
 1. You can now interact with your Lotus lite-node:
 
-    ```
+    ```shell
     lotus wallet balance f10...
 
     > 100 FIL
