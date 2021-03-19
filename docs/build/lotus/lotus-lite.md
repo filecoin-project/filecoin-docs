@@ -30,7 +30,7 @@ If you have access to the full-node you're using, you need to make some minor mo
 1. On your full-node open `~/.lotus/config` and edit line 3 to read:
 
     ```toml
-    ListenAddress = "/ip4/0.0.0.0/tcp/28001/http"
+    ListenAddress = "/ip4/0.0.0.0/tcp/1234/http"
     ```
 
 1. Create an API token for your lite-node to use:
@@ -68,7 +68,7 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
 1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`. Make sure to replace `API_TOKEN` with the token you got from the full-node, and `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node:
 
     ```shell
-    FULLNODE_API_INFO=API_TOKEN/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/28001 lotus daemon --lite
+    FULLNODE_API_INFO=API_TOKEN/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/1234 lotus daemon --lite
 
     > 2021-03-02T23:59:50.609Z        INFO    main    lotus/daemon.go:201     lotus repo: /root/.lotus
     > ...
@@ -77,7 +77,7 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
     If you don't have an `API_TOKEN`, you can run the above command without one, and just gain read-only access to the full-node:
 
     ```shell
-    FULLNODE_API_INFO=/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/28001 lotus daemon --lite
+    FULLNODE_API_INFO=/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/1234 lotus daemon --lite
     ```
 
 1. You can now interact with your Lotus lite-node:
