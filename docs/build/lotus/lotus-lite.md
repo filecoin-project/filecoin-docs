@@ -65,13 +65,19 @@ If you run into errors here, it may be because you don't have all the Lotus depe
 
 You've got the Lotus executables ready to go, and you have access to a Lotus full-node. All that's left is connecting your Lotus lite-node to the full-node!
 
-1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`. Make sure to replace `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node:
+1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`. Make sure to replace `API_TOKEN` with the token you got from the full-node, and `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node:
 
     ```shell
-    FULLNODE_API_INFO=/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/28001 lotus daemon --lite
+    FULLNODE_API_INFO=API_TOKEN/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/28001 lotus daemon --lite
 
     > 2021-03-02T23:59:50.609Z        INFO    main    lotus/daemon.go:201     lotus repo: /root/.lotus
     > ...
+    ```
+
+    If you don't have an `API_TOKEN`, you can run the above command without one, and just gain read-only access to the full-node:
+
+    ```shell
+    FULLNODE_API_INFO=/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/28001 lotus daemon --lite
     ```
 
 1. You can now interact with your Lotus lite-node:
