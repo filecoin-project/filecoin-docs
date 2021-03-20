@@ -14,7 +14,7 @@ While the **Lotus Miner** can run every of the sealing phases itself (and is con
 
 ## Resource allocation in workers
 
-Each **Lotus Worker** will run at most **two tasks** -each slot is called a _window_-. The final number is determined by the number of available cores and the requirements of the sealing phase allocated to it. That means that a single worker on a 8-core CPU with a single GPU will run at most:
+Each **Lotus Worker** can run multiple tasks (depending on your hardware resources) -each slot is called a _window_-. The final number is determined by the number of available cores and the requirements of the sealing phase allocated to it. That means that a single worker on a 8-core CPU with a single GPU will run at most:
 
 - 2 _PreCommit1_ tasks (using 1 core each)
 - 1 _PreCommit2_ task (using all available cores)
