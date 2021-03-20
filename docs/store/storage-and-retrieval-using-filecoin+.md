@@ -15,12 +15,64 @@ This guide is split into six steps:
 1. Create a deal. 
 1. Retrieve your data. 
 
-## Get a Filecoin address
+## Phrases used in this tutorial
 
-<!-- 
-    Where should a dev create their address?
-        Can we expect them to spin up a node _just_ to create an address? Probably not.
-        The easiest way is to use Filfox.io's _hot wallet_ feature. Although, I'm not super sure how secure this method is.
+This tutorial contains some words and phrases that you might not be familiar with:
+
+| Word | Definition |
+| --- | --- |
+| Wallet | A collection of addresses. Think of each wallet as a folder, and each address as a single file in that folder. |
+| Address | A string of letters and numbers that other users can send FIL to. |
+| Filecoin (upper-case `f`) | The network that transactions and storage deals take place on. |
+| filecoin (lower-case `f`) | The cryptocurrency that the Filecoin network runs on. |
+| FIL | The shorthand representation of the filecoin cryptocurrency. |
+| Private key | A string of letters and numbers that programs use to interact with the Filecoin network. Keep your private key safe and don't share it with anyone. |
+
+## Create a wallet 
+
+To send and receive data on Filecoin you need to have FIL. But before you can get FIL you need somewhere to put that FIL. There are several ways to get an address; the simpliest of which is by using a service called FilFox to create a wallet and get an address through a website. This guide assumes that you haven't already created a wallet using FilFox.
+
+1. Go to [filfox.info](https://filfox.info).
+1. Select **Wallet**.
+1. Click **Create wallet**.
+1. Read and accept the security warning and FilFox agreement. Click **Confirm**.
+1. Chose a strong password. This password cannot be reset, so make sure you remember it. We cover why this is important in moment. 
+1. FilFox will now generate and show you your _seed words_. These words, collectively known as your _seed phrase_ are incredibly important, and we'll discuss them in a moment. For now, just write down your seed words in order on a piece of paper.
+1. Click **Next**.
+1. Select each seed word in order. 
+1. Click **Next**.
+1. You should now be greeted with an empty wallet! 
+
+
+You now have a Filecoin wallet, but right now you can only access it through the FilFox website. We want to use it on a Lotus node, so we need to _export_ the wallet from FilFox.
+
+1. Click **Settings**.
+1. Select **Private key**.
+1. Enter your password and click **Confirm**.
+1. Click the **Private key type** drop-down menu and select **Lotus type private key**.
+
+    ![A drop-down menu showing the different types of private key that FilFox supports.](./images/select-lotus-from-private-key-drop-down.png)
+
+1. Your private key is the long string of letters and numbers. Highlight the whole key and copy it to your clipboard.
+1. Open a terminal window.
+1. Create a file called `my-filfox-key` and enter the key you just copied:
+
+    ```shell
+    echo 7b2254... >> ~/my-filfox-key
+    ```
+
+    Make sure to replace `7b2254...` with the private key you just copied from FilFox.
+
+You now have a file called `my-filfox-key` with your private key in it. We can use this file later to process transactions on the Filecoin network.
+
+### Passwords and seed-phrases
+
+<!-- TODO:
+
+- Your password and seed-phrase are two very different things.
+- Your wallet is saved as a cookie in your browser. Your password encrypts this cookie.
+- Your seed-phrase is a linguistic representation of your wallets _private key_. Your wallet is the only wallet with that exact same arrangement of words. If someone else gets access to your seed-phrase, they have complete access to your wallet and thus can rinse you dry.
+
 -->
 
 ## Get FIL
