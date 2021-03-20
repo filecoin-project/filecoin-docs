@@ -133,7 +133,6 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 5. Build and install Lotus:
 
    ```sh
-   # for mainnet:
    make clean all  # for mainnet
    make clean calibration # for calibration-net
    sudo make install
