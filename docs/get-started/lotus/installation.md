@@ -95,16 +95,17 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-2. Checkout the branch corresponding to the network you want to join. If you want to run the _latest_ version of Lotus on `mainnet`, checkout to the `master` branch. If you want to use a specific release, then see the [Releases section in GitHub](https://github.com/filecoin-project/lotus/releases).
+2. To join mainnet, checkout the master branch and [latest release](https://github.com/filecoin-project/lotus/releases).
 
-   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
+   
+   For networks other than mainnet, look up the current branch or tag and commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
    git checkout <branch_or_tag>
    # For example:
    git checkout master # mainnet
-   git checkout ntwk-calibration # calibration-net
-   git checkout ntwk-nerpa # nerpa-net
+   git checkout <vX.X.X> # tag for latest release
    ```
 
    Currently, the _master_ branch corresponds to **mainnet**.
@@ -134,6 +135,11 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    ```sh
    make clean all
+   
+   # Or to join a testnet or devnet:
+   make clean calibnet # Calibration with min 32GiB sectors
+   make clean nerpanet # Nerpa with min 512MiB sectors
+   
    sudo make install
    ```
 
@@ -213,14 +219,17 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    cd lotus/
    ```
 
-1. Checkout the branch corresponding to the network you want to join. If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+1. To join mainnet, checkout the master branch and [browse for the latest release](https://github.com/filecoin-project/lotus/releases).
+
+   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
+   
+   To join networks other than mainnet, look up the correct branch or tag and commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
    git checkout <branch_or_tag>
    # For example:
    git checkout master # mainnet
-   git checkout ntwk-calibration # calibration-net
-   git checkout ntwk-nerpa # nerpa-net
+   git checkout <vX.X.X> # tag for latest release
    ```
 
    Currently, the _master_ branch corresponds to **mainnet**.
@@ -239,7 +248,12 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 1. Build Lotus:
 
    ```sh
-   make clean && make all
+   make clean && make all # mainnet
+   
+   # Or to join a testnet or devnet:
+   make clean && make calibnet # Calibration with min 32 GiB sectors
+   make clean && make nerpanet # Nerpa with min 512 MiB sectors
+   
    sudo make install
    ```
 
