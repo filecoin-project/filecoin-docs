@@ -125,9 +125,7 @@ Filecoin uses curve bls12-381 for BLS signatures. Bls12-381 is a pair of two rel
 
 Filecoin uses G1 for public keys and G2 for signatures as G1 allows for a smaller representation of public keys. This is the same design decision made with ETH2, but contrasts to, for instance, Zcash which has signatures on G1 and public keys on G2.
 
-### Big vs Little Endian Keys
-
-Filecoin stores and interprets private keys in little-endian order. This is in contrast to e.g. ETH2 keys, which also use bls12-381 but are stored in big-endian order.
+Also note that Filecoin stores and interprets private keys in little-endian order. This is in contrast to ETH2 keys, which also use bls12-381 but are stored in big-endian order.
 
 ## Additional materials
 
