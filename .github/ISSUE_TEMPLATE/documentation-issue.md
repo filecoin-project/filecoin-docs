@@ -3,8 +3,6 @@ name: Documentation Issue
 about: Report a problem with existing documentation.
 title: "Describe the problem, bug, typo, or other issue in one sentence."
 labels: 'need/triage'
-assignees: 'johnnymatthews'
-
 ---
 
 Did you find a bug, typo or other issue in an item of Filecoin documentation? Please use this template to let us know!
