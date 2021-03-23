@@ -54,4 +54,4 @@ The following diagram explains the data flow in the application.
 
 ## Start Coding
  → [Starting a blockchain network and deploying contracts
-](https://docs.filecoin.io/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup/#blockchain-and-smart-contract-setup)
+](/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup/#blockchain-and-smart-contract-setup)
