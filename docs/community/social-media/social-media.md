@@ -18,7 +18,7 @@ Explore the latest news, events and other happenings on the official [Filecoin B
 
 ## Newsletter
 
-Subscribe to the [Filecoin newsletter](https://filecoin.io/#community) for official project updates sent straight to your inbox.
+Subscribe to the [Filecoin newsletter](https://filecoin.io/newsletter) for official project updates sent straight to your inbox.
 
 ## Twitter
 
