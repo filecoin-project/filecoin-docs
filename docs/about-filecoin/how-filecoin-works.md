@@ -120,11 +120,14 @@ Robust addresses provide a safe way to reference actors before the chain state i
 
 Actor addresses provide a way to create robust addresses for actors not associated with a public key. They are the essentially random sha256 hash of the output of the account creation. The [ZH Storage Miner](https://filfox.info/en/address/f01248) has the Actor Address `f2plku564ddywnmb5b2ky7dhk4mb6uacsxuuev3pi` and the ID address `f01248`.
 
+### BLS Curve
+Filecoin uses curve bls12-381 for BLS signatures. Bls12-381 is a pair of two related curves: G1 and G2. Implementations of bls12-381 can vary based on if public keys are on G1 and signatures on G2 or vice-versa.
+
+Filecoin uses G1 for public keys and G2 for signatures as G1 allows for a smaller representation of public keys. This is the same design decision made with ETH2, but contrasts to, for instance, Zcash which has signatures on G1 and public keys on G2.
+
 ### Big vs Little Endian Keys
 
-Private keys in Filecoin use the BLS curve.
-
-Keys are stored in Little Endian on Filecoin. This is in contrast to E.g. ETH2 keys, which also use BLS but are stored as Big Endian.
+Filecoin stores and interprets private keys in little-endian order. This is in contrast to e.g. ETH2 keys, which also use bls12-381 but are stored in big-endian order.
 
 ## Additional materials
 
