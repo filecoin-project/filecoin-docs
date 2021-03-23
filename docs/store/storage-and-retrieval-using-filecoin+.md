@@ -8,14 +8,10 @@ description: This guide covers how to sign up to the Filecoin+ program, store so
 This guide is split into six steps:
 
 1. Generate a FIL address.
-1. Get some FIL.
 1. Sign up to Filecoin+.
-1. Encrypt your data.
 1. Import your data.
 1. Create a deal. 
 1. Retrieve your data. 
-
-## Phrases used in this tutorial
 
 This tutorial contains some words and phrases that you might not be familiar with:
 
@@ -28,7 +24,7 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | FIL | The shorthand representation of the filecoin cryptocurrency. |
 | Private key | A string of letters and numbers that programs use to interact with the Filecoin network. Keep your private key safe and don't share it with anyone. |
 
-## Create a wallet 
+## Generate a FIL address 
 
 To send and receive data on Filecoin you need to have FIL. But before you can get FIL you need somewhere to put that FIL. There are several ways to get an address; the simpliest of which is by using a service called FilFox to create a wallet and get an address through a website. This guide assumes that you haven't already created a wallet using FilFox.
 
@@ -43,7 +39,6 @@ To send and receive data on Filecoin you need to have FIL. But before you can ge
 1. Click **Next**.
 1. You should now be greeted with an empty wallet! 
 
-
 You now have a Filecoin wallet, but right now you can only access it through the FilFox website. We want to use it on a Lotus node, so we need to _export_ the wallet from FilFox.
 
 1. Click **Settings**.
@@ -51,7 +46,7 @@ You now have a Filecoin wallet, but right now you can only access it through the
 1. Enter your password and click **Confirm**.
 1. Click the **Private key type** drop-down menu and select **Lotus type private key**.
 
-    ![A drop-down menu showing the different types of private key that FilFox supports.](./images/select-lotus-from-private-key-drop-down.png)
+    ![A drop-down menu showing the different types of private key that FilFox supports.](./images/store-and-retreive-tutorial/select-lotus-from-private-key-drop-down.png)
 
 1. Your private key is the long string of letters and numbers. Highlight the whole key and copy it to your clipboard.
 1. Open a terminal window.
@@ -75,20 +70,6 @@ You now have a file called `my-filfox-key` with your private key in it. We can u
 
 -->
 
-## Get FIL
-
-<!--
-    This bit is tricky. We wanna tell folks _how_ to get FIL, but we don't wanna tell there _where_ to get FIL. Like, the general process is:
-
-    1. Go to an exchange.
-    1. Sign up.
-    1. Add some funds.
-    1. Swap those funds for FIL.
-    1. Done.
-
-    However, we absolutely shouldn't say _got to xyz-exchange. Think we'll get into some legal trouble there.
--->
-
 ## Sign up to Filecoin+
 
 <!-- 
@@ -105,53 +86,13 @@ You now have a file called `my-filfox-key` with your private key in it. We can u
 
 DataCap is a value assigned to your wallet that tells miners how much bonus storage you have available.
 
-1. Enter the Filecoin address you want to send the DataCap to.  
+1. Enter the Filecoin address you want to send the DataCap to. 
 
-### Encrypt your data
+### Encrypt your data (optional)
 
-Filecoin does not encrypt any of your data for you. You are responsible for encrypting anything you don't want to be public. There's a few reasons Filecoin takes a back-seat when it comes to encryption, but the main reasons is that we want users to be able to choose which encryption method to use. We don't want to tie users into using one method.
+This step is completely optional. 
 
-Each encryption method comes with pros and cons, but GPG is a good all-rounder.
-
-1. Create a GPG key-pair, entering in your name and email address:
-
-    ```shell
-    gpg --gen-key
-
-    > gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
-    > ...
-    > GnuPG needs to construct a user ID to identify your key.
-    >
-    > Real name: Laika 
-    > Email address: laika@protocol.labs
-    > ...
-    ```
-
-1. GPG will ask you to supply a password for this key. **Your password is incredibly important**. If someone gains access to your GPG keys, they can't do anything without the password. However, the shorter your password, the easier it is for an attacker to unlock your GPG key and gain access to your encrypted files.
-1. Compress your file or files into a single `.tar.gz` file:
-
-    ```shell
-    tar czf space-walk.tar.gz "~/Videos/1954/Space Walk"
-    ```
-
-1. Encrypt your `.tar.gz` file with your GPG key. In this example `Laika` is they key I want to use to encrypt the data and `space-walk.tar.gz` is the data itself:
-
-    ```shell
-    gpg --encrypt --recipient Laika space-walk.tar.gz 
-
-    > gpg: checking the trustdb
-    > gpg: marginals needed: 3  completes needed: 1  trust model: pgp
-    > gpg: depth: 0  valid:   2  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 2u
-    > gpg: next trustdb check due at 2023-03-11
-    ```
-
-1. You should now have an encrypted version of that file with a `.gpg` extensios. You may want to delete the unencrypted version of the file from your computer:
-
-    ```shell
-    rm space-walk.tar.gz
-    ```
-
-1. That's it!
+Filecoin does not automatically encrypt your data for you before storing it onto the Filecoin network. You can, of course, encrypt your data yourself before storing the data to Filecoin. Each encryption method has different tradeoffs, but if you would like to encrypt your data before storing to Filecoin, consider following [this guide from gnupg.com](https://www.gnupg.org/gph/en/manual/x110.html). 
 
 ### Import you data
 
