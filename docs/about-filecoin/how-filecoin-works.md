@@ -104,9 +104,11 @@ For example, the [Burn Account](https://filfox.info/en/address/f099) actor on th
 
 Actors managed directly by users, like accounts, are derived from a public-private key pair. If you have access to a private key, you can sign messages sent from that actor. The public key is used to derive an address for the actor.
 
-For example, the [Huobi Hot Wallet](https://filfox.info/en/address/f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za) has the SECP256K1 Public Key Address `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za` and the ID Address `f033259`. Both addresses identify the same Account actor. Messages sent to either address will be applied to the same Account.
+For example, the [Huobi Hot Wallet](https://filfox.info/en/address/f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za) has the secp256k1 Public Key Address `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za` and the ID Address `f033259`. Both addresses identify the same Account actor. Messages sent to either address will be applied to the same Account.
 
 Public key addresses allow devices like the Ledger to derive a valid Filecoin address for your account from just the public key. It doens't need to ask a remote node what your ID address is.
+
+Filecoin supports both secp256k1 addresses that begin with `f1` and BLS addresses that begin with `f3`.
 
 ### Robust addresses versus ID addresses
 
@@ -120,8 +122,8 @@ Robust addresses provide a safe way to reference actors before the chain state i
 
 Actor addresses provide a way to create robust addresses for actors not associated with a public key. They are the essentially random sha256 hash of the output of the account creation. The [ZH Storage Miner](https://filfox.info/en/address/f01248) has the Actor Address `f2plku564ddywnmb5b2ky7dhk4mb6uacsxuuev3pi` and the ID address `f01248`.
 
-### BLS Curve
-Filecoin uses curve bls12-381 for BLS signatures. Bls12-381 is a pair of two related curves: G1 and G2. Implementations of bls12-381 can vary based on if public keys are on G1 and signatures on G2 or vice-versa.
+### BLS Curve `f3`
+In addition to secp256k1 `f1` addresses, BLS addresses in Filecoin begin with `f3`. Filecoin uses curve bls12-381 for BLS signatures. Bls12-381 is a pair of two related curves: G1 and G2. Implementations of bls12-381 can vary based on if public keys are on G1 and signatures on G2 or vice-versa.
 
 Filecoin uses G1 for public keys and G2 for signatures as G1 allows for a smaller representation of public keys. This is the same design decision made with ETH2, but contrasts to, for instance, Zcash which has signatures on G1 and public keys on G2.
 
