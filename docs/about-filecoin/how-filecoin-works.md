@@ -120,6 +120,12 @@ Robust addresses provide a safe way to reference actors before the chain state i
 
 Actor addresses provide a way to create robust addresses for actors not associated with a public key. They are the essentially random sha256 hash of the output of the account creation. The [ZH Storage Miner](https://filfox.info/en/address/f01248) has the Actor Address `f2plku564ddywnmb5b2ky7dhk4mb6uacsxuuev3pi` and the ID address `f01248`.
 
+### Big vs Little Endian Keys
+
+Private keys in Filecoin use the BLS curve.
+
+Keys are stored in Little Endian on Filecoin. This is in contrast to E.g. ETH2 keys, which also use BLS but are stored as Big Endian.
+
 ## Additional materials
 
 Filecoin is built on top of [mature projects](../project/related-projects.md) like libp2p (networking, addressing, message distribution), IPLD (data formats, encoding, and content-addressed data structures), IPFS (data transfers), and multiformats (future-proof data types).
