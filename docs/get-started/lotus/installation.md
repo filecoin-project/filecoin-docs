@@ -70,10 +70,6 @@ Lotus needs [rustup](https://rustup.rs). The easiest way to install it is:
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-:::tip
-Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.
-:::
-
 #### Go
 
 To build Lotus, you need a working installation of [Go 1.15.5 or higher](https://golang.org/dl/):
