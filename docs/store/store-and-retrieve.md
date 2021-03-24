@@ -124,11 +124,11 @@ DataCap is a value assigned to your wallet that tells miners how much bonus stor
 
 1. Enter the Filecoin address you want to send the DataCap to. 
 
-### Import your data
+## Import your data
 
 Before you can import your data into a Lotus node, you first need to prepare it into a format that Lotus can manage.
 
-#### Prepare your data
+### Prepare your data
 
 If you have several files that you want to upload to the Filecoin network, the easiest way to add them into a storage-deal is by compressing everything into an archive.
 
@@ -161,7 +161,7 @@ If you have several files that you want to upload to the Filecoin network, the e
     > ubuntu-20.10-desktop-amd64.iso
     ```
 
-#### Padding your data
+### Padding your data
 
 If you have a small amount of data, it may be difficult for you to find a miner who is willing to store your data. Miner's store data in 32GB sectors, so if you're only storing a 2GB file then the miner is wasting 30GB of space in that sector. To improve the chances of a miner accepting your storage deal you can create a large file _alongside_ the file you actually want to store and compress everything together into one package that you send to the miner.
 
@@ -189,13 +189,13 @@ If you have a small amount of data, it may be difficult for you to find a miner 
 
     This may take substantially longer than normal since the `tar` program has to package a lot of data together.
 
-#### Encrypt your data (optional)
+### Encrypt your data (optional)
 
 This step is completely optional. 
 
 Filecoin does not automatically encrypt your data for you before storing it onto the Filecoin network. You can, of course, encrypt your data yourself before storing the data to Filecoin. Each encryption method has different tradeoffs, but if you would like to encrypt your data before storing to Filecoin, consider following [this guide from gnupg.com](https://www.gnupg.org/gph/en/manual/x110.html). 
 
-#### Add data to Lotus
+### Add data to Lotus
 
 1. Tell Lotus that you'd like to add a file to the Filecoin network:
 
@@ -211,7 +211,7 @@ Filecoin does not automatically encrypt your data for you before storing it onto
 
 1. That's it! Super simple.
 
-### Create a deal 
+## Create a deal 
 
 1. Start the interactive deal process:
 
@@ -221,7 +221,7 @@ Filecoin does not automatically encrypt your data for you before storing it onto
 
     The interactive deal assistant will now as you some questions.
 
-1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/space-walk.tar.gz.gpg`:
+1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/filecoin-payload.tar.gz`:
 
     ```shell
     Data CID (from lotus client import): bafykbz...
