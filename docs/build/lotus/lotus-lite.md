@@ -43,6 +43,7 @@ If you have access to the full-node you're using, you need to make some minor mo
     Which permissions you choose will depend on your use-case. Take a look at the [API tokens section to find out more →](https://docs.filecoin.io/build/lotus/api-tokens/#obtaining-tokens)
 
 1. Send this API token to your lite-node, or to whoever will be the administator for the lite-node.
+1. If you have the `lotus daemon` running, stop it and start it again. This forces Lotus to open the API port we just set.
 
 Next up you'll create the Lotus executable on your lite-node and running it in _lite_ mode!
 
