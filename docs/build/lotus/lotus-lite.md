@@ -27,11 +27,16 @@ To spin up a Lotus lite-node, you will need:
 
 If you have access to the full-node you're using, you need to make some minor modifications to it's configuration.
 
-1. On your full-node open `~/.lotus/config` and edit line 3 to read:
+1. On your full-node open `~/.lotus/config` and:
+
+    a. Uncommend line 3.
+    a. Change `127.0.0.1` to `0.0.0.0`.
 
     ```toml
     ListenAddress = "/ip4/0.0.0.0/tcp/1234/http"
     ```
+    
+    Save and exit the file.
 
 1. Create an API token for your lite-node to use:
 
