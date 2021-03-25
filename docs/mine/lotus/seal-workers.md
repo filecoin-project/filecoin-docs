@@ -1,30 +1,32 @@
 ---
 title: 'Lotus Miner: seal workers'
-description: 'The Lotus seal worker is a separate application that can be used to offload phases of the sealing process to separate machines or processes. This guide explains how to setup one or several Lotus seal workers.'
-breadcrumb: 'Seal workers'
+description: 'The Lotus Worker is a separate application that can be used to offload phases of the sealing process to separate machines or processes. This guide explains how to setup one or several Lotus Workers.'
+breadcrumb: 'Lotus Workers'
 ---
 
 # {{ $frontmatter.title }}
 
 {{ $frontmatter.description }}
 
-While the **Lotus Miner** can run every of the sealing phases itself (and is configured to do so by default), Lotus workers allow to create a _sealing pipeline_ that can improve resource utilization and free the main miner from CPU-intensive tasks so that it can focus on performing and submitting _WindowPoSTs_ and _WinningPoSTs_ to the chain.
+While the Lotus Miner runs each of the sealing phases itself by default, you can use Lotus Workers to create a _sealing pipeline_ to improve resource utilization. The sealing pipeline frees up the Lotus Miner from CPU-intensive tasks to focus on performing and submitting _WindowPoSTs_ and _WinningPoSTs_ to the chain.
 
 [[TOC]]
 
-## Resource allocation in workers
+## Resource allocation in Lotus Workers
 
-Lotus allocates tasks to workers based on available resources, and the amount of resources a specific task is estimated to use. The resources which are taken into account are:
-- Number of CPU threads the task will use
-- Minimum amount of RAM required for good performance
-- Maximum amount of memory required to run the task (where part of the memory can be swapped out to disk, and the performance won't be affected too much)
-- Whether a GPU can be used
+Lotus allocates tasks to Lotus Workers based on available resources and resources a specific job is estimated to use. The resources taken into account are:
+
+- Number of CPU threads the task will use.
+- Minimum amount of RAM required for good performance.
+- Maximum amount of memory required to run the task, where the system can swap out part of the memory to disk, and the performance won't be affected too much.
+- Whether the system can use a GPU.
 
 ### Task resource table
 
-The default resource table lives in [resources.go](https://github.com/filecoin-project/lotus/blob/master/extern/sector-storage/resources.go#L47), and can be edited to tune the scheduled behavior to better fit specific sealing clusters
+The default resource table lives in [resources.go](https://github.com/filecoin-project/lotus/blob/master/extern/sector-storage/resources.go#L47) and can be edited to tune the scheduled behavior to fit specific sealing clusters better.
 
-Default resource value table (note that some of the values are conservative):
+Default resource value table. Some of these values are _fairly_ conservative:
+
 | Sector size | Task Type  | Threads | Min RAM | Min Memory | GPU        |
 |-------------|------------|---------|---------|------------|------------|
 |     32G     | AddPiece   | 1*      | 4G      | 4G         |            |
@@ -41,6 +43,7 @@ Default resource value table (note that some of the values are conservative):
 \* AddPiece can use multiple threads, it's likely that this value will change in near future\
 ** When used with the `FIL_PROOFS_USE_MULTICORE_SDR=1` env var, PreCommit1 can use multiple cores (up to the number of cores sharing L3 caches)\
 *** Depending on the number of available threads, this value means:
+
 ```
  12  * 0.92 = 11
  16  * 0.92 = 14
@@ -49,32 +52,33 @@ Default resource value table (note that some of the values are conservative):
  64  * 0.92 = 58
  128 * 0.92 = 117
 ```
-**** The Commit1 step is very cheap in terms of CPU time, and is blocking scheduling of the Commit2 step. Specyfying it as using zero threads makes it more likely it will be scheduled with higher priority.
 
-The Unseal task has the same resource use as the PreCommit1 task
+**** The Commit1 step is very cheap in terms of CPU time and blocks the Commit2 step. Allocating it to zero threads makes it more likely it will be scheduled with higher priority.
+
+The Unseal task has the same resource use as the PreCommit1 task.
 
 ### Resource windows
 
 The scheduler uses the concept of resource windows to prevent resource starvation of tasks requiring larger amounts of resources by tasks with smaller resource requirements.
 
-A resource window is simply a bucket of sealing tasks which can by run be a given worker in parallel based on the resources the worker has available when no tasks are running.
+A resource window is simply a bucket of sealing tasks that can be run by a given worker in parallel based on the resources the worker has available when no tasks are running.
 
 In the scheduler, each worker has:
 - Scheduling windows - Two resource windows used to assign tasks to execute from the global queue
-- Preparing window - One resource window in which tasks are prepared to execute (for example sector data is fetched if needed)
+- Preparing window - One resource window in which tasks are prepared to execute (for example, sector data is fetched if needed)
 - Executing window - One resource window for currently executing tasks
 
-When tasks arrive to the global scheduling queue, the scheduler will look for empty scheduling windows, and based on a number of factors, like whether the worker already has direct access to sector data, task types supported by the worker, whether the worker has disk space for sector data, task priority - tasks may be assigned to the scheduling window
+When tasks arrive in the global scheduling queue, the scheduler will look for empty scheduling windows, and based on a number of factors, like whether the worker already has direct access to sector data, task types supported by the worker, whether the worker has disk space for sector data, task priority - tasks may be assigned to the scheduling window.
 
-After a scheduling window is filled with a number of tasks, it's send to the worker for processing. The worker will pull tasks out of the scheduling window, and start preparing them in the preparing window. After the preparing step is done, the task will be executed in the executing window.
+After a scheduling window is filled with a number of tasks, it's sent to the worker for processing. The worker will pull tasks out of the scheduling window and start preparing them in the preparing window. After the preparing step is done, the task will be executed in the executing window.
 
-After the worker has fully processed a scheduling windows, it's sent back to the global scheduler to get more sealing tasks
+After the worker has fully processed a scheduling window, it's sent back to the global scheduler to get more sealing tasks.
 
 ### Task priorities
 
 When the scheduler decides which tasks to run, it takes into account the priority of running a specific task.
 
-There are 2 priority tiers - high priority, for tasks which are cheap to execute, but block other actions, and normal priority for all other tasks. Default priorities are defined in the table below.
+There are two priority tiers - high priority, for tasks that are cheap to execute but block other actions, and normal priority for all other tasks. Default priorities are defined in the table below.
 
 | Task Type    | Priority |
 |--------------|----------|
@@ -88,8 +92,8 @@ There are 2 priority tiers - high priority, for tasks which are cheap to execute
 | ReadUnsealed | -1       |
 | Finalize     | -2       |
 
-- Lower number means higher priority
-- Negative number means 'high priority'
+- Lower number means higher priority.
+- Negative number means the highest priority.
 
 When comparing task priority:
 - High priority tasks are considered first
@@ -100,32 +104,32 @@ When comparing task priority:
 ## Installation
 
 ::: callout
-Remember during sealing, significant amounts of data are moved/copied across workers, so good network connectivity among them is a must.
+During sealing, significant amounts of data are moved/copied across workers, so good network connectivity among them is a must.
 :::
 
 The `lotus-worker` application should have been built and installed along with the others when following the [installation guide](../../get-started/lotus/installation.md). For simplicity, we recommend following the same procedure in the machines that will run the Lotus Workers (only the steps required to build the binaries).
 
-## Setting up the Miner
+## Setting up the Lotus Miner
 
-The Lotus miner needs to be ready to accept API connections from workers.
+The Lotus Miner needs to be ready to accept API connections from workers.
 
 ### Allow external connections to the miner API
 
-Set `ListenAddress` and `RemoteListenAddress` to the IP of a local-network interface as [documented here](miner-configuration.md#api-section). Note that for security the API port should not be open to the internet.
+Set `ListenAddress` and `RemoteListenAddress` to the IP of a local-network interface as [documented here](miner-configuration.md#api-section). For security, the API port should not be open to the internet.
 
 ### Obtain an authentication token
 
-```sh
+"`sh
 lotus-miner auth api-info --perm admin
 ```
 
-The Lotus Workers will need this token to connect to the miner. For more info check the [API docs](../../build/lotus/api-tokens.md). Write down the output so that you can use it in the next step.
+The Lotus Workers will need this token to connect to the Lotus Miner. For more info check the [API docs](../../build/lotus/api-tokens.md). Write down the output so that you can use it in the next step.
 
-### Configuring the miner sealing capabilities
+### Configuring the Lotus Miner sealing capabilities
 
-The Lotus Miner is itself a worker and will contribute to sealing operations like any other worker. Depending on what phases of the sealing process you would like your workers to perform, you may choose to configure which ones the miner will directly perform. This is done in the `Storage` section of the miner's `config.toml`:
+The Lotus Miner is itself a worker and will contribute to sealing operations like any other worker. Depending on what phases of the sealing process you would like your workers to perform, you may choose to configure which ones the Lotus Miner will directly perform. This is done in the `Storage` section of the Lotus Miner's `config.toml`:
 
-```toml
+"`toml
 [Storage]
   AllowAddPiece = true
   AllowPreCommit1 = true
@@ -166,7 +170,7 @@ When initially fetching parameter files, remember to set the [`IPFS_GATEWAY` var
 
 ### Run the worker
 
-```sh
+"`sh
 lotus-worker run <flags>
 ```
 
@@ -182,7 +186,7 @@ The above command will start the worker. Depending on the operations that you wa
 
 Once the worker is running, it should connect to the Lotus miner. You can verify this with:
 
-```sh
+"`sh
 $ lotus-miner sealing workers
 Worker 0, host computer
         CPU:  [                                                                ] 0 core(s) in use
@@ -201,18 +205,18 @@ Worker 1, host othercomputer
 
 You can run the _Lotus Worker_ on the same machine as the _Lotus Miner_. This can be helpful to manage priorities between processes or better allocate available CPUs for each task. To avoid conflicts, we recommend disabling all task types in the miner sealing config.
 
-Additionally, be mindful of the local resources used by the sealing process (particularly CPU). WindowPoSTs are CPU intensive and need to be submitted by the miner regularly. If a miner is performing other CPU-bound sealing operations in parallel, it may fail to submit the WindowPoSTs in time, thus [losing collateral](../slashing.md) in the process. For this reason, we recommend careful allocation of CPU cores available and sealing phases to miner and workers.
+Additionally, be mindful of the local resources used by the sealing process (particularly CPU). WindowPoSTs are CPU intensive and need to be submitted by the miner regularly. If a miner is performing other CPU-bound sealing operations in parallel, it may fail to submit the WindowPoSTs in time, thus [losing collateral](../slashing.md) in the process. For this reason, we recommend careful allocation of CPU cores available and sealing phases to Lotus Miners and Lotus Workers.
 
 Note that if you co-locate miner and worker(s), you do not need to open up the miner API and it can stay listening on the local interface.
 
-### Worker co-location
+### Lotus Worker co-location
 
-In most cases only one worker per machine should be running. lotus-worker will try to use all available resources. Running multiple workers in one operating system context will cause issues with resource allocation, which will cause the scheduler to allocate more work than there are available resources.
+In most cases, only one Lotus Worker per machine should be running since `lotus-worker` will try to use all available resources. Running multiple Lotus Workers in one operating system context will cause issues with resource allocation, which will cause the scheduler to allocate more work than there are available resources.
 
-The only case where running multiple workers per machine may be a good idea is when there are multiple GPUs available, as lotus currently only supports a single GPU - in that case it's recommended to run workers in separate containers with non-overlapping resources (separate CPU cores, separate memory allocations, separate GPUs)
+The only case where running multiple workers per machine may be a good idea is when there are multiple GPUs available, as lotus currently only supports a single GPU - in that case, it's recommended to run workers in separate containers with non-overlapping resources (separate CPU cores, separate memory allocations, separate GPUs)
 
 #### Separating Nvidia GPUs
 
-When using proprietary Nvidia drivers, it's possible to select which GPU device will be used by lotus with the `NVIDIA_VISIBLE_DEVICES=[device number]` env var.
+When using proprietary Nvidia drivers, it's possible to select which GPU device will be used by Lotus with the `NVIDIA_VISIBLE_DEVICES=[device number]` env var.
 
 Device numbers can be obtained with the `nvidia-smi -L` command.
