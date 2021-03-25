@@ -236,7 +236,7 @@ Depending on the network congestion the base fee for a transaction may grow or d
 
 ## Addresses section
 
-The addresses section allows to specify additional addresses to send messages from. This helps with avoiding head-of-line blocking of important messages when network fees are high. For more details see the [Miner addresses](miner-addresses.md) section.
+The addresses section allows users to specify additional addresses to send messages from. This helps mitigate head-of-line blocking for important messages when network fees are high. For more details see the [Miner addresses](miner-addresses.md) section.
 
 ```toml
 [Addresses]
