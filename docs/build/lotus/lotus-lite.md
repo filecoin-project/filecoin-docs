@@ -19,9 +19,9 @@ Before we get started, let's just go over the terms we'll use in this guide:
 
 To spin up a Lotus lite-node, you will need:
 
-1. A [Lotus full-node](../../get-started/lotus). For best results, make sure that this node is fully synced. 
+1. A [Lotus full-node](../../get-started/lotus/installation). For best results, make sure that this node is fully synced. 
 2. A computer with at least 2GB RAM and a dual-core CPU to act as the Lotus lite-node. This can be your local machine. This computer must have Rust and Go 1.15 or higher installed.
-3. You must have [all the software dependencies required](../../get-started/lotus/installation##software-dependencies) to build Lotus.
+3. You must have [all the software dependencies required](../../get-started/lotus/installation#software-dependencies) to build Lotus.
 
 ## Full-node preparation
 
