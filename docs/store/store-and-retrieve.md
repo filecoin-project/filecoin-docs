@@ -126,7 +126,7 @@ DataCap is a value assigned to your wallet that tells miners how much bonus stor
 
 ## Import your data
 
-Before you can import your data into a Lotus node, you first need to prepare it into a format that Lotus can manage.
+Now we can get started with actually _storing_ the stuff you want to archive on Filecoin. Before you can import your data into a Lotus node, you first need to prepare it into a format that Lotus can manage.
 
 ### Prepare your data
 
@@ -152,16 +152,7 @@ If you have several files that you want to upload to the Filecoin network, the e
     cd ~
     ```
 
-1. Create a `.tar` file based of the `filecoin-package` folder:
-
-    ```shell
-    tar -czvf filecoin-payload.tar.gz filecoin-package/
-
-    > ubuntu-20.04.2.0-desktop-amd64.iso
-    > ubuntu-20.10-desktop-amd64.iso
-    ```
-
-### Padding your data
+### Pad your data
 
 If you have a small amount of data, it may be difficult for you to find a miner who is willing to store your data. Miner's store data in 32GB sectors, so if you're only storing a 2GB file then the miner is wasting 30GB of space in that sector. To improve the chances of a miner accepting your storage deal you can create a large file _alongside_ the file you actually want to store and compress everything together into one package that you send to the miner.
 
@@ -177,10 +168,12 @@ If you have a small amount of data, it may be difficult for you to find a miner 
     fallocate -l 20GB padding.file
     ```
 
+### Bundle your data 
+
 1. Compress this folder, including the dummy `padding.file`:
 
     ```shell
-    tar -czvf filecoin-payload.tar.gz filecoin-package/
+    tar -cvf filecoin-payload.tar.gz filecoin-package/
 
     > ubuntu-20.04.2.0-desktop-amd64.iso
     > ubuntu-20.10-desktop-amd64.iso
@@ -188,6 +181,8 @@ If you have a small amount of data, it may be difficult for you to find a miner 
     ```
 
     This may take substantially longer than normal since the `tar` program has to package a lot of data together.
+
+<!-- TODO: how to check the file size of the payload. -->
 
 ### Encrypt your data (optional)
 
@@ -197,13 +192,13 @@ Filecoin does not automatically encrypt your data for you before storing it onto
 
 ### Add data to Lotus
 
-1. Tell Lotus that you'd like to add a file to the Filecoin network:
+1. Tell Lotus which file you'd like to upload a file to the Filecoin network:
 
     ```shell
-    lotus client import filecoin-payload.tar.gz 
+    lotus client import filecoin-payload.tar 
     ```
 
-    Keep a note of the root CID that Lotus outputs:
+    Lotus is creating a DAG based off your file. This process takes a few minutes. Once's it's complete Lotus will output the root CID of your file.
 
     ```shell
     > Import 3, Root bafykb...
@@ -219,9 +214,9 @@ Filecoin does not automatically encrypt your data for you before storing it onto
     lotus client deal
     ```
 
-    The interactive deal assistant will now as you some questions.
+    The interactive deal assistant will now ask you some questions.
 
-1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/filecoin-payload.tar.gz`:
+1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/filecoin-payload.tar`:
 
     ```shell
     Data CID (from lotus client import): bafykbz...
@@ -249,6 +244,7 @@ Filecoin does not automatically encrypt your data for you before storing it onto
 
     Make sure that your [wallet has DataCap](#get-datacap) before attempting to create a verified deal.
 
+    <!-- TODO: explain how to check if you've got DataCap. -->
 
 1. If you have a particular miner you want to use, enter their miner ID now. Otherwise, press `enter` and have Lotus query all available miners: 
 
@@ -276,8 +272,8 @@ Filecoin does not automatically encrypt your data for you before storing it onto
 
     Lotus has found 298 miners that are willing to take our file for a price _below_ our maxium spend.
 
-1. Specify how many miners you want your file to be replicated over. The default it one. 
-    
+1. Specify how many miners you want your file to be replicated over. The default it one 
+
     ```shell
     Deals to make (1): 1
     ```
