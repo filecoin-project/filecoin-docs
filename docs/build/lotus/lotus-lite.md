@@ -15,7 +15,7 @@ Before we get started, let's just go over the terms we'll use in this guide:
 | Full-node | A Lotus node that contains all the blockchain data of the Filecoin network. |
 | Lite-node | A Lotus node that does not contain any of the blockchain data of the Filecoin network. Lite-nodes rely on access to a full-node in order to run. |
 
-## Prerequsites
+## Prerequisites
 
 To spin up a Lotus lite-node, you will need:
 
@@ -25,7 +25,7 @@ To spin up a Lotus lite-node, you will need:
 
 ## Full-node preparation
 
-If you have access to the full-node you're using, you need to make some minor modifications to it's configuration.
+If you have access to the full-node you're using, you need to make some minor modifications to its configuration.
 
 1. On your full-node open `~/.lotus/config` and:
 
@@ -47,10 +47,10 @@ If you have access to the full-node you're using, you need to make some minor mo
 
     Which permissions you choose will depend on your use-case. Take a look at the [API tokens section to find out more →](https://docs.filecoin.io/build/lotus/api-tokens/#obtaining-tokens)
 
-1. Send this API token to your lite-node, or to whoever will be the administator for the lite-node.
+1. Send this API token to your lite-node or to whoever will be the administrator for the lite-node.
 1. If you have the `lotus daemon` running, stop it and start it again. This forces Lotus to open the API port we just set.
 
-Next up you'll create the Lotus executable on your lite-node and running it in _lite_ mode!
+Next up, you'll create the Lotus executable on your lite-node and running it in _lite_ mode!
 
 ## Create the Lotus executable 
 
@@ -65,13 +65,13 @@ You need to create the Lotus executable to run your lite-node with. This process
     sudo make install
     ```
 
-If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](/get-started/lotus/installation/#software-dependencies) and double check that you have all the dependencies installed, along with Golang and Rust.
+If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](/get-started/lotus/installation/#software-dependencies) and double-check that you have all the dependencies installed, along with Golang and Rust.
 
 ## Start the lite-node
 
 You've got the Lotus executables ready to go, and you have access to a Lotus full-node. All that's left is connecting your Lotus lite-node to the full-node!
 
-1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`. Make sure to replace `API_TOKEN` with the token you got from the full-node, and `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node:
+1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`. Make sure to replace `API_TOKEN` with the token you got from the full-node and `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node:
 
     ```shell
     FULLNODE_API_INFO=API_TOKEN/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/1234 lotus daemon --lite
@@ -80,7 +80,7 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
     > ...
     ```
 
-    If you don't have an `API_TOKEN`, you can run the above command without one, and just gain read-only access to the full-node:
+    If you don't have an `API_TOKEN`, you can run the above command without one and just gain read-only access to the full-node:
 
     ```shell
     FULLNODE_API_INFO=/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/1234 lotus daemon --lite
@@ -94,7 +94,7 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
     > 100 FIL
     ```
 
-A lite-node is limited in what it can do and is designed to only perform message signing and transactional operations. Lite-nodes cannot seal data or query the chain directly. All chain requests go through the attached full-node. If for whatever reason, the full-node goes offline, any lite-nodes connected to it will also go offline.
+A lite-node is limited in what it can do and is designed to only perform message signing and transactional operations. Lite-nodes cannot seal data or query the chain directly. All chain requests go through the attached full-node. If, for whatever reason, the full-node goes offline, any lite-nodes connected to it will also go offline.
 
 ### Access and permissions 
 
