@@ -1,6 +1,6 @@
 ---
 title: Storage and retrieval using Filecoin+
-description: This guide covers how to sign up to the Filecoin+ program, store some data on the Filecoin network using a miner, and how to retrieve that data from the miner.
+description: This tutorial covers how to store data using the Filecoin network, and how to get that data back again. While there are other methods to store and retrieve data using Filecoin, this is the recommended path. 
 ---
 
 # Storage and retrieval using Filecoin+
@@ -15,196 +15,165 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | filecoin (lower-case `f`) | The cryptocurrency that the Filecoin network runs on. |
 | FIL | The shorthand representation of the filecoin cryptocurrency. |
 | Private key | A string of letters and numbers that programs use to interact with the Filecoin network. Keep your private key safe and don't share it with anyone. |
+| [Block explorer](/get-started/explore-the-network/#block-explorers) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
 
-## Generate a FIL address 
+The Filecoin storage and retrival process is split into three main parts: the set-up, storing you data, and retrieving your data. Each part has several sub-processes that we need to follow.
 
-To send and receive data on Filecoin you need to have FIL. But before you can get FIL you need somewhere to put that FIL. There are several ways to get an address; the simpliest of which is by using a service called FilFox to create a wallet and get an address through a website. This guide assumes that you haven't already created a wallet using FilFox.
+1. Set up:
 
-1. Go to [filfox.info](https://filfox.info).
-1. Select **Wallet**.
-1. Click **Create wallet**.
-1. Read and accept the security warning and FilFox agreement. Click **Confirm**.
-1. Chose a strong password. This password cannot be reset, so make sure you remember it. We cover why this is important in moment. 
-1. FilFox will now generate and show you your _seed words_. These words, collectively known as your _seed phrase_ are incredibly important, and we'll discuss them in a moment. For now, just write down your seed words in order on a piece of paper.
-1. Click **Next**.
-1. Select each seed word in order. 
-1. Click **Next**.
-1. You should now be greeted with an empty wallet! 
+    a. Get access to a Lotus full-node.
+    a. Start a Lotus lite-node on your local computer.
+    a. Get a FIL address.
+    a. Sign up to Filecoin+.
 
-You now have a Filecoin wallet, but right now you can only access it through the FilFox website. We want to use it on a Lotus node, so we need to _export_ the wallet from FilFox.
+1. Store data: 
 
-1. Click **Settings**.
-1. Select **Private key**.
-1. Enter your password and click **Confirm**.
-1. Click the **Private key type** drop-down menu and select **Lotus type private key**.
+    a. Package your data.
+    a. Import your data into Lotus.
+    a. Find a miner through the MinerX program.
+    a. Create a storage deal.
+    a. Wait for the deal to complete.
 
-    ![A drop-down menu showing the different types of private key that FilFox supports.](./images/store-and-retreive-tutorial/select-lotus-from-private-key-drop-down.png)
+1. Retrieve data:
 
-1. Your private key is the long string of letters and numbers. Highlight the whole key and copy it to your clipboard.
-1. Open a terminal window.
-1. Create a file called `my-filfox-wallet` and enter the key you just copied:
+    a. Create a retrieval deal.
+    a. Download your data.
 
-    ```shell
-    echo 7b2254... >> ~/my-filfox-wallet
-    ```
+## Set up
 
-    Make sure to replace `7b2254...` with the private key you just copied from FilFox.
+<!-- TODO: Explain all the steps we're going to do in this section. -->
 
-You now have a file called `my-filfox-wallet` with your private key in it. We can use this file later to process transactions on the Filecoin network.
+### Get access to a Lotus full-node
 
-### Import your address 
+A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are higher than most end-user laptops and PCs, which is why we recommend running a Lotus full-node on a remote server, or connecting to a service that has Lotus full-nodes ready for you!
 
-This process is the same for Lotus full-nodes or lite-nodes. This section requires multiple terminal windows connected to the same computer, so you may find a [terminal multi-plexer like Tmux](https://github.com/tmux/tmux/wiki) useful.
+Choose one:
 
-1. Log into your Lotus node.
-1. Start the Lotus daemon if you don't already have one running. The Lotus daemon will keep running, so you need to enter any following commands in a new terminal windows _outside_ of this one.
-1. Open your `my-filfox-wallet` file and copy the contents to your clipboard.
-1. On your Lotus node, create a new file with the contents being the key you just copied to your clipboard:
+1. Set up your own Lotus full-node on a remote server.
+1. Connect to a node-hosting service.
 
-    ```shell
-    echo "PASTE_HERE" >> ~/wallet-from-filfox
-    ```
+#### Set up your own Lotus full-node
 
-    Replace `PASTE_HERE` with the contents of your clipboard.
+<!-- TODO: How to install Lotus on a Ubuntu server. -->
 
-1. Import this address into Lotus:
+#### Connect to a node-hosting service
 
-    ```shell
-    lotus wallet import ~/wallet-from-filfox
+<!-- TODO: How to sign up to a node-hosting service. -->
 
-    > imported key f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq successfully!
-    ```
+### Install a Lotus lite-node on your local computer
 
-    Copy the key id `f136b...`. We're going to use it in the next step.
+<!-- TODO: Copy the installation instructions from the Lotus lite-node page. -->
 
-1. Make this the default wallet for this Lotus node:
+### Get a FIL address
 
-    ```shell
-    lotus wallet set-default f136b...
-    ```
+<!-- TODO: Generate a FIL address using the local Lotus lite-node. -->
 
-    Replace `f136b...` with what you just copied from the previous step. Lotus does not output anything if this is successful.
 
-1. View the balance of your wallet:
+### Sign up to Filecoin+
 
-    ```shell
-    lotus wallet list
-
-    > Address                                    Balance                   Nonce  Default  
-    > f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq  1.993998488286903192 FIL  1      X  
-    ```
-
-1. That's it!
-
-<!-- TODO:
-
-### Passwords and seed-phrases
-
-- Your password and seed-phrase are two very different things.
-- Your wallet is saved as a cookie in your browser. Your password encrypts this cookie.
-- Your seed-phrase is a linguistic representation of your wallets _private key_. Your wallet is the only wallet with that exact same arrangement of words. If someone else gets access to your seed-phrase, they have complete access to your wallet and thus can rinse you dry.
-
--->
-
-## Sign up to Filecoin+
-
-<!-- 
-    What Filecoin+ is.
-    Who it's for.
-    Why it exists.
--->
+<!-- TODO: Explain what Filecoin+ is, who it's for, and why it exists. -->
 
 1. Go to [plus.fil.org](plus.fil.org).
 1. Select **Clients**.
 1. Get verified through GitHub.
 
-### Get DataCap
-
 DataCap is a value assigned to your wallet that tells miners how much bonus storage you have available.
 
 1. Enter the Filecoin address you want to send the DataCap to. 
 
-## Import your data
+### Next steps
 
-Now we can get started with actually _storing_ the stuff you want to archive on Filecoin. Before you can import your data into a Lotus node, you first need to prepare it into a format that Lotus can manage.
+Now that we've got all the set up out of the way, we can move onto storing data with the Filecoin network. 
+
+## Store data
+
+Now we can get started with _storing_ the stuff we want to archive on Filecoin. We first need to prepare it into a format that Lotus can manage.
 
 ### Prepare your data
 
-If you have several files that you want to upload to the Filecoin network, the easiest way to add them into a storage-deal is by compressing everything into an archive.
+We want to store the [ISS_COORDS_2021-03-25 dataset](https://data.nasa.gov/Space-Science/ISS_COORDS_2021-03-25/qti9-kibp) from NASA. This data represents the best estimated real-time trajectory and local sightings opportunities for the International Space Station as generated by the Trajectory Operations and Planning flight controllers at Johnson Space Center. 
 
-1. Create a folder called `filecoin-package`:
+This dataset constist of the following files:
 
-    ```shell
-    mkdir ~/filecoin-package
-    ```
+```shell
+ISS_COORDS_2021-03-25
+├── ISS.OEM_J2K_EPH.txt
+├── XMLsightingData_citiesINT01.xml
+├── XMLsightingData_citiesINT02.xml
+├── XMLsightingData_citiesINT03.xml
+├── XMLsightingData_citiesINT04.xml
+├── XMLsightingData_citiesINT05.xml
+├── XMLsightingData_citiesUSA01.xml
+├── XMLsightingData_citiesUSA02.xml
+├── XMLsightingData_citiesUSA03.xml
+├── XMLsightingData_citiesUSA04.xml
+├── XMLsightingData_citiesUSA05.xml
+├── XMLsightingData_citiesUSA06.xml
+├── XMLsightingData_citiesUSA07.xml
+├── XMLsightingData_citiesUSA08.xml
+├── XMLsightingData_citiesUSA09.xml
+├── XMLsightingData_citiesUSA10.xml
+├── XMLsightingData_citiesUSA11.xml
+├── XMLsightingData_natparksUSA01.xml
+└── XMLsightingData_natparksUSA02.xml
+```
 
-1. Move your files into that folder. In this example, we're going to get a copy of the latest Ubuntu ISOs and put them into that folder:
-
-    ```shell
-    cd ~/filecoin-package
-    wget https://releases.ubuntu.com/20.04.2.0/ubuntu-20.04.2.0-desktop-amd64.iso
-    wget https://releases.ubuntu.com/20.10/ubuntu-20.10-desktop-amd64.iso
-    ```
-
-1. Move out of the `filecoin-package`:
+1. Download the ISS_COORDS_2021-03-25 dataset, extract it, and move the files into a new folder called `filecoin-package`:
 
     ```shell
     cd ~
+    wget IPFS_LINK_TO_DATASET
+    tar -xvzf ISS_COORDS_DATASET.tar.gz
+    mkdir ~/filecoin-payload-folder
+    mv ISS_COORDS_DATASET/* ~/filecoin-payload-folder 
     ```
 
-### Pad your data
-
-If you have a small amount of data, it may be difficult for you to find a miner who is willing to store your data. Miner's store data in 32GB sectors, so if you're only storing a 2GB file then the miner is wasting 30GB of space in that sector. To improve the chances of a miner accepting your storage deal you can create a large file _alongside_ the file you actually want to store and compress everything together into one package that you send to the miner.
-
-1.  We'll use the above example again. Move into the `~/filecoin-package` folder:
+1. Move out of the `filecoin-payload-folder` and pack everything into a `.tar` file:
 
     ```shell
-    cd ~/filecoin-package
+    cd ~
+    tar -cvf ~/filecoin-payload.tar ~/filecoin-payload-folder
     ```
 
-1. Create a dummy 20GB file:
-
-    ```shell
-    fallocate -l 20GB padding.file
-    ```
-
-### Bundle your data 
-
-1. Compress this folder, including the dummy `padding.file`:
-
-    ```shell
-    tar -cvf filecoin-payload.tar.gz filecoin-package/
-
-    > ubuntu-20.04.2.0-desktop-amd64.iso
-    > ubuntu-20.10-desktop-amd64.iso
-    > padding.file
-    ```
-
-    This may take substantially longer than normal since the `tar` program has to package a lot of data together.
-
-<!-- TODO: how to check the file size of the payload. -->
-
-### Encrypt your data (optional)
-
-This step is completely optional. 
-
-Filecoin does not automatically encrypt your data for you before storing it onto the Filecoin network. You can, of course, encrypt your data yourself before storing the data to Filecoin. Each encryption method has different tradeoffs, but if you would like to encrypt your data before storing to Filecoin, consider following [this guide from gnupg.com](https://www.gnupg.org/gph/en/manual/x110.html). 
+We now have our payload file ready to be stored using the Filecoin network.
 
 ### Add data to Lotus
 
-1. Tell Lotus which file you'd like to upload a file to the Filecoin network:
+We need to tell our Lotus lite-node which file we want to store using Filecoin.
+
+1. Import the payload into the `lotus daemon` using the `import` command: 
 
     ```shell
-    lotus client import filecoin-payload.tar 
+    lotus client import ~/filecoin-payload.tar 
     ```
 
-    Lotus is creating a DAG based off your file. This process takes a few minutes. Once's it's complete Lotus will output the root CID of your file.
+    Lotus creates a distributed-asyclic-graph (DAG) based off the payload. This process takes a few minutes. Once's it's complete Lotus will output the root CID of the payload.
 
     ```shell
     > Import 3, Root bafykb...
     ```
 
-1. That's it! Super simple.
+1. Make a note of the CID. We'll be using it in an upcoming section.
+
+Now that Lotus knows which file we want to use, we can create a deal with a Filecoin miner to store our data!
+
+## Find a miner through the MinerX program
+
+<!-- TODO: explain what the MinerX program is, why it exists, and why we need to use it instaed of using vanilla-Filecoin. -->
+
+1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
+1. Using the table, find a miner that suits your needs. For the sake of this tutorial, look for a miner that is:
+    a. Close to you.
+    a. Offering verfied-data deals for 0 FIL.
+1. Once you have found a suitable miner, copy their `miner_id` from the **Miner ID** column:
+
+    ![](./images/store-and-retrieve/miner-x-listings.png)
+
+    Some miners list multiple miner IDs. For these miners, just copy one of the IDs:
+
+    ![](./images/store-and-retrieve/miner-with-multiple-miner-ids.png)
+
+1. Write down ID of the miner you want to use. We'll be referring to it in the next section.
 
 ## Create a deal 
 
@@ -236,54 +205,34 @@ Filecoin does not automatically encrypt your data for you before storing it onto
     > Deal duration (days): 365 
     ``` 
 
-1. Tell Lotus whether or not this is a Filecoin+ deal. Since we signed up to Filecoin+ and added some DataCap to our wallet in an earlier step, we select `yes` here:
+1. Tell Lotus whether or not this is a Filecoin+ deal. Since we signed up to Filecoin+ and added some DataCap to our wallet in an earlier step, we'll select `yes` here:
 
     ```shell
     > Make this a verified deal? (yes/no): yes
     ```
 
-    Make sure that your [wallet has DataCap](#get-datacap) before attempting to create a verified deal.
-
-    <!-- TODO: explain how to check if you've got DataCap. -->
-
-1. If you have a particular miner you want to use, enter their miner ID now. Otherwise, press `enter` and have Lotus query all available miners: 
+1. Enter the miner ID from the previous section: 
 
     ```shell
-    > Miner Addresses (f0.. f0..), none to find: 
-    > .. getting miner list
-    > * Found 1422 miners with power
+    > Miner Addresses (f0.. f0..), none to find: f3141592654 
     ```
 
-    Once Lotus finds all available miners, it asks them if they are willing to accept your `.car` file:
+    <!-- TODO: find out what happens after you throw in a MINER_ID. -->
 
-    ```shell
-    > .. querying asks
-    > * Queried 1372 asks, got 402 responses
-    > Found 356 candidate asks
-    > Proposing from f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq, Current Balance: 2 FIL
-    ```
-
-1. Specify how much you are willing to spend to host this file on Filecoin:
+1. Enter `0` when asked how much FIL we are willing to spend for this storage deal:
 
     ```shell
     > Maximum budget (FIL): 0.5
-    > 298 asks within budget
     ```
 
-    Lotus has found 298 miners that are willing to take our file for a price _below_ our maxium spend.
+    <!-- TODO: find out what happens after you throw in a MINER_ID. -->
+
+    Normally, we would enter a value of around `0.5 FIL` here. However, since we picked a miner that is accepting 0 FIL deals for verified storage deals, and we are a verified client, then we don't actually need to spend any FIL here!
 
 1. Specify how many miners you want your file to be replicated over. The default it one 
 
     ```shell
     Deals to make (1): 1
-    ```
-
-    The more deals you want to make, the more this transaction will cost. If you want to pay 0.5 FIL to store 1 file over 3 miners, then the transaction will cost 1.5 FIL in total (`0.5 * 3 = 1.5)`.
-
-1. Lotus will select a miner to use:
-
-    ```shell
-    .. Picking miners
     ```
 
 1. Confirm your transaction:
@@ -301,12 +250,39 @@ Filecoin does not automatically encrypt your data for you before storing it onto
     > Accept (yes/no): yes
     ```
 
-1. Lotus sends your transaction to the blockchain, and returns a transaction ID:
+1. Lotus will returns a **Deal CID**:
 
     ```shell
     .. executing
     Deal (f023978) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     ```
+
+### Wait for the deal to complete
+
+We need to wait for the miner to accept our deal and _seal_ the data. This process can take up to 24 hours to complete, depending on how much data we asked the miner to store.
+
+1. List successful and pending deals by using the `list-deals` command:
+
+    ```shell
+    lotus client list-deals
+    
+    >
+    ```
+    <!-- TODO: show what happens when you list the deals. -->
+
+    If you cannot see your deal in the list, the deal may have failed. Use `--list-failed` to see failed deals:
+
+    ```shell
+    lotus client list-deals --list-failed
+
+    > 
+    ```
+
+    <!-- TODO: show what happens when you list failed the deals. -->
+
+<!-- TODO: add a conclusiong to the storage deal steps. -->
+
+## Retrieve
 
 <!--
 ## Notes
