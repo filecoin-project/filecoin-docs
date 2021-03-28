@@ -54,7 +54,75 @@ Choose one:
 
 #### Set up your own Lotus full-node
 
-<!-- TODO: How to install Lotus on a Ubuntu server. -->
+:::tip
+You do not need to follow this section if you are using a [node-hosting service](#connect-to-a-node-hosting-service).
+:::
+
+Lotus runs best on computers with at least 8 CPU cores and 32GB RAM. Lotus can run on most Linux distributions, and macOS. The following steps use Ubuntu 20.04. See the [Get started guide](/get-started/lotus/installation/) to find out how to run Lotus on a different operating system:
+
+1. Create a server with at least 8 CPUs and 32GB RAM. 
+1. Connect to your server.
+1. Update the `apt` repositories and upgrade any out-of-date packages:
+
+    ```shell
+    sudo apt update -y && sudo apt upgrade -y
+    ```
+
+1. Install the dependencies for Lotus:
+
+    ```shell
+    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+    echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && ~/.bashrc
+    ```
+
+1. Download Lotus and create the `lotus` executable:
+
+    ```shell
+    git clone https://github.com/filecoin-project/lotus.git
+    cd lotus/
+    make clean all
+    sudo make install
+    ```
+
+1. Start the Lotus daemon and download the latest snapshot:
+
+    ```shell
+    lotus daemon --import-chain https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car
+    ```
+
+1. Stop the `lotus daemon` process by pressing `CTRL` + `c`:
+1. Open `~/.lotus/config` and:
+
+    a. Uncommend line 3.
+    a. Change `127.0.0.1` to `0.0.0.0`.
+
+    ```toml
+    ListenAddress = "/ip4/0.0.0.0/tcp/1234/http"
+    ```
+
+    Save and exit the file.
+
+1. Create an API token using the `write` permissions:
+
+    ```shell
+    lotus auth create-token --perm write
+    ```
+
+    Make a note of this **API token**. We will use it in a later section.
+
+1. Start the Lotus daemon and download the latest snapshot at the same time:
+
+    ```shell
+    lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
+    ```
+
+    The Lotus daemon will continue to run. You can disconnect from the server now, but do not shut it down.
+
+:::tip
+**Make a note the IP address of your Lotus full-node**. We need the IP address so we can connect to it in a later section.
+:::
 
 #### Connect to a node-hosting service
 
@@ -62,24 +130,60 @@ Choose one:
 
 ### Install a Lotus lite-node on your local computer
 
-<!-- TODO: Copy the installation instructions from the Lotus lite-node page. -->
+You will need:
+
+1. The IP address of your Lotus full-node.
+1. If you created your own Lotus full-node, you will need the **API token** you created. If you are using a node-hosting service, you do not need an API token.
+
+1. Open a terminal window.
+1. Clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) and create the executable, but do not run anything yet:
+
+    ```shell
+    git clone https://github.com/filecoin-project/lotus
+    cd lotus
+    make clean all
+    sudo make install
+    ```
+
+1. Copy this command and enter your information:
+
+    ```shell
+    FULLNODE_API_INFO=<API_TOKEN>:/ip4/<YOUR_FULL_NODE_IP_ADDRESS>/tcp/1234 lotus daemon --lite
+    ```
+
+    Replace `<API_TOKEN>` with your API token, if you have one. Replace `<YOUR_FULL_NODE_IP_ADDRESS>` with the IP address of your Lotus full-node:
+
+    ```shell
+    FULLNODE_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiXX0.FfTKDJEy7yuSMDNXIsF292rRKNe6F8hWodX2r9g1T_8:/ip4/134.122.35.130/tcp/1234 lotus daemon --lite
+    ```
+
+    The Lotus daemon will continue to run. Further commands must be ran from a seperate terminal window.
 
 ### Get a FIL address
 
-<!-- TODO: Generate a FIL address using the local Lotus lite-node. -->
+1. Create an address using the `wallet new` command:
 
+    ```shell
+    lotus wallet new 
+
+    > f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi
+    ```
+
+    Lotus outputs your public address. Public addresses always start with `f1`.
+
+1. Make a note of this address. We'll use it in an uncoming section.
 
 ### Sign up to Filecoin+
 
 <!-- TODO: Explain what Filecoin+ is, who it's for, and why it exists. -->
 
 1. Go to [plus.fil.org](plus.fil.org).
-1. Select **Clients**.
-1. Get verified through GitHub.
+1. Under **Clients**, click **Proceed**.
+1. Under **Get verified**, click **Get Verified**.
+1. Click **Automatic Verification**.
+1. In the `Request` field, enter the address you got in the previous section.
 
-DataCap is a value assigned to your wallet that tells miners how much bonus storage you have available.
-
-1. Enter the Filecoin address you want to send the DataCap to. 
+<!-- TODO: Get someone to follow this workflow and grab screenshots. --> 
 
 ### Next steps
 
@@ -353,3 +457,17 @@ Deal (f023978) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
 
 ```
 -->
+
+## Troubleshooting
+
+### ERROR: connect: connection refused
+
+If you get an `connect: connection refused` error when trying to connect your Lotus lite-node to your Lotus full-node, it is likely because your full-node is not configured properly. Double check that your `~/.lotus/config.toml` file has line 3 uncommented and the address is set to `0.0.0.0`:
+
+    ```shell
+    [API]
+    ListenAddress = "/ip4/0.0.0.0/tcp/1234/http"
+    #  RemoteListenAddress = ""
+    ```
+
+Reset your Lotus full-node computer if you are still facing issues after editing the `config.toml` file. Make sure to start the Lotus daemon with `lotus daemon` once the computer has booted back up.
