@@ -253,8 +253,10 @@ Now that Lotus knows which file we want to use, we can create a deal with a File
 
 1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
 1. Using the table, find a miner that suits your needs. For the sake of this tutorial, look for a miner that is:
+2. 
     a. Close to you.
-    a. Offering verfied-data deals for 0 FIL.
+    a. Offering verified-data deals for 0 FIL.
+    
 1. Once you have found a suitable miner, copy their `miner_id` from the **Miner ID** column:
 
     ![](./images/store-and-retrieve/miner-x-listings.png)
