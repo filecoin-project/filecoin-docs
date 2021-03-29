@@ -91,6 +91,7 @@ module.exports = {
           ],
 
           '/store/': [
+            'store-and-retrieve',
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             'slate',
             'starling',
