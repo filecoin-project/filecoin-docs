@@ -212,7 +212,7 @@ Do not store personal data on the Filecoin network, even if it's encrypted. Acce
 
     ```shell
     cd ~
-    curl -o ISS_CORRDS_DATASET.tar.gz https://ipfs.io/ipfs/QmYtymZ8C3yYWU6V7kbcS2mQx92be1Lwt1Ufa7JBo3Zd2Y
+    curl -o ISS_COORDS_DATASET.tar.gz https://ipfs.io/ipfs/QmYtymZ8C3yYWU6V7kbcS2mQx92be1Lwt1Ufa7JBo3Zd2Y
     tar -xvzf ISS_COORDS_DATASET.tar.gz
     mkdir ~/filecoin-payload-folder
     mv ISS_COORDS_DATASET/* ~/filecoin-payload-folder 
