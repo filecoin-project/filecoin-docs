@@ -95,20 +95,18 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-2. To join mainnet, checkout the master branch and [latest release](https://github.com/filecoin-project/lotus/releases).
+2. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
    
-   For networks other than mainnet, look up the current branch or tag and commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
+   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
-   git checkout <branch_or_tag>
+   git checkout <tag_or_branch>
    # For example:
-   git checkout master # mainnet
-   git checkout <vX.X.X> # tag for latest release
+   git checkout <vX.X.X> # tag for a release
    ```
-
-   Currently, the _master_ branch corresponds to **mainnet**.
+   Currently, the latest code on the _master_ branch corresponds to mainnet.
 
 3. If you are in China, check out the specific [tips](tips-running-in-china.md).
 4. Depending on your CPU model, you will want to export additional environment variables:
@@ -219,20 +217,18 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    cd lotus/
    ```
 
-1. To join mainnet, checkout the master branch and [browse for the latest release](https://github.com/filecoin-project/lotus/releases).
+1. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
    
-   To join networks other than mainnet, look up the correct branch or tag and commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
+   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
-   git checkout <branch_or_tag>
+   git checkout <tag_or_branch>
    # For example:
-   git checkout master # mainnet
-   git checkout <vX.X.X> # tag for latest release
+   git checkout <vX.X.X> # tag for a release
    ```
-
-   Currently, the _master_ branch corresponds to **mainnet**.
+   Currently, the latest code on the _master_ branch corresponds to mainnet.
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
 
