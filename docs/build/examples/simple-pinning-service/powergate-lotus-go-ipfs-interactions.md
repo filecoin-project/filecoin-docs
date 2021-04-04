@@ -34,6 +34,6 @@ Benefits of using the Powergate include (from [Textile’s documentation](https:
 
 ## Resources
 
-- [More on lotus](https://lotu.sh/)
+- [More on lotus](https://docs.filecoin.io/build/lotus/)
 - [More on go-ipfs](https://docs.ipfs.io)
 - [More on powergate](https://docs.textile.io/powergate/)
