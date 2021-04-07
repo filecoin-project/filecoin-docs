@@ -176,7 +176,7 @@ Now that you have Lotus ready to run, you can start a Lotus lite-node on your co
     FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
     ```
 
-    The Lotus daemon will continue to run. Further commands must be ran from a seperate terminal window.
+    The Lotus daemon will continue to run. Further commands must be ran from a separate terminal window.
 
 :::warning
 The `api.chain.love` node is intended for lightweight experiments and testing. It is not suitable for ongoing development and production usage.
@@ -194,11 +194,11 @@ The `api.chain.love` node is intended for lightweight experiments and testing. I
 
     Lotus outputs your public address. Public addresses always start with `f1`.
 
-1. Make a note of this address. We'll use it in an uncoming section.
+1. Make a note of this address. We'll use it in an upcoming section.
 
 ## Sign up to Filecoin+
 
-Filecoin Plus is a layer of social trust on top of the Filecoin network to help incentivize the storage of real data. Essentially, all Filecoin+ users who want to upload something to the Filecoin network can become a _verfied client_ by signing up to Filecoin+ using their GitHub account. All _verified clients_ get an allowance of 8GB per month to upload their data to the Filecoin network! 
+Filecoin Plus is a layer of social trust on top of the Filecoin network to help incentivize the storage of real data. Essentially, all Filecoin+ users who want to upload something to the Filecoin network can become a _verified client_ by signing up to Filecoin+ using their GitHub account. All _verified clients_ get an allowance of 8GB per month to upload their data to the Filecoin network! 
 
 1. Go to [plus.fil.org](https://plus.fil.org).
 1. Under **Clients**, click **Proceed**.

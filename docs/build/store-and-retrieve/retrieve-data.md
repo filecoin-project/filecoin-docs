@@ -15,7 +15,7 @@ The structure for a retrieval command is:
 lotus client retrieve --miner <MINER ID> <DATA CID> ~/output-file
 ```
 
-To finish off this tutorial, you can retieve a file using the following information:
+To finish off this tutorial, you can retrieve a file using the following information:
 
 | Miner ID | Data CID |
 | --- | --- |
@@ -36,9 +36,9 @@ After submitting this command, your Lotus lite-node will send the retrieval deal
 > ...
 ```
 
-This can time some time depending on how congested the network is at the time. You must keep the `lotus daemon` running.
+This can take some time depending on how congested the network is at the time. You must keep the `lotus daemon` running.
 
-Once the request has been receieved and processed by the miner, your Lotus lite-node will start downloading the data to your computer.
+Once the request has been received and processed by the miner, your Lotus lite-node will start downloading the data to your computer.
 
 ```shell
 >
