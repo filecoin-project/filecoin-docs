@@ -3,34 +3,60 @@ title: Store data
 description: Lorem ipsum. 
 ---
 
-<!-- TODO: create a useful description/intro for this page. -->
-
 # Store data
 
 Now we can get started with _storing_ the stuff we want to archive on Filecoin. We first need to prepare it into a format that Lotus can manage.
-
-## Prepare your data
-
-We want to store the [ISS_COORDS_2021-03-25 dataset](https://data.nasa.gov/Space-Science/ISS_COORDS_2021-03-25/qti9-kibp) from NASA. If you've got some other data you'd prefer to store on Filecoin, go ahead and up that!
 
 :::danger
 Do not store personal data on the Filecoin network, even if it's encrypted. Access control is on the roadmap, but until then only store public and static data on the Filecoin network. 
 :::
 
-1. Download the ISS_COORDS_2021-03-25 dataset, extract it, and move the files into a new folder called `filecoin-package`:
+## Prepare your data
+
+For the purposes of this tutorial, we're going to store the [ISS_COORDS_2021-03-25 dataset](https://data.nasa.gov/Space-Science/ISS_COORDS_2021-03-25/qti9-kibp) from NASA on the Filecoin network. If you've got some other data you'd prefer to store on Filecoin, go ahead and use that!
+
+1. Download the `ISS_COORDS_2021-03-25` dataset:
 
     ```shell
     cd ~
-    curl -o ISS_COORDS_DATASET.tar.gz https://ipfs.io/ipfs/QmYtymZ8C3yYWU6V7kbcS2mQx92be1Lwt1Ufa7JBo3Zd2Y
-    tar -xvzf ISS_COORDS_DATASET.tar.gz
-    mkdir ~/filecoin-payload-folder
-    mv ISS_COORDS_DATASET/* ~/filecoin-payload-folder 
+    curl -o ISS_COORDS_DATASET.tar https://ipfs.io/ipfs/QmWNi1ygVKBqbZ2E3RqRzQFbSmpzjpf3WTeQebakLJWZSu
     ```
 
-1. Move out of the `filecoin-payload-folder` and pack everything into a `.tar` file:
+1. Create a folder called `filecoin-payload-folder` to hold the payload.
 
     ```shell
-    cd ~
+    mkdir filecoin-payload-folder
+    ```
+
+1. Extract the NASA dataset into `filecoin-payload-folder`:
+
+    ```shell
+    tar -xvf ISS_COORDS_DATASET.tar -C filecoin-payload-folder
+    ```
+
+1. Create a block of random data to _pad_ the total size of our payload:
+
+    If you're on macOS run:
+
+    ```shell
+    dd if=/dev/urandom of=padded-4gb-file.bin bs=1m count=4096 
+    ```
+
+    If you're on Linux run: 
+
+    ```shell
+    dd if=/dev/urandom of=padded-4gb-file.bin bs=1M count=4096
+    ```
+
+1. Move `padded-4gb.file.bin` into the `filecoin-payload-folder`:
+
+    ```shell
+    mv padded-4b-file.bin filecoin-payload-folder
+    ```
+
+1. Pack everything into a `.tar` file:
+
+    ```shell
     tar -cvf ~/filecoin-payload.tar ~/filecoin-payload-folder
     ```
 
@@ -52,27 +78,23 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
     > Import 3, Root bafykb...
     ```
 
-1. Make a note of the CID. We'll be using it in an upcoming section.
+1. Make a note of the CID `bafykb...`; we'll use it in an upcoming section.
 
 Now that Lotus knows which file we want to use, we can create a deal with a Filecoin miner to store our data!
 
 ## Find a miner that meets your needs
 
-The Filecoin network allows data storage miners to compete with one another by offering different terms for pricing, acceptable data sizes, and other important deal parameters.
-Before we can store data, we need to select a suitable miner.
+Before we can store data, we need to select a suitable miner. The Filecoin network allows data storage miners to compete with one another by offering different terms for pricing, acceptable data sizes, and other important deal parameters. 
 
 There are a few resources available for finding dependable miners that will accept your data. 
 
-#### Find a miner through the MinerX program
-
-<!-- TODO: explain what the MinerX program is, why it exists, and why we need to use it instaed of using vanilla-Filecoin. -->
+### Find a miner through the MinerX program
 
 1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
 1. Using the table, find a miner that suits your needs. For the sake of this tutorial, look for a miner that is:
-2. 
     a. Close to you.
     a. Offering verified-data deals for 0 FIL.
-    
+ 
 1. Once you have found a suitable miner, copy their `miner_id` from the **Miner ID** column:
 
     ![](./images/miner-x-listings.png)
@@ -83,21 +105,19 @@ There are a few resources available for finding dependable miners that will acce
 
 1. Write down ID of the miner you want to use. We'll be referring to it in the next section.
 
-#### Use a miner reputation system
+### Use a miner reputation system
 
-The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. 
-Filecoin reputation systems like [FilRep](https://filrep.io) can help compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept.
+The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept.
 
-Using FilRep, you can see and compare important miner parameters and metrics, including location, storage power in the network, pricing, and overall success rate.
-
-The column selection widget lets you see even more details, including the minimum and maximum file sizes that a miner will accept:
+Using FilRep you can see and compare important miner parameters and metrics including location, storage power in the network, pricing, and overall success rate. The column selection widget lets you see even more details, including the minimum and maximum file sizes that a miner will accept:
 
 ![](./images/filrep-select-columns.png)
 
-Miner reputation systems can be used alongside programs like Miner X to find the best miner for your needs. 
-To see what FilRep has to say about a member of the MinerX program, just paste the **Miner ID** from the MinerX list into the search box at https://filrep.io.
+Miner reputation systems can be used alongside programs like MinerX to find the best miner for your needs. To see what FilRep has to say about a member of the MinerX program, just paste the **Miner ID** from the MinerX list into the search box at [filrep.io](https://filrep.io).
 
 ## Create a deal 
+
+To complete this section you need the data CID you received after running `lotus client import` and the ID of a miner you want to use.
 
 1. Start the interactive deal process:
 

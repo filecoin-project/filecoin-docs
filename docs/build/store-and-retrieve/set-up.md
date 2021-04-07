@@ -5,7 +5,7 @@ description: This tutorial covers how to store data using the Filecoin network, 
 
 # Set up
 
-<!-- TODO: Explain all the steps we're going to do in this section. -->
+In this section you're going to install the dependencies needed to run a Lotus lite-node on your computer. You're also going to create a Filecoin address and use it to sign up to Filecoin+.
 
 ## Get access to a Lotus full-node
 
@@ -80,7 +80,7 @@ To install a Lotus lite-node on your computer you must have the tools required t
     export LD_LIBRARY_PATH=/usr/local/lib
     ```
 
-    See the [troubleshooting section](troubleshooting) to find out how to see which shell you are using.
+    See the [troubleshooting section](../troubleshooting) to find out how to see which shell you are using.
 
 1. Build the `lotus` binary, but don't run anything just yet:
 
@@ -210,5 +210,4 @@ Filecoin Plus is a layer of social trust on top of the Filecoin network to help 
 
 ## Next steps
 
-Now that we've got all the set up out of the way, we can move onto storing data with the Filecoin network. 
-
+Now that we've got all the set up out of the way, we can move onto [storing data with the Filecoin network →](../store-data) 
