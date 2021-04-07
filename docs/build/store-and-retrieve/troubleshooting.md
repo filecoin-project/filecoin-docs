@@ -16,3 +16,13 @@ If you get an `connect: connection refused` error when trying to connect your Lo
     ```
 
 Reset your Lotus full-node computer if you are still facing issues after editing the `config.toml` file. Make sure to start the Lotus daemon with `lotus daemon` once the computer has booted back up.
+
+## Which shell am I using?
+
+Run `echo $SHELL` to find out which shell you are using:
+
+```shell
+echo $SHELL                                                                                                  ~
+
+> /bin/zsh
+```
