@@ -148,7 +148,7 @@ You will need:
 
 Filecoin Plus is a layer of social trust on top of the Filecoin network to help incentivize the storage of real data. Essentially, all Filecoin+ users who want to upload something to the Filecoin network can become a _verfied client_ by signing up to Filecoin+ using their GitHub account. All _verified clients_ get an allowance of 8GB per month to upload their data to the Filecoin network! 
 
-1. Go to [https://plus.fil.org](plus.fil.org).
+1. Go to [plus.fil.org](https://plus.fil.org).
 1. Under **Clients**, click **Proceed**.
 1. Under **Get verified**, click **Get Verified**.
 1. Click **Automatic Verification**.
