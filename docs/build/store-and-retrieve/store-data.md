@@ -207,8 +207,6 @@ We need to wait for the miner to accept our deal and _seal_ the data. This proce
 
     ```shell
     lotus client list-deals
-    
-    >
     ```
     <!-- TODO: show what happens when you list the deals. -->
 
@@ -216,10 +214,10 @@ We need to wait for the miner to accept our deal and _seal_ the data. This proce
 
     ```shell
     lotus client list-deals --list-failed
-
-    > 
     ```
 
     <!-- TODO: show what happens when you list failed the deals. -->
 
-<!-- TODO: add a conclusiong to the storage deal steps. -->
+## Next steps
+
+Now that you've added some data onto the Filecoin network [we can move into retrieving data →](../retrieve-data)
