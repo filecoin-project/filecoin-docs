@@ -91,15 +91,80 @@ To install a Lotus lite-node on your computer you must have the tools required t
 
     If you run into errors here, it may be because some dependencies aren't installed properly. Check out the [Troubleshooting](troubleshooting) section, or see the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) for more help.
 
-1. You should now have the `lotus` executable ready to run on your computer:
+1. You should now have the `lotus` executable ready to run on your computer. [Head over to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
+
+#### Ubuntu
+
+1. Update your local `apt` repository:
+
+    ```shell
+    sudo apt update -y
+    ```
+
+1. Install the following packages:
+
+    ```shell
+    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
+    ```
+
+1. Install Rust:
+
+    ```shell
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    ```
+
+1. Install Go and add `/usr/local/go/bin` to your `PATH`:
+
+    ```shell
+    wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+    ```
+
+1. Add `/usr/local/go/bin` to your `PATH`:
+
+    ```shell
+    sudo echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc
+    ```
+
+1. Clone the Lotus GitHub repository:
+
+    ```shell
+    git clone https://github.com/filecoin-project/lotus.git
+    cd lotus/
+    ```
+
+1. Build the `lotus` executable:
+
+    ```shell
+    make clean all
+
+    > rm -rf  build/.filecoin-install build/.update-modules  lotus lotus-miner lotus-worker lotus-shed lotus-gateway lotus-seed lotus-pond lotus-townhall lotus-fountain lotus-chainwatch lotus-bench lotus-stats lotus-pcr lotus-health lotus-wallet lotus-keygen testground
+    > make -C extern/filecoin-ffi/ clean
+    > make[1]: Entering directory '/root/lotus/extern/filecoin-ffi'
+    > ...
+    > go run github.com/GeertJohan/go.rice/rice append --exec lotus-worker -i ./build 
+    ```
+
+1. Install Lotus:
+
+    ```shell
+    sudo make install
+
+    > bash: go: command not found
+    > expr: syntax error: unexpected argument ‘1015005’
+    > install -C ./lotus /usr/local/bin/lotus
+    > install -C ./lotus-miner /usr/local/bin/lotus-miner
+    > install -C ./lotus-worker /usr/local/bin/lotus-worker
+    ```
+
+1. You should now have the `lotus` executable ready to run on your computer. 
 
     ```shell
     lotus --version
-    
-    >
+
+    > lotus version 1.7.0
     ```
 
-#### Ubuntu
+[Head over to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
 
 ### Run a Lotus lite-node 
 
