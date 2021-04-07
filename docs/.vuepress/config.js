@@ -148,6 +148,18 @@ module.exports = {
 
           '/build/': [
             'get-started',
+            {
+              title: 'Store and retrieve',
+              path: '/build/store-and-retrieve/',
+              sidebarDepth: 2,
+              collapsable: true,
+              children: [
+                ['store-and-retrieve/', 'Intro'],
+                ['store-and-retrieve/set-up', 'Set up'],
+                ['store-and-retrieve/store-data', 'Store data'],
+                ['store-and-retrieve/retrieve-data', 'Retrieve data'],
+              ]
+            },
             'textile-buckets',
             'hosted-powergate',
             'hosted-lotus',
