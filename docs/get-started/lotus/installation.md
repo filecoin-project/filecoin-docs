@@ -185,6 +185,8 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
    ```sh
    xcode-select -p
+   
+   > /Library/Developer/CommandLineTools
    ```
 
    If this command returns a path, you can move on to the [next step](#install-homebrew). Otherwise, to install via the CLI, run:
@@ -198,6 +200,9 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
    ```sh
    sudo rm -rf /Library/Developer/CommandLineTools
    xcode-select --install
+   
+   > Password:
+   > xcode-select: note: install requested for command line developer tools
    ```
 
 ### Install Homebrew
