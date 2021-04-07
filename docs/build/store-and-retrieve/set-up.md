@@ -11,6 +11,11 @@ description: This tutorial covers how to store data using the Filecoin network, 
 
 A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are fairly high, and might be out of reach for most end-user laptops and PCs. We recommend running a Lotus full-node on a remote server, or connecting to a service that has Lotus full-nodes ready for you.
 
+::: tip
+For small experiments, you can use a full node hosted by Protocol Labs, available at `api.chain.love`. This node is not suitable for production use, but it's a good way to try things out before signing up for a hosted node or running your own.
+:::
+
+
 <!-- TODO: uncomment this section once we've figured out node-hosting services like Glif.
 Choose one:
 
@@ -127,6 +132,13 @@ You will need:
     ```shell
     FULLNODE_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiXX0.FfTKDJEy7yuSMDNXIsF292rRKNe6F8hWodX2r9g1T_8:/ip4/134.122.35.130/tcp/1234 lotus daemon --lite
     ```
+
+    To use a public full node hosted by Protocol Labs, you can use the following command:
+    ```shell
+    FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
+    ```
+
+    Please note that the `api.chain.love` node is intended for lightweight experiments and testing and is not suitable for ongoing development and production usage.
 
     The Lotus daemon will continue to run. Further commands must be ran from a seperate terminal window.
 

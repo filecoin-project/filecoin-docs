@@ -56,7 +56,14 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 
 Now that Lotus knows which file we want to use, we can create a deal with a Filecoin miner to store our data!
 
-## Find a miner through the MinerX program
+## Find a miner that meets your needs
+
+The Filecoin network allows data storage miners to compete with one another by offering different terms for pricing, acceptable data sizes, and other important deal parameters.
+Before we can store data, we need to select a suitable miner.
+
+There are a few resources available for finding dependable miners that will accept your data. 
+
+#### Find a miner through the MinerX program
 
 <!-- TODO: explain what the MinerX program is, why it exists, and why we need to use it instaed of using vanilla-Filecoin. -->
 
@@ -75,6 +82,20 @@ Now that Lotus knows which file we want to use, we can create a deal with a File
     ![](./images/miner-with-multiple-miner-ids.png)
 
 1. Write down ID of the miner you want to use. We'll be referring to it in the next section.
+
+#### Use a miner reputation system
+
+The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. 
+Filecoin reputation systems like [FilRep](https://filrep.io) can help compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept.
+
+Using FilRep, you can see and compare important miner parameters and metrics, including location, storage power in the network, pricing, and overall success rate.
+
+The column selection widget lets you see even more details, including the minimum and maximum file sizes that a miner will accept:
+
+![](./images/filrep-select-columns.png)
+
+Miner reputation systems can be used alongside programs like Miner X to find the best miner for your needs. 
+To see what FilRep has to say about a member of the MinerX program, just paste the **Miner ID** from the MinerX list into the search box at https://filrep.io.
 
 ## Create a deal 
 
