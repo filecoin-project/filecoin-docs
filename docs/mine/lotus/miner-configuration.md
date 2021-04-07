@@ -32,7 +32,7 @@ The API section controls the settings of the [miner API](../../reference/lotus-a
   Timeout = "30s"
 ```
 
-As you see, the listen address is bound to the local loopback interface by default. If you need to open access to the miner API to other machines, you will need to set this to the IP address of the network interface you want to use, or to `0.0.0.0` (which means "all interfaces"). Note that API access is still protected by [JWT tokens](../../build/lotus/api-tokens.md) even when exposed.
+As you see, the listen address is bound to the local loopback interface by default. If you need to open access to the miner API to other machines, you will need to set this to the IP address of the network interface you want to use, or to `0.0.0.0` (which means "all interfaces"). Note that API access is protected by [JWT tokens](../../build/lotus/api-tokens.md), but it should not be open to the internet.
 
 Configure `RemoteListenAddress` to the value that a different node would have to use to reach this API. Usually it is the miner's IP address and API port, but depending on your setup (proxies, public IPs etc.), it might be a different IP.
 
@@ -41,14 +41,17 @@ Configure `RemoteListenAddress` to the value that a different node would have to
 This section configures the miner's embedded Libp2p node. As noted in the [setup instructions](miner-setup.md#connectivity-to-the-miner), it is very important to adjust this section with the miner's public IP and a fixed port:
 
 ```toml
-# Binding address for the libp2p host. 0 means random port.
 [Libp2p]
+  # Binding address for the libp2p host. 0 means random port.
+  # Type: Array of multiaddress strings
   ListenAddresses = ["/ip4/0.0.0.0/tcp/0", "/ip6/::/tcp/0"]
   # Insert any addresses you want to explicitally
   # announce to other peers here. Otherwise, they are
   # guessed.
+  # Type: Array of multiaddress strings
   AnnounceAddresses = []
   # Insert any addresses to avoid announcing here.
+  # Type: Array of multiaddress strings
   NoAnnounceAddresses = []
   # Connection manager settings, decrease if your
   # machine is overwhelmed by connections.
@@ -69,6 +72,13 @@ This section controls some Pubsub settings. Pubsub is used to distribute message
   Bootstrapper = false
   # FIXME
   RemoteTracer = ""
+  # DirectPeers specifies peers with direct peering agreements. These peers are
+  # connected outside of the mesh, with all (valid) message unconditionally 
+  # forwarded to them. The router will maintain open connections to these peers.
+  # Note that the peering agreement should be reciprocal with direct peers
+  # symmetrically configured at both ends.
+  # Type: Array of multiaddress peerinfo strings, must include peerid (/p2p/12D3K...)
+  DirectPeers = []
 ```
 
 ## Dealmaking section
@@ -91,7 +101,10 @@ This section controls parameters for making storage and retrieval deals:
   ConsiderUnverifiedStorageDeals = true
   # A list made of Data CIDs to reject when making deals
   PieceCidBlocklist = []
-  # How long the sealing process for a sector should take (see below)
+  # Maximum expected amount of time getting the deal into a sealed sector will take
+  # This includes the time the deal will need to get transfered and published
+  # before being assigned to a sector
+  # for more see below
   ExpectedSealDuration = "24h0m0s"
   # When a deal is ready to publish, the amount of time to wait for more
   # deals to be ready to publish, before publishing them all as a batch
@@ -171,13 +184,20 @@ This section controls some of the behaviour around sector sealing:
 ```toml
 [Sealing]
   # Upper bound on how many sectors can be waiting for more deals to be packed in it before it begins sealing at any given time.
+  # If the miner is accepting multiple deals in parallel, up to MaxWaitDealsSectors of new sectors will be created.
+  # If more than MaxWaitDealsSectors deals are accepted in parallel, only MaxWaitDealsSectors deals will be processed in parallel
+  # Note that setting this number too high in relation to deal ingestion rate may result in poor sactor packing efficiency
   MaxWaitDealsSectors = 2
-  # Upper bound on how many sectors can be sealing at the same time (including pledges)
+  # Upper bound on how many sectors can be sealing at the same time when creating new CC sectors (0 = unlimited)
   MaxSealingSectors = 0
-  # Same, but for deal-related sealing (pledge sectors not included)
+  # Upper bound on how many sectors can be sealing at the same time when creating new sectors with deals (0 = unlimited)
   MaxSealingSectorsForDeals = 0
   # Period of time that a newly created sector will wait for more deals to be packed in to before it starts to seal.
+  # Sectors which afe fully filled will start sealing immediately
   WaitDealsDelay = "6h0m0s"
+  # Whether to keep unsealed copies of deal data regardless of whether the client requested that. This lets the miner
+  # avoid the relatively high cost of unsealing the data later, at the cost of more storage space
+  AlwaysKeepUnsealedCopy = true
 ```
 
 ## Storage section
@@ -186,9 +206,10 @@ The storage sector controls whether the miner can perform certain sealing action
 
 ```toml
 [Storage]
-  # Upper bound on how many sectors can fetch sector data at the same time
+  # Upper bound on how many sectors can be fetched in parallel by the storage system at a time
   ParallelFetchLimit = 10
   # Sealing steps that the miner can perform itself. Sometimes we have a dedicated seal worker to do them and do not want the miner to commit any resources for this.
+  AllowAddPiece = true
   AllowPreCommit1 = true
   AllowPreCommit2 = true
   AllowCommit = true
@@ -212,3 +233,20 @@ The fees section allows to set limits to the gas consumption for the different m
 ```
 
 Depending on the network congestion the base fee for a transaction may grow or decrease. Your gas limits will have to be at any case larger than the base fee for the messages to be included. A very large max fee can however result in the quick burning of funds when the base fees are very high, as the miner automatically submits messages during normal operation, so be careful about this. It is also necessary to have more funds available then any max fee set, even if the actual fee will be far less then the max fee set. \*MaxWindowPostGasFee is currently reduced, but the setting used should remain fairly high, eg. 2FIL.
+
+## Addresses section
+
+The addresses section allows users to specify additional addresses to send messages from. This helps mitigate head-of-line blocking for important messages when network fees are high. For more details see the [Miner addresses](miner-addresses.md) section.
+
+```toml
+[Addresses]
+  # Addresses to send PreCommit messages from
+  PreCommitControl = []
+  # Addresses to send Commit messages from
+  CommitControl = []
+  # Disable the use of the owner address for messages which are sent automatically.
+  # This is useful when the owner address is an offline/hardware key
+  DisableOwnerFallback = false
+  # Disable the use of the worker address for messages for which it's possible to use other control addresses
+  DisableWorkerFallback = false
+```

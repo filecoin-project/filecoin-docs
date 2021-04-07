@@ -70,19 +70,23 @@ Lotus needs [rustup](https://rustup.rs). The easiest way to install it is:
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-:::tip
-Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.
-:::
-
 #### Go
 
 To build Lotus, you need a working installation of [Go 1.15.5 or higher](https://golang.org/dl/):
 
 ```bash
-wget -c https://golang.org/dl/go1.15.5.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
-Make sure that `/usr/local/go/bin` is in your `PATH`. If you are running into problems, check the [official Go installation instructions](https://golang.org/doc/install) for your operating system.
+:::tip
+You'll need to add `/usr/local/go/bin` to your path. For most Linux distributions you can run something like:
+
+```shell
+echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && ~/.bashrc
+```
+
+Check out the [official Golang installation instructions](https://golang.org/doc/install) if you get stuck.
+:::
 
 ### Build and install Lotus
 
@@ -95,19 +99,18 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-2. Checkout the branch corresponding to the network you want to join. If you want to run the _latest_ version of Lotus on `mainnet`, checkout to the `master` branch. If you want to use a specific release, then see the [Releases section in GitHub](https://github.com/filecoin-project/lotus/releases).
+2. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
-   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
+   
+   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
-   git checkout <branch_or_tag>
+   git checkout <tag_or_branch>
    # For example:
-   git checkout master # mainnet
-   git checkout ntwk-calibration # calibration-net
-   git checkout ntwk-nerpa # nerpa-net
+   git checkout <vX.X.X> # tag for a release
    ```
-
-   Currently, the _master_ branch corresponds to **mainnet**.
+   Currently, the latest code on the _master_ branch corresponds to mainnet.
 
 3. If you are in China, check out the specific [tips](tips-running-in-china.md).
 4. Depending on your CPU model, you will want to export additional environment variables:
@@ -134,6 +137,11 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    ```sh
    make clean all
+   
+   # Or to join a testnet or devnet:
+   make clean calibnet # Calibration with min 32GiB sectors
+   make clean nerpanet # Nerpa with min 512MiB sectors
+   
    sudo make install
    ```
 
@@ -181,6 +189,8 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
    ```sh
    xcode-select -p
+   
+   > /Library/Developer/CommandLineTools
    ```
 
    If this command returns a path, you can move on to the [next step](#install-homebrew). Otherwise, to install via the CLI, run:
@@ -194,6 +204,9 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
    ```sh
    sudo rm -rf /Library/Developer/CommandLineTools
    xcode-select --install
+   
+   > Password:
+   > xcode-select: note: install requested for command line developer tools
    ```
 
 ### Install Homebrew
@@ -213,17 +226,18 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    cd lotus/
    ```
 
-1. Checkout the branch corresponding to the network you want to join. If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+1. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
+
+   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
+   
+   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
-   git checkout <branch_or_tag>
+   git checkout <tag_or_branch>
    # For example:
-   git checkout master # mainnet
-   git checkout ntwk-calibration # calibration-net
-   git checkout ntwk-nerpa # nerpa-net
+   git checkout <vX.X.X> # tag for a release
    ```
-
-   Currently, the _master_ branch corresponds to **mainnet**.
+   Currently, the latest code on the _master_ branch corresponds to mainnet.
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
 
@@ -239,7 +253,12 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 1. Build Lotus:
 
    ```sh
-   make clean && make all
+   make clean && make all # mainnet
+   
+   # Or to join a testnet or devnet:
+   make clean && make calibnet # Calibration with min 32 GiB sectors
+   make clean && make nerpanet # Nerpa with min 512 MiB sectors
+   
    sudo make install
    ```
 
