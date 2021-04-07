@@ -9,102 +9,15 @@ description: This tutorial covers how to store data using the Filecoin network, 
 
 ## Get access to a Lotus full-node
 
-A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are fairly high, and might be out of reach for most end-user laptops and PCs. We recommend running a Lotus full-node on a remote server, or connecting to a service that has Lotus full-nodes ready for you.
+A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are fairly high, and might be out of reach for most end-user laptops and PCs. 
 
-<!-- TODO: uncomment this section once we've figured out node-hosting services like Glif.
-Choose one:
+For this tutorial, we're going to be using a Lotus full-node provided by Protocol Labs. This node, called `api.chain.love` is only for practice sessions like this tutorial, and should not be relied upon for any production purposes.
 
-1. [Set up your own Lotus full-node on a remote server.](#set-up-your-own-lotus-full-node)
-1. [Connect to a node-hosting service.](#connect-to-a-node-hosting-service)
--->
+## Create a Lotus lite-node
 
-### Set up your own Lotus full-node
+### Dependencies
 
-<!-- TODO: uncomment this section once we've figured out node-hosting services like Glif.
-:::warning
-You do not need to follow this section if you are using a [node-hosting service](#connect-to-a-node-hosting-service).
-:::
--->
-
-Lotus runs best on computers with at least 8 CPU cores and 16GB RAM. Lotus can run on most Linux distributions, and macOS. The following steps use Ubuntu 20.04. See the [Get started guide](../../get-started/lotus/installation/) to find out how to run Lotus on a different operating system:
-
-1. Create a server with at least 8 CPUs and 16GB RAM, and connect to it using SSH. If you're not sure how to connect to a server, or even how to spin one up in the first place, check out Digital Ocean's guide on how to set up a [Ubuntu 20.04 server](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ubuntu-20-04-server-on-a-digitalocean-droplet).
-1. Make a note of your server's IP address. We'll be using this in an upcoming section.
-1. Update the `apt` repositories and upgrade any out-of-date packages:
-
-    ```shell
-    sudo apt update -y && sudo apt upgrade -y
-    ```
-
-1. Install the dependencies for Lotus:
-
-    ```shell
-    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
-    echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && ~/.bashrc
-    ```
-
-1. Download Lotus and create the `lotus` executable:
-
-    ```shell
-    git clone https://github.com/filecoin-project/lotus.git
-    cd lotus/
-    make clean all
-    sudo make install
-    ```
-
-1. Start the Lotus daemon and download the latest snapshot:
-
-    ```shell
-    lotus daemon --import-chain https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car
-    ```
-
-1. Stop the `lotus daemon` process by pressing `CTRL` + `c`:
-1. Open `~/.lotus/config` and:
-
-    a. Uncommend line 3.
-    a. Change `127.0.0.1` to `0.0.0.0`.
-
-    ```toml
-    ListenAddress = "/ip4/0.0.0.0/tcp/1234/http"
-    ```
-
-    Save and exit the file.
-
-1. Create an API token using the `write` permissions:
-
-    ```shell
-    lotus auth create-token --perm write
-    ```
-
-    Make a note of this **API token**. We will use it in a later section.
-
-1. Start the Lotus daemon and download the latest snapshot at the same time:
-
-    ```shell
-    lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
-    ```
-
-    The Lotus daemon will continue to run. You can disconnect from the server now, but do not shut it down.
-
-:::tip
-Things to write down from this section:
-
-1. Your server's IP address.
-1. The API token from running `lotus auth create-token --perm write`.
-:::
-
-<!-- TODO: uncomment this section once we've figured out node-hosting services like Glif.
-### Connect to a node-hosting service
--->
-
-## Install a Lotus lite-node on your local computer
-
-You will need:
-
-1. The IP address of your Lotus full-node.
-1. If you created your own Lotus full-node, you will need the **API token** you created. If you are using a node-hosting service, you do not need an API token.
+To install a Lotus lite-node on your computer you must have the tools required to _build_ a Lotus binary from the GitHub repository.
 
 1. Open a terminal window.
 1. Clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) and create the executable, but do not run anything yet:
