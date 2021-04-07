@@ -168,38 +168,19 @@ To install a Lotus lite-node on your computer you must have the tools required t
 
 ### Run a Lotus lite-node 
 
-Lotus lite-nodes have the same dependencies as Lotus full-nodes. See the [Software dependencies section](../../get-started/lotus/installation#software-dependencies) of the **Get started** guide for instructions on how to install the dependencies for all supported operating systems. Windows is not supported.
+Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node!
 
-1. Open a terminal window.
-1. Clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) and create the executable, but do not run anything yet:
+1. Run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address: 
 
-    ```shell
-    git clone https://github.com/filecoin-project/lotus
-    cd lotus
-    make clean all
-    sudo make install
-    ```
-
-1. Copy this command and enter your information:
-
-    ```shell
-    FULLNODE_API_INFO=<API_TOKEN>:/ip4/<YOUR_FULL_NODE_IP_ADDRESS>/tcp/1234 lotus daemon --lite
-    ```
-
-    Replace `<API_TOKEN>` with your API token, if you have one. Replace `<YOUR_FULL_NODE_IP_ADDRESS>` with the IP address of your Lotus full-node:
-
-    ```shell
-    FULLNODE_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiXX0.FfTKDJEy7yuSMDNXIsF292rRKNe6F8hWodX2r9g1T_8:/ip4/134.122.35.130/tcp/1234 lotus daemon --lite
-    ```
-
-    To use a public full node hosted by Protocol Labs, you can use the following command:
     ```shell
     FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
     ```
 
-    Please note that the `api.chain.love` node is intended for lightweight experiments and testing and is not suitable for ongoing development and production usage.
-
     The Lotus daemon will continue to run. Further commands must be ran from a seperate terminal window.
+
+:::warning
+The `api.chain.love` node is intended for lightweight experiments and testing. It is not suitable for ongoing development and production usage.
+:::
 
 ## Get a FIL address
 
