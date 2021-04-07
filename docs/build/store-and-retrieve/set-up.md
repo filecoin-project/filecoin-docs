@@ -26,7 +26,7 @@ You do not need to follow this section if you are using a [node-hosting service]
 :::
 -->
 
-Lotus runs best on computers with at least 8 CPU cores and 16GB RAM. Lotus can run on most Linux distributions, and macOS. The following steps use Ubuntu 20.04. See the [Get started guide](/get-started/lotus/installation/) to find out how to run Lotus on a different operating system:
+Lotus runs best on computers with at least 8 CPU cores and 16GB RAM. Lotus can run on most Linux distributions, and macOS. The following steps use Ubuntu 20.04. See the [Get started guide](../../get-started/lotus/installation/) to find out how to run Lotus on a different operating system:
 
 1. Create a server with at least 8 CPUs and 16GB RAM, and connect to it using SSH. If you're not sure how to connect to a server, or even how to spin one up in the first place, check out Digital Ocean's guide on how to set up a [Ubuntu 20.04 server](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ubuntu-20-04-server-on-a-digitalocean-droplet).
 1. Make a note of your server's IP address. We'll be using this in an upcoming section.
@@ -148,7 +148,7 @@ You will need:
 
 Filecoin Plus is a layer of social trust on top of the Filecoin network to help incentivize the storage of real data. Essentially, all Filecoin+ users who want to upload something to the Filecoin network can become a _verfied client_ by signing up to Filecoin+ using their GitHub account. All _verified clients_ get an allowance of 8GB per month to upload their data to the Filecoin network! 
 
-1. Go to [plus.fil.org](plus.fil.org).
+1. Go to [https://plus.fil.org](plus.fil.org).
 1. Under **Clients**, click **Proceed**.
 1. Under **Get verified**, click **Get Verified**.
 1. Click **Automatic Verification**.

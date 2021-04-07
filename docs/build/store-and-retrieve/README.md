@@ -39,4 +39,4 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | filecoin (lower-case `f`) | The cryptocurrency that the Filecoin network runs on. |
 | FIL | The shorthand representation of the filecoin cryptocurrency. |
 | Private key | A string of letters and numbers that programs use to interact with the Filecoin network. Keep your private key safe and don't share it with anyone. |
-| [Block explorer](/get-started/explore-the-network/#block-explorers) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
+| [Block explorer](../../get-started/explore-the-network/#block-explorers) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
