@@ -77,7 +77,7 @@ module.exports = {
               collapsable: false,
               children: [
                 ['lotus/running-in-the-cloud', 'Running in the Cloud'],
-                ['lotus/installation', 'Install + Setup'],
+                ['lotus/installation', 'Local Installation'],
                 ['lotus/switch-networks', 'Switch networks'],
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
