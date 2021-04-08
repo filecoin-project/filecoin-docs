@@ -76,6 +76,7 @@ module.exports = {
               sidebarDepth: 2,
               collapsable: false,
               children: [
+                ['lotus/running-in-the-cloud', 'Running in the Cloud'],
                 ['lotus/installation', 'Install + Setup'],
                 ['lotus/switch-networks', 'Switch networks'],
                 ['lotus/upgrades', 'Upgrades'],
