@@ -8,6 +8,12 @@ breadcrumb: 'Install and setup'
 
 {{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
 
+## Running in the cloud
+
+As an alternative to running locally, you can also run Lotus on a cloud provider. The easiest and cheapest path is to use [the one-click application in the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2). In addition to being a one-click deployment, you will receive a $100 credit with DigitalOcean for using the provided referral link.
+
+Other options, including Amazon Web Services, are covered in [Running in the cloud](running-in-the-cloud.md).
+
 ## Minimal requirements
 
 To run a Lotus node, your computer must have:
