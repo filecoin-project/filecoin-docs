@@ -47,5 +47,5 @@ Once the request has been receieved and processed by the miner, your Lotus lite-
 
 ## Next steps
 
-To finish off this tutorial [let's review everything you did →](../conclusion)
+To finish off this tutorial [let's review everything you did →](./conclusion)
 
