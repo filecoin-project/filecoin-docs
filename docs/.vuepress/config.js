@@ -153,10 +153,11 @@ module.exports = {
               sidebarDepth: 2,
               collapsable: true,
               children: [
-                ['store-and-retrieve/', 'Intro'],
+                ['store-and-retrieve/', 'Start here'],
                 ['store-and-retrieve/set-up', 'Set up'],
                 ['store-and-retrieve/store-data', 'Store data'],
                 ['store-and-retrieve/retrieve-data', 'Retrieve data'],
+                ['store-and-retrieve/conclusion', 'Conclusion'],
               ]
             },
             'textile-buckets',
