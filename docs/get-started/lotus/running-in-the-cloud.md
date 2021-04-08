@@ -12,21 +12,32 @@ breadcrumb: 'Running in the cloud'
 
 ### DigitalOcean
 
-Get started on DigitalOcean by clicking on the image below.
+The easiest and cheapest path is to use [the one-click application in the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2). In addition to being a one-click deployment, you will receive a $100 credit with DigitalOcean for using the provided referral link.
 
-[![do-marketplace](../images/cloud/DO_Logo_horizontal_blue.svg)](https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2)
+<a href="https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2" alt="DigitalOcean Logo"><img src="../images/cloud/DO_Logo_horizontal_blue.svg" style="max-width: 40%; cursor: hand !important;"/></a>
 
-Log into your new DigitalOcean Droplet as `root` using the password you provided when creating a "Droplet" (virtual machine) with Lotus pre-installed:
+After deploying, log into your new DigitalOcean Droplet as `root` using the password you provided when creating a "Droplet" (virtual machine) with Lotus pre-installed:
 
 ```
 ssh root@<your_droplet_public_ipv4>
 ```
 
+#### Using the DigitalOcean API to deploy Lotus
+
+You can also spin up Lotus nodes programmatically. For example, to create a 4GB filecoin-lotus Droplet in the SFO2 region, you can use the following curl command:
+
+```
+curl -X POST -H 'Content-Type: application/json' \
+-H 'Authorization: Bearer '$TOKEN'' \
+-d '{"name":"a_name","region":"sfo2","size":"s-2vcpu-4gb",
+"image":"protocollabs-filecoinlotus-20-04"}'  "https://api.digitalocean.com/v2/droplets"
+```
+
 ### Amazon Web Services
 
-We publish AMIs on a regular basis for each of the [filecoin networks](https://networks.filecoin.io/). To use one of these images, just search for one of our AMIs.
+We publish AMIs on a regular basis for each of the [filecoin networks](https://networks.filecoin.io/). To use one of these images, just search for one of our AMIs. You can use this [example link which populates a search for Lotus in the `us-west-2` region](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name).
 
-[![aws-search](../images/cloud/Amazon_Web_Services_Logo.svg)](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name)
+<a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name" alt="AWS Logo"><img src="../images/cloud/Amazon_Web_Services_Logo.svg" style="max-width: 40%; cursor: hand !important;"/></a>
 
 ![launch-filecoin-ami](../images/cloud/aws-filecoin-ami.png)
 
