@@ -99,7 +99,6 @@ module.exports = {
               title: 'LOTUS',
               path: '/store/lotus/',
               sidebarDepth: 2,
-              collapsable: false,
               children: [
                 ['lotus/store-data', 'Store data'],
                 ['lotus/very-large-files', 'Very large files'],
@@ -108,13 +107,7 @@ module.exports = {
                 ['lotus/store-troubleshooting', 'Troubleshooting']
               ]
             },
-            {
-              title: 'Filecoin Plus',
-              path: '/store/filecoin-plus',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: ['filecoin-plus/secondary-page']
-            }
+            'filecoin-plus',
           ],
 
           '/mine/': [
