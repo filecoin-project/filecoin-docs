@@ -50,5 +50,3 @@ Filecoin and IPFS are powered by the same technology at many levels:
 - [libp2p](https://libp2p.io/) provides peer-to-peer network capabilities, connection security and key discovery and data distribution features like the DHT and Pubsub.
 - [Multiformats](https://multiformats.io) define future-proof identifiers and data-types.
 - [Graphsync](https://github.com/ipfs/go-graphsync) and [Bitswap](https://github.com/ipfs/go-bitswap) enable fast and efficient IPLD data transfers between nodes.
-
-Interested in learning more? Check some of our [application examples](../build/examples/README.md).
