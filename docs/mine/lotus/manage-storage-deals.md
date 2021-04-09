@@ -96,6 +96,22 @@ The list displays:
 - The wallet address of client that submitted it.
 - The size and the duration in epochs (30 seconds per epoch).
 
+## Deals that are pending publishing
+
+To list the deals waiting in your publish queue:
+
+```sh
+lotus-miner storage-deals pending-publish
+```
+
+You can publish the deals whenever you want with the `--publish-now` option:
+
+```sh
+lotus-miner storage-deals pending-publish --publish-now
+```
+
+The miner's default configuration is set to batch multiple deals and publish the message to a maximum of 8 deals per hour. You can change the `PublishMsgPeriod` and `MaxDealsPerPublishMsg` in your [configuration file](miner-configuration.md#publishing-several-deals-in-one-message).
+
 ## Blocking storage deals by PieceCID
 
 The Lotus Miner provides internal tooling to import a PieceCID-blocklist:

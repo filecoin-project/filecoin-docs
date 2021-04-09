@@ -48,13 +48,22 @@ It is implemented via a flag on the storage deal command that tells the client n
 lotus client generate-car <inputPath> <outputPath>
 ```
 
-2. Use the Lotus client to generate the piece CID for the chosen miner:
+2. Use the Lotus client to generate the piece CID:
 
 ```sh
-lotus client commP <inputCarFilePath> <minerAddress>
+lotus client commP <inputCarFilePath>
 ```
 
-### Propose an offline deal
+### Calculate the datasize
+
+1. Take the final car size `ls -l data.car`
+1. Round it up to the nearest power of 2. This is your padded piece size.
+1. Divide by 128, multiply by 127. this is your unpadded piece size.
+1. Go to [Wolfram Alpha](https://www.wolframalpha.com).
+1. Enter `x = SIZE_IN_BYTES; 127*( 2^( ceil( log2( ceil ( x /127 ) ) ) ) )` and changing `SIZE_IN_BYTES` to your value.
+1. You solution can be found under **Substitution**:
+
+![](./images/very-large-files/wolfram-alpha.png)
 
 Propose the offline deal with the miner:
 
@@ -71,7 +80,7 @@ This can be done several ways, such as shipping hard drives from the client to t
 The miner can import the data and deal manually with:
 
 ```sh
-lotus-miner deals import-data <dealCid> <filePath>
+lotus-miner storage-deals import-data <dealCid> <carFilePath>
 ```
 
 Once the first Proof of Spacetime (PoSt) hits the chain, the storage deal is considered active.

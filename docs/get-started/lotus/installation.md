@@ -41,7 +41,7 @@ sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader o
 Ubuntu/Debian:
 
 ```bash
-sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev -y && sudo apt upgrade -y
+sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
 ```
 
 Fedora:
@@ -95,19 +95,18 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-2. Checkout the branch corresponding to the network you want to join. If you want to run the _latest_ version of Lotus on `mainnet`, checkout to the `master` branch. If you want to use a specific release, then see the [Releases section in GitHub](https://github.com/filecoin-project/lotus/releases).
+2. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
-   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
+   
+   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
-   git checkout <branch_or_tag>
+   git checkout <tag_or_branch>
    # For example:
-   git checkout master # mainnet
-   git checkout ntwk-calibration # calibration-net
-   git checkout ntwk-nerpa # nerpa-net
+   git checkout <vX.X.X> # tag for a release
    ```
-
-   Currently, the _master_ branch corresponds to **mainnet**.
+   Currently, the latest code on the _master_ branch corresponds to mainnet.
 
 3. If you are in China, check out the specific [tips](tips-running-in-china.md).
 4. Depending on your CPU model, you will want to export additional environment variables:
@@ -134,6 +133,11 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    ```sh
    make clean all
+   
+   # Or to join a testnet or devnet:
+   make clean calibnet # Calibration with min 32GiB sectors
+   make clean nerpanet # Nerpa with min 512MiB sectors
+   
    sudo make install
    ```
 
@@ -213,17 +217,18 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    cd lotus/
    ```
 
-1. Checkout the branch corresponding to the network you want to join. If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding. You can look up the correct branch or tag for the network you want to join in the [networks dashboard](https://networks.filecoin.io):
+1. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
+
+   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
+   
+   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
-   git checkout <branch_or_tag>
+   git checkout <tag_or_branch>
    # For example:
-   git checkout master # mainnet
-   git checkout ntwk-calibration # calibration-net
-   git checkout ntwk-nerpa # nerpa-net
+   git checkout <vX.X.X> # tag for a release
    ```
-
-   Currently, the _master_ branch corresponds to **mainnet**.
+   Currently, the latest code on the _master_ branch corresponds to mainnet.
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
 
@@ -239,7 +244,12 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 1. Build Lotus:
 
    ```sh
-   make clean && make all
+   make clean && make all # mainnet
+   
+   # Or to join a testnet or devnet:
+   make clean && make calibnet # Calibration with min 32 GiB sectors
+   make clean && make nerpanet # Nerpa with min 512 MiB sectors
+   
    sudo make install
    ```
 
@@ -249,12 +259,9 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
 The `lotus` application runs as a daemon and a client to control and interact with that daemon. A daemon is a long-running program that is usually run in the background.
 
-When using _mainnet_, we recommend to start the daemon [syncing from a trusted state snapshot](chain.md#syncing-from-a-trusted-state-snapshot-mainnet):
+When using _mainnet_, we recommend to start the daemon [syncing from a trusted state snapshot](chain.md#lightweight-snapshot). In any case, you can start the deamon with the following command:
 
 ```sh
-# For mainnet only:
-lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
-# For other networks:
 lotus daemon
 ```
 

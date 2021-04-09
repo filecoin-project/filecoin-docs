@@ -36,7 +36,11 @@ It is recommended to set the following environment variables in your environment
 ```sh
 # See https://github.com/filecoin-project/bellman
 export BELLMAN_CPU_UTILIZATION=0.875
+```
 
+The `BELLMAN_CPU_UTILIZATION` is an optional variable to designate a proportion of the multi-exponentiation calculation to be moved to a CPU in parallel to the GPU. This is an effort to keep all the hardware occupied. The interval must be a number between `0` and `1`. The value `0.875` is a good starting point, but you should experiment with it if you want an optimal setting. Different hardware setups will result in different values being optimal. Omitting this environment variable might also be optimal.
+
+```sh
 # See https://github.com/filecoin-project/rust-fil-proofs/
 export FIL_PROOFS_MAXIMIZE_CACHING=1 # More speed at RAM cost (1x sector-size of RAM - 32 GB).
 export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 # precommit2 GPU acceleration
@@ -139,11 +143,11 @@ To summarize all of the above, make sure that:
 
   ```
   export LOTUS_MINER_PATH=/path/to/miner/config/storage
-  export LOTUS_PATH=/path/to/lotus/node/folder # when using a local node
-  export BELLMAN_CPU_UTILIZATION=0.875
+  export LOTUS_PATH=/path/to/lotus/node/folder # When using a local node.
+  export BELLMAN_CPU_UTILIZATION=0.875 # Optimal value depends on your exact hardware.
   export FIL_PROOFS_MAXIMIZE_CACHING=1
-  export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 # when having GPU
-  export FIL_PROOFS_USE_GPU_TREE_BUILDER=1   # when having GPU
+  export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 # When having GPU.
+  export FIL_PROOFS_USE_GPU_TREE_BUILDER=1   # When having GPU.
   export FIL_PROOFS_PARAMETER_CACHE=/fast/disk/folder # > 100GiB!
   export FIL_PROOFS_PARENT_CACHE=/fast/disk/folder2   # > 50GiB!
   export TMPDIR=/fast/disk/folder3                    # Used when sealing.
