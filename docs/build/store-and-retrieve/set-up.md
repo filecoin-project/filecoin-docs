@@ -1,11 +1,11 @@
 ---
 title: Store and retrieve
-description: This tutorial covers how to store data using the Filecoin network, and how to get that data back again. While there are other methods to store and retrieve data using Filecoin, this is the recommended path. 
+description: Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set-up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+. 
 ---
 
 # Set up
 
-In this section you're going to install the dependencies needed to run a Lotus lite-node on your computer. You're also going to create a Filecoin address and use it to sign up to Filecoin+.
+Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set-up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+. 
 
 ## Get access to a Lotus full-node
 

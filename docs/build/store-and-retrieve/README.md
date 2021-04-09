@@ -3,7 +3,7 @@ title: Store and retrieve
 description: This tutorial will walk you through the whole process of storing and retrieving a file to and from the Filecoin network. 
 ---
 
-# Storage and retrieval using Filecoin+
+# Store and retrieve 
 
 The Filecoin storage and retrival process is split into three main parts: the set-up, storing you data, and retrieving your data. Each part has several sub-processes that we need to follow.
 

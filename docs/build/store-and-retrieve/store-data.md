@@ -1,11 +1,11 @@
 ---
 title: Store data
-description: Lorem ipsum. 
+description: Get stuck into storing your data on the Filecoin network. This section covers packaging your dat, importing it into your local Lotus lite-node, finding a miner through the MinerX progra, creating a storage deal, and then waiting for the deal to complete! 
 ---
 
 # Store data
 
-Now we can get started with _storing_ the stuff we want to archive on Filecoin. We first need to prepare it into a format that Lotus can manage.
+Get stuck into storing your data on the Filecoin network. This section covers packaging your dat, importing it into your local Lotus lite-node, finding a miner through the MinerX progra, creating a storage deal, and then waiting for the deal to complete! 
 
 :::danger
 Do not store personal data on the Filecoin network, even if it's encrypted. Access control is on the roadmap, but until then only store public and static data on the Filecoin network. 
