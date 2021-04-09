@@ -8,13 +8,19 @@ breadcrumb: 'Install and setup'
 
 {{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
 
+## Running in the cloud
+
+As an alternative to running locally, you can also run Lotus on a cloud provider. The easiest and cheapest path is to use [the one-click application in the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2). In addition to being a one-click deployment, you will receive a $100 credit with DigitalOcean for using the provided referral link.
+
+Other options, including Amazon Web Services, are covered in [Running in the cloud](running-in-the-cloud.md).
+
 ## Minimal requirements
 
 To run a Lotus node, your computer must have:
 
 - macOS or Linux installed. Windows is not yet supported.
 - 8-core CPU and 32 GiB RAM. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake) will significantly speed things up.
-- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 12 GiB per week. The chain can be also [synced from trusted state snapshots and compacted](chain.md).
+- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 38 GiB per day. The chain can be also [synced from trusted state snapshots and compacted](chain.md).
 
 :::warning
 These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
@@ -70,19 +76,23 @@ Lotus needs [rustup](https://rustup.rs). The easiest way to install it is:
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-:::tip
-Make sure your `$PATH` variable is correctly configured after the rustup installation so that `cargo` and `rustc` are found in their rustup-configured locations.
-:::
-
 #### Go
 
 To build Lotus, you need a working installation of [Go 1.15.5 or higher](https://golang.org/dl/):
 
 ```bash
-wget -c https://golang.org/dl/go1.15.5.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
-Make sure that `/usr/local/go/bin` is in your `PATH`. If you are running into problems, check the [official Go installation instructions](https://golang.org/doc/install) for your operating system.
+:::tip
+You'll need to add `/usr/local/go/bin` to your path. For most Linux distributions you can run something like:
+
+```shell
+echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && ~/.bashrc
+```
+
+Check out the [official Golang installation instructions](https://golang.org/doc/install) if you get stuck.
+:::
 
 ### Build and install Lotus
 
@@ -185,6 +195,8 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
    ```sh
    xcode-select -p
+   
+   > /Library/Developer/CommandLineTools
    ```
 
    If this command returns a path, you can move on to the [next step](#install-homebrew). Otherwise, to install via the CLI, run:
@@ -198,6 +210,9 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
    ```sh
    sudo rm -rf /Library/Developer/CommandLineTools
    xcode-select --install
+   
+   > Password:
+   > xcode-select: note: install requested for command line developer tools
    ```
 
 ### Install Homebrew
