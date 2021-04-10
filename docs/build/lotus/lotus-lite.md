@@ -65,7 +65,7 @@ You need to create the Lotus executable to run your lite-node with. This process
     sudo make install
     ```
 
-If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](/get-started/lotus/installation/#software-dependencies) and double-check that you have all the dependencies installed, along with Golang and Rust.
+If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](../../get-started/lotus/installation/#software-dependencies) and double-check that you have all the dependencies installed, along with Golang and Rust.
 
 ## Start the lite-node
 
