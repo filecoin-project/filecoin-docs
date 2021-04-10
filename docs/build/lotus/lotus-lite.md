@@ -45,7 +45,7 @@ If you have access to the full-node you're using, you need to make some minor mo
     lotus auth create-token --perm write
     ```
 
-    Which permissions you choose will depend on your use-case. Take a look at the [API tokens section to find out more →](https://docs.filecoin.io/build/lotus/api-tokens/#obtaining-tokens)
+    Which permissions you choose will depend on your use-case. Take a look at the [API tokens section to find out more →](./api-tokens/#obtaining-tokens)
 
 1. Send this API token to your lite-node or to whoever will be the administrator for the lite-node.
 1. If you have the `lotus daemon` running, stop it and start it again. This forces Lotus to open the API port we just set.
@@ -98,7 +98,7 @@ A lite-node is limited in what it can do and is designed to only perform message
 
 ### Access and permissions 
 
-Setting up a Lotus lite-node without using an [API token from a full-node](https://docs.filecoin.io/build/lotus/api-tokens/) results in the lite-node having read-only access to the full-node. While read-only access should be fine for most use-cases, there are situations where you need write access to the full-node. 
+Setting up a Lotus lite-node without using an [API token from a full-node](./api-tokens/) results in the lite-node having read-only access to the full-node. While read-only access should be fine for most use-cases, there are situations where you need write access to the full-node. 
 
 ## Use cases 
 
