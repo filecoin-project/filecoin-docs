@@ -7,21 +7,36 @@ description: Before you begin storing any data on the Filecoin network, you need
 
 Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set-up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+. 
 
+![](./images/set-up-process.png)
+
 ## Get access to a Lotus full-node
 
 A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are fairly high, and might be out of reach for most end-user laptops and PCs. 
 
-::: tip
-For this tutorial, we're going to be using a Lotus full-node provided by Protocol Labs. This node, called `api.chain.love` is only for practice sessions like this tutorial, and should not be relied upon for any production purposes.
+Normally we'd have to _spin up_ a full-node, but for this tutorial we're going to be using a Lotus full-node provided by Protocol Labs. This node, called `api.chain.love` is only for practice sessions like this tutorial, and should not be relied upon for any production purposes.
+
+:::tip
+If you're already got a full-node that you'd prefer to use, feel free to use that instead! Just replace `api.chain.love` with the IP address of your full-node throughout this tutorial.
 :::
 
 ## Lotus lite-node
+
+A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to miners, but any processes that need data from the blockchain must come from a full-node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer, and have it connect to a full-node managed by Protocol Labs.
+
+![](./images/lite-nodes-process-diagram.png)
 
 ### Project dependencies 
 
 To install a Lotus lite-node on your computer you must have the tools required to _build_ a Lotus binary from the GitHub repository.
 
+| [MacOS](#macos) | [Ubuntu](#ubuntu) |
+| --- | --- |
+
+Take a look at the [Get started page](../../get-started) to learn how to install Lotus on other operating systems. 
+
 #### MacOS
+
+This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section](#ubuntu).
 
 1. Check if you have Xcode installed:
 
@@ -91,9 +106,19 @@ To install a Lotus lite-node on your computer you must have the tools required t
 
     If you run into errors here, it may be because some dependencies aren't installed properly. Check out the [Troubleshooting](troubleshooting) section, or see the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) for more help.
 
-1. You should now have the `lotus` executable ready to run on your computer. [Head over to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
+1. You should now have the `lotus` executable ready to run on your computer. 
+
+    ```shell
+    lotus --version
+
+    > lotus version 1.7.0
+    ```
+
+[Head over to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
 
 #### Ubuntu
+
+This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section](#mac-os).
 
 1. Update your local `apt` repository:
 
@@ -168,23 +193,30 @@ To install a Lotus lite-node on your computer you must have the tools required t
 
 ### Run a Lotus lite-node 
 
-Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node!
+Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node! 
 
-1. Run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address: 
+:::warning
+Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's perfectly suited for use in this tutorial, but do not use it for development or in a production environment.
+:::
+
+1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address: 
 
     ```shell
     FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
+
+    > 2021-04-10T13:34:07.170-0400  INFO    main    lotus/daemon.go:214 lotus repo: /home/johnny/.lotus
+    > ...
     ```
 
     The Lotus daemon will continue to run. Further commands must be ran from a seperate terminal window.
 
-:::warning
-The `api.chain.love` node is intended for lightweight experiments and testing. It is not suitable for ongoing development and production usage.
-:::
-
 ## Get a FIL address
 
-1. Create an address using the `wallet new` command:
+Filecoin addresses are similar to a regular bank account numbers. Other users can use your address to send you FIL, and you can use your address to pay miners for storing and retrieving your data. 
+
+There are two parts to a Filecoin address: the public address, and the private key. You can freely share your public address with anyone, but you should never share your private key. We're not actually going to look at our private key in this tutorial, but it's important to understand the difference between your public address and your private key.
+
+1. Open a new terminal window and create an address using the `wallet new` command:
 
     ```shell
     lotus wallet new 
@@ -196,9 +228,13 @@ The `api.chain.love` node is intended for lightweight experiments and testing. I
 
 1. Make a note of this address. We'll use it in an uncoming section.
 
-## Sign up to Filecoin+
+## Sign up to Filecoin Plus
 
-Filecoin Plus is a layer of social trust on top of the Filecoin network to help incentivize the storage of real data. Essentially, all Filecoin+ users who want to upload something to the Filecoin network can become a _verfied client_ by signing up to Filecoin+ using their GitHub account. All _verified clients_ get an allowance of 8GB per month to upload their data to the Filecoin network! 
+Normally, when you want to store something on the Filecoin network, you'd have to pay miners with FIL. However, Protocol Labs created the Filecoin Plus program to help developers test out the network without having to pay! By signing up to Filecoin Plus with your GitHub account you can store up to 32GB on the Filecoin network per month for free!
+
+:::tip
+You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with the team on Filecoin Slack](https://filecoin.io/slack/).
+:::
 
 1. Go to [plus.fil.org](https://plus.fil.org).
 1. Under **Clients**, click **Proceed**.

@@ -9,6 +9,8 @@ The process of storing and retrieving data using the Filecoin network is slightl
 
 The process is split into three main parts: the set-up, storing your data, and retrieving your data. Each section has several sub-processes that we need to follow.
 
+![](./images/end-to-end-process.png)
+
 1. Set up:
 
     a. Get access to a Lotus full-node.
