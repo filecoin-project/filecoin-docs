@@ -158,6 +158,7 @@ module.exports = {
               sidebarDepth: 2,
               collapsable: true,
               children: [
+                ['lotus/lotus-lite', 'Lotus lite'],
                 ['lotus/enable-remote-api-access', 'Enable remote API access'],
                 ['lotus/api-tokens', 'API tokens'],
                 ['lotus/api-client-libraries', 'API client libraries'],
