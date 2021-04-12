@@ -244,44 +244,16 @@ Because of the complicated nature of Lotus and the Filecoin network, deals can b
 | StorageDealTransferring | Data is being transfered from the client Lotus node to the miner. | &nbsp; |
 | StorageDealWaitingForData | Either a manual transfer is taking place, or the miner has not received a data-transfer request from the client. | &nbsp; |
 | StorageDealVerifyData | All the data has been transfered, and the miner is now attempting to verify it against the PieceCID. | &nbsp; |
-| &nbsp; | &nbsp; | &nbsp; |
-
-```
-	// StorageDealReserveProviderFunds means that provider is making sure it has adequate funds for the deal in the StorageMarketActor
-	StorageDealReserveProviderFunds
-
-	// StorageDealReserveClientFunds means that client is making sure it has adequate funds for the deal in the StorageMarketActor
-	StorageDealReserveClientFunds
-
-	// StorageDealProviderFunding means that the provider has deposited funds in the StorageMarketActor and it is waiting
-	// to see the funds appear in its balance
-	StorageDealProviderFunding
-
-	// StorageDealClientFunding means that the client has deposited funds in the StorageMarketActor and it is waiting
-	// to see the funds appear in its balance
-	StorageDealClientFunding
-
-	// StorageDealPublish means the deal is ready to be published on chain
-	StorageDealPublish
-
-	// StorageDealPublishing means the deal has been published but we are waiting for it to appear on chain
-	StorageDealPublishing
-
-	// StorageDealError means the deal has failed due to an error, and no further updates will occur
-	StorageDealError
-
-	// StorageDealProviderTransferAwaitRestart means the provider has restarted while data
-	// was being transferred from client to provider, and will wait for the client to
-	// resume the transfer
-	StorageDealProviderTransferAwaitRestart
-
-	// StorageDealClientTransferRestart means a storage deal data transfer from client to provider will be restarted
-	// by the client
-	StorageDealClientTransferRestart
-
-	// StorageDealAwaitingPreCommit means a deal is ready and must be pre-committed
-	StorageDealAwaitingPreCommit
-```
+| StorageDealReserveProviderFunds | The miner is checking that it has enough FIL for the deal. | &nbsp; |
+| StorageDealReserveClientFunds | The client is checking that is has enough FIL for the deal.| &nbsp; |
+| StorageDealProviderFunding | The miner has deposited funds into StorageMarketActor and is waiting for the funds to appear. | &nbsp; |
+| StorageDealClientFunding | The client has deposited funds into the StorageMarketActor and is waiting for the funds to appear. | &nbsp; |
+| StorageDealPublish | The deal is ready to be published on-chain. | &nbsp; |
+| StorageDealPublishing | The deal has been published, but is yet to appear on-chain. | &nbsp; |
+| StorageDealError | There has been an unforseen error. No further updates will occur. | &nbsp; |
+| StorageDealProviderTransferAwaitRestart | The miner restarted while data was being transferred from the client to the miner. Once the miner is back online it will wait for the client to resume the tranfer. | &nbsp; |
+| StorageDealClientTransferRestart | A storage deal data transfer from a client to a miner is restarting after a pause, likely caused by StorageDealProviderTransferAwaitRestart. | &nbsp; |
+| StorageDealAwaitingPreCommit | A deal is ready and must be pre-committed. | &nbsp; |
 
 This list comes from the [Lotus project GitHub repository](https://github.com/filecoin-project/go-fil-markets/blob/master/storagemarket/dealstatus.go).
 
