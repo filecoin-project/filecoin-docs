@@ -9,19 +9,19 @@ Before you begin storing any data on the Filecoin network, you need to run throu
 
 ![](./images/set-up-process.png)
 
-## Get access to a Lotus full-node
+## Get a full-node 
 
 A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are fairly high, and might be out of reach for most end-user laptops and PCs. 
 
-Normally we'd have to _spin up_ a full-node, but for this tutorial we're going to be using a Lotus full-node provided by Protocol Labs. This node, called `api.chain.love` is only for practice sessions like this tutorial, and should not be relied upon for any production purposes.
+Normally we'd have to _spin up_ a full-node, but for this tutorial we're going use a Lotus full-node provided by Protocol Labs. This node, called `api.chain.love` is only for practice sessions like this tutorial, and should not be relied upon for any production or development purposes.
 
 :::tip
 If you're already got a full-node that you'd prefer to use, feel free to use that instead! Just replace `api.chain.love` with the IP address of your full-node throughout this tutorial.
 :::
 
-## Lotus lite-node
+## Install a lite-node
 
-A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to miners, but any processes that need data from the blockchain must come from a full-node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer, and have it connect to a full-node managed by Protocol Labs.
+A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to miners, but any processes that need data from the blockchain must come from a full-node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
 
 ![](./images/lite-nodes-process-diagram.png)
 
@@ -118,7 +118,7 @@ This section covers how to install a Lotus lite-node on MacOS. If you are runnin
 
 #### Ubuntu
 
-This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section](#mac-os).
+This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section](#macos).
 
 1. Update your local `apt` repository:
 
