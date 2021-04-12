@@ -13,51 +13,20 @@ Do not store personal data on the Filecoin network, even if it's encrypted. Acce
 
 ## Prepare your data
 
-For the purposes of this tutorial, we're going to store the [ISS_COORDS_2021-03-25 dataset](https://data.nasa.gov/Space-Science/ISS_COORDS_2021-03-25/qti9-kibp) from NASA on the Filecoin network. If you've got some other data you'd prefer to store on Filecoin, go ahead and use that!
-
-1. Download the `ISS_COORDS_2021-03-25` dataset:
-
-    ```shell
-    cd ~
-    curl -o ISS_COORDS_DATASET.tar https://ipfs.io/ipfs/QmWNi1ygVKBqbZ2E3RqRzQFbSmpzjpf3WTeQebakLJWZSu
-    ```
-
-1. Create a folder called `filecoin-payload-folder` to hold the payload.
-
-    ```shell
-    mkdir filecoin-payload-folder
-    ```
-
-1. Extract the NASA dataset into `filecoin-payload-folder`:
-
-    ```shell
-    tar -xvf ISS_COORDS_DATASET.tar -C filecoin-payload-folder
-    ```
+For the purposes of this tutorial, we're going to create a dummy 4GB file full of random data.
 
 1. Create a block of random data to _pad_ the total size of our payload:
 
     If you're on macOS run:
 
     ```shell
-    dd if=/dev/urandom of=padded-4gb-file.bin bs=1m count=4096 
+    dd if=/dev/urandom of=4gb-filecoin-payload.bin bs=1m count=4096 
     ```
 
     If you're on Linux run: 
 
     ```shell
-    dd if=/dev/urandom of=padded-4gb-file.bin bs=1M count=4096
-    ```
-
-1. Move `padded-4gb.file.bin` into the `filecoin-payload-folder`:
-
-    ```shell
-    mv padded-4b-file.bin filecoin-payload-folder
-    ```
-
-1. Pack everything into a `.tar` file:
-
-    ```shell
-    tar -cvf ~/filecoin-payload.tar ~/filecoin-payload-folder
+    dd if=/dev/urandom of=padded-4gb-filecoin-payload.bin bs=1M count=4096
     ```
 
 We now have our payload file ready to be stored using the Filecoin network.
@@ -69,10 +38,10 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 1. Import the payload into the `lotus daemon` using the `import` command: 
 
     ```shell
-    lotus client import ~/filecoin-payload.tar 
+    lotus client import ~/4gb-filecoin-payload.bin 
     ```
 
-    Lotus creates a distributed-asyclic-graph (DAG) based off the payload. This process takes a few minutes. Once's it's complete Lotus will output the root CID of the payload.
+    Lotus creates a distributed acyclic graphs (DAG) based off the payload. This process takes a few minutes. Once's it's complete Lotus will output the root CID of the payload.
 
     ```shell
     > Import 3, Root bafykb...
