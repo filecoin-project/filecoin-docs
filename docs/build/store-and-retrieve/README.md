@@ -11,25 +11,13 @@ The process is split into three main parts: the set-up, storing your data, and r
 
 ![](./images/end-to-end-process.png)
 
-1. Set up:
+| Section | Sub-tasks |
+| --- | --- |
+| Set up | 1. Get access to a Lotus full-node.<br> 2. Start a Lotus lite-node on your local computer.<br> 3. Get a FIL address.<br> 4. Sign up to Filecoin+. |
+| Store data | 1. Package your data.<br> 2. Import your data into Lotus.<br> 3. Find a miner through the MinerX program.<br> 4. Create a storage deal.<br> 5. Wait for the deal to complete. |
+| Retrieve data | 1. Create a retrieval deal.<br> 2. Download your data.|
 
-    a. Get access to a Lotus full-node.
-    a. Start a Lotus lite-node on your local computer.
-    a. Get a FIL address.
-    a. Sign up to Filecoin+.
-
-1. Store data: 
-
-    a. Package your data.
-    a. Import your data into Lotus.
-    a. Find a miner through the MinerX program.
-    a. Create a storage deal.
-    a. Wait for the deal to complete.
-
-1. Retrieve data:
-
-    a. Create a retrieval deal.
-    a. Download your data.
+It will take about an hour to complete this tutorial. While there aren't too many steps involved, there's a bit of waiting around for the network to process your requests.
 
 ## Terms and phrases
 
@@ -47,6 +35,14 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | Deal | An agreement between two computers about what to do with some data. |
 | Storage deal | An agreement between a miner and a client about what data to store, how long for, and how much the miner can charge for storage. |
 | Retrieval deal | An agreement between a miner and a client about how much the miner can charge to send data to a client. |
+
+## Take notes
+
+There are a few things to remember through-out this tutorial such as Miner IDs and addresses. There is a table at the end of each section showing the information you should record:
+
+| Variable | Description | Example |
+| --- | --- | --- |
+| Miner ID | The unique identifier for each miner. | `f01000`
 
 ## Next steps
 
