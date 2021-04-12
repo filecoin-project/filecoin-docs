@@ -199,7 +199,7 @@ To complete this section you need the data CID you received after running `lotus
     Deal (f023978) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     ```
 
-## Wait for the deal to complete
+## Check the deal status 
 
 We need to wait for the miner to accept our deal and _seal_ the data. This process can take up to 24 hours to complete, depending on how much data we asked the miner to store.
 
@@ -210,13 +210,80 @@ We need to wait for the miner to accept our deal and _seal_ the data. This proce
     ```
     <!-- TODO: show what happens when you list the deals. -->
 
-    If you cannot see your deal in the list, the deal may have failed. Use `--list-failed` to see failed deals:
+    If you cannot see your deal in the list, the deal may have failed. Use `--show-failed` to see failed deals:
 
     ```shell
-    lotus client list-deals --list-failed
+    lotus client list-deals --show-failed
     ```
 
     <!-- TODO: show what happens when you list failed the deals. -->
+
+### Deal states
+
+Because of the complicated nature of Lotus and the Filecoin network, deals can be in one of many different states:
+
+| State | Description | Possible next state |
+| --- | --- | --- |
+| StorageDealUnknown | The current status of a deal is undefined or unknown. This could be because your full-node is out of sync. | &nbsp; |
+| StorageDealProposalNotFound | Your full-node cannot find the deal you are looking for. This could be because it doesn't exist, or your full-node is out of sync. | &nbsp; |
+| StorageDealProposalRejected | The miner has chosen not to accept this deal. The miner may have provided a reason along-side this status message, but not always. | &nbsp; |
+| StorageDealProposalAccepted | The miner intends to accept a storage deal proposal, however the miner has not made any commitment to do so at this point. | &nbsp; |
+| StorageDealStaged | The deal has been published and data is ready to be put into a sector. At this point the miner has fully committed to storing your data. | &nbsp; |
+| StorageDealSealing | The miner is sealing data into a sector. The larger your data-payload the longer this will take. | &nbsp; |
+| StorageDealFinalizing | All the data is within the sector, and the miner is performing the final checks to make sure that all the data is correct. | &nbsp; |
+| StorageDealActive | The data is in a sealed sector and the miner can provide the data back to you. | &nbsp; |
+| StorageDealExpired | A deal has passed it's final epoch. The miner could potentially still have the data available, but is under no obligation to provide it to anyone. | &nbsp; |
+| StorageDealSlashed | The data was in a sector, and the miner got slashed for failing to prove that the data was available. | &nbsp; |
+| StorageDealRejecting | The miner has rejected the deal. This comes immediately before StorageDealProposalRejected. | &nbsp; |
+| StorageDealFailing | Something has gone wrong in a deal. Once data is cleaned up the deal will finalize. | &nbsp; |
+| StorageDealFundsReserved | Your FIL has been deposited into escrow and is ready to be used to pay for the deal. | &nbsp; |
+| StorageDealCheckForAcceptance | The client is waiting for a miner to seal and publish a deal. | &nbsp; |
+| StorageDealValidating | The miner is validating that the deal parameters are good for a proposal. | &nbsp; |
+| StorageDealAcceptWait | The miner is running custom decision logic to decide whether or not to accept the deal. The deal will have this status until the custom logic comes to a decision. | &nbsp; |
+| StorageDealStartDataTransfer | The miner is ready to accept data from the client Lotus node. | &nbsp; |
+| StorageDealTransferring | Data is being transfered from the client Lotus node to the miner. | &nbsp; |
+| StorageDealWaitingForData | Either a manual transfer is taking place, or the miner has not received a data-transfer request from the client. | &nbsp; |
+| StorageDealVerifyData | All the data has been transfered, and the miner is now attempting to verify it against the PieceCID. | &nbsp; |
+| &nbsp; | &nbsp; | &nbsp; |
+
+```
+	// StorageDealReserveProviderFunds means that provider is making sure it has adequate funds for the deal in the StorageMarketActor
+	StorageDealReserveProviderFunds
+
+	// StorageDealReserveClientFunds means that client is making sure it has adequate funds for the deal in the StorageMarketActor
+	StorageDealReserveClientFunds
+
+	// StorageDealProviderFunding means that the provider has deposited funds in the StorageMarketActor and it is waiting
+	// to see the funds appear in its balance
+	StorageDealProviderFunding
+
+	// StorageDealClientFunding means that the client has deposited funds in the StorageMarketActor and it is waiting
+	// to see the funds appear in its balance
+	StorageDealClientFunding
+
+	// StorageDealPublish means the deal is ready to be published on chain
+	StorageDealPublish
+
+	// StorageDealPublishing means the deal has been published but we are waiting for it to appear on chain
+	StorageDealPublishing
+
+	// StorageDealError means the deal has failed due to an error, and no further updates will occur
+	StorageDealError
+
+	// StorageDealProviderTransferAwaitRestart means the provider has restarted while data
+	// was being transferred from client to provider, and will wait for the client to
+	// resume the transfer
+	StorageDealProviderTransferAwaitRestart
+
+	// StorageDealClientTransferRestart means a storage deal data transfer from client to provider will be restarted
+	// by the client
+	StorageDealClientTransferRestart
+
+	// StorageDealAwaitingPreCommit means a deal is ready and must be pre-committed
+	StorageDealAwaitingPreCommit
+```
+
+This list comes from the [Lotus project GitHub repository](https://github.com/filecoin-project/go-fil-markets/blob/master/storagemarket/dealstatus.go).
 
 ## Next steps
 
