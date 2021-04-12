@@ -7,13 +7,13 @@ description: The process of storing and retrieving data using the Filecoin netwo
 
 The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial.
 
-The process is split into three main parts: the set-up, storing your data, and retrieving your data. Each section has several sub-processes that we need to follow.
+The process is split into three main parts: the set-up, storing your data and retrieving your data. Each section has several sub-processes that we need to follow.
 
 ![](./images/end-to-end-process.png)
 
 | Section | Sub-tasks |
 | --- | --- |
-| Set up | 1. Get access to a Lotus full-node.<br> 2. Start a Lotus lite-node on your local computer.<br> 3. Get a FIL address.<br> 4. Sign up to Filecoin+. |
+| Set up | 1. Get access to a Lotus full-node.<br> 2. Start a Lotus lite-node on your local computer.<br> 3. Get a FIL address.<br> 4. Sign up for Filecoin Plus. |
 | Store data | 1. Package your data.<br> 2. Import your data into Lotus.<br> 3. Find a miner through the MinerX program.<br> 4. Create a storage deal.<br> 5. Wait for the deal to complete. |
 | Retrieve data | 1. Create a retrieval deal.<br> 2. Download your data.|
 
@@ -38,7 +38,7 @@ This tutorial contains some words and phrases that you might not be familiar wit
 
 ## Take notes
 
-There are a few things to remember through-out this tutorial such as Miner IDs and addresses. There is a table at the end of each section showing the information you should record:
+There are a few things to remember throughout this tutorial, such as Miner IDs and addresses. There is a table at the end of each section showing the information you should record:
 
 | Variable | Description | Example |
 | --- | --- | --- |

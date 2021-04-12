@@ -1,11 +1,11 @@
 ---
 title: Store and retrieve
-description: Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set-up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+. 
+description: Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+. 
 ---
 
 # Set up
 
-Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set-up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+. 
+Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+. 
 
 ![](./images/set-up-process.png)
 
@@ -15,27 +15,27 @@ As you're going through this section, make a note of the following variables:
 
 | Variable | Description | Example |
 | --- | --- | --- |
-| Your Filecoin address | The public part of your Filecoin address. This is what other users can use to send your FIL. | `f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi` |
+| Your Filecoin address | The public part of your Filecoin address. This address is what other users can use to send your FIL. | `f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi` |
 
 ## Get a full-node 
 
-A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are fairly high, and might be out of reach for most end-user laptops and PCs. 
+A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are relatively high and might be out of reach for most end-user laptops and PCs. 
 
-Normally we'd have to _spin up_ a full-node, but for this tutorial we're going use a Lotus full-node provided by Protocol Labs. This node, called `api.chain.love` is only for practice sessions like this tutorial, and should not be relied upon for any production or development purposes.
+Usually, we'd have to _spin up_ a full-node, but we're going to use a Lotus full-node provided by Protocol Labs for this tutorial. This node, called `api.chain.love`, is only for practice sessions like this tutorial and should not be relied upon for any production or development purposes.
 
 :::tip
-If you're already got a full-node that you'd prefer to use, feel free to use that instead! Just replace `api.chain.love` with the IP address of your full-node throughout this tutorial.
+If you've got a full-node that you'd prefer to use, feel free to use that instead! Just replace `api.chain.love` with your full-node IP address throughout this tutorial.
 :::
 
 ## Install a lite-node
 
-A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to miners, but any processes that need data from the blockchain must come from a full-node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
+A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to miners, but any processes that need data from the blockchain must come from a full node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
 
 ![](./images/lite-nodes-process-diagram.png)
 
 ### Project dependencies 
 
-To install a Lotus lite-node on your computer you must have the tools required to _build_ a Lotus binary from the GitHub repository.
+To install a Lotus lite-node on your computer, you must have the tools required to _build_ a Lotus binary from the GitHub repository.
 
 | [MacOS](#macos) | [Ubuntu](#ubuntu) |
 | --- | --- |
@@ -112,7 +112,7 @@ This section covers how to install a Lotus lite-node on MacOS. If you are runnin
     sudo make install
     ```
 
-    If you run into errors here, it may be because some dependencies aren't installed properly. Check out the [Troubleshooting](troubleshooting) section, or see the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) for more help.
+    If you run into errors here, it may be because your computer did not install some dependencies properly. Check out the [Troubleshooting](troubleshooting) section, or see the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) for more help.
 
 1. You should now have the `lotus` executable ready to run on your computer. 
 
@@ -216,13 +216,13 @@ Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol La
     > ...
     ```
 
-    The Lotus daemon will continue to run. Further commands must be ran from a seperate terminal window.
+    The Lotus daemon will continue to run. Further commands must be run from a separate terminal window.
 
 ## Get a FIL address
 
-Filecoin addresses are similar to a regular bank account numbers. Other users can use your address to send you FIL, and you can use your address to pay miners for storing and retrieving your data. 
+Filecoin addresses are similar to regular bank account numbers. Other users can use your address to send you FIL, and you can use your address to pay miners for storing and retrieving your data. 
 
-There are two parts to a Filecoin address: the public address, and the private key. You can freely share your public address with anyone, but you should never share your private key. We're not actually going to look at our private key in this tutorial, but it's important to understand the difference between your public address and your private key.
+There are two parts to a Filecoin address: the public address and the private key. You can freely share your public address with anyone, but you should never share your private key. We're not actually going to look at our private key in this tutorial, but it's important to understand the difference between your public address and your private key.
 
 1. Open a new terminal window and create an address using the `wallet new` command:
 
@@ -234,11 +234,11 @@ There are two parts to a Filecoin address: the public address, and the private k
 
     Lotus outputs your public address. Public addresses always start with `f1`.
 
-1. Make a note of this address. We'll use it in an uncoming section.
+1. Make a note of this address. We'll use it in an upcoming section.
 
 ## Sign up to Filecoin Plus
 
-Normally, when you want to store something on the Filecoin network, you'd have to pay miners with FIL. However, Protocol Labs created the Filecoin Plus program to help developers test out the network without having to pay! By signing up to Filecoin Plus with your GitHub account you can store up to 32GB on the Filecoin network per month for free!
+Normally, when you want to store something on the Filecoin network, you'd have to pay miners with FIL. However, Protocol Labs created the Filecoin Plus program to help developers test out the network without having to pay! By signing up to Filecoin Plus with your GitHub account, you can store up to 32GB on the Filecoin network per month for free!
 
 :::tip
 You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with the team on Filecoin Slack](https://filecoin.io/slack/).
@@ -253,3 +253,4 @@ You need a GitHub account that is at least 180 days old. If you don't have a Git
 ## Next steps
 
 Now that we've got all the set up out of the way, we can move onto [storing data with the Filecoin network →](./store-data) 
+
