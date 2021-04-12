@@ -9,6 +9,14 @@ Before you begin storing any data on the Filecoin network, you need to run throu
 
 ![](./images/set-up-process.png)
 
+## Things to note
+
+As you're going through this section, make a note of the following variables:
+
+| Variable | Description | Example |
+| --- | --- | --- |
+| Your Filecoin address | The public part of your Filecoin address. This is what other users can use to send your FIL. | `f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi` |
+
 ## Get a full-node 
 
 A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are fairly high, and might be out of reach for most end-user laptops and PCs. 
@@ -241,8 +249,6 @@ You need a GitHub account that is at least 180 days old. If you don't have a Git
 1. Under **Get verified**, click **Get Verified**.
 1. Click **Automatic Verification**.
 1. In the `Request` field, enter the address you got in the previous section.
-
-<!-- TODO: Get someone to follow this workflow and grab screenshots. --> 
 
 ## Next steps
 

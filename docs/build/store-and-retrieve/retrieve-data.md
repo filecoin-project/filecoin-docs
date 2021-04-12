@@ -38,11 +38,6 @@ After submitting this command, your Lotus lite-node will send the retrieval deal
 
 This can take some time depending on how congested the network is, and how much load this miner is under. You must keep the `lotus daemon` running. Once the request has been receieved and processed by the miner, your Lotus lite-node will start downloading the data to your computer.
 
-```shell
->
->
-```
-
 ## Next steps
 
 To finish off this tutorial [let's review everything you did →](./conclusion)

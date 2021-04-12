@@ -11,6 +11,16 @@ Get stuck into storing your data on the Filecoin network. This section covers pa
 Do not store personal data on the Filecoin network, even if it's encrypted. Access control is on the roadmap, but until then only store public and static data on the Filecoin network. 
 :::
 
+## Things to note
+
+As you're going through this section, make a note of the following variables: 
+
+| Variable | Description | Example |
+| --- | --- | --- |
+| Payload CID | The content identifer of the data that you want to store using Filecoin. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
+| Miner ID | The unique identifier for each miner. | `f01000`
+| Deal CID | The content identifer for a deal made with a miner. | `bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau` | 
+
 ## Prepare your data
 
 For the purposes of this tutorial, we're going to create a dummy 4GB file full of random data.
@@ -51,18 +61,20 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 
 Now that Lotus knows which file we want to use, we can create a deal with a Filecoin miner to store our data!
 
-## Find a miner that meets your needs
+## Find a miner 
 
-Before we can store data, we need to select a suitable miner. The Filecoin network allows data storage miners to compete with one another by offering different terms for pricing, acceptable data sizes, and other important deal parameters. 
+Before we can store data, we need to select a suitable miner. The Filecoin network allows data storage miners to compete with one another by offering different terms for pricing, acceptable data sizes, and other important deal parameters. You should also take the location of the miner into consideration; the closer the miner is to you then the faster the storage and retrieval process will be. 
 
 There are a few resources available for finding dependable miners that will accept your data. 
 
-### Find a miner through the MinerX program
+### MinerX 
+
+<!-- TODO: Explain what MinerX is. -->
 
 1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
 1. Using the table, find a miner that suits your needs. For the sake of this tutorial, look for a miner that is:
-    a. Close to you.
     a. Offering verified-data deals for 0 FIL.
+    a. Close to you.
  
 1. Once you have found a suitable miner, copy their `miner_id` from the **Miner ID** column:
 
@@ -72,9 +84,9 @@ There are a few resources available for finding dependable miners that will acce
 
     ![](./images/miner-with-multiple-miner-ids.png)
 
-1. Write down ID of the miner you want to use. We'll be referring to it in the next section.
+1. Write down the ID of the miner you want to use. We'll be referring to it in the next section.
 
-### Use a miner reputation system
+### Miner reputation systems 
 
 The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept.
 
@@ -113,7 +125,7 @@ To complete this section you need the data CID you received after running `lotus
 1. Enter the number of days you want to keep this file on Filecoin for. The minimum is 180 days:
 
     ```shell
-    > Deal duration (days): 365 
+    > Deal duration (days): 180 
     ``` 
 
 1. Tell Lotus whether or not this is a Filecoin+ deal. Since we signed up to Filecoin+ and added some DataCap to our wallet in an earlier step, we'll select `yes` here:
@@ -125,20 +137,16 @@ To complete this section you need the data CID you received after running `lotus
 1. Enter the miner ID from the previous section: 
 
     ```shell
-    > Miner Addresses (f0.. f0..), none to find: f3141592654 
+    > Miner Addresses (f0.. f0..), none to find: f01000 
     ```
 
-    <!-- TODO: find out what happens after you throw in a MINER_ID. -->
-
-1. Enter `0` when asked how much FIL we are willing to spend for this storage deal:
+1. Enter `0` if you are asked how much FIL we are willing to spend for this storage deal:
 
     ```shell
-    > Maximum budget (FIL): 0.5
+    > Maximum budget (FIL): 0
     ```
 
-    <!-- TODO: find out what happens after you throw in a MINER_ID. -->
-
-    Normally, we would enter a value of around `0.5 FIL` here. However, since we picked a miner that is accepting 0 FIL deals for verified storage deals, and we are a verified client, then we don't actually need to spend any FIL here!
+    Since we picked a miner that is accepting 0 FIL deals for verified storage deals, and we are a _verified client_, then we don't actually need to spend any FIL here!
 
 1. Specify how many miners you want your file to be replicated over. The default it one 
 
@@ -165,8 +173,10 @@ To complete this section you need the data CID you received after running `lotus
 
     ```shell
     .. executing
-    Deal (f023978) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
+    Deal (f01000) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     ```
+
+1. Take a note of the deal CID `bafyre...`.
 
 ## Check the deal status 
 
@@ -177,7 +187,6 @@ We need to wait for the miner to accept our deal and _seal_ the data. This proce
     ```shell
     lotus client list-deals
     ```
-    <!-- TODO: show what happens when you list the deals. -->
 
     If you cannot see your deal in the list, the deal may have failed. Use `--show-failed` to see failed deals:
 
@@ -185,11 +194,9 @@ We need to wait for the miner to accept our deal and _seal_ the data. This proce
     lotus client list-deals --show-failed
     ```
 
-    <!-- TODO: show what happens when you list failed the deals. -->
-
 ### Deal states
 
-Because of the complicated nature of Lotus and the Filecoin network, deals can be in one of many different states:
+Because of the complex nature of Lotus and the Filecoin network, deals can be in one of many different states:
 
 | State | Description |
 | --- | --- |
