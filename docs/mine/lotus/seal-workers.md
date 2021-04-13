@@ -14,7 +14,7 @@ While the Lotus Miner runs each of the sealing phases itself by default, you can
 
 ## Resource allocation in Lotus Workers
 
-Lotus allocates tasks to Lotus Workers based on available resources and resources a specific job is estimated to use. The resources taken into account are:
+Each **Lotus Worker** can run multiple tasks, depending on your hardware resources. Each slot is called a _window_. The final number is determined by the number of available cores and the requirements of the sealing phase allocated to it. That means that a single worker on a 8-core CPU with a single GPU will run at most:
 
 - Number of CPU threads the task will use.
 - Minimum amount of RAM required for good performance.
