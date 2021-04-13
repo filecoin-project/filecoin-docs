@@ -99,7 +99,6 @@ module.exports = {
               title: 'LOTUS',
               path: '/store/lotus/',
               sidebarDepth: 2,
-              collapsable: false,
               children: [
                 ['lotus/store-data', 'Store data'],
                 ['lotus/very-large-files', 'Very large files'],
@@ -107,7 +106,8 @@ module.exports = {
                 ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
                 ['lotus/store-troubleshooting', 'Troubleshooting']
               ]
-            }
+            },
+            'filecoin-plus',
           ],
 
           '/mine/': [
