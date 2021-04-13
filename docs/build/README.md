@@ -45,12 +45,11 @@ Hosted node providers take care of running Filecoin node software for you so tha
 
 The following documentation links can help you start building on Filecoin:
 
-| Name                                       | Description                                                                                                                                                                                                                                                                 |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Building on Lotus](lotus/README.md)       | Lotus nodes provide JSON-RPC API with JWT-token-based authorization.                                                                                                                                                                                                        |
-| [Powergate](powergate.md)                  | Powergate is a multitiered storage solution that stores data with IPFS and Filecoin.                                                                                                                                                                                        |
-| [Local devnet](local-devnet.md)            | Learn how to deploy a Filecoin network fully contained on your own computer.                                                                                                                                                                                                |
-| [Application examples](examples/README.md) | Create your own Filecoin powered applications following one of our examples: [Simple pinning service](examples/simple-pinning-service/overview.md), [Network inspector](examples/network-inspector/overview.md), [Meme marketplace](examples/meme-marketplace/overview.md). |
+| Name                                 | Description                                                                          |
+| ------------------------------------ | ------------------------------------------------------------------------------------ |
+| [Building on Lotus](lotus/README.md) | Lotus nodes provide JSON-RPC API with JWT-token-based authorization.                 |
+| [Powergate](powergate.md)            | Powergate is a multitiered storage solution that stores data with IPFS and Filecoin. |
+| [Local devnet](local-devnet.md)      | Learn how to deploy a Filecoin network fully contained on your own computer.         |
 
 ## Additional resources
 

@@ -76,7 +76,8 @@ module.exports = {
               sidebarDepth: 2,
               collapsable: false,
               children: [
-                ['lotus/installation', 'Install + Setup'],
+                ['lotus/running-in-the-cloud', 'Running in the Cloud'],
+                ['lotus/installation', 'Local Installation'],
                 ['lotus/switch-networks', 'Switch networks'],
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
@@ -98,7 +99,6 @@ module.exports = {
               title: 'LOTUS',
               path: '/store/lotus/',
               sidebarDepth: 2,
-              collapsable: false,
               children: [
                 ['lotus/store-data', 'Store data'],
                 ['lotus/very-large-files', 'Very large files'],
@@ -106,7 +106,8 @@ module.exports = {
                 ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
                 ['lotus/store-troubleshooting', 'Troubleshooting']
               ]
-            }
+            },
+            'filecoin-plus',
           ],
 
           '/mine/': [
@@ -157,6 +158,7 @@ module.exports = {
               sidebarDepth: 2,
               collapsable: true,
               children: [
+                ['lotus/lotus-lite', 'Lotus lite'],
                 ['lotus/enable-remote-api-access', 'Enable remote API access'],
                 ['lotus/api-tokens', 'API tokens'],
                 ['lotus/api-client-libraries', 'API client libraries'],
@@ -167,59 +169,7 @@ module.exports = {
             },
             'filecoin-pinning-services',
             'signing-libraries',
-            ['local-devnet', 'Local devnet'],
-            {
-              title: 'Example apps',
-              path: '/build/examples/',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: [
-                {
-                  title: 'Simple Pinning Service',
-                  path: '/build/examples/simple-pinning-service/overview/',
-                  collapsable: true,
-                  children: [
-                    'examples/simple-pinning-service/powergate-lotus-go-ipfs-interactions',
-                    'examples/simple-pinning-service/step-1-powergate-setup',
-                    'examples/simple-pinning-service/step-2-react-app-setup',
-                    'examples/simple-pinning-service/step-3-connecting-powergate-to-app',
-                    'examples/simple-pinning-service/step-4-explore-pinning-service-app',
-                    'examples/simple-pinning-service/step-5-shut-down-the-application',
-                    'examples/simple-pinning-service/summary'
-                  ]
-                },
-                {
-                  title: 'Network Inspector',
-                  path: '/build/examples/network-inspector/overview/',
-                  collapsable: true,
-                  children: [
-                    '/build/examples/network-inspector/lotus-and-go-ipfs-interactions',
-                    '/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs',
-                    '/build/examples/network-inspector/step-2-run-the-react-app',
-                    '/build/examples/network-inspector/step-3-set-up-the-lotus-and-go-ipfs-api-clients',
-                    '/build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app',
-                    '/build/examples/network-inspector/step-5-shut-down-the-application',
-                    '/build/examples/network-inspector/summary'
-                  ]
-                },
-                {
-                  title: 'Meme Marketplace',
-                  path: '/build/examples/meme-marketplace/overview/',
-                  collapsable: true,
-                  children: [
-                    '/build/examples/meme-marketplace/textile-hub-buckets-and-erc721',
-                    '/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup',
-                    '/build/examples/meme-marketplace/step-2-run-react-app',
-                    '/build/examples/meme-marketplace/step-3-run-hub-auth-server',
-                    '/build/examples/meme-marketplace/step-4-connecting-app-with-auth-server',
-                    '/build/examples/meme-marketplace/step-5-connecting-app-with-blockchain',
-                    '/build/examples/meme-marketplace/step-6-explore-app',
-                    '/build/examples/meme-marketplace/step-7-shut-down-the-application',
-                    '/build/examples/meme-marketplace/summary'
-                  ]
-                }
-              ]
-            }
+            ['local-devnet', 'Local devnet']
           ],
 
           '/reference/': [

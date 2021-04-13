@@ -1,6 +1,6 @@
 # Filecoin Docs
 
-**View conceptual documenation for the Filecoin project at [docs.filecoin.io](https://docs.filecoin.io/).** You may also be interested in Filecoin's [technical specifcation](https://filecoin-project.github.io/specs/) or the implementation details provided in the [lotus tutorial](https://lotu.sh).
+**View conceptual documentation for the Filecoin project at [docs.filecoin.io](https://docs.filecoin.io/).** You may also be interested in Filecoin's [technical specifcation](https://filecoin-project.github.io/specs/) or the implementation details provided in the [lotus tutorial](https://lotu.sh).
 
 This repo generates the new conceptual Filecoin documentation at [docs.filecoin.io](https://docs.filecoin.io/), building off of the work done in [VuePress](https://github.com/vuejs/vuepress) by the IPFS Docs team to create their [spiffy new IPFS docs site](https://docs-beta.ipfs.io/) (in beta).
 

@@ -5,9 +5,9 @@ description: Learn more about the relationship and different use-cases between I
 
 # IPFS and Filecoin
 
-Filecoin and IPFS are complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks, including data representation formats (IPLD) and network communication protocols (libp2p). While interacting with IPFS does not require using Filecoin, all Filecoin nodes _are_ IPFS nodes under the hood, and can connect to and fetch IPLD-formatted data from other IPFS nodes using libp2p. However, Filecoin nodes don't join or participate in the public IPFS DHT.
+Filecoin and IPFS are complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks, including data representation formats (IPLD) and network communication protocols (libp2p). While interacting with IPFS does not require using Filecoin, all Filecoin nodes _are_ IPFS nodes under the hood, and (with some manual configuration) can connect to and fetch IPLD-formatted data from other IPFS nodes using libp2p. However, Filecoin nodes don't join or participate in the public IPFS DHT.
 
-This page aims to explain the relationship between the IPFS and Filecoin projects and help users decide which option is best suited for their use-case.
+This page aims to explain the relationship between the IPFS and Filecoin projects and help users decide which approach is best suited for their use-case.
 
 ## Data storage incentives
 
@@ -50,5 +50,3 @@ Filecoin and IPFS are powered by the same technology at many levels:
 - [libp2p](https://libp2p.io/) provides peer-to-peer network capabilities, connection security and key discovery and data distribution features like the DHT and Pubsub.
 - [Multiformats](https://multiformats.io) define future-proof identifiers and data-types.
 - [Graphsync](https://github.com/ipfs/go-graphsync) and [Bitswap](https://github.com/ipfs/go-bitswap) enable fast and efficient IPLD data transfers between nodes.
-
-Interested in learning more? Check some of our [application examples](../build/examples/README.md).
