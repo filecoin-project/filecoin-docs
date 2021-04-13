@@ -14,7 +14,7 @@ Lotus daemons may be configured to act as network bootstrappers. Bootstrappers a
 contact for other lotus daemons to find peers.
 
 ::: tip
-Unless you are running a private test network, it is not usuaally necessary for to run a network bootstrapper node.
+Unless you are running a private test network, it is not usually necessary for you to run a network bootstrapper node.
 :::
 
 ### Configuring a Bootstrapper node
