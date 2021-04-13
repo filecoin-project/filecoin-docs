@@ -18,7 +18,7 @@ Each **Lotus Worker** can run multiple tasks, depending on your hardware resourc
 
 - Number of CPU threads the task will use.
 - Minimum amount of RAM required for good performance.
-- Maximum amount of memory required to run the task, where the system can swap out part of the memory to disk, and the performance won't be affected too much.
+- Maximum amount of RAM required to run the task, where the system can swap out part of the RAM to disk, and the performance won't be affected too much.
 - Whether the system can use a GPU.
 
 ### Task resource table
@@ -27,7 +27,7 @@ The default resource table lives in [resources.go](https://github.com/filecoin-p
 
 Default resource value table. Some of these values are _fairly_ conservative:
 
-| Sector size | Task Type  | Threads | Min RAM | Min Memory | GPU        |
+| Sector size | Task Type  | Threads | Min RAM | Min disk space| GPU        |
 |-------------|------------|---------|---------|------------|------------|
 |     32G     | AddPiece   | 1*      | 4G      | 4G         |            |
 |             | PreCommit1 | 1**     | 56G     | 64G        |            |
@@ -178,10 +178,10 @@ The above command will start the worker. Depending on the operations that you wa
 
 ```
    --addpiece                    enable addpiece (default: true)
-   --precommit1                  enable precommit1 (32G sectors: 1 core, 128GiB Memory) (default: true)
-   --unseal                      enable unsealing (32G sectors: 1 core, 128GiB Memory) (default: true)
-   --precommit2                  enable precommit2 (32G sectors: multiple cores, 96GiB Memory) (default: true)
-   --commit                      enable commit (32G sectors: multiple cores or GPUs, 128GiB Memory + 64GiB swap) (default: true)
+   --precommit1                  enable precommit1 (32G sectors: 1 core, 128GiB RAM) (default: true)
+   --unseal                      enable unsealing (32G sectors: 1 core, 128GiB RAM) (default: true)
+   --precommit2                  enable precommit2 (32G sectors: multiple cores, 96GiB RAM) (default: true)
+   --commit                      enable commit (32G sectors: multiple cores or GPUs, 128GiB RAM + 64GiB swap) (default: true)
 ```
 
 Once the worker is running, it should connect to the Lotus miner. You can verify this with:
@@ -213,7 +213,7 @@ Note that if you co-locate miner and worker(s), you do not need to open up the m
 
 In most cases, only one Lotus Worker per machine should be running since `lotus-worker` will try to use all available resources. Running multiple Lotus Workers in one operating system context will cause issues with resource allocation, which will cause the scheduler to allocate more work than there are available resources.
 
-The only case where running multiple workers per machine may be a good idea is when there are multiple GPUs available, as lotus currently only supports a single GPU - in that case, it's recommended to run workers in separate containers with non-overlapping resources (separate CPU cores, separate memory allocations, separate GPUs)
+The only case where running multiple workers per machine may be a good idea is when there are multiple GPUs available, as lotus currently only supports a single GPU - in that case, it's recommended to run workers in separate containers with non-overlapping resources (separate CPU cores, separate RAM allocations, separate GPUs)
 
 #### Separating Nvidia GPUs
 
