@@ -42,9 +42,9 @@ Clients are required to have an on-chain Filecoin address where DataCap can be r
 _Note: As of now, DataCap allocations are a single-use credit on a Filecoin address. If you receive an allocation and require more, you should make a new request with a new address that you have initialized like above. [FIP-0012](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0012.md) was recently accepted and, once implemented, will allow addresses to receive DataCap multiple times._
 
 Clients get DataCap by making a request to a Notary.
-Head over to the [Filecoin Plus Registry](https://plus.fil.org/), and proceed with **For Clients**
-Click **Get Verified**
-Click on **Automatic Verification**. This will take you to an automated Notary, which should be able to provide you with a small amount of DataCap to get you started. https://verify.glif.io/ is an example of such a Notary, which is currently giving 32GiB of DataCap once every 30 days to clients who authenticate themselves with a GitHub account greater than 180 days old.
+1. Head over to the [Filecoin Plus Registry](https://plus.fil.org/), and proceed with **For Clients**
+1. Click **Get Verified**
+1. Click on **Automatic Verification**. This will take you to an automated Notary, which should be able to provide you with a small amount of DataCap to get you started. https://verify.glif.io/ is an example of such a Notary, which is currently giving 32GiB of DataCap once every 30 days to clients who authenticate themselves with a GitHub account greater than 180 days old.
 
 For DataCap requirements greater than 32GiB - choose **General Verification** in Step 3 above instead. This will take you to the Notary Registry, where you can request DataCap to a specific Notary. Notaries may specialize in the types of requests they'll choose to support - it is recommended that you select a Notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under.
 
