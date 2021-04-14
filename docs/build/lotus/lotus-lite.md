@@ -27,6 +27,12 @@ To spin up a Lotus lite-node, you will need:
 
 If you have access to the full-node you're using, you need to make some minor modifications to its configuration.
 
+:::tip
+If you are using the Protocol Labs `api.chain.love` Lotus full-node, you do not need to complete this section. The Protocol Labs Lotus full-node has been configured to accept all incoming requests, so you don't need to create any API keys.
+
+If you are using a node-hosting service like [Glif](https://www.glif.io/) or [Infura](https://infura.io/), you may need to create an API key through the service website.
+:::
+
 1. On your full-node open `~/.lotus/config` and:
 
     a. Uncommend line 3.
