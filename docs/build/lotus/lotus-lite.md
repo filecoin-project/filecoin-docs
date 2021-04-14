@@ -27,6 +27,12 @@ To spin up a Lotus lite-node, you will need:
 
 If you have access to the full-node you're using, you need to make some minor modifications to its configuration.
 
+:::tip
+If you are using the Protocol Labs `api.chain.love` Lotus full-node, you do not need to complete this section. The Protocol Labs Lotus full-node has been configured to accept all incoming requests, so you don't need to create any API keys.
+
+If you are using a node-hosting service like [Glif](https://www.glif.io/) or [Infura](https://infura.io/), you may need to create an API key through the service website.
+:::
+
 1. On your full-node open `~/.lotus/config` and:
 
     a. Uncommend line 3.
@@ -35,7 +41,7 @@ If you have access to the full-node you're using, you need to make some minor mo
     ```toml
     ListenAddress = "/ip4/0.0.0.0/tcp/1234/http"
     ```
-    
+
     Save and exit the file.
 
 1. Create an API token for your lite-node to use:
@@ -45,27 +51,85 @@ If you have access to the full-node you're using, you need to make some minor mo
     lotus auth create-token --perm write
     ```
 
-    Which permissions you choose will depend on your use-case. Take a look at the [API tokens section to find out more →](./api-tokens/#obtaining-tokens)
+    Which permissions you choose will depend on your use case. Take a look at the [API tokens section to find out more →](./api-tokens/#obtaining-tokens)
 
 1. Send this API token to your lite-node or to whoever will be the administrator for the lite-node.
 1. If you have the `lotus daemon` running, stop it and start it again. This forces Lotus to open the API port we just set.
 
 Next up, you'll create the Lotus executable on your lite-node and running it in _lite_ mode!
 
-## Create the Lotus executable 
+## Create the executable 
 
 You need to create the Lotus executable to run your lite-node with. This process is the same as when creating a full-node.
 
-1. On your lite-node clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) and create the executable, but do not run anything yet:
+### AMD and Intel-based computers
+
+1. On the computer that you want to run the lite-node from, clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) 
 
     ```shell
     git clone https://github.com/filecoin-project/lotus
     cd lotus
+    ```
+
+1. Create the executable, but do not run anything yet:
+
+    ```shell
     make clean all
     sudo make install
     ```
 
-If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](../../get-started/lotus/installation/#software-dependencies) and double-check that you have all the dependencies installed, along with Golang and Rust.
+    If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](../../get-started/lotus/installation/#software-dependencies) and double-check that you have all the dependencies installed, along with Golang and Rust.
+
+1. Move onto [starting the lite-node](#start-the-lite-node).
+
+### M1-based Macs
+
+Because of the novel architecture of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
+
+1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
+
+    ```shell   
+    git clone https://github.com/filecoin-project/lotus
+    cd lotus
+    ```
+
+1. Pull-in the submodules:
+
+    ```shell
+    git submodule update --init --recursive
+    ```
+
+1. Create necessary environment variable to allow Lotus to run on ARM architecture:
+
+    ```shell
+    export GOARCH=arm64
+    export CGO_ENABLED=1
+    export LIBRARY_PATH=/opt/homebrew/lib
+    ```
+
+1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
+
+    ```shell
+    cd extern/filecoin-ffi
+    git fetch -a
+    git checkout m1-portable
+    ```
+
+1. Create the `filecoin-ffi` executables:
+
+    ```shell
+    make clean
+    make
+    ```
+
+1. Move back to the root Lotus directory and create the `lotus` daemon:
+
+    ```shell
+    cd ../../
+    make lotus
+    ```
+
+1. Move onto [starting the lite-node](#start-the-lite-node).
 
 ## Start the lite-node
 
@@ -94,7 +158,7 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
     > 100 FIL
     ```
 
-A lite-node is limited in what it can do and is designed to only perform message signing and transactional operations. Lite-nodes cannot seal data or query the chain directly. All chain requests go through the attached full-node. If, for whatever reason, the full-node goes offline, any lite-nodes connected to it will also go offline.
+A lite-node is limited in what it can do and is designed to only perform message signing and transactional operations. Lite-nodes cannot seal data or query the chain directly. All chain requests go through the attached full-node. If for whatever reason, the full-node goes offline, any lite-nodes connected to it will also go offline.
 
 ### Access and permissions 
 
@@ -104,7 +168,7 @@ Setting up a Lotus lite-node without using an [API token from a full-node](./api
 
 A Lotus lite-node can perform transaction-based functions like creating the transaction, proposing deals, signing messages, etc. They do not have any chain data themselves and rely on a full-node for chain data completely. Lotus lite-nodes are completely useless on their own.
 
-One use-case is a service that needs to sign multiple messages a minute, such as an exchange. In this case, the service could have multiple lite-nodes specifically to sign and deal with transactional computation, while a single full-node maintains the chain data.
+One use case is a service that needs to sign multiple messages a minute, such as an exchange. In this case, the service could have multiple lite-nodes specifically to sign and deal with transactional computation, while a single full-node maintains the chain data.
 
 Another scenario is an organization with a lot of data they want to store on Filecoin but no resources to run a full-node. They could create a Lotus lite-node to create deals with a full-node that they trust, and then once a miner has been found, the lite-node can transfer the data to the miner.
 
