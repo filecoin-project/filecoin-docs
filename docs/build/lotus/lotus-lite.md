@@ -51,7 +51,7 @@ If you are using a node-hosting service like [Glif](https://www.glif.io/) or [In
     lotus auth create-token --perm write
     ```
 
-    Which permissions you choose will depend on your use-case. Take a look at the [API tokens section to find out more →](./api-tokens/#obtaining-tokens)
+    Which permissions you choose will depend on your use case. Take a look at the [API tokens section to find out more →](./api-tokens/#obtaining-tokens)
 
 1. Send this API token to your lite-node or to whoever will be the administrator for the lite-node.
 1. If you have the `lotus daemon` running, stop it and start it again. This forces Lotus to open the API port we just set.
@@ -84,7 +84,7 @@ You need to create the Lotus executable to run your lite-node with. This process
 
 ### M1-based Macs
 
-Because of the novel architecutre of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
+Because of the novel architecture of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
 
 1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
 
@@ -158,7 +158,7 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
     > 100 FIL
     ```
 
-A lite-node is limited in what it can do and is designed to only perform message signing and transactional operations. Lite-nodes cannot seal data or query the chain directly. All chain requests go through the attached full-node. If, for whatever reason, the full-node goes offline, any lite-nodes connected to it will also go offline.
+A lite-node is limited in what it can do and is designed to only perform message signing and transactional operations. Lite-nodes cannot seal data or query the chain directly. All chain requests go through the attached full-node. If for whatever reason, the full-node goes offline, any lite-nodes connected to it will also go offline.
 
 ### Access and permissions 
 
@@ -168,7 +168,7 @@ Setting up a Lotus lite-node without using an [API token from a full-node](./api
 
 A Lotus lite-node can perform transaction-based functions like creating the transaction, proposing deals, signing messages, etc. They do not have any chain data themselves and rely on a full-node for chain data completely. Lotus lite-nodes are completely useless on their own.
 
-One use-case is a service that needs to sign multiple messages a minute, such as an exchange. In this case, the service could have multiple lite-nodes specifically to sign and deal with transactional computation, while a single full-node maintains the chain data.
+One use case is a service that needs to sign multiple messages a minute, such as an exchange. In this case, the service could have multiple lite-nodes specifically to sign and deal with transactional computation, while a single full-node maintains the chain data.
 
 Another scenario is an organization with a lot of data they want to store on Filecoin but no resources to run a full-node. They could create a Lotus lite-node to create deals with a full-node that they trust, and then once a miner has been found, the lite-node can transfer the data to the miner.
 
