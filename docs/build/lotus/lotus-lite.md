@@ -41,7 +41,7 @@ If you are using a node-hosting service like [Glif](https://www.glif.io/) or [In
     ```toml
     ListenAddress = "/ip4/0.0.0.0/tcp/1234/http"
     ```
-    
+
     Save and exit the file.
 
 1. Create an API token for your lite-node to use:
@@ -58,20 +58,78 @@ If you are using a node-hosting service like [Glif](https://www.glif.io/) or [In
 
 Next up, you'll create the Lotus executable on your lite-node and running it in _lite_ mode!
 
-## Create the Lotus executable 
+## Create the executable 
 
 You need to create the Lotus executable to run your lite-node with. This process is the same as when creating a full-node.
 
-1. On your lite-node clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) and create the executable, but do not run anything yet:
+### AMD and Intel-based computers
+
+1. On the computer that you want to run the lite-node from, clone the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) 
 
     ```shell
     git clone https://github.com/filecoin-project/lotus
     cd lotus
+    ```
+
+1. Create the executable, but do not run anything yet:
+
+    ```shell
     make clean all
     sudo make install
     ```
 
-If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](../../get-started/lotus/installation/#software-dependencies) and double-check that you have all the dependencies installed, along with Golang and Rust.
+    If you run into errors here, it may be because you don't have all the Lotus dependencies installed. Take a quick look at the [Lotus Getting Started guide](../../get-started/lotus/installation/#software-dependencies) and double-check that you have all the dependencies installed, along with Golang and Rust.
+
+1. Move onto [starting the lite-node](#start-the-lite-node).
+
+### M1-based Macs
+
+Because of the novel architecutre of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
+
+1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
+
+    ```shell   
+    git clone https://github.com/filecoin-project/lotus
+    cd lotus
+    ```
+
+1. Pull-in the submodules:
+
+    ```shell
+    git submodule update --init --recursive
+    ```
+
+1. Create necessary environment variable to allow Lotus to run on ARM architecture:
+
+    ```shell
+    export GOARCH=arm64
+    export CGO_ENABLED=1
+    export LIBRARY_PATH=/opt/homebrew/lib
+    ```
+
+1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
+
+    ```shell
+    cd extern/filecoin-ffi
+    git fetch -a
+    git checkout m1-portable
+    ```
+
+1. Create the `filecoin-ffi` executables:
+
+    ```shell
+    make clean
+    make
+    ```
+
+1. Move back to the root Lotus directory and create the `lotus` daemon:
+
+    ```shell
+    cd ../../
+    make lotus
+    ```
+
+1. Move onto [starting the lite-node](#start-the-lite-node).
 
 ## Start the lite-node
 
