@@ -107,7 +107,7 @@ jobs:
           echo "Delete old bot comments..."
           OLDCOMMENTSJSON=$(curl -H "Authorization: token $GHTOKEN"  -X GET https://api.github.com/repos/filecoin-project/filecoin-docs/issues/${{ github.event.pull_request.number }}/comments)
 
-          OLDCOMMENTS=$(echo $OLDCOMMENTSJSON | jq ".[] | select(.user.id == $BOT_GITHUB_USER_ID) | .id" --jsonargs)
+          OLDCOMMENTS=$(echo $OLDCOMMENTSJSON | jq ".[] | select(.user.id == $GITHUB_USER_ID) | .id" --jsonargs)
 
           for i in $OLDCOMMENTS; do curl -i -H "Authorization: token $GHTOKEN" -X DELETE https://api.github.com/repos/filecoin-project/filecoin-docs/issues/comments/$i; done
 
