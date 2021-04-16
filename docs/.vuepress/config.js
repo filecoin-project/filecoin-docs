@@ -354,6 +354,7 @@ module.exports = {
       }
     ],
     'vuepress-plugin-check-md',
+    'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
