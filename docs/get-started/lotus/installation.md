@@ -188,7 +188,7 @@ One example is that logs are redirected to files in `/var/log/lotus` by default 
 These instructions are specific to macOS. If you are installing Lotus on a Linux distribution, head over to the [Linux section](#linux).
 
 :::warning
-Due to CPU architecture limitations, M1-based Mac computers cannot run a Lotus full-node. Adding support is on the Lotus road-map. M1-based Mac computers can run a [Lotus lite-node](../../../build/lotus/lotus-lite).
+Due to CPU architecture limitations, M1-based Mac computers cannot run a Lotus full-node. Adding support is on the Lotus road-map. M1-based Mac computers can run a [Lotus lite-node](../../build/lotus/lotus-lite).
 :::
 
 ### XCode Command Line Tools
