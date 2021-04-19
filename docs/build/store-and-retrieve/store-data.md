@@ -51,7 +51,7 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
     lotus client import ~/4gb-filecoin-payload.bin 
     ```
 
-    Lotus creates a distributed acyclic graphs (DAG) based on the payload. This process takes a few minutes. Once's it's complete, Lotus will output the root CID of the payload.
+    Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete Lotus will output the root CID of the payload.
 
     ```shell
     > Import 3, Root bafykb...
@@ -90,11 +90,21 @@ There are a few resources available for finding dependable miners that will acce
 
 The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept.
 
-Using FilRep, you can see and compare important miner parameters and metrics, including location, storage power in the network, pricing, and overall success rate. The column selection widget lets you see even more details, including the minimum and maximum file sizes that a miner will accept:
+Using FilRep you can see and compare important miner parameters and metrics including location, storage power in the network, pricing, and overall success rate.
+
+Before starting a deal, use FilRep to double check your miner's minimum file size requirements.
+
+1. Go to [https://filrep.io](https://filrep.io) and click the settings toggle to display a list of all available miner details.
+1. Make sure that the "Min File Size" column is selected:
 
 ![](./images/filrep-select-columns.png)
 
-Storage users like yourself can use miner reputation systems alongside programs like MinerX to find the best miner for your needs. To see what FilRep has to say about a MinerX program member, just paste the **Miner ID** from the MinerX list into the search box at [filrep.io](https://filrep.io).
+Now you can search for the miner you found before, using the miner ID. 
+
+![](./images/filrep-search-min-file-size.png)
+
+If the minimum file size shown on FilRep is larger than our dataset (4 GiB after padding), you'll either need to select a different miner or add additional padding to your data to meet the minimum size requirement.
+
 
 ## Create a deal 
 
