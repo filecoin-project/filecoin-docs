@@ -1,11 +1,11 @@
 ---
 title: Retrieve data
-description: Learn how to get data out of the Filecoin network using Lotus. The final piece of this tutorial is downloading data from the Filecoin network. The process is pretty simple, and can be completed with just one command.
+description: Learn how to get data out of the Filecoin network using Lotus. The final piece of this tutorial is downloading data from the Filecoin network. This section covers creating a retrieval deal with a miner and downloading the data through your local Lotus lite-node. 
 ---
 
 # Retrieve data
 
-In the previous step you stored some data on the Filecoin network. It takes anywhere from 24 to 48 hours for a miner to _seal_ the data, so if you finished the previous step moment ago then your data likely isn't available for download just yet. Instead, we're going to grab some data that is already sealed and ready to download!
+In the previous step, you stored some data on the Filecoin network. It takes anywhere from 24 to 48 hours for a miner to _seal_ the data, so if you finished the previous step moment ago, then your data likely isn't available for download just yet. Instead, we're going to grab some data that is already sealed and ready to download!
 
 ## Send a retrieval request
 
@@ -36,16 +36,9 @@ After submitting this command, your Lotus lite-node will send the retrieval deal
 > ...
 ```
 
-This can take some time depending on how congested the network is at the time. You must keep the `lotus daemon` running.
-
-Once the request has been received and processed by the miner, your Lotus lite-node will start downloading the data to your computer.
-
-```shell
->
->
-```
+This can take some time depending on how congested the network is and how much load this miner is under. You must keep the `lotus daemon` running. Once the request has been received and processed by the miner, your Lotus lite-node will start downloading the data to your computer.
 
 ## Next steps
 
-To finish off this tutorial [let's review everything you did →](../conclusion)
+To finish off this tutorial [let's review everything you did →](./conclusion)
 

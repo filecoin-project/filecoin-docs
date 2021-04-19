@@ -1,63 +1,42 @@
 ---
 title: Store data
-description: Lorem ipsum. 
+description: Get stuck into storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a miner through the MinerX program, creating a storage deal, and then waiting for the deal to complete! 
 ---
 
 # Store data
 
-Now we can get started with _storing_ the stuff we want to archive on Filecoin. We first need to prepare it into a format that Lotus can manage.
+Get stuck into storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a miner through the MinerX program, creating a storage deal, and then waiting for the deal to complete! 
 
 :::danger
-Do not store personal data on the Filecoin network, even if it's encrypted. Access control is on the roadmap, but until then only store public and static data on the Filecoin network. 
+Do not store personal data on the Filecoin network, even if it's encrypted. Only store public and static data on the Filecoin network. Access control is on the project roadmap.
 :::
+
+## Things to note
+
+As you're going through this section, make a note of the following variables: 
+
+| Variable | Description | Example |
+| --- | --- | --- |
+| Payload CID | The content identifier of the data that you want to store using Filecoin. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
+| Miner ID | The unique identifier for each miner. | `f01000`
+| Deal CID | The content identifier for a deal made with a miner. | `bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau` | 
 
 ## Prepare your data
 
-For the purposes of this tutorial, we're going to store the [ISS_COORDS_2021-03-25 dataset](https://data.nasa.gov/Space-Science/ISS_COORDS_2021-03-25/qti9-kibp) from NASA on the Filecoin network. If you've got some other data you'd prefer to store on Filecoin, go ahead and use that!
-
-1. Download the `ISS_COORDS_2021-03-25` dataset:
-
-    ```shell
-    cd ~
-    curl -o ISS_COORDS_DATASET.tar https://ipfs.io/ipfs/QmWNi1ygVKBqbZ2E3RqRzQFbSmpzjpf3WTeQebakLJWZSu
-    ```
-
-1. Create a folder called `filecoin-payload-folder` to hold the payload.
-
-    ```shell
-    mkdir filecoin-payload-folder
-    ```
-
-1. Extract the NASA dataset into `filecoin-payload-folder`:
-
-    ```shell
-    tar -xvf ISS_COORDS_DATASET.tar -C filecoin-payload-folder
-    ```
+For this tutorial, we're going to create a dummy 4GB file full of random data.
 
 1. Create a block of random data to _pad_ the total size of our payload:
 
-    If you're on macOS run:
+    If you're on macOS, run:
 
     ```shell
-    dd if=/dev/urandom of=padded-4gb-file.bin bs=1m count=4096 
+    dd if=/dev/urandom of=4gb-filecoin-payload.bin bs=1m count=4096 
     ```
 
-    If you're on Linux run: 
+    If you're on Linux, run: 
 
     ```shell
-    dd if=/dev/urandom of=padded-4gb-file.bin bs=1M count=4096
-    ```
-
-1. Move `padded-4gb.file.bin` into the `filecoin-payload-folder`:
-
-    ```shell
-    mv padded-4b-file.bin filecoin-payload-folder
-    ```
-
-1. Pack everything into a `.tar` file:
-
-    ```shell
-    tar -cvf ~/filecoin-payload.tar ~/filecoin-payload-folder
+    dd if=/dev/urandom of=padded-4gb-filecoin-payload.bin bs=1M count=4096
     ```
 
 We now have our payload file ready to be stored using the Filecoin network.
@@ -69,7 +48,7 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 1. Import the payload into the `lotus daemon` using the `import` command: 
 
     ```shell
-    lotus client import ~/filecoin-payload.tar 
+    lotus client import ~/4gb-filecoin-payload.bin 
     ```
 
     Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete Lotus will output the root CID of the payload.
@@ -82,18 +61,20 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 
 Now that Lotus knows which file we want to use, we can create a deal with a Filecoin miner to store our data!
 
-## Find a miner that meets your needs
+## Find a miner 
 
-Before we can store data, we need to select a suitable miner. The Filecoin network allows data storage miners to compete with one another by offering different terms for pricing, acceptable data sizes, and other important deal parameters. 
+Before we can store data, we need to select a suitable miner. The Filecoin network allows data storage miners to compete by offering different terms for pricing, acceptable data sizes, and other important deal parameters. You should also consider the miner's location; the closer the miner is to you, the faster the storage and retrieval process will be. 
 
 There are a few resources available for finding dependable miners that will accept your data. 
 
-### Find a miner through the MinerX program
+### MinerX 
+
+<!-- TODO: Explain what MinerX is. -->
 
 1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
 1. Using the table, find a miner that suits your needs. For the sake of this tutorial, look for a miner that is:
-    a. Close to you.
     a. Offering verified-data deals for 0 FIL.
+    a. Close to you.
  
 1. Once you have found a suitable miner, copy their `miner_id` from the **Miner ID** column:
 
@@ -103,9 +84,9 @@ There are a few resources available for finding dependable miners that will acce
 
     ![](./images/miner-with-multiple-miner-ids.png)
 
-1. Write down ID of the miner you want to use. We'll be referring to it in the next section.
+1. Write down the ID of the miner you want to use. We'll be referring to it in the next section.
 
-### Use a miner reputation system
+### Miner reputation systems 
 
 The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept.
 
@@ -122,12 +103,12 @@ Now you can search for the miner you found before, using the miner ID.
 
 ![](./images/filrep-search-min-file-size.png)
 
-If the minimum file size shown on FilRep is larger than our dataset (4 GiB after padding),
-you'll either need to select a different miner or add additional padding to your data to meet the minimum size requirement.
+If the minimum file size shown on FilRep is larger than our dataset (4 GiB after padding), you'll either need to select a different miner or add additional padding to your data to meet the minimum size requirement.
+
 
 ## Create a deal 
 
-To complete this section you need the data CID you received after running `lotus client import` and the ID of a miner you want to use.
+To complete this section, you need the data CID you received after running `lotus client import` and the ID of a miner you want to use.
 
 1. Start the interactive deal process:
 
@@ -151,10 +132,10 @@ To complete this section you need the data CID you received after running `lotus
 
     The duration of this process depends on the size of your file and the specification of your Lotus node. Lotus took around 25 minutes to build the `.car` file of a ~7.5GB file with an 8-core CPU and 16GB RAM.
 
-1. Enter the number of days you want to keep this file on Filecoin for. The minimum is 180 days:
+1. Enter the number of days you want to keep this file on Filecoin. The minimum is 180 days:
 
     ```shell
-    > Deal duration (days): 365 
+    > Deal duration (days): 180 
     ``` 
 
 1. Tell Lotus whether or not this is a Filecoin+ deal. Since we signed up to Filecoin+ and added some DataCap to our wallet in an earlier step, we'll select `yes` here:
@@ -166,22 +147,18 @@ To complete this section you need the data CID you received after running `lotus
 1. Enter the miner ID from the previous section: 
 
     ```shell
-    > Miner Addresses (f0.. f0..), none to find: f3141592654 
+    > Miner Addresses (f0.. f0..), none to find: f01000 
     ```
 
-    <!-- TODO: find out what happens after you throw in a MINER_ID. -->
-
-1. Enter `0` when asked how much FIL we are willing to spend for this storage deal:
+1. Enter `0` if you are asked how much FIL we are willing to spend for this storage deal:
 
     ```shell
-    > Maximum budget (FIL): 0.5
+    > Maximum budget (FIL): 0
     ```
 
-    <!-- TODO: find out what happens after you throw in a MINER_ID. -->
+    Since we picked a miner accepting 0 FIL deals for verified storage deals, and we are a _verified client_, we don't need to spend any FIL here!
 
-    Normally, we would enter a value of around `0.5 FIL` here. However, since we picked a miner that is accepting 0 FIL deals for verified storage deals, and we are a verified client, then we don't actually need to spend any FIL here!
-
-1. Specify how many miners you want your file to be replicated over. The default it one 
+1. Specify how many miners you want your file to be replicated over. The default is one 
 
     ```shell
     Deals to make (1): 1
@@ -206,10 +183,12 @@ To complete this section you need the data CID you received after running `lotus
 
     ```shell
     .. executing
-    Deal (f023978) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
+    Deal (f01000) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     ```
 
-## Wait for the deal to complete
+1. Take a note of the deal CID `bafyre...`.
+
+## Check the deal status 
 
 We need to wait for the miner to accept our deal and _seal_ the data. This process can take up to 24 hours to complete, depending on how much data we asked the miner to store.
 
@@ -218,16 +197,53 @@ We need to wait for the miner to accept our deal and _seal_ the data. This proce
     ```shell
     lotus client list-deals
     ```
-    <!-- TODO: show what happens when you list the deals. -->
 
-    If you cannot see your deal in the list, the deal may have failed. Use `--list-failed` to see failed deals:
+    If you cannot see your deal in the list, the deal may have failed. Use `--show-failed` to see failed deals:
 
     ```shell
-    lotus client list-deals --list-failed
+    lotus client list-deals --show-failed
     ```
 
-    <!-- TODO: show what happens when you list failed the deals. -->
+### Deal states
+
+Because of the complex nature of Lotus and the Filecoin network, deals can be in one of many different states:
+
+| State | Description |
+| --- | --- |
+| StorageDealUnknown | The current status of a deal is undefined or unknown. This could be because your full-node is out of sync. |
+| StorageDealProposalNotFound | Your full-node cannot find the deal you are looking for. This could be because it doesn't exist, or your full-node is out of sync. |
+| StorageDealProposalRejected | The miner, has chosen not to accept this deal. The miner may have provided a reason alongside this status message, but not always. |
+| StorageDealProposalAccepted | The miner intends to accept a storage deal proposal; however, the miner has not made any commitment to do so at this point. |
+| StorageDealStaged | The deal has been published, and data is ready to be put into a sector. At this point, the miner has fully committed to storing your data. |
+| StorageDealSealing | The miner, is sealing data into a sector. The larger your data payload, the longer this will take. |
+| StorageDealFinalizing | All the data is within the sector, and the miner is performing the final checks to make sure that all the data is correct. |
+| StorageDealActive | The data is in a sealed sector, and the miner can provide the data back to you. |
+| StorageDealExpired | A deal has passed its final epoch. The miner could still have the data available but is under no obligation to provide it to anyone. |
+| StorageDealSlashed | The data was in a sector, and the miner got slashed for failing to prove that the data was available. |
+| StorageDealRejecting | The miner has rejected the deal. This comes immediately before StorageDealProposalRejected. |
+| StorageDealFailing | Something has gone wrong in a deal. Once data is cleaned up, the deal will finalize. |
+| StorageDealFundsReserved | Your FIL has been deposited into escrow and is ready to be used to pay for the deal. |
+| StorageDealCheckForAcceptance | The client is waiting for a miner to seal and publish a deal. |
+| StorageDealValidating | The miner is validating that the deal parameters are good for a proposal. |
+| StorageDealAcceptWait | The miner is running custom decision logic to decide whether or not to accept the deal. The deal will have this status until the custom logic comes to a decision. |
+| StorageDealStartDataTransfer | The miner is ready to accept data from the client Lotus node. |
+| StorageDealTransferring | data is being transferred from the client Lotus node to the miner. |
+| StorageDealWaitingForData | Either a manual transfer is occurring, or the miner has not received a data-transfer request from the client. |
+| StorageDealVerifyData | All the data has been transferred, and the miner is now attempting to verify it against the PieceCID. |
+| StorageDealReserveProviderFunds | The miner is checking that it has enough FIL for the deal. |
+| StorageDealReserveClientFunds | The client is checking that it has enough FIL for the deal.|
+| StorageDealProviderFunding | The miner has deposited funds into StorageMarketActor and is waiting for the funds to appear. |
+| StorageDealClientFunding | The client has deposited funds into the StorageMarketActor and is waiting for the funds to appear. |
+| StorageDealPublish | The deal is ready to be published on-chain. |
+| StorageDealPublishing | The deal has been published but is yet to appear on-chain. |
+| StorageDealError | There has been an unforeseen error. No further updates will occur. |
+| StorageDealProviderTransferAwaitRestart | The miner restarted while data was being transferred from the client to the miner. Once the miner is back online, it will wait for the client to resume the transfer. |
+| StorageDealClientTransferRestart | A storage deal data transfer from a client to a miner has restarted after a pause, likely caused by StorageDealProviderTransferAwaitRestart. |
+| StorageDealAwaitingPreCommit | A deal is ready and must be pre-committed. |
+
+This list comes from the [Lotus project GitHub repository](https://github.com/filecoin-project/go-fil-markets/blob/master/storagemarket/dealstatus.go).
 
 ## Next steps
 
-Now that you've added some data onto the Filecoin network [we can move into retrieving data →](../retrieve-data)
+Now that you've added some data onto the Filecoin network [we can move into retrieving data →](./retrieve-data)
+

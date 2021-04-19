@@ -8,13 +8,19 @@ breadcrumb: 'Install and setup'
 
 {{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
 
+## Running in the cloud
+
+As an alternative to running locally, you can also run Lotus on a cloud provider. The easiest and cheapest path is to use [the one-click application in the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2). In addition to being a one-click deployment, you will receive a $100 credit with DigitalOcean for using the provided referral link.
+
+Other options, including Amazon Web Services, are covered in [Running in the cloud](running-in-the-cloud.md).
+
 ## Minimal requirements
 
 To run a Lotus node, your computer must have:
 
 - macOS or Linux installed. Windows is not yet supported.
 - 8-core CPU and 32 GiB RAM. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake) will significantly speed things up.
-- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 12 GiB per week. The chain can be also [synced from trusted state snapshots and compacted](chain.md).
+- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 38 GiB per day. The chain can be also [synced from trusted state snapshots and compacted](chain.md).
 
 :::warning
 These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
@@ -180,6 +186,10 @@ One example is that logs are redirected to files in `/var/log/lotus` by default 
 ## macOS
 
 These instructions are specific to macOS. If you are installing Lotus on a Linux distribution, head over to the [Linux section](#linux).
+
+:::warning
+Due to CPU architecture limitations, M1-based Mac computers cannot run a Lotus full-node. Adding support is on the Lotus road-map. M1-based Mac computers can run a [Lotus lite-node](../../../build/lotus/lotus-lite).
+:::
 
 ### XCode Command Line Tools
 
