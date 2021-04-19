@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   pull_request:
     branches: [ master ]
@@ -50,7 +50,7 @@ jobs:
           - Image optimization came back clean!"
           else
             # Uncommitted changes
-            git remote add fdocs https://${GHTOKEN}@github.com/filecoin-project/filecoin-docs.git > /dev/null 2>&1
+            git remote add fdocs https://${GH_TOKEN}@github.com/filecoin-project/filecoin-docs.git > /dev/null 2>&1
             git fetch fdocs
             git checkout ${{ github.event.pull_request.head.ref }}
             git add .
@@ -105,18 +105,17 @@ jobs:
 
           : '
           echo "Delete old bot comments..."
-          OLDCOMMENTSJSON=$(curl -H "Authorization: token $GHTOKEN"  -X GET https://api.github.com/repos/filecoin-project/filecoin-docs/issues/${{ github.event.pull_request.number }}/comments)
+          OLDCOMMENTSJSON=$(curl -H "Authorization: token $GH_TOKEN"  -X GET https://api.github.com/repos/filecoin-project/filecoin-docs/issues/${{ github.event.pull_request.number }}/comments)
 
-          OLDCOMMENTS=$(echo $OLDCOMMENTSJSON | jq ".[] | select(.user.id == $GITHUB_USER_ID) | .id" --jsonargs)
+          OLDCOMMENTS=$(echo $OLDCOMMENTSJSON | jq ".[] | select(.user.id == $GH_USER_ID) | .id" --jsonargs)
 
-          for i in $OLDCOMMENTS; do curl -i -H "Authorization: token $GHTOKEN" -X DELETE https://api.github.com/repos/filecoin-project/filecoin-docs/issues/comments/$i; done
+          for i in $OLDCOMMENTS; do curl -i -H "Authorization: token $GH_TOKEN" -X DELETE https://api.github.com/repos/filecoin-project/filecoin-docs/issues/comments/$i; done
 
           echo "Post the new bot comment!"
           JSONIFIED_COMMENT="$( jq -nc --arg str "$COMMENT" '{"body": $str}' )"
           echo -e ">> Sending results in a comment on the Github pull request #${{ github.event.pull_request.number }}:"
-          curl -i -H "Authorization: token $GHTOKEN" \
+          curl -i -H "Authorization: token $GH_TOKEN" \
               -H "Content-Type: application/json" \
               -X POST -d "$JSONIFIED_COMMENT" \
               https://api.github.com/repos/filecoin-project/filecoin-docs/issues/${{ github.event.pull_request.head.ref }}/comments
           '
-
