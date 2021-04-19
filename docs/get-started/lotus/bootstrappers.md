@@ -31,14 +31,13 @@ the following configuration. This configuration will setup the node to act as a 
     ConnMgrHigh = 500
     ConnMgrGrace = "5m0s"
   [Pubsub]
-    IPColocationWhitelist = ["x.x.x.x/x"]
     Bootstrapper = true               # This line is required at time of writing to act as Pubsub Bootstrapper
 
 ```
 
 ### Starting a Bootstrapper node
 
-Start the lotus daemon with the bootstrapper profile. `--profile=bootstraper` overrides configuration defaults
+Start the lotus daemon with the bootstrapper profile. `--profile=bootstrapper` overrides configuration defaults
 to enable bootstrapper mode for libp2p and pubsub subsystems.
 
 ```bash
