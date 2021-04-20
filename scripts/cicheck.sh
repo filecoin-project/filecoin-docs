@@ -14,7 +14,7 @@ fi
 
 # Image optimization
 echo "Compressing PNGs..."
-PNGS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .png)`
+PNGS_CHANGED=`(echo "$CHANGED_FILES" | grep .png)`
 if [ -z "$PNGS_CHANGED" ]; then
     echo "No changed PNGs"
 else
@@ -24,7 +24,7 @@ else
 fi
 
 echo "Compressing JPGs..."
-JPGS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .jpg)`
+JPGS_CHANGED=`(echo "$CHANGED_FILES" | grep .jpg)`
 if [ -z "$JPGS_CHANGED" ]; then
     echo "No changed JPGs"
 else
@@ -34,7 +34,7 @@ else
 fi
 
 echo "Compressing GIFs..."
-GIFS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .gif)`
+GIFS_CHANGED=`(echo "$CHANGED_FILES" | grep .gif)`
 if [ -z "$GIFS_CHANGED" ]; then
     echo "No changed GIFs"
 else
@@ -80,7 +80,7 @@ fi
 
 if [[ $DO_PAGE_CHECKS -eq 1 ]]; then
   echo "Run the language checker..."
-  MDS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .md)`
+  MDS_CHANGED=`(echo "$CHANGED_FILES" | grep .md)`
   if [ -z "$MDS_CHANGED" ]; then
     COMMENT="$COMMENT
 - No markdown files were changed, so no page checks were run!"
