@@ -15,6 +15,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # No shallow clone, we need all history!
       - uses: actions/setup-python@v2.2.2
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
