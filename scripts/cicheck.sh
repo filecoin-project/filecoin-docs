@@ -80,7 +80,7 @@ fi
 
 if [[ $DO_PAGE_CHECKS -eq 1 ]]; then
   echo "Run the language checker..."
-  MDS_CHANGED=$(git diff --name-only $CHANGED_FILES | grep .md)
+  MDS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .md)`
   if [ -z "$MDS_CHANGED" ]; then
     COMMENT="$COMMENT
 - No markdown files were changed, so no page checks were run!"
