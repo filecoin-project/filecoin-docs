@@ -37,5 +37,5 @@ jobs:
           FIRST_COMMIT: ${{ github.event.before }}
           LAST_COMMIT: ${{ github.event.after }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: sh ${{github.workspace}}/scripts/cicheck.sh
+        run: bash ${{github.workspace}}/scripts/cicheck.sh
           
