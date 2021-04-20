@@ -7,7 +7,7 @@ description: Before you begin storing any data on the Filecoin network, you need
 
 Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+. 
 
-![](./images/set-up-process.png)
+![A flowchart showing to steps within this set up process.](./images/set-up-process.png)
 
 ## Things to note
 
@@ -31,7 +31,7 @@ If you've got a full-node that you'd prefer to use, feel free to use that instea
 
 A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to miners, but any processes that need data from the blockchain must come from a full node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
 
-![](./images/lite-nodes-process-diagram.png)
+![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](./images/lite-nodes-process-diagram.png)
 
 ### Project dependencies 
 
@@ -236,9 +236,25 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 1. Make a note of this address. We'll use it in an upcoming section.
 
-## Sign up to Filecoin Plus
+## Filecoin Plus
 
-Normally, when you want to store something on the Filecoin network, you'd have to pay miners with FIL. However, Protocol Labs created the Filecoin Plus program to help developers test out the network without having to pay! By signing up to Filecoin Plus with your GitHub account, you can store up to 32GB on the Filecoin network per month for free!
+Normally, when you want to store something on the Filecoin network, you have to pay miners with FIL. However, Protocol Labs created the Filecoin Plus program to help developers test out the network without having to pay! By signing up to Filecoin Plus with your GitHub account, you can store up to 32GB on the Filecoin network per month for free!
+
+### How it works 
+
+Miners get paid for storing data; the more data they store, the more they get paid. 
+
+![](./images/miner-paid-without-data-cap.svg)
+
+However, there's no way to check whether the data they are storing is useful or not. To get around this, and to incentivse miners to store _real_ data from _real_ users, the Filecoin team created _Data Cap_ to give to users. Think of Data Cap as a set of tickets. When you store submit your data with a Data Cap ticket to a miner, that miner will get paid 10 times what they normally would from the Filecoin network.
+
+![](./images/miner-paid-with-data-cap.svg)
+
+This is an incredibly simplifed overview of what Data Cap is and how it works. The main thing is that Data Cap helps users store their data on the Filecoin network. For more information on Data Cap check out the [Filecoin Plus section](../../store/filecoin-plus).
+
+### Sign up
+
+Signing up to Filecoin Plus is easy and free!
 
 :::tip
 You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with the team on Filecoin Slack](https://filecoin.io/slack/).
