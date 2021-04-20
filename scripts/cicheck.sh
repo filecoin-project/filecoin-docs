@@ -95,7 +95,7 @@ fi
 
 : '
 echo "Delete old bot comments..."
-OLDCOMMENTSJSON=$(curl -H "Authorization: token $GH_TOKEN"  -X GET https://api.github.com/repos/filecoin-project/filecoin-docs/issues/${{ github.event.pull_request.number }}/comments)
+OLDCOMMENTSJSON=$(curl -H "Authorization: token $GH_TOKEN"  -X GET https://api.github.com/repos/filecoin-project/filecoin-docs/issues/$PR_NUMBER/comments)
 
 OLDCOMMENTS=$(echo $OLDCOMMENTSJSON | jq ".[] | select(.user.id == $GH_USER_ID) | .id" --jsonargs)
 
@@ -103,9 +103,9 @@ for i in $OLDCOMMENTS; do curl -i -H "Authorization: token $GH_TOKEN" -X DELETE 
 
 echo "Post the new bot comment!"
 JSONIFIED_COMMENT="$( jq -nc --arg str "$COMMENT" '{"body": $str}' )"
-echo -e ">> Sending results in a comment on the Github pull request #${{ github.event.pull_request.number }}:"
+echo -e ">> Sending results in a comment on the Github pull request #$PR_NUMBER:"
 curl -i -H "Authorization: token $GH_TOKEN" \
     -H "Content-Type: application/json" \
     -X POST -d "$JSONIFIED_COMMENT" \
-    https://api.github.com/repos/filecoin-project/filecoin-docs/issues/${{ github.event.pull_request.head.ref }}/comments
+    https://api.github.com/repos/filecoin-project/filecoin-docs/issues/$PR_HEAD_REF/comments
 '
