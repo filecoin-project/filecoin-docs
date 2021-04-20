@@ -65,13 +65,17 @@ echo "Run docs build"
 BUILDRESULT=$(npm run docs:build)
 
 BUILDATTEMPT=$?
-[[ $BUILDATTEMPT -eq 0 ]] && COMMENT="$COMMENT
-- Vuepress build was successful!" || COMMENT="$COMMENT
+if [[ $BUILDATTEMPT -eq 0 ]]; then
+  COMMENT="$COMMENT
+- Vuepress build was successful!"
+else
+  COMMENT="$COMMENT
 - Vuepress build failed...
 
 \`\`\`
 $BUILDRESULT
 \`\`\`"
+fi
 
 if [[ $DO_PAGE_CHECKS -eq 1 ]]; then
   echo "Run the language checker..."
