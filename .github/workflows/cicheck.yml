@@ -21,6 +21,12 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2.2.2
       # Runs a set of commands using the runners shell
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y optipng, jpegoptim, jq
+          pip install bs4
+          pip install requests
       - name: Run CI Checks
         run: |
           echo "Testing on commit range: ${{ github.event.before }}..${{ github.event.after }}"
@@ -77,9 +83,6 @@ jobs:
           \`\`\`
           $BUILDRESULT
           \`\`\`"
-
-          pip install bs4
-          pip install requests
 
           if [[ $DO_PAGE_CHECKS -eq 1 ]]; then
             echo "Run the language checker..."
