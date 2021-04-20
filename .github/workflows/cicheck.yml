@@ -34,4 +34,8 @@ jobs:
           GH_USER_ID: ${{ secrets.GH_USER_ID }}
           LANGUAGETOOLS_API_KEY: ${{ secrets.LANGUAGETOOLS_API_KEY }}
           LANGUAGETOOLS_USERNAME: ${{ secrets.LANGUAGETOOLS_USERNAME }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          FIRST_COMMIT: ${{ github.event.before }}
+          LAST_COMMIT: ${{ github.event.after }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
           
