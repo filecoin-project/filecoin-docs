@@ -64,11 +64,12 @@ npm install
 echo "Run docs build"
 BUILDRESULT=$(npm run docs:build)
 
-BUILDATTEMPT=$?
-if [[ $BUILDATTEMPT -eq 0 ]]; then
+if [[ $? -eq 0 ]]; then
+  echo "Vuepress build was successful!"
   COMMENT="$COMMENT
-- Vuepress build was successful!"
+- Vuepress build was successful! Noting this in the PR comment."
 else
+  echo "Vuepress build failed. Creating PR comment with the details."
   COMMENT="$COMMENT
 - Vuepress build failed...
 
