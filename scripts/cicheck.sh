@@ -1,13 +1,13 @@
-echo "Testing on commit range: ${{ github.event.before }}..${{ github.event.after }}"
-CHANGED_FILES=`(git diff --name-only ${{ github.event.before }}..${{ github.event.after }})`
+echo "Testing on commit range: $FIRSTCOMMIT..$LASTCOMMIT"
+CHANGED_FILES=`(git diff --name-only $FIRSTCOMMIT..$LASTCOMMIT)`
 echo $CHANGED_FILES
 DO_PAGE_CHECKS=1
-if [[ ${{ github.event.pull_request.head.ref }} == *"ciskip"* ]]; then
+if [[ $PR_HEAD_REF == *"ciskip"* ]]; then
   DO_PAGE_CHECKS=0
 fi
 # Image optimization
 echo "Compressing PNGs..."
-PNGS_CHANGED=`(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .png)`
+PNGS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .png)`
 
 if [ -z "$PNGS_CHANGED" ]; then
     echo "No changed PNGs" 
@@ -18,7 +18,7 @@ else
 fi
 
 echo "Compressing JPGs..."
-JPGS_CHANGED=`(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .jpg)`
+JPGS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .jpg)`
 if [ -z "$JPGS_CHANGED" ]; then
     echo "No changed JPGs"
 else
@@ -28,7 +28,7 @@ else
 fi
 
 echo "Compressing GIFs..."
-GIFS_CHANGED=`(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .gif)`
+GIFS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .gif)`
 if [ -z "$GIFS_CHANGED" ]; then
     echo "No changed GIFs"
 else
@@ -48,7 +48,7 @@ else
   git checkout ${{ github.event.pull_request.head.ref }}
   git add .
   git commit -m "Automatically optimized images. [ci skip]"
-  git push --set-upstream pdocs ${{ github.event.pull_request.head.ref }}
+  git push --set-upstream pdocs $PR_HEAD_REF
   COMMENT="$COMMENT
 - I optimized some images for you! See the commit with the comment \`Automatically optimized images [ci skip]\` in this PR for details."
 fi
@@ -69,7 +69,7 @@ $BUILDRESULT
 
 if [[ $DO_PAGE_CHECKS -eq 1 ]]; then
   echo "Run the language checker..."
-  MDS_CHANGED=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .md)
+  MDS_CHANGED=$(git diff --name-only $CHANGED_FILES | grep .md)
   if [ -z $MDS_CHANGED ]
   then
     COMMENT="$COMMENT
