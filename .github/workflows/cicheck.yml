@@ -15,15 +15,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2.2.2
-        with:
-          # Version range or exact version of a Python version to use, using SemVer's version range syntax.
-          python-version: # optional, default is 3.x
-          # The target architecture (x86, x64) of the Python interpreter.
-          architecture: # optional
-          # Used to pull python distributions from actions/python-versions. Since there's a default, this is typically not supplied by the user.
-          token: # optional, default is ${{ github.token }}
+      - uses: actions/setup-python@v2.2.2
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
@@ -35,19 +27,19 @@ jobs:
           fi
           # Image optimization
           echo "Compressing PNGs..."
-          PNGS_CHANGED=(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .png)
+          PNGS_CHANGED=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .png)
           for png in $PNGS_CHANGED; do
             optipng -o 7 $png
           done
 
           echo "Compressing JPGs..."
-          JPGS_CHANGED=(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .jpg)
+          JPGS_CHANGED=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .jpg)
           for jpg in $JPGS_CHANGED; do
             jpegoptim -f --strip-all $jpg
           done
 
           echo "Compressing GIFs..."
-          GIFS_CHANGED=(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .gif)
+          GIFS_CHANGED=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .gif)
           for gif in $GIFS_CHANGED; do
             optipng -o 7 $gif
           done
@@ -87,7 +79,7 @@ jobs:
 
           if [[ $DO_PAGE_CHECKS -eq 1 ]]; then
             echo "Run the language checker..."
-            MDS_CHANGED=(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .md)
+            MDS_CHANGED=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .md)
             if [ -z $MDS_CHANGED ]
             then
               COMMENT="$COMMENT
