@@ -26,3 +26,13 @@ echo $SHELL                                                                     
 
 > /bin/zsh
 ```
+
+## Which CPU does my Mac have?
+
+Open a terminal window and run:
+
+```shell
+sysctl -n machdep.cpu.brand_string
+```
+
+M1-based Macs will return `Apple M1`.

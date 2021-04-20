@@ -51,7 +51,7 @@ The installation steps are different depending on which CPU your Mac is using:
 - [AMD and Intel-based Macs](#amd-and-intel-based-macs)
 - [M1-based Macs](#m1-based-macs)
 
-If you're not sure which CPU your Mac is using, check out the [troubleshooting steps](#asd).
+If you're not sure which CPU your Mac is using, check out the [troubleshooting steps](./troubleshooting/#which-cpu-does-my-mac-have).
 
 ##### AMD and Intel-based Macs
 
