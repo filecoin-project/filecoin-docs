@@ -29,3 +29,9 @@ jobs:
           pip install requests
       - name: Run CI Checks
         run: sh ${{github.workspace}}/scripts/cicheck.sh
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_USER_ID: ${{ secrets.GH_USER_ID }}
+          LANGUAGETOOLS_API_KEY: ${{ secrets.LANGUAGETOOLS_API_KEY }}
+          LANGUAGETOOLS_USERNAME: ${{ secrets.LANGUAGETOOLS_USERNAME }}
+          
