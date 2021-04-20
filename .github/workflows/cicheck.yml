@@ -28,7 +28,6 @@ jobs:
           pip install bs4
           pip install requests
       - name: Run CI Checks
-        run: sh ${{github.workspace}}/scripts/cicheck.sh
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER_ID: ${{ secrets.GH_USER_ID }}
@@ -38,4 +37,5 @@ jobs:
           FIRST_COMMIT: ${{ github.event.before }}
           LAST_COMMIT: ${{ github.event.after }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: sh ${{github.workspace}}/scripts/cicheck.sh
           
