@@ -46,6 +46,15 @@ Take a look at the [Get started page](../../get-started) to learn how to install
 
 This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section](#ubuntu).
 
+The installation steps are different depending on which CPU your Mac is using:
+
+- [AMD and Intel-based Macs](#amd-and-intel-based-macs)
+- [M1-based Macs](#m1-based-macs)
+
+If you're not sure which CPU your Mac is using, check out the [troubleshooting steps](#asd).
+
+##### AMD and Intel-based Macs
+
 1. Check if you have Xcode installed:
 
     ```shell
@@ -93,18 +102,6 @@ This section covers how to install a Lotus lite-node on MacOS. If you are runnin
     cd lotus
     ```
 
-1. If you are using a Mac built with Apple silicon (M1) add the following lines into your `~/.bashrc` or `~/.zshrc`, depending on which shell you are using: 
-
-    ```shell
-    export LDFLAGS="-L/usr/local/lib"
-    export CPPFLAGS="-I/usr/local/include"
-    export CPATH=/usr/local/include
-    export LIBRARY_PATH=/usr/local/lib
-    export LD_LIBRARY_PATH=/usr/local/lib
-    ```
-
-    See the [troubleshooting section](./troubleshooting) to find out how to see which shell you are using.
-
 1. Build the `lotus` binary, but don't run anything just yet:
 
     ```shell
@@ -120,6 +117,55 @@ This section covers how to install a Lotus lite-node on MacOS. If you are runnin
     lotus --version
 
     > lotus version 1.7.0
+    ```
+
+[Head over to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
+
+##### M1-based Macs
+
+Because of the novel architecture of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
+
+1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
+
+    ```shell   
+    git clone https://github.com/filecoin-project/lotus
+    cd lotus
+    ```
+
+1. Pull-in the submodules:
+
+    ```shell
+    git submodule update --init --recursive
+    ```
+
+1. Create necessary environment variable to allow Lotus to run on ARM architecture:
+
+    ```shell
+    export GOARCH=arm64
+    export CGO_ENABLED=1
+    export LIBRARY_PATH=/opt/homebrew/lib
+    ```
+
+1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
+
+    ```shell
+    cd extern/filecoin-ffi
+    git fetch -a
+    git checkout m1-portable
+    ```
+
+1. Create the `filecoin-ffi` executables:
+
+    ```shell
+    make clean
+    make
+    ```
+
+1. Move back to the root Lotus directory and create the `lotus` daemon:
+
+    ```shell
+    cd ../../
+    make lotus
     ```
 
 [Head over to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)

@@ -18,7 +18,8 @@ As you're going through this section, make a note of the following variables:
 | Variable | Description | Example |
 | --- | --- | --- |
 | Payload CID | The content identifier of the data that you want to store using Filecoin. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
-| Miner ID | The unique identifier for each miner. | `f01000`
+| Miner ID #1 | The unique identifier for each miner. You need to have two miner IDs for this tutorail. | `f01000`
+| Miner ID #2 | The unique identifier for each miner. You need to have two miner IDs for this tutorail. | `f01000`
 | Deal CID | The content identifier for a deal made with a miner. | `bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau` | 
 
 ## Prepare your data
@@ -63,20 +64,25 @@ Now that Lotus knows which file we want to use, we can create a deal with a File
 
 ## Find a miner 
 
-Before we can store data, we need to select a suitable miner. The Filecoin network allows data storage miners to compete by offering different terms for pricing, acceptable data sizes, and other important deal parameters. You should also consider the miner's location; the closer the miner is to you, the faster the storage and retrieval process will be. 
+We need to find a suitable miner or miners before we can store our data. The Filecoin network allows data storage miners to compete by offering different terms for pricing, acceptable data sizes, and other important deal parameters. It's also important to consider the miner's location; the closer the miner is to you, the faster the storage and retrieval process will be. 
 
-We're going to use the MinerX program to find a miner, and then cross check their information with a third-party miner reputation system.
+We're going to use the MinerX program to find a couple of miners, and then cross check their information with a third-party miner reputation system.
+
+:::tip
+Storing your data on more than one miner decreases your chance that your data will be lost at any point. Increasing the number of miners you use increases your data redundancy.
+:::
 
 ### MinerX 
 
-The MinerX program is a collection of geographically diverse miners that are willing to accept low-cost or free storage deals from users. The idea is that these miners will bootstrap the Filecoin network. The more miners offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. You can [find out more about the MinerX program from the Filecoin Blog](https://filecoin.io/blog/posts/filecoin-minerx-fellowship-program/).
+The MinerX program is a collection of geographically diverse miners that are willing to accept low-cost or free storage deals from users. The idea is that these miners will bootstrap the Filecoin network. The more miners that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. You can [find out more about the MinerX program from the Filecoin Blog](https://filecoin.io/blog/posts/filecoin-minerx-fellowship-program/).
+
+Let's find a couple of miners to store our data.
 
 1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
-1. Using the table, find a miner that suits your needs. For the sake of this tutorial, look for a miner that is:
-    a. Offering verified-data deals for 0 FIL.
-    a. Close to you.
- 
-1. Once you have found a suitable miner, copy their `miner_id` from the **Miner ID** column:
+1. Using the table, find a couple of miners that suits your needs. For the sake of this tutorial, look for miners that:
+    a. Offer verified-data deals for 0 FIL.
+    a. Are close to you.
+1. Once you have found a couple of suitable miners, make a note of their _miner IDs_ from the **Miner ID** column:
 
     ![A collection of miners listed in MinerX.](./images/miner-x-listings.png)
 
@@ -84,13 +90,13 @@ The MinerX program is a collection of geographically diverse miners that are wil
 
     ![A list of miners, highlighting one miner with multiple IDs.](./images/miner-with-multiple-miner-ids.png)
 
-1. Write down the ID of the miner you want to use. We'll be referring to it in the next section.
+1. Write down the IDs of the miners you want to use. We'll be referring to these IDs in the next section.
 
 ### Miner reputation systems 
 
 The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept. Using FilRep you can compare miner metrics like location, storage power in the network, pricing, and overall success rate.
 
-Before starting a deal, use FilRep to double check your miner's minimum file size requirements.
+We're going to use FilRep to check that the minimum deal size of the miners we selected fit the size of our file.
 
 1. Go to [https://filrep.io](https://filrep.io).
 1. Click the **Settings** toggle to display a list of all available miner details.
@@ -98,11 +104,11 @@ Before starting a deal, use FilRep to double check your miner's minimum file siz
 
     ![](./images/filrep-select-columns.png)
 
-1. Now you can search for the miner you found before, using the miner ID. 
+1. Now you can search for the miners you found before, using the miner ID. 
 
     ![](./images/filrep-search-min-file-size.png)
 
-If the minimum file size shown on FilRep is larger than your dataset, you'll either need to select a different miner or add additional padding to your data to meet the minimum size requirement.
+1. If the minimum file size shown for any of your miners is larger than your dataset, go back to [the previous section](#minerx) and select a new miner.
 
 ## Create a deal 
 
