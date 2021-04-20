@@ -53,7 +53,7 @@ else
   git fetch fdocs
   git checkout $PR_HEAD_REF
   git add .
-  git commit -m "Automatically optimized images. [ci skip]"
+  git commit -m "Automatically optimized images. [ciskip]"
   git push --set-upstream pdocs $PR_HEAD_REF
   COMMENT="$COMMENT
 - I optimized some images for you! See the commit with the comment \`Automatically optimized images [ciskip]\` in this PR for details."
@@ -81,8 +81,7 @@ fi
 if [[ $DO_PAGE_CHECKS -eq 1 ]]; then
   echo "Run the language checker..."
   MDS_CHANGED=$(git diff --name-only $CHANGED_FILES | grep .md)
-  if [ -z $MDS_CHANGED ]
-  then
+  if [ -z "$MDS_CHANGED" ]; then
     COMMENT="$COMMENT
 - No markdown files were changed, so no page checks were run!"
   else
