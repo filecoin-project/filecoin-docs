@@ -62,7 +62,7 @@ fi
 echo "Run npm install"
 npm install
 echo "Run docs build"
-BUILDRESULT=$(npm run docs:build)
+BUILDRESULT=$(npm run docs:build 2>&1)
 
 if [[ $? -eq 0 ]]; then
   echo "Vuepress build was successful!"
