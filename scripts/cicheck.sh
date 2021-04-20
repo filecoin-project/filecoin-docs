@@ -1,6 +1,6 @@
 BRANCHNAME="$PR_HEAD_REF"
-echo "Testing on commit range: $FIRSTCOMMIT..$LASTCOMMIT"
-CHANGED_FILES=`(git diff --name-only $FIRSTCOMMIT..$LASTCOMMIT)`
+echo "Testing on commit range: $FIRST_COMMIT..$LAST__COMMIT"
+CHANGED_FILES=`(git diff --name-only $FIRST_COMMIT..$LAST_COMMIT)`
 echo "Changed files: "
 echo $CHANGED_FILES
 
