@@ -37,7 +37,7 @@ jobs:
           fi
           # Image optimization
           echo "Compressing PNGs..."
-          PNGS_CHANGED=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .png)
+          PNGS_CHANGED=`(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .png)`
           if [ -z "$PNGS_CHANGED" ]; then
               echo "No changed PNGs" 
           else
@@ -47,7 +47,7 @@ jobs:
           fi
 
           echo "Compressing JPGs..."
-          JPGS_CHANGED=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .jpg)
+          JPGS_CHANGED=`(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .jpg)`
           if [ -z "$JPGS_CHANGED" ]; then
               echo "No changed JPGs"
           else
@@ -57,7 +57,7 @@ jobs:
           fi
 
           echo "Compressing GIFs..."
-          GIFS_CHANGED=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .gif)
+          GIFS_CHANGED=`(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep .gif)`
           if [ -z "$GIFS_CHANGED" ]; then
               echo "No changed GIFs"
           else
