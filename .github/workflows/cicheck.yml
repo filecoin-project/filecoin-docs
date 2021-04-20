@@ -24,10 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y optipng jpegoptim
-          curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 > jq
-          chmod +x jq
-          sudo mv jq /usr/local/bin
+          sudo apt-get install -y optipng jpegoptim jq
           pip install bs4
           pip install requests
       - name: Run CI Checks
