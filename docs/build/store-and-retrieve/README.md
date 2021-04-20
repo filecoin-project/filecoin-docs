@@ -19,6 +19,18 @@ The process is split into three main parts: the set-up, storing your data and re
 
 It will take about an hour to complete this tutorial. While there aren't too many steps involved, there's a bit of waiting around for the network to process your requests.
 
+:::warning
+This tutorial uses the Filecoin mainnet. Everything you'll see over the next hour is happening on a production network with other users storing and retieving data. But don't worry, this tutorial won't cost you anything! It's just important to know that you'll be dealing with real miners, real data, and real transactions.
+:::
+
+## Take notes
+
+There are a few things to remember throughout this tutorial, such as Miner IDs and addresses. There is a table at the end of each section showing the information you should record:
+
+| Variable | Description | Example |
+| --- | --- | --- |
+| Miner ID | The unique identifier for each miner. | `f01000`
+
 ## Terms and phrases
 
 This tutorial contains some words and phrases that you might not be familiar with. Refer back to this table if you encounter something you don't understand:
@@ -35,14 +47,6 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | Deal | An agreement between two computers about what to do with some data. |
 | Storage deal | An agreement between a miner and a client about what data to store, how long for, and how much the miner can charge for storage. |
 | Retrieval deal | An agreement between a miner and a client about how much the miner can charge to send data to a client. |
-
-## Take notes
-
-There are a few things to remember throughout this tutorial, such as Miner IDs and addresses. There is a table at the end of each section showing the information you should record:
-
-| Variable | Description | Example |
-| --- | --- | --- |
-| Miner ID | The unique identifier for each miner. | `f01000`
 
 ## Next steps
 
