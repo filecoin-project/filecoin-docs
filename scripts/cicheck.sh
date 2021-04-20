@@ -16,7 +16,7 @@ fi
 echo "Compressing PNGs..."
 PNGS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .png)`
 if [ -z "$PNGS_CHANGED" ]; then
-    echo "No changed PNGs" 
+    echo "No changed PNGs"
 else
   for png in $PNGS_CHANGED; do
     optipng -o 7 $png
@@ -118,4 +118,4 @@ echo -e ">> Sending results in a comment on the Github pull request #$PR_NUMBER:
 curl -i -H "Authorization: token $GH_TOKEN" \
     -H "Content-Type: application/json" \
     -X POST -d "$JSONIFIED_COMMENT" \
-    https://api.github.com/repos/filecoin-project/filecoin-docs/issues/$PR_HEAD_REF/comments
+    https://api.github.com/repos/filecoin-project/filecoin-docs/issues/$PR_NUMBER/comments
