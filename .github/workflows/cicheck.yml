@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y optipng, jpegoptim, jq
+          sudo apt-get install -y optipng jpegoptim jq
           pip install bs4
           pip install requests
       - name: Run CI Checks
