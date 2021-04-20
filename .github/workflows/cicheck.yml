@@ -28,4 +28,4 @@ jobs:
           pip install bs4
           pip install requests
       - name: Run CI Checks
-        run: /scripts/cicheck.sh
+        run: ${{github.workspace}}/scripts/cicheck.sh
