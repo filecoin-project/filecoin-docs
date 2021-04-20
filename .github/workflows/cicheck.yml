@@ -15,13 +15,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Run a multi-line script
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # No shallow clone, we need all history!
-        uses: actions/setup-python@v2.2.2
+      - uses: actions/setup-python@v2.2.2
       # Runs a set of commands using the runners shell
 
-        run: |
+      - run: |
           echo "Testing on commit range: ${{ github.event.before }}..${{ github.event.after }}"
 
           DO_PAGE_CHECKS=1
