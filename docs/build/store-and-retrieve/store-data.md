@@ -51,7 +51,7 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
     lotus client import ~/4gb-filecoin-payload.bin 
     ```
 
-    Lotus creates a distributed acyclic graphs (DAG) based on the payload. This process takes a few minutes. Once's it's complete, Lotus will output the root CID of the payload.
+    Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete Lotus will output the root CID of the payload.
 
     ```shell
     > Import 3, Root bafykb...
@@ -88,18 +88,21 @@ The MinerX program is a collection of geographically diverse miners that are wil
 
 ### Miner reputation systems 
 
-The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept.
+The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare miners based on their past performance and provide useful information about the deal parameters that a miner will accept. Using FilRep you can compare miner metrics like location, storage power in the network, pricing, and overall success rate.
 
-1. Go to [FilRep.io](https://filrep.io/).
-1. Click the search icon and enter the miner ID you got from MinerX. 
+Before starting a deal, use FilRep to double check your miner's minimum file size requirements.
 
-    ![FilRep showing a single miner.](./images/filrep-single-miner.png)
+1. Go to [https://filrep.io](https://filrep.io).
+1. Click the **Settings** toggle to display a list of all available miner details.
+1. Make sure that the **Min File Size** column is selected:
 
-1. 
+    ![](./images/filrep-select-columns.png)
 
-Using [FilRep.io](https://filrep.io/), you can see and compare important miner parameters and metrics, including location, storage power in the network, pricing, and overall success rate. The column selection widget lets you see even more details, including the minimum and maximum file sizes that a miner will accept:
+1. Now you can search for the miner you found before, using the miner ID. 
 
-![](./images/filrep-select-columns.png)
+    ![](./images/filrep-search-min-file-size.png)
+
+If the minimum file size shown on FilRep is larger than your dataset, you'll either need to select a different miner or add additional padding to your data to meet the minimum size requirement.
 
 ## Create a deal 
 
