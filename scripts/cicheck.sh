@@ -99,7 +99,6 @@ else
 - Skipped doing per-page checks because branch name included \`ciskip\`."
 fi
 
-: '
 echo "Delete old bot comments..."
 OLDCOMMENTSJSON=$(curl -H "Authorization: token $GH_TOKEN"  -X GET https://api.github.com/repos/filecoin-project/filecoin-docs/issues/$PR_NUMBER/comments)
 
@@ -114,4 +113,3 @@ curl -i -H "Authorization: token $GH_TOKEN" \
     -H "Content-Type: application/json" \
     -X POST -d "$JSONIFIED_COMMENT" \
     https://api.github.com/repos/filecoin-project/filecoin-docs/issues/$PR_HEAD_REF/comments
-'
