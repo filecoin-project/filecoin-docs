@@ -1,3 +1,8 @@
+echo "1: $PR_HEAD_REF"
+echo "2: ${PR_HEAD_REF}" 
+echo "3: ${ env.PR_HEAD_REF }" 
+echo "4: ${{ env.PR_HEAD_REF }}"
+echo "5" ${{PR_HEAD_REF}}"
 echo "Testing on commit range: $FIRSTCOMMIT..$LASTCOMMIT"
 CHANGED_FILES=`(git diff --name-only $FIRSTCOMMIT..$LASTCOMMIT)`
 echo $CHANGED_FILES
