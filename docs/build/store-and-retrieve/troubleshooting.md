@@ -35,4 +35,4 @@ Open a terminal window and run:
 sysctl -n machdep.cpu.brand_string
 ```
 
-M1-based Macs will return `Apple M1`.
+M1-based Macs will return `Apple M1`. Macs with AMD or Intel-based CPUs will get something like `Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz`
