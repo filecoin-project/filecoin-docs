@@ -168,7 +168,7 @@ Because of the novel architecture of the M1-based Mac computers, some specific e
     make lotus
     ```
 
-[Head over to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
+[Head down to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
 
 #### Ubuntu
 
@@ -243,7 +243,7 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
     > lotus version 1.7.0
     ```
 
-[Head over to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
+[Head onto the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
 
 ### Run a Lotus lite-node 
 
@@ -270,7 +270,7 @@ Filecoin addresses are similar to regular bank account numbers. Other users can 
 
 There are two parts to a Filecoin address: the public address and the private key. You can freely share your public address with anyone, but you should never share your private key. We're not actually going to look at our private key in this tutorial, but it's important to understand the difference between your public address and your private key.
 
-1. Open a new terminal window and create an address using the `wallet new` command:
+1. Open a new terminal window and create an address using the `lotus wallet new` command:
 
     ```shell
     lotus wallet new 
@@ -314,5 +314,5 @@ You need a GitHub account that is at least 180 days old. If you don't have a Git
 
 ## Next steps
 
-Now that we've got all the set up out of the way, we can move onto [storing data with the Filecoin network →](./store-data) 
+Now that we've got all the set up out of the way, we can move onto [storing data with the Filecoin network →](./store-data.md) 
 

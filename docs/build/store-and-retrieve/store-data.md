@@ -1,11 +1,11 @@
 ---
 title: Store data
-description: Get stuck into storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a miner through the MinerX program, creating a storage deal, and then waiting for the deal to complete! 
+description: Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a miner through the MinerX program, creating a storage deal, and then waiting for the deal to complete! 
 ---
 
 # Store data
 
-Get stuck into storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a miner through the MinerX program, creating a storage deal, and then waiting for the deal to complete! 
+Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a miner through the MinerX program, creating a storage deal, and then waiting for the deal to complete! 
 
 :::danger
 Do not store personal data on the Filecoin network, even if it's encrypted. Only store public and static data on the Filecoin network. Access control is on the project roadmap.
@@ -24,20 +24,20 @@ As you're going through this section, make a note of the following variables:
 
 ## Prepare your data
 
-For this tutorial, we're going to create a dummy 4GB file full of random data.
+For this tutorial, we're going to create a dummy 5GB file full of random data.
 
 1. Create a block of random data to _pad_ the total size of our payload:
 
     If you're on macOS, run:
 
     ```shell
-    dd if=/dev/urandom of=4gb-filecoin-payload.bin bs=1m count=4096 
+    dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1m count=4096 
     ```
 
     If you're on Linux, run: 
 
     ```shell
-    dd if=/dev/urandom of=padded-4gb-filecoin-payload.bin bs=1M count=4096
+    dd if=/dev/urandom of=padded-5gb-filecoin-payload.bin bs=1M count=4096
     ```
 
 We now have our payload file ready to be stored using the Filecoin network.
@@ -49,10 +49,10 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 1. Import the payload into the `lotus daemon` using the `import` command: 
 
     ```shell
-    lotus client import ~/4gb-filecoin-payload.bin 
+    lotus client import ~/5gb-filecoin-payload.bin 
     ```
 
-    Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete Lotus will output the root CID of the payload.
+    Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete Lotus will output the payload CID.
 
     ```shell
     > Import 3, Root bafykb...
@@ -112,7 +112,7 @@ We're going to use FilRep to check that the minimum deal size of the miners we s
 
 ## Create a deal 
 
-To complete this section, you need the data CID you received after running `lotus client import` and the ID of a miner you want to use.
+To complete this section, you need the **payload CID** you received after running `lotus client import` and the ID of a miner you want to use.
 
 1. Start the interactive deal process:
 
@@ -134,7 +134,7 @@ To complete this section, you need the data CID you received after running `lotu
     > .. calculating data size 
     ```
 
-    The duration of this process depends on the size of your file and the specification of your Lotus node. Lotus took around 25 minutes to build the `.car` file of a ~7.5GB file with an 8-core CPU and 16GB RAM.
+    The duration of this process depends on the size of your file and the specification of your Lotus node. In tests, Lotus took around 20 minutes to build the `.car` file of a ~7.5GB file with an 4-core CPU and 8GB RAM. These specifications are common for most end-user laptops.
 
 1. Enter the number of days you want to keep this file on Filecoin. The minimum is 180 days:
 
@@ -142,16 +142,16 @@ To complete this section, you need the data CID you received after running `lotu
     > Deal duration (days): 180 
     ``` 
 
-1. Tell Lotus whether or not this is a Filecoin+ deal. Since we signed up to Filecoin+ and added some DataCap to our wallet in an earlier step, we'll select `yes` here:
+1. Tell Lotus whether or not this is a Filecoin Plus deal. Since you signed up to Filecoin Plus in an earlier step, select `yes` here:
 
     ```shell
     > Make this a verified deal? (yes/no): yes
     ```
 
-1. Enter the miner ID from the previous section: 
+1. Enter the miner IDs from the previous section with an empty space seperating the two IDs: 
 
     ```shell
-    > Miner Addresses (f0.. f0..), none to find: f01000 
+    > Miner Addresses (f0.. f0..), none to find: f01000 f01001 
     ```
 
 1. Enter `0` if you are asked how much FIL we are willing to spend for this storage deal:
@@ -160,12 +160,12 @@ To complete this section, you need the data CID you received after running `lotu
     > Maximum budget (FIL): 0
     ```
 
-    Since we picked a miner accepting 0 FIL deals for verified storage deals, and we are a _verified client_, we don't need to spend any FIL here!
+    Since you picked two miners accepting 0 FIL deals for verified storage deals, and you are a _verified client_, you don't need to spend any FIL here!
 
-1. Specify how many miners you want your file to be replicated over. The default is one 
+1. If asked, specify how many miners you want your file to be replicated over. Since you entered two miner IDs, select `2`: 
 
     ```shell
-    Deals to make (1): 1
+    Deals to make (1): 2 
     ```
 
 1. Confirm your transaction:
@@ -190,7 +190,7 @@ To complete this section, you need the data CID you received after running `lotu
     Deal (f01000) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     ```
 
-1. Take a note of the deal CID `bafyre...`.
+1. Take a note of the **deal CID** `bafyre...`.
 
 ## Check the deal status 
 
