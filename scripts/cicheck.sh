@@ -1,19 +1,18 @@
-echo "1: $PR_HEAD_REF"
-echo "2: ${PR_HEAD_REF}" 
-echo "3: ${ env.PR_HEAD_REF }" 
-echo "4: ${{ env.PR_HEAD_REF }}"
-echo "5" ${{PR_HEAD_REF}}"
+BRANCHNAME="$PR_HEAD_REF"
 echo "Testing on commit range: $FIRSTCOMMIT..$LASTCOMMIT"
 CHANGED_FILES=`(git diff --name-only $FIRSTCOMMIT..$LASTCOMMIT)`
+echo "Changed files: "
 echo $CHANGED_FILES
+
+# Skip page checks if branch name has "ciskip" in it
 DO_PAGE_CHECKS=1
-if [[ $PR_HEAD_REF == *"ciskip"* ]]; then
+if [[ $BRANCHNAME == *"ciskip"* ]]; then
   DO_PAGE_CHECKS=0
 fi
+
 # Image optimization
 echo "Compressing PNGs..."
 PNGS_CHANGED=`(git diff --name-only $CHANGED_FILES | grep .png)`
-
 if [ -z "$PNGS_CHANGED" ]; then
     echo "No changed PNGs" 
 else
