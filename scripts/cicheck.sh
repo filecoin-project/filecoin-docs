@@ -51,12 +51,12 @@ else
   # Uncommitted changes
   git remote add fdocs https://${GH_TOKEN}@github.com/filecoin-project/filecoin-docs.git > /dev/null 2>&1
   git fetch fdocs
-  git checkout ${{ github.event.pull_request.head.ref }}
+  git checkout $PR_HEAD_REF
   git add .
   git commit -m "Automatically optimized images. [ci skip]"
   git push --set-upstream pdocs $PR_HEAD_REF
   COMMENT="$COMMENT
-- I optimized some images for you! See the commit with the comment \`Automatically optimized images [ci skip]\` in this PR for details."
+- I optimized some images for you! See the commit with the comment \`Automatically optimized images [ciskip]\` in this PR for details."
 fi
 
 echo "Run npm install"
@@ -106,10 +106,9 @@ fi
 echo "Here is the comment I'm sending to GitHub:"
 echo $COMMENT
 
-echo "Delete old bot comments..."
+echo "Delete old bot comments:"
 OLDCOMMENTSJSON=$(curl -H "Authorization: token $GH_TOKEN"  -X GET https://api.github.com/repos/filecoin-project/filecoin-docs/issues/$PR_NUMBER/comments)
-
-OLDCOMMENTS=$(echo $OLDCOMMENTSJSON | jq ".[] | select(.user.id=="$GH_USER_ID") | .id" --jsonargs)
+OLDCOMMENTS=$(echo $OLDCOMMENTSJSON | jq ".[] | select(.user.id==$GH_USER_ID) | .id" --jsonargs)
 
 for i in $OLDCOMMENTS; do curl -i -H "Authorization: token $GH_TOKEN" -X DELETE https://api.github.com/repos/filecoin-project/filecoin-docs/issues/comments/$i; done
 
