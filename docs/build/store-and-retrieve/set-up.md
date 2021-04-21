@@ -29,7 +29,7 @@ If you've got a full-node that you'd prefer to use, feel free to use that instea
 
 ## Install a lite-node
 
-A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to miners, but any processes that need data from the blockchain must come from a full node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
+A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to storage providers, but any processes that need data from the blockchain must come from a full node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
 
 ![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](./images/lite-nodes-process-diagram.png)
 
@@ -278,7 +278,7 @@ Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol La
 
 ## Get a FIL address
 
-Filecoin addresses are similar to regular bank account numbers. Other users can use your address to send you FIL, and you can use your address to pay miners for storing and retrieving your data. 
+Filecoin addresses are similar to regular bank account numbers. Other users can use your address to send you FIL, and you can use your address to pay storage providers for storing and retrieving your data. 
 
 There are two parts to a Filecoin address: the public address and the private key. You can freely share your public address with anyone, but you should never share your private key. We're not actually going to look at our private key in this tutorial, but it's important to understand the difference between your public address and your private key.
 
@@ -296,7 +296,7 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 ## Filecoin Plus
 
-Normally, when you want to store something on the Filecoin network, you have to pay miners with FIL. However, Protocol Labs created the Filecoin Plus program to help developers test out the network without having to pay! By signing up to Filecoin Plus with your GitHub account, you can store up to 32GB on the Filecoin network per month for free!
+Normally, when you want to store something on the Filecoin network, you have to pay storage providers with FIL. However, Protocol Labs created the Filecoin Plus program to help developers test out the network without having to pay! By signing up to Filecoin Plus with your GitHub account, you can store up to 32GB on the Filecoin network per month for free!
 
 ### How it works 
 
@@ -304,7 +304,7 @@ Miners get paid for storing data; the more data they store, the more they get pa
 
 ![](./images/miner-paid-without-data-cap.svg)
 
-However, there's no way to check whether the data they are storing is useful or not. To get around this and to incentivize miners to store _real_ data from _real_ users, the Filecoin team created _Data Cap_ to give to users. Think of Data Cap as a set of tickets. When you submit your data with a Data Cap ticket to a miner, that miner will get paid ten times what they normally would from the Filecoin network.
+However, there's no way to check whether the data they are storing is useful or not. To get around this and to incentivize storage providers to store _real_ data from _real_ users, the Filecoin team created _Data Cap_ to give to users. Think of Data Cap as a set of tickets. When you submit your data with a Data Cap ticket to a storage provider, that storage provider will get paid ten times what they normally would from the Filecoin network.
 
 ![](./images/miner-paid-with-data-cap.svg)
 
