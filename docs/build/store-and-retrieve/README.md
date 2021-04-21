@@ -40,18 +40,18 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | Word | Definition |
 | --- | --- |
 | Address | A string of letters and numbers that other users can send FIL to. |
-| Wallet | A collection of addresses. Think of each wallet as a folder and each address as a single file in that folder. |
-| Filecoin (upper-case `F`) | The network that transactions and storage deals take place on. For example: _Museums can use the Filecoin network to store their digital archives._ |
-| filecoin (lower-case `f`) | The cryptocurrency that the Filecoin network runs on. For example: _You can use filecoin to pay for your transactions._ |
-| FIL | The shorthand representation of the filecoin cryptocurrency. For example: _We charge 0.5 FIL per GiB._ |
-| Private key | A string of letters and numbers that programs use to interact with the Filecoin network. Keep your private key safe, and don't share it with anyone. |
 | [Block explorer](../../get-started/explore-the-network/#block-explorers) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
 | Deal | An agreement between two computers about what to do with some data. |
+| FIL | The shorthand representation of the filecoin cryptocurrency. For example: _We charge 0.5 FIL per GiB._ |
+| Filecoin (upper-case `F`) | The network that transactions and storage deals take place on. For example: _Museums can use the Filecoin network to store their digital archives._ |
+| filecoin (lower-case `f`) | The cryptocurrency that the Filecoin network runs on. For example: _You can use filecoin to pay for your transactions._ |
+| Miner | An alternate name for a _storage provider_. |
+| Private key | A string of letters and numbers that programs use to interact with the Filecoin network. Keep your private key safe, and don't share it with anyone. |
 | Storage deal | An agreement between a storage provider and a client about what data to store, how long for, and how much the storage provider can charge for storage. |
 | Retrieval deal | An agreement between a storage provider and a client about how much the storage provider can charge to send data to a client. |
 | Storage client | The user that wants to store something on the Filecoin network. In this tutorial, _you_ are the storage client. |
 | Storage provider | A computer on the Filecoin network offering storage space to other users who want to store data. Storage providers are sometimes called _miners_. |
-| Miner | An alternate name for a _storage provider_. |
+| Wallet | A collection of addresses. Think of each wallet as a folder and each address as a single file in that folder. |
 
 ## Next steps
 
