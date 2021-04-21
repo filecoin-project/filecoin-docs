@@ -219,7 +219,7 @@ Because of the complex nature of Lotus and the Filecoin network, deals can be in
 | StorageDealClientFunding | The client has deposited funds into the StorageMarketActor and is waiting for the funds to appear. |
 | StorageDealFundsReserved | Your FIL has been deposited into escrow and is ready to be used to pay for the deal. |
 | StorageDealStartDataTransfer | The storage provider is ready to accept data from the client Lotus node. |
-| StorageDealTransferring | data is being transferred from the client Lotus node to the storage provider. |
+| StorageDealTransferring | The data is being transferred from the client Lotus node to the storage provider. |
 | StorageDealCheckForAcceptance | The client is waiting for a storage provider to seal and publish a deal. |
 | StorageDealProposalAccepted | The storage provider intends to accept a storage deal proposal; however, the storage provider has not made any commitment to do so at this point. |
 | StorageDealAwaitingPreCommit | A deal is ready and must be pre-committed. |
