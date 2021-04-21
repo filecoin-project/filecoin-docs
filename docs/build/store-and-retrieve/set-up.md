@@ -33,8 +33,6 @@ A lite-node lets your computer interact with the Filecoin network without having
 
 ![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](./images/lite-nodes-process-diagram.png)
 
-### Project dependencies 
-
 To install a Lotus lite-node on your computer, you must have the tools required to _build_ a Lotus binary from the GitHub repository.
 
 | [MacOS](#macos) | [Ubuntu](#ubuntu) |
@@ -42,18 +40,13 @@ To install a Lotus lite-node on your computer, you must have the tools required 
 
 Take a look at the [Get started page](../../get-started) to learn how to install Lotus on other operating systems. 
 
-#### MacOS
+### MacOS
 
 This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section](#ubuntu).
 
-The installation steps are different depending on which CPU your Mac is using:
+#### Dependencies for MacOS
 
-- [AMD and Intel-based Macs](#amd-and-intel-based-macs)
-- [M1-based Macs](#m1-based-macs)
-
-If you're not sure which CPU your Mac is using, check out the [troubleshooting steps](./troubleshooting/#which-cpu-does-my-mac-have).
-
-##### AMD and Intel-based Macs
+Follow these steps to install the project dependencies specifically for MacOS:
 
 1. Check if you have Xcode installed:
 
@@ -63,7 +56,8 @@ If you're not sure which CPU your Mac is using, check out the [troubleshooting s
     > xcode-select version 2384.
     ```
 
-    If the above command returns an error you likely don't have Xcode installed. Run the following command to install Xcode:
+    :::warning
+    If the above command returns an error, you likely don't have Xcode installed. Run the following command to install Xcode:
 
     ```shell
     sudo rm -rf /Library/Developer/CommandLineTools 
@@ -72,6 +66,7 @@ If you're not sure which CPU your Mac is using, check out the [troubleshooting s
     > Password:
     > xcode-select: note: install requested for command line developer tools
     ```
+    :::
 
 1. Check if you have [Homebrew](https://brew.sh/) installed:
 
@@ -81,6 +76,7 @@ If you're not sure which CPU your Mac is using, check out the [troubleshooting s
     > Homebrew 3.0.11
     ```
 
+    :::warning
     If the above command returns an error, you likely don't have Homebrew installed. Run the following command to install Homebrew:
 
     ```shell
@@ -88,12 +84,26 @@ If you're not sure which CPU your Mac is using, check out the [troubleshooting s
     ```
 
     If you run into errors installing Homebrew, there may be something wrong with your macOS installation. Check out the [Homebrew documentation](https://brew.sh/) for more information on how you can it installed.
+    :::
 
 1. Use Homebrew to install the following packages:
 
     ```shell
     brew install go bzr jq pkg-config rustup hwloc
     ```
+
+Next up, you'll install a Lotus lite-node on your computer.
+
+#### Install Lotus
+
+The installation steps are different depending on which CPU your Mac is using:
+
+- [AMD and Intel-based Macs](#amd-and-intel-based-macs)
+- [M1-based Macs](#m1-based-macs)
+
+If you are unsure which CPU your Mac is using, check out the [troubleshooting steps](./troubleshooting/#which-cpu-does-my-mac-have).
+
+##### AMD and Intel-based Macs
 
 1. Download the Lotus repository from GitHub:
 
@@ -262,6 +272,8 @@ Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol La
     > ...
     ```
 
+1. MacOS users may see a warning regarding Lotus. Select **Accept incoming connections** if you see a warning.
+
     The Lotus daemon will continue to run. Further commands must be run from a separate terminal window.
 
 ## Get a FIL address
@@ -292,11 +304,11 @@ Miners get paid for storing data; the more data they store, the more they get pa
 
 ![](./images/miner-paid-without-data-cap.svg)
 
-However, there's no way to check whether the data they are storing is useful or not. To get around this, and to incentivse miners to store _real_ data from _real_ users, the Filecoin team created _Data Cap_ to give to users. Think of Data Cap as a set of tickets. When you store submit your data with a Data Cap ticket to a miner, that miner will get paid 10 times what they normally would from the Filecoin network.
+However, there's no way to check whether the data they are storing is useful or not. To get around this and to incentivize miners to store _real_ data from _real_ users, the Filecoin team created _Data Cap_ to give to users. Think of Data Cap as a set of tickets. When you submit your data with a Data Cap ticket to a miner, that miner will get paid ten times what they normally would from the Filecoin network.
 
 ![](./images/miner-paid-with-data-cap.svg)
 
-This is an incredibly simplifed overview of what Data Cap is and how it works. The main thing is that Data Cap helps users store their data on the Filecoin network. For more information on Data Cap check out the [Filecoin Plus section](../../store/filecoin-plus).
+This is an incredibly simplified overview of what Data Cap is and how it works. The main thing is that Data Cap helps users store their data on the Filecoin network. For more information on Data Cap check out the [Filecoin Plus section](../../store/filecoin-plus).
 
 ### Sign up
 

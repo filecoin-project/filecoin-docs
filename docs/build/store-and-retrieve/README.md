@@ -20,7 +20,7 @@ The process is split into three main parts: the set-up, storing your data and re
 It will take about an hour to complete this tutorial. While there aren't too many steps involved, there's a bit of waiting around for the network to process your requests.
 
 :::warning
-This tutorial uses the Filecoin mainnet. Everything you'll see over the next hour is happening on a production network with other users storing and retieving data. But don't worry, this tutorial won't cost you anything! It's just important to know that you'll be dealing with real miners, real data, and real transactions.
+This tutorial uses the Filecoin mainnet. Everything you'll see over the next hour is happening on a production network with other users storing and retrieving data. But don't worry, this tutorial won't cost you anything! It's just important to know that you'll be dealing with real miners, real data, and real transactions.
 :::
 
 ## Take notes
@@ -31,6 +31,8 @@ There are a few things to remember throughout this tutorial, such as Miner IDs a
 | --- | --- | --- |
 | Miner ID | The unique identifier for each miner. | `f01000`
 
+The above table is an example of what you will see throughout the tutorial; you don't have to copy it down.
+
 ## Terms and phrases
 
 This tutorial contains some words and phrases that you might not be familiar with. Refer back to this table if you encounter something you don't understand:
@@ -39,14 +41,17 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | --- | --- |
 | Address | A string of letters and numbers that other users can send FIL to. |
 | Wallet | A collection of addresses. Think of each wallet as a folder and each address as a single file in that folder. |
-| Filecoin (upper-case `F`) | The network that transactions and storage deals take place on. |
-| filecoin (lower-case `f`) | The cryptocurrency that the Filecoin network runs on. |
-| FIL | The shorthand representation of the filecoin cryptocurrency. |
+| Filecoin (upper-case `F`) | The network that transactions and storage deals take place on. For example: _Museums can use the Filecoin network to store their digital archives._ |
+| filecoin (lower-case `f`) | The cryptocurrency that the Filecoin network runs on. For example: _You can use filecoin to pay for your transactions._ |
+| FIL | The shorthand representation of the filecoin cryptocurrency. For example: _We charge 0.5 FIL per GiB._ |
 | Private key | A string of letters and numbers that programs use to interact with the Filecoin network. Keep your private key safe, and don't share it with anyone. |
 | [Block explorer](../../get-started/explore-the-network/#block-explorers) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
 | Deal | An agreement between two computers about what to do with some data. |
 | Storage deal | An agreement between a miner and a client about what data to store, how long for, and how much the miner can charge for storage. |
 | Retrieval deal | An agreement between a miner and a client about how much the miner can charge to send data to a client. |
+| Storage client | The user that wants to store something on the Filecoin network. In this tutorial, _you_ are the storage client. |
+| Storage provider | A computer on the Filecoin network offering storage space to other users who want to store data. Storage providers are sometimes called _miners_. |
+| Miner | An alternate name for a _storage provider_. |
 
 ## Next steps
 
