@@ -210,42 +210,52 @@ We need to wait for the storage providers to accept our deal and _seal_ the data
 
 ### Deal states
 
-Because of the complex nature of Lotus and the Filecoin network, deals can be in one of many different states:
+Because of the complex nature of Lotus and the Filecoin network, deals can be in one of many different states. The following table is the list of states that a deal should enter, assuming there are no errors. This list is in chronological order, from when the deal is first created, to when it has completed successfully:
 
 | State | Description |
 | --- | --- |
 | StorageDealUnknown | The current status of a deal is undefined or unknown. This could be because your full-node is out of sync. |
-| StorageDealProposalNotFound | Your full-node cannot find the deal you are looking for. This could be because it doesn't exist, or your full-node is out of sync. |
-| StorageDealProposalRejected | The storage provider, has chosen not to accept this deal. The storage provider may have provided a reason alongside this status message, but not always. |
-| StorageDealProposalAccepted | The storage provider intends to accept a storage deal proposal; however, the storage provider has not made any commitment to do so at this point. |
-| StorageDealStaged | The deal has been published, and data is ready to be put into a sector. At this point, the storage provider has fully committed to storing your data. |
-| StorageDealSealing | The storage provider, is sealing data into a sector. The larger your data payload, the longer this will take. |
-| StorageDealFinalizing | All the data is within the sector, and the storage provider is performing the final checks to make sure that all the data is correct. |
-| StorageDealActive | The data is in a sealed sector, and the storage provider can provide the data back to you. |
-| StorageDealExpired | A deal has passed its final epoch. The storage provider could still have the data available but is under no obligation to provide it to anyone. |
-| StorageDealSlashed | The data was in a sector, and the storage provider got slashed for failing to prove that the data was available. |
-| StorageDealRejecting | The storage provider has rejected the deal. This comes immediately before StorageDealProposalRejected. |
-| StorageDealFailing | Something has gone wrong in a deal. Once data is cleaned up, the deal will finalize. |
+| StorageDealReserveClientFunds | The client is checking that it has enough FIL for the deal.|
+| StorageDealClientFunding | The client has deposited funds into the StorageMarketActor and is waiting for the funds to appear. |
 | StorageDealFundsReserved | Your FIL has been deposited into escrow and is ready to be used to pay for the deal. |
-| StorageDealCheckForAcceptance | The client is waiting for a storage provider to seal and publish a deal. |
-| StorageDealValidating | The storage provider is validating that the deal parameters are good for a proposal. |
-| StorageDealAcceptWait | The storage provider is running custom decision logic to decide whether or not to accept the deal. The deal will have this status until the custom logic comes to a decision. |
 | StorageDealStartDataTransfer | The storage provider is ready to accept data from the client Lotus node. |
 | StorageDealTransferring | data is being transferred from the client Lotus node to the storage provider. |
-| StorageDealWaitingForData | Either a manual transfer is occurring, or the storage provider has not received a data-transfer request from the client. |
-| StorageDealVerifyData | All the data has been transferred, and the storage provider is now attempting to verify it against the PieceCID. |
-| StorageDealReserveProviderFunds | The storage provider is checking that it has enough FIL for the deal. |
-| StorageDealReserveClientFunds | The client is checking that it has enough FIL for the deal.|
+| StorageDealCheckForAcceptance | The client is waiting for a storage provider to seal and publish a deal. |
+| StorageDealProposalAccepted | The storage provider intends to accept a storage deal proposal; however, the storage provider has not made any commitment to do so at this point. |
+| StorageDealAwaitingPreCommit | A deal is ready and must be pre-committed. |
+| StorageDealSealing | The storage provider, is sealing data into a sector. The larger your data payload, the longer this will take. |
+| StorageDealActive | The data is in a sealed sector, and the storage provider can provide the data back to you. |
+| StorageDealExpired | A deal has passed its final epoch. The storage provider could still have the data available but is under no obligation to provide it to anyone. |
+
+The following deal states mean there was a failure somewhere along the line, in alphabetical order: 
+
+| State | Description |
+| --- | --- |
+| StorageDealAcceptWait | The storage provider is running custom decision logic to decide whether or not to accept the deal. The deal will have this status until the custom logic comes to a decision. |
+| StorageDealError | There has been an unforeseen error. No further updates will occur. |
+| StorageDealFailing | Something has gone wrong in a deal. Once data is cleaned up, the deal will finalize. |
+| StorageDealProposalNotFound | Your full-node cannot find the deal you are looking for. This could be because it doesn't exist, or your full-node is out of sync. |
+| StorageDealProposalRejected | The storage provider, has chosen not to accept this deal. The storage provider may have provided a reason alongside this status message, but not always. |
+| StorageDealRejecting | The storage provider has rejected the deal. This comes immediately before StorageDealProposalRejected. |
+| StorageDealValidating | The storage provider is validating that the deal parameters are good for a proposal. |
+
+The following deal states are informational, and do not mean that a deal has failed. This list is in alphabetical order:
+
+| State | Description |
+| --- | --- |
+| StorageDealClientTransferRestart | A storage deal data transfer from a client to a storage provider has restarted after a pause, likely caused by StorageDealProviderTransferAwaitRestart. |
+| StorageDealFinalizing | All the data is within the sector, and the storage provider is performing the final checks to make sure that all the data is correct. |
 | StorageDealProviderFunding | The storage provider has deposited funds into StorageMarketActor and is waiting for the funds to appear. |
-| StorageDealClientFunding | The client has deposited funds into the StorageMarketActor and is waiting for the funds to appear. |
+| StorageDealProviderTransferAwaitRestart | The storage provider restarted while data was being transferred from the client to the storage provider. Once the storage provider is back online, it will wait for the client to resume the transfer. |
 | StorageDealPublish | The deal is ready to be published on-chain. |
 | StorageDealPublishing | The deal has been published but is yet to appear on-chain. |
-| StorageDealError | There has been an unforeseen error. No further updates will occur. |
-| StorageDealProviderTransferAwaitRestart | The storage provider restarted while data was being transferred from the client to the storage provider. Once the storage provider is back online, it will wait for the client to resume the transfer. |
-| StorageDealClientTransferRestart | A storage deal data transfer from a client to a storage provider has restarted after a pause, likely caused by StorageDealProviderTransferAwaitRestart. |
-| StorageDealAwaitingPreCommit | A deal is ready and must be pre-committed. |
+| StorageDealReserveProviderFunds | The storage provider is checking that it has enough FIL for the deal. |
+| StorageDealSlashed | The data was in a sector, and the storage provider got slashed for failing to prove that the data was available. |
+| StorageDealStaged | The deal has been published, and data is ready to be put into a sector. At this point, the storage provider has fully committed to storing your data. |
+| StorageDealVerifyData | All the data has been transferred, and the storage provider is now attempting to verify it against the PieceCID. |
+| StorageDealWaitingForData | Either a manual transfer is occurring, or the storage provider has not received a data-transfer request from the client. |
 
-This list comes from the [Lotus project GitHub repository](https://github.com/filecoin-project/go-fil-markets/blob/master/storagemarket/dealstatus.go).
+These lists come from the [Lotus project GitHub repository](https://github.com/filecoin-project/go-fil-markets/blob/master/storagemarket/dealstatus.go).
 
 ## Next steps
 
