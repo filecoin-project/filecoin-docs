@@ -208,9 +208,17 @@ We need to wait for the storage providers to accept our deal and _seal_ the data
     lotus client list-deals --show-failed
     ```
 
+:::warning
+Do not turn off your Lotus lite-node until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen, and when. 
+:::
+
 ### Deal states
 
-Because of the complex nature of Lotus and the Filecoin network, deals can be in one of many different states. The following table is the list of states that a deal should enter, assuming there are no errors. This list is in chronological order, from when the deal is first created, to when it has completed successfully:
+Because of the complex nature of Lotus and the Filecoin network, deals can be in one of many different states. 
+
+#### Processing states
+
+The following table is the list of states that a deal should enter, assuming there are no errors. This list is in chronological order, from when the deal is first created, to when it has completed successfully:
 
 | State | Description |
 | --- | --- |
@@ -227,6 +235,8 @@ Because of the complex nature of Lotus and the Filecoin network, deals can be in
 | StorageDealActive | The data is in a sealed sector, and the storage provider can provide the data back to you. |
 | StorageDealExpired | A deal has passed its final epoch. The storage provider could still have the data available but is under no obligation to provide it to anyone. |
 
+#### Error states
+
 The following deal states mean there was a failure somewhere along the line, in alphabetical order: 
 
 | State | Description |
@@ -238,6 +248,8 @@ The following deal states mean there was a failure somewhere along the line, in 
 | StorageDealProposalRejected | The storage provider, has chosen not to accept this deal. The storage provider may have provided a reason alongside this status message, but not always. |
 | StorageDealRejecting | The storage provider has rejected the deal. This comes immediately before StorageDealProposalRejected. |
 | StorageDealValidating | The storage provider is validating that the deal parameters are good for a proposal. |
+
+#### Informational states
 
 The following deal states are informational, and do not mean that a deal has failed. This list is in alphabetical order:
 
