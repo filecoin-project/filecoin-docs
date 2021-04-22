@@ -6,7 +6,7 @@ breadcrumb: 'Install and setup'
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](../../mine/lotus/README.md).
+{{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](/mine/lotus/).
 
 ## Running in the cloud
 
@@ -108,7 +108,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 2. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
-   
+
    For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
@@ -116,6 +116,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    # For example:
    git checkout <vX.X.X> # tag for a release
    ```
+
    Currently, the latest code on the _master_ branch corresponds to mainnet.
 
 3. If you are in China, check out the specific [tips](tips-running-in-china.md).
@@ -143,11 +144,11 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    ```sh
    make clean all
-   
+
    # Or to join a testnet or devnet:
    make clean calibnet # Calibration with min 32GiB sectors
    make clean nerpanet # Nerpa with min 512MiB sectors
-   
+
    sudo make install
    ```
 
@@ -195,7 +196,7 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
    ```sh
    xcode-select -p
-   
+
    > /Library/Developer/CommandLineTools
    ```
 
@@ -210,7 +211,7 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
    ```sh
    sudo rm -rf /Library/Developer/CommandLineTools
    xcode-select --install
-   
+
    > Password:
    > xcode-select: note: install requested for command line developer tools
    ```
@@ -235,7 +236,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 1. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
-   
+
    For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
@@ -243,6 +244,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    # For example:
    git checkout <vX.X.X> # tag for a release
    ```
+
    Currently, the latest code on the _master_ branch corresponds to mainnet.
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
@@ -260,11 +262,11 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
    ```sh
    make clean && make all # mainnet
-   
+
    # Or to join a testnet or devnet:
    make clean && make calibnet # Calibration with min 32 GiB sectors
    make clean && make nerpanet # Nerpa with min 512 MiB sectors
-   
+
    sudo make install
    ```
 
