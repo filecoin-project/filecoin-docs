@@ -241,13 +241,12 @@ The following deal states mean there was a failure somewhere along the line, in 
 
 | State | Description |
 | --- | --- |
-| StorageDealAcceptWait | The storage provider is running custom decision logic to decide whether or not to accept the deal. The deal will have this status until the custom logic comes to a decision. |
 | StorageDealError | There has been an unforeseen error. No further updates will occur. |
 | StorageDealFailing | Something has gone wrong in a deal. Once data is cleaned up, the deal will finalize. |
 | StorageDealProposalNotFound | Your full-node cannot find the deal you are looking for. This could be because it doesn't exist, or your full-node is out of sync. |
 | StorageDealProposalRejected | The storage provider, has chosen not to accept this deal. The storage provider may have provided a reason alongside this status message, but not always. |
 | StorageDealRejecting | The storage provider has rejected the deal. This comes immediately before StorageDealProposalRejected. |
-| StorageDealValidating | The storage provider is validating that the deal parameters are good for a proposal. |
+| StorageDealSlashed | The data was in a sector, and the storage provider got slashed for failing to prove that the data was available. |
 
 #### Informational states
 
@@ -255,6 +254,7 @@ The following deal states are informational, and do not mean that a deal has fai
 
 | State | Description |
 | --- | --- |
+| StorageDealAcceptWait | The storage provider is running custom decision logic to decide whether or not to accept the deal. The deal will have this status until the custom logic comes to a decision. |
 | StorageDealClientTransferRestart | A storage deal data transfer from a client to a storage provider has restarted after a pause, likely caused by StorageDealProviderTransferAwaitRestart. |
 | StorageDealFinalizing | All the data is within the sector, and the storage provider is performing the final checks to make sure that all the data is correct. |
 | StorageDealProviderFunding | The storage provider has deposited funds into StorageMarketActor and is waiting for the funds to appear. |
@@ -262,8 +262,8 @@ The following deal states are informational, and do not mean that a deal has fai
 | StorageDealPublish | The deal is ready to be published on-chain. |
 | StorageDealPublishing | The deal has been published but is yet to appear on-chain. |
 | StorageDealReserveProviderFunds | The storage provider is checking that it has enough FIL for the deal. |
-| StorageDealSlashed | The data was in a sector, and the storage provider got slashed for failing to prove that the data was available. |
 | StorageDealStaged | The deal has been published, and data is ready to be put into a sector. At this point, the storage provider has fully committed to storing your data. |
+| StorageDealValidating | The storage provider is validating that the deal parameters are good for a proposal. |
 | StorageDealVerifyData | All the data has been transferred, and the storage provider is now attempting to verify it against the PieceCID. |
 | StorageDealWaitingForData | Either a manual transfer is occurring, or the storage provider has not received a data-transfer request from the client. |
 
