@@ -93,11 +93,11 @@ You will need at least a BLS wallet (`f3...` for mainnet) for mining. We recomme
 ```sh
 # A new BLS address to use as owner address:
 lotus wallet new bls
-t3...
+f3...
 
 # A new BLS address to use as worker address:
 lotus wallet new bls
-t3...
+f3...
 ```
 
 ::: callout
