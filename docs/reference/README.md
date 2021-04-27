@@ -138,6 +138,10 @@ Tools to check status and details of the network and chain.
 - [Statediff](https://node.glif.io/space07/statediff/rpc/)
   - Uses [filecoin-project/statediff](https://github.com/filecoin-project/statediff) in GoLang to explore changes to Filecoin chain state
   - Also see [keyko-io/filecoin-verifier-tools](https://github.com/keyko-io/filecoin-verifier-tools) for a JS tool to walk the state HAMT
+- "Orphan blocks" (not an official protocol term in the Filecoin Spec)
+  - Blocks without rewards that were either mined on the wrong tipset, that the network fails to deliver in time, or a mix resulting in reorgs
+  - https://filscout.com/en/orphan-block - stats
+  - https://filscout.com/en/orphan-block/alllist - blocklist
 
 ### Chain ingest tools
 
