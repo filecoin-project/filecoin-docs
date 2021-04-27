@@ -17,7 +17,8 @@ with open(htmlToTest, 'r') as content_file:
 soup = BeautifulSoup(content, 'html.parser')
 for codeBlock in soup.find_all("pre"):
     codeBlock.decompose()
-pageText = soup.find_all('div', class_="theme-default-content", limit=1).get_text().replace("&bullet","")
+foundDiv = soup.find_all('div', attrs={'class': 'theme-default-content'}, limit=1)
+pageText = foundDiv[0].get_text()
 
 strippedText = pageText.strip().encode('utf-8')
 
