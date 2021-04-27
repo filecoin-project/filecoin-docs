@@ -14,7 +14,7 @@ breadcrumb: 'Running in the cloud'
 
 The easiest and cheapest path is to use [the one-click application in the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2). In addition to being a one-click deployment, you will receive a $100 credit with DigitalOcean for using the provided referral link.
 
-<a href="https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2" alt="DigitalOcean Logo"><img src="../images/cloud/DO_Logo_horizontal_blue.svg" style="max-width: 40%; cursor: hand !important;"/></a>
+<a href="https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2" alt="DigitalOcean Logo"><img src="../images/cloud/digitalocean-logo.svg" style="max-width: 40%; cursor: hand !important;"/></a>
 
 After deploying, log into your new DigitalOcean Droplet as `root` using the password you provided when creating a "Droplet" (virtual machine) with Lotus pre-installed:
 
@@ -37,9 +37,9 @@ curl -X POST -H 'Content-Type: application/json' \
 
 We publish AMIs on a regular basis for each of the [filecoin networks](https://networks.filecoin.io/). To use one of these images, just search for one of our AMIs. You can use this [example link which populates a search for Lotus in the `us-west-2` region](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name).
 
-<a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name" alt="AWS Logo"><img src="../images/cloud/Amazon_Web_Services_Logo.svg" style="max-width: 40%; cursor: hand !important;"/></a>
+<a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name" alt="AWS Logo"><img src="../images/cloud/aws-logo.svg" style="max-width: 40%; cursor: hand !important;"/></a>
 
-![launch-filecoin-ami](../images/cloud/aws-filecoin-ami.png)
+![launch-filecoin-ami](../images/cloud/aws-launch-ami.png)
 
 After you launch your AWS instance, you should log in with the 'ubuntu' account.
 The filecoin instance runs a host-based firewall (UFW) which blocks all incomming ports except

@@ -27,8 +27,11 @@ jobs:
           sudo apt-get install -y optipng jpegoptim jq
           pip install bs4
           pip install requests
+          pip install scour
       - name: Run CI Checks
         env:
+          GH_USERNAME: ${{ secrets.GH_USERNAME }}
+          GH_USER_EMAIL: ${{ secrets.GH_USER_EMAIL }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER_ID: ${{ secrets.GH_USER_ID }}
           LANGUAGETOOLS_API_KEY: ${{ secrets.LANGUAGETOOLS_API_KEY }}
@@ -38,4 +41,3 @@ jobs:
           LAST_COMMIT: ${{ github.event.after }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: bash ${{github.workspace}}/scripts/cicheck.sh
-          

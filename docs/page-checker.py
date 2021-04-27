@@ -15,11 +15,9 @@ htmlToTest = markdownToTest.replace("docs/","docs/.vuepress/dist/").replace("_in
 with open(htmlToTest, 'r') as content_file:
     content = content_file.read()
 soup = BeautifulSoup(content, 'html.parser')
-for sectionNav in soup.find_all("nav", {'class':'section-nav'}):
-    sectionNav.decompose()
 for codeBlock in soup.find_all("pre"):
     codeBlock.decompose()
-pageText = soup.find(id="body-inner").get_text().replace("&bullet","")
+pageText = soup.find_all('div', class_="theme-default-content", limit=1).get_text().replace("&bullet","")
 
 strippedText = pageText.strip().encode('utf-8')
 
@@ -32,9 +30,7 @@ checkedLinks = ''
 for link in links:
     linkUrl = link['href'].split('#')[0]
     if ("http" in linkUrl and
-    "digitalocean.com" not in linkUrl and
-    "meetup.com" not in linkUrl and
-    "getfeedback.com" not in linkUrl and
+    "docs.filecoin.io" not in linkUrl and
     (linkUrl + "|") not in checkedLinks):
         #print(linkUrl)
         checkedLinks += linkUrl + "|"

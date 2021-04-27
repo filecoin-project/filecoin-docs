@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git config --global user.name "$GH_USERNAME"
+git config --global user.email "$GH_USER_EMAIL"
+
 BRANCHNAME='$PR_HEAD_REF'
 echo "Testing on commit range: $FIRST_COMMIT..$LAST_COMMIT"
 CHANGED_FILES=`(git diff --name-only $FIRST_COMMIT..$LAST_COMMIT)`
@@ -13,33 +16,44 @@ if [[ $BRANCHNAME == *"ciskip"* ]]; then
 fi
 
 # Image optimization
-echo "Compressing PNGs..."
 PNGS_CHANGED=`(echo "$CHANGED_FILES" | grep .png)`
 if [ -z "$PNGS_CHANGED" ]; then
     echo "No changed PNGs"
 else
+  echo "Compressing PNGs..."
   for png in $PNGS_CHANGED; do
     optipng -o 7 $png
   done
 fi
 
-echo "Compressing JPGs..."
 JPGS_CHANGED=`(echo "$CHANGED_FILES" | grep .jpg)`
 if [ -z "$JPGS_CHANGED" ]; then
     echo "No changed JPGs"
 else
+  echo "Compressing JPGs..."
   for jpg in $JPGS_CHANGED; do
     jpegoptim -f --strip-all $jpg
   done
 fi
 
-echo "Compressing GIFs..."
 GIFS_CHANGED=`(echo "$CHANGED_FILES" | grep .gif)`
 if [ -z "$GIFS_CHANGED" ]; then
     echo "No changed GIFs"
 else
+  echo "Compressing GIFs..."
   for gif in $GIFS_CHANGED; do
     optipng -o 7 $gif
+  done
+fi
+
+SVGS_CHANGED=`(echo "$CHANGED_FILES" | grep .svg)`
+if [ -z "$SVGS_CHANGED" ]; then
+    echo "No changed SVGs"
+else
+  echo "Compressing SVGs..."
+  for svg in $SVGS_CHANGED; do
+    scour -i "$svg" -o "$svg-opt"
+    mv "$svg-opt" "$svg"
   done
 fi
 
@@ -49,12 +63,13 @@ if [ -z "$(git status --porcelain)" ]; then
 - Image optimization came back clean!"
 else
   # Uncommitted changes
-  git remote add fdocs https://${GH_TOKEN}@github.com/filecoin-project/filecoin-docs.git > /dev/null 2>&1
+  git remote add fdocs https://$${GH_TOKEN}@github.com/filecoin-project/filecoin-docs.git > /dev/null 2>&1
   git fetch fdocs
-  git checkout $PR_HEAD_REF
+  git checkout --track origin/$PR_HEAD_REF
+  git pull
   git add .
   git commit -m "Automatically optimized images. [ciskip]"
-  git push --set-upstream pdocs $PR_HEAD_REF
+  git push
   COMMENT="$COMMENT
 - I optimized some images for you! See the commit with the comment \`Automatically optimized images [ciskip]\` in this PR for details."
 fi
@@ -67,7 +82,7 @@ BUILDRESULT=$(npm run docs:build 2>&1)
 if [[ $? -eq 0 ]]; then
   echo "Vuepress build was successful!"
   COMMENT="$COMMENT
-- Vuepress build was successful! Noting this in the PR comment."
+- Vuepress build was successful!"
 else
   echo "Vuepress build failed. Creating PR comment with the details."
   COMMENT="$COMMENT
@@ -85,18 +100,12 @@ if [[ $DO_PAGE_CHECKS -eq 1 ]]; then
     COMMENT="$COMMENT
 - No markdown files were changed, so no page checks were run!"
   else
-    COMMENT="$COMMENT
-<details><summary>Possible Grammar and Outbound Link Errors</summary>
-
-"
     for md in $MDS_CHANGED; do
       LANGCHECK=$(python docs/page-checker.py $md $LANGUAGETOOLS_USERNAME $LANGUAGETOOLS_API_KEY)
+      echo $LANGCHECK
       COMMENT="$COMMENT
 $LANGCHECK"
     done
-    COMMENT="$COMMENT
-
-</details>"
   fi
 else
   COMMENT="$COMMENT
