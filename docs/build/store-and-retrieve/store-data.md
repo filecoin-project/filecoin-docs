@@ -31,13 +31,13 @@ For this tutorial, we're going to create a dummy 5GB file full of random data.
     If you're on macOS, run:
 
     ```shell
-    dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1m count=4096 
+    dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1m count=5200
     ```
 
     If you're on Linux, run: 
 
     ```shell
-    dd if=/dev/urandom of=padded-5gb-filecoin-payload.bin bs=1M count=4096
+    dd if=/dev/urandom of=padded-5gb-filecoin-payload.bin bs=1M count=5200
     ```
 
 We now have our payload file ready to be stored using the Filecoin network.
@@ -148,24 +148,10 @@ To complete this section, you need the **payload CID** you received after runnin
     > Make this a verified deal? (yes/no): yes
     ```
 
-1. Enter the miner IDs from the previous section with an empty space seperating the two IDs: 
+1. Enter the miner IDs from the previous section with an empty space separating the two IDs: 
 
     ```shell
     > Miner Addresses (f0.. f0..), none to find: f01000 f01001 
-    ```
-
-1. Enter `0` if you are asked how much FIL we are willing to spend for this storage deal:
-
-    ```shell
-    > Maximum budget (FIL): 0
-    ```
-
-    Since you picked two storage providers accepting 0 FIL deals for verified storage deals, and you are a _verified client_, you don't need to spend any FIL here!
-
-1. If asked, specify how many storage providers you want your file to be replicated over. Since you entered two miner IDs, select `2`: 
-
-    ```shell
-    Deals to make (1): 2 
     ```
 
 1. Confirm your transaction:
@@ -183,26 +169,21 @@ To complete this section, you need the **payload CID** you received after runnin
     > Accept (yes/no): yes
     ```
 
-1. Lotus will returns a **Deal CID**:
+1. Lotus will returns two **Deal CIDs**:
 
     ```shell
     .. executing
     Deal (f01000) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
+    Deal (f01001) CID: bafeauyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpt
     ```
 
-1. Take a note of the **deal CID** `bafyre...`.
+1. Take a note of the **deal CIDs** `baf...`.
 
 ## Check the deal status 
 
 We need to wait for the storage providers to accept our deal and _seal_ the data. This process can take up to 24 hours to complete, depending on how much data we asked the storage provider to store.
 
 1. List successful and pending deals by using the `list-deals` command:
-
-    ```shell
-    lotus client list-deals
-    ```
-
-    If you cannot see your deal in the list, the deal may have failed. Use `--show-failed` to see failed deals:
 
     ```shell
     lotus client list-deals --show-failed

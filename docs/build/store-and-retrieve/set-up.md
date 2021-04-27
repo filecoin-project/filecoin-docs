@@ -71,7 +71,7 @@ Follow these steps to install the project dependencies specifically for MacOS:
 1. Check if you have [Homebrew](https://brew.sh/) installed:
 
     ```shell
-    brew install
+    brew --version 
 
     > Homebrew 3.0.11
     ```
@@ -271,6 +271,10 @@ Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol La
     > 2021-04-10T13:34:07.170-0400  INFO    main    lotus/daemon.go:214 lotus repo: /home/johnny/.lotus
     > ...
     ```
+
+    :::warning
+    The above command uses [secure websockets `wss`](https://tools.ietf.org/html/rfc6455) to connect to the node. If you are **not** using `api.chain.love`, you will likely be using IPv4 or IPv6 instead and should replace `wss` with `ip4` or `ip6` respectively.
+    :::
 
 1. MacOS users may see a warning regarding Lotus. Select **Accept incoming connections** if you see a warning.
 
