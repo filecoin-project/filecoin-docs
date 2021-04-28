@@ -9,6 +9,10 @@ Before you begin storing any data on the Filecoin network, you need to run throu
 
 ![A flowchart showing to steps within this set up process.](./images/set-up-process.png)
 
+::: tip What is Lotus?
+Programs that interact with the Filecoin network are called _implementations_, and [Lotus](../../get-started/lotus.md) is a command-line interface (CLI) implementation. There are [other implementation](../../get-started.md#filecoin-implementations) being created alongside Lotus, however Lotus is the only Filecoin implementation created and maintained by Protocol Labs.
+:::
+
 ## Things to note
 
 As you're going through this section, make a note of the following variables:
