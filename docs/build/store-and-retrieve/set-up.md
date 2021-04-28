@@ -300,13 +300,13 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 ## Filecoin Plus
 
-Storage providers get paid either by receiving FIL directly from users for storing their data, or by winning block-rewards from the network.
+Storage providers get paid either by receiving FIL directly from users for storing their data, by winning block-rewards from the network, or both!
 
 Getting paid from users is straight forward. If Laika wants to store some data, and Albert is a storage provider, then the two of them can create a deal to store Laika's data for `X` amount of time for `Y` FIL.
 
-Block-rewards are randomly given to a storage-provider every 30 seconds. The more data that a storage-provider is _storing_, the higher their chances of winning the block-reward. You can think of it like this: if a storage-provider accepts a deal from a user to store 5GB of data then they have 5 chances to win the block-reward for each 30 second round.
+Block rewards are randomly given to a storage provider every 30 seconds. The more data that a storage provider is _storing_, the higher their chances of winning the block reward. You can think of it like this: if a storage provider accepts a deal from a user to store 5GB of data then they have 5 chances to win the block reward for each 30 second round.
 
-Data cap acts as a kind of _multiplier buff_ for storage-providers. If a storage-provider accepts a deal from a user with Data cap attached, then the Filecoin network treats that deal as though it's 10x as big as it actually is. So a 5GB deal gives the storage-miner 50 chances to win the block-reward, instead of the usual 5 chances.
+Data cap acts as a kind of _multiplier_ for block rewards. If a storage provider accepts a deal from a user with data cap attached - also known as — _verified deal_ — , then the Filecoin network treats that deal as though it's 10x as big as it actually is. So a 5GB deal gives the storage miner 50 chances to win the block reward, instead of the usual 5 chances. Some storage providers find data cap so valuable that they're willing to make verified deals without charging and FIL! You can find a list of these storage providers using the [Filecoin Plus miner registry](https://plus.fil.org/miners/).
 
 
 <!--
