@@ -41,7 +41,7 @@ Building Lotus requires some system dependencies, usually provided by your distr
 Arch:
 
 ```bash
-sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers hwloc
+sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers opencl-nvidia hwloc 
 ```
 
 Ubuntu/Debian:
