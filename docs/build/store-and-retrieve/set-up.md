@@ -23,7 +23,7 @@ As you're going through this section, make a note of the following variables:
 
 ## Get a full-node 
 
-A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are special because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are relatively high and might be out of reach for most end-user laptops and PCs. 
+A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are unique because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are relatively high and might be out of reach for most end-user laptops and PCs. 
 
 Usually, we'd have to _spin up_ a full-node, but we're going to use a Lotus full-node provided by Protocol Labs for this tutorial. This node, called `api.chain.love`, is only for practice sessions like this tutorial and should not be relied upon for any production or development purposes.
 
@@ -137,7 +137,7 @@ If you are unsure which CPU your Mac is using, check out the [troubleshooting st
 
 ##### M1-based Macs
 
-Because of the novel architecture of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
+Because of the novel architecture of the M1-based Mac computers, you must set some specific environment variables before creating the `lotus` executable.
 
 1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
 
@@ -264,7 +264,7 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node! 
 
 :::warning
-Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's perfectly suited for use in this tutorial, but do not use it for development or in a production environment.
+Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but do not use it for development or in a production environment.
 :::
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address: 
@@ -277,18 +277,18 @@ Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol La
     ```
 
     :::warning
-    The above command uses [secure websockets `wss`](https://tools.ietf.org/html/rfc6455) to connect to the node. If you are **not** using `api.chain.love`, you will likely be using IPv4 or IPv6 instead and should replace `wss` with `ip4` or `ip6` respectively.
+    The above command uses [secure WebSockets `wss`](https://tools.ietf.org/html/rfc6455) to connect to the node. If you are **not** using `api.chain.love`, you will likely be using IPv4 or IPv6 instead and should replace `wss` with `ip4` or `ip6`, respectively.
     :::
 
 1. MacOS users may see a warning regarding Lotus. Select **Accept incoming connections** if you see a warning.
 
-    The Lotus daemon will continue to run. Further commands must be run from a separate terminal window.
+    The Lotus daemon will continue to run. You must run further commands from a separate terminal window.
 
 ## Get a FIL address
 
 Filecoin addresses are similar to regular bank account numbers. Other users can use your address to send you FIL, and you can use your address to pay storage providers for storing and retrieving your data. 
 
-There are two parts to a Filecoin address: the public address and the private key. You can freely share your public address with anyone, but you should never share your private key. We're not actually going to look at our private key in this tutorial, but it's important to understand the difference between your public address and your private key.
+There are two parts to a Filecoin address: the public address and the private key. You can freely share your public address with anyone, but you should never share your private key. We're not going to view any private keys in this tutorial, but it's essential to understand the difference between your public address and your private key.
 
 1. Open a new terminal window and create an address using the `lotus wallet new` command:
 
@@ -304,13 +304,13 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 ## Filecoin Plus
 
-Storage providers get paid either by receiving FIL directly from users for storing their data, by winning block-rewards from the network, or both!
+Storage providers get paid either by receiving FIL directly from users for storing their data, winning block rewards from the network, or both!
 
-Getting paid from users is straight forward. If Laika wants to store some data, and Albert is a storage provider, then the two of them can create a deal to store Laika's data for `X` amount of time for `Y` FIL.
+Getting paid from users is straightforward. If Laika wants to store some data, and Albert is a storage provider, they can create a deal to store Laika's data for `X` amount of time for `Y` FIL.
 
-Block rewards are randomly given to a storage provider every 30 seconds. The more data that a storage provider is _storing_, the higher their chances of winning the block reward. You can think of it like this: if a storage provider accepts a deal from a user to store 5GB of data then they have 5 chances to win the block reward for each 30 second round.
+Block rewards are randomly given to a storage provider every 30 seconds. The more data that a storage provider is _storing_, the higher their chances of winning the block reward. You can think of it like this: if a storage provider accepts a deal from a user to store 5GB of data, they have 5 chances to win the block reward for each 30 second round.
 
-Data cap acts as a kind of _multiplier_ for block rewards. If a storage provider accepts a deal from a user with data cap attached - also known as — _verified deal_ — , then the Filecoin network treats that deal as though it's 10x as big as it actually is. So a 5GB deal gives the storage miner 50 chances to win the block reward, instead of the usual 5 chances. Some storage providers find data cap so valuable that they're willing to make verified deals without charging and FIL! You can find a list of these storage providers using the [Filecoin Plus miner registry](https://plus.fil.org/miners/).
+Data cap acts as a kind of _multiplier_ for block rewards. If a storage provider accepts a deal from a user with data cap attached - also known as — _verified deal_ —, then the Filecoin network treats that deal as though it's 10x as big as it is. So a 5GB deal gives the storage miner 50 chances to win the block reward instead of the usual 5 chances. Some storage providers find data cap so valuable that they're willing to make verified deals without charging and FIL! You can find a list of these storage providers using the [Filecoin Plus miner registry](https://plus.fil.org/miners/).
 
 ### Sign up
 

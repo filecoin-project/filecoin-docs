@@ -18,8 +18,8 @@ As you're going through this section, make a note of the following variables:
 | Variable | Description | Example |
 | --- | --- | --- |
 | Payload CID | The content identifier of the data that you want to store using Filecoin. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
-| Miner ID #1 | The unique identifier for each storage provider. You need to have two storage provider IDs for this tutorail. | `f01000`
-| Miner ID #2 | The unique identifier for each storage provider. You need to have two storage provider IDs for this tutorail. | `f01000`
+| Miner ID #1 | The unique identifier for each storage provider. You need to have two storage provider IDs for this tutorial. | `f01000`
+| Miner ID #2 | The unique identifier for each storage provider. You need to have two storage provider IDs for this tutorial. | `f01000`
 | Deal CID | The content identifier for a deal made with a storage provider. | `bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau` | 
 
 ## Prepare your data
@@ -52,7 +52,7 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
     lotus client import ~/5gb-filecoin-payload.bin 
     ```
 
-    Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete Lotus will output the payload CID.
+    Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete, Lotus will output the payload CID.
 
     ```shell
     > Import 3, Root bafykb...
@@ -66,7 +66,7 @@ Now that Lotus knows which file we want to use, we can create a deal with a File
 
 We need to find a suitable storage provider or storage providers before we can store our data. The Filecoin network allows storage providers to compete by offering different terms for pricing, acceptable data sizes, and other important deal parameters. It's also important to consider the storage provider's location; the closer the storage provider is to you, the faster the storage and retrieval process will be. 
 
-We're going to use the Filecoin Plus miner registry to find a couple of storage providers, and then cross check their information with a third-party storage provider reputation system.
+We're going to use the Filecoin Plus miner registry to find a couple of storage providers and then cross-check their information with a third-party storage provider reputation system.
 
 :::tip
 Storing your data on more than one storage provider decreases your chance that your data will be lost at any point. Increasing the number of storage providers you use increases your data redundancy.
@@ -79,7 +79,7 @@ The Filecoin Plus miner registry is a collection of geographically diverse stora
 Let's find a couple of storage providers to store our data.
 
 1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
-1. Using the table, find a couple of storage providers that suits your needs. For the sake of this tutorial, look for storage providers that:
+1. Using the table, find a couple of storage providers that suit your needs. For the sake of this tutorial, look for storage providers that:
     a. Offer verified-data deals for 0 FIL.
     a. Are close to you.
 1. Once you have found a couple of suitable storage providers, make a note of their _miner IDs_ from the **Miner ID** column:
@@ -94,9 +94,9 @@ Let's find a couple of storage providers to store our data.
 
 ### Miner reputation systems 
 
-The Filecoin Plus miner registry is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.
+The Filecoin Plus miner registry is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep, you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.
 
-We're going to use FilRep to check that the minimum deal size of the storage providers we selected fit the size of our file.
+We're going to use FilRep to check that the minimum deal size of the storage providers we selected fits the size of our file.
 
 1. Go to [https://filrep.io](https://filrep.io).
 1. Click the **Settings** toggle to display a list of all available storage provider details.
@@ -134,7 +134,7 @@ To complete this section, you need the **payload CID** you received after runnin
     > .. calculating data size 
     ```
 
-    The duration of this process depends on the size of your file and the specification of your Lotus node. In tests, Lotus took around 20 minutes to build the `.car` file of a ~7.5GB file with an 4-core CPU and 8GB RAM. These specifications are common for most end-user laptops.
+    The duration of this process depends on the size of your file and the specification of your Lotus node. In tests, Lotus took around 20 minutes to build the `.car` file of a ~7.5GB file with a 4-core CPU and 8GB RAM. These specifications are common for most end-user laptops.
 
 1. Enter the number of days you want to keep this file on Filecoin. The minimum is 180 days:
 
@@ -190,7 +190,7 @@ We need to wait for the storage providers to accept our deal and _seal_ the data
     ```
 
 :::warning
-Do not turn off your Lotus lite-node until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen, and when. 
+Do not turn off your Lotus lite-node until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when. 
 :::
 
 ### Deal states
@@ -199,7 +199,7 @@ Because of the complex nature of Lotus and the Filecoin network, deals can be in
 
 #### Processing states
 
-The following table is the list of states that a deal should enter, assuming there are no errors. This list is in chronological order, from when the deal is first created, to when it has completed successfully:
+The following table is the list of states that a deal should enter, assuming there are no errors. This list is in chronological order, from when the deal is first created to when it has completed successfully:
 
 | State | Description |
 | --- | --- |
