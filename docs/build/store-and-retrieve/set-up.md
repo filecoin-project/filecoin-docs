@@ -259,7 +259,7 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
 
-### Run a Lotus lite-node 
+## Run a Lotus lite-node 
 
 Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node! 
 
