@@ -180,7 +180,7 @@ Because of the novel architecture of the M1-based Mac computers, some specific e
 
 [Head down to the next section to run your Lotus lite-node →](#run-a-lotus-lite-node)
 
-#### Ubuntu
+### Ubuntu
 
 This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section](#macos).
 
@@ -300,19 +300,28 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 ## Filecoin Plus
 
+Storage providers get paid either by receiving FIL directly from users for storing their data, or by winning block-rewards from the network.
+
+Getting paid from users is straight forward. If Laika wants to store some data, and Albert is a storage provider, then the two of them can create a deal to store Laika's data for `X` amount of time for `Y` FIL.
+
+Block-rewards are randomly given to a storage-provider every 30 seconds. The more data that a storage-provider is _storing_, the higher their chances of winning the block-reward. You can think of it like this: if a storage-provider accepts a deal from a user to store 5GB of data then they have 5 chances to win the block-reward for each 30 second round.
+
+Data cap acts as a kind of _multiplier buff_ for storage-providers. If a storage-provider accepts a deal from a user with Data cap attached, then the Filecoin network treats that deal as though it's 10x as big as it actually is. So a 5GB deal gives the storage-miner 50 chances to win the block-reward, instead of the usual 5 chances.
+
+
+<!--
+
 Normally, when you want to store something on the Filecoin network, you have to pay storage providers with FIL. However, Protocol Labs created the Filecoin Plus program to help developers test out the network without having to pay! By signing up to Filecoin Plus with your GitHub account, you can store up to 32GB on the Filecoin network per month for free!
 
 ### How it works 
-
-Miners get paid for storing data; the more data they store, the more they get paid. 
-
-![](./images/miner-paid-without-data-cap.svg)
 
 However, there's no way to check whether the data they are storing is useful or not. To get around this and to incentivize storage providers to store _real_ data from _real_ users, the Filecoin team created _Data Cap_ to give to users. Think of Data Cap as a set of tickets. When you submit your data with a Data Cap ticket to a storage provider, that storage provider will get paid ten times what they normally would from the Filecoin network.
 
 ![](./images/miner-paid-with-data-cap.svg)
 
 This is an incredibly simplified overview of what Data Cap is and how it works. The main thing is that Data Cap helps users store their data on the Filecoin network. For more information on Data Cap check out the [Filecoin Plus section](../../store/filecoin-plus).
+
+-->
 
 ### Sign up
 

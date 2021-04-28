@@ -1,11 +1,11 @@
 ---
 title: Store data
-description: Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the MinerX program, creating a storage deal, and then waiting for the deal to complete! 
+description: Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus miner registry, creating a storage deal, and then waiting for the deal to complete! 
 ---
 
 # Store data
 
-Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the MinerX program, creating a storage deal, and then waiting for the deal to complete! 
+Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus miner registry, creating a storage deal, and then waiting for the deal to complete! 
 
 :::danger
 Do not store personal data on the Filecoin network, even if it's encrypted. Only store public and static data on the Filecoin network. Access control is on the project roadmap.
@@ -66,15 +66,15 @@ Now that Lotus knows which file we want to use, we can create a deal with a File
 
 We need to find a suitable storage provider or storage providers before we can store our data. The Filecoin network allows storage providers to compete by offering different terms for pricing, acceptable data sizes, and other important deal parameters. It's also important to consider the storage provider's location; the closer the storage provider is to you, the faster the storage and retrieval process will be. 
 
-We're going to use the MinerX program to find a couple of storage providers, and then cross check their information with a third-party storage provider reputation system.
+We're going to use the Filecoin Plus miner registry to find a couple of storage providers, and then cross check their information with a third-party storage provider reputation system.
 
 :::tip
 Storing your data on more than one storage provider decreases your chance that your data will be lost at any point. Increasing the number of storage providers you use increases your data redundancy.
 :::
 
-### MinerX 
+### Filecoin Plus miner registry 
 
-The MinerX program is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The idea is that these storage providers will bootstrap the Filecoin network. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. You can [find out more about the MinerX program from the Filecoin Blog](https://filecoin.io/blog/posts/filecoin-minerx-fellowship-program/).
+The Filecoin Plus miner registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The idea is that these storage providers will bootstrap the Filecoin network. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. You can [find out more about the Filecoin Plus miner registry from the Filecoin Blog](https://filecoin.io/blog/posts/filecoin-minerx-fellowship-program/).
 
 Let's find a couple of storage providers to store our data.
 
@@ -84,7 +84,7 @@ Let's find a couple of storage providers to store our data.
     a. Are close to you.
 1. Once you have found a couple of suitable storage providers, make a note of their _miner IDs_ from the **Miner ID** column:
 
-    ![A collection of storage providers listed in MinerX.](./images/miner-x-listings.png)
+    ![A collection of storage providers listed in the Filecoin Plus miner registry.](./images/miner-x-listings.png)
 
     Some storage providers list multiple miner IDs. For these storage providers, just copy one of the IDs:
 
@@ -94,7 +94,7 @@ Let's find a couple of storage providers to store our data.
 
 ### Miner reputation systems 
 
-The MinerX program is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.
+The Filecoin Plus miner registry is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.
 
 We're going to use FilRep to check that the minimum deal size of the storage providers we selected fit the size of our file.
 
@@ -108,7 +108,7 @@ We're going to use FilRep to check that the minimum deal size of the storage pro
 
     ![](./images/filrep-search-min-file-size.png)
 
-1. If the minimum file size shown for any of your storage providers is larger than your dataset, go back to [the previous section](#minerx) and select a new storage provider.
+1. If the minimum file size shown for any of your storage providers is larger than your dataset, go back to [the previous section](#filecoin-plus-miner-registry) and select a new storage provider.
 
 ## Create a deal 
 
