@@ -38,7 +38,7 @@ breadcrumb: ''
 
 ## Wallets
 
-Filecoin wallets allow you to manage Fil, Filecoin's native token. Wallets store the private keys that allow you to authorize Filecoin transactions, including paying for storage deals and sending Fil to other accounts. See the [Wallet Addresses reference](/reference/#wallet-addresses) to learn about the kinds of addresses used by Filecoin accounts.
+Filecoin wallets allow you to manage FIL, Filecoin's native token. Wallets store the private keys that allow you to authorize Filecoin transactions, including paying for storage deals and sending FIL to other accounts. See the [Wallet Addresses reference](/reference/#wallet-addresses) to learn about the kinds of addresses used by Filecoin accounts.
 
 The table below lists the recommended wallet implementations:
 
