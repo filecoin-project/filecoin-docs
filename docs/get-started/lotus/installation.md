@@ -242,15 +242,16 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    
    For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
 
-   ```sh
-   git checkout <tag_or_branch>
-   # For example:
-   git checkout <vX.X.X> # tag for a release
+   ```shell
+   git checkout v1.8.0
    ```
-   Currently, the latest code on the _master_ branch corresponds to mainnet.
+   You can also check out to the `master` branch for the bleeding-edge mainnet release:
+
+   ```shell
+   git checkout master
+   ```
 
 1. If you are in China, check out the specific [tips](tips-running-in-china.md).
-
 1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
 
    ```sh
