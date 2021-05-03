@@ -216,7 +216,7 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 
 - [Filecoin Signing Tools](https://github.com/filecoin-project/filecoin-docs/wiki#remote-signing-tools) - **_recommended_** - for signing Filecoin messages without a full node, has a pure JS and Rust to WASM version for use in browsers, see the [Wallets](#wallets) section below
 - [Glif web wallet on Github](https://github.com/glifio/wallet) - a good JS example of using `filecoin-signing-tools` and Ledger hardware integration, live Filecoin wallet at [Glif.io](https://glif.io)
-- [See Wallet Tools below](#wallet-tools-for-developers)
+- [See Wallet Tools below](#wallets)
 
 ### Developer tools
 
