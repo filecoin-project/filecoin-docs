@@ -29,6 +29,7 @@ This section contains links and reference materials for Filecoin.
 - [Wallets](#wallets)
   - [List of Filecoin wallets](#wallets)
   - [Wallet tools for developers](#wallet-tools-for-developers)
+  - [Wallet addresses](#wallet-addresses)
   - [Filecoin signing tools](#filecoin-signing-tools)
   - [Retrieval Market resources](#retrieval-market-resources-wip-experiments)
 
@@ -300,6 +301,14 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [FilSnap MetaMask Plugin](https://filsnap.netlify.app/) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
 - A Filecoin light wallet example is in the [Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
 - [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
+
+### Wallet Addresses
+
+When using a wallet, your own account is identified by its [address](/about-filecoin/how-filecoin-works/#addresses). A Filecoin address always starts with the letter `f` and a digit that indicates what type of address it is. The addresses for end-user wallets are generally [public key addresses](/about-filecoin/how-filecoin-works/#public-key-addresses-f1-and-f3), which start with `f1` or `f3` depending on the type of key. Here's an example of a secp256k1 public key address: `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za`.
+
+After a short consensus period, the blockchain assigns a short [ID address](/about-filecoin/how-filecoin-works/#id-addresses-f0) for each account, for example: `f033259`. You can find the ID address for any public key address by searching for the public key address on [FilFox](https://filfox.info/), a Filecoin block explorer. 
+
+Because ID addresses depend on the blockchain reaching consensus, you must wait a short time after they are created before using them. If an ID address is only a few hours old, there's a small chance it will be assigned to a different account during the consensus process. To be safe, only send Fil to ID addresses that are at least a day old, and use public key addresses when sending to brand new accounts.
 
 ### Filecoin signing tools
 
