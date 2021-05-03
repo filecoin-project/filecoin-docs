@@ -216,6 +216,7 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 
 - [Filecoin Signing Tools](https://github.com/filecoin-project/filecoin-docs/wiki#remote-signing-tools) - **_recommended_** - for signing Filecoin messages without a full node, has a pure JS and Rust to WASM version for use in browsers, see the [Wallets](#wallets) section below
 - [Glif web wallet on Github](https://github.com/glifio/wallet) - a good JS example of using `filecoin-signing-tools` and Ledger hardware integration, live Filecoin wallet at [Glif.io](https://glif.io)
+- [See Wallet Tools below](#wallets)
 
 ### Developer tools
 
@@ -297,7 +298,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 ### Wallet tools for developers
 
-- [FilSnap MetaMask Plugin](https://filsnap.netlify.app/) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
+- [FilSnap MetaMask Plugin](https://pages.consensys.net/filecoin-metamask-snap-preview) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
 - A Filecoin light wallet example is in the [Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
 - [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
 
