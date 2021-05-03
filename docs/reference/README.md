@@ -304,11 +304,33 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 ### Wallet Addresses
 
-When using a wallet, your own account is identified by its [address](/about-filecoin/how-filecoin-works.md#addresses). A Filecoin address always starts with the letter `f` and a digit that indicates what type of address it is. The addresses for end-user wallets are generally [public key addresses](/about-filecoin/how-filecoin-works.md#public-key-addresses-f1-and-f3), which start with `f1` or `f3` depending on the type of key. Here's an example of a secp256k1 public key address: `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za`.
+When using a wallet, an account is identified by its [address](/about-filecoin/how-filecoin-works.md#addresses). A Filecoin address always starts with the letter `f` and a digit that indicates what type of address it is.
 
-After a short consensus period, the blockchain assigns a short [ID address](/about-filecoin/how-filecoin-works.md#id-addresses-f0) for each account, for example: `f033259`. You can find the ID address for any public key address by searching for the public key address on [FilFox](https://filfox.info/), a Filecoin block explorer. 
+Filecoin accounts have two kinds of address, **public key** addresses, and **ID** addresses. Both addresses refer to the same account and can be used to send and receive FIL using a wallet.
 
-Because ID addresses depend on the blockchain reaching consensus, you must wait a short time after they are created before using them. If an ID address is only a few hours old, there's a small chance it will be assigned to a different account during the consensus process. To be safe, only send Fil to ID addresses that are at least a day old, and use public key addresses when sending to brand new accounts.
+#### Public Key Addresses
+
+A [public key address](/about-filecoin/how-filecoin-works.md#public-key-addresses-f1-and-f3) is derived directly from a cryptographic key. Public key addresses start with the characters `f1` or `f3`, depending on the type of encryption key used.
+
+Here's an example of a secp256k1 public key address: `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za`.
+
+Public key addresses are the most common way to refer to Filecoin accounts, and they are supported by hardware wallets like [Ledger](https://ledger.com).
+
+Because a public key address does not depend on any blockchain state, you can use it right away, without waiting for it to be "confirmed". As such, public key addresses are recommended for most use cases involving transfers of FIL, for example, when sending FIL to another user through an exchange.
+
+#### ID Addresses
+
+ID addresses are a compact and more "human friendly" way to refer to an account than public key addresses. ID addresses always start with the characters `f0`, followed by a sequence of digits, for example: `f033259`.
+
+Every ID address for a Filecoin account has an alternative public key address that corresponds to the same account. You can find the ID address for any public key address by searching for the public key address on [FilFox](https://filfox.info/), a Filecoin block explorer.
+
+Because they are more compact than public key addresses, ID addresses are often used when refering to miners and other long-lived Filecoin [Actors](/about-filecoin/how-filecoin-works.md#actors). As these actors receive a large volume of messages, the compact address can result in meaningful savings in gas fees.
+
+While you can send FIL to an ID address using a wallet, it's generally best to use public key addresses for transfers. This is because ID addresses take some time to be finalized on the blockchain, so a brand new ID address might be re-assigned to a different account than the one you intended. Only send FIL to an `f0` address if you've verified that the account is at least a day old. You can check the address on [FilFox](https://filfox.info/) to see when it was created.
+
+::: warning
+If an ID address is only a few hours old, there's a small chance it will be assigned to a different account during the consensus process. To be safe when sending FIL to an ID address (beginning in `f0`), you should make sure the account has existed for at least a day. If not, use a public key address instead!
+:::
 
 ### Filecoin signing tools
 
