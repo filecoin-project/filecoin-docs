@@ -71,6 +71,19 @@ module.exports = {
               'Protoschool tutorial'
             ],
             {
+              title: 'Store and retrieve',
+              path: 'get-started/store-and-retrieve/',
+              sidebarDepth: 2,
+              collapsable: true,
+              children: [
+                ['store-and-retrieve/', 'Start here'],
+                ['store-and-retrieve/set-up', 'Set up'],
+                ['store-and-retrieve/store-data', 'Store data'],
+                ['store-and-retrieve/retrieve-data', 'Retrieve data'],
+                ['store-and-retrieve/conclusion', 'Conclusion'],
+              ]
+            },
+            {
               title: 'LOTUS',
               path: '/get-started/lotus/',
               sidebarDepth: 2,
@@ -148,19 +161,6 @@ module.exports = {
 
           '/build/': [
             'get-started',
-            {
-              title: 'Store and retrieve',
-              path: '/build/store-and-retrieve/',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: [
-                ['store-and-retrieve/', 'Start here'],
-                ['store-and-retrieve/set-up', 'Set up'],
-                ['store-and-retrieve/store-data', 'Store data'],
-                ['store-and-retrieve/retrieve-data', 'Retrieve data'],
-                ['store-and-retrieve/conclusion', 'Conclusion'],
-              ]
-            },
             'textile-buckets',
             'hosted-powergate',
             'hosted-lotus',
