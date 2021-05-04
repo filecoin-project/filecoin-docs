@@ -64,6 +64,8 @@ Follow these steps to install the project dependencies specifically for MacOS:
     > xcode-select version 2384.
     ```
 
+    Any version above 2339 will work.
+
     :::warning
     If the above command returns an error, you likely don't have Xcode installed. Run the following command to install Xcode:
 
