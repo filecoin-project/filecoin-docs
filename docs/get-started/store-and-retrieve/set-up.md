@@ -84,6 +84,8 @@ Follow these steps to install the project dependencies specifically for MacOS:
     > Homebrew 3.0.11
     ```
 
+    Any version of Homebrew will work, but version 3.0.0 and above is preferred.
+
     :::warning
     If the above command returns an error, you likely don't have Homebrew installed. Run the following command to install Homebrew:
 
