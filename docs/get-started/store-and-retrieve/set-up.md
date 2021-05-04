@@ -48,6 +48,10 @@ Take a look at the [Get started page](../../get-started) to learn how to install
 
 This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section ↓](#ubuntu)
 
+:::tip MacOS version
+You can install Lotus on MacOS 10.11 (El Capitan, 2015) or higher.
+:::
+
 #### Dependencies for MacOS
 
 Follow these steps to install the project dependencies specifically for MacOS:
