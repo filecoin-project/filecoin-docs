@@ -80,7 +80,7 @@ Storing your data on more than one storage provider decreases your chance that y
 
 ### Filecoin Plus miner registry 
 
-The Filecoin Plus miner registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The idea is that these storage providers will bootstrap the Filecoin network. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. You can [find out more about the Filecoin Plus miner registry from the Filecoin Blog](https://filecoin.io/blog/posts/filecoin-minerx-fellowship-program/).
+The Filecoin Plus miner registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The idea is that these storage providers will bootstrap the Filecoin network. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. You can [find out more about the Filecoin Plus miner registry from the Filecoin Blog](../../store/filecoin-plus.md).
 
 Let's find a couple of storage providers to store our data.
 
@@ -128,7 +128,7 @@ To complete this section, you need the **payload CID** you received after runnin
 
     The interactive deal assistant will now ask you some questions.
 
-1. Specify the CID of the file you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/filecoin-payload.tar`:
+1. Specify the CID of the payload you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/5gb-filecoin-payload.bin`:
 
     ```shell
     Data CID (from lotus client import): bafykbz...
@@ -195,9 +195,15 @@ We need to wait for the storage providers to accept our deal and _seal_ the data
     lotus client list-deals --show-failed
     ```
 
-:::warning
-Do not turn off your Lotus lite-node until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when. 
-:::
+    :::warning
+    Do not turn off your Lotus lite-node until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when. 
+    :::
+
+1. You can check the progress of any data transfers by running `list-transfers`:
+
+    ```shell
+    lotus client list-transfers
+    ```
 
 ### Deal states
 
