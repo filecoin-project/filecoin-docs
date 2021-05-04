@@ -13,7 +13,7 @@ No matter your area of specialty or level of expertise, there are many [ways to 
 
 ## Filecoin forums
 
-The official [Filecoin forums](https://discuss.filecoin.io/) are the primary home of Filecoin-related discussion. Join the conversation on [https://discuss.filecoin.io/](https://discuss.filecoin.io/) for everything from technical questions and project brainstorming to discussion of Filecoin use cases and more.
+The official [Filecoin forums](https://github.com/filecoin-project/community/discussions) are the primary home of Filecoin-related discussion. Join the conversation on [https://discuss.filecoin.io/](https://github.com/filecoin-project/community/discussions) for everything from technical questions and project brainstorming to discussion of Filecoin use cases and more.
 
 ## Community chat
 
