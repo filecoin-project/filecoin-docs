@@ -37,7 +37,7 @@ For this tutorial, we're going to create a dummy 5GB file full of random data.
     Linux users should run: 
 
     ```shell
-    dd if=/dev/urandom of=padded-5gb-filecoin-payload.bin bs=1M count=5200
+    dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1M count=5200
     ```
 
 We now have our payload file ready to be stored using the Filecoin network.
