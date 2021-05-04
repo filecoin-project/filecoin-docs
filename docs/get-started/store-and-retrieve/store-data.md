@@ -26,6 +26,12 @@ As you're going through this section, make a note of the following variables:
 
 For this tutorial, we're going to create a dummy 5GB file full of random data.
 
+1. Move into your home folder:
+
+    ```shell
+    cd ~
+    ```
+
 1. Create a 5GB block of random data to serve as our payload:
 
     MacOS users must run:
