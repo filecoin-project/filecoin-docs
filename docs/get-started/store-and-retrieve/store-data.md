@@ -26,15 +26,15 @@ As you're going through this section, make a note of the following variables:
 
 For this tutorial, we're going to create a dummy 5GB file full of random data.
 
-1. Create a block of random data to _pad_ the total size of our payload:
+1. Create a 5GB block of random data to serve as our payload:
 
-    If you're on macOS, run:
+    MacOS users must run:
 
     ```shell
     dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1m count=5200
     ```
 
-    If you're on Linux, run: 
+    Linux users should run: 
 
     ```shell
     dd if=/dev/urandom of=padded-5gb-filecoin-payload.bin bs=1M count=5200
