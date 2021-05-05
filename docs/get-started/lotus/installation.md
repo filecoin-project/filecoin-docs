@@ -6,7 +6,7 @@ breadcrumb: 'Install and setup'
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.description }}. This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](/mine/lotus/).
+{{ $frontmatter.description }} This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](/mine/lotus/).
 
 ## Running in the cloud
 
@@ -91,7 +91,7 @@ You'll need to add `/usr/local/go/bin` to your path. For most Linux distribution
 echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && ~/.bashrc
 ```
 
-Check out the [official Golang installation instructions](https://golang.org/doc/install) if you get stuck.
+See the [official Golang installation instructions](https://golang.org/doc/install) if you get stuck.
 :::
 
 ### Build and install Lotus
@@ -109,7 +109,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
 
-   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
+   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://network.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
    git checkout <tag_or_branch>
@@ -119,7 +119,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    Currently, the latest code on the _master_ branch corresponds to mainnet.
 
-3. If you are in China, check out the specific [tips](tips-running-in-china.md).
+3. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
 4. Depending on your CPU model, you will want to export additional environment variables:
 
    If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
@@ -138,7 +138,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    export CGO_CFLAGS="-D__BLST_PORTABLE__"
    ```
 
-   This is due to a Lotus bug that prevents Lotus from running on processor without `adx` instruction support, and should be fixed soon.
+   This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
 
 5. Build and install Lotus:
 
@@ -218,7 +218,7 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
 ### Install Homebrew
 
-We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of the necessary packages.
+We recommend that macOS users use [Homebrew](https://brew.sh) to install each of the necessary packages.
 
 1. Use the command `brew install` to install the following packages:
 
@@ -237,7 +237,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
 
-   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://networks.filecoin.io), then build Lotus for your specific network below.
+   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://network.filecoin.io), then build Lotus for your specific network below.
 
    ```sh
    git checkout <tag_or_branch>
@@ -247,7 +247,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
    Currently, the latest code on the _master_ branch corresponds to mainnet.
 
-1. If you are in China, check out the specific [tips](tips-running-in-china.md).
+1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
 
 1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
 
@@ -256,7 +256,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
    export CGO_CFLAGS="-D__BLST_PORTABLE__"
    ```
 
-   This is due to a Lotus bug that prevents Lotus from running on processor without `adx` instruction support, and should be fixed soon.
+   This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
 
 1. Build Lotus:
 
@@ -276,7 +276,7 @@ We recommend that MacOS users use [Homebrew](https://brew.sh) to install each of
 
 The `lotus` application runs as a daemon and a client to control and interact with that daemon. A daemon is a long-running program that is usually run in the background.
 
-When using _mainnet_, we recommend to start the daemon [syncing from a trusted state snapshot](chain.md#lightweight-snapshot). In any case, you can start the deamon with the following command:
+When using _mainnet_, we recommend you start the daemon [syncing from a trusted state snapshot](chain.md#lightweight-snapshot). In any case, you can start the deamon with the following command:
 
 ```sh
 lotus daemon
@@ -284,7 +284,7 @@ lotus daemon
 
 During the first run, Lotus will:
 
-- Setup its data folder at `~/.lotus`.
+- Set up its data folder at `~/.lotus`.
 - Download the necessary proof parameters. This is a few gigabytes of data that is downloaded once.
 - Import the snapshot (if specified) and start syncing the Lotus chain.
 
@@ -331,7 +331,7 @@ lotus net peers
 
 ## Stop the Lotus daemon
 
-In order to gracefully stop the running lotus daemon (required when restarting the daemon to update Lotus), use the following command:
+To gracefully stop the running lotus daemon (required when restarting the daemon to update Lotus), use the following command:
 
 ```sh
 lotus daemon stop

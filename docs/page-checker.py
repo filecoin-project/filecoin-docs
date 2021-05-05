@@ -32,6 +32,7 @@ for link in links:
     linkUrl = link['href'].split('#')[0]
     if ("http" in linkUrl and
     "docs.filecoin.io" not in linkUrl and
+    "https://github.com/filecoin-project/filecoin-docs" not in linkUrl and
     (linkUrl + "|") not in checkedLinks):
         #print(linkUrl)
         checkedLinks += linkUrl + "|"

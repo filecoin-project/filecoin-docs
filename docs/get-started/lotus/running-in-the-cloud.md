@@ -24,7 +24,7 @@ ssh root@<your_droplet_public_ipv4>
 
 #### Using the DigitalOcean API to deploy Lotus
 
-You can also spin up Lotus nodes programmatically. For example, to create a 4GB filecoin-lotus Droplet in the SFO2 region, you can use the following curl command:
+You can also spin up Lotus nodes programmatically. For example, to create a 4 GB filecoin-lotus Droplet in the SFO2 region, you can use the following curl command:
 
 ```
 curl -X POST -H 'Content-Type: application/json' \
@@ -35,7 +35,7 @@ curl -X POST -H 'Content-Type: application/json' \
 
 ### Amazon Web Services
 
-We publish AMIs on a regular basis for each of the [filecoin networks](https://networks.filecoin.io/). To use one of these images, just search for one of our AMIs. You can use this [example link which populates a search for Lotus in the `us-west-2` region](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name).
+We regularly publish AMIs for each of the [filecoin networks](https://network.filecoin.io/). To use one of these images, just search for one of our AMIs. You can use this [example link which populates a search for Lotus in the `us-west-2` region](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name).
 
 <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;search=lotus-mainnet;ownerAlias=657871693752;sort=name" alt="AWS Logo"><img src="../images/cloud/aws-logo.svg" style="max-width: 40%; cursor: hand !important;"/></a>
 
@@ -61,9 +61,9 @@ If you're interested in seeing what's going on, you can view lotus's logs in the
 journalctl -u lotus-daemon
 ```
 
-While the stateroot file is downloading, systemctl will show the status of this job as `Activating`.
+While the stateroot file is downloading, systemctl will show the status of this job as "`Activating`".
 
-(optional) Notice the this job is not started yet. Don't worry, it will transition into an active state after the stateroot file is imported.
+You will notice that the job has not started yet. Don't worry, it will transition into an active state after the stateroot file is imported.
 
 ```
 [mainnet ~] ⨎ systemctl status lotus-daemon
