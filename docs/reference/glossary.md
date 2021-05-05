@@ -55,6 +55,10 @@ When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacet
 
 The term _Filecoin_ is used generically to refer to the Filecoin project, protocol, and network.
 
+## Finality
+
+Finality refers to the immutability of messages and state recorded to the Filecoin blockchain. As new blocks are added to the blockchain, it becomes more and more difficult for older blocks to be altered, until they become effectively impossible to modify. The _finality period_ is the amount of time that must elapse before a block is considered completely immutable. In the current [mainnet](#mainnet), this is configured as 900 [epochs](#epoch).
+
 ## Gas
 
 _Gas_ is a property of a [message](#message), corresponding to the resources involved in including that message in a given [block](#block). For each message included in a block, the block's creator extracts a fee from the message's sender; this fee is proportional to the message's gas.
