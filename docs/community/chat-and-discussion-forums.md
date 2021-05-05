@@ -14,4 +14,4 @@ For shorter-lived discussions, our community chat open to all on both Slack and 
 
 ## Discussion Forums
 
-For long-lived discussions and for support, please use the discussion forums at [https://discuss.filecoin.io/](https://discuss.filecoin.io/) instead of Slack or Matrix. It’s easy for complex discussions to get lost in a sea of new messages on those chat platforms, and posting longer discussions and support requests on the forums helps future visitors, too.
+For long-lived discussions and for support, please use the [discussion tab on GitHub](https://github.com/filecoin-project/community#forums) instead of Slack or Matrix. It’s easy for complex discussions to get lost in a sea of new messages on those chat platforms, and posting longer discussions and support requests on the forums helps future visitors, too.
