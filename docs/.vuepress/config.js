@@ -65,29 +65,11 @@ module.exports = {
         nav: require('./nav/en'),
         sidebar: {
           '/get-started/': [
-            'explore-the-network',
-            [
-              'https://proto.school/verifying-storage-on-filecoin/',
-              'Protoschool tutorial'
-            ],
             {
-              title: 'Store and retrieve',
-              path: 'get-started/store-and-retrieve/',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: [
-                ['store-and-retrieve/', 'Start here'],
-                ['store-and-retrieve/set-up', 'Set up'],
-                ['store-and-retrieve/store-data', 'Store data'],
-                ['store-and-retrieve/retrieve-data', 'Retrieve data'],
-                ['store-and-retrieve/conclusion', 'Conclusion'],
-              ]
-            },
-            {
-              title: 'LOTUS',
+              title: 'Lotus',
               path: '/get-started/lotus/',
               sidebarDepth: 2,
-              collapsable: false,
+              collapsable: true,
               children: [
                 ['lotus/running-in-the-cloud', 'Running in the Cloud'],
                 ['lotus/installation', 'Local Installation'],
@@ -101,7 +83,25 @@ module.exports = {
                 ['lotus/configuration-and-advanced-usage', 'Advanced options'],
                 ['lotus/troubleshooting', 'Troubleshooting']
               ]
-            }
+            },
+            {
+              title: 'Store and retrieve',
+              path: '/get-started/store-and-retrieve/',
+              sidebarDepth: 2,
+              collapsable: true,
+              children: [
+                ['/get-started/store-and-retrieve/', 'Start here'],
+                ['/get-started/store-and-retrieve/set-up', 'Set up'],
+                ['/get-started/store-and-retrieve/store-data', 'Store data'],
+                ['/get-started/store-and-retrieve/retrieve-data', 'Retrieve data'],
+                ['/get-started/store-and-retrieve/conclusion', 'Conclusion'],
+              ]
+            },
+            'explore-the-network',
+            [
+              'https://proto.school/verifying-storage-on-filecoin/',
+              'Protoschool tutorial'
+            ],
           ],
 
           '/store/': [
