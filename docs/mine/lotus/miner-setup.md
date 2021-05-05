@@ -1,5 +1,5 @@
 ---
-title: 'Lotus Miner: setup a high performance miner'
+title: 'Lotus Miner: set up a high-performance miner'
 description: 'This guide describes the necessary steps to configure a Lotus miner for production.'
 breadcrumb: 'Miner setup'
 ---
@@ -70,7 +70,7 @@ export MINER_API_INFO="TOKEN:/ip4/<IP>/tcp/<PORT>/http"
 
 ### Adding the necessary swap
 
-If you have only 128GiB of RAM, you will need to make sure your system provides at least an extra 256GiB of very fast swap (preferably NVMe SSD) or you will be unable to seal sectors:
+If you have only 128 GiB of RAM, you will need to make sure your system provides at least an extra 256 GiB of very fast swap (preferably NVMe SSD) or you will be unable to seal sectors:
 
 ```sh
 sudo fallocate -l 256G /swapfile
@@ -88,7 +88,7 @@ swapon --show
 
 ### Creating wallets for the miner
 
-You will need at least a BLS wallet (`f3...` for mainnet) for mining. We recommend using [separate owner and worker addresses](miner-addresses.md) though. Thus, create at least two wallets (unless you have some already):
+You will need at least a BLS wallet (`f3...` for mainnet) for mining. We recommend using [separate owner and worker addresses](miner-addresses.md):
 
 ```sh
 # A new BLS address to use as owner address:
@@ -112,7 +112,7 @@ Safely [backup your wallets](../../get-started/lotus/send-and-receive-fil.md#exp
 
 ### Downloading parameters
 
-For the miner to start, it will need to read and verify the Filecoin proof parameters. These can be downloaded in advance (recommended), or otherwise the init process will. Proof parameters consist of several files, which in the case of 32GiB sectors, total **over 100GiB**.
+For the miner to start, it will need to read and verify the Filecoin proof parameters. These can be downloaded in advance (recommended), or otherwise the init process will. Proof parameters consist of several files, which in the case of 32 GiB sectors, total **over 100 GiB**.
 
 We recommend setting a custom location to store parameters and proofs parent cache -created during the first run- with:
 
@@ -132,11 +132,11 @@ lotus-miner fetch-params 32GiB
 lotus-miner fetch-params 64GiB
 ```
 
-You can verify sectors sizes for a network in the [network dashboard](https://networks.filecoin.io). The `FIL_PROOFS_*_CACHE` variables should stay defined not only for download, but also when starting the Lotus miner (or workers).
+You can verify sectors sizes for a network in the [network dashboard](https://network.filecoin.io). The `FIL_PROOFS_*_CACHE` variables should stay defined not only for download, but also when starting the Lotus miner (or workers).
 
 ## Checklist before launch
 
-To summarize all of the above, make sure that:
+To summarize, make sure that:
 
 - The _worker address_ has some funds so that the miner can be initialized.
 - The following environment variables have been defined and will be available for any Lotus miner runs:
@@ -154,7 +154,7 @@ To summarize all of the above, make sure that:
   ```
 
 - Parameters have been prefetched to the cache folders specified above.
-- The systems has enough swap and it is active.
+- The system has enough swap and it is active.
 
 ## Miner initialization
 
@@ -170,7 +170,7 @@ lotus-miner init --owner=<address>  --worker=<address> --no-local-storage
 
 ## Connectivity to the miner
 
-Before you start your miner, it is **very important** to configure it so that it is reachable from any peer in the Filecoin network. For this you will need a stable public IP and edit your `~/.lotusminer/config.toml` as follows:
+Before you start your miner, it is important to configure it so that it is reachable from any peer in the Filecoin network. For this, you will need a stable public IP and edit your `~/.lotusminer/config.toml` as follows:
 
 ```toml
 ...
@@ -210,11 +210,11 @@ lotus-miner actor set-addrs /ip4/<YOUR_PUBLIC_IP_ADDRESS>/tcp/24001
 
 ## Next steps
 
-Your miner should now be preliminarly setup and running, but **there are still a few more recommended tasks** to be ready for prime-time:
+Your miner should now be preliminarily set up and running, but **there are still a few more recommended tasks** to be ready for prime-time:
 
-- Setup your [custom storage layout](custom-storage-layout.md) (required if you used `--no-local-storage`).
+- Set up your [custom storage layout](custom-storage-layout.md) (required if you used `--no-local-storage`).
 - Edit the miner [configuration settings](miner-configuration.md) to fit your requirements.
-- Learn what is a right moment to [shutdown/restart your miner](miner-lifecycle.md)
+- Learn what is a right moment to [shut down/restart your miner](miner-lifecycle.md)
 - Update `ExpectedSealDuration` with the time it takes your miner to seal a sector: discover it by [running a benchmark](benchmarks.md) or by [pledging a sector](sector-pledging.md) and noting down the time.
 - Configure additional [seal workers](seal-workers.md) to increase the miner's capacity to seal sectors.
 - Configure a [separate address for WindowPost messages](miner-addresses.md).
