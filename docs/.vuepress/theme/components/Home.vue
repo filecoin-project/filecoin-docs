@@ -213,11 +213,6 @@ export default {
                 'https://github.com/filecoin-project/community/blob/master/SECURITY.md'
             },
             {
-              title: 'Roadmap',
-              path:
-                'https://app.instagantt.com/shared/s/1152992274307505/latest'
-            },
-            {
               title: 'Research',
               path: 'https://research.filecoin.io/'
             },
