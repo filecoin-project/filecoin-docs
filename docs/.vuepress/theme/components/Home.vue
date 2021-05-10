@@ -218,6 +218,11 @@ export default {
                 'https://app.instagantt.com/shared/s/1152992274307505/latest'
             },
             {
+              title: 'Filecoin Improvement Program',
+              path:
+                'https://github.com/filecoin-project/FIPs'
+            },
+            {
               title: 'Research',
               path: 'https://research.filecoin.io/'
             },
