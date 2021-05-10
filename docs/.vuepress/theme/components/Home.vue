@@ -213,6 +213,11 @@ export default {
                 'https://github.com/filecoin-project/community/blob/master/SECURITY.md'
             },
             {
+              title: 'Filecoin Improvement Program',
+              path:
+                'https://github.com/filecoin-project/FIPs'
+            },
+            {
               title: 'Research',
               path: 'https://research.filecoin.io/'
             },
