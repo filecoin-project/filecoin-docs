@@ -10,6 +10,7 @@ In most blockchain protocols, "miners" are the participants on the network that 
 
 Mining in Filecoin works quite differently however -- instead of contributing computational power, miners contribute storage capacity to be used in deals with clients looking to store data.
 
+
 ## Types of miners
 
 The Filecoin network will have multiple types of miners:
@@ -39,3 +40,7 @@ Each Filecoin miner has an associated _power_ value in the network that is propo
 Additionally, miners submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
 Additional details about this can be found in the [mining rewards](mining-rewards.md) section.
+
+:::tip
+A better understanding of how mining works can be developed by completing the Protocol Labs [Filecoin tutorials](https://proto.school/tutorials?course=filecoin).
+:::
