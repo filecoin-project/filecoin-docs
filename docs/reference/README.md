@@ -20,6 +20,8 @@ This section contains links and reference materials for Filecoin.
 - [APIs and developer tools](#apis-and-developer-tools)
   - [Filecoin API clients](#filecoin-api-clients)
   - [Storage tools for apps](#storage-tools-for-apps)
+  - [Data prep tools](#data-prep-tools)
+  - [Databases using IPFS and Filecoin](#databases-using-ipfs-and-filecoin)
   - [Storage apps on Filecoin](#storage-apps-on-filecoin)
   - [Ecosystem projects](#ecosystem-projects)
   - [Grant programs and accelerators](#grant-programs-and-accelerators)
@@ -200,7 +202,12 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 - [Space SDK from Fleek](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
 - [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers
 
-### Databases using IPFS & Filecoin
+### Data prep tools
+- [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) by Filedrive chunks larger datasets into 32 and 64 GiB sector sizes on Filecoin
+- [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then instruct a Filecoin node to store the CID
+- [CAR file spec](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - data in Filecoin is stored as CAR files, serialized from IPFS graphs (DAGs)
+
+### Databases using IPFS and Filecoin
 
 - [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS with Filecoin integration coming soon
 - [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [orbit-db-powergate-io](https://github.com/filecoin-shipyard/orbit-db-powergate-io)
