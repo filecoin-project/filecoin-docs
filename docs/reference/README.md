@@ -203,7 +203,7 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 - [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers
 
 ### Data prep tools
-- [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) by Filedrive chunks larger datasets into 32 and 64 GiB sector sizes on Filecoin
+- [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) by FileDrive chunks a larger single DAG to store in default Filecoin 32 and 64 GiB sector sizes
 - [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then instruct a Filecoin node to store the CID
 - [CAR file spec](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - data in Filecoin is stored as CAR files, serialized from IPFS graphs (DAGs)
 
