@@ -3,6 +3,9 @@ title: 'How mining works'
 description: 'Filecoin mining involves accepting deals and honoring them by inserting proofs in the chain. This provides an overview of the mining process.'
 breadcrumb: 'How mining works'
 ---
+:::tip ProtoSchool tutorial available
+Take a look at the [Filecoin Tutorial over at ProtoSchool](https://proto.school/verifying-storage-on-filecoin) to get a better understanding of how mining works.
+:::
 
 # {{ $frontmatter.title }}
 
@@ -40,7 +43,3 @@ Each Filecoin miner has an associated _power_ value in the network that is propo
 Additionally, miners submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
 Additional details about this can be found in the [mining rewards](mining-rewards.md) section.
-
-:::tip
-A better understanding of how mining works can be developed by completing the Protocol Labs [Filecoin tutorials](https://proto.school/tutorials?course=filecoin).
-:::
