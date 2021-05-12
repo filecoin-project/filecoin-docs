@@ -65,7 +65,7 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 1. Import the payload into the `lotus daemon` using the `import` command: 
 
     ```shell
-    lotus client import ~/5gb-filecoin-payload.bin 
+    lotus client import 5gb-filecoin-payload.bin 
     ```
 
     Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete, Lotus will output the payload CID.
@@ -205,14 +205,21 @@ We need to wait for the storage providers to accept our deal and _seal_ the data
     lotus client list-deals --show-failed
     ```
 
-    :::warning
-    Do not turn off your Lotus lite-node until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when. 
+    :::danger DO NOT TURN OFF YOUR LOTUS NODE 
+    Your Lotus lite-node needs to remain online until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when. 
     :::
 
 1. You can check the progress of any data transfers by running `list-transfers`:
 
     ```shell
     lotus client list-transfers
+
+    > Sending Channels
+    > ID                   Status   Sending To   Root Cid     Initiated?  Transferred  Voucher                                   
+    > 1620782601911586915  Ongoing  ...KPFTTwY7  ...zyd3kapm  Y           224.1MiB     ...bqhcidjmajbelhlxfqry3d7qlu3tvar45a"}}  
+
+    > Receiving Channels
+    > ...
     ```
 
 ### Deal states
@@ -274,5 +281,5 @@ These states come from the [Lotus project GitHub repository](https://github.com/
 
 ## Next steps
 
-Now that you've added some data onto the Filecoin network [we can move into retrieving data →](./retrieve-data)
+Now that you've added some data onto the Filecoin network [we can move into retrieving data →](../retrieve-data)
 

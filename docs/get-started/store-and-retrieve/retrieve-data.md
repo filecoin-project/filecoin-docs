@@ -22,13 +22,59 @@ If you need to find deal information about a particular address, but you don't h
 
 To get the information you need:
 
-1. List deals that this node has made.
-1. Get info.
-1. Write it down.
+1. List the deals that this node has made:
+
+    ```shell
+    lotus client list-deals --verbose
+
+    > Created          DealCid                                                      DealId  Provider  State                     On Chain?  Slashed?  PieceCID                                                          Size       Price           Duration  TransferChannelID                                                                                                              TransferStatus  Verified  Message
+    > May 11 22:54:45  bafyreigbt6ymhierghhjba6htch6immn6qnnrcku3z7masnmhgm5ibdiya  0       f0100 StorageDealFundsReserved  N          N         baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi  7.938 GiB  0 FIL           522077
+    ```
+
+    Lotus spits out a lot of information here. If you find it hard to read, try adding `| less -S` onto the end of the command. This will force the terminal to display the output horizontally. In this view you can use the arrow keys to scroll left and right. Press `q` to exit this view.
+
+1. Make a note of the `DealCid` and the `Provider`. In the example above the `DealCid` is `baftyr...` and the `Provider` is `f01001`. 
+
+## Check that your upload has finished
+
+Before you can retrieve data from a storage provider, that storage provider needs to have that data in the first place. In normal circumstances you'd be retrieving your data days or weeks after it was sent to a storage provider. However, we've been running through the process at lightening speed throughout this tutorial. So with that in mind, let's check to see if your data as finished transfering to the storage provider.
+
+1. Use `lotus client list-transfers` to view any pending transfers:
+
+    ```shell
+    lotus client list-transfers
+
+    > Sending Channels
+    > 
+    > 
+    > ... 
+    ```
+
+    If there is no information in the **Sending** or **Receiving** channels then you're all set! [Move onto the next step ↓](#send-a-retrieval-request). 
+
+1. If you have transfers still pending, you may see something like this:
+
+    ```shell
+    lotus client list-transfers
+
+    > Sending Channels
+    > 
+    > ID                   Status   Sending To   Root Cid     Initiated?  Transferred  Voucher                                   
+    > 1620782601911586915  Ongoing  ...KPFTTwY7  ...zyd3kapm  Y           3.301GiB     ...bqhcidjmajbelhlxfqry3d7qlu3tvar45a"}}  
+    > ...
+    ```
+
+You cannot retrieve data from a storage provider that has not yet finished receiving your inital data upload. To complete this tutorial, you can either wait for the upload from your Lotus node to complete, or use the following information to create a retrieval deal for a file we uploaded to a miner.
+
+| Provider ID | Data CID |
+| --- | --- |
+| `` | `` | 
+
+The data listed above is a 5GB dummy file made up of random data from `/dev/random` on a Ubuntu machine. 
 
 ## Send a retrieval request
 
-The retrieval command is fairly simple. We just need to add the _Provider ID_ and _Data CID_ we got from the previous step, along with where we want to save the downloaded file to. The structure for a retrieval command is:
+The retrieval command is fairly simple. We just need to add the _Provider ID_ and _Data CID_ we got from the previous step, along with where we want to save the downloaded file to.
 
 1. Use the `retrieve` command to request data from a miner:
 
