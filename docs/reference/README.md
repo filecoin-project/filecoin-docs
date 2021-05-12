@@ -29,7 +29,6 @@ This section contains links and reference materials for Filecoin.
 - [Wallets](#wallets)
   - [List of Filecoin wallets](#wallets)
   - [Wallet tools for developers](#wallet-tools-for-developers)
-  - [Wallet addresses](#wallet-addresses)
   - [Filecoin signing tools](#filecoin-signing-tools)
   - [Retrieval Market resources](#retrieval-market-resources-wip-experiments)
 
