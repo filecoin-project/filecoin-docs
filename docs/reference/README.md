@@ -288,7 +288,7 @@ Wallets that have conducted third-party audits of their open-source code by a re
 
 ### Other wallets
 
-The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
+The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
 
 - [TrustWallet](https://trustwallet.com/) - [open source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 - [ImToken](https://token.im/)
