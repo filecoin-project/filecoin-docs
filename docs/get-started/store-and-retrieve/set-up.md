@@ -310,6 +310,32 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 1. Make a note of this address. We'll use it in an upcoming section.
 
+## Backup your address
+
+Your address is made up of two parts: your _public address_ and your _private key_. The public address is what you see when you run `lotus wallet new`, and you're safe to share that address with whoever you want. Your private key, however, must be kept secret and secure. If you lose your private key, you lose access to any FIL stored in that address.
+
+It is incredibly important that you backup your addreses. Storing a copy of your addresses on another device is a great way to ensure you don't lose access to your funds. 
+
+1. List the addresses associated with your Lotus node:
+
+    ```shell
+    lotus wallet list
+
+    > Address                                    Balance  Nonce  Default  
+    > f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq  0 FIL    0      X  
+    ```
+
+1. Copy the address `f1nau...` that you want to export.
+1. The `lotus wallet export f1nau...` command simply output the private key to the terminal. To export an address _into_ a file, run the `lotus wallet export f1anu...` followed by `> my_address.key`:
+
+    ```shell
+    lotus wallet export f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq > my_address.key
+    ```
+
+    This will create a new file called `my_address.key` in the current directory. The filename you chose doesn't have to end in `.key`; it can be anything you want.
+
+Once you have your address in a file, you can copy it to another drive, securely send it to another computer, or even print it out.
+
 ## Filecoin Plus
 
 Storage providers get paid either by receiving FIL directly from users for storing their data, winning block rewards from the network, or both!
