@@ -314,6 +314,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
+  - For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on Github.
 
 ### Retrieval Market resources (WIP experiments)
 
