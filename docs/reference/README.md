@@ -205,7 +205,7 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 ### Data prep tools
 - [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) by FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes
 - [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://docs.filecoin.io/store/lotus/import-data-from-ipfs)
-- [CAR file spec](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://docs.filecoin.io/store/lotus/very-large-files/#deals-with-offline-data-transfer)
+- [CAR files](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://docs.filecoin.io/store/lotus/very-large-files/#deals-with-offline-data-transfer)
 
 ### Databases using IPFS and Filecoin
 
