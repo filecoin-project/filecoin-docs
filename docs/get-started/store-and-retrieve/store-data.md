@@ -34,17 +34,27 @@ For this tutorial, we're going to create a dummy 5GB file full of random data.
 
 1. Create a 5GB block of random data to serve as our payload:
 
-    MacOS users must run:
+    **MacOS** users must run:
 
     ```shell
     dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1m count=5200
+
+    > 5200+0 record in
+    > 5200+0 records out
+    > 5452595200 bytes transferred in 6.299098 secs (865615234 bytes/sec)
     ```
 
-    Linux users should run: 
+    **Linux** users should run: 
 
     ```shell
     dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1M count=5200
+
+    > 5200+0 records in
+    > 5200+0 records out
+    > 5452595200 bytes (5.5 GB, 5.1 GiB) copied, 62.8535 s, 86.8 MB/s
     ```
+
+    This process will take about 69 seconds to create a dummy file.
 
 We now have our payload file ready to be stored using the Filecoin network.
 

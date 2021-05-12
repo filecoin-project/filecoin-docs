@@ -16,9 +16,11 @@ You need two pieces of information to retrieve data from a miner:
 
 If you are still connected to the same Lotus node that originally made the deal, then this process is very simple. Lotus nodes keep a log of all the deals it has made.
 
-:::tip Working from a different Lotus node
+:::warning Working from a different Lotus node
 If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slighly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
 :::
+
+To get the information you need:
 
 1. List deals that this node has made.
 1. Get info.
