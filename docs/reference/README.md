@@ -31,7 +31,6 @@ This section contains links and reference materials for Filecoin.
 - [Wallets](#wallets)
   - [List of Filecoin wallets](#wallets)
   - [Wallet tools for developers](#wallet-tools-for-developers)
-  - [Wallet addresses](#wallet-addresses)
   - [Filecoin signing tools](#filecoin-signing-tools)
   - [Retrieval Market resources](#retrieval-market-resources-wip-experiments)
 
@@ -296,7 +295,7 @@ Wallets that have conducted third-party audits of their open-source code by a re
 
 ### Other wallets
 
-The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
+The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
 
 - [TrustWallet](https://trustwallet.com/) - [open source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 - [ImToken](https://token.im/)
@@ -309,32 +308,6 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [FilSnap MetaMask Plugin](https://pages.consensys.net/filecoin-metamask-snap-preview) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
 - A Filecoin light wallet example is in the [Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
 - [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
-
-### Wallet Addresses
-
-When using a wallet, an account is identified by its [address](/about-filecoin/how-filecoin-works.md#addresses). A Filecoin address always starts with the letter `f` and a digit that indicates what type of address it is.
-
-Filecoin accounts have two kinds of address, **public key** addresses, and **ID** addresses. Both addresses refer to the same account and can be used to send and receive FIL using a wallet.
-
-#### Public Key Addresses
-
-A [public key address](/about-filecoin/how-filecoin-works.md#public-key-addresses-f1-and-f3) is derived directly from a cryptographic key. Public key addresses start with the characters `f1` or `f3`, depending on the type of encryption key used.
-
-Here's an example of a secp256k1 public key address: `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za`.
-
-Public key addresses are the most common way to refer to Filecoin accounts, and they are supported by hardware wallets like [Ledger](https://ledger.com).
-
-Because a public key address does not depend on any blockchain state, they are considered [robust](/about-filecoin/how-filecoin-works.md#robust-addresses-versus-id-addresses) and are recommended for most use cases involving transfers of FIL, for example, when sending FIL to another user through an exchange.
-
-#### ID Addresses
-
-ID addresses are a compact and more "human friendly" way to refer to an account than public key addresses. ID addresses always start with the characters `f0`, followed by a sequence of digits, for example: `f033259`.
-
-Every ID address for a Filecoin account has an alternative public key address that corresponds to the same account. You can find the ID address for any public key address by searching for the public key address on [FilFox](https://filfox.info/), a Filecoin block explorer.
-
-Because they are more compact than public key addresses, ID addresses are often used when refering to miners and other long-lived Filecoin [Actors](/about-filecoin/how-filecoin-works.md#actors). As these actors receive a large volume of messages, the compact address can result in meaningful savings in gas fees.
-
-While you can send FIL to an ID address using a wallet, you should first check the details for the account on [FilFox](https://filfox.info/) to see when the account was created, as well as the corresponding public key address. If the address was created very recently (within the [finality period](/reference/glossary.md#finality)) there is a small chance that it could be re-assigned as the network reaches consensus, and the public key address should be used instead.
 
 ### Filecoin signing tools
 
