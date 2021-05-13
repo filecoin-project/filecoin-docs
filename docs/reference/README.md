@@ -20,6 +20,8 @@ This section contains links and reference materials for Filecoin.
 - [APIs and developer tools](#apis-and-developer-tools)
   - [Filecoin API clients](#filecoin-api-clients)
   - [Storage tools for apps](#storage-tools-for-apps)
+  - [Data prep tools](#data-prep-tools)
+  - [Databases using IPFS and Filecoin](#databases-using-ipfs-and-filecoin)
   - [Storage apps on Filecoin](#storage-apps-on-filecoin)
   - [Ecosystem projects](#ecosystem-projects)
   - [Grant programs and accelerators](#grant-programs-and-accelerators)
@@ -199,7 +201,12 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 - [Space SDK from Fleek](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
 - [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers
 
-### Databases using IPFS & Filecoin
+### Data prep tools
+- [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) by FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes
+- [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://docs.filecoin.io/store/lotus/import-data-from-ipfs)
+- [CAR files](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://docs.filecoin.io/store/lotus/very-large-files/#deals-with-offline-data-transfer)
+
+### Databases using IPFS and Filecoin
 
 - [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS with Filecoin integration coming soon
 - [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [orbit-db-powergate-io](https://github.com/filecoin-shipyard/orbit-db-powergate-io)
@@ -216,6 +223,7 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 
 - [Filecoin Signing Tools](https://github.com/filecoin-project/filecoin-docs/wiki#remote-signing-tools) - **_recommended_** - for signing Filecoin messages without a full node, has a pure JS and Rust to WASM version for use in browsers, see the [Wallets](#wallets) section below
 - [Glif web wallet on Github](https://github.com/glifio/wallet) - a good JS example of using `filecoin-signing-tools` and Ledger hardware integration, live Filecoin wallet at [Glif.io](https://glif.io)
+- [See Wallet Tools below](#wallets)
 
 ### Developer tools
 
@@ -287,7 +295,7 @@ Wallets that have conducted third-party audits of their open-source code by a re
 
 ### Other wallets
 
-The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
+The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
 
 - [TrustWallet](https://trustwallet.com/) - [open source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 - [ImToken](https://token.im/)
@@ -297,7 +305,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 ### Wallet tools for developers
 
-- [FilSnap MetaMask Plugin](https://filsnap.netlify.app/) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
+- [FilSnap MetaMask Plugin](https://pages.consensys.net/filecoin-metamask-snap-preview) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
 - A Filecoin light wallet example is in the [Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
 - [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
 
@@ -306,6 +314,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
+  - For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on Github.
 
 ### Retrieval Market resources (WIP experiments)
 

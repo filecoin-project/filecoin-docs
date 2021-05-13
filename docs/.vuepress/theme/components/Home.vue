@@ -213,9 +213,9 @@ export default {
                 'https://github.com/filecoin-project/community/blob/master/SECURITY.md'
             },
             {
-              title: 'Roadmap',
+              title: 'Filecoin Improvement Program',
               path:
-                'https://app.instagantt.com/shared/s/1152992274307505/latest'
+                'https://github.com/filecoin-project/FIPs'
             },
             {
               title: 'Research',
