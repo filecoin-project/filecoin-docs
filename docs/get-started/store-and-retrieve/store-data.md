@@ -281,5 +281,5 @@ These states come from the [Lotus project GitHub repository](https://github.com/
 
 ## Next steps
 
-Now that you've added some data onto the Filecoin network [we can move into retrieving data →](../retrieve-data)
+Now that you've added some data onto the Filecoin network [we can move into retrieving data →](./retrieve-data.md)
 
