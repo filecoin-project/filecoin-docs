@@ -68,7 +68,7 @@ You cannot retrieve data from a storage provider that has not yet finished recei
 
 | Provider ID | Data CID |
 | --- | --- |
-| `` | `` | 
+| `f02147` | `baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi` | 
 
 The data listed above is a 5GB dummy file made up of random data from `/dev/random` on a Ubuntu machine. 
 
@@ -82,7 +82,11 @@ The retrieval command is fairly simple. We just need to add the _Provider ID_ an
     lotus client retrieve --miner <PROVIDER ID> <DATA CID> ~/output-file
     ```
 
-    Replace `<PROVIDER ID>` and `<DATA CID>` in the above command with your _Provider ID_ and _Data CID_, respectively.
+    Replace `<PROVIDER ID>` and `<DATA CID>` in the above command with your _Provider ID_ and _Data CID_, respectively. For example:
+
+    ```shell
+    lotus client retrieve --miner f02147 baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi ~/output-file
+    ```
 
 1. After submitting `retrieve` command, your Lotus lite-node will send the retrieval deal to the storage provider and wait for a response:
 
@@ -98,7 +102,6 @@ The retrieval command is fairly simple. We just need to add the _Provider ID_ an
 1. Wait for the download to complete. Again, the speed of this process depends on your connection to the miner and the size of your download. When creating this tutorial, it took us around 3 minutes to download a 5GB file from a miner.
 1. Once the download is complete, you should have a file in your home directory called `output-file`.
 
-## Next steps
+## Final thoughts 
 
-To finish off this tutorial [let's review everything you did →](./conclusion)
-
+So that's it! You've now completed the tutorial on how to store and retrieve data from the Filecoin network using the Lotus CLI! For next steps, why not [take a look at Textile](https://textile.io/) and how to integrate Filecoin storage and retrieval into your next web project.
