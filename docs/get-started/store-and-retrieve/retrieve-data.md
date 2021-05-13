@@ -11,13 +11,13 @@ The final piece of this tutorial is downloading data from the Filecoin network. 
 
 You need two pieces of information to retrieve data from a miner:
 
-- The _Data CID_, sometimes called the _label_. This is the content identifier for the all the data stored in a single deal.
-- The _Provider ID_ with whom you made to original deal to store the data with. This is sometimes called the _Miner ID_. 
+- The _Data CID_, sometimes called the _label_. This is the content identifier for all the data stored in a single deal.
+- The _Provider ID_ with whom you made to original deal to store the data. This is sometimes called the _Miner ID_. 
 
 If you are still connected to the same Lotus node that originally made the deal, then this process is very simple. Lotus nodes keep a log of all the deals it has made.
 
 :::warning Working from a different Lotus node
-If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slighly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
+If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
 :::
 
 To get the information you need:
@@ -31,13 +31,13 @@ To get the information you need:
     > May 11 22:54:45  bafyreigbt6ymhierghhjba6htch6immn6qnnrcku3z7masnmhgm5ibdiya  0       f0100 StorageDealFundsReserved  N          N         baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi  7.938 GiB  0 FIL           522077
     ```
 
-    Lotus spits out a lot of information here. If you find it hard to read, try adding `| less -S` onto the end of the command. This will force the terminal to display the output horizontally. In this view you can use the arrow keys to scroll left and right. Press `q` to exit this view.
+    Lotus spits out a lot of information here. If you find it hard to read, try adding `| less -S` onto the end of the command. This will force the terminal to display the output horizontally. In this view, you can use the arrow keys to scroll left and right. Press `q` to exit this view.
 
-1. Make a note of the `DealCid` and the `Provider`. In the example above the `DealCid` is `baftyr...` and the `Provider` is `f01001`. 
+1. Make a note of the `DealCid` and the `Provider`. In the example above, the `DealCid` is `baftyr...` and the `Provider` is `f01001`. 
 
 ## Check that your upload has finished
 
-Before you can retrieve data from a storage provider, that storage provider needs to have that data in the first place. In normal circumstances you'd be retrieving your data days or weeks after it was sent to a storage provider. However, we've been running through the process at lightening speed throughout this tutorial. So with that in mind, let's check to see if your data as finished transfering to the storage provider.
+Before you can retrieve data from a storage provider, that storage provider needs to have that data in the first place. In normal circumstances, you'd be retrieving your data days or weeks after it was sent to a storage provider. However, we've been running through the process at lightning speed throughout this tutorial. So with that in mind, let's check to see if your data has finished transferring to the storage provider.
 
 1. Use `lotus client list-transfers` to view any pending transfers:
 
@@ -50,7 +50,7 @@ Before you can retrieve data from a storage provider, that storage provider need
     > ... 
     ```
 
-    If there is no information in the **Sending** or **Receiving** channels then you're all set! [Move onto the next step ↓](#send-a-retrieval-request). 
+    If there is no information in the **Sending** or **Receiving** channels, then you're all set! [Move onto the next step ↓](#send-a-retrieval-request). 
 
 1. If you have transfers still pending, you may see something like this:
 
@@ -64,7 +64,7 @@ Before you can retrieve data from a storage provider, that storage provider need
     > ...
     ```
 
-You cannot retrieve data from a storage provider that has not yet finished receiving your inital data upload. To complete this tutorial, you can either wait for the upload from your Lotus node to complete, or use the following information to create a retrieval deal for a file we uploaded to a miner.
+You cannot retrieve data from a storage provider that has not yet finished receiving your initial data upload. To complete this tutorial, you can either wait for the upload from your Lotus node to complete or use the following information to create a retrieval deal for a file we uploaded to a miner.
 
 | Provider ID | Data CID |
 | --- | --- |
@@ -104,4 +104,5 @@ The retrieval command is fairly simple. We just need to add the _Provider ID_ an
 
 ## Final thoughts 
 
-So that's it! You've now completed the tutorial on how to store and retrieve data from the Filecoin network using the Lotus CLI! For next steps, why not [take a look at Textile](https://textile.io/) and how to integrate Filecoin storage and retrieval into your next web project.
+So that's it! You've now completed the tutorial on how to store and retrieve data from the Filecoin network using the Lotus CLI! For the next steps, why not [take a look at Textile](https://textile.io/) and how to integrate Filecoin storage and retrieval into your next web project.
+
