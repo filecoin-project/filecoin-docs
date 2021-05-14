@@ -4,11 +4,16 @@ description: 'Filecoin mining involves accepting deals and honoring them by inse
 breadcrumb: 'How mining works'
 ---
 
+:::tip ProtoSchool tutorial available
+Take a look at the [Filecoin Tutorial over at ProtoSchool](https://proto.school/verifying-storage-on-filecoin) to get a better understanding of how mining works.
+:::
+
 # {{ $frontmatter.title }}
 
 In most blockchain protocols, "miners" are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency. The term "miner" emerged in the initial Proof-of-Work era, comparing the work done by hardware miners using computational power to secure blockchains with that of gold miners who expended vast physical resources for a chance at a large payout.
 
 Mining in Filecoin works quite differently however -- instead of contributing computational power, miners contribute storage capacity to be used in deals with clients looking to store data.
+
 
 ## Types of miners
 
