@@ -22,7 +22,7 @@ The Filecoin [data storage protocol](../store/lotus/store-data.md) has a few key
 
 2. Data transfer: This portion of the deal flow involves the client's node sending the relevant pieces of data to the mining node. The data transfer rate varies widely, depending on the network and disk bandwidths of both the client and the miner. Usually, the network speed between client and miner will be the key determining factor.
 
-3. Deal shows up on-chain: once the data is received by the miner, it will be verified to make sure it matches the deal parameters and the deal with be published on the chain.
+3. Deal shows up on-chain: once the data is received by the miner, it will be verified to make sure it matches the deal parameters and the deal will be published on the chain.
 
 4. Sector sealing: Once the deal shows up on-chain, the miner must still complete [generating a Proof-of-Replication and sealing the sector](https://spec.filecoin.io/#systems__filecoin_mining__sector__adding_storage). This process is currently estimated to take ~1.5hours for a 32GB sector on a machine that meets these [minimum hardware requirements for mining](../mine/hardware-requirements.md#general-hardware-requirements).
 
