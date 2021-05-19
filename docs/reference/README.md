@@ -243,16 +243,23 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing quarterly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
-- [Gitcoin Hackathon GR9](https://gitcoin.co/hackathon/gr9/?) - online hackathon mid to end of March 2021 with [Filecoin-related bounties here](https://gitcoin.co/hackathon/gr9/?org=protocol)
-- [Chain Virtual Spring 2021 Hackathon](https://chain.link/hackathon) - Mar 15 to Apr 11, 2021
-- [NFT Hack](hhttps://nfthack.ethglobal.co/) - online hackathon Mar 19-21
-- [Scaling Ethereum](https://scaling.ethglobal.co/) - Apr 16 to May 14
-- [Huobi-Filecoin Incubation Center](https://filecoin.io/blog/huobi-launches-filecoin-incubation-center/)
-- [Filecoin Frontier Accelerator with LongHash](https://filecoin.io/blog/filecoin-frontier-accelerator/) - applications closed Nov 15, 2020
-- [Filecoin Launchpad Accelerator](https://consensys.net/blog/press-release/filecoin-launchpad-accelerator-powered-by-tachyon/) - from Fall 2020
-- [Apollo - Gitcoin x Filecoin](https://gitcoin.co/blog/apollo/#:~:text=APOLLO%20will%20run%20from%20August,using%20Filecoin%20and%20Web3%20ecosystem) - from Summer 2020
+- [Upcoming Hackathons](https://github.com/protocol/grants)
+  - Keep a lookout for upcoming hackathons! All winners are eligbile for [Next Steps Grants](https://github.com/protocol/grants#next-step-grants) after the hackathon
+- Past Hackathons
+  - [Scaling Ethereum](https://scaling.ethglobal.co/) - Apr 16 to May 14
+  - [Gitcoin GR9 Hackathon](https://gitcoin.co/hackathon/gr9/?) - March 2021 with [Filecoin-related bounties here](https://gitcoin.co/hackathon/gr9/?org=protocol)
+  - [NFT Hack](https://nfthack.ethglobal.co/) - online hackathon Mar 19-21
+  - [Chainlink 2021](https://chain.link/hackathon)
+  - [EthDenver 2021](https://ethdenver.com)
+  - [EthOnline 2020](https://ethonline.org/)
+  - [HackFS 2020](https://hackfs.com/)
+  - [Spark University Hackathon 2020](https://filecoin.io/blog/spark-university-hackathon/)
+- Accelerators
+  - [Huobi-Filecoin Incubation Center](https://filecoin.io/blog/huobi-launches-filecoin-incubation-center/)
+  - [Filecoin Frontier Accelerator with LongHash](https://filecoin.io/blog/filecoin-frontier-accelerator/) - applications closed Nov 15, 2020
+  - [Filecoin Launchpad Accelerator with ConsenSys Tachyon](https://consensys.net/blog/press-release/filecoin-launchpad-accelerator-powered-by-tachyon/) - from Fall 2020
+  - [Apollo - Gitcoin x Filecoin](https://gitcoin.co/blog/apollo/#:~:text=APOLLO%20will%20run%20from%20August,using%20Filecoin%20and%20Web3%20ecosystem) - from Summer 2020
 
-Keep a lookout for other upcoming hackathons! Previous ones involving Filecoin included [EthDenver](https://ethdenver.com), [EthOnline](https://ethonline.org/), [HackFS](https://hackfs.com/), [Spark University Hackathon](https://filecoin.io/blog/spark-university-hackathon/)...
 
 ## Mining
 
