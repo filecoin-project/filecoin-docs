@@ -7,32 +7,51 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 This section contains links and reference materials for Filecoin.
 
-- [Filecoin community resources and tools](#filecoin-community-resources-and-tools)
-  - [Node implementations](#node-implementations)
-  - [Devnets and testnets](#devnets-and-testnets)
-  - [Containers and virtualization](#containers-and-virtualization)
-- [Network status](#network-status)
-  - [Block explorers](#block-explorers)
-  - [Chain data and monitoring](#chain-data-and-monitoring)
-  - [Miner reputation systems](#miner-reputation-systems)
-  - [Storage status](#storage-status)
-  - [Core dev calls](#core-dev-calls)
-- [APIs and developer tools](#apis-and-developer-tools)
-  - [Filecoin API clients](#filecoin-api-clients)
-  - [Storage tools for apps](#storage-tools-for-apps)
-  - [Data prep tools](#data-prep-tools)
-  - [Databases using IPFS and Filecoin](#databases-using-ipfs-and-filecoin)
-  - [Storage apps on Filecoin](#storage-apps-on-filecoin)
-  - [Ecosystem projects](#ecosystem-projects)
-  - [Grant programs and accelerators](#grant-programs-and-accelerators)
-- [Mining](#mining)
-  - [Dashboards and reputation systems](#dashboards-and-reputation-systems)
-  - [Storage client and miner programs](#storage-client-and-miner-programs)
-- [Wallets](#wallets)
-  - [List of Filecoin wallets](#wallets)
-  - [Wallet tools for developers](#wallet-tools-for-developers)
-  - [Filecoin signing tools](#filecoin-signing-tools)
-  - [Retrieval Market resources](#retrieval-market-resources-wip-experiments)
+-This section contains links and reference materials for Filecoin.
+
+- [Reference](#reference)
+  - [About the protocol](#about-the-protocol)
+    - [Filecoin specification](#filecoin-specification)
+    - [Filecoin's economy](#filecoins-economy)
+    - [Filecoin Plus for verified data](#filecoin-plus-for-verified-data)
+    - [Videos](#videos)
+  - [Filecoin community resources and tools](#filecoin-community-resources-and-tools)
+        - [Filecoin resources in Chinese](#filecoin-resources-in-chinese)
+    - [Join the network](#join-the-network)
+    - [Node implementations](#node-implementations)
+    - [Devnets and testnets](#devnets-and-testnets)
+    - [Local devnets on your local machine](#local-devnets-on-your-local-machine)
+    - [Containers and virtualization](#containers-and-virtualization)
+    - [Scalable endpoint hosting scripts](#scalable-endpoint-hosting-scripts)
+  - [Network status](#network-status)
+    - [Block explorers](#block-explorers)
+    - [Network stats](#network-stats)
+    - [Testnet explorers](#testnet-explorers)
+    - [Chain data and monitoring](#chain-data-and-monitoring)
+    - [Chain ingest tools](#chain-ingest-tools)
+    - [Miner reputation systems](#miner-reputation-systems)
+    - [Storage status](#storage-status)
+    - [Core dev calls](#core-dev-calls)
+  - [APIs and developer tools](#apis-and-developer-tools)
+    - [Filecoin API clients](#filecoin-api-clients)
+      - [Powergate clients](#powergate-clients)
+    - [Storage tools for apps](#storage-tools-for-apps)
+    - [Data prep tools](#data-prep-tools)
+    - [Databases using IPFS and Filecoin](#databases-using-ipfs-and-filecoin)
+    - [Storage apps on Filecoin](#storage-apps-on-filecoin)
+    - [Wallet-related](#wallet-related)
+    - [Developer tools](#developer-tools)
+    - [Ecosystem projects](#ecosystem-projects)
+    - [Grant programs and accelerators](#grant-programs-and-accelerators)
+  - [Mining](#mining)
+    - [Dashboards and reputation systems](#dashboards-and-reputation-systems)
+    - [Miner tools](#miner-tools)
+    - [Storage client and miner programs](#storage-client-and-miner-programs)
+  - [Wallets](#wallets)
+    - [Other wallets](#other-wallets)
+    - [Wallet tools for developers](#wallet-tools-for-developers)
+    - [Filecoin signing tools](#filecoin-signing-tools)
+    - [Retrieval Market resources (WIP experiments)](#retrieval-market-resources-wip-experiments)
 
 ## About the protocol
 
@@ -186,6 +205,7 @@ Tools to check status and details of the network and chain.
 - [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 - [filecoin-ruby](https://github.com/subvisual/filecoin-ruby) - older interface to Lotus Filecoin in Ruby
 - [Starling Storage API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
+- [Estuary API](https://estuary.tech) - Estuary is a simple IPFS node that integrates a minimal Filecoin Client Library. It allows anyone with public data to store and retrieve it using a few API calls. It is for infrastructure operators, developers and Filecoin users. Visit [https://docs.estuary.tech](https://docs.estuary.tech) for more API documentations.
 
 Currently for Filecoin storage deals we recommend using [Powergate](https://docs.textile.io/powergate/) to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.)
 
@@ -197,6 +217,7 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 ### Storage tools for apps
 
 - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood, hosted by Textile
+- [Estuary](https://docs.filecoin.io/build/estuary) - [Estuary](https://estuary.tech) is a simple IPFS node that integrates a minimal Filecoin Client Library. It allows anyone with public data to store and retrieve it using a few API calls. It is for infrastructure operators, developers and Filecoin users. Visit [https://docs.estuary.tech](https://docs.estuary.tech) for more API documentations. A simple website application example that can community to any Estuary node can be found [here](https://github.com/application-research/estuary-www).
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account
 - [Space SDK from Fleek](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
 - [NFT.storage](https://nft.storage/) - beta service from Protocol Labs for storing off-chain NFT data on IPFS and Filecoin
