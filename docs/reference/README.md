@@ -12,7 +12,7 @@ This section contains links and reference materials for Filecoin.
 - [Reference](#reference)
   - [About the protocol](#about-the-protocol)
     - [Filecoin specification](#filecoin-specification)
-    - [Filecoin's economy](#filecoins-economy)
+    - [Filecoin's economy](#filecoin-economy)
     - [Filecoin Plus for verified data](#filecoin-plus-for-verified-data)
     - [Videos](#videos)
   - [Filecoin community resources and tools](#filecoin-community-resources-and-tools)
@@ -59,7 +59,7 @@ This section contains links and reference materials for Filecoin.
 
 View the official [Filecoin technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
 
-### Filecoin's economy
+### Filecoin economy
 
 [Engineering Filecoin's Economy](https://filecoin.io/2020-engineering-filecoins-economy-en.pdf) - discusses the design of Filecoin's economic incentives.
 
