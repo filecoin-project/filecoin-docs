@@ -1,6 +1,6 @@
 ---
 title: 'Estuary'
-description: 'Estuary is a simple IPFS node that integrates a minimal Filecoin Client Library. '
+description: 'Estuary makes storing data with Filecoin simpler by managing replication tasks and automating much of the workflow, allow you to carry on building your applications.'
 breadcrumb: 'Estuary'
 ---
 
@@ -8,27 +8,13 @@ breadcrumb: 'Estuary'
 
 {{ $frontmatter.description }}
 
-[Estuary](https://estuary.tech) automates storage activities with Filecoin. It is a simple IPFS node that integrates a minimal Filecoin Client Library. Estuary is built by [ARG](https://arg.protocol.ai/) and is completely open source and available at [https://github.com/application-research/estuary](https://github.com/application-research/estuary).
+[Estuary](https://estuary.tech) automates storage activities with Filecoin. At its core, Estuary is a simple IPFS node that integrates a minimal Filecoin client library. It is an open-source project built by [ARG](https://arg.protocol.ai/) and is available at [github.com/application-research/estuary](https://github.com/application-research/estuary). 
 
-You can read more about Estuary in the [Estuary docs](https://docs.estuary.tech).
+Estuary is **the recommended solution** for developers who want a more accessible interface for users to store data on Filecoin. See the [Estuary documentation](https://docs.estuary.tech) to learn more about the project.
 
-Estuary is the **recommended solution** for developers who want an easier interface for any users wants to store data on Filecoin.
+## Using Estuary 
 
-## How to use Estuary 
-
-You can run your own Estuary Node (soon). 
-
-- [Estuary API](https://docs.estuary.tech): Visit [https://docs.estuary.tech](https://docs.estuary.tech) for tutorials and API documentation.
-  
-::: tip
-If you don't like code or don't want to worry about API integrations, you can use hosted Estuary Node at https://estuary.tech to store files.
-:::
-
-::: tip
-Sometimes the best way to learn is through examples.
-
-- See a full web application that can communicate to any Estuary node and allows users to store data on Filecoin at https://github.com/application-research/estuary-www(https://github.com/application-research/estuary-www).  
-:::
+Estuary is still in the early stages, and as such, isn't quite ready for a public release. However, you can [reqest an invite](https://docs.estuary.tech/get-invite-key) to test the project and start making Filecoin storage deals.
 
 ## Additional resources
 
@@ -37,3 +23,4 @@ Sometimes the best way to learn is through examples.
 - [Store with Estuary](https://docs.filecoin.io/store/estuary/)
 - [Sample application built with Estuary](https://github.com/application-research/estuary-www)
 - [Who is ARG](https://arg.protocol.ai)
+
