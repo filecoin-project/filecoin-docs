@@ -35,7 +35,7 @@ Your data is retrievable as soon as a deal is created. Simply go to your deal pa
    ![Estuary retrieve](./images/estuary/estuary-retrieve.png)
 
 ::: tip
-Your data is retrievable even it is in [Staging Zone]((#staging-zone))! Just select **Staging** from the sidebar menu and click the link under `RETRIEVAL CID` to get your data!
+Your data is retrievable even it is in the _Staging Zone_! Just select **Staging** from the sidebar menu and click the link under `RETRIEVAL CID` to get your data!
 :::
 
 ## Additional resources
