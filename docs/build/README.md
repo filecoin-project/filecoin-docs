@@ -12,6 +12,7 @@ Filecoin is for the builders. If you are excited about the potential of leveragi
 There are several options to start integrating with Filecoin. Here are some guides to get you started:
 
 - [Build with hosted powergate](hosted-powergate.md), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
+- [Store and retrieve data](../get-started/store-and-retrieve) directly with a Lotus node by following this tutorial series.
 - [Build with textile buckets](textile-buckets.md), for users looking for simple IPFS storage with Filecoin-based archival, with encryption and shared buckets support.
 - [Build with Glif-nodes](hosted-lotus.md), for users looking for an endpoint to submit messages to the chain. Standalone Lotus, with optional Powergate, are also available).
 - [Build with Lotus](lotus/README.md), for users looking to interact with their own, local Lotus nodes.
