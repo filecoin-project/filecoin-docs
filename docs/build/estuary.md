@@ -14,7 +14,7 @@ Estuary is **the recommended solution** for developers who want a more accessibl
 
 ## Using Estuary 
 
-Estuary is still in the early stages, and as such, isn't quite ready for a public release. However, you can [reqest an invite](https://docs.estuary.tech/get-invite-key) to test the project and start making Filecoin storage deals.
+Estuary is still in the early stages, and as such, isn't quite ready for a public release. However, you can [request an invite](https://docs.estuary.tech/get-invite-key) to test the project and start making Filecoin storage deals.
 
 ## Additional resources
 
