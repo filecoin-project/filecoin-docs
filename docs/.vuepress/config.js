@@ -87,7 +87,7 @@ module.exports = {
             {
               title: 'Store and retrieve',
               path: '/get-started/store-and-retrieve/',
-              sidebarDepth: 2,
+              sidebarDepth: 1,
               collapsable: true,
               children: [
                 ['/get-started/store-and-retrieve/', 'Start here'],
