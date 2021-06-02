@@ -22,7 +22,7 @@ _PoSt (Proof-of-Spacetime)_ window checks are performed on 24 hour intervals acr
 
 The mechanism to earn the right to mine a new block is called _WinningPoSt_. In the Filecoin network, time is discretized into a series of epochs – the blockchain's height corresponds to the number of elapsed epochs. At the beginning of each epoch, a small number of storage miners are elected to mine new blocks. Additionally to the block reward, each miner can collect the fees associated to each message included in the block.
 
-The number of blocks on every tipset is based on based on a Poisson distribution of a random variable with λ = 5. Miner implementations may use several strategies to choose which messages to include in every block to minimize overlap. Only the "first execution" of each message will collect the associated fees, with executions ordered per the hash of the VRF (Verifiable Random Function) ticket associated to the block.
+The number of blocks on every tipset is based on a Poisson distribution of a random variable with λ = 5. Miner implementations may use several strategies to choose which messages to include in every block to minimize overlap. Only the "first execution" of each message will collect the associated fees, with executions ordered per the hash of the VRF (Verifiable Random Function) ticket associated to the block.
 
 ## Verified clients
 
