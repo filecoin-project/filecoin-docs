@@ -7,7 +7,7 @@ description:
 
 When you store data with a storage-provider, you must pay to have your data stored! Similarly, when you want to retrieve your data back from the storage-provider, you must pay a retrieval fee. This fee covers the expenses of unsealing your data and sending it back to you! This page covers the end-to-end process of paid retrieval.
 
-This page is split into the following sections:
+This page covers the following steps:
 
 1. Get your public address from your Lotus node.
 1. Find an exchange to buy FIL from.
@@ -42,27 +42,55 @@ As you're going through this section, make a note of the following variables:
     ```shell
     lotus wallet list
 
-    >
+    > Address                                    Balance  Nonce  Default  
+    > f16mwizoeloamhp4dea4uy367mlihddw2mflnb5vy  0 FIL    0      X  
     ```
 
-## Find an exchange
+## Purchase FIL from an exchange 
+
+An cryptocurrency exchange, or simply just _exchange_ is a service that lets you sawp cash for cryptocurrency, cryptocurrency for cash, or even one cryptocurency for another cryptocurrency. They work in a similar way to currency exchanges that you find at airports, where you can swan your home currency for one of the country that you are traveling to. If you have purchased cryptocurrency before, you have likely used an exchange before.
+
+There are lots of exchanges that allow users to buy, sell, and trade FIL. Websites like [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help make a decision on which exchange to use.
+
+![Coinmarketcap show a list of exchanges that support FIL.](./images/coinmarketcap-exchanges.png)
+
+Once you have found an exchange you want to use, you will have to create an accout with that exchange. Many changes have strict verification and Know-Your-Customer (KYC) processes in place, so it may take a few days to create your account. However, most large exchanges are able to verify your information in a few minutes.
+
+Purchasing cryptocurrency varies from exchange to exchange, but the process is usually something like this:
+
+1. Add funds to your exchange account in your local currency (USD, EUR, YEN, etc).
+1. Exchange your local currency for FIL at a set price.
 
 ## Send FIL from your exchange
 
+Once you have FIL in your exchange account, you should be able to send some to the public address you made with your Lotus node. Again, the process for this is different for every exchange, but in general it goes something like:
+
+1. Submit a withdrawal request with the exchange, including:
+    - How much FIL you would like to withdraw.
+    - Where you want the FIL to be sent to. This value should be the public address `bafk2...` you made with your Lotus node.
+1. Wait for the withdrawal to finish.
+
+Some exchanges place a limit on how much you can withdraw at once. The exchange may also place a time-lock on your withdrawal.
+
+Once the withdrawal from your exchange completes, and the Filecoin network processes the transaction, you will be able to see the funds in your Lotus address by using `lotus wallet list`:
+
+```shell
+lotus wallet list
+
+> Address                                    Balance  Nonce  Default  
+> f16mwizoeloamhp4dea4uy367mlihddw2mflnb5vy  10 FIL   0      X
+```
+
+It may take a few minutes for your FIL to show up in your Lotus address. If you do not see the FIL in your Lotus address 30 minutes after the withdrawal is complete from your exchange, get in touch with your exchange's support team for help.
+
 ## Get storage deal information
 
-You need two pieces of information to retrieve data from a miner:
+Now that you have FIL in your Lotus address for the retrieval, you just need to grab the information from the storage deal you originally made. You need two pieces of information to retrieve data from a miner:
 
 - The _Data CID_, sometimes called the _label_. This is the content identifier for all the data stored in a single deal.
 - The _Provider ID_ with whom you made to original deal to store the data. This is sometimes called the _Miner ID_. 
 
 If you are still connected to the same Lotus node that originally made the deal, then this process is very simple. Lotus nodes keep a log of all the deals it has made.
-
-:::warning Working from a different Lotus node
-If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
-:::
-
-To get the information you need:
 
 1. List the deals that this node has made:
 
@@ -76,6 +104,12 @@ To get the information you need:
     Lotus spits out a lot of information here. If you find it hard to read, try adding `| less -S` onto the end of the command. This will force the terminal to display the output horizontally. In this view, you can use the arrow keys to scroll left and right. Press `q` to exit this view.
 
 1. Make a note of the `DealCid` and the `Provider`. In the example above, the `DealCid` is `baftyr...` and the `Provider` is `f01001`. 
+
+:::warning Working from a different Lotus node
+If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
+:::
+
+You can now move onto creating a retrieval request.
 
 ## Create a retrieval request
 
@@ -107,3 +141,4 @@ The retrieval command is fairly simple. We just need to add the _Provider ID_ an
 1. Wait for the download to complete. Again, the speed of this process depends on your connection to the miner and the size of your download. When creating this tutorial, it took us around 3 minutes to download a 5GB file from a miner.
 1. Once the download is complete, you should have a file in your home directory called `output-file`.
 
+And that's it! You have just completed a paid retrieval of a file stored on the Filecoin network.
