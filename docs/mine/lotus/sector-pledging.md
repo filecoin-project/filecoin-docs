@@ -28,7 +28,7 @@ To pledge a sector use:
 lotus-miner sectors pledge
 ```
 
-This will, by default, pledge the space for 546 days.
+This will, by default, pledge the space for 540 days.
 
 ::: warning
 This will write data to `$TMPDIR` so make sure that there is enough space available.
