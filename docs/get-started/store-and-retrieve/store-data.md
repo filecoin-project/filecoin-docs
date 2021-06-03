@@ -8,7 +8,7 @@ description: Start storing your data on the Filecoin network. This section cover
 Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus miner registry, creating a storage deal, and then waiting for the deal to complete! 
 
 :::danger
-Filecoin is optimized for public data and doesn't yet support access controls. If storing private data, ensure you encrypt it before storage to ensure it remains unreadable by anyone without the ability to decrypt it.
+Filecoin is optimized for public data and doesn't yet support access controls. If storing private data, ensure you encrypt it before storage to ensure it remains unreadable by anyone without the ability to decrypt it. If a vulnerability is found in your encryption process at any point in the future, then your data may be compromised.
 :::
 
 ## Things to note
@@ -282,4 +282,3 @@ These states come from the [Lotus project GitHub repository](https://github.com/
 ## Next steps
 
 Now that you've added some data onto the Filecoin network [we can move into retrieving data →](./retrieve-data.md)
-
