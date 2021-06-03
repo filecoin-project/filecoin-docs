@@ -26,6 +26,8 @@ As you're going through this section, make a note of the following variables:
 | Variable | Description | Example |
 | --- | --- | --- |
 | Your public address | The public part of your Filecoin address. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
+| Miner ID | The unique identifer for each a storage provider. | `f01000` | 
+| Data CID | The CID of the data that you originally stored when you made your storage deal. | `baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi` |
 
 ## Get your public address
 
