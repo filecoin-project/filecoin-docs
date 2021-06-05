@@ -30,6 +30,33 @@ These are the minimal requirements to run a Lotus node. [Hardware requirements f
 
 The following instructions are specific to Linux installations. Head to the [macOS](#macos) section if you want to install Lotus on a Mac.
 
+### snap package manager
+
+installing lotus software is a snap!
+
+```bash
+snap install lotus-filecoin
+```
+
+if you prefer to live dangerously, you can install nightly builds. These are built from the master branch every night.
+
+```
+snap install lotus-filecoin --edge
+```
+
+### appimage
+
+if snap is not available for your distribution, portable appimages are available on our releases page.
+https://github.com/filecoin-project/lotus/releases
+Download the appropriate release, and execute.
+
+```
+curl -L https://github.com/filecoin-project/lotus/releases/download/v1.10.0-rc1/Lotus_<RELEASE>_x86_64.AppImage -o lotus
+chmod +x ./lotus
+```
+
+## building and installing from source on Linux
+
 ### Software dependencies
 
 You will need the following software installed to install and run Lotus.
