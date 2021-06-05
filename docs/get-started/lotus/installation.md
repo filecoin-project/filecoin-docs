@@ -34,6 +34,10 @@ The following instructions are specific to Linux installations. Head to the [mac
 
 installing lotus software is a snap!
 
+<div>
+<iframe src="https://snapcraft.io/lotus-filecoin/embedded?button=black" frameborder="0" width="100%" height="330px" style="border: 1px solid #CCC; border-radius: 2px;"></iframe>
+</div>
+
 ```bash
 snap install lotus-filecoin
 ```
