@@ -99,7 +99,7 @@ lotus filplus check-client-datacap f00000
 _Note: [Lotus-shed](https://github.com/filecoin-project/lotus/tree/master/cmd/lotus-shed) is a separate package you will need to build and install (`make lotus-shed` in the [Lotus](https://github.com/filecoin-project/lotus) source), although these features are slated to be merged into Lotus._
 
 ```
-lotus-shed verifreg check-client  f00000
+lotus-shed verifreg check-client f00000
 ```
 
 ### Finding miners to take FIL+ deals
