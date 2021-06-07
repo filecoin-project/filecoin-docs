@@ -27,7 +27,7 @@ As you're going through this section, make a note of the following variables:
 | --- | --- | --- |
 | Your public address | The public part of your Filecoin address. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
 | Miner ID | The unique identifer for each a storage provider. | `f01000` | 
-| Data CID | The CID of the data that you originally stored when you made your storage deal. | `baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi` |
+| Piece CID | The CID of the data that you originally stored when you made your storage deal. | `baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi` |
 
 ## Get your public address
 
@@ -105,7 +105,7 @@ If you are still connected to the same Lotus node that originally made the deal,
 
     Lotus spits out a lot of information here. If you find it hard to read, try adding `| less -S` onto the end of the command. This will force the terminal to display the output horizontally. In this view, you can use the arrow keys to scroll left and right. Press `q` to exit this view.
 
-1. Make a note of the `DealCid` and the `Provider`. In the example above, the `DealCid` is `baftyr...` and the `Provider` is `f01001`. 
+1. Make a note of the `PieceCid` and the `Provider`. In the example above, the `PieceCid` is `baftyr...` and the `Provider` is `f01001`. 
 
 :::warning Working from a different Lotus node
 If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
@@ -120,10 +120,10 @@ The retrieval command is fairly simple. We just need to add the _Provider ID_ an
 1. Use the `retrieve` command to request data from a miner:
 
     ```shell
-    lotus client retrieve --miner <PROVIDER ID> <DATA CID> ~/output-file
+    lotus client retrieve --miner <PROVIDER ID> <PIECE CID> ~/output-file
     ```
 
-    Replace `<PROVIDER ID>` and `<DATA CID>` in the above command with your _Provider ID_ and _Data CID_, respectively. For example:
+    Replace `<PROVIDER ID>` and `<PIECE CID>` in the above command with your _Provider ID_ and _Data CID_, respectively. For example:
 
     ```shell
     lotus client retrieve --miner f02147 baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi ~/output-file
