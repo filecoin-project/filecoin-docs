@@ -5,7 +5,7 @@ description:
 
 # Paid retrieval
 
-When you store data with a storage-provider, you must pay to have your data stored! Similarly, when you want to retrieve your data back from the storage-provider, you must pay a retrieval fee. This fee covers the expenses of unsealing your data and sending it back to you! This page covers the end-to-end process of paid retrieval.
+When you store data with a storage provider, you must pay to have your data stored! Similarly, when you want to retrieve your data back from the storage provider, you must pay a retrieval fee. This fee covers the expenses of unsealing your data and sending it back to you! This page covers the end-to-end process of paid retrieval.
 
 This page covers the following steps:
 
@@ -16,7 +16,7 @@ This page covers the following steps:
 1. Send a retrieval request to get your data.
 
 :::tip Free retrieval
-It will soon be possible to retrieve data back from a storage-provider for free, with some caveats. However, that process is still under development.
+It will soon be possible to retrieve data back from a storage provider for free, with some caveats. However, that process is still under development.
 :::
 
 ## Things to note
