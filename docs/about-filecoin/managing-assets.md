@@ -39,18 +39,4 @@ Wallets all you to manage your assets without having to deal with a Filecoin nod
 
 > A cryptocurrency exchange, or a digital currency exchange, is a business that allows customers to trade cryptocurrencies or digital currencies for other assets, such as conventional fiat money or other digital currencies. \_ - [Wikipedia](https://en.wikipedia.org/wiki/Cryptocurrency_exchange).
 
-The number of exchanges that let users trade `FIL` is growing every day. This is an alphabetical list of exchanges that support `FIL`. Please help us keep this list up to date by creating an issue when you find a support exchange that is _not_ already on this list.
-
-| Name      |
-| --------- |
-| Anchorage |
-| Binance   |
-| Brittex   |
-| Coinbase  |
-| Coinlist  |
-| Gemini    |
-| Huobi     |
-| Oken      |
-| Ren       |
-
-This may not be an exhaustive list. If you know of an exchange that allows users to buy and sell `FIL` but is not listed here, please [raise an issue in GitHub](https://github.com/filecoin-project/filecoin-docs/issues/new).
+The number of exchanges that let users trade `FIL` is growing every day. You can view an up-to-date list of all exchanges trading FIL at [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/).
