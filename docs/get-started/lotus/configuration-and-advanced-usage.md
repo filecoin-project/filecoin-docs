@@ -8,8 +8,6 @@ breadcrumb: 'Configuration and advanced usage'
 
 {{ $frontmatter.description }}
 
-[[TOC]]
-
 ## Configuration
 
 The Lotus daemon stores a configuration file in `~/.lotus/config.toml`. Note that by default all settings are commented. Here is an example configuration:
@@ -65,6 +63,31 @@ The Lotus daemon stores a configuration file in `~/.lotus/config.toml`. Note tha
 # Fee configuration
 [Fees]
   DefaultMaxFee = 0.007
+```
+
+## Backup & restore
+
+You can backup your Lotus node. You can then restore this backup if something goes wrong, or you simply wish to move your Lotus node from one computer to another.
+
+:::warning
+This backup process is different to that of the [`lotus-miner` backup](../../mine/lotus/backup-and-restore). This backup process does not retain any mining information.
+:::
+
+### Backup
+
+1. Stop your `lotus daemon` if it is already running.
+1. Run `lotus daemon backup`:
+    
+    ```shell
+    lotus daemon backup
+    ```
+
+    This process takes a few minutes, depending on the hardware of your computer.
+
+### Restore
+
+```shell
+
 ```
 
 ## Connectivity
