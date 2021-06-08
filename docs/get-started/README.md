@@ -20,6 +20,7 @@ breadcrumb: ''
 - Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](lotus/README.md). Setup your first wallet and learn how to [send and receive ⨎](lotus/send-and-receive-fil.md) and [make storage deals](../store/lotus/store-data.md).
 - Use [Starling](../store/starling.md) to simplify the management of storage deals in Lotus.
+- Check out the [Lotus API methods](../reference/lotus-api) to learn how to programmatically store data on the Filecoin network.
 
 ## Contribute to Filecoin
 
