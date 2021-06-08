@@ -11,11 +11,11 @@ description: "Filecoin Plus aims to enable the demand side of the Filecoin netwo
 
 Filecoin Plus is based on a set of guiding principles, [detailed in FIP-0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md), that focus the program on increasing Filecoin's effectiveness at becoming the decentralized storage network for humanity's most important information.
 
-Root Key Holders, Notaries, Clients, and Miners, interact through the allocation and spending of DataCap. Notaries retrieve DataCap in batches and then allocate it to trustworthy Clients that spend the DataCap to fund storage deals. Miners that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
+Root key-holders, notaries, clients, and miners, interact through the allocation and spending of DataCap. Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Miners that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
 
 ### DataCap
 
-DataCap, when allocated to a client, can be spent by the client in storage deals with miners. Those deals carry a higher deal quality multiplier, which increases the "quality adjusted power" of the storage miner on the network by a factor of 10, yielding better block rewards for the miner over time. DataCap is granted in batches to Notaries who can allocate it to clients that spend the DataCap to fund storage deals. DataCap is consumed as it is used to make deals.
+DataCap, when allocated to a client, can be spent by the client in storage deals with miners. Those deals carry a higher deal quality multiplier, which increases the "quality adjusted power" of the storage miner on the network by a factor of 10, yielding better block rewards for the miner over time. DataCap is granted in batches to Notaries, who can allocate it to clients that spend the DataCap to fund storage deals. DataCap is consumed as it is used to make deals.
 
 ### Notary
 
@@ -27,30 +27,30 @@ Notaries are selected to serve as fiduciaries for the Filecoin Network and are r
 
 You can find a list of current [active notaries at plus.fil.org](https://plus.fil.org).
 
-Notaries are selected through an [application process](https://github.com/filecoin-project/notary-governance/tree/main/notaries#application--selection-process). If approved, [Root Key Holders](https://github.com/filecoin-project/notary-governance/tree/main/root-key-holders#overview) (executors of the decisions made by the community on-chain) grant Notary status and DataCap amounts. Those interested in becoming Notaries should apply to this role by filing an Issue in the [Notary Governance Repo](https://github.com/filecoin-project/notary-governance/).
+Notaries are selected through an [application process](https://github.com/filecoin-project/notary-governance/tree/main/notaries#application--selection-process). If approved, [root key-holders](https://github.com/filecoin-project/notary-governance/tree/main/root-key-holders#overview) (executors of the decisions made by the community on-chain) grant notary status and DataCap amounts. Those interested in becoming Notaries should apply for this role by filing an Issue in the [notary governance repo](https://github.com/filecoin-project/notary-governance/).
 
 ### Client
 
-Clients can use their DataCap to incentivize miners to serve their needs - this can include providing additional features and levels of services that meet their specific requirements. In doing so, storage-related goods and services on Filecoin are made more valuable and competitive over time. Notaries vet clients to ensure the client receives DataCap commensurate with their reputation and needs and that the client responsibly allocates that DataCap.
+Clients can use their DataCap to incentivize miners to serve their needs. This can include providing additional features and levels of services that meet their specific requirements. In doing so, storage-related goods and services on Filecoin are made more valuable and competitive over time. Notaries vet clients to ensure the client receives DataCap commensurate with their reputation and needs and that the client responsibly allocates that DataCap.
 
 ## Using DataCap
 
 ### Get DataCap
 
-Clients are required to have an on-chain Filecoin address where DataCap can be received. If you are setting up a new address, make sure to initialize it by sending a minimal amount of FILto it (purchasing some FIL from an exchange, for example).
+Clients are required to have an on-chain Filecoin address where DataCap can be received. If you are setting up a new address, make sure to initialize it by sending a minimal amount of FIL to it (purchasing some FIL from an exchange, for example).
 
-_Note: As of network version 12, DataCap allocations are a single-use credit on a Filecoin address. If you receive an allocation and require more, you should make a new request with a new address that you have initialized like above. [FIP-0012](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0012.md) was accepted and implemented in network version 13(actor v5), which allows client addresses to receive DataCap multiple times._
+_Note: As of network version 12, DataCap allocations are a single-use credit on a Filecoin address. If you receive an allocation and require more, you should make a new request with a unique address that you have initialized like above. [FIP-0012](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0012.md) was accepted and implemented in network version 13(actor v5), which allows client addresses to receive DataCap multiple times._
 
-Clients get DataCap by making a request to a Notary.
+Clients get DataCap by making a request to a notary.
 1. Head over to the [Filecoin Plus Registry](https://plus.fil.org/), and proceed with **For Clients**
 2. Click **Get Verified**
-3. Click on **Automatic Verification**. This will take you to an automated Notary, which should be able to provide you with a small amount of DataCap to get you started. https://verify.glif.io/ is an example of such a Notary, which is currently giving 32GiB of DataCap once every 30 days to clients who authenticate themselves with a GitHub account greater than 180 days old.
+3. Click on **Automatic Verification**. This will take you to an automated notary, which should be able to provide you with a small amount of DataCap to get you started. https://verify.glif.io/ is an example of such a notary, which is currently giving 32 GiB of DataCap once every 30 days to clients who authenticate themselves with a GitHub account greater than 180 days old.
 
-For DataCap requirements greater than 32GiB - choose **General Verification** in Step 3 above instead. This will take you to the Notary Registry, where you can request DataCap to a specific Notary. Notaries may specialize in the types of requests they'll choose to support - it is recommended that you select a Notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under.
+For DataCap requirements greater than 32 GiB, choose **General Verification** in Step 3 above instead. This will take you to the notary Registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under.
 
 ### Spend DataCap
 
-Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because miners receive a deal quality multiplier for taking FIL+ deals, many miners offer special pricing and services to attract Clients who use DataCap to make deals.
+Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because miners receive a deal quality multiplier for taking FIL+ deals, many miners offer special pricing and services to attract clients who use DataCap to make deals.
 
 By default, when you make a deal with an address with DataCap allocated, you will spend DataCap when making the deal.
 
@@ -115,6 +115,5 @@ There are a few different ways in which a client can find a miner to take a FIL+
 If you are interested in participating in governance and shaping the program, here is how you can get involved:
 
 - Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack
-- Participate in Community Governance calls, which happen every other Tuesday - use the Filecoin Community Events calendar to join or watch for updates in #fil-plus
-- Create and comment on open issues in the [Notary Governance repo](https://github.com/filecoin-project/notary-governance/issues)
-
+- Participate in Community Governance calls, which happen every other Tuesday. Use the Filecoin Community Events calendar to join or watch for updates in #fil-plus
+- Create and comment on open issues in the [notary governance repo](https://github.com/filecoin-project/notary-governance/issues)
