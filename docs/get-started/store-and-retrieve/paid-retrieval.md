@@ -69,7 +69,7 @@ Once you have FIL in your exchange account, you should be able to send some to t
 
 1. Submit a withdrawal request with the exchange, including:
     - How much FIL you would like to withdraw.
-    - Where you want the FIL to be sent to. This value should be the public address `bafk2...` you made with your Lotus node.
+    - Where you want the FIL to be sent to. This value should be the public address `f16mwi...` you made with your Lotus node.
 1. Wait for the withdrawal to finish.
 
 Some exchanges place a limit on how much you can withdraw at once. The exchange may also place a time-lock on your withdrawal.
@@ -89,8 +89,8 @@ It may take a few minutes for your FIL to show up in your Lotus address. If you 
 
 Now that you have FIL in your Lotus address for the retrieval, you just need to grab the information from the storage deal you originally made. You need two pieces of information to retrieve data from a miner:
 
-- The _Data CID_, sometimes called the _label_. This is the content identifier for all the data stored in a single deal.
-- The _Provider ID_ with whom you made to original deal to store the data. This is sometimes called the _Miner ID_. 
+- The _Piece CID_, sometimes called the _label_. This is the content identifier for all the data stored in a single deal.
+- The _Provider ID_ with whom you made to original deal to store the data. This is sometimes called the _Storage Provider ID_ or _Miner ID_. 
 
 If you are still connected to the same Lotus node that originally made the deal, this process is very simple. Lotus nodes keep a log of all the deals it has made.
 
@@ -108,7 +108,7 @@ If you are still connected to the same Lotus node that originally made the deal,
 1. Make a note of the `PieceCid` and the `Provider`. In the example above, the `PieceCid` is `baftyr...` and the `Provider` is `f01001`. 
 
 :::warning Working from a different Lotus node
-If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
+If you need to find deal information about a particular client address `f16mw...`, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
 :::
 
 You can now move onto creating a retrieval request.
@@ -129,7 +129,7 @@ The retrieval command is fairly simple. We just need to add the _Provider ID_ an
     lotus client retrieve --miner f02147 baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi ~/output-file
     ```
 
-1. After submitting `retrieve` command, your Lotus lite-node will send the retrieval deal to the storage provider and wait for a response:
+1. After submitting the `retrieve` command, your Lotus lite-node will send the retrieval deal to the storage provider and wait for a response:
 
     ```shell
     > Recv: 0 B, Paid 0 FIL, ClientEventOpen (DealStatusNew)
