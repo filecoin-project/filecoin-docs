@@ -119,7 +119,7 @@ Set `ListenAddress` and `RemoteListenAddress` to the IP of a local-network inter
 
 ### Obtain an authentication token
 
-```sh
+```shell
 lotus-miner auth api-info --perm admin
 ```
 
@@ -170,7 +170,7 @@ When initially fetching parameter files, remember to set the [`IPFS_GATEWAY` var
 
 ### Run the worker
 
-```sh
+```shell
 lotus-worker run <flags>
 ```
 
@@ -186,7 +186,7 @@ The above command will start the worker. Depending on the operations that you wa
 
 Once the worker is running, it should connect to the Lotus miner. You can verify this with:
 
-```sh
+```shell
 $ lotus-miner sealing workers
 Worker 0, host computer
         CPU:  [                                                                ] 0 core(s) in use
