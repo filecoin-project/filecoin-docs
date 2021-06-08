@@ -23,7 +23,7 @@ Much like how a US penny represents a fraction of a US dollar, there are many wa
 
 ## Wallets
 
-Wallets all you to manage your assets without having to deal with a Filecoin node directly.
+Wallets allow you to manage your assets without having to deal with a Filecoin node directly.
 
 | Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
