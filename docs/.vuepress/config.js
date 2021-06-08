@@ -93,7 +93,7 @@ module.exports = {
                 ['/get-started/store-and-retrieve/', 'Start here'],
                 ['/get-started/store-and-retrieve/set-up', 'Set up'],
                 ['/get-started/store-and-retrieve/store-data', 'Store data'],
-                ['/get-started/store-and-retrieve/paid-retrieval', 'Paid retrieval']
+                ['/get-started/store-and-retrieve/retrieve-data', 'Retrieve data']
               ]
             },
             'explore-the-network',
