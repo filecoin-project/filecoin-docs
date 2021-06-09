@@ -1,6 +1,6 @@
 ---
 title: 'Lotus: switch networks'
-description: There may be times, particularly when testing, where you wish to switch to a different Filecoin network or need to reconnect to a testing network after a network reset. This guide will show you how to switch between different Filecoin networks with Lotus.
+description: There may be times, particularly when testing, where you wish to switch to a different Filecoin network or need to reconnect to a testing network after a network reset. This guide will show you how to switch between various Filecoin networks with Lotus.
 breadcrumb: Switch networks
 ---
 
@@ -10,32 +10,42 @@ breadcrumb: Switch networks
 
 As we mentioned in the [installation guide](installation.md), Lotus is compiled to operate on a single network, and the information in the configuration folder corresponds to that network.
 
-There are multiple methods to make Lotus run on a different network:
-
-[[TOC]]
-
-## Approach 1: Clean, re-build, and re-install
+## Clean, rebuild, reinstall
 
 The first method is the simplest. In this approach, you remove all the data related to the network you were running on before and launch a Lotus binary built to run on the new one:
 
-1. Shutdown the running Lotus daemon.
-2. Remove the `~/.lotus` (or `$LOTUS_PATH`) folder.
-3. Rebuild and install Lotus on the right branch or release, as defined in the [Networks dashboard](https://networks.filecoin.io).
-4. Start the Lotus daemon again and let it sync to the new network.
+1. Shut down the Lotus daemon if it is currently running.
+1. Remove the `~/.lotus` folder, or whatever you set `$LOTUS_PATH` to. The default is `~/.lotus`. 
+1. Clone the Lotus repository and move into the `lotus` folder:
 
-This process deletes everything from the old network, including wallets. Make sure you have functioning backups of important data before attempting to switch networks.
+    ```shell
+    git clone https://github.com/filecoin-project/lotus
+    cd lotus
+    ```
 
-## Approach 2: Install and run on a different \$LOTUS_PATH
+1. Build the `lotus` executable using `make clean ...` to specify which network you want to join:
 
-This method allows you to keep all the data from the old network where it was, and instead set `$LOTUS_PATH` to a new, clean location so that Lotus will use it. This method is useful if you need to run Lotus using the original network shortly after switching networks.
+    | Network | Build command | Description |
+    | --- | --- | --- |
+    | Mainnet | `make clean all` | The production Filecoin network. FIL has real-world value on this network. |
+    | Calibnet | `make clean calibnet` | A test network with a minimum sector size of 32 GiB. FIL has no real-world value on this network. |
+    | Nerpanet | `make clean nerpanet` | A test network with a minimum sector size of 512 MiB. FIL has no real-world value on this network. |
 
-1. Shutdown the running Lotus daemon.
-2. Rebuild and install Lotus on the right branch or release (as defined in the [Networks dashboard](https://networks.filecoin.io).
-3. Set `LOTUS_PATH` to a new location. i.e. `export LOTUS_PATH=~/.lotus2`.
-4. Start the Lotus daemon again and let it sync to the new network.
+1. Start the Lotus daemon again and let it sync to the new network:
+
+    ```shell
+    lotus daemon
+    ```
+
+:::tip Run on a different `$LOTUS_PATH`
+This process deletes everything from the old network, including wallets. If you are on `mainnet` and are switching to `calibnet` but you want to keep all your `mainnet` data intact for when you switch back, change your `$LOTUS_PATH` before running `lotus daemon`:
+
+To change your `$LOTUS_PATH` run: `export LOTUS_PATH=~/.new-lotus-path`.
+:::
 
 ## Backing up Lotus data
 
-If you wish to backup Lotus data, simply copy the `~/.lotus` (or `$LOTUS_PATH`) folder somewhere. This copy might take time if it is very large, especially if you've synced the full network.
+If you wish to backup Lotus data, copy the `~/.lotus` (or `$LOTUS_PATH`) folder somewhere. This copy might take time if it is very large, especially if you've synced the full network.
 
 Another alternative is to [export your wallets](send-and-receive-fil.md) and also [export the chain](chain.md) for later re-import on a newly installed Lotus Node.
+

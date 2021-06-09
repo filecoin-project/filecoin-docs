@@ -105,6 +105,7 @@ Because of the novel architecture of the M1-based Mac computers, some specific e
     export GOARCH=arm64
     export CGO_ENABLED=1
     export LIBRARY_PATH=/opt/homebrew/lib
+    export FFI_BUILD_FROM_SOURCE=1
     ```
 
 1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
@@ -112,7 +113,7 @@ Because of the novel architecture of the M1-based Mac computers, some specific e
     ```shell
     cd extern/filecoin-ffi
     git fetch -a
-    git checkout m1-portable
+    git checkout master
     ```
 
 1. Create the `filecoin-ffi` executables:

@@ -120,6 +120,7 @@ module.exports = {
               ]
             },
             'filecoin-plus',
+            'estuary',
           ],
 
           '/mine/': [
@@ -164,6 +165,7 @@ module.exports = {
             'hosted-powergate',
             'hosted-lotus',
             'powergate',
+            'estuary',
             {
               title: 'Lotus',
               path: '/build/lotus/',
@@ -197,6 +199,7 @@ module.exports = {
             '/about-filecoin/ipfs-and-filecoin',
             '/about-filecoin/network-performance',
             '/about-filecoin/filecoin-compared-to',
+            '/about-filecoin/managing-assets',
             '/about-filecoin/faq',
             {
               title: 'Project',
