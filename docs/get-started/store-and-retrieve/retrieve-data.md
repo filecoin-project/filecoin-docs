@@ -7,8 +7,6 @@ description: Learn how to get data out of the Filecoin network using Lotus. The 
 
 In the previous step, you stored some data on the Filecoin network. It takes anywhere from 24 to 48 hours for a storage provider to _seal_ the data, so if you finished the previous step moment ago, then your data likely isn't available for download just yet. Instead, we're going to grab some data that is already sealed and ready to download!
 
-## Send a retrieval request
-
 The structure for a retrieval command is:
 
 ```shell
@@ -21,20 +19,51 @@ To finish off this tutorial, you can retrieve a file using the following informa
 | --- | --- |
 | `f071624` | `bafyaa6asgafcmalqudsaeihulnwwprgo2nji3xt27abm6s6bse2yx4avwrykncjqefsnxhu3pyjaagelucbyabasf4fcmalqudsaeidj3qs3xbcfyymp7kwu7355decs3ix4srn5cb5sxblqu6vjt3wwqyjaaghyv6xxmcqtbabbrswpv33aiieaqcaiabbazlh245q` |
 
-Using the template above, your command should look like this:
+:::tip Working from a different Lotus node 
+We're simplifying things a bit in this tutorial by giving you all the information you need to make a retrieval deal. If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
+:::
 
-```shell
-lotus client retrieve --miner f071624 bafyaa6asgafcmalqudsaeihulnwwprgo2nji3xt27abm6s6bse2yx4avwrykncjqefsnxhu3pyjaagelucbyabasf4fcmalqudsaeidj3qs3xbcfyymp7kwu7355decs3ix4srn5cb5sxblqu6vjt3wwqyjaaghyv6xxmcqtbabbrswpv33aiieaqcaiabbazlh245q ~/output-file.tar
-```
+## Send a retrieval request
 
-After submitting this command, your Lotus lite-node will send the retrieval deal to the storage provider and wait for a response:
+1. Using the template above, create the following command: 
 
-```shell
-> Recv: 0 B, Paid 0 FIL, ClientEventOpen (DealStatusNew)
-> Recv: 0 B, Paid 0 FIL, ClientEventDealProposed (DealStatusWaitForAcceptance)
-> Recv: 120 B, Paid 0 FIL, ClientEventBlocksReceived (DealStatusWaitForAcceptance)
-> ...
-```
+    ```shell
+    lotus client retrieve --miner f071624 bafyaa6asgafcmalqudsaeihulnwwprgo2nji3xt27abm6s6bse2yx4avwrykncjqefsnxhu3pyjaagelucbyabasf4fcmalqudsaeidj3qs3xbcfyymp7kwu7355decs3ix4srn5cb5sxblqu6vjt3wwqyjaaghyv6xxmcqtbabbrswpv33aiieaqcaiabbazlh245q ~/output-file.tar
+    ```
 
-This process can take some time, depending on how congested the network is and how much load this storage provider is under. You must keep the `lotus daemon` running. Once the request has been received and processed by the storage provider, your Lotus lite-node will start downloading the data to your computer.
+    After submitting this command, your Lotus lite-node will send the retrieval deal to the storage provider and wait for a response:
+
+    ```shell
+    > > Recv: 0 B, Paid 0 FIL, ClientEventOpen (DealStatusNew)
+    > > Recv: 0 B, Paid 0 FIL, ClientEventDealProposed (DealStatusWaitForAcceptance)
+    > > Recv: 120 B, Paid 0 FIL, ClientEventBlocksReceived (DealStatusWaitForAcceptance)
+    > > ...
+    ```
+
+1. Wait for the process to finish:
+
+    ```shell
+    > > Recv: 1.231 GiB, Paid 0.000000002569142626 FIL, ClientEventAllBlocksReceived (DealStatusSendFundsLastPayment)
+    > > Recv: 1.231 GiB, Paid 0.000000002644070646 FIL, ClientEventPaymentSent (DealStatusFinalizing)
+    > > Recv: 1.231 GiB, Paid 0.000000002644070646 FIL, ClientEventComplete (DealStatusCompleted)
+    > Success
+    ```
+
+    This process can take some time, depending on how congested the network is and how much load this storage provider is under. You must keep the `lotus daemon` running. Once the request has been received and processed by the storage provider, your Lotus lite-node will start downloading the data to your computer.
+
+1. This step is optional, and is not critical to this tutorial. You now have a file called `output-file.tar` in your _Home_ `~` directory. You can unpack it with `tar xvf ~/output-file.tar`:
+
+    ```shell
+    tar xvf ~/output-file.tar
+
+    > regolith-isos/
+    > regolith-isos/regolith-20.04.0-1.4.1-desktop-amd64.iso
+    > regolith-isos/padding.file 
+    ```
+
+    Again, unpacking the `output-file.tar` file is not critical for the completion of this tutorial. The `output-file.tar` file is about 30 GiB, so unpacking it with `tar xvf` could take a while. 
+
+1. That's it!
+
+This is the end of the Filecoin _store and retrieve_ tutorial series!
 
