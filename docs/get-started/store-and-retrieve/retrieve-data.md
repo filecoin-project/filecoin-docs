@@ -7,6 +7,39 @@ description: Learn how to get data out of the Filecoin network using Lotus. The 
 
 In the previous step, you stored some data on the Filecoin network. It takes anywhere from 24 to 48 hours for a storage provider to _seal_ the data, so if you finished the previous step moment ago, then your data likely isn't available for download just yet. Instead, we're going to grab some data that is already sealed and ready to download!
 
+:::tip Working from a different Lotus node 
+We're simplifying things a bit in this tutorial by giving you all the information you need to make a retrieval deal. If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information on this process.
+:::
+
+## Check address balance
+
+Before you can retrieve data from a storage provider, you need to check that you have enough FIL to pay for the retrieval.
+
+1. Reconnect to your Lotus lite-node if you disconnected or closed the terminal since completing the previous page:
+
+    ```shell
+    FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
+    ```
+
+    This command will continue to run. Enter any following commands in a new terminal window.
+
+1. List all the addresses on this Lotus lite-node:
+
+    ```shell
+    lotus wallet list
+
+    > Address                                    Balance  Nonce  Default  
+    > f16mwizoeloamhp4dea4uy367mlihddw2mflnb5vy  10 FIL   0      X  
+    ```
+
+    Any balance above 0.1 FIL is enough to retrieve the data we are requesting in this tutorial. 
+
+:::warning Low or no balance
+If you do not have enough FIL, you need to transfer some FIL to this account. You can either do this by using a cryptocurrency exchange or having a friend send you FIL. The address `f1...` listed when you run `lotus wallet list` is your public address; use this when requesting money from an exchange or your friend.
+:::
+
+## Send a retrieval request
+
 The structure for a retrieval command is:
 
 ```shell
@@ -18,12 +51,6 @@ To finish off this tutorial, you can retrieve a file using the following informa
 | Miner ID | Data CID |
 | --- | --- |
 | `f071624` | `bafyaa6asgafcmalqudsaeihulnwwprgo2nji3xt27abm6s6bse2yx4avwrykncjqefsnxhu3pyjaagelucbyabasf4fcmalqudsaeidj3qs3xbcfyymp7kwu7355decs3ix4srn5cb5sxblqu6vjt3wwqyjaaghyv6xxmcqtbabbrswpv33aiieaqcaiabbazlh245q` |
-
-:::tip Working from a different Lotus node 
-We're simplifying things a bit in this tutorial by giving you all the information you need to make a retrieval deal. If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information on this process.
-:::
-
-## Send a retrieval request
 
 1. Using the template above, create the following command: 
 
@@ -51,7 +78,7 @@ We're simplifying things a bit in this tutorial by giving you all the informatio
 
     This process can take some time, depending on how congested the network is and how much load this storage provider is under. You must keep the `lotus daemon` running. Once the request has been received and processed by the storage provider, your Lotus lite-node will start downloading the data to your computer.
 
-1. This step is optional, and is not critical to this tutorial. You now have a file called `output-file.tar` in your _Home_ `~` directory. You can unpack it with `tar xvf ~/output-file.tar`:
+1. This step is optional and is not critical to this tutorial. You now have a file called `output-file.tar` in your _Home_ `~` directory. You can unpack it with `tar xvf ~/output-file.tar`:
 
     ```shell
     tar xvf ~/output-file.tar
@@ -66,4 +93,3 @@ We're simplifying things a bit in this tutorial by giving you all the informatio
 1. That's it!
 
 This is the end of the Filecoin _store and retrieve_ tutorial series!
-
