@@ -20,7 +20,7 @@ To finish off this tutorial, you can retrieve a file using the following informa
 | `f071624` | `bafyaa6asgafcmalqudsaeihulnwwprgo2nji3xt27abm6s6bse2yx4avwrykncjqefsnxhu3pyjaagelucbyabasf4fcmalqudsaeidj3qs3xbcfyymp7kwu7355decs3ix4srn5cb5sxblqu6vjt3wwqyjaaghyv6xxmcqtbabbrswpv33aiieaqcaiabbazlh245q` |
 
 :::tip Working from a different Lotus node 
-We're simplifying things a bit in this tutorial by giving you all the information you need to make a retrieval deal. If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
+We're simplifying things a bit in this tutorial by giving you all the information you need to make a retrieval deal. If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information on this process.
 :::
 
 ## Send a retrieval request
