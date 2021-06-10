@@ -30,7 +30,7 @@ These are the minimal requirements to run a Lotus node. [Hardware requirements f
 
 The following instructions are specific to Linux installations. Head to the [macOS](#macos) section if you want to install Lotus on a Mac.
 
-Users can install Lotus on Linux using the [Snap package manager](#snap-package-manager), [AppImages](#appimages), or by [building from source](#build-from-source).
+Users can install Lotus on Linux using the [Snap package manager](#snap-package-manager), [AppImages](#appimage), or by [building from source](#build-from-source).
 
 :::warning Miners should build from source
 Building Lotus from source allows you to strictly configure how Lotus runs and how it communicates with its dependencies. Miners looking to improve their system efficiency should [install Lotus by building from source](#build-from-source).
