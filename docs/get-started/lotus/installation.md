@@ -30,36 +30,53 @@ These are the minimal requirements to run a Lotus node. [Hardware requirements f
 
 The following instructions are specific to Linux installations. Head to the [macOS](#macos) section if you want to install Lotus on a Mac.
 
-### snap package manager
+Users can install Lotus on Linux using the [Snap package manager](#snap-package-manager), [AppImages](#appimages), or by [building from source](#build-from-source).
 
-installing lotus software is a snap!
+:::warning Miners should build from source
+Building Lotus from source allows your to strickly configure how Lotus runs, and how it communicates with it's dependencies. Miners looking to improve their system efficency should [install Lotus by building from source](#build-from-source).
+:::
+
+### Snap package manager
 
 <div>
 <iframe src="https://snapcraft.io/lotus-filecoin/embedded?button=black" frameborder="0" width="100%" height="330px" style="border: 1px solid #CCC; border-radius: 2px;"></iframe>
 </div>
 
-```bash
+```shell
 snap install lotus-filecoin
 ```
 
-if you prefer to live dangerously, you can install nightly builds. These are built from the master branch every night.
+You can also install nightly builds by using the `--edge` flag. These builds are created every night from the `master` branch [Lotus GitHub repository](https://github.com/filecoin-project/lotus).
 
-```
+```shell
 snap install lotus-filecoin --edge
 ```
 
-### appimage
+### AppImage
 
-if snap is not available for your distribution, portable appimages are available on our releases page.
-https://github.com/filecoin-project/lotus/releases
-Download the appropriate release, and execute.
+[AppImages](https://appimage.org/) are portable applications that allow developers to package software and dependencies in a single executable. AppImages run on most Linux-based operating systems.
 
-```
-curl -L https://github.com/filecoin-project/lotus/releases/download/v1.10.0-rc1/Lotus_<RELEASE>_x86_64.AppImage -o lotus
-chmod +x ./lotus
-```
+1. Go to the latest [releases page in the Lotus GitHub repository](https://github.com/filecoin-project/lotus/releases/latest).
+1. Under **Assets**, download the AppImage.
+1. Open a terminal window and move to the location where you downloaded the AppImage to. This is likely your **Downloads** folder:
 
-## building and installing from source on Linux
+    ```shell
+    cd ~/Downloads
+    ```
+
+1. Make the AppImage executable:
+
+    ```shell
+    chmod +x lotus_v1.10.0_linux-amd64.appimage
+    ```
+
+1. You can now run the AppImage file by double-clicking on it, or opening it from a terminal window:
+
+    ```shell
+    ./lotus-v1.10.0_linx-amd64.appimage
+    ```
+
+## Build from source
 
 ### Software dependencies
 
