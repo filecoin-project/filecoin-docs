@@ -68,7 +68,7 @@ module.exports = {
             {
               title: 'Lotus',
               path: '/get-started/lotus/',
-              sidebarDepth: 2,
+              sidebarDepth: 1,
               collapsable: true,
               children: [
                 ['lotus/running-in-the-cloud', 'Running in the Cloud'],
