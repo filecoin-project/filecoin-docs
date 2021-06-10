@@ -28,7 +28,9 @@ To pledge a sector use:
 lotus-miner sectors pledge
 ```
 
-This will, by default, pledge the space for 546 days.
+In lotus, this will, by default, pledge the space for ~538 days. 
+
+> Note: The protocol allows a sector to have expiration time between [180-540](https://github.com/filecoin-project/specs-actors/blob/73e0409ac77c918c8fc91681c250a710c4b9a374/actors/builtin/miner/policy.go#L201-L206) days. lotus will allow user to set the cc sector expiration time upon pledge once this [ticket](https://github.com/filecoin-project/lotus/issues/4760) is addressed.
 
 ::: warning
 This will write data to `$TMPDIR` so make sure that there is enough space available.
