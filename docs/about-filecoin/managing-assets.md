@@ -7,20 +7,6 @@ description: 'A lot of interactions with the Filecoin network require FIL to pro
 
 {{ $frontmatter.description }}
 
-## Denominations of Filecoin
-
-Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than 1 whole `FIL`. The different denominations of `FIL` are:
-
-| Name     | Decimal             |
-| -------- | ------------------- |
-| FIL      | 1                   |
-| milliFIL | 1000                |
-| microFIL | 1000000             |
-| nanoFIL  | 1000000000          |
-| picoFIL  | 1000000000000       |
-| femtoFIL | 1000000000000000    |
-| attoFIL  | 1000000000000000000 |
-
 ## Wallets
 
 Wallets allow you to manage your assets without having to deal with a Filecoin node directly.
@@ -37,6 +23,42 @@ Wallets allow you to manage your assets without having to deal with a Filecoin n
 
 ## Exchanges
 
-> A cryptocurrency exchange, or a digital currency exchange, is a business that allows customers to trade cryptocurrencies or digital currencies for other assets, such as conventional fiat money or other digital currencies. \_ - [Wikipedia](https://en.wikipedia.org/wiki/Cryptocurrency_exchange).
+A cryptocurrency exchange, or simply just _exchange_ is a service that lets you swap cash for cryptocurrency, cryptocurrency for cash, or even one cryptocurrency for another cryptocurrency. They work similarly to currency exchanges that you find at airports, where you can swap your home currency for one of the countries you are traveling to. If you have purchased cryptocurrency before, you have likely used an exchange before.
 
-The number of exchanges that let users trade `FIL` is growing every day. You can view an up-to-date list of all exchanges trading FIL at [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/).
+There are lots of exchanges that allow users to buy, sell, and trade FIL. Websites like [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help make a decision on which exchange to use.
+
+![Coinmarketcap show a list of exchanges that support FIL.](./images/coinmarketcap-exchanges.png)
+
+Once you have found an exchange you want to use, you will have to create an account with that exchange. Many changes have strict verification and Know-Your-Customer (KYC) processes in place, so it may take a few days to create your account. However, most large exchanges are able to verify your information in a few minutes.
+
+Purchasing cryptocurrency varies from exchange to exchange, but the process is usually something like this:
+
+1. Add funds to your exchange account in your local currency (USD, EUR, YEN, etc.).
+1. Exchange your local currency for FIL at a set price.
+
+### Send FIL from your exchange
+
+Once you have FIL in your exchange account, you should be able to send some to the public address you made with your Lotus node. Again, the process for this is different for every exchange, but in general, it goes something like:
+
+1. Submit a withdrawal request with the exchange, including:
+    - How much FIL you would like to withdraw.
+    - Where you want the FIL to be sent to. This value should be the public address `f16mwi...` you made with your Lotus node.
+1. Wait for the withdrawal to finish.
+
+Some exchanges place a limit on how much you can withdraw at once. The exchange may also place a time-lock on your withdrawal.
+
+It may take a few minutes for your FIL to show up in your Lotus address. If you do not see the FIL in your Lotus address 30 minutes after the withdrawal is complete from your exchange, get in touch with your exchange's support team for help.
+
+## Denominations of Filecoin
+
+Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than 1 whole `FIL`. The different denominations of `FIL` are:
+
+| Name     | Decimal             |
+| -------- | ------------------- |
+| FIL      | 1                   |
+| milliFIL | 1000                |
+| microFIL | 1000000             |
+| nanoFIL  | 1000000000          |
+| picoFIL  | 1000000000000       |
+| femtoFIL | 1000000000000000    |
+| attoFIL  | 1000000000000000000 |

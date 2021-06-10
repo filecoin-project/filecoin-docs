@@ -145,7 +145,7 @@ If you are unsure which CPU your Mac is using, check out the [troubleshooting st
 
 ##### M1-based Macs
 
-Because of the novel architecture of the M1-based Mac computers, you must set some specific environment variables before creating the `lotus` executable.
+Because of the novel architecture of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
 
 1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
 
@@ -166,6 +166,7 @@ Because of the novel architecture of the M1-based Mac computers, you must set so
     export GOARCH=arm64
     export CGO_ENABLED=1
     export LIBRARY_PATH=/opt/homebrew/lib
+    export FFI_BUILD_FROM_SOURCE=1
     ```
 
 1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
@@ -173,7 +174,7 @@ Because of the novel architecture of the M1-based Mac computers, you must set so
     ```shell
     cd extern/filecoin-ffi
     git fetch -a
-    git checkout m1-portable
+    git checkout master
     ```
 
 1. Create the `filecoin-ffi` executables:
