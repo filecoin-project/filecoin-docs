@@ -45,7 +45,7 @@ To change your `$LOTUS_PATH` run: `export LOTUS_PATH=~/.new-lotus-path`.
 
 ## Backing up Lotus data
 
-If you wish to backup Lotus data, copy the `~/.lotus` (or `$LOTUS_PATH`) folder somewhere. This copy might take time if it is very large, especially if you've synced the full network.
+If you wish to backup Lotus data, copy the `~/.lotus` (or `$LOTUS_PATH`) folder somewhere. This will take quite a while if the Lotus node has synced the whole network.
 
 Another alternative is to [export your wallets](send-and-receive-fil.md) and also [export the chain](chain.md) for later re-import on a newly installed Lotus Node.
 

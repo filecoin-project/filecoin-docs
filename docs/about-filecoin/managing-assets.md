@@ -1,6 +1,6 @@
 ---
 title: Managing assets
-description: 'A lot of interactions with the Filecoin network require FIL to process. This page explains the different denominations of FIL, how to store it, and how to aquire it.'
+description: 'Many interactions with the Filecoin network require FIL to process. This page explains the different denominations of FIL, how to store it, and how to aquire it.'
 ---
 
 # {{ $frontmatter.title }}
