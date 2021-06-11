@@ -12,9 +12,9 @@ breadcrumb: 'Sector pledging'
 
 As we have [explained](../how-mining-works.md#power-and-rewards), the amount of power of a miner in the Filecoin network is directly proportional to the amount of live storage (active sectors) contributed to the network. Miners with more power have more chances to be selected to mine new blocks.
 
-By sealing sectors with random data (pledging), a miner can demonstrate to the network that it has setup and could potentially offer that much storage for real deals when there is enough demand or when it decides to do so. In the meantime, pledged sectors work similar to regular sectors and result in an increase in the miner's power.
+By sealing sectors with random data, a miner can demonstrate to the network that it can potentially offer that much storage for real deals when there is enough demand or when it decides to do so. This is known as _pledging_. In the meantime, pledged sectors work similar to regular sectors and result in an increase in the miner's power.
 
-Taking the above into account **pledging sectors [on mainnet] network makes most sense when doing it at a scale where it provides enough power to have real chances to mine new blocks**. Otherwise it is only useful for testing purposes.
+Taking the above into account, **pledging sectors [on mainnet] network makes most sense when doing it at a scale where it provides enough power to have real chances to mine new blocks**. Otherwise, it is only useful for testing purposes.
 
 ::: tip
 Pledging one sector during miner setup can be useful to test how long the sealing process takes and make sure that the miner's hardware is correctly configured before taking on real deals.
