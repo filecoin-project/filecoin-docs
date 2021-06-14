@@ -198,6 +198,147 @@ This section controls some of the behaviour around sector sealing:
   # Whether to keep unsealed copies of deal data regardless of whether the client requested that. This lets the miner
   # avoid the relatively high cost of unsealing the data later, at the cost of more storage space
   AlwaysKeepUnsealedCopy = true
+  # Run sector finalization before submitting sector proof to the chain
+	FinalizeEarly = false
+
+  # enable / disable precommit batching (takes effect after nv13)
+	BatchPreCommits = true
+	# maximum precommit batch size up to 256 sectors - batches will be sent immediately above this size
+	MaxPreCommitBatch = 256
+	# minimum precommit batch size, no less than 1
+	MinPreCommitBatch = 1
+	# how long to wait before submitting a batch after crossing the minimum batch size
+	PreCommitBatchWait = "24h0m0s"
+	# time buffer for forceful batch submission before sectors/deal in batch would start expiring
+	PreCommitBatchSlack = "3h0m0s"
+
+	# enable / disable commit aggregation (takes effect after nv13)
+	AggregateCommits = true
+	# minimum batched commit size, no less than 4
+	MinCommitBatch = 4
+  # maximum batched commit size up to 819 sectors - batches will be sent immediately above this size
+	MaxCommitBatch = 819
+	# how long to wait before submitting a batch after crossing the minimum batch size
+	CommitBatchWait = "24h0m0s"
+	# time buffer for forceful batch submission before sectors/deals in batch would start expiring
+	CommitBatchSlack = "1h0m0s"
+
+
+  TerminateBatchMax = 100
+  TerminateBatchMin = 1
+  TerminateBatchWait = "5m0s"
+
+```
+
+### PreCommitSectorsBatch
+
+`PreCommitSectorsBatch` introduced by [FIP-0008 ](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0008.md) supports a miner to pre-commit a number of sectors at ones. 
+
+In lotus v1.10.0 and up, if `BatchPreCommit` is set to false, pre-commitments will be sent to the chain via `PreCommitSector` messages once they are ready. If `BatchPreCommit` is set to true, lotus will batch pre-commitments until any of `MaxPreCommitBatch`, `PreCommitBatchWait` or `PreCommitBatchSlack` is hit:
+- `MaxPreCommitBatch` is the maximum amount of sectors' pre-commitments to batch in one `PreCommitSectorsBatch` message. According to FIP-0008, this values is up to 256.
+- `PreCommitBatchWait` is how long to wait before submitting the current batch **after** crossing `MinPreCommitBatch`. Note: the ticket of pre-commitment has an expiration of approximately **31.5 hours**, one sector's pore-commit ticket expires **WILL** cause the whole message fail. Therefore, **we recommend miners to set this value lower than 30 hours.**
+- `PreCommitBatchSlack` is the time buffer to forcefully submit the current batch before any of the sector's pre-commit ticket or a deal will expire. For example, if this value is set to 1 hour, which is 120 epochs, then a `PreCommitSectorsBatch` message will be submitted for the existing batch 120 epochs before the earliest epoch among precommits' tickets and deal's start epochs in this batch. **We recommend you to set a longer slack to prevent message failures due to expirations.**
+
+To check the list of the sectors pre-commitments that are in the batching queue, run:
+
+```
+./lotus-miner sectors batch precommit
+```
+
+the output are the sector ids:
+
+```
+$ ./lotus-miner sectors batching precommit
+14
+15
+16
+```
+
+To ignore the configuration and force push the current batch, run:
+
+```
+./lotus-miner sectors batch precommit --publish-now=true
+```
+
+Then in the output, the message CID of the `PreCommitSectorsBatch` message and the sector number of the sectors' pre-commitments that are being submitted is listed:
+
+```
+$ ./lotus-miner batching precommit --publish-now=true
+Batch 0:
+	Message: bafy2bzacecgihnlvbsqu7yksco3vs5tzk3ublbcnkedlofr6nhbq55k5ye3ci
+	Sectors:
+		14	OK
+		15	OK
+		16	OK
+```
+
+### ProveCommitAggregate
+
+`ProveCommitAggregate` introduced by [FIP-0013](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0013.md) supports a miner to prove-commit a number of sectors at ones. 
+
+In lotus v1.10.0 and up, if `AggregateCommits` is set to false, prove-commitments will be sent to the chain via `ProveCommitSector` messages once they are ready. If `AggregateCommits` is set to true, lotus will aggregate and batch pre-commitments until any of `MaxCommitBatch`, `CommitBatchWait` or `CommitBatchSlack` is hit:
+- `MaxCommitBatch` is the maximum amount of sectors' prove-commitments to batch in one `ProveCommitAggregate` message. According to FIP-0013, this values is up to 819.
+- `CommitBatchWait` is how long to wait before submitting the current batch **after** crossing `MinCommitBatch`. Note: a prove-commitment must be submitted **within 30 days** after the pre-commit has landed on chain, it is recommended to set this value lower than 30 days to prevent collateral loss. 
+- `CommitBatchSlack` is the time buffer to forcefully submit the current batch before any of the sector's pre-commitment or a deal will expire. For example, if this value is set to 1 hour, which is 120 epochs, then a `ProveCommitAggregate` message will be submitted for the existing batch 120 epochs before the earliest epoch among precommits' expirations and deals' start epochs in this batch. **We recommend you to set a longer slack to prevent message failures due to deal expirations or loss of collateral**
+
+`MinCommitBatch` is the minimum amount of sectors' prove-commitment to be batched in one `ProveCommitAggregate` message. According to FIP-0013, this values cannot be less than 4, which is the cross over point where prove commit aggregation wins out on single prove commit gas costs. If any of any of `MaxCommitBatch`, `CommitBatchWait` or `CommitBatchSlack` is hit be the amount of prove-commit is the batching queue is less than `MinCommitBatch`, then prove-commitments in this batch will be proceeded individually via `ProveCommitSector`. 
+
+> Note: Aggregated proofs will incur a discounted Gas Charge, so overall it will be less gas usage than the same number of proofs on chain, but a minimum fee will apply. It is _cheaper per proof_ to aggregate more proofs into a single aggregate message, meaning aggregating 1000 proofs is more beneficial than aggregating 10 sectors. So if a miner wants to onboard more storage, it is recommended to aggregate more proofs into a single message.
+
+To check the list of the sectors prove-commitments that are in the batching queue, run:
+
+```
+./lotus-miner sectors batch commit
+```
+
+the output are the sector ids:
+
+```
+$ ./lotus-miner sectors batching commit
+10
+11
+12
+13
+14
+15
+16
+17
+```
+
+To ignore the configuration and force push the current batch, run:
+
+```
+./lotus-miner sectors batch precommit --publish-now=true
+```
+
+Then in the output, the message CID of the `ProveCommitAggregate` message and the sector number of the sectors' prove-commitments that are being submitted is listed:
+
+```
+$ ./lotus-miner batching commit --publish-now=true
+Batch 0:
+	Message: bafy2bzacedtmykgf5g4evdvapacpmo4l32ewu5l7yxqkzjh3h6fhev7v7qoys
+	Sectors:
+		15	OK
+		17	OK
+		12	OK
+		10	OK
+		11	OK
+		13	OK
+		16	OK
+		14	OK
+```
+
+If the sectors in queue is less than `MinCommitBatch`, then individual `ProveCommitSector` messages will be sent for each sector:
+
+```
+Batch 0:
+	Message: bafy2bzacedpwysxdsg2ft3hfbwn6ayyaanivfwkx4inav3zm34hwmmwgsljkk
+	Sectors:
+		18	OK
+Batch 1:
+	Message: bafy2bzacedrx7l34ckaue7hm2ubousl3djuigyu2xw4xzywgkhttxecsm5ba2
+	Sectors:
+		19	OK
 ```
 
 ## Storage section
@@ -230,6 +371,13 @@ The fees section allows to set limits to the gas consumption for the different m
   MaxWindowPoStGasFee = "5 FIL"
   MaxPublishDealsFee = "0.05 FIL"
   MaxMarketBalanceAddFee = "0.007 FIL"
+  [Fees.MaxPreCommitBatchGasFee]
+      Base = "0.025 FIL"
+      PerSector = "0.025 FIL"
+  [Fees.MaxCommitBatchGasFee]
+      Base = "0.05 FIL"
+      PerSector = "0.05 FIL"
+
 ```
 
 Depending on the network congestion the base fee for a transaction may grow or decrease. Your gas limits will have to be at any case larger than the base fee for the messages to be included. A very large max fee can however result in the quick burning of funds when the base fees are very high, as the miner automatically submits messages during normal operation, so be careful about this. It is also necessary to have more funds available then any max fee set, even if the actual fee will be far less then the max fee set. \*MaxWindowPostGasFee is currently reduced, but the setting used should remain fairly high, eg. 2FIL.
