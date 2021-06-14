@@ -6,7 +6,7 @@ breadcrumb: 'Install and setup'
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.description }} This guide covers installing `lotus`, `lotus-miner` and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](/mine/lotus/).
+{{ $frontmatter.description }} This guide covers installing `lotus`, `lotus-miner`, and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](/mine/lotus/).
 
 ## Running in the cloud
 
@@ -16,11 +16,11 @@ Other options, including Amazon Web Services, are covered in [Running in the clo
 
 ## Minimal requirements
 
-To run a Lotus node, your computer must have:
+To run a Lotus node your computer must have:
 
 - macOS or Linux installed. Windows is not yet supported.
-- 8-core CPU and 32 GiB RAM. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture, or Intel since Ice Lake) will significantly speed things up.
-- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 38 GiB per day. The chain can be also [synced from trusted state snapshots and compacted](chain.md).
+- 8-core CPU and 32 GiB RAM. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture or Intel since Ice Lake) will significantly speed things up.
+- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 38 GiB per day. The chain can also be [synced from trusted state snapshots and compacted](chain.md).
 
 :::warning
 These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
@@ -29,6 +29,54 @@ These are the minimal requirements to run a Lotus node. [Hardware requirements f
 ## Linux
 
 The following instructions are specific to Linux installations. Head to the [macOS](#macos) section if you want to install Lotus on a Mac.
+
+Users can install Lotus on Linux using the [Snap package manager](#snap-package-manager), [AppImages](#appimage), or by [building from source](#build-from-source).
+
+:::warning Miners should build from source
+Building Lotus from source allows you to strictly configure how Lotus runs and how it communicates with its dependencies. Miners looking to improve their system efficiency should [install Lotus by building from source](#build-from-source).
+:::
+
+### Snap package manager
+
+To install Lotus using Snap, run:
+
+```shell
+snap install lotus-filecoin
+```
+
+You can also install nightly builds by using the `--edge` flag. These builds are created every night from the `master` branch [Lotus GitHub repository](https://github.com/filecoin-project/lotus).
+
+```shell
+snap install lotus-filecoin --edge
+```
+
+You can find out more about this Snap [over at Snapcraft.io](https://snapcraft.io/lotus-filecoin).
+
+### AppImage
+
+[AppImages](https://appimage.org/) are portable applications that allow developers to package software and dependencies in a single executable. AppImages run on most Linux-based operating systems.
+
+1. Go to the latest [releases page in the Lotus GitHub repository](https://github.com/filecoin-project/lotus/releases/latest).
+1. Under **Assets**, download the AppImage.
+1. Open a terminal window and move to the location where you downloaded the AppImage. This location is likely your **Downloads** folder:
+
+    ```shell
+    cd ~/Downloads
+    ```
+
+1. Make the AppImage executable:
+
+    ```shell
+    chmod +x lotus_v1.10.0_linux-amd64.appimage
+    ```
+
+1. You can now run the AppImage file by double-clicking on it or opening it from a terminal window:
+
+    ```shell
+    ./lotus-v1.10.0_linx-amd64.appimage
+    ```
+
+## Build from source
 
 ### Software dependencies
 
@@ -343,3 +391,4 @@ lotus daemon stop
 ## When running with systemd do:
 # systemctl stop lotus-daemon
 ```
+
