@@ -239,6 +239,8 @@ In lotus v1.10.0 and up, if `BatchPreCommit` is set to false, pre-commitments wi
 - `PreCommitBatchWait` is how long to wait before submitting the current batch **after** crossing `MinPreCommitBatch`. Note: the ticket of pre-commitment has an expiration of approximately **31.5 hours**, one sector's pore-commit ticket expires **WILL** cause the whole message fail. Therefore, **we recommend miners to set this value lower than 30 hours.**
 - `PreCommitBatchSlack` is the time buffer to forcefully submit the current batch before any of the sector's pre-commit ticket or a deal will expire. For example, if this value is set to 1 hour, which is 120 epochs, then a `PreCommitSectorsBatch` message will be submitted for the existing batch 120 epochs before the earliest epoch among precommits' tickets and deal's start epochs in this batch. **We recommend you to set a longer slack to prevent message failures due to expirations.**
 
+`MinPreCommitBatch` is the minimum amount of sectors' pre-commitment to be batched in one `PreCommitSectorsBatch` message. According to FIP-0008, even only submit one pre-commitment via `PreCommitSectorsBatch` cost less gas than sending via `PreCommitSector`, therefore, **we recommend to keep this value as 1**. Note, the current batch *won't* be sent if `MinPreCommitBatch` is not reached even any of `MaxPreCommitBatch`, `PreCommitBatchWait` or `PreCommitBatchSlack` is hit.
+
 To check the list of the sectors pre-commitments that are in the batching queue, run:
 
 ```
