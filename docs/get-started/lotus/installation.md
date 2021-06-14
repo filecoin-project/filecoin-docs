@@ -38,9 +38,7 @@ Building Lotus from source allows you to strictly configure how Lotus runs and h
 
 ### Snap package manager
 
-<div>
-<iframe src="https://snapcraft.io/lotus-filecoin/embedded?button=black" frameborder="0" width="100%" height="330px" style="border: 1px solid #CCC; border-radius: 2px;"></iframe>
-</div>
+To install Lotus using Snap, run:
 
 ```shell
 snap install lotus-filecoin
@@ -51,6 +49,8 @@ You can also install nightly builds by using the `--edge` flag. These builds are
 ```shell
 snap install lotus-filecoin --edge
 ```
+
+You can find out more about this Snap [over at Snapcraft.io](https://snapcraft.io/lotus-filecoin).
 
 ### AppImage
 
