@@ -45,7 +45,7 @@ As you're going through this section, make a note of the following variables:
     lotus wallet list
 
     > Address                                    Balance  Nonce  Default  
-    > f16mwizoeloamhp4dea4uy367mlihddw2mflnb5vy  0 FIL    0      X  
+    > f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq  0 FIL    0      X  
     ```
 
 1. Make a note of your address `f16mw...`. We'll be using it in a later step.
@@ -82,7 +82,7 @@ Once the withdrawal from your exchange completes, and the Filecoin network proce
 lotus wallet list
 
 > Address                                    Balance  Nonce  Default  
-> f16mwizoeloamhp4dea4uy367mlihddw2mflnb5vy  10 FIL   0      X
+> f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq  10 FIL   0      X
 ```
 
 It may take a few minutes for your FIL to show up in your Lotus address. If you do not see the FIL in your Lotus address 30 minutes after the withdrawal is complete from your exchange, get in touch with your exchange's support team for help.
@@ -112,7 +112,7 @@ The [filecoin.tools](https://filecoin.tools) website shows information on Fileco
 
 1. Click on one of the rows to view the details of that deal:
 
-    ![The Filecoin Tools website showing details of a particular deal.](./images/filecoin-tools-details.png)
+    ![The Filecoin Tools website showing details of a particular deal.](./images/filecoin-tools-showing-deal-details.png)
 
 1. Make a note of the `Piece CID` and the `Miner ID`. We're going to use these in the next step.
 
