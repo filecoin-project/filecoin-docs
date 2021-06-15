@@ -12,7 +12,7 @@ This page covers the following steps:
 1. Get your public address from your Lotus node.
 1. Find an exchange to buy FIL from.
 1. Send FIL from your exchange to your public address.
-1. Get the deal information from the deal you made on a previous page.
+1. Get your deal information from `filecoin.tools`. 
 1. Send a retrieval request to get your data.
 
 :::tip Free retrieval
@@ -47,6 +47,8 @@ As you're going through this section, make a note of the following variables:
     > Address                                    Balance  Nonce  Default  
     > f16mwizoeloamhp4dea4uy367mlihddw2mflnb5vy  0 FIL    0      X  
     ```
+
+1. Make a note of your address `f16mw...`. We'll be using it in a later step.
 
 ## Purchase FIL from an exchange 
 
@@ -106,11 +108,13 @@ The [filecoin.tools](https://filecoin.tools) website shows information on Fileco
 1. Go to [filecoin.tools](https://filecoin.tools).
 1. Paste your public address in the search bar and press `ENTER ↵` to search:
 
-    ![The Filecoin Tools website showing a list of deals from their associated address.](./images/find-deal-information/filecoin-tools-search.png)
+    ![The Filecoin Tools website showing a list of deals from their associated address.](./images/filecoin-tools-search.png)
 
 1. Click on one of the rows to view the details of that deal:
 
-    ![The Filecoin Tools website showing details of a particular deal.](./images/find-deal-information/filecoin-tools-details.png)
+    ![The Filecoin Tools website showing details of a particular deal.](./images/filecoin-tools-details.png)
+
+1. Make a note of the `Piece CID` and the `Miner ID`. We're going to use these in the next step.
 
 You can now move onto creating a retrieval request.
 
