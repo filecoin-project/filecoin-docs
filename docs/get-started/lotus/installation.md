@@ -78,10 +78,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #### Go
 
-To build Lotus, you need a working installation of [Go 1.15.5 or higher](https://golang.org/dl/):
+To build Lotus, you need a working installation of [Go 1.16.4 or higher](https://golang.org/dl/):
 
 ```bash
-wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+wget -c https://golang.org/dl/go1.16.4.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
 :::tip
