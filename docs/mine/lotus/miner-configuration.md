@@ -10,7 +10,7 @@ breadcrumb: 'Configuration reference'
 
 The Lotus Miner configutation is created after the [initialization step](miner-setup.md) during setup and placed in `~/.lotusminer/config.toml` or `$LOTUS_MINER_PATH/config.toml` when defined.
 
-The _default configuration_ has all the items commented, so in order to customize one of the items the leading `# ` need to be removed.
+The _default configuration_ has all the items commented. To customize one of the items, you must remove the leading `#`.
 
 ::: tip
 For any configuration changes to take effect, the miner must be [restarted](miner-lifecycle.md).
@@ -32,9 +32,9 @@ The API section controls the settings of the [miner API](../../reference/lotus-a
   Timeout = "30s"
 ```
 
-As you see, the listen address is bound to the local loopback interface by default. If you need to open access to the miner API to other machines, you will need to set this to the IP address of the network interface you want to use, or to `0.0.0.0` (which means "all interfaces"). Note that API access is protected by [JWT tokens](../../build/lotus/api-tokens.md), but it should not be open to the internet.
+As you see, the listen address is bound to the local loopback interface by default. To open access to the miner API for other machines, set this to the IP address of the network interface you want to use. You can also set it to `0.0.0.0` to allow all interfaces. API access is protected by [JWT tokens](../../build/lotus/api-tokens.md), but it should not be open to the internet.
 
-Configure `RemoteListenAddress` to the value that a different node would have to use to reach this API. Usually it is the miner's IP address and API port, but depending on your setup (proxies, public IPs etc.), it might be a different IP.
+Configure `RemoteListenAddress` to the value that a different node would have to use to reach this API. Usually, it is the miner's IP address and API port, but depending on your setup (proxies, public IPs, etc.), it might be a different IP.
 
 ## Libp2p section
 
@@ -68,7 +68,7 @@ This section controls some Pubsub settings. Pubsub is used to distribute message
 
 ```toml
 [Pubsub]
-  # Usually you will not run a pubsub bootstrapping node, so leave this as false
+  # Usually, you will not run a pubsub bootstrapping node, so leave this as false
   Bootstrapper = false
   # FIXME
   RemoteTracer = ""
@@ -102,12 +102,12 @@ This section controls parameters for making storage and retrieval deals:
   # A list made of Data CIDs to reject when making deals
   PieceCidBlocklist = []
   # Maximum expected amount of time getting the deal into a sealed sector will take
-  # This includes the time the deal will need to get transfered and published
+  # This includes the time the deal will need to get transferred and published
   # before being assigned to a sector
-  # for more see below
+  # for more info, see below.
   ExpectedSealDuration = "24h0m0s"
   # When a deal is ready to publish, the amount of time to wait for more
-  # deals to be ready to publish, before publishing them all as a batch
+  # deals to be ready to publish before publishing them all as a batch
   PublishMsgPeriod = "1h0m0s"
   # The maximum number of deals to include in a single publish deals message
   MaxDealsPerPublishMsg = 8
@@ -119,7 +119,7 @@ This section controls parameters for making storage and retrieval deals:
   RetrievalFilter = "/absolute/path/to/retrieval_filter_program"
 ```
 
-`ExpectedSealDuration` is an estimate of how long sealing will take, and is used to reject deals whose start epoch might be earlier than the expected completion of sealing. It can be estimated by [benchmarking](benchmarks.md) or by [pledging a sector](sector-pledging.md).
+`ExpectedSealDuration` is an estimate of how long sealing will take and is used to reject deals whose start epoch might be earlier than the expected completion of sealing. It can be estimated by [benchmarking](benchmarks.md) or by [pledging a sector](sector-pledging.md).
 
 :::warning
 The final value of `ExpectedSealDuration` should equal `(TIME_TO_SEAL_A_SECTOR + WaitDealsDelay) * 1.5`. This equation ensures that the miner does not commit to having the sector sealed too soon.
@@ -128,35 +128,32 @@ The final value of `ExpectedSealDuration` should equal `(TIME_TO_SEAL_A_SECTOR +
 ### Publishing several deals in one message
 
 The `PublishStorageDeals` message can publish many deals in a single message.
-When a deal is ready to be published, lotus will wait up to `PublishMsgPeriod`
+When a deal is ready to be published, Lotus will wait up to `PublishMsgPeriod`
 for other deals to be ready before sending the `PublishStorageDeals` message.
 
-However once `MaxDealsPerPublishMsg` are ready, lotus will immediately publish all the deals.
+However, once `MaxDealsPerPublishMsg` is ready, Lotus will immediately publish all the deals.
 
-For example if `PublishMsgPeriod` is 1 hour:
+For example, if `PublishMsgPeriod` is 1 hour:
 
-- At 1:00pm Deal 1 is ready to publish.
-  Lotus will wait until 2:00pm for other deals to be ready before sending `PublishStorageDeals`
-- At 1:30pm Deal 2 is ready to publish
-- At 1:45pm Deal 3 is ready to publish
-- At 2:00pm lotus publishes Deals 1, 2 and 3 in a single `PublishStorageDeals` message.
+- At 1:00 pm, deal 1 is ready to publish. Lotus will wait until 2:00 pm for other deals to be ready before sending `PublishStorageDeals`.
+- At 1:30 pm, Deal 2 is ready to publish
+- At 1:45 pm, Deal 3 is ready to publish
+- At 2:00pm, lotus publishes Deals 1, 2, and 3 in a single `PublishStorageDeals` message.
 
-If `MaxDealsPerPublishMsg` is 2, then in the above example when deal 2 is ready to be published at 1:30,
-lotus would immediately publish Deals 1 & 2 in a single `PublishStorageDeals` message.
-Deal 3 would be published in a subsequent `PublishStorageDeals` message.
+If `MaxDealsPerPublishMsg` is 2, then in the above example, when deal 2 is ready to be published at 1:30, Lotus would immediately publish Deals 1 & 2 in a single `PublishStorageDeals` message. Deal 3 would be published in a subsequent `PublishStorageDeals` message.
 
-> Note: If any of the deal in the `PublishStorageDeals` fails validation upon executation, i.e: start epoch has passed, all deals will fail to be published.
+> If any of the deals in the `PublishStorageDeals` fails validation upon execution, or if the start epoch has passed, all deals will fail to be published.
 
 ## Using filters for fine-grained storage and retrieval deal acceptance
 
-Your use-case might demand very precise and dynamic control over a combination of deal parameters.
+Your use case might demand very precise and dynamic control over a combination of deal parameters.
 
 Lotus provides two IPC hooks allowing you to name a command to execute for every deal before the miner accepts it:
 
 - `Filter` for storage deals.
 - `RetrievalFilter` for retrieval deals.
 
-The executed command receives a JSON representation of the deal parameters on standard input, and upon completion its exit code is interpreted as:
+The executed command receives a JSON representation of the deal parameters on standard input, and upon completion, its exit code is interpreted as:
 
 - `0`: success, proceed with the deal.
 - `non-0`: failure, reject the deal.
@@ -179,21 +176,21 @@ RetrievalFilter = "/path/to/go/bin/bitscreen"
 
 ## Sealing section
 
-This section controls some of the behaviour around sector sealing:
+This section controls some of the behavior around sector sealing:
 
 ```toml
 [Sealing]
   # Upper bound on how many sectors can be waiting for more deals to be packed in it before it begins sealing at any given time.
   # If the miner is accepting multiple deals in parallel, up to MaxWaitDealsSectors of new sectors will be created.
   # If more than MaxWaitDealsSectors deals are accepted in parallel, only MaxWaitDealsSectors deals will be processed in parallel
-  # Note that setting this number too high in relation to deal ingestion rate may result in poor sactor packing efficiency
+  # Note that setting this number too high in relation to deal ingestion rate may result in poor sector packing efficiency
   MaxWaitDealsSectors = 2
   # Upper bound on how many sectors can be sealing at the same time when creating new CC sectors (0 = unlimited)
   MaxSealingSectors = 0
   # Upper bound on how many sectors can be sealing at the same time when creating new sectors with deals (0 = unlimited)
   MaxSealingSectorsForDeals = 0
   # Period of time that a newly created sector will wait for more deals to be packed in to before it starts to seal.
-  # Sectors which afe fully filled will start sealing immediately
+  # Sectors which are fully filled will start sealing immediately
   WaitDealsDelay = "6h0m0s"
   # Whether to keep unsealed copies of deal data regardless of whether the client requested that. This lets the miner
   # avoid the relatively high cost of unsealing the data later, at the cost of more storage space
@@ -247,7 +244,7 @@ To check the list of the sectors pre-commitments that are in the batching queue,
 ./lotus-miner sectors batch precommit
 ```
 
-the output are the sector ids:
+the output is the sector ids:
 
 ```
 $ ./lotus-miner sectors batching precommit
@@ -278,14 +275,14 @@ Batch 0:
 
 `ProveCommitAggregate` introduced by [FIP-0013](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0013.md) supports a miner to prove-commit a number of sectors at ones. 
 
-In lotus v1.10.0 and up, if `AggregateCommits` is set to false, prove-commitments will be sent to the chain via `ProveCommitSector` messages once they are ready. If `AggregateCommits` is set to true, lotus will aggregate and batch pre-commitments until any of `MaxCommitBatch`, `CommitBatchWait` or `CommitBatchSlack` is hit:
-- `MaxCommitBatch` is the maximum amount of sectors' prove-commitments to batch in one `ProveCommitAggregate` message. According to FIP-0013, this values is up to 819.
-- `CommitBatchWait` is how long to wait before submitting the current batch **after** crossing `MinCommitBatch`. Note: a prove-commitment must be submitted **within 30 days** after the pre-commit has landed on chain, it is recommended to set this value lower than 30 days to prevent collateral loss. 
+In Lotus v1.10.0 and up, if `AggregateCommits` is set to false, prove-commitments will be sent to the chain via `ProveCommitSector` messages once they are ready. If `AggregateCommits` is set to true, lotus will aggregate and batch pre-commitments until any of `MaxCommitBatch`, `CommitBatchWait` or `CommitBatchSlack` is hit:
+- `MaxCommitBatch` is the maximum amount of sectors' prove-commitments to batch in one `ProveCommitAggregate` message. According to FIP-0013, this value is up to 819.
+- `CommitBatchWait` is how long to wait before submitting the current batch **after** crossing `MinCommitBatch`. Note: a prove-commitment must be submitted **within 30 days** after the pre-commit has landed on-chain. It is recommended to set this value lower than 30 days to prevent collateral loss. 
 - `CommitBatchSlack` is the time buffer to forcefully submit the current batch before any of the sector's pre-commitment or a deal will expire. For example, if this value is set to 1 hour, which is 120 epochs, then a `ProveCommitAggregate` message will be submitted for the existing batch 120 epochs before the earliest epoch among precommits' expirations and deals' start epochs in this batch. **We recommend you to set a longer slack to prevent message failures due to deal expirations or loss of collateral**
 
-`MinCommitBatch` is the minimum amount of sectors' prove-commitment to be batched in one `ProveCommitAggregate` message. According to FIP-0013, this values cannot be less than 4, which is the cross over point where prove commit aggregation wins out on single prove commit gas costs. If any of any of `MaxCommitBatch`, `CommitBatchWait` or `CommitBatchSlack` is hit be the amount of prove-commit is the batching queue is less than `MinCommitBatch`, then prove-commitments in this batch will be proceeded individually via `ProveCommitSector`. 
+`MinCommitBatch` is the minimum amount of sectors' prove-commitment to be batched in one `ProveCommitAggregate` message. According to FIP-0013, this value cannot be less than 4, which is the cross-over point where prove-commit aggregation wins out on single prove-commit gas costs. If any of `MaxCommitBatch`, `CommitBatchWait` or `CommitBatchSlack` is hit by the amount of prove-commit is the batching queue is less than `MinCommitBatch`, then prove-commitments in this batch will be proceeded individually via `ProveCommitSector`. 
 
-> Note: Aggregated proofs will incur a discounted Gas Charge, so overall it will be less gas usage than the same number of proofs on chain, but a minimum fee will apply. It is _cheaper per proof_ to aggregate more proofs into a single aggregate message, meaning aggregating 1000 proofs is more beneficial than aggregating 10 sectors. So if a miner wants to onboard more storage, it is recommended to aggregate more proofs into a single message.
+> Note: Aggregated proofs will incur a discounted Gas Charge, so overall, it will be less gas usage than the same number of proofs on-chain, but a minimum fee will apply. It is _cheaper per proof_ to aggregate more proofs into a single aggregate message, meaning aggregating 1000 proofs is more beneficial than aggregating 10 sectors. So if a miner wants to onboard more storage, it is recommended to aggregate more proofs into a single message.
 
 To check the list of the sectors prove-commitments that are in the batching queue, run:
 
@@ -293,7 +290,7 @@ To check the list of the sectors prove-commitments that are in the batching queu
 ./lotus-miner sectors batch commit
 ```
 
-the output are the sector ids:
+the output is the sector ids:
 
 ```
 $ ./lotus-miner sectors batching commit
@@ -330,7 +327,7 @@ Batch 0:
 		14	OK
 ```
 
-If the sectors in queue is less than `MinCommitBatch`, then individual `ProveCommitSector` messages will be sent for each sector:
+If the sectors in the queue are less than `MinCommitBatch`, then individual `ProveCommitSector` messages will be sent for each sector:
 
 ```
 Batch 0:
@@ -382,7 +379,7 @@ The fees section allows to set limits to the gas consumption for the different m
 
 ```
 
-Depending on the network congestion the base fee for a transaction may grow or decrease. Your gas limits will have to be at any case larger than the base fee for the messages to be included. A very large max fee can however result in the quick burning of funds when the base fees are very high, as the miner automatically submits messages during normal operation, so be careful about this. It is also necessary to have more funds available then any max fee set, even if the actual fee will be far less then the max fee set. \*MaxWindowPostGasFee is currently reduced, but the setting used should remain fairly high, eg. 2FIL.
+Depending on the network congestion, the base fee for a transaction may grow or decrease. Your gas limits will have to be larger than the base fee for the messages to be included. A very large max fee can, however, result in the quick burning of funds when the base fees are very high, as the miner automatically submits messages during normal operation, so be careful about this. It is also necessary to have more funds available than any max fee set, even if the actual fee will be far less than the max fee set. \*MaxWindowPostGasFee is currently reduced, but the setting used should remain fairly high, e.g., 2 FIL.
 
 ## Addresses section
 
