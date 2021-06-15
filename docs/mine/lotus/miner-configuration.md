@@ -241,7 +241,7 @@ In lotus v1.10.0 and up, if `BatchPreCommit` is set to false, pre-commitments wi
 To check the list of the sectors pre-commitments that are in the batching queue, run:
 
 ```
-./lotus-miner sectors batch precommit
+./lotus-miner sectors batching precommit
 ```
 
 the output is the sector ids:
@@ -256,7 +256,7 @@ $ ./lotus-miner sectors batching precommit
 To ignore the configuration and force push the current batch, run:
 
 ```
-./lotus-miner sectors batch precommit --publish-now=true
+./lotus-miner sectors batching precommit --publish-now=true
 ```
 
 Then in the output, the message CID of the `PreCommitSectorsBatch` message and the sector number of the sectors' pre-commitments that are being submitted is listed:
