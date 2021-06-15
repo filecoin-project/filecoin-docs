@@ -45,9 +45,6 @@ Take a look at the [Get started page](../../get-started) to learn how to install
 
 :::: tab macOS
 
-
-  This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section ↓](#ubuntu)
-
   :::tip MacOS version
   You can install Lotus on MacOS 10.11 (El Capitan, 2015) or higher.
   :::
@@ -199,10 +196,6 @@ Take a look at the [Get started page](../../get-started) to learn how to install
 ::::
 
 :::: tab Ubuntu
-
-<!-- ### Ubuntu -->
-
-This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section ↑](#macos).
 
 1. Update your local `apt` repository:
 
