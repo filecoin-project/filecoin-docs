@@ -26,7 +26,7 @@ As you're going through this section, make a note of the following variables:
 | Variable | Description | Example |
 | --- | --- | --- |
 | Your public address | The public part of your Filecoin address. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
-| Miner ID | The unique identifer for each a storage provider. | `f01000` | 
+| Provider ID | The unique identifer for each a storage provider. This is sometimes called a _Miner ID_. | `f01000` | 
 | Piece CID | The CID of the data that you originally stored when you made your storage deal. | `baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi` |
 
 ## Get your public address
@@ -116,11 +116,15 @@ The [filecoin.tools](https://filecoin.tools) website shows information on Fileco
 
 1. Make a note of the `Piece CID` and the `Miner ID`. We're going to use these in the next step.
 
+    :::tip
+    The `Miner ID` is also called the `Provider ID`. We'll be referring to it as the `Provider ID` in this tutorial. 
+    :::
+
 You can now move onto creating a retrieval request.
 
 ## Create a retrieval request
 
-The retrieval command is fairly simple. We just need to add the _Provider ID_ and _Data CID_ we got from the previous step and where we want to save the downloaded file.
+The retrieval command is fairly simple. We just need to add the _Provider ID_ and _Piece CID_ we got from the previous step and where we want to save the downloaded file.
 
 1. Use the `retrieve` command to request data from a miner:
 
@@ -128,7 +132,7 @@ The retrieval command is fairly simple. We just need to add the _Provider ID_ an
     lotus client retrieve --miner <PROVIDER ID> <PIECE CID> ~/output-file
     ```
 
-    Replace `<PROVIDER ID>` and `<PIECE CID>` in the above command with your _Provider ID_ and _Data CID_, respectively. For example:
+    Replace `<PROVIDER ID>` and `<PIECE CID>` in the above command with your _Provider ID_ and _Piece CID_, respectively. For example:
 
     ```shell
     lotus client retrieve --miner f02147 baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi ~/output-file
