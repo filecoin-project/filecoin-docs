@@ -5,7 +5,7 @@ description: There are different ways to find information for a particular deal.
 
 # Find deal information
 
-There are different ways to find information for a particular deal. Each method has benefits and drawbacks, depending on your situation.
+There are different ways to find information for a particular deal. Each method has benefits and drawbacks, depending on your situation. In this tutorial series, we're going to use a service called filecoin.tools.
 
 ## Using filecoin.tools
 

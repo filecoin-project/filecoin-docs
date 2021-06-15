@@ -92,24 +92,25 @@ Now that you have FIL in your Lotus address for the retrieval, you just need to 
 - The _Piece CID_, sometimes called the _label_. This is the content identifier for all the data stored in a single deal.
 - The _Provider ID_ with whom you made to original deal to store the data. This is sometimes called the _Storage Provider ID_ or _Miner ID_. 
 
-If you are still connected to the same Lotus node that originally made the deal, this process is very simple. Lotus nodes keep a log of all the deals it has made.
+The [filecoin.tools](https://filecoin.tools) website shows information on Filecoin miners, clients, deals, and addresses. You can use it to find out pretty much anything happening on the Filecoin network. We're going to use it to find our past deals.
 
-1. List the deals that this node has made:
+1. Copy your public address to your clipboard. If you are connect to a Lotus node you can view your public address by running `lotus wallet list`:
 
     ```shell
-    lotus client list-deals --verbose
+    lotus wallet list
 
-    > Created          DealCid                                                      DealId  Provider  State                     On Chain?  Slashed?  PieceCID                                                          Size       Price           Duration  TransferChannelID                                                                                                              TransferStatus  Verified  Message
-    > May 11 22:54:45  bafyreigbt6ymhierghhjba6htch6immn6qnnrcku3z7masnmhgm5ibdiya  0       f0100 StorageDealFundsReserved  N          N         baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi  7.938 GiB  0 FIL           522077
+    # Address                                    Balance  Nonce  Default  
+    # f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq  10 FIL   0      X  
     ```
 
-    Lotus spits out a lot of information here. If you find it hard to read, try adding `| less -S` onto the end of the command. This will force the terminal to display the output horizontally. In this view, you can use the arrow keys to scroll left and right. Press `q` to exit this view.
+1. Go to [filecoin.tools](https://filecoin.tools).
+1. Paste your public address in the search bar and press `ENTER ↵` to search:
 
-1. Make a note of the `PieceCid` and the `Provider`. In the example above, the `PieceCid` is `baftyr...` and the `Provider` is `f01001`. 
+    ![The Filecoin Tools website showing a list of deals from their associated address.](./images/find-deal-information/filecoin-tools-search.png)
 
-:::warning Working from a different Lotus node
-If you need to find deal information about a particular client address `f16mw...`, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
-:::
+1. Click on one of the rows to view the details of that deal:
+
+    ![The Filecoin Tools website showing details of a particular deal.](./images/find-deal-information/filecoin-tools-details.png)
 
 You can now move onto creating a retrieval request.
 
