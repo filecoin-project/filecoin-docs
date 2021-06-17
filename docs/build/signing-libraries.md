@@ -29,6 +29,7 @@ The [source code repository can be found here](https://github.com/Zondax/filecoi
 [Filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/) aims to be a complete library for interacting with local or remote Filecoin nodes. It can be used to [sign](https://filecoin-shipyard.github.io/filecoin.js/docs/sign-message) and verify messages and supports multiple wallet providers.
 
 ## Blake2b-256 Solidity
-Solidity implementation of the BLAKE2b-256 hash function used by Filecoin that can be used to create interoperability with EVM-compatible blockchains and facilitate the creation of Hash Time Locked Contracts.
+
+Solidity implementation of the BLAKE2b-256 hash function used by Filecoin that can be used to create interoperability with Ethereum-compatible blockchains and facilitate the creation of hash time-locked contracts.
 
 The [source code repository can be found here](https://github.com/blitslabs/filecoin-blake2b-solidity).
