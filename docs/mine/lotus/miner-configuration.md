@@ -229,7 +229,7 @@ This section controls some of the behavior around sector sealing:
 
 ### PreCommitSectorsBatch
 
-`PreCommitSectorsBatch` introduced by [FIP-0008 ](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0008.md) supports a miner to pre-commit a number of sectors at ones. 
+`PreCommitSectorsBatch` introduced by [FIP-0008 ](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0008.md) supports a miner to pre-commit a number of sectors at once. 
 
 In lotus v1.10.0 and up, if `BatchPreCommit` is set to false, pre-commitments will be sent to the chain via `PreCommitSector` messages once they are ready. If `BatchPreCommit` is set to true, lotus will batch pre-commitments until any of `MaxPreCommitBatch`, `PreCommitBatchWait` or `PreCommitBatchSlack` is hit:
 - `MaxPreCommitBatch` is the maximum amount of sectors' pre-commitments to batch in one `PreCommitSectorsBatch` message. According to FIP-0008, this values is up to 256.
@@ -287,7 +287,7 @@ In Lotus v1.10.0 and up, if `AggregateCommits` is set to false, prove-commitment
 To check the list of the sectors prove-commitments that are in the batching queue, run:
 
 ```
-./lotus-miner sectors batch commit
+./lotus-miner sectors batching commit
 ```
 
 the output is the sector ids:
@@ -307,7 +307,7 @@ $ ./lotus-miner sectors batching commit
 To ignore the configuration and force push the current batch, run:
 
 ```
-./lotus-miner sectors batch precommit --publish-now=true
+./lotus-miner sectors batching precommit --publish-now=true
 ```
 
 Then in the output, the message CID of the `ProveCommitAggregate` message and the sector number of the sectors' prove-commitments that are being submitted is listed:
