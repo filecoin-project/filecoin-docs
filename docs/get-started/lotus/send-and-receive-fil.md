@@ -130,13 +130,13 @@ lotus send --help
 
 #### Specify Invocation Parameters
 
-If you want specify invocation parameters via send, you can use the following CLI to get the encoded params:
+If you want specify invocation parameters using `lotus send`, you can use the following code-snippet to get the encoded parameters
 
 ```
 lotus chain encode params --encoding=hex <toAddr> <method id> <params>
 ```
 
-> Note: Mapped method <> method id can be found [here](https://github.com/filecoin-project/specs-actors/blob/master/actors/builtin/methods.go).
+> Note: Mapped method <> method id can be found in the [Filecoin GitHub repository](https://github.com/filecoin-project/specs-actors/blob/master/actors/builtin/methods.go).
 
 Then to send it, run:
 
