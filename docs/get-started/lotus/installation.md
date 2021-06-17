@@ -352,7 +352,7 @@ To join mainnet, checkout the [latest release](https://github.com/filecoin-proje
    sudo make install
    ```
 
-   Once the installation is finished, use the command down below to ensure lotus is installed successfully for the right network. 
+   Check that lotus is installed successfully for the right network. 
 
    ```sh
    lotus --version
@@ -399,7 +399,7 @@ We recommend waiting until the syncing process has completed, which should be re
 lotus sync wait
 ```
 
-While waiting the syncing process, you can also check  status of the syncing process.
+While you wait, you can check the status of the syncing process:
 
 ```sh
 lotus sync status
@@ -409,7 +409,7 @@ lotus sync status
 
 The `lotus` command allows you to interact with a _running_ Lotus daemon. The `lotus-miner` and `lotus-worker` commands work in the same way.
 
-Lotus comes with built-in CLI documentation. Based on different usages, lotus provides different sub-commands for developers. You can also use `help` to check the usage for any sub-command.
+Lotus comes with built-in CLI documentation.
 
 ```sh
 lotus
@@ -426,7 +426,7 @@ lotus --help
 lotus client --help
 ```
 
-For example, after your Lotus daemon has been running for a few minutes, use `lotus sync` to check the syncing status of your lotus node .
+For example, after your Lotus daemon has been running for a few minutes, use `lotus sync` to check the sync status of your lotus node.
 
 ```sh
 lotus net sync
@@ -439,7 +439,7 @@ lotus net sync
 ...
 ```
 
-Or use`lotus net` to check the number of other peers that it is connected to in the Filecoin network.
+Or use `lotus net` to check the number of other peers that it is connected to in the Filecoin network.
 
 ```sh
 lotus net peers
