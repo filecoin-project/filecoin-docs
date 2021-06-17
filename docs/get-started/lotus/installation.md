@@ -339,7 +339,7 @@ To join mainnet, checkout the [latest release](https://github.com/filecoin-proje
 
 5. Build and install Lotus
 
-   Lotus is compiled to operate on a single network,  run one of the following commands to build the lotus node for the specific lotus network.
+   Lotus is compiled to operate on a single network. Run one of the following commands to build lotus for your intended network.
 
    ```sh
    # mainnet
