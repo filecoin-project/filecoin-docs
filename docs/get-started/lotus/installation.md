@@ -30,7 +30,7 @@ These are the minimal requirements to run a Lotus node. [Hardware requirements f
 
 The following instructions are specific to Linux installations. Head to the [macOS](#macos) section if you want to install Lotus on a Mac.
 
-Users can install Lotus on Linux using the 
+Users can install Lotus on Linux using the:
 
 + [Snap package manager](#snap-package-manager)
 + [AppImages](#appimage)
@@ -157,7 +157,9 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-2. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
+1. Checkout the release for the network you wish to use.
+
+   To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
 
@@ -171,9 +173,9 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    Currently, the latest code on the _master_ branch corresponds to mainnet.
 
-3. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
+1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
 
-4. Depending on your CPU model, you will want to export additional environment variables:
+1. Depending on your CPU model, you will want to export additional environment variables:
 
    If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
 
@@ -193,7 +195,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
 
-5. Build and install Lotus
+1. Build and install Lotus
 
    Lotus is compiled to operate on a single network,  run one of the following commands to build the lotus node for the specific lotus network.
 
@@ -219,7 +221,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    > lotus version 1.9.0+calibnet+git.ada7f97ba
    ```
 
-6. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
 #### Native Filecoin FFI
 
@@ -295,7 +297,7 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
    brew install go bzr jq pkg-config rustup hwloc
    ```
 
-2. Make sure all the packages are installed successfully before you move to next step to build lotus.
+1. Make sure all the packages are installed successfully before you move to next step to build lotus.
 
 ### Build and install Lotus
 
@@ -310,7 +312,7 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
 1. Checkout the release for the network you wish to use.
 
-To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases). For networks other than mainnet...
+   To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases). For networks other than mainnet...
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
 
@@ -326,9 +328,9 @@ To join mainnet, checkout the [latest release](https://github.com/filecoin-proje
    git checkout master
    ```
 
-3. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
+1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
 
-4. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
+1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
 
    ```sh
    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
@@ -337,7 +339,7 @@ To join mainnet, checkout the [latest release](https://github.com/filecoin-proje
 
    This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
 
-5. Build and install Lotus
+1. Build and install Lotus
 
    Lotus is compiled to operate on a single network. Run one of the following commands to build lotus for your intended network.
 
@@ -359,7 +361,7 @@ To join mainnet, checkout the [latest release](https://github.com/filecoin-proje
    > lotus version 1.9.0+calibnet+git.ada7f97ba
    ```
 
-6. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
 ## Start the Lotus daemon and sync the chain
 
@@ -397,12 +399,6 @@ We recommend waiting until the syncing process has completed, which should be re
 
 ```sh
 lotus sync wait
-```
-
-While you wait, you can check the status of the syncing process:
-
-```sh
-lotus sync status
 ```
 
 ## Interact with the daemon
