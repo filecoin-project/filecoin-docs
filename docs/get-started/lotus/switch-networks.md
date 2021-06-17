@@ -16,7 +16,7 @@ As we mentioned in the [installation guide](installation.md), Lotus is compiled 
   + [Nerpanet](https://network.filecoin.io/#nerpa)
 + [Mainnet](https://network.filecoin.io/#mainnet)
 
-Developers could choose one of the following methods to switch among different testnets and mainnet.
+You can choose one of the following methods to switch to a different network.
 
 ## Clean, rebuild, reinstall
 
@@ -56,4 +56,3 @@ To change your `$LOTUS_PATH` run: `export LOTUS_PATH=~/.new-lotus-path`.
 If you wish to backup Lotus data, copy the `~/.lotus` (or `$LOTUS_PATH`) folder somewhere. This will take quite a while if the Lotus node has synced the whole network.
 
 Another alternative is to [export your wallets](send-and-receive-fil.md) and also [export the chain](chain.md) for later re-import on a newly installed Lotus Node.
-
