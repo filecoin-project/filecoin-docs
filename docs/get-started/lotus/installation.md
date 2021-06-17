@@ -236,9 +236,6 @@ One example is that logs are redirected to files in `/var/log/lotus` by default 
 
 These instructions are specific to macOS. You can install Lotus on MacOS 10.11 (El Capitan, 2015) or higher. If you are installing Lotus on a Linux distribution, head over to the [Linux section](#linux).
 
-:::warning
-Due to CPU architecture limitations, M1-based Mac computers cannot run a Lotus full-node. Adding support is on the Lotus road-map. M1-based Mac computers can run a [Lotus lite-node](../../build/lotus/lotus-lite.md).
-:::
 
 ### XCode Command Line Tools
 
@@ -272,20 +269,40 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
 We recommend that macOS users use [Homebrew](https://brew.sh) to install each of the necessary packages.
 
+### Install lotus with brew
+
+1. Add the tap, and install.
+
+   ```
+   brew tap filecoin-project/lotus
+   brew install lotus
+   ```
+2. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
+
+If you need to run an older lotus branch (not recommended) you can do so by switching the branch of the tap
+
+  ```
+  cd /usr/local/Homebrew/Library/Taps/filecoin-project/homebrew-lotus
+  git checkout v1.9.0
+  brew reinstall lotus
+  ```
+
+### Build and install lotus from source
+
 1. Use the command `brew install` to install the following packages:
 
    ```sh
    brew install go bzr jq pkg-config rustup hwloc
    ```
 
-1. Clone the repository:
+2. Clone the repository:
 
    ```sh
    git clone https://github.com/filecoin-project/lotus.git
    cd lotus/
    ```
 
-1. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
+3. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
 
@@ -301,8 +318,8 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
    git checkout master
    ```
 
-1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
-1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
+4. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
+5. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
 
    ```sh
    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
@@ -311,7 +328,7 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
 
    This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
 
-1. Build Lotus:
+6. Build Lotus:
 
    ```sh
    make clean && make all # mainnet
@@ -323,7 +340,7 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
    sudo make install
    ```
 
-1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
+7. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
 ## Start the Lotus daemon and sync the chain
 
