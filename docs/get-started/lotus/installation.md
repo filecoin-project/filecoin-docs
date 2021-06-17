@@ -308,7 +308,9 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-2. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
+1. Checkout the release for the network you wish to use.
+
+To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases). For networks other than mainnet...
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
 
@@ -465,4 +467,3 @@ lotus daemon stop
 ## When running with systemd do:
 # systemctl stop lotus-daemon
 ```
-
