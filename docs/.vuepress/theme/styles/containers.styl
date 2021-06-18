@@ -1,0 +1,28 @@
+.custom-block.shell-input {
+    margin-bottom: 0px;
+
+  div[class*="language-"], pre[class*="language-"] {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-bottom: 0px;
+
+  }
+}
+
+.custom-block.shell-output {
+  margin-top: 0px;
+  
+  div[class*="language-"], pre[class*="language-"] {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    margin-top: 0px;
+
+    pre[class*="language-"] {
+      background: lighten($codeBgColor, 10%);
+    }
+  }
+
+  .code-copy {
+    visibility: hidden;
+  }
+}

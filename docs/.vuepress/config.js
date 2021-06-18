@@ -368,6 +368,20 @@ module.exports = {
         defaultTitle: ''
       }
     ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'shell-input',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'shell-output',
+        defaultTitle: ''
+      }
+    ],
     'vuepress-plugin-check-md',
     'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs'
