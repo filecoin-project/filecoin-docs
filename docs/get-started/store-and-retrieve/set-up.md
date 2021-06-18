@@ -58,33 +58,49 @@ Follow these steps to install the project dependencies specifically for MacOS:
 
 1. Check if you have Xcode installed:
 
+    ::: shell-input
     ```shell
     xcode-select --version
-
-    > xcode-select version 2384.
     ```
-
-    Any version above 2339 will work.
-
-    :::warning
-    If the above command returns an error, you likely don't have Xcode installed. Run the following command to install Xcode:
-
-    ```shell
-    sudo rm -rf /Library/Developer/CommandLineTools 
-    xcode-select --install
-
-    > Password:
-    > xcode-select: note: install requested for command line developer tools
+    :::
+    ::: shell-output
+    ```
+    xcode-select version 2384.
     ```
     :::
 
+    Any version above 2339 will work.
+
+    :::: warning
+    If the above command returns an error, you likely don't have Xcode installed. Run the following command to install Xcode:
+
+    ::: shell-input
+    ```shell
+    sudo rm -rf /Library/Developer/CommandLineTools 
+    xcode-select --install
+    ```
+    :::
+    ::: shell-output
+    ```
+    Password:
+    xcode-select: note: install requested for command line developer tools
+    ```
+    :::
+    ::::
+
+
 1. Check if you have [Homebrew](https://brew.sh/) installed:
 
+    ::: shell-input
     ```shell
     brew --version 
-
-    > Homebrew 3.0.11
     ```
+    :::
+    ::: shell-output
+    ```
+    Homebrew 3.0.11
+    ```
+    :::
 
     Any version of Homebrew will work, but version 3.0.0 and above is preferred.
 
@@ -135,11 +151,15 @@ If you are unsure which CPU your Mac is using, check out the [troubleshooting st
 
 1. You should now have the `lotus` executable ready to run on your computer. 
 
+    ::: shell-input
     ```shell
     lotus --version
-
-    > lotus version 1.7.0
     ```
+    ::: shell-output
+    ```
+    lotus version 1.7.0
+    ```
+    ::: shell-output
 
 [Head over to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
 
@@ -235,35 +255,49 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 
 1. Build the `lotus` executable:
 
+    ::: shell-input
     ```shell
     make clean all
-
-    > rm -rf  build/.filecoin-install build/.update-modules  lotus lotus-miner lotus-worker lotus-shed lotus-gateway lotus-seed lotus-pond lotus-townhall lotus-fountain lotus-chainwatch lotus-bench lotus-stats lotus-pcr lotus-health lotus-wallet lotus-keygen testground
-    > make -C extern/filecoin-ffi/ clean
-    > make[1]: Entering directory '/root/lotus/extern/filecoin-ffi'
-    > ...
-    > go run github.com/GeertJohan/go.rice/rice append --exec lotus-worker -i ./build 
     ```
+    :::
+    ::: shell-output
+    ```
+    rm -rf  build/.filecoin-install build/.update-modules  lotus lotus-miner lotus-worker lotus-shed lotus-gateway lotus-seed lotus-pond lotus-townhall lotus-fountain lotus-chainwatch lotus-bench lotus-stats lotus-pcr lotus-health lotus-wallet lotus-keygen testground
+    make -C extern/filecoin-ffi/ clean
+    make[1]: Entering directory '/root/lotus/extern/filecoin-ffi'
+    ...
+    go run github.com/GeertJohan/go.rice/rice append --exec lotus-worker -i ./build 
+    ```
+    :::
 
 1. Install Lotus:
 
+    ::: shell-input
     ```shell
     sudo make install
-
-    > bash: go: command not found
-    > expr: syntax error: unexpected argument ‘1015005’
-    > install -C ./lotus /usr/local/bin/lotus
-    > install -C ./lotus-miner /usr/local/bin/lotus-miner
-    > install -C ./lotus-worker /usr/local/bin/lotus-worker
     ```
+    :::
+    ::: shell-output
+    ```
+    bash: go: command not found
+    expr: syntax error: unexpected argument ‘1015005’
+    install -C ./lotus /usr/local/bin/lotus
+    install -C ./lotus-miner /usr/local/bin/lotus-miner
+    install -C ./lotus-worker /usr/local/bin/lotus-worker
+    ```
+    :::
 
 1. You should now have the `lotus` executable ready to run on your computer. 
 
+    ::: shell-input
     ```shell
     lotus --version
-
-    > lotus version 1.7.0
     ```
+    ::: shell-output
+    ```
+    lotus version 1.7.0
+    ```
+    :::
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
 
@@ -277,12 +311,17 @@ Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol La
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address: 
 
+    ::: shell-input
     ```shell
     FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
-
-    > 2021-04-10T13:34:07.170-0400  INFO    main    lotus/daemon.go:214 lotus repo: /home/johnny/.lotus
-    > ...
     ```
+    :::
+    ::: shell-output
+    ```
+    2021-04-10T13:34:07.170-0400  INFO    main    lotus/daemon.go:214 lotus repo: /home/johnny/.lotus
+    ...
+    ```
+    :::
 
     :::warning
     The above command uses [secure WebSockets `wss`](https://tools.ietf.org/html/rfc6455) to connect to the node. If you are **not** using `api.chain.love`, you will likely be using IPv4 or IPv6 instead and should replace `wss` with `ip4` or `ip6`, respectively.
@@ -300,11 +339,16 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 1. Open a new terminal window and create an address using the `lotus wallet new` command:
 
+    ::: shell-input
     ```shell
     lotus wallet new 
-
-    > f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi
     ```
+    :::
+    ::: shell-output
+    ```
+    f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi
+    ```
+    :::
 
     Lotus outputs your public address. Public addresses always start with `f1`.
 
@@ -318,12 +362,17 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 
 1. List the addresses associated with your Lotus node:
 
+    ::: shell-input
     ```shell
     lotus wallet list
-
-    > Address                                    Balance  Nonce  Default  
-    > f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq  0 FIL    0      X  
     ```
+    :::
+    ::: shell-output
+    ```
+    Address                                    Balance  Nonce  Default  
+    f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq  0 FIL    0      X  
+    ```
+    :::
 
 1. Copy the address `f1nau...` that you want to export.
 1. The `lotus wallet export f1nau...` command simply output the private key to the terminal. To export an address _into_ a file, run the `lotus wallet export f1anu...` followed by `> my_address.key`:
