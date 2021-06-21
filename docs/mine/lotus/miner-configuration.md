@@ -313,7 +313,7 @@ To ignore the configuration and force push the current batch, run:
 Then in the output, the message CID of the `ProveCommitAggregate` message and the sector number of the sectors' prove-commitments that are being submitted is listed:
 
 ```
-$ ./lotus-miner batching commit --publish-now=true
+$ ./lotus-miner sectors batching commit --publish-now=true
 Batch 0:
 	Message: bafy2bzacedtmykgf5g4evdvapacpmo4l32ewu5l7yxqkzjh3h6fhev7v7qoys
 	Sectors:
