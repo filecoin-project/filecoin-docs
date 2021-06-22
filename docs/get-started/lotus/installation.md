@@ -30,7 +30,11 @@ These are the minimal requirements to run a Lotus node. [Hardware requirements f
 
 The following instructions are specific to Linux installations. Head to the [macOS](#macos) section if you want to install Lotus on a Mac.
 
-Users can install Lotus on Linux using the [Snap package manager](#snap-package-manager), [AppImages](#appimage), or by [building from source](#build-from-source).
+Users can install Lotus on Linux using the:
+
++ [Snap package manager](#snap-package-manager)
++ [AppImages](#appimage)
++ or by [building from source](#build-from-source).
 
 :::warning Miners should build from source
 Building Lotus from source allows you to strictly configure how Lotus runs and how it communicates with its dependencies. Miners looking to improve their system efficiency should [install Lotus by building from source](#build-from-source).
@@ -76,9 +80,9 @@ You can find out more about this Snap [over at Snapcraft.io](https://snapcraft.i
     ./lotus-v1.10.0_linx-amd64.appimage
     ```
 
-## Build from source
+### Build from source
 
-### Software dependencies
+#### Software dependencies
 
 You will need the following software installed to install and run Lotus.
 
@@ -142,7 +146,7 @@ echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc
 See the [official Golang installation instructions](https://golang.org/doc/install) if you get stuck.
 :::
 
-### Build and install Lotus
+#### Build and install Lotus
 
 Once all the dependencies are installed, you can build and install the Lotus suite (`lotus`, `lotus-miner`, and `lotus-worker`).
 
@@ -153,7 +157,9 @@ Once all the dependencies are installed, you can build and install the Lotus sui
    cd lotus/
    ```
 
-2. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
+1. Checkout the release for the network you wish to use.
+
+   To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
 
@@ -167,8 +173,9 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    Currently, the latest code on the _master_ branch corresponds to mainnet.
 
-3. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
-4. Depending on your CPU model, you will want to export additional environment variables:
+1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
+
+1. Depending on your CPU model, you will want to export additional environment variables:
 
    If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
 
@@ -188,15 +195,18 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
 
-5. Build and install Lotus:
+1. Build and install Lotus
+
+   Lotus is compiled to operate on a single network,  run one of the following commands to build the lotus node for the specific lotus network.
 
    ```sh
-   make clean all
-
+   # join mainnet 
+   make clean all 
+   
    # Or to join a testnet or devnet:
    make clean calibnet # Calibration with min 32GiB sectors
    make clean nerpanet # Nerpa with min 512MiB sectors
-
+   
    sudo make install
    ```
 
@@ -204,7 +214,14 @@ Once all the dependencies are installed, you can build and install the Lotus sui
 
    `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
 
-6. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
+   Once the installation is finished, use the command down below to ensure lotus is installed successfully for the right network. 
+
+   ```sh
+   lotus --version
+   > lotus version 1.9.0+calibnet+git.ada7f97ba
+   ```
+
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
 #### Native Filecoin FFI
 
@@ -217,7 +234,7 @@ export FFI_BUILD_FROM_SOURCE=1
 
 This method of building does not produce portable binaries. Make sure you run the binary on the same computer as you built it.
 
-### Systemd service files
+#### Systemd service files
 
 Lotus provides **generic** Systemd service files. They can be installed with:
 
@@ -240,7 +257,9 @@ These instructions are specific to macOS. You can install Lotus on MacOS 10.11 (
 Due to CPU architecture limitations, M1-based Mac computers cannot run a Lotus full-node. Adding support is on the Lotus road-map. M1-based Mac computers can run a [Lotus lite-node](../../build/lotus/lotus-lite.md).
 :::
 
-### XCode Command Line Tools
+### Software dependencies
+
+#### XCode Command Line Tools
 
 Lotus requires that X-Code CLI tools be installed before building the Lotus binaries.
 
@@ -252,7 +271,7 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
    > /Library/Developer/CommandLineTools
    ```
 
-   If this command returns a path, you can move on to the [next step](#install-homebrew). Otherwise, to install via the CLI, run:
+   If this command returns a path, you can move on to the [next step](#homebrew). Otherwise, to install via the CLI, run:
 
    ```sh
    xcode-select --install
@@ -263,12 +282,12 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
    ```sh
    sudo rm -rf /Library/Developer/CommandLineTools
    xcode-select --install
-
+   
    > Password:
    > xcode-select: note: install requested for command line developer tools
    ```
 
-### Install Homebrew
+#### Homebrew
 
 We recommend that macOS users use [Homebrew](https://brew.sh) to install each of the necessary packages.
 
@@ -278,6 +297,12 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
    brew install go bzr jq pkg-config rustup hwloc
    ```
 
+1. Make sure all the packages are installed successfully before you move to next step to build lotus.
+
+### Build and install Lotus
+
+Once all the dependencies are installed, you can build and install the Lotus suite (`lotus`, `lotus-miner`, and `lotus-worker`).
+
 1. Clone the repository:
 
    ```sh
@@ -285,7 +310,9 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
    cd lotus/
    ```
 
-1. To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases).
+1. Checkout the release for the network you wish to use.
+
+   To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases). For networks other than mainnet...
 
    If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
 
@@ -302,6 +329,7 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
    ```
 
 1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
+
 1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
 
    ```sh
@@ -311,16 +339,26 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
 
    This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
 
-1. Build Lotus:
+1. Build and install Lotus
+
+   Lotus is compiled to operate on a single network. Run one of the following commands to build lotus for your intended network.
 
    ```sh
-   make clean && make all # mainnet
-
+   # mainnet
+   make clean && make all 
+   
    # Or to join a testnet or devnet:
    make clean && make calibnet # Calibration with min 32 GiB sectors
    make clean && make nerpanet # Nerpa with min 512 MiB sectors
-
+   
    sudo make install
+   ```
+
+   Check that lotus is installed successfully for the right network. 
+
+   ```sh
+   lotus --version
+   > lotus version 1.9.0+calibnet+git.ada7f97ba
    ```
 
 1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
@@ -367,19 +405,53 @@ lotus sync wait
 
 The `lotus` command allows you to interact with a _running_ Lotus daemon. The `lotus-miner` and `lotus-worker` commands work in the same way.
 
-Lotus comes with built-in CLI documentation:
+Lotus comes with built-in CLI documentation.
 
 ```sh
+lotus
+  - chain: Interact with filecoin blockchain
+  - client: Make deals, store data, retrieve data
+  - wallet: Manage wallet
+  - net: Manage P2P Network
+  - sync: Inspect or interact with the chain syncer
+  ...
+  
 # Show general help
 lotus --help
-# Show specific help for the "client" subcommand
+# Show help for the "client" to make deals, store data, retrieve data
 lotus client --help
 ```
 
-For example, after your Lotus daemon has been running for a few minutes, use `lotus` to check the number of other peers that it is connected to in the Filecoin network:
+For example, after your Lotus daemon has been running for a few minutes, use `lotus sync` to check the sync status of your lotus node.
+
+```sh
+lotus net sync
+
+> sync status:
+...
+> 	Target:	[bafy2bzaceaki6bjhe2lxmtyexcff6vh5y5uw4tmbjr3gatwvh5dhaqqb2ykaa] (320791)
+> 	Stage: complete
+> 	Height: 320791
+...
+```
+
+Or use `lotus net` to check the number of other peers that it is connected to in the Filecoin network.
 
 ```sh
 lotus net peers
+
+> 12D3KooWSDqWSDNZtpJae15FBGpJLeLmyabUfZmWDWEjqEGtUF8N, [/ip4/58.144.221.27/tcp/33425]
+> 12D3KooWRTQoDUhWVZH9z5u9XmaFDvFw14YkcW7dSBFJ8CuzDHnu, [/ip4/67.212.85.202/tcp/10906]
+```
+
+Or check the current version of lotus node as well as network. 
+
+```sh
+lotus version
+
+> Daemon:  1.9.0+calibnet+git.ada7f97ba+api1.3.0
+> Local: lotus version 1.9.0+calibnet+git.ada7f97ba
+# running lotus v1.9.0 on Calibration testnet
 ```
 
 ## Stop the Lotus daemon
@@ -391,4 +463,3 @@ lotus daemon stop
 ## When running with systemd do:
 # systemctl stop lotus-daemon
 ```
-
