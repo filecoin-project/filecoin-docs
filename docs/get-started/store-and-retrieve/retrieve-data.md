@@ -15,7 +15,6 @@ Before you can retrieve data from a storage provider, you need to check that you
 
     ```shell
     lotus wallet list
-
     ```
 
     Lotus will output something like:
