@@ -21,19 +21,15 @@ As you're going through this section, make a note of the following variables:
 | --- | --- | --- |
 | Your Filecoin address | The public part of your Filecoin address. This address is what other users can use to send your FIL. | `f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi` |
 
-## Get a full-node 
+## Access a full-node 
 
 A Lotus full-node is a computer running the `lotus daemon`. Full-nodes are unique because they have complete access to the Filecoin blockchain. The computer specifications required to run a Lotus full-node are relatively high and might be out of reach for most end-user laptops and PCs. 
 
 Usually, we'd have to _spin up_ a full-node, but we're going to use a Lotus full-node provided by Protocol Labs for this tutorial. This node, called `api.chain.love`, is only for practice sessions like this tutorial and should not be relied upon for any production or development purposes.
 
-:::tip
-If you've got a full-node that you'd prefer to use, feel free to use that instead! Just replace `api.chain.love` with your full-node IP address throughout this tutorial.
-:::
-
 ## Install a lite-node
 
-A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to storage providers, but any processes that need data from the blockchain must come from a full node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
+A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to storage providers, but any processes that need data from the blockchain must come from a full-node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
 
 ![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](./images/lite-nodes-process-diagram.png)
 
@@ -215,7 +211,9 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     ```
 
-1. Install Go and add `/usr/local/go/bin` to your `PATH`:
+    Select `1) Proceed with installation (default)` if prompted.
+
+1. Install Go:
 
     ```shell
     wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
@@ -238,24 +236,12 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 
     ```shell
     make clean all
-
-    > rm -rf  build/.filecoin-install build/.update-modules  lotus lotus-miner lotus-worker lotus-shed lotus-gateway lotus-seed lotus-pond lotus-townhall lotus-fountain lotus-chainwatch lotus-bench lotus-stats lotus-pcr lotus-health lotus-wallet lotus-keygen testground
-    > make -C extern/filecoin-ffi/ clean
-    > make[1]: Entering directory '/root/lotus/extern/filecoin-ffi'
-    > ...
-    > go run github.com/GeertJohan/go.rice/rice append --exec lotus-worker -i ./build 
     ```
 
 1. Install Lotus:
 
     ```shell
     sudo make install
-
-    > bash: go: command not found
-    > expr: syntax error: unexpected argument ‘1015005’
-    > install -C ./lotus /usr/local/bin/lotus
-    > install -C ./lotus-miner /usr/local/bin/lotus-miner
-    > install -C ./lotus-worker /usr/local/bin/lotus-worker
     ```
 
 1. You should now have the `lotus` executable ready to run on your computer. 
@@ -263,7 +249,7 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
     ```shell
     lotus --version
 
-    > lotus version 1.7.0
+    > lotus version 1.11.0
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
@@ -273,25 +259,29 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node! 
 
 :::warning
-Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but do not use it for development or in a production environment.
+Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but should not be used in a development or in a production environment.
 :::
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address: 
 
     ```shell
     FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
-
-    > 2021-04-10T13:34:07.170-0400  INFO    main    lotus/daemon.go:214 lotus repo: /home/johnny/.lotus
-    > ...
     ```
 
-    :::warning
-    The above command uses [secure WebSockets `wss`](https://tools.ietf.org/html/rfc6455) to connect to the node. If you are **not** using `api.chain.love`, you will likely be using IPv4 or IPv6 instead and should replace `wss` with `ip4` or `ip6`, respectively.
-    :::
+    The above command will output something like this:
+
+    ```shell
+    ...
+    2021-06-16T02:00:08.390Z        INFO    markets loggers/loggers.go:56   module ready   {"module": "storage client"}
+    2021-06-16T02:00:08.392Z        INFO    markets loggers/loggers.go:56   module ready   {"module": "retrieval client"}
+    2021-06-16T02:00:18.190Z        INFO    basichost       basic/natmgr.go:91      DiscoverNAT error:no NAT found
+    ...
+    ```
 
 1. MacOS users may see a warning regarding Lotus. Select **Accept incoming connections** if you see a warning.
+1. The Lotus daemon will continue to run. You must run further commands from a separate terminal window.
 
-    The Lotus daemon will continue to run. You must run further commands from a separate terminal window.
+Next up is [getting a FIL address ↓](#get-a-fil-address)
 
 ## Get a FIL address
 
@@ -317,7 +307,7 @@ Your address is made up of two parts: your _public address_ and your _private ke
 
 It is incredibly important that you backup your addreses. Storing a copy of your addresses on another device is a great way to ensure you don't lose access to your funds. 
 
-1. List the addresses associated with your Lotus node:
+1. If your public address `f1...` is still in the terminal window, copy it to your clipboard. If not, list the addresses associated with your Lotus node and copy your public address:
 
     ```shell
     lotus wallet list
@@ -326,26 +316,25 @@ It is incredibly important that you backup your addreses. Storing a copy of your
     > f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq  0 FIL    0      X  
     ```
 
-1. Copy the address `f1nau...` that you want to export.
-1. The `lotus wallet export f1nau...` command simply output the private key to the terminal. To export an address _into_ a file, run the `lotus wallet export f1anu...` followed by `> my_address.key`:
+1. Use `lotus wallet export` to export your private key, replacing `f1...` with your public key:
 
     ```shell
-    lotus wallet export f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq > my_address.key
+    lotus wallet export f1... > my_address.key
     ```
 
-    This will create a new file called `my_address.key` in the current directory. The filename you chose doesn't have to end in `.key`; it can be anything you want.
+    This will create a new file called `my_address.key` in the current directory.
 
-Once you have your address in a file, you can copy it to another drive, securely send it to another computer, or even print it out.
+Once you have your address in a file, you can copy it to another drive, securely send it to another computer, or even print it out. It's important to keep this file safe. If anything happens to your Lotus node, you can still access your funds using this file.
 
 ## Filecoin Plus
 
 Storage providers get paid either by receiving FIL directly from users for storing their data, winning block rewards from the network, or both!
 
-Getting paid from users is straightforward. If a storage client called Laika wants to store some data, and Albert is a storage provider, the two of them can create a deal to store Laika's data for `X` amount of time for `Y` FIL.
+Getting paid from users is straightforward. If Laika wants to store some data, and Albert is a storage provider, the two of them can create a deal to store Laika's data for `X` amount of time for `Y` FIL.
 
-Block rewards are randomly given to a storage provider every 30 seconds. The more data that a storage provider is _storing_, the higher their chances of winning the block reward. You can think of it like this: if a storage provider accepts a deal from a user to store 5GB of data, they have 5 chances to win the block reward for each 30 second round.
+Block rewards are randomly given to a storage provider every 30 seconds. The more data that a storage provider is _storing_, the higher their chances of winning the block reward. So if a storage provider accepts a deal from a user to store 5 GB of data, they have 5 chances to win the block reward for each 30 second round.
 
-Data cap acts as a kind of _multiplier_ for block rewards. If a storage provider accepts a deal from a user with data cap attached - also known as — _verified deal_ —, then the Filecoin network treats that deal as though it's 10x as big as it is. So a 5GB deal gives the storage miner 50 chances to win the block reward instead of the usual 5 chances. Some storage providers find data cap so valuable that they're willing to make verified deals without charging any FIL! You can find a list of these storage providers using the [Filecoin Plus miner registry](https://plus.fil.org/miners/).
+Data cap acts as a kind of _multiplier_ for block rewards. If a storage provider accepts a deal from a user with data cap attached, also known as a _verified deal_ , then the Filecoin network treats that deal as though it's 10x bigger. So a 5 GB deal gives the storage miner 50 chances to win the block reward instead of the usual 5 chances. Some storage providers find data cap so valuable that they're willing to make verified deals without charging any FIL! You can find a list of these storage providers using the [Filecoin Plus miner registry](https://plus.fil.org/miners/).
 
 ### Sign up
 
@@ -356,10 +345,11 @@ You need a GitHub account that is at least 180 days old. If you don't have a Git
 :::
 
 1. Go to [plus.fil.org](https://plus.fil.org).
-1. Under **Clients**, click **Proceed**.
+1. Under **For isClients**, click **Proceed**.
 1. Under **Get verified**, click **Get Verified**.
 1. Click **Automatic Verification**.
-1. In the `Request` field, enter the address you got in the previous section.
+1. Click **Start** next to the GitHub logo.
+1. In the `Request` field, enter the public address you got from running `lotus wallet list`. This step may take a few minutes to complete. 
 
 ## Next steps
 
