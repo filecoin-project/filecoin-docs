@@ -383,7 +383,7 @@ Depending on the network congestion, the base fee for a message may grow or decr
 
 Set the maximum cost you are willing to pay for onboarding **per** sector in `MaxPreCommitBatchGasFee.PerSector`/`MaxCommitBatchGasFee.PerSector` to avoid unexpected high costs. 
 
-> Note: The current `MaxCommitBatchGasFee.PerSector` is enough for 6 proof aggregation, adjust respectively according to your operation. **If the value is too low, the message may wait in the mempool longer. If you don't have enough funds, the message will not be sent.**
+> Note: The current `MaxCommitBatchGasFee.PerSector` is enough to aggregate proofs for 6 sectors. Adjust this respectively according to your operation. **If the value is too low, the message may wait in the mempool for a long while. If you don't have enough funds, the message will not be sent.**
 
 ## Addresses section
 
