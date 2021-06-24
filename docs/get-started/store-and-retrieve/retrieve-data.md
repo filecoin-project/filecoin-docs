@@ -91,9 +91,8 @@ lotus client retrieve --miner <MINER ID> <DATA CID> ~/output-file
 1. Wait for the process to finish:
 
     ```shell
-    > Recv: 1.231 GiB, Paid 0.000000002569142626 FIL, ClientEventAllBlocksReceived (DealStatusSendFundsLastPayment)
-    > Recv: 1.231 GiB, Paid 0.000000002644070646 FIL, ClientEventPaymentSent (DealStatusFinalizing)
-    > Recv: 1.231 GiB, Paid 0.000000002644070646 FIL, ClientEventComplete (DealStatusCompleted)
+    > Recv: 5.078 GiB, Paid 0 FIL, ClientEventBlocksReceived (DealStatusWaitingForLastBlocks)
+    > Recv: 5.078 GiB, Paid 0 FIL, ClientEventAllBlocksReceived (DealStatusCompleted)
     > Success
     ```
 
@@ -104,3 +103,4 @@ lotus client retrieve --miner <MINER ID> <DATA CID> ~/output-file
 ## Next steps
 
 This marks the end of the Filecoin Store and Retrieve tutorial series! By now you should have a good understanding of how the storage and retrieval process works on the Filecoin network, and also have some ideas on how to integrate this process into your projects! Feel free to carry on playing around with storing and retrieving data using Lotus and Filecoin. If you need a hand or get stuck, check out the [Filecoin Slack](https://filecoin.io/slack/).
+
