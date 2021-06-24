@@ -1,3 +1,29 @@
+## Pre-setup
+
+```shell
+# Create random file.
+rm -f /tmp/613-mb-file
+dd if=/dev/urandom of=/tmp/613-mb-file bs=1MB count=613 
+
+# Import file into Lotus.
+lotus client import /tmp/613-mb-file
+  <DATA_CID>
+
+# Create deal for that random file.
+lotus client deal
+> Data CID: <DATA_CID>
+> Duration: 180
+> Miner: f0127896
+> ... 
+> <PROPOSAL CID>
+
+# View the deal status.
+lotus client inspect-deal --proposal-cid=<PROPOSAL_ID>
+
+# Get the data back.
+lotus client retrieve --miner f0127896 <DATA_CID> /tmp/retrieved_613mb_file
+```
+
 Things you need:
 
 1. Proposal ID. Also sometimes called a Deal CID.
