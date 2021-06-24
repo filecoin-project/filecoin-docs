@@ -10,7 +10,7 @@ breadcrumb: 'Local dev-net'
 
 ## Manual set up
 
-You can spin up a dev-net using the regular Lotus binaries. This method will launch Lotus using 2KiB sectors, allowing systems with fewer resources to run a dev-net. This solution runs comfortably on a computer with 2 CPU cores and 4GB RAM.
+You can spin up a dev-net using the regular Lotus binaries. This method will launch Lotus using 2 KiB sectors, allowing systems with fewer resources to run a dev-net. This solution runs comfortably on a computer with 2 CPU cores and 4 GB RAM.
 
 This process requires you to use multiple terminal windows, so you might find a terminal multiplexer like [Tmux](https://github.com/tmux/tmux) helpful.
 
@@ -139,6 +139,6 @@ You now have a Lotus node and a miner running! You can interact with it
 
 ## Textile cointainer
 
-The developers at Textile have created a quick way to run a Lotus dev-net for testing purposes. Apart from being very easy to set up, one main advantage of this dev-net is using a mocked `sector builder, which makes expensive operations like sealing much easier.
+The developers at Textile have created a quick way to run a Lotus dev-net for testing purposes. Apart from being easy to set up, an advantage of this dev-net is using a mocked `sector builder, which makes expensive operations like sealing much easier.
 
 Head to the [textileio/lotus-devnet GitHub repository](https://github.com/textileio/lotus-devnet) to learn how to set up a node on the Textile dev-net.

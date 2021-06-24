@@ -12,9 +12,9 @@ breadcrumb: 'Sector pledging'
 
 As we have [explained](../how-mining-works.md#power-and-rewards), the amount of power of a miner in the Filecoin network is directly proportional to the amount of live storage (active sectors) contributed to the network. Miners with more power have more chances to be selected to mine new blocks.
 
-By sealing sectors with random data (pledging), a miner can demonstrate to the network that it has setup and could potentially offer that much storage for real deals when there is enough demand or when it decides to do so. In the meantime, pledged sectors work similar to regular sectors and result in an increase in the miner's power.
+By sealing sectors with random data, a miner can demonstrate to the network that it can potentially offer that much storage for real deals when there is enough demand or when it decides to do so. This is known as _pledging_. In the meantime, pledged sectors work similar to regular sectors and result in an increase in the miner's power.
 
-Taking the above into account **pledging sectors [on mainnet] network makes most sense when doing it at a scale where it provides enough power to have real chances to mine new blocks**. Otherwise it is only useful for testing purposes.
+Taking the above into account, **pledging sectors [on mainnet] network makes most sense when doing it at a scale where it provides enough power to have real chances to mine new blocks**. Otherwise, it is only useful for testing purposes.
 
 ::: tip
 Pledging one sector during miner setup can be useful to test how long the sealing process takes and make sure that the miner's hardware is correctly configured before taking on real deals.
@@ -28,7 +28,9 @@ To pledge a sector use:
 lotus-miner sectors pledge
 ```
 
-This will, by default, pledge the space for 546 days.
+In Lotus, this will pledge the space for ~538 days by default. 
+
+> The protocol allows a sector to have expiration time between [180-540](https://github.com/filecoin-project/specs-actors/blob/73e0409ac77c918c8fc91681c250a710c4b9a374/actors/builtin/miner/policy.go#L201-L206) days. Lotus will allow user to set the committed capacity sector expiration time upon pledge once [issue #4760](https://github.com/filecoin-project/lotus/issues/4760) is addressed.
 
 ::: warning
 This will write data to `$TMPDIR` so make sure that there is enough space available.

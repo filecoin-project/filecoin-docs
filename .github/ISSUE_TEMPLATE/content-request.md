@@ -3,8 +3,6 @@ name: Content Request
 about: Suggest a new page or section.
 title: "Describe the content you'd like to see in a single sentence"
 labels: 'need/triage, feature-request'
-assignees: 'johnnymatthews'
-
 ---
 
 Is there an item missing from Filecoin documentation that would be helpful to you? Please use this template to let us know!
