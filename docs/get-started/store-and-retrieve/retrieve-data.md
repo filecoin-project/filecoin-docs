@@ -5,7 +5,7 @@ description: Learn how to get data out of the Filecoin network using Lotus. The 
 
 # Retrieve data
 
-In the previous step, you stored some data on the Filecoin network. It takes anywhere from 24 to 48 hours for a storage provider to _seal_ the data, so if you finished the previous step moment ago, then your data likely isn't available for download just yet. But don't worry, you can still follow this page through to retrieve some data we already put on the Filecoin network. 
+In the previous step, you stored some data on the Filecoin network. It takes anywhere from 24 to 48 hours for a storage provider to _seal_ the data, so if you finished the previous step moment ago, then your data likely isn't available for download just yet. But don't worry, you can still follow this page to retrieve some data we already put on the Filecoin network. 
 
 ## Check address balance
 
@@ -39,23 +39,29 @@ Before you can send a retrieval request, you need to collect some information to
 | Variable | Description |
 | --- | --- |
 | `MINER ID` | This is the ID of the storage provider where the data is stored. |
-| `DATA CID` | The `DATA CID`. This is also sometimes called the `PAYLOAD CID`. |
-| `ADDRESS` | The public address that was originally used to create the storage deal. |
+| `DATA CID` | The `DATA CID`. This variable is also sometimes called the `PAYLOAD CID`. |
+| `ADDRESS` | The public address that was initially used to create the storage deal. |
+
+We're going to gather this information now.
 
 1. Copy this address to your clipboard: `f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq`.
 
-    :::tip Using your own address
-    If you want to retrieve data that you stored using your own address, then simply list your address using `lotus wallet list` and copy your address. You will not be able to retrieve data that was stored less than 24 hours ago.
+    :::tip Using a different address
+    If you want to retrieve data that you stored using a different address, list your address using `lotus wallet list` and copy it to your clipboard. You will not be able to retrieve data stored less than 24 hours ago.
     :::
 
 1. Go to [filecoin.tools](https://filecoin.tools).
-1. Paste in the address in the search bar and press `ENTER` to search for deals made by that address:
+1. Paste the address in the search bar and press `ENTER` to search for deals made by that address:
 
     ![Filecoin.tools showing all the deals made by a single address.](./images/filecoin-tools-search-address.png)
 
-1. Click a deal to view information about that specific deal:
+    :::warning Using a different address
+    The default address supplied in this tutorial `f16wc2ees...` has only submitted one storage deal, so you'll only see one row in [filecoin.tools](https://filecoin.tools/f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq). If you are using a different address, you may see multiple rows. If you don't see _any_ rows, the address you searched for has not yet completed a deal. The address may have submitted a deal, but the miner is yet to _seal_ the data. Deals will only show up here once the miner has completed sealing the data.
+    :::
 
-    ![Information about a specific deal.](./images/filecoin-tools-show-details.png)
+1. Click anywhere on a row to view information about that specific deal:
+
+    ![Information about a particular deal.](./images/filecoin-tools-show-details.png)
 
 1. Make a note of the **Payload CID** and the **Miner ID**. You'll need both of these to create the retrieval command in the next step.
 
@@ -67,7 +73,7 @@ The structure for a retrieval command is:
 lotus client retrieve --miner <MINER ID> <DATA CID> ~/output-file
 ```
 
-1. Using the template above, create the command substituting the variables you got in the previous step. You're command should look something like this: 
+1. Using the template above, create the command substituting the variables you got in the previous step. Your command should look something like this: 
 
     ```shell
     lotus client retrieve --miner f01278 mAXCg5AIgjVjEjFzXIO2fTUdaWKEGmeOevU76fzC/JgNp37oRrQI output-file
@@ -78,7 +84,7 @@ lotus client retrieve --miner <MINER ID> <DATA CID> ~/output-file
     ```shell
     > Recv: 0 B, Paid 0 FIL, ClientEventOpen (DealStatusNew)
     > Recv: 0 B, Paid 0 FIL, ClientEventDealProposed (DealStatusWaitForAcceptance)
-    > Recv: 120 B, Paid 0 FIL, ClientEventBlocksReceived (DealStatusWaitForAcceptance)
+    > Recv: 0 B, Paid 0 FIL, ClientEventDealAccepted (DealStatusAccepted)
     > ...
     ```
 
@@ -95,4 +101,6 @@ lotus client retrieve --miner <MINER ID> <DATA CID> ~/output-file
 
 1. That's it!
 
-This is the end of the Filecoin _store and retrieve_ tutorial series!
+## Next steps
+
+This marks the end of the Filecoin Store and Retrieve tutorial series! By now you should have a good understanding of how the storage and retrieval process works on the Filecoin network, and also have some ideas on how to integrate this process into your projects! Feel free to carry on playing around with storing and retrieving data using Lotus and Filecoin. If you need a hand or get stuck, check out the [Filecoin Slack](https://filecoin.io/slack/).
