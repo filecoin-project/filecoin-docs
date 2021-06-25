@@ -100,7 +100,11 @@ Next up is creating the command for Lotus to run. The structure for a retrieval 
     > Success
     ```
 
-    This process can take some time, depending on how congested the network is, how much load this storage provider is under, and the speed of your internet connection. You must keep the `lotus daemon` running.
+    This process can take some time, depending on how congested the network is, how much load this storage provider is under, and the speed of your internet connection. 
+
+    :::danger
+    You must keep the `lotus daemon` running for the duration of this process.
+    :::
 
 1. That's it!
 
