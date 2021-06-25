@@ -29,7 +29,7 @@ Before you can retrieve data from a storage provider, you need to check that you
 :::warning Low or no balance
 If you do not have enough FIL, you need to transfer some FIL to this account. You can either do this by using a cryptocurrency exchange or having a friend send you FIL. The address `f1...` listed when you run `lotus wallet list` is your public address; use this when requesting money from an exchange or your friend.
 
-Check out the [Managing assets section](../../../about-filecoin/managing-assets) for information on [withdrawing FIL from an exchange →](../../../about-filecoin/managing-assets/#exchanges)
+Check out the [Managing assets section](../../about-filecoin/managing-assets.md) for information on [withdrawing FIL from an exchange →](../../about-filecoin/managing-assets.md#exchanges)
 :::
 
 ## Get the deal information
