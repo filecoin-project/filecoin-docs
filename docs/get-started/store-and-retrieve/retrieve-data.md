@@ -77,10 +77,10 @@ Next up is creating the command for Lotus to run. The structure for a retrieval 
     lotus client retrieve --miner f01278 mAXCg5AIgjVjEjFzXIO2fTUdaWKEGmeOevU76fzC/JgNp37oRrQI output-file
     ```
 
-    `output-file` is the name of the file that you'd like to save. You can also add a path to this variable:
+    The `output-file` is the name of the file that you'd like to save. You can also add a path to this variable:
 
     ```shell
-    lotus client retrieve --miner f01278 mAXCg5AIgjVjEjFzXIO2fTUdaWKEGmeOevU76fzC/JgNp37oRrQI ~/Downloads/filecoin-download.tar
+    lotus client retrieve --miner f01278 mAXC...RrQI ~/Downloads/filecoin-download.tar
     ```
 
 1. Run the command. After submitting this command, your Lotus lite-node will send the retrieval request to the storage provider and wait for a response:
