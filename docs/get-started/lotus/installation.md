@@ -293,7 +293,16 @@ Next up is cloning the Lotus repository and building the executables.
 
 ### Build and install Lotus
 
-Once all the dependencies are installed, you can build and install Lotus.
+The installation instructions are different depending on which CPU in your Mac:
+
+- [M1-based CPUs](#m1-based-cpus)
+- [Intel and AMD-based CPUs](#intel-and-amd-based-cpus)
+
+#### M1-based CPUs 
+
+:::warning
+These instructions are for installing Lotus on an M1-based Mac. If you have an Intel or AMD-based CPU, use the [Intel and AMD-based CPU instructions ↓](#intel-and-amd-based-cpus)
+:::
 
 1. Clone the repository:
 
@@ -356,6 +365,50 @@ Once all the dependencies are installed, you can build and install Lotus.
     ```shell
     sudo make install
     ```
+
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
+
+#### Intel and AMD-based CPUs
+
+:::warning
+These instructions are for installing Lotus on an Intel or AMD-based Mac. If you have an M1-based CPU, use the [M1-based CPU instructions ↑](#m1-based-cpus)
+:::
+
+1. Clone the repository:
+
+   ```shell
+   git clone https://github.com/filecoin-project/lotus.git
+   cd lotus/
+   ```
+
+1. Run `git checkout <RELEASE TAG>` to checkout to the latest Lotus release:
+
+    ```shell
+    git checkout v1.10.0
+    ```
+
+    You can use any tag listed on the [Lotus GitHub release page](https://github.com/filecoin-project/lotus/releases) to checkout to that specific release.
+
+    :::tip
+    If you want to checkout to a network other than mainnet, take a look at the [Switching networks guide →](./switch-networks.md)
+    :::
+
+1. If you are in China, take a look at some [tips for running Lotus in China](./tips-running-in-china.md)".
+1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
+
+   ```sh
+   export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+   export CGO_CFLAGS="-D__BLST_PORTABLE__"
+   ```
+
+   This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
+
+1. Build and install Lotus:
+
+   ```shell
+   make clean && make all 
+   sudo make install
+   ```
 
 1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
