@@ -148,11 +148,11 @@ See the [official Golang installation instructions](https://golang.org/doc/insta
 
 #### Build and install Lotus
 
-Once all the dependencies are installed, you can build and install the Lotus suite (`lotus`, `lotus-miner`, and `lotus-worker`).
+Once all the dependencies are installed, you can build and install Lotus. 
 
 1. Clone the repository:
 
-   ```sh
+   ```shell
    git clone https://github.com/filecoin-project/lotus.git
    cd lotus/
    ```
@@ -249,13 +249,9 @@ Provided service files should be **inspected and edited** according to user need
 One example is that logs are redirected to files in `/var/log/lotus` by default and not visible in `journalctl`.
 :::
 
-## macOS
+## MacOS
 
-These instructions are specific to macOS. You can install Lotus on MacOS 10.11 (El Capitan, 2015) or higher. If you are installing Lotus on a Linux distribution, head over to the [Linux section](#linux).
-
-:::warning
-Due to CPU architecture limitations, M1-based Mac computers cannot run a Lotus full-node. Adding support is on the Lotus road-map. M1-based Mac computers can run a [Lotus lite-node](../../build/lotus/lotus-lite.md).
-:::
+These instructions are specific to macOS. You can install Lotus on macOS 10.11 El Capitan or higher. If you are installing Lotus on a Linux distribution, head over to the [Linux section](#linux).
 
 ### Software dependencies
 
@@ -265,27 +261,23 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
 1. Check if you already have the XCode Command Line Tools installed via the CLI, run:
 
-   ```sh
-   xcode-select -p
+    ```shell
+    xcode-select -p
 
-   > /Library/Developer/CommandLineTools
-   ```
+    > /Library/Developer/CommandLineTools
+    ```
 
-   If this command returns a path, you can move on to the [next step](#homebrew). Otherwise, to install via the CLI, run:
+    If this command returns a path then you have Xcode already installed! You can [move on to installing dependencies with Homebrew](#homebrew). 
 
-   ```sh
+   :::warning
+   If the above command doesn't return a path, install Xcode: 
+
+   ```shell
    xcode-select --install
    ```
+   :::
 
-1. To update, run:
-
-   ```sh
-   sudo rm -rf /Library/Developer/CommandLineTools
-   xcode-select --install
-   
-   > Password:
-   > xcode-select: note: install requested for command line developer tools
-   ```
+Next up is installing Lotus' dependenies using Homebrew.
 
 #### Homebrew
 
@@ -297,69 +289,73 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
    brew install go bzr jq pkg-config rustup hwloc
    ```
 
-1. Make sure all the packages are installed successfully before you move to next step to build lotus.
+Next up is closing the Lotus repository and building the executables.
 
 ### Build and install Lotus
 
-Once all the dependencies are installed, you can build and install the Lotus suite (`lotus`, `lotus-miner`, and `lotus-worker`).
+Once all the dependencies are installed, you can build and install Lotus.
 
 1. Clone the repository:
 
-   ```sh
+   ```shell
    git clone https://github.com/filecoin-project/lotus.git
    cd lotus/
    ```
 
-1. Checkout the release for the network you wish to use.
+1. Run `git checkout <RELEASE TAG>` to checkout to the latest Lotus release:
 
-   To join mainnet, checkout the [latest release](https://github.com/filecoin-project/lotus/releases). For networks other than mainnet...
+    ```shell
+    git checkout v1.10.0
+    ```
 
-   If you are changing networks from a previous Lotus installation or there has been a network reset, read the [Switch networks guide](./switch-networks.md) before proceeding.
+    You can use any tag listed on the [Lotus GitHub release page](https://github.com/filecoin-project/lotus/releases) to checkout to that specific release.
 
-   For networks other than mainnet, look up the current branch or tag/commit for the network you want to join in the [Filecoin networks dashboard](https://network.filecoin.io), then build Lotus for your specific network below.
+    :::tip
+    If you want to checkout to a network other than mainnet, take a look at the [Switching networks guide ->](./switch-networks.md)
+    :::
 
-   ```shell
-   git checkout v1.8.0
-   ```
+1. Pull-in the submodules:
 
-   You can also check out to the `master` branch for the bleeding-edge mainnet release:
+    ```shell
+    git submodule update --init --recursive
+    ```
 
-   ```shell
-   git checkout master
-   ```
+1. Create necessary environment variable to allow Lotus to run on ARM architecture:
 
-1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
+    ```shell
+    export GOARCH=arm64
+    export CGO_ENABLED=1
+    export LIBRARY_PATH=/opt/homebrew/lib
+    export FFI_BUILD_FROM_SOURCE=1
+    ```
 
-1. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
+1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
 
-   ```sh
-   export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
-   export CGO_CFLAGS="-D__BLST_PORTABLE__"
-   ```
+    ```shell
+    cd extern/filecoin-ffi
+    git fetch -a
+    git checkout master
+    ```
 
-   This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
+1. Create the `filecoin-ffi` executables:
 
-1. Build and install Lotus
+    ```shell
+    make clean
+    make
+    ```
 
-   Lotus is compiled to operate on a single network. Run one of the following commands to build lotus for your intended network.
+1. Move back to the root Lotus directory and create the `lotus` daemon:
 
-   ```sh
-   # mainnet
-   make clean && make all 
-   
-   # Or to join a testnet or devnet:
-   make clean && make calibnet # Calibration with min 32 GiB sectors
-   make clean && make nerpanet # Nerpa with min 512 MiB sectors
-   
-   sudo make install
-   ```
+    ```shell
+    cd ../../
+    make lotus
+    ```
 
-   Check that lotus is installed successfully for the right network. 
+1. Run the final `make` command to move this `lotus` executable to `/usr/local/bin`. This allows you to run `lotus` from any directory.
 
-   ```sh
-   lotus --version
-   > lotus version 1.9.0+calibnet+git.ada7f97ba
-   ```
+    ```shell
+    sudo make install
+    ```
 
 1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
