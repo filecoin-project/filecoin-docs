@@ -171,7 +171,7 @@ Once all the dependencies are installed, you can build and install Lotus.
    git checkout <vX.X.X> # tag for a release
    ```
 
-   Currently, the latest code on the _master_ branch corresponds to mainnet.
+   Currently, the latest code on the _master_ branch corresponds to the mainnet.
 
 1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
 
@@ -193,7 +193,7 @@ Once all the dependencies are installed, you can build and install Lotus.
    export CGO_CFLAGS="-D__BLST_PORTABLE__"
    ```
 
-   This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support, and should be fixed soon.
+   This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support and should be fixed soon.
 
 1. Build and install Lotus
 
@@ -212,7 +212,7 @@ Once all the dependencies are installed, you can build and install Lotus.
 
    This will put `lotus`, `lotus-miner` and `lotus-worker` in `/usr/local/bin`.
 
-   `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets, etc). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
+   `lotus` will use the `$HOME/.lotus` folder by default for storage (configuration, chain data, wallets). See [advanced options](configuration-and-advanced-usage.md) for information on how to customize the Lotus folder.
 
    Once the installation is finished, use the command down below to ensure lotus is installed successfully for the right network. 
 
@@ -225,7 +225,7 @@ Once all the dependencies are installed, you can build and install Lotus.
 
 #### Native Filecoin FFI
 
-Some newer CPU architectures like AMD's Zen and Intel's Ice Lake, have support for SHA extensions. Having these extensions enabled significantly speeds up your Lotus node. To make full use of your processor's capabilities, make sure you set the following variables **before building from source**:
+Some newer CPU architectures like AMD's Zen and Intel's Ice Lake have support for SHA extensions. Having these extensions enabled significantly speeds up your Lotus node. To make full use of your processor's capabilities, make sure you set the following variables **before building from source**:
 
 ```sh
 export RUSTFLAGS="-C target-cpu=native -g"
@@ -244,7 +244,7 @@ make install-miner-service
 ```
 
 ::: warning
-Provided service files should be **inspected and edited** according to user needs as they are very generic and may lack specific environment variabes and settings needed by the users.
+Provided service files should be **inspected and edited** according to user needs as they are very generic and may lack specific environment variables and settings needed by the users.
 
 One example is that logs are redirected to files in `/var/log/lotus` by default and not visible in `journalctl`.
 :::
@@ -267,7 +267,7 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
     > /Library/Developer/CommandLineTools
     ```
 
-    If this command returns a path then you have Xcode already installed! You can [move on to installing dependencies with Homebrew](#homebrew). 
+    If this command returns a path, then you have Xcode already installed! You can [move on to installing dependencies with Homebrew](#homebrew). 
 
    :::warning
    If the above command doesn't return a path, install Xcode: 
@@ -277,7 +277,7 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
    ```
    :::
 
-Next up is installing Lotus' dependenies using Homebrew.
+Next up is installing Lotus' dependencies using Homebrew.
 
 #### Homebrew
 
@@ -285,11 +285,11 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
 
 1. Use the command `brew install` to install the following packages:
 
-   ```sh
+   ```shell
    brew install go bzr jq pkg-config rustup hwloc
    ```
 
-Next up is closing the Lotus repository and building the executables.
+Next up is cloning the Lotus repository and building the executables.
 
 ### Build and install Lotus
 
@@ -311,10 +311,10 @@ Once all the dependencies are installed, you can build and install Lotus.
     You can use any tag listed on the [Lotus GitHub release page](https://github.com/filecoin-project/lotus/releases) to checkout to that specific release.
 
     :::tip
-    If you want to checkout to a network other than mainnet, take a look at the [Switching networks guide ->](./switch-networks.md)
+    If you want to checkout to a network other than mainnet, take a look at the [Switching networks guide →](./switch-networks.md)
     :::
 
-1. Pull-in the submodules:
+1. Update the project submodules:
 
     ```shell
     git submodule update --init --recursive
@@ -363,7 +363,7 @@ Once all the dependencies are installed, you can build and install Lotus.
 
 The `lotus` application runs as a daemon and a client to control and interact with that daemon. A daemon is a long-running program that is usually run in the background.
 
-When using _mainnet_, we recommend you start the daemon [syncing from a trusted state snapshot](chain.md#lightweight-snapshot). In any case, you can start the deamon with the following command:
+When using _mainnet_, we recommend you start the daemon [syncing from a trusted state snapshot](chain.md#lightweight-snapshot). In any case, you can start the daemon with the following command:
 
 ```sh
 lotus daemon
@@ -375,10 +375,10 @@ During the first run, Lotus will:
 - Download the necessary proof parameters. This is a few gigabytes of data that is downloaded once.
 - Import the snapshot (if specified) and start syncing the Lotus chain.
 
-The daemon will start producing lots of log messages right away. From this point, you will have to work on a new terminal and `lotus` commands will communicate with the running daemon.
+The daemon will start producing lots of log messages right away. From this point, you will have to work on a new terminal. Any`lotus` commands you run now will communicate with the running daemon.
 
 :::tip
-Do not be concerned by the number of warnings and sometimes errors showing in the logs. They are a normal part of the daemon lifecycle as it participates in the global distributed consensus network.
+Do not be concerned by the number of warnings and sometimes errors showing in the logs. They are a normal part of the daemon lifecycle as it participates in the globally distributed consensus network.
 :::
 
 If you used snapshots, subsequent daemon starts can proceed as normal without any options:
@@ -440,7 +440,7 @@ lotus net peers
 > 12D3KooWRTQoDUhWVZH9z5u9XmaFDvFw14YkcW7dSBFJ8CuzDHnu, [/ip4/67.212.85.202/tcp/10906]
 ```
 
-Or check the current version of lotus node as well as network. 
+Or check the current version of your Lotus node as well as network. 
 
 ```sh
 lotus version
@@ -459,3 +459,4 @@ lotus daemon stop
 ## When running with systemd do:
 # systemctl stop lotus-daemon
 ```
+
