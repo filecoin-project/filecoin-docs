@@ -45,7 +45,6 @@ Filecoin is designed for you to integrate into your own applications and service
 
 Get started by looking at the list of projects currently built on Filecoin. Build anything you think is missing! If you're unsure about something, you can join the chat and discussion forums to get help or feedback on your specific problem/idea. You can also apply for a Filecoin Developer Grant to support the development of your project.
 
-- [filecoin-shipyard](https://github.com/filecoin-shipyard/)
 - [Filecoin Dev Grants](https://filecoin.io/grants/)
 
 ### Protocol Design
