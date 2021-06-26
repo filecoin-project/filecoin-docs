@@ -293,7 +293,7 @@ Next up is cloning the Lotus repository and building the executables.
 
 ### Build and install Lotus
 
-The installation instructions are different depending on which CPU in your Mac:
+The installation instructions are different depending on which CPU is in your Mac:
 
 - [M1-based CPUs](#m1-based-cpus)
 - [Intel and AMD-based CPUs](#intel-and-amd-based-cpus)
