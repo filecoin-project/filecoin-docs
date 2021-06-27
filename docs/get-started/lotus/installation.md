@@ -92,31 +92,31 @@ Building Lotus requires some system dependencies, usually provided by your distr
 
 Arch:
 
-```bash
+```shell
 sudo pacman -Syu opencl-icd-loader gcc git bzr jq pkg-config opencl-icd-loader opencl-headers opencl-nvidia hwloc 
 ```
 
 Ubuntu/Debian:
 
-```bash
+```shell
 sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
 ```
 
 Fedora:
 
-```bash
+```shell
 sudo dnf -y install gcc make git bzr jq pkgconfig mesa-libOpenCL mesa-libOpenCL-devel opencl-headers ocl-icd ocl-icd-devel clang llvm wget hwloc libhwloc-dev
 ```
 
 OpenSUSE:
 
-```bash
+```shell
 sudo zypper in gcc git jq make libOpenCL1 opencl-headers ocl-icd-devel clang llvm hwloc && sudo ln -s /usr/lib64/libOpenCL.so.1 /usr/lib64/libOpenCL.so
 ```
 
 Amazon Linux 2:
 
-```bash
+```shell
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel hwloc-devel
 ```
 
@@ -132,7 +132,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 To build Lotus, you need a working installation of [Go 1.16.4 or higher](https://golang.org/dl/):
 
-```bash
+```shell
 wget -c https://golang.org/dl/go1.16.4.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
