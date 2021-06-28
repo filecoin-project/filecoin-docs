@@ -19,10 +19,10 @@
 // ```
 //
 div.with-output {
-    
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    margin-bottom: 0px;
+  
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
 
   pre[class*="language-"] {
     margin: 0 0;
@@ -40,6 +40,17 @@ div.with-output {
       margin: 0 0;
     }
 
+    // add a small "output" label at the top right of the output block
+    // the "&" parent selector puts the generated element inside the div. Without it, the ::before element gets placed inside the pre element below.
+    &:before {
+      content: 'output';
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: x-small;
+    }
+
+    // disable clipboard button
     .code-copy {
       visibility: hidden;
     }
