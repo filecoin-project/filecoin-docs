@@ -39,162 +39,163 @@ A lite-node lets your computer interact with the Filecoin network without having
 
 To install a Lotus lite-node on your computer, you must have the tools required to _build_ a Lotus binary from the GitHub repository.
 
-| [MacOS](#macos) | [Ubuntu](#ubuntu) |
-| --- | --- |
-
 Take a look at the [Get started page](../../get-started) to learn how to install Lotus on other operating systems. 
 
-### MacOS
+::::: tabs
 
-This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section ↓](#ubuntu)
+:::: tab macOS
 
-:::tip MacOS version
-You can install Lotus on MacOS 10.11 (El Capitan, 2015) or higher.
-:::
+  :::tip MacOS version
+  You can install Lotus on MacOS 10.11 (El Capitan, 2015) or higher.
+  :::
 
-#### Dependencies for MacOS
+  #### Dependencies for MacOS
 
-Follow these steps to install the project dependencies specifically for MacOS:
+  Follow these steps to install the project dependencies specifically for MacOS:
 
-1. Check if you have Xcode installed:
+  1. Check if you have Xcode installed:
 
-    ```shell
-    xcode-select --version
+      ```shell
+      xcode-select --version
 
-    > xcode-select version 2384.
-    ```
+      > xcode-select version 2384.
+      ```
 
-    Any version above 2339 will work.
+      Any version above 2339 will work.
 
-    :::warning
-    If the above command returns an error, you likely don't have Xcode installed. Run the following command to install Xcode:
+      :::warning
+      If the above command returns an error, you likely don't have Xcode installed. Run the following command to install Xcode:
 
-    ```shell
-    sudo rm -rf /Library/Developer/CommandLineTools 
-    xcode-select --install
+      ```shell
+      sudo rm -rf /Library/Developer/CommandLineTools 
+      xcode-select --install
 
-    > Password:
-    > xcode-select: note: install requested for command line developer tools
-    ```
-    :::
+      > Password:
+      > xcode-select: note: install requested for command line developer tools
+      ```
+      :::
 
-1. Check if you have [Homebrew](https://brew.sh/) installed:
+  1. Check if you have [Homebrew](https://brew.sh/) installed:
 
-    ```shell
-    brew --version 
+      ```shell
+      brew --version 
 
-    > Homebrew 3.0.11
-    ```
+      > Homebrew 3.0.11
+      ```
 
-    Any version of Homebrew will work, but version 3.0.0 and above is preferred.
+      Any version of Homebrew will work, but version 3.0.0 and above is preferred.
 
-    :::warning
-    If the above command returns an error, you likely don't have Homebrew installed. Run the following command to install Homebrew:
+      :::warning
+      If the above command returns an error, you likely don't have Homebrew installed. Run the following command to install Homebrew:
 
-    ```shell
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
+      ```shell
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      ```
 
-    If you run into errors installing Homebrew, there may be something wrong with your macOS installation. Check out the [Homebrew documentation](https://brew.sh/) for more information on how you can it installed.
-    :::
+      If you run into errors installing Homebrew, there may be something wrong with your macOS installation. Check out the [Homebrew documentation](https://brew.sh/) for more information on how you can it installed.
+      :::
 
-1. Use Homebrew to install the following packages:
+  1. Use Homebrew to install the following packages:
 
-    ```shell
-    brew install go bzr jq pkg-config rustup hwloc
-    ```
+      ```shell
+      brew install go bzr jq pkg-config rustup hwloc
+      ```
 
-Next up, you'll install a Lotus lite-node on your computer.
+  Next up, you'll install a Lotus lite-node on your computer.
 
-#### Install Lotus
+  #### Install Lotus
 
-The installation steps are different depending on which CPU your Mac is using:
+  The installation steps are different depending on which CPU your Mac is using.
+  If you are unsure which CPU your Mac is using, check out the [troubleshooting steps](./troubleshooting/#which-cpu-does-my-mac-have).
 
-- [AMD and Intel-based Macs](#amd-and-intel-based-macs)
-- [M1-based Macs](#m1-based-macs)
+  :::: tabs
+  ::: tab AMD and Intel-based Macs
 
-If you are unsure which CPU your Mac is using, check out the [troubleshooting steps](./troubleshooting/#which-cpu-does-my-mac-have).
+  ##### AMD and Intel-based Macs
 
-##### AMD and Intel-based Macs
+  1. Download the Lotus repository from GitHub:
 
-1. Download the Lotus repository from GitHub:
+      ```shell
+      git clone https://github.com/filecoin-project/lotus.git
+      cd lotus
+      ```
 
-    ```shell
-    git clone https://github.com/filecoin-project/lotus.git
-    cd lotus
-    ```
+  1. Build the `lotus` binary, but don't run anything just yet:
 
-1. Build the `lotus` binary, but don't run anything just yet:
+      ```shell
+      make clean && make all
+      sudo make install
+      ```
 
-    ```shell
-    make clean && make all
-    sudo make install
-    ```
+      If you run into errors here, it may be because your computer did not install some dependencies properly. Check out the [Troubleshooting](troubleshooting) section, or see the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) for more help.
 
-    If you run into errors here, it may be because your computer did not install some dependencies properly. Check out the [Troubleshooting](troubleshooting) section, or see the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) for more help.
+  1. You should now have the `lotus` executable ready to run on your computer. 
 
-1. You should now have the `lotus` executable ready to run on your computer. 
+      ```shell
+      lotus --version
 
-    ```shell
-    lotus --version
+      > lotus version 1.7.0
+      ```
 
-    > lotus version 1.7.0
-    ```
+  [Head over to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
 
-[Head over to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+  :::
+  ::: tab M1-based Macs
 
-##### M1-based Macs
+  ##### M1-based Macs
 
-Because of the novel architecture of the M1-based Mac computers, you must set some specific environment variables before creating the `lotus` executable.
+  Because of the novel architecture of the M1-based Mac computers, you must set some specific environment variables before creating the `lotus` executable.
 
-1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
+  1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
 
-    ```shell   
-    git clone https://github.com/filecoin-project/lotus
-    cd lotus
-    ```
+      ```shell   
+      git clone https://github.com/filecoin-project/lotus
+      cd lotus
+      ```
 
-1. Pull-in the submodules:
+  1. Pull-in the submodules:
 
-    ```shell
-    git submodule update --init --recursive
-    ```
+      ```shell
+      git submodule update --init --recursive
+      ```
 
-1. Create necessary environment variable to allow Lotus to run on ARM architecture:
+  1. Create necessary environment variable to allow Lotus to run on ARM architecture:
 
-    ```shell
-    export GOARCH=arm64
-    export CGO_ENABLED=1
-    export LIBRARY_PATH=/opt/homebrew/lib
-    ```
+      ```shell
+      export GOARCH=arm64
+      export CGO_ENABLED=1
+      export LIBRARY_PATH=/opt/homebrew/lib
+      ```
 
-1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
+  1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
 
-    ```shell
-    cd extern/filecoin-ffi
-    git fetch -a
-    git checkout m1-portable
-    ```
+      ```shell
+      cd extern/filecoin-ffi
+      git fetch -a
+      git checkout m1-portable
+      ```
 
-1. Create the `filecoin-ffi` executables:
+  1. Create the `filecoin-ffi` executables:
 
-    ```shell
-    make clean
-    make
-    ```
+      ```shell
+      make clean
+      make
+      ```
 
-1. Move back to the root Lotus directory and create the `lotus` daemon:
+  1. Move back to the root Lotus directory and create the `lotus` daemon:
 
-    ```shell
-    cd ../../
-    make lotus
-    ```
+      ```shell
+      cd ../../
+      make lotus
+      ```
 
-[Head down to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+  [Head down to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+  
+  :::
 
-### Ubuntu
+::::
 
-This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section ↑](#macos).
+:::: tab Ubuntu
 
 1. Update your local `apt` repository:
 
@@ -266,6 +267,9 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+
+
+:::::
 
 ## Run a Lotus lite-node 
 
