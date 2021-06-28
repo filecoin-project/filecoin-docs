@@ -58,11 +58,11 @@ Follow these steps to install the project dependencies specifically for MacOS:
 
 1. Check if you have Xcode installed:
 
-    ```shell example-input
+    ```shell with-output
     xcode-select --version
     ```
 
-    ```text example-output
+    ```
     xcode-select version 2384.
     ```
 
@@ -71,12 +71,12 @@ Follow these steps to install the project dependencies specifically for MacOS:
     :::: warning
     If the above command returns an error, you likely don't have Xcode installed. Run the following command to install Xcode:
 
-    ```shell example-input
+    ```shell with-output
     sudo rm -rf /Library/Developer/CommandLineTools 
     xcode-select --install
     ```
 
-    ```text example-output
+    ```
     Password:
     xcode-select: note: install requested for command line developer tools
     ```
@@ -84,11 +84,11 @@ Follow these steps to install the project dependencies specifically for MacOS:
 
 1. Check if you have [Homebrew](https://brew.sh/) installed:
 
-    ```shell example-input
+    ```shell with-output
     brew --version 
     ```
 
-    ```text example-output
+    ```
     Homebrew 3.0.11
     ```
 
@@ -141,11 +141,11 @@ If you are unsure which CPU your Mac is using, check out the [troubleshooting st
 
 1. You should now have the `lotus` executable ready to run on your computer. 
 
-    ```shell example-input
+    ```shell with-output
     lotus --version
     ```
 
-    ```text example-output
+    ```
     lotus version 1.7.0
     ```
 
@@ -243,11 +243,11 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 
 1. Build the `lotus` executable:
 
-    ```shell example-input
+    ```shell with-output
     make clean all
     ```
 
-    ```text example-output
+    ```
     rm -rf  build/.filecoin-install build/.update-modules  lotus lotus-miner lotus-worker lotus-shed lotus-gateway lotus-seed lotus-pond lotus-townhall lotus-fountain lotus-chainwatch lotus-bench lotus-stats lotus-pcr lotus-health lotus-wallet lotus-keygen testground
     make -C extern/filecoin-ffi/ clean
     make[1]: Entering directory '/root/lotus/extern/filecoin-ffi'
@@ -257,11 +257,11 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 
 1. Install Lotus:
 
-    ```shell example-input
+    ```shell with-output
     sudo make install
     ```
 
-    ```text example-output
+    ```
     bash: go: command not found
     expr: syntax error: unexpected argument ‘1015005’
     install -C ./lotus /usr/local/bin/lotus
@@ -271,11 +271,11 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 
 1. You should now have the `lotus` executable ready to run on your computer. 
 
-    ```shell example-input
+    ```shell with-output
     lotus --version
     ```
 
-    ```text example-output
+    ```
     lotus version 1.7.0
     ```
 
@@ -291,11 +291,11 @@ Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol La
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address: 
 
-    ```shell example-input
+    ```shell with-output
     FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
     ```
 
-    ```text example-output
+    ```
     2021-04-10T13:34:07.170-0400  INFO    main    lotus/daemon.go:214 lotus repo: /home/johnny/.lotus
     ...
     ```
@@ -316,11 +316,11 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 1. Open a new terminal window and create an address using the `lotus wallet new` command:
 
-    ```shell example-input
+    ```shell with-output
     lotus wallet new 
     ```
 
-    ```text example-output
+    ```
     f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi
     ```
 
@@ -336,11 +336,11 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 
 1. List the addresses associated with your Lotus node:
 
-    ```shell example-input
+    ```shell with-output
     lotus wallet list
     ```
 
-    ```text example-output
+    ```
     Address                                    Balance  Nonce  Default  
     f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq  0 FIL    0      X  
     ```

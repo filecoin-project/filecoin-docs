@@ -1,0 +1,50 @@
+
+// Usage: apply the "with-output" class to a markdown fenced code block containing some shell input. 
+// The following code block will be treated as the "output" block, and it will be styled to be joined visually with the input block.
+//
+// example markdown:
+// ```shell with-output
+// whoami
+// ```
+//
+// ```
+// root
+// ```
+//
+// The second code block (containing "root") is automatically picked up as the output block for the preceeding `with-output` block.
+// Note that your markdown needs to have both the language for syntax highlighting (e.g. "shell"), and the "with-output" class. This won't work:
+// 
+// ```with-output 
+// Vuepress complains that with-output isn't a known language.
+// ```
+//
+div.with-output {
+    
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-bottom: 0px;
+
+  pre[class*="language-"] {
+    margin: 0 0;
+  }
+
+  // apply "output" styles to the first sibling div with class "language-*" following the "input" div
+  + div[class*="language-"] {
+    
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    margin-top: 0px;
+
+    pre[class*="language-"] {
+      background: lighten($codeBgColor, 10%);
+      margin: 0 0;
+    }
+
+    .code-copy {
+      visibility: hidden;
+    }
+  }
+}
+
+
+
