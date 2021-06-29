@@ -30,14 +30,14 @@ These are the minimal requirements to run a Lotus node. [Hardware requirements f
 
 The following instructions are specific to Linux installations. Head to the [macOS](#macos) section if you want to install Lotus on a Mac.
 
-Users can install Lotus on Linux using the:
+There are several ways to install Lotus on Linux:
 
 + [Snap package manager](#snap-package-manager)
 + [AppImages](#appimage)
-+ or by [building from source](#build-from-source).
++ [Building from source](#building-from-source).
 
 :::warning Miners should build from source
-Building Lotus from source allows you to strictly configure how Lotus runs and how it communicates with its dependencies. Miners looking to improve their system efficiency should [install Lotus by building from source](#build-from-source).
+Building Lotus from source allows you to strictly configure how Lotus runs and how it communicates with its dependencies. Miners looking to improve their system efficiency should [install Lotus by building from source](#building-from-source).
 :::
 
 ### Snap package manager
@@ -80,7 +80,9 @@ You can find out more about this Snap [over at Snapcraft.io](https://snapcraft.i
     ./lotus-v1.10.0_linx-amd64.appimage
     ```
 
-### Build from source
+### Building from source
+
+You can build the Lotus executables from source by following these steps.
 
 #### Software dependencies
 
@@ -253,9 +255,42 @@ One example is that logs are redirected to files in `/var/log/lotus` by default 
 
 These instructions are specific to macOS. You can install Lotus on macOS 10.11 El Capitan or higher. If you are installing Lotus on a Linux distribution, head over to the [Linux section](#linux).
 
-### Software dependencies
+There are several ways to install Lotus on macOS:
 
-#### XCode Command Line Tools
++ [Install using Homebrew](#install-using-homebrew)
++ [Build from source](#build-from-source).
+
+:::warning Miners should build from source
+Building Lotus from source allows you to strictly configure how Lotus runs and how it communicates with its dependencies. Miners looking to improve their system efficiency should [install Lotus by building from source](#build-from-source).
+:::
+
+### Install with Homebrew
+
+You can quickly install Lotus using Homebrew on macOS. 
+
+1. Add the `filecoin-project/lotus` tap:
+
+   ```shell
+   brew tap filecoin-project/lotus
+   ```
+
+1. Install Lotus:
+
+    ```shell
+    brew install lotus
+    ```
+
+1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
+
+### Build from source
+
+You can build the Lotus executables from source by following these steps.
+
+#### Software dependencies
+
+You must have XCode and Homebrew installed to build Lotus from source.
+
+##### XCode Command Line Tools
 
 Lotus requires that X-Code CLI tools be installed before building the Lotus binaries.
 
@@ -279,7 +314,7 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
 Next up is installing Lotus' dependencies using Homebrew.
 
-#### Homebrew
+##### Homebrew
 
 We recommend that macOS users use [Homebrew](https://brew.sh) to install each of the necessary packages.
 
@@ -291,14 +326,14 @@ We recommend that macOS users use [Homebrew](https://brew.sh) to install each of
 
 Next up is cloning the Lotus repository and building the executables.
 
-### Build and install Lotus
+#### Build and install Lotus
 
 The installation instructions are different depending on which CPU is in your Mac:
 
 - [M1-based CPUs](#m1-based-cpus)
 - [Intel and AMD-based CPUs](#intel-and-amd-based-cpus)
 
-#### M1-based CPUs 
+##### M1-based CPUs 
 
 :::warning
 These instructions are for installing Lotus on an M1-based Mac. If you have an Intel or AMD-based CPU, use the [Intel and AMD-based CPU instructions ↓](#intel-and-amd-based-cpus)
@@ -368,7 +403,7 @@ These instructions are for installing Lotus on an M1-based Mac. If you have an I
 
 1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
 
-#### Intel and AMD-based CPUs
+##### Intel and AMD-based CPUs
 
 :::warning
 These instructions are for installing Lotus on an Intel or AMD-based Mac. If you have an M1-based CPU, use the [M1-based CPU instructions ↑](#m1-based-cpus)
