@@ -257,8 +257,8 @@ These instructions are specific to macOS. You can install Lotus on macOS 10.11 E
 
 There are several ways to install Lotus on macOS:
 
-+ [Install using Homebrew](#install-with-homebrew)
-+ [Build from source](#build-from-source).
+- [Install with Homebrew](#install-with-homebrew).
+- [Build from source](#build-from-source).
 
 :::warning Miners should build from source
 Building Lotus from source allows you to strictly configure how Lotus runs and how it communicates with its dependencies. Miners looking to improve their system efficiency should [install Lotus by building from source](#build-from-source).
