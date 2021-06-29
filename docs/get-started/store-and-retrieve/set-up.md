@@ -81,7 +81,7 @@ There are two simple ways to install Lotus on Ubuntu:
     sudo apt update -y && sudo apt upgrade -y
     ```
 
-1. Download the latest `AppImage` file from the Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/):
+1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/):
 
     ```shell
     wget https://github.com/filecoin-project/lotus/releases/download/v1.10.0/Lotus-v1.10.0-x86_64.AppImage
