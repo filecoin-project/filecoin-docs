@@ -331,6 +331,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [MathWallet](https://mathwallet.org/)
 - [Cobo](https://cobo.com/)
 - [FilWallet.ai](https://filwallet.ai/) - by the team behind Filscan.io
+- [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
 
 ### Wallet tools for developers
 
@@ -344,6 +345,9 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
   - For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on Github.
+- [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - a pure Typescript / Javascript library for creating, signing and broadcasting messages to send FIL, and interact with Filecoin's built-in actors (like Payment Channel and Multisig), among other utility functions.
+  - Also available on npm at [@blitslabs/filecoin-js-signer](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
+  - Currently used by the Filecoin Loans project for its mobile wallet (written in React Native) and creating Payment Channels.
 
 ### Retrieval Market resources (WIP experiments)
 

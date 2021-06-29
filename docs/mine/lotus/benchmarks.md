@@ -12,7 +12,7 @@ breadcrumb: 'Benchmarks'
 
 1. You must have the Lotus repository on your computer. If you do not have an existing copy of the repository, [clone it from GitHub](https://github.com/filecoin-project/lotus/):
 
-   ```bash
+   ```shell
    git clone https://github.com/filecoin-project/lotus.git ~/lotus
 
    > Cloning into '/root/lotus'...
@@ -23,7 +23,7 @@ breadcrumb: 'Benchmarks'
 
 1. The `lotus` binary must be built and within the `~/lotus` repository folder. If you just cloned the repository or have misplaced the `lotus` binary, build the project:
 
-   ```bash
+   ```shell
    cd ~/lotus
    make clean all && make install
 
@@ -38,7 +38,7 @@ breadcrumb: 'Benchmarks'
 
 1. Call `make lotus-bench` to build the Lotus benchmark binary:
 
-   ```bash
+   ```shell
    make lotus-bench
 
    > rm -f lotus-bench
@@ -55,7 +55,7 @@ breadcrumb: 'Benchmarks'
 
 Use the self-documenting feature of the tool to explore the different commands.
 
-```bash
+```shell
     ./lotus-bench --help
 
     > NAME:
@@ -84,7 +84,7 @@ Use the self-documenting feature of the tool to explore the different commands.
 
 Benchmark a proof computation using `lotus-bench prove [command options] [arguments...]`. For example:
 
-```bash
+```shell
 ./lotus-bench prove
 ```
 
@@ -100,7 +100,7 @@ Available options:
 
 Benchmark a sealing computation using `lotus-bench sealing [command options] [arguments...]`. For example:
 
-```bash
+```shell
 ./lotus-bench sealing
 
 > 2020-11-23T18:05:22.028Z        INFO    lotus-bench     lotus-bench/main.go:78  Starting lotus-bench
@@ -148,7 +148,7 @@ Available options:
 
 Benchmark chain import and validation using `lotus-bench import command [command options] [arguments...]`. For example:
 
-```bash
+```shell
 ./lotus-bench import analyze import.car
 ```
 

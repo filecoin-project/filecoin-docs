@@ -76,13 +76,13 @@ Lotus is the main implementation of Filecoin. As such, it is frequently referenc
 ````markdown
 1. Start the Lotus daemon:
 
-   ```bash
+   ```shell
    lotus daemon
    ```
 
 2. After your Lotus daemon has been running for a few minutes, use `lotus` to check the number of other peers that it is connected to in the Filecoin network:
 
-   ```bash
+   ```shell
    lotus net peers
    ```
 ````
@@ -213,7 +213,7 @@ Tag code blocks with the syntax of the core they are presenting:
 Write command-line inputs without any other characters. Precede outputs from the command line with a greater-than sign `>`. Include an empty line between the input and output of a command-line example:
 
 ````markdown
-    ```bash
+    ```shell
     lotus-miner info
 
     > ~/lotus> lotus-miner info
@@ -231,7 +231,7 @@ Write command-line inputs without any other characters. Precede outputs from the
 Command-line examples can be truncated with three periods `...` to remove extraneous information:
 
 ````markdown
-    ```bash
+    ```shell
     lotus-miner info
 
     > ~/lotus> lotus-miner info
@@ -292,7 +292,7 @@ Use the dollar sign `$` to enter debug-mode.
 
 When instructing the reader to use a keyboard shortcut, surround individual keys in code tags:
 
-```bash
+```shell
 Press `ctrl` + `c` to copy the highlighted text.
 ```
 

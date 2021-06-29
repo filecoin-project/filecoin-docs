@@ -63,14 +63,14 @@ Here is the process for creating a fork of an existing piece of Filecoin documen
 2. Select **Fork** to create a copy of the project.
 3. Clone your copy of the project down to your local machine:
 
-   ```bash
+   ```shell
    git clone https://github.com/YOUR_USERNAME/filecoin-docs.git
    ```
 
 4. Make your changes locally.
 5. Once all your changes are complete, make sure to push everything back to GitHub:
 
-   ```bash
+   ```shell
    git add .
    git commit -m "Fixed a broken URL, issue #123."
    git push

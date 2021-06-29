@@ -43,7 +43,7 @@ To make things a bit easier to manage, let's create a new directory for our proj
 
 1. To kick things off, create a new project directory and move into it:
 
-   ```bash
+   ```shell
    mkdir ~/Code/filecoin-wallet-checker -p
    cd ~/Code/filecoin-wallet-checker
    ```
@@ -66,7 +66,7 @@ To make things a bit easier to manage, let's create a new directory for our proj
 
 1. Add the `request` package to this project:
 
-```bash
+```shell
 npm install request
 
 > ...
@@ -207,7 +207,7 @@ We've got some basic functionality in our script, so we should run everything to
 
 1. In your project directory, call the script using `node`:
 
-```bash
+```shell
 node index.js
 
 > Post successful: response:  {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceamdit67mnlyozufeaptmhmti6dv ...
@@ -293,7 +293,7 @@ Instead of asking for the chain head information, let's see if a given string is
 
 1. Let's rerun the script to see what response we get:
 
-   ```bash
+   ```shell
    node index.js
 
    > Response:  {"jsonrpc":"2.0","result":"f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi","id":0}
@@ -301,7 +301,7 @@ Instead of asking for the chain head information, let's see if a given string is
 
    Great! The fact that we got our address back in the `result` field means that our address is valid. If we had sent over an invalid address, we'd get something like this:
 
-   ```bash
+   ```shell
    Response:  {"jsonrpc":"2.0","id":0,"error":{"code":1,"message":"invalid address payload"}}
    ```
 
@@ -333,7 +333,7 @@ Our script checks that a given string is a valid Filecoin address but doesn't do
 
 1. The Infura API will let us know the balance:
 
-   ```bash
+   ```shell
    node index.js
 
    > ADDRESS:  {"jsonrpc":"2.0","result":"7182015146934547358774","id":0}

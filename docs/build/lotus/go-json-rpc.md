@@ -12,7 +12,7 @@ To use the Lotus Go client, the [go-jsonrpc](https://github.com/filecoin-project
 
 First, you can import the necessary Go module to resolve the dependency:
 
-```bash
+```shell
 $ go get github.com/filecoin-project/go-jsonrpc
 ```
 

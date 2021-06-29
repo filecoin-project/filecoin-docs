@@ -1,6 +1,6 @@
 ---
 title: 'Lotus: switch networks'
-description: There may be times, particularly when testing, where you wish to switch to a different Filecoin network or need to reconnect to a testing network after a network reset. This guide will show you how to switch between various Filecoin networks with Lotus.
+description: This guide will show you how to switch between various Filecoin networks with Lotus, depending on your testing or development needs.
 breadcrumb: Switch networks
 ---
 
@@ -8,7 +8,15 @@ breadcrumb: Switch networks
 
 {{ $frontmatter.description }}
 
-As we mentioned in the [installation guide](installation.md), Lotus is compiled to operate on a single network, and the information in the configuration folder corresponds to that network.
+As we mentioned in the [installation guide](installation.md), Lotus is compiled to operate on a single network, and the information in the configuration folder corresponds to that network. 
+
++ Local devnet - [You can run a local devnet](https://docs.filecoin.io/build/local-devnet/#manual-set-up)
++ Testnets
+  + [Calibnet](https://network.filecoin.io/#calibration)
+  + [Nerpanet](https://network.filecoin.io/#nerpa)
++ [Mainnet](https://network.filecoin.io/#mainnet)
+
+You can choose one of the following methods to switch to a different network.
 
 ## Clean, rebuild, reinstall
 
@@ -48,4 +56,3 @@ To change your `$LOTUS_PATH` run: `export LOTUS_PATH=~/.new-lotus-path`.
 If you wish to backup Lotus data, copy the `~/.lotus` (or `$LOTUS_PATH`) folder somewhere. This will take quite a while if the Lotus node has synced the whole network.
 
 Another alternative is to [export your wallets](send-and-receive-fil.md) and also [export the chain](chain.md) for later re-import on a newly installed Lotus Node.
-
