@@ -68,7 +68,7 @@ You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebr
 
 This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section ↑](#macos).
 
-You can install Lotus on Ubuntu using either [AppImages](#appimages) or [Snap](#snap).
+You can install Lotus on Ubuntu using either an [AppImage](#appimage) or [Snap](#snap).
 
 :::warning Requirements 
 You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
