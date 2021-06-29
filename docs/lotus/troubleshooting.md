@@ -1,7 +1,7 @@
 ---
-title: 'Lotus: node troubleshooting'
+title: 'Troubleshooting'
 description: 'This page offers some troubleshooting advice for Lotus nodes by listing some of the most common errors that users can come accross.'
-breadcrumb: 'node troubleshooting'
+breadcrumb: 'Troubleshooting'
 ---
 
 # # {{ $frontmatter.title }}
@@ -11,8 +11,6 @@ breadcrumb: 'node troubleshooting'
 ::: callout
 **Have you successfully overcome other Lotus Node-related problems?** Please contribute to this page by editing it with the link at the bottom!
 :::
-
-[[TOC]]
 
 ## Build errors
 

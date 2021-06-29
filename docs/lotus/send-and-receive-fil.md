@@ -1,5 +1,5 @@
 ---
-title: 'Lotus: send and receive FIL'
+title: 'Send and receive FIL'
 description: 'This guide will show you how to create and manage a Lotus wallet and how to use it to send some Filecoin to a different address. Each node can have multiple addresses.'
 breadcrumb: 'Send and receive ⨎'
 ---
@@ -9,8 +9,6 @@ breadcrumb: 'Send and receive ⨎'
 {{ $frontmatter.description }}
 
 To receive and send FIL with Lotus, you will need to have a [Lotus node installed and running](installation.md).
-
-[[TOC]]
 
 ## About Wallet Addresses
 

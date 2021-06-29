@@ -1,12 +1,12 @@
 ---
-title: 'Lotus: install and setup'
+title: 'Install'
 description: 'This guide covers how to install the Lotus applications and launch a Lotus Node.'
-breadcrumb: 'Install and setup'
+breadcrumb: 'Install'
 ---
 
-# {{ $frontmatter.title }}
+# Install
 
-{{ $frontmatter.description }} This guide covers installing `lotus`, `lotus-miner`, and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](/mine/lotus/).
+This guide covers installing `lotus`, `lotus-miner`, and `lotus-worker` to your computer, and then runs through setting up a Lotus node. For information on running the miner, check the [Lotus Miner documentation](/mine/lotus/).
 
 ## Running in the cloud
 

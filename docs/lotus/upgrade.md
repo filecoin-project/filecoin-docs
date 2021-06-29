@@ -1,7 +1,7 @@
 ---
-title: 'Lotus: Upgrades'
+title: 'Upgrade'
 description: 'This guide will show you how to safely upgrade a Lotus node to a newer version.'
-breadcrumb: 'Upgrades'
+breadcrumb: 'Upgrade'
 ---
 
 # {{ $frontmatter.title }}

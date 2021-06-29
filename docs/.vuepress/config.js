@@ -64,26 +64,20 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: {
+          '/lotus/': [
+              'installation', 
+              'configuration-and-advanced-usage',
+              'switch-networks',
+              'chain',
+              'send-and-receive-fil',
+              'multisig',
+              'ledger',
+              'upgrade',
+            'running-lotus-in-china',
+              'running-in-the-cloud',
+              'troubleshooting',
+          ],
           '/get-started/': [
-            {
-              title: 'Lotus',
-              path: '/get-started/lotus/',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: [
-                ['lotus/running-in-the-cloud', 'Running in the Cloud'],
-                ['lotus/installation', 'Local Installation'],
-                ['lotus/switch-networks', 'Switch networks'],
-                ['lotus/chain', 'Chain management'],
-                ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
-                ['lotus/multisig', 'Multi-signature wallets'],
-                ['lotus/ledger', 'Ledger wallet'],
-                ['lotus/upgrades', 'Upgrades'],
-                ['lotus/tips-running-in-china', 'Tips when running in China'],
-                ['lotus/configuration-and-advanced-usage', 'Advanced options'],
-                ['lotus/troubleshooting', 'Troubleshooting']
-              ]
-            },
             {
               title: 'Store and retrieve',
               path: '/get-started/store-and-retrieve/',
@@ -102,7 +96,6 @@ module.exports = {
               'Protoschool tutorial'
             ],
           ],
-
           '/store/': [
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             'slate',

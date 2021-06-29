@@ -1,7 +1,7 @@
 ---
-title: 'Lotus: tips when running in China'
+title: 'Running Lotus in China'
 description: 'This guide provides a few tips for users in China to get around some of the bandwidth issues or slowness they can suffer when building and running Lotus.'
-breadcrumb: 'Tips when running in China'
+breadcrumb: 'Running Lotus in China'
 ---
 
 # {{ $frontmatter.title }}

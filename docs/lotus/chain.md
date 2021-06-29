@@ -1,5 +1,5 @@
 ---
-title: 'Lotus: chain management'
+title: 'Chain management'
 description: "The Lotus chain carries the information necessary to compute the current state of the Filecoin network. This guide explains how to manage several aspects of the chain, including how to decrease your node's sync-time by loading the chain from a snapshot."
 breadcrumb: 'Chain management'
 ---

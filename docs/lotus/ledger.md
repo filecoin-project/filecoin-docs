@@ -1,7 +1,7 @@
 ---
 title: 'Ledger wallet support'
 description: 'Lotus supports using a Ledger hardware wallet as a backend for FIL transfers.'
-breadcrumb: 'Ledger wallet'
+breadcrumb: 'Ledger wallet support'
 ---
 
 # {{ $frontmatter.title }}

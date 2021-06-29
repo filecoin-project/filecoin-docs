@@ -1,14 +1,12 @@
 ---
-title: 'Lotus: configuration and advanced usage'
+title: 'Configuration'
 description: 'This guide documents environment variables, configuration and other advanced features in the Lotus Node.'
 breadcrumb: 'Configuration and advanced usage'
 ---
 
-# {{ $frontmatter.title }}
+# Configuration 
 
 {{ $frontmatter.description }}
-
-[[TOC]]
 
 ## Configuration
 
