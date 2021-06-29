@@ -1,108 +1,114 @@
 ---
 title: Retrieve data
-description: The final piece of this tutorial is downloading data from the Filecoin network. This section covers creating a retrieval deal with a storage provider and downloading the data through your local Lotus lite-node.
+description: Learn how to get data out of the Filecoin network using Lotus. The final piece of this tutorial is downloading data from the Filecoin network. This section covers creating a retrieval deal with a storage provider and downloading the data through your local Lotus lite-node. 
 ---
 
 # Retrieve data
 
-The final piece of this tutorial is downloading data from the Filecoin network. This section covers creating a retrieval deal with a storage provider and downloading the data through your local Lotus lite-node.
+In the previous step, you stored some data on the Filecoin network. It takes up to 24 hours for a storage provider to _seal_ the data. If it's been more than 24 hours since you completed the last section, great! If not, don't worry; you can still follow this page to retrieve some example data that's already on the Filecoin network. 
 
-## Collect deal information
+## Check address balance
 
-You need two pieces of information to retrieve data from a miner:
+Before you can retrieve data from a storage provider, you need to check that you have enough FIL to pay for the retrieval.
 
-- The _Data CID_, sometimes called the _label_. This is the content identifier for all the data stored in a single deal.
-- The _Provider ID_ with whom you made to original deal to store the data. This is sometimes called the _Miner ID_. 
+1. List all the addresses on this Lotus lite-node:
 
-If you are still connected to the same Lotus node that originally made the deal, then this process is very simple. Lotus nodes keep a log of all the deals it has made.
+    ```shell
+    lotus wallet list
+    ```
 
-:::warning Working from a different Lotus node
-If you need to find deal information about a particular address, but you don't have access to the Lotus node that originally made the deal, then the steps are slightly different. The easiest way to get the above information is to use an external tool like [filfox.io](https://filfox.io). Take a look at the [retrieving data section](../../store/lotus/retrieve-data/) for more information.
+    Lotus will output something like:
+
+    ```shell
+    > Address                                    Balance  Nonce  Default  
+    > f16mwizoeloamhp4dea4uy367mlihddw2mflnb5vy  10 FIL   0      X  
+    ```
+
+    Any balance above 0.1 FIL is enough to retrieve the data we are requesting in this tutorial. 
+
+:::warning Low or no balance
+If you do not have enough FIL, you need to transfer some FIL to this account. You can either do this by using a cryptocurrency exchange or having a friend send you FIL. The address `f1...` listed when you run `lotus wallet list` is your public address; use this when requesting money from an exchange or your friend.
+
+Check out the [Managing assets section](../../about-filecoin/managing-assets.md) for information on [withdrawing FIL from an exchange](../../about-filecoin/managing-assets.md#exchanges).
 :::
 
-To get the information you need:
+## Get the deal information
 
-1. List the deals that this node has made:
+Before you can send a retrieval request, you need to collect some information to structure the command. You will need:
 
-    ```shell
-    lotus client list-deals --verbose
-
-    > Created          DealCid                                                      DealId  Provider  State                     On Chain?  Slashed?  PieceCID                                                          Size       Price           Duration  TransferChannelID                                                                                                              TransferStatus  Verified  Message
-    > May 11 22:54:45  bafyreigbt6ymhierghhjba6htch6immn6qnnrcku3z7masnmhgm5ibdiya  0       f0100 StorageDealFundsReserved  N          N         baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi  7.938 GiB  0 FIL           522077
-    ```
-
-    Lotus spits out a lot of information here. If you find it hard to read, try adding `| less -S` onto the end of the command. This will force the terminal to display the output horizontally. In this view, you can use the arrow keys to scroll left and right. Press `q` to exit this view.
-
-1. Make a note of the `DealCid` and the `Provider`. In the example above, the `DealCid` is `baftyr...` and the `Provider` is `f01001`. 
-
-## Check that your upload has finished
-
-Before you can retrieve data from a storage provider, that storage provider needs to have that data in the first place. In normal circumstances, you'd be retrieving your data days or weeks after it was sent to a storage provider. However, we've been running through the process at lightning speed throughout this tutorial. So with that in mind, let's check to see if your data has finished transferring to the storage provider.
-
-1. Use `lotus client list-transfers` to view any pending transfers:
-
-    ```shell
-    lotus client list-transfers
-
-    > Sending Channels
-    > 
-    > 
-    > ... 
-    ```
-
-    If there is no information in the **Sending** or **Receiving** channels, then you're all set! [Move onto the next step ↓](#send-a-retrieval-request). 
-
-1. If you have transfers still pending, you may see something like this:
-
-    ```shell
-    lotus client list-transfers
-
-    > Sending Channels
-    > 
-    > ID                   Status   Sending To   Root Cid     Initiated?  Transferred  Voucher                                   
-    > 1620782601911586915  Ongoing  ...KPFTTwY7  ...zyd3kapm  Y           3.301GiB     ...bqhcidjmajbelhlxfqry3d7qlu3tvar45a"}}  
-    > ...
-    ```
-
-You cannot retrieve data from a storage provider that has not yet finished receiving your initial data upload. To complete this tutorial, you can either wait for the upload from your Lotus node to complete or use the following information to create a retrieval deal for a file we uploaded to a miner.
-
-| Provider ID | Data CID |
+| Variable | Description |
 | --- | --- |
-| `f02147` | `baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi` | 
+| Miner ID | This is the ID of the storage provider where the data is stored. |
+| Data CID | This variable is also sometimes called the _Payload CID_. |
+| Address | The public address that was initially used to create the storage deal. |
 
-The data listed above is a 5GB dummy file made up of random data from `/dev/random` on a Ubuntu machine. 
+We're going to gather this information now.
+
+1. Copy this **address** to your clipboard: `f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq`.
+
+    :::tip Using a different address
+    If you want to retrieve data that **you stored** you can use that **address** in place of the one we're using in this tutorial. If you'd like to use the **address** on your local Lotus note, run `lotus wallet list` and copy it to your clipboard. 
+
+    Remember, you will not be able to retrieve data stored less than 24 hours ago.
+    :::
+
+1. Go to [filecoin.tools](https://filecoin.tools).
+1. Paste the **address** in the search bar and press `ENTER` to search for deals made by that **address**:
+
+    ![Filecoin.tools showing all the deals made by a single address.](./images/filecoin-tools-search-address.png)
+
+    :::warning Using a different address
+    The default **address** supplied in this tutorial `f16wc2ees...` has only submitted one storage deal, so you'll only see one row in [filecoin.tools](https://filecoin.tools/f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq). If you are using a different **address**, you may see multiple rows. If you don't see _any_ rows, the **address** you searched for has not yet completed a deal. The **address** may have submitted a deal, but the storage provider is yet to _seal_ the data. Deals will only show up here once the storage provider has completed sealing the data.
+    :::
+
+1. Click anywhere on a row to view information about that specific deal:
+
+    ![Information about a particular deal.](./images/filecoin-tools-show-details.png)
+
+1. Make a note of the **Payload CID** and the **Miner ID**. You'll need both of these to create the retrieval command in the next step.
 
 ## Send a retrieval request
 
-The retrieval command is fairly simple. We just need to add the _Provider ID_ and _Data CID_ we got from the previous step, along with where we want to save the downloaded file to.
+Next up is creating the command for Lotus to run. The structure for a retrieval command is: `lotus client retrieve --miner <MINER ID> <DATA CID> ~/output-file`
 
-1. Use the `retrieve` command to request data from a miner:
-
-    ```shell
-    lotus client retrieve --miner <PROVIDER ID> <DATA CID> ~/output-file
-    ```
-
-    Replace `<PROVIDER ID>` and `<DATA CID>` in the above command with your _Provider ID_ and _Data CID_, respectively. For example:
+1. Using the template above, create the command substituting `<MINER ID>` and `<DATA CID>` with the variables you got in the previous step. Your command should look something like this: 
 
     ```shell
-    lotus client retrieve --miner f02147 baga6ea4seaqelwsq2q4z7utvxdwpunid773rwxfzkvxckmr3nvztssczmkux2fi ~/output-file
+    lotus client retrieve --miner f01278 mAXCg5AIgjVjEjFzXIO2fTUdaWKEGmeOevU76fzC/JgNp37oRrQI output-file
     ```
 
-1. After submitting `retrieve` command, your Lotus lite-node will send the retrieval deal to the storage provider and wait for a response:
+    The `output-file` is the name of the file that you'd like to save. You can also add a path to this variable:
+
+    ```shell
+    lotus client retrieve --miner f01278 mAXC...RrQI ~/Downloads/filecoin-download.tar
+    ```
+
+1. Run the command. After submitting this command, your Lotus lite-node will send the retrieval request to the storage provider and wait for a response:
 
     ```shell
     > Recv: 0 B, Paid 0 FIL, ClientEventOpen (DealStatusNew)
     > Recv: 0 B, Paid 0 FIL, ClientEventDealProposed (DealStatusWaitForAcceptance)
-    > Recv: 120 B, Paid 0 FIL, ClientEventBlocksReceived (DealStatusWaitForAcceptance)
+    > Recv: 0 B, Paid 0 FIL, ClientEventDealAccepted (DealStatusAccepted)
     > ...
     ```
 
-    This can take some time depending on how congested the network is and how much load this storage provider is under. You must keep the `lotus daemon` running. Once the request has been received and processed by the storage provider, your Lotus lite-node will start downloading the data to your computer.
+1. Wait for the process to finish:
 
-1. Wait for the download to complete. Again, the speed of this process depends on your connection to the miner and the size of your download. When creating this tutorial, it took us around 3 minutes to download a 5GB file from a miner.
-1. Once the download is complete, you should have a file in your home directory called `output-file`.
+    ```shell
+    > Recv: 5.078 GiB, Paid 0 FIL, ClientEventBlocksReceived (DealStatusWaitingForLastBlocks)
+    > Recv: 5.078 GiB, Paid 0 FIL, ClientEventAllBlocksReceived (DealStatusCompleted)
+    > Success
+    ```
 
-## Final thoughts 
+    This process can take some time, depending on how congested the network is, how much load this storage provider is under, and the speed of your internet connection. 
 
-So that's it! You've now completed the tutorial on how to store and retrieve data from the Filecoin network using the Lotus CLI! For the next steps, why not [take a look at Textile](https://textile.io/) and how to integrate Filecoin storage and retrieval into your next web project.
+    :::danger
+    You must keep the `lotus daemon` running for the duration of this process.
+    :::
+
+1. That's it!
+
+## Next steps
+
+This marks the end of the Filecoin Store and Retrieve tutorial series! By now you should have a good understanding of how the storage and retrieval process works on the Filecoin network, and also have some ideas on how to integrate this process into your projects! Feel free to carry on playing around with storing and retrieving data using Lotus and Filecoin. If you need a hand or get stuck, check out the [Filecoin Slack](https://filecoin.io/slack/) for help.
 

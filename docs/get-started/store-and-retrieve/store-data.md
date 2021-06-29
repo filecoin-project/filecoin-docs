@@ -5,10 +5,10 @@ description: Start storing your data on the Filecoin network. This section cover
 
 # Store data
 
-Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus miner registry, creating a storage deal, and then waiting for the deal to complete! 
+Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus miner registry, creating a storage deal, and then waiting for the deal to complete. There's a lot to do, so let's dive in!
 
 :::danger
-Filecoin is optimized for public data and doesn't yet support access controls. If storing private data, ensure you encrypt it before storage to ensure it remains unreadable by anyone without the ability to decrypt it. If a vulnerability is found in your encryption process at any point in the future, then your data may be compromised.
+Filecoin is optimized for public data and doesn't yet support access controls. If storing private data, ensure you encrypt it before storage to ensure it remains unreadable by anyone without the ability to decrypt it. Keep in mind that if a vulnerability is found in your encryption process at any point in the future, then your data may be compromised.
 :::
 
 ## Things to note
@@ -17,14 +17,14 @@ As you're going through this section, make a note of the following variables:
 
 | Variable | Description | Example |
 | --- | --- | --- |
-| Payload CID | The content identifier of the data that you want to store using Filecoin. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
+| Data CID | The content identifier (CID) of the data that you want to store using Filecoin. | `bafk2bzaceajz56zudni2hli7id6jvvpo5n4wj5eoxm5xwj2ipthwc2pkgowwu` |
 | Miner ID #1 | The unique identifier for each storage provider. You need to have two storage provider IDs for this tutorial. | `f01000`
 | Miner ID #2 | The unique identifier for each storage provider. You need to have two storage provider IDs for this tutorial. | `f01000`
-| Deal CID | The content identifier for a deal made with a storage provider. | `bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau` | 
+| Deal CID | The content identifier (CID) for a deal made with a storage provider. | `bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau` | 
 
 ## Prepare your data
 
-For this tutorial, we're going to create a dummy 5GB file full of random data.
+For this tutorial, we're going to create a dummy 5GB file full of random data and store it on the Filecoin network.
 
 1. Move into your home folder:
 
@@ -38,23 +38,15 @@ For this tutorial, we're going to create a dummy 5GB file full of random data.
 
     ```shell
     dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1m count=5200
-
-    > 5200+0 record in
-    > 5200+0 records out
-    > 5452595200 bytes transferred in 6.299098 secs (865615234 bytes/sec)
     ```
 
     **Linux** users should run: 
 
     ```shell
     dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1M count=5200
-
-    > 5200+0 records in
-    > 5200+0 records out
-    > 5452595200 bytes (5.5 GB, 5.1 GiB) copied, 62.8535 s, 86.8 MB/s
     ```
 
-    This process will take about 69 seconds to create a dummy file.
+    This process will take about 60 seconds to create a dummy file.
 
 We now have our payload file ready to be stored using the Filecoin network.
 
@@ -74,30 +66,30 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
     > Import 3, Root bafykb...
     ```
 
-1. Make a note of the CID `bafykb...`; we'll use it in an upcoming section.
+    This process takes about 60 seconds.
+
+1. Make a note of the CID `bafykb...`. This is your **Data CID**. We'll use it in an upcoming section.
 
 Now that Lotus knows which file we want to use, we can create a deal with a Filecoin storage provider to store our data!
 
 ## Find a storage provider 
 
-We need to find a suitable storage provider or storage providers before we can store our data. The Filecoin network allows storage providers to compete by offering different terms for pricing, acceptable data sizes, and other important deal parameters. It's also important to consider the storage provider's location; the closer the storage provider is to you, the faster the storage and retrieval process will be. 
+We need to find suitable storage providers before we can store our data. The Filecoin network allows storage providers to compete by offering different terms for pricing, acceptable data sizes, and other important deal parameters. It's also important to consider the storage provider's location; the closer the storage provider is to you, the faster the storage and retrieval process will be. 
 
 We're going to use the Filecoin Plus miner registry to find a couple of storage providers and then cross-check their information with a third-party storage provider reputation system.
 
 :::tip
-Storing your data on more than one storage provider decreases your chance that your data will be lost at any point. Increasing the number of storage providers you use increases your data redundancy.
+Increasing the number of storage providers you use increases your data redundancy, and decreases the chances of your data being lost.
 :::
 
 ### Filecoin Plus miner registry 
 
-The Filecoin Plus miner registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The idea is that these storage providers will bootstrap the Filecoin network. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. You can [find out more about the Filecoin Plus miner registry from the Filecoin Blog](../../store/filecoin-plus.md).
+The Filecoin Plus miner registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page](../../store/filecoin-plus.md) to find out more about the program.
 
 Let's find a couple of storage providers to store our data.
 
 1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
-1. Using the table, find a couple of storage providers that suit your needs. For the sake of this tutorial, look for storage providers that:
-    a. Offer verified-data deals for 0 FIL.
-    a. Are close to you.
+1. Using the table, find a couple of storage providers that suit your needs. Try to find storage providers that are geographically close to you.
 1. Once you have found a couple of suitable storage providers, make a note of their _miner IDs_ from the **Miner ID** column:
 
     ![A collection of storage providers listed in the Filecoin Plus miner registry.](./images/miner-x-listings.png)
@@ -106,7 +98,7 @@ Let's find a couple of storage providers to store our data.
 
     ![A list of storage providers, highlighting one storage provider with multiple IDs.](./images/miner-with-multiple-miner-ids.png)
 
-1. Write down the IDs of the storage providers you want to use. We'll be referring to these IDs in the next section.
+1. Make sure to write down the IDs of the storage providers you want to use. We'll be referring to these IDs in the next section.
 
 ### Miner reputation systems 
 
@@ -114,7 +106,7 @@ The Filecoin Plus miner registry is a great resource, but it represents a small 
 
 We're going to use FilRep to check that the minimum deal size of the storage providers we selected fits the size of our file.
 
-1. Go to [https://filrep.io](https://filrep.io).
+1. Go to [filrep.io](https://filrep.io).
 1. Click the **Settings** toggle to display a list of all available storage provider details.
 1. Make sure that the **Min File Size** column is selected:
 
@@ -124,11 +116,14 @@ We're going to use FilRep to check that the minimum deal size of the storage pro
 
     ![](./images/filrep-search-min-file-size.png)
 
-1. If the minimum file size shown for any of your storage providers is larger than your dataset, go back to [the previous section](#filecoin-plus-miner-registry) and select a new storage provider.
+1. Check that the minimum file size is lower than 5 GiB, and that they charge 0 FIL for verified deals.
+1. If the minimum file size shown for any of your storage providers is larger than 5 GiB, or they charge more thann 0 FIL for verified deals, go back to [the previous section](#filecoin-plus-miner-registry) and select a new storage provider.
+
+Now that you've found your miners, you can move onto creating a storage deal!
 
 ## Create a deal 
 
-To complete this section, you need the **payload CID** you received after running `lotus client import` and the ID of a storage provider you want to use.
+To complete this section, you need the **Data CID** you received after running `lotus client import` and the IDs of the storage providers you want to use.
 
 1. Start the interactive deal process:
 
@@ -144,13 +139,13 @@ To complete this section, you need the **payload CID** you received after runnin
     Data CID (from lotus client import): bafykbz...
     ```
 
-1. Wait for Lotus to finish building the `.car` file.
+1. Wait for Lotus to finish calculating the size of your payload. Lotus calculates this size by counting the individual bits in your payload to ensure that the size is accurate. 
 
     ```shell
     > .. calculating data size 
     ```
 
-    The duration of this process depends on the size of your file and the specification of your Lotus node. In tests, Lotus took around 20 minutes to build the `.car` file of a ~7.5GB file with a 4-core CPU and 8GB RAM. These specifications are common for most end-user laptops.
+    The duration of this process depends on the size of your file and the specification of your Lotus node. In tests, Lotus took around 20 minutes file of a ~7.5GB file with a 4-core CPU and 8GB RAM. These specifications are common for most end-user laptops.
 
 1. Enter the number of days you want to keep this file on Filecoin. The minimum is 180 days:
 
@@ -170,7 +165,7 @@ To complete this section, you need the **payload CID** you received after runnin
     > Miner Addresses (f0.. f0..), none to find: f01000 f01001 
     ```
 
-1. Confirm your transaction:
+1. Confirm your transaction by entering `yes`:
 
     ```shell
     > -----
@@ -197,9 +192,9 @@ To complete this section, you need the **payload CID** you received after runnin
 
 ## Check the deal status 
 
-We need to wait for the storage providers to accept our deal and _seal_ the data. This process can take up to 24 hours to complete, depending on how much data we asked the storage provider to store.
+Once the data has been sent to the storage clients, the storage deals can take up to 24 hours to complete. You can check the progress of your deals.
 
-1. List successful and pending deals by using the `list-deals` command:
+1. List successful and pending deals by using the `lotus client list-deals` command:
 
     ```shell
     lotus client list-deals --show-failed
@@ -209,17 +204,34 @@ We need to wait for the storage providers to accept our deal and _seal_ the data
     Your Lotus lite-node needs to remain online until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when. 
     :::
 
-1. You can check the progress of any data transfers by running `list-transfers`:
+1. You can check the progress of any data transfers by running `lotus client list-transfers`:
 
     ```shell
     lotus client list-transfers
 
+    ```
+    
+    This command will output something like:
+
+    ```shell
     > Sending Channels
     > ID                   Status   Sending To   Root Cid     Initiated?  Transferred  Voucher                                   
     > 1620782601911586915  Ongoing  ...KPFTTwY7  ...zyd3kapm  Y           224.1MiB     ...bqhcidjmajbelhlxfqry3d7qlu3tvar45a"}}  
 
     > Receiving Channels
     > ...
+    ```
+
+    If the output of `lotus client list-transfers` is empty, then your tranfer has finished:
+
+    ```shell
+    lotus client list-transfers
+    > Sending Channels
+    >
+    >
+    > Receiving Channels
+    >
+    >
     ```
 
 ### Deal states
