@@ -71,7 +71,7 @@ This section covers how to install a Lotus lite-node on Ubuntu. If you are runni
 There are two simple ways to install Lotus on Ubuntu:
 
 - [AppImage](#appimage)
-- [Snap](#snap).
+- [Snap](#snap)
 
 #### AppImage
 
