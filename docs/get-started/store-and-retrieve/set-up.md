@@ -44,7 +44,7 @@ Take a look at the [Get started page](../../get-started) to learn how to install
 
 This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section ↓](#ubuntu)
 
-:::tip Requirements 
+:::warning Requirements 
 You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
 :::
 
@@ -68,7 +68,7 @@ You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebr
 
 This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section ↑](#macos).
 
-:::tip Requirements 
+:::warning Requirements 
 You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
 :::
 
