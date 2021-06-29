@@ -113,7 +113,7 @@ This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoi
 
 1. Create two control addresses. Control addresses can be any _type_ of address: `secp256k1 ` or `bls`:
 
-   ```bash
+   ```shell
    lotus wallet new bls
 
    > f3rht...
@@ -133,7 +133,7 @@ This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoi
 3. Wait for around 5 minutes for the addresses to be assigned IDs.
 4. Get ID of those addresses:
 
-   ```bash
+   ```shell
    lotus wallet list -i
 
     > Address   ID        Balance                   Nonce  Default
@@ -143,7 +143,7 @@ This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoi
 
 5. Add control addresses:
 
-   ```bash
+   ```shell
    lotus-miner actor control set --really-do-it=true f0100933 f0100939
 
     > Add f3rht...
@@ -173,7 +173,7 @@ This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoi
 
 Get the balances associated with a miner wallet by calling `info`:
 
-```bash
+```shell
 lotus-miner info
 
 > Miner: t01000
@@ -202,7 +202,7 @@ In this example, the miner ID is `t01000`, it has a total balance of `10582.3215
 
 Transfer funds from the Miner actor address to the owner address by calling `actor withdraw`:
 
-```bash
+```shell
 lotus-miner actor withdraw <amount>
 ```
 

@@ -44,218 +44,38 @@ Take a look at the [Get started page](../../get-started) to learn how to install
 
 This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section ↓](#ubuntu)
 
-:::tip MacOS version
-You can install Lotus on MacOS 10.11 (El Capitan, 2015) or higher.
+:::tip Requirements 
+You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
 :::
 
-#### Install with Homebrew
-
-
-
-#### Build from source
-
-##### Dependencies for MacOS
-
-Follow these steps to install the project dependencies specifically for MacOS:
-
-1. Check if you have Xcode installed:
+1. Add the `filecoin-project/lotus` Homebrew tap:
 
     ```shell
-    xcode-select --version
-
-    > xcode-select version 2384.
-    ```
-
-    Any version above 2339 will work.
-
-    :::warning
-    If the above command returns an error, you likely don't have Xcode installed. Run the following command to install Xcode:
-
-    ```shell
-    sudo rm -rf /Library/Developer/CommandLineTools 
-    xcode-select --install
-
-    > Password:
-    > xcode-select: note: install requested for command line developer tools
-    ```
-    :::
-
-1. Check if you have [Homebrew](https://brew.sh/) installed:
-
-    ```shell
-    brew --version 
-
-    > Homebrew 3.0.11
-    ```
-
-    Any version of Homebrew will work, but version 3.0.0 and above is preferred.
-
-    :::warning
-    If the above command returns an error, you likely don't have Homebrew installed. Run the following command to install Homebrew:
-
-    ```shell
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
-
-    If you run into errors installing Homebrew, there may be something wrong with your macOS installation. Check out the [Homebrew documentation](https://brew.sh/) for more information on how you can it installed.
-    :::
-
-1. Use Homebrew to install the following packages:
-
-    ```shell
-    brew install go bzr jq pkg-config rustup hwloc
-    ```
-
-Next up, you'll install a Lotus lite-node on your computer.
-
-##### Install Lotus
-
-The installation steps are different depending on which CPU your Mac is using:
-
-- [AMD and Intel-based Macs](#amd-and-intel-based-macs)
-- [M1-based Macs](#m1-based-macs)
-
-If you are unsure which CPU your Mac is using, check out the [troubleshooting steps](./troubleshooting/#which-cpu-does-my-mac-have).
-
-###### AMD and Intel-based Macs
-
-1. Download the Lotus repository from GitHub:
-
-    ```shell
-    git clone https://github.com/filecoin-project/lotus.git
-    cd lotus
-    ```
-
-1. Build the `lotus` binary, but don't run anything just yet:
-
-    ```shell
-    make clean && make all
-    sudo make install
-    ```
-
-    If you run into errors here, it may be because your computer did not install some dependencies properly. Check out the [Troubleshooting](troubleshooting) section, or see the [Lotus GitHub repository](https://github.com/filecoin-project/lotus) for more help.
-
-1. You should now have the `lotus` executable ready to run on your computer. 
-
-    ```shell
-    lotus --version
-
-    > lotus version 1.7.0
-    ```
-
-[Head over to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
-
-###### M1-based Macs
-
-Because of the novel architecture of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
-
-1. Clone the [Lotus repository](https://github.com/filecoin-project/lotus) from GitHub: 
-
-    ```shell   
-    git clone https://github.com/filecoin-project/lotus
-    cd lotus
-    ```
-
-1. Pull-in the submodules:
-
-    ```shell
-    git submodule update --init --recursive
-    ```
-
-1. Create necessary environment variable to allow Lotus to run on ARM architecture:
-
-    ```shell
-    export GOARCH=arm64
-    export CGO_ENABLED=1
-    export LIBRARY_PATH=/opt/homebrew/lib
-    export FFI_BUILD_FROM_SOURCE=1
-    ```
-
-1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
-
-    ```shell
-    cd extern/filecoin-ffi
-    git fetch -a
-    git checkout master
-    ```
-
-1. Create the `filecoin-ffi` executables:
-
-    ```shell
-    make clean
-    make
-    ```
-
-1. Move back to the root Lotus directory and create the `lotus` daemon:
-
-    ```shell
-    cd ../../
-    make lotus
-    ```
-
-[Head down to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
-
-### Ubuntu
-
-This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section ↑](#macos).
-
-1. Update your local `apt` repository:
-
-    ```shell
-    sudo apt update -y
-    ```
-
-1. Install the following packages:
-
-    ```shell
-    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
-    ```
-
-1. Install Rust:
-
-    ```shell
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    ```
-
-    Select `1) Proceed with installation (default)` if prompted.
-
-1. Install Go:
-
-    ```shell
-    wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
-    ```
-
-1. Add `/usr/local/go/bin` to your `PATH`:
-
-    ```shell
-    sudo echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc
-    ```
-
-1. Clone the Lotus GitHub repository:
-
-    ```shell
-    git clone https://github.com/filecoin-project/lotus.git
-    cd lotus/
-    ```
-
-1. Build the `lotus` executable:
-
-    ```shell
-    make clean all
+    brew tap filecoin-project/lotus
     ```
 
 1. Install Lotus:
 
     ```shell
-    sudo make install
+    brew install lotus
     ```
 
-1. You should now have the `lotus` executable ready to run on your computer. 
+1. Lotus is now installed on your computer. 
+
+[Head over to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+
+### Ubuntu
+
+This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section ↑](#macos).
+
+:::tip Requirements 
+You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
+:::
+
+1. To install Lotus using Snap, run:
 
     ```shell
-    lotus --version
-
-    > lotus version 1.11.0
+    snap install lotus-filecoin
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)

@@ -34,7 +34,7 @@ Shutting down your miner while there are still pending operations could get your
 
 In the following example, `Deadline Open` is 454, which is earlier than `Current Epoch` of 500. This miner should not be shut down or restarted:
 
-```bash
+```shell
 $ lotus-miner proving info
 
 Miner: t01001
@@ -54,7 +54,7 @@ Deadline FaultCutoff: 384 (58m0s ago)
 
 In this next example, the miner can be safely restarted because no `Deadlines` are earlier than `Current Epoch`. You have about 45 minutes before the miner must be back online to declare faults. This is known as the `Deadline FaultCutoff`. If the miner has no faults, you have about an hour.
 
-```bash
+```shell
 $ lotus-miner proving info
 
 Miner: t01000
@@ -74,7 +74,7 @@ Deadline FaultCutoff: 588 (in 45m30s)
 
 The `proving info` examples above show information for the current proving window and deadlines. If you wish to see any upcoming deadlines you can use:
 
-```bash
+```shell
 $ lotus-miner proving deadlines
 ```
 
@@ -84,7 +84,7 @@ Every row corresponds to a deadline (a period of 30 minutes covering 24 hours). 
 
 Before stopping the miner, check the state of your deals to make sure the miner is not receiving data or retrieving data for a client:
 
-```bash
+```shell
 lotus-miner storage-deals list
 lotus-miner retrieval-deals list
 lotus-miner data-transfers list
@@ -92,14 +92,14 @@ lotus-miner data-transfers list
 
 To prevent new deals from coming in while you wait to finish work for the current deadline, you can disable storage and retrieval deals. This ensures that the miner does not find itself in the middle of a new deal when shutting down:
 
-```bash
+```shell
 lotus-miner storage-deals selection reject --online --offline
 lotus-miner retrieval-deals selection reject --online --offline
 ```
 
 After the miner has finished rebooting, the deals can be reset with:
 
-```bash
+```shell
 lotus-miner storage-deals selection reset
 lotus-miner retrieval-deals selection reset
 ```
@@ -108,7 +108,7 @@ lotus-miner retrieval-deals selection reset
 
 To get an overview of your current sectors and states, run:
 
-```bash
+```shell
 lotus-miner sectors list
 ```
 
@@ -118,7 +118,7 @@ Any ongoing sealing operation will be restarted from the last checkpoint, and us
 
 With all the considerations above you can decide on the best moment to shutdown your miner:
 
-```bash
+```shell
 lotus-miner stop
 # When using systemd
 # systemctl stop lotus-miner
