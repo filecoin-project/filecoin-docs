@@ -48,7 +48,13 @@ This section covers how to install a Lotus lite-node on MacOS. If you are runnin
 You can install Lotus on MacOS 10.11 (El Capitan, 2015) or higher.
 :::
 
-#### Dependencies for MacOS
+#### Install with Homebrew
+
+
+
+#### Build from source
+
+##### Dependencies for MacOS
 
 Follow these steps to install the project dependencies specifically for MacOS:
 
@@ -102,7 +108,7 @@ Follow these steps to install the project dependencies specifically for MacOS:
 
 Next up, you'll install a Lotus lite-node on your computer.
 
-#### Install Lotus
+##### Install Lotus
 
 The installation steps are different depending on which CPU your Mac is using:
 
@@ -111,7 +117,7 @@ The installation steps are different depending on which CPU your Mac is using:
 
 If you are unsure which CPU your Mac is using, check out the [troubleshooting steps](./troubleshooting/#which-cpu-does-my-mac-have).
 
-##### AMD and Intel-based Macs
+###### AMD and Intel-based Macs
 
 1. Download the Lotus repository from GitHub:
 
@@ -139,7 +145,7 @@ If you are unsure which CPU your Mac is using, check out the [troubleshooting st
 
 [Head over to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
 
-##### M1-based Macs
+###### M1-based Macs
 
 Because of the novel architecture of the M1-based Mac computers, some specific environment variables must be set before creating the `lotus` executable.
 
