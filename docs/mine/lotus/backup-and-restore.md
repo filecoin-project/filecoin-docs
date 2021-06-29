@@ -49,7 +49,7 @@ The backup is now complete. Always follow the 3-2-1 rule when storing backups:
 1. Copy your `backup.cbor`, `config.toml`, and `storage.json` files to the miner if it is on another computer.
 1. Call `restore` to restore your miner from a backup file:
 
-   ```shell/
+   ```shell
    lotus-miner init restore /root/lotus-backups/2020-11-15/backup.cbor
 
    > ...
