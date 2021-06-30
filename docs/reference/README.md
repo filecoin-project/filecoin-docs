@@ -142,7 +142,7 @@ Tools to check status and details of the network and chain.
 
 ### Network stats
 
-- [Network Stats Dashboard](https://stats.testnet.filecoin.io/) - Grafana
+- [Network Stats Dashboard](https://stats.filecoin.io/) - Grafana
 
 ### Testnet explorers
 
