@@ -10,15 +10,41 @@ breadcrumb: 'Splitting main miner and markets service processes'
 
 ## Background
 
-Lotus v1.11.0 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be configured (enabled/disabled) via the `config.toml` file.
+Lotus v1.11.0 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be configured (enabled/disabled) via the `config.toml` file:
+
+```
+[Subsystems]
+#  EnableMining = true
+#  EnableSealing = true
+#  EnableSectorStorage = true
+#  EnableStorageMarket = true
+```
+
+By default all are set to `true`, since until now the monolith `lotus-miner` process has been responsible for all functionality.
 
 At the moment these `subsystems` are designed to be grouped into two distinct types of `lotus-miner` nodes:
 
 1. The `markets` node - a `lotus-miner` process responsible to handling the storage market subsystem, and all functionality related to storage/retrieval deals;
 
+```
+[Subsystems]
+  EnableMining = false
+  EnableSealing = false
+  EnableSectorStorage = false
+  EnableStorageMarket = true
+```
+
 2. The `mining/sealing/proving` node - a `lotus-miner` process responsible to Filecoin mining, and sector storage, sealing and proving;
 
-When a `lotus-miner` node is started with configuration for a `markets` node, it includes a libp2p node and should be publicly exposed on the Internet for other clients to communicate with it.
+```
+[Subsystems]
+  EnableMining = true
+  EnableSealing = true
+  EnableSectorStorage = true
+  EnableStorageMarket = false
+```
+
+When a `lotus-miner` node is started with configuration for a `markets` node, it includes a libp2p node and should be publicly exposed on the Internet and reachable/dialable for other clients to communicate with it.
 
 When a `lotus-miner` node is started with configuration for a `mining/sealing/proving` node, it does not include a libp2p node, and it doesn't have to be publicly exposed on the Internet. The `markets` node communicates with it via its JSON RPC interface.
 
@@ -92,6 +118,10 @@ export LOTUS_MINER_PATH=~/markets-repo-location
 ```
 
 ## Start the `mining/sealing/proving` miner process without the markets subsystem
+
+1. Update your `config.toml` and set `EnableStorageMarket` option to `false`.
+
+2. Run the process with the `--enable-markets=false` flag
 
 ```sh
 ./lotus-miner run --enable-markets=false
