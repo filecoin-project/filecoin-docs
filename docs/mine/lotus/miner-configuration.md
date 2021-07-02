@@ -202,8 +202,6 @@ This section controls some of the behavior around sector sealing:
 	BatchPreCommits = true
 	# maximum precommit batch size up to 256 sectors - batches will be sent immediately above this size
 	MaxPreCommitBatch = 256
-	# minimum precommit batch size, no less than 1
-	MinPreCommitBatch = 1
 	# how long to wait before submitting a batch after crossing the minimum batch size
 	PreCommitBatchWait = "24h0m0s"
 	# time buffer for forceful batch submission before sectors/deal in batch would start expiring
@@ -220,6 +218,8 @@ This section controls some of the behavior around sector sealing:
 	# time buffer for forceful batch submission before sectors/deals in batch would start expiring
 	CommitBatchSlack = "1h0m0s"
 
+  # network BaseFee below which to stop doing commit aggregation, instead submitting proofs to the chain individually
+  AggregateAboveBaseFee = 0.00000000015 #0.15nanoFIL
 
   TerminateBatchMax = 100
   TerminateBatchMin = 1
@@ -279,6 +279,7 @@ In Lotus v1.10.0 and up, if `AggregateCommits` is set to false, prove-commitment
 - `MaxCommitBatch` is the maximum amount of sectors' prove-commitments to batch in one `ProveCommitAggregate` message. According to FIP-0013, this value is up to 819.
 - `CommitBatchWait` is how long to wait before submitting the current batch **after** crossing `MinCommitBatch`. Note: a prove-commitment must be submitted **within 30 days** after the pre-commit has landed on-chain. It is recommended to set this value lower than 30 days to prevent collateral loss. 
 - `CommitBatchSlack` is the time buffer to forcefully submit the current batch before any of the sector's pre-commitment or a deal will expire. For example, if this value is set to 1 hour, which is 120 epochs, then a `ProveCommitAggregate` message will be submitted for the existing batch 120 epochs before the earliest epoch among precommits' expirations and deals' start epochs in this batch. **We recommend you to set a longer slack to prevent message failures due to deal expirations or loss of collateral**
+- `AggregateAboveBaseFee` is the network base fee to start aggregating proofs. When the network base fee is lower than this value, the prove commits will be submitted individually via `ProveCommitSector`. **According to the [Batch Incentive Alignment](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0013.md#batch-incentive-alignment) introduced in FIP-0013, we recommend you to set this value to 0.15 nanoFIL to avoid unexpected aggregation fee in burn.**
 
 `MinCommitBatch` is the minimum amount of sectors' prove-commitment to be batched in one `ProveCommitAggregate` message. According to FIP-0013, this value cannot be less than 4, which is the cross-over point where prove-commit aggregation wins out on single prove-commit gas costs. If any of `MaxCommitBatch`, `CommitBatchWait` or `CommitBatchSlack` is hit by the amount of prove-commit is the batching queue is less than `MinCommitBatch`, then prove-commitments in this batch will be proceeded individually via `ProveCommitSector`. 
 
