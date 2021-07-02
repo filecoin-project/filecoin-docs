@@ -8,9 +8,25 @@ breadcrumb: 'Splitting main miner and markets service processes'
 
 {{ $frontmatter.description }}
 
+## Background
+
+Lotus v1.11.0 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be configured (enabled/disabled) via the `config.toml` file.
+
+At the moment these `subsystems` are designed to be grouped into two distinct types of `lotus-miner` nodes:
+
+1. The `markets` node - a `lotus-miner` process responsible to handling the storage market subsystem, and all functionality related to storage/retrieval deals;
+
+2. The `mining/sealing/proving` node - a `lotus-miner` process responsible to Filecoin mining, and sector storage, sealing and proving;
+
+When a `lotus-miner` node is started with configuration for a `markets` node, it includes a libp2p node and should be publicly exposed on the Internet for other clients to communicate with it.
+
+When a `lotus-miner` node is started with configuration for a `mining/sealing/proving` node, it does not include a libp2p node, and it doesn't have to be publicly exposed on the Internet. The `markets` node communicates with it via its JSON RPC interface.
+
+This document explains how to split your existing monolith `lotus-miner` node into multiple processes and take advantage of this new architecture, which brings more security to your mining operation as well as less potential attack surface.
+
 ## Pre-requisites
 
-Before splitting the markets service process from the main miner process, you should backup your miner's metadata repository. You need to start the `lotus-miner` with the `LOTUS_BACKUP_BASE_PATH` env variable in order to do that.
+Before splitting the markets service process from the monolith miner process, you should backup your miner's metadata repository. You need to start the `lotus-miner` with the `LOTUS_BACKUP_BASE_PATH` env variable in order to do that.
 
 ```sh
 export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
@@ -31,13 +47,40 @@ lotus-miner backup ~/lotus-backup-location/backupfile
 
 ## Copy config.toml and storage.json for the markets service
 
-You need to generate a `config.toml` and `storage.json` for the markets service, and have them ready for the next step.
+You need to generate a `config.toml` and `storage.json` for the markets node, and have them ready for the next step.
+
+If you intend to run the `mining/sealing/proving` node on the same machine as the `markets` node, make sure that their listeners do not clash:
+```
+[API]
+  ListenAddress = "/ip4/127.0.0.1/tcp/8787/http"
+  RemoteListenAddress = "127.0.0.1:8787"
+```
+
+By default the `lotus-miner` node listens to port 2345, so in the example configuration above, we change it to 8787.
+
+`storage.json` could be left empty, as the `markets` node won't handle anything storage related.
+
+```
+{
+  "StoragePaths": [
+  ]
+}
+```
+
+In the example commands below, we have placed the `config.toml` and `storage.json` in the `~/.lotusmarket` directory.
 
 ## Initialising a markets service repository
+
+1. Create authentication tokens for the `markets` node
 
 ```sh
 export APISEALER=`./lotus-miner auth api-info --perm=admin`
 export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
+```
+
+2. Initialise the `market` node
+
+```sh
 export LOTUS_MINER_PATH=~/markets-repo-location
 
 ./lotus-miner init service --enable-market \
@@ -48,15 +91,14 @@ export LOTUS_MINER_PATH=~/markets-repo-location
                            ~/lotus-backup-location/backupfile
 ```
 
-## Restart the main miner process without the markets service
+## Start the `mining/sealing/proving` miner process without the markets subsystem
 
 ```sh
-./lotus-miner run
+./lotus-miner run --enable-markets=false
 ```
 
-## Run the markets service process
+## Start the `markets` miner process with the markets subsystem
 
 ```sh
-export LOTUS_MINER_PATH=~/markets-repo-location
-./lotus-miner run
+LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 ```
