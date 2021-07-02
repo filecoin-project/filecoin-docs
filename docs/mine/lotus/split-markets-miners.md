@@ -121,10 +121,10 @@ export LOTUS_MINER_PATH=~/markets-repo-location
 
 1. Update your `config.toml` and set `EnableStorageMarket` option to `false`.
 
-2. Run the process with the `--enable-markets=false` flag
+2. Start the node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo)
 
 ```sh
-./lotus-miner run --enable-markets=false
+./lotus-miner run
 ```
 
 ## Start the `markets` miner process with the markets subsystem
