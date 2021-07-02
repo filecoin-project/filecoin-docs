@@ -82,9 +82,9 @@ If you intend to run the `mining/sealing/proving` node on the same machine as th
   RemoteListenAddress = "127.0.0.1:8787"
 ```
 
-By default the `lotus-miner` node listens to port 2345, so in the example configuration above, we change it to 8787.
+By default the `lotus-miner` node listens to port 2345, so in the example configuration above, we change the configuration for the `markets` node to listen to `127.0.0.1:8787`.
 
-`storage.json` could be left empty, as the `markets` node won't handle anything storage related.
+`storage.json` should be left without storage paths, as the `markets` node won't handle anything storage related.
 
 ```
 {
