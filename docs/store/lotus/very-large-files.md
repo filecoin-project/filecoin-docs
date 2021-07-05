@@ -45,10 +45,10 @@ It is implemented via a flag on the storage deal command that tells the client n
 1. Use the Lotus client to generate a CAR file of the input without importing:
 
 ```sh
-lotus client generate-car <inputPath> <outputPath>
+lotus client generate-car <inputPath/OriginalFile> <outputPath/Name.car>
 ```
 
-2. Use the Lotus client to generate the piece CID:
+2. Use the Lotus client to generate the piece CID and size:
 
 ```sh
 lotus client commP <inputCarFilePath>
@@ -57,11 +57,12 @@ lotus client commP <inputCarFilePath>
 ### Calculate the datasize
 
 1. Take the final car size `ls -l data.car`
-1. Round it up to the nearest power of 2. This is your padded piece size.
-1. Divide by 128, multiply by 127. this is your unpadded piece size.
-1. Go to [Wolfram Alpha](https://www.wolframalpha.com).
-1. Enter `x = SIZE_IN_BYTES; 127*( 2^( ceil( log2( ceil ( x /127 ) ) ) ) )` and changing `SIZE_IN_BYTES` to your value.
-1. You solution can be found under **Substitution**:
+2. Round it up to the nearest power of 2. This is your padded piece size.
+3. Divide by 128, multiply by 127. this is your unpadded piece size.
+4. Alternative  A. Go to [Wolfram Alpha](https://www.wolframalpha.com).
+5. Alternative  B. Enter `x = SIZE_IN_BYTES; 127*( 2^( ceil( log2( ceil ( x /127 ) ) ) ) )` and changing `SIZE_IN_BYTES` to your value.
+6. Alternative  C. You solution can be found under **Substitution**:
+
 
 ![](./images/very-large-files/wolfram-alpha.png)
 
@@ -70,6 +71,7 @@ Propose the offline deal with the miner:
 ```sh
 lotus client deal --manual-piece-cid=CID --manual-piece-size=datasize <Data CID> <miner> <price> <duration>
 ```
+Data CID is provided using this method https://docs.filecoin.io/store/lotus/store-data/#importing-data
 
 ### Transfer the data to the miner offline
 
