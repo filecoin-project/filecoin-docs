@@ -10,7 +10,7 @@ breadcrumb: 'Splitting main miner and markets service processes'
 
 ## Background
 
-Lotus v1.11.0 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be configured (enabled/disabled) via the `config.toml` file:
+Lotus v1.11.0 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be enabled or disabled in the `config.toml` file:
 
 ```
 [Subsystems]
@@ -20,7 +20,7 @@ Lotus v1.11.0 introduced the notion of `subsystems` in the `lotus-miner` process
 #  EnableStorageMarket = true
 ```
 
-By default all are set to `true`, since until now the monolith `lotus-miner` process has been responsible for all functionality.
+All these options are set to `true` by default. Until now, the monolith `lotus-miner` process has been responsible for all functionality.
 
 At the moment these `subsystems` are designed to be grouped into two distinct types of `lotus-miner` nodes:
 
