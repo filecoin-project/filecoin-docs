@@ -59,9 +59,14 @@ lotus client commP <inputCarFilePath>
 1. Take the final car size `ls -l data.car`
 1. Round it up to the nearest power of 2. This is your padded piece size.
 1. Divide by 128, multiply by 127. this is your unpadded piece size.
-1. Go to [Wolfram Alpha](https://www.wolframalpha.com).
-1. Enter `x = SIZE_IN_BYTES; 127*( 2^( ceil( log2( ceil ( x /127 ) ) ) ) )` and changing `SIZE_IN_BYTES` to your value.
-1. You solution can be found under **Substitution**:
+
+You can do this in [Wolfram Alpha](https://www.wolframalpha.com) by running the following formula:
+
+`x = SIZE_IN_BYTES; 127*(2^(ceil(log2(ceil(x/127)))))` 
+
+and changing `SIZE_IN_BYTES` to your final car size value.
+
+The final piece size will be found under **Substitution**:
 
 ![](./images/very-large-files/wolfram-alpha.png)
 
