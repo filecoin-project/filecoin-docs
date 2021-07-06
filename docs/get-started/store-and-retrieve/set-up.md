@@ -38,7 +38,7 @@ To install a Lotus lite-node on your computer, you must have the tools required 
 | [MacOS](#macos) | [Ubuntu](#ubuntu) |
 | --- | --- |
 
-Take a look at the [Get started page](../../get-started) to learn how to install Lotus on other operating systems. 
+Take a look at [Lotus: install and setup](../lotus/installation.md) to learn how to install Lotus on other operating systems. 
 
 ### MacOS
 
