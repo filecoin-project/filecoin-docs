@@ -104,7 +104,7 @@ export APISEALER=`./lotus-miner auth api-info --perm=admin`
 export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 ```
 
-2. Initialise the `market` node
+2. Initialise the `market` node. This performs a one-time setup.
 
 ```sh
 export LOTUS_MINER_PATH=~/markets-repo-location
