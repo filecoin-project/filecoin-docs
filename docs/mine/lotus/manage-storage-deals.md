@@ -10,11 +10,11 @@ breadcrumb: 'Manage storage deals'
 
 During the lifetime of a miner, Filecoin network clients will query the storage _price-ask_ advertised by the miner and initiate deals. Deals go through several phases:
 
-    1. Data transfer (for online deals) or data import (for offline deals)
-    2. Sealing sector with deal data (miner)
+1. Data transfer (for online deals) or data import (for offline deals)
+2. Sealing sector with deal data (miner)
 3. Proving (every 24 hours)
 
-    The following sections provide insights into the different ways Lotus can be used to manage several parts of the storage-deal process.
+The following sections provide insights into the different ways Lotus can be used to manage several parts of the storage-deal process.
 
 ## Enabling and disabling deals
 
@@ -63,7 +63,7 @@ lotus-miner storage-deals set-ask \
     --verified-price 0.0000001  \
     --min-piece-size 56KiB \
     --max-piece-size 32GB
-    ```
+```
 
 The above command sets the price for deals to `0.0000001 FIL` (`100 nanoFIL`) per GiB, per epoch. This means, a client will have to pay `100 nanoFIL` every 30 seconds for each GiB stored. If the client wants 5GiB stored over the course of a week, the total price will be: `5GiB * 100nanoFIL/GiB_Epoch * 20160 Epochs = 10080 microFIL`.
 
