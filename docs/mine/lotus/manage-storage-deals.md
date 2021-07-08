@@ -147,3 +147,33 @@ In this case, the miner will have to import the storage deal data manually with 
 ```sh
 lotus-miner storage-deals import-data <dealCid> <filePath>
 ```
+
+### Offline deal workflow
+
+This is the _general_ process for how an offline storage deal works:
+
+1. The storage provider must have `considering offline storage deals` set to `true`.
+1. The storage provider and the client clarify key aspects of the storage deal. They must come to an agreement on:
+    a. How large the storage payload is.
+    a. Duration of the deal.
+    a. The price to the client for storage of the data.
+    a. Whether it is a verified deal or not.
+    a. The start epoch for the deal.
+    a. When the data should be ready for download.
+    a. Estimated/minimum download speed.
+1. The client provides a way to transfer the storage payload, usually using a URL link. However, in cases where they storage payload is quite large, it may be optimal for the client to physically send the storage provider hard drives containing the data. The storage provider must decide where to temporarily store the data. This can be on a slower HDD array.
+    a. The client must send the data as `.car` files, and must generate the CID of each `.car` file _before_ sending the data to the storage provider.
+    b. The client must share the CIDs of each `.car` file with the storage provider.
+1. If the files were compressed by the client to send over the internet, the storage provider must decompress the data. At the point, the storage provider may need to adjust the deal price to suit any changes in data size.
+1. This cliend sends a deal proposal. This can be viewed by the sotrage provider by running `lotus-miner storage-deals list`. The deal will have the `WaitingForData` status.
+1. - The storage provder imports each deal using `lotus-miner storage-deals import-data <dealCid> <carFilePath>`.
+
+    :::tip
+    Each import can take between 5 to 20 minutes. Sometimes the command will look like it has stalled. Be patient.
+    :::
+
+1. The imported deal will go through normal process `Empty` → `AP` → `WaitDeal` until `WaitDeal` sector expires, or is manually pushed. The storage provider still pays publish and sealing message fees.
+1. If the storage provider changed the storage price for this specific deal, they must revert to normal price after imports are done.
+1. Once deal finishes sealing and has the `active` status, the storage provider can delete the original `.car` files. If the sector does not fully seal and turn `active`, the storage provider must create a new dealCid to retry using the same `.car` file. Storage providers cannot reuse a failed dealCid.
+
+This is just the _general_ workflow for arranging an offline storage deal. Individual workflows may different from storage provider to storage provider, and client to client.
