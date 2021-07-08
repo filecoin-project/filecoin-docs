@@ -7,6 +7,14 @@ description: Explore the features that make Filecoin a compelling system for sto
 
 This is an overview of features offered by Filecoin that make it a compelling system for storing files. This overview is intended for people already involved in large-scale data storage, for example, cloud storage or peer-to-peer storage networks.
 
+### Verifiable storage
+
+Filecoin generates verifiable traces that files have been stored correctly over time. Every storage provider proves that they are maintaining their files in every 24-hour window. Clients can efficiently scan these traces to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
+
+::: callout
+[Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
+:::
+
 ### Open market
 
 In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a miner only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
@@ -18,18 +26,6 @@ Prices for storage and retrieval are determined by supply and demand, not corpor
 ### Reliable storage
 
 Because storage is paid for, Filecoin provides a viable economic reason for files to stay available over time. Files are stored on computers that are reliable and well-connected to the internet.
-
-### Self-healing
-
-The Filecoin network continually verifies that files are stored correctly. The Filecoin blockchain has a built-in self-healing process where faulty miners are detected, and their files are redistributed to reliable miners.
-
-### Verifiable traces
-
-In the process of self-healing, Filecoin generates verifiable traces that files have been stored correctly over time. Clients can efficiently scan these traces to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any miner’s track record and will notice if the miner has been faulty or offline in the past.
-
-::: callout
-[Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
-:::
 
 ### Reputation, not marketing
 
