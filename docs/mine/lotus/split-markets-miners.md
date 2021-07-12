@@ -104,7 +104,7 @@ export APISEALER=`./lotus-miner auth api-info --perm=admin`
 export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 ```
 
-2. Initialise the `market` node. This performs a one-time setup.
+2. Initialise the `market` node. This performs a one-time setup. Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```sh
 export LOTUS_MINER_PATH=~/markets-repo-location
@@ -121,7 +121,7 @@ export LOTUS_MINER_PATH=~/markets-repo-location
 
 1. Update your `config.toml` and set `EnableStorageMarket` option to `false`.
 
-2. Start the node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo)
+2. Start the node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```sh
 ./lotus-miner run
