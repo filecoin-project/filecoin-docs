@@ -17,7 +17,7 @@ Lotus v1.11.0 introduced the notion of `subsystems` in the `lotus-miner` process
 #  EnableMining = true
 #  EnableSealing = true
 #  EnableSectorStorage = true
-#  EnableStorageMarket = true
+#  EnableMarkets = true
 ```
 
 All these options are set to `true` by default. Until now, the monolith `lotus-miner` process has been responsible for all functionality.
@@ -31,7 +31,7 @@ At the moment these `subsystems` are designed to be grouped into two distinct ty
   EnableMining = false
   EnableSealing = false
   EnableSectorStorage = false
-  EnableStorageMarket = true
+  EnableMarkets = true
 ```
 
 2. The `mining/sealing/proving` node - a `lotus-miner` process responsible to Filecoin mining, and sector storage, sealing and proving;
@@ -41,7 +41,7 @@ At the moment these `subsystems` are designed to be grouped into two distinct ty
   EnableMining = true
   EnableSealing = true
   EnableSectorStorage = true
-  EnableStorageMarket = false
+  EnableMarkets = false
 ```
 
 When a `lotus-miner` node is started with configuration for a `markets` node, it includes a libp2p node and should be publicly exposed on the Internet and reachable/dialable for other clients to communicate with it.
@@ -109,7 +109,7 @@ export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 ```sh
 export LOTUS_MINER_PATH=~/markets-repo-location
 
-./lotus-miner init service --enable-market \
+./lotus-miner init service --name=markets \
                            --api-sealer=$APISEALER \
                            --api-sector-index=$APISECTORINDEX \
                            --config=~/.lotusmarket/config.toml \
@@ -119,7 +119,7 @@ export LOTUS_MINER_PATH=~/markets-repo-location
 
 ## Start the `mining/sealing/proving` miner process without the markets subsystem
 
-1. Update your `config.toml` and set `EnableStorageMarket` option to `false`.
+1. Update your `config.toml` and set `EnableMarkets` option to `false`.
 
 2. Start the node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
