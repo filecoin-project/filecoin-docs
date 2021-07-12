@@ -73,7 +73,7 @@ lotus-miner backup ~/lotus-backup-location/backupfile
 
 ## Copy config.toml and storage.json for the markets service
 
-You need to generate a `config.toml` and `storage.json` for the markets node, and have them ready for the next step.
+You need to generate a `config.toml` and `storage.json` for the markets node, and have them ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
 If you intend to run the `mining/sealing/proving` node on the same machine as the `markets` node, make sure that their listeners do not clash:
 ```
