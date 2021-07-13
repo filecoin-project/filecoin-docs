@@ -71,9 +71,9 @@ export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
 lotus-miner backup ~/lotus-backup-location/backupfile
 ```
 
-## Copy config.toml and storage.json for the markets service
+## Copy config.toml for the markets service
 
-You need to generate a `config.toml` and `storage.json` for the markets node, and have them ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
+You need to generate a `config.toml` for the markets node, and have them ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
 If you intend to run the `mining/sealing/proving` node on the same machine as the `markets` node, make sure that their listeners do not clash:
 ```
@@ -84,16 +84,7 @@ If you intend to run the `mining/sealing/proving` node on the same machine as th
 
 By default the `lotus-miner` node listens to port 2345, so in the example configuration above, we change the configuration for the `markets` node to listen to `127.0.0.1:8787`.
 
-`storage.json` should be left without storage paths, as the `markets` node won't handle anything storage related.
-
-```
-{
-  "StoragePaths": [
-  ]
-}
-```
-
-In the example commands below, we have placed the `config.toml` and `storage.json` in the `~/.lotusmarket` directory.
+In the example commands below, we have placed the `config.toml` in the `~/.lotusmarket` directory.
 
 ## Initialising a markets service repository
 
@@ -109,11 +100,10 @@ export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 ```sh
 export LOTUS_MINER_PATH=~/markets-repo-location
 
-./lotus-miner init service --name=markets \
+./lotus-miner init service --type=markets \
                            --api-sealer=$APISEALER \
                            --api-sector-index=$APISECTORINDEX \
                            --config=~/.lotusmarket/config.toml \
-                           --storage-config=~/.lotusmarket/storage.json \
                            ~/lotus-backup-location/backupfile
 ```
 
