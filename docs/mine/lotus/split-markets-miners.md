@@ -10,7 +10,7 @@ breadcrumb: 'Splitting main miner and markets service processes'
 
 ## Background
 
-> Note: this feature is to be introduced in Lotus v1.11.1
+> Note: this feature is available starting with Lotus v1.11.1
 
 Lotus v1.11.1 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be enabled or disabled in the `config.toml` file:
 
@@ -97,7 +97,9 @@ export APISEALER=`./lotus-miner auth api-info --perm=admin`
 export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 ```
 
-2. Initialise the `market` node. This performs a one-time setup, in which the `Peer ID` and the `Multiaddr` of the miner are updated and a message is submitted so that these values are changed on-chain. This is necessary so that storage and retrieval clients know that this miner is now publicly dialable/reachable on a new addres - namely the one that the `market` node is listening to. Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
+2. Initialise the `market` node. This performs a one-time setup of the markets node. Part of that setup includes updating the `Peer ID` and the `Multiaddr` in the miner actor by submitting a message on chain. This is necessary so that storage and retrieval clients know that this miner's **deal-making** endpoint is now publicly dialable/reachable on a new address (the new `market` node).
+
+    Note that `lotus-miner` interacts with one repository or another depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```sh
 export LOTUS_MINER_PATH=~/markets-repo-location
