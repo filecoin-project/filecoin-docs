@@ -9,7 +9,7 @@ Lotus allows you to set different policies to calculate the quoted price of a re
 
 | Policy name | Description |
 | --- | --- |
-| Default | Lotus is shipped with an in-built default pricing policy that offers free retrievals for Verified Unsealed deals. Miners can still charge clients for data transfer if they wish to by turning off free data transfer for verified deals in the Miner config. Miners can also charge clients for Unsealing if they don't have an Unsealed sector file to retrieve the deal payload from. |
+| Default | Lotus is shipped with an in-built default pricing policy that offers free retrievals for verified unsealed deals. Miners can still charge clients for data transfer if they wish to by turning off free data transfer for verified deals in the Miner config. Miners can also charge clients for unsealing if they don't have an unsealed sector file to retrieve the deal payload from. |
 | External | Miners can configure an external pricing script for Lotus to use instead of the default pricing policy to price retrieval deals. The script will be called with the relevant deal parameters, and the output quote will be used by Lotus to price deals. |
 
 ## Default policy
@@ -23,7 +23,7 @@ Strategy = "default"
 VerifiedDealsFreeTransfer = false
 ```
 
-It will also not charge for Unsealing if we already have an Unsealed sector file containing the retrieval payload.
+It will also not charge for unsealing if we already have an unsealed sector file containing the retrieval payload.
 
 ## External policy
 
