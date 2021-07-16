@@ -142,7 +142,7 @@ module.exports = {
                 ['lotus/miner-lifecycle', 'Miner lifecycle'],
                 ['lotus/manage-storage-deals', 'Manage storage deals'],
                 ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
-                ['lotus/dynamic-retrieval-pricing', Dynamic retrieval pricing'],
+                ['lotus/dynamic-retrieval-pricing', 'Dynamic retrieval pricing'],
                 ['lotus/custom-storage-layout', 'Custom storage layout'],
                 ['lotus/sector-pledging', 'Sector pledging'],
                 ['lotus/connectivity', 'Connectivity'],
