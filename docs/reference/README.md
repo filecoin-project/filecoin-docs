@@ -69,7 +69,7 @@ This section contains links and reference materials for Filecoin.
 [**Network.filecoin.io**](https://network.filecoin.io) - lists all current Filecoin networks and related informations. 
 
 + **Mainnet**
-  + [Mainnet network status]() - reports the status of the Filecoin Mainnet.
+  + [Mainnet network status](https://filecoin.statuspage.io/) - reports the status and incident of the Filecoin Mainnet.
 + **Calibration**
   + Largest testnet which support 32GiB and 64GiB sectors.
   + See [#fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC) for announcements and [#fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack).
@@ -161,7 +161,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 ### Storage tools for apps
 
 - [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers. Currently for Filecoin storage deals we recommend using [Powergate](https://docs.textile.io/powergate/) to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.).
-  - [POW CLI]() - The CLI runs on the Powergate API. 
+  - [POW CLI](https://docs.textile.io/powergate/#command-line-interface) - The CLI runs on the Powergate API. 
   - [Powergate JS Client](https://github.com/textileio/js-powergate-client) - JS client built on top of Powergate gRPC APIs.
   - [Powergate Go Client](https://pypi.org/project/pygate-grpc/) - Build your Go app using Powergate APIs with Go client.
 - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood, hosted by Textile.
