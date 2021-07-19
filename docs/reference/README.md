@@ -230,7 +230,7 @@ The Retrieval Market is in early development; research and development teams are
 
 Tools for sending and receiving FIL tokens.
 
-### Filecoin Wallets
+### Wallets (audited)
 
 Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are **_recommended_** below.
 
