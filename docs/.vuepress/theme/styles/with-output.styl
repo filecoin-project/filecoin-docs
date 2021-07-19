@@ -58,4 +58,36 @@ div.with-output {
 }
 
 
+// Use the output class for standalone shell output (not directly joined to an input block).
+// This is useful when you want to add some explanatory text between input and output.
+// Note that you need to use a language hint and the `output` tag - you can use `text` for plain text.
+//
+// Example:
+//
+// ```bash
+// some-shell-command
+// ```
+//
+// Here's some text that explains something about the output.
+//
+// ```text output
+// Some command ouptut
+// ```
+div.output {
+    pre[class*="language-"] {
+      background: lighten($codeBgColor, 10%);
+    }
 
+    &:before {
+      content: 'output';
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: x-small;
+    }
+
+    // disable clipboard button
+    .code-copy {
+      visibility: hidden;
+    }
+}
