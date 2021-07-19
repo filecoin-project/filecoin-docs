@@ -57,8 +57,8 @@ lotus client commP <inputCarFilePath>
 ### Calculate the datasize
 
 1. Take the final car size `ls -l data.car`
-2. Round it up to the nearest power of 2. This is your padded piece size.
-3. Divide by 128, multiply by 127. this is your unpadded piece size.
+1. Round it up to the nearest power of 2. This is your padded piece size.
+1. Divide by 128, multiply by 127. this is your unpadded piece size.
 
 You can also use WolframAlpha to get your datasize:
 

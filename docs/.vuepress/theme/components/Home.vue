@@ -78,6 +78,10 @@ export default {
           path: '/store',
           children: [
             {
+              title: 'Storage and retrieval tutorial',
+              path: '/get-started/store-and-retrieve'
+            },
+            {
               title: 'Slingshot competition',
               path: 'http://slingshot.filecoin.io/'
             },
