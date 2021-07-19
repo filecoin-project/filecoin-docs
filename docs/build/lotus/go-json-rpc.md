@@ -34,8 +34,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/filecoin-project/go-jsonrpc"
-	"github.com/filecoin-project/lotus/api/apistruct"
+	jsonrpc "github.com/filecoin-project/go-jsonrpc"
+	lotusapi "github.com/filecoin-project/lotus/api"
 )
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 	headers := http.Header{"Authorization": []string{"Bearer " + authToken}}
 	addr := "127.0.0.1:1234"
 
-	var api apistruct.FullNodeStruct
+	var api lotusapi.FullNodeStruct
 	closer, err := jsonrpc.NewMergeClient(context.Background(), "ws://"+addr+"/rpc/v0", "Filecoin", []interface{}{&api.Internal, &api.CommonStruct.Internal}, headers)
 	if err != nil {
 		log.Fatalf("connecting with lotus failed: %s", err)
