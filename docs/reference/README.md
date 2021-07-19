@@ -35,7 +35,7 @@ This section contains links and reference materials for Filecoin.
 	* [Other wallets](#other-wallets)
 * [Ecosystem Galleries](#ecosystem-galleries)
   * [Hackathons](#hackathons)
-  * [Grant and accelerators](#grant-programs-and-accelerators)
+  * [Grant and accelerators](#grant-and-accelerators)
 
 ## About Filecoin
 
@@ -163,7 +163,7 @@ Developer tools, API clients & storing service that developers can use to build 
 - [**Lotus JSON-RPC API**](https://docs.filecoin.io/build/lotus/#getting-started-with-lotus-apis) - Lotus offers the full feature set of its capabilities through API.
   + [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 - [Glif nodes](https://docs.filecoin.io/build/hosted-lotus/) and [Infura](https://infura.io/docs/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
-  + These endpoints support read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Filecoin Signing Tools library](#wallet-related-tools-for-developer)).
+  + These endpoints support read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Message signing tools](#message-signing-tools)).
 
 #### Scalable endpoint hosting
 
@@ -277,7 +277,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
   - [EthDenver 2021](https://ethdenver.com)
   - [EthOnline 2020](https://ethonline.org/)
   - [HackFS 2020](https://hackfs.com/)
-  - [Spark University Hackathon 2020](
+  - [Spark University Hackathon 2020](https://filecoin.io/blog/spark-university-hackathon/)
 
 ### Grant and accelerators
 
