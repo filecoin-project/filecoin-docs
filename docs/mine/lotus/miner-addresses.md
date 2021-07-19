@@ -66,41 +66,48 @@ To set up a _control address_:
 
 1. Create a new address and send it some funds for gas fees:
 
-   ```sh
+   ```sh with-output
    lotus wallet new bls
-   > f3defg...
+   ```
+   ```
+   f3defg...
+   ```
 
+   ```shell
    lotus send --from <address> f3defg... 100
    ```
 
 2. Inform the miner of the new address:
 
-   ```sh
+   ```sh with-output
    lotus-miner actor control set --really-do-it f3defg...
-
-   > Add f3defg...
-   > Message CID: bafy2...
+   ```
+   ```
+   Add f3defg...
+   Message CID: bafy2...
    ```
 
 3. Wait for the message to land on chain:
 
-   ```sh
+   ```sh with-output
    lotus state wait-msg bafy2...
-
-   > ...
-   > Exit Code: 0
-   > ...
+   ```
+   ```
+   ...
+   Exit Code: 0
+   ...
    ```
 
 4. Check the miner control address list to make sure the address was correctly added:
 
-   ```sh
+   ```sh with-output
    lotus-miner actor control list
-
-   > name       ID      key        use    balance
-   > owner      t01111  f3abcd...  other  300 FIL
-   > worker     t01111  f3abcd...  other  300 FIL
-   > control-0  t02222  f3defg...  post   100 FIL
+   ```
+   ```
+   name       ID      key        use    balance
+   owner      t01111  f3abcd...  other  300 FIL
+   worker     t01111  f3abcd...  other  300 FIL
+   control-0  t02222  f3defg...  post   100 FIL
    ```
 
 Repeat this procedure to add additional addresses.
@@ -113,50 +120,67 @@ This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoi
 
 1. Create two control addresses. Control addresses can be any _type_ of address: `secp256k1 ` or `bls`:
 
-   ```shell
+   ```shell with-output
    lotus wallet new bls
+   ```
+   ```
+   f3rht...
+   ```
+   <br/>
 
-   > f3rht...
-
+   ```shell with-output
    lotus wallet new bls
+   ```
+   ```
+   f3sxs...
+   ```
 
-   > f3sxs...
+   <br/>
 
+   ```shell with-output
    lotus wallet list
-
-   > Address   Balance  Nonce  Default
-   > f3rht...  0 FIL    0      X
-   > f3sxs...  0 FIL    0
+   ```
+   ```
+   Address   Balance  Nonce  Default
+   f3rht...  0 FIL    0      X
+   f3sxs...  0 FIL    0
    ```
 
 2. Add some funds into those two addresses.
 3. Wait for around 5 minutes for the addresses to be assigned IDs.
 4. Get ID of those addresses:
 
-   ```shell
+   ```shell with-output
    lotus wallet list -i
-
-    > Address   ID        Balance                   Nonce  Default
-    > f3rht...  f0100933  0.59466768102284489 FIL   1      X
-    > f3sxs...  f0100939  0.4 FIL                   0
+   ```
+   ```
+    Address   ID        Balance                   Nonce  Default
+    f3rht...  f0100933  0.59466768102284489 FIL   1      X
+    f3sxs...  f0100939  0.4 FIL                   0
    ```
 
 5. Add control addresses:
 
-   ```shell
+   ```shell with-output
    lotus-miner actor control set --really-do-it=true f0100933 f0100939
+   ```
+   ```
+    Add f3rht...
+    Add f3sxs...
+    Message CID: bafy2bzacecfryzmwe5ghsazmfzporuybm32yw5q6q75neyopifps3c3gll6aq
+   ```
 
-    > Add f3rht...
-    > Add f3sxs...
-    > Message CID: bafy2bzacecfryzmwe5ghsazmfzporuybm32yw5q6q75neyopifps3c3gll6aq
-
-    lotus actor control list
-
-    > name       ID      key        use    balance
-    > owner      t01...  f3abcd...  other  15 FIL
-    > worker     t01...  f3abcd...  other  10 FIL
-    > control-0  t02...  f3defg...  post   100 FIL
-    > control-1  t02...  f3defg...  post   100 FIL
+   <br/>
+ 
+   ```shell with-output
+     lotus actor control list
+   ```
+   ```
+   name       ID      key        use    balance
+   owner      t01...  f3abcd...  other  15 FIL
+   worker     t01...  f3abcd...  other  10 FIL
+   control-0  t02...  f3defg...  post   100 FIL
+   control-1  t02...  f3defg...  post   100 FIL
    ```
 
 6. Add the newly created addresses into the miner config under the `[Addresses]` section:
@@ -173,27 +197,28 @@ This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoi
 
 Get the balances associated with a miner wallet by calling `info`:
 
-```shell
+```shell with-output
 lotus-miner info
+```
+```
+Miner: t01000
+Sector Size: 2 KiB
+Byte Power:   100 KiB / 100 KiB (100.0000%)
+Actual Power: 1e+03 Ki / 1e+03 Ki (100.0000%)
+  Committed: 100 KiB
+  Proving: 100 KiB
+Below minimum power threshold, no blocks will be won
+Deals: 0, 0 B
+  Active: 0, 0 B (Verified: 0, 0 B)
 
-> Miner: t01000
-> Sector Size: 2 KiB
-> Byte Power:   100 KiB / 100 KiB (100.0000%)
-> Actual Power: 1e+03 Ki / 1e+03 Ki (100.0000%)
->   Committed: 100 KiB
->   Proving: 100 KiB
-> Below minimum power threshold, no blocks will be won
-> Deals: 0, 0 B
->   Active: 0, 0 B (Verified: 0, 0 B)
->
-> Miner Balance: 10582.321501530685596531 FIL
->   PreCommit:   0.000000286878768791 FIL
->   Pledge:      0.00002980232192 FIL
->   Locked:      10582.321420164834231291 FIL
->   Available:   0.000051276650676449 FIL
-> Worker Balance: 49999999.999834359275302423 FIL
-> Market (Escrow):  0 FIL
-> Market (Locked):  0 FIL
+Miner Balance: 10582.321501530685596531 FIL
+  PreCommit:   0.000000286878768791 FIL
+  Pledge:      0.00002980232192 FIL
+  Locked:      10582.321420164834231291 FIL
+  Available:   0.000051276650676449 FIL
+Worker Balance: 49999999.999834359275302423 FIL
+Market (Escrow):  0 FIL
+Market (Locked):  0 FIL
 ```
 
 In this example, the miner ID is `t01000`, it has a total balance of `10582.321501530685596531 FIL`, and an available balance of `0.000051276650676449 FIL` that can be used as collateral or to pay for the pledge. The worker balance is `49999999.999834359275302423 FIL`.

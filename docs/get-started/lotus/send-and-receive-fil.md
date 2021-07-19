@@ -104,22 +104,24 @@ Remember that you will only see the latest balance when your daemon is fully syn
 
 Use the `send` command followed by the receiving address and the amount of `FIL` you want to send
 
-```shell
+```shell with-output
 # lotus send <target address> <FIL amount>
 lotus send f1zp2... 3
-
-> bafy1...
+```
+```
+bafy1...
 ```
 
 Lotus will output a transaction hash after a successful transaction. You can view details of this transaction using a [Filecoin explorer](https://docs.filecoin.io/get-started/explore-the-network/#block-explorers).
 
 Lotus assumes you want to send `FIL` from the _default address_. To send FIL from a specific address, use `--from` followed by the address you want to send `FIL` from. This address must have been created or imported to your Lotus node.
 
-```shell
+```shell with-output
 # lotus send --from=<sender address> <target address> <FIL amount>
 lotus send --from f1zp2... f15zt... 3.141
-
-> bafy2...
+```
+```
+bafy2...
 ```
 
 For advanced sending options:
