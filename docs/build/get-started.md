@@ -66,13 +66,14 @@ To make things a bit easier to manage, let's create a new directory for our proj
 
 1. Add the `request` package to this project:
 
-```shell
+```shell with-output
 npm install request
-
-> ...
-> + request@2.88.2
-> added 47 packages from 58 contributors and audited 47 packages in 1.594s
-> ...
+```
+```
+...
++ request@2.88.2
+added 47 packages from 58 contributors and audited 47 packages in 1.594s
+...
 ```
 
 Now that we've got a project set up, we can start to build our script!
@@ -207,10 +208,11 @@ We've got some basic functionality in our script, so we should run everything to
 
 1. In your project directory, call the script using `node`:
 
-```shell
+```shell with-output
 node index.js
-
-> Post successful: response:  {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceamdit67mnlyozufeaptmhmti6dv ...
+```
+```
+Post successful: response:  {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceamdit67mnlyozufeaptmhmti6dv ...
 ```
 
 Excellent! The Infura API received our request, and it sent us back the latest chain head information. But we're not interested in the chain head. We want to get information about addresses!
@@ -293,15 +295,16 @@ Instead of asking for the chain head information, let's see if a given string is
 
 1. Let's rerun the script to see what response we get:
 
-   ```shell
+   ```shell with-output
    node index.js
-
-   > Response:  {"jsonrpc":"2.0","result":"f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi","id":0}
+   ```
+   ```
+   Response:  {"jsonrpc":"2.0","result":"f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi","id":0}
    ```
 
    Great! The fact that we got our address back in the `result` field means that our address is valid. If we had sent over an invalid address, we'd get something like this:
 
-   ```shell
+   ```text output
    Response:  {"jsonrpc":"2.0","id":0,"error":{"code":1,"message":"invalid address payload"}}
    ```
 
@@ -333,10 +336,11 @@ Our script checks that a given string is a valid Filecoin address but doesn't do
 
 1. The Infura API will let us know the balance:
 
-   ```shell
+   ```shell with-output
    node index.js
-
-   > ADDRESS:  {"jsonrpc":"2.0","result":"7182015146934547358774","id":0}
+   ```
+   ```
+   ADDRESS:  {"jsonrpc":"2.0","result":"7182015146934547358774","id":0}
    ```
 
    The Infura API returns the value of the address in `attoFIL`. If the address you are requesting doesn't have a balance, the response from Infura will be blank:

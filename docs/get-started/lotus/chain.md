@@ -37,11 +37,12 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
 1. Check the `sha256sum` of the downloaded snapshot:
 
-    ```shell
+    ```shell with-output
     # Please change the file name accordingly to the actual downloaded snapshot and sha256sum, in this example it is `minimal_finality_stateroots_517061_2021-02-20_11-00-00.car and minimal_finality_stateroots_517061_2021-02-20_11-00-00.sha256sum`
     echo "$(cut -c 1-64 minimal_finality_stateroots_517061_2021-02-20_11-00-00.sha256sum) minimal_finality_stateroots_517061_2021-02-20_11-00-00.car" | sha256sum --check
-    
-    > minimal_finality_stateroots_517061_2021-02-20_11-00-00.car: OK
+    ```
+    ```
+    minimal_finality_stateroots_517061_2021-02-20_11-00-00.car: OK
     ```
 
 1. Start the Lotus daemon using `--import-snapshot`:
@@ -75,37 +76,41 @@ There are two ways to track whether the Lotus daemon is correctly syncing the ch
 
 Use `sync status` to output the current state of your local chain:
 
-````sh
+````sh with-output
 lotus sync status
-
-> sync status:
-> worker 0:
->         Base:   [bafy2bzacecnamqgqmifpluoeldx7zzglxcljo6oja4vrmtj7432rphldpdmm2]
->         Target: [bafy2bzaceb4b3ionbbxz4uqoehzkjlt4ayta7bneh2bh5xatnwypeuqypebmw bafy2bzaceb2uct4pawanule5bt2ivepcgqls6e6f52lccofvdyfynyfnsa3aa bafy2bzacealylayv2mpgx7wkf54diu6vqmw5yubdgkauii7q2fb7hvwk4343i] (414300)
->         Height diff:    414300
->         Stage: header sync
->         Height: 414300
->         Elapsed: 765.267091ms
+````
+````
+sync status:
+worker 0:
+        Base:   [bafy2bzacecnamqgqmifpluoeldx7zzglxcljo6oja4vrmtj7432rphldpdmm2]
+        Target: [bafy2bzaceb4b3ionbbxz4uqoehzkjlt4ayta7bneh2bh5xatnwypeuqypebmw bafy2bzaceb2uct4pawanule5bt2ivepcgqls6e6f52lccofvdyfynyfnsa3aa bafy2bzacealylayv2mpgx7wkf54diu6vqmw5yubdgkauii7q2fb7hvwk4343i] (414300)
+        Height diff:    414300
+        Stage: header sync
+        Height: 414300
+        Elapsed: 765.267091ms
+````
 
 #### Sync wait
 
 Use `sync wait` to constantly output the state of your current chain as an ongoing process:
 
-```shell
+```shell with-output
 lotus sync wait
-
-> Worker: 0; Base: 0; Target: 414300 (diff: 414300)
-> State: header sync; Current Epoch: 410769; Todo: 3531
-> Validated 0 messages (0 per second)
-> ...
+```
+```
+Worker: 0; Base: 0; Target: 414300 (diff: 414300)
+State: header sync; Current Epoch: 410769; Todo: 3531
+Validated 0 messages (0 per second)
+...
 ````
 
 Use `chain getblock` to check when the last synced block was mined:
 
-```shell
+```shell with-output
 date -d @$(./lotus chain getblock $(./lotus chain head) | jq .Timestamp)
-
-> Mon 24 Aug 2020 06:00:00 PM EDT
+```
+```
+Mon 24 Aug 2020 06:00:00 PM EDT
 ```
 
 ## Creating a snapshot

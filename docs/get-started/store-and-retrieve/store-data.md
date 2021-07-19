@@ -62,8 +62,8 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 
     Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete, Lotus will output the payload CID.
 
-    ```shell
-    > Import 3, Root bafykb...
+    ```text output
+    Import 3, Root bafykb...
     ```
 
     This process takes about 60 seconds.
@@ -135,54 +135,54 @@ To complete this section, you need the **Data CID** you received after running `
 
 1. Specify the CID of the payload you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/5gb-filecoin-payload.bin`:
 
-    ```shell
+    ```text output
     Data CID (from lotus client import): bafykbz...
     ```
 
 1. Wait for Lotus to finish calculating the size of your payload. Lotus calculates this size by counting the individual bits in your payload to ensure that the size is accurate. 
 
-    ```shell
-    > .. calculating data size 
+    ```text output
+    .. calculating data size 
     ```
 
     The duration of this process depends on the size of your file and the specification of your Lotus node. In tests, Lotus took around 20 minutes file of a ~7.5GB file with a 4-core CPU and 8GB RAM. These specifications are common for most end-user laptops.
 
 1. Enter the number of days you want to keep this file on Filecoin. The minimum is 180 days:
 
-    ```shell
-    > Deal duration (days): 180 
+    ```text output
+    Deal duration (days): 180 
     ``` 
 
 1. Tell Lotus whether or not this is a Filecoin Plus deal. Since you signed up to Filecoin Plus in an earlier step, select `yes` here:
 
-    ```shell
-    > Make this a verified deal? (yes/no): yes
+    ```text output
+    Make this a verified deal? (yes/no): yes
     ```
 
 1. Enter the miner IDs from the previous section with an empty space separating the two IDs: 
 
-    ```shell
-    > Miner Addresses (f0.. f0..), none to find: f01000 f01001 
+    ```text output
+    Miner Addresses (f0.. f0..), none to find: f01000 f01001 
     ```
 
 1. Confirm your transaction by entering `yes`:
 
-    ```shell
-    > -----
-    > Proposing from f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq
-    >         Balance: 2 FIL
-    > 
-    > Piece size: 8GiB (Payload size: 7.445GiB)
-    > Duration: 7200h0m0s
-    > Total price: ~0 FIL (0 FIL per epoch)
-    > Verified: true
-    > 
-    > Accept (yes/no): yes
+    ```text output
+    -----
+    Proposing from f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq
+            Balance: 2 FIL
+    
+    Piece size: 8GiB (Payload size: 7.445GiB)
+    Duration: 7200h0m0s
+    Total price: ~0 FIL (0 FIL per epoch)
+    Verified: true
+    
+    Accept (yes/no): yes
     ```
 
 1. Lotus will returns two **Deal CIDs**:
 
-    ```shell
+    ```text output
     .. executing
     Deal (f01000) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     Deal (f01001) CID: bafeauyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpt
@@ -208,30 +208,31 @@ Once the data has been sent to the storage clients, the storage deals can take u
 
     ```shell
     lotus client list-transfers
-
     ```
     
     This command will output something like:
 
-    ```shell
-    > Sending Channels
-    > ID                   Status   Sending To   Root Cid     Initiated?  Transferred  Voucher                                   
-    > 1620782601911586915  Ongoing  ...KPFTTwY7  ...zyd3kapm  Y           224.1MiB     ...bqhcidjmajbelhlxfqry3d7qlu3tvar45a"}}  
+    ```text output
+    Sending Channels
+    ID                   Status   Sending To   Root Cid     Initiated?  Transferred  Voucher                                   
+    1620782601911586915  Ongoing  ...KPFTTwY7  ...zyd3kapm  Y           224.1MiB     ...bqhcidjmajbelhlxfqry3d7qlu3tvar45a"}}  
 
-    > Receiving Channels
-    > ...
+    Receiving Channels
+    ...
     ```
 
-    If the output of `lotus client list-transfers` is empty, then your tranfer has finished:
+    If the output of `lotus client list-transfers` is empty, then your transfer has finished:
 
-    ```shell
+    ```shell with-output
     lotus client list-transfers
-    > Sending Channels
-    >
-    >
-    > Receiving Channels
-    >
-    >
+    ```
+    ```
+    Sending Channels
+    
+    
+    Receiving Channels
+    
+    
     ```
 
 ### Deal states
