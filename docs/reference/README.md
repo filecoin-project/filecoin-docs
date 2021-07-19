@@ -137,7 +137,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 - [Filecoin.js](https://github.com/filecoin-shipyard/filecoin.js) (outdated) -  higher-level JS library for interacting with Lotus via JSON-RPC API.
 - [lotus-json-rpc-provider](https://www.npmjs.com/package/@coinsummer/lotus-jsonrpc-provider)  (outdated) - wraps the Lotus API in TypeScript.
 
-### Wallet-related tools for developer
+### Wallet-related tools for developers
 
 - [FilSnap MetaMask Plugin](https://pages.consensys.net/filecoin-metamask-snap-preview) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out.
 - [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges.
