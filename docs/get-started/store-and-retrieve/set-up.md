@@ -35,14 +35,11 @@ A lite-node lets your computer interact with the Filecoin network without having
 
 To install a Lotus lite-node on your computer, you must have the tools required to _build_ a Lotus binary from the GitHub repository.
 
-| [MacOS](#macos) | [Ubuntu](#ubuntu) |
-| --- | --- |
-
 Take a look at [Lotus: install and setup](../lotus/installation.md) to learn how to install Lotus on other operating systems. 
 
-### MacOS
+::::: tabs
 
-This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section ↓](#ubuntu)
+:::: tab macOS
 
 :::warning Requirements 
 You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
@@ -62,11 +59,8 @@ You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebr
 
 1. Lotus is now installed on your computer. 
 
-[Head over to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
-
-### Ubuntu
-
-This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section ↑](#macos).
+::::
+:::: tab Ubuntu
 
 There are two simple ways to install Lotus on Ubuntu:
 
@@ -114,6 +108,9 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+
+
+:::::
 
 ## Run a Lotus lite-node 
 
