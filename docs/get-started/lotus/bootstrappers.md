@@ -30,22 +30,23 @@ the following configuration. This configuration will setup the node to act as a 
     ConnMgrLow = 400
     ConnMgrHigh = 500
     ConnMgrGrace = "5m0s"
+    Bootstrapper = true
   [Pubsub]
-    Bootstrapper = true               # This line is required at time of writing to act as Pubsub Bootstrapper
+    Bootstrapper = true 
 
 ```
 
 ### Starting a Bootstrapper node
 
 Start the lotus daemon with the bootstrapper profile. `--profile=bootstrapper` overrides configuration defaults
-to enable bootstrapper mode for libp2p and pubsub subsystems.
+to enable bootstrapper mode for libp2p and pubsub subsystems. If your daemon config file contains `Bootstrapper = true` as in the example above, this option is not required.
 
 ```bash
 lotus daemon --profile=bootstrapper
 ```
 
 ### Operating a Bootstrapper node
-Peer your bootstrapper node with other bootstrappers on the same network.
+Bootstrapper nodes will automatically bootstrap with existing bootstrappers. If you are operating your own infrastrucuture, you may want to manually peer your bootstrappers with each other.
 
 ```bash
 lotus net peers
@@ -55,4 +56,12 @@ lotus net connect <peer_multiaddr>
 ### Configure lotus daemons to connect to this bootstrapper.
 
 Lotus bootstrappers are built in at compile time. You can find the list of public bootstrapper nodes for
-each network [here](https://github.com/filecoin-project/lotus/tree/master/build/bootstrap).
+each network [here](https://github.com/filecoin-project/lotus/tree/master/build/bootstrap). This list can be overridden by adding the following to your daemon config file.
+
+
+```
+[Libp2p]
+    BootstrapPeers = [
+      "<multiaddr>"
+    ]
+```
