@@ -248,7 +248,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [Cobo](https://cobo.com/)
 - [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
 
-## Ecosystem projects & supports
+## Ecosystem galleries
 
 - [Filecoin Shipyard](https://github.com/filecoin-shipyard) - open source community projects on Filecoin
 - [Filecoin Ecosystem Grid](https://github.com/filecoin-project/community/discussions/194)
