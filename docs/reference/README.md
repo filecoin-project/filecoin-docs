@@ -218,7 +218,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Retrieval Market resources (WIP experiments)
 
-The Retrieval Market in Filecoin is currently a basic version and research and development teams are actively exploring enhancements.
+The Retrieval Market is in early development; research and development teams are actively exploring improvements.
 
 - [Decentralized Data Delivery Markets - Open Problems and RFCs](https://github.com/protocol/ResNetLab/blob/master/OPEN_PROBLEMS/DECENTRALIZED_DATA_DELIVERY_MARKETS.md)
 - [ChainSafe's Full Node Retrieval Client](https://github.com/ChainSafe/fil-secondary-retrieval-markets)
