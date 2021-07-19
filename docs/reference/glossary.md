@@ -37,7 +37,7 @@ Every [epoch](#epoch), a small subset of Filecoin [storage miners](#storage-mine
 
 ## Epoch
 
-Time in the Filecoin blockchain is discretized into _epochs_ that are currently twenty-five seconds in length. Every epoch, a subset of storage miners are elected to each add a new block to the Filecoin blockchain via [Winning Proof-of-Spacetime](#winning-proof-of-spacetime-winningpost).
+Time in the Filecoin blockchain is discretized into _epochs_ that are currently thirty seconds in length. Every epoch, a subset of storage miners are elected to each add a new block to the Filecoin blockchain via [Winning Proof-of-Spacetime](#winning-proof-of-spacetime-winningpost).
 
 ## FIL
 
@@ -54,6 +54,10 @@ When a [storage miner](#storage-miner) fails to complete [Window Proof-of-Spacet
 ## Filecoin
 
 The term _Filecoin_ is used generically to refer to the Filecoin project, protocol, and network.
+
+## Finality
+
+Finality refers to the immutability of messages and state recorded to the Filecoin blockchain. As new blocks are added to the blockchain, it becomes more and more difficult for older blocks to be altered, until they become effectively impossible to modify. The _finality period_ is the amount of time that must elapse before a block is considered completely immutable. In the current [mainnet](#mainnet), this is configured as 900 [epochs](#epoch).
 
 ## Gas
 

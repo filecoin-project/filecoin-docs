@@ -22,6 +22,9 @@
 /how-to/store/large-files/ /store/lotus/very-large-files/
 
 /get-started/lotus/chain-snapshots/ /get-started/lotus/chain/
+/get-started/go-filecoin-tutorial/Getting-Started.html /get-started/
+/get-started/go-filecoin-tutorial/Home.html /get-started/
+/get-started/venus-tutorial/Getting-Started.html /get-started/
 
 /mine/storage-mining/ /mine/lotus/
 /mine/lotus-seal-worker/ /mine/lotus/seal-workers/
@@ -36,12 +39,17 @@
 /mine/lotus/miner-wallets/ /mine/lotus/miner-addresses/
 /mine/lotus/miner-lifecycle/custom-storage-layout/ /mine/lotus/custom-storage-layout/
 
-
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
 /build/start-building/implementations/ /get-started/
-/build/examples/sample-architectures/ /build/examples/
 /build/reference/lotus-api/ /reference/lotus-api/
+
+/build/examples /get-started/
+/build/examples/ /get-started/
+/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup/ /get-started/
+/build/examples/meme-marketplace/step-5-connecting-app-with-blockchain/ /get-started/
+/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs/ /get-started/
+/build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app/ /get-started/
 
 /store/lotus/send-and-receive-fil/ /get-started/lotus/send-and-receive-fil/
 
@@ -68,3 +76,4 @@
 
 # use a custom 404 for any pages that are not rendered
 /* /404/index.html 404
+

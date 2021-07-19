@@ -5,7 +5,7 @@ description: Lotus is a full-featured client capable of performing storage and r
 
 # Lotus
 
-{{ $frontmatter.description }}.
+{{ $frontmatter.description }}
 
 This section covers how to make and manage deals using Lotus. In order to use this functionality, you will need to have [installed Lotus](../../get-started/lotus/installation.md) and keep it running in the background as a daemon. For more information about how to install and operate with Lotus check the [Get Started section](../../get-started/lotus/README.md).
 

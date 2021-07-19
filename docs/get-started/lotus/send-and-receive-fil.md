@@ -12,23 +12,51 @@ To receive and send FIL with Lotus, you will need to have a [Lotus node installe
 
 [[TOC]]
 
+## About Wallet Addresses
+
+When using a wallet, an account is identified by its [address](/about-filecoin/how-filecoin-works.md#addresses). A Filecoin address always starts with the letter `f` and a digit that indicates what type of address it is.
+
+Filecoin accounts have two kinds of address, longer **public key** addresses, and shorter **ID** addresses. Both addresses refer to the same account and can be used to send and receive FIL using a wallet.
+
+#### Public Key Address
+
+A [public key address](/about-filecoin/how-filecoin-works.md#public-key-addresses-f1-and-f3) is derived directly from a cryptographic key. Public key addresses start with the characters `f1` (secp256k1) or `f3` (BLS), depending on the type of encryption key used.
+
+Here's an example of a secp256k1 public key address: `f1abjxfbp274xpdqcpuaykwkfb43omjotacm2p3za`.
+
+Public key addresses are the most common way to refer to Filecoin accounts, and they are supported by hardware wallets like [Ledger](https://ledger.com).
+
+Because a public key address does not depend on any blockchain state, they are considered [robust](/about-filecoin/how-filecoin-works.md#robust-addresses-versus-id-addresses) and are recommended for most use cases involving transfers of FIL, for example, when sending FIL to another user through an exchange.
+
+#### ID Address
+
+ID addresses are a compact and more "human friendly" way to refer to an account than public key addresses. ID addresses always start with the characters `f0`, followed by a sequence of digits, for example: `f033259`.
+
+Every ID address for a Filecoin account has an alternative public key address that corresponds to the same account. You can find the ID address for any public key address by searching for the public key address on [FilFox](https://filfox.info/), a Filecoin block explorer.
+
+Because they are more compact than public key addresses, ID addresses are often used when refering to miners and other long-lived Filecoin [Actors](/about-filecoin/how-filecoin-works.md#actors). As these actors receive a large volume of messages, the compact address can result in meaningful savings in gas fees. A multisig wallet is a type of Actor.
+
+While you can send FIL to an ID address using a wallet, you should first check the details for the account on [FilFox](https://filfox.info/) to see when the account was created, as well as the corresponding public key address. If the address was created very recently (within the [finality period](/reference/glossary.md#finality)) there is a small chance that it could be re-assigned as the network reaches consensus, and the public key address should be used instead.
+
+More information about Addresses can be found in the [How Filecoin works](../../about-filecoin/how-filecoin-works.md#addresses) section.
+
 ## Creating a wallet
 
 ### Create a BLS wallet
 
-```bash
+```shell
 lotus wallet new bls
 ```
 
 ### Create a secp256k1 wallet
 
-```bash
+```shell
 lotus wallet new
 ```
 
 ### Create a multisig wallet
 
-```bash
+```shell
 lotus msig create address1 address2..
 ```
 
@@ -44,19 +72,19 @@ You can create as many addresses as you need. One of them will be the _default a
 
 You can see a list of all addresses for your current node:
 
-```bash
+```shell
 lotus wallet list
 ```
 
 You can see the default address with:
 
-```bash
+```shell
 lotus wallet default
 ```
 
 If you wish, you can change the default address to a different one:
 
-```bash
+```shell
 lotus wallet set-default <address>
 ```
 
@@ -66,7 +94,7 @@ For non-mainnet networks, `FIL` can be obtained from a faucet. A list of faucets
 
 Once you have received some `FIL`, use `wallet balance` to check your balance:
 
-```bash
+```shell
 lotus wallet balance
 ```
 
@@ -76,7 +104,7 @@ Remember that you will only see the latest balance when your daemon is fully syn
 
 Use the `send` command followed by the receiving address and the amount of `FIL` you want to send
 
-```bash
+```shell
 # lotus send <target address> <FIL amount>
 lotus send f1zp2... 3
 
@@ -87,7 +115,7 @@ Lotus will output a transaction hash after a successful transaction. You can vie
 
 Lotus assumes you want to send `FIL` from the _default address_. To send FIL from a specific address, use `--from` followed by the address you want to send `FIL` from. This address must have been created or imported to your Lotus node.
 
-```bash
+```shell
 # lotus send --from=<sender address> <target address> <FIL amount>
 lotus send --from f1zp2... f15zt... 3.141
 
@@ -96,7 +124,7 @@ lotus send --from f1zp2... f15zt... 3.141
 
 For advanced sending options:
 
-```bash
+```shell
 lotus send --help
 ```
 
@@ -112,13 +140,13 @@ Keep your addresses' private keys safe! Do not share them with anyone! Store the
 
 You can export and re-import a wallet, including a different Lotus node. Use `wallet export` to export an address from a node:
 
-```bash
+```shell
 lotus wallet export <address> > <address>.key
 ```
 
 Use `wallet import` to import an address into a node:
 
-```bash
+```shell
 lotus wallet import wallet.private
 ```
 

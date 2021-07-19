@@ -29,7 +29,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
 1. Download the most recent lightweight snapshot and its checksum:
 
-    ```bash
+    ```shell
     curl -sI https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car | perl -ne '/x-amz-website-redirect-location:\s(.+)\.car/ && print "$1.sha256sum\n$1.car"' | xargs wget
     ```
 
@@ -37,7 +37,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
 1. Check the `sha256sum` of the downloaded snapshot:
 
-    ```bash
+    ```shell
     # Please change the file name accordingly to the actual downloaded snapshot and sha256sum, in this example it is `minimal_finality_stateroots_517061_2021-02-20_11-00-00.car and minimal_finality_stateroots_517061_2021-02-20_11-00-00.sha256sum`
     echo "$(cut -c 1-64 minimal_finality_stateroots_517061_2021-02-20_11-00-00.sha256sum) minimal_finality_stateroots_517061_2021-02-20_11-00-00.car" | sha256sum --check
     
@@ -46,14 +46,14 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
 1. Start the Lotus daemon using `--import-snapshot`:
 
-    ```bash
+    ```shell
     #Please change the file name accordingly to the actual downloaded snapshot, in this example it is `minimal_finality_stateroots_517061_2021-02-20_11-00-00.car`
     lotus daemon --import-snapshot minimal_finality_stateroots_517061_2021-02-20_11-00-00.car
     ```
 
 We strongly recommend you to download and verify the checksum of the snapshot before importing it. However, you can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
 
-```bash
+```shell
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
 ```
 
@@ -91,7 +91,7 @@ lotus sync status
 
 Use `sync wait` to constantly output the state of your current chain as an ongoing process:
 
-```bash
+```shell
 lotus sync wait
 
 > Worker: 0; Base: 0; Target: 414300 (diff: 414300)
@@ -102,7 +102,7 @@ lotus sync wait
 
 Use `chain getblock` to check when the last synced block was mined:
 
-```bash
+```shell
 date -d @$(./lotus chain getblock $(./lotus chain head) | jq .Timestamp)
 
 > Mon 24 Aug 2020 06:00:00 PM EDT
@@ -112,19 +112,19 @@ date -d @$(./lotus chain getblock $(./lotus chain head) | jq .Timestamp)
 
 A full chain CAR-snapshot can be created `chain export`:
 
-```bash
+```shell
 lotus chain export <filename>
 ```
 
 To back up a certain number of the most recent state roots, use the `--recent-stateroots` option, along with how many state roots you could like to backup:
 
-```bash
+```shell
 lotus chain export --recent-stateroots=2000 <filename>
 ```
 
 To create a _pruned_ snapshot and only include blocks directly referenced by the exported state roots, add the `skip-old-msgs` option:
 
-```bash
+```shell
 lotus chain export --recent-stateroots=2000 --skip-old-msgs <filename>
 ```
 
@@ -132,7 +132,7 @@ lotus chain export --recent-stateroots=2000 --skip-old-msgs <filename>
 
 You can restore snapshots by starting the daemon with the `--import-snapshot` option:
 
-```bash
+```shell
 # Without verification
 lotus daemon --import-snapshot <filename>
 
@@ -142,7 +142,7 @@ lotus daemon --import-chain <filename>
 
 If you do not want the daemon to start once the snapshot has finished, add the `--halt-after-import` flag to the command:
 
-```bash
+```shell
 lotus daemon --import-snapshot --halt-after-import <filename>
 ```
 
@@ -152,18 +152,18 @@ It is possible to _prune_ the current chain data used by Lotus to reduce the nod
 
 1. Stop the Lotus daemon:
 
-```bash
+```shell
 lotus daemon stop
 ```
 
 1. Remove the contents of the `datastore/chain/` folder in the Lotus path:
 
-```bash
+```shell
 rm -rf ~/.lotus/datastore/chain/*
 ```
 
 1. Start the daemon using a [lightweight snapshot](#lightweight-snapshot):
 
-```bash
+```shell
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
 ```

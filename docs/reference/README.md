@@ -7,30 +7,51 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 This section contains links and reference materials for Filecoin.
 
-- [Filecoin community resources and tools](#filecoin-community-resources-and-tools)
-  - [Node implementations](#node-implementations)
-  - [Devnets and testnets](#devnets-and-testnets)
-  - [Containers and virtualization](#containers-and-virtualization)
-- [Network status](#network-status)
-  - [Block explorers](#block-explorers)
-  - [Chain data and monitoring](#chain-data-and-monitoring)
-  - [Miner reputation systems](#miner-reputation-systems)
-  - [Storage status](#storage-status)
-  - [Core dev calls](#core-dev-calls)
-- [APIs and developer tools](#apis-and-developer-tools)
-  - [Filecoin API clients](#filecoin-api-clients)
-  - [Storage tools for apps](#storage-tools-for-apps)
-  - [Storage apps on Filecoin](#storage-apps-on-filecoin)
-  - [Ecosystem projects](#ecosystem-projects)
-  - [Grant programs and accelerators](#grant-programs-and-accelerators)
-- [Mining](#mining)
-  - [Dashboards and reputation systems](#dashboards-and-reputation-systems)
-  - [Storage client and miner programs](#storage-client-and-miner-programs)
-- [Wallets](#wallets)
-  - [List of Filecoin wallets](#wallets)
-  - [Wallet tools for developers](#wallet-tools-for-developers)
-  - [Filecoin signing tools](#filecoin-signing-tools)
-  - [Retrieval Market resources](#retrieval-market-resources-wip-experiments)
+-This section contains links and reference materials for Filecoin.
+
+- [Reference](#reference)
+  - [About the protocol](#about-the-protocol)
+    - [Filecoin specification](#filecoin-specification)
+    - [Filecoin's economy](#filecoin-economy)
+    - [Filecoin Plus for verified data](#filecoin-plus-for-verified-data)
+    - [Videos](#videos)
+  - [Filecoin community resources and tools](#filecoin-community-resources-and-tools)
+        - [Filecoin resources in Chinese](#filecoin-resources-in-chinese)
+    - [Join the network](#join-the-network)
+    - [Node implementations](#node-implementations)
+    - [Devnets and testnets](#devnets-and-testnets)
+    - [Local devnets on your local machine](#local-devnets-on-your-local-machine)
+    - [Containers and virtualization](#containers-and-virtualization)
+    - [Scalable endpoint hosting scripts](#scalable-endpoint-hosting-scripts)
+  - [Network status](#network-status)
+    - [Block explorers](#block-explorers)
+    - [Network stats](#network-stats)
+    - [Testnet explorers](#testnet-explorers)
+    - [Chain data and monitoring](#chain-data-and-monitoring)
+    - [Chain ingest tools](#chain-ingest-tools)
+    - [Miner reputation systems](#miner-reputation-systems)
+    - [Storage status](#storage-status)
+    - [Core dev calls](#core-dev-calls)
+  - [APIs and developer tools](#apis-and-developer-tools)
+    - [Filecoin API clients](#filecoin-api-clients)
+      - [Powergate clients](#powergate-clients)
+    - [Storage tools for apps](#storage-tools-for-apps)
+    - [Data prep tools](#data-prep-tools)
+    - [Databases using IPFS and Filecoin](#databases-using-ipfs-and-filecoin)
+    - [Storage apps on Filecoin](#storage-apps-on-filecoin)
+    - [Wallet-related](#wallet-related)
+    - [Developer tools](#developer-tools)
+    - [Ecosystem projects](#ecosystem-projects)
+    - [Grant programs and accelerators](#grant-programs-and-accelerators)
+  - [Mining](#mining)
+    - [Dashboards and reputation systems](#dashboards-and-reputation-systems)
+    - [Miner tools](#miner-tools)
+    - [Storage client and miner programs](#storage-client-and-miner-programs)
+  - [Wallets](#wallets)
+    - [Other wallets](#other-wallets)
+    - [Wallet tools for developers](#wallet-tools-for-developers)
+    - [Filecoin signing tools](#filecoin-signing-tools)
+    - [Retrieval Market resources (WIP experiments)](#retrieval-market-resources-wip-experiments)
 
 ## About the protocol
 
@@ -38,7 +59,7 @@ This section contains links and reference materials for Filecoin.
 
 View the official [Filecoin technical specification](https://github.com/filecoin-project/specs) for the Filecoin protocol and its associated subsystems.
 
-### Filecoin's economy
+### Filecoin economy
 
 [Engineering Filecoin's Economy](https://filecoin.io/2020-engineering-filecoins-economy-en.pdf) - discusses the design of Filecoin's economic incentives.
 
@@ -121,7 +142,7 @@ Tools to check status and details of the network and chain.
 
 ### Network stats
 
-- [Network Stats Dashboard](https://stats.testnet.filecoin.io/) - Grafana
+- [Network Stats Dashboard](https://stats.filecoin.io/) - Grafana
 
 ### Testnet explorers
 
@@ -138,6 +159,10 @@ Tools to check status and details of the network and chain.
 - [Statediff](https://node.glif.io/space07/statediff/rpc/)
   - Uses [filecoin-project/statediff](https://github.com/filecoin-project/statediff) in GoLang to explore changes to Filecoin chain state
   - Also see [keyko-io/filecoin-verifier-tools](https://github.com/keyko-io/filecoin-verifier-tools) for a JS tool to walk the state HAMT
+- "Orphan blocks" (not an official protocol term in the Filecoin Spec)
+  - Blocks without rewards that were either mined on the wrong tipset, that the network fails to deliver in time, or a mix resulting in reorgs
+  - https://filscout.com/en/orphan-block - stats
+  - https://filscout.com/en/orphan-block/alllist - blocklist
 
 ### Chain ingest tools
 
@@ -180,6 +205,7 @@ Tools to check status and details of the network and chain.
 - [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 - [filecoin-ruby](https://github.com/subvisual/filecoin-ruby) - older interface to Lotus Filecoin in Ruby
 - [Starling Storage API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
+- [Estuary API](https://estuary.tech) - Estuary is a simple IPFS node that integrates a minimal Filecoin Client Library. It allows anyone with public data to store and retrieve it using a few API calls. It is for infrastructure operators, developers and Filecoin users. Visit [https://docs.estuary.tech](https://docs.estuary.tech) for more API documentations.
 
 Currently for Filecoin storage deals we recommend using [Powergate](https://docs.textile.io/powergate/) to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.)
 
@@ -191,11 +217,18 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 ### Storage tools for apps
 
 - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood, hosted by Textile
+- [Estuary](https://docs.filecoin.io/build/estuary) - [Estuary](https://estuary.tech) is a simple IPFS node that integrates a minimal Filecoin Client Library. It allows anyone with public data to store and retrieve it using a few API calls. It is for infrastructure operators, developers and Filecoin users. Visit [https://docs.estuary.tech](https://docs.estuary.tech) for more API documentations. A simple website application example that can community to any Estuary node can be found [here](https://github.com/application-research/estuary-www).
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account
 - [Space SDK from Fleek](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
+- [NFT.storage](https://nft.storage/) - beta service from Protocol Labs for storing off-chain NFT data on IPFS and Filecoin
 - [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers
 
-### Databases using IPFS & Filecoin
+### Data prep tools
+- [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) by FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes
+- [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://docs.filecoin.io/store/lotus/import-data-from-ipfs)
+- [CAR files](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://docs.filecoin.io/store/lotus/very-large-files/#deals-with-offline-data-transfer)
+
+### Databases using IPFS and Filecoin
 
 - [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS with Filecoin integration coming soon
 - [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [orbit-db-powergate-io](https://github.com/filecoin-shipyard/orbit-db-powergate-io)
@@ -212,6 +245,7 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 
 - [Filecoin Signing Tools](https://github.com/filecoin-project/filecoin-docs/wiki#remote-signing-tools) - **_recommended_** - for signing Filecoin messages without a full node, has a pure JS and Rust to WASM version for use in browsers, see the [Wallets](#wallets) section below
 - [Glif web wallet on Github](https://github.com/glifio/wallet) - a good JS example of using `filecoin-signing-tools` and Ledger hardware integration, live Filecoin wallet at [Glif.io](https://glif.io)
+- [See Wallet Tools below](#wallets)
 
 ### Developer tools
 
@@ -231,16 +265,23 @@ Currently for Filecoin storage deals we recommend using [Powergate](https://docs
 
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing quarterly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
-- [Gitcoin Hackathon GR9](https://gitcoin.co/hackathon/gr9/?) - online hackathon mid to end of March 2021 with [Filecoin-related bounties here](https://gitcoin.co/hackathon/gr9/?org=protocol)
-- [Chain Virtual Spring 2021 Hackathon](https://chain.link/hackathon) - Mar 15 to Apr 11, 2021
-- [NFT Hack](hhttps://nfthack.ethglobal.co/) - online hackathon Mar 19-21
-- [Scaling Ethereum](https://scaling.ethglobal.co/) - Apr 16 to May 14
-- [Huobi-Filecoin Incubation Center](https://filecoin.io/blog/huobi-launches-filecoin-incubation-center/)
-- [Filecoin Frontier Accelerator with LongHash](https://filecoin.io/blog/filecoin-frontier-accelerator/) - applications closed Nov 15, 2020
-- [Filecoin Launchpad Accelerator](https://consensys.net/blog/press-release/filecoin-launchpad-accelerator-powered-by-tachyon/) - from Fall 2020
-- [Apollo - Gitcoin x Filecoin](https://gitcoin.co/blog/apollo/#:~:text=APOLLO%20will%20run%20from%20August,using%20Filecoin%20and%20Web3%20ecosystem) - from Summer 2020
+- [Upcoming Hackathons](https://github.com/protocol/grants)
+  - Keep a lookout for upcoming hackathons! All winners are eligbile for [Next Steps Grants](https://github.com/protocol/grants#next-step-grants) after the hackathon
+- Past Hackathons
+  - [Scaling Ethereum](https://scaling.ethglobal.co/) - Apr 16 to May 14
+  - [Gitcoin GR9 Hackathon](https://gitcoin.co/hackathon/gr9/?) - March 2021 with [Filecoin-related bounties here](https://gitcoin.co/hackathon/gr9/?org=protocol)
+  - [NFT Hack](https://nfthack.ethglobal.co/) - online hackathon Mar 19-21
+  - [Chainlink 2021](https://chain.link/hackathon)
+  - [EthDenver 2021](https://ethdenver.com)
+  - [EthOnline 2020](https://ethonline.org/)
+  - [HackFS 2020](https://hackfs.com/)
+  - [Spark University Hackathon 2020](https://filecoin.io/blog/spark-university-hackathon/)
+- Accelerators
+  - [Huobi-Filecoin Incubation Center](https://filecoin.io/blog/huobi-launches-filecoin-incubation-center/)
+  - [Filecoin Frontier Accelerator with LongHash](https://filecoin.io/blog/filecoin-frontier-accelerator/) - applications closed Nov 15, 2020
+  - [Filecoin Launchpad Accelerator with ConsenSys Tachyon](https://consensys.net/blog/press-release/filecoin-launchpad-accelerator-powered-by-tachyon/) - from Fall 2020
+  - [Apollo - Gitcoin x Filecoin](https://gitcoin.co/blog/apollo/#:~:text=APOLLO%20will%20run%20from%20August,using%20Filecoin%20and%20Web3%20ecosystem) - from Summer 2020
 
-Keep a lookout for other upcoming hackathons! Previous ones involving Filecoin included [EthDenver](https://ethdenver.com), [EthOnline](https://ethonline.org/), [HackFS](https://hackfs.com/), [Spark University Hackathon](https://filecoin.io/blog/spark-university-hackathon/)...
 
 ## Mining
 
@@ -283,17 +324,18 @@ Wallets that have conducted third-party audits of their open-source code by a re
 
 ### Other wallets
 
-The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
+The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
 
 - [TrustWallet](https://trustwallet.com/) - [open source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 - [ImToken](https://token.im/)
 - [MathWallet](https://mathwallet.org/)
 - [Cobo](https://cobo.com/)
 - [FilWallet.ai](https://filwallet.ai/) - by the team behind Filscan.io
+- [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
 
 ### Wallet tools for developers
 
-- [FilSnap MetaMask Plugin](https://filsnap.netlify.app/) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
+- [FilSnap MetaMask Plugin](https://pages.consensys.net/filecoin-metamask-snap-preview) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out
 - A Filecoin light wallet example is in the [Filecoin.js library](https://github.com/filecoin-shipyard/filecoin.js)
 - [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges
 
@@ -302,6 +344,10 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
+  - For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on Github.
+- [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - a pure Typescript / Javascript library for creating, signing and broadcasting messages to send FIL, and interact with Filecoin's built-in actors (like Payment Channel and Multisig), among other utility functions.
+  - Also available on npm at [@blitslabs/filecoin-js-signer](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
+  - Currently used by the Filecoin Loans project for its mobile wallet (written in React Native) and creating Payment Channels.
 
 ### Retrieval Market resources (WIP experiments)
 
