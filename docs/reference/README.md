@@ -20,7 +20,7 @@ This section contains links and reference materials for Filecoin.
 	* [Node APIs](#node-apis)
 	* [Scalable endpoint hosting](#scalable-endpoint-hosting)
 	* [Filecoin API clients](#filecoin-api-clients)
-	* [Wallet-related tools for developer](#wallet-related-tools-for-developer)
+	* [Wallet-related tools for developers](#wallet-related-tools-for-developers)
 	* [Filecoin signing tools](#filecoin-signing-tools)
 	* [Storage Provider Index API](#storage-provider-index-api)
 	* [Storage tools for apps](#storage-tools-for-apps)
