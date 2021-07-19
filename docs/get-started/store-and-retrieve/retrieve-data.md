@@ -7,6 +7,21 @@ description: Learn how to get data out of the Filecoin network using Lotus. The 
 
 In the previous step, you stored some data on the Filecoin network. It takes up to 24 hours for a storage provider to _seal_ the data. If it's been more than 24 hours since you completed the last section, great! If not, don't worry; you can still follow this page to retrieve some example data that's already on the Filecoin network. 
 
+## Restart the Lotus
+
+If you closed Lotus or shutdown your computer since you completed the previous section, you'll need to restart the `lotus daemon`.
+
+1. Open a terminal window.
+1. Start a Lotus lite-node and connect to `api.chain.love`:
+
+    ```shell
+    FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
+    ```
+
+1. The Lotus daemon will continue to run. You must run further commands from a separate terminal window.
+
+Next up is [checking your balance ↓](#check-address-balance)
+
 ## Check address balance
 
 Before you can retrieve data from a storage provider, you need to check that you have enough FIL to pay for the retrieval.

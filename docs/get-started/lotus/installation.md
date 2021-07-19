@@ -20,7 +20,7 @@ To run a Lotus node your computer must have:
 
 - macOS or Linux installed. Windows is not yet supported.
 - 8-core CPU and 32 GiB RAM. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture or Intel since Ice Lake) will significantly speed things up.
-- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 38 GiB per day. The chain can also be [synced from trusted state snapshots and compacted](chain.md).
+- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 38 GiB per day. The chain can be [synced from trusted state snapshots and compacted or pruned](chain.md) to a minimum size of around 33Gib.  The full history was around 10TiB in June of 2021.
 
 :::warning
 These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
@@ -361,41 +361,17 @@ These instructions are for installing Lotus on an M1-based Mac. If you have an I
     If you want to checkout to a network other than mainnet, take a look at the [Switching networks guide →](./switch-networks.md)
     :::
 
-1. Update the project submodules:
-
-    ```shell
-    git submodule update --init --recursive
-    ```
-
 1. Create necessary environment variable to allow Lotus to run on ARM architecture:
 
     ```shell
-    export GOARCH=arm64
-    export CGO_ENABLED=1
     export LIBRARY_PATH=/opt/homebrew/lib
     export FFI_BUILD_FROM_SOURCE=1
     ```
 
-1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
+1. Build the `lotus` daemon:
 
     ```shell
-    cd extern/filecoin-ffi
-    git fetch -a
-    git checkout master
-    ```
-
-1. Create the `filecoin-ffi` executables:
-
-    ```shell
-    make clean
-    make
-    ```
-
-1. Move back to the root Lotus directory and create the `lotus` daemon:
-
-    ```shell
-    cd ../../
-    make lotus
+    make all
     ```
 
 1. Run the final `make` command to move this `lotus` executable to `/usr/local/bin`. This allows you to run `lotus` from any directory.

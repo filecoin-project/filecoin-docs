@@ -54,7 +54,7 @@ Once you have an address with DataCap, you can make deals using DataCap as a par
 
 By default, when you make a deal with an address with DataCap allocated, you will spend DataCap when making the deal.
 
-If making deals through the [API](https://github.com/filecoin-project/lotus/blob/master/documentation/en/api-methods.md#ClientStartDeal), make sure that the `VerifiedDeal` parameter is set to `true` when calling `ClientStartDeal`.
+If making deals through the [API](https://github.com/filecoin-project/lotus/blob/master/documentation/en/api-v0-methods.md#ClientStartDeal), make sure that the `VerifiedDeal` parameter is set to `true` when calling `ClientStartDeal`.
 
 ```json
 [

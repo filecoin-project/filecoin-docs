@@ -13,7 +13,7 @@ Working with blockchains is difficult, and the inherent complexity of blockchain
 
 | Lotus | Store and retrieve |
 | --- | --- |
-| Start interacting with the Filecoin network by [spinning up a Lotus node in just a few minutes →](./lotus) | Learn how to [store and retrieve data using the Filecoin network →](./store-and-retrieve)
+| Want to set up a fully-featured Lotus deployment? Start by [spinning up a Lotus full-node in just a few minutes →](./lotus) | Learn how to [store and retrieve data using the Filecoin network →](./store-and-retrieve)
 :::
 
 ## Become familiar with the concepts
