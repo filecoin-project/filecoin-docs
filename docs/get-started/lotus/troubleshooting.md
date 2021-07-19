@@ -75,7 +75,7 @@ There is a maximum request size for security reasons in case the RPC server is e
 
 If you get a `signal killed` error, it could indcate that there was an error during the build process.
 
-```bash
+```shell
 /usr/local/go/pkg/tool/linux_amd64/link: signal: killed
 make: *** [Makefile:68: lotus] Error 1
 ```
@@ -86,7 +86,7 @@ Double check that your computer meets the [minimum hardware requirements](./inst
 
 You may encounter an error saying that the `go` command was not found:
 
-```bash
+```shell
 sudo make install
 
 > bash: go: command not found

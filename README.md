@@ -12,13 +12,13 @@ To spin up a local instance of this new VuePress site, see below:
 
 1. Install the NPM dependencies:
 
-   ```bash
+   ```shell
    npm install
    ```
 
 2. Boot up the application in _dev mode_:
 
-   ```bash
+   ```shell
    npm start
    ```
 
