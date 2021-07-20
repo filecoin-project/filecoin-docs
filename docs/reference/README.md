@@ -35,7 +35,7 @@ This section contains links and reference materials for Filecoin.
 	* [Other wallets](#other-wallets)
 * [Ecosystem Galleries](#ecosystem-galleries)
   * [Hackathons](#hackathons)
-  * [Grant and accelerators](#grant-and-accelerators)
+  * [Grants and accelerators](#grants-and-accelerators)
 
 ## About Filecoin
 
