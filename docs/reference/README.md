@@ -279,7 +279,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
   - [HackFS 2020](https://hackfs.com/)
   - [Spark University Hackathon 2020](https://filecoin.io/blog/spark-university-hackathon/)
 
-### Grant and accelerators
+### Grants and accelerators
 
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing quarterly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
