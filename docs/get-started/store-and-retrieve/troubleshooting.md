@@ -21,10 +21,11 @@ Reset your Lotus full-node computer if you are still facing issues after editing
 
 Run `echo $SHELL` to find out which shell you are using:
 
-```shell
-echo $SHELL                                                                                                  ~
-
-> /bin/zsh
+```shell with-output
+echo $SHELL  
+```
+```                                                                                                ~
+/bin/zsh
 ```
 
 ## Which CPU does my Mac have?

@@ -35,14 +35,11 @@ A lite-node lets your computer interact with the Filecoin network without having
 
 To install a Lotus lite-node on your computer, you must have the tools required to _build_ a Lotus binary from the GitHub repository.
 
-| [MacOS](#macos) | [Ubuntu](#ubuntu) |
-| --- | --- |
-
 Take a look at [Lotus: install and setup](../lotus/installation.md) to learn how to install Lotus on other operating systems. 
 
-### MacOS
+::::: tabs
 
-This section covers how to install a Lotus lite-node on MacOS. If you are running Ubuntu, head to the [Ubuntu installation section ↓](#ubuntu)
+:::: tab macOS
 
 :::warning Requirements 
 You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
@@ -62,11 +59,8 @@ You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebr
 
 1. Lotus is now installed on your computer. 
 
-[Head over to the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
-
-### Ubuntu
-
-This section covers how to install a Lotus lite-node on Ubuntu. If you are running MacOS, head to the [MacOS installation section ↑](#macos).
+::::
+:::: tab Ubuntu
 
 There are two simple ways to install Lotus on Ubuntu:
 
@@ -115,6 +109,9 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
 
+
+:::::
+
 ## Run a Lotus lite-node 
 
 Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node! 
@@ -125,13 +122,11 @@ Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol La
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address: 
 
-    ```shell
+    ```shell with-output
     FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
     ```
 
-    The above command will output something like this:
-
-    ```shell
+    ```
     ...
     2021-06-16T02:00:08.390Z        INFO    markets loggers/loggers.go:56   module ready   {"module": "storage client"}
     2021-06-16T02:00:08.392Z        INFO    markets loggers/loggers.go:56   module ready   {"module": "retrieval client"}
@@ -152,10 +147,12 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 1. Open a new terminal window and create an address using the `lotus wallet new` command:
 
-    ```shell
+    ```shell with-output
     lotus wallet new 
+    ```
 
-    > f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi
+    ```
+    f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi
     ```
 
     Lotus outputs your public address. Public addresses always start with `f1`.
@@ -170,11 +167,13 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 
 1. If your public address `f1...` is still in the terminal window, copy it to your clipboard. If not, list the addresses associated with your Lotus node and copy your public address:
 
-    ```shell
+    ```shell with-output
     lotus wallet list
+    ```
 
-    > Address                                    Balance  Nonce  Default  
-    > f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq  0 FIL    0      X  
+    ```
+    Address                                    Balance  Nonce  Default  
+    f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq  0 FIL    0      X  
     ```
 
 1. Use `lotus wallet export` to export your private key, replacing `f1...` with your public key:

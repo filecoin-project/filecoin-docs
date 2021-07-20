@@ -20,7 +20,7 @@ To run a Lotus node your computer must have:
 
 - macOS or Linux installed. Windows is not yet supported.
 - 8-core CPU and 32 GiB RAM. Models with support for _Intel SHA Extensions_ (AMD since Zen microarchitecture or Intel since Ice Lake) will significantly speed things up.
-- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 38 GiB per day. The chain can also be [synced from trusted state snapshots and compacted](chain.md).
+- Enough space to store the current Lotus chain (preferably on an SSD storage medium). The chain grows at approximately 38 GiB per day. The chain can be [synced from trusted state snapshots and compacted or pruned](chain.md) to a minimum size of around 33Gib.  The full history was around 10TiB in June of 2021.
 
 :::warning
 These are the minimal requirements to run a Lotus node. [Hardware requirements for Miners](../../mine/hardware-requirements.md) are different.
@@ -218,9 +218,11 @@ Once all the dependencies are installed, you can build and install Lotus.
 
    Once the installation is finished, use the command down below to ensure lotus is installed successfully for the right network. 
 
-   ```sh
+   ```sh with-output
    lotus --version
-   > lotus version 1.9.0+calibnet+git.ada7f97ba
+   ```
+   ```
+   lotus version 1.9.0+calibnet+git.ada7f97ba
    ```
 
 1. You should now have Lotus installed. You can now [start the Lotus daemon](#start-the-lotus-daemon-and-sync-the-chain).
@@ -296,10 +298,11 @@ Lotus requires that X-Code CLI tools be installed before building the Lotus bina
 
 1. Check if you already have the XCode Command Line Tools installed via the CLI, run:
 
-    ```shell
+    ```shell with-output
     xcode-select -p
-
-    > /Library/Developer/CommandLineTools
+    ```
+    ```
+    /Library/Developer/CommandLineTools
     ```
 
     If this command returns a path, then you have Xcode already installed! You can [move on to installing dependencies with Homebrew](#homebrew). 
@@ -484,33 +487,36 @@ lotus client --help
 
 For example, after your Lotus daemon has been running for a few minutes, use `lotus sync` to check the sync status of your lotus node.
 
-```sh
+```sh with-output
 lotus net sync
-
-> sync status:
+```
+```
+sync status:
 ...
-> 	Target:	[bafy2bzaceaki6bjhe2lxmtyexcff6vh5y5uw4tmbjr3gatwvh5dhaqqb2ykaa] (320791)
-> 	Stage: complete
-> 	Height: 320791
+	Target:	[bafy2bzaceaki6bjhe2lxmtyexcff6vh5y5uw4tmbjr3gatwvh5dhaqqb2ykaa] (320791)
+	Stage: complete
+	Height: 320791
 ...
 ```
 
 Or use `lotus net` to check the number of other peers that it is connected to in the Filecoin network.
 
-```sh
+```sh with-output
 lotus net peers
-
-> 12D3KooWSDqWSDNZtpJae15FBGpJLeLmyabUfZmWDWEjqEGtUF8N, [/ip4/58.144.221.27/tcp/33425]
-> 12D3KooWRTQoDUhWVZH9z5u9XmaFDvFw14YkcW7dSBFJ8CuzDHnu, [/ip4/67.212.85.202/tcp/10906]
+```
+```
+12D3KooWSDqWSDNZtpJae15FBGpJLeLmyabUfZmWDWEjqEGtUF8N, [/ip4/58.144.221.27/tcp/33425]
+12D3KooWRTQoDUhWVZH9z5u9XmaFDvFw14YkcW7dSBFJ8CuzDHnu, [/ip4/67.212.85.202/tcp/10906]
 ```
 
 Or check the current version of your Lotus node as well as network. 
 
-```sh
+```sh with-output
 lotus version
-
-> Daemon:  1.9.0+calibnet+git.ada7f97ba+api1.3.0
-> Local: lotus version 1.9.0+calibnet+git.ada7f97ba
+```
+```
+Daemon:  1.9.0+calibnet+git.ada7f97ba+api1.3.0
+Local: lotus version 1.9.0+calibnet+git.ada7f97ba
 # running lotus v1.9.0 on Calibration testnet
 ```
 

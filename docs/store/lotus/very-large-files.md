@@ -45,10 +45,10 @@ It is implemented via a flag on the storage deal command that tells the client n
 1. Use the Lotus client to generate a CAR file of the input without importing:
 
 ```sh
-lotus client generate-car <inputPath> <outputPath>
+lotus client generate-car <input_path/filename> <output_path/data.car>
 ```
 
-2. Use the Lotus client to generate the piece CID:
+2. Use the Lotus client to generate the piece CID and size:
 
 ```sh
 lotus client commP <inputCarFilePath>
@@ -60,21 +60,20 @@ lotus client commP <inputCarFilePath>
 1. Round it up to the nearest power of 2. This is your padded piece size.
 1. Divide by 128, multiply by 127. this is your unpadded piece size.
 
-You can do this in [Wolfram Alpha](https://www.wolframalpha.com) by running the following formula:
+You can also use WolframAlpha to get your datasize:
 
-`x = SIZE_IN_BYTES; 127*(2^(ceil(log2(ceil(x/127)))))` 
-
-and changing `SIZE_IN_BYTES` to your final car size value.
-
-The final piece size will be found under **Substitution**:
-
-![](./images/very-large-files/wolfram-alpha.png)
+1. Go to [Wolfram Alpha](https://www.wolframalpha.com).
+1. Enter `x = SIZE_IN_BYTES; 127*( 2^( ceil( log2( ceil ( x /127 ) ) ) ) )`, replacing `SIZE_IN_BYTES` to your value.
+1. Your solution can be found under **Substitution**
+    
+    ![](./images/very-large-files/wolfram-alpha.png)
 
 Propose the offline deal with the miner:
 
 ```sh
 lotus client deal --manual-piece-cid=CID --manual-piece-size=datasize <Data CID> <miner> <price> <duration>
 ```
+Your Data CID is provided when you import our data into Lotus using `lotus client import`.
 
 ### Transfer the data to the miner offline
 

@@ -210,37 +210,61 @@ Tag code blocks with the syntax of the core they are presenting:
 
 ##### Command-line examples
 
-Write command-line inputs without any other characters. Precede outputs from the command line with a greater-than sign `>`. Include an empty line between the input and output of a command-line example:
+This project supports a special `with-output` tag that can be applied to markdown code blocks to support command-line examples.
+When you add `with-output` to a code block, the code block that immediately follows it will be styled as the "output" block. This
+lets the reader easily distinguish between input and output, and allows them to copy just the input portion to their clipboard using
+the clipboard button.
+
+Note that you must include the language tag (for example, `shell`, or `bash`) as well as the `with-output` tag, and the output code block must immediately follow the input block.
+
+Here's an example of using the `with-output` tag:
 
 ````markdown
-    ```shell
+    ```shell with-output
     lotus-miner info
-
-    > ~/lotus> lotus-miner info
-    > Miner: t0103
-    > Sector Size: 16.0 MiB
-    > Power: 0 B / 16.0 MiB (0%)
-    > Worker use:
-            Local: 0 / 2 (+1 reserved)
-            **Remote: 0 / 1**
-    > PoSt Submissions: Not Proving
-    > Sectors:  map[Committing:0 Proving:0 Total:0]
+    ```
+    ```
+    Miner: t0103
+    Sector Size: 16.0 MiB
+    Power: 0 B / 16.0 MiB (0%)
+    Worker use:
+        Local: 0 / 2 (+1 reserved)
+        **Remote: 0 / 1**
+    PoSt Submissions: Not Proving
+    Sectors:  map[Committing:0 Proving:0 Total:0]
     ```
 ````
 
 Command-line examples can be truncated with three periods `...` to remove extraneous information:
 
 ````markdown
-    ```shell
+    ```shell with-output
     lotus-miner info
-
-    > ~/lotus> lotus-miner info
-    > Miner: t0103
-    > Sector Size: 16.0 MiB
-    > ...
-    > Sectors:  map[Committing:0 Proving:0 Total:0]
+    ```
+    ```
+    Miner: t0103
+    Sector Size: 16.0 MiB
+    ...
+    Sectors:  map[Committing:0 Proving:0 Total:0]
     ```
 ````
+
+If you have command-line output that isn't directly "tied" to a corresponding input block, you can use the `output` tag to get
+a similar visual styling to the `with-output` block. This can be useful when you want to add some explanatory text between input and output blocks:
+
+````markdown
+  ```shell with-output
+  some-shell-command
+  ```
+
+  Here's some text that explains the output...
+
+  ```text output
+  The command output...
+  ```
+````
+
+Note that you must have a language hint (e.g. `text`) and the `output` tag for the styles to be applied correctly.
 
 #### Inline code tags
 

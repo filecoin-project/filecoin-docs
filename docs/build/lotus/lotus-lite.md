@@ -138,13 +138,16 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
 
 1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`. Make sure to replace `API_TOKEN` with the token you got from the full-node and `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node:
 
-    ```shell
-    FULLNODE_API_INFO=API_TOKEN/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/1234 lotus daemon --lite
-
-    > 2021-03-02T23:59:50.609Z        INFO    main    lotus/daemon.go:201     lotus repo: /root/.lotus
-    > ...
+    ```shell with-output
+    FULLNODE_API_INFO=API_TOKEN:/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/1234 lotus daemon --lite
     ```
-
+    ```
+    2021-03-02T23:59:50.609Z        INFO    main    lotus/daemon.go:201     lotus repo: /root/.lotus
+    ...
+    ```
+    
+    The `API_TOKEN` variable must be followed by a colon sign (`:`).
+    
     If you don't have an `API_TOKEN`, you can run the above command without one and just gain read-only access to the full-node:
 
     ```shell
@@ -153,10 +156,11 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
 
 1. You can now interact with your Lotus lite-node:
 
-    ```shell
+    ```shell with-output
     lotus wallet balance f10...
-
-    > 100 FIL
+    ```
+    ```
+    100 FIL
     ```
 
 A lite-node is limited in what it can do and is designed to only perform message signing and transactional operations. Lite-nodes cannot seal data or query the chain directly. All chain requests go through the attached full-node. If for whatever reason, the full-node goes offline, any lite-nodes connected to it will also go offline.
