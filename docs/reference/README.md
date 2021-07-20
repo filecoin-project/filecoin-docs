@@ -267,17 +267,9 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 ### Hackathons
 
-- [Upcoming Hackathons](https://github.com/protocol/grants)
-  - Keep a lookout for upcoming hackathons! All winners are eligbile for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/microgrants/microgrants.md) after the hackathon
-- Past Hackathons
-  - [Scaling Ethereum](https://scaling.ethglobal.co/) - Apr 16 to May 14
-  - [Gitcoin GR9 Hackathon](https://gitcoin.co/hackathon/gr9/?) - March 2021 with [Filecoin-related bounties here](https://gitcoin.co/hackathon/gr9/?org=protocol)
-  - [NFT Hack](https://nfthack.ethglobal.co/) - online hackathon Mar 19-21
-  - [Chainlink 2021](https://chain.link/hackathon)
-  - [EthDenver 2021](https://ethdenver.com)
-  - [EthOnline 2020](https://ethonline.org/)
-  - [HackFS 2020](https://hackfs.com/)
-  - [Spark University Hackathon 2020](https://filecoin.io/blog/spark-university-hackathon/)
+- [Upcoming Hackathons](https://github.com/protocol/grants#hackathons)
+  + Keep a lookout for upcoming hackathons! 
+  + All winners are eligible for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/microgrants/microgrants.md) after the Hackathon!
 
 ### Grants and accelerators
 
