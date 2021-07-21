@@ -20,7 +20,7 @@ Working with blockchains is difficult, and the inherent complexity of blockchain
 
 - Read [How Filecoin Works](../about-filecoin/how-filecoin-works.md) and [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md).
 - Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look.
-- Check out the [existing networks](https://networks.filecoin.io).
+- Check out the [existing networks](https://network.filecoin.io).
 - Explore the mainnet using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for miners. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
 
 ## Store content on Filecoin
