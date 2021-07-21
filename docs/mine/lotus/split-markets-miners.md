@@ -135,7 +135,7 @@ If you want to revert the changes listed above and go back to running `lotus-min
 
 2. In the `mining/sealing/proving` repository, update the `config.toml` and set `EnableMarkets` option to `true`
 
-```
+```toml
 [Subsystems]
   EnableMining = true
   EnableSealing = true
