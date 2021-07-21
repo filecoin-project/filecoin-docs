@@ -159,7 +159,7 @@ If you want to revert the changes listed above and go back to running `lotus-min
 
 5. Update the miner's peer id on-chain with the result from the previous step.
 
-```
+```shell
 ./lotus-miner actor set-peer-id 12D3XXXXX
 ```
 
