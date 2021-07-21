@@ -126,3 +126,34 @@ export LOTUS_MINER_PATH=~/markets-repo-location
 ```sh
 LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 ```
+
+## Rollback from a multi-process architecture back to `lotus-miner` monolith process
+
+In case you want to revert the changes listed above and go back to running `lotus-miner` as a single process, you have to do the following:
+
+1. Make sure that the `mining/sealing/proving` node is publicly exposed, as we will be enabling the markets subsystem on it.
+
+2. In the `mining/sealing/proving` repository, update the `config.toml` and set `EnableMarkets` option to `true`
+
+```
+[Subsystems]
+  EnableMining = true
+  EnableSealing = true
+  EnableSectorStorage = true
+  EnableMarkets = true
+```
+
+3. Restart the `mining/sealing/proving` node with an enabled markets subsystem and fetch its node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
+
+
+```
+./lotus-miner net id
+```
+
+4. Update the miner's peer id on-chain with the result from 3.
+
+```
+./lotus-miner actor set-peer-id 12D3XXXXX
+```
+
+As soon as the message is confirmed, clients will know to look for the node identity of your `mining/sealing/proving` node, which now also runs the `markets` subsystem, i.e. currently all Lotus subsystems.
