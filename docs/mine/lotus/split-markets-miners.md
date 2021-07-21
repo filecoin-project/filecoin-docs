@@ -129,7 +129,7 @@ LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 
 ## Rollback to `lotus-miner` monolith process
 
-In case you want to revert the changes listed above and go back to running `lotus-miner` as a single process, you have to do the following:
+If you want to revert the changes listed above and go back to running `lotus-miner` as a single process, run the following:
 
 1. Make sure that the `mining/sealing/proving` node is publicly exposed, as we will be enabling the markets subsystem on it.
 
