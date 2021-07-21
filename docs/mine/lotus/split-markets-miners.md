@@ -153,7 +153,7 @@ If you want to revert the changes listed above and go back to running `lotus-min
 4. Fetch the node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
 
 
-```
+```shell
 ./lotus-miner net id
 ```
 
