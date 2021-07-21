@@ -143,14 +143,21 @@ In case you want to revert the changes listed above and go back to running `lotu
   EnableMarkets = true
 ```
 
-3. Restart the `mining/sealing/proving` node with an enabled markets subsystem and fetch its node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
+
+3. Restart the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
+
+```sh
+./lotus-miner run
+```
+
+4. Fetch the node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
 
 
 ```
 ./lotus-miner net id
 ```
 
-4. Update the miner's peer id on-chain with the result from 3.
+5. Update the miner's peer id on-chain with the result from the previous step.
 
 ```
 ./lotus-miner actor set-peer-id 12D3XXXXX
