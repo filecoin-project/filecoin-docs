@@ -127,7 +127,7 @@ export LOTUS_MINER_PATH=~/markets-repo-location
 LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 ```
 
-## Rollback from a multi-process architecture back to `lotus-miner` monolith process
+## Rollback to `lotus-miner` monolith process
 
 In case you want to revert the changes listed above and go back to running `lotus-miner` as a single process, you have to do the following:
 
