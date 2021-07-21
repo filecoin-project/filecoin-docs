@@ -146,7 +146,7 @@ If you want to revert the changes listed above and go back to running `lotus-min
 
 3. Restart the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
-```sh
+```shell
 ./lotus-miner run
 ```
 
