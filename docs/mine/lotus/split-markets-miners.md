@@ -14,7 +14,7 @@ breadcrumb: 'Splitting main miner and markets service processes'
 
 Lotus v1.11.1 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be enabled or disabled in the `config.toml` file:
 
-```
+```toml
 [Subsystems]
 #  EnableMining = true
 #  EnableSealing = true
@@ -28,7 +28,7 @@ At the moment these `subsystems` are designed to be grouped into two distinct ty
 
 1. The `markets` node - a `lotus-miner` process responsible to handling the storage market subsystem, and all functionality related to storage/retrieval deals;
 
-```
+```toml
 [Subsystems]
   EnableMining = false
   EnableSealing = false
@@ -38,7 +38,7 @@ At the moment these `subsystems` are designed to be grouped into two distinct ty
 
 2. The `mining/sealing/proving` node - a `lotus-miner` process responsible to Filecoin mining, and sector storage, sealing and proving;
 
-```
+```toml
 [Subsystems]
   EnableMining = true
   EnableSealing = true
@@ -56,19 +56,19 @@ This document explains how to split your existing monolith `lotus-miner` node in
 
 Before splitting the markets service process from the monolith miner process, you should backup your miner's metadata repository. You need to start the `lotus-miner` with the `LOTUS_BACKUP_BASE_PATH` env variable in order to do that.
 
-```sh
+```shell
 export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
 lotus daemon
 ```
 
-```sh
+```shell
 export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
 lotus-miner run
 ```
 
 ## Creating a backup
 
-```sh
+```shell
 export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
 lotus-miner backup ~/lotus-backup-location/backupfile
 ```
@@ -78,21 +78,26 @@ lotus-miner backup ~/lotus-backup-location/backupfile
 You need to generate a `config.toml` for the markets node, and have them ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
 If you intend to run the `mining/sealing/proving` node on the same machine as the `markets` node, make sure that their listeners do not clash:
-```
+
+```toml
 [API]
   ListenAddress = "/ip4/127.0.0.1/tcp/8787/http"
   RemoteListenAddress = "127.0.0.1:8787"
 ```
 
-By default the `lotus-miner` node listens to port 2345, so in the example configuration above, we change the configuration for the `markets` node to listen to `127.0.0.1:8787`.
+By default the `lotus-miner` API server listens to port 2345, so in the example configuration above, we change the configuration for the `markets` node to listen to `127.0.0.1:8787`.
 
 In the example commands below, we have placed the `config.toml` in the `~/.lotusmarket` directory.
+
+Make sure you adjust the `[Libp2p]` section on the `markets` node accordingly - it needs to be publicly accessible.
+
+The `[Libp2p]` section on the `mining/sealing/proving` node is no longer needed given that this node won't be running a Libp2p node.
 
 ## Initialising a markets service repository
 
 1. Create authentication tokens for the `markets` node
 
-```sh
+```shell
 export APISEALER=`./lotus-miner auth api-info --perm=admin`
 export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 ```
@@ -101,7 +106,7 @@ export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 
     Note that `lotus-miner` interacts with one repository or another depending on the `LOTUS_MINER_PATH` environment variable!
 
-```sh
+```shell
 export LOTUS_MINER_PATH=~/markets-repo-location
 
 ./lotus-miner init service --type=markets \
@@ -111,23 +116,31 @@ export LOTUS_MINER_PATH=~/markets-repo-location
                            ~/lotus-backup-location/backupfile
 ```
 
+## Move the DAG store directory to the markets node repository
+
+```shell
+mv ~/.lotusminer/dagStore ~/markets-repo-location/
+```
+
 ## Start the `mining/sealing/proving` miner process without the markets subsystem
 
 1. Update your `config.toml` and set `EnableMarkets` option to `false`.
 
 2. Start the node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
-```sh
+```shell
 ./lotus-miner run
 ```
 
 ## Start the `markets` miner process with the markets subsystem
 
-```sh
+```shell
 LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 ```
 
 ## Rollback to `lotus-miner` monolith process
+
+> Warning: after rollback, your miner won't be able to serve any deals that were made to it while the system was running in multi-process architecture (i.e. with a split `markets` service)
 
 If you want to revert the changes listed above and go back to running `lotus-miner` as a single process, run the following:
 
@@ -142,24 +155,32 @@ If you want to revert the changes listed above and go back to running `lotus-min
   EnableMarkets = true
 ```
 
+1. Move back the DAG store directory to the monolith miner node repository
 
-3. Restart the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
+```shell
+mv ~/markets-repo-location/dagStore ~/.lotusminer/
+```
+
+1. Restart the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```shell
 ./lotus-miner run
 ```
 
-4. Fetch the node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
-
+1. Fetch the node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
 
 ```shell
 ./lotus-miner net id
 ```
 
-5. Update the miner's peer id on-chain with the result from the previous step.
+1. Update the miner's peer id on-chain with the result from the previous step.
 
 ```shell
 ./lotus-miner actor set-peer-id 12D3XXXXX
 ```
 
 As soon as the message is confirmed, clients will know to look for the node identity of your `mining/sealing/proving` node, which now also runs the `markets` subsystem, i.e. currently all Lotus subsystems.
+
+## DAG store troubleshooting
+
+In case anything goes wrong with the DAG store, you can always remove the `dagStore` directory and restart your miner.
