@@ -11,7 +11,7 @@ description: 'Many interactions with the Filecoin network require FIL to process
 
 Wallets allow you to manage your assets without having to deal with a Filecoin node directly.
 
-:::warning Unaudited wallets
+:::danger Unaudited wallets
 Be incredibly cautious when using unaudited wallets. Wallets that _have_ gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks.
 :::
 
