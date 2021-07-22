@@ -11,6 +11,10 @@ description: 'Many interactions with the Filecoin network require FIL to process
 
 Wallets allow you to manage your assets without having to deal with a Filecoin node directly.
 
+:::warning Unaudited wallets
+Be incredibly cautious when using unaudited wallets. Wallets that _have_ gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks.
+:::
+
 | Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
 | Glif web wallet                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
