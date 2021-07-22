@@ -132,8 +132,7 @@ LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 If you want to revert the changes listed above and go back to running `lotus-miner` as a single process, run the following:
 
 1. Make sure that the `mining/sealing/proving` node is publicly exposed, as we will be enabling the markets subsystem on it.
-
-2. In the `mining/sealing/proving` repository, update the `config.toml` and set `EnableMarkets` option to `true`
+1. In the `mining/sealing/proving` repository, update the `config.toml` and set `EnableMarkets` option to `true`
 
 ```toml
 [Subsystems]
