@@ -89,9 +89,9 @@ By default the `lotus-miner` API server listens to port 2345, so in the example 
 
 In the example commands below, we have placed the `config.toml` in the `~/.lotusmarket` directory.
 
-Make sure you adjust the `[Libp2p]` section on the `markets` node accordingly - it needs to be publicly accessible.
+Make sure you adjust the `[Libp2p]` section on the `markets` node accordingly - it needs to be publicly accessible, so that clients can make storage and retrieval deals with your system.
 
-The `[Libp2p]` section on the `mining/sealing/proving` node is no longer needed given that this node won't be running a Libp2p node.
+The `[Libp2p]` section on the `mining/sealing/proving` node can be removed because this node will no longer be running a Libp2p node.
 
 ## Initialising a markets service repository
 
@@ -140,7 +140,7 @@ LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 
 ## Rollback to `lotus-miner` monolith process
 
-> Warning: after rollback, your miner won't be able to serve any deals that were made to it while the system was running in multi-process architecture (i.e. with a split `markets` service)
+> Warning: after rollback, your miner won't be able to serve any storage deals that were made to it while the system was running in multi-process architecture (i.e. with a split `markets` service)
 
 If you want to revert the changes listed above and go back to running `lotus-miner` as a single process, run the following:
 
@@ -183,4 +183,4 @@ As soon as the message is confirmed, clients will know to look for the node iden
 
 ## DAG store troubleshooting
 
-In case anything goes wrong with the DAG store, you can always remove the `dagStore` directory and restart your miner.
+If there are any problems related to the DAG store, you can safely stop the node, remove the `dagStore` directory from the repository and restart your miner. It will re-register all active deals in the `dagStore` directory from scratch on startup.
