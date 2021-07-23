@@ -4,6 +4,6 @@ module.exports = [
   { text: 'Store', link: '/store/' },
   { text: 'Mine', link: '/mine/' },
   { text: 'Build', link: '/build/' },
-  { text: 'Networks', link: 'https://networks.filecoin.io' },
+  { text: 'Networks', link: 'https://network.filecoin.io' },
   { text: 'Reference', link: '/reference/' }
 ]
