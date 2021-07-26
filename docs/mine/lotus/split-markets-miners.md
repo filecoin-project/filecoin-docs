@@ -140,8 +140,6 @@ LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 
 ## Rollback to `lotus-miner` monolith process
 
-> Warning: after rollback, your miner won't be able to serve any storage deals that were made to it while the system was running in multi-process architecture (i.e. with a split `markets` service)
-
 If you want to revert the changes listed above and go back to running `lotus-miner` as a single process, run the following:
 
 1. Make sure that the `mining/sealing/proving` node is publicly exposed, as we will be enabling the markets subsystem on it.
@@ -155,25 +153,33 @@ If you want to revert the changes listed above and go back to running `lotus-min
   EnableMarkets = true
 ```
 
-1. Move back the DAG store directory to the monolith miner node repository
+3. Move back the DAG store directory to the monolith miner node repository
 
 ```shell
 mv ~/markets-repo-location/dagStore ~/.lotusminer/
 ```
 
-1. Restart the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
+4. Backup and restore the metadata related to storage deals from the `markets` instance back to the monolith miner instance. Given that storage deals metadata would have changed on the `markets` instance in case you accepted storage deals while running multi-services architecture, we have to copy it back to the monolith miner instance.
+
+```shell
+./lotus-shed market export-datastore --repo ~/markets-repo-location --backup-dir /tmp/deals-backup
+
+./lotus-shed market import-datastore --repo ~/.lotusminer --backup-path /tmp/deals-backup/markets.datastore.backup
+```
+
+5. Restart the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```shell
 ./lotus-miner run
 ```
 
-1. Fetch the node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
+6. Fetch the node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
 
 ```shell
 ./lotus-miner net id
 ```
 
-1. Update the miner's peer id on-chain with the result from the previous step.
+7. Update the miner's peer id on-chain with the result from the previous step.
 
 ```shell
 ./lotus-miner actor set-peer-id 12D3XXXXX
