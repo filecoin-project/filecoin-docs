@@ -77,7 +77,7 @@ lotus-miner backup ~/lotus-backup-location/backupfile
 
 You need to create a `config.toml` for the markets node, and have it ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
-In the example commands below, we have placed the `config.toml` in the `~/.lotusmarket` directory. We are using the following `config.toml`:
+In the example commands below, we have placed the `config.toml` in the `~/.lotusmarket` directory, which is not the repository directory for the `markets` instance. The repository directory which we use is `~/markets-repo-location`. We are using the following `config.toml`:
 
 ```toml
 [API]
