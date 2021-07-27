@@ -85,7 +85,7 @@ In the example commands below, we have placed the `config.toml` in the `~/.lotus
   RemoteListenAddress = "127.0.0.1:8787"
 
 [Libp2p]
-  ListenAddresses = ["/ip4/127.0.0.1/tcp/24001", "/ip6/::/tcp/24001"]
+  ListenAddresses = ["/ip4/0.0.0.0/tcp/24001", "/ip6/::/tcp/24001"]
   AnnounceAddresses = ["/ip4/12.34.56.78/tcp/24001"]
 ```
 
