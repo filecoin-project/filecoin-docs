@@ -12,9 +12,9 @@ breadcrumb: 'Running in the cloud'
 
 ### DigitalOcean
 
-The easiest and cheapest path is to use [the one-click application in the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2). In addition to being a one-click deployment, you will receive a $100 credit with DigitalOcean for using the provided referral link.
+The easiest and cheapest path is to use [the one-click application in the DigitalOcean marketplace](https://marketplace.digitalocean.com/apps/filecoin-lotus).
 
-<a href="https://marketplace.digitalocean.com/apps/filecoin-lotus?refcode=f37c84619fb2" alt="DigitalOcean Logo"><img src="../images/cloud/digitalocean-logo.svg" style="max-width: 40%; cursor: hand !important;"/></a>
+<a href="https://marketplace.digitalocean.com/apps/filecoin-lotus" alt="DigitalOcean Logo"><img src="../images/cloud/digitalocean-logo.svg" style="max-width: 40%; cursor: hand !important;"/></a>
 
 After deploying, log into your new DigitalOcean Droplet as `root` using the password you provided when creating a "Droplet" (virtual machine) with Lotus pre-installed:
 
