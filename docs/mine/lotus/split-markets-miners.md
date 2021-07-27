@@ -138,6 +138,27 @@ mv ~/.lotusminer/dagStore ~/markets-repo-location/
 LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 ```
 
+## Interacting with the different miner instances with CLI over JSON RPC
+
+> In case you run more than one miner instance on the same machine, make sure that you have `MINER_API_INFO` environment variable `unset`. If you have it set, you will always be interacting with only one miner process, because it has precedence over `LOTUS_MINER_PATH`.
+
+Now that you have both a `markets` miner process and a `mining/sealing/proving` miner process running, you can confirm that you can interact with each respective process with the following:
+
+1. Get the peer identity of the `markets` miner process
+```shell
+LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner net id
+```
+
+2. Get a list of storage deals from the `markets` miner process
+```shell
+LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner storage-deals list
+```
+
+3. Get a list of sectors from the `mining/sealing/proving` miner process
+```shell
+LOTUS_MINER_PATH=~/.lotusminer ./lotus-miner sectors list
+```
+
 ## Rollback to `lotus-miner` monolith process
 
 If you want to revert the changes listed above and go back to running `lotus-miner` as a single process, run the following:
