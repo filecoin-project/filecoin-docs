@@ -106,7 +106,9 @@ export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 
 2. Initialise the `market` node. This performs a one-time setup of the markets node. Part of that setup includes updating the `Peer ID` and the `Multiaddr` in the miner actor by submitting a message on chain. This is necessary so that storage and retrieval clients know that this miner's **deal-making** endpoint is now publicly dialable/reachable on a new address (the new `market` node).
 
-    Note that `lotus-miner` interacts with one repository or another depending on the `LOTUS_MINER_PATH` environment variable!
+Note that `lotus-miner` interacts with one repository or another depending on the `LOTUS_MINER_PATH` environment variable!
+
+This command should be run on the `markets` miner instance host, as it is creating the `markets` miner instance repository, among other actions.
 
 ```shell
 export LOTUS_MINER_PATH=~/markets-repo-location
