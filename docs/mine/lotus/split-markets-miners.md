@@ -104,7 +104,7 @@ export APISEALER=`./lotus-miner auth api-info --perm=admin`
 export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
 ```
 
-2. Initialise the `market` node. This performs a one-time setup of the markets node. Part of that setup includes updating the `Peer ID` and the `Multiaddr` in the miner actor by submitting a message on chain. This is necessary so that storage and retrieval clients know that this miner's **deal-making** endpoint is now publicly dialable/reachable on a new address (the new `market` node).
+2. Initialise the `market` node. This performs a one-time setup of the markets node. Part of that setup includes updating the `peer id` in the miner actor by submitting a message on chain. This is necessary so that storage and retrieval clients know that this miner's **deal-making** endpoint is now publicly dialable/reachable on a new address (the new `market` node).
 
 Note that `lotus-miner` interacts with one repository or another depending on the `LOTUS_MINER_PATH` environment variable!
 
@@ -118,6 +118,12 @@ export LOTUS_MINER_PATH=~/markets-repo-location
                            --api-sector-index=$APISECTORINDEX \
                            --config=~/.lotusmarket/config.toml \
                            ~/lotus-backup-location/backupfile
+```
+
+3. Optionally update your miner's `multiaddr` on-chain - in case your `markets` instance is publicly exposed at a different location compared to your exiting monolith miner, you also need to update your `multiaddr` on-chain and advertise the correct one to clients:
+
+```shell
+./lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
 
 ## Move the DAG store directory to the markets node repository
