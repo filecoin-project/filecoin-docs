@@ -73,21 +73,23 @@ export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
 lotus-miner backup ~/lotus-backup-location/backupfile
 ```
 
-## Copy config.toml for the markets service
+## Create config.toml for the markets service
 
-You need to generate a `config.toml` for the markets node, and have them ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
+You need to create a `config.toml` for the markets node, and have it ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
-If you intend to run the `mining/sealing/proving` node on the same machine as the `markets` node, make sure that their listeners do not clash:
+In the example commands below, we have placed the `config.toml` in the `~/.lotusmarket` directory. We are using the following `config.toml`:
 
 ```toml
 [API]
   ListenAddress = "/ip4/127.0.0.1/tcp/8787/http"
   RemoteListenAddress = "127.0.0.1:8787"
+
+[Libp2p]
+  ListenAddresses = ["/ip4/127.0.0.1/tcp/24001", "/ip6/::/tcp/24001"]
+  AnnounceAddresses = ["/ip4/12.34.56.78/tcp/24001"]
 ```
 
-By default the `lotus-miner` API server listens to port 2345, so in the example configuration above, we change the configuration for the `markets` node to listen to `127.0.0.1:8787`.
-
-In the example commands below, we have placed the `config.toml` in the `~/.lotusmarket` directory.
+If you intend to run the `mining/sealing/proving` node on the same machine as the `markets` node, make sure that their listeners do not clash. By default the `lotus-miner` API server listens to port 2345, so in the example configuration above, we change the configuration for the `markets` node to listen to `127.0.0.1:8787`.
 
 Make sure you adjust the `[Libp2p]` section on the `markets` node accordingly - it needs to be publicly accessible, so that clients can make storage and retrieval deals with your system.
 
