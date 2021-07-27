@@ -66,14 +66,16 @@ export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
 lotus-miner run
 ```
 
-## Creating a backup
+## Splitting the `lotus-miner` monolith
+
+### 1. Creating a backup
 
 ```shell
 export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
 lotus-miner backup ~/lotus-backup-location/backupfile
 ```
 
-## Create config.toml for the markets service
+### 2. Create `config.toml` for the markets service
 
 You need to create a `config.toml` for the markets node, and have it ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
@@ -95,7 +97,7 @@ Make sure you adjust the `[Libp2p]` section on the `markets` node accordingly - 
 
 The `[Libp2p]` section on the `mining/sealing/proving` node can be removed because this node will no longer be running a Libp2p node.
 
-## Initialising a markets service repository
+### 3. Initialising a `markets` service repository
 
 1. Create authentication tokens for the `markets` node
 
@@ -126,13 +128,13 @@ export LOTUS_MINER_PATH=~/markets-repo-location
 ./lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
 
-## Move the DAG store directory to the markets node repository
+### 4. Move the DAG store directory to the markets node repository
 
 ```shell
 mv ~/.lotusminer/dagStore ~/markets-repo-location/
 ```
 
-## Start the `mining/sealing/proving` miner process without the markets subsystem
+### 5. Start the `mining/sealing/proving` miner process without the markets subsystem
 
 1. Update your `config.toml` and set `EnableMarkets` option to `false`.
 
@@ -142,7 +144,7 @@ mv ~/.lotusminer/dagStore ~/markets-repo-location/
 ./lotus-miner run
 ```
 
-## Start the `markets` miner process with the markets subsystem
+### 6. Start the `markets` miner process with the markets subsystem
 
 ```shell
 LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
