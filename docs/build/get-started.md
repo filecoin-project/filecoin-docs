@@ -8,8 +8,8 @@ breadcrumb: 'Get started.'
 
 {{ $frontmatter.description }} The Infura API makes it easier to interact with the Filecoin Network by abstracting away some of the complex workflows and requirements. There's no need to spin up a node or directly call a Lotus daemon!
 
-:::warning
-The Infura API requires all users to sign-up to a waitlist to get access to the API. The sign-up process is simple, and most users get access to the API within minutes. You need access to this API to complete this tutorial. Infura plans to remove the waitlist process in the next few weeks.
+:::tip
+Want to speed up your development process and easily upload your data to Filecoin? Web3.Storage lets you programatically upload files and folders to the Filecoin network. [Take a look now →](https://web3.storage) 
 :::
 
 In this tutorial, you will:
