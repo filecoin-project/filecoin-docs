@@ -113,13 +113,11 @@ Note that `lotus-miner` interacts with one repository or another depending on th
 This command should be run on the `markets` miner instance host, as it is creating the `markets` miner instance repository, among other actions.
 
 ```shell
-export LOTUS_MINER_PATH=~/markets-repo-location
-
-./lotus-miner init service --type=markets \
-                           --api-sealer=$APISEALER \
-                           --api-sector-index=$APISECTORINDEX \
-                           --config=~/.lotusmarket/config.toml \
-                           ~/lotus-backup-location/backupfile
+./lotus-miner --markets-repo=~/markets-repo-location init service --type=markets \
+                                                                  --api-sealer=$APISEALER \
+                                                                  --api-sector-index=$APISECTORINDEX \
+                                                                  --config=~/.lotusmarket/config.toml \
+                                                                  ~/lotus-backup-location/backupfile
 ```
 
 3. Optionally update your miner's `multiaddr` on-chain - in case your `markets` instance is publicly exposed at a different location compared to your exiting monolith miner, you also need to update your `multiaddr` on-chain and advertise the correct one to clients:
@@ -152,23 +150,40 @@ LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 
 ## Interacting with the different miner instances with CLI over JSON RPC
 
-> In case you run more than one miner instance on the same machine, make sure that you have `MINER_API_INFO` environment variable `unset`. If you have it set, you will always be interacting with only one miner process, because it has precedence over `LOTUS_MINER_PATH`.
+You should configure the following environment variable for the `mining/sealing/proving` miner and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
+
+```shell
+export LOTUS_MARKETS_PATH=/Users/nonsense/.restoredrepo
+export LOTUS_MINER_PATH=/Users/nonsense/.lotusminer
+```
+
+If one of these nodes is on a remote machine, you should set the API_INFO environment variables, for example:
+
+```shell
+export MARKETS_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.7wPg1b8C-yigqgoCUL-62gzOCZAVjb6mrvnaE8W27OI:/ip4/127.0.0.1/tcp/2345/http
+export MINER_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.m3aKgJDsJBVePHWAPpy5aDMaWZ7ZMV9rqe_8MokTwgY:/ip4/127.0.0.1/tcp/8787/http
+```
 
 Now that you have both a `markets` miner process and a `mining/sealing/proving` miner process running, you can confirm that you can interact with each respective process with the following:
 
+1. Get miner info
+```shell
+./lotus-miner info
+```
+
 1. Get the peer identity of the `markets` miner process
 ```shell
-LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner net id
+./lotus-miner --call-on-markets net id
 ```
 
 2. Get a list of storage deals from the `markets` miner process
 ```shell
-LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner storage-deals list
+./lotus-miner storage-deals list
 ```
 
 3. Get a list of sectors from the `mining/sealing/proving` miner process
 ```shell
-LOTUS_MINER_PATH=~/.lotusminer ./lotus-miner sectors list
+./lotus-miner sectors list
 ```
 
 ## Rollback to `lotus-miner` monolith process
