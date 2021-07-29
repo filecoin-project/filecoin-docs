@@ -22,7 +22,7 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-Make sure you have both [Node.js](https://nodejs.org/) and [NPM](https://www.npmjs.com/) installed.
+Make sure you have both [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/) installed.
 
 ## Infura API
 
