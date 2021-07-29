@@ -20,7 +20,6 @@ Users can use the following software solutions to store data on the Filecoin net
 
 The following applications allow you to store data on the Filecoin network with no technical setup:
 
-- [Web3.Storage](https://web3.storage) is an IPFS pinning service and Filecoin storage platform built-in-one. Upload files to Web3.Storage and access them instantly, safe in the knowledge that your data is securely backed up using the Filecoin network.
 - [Slate](slate.md) allows uploading and storing content on the Filecoin network directly from your browser. It supports one time deals, is perfect for creating image galleries, and the first 50 GB of storage is free!
 - [ChainSafe Files](https://files.chainsafe.io/) provides decentralized cloud storage with end-to-end encryption in a Dropbox-like interface. Check out the [blog post by ChainSafe](https://medium.com/chainsafe-systems/introducing-chainsafe-files-3eedabdec922) for a quick overview of the service.
 - [Space Storage](https://space.storage/) by Fleek is an open-source, user-controlled, encrypted file storage and sharing platform using IPFS and Filecoin, tied to Ethereum accounts or common web OAuth options.
