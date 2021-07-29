@@ -10,7 +10,7 @@ breadcrumb: 'Estuary'
 
 [Estuary](https://estuary.tech) automates storage activities with Filecoin. At its core, Estuary is a simple IPFS node that integrates a minimal Filecoin client library. It is an open-source project built by [ARG](https://arg.protocol.ai/) and is available at [github.com/application-research/estuary](https://github.com/application-research/estuary). 
 
-Estuary is **the recommended solution** for developers who want a more accessible interface for users to store data on Filecoin. See the [Estuary documentation](https://docs.estuary.tech) to learn more about the project.
+Estuary is a great solution for developers and users who want a more accessible interface to store data on Filecoin. See the [Estuary documentation](https://docs.estuary.tech) to learn more about the project.
 
 ## Using Estuary 
 
