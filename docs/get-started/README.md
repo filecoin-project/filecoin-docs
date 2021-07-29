@@ -26,7 +26,7 @@ Working with blockchains is difficult, and the inherent complexity of blockchain
 ## Store content on Filecoin
 
 :::tip
-Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../../store/readme.md)
+Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
 :::
 
 - Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser.

@@ -8,7 +8,7 @@ description: Documentation to start building applications on Filecoin.
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
 
 :::tip
-Use one of the community built tools and services to get started. [Take a look now →](../store/readme.md) 
+Use one of the community built tools and services to get started. [Take a look now →](../store/README.md) 
 :::
 
 ## Get started

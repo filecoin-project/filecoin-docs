@@ -9,7 +9,7 @@ breadcrumb: 'Get started.'
 {{ $frontmatter.description }} The Infura API makes it easier to interact with the Filecoin Network by abstracting away some of the complex workflows and requirements. There's no need to spin up a node or directly call a Lotus daemon!
 
 :::tip
-Want to speed up your development process and easily upload your data to Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/readme.md)
+Want to speed up your development process and easily upload your data to Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
 :::
 
 In this tutorial, you will:
