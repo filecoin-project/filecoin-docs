@@ -57,12 +57,12 @@ This document explains how to split your existing monolith `lotus-miner` node in
 Before splitting the markets service process from the monolith miner process, you should backup your miner's metadata repository. You need to start the `lotus-miner` with the `LOTUS_BACKUP_BASE_PATH` env variable in order to do that.
 
 ```shell
-export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
+export LOTUS_BACKUP_BASE_PATH=/tmp
 lotus daemon
 ```
 
 ```shell
-export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
+export LOTUS_BACKUP_BASE_PATH=/tmp
 lotus-miner run
 ```
 
@@ -71,15 +71,15 @@ lotus-miner run
 ### 1. Creating a backup
 
 ```shell
-export LOTUS_BACKUP_BASE_PATH=~/lotus-backup-location
-lotus-miner backup ~/lotus-backup-location/backupfile
+export LOTUS_BACKUP_BASE_PATH=/tmp
+lotus-miner backup /tmp/backup.cbor
 ```
 
 ### 2. Create `config.toml` for the markets service
 
-You need to create a `config.toml` for the markets node, and have it ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
+You need to create a seed `config.toml` for the markets node, and have it ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
-In the example commands below, we have placed the `config.toml` in the `~/.lotusmarket` directory, which is not the repository directory for the `markets` instance. The repository directory which we use is `~/markets-repo-location`. We are using the following `config.toml`:
+In the example commands below, we have placed the `config.toml` in the `/tmp` directory, which is not the repository directory for the `markets` instance. The repository directory which we use is `~/.lotusmarkets`. We are using the following `config.toml`:
 
 ```toml
 [API]
@@ -102,8 +102,8 @@ The `[Libp2p]` section on the `mining/sealing/proving` node can be removed becau
 1. Create authentication tokens for the `markets` node
 
 ```shell
-export APISEALER=`./lotus-miner auth api-info --perm=admin`
-export APISECTORINDEX=`./lotus-miner auth api-info --perm=admin`
+export APISEALER=`lotus-miner auth api-info --perm=admin`
+export APISECTORINDEX=`lotus-miner auth api-info --perm=admin`
 ```
 
 2. Initialise the `market` node. This performs a one-time setup of the markets node. Part of that setup includes updating the `peer id` in the miner actor by submitting a message on chain. This is necessary so that storage and retrieval clients know that this miner's **deal-making** endpoint is now publicly dialable/reachable on a new address (the new `market` node).
@@ -113,14 +113,14 @@ Note that `lotus-miner` interacts with one repository or another depending on th
 This command should be run on the `markets` miner instance host, as it is creating the `markets` miner instance repository, among other actions.
 
 ```shell
-./lotus-miner --markets-repo=~/markets-repo-location init service --type=markets \
+./lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
                                                                   --api-sealer=$APISEALER \
                                                                   --api-sector-index=$APISECTORINDEX \
-                                                                  --config=~/.lotusmarket/config.toml \
-                                                                  ~/lotus-backup-location/backupfile
+                                                                  --config=/tmp/config.toml \
+                                                                  /tmp/backup.cbor
 ```
 
-3. Optionally update your miner's `multiaddr` on-chain - in case your `markets` instance is publicly exposed at a different location compared to your exiting monolith miner, you also need to update your `multiaddr` on-chain and advertise the correct one to clients:
+3. Optionally update your miner's `multiaddr` on-chain - in case your `markets` instance is publicly exposed at a different location compared to your existing monolith miner, you also need to update your `multiaddr` on-chain and advertise the correct one to clients:
 
 ```shell
 ./lotus-miner actor set-addrs <NEW_MULTIADDR>
@@ -129,7 +129,7 @@ This command should be run on the `markets` miner instance host, as it is creati
 ### 4. Move the DAG store directory to the markets node repository
 
 ```shell
-mv ~/.lotusminer/dagStore ~/markets-repo-location/
+mv ~/.lotusminer/dagStore ~/.lotusmarkets/
 ```
 
 ### 5. Start the `mining/sealing/proving` miner process without the markets subsystem
@@ -145,7 +145,7 @@ mv ~/.lotusminer/dagStore ~/markets-repo-location/
 ### 6. Start the `markets` miner process with the markets subsystem
 
 ```shell
-LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
+LOTUS_MINER_PATH=~/.lotusmarkets ./lotus-miner run
 ```
 
 ## Interacting with the different miner instances with CLI over JSON RPC
@@ -211,13 +211,13 @@ If you want to revert the changes listed above and go back to running `lotus-min
 3. Move back the DAG store directory to the monolith miner node repository
 
 ```shell
-mv ~/markets-repo-location/dagStore ~/.lotusminer/
+mv ~/.lotusmarkets/dagStore ~/.lotusminer/
 ```
 
 4. Backup and restore the metadata related to storage deals from the `markets` instance back to the monolith miner instance. Given that storage deals metadata would have changed on the `markets` instance in case you accepted storage deals while running multi-services architecture, we have to copy it back to the monolith miner instance.
 
 ```shell
-./lotus-shed market export-datastore --repo ~/markets-repo-location --backup-dir /tmp/deals-backup
+./lotus-shed market export-datastore --repo ~/.lotusmarkets --backup-dir /tmp/deals-backup
 
 ./lotus-shed market import-datastore --repo ~/.lotusminer --backup-path /tmp/deals-backup/markets.datastore.backup
 ```
