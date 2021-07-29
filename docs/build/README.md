@@ -8,7 +8,7 @@ description: Documentation to start building applications on Filecoin.
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
 
 :::tip
-Want to speed up your development process and easily upload your data to Filecoin? Web3.Storage lets you programatically upload files and folders to the Filecoin network. [Take a look now →](https://web3.storage) 
+Use one of the community built tools and services to get started. [Take a look now →](../store/readme.md) 
 :::
 
 ## Get started
