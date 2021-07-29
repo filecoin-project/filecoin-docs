@@ -150,14 +150,21 @@ LOTUS_MINER_PATH=~/markets-repo-location ./lotus-miner run
 
 ## Interacting with the different miner instances with CLI over JSON RPC
 
-You should configure the following environment variable for the `mining/sealing/proving` miner and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
+The client-side CLI commands have been refactored to target the correct `lotus-miner` node, depending on issued command. For example:
+
+1. If you call `lotus-miner storage-deals list`, `lotus-miner` *knows* to target the `markets` process.
+1. If you call `lotus-miner sectors list`, `lotus-miner` *knows* to target the `mining/sealing/proving` process.
+
+If a given CLI is supported by all miner types, by default it targets the `mining/sealing/proving` process, but you can target the `markets` process with the `--call-on-markets` flag.
+
+In order to take advantage of this functionality, You should configure the following environment variable for the `mining/sealing/proving` miner and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
 
 ```shell
 export LOTUS_MARKETS_PATH=/Users/nonsense/.restoredrepo
 export LOTUS_MINER_PATH=/Users/nonsense/.lotusminer
 ```
 
-If one of these nodes is on a remote machine, you should set the API_INFO environment variables, for example:
+If one of these nodes is on a remote machine, you should set the relevant API_INFO environment variables, for example:
 
 ```shell
 export MARKETS_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.7wPg1b8C-yigqgoCUL-62gzOCZAVjb6mrvnaE8W27OI:/ip4/127.0.0.1/tcp/2345/http
