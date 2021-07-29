@@ -160,8 +160,8 @@ If a given CLI is supported by all miner types, by default it targets the `minin
 In order to take advantage of this functionality, You should configure the following environment variable for the `mining/sealing/proving` miner and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
 
 ```shell
-export LOTUS_MARKETS_PATH=/Users/nonsense/.restoredrepo
-export LOTUS_MINER_PATH=/Users/nonsense/.lotusminer
+export LOTUS_MARKETS_PATH=~/.restoredrepo
+export LOTUS_MINER_PATH=~/.lotusminer
 ```
 
 If one of these nodes is on a remote machine, you should set the relevant API_INFO environment variables, for example:
