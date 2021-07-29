@@ -25,6 +25,10 @@ Working with blockchains is difficult, and the inherent complexity of blockchain
 
 ## Store content on Filecoin
 
+:::tip
+Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
+:::
+
 - Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](lotus/README.md). Setup your first wallet and learn how to [send and receive ⨎](lotus/send-and-receive-fil.md) and [make storage deals](../store/lotus/store-data.md).
 - Use [Starling](../store/starling.md) to simplify the management of storage deals in Lotus.
@@ -87,4 +91,3 @@ Here is a snapshot of each implementation's progress across the primary parts of
 ✅ : fully-featured implementation
 🔄 : reuses components from another implementation
 🔶 : partial implementation
-

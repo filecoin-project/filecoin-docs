@@ -114,8 +114,7 @@ Tools to check status and details of the network and chain.
 
 Web-based applications that store your data on Filecoin. No command-line or coding experience required.
 
-- [**Slate.host**](https://slate.host) - - **_recommended_**
-  - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
+- [**Slate.host**](https://slate.host) - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
 - [Starling Storage API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
 - [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   - to securely capture, store and verify human history
@@ -129,7 +128,7 @@ Developer tools, API clients & storing service that developers can use to build 
 
 ### Storage APIs for app builders
 
-- [**Powergate**](https://docs.textile.io/powergate/) - **_recommended_** - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers. Currently for Filecoin storage deals we recommend using [Powergate](https://docs.textile.io/powergate/) to simplify your app workflows either directly or indirectly (e.g. using Buckets, Space SDK, etc.).
+- [**Powergate**](https://docs.textile.io/powergate/) - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers.
   - [POW CLI](https://docs.textile.io/powergate/#command-line-interface) - The CLI runs on the Powergate API. 
   - [Powergate JS Client](https://github.com/textileio/js-powergate-client) - JS client built on top of Powergate gRPC APIs.
   - [Powergate Go Client](https://pypi.org/project/pygate-grpc/) - Build your Go app using Powergate APIs with Go client.
@@ -143,7 +142,7 @@ Developer tools, API clients & storing service that developers can use to build 
 
 ### Message signing tools
 
-- [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - **_recommended_** - a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
+- [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
   - For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on Github.
@@ -213,7 +212,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 ### Miner tools
 
 - [Mining Benchmarks](https://filecoin-benchmarks.on.fleek.co/): Hardware performance comparisons from the Filecoin community.
-- [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - _**recommended**_ Prometheus, Grafana and Python monitoring dashboard.
+- [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - Prometheus, Grafana and Python monitoring dashboard.
 - [Filgas.io](https://fgas.io/) - real-time Filecoin mining gas queries.
 - [Hactar](https://www.hactar.app/) - analytics for your Filecoin miner node.
 

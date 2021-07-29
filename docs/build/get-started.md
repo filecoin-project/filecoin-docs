@@ -8,8 +8,8 @@ breadcrumb: 'Get started.'
 
 {{ $frontmatter.description }} The Infura API makes it easier to interact with the Filecoin Network by abstracting away some of the complex workflows and requirements. There's no need to spin up a node or directly call a Lotus daemon!
 
-:::warning
-The Infura API requires all users to sign-up to a waitlist to get access to the API. The sign-up process is simple, and most users get access to the API within minutes. You need access to this API to complete this tutorial. Infura plans to remove the waitlist process in the next few weeks.
+:::tip
+Want to speed up your development process and easily upload your data to Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
 :::
 
 In this tutorial, you will:
@@ -22,7 +22,7 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-Make sure you have both [Node.js](https://nodejs.org/) and [NPM](https://www.npmjs.com/) installed.
+Make sure you have both [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/) installed.
 
 ## Infura API
 
