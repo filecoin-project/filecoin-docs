@@ -26,7 +26,7 @@ Working with blockchains is difficult, and the inherent complexity of blockchain
 ## Store content on Filecoin
 
 :::tip
-If you're looking for a easy way to store and access your files on Filecoin, [take a look at Web3.Storage →](https://web3.storage)
+Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../../store/readme.md)
 :::
 
 - Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser.
@@ -91,4 +91,3 @@ Here is a snapshot of each implementation's progress across the primary parts of
 ✅ : fully-featured implementation
 🔄 : reuses components from another implementation
 🔶 : partial implementation
-
