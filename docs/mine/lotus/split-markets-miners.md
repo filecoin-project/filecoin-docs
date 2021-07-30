@@ -99,7 +99,7 @@ The `[Libp2p]` section on the `mining/sealing/proving` node can be removed becau
 
 ### 3. Initialising a `markets` service repository
 
-1. Create authentication tokens for the `markets` node
+1. Create authentication tokens for the `markets` node. This is an online operation, so your `lotus-miner` should be running with its updated configuration (in case you move its API to another IP:PORT)
 
 ```shell
 export APISEALER=`lotus-miner auth api-info --perm=admin`
@@ -113,17 +113,17 @@ Note that `lotus-miner` interacts with one repository or another depending on th
 This command should be run on the `markets` miner instance host, as it is creating the `markets` miner instance repository, among other actions.
 
 ```shell
-./lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
-                                                                  --api-sealer=$APISEALER \
-                                                                  --api-sector-index=$APISECTORINDEX \
-                                                                  --config=/tmp/config.toml \
-                                                                  /tmp/backup.cbor
+lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
+                                                        --api-sealer=$APISEALER \
+                                                        --api-sector-index=$APISECTORINDEX \
+                                                        --config=/tmp/config.toml \
+                                                        /tmp/backup.cbor
 ```
 
 3. Optionally update your miner's `multiaddr` on-chain - in case your `markets` instance is publicly exposed at a different location compared to your existing monolith miner, you also need to update your `multiaddr` on-chain and advertise the correct one to clients:
 
 ```shell
-./lotus-miner actor set-addrs <NEW_MULTIADDR>
+lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
 
 ### 4. Move the DAG store directory to the markets node repository
@@ -139,13 +139,13 @@ mv ~/.lotusminer/dagStore ~/.lotusmarkets/
 2. Start the node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```shell
-./lotus-miner run
+lotus-miner run
 ```
 
 ### 6. Start the `markets` miner process with the markets subsystem
 
 ```shell
-LOTUS_MINER_PATH=~/.lotusmarkets ./lotus-miner run
+LOTUS_MINER_PATH=~/.lotusmarkets lotus-miner run
 ```
 
 ## Interacting with the different miner instances with CLI over JSON RPC
@@ -160,7 +160,7 @@ If a given CLI is supported by all miner types, by default it targets the `minin
 In order to take advantage of this functionality, You should configure the following environment variable for the `mining/sealing/proving` miner and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
 
 ```shell
-export LOTUS_MARKETS_PATH=~/.restoredrepo
+export LOTUS_MARKETS_PATH=~/.lotusmarkets
 export LOTUS_MINER_PATH=~/.lotusminer
 ```
 
@@ -175,22 +175,22 @@ Now that you have both a `markets` miner process and a `mining/sealing/proving` 
 
 1. Get miner info
 ```shell
-./lotus-miner info
+lotus-miner info
 ```
 
 1. Get the peer identity of the `markets` miner process
 ```shell
-./lotus-miner --call-on-markets net id
+lotus-miner --call-on-markets net id
 ```
 
 2. Get a list of storage deals from the `markets` miner process
 ```shell
-./lotus-miner storage-deals list
+lotus-miner storage-deals list
 ```
 
 3. Get a list of sectors from the `mining/sealing/proving` miner process
 ```shell
-./lotus-miner sectors list
+lotus-miner sectors list
 ```
 
 ## Rollback to `lotus-miner` monolith process
@@ -217,27 +217,27 @@ mv ~/.lotusmarkets/dagStore ~/.lotusminer/
 4. Backup and restore the metadata related to storage deals from the `markets` instance back to the monolith miner instance. Given that storage deals metadata would have changed on the `markets` instance in case you accepted storage deals while running multi-services architecture, we have to copy it back to the monolith miner instance.
 
 ```shell
-./lotus-shed market export-datastore --repo ~/.lotusmarkets --backup-dir /tmp/deals-backup
+lotus-shed market export-datastore --repo ~/.lotusmarkets --backup-dir /tmp/deals-backup
 
-./lotus-shed market import-datastore --repo ~/.lotusminer --backup-path /tmp/deals-backup/markets.datastore.backup
+lotus-shed market import-datastore --repo ~/.lotusminer --backup-path /tmp/deals-backup/markets.datastore.backup
 ```
 
 5. Restart the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```shell
-./lotus-miner run
+lotus-miner run
 ```
 
 6. Fetch the node identity. This is necessary as you have to update your miner's peer identity on-chain, as it was changed to the identity of the markets node during the initialising of the markets service repository.
 
 ```shell
-./lotus-miner net id
+lotus-miner net id
 ```
 
 7. Update the miner's peer id on-chain with the result from the previous step.
 
 ```shell
-./lotus-miner actor set-peer-id 12D3XXXXX
+lotus-miner actor set-peer-id 12D3XXXXX
 ```
 
 As soon as the message is confirmed, clients will know to look for the node identity of your `mining/sealing/proving` node, which now also runs the `markets` subsystem, i.e. currently all Lotus subsystems.
