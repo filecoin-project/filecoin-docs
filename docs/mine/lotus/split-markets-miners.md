@@ -11,7 +11,7 @@ breadcrumb: 'Splitting main miner and markets service processes'
 ## Background
 
 ::: warning
-This feature is avaiable in lotus v1.11.1-rc and up, however, it is still experimental and under testing. Please use at your own risk.
+This feature is available in lotus v1.11.1-rc and up, however, it is still experimental and under testing. Please use at your own risk.
 :::
 
 Lotus v1.11.1 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be enabled or disabled in the `config.toml` file:
