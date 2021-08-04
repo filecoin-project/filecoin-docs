@@ -16,7 +16,7 @@ Lotus allows you to set different policies to calculate the quoted price of a re
 
 The default pricing policy uses the price configured in the `Ask Store`, set using the `lotus retrieval-deals set-ask` CLI command, to price all retrieval deals. However, it will not charge for data transfer if there exists a verified storage deal for the payload being retrieved. This behavior can be turned off by setting the `VerifiedDealsFreeTransfer` flag to `false` in the `DealMaking.RetrievalPricing` section of the config:
 
-```yaml
+```toml
 [Dealmaking.RetrievalPricing]
 Strategy = "default"
 [Dealmaking.RetrievalPricing.Default]
@@ -29,7 +29,7 @@ It will also not charge for unsealing if we already have an unsealed sector file
 
 Users can configure an external pricing script, similar to the deal filter mechanism, that takes a JSON marshaled `PricingInput` as the input and outputs a JSON marshaled `Ask`, also known as _the quote_. The `PricingInput` struct is defined as follows:
 
-```yaml
+```go
 type PricingInput struct {
     // PayloadCID is the cid of the payload to retrieve.
     PayloadCID cid.Cid
@@ -56,7 +56,7 @@ type PricingInput struct {
 
 The output `Ask` is defined as:
 
-```
+```go
 type Ask struct {
     PricePerByte            abi.TokenAmount
     UnsealPrice             abi.TokenAmount
@@ -67,7 +67,7 @@ type Ask struct {
 
 To use this mode instead of the default above, the `DealMaking.RetrievalPricing` section of the config needs to be configured to use the `external` pricing policy and needs to be given the absolute path of the pricing script: 
 
-```yaml
+```toml
 [Dealmaking.RetrievalPricing]
 Strategy = "external"
 [Dealmaking.RetrievalPricing.External]
