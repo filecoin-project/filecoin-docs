@@ -44,19 +44,19 @@ More information about Addresses can be found in the [How Filecoin works](../../
 
 ### Create a BLS wallet
 
-```bash
+```shell
 lotus wallet new bls
 ```
 
 ### Create a secp256k1 wallet
 
-```bash
+```shell
 lotus wallet new
 ```
 
 ### Create a multisig wallet
 
-```bash
+```shell
 lotus msig create address1 address2..
 ```
 
@@ -72,29 +72,29 @@ You can create as many addresses as you need. One of them will be the _default a
 
 You can see a list of all addresses for your current node:
 
-```bash
+```shell
 lotus wallet list
 ```
 
 You can see the default address with:
 
-```bash
+```shell
 lotus wallet default
 ```
 
 If you wish, you can change the default address to a different one:
 
-```bash
+```shell
 lotus wallet set-default <address>
 ```
 
 ## Obtaining FIL
 
-For non-mainnet networks, `FIL` can be obtained from a faucet. A list of faucets is available on the [networks dashboard](https://networks.filecoin.io). For mainnet, the easiest is to buy `FIL` from an exchange. Not all exchanges support `FIL`, so do your research before signing up.
+For non-mainnet networks, `FIL` can be obtained from a faucet. A list of faucets is available on the [networks dashboard](https://network.filecoin.io). For mainnet, the easiest is to buy `FIL` from an exchange. Not all exchanges support `FIL`, so do your research before signing up.
 
 Once you have received some `FIL`, use `wallet balance` to check your balance:
 
-```bash
+```shell
 lotus wallet balance
 ```
 
@@ -104,27 +104,29 @@ Remember that you will only see the latest balance when your daemon is fully syn
 
 Use the `send` command followed by the receiving address and the amount of `FIL` you want to send
 
-```bash
+```shell with-output
 # lotus send <target address> <FIL amount>
 lotus send f1zp2... 3
-
-> bafy1...
+```
+```
+bafy1...
 ```
 
 Lotus will output a transaction hash after a successful transaction. You can view details of this transaction using a [Filecoin explorer](https://docs.filecoin.io/get-started/explore-the-network/#block-explorers).
 
 Lotus assumes you want to send `FIL` from the _default address_. To send FIL from a specific address, use `--from` followed by the address you want to send `FIL` from. This address must have been created or imported to your Lotus node.
 
-```bash
+```shell with-output
 # lotus send --from=<sender address> <target address> <FIL amount>
 lotus send --from f1zp2... f15zt... 3.141
-
-> bafy2...
+```
+```
+bafy2...
 ```
 
 For advanced sending options:
 
-```bash
+```shell
 lotus send --help
 ```
 
@@ -140,13 +142,13 @@ Keep your addresses' private keys safe! Do not share them with anyone! Store the
 
 You can export and re-import a wallet, including a different Lotus node. Use `wallet export` to export an address from a node:
 
-```bash
+```shell
 lotus wallet export <address> > <address>.key
 ```
 
 Use `wallet import` to import an address into a node:
 
-```bash
+```shell
 lotus wallet import wallet.private
 ```
 

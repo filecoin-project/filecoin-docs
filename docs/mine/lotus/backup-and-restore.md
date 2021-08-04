@@ -14,29 +14,31 @@ This process backs-up metadata of the Lotus miner, which is needed to restore th
 
 1. Create a directory for this backup:
 
-   ```bash
+   ```shell
    mkdir -p ~/lotus-backups/2020-11-15
    ```
 
 1. Call `backup` to backup your miner and supply the destination for the `backup.cbor` file:
 
-   ```bash
+   ```shell with-output
    lotus-miner backup /root/lotus-backups/2020-11-15/backup.cbor
-
-   > Success
+   ```
+   ```
+   Success
    ```
 
    Add the `--offline` backup if your miner is not currently running:
 
-   ```bash
+   ```shell with-output
    lotus-miner backup --offline /root/lotus-backups/2020-11-15/backup.cbor
-
-   > Success
+   ```
+   ```
+   Success
    ```
 
 1. Backup your `config.toml` and `storage.json` files:
 
-   ```bash
+   ```shell
    cp ~/.lotusminer/config.toml ~/.lotusminer/storage.json /root/lotus-backups/2020-11-15
    ```
 
@@ -49,24 +51,25 @@ The backup is now complete. Always follow the 3-2-1 rule when storing backups:
 1. Copy your `backup.cbor`, `config.toml`, and `storage.json` files to the miner if it is on another computer.
 1. Call `restore` to restore your miner from a backup file:
 
-   ```bash/
+   ```shell with-output
    lotus-miner init restore /root/lotus-backups/2020-11-15/backup.cbor
-
-   > ...
-   > 2020-11-15T17:53:41.630Z        INFO    main    lotus-storage-miner/init_restore.go:254 Initializing libp2p identity
-   > 2020-11-15T17:53:41.631Z        INFO    main    lotus-storage-miner/init_restore.go:266 Configuring miner actor
-   > 2020-11-15T17:53:41.643Z        INFO    main    lotus-storage-miner/init.go:592 Waiting for message: bafy2bzacea3a7kqp3du5lwhm6xlaawxbz3ae7luefmhlcewljclauit7yexuq
+   ```
+   ```
+   ...
+   2020-11-15T17:53:41.630Z        INFO    main    lotus-storage-miner/init_restore.go:254 Initializing libp2p identity
+   2020-11-15T17:53:41.631Z        INFO    main    lotus-storage-miner/init_restore.go:266 Configuring miner actor
+   2020-11-15T17:53:41.643Z        INFO    main    lotus-storage-miner/init.go:592 Waiting for message: bafy2bzacea3a7kqp3du5lwhm6xlaawxbz3ae7luefmhlcewljclauit7yexuq
    ```
 
 1. Copy `config.toml` and `storage.json` into `~/.lotusminer`:
 
-   ```bash
+   ```shell
    cp lotus-backups/2020-11-15/config.toml lotus-backups/2020-11-15/storage.json .lotusminer
    ```
 
 1. Start your miner:
 
-   ```bash
+   ```shell
    lotus-miner run
    ```
 

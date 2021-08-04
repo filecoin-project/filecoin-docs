@@ -14,14 +14,14 @@ To enable this integration, you need to have an [IPFS daemon running in the back
 
 Then, open up `~/.lotus/config.toml` (or if you manually set `$LOTUS_PATH`, look under that directory) and look for the Client field, and set UseIpfs to true.
 
-```bash
+```shell
 [Client]
 UseIpfs = true
 ```
 
 After restarting the lotus daemon, you should be able to [make deals](store-data.md) with data in your IPFS node:
 
-```bash
+```shell
 $ ipfs add -r SomeData
 QmSomeData
 $ ./lotus client deal QmSomeData t01000 0.0000000001 80000

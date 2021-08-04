@@ -30,23 +30,24 @@ You need to have a couple of things installed before you can interact with Starl
 
 1.  In a new terminal window, get your Lotus API token and endpoint with:
 
-    ```bash
+    ```shell with-output
     lotus auth api-info --perm admin
-
-    > FULLNODE_API_INFO=eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc:/ip4/127.0.0.1/tcp/1234/http
+    ```
+    ```
+    FULLNODE_API_INFO=eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc:/ip4/127.0.0.1/tcp/1234/http
 
     ```
 
 
 1.  Clone the Starling repository:
 
-    ```bash
+    ```shell
     git clone https://github.com/filecoin-project/starling
     ```
 
 1.  Move into the `starling` directory and install the dependencies:
 
-    ```bash
+    ```shell
     cd starling
     npm install
     sudo npm link
@@ -55,7 +56,7 @@ You need to have a couple of things installed before you can interact with Starl
 
 1.  Configure Starling settings:
 
-    ```bash
+    ```shell
     starling config
     ```
 
@@ -63,19 +64,19 @@ You need to have a couple of things installed before you can interact with Starl
 
     a. Store a single file run:
 
-        ```bash
+        ```shell
         starling store full/path/to/file
         ```
 
     b. Store a folder run:
 
-        ```bash
+        ```shell
         starling store full/path/to/folder
         ```
 
     c. Launch the interactive monitoring interface:
 
-        ```bash
+        ```shell
         starling monitor
         ```
 
