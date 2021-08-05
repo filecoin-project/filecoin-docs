@@ -176,26 +176,29 @@ Once all the dependencies are installed, you can build and install Lotus.
    Currently, the latest code on the _master_ branch corresponds to the mainnet.
 
 1. If you are in China, see "[Lotus: tips when running in China](tips-running-in-china.md)".
-
 1. Depending on your CPU model, you will want to export additional environment variables:
 
-   If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
+    a. If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
 
-   ```sh
-   export RUSTFLAGS="-C target-cpu=native -g"
-   export FFI_BUILD_FROM_SOURCE=1
-   ```
+        ```shell
+        export RUSTFLAGS="-C target-cpu=native -g"
+        export FFI_BUILD_FROM_SOURCE=1
+        ```
 
-   See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
+        See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
-   Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To fix this, add the `CGO_CFLAGS` environment variable:
+    a. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To solve this, add the `CGO_CFLAGS` environment variable:
 
-   ```sh
-   export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
-   export CGO_CFLAGS="-D__BLST_PORTABLE__"
-   ```
+       ```shell
+       export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+       export CGO_CFLAGS="-D__BLST_PORTABLE__"
+       ```
 
-   This is due to a Lotus bug that prevents Lotus from running on a processor without `adx` instruction support and should be fixed soon.
+    a. By default, a 'multicore-sdr' option is used in the proofs library.  This feature is also used in FFI unless explicitly disabled.  To disable building with the 'multicore-sdr' dependency, set `FFI_USE_MULTICORE_SDR` to `0`:
+
+    ```shell
+    export FFI_USE_MULTICORE_SDR=0
+    ```
 
 1. Build and install Lotus
 
