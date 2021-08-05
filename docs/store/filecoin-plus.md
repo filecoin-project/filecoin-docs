@@ -1,6 +1,6 @@
 ---
 title: "Filecoin Plus"
-description: "Filecoin Plus aims to enable the demand side of the Filecoin network and maximize the amount of useful storage on Filecoin by adding a layer of social trust to the network and introducing a novel resource called DataCap. Clients looking to onboard storage onto the network apply to community-selected Notaries to receive DataCap, which can be used to incentivize miners to take storage deals." 
+description: "Filecoin Plus aims to enable the demand side of the Filecoin network and maximize the amount of useful storage on Filecoin by adding a layer of social trust to the network and introducing a novel resource called DataCap. Clients looking to onboard storage onto the network apply to community-selected Notaries to receive DataCap, which can be used to incentivize storage providers to take storage deals." 
 ---
 
 # {{ $frontmatter.title }}
@@ -11,11 +11,11 @@ description: "Filecoin Plus aims to enable the demand side of the Filecoin netwo
 
 Filecoin Plus is based on a set of guiding principles, [detailed in FIP-0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md), that focus the program on increasing Filecoin's effectiveness at becoming the decentralized storage network for humanity's most important information.
 
-Root key-holders, notaries, clients, and miners, interact through the allocation and spending of DataCap. Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Miners that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
+Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of DataCap. Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage Providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
 
 ### DataCap
 
-DataCap, when allocated to a client, can be spent by the client in storage deals with miners. Those deals carry a higher deal quality multiplier, which increases the "quality adjusted power" of the storage miner on the network by a factor of 10, yielding better block rewards for the miner over time. DataCap is granted in batches to Notaries, who can allocate it to clients that spend the DataCap to fund storage deals. DataCap is consumed as it is used to make deals.
+DataCap, when allocated to a client, can be spent by the client in storage deals with storage providers. Those deals carry a higher deal quality multiplier, which increases the "quality adjusted power" of the storage provider on the network by a factor of 10, yielding better block rewards for the storage provider over time. DataCap is granted in batches to Notaries, who can allocate it to clients that spend the DataCap to fund storage deals. DataCap is consumed as it is used to make deals.
 
 ### Notary
 
@@ -31,7 +31,7 @@ Notaries are selected through an [application process](https://github.com/fileco
 
 ### Client
 
-Clients can use their DataCap to incentivize miners to serve their needs. This can include providing additional features and levels of services that meet their specific requirements. In doing so, storage-related goods and services on Filecoin are made more valuable and competitive over time. Notaries vet clients to ensure the client receives DataCap commensurate with their reputation and needs and that the client responsibly allocates that DataCap.
+Clients can use their DataCap to incentivize storage providers to serve their needs. This can include providing additional features and levels of services that meet their specific requirements. In doing so, storage-related goods and services on Filecoin are made more valuable and competitive over time. Notaries vet clients to ensure the client receives DataCap commensurate with their reputation and needs and that the client responsibly allocates that DataCap.
 
 ## Using DataCap
 
@@ -50,7 +50,7 @@ For DataCap requirements greater than 32 GiB, choose **General Verification** in
 
 ### Spend DataCap
 
-Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because miners receive a deal quality multiplier for taking FIL+ deals, many miners offer special pricing and services to attract clients who use DataCap to make deals.
+Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because storage providers receive a deal quality multiplier for taking Fil+ deals, many storage providers offer special pricing and services to attract clients who use DataCap to make deals.
 
 By default, when you make a deal with an address with DataCap allocated, you will spend DataCap when making the deal.
 
@@ -102,13 +102,13 @@ _Note: [Lotus-shed](https://github.com/filecoin-project/lotus/tree/master/cmd/lo
 lotus-shed verifreg check-client f00000
 ```
 
-### Finding miners to take FIL+ deals
+### Finding storage providers to take Fil+ deals
 
-There are a few different ways in which a client can find a miner to take a FIL+ storage deal:
+There are a few different ways in which a client can find a storage provider to take a Fil+ storage deal:
 1. In the **For Clients** section of the [Filecoin Plus Registry](https://plus.fil.org/), there is a [Miner Registry](https://plus.fil.org/miners) which lists a self-selected set of miners who are willing to take Fil+ storage deals
 1. Use a Miner Reputation system such as [Filecoin Reputation System](http://filrep.io/) or Textile's [Miner Index](https://docs.textile.io/filecoin/miner-index/) to identify storage miners who can meet your needs
 1. Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack to discuss storage options
-1. Hop into the network with your node and query miners (using `query-ask`) to check their verified deal prices
+1. Hop into the network with your node and query storage providers (using `query-ask`) to check their verified deal prices
 
 ## Get involved in Fil+ governance
 
