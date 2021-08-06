@@ -90,11 +90,12 @@ JSON RPC interface.** Just to reiterate, the `mining/sealing/proving` no longer 
 
 ### Split the processes
 
-#### Pre-requisites
+#### 1. Create a backup
 
 Before splitting the markets service process from the monolith miner process,
-you should backup your miner's metadata repository. Start the `lotus-miner`
-and `lotus daemon` with the `LOTUS_BACKUP_BASE_PATH` environment variable:
+you should backup your miner's metadata repository. Stop the `lotus-miner` and
+`lotus daemon` and restart them again with the `LOTUS_BACKUP_BASE_PATH`
+environment variable:
 
 ```shell
 export LOTUS_BACKUP_BASE_PATH=/tmp
@@ -105,8 +106,6 @@ lotus daemon
 export LOTUS_BACKUP_BASE_PATH=/tmp
 lotus-miner run
 ```
-
-#### 1. Create a backup
 
 ```shell
 export LOTUS_BACKUP_BASE_PATH=/tmp
@@ -151,8 +150,9 @@ can be removed because it will no longer be running a Libp2p node, as we explain
 
 #### 3. Initialising a `markets` service repository
 
-1. Create authentication tokens for the `markets` node. This is an online operation,
-so your `lotus-miner` should be running with its updated configuration (in case
+1. Create authentication tokens that will be used by the `markets` node to make JSON-RPC
+calls to the `mining/sealing/proving` node. Creating the authentication tokens is an online
+operation, so your `lotus-miner` should be running with its updated configuration (in case
 you move its API to a different IP:PORT)
 
 ```shell
@@ -160,14 +160,11 @@ export APISEALER=`lotus-miner auth api-info --perm=admin`
 export APISECTORINDEX=`lotus-miner auth api-info --perm=admin`
 ```
 
-2. Initialise the `market` node. This performs a one-time setup of the markets node.
+2. Initialise the `markets` node. This performs a one-time setup of the markets node.
 Part of that setup includes updating the `peer id` in the miner actor by submitting
 a message on chain. This is necessary so that storage and retrieval clients know that
 this miner's **deal-making** endpoint is now publicly dialable/reachable on a new
-address (the new `market` node).
-
-This command should be run on the `markets` miner instance host, as it is creating
-the `markets` miner instance repository, among other actions.
+address (the new `markets` node).
 
 ```shell
 lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
@@ -186,7 +183,7 @@ the correct address to clients:
 lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
 
-#### 4. Move the DAG store directory to the markets node repository
+#### 4. Move the DAG store directory to the markets node repository (optional)
 
 If you are running a lotus version with a DAG store, you can optionally move the
 DAG store directory to the lotus markets repository, to avoid having to reindex
