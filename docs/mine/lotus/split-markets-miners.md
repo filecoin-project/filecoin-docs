@@ -53,7 +53,7 @@ Currently there are 4 subsystems that can be enabled or disabled in the `config.
 These options are set to `true` by default. Until now, the monolith `lotus-miner` process
 has been responsible for all functionality.
 
-These `subsystems` are designed to be grouped into two distinct types of `lotus-miner` nodes:
+Although `subsystems` can be enabled and disabled individually per process, there are only two combinations that are supported right now:
 
 1. The `markets` node - a `lotus-miner` process responsible for handling the storage market
  subsystem, and all functionality related to storage and retrieval deals;
