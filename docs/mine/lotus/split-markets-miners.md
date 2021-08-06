@@ -19,7 +19,7 @@ Lotus also performs markets operations, providing storage and serving retrievals
 It is now possible to run mining and markets operations in separate processes. Service providers can
 accept storage and retrieval deals without impacting ongoing mining operations.
 
-It is recommended to run the mining and markets processes on separate machines so that
+It is recommended to run the mining and markets processes on separate physical or virtual machines so that
 - the machine hardware can be targeted according to the typical workload of the process
 - only the machine running the markets process exposes public ports
 
