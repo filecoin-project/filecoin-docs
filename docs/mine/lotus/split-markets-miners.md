@@ -144,8 +144,10 @@ Make sure you adjust the `[Libp2p]` section on the `markets` node accordingly - 
 needs to be publicly accessible so that clients can make storage and retrieval
 deals with your system.
 
+:: info
 The `[Libp2p]` section of the `config.toml` on the `mining/sealing/proving` node
-can be removed because it will no longer be running a Libp2p node.
+can be removed because it will no longer be running a Libp2p node, as we explained above.
+::
 
 #### 3. Initialising a `markets` service repository
 
