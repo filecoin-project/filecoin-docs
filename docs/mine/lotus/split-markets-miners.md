@@ -8,13 +8,39 @@ breadcrumb: 'Splitting main miner and markets service processes'
 
 {{ $frontmatter.description }}
 
-## Background
+[[TOC]]
+
+## Concepts
+
+Lotus performs mining operations, such as sealing files into sectors, calculating proofs over
+those files and submitting the proofs on chain.
+Lotus also performs markets operations, providing storage and serving retrievals to clients.
+
+It is now possible to run mining and markets operations in separate processes. Service providers can
+accept storage and retrieval deals without impacting ongoing mining operations.
+
+It is recommended to run the mining and markets processes on separate machines so that
+- the machine hardware can be targeted according to the typical workload of the process
+- only the machine running the markets process exposes public ports
+
+However it is still advantageous to run the processes separately on the same machine to
+isolate them - for example the service provider can stop and restart the markets
+process without affecting an ongoing Window PoST on the miner. 
+
+## Splitting the `lotus-miner` monolith
 
 ::: warning
-This feature is available in lotus v1.11.1-rc and up, however, it is still experimental and under testing. Please use at your own risk.
+This feature is available in lotus v1.11.1-rc and up, however, it is still experimental
+and under testing. Please use at your own risk.
 :::
 
-Lotus v1.11.1 introduced the notion of `subsystems` in the `lotus-miner` process. Currently there are 4 subsystems, that can be enabled or disabled in the `config.toml` file:
+This document explains how to split an existing monolith `lotus-miner` node
+into multiple processes to take advantage of this new architecture.
+
+### Configuration
+
+Lotus v1.11.1 introduced the notion of `subsystems` in the `lotus-miner` process.
+Currently there are 4 subsystems that can be enabled or disabled in the `config.toml` file:
 
 ```toml
 [Subsystems]
@@ -24,11 +50,13 @@ Lotus v1.11.1 introduced the notion of `subsystems` in the `lotus-miner` process
 #  EnableMarkets = true
 ```
 
-All these options are set to `true` by default. Until now, the monolith `lotus-miner` process has been responsible for all functionality.
+These options are set to `true` by default. Until now, the monolith `lotus-miner` process
+has been responsible for all functionality.
 
-At the moment these `subsystems` are designed to be grouped into two distinct types of `lotus-miner` nodes:
+These `subsystems` are designed to be grouped into two distinct types of `lotus-miner` nodes:
 
-1. The `markets` node - a `lotus-miner` process responsible to handling the storage market subsystem, and all functionality related to storage/retrieval deals;
+1. The `markets` node - a `lotus-miner` process responsible for handling the storage market
+ subsystem, and all functionality related to storage and retrieval deals;
 
 ```toml
 [Subsystems]
@@ -38,7 +66,8 @@ At the moment these `subsystems` are designed to be grouped into two distinct ty
   EnableMarkets = true
 ```
 
-2. The `mining/sealing/proving` node - a `lotus-miner` process responsible to Filecoin mining, and sector storage, sealing and proving;
+2. The `mining/sealing/proving` node - a `lotus-miner` process responsible for Filecoin mining,
+sector storage, sealing and proving;
 
 ```toml
 [Subsystems]
@@ -48,15 +77,22 @@ At the moment these `subsystems` are designed to be grouped into two distinct ty
   EnableMarkets = false
 ```
 
-When a `lotus-miner` node is started with configuration for a `markets` node, it includes a libp2p node and should be publicly exposed on the Internet and reachable/dialable for other clients to communicate with it.
+When a `lotus-miner` instance is configured as a `markets` node, it exposes
+a libp2p interface. The libp2p ports should be publically available so that
+the node can be dialed by clients that wish to make storage and retrieval deals.
 
-When a `lotus-miner` node is started with configuration for a `mining/sealing/proving` node, it does not include a libp2p node, and it doesn't have to be publicly exposed on the Internet. The `markets` node communicates with it via its JSON RPC interface.
+When a `lotus-miner` instance is configured as a `mining/sealing/proving` node,
+it does not receive requests and should not be publicly exposed on the Internet.
+The `markets` node communicates with the `mining/sealing/proving` node via its
+JSON RPC interface.
 
-This document explains how to split your existing monolith `lotus-miner` node into multiple processes and take advantage of this new architecture, which brings more security to your mining operation as well as less potential attack surface.
+### Split the processes
 
-## Pre-requisites
+#### Pre-requisites
 
-Before splitting the markets service process from the monolith miner process, you should backup your miner's metadata repository. You need to start the `lotus-miner` with the `LOTUS_BACKUP_BASE_PATH` env variable in order to do that.
+Before splitting the markets service process from the monolith miner process,
+you should backup your miner's metadata repository. Start the `lotus-miner`
+and `lotus daemon` with the `LOTUS_BACKUP_BASE_PATH` environment variable:
 
 ```shell
 export LOTUS_BACKUP_BASE_PATH=/tmp
@@ -68,51 +104,66 @@ export LOTUS_BACKUP_BASE_PATH=/tmp
 lotus-miner run
 ```
 
-## Splitting the `lotus-miner` monolith
-
-### 1. Creating a backup
+#### 1. Create a backup
 
 ```shell
 export LOTUS_BACKUP_BASE_PATH=/tmp
 lotus-miner backup /tmp/backup.cbor
 ```
 
-### 2. Create `config.toml` for the markets service
+#### 2. Create a seed `config.toml` for the markets service
 
-You need to create a seed `config.toml` for the markets node, and have it ready for the next step. For more information see [configuration usage page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
+To initialize the markets service we need to create a seed `config.toml` for
+the markets node. For more information see the [configuration page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
-In the example commands below, we have placed the `config.toml` in the `/tmp` directory. The repository directory which we use is `~/.lotusmarkets`. We are using the following `config.toml`:
+In the examples below the `config.toml` is in the `/tmp` directory.
+The repository directory is `~/.lotusmarkets`.
+We are using the following `config.toml`:
 
 ```toml
 [API]
+  # Endpoint for API calls to the markets process
   ListenAddress = "/ip4/127.0.0.1/tcp/8787/http"
   RemoteListenAddress = "127.0.0.1:8787"
 
 [Libp2p]
+  # Endpoint for libp2p requests (public)
   ListenAddresses = ["/ip4/0.0.0.0/tcp/24001", "/ip6/::/tcp/24001"]
   AnnounceAddresses = ["/ip4/12.34.56.78/tcp/24001"]
 ```
 
-If you intend to run the `mining/sealing/proving` node on the same machine as the `markets` node, make sure that their listeners do not clash. By default the `lotus-miner` API server listens to port 2345, so in the example configuration above, we change the configuration for the `markets` node to listen to `127.0.0.1:8787`.
+If you intend to run the `mining/sealing/proving` node on the same machine as the
+`markets` node, make sure that their listeners do not clash.
+By default the `lotus-miner` API server listens to port 2345, so in the example
+configuration above, we change the configuration for the `markets` node API server
+to listen to `127.0.0.1:8787`.
 
-Make sure you adjust the `[Libp2p]` section on the `markets` node accordingly - it needs to be publicly accessible, so that clients can make storage and retrieval deals with your system.
+Make sure you adjust the `[Libp2p]` section on the `markets` node accordingly - it
+needs to be publicly accessible so that clients can make storage and retrieval
+deals with your system.
 
-The `[Libp2p]` section on the `mining/sealing/proving` node can be removed because this node will no longer be running a Libp2p node.
+The `[Libp2p]` section of the `config.toml` on the `mining/sealing/proving` node
+can be removed because it will no longer be running a Libp2p node.
 
-### 3. Initialising a `markets` service repository
+#### 3. Initialising a `markets` service repository
 
-1. Create authentication tokens for the `markets` node. This is an online operation, so your `lotus-miner` should be running with its updated configuration (in case you move its API to another IP:PORT)
+1. Create authentication tokens for the `markets` node. This is an online operation,
+so your `lotus-miner` should be running with its updated configuration (in case
+you move its API to a different IP:PORT)
 
 ```shell
 export APISEALER=`lotus-miner auth api-info --perm=admin`
 export APISECTORINDEX=`lotus-miner auth api-info --perm=admin`
 ```
 
-2. Initialise the `market` node. This performs a one-time setup of the markets node. Part of that setup includes updating the `peer id` in the miner actor by submitting a message on chain. This is necessary so that storage and retrieval clients know that this miner's **deal-making** endpoint is now publicly dialable/reachable on a new address (the new `market` node).
+2. Initialise the `market` node. This performs a one-time setup of the markets node.
+Part of that setup includes updating the `peer id` in the miner actor by submitting
+a message on chain. This is necessary so that storage and retrieval clients know that
+this miner's **deal-making** endpoint is now publicly dialable/reachable on a new
+address (the new `market` node).
 
-Note that `lotus-miner` interacts with one repository or another depending on the `LOTUS_MINER_PATH` environment variable!
-
-This command should be run on the `markets` miner instance host, as it is creating the `markets` miner instance repository, among other actions.
+This command should be run on the `markets` miner instance host, as it is creating
+the `markets` miner instance repository, among other actions.
 
 ```shell
 lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
@@ -122,29 +173,45 @@ lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
                                                         /tmp/backup.cbor
 ```
 
-3. Optionally update your miner's `multiaddr` on-chain - in case your `markets` instance is publicly exposed at a different location compared to your existing monolith miner, you also need to update your `multiaddr` on-chain and advertise the correct one to clients:
+3. Optionally update your miner's `multiaddr` on-chain - in case your `markets`
+instance is publicly exposed at a different location compared to your existing
+monolith miner, you also need to update your `multiaddr` on-chain to advertise
+the correct address to clients:
 
 ```shell
 lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
 
-### 4. Move the DAG store directory to the markets node repository
+#### 4. Move the DAG store directory to the markets node repository
+
+If you are running a lotus version with a DAG store, you can optionally move the
+DAG store directory to the lotus markets repository, to avoid having to reindex
+all storage deals when the markets node starts up.
 
 ```shell
 mv ~/.lotusminer/dagStore ~/.lotusmarkets/
 ```
 
-### 5. Start the `mining/sealing/proving` miner process without the markets subsystem
+#### 5. Start the `mining/sealing/proving` miner process without the markets subsystem
 
-1. Update your `config.toml` and set `EnableMarkets` option to `false`.
+1. Update your `config.toml` to set the `EnableMarkets` option to `false`.
 
-2. Start the node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
+2. Start the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which
+should point to your `mining/sealing/proving` node repo).
+
+    Note that `lotus-miner` interacts with either the the `markets` or `mining/sealing/proving` repository
+depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```shell
 lotus-miner run
 ```
 
-### 6. Start the `markets` miner process with the markets subsystem
+#### 6. Start the `markets` miner process with the markets subsystem
+
+Start the `markets` node with LOTUS_MINER_PATH pointing to the `markets` node repo.
+
+Note that `lotus-miner` interacts with either the the `markets` or `mining/sealing/proving` repository
+depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```shell
 LOTUS_MINER_PATH=~/.lotusmarkets lotus-miner run
