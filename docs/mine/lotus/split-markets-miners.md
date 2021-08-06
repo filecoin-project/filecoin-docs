@@ -16,7 +16,7 @@ Lotus performs mining operations, such as sealing files into sectors, calculatin
 those files and submitting the proofs on chain.
 Lotus also performs markets operations, providing storage and serving retrievals to clients.
 
-It is now possible to run mining and markets operations in separate processes. Service providers can
+It is now possible to run mining and markets subsystems in separate processes. Service providers can
 accept storage and retrieval deals without impacting ongoing mining operations.
 
 It is recommended to run the mining and markets processes on separate physical or virtual machines so that
