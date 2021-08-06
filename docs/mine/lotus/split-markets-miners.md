@@ -81,6 +81,8 @@ When a `lotus-miner` instance is configured as a `markets` node, it exposes
 a libp2p interface. The libp2p ports should be publically available so that
 the node can be dialed by clients that wish to make storage and retrieval deals.
 
+This guide won't go into details on how to make the endpoint connectable, as this ultimately depends on your network infrastructure and equipment. Generally speaking, configuring static port mappings on your external-facing router, and ensuring your markets node has an internal static IP address and port should be sufficient, in addition to adjusting any firewalls that may be present.
+
 When a `lotus-miner` instance is configured as a `mining/sealing/proving` node,
 it does not receive requests and should not be publicly exposed on the Internet.
 The `markets` node communicates with the `mining/sealing/proving` node via its
