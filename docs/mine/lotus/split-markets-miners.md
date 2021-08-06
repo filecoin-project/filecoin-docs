@@ -17,7 +17,8 @@ those files and submitting the proofs on chain.
 Lotus also performs markets operations, providing storage and serving retrievals to clients.
 
 It is now possible to run mining and markets subsystems in separate processes. Service providers can
-accept storage and retrieval deals without impacting ongoing mining operations.
+accept storage and retrieval deals without impacting ongoing mining operations. The markets process
+communicates with the mining process over JSON-RPC.
 
 It is recommended to run the mining and markets processes on separate physical or virtual machines so that
 - the machine hardware can be targeted according to the typical workload of the process
@@ -26,6 +27,10 @@ It is recommended to run the mining and markets processes on separate physical o
 However it is still advantageous to run the processes separately on the same machine to
 isolate them - for example the service provider can stop and restart the markets
 process without affecting an ongoing Window PoST on the miner. 
+
+The steps below will guide you through the procedure to backup your mining node, create
+an initial configuration for your brand new markets node, disable markets functionality
+on the mining node, and bring both the mining and markets nodes online.
 
 ## Splitting the `lotus-miner` monolith
 
