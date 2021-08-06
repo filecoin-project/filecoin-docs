@@ -177,7 +177,7 @@ lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
                                                         /tmp/backup.cbor
 ```
 
-3. Optionally update your miner's `multiaddr` on-chain - in case your `markets`
+3. If during this procedure, you ended up changing the `multiaddr` of your `markets` process to a different host and/or port, you must update miner's `multiaddr` on-chain. Otherwise, clients wishing to make deals with you won't find you any longer.
 instance is publicly exposed at a different location compared to your existing
 monolith miner, you also need to update your `multiaddr` on-chain to advertise
 the correct address to clients:
