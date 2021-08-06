@@ -212,7 +212,7 @@ lotus-miner run
 
 #### 6. Start the `markets` miner process with the markets subsystem
 
-Start the `markets` node with LOTUS_MINER_PATH pointing to the `markets` node repo.
+Start the `markets` node with the environment variable `LOTUS_MINER_PATH` pointing to the `markets` node repo.
 
 Note that `lotus-miner` interacts with either the the `markets` or `mining/sealing/proving` repository
 depending on the `LOTUS_MINER_PATH` environment variable!
