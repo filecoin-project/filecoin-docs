@@ -124,7 +124,7 @@ We are using the following `config.toml`:
 
 ```toml
 [API]
-  # Endpoint for API calls to the markets process
+  # Endpoint where the markets process will serve JSON-RPC requests
   ListenAddress = "/ip4/127.0.0.1/tcp/8787/http"
   RemoteListenAddress = "127.0.0.1:8787"
 
