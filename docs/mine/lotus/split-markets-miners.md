@@ -118,7 +118,7 @@ lotus-miner backup /tmp/backup.cbor
 To initialize the markets service we need to create a seed `config.toml` for
 the markets node. For more information see the [configuration page](https://docs.filecoin.io/get-started/lotus/configuration-and-advanced-usage/) and the [custom storage layout page](https://docs.filecoin.io/mine/lotus/custom-storage-layout/).
 
-In the examples below the `config.toml` is in the `/tmp` directory.
+In the examples below the `config.toml` is in the `/tmp` directory. You may customise the example below to adapt it to your environment.
 The repository directory is `~/.lotusmarkets`.
 We are using the following `config.toml`:
 
