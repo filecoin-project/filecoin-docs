@@ -135,7 +135,7 @@ We are using the following `config.toml`:
 ```
 
 If you intend to run the `mining/sealing/proving` node on the same machine as the
-`markets` node, make sure that their listeners do not clash.
+`markets` node, make sure that their `[API]` listener addresses do not clash.
 By default the `lotus-miner` API server listens to port 2345, so in the example
 configuration above, we change the configuration for the `markets` node API server
 to listen to `127.0.0.1:8787`.
