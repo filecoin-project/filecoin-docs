@@ -85,8 +85,8 @@ This guide won't go into details on how to make the endpoint connectable, as thi
 
 When a `lotus-miner` instance is configured as a `mining/sealing/proving` node,
 it does not receive requests and should not be publicly exposed on the Internet.
-The `markets` node communicates with the `mining/sealing/proving` node via its
-JSON RPC interface.
+**The `markets` node communicates with the `mining/sealing/proving` node via its
+JSON RPC interface.** Just to reiterate, the `mining/sealing/proving` no longer runs a libp2p interface, and the `markets` and `mining/sealing/proving` do not communicate over libp2p, but through HTTP and/or Websockets (JSON-RPC interface).
 
 ### Split the processes
 
