@@ -20,19 +20,19 @@ It is now possible to run mining and markets subsystems in separate processes. S
 accept storage and retrieval deals without impacting ongoing mining operations. The markets process
 communicates with the mining process over JSON-RPC.
 
-It is recommended to run the mining and markets processes on separate physical or virtual machines so that
+It is **highly recommended** to run the mining and markets processes on separate physical or virtual machines so that
 - the machine hardware can be targeted according to the typical workload of the process
 - only the machine running the markets process exposes public ports
 
 However it is still advantageous to run the processes separately on the same machine to
-isolate them - for example the service provider can stop and restart the markets
-process without affecting an ongoing Window PoST on the miner. 
+isolate them - for example the storage service provider can stop and restart the markets
+process without affecting an ongoing Winning PoSt Window PoSt on the miner. 
 
 The steps below will guide you through the procedure to backup your mining node, create
 an initial configuration for your brand new markets node, disable markets functionality
 on the mining node, and bring both the mining and markets nodes online.
 
-## Splitting the `lotus-miner` monolith
+## Splitting the `lotus-miner` monolith into Subsystems
 
 ::: warning
 This feature is available in lotus v1.11.1-rc and up, however, it is still experimental
@@ -55,13 +55,13 @@ Currently there are 4 subsystems that can be enabled or disabled in the `config.
 #  EnableMarkets = true
 ```
 
-These options are set to `true` by default. Until now, the monolith `lotus-miner` process
+These options are set to `true` by default and you are running a `lotus-miner` monolith under this setting. Until now, the monolith `lotus-miner` process
 has been responsible for all functionality.
 
-Although `subsystems` can be enabled and disabled individually per process, there are only two combinations that are supported right now:
+`subsystems` can be enabled and disabled individually per process within each node's own config file. There are only two combinations that are supported right now:
 
 1. The `markets` node - a `lotus-miner` process responsible for handling the storage market
- subsystem, and all functionality related to storage and retrieval deals;
+ subsystem, and all functionality related to serve storage and retrieval deals;
 
 ```toml
 [Subsystems]
@@ -86,14 +86,17 @@ When a `lotus-miner` instance is configured as a `markets` node, it exposes
 a libp2p interface. The libp2p ports should be publically available so that
 the node can be dialed by clients that wish to make storage and retrieval deals.
 
-This guide won't go into details on how to make the endpoint connectable, as this ultimately depends on your network infrastructure and equipment. Generally speaking, configuring static port mappings on your external-facing router, and ensuring your markets node has an internal static IP address and port should be sufficient, in addition to adjusting any firewalls that may be present.
+This guide won't go into details on how to make the endpoint connectable, as this ultimately depends on your network infrastructure and equipment, refer to the [lotus-miner connectivity guide](https://docs.filecoin.io/mine/lotus/connectivity/#frontmatter-title) for more details. Generally speaking, configuring static port mappings on your external-facing router, and ensuring your markets node has an internal static IP address and port should be sufficient, in addition to adjusting any firewalls that may be present.
 
+
+::: tip  
 When a `lotus-miner` instance is configured as a `mining/sealing/proving` node,
-it does not receive requests and should not be publicly exposed on the Internet.
+**it does not receive requests and should not be publicly exposed on the Internet**.  
 **The `markets` node communicates with the `mining/sealing/proving` node via its
-JSON RPC interface.** Just to reiterate, the `mining/sealing/proving` no longer runs a libp2p interface, and the `markets` and `mining/sealing/proving` do not communicate over libp2p, but through HTTP and/or Websockets (JSON-RPC interface).
+JSON RPC interface.** Just to reiterate, the `mining/sealing/proving` no longer runs a libp2p interface, and the `markets` and `mining/sealing/proving` do not communicate over libp2p, but through HTTP and/or Websockets (JSON-RPC interface).  
+:::
 
-### Split the processes
+## Split the processes
 
 #### Pre-requisites
 
