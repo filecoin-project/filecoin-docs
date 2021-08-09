@@ -296,7 +296,11 @@ your node.
 lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
 
-#### Step 4. **Optional**: Move the DAG store directory to the markets node repository
+#### Step 4. Copy Existing Storage Locations
+
+If you have [customized storage location](https://docs.filecoin.io/mine/lotus/miner-lifecycle/#changing-storage-locations) for your monolith miner, we **highly recommend** you copy `~/.lotusminer/storage.json` to the `~/.lotusmarekt` as well. By doing this, when requests come in to the markets node, the markets node will read the data directly from disk instead of going through the miner node. 
+
+#### Step 5. **Optional**: Move the DAG store directory to the markets node repository
 
 If you have initialize the dagstore, you can optionally move the DAG store directory to the lotus markets repository, to avoid having to reindex all storage deals when the markets node starts up.
 
@@ -308,7 +312,7 @@ Dagstore has not been introduced in v1.11.1 yet, we will update the docs once it
 mv ~/.lotusminer/dagstore ~/.lotusmarkets/
 ```
 
-#### Step 5. Start the `markets` miner process with the markets subsystem
+#### Step 6. Start the `markets` miner process with the markets subsystem
 
 Start the `markets` node with the environment variable `LOTUS_MINER_PATH` pointing to the `markets` node repo.
 
