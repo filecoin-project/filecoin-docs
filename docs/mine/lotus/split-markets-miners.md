@@ -283,7 +283,7 @@ mv ~/.lotusminer/dagstore ~/.lotusmarkets/
 
 Start the `markets` node with the environment variable `LOTUS_MINER_PATH` pointing to the `markets` node repo.
 
-Note that `lotus-miner` interacts with either the the `markets` or `mining/sealing/proving` repository
+Note that `lotus-miner run` interacts with either the the `markets` or `mining/sealing/proving` repository
 depending on the `LOTUS_MINER_PATH` environment variable!
 
 ```shell
@@ -293,14 +293,14 @@ LOTUS_MINER_PATH=~/.lotusmarkets lotus-miner run
 And that's it, you have successfully set up your market subsystem! 
 
 
-## CLI Interaction Across Subsystems Process
+## Calling commands
 
 The `lotus-miner` CLI commands have been refactored to target the correct subsystem node, depending on issued command. For example:
 
 1. If you call `lotus-miner storage-deals list`, `lotus-miner` *knows* to target the `markets` process.
 2. If you call `lotus-miner sectors list`, `lotus-miner` *knows* to target the `mining/sealing/proving` process.
 
-### Environmental Variables
+### Environment Variables
 
 In addition to the [existing environment variables](https://docs.filecoin.io/mine/lotus/miner-setup/#checklist-before-launch) for `lotus-miner`, `MARKETS_API_INFO` and `LOTUS_MARKETS_PATH` were introduced for the market subsystem:
 - `LOTUS_MARKETS_PATH` is the location of your market repository.
@@ -338,9 +338,9 @@ MARKETS_API_INFO=...
 
 ### Interact with the Market Node from Other Process
 
-If a given CLI is supported by all miner types, by default it targets the `mining/sealing/proving` process, but you can target the `markets` process with the `--call-on-markets` flag.
+For commands that are present in all `lotus-miner` processes, by default the CLI targets the `mining/sealing/proving` process, but you can explicitly target the `markets` process with the `--call-on-markets` flag. This is the case for `log` and `auth` commands, for example.
 
-In order to take advantage of this functionality, You should configure the following environment variable for both `mining/sealing/proving` miner(or lotus-worker) and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
+In order to take advantage of this functionality, you should configure the following environment variable for both `mining/sealing/proving` miner (or lotus-worker) and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
 
 ```shell
 export LOTUS_MARKETS_PATH=~/.lotusmarkets
