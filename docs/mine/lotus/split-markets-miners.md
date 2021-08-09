@@ -130,6 +130,10 @@ lotus-miner backup /tmp/backup.cbor
 
 ### Split the Market Subsystem
 
+::: tip
+All steps below should be performed on the machine where the markets node will be run.
+:::
+
 #### Step 1. Create a seed and config.toml for the markets service
 
 To initialize the markets service we need to create a seed `config.toml` for
@@ -240,6 +244,8 @@ address (the new `markets` node).
 Make sure your main mining process is running before you run the following step.
 :::
 
+For this tutorial, we will us ~/.lotusmarkets` as the markets repository paths. You **do not** need to manually create the folder in advance. 
+
 ```shell
 lotus-miner --markets-repo=~/.lotusmarkets init service --type=markets \
                                                         --api-sealer=$APISEALER \
@@ -312,7 +318,7 @@ MINER_API_INFO=...
 LOTUS_MARKETS_PATH=...
 ```
 
-A client configuration inside the machine running the `mining/sealing/proving` node that wants to interact with the market node and the full node:
+A client configuration inside the machine running the `mining/sealing/proving` or `lotus-worker` node that wants to interact with the market node and the full node:
 
 ```
 FULLNODE_API_INFO=...
@@ -334,7 +340,7 @@ MARKETS_API_INFO=...
 
 If a given CLI is supported by all miner types, by default it targets the `mining/sealing/proving` process, but you can target the `markets` process with the `--call-on-markets` flag.
 
-In order to take advantage of this functionality, You should configure the following environment variable for both `mining/sealing/proving` miner and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
+In order to take advantage of this functionality, You should configure the following environment variable for both `mining/sealing/proving` miner(or lotus-worker) and the `markets` miner, in your run-commands file (`.bashrc`, `.zshrc`, etc.):
 
 ```shell
 export LOTUS_MARKETS_PATH=~/.lotusmarkets
