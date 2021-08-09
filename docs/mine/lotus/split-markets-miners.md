@@ -269,7 +269,7 @@ lotus-miner actor set-addrs <NEW_MULTIADDR>
 
 #### Step 4. Consider configuring storage.json on the markets node
 
-If you had [customized storage locations](https://docs.filecoin.io/mine/lotus/miner-lifecycle/#changing-storage-locations)
+If you had [customized storage locations](https://docs.filecoin.io/mine/lotus/custom-storage-layout/#frontmatter-title)
 for your monolith miner, consider either:
 1. copying the `~/.lotusminer/storage.json` file to the `~/.lotusmarket`
    directory, if both miner and markets are running on the same machine and have
