@@ -20,7 +20,7 @@ It is now possible to run mining and markets subsystems in separate processes. S
 accept storage and retrieval deals without impacting ongoing mining operations. The markets process
 communicates with the mining process over JSON-RPC.
 
-It is **highly recommended** to run the mining and markets processes on separate physical or virtual machines so that
+It is **highly recommended** to run the mining and markets processes on separate physical or virtual machines so that:
 - the machine hardware can be targeted according to the typical workload of the process
 - only the machine running the markets process exposes public ports
 
@@ -31,6 +31,35 @@ process without affecting an ongoing Winning PoSt Window PoSt on the miner.
 The steps below will guide you through the procedure to backup your mining node, create
 an initial configuration for your brand new markets node, disable markets functionality
 on the mining node, and bring both the mining and markets nodes online.
+
+## Architecture
+
+The following diagram summarizes the architecture of a split miner/markets
+deployment:
+
+<img src="../img/miner-markets-segregation-v4.png" />
+
+As you can see, only the markets and the fullnode/daemon run a libp2p host and
+expose public ports to the Internet. The mining/sealing/storage node stays
+entirely private. This confers protection and reduces operational risk.
+
+The markets node speaks to the mining/sealing/storage node through the sealing
+and storage APIs, mainly to hand off pieces for sealing coming from storage
+deals, as well as to fetch pieces to serve retrievals.
+
+Both the markets and the mining/sealing/storage nodes need access to the
+JSON-RPC endpoint of the daemon in order to query the chain and the state tree,
+as well as to push messages to the network via the mpool.
+
+As you will see below, the `lotus` and `lotus-miner` CLI commands need access to
+all JSON-RPC endpoints. Remember that JSON-RPC endpoints are private and are not
+exposed publicly (unless you operate a public fullnode or a gateway node!)
+
+Another aspect worth mentioning is that both the markets and the
+mining/sealing/storage nodes can be configured to share the storage system
+(disk array, or filesystem), either locally when they're running on the same
+machine, or as network mounts when running on separate machines. This setup
+enables more efficient access and reduces network IO loads.
 
 ## Splitting the `lotus-miner` monolith into Subsystem
 
