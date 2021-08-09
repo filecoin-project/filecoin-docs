@@ -267,7 +267,7 @@ your node.
 lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
 
-#### Step 4. [Optional] Move the DAG store directory to the markets node repository
+#### Step 4. **Optional**: Move the DAG store directory to the markets node repository
 
 If you have initialize the dagstore, you can optionally move the DAG store directory to the lotus markets repository, to avoid having to reindex all storage deals when the markets node starts up.
 
@@ -396,7 +396,7 @@ If you want to revert the changes listed above and go back to running `lotus-min
   EnableMarkets = true
 ```
 
-4. [Optional]: Move back the DAG store directory to the monolith miner node repository if you have initialized dagstore before:
+4. **Optional**: Move back the DAG store directory to the monolith miner node repository if you have initialized dagstore before:
 
 ```shell
 mv ~/.lotusmarkets/dagStore ~/.lotusminer/
