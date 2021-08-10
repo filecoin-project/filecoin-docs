@@ -29,11 +29,29 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
 1. Download the most recent lightweight snapshot and its checksum:
 
+    **Mainnet**
+
+    + [This URL](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car) always contains the latest snapshot available for mainnet.
+
     ```shell
     curl -sI https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car | perl -ne '/x-amz-website-redirect-location:\s(.+)\.car/ && print "$1.sha256sum\n$1.car"' | xargs wget
     ```
 
-    [This URL](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car) always contains the latest snapshot available.
+    **TestNet**
+
+    + Calibration: snapthot is maintained by Filecoin community. Download latest snapshot: [lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz](https://www.mediafire.com/file/q7tc2bmcc9d09vv/lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz/file). 
+
+    + Nerpa: also maintained by Filecoin Community.
+
+      + Option-1: download latest snapshot [lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz](https://www.mediafire.com/file/t1j360oyk3tjziv/lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz/file)
+
+      + Option-2: this snapshot is taken with the latest 900 blocks daily which is around 1.2GB now. You can directly import snapshop using:
+
+        ```shell
+        lotus daemon --halt-after-import --import-snapshot https://dev.node.glif.io/nerpa00/ipfs/8080/ipfs/$(curl -s https://gist.githubusercontent.com/openworklabbot/d32543d42ed318f6dfde516c3d8668a0/raw/snapshot.log) 
+        or
+        lotus daemon --halt-after-import --import-snapshot https://gateway.ipfs.io/ipfs/$(curl -s https://gist.githubusercontent.com/openworklabbot/d32543d42ed318f6dfde516c3d8668a0/raw/snapshot.log)
+        ```
 
 1. Check the `sha256sum` of the downloaded snapshot:
 
