@@ -152,6 +152,7 @@ module.exports = {
                 ['lotus/message-pool', 'The Message Pool'],
                 ['lotus/seal-workers', 'Seal workers'],
                 ['lotus/split-markets-miners', 'Splitting miner & markets processes'],
+                ['lotus/dagstore', 'About the dagstore'],
                 ['lotus/benchmarks', 'Benchmarks'],
                 ['lotus/backup-and-restore', 'Backup and restore'],
                 ['lotus/gpus', 'Custom GPUs'],
