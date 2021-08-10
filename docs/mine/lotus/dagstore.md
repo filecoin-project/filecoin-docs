@@ -16,27 +16,16 @@ breadcrumb: 'About the markets dagstore'
 The dagstore was introduced in Lotus v1.11.2.
 :::
 
-The dagstore is a sharded store to hold large IPLD graphs efficiently, packaged
-as location-transparent attachable CAR files, with mechanical sympathy resulting
-in zero-copy access in ideal situations.
+The dagstore is a sharded store to hold large IPLD graphs efficiently, packaged as location-transparent attachable CAR files, with mechanical sympathy resulting in zero-copy access in ideal situations.
 
-The dagstore is a component of the markets subsystem in `lotus-miner`. It
-replaces the former Badger staging blockstore. It is designed to provide high
-efficiency and throughput, and minimize resource utilization during deal-making operations.
+The dagstore is a component of the markets subsystem in `lotus-miner`. It replaces the former Badger staging blockstore. It is designed to provide high efficiency and throughput, and minimize resource utilization during deal-making operations.
 
-The dagstore leverages the indexing features of [CARv2](https://github.com/ipld/ipld/blob/master/specs/transport/car/carv2/index.md)
-to enable plain CAR files to act as read and write blockstores. These CAR files
-serve as the direct medium for data exchange in markets and deal-making
-processes, without requiring intermediate buffers.
+The dagstore leverages the indexing features of [CARv2](https://github.com/ipld/ipld/blob/master/specs/transport/car/carv2/index.md) to enable plain CAR files to act as read and write blockstores. These CAR files serve as the direct medium for data exchange in markets and deal-making processes, without requiring intermediate buffers.
 
 Compared to before v1.11.2:
 
-* On storage deals, miners no longer stage the data into a Badger store prior to
-  forming the unsealed CAR. Instead, the unsealed CAR is built directly as the
-  data is being transferred through graphsync.
-* On retrieval deals, miners no longer load the unsealed CAR into a Badger
-  blockstore first. Retrievals are served directly from the data at rest (the
-  unsealed CAR).
+* On storage deals, miners no longer stage the data into a Badger store prior to forming the unsealed CAR. Instead, the unsealed CAR is built directly as the data is being transferred through graphsync.
+* On retrieval deals, miners no longer load the unsealed CAR into a Badger blockstore first. Retrievals are served directly from the data at rest (the unsealed CAR).
 
 The DAG store comprises three layers:
 
@@ -48,35 +37,18 @@ The DAG store comprises three layers:
 
 Here's a definition of terms:
 
-- **Shard:** the unit of data storage in the dagstore. Every Filecoin piece   
-  (the data within a deal) is a unique shard in the dagstore. Every shard is 
-  identified by a unique **key**, whose value is the **Piece CID**.
-- **Shard state:** the state that a dagstore shard is in. It can be one of the 
-  following:
-    - `ShardStateNew`: indicates that a shard has been registered, but has not 
-      yet been initialized.
-    - `ShardStateInitializing`: indicates that the shard is being initialized.
-    - `ShardStateAvailable`: indicates that the shard has been initialized and
-      is capable of serving retrievals. However, there are no active shard
-      readers in this instant.
-    - `ShardStateServing`: indicates the shard has active readers, and thus is
-      currently serving at least one retrieval.
-    - `ShardStateErrored`: indicates that an unexpected error was encountered 
-      during a shard operation (e.g. initialization or acquisition), and
-      therefore the shard needs to be recovered to be fully operational.
-    - `ShardStateRecovering`: indicates that the shard is attempting to recover
-      from an errored state.
-- **Shard initialization:** the act of fetching the shard's data, indexing
-  it and storing the index under the `dagstore/index` directory.
-- **Shard acquisition:** the act of fetching the shard's data, joining it with
-  an index, and building an accessor for shard data, in order to serve
-  retrievals.
+- **Shard:** the unit of data storage in the dagstore. Every Filecoin piece (the data within a deal) is a unique shard in the dagstore. Every shard is identified by a unique **key**, whose value is the **Piece CID**.
+- **Shard state:** the state that a dagstore shard is in. It can be one of the  following:
+  - `ShardStateNew`: indicates that a shard has been registered, but has not yet been initialized.
+  - `ShardStateInitializing`: indicates that the shard is being initialized.
+    - `ShardStateAvailable`: indicates that the shard has been initialized and is capable of serving retrievals. However, there are no active shard readers in this instant.
+  - `ShardStateServing`: indicates the shard has active readers, and thus is currently serving at least one retrieval.
+    - `ShardStateErrored`: indicates that an unexpected error was encountered during a shard operation (e.g. initialization or acquisition), and therefore the shard needs to be recovered to be fully operational.
+    - `ShardStateRecovering`: indicates that the shard is attempting to recover from an errored state.
+- **Shard initialization:** the act of fetching the shard's data, indexing it and storing the index under the `dagstore/index` directory.
+- **Shard acquisition:** the act of fetching the shard's data, joining it with an index, and building an accessor for shard data, in order to serve retrievals.
 - **Index:** a mapping of CID => CAR file offset, associated with a shard.
-- **Mount:** a key feature of the dagstore is location-transparency of shard
-  data, and the mount is the component that teaches the dagstore how to obtain
-  the data for a shard. A shard can be mounted from a local path, HTTP URL,
-  distributed filesystem, the Lotus storage subsystem (precisely the mount
-  type that we use in Lotus), or anything else.
+- **Mount:** a key feature of the dagstore is location-transparency of shard data, and the mount is the component that teaches the dagstore how to obtain the data for a shard. A shard can be mounted from a local path, HTTP URL, distributed filesystem, the Lotus storage subsystem (precisely the mount type that we use in Lotus), or anything else.
 
 ## Directory structure
 
@@ -96,23 +68,15 @@ The directory structure is as follows:
 ```
 
 1. `index`: holds the shard indices.
-2. `transients`: holds temporary shard data (unsealed pieces) while they're 
-   being indexed.
+2. `transients`: holds temporary shard data (unsealed pieces) while they're being indexed.
 3. `datastore`: records shard state and metadata so it can survive restarts.
-4. `.shard-registration-complete`: marker file that signals that initial
-   migration is complete.
+4. `.shard-registration-complete`: marker file that signals that initial migration is complete.
 
 ## First-time migration
 
-When you first start 1.11.2, a migration process will register all shards in
-**lazy initialization** mode. As deals come in, shards are fetched and
-initialized just in time in order to serve the retrieval.
+When you first start 1.11.2, a migration process will register all shards in **lazy initialization** mode. As deals come in, shards are fetched and initialized just in time in order to serve the retrieval.
 
-You can monitor the progress of the migration in your log output, by grepping
-for the keyword `migrator`. Here's example output. Notice the first line, which
-specifies how many deals will be evaluated (this number includes failed deals
-that never went on chain, and therefore will not be migrated), and the last
-lines (which communicate that migration completed successfully):
+You can monitor the progress of the migration in your log output, by grepping for the keyword `migrator`. Here's example output. Notice the first line, which specifies how many deals will be evaluated (this number includes failed deals that never went on chain, and therefore will not be migrated), and the last lines (which communicate that migration completed successfully):
 
 ```
 2021-08-09T22:06:35.701+0300    INFO    dagstore.migrator       dagstore/wrapper.go:286 registering shards for all active deals in sealing subsystem    {"count": 453}
@@ -131,28 +95,18 @@ nveknyqhkkh7mltcrrcx35yvuxdmcbfouaafkvp6niay"}
 
 ## Forcing bulk initialization
 
-Forcing bulk initialization will become important in the near future, when
-miners begin publishing indices to the network to advertise content they have,
-and new retrieval features become available (e.g. automatic shard routing).
+Forcing bulk initialization will become important in the near future, when miners begin publishing indices to the network to advertise content they have, and new retrieval features become available (e.g. automatic shard routing).
 
-You should start now if possible, as this process is better carried out
-gradually and over a longer timeframe, if you have many storage deals.
+You should start now if possible, as this process is better carried out gradually and over a longer timeframe, if you have many storage deals.
 
-You can force bulk initialization using the `lotus-miner dagstore
-initialize-all` command. This command will force initialization of every shard
-that is still in `ShardStateNew` state. To control the operation:
+You can force bulk initialization using the `lotus-miner dagstore initialize-all` command. This command will force initialization of every shard that is still in `ShardStateNew` state. To control the operation:
 - You must set a concurrency level through the `--concurrency=N` flag.
-  - A value of `0` will disable throttling and all shards will be initialized   
-    at once. ⚠️ Use with caution!
-- By default, only unsealed pieces will be indexed to avoid forcing unsealing
-  jobs. To index also sealed pieces, use the `--include-sealed` flag.
+  - A value of `0` will disable throttling and all shards will be initialized at once. ⚠️ Use with caution!
+- By default, only unsealed pieces will be indexed to avoid forcing unsealing jobs. To index also sealed pieces, use the `--include-sealed` flag.
 
-Initialization places IO workload on your storage system. You can stop/start this command at your wish/convenience as proving deadlines approach
-and elapse, to avoid IOPS starvation, or competition with window PoSt.
+Initialization places IO workload on your storage system. You can stop/start this command at your wish/convenience as proving deadlines approach and elapse, to avoid IOPS starvation, or competition with window PoSt.
 
-To stop this command, press Control-C. Shards being initialized at that time
-will continue in the background, but no more initializations will be performed.
-The next time you run the command, it will resume from where it left off.
+To stop this command, press Control-C. Shards being initialized at that time will continue in the background, but no more initializations will be performed. The next time you run the command, it will resume from where it left off.
 
 ::: info
 In our test environments, we found the migration to proceed at a rate of 400-500 shards/deals per second.
@@ -160,8 +114,7 @@ In our test environments, we found the migration to proceed at a rate of 400-500
 
 ## Configuration
 
-The DAG store can be configured through the `config.toml` file of the node that
-runs the `markets` subsystem. Refer to the `[DAGStore]` section. Lotus ships with sane defaults:
+The DAG store can be configured through the `config.toml` file of the node that runs the `markets` subsystem. Refer to the `[DAGStore]` section. Lotus ships with sane defaults:
 
 ```toml
 [DAGStore]
@@ -208,20 +161,15 @@ runs the `markets` subsystem. Refer to the `[DAGStore]` section. Lotus ships wit
 
 ## Automatic shard recovery on error
 
-Shards can error for various reasons, e.g. if the storage system cannot
-serve the unsealed CAR for a deal/shard, if the shard index is accidentally
-deleted, etc.
+Shards can error for various reasons, e.g. if the storage system cannot serve the unsealed CAR for a deal/shard, if the shard index is accidentally deleted, etc.
 
-Lotus will automatically try to recover failed shards by triggering a recovery
-once.
+Lotus will automatically try to recover failed shards by triggering a recovery once.
 
-You can view failed shards by using the `lotus-miner dagstore list-shards`
-command, and optionally grepping for `ShardStateErrored`.
+You can view failed shards by using the `lotus-miner dagstore list-shards` command, and optionally grepping for `ShardStateErrored`.
 
 ## CLI commands
 
-The `lotus-miner` executable contains a `dagstore` command with several useful
-subcommands:
+The `lotus-miner` executable contains a `dagstore` command with several useful subcommands:
 
 - `lotus-miner dagstore list-shards`
 - `lotus-miner dagstore initialize-shard <key>`
@@ -231,17 +179,13 @@ subcommands:
 
 Refer to the `--help` texts for more information.
 
-On a [split miner/market deployment](./split-markets-miners.md), these commands
-hit the markets node as long as your environment variables are configured
-correctly.
+On a [split miner/market deployment](./split-markets-miners.md), these commands hit the markets node as long as your environment variables are configured correctly.
 
 ## Recommendations
 
-1. If possible, configure your markets node `storage.json` to point to storage
-   paths that are shared with your mining/sealing/storage node. That will avoid
-   unnecessary network transfer.
+1. If possible, configure your markets node `storage.json` to point to storage paths that are shared with your mining/sealing/storage node. That will avoid unnecessary network transfer.
 2. Do plan and execute [bulk initialization](#forcing-bulk-initialization) ASAP.
-
+   
 ## Troubleshooting
 
 Empty.
