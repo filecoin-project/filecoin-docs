@@ -108,7 +108,7 @@ Initialization places IO workload on your storage system. You can stop/start thi
 
 To stop this command, press Control-C. Shards being initialized at that time will continue in the background, but no more initializations will be performed. The next time you run the command, it will resume from where it left off.
 
-::: info
+::: tip
 In our test environments, we found the migration to proceed at a rate of 400-500 shards/deals per second.
 :::
 
