@@ -159,16 +159,12 @@ lotus-miner backup /tmp/backup.cbor
 
 ### Split the Market Subsystem
 
-::: tip
-All steps below should be performed on the machine where the markets node will be run.
-:::
-
 #### Step 1. Create a seed and config.toml for the markets service
 
 To initialize the markets service we need to create a seed `config.toml` for
 the markets node. Note: It is a temporary file and only used for initialize the market node, full configuration file will be loaded automatically upon initialization **without** overiding the sections set in this step.
 
-First create a `config.toml` file in your, in this tutorial we will place it in the `/tmp` directory as it is a temporary file)
+First create a `config.toml` file in a location of your choice(your market node needs to have access to read it), in this tutorial we will place it in the `/tmp` directory on your market machine as it is a temporary file)
 
 Enable the market subsystem and add the sessions that are related to the market process in [lotus miner configuration ](https://docs.filecoin.io/mine/lotus/miner-configuration/#api-section) in to the `/tmp/config.toml`.
 
@@ -243,7 +239,7 @@ can be removed because it will no longer be running a Libp2p node, as we explain
 
 #### Step 2. Disable the Market Subsystem on the `mining/sealing/proving` miner process
 
-1. Update your `~/.lotusminer/config.toml` to set the `EnableMarkets` option to `false`.
+1. On your `mining/sealing/proving` machine, update your `~/.lotusminer/config.toml` to set the `EnableMarkets` option to `false`.
 
 ```toml
 [Subsystems]
@@ -255,7 +251,7 @@ can be removed because it will no longer be running a Libp2p node, as we explain
 
 #### Step 3. Initialize a `markets` service repository
 
-1. Create authentication tokens that will be used by the `markets` node to make JSON-RPC
+1. Create authentication tokens for the markets nodes and they will be used by the `markets` node to make JSON-RPC
 calls to the `mining/sealing/proving` node.
 
 ```shell
@@ -395,10 +391,10 @@ export LOTUS_MINER_PATH=~/.lotusminer
 If one of these nodes is on a **remote** machine, you should set the relevant API_INFO environment variables like below:
 
 ```shell
-# <market_api_token> is located in ~/.lotusmarket/token
+# <market_api_token> is located in $LOTUS_MINER_PATH/token
 export MARKETS_API_INFO=<market_api_token>/ip4/<lotus_miner_market_node_ip>/tcp/<lotus_miner_market_node_port>/http
 
-# <miner_api_token> is located in ~/.lotusminer/token
+# <miner_api_token> is located in $LOTUS_MINER_PATH/token
 export MINER_API_INFO=<miner_api_token>:/ip4/<lotus_miner_node_ip>/tcp/<lotus_miner_node_port>/http
 ```
 
@@ -430,7 +426,7 @@ If you want to revert the changes listed above and go back to running `lotus-min
 
 1. Shut both `mining/sealing/proving` and `markets` node down.
    
-2. Make sure that the `mining/sealing/proving` node is publicly exposed, as we will be enabling the markets subsystem on it. Set up the addresses in the [`Libp2p` section](https://docs.filecoin.io/mine/lotus/miner-configuration/#libp2p-section) of the `~/.lotusminer/config.toml` 
+2. Make sure that the `mining/sealing/proving` node is publicly exposed, as we will be enabling the markets subsystem on it. Set up the addresses in the [`Libp2p` section](https://docs.filecoin.io/mine/lotus/miner-configuration/#libp2p-section) of the `~/$LOTUS_MINER_PATH/config.toml` 
    
 3. In the `mining/sealing/proving` repository, update the `config.toml` and set `EnableMarkets` option to `true`
 ```toml
@@ -444,7 +440,7 @@ If you want to revert the changes listed above and go back to running `lotus-min
 4. **Optional**: Move back the DAG store directory to the monolith miner node repository if you have initialized dagstore before:
 
 ```shell
-mv ~/.lotusmarkets/dagStore ~/.lotusminer/
+mv ~/.lotusmarkets/dagStore ~/$LOTUS_MINER_PATH/
 ```
 
 5. Backup and restore the metadata related to storage deals from the `markets` instance back to the monolith miner instance. Given that storage deals metadata would have changed on the `markets` instance in case you accepted storage deals while running multi-services architecture, we have to copy it back to the monolith miner instance.
@@ -458,7 +454,7 @@ then run
 ```shell
 lotus-shed market export-datastore --repo ~/.lotusmarkets --backup-dir /tmp/deals-backup
 
-lotus-shed market import-datastore --repo ~/.lotusminer --backup-path /tmp/deals-backup/markets.datastore.backup
+lotus-shed market import-datastore --repo ~/$LOTUS_MINER_PATH --backup-path /tmp/deals-backup/markets.datastore.backup
 ```
 
 6. Restart the `mining/sealing/proving` node (with the default LOTUS_MINER_PATH, which should point to your `mining/sealing/proving` node repo). Note that `lotus-miner` interacts with a given repository depending on the `LOTUS_MINER_PATH` environment variable!
