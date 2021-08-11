@@ -48,9 +48,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
       + Option-2: this snapshot is taken with the latest 900 blocks daily which is around 1.2GB now. You can directly import snapshop using:
 
         ```shell
-        lotus daemon --halt-after-import --import-snapshot https://dev.node.glif.io/nerpa00/ipfs/8080/ipfs/$(curl -s https://gist.githubusercontent.com/openworklabbot/d32543d42ed318f6dfde516c3d8668a0/raw/snapshot.log) 
-        or
-        lotus daemon --halt-after-import --import-snapshot https://gateway.ipfs.io/ipfs/$(curl -s https://gist.githubusercontent.com/openworklabbot/d32543d42ed318f6dfde516c3d8668a0/raw/snapshot.log)
+        lotus daemon --halt-after-import --import-snapshot https://dweb.link/ipfs/$(curl -s https://gist.githubusercontent.com/openworklabbot/d32543d42ed318f6dfde516c3d8668a0/raw/snapshot.log) 
         ```
 
 1. Check the `sha256sum` of the downloaded snapshot:
