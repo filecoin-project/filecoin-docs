@@ -74,7 +74,7 @@ The directory structure is as follows:
 
 ## First-time migration
 
-When you first start 1.11.2, a migration process will register all shards in **lazy initialization** mode. As deals come in, shards are fetched and initialized just in time in order to serve the retrieval.
+When you first start your lotus-miner or the market nodes if you’ve split it out using the lotus that introduced dagstore(we will add the exact version later), a migration process will register all shards in **lazy initialization** mode. As deals come in, shards are fetched and initialized just in time in order to serve the retrieval.
 
 You can monitor the progress of the migration in your log output, by grepping for the keyword `migrator`. Here's example output. Notice the first line, which specifies how many deals will be evaluated (this number includes failed deals that never went on chain, and therefore will not be migrated), and the last lines (which communicate that migration completed successfully):
 
