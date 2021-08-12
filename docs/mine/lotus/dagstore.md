@@ -13,7 +13,7 @@ breadcrumb: 'About the markets dagstore'
 ## Conceptual overview
 
 ::: tip
-The dagstore was introduced in Lotus v1.11.2.
+The dagstore is targeted to be introduced in Lotus v1.11.2. We will update the docs once it’a confirmed.
 :::
 
 The dagstore is a sharded store to hold large IPLD graphs efficiently, packaged as location-transparent attachable CAR files, with mechanical sympathy resulting in zero-copy access in ideal situations.
