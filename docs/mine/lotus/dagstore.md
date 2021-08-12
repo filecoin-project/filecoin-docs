@@ -22,7 +22,7 @@ The dagstore is a component of the markets subsystem in `lotus-miner`. It replac
 
 The dagstore leverages the indexing features of [CARv2](https://github.com/ipld/ipld/blob/master/specs/transport/car/carv2/index.md) to enable plain CAR files to act as read and write blockstores. These CAR files serve as the direct medium for data exchange in markets and deal-making processes, without requiring intermediate buffers.
 
-Compared to before v1.11.2:
+Compared to before dagstore was introduced:
 
 * On storage deals, miners no longer stage the data into a Badger store prior to forming the unsealed CAR. Instead, the unsealed CAR is built directly as the data is being transferred through graphsync.
 * On retrieval deals, miners no longer load the unsealed CAR into a Badger blockstore first. Retrievals are served directly from the data at rest (the unsealed CAR).
