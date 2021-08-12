@@ -9,7 +9,9 @@ breadcrumb: 'About the markets dagstore'
 {{ $frontmatter.description }}
 
 [[TOC]]
-
+::: tip
+This guide is WIP, please create an issue if you have any feedback!
+:::
 ## Conceptual overview
 
 ::: tip
