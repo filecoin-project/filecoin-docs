@@ -100,7 +100,11 @@ nveknyqhkkh7mltcrrcx35yvuxdmcbfouaafkvp6niay"}
 Forcing bulk initialization will become important in the near future, when miners begin publishing indices to the network to advertise content they have, and new retrieval features become available (e.g. automatic shard routing).
 
 You should start now if possible, as this process is better carried out gradually and over a longer timeframe, if you have many storage deals.
+::: warning
+Initialization places IO workload on your storage system. You can stop/start this command at your wish/convenience as proving deadlines approach and elapse, to avoid IOPS starvation or competition with window PoSt.
 
+To stop a bulk initialization(see the next paragraph), press Control-C. Shards being initialized at that time will continue in the background, but no more initializations will be performed. The next time you run the command, it will resume from where it left off.
+:::
 You can force bulk initialization using the `lotus-miner dagstore initialize-all` command. This command will force initialization of every shard that is still in `ShardStateNew` state. To control the operation:
 - You must set a concurrency level through the `--concurrency=N` flag.
   - A value of `0` will disable throttling and all shards will be initialized at once. ⚠️ Use with caution!
