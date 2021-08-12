@@ -159,7 +159,7 @@ lotus-miner backup /tmp/backup.cbor
 
 ### Split the Market Subsystem
 
-#### Step 1. Create a seed and config.toml for the markets service
+#### Step 1. Create a seed config.toml for the markets service
 
 To initialize the markets service we need to create a seed `config.toml` for
 the markets node. Note: It is a temporary file and only used for initialize the market node, full configuration file will be loaded automatically upon initialization **without** overiding the sections set in this step.
