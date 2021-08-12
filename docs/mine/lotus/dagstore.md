@@ -110,10 +110,6 @@ You can force bulk initialization using the `lotus-miner dagstore initialize-all
   - A value of `0` will disable throttling and all shards will be initialized at once. ⚠️ Use with caution!
 - By default, only unsealed pieces will be indexed to avoid forcing unsealing jobs. To index also sealed pieces, use the `--include-sealed` flag.
 
-Initialization places IO workload on your storage system. You can stop/start this command at your wish/convenience as proving deadlines approach and elapse, to avoid IOPS starvation, or competition with window PoSt.
-
-To stop this command, press Control-C. Shards being initialized at that time will continue in the background, but no more initializations will be performed. The next time you run the command, it will resume from where it left off.
-
 ::: tip
 In our test environments, we found the migration to proceed at a rate of 400-500 shards/deals per second.
 :::
