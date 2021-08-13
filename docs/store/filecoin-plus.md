@@ -57,7 +57,7 @@ For receiving DataCap at a larger scale (for business needs and production use c
 For applying directly to a specific notary:
 1. Head over to the [Filecoin Plus Registry](https://plus.fil.org/), and proceed with **For Clients**
 2. Click **Get Verified**
-3. Click on **General Verficiation**. TThis will take you to the notary Registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under
+3. Click on **General Verification**. This will take you to the notary Registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under
 4. Identify the notary you would like to apply to by selecting the checkbox on their row, and click **Make Request**
 5. Fill out the form that should pop up. This is used by notaries in conducting any necessary due diligence before granting you the requested DataCap
 6. Click **Sign in with GitHub** to allow the app to create a GitHub issue on your behalf
