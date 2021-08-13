@@ -39,7 +39,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
     **Testnet**
 
-    + Calibration: snapthot is maintained by Filecoin community. Download latest snapshot: [lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz](https://www.mediafire.com/file/q7tc2bmcc9d09vv/lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz/file). 
+    + Calibration: snapshot is maintained by Filecoin community. Download latest snapshot: [lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz](https://www.mediafire.com/file/q7tc2bmcc9d09vv/lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz/file). 
 
     + Nerpa: also maintained by Filecoin Community.
 
