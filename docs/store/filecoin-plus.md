@@ -57,13 +57,13 @@ For receiving DataCap at a larger scale (for business needs and production use c
 For applying directly to a specific notary:
 1. Head over to the [Filecoin Plus Registry](https://plus.fil.org/), and proceed with **For Clients**
 2. Click **Get Verified**
-3. Click on **General Verification**. This will take you to the notary Registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under
+3. Click on **General Verification**. This will take you to the notary registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under
 4. Identify the notary you would like to apply to by selecting the checkbox on their row, and click **Make Request**
 5. Fill out the form that should pop up. This is used by notaries in conducting any necessary due diligence before granting you the requested DataCap
 6. Click **Sign in with GitHub** to allow the app to create a GitHub issue on your behalf
 7. After you are signed in, the button should change to **Send request**. Click this to have an issue created on your behalf and sent to the right notary! 
 
-Each request is tracked as a GitHub issue in the [Fil+ Client Onboarding repo](https://github.com/filecoin-project/filecoin-plus-client-onboarding). You can follow the progress of your application there as well. Notaries may request you for additional information in order to enable them allocating you DataCap. 
+Each request is tracked as a GitHub Issue in the [Fil+ Client Onboarding repo](https://github.com/filecoin-project/filecoin-plus-client-onboarding). You can follow the progress of your application there as well. Notaries may request you for additional information in order to enable them allocating you DataCap. 
 
 In order to apply for a Large Dataset Notary, follow the steps at [Applying for a large DataCap allocation](https://github.com/filecoin-project/filecoin-plus-large-datasets#applying-for-a-large-datacap-allocation).
 
