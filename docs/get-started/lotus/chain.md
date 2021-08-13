@@ -45,7 +45,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
       + Option 1: Download the latest static snapshot [lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz](https://www.mediafire.com/file/t1j360oyk3tjziv/lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz/file)
 
-      + Option-2: this snapshot is taken with the latest 900 blocks daily which is around 1.2GB now. You can directly import snapshop using:
+      + Option 2: Auto-generated snapshot, taken with the latest 900 blocks daily. Size is ~1.2GB as of block height 1,000,000 (August 2021). To import this snapshot directly:
 
         ```shell
         lotus daemon --halt-after-import --import-snapshot https://dweb.link/ipfs/$(curl -s https://gist.githubusercontent.com/openworklabbot/d32543d42ed318f6dfde516c3d8668a0/raw/snapshot.log) 
