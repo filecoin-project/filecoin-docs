@@ -43,7 +43,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
     + Nerpa: also maintained by Filecoin Community.
 
-      + Option-1: download latest snapshot [lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz](https://www.mediafire.com/file/t1j360oyk3tjziv/lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz/file)
+      + Option 1: Download the latest static snapshot [lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz](https://www.mediafire.com/file/t1j360oyk3tjziv/lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz/file)
 
       + Option-2: this snapshot is taken with the latest 900 blocks daily which is around 1.2GB now. You can directly import snapshop using:
 
