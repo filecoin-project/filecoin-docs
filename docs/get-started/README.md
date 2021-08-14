@@ -85,10 +85,10 @@ Here is a snapshot of each implementation's progress across the primary parts of
 | 4. VM Actors       | 🔶    | 🔶    | 🔶     | 🔶    |
 | 5. Blockchain      | ✅    | ✅    | ✅     | ✅    |
 | 6. Token           | ✅    | ✅    | ✅     | ✅    |
-| 7. Storage Mining  | ✅    | 🔄    | 🔄     | 🔄 🔶 |
-| 8. Market          | ✅    | ⛔️   | 🔄     | ⛔️   |
+| 7. Storage Mining  | ✅    | 🔄    | 🔄     | 🔄    |
+| 8. Market          | ✅    | ⛔️   | 🔄      | ⛔️     |
 
-✅ : fully-featured implementation
-🔄 : reuses components from another implementation
-🔶 : partial implementation
-⛔️ : pending implementation
+✅ : fully-featured implementation. 
+🔄 : reuses components from another implementation. 
+🔶 : partial implementation. 
+⛔️ : pending implementation. 
