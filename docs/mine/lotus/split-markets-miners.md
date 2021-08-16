@@ -63,13 +63,11 @@ enables more efficient access and reduces network IO loads.
 
 ## Splitting the `lotus-miner` monolith into Subsystem
 
-::: warning
-This feature is available in lotus v1.11.1-rc and up, however, it is still experimental
-and under testing. Please use at your own risk.
+::: tip
+This feature is available in lotus v1.11.1 and up.
 :::
 
-This document explains how to split an existing monolith `lotus-miner` node
-into multiple processes to take advantage of this new architecture.
+This document explains how to split an existing monolith `lotus-miner` node into multiple processes to take advantage of this new architecture.
 
 ### Configuration
 
