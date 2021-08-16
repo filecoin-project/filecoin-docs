@@ -196,30 +196,36 @@ This section controls some of the behavior around sector sealing:
   # avoid the relatively high cost of unsealing the data later, at the cost of more storage space
   AlwaysKeepUnsealedCopy = true
   # Run sector finalization before submitting sector proof to the chain
-	FinalizeEarly = false
-
+  FinalizeEarly = false
+  # Whether to use available miner balance for sector collateral instead of sending it with each message
+  CollateralFromMinerBalance = 0
+  # Minimum available balance to keep in the miner actor before sending it with messages
+  AvailableBalanceBuffer = false
+  # Don't send collateral with messages even if there is no available balance in the miner actor
+  DisableCollateralFallback bool
   # enable / disable precommit batching (takes effect after nv13)
-	BatchPreCommits = true
-	# maximum precommit batch size up to 256 sectors - batches will be sent immediately above this size
-	MaxPreCommitBatch = 256
-	# how long to wait before submitting a batch after crossing the minimum batch size
-	PreCommitBatchWait = "24h0m0s"
-	# time buffer for forceful batch submission before sectors/deal in batch would start expiring
-	PreCommitBatchSlack = "3h0m0s"
+  BatchPreCommits = true
+  # maximum precommit batch size up to 256 sectors - batches will be sent immediately above this size
+  MaxPreCommitBatch = 256
+  # how long to wait before submitting a batch after crossing the minimum batch size
+  PreCommitBatchWait = "24h0m0s"
+  # time buffer for forceful batch submission before sectors/deal in batch would start expiring
+  PreCommitBatchSlack = "3h0m0s"
 
-	# enable / disable commit aggregation (takes effect after nv13)
-	AggregateCommits = true
-	# minimum batched commit size, no less than 4
-	MinCommitBatch = 4
+  # enable / disable commit aggregation (takes effect after nv13)
+  AggregateCommits = true
+  # minimum batched commit size, no less than 4
+  MinCommitBatch = 4
   # maximum batched commit size up to 819 sectors - batches will be sent immediately above this size
-	MaxCommitBatch = 819
-	# how long to wait before submitting a batch after crossing the minimum batch size
-	CommitBatchWait = "24h0m0s"
-	# time buffer for forceful batch submission before sectors/deals in batch would start expiring
-	CommitBatchSlack = "1h0m0s"
+  MaxCommitBatch = 819
+  # how long to wait before submitting a batch after crossing the minimum batch size
+  CommitBatchWait = "24h0m0s"
+  # time buffer for forceful batch submission before sectors/deals in batch would start expiring
+  CommitBatchSlack = "1h0m0s"
 
   # network BaseFee below which to stop doing commit aggregation, instead submitting proofs to the chain individually
-  AggregateAboveBaseFee = 0.00000000015 #0.15nanoFIL
+  AggregateAboveBaseFee = 0.00000000015 #0.15nano
+  
 
   TerminateBatchMax = 100
   TerminateBatchMin = 1
