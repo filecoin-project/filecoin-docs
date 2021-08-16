@@ -198,11 +198,11 @@ This section controls some of the behavior around sector sealing:
   # Run sector finalization before submitting sector proof to the chain
   FinalizeEarly = false
   # Whether to use available miner balance for sector collateral instead of sending it with each message
-  CollateralFromMinerBalance = 0
+  CollateralFromMinerBalance = false
   # Minimum available balance to keep in the miner actor before sending it with messages
-  AvailableBalanceBuffer = false
+  AvailableBalanceBuffer = 0
   # Don't send collateral with messages even if there is no available balance in the miner actor
-  DisableCollateralFallback bool
+  DisableCollateralFallback = false
   # enable / disable precommit batching (takes effect after nv13)
   BatchPreCommits = true
   # maximum precommit batch size up to 256 sectors - batches will be sent immediately above this size
