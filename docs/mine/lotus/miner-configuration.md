@@ -402,6 +402,10 @@ The addresses section allows users to specify additional addresses to send messa
   PreCommitControl = []
   # Addresses to send Commit messages from
   CommitControl = []
+  # Addresses to send Terminate Sector messages from
+  TerminateControl = []
+  # Addresses to send PublishStorageDeals from
+  DealPublishControl = []
   # Disable the use of the owner address for messages which are sent automatically.
   # This is useful when the owner address is an offline/hardware key
   DisableOwnerFallback = false
