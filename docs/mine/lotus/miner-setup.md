@@ -66,6 +66,7 @@ Similarly, `lotus-miner` (as a client application to the Lotus Miner daemon), ca
 
 ```sh
 export MINER_API_INFO="TOKEN:/ip4/<IP>/tcp/<PORT>/http"
+export MARKETS_API_INFO="TOKEN:/ip4/<IP>/tcp/<PORT>/http"
 ```
 
 ### Adding the necessary swap
