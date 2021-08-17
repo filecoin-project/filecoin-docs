@@ -1,6 +1,6 @@
 ---
 title: 'Lotus: chain management'
-description: "The Lotus chain carries the information necessary to compute the current state of the Filecoin network. This guide explains how to manage several aspects of the chain, including how to decrease your node's sync-time by loading the chain from a snapshot."
+description: "The Lotus chain carries the information necessary to compute the current state of the Filecoin network. This guide explains how to manage several aspects of the chain, including how to decrease your node's sync time by loading the chain from a snapshot."
 breadcrumb: 'Chain management'
 ---
 
@@ -40,7 +40,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
     **Testnet**
 
     :::warning
-    Testnet snapshots are maintained by Filecoin community voluntarily. Sometimes the snapshots might not be up-to-date. Please double check before you use it.
+    Testnet snapshots are maintained by Filecoin community voluntarily, and may not be up-to-date. Please double check before using them.
     :::
 
     + Calibration: Download latest snapshot: [lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz](https://www.mediafire.com/file/q7tc2bmcc9d09vv/lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz/file). 
@@ -58,7 +58,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 1. Check the `sha256sum` of the downloaded snapshot:
 
     ```shell with-output
-    # Please change the file name accordingly to the actual downloaded snapshot and sha256sum, in this example it is `minimal_finality_stateroots_517061_2021-02-20_11-00-00.car and minimal_finality_stateroots_517061_2021-02-20_11-00-00.sha256sum`
+    # Replace the filenames for both `.sha256sum` and `.car` files based on the snapshot you downloaded.
     echo "$(cut -c 1-64 minimal_finality_stateroots_517061_2021-02-20_11-00-00.sha256sum) minimal_finality_stateroots_517061_2021-02-20_11-00-00.car" | sha256sum --check
     ```
     ```
@@ -68,11 +68,11 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 1. Start the Lotus daemon using `--import-snapshot`:
 
     ```shell
-    #Please change the file name accordingly to the actual downloaded snapshot, in this example it is `minimal_finality_stateroots_517061_2021-02-20_11-00-00.car`
+    # Replace the filename for the `.car` file based on the snapshot you downloaded.
     lotus daemon --import-snapshot minimal_finality_stateroots_517061_2021-02-20_11-00-00.car
     ```
 
-We strongly recommend you to download and verify the checksum of the snapshot before importing it. However, you can skip the `sha256sum` check and use the snapshot URL directly if you'd prefer:
+We strongly recommend that you download and verify the checksum of the snapshot before importing. However, you can skip the `sha256sum` check and use the snapshot URL directly if you prefer:
 
 ```shell
 lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car
@@ -80,7 +80,7 @@ lotus daemon --import-snapshot https://fil-chain-snapshots-fallback.s3.amazonaws
 
 ### Full chain snapshot
 
-Full chain snapshots contain every block from genesis until the current tipset. You can trustlessly import these complete snapshots by supplying the `--import-chain` option to recalculate the state during import fully:
+Full chain snapshots contain every block from genesis until the current tipset. You can trustlessly import these complete snapshots by supplying the `--import-chain` option to recalculate the entire state during import:
 
 ```sh
 lotus daemon --import-chain https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car
@@ -90,7 +90,7 @@ This operation will take multiple days due to the size and complexity of the Fil
 
 ### Checking sync status
 
-There are two ways to track whether the Lotus daemon is correctly syncing the chain and how far it has yet to go to complete the syncing.
+There are two ways to check your Lotus daemon's chain synching progress.
 
 #### Sync status
 
@@ -112,7 +112,7 @@ worker 0:
 
 #### Sync wait
 
-Use `sync wait` to constantly output the state of your current chain as an ongoing process:
+Use `sync wait` to output the state of your current chain as an ongoing process:
 
 ```shell with-output
 lotus sync wait
@@ -135,13 +135,13 @@ Mon 24 Aug 2020 06:00:00 PM EDT
 
 ## Creating a snapshot
 
-A full chain CAR-snapshot can be created `chain export`:
+A full chain CAR-snapshot can be created with `chain export`:
 
 ```shell
 lotus chain export <filename>
 ```
 
-To back up a certain number of the most recent state roots, use the `--recent-stateroots` option, along with how many state roots you could like to backup:
+To back up a certain number of the most recent state roots, use the `--recent-stateroots` option, along with how many state roots you would like to backup:
 
 ```shell
 lotus chain export --recent-stateroots=2000 <filename>
@@ -165,7 +165,7 @@ lotus daemon --import-snapshot <filename>
 lotus daemon --import-chain <filename>
 ```
 
-If you do not want the daemon to start once the snapshot has finished, add the `--halt-after-import` flag to the command:
+If you do not want the daemon to start once the snapshot has finished, add the `--halt-after-import` flag:
 
 ```shell
 lotus daemon --import-snapshot --halt-after-import <filename>
