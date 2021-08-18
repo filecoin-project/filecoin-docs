@@ -289,6 +289,7 @@ your node.
 ```shell
 lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
+4. After you finished initializing the `markets` service repository, you should restart the `mining/sealing/proving` node. 
 
 #### Step 4. Consider configuring storage.json on the markets node
 
