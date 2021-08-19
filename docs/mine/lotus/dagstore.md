@@ -187,7 +187,8 @@ On a [split miner/market deployment](./split-markets-miners.md), these commands 
 
 1. If possible, configure your markets node `storage.json` to point to storage paths that are shared with your mining/sealing/storage node. That will avoid unnecessary network transfer.
 2. Do plan and execute [bulk initialization](#forcing-bulk-initialization) ASAP.
-   
+
 ## Troubleshooting
 
-Empty.
+### Lotus Version Rollback
+If you are downgrading from Lotus >=1.11.2-dev to 1.11.1 or below, you will need to ensure outstanding storage deals have reached the `StorageDealAwaitingPrecommit` state, prior to downgrading. If downgrading is performed before outstanding storage deals reach this state, the Markets process will panic. If you are experiencing this panic, you will need to restore to your previous version and all the storage deals to reach `StorageDealAwaitingPrecommit` before attempting to downgrade again.
