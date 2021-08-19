@@ -111,7 +111,7 @@ You can force bulk initialization using the `lotus-miner dagstore initialize-all
 - By default, only unsealed pieces will be indexed to avoid forcing unsealing jobs. To index also sealed pieces, use the `--include-sealed` flag.
 
 ::: tip
-In our test environments, we found the migration to proceed at a rate of 400-500 shards/deals per second.
+In our test environments, we found the migration to proceed at a rate of 400-500 shards/deals per second, on the following hardware specs: AMD Ryzen Threadripper 3970X, 256GB DDR4 3200 RAM, Samsung 970 EVO 2TB SSD, RTX3080 10GB GPU.
 :::
 
 ## Configuration
