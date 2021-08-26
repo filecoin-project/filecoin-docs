@@ -66,34 +66,34 @@ module.exports = {
         sidebar: {
           '/get-started/': [
             {
-              title: 'Lotus',
-              path: '/get-started/lotus/',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: [
-                ['lotus/running-in-the-cloud', 'Running in the Cloud'],
-                ['lotus/installation', 'Local Installation'],
-                ['lotus/switch-networks', 'Switch networks'],
-                ['lotus/upgrades', 'Upgrades'],
-                ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
-                ['lotus/multisig', 'Multi-signature wallets'],
-                ['lotus/chain', 'Chain management'],
-                ['lotus/ledger', 'Ledger wallet'],
-                ['lotus/tips-running-in-china', 'Tips when running in China'],
-                ['lotus/configuration-and-advanced-usage', 'Advanced options'],
-                ['lotus/troubleshooting', 'Troubleshooting']
-              ]
-            },
-            {
               title: 'Store and retrieve',
               path: '/get-started/store-and-retrieve/',
-              sidebarDepth: 2,
+              sidebarDepth: 1,
               collapsable: true,
               children: [
                 ['/get-started/store-and-retrieve/', 'Start here'],
                 ['/get-started/store-and-retrieve/set-up', 'Set up'],
                 ['/get-started/store-and-retrieve/store-data', 'Store data'],
                 ['/get-started/store-and-retrieve/retrieve-data', 'Retrieve data']
+              ]
+            },
+            {
+              title: 'Lotus',
+              path: '/get-started/lotus/',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                ['lotus/running-in-the-cloud', 'Running in the Cloud'],
+                ['lotus/installation', 'Local Installation'],
+                ['lotus/switch-networks', 'Switch networks'],
+                ['lotus/chain', 'Chain management'],
+                ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
+                ['lotus/multisig', 'Multi-signature wallets'],
+                ['lotus/ledger', 'Ledger wallet'],
+                ['lotus/upgrades', 'Upgrades'],
+                ['lotus/tips-running-in-china', 'Tips when running in China'],
+                ['lotus/configuration-and-advanced-usage', 'Advanced options'],
+                ['lotus/troubleshooting', 'Troubleshooting']
               ]
             },
             'explore-the-network',
@@ -142,13 +142,17 @@ module.exports = {
                 ['lotus/miner-lifecycle', 'Miner lifecycle'],
                 ['lotus/manage-storage-deals', 'Manage storage deals'],
                 ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
+                ['lotus/dynamic-retrieval-pricing', 'Dynamic retrieval pricing'],
                 ['lotus/custom-storage-layout', 'Custom storage layout'],
                 ['lotus/sector-pledging', 'Sector pledging'],
+                ['lotus/disputer', 'Disputer'],
                 ['lotus/connectivity', 'Connectivity'],
                 ['lotus/miner-addresses', 'Miner addresses'],
                 //'lotus/fees-control-and-limits',
                 ['lotus/message-pool', 'The Message Pool'],
                 ['lotus/seal-workers', 'Seal workers'],
+                ['lotus/split-markets-miners', 'Splitting miner & markets processes'],
+                ['lotus/dagstore', 'About the dagstore'],
                 ['lotus/benchmarks', 'Benchmarks'],
                 ['lotus/backup-and-restore', 'Backup and restore'],
                 ['lotus/gpus', 'Custom GPUs'],
@@ -199,6 +203,7 @@ module.exports = {
             '/about-filecoin/ipfs-and-filecoin',
             '/about-filecoin/network-performance',
             '/about-filecoin/filecoin-compared-to',
+            '/about-filecoin/managing-assets',
             '/about-filecoin/faq',
             {
               title: 'Project',
@@ -369,7 +374,8 @@ module.exports = {
     ],
     'vuepress-plugin-check-md',
     'vuepress-plugin-chunkload-redirect',
-    'vuepress-plugin-ipfs'
+    'vuepress-plugin-ipfs',
+    'vuepress-plugin-element-tabs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
 }

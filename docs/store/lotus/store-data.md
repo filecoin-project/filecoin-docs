@@ -55,7 +55,7 @@ If you built your own CAR file, make sure to import it directly with the `--car`
 
 ### Files bigger than a sector
 
-If your file is larger than a sector for the [Filecoin network in use](https://networks.filecoin.io), you will need to split your file into multiple parts first.
+If your file is larger than a sector for the [Filecoin network in use](https://network.filecoin.io), you will need to split your file into multiple parts first.
 
 Storage miners will specify which size(s) they're offering so you can select the best option for you. Smaller sectors are faster, while larger sectors are more cost-effective.
 

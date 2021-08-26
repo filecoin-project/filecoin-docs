@@ -1,0 +1,93 @@
+
+// Usage: apply the "with-output" class to a markdown fenced code block containing some shell input. 
+// The following code block will be treated as the "output" block, and it will be styled to be joined visually with the input block.
+//
+// example markdown:
+// ```shell with-output
+// whoami
+// ```
+//
+// ```
+// root
+// ```
+//
+// The second code block (containing "root") is automatically picked up as the output block for the preceeding `with-output` block.
+// Note that your markdown needs to have both the language for syntax highlighting (e.g. "shell"), and the "with-output" class. This won't work:
+// 
+// ```with-output 
+// Vuepress complains that with-output isn't a known language.
+// ```
+//
+div.with-output {
+  
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+
+  pre[class*="language-"] {
+    margin: 0 0;
+  }
+
+  // apply "output" styles to the first sibling div with class "language-*" following the "input" div
+  + div[class*="language-"] {
+    
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    margin-top: 0px;
+
+    pre[class*="language-"] {
+      background: lighten($codeBgColor, 10%);
+      margin: 0 0;
+    }
+
+    // add a small "output" label at the top right of the output block
+    // the "&" parent selector puts the generated element inside the div. Without it, the ::before element gets placed inside the pre element below.
+    &:before {
+      content: 'output';
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: x-small;
+    }
+
+    // disable clipboard button
+    .code-copy {
+      visibility: hidden;
+    }
+  }
+}
+
+
+// Use the output class for standalone shell output (not directly joined to an input block).
+// This is useful when you want to add some explanatory text between input and output.
+// Note that you need to use a language hint and the `output` tag - you can use `text` for plain text.
+//
+// Example:
+//
+// ```bash
+// some-shell-command
+// ```
+//
+// Here's some text that explains something about the output.
+//
+// ```text output
+// Some command ouptut
+// ```
+div.output {
+    pre[class*="language-"] {
+      background: lighten($codeBgColor, 10%);
+    }
+
+    &:before {
+      content: 'output';
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: x-small;
+    }
+
+    // disable clipboard button
+    .code-copy {
+      visibility: hidden;
+    }
+}

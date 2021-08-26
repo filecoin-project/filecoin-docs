@@ -8,8 +8,8 @@ breadcrumb: 'Get started.'
 
 {{ $frontmatter.description }} The Infura API makes it easier to interact with the Filecoin Network by abstracting away some of the complex workflows and requirements. There's no need to spin up a node or directly call a Lotus daemon!
 
-:::warning
-The Infura API requires all users to sign-up to a waitlist to get access to the API. The sign-up process is simple, and most users get access to the API within minutes. You need access to this API to complete this tutorial. Infura plans to remove the waitlist process in the next few weeks.
+:::tip
+Want to speed up your development process and easily upload your data to Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
 :::
 
 In this tutorial, you will:
@@ -22,7 +22,7 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-Make sure you have both [Node.js](https://nodejs.org/) and [NPM](https://www.npmjs.com/) installed.
+Make sure you have both [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/) installed.
 
 ## Infura API
 
@@ -43,7 +43,7 @@ To make things a bit easier to manage, let's create a new directory for our proj
 
 1. To kick things off, create a new project directory and move into it:
 
-   ```bash
+   ```shell
    mkdir ~/Code/filecoin-wallet-checker -p
    cd ~/Code/filecoin-wallet-checker
    ```
@@ -66,13 +66,14 @@ To make things a bit easier to manage, let's create a new directory for our proj
 
 1. Add the `request` package to this project:
 
-```bash
+```shell with-output
 npm install request
-
-> ...
-> + request@2.88.2
-> added 47 packages from 58 contributors and audited 47 packages in 1.594s
-> ...
+```
+```
+...
++ request@2.88.2
+added 47 packages from 58 contributors and audited 47 packages in 1.594s
+...
 ```
 
 Now that we've got a project set up, we can start to build our script!
@@ -207,10 +208,11 @@ We've got some basic functionality in our script, so we should run everything to
 
 1. In your project directory, call the script using `node`:
 
-```bash
+```shell with-output
 node index.js
-
-> Post successful: response:  {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceamdit67mnlyozufeaptmhmti6dv ...
+```
+```
+Post successful: response:  {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceamdit67mnlyozufeaptmhmti6dv ...
 ```
 
 Excellent! The Infura API received our request, and it sent us back the latest chain head information. But we're not interested in the chain head. We want to get information about addresses!
@@ -293,15 +295,16 @@ Instead of asking for the chain head information, let's see if a given string is
 
 1. Let's rerun the script to see what response we get:
 
-   ```bash
+   ```shell with-output
    node index.js
-
-   > Response:  {"jsonrpc":"2.0","result":"f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi","id":0}
+   ```
+   ```
+   Response:  {"jsonrpc":"2.0","result":"f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi","id":0}
    ```
 
    Great! The fact that we got our address back in the `result` field means that our address is valid. If we had sent over an invalid address, we'd get something like this:
 
-   ```bash
+   ```text output
    Response:  {"jsonrpc":"2.0","id":0,"error":{"code":1,"message":"invalid address payload"}}
    ```
 
@@ -333,10 +336,11 @@ Our script checks that a given string is a valid Filecoin address but doesn't do
 
 1. The Infura API will let us know the balance:
 
-   ```bash
+   ```shell with-output
    node index.js
-
-   > ADDRESS:  {"jsonrpc":"2.0","result":"7182015146934547358774","id":0}
+   ```
+   ```
+   ADDRESS:  {"jsonrpc":"2.0","result":"7182015146934547358774","id":0}
    ```
 
    The Infura API returns the value of the address in `attoFIL`. If the address you are requesting doesn't have a balance, the response from Infura will be blank:

@@ -53,7 +53,7 @@ export default {
             },
             {
               title: 'Filecoin networks',
-              path: 'https://networks.filecoin.io'
+              path: 'https://network.filecoin.io'
             },
             {
               title: 'Lotus installation and setup',
@@ -77,6 +77,10 @@ export default {
           title: 'Store',
           path: '/store',
           children: [
+            {
+              title: 'Storage and retrieval tutorial',
+              path: '/get-started/store-and-retrieve'
+            },
             {
               title: 'Slingshot competition',
               path: 'http://slingshot.filecoin.io/'

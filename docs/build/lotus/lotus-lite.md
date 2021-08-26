@@ -20,7 +20,7 @@ Before we get started, let's just go over the terms we'll use in this guide:
 To spin up a Lotus lite-node, you will need:
 
 1. A [Lotus full-node](../../get-started/lotus/installation). For best results, make sure that this node is fully synced. 
-2. A computer with at least 2GB RAM and a dual-core CPU to act as the Lotus lite-node. This can be your local machine. This computer must have Rust and Go 1.15 or higher installed.
+2. A computer with at least 2GB RAM and a dual-core CPU to act as the Lotus lite-node. This can be your local machine. This computer must have Rust and Go 1.16.4 or higher installed.
 3. You must have [all the software dependencies required](../../get-started/lotus/installation#software-dependencies) to build Lotus.
 
 ## Full-node preparation
@@ -105,6 +105,7 @@ Because of the novel architecture of the M1-based Mac computers, some specific e
     export GOARCH=arm64
     export CGO_ENABLED=1
     export LIBRARY_PATH=/opt/homebrew/lib
+    export FFI_BUILD_FROM_SOURCE=1
     ```
 
 1. Move into the `extern/filecoin-ffi` directory and checkout to the `m1-portable` branch:
@@ -112,7 +113,7 @@ Because of the novel architecture of the M1-based Mac computers, some specific e
     ```shell
     cd extern/filecoin-ffi
     git fetch -a
-    git checkout m1-portable
+    git checkout master
     ```
 
 1. Create the `filecoin-ffi` executables:
@@ -137,13 +138,16 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
 
 1. On the lite-node, create an environment variable called `FULLNODE_API_INFO` and give it the following value while calling `lotus daemon --lite`. Make sure to replace `API_TOKEN` with the token you got from the full-node and `YOUR_FULL_NODE_IP_ADDRESS` with the IP address of your full-node:
 
-    ```shell
-    FULLNODE_API_INFO=API_TOKEN/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/1234 lotus daemon --lite
-
-    > 2021-03-02T23:59:50.609Z        INFO    main    lotus/daemon.go:201     lotus repo: /root/.lotus
-    > ...
+    ```shell with-output
+    FULLNODE_API_INFO=API_TOKEN:/ip4/YOUR_FULL_NODE_IP_ADDRESS/tcp/1234 lotus daemon --lite
     ```
-
+    ```
+    2021-03-02T23:59:50.609Z        INFO    main    lotus/daemon.go:201     lotus repo: /root/.lotus
+    ...
+    ```
+    
+    The `API_TOKEN` variable must be followed by a colon sign (`:`).
+    
     If you don't have an `API_TOKEN`, you can run the above command without one and just gain read-only access to the full-node:
 
     ```shell
@@ -152,10 +156,11 @@ You've got the Lotus executables ready to go, and you have access to a Lotus ful
 
 1. You can now interact with your Lotus lite-node:
 
-    ```shell
+    ```shell with-output
     lotus wallet balance f10...
-
-    > 100 FIL
+    ```
+    ```
+    100 FIL
     ```
 
 A lite-node is limited in what it can do and is designed to only perform message signing and transactional operations. Lite-nodes cannot seal data or query the chain directly. All chain requests go through the attached full-node. If for whatever reason, the full-node goes offline, any lite-nodes connected to it will also go offline.

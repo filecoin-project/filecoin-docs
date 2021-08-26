@@ -66,6 +66,7 @@ Similarly, `lotus-miner` (as a client application to the Lotus Miner daemon), ca
 
 ```sh
 export MINER_API_INFO="TOKEN:/ip4/<IP>/tcp/<PORT>/http"
+export MARKETS_API_INFO="TOKEN:/ip4/<IP>/tcp/<PORT>/http"
 ```
 
 ### Adding the necessary swap
@@ -218,3 +219,4 @@ Your miner should now be preliminarily set up and running, but **there are still
 - Update `ExpectedSealDuration` with the time it takes your miner to seal a sector: discover it by [running a benchmark](benchmarks.md) or by [pledging a sector](sector-pledging.md) and noting down the time.
 - Configure additional [seal workers](seal-workers.md) to increase the miner's capacity to seal sectors.
 - Configure a [separate address for WindowPost messages](miner-addresses.md).
+- Consider [splitting markets and miners processes](split-markets-miners.md) for increased stability.

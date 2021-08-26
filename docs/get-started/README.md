@@ -8,14 +8,26 @@ breadcrumb: ''
 
 {{ $frontmatter.description }}
 
+:::tip Quick started guides you should try first 
+Working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
+
+| Lotus | Store and retrieve |
+| --- | --- |
+| Want to set up a fully-featured Lotus deployment? Start by [spinning up a Lotus full-node in just a few minutes →](./lotus) | Learn how to [store and retrieve data using the Filecoin network →](./store-and-retrieve)
+:::
+
 ## Become familiar with the concepts
 
 - Read [How Filecoin Works](../about-filecoin/how-filecoin-works.md) and [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md).
 - Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look.
-- Check out the [existing networks](https://networks.filecoin.io).
+- Check out the [existing networks](https://network.filecoin.io).
 - Explore the mainnet using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for miners. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
 
 ## Store content on Filecoin
+
+:::tip
+Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
+:::
 
 - Visit [Slate](../store/slate.md) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](lotus/README.md). Setup your first wallet and learn how to [send and receive ⨎](lotus/send-and-receive-fil.md) and [make storage deals](../store/lotus/store-data.md).
@@ -32,9 +44,9 @@ breadcrumb: ''
 | Name                                                             |                                                                                                                                                                                                                                                                                         |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Lotus](lotus/README.md)                                         | Implementation of Filecoin node and miner by Protocol Labs. <br /><br />For users that want to participate in the Filecoin network validating blocks, manage a wallet and perform deals on the command line.                                                                            |
-| [Slate](../store/slate.md)                                       | Slate is a fully open-source file sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.io) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
+| [Slate](../store/slate.md)                                       | Slate is a fully open-source file-sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.io) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
 | [Powergate](../build/powergate.md)                               | A multitiered storage solution that stores data with IPFS ("Hot" storage layer) and Filecoin ("Cold" storage layer).                                                                                                                                                                    |
-| [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets and Powergate.                                                                                                                      |
+| [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets, and Powergate.                                                                                                                      |
 | [Starling](../store/starling.md)                                 | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
 
 ## Wallets
@@ -50,20 +62,20 @@ The table below lists the recommended wallet implementations:
 
 Both Lotus and the Glif wallet support [Ledger](https://www.ledger.com/) hardware devices, allowing you to use Filecoin without ever storing your private keys on a network-connected device. This can help protect your valuable private keys from malicious software on your computer and so is commonly used for accounts with large balances.
 
-There are a number of [additional wallets](https://docs.filecoin.io/reference/#other-wallets) that support Filecoin tokens including mobile wallets.
+There are a number of [additional wallets](https://docs.filecoin.io/reference/#other-wallets) that support Filecoin tokens, including mobile wallets.
 
 ## Filecoin implementations
 
-There are 4 Filecoin protocol implementations (or “node software”) currently in progress:
+There are 4 Filecoin protocol implementations (or "node software") currently in progress:
 
-- [lotus](https://github.com/filecoin-project/lotus/) (Go): This implementation is closest to feature-complete and is therefore, the recommended Filecoin protocol implementation.
+- [lotus](https://github.com/filecoin-project/lotus/) (Go): This implementation is closest to feature-complete and is, therefore, the recommended Filecoin protocol implementation.
 - [forest](https://github.com/chainsafe/forest) (Rust)
 - [fuhon](https://github.com/filecoin-project/cpp-filecoin) (C++)
 - [venus](https://github.com/filecoin-project/venus) (Go)
 
 Each of these software clients implements the Filecoin protocol as described in the [Filecoin protocol specification](https://filecoin-project.github.io/specs). To learn more about why there are multiple Filecoin implementations, please read [this blog post](https://filecoin.io/blog/announcing-filecoin-implementations-in-rust-and-c++/).
 
-Here is a snapshot of each implementation’s progress across the primary parts of the Filecoin protocol (updated June 24, 2020):
+Here is a snapshot of each implementation's progress across the primary parts of the Filecoin protocol (updated June 24, 2020):
 
 |                    | lotus | venus | forest | fuhon |
 | ------------------ | ----- | ----- | ------ | ----- |
@@ -73,9 +85,10 @@ Here is a snapshot of each implementation’s progress across the primary parts 
 | 4. VM Actors       | 🔶    | 🔶    | 🔶     | 🔶    |
 | 5. Blockchain      | ✅    | ✅    | ✅     | ✅    |
 | 6. Token           | ✅    | ✅    | ✅     | ✅    |
-| 7. Storage Mining  | ✅    | 🔄    | 🔄     | 🔄 🔶 |
-| 8. Market          | ✅    | ✅    | 🔄     | ✅    |
+| 7. Storage Mining  | ✅    | 🔄    | 🔄     | 🔄    |
+| 8. Market          | ✅    | ⛔️   | 🔄      | ⛔️     |
 
-✅ : fully featured implementation
-🔄 : reuses components from another implementation
-🔶 : partial implementation
+✅ : fully-featured implementation. 
+🔄 : reuses components from another implementation. 
+🔶 : partial implementation. 
+⛔️ : pending implementation. 
