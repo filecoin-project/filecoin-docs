@@ -15,12 +15,12 @@ This guide is WIP, please create an issue if you have any feedback!
 ## Conceptual overview
 
 ::: tip
-The dagstore is targeted to be introduced in Lotus v1.11.2. We will update the docs once it’a confirmed.
+The dagstore is targeted to be introduced in Lotus v1.11.2. We will update the docs once it’s confirmed.
 :::
 
 The dagstore is a sharded store to hold large IPLD graphs efficiently, packaged as location-transparent attachable CAR files, with mechanical sympathy resulting in zero-copy access in ideal situations.
 
-The dagstore is a component of the markets subsystem in `lotus-miner`. It replaces the former Badger staging blockstore. It is designed to provide high efficiency and throughput, and minimize resource utilization during deal-making operations.
+The dagstore is a component of the _markets_ subsystem in `lotus-miner`. It replaces the former Badger staging blockstore. It is designed to provide high efficiency and throughput, and minimize resource utilization during deal-making operations.
 
 The dagstore leverages the indexing features of [CARv2](https://github.com/ipld/ipld/blob/master/specs/transport/car/carv2/index.md) to enable plain CAR files to act as read and write blockstores. These CAR files serve as the direct medium for data exchange in markets and deal-making processes, without requiring intermediate buffers.
 
@@ -43,18 +43,18 @@ Here's a definition of terms:
 - **Shard state:** the state that a dagstore shard is in. It can be one of the  following:
   - `ShardStateNew`: indicates that a shard has been registered, but has not yet been initialized.
   - `ShardStateInitializing`: indicates that the shard is being initialized.
-    - `ShardStateAvailable`: indicates that the shard has been initialized and is capable of serving retrievals. However, there are no active shard readers in this instant.
+    - `ShardStateAvailable`: indicates that the shard has been initialized and is capable of serving retrievals. However, there are no active shard readers in this moment.
   - `ShardStateServing`: indicates the shard has active readers, and thus is currently serving at least one retrieval.
     - `ShardStateErrored`: indicates that an unexpected error was encountered during a shard operation (e.g. initialization or acquisition), and therefore the shard needs to be recovered to be fully operational.
     - `ShardStateRecovering`: indicates that the shard is attempting to recover from an errored state.
 - **Shard initialization:** the act of fetching the shard's data, indexing it and storing the index under the `dagstore/index` directory.
-- **Shard acquisition:** the act of fetching the shard's data, joining it with an index, and building an accessor for shard data, in order to serve retrievals.
-- **Index:** a mapping of CID => CAR file offset, associated with a shard.
+- **Shard acquisition:** the act of fetching the shard's data, joining it with an index, and building an accessor for shard data to serve retrievals.
+- **Index:** a mapping of _CID to CAR_ file offset, associated with a shard.
 - **Mount:** a key feature of the dagstore is location-transparency of shard data, and the mount is the component that teaches the dagstore how to obtain the data for a shard. A shard can be mounted from a local path, HTTP URL, distributed filesystem, the Lotus storage subsystem (precisely the mount type that we use in Lotus), or anything else.
 
 ## Directory structure
 
-By default, the dagstore root will be placed in:
+By default, the dagstore root will be:
 
 - `$LOTUS_MARKETS_PATH/dagstore`, if you're running a [split miner/market deployment](./split-markets-miners.md).
 - `$LOTUS_MINER_PATH/dagstore`, if you're not.
@@ -76,7 +76,7 @@ The directory structure is as follows:
 
 ## First-time migration
 
-When you first start your lotus-miner or the market nodes if you’ve split it out using the lotus that introduced dagstore(we will add the exact version later), a migration process will register all shards in **lazy initialization** mode. As deals come in, shards are fetched and initialized just in time in order to serve the retrieval.
+When you first start your lotus-miner or the market nodes if you’ve split it out using the lotus that introduced dagstore (we will add the exact version later), a migration process will register all shards in **lazy initialization** mode. As deals come in, shards are fetched and initialized just in time to serve the retrieval.
 
 You can monitor the progress of the migration in your log output, by grepping for the keyword `migrator`. Here's example output. Notice the first line, which specifies how many deals will be evaluated (this number includes failed deals that never went on chain, and therefore will not be migrated), and the last lines (which communicate that migration completed successfully):
 
@@ -116,7 +116,7 @@ In our test environments, we found the migration to proceed at a rate of 400-500
 
 ## Configuration
 
-The DAG store can be configured through the `config.toml` file of the node that runs the `markets` subsystem. Refer to the `[DAGStore]` section. Lotus ships with sane defaults:
+The DAG store can be configured through the `config.toml` file of the node that runs the _markets_ subsystem. Refer to the `[DAGStore]` section. Lotus ships with sane defaults:
 
 ```toml
 [DAGStore]
@@ -187,7 +187,13 @@ On a [split miner/market deployment](./split-markets-miners.md), these commands 
 
 1. If possible, configure your markets node `storage.json` to point to storage paths that are shared with your mining/sealing/storage node. That will avoid unnecessary network transfer.
 2. Do plan and execute [bulk initialization](#forcing-bulk-initialization) ASAP.
-   
+
 ## Troubleshooting
 
-Empty.
+### Lotus Version Rollback
+
+If you are downgrading from Lotus 1.11.2-dev (or above) to 1.11.1 (or below), you will need to ensure outstanding storage deals have reached the `StorageDealAwaitingPrecommit` state, before downgrading. That's the stage at which the _markets_ subsystem has handed off the deal to the _sealing_ subsystem.
+
+If downgrading is performed before outstanding storage deals reach this state, the _markets_ process will panic.
+
+If you are experiencing this panic, you will need to restore to your previous version and all the storage deals to reach `StorageDealAwaitingPrecommit` before attempting to downgrade again.

@@ -290,6 +290,8 @@ your node.
 lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
 
+4. After you have finished initializing the `markets` node repository, you must restart the `mining/sealing/proving` node for the configuration changes to take effect.
+
 #### Step 4. Consider configuring storage.json on the markets node
 
 If you had [customized storage locations](https://docs.filecoin.io/mine/lotus/custom-storage-layout/#frontmatter-title)
