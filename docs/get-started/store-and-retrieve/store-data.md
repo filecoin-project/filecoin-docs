@@ -60,7 +60,7 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
     lotus client import 5gb-filecoin-payload.bin 
     ```
 
-    Lotus creates a distributed-acyclic-graph (DAG) based off the payload. This process takes a few minutes. Once it's complete, Lotus will output the payload CID.
+    Lotus creates a directed acyclic graph (DAG) based off the payload. This process takes a few minutes. Once it's complete, Lotus will output the payload CID.
 
     ```text output
     Import 3, Root bafykb...
