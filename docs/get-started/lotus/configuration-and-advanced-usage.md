@@ -75,20 +75,21 @@ This backup process is different to that of the [`lotus-miner` backup](../../min
 
 ### Backup
 
-1. Stop your `lotus daemon` if it is already running.
+1. Stop your `lotus` daemon if it is already running.
 1. Run `lotus daemon backup`:
     
     ```shell
-    lotus daemon backup
+    lotus backup --offline ~/lotus-backup.cbor
     ```
-
-    This process takes a few minutes, depending on the hardware of your computer.
 
 ### Restore
 
-```shell
+1. Stop your `lotus` daemon if it is already running.
+1. Run `lotus restore`:
 
-```
+    ```shell
+    lotus restore --fline ~/lotus-backup.cbor
+    ```
 
 ## Connectivity
 
