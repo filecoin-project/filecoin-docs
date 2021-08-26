@@ -34,7 +34,6 @@ The owner address can be updated with the following command:
 
 ```sh
 lotus-miner actor set-owner --really-do-it <new address> <old address>
-lotus-miner actor set-owner --really-do-it <new address> <new address>
 ```
 
 The old and the new address must be available to the Lotus node. You can [create a new address or import an existing one](../../get-started/lotus/send-and-receive-fil.md).
