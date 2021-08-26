@@ -33,7 +33,7 @@ The address chosen to be the miner's _owner address_ is designed to be kept offl
 The owner address can be updated with the following command:
 
 ```sh
-lotus-miner actor set-owner --really-do-it <address>
+lotus-miner actor set-owner --really-do-it <new address> <old address>
 ```
 
 The above command will need to be run twice, once by the original owner, and then a second time by the new owner to finalize the transfer.
