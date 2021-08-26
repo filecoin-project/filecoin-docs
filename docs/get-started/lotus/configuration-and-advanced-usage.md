@@ -88,7 +88,7 @@ This backup process is different to that of the [`lotus-miner` backup](../../min
 1. Run `lotus restore`:
 
     ```shell
-    lotus restore --fline ~/lotus-backup.cbor
+    lotus restore --offline ~/lotus-backup.cbor
     ```
 
 ## Connectivity
