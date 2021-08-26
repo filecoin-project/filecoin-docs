@@ -74,7 +74,7 @@ If you do not control the NAT/Firewall that your device is behind (such as withi
 There are multiple ways to achieve this:
 
 - Using A VPN service. We recommend Wireguard-powered IPv6 VPN services which will provide you with a publicly routable IPv6 address.
-- Using an [SSH Reverse Tunnel](https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it) to set up a proxy between a machine with a pubic IP and the miner.
+- Using an [SSH Reverse Tunnel](https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it) to set up a proxy between a machine with a public IP and the miner.
 
 ## Common errors
 
