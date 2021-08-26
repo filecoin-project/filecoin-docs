@@ -130,6 +130,22 @@ For advanced sending options:
 lotus send --help
 ```
 
+#### Specify Invocation Parameters
+
+If you want specify invocation parameters using `lotus send`, you can use the following code-snippet to get the encoded parameters
+
+```shell
+lotus chain encode params --encoding=hex <toAddr> <method id> <params>
+```
+
+Mapped method <> method id can be found in the [Filecoin GitHub repository](https://github.com/filecoin-project/specs-actors/blob/master/actors/builtin/methods.go).
+
+Then to send it, run:
+
+```shell
+lotus send --params-hex=<encoded output from the previous step>
+```
+
 ### Transaction fees
 
 Every transaction that sends `FIL` pays an additional fee based on its _gas_ usage. Gas and fees are explained in the [How Filecoin Works guide](../../about-filecoin/how-filecoin-works.md). By default, Lotus automatically sets all the necessary values. However, you may want to use the `--gas-feecap` flag in the `send` command to avoid surprises when network congestion is high. For more information about messages and fees, see the [Message Pool guide](../../mine/lotus/message-pool.md) and [Gas fees](../../about-filecoin/how-filecoin-works/#gas-fees) sections.
