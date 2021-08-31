@@ -89,13 +89,13 @@ Next up is creating the command for Lotus to run. The structure for a retrieval 
 1. Using the template above, create the command substituting `<MINER ID>` and `<DATA CID>` with the variables you got in the previous step. Your command should look something like this: 
 
     ```shell
-    lotus client retrieve --miner f01278 mAXCg5AIgjVjEjFzXIO2fTUdaWKEGmeOevU76fzC/JgNp37oRrQI output-file
+    lotus client retrieve --miner f07709 mAVWg5AIgFw51hfKzfy8nRsKHlMtT8/DPBJhn1f9eFyOSeldlAiE output-file
     ```
 
     The `output-file` is the name of the file that you'd like to save. You can also add a path to this variable:
 
     ```shell
-    lotus client retrieve --miner f01278 mAXC...RrQI ~/Downloads/filecoin-download.tar
+    lotus client retrieve --miner f0100 mAVW...lAiE ~/Downloads/filecoin-download.tar
     ```
 
 1. Run the command. After submitting this command, your Lotus lite-node will send the retrieval request to the storage provider and wait for a response:
@@ -110,12 +110,11 @@ Next up is creating the command for Lotus to run. The structure for a retrieval 
 1. Wait for the process to finish:
 
     ```shell
-    > Recv: 5.078 GiB, Paid 0 FIL, ClientEventBlocksReceived (DealStatusWaitingForLastBlocks)
-    > Recv: 5.078 GiB, Paid 0 FIL, ClientEventAllBlocksReceived (DealStatusCompleted)
-    > Success
+    > Recv: 66.33 KiB, Paid 0.00000000000013584 FIL, ClientEventPaymentSent (DealStatusFinalizing)
+    > Recv: 66.33 KiB, Paid 0.00000000000013584 FIL, ClientEventComplete (DealStatusFinalizingBlockstore)
+    > Recv: 66.33 KiB, Paid 0.00000000000013584 FIL, ClientEventBlockstoreFinalized (DealStatusCompleted)
+    Success
     ```
-
-    This process can take some time, depending on how congested the network is, how much load this storage provider is under, and the speed of your internet connection. 
 
     :::danger
     You must keep the `lotus daemon` running for the duration of this process.
