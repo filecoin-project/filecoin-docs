@@ -16,7 +16,7 @@ breadcrumb: 'Signing libraries'
 
 ## Filecoin signing tools
 
-The [Filecoin signing tools project](https://zondax.ch/projects/filecoin-signing-tools/#features) provides Rust Native and WASM signing-libraries, as well as a JSON RPC server implementation to expose their functionality remotely and some examples on how to use all of it from many languages.
+The [Filecoin signing tools project](https://www.zondax.ch/news/filecoin-signing-library-milestone-3-delivered) provides Rust Native and WASM signing-libraries, as well as a JSON RPC server implementation to expose their functionality remotely and some examples on how to use all of it from many languages.
 
 The [source code repository can be found here](https://github.com/Zondax/filecoin-signing-tools).
 
