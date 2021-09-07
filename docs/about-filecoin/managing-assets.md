@@ -17,12 +17,12 @@ Be incredibly cautious when using unaudited wallets. Wallets that _have_ gone th
 
 | Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| Glif web wallet                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
+| [Glif web wallet](https://wallet.glif.io/?network=f)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
 | FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
 | [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet.                                                                                                              | Unknown |
 | [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
-| Trust wallet                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
+| [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
 
 ## Exchanges
 
