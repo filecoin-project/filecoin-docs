@@ -17,18 +17,18 @@ Be incredibly cautious when using unaudited wallets. Wallets that _have_ gone th
 
 | Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| Glif web wallet                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
+| [Glif web wallet](https://wallet.glif.io/?network=f)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
 | FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
 | [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet.                                                                                                              | Unknown |
 | [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
-| Trust wallet                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
+| [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
 
 ## Exchanges
 
 A cryptocurrency exchange, or simply just _exchange_, is a service that lets you swap cash for cryptocurrency, cryptocurrency for cash, or even one cryptocurrency for another cryptocurrency. They work similarly to currency exchanges that you find at airports, where you can swap your home currency for one of the countries you are traveling to. If you have purchased cryptocurrency before, you have likely used an exchange before.
 
-There are lots of exchanges that allow users to buy, sell, and trade FIL. Websites like [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
+There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
 
 ![Coinmarketcap show a list of exchanges that support FIL.](./images/coinmarketcap-exchanges.png)
 
