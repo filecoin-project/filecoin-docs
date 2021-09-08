@@ -375,7 +375,7 @@ module.exports = {
     'vuepress-plugin-check-md',
     'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs',
-    'vuepress-plugin-element-tabs'
+    'vuepress-plugin-tabs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
 }
