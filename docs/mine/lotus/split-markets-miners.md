@@ -482,7 +482,8 @@ As soon as the message is confirmed, clients will know to look for the node iden
 ```shell
 lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
-9. update the Addresses section of the markets config.toml,Update this section as same  as  mining/sealing/proving node
+
+9. Update the `Addresses` section of the markets `config.toml` to be the same as same the mining/sealing/proving node.
 > [Addresses]  
   \#PreCommitControl = ["f00XX1"]  
   \# CommitControl = ["f00XX2"]  
