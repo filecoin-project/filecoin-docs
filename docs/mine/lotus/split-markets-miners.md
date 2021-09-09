@@ -482,3 +482,17 @@ As soon as the message is confirmed, clients will know to look for the node iden
 ```shell
 lotus-miner actor set-addrs <NEW_MULTIADDR>
 ```
+
+9. Update the `Addresses` section of the markets `config.toml` to be the same as same the mining/sealing/proving node.
+
+```toml
+[Addresses]  
+  \#PreCommitControl = ["f00XX1"]  
+  \# CommitControl = ["f00XX2"]  
+    TerminateControl = []  
+  \#  DealPublishControl = ["f00XX3"] 
+    DisableOwnerFallback = false  
+    DisableWorkerFallback = false 
+```
+ 
+Typically, if you initialize the markets node from the `config.toml` used in the mining/sealing/proving node, the settings in this section will be the same as in the mining/sealing/proving node. If you are already running a subsystem and have changed the configuration in this area, copy the changes to the markets node. If you do not copy the changes, the `DealPublishControl` configuration will not affect, and `DealPublish` costs will be deducted from the worker wallet.
