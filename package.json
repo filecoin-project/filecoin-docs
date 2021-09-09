@@ -24,7 +24,6 @@
     "vuepress-plugin-chunkload-redirect": "^1.0.3",
     "vuepress-plugin-clean-urls": "^1.1.2",
     "vuepress-plugin-code-copy": "^1.0.6",
-    "vuepress-plugin-element-tabs": "^0.2.8",
     "vuepress-plugin-ipfs": "^1.0.2",
     "vuepress-plugin-medium-zoom": "^1.1.9",
     "vuepress-plugin-robots": "^1.0.1",
@@ -65,5 +64,9 @@
     "docs:dev": "vuepress --no-clear-screen dev docs",
     "docs:build": "npm run docs:links && vuepress build docs",
     "docs:links": "vuepress check-md docs"
+  },
+  "dependencies": {
+    "vue-tabs-component": "^1.5.0",
+    "vuepress-plugin-tabs": "^0.3.0"
   }
 }
