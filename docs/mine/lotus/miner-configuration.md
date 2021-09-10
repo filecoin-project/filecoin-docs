@@ -189,6 +189,13 @@ This section controls some of the behavior around sector sealing:
   MaxSealingSectors = 0
   # Upper bound on how many sectors can be sealing at the same time when creating new sectors with deals (0 = unlimited)
   MaxSealingSectorsForDeals = 0
+  # CommittedCapacitySectorLifetime is the duration a Committed Capacity (CC) sector will
+  # live before it must be extended or converted into sector containing deals before it is
+  # terminated. Value must be between 180-540 days inclusive
+  #
+  # type: Duration
+  CommittedCapacitySectorLifetime = "12960h0m0s"
+
   # Period of time that a newly created sector will wait for more deals to be packed in to before it starts to seal.
   # Sectors which are fully filled will start sealing immediately
   WaitDealsDelay = "6h0m0s"
@@ -346,6 +353,16 @@ Batch 1:
 	Sectors:
 		19	OK
 ```
+
+### CommittedCapacitySectorLifetime
+The available units are as follows.
+
+>	"ms": int64(Millisecond),  
+	"s":  int64(Second),  
+	"m":  int64(Minute),   
+	"h":  int64(Hour),
+
+For example if you want to set the sector lifecycle to 180 days, you can multiply 180 days by 24 hours per day to get 4320 hours and set this value to "4320h0m0s"
 
 ## Storage section
 
