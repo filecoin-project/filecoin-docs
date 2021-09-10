@@ -69,7 +69,10 @@ You can replace messages in the pool by pushing a new message with the same `Non
 lotus mpool replace --auto <from> <nonce>
 ```
 
-The above command will replace the associated message in the pool and automatically reprice it with a new _GasPremium_ and _GasFeeCap_ as estimated from the current network conditions. You can also set `--max-fee` if you wish to limit the total amount to spend for the message. All other flags are ignored.
+The above command will replace the associated message in the pool and automatically reprice it with a new _GasPremium_ and _GasFeeCap_ as estimated from the current network conditions. You can also set `--fee-limit` if you wish to limit the total amount to spend for the message. All other flags are ignored.  
+::: warning
+There is an important difference between --fee-limit and the previous --max-fee, --fee-limit is in units of FIL with decimals support, Previously when flag was max-fee units were in attoFIL.
+:::  
 
 Alternatively, the _GasPremium_, _GasFeeCap_ can be set manually with their respective flags:
 

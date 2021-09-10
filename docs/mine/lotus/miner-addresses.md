@@ -113,6 +113,11 @@ To set up a _control address_:
 
 Repeat this procedure to add additional addresses.
 
+5. You can Specify other actor to check control address:
+```sh
+lotus-miner --actor f01000 actor control list
+```
+
 ### Use control addresses for commits
 
 Clean up the tasks required for your worker address by setting your control addresses to perform pre-commits and commits. With this, only market messages are sent from the worker address. If the basefee is high, then you can still put sectors on chain without those messages being blocked by things like publishing deals.

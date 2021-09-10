@@ -75,3 +75,43 @@ lotus-miner sectors mark-for-upgrade <sector number>
 ```
 
 The sector should become inactive within 24 hours after a new replacement sector has sealed. From that point, the pledged storage can be re-used for new sectors.
+
+## Inspect expiring sectors
+First you can check the sectors that are about to expire. Sectors that will expire within 60 days can be checked by default with the following command. 
+```sh
+lotus-miner sectors check-expire
+```
+If you want to check for sectors that will expire within six months, add the --cutoff option, timing in epoch, here is an example:
+```sh
+lotus-miner sectors check-expire --cutoff 518400
+```
+
+## Extend sectors
+You can extend the lifecycle of a sector with the command.
+```sh
+lotus-miner sectors extend [command options] <sectorNumbers...>
+```
+This is an example of extending the lifecycle of sectors sector-a and sector-b to 1555200 epoch.
+```sh
+lotus-miner sectors extend --new-expiration 1555200 <sector-a> <sector-b>
+```
+In addition, you can also renew sectors,a more practical and flexible tool.
+```sh
+lotus-miner sectors renew [command options] [arguments...]
+```
+This is an example of selecting sectors with a lifecycle between epochnumber-a epoch and epochnumber-b epoch and updating it to 1555200 epoch.
+```sh
+lotus-miner sectors renew  --from <epochnumber-a> --to <epochnumber-b> --new-expiration 1555200
+```
+This is an example of updating the lifecycle of a sector read from a file to 1555200 epoch
+```sh
+lotus-miner sectors renew  --sector-file <your-sectorfile> --new-expiration 1555200
+```
+::: warning
+You have to select the sector to renew. That means you have to specify the --from --to option, or specify the sector file, if no sector is selected this command will have no effect.
+Format of sectorfile:
+ 1  
+ 2  
+ ......
+:::
+
