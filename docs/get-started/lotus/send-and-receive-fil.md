@@ -165,7 +165,7 @@ lotus wallet export <address> > <address>.key
 Use `wallet import` to import an address into a node:
 
 ```shell
-lotus wallet import wallet.private
+lotus wallet import <address>.key
 ```
 
 and:
