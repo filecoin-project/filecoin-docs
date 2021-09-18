@@ -45,17 +45,8 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
     + Calibration: Download latest snapshot: [lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz](https://www.mediafire.com/file/q7tc2bmcc9d09vv/lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz/file). 
 
-    + Nerpa:
 
-      + Option 1: Download the latest static snapshot [lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz](https://www.mediafire.com/file/t1j360oyk3tjziv/lotus_nerpa_snapshot_2021_07_14_high_339089.car.tar.xz/file)
-
-      + Option 2: Auto-generated snapshot, taken with the latest 900 blocks daily. Size is ~1.2GB as of block height 1,000,000 (August 2021). To import this snapshot directly:
-
-        ```shell
-        lotus daemon --halt-after-import --import-snapshot https://dweb.link/ipfs/$(curl -s https://gist.githubusercontent.com/openworklabbot/d32543d42ed318f6dfde516c3d8668a0/raw/snapshot.log) 
-        ```
-
-1. Check the `sha256sum` of the downloaded snapshot:
+2. Check the `sha256sum` of the downloaded snapshot:
 
     ```shell with-output
     # Replace the filenames for both `.sha256sum` and `.car` files based on the snapshot you downloaded.
@@ -65,7 +56,7 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
     minimal_finality_stateroots_517061_2021-02-20_11-00-00.car: OK
     ```
 
-1. Start the Lotus daemon using `--import-snapshot`:
+3. Start the Lotus daemon using `--import-snapshot`:
 
     ```shell
     # Replace the filename for the `.car` file based on the snapshot you downloaded.
