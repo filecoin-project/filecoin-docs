@@ -13,7 +13,7 @@ As we mentioned in the [installation guide](installation.md), Lotus is compiled 
 + Local devnet - [You can run a local devnet](https://docs.filecoin.io/build/local-devnet/#manual-set-up)
 + Testnets
   + [Calibnet](https://network.filecoin.io/#calibration)
-  + [Nerpanet](https://network.filecoin.io/#nerpa)
+  + Note: [NerpaNet](https://github.com/filecoin-project/community/discussions/74#discussioncomment-1348469) is deprecated.
 + [Mainnet](https://network.filecoin.io/#mainnet)
 
 You can choose one of the following methods to switch to a different network.
@@ -37,9 +37,8 @@ The first method is the simplest. In this approach, you remove all the data rela
     | --- | --- | --- |
     | Mainnet | `make clean all` | The production Filecoin network. FIL has real-world value on this network. |
     | Calibnet | `make clean calibnet` | A test network with a minimum sector size of 32 GiB. FIL has no real-world value on this network. |
-    | Nerpanet | `make clean nerpanet` | A test network with a minimum sector size of 512 MiB. FIL has no real-world value on this network. |
 
-1. Start the Lotus daemon again and let it sync to the new network:
+2. Start the Lotus daemon again and let it sync to the new network:
 
     ```shell
     lotus daemon

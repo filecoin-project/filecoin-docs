@@ -8,34 +8,38 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 This section contains links and reference materials for Filecoin.
 
-* [About Filecoin](#about-filecoin)
-* [Filecoin Network](#filecoin-network)
-	* [Node implementations](#node-implementations)
-	* [Networks](#networks)
-* [Network Status](#network-status)
-	* [Block explorers](#block-explorers)
-	* [Chain data and monitoring](#chain-data-and-monitoring)
-	* [Storage/Deals status](#storage-deals-status)
-* [Storage Web Applications](#storage-web-applications)
-* [APIs & Developer tools](#apis-developer-tools)
-	* [Storage APIs for app builders](#storage-apis-for-app-builders)
-	* [Message signing tools](#message-signing-tools)
-	* [Wallet-related tools](#wallet-related-tools)
-	* [Node Infrastructure & APIs](#node-infrastructure-apis)
-	* [Data prep tools](#data-prep-tools)
-	* [Databases using IPFS and Filecoin](#databases-using-ipfs-and-filecoin)
-	* [Other developer tools](#other-developer-tools)
-* [Mining](#mining)
-	* [Miner reputation systems](#miner-reputation-systems)
-	* [Miner tools](#miner-tools)
-	* [Storage client and miner programs](#storage-client-and-miner-programs)
-	* [Retrieval Market resources (WIP experiments)](#retrieval-market-resources-wip-experiments)
-* [Wallets](#wallets)
-	* [Wallets (audited)](#wallets-audited)
-	* [Other wallets](#other-wallets)
-* [Ecosystem Galleries](#ecosystem-galleries)
-  * [Hackathons](#hackathons)
-  * [Grants and accelerators](#grants-and-accelerators)
+- [Reference](#reference)
+  - [About Filecoin](#about-filecoin)
+  - [Filecoin Network](#filecoin-network)
+    - [Node implementations](#node-implementations)
+    - [Networks](#networks)
+  - [Network status](#network-status)
+    - [Block explorers](#block-explorers)
+    - [Chain data and monitoring](#chain-data-and-monitoring)
+    - [Storage/Deals status](#storagedeals-status)
+  - [Storage Web Applications](#storage-web-applications)
+  - [APIs & Developer tools](#apis--developer-tools)
+    - [Storage APIs for app builders](#storage-apis-for-app-builders)
+    - [Message signing tools](#message-signing-tools)
+    - [Wallet-related tools](#wallet-related-tools)
+    - [Node Infrastructure & APIs](#node-infrastructure--apis)
+      - [Scalable endpoint hosting](#scalable-endpoint-hosting)
+      - [Filecoin API clients](#filecoin-api-clients)
+      - [Storage provider index API](#storage-provider-index-api)
+    - [Data prep tools](#data-prep-tools)
+    - [Databases using IPFS and Filecoin](#databases-using-ipfs-and-filecoin)
+    - [Other developer tools](#other-developer-tools)
+  - [Mining](#mining)
+    - [Miner reputation systems](#miner-reputation-systems)
+    - [Miner tools](#miner-tools)
+    - [Storage client and miner programs](#storage-client-and-miner-programs)
+    - [Retrieval Market resources (WIP experiments)](#retrieval-market-resources-wip-experiments)
+  - [Wallets](#wallets)
+    - [Wallets (audited)](#wallets-audited)
+    - [Other wallets](#other-wallets)
+  - [Ecosystem galleries](#ecosystem-galleries)
+    - [Hackathons](#hackathons)
+    - [Grants and accelerators](#grants-and-accelerators)
 
 ## About Filecoin
 
@@ -71,9 +75,6 @@ This section contains links and reference materials for Filecoin.
 + **Calibration**
   + Largest testnet which support 32GiB and 64GiB sectors.
   + See [#fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC) for announcements and [#fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack).
-+ **Nerpa**
-  + Testnet for developers with smaller 512MB sectors that can seal data faster.
-  + See [#fil-net-nerpa-discuss](https://filecoinproject.slack.com/archives/C016VJSJNTH) in [Filecoin Slack](https://filecoin.io/slack).
 + **Local Devnet**
   + [**Run a Local Devnet using Lotus** ](https://docs.filecoin.io/build/local-devnet).
   + [Textile's Local Devnet ](https://docs.textile.io/powergate/localnet/#localnet-with-lotus-client) -  uses a mocked sector builder for faster deal confirmation and it is for storage app prototyping.
@@ -92,7 +93,6 @@ Tools to check status and details of the network and chain.
 - [Grafana](https://stats.filecoin.io/) - Network Statistics Dashboard
   - [Mainnet](https://stats.filecoin.io/)
   - [Calibration](https://stats.calibration.fildev.network/d/z6FtI92Zz/chain?orgId=1&refresh=25s&from=now-30m&to=now&kiosk)
-  - [Nerpa](https://stats.nerpa.interplanetary.dev/d/z6FtI92Zz/filecoin-chain-stats?orgId=1&var-network=ntwk-nerpa&var-blockInterval=30s&kiosk)
 
 ### Chain data and monitoring
 

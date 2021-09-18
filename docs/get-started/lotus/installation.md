@@ -210,7 +210,6 @@ Once all the dependencies are installed, you can build and install Lotus.
    
    # Or to join a testnet or devnet:
    make clean calibnet # Calibration with min 32GiB sectors
-   make clean nerpanet # Nerpa with min 512MiB sectors
    
    sudo make install
    ```
