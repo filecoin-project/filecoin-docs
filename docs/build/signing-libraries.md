@@ -23,3 +23,13 @@ The [source code repository can be found here](https://github.com/Zondax/filecoi
 ## Filecoin.js
 
 [Filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/) aims to be a complete library for interacting with local or remote Filecoin nodes. It can be used to [sign](https://filecoin-shipyard.github.io/filecoin.js/docs/sign-message) and verify messages and supports multiple wallet providers.
+
+## Filecoin-js-signer
+
+[Filecoin-js-singer](https://github.com/blitslabs/filecoin-js-signer) is signing library and RPC client in pure Typescript / Javascript with the necessary methods to create, sign and broadcast messages to send FIL, and interact with Filecoin's built-in actors (like Payment Channel and Multisig). 
+
+For more information about how to use it, please learn from the following resource.
+
++ [API reference](https://blitslabs.gitbook.io/filecoin-loans/tools/filecoin-js-signer/api-reference)
++ [Examples for its features](https://github.com/blitslabs/filecoin-js-signer#filecoin-signer)
+
