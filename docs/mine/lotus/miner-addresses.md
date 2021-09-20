@@ -174,7 +174,7 @@ This feature is enabled as of 2020-12-09 within the [`master` branch of `filecoi
    <br/>
  
    ```shell with-output
-     lotus actor control list
+     lotus-miner actor control list
    ```
    ```
    name       ID      key        use    balance
