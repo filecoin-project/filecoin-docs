@@ -8,7 +8,7 @@ breadcrumb: 'Hardware requirements'
 
 The hardware requirements for Filecoin mining are tied to the computational resources needed to _seal_ a sector and generating regular _Proof of Spacetime_ for every sealed sector (_WindowPoSt_).
 
-These are computationally expensive operations which depend on the sector sizes used by the [Filecoin network](https://network.filecoin.io) on which the miner is running -, testnet, mainnet etc.-. For reference, the requirements listed below correspond to **32GiB sectors**, as used by mainnet and some testnets (_calibration_).
+The Filecoin network requires storage providers to run computationally expensive operations. The cost of these operations depends on which network the storage provider is running; some testnets use a smaller sector size to increase the speeds of transactions artificially. For reference, the requirements listed below correspond to **32GiB sectors**, as used by mainnet and some testnets.
 
 Different Filecoin Miner implementations may distribute sealing tasks differently, for example, using additional workers apart from the Miner. The following are _general_ requirements assuming all the mining operations are performed by the same machine. Resources needed by each operation are detailed later below. For a concrete example of hardware type and usage, see the [mining architectures](mining-architectures.md).
 
