@@ -230,10 +230,10 @@ If you were previously running a lotus miner monolith process, copy over the `De
   RetrievalFilter = "/absolute/path/to/retrieval_filter_program"
 ```
 
-:: info
+::: info
 The `[Libp2p]` section of the `config.toml` on the `mining/sealing/proving` node
 can be removed because it will no longer be running a Libp2p node, as we explained above.
-::
+:::
 
 #### Step 2. Disable the Market Subsystem on the `mining/sealing/proving` miner process
 
