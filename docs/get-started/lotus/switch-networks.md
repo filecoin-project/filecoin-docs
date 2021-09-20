@@ -13,7 +13,7 @@ As we mentioned in the [installation guide](installation.md), Lotus is compiled 
 + Local devnet - [You can run a local devnet](https://docs.filecoin.io/build/local-devnet/#manual-set-up)
 + Testnets
   + [Calibnet](https://network.filecoin.io/#calibration)
-  + Note: [NerpaNet](https://github.com/filecoin-project/community/discussions/74#discussioncomment-1348469) is deprecated.
+  + [NerpaNet](https://github.com/filecoin-project/community/discussions/74#discussioncomment-1348469) was deprecated on 2021-08-16 and is no longer available.
 + [Mainnet](https://network.filecoin.io/#mainnet)
 
 You can choose one of the following methods to switch to a different network.
