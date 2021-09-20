@@ -180,19 +180,19 @@ Once all the dependencies are installed, you can build and install Lotus.
 
     a. If you have **an AMD Zen or Intel Ice Lake CPU (or later)**, enable the use of SHA extensions by adding these two environment variables:
 
-        ```shell
-        export RUSTFLAGS="-C target-cpu=native -g"
-        export FFI_BUILD_FROM_SOURCE=1
-        ```
+    ```shell
+    export RUSTFLAGS="-C target-cpu=native -g"
+    export FFI_BUILD_FROM_SOURCE=1
+    ```
 
-        See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
+    See the [Native Filecoin FFI section](#native-filecoin-ffi) for more details about this process.
 
     a. Some older Intel and AMD processors without the ADX instruction support may panic with illegal instruction errors. To solve this, add the `CGO_CFLAGS` environment variable:
 
-       ```shell
-       export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
-       export CGO_CFLAGS="-D__BLST_PORTABLE__"
-       ```
+    ```shell
+    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+    export CGO_CFLAGS="-D__BLST_PORTABLE__"
+    ```
 
     a. By default, a 'multicore-sdr' option is used in the proofs library.  This feature is also used in FFI unless explicitly disabled.  To disable building with the 'multicore-sdr' dependency, set `FFI_USE_MULTICORE_SDR` to `0`:
 
