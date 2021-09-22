@@ -5,7 +5,7 @@ description: The Filecoin network has several different networks for testing, st
 
 # Networks
 
-This page contains information on the [networks available](#available-networks) for Filecoin, along with [performance criteria and maintenance guidelines](#network-performance).
+This page contains information on the [networks available](#available-networks) for Filecoin.
 
 ## Available networks
 
