@@ -4,7 +4,6 @@
 
 /questions.html https://venus.filecoin.io/questions.html
 /go-filecoin-tutorial/*  https://venus.filecoin.io/Getting-Started.html
-/networks/ https://network.filecoin.io
 
 /introduction/what-is-filecoin/ /about-filecoin/what-is-filecoin/
 /introduction/why-filecoin/ /about-filecoin/why-filecoin/
@@ -38,6 +37,9 @@
 /mine/spacerace/ https://spacerace.filecoin.io
 /mine/lotus/miner-wallets/ /mine/lotus/miner-addresses/
 /mine/lotus/miner-lifecycle/custom-storage-layout/ /mine/lotus/custom-storage-layout/
+
+/about-filecoin/network-performance/ /about-filecoin/networks
+/networks/ /about-filecoin/networks
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
