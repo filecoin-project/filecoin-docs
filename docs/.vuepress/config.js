@@ -64,6 +64,9 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: {
+            '/networks/': [
+                '/networks/network-performance',
+            ],
           '/get-started/': [
             {
               title: 'Store and retrieve',
@@ -201,7 +204,6 @@ module.exports = {
             '/about-filecoin/how-filecoin-works',
             '/about-filecoin/why-filecoin',
             '/about-filecoin/ipfs-and-filecoin',
-            '/about-filecoin/networks',
             '/about-filecoin/filecoin-compared-to',
             '/about-filecoin/managing-assets',
             '/about-filecoin/faq',
