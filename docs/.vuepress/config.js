@@ -201,7 +201,7 @@ module.exports = {
             '/about-filecoin/how-filecoin-works',
             '/about-filecoin/why-filecoin',
             '/about-filecoin/ipfs-and-filecoin',
-            '/about-filecoin/network-performance',
+            '/about-filecoin/networks',
             '/about-filecoin/filecoin-compared-to',
             '/about-filecoin/managing-assets',
             '/about-filecoin/faq',
@@ -277,6 +277,7 @@ module.exports = {
         notFoundPath: '/404/'
       }
     ],
+    '@vuepress/plugin-html-redirect',
     [
       '@vuepress/google-analytics',
       {
