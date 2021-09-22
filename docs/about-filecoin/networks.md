@@ -14,25 +14,15 @@ There are two networks available for Filecoin:
 - [Mainnet](#mainnet), the only production Filecoin network.
 - [Calibration](#calibration), the primary testing network for Filecoin. 
 
+::: tip
+Check the status of each network and subscribe to updates at [status.filecoin.io](https://status.filecoin.io).
+:::
+
 ### Mainnet
 
 Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supports 32 GiB and 64 GiB sectors.
 
-**Maintainer**: Protocol Labs
-
-**Resources**:
-
-- [Latest chain snapshot (pruned)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car)
-- [Latest chain snapshot (full)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car)
-- [Status page and incidents](https://filecoin.statuspage.io/)
-- [Stats dashboard](https://stats.filecoin.io/)
-- [Slack Channel for Updates: #fil-mainnet-announcements](https://filecoinproject.slack.com/archives/C019UFEACBT)
-- [Slack Channel for Questions: #fil-mainnet](https://filecoinproject.slack.com/archives/C0179RNEMU4)
-- [Block explorer: 1475 Explorer](https://1475ipfs.com/#/blockBrowser)
-- [Block explorer: Filfox](https://filfox.io/)
-- [Block explorer: Filplorer](https://filplorer.com/)
-- [Block explorer: Filscan](https://filscan.io/)
-- [Block explorer: Filscout](https://filscout.io/)
+**Maintainer**: [Protocol Labs](https://protocol.ai)
 
 **Genesis**:
 
@@ -72,6 +62,20 @@ Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supp
 /dns4/bootstrap-1.ipfsmain.cn/tcp/34723/p2p/12D3KooWMKxMkD5DMpSWsW7dBddKxKT7L2GgbNuckz9otxvkvByP
 ```
 
+**Resources**:
+
+- [Latest chain snapshot (pruned)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car)
+- [Latest chain snapshot (full)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car)
+- [Status page and incidents](https://filecoin.statuspage.io/)
+- [Stats dashboard](https://stats.filecoin.io/)
+- [Slack Channel for Updates: #fil-mainnet-announcements](https://filecoinproject.slack.com/archives/C019UFEACBT)
+- [Slack Channel for Questions: #fil-mainnet](https://filecoinproject.slack.com/archives/C0179RNEMU4)
+- [Block explorer: 1475 Explorer](https://1475ipfs.com/#/blockBrowser)
+- [Block explorer: Filfox](https://filfox.io/)
+- [Block explorer: Filplorer](https://filplorer.com/)
+- [Block explorer: Filscan](https://filscan.io/)
+- [Block explorer: Filscout](https://filscout.io/)
+
 ### Calibration
 
 Calibration network is the most realistic simulation of the Filecoin mainnet:
@@ -80,16 +84,7 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 - Prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage + retrieval functionality.
 - Same sector size as mainnet. The calibration network supports 32 GiB and 64 GiB sectors.
 
-**Maintainer**: Protocol Labs
-
-**Resources**:
-
-- [Faucet](https://faucet.calibration.fildev.network/)
-- [Stats Dashboard](https://stats.calibration.fildev.network/)
-- [Slack Channel for Updates: #fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC)
-- [Slack Channel for Questions: #fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS)
-- [Block explorer - Filscout for Calibration](https://calibration.filscout.com/en)
-- [Block explorer - filscan for Calibration](https://calibration.filscan.io/)
+**Maintainer**: [Protocol Labs](https://protocol.ai)
 
 **Genesis**:
 
@@ -117,6 +112,14 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 /dns4/bootstrap-2.calibration.fildev.network/tcp/1347/p2p/12D3KooWP1uB9Lo7yCA3S17TD4Y5wStP5Nk7Vqh53m8GsFjkyujD
 /dns4/bootstrap-3.calibration.fildev.network/tcp/1347/p2p/12D3KooWLrPM4WPK1YRGPCUwndWcDX8GCYgms3DiuofUmxwvhMCn
 ```
+**Resources**:
+
+- [Faucet](https://faucet.calibration.fildev.network/)
+- [Stats Dashboard](https://stats.calibration.fildev.network/)
+- [Slack Channel for Updates: #fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC)
+- [Slack Channel for Questions: #fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS)
+- [Block explorer - Filscout for Calibration](https://calibration.filscout.com/en)
+- [Block explorer - filscan for Calibration](https://calibration.filscan.io/)
 
 ### Deprecated networks
 
