@@ -9,10 +9,15 @@ This page contains information on the [networks available](#available-networks) 
 
 ## Available networks
 
+::: tip
+Checking networks' status and subscribing network updates [here](https://status.filecoin.io).
+:::
+
 There are two networks available for Filecoin:
 
 - [Mainnet](#mainnet), the only production Filecoin network.
 - [Calibration](#calibration), the primary testing network for Filecoin. 
+
 
 ### Mainnet
 
