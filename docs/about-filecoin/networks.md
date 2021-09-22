@@ -43,8 +43,8 @@ Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supp
 
 **Network parameters**:
 
-- Supported Sector Sizes: `32GiB` and `64GiB`
-- Consensus Miner Min Power: `10TiB`
+- Supported Sector Sizes: `32 GiB` and `64 GiB`
+- Consensus Miner Min Power: `10 TiB`
 - Epoch Duration Seconds: `30`
 - Expected Leaders per Epoch: `5`
 - WindowPoSt Proving Period: `2880`
@@ -100,8 +100,8 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 
 **Network parameters**:
 
-- Supported Sector Sizes: `32GiB` and `64GiB`
-- Consensus Miner Min Power: `32GiB`
+- Supported Sector Sizes: `32 GiB` and `64 GiB`
+- Consensus Miner Min Power: `32 GiB`
 - Epoch Duration Seconds: `30`
 - Expected Leaders per Epoch: `5`
 - WindowPoSt Proving Period: `2880`
@@ -146,9 +146,9 @@ The Filecoin [data storage protocol](../store/lotus/store-data.md) has a few key
 
 3. Deal shows up on-chain: once the miner receives the data, they verify it to make sure it matches the deal parameters, and then they publish the deal on the chain.
 
-4. Sector sealing: Once the deal shows up on-chain, the miner must still complete [generating a Proof-of-Replication and sealing the sector](https://spec.filecoin.io/#systems__filecoin_mining__sector__adding_storage). This process is currently estimated to take ~1.5hours for a 32GB sector on a machine that meets these [minimum hardware requirements for mining](../mine/hardware-requirements.md#general-hardware-requirements).
+4. Sector sealing: Once the deal shows up on-chain, the miner must still complete [generating a Proof-of-Replication and sealing the sector](https://spec.filecoin.io/#systems__filecoin_mining__sector__adding_storage). This process is currently estimated to take ~1.5hours for a 32 GB sector on a machine that meets these [minimum hardware requirements for mining](../mine/hardware-requirements.md#general-hardware-requirements).
 
-For most storage clients, the most important metric is the time it takes from deal acceptance to deal appearance on-chain. This metric is the sum of steps (1) to (3) above. Based on current high-level benchmarks, these steps are estimated to take around ~5-10 minutes for a 1MiB file.
+For most storage clients, the most important metric is the time it takes from deal acceptance to deal appearance on-chain. This metric is the sum of steps (1) to (3) above. Based on current high-level benchmarks, these steps are estimated to take around ~5-10 minutes for a 1 MiB file.
 
 ### Data retrieval
 
@@ -161,9 +161,9 @@ In both methods, the data retrieval process after a retrieval deal is accepted i
 
 1. **Funding the payment channel for retrieval**: Similar to the storage deal payment channel funding above, except for data retrieval. The timing estimates for payment channel creation and funding are roughly the same as noted above.
 
-2. **Unsealing (if needed)**: The miner unseals (decodes) the data so the requester can read it. Sealing and unsealing are symmetric processes, which means they take roughly the same amount of time in either direction. Thus, the unsealing step is estimated to take around as long as the sealing step listed above, or around ~3hours for a 32GiB sector on a machine running minimum hardware requirements.
+2. **Unsealing (if needed)**: The miner unseals (decodes) the data so that the requester can read it. Sealing and unsealing are symmetric processes, which means they take roughly the same amount of time in either direction. Thus, the unsealing step is estimated to take around as long as the sealing step listed above, or around ~3hours for a 32 GiB sector on a machine running minimum hardware requirements.
 
 3. **Data transfer**: The miner begins transferring the data back to the data requester. This is also transferred back at a rate similar to the original data transfer rate, which depends on several factors.
 
-Because of the various steps involved in the data retrieval process, Filecoin storage currently meets similar performance bars as traditional _warm_ or _cold_ storage. To get performance that is similar to other hot storage solutions, most users utilize Filecoin in conjunction with a caching layer such as IPFS. These hybrid and multi-tiered storage solutions use IPFS for hot storage and Filecoin for affordable, frequent, and versioned backups. Some example hybrid storage products include [Powergate](../build/powergate.md) and [Textile Buckets](../build/filecoin-pinning-services.md).
+Because of the various steps involved in the data retrieval process, Filecoin storage currently meets similar performance bars as traditional _warm_ or _cold_ storage. To get performance that is similar to other hot storage solutions, most users utilize Filecoin with a caching layer such as IPFS. These hybrid and multi-tiered storage solutions use IPFS for hot storage and Filecoin for affordable, frequent, and versioned backups. Some example hybrid storage products include [Powergate](../build/powergate.md) and [Textile Buckets](../build/filecoin-pinning-services.md).
 
