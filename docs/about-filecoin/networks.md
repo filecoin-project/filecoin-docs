@@ -10,7 +10,7 @@ This page contains information on the [networks available](#available-networks) 
 ## Available networks
 
 ::: tip
-Checking networks' status and subscribing network updates [here](https://status.filecoin.io).
+Checking networks' status and subscribing to network updates [here](https://status.filecoin.io).
 :::
 
 There are two networks available for Filecoin:
