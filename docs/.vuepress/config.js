@@ -279,7 +279,6 @@ module.exports = {
         notFoundPath: '/404/'
       }
     ],
-    '@vuepress/plugin-html-redirect',
     [
       '@vuepress/google-analytics',
       {
