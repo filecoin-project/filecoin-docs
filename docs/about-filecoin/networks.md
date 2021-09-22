@@ -127,7 +127,7 @@ Here is a list of networks that are now deprecated:
 
 | Name | Description | Deprecated on |
 | --- | --- | --- |
-| Nerpa | A test network with tiny sector sizes. This network was for app developers to test the very basic functionality of their applications before moving over to the calibration testnet. | 2021-09-16 |
+| Nerpa | A test network with tiny sector sizes. This network was for app developers to test the very basic functionality of their applications before moving over to the calibration testnet. | 2021-08-16 |
 
 ## Network performance
 
