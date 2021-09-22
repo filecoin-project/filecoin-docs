@@ -1,6 +1,6 @@
 ---
 title: 'Lotus Miner: journal'
-description: 'This page is about lotus miner journal,The events from journal allow you to observe the workflow of the program in detail and makes troubleshooting easier.'
+description: 'This page is about Lotus Miner journal,The events from journal allow you to observe the workflow of the program in detail and make troubleshooting easier.'
 breadcrumb: 'Miner-journal'
 ---
 
@@ -8,45 +8,42 @@ breadcrumb: 'Miner-journal'
 
 {{ $frontmatter.description }}
 
-## File location 
-The journal directory  is located at ~/.lotusminer/journal by default.If you have configured LOTUS_MINER_PATH, it should be located in LOTUS_MINER_PATH/journal,and the latest journal file is: lotus-journal.ndjson.
+## File location
+
+The journal directory  is located at `~/.lotusminer/journal` by default, If you have configured `LOTUS_MINER_PATH`,  it should be located in `LOTUS_MINER_PATH/journal`,and the latest journal file is `lotus-journal.ndjson`.
 
 ## The difference with log
-Journal is json format by default with system and event identifiers for easier filtering and processing
+
+Journal is json format by default with system and event identifiers for easier filtering and processing.
 
 ## Check the journal
-You can filter the information if you want
 
-Check the sealing process and sealing status
+Check the sealing process and sealing status:
 
-```shell 
+```shell
     cat lotus-journal.ndjson | grep sealing_states
 ```
+
 You may see someting like this by adding more filter options. And you can clearly see what's happening when sealing a sector.
->{"System":"storage","Event":"sealing_states","Timestamp":"2021-09-17T14:12:51.45634321+08:00","Data":{"SectorNumber":0,"SectorType":0,"From":"","After":"Packing","Error":""}}
->...  
- {"System":"storage","Event":"sealing_states","Timestamp":"2021-09-17T14:22:02.53735624+08:00","Data":{"SectorNumber":56,"SectorType":5,"From":"FinalizeSector","After":"Proving","Error":""}}
+>{"System":"storage","Event":"sealing_states","Timestamp":"2021-09-22T12:51:04.144905781+08:00","Data":{"SectorNumber":67,"SectorType":5,"From":"PreCommitBatchWait","After":"WaitSeed","Error":""}}
+{"System":"storage","Event":"sealing_states","Timestamp":"2021-09-22T12:53:14.389710503+08:00","Data":{"SectorNumber":67,"SectorType":5,"From":"WaitSeed","After":"Committing","Error":""}}
 
-Check windowpost 
+Check windowpost:
 
-```shell 
+```shell
     cat lotus-journal.ndjson | grep wdpost
 ```
-You may see something like this. it will be very useful when you get windowpost problem. 
->{"System":"wdpost","Event":"scheduler","Timestamp":"2021-09-17T14:09:57.281960293+08:00",  
->"Data":{"Deadline":{"CurrentEpoch":28687,"PeriodStart":26578,"Index":35,"Open":28678,  
->"Close":28738,"Challenge":28658,"FaultCutoff":28608,"WPoStPeriodDeadlines":48,  
->"WPoStProvingPeriod":2880,"WPoStChallengeWindow":60,"WPoStChallengeLookback":20,  
->"FaultDeclarationCutoff":70},"Height":28687,"TipSet":...    
- {"System":"wdpost","Event":"recoveries_processed","Timestamp":"2021-09-17T14:09:57.283986234+08:00",  
->"Data":{"Deadline":{"CurrentEpoch":28687,"PeriodStart":26578,"Index":35,"Open":28678,"Close":28738,  
->"Challenge":28658,"FaultCutoff":28608,"WPoStPeriodDeadlines":48,"WPoStProvingPeriod":2880,  
->"WPoStChallengeWindow":60,"WPoStChallengeLookback":20,"FaultDeclarationCutoff":70},"Height":28687,"TipSet":...  
 
-Check mined record
-```shell 
+You may see something like this. it will be very useful when you get windowpost problem.
+>{"System":"wdpost","Event":"scheduler","Timestamp":"2021-09-22T12:49:33.802956998+08:00","Data":{"Deadline":{"CurrentEpoch":31436,"PeriodStart":29458,"Index":32,"Open":31378,"Close":31438,  "Challenge":31358,"FaultCutoff":31308,"WPoStPeriodDeadlines":48,"WPoStProvingPeriod":2880,  
+ "WPoStChallengeWindow":60,"WPoStChallengeLookback":20,"FaultDeclarationCutoff":70},"Height":31436,
+"TipSet":[{"/":"bafy2bzaceajca6lstl3f6ez2ilfsrqlhugcfvr7eybfyomvtbebt43z2xyjm2"}],"State":"started"}}  
+
+Check mined record:
+
+```shell
     cat lotus-journal.ndjson | grep block_mined
 ```
+
 You will get something like this.
->{"System":"miner","Event":"block_mined","Timestamp":"2021-09-17T15:42:32.132794312+08:00","Data":{"cid":{"/":"bafy2bzacecec3unxeft6mc2df2yqq2mg6e2jnsf4koh4lc7u5ebrclyp6m74m"},"epoch":29209,"nulls":0,"parents":[{"/":"bafy2bzacecg45xpyz5yg74nlksxlq6grs4sixqpkom73blegcuwnu45pdrkhg"}],"timestamp":1630863113}}  
- {"System":"miner","Event":"block_mined","Timestamp":"2021-09-17T15:42:42.337731714+08:00","Data":{"cid":{"/":"bafy2bzacec2h7ltyyxuhtkyu6jzi6ozjw27evm3ht64s747t7dqpjt6f3cwww"},"epoch":29210,"nulls":0,"parents":[{"/":"bafy2bzacecec3unxeft6mc2df2yqq2mg6e2jnsf4koh4lc7u5ebrclyp6m74m"}],"timestamp":1630863117}}  
+>{"System":"miner","Event":"block_mined","Timestamp":"2021-09-22T12:49:56.313760193+08:00","Data":{"cid":{"/":"bafy2bzaceazj2htu5d5ylny5ixj2kxp7tmcfubgbo7hotc3z37zsrleidoolu"},"epoch":31437,"nulls":0,"parents":[{"/":"bafy2bzaceajca6lstl3f6ez2ilfsrqlhugcfvr7eybfyomvtbebt43z2xyjm2"}],"timestamp":1630872025}}
