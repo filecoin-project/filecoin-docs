@@ -95,6 +95,7 @@ module.exports = {
                 ['lotus/ledger', 'Ledger wallet'],
                 ['lotus/upgrades', 'Upgrades'],
                 ['lotus/tips-running-in-china', 'Tips when running in China'],
+                ['lotus/backup-and-restore', 'Backup and restore'],
                 ['lotus/configuration-and-advanced-usage', 'Advanced options'],
                 ['lotus/troubleshooting', 'Troubleshooting']
               ]
