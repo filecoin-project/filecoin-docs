@@ -212,6 +212,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Miner tools
 
+- [Bidbot](https://github.com/textileio/bidbot) - A Filecoin Network sidecar to bid in storage deal auctions.
 - [Filgas.io](https://fgas.io/) - real-time Filecoin mining gas queries.
 - [Hactar](https://www.hactar.app/) - analytics for your Filecoin miner node.
 - [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - Prometheus, Grafana and Python monitoring dashboard.
