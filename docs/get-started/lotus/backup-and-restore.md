@@ -3,9 +3,11 @@ title: Backup and restore
 description: "You can backup your Lotus node. You can then restore this backup if something goes wrong, or you simply wish to move your Lotus node from one computer to another."
 ---
 
-:::warning
+# Backup and restore
+
+You can backup your Lotus node. You can then restore this backup if something goes wrong, or you simply wish to move your Lotus node from one computer to another.
+
 This backup process is different to that of the [`lotus-miner` backup](../../mine/lotus/backup-and-restore.md). This backup process does not retain any mining information.
-:::
 
 ## Backup
 
@@ -21,6 +23,8 @@ This backup process is different to that of the [`lotus-miner` backup](../../min
     2021-09-24T20:21:03.987Z        INFO    backupds        backupds/datastore.go:130
     Datastore backup done
     ```
+
+1. Your Lotus daemon data is now backed up into `lotus-backup.cbor`.
 
 ## Restore
 
