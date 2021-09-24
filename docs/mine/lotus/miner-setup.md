@@ -12,8 +12,6 @@ breadcrumb: 'Miner setup'
 Mining will only work if you fully cover the [minimal hardware requirements](../hardware-requirements.md) for the network in which you will mine. As the mining process is very demanding for the machines on several aspects and relies on precise configuration, we strongly recommend Linux systems administration experience before embarking.
 :::
 
-[[TOC]]
-
 ## Pre-requisites
 
 Before attempting to follow this guide:
@@ -28,6 +26,16 @@ Be warned: if you decide to skip any of the sections below, things will not work
 :::
 
 ## Before starting the miner
+
+Follow these sections through _before_ attempting to start the miner. Running `lotus-miner` prematurely will cause errors.
+
+### Install extra dependencies
+
+If you are running an Nvidia GPU, install `nvidia-opencl-icd`. Most Linux distributions contain this package in their package manager:
+
+```shell
+sudo apt update -y && sudo apt install -y nvidia-opencl-icd -y
+```
 
 ### Performance tweaks
 
