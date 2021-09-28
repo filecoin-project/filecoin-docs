@@ -54,27 +54,6 @@ lotus client generate-car <input_path/filename> <output_path/data.car>
 lotus client commP <inputCarFilePath>
 ```
 
-### Calculate the datasize
-
-1. Take the final car size `ls -l data.car`
-1. Round it up to the nearest power of 2. This is your padded piece size.
-1. Divide by 128, multiply by 127. this is your unpadded piece size.
-
-You can also use WolframAlpha to get your datasize:
-
-1. Go to [Wolfram Alpha](https://www.wolframalpha.com).
-1. Enter `x = SIZE_IN_BYTES; 127*( 2^( ceil( log2( ceil ( x /127 ) ) ) ) )`, replacing `SIZE_IN_BYTES` to your value.
-1. Your solution can be found under **Substitution**
-    
-    ![](./images/very-large-files/wolfram-alpha.png)
-
-Propose the offline deal with the miner:
-
-```sh
-lotus client deal --manual-piece-cid=CID --manual-piece-size=datasize <Data CID> <miner> <price> <duration>
-```
-Your Data CID is provided when you import our data into Lotus using `lotus client import`.
-
 ### Transfer the data to the miner offline
 
 This can be done several ways, such as shipping hard drives from the client to the storage miner.
