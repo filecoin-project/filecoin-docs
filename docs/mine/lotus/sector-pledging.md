@@ -86,7 +86,7 @@ lotus-miner sectors check-expire
 
 If you want to check for sectors that will expire within 33 days (669600 epoch in devnet) , add the `--cutoff` option along with your desired epoch:
 
-```shell
+```shell with-output
 lotus-miner sectors check-expire --cutoff 669600
 ```
 
