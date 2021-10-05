@@ -365,7 +365,7 @@ The available units are:
  "h":  int64(Hour),
 ```
 
-For example if you want to set the sector lifecycle to 180 days, you can multiply 180 days by 24 hours per day to get 4320 hours and set this value to "4320h0m0s".
+For example, if you want to set the sector lifecycle to 180 days, you can multiply 180 days by 24 hours per day to get 4320 hours and set this value to `"4320h0m0s"`.
 
 ## Storage section
 

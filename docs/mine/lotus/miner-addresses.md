@@ -113,7 +113,7 @@ To set up a _control address_:
 
 Repeat this procedure to add additional addresses.
 
-5. You can Specify other actor to check control address:
+5. You can specify other actor to check control address:
 
 ```shell
 lotus-miner --actor f01000 actor control list

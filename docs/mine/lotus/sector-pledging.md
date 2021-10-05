@@ -78,19 +78,19 @@ The sector should become inactive within 24 hours after a new replacement sector
 
 ## Inspect expiring sectors
 
-First you can check the sectors that are about to expire. Sectors that will expire within 60 days can be checked by default with the following command:
+You can check which sectors are about to expire. Sectors that will expire within 60 days can be checked by default with the following command:
 
 ```shell
 lotus-miner sectors check-expire
 ```
 
-If you want to check for sectors that will expire within 33 days (669600 epoch in devnet) , add the `--cutoff` option, timing in epoch, here is an example in devnet:
+If you want to check for sectors that will expire within 33 days (669600 epoch in devnet) , add the `--cutoff` option along with your desired epoch:
 
-```shell with-output
+```shell
 lotus-miner sectors check-expire --cutoff 669600
 ```
 
-```
+```shell output
 ID  SealProof  InitialPledge  Activation                      Expiration                  MaxExpiration                 MaxExtendNow                  
 5   5          59.605 nFIL    1519 (1 day 9 hours ago)        691857 (in 4 weeks 2 days)  5257519 (in 34 weeks 3 days)  1587303 (in 10 weeks 2 days)  
 10  5          59.605 nFIL    3588 (1 day 7 hours ago)        697617 (in 4 weeks 2 days)  5259588 (in 34 weeks 4 days)  1587303 (in 10 weeks 2 days)  
@@ -102,8 +102,6 @@ ID  SealProof  InitialPledge  Activation                      Expiration        
 ## Extend sectors
 
 You can extend the lifecycle of a sector with the command:
-
-```shell  practical and flexible tool:
 
 ```shell
 lotus-miner sectors renew [command options] [arguments...]
@@ -123,8 +121,12 @@ lotus-miner sectors renew  --sector-file <your-sectorfile> --new-expiration 1555
 
 ::: warning
 You have to select the sectors to renew. That means you have to specify the `--from` and `--to` option, or specify the sector file, if no sector is selected this command will have no effect.
-Format of sectorfile:  
- 1  
- 2  
- ...  
+
+Format of sector file:
+
+```  
+1  
+2  
+...
+```  
 :::
