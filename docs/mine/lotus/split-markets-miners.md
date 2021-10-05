@@ -487,10 +487,10 @@ lotus-miner actor set-addrs <NEW_MULTIADDR>
 
 ```toml
 [Addresses]  
-  \#PreCommitControl = ["f00XX1"]  
-  \# CommitControl = ["f00XX2"]  
+    PreCommitControl = ["f00XX1"]  
+    CommitControl = ["f00XX2"]  
     TerminateControl = []  
-  \#  DealPublishControl = ["f00XX3"] 
+    DealPublishControl = ["f00XX3"] 
     DisableOwnerFallback = false  
     DisableWorkerFallback = false 
 ```
