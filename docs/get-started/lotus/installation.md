@@ -142,7 +142,7 @@ wget -c https://golang.org/dl/go1.16.4.linux-amd64.tar.gz -O - | sudo tar -xz -C
 You'll need to add `/usr/local/go/bin` to your path. For most Linux distributions you can run something like:
 
 ```shell
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
 ```
 
 See the [official Golang installation instructions](https://golang.org/doc/install) if you get stuck.
