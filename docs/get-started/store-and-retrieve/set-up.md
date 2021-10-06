@@ -78,19 +78,19 @@ There are two simple ways to install Lotus on Ubuntu:
 1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/):
 
     ```shell
-    wget https://github.com/filecoin-project/lotus/releases/download/v1.10.0/Lotus-v1.10.0-x86_64.AppImage
+    wget https://github.com/filecoin-project/lotus/releases/download/v1.11.1/Lotus-v1.11.1-x86_64.AppImage
     ```
 
 1. Make the `AppImage` executable:
 
     ```shell
-    chmod +x Lotus-v1.10.0-x86_64.AppImage
+    chmod +x Lotus-v1.11.1-x86_64.AppImage
     ```
 
 1. Move the `AppImage` to `/usr/local/bin` and rename it `lotus`:
 
     ```shell
-    sudo mv Lotus-v1.10.0-x86_64.AppImage /usr/local/bin/lotus
+    sudo mv Lotus-v1.11.1-x86_64.AppImage /usr/local/bin/lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
