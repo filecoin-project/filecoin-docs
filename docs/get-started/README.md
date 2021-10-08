@@ -69,9 +69,9 @@ There are a number of [additional wallets](https://docs.filecoin.io/reference/#o
 There are 4 Filecoin protocol implementations (or "node software") currently in progress:
 
 - [lotus](https://github.com/filecoin-project/lotus/) (Go): This implementation is closest to feature-complete and is, therefore, the recommended Filecoin protocol implementation.
+- [venus](https://github.com/filecoin-project/venus) (Go): This implementation is supporting tens of nodes running on the Filecoin network, participants are encouraged to try this implementation and feedback to [Venus team](https://filecoinproject.slack.com/archives/CEHHJNJS3). 
 - [forest](https://github.com/chainsafe/forest) (Rust)
 - [fuhon](https://github.com/filecoin-project/cpp-filecoin) (C++)
-- [venus](https://github.com/filecoin-project/venus) (Go)
 
 Each of these software clients implements the Filecoin protocol as described in the [Filecoin protocol specification](https://filecoin-project.github.io/specs). To learn more about why there are multiple Filecoin implementations, please read [this blog post](https://filecoin.io/blog/announcing-filecoin-implementations-in-rust-and-c++/).
 
@@ -86,7 +86,7 @@ Here is a snapshot of each implementation's progress across the primary parts of
 | 5. Blockchain      | ✅    | ✅    | ✅     | ✅    |
 | 6. Token           | ✅    | ✅    | ✅     | ✅    |
 | 7. Storage Mining  | ✅    | 🔄    | 🔄     | 🔄    |
-| 8. Market          | ✅    | ⛔️   | 🔄      | ⛔️     |
+| 8. Market          | ✅    | 🔶  | 🔄      | ⛔️     |
 
 ✅ : fully-featured implementation. 
 🔄 : reuses components from another implementation. 
