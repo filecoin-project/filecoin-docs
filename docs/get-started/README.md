@@ -69,7 +69,7 @@ There are a number of [additional wallets](https://docs.filecoin.io/reference/#o
 There are 4 Filecoin protocol implementations (or "node software") currently in progress:
 
 - [lotus](https://github.com/filecoin-project/lotus/) (Go): This implementation is closest to feature-complete and is, therefore, the recommended Filecoin protocol implementation.
-- [venus](https://github.com/filecoin-project/venus) (Go): This implementation is supporting tens of nodes running on the Filecoin network, participants are encouraged to try this implementation and feedback to [Venus team](https://filecoinproject.slack.com/archives/CEHHJNJS3). 
+- [venus](https://github.com/filecoin-project/venus) (Go): This implementation is currently running tens of nodes on the Filecoin network. Participants are encouraged to experiment with this implementation and provide feedback to the [Venus team](https://filecoinproject.slack.com/archives/CEHHJNJS3). 
 - [forest](https://github.com/chainsafe/forest) (Rust)
 - [fuhon](https://github.com/filecoin-project/cpp-filecoin) (C++)
 
