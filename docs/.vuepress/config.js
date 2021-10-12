@@ -162,6 +162,7 @@ module.exports = {
                 ['lotus/gpus', 'Custom GPUs'],
                 //'lotus/disaster-recovery',
                 ['lotus/tips-running-in-china', 'Tips for running in China'],
+                ['lotus/miner-journal', 'Journal'],
                 ['lotus/miner-troubleshooting', 'Troubleshooting']
               ]
             }
