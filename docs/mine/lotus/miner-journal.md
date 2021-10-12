@@ -38,7 +38,7 @@ The journal file uses the json format by default, with system and event identifi
 
 1. Check _mined_ records:
 
-    ```shell
+    ```shell with-output
     cat lotus-journal.ndjson | grep block_mined
     ```
 
