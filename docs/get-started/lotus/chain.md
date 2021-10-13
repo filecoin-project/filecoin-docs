@@ -170,35 +170,36 @@ It is possible to _prune_ the current chain data used by Lotus to reduce the nod
 
 ```shell with-output
 lotus chain export --recent-stateroots=901 --skip-old-msgs my-snapshot.car
+```
 
-1. Stop the Lotus daemon:
+2. Stop the Lotus daemon:
 
 ```shell
 lotus daemon stop
 ```
 
-1. Back up the chain data and create a directory  for chain data:
+3. Back up the chain data and create a directory  for chain data:
 
 ```shell
 mv ~/.lotus/datastore/chain ~/.lotus/datastore/chain_backup
 mkdir ~/.lotus/datastore/chain 
 ```
 
-1. Import the chain data:
+4. Import the chain data:
 
 ```shell
 lotus daemon --import-snapshot my-snapshot.car --halt-after-import
 ```
 
-1. Start the daemon:
+5. Start the daemon:
 
-    ```shell
-    lotus daemon 
-    ```
+```shell
+lotus daemon 
+```
 
-1. Open another ssh connection or terminal to check sync status :
+6. Open another ssh connection or terminal to check sync status :
 
-    ```shell
-    lotus sync status 
-    lotus sync wait 
-    ```
+```shell
+lotus sync status 
+lotus sync wait 
+```
