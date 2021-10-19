@@ -108,8 +108,8 @@ module.exports = {
           ],
 
           '/store/': [
+            'estuary',
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
-            'slate',
             'starling',
             {
               title: 'LOTUS',
@@ -124,7 +124,6 @@ module.exports = {
               ]
             },
             'filecoin-plus',
-            'estuary',
           ],
 
           '/mine/': [
