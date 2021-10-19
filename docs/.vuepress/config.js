@@ -108,6 +108,7 @@ module.exports = {
           ],
 
           '/store/': [
+            'estuary',
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             'starling',
             {
@@ -123,7 +124,6 @@ module.exports = {
               ]
             },
             'filecoin-plus',
-            'estuary',
           ],
 
           '/mine/': [
