@@ -169,11 +169,6 @@ module.exports = {
 
           '/build/': [
             'get-started',
-            'textile-buckets',
-            'hosted-powergate',
-            'hosted-lotus',
-            'powergate',
-            'estuary',
             {
               title: 'Lotus',
               path: '/build/lotus/',
@@ -189,6 +184,11 @@ module.exports = {
                 ['lotus/troubleshooting', 'Troubleshooting']
               ]
             },
+            'hosted-lotus',
+            'hosted-powergate',
+            'powergate',
+            'estuary',
+            'textile-buckets',
             'filecoin-pinning-services',
             'signing-libraries',
             ['local-devnet', 'Local devnet']
