@@ -29,3 +29,4 @@ These are the main guides to swiftly get started with Lotus:
 - [Learn about the Lotus configuration](configuration-and-advanced-usage.md)
 
 Please check the side menu for additional guides!
+ 
