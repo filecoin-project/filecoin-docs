@@ -40,10 +40,9 @@ For more information about the benefits and the architecture of Filecoin-backed 
 
 Hosted node providers take care of running Filecoin node software for you so that you can focus on integrating and building on top of it.
 
-| Name                                    | Description                                                                                                                                                                                     | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
-| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Glif Nodes](hosted-lotus.md)           | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint.                                                                                                           | No                                                                            |
-| [Hosted Powergate](hosted-powergate.md) | The Textile team offers hosted [Powergate](powergate.md) instances. Read the announcement [here](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/). | No                                                                            |
+| Name                          | Description                                                  | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
+| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Glif Nodes](hosted-lotus.md) | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint. | No                                                           |
 
 ## Developer references
 
