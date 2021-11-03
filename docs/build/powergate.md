@@ -8,9 +8,9 @@ breadcrumb: 'Powergate'
 
 {{ $frontmatter.description }}
 
-Powergate exposes higher-level APIs for developers that facilitate easier interaction with IPFS and Filecoin nodes. It also handles wallet management, long-term deal management, and provides many features that improve the overall experience of being a storage client on Filecoin. You can read more about Powergate in the [Textile docs](https://docs.textile.io/powergate/).
+Powergate exposes higher-level APIs for developers that facilitate interaction with IPFS and Filecoin nodes. It also handles wallet management, long-term deal management, and provides many features that improve the overall experience of being a storage client on Filecoin. You can read more about Powergate in the [Textile docs](https://docs.textile.io/powergate/).
 
-Powergate is the **recommended solution** for developers who want an easier interface and better performance from Filecoin, but who prefer to manage their own nodes, and also gain access to rich and flexible storage configurations. For examples:
+Powergate is the **recommended solution** for developers who want an easier interface and better performance from Filecoin, but who prefer to manage their nodes, and also gain access to rich and flexible storage configurations. For examples:
 
 + Replication factor
 + Miner selection
@@ -36,9 +36,9 @@ Sometimes the best way to learn is through examples.
 This guide will help you get started with _Powergate CLI_. We will be using the *Powergate CLI* to interact with the Powergate API endpoint.
 
 ::: tip
-Developers can also start with the localnet as you'll have access to the full set of APIs and capabilities without having to sync to the network right away. When you're ready, you can update your Powergate to connect to the live *mainnet*.
+Developers can also start with the localnet as you'll have access to all the APIs and capabilities without having to sync to the network right away. When you're ready, you can update your Powergate to connect to the live *mainnet*.
 
-We will use MainNet as an example here. Learning how to use localnet, see [Powergate localnet instruction](https://docs.textile.io/powergate/localnet/). 
+We will use the Filecoin mainnet as an example here. Learning how to use localnet, see [Powergate localnet instruction](https://docs.textile.io/powergate/localnet/). 
 
 :::
 
@@ -56,7 +56,7 @@ We will use MainNet as an example here. Learning how to use localnet, see [Power
 
    Before you can start storing and retrieving data from Filecoin, you need to fully sync from Filecoin MainNet which may take over a day.
 
-   To speed up the syncing process, you can also choose to sync from current snapshot which was provided by Protocol Labs every hour.  For all the details, please check [Bootstrap a clean Lotus node from a snapshot](https://docs.textile.io/powergate/mainnet/#bootstrap-a-clean-lotus-node-from-a-snapshot).  
+   To speed up the syncing process, you can also choose to sync from the current snapshot provided by Protocol Labs every hour.  For all the details, please check [Bootstrap a clean Lotus node from a snapshot](https://docs.textile.io/powergate/mainnet/#bootstrap-a-clean-lotus-node-from-a-snapshot).  
 
 1. **Create a new User instance**:
 
@@ -66,7 +66,7 @@ We will use MainNet as an example here. Learning how to use localnet, see [Power
    pow admin user create
    ```
 
-   This will print an instance ID and a User auth token. Write down the token as we will need it for every other User operation. As an optional convienience (vs. including the User `--token` flag on every `pow` command), you can let Powergate know about it with the `POW_TOEKN` environment variable:
+   This will print an instance ID and a User auth token. Write down the auth token; we will need it for every other user-operation. As an optional convienience (vs. including the User `--token` flag on every `pow` command), you can let Powergate know about it with the `POW_TOEKN` environment variable:
 
    ```sh
    export POW_TOKEN=<token>
@@ -104,7 +104,7 @@ We will use MainNet as an example here. Learning how to use localnet, see [Power
 
 1. **Retrieve your file**
 
-   To retrieve the file that you storage through POW CLI, you can run the following command to download it from IPFS.
+   To retrieve the file that you stored through POW CLI, you can run the following command to download it from IPFS:
 
    ```
    pow data get <cid> fileName
