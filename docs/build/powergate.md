@@ -115,7 +115,7 @@ We will use MainNet as an example here. Learning how to use localnet, see [Power
    Once you are familiar with the Powergate workflows, you can start programatically controlling the Powergate instance. Textile provides Go and Javascript API clients for Powergate using the gRPC API endpoint:
 
    - [js-powergate-client](https://github.com/textileio/js-powergate-client)
-   - [Go Powergate client module](https://godoc.org/github.com/textileio/powergate/api/client)
+   - [Go Powergate client module](https://pkg.go.dev/github.com/textileio/powergate/api/client)
 
 ## Additional Powergate resources
 
