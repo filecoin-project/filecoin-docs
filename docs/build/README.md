@@ -17,7 +17,7 @@ There are several options to start integrating with Filecoin. Here are some guid
 
 - [Build with Glif-nodes](hosted-lotus.md), for users looking for an endpoint to submit messages to the chain. Standalone Lotus, with optional Powergate, are also available).
 - [Build with Lotus](lotus/README.md), for users looking to interact with their own, local Lotus nodes.
-- [Build with Powergate](hosted-powergate.md), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
+- [Build with Powergate](powergate.md), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
 - [Build with Textile buckets](textile-buckets.md), for users looking for simple IPFS storage with Filecoin-based archival, with encryption and shared buckets support.
 - [Store and retrieve data](../get-started/store-and-retrieve) directly with a Lotus node by following this tutorial series.
 
@@ -40,10 +40,9 @@ For more information about the benefits and the architecture of Filecoin-backed 
 
 Hosted node providers take care of running Filecoin node software for you so that you can focus on integrating and building on top of it.
 
-| Name                                    | Description                                                                                                                                                                                     | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
-| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Glif Nodes](hosted-lotus.md)           | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint.                                                                                                           | No                                                                            |
-| [Hosted Powergate](hosted-powergate.md) | The Textile team offers hosted [Powergate](powergate.md) instances. Read the announcement [here](https://blog.textile.io/announcing-managed-powergate-instances-enterprise-filecoin-and-ipfs/). | No                                                                            |
+| Name                          | Description                                                  | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
+| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Glif Nodes](hosted-lotus.md) | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint. | No                                                           |
 
 ## Developer references
 

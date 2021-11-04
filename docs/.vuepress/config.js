@@ -170,7 +170,6 @@ module.exports = {
           '/build/': [
             'get-started',
             'textile-buckets',
-            'hosted-powergate',
             'hosted-lotus',
             'powergate',
             'estuary',
