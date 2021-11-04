@@ -198,6 +198,7 @@ module.exports = {
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
             ['lotus-api', 'Lotus API']
+            'exchanges',
           ],
 
           '/': [
