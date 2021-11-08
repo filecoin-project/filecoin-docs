@@ -1,6 +1,6 @@
 ---
-title: Exchange Integration Guide
-description: 'Lorem ipsum.'
+title: "Exchanges"
+description: "Use this guide to help you list Filecoin on your exchange platform."
 ---
 
 ## Filecoin Integration Guide
