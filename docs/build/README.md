@@ -8,7 +8,7 @@ description: Documentation to start building applications on Filecoin.
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
 
 :::tip
-Use one of the community built tools and services to get started. [Take a look now →](../store/README.md) 
+Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
 :::
 
 ## Get started
@@ -40,9 +40,9 @@ For more information about the benefits and the architecture of Filecoin-backed 
 
 Hosted node providers take care of running Filecoin node software for you so that you can focus on integrating and building on top of it.
 
-| Name                          | Description                                                  | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
-| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Glif Nodes](hosted-lotus.md) | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint. | No                                                           |
+| Name                          | Description                                                                           | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
+| ----------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Glif Nodes](hosted-lotus.md) | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint. | No                                                                            |
 
 ## Developer references
 
@@ -62,4 +62,3 @@ The following documentation links can help you start building on Filecoin:
 - [Developing on Filecoin](https://www.youtube.com/watch?v=aGCpq0Xf-w8) (video)
 - Textile tools: [video](https://www.youtube.com/watch?v=IZ8M9m9_uJY) and [blog post](https://blog.textile.io/developer-tools-for-filecoin-ipfs-web/)
 - [Building decentralized apps using Fleek’s Space daemon](https://www.youtube.com/watch?v=pWJ5fty-7mA) (video)
-

@@ -12,9 +12,9 @@ Powergate exposes higher-level APIs for developers that facilitate interaction w
 
 Powergate is the **recommended solution** for developers who want an easier interface and better performance from Filecoin, but who prefer to manage their nodes, and also gain access to rich and flexible storage configurations. For examples:
 
-+ Replication factor
-+ Miner selection
-+ Deal renewal and Repair
+- Replication factor
+- Miner selection
+- Deal renewal and Repair
 
 ## How to use Powergate
 
@@ -22,23 +22,23 @@ There are many ways to interact with the Powergate. These pathways are well-docu
 
 - **Powergate CLI**: You can [install](https://docs.textile.io/powergate/#getting-started), run, and interact directly with the [Powergate CLI](https://docs.textile.io/powergate/cli/pow/).
 - **Powergate JS API client**: If you would like to use Powergate in your JS application, you can use the [Powergate JS Client](https://textileio.github.io/js-powergate-client/).
-- **Powergate Go API client**: If you would like to use Powergate in your Go application, you can use the [Powergate Go Client](https://godoc.org/github.com/textileio/powergate/api/client).
+- **Powergate Go API client**: If you would like to use Powergate in your Go application, you can use the [Powergate Go Client](https://pkg.go.dev/github.com/textileio/powergate/api/client?utm_source=godoc).
 
 ::: tip
 Sometimes the best way to learn is through examples.
 
-+ See a full production application ([Slate](https://github.com/filecoin-project/slate/)) built on the **Powergate JS Client**.
+- See a full production application ([Slate](https://github.com/filecoin-project/slate/)) built on the **Powergate JS Client**.
 
 :::
 
 ### Getting started with POW CLI
 
-This guide will help you get started with _Powergate CLI_. We will be using the *Powergate CLI* to interact with the Powergate API endpoint.
+This guide will help you get started with _Powergate CLI_. We will be using the _Powergate CLI_ to interact with the Powergate API endpoint.
 
 ::: tip
-Developers can also start with the localnet as you'll have access to all the APIs and capabilities without having to sync to the network right away. When you're ready, you can update your Powergate to connect to the live *mainnet*.
+Developers can also start with the localnet as you'll have access to all the APIs and capabilities without having to sync to the network right away. When you're ready, you can update your Powergate to connect to the live _mainnet_.
 
-We will use the Filecoin mainnet as an example here. Learning how to use localnet, see [Powergate localnet instruction](https://docs.textile.io/powergate/localnet/). 
+We will use the Filecoin mainnet as an example here. Learning how to use localnet, see [Powergate localnet instruction](https://docs.textile.io/powergate/localnet/).
 
 :::
 
@@ -52,11 +52,11 @@ We will use the Filecoin mainnet as an example here. Learning how to use localne
    make install-pow
    ```
 
-1. **Sync the blocks for Filecoin MainNet**:
+1. **Sync the blocks for Filecoin mainnet**:
 
-   Before you can start storing and retrieving data from Filecoin, you need to fully sync from Filecoin MainNet which may take over a day.
+   Before you can start storing and retrieving data from Filecoin, you need to fully sync from Filecoin mainnet which may take over a day.
 
-   To speed up the syncing process, you can also choose to sync from the current snapshot provided by Protocol Labs every hour.  For all the details, please check [Bootstrap a clean Lotus node from a snapshot](https://docs.textile.io/powergate/mainnet/#bootstrap-a-clean-lotus-node-from-a-snapshot).  
+   To speed up the syncing process, you can also choose to sync from the current snapshot provided by Protocol Labs every hour. For all the details, please check [Bootstrap a clean Lotus node from a snapshot](https://docs.textile.io/powergate/mainnet/#bootstrap-a-clean-lotus-node-from-a-snapshot).
 
 1. **Create a new User instance**:
 
@@ -92,7 +92,7 @@ We will use the Filecoin mainnet as an example here. Learning how to use localne
    pow config apply [cid] --watch
    ```
 
-   The configuration used will be based on the default configuration unless a custom configuration is provided (see `pow config apply --help`). Powergate will automatically find miners and perform the storage deal. 
+   The configuration used will be based on the default configuration unless a custom configuration is provided (see `pow config apply --help`). Powergate will automatically find miners and perform the storage deal.
 
    You can watch the job progress anytime with:
 
@@ -115,7 +115,7 @@ We will use the Filecoin mainnet as an example here. Learning how to use localne
    Once you are familiar with the Powergate workflows, you can start programatically controlling the Powergate instance. Textile provides Go and Javascript API clients for Powergate using the gRPC API endpoint:
 
    - [js-powergate-client](https://github.com/textileio/js-powergate-client)
-   - [Go Powergate client module](https://pkg.go.dev/github.com/textileio/powergate/api/client)
+   - [Go Powergate client module](https://pkg.go.dev/github.com/textileio/powergate/api/client?utm_source=godoc)
 
 ## Additional Powergate resources
 
