@@ -30,6 +30,31 @@ A snapshot only has the state trees from the recent tipset (2000 epochs) onward 
 
 You can check the sync status by running `lotus sync status`. You are fully synced when the `Height` difference is `0`. Lotus will output any sync error.
 
+```shell
+lotus sync status
+
+> worker 28975:
+>         Base:   [bafy2bzacec2exqtdvxzzvikwg3sg67e57yaocpmrljkfxth3isjmruzd45vsa bafy2bzacecbbqdvidaf56eeth7oul2raycjpddvgtb23ywoyrqyh7ajulepai bafy2bzaceajtc3mgie5b72ivuiv3svwnbfq7kl2gnbni5tqc2ja6zi22vkttu bafy2bzacebf7oavffgiajf5goi6verhepsclhb7pcfwirkptu4dxrdoqshadw bafy2bzaceddtymcr5onnh63uznctks5hujpgzxcd45f5ef7oiuqocpmqs6rh2 bafy2bzacebuqm43mspki4ekdbu6xj663mpkrcoxtdss64t27fo77bg7pzbaia bafy2bzaceaxurgudmnphjcoz5sfad7yd63axyhmretqr5jjmvnicyu7betvvi bafy2bzaceali3oihrslxmnjdu2ysesxradorczjimruxdbkqidtcuag7wlr5a]
+>         Target: [bafy2bzacedmswd73yn5faqzpbu5ofqinmh6fnzxfvazy52jrfthfhod4ssfgw] (1272951)
+>         Height diff:    1
+>         Stage: complete
+>         Height: 1272951
+>         Elapsed: 243.770396ms
+> worker 28976:
+>         Base:   [bafy2bzacedmswd73yn5faqzpbu5ofqinmh6fnzxfvazy52jrfthfhod4ssfgw]
+>         Target: [bafy2bzacebxf27yxmzksno5ajkvp6shwojrx5mxsrtmlchrdchaqfg2wo7o3i] (1272951)
+>         Height diff:    0
+>         Stage: complete
+>         Height: 1272951
+>         Elapsed: 1.00020144s
+> worker 28977:
+>         Base:   []
+>         Target: [] (0)
+>         Height diff:    0
+>         Stage: idle
+>         Height: 0
+```
+
 You can run `lotus sync wait` to wait for the sync to be complete. Lotus will output `Done!` once your node is fully synced.
 
 ## Basic network technology info
