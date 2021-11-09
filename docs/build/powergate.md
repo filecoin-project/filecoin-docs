@@ -22,7 +22,7 @@ There are many ways to interact with the Powergate. These pathways are well-docu
 
 - **Powergate CLI**: You can [install](https://docs.textile.io/powergate/#getting-started), run, and interact directly with the [Powergate CLI](https://docs.textile.io/powergate/cli/pow/).
 - **Powergate JS API client**: If you would like to use Powergate in your JS application, you can use the [Powergate JS Client](https://textileio.github.io/js-powergate-client/).
-- **Powergate Go API client**: If you would like to use Powergate in your Go application, you can use the [Powergate Go Client](https://godoc.org/github.com/textileio/powergate/api/client).
+- **Powergate Go API client**: If you would like to use Powergate in your Go application, you can use the [Powergate Go Client](https://pkg.go.dev/github.com/textileio/powergate/api/client?utm_source=godoc).
 
 ::: tip
 Sometimes the best way to learn is through examples.
@@ -52,9 +52,9 @@ We will use the Filecoin mainnet as an example here. Learning how to use localne
    make install-pow
    ```
 
-1. **Sync the blocks for Filecoin MainNet**:
+1. **Sync the blocks for Filecoin mainnet**:
 
-   Before you can start storing and retrieving data from Filecoin, you need to fully sync from Filecoin MainNet which may take over a day.
+   Before you can start storing and retrieving data from Filecoin, you need to fully sync from Filecoin mainnet which may take over a day.
 
    To speed up the syncing process, you can also choose to sync from the current snapshot provided by Protocol Labs every hour. For all the details, please check [Bootstrap a clean Lotus node from a snapshot](https://docs.textile.io/powergate/mainnet/#bootstrap-a-clean-lotus-node-from-a-snapshot).
 
@@ -115,7 +115,7 @@ We will use the Filecoin mainnet as an example here. Learning how to use localne
    Once you are familiar with the Powergate workflows, you can start programatically controlling the Powergate instance. Textile provides Go and Javascript API clients for Powergate using the gRPC API endpoint:
 
    - [js-powergate-client](https://github.com/textileio/js-powergate-client)
-   - [Go Powergate client module](https://pkg.go.dev/github.com/textileio/powergate/api/client)
+   - [Go Powergate client module](https://pkg.go.dev/github.com/textileio/powergate/api/client?utm_source=godoc)
 
 ## Additional Powergate resources
 

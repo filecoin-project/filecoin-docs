@@ -59,15 +59,15 @@ You can run `lotus sync wait` to wait for the sync to be complete. Lotus will ou
 
 ## Basic network technology info
 
-The Filecoin network uses a [Proof of Storage (PoRep)](https://spec.filecoin.io.md#section-glossary.proof-of-replication-porep) + [Proof of SpaceTime (PoSt)](https://spec.filecoin.io.md#section-glossary.proof-of-spacetime-post) consensus algorithm. Time in the Filecoin network is dissected into [epochs](https://spec.filecoin.io.md#section-glossary.epoch) set to 30 seconds. A new set of blocks is produced for every epoch for a [tipset](https://spec.filecoin.io.md#section-glossary.tipset). The hard finality of the Filecoin network is 900 epochs.
+The Filecoin network uses a [Proof of Storage (PoRep)](https://spec.filecoin.io#section-glossary.proof-of-replication-porep) + [Proof of SpaceTime (PoSt)](https://spec.filecoin.io#section-glossary.proof-of-spacetime-post) consensus algorithm. Time in the Filecoin network is dissected into [epochs](https://spec.filecoin.io#section-glossary.epoch) set to 30 seconds. A new set of blocks is produced for every epoch for a [tipset](https://spec.filecoin.io#section-glossary.tipset). The hard finality of the Filecoin network is 900 epochs.
 
 ## Accounts and wallets
 
-Filecoin uses an account based model. There are 4 types of account prefixes: 
+Filecoin uses an account-based model. There are 4 types of account prefixes: 
 
 - `f0` for ID address
 - `f1` for Secp256k1 wallets 
-- `f2` for [actor](https://spec.filecoin.io.md#section-glossary.actor) accounts 
+- `f2` for [actor](https://spec.filecoin.io#section-glossary.actor) accounts 
 - `f3` for BLS wallets
 
 `f1`, `f2`, and `f3` prefixed addresses are called account addresses. An account address is activated when it first receives a transaction. `f0` prefixed addresses are mapped to each active account address.
@@ -83,7 +83,7 @@ Filecoin currently uses two types of signatures:
 - ECDSA signatures over the Secp256k1 elliptic curve 
 - BLS signatures over the BLS12-381 group of curves. 
 
-Details and reference implementations can be found [in the Filecoin specification](https://spec.filecoin.io.md#section-algorithms.crypto.signatures.signature-types).
+Details and reference implementations can be found [in the Filecoin specification](https://spec.filecoin.io#section-algorithms.crypto.signatures.signature-types).
 
 ## Messages
 
@@ -248,13 +248,13 @@ Call [StateCompute](../reference/lotus-api.md#statecompute) or [StateReplay](../
 
 ## Join the Filecoin Slack
 
-Join the [Filecoin Slack](https://join.slack.com/t/filecoinproject/shared_invite/zt-mapdjgpy-AzltjeUC9Y0UQOLGjInZuQ) and post any questions you have in there.
+Join the [Filecoin Slack](https://filecoinproject.slack.com/signup) and post any questions you have in there.
 
 ## Useful Links
 
 - [Filecoin website](https://filecoin.io)
 - [Filecoin Specs](https://spec.filecoin.io)
-- [Filecoin Networks](https://network.filecoin.io)
+- [Filecoin Networks](https://status.filecoin.io)
 - [Lotus](https://github.com/filecoin-project/lotus) - the reference implementation for the Filecoin network
 - [Block Explorers](/get-started/explore-the-network.md#block-explorers)
 
