@@ -121,7 +121,7 @@ curl -X POST  -H "Content-Type: application/json"  -H "Authorization: Bearer $(c
 }' http://127.0.0.1:1234/rpc/v0
 ```
 
-### [ChainGetTipSetByHeight](../reference/lotus-api.md#chaingettipsetbyheight)
+#### [ChainGetTipSetByHeight](../reference/lotus-api.md#chaingettipsetbyheight)
 
 ```shell
 curl -X POST -H "Content-Type: application/json"
@@ -143,7 +143,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `bafy2bzacecxm6lhhzem3wshktatwzrcqbvc3k3jepzz7a6wqyc7w3fvav256i` is the block CID. This field is nullable.
 
-### [ChainGetParentMessages](../reference/lotus-api.md#chaingetparentmessages)
+#### [ChainGetParentMessages](../reference/lotus-api.md#chaingetparentmessages)
 
 ```shell
 curl -X POST -H "Content-Type: application/json"
@@ -162,7 +162,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `bafy2bzacedplsg3tqrv7e3v5rssvq3qwbd3c6g3en55zpqnyrymexhynz6ixu` is the block CID. You can pass in any one of the block CIDs included in the desired tipset.
 
-### [WalletNew](../reference/lotus-api.md#walletnew)
+#### [WalletNew](../reference/lotus-api.md#walletnew)
 
 ```shell
 curl -X POST -H "Content-Type: application/json"
@@ -179,7 +179,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `1` for Secp2561K account and `2` for BLS account.
 
-### [WalletBalance](../reference/lotus-api.md#walletbalance)
+#### [WalletBalance](../reference/lotus-api.md#walletbalance)
 
 ```shell
 curl -X POST -H "Content-Type: application/json"
@@ -196,7 +196,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `f1d7x4euqwtlk2bqzhclr6gubkufezgddkqftsnky` is the account address.
 
-### [MpoolPushMessage](../reference/lotus-api.md#mpoolpushmessage)
+#### [MpoolPushMessage](../reference/lotus-api.md#mpoolpushmessage)
 
 ```shell
 curl -X POST -H 'Content-Type: application/json'
