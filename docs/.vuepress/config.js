@@ -64,9 +64,7 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: {
-            '/networks/': [
-                '/networks/network-performance',
-            ],
+          '/networks/': ['/networks/network-performance'],
           '/get-started/': [
             {
               title: 'Store and retrieve',
@@ -77,7 +75,10 @@ module.exports = {
                 ['/get-started/store-and-retrieve/', 'Start here'],
                 ['/get-started/store-and-retrieve/set-up', 'Set up'],
                 ['/get-started/store-and-retrieve/store-data', 'Store data'],
-                ['/get-started/store-and-retrieve/retrieve-data', 'Retrieve data']
+                [
+                  '/get-started/store-and-retrieve/retrieve-data',
+                  'Retrieve data'
+                ]
               ]
             },
             {
@@ -104,12 +105,12 @@ module.exports = {
             [
               'https://proto.school/verifying-storage-on-filecoin/',
               'Protoschool tutorial'
-            ],
+            ]
           ],
 
           '/store/': [
+            'estuary',
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
-            'slate',
             'starling',
             {
               title: 'LOTUS',
@@ -123,8 +124,7 @@ module.exports = {
                 ['lotus/store-troubleshooting', 'Troubleshooting']
               ]
             },
-            'filecoin-plus',
-            'estuary',
+            'filecoin-plus'
           ],
 
           '/mine/': [
@@ -146,7 +146,10 @@ module.exports = {
                 ['lotus/miner-lifecycle', 'Miner lifecycle'],
                 ['lotus/manage-storage-deals', 'Manage storage deals'],
                 ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
-                ['lotus/dynamic-retrieval-pricing', 'Dynamic retrieval pricing'],
+                [
+                  'lotus/dynamic-retrieval-pricing',
+                  'Dynamic retrieval pricing'
+                ],
                 ['lotus/custom-storage-layout', 'Custom storage layout'],
                 ['lotus/sector-pledging', 'Sector pledging'],
                 ['lotus/disputer', 'Disputer'],
@@ -155,7 +158,10 @@ module.exports = {
                 //'lotus/fees-control-and-limits',
                 ['lotus/message-pool', 'The Message Pool'],
                 ['lotus/seal-workers', 'Seal workers'],
-                ['lotus/split-markets-miners', 'Splitting miner & markets processes'],
+                [
+                  'lotus/split-markets-miners',
+                  'Splitting miner & markets processes'
+                ],
                 ['lotus/dagstore', 'About the dagstore'],
                 ['lotus/benchmarks', 'Benchmarks'],
                 ['lotus/backup-and-restore', 'Backup and restore'],
@@ -171,7 +177,6 @@ module.exports = {
           '/build/': [
             'get-started',
             'textile-buckets',
-            'hosted-powergate',
             'hosted-lotus',
             'powergate',
             'estuary',
@@ -198,7 +203,8 @@ module.exports = {
           '/reference/': [
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
-            ['lotus-api', 'Lotus API']
+            ['lotus-api', 'Lotus API'],
+            'exchanges'
           ],
 
           '/': [

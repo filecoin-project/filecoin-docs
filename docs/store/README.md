@@ -25,7 +25,6 @@ The following applications allow you to store data on the Filecoin network with 
 - [Space Storage](https://space.storage/) by Fleek is an open-source, user-controlled, encrypted file storage and sharing platform using IPFS and Filecoin, tied to Ethereum accounts or common web OAuth options.
 - [Web3.Storage](https://web3.storage) is an IPFS pinning service and Filecoin storage platform built-in-one. Upload files to Web3.Storage and access them instantly, safe in the knowledge that your data is securely backed up using the Filecoin network.
 
-
 ### Filecoin Node Client
 
 - [Lotus](lotus/README.md) imports data and performs deals on the chain using its daemon and CLI. Lotus users get full control of the deals, the chosen miners, and the wallets used to pay. Make sure you are familiar with [Lotus](../get-started/lotus/README.md) and have it [installed and running](../get-started/lotus/installation.md).
@@ -44,6 +43,5 @@ There are additional storage solutions that you should not miss. While they have
 
 - [Fleek](https://fleek.co) provides easy hosting and storage solutions on IPFS and their [SpaceDaemon](https://docs.fleek.co/space-daemon/overview/) and upcoming Space SDK use Filecoin.
 - [Pinata](https://pinata.cloud/) is an IPFS pinning service that will soon include Filecoin in its portfolio.
-- [Powergate](https://github.com/textileio/powergate) a multitiered storage solution that stores data with [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md). It can be used [self-hosted](../build/powergate.md) or [hosted](../build/hosted-powergate.md).
+- [Powergate](https://github.com/textileio/powergate) a multitiered storage solution that stores data with [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md). It can be used [self-hosted](../build/powergate.md).
 - [Textile Buckets](../build/textile-buckets.md) provide S3-like storage using IPFS with Filecoin-backed archival and has an easy-to-use CLI.
-
