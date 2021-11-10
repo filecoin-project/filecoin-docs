@@ -217,6 +217,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 - [Hactar](https://www.hactar.app/) - analytics for your Filecoin miner node.
 - [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - Prometheus, Grafana and Python monitoring dashboard.
 - [Mining Benchmarks](https://filecoin-benchmarks.on.fleek.co/): Hardware performance comparisons from the Filecoin community.
+- [Sectors repair](https://github.com/froghub-io/filecoin-sealer-recover) Open source sectors repair tool
 
 ### Storage client and miner programs
 
