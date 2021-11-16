@@ -98,6 +98,20 @@ There are multiple gas fees associated with each message. Refer to the [practica
 
 An `ExitCode` of `0` in the message receipt indicates that the message was sent successfully.
 
+### Mempool
+
+When a user sends a transaction to the network it gets placed into the mempool queue. If a transaction doesn't have enough gas, it stays in the mempool and doesn't go anywhere. To new users, it looks like this transaction is lost forever. However, users can update the transaction with an updated `GasLimit`, `GasFeeCap`, and/or `GasPremium`. As long as they don't change the anything else in the transaction (`nonse`, `to`, `from`, `value`, etc) then the transaction that is sat in the mempool will get updated with the new gas allowance.
+
+#### Expiration
+
+There is no limit for how long a message can spend in the mempool. However the mempool does get _cleaned_ when there are too many messages in it, starting with the messages with the least gas.
+
+### Automatic gas values
+
+When `GasFeeCap`, `GasPremium` and `MaxFee` are set to `0`, Lotus will do the gas estimation for the message with 25% over estimation for the gas limit based on the current network condition.
+
+Some JavaScript libraries attempt estimate the gas fees before sending the transaction to the Filecoin network. However, they sometimes under estimate, leading to transactions getting stuck in the mempool. If you are noticing your transactions getting stuck in the mempool after sending them to the network using a JavaScript library, try `GasFeeCap`, `GasPremium`, and `MaxFee` to `0`.
+
 ## Integration
 
 You can interact with the network by using Lotus CLI or using the [JSON-RPC APIs](./lotus-api.md). Follow the [API tokens guide](../build/lotus/api-tokens.md) to set up API tokens on your node and grant necessary permissions. To find all CLI usage, run `lotus -h` in your lotus folder.
@@ -245,6 +259,21 @@ You can estimate the gas cost of a message by calling [GasEstimateMessageGas](..
 ### How do I ensure that all balances transfer in any messages are captured, including msig transfers?
 
 Call [StateCompute](../reference/lotus-api.md#statecompute) or [StateReplay](../reference/lotus-api.md#statereplay) and go through all the transactions in the execution trace. Whenever the value `!=0 && exit code == 0`, it indicates a balance transfer has occurred.
+
+### How can I check if my transaction is stuck?
+
+The Lotus RPC method to retrieve the list of transactions waiting on the mempool is `Filecoin.MpoolPending`. The RPC call is:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "Filecoin.MpoolPending",
+    "id": 1,
+    "params": [null]
+}
+```
+
+If you are using a JavaScript library, the method you need is `mpoolPending`.
 
 ## Join the Filecoin Slack
 
