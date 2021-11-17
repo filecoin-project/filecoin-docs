@@ -16,7 +16,7 @@
 /get-started/lotus/configuration-and-advanced-usage/ https://lotus.filecoin.io/docs/set-up/configuration/
 /get-started/lotus/troubleshooting/ https://lotus.filecoin.io/docs/set-up/troubleshooting/
 
-/store/lotus/store-data https://lotus.filecoin.io/docs/develoeprs/store-data/
+/store/lotus/store-data https://lotus.filecoin.io/docs/developers/store-data/
 /store/lotus/very-large-files/ https://lotus.filecoin.io/docs/developers/large-files/
 /store/lotus/retrieve-data/ https://lotus.filecoin.io/docs/developers/retrieve-data/
 /store/lotus/import-data-from-ipfs/ https://lotus.filecoin.io/docs/developers/import-data-from-ipfs/
