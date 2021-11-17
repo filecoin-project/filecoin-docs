@@ -23,7 +23,7 @@ The following applications allow you to store data on the Filecoin network with 
 
 ### Filecoin Node Client
 
-- [Lotus](lotus/README.md) imports data and performs deals on the chain using its daemon and CLI. Lotus users get full control of the deals, the chosen miners, and the wallets used to pay. Make sure you are familiar with [Lotus](../get-started/lotus/README.md) and have it [installed and running](../get-started/lotus/installation.md).
+- [Lotus](https://lotus.filecoin.io) imports data and performs deals on the chain using its daemon and CLI. Lotus users get full control of the deals, the chosen miners, and the wallets used to pay. Make sure you are familiar with Lotus and have it installed and running.
 
 ### Digital Preservation
 

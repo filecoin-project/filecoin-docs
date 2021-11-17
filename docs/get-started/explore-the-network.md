@@ -22,7 +22,7 @@ breadcrumb: 'Explore the Network'
 
 ## Lotus
 
-Once you are [setup with Lotus](lotus/README.md) you can use the command line to query information about the nework.
+Once you are [setup with Lotus](https://lotus.filecoin.io) you can use the command line to query information about the nework.
 
 Get the head tipset:
 

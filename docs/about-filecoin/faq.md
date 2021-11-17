@@ -60,8 +60,6 @@ While the Filecoin team does not recommend any specific hardware configuration, 
 
 ### We are worried about the ability of our network to handle the additional overhead of running a Filecoin node and still provide fast services for our customers. What are the computational demands of a Lotus node? Are there any metrics for node performance given various requirements?
 
-See the hardware requirements for [Lotus nodes](../get-started/lotus/installation.md#minimal-requirements) and [Filecoin miners](../mine/hardware-requirements.md).
-
 ### We bought a lot of hard drives of data through the Discover project. When will they be shipped to China?
 
 There are a number of details that are still being finalized between the verified deals construction and the associated crypto-economic parameters.

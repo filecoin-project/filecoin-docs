@@ -15,8 +15,8 @@ Use one of the community built tools and services to get started. [Take a look n
 
 There are several options to start integrating with Filecoin. Here are some guides to get you started:
 
-- [Build with Glif-nodes](hosted-lotus.md), for users looking for an endpoint to submit messages to the chain. Standalone Lotus, with optional Powergate, are also available).
-- [Build with Lotus](lotus/README.md), for users looking to interact with their own, local Lotus nodes.
+- [Use Glif nodes](https://lotus.filecoin.io/docs/developers/hosted-lotus/) to skip spinning up a node and just start building.
+- [Build with Lotus](https://lotus.filecoin.io), for users looking to interact with their own, local Lotus nodes.
 - [Build with Powergate](powergate.md), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
 - [Build with Textile buckets](textile-buckets.md), for users looking for simple IPFS storage with Filecoin-based archival, with encryption and shared buckets support.
 
@@ -41,7 +41,7 @@ Hosted node providers take care of running Filecoin node software for you so tha
 
 | Name                          | Description                                                                           | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
 | ----------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Glif Nodes](hosted-lotus.md) | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint. | No                                                                            |
+| [Glif Nodes](https://lotus.filecoin.io/docs/developers/hosted-lotus/) | Glif Nodes are hosted Lotus instances accessible via the Lotus JSON-RPC API endpoint. | No                                                                            |
 
 ## Developer references
 
@@ -49,7 +49,7 @@ The following documentation links can help you start building on Filecoin:
 
 | Name                                 | Description                                                                          |
 | ------------------------------------ | ------------------------------------------------------------------------------------ |
-| [Building on Lotus](lotus/README.md) | Lotus nodes provide JSON-RPC API with JWT-token-based authorization.                 |
+| [Building on Lotus](https://lotus.filecoin.io) | Lotus nodes provide JSON-RPC API with JWT-token-based authorization.                 |
 | [Powergate](powergate.md)            | Powergate is a multitiered storage solution that stores data with IPFS and Filecoin. |
 | [Local devnet](local-devnet.md)      | Learn how to deploy a Filecoin network fully contained on your own computer.         |
 
