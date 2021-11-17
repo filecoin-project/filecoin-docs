@@ -1,22 +1,22 @@
 # all redirects use 301 unless otherwise specified
 
 # LOTUS DOCS REDIRECTS
-# --------------------
-/get-started/store-and-retrieve* https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
-/get-started/lotus/running-in-the-cloud* https://lotus.filecoin.io/docs/set-up/running-in-the-cloud/ 
-/get-started/lotus/installation* https://lotus.filecoin.io/docs/set-up/install/
-/get-started/lotus/switch-networks* https://lotus.filecoin.io/docs/set-up/switch-networks/
-/get-started/lotus/chain* https://lotus.filecoin.io/docs/set-up/chain-management/
-/get-started/lotus/send-and-receive-fil* https://lotus.filecoin.io/docs/set-up/manage-fil/
-/get-started/lotus/multisig* https://lotus.filecoin.io/docs/set-up/multisig/
-/get-started/lotus/ledger* https://lotus.filecoin.io/docs/set-up/manage-fil/#ledger
-/get-started/lotus/upgrades* https://lotus.filecoin.io/docs/set-up/upgrade/
-/get-started/lotus/tips-running-in-china* https://lotus.filecoin.io/docs/set-up/nodes-in-china/
-/get-started/lotus/backup-and-restore* https://lotus.filecoin.io/docs/set-up/backup-and-restore/
-/get-started/lotus/configuration-and-advanced-usage* https://lotus.filecoin.io/docs/set-up/configuration/
-/get-started/lotus/troubleshooting* https://lotus.filecoin.io/docs/set-up/troubleshooting/
 
-/store/lotus/store-data https://lotus.filecoin.io/docs/develoeprs/store-data/
+/get-started/store-and-retrieve/ https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
+/get-started/lotus/running-in-the-cloud/ https://lotus.filecoin.io/docs/set-up/running-in-the-cloud/ 
+/get-started/lotus/installation/ https://lotus.filecoin.io/docs/set-up/install/
+/get-started/lotus/switch-networks/ https://lotus.filecoin.io/docs/set-up/switch-networks/
+/get-started/lotus/chain/ https://lotus.filecoin.io/docs/set-up/chain-management/
+/get-started/lotus/send-and-receive-fil/ https://lotus.filecoin.io/docs/set-up/manage-fil/
+/get-started/lotus/multisig/ https://lotus.filecoin.io/docs/set-up/multisig/
+/get-started/lotus/ledger/ https://lotus.filecoin.io/docs/set-up/manage-fil/#ledger
+/get-started/lotus/upgrades/ https://lotus.filecoin.io/docs/set-up/upgrade/
+/get-started/lotus/tips-running-in-china/ https://lotus.filecoin.io/docs/set-up/nodes-in-china/
+/get-started/lotus/backup-and-restore/ https://lotus.filecoin.io/docs/set-up/backup-and-restore/
+/get-started/lotus/configuration-and-advanced-usage/ https://lotus.filecoin.io/docs/set-up/configuration/
+/get-started/lotus/troubleshooting/ https://lotus.filecoin.io/docs/set-up/troubleshooting/
+
+/store/lotus/store-data/ https://lotus.filecoin.io/docs/develoeprs/store-data/
 /store/lotus/very-large-files/ https://lotus.filecoin.io/docs/developers/large-files/
 /store/lotus/retrieve-data/ https://lotus.filecoin.io/docs/developers/retrieve-data/
 /store/lotus/import-data-from-ipfs/ https://lotus.filecoin.io/docs/developers/import-data-from-ipfs/
@@ -63,7 +63,6 @@
 /build/local-devnet/ https://lotus.filecoin.io/docs/developers/developer-network/
 
 /reference/lotus-api/ https://lotus.filecoin.io/docs/apis/json-rpc/
-# --------------------
 
 # redirect folks who try to visit the old go-filecoin docs site previously hosted at docs.filecoin.io
 
