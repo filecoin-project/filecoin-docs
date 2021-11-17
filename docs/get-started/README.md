@@ -11,11 +11,6 @@ breadcrumb: ''
 :::tip Quick started guides you should try first 
 Working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
 
-| Lotus | Store and retrieve |
-| --- | --- |
-| Want to set up a fully-featured Lotus deployment? Start by [spinning up a Lotus full-node in just a few minutes →](./lotus) | Learn how to [store and retrieve data using the Filecoin network →](./store-and-retrieve)
-:::
-
 ## Become familiar with the concepts
 
 - Read [How Filecoin Works](../about-filecoin/how-filecoin-works.md) and [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md).

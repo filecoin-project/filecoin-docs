@@ -8,10 +8,6 @@ breadcrumb: 'Store'
 
 Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers or miners.
 
-:::tip Looking for a quick start guide?
-Storing and retrieving data on the Filecoin network is a bit different to other services or APIs you may have used. That's why we put the [Store & retrieve guide together →](../get-started/store-and-retrieve)
-:::
-
 ## Get started
 
 Users can use the following software solutions to store data on the Filecoin network:
