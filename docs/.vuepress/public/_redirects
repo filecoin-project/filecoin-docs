@@ -4,6 +4,7 @@
 # ------------------------
 /get-started/store-and-retrieve/ https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
 /get-started/lotus/running-in-the-cloud/ https://lotus.filecoin.io/docs/set-up/running-in-the-cloud/ 
+/get-started/lotus/ https://lotus.filecoin.io/
 /get-started/lotus/installation/ https://lotus.filecoin.io/docs/set-up/install/
 /get-started/lotus/switch-networks/ https://lotus.filecoin.io/docs/set-up/switch-networks/
 /get-started/lotus/chain/ https://lotus.filecoin.io/docs/set-up/chain-management/
@@ -53,6 +54,7 @@
 /mine/lotus/miner-journal/ https://lotus.filecoin.io/docs/storage-providers/miner-journal/
 /mine/lotus/miner-troubleshooting/ https://lotus.filecoin.io/docs/storage-providers/troubleshooting/
 
+/build/lotus/ https://lotus.filecoin.io/
 /build/lotus/lotus-lite/ https://lotus.filecoin.io/docs/set-up/lotus-lite/
 /build/lotus/enable-remote-api-access/ https://lotus.filecoin.io/docs/developers/api-access/
 /build/lotus/api-tokens/ https://lotus.filecoin.io/docs/developers/api-access/#api-tokens
