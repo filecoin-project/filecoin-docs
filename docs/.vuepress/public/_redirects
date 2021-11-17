@@ -2,7 +2,7 @@
 
 # LOTUS DOCS REDIRECTS
 # --------------------
-/get-started/store-and-retrieve/* https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
+/get-started/store-and-retrieve/ https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
 /get-started/lotus/running-in-the-cloud https://lotus.filecoin.io/docs/set-up/running-in-the-cloud/ 
 /get-started/lotus/installation https://lotus.filecoin.io/docs/set-up/install/
 /get-started/lotus/switch-networks/#clean-rebuild-reinstall https://lotus.filecoin.io/docs/set-up/switch-networks/
