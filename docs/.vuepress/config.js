@@ -77,18 +77,6 @@ module.exports = {
             'estuary',
             ['http://slingshot.filecoin.io/', 'Slingshot competition'],
             'starling',
-            {
-              title: 'LOTUS',
-              path: '/store/lotus/',
-              sidebarDepth: 2,
-              children: [
-                ['lotus/store-data', 'Store data'],
-                ['lotus/very-large-files', 'Very large files'],
-                ['lotus/retrieve-data', 'Retrieve data'],
-                ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
-                ['lotus/store-troubleshooting', 'Troubleshooting']
-              ]
-            },
             'filecoin-plus'
           ],
 
@@ -99,67 +87,13 @@ module.exports = {
             //'storage-sector-lifecycle',
             ['mining-rewards', 'Mining rewards'],
             ['slashing', 'Slashing'],
-            {
-              title: 'LOTUS MINER',
-              path: '/mine/lotus/',
-              sidebarDepth: 2,
-              collapsable: false,
-              children: [
-                ['lotus/miner-setup', 'Miner setup'],
-                ['lotus/miner-configuration', 'Configuration reference'],
-                ['lotus/miner-upgrades', 'Upgrades'],
-                ['lotus/miner-lifecycle', 'Miner lifecycle'],
-                ['lotus/manage-storage-deals', 'Manage storage deals'],
-                ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
-                [
-                  'lotus/dynamic-retrieval-pricing',
-                  'Dynamic retrieval pricing'
-                ],
-                ['lotus/custom-storage-layout', 'Custom storage layout'],
-                ['lotus/sector-pledging', 'Sector pledging'],
-                ['lotus/disputer', 'Disputer'],
-                ['lotus/connectivity', 'Connectivity'],
-                ['lotus/miner-addresses', 'Miner addresses'],
-                //'lotus/fees-control-and-limits',
-                ['lotus/message-pool', 'The Message Pool'],
-                ['lotus/seal-workers', 'Seal workers'],
-                [
-                  'lotus/split-markets-miners',
-                  'Splitting miner & markets processes'
-                ],
-                ['lotus/dagstore', 'About the dagstore'],
-                ['lotus/benchmarks', 'Benchmarks'],
-                ['lotus/backup-and-restore', 'Backup and restore'],
-                ['lotus/gpus', 'Custom GPUs'],
-                //'lotus/disaster-recovery',
-                ['lotus/tips-running-in-china', 'Tips for running in China'],
-                ['lotus/miner-journal', 'Journal'],
-                ['lotus/miner-troubleshooting', 'Troubleshooting']
-              ]
-            }
           ],
 
           '/build/': [
             'get-started',
             'textile-buckets',
-            'hosted-lotus',
             'powergate',
             'estuary',
-            {
-              title: 'Lotus',
-              path: '/build/lotus/',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: [
-                ['lotus/lotus-lite', 'Lotus lite'],
-                ['lotus/enable-remote-api-access', 'Enable remote API access'],
-                ['lotus/api-tokens', 'API tokens'],
-                ['lotus/api-client-libraries', 'API client libraries'],
-                ['lotus/go-json-rpc', 'Use Go with JSON-RPC APIs'],
-                ['lotus/payment-channels', 'Payment channels'],
-                ['lotus/troubleshooting', 'Troubleshooting']
-              ]
-            },
             'filecoin-pinning-services',
             'signing-libraries',
             ['local-devnet', 'Local devnet']
@@ -168,7 +102,6 @@ module.exports = {
           '/reference/': [
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
-            ['lotus-api', 'Lotus API'],
             'exchanges'
           ],
 
