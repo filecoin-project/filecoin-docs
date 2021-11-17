@@ -66,26 +66,6 @@ module.exports = {
         sidebar: {
           '/networks/': ['/networks/network-performance'],
           '/get-started/': [
-            {
-              title: 'Lotus',
-              path: '/get-started/lotus/',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                ['lotus/running-in-the-cloud', 'Running in the Cloud'],
-                ['lotus/installation', 'Local Installation'],
-                ['lotus/switch-networks', 'Switch networks'],
-                ['lotus/chain', 'Chain management'],
-                ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
-                ['lotus/multisig', 'Multi-signature wallets'],
-                ['lotus/ledger', 'Ledger wallet'],
-                ['lotus/upgrades', 'Upgrades'],
-                ['lotus/tips-running-in-china', 'Tips when running in China'],
-                ['lotus/backup-and-restore', 'Backup and restore'],
-                ['lotus/configuration-and-advanced-usage', 'Advanced options'],
-                ['lotus/troubleshooting', 'Troubleshooting']
-              ]
-            },
             'explore-the-network',
             [
               'https://proto.school/verifying-storage-on-filecoin/',
