@@ -67,21 +67,6 @@ module.exports = {
           '/networks/': ['/networks/network-performance'],
           '/get-started/': [
             {
-              title: 'Store and retrieve',
-              path: '/get-started/store-and-retrieve/',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                ['/get-started/store-and-retrieve/', 'Start here'],
-                ['/get-started/store-and-retrieve/set-up', 'Set up'],
-                ['/get-started/store-and-retrieve/store-data', 'Store data'],
-                [
-                  '/get-started/store-and-retrieve/retrieve-data',
-                  'Retrieve data'
-                ]
-              ]
-            },
-            {
               title: 'Lotus',
               path: '/get-started/lotus/',
               sidebarDepth: 1,
