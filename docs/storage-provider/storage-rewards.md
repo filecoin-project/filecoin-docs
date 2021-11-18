@@ -1,5 +1,5 @@
 ---
-title: 'Mining rewards'
+title: 'Storage rewards'
 description: 'In Filecoin, miners earn different types of rewards by contributing to the network.'
 breadcrumb: 'Mining rewards'
 ---
