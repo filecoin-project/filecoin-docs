@@ -16,6 +16,10 @@ Available storage and pricing is not controlled by any single company. Instead, 
 
 The **Filecoin project documentation** homepage offers all the necessary resources to learn about Filecoin, the software and the tools to contribute to the network, either as a user looking for storage, or as a miner providing it. Here are some links to get you started:
 
+:::tip Looking for Lotus?
+Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
+:::
+
 <!--
 * If you're new to web3 and Filecoin, we recommend checking out [What is Filecoin?](/about-filecoin/what-is-filecoin).
 * Users wanting to learn how Filecoin works, how to run a Filecoin node and how to store content in the network, please head to [Get started](/store/) section.
