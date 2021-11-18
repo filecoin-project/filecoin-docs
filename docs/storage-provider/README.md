@@ -1,10 +1,10 @@
 ---
-title: Filecoin Storage Provisioning
+title: Storage provider
 description: Storage Provider in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 breadcrumb: Provide
 ---
 
-# Provide
+# Storage provider 
 
 Welcome to the Filecoin documentation for **Storage Providers**.
 
