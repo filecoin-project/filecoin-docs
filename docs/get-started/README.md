@@ -10,9 +10,9 @@ breadcrumb: ''
 
 working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
 
-```tip Looking for Lotus?
+:::tip Looking for Lotus?
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
-```
+:::
 
 ## Become familiar with the concepts
 

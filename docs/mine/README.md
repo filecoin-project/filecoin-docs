@@ -8,9 +8,9 @@ breadcrumb: Provide
 
 Welcome to the Filecoin documentation for **Storage Providers**.
 
-```tip Looking for Lotus?
+:::tip Looking for Lotus?
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
-```
+:::
 
 {{ $frontmatter.description }} Content in this section will help you to:
 
