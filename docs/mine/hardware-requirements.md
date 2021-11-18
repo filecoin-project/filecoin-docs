@@ -10,9 +10,7 @@ The hardware requirements for Filecoin mining are tied to the computational reso
 
 The Filecoin network requires storage providers to run computationally expensive operations. The cost of these operations depends on which network the storage provider is running; some testnets use a smaller sector size to increase the speeds of transactions artificially. For reference, the requirements listed below correspond to **32GiB sectors**, as used by mainnet and some testnets.
 
-Different Filecoin Miner implementations may distribute sealing tasks differently, for example, using additional workers apart from the Miner. The following are _general_ requirements assuming all the mining operations are performed by the same machine. Resources needed by each operation are detailed later below. For a concrete example of hardware type and usage, see the [mining architectures](mining-architectures.md).
-
-[[TOC]]
+Different Filecoin Miner implementations may distribute sealing tasks differently, for example, using additional workers apart from the Miner. The following are _general_ requirements assuming all the mining operations are performed by the same machine. Resources needed by each operation are detailed later below. For a concrete example of hardware type and usage, see the [mining architectures](https://lotus.filecoin.io/docs/storage-providers/mining-architectures/).
 
 ## General hardware requirements
 
@@ -32,7 +30,7 @@ A powerful GPU is **recommended** as it can significantly speed up SNARK computa
 
 The [authoritative list of supported GPUs](https://github.com/filecoin-project/bellman#supported--tested-cards) is in the [Bellman repository](https://github.com/filecoin-project/bellman#supported--tested-cards).
 
-Additional GPU models need to be enabled manually ([instructions for Lotus](lotus/gpus.md)).
+Additional GPU models need to be enabled manually ([instructions for Lotus](https://lotus.filecoin.io/docs/storage-providers/overview/)).
 
 ::: warning
 Mixing AMD and Nvidia GPUs in the same machine is known to cause issues with OpenCL and should be avoided.
@@ -52,7 +50,7 @@ As mentioned, the Miners have to perform operations of different nature which di
 
 | Operation                  | CPU used                       | GPU used | Memory (32Gib sectors) | Notes                                                                                                                                                                                                                                       |
 | -------------------------- | ------------------------------ | -------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sealing: preCommit phase 1 | Yes (1 core or 1 core-complex) | No       | 128GiB                 | PoRep SDR encoding. Not amenable to parallelization. Core usage depends on value of [`FIL_PROOFS_USE_MULTICORE_SDR`](https://github.com/filecoin-project/rust-fil-proofs/). Also see the [Lotus seal workers guide](lotus/seal-workers.md). |
+| Sealing: preCommit phase 1 | Yes (1 core or 1 core-complex) | No       | 128GiB                 | PoRep SDR encoding. Not amenable to parallelization. Core usage depends on value of [`FIL_PROOFS_USE_MULTICORE_SDR`](https://github.com/filecoin-project/rust-fil-proofs/). |
 | Sealing: preCommit phase 2 | Yes (when no GPU, all cores)   | Yes      | 128GiB                 | Merkle tree generation using the Poseidon hashing algorithm. Slower with just CPUs.                                                                                                                                                         |
 | Sealing: commit phase 1    | Yes (all cores)                | No       | -                      |                                                                                                                                                                                                                                             |
 | Sealing: commit phase 2    | Yes (when no GPU, all cores)   | Yes      | ~ 192GiB               | Slow with just CPUs.                                                                                                                                                                                                                        |
@@ -60,7 +58,7 @@ As mentioned, the Miners have to perform operations of different nature which di
 | Proving _WindowPoSt_       | Yes (all cores, when no GPU)   | Yes      | -                      | _WindowPoSts_ must be submitted in 30 minute windows. When no GPU available, the more CPU cores the faster                                                                                                                                  |
 | Proving _WinningPoSt_      | Yes                            | No       | -                      | _WinningPoSt_ is a less intensive computation. Must be completed in a 25 seconds window.                                                                                                                                                    |
 
-Note that the [Lotus](lotus/README.md) implementation allows to configure and delegate specific sealing phases to [Lotus workers](lotus/seal-workers.md).
+Note that the [Lotus](https://lotus.filecoin.io) implementation allows to configure and delegate specific sealing phases to [Lotus workers](https://lotus.filecoin.io/docs/storage-providers/seal-workers/).
 
 ## About hardware requirements
 

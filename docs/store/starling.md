@@ -20,7 +20,7 @@ This guide will quickly set up Starling on your computer.
 
 You need to have a couple of things installed before you can interact with Starling:
 
-1. [Lotus](../get-started/lotus/installation.md).
+1. [Lotus](https://lotus.filecoin.io/docs/set-up/install/).
 1. [NodeJS](https://nodejs.org/en/download/) version `12.19` or higher.
 
 ### Steps

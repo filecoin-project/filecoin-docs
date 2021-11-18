@@ -15,17 +15,17 @@ Peers communicate over secure channels that they use to distribute information t
 
 ## Filecoin nodes
 
-_Filecoin Nodes_ or _Filecoin clients_ are peers that sync the Filecoin blockchain and validate the messages in every block, which, once applied, provide a global state. Nodes can manage [Filecoin wallets](../get-started/lotus/send-and-receive-fil.md) and receive FIL on them.
+_Filecoin Nodes_ or _Filecoin clients_ are peers that sync the Filecoin blockchain and validate the messages in every block, which, once applied, provide a global state. 
 
 Filecoin Nodes can also publish different types of _messages_ to the network by broadcasting them. For example, a client can publish a message to send FIL from one address to a different one. Nodes can propose [storage and retrieval deals](#deals) to Filecoin miners and pay for them as they are executed.
 
-Running a Filecoin Node is a low-level task that usually implies keeping a program running 24/7. There are several Filecoin Node implementations in the works, with [Lotus](../store/lotus/README.md) being the most advanced.
+Running a Filecoin Node is a low-level task that usually implies keeping a program running 24/7. There are several Filecoin Node implementations in the works, with [Lotus](https://lotus.filecoin.io) being the most advanced.
 
 ## Filecoin miners
 
 The miners provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds), for which they collect FIL rewards. Additional details about types of miners, rewards, and deals execution from the miner perspective can be found in the [How mining works](../mine/how-mining-works.md) section.
 
-Running a Filecoin miner is a highly-technical task with strong [hardware requirements](../mine/hardware-requirements.md), as needed to complete the necessary [proofs](#proofs). The [Lotus Miner](../mine/lotus/README.md) is the most advanced implementation of a Filecoin miner to this day.
+Running a Filecoin miner is a highly-technical task with strong [hardware requirements](../mine/hardware-requirements.md), as needed to complete the necessary [proofs](#proofs). The [Lotus Miner](https://lotus.filecoin.io) is the most advanced implementation of a Filecoin miner to this day.
 
 ## Deals
 
@@ -56,7 +56,7 @@ Executing messages, for example by including transactions or proofs in the chain
 
 Historically in other blockchains, miners specify a GasFee in a unit of native currency and then pay the block producing miners a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources, since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
 
-The amount of fees burned in the Filecoin network comes given by a dynamic \*_*BaseFee*_ which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../get-started/explore-the-network.md) or by [inspecting the current head](../mine/lotus/message-pool.md).
+The amount of fees burned in the Filecoin network comes given by a dynamic \*_*BaseFee*_ which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../get-started/explore-the-network.md) or by inspecting the current head.
 
 Additionally, a number of gas-related parameters are attached to each message and determine the amount of rewards that miners get. Here's an overview of the terms and concepts:
 
@@ -75,7 +75,7 @@ The total cost of a message for a sender will be:
 
 An important detail is that a message will always pay the _burn fee_, regardless of the _GasFeeCap_ used. Thus, a low _GasFeeCap_ may result in a reduced _GasPremium_ or even a negative one! In that case, the miners that include a message will have to pay the needed amounts out of their own pockets, which means they are unlikely to include such messages in new blocks.
 
-Filecoin implementations may choose the heuristics of how their miners select messages for inclusion in new blocks, but they will usually [attempt to maximize the miner's rewards](../mine/lotus/message-pool.md).
+Filecoin implementations may choose the heuristics of how their miners select messages for inclusion in new blocks, but they will usually attempt to maximize the miner's rewards.
 
 ## Actors
 

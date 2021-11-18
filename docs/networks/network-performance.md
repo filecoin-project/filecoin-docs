@@ -11,11 +11,11 @@ It is highly non-trivial to provide highly reliable benchmarks for Filecoin netw
 
 ### Financial transfers
 
-A message that requires [transferring FIL](../get-started/lotus/send-and-receive-fil.md#sending-fil) is often extremely fast, and will take on average ~1 blocktime (or around 30 seconds) to be reflected on-chain. We consider 120 blocks (1 hour) a conservative number of confirmations for high-value transfers.
+A message that requires [transferring FIL](https://lotus.filecoin.io/docs/set-up/manage-fil/) is often extremely fast, and will take on average ~1 blocktime (or around 30 seconds) to be reflected on-chain. We consider 120 blocks (1 hour) a conservative number of confirmations for high-value transfers.
 
 ## Data storage
 
-The Filecoin [data storage protocol](../store/lotus/store-data.md) has a few key components once a deal is proposed and accepted:
+The Filecoin [data storage protocol](https://lotus.filecoin.io/docs/developers/store-data/) has a few key components once a deal is proposed and accepted:
 
 1. Funding the storage market actor: This process takes ~1-2 minutes and ensures that both the client and the miner have funds and collateral to pay for the deal.
 
@@ -29,7 +29,7 @@ For most storage clients, the most important metric is the time it takes from de
 
 ## Data retrieval
 
-There are two methods by which one can directly [retrieve data](../store/lotus/retrieve-data.md#overview) from the Filecoin network:
+There are two methods by which one can directly [retrieve data](https://lotus.filecoin.io/docs/developers/retrieve-data/) from the Filecoin network:
 
 - **Fast retrieval**: By default, some Filecoin clients, like lotus, enable storage miners to store an unsealed copy of the stored data in addition to a sealed copy. The sealed copy is necessary for the ongoing storage proofs that a miner must submit, while the unsealed copy can be used for quicker retrievals of the data from the storage miner. While this is a valuable feature, there is no guarantee that all miners are storing extra unsealed copies of the stored data, as this is not a verifiable part of the protocol. In lotus, this feature is called _fast-retrieval_.
 - **Retrieval after unsealing**: Because of the Filecoin protocol’s design, storage miners are essentially cryptographically guaranteed to store client data in its sealed format. Therefore, if the storage miner doesn’t have an unsealed copy of the data stored, they will have to unseal the sealed data first (i.e., decoding the encoded data) and then serve it back up to the requester (i.e., the retrieval client).

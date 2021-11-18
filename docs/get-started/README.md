@@ -11,11 +11,6 @@ breadcrumb: ''
 :::tip Quick started guides you should try first 
 Working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
 
-| Lotus | Store and retrieve |
-| --- | --- |
-| Want to set up a fully-featured Lotus deployment? Start by [spinning up a Lotus full-node in just a few minutes →](./lotus) | Learn how to [store and retrieve data using the Filecoin network →](./store-and-retrieve)
-:::
-
 ## Become familiar with the concepts
 
 - Read [How Filecoin Works](../about-filecoin/how-filecoin-works.md) and [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md).
@@ -30,9 +25,9 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 :::
 
 - Visit [Slate](https://slate.host/) to store content on Filecoin and make deals from your browser.
-- Install and launch your [Lotus Node](lotus/README.md). Setup your first wallet and learn how to [send and receive ⨎](lotus/send-and-receive-fil.md) and [make storage deals](../store/lotus/store-data.md).
+- Install and launch your [Lotus Node](https://lotus.filecoin.io). Setup your first wallet and learn how to [send and receive ⨎](https://lotus.filecoin.io/docs/set-up/manage-fil/) and [make storage deals](https://lotus.filecoin.io/docs/storage-providers/manage-storage-deals/).
 - Use [Starling](../store/starling.md) to simplify the management of storage deals in Lotus.
-- Check out the [Lotus API methods](../reference/lotus-api) to learn how to programmatically store data on the Filecoin network.
+- Check out the [Lotus API methods](https://lotus.filecoin.io/docs/apis/json-rpc/) to learn how to programmatically store data on the Filecoin network.
 
 ## Contribute to Filecoin
 
@@ -43,7 +38,7 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 
 | Name                                                             |                                                                                                                                                                                                                                                                                         |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Lotus](lotus/README.md)                                         | Implementation of Filecoin node, maintained by Protocol Labs. <br /><br />For users that want to participate in the Filecoin network validating blocks, manage a wallet and perform deals on the command line.                                                                            |
+| [Lotus](https://lotus.filecoin.io)                                         | Implementation of Filecoin node, maintained by Protocol Labs. <br /><br />For users that want to participate in the Filecoin network validating blocks, manage a wallet and perform deals on the command line.                                                                            |
 | [Slate](https://slate.host/)                                       | Slate is a fully open-source file-sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.io) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
 | [Powergate](../build/powergate.md)                               | A multitiered storage solution that stores data with IPFS ("Hot" storage layer) and Filecoin ("Cold" storage layer).                                                                                                                                                                    |
 | [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets, and Powergate.                                                                                                                      |
@@ -51,13 +46,13 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 
 ## Wallets
 
-Filecoin wallets allow you to manage FIL, Filecoin's native token. Wallets store the private keys that allow you to authorize Filecoin transactions, including paying for storage deals and sending FIL to other accounts. See the [About Wallet Addresses](./lotus/send-and-receive-fil.md#about-wallet-addresses) to learn about the kinds of addresses used by Filecoin accounts.
+Filecoin wallets allow you to manage FIL, Filecoin's native token. Wallets store the private keys that allow you to authorize Filecoin transactions, including paying for storage deals and sending FIL to other accounts. See the [About Wallet Addresses](https://lotus.filecoin.io/docs/set-up/manage-fil) to learn about the kinds of addresses used by Filecoin accounts.
 
 The table below lists the recommended wallet implementations:
 
 | Name                                             |                                                                                                                                                                                             |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Lotus](lotus/README.md)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](lotus/ledger.md).                                                                                                |
+| [Lotus](https://lotus.filecoin.io)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](https://lotus.filecoin.io/docs/set-up/manage-fil/#ledger).                                                                                                |
 | [Glif wallet](https://wallet.glif.io/?network=f) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
 
 Both Lotus and the Glif wallet support [Ledger](https://www.ledger.com/) hardware devices, allowing you to use Filecoin without ever storing your private keys on a network-connected device. This can help protect your valuable private keys from malicious software on your computer and so is commonly used for accounts with large balances.

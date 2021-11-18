@@ -76,7 +76,7 @@ Here are the steps to quickly get setup with buckets:
    - All `hub` commands and subcommands take a `--help` flag that displays available flags and usage instructions. These are also [published here](https://docs.textile.io/hub/cli/hub_buck/).
    - The instructions here are based on the [Buckets guide](https://docs.textile.io/buckets/), which contains more details, for example about [permissions](https://docs.textile.io/buckets/permissions/), shared buckets and organizations.
    - Filecoin storage in Textile buckets is a very new feature! Make sure you read the [Bucket Archiving](https://docs.textile.io/buckets/archiving/) for the latest information on how it works, limits and price.
-   - This [blog post](https://blog.textile.io/buckets-diffing-syncing-archiving/) contains explanatory videos and information about archiving and recovery. Once you have a deal CID, you can also use Lotus to [retrieve the data](../store/lotus/retrieve-data.md).
+   - This [blog post](https://blog.textile.io/buckets-diffing-syncing-archiving/) contains explanatory videos and information about archiving and recovery. Once you have a deal CID, you can also use Lotus to [retrieve the data](https://lotus.filecoin.io/docs/developers/retrieve-data/).
 
 1. **Use the Buckets API directly**:
 
