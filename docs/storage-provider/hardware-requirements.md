@@ -10,13 +10,13 @@ The hardware requirements for Filecoin mining are tied to the computational reso
 
 The Filecoin network requires storage providers to run computationally expensive operations. The cost of these operations depends on which network the storage provider is running; some testnets use a smaller sector size to increase the speeds of transactions artificially. For reference, the requirements listed below correspond to **32GiB sectors**, as used by mainnet and some testnets.
 
-Different Filecoin Miner implementations may distribute sealing tasks differently, for example, using additional workers apart from the Miner. The following are _general_ requirements assuming all the mining operations are performed by the same machine. Resources needed by each operation are detailed later below. For a concrete example of hardware type and usage, see the [mining architectures](https://lotus.filecoin.io/docs/storage-providers/mining-architectures/).
+Different Filecoin storage provider (also called `miner`) implementations may distribute sealing tasks differently, for example, using additional workers apart from the `miner`. The following are _general_ requirements assuming all the mining operations are performed by the same machine. Resources needed by each operation are detailed later below. For a concrete example of hardware type and usage, see the [mining architectures](https://lotus.filecoin.io/docs/storage-providers/mining-architectures/).
 
 ## General hardware requirements
 
 ### CPU
 
-A miner will need an **8+ core CPU**.
+A provider will need an **8+ core CPU**.
 
 We strongly recommend a CPU model with support for _Intel SHA Extensions_: AMD since Zen microarchitecture, or Intel since Ice Lake. Lack of SHA Extensions results in a very significant slow down.
 
@@ -38,7 +38,7 @@ Mixing AMD and Nvidia GPUs in the same machine is known to cause issues with Ope
 
 ### Disk
 
-Performance of Miner operations can be heavily affected by slow disks. For example, a 32GiB expands to ~480GiB during the sealing process. Filecoin network parameters are over 100GiB and need to be read and verified during Miner start. As mentioned above, lack of RAM needs to be addressed with a fast swap drive or file.
+Performance of storage provider operations can be heavily affected by slow disks. For example, a 32GiB expands to ~480GiB during the sealing process. Filecoin network parameters are over 100GiB and need to be read and verified during provider start. As mentioned above, lack of RAM needs to be addressed with a fast swap drive or file.
 
 For this reasons, a minimal amount of 1TiB NVMe-based disk space for cache storage is recommended. This disk should be used to store data during the sealing process, to cache Filecoin parameters and serve as general temporal storage location.
 
@@ -46,7 +46,7 @@ Additional hard drives for the final storage of "sealed sectors", the Lotus chai
 
 ## Specific operation requirements
 
-As mentioned, the Miners have to perform operations of different nature which differ in how they use CPU and GPU resources. The following table shows how resources are utilized depending on the sealing phase or proof calculation being run:
+As mentioned, the storage providers have to perform operations of different nature which differ in how they use CPU and GPU resources. The following table shows how resources are utilized depending on the sealing phase or proof calculation being run:
 
 | Operation                  | CPU used                       | GPU used | Memory (32Gib sectors) | Notes                                                                                                                                                                                                                                       |
 | -------------------------- | ------------------------------ | -------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
