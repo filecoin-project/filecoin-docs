@@ -1,5 +1,5 @@
 ---
-title: 'Storage architectures'
+title: 'Architectures'
 description: 'Filecoin allows anyone to set up a storage provider operation to participate in a global, distributed storage market.'
 ---
 
