@@ -5,7 +5,7 @@ description: Filecoin frequently asked questions.
 
 # Filecoin FAQ
 
-### What are some of the primary use cases for Filecoin at mainnet launch?
+### What are some primary use cases for Filecoin at mainnet launch?
 
 Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include publicly verifiable cryptographic storage proofs, [crypto-economic mechanisms](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a trustless decentralized storage network.
 
@@ -16,7 +16,7 @@ Some of the primary areas for development expected on Filecoin around mainnet la
 - Additional developer tools and layer-2 solutions and libraries that strengthen Filecoin as a developer platform and ecosystem.
 - IPFS apps that rely on decentralized storage solutions and want a decentralized data persistence solution as well.
 - Financial tools and services on Filecoin, like wallets, signing libraries, and more.
-- Applications that use Filecoin's publicly verifiable cryptographic proofs in order to provide trustless and timestamped guarantees of storage to their users.
+- Applications that use Filecoin's publicly verifiable cryptographic proofs to provide trustless and timestamped guarantees of storage to their users.
 
 ### How can a website or app be free if it costs to retrieve data from the Filecoin network?
 
@@ -26,7 +26,7 @@ Most websites and apps make money by displaying ads. This type of income-model c
 
 It's going to require a major shift in how we think about the internet. At the same time, it is a very exciting shift, and things are slowly heading that way. Browser vendors like Brave, Opera, and Firefox are investing into decentralized infrastructure.
 
-We think that the internet must return to its _decentralized roots_ to be resilient, robust, and efficient enough for the challenges of the next several decades. Early developers in the Filecoin ecosystem are those who believe in that same vision and potential for the internet, and we're excited to work with them to build this space.
+We think that the internet must return to its _decentralized roots_ to be resilient, robust, and efficient enough for the challenges of the next few decades. Early developers in the Filecoin ecosystem are those who believe in that same vision and potential for the internet, and we're excited to work with them to build this space.
 
 ### What are the detailed parameters of Filecoin's crypto-economics?
 
@@ -61,11 +61,11 @@ While the Filecoin team does not recommend any specific hardware configuration, 
 
 ### We are worried about the ability of our network to handle the additional overhead of running a Filecoin node and still provide fast services for our customers. What are the computational demands of a Lotus node? Are there any metrics for node performance given various requirements?
 
-### We bought a lot of hard drives of data through the Discover project. When will they be shipped to China?
+### We bought multiple hard drives of data through the Discover project. When will they be shipped to China?
 
 There are a number of details that are still being finalized between the verified deals construction and the associated crypto-economic parameters.
 
-Our aim is to allow these details to finalize before shipping, but given timelines, we're considering enabling teams to take receipt of these drives before the parameters are set. We will publish updates on the status of the Discover project on the Filecoin blog.
+We aim to allow these details to finalize before shipping, but given timelines, we're considering enabling teams to take receipt of these drives before the parameters are set. We will publish updates on the status of the Discover project on the Filecoin blog.
 
 ### Do Filecoin storage providers need a fixed IP?
 
@@ -89,7 +89,7 @@ AMD may be optimal hardware for SDR. You can [see this description](https://gith
 
 ### How are you working on bootstrapping the demand side of the marketplace? The Discover program is nice, but who is the target market for users, and how do you get them?
 
-In addition to Filecoin Discover, a number of groups are actively building tools and services to support the adoption of the Filecoin network with developers and clients. For example, check out the recordings from our [Virtual Community Meetup](https://filecoin.io/blog/filecoin-virtual-community-meetup-recap/) to see updates about Textile Powergate and Starling Storage. You can also read more about some of the teams building on Filecoin through HackFS in our [HackFS Week 1 Recap](https://filecoin.io/blog/hackfs-teams-vol-1/).
+In addition to Filecoin Discover, a number of groups are actively building tools and services to support the adoption of the Filecoin network with developers and clients. For example, check out the recordings from our [Virtual Community Meetup](https://filecoin.io/blog/filecoin-virtual-community-meetup-recap/) to see updates about Textile Powergate and Starling Storage. You can also read more about teams building on Filecoin through HackFS in our [HackFS Week 1 Recap](https://filecoin.io/blog/hackfs-teams-vol-1/).
 
 ### Does Filecoin have an implementation of client and storage provider order matching through order books?
 
@@ -97,7 +97,7 @@ There will be off-chain order books and storage provider marketplaces -- some ar
 
 ### Why does Filecoin mining work best on AMD?
 
-Currently, Filecoin's Proof of Replication (PoRep) prefers to be run on AMD processors. See this description of Filecoin sealing for more information. More accurately, it runs much much slower on Intel CPUs. It runs competitively fast on some ARM processors, like the ones in newer Samsung phones, but they lack the RAM to seal the larger sector sizes. The main reason that we see this benefit on AMD processors is due to their implementation of the SHA hardware instructions.
+Currently, Filecoin's Proof of Replication (PoRep) prefers to be run on AMD processors. See this description of Filecoin sealing for more information. More accurately, it runs significantly slower on Intel CPUs. It runs competitively fast on some ARM processors, like the ones in newer Samsung phones, but they lack the RAM to seal the larger sector sizes. The main reason that we see this benefit on AMD processors is due to their implementation of the SHA hardware instructions.
 
 ### What do storage providers have to do to change a committed capacity (CC) sector into a "real-data" sector?
 
@@ -105,7 +105,7 @@ Storage providers will publish storage deals that they will upgrade the CC secto
 
 ### What does "terminating a sector" mean?
 
-When a committed capacity sector is added to the chain, it can upgrade to a sector with deals, extend its lifetime, or terminate through either faults or voluntary actions. While we don't expect this to happen very often on mainnet, a storage provider may deem it rational to terminate their promise to the network and their clients but accept a penalty for doing so.
+When a committed capacity sector is added to the chain, it can upgrade to a sector with deals, extend its lifetime, or terminate through either faults or voluntary actions. While we don't expect this to happen frequently on mainnet, a storage provider may deem it rational to terminate their promise to the network and their clients but accept a penalty for doing so.
 
 ### Does the committed capacity sector still need to be sealed before it upgrades to one with real data?
 
@@ -127,11 +127,11 @@ Storage providers currently provide a 'dumb box' interface and will serve anyone
 
 ### How do you update data stored on Filecoin?
 
-We have some really good ideas around 'warm' storage (that is mutable and provable) that we will probably implement in the near future. But for now, your app will have to treat Filecoin as an append-only log. If you want to change your data, you just write new data.
+There are multiple proposals and ideas around 'warm' storage (that is mutable and provable) that we will probably implement in the near future. But for now, your app will have to treat Filecoin as an append-only log. If you want to change your data, you just write new data.
 
 'Warm' storage can be done with a small amount of trust, where you make a deal with a storage provider with a start date quite far in the future. The storage provider can choose to store your data in a sector now (but they won't get paid for proving it until the actual start date), or they can hold it for you (and even send you proofs of it on request), and you can then send them new data to overwrite it, along with a new storage deal that overwrites the previous one.
 
-There's a pretty large design space here, and we can do a bunch of different things depending on the levels of trust involved, the price sensitivity, and the frequency of updates clients desire.
+There's a pretty large design space here, and we can do different things depending on the levels of trust involved, the price sensitivity, and the frequency of updates clients desire.
 
 ### Who will be selected to be verifiers to verify clients on the network?
 

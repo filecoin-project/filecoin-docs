@@ -14,10 +14,10 @@ Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 
 {{ $frontmatter.description }} Content in this section will help you to:
 
-- Understand [how storgae providing works](how-storage-works.md) and what different types of providers exist.
+- Understand [how storage providing works](how-storage-works.md) and what different types of providers exist.
 - Learn how storage providers get [rewards](storage-rewards.md) when doing their job properly, but also [slashed](slashing.md) when they are unable to honor deals they have made.
 - Learn about different [storage architectures](architectures.md).
-- Setup and run a high performant [Lotus Storage Provider](https://lotus.filecoin.io/docs/storage-providers/overview/).
+- Setup and run a high performant [Lotus storage provider](https://lotus.filecoin.io/docs/storage-providers/overview/).
 
 The documentation you will be reading assumes you are familiar with the documentation in the [Get started](../get-started) section, have a general grasp of how Filecoin works and are familiar with Filecoin node software and tooling.
 

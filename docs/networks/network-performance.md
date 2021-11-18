@@ -38,7 +38,7 @@ In both methods, the data retrieval process after a retrieval deal is accepted i
 
 1. **Funding the payment channel for retrieval**: Similar to the storage deal payment channel funding above, except for data retrieval. The timing estimates for payment channel creation and funding are roughly the same as noted above.
 
-2. **Unsealing (if needed)**: The storage provider unseals (decodes) the data so that the requester can read it. Sealing and unsealing are symmetric processes, which means they take roughly the same amount of time in either direction. Thus, the unsealing step is estimated to take around as long as the sealing step listed above, or around ~3hours for a 32 GiB sector on a machine running minimum hardware requirements.
+2. **Unsealing (if needed)**: The storage provider unseals (decodes) the data so that the requester can read it. Sealing and unsealing are symmetric processes, which means they take roughly the same amount of time in either direction. Thus, the unsealing step is estimated to take around as long as the sealing step listed above, or around 3 hours for a 32 GiB sector on a machine running minimum hardware requirements.
 
 3. **Data transfer**: The storage provider begins transferring the data back to the data requester. This is also transferred back at a rate similar to the original data transfer rate, which depends on several factors.
 

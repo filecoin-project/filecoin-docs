@@ -25,7 +25,7 @@ Running a Filecoin Node is a low-level task that usually implies keeping a progr
 
 The storage providers provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds), for which they collect FIL rewards. Additional details about types of storage providers, rewards, and deals execution from the storage provider perspective can be found in the [How storage works](../storage-provider/how-storage-works.md) section.
 
-Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements](../storage-provider/hardware-requirements.md), as needed to complete the necessary [proofs](#proofs). The [Lotus `miner`](https://lotus.filecoin.io) is the most advanced implementation of a Filecoin storage provider to this day.
+Running a Filecoin storage provider is a highly technical task with strong [hardware requirements](../storage-provider/hardware-requirements.md), as needed to complete the necessary [proofs](#proofs). The [Lotus `miner`](https://lotus.filecoin.io) is the most advanced implementation of a Filecoin storage provider.
 
 ## Deals
 
@@ -54,9 +54,9 @@ Filecoin clients and other storage providers continuously verify that the proofs
 
 Executing messages, for example by including transactions or proofs in the chain, consumes both computation and storage resources on the network. _Gas_ is a measure of resources consumed by messages. The gas consumed by a message directly affects the cost that the sender has to pay for it to be included in a new block by a storage provider.
 
-Historically in other blockchains, storage providers specify a GasFee in a unit of native currency and then pay the block producing storage providers a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources, since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
+In other blockchains, miners specify a GasFee in a unit of native currency and then pay the block producing storage providers a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources, since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
 
-The amount of fees burned in the Filecoin network comes given by a dynamic \*_*BaseFee*_ which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../get-started/explore-the-network.md) or by inspecting the current head.
+The total value of fees burned in the Filecoin network comes given by a dynamic \*_*BaseFee*_ which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../get-started/explore-the-network.md) or by inspecting the current head.
 
 Additionally, a number of gas-related parameters are attached to each message and determine the amount of rewards that storage providers get. Here's an overview of the terms and concepts:
 
