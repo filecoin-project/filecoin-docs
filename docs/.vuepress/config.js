@@ -95,7 +95,7 @@ module.exports = {
             'estuary',
             'filecoin-pinning-services',
             'signing-libraries',
-            ['local-devnet', 'Local devnet']
+            'local-devnet'
           ],
 
           '/reference/': [
