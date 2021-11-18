@@ -10,6 +10,11 @@ module.exports = {
       lang: 'en-US',
       title: 'Filecoin Docs',
       description: 'Filecoin Documentation'
+    },
+    '/zh/': {
+      lang: 'zh-CN',
+      title: 'Filecoin 文档',
+      description: 'Filecoin 文档'
     }
   },
   markdown: {
@@ -253,6 +258,222 @@ module.exports = {
                 },
                 {
                   title: 'Write the docs',
+                  sidebarDepth: 1,
+                  collapsable: false,
+                  children: [
+                    '/community/contribute/grammar-formatting-and-style',
+                    '/community/contribute/writing-guide',
+                    '/community/contribute/contribution-tutorial'
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      '/zh/': {
+        label: '中文',
+        selectText: '语言',
+        ariaLabel: '选择语言',
+        editLinkText: '编辑这个页面',
+        lastUpdated: '上次更新',
+        serviceWorker: {
+          updatePopup: {
+            message: 'New content is available.',
+            buttonText: '刷新'
+          }
+        },
+        nav: require('./nav/cn'),
+        sidebar: {
+          '/networks/': ['/networks/network-performance'],
+          '/get-started/': [
+            {
+              title: 'Store and retrieve',
+              path: '/get-started/store-and-retrieve/',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                ['/get-started/store-and-retrieve/', 'Start here'],
+                ['/get-started/store-and-retrieve/set-up', 'Set up'],
+                ['/get-started/store-and-retrieve/store-data', 'Store data'],
+                [
+                  '/get-started/store-and-retrieve/retrieve-data',
+                  'Retrieve data'
+                ]
+              ]
+            },
+            {
+              title: 'Lotus',
+              path: '/get-started/lotus/',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                ['lotus/running-in-the-cloud', 'Running in the Cloud'],
+                ['lotus/installation', 'Local Installation'],
+                ['lotus/switch-networks', 'Switch networks'],
+                ['lotus/chain', 'Chain management'],
+                ['lotus/send-and-receive-fil', 'Send and receive ⨎'],
+                ['lotus/multisig', 'Multi-signature wallets'],
+                ['lotus/ledger', 'Ledger wallet'],
+                ['lotus/upgrades', 'Upgrades'],
+                ['lotus/tips-running-in-china', 'Tips when running in China'],
+                ['lotus/backup-and-restore', 'Backup and restore'],
+                ['lotus/configuration-and-advanced-usage', 'Advanced options'],
+                ['lotus/troubleshooting', 'Troubleshooting']
+              ]
+            },
+            'explore-the-network',
+            [
+              'https://proto.school/verifying-storage-on-filecoin/',
+              'Protoschool tutorial'
+            ]
+          ],
+
+          '/store/': [
+            'estuary',
+            ['http://slingshot.filecoin.io/', 'Slingshot competition'],
+            'starling',
+            {
+              title: 'LOTUS',
+              path: '/store/lotus/',
+              sidebarDepth: 2,
+              children: [
+                ['lotus/store-data', 'Store data'],
+                ['lotus/very-large-files', 'Very large files'],
+                ['lotus/retrieve-data', 'Retrieve data'],
+                ['lotus/import-data-from-ipfs', 'Import data from IPFS'],
+                ['lotus/store-troubleshooting', 'Troubleshooting']
+              ]
+            },
+            'filecoin-plus'
+          ],
+
+          '/zh/mine/': [
+            ['how-mining-works', '如何开始挖矿'],
+            'hardware-requirements',
+            'mining-architectures',
+            //'storage-sector-lifecycle',
+            ['mining-rewards', 'Mining rewards'],
+            ['slashing', 'Slashing'],
+            {
+              title: 'LOTUS MINER',
+              path: '/mine/lotus/',
+              sidebarDepth: 2,
+              collapsable: false,
+              children: [
+                ['lotus/miner-setup', 'Miner setup'],
+                ['lotus/miner-configuration', 'Configuration reference'],
+                ['lotus/miner-upgrades', 'Upgrades'],
+                ['lotus/miner-lifecycle', 'Miner lifecycle'],
+                ['lotus/manage-storage-deals', 'Manage storage deals'],
+                ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
+                [
+                  'lotus/dynamic-retrieval-pricing',
+                  'Dynamic retrieval pricing'
+                ],
+                ['lotus/custom-storage-layout', 'Custom storage layout'],
+                ['lotus/sector-pledging', 'Sector pledging'],
+                ['lotus/disputer', 'Disputer'],
+                ['lotus/connectivity', 'Connectivity'],
+                ['lotus/miner-addresses', 'Miner addresses'],
+                //'lotus/fees-control-and-limits',
+                ['lotus/message-pool', 'The Message Pool'],
+                ['lotus/seal-workers', 'Seal workers'],
+                [
+                  'lotus/split-markets-miners',
+                  'Splitting miner & markets processes'
+                ],
+                ['lotus/dagstore', 'About the dagstore'],
+                ['lotus/benchmarks', 'Benchmarks'],
+                ['lotus/backup-and-restore', 'Backup and restore'],
+                ['lotus/gpus', 'Custom GPUs'],
+                //'lotus/disaster-recovery',
+                ['lotus/tips-running-in-china', 'Tips for running in China'],
+                ['lotus/miner-journal', 'Journal'],
+                ['lotus/miner-troubleshooting', 'Troubleshooting']
+              ]
+            }
+          ],
+
+          '/build/': [
+            'get-started',
+            'textile-buckets',
+            'hosted-lotus',
+            'powergate',
+            'estuary',
+            {
+              title: 'Lotus',
+              path: '/build/lotus/',
+              sidebarDepth: 2,
+              collapsable: true,
+              children: [
+                ['lotus/lotus-lite', 'Lotus lite'],
+                ['lotus/enable-remote-api-access', 'Enable remote API access'],
+                ['lotus/api-tokens', 'API tokens'],
+                ['lotus/api-client-libraries', 'API client libraries'],
+                ['lotus/go-json-rpc', 'Use Go with JSON-RPC APIs'],
+                ['lotus/payment-channels', 'Payment channels'],
+                ['lotus/troubleshooting', 'Troubleshooting']
+              ]
+            },
+            'filecoin-pinning-services',
+            'signing-libraries',
+            ['local-devnet', 'Local devnet']
+          ],
+
+          '/reference/': [
+            'glossary',
+            ['https://github.com/filecoin-project/specs', 'Specification'],
+            ['lotus-api', 'Lotus API'],
+            'exchanges'
+          ],
+
+          '/': [
+            '/about-filecoin/what-is-filecoin',
+            '/about-filecoin/how-filecoin-works',
+            '/about-filecoin/why-filecoin',
+            '/about-filecoin/ipfs-and-filecoin',
+            '/about-filecoin/filecoin-compared-to',
+            '/about-filecoin/managing-assets',
+            '/about-filecoin/faq',
+            {
+              title: '项目',
+              path: '/project/',
+              children: [
+                [
+                  'https://app.instagantt.com/shared/s/1152992274307505/latest',
+                  'Roadmap'
+                ],
+                ['https://research.filecoin.io/', 'Research'],
+                '/project/related-projects',
+                [
+                  'https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md',
+                  'Code of conduct'
+                ],
+                [
+                  'https://github.com/filecoin-project/community/blob/master/SECURITY.md',
+                  'Security issues'
+                ]
+              ]
+            },
+
+            {
+              title: '社区',
+              path: '/community/',
+              children: [
+                {
+                  title: '加入社区',
+                  sidebarDepth: 2,
+                  collapsable: false,
+                  children: [
+                    '/community/contribute/ways-to-contribute',
+                    '/community/chat-and-discussion-forums',
+                    ['https://proto.school/#/events', 'ProtoSchool workshops'],
+                    '/community/social-media/social-media'
+                  ]
+                },
+                {
+                  title: '贡献文档',
                   sidebarDepth: 1,
                   collapsable: false,
                   children: [
