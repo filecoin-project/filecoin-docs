@@ -8,8 +8,11 @@ breadcrumb: ''
 
 {{ $frontmatter.description }}
 
-:::tip Quick started guides you should try first 
-Working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
+working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
+
+:::tip Looking for Lotus?
+Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
+:::
 
 ## Become familiar with the concepts
 
@@ -20,9 +23,7 @@ Working with blockchains is difficult, and the inherent complexity of blockchain
 
 ## Store content on Filecoin
 
-:::tip
 Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
-:::
 
 - Visit [Slate](https://slate.host/) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](https://lotus.filecoin.io). Setup your first wallet and learn how to [send and receive ⨎](https://lotus.filecoin.io/docs/set-up/manage-fil/) and [make storage deals](https://lotus.filecoin.io/docs/storage-providers/manage-storage-deals/).

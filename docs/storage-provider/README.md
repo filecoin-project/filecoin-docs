@@ -8,6 +8,10 @@ breadcrumb: Provide
 
 Welcome to the Filecoin documentation for **Storage Providers**.
 
+:::tip Looking for Lotus?
+Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
+:::
+
 {{ $frontmatter.description }} Content in this section will help you to:
 
 - Understand [how storgae providing works](how-storage-works.md) and what different types of providers exist.
@@ -17,6 +21,4 @@ Welcome to the Filecoin documentation for **Storage Providers**.
 
 The documentation you will be reading assumes you are familiar with the documentation in the [Get started](../get-started) section, have a general grasp of how Filecoin works and are familiar with Filecoin node software and tooling.
 
-:::warning
 Running a successful storage provisioning operation on Filecoin has high [hardware requirements](hardware-requirements.md) and, apart from a strong familiarity with Filecoin, requires experience in systems deployment and administration.
-:::
