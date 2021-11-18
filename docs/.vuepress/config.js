@@ -83,7 +83,7 @@ module.exports = {
           '/storage-provider/': [
             'how-storage-works',
             'hardware-requirements',
-            'storage-provider-architectures',
+            'storage-architectures',
             'storage-rewards',
             'slashing',
           ],
