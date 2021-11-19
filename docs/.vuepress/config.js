@@ -355,44 +355,6 @@ module.exports = {
             //'storage-sector-lifecycle',
             ['mining-rewards', 'Mining rewards'],
             ['slashing', 'Slashing'],
-            {
-              title: 'LOTUS MINER',
-              path: '/mine/lotus/',
-              sidebarDepth: 2,
-              collapsable: false,
-              children: [
-                ['lotus/miner-setup', 'Miner setup'],
-                ['lotus/miner-configuration', 'Configuration reference'],
-                ['lotus/miner-upgrades', 'Upgrades'],
-                ['lotus/miner-lifecycle', 'Miner lifecycle'],
-                ['lotus/manage-storage-deals', 'Manage storage deals'],
-                ['lotus/manage-retrieval-deals', 'Manage retrieval deals'],
-                [
-                  'lotus/dynamic-retrieval-pricing',
-                  'Dynamic retrieval pricing'
-                ],
-                ['lotus/custom-storage-layout', 'Custom storage layout'],
-                ['lotus/sector-pledging', 'Sector pledging'],
-                ['lotus/disputer', 'Disputer'],
-                ['lotus/connectivity', 'Connectivity'],
-                ['lotus/miner-addresses', 'Miner addresses'],
-                //'lotus/fees-control-and-limits',
-                ['lotus/message-pool', 'The Message Pool'],
-                ['lotus/seal-workers', 'Seal workers'],
-                [
-                  'lotus/split-markets-miners',
-                  'Splitting miner & markets processes'
-                ],
-                ['lotus/dagstore', 'About the dagstore'],
-                ['lotus/benchmarks', 'Benchmarks'],
-                ['lotus/backup-and-restore', 'Backup and restore'],
-                ['lotus/gpus', 'Custom GPUs'],
-                //'lotus/disaster-recovery',
-                ['lotus/tips-running-in-china', 'Tips for running in China'],
-                ['lotus/miner-journal', 'Journal'],
-                ['lotus/miner-troubleshooting', 'Troubleshooting']
-              ]
-            }
           ],
 
           '/build/': [
