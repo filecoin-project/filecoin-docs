@@ -248,6 +248,7 @@ Wallets that have conducted third-party audits of their open-source code by a re
 
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **_recommended_** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger hardware (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below).
 - [**Ledger HW wallet** in Filecoin Docs](https://docs.filecoin.io/get-started/lotus/ledger/#setup-your-ledger-device) - **_recommended_** - Ledger Live does not have Filecoin support yet, but Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node.
+- [FoxWallet](https://foxwallet.com/) - **_recommended_** - by the team behind Filfox, a [security-audited](https://www.certik.org/projects/fox-wallet) mobile wallet that supports sending & receiving FIL, also provides useful data and mining information.
 
 ### Other wallets
 
