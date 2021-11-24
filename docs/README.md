@@ -14,16 +14,8 @@ meta:
 
 Available storage and pricing is not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in.
 
-The **Filecoin project documentation** homepage offers all the necessary resources to learn about Filecoin, the software and the tools to contribute to the network, either as a user looking for storage, or as a miner providing it. Here are some links to get you started:
+The **Filecoin project documentation** homepage offers all the necessary resources to learn about Filecoin, the software and the tools to contribute to the network, either as a user looking for storage, or as a storage provider providing it. Here are some links to get you started:
 
 :::tip Looking for Lotus?
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 :::
-
-<!--
-* If you're new to web3 and Filecoin, we recommend checking out [What is Filecoin?](/about-filecoin/what-is-filecoin).
-* Users wanting to learn how Filecoin works, how to run a Filecoin node and how to store content in the network, please head to [Get started](/store/) section.
-* Miners looking to provide storage to the network should head to the [Mining docs](/mine/)
-* Developers interested in building applications that interact with the Filecoin network and nodes can find information in the [Build section](/build/).
-* If you're a developer looking to get started building on Filecoin, check out the Build section.
--->

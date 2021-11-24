@@ -1,6 +1,6 @@
 ---
 title: 'Get started'
-description: 'The Filecoin Network is made with miners and clients. They make deals and contribute to maintaining the Filecoin blockchain, obtaining storage services, and receiving rewards in the process. This section walks your through how to get started, build a node, and create a simple application.'
+description: 'The Filecoin Network is made with storage providers and clients. They make deals and contribute to maintaining the Filecoin blockchain, obtaining storage services, and receiving rewards in the process. This section walks your through how to get started, build a node, and create a simple application.'
 breadcrumb: ''
 ---
 
@@ -19,7 +19,7 @@ Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 - Read [How Filecoin Works](../about-filecoin/how-filecoin-works.md) and [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md).
 - Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look.
 - Check out the [existing networks](https://network.filecoin.io).
-- Explore the mainnet using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for miners. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
+- Explore the mainnet using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for storage providers. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
 
 ## Store content on Filecoin
 
@@ -32,7 +32,7 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 
 ## Contribute to Filecoin
 
-- [Mine Filecoin](../mine/README.md): for those wanting to provide storage and retrieval capabilities to the Network.
+- [Provider storage for Filecoin](../storage-provider/README.md): for those wanting to provide storage and retrieval capabilities to the Network.
 - [Build on Filecoin](../build/README.md): for those wanting to build applications that interact with the Filecoin network.
 
 ## Filecoin Software
@@ -73,16 +73,16 @@ Each of these software clients implements the Filecoin protocol as described in 
 
 Here is a snapshot of each implementation's progress across the primary parts of the Filecoin protocol (updated June 24, 2020):
 
-|                    | lotus | venus | forest | fuhon |
-| ------------------ | ----- | ----- | ------ | ----- |
-| 1. Node            | ✅    | ✅    | ✅     | ✅    |
-| 2. Files & data    | ✅    | 🔶    | 🔶     | ✅    |
-| 3. Virtual Machine | ✅    | ✅    | 🔶     | 🔶    |
-| 4. VM Actors       | 🔶    | 🔶    | 🔶     | 🔶    |
-| 5. Blockchain      | ✅    | ✅    | ✅     | ✅    |
-| 6. Token           | ✅    | ✅    | ✅     | ✅    |
-| 7. Storage Mining  | ✅    | 🔄    | 🔄     | 🔄    |
-| 8. Market          | ✅    | 🔶  | 🔄      | ⛔️     |
+|                     | lotus | venus | forest | fuhon |
+| ------------------- | ----- | ----- | ------ | ----- |
+| 1. Node             | ✅    | ✅    | ✅     | ✅    |
+| 2. Files & data     | ✅    | 🔶    | 🔶     | ✅    |
+| 3. Virtual Machine  | ✅    | ✅    | 🔶     | 🔶    |
+| 4. VM Actors        | 🔶    | 🔶    | 🔶     | 🔶    |
+| 5. Blockchain       | ✅    | ✅    | ✅     | ✅    |
+| 6. Token            | ✅    | ✅    | ✅     | ✅    |
+| 7. Storage provider | ✅    | 🔄    | 🔄     | 🔄    |
+| 8. Market           | ✅    | 🔶  | 🔄      | ⛔️     |
 
 ✅ : fully-featured implementation. 
 🔄 : reuses components from another implementation. 
