@@ -1,10 +1,10 @@
 ---
-title: Storage provider
+title: Filecoin Storage Provisioning
 description: Storage Provider in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 breadcrumb: Provide
 ---
 
-# Storage provider 
+# Provide
 
 Welcome to the Filecoin documentation for **Storage Providers**.
 
@@ -14,10 +14,10 @@ Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 
 {{ $frontmatter.description }} Content in this section will help you to:
 
-- Understand [how storage providing works](how-storage-works.md) and what different types of providers exist.
-- Learn how storage providers get [rewards](storage-rewards.md) when doing their job properly, but also [slashed](slashing.md) when they are unable to honor deals they have made.
-- Learn about different [storage architectures](architectures.md).
-- Setup and run a high performant [Lotus storage provider](https://lotus.filecoin.io/docs/storage-providers/overview/).
+- Understand [how mining works](how-mining-works.md) and what different types of providers exist.
+- Learn how storage providers get [rewards](mining-rewards.md) when doing their job properly, but also [slashed](slashing.md) when they are unable to honor deals they have made.
+- Learn about different [mining architectures](mining-architectures.md).
+- Setup and run a high performant [Lotus Miner](https://lotus.filecoin.io/docs/storage-providers/overview/).
 
 The documentation you will be reading assumes you are familiar with the documentation in the [Get started](../get-started) section, have a general grasp of how Filecoin works and are familiar with Filecoin node software and tooling.
 

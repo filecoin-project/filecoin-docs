@@ -37,7 +37,7 @@ module.exports = {
       twitter: '@filecoin'
     },
     keywords:
-      'Filecoin, crypto, storage, blockchain, IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
+      'Filecoin, crypto, mining, blockchain, IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     domain: DEPLOY_DOMAIN,
     docsRepo: 'filecoin-project/filecoin-docs',
     docsDir: 'docs',
@@ -80,12 +80,13 @@ module.exports = {
             'filecoin-plus'
           ],
 
-          '/storage-provider/': [
-            'how-storage-works',
+          '/mine/': [
+            'how-mining-works',
             'hardware-requirements',
-            'architectures',
-            'storage-rewards',
-            'slashing',
+            'mining-architectures',
+            //'storage-sector-lifecycle',
+            ['mining-rewards', 'Mining rewards'],
+            ['slashing', 'Slashing'],
           ],
 
           '/build/': [
@@ -95,7 +96,7 @@ module.exports = {
             'estuary',
             'filecoin-pinning-services',
             'signing-libraries',
-            'local-devnet'
+            ['local-devnet', 'Local devnet']
           ],
 
           '/reference/': [
