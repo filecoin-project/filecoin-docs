@@ -7,6 +7,10 @@ description: The Filecoin network has several different networks for testing, st
 
 This page contains information on the [networks available](#available-networks) for Filecoin.
 
+:::tip Looking for Glif nodes?
+The [Glif nodes section](https://lotus.filecoin.io/docs/developers/hosted-lotus/), along with all other Lotus-specific documentation, has moved to [lotus.filecoin.io](https://lotus.filecoin.io/docs/developers/hosted-lotus/)
+:::
+
 ## Available networks
 
 There are two networks available for Filecoin:
