@@ -108,7 +108,7 @@
 /mine/lotus/miner-lifecycle/custom-storage-layout/ /mine/lotus/custom-storage-layout/
 
 /about-filecoin/network-performance/ /about-filecoin/networks
-/networks/ /about-filecoin/networks
+/about-filecoin/networks /networks/
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
