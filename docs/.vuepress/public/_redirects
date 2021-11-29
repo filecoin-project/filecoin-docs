@@ -3,6 +3,9 @@
 # LOTUS SPECIFIC REDIRECTS
 # ------------------------
 /get-started/store-and-retrieve/ https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
+/get-started/store-and-retrieve/set-up/ https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
+/get-started/store-and-retrieve/store-data/ https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
+/get-started/store-and-retrieve/retrieve-data/ https://lotus.filecoin.io/docs/tutorials/store-and-retrieve/
 /get-started/lotus/running-in-the-cloud/ https://lotus.filecoin.io/docs/set-up/running-in-the-cloud/ 
 /get-started/lotus/ https://lotus.filecoin.io/
 /get-started/lotus/installation/ https://lotus.filecoin.io/docs/set-up/install/
@@ -17,14 +20,15 @@
 /get-started/lotus/configuration-and-advanced-usage/ https://lotus.filecoin.io/docs/set-up/configuration/
 /get-started/lotus/troubleshooting/ https://lotus.filecoin.io/docs/set-up/troubleshooting/
 
-/store/lotus/store-data https://lotus.filecoin.io/docs/developers/store-data/
+/store/lotus/store-data/ https://lotus.filecoin.io/docs/developers/store-data/
 /store/lotus/very-large-files/ https://lotus.filecoin.io/docs/developers/large-files/
 /store/lotus/retrieve-data/ https://lotus.filecoin.io/docs/developers/retrieve-data/
 /store/lotus/import-data-from-ipfs/ https://lotus.filecoin.io/docs/developers/import-data-from-ipfs/
 /store/lotus/store-troubleshooting/ https://lotus.filecoin.io/docs/developers/troubleshooting/
+/store/slate https://slate.host/
 
 /mine/lotus/ https://lotus.filecoin.io/docs/storage-providers/overview/
-/mine/lotus/miner-setup/#pre-requisites https://lotus.filecoin.io/docs/storage-providers/setup/
+/mine/lotus/miner-setup/ https://lotus.filecoin.io/docs/storage-providers/setup/
 /mine/lotus/miner-configuration/ https://lotus.filecoin.io/docs/storage-providers/config/
 /mine/lotus/miner-upgrades/ https://lotus.filecoin.io/docs/storage-providers/upgrades/
 /mine/lotus/miner-lifecycle/ https://lotus.filecoin.io/docs/storage-providers/lifecycle/
@@ -55,6 +59,8 @@
 /mine/lotus/miner-troubleshooting/ https://lotus.filecoin.io/docs/storage-providers/troubleshooting/
 
 /build/lotus/ https://lotus.filecoin.io/
+/build/get-started/lotus/installation/ https://lotus.filecoin.io/docs/set-up/install/
+/build/hosted-lotus https://lotus.filecoin.io/docs/developers/hosted-lotus/
 /build/lotus/lotus-lite/ https://lotus.filecoin.io/docs/set-up/lotus-lite/
 /build/lotus/enable-remote-api-access/ https://lotus.filecoin.io/docs/developers/api-access/
 /build/lotus/api-tokens/ https://lotus.filecoin.io/docs/developers/api-access/#api-tokens
@@ -87,7 +93,6 @@
 /how-to/store/tokens/ /get-started/lotus/send-and-receive-fil/
 /how-to/store/making-storage-deals/ /mine/lotus/store-data/
 /how-to/store/retrieving-data/ /store/lotus/retrieve-data/
-/how-to/store/large-files/ /store/lotus/very-large-files/
 
 /get-started/lotus/chain-snapshots/ /get-started/lotus/chain/
 /get-started/go-filecoin-tutorial/Getting-Started.html /get-started/
@@ -108,14 +113,13 @@
 /mine/lotus/miner-lifecycle/custom-storage-layout/ /mine/lotus/custom-storage-layout/
 
 /about-filecoin/network-performance/ /about-filecoin/networks
-/networks/ /about-filecoin/networks
+/about-filecoin/networks/ /networks
 
 /build/start-building/ /build/
 /build/start-building/interacting-with-the-network/ /build/
 /build/start-building/implementations/ /get-started/
 /build/reference/lotus-api/ /reference/lotus-api/
 
-/build/examples /get-started/
 /build/examples/ /get-started/
 /build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup/ /get-started/
 /build/examples/meme-marketplace/step-5-connecting-app-with-blockchain/ /get-started/
