@@ -10,6 +10,11 @@ module.exports = {
       lang: 'en-US',
       title: 'Filecoin Docs',
       description: 'Filecoin Documentation'
+    },
+    '/zh/': {
+      lang: 'zh-CN',
+      title: 'Le Filecoin',
+      description: 'Vue 驱动的静态网站生成器'
     }
   },
   markdown: {
