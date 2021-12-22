@@ -127,6 +127,7 @@ module.exports = {
             '/about-filecoin/ipfs-and-filecoin',
             '/about-filecoin/filecoin-compared-to',
             '/about-filecoin/managing-assets',
+            '/about-filecoin/wrapped-filecoin',
             '/about-filecoin/faq',
             {
               title: 'Project',
