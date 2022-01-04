@@ -95,8 +95,8 @@ module.exports = {
             'filecoin-plus'
           ],
 
-          '/mine/': [
-            'how-mining-works',
+          '/provide/': [
+            'how-providing-works',
             'hardware-requirements',
             'mining-architectures',
             //'storage-sector-lifecycle',
