@@ -1,5 +1,5 @@
 ---
-title: 'Lotus: chain management'
+title: 'Chain management'
 description: "The Lotus chain carries the information necessary to compute the current state of the Filecoin network. This guide explains how to manage several aspects of the chain, including how to decrease your node's sync time by loading the chain from a snapshot."
 breadcrumb: 'Chain management'
 ---
@@ -45,7 +45,6 @@ These lightweight state snapshots **do not contain any message receipts**. To ge
 
     + Calibration: Download latest snapshot: [lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz](https://www.mediafire.com/file/q7tc2bmcc9d09vv/lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz/file). 
 
-
 2. Check the `sha256sum` of the downloaded snapshot:
 
     ```shell with-output
@@ -87,10 +86,10 @@ There are two ways to check your Lotus daemon's chain synching progress.
 
 Use `sync status` to output the current state of your local chain:
 
-````sh with-output
+```sh with-output
 lotus sync status
-````
-````
+```
+```
 sync status:
 worker 0:
         Base:   [bafy2bzacecnamqgqmifpluoeldx7zzglxcljo6oja4vrmtj7432rphldpdmm2]
@@ -99,7 +98,7 @@ worker 0:
         Stage: header sync
         Height: 414300
         Elapsed: 765.267091ms
-````
+```
 
 #### Sync wait
 
@@ -113,7 +112,7 @@ Worker: 0; Base: 0; Target: 414300 (diff: 414300)
 State: header sync; Current Epoch: 410769; Todo: 3531
 Validated 0 messages (0 per second)
 ...
-````
+```
 
 Use `chain getblock` to check when the last synced block was mined:
 
