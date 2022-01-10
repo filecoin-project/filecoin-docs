@@ -22,13 +22,11 @@ To spin up a local instance of this new VuePress site, see below:
    npm start
    ```
 
-3. Open [localhost:8080](http://localhost:8080) in your browser.
+3. Open [localhost:1313](http://localhost:1313) in your browser.
 
 ## Code organization
 
-- Content lives in Markdown files in the `docs` folder. Each major section has its own subfolder.
-- Navigation is generated from [docs/.vuepress/config.js](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/.vuepress/config.js) and the metadata within each Markdown file. Be sure to create an entry in this config file when adding new content.
-- To feature a new article on the homepage, you'll also need to update the `manualSidebar` object in the Home component at [docs/.vuepress/themes/components/Home.vue](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/.vuepress/theme/components/Home.vue).
+- Content lives in Markdown files in the `content` folder. Each language has its own subfolder, and each major section has its own subfolder under that.
 
 ## Contributing
 
