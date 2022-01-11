@@ -13,3 +13,7 @@ yarn-error.log*
 
 # editor
 .vscode
+
+#hugo/doks
+public
+resources

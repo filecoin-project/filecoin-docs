@@ -1,0 +1,20 @@
+{{ $icon := .Get "icon" }}
+
+<div class="alert alert-warning d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+    {{ if eq $icon "warning" }} ⚠️
+    {{ else if eq $icon "callout" }} 💬
+    {{ else if eq $icon "tip" }} 💡
+    {{ else }} ℹ️
+    {{ end }}
+  </div>
+  {{ with .Get "text"}}
+    <div class="w-100">{{ . | safeHTML }} </div>
+  {{ else }}
+    {{ with .Inner}}
+      <div class="w-100"> {{ . | markdownify}}</div>
+    {{ else }}
+      {{ errorf "No valid text variable or Inner content given"}}
+    {{ end }}
+  {{ end}}
+</div>
