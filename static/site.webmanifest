@@ -1,0 +1,14 @@
+{
+    "name": "Lotus docs",
+    "short_name": "Lotus docs",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Documentation for the Lotus Filecoin implementation.",
+    "icons": [{
+        "src": "apple-touch-icon.png",
+        "sizes": "48x48",
+        "type": "image/png"
+    }]
+}
+
