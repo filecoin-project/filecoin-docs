@@ -17,9 +17,9 @@ The process is split into three main parts: the set-up, storing your data and re
 
 It will take about an hour to complete this tutorial. While there aren't too many steps involved, there's a bit of waiting around for the network to process your requests.
 
-:::warning Running on mainnet
+{{< alert icon="warning" >}}**Running on mainnet**
 This tutorial uses the Filecoin mainnet. Everything you'll see over the next hour is happening on a production network with other users storing and retrieving data. But don't worry, this tutorial won't cost you anything! It's just important to know that you'll be dealing with real storage providers, real data, and real transactions.
-:::
+{{< /alert >}}
 
 ## Prerequisites
 

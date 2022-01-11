@@ -9,9 +9,9 @@ cascade:
 
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
 
-:::tip Looking for Lotus?
+{{< alert icon="tip" >}}
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
-:::
+{{< /alert >}}
 
 ## Get started
 
@@ -26,9 +26,9 @@ There are several options to start integrating with Filecoin. Here are some guid
 
 The following products provide storage solutions that are backed up by the Filecoin network and potentially [integrate IPFS as a hot-data layer (FPS)](filecoin-pinning-services.md).
 
-::: tip
+{{< alert icon="tip" >}}
 We plan to update this list regularly as new providers are announced and their features expand.
-:::
+{{< /alert >}}
 
 | Name                                                | Description                                                                                                                   | [IPFS Pinning API](https://ipfs.github.io/pinning-services-api-spec/) support |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |

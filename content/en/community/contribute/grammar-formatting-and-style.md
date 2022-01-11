@@ -327,42 +327,34 @@ Custom containers can be defined by their types, titles, and contents.
 ##### Input
 
 ```markdown
-::: tip
+{{< alert icon="tip" >}}
 This is a tip
-:::
+{{< /alert >}}
 
-::: warning
-This is a warning
-:::
+{{< alert icon="callout" >}}
+This is a callout
+{{< /alert >}}
 
-::: danger
+{{< alert icon="warning" >}}
 This is a dangerous warning
-:::
-
-::: details
-This is a details block, which does not work in IE / Edge
-:::
+{{< /alert >}}
 ```
 
 ##### Output
 
 This output is not supported by Github Flavoured Markdown (GFM). However, they render properly when viewed through VuePress at [docs.filecoin.io/community/contribute/grammar-formatting-and-style](https://docs.filecoin.io/community/contribute/grammar-formatting-and-style/#custom-containers).
 
-::: tip
+{{< alert icon="tip" >}}
 This is a tip
-:::
+{{< /alert >}}
 
-::: warning
-This is a warning
-:::
+{{< alert icon="callout" >}}
+This is a callout
+{{< /alert >}}
 
-::: danger
+{{< alert icon="warning" >}}
 This is a dangerous warning
-:::
-
-::: details
-This is a details block, which does not work in IE / Edge
-:::
+{{< /alert >}}
 
 ### Images
 

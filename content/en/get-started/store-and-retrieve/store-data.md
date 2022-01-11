@@ -5,9 +5,9 @@ description: Start storing your data on the Filecoin network. This section cover
 
 Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus miner registry, creating a storage deal, and then waiting for the deal to complete. There's a lot to do, so let's dive in!
 
-:::danger
+{{< alert icon="warning" >}}
 Filecoin is optimized for public data and doesn't yet support access controls. If storing private data, ensure you encrypt it before storage to ensure it remains unreadable by anyone without the ability to decrypt it. Keep in mind that if a vulnerability is found in your encryption process at any point in the future, then your data may be compromised.
-:::
+{{< /alert >}}
 
 ## Things to note
 
@@ -76,9 +76,9 @@ We need to find suitable storage providers before we can store our data. The Fil
 
 We're going to use the Filecoin Plus miner registry to find a couple of storage providers and then cross-check their information with a third-party storage provider reputation system.
 
-:::tip
+{{< alert icon="tip" >}}
 Increasing the number of storage providers you use increases your data redundancy, and decreases the chances of your data being lost.
-:::
+{{< /alert >}}
 
 ### Filecoin Plus miner registry
 
@@ -198,9 +198,9 @@ Once the data has been sent to the storage clients, the storage deals can take u
     lotus client list-deals --show-failed
     ```
 
-    :::danger DO NOT TURN OFF YOUR LOTUS NODE
+    {{< alert icon="warning" >}}**DO NOT TURN OFF YOUR LOTUS NODE**
     Your Lotus lite-node needs to remain online until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when.
-    :::
+    {{< /alert >}}
 
 1. You can check the progress of any data transfers by running `lotus client list-transfers`:
 

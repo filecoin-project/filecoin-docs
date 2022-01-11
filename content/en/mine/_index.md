@@ -10,9 +10,9 @@ cascade:
 
 Welcome to the Filecoin documentation for **Storage Providers**.
 
-:::tip Looking for Lotus?
+{{< alert icon="tip" >}}**Looking for Lotus?**
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
-:::
+{{< /alert >}}
 
 Content in this section will help you to:
 
