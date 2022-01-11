@@ -1,42 +1,39 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Doks"
+title = "Filecoin Docs"
 titleSeparator = "-"
-titleAddition = "Modern Documentation Theme"
-description = "Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize."
-
-## Documentation
-# docsVersion = "0.3"
+titleAddition = "Home"
+description = "Documentation for Lotus - the reference node implementation for the Filecoin network."
 
 ## Open Graph
-images = ["doks.png"]
+images = ["/images/filecoin-symbol-color.png"]
 ogLocale = "en_US"
-domainTLD = "doks.netlify.app"
-titleHome = "Doks Theme"
+domainTLD = "docs.filecoin.io"
+titleHome = "Lotus Docs"
 
 ## Twitter Cards
-twitterSite = "@getdoks"
-twitterCreator = "@henkverlinde"
+twitterSite = "@filecoin"
+twitterCreator = "@protocollabs"
 
 ## JSON-LD
 # schemaType = "Person"
 schemaType = "Organization"
-schemaName = "Doks"
-schemaAuthor = "Henk Verlinde"
-schemaAuthorTwitter = "https://twitter.com/henkverlinde"
-schemaAuthorLinkedIn = "https://www.linkedin.com/in/henkverlinde/"
-schemaAuthorGitHub = "https://github.com/h-enk"
+schemaName = "Filecoin"
+schemaAuthor = "Protocol Labs"
+schemaAuthorTwitter = "https://twitter.com/protocollabs"
+schemaAuthorLinkedIn = "https://www.linkedin.com/in/protocollabs/"
+schemaAuthorGitHub = "https://github.com/filecoin-project"
 schemaLocale = "en-US"
-schemaLogo = "logo-doks.png"
+schemaLogo = "lotus.png"
 schemaLogoWidth = 512
 schemaLogoHeight = 512
-schemaImage = "doks.png"
+schemaImage = "lotus.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
-schemaTwitter = "https://twitter.com/getdoks"
+schemaTwitter = "https://twitter.com/filecoin"
 schemaLinkedIn = ""
-schemaGitHub = "https://github.com/h-enk/doks"
+schemaGitHub = "https://github.com/filecoin-project/filecoin-docs"
 schemaSection = "blog"
 
 ## Sitelinks Search Box
@@ -51,24 +48,22 @@ bgColor = "#fff"
 landscapePhotoWidths = [900, 800, 700, 600, 500]
 portraitPhotoWidths = [800, 700, 600, 500]
 lqipWidth = "20x"
-smallLimit = "300"
 
 # Footer
-footer = "Powered by <a href=\"https://www.netlify.com/\">Netlify</a>, <a href=\"https://gohugo.io/\">Hugo</a>, and <a href=\"https://getdoks.org/\">Doks</a>"
+footer = "Built by Protocol Labs."
 
 # Feed
-copyRight = "Copyright (c) 2020-2021 Henk Verlinde"
+copyRight = ""
 
 # Alert
 alert = false
 alertDismissable = true
-# alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\" target=\"_blank\" rel=\"noopener\">Check out Doks v0.2</a>"
-alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\">Check out Doks v0.2</a>"
+alertText = ""
 
 # Edit Page
-docsRepo = "https://github.com/h-enk/doks"
-docsRepoBranch = "master"
-editPage = false
+docsRepo = "https://github.com/filecoin-project/filecoin-docs"
+docsRepoBranch = "main"
+editPage = true
 
 [options]
   lazySizes = true
@@ -81,5 +76,5 @@ editPage = false
   highLight = true
   kaTex = false
   collapsibleSidebar = true
-  multilingualMode = false
-  docsVersioning = false
+  multilingualMode = true
+  docsVersioning = false # Not yet functional

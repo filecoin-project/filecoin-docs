@@ -10436,10 +10436,6 @@ $border-dark: darken($body-bg-dark, 2.5%);
   background-color: #1b1f22;
   border-color: #343a40; }
 
-.alert {
-  font-family: sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.875rem; }
-
 .alert-icon {
   margin-right: 0.75rem; }
 
