@@ -2,7 +2,6 @@
 title: Related projects
 description: Learn about the modular projects that help make up Filecoin.
 ---
-# Related projects
 
 Filecoin is a highly modular project that is itself made out of many different protocols and tools. Many of these exist as their own projects, supported by [Protocol Labs](https://protocol.ai). Learn more about them below.
 

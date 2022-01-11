@@ -4,8 +4,6 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 ---
 
-# Reference
-
 This section contains links and reference materials for Filecoin.
 
 - [Reference](#reference)

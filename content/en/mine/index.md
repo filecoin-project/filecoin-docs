@@ -4,8 +4,6 @@ description: Storage Provider in the Filecoin network are in charge of storing, 
 breadcrumb: Provide
 ---
 
-# Provide
-
 Welcome to the Filecoin documentation for **Storage Providers**.
 
 :::tip Looking for Lotus?

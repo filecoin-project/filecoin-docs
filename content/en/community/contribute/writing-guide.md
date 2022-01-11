@@ -4,8 +4,6 @@ description: Learn the specifics of how to write documentation for the Filecoin 
 editLink: false
 ---
 
-# Writing guide
-
 This guide explains how to write an article. While the [grammar, formatting, and style guide](./grammar-formatting-and-style.md) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
 ## Walkthroughs

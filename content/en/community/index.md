@@ -3,9 +3,7 @@ title: Community
 description: Become part of the Filecoin community!
 ---
 
-# Community
-
-Filecoin is home to a vibrant, diverse community of thousands of contributors and storage providers from all over the globe! Here's how to get help, support, or just hang out with other folks who are helping to build the distributed web.
+Filecoin is home to a vibrant, diverse community of thousands of contributors and miners from all over the globe! Here's how to get help, support, or just hang out with other folks who are helping to build the distributed web.
 
 ## Ways to contribute
 

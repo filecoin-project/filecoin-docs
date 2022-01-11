@@ -4,8 +4,6 @@ description: 'Running a Filecoin network locally can be extremely useful for dev
 breadcrumb: 'Local dev-net'
 ---
 
-## Manual set up
-
 You can spin up a dev-net using the regular Lotus binaries. This method will launch Lotus using 2 KiB sectors, allowing systems with fewer resources to run a dev-net. This solution runs comfortably on a computer with 2 CPU cores and 4 GB RAM.
 
 This process requires you to use multiple terminal windows, so you might find a terminal multiplexer like [Tmux](https://github.com/tmux/tmux) helpful.
