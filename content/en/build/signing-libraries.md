@@ -6,9 +6,9 @@ breadcrumb: 'Signing libraries'
 
 They facilitate that applications that are running offline, on a mobile device, or anywhere to create transactions which can then be later submitted to any Filecoin API endpoint (perhaps by a 3rd party).
 
-::: callout
+{{< alert icon="callout" >}}
 **This documentation page is a stub!** If you have more information or knowledge about signing libraries, please contribute it!
-:::
+{{< /alert >}}
 
 ## Filecoin signing tools
 

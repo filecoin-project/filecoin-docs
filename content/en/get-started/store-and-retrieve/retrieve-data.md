@@ -39,11 +39,11 @@ Before you can retrieve data from a storage provider, you need to check that you
 
     Any balance above 0.1 FIL is enough to retrieve the data we are requesting in this tutorial.
 
-:::warning Low or no balance
+{{< alert icon="warning" >}}**Low or no balance**
 If you do not have enough FIL, you need to transfer some FIL to this account. You can either do this by using a cryptocurrency exchange or having a friend send you FIL. The address `f1...` listed when you run `lotus wallet list` is your public address; use this when requesting money from an exchange or your friend.
 
 Check out the [Managing assets section](../../about-filecoin/managing-assets.md) for information on [withdrawing FIL from an exchange](../../about-filecoin/managing-assets.md#exchanges).
-:::
+{{< /alert >}}
 
 ## Get the deal information
 
@@ -59,20 +59,20 @@ We're going to gather this information now.
 
 1. Copy this **address** to your clipboard: `f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq`.
 
-    :::tip Using a different address
+    {{< alert icon="tip" >}}**Using a different address**
     If you want to retrieve data that **you stored** you can use that **address** in place of the one we're using in this tutorial. If you'd like to use the **address** on your local Lotus note, run `lotus wallet list` and copy it to your clipboard.
 
     Remember, you will not be able to retrieve data stored less than 24 hours ago.
-    :::
+    {{< /alert >}}
 
 1. Go to [filecoin.tools](https://filecoin.tools).
 1. Paste the **address** in the search bar and press `ENTER` to search for deals made by that **address**:
 
     ![Filecoin.tools showing all the deals made by a single address.](/images/store-and-retrieve/filecoin-tools-search-address.png)
 
-    :::warning Using a different address
+    {{< alert icon="warning" >}}**Using a different address**
     The default **address** supplied in this tutorial `f16wc2ees...` has only submitted one storage deal, so you'll only see one row in [filecoin.tools](https://filecoin.tools/f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq). If you are using a different **address**, you may see multiple rows. If you don't see _any_ rows, the **address** you searched for has not yet completed a deal. The **address** may have submitted a deal, but the storage provider is yet to _seal_ the data. Deals will only show up here once the storage provider has completed sealing the data.
-    :::
+    {{< /alert >}}
 
 1. Click anywhere on a row to view information about that specific deal:
 
@@ -114,9 +114,9 @@ Next up is creating the command for Lotus to run. The structure for a retrieval 
     Success
     ```
 
-    :::danger
+    {{< alert icon="warning" >}}
     You must keep the `lotus daemon` running for the duration of this process.
-    :::
+    {{< /alert >}}
 
 1. That's it!
 

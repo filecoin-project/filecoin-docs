@@ -19,9 +19,9 @@ Users can choose their preferred trade-off between cost, redundancy, and speed b
 
 At any time, users can verify that their files are being stored correctly by looking at proofs on Filecoin’s blockchain.
 
-::: callout
+{{< alert icon="tip" >}}
 [Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
-:::
+{{< /alert >}}
 
 ## For storage providers
 

@@ -18,13 +18,13 @@ Follow the [Lotus installation guide](https://lotus.filecoin.io/docs/set-up/inst
 - Prepare your hardware by meeting the minimal requirements.
 - Install dependencies.
 - Start the Lotus daemon and sync the chain by either:
-    - Syncing from scratch: in your lotus directory run `lotus daemon` 
+    - Syncing from scratch: in your lotus directory run `lotus daemon`
     - Syncing from a full snapshot.
     - Syncing from minimal snapshot
 
-:::warning
+{{< alert icon="warning" >}}
 A snapshot only has the state trees from the recent tipset (2000 epochs) onward and nothing before that tipset, which means it does not have all the historical states of the network. In addition, only a full snapshot has full state trees from a certain tipset.
-:::
+{{< /alert >}}
 
 ### Check sync status
 
@@ -63,25 +63,25 @@ The Filecoin network uses a [Proof of Storage (PoRep)](https://spec.filecoin.io#
 
 ## Accounts and wallets
 
-Filecoin uses an account-based model. There are 4 types of account prefixes: 
+Filecoin uses an account-based model. There are 4 types of account prefixes:
 
 - `f0` for ID address
-- `f1` for Secp256k1 wallets 
-- `f2`for [actor](https://spec.filecoin.io#section-glossary.actor) accounts 
+- `f1` for Secp256k1 wallets
+- `f2`for [actor](https://spec.filecoin.io#section-glossary.actor) accounts
 - `f3` for BLS wallets
 
 `f1`, `f2`, and `f3` prefixed addresses are called account addresses. An account address is activated when it first receives a transaction. `f0` prefixed addresses are mapped to each active account address.
 
-:::tip Testnet addresses
+{{< alert icon="tip" >}}**Testnet addresses**
 Within a testnet, the address prefix is `t`. So ID addresses become `t0`, Secp256k1 wallets become `t1`, etc.
-:::
+{{< /alert >}}
 
 ## Signatures
 
-Filecoin currently uses two types of signatures: 
+Filecoin currently uses two types of signatures:
 
-- ECDSA signatures over the Secp256k1 elliptic curve 
-- BLS signatures over the BLS12-381 group of curves. 
+- ECDSA signatures over the Secp256k1 elliptic curve
+- BLS signatures over the BLS12-381 group of curves.
 
 Details and reference implementations can be found [in the Filecoin specification](https://spec.filecoin.io#section-algorithms.crypto.signatures.signature-types).
 
@@ -90,7 +90,7 @@ Details and reference implementations can be found [in the Filecoin specificatio
 There are two message types:
 
 - [Signed messages](https://github.com/filecoin-project/lotus/blob/9deda06ec632da3f7a035cc63b9408de72c96f79/chain/types/signedmessage.go#L44)
-- [Unsigned messages](https://github.com/filecoin-project/lotus/blob/9deda06ec632da3f7a035cc63b9408de72c96f79/chain/types/message.go#L28). 
+- [Unsigned messages](https://github.com/filecoin-project/lotus/blob/9deda06ec632da3f7a035cc63b9408de72c96f79/chain/types/message.go#L28).
 
 Messages are fully irreversible at 900 epochs. Waiting 200 epochs for message confirmation is acceptable.
 
@@ -286,4 +286,3 @@ Join the [Filecoin Slack](https://filecoinproject.slack.com/signup) and post any
 - [Filecoin Networks](https://status.filecoin.io)
 - [Lotus](https://github.com/filecoin-project/lotus) - the reference implementation for the Filecoin network
 - [Block Explorers](/get-started/explore-the-network.md#block-explorers)
-

@@ -6,9 +6,9 @@ breadcrumb: 'Mining architectures'
 
 This section provides examples for Filecoin Storage mining setups to guide miners to plan and make the right choices when acquiring and setting up their mining infrastructure. Any storage mining setup must meet the [minimal hardware requirements](hardware-requirements.md).
 
-::: callout
+{{< alert icon="callout" >}}
 We are working to improve this section. If you would like to share your mining setup, please use the link at the bottom to edit the page!
-:::
+{{< /alert >}}
 
 ## Protocol Labs example architecture
 

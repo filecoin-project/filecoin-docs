@@ -1,10 +1,4 @@
 [[docs]]
-  name = "Home"
-  weight = 0
-  identifier = "home"
-  url = "/"
-
-[[docs]]
   name = "About Filecoin"
   weight = 15
   identifier = "about-filecoin"
