@@ -3,8 +3,6 @@ title: Store and retrieve
 description: The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial.
 ---
 
-# Store and retrieve
-
 The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial.
 
 The process is split into three main parts: the set-up, storing your data and retrieving your data. Each section has several sub-processes that we need to follow.

@@ -4,9 +4,6 @@ sidebarDepth: 0
 description: Find Filecoin on your favorite social media platform.
 editLink: false
 ---
-
-# Social media
-
 Filecoin is everywhere on the internet — and that includes social media. Find your favorite flavor here.
 
 ## YouTube
