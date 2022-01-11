@@ -4,9 +4,9 @@ description: "Filecoin-backed pinning services (FPS) are data storage and retrie
 breadcrumb: 'FPSs architecture'
 ---
 
-::: tip
+{{< alert icon="tip" >}}
 You can find a list of [existing FPS providers here](README.md).
-:::
+{{< /alert >}}
 
 ## How to use an FPS
 

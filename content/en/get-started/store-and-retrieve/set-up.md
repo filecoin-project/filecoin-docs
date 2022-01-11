@@ -7,9 +7,9 @@ Before you begin storing any data on the Filecoin network, you need to run throu
 
 ![A flowchart showing to steps within this set up process.](/images/store-and-retrieve/set-up-process.png)
 
-::: tip What is Lotus?
+{{< alert icon="tip" >}}**What is Lotus?**
 Programs that interact with the Filecoin network are called _implementations_, and [Lotus](https://lotus.filecoin.io) is a command-line interface (CLI) implementation. There are other implementation being created alongside Lotus, however Lotus is the only Filecoin implementation created and maintained by Protocol Labs.
-:::
+{{< /alert >}}
 
 ## Things to note
 
@@ -35,13 +35,11 @@ To install a Lotus lite-node on your computer, you must have the tools required 
 
 Take a look at [the Lotus documentation](https://lotus.filecoin.io/docs/set-up/install/) to learn how to install Lotus on other operating systems.
 
-::::: tabs
+### macOS
 
-:::: tab macOS
-
-:::warning Requirements
+{{< alert icon="tip" >}}**Requirements**
 You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
-:::
+{{< /alert >}}
 
 1. Add the `filecoin-project/lotus` Homebrew tap:
 
@@ -57,8 +55,7 @@ You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebr
 
 1. Lotus is now installed on your computer.
 
-::::
-:::: tab Ubuntu
+### Ubuntu
 
 There are two simple ways to install Lotus on Ubuntu:
 
@@ -95,9 +92,9 @@ There are two simple ways to install Lotus on Ubuntu:
 
 #### Snap
 
-:::warning Requirements
+{{< alert icon="warning" >}}**Requirements**
 You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
-:::
+{{< /alert >}}
 
 1. To install Lotus using Snap, run:
 
@@ -107,16 +104,13 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
 
-
-:::::
-
 ## Run a Lotus lite-node
 
 Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node!
 
-:::warning
-Just as a reminder, `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but should not be used in a development or in a production environment.
-:::
+{{< alert icon="warning" >}}
+`api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but should not be used in a development or in a production environment.
+{{< /alert >}}
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address:
 
@@ -198,9 +192,9 @@ DataCap acts as a kind of _multiplier_ for block rewards. If a storage provider 
 
 Signing up to Filecoin Plus is easy and free!
 
-:::tip
+{{< alert icon="tip" >}}
 You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with the team on Filecoin Slack](https://filecoin.io/slack/).
-:::
+{{< /alert >}}
 
 1. Go to [plus.fil.org](https://plus.fil.org).
 1. Under **For isClients**, click **Proceed**.
