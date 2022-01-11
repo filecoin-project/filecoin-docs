@@ -4,8 +4,6 @@ description: 'Start storing data on the Filecoin network.'
 breadcrumb: 'Store'
 ---
 
-# Store data on Filecoin
-
 Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers or miners.
 
 :::tip Looking for Lotus?

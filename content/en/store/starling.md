@@ -5,7 +5,7 @@ breadcrumb: 'Starling'
 ---
 
 <center>
-<a href="https://starlingstorage.io" target="_blank"><img src="./images/starling.gif" alt="starling" /></a>
+<a href="https://starlingstorage.io" target="_blank"><img src="/images/store/starling.gif" alt="starling" /></a>
 </center>
 
 ## Getting started

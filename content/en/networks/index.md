@@ -1,9 +1,7 @@
 ---
-title: Networks 
+title: Networks
 description: The Filecoin network has several different networks for testing, staging, and production purposes.
 ---
-
-# Networks
 
 This page contains information on the [networks available](#available-networks) for Filecoin.
 
@@ -16,7 +14,7 @@ The [Glif nodes section](https://lotus.filecoin.io/docs/developers/hosted-lotus/
 There are two networks available for Filecoin:
 
 - [Mainnet](#mainnet), the only production Filecoin network.
-- [Calibration](#calibration), the primary testing network for Filecoin. 
+- [Calibration](#calibration), the primary testing network for Filecoin.
 
 ::: tip
 Check the status of each network and subscribe to updates at [status.filecoin.io](https://status.filecoin.io).
@@ -132,4 +130,3 @@ Here is a list of networks that are now deprecated:
 | Name | Description | Deprecated on |
 | --- | --- | --- |
 | Nerpa | A test network with tiny sector sizes. This network was for app developers to test the very basic functionality of their applications before moving over to the calibration testnet. | 2021-08-16 |
-

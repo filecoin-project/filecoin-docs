@@ -4,8 +4,6 @@ sidebarDepth: 0
 description: The Filecoin ecosystem provides many software solutions to interact with the Filecoin network.
 ---
 
-# Sofware
-
 This page provides an overview of software solutions in the Filecoin ecosystem.
 
 ## Filecoin implementations

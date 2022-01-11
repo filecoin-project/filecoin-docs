@@ -4,8 +4,6 @@ description: Helpful reference materials for the Filecoin specification, impleme
 
 ---
 
-# Reference
-
 This section contains links and reference materials for Filecoin.
 
 - [Reference](#reference)
@@ -62,13 +60,13 @@ This section contains links and reference materials for Filecoin.
   - [Venus](https://github.com/filecoin-project/venus) (formerly go-filecoin) - also in GoLang ([Venus Docs](https://venus.filecoin.io/)).
 
 + Lotus Docker Hub Images (unofficial):
-  + [glif/lotus](https://github.com/glifio/filecoin-docker) 
+  + [glif/lotus](https://github.com/glifio/filecoin-docker)
   + [ognots/lotus](https://hub.docker.com/r/ognots/lotus) - mainnet-v1.830-rc1
   + [textile/lotus](https://hub.docker.com/r/textile/lotus) - latest
 
 ### Networks
 
-[**Network.filecoin.io**](https://network.filecoin.io) - lists all current Filecoin networks and related informations. 
+[**Network.filecoin.io**](https://network.filecoin.io) - lists all current Filecoin networks and related informations.
 
 + **Mainnet**
   + [Mainnet network status](https://filecoin.statuspage.io/) - reports the status and incident of the Filecoin Mainnet.
@@ -86,7 +84,7 @@ Tools to check status and details of the network and chain.
 
 ### Block explorers
 
-- [Filfox.info](https://filfox.info/en) -  Mainnet 
+- [Filfox.info](https://filfox.info/en) -  Mainnet
 - [Filscan](https://filscan.io) -  Mainnet & Calibration
 - [Filscout](https://filscout.io) - Mainnet & Calibration
 - [1475 Filecoin Explorer](https://1475ipfs.com/#/blockBrowser) -  Mainnet
@@ -107,7 +105,7 @@ Tools to check status and details of the network and chain.
 
 - [Filecoin Storage Stats](https://storage.filecoin.io/) - general storage summary of Filecoin.
 - [filecoin.tools](https://filecoin.tools) - check your CID's storage deal status.
-- [file.app](https://file.app/) - Filecoin miner analytics. 
+- [file.app](https://file.app/) - Filecoin miner analytics.
 - [Deals list at Filfox.io](https://filfox.info/en/deal)
 
 ## Storage Web Applications
@@ -129,12 +127,12 @@ Developer tools, API clients & storing service that developers can use to build 
 
 ### Storage APIs for app builders
 
-- [Estuary](https://estuary.tech) - a simple IPFS node that integrates a minimal Filecoin Client Library. It allows anyone with public data to store and retrieve it using a few API calls. It is for infrastructure operators, developers and Filecoin users. 
-    - [Estuary Docs](https://docs.estuary.tech) - more documentations on how to use Estuary and its API. 
+- [Estuary](https://estuary.tech) - a simple IPFS node that integrates a minimal Filecoin Client Library. It allows anyone with public data to store and retrieve it using a few API calls. It is for infrastructure operators, developers and Filecoin users.
+    - [Estuary Docs](https://docs.estuary.tech) - more documentations on how to use Estuary and its API.
     - [Estuary WWW](https://github.com/application-research/estuary-www) - A simple website application example that can commun any Estuary node.
 - [NFT.storage](https://nft.storage/) - beta service from Protocol Labs for storing off-chain NFT data on IPFS and Filecoin.
 - [**Powergate**](https://docs.textile.io/powergate/) - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers.
-  - [POW CLI](https://docs.textile.io/powergate/#command-line-interface) - The CLI runs on the Powergate API. 
+  - [POW CLI](https://docs.textile.io/powergate/#command-line-interface) - The CLI runs on the Powergate API.
   - [Powergate JS Client](https://github.com/textileio/js-powergate-client) - JS client built on top of Powergate gRPC APIs.
   - [Powergate Go Client](https://pypi.org/project/pygate-grpc/) - Build your Go app using Powergate APIs with Go client.
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account.
@@ -258,7 +256,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [FilWallet.ai](https://filwallet.ai/) - by the team behind Filscan.io
 - [MathWallet](https://mathwallet.org/)
 - [ImToken](https://token.im/)
-- [TrustWallet](https://trustwallet.com/) 
+- [TrustWallet](https://trustwallet.com/)
     - [Open-source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 
 ## Ecosystem galleries
@@ -270,7 +268,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 ### Hackathons
 
 - [Upcoming Hackathons](https://github.com/protocol/grants#hackathons)
-  + Keep a lookout for upcoming hackathons! 
+  + Keep a lookout for upcoming hackathons!
   + All winners are eligible for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/microgrants/microgrants.md) after the Hackathon!
 
 ### Grants and accelerators
