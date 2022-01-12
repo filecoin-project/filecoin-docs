@@ -1,5 +1,5 @@
 ---
-title: "Exchanges"
+title: Exchange integration
 description: "Use this guide to help you list Filecoin on your exchange platform."
 ---
 

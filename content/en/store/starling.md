@@ -1,7 +1,8 @@
 ---
-title: 'Starling'
+title: Using Starling
 description: 'Starling is a decentralized storage application designed for use in archival settings, where the ability to demonstrate the authenticity of a file over the course of time is of paramount importance.'
 breadcrumb: 'Starling'
+weight: 6
 ---
 
 <center>
