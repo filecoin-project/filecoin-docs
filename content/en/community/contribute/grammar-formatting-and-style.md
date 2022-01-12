@@ -1,5 +1,5 @@
 ---
-title: Grammar, formatting, and style
+title: Documentation style guide
 description: Learn the syntax and formatting rules for writing documentation for the Filecoin project.
 ---
 
@@ -326,19 +326,19 @@ Custom containers can be defined by their types, titles, and contents.
 
 ##### Input
 
-```markdown
-{{< alert icon="tip" >}}
+<pre class="prettyprint lang-html">
+&#123;&#123;&#60; alert icon="tip" &#62; &#125;&#125;
 This is a tip
-{{< /alert >}}
+&#123;&#123;&#60; /alert &#62; &#125;&#125;
 
-{{< alert icon="callout" >}}
+&#123;&#123;&#60; alert icon="callout" &#62; &#125;&#125;
 This is a callout
-{{< /alert >}}
+&#123;&#123;&#60; /alert &#62; &#125;&#125;
 
-{{< alert icon="warning" >}}
+&#123;&#123;&#60; alert icon="warning" &#62;&#125;&#125;
 This is a dangerous warning
-{{< /alert >}}
-```
+&#123;&#123;&#60; /alert &#62; &#125;&#125;
+</pre>
 
 ##### Output
 

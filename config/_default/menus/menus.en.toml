@@ -1,62 +1,42 @@
 [[docs]]
-  name = "About Filecoin"
-  weight = 15
-  identifier = "about-filecoin"
-  url = "/about-filecoin"
-
-[[docs]]
-  name = "Build"
-  weight = 17
-  identifier = "build"
-  url = "/build"
-
-[[docs]]
-  name = "Community"
-  weight = 20
-  identifier = "community"
-  url = "/community"
-
-[[docs]]
   name = "Get Started"
-  weight = 30
   identifier = "get-started"
-  url = "/get-started"
+  weight = 1
+
+[[docs]]
+  name = "About Filecoin"
+  identifier = "about-filecoin"
+  weight = 2
 
 [[docs]]
   name = "Provide Storage"
-  weight = 40
   identifier = "mine"
-  url = "/mine"
-
-[[docs]]
-  name = "Networks"
-  weight = 50
-  identifier = "networks"
-  url = "/networks"
-
-[[docs]]
-  name = "Project"
-  weight = 50
-  identifier = "project"
-  url = "/project"
-
-[[docs]]
-  name = "Reference"
-  weight = 40
-  identifier = "reference"
-  url = "/reference"
-
-[[docs]]
-  name = "Software"
-  weight = 50
-  identifier = "software"
-  url = "/software"
+  weight = 4
 
 [[docs]]
   name = "Store Data"
-  weight = 50
   identifier = "store"
-  url = "/store"
+  weight = 5
+
+[[docs]]
+  name = "Networks"
+  identifier = "networks"
+  weight = 6
+
+[[docs]]
+  name = "Build"
+  identifier = "build"
+  weight = 7
+
+[[docs]]
+  name = "Reference"
+  identifier = "reference"
+  weight = 8
+
+[[docs]]
+  name = "Community"
+  identifier = "community"
+  weight = 9
 
 [[social]]
   name = "GitHub"

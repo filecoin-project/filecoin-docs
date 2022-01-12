@@ -1,10 +1,13 @@
 ---
 title: The Filecoin Project
 description: Learn about the history, roadmap, current status and more for Filecoin
+menu:
+  docs:
+    parent: about-filecoin
 cascade:
-    menu:
-        docs:
-            parent: project
+  menu:
+    docs:
+      parent: about-filecoin
 ---
 
 Curious about how it all got started, or where we're headed? Learn about the history, current state, and future trajectory of the Filecoin project here.

@@ -2,6 +2,7 @@
 title: Explore the network
 description: There are several ways to explore and get insights from the Filecoin network.
 breadcrumb: 'Explore the Network'
+weight: 7
 ---
 
 ## Block explorers

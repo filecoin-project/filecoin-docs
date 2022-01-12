@@ -1,9 +1,14 @@
 ---
 title: What is Filecoin?
 description: Explore Filecoin, a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time.
+weight: 998
 ---
 
 Filecoin is a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time.
+
+Filecoin’s mission is to create a decentralized, efficient, and robust foundation for humanity’s information. To advance that mission, we’ve created a decentralized storage network that lets anyone in the world store or retrieve files. We hope Filecoin will make storage cheaper and more reliable by helping small players compete directly with well-known centralized services, providing a common interface for providers of all sizes, and greatly reducing migration and transaction costs.
+
+## Functionality overview 
 
 In Filecoin, users pay to store their files on storage miners. Storage miners are computers responsible for storing files and proving they have stored the files correctly over time. Anyone who wants to store their files or get paid for storing other users’ files can join Filecoin. Available storage, and the price of that storage, is not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in.
 
