@@ -29,7 +29,7 @@ Make sure you have both [Node.js](https://nodejs.org/en/) and [NPM](https://www.
 To interact with the Infura API, you need to register on the Infura website. It's a free API, and all you need to do is sign up with your email:
 
 1. Go to [infura.io/](https://infura.io/) and log in.
-1. Select **Filecoin** from the sidebar and click **Create new project**.
+1. Click **CREATE NEW PROJECT**, and then choose **Filecoin** to start.
 1. Enter _Filecoin - Get started_ as the project name and click **Create**.
 1. You should now see your `Project ID` and `Project Secret`. Take a note of these two fields; we'll use them later.
 
@@ -286,7 +286,7 @@ Instead of asking for the chain head information, let's see if a given string is
          "jsonrpc": "2.0",
          "id": 0,
          "method": "Filecoin.WalletValidateAddress",
-         "params": ["f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi"],
+         "params": ["f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi"]
      }`
    }
    ```
