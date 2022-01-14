@@ -255,7 +255,6 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 - [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
 - [Cobo](https://cobo.com/)
-- [FilWallet.ai](https://filwallet.ai/) - by the team behind Filscan.io
 - [MathWallet](https://mathwallet.org/)
 - [ImToken](https://token.im/)
 - [TrustWallet](https://trustwallet.com/) 
