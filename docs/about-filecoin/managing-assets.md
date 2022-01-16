@@ -24,6 +24,7 @@ Be incredibly cautious when using unaudited wallets. Wallets that _have_ gone th
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
 | [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
 | [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by Filfox                                                                                             | Yes     |
+| [FILWallet](https://filwallet.co)            | Crypto wallet focusing on FIL | Yes     |
 
 ## Exchanges
 
