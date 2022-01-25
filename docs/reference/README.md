@@ -269,7 +269,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 ### Hackathons
 
-- [Upcoming Hackathons](https://github.com/protocol/grants#hackathons)
+- [Upcoming Hackathons](https://hackathons.filecoin.io/)
   + Keep a lookout for upcoming hackathons! 
   + All winners are eligible for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/microgrants/microgrants.md) after the Hackathon!
 
