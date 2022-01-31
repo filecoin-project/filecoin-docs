@@ -109,13 +109,13 @@ Filecoin combines many elements of other file storage and distribution systems. 
         <td>Mining results in heat</td>
     </tr>
     <tr>
-        <td>Types of miner</td>
-        <td>Storage miners, retrieval miners, repair miners</td>
-        <td>All miners perform proof of work</td>
+        <td>Types of provider</td>
+        <td>Storage provider, retrieval provider, repair provider</td>
+        <td>All providers perform proof of work</td>
     </tr>
     <tr>
         <td>Uptime requirements</td>
-        <td>Storage miners rewarded for uptime, penalized for downtime</td>
+        <td>Storage providers rewarded for uptime, penalized for downtime</td>
         <td>Miners can go offline without being penalized</td>
     </tr>
     <tr>
