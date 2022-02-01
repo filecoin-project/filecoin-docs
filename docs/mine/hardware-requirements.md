@@ -1,22 +1,22 @@
 ---
 title: 'Hardware requirements'
-description: 'Minimum hardware requirements for Filecoin mining.'
+description: 'Minimum hardware requirements for providing storage to the Filecoin network.'
 breadcrumb: 'Hardware requirements'
 ---
 
 # {{ $frontmatter.title }}
 
-The hardware requirements for Filecoin mining are tied to the computational resources needed to _seal_ a sector and generating regular _Proof of Spacetime_ for every sealed sector (_WindowPoSt_).
+The hardware requirements for providing storage are tied to the computational resources needed to _seal_ a sector and generating regular _Proof of Spacetime_ for every sealed sector (_WindowPoSt_).
 
 The Filecoin network requires storage providers to run computationally expensive operations. The cost of these operations depends on which network the storage provider is running; some testnets use a smaller sector size to increase the speeds of transactions artificially. For reference, the requirements listed below correspond to **32GiB sectors**, as used by mainnet and some testnets.
 
-Different Filecoin Miner implementations may distribute sealing tasks differently, for example, using additional workers apart from the Miner. The following are _general_ requirements assuming all the mining operations are performed by the same machine. Resources needed by each operation are detailed later below. For a concrete example of hardware type and usage, see the [mining architectures](https://lotus.filecoin.io/docs/storage-providers/mining-architectures/).
+Different Filecoin Miner implementations may distribute sealing tasks differently, for example, using additional workers apart from the Miner. The following are _general_ requirements assuming all the storage provider operations are performed by the same machine. Resources needed by each operation are detailed later below. For a concrete example of hardware type and usage, see the [storage provider architectures](https://lotus.filecoin.io/docs/storage-providers/mining-architectures/).
 
 ## General hardware requirements
 
 ### CPU
 
-A miner will need an **8+ core CPU**.
+A storage provider will need an **8+ core CPU**.
 
 We strongly recommend a CPU model with support for _Intel SHA Extensions_: AMD since Zen microarchitecture, or Intel since Ice Lake. Lack of SHA Extensions results in a very significant slow down.
 
