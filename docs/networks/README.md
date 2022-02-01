@@ -84,7 +84,7 @@ Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supp
 
 Calibration network is the most realistic simulation of the Filecoin mainnet:
 
-- Prospective storage miners can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters.
+- Prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters.
 - Prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage + retrieval functionality.
 - Same sector size as mainnet. The calibration network supports 32 GiB and 64 GiB sectors.
 
