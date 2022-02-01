@@ -23,15 +23,15 @@ Running a Filecoin Node is a low-level task that usually implies keeping a progr
 
 ## Filecoin storage providers
 
-The storage providers provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds), for which they collect FIL rewards. Additional details about types of storage providers, rewards, and deals execution from the storage provider perspective can be found in the [How mining works](../mine/how-mining-works.md) section.
+The storage providers provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds), for which they collect FIL rewards. Additional details about types of storage providers, rewards, and deals execution from the storage provider perspective can be found in the [How mining works](../storage-provider/how-providing-works.md) section.
 
-Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements](../mine/hardware-requirements.md), as needed to complete the necessary [proofs](#proofs). The [Lotus Miner](https://lotus.filecoin.io) is the most advanced implementation of a Filecoin storage provider to this day.
+Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements](../storage-provider/hardware-requirements.md), as needed to complete the necessary [proofs](#proofs). The [Lotus Miner](https://lotus.filecoin.io) is the most advanced implementation of a Filecoin storage provider to this day.
 
 ## Deals
 
 There are two main types of deals in Filecoin: _storage deals_ and _retrieval deals_.
 
-Storage deals are agreements between clients and _storage providers_ to store some data in the network. Once a deal is initiated, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) to the chain that it is still storing the data per the agreement so that it can collect [rewards](../mine/mining-rewards.md). If not, the storage provider will be [slashed](../mine/slashing.md) and lose FIL.
+Storage deals are agreements between clients and _storage providers_ to store some data in the network. Once a deal is initiated, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) to the chain that it is still storing the data per the agreement so that it can collect [rewards](../storage-provider/storage-provider-rewards.md). If not, the storage provider will be [slashed](../storage-provider/slashing.md) and lose FIL.
 
 Retrieval deals are agreements between clients and _retrieval providers_ (which may or not be also storage providers) to extract data that is stored in the network (hopefully in a fast and reliable manner). Unlike storage deals, these deals are fulfilled off-chain, using _payment channels_ to incrementally pay for the data received.
 
