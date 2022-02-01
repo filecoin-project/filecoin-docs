@@ -55,13 +55,13 @@ The smallest and most common denomination of FIL is the `attoFIL` (10^-18 FIL).
 
 > The collateral for this storage deal is five FIL.
 
-> I generated ⨎100 as a storage miner last month!
+> I generated ⨎100 as a storage provider last month!
 
 > My wallet has thirty filecoin.
 
 Examples of discouraged usage:
 
-> Filecoin rewards miners with Filecoin.
+> Filecoin rewards storage providers with Filecoin.
 
 > There are many ways to participate in the filecoin community.
 
