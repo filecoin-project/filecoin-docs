@@ -12,7 +12,6 @@ meta:
 
 Filecoin is a peer-to-peer network that allows anyone to store and retrieve data on the internet. Built-in economic incentives ensure that files are stored and retrieved reliably and continuously for however long a user specifies.
 
-
 No single company or organization controls available storage capacity and the pricing for storing and retrieving files. Instead, the Filecoin storage network facilitates open markets for storing and retrieving files that anyone with access to the internet can participate in. It uses its native cryptocurrency (FIL) to facilitate these transactions.
 
 The **Filecoin project documentation** homepage offers all the necessary resources to learn about Filecoin, the software and the tools to contribute to the network, either as a user looking for storage, or as a storage provider supplying storage capacity. Here are some links to get you started:

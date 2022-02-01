@@ -6,7 +6,7 @@ breadcrumb: 'Store'
 
 # Store data on Filecoin
 
-Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers or miners.
+Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers.
 
 :::tip Looking for Lotus?
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
@@ -27,7 +27,7 @@ The following applications allow you to store data on the Filecoin network with 
 
 ### Filecoin Node Client
 
-- [Lotus](https://lotus.filecoin.io) imports data and performs deals on the chain using its daemon and CLI. Lotus users get full control of the deals, the chosen miners, and the wallets used to pay. Make sure you are familiar with Lotus and have it installed and running.
+- [Lotus](https://lotus.filecoin.io) imports data and performs deals on the chain using its daemon and CLI. Lotus users get full control of the deals, the chosen providers, and the wallets used to pay. Make sure you are familiar with Lotus and have it installed and running.
 
 ### Digital Preservation
 

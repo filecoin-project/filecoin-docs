@@ -127,8 +127,8 @@ lotus-shed verifreg check-client f00000
 ### Finding storage providers to take Fil+ deals
 
 There are a few different ways in which a client can find a storage provider to take a Fil+ storage deal:
-1. In the **For Clients** section of the [Filecoin Plus Registry](https://plus.fil.org/), there is a [Miner Registry](https://plus.fil.org/miners) which lists a self-selected set of miners who are willing to take Fil+ storage deals
-1. Use a Miner Reputation system such as [Filecoin Reputation System](http://filrep.io/) or Textile's [Miner Index](https://docs.textile.io/filecoin/miner-index/) to identify storage miners who can meet your needs
+1. In the **For Clients** section of the [Filecoin Plus Registry](https://plus.fil.org/), there is a [Miner Registry](https://plus.fil.org/miners) which lists a self-selected set of storage providers who are willing to take Fil+ storage deals
+1. Use a Miner Reputation system such as [Filecoin Reputation System](http://filrep.io/) or Textile's [Miner Index](https://docs.textile.io/filecoin/miner-index/) to identify storage providers who can meet your needs
 1. Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack to discuss storage options
 1. Hop into the network with your node and query storage providers (using `query-ask`) to check their verified deal prices
 
