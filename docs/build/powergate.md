@@ -92,7 +92,7 @@ We will use the Filecoin mainnet as an example here. Learning how to use localne
    pow config apply [cid] --watch
    ```
 
-   The configuration used will be based on the default configuration unless a custom configuration is provided (see `pow config apply --help`). Powergate will automatically find miners and perform the storage deal.
+   The configuration used will be based on the default configuration unless a custom configuration is provided (see `pow config apply --help`). Powergate will automatically find storage providers and perform the storage deal.
 
    You can watch the job progress anytime with:
 

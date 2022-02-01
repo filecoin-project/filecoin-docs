@@ -382,4 +382,4 @@ request(options, (error, response, body) => {
 
 ## Next steps
 
-We've only really dipped our toes into what you can do with this API. The [Infura documentation](https://infura.io/docs/filecoin) is a great resource to determine what you can build. Why not try generating a transaction and sending `FIL` between two accounts using the API? Or get information about a particular miner?
+We've only really dipped our toes into what you can do with this API. The [Infura documentation](https://infura.io/docs/filecoin) is a great resource to determine what you can build. Why not try generating a transaction and sending `FIL` between two accounts using the API? Or get information about a particular storage provider?

@@ -50,7 +50,7 @@ While the specific architecture of each service will look different, most FPS so
 **Data retrieval**:
 
 - When a user makes an API request to retrieve a particular CID through an FPS, the FPS will attempt first to retrieve the CID through the “Hot” storage layer (pinned data on the public IPFS network).
-- If this is unsuccessful, the FPS will then retrieve the CID through the “Cold” storage layer (data stored with miners on the Filecoin network) and serve it back to the requestor.
+- If this is unsuccessful, the FPS will then retrieve the CID through the “Cold” storage layer (data stored with storage providers on the Filecoin network) and serve it back to the requestor.
 - The user pays the FPS directly for providing this retrieval service.
 
 Remember that these flows are hidden from the user and take place behind the scenes. Users will interact with a single interface that abstracts away data flows between systems, node management, and Filecoin deal management.
