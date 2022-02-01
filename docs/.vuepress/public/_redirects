@@ -76,9 +76,9 @@
 # Redirects from "miner" pages to "storage provider" pages.
 # ---------------------------------------------------------
 /mine/ /storage-provider/
-/mine/how-mining-works /storage-provider/how-providing-works/
-/mine/mining-architectures /storage-provider/storage-provider-architectures
-/mine/mining-rewards /storage-provider/storage-provider-rewards
+/mine/how-mining-works/ /storage-provider/how-providing-works/
+/mine/mining-architectures/ /storage-provider/storage-provider-architectures
+/mine/mining-rewards/ /storage-provider/storage-provider-rewards
 # ---------------------------------------------------------
 
 
