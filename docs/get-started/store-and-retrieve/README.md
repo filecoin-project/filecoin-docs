@@ -14,7 +14,7 @@ The process is split into three main parts: the set-up, storing your data and re
 | Section | Sub-tasks |
 | --- | --- |
 | Set up | 1. Get access to a Lotus full-node.<br> 2. Start a Lotus lite-node on your local computer.<br> 3. Get a FIL address.<br> 4. Sign up for Filecoin Plus. |
-| Store data | 1. Package your data.<br> 2. Import your data into Lotus.<br> 3. Find a storage provider through the Filecoin Plus miner registry.<br> 4. Create a storage deal.<br> 5. Wait for the deal to complete. |
+| Store data | 1. Package your data.<br> 2. Import your data into Lotus.<br> 3. Find a storage provider through the Filecoin Plus storage provider registry.<br> 4. Create a storage deal.<br> 5. Wait for the deal to complete. |
 | Retrieve data | 1. Create a retrieval deal.<br> 2. Download your data.|
 
 It will take about an hour to complete this tutorial. While there aren't too many steps involved, there's a bit of waiting around for the network to process your requests.
