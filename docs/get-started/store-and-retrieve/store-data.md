@@ -82,7 +82,7 @@ We're going to use the Filecoin Plus storage provider registry to find a couple 
 Increasing the number of storage providers you use increases your data redundancy, and decreases the chances of your data being lost.
 :::
 
-### Filecoin Plus storage provider registry 
+### Filecoin Plus provider registry 
 
 The Filecoin Plus storage provider registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page](../../store/filecoin-plus.md) to find out more about the program.
 
@@ -117,7 +117,7 @@ We're going to use FilRep to check that the minimum deal size of the storage pro
     ![](./images/filrep-search-min-file-size.png)
 
 1. Check that the minimum file size is lower than 5 GiB, and that they charge 0 FIL for verified deals.
-1. If the minimum file size shown for any of your storage providers is larger than 5 GiB, or they charge more thann 0 FIL for verified deals, go back to [the previous section](#filecoin-plus-miner-registry) and select a new storage provider.
+1. If the minimum file size shown for any of your storage providers is larger than 5 GiB, or they charge more thann 0 FIL for verified deals, go back to [the previous section](#filecoin-plus-provider-registry) and select a new storage provider.
 
 Now that you've found your storage providers, you can move onto creating a storage deal!
 
