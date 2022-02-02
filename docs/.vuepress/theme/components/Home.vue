@@ -108,34 +108,29 @@ export default {
           ]
         },
         {
-          title: 'Mine',
-          path: '/mine',
+          title: 'Provide storage',
+          path: '/storage-provider',
           children: [
             {
-              title: 'How mining works',
-              path: '/mine/how-mining-works'
+              title: 'How providing works',
+              path: '/storage-provider/how-providing-works'
             },
             {
               title: 'Hardware requirements',
-              path: '/mine/hardware-requirements'
+              path: '/storage-provider/hardware-requirements'
             },
             {
-              title: 'Mining architectures',
-              path: '/mine/mining-architectures'
+              title: 'Architectures',
+              path: '/storage-provider/storage-provider-architectures'
             },
             {
-              title: 'Lotus guides for miners',
-              path: '/mine/lotus'
+              title: 'Rewards',
+              path: '/storage-provider/storage-provider-rewards/'
             },
             {
-              title: 'Lotus miner setup',
-              path: '/mine/lotus/miner-setup'
+              title: 'Slashing',
+              path: '/storage-provider/slashing/'
             },
-            {
-              title: 'Configuration reference',
-              path: '/mine/lotus/miner-configuration'
-            },
-            { title: 'Seal workers', path: '/mine/lotus/seal-workers' }
           ]
         },
         {
