@@ -1,14 +1,16 @@
 ---
-title: Filecoin Documentation
-description: The homepage for Filecoin documentation.
+title: "Filecoin Documentation"
+description: "Filecoin is a peer-to-peer network that stores files on the internet, with built-in economic incentives to ensure files are stored reliably over time."
 homepage: true
-breadcrumb: Home
 meta:
   - name: google-site-verification
     content: emWvbfbFeJZC-qyTitVSeHneuhng4RIaw31c-nb0QZg
+toc: false
 ---
 
 **Filecoin is a peer-to-peer network that stores files on the internet, with built-in economic incentives to ensure files are stored reliably over time.**
+
+![](https://filecoin.io/uploads/items-on-filecoin_hu58915c6fa92426a42c55fabbff004860_864911_3000x0_resize_q90_linear.jpg)
 
 Available storage and pricing is not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in.
 
@@ -17,3 +19,4 @@ The **Filecoin project documentation** homepage offers all the necessary resourc
 {{< alert icon="tip" >}}
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 {{< /alert >}}
+
