@@ -192,7 +192,7 @@ To complete this section, you need the **Data CID** you received after running `
 
 ## Check the deal status 
 
-Once the data has been sent to the storage clients, the storage deals can take up to 24 hours to complete. You can check the progress of your deals.
+Once the data has been sent to the storage clients, the storage deals can take several hours to complete - this depends on a number of factors, including the storage provider you're working with, how quickly they trigger the sealing process, and how quickly they can seal data. You can check the progress of your deals.
 
 1. List successful and pending deals by using the `lotus client list-deals` command:
 
