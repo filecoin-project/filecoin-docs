@@ -2,6 +2,7 @@
 title: Social media
 sidebarDepth: 0
 description: Find Filecoin on your favorite social media platform.
+editLink: false
 ---
 
 # Social media
@@ -18,7 +19,7 @@ Explore the latest news, events and other happenings on the official [Filecoin B
 
 ## Newsletter
 
-Subscribe to the [Filecoin newsletter](https://filecoin.io/newsletter) for official project updates sent straight to your inbox.
+Subscribe to the [Filecoin newsletter](https://filecoin.io/build/#events) for official project updates sent straight to your inbox.
 
 ## Twitter
 
@@ -29,6 +30,6 @@ Get your Filecoin news in tweet-sized bites. Follow these accounts for the lates
 
 ## WeChat
 
-Follow [FilecoinOfficial](https://weixin.qq.com/r/1xz54Y-EctINrcuC90nF) on WeChat for project updates and announcements in Chinese.
+Follow FilecoinOfficial on [WeChat](https://www.wechat.com/mobile) for project updates and announcements in Chinese.
 
 <img src="./images/wechat-qr.jpg" />
