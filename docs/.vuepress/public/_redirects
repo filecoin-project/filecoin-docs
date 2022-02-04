@@ -79,6 +79,7 @@
 /mine/how-mining-works/* /storage-provider/how-providing-works/
 /mine/mining-architectures/* /storage-provider/storage-provider-architectures/
 /mine/hardware-requirements/* /storage-provider/hardware-requirements/
+/mine/slashing/* /storage-provider/slashing/
 /mine/mining-rewards/* /storage-provider/storage-provider-rewards/
 # ---------------------------------------------------------
 
