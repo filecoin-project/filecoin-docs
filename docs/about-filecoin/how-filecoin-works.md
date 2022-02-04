@@ -98,7 +98,7 @@ In Filecoin, addresses are used to identify actors. There are 4 address types:
 
 All actors have an ID such as `99`, a short integer assigned to it by the InitActor when the actor is created. An _ID address_ is an actor's ID prefixed with the network (`f` for mainnet) and address type `0` for ID.
 
-For example, the _burn account actor on the mainnet has the ID `99` and the ID Address `f099`.
+For example, the _burn account_ actor on the mainnet has the ID `99` and the ID Address `f099`.
 
 ### Public key addresses - `f1` and `f3`
 
