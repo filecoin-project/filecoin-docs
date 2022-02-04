@@ -141,11 +141,11 @@ Here are some links to useful introductory materials about the technology that p
 
 - libp2p:
 
-  - [Why libp2p?](https://www.parity.io/why-libp2p/)
+  - [Why libp2p?](https://www.parity.io/blog/why-libp2p)
   - [libp2p: A Modular, p2p Networking Stack](https://www.youtube.com/watch?v=xqVmEzsin3Y)
 
 - Filecoin:
   - [Introducing Filecoin, a decentralized storage network](https://www.youtube.com/watch?v=EClPAFPeXIQ)
   - [Filecoin primer](https://ipfs.io/ipfs/QmWimYyZHzChb35EYojGduWHBdhf9SD5NHqf8MjZ4n3Qrr/Filecoin-Primer.7-25.pdf)
-  - [Building the Filecoin ecosystem](https://youtu.be/SXlTBvcqzz8)
+  - [Building the Filecoin ecosystem](https://www.youtube.com/watch?v=SXlTBvcqzz8)
   - [Filecoin features: gas fees](https://filecoin.io/blog/filecoin-features-gas-fees/)

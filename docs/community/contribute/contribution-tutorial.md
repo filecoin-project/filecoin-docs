@@ -94,7 +94,7 @@ GitHub will check if your changes create any merge conflicts with the branch you
 
 ## Waiting for a review
 
-All pull requests from the community must be reviewed by at least one project member before they are merged in. Depending on the size of the pull request, this could take anywhere from a few minutes to a few days to review everything. Depending on the complexity of the pull request, there may be further discussion regarding your changes. Keep returning to GitHub and checking your [notifications page](https://github.com/notifications) to make sure you don't miss anything.
+All pull requests from the community must be reviewed by at least one project member before they are merged in. Depending on the size of the pull request, this could take anywhere from a few minutes to a few days to review everything. Depending on the complexity of the pull request, there may be further discussion regarding your changes. Keep returning to GitHub and checking your notifications page to make sure you don't miss anything.
 
 ## Merge your fix
 
