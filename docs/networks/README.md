@@ -76,7 +76,7 @@ Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supp
 - [Slack Channel for Questions: #fil-mainnet](https://filecoinproject.slack.com/archives/C0179RNEMU4)
 - [Block explorer: Filfox](https://filfox.io/)
 - [Block explorer: Filscan](https://filscan.io/)
-- [Block explorer: Filscout](https://filscout.io/)
+- [Block explorer: Filscout](https://filscout.com/)
 
 ### Calibration
 

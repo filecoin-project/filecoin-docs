@@ -54,7 +54,7 @@ The table below lists the recommended wallet implementations:
 | Name                                             |                                                                                                                                                                                             |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Lotus](https://lotus.filecoin.io)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](https://lotus.filecoin.io/docs/set-up/manage-fil/#ledger).                                                                                                |
-| [Glif wallet](https://wallet.glif.io/?network=f) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
+| [Glif wallet](https://wallet.glif.io/) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
 
 Both Lotus and the Glif wallet support [Ledger](https://www.ledger.com/) hardware devices, allowing you to use Filecoin without ever storing your private keys on a network-connected device. This can help protect your valuable private keys from malicious software on your computer and so is commonly used for accounts with large balances.
 
