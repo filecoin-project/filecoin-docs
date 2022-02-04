@@ -1,6 +1,7 @@
 ---
 title: Grammar, formatting, and style
 description: Learn the syntax and formatting rules for writing documentation for the Filecoin project.
+editLink: false
 ---
 
 # Grammar, formatting, and style

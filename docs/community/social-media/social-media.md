@@ -2,6 +2,7 @@
 title: Social media
 sidebarDepth: 0
 description: Find Filecoin on your favorite social media platform.
+editLink: false
 ---
 
 # Social media

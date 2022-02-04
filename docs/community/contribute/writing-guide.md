@@ -1,6 +1,7 @@
 ---
 title: Writing guide
 description: Learn the specifics of how to write documentation for the Filecoin project.
+editLink: false
 ---
 
 # Writing guide

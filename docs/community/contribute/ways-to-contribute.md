@@ -1,6 +1,7 @@
 ---
 title: Ways to contribute
 description: How to contribute to Filecoin
+editLink: false
 ---
 
 # Ways to contribute
