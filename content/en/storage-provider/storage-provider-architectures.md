@@ -3,13 +3,11 @@ title: 'Mining architectures'
 description: 'Filecoin allows anyone to set up a storage provider operation to participate in a global, distributed storage market.'
 breadcrumb: 'Mining architectures'
 ---
-
 This section provides examples for Filecoin storage providing setups to guide providers to plan and make the right choices when acquiring and setting up their storage provider infrastructure. Any storage provider setup must meet the [minimal hardware requirements](hardware-requirements.md).
 
 {{< alert icon="callout" >}}
 We are working to improve this section. If you would like to share your storage provider setup, please use the link at the bottom to edit the page!
 {{< /alert >}}
-
 
 ## Protocol Labs example architecture
 

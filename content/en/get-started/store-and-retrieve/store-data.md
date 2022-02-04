@@ -1,10 +1,11 @@
 ---
-title: "Part 3: Store Data"
-description: Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus miner registry, creating a storage deal, and then waiting for the deal to complete!
-weight: 3
+title: Store data
+description: Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus storage provider registry, creating a storage deal, and then waiting for the deal to complete!
 ---
 
-Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus miner registry, creating a storage deal, and then waiting for the deal to complete. There's a lot to do, so let's dive in!
+# Store data
+
+Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus storage provider registry, creating a storage deal, and then waiting for the deal to complete. There's a lot to do, so let's dive in!
 
 {{< alert icon="warning" >}}
 Filecoin is optimized for public data and doesn't yet support access controls. If storing private data, ensure you encrypt it before storage to ensure it remains unreadable by anyone without the ability to decrypt it. Keep in mind that if a vulnerability is found in your encryption process at any point in the future, then your data may be compromised.
@@ -75,15 +76,15 @@ Now that Lotus knows which file we want to use, we can create a deal with a File
 
 We need to find suitable storage providers before we can store our data. The Filecoin network allows storage providers to compete by offering different terms for pricing, acceptable data sizes, and other important deal parameters. It's also important to consider the storage provider's location; the closer the storage provider is to you, the faster the storage and retrieval process will be.
 
-We're going to use the Filecoin Plus miner registry to find a couple of storage providers and then cross-check their information with a third-party storage provider reputation system.
+We're going to use the Filecoin Plus storage provider registry to find a couple of storage providers and then cross-check their information with a third-party storage provider reputation system.
 
 {{< alert icon="tip" >}}
 Increasing the number of storage providers you use increases your data redundancy, and decreases the chances of your data being lost.
 {{< /alert >}}
 
-### Filecoin Plus miner registry
+### Filecoin Plus provider registry
 
-The Filecoin Plus miner registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page](../../store/filecoin-plus.md) to find out more about the program.
+The Filecoin Plus storage provider registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page](../../store/filecoin-plus.md) to find out more about the program.
 
 Let's find a couple of storage providers to store our data.
 
@@ -91,7 +92,7 @@ Let's find a couple of storage providers to store our data.
 1. Using the table, find a couple of storage providers that suit your needs. Try to find storage providers that are geographically close to you.
 1. Once you have found a couple of suitable storage providers, make a note of their _miner IDs_ from the **Miner ID** column:
 
-    ![A collection of storage providers listed in the Filecoin Plus miner registry.](/images/store-and-retrieve/miner-x-listings.png)
+    ![A collection of storage providers listed in the Filecoin Plus storage provider registry.](/images/miner-x-listings.png)
 
     Some storage providers list multiple miner IDs. For these storage providers, just copy one of the IDs:
 
@@ -101,7 +102,7 @@ Let's find a couple of storage providers to store our data.
 
 ### Miner reputation systems
 
-The Filecoin Plus miner registry is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep, you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.
+The Filecoin Plus storage provider registry is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep, you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.
 
 We're going to use FilRep to check that the minimum deal size of the storage providers we selected fits the size of our file.
 
@@ -116,9 +117,9 @@ We're going to use FilRep to check that the minimum deal size of the storage pro
     ![](/images/store-and-retrieve/filrep-search-min-file-size.png)
 
 1. Check that the minimum file size is lower than 5 GiB, and that they charge 0 FIL for verified deals.
-1. If the minimum file size shown for any of your storage providers is larger than 5 GiB, or they charge more thann 0 FIL for verified deals, go back to [the previous section](#filecoin-plus-miner-registry) and select a new storage provider.
+1. If the minimum file size shown for any of your storage providers is larger than 5 GiB, or they charge more thann 0 FIL for verified deals, go back to [the previous section](#filecoin-plus-provider-registry) and select a new storage provider.
 
-Now that you've found your miners, you can move onto creating a storage deal!
+Now that you've found your storage providers, you can move onto creating a storage deal!
 
 ## Create a deal
 

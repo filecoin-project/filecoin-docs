@@ -53,8 +53,7 @@ Tools to check status and details of the network and chain.
 
 - [Filfox.info](https://filfox.info/en) -  Mainnet
 - [Filscan](https://filscan.io) -  Mainnet & Calibration
-- [Filscout](https://filscout.io) - Mainnet & Calibration
-- [1475 Filecoin Explorer](https://1475ipfs.com/#/blockBrowser) -  Mainnet
+- [Filscout](https://filscout.com) - Mainnet & Calibration
 - [Grafana](https://stats.filecoin.io/) - Network Statistics Dashboard
   - [Mainnet](https://stats.filecoin.io/)
   - [Calibration](https://stats.calibration.fildev.network/d/z6FtI92Zz/chain?orgId=1&refresh=25s&from=now-30m&to=now&kiosk)
@@ -144,7 +143,6 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 #### Storage provider index API
 
-+ [Figment - Miner Reputation System API](https://learn.figment.io/network-documentation/filecoin/rpc-and-rest-api/miner-reputation-system-api) - reputation score based on miner storage capacity, sector faults and deal slashes.
 + [Filrep.io API](https://filrep.io/api) - A suite of RESTFul JSON endpoints to discover the best storage provider to make deals with.
 + [Textile Miner Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find miners by price, observed deals, speed from North American nodes.
 
@@ -228,7 +226,6 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 ## Ecosystem galleries
 
-- [Awesome Filecoin](https://www.awesomefilecoin.com/) - awesome projects on Filecoin
 - [**Community Projects Showcase**](https://github.com/filecoin-project/community/#ecosystem-projects) - updated news about ecosystem projects
 - [Filecoin Ecosystem Grid](https://github.com/filecoin-project/community/discussions/194)
 

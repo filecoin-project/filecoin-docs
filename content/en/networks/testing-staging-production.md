@@ -73,17 +73,15 @@ Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supp
 - [Stats dashboard](https://stats.filecoin.io/)
 - [Slack Channel for Updates: #fil-mainnet-announcements](https://filecoinproject.slack.com/archives/C019UFEACBT)
 - [Slack Channel for Questions: #fil-mainnet](https://filecoinproject.slack.com/archives/C0179RNEMU4)
-- [Block explorer: 1475 Explorer](https://1475ipfs.com/#/blockBrowser)
 - [Block explorer: Filfox](https://filfox.io/)
-- [Block explorer: Filplorer](https://filplorer.com/)
 - [Block explorer: Filscan](https://filscan.io/)
-- [Block explorer: Filscout](https://filscout.io/)
+- [Block explorer: Filscout](https://filscout.com/)
 
 ### Calibration
 
 Calibration network is the most realistic simulation of the Filecoin mainnet:
 
-- Prospective storage miners can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters.
+- Prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters.
 - Prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage + retrieval functionality.
 - Same sector size as mainnet. The calibration network supports 32 GiB and 64 GiB sectors.
 
