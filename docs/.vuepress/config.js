@@ -60,7 +60,6 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: {
-          '/networks/': ['/networks/network-performance'],
           '/get-started/': [
             {
               title: 'Store and retrieve',
@@ -99,16 +98,7 @@ module.exports = {
               'slashing',
           ],
 
-          '/build/': [
-            'get-started',
-            'textile-buckets',
-            'powergate',
-            'estuary',
-            'filecoin-pinning-services',
-            'signing-libraries',
-            ['local-devnet', 'Local devnet']
-          ],
-
+          '/networks/': ['/networks/network-performance'],
           '/reference/': [
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],

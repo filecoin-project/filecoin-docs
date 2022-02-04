@@ -1,17 +1,15 @@
 ---
-title: Provide storage
-description: Storage Provider in the Filecoin network are in charge of storing, providing content and issuing new blocks.
+title: Storage provider
+description: Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 ---
 
-# Provide storage
+# Storage provider
 
-Welcome to the Filecoin documentation for **Storage Providers**.
+{{ $frontmatter.description }} Content in this section will help you to:
 
 :::tip Looking for Lotus?
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 :::
-
-{{ $frontmatter.description }} Content in this section will help you to:
 
 - Understand [how providing storage works](how-providing-works.md) and what different types of providers exist.
 - Learn how storage providers get [rewards](storage-provider-rewards.md) when doing their job properly, but also [slashed](slashing.md) when they are unable to honor deals they have made.
