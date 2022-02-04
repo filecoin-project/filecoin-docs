@@ -15,10 +15,8 @@ breadcrumb: 'Explore the Network'
 | Name                                                 | Screenshot                                                                |
 | ---------------------------------------------------- | ------------------------------------------------------------------------- |
 | [Filscan](https://filscan.io/)                       | <img src="./images/explore-the-filecoin-chain/filscan.png" width="400">   |
-| [Filscout](https://filscout.io/)                     | <img src="./images/explore-the-filecoin-chain/filscout.png" width="400">  |
+| [Filscout](https://filscout.com/)                     | <img src="./images/explore-the-filecoin-chain/filscout.png" width="400">  |
 | [Filfox](https://filfox.io/)                         | <img src="./images/explore-the-filecoin-chain/filfox.png" width="400">    |
-| [Filplorer](https://filplorer.com/)                  | <img src="./images/explore-the-filecoin-chain/filplorer.png" width="400"> |
-| [1475 Explorer](https://1475ipfs.com/#/blockBrowser) | <img src="./images/explore-the-filecoin-chain/1475ipfs.png" width="400">  |
 
 ## Lotus
 

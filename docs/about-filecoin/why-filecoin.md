@@ -17,7 +17,7 @@ Filecoin has built-in processes to check the history of files and verify that th
 
 ### Open market
 
-In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a miner only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
+In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a storage provider only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
 
 ### Competitive prices
 
@@ -33,11 +33,11 @@ In Filecoin, storage providers prove their reliability through their track recor
 
 ### Choice of tradeoffs
 
-Users get to choose their own tradeoffs between cost, redundancy, and speed. Users are not limited to a set group of data centers offered by their provider but can choose to store their files on any miner participating in Filecoin.
+Users get to choose their own tradeoffs between cost, redundancy, and speed. Users are not limited to a set group of data centers offered by their provider but can choose to store their files on any storage provider participating in Filecoin.
 
 ### Puts empty storage to use
 
-Filecoin puts disk space that would otherwise sit empty to use. Miners are incentivized to join Filecoin because they get paid for their participation, unlike other distributed networks with no economic incentive. Filecoin also makes it easy to join because miners self-manage their storage, earning Filecoin tokens without needing human supervision.
+Filecoin puts disk space that would otherwise sit empty to use. Miners are incentivized to join Filecoin because they get paid for their participation, unlike other distributed networks with no economic incentive. Filecoin also makes it easy to join because storage providers self-manage their storage, earning Filecoin tokens without needing human supervision.
 
 ### Censorship resistance
 
@@ -45,7 +45,7 @@ Filecoin resists censorship because no central provider can be coerced into dele
 
 ### Useful blockchain
 
-In Filecoin, miners are rewarded for providing storage, not for performing wasteful computations. Filecoin secures its blockchain using proof of file replication and proof of storage over time. It doesn’t rely on energy-intensive proof-of-work schemes like other blockchains. Miners are incentivized to amass hard drives and put them to use by storing files. Filecoin doesn’t incentivize hoarding of graphics cards or application-specific integrated circuits for the sole purpose of mining.
+In Filecoin, storage providers are rewarded for providing storage, not for performing wasteful computations. Filecoin secures its blockchain using proof of file replication and proof of storage over time. It doesn’t rely on energy-intensive proof-of-work schemes like other blockchains. Miners are incentivized to amass hard drives and put them to use by storing files. Filecoin doesn’t incentivize hoarding of graphics cards or application-specific integrated circuits for the sole purpose of mining.
 
 ### Provides storage to other blockchains
 
@@ -59,17 +59,17 @@ When multiple users store the same file (and choose to make the file public by n
 
 ### Content distribution network
 
-Retrieval miners are computers that have good network connections to lots of users who want to download files. By prefetching popular files and distributing them to nearby users, retrieval miners are rewarded for making network traffic flow smoothly, and files download quickly.
+Retrieval providers are computers that have good network connections to lots of users who want to download files. By prefetching popular files and distributing them to nearby users, retrieval providers are rewarded for making network traffic flow smoothly, and files download quickly.
 
 ### Single protocol
 
-Applications implementing Filecoin can store their data on any miner using the same protocol. There isn’t a different API to implement for each provider. Applications wishing to support several different providers aren’t limited to the lowest-common-denominator set of features supported by all their providers.
+Applications implementing Filecoin can store their data on any storage provider using the same protocol. There isn’t a different API to implement for each provider. Applications wishing to support several different providers aren’t limited to the lowest-common-denominator set of features supported by all their providers.
 
 ### No lock-in
 
-Migrating to a different storage provider is made easier because they all offer the same services and APIs. Users aren’t locked into providers because they rely on a particular feature of the provider. Also, files are content-addressed, enabling them to be transferred directly between miners without the user having to download and re-upload the files.
+Migrating to a different storage provider is made easier because they all offer the same services and APIs. Users aren’t locked into providers because they rely on a particular feature of the provider. Also, files are content-addressed, enabling them to be transferred directly between providers without the user having to download and re-upload the files.
 
-Traditional cloud storage providers lock users by making it cheap to store files but expensive to retrieve them again. Filecoin avoids this by facilitating a retrieval market where miners compete to give users their files back as fast as possible, at the lowest possible price.
+Traditional cloud storage providers lock users by making it cheap to store files but expensive to retrieve them again. Filecoin avoids this by facilitating a retrieval market where providers compete to give users their files back as fast as possible, at the lowest possible price.
 
 ### Open source code
 

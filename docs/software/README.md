@@ -12,7 +12,7 @@ This page provides an overview of software solutions in the Filecoin ecosystem.
 
 | Name                     | Description                                                 |
 | ------------------------ | ----------------------------------------------------------- |
-| [Lotus](https://lotu.sh) | Implementation of Filecoin node and miner by Protocol Labs. |
+| [Lotus](https://lotu.sh) | Implementation of Filecoin node and storage provider by Protocol Labs. |
 
 ## Filecoin storage
 

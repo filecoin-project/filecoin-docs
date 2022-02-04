@@ -1,6 +1,6 @@
 ---
 title: 'Get started'
-description: 'The Filecoin Network is made with miners and clients. They make deals and contribute to maintaining the Filecoin blockchain, obtaining storage services, and receiving rewards in the process. This section walks your through how to get started, build a node, and create a simple application.'
+description: 'The Filecoin Network is made with storage providers and clients. They make deals and contribute to maintaining the Filecoin blockchain, obtaining storage services, and receiving rewards in the process. This section walks your through how to get started, build a node, and create a simple application.'
 breadcrumb: ''
 ---
 
@@ -19,7 +19,7 @@ Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 - Read [How Filecoin Works](../about-filecoin/how-filecoin-works.md) and [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md).
 - Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look.
 - Check out the [existing networks](https://network.filecoin.io).
-- Explore the mainnet using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for miners. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
+- Explore the mainnet using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for storage providers. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
 
 ## Store content on Filecoin
 
@@ -32,7 +32,7 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 
 ## Contribute to Filecoin
 
-- [Mine Filecoin](../mine/README.md): for those wanting to provide storage and retrieval capabilities to the Network.
+- [Mine Filecoin](../storage-provider/README.md): for those wanting to provide storage and retrieval capabilities to the Network.
 - [Build on Filecoin](../build/README.md): for those wanting to build applications that interact with the Filecoin network.
 
 ## Filecoin Software
@@ -54,7 +54,7 @@ The table below lists the recommended wallet implementations:
 | Name                                             |                                                                                                                                                                                             |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Lotus](https://lotus.filecoin.io)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](https://lotus.filecoin.io/docs/set-up/manage-fil/#ledger).                                                                                                |
-| [Glif wallet](https://wallet.glif.io/?network=f) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
+| [Glif wallet](https://wallet.glif.io/) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
 
 Both Lotus and the Glif wallet support [Ledger](https://www.ledger.com/) hardware devices, allowing you to use Filecoin without ever storing your private keys on a network-connected device. This can help protect your valuable private keys from malicious software on your computer and so is commonly used for accounts with large balances.
 

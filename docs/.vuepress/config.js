@@ -25,10 +25,6 @@ module.exports = {
     }
   },
   themeConfig: {
-    algolia: {
-      apiKey: '6c3d7635474cdcd0a0aaf8ca397a4c44',
-      indexName: 'filecoin'
-    },
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     defaultImage: '/images/social-card.png',
@@ -64,7 +60,6 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: {
-          '/networks/': ['/networks/network-performance'],
           '/get-started/': [
             {
               title: 'Store and retrieve',
@@ -95,25 +90,15 @@ module.exports = {
             'filecoin-plus'
           ],
 
-          '/mine/': [
-            'how-mining-works',
-            'hardware-requirements',
-            'mining-architectures',
-            //'storage-sector-lifecycle',
-            ['mining-rewards', 'Mining rewards'],
-            ['slashing', 'Slashing'],
+          '/storage-provider/': [
+              ['how-providing-works', 'How providing works'],
+              'hardware-requirements',
+              ['storage-provider-architectures', 'Architectures'],
+              ['storage-provider-rewards', 'Rewards'],
+              'slashing',
           ],
 
-          '/build/': [
-            'get-started',
-            'textile-buckets',
-            'powergate',
-            'estuary',
-            'filecoin-pinning-services',
-            'signing-libraries',
-            ['local-devnet', 'Local devnet']
-          ],
-
+          '/networks/': ['/networks/network-performance'],
           '/reference/': [
             'glossary',
             ['https://github.com/filecoin-project/specs', 'Specification'],
@@ -183,6 +168,8 @@ module.exports = {
     }
   },
   plugins: [
+    '@vuepress/search', {
+      searchMaxSuggestions: 10 }, 
     '@vuepress/plugin-back-to-top',
     [
       '@vuepress/active-header-links',

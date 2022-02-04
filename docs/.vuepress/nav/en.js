@@ -3,7 +3,7 @@ module.exports = [
   { text: 'Networks', link: '/networks/' },
   { text: 'Get Started', link: '/get-started/' },
   { text: 'Store', link: '/store/' },
-  { text: 'Mine', link: '/mine/' },
+  { text: 'Storage provider', link: '/storage-provider/' },
   { text: 'Build', link: '/build/' },
   { text: 'Reference', link: '/reference/' }
 ]

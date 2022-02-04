@@ -1,12 +1,15 @@
 ---
-title: 'Run a Filecoin local dev-net'
-description: 'Running a Filecoin network locally can be extremely useful for developers wanting to build and test their applications. This page provides guidance on different methods to run a Filecoin network locally.'
-breadcrumb: 'Local dev-net'
+title: "Developer network"
+description: "Running a Filecoin network locally can be extremely useful for developers wanting to build and test their applications. Here we'll provide guidance on different methods to run a Filecoin network locally."
 ---
 
 # {{ $frontmatter.title }}
 
 {{ $frontmatter.description }}
+
+:::tip
+This page uses the term `miner` to describe the functions of a storage provider. This is because the program that storage providers use within Lotus is called the `lotus-miner`. When you read _miner`, think _storage provider_.
+:::
 
 ## Manual set up
 
@@ -110,7 +113,7 @@ This process requires you to use multiple terminal windows, so you might find a 
    source ~/.bashrc
    ```
 
-1. Import the genesis miner key:
+1. Import the genesis storage provider key:
 
    ```shell with-output
    ./lotus wallet import --as-default ~/.genesis-sectors/pre-seal-t01000.key
@@ -119,7 +122,7 @@ This process requires you to use multiple terminal windows, so you might find a 
    imported key t3sxyian3zr52a32r7gpyx55rhf4wmbsm7e6ir3ygcaytrl44txwxwyron7uo4pbbqvmsaek36gqbjmmpwkwga successfully!
    ```
 
-1. Set up the genesis miner. This process can take a few minutes:
+1. Set up the genesis storage provider. This process can take a few minutes:
 
    ```shell with-output
    ./lotus-miner init --genesis-miner --actor=t01000 --sector-size=2KiB --pre-sealed-sectors=~/.genesis-sectors --pre-sealed-metadata=~/.genesis-sectors/pre-seal-t01000.json --nosync
@@ -131,7 +134,7 @@ This process requires you to use multiple terminal windows, so you might find a 
    2021-02-23T16:55:57.266Z        INFO    main    lotus-storage-miner/init.go:266 Miner successfully created, you can now start it with 'lotus-miner run'
    ```
 
-1. Start the miner:
+1. Start the storage provider:
 
    ```shell with-output
    ./lotus-miner run --nosync
@@ -142,7 +145,7 @@ This process requires you to use multiple terminal windows, so you might find a 
    ...
    ```
 
-You now have a Lotus node and a miner running! You can interact with it
+You now have a Lotus node and a storage provider running! You can interact with it
 
 ## Textile cointainer
 

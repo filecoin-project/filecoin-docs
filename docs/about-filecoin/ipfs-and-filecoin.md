@@ -33,9 +33,9 @@ IPFS is great for getting started using content addressing for all sorts of dist
 
 Filecoin builds on the content addressing of IPFS to add longer term data persistence using cryptoeconomic incentives. With Filecoin:
 
-- Clients make _storage deals_ with miners to store data. The network verifies that the miners are correctly storing the data. Small payments are made on a regular basis for the duration of the _storage deal_.
+- Clients make _storage deals_ with storage providers to store data. The network verifies that the storage providers are correctly storing the data. Small payments are made on a regular basis for the duration of the _storage deal_.
 - Miners that do not honor the storage deal are penalised.
-- Content retrieval might be offered by storage miners directly, or by specialized retrieval miners. The user requesting the data pays for this service.
+- Content retrieval might be offered by storage storage providers directly, or by specialized retrieval storage providers. The user requesting the data pays for this service.
 - Filecoin excels at storing large amounts of data for long periods of time.
 
 ### Using IPFS and Filecoin together

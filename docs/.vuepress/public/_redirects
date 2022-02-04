@@ -73,6 +73,14 @@
 /reference/lotus-api/ https://lotus.filecoin.io/docs/apis/json-rpc/
 # ------------------------
 
+# Redirects from "miner" pages to "storage provider" pages.
+# ---------------------------------------------------------
+/mine/ /storage-provider/
+/mine/how-mining-works/* /storage-provider/how-providing-works/
+/mine/mining-architectures/* /storage-provider/storage-provider-architectures
+/mine/mining-rewards/* /storage-provider/storage-provider-rewards
+# ---------------------------------------------------------
+
 
 # redirect folks who try to visit the old go-filecoin docs site previously hosted at docs.filecoin.io
 
@@ -137,7 +145,7 @@
 /build/tools/wallets/ /store/lotus/send-and-receive-fil/
 /build/lotus/hosted-nodes/ /build/hosted-lotus/
 /build/lotus/api-token-generation/ /build/lotus/api-tokens/
-/build/powergate/ /store/powergate/
+/build/hosted-powergate/ /build/powergate/
 
 /build/core-products/filecoin-backed-pinning-services/ /build/filecoin-pinning-services/
 /build/core-products/powergate/ /build/powergate/
