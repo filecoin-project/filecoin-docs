@@ -206,4 +206,4 @@ You need a GitHub account that is at least 180 days old. If you don't have a Git
 
 ## Next steps
 
-Now that we've got all the set up out of the way, we can move onto [storing data with the Filecoin network →](./store-data.md)
+Now that we've got all the set up out of the way, we can move onto [storing data with the Filecoin network →]({{< relref "./store-data.md" >}})

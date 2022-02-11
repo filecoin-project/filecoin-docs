@@ -4,7 +4,7 @@ description: Learn the syntax and formatting rules for writing documentation for
 editLink: false
 ---
 
-This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide](./writing-guide.md).
+This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide]({{< relref "./writing-guide.md" >}}).
 
 ## Grammar and spelling
 

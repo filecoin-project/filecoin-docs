@@ -54,7 +54,7 @@ Lotus is the primary reference implementation for the Filecoin protocol. At this
 
 ### What is your recommendation on the right hardware to use?
 
-While the Filecoin team does not recommend any specific hardware configuration, [we have shared some setups](../storage-provider/storage-provider-architectures.md). We also published [this guide to storage mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/) that we recommend storage providers read through before deciding to provide storage. However, it is overwhelmingly likely that there are more efficient setups, and we strongly encourage storage providers to test and experiment to find the best combinations.
+While the Filecoin team does not recommend any specific hardware configuration, [we have shared some setups]({{< relref "../storage-provider/storage-provider-architectures.md" >}}). We also published [this guide to storage mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/) that we recommend storage providers read through before deciding to provide storage. However, it is overwhelmingly likely that there are more efficient setups, and we strongly encourage storage providers to test and experiment to find the best combinations.
 
 ### We are worried about the ability of our network to handle the additional overhead of running a Filecoin node and still provide fast services for our customers. What are the computational demands of a Lotus node? Are there any metrics for node performance given various requirements?
 
@@ -142,4 +142,4 @@ Also, note that world location matters for mining: many clients will prefer stor
 
 ### Even though Filecoin will be backed up to our normal IPFS pinning layer, we still need to know how quickly we can access data from the Filecoin network. How fast will retrieval be from the Filecoin network?
 
-If you are retrieving your data from IPFS or a remote pinning layer such as an [FPS](../build/filecoin-pinning-services.md), retrieval should take on the order of milliseconds to seconds in the worst case. Our latest tests for retrieval from the Filecoin network directly show that a sealed sector holding data takes ~1 hour to unseal. 1-5 hours is our best real-world estimate to go from sector unsealing to delivery of the data. If you need faster data retrieval for your application, we recommend building on Powergate or an FPS.
+If you are retrieving your data from IPFS or a remote pinning layer such as an [FPS]({{< relref "../build/filecoin-pinning-services.md" >}}), retrieval should take on the order of milliseconds to seconds in the worst case. Our latest tests for retrieval from the Filecoin network directly show that a sealed sector holding data takes ~1 hour to unseal. 1-5 hours is our best real-world estimate to go from sector unsealing to delivery of the data. If you need faster data retrieval for your application, we recommend building on Powergate or an FPS.

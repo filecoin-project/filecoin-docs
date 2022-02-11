@@ -1,9 +1,8 @@
 ---
-title: Store data
+title: "Part 3: Store data"
 description: Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus storage provider registry, creating a storage deal, and then waiting for the deal to complete!
+weight: 3
 ---
-
-# Store data
 
 Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus storage provider registry, creating a storage deal, and then waiting for the deal to complete. There's a lot to do, so let's dive in!
 
@@ -84,7 +83,7 @@ Increasing the number of storage providers you use increases your data redundanc
 
 ### Filecoin Plus provider registry
 
-The Filecoin Plus storage provider registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page](../../store/filecoin-plus.md) to find out more about the program.
+The Filecoin Plus storage provider registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page]({{< relref "../../store/filecoin-plus.md" >}}) to find out more about the program.
 
 Let's find a couple of storage providers to store our data.
 
@@ -294,4 +293,4 @@ These states come from the [Lotus project GitHub repository](https://github.com/
 
 ## Next steps
 
-Now that you've added some data onto the Filecoin network [we can move into retrieving data →](./retrieve-data.md)
+Now that you've added some data onto the Filecoin network [we can move into retrieving data →]({{< relref "./retrieve-data.md" >}})

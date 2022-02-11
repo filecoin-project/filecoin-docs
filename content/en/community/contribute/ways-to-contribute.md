@@ -29,14 +29,14 @@ Filecoin is a huge project and undertaking, and with lots of code comes the need
 
 Before contributing to the Filecoin docs, please read these quick guides; they'll save you time and help keep the docs accurate and consistent!
 
-1. [Style and formatting guide](./grammar-formatting-and-style.md)
-2. [Writing guide](./writing-guide.md)
+1. [Style and formatting guide]({{< relref "./grammar-formatting-and-style.md" >}})
+2. [Writing guide]({{< relref "./writing-guide.md" >}})
 
-If you have never contributed to an open-source project before, or just need a refresher, take a look at the [contribution tutorial](./contribution-tutorial.md).
+If you have never contributed to an open-source project before, or just need a refresher, take a look at the [contribution tutorial]({{< relref "./contribution-tutorial.md" >}}).
 
 ### Community
 
-If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums](../chat-and-discussion-forums.md) to say hello, meet others who share your goals, and connect with other members of the community.
+If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums]({{< relref "../chat-and-discussion-forums.md" >}}) to say hello, meet others who share your goals, and connect with other members of the community.
 
 ### Build Applications
 

@@ -33,7 +33,7 @@ Once a client has decided on a miner to store with based on their available capa
 
 After the deal is published, the client then prepares the data for storage and then transfers it to the miner. Upon receiving all of the data, the miner packs the data into a sector, seals it, and begins submitting proofs to the chain. Once the first confirmation has been hit, the client can be certain the data is being stored properly, and the deal has officially begun.
 
-Throughout the lifetime of the deal, the miner submits ongoing proofs to the chain. Clients pay incrementally using the funds they previously locked up. If a proof is missing or delayed, the miner is penalized. More information on this can be found in the [slashing](slashing.md) section.
+Throughout the lifetime of the deal, the miner submits ongoing proofs to the chain. Clients pay incrementally using the funds they previously locked up. If a proof is missing or delayed, the miner is penalized. More information on this can be found in the [slashing]({{< relref "slashing.md" >}}) section.
 
 ## Power and rewards
 
@@ -41,4 +41,4 @@ Each Filecoin miner has an associated _power_ value in the network that is propo
 
 Additionally, miners submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
-Additional details about this can be found in the [mining rewards](mining-rewards.md) section.
+Additional details about this can be found in the [mining rewards]({{< relref "mining-rewards.md" >}}) section.

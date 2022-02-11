@@ -1,5 +1,5 @@
 ---
-title: Get started
+title: Next steps
 description: The Filecoin Network is made with storage providers and clients. They make deals and contribute to maintaining the Filecoin blockchain, obtaining storage services, and receiving rewards in the process. This section walks your through how to get started, build a node, and create a simple application.
 ---
 
@@ -11,34 +11,34 @@ Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 
 ## Become familiar with the concepts
 
-- Read [How Filecoin Works](../about-filecoin/how-filecoin-works.md) and [IPFS and Filecoin](../about-filecoin/ipfs-and-filecoin.md).
+- Read [How Filecoin Works]({{< relref "../about-filecoin/how-filecoin-works.md" >}}) and [IPFS and Filecoin]({{< relref "../about-filecoin/ipfs-and-filecoin.md" >}}).
 - Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look.
 - Check out the [existing networks](https://network.filecoin.io).
-- Explore the mainnet using one of the [available block explorers](explore-the-network.md). Discover the blocks, the messages, the scoreboards for storage providers. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
+- Explore the mainnet using one of the [available block explorers]({{< relref "explore-the-network.md" >}}). Discover the blocks, the messages, the scoreboards for storage providers. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
 
 ## Store content on Filecoin
 
-Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →](../store/README.md)
+Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →]({{< relref "../store/" >}})
 
 - Visit [Slate](https://slate.host/) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](https://lotus.filecoin.io). Setup your first wallet and learn how to [send and receive ⨎](https://lotus.filecoin.io/docs/set-up/manage-fil/) and [make storage deals](https://lotus.filecoin.io/docs/storage-providers/manage-storage-deals/).
-- Use [Starling](../store/starling.md) to simplify the management of storage deals in Lotus.
+- Use [Starling]({{< relref "../store/starling.md" >}}) to simplify the management of storage deals in Lotus.
 - Check out the [Lotus API methods](https://lotus.filecoin.io/docs/apis/json-rpc/) to learn how to programmatically store data on the Filecoin network.
 
 ## Contribute to Filecoin
 
-- [Mine Filecoin](../storage-provider/README.md): for those wanting to provide storage and retrieval capabilities to the Network.
-- [Build on Filecoin](../build/README.md): for those wanting to build applications that interact with the Filecoin network.
+- [Provide Storage for Filecoin]({{< relref "../storage-provider/" >}}): for those wanting to provide storage and retrieval capabilities to the Network.
+- [Build on Filecoin]({{< relref "../build/" >}}): for those wanting to build applications that interact with the Filecoin network.
 
 ## Filecoin Software
 
 | Name                                                             |                                                                                                                                                                                                                                                                                         |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Lotus](https://lotus.filecoin.io)                                         | Implementation of Filecoin node, maintained by Protocol Labs. <br /><br />For users that want to participate in the Filecoin network validating blocks, manage a wallet and perform deals on the command line.                                                                            |
-| [Slate](https://slate.host/)                                       | Slate is a fully open-source file-sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.io) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
-| [Powergate](../build/powergate.md)                               | A multitiered storage solution that stores data with IPFS ("Hot" storage layer) and Filecoin ("Cold" storage layer).                                                                                                                                                                    |
-| [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets, and Powergate.                                                                                                                      |
-| [Starling](../store/starling.md)                                 | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
+| [Lotus](https://lotus.filecoin.io) | Implementation of Filecoin node, maintained by Protocol Labs. <br /><br />For users that want to participate in the Filecoin network validating blocks, manage a wallet and perform deals on the command line. |
+| [Slate](https://slate.host/) | Slate is a fully open-source file-sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.io) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
+| [Powergate]({{< relref "../build/powergate.md" >}}) | A multitiered storage solution that stores data with IPFS ("Hot" storage layer) and Filecoin ("Cold" storage layer). |
+| [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets, and Powergate. |
+| [Starling]({{< relref "../store/starling.md" >}}) | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network. |
 
 ## Wallets
 

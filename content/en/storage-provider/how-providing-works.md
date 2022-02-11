@@ -10,7 +10,7 @@ In most blockchain protocols, _miners_ are the participants on the network that 
 Mining in Filecoin works quite differently however -- instead of contributing computational power, _providers_ contribute storage capacity to be used in deals with clients looking to store data.
 
 
-## Types of provider 
+## Types of provider
 
 The Filecoin network will have multiple types of provider:
 
@@ -30,7 +30,7 @@ Once a client has decided on a provider to store with based on their available c
 
 After the deal is published, the client then prepares the data for storage and then transfers it to the provider. Upon receiving all of the data, the provider packs the data into a sector, seals it, and begins submitting proofs to the chain. Once the first confirmation has been hit, the client can be certain the data is being stored properly, and the deal has officially begun.
 
-Throughout the lifetime of the deal, the provider submits ongoing proofs to the chain. Clients pay incrementally using the funds they previously locked up. If a proof is missing or delayed, the provider is penalized. More information on this can be found in the [slashing](slashing.md) section.
+Throughout the lifetime of the deal, the provider submits ongoing proofs to the chain. Clients pay incrementally using the funds they previously locked up. If a proof is missing or delayed, the provider is penalized. More information on this can be found in the [slashing]({{< relref "slashing.md" >}}) section.
 
 ## Power and rewards
 

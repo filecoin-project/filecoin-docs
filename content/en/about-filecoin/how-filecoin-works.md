@@ -21,15 +21,15 @@ Running a Filecoin Node is a low-level task that usually implies keeping a progr
 
 ## Filecoin storage providers
 
-The storage providers provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds), for which they collect FIL rewards. Additional details about types of storage providers, rewards, and deals execution from the storage provider perspective can be found in the [How mining works](../storage-provider/how-providing-works.md) section.
+The storage providers provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds), for which they collect FIL rewards. Additional details about types of storage providers, rewards, and deals execution from the storage provider perspective can be found in the [How mining works]({{< relref "../storage-provider/how-providing-works.md" >}}) section.
 
-Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements](../storage-provider/hardware-requirements.md), as needed to complete the necessary [proofs](#proofs). The [Lotus Miner](https://lotus.filecoin.io) is the most advanced implementation of a Filecoin storage provider to this day.
+Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements]({{< relref "../storage-provider/hardware-requirements.md" >}}), as needed to complete the necessary [proofs](#proofs). The [Lotus Miner](https://lotus.filecoin.io) is the most advanced implementation of a Filecoin storage provider to this day.
 
 ## Deals
 
 There are two main types of deals in Filecoin: _storage deals_ and _retrieval deals_.
 
-Storage deals are agreements between clients and _storage providers_ to store some data in the network. Once a deal is initiated, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) to the chain that it is still storing the data per the agreement so that it can collect [rewards](../storage-provider/storage-provider-rewards.md). If not, the storage provider will be [slashed](../storage-provider/slashing.md) and lose FIL.
+Storage deals are agreements between clients and _storage providers_ to store some data in the network. Once a deal is initiated, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) to the chain that it is still storing the data per the agreement so that it can collect [rewards]({{< relref "../storage-provider/storage-provider-rewards.md" >}}). If not, the storage provider will be [slashed]({{< relref "../storage-provider/slashing.md" >}}) and lose FIL.
 
 Retrieval deals are agreements between clients and _retrieval providers_ (which may or not be also storage providers) to extract data that is stored in the network (hopefully in a fast and reliable manner). Unlike storage deals, these deals are fulfilled off-chain, using _payment channels_ to incrementally pay for the data received.
 
@@ -54,7 +54,7 @@ Executing messages, for example by including transactions or proofs in the chain
 
 Historically in other blockchains, miners specify a GasFee in a unit of native currency and then pay the block producing miners a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources, since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
 
-The amount of fees burned in the Filecoin network comes given by a dynamic \*_*BaseFee*_ which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers](../get-started/explore-the-network.md) or by inspecting the current head.
+The amount of fees burned in the Filecoin network comes given by a dynamic \*_*BaseFee*_ which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers]({{< relref "../get-started/explore-the-network.md" >}}) or by inspecting the current head.
 
 Additionally, a number of gas-related parameters are attached to each message and determine the amount of rewards that storage providers get. Here's an overview of the terms and concepts:
 
@@ -127,7 +127,7 @@ Also note that Filecoin stores and interprets private keys in little-endian orde
 
 ## Additional materials
 
-Filecoin is built on top of [mature projects](../project/related-projects.md) like libp2p (networking, addressing, message distribution), IPLD (data formats, encoding, and content-addressed data structures), IPFS (data transfers), and multiformats (future-proof data types).
+Filecoin is built on top of mature projects like libp2p (networking, addressing, message distribution), IPLD (data formats, encoding, and content-addressed data structures), IPFS (data transfers), and multiformats (future-proof data types).
 
 Here are some links to useful introductory materials about the technology that powers Filecoin and about Filecoin itself:
 
