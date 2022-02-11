@@ -8,11 +8,11 @@ Filecoin is for the builders. If you are excited about the potential of leveragi
 
 There are several options to start integrating with Filecoin. Here are some guides to get you started:
 
-- [Node Setup Tutorial](node-setup-tutorial), which gets you up and running quickly by creating a simple Node.js script using Infura and the Filecoin network.
+- [Node Setup Tutorial]({{< relref "node-setup-tutorial.md" >}}), which gets you up and running quickly by creating a simple Node.js script using Infura and the Filecoin network.
 - [Use Glif nodes](https://lotus.filecoin.io/docs/developers/hosted-lotus/) to skip spinning up a node and just start building.
 - [Build with Lotus](https://lotus.filecoin.io), for users looking to interact with their own, local Lotus nodes.
-- [Build with Powergate](powergate.md), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
-- [Build with Textile buckets](textile-buckets.md), for users looking for simple IPFS storage with Filecoin-based archival, with encryption and shared buckets support.
+- [Build with Powergate]({{< relref "powergate.md" >}}), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
+- [Build with Textile buckets]({{< relref "textile-buckets.md" >}}), for users looking for simple IPFS storage with Filecoin-based archival, with encryption and shared buckets support.
 
 {{< alert icon="tip" >}}
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
@@ -20,7 +20,7 @@ Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 
 ## Filecoin-backed storage providers
 
-The following products provide storage solutions that are backed up by the Filecoin network and potentially [integrate IPFS as a hot-data layer (FPS)](filecoin-pinning-services.md).
+The following products provide storage solutions that are backed up by the Filecoin network and potentially [integrate IPFS as a hot-data layer (FPS)]({{< relref "filecoin-pinning-services.md" >}}).
 
 {{< alert icon="tip" >}}
 We plan to update this list regularly as new providers are announced and their features expand.
@@ -31,7 +31,7 @@ We plan to update this list regularly as new providers are announced and their f
 | [Pinata](https://pinata.cloud)                      | IPFS pinning service, with Filecoin coming soon.                                                                              | No                                                                            |
 | [Textile Buckets](https://docs.textile.io/buckets/) | A hosted service that allows development teams to build software projects end-to-end on a decentralized DB and storage stack. | No                                                                            |
 
-For more information about the benefits and the architecture of Filecoin-backed Pinning Services, check the [FPS page](filecoin-pinning-services.md).
+For more information about the benefits and the architecture of Filecoin-backed Pinning Services, check the [FPS page]({{< relref "filecoin-pinning-services.md" >}}).
 
 ## Hosted nodes
 
@@ -48,8 +48,8 @@ The following documentation links can help you start building on Filecoin:
 | Name                                 | Description                                                                          |
 | ------------------------------------ | ------------------------------------------------------------------------------------ |
 | [Building on Lotus](https://lotus.filecoin.io) | Lotus nodes provide JSON-RPC API with JWT-token-based authorization.                 |
-| [Powergate](powergate.md)            | Powergate is a multitiered storage solution that stores data with IPFS and Filecoin. |
-| [Local devnet](local-devnet.md)      | Learn how to deploy a Filecoin network fully contained on your own computer.         |
+| [Powergate]({{< relref "powergate.md" >}})            | Powergate is a multitiered storage solution that stores data with IPFS and Filecoin. |
+| [Local devnet]({{< relref "local-devnet.md" >}})      | Learn how to deploy a Filecoin network fully contained on your own computer.         |
 
 ## Additional resources
 

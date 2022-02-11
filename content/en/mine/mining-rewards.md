@@ -8,7 +8,7 @@ There are two main types of rewards for their efforts: storage fees and block re
 
 ## Storage fees
 
-_PoSt (Proof-of-Spacetime)_ window checks are performed on 24 hour intervals across the network to ensure that miners are continuing to host their required sectors as normal. Correspondingly, each storage miner’s set of pledged sectors is partitioned into subsets, one subset for each window. Within a given window, each storage miner must submit a PoSt for each sector in their respective subset. For each day a miner is inactive it will receive a [fault fee](slashing.md).
+_PoSt (Proof-of-Spacetime)_ window checks are performed on 24 hour intervals across the network to ensure that miners are continuing to host their required sectors as normal. Correspondingly, each storage miner’s set of pledged sectors is partitioned into subsets, one subset for each window. Within a given window, each storage miner must submit a PoSt for each sector in their respective subset. For each day a miner is inactive it will receive a [fault fee]({{< relref "slashing.md" >}}).
 
 **Storage fees** are the fees paid regularly by clients after a deal has been reached, in exchange for storing data. These fees are automatically deposited into a miner's associated withdrawal wallet as they continue to perform their duties over time, and are briefly locked upon being received.
 

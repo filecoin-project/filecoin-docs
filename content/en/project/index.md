@@ -8,6 +8,8 @@ cascade:
   menu:
     docs:
       parent: about-filecoin
+aliases:
+- /project/related-projects/
 ---
 
 Curious about how it all got started, or where we're headed? Learn about the history, current state, and future trajectory of the Filecoin project here.
@@ -19,10 +21,6 @@ The latest timing information is available in the [Filecoin Mainnet Roadmap](htt
 ## Research
 
 Learn about the ongoing cryptography research and design efforts that underpin the Filecoin protocol on the [Filecoin Research website](https://research.filecoin.io/). The [CryptoLab at Protocol Labs](https://research.protocol.ai/groups/cryptolab/) also actively researches improvements.
-
-## Related projects
-
-Filecoin is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [Filecoin-related projects](related-projects.md) supported by Protocol Labs.
 
 ## Code of conduct
 

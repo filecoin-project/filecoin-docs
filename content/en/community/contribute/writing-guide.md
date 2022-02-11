@@ -4,7 +4,7 @@ description: Learn the specifics of how to write documentation for the Filecoin 
 editLink: false
 ---
 
-This guide explains things to keep in mind when writing for Filecoin's documentation. While the [grammar, formatting, and style guide](./grammar-formatting-and-style.md) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
+This guide explains things to keep in mind when writing for Filecoin's documentation. While the [grammar, formatting, and style guide]({{< relref "./grammar-formatting-and-style.md" >}}) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
 ## Walkthroughs
 
