@@ -4,8 +4,8 @@ description: "Running a Filecoin network locally can be extremely useful for dev
 ---
 
 {{< alert icon="callout">}}
-This page uses the term `miner` to describe the functions of a storage provider. This is because the program that storage providers use within Lotus is called the `lotus-miner`. When you read _miner`, think _storage provider_.
-{{ < /alert >}}
+This page uses the term `miner` to describe the functions of a storage provider. This is because the program that storage providers use within Lotus is called the `lotus-miner`. When you read _miner_, think _storage provider_.
+{{< /alert >}}
 
 ## Manual set up
 

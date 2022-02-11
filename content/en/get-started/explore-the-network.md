@@ -9,9 +9,9 @@ weight: 7
 
 | Name                                                 | Screenshot                                                                |
 | ---------------------------------------------------- | ------------------------------------------------------------------------- |
-| [Filscan](https://filscan.io/)                       | <img src="/images/explore-the-filecoin-chain/filscan.png" width="400">   |
-| [Filscout](https://filscout.com/)                     | <img src="/images/explore-the-filecoin-chain/filscout.png" width="400">  |
-| [Filfox](https://filfox.io/)                         | <img src="/images/explore-the-filecoin-chain/filfox.png" width="400">    |
+| [Filscan](https://filscan.io/)                       | <img src="/images/get-started/explore-the-filecoin-chain/filscan.png" width="400">   |
+| [Filscout](https://filscout.com/)                     | <img src="/images/get-started/explore-the-filecoin-chain/filscout.png" width="400">  |
+| [Filfox](https://filfox.io/)                         | <img src="/images/get-started/explore-the-filecoin-chain/filfox.png" width="400">    |
 
 ## Lotus
 

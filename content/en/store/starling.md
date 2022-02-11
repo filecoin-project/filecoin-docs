@@ -32,7 +32,6 @@ You need to have a couple of things installed before you can interact with Starl
     ```
     ```
     FULLNODE_API_INFO=eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc:/ip4/127.0.0.1/tcp/1234/http
-
     ```
 
 
@@ -41,7 +40,6 @@ You need to have a couple of things installed before you can interact with Starl
     ```shell
     git clone https://github.com/filecoin-project/starling
     ```
-
 1.  Move into the `starling` directory and install the dependencies:
 
     ```shell
@@ -49,32 +47,28 @@ You need to have a couple of things installed before you can interact with Starl
     npm install
     sudo npm link
     ```
-
-
 1.  Configure Starling settings:
 
     ```shell
     starling config
     ```
 
-1.  You are ready to run Starling!
+#### You are ready to run Starling!
 
-    a. Store a single file run:
+1.  Store a single file run:
 
-        ```shell
-        starling store full/path/to/file
-        ```
+    ```shell
+    starling store full/path/to/file
+    ```
+1.  Store a folder run:
 
-    b. Store a folder run:
+    ```shell
+    starling store full/path/to/folder
+    ```
+1.  Launch the interactive monitoring interface:
 
-        ```shell
-        starling store full/path/to/folder
-        ```
-
-    c. Launch the interactive monitoring interface:
-
-        ```shell
-        starling monitor
-        ```
+    ```shell
+    starling monitor
+    ```
 
 Check the [official documentation](https://starlingstorage.io/commands.html) for a more in-depth look into what Starling can do.

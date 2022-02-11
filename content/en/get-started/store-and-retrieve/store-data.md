@@ -92,7 +92,7 @@ Let's find a couple of storage providers to store our data.
 1. Using the table, find a couple of storage providers that suit your needs. Try to find storage providers that are geographically close to you.
 1. Once you have found a couple of suitable storage providers, make a note of their _miner IDs_ from the **Miner ID** column:
 
-    ![A collection of storage providers listed in the Filecoin Plus storage provider registry.](/images/miner-x-listings.png)
+    ![A collection of storage providers listed in the Filecoin Plus storage provider registry.](/images/store-and-retrieve/miner-x-listings.png)
 
     Some storage providers list multiple miner IDs. For these storage providers, just copy one of the IDs:
 
