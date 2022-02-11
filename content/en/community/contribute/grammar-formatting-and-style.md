@@ -86,16 +86,6 @@ Lotus is the main implementation of Filecoin. As such, it is frequently referenc
    ```
 ````
 
-Lotus Miner follows the same rules. Capitalize the _L_ and the _M_ when referring to the application, and use lowercase letters within code blocks when referring to the executable commands:
-
-````markdown
-You are now ready to start your Lotus Miner:
-
-```markdown
-lotus-miner run
-```
-````
-
 ### Acronyms
 
 If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside project documentation.
@@ -201,11 +191,11 @@ In the wise words of Winnie the Pooh _"People say nothing is impossible, but I d
 
 Tag code blocks with the syntax of the core they are presenting:
 
-````markdown
+```markdown
     ```javascript
     console.log(error);
     ```
-````
+```
 
 ##### Command-line examples
 
@@ -237,10 +227,10 @@ Here's an example of using the `with-output` tag:
 Command-line examples can be truncated with three periods `...` to remove extraneous information:
 
 ````markdown
-    ```shell with-output
+    ```shell
     lotus-miner info
     ```
-    ```
+    ```shell
     Miner: t0103
     Sector Size: 16.0 MiB
     ...
