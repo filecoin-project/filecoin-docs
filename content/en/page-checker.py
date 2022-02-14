@@ -10,7 +10,7 @@ markdownToTest = sys.argv[1]
 langToolsUsername = sys.argv[2]
 langToolsApiKey = sys.argv[3]
 
-htmlToTest = markdownToTest.replace("docs/","docs/.vuepress/dist/").replace("_index.md","index.html").replace("index.md","index.html").replace(".md","/index.html")
+htmlToTest = markdownToTest.replace("content/en/","public/").replace("_index.md","index.html").replace("index.md","index.html").replace(".md","/index.html")
 
 with open(htmlToTest, 'r') as content_file:
     content = content_file.read()
