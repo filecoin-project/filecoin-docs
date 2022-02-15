@@ -90,6 +90,16 @@ module.exports = {
             'filecoin-plus'
           ],
 
+          '/build/': [
+            'get-started',
+            'textile-buckets',
+            'powergate',
+            'estuary',
+            'filecoin-pinning-services',
+            'signing-libraries',
+            ['local-devnet', 'Local devnet']
+          ],
+
           '/storage-provider/': [
               ['how-providing-works', 'How providing works'],
               'hardware-requirements',
