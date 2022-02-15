@@ -97,6 +97,16 @@ module.exports = {
               ['storage-provider-rewards', 'Rewards'],
               'slashing',
           ],
+          
+          '/build/': [
+            'get-started',
+            'textile-buckets',
+            'powergate',
+            'estuary',
+            'filecoin-pinning-services',
+            'signing-libraries',
+            ['local-devnet', 'Local devnet']
+          ],
 
           '/networks/': ['/networks/network-performance'],
           '/reference/': [
