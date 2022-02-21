@@ -113,7 +113,6 @@
 /mine/lotus-seal-worker/ /mine/lotus/seal-workers/
 /mine/setting-a-static-port/ /mine/lotus/miner-setup/#miner-initialization
 /mine/connectivity/ /mine/lotus/connectivity/
-/mine/spacerace/ /mine/spacerace/
 /mine/mining-troubleshooting/ /mine/lotus/miner-troubleshooting/
 /mine/lotus/daemon-lifecycle/ /mine/lotus/miner-lifecycle/
 /mine/lotus/separate-address-window-post/ /mine/lotus/miner-addresses/
