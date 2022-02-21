@@ -25,6 +25,10 @@ module.exports = {
     }
   },
   themeConfig: {
+    algolia: {
+      apiKey: '6c3d7635474cdcd0a0aaf8ca397a4c44',
+      indexName: 'filecoin'
+    },
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     defaultImage: '/images/social-card.png',
@@ -101,11 +105,11 @@ module.exports = {
           ],
 
           '/storage-provider/': [
-              ['how-providing-works', 'How providing works'],
-              'hardware-requirements',
-              ['storage-provider-architectures', 'Architectures'],
-              ['storage-provider-rewards', 'Rewards'],
-              'slashing',
+            ['how-providing-works', 'How providing works'],
+            'hardware-requirements',
+            ['storage-provider-architectures', 'Architectures'],
+            ['storage-provider-rewards', 'Rewards'],
+            'slashing',
           ],
 
           '/networks/': ['/networks/network-performance'],
@@ -179,7 +183,8 @@ module.exports = {
   },
   plugins: [
     '@vuepress/search', {
-      searchMaxSuggestions: 10 }, 
+      searchMaxSuggestions: 10
+    },
     '@vuepress/plugin-back-to-top',
     [
       '@vuepress/active-header-links',
