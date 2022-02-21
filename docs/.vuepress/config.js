@@ -26,8 +26,9 @@ module.exports = {
   },
   themeConfig: {
     algolia: {
-      apiKey: '6c3d7635474cdcd0a0aaf8ca397a4c44',
-      indexName: 'filecoin'
+      apiKey: 'eb35260e7a4810bb96026d19b9cf5f86',
+      indexName: 'filecoin',
+      appId: 'Y5VS7J10DG'
     },
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
