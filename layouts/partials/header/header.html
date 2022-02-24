@@ -95,7 +95,7 @@
 </div>
 {{ end -}}
 
-{{ if eq .Section "docs" -}}
+{{ if not .IsHome -}}
 <nav class="doks-subnavbar py-2 sticky-lg-top{{ if eq .Site.Params.options.flexSearch false }} d-lg-none{{ end }}" aria-label="Secondary navigation">
   <div class="container-xxl d-flex align-items-md-center">
 
@@ -141,4 +141,3 @@
   </aside>
 </div>
 {{ end -}}
-
