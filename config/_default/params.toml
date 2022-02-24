@@ -4,13 +4,13 @@
 title = "Filecoin Docs"
 titleSeparator = "-"
 titleAddition = "Home"
-description = "Documentation for Lotus - the reference node implementation for the Filecoin network."
+description = "Documentation for Filecoin - A decentralized storage network for humanity's most important information."
 
 ## Open Graph
-images = ["/images/filecoin-symbol-color.png"]
+images = ["/logos/Filecoin-logo-blue+black.png"]
 ogLocale = "en_US"
 domainTLD = "docs.filecoin.io"
-titleHome = "Lotus Docs"
+titleHome = "Filecoin Docs"
 
 ## Twitter Cards
 twitterSite = "@filecoin"
@@ -21,14 +21,14 @@ twitterCreator = "@protocollabs"
 schemaType = "Organization"
 schemaName = "Filecoin"
 schemaAuthor = "Protocol Labs"
-schemaAuthorTwitter = "https://twitter.com/protocollabs"
-schemaAuthorLinkedIn = "https://www.linkedin.com/in/protocollabs/"
+schemaAuthorTwitter = "https://twitter.com/filecoin"
+schemaAuthorLinkedIn = "https://www.linkedin.com/in/filecoin/"
 schemaAuthorGitHub = "https://github.com/filecoin-project"
 schemaLocale = "en-US"
-schemaLogo = "lotus.png"
+schemaLogo = "filecoin.png"
 schemaLogoWidth = 512
 schemaLogoHeight = 512
-schemaImage = "lotus.png"
+schemaImage = "filecoin.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
 schemaTwitter = "https://twitter.com/filecoin"
