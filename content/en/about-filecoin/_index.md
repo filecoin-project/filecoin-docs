@@ -1,6 +1,5 @@
 ---
-title: Introduction
-sidebarDepth: 0
+title: "About Filecoin"
 description: Learn the basics of Filecoin
 cascade:
     menu:

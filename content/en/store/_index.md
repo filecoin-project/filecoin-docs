@@ -1,5 +1,5 @@
 ---
-title: 'Store data on Filecoin'
+title: 'Store'
 description: 'Start storing data on the Filecoin network.'
 breadcrumb: 'Store'
 cascade:
