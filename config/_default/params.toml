@@ -6,6 +6,9 @@ titleSeparator = "-"
 titleAddition = "Home"
 description = "Documentation for Filecoin - A decentralized storage network for humanity's most important information."
 
+## Search
+mainSections = ["about-filecoin", "build", "community", "get-started", "networks", "project", "reference", "storage-provider", "store"]
+
 ## Open Graph
 images = ["/logos/Filecoin-logo-blue+black.png"]
 ogLocale = "en_US"
