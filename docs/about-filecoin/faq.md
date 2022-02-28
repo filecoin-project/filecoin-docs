@@ -118,7 +118,7 @@ The minimum duration for a deal is set in the storage provider's ask. There's al
 
 Automatic repair of faulted data is a feature we've pushed off until after the mainnet launch. For now, the way to ensure resiliency is to store your data with multiple storage providers, to gain some level of redundancy. If you want to learn more about how we are thinking about repair in the future, [here are some notes](https://github.com/filecoin-project/specs/pull/245/files).
 
-### How do I know that my storage storage provider will not charge prohibitively high costs for data retrieval?
+### How do I know that my storage provider will not charge prohibitively high costs for data retrieval?
 
 To avoid extortion, always ensure you store your data with a fairly decentralized set of storage providers (and note: it's pretty difficult for a storage provider to be sure they are the only person storing a particular piece of data, especially if you encrypt the data).
 
