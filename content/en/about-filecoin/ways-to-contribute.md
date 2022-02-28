@@ -1,7 +1,9 @@
 ---
 title: Ways to contribute
 description: How to contribute to Filecoin
-weight: 999
+menu:
+    about:
+        parent: "about-filecoin-contribute"
 ---
 
 So you want to contribute to Filecoin and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open a issue.
@@ -36,7 +38,7 @@ If you have never contributed to an open-source project before, or just need a r
 
 ### Community
 
-If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums]({{< relref "../chat-and-discussion-forums.md" >}}) to say hello, meet others who share your goals, and connect with other members of the community.
+If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums]({{< relref "chat-and-discussion-forums" >}}) to say hello, meet others who share your goals, and connect with other members of the community.
 
 ### Build Applications
 

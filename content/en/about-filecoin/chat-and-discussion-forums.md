@@ -1,6 +1,9 @@
 ---
 title: Chat & discussion forums
 description: Connect with the Filecoin community in dicussion forums or on IRC
+menu:
+    about:
+        parent: "about-filecoin-community"
 ---
 The Filecoin community is active and here to answer your questions in your channel of choice.
 

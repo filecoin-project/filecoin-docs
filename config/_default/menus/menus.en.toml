@@ -1,6 +1,6 @@
 [[main]]
   name = "About Filecoin"
-  url = "/about-filecoin"
+  url = "/about-filecoin/what-is-filecoin"
   weight = 10
   
 [[main]]
@@ -32,6 +32,36 @@
   name = "Reference"
   url = "/reference"
   weight = 70
+
+[[about]]
+  name = "Basics"
+  weight = 10
+  identifier = "about-filecoin-basics"
+  url = "/about-filecoin/what-is-filecoin"
+
+[[about]]
+  name = "Assets"
+  weight = 20
+  identifier = "about-filecoin-assets"
+  url = "/about-filecoin/managing-assets"
+
+[[about]]
+  name = "Project"
+  weight = 30
+  identifier = "about-filecoin-project"
+  url = "/about-filecoin/project/"
+
+[[about]]
+  name = "Community"
+  weight = 40
+  identifier = "about-filecoin-community"
+  url = "/about-filecoin/chat-and-discussion-forums"
+
+[[about]]
+  name = "Contribute"
+  weight = 50
+  identifier = "about-filecoin-contribute"
+  url = "/about-filecoin/ways-to-contribute"
 
 [[social]]
   name = "GitHub"

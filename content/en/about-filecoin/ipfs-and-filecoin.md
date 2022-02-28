@@ -1,6 +1,9 @@
 ---
 title: IPFS and Filecoin
 description: Learn more about the relationship and different use-cases between IPFS and Filecoin.
+menu:
+    about:
+        parent: "about-filecoin-basics"
 ---
 
 Filecoin and IPFS are complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks, including data representation formats (IPLD) and network communication protocols (libp2p). While interacting with IPFS does not require using Filecoin, all Filecoin nodes _are_ IPFS nodes under the hood, and (with some manual configuration) can connect to and fetch IPLD-formatted data from other IPFS nodes using libp2p. However, Filecoin nodes don't join or participate in the public IPFS DHT.

@@ -2,6 +2,9 @@
 title: Documentation contribution tutorial
 description: Contribute to Filecoin documentation by finding issues, fixing them, and submitting them to the project.
 editLink: false
+menu:
+    about:
+        parent: "about-filecoin-contribute"
 ---
 
 While the [grammar, formatting, and style]({{< relref "./grammar-formatting-and-style.md" >}}) and the [writing guide]({{< relref "./writing-guide.md" >}}) can both help you write excellent content for the Filecoin Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `filecoin-project/filecoin-docs` project.
