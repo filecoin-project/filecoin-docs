@@ -1,7 +1,9 @@
 ---
 title: Why Filecoin?
 description: Explore the features that make Filecoin a compelling system for storing files.
-weight: 999
+menu:
+    about:
+        parent: "about-filecoin-basics"
 ---
 
 This is an overview of features offered by Filecoin that make it a compelling system for storing files. This overview is intended for people already involved in large-scale data storage, for example, cloud storage or peer-to-peer storage networks.
@@ -76,4 +78,4 @@ The code that runs both clients and storage providers is open-source. Storage pr
 
 ### Active community
 
-Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers, and storage providers. If you need help, you can reach the person who designed or built the system in question. Reach out on [Filecoin’s chat and forums]({{< relref "../community/chat-and-discussion-forums.md" >}}).
+Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers, and storage providers. If you need help, you can reach the person who designed or built the system in question. Reach out on [Filecoin’s chat and forums]({{< relref "chat-and-discussion-forums" >}}).

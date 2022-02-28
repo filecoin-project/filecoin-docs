@@ -1,6 +1,9 @@
 ---
 title: How Filecoin Works
 description: An overview of how the Filecoin network operates - binding clients and storage providers through storage and retrieval deals.
+menu:
+    about:
+        parent: "about-filecoin-basics"
 ---
 
 This page gives a basic introduction to how the Filecoin network operates. While Filecoin is similar to other cryptocurrencies, there are some differences that developers looking to build on the network should be aware of.

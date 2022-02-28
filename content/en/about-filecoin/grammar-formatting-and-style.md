@@ -1,7 +1,9 @@
 ---
 title: Documentation style guide
 description: Learn the syntax and formatting rules for writing documentation for the Filecoin project.
-editLink: false
+menu:
+    about:
+        parent: "about-filecoin-contribute"
 ---
 
 This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide]({{< relref "./writing-guide.md" >}}).

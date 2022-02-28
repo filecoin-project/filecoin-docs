@@ -1,6 +1,9 @@
 ---
 title: Filecoin FAQ
 description: Filecoin frequently asked questions.
+menu:
+    about:
+        parent: "about-filecoin-basics"
 ---
 
 ### What are some of the primary use cases for Filecoin at mainnet launch?
