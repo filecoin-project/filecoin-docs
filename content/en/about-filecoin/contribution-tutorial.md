@@ -1,6 +1,6 @@
 ---
-title: Documentation contribution tutorial
-description: Contribute to Filecoin documentation by finding issues, fixing them, and submitting them to the project.
+title: "Contribution tutorial"
+description: "Contribute to Filecoin documentation by finding issues, fixing them, and submitting them to the project."
 editLink: false
 menu:
     about:

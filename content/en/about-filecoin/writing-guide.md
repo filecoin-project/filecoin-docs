@@ -1,6 +1,6 @@
 ---
-title: Documentation structure and tone
-description: Learn the specifics of how to write documentation for the Filecoin project.
+title: "Writing guide"
+description: "Learn the specifics of how to write documentation for the Filecoin project."
 menu:
     about:
         parent: "about-filecoin-contribute"
