@@ -1,7 +1,12 @@
 ---
-title: Testnet, Staging, and Production
-description: The Filecoin network has several different networks for testing, staging, and production purposes.
-weight: 1
+title: "Available networks"
+description: "The Filecoin network has several different networks for testing, staging, and production purposes."
+weight: 10
+menu:
+    networks:
+        parent: "networks-overview"
+aliases:
+    - /networks
 ---
 
 This page contains information on the [networks available](#available-networks) for Filecoin.

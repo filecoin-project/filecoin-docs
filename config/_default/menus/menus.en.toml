@@ -5,7 +5,7 @@
   
 [[main]]
   name = "Networks"
-  url = "/networks"
+  url = "/networks/overview"
   weight = 20
 
 [[main]]
@@ -62,6 +62,12 @@
   weight = 50
   identifier = "about-filecoin-contribute"
   url = "/about-filecoin/ways-to-contribute"
+
+[[networks]]
+  name = "Overview"
+  weight = 10
+  identifier = "networks-overview"
+  url = "/networks/"
 
 [[social]]
   name = "GitHub"
