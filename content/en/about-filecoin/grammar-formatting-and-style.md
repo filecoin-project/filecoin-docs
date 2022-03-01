@@ -1,6 +1,6 @@
 ---
-title: Documentation style guide
-description: Learn the syntax and formatting rules for writing documentation for the Filecoin project.
+title: "Grammar and formatting"
+description: "Learn the syntax and formatting rules for writing documentation for the Filecoin project."
 menu:
     about:
         parent: "about-filecoin-contribute"
