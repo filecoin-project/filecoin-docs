@@ -2,6 +2,9 @@
 title: "Part 4: Retrieve data"
 description: Learn how to get data out of the Filecoin network using Lotus. The final piece of this tutorial is downloading data from the Filecoin network. This section covers creating a retrieval deal with a storage provider and downloading the data through your local Lotus lite-node.
 weight: 4
+menu:
+    getstarted:
+        parent: "getstarted-store-and-retrieve"
 ---
 
 In the previous step, you stored some data on the Filecoin network. It takes up to 24 hours for a storage provider to _seal_ the data. If it's been more than 24 hours since you completed the last section, great! If not, don't worry; you can still follow this page to retrieve some example data that's already on the Filecoin network.

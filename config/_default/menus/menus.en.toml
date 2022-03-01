@@ -10,7 +10,7 @@
 
 [[main]]
   name = "Get started"
-  url = "/get-started"
+  url = "/get-started/store-and-retrieve/introduction"
   weight = 30
 
 [[main]]
@@ -68,6 +68,18 @@
   weight = 10
   identifier = "networks-overview"
   url = "/networks/"
+
+[[getstarted]]
+  name = "Store and retrieve"
+  weight = 10
+  identifier = "getstarted-store-and-retrieve"
+  url = "/get-started/store-and-retrieve/"
+
+[[getstarted]]
+  name = "Explore"
+  weight = 20
+  identifier = "getstarted-explore"
+  url = "/get-started/explore-the-network/"
 
 [[social]]
   name = "GitHub"
