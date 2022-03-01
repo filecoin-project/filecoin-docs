@@ -1,7 +1,10 @@
 ---
-title: "Filecoin Plus"
+title: "Overview"
 description: "Filecoin Plus aims to enable the demand side of the Filecoin network and maximize the amount of useful storage on Filecoin by adding a layer of social trust to the network and introducing a novel resource called DataCap. Clients looking to onboard storage onto the network apply to community-selected Notaries to receive DataCap, which can be used to incentivize storage providers to take storage deals."
 weight: 2
+menu:
+    store:
+        parent: "store-filecoin-plus"
 ---
 
 ## Concepts

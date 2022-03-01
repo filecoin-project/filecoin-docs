@@ -15,7 +15,7 @@
 
 [[main]]
   name = "Store"
-  url = "/store"
+  url = "/store/storage-methods/"
   weight = 40
 
 [[main]]
@@ -80,6 +80,18 @@
   weight = 20
   identifier = "getstarted-explore"
   url = "/get-started/explore-the-network/"
+
+[[store]]
+  name = "Tools"
+  weight = 10
+  identifier = "store-tools"
+  url = "/store/tools"
+
+[[store]]
+  name = "Filecoin Plus"
+  weight = 20
+  identifier = "store-filecoin-plus"
+  url = "/store/filecoin-plus"
 
 [[social]]
   name = "GitHub"

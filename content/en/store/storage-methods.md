@@ -1,6 +1,9 @@
 ---
-title: Storage methods
-description: Start storing data on the Filecoin network.
+title: "Storage methods"
+description: "Start storing data on the Filecoin network."
+menu:
+    store:
+        parent: "store-tools"
 weight: 1
 ---
 
