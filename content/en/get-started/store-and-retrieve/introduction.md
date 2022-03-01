@@ -2,6 +2,9 @@
 title: "Part 1: Introduction"
 description: The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial.
 weight: 1
+menu:
+    getstarted:
+        parent: "getstarted-store-and-retrieve"
 ---
 
 The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial.

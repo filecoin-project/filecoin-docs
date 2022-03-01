@@ -2,6 +2,9 @@
 title: "Part 5: Troubleshooting (Optional)"
 description: Running into problems with Filecoin storage and retrieval? Check out these troubleshooting steps.
 weight: 5
+menu:
+    getstarted:
+        parent: "getstarted-store-and-retrieve"
 ---
 
 ## ERROR: connect: connection refused
