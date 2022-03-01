@@ -1,5 +1,5 @@
 ---
-title: "Part 5: Troubleshooting (Optional)"
+title: "Troubleshooting"
 description: Running into problems with Filecoin storage and retrieval? Check out these troubleshooting steps.
 weight: 5
 menu:
