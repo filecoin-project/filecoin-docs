@@ -4,6 +4,7 @@ description: Wrapped tokens allow tokens from one blockchain to be used natively
 menu:
     about:
         parent: "about-filecoin-assets"
+weight: 70
 ---
 
 Wrapped tokens allow tokens from one blockchain to be used natively on another chain. The wrapping process usually involves locking the original tokens in a smart contract, which then mints an equivalent amount of wrapped tokens on another blockchain.

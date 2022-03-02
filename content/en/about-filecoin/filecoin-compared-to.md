@@ -4,6 +4,7 @@ description: While Filecoin shares some similarities to other file storage solut
 menu:
     about:
         parent: "about-filecoin-basics"
+weight: 50
 ---
 
 Filecoin combines many elements of other file storage and distribution systems. What makes Filecoin unique is that it runs on an open, peer-to-peer network while still providing economic incentives and proofs to ensure files are being stored correctly. This page compares Filecoin against other technologies that share some of the same properties.

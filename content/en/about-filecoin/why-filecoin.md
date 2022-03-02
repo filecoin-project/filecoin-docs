@@ -4,6 +4,7 @@ description: Explore the features that make Filecoin a compelling system for sto
 menu:
     about:
         parent: "about-filecoin-basics"
+weight: 30
 ---
 
 This is an overview of features offered by Filecoin that make it a compelling system for storing files. This overview is intended for people already involved in large-scale data storage, for example, cloud storage or peer-to-peer storage networks.
