@@ -30,7 +30,7 @@
 
 [[main]]
   name = "Reference"
-  url = "/reference"
+  url = "/reference/overview"
   weight = 70
 
 [[about]]
@@ -122,6 +122,18 @@
   weight = 20
   identifier = "build-tools"
   url = "/build/estuary"
+
+[[reference]]
+  name = "Reference"
+  weight = 10
+  identifier = "reference-reference"
+  url = "/reference/overview"
+
+[[reference]]
+  name = "Exchanges"
+  weight = 20
+  identifier = "reference-exchanges"
+  url = "/reference/exchanges"
 
 [[social]]
   name = "GitHub"
