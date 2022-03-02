@@ -1,6 +1,10 @@
 ---
-title: Glossary
-description: Definitions and usage for Filecoin terminology
+title: "Glossary"
+description: "Definitions and usage for Filecoin terminology"
+menu:
+    reference:
+        parent: "reference-reference"
+weight: 10
 ---
 
 ## Address
