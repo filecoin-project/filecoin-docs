@@ -1,12 +1,10 @@
 ---
-title: 'Slashing'
-description: 'Slashing penalizes storage providers that either fail to provide reliable uptime or act maliciously against the network.'
-breadcrumb: 'Slashing'
+title: "Slashing"
+description: "Slashing penalizes storage providers that either fail to provide reliable uptime or act maliciously against the network."
+menu:
+    storageprovider:
+        parent: "storage-provider-rewards"
 ---
-
-# {{ $frontmatter.title }}
-
-{{ $frontmatter.description }}
 
 In Filecoin, storage providers are succeptible to two different kinds of slashing: _storage fault slashing_, and _consensus fault slashing_.
 
