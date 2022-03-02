@@ -129,7 +129,7 @@ module.exports = {
               path: '/project/',
               children: [
                 [
-                  'https://app.instagantt.com/shared/s/1152992274307505/latest',
+                  'https://github.com/filecoin-project/community/discussions/456',
                   'Roadmap'
                 ],
                 ['https://research.filecoin.io/', 'Research'],
