@@ -9,7 +9,7 @@ Curious about how it all got started, or where we're headed? Learn about the his
 
 ## Roadmap
 
-The latest timing information is available in the [Filecoin Mainnet Roadmap](https://app.instagantt.com/shared/s/1152992274307505/latest).
+The [Filecoin Community Roadmap](https://github.com/filecoin-project/community/discussions/456) is updated quarterly. It provides insight into the strategic development of the network and offers pathways for community members to learn more about ongoing work and connect directly with project teams.
 
 ## Research
 
