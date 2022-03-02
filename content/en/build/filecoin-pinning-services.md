@@ -1,7 +1,9 @@
 ---
-title: 'Filecoin-backed Pinning Services'
+title: "Filecoin-backed Pinning Services"
 description: "Filecoin-backed pinning services (FPS) are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin's decentralized storage network."
-breadcrumb: 'FPSs architecture'
+menu:
+    build:
+        parent: "build-tools"
 ---
 
 ## How to use an FPS

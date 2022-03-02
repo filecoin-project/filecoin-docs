@@ -1,7 +1,12 @@
 ---
-title: Get Started Building
-description: Documentation to start building applications on Filecoin.
-weight: 998
+title: "Get building"
+description: "Documentation to start building applications on Filecoin."
+menu:
+    build:
+        parent: "build-get-started"
+        idenfitied: "build-get-started"
+aliases:
+    - /build/get-started
 ---
 
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
