@@ -4,6 +4,7 @@ description: Filecoin frequently asked questions.
 menu:
     about:
         parent: "about-filecoin-basics"
+weight: 90
 ---
 
 ### What are some of the primary use cases for Filecoin at mainnet launch?

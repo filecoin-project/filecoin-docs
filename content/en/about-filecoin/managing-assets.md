@@ -4,6 +4,7 @@ description: 'Many interactions with the Filecoin network require FIL to process
 menu:
     about:
         parent: "about-filecoin-assets"
+weight: 60
 ---
 
 ## Wallets
