@@ -1,7 +1,11 @@
 ---
-title: 'Mining architectures'
-description: 'Filecoin allows anyone to set up a storage provider operation to participate in a global, distributed storage market.'
-breadcrumb: 'Mining architectures'
+title: "Architectures"
+description: "Filecoin allows anyone to set up a storage provider operation to participate in a global, distributed storage market."
+menu:
+    storageprovider:
+        parent: "storage-provider-hardware"
+aliases:
+    - /storage-provider/storage-provider-architectures/
 ---
 This section provides examples for Filecoin storage providing setups to guide providers to plan and make the right choices when acquiring and setting up their storage provider infrastructure. Any storage provider setup must meet the [minimal hardware requirements]({{< relref "hardware-requirements.md" >}}).
 

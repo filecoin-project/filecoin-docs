@@ -20,7 +20,7 @@
 
 [[main]]
   name = "Storage provider"
-  url = "/storage-provider"
+  url = "/storage-provider/overview"
   weight = 50
 
 [[main]]
@@ -92,6 +92,24 @@
   weight = 20
   identifier = "store-filecoin-plus"
   url = "/store/filecoin-plus"
+
+[[storageprovider]]
+  name = "Basics"
+  weight = 10
+  identifier = "storage-provider-basics"
+  url = "/storage-provider/how-providing-works"
+
+[[storageprovider]]
+  name = "Hardware"
+  weight = 20
+  identifier = "storage-provider-hardware"
+  url = "/storage-provider/hardware-requirements"
+
+[[storageprovider]]
+  name = "Rewards"
+  weight = 30
+  identifier = "storage-provider-rewards"
+  url = "/storage-provider/rewards"
 
 [[social]]
   name = "GitHub"

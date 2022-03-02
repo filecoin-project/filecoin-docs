@@ -1,12 +1,12 @@
 ---
-title: 'Storage provider rewards'
-description: 'In Filecoin, providers earn different types of rewards by contributing to the network.'
-breadcrumb: 'Storage provider rewards'
+title: "Storage provider rewards"
+description: "In Filecoin, providers earn different types of rewards by contributing to the network."
+menu:
+    storageprovider:
+        parent: "storage-provider-rewards"
+aliases:
+    - /storage-provider/storage-provider-rewards/
 ---
-
-# {{ $frontmatter.title }}
-
-{{ $frontmatter.description }}
 
 There are two main types of rewards for their efforts: storage fees and block rewards.
 
