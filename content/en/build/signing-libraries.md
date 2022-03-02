@@ -1,7 +1,9 @@
 ---
-title: 'Signing libraries'
-description: 'Signing libraries can be used to sign transactions without requiring a dedicated node.'
-breadcrumb: 'Signing libraries'
+title: "Signing libraries"
+description: "Signing libraries can be used to sign transactions without requiring a dedicated node."
+menu:
+    build:
+        parent: "build-tools"
 ---
 
 They facilitate that applications that are running offline, on a mobile device, or anywhere to create transactions which can then be later submitted to any Filecoin API endpoint (perhaps by a 3rd party).

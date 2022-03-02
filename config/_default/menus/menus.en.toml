@@ -25,7 +25,7 @@
 
 [[main]]
   name = "Build"
-  url = "/build"
+  url = "/build/get-building"
   weight = 60
 
 [[main]]
@@ -110,6 +110,18 @@
   weight = 30
   identifier = "storage-provider-rewards"
   url = "/storage-provider/rewards"
+
+[[build]]
+  name = "Get started"
+  weight = 10
+  identifier = "build-get-started"
+  url = "/build/get-started"
+
+[[build]]
+  name = "Tools"
+  weight = 20
+  identifier = "build-tools"
+  url = "/build/estuary"
 
 [[social]]
   name = "GitHub"
