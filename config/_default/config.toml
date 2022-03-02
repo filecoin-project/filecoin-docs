@@ -1,6 +1,6 @@
 baseurl = "https://docs.filecoin.io/"
 canonifyURLs = false
-disableAliases = true
+disableAliases = false 
 disableHugoGeneratorInject = true
 enableEmoji = true
 enableGitInfo = false
