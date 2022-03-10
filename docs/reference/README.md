@@ -240,7 +240,7 @@ The Retrieval Market is in early development; research and development teams are
 
 ## Wallets
 
-Tools for sending and receiving FIL tokens. For dev tooling see [https://docs.filecoin.io/reference/#message-signing-tools](message signing tools) above
+Tools for sending and receiving FIL tokens. For dev tooling see [message signing tools](https://docs.filecoin.io/reference/#message-signing-tools) above
 
 ### Wallets (audited)
 
