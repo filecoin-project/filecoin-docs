@@ -144,13 +144,12 @@ Developer tools, API clients & storage services that developers can use to build
 
 ### Message signing tools
 
-- [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - a pure Typescript / Javascript library for creating, signing and broadcasting messages to send FIL, and interact with Filecoin's built-in actors (like Payment Channel and Multisig), among other utility functions.
-  - Also available on npm at [@blitslabs/filecoin-js-signer](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
-  - Currently used by the Filecoin Loans project for its mobile wallet (written in React Native) and creating Payment Channels.
-- [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
+- [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
   - For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on Github.
+- [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - [*last update: June 2021*] pure TS / JS library for creating signed messages and interacting with Filecoin's built-in Actors (like Payment Channel and Multisig), used by the [Filecoin Loans grant project](https://github.com/blitslabs/filecoin.loans-monorepo).
+    - On npm at [@blitslabs/filecoin-js-signer](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
 
 ### Wallet-related tools
 
