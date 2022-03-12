@@ -1,12 +1,10 @@
 ---
-title: Social media
-description: Find Filecoin on your favorite social media platform.
+title: "Social media"
+description: "Find Filecoin on your favorite social media platform."
 menu:
     about:
         parent: "about-filecoin-community"
 ---
-
-# Social media
 
 Filecoin is everywhere on the internet — and that includes social media. Find your favorite flavor here.
 
@@ -33,4 +31,4 @@ Get your Filecoin news in tweet-sized bites. Follow these accounts for the lates
 
 Follow FilecoinOfficial on [WeChat](https://www.wechat.com/mobile) for project updates and announcements in Chinese.
 
-<img src="./images/wechat-qr.jpg" />
+![WeChat logo](wechat-qr.jpg)

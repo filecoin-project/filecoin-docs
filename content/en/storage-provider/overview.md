@@ -15,7 +15,7 @@ Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 {{< /alert >}}
 
 - Understand [how providing storage works]({{< relref "how-providing-works.md" >}}) and what different types of providers exist.
-- Learn how storage providers get [rewards]({{< relref "rewards.md" >}}) when doing their job properly, but also [slashed](slashing.md) when they are unable to honor deals they have made.
+- Learn how storage providers get [rewards]({{< relref "rewards.md" >}}) when doing their job properly, but also [slashed]({{< relref "slashing" >}}) when they are unable to honor deals they have made.
 - Learn about different [storage provider architectures]({{< relref "architectures.md" >}}).
 - Setup and run a high performant [`lotus-miner`](https://lotus.filecoin.io/docs/storage-providers/overview/).
 
