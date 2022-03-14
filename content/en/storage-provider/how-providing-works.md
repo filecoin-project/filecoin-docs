@@ -38,4 +38,4 @@ Each Filecoin provider has an associated _power_ value in the network that is pr
 
 Additionally, providers submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
-Additional details about this can be found in the [mining rewards](storage-provider-rewards.md) section.
+Additional details about this can be found in the [mining rewards]({{< relref "rewards" >}}) section.

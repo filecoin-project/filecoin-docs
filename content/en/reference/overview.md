@@ -63,9 +63,14 @@ Tools to check status and details of the network and chain.
 
 ### Chain data and monitoring
 
+<<<<<<< HEAD:content/en/reference/overview.md
 - [Filstats.io](https://filstats.io) - node telemetry monitoring - add your node!
 - [Sentinel Project](https://github.com/filecoin-project/sentinel) - Filecoin Network Monitoring and Analysis System behind Grafana.
 - [Statediff](https://node.glif.io/space07/statediff/rpc/) - exploration and comparing changes to Filecoin state.
+=======
+- [Sentinel Project](https://lilium.sh/) - Filecoin Network Monitoring and Analysis System
+- [Filstats.io](https://filstats.io) - node telemetry monitoring - add your node!ss
+>>>>>>> master:docs/reference/README.md
 - "Orphan blocks" (not an official protocol term in the Filecoin Spec) - Blocks without rewards that were either mined on the wrong tipset that the network fails to deliver in time, or a mix resulting in reorgs.
   - [Orphan Block Statistics](https://filscout.com/en/orphan-block)
   - [Orphan Block List](https://filscout.com/en/orphan-block/alllist)
@@ -81,21 +86,22 @@ Tools to check status and details of the network and chain.
 
 Web-based applications that store your data on Filecoin. No command-line or coding experience required.
 
-- [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with Oauth or general Metamask
-- [Estuary](https://estuary.tech) allows uploading and storing content on the Filecoin network directly from your browser.
-- [File.video](https://file.video/) and [Voodfy](https://beta.voodfy.com/) - video hosting with decentralized transcoding from LivePeer
+- [Estuary](https://estuary.tech) allows uploading and storing content on the Filecoin network directly from your browser. Allows anyone with public data to store and retrieve using a few API calls.
 - [**Slate.host**](https://slate.host) - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
+- [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with Oauth or general Metamask
+- [File.video](https://file.video/) and [Voodfy](https://beta.voodfy.com/) - video hosting with decentralized transcoding from LivePeer
 - [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   - to securely capture, store and verify human history
   - learn more at [starlinglab.org/78days](https://www.starlinglab.org/78days/) or the [Filecoin blog interview](https://filecoin.io/blog/starling-framework/)
-- [Starling Storage API + CLI](https://github.com/filecoin-project/starling) - RESTful API + Node.js CLI that simplifies storing data for preservation use cases. Visit [Starlingstorage.io](https://starlingstorage.io/) to learn more.
+  - [Starlingstorage.io](https://starlingstorage.io/) - API + CLI that simplified storing data to a local Lotus node for preservation use cases.
 
 ## APIs & Developer tools
 
-Developer tools, API clients & storing service that developers can use to build on Filecoin.
+Developer tools, API clients & storage services that developers can use to build on Filecoin.
 
 ### Storage APIs for app builders
 
+<<<<<<< HEAD:content/en/reference/overview.md
 - [Estuary](https://estuary.tech) - a simple IPFS node that integrates a minimal Filecoin Client Library. It allows anyone with public data to store and retrieve it using a few API calls. It is for infrastructure operators, developers and Filecoin users.
     - [Estuary Docs](https://docs.estuary.tech) - more documentations on how to use Estuary and its API.
     - [Estuary WWW](https://github.com/application-research/estuary-www) - A simple website application example that can commun any Estuary node.
@@ -107,16 +113,31 @@ Developer tools, API clients & storing service that developers can use to build 
 - [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account.
 - [Space SDK from Fleek](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
 - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood, hosted by Textile.
+=======
+- [Estuary](https://estuary.tech) - a simple IPFS node that integrates with Filecoin. For infrastructure operators, developers and users.
+    - [Estuary Docs](https://docs.estuary.tech)
+    - [Estuary www](https://github.com/application-research/estuary-www) - a simple web app example
+    - [Estuary Rclone](https://docs.estuary.tech/tutorial-managing-files-with-rclone) - sync to and from different cloud storage providers and Estuary
+- [NFT.storage](https://nft.storage/) - beta service from Protocol Labs for storing off-chain *NFT* data on IPFS and Filecoin.
+- [Web3.storage](https://web3.storage/) - beta service from Protocol Labs for storing off-chain *dapp* data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
+- [Slate.host](https://github.com/filecoin-project/slate/#developer-api) - has a Developer API that allows you upload files with an account
+- [Textile.io's tools](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin
+    - includes The Hub, Buckets, ThreadsDB, Powergate, [Tableland](https://blog.textile.io/tableland-is-coming-build-web3-with-sql/) (new) and Filecoin bridges to Polygon and NEAR
+    - [Powergate](https://docs.textile.io/powergate/) - infrastructure tool for using IPFS for hot storage and retrieval and Filecoin for cold, with deal helpers and other convenience features
+    - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood
+- [Fleek's tools](https://fleek.co/) - provides access to Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
+    - [Space SDK](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services
+    - [Space Daemon](https://fleek.co/space-daemon/) - GoLang library for building desktop apps
+>>>>>>> master:docs/reference/README.md
 
 ### Message signing tools
 
-- [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - a pure Typescript / Javascript library for creating, signing and broadcasting messages to send FIL, and interact with Filecoin's built-in actors (like Payment Channel and Multisig), among other utility functions.
-  - Also available on npm at [@blitslabs/filecoin-js-signer](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
-  - Currently used by the Filecoin Loans project for its mobile wallet (written in React Native) and creating Payment Channels.
-- [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
+- [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
   - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
   - For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on Github.
+- [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - [*last update: June 2021*] pure TS / JS library for creating signed messages and interacting with Filecoin's built-in Actors (like Payment Channel and Multisig), used by the [Filecoin Loans grant project](https://github.com/blitslabs/filecoin.loans-monorepo).
+    - On npm at [@blitslabs/filecoin-js-signer](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
 
 ### Wallet-related tools
 
@@ -206,7 +227,7 @@ The Retrieval Market is in early development; research and development teams are
 
 ## Wallets
 
-Tools for sending and receiving FIL tokens.
+Tools for sending and receiving FIL tokens. For dev tooling see [message signing tools](https://docs.filecoin.io/reference/#message-signing-tools) above
 
 ### Wallets (audited)
 
@@ -234,7 +255,11 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 ### Hackathons
 
+<<<<<<< HEAD:content/en/reference/overview.md
 - [Upcoming Hackathons](https://github.com/protocol/grants#hackathons)
+=======
+- [Upcoming Hackathons](https://hackathons.filecoin.io/)
+>>>>>>> master:docs/reference/README.md
   + Keep a lookout for upcoming hackathons!
   + All winners are eligible for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/microgrants/microgrants.md) after the Hackathon!
 

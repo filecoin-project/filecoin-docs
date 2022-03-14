@@ -65,4 +65,4 @@ This tutorial contains some words and phrases that you might not be familiar wit
 
 ## Next steps
 
-Before we can manage data on the Filecoin network, we need to set up things like a Lotus node and a Filecoin wallet. [Head to the set-up section to start gathering your resources →](set-up)
+Before we can manage data on the Filecoin network, we need to set up things like a Lotus node and a Filecoin wallet. [Head to the set-up section to start gathering your resources →]({{< relref "set-up" >}})
