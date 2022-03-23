@@ -114,7 +114,7 @@ For the first iteration of the protocol, yes. We have plans to make it cheaper a
 
 ### What's the minimum time period for the storage contract between the provider and the buyer?
 
-The minimum duration for a deal is set in the storage provider's ask. There's also a practical limitation because sectors have a minimum duration (currently one month).
+The minimum duration for a deal is set in the storage provider's ask. There's also a practical limitation because sectors have a minimum duration (currently 180 days).
 
 ### After I made a deal with a storage provider and sent my data to them, how exactly is the data supposed to be recoverable and healable if that storage provider goes down?
 
