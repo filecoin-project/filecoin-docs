@@ -119,41 +119,42 @@ Let's also set up a Node.js project with necessary dependencies, we will write b
    npm install filecoin.js
    ```
 
-3. Test a simple function call
 
-   At this step, you are ready to write code to connect to your Lotus node and interact with the Lotus APIs. Let's write a simple script to query the Lotus version to verify if everything works as expected.
+### Test a simple function call
 
-   First, let's create a `chainDataQuery.mjs` file in your project and add the following codes. We use `mjs` so we can use import statement in our code. 
+At this step, you are ready to write code to connect to your Lotus node and interact with the Lotus APIs. Let's write a simple script to query the Lotus version to verify if everything works as expected.
 
-   ```javascript
-   //1. Import necessary packages
-   import { HttpJsonRpcConnector, LotusClient } from "filecoin.js";
-   
-   //2. Use the local node URL to create a connection to your Lotus node
-   const localNodeUrl = "http://127.0.0.1:1234/rpc/v0";
-   const localConnector = new HttpJsonRpcConnector({ url: localNodeUrl });
-   
-   //3. lotusClient exposes all Lotus APIs
-   const lotusClient = new LotusClient(localConnector);
-   const version = await lotusClient.common.version();
-   console.log(version);
-   ```
+1. Let's create a `chainDataQuery.mjs` file in your project and add the following codes. We use `mjs` so we can use import statement in our code. 
 
-   Run the following command in your project directory to test it.
+    ```javascript
+    //1. Import necessary packages
+    import { HttpJsonRpcConnector, LotusClient } from "filecoin.js";
 
-   ```shell with-output
-   ~/build-with-lotus $ node basicQuery.mjs
-   ```
+    //2. Use the local node URL to create a connection to your Lotus node
+    const localNodeUrl = "http://127.0.0.1:1234/rpc/v0";
+    const localConnector = new HttpJsonRpcConnector({ url: localNodeUrl });
 
-   ```shell
-   {
-     Version: '1.15.0+calibnet+git.0ac1bbc7a',
-     APIVersion: 66816,
-     BlockDelay: 30
-   }
-   ```
+    //3. lotusClient exposes all Lotus APIs
+    const lotusClient = new LotusClient(localConnector);
+    const version = await lotusClient.common.version();
+    console.log(version);
+    ```
 
-   If everything is set up correctly, our code will be able to connect to the Lotus node and request chain data back as shown above. And we are ready to explore more features that the Lotus provides via API calls. 
+2. Run the following command in your project directory to test it.
+
+    ```shell with-output
+    ~/build-with-lotus $ node basicQuery.mjs
+    ```
+
+    ```shell
+    {
+      Version: '1.15.0+calibnet+git.0ac1bbc7a',
+      APIVersion: 66816,
+      BlockDelay: 30
+    }
+    ```
+
+If everything is set up correctly, our code will be able to connect to the Lotus node and request chain data back as shown above. And we are ready to explore more features that the Lotus provides via API calls. 
 
 ## Query chain data
 
