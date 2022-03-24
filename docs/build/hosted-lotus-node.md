@@ -12,9 +12,9 @@ In the Filecoin ecosystem, there are various node solutions to connect to the Fi
 
 Developers can also use the API client libraries to utilize the features of Filecoin Network since those libraries take care of the low-level logic of connecting to lotus node, requesting and handing the response via simple calls, etc. Currently, there are many libraries available:
 
-+ [filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/)
-+ [filecoin-js-signer](https://github.com/blitslabs/filecoin-js-signer)
-+ [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools)
+- [filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/)
+- [filecoin-js-signer](https://github.com/blitslabs/filecoin-js-signer)
+- [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools)
 
 In this tutorial, we will run a  **local lotus node** and use **filecoin.js** library to build examples to walk you through: 
 
