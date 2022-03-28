@@ -1,19 +1,19 @@
 ---
-title: Filecoin FAQ
-description: Filecoin frequently asked questions.
+title: "Filecoin FAQ"
+description: "Filecoin frequently asked questions."
 menu:
     about:
         parent: "about-filecoin-basics"
 weight: 90
 ---
 
-### What are some of the primary use cases for Filecoin at mainnet launch?
+### What are some of the primary use cases for Filecoin?
 
 Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include publicly verifiable cryptographic storage proofs, [crypto-economic mechanisms](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a trustless decentralized storage network.
 
 On top of the core Filecoin protocol, there are a number of layer 2 solutions that enable a broad array of use cases and applications, many of which also use [IPFS](https://ipfs.io). These solutions include [Powergate](https://docs.textile.io/powergate/), [Textile Hub](https://blog.textile.io/announcing-the-textile-protocol-hub/), and more. Using these solutions, any use case that can be built on top of IPFS can also be built on Filecoin!
 
-Some of the primary areas for development expected on Filecoin around mainnet launch are:
+Some of the primary areas for development on Filecoin are:
 
 - Additional developer tools and layer-2 solutions and libraries that strengthen Filecoin as a developer platform and ecosystem.
 - IPFS apps that rely on decentralized storage solutions and want a decentralized data persistence solution as well.

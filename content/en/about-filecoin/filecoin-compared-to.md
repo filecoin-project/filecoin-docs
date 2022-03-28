@@ -1,6 +1,6 @@
 ---
-title: Filecoin compared to...
-description: While Filecoin shares some similarities to other file storage solutions, the protocol has significant differences that one should consider.
+title: "Filecoin compared to..."
+description: "While Filecoin shares some similarities to other file storage solutions, the protocol has significant differences that one should consider."
 menu:
     about:
         parent: "about-filecoin-basics"

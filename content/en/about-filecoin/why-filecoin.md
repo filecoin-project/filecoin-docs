@@ -1,6 +1,6 @@
 ---
-title: Why Filecoin?
-description: Explore the features that make Filecoin a compelling system for storing files.
+title: "Why Filecoin?"
+description: "Explore the features that make Filecoin a compelling system for storing files."
 menu:
     about:
         parent: "about-filecoin-basics"

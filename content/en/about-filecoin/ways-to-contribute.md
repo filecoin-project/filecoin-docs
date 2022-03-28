@@ -1,6 +1,6 @@
 ---
-title: Ways to contribute
-description: How to contribute to Filecoin
+title: "Ways to contribute"
+description: "How to contribute to Filecoin"
 menu:
     about:
         parent: "about-filecoin-contribute"

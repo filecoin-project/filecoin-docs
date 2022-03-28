@@ -1,6 +1,6 @@
 ---
-title: The Filecoin Project
-description: Learn about the history, roadmap, current status and more for Filecoin
+title: "The Filecoin Project"
+description: "Learn about the history, roadmap, current status and more for Filecoin"
 menu:
     about:
         parent: "about-filecoin-project"

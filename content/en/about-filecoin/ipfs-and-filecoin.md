@@ -1,6 +1,6 @@
 ---
-title: IPFS and Filecoin
-description: Learn more about the relationship and different use-cases between IPFS and Filecoin.
+title: "IPFS and Filecoin"
+description: "Learn more about the relationship and different use-cases between IPFS and Filecoin."
 menu:
     about:
         parent: "about-filecoin-basics"

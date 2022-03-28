@@ -1,15 +1,17 @@
 ---
-title: Chat & discussion forums
-description: Connect with the Filecoin community in dicussion forums or on IRC
+title: "Chat & discussion forums"
+description: "Connect with the Filecoin community in dicussion forums or on IRC"
 menu:
     about:
         parent: "about-filecoin-community"
 ---
+
 The Filecoin community is active and here to answer your questions in your channel of choice.
 
-## Chat (Slack or Matrix)
+## Chat
 
 For shorter-lived discussions, our community chat open to all on both Slack and Matrix, with bridged channels allowing you to particate in the same conversations from either platform:
+
 - [Slack](https://filecoin.io/slack/)
 - [Matrix](https://riot.im/app/#/group/+filecoin:matrix.org)
 
