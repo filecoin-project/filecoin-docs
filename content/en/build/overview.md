@@ -5,10 +5,10 @@ menu:
     build:
         parent: "build-get-started"
         idenfitied: "build-get-started"
-weight: 1
 aliases:
     - /build/get-started
     - /build
+weight: 1
 ---
 
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
