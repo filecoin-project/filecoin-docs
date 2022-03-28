@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-description: Running into problems with Filecoin storage and retrieval? Check out these troubleshooting steps.
+description: "Running into problems with Filecoin storage and retrieval? Check out these troubleshooting steps."
 weight: 5
 menu:
     getstarted:

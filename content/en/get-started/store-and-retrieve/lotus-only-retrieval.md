@@ -1,3 +1,14 @@
+---
+title: "Lotus-only retrieval"
+description: "Learn how to retrieve data from the Filecoin network using only your Lotus-node; no third-party websites or block-explorers required."
+menu:
+    getstarted:
+        parent: "getstarted-store-and-retrieve"
+draft: true
+---
+
+This guide assumes that you are retrieving your data from the same Lotus node that you originaly made the deal.
+
 ## Pre-setup
 
 ```shell
@@ -86,3 +97,5 @@ Jun 21 23:00:07  bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy  0 
     ```shell
     lotus client retrieve --miner f0127896 bafykbzacecjiqho3qy2wwvtdqwhwalsklpdwrssn7jmg7jzvuya75xtuir2yg ~/outfile.tar
     ```
+
+1. Done!
