@@ -1,4 +1,4 @@
-baseurl = "https://docs.filecoin.io/"
+baseurl = ""
 canonifyURLs = false
 disableAliases = false 
 disableHugoGeneratorInject = true
