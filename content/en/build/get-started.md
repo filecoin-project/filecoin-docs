@@ -1,9 +1,10 @@
 ---
-title: "Infura tutorial"
+title: "Quickstart"
 description: "Want to jump into Filecoin and start building something? This section gets you up and running quickly by creating a simple Node.js script using Infura and the Filecoin network."
 menu:
     build:
         parent: "build-get-started"
+weight: 20
 ---
 
 The Infura API makes it easier to interact with the Filecoin Network by abstracting away some of the complex workflows and requirements. There's no need to spin up a node or directly call a Lotus daemon!

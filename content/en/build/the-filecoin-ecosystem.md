@@ -1,7 +1,9 @@
 ---
-title: 'The Filecoin ecosystem'
-description: 'The Filecoin landscape is made of a growing number of applications that make it easy to interact with the distributed storage offered by the network. Here is a list of some of the best tools and starting points to start building on top of Filecoin today.'
-breadcrumb: 'Filecoin ecosystem'
+title: "The Filecoin ecosystem"
+description: "The Filecoin landscape is made of a growing number of applications that make it easy to interact with the distributed storage offered by the network. Here is a list of some of the best tools and starting points to start building on top of Filecoin today."
+menu:
+    build:
+        parent: "build-tools"
 ---
 
 ## Slate

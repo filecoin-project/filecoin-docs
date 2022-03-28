@@ -25,13 +25,15 @@
 
 [[main]]
   name = "Build"
-  url = "/build/get-building"
+  url = "/build/overview"
   weight = 60
 
 [[main]]
   name = "Reference"
   url = "/reference/overview"
   weight = 70
+
+
 
 [[about]]
   name = "Basics"
@@ -63,11 +65,15 @@
   identifier = "about-filecoin-contribute"
   url = "/about-filecoin/ways-to-contribute"
 
+
+
 [[networks]]
   name = "Overview"
   weight = 10
   identifier = "networks-overview"
   url = "/networks/"
+
+
 
 [[getstarted]]
   name = "Store and retrieve"
@@ -81,6 +87,8 @@
   identifier = "getstarted-explore"
   url = "/get-started/explore-the-network/"
 
+
+
 [[store]]
   name = "Tools"
   weight = 10
@@ -92,6 +100,8 @@
   weight = 20
   identifier = "store-filecoin-plus"
   url = "/store/filecoin-plus"
+
+
 
 [[storageprovider]]
   name = "Basics"
@@ -111,17 +121,21 @@
   identifier = "storage-provider-rewards"
   url = "/storage-provider/rewards"
 
+
+
 [[build]]
-  name = "Get started"
+  name = "Get building"
   weight = 10
   identifier = "build-get-started"
-  url = "/build/get-started"
+  url = "/build/overview"
 
 [[build]]
   name = "Tools"
   weight = 20
   identifier = "build-tools"
   url = "/build/estuary"
+
+
 
 [[reference]]
   name = "Reference"
@@ -134,6 +148,8 @@
   weight = 20
   identifier = "reference-exchanges"
   url = "/reference/exchanges"
+
+
 
 [[social]]
   name = "GitHub"

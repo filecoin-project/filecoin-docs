@@ -136,7 +136,27 @@
 <div class="container-xxl">
   <aside class="doks-sidebar">
     <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
-      {{ partial "sidebar/docs-menu.html" . }}
+        {{ if eq .Section "about-filecoin" -}}
+            {{ partial "sidebar/about-filecoin-menu.html" . }}
+        {{ end -}}
+        {{ if eq .Section "networks" -}}
+            {{ partial "sidebar/networks-menu.html" . }}
+        {{ end -}}
+        {{ if eq .Section "get-started" -}}
+            {{ partial "sidebar/get-started-menu.html" . }}
+        {{ end -}}
+        {{ if eq .Section "store" -}}
+            {{ partial "sidebar/store-menu.html" . }}
+        {{ end -}}
+        {{ if eq .Section "storage-provider" -}}
+            {{ partial "sidebar/storage-provider-menu.html" . }}
+        {{ end -}}
+        {{ if eq .Section "build" -}}
+            {{ partial "sidebar/build-menu.html" . }}
+        {{ end -}}
+        {{ if eq .Section "reference" -}}
+            {{ partial "sidebar/reference-menu.html" . }}
+        {{ end -}}
     </nav>
   </aside>
 </div>

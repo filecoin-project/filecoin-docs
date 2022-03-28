@@ -1,19 +1,21 @@
 ---
-title: "Get building"
+title: "Overview"
 description: "Documentation to start building applications on Filecoin."
 menu:
     build:
         parent: "build-get-started"
         idenfitied: "build-get-started"
+weight: 1
 aliases:
     - /build/get-started
+    - /build
 ---
 
 Filecoin is for the builders. If you are excited about the potential of leveraging the Filecoin protocol and decentralized storage network to build game-changing applications, you've come to the right place.
 
 There are several options to start integrating with Filecoin. Here are some guides to get you started:
 
-- [Node Setup Tutorial]({{< relref "node-setup-tutorial.md" >}}), which gets you up and running quickly by creating a simple Node.js script using Infura and the Filecoin network.
+- [Node Setup Tutorial]({{< relref "get-started.md" >}}), which gets you up and running quickly by creating a simple Node.js script using Infura and the Filecoin network.
 - [Use Glif nodes](https://lotus.filecoin.io/docs/developers/hosted-lotus/) to skip spinning up a node and just start building.
 - [Build with Lotus](https://lotus.filecoin.io), for users looking to interact with their own, local Lotus nodes.
 - [Build with Powergate]({{< relref "powergate.md" >}}), for users wanting to combine IPFS (fast retrieval) and Filecoin (backup) with full control of both.
