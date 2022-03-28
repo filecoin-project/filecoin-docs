@@ -1,1 +1,2 @@
+baseurl = "https://deploy-preview-1162--filecoin-docs.netlify.app/"
 canonifyURLs = false
