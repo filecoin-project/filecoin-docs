@@ -7,7 +7,7 @@ titleAddition = "Home"
 description = "Documentation for Filecoin - A decentralized storage network for humanity's most important information."
 
 ## Search
-mainSections = ["about-filecoin", "build", "community", "get-started", "networks", "project", "reference", "storage-provider", "store"]
+## mainSections = ["about-filecoin", "build", "community", "get-started", "networks", "project", "reference", "storage-provider", "store"]
 
 ## Open Graph
 images = ["/logos/Filecoin-logo-blue+black.png"]
@@ -54,6 +54,7 @@ lqipWidth = "20x"
 
 # Footer
 footer = "Built by Protocol Labs."
+footer_link = "https://protocol.ai"
 
 # Feed
 copyRight = ""
@@ -65,8 +66,8 @@ alertText = ""
 
 # Edit Page
 docsRepo = "https://github.com/filecoin-project/filecoin-docs"
-docsRepoBranch = "main"
-editPage = true
+docsRepoBranch = "master"
+editPage = false
 
 [options]
   lazySizes = true
