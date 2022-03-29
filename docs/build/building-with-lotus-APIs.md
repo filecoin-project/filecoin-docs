@@ -1,7 +1,7 @@
 ---
-title: Hosted Lotus Node
+title: Building with Lotus APIs
 description: Hosted nodes allow developers to interact with the Filecoin network via API calls without managing your own node. 
-breadcrumb: 'Lotus Node'
+breadcrumb: 'Lotus APIs'
 ---
 
 # {{ $frontmatter.title }}
@@ -16,9 +16,9 @@ Developers can also use the API client libraries to utilize the features of File
 - [filecoin-js-signer](https://github.com/blitslabs/filecoin-js-signer)
 - [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools)
 
-In this tutorial, we will run a  Lotus lotus node and use filecoin.js library to build examples to walk you through: 
+In this tutorial, we will run a local Lotus node and use the filecoin.js library to walk through the following examples: 
 
-- Setting up local Lotus node for Calibration TestNet
+- Setting up a local Lotus node and connecting to [Calibration Testnet](https://docs.filecoin.io/networks/#calibration)
 - Using filecoin.js to write code to interact with Filecoin Network to
    - query basic blockchain info
    - manage Lotus wallet
@@ -29,7 +29,7 @@ In this tutorial, we will run a  Lotus lotus node and use filecoin.js library to
 
 Before getting started, you should be familiar with:
 
-- [How Filecoin works](http://localhost:8080/about-filecoin/how-filecoin-works/)
+- [How Filecoin works](https://docs.filecoin.io/about-filecoin/how-filecoin-works/)
 - [How to install a Lotus node for the Calibration network](https://lotu.sh/lotus/install/prerequisites/#supported-platforms)
 - [How to use Lotus command line](https://lotu.sh/lotus/manage/lotus-cli/)
 
@@ -122,9 +122,9 @@ Let's also set up a Node.js project with necessary dependencies, we will write b
 
 ### Test a simple function call
 
-At this step, you are ready to write code to connect to your Lotus node and interact with the Lotus APIs. Let's write a simple script to query the Lotus version to verify if everything works as expected.
+Now you're ready to write code to connect to your Lotus node and interact with the Lotus APIs. Let's write a simple script to query the Lotus version to verify if everything works as expected.
 
-1. Let's create a `chainDataQuery.mjs` file in your project and add the following codes. We use `mjs` so we can use import statement in our code. 
+1. Create a `chainDataQuery.mjs` file in your project and add the following code. We use the `mjs` file format because it supports import statements.
 
     ```javascript
     //1. Import necessary packages
@@ -140,7 +140,7 @@ At this step, you are ready to write code to connect to your Lotus node and inte
     console.log(version);
     ```
 
-2. Run the following command in your project directory to test it.
+2. Run the following command in your project directory:
 
     ```shell with-output
     ~/build-with-lotus $ node basicQuery.mjs
@@ -417,7 +417,7 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
 
 ### Light Wallet
 
-`filecoin.js` also supports creating a light wallet from mnemonic and a password which does not require you to run a full Lotus node the same way for a Lotus wallet. As long as you have the mnemonic and password of your wallet, you can recover it anywhere, and then manage your wallet and token.
+`filecoin.js` also supports creating a light wallet from a mnemonic and a password. As long as you have the mnemonic and password of your wallet, you can recover it anywhere and use it by sending PRC requests to any lotus full nodes. Rather than relaying on a full built-in Lotus node for Lotus wallet.
 
 1. Create `lightWallet.mjs` file
 
@@ -434,7 +434,7 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
 
 2. Create a new light wallet
 
-   When we create a light wallet using the BIP39 standard, it is very important to back up the mnemonic code, encryptedWallet, and your password and do not share them with anyone for safety consideration because anyone who has them will have control of your light wallet and assets.
+   When creating a light wallet using the BIP39 standard, it is very important to back up the mnemonic code, encryptedWallet, and your password. Do not share them — anyone who has this information will have control of your light wallet and assets.
 
    ```javascript with-output
    async function createLightWallet(){
@@ -573,7 +573,7 @@ storeFile();
 
    Once your data is imported, lotus will know which file you want to store by its CID. Then in order to store this data on the Filecoin network, we need to find a storage provider which is willing to accept your storage deal.
 
-   Since we are using the calibration network for demo purposes, you should find the storage providers which are actively accepting deals for the Calibration network using the following lotus command.
+   Since we are using the calibration network for this tutorial, find storage providers using the following lotus command. It will return a list of asks from the storage providers on the calibration network which are actively accepting deals.
 
    ```shell with-output
    lotus client list-asks

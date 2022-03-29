@@ -92,7 +92,7 @@ module.exports = {
 
           '/build/': [
             'get-started',
-            'hosted-lotus-node',
+            'building-with-lotus-APIs',
             'textile-buckets',
             'powergate',
             'estuary',
