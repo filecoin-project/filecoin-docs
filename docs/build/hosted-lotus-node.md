@@ -1,6 +1,6 @@
 ---
 title: Hosted Lotus Node
-description: As the fundamental component of Filecoin Network, Lotus node offers abundant features to developers via command-line as well as RPC API methods. 
+description: Hosted nodes allow developers to interact with the Filecoin network via API calls without managing your own node. 
 breadcrumb: 'Lotus Node'
 ---
 
@@ -19,7 +19,7 @@ Developers can also use the API client libraries to utilize the features of File
 In this tutorial, we will run a  Lotus lotus node and use filecoin.js library to build examples to walk you through: 
 
 - Setting up local Lotus node for Calibration TestNet
-- Using filecon.js to write code to interact with Filecoin Network to
+- Using filecoin.js to write code to interact with Filecoin Network to
    - query basic blockchain info
    - manage Lotus wallet
    - manage light wallet
@@ -154,20 +154,20 @@ At this step, you are ready to write code to connect to your Lotus node and inte
     }
     ```
 
-If everything is set up correctly, our code will be able to connect to the Lotus node and request chain data back as shown above. And we are ready to explore more features that the Lotus provides via API calls. 
+If everything is set up correctly, your code will be able to connect to the Lotus node and return the chain data as shown above. Now, you're ready to explore more API features.
 
 ## Query chain data
 
-Blockchain data is the fundamental part of any blockchain network, it is essential that Lotus provides APIs to query Filecoin chain data, including tipSets,  blocks, and messages, network status, storage deals and storage provider's details, etc. 
+Blockchain data is a fundamental part of any blockchain network. Using Lotus APIs, you can query chain data, including tipsets, blocks, messages, network status, storage deals, storage provider details, and more.
 
-As one of the API client libraries, filecion.js wrapped all the Lotus APIs into simple method calls to provide  a complete library to interact with any Lotus node. Let's look at some common packages of LotusClient so you can have a sense of what you can use. 
+Let's look at some common chain data-related packages in the filecoin.js library's LotusClient. 
 
-- `LotusClient.common` - methods to get node info.
-- `LotusClient.chain` -  methods to interact with the blockchain.
-- `LotusClient.wallet` - methods to manage wallet on the Lotus node.
-- `LotusClient.client` - methods to interact with the storage and retrieval markets as a client.
-- `LotusClient.paych` - methods to interact with and manage payment channels.
-- `LotusClient.state` - methods to query, inspect, and interact with chain state.
+- `LotusClient.common` - methods to get node info
+- `LotusClient.chain` - methods to interact with the blockchain
+- `LotusClient.wallet` - methods to manage wallet on the Lotus node
+- `LotusClient.client` - methods to interact with the storage and retrieval markets as a client
+- `LotusClient.paych` - methods to interact with and manage payment channels
+- `LotusClient.state` - methods to query, inspect, and interact with chain state
 - more ...
 
 In the previous step, we already created a `chainDataQuery.mjs` file to demonstrate the basic steps to connect to the Lotus node and initialize a LotusClient to query chain data. Now let's write more code in there to learn other query functions that do not require auth-token to interact with the Lotus node.
