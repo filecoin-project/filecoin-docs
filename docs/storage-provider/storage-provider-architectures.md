@@ -13,5 +13,3 @@ This section provides examples for Filecoin storage providing setups to guide pr
 ::: callout
 We are working to improve this section. If you would like to share your storage provider setup, please create an issue in the [Filecoin docs repo](https://github.com/filecoin-project/filecoin-docs/issues)!
 :::
-
-[[TOC]]
