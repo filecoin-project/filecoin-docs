@@ -6,6 +6,9 @@ titleSeparator = "-"
 titleAddition = "Home"
 description = "Documentation for Filecoin - A decentralized storage network for humanity's most important information."
 
+# Folders in content that the site will search through.
+mainSections = ["about-filecoin", "build", "community", "get-started", "networks", "project", "reference", "storage-provider", "store"]
+
 ## Documentation
 # docsVersion = "0.3"
 

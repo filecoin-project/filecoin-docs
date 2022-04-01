@@ -1,4 +1,5 @@
-baseurl = "https://doks.netlify.app/"
+ignoreErrors = ["image-not-found"]
+baseurl = "/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
@@ -87,3 +88,4 @@ rel  = "sitemap"
   [[module.mounts]]
     source = "node_modules/mermaid"
     target = "assets/js/vendor/mermaid"
+
