@@ -1,8 +1,37 @@
 [[main]]
-    name = "About Filecoin"
-    url = "/about-filecoin/what-is-filecoin"
-    weight = 10
+  name = "About Filecoin"
+  url = "/about-filecoin/what-is-filecoin"
+  weight = 10
+  
+[[main]]
+  name = "Networks"
+  url = "/networks/overview"
+  weight = 20
 
+[[main]]
+  name = "Get started"
+  url = "/get-started/store-and-retrieve/introduction"
+  weight = 30
+
+[[main]]
+  name = "Store"
+  url = "/store/storage-methods/"
+  weight = 40
+
+[[main]]
+  name = "Storage provider"
+  url = "/storage-provider/overview"
+  weight = 50
+
+[[main]]
+  name = "Build"
+  url = "/build/overview"
+  weight = 60
+
+[[main]]
+  name = "Reference"
+  url = "/reference/overview"
+  weight = 70
 
 
 [[about]]
@@ -34,6 +63,22 @@
   weight = 50
   identifier = "about-filecoin-contribute"
   url = "/about-filecoin/ways-to-contribute"
+
+
+
+[[build]]
+  name = "Get building"
+  weight = 10
+  identifier = "build-get-started"
+  url = "/build/overview"
+
+[[build]]
+  name = "Tools"
+  weight = 20
+  identifier = "build-tools"
+  url = "/build/estuary"
+
+
 
 
 [[social]]
