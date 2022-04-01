@@ -1,4 +1,5 @@
 ignoreErrors = ["image-not-found"]
+
 baseurl = "/"
 canonifyURLs = false
 disableAliases = true
