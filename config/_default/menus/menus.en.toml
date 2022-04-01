@@ -34,6 +34,7 @@
   weight = 70
 
 
+
 [[about]]
   name = "Basics"
   weight = 10
@@ -66,6 +67,62 @@
 
 
 
+[[networks]]
+  name = "Overview"
+  weight = 10
+  identifier = "networks-overview"
+  url = "/networks/"
+
+
+
+[[getstarted]]
+  name = "Store and retrieve"
+  weight = 10
+  identifier = "getstarted-store-and-retrieve"
+  url = "/get-started/store-and-retrieve/"
+
+[[getstarted]]
+  name = "Explore"
+  weight = 20
+  identifier = "getstarted-explore"
+  url = "/get-started/explore-the-network/"
+
+
+
+[[store]]
+  name = "Tools"
+  weight = 10
+  identifier = "store-tools"
+  url = "/store/tools"
+
+[[store]]
+  name = "Filecoin Plus"
+  weight = 20
+  identifier = "store-filecoin-plus"
+  url = "/store/filecoin-plus"
+
+
+
+[[storageprovider]]
+  name = "Basics"
+  weight = 10
+  identifier = "storage-provider-basics"
+  url = "/storage-provider/how-providing-works"
+
+[[storageprovider]]
+  name = "Hardware"
+  weight = 20
+  identifier = "storage-provider-hardware"
+  url = "/storage-provider/hardware-requirements"
+
+[[storageprovider]]
+  name = "Rewards"
+  weight = 30
+  identifier = "storage-provider-rewards"
+  url = "/storage-provider/rewards"
+
+
+
 [[build]]
   name = "Get building"
   weight = 10
@@ -78,6 +135,19 @@
   identifier = "build-tools"
   url = "/build/estuary"
 
+
+
+[[reference]]
+  name = "Reference"
+  weight = 10
+  identifier = "reference-reference"
+  url = "/reference/overview"
+
+[[reference]]
+  name = "Exchanges"
+  weight = 20
+  identifier = "reference-exchanges"
+  url = "/reference/exchanges"
 
 
 
@@ -94,7 +164,4 @@
   url = "https://twitter.com/filecoin"
   weight = 20
 
-# [[footer]]
-#   name = "Privacy"
-#   url = "/privacy-policy/"
-#   weight = 10
+
