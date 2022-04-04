@@ -86,7 +86,7 @@ Increasing the number of storage providers you use increases your data redundanc
 
 ### Filecoin Plus provider registry
 
-The Filecoin Plus storage provider registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page]({{< relref "../../store/filecoin-plus.md" >}}) to find out more about the program.
+The Filecoin Plus storage provider registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page]({{< relref "/store/filecoin-plus" >}}) to find out more about the program.
 
 Let's find a couple of storage providers to store our data.
 
@@ -94,11 +94,11 @@ Let's find a couple of storage providers to store our data.
 1. Using the table, find a couple of storage providers that suit your needs. Try to find storage providers that are geographically close to you.
 1. Once you have found a couple of suitable storage providers, make a note of their _miner IDs_ from the **Miner ID** column:
 
-    ![A collection of storage providers listed in the Filecoin Plus storage provider registry.](/images/store-and-retrieve/miner-x-listings.png)
+    ![A collection of storage providers listed in the Filecoin Plus storage provider registry.](miner-x-listings.png)
 
     Some storage providers list multiple miner IDs. For these storage providers, just copy one of the IDs:
 
-    ![A list of storage providers, highlighting one storage provider with multiple IDs.](/images/store-and-retrieve/miner-with-multiple-miner-ids.png)
+    ![A list of storage providers, highlighting one storage provider with multiple IDs.](miner-with-multiple-miner-ids.png)
 
 1. Make sure to write down the IDs of the storage providers you want to use. We'll be referring to these IDs in the next section.
 
@@ -112,11 +112,11 @@ We're going to use FilRep to check that the minimum deal size of the storage pro
 1. Click the **Settings** toggle to display a list of all available storage provider details.
 1. Make sure that the **Min File Size** column is selected:
 
-    ![](/images/store-and-retrieve/filrep-select-columns.png)
+    ![](filrep-select-columns.png)
 
 1. Now you can search for the storage providers you found before, using the miner ID.
 
-    ![](/images/store-and-retrieve/filrep-search-min-file-size.png)
+    ![](filrep-search-min-file-size.png)
 
 1. Check that the minimum file size is lower than 5 GiB, and that they charge 0 FIL for verified deals.
 1. If the minimum file size shown for any of your storage providers is larger than 5 GiB, or they charge more thann 0 FIL for verified deals, go back to [the previous section](#filecoin-plus-provider-registry) and select a new storage provider.

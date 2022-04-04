@@ -9,7 +9,7 @@ menu:
 
 Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+.
 
-![A flowchart showing to steps within this set up process.](/images/store-and-retrieve/set-up-process.png)
+![A flowchart showing to steps within this set up process.](set-up-process.png)
 
 {{< alert icon="tip" >}}**What is Lotus?**
 Programs that interact with the Filecoin network are called _implementations_, and [Lotus](https://lotus.filecoin.io) is a command-line interface (CLI) implementation. There are other implementation being created alongside Lotus, however Lotus is the only Filecoin implementation created and maintained by Protocol Labs.
@@ -33,7 +33,7 @@ Usually, we'd have to _spin up_ a full-node, but we're going to use a Lotus full
 
 A lite-node lets your computer interact with the Filecoin network without having to run a resource-intensive full-node! Lite-nodes can do things like sign messages and talk to storage providers, but any processes that need data from the blockchain must come from a full-node. Luckily, lite-nodes automatically route any blockchain-based requests to a full-node. For this tutorial, you're going to run a Lotus lite-node on your local computer and have it connect to a full-node managed by Protocol Labs.
 
-![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](/images/store-and-retrieve/lite-nodes-process-diagram.png)
+![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](lite-nodes-process-diagram.png)
 
 To install a Lotus lite-node on your computer, you must have the tools required to _build_ a Lotus binary from the GitHub repository.
 

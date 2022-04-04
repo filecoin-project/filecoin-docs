@@ -72,7 +72,7 @@ We're going to gather this information now.
 1. Go to [filecoin.tools](https://filecoin.tools).
 1. Paste the **address** in the search bar and press `ENTER` to search for deals made by that **address**:
 
-    ![Filecoin.tools showing all the deals made by a single address.](/images/store-and-retrieve/filecoin-tools-search-address.png)
+    ![Filecoin.tools showing all the deals made by a single address.](filecoin-tools-search-address.png)
 
     {{< alert icon="warning" >}}**Using a different address**
     The default **address** supplied in this tutorial `f16wc2ees...` has only submitted one storage deal, so you'll only see one row in [filecoin.tools](https://filecoin.tools/f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq). If you are using a different **address**, you may see multiple rows. If you don't see _any_ rows, the **address** you searched for has not yet completed a deal. The **address** may have submitted a deal, but the storage provider is yet to _seal_ the data. Deals will only show up here once the storage provider has completed sealing the data.
@@ -80,7 +80,7 @@ We're going to gather this information now.
 
 1. Click anywhere on a row to view information about that specific deal:
 
-    ![Information about a particular deal.](/images/store-and-retrieve/filecoin-tools-show-details.png)
+    ![Information about a particular deal.](filecoin-tools-show-details.png)
 
 1. Make a note of the **Payload CID** and the **Miner ID**. You'll need both of these to create the retrieval command in the next step.
 
