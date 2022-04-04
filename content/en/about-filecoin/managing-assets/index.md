@@ -33,7 +33,7 @@ A cryptocurrency exchange, or simply just _exchange_, is a service that lets you
 
 There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
 
-![Coinmarketcap show a list of exchanges that support FIL.](/images/about-filecoin/coinmarketcap-exchanges.png)
+![Coinmarketcap show a list of exchanges that support FIL.](coinmarketcap-exchanges.png)
 
 Once you have found an exchange you want to use, you will have to create an account with that exchange. Many changes have strict verification and Know-Your-Customer (KYC) processes in place, so it may take a few days to create your account. However, most large exchanges can verify your information in a few minutes.
 
