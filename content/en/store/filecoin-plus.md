@@ -69,7 +69,6 @@ Each request is tracked as a GitHub issue in the [Fil+ Client Onboarding repo](h
 
 To apply for a Large Dataset Notary, follow the steps at [Applying for a large DataCap allocation](https://github.com/filecoin-project/filecoin-plus-large-datasets#applying-for-a-large-datacap-allocation).
 
-
 ### Spend DataCap
 
 Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because storage providers receive a deal quality multiplier for taking Fil+ deals, many storage providers offer special pricing and services to attract clients who use DataCap to make deals.
@@ -139,3 +138,4 @@ If you are interested in participating in governance and shaping the program, he
 - Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack
 - Participate in Community Governance calls, which happen every other Tuesday. Use the Filecoin Community Events calendar to join or watch for updates in #fil-plus
 - Create and comment on open issues in the [notary governance repo](https://github.com/filecoin-project/notary-governance/issues)
+
