@@ -64,7 +64,7 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 
     Lotus creates a directed acyclic graph (DAG) based off the payload. This process takes a few minutes. Once it's complete, Lotus will output the payload CID.
 
-    ```text output
+    ```plaintext output
     Import 3, Root bafykb...
     ```
 
@@ -137,13 +137,13 @@ To complete this section, you need the **Data CID** you received after running `
 
 1. Specify the CID of the payload you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/5gb-filecoin-payload.bin`:
 
-    ```text output
+    ```plaintext output
     Data CID (from lotus client import): bafykbz...
     ```
 
 1. Wait for Lotus to finish calculating the size of your payload. Lotus calculates this size by counting the individual bits in your payload to ensure that the size is accurate.
 
-    ```text output
+    ```plaintext output
     .. calculating data size
     ```
 
@@ -151,25 +151,25 @@ To complete this section, you need the **Data CID** you received after running `
 
 1. Enter the number of days you want to keep this file on Filecoin. The minimum is 180 days:
 
-    ```text output
+    ```plaintext output
     Deal duration (days): 180
     ```
 
 1. Tell Lotus whether or not this is a Filecoin Plus deal. Since you signed up to Filecoin Plus in an earlier step, select `yes` here:
 
-    ```text output
+    ```plaintext output
     Make this a verified deal? (yes/no): yes
     ```
 
 1. Enter the miner IDs from the previous section with an empty space separating the two IDs:
 
-    ```text output
+    ```plaintext output
     Miner Addresses (f0.. f0..), none to find: f01000 f01001
     ```
 
 1. Confirm your transaction by entering `yes`:
 
-    ```text output
+    ```plaintext output
     -----
     Proposing from f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq
             Balance: 2 FIL
@@ -184,7 +184,7 @@ To complete this section, you need the **Data CID** you received after running `
 
 1. Lotus will returns two **Deal CIDs**:
 
-    ```text output
+    ```plaintext output
     .. executing
     Deal (f01000) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     Deal (f01001) CID: bafeauyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpt
@@ -214,7 +214,7 @@ Once the data has been sent to the storage clients, the storage deals can take s
 
     This command will output something like:
 
-    ```text output
+    ```plaintext output
     Sending Channels
     ID                   Status   Sending To   Root Cid     Initiated?  Transferred  Voucher
     1620782601911586915  Ongoing  ...KPFTTwY7  ...zyd3kapm  Y           224.1MiB     ...bqhcidjmajbelhlxfqry3d7qlu3tvar45a"}}

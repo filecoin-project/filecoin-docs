@@ -13,9 +13,7 @@ The process of storing and retrieving data using the Filecoin network is slightl
 
 The process is split into three main parts: the set-up, storing your data and retrieving your data. Each section has several sub-processes that we need to follow.
 
-<div style="background-color:white">
-  <img src="/images/store-and-retrieve/end-to-end-process.png" alt="End-to-end process for storing and retrieving data.">
-</div>
+![End-to-end process for storing and retrieving data.](end-to-end-process.png)
 
 | Section | Sub-tasks |
 | --- | --- |
@@ -50,7 +48,7 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | Word | Definition |
 | --- | --- |
 | Address | A string of letters and numbers that other users can send FIL to. |
-| [Block explorer]({{< relref "../../get-started/explore-the-network/#block-explorers" >}}) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
+| [Block explorer]({{< relref "explore-the-network" >}}) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
 | Deal | An agreement between two computers about what to do with some data. |
 | FIL | The shorthand representation of the filecoin cryptocurrency. For example: _We charge 0.5 FIL per GiB._ |
 | Filecoin (upper-case `F`) | The network that transactions and storage deals take place on. For example: _Museums can use the Filecoin network to store their digital archives._ |
