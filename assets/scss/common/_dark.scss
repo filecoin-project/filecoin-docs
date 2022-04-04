@@ -136,6 +136,10 @@ $navbar-dark-active-color:          $link-color-dark;
   color: $navbar-dark-color;
 }
 
+[data-dark-mode] body .alert a {
+    color: $primary;
+}
+
 [data-dark-mode] body .alert-primary a {
   color: $body-bg-dark;
 }
