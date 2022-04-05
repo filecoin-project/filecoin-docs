@@ -6,7 +6,7 @@ menu:
     storageprovider:
         parent: "storage-provider-hardware"
 aliases:
-    - /storage-providers/storage-provider-architectures
+    - /storage-provider/storage-provider-architectures/
 draft: false
 ---
 

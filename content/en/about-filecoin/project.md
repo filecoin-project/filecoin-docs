@@ -4,6 +4,9 @@ description: "Learn about the history, roadmap, current status and more for File
 menu:
     about:
         parent: "about-filecoin-project"
+aliases:
+    - /project
+    - /project/related-projects
 ---
 
 Curious about how it all got started, or where we're headed? Learn about the history, current state, and future trajectory of the Filecoin project here.

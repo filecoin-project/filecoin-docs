@@ -2,7 +2,7 @@ ignoreErrors = ["image-not-found"]
 
 baseurl = "/"
 canonifyURLs = false
-disableAliases = true
+disableAliases = false
 disableHugoGeneratorInject = true
 enableEmoji = true
 enableGitInfo = false

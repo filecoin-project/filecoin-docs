@@ -4,6 +4,9 @@ description: "Find Filecoin on your favorite social media platform."
 menu:
     about:
         parent: "about-filecoin-community"
+aliases:
+    - /community/social-media/
+    - /community/social-media/social-media/
 ---
 
 Filecoin is everywhere on the internet — and that includes social media. Find your favorite flavor here.

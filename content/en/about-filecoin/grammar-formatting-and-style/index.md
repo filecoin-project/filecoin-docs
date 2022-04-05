@@ -4,6 +4,8 @@ description: "Learn the syntax and formatting rules for writing documentation fo
 menu:
     about:
         parent: "about-filecoin-contribute"
+aliases:
+    - /community/contribute/grammar-formatting-and-style/
 ---
 
 This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide]({{< relref "./writing-guide.md" >}}).
