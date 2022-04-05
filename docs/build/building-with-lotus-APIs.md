@@ -1,6 +1,6 @@
 ---
 title: Building with Lotus APIs
-description: Hosted nodes allow developers to interact with the Filecoin network via API calls without managing your own node. 
+description: Lotus node provides comprehensive features via its JSON-RPC APIs for Developers and builders to build on Filecoin network. Developers can use the API client library to connect to any Lotus nodes to use the build in Lotus APIs.
 breadcrumb: 'Lotus APIs'
 ---
 
