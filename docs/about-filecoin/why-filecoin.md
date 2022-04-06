@@ -37,7 +37,7 @@ Users get to choose their own tradeoffs between cost, redundancy, and speed. Use
 
 ### Incentivizing unused storage capacity
 
-Filecoin puts the unsed disk space that would otherwise sit empty to use. Miners are incentivized to join Filecoin network and commit the unused storage space because they get paid for their participation. Filecoin also makes it easy to join because storage providers self-manage their storage, earning Filecoin tokens without needing any kind of network registration.
+Filecoin puts the unused disk space that would otherwise sit empty to use. Miners are incentivized to join Filecoin network and commit the unused storage space because they get paid for their participation. Filecoin also makes it easy to join because storage providers self-manage their storage, earning Filecoin tokens without needing any kind of network registration.
 
 ### Censorship resistance
 
