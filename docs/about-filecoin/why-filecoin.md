@@ -35,9 +35,9 @@ In Filecoin, storage providers prove their reliability through their track recor
 
 Users get to choose their own tradeoffs between cost, redundancy, and speed. Users are not limited to a set group of data centers offered by their provider but can choose to store their files on any storage provider participating in Filecoin.
 
-### Puts empty storage to use
+### Incentivizing unused storage capacity
 
-Filecoin puts disk space that would otherwise sit empty to use. Miners are incentivized to join Filecoin because they get paid for their participation, unlike other distributed networks with no economic incentive. Filecoin also makes it easy to join because storage providers self-manage their storage, earning Filecoin tokens without needing human supervision.
+Filecoin puts the unsed disk space that would otherwise sit empty to use. Miners are incentivized to join Filecoin network and commit the unused storage space because they get paid for their participation. Filecoin also makes it easy to join because storage providers self-manage their storage, earning Filecoin tokens without needing any kind of network registration.
 
 ### Censorship resistance
 
