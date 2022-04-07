@@ -5,6 +5,8 @@ menu:
     about:
         parent: "about-filecoin-basics"
 weight: 1
+aliases:
+    - /about-filecoin
 ---
 
 Filecoin is a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time.

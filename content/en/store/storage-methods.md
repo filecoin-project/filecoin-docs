@@ -5,6 +5,8 @@ menu:
     store:
         parent: "store-tools"
 weight: 1
+aliases:
+    - /store
 ---
 
 Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers.

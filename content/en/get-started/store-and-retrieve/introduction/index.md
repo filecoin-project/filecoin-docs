@@ -6,6 +6,7 @@ menu:
     getstarted:
         parent: "getstarted-store-and-retrieve"
 aliases:
+    - /get-started/
     - /get-started/store-and-retrieve/
 ---
 

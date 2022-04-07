@@ -5,6 +5,8 @@ menu:
     reference:
         parent: "reference-reference"
 weight: 1
+aliases:
+    - /reference
 ---
 
 This section contains links and reference materials for Filecoin.
