@@ -10,12 +10,12 @@
 
 [[main]]
   name = "Get started"
-  url = "/get-started/store-and-retrieve/introduction"
+  url = "/get-started/overview"
   weight = 30
 
 [[main]]
   name = "Store"
-  url = "/store/storage-methods/"
+  url = "/store/overview/"
   weight = 40
 
 [[main]]
@@ -76,6 +76,12 @@
 
 
 [[getstarted]]
+  name = "Overview"
+  weight = 1 
+  identifier = "getstarted-overview"
+  url = "/get-started/overview/"
+
+[[getstarted]]
   name = "Store and retrieve"
   weight = 10
   identifier = "getstarted-store-and-retrieve"
@@ -88,6 +94,12 @@
   url = "/get-started/explore-the-network/"
 
 
+
+[[store]]
+  name = "Overview"
+  weight = 1
+  identifier = "store-overview"
+  url = "/store/overview"
 
 [[store]]
   name = "Tools"

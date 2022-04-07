@@ -65,17 +65,12 @@ Tools to check status and details of the network and chain.
 
 ### Chain data and monitoring
 
-<<<<<<< HEAD:content/en/reference/overview.md
 - [Filstats.io](https://filstats.io) - node telemetry monitoring - add your node!
-- [Sentinel Project](https://github.com/filecoin-project/sentinel) - Filecoin Network Monitoring and Analysis System behind Grafana.
-- [Statediff](https://node.glif.io/space07/statediff/rpc/) - exploration and comparing changes to Filecoin state.
-=======
-- [Sentinel Project](https://lilium.sh/) - Filecoin Network Monitoring and Analysis System
-- [Filstats.io](https://filstats.io) - node telemetry monitoring - add your node!ss
->>>>>>> master:docs/reference/README.md
-- "Orphan blocks" (not an official protocol term in the Filecoin Spec) - Blocks without rewards that were either mined on the wrong tipset that the network fails to deliver in time, or a mix resulting in reorgs.
+- Orphan blocks (not an official protocol term in the Filecoin Spec) - Blocks without rewards that were either mined on the wrong tipset that the network fails to deliver in time, or a mix resulting in reorgs.
   - [Orphan Block Statistics](https://filscout.com/en/orphan-block)
   - [Orphan Block List](https://filscout.com/en/orphan-block/alllist)
+- [Sentinel Project](https://lilium.sh/) - Filecoin Network Monitoring and Analysis System
+- [Statediff](https://node.glif.io/space07/statediff/rpc/) - exploration and comparing changes to Filecoin state.
 
 ### Storage/Deals status
 
