@@ -1,5 +1,5 @@
 ---
-title: "Why Filecoin?"
+title: "Why Filecoin"
 description: "Explore the features that make Filecoin a compelling system for storing files."
 menu:
     about:
