@@ -70,7 +70,6 @@ Tools to check status and details of the network and chain.
   - [Orphan Block Statistics](https://filscout.com/en/orphan-block)
   - [Orphan Block List](https://filscout.com/en/orphan-block/alllist)
 - [Sentinel Project](https://lilium.sh/) - Filecoin Network Monitoring and Analysis System
-- [Statediff](https://node.glif.io/space07/statediff/rpc/) - exploration and comparing changes to Filecoin state.
 
 ### Storage/Deals status
 
@@ -98,19 +97,6 @@ Developer tools, API clients & storage services that developers can use to build
 
 ### Storage APIs for app builders
 
-<<<<<<< HEAD:content/en/reference/overview.md
-- [Estuary](https://estuary.tech) - a simple IPFS node that integrates a minimal Filecoin Client Library. It allows anyone with public data to store and retrieve it using a few API calls. It is for infrastructure operators, developers and Filecoin users.
-    - [Estuary Docs](https://docs.estuary.tech) - more documentations on how to use Estuary and its API.
-    - [Estuary WWW](https://github.com/application-research/estuary-www) - A simple website application example that can commun any Estuary node.
-- [NFT.storage](https://nft.storage/) - beta service from Protocol Labs for storing off-chain NFT data on IPFS and Filecoin.
-- [**Powergate**](https://docs.textile.io/powergate/) - infrastructure tool that leverages running an IPFS node alongside a Filecoin node using IPFS for hot storage and retrieval, plus storage deal helpers and other convenience features for app developers.
-  - [POW CLI](https://docs.textile.io/powergate/#command-line-interface) - The CLI runs on the Powergate API.
-  - [Powergate JS Client](https://github.com/textileio/js-powergate-client) - JS client built on top of Powergate gRPC APIs.
-  - [Powergate Go Client](https://pypi.org/project/pygate-grpc/) - Build your Go app using Powergate APIs with Go client.
-- [Slate.host API](https://github.com/filecoin-project/slate/#developer-api) - [Slate.host](https://slate.host) has a Developer API that allows you upload files with an account.
-- [Space SDK from Fleek](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
-- [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood, hosted by Textile.
-=======
 - [Estuary](https://estuary.tech) - a simple IPFS node that integrates with Filecoin. For infrastructure operators, developers and users.
     - [Estuary Docs](https://docs.estuary.tech)
     - [Estuary www](https://github.com/application-research/estuary-www) - a simple web app example
@@ -125,13 +111,11 @@ Developer tools, API clients & storage services that developers can use to build
 - [Fleek's tools](https://fleek.co/) - provides access to Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
     - [Space SDK](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services
     - [Space Daemon](https://fleek.co/space-daemon/) - GoLang library for building desktop apps
->>>>>>> master:docs/reference/README.md
 
 ### Message signing tools
 
 - [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
   - Also available on npm at [@zondax/filecoin-signing-tools](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
-  - Supports [Ledger hardware device integration](https://github.com/Zondax/ledger-filecoin/) and payment channels ([paych demo example](https://github.com/mgoelzer/zondax-pch-demo)). Multisig support will be added soon.
   - For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on Github.
 - [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - [*last update: June 2021*] pure TS / JS library for creating signed messages and interacting with Filecoin's built-in Actors (like Payment Channel and Multisig), used by the [Filecoin Loans grant project](https://github.com/blitslabs/filecoin.loans-monorepo).
     - On npm at [@blitslabs/filecoin-js-signer](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
@@ -145,9 +129,9 @@ Developer tools, API clients & storage services that developers can use to build
 
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
-- [Glif nodes](https://docs.filecoin.io/build/hosted-lotus/) and [Infura](https://infura.io/docs/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
+- [Glif nodes](https://lotus.filecoin.io/developers/glif-nodeshttps://lotus.filecoin.io/developers/glif-nodes/) and [Infura](https://infura.io/docs/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
   + These endpoints support read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Message signing tools](#message-signing-tools)).
-- [**Lotus JSON-RPC API**](https://docs.filecoin.io/build/lotus/#getting-started-with-lotus-apis) - Lotus offers the full feature set of its capabilities through API.
+- [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   + [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 
 #### Scalable endpoint hosting
@@ -169,9 +153,9 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Data prep tools
 
-- [CAR files](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://docs.filecoin.io/store/lotus/very-large-files/#deals-with-offline-data-transfer).
+- [CAR files](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
 - [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) - by FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
-- [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://docs.filecoin.io/store/lotus/import-data-from-ipfs).
+- [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
 
 ### Databases using IPFS and Filecoin
 
@@ -199,7 +183,6 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 - [Bidbot](https://github.com/textileio/bidbot) - A Filecoin Network sidecar to bid in storage deal auctions.
 - [Filgas.io](https://fgas.io/) - real-time Filecoin mining gas queries.
-- [Hactar](https://www.hactar.app/) - analytics for your Filecoin miner node.
 - [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - Prometheus, Grafana and Python monitoring dashboard.
 - [Mining Benchmarks](https://filecoin-benchmarks.on.fleek.co/): Hardware performance comparisons from the Filecoin community.
 
@@ -232,7 +215,7 @@ Tools for sending and receiving FIL tokens. For dev tooling see [message signing
 Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are **_recommended_** below.
 
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **_recommended_** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger hardware (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below).
-- [**Ledger HW wallet** in Filecoin Docs](https://docs.filecoin.io/get-started/lotus/ledger/#setup-your-ledger-device) - **_recommended_** - Ledger Live does not have Filecoin support yet, but Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node.
+- [**Ledger HW wallet** in Filecoin Docs](https://lotus.filecoin.io/lotus/manage/manage-fil/) - **_recommended_** - Ledger Live does not have Filecoin support yet, but Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node.
 
 ### Other wallets
 
@@ -240,7 +223,6 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 - [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
 - [Cobo](https://cobo.com/)
-- [FilWallet.ai](https://filwallet.ai/) - by the team behind Filscan.io
 - [MathWallet](https://mathwallet.org/)
 - [ImToken](https://token.im/)
 - [TrustWallet](https://trustwallet.com/)
@@ -253,11 +235,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 ### Hackathons
 
-<<<<<<< HEAD:content/en/reference/overview.md
-- [Upcoming Hackathons](https://github.com/protocol/grants#hackathons)
-=======
 - [Upcoming Hackathons](https://hackathons.filecoin.io/)
->>>>>>> master:docs/reference/README.md
   + Keep a lookout for upcoming hackathons!
   + All winners are eligible for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/microgrants/microgrants.md) after the Hackathon!
 
