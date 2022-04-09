@@ -156,11 +156,11 @@ Each Filecoin provider has an associated _power_ value in the network that is pr
 
 Additionally, providers submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
-Block rewards are meant to bootstrap the Filecoin network. They decrement over time as real storage utility and fees take over.
+Block rewards are meant to bootstrap the Filecoin network. They decrement as real storage utility and fees take over.
 
 See [Storage provider rewards](storage-provider-rewards.md).
 
-## Filecoin Plus: Verified storage deals
+## Verified storage deals
 
 Filecoin Plus aims to enable the demand side of the Filecoin network and maximize the amount of useful storage on Filecoin by adding a layer of social trust to the network and introducing a novel resource called DataCap.
 
