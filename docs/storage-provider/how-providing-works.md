@@ -47,11 +47,11 @@ For an 18 month period, an investment of $147k covered combined capital expenses
 
 See [Filecoin Storage Provider Bootcamp, by ESPA](https://www.youtube.com/watch?v=T-TgPILQD3c) (at 14:47).
 
-## Lotus
+## Install Lotus application
 
 You'll need to install Lotus in order to store files.
 
-Lotus is a an application that tells computers how to talk to other computers that are following the same rules to allow users to store data.
+Lotus is a an application that tells computers how to talk to other computers following the same rules to allow storage providers to store data for clients.
 
 See [Lotus > Install > Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
@@ -114,6 +114,10 @@ Throughout the lifetime of the deal, the provider submits ongoing proofs, PoSt, 
 
 See [Proof of Spacetime (PoSt)](https://proto.school/verifying-storage-on-filecoin/04)
 
+## Gas fees
+
+You must pay a nominal gas fee for resources used for sealing storage. You can set a gas limit, above which a transaction will not execute, allowing for control.
+
 ## Retrieval provider role
 
 Retrieval providers play a role at the end of a storage provider deal.
@@ -152,17 +156,11 @@ Each Filecoin provider has an associated _power_ value in the network that is pr
 
 Additionally, providers submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
-You may also have the opportunity to compete for _quality adjusted power_ for storing files for _verified clients_ for storing meaningful data. The power you earn for these deals is augmented by a multiplier.
+Block rewards are meant to bootstrap the Filecoin network. They decrement over time as real storage utility and fees take over.
 
 See [Storage provider rewards](storage-provider-rewards.md).
 
-## Retrieval provider fees
-
-_Retrieval providers_ are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
-
-_Retrieval fees_ are paid incrementally using payment channels, as the retrieval deals are fulfilled by sending portions of the data to the client. This happens off-chain.
-
-## Filecoin Plus
+## Filecoin Plus: Verified storage deals
 
 Filecoin Plus aims to enable the demand side of the Filecoin network and maximize the amount of useful storage on Filecoin by adding a layer of social trust to the network and introducing a novel resource called DataCap.
 
@@ -173,6 +171,12 @@ Clients looking to onboard storage onto the network apply to community-selected 
 Notaries are selected to serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
 
 See [Filecoin Plus](https://docs.filecoin.io/store/filecoin-plus/#frontmatter-title).
+
+## Retrieval provider fees
+
+_Retrieval providers_ are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
+
+_Retrieval fees_ are paid incrementally using payment channels, as the retrieval deals are fulfilled by sending portions of the data to the client. This happens off-chain.
 
 ## Where do providers fit in the Filecoin network
 
