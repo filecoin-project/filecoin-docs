@@ -67,6 +67,10 @@ Filecoin includes three different collateral mechanisms:
 
 See [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_mining.miner_collaterals)
 
+## Gas fees
+
+You must pay a nominal gas fee for resources used for sealing storage. You can set a gas limit, above which a transaction will not execute, allowing for control.
+
 ## Storage provider deals
 
 Deals are the core function of the Filecoin network. Each deal represents a storage agreement between a client and a provider.
@@ -113,10 +117,6 @@ Once the data is sealed, the storage provider is ready to begin submitting ongoi
 Throughout the lifetime of the deal, the provider submits ongoing proofs, PoSt, to the chain. Clients pay incrementally, using the funds they previously locked up.
 
 See [Proof of Spacetime (PoSt)](https://proto.school/verifying-storage-on-filecoin/04)
-
-## Gas fees
-
-You must pay a nominal gas fee for resources used for sealing storage. You can set a gas limit, above which a transaction will not execute, allowing for control.
 
 ## Retrieval provider role
 
