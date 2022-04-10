@@ -9,8 +9,6 @@ In most blockchain protocols, _miners_ are the participants on the network that 
 
 Filecoin works quite differently, however -- instead of miners contributing computational power (hashing power), _providers_ contribute important utilities, storage capacity and retrieval pipeline. Providers make deals with clients to store and retrieve data and receive FIL, Filecoin native cryptocurrency, in return.
 
-![Filecoin workflow from collateral to FIL rewards.](./img/storage-overview.png)
-
 On a decentralized, peer-to-peer network like IPFS, we can use cryptographic hashing to confirm that any number of peers are storing exact copies of our data. However, we're depending on the generosity of those parties and have no guarantee that our data will continue to be replicated over time. Filecoin, on the other hand, adds an incentive layer to promote long term, verifiable storage on the decentralized web.
 
 To see if providing storage and/or retrieval is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from some of the directions it's growing in and you may even have ideas to contribute.  
@@ -74,8 +72,6 @@ See [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_mining.mi
 ## Gas fees
 
 You must pay a nominal gas fee for resources used for sealing storage. You can set a gas limit, above which a transaction will not execute, allowing for control.
-
-![Gas fees are negligible compared to collateral.](./img/collateral-gas.png)
 
 ## Storage provider deals
 
@@ -195,8 +191,6 @@ Unlike centralized systems with a large, captive audience from whom they profit,
 Your success is a success for the entire ecosystem. When you provide stellar storage service, our reputation increases to attract more clients and providers. In addition, the growing market for storage and retrieval apps attracts application developers to improve our efficiency, making our ecosystem even more attractive.
 
 Because Filecoin is decentralized, there is no single, central entity that determines who can and can't join our network. Instead, Filecoin has built-in objective criteria, such as the blockchain and our protocol, deals, proofs, and other consensus mechanisms, that allow anyone who can perform a role to join. The mutual benefits of more participants means that we naturally want to bring along new entrants to make the ecosystem stronger.
-
-![Thirty-eight hundred storage providers October 2021](./img/ecosystem-data.png)
 
 The openness to new entrants is the lifeblood of decentralized platforms, and providers are key players in leading the way. This is only the beginning, so it's a good time to get on board.
 
