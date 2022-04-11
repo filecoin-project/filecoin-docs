@@ -11,25 +11,25 @@ Filecoin works quite differently, however -- instead of miners contributing comp
 
 On a decentralized, peer-to-peer network like IPFS, we can use cryptographic hashing to confirm that any number of peers are storing exact copies of our data. However, we're depending on the generosity of those parties and have no guarantee that our data will continue to be replicated over time. Filecoin, on the other hand, adds an incentive layer to promote long term, verifiable storage on the decentralized web.
 
-To see if providing storage and/or retrieval is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from some of the directions it's growing in and you may even have ideas to contribute.  
+To see if providing storage and/or retrieval is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from the ways it's growing and you may even have ideas to contribute.  
 
 ## Types of provider
 
 The Filecoin network has multiple types of providers:
 
 - _Storage providers_: responsible for storing files and data on the network
-- _Retrieval providers_: will be responsible for providing quick pipes to retrieve files
+- _Retrieval providers_: (under development) will be responsible for providing quick pipes to retrieve files
 - _Repair providers_: to be implemented
 
 **Storage providers** are the heart of the network. They earn Filecoin by storing data for clients and computing cryptographic proofs to verify storage across time, and they earn rewards for adding new blocks of data. The probability of earning transaction fees and block rewards is proportional to the amount of storage the storage provider contributes to the Filecoin network.
 
-**Retrieval providers** will be the veins of the network. They will earn Filecoin by winning bids and provider-fees, determined by the market value of the file's size they're retrieving. A retrieval providers’s bandwidth and bid/initial-response-time for deals (i.e., speed and how close to the client) will determine its ability to close retrieval deals on the network. The maximum bandwidth of a retrieval provider will set the total quantity of deals it can make.
+**Retrieval providers** will be the veins of the network. They will earn Filecoin by winning bids and provider-fees, determined by the market value of the file they're retrieving. A retrieval providers’s bandwidth and bid/initial-response-time for deals (i.e., speed and how close to the client) will determine its ability to close retrieval deals on the network. The maximum bandwidth of a retrieval provider will set the total quantity of deals it can make.
 
 ## Hardware requirements
 
 The hardware requirements for providers are very demanding, but once you acquire them, they're not expected to increase in the foreseeable future. Money spent on hardware should provide you with many years of reliable service, paying for themselves several times over.
 
-You'll need this hardware, not just to facilitate storage and retrieval, but also to regularly run some computationally expensive operations, called proofs. You need to regularly run proofs that show that you're continuing to dedicate storage space to the same data you received.
+You'll need this hardware, not just to facilitate storage, but also to regularly run some computationally expensive operations, called proofs. You need to regularly run proofs that show that you're continuing to dedicate storage space to the same data you received.
 
 Here's a general idea of the minimum hardware you'll need for providing storage:
 
@@ -45,7 +45,7 @@ For more detail, see:
 
 Every provider's situation is different, but to give you an idea of the level of investment and the possible return, here is one example:
 
-For an 18 month period, an investment of $147k covered combined capital expenses, operating expenses, and FIL loan with 15% collateral. In this example, the storage provider received #267k in FIL rewards (starting at $21), for a profit of $120k over 18 months.
+For an 18-month period, an investment of $147k covered combined capital expenses, operating expenses, and FIL loan with 15% collateral. In this example, the storage provider received #267k in FIL rewards (starting at $21), for a profit of $120k over 18 months.
 
 See [Filecoin Storage Provider Bootcamp, by ESPA](https://www.youtube.com/watch?v=T-TgPILQD3c) (at 14:47).
 
@@ -53,7 +53,7 @@ See [Filecoin Storage Provider Bootcamp, by ESPA](https://www.youtube.com/watch?
 
 You'll need to install Lotus in order to store files.
 
-Lotus is a an application that tells computers how to talk to other computers following the same rules to allow storage providers to store data for clients.
+Lotus is an application that tells computers how to talk to other computers following the same rules to allow storage providers to store data for clients.
 
 See [Lotus > Install > Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
@@ -72,6 +72,8 @@ See [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_mining.mi
 ## Gas fees
 
 You must pay a nominal gas fee for resources used for sealing storage. You can set a gas limit, above which a transaction will not execute, allowing for control.
+
+![Gas fees are negligible compared to collateral.](./img/collateral-gas.png)
 
 ## Storage provider deals
 
@@ -92,7 +94,7 @@ For more details on deals from the client's point of view, see:
 
 ## Data transfer
 
-After the deal is published, the client prepares the data for storage and transfers it to the provider. Upon receiving all of the data, the provider packs the data into a sector (the fundamental storage unit used by Filecoin) and seals it.
+After the deal is published, the client prepares the data for storage and transfers it to the provider. Upon receiving all the data, the provider packs the data into a sector (the fundamental storage unit used by Filecoin) and seals it.
 
 See [Preparing and transferring data](https://proto.school/verifying-storage-on-filecoin/02)
 
@@ -124,7 +126,7 @@ See [Proof of Spacetime (PoSt)](https://proto.school/verifying-storage-on-fileco
 
 Retrieval providers will play a role at the end of a storage provider deal.
 
-To qualify for this role, a potential retrieval provider needs to perform a Proof of Retrievability (PoR), a compact proof that a target file is intact, in the sense that the client can fully recover it.
+To qualify for this role, a potential retrieval provider will need to perform a Proof of Retrievability (PoR), a compact proof that a target file is intact, in the sense that the client can fully recover it.
 
 ## zk-SNARKs
 
@@ -176,7 +178,7 @@ See [Filecoin Plus](https://docs.filecoin.io/store/filecoin-plus/#frontmatter-ti
 
 ## Retrieval provider fees
 
-_Retrieval providers_ are not additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward is the fee they extract from the client.
+_Retrieval providers_ will not be additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward will be the fee they extract from the client.
 
 _Retrieval fees_ will be paid incrementally using payment channels, as the retrieval deals are fulfilled by sending portions of the data to the client. This happens off-chain.
 
@@ -188,18 +190,22 @@ Because of blockchain technology, storage clients don’t need a large, centrali
 
 Unlike centralized systems with a large, captive audience from whom they profit, the decentralized Filecoin ecosystem bootstraps and verifies itself, so that everyone benefits from increased value. The main role of Filecoin employees is to facilitate a strong community.
 
-Your success is a success for the entire ecosystem. When you provide stellar storage service, our reputation increases to attract more clients and providers. In addition, the growing market for storage and retrieval apps attracts application developers to improve our efficiency, making our ecosystem even more attractive.
+![Thirty-eight hundred storage providers October 2021](./img/ecosystem-data.png)
+
+Your success is a success for the entire ecosystem. When you provide stellar storage service, our reputation increases to attract more clients and providers. In addition, the growing market for storage and retrieval apps attracts application developers to improve our efficiency, making our ecosystem even more attractive. See [CID gravity](https://www.cidgravity.com/) for pricing and client management.
 
 Because Filecoin is decentralized, there is no single, central entity that determines who can and can't join our network. Instead, Filecoin has built-in objective criteria, such as the blockchain and our protocol, deals, proofs, and other consensus mechanisms, that allow anyone who can perform a role to join. The mutual benefits of more participants means that we naturally want to bring along new entrants to make the ecosystem stronger.
+
+![Filecoin workflow from collateral to FIL rewards.](./img/storage-overview.png)
 
 The openness to new entrants is the lifeblood of decentralized platforms, and providers are key players in leading the way. This is only the beginning, so it's a good time to get on board.
 
 For information on chat and discussion forums, see: [Chat & discussion forums](https://docs.filecoin.io/about-filecoin/chat-and-discussion-forums/)
 
-The Filecoin spec is a living document, so it's always being updated. It is a good idea to read it and continually return to reread it. See [Filecoin spec](https://spec.filecoin.io/)
+For information on Filecoin as a whole and the direction it's going, see [Filecoin spec](https://spec.filecoin.io/). The Filecoin spec is a living document that you will want to return to regularly to see changes.
 
-For our YouTube channel, including videos on the Filecoin Storage Provider Bootcamp, see: [Filecoin](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) on YouTube.
+For the Filecoin YouTube channel, including videos on the Filecoin Storage Provider Bootcamp, see: [Filecoin](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) on YouTube.
 
 For a full 7-month training program, see: [Filecoin Storage Provider Accelerator](https://www.web3espa.io/#journey)
 
-If you would like to compete for rewards for storing curated data, check out: [Sling shot](https://slingshot.filecoin.io/).
+For an example of community activity, see [Sling shot](https://slingshot.filecoin.io/), where storage providers compete for rewards for storing curated data.
