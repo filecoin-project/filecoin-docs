@@ -1,0 +1,54 @@
+{{ define "main" }}
+<section class="section container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="mt-0">Filecoin Docs</h1>
+            <p class="lead">Filecoin is a peer-to-peer network that allows anyone to store and retrieve data on the internet. Built-in economic incentives ensure that files are stored and retrieved reliably and continuously for however long a user specifies.</p>
+            <p class="lead"><a href="/about-filecoin/what-is-filecoin/"><b>Learn about Filecoin→</b></a></p>
+        </div>
+        <div class="col-lg-4 text-center pt-3 d-none d-lg-block">
+            <img style="max-height:250px;" src="logos/Filecoin-symbol.png" />
+        </div>
+    </div>
+</section>
+<section class="section container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 text-center pt-3 d-none d-lg-block">
+            <img style="max-height:250px;" src="logos/Filecorgi.png" />
+        </div>
+        <div class="col-lg-8">
+            <h2 class="mt-0">No trust necessary</h2>
+            <p class="lead">No single company or organization controls available storage capacity and the pricing for storing and retrieving files. Instead, the Filecoin storage network facilitates open markets for storing and retrieving files that anyone with access to the internet can participate in. It uses its native cryptocurrency (FIL) to facilitate these transactions.</p>
+        </div>
+    </div>
+</section>
+<section class="section container-fluid">
+    <div class="row justify-content-center">
+
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <h5 class="card-title">Looking for Lotus? Head to <a href="https://lotus.filecoin.io">lotus.filecoin.io →</a></h5>
+                        <p class="card-text">At the start of 2022, the Protocol Labs docs team moved all the Lotus documentation to it's own repository and it's own website. This way, folks like yourself can easily segment the documentation you need. This is the place for conceptual Filecoin related content, while <a href="https://lotus.filecoin.io">lotus.filecoin.io</a> is where you'll find installation instructions and guides for running a Lotus node.</p>
+                    </div>
+
+    </div>
+</section>
+{{ end }}
+
+
+{{ define "sidebar-prefooter" }}
+{{ if eq $.Site.Language.LanguageName "English" }}
+{{ end }}
+{{ end }}
+
+
+{{ define "sidebar-footer" }}
+<section class="section section-sm container-fluid">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-9">
+            {{- .Content -}}
+        </div>
+    </div>
+</section>
+{{ end }}
+
