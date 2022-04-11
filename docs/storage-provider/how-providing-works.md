@@ -11,7 +11,7 @@ Filecoin works quite differently, however -- instead of miners contributing comp
 
 On a decentralized, peer-to-peer network like IPFS, we can use cryptographic hashing to confirm that any number of peers are storing exact copies of our data. However, we're depending on the generosity of those parties and have no guarantee that our data will continue to be replicated over time. Filecoin, on the other hand, adds an incentive layer to promote long term, verifiable storage on the decentralized web.
 
-To see if providing storage and/or retrieval is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from some of the directions it's growing in and you may even have ideas to contribute.  
+To see if providing storage and/or retrieval is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from some of the directions it's growing in and you may even have ideas to contribute.  
 
 ## Types of provider
 
