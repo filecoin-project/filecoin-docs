@@ -1,0 +1,17 @@
+{{ if .Site.Params.options.darkMode -}}
+  {{ $darkModeInit := resources.Get "js/darkmode-init.js" | js.Build | minify -}}
+  <script>{{ $darkModeInit.Content | safeJS }}</script>
+{{ end -}}
+{{- if and (.Site.Params.alert) (.Site.Params.alertDismissable) -}}
+  {{ $alertInit := resources.Get "js/alert-init.js" | js.Build | minify -}}
+  <script>{{ $alertInit.Content | safeJS }}</script>
+{{- end -}}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H3D2P5EGFR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H3D2P5EGFR');
+</script>
