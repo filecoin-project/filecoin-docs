@@ -7,11 +7,11 @@ description: 'Providing storage to the Filecoin network involves accepting deals
 
 In most blockchain protocols, _miners_ are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency. The term _miner_ emerged in the initial Proof-of-Work era, comparing the work done by hardware miners using computational power to secure blockchains with that of gold miners who expended vast physical resources for a chance at a large payout.
 
-Filecoin works quite differently, however -- instead of miners contributing computational power (hashing power), _providers_ contribute important utilities, storage capacity and retrieval pipeline. Providers make deals with clients to store and retrieve data and receive FIL, Filecoin native cryptocurrency, in return.
+Filecoin works quite differently, however -- instead of miners contributing computational power (hashing power), _providers_ contribute important utilities, such as storage capacity. Providers make deals with clients to store data and receive FIL, Filecoin native cryptocurrency, in return.
 
-On a decentralized, peer-to-peer network like IPFS, we can use cryptographic hashing to confirm that any number of peers are storing exact copies of our data. However, we're depending on the generosity of those parties and have no guarantee that our data will continue to be replicated over time. Filecoin, on the other hand, adds an incentive layer to promote long term, verifiable storage on the decentralized web.
+On a decentralized, peer-to-peer network like IPFS, we can use cryptographic hashing to confirm that any number of peers are storing exact copies of our data. However, we're depending on the generosity of those parties and have no guarantee that our data will continue to be replicated over time. Filecoin, on the other hand, adds an incentive layer to promote long-term, verifiable storage on the decentralized web.
 
-To see if providing storage and/or retrieval is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from the ways it's growing and you may even have ideas to contribute.  
+To see if providing storage is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from the ways it's growing and you may even have ideas to contribute.  
 
 ## Types of provider
 
@@ -27,7 +27,7 @@ The Filecoin network has multiple types of providers:
 
 ## Hardware requirements
 
-The hardware requirements for providers are very demanding, but once you acquire them, they're not expected to increase in the foreseeable future. Money spent on hardware should provide you with many years of reliable service, paying for themselves several times over.
+The hardware requirements for storage providers are very demanding, but once you acquire them, they're not expected to increase in the foreseeable future. Money spent on hardware should provide you with many years of reliable service, paying for themselves several times over.
 
 You'll need this hardware, not just to facilitate storage, but also to regularly run some computationally expensive operations, called proofs. You need to regularly run proofs that show that you're continuing to dedicate storage space to the same data you received.
 
@@ -53,7 +53,7 @@ See [Filecoin Storage Provider Bootcamp, by ESPA](https://www.youtube.com/watch?
 
 You'll need to install Lotus in order to store files.
 
-Lotus is an application that tells computers how to talk to other computers following the same rules to allow storage providers to store data for clients.
+Lotus is an application that tells computers how to talk to other computers that are following the same rules in order to allow storage providers to store data for clients.
 
 See [Lotus > Install > Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
@@ -79,9 +79,9 @@ You must pay a nominal gas fee for resources used for sealing storage. You can s
 
 Deals are the core function of the Filecoin network. Each deal represents a storage agreement between a client and a provider.
 
-The provider prepares himself by acquiring the required hardware and storage or retrieval capacity. Providers don't need to advertise their services, as Filecoin does that for them. A storage provider only needs to set their available capacity, duration, and desired price.
+The provider prepares himself by acquiring the required hardware and storage capacity. Providers don't need to advertise their services, as Filecoin does that for them. A storage provider only needs to set their available capacity, duration, and desired price.
 
-However, providers need to monitor their system to acknowledge and respond to offers. Monitoring used to be done by physically sitting in front of a computer, but the field is growing so quickly, that monitoring is beginning to be automated by software created by Filecoin participants for this purpose.
+However, providers need to monitor their system to acknowledge and respond to offers. Monitoring used to be done by physically sitting in front of a computer, but the field is growing so quickly, that monitoring can now be automated by software created by a Filecoin storage provider. See [CID gravity](https://www.cidgravity.com/) for pricing and client management.
 
 Once a client has decided on a provider to store with, they notify the provider that they're interested in the deal. They then lock up sufficient funds in an associated wallet to cover the total cost of the deal. When the provider accepts the storage agreement, they publish the deal to the Filecoin blockchain, committing both parties to the deal.
 
@@ -107,7 +107,7 @@ Sealing is accomplished by using the first of two kinds of storage proofs:
 
 Proofs are the consensus mechanisms by which users in a peer-to-peer network come to agreement without the need for a central authority. All participants in the network work together to verify each deal.
 
-PoRep is the confirmation that the provider sends the client, so the client can be certain the data is being stored properly, and the execution of the deal has officially begun. It seals the deal. PoRep happens just once, at the time the data is first stored by the storage provider. It takes up to 24 hours to seal the data.
+This proof, PoRep, constitutes a confirmation from the provider to the client, so the client can be certain the data is being stored properly, and the execution of the deal has officially begun. PoRep happens just once, at the time the data is first stored by the storage provider. It takes up to 24 hours to seal the data.
 
 Sealing is computation-intense and is performed over a sector that results in a unique representation of the sector. The properties of this new representation are essential to proving that the data has been received and later to prove ongoing storage of the same data.
 
@@ -121,12 +121,6 @@ Once the data is sealed, the storage provider is ready to begin submitting ongoi
 Throughout the lifetime of the deal, the provider submits ongoing proofs, PoSt, to the chain. Clients pay incrementally, using the funds they previously locked up.
 
 See [Proof of Spacetime (PoSt)](https://proto.school/verifying-storage-on-filecoin/04)
-
-## Retrieval provider role
-
-Retrieval providers will play a role at the end of a storage provider deal.
-
-To qualify for this role, a potential retrieval provider will need to perform a Proof of Retrievability (PoR), a compact proof that a target file is intact, in the sense that the client can fully recover it.
 
 ## zk-SNARKs
 
@@ -158,7 +152,7 @@ For more information, see:
 
 Each Filecoin provider has an associated _power_ value in the network that is proportional to the amount of space contributed and determines the chances to win the right to add a block to an epoch (a specific point on the chain). By adding blocks, providers obtain _block rewards_ and collect fees for the messages included in that block.
 
-Additionally, providers submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
+Additionally, providers submit storage proofs regularly to the chain, for which they receive _storage fees_ from the clients that have made deals with them.
 
 Block rewards are meant to bootstrap the Filecoin network. They decrement as real storage utility and fees take over.
 
@@ -176,12 +170,6 @@ Notaries are selected to serve as fiduciaries for the Filecoin Network and are r
 
 See [Filecoin Plus](https://docs.filecoin.io/store/filecoin-plus/#frontmatter-title).
 
-## Retrieval provider fees
-
-_Retrieval providers_ will not be additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward will be the fee they extract from the client.
-
-_Retrieval fees_ will be paid incrementally using payment channels, as the retrieval deals are fulfilled by sending portions of the data to the client. This happens off-chain.
-
 ## Where do providers fit in the Filecoin network
 
 The Filecoin network is a vibrant ecosystem with various roles that support each other, including storage providers, retrieval providers, Filecoin employees, open-source collaborators, notaries, developers, and clients.
@@ -192,9 +180,9 @@ Unlike centralized systems with a large, captive audience from whom they profit,
 
 ![Thirty-eight hundred storage providers October 2021](./img/ecosystem-data.png)
 
-Your success is a success for the entire ecosystem. When you provide stellar storage service, our reputation increases to attract more clients and providers. In addition, the growing market for storage and retrieval apps attracts application developers to improve our efficiency, making our ecosystem even more attractive. See [CID gravity](https://www.cidgravity.com/) for pricing and client management.
+Your success is a success for the entire ecosystem. When you provide stellar storage service, our reputation increases to attract more clients and providers. In addition, the growing market for storage and retrieval apps attracts application developers to improve our efficiency, making our ecosystem even more attractive.
 
-Because Filecoin is decentralized, there is no single, central entity that determines who can and can't join our network. Instead, Filecoin has built-in objective criteria, such as the blockchain and our protocol, deals, proofs, and other consensus mechanisms, that allow anyone who can perform a role to join. The mutual benefits of more participants means that we naturally want to bring along new entrants to make the ecosystem stronger.
+Because Filecoin is decentralized, there is no single, central entity that determines who can and can't join our network. Instead, Filecoin has built-in objective criteria, such as the blockchain and our protocol, deals, proofs, and other consensus mechanisms, that allow anyone who can perform a role to join. Because there is a mutual benefits to having more participants, we naturally want to bring along new entrants to make the ecosystem stronger.
 
 ![Filecoin workflow from collateral to FIL rewards.](./img/storage-overview.png)
 
