@@ -13,7 +13,7 @@ On a decentralized, peer-to-peer network like IPFS, we can use cryptographic has
 
 To see if providing storage is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from the ways it's growing and you may even have ideas to contribute.  
 
-## Types of provider
+## Types of providers
 
 The Filecoin network has multiple types of providers:
 
