@@ -82,7 +82,7 @@ Deals are the core function of the Filecoin network. Each deal represents a stor
 
 The provider prepares himself by acquiring the required hardware and storage or retrieval capacity. Providers don't need to advertise their services, as Filecoin does that for them. A storage provider only needs to set their available capacity, duration, and desired price.
 
-However, providers need to monitor their system to acknowledge and respond to offers. Monitoring used to be done by physically sitting in front of a computer, but the field is growing so quickly, that monitoring is beginning to be automated by software created by Filecoin participants for this purpose.
+However, providers need to monitor their system to acknowledge and respond to offers. Monitoring used to be done by physically sitting in front of a computer, but the field is growing so quickly, that monitoring is beginning to be automated by software created by Filecoin participants for this purpose. See [CID gravity](https://www.cidgravity.com/) for pricing and client management.
 
 Once a client has decided on a provider to store with, they notify the provider that they're interested in the deal. They then lock up sufficient funds in an associated wallet to cover the total cost of the deal. When the provider accepts the storage agreement, they publish the deal to the Filecoin blockchain, committing both parties to the deal.
 
@@ -193,11 +193,9 @@ Unlike centralized systems with a large, captive audience from whom they profit,
 
 ![Thirty-eight hundred storage providers October 2021](./img/ecosystem-data.png)
 
-Your success is a success for the entire ecosystem. When you provide stellar storage service, our reputation increases to attract more clients and providers. In addition, the growing market for storage and retrieval apps attracts application developers to improve our efficiency, making our ecosystem even more attractive. See [CID gravity](https://www.cidgravity.com/) for pricing and client management.
+Your success is a success for the entire ecosystem. When you provide stellar storage service, our reputation increases to attract more clients and providers. In addition, the growing market for storage and retrieval apps attracts application developers to improve our efficiency, making our ecosystem even more attractive.
 
 Because Filecoin is decentralized, there is no single, central entity that determines who can and can't join our network. Instead, Filecoin has built-in objective criteria, such as the blockchain and our protocol, deals, proofs, and other consensus mechanisms, that allow anyone who can perform a role to join. The mutual benefits of more participants means that we naturally want to bring along new entrants to make the ecosystem stronger.
-
-![Filecoin workflow from collateral to FIL rewards.](./img/storage-overview.png)
 
 The openness to new entrants is the lifeblood of decentralized platforms, and providers are key players in leading the way. This is only the beginning, so it's a good time to get on board.
 
