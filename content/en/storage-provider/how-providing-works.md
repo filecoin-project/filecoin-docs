@@ -74,7 +74,7 @@ See [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_mining.mi
 
 You must pay a nominal gas fee for resources used for sealing storage. You can set a gas limit, above which a transaction will not execute, allowing for control.
 
-![Gas fees are negligible compared to collateral.](./img/collateral-gas.png)
+![Gas fees are negligible compared to collateral.](collateral-gas.png)
 
 ## Storage provider deals
 
@@ -191,7 +191,7 @@ Because of blockchain technology, storage clients don’t need a large, centrali
 
 Unlike centralized systems with a large, captive audience from whom they profit, the decentralized Filecoin ecosystem bootstraps and verifies itself, so that everyone benefits from increased value. The main role of Filecoin employees is to facilitate a strong community.
 
-![Thirty-eight hundred storage providers October 2021](./img/ecosystem-data.png)
+![Thirty-eight hundred storage providers October 2021](ecosystem-data.png)
 
 Your success is a success for the entire ecosystem. When you provide stellar storage service, our reputation increases to attract more clients and providers. In addition, the growing market for storage and retrieval apps attracts application developers to improve our efficiency, making our ecosystem even more attractive. See [CID gravity](https://www.cidgravity.com/) for pricing and client management.
 
