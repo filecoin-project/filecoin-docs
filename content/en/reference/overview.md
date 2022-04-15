@@ -123,7 +123,7 @@ Developer tools, API clients & storage services that developers can use to build
 ### Wallet-related tools
 
 - [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges.
-- [FilSnap MetaMask Plugin](https://pages.consensys.net/filecoin-metamask-snap-preview) - MetaMask has a new plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki) currently still in beta that developers can try out.
+- [FilSnap MetaMask Plugin](https://metamask.io/flask/) - MetaMask has a new plugin system currently still in beta that developers can try out. The MM UI will not change but Filecoin keys are in the MM vault. Try it with https://filsnap.chainsafe.io/
 
 ### Node Infrastructure & APIs
 
@@ -188,13 +188,12 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Storage client and miner programs
 
+- [Filecoin Storage Providers](https://sp.filecoin.io/) - Interested in becoming an SP? A bootcamp, grants and expert advice is available here!
 - [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding)
   - incentivizes valuable data stored on Filecoin with a social trust network for verified data
   - Clients can apply to Notaries to receive DataCap and incentivize Miners at 10x to their quality-adjusted power, increasing probability of block rewards
 - [Filecoin Discover Store](https://store.filecoin-discover.com/)
-  - where Storage miners can buy hard drives with offline data filled with valuable datasets - ([blog post](https://filecoin.io/blog/offline-data-transfer-for-large-scale-data/))
-- [Miner X Fellowship](https://docs.google.com/document/d/1iqZ2xV5tlOJMrPQAg7V1XJQZz6CF1LYDHkwRGtoV5-g/edit) - to support and learn from small-to-medium miner experience.
-- [Slingshot Competition](https://slingshot.filecoin.io/)
+- [Slingshot Competition](https://slingshot.filecoin.io/) - ended in 2021 and has now become [Filecoin Evergreen](https://evergreen.filecoin.io/)
 
 ### Retrieval Market resources (WIP experiments)
 
@@ -208,19 +207,20 @@ The Retrieval Market is in early development; research and development teams are
 
 ## Wallets
 
-Tools for sending and receiving FIL tokens. For dev tooling see [message signing tools](https://docs.filecoin.io/reference/#message-signing-tools) above
+Tools for sending and receiving FIL tokens. For dev tooling see [message signing tools](https://docs.filecoin.io/reference/overview/#message-signing-tools) above
 
 ### Wallets (audited)
 
 Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are **_recommended_** below.
 
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **_recommended_** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger hardware (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below).
-- [**Ledger HW wallet** in Filecoin Docs](https://lotus.filecoin.io/lotus/manage/manage-fil/) - **_recommended_** - Ledger Live does not have Filecoin support yet, but Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node.
+- [**Ledger HW wallet** in Filecoin Docs](https://lotus.filecoin.io/lotus/manage/manage-fil/) - **_recommended_** - Ledger Live support for Filecoin is coming soon. Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node's CLI.
 
 ### Other wallets
 
 The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
 
+- [Fox Wallet](https://foxwallet.com/)
 - [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
 - [Cobo](https://cobo.com/)
 - [MathWallet](https://mathwallet.org/)
@@ -231,7 +231,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 ## Ecosystem galleries
 
 - [**Community Projects Showcase**](https://github.com/filecoin-project/community/#ecosystem-projects) - updated news about ecosystem projects
-- [Filecoin Ecosystem Grid](https://github.com/filecoin-project/community/discussions/194)
+- [Filecoin Ecosystem](https://ecosystem.filecoin.io/)
 
 ### Hackathons
 
@@ -244,7 +244,4 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing monthly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
 - Accelerators
-  - [Apollo - Gitcoin x Filecoin](https://gitcoin.co/blog/apollo/#:~:text=APOLLO%20will%20run%20from%20August,using%20Filecoin%20and%20Web3%20ecosystem) - from Summer 2020
-  - [Filecoin Frontier Accelerator with LongHash](https://filecoin.io/blog/filecoin-frontier-accelerator/) - applications closed Nov 15, 2020
-  - [Filecoin Launchpad Accelerator with ConsenSys Tachyon](https://consensys.net/blog/press-release/filecoin-launchpad-accelerator-powered-by-tachyon/) - from Fall 2020
-  - [Huobi-Filecoin Incubation Center](https://filecoin.io/blog/huobi-launches-filecoin-incubation-center/)
+  For a list of current accelerators please join [Filecoin Slack](https://filecoin.io/slack) and see regular updates in #_fil-lobby.
