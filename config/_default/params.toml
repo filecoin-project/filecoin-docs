@@ -68,16 +68,16 @@ alertDismissable = true
 alertText = ""
 
 # Edit Page
-docsRepo = "https://github.com/filecoin-project/filecoin-docs"
-docsRepoBranch = "master"
-editPage = false
+docsRepo = "https://github.com/filecoin-project/filecoin-docs/tree/main/"
+docsRepoBranch = "main"
+editPage = true
 
 [options]
   lazySizes = true
   clipBoard = true
   instantPage = true
   flexSearch = true
-  darkMode = false
+  darkMode = true
   bootStrapJs = true
   breadCrumb = false
   highLight = true

@@ -116,9 +116,16 @@
   <div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }} d-flex align-items-md-center">
 
     {{ if .Site.Params.options.flexSearch -}}
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','ULzjAPKsAhE5mSiynyXU','2.0.0');
+    </script>
     <form class="doks-search position-relative flex-grow-1 me-auto">
-      <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
-      <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+      <input style="padding-left: 12px;" id="search" class="st-default-search-input form-control is-search" placeholder="Press enter to search..." aria-label="Search docs..." autocomplete="off">
     </form>
     {{ end -}}
 
