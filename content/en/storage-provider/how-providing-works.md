@@ -51,11 +51,11 @@ For an 18-month period, an investment of $147k covered combined capital expenses
 
 See [Filecoin Storage Provider Bootcamp, by ESPA](https://www.youtube.com/watch?v=T-TgPILQD3c) (at 14:47).
 
-## Install Lotus application
+## Lotus application
 
 To store files, you'll need to install Lotus.
 
-Lotus is an application that tells computers how to talk to other computers (that follow the same rules), so they can store data for clients.
+Lotus is an application that tells computers that follow the same rules how to talk to each other, so they can store data for clients.
 
 See [Lotus > Install > Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
