@@ -55,7 +55,7 @@ See [Filecoin Storage Provider Bootcamp, by ESPA](https://www.youtube.com/watch?
 
 To store files, you'll need to install Lotus.
 
-Lotus is an application that tells computers that follow the same rules how to talk to each other, so they can store data for clients.
+Lotus is an application that tells computers that follow the same rules how to talk to each other, so providers can store data for clients.
 
 See [Lotus > Install > Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
