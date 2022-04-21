@@ -98,7 +98,7 @@ After the deal is published, the client prepares the data for storage and transf
 
 See [Preparing and transferring data](https://proto.school/verifying-storage-on-filecoin/02).
 
-## Sealing: Proof of Replication (PoRep)
+## Sealing - Proof of Replication (PoRep)
 
 Sealing is accomplished by using the first of two kinds of storage proofs:
 
