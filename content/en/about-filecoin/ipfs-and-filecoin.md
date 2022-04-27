@@ -49,6 +49,6 @@ Many solutions combine the two networks to get the best of both worlds: IPFS for
 Filecoin and IPFS are powered by the same technology at many levels:
 
 - [IPLD](https://ipld.io/) specifies data formats for content-addressed data like the blockchain or the way in which IPFS stores files.
-- [libp2p](https://libp2p.io/) provides peer-to-peer network capabilities, connection security and key discovery and data distribution features like the DHT ()[Distributed Hash Tables](https://docs.ipfs.io/concepts/dht/#distributed-hash-tables-dhts)) and [Pubsub](https://docs.libp2p.io/concepts/publish-subscribe/).
+- [libp2p](https://libp2p.io/) provides peer-to-peer network capabilities, connection security and key discovery and data distribution features like the [Distributed Hash Tables (DHT)](https://docs.ipfs.io/concepts/dht/#distributed-hash-tables-dhts)) and [Pubsub](https://docs.libp2p.io/concepts/publish-subscribe/).
 - [Multiformats](https://multiformats.io) define future-proof identifiers and data-types.
 - [Graphsync](https://github.com/ipfs/go-graphsync) and [Bitswap](https://github.com/ipfs/go-bitswap) enable fast and efficient IPLD data transfers between nodes.

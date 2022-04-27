@@ -130,7 +130,7 @@ Automatic repair of faulted data is a feature we've pushed off until after the m
 
 To avoid extortion, always ensure you store your data with a fairly decentralized set of storage providers (and note: it's pretty difficult for a storage provider to be sure they are the only person storing a particular piece of data, especially if you encrypt the data).
 
-Storage providers currently provide a 'dumb box' interface and will serve anyone any data they have. Maybe in the future, storage providers will offer ACLs (Access Control Lists) and logins and such, but that requires that you trust the storage provider. The recommended (and safest) approach here is to encrypt data you don't want others to see yourself before storing it.
+Storage providers currently provide a 'dumb box' interface and will serve anyone any data they have. Maybe in the future, storage providers will offer access control lists (ACLs) and logins and such, but that requires that you trust the storage provider. The recommended (and safest) approach here is to encrypt data you don't want others to see yourself before storing it.
 
 ### How do you update data stored on Filecoin?
 
@@ -144,7 +144,7 @@ There's a pretty large design space here, and we can do a bunch of different thi
 
 Notaries, selected through an application process, serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
 
-See [Filecoin Plus > Overview > Notary](https://docs.filecoin.io/store/filecoin-plus/#notary).
+See [Filecoin Plus]({{< relref "./store/filecoin-plus.md#notary" >}}).
 
 ### Will the existence of Filecoin mining pools lead to centralized storage and away from the vision of distributed storage?
 
