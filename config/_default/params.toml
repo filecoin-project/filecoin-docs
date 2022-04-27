@@ -1,0 +1,87 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Filecoin Docs"
+titleSeparator = "-"
+titleAddition = "Home"
+description = "Documentation for Filecoin - A decentralized storage network for humanity's most important information."
+
+# Folders in content that the site will search through.
+mainSections = ["about-filecoin", "build", "community", "get-started", "networks", "project", "reference", "storage-provider", "store"]
+
+## Documentation
+# docsVersion = "0.3"
+
+## Open Graph
+images = ["/logos/Filecoin-logo-blue+black.png"]
+ogLocale = "en_US"
+domainTLD = "docs.filecoin.io"
+titleHome = "Filecoin Docs"
+
+## Twitter Cards
+twitterSite = "@filecoin"
+twitterCreator = "@protocollabs"
+
+## JSON-LD
+# schemaType = "Person"
+schemaType = "Organization"
+schemaName = "Filecoin"
+schemaAuthor = "Protocol Labs"
+schemaAuthorTwitter = "https://twitter.com/filecoin"
+schemaAuthorLinkedIn = "https://www.linkedin.com/in/filecoin/"
+schemaAuthorGitHub = "https://github.com/filecoin-project"
+schemaLocale = "en-US"
+schemaLogo = "filecoin.png"
+schemaLogoWidth = 512
+schemaLogoHeight = 512
+schemaImage = "filecoin.png"
+schemaImageWidth = 1280
+schemaImageHeight = 640
+schemaTwitter = "https://twitter.com/filecoin"
+schemaLinkedIn = ""
+schemaGitHub = "https://github.com/filecoin-project/filecoin-docs"
+schemaSection = "blog"
+
+## Sitelinks Search Box
+siteLinksSearchBox = false
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+
+# Footer
+footer = "Built by Protocol Labs."
+footer_link = "https://protocol.ai"
+
+# Feed
+copyRight = ""
+
+# Alert
+alert = false
+alertDismissable = true
+alertText = ""
+
+# Edit Page
+docsRepo = "https://github.com/filecoin-project/filecoin-docs/tree/main/"
+docsRepoBranch = "main"
+editPage = true
+
+[options]
+  lazySizes = true
+  clipBoard = true
+  instantPage = true
+  flexSearch = true
+  darkMode = true
+  bootStrapJs = true
+  breadCrumb = false
+  highLight = true
+  kaTex = false
+  collapsibleSidebar = true
+  multilingualMode = true
+  docsVersioning = false # Not yet functional

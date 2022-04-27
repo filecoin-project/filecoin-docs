@@ -1,0 +1,155 @@
+/get-started/lotus/running-in-the-cloud/ https://lotus.filecoin.io/docs/set-up/running-in-the-cloud/ 
+/get-started/lotus/ https://lotus.filecoin.io/
+/get-started/lotus/installation/ https://lotus.filecoin.io/docs/set-up/install/
+/get-started/lotus/switch-networks/ https://lotus.filecoin.io/docs/set-up/switch-networks/
+/get-started/lotus/chain/ https://lotus.filecoin.io/docs/set-up/chain-management/
+/get-started/lotus/send-and-receive-fil/ https://lotus.filecoin.io/docs/set-up/manage-fil/
+/get-started/lotus/multisig/ https://lotus.filecoin.io/docs/set-up/multisig/
+/get-started/lotus/ledger/ https://lotus.filecoin.io/docs/set-up/manage-fil/#ledger
+/get-started/lotus/upgrades/ https://lotus.filecoin.io/docs/set-up/upgrade/
+/get-started/lotus/tips-running-in-china/ https://lotus.filecoin.io/docs/set-up/nodes-in-china/
+/get-started/lotus/backup-and-restore/ https://lotus.filecoin.io/docs/set-up/backup-and-restore/
+/get-started/lotus/configuration-and-advanced-usage/ https://lotus.filecoin.io/docs/set-up/configuration/
+/get-started/lotus/troubleshooting/ https://lotus.filecoin.io/docs/set-up/troubleshooting/
+
+/store/lotus/store-data/ https://lotus.filecoin.io/docs/developers/store-data/
+/store/lotus/very-large-files/ https://lotus.filecoin.io/docs/developers/large-files/
+/store/lotus/retrieve-data/ https://lotus.filecoin.io/docs/developers/retrieve-data/
+/store/lotus/import-data-from-ipfs/ https://lotus.filecoin.io/docs/developers/import-data-from-ipfs/
+/store/lotus/store-troubleshooting/ https://lotus.filecoin.io/docs/developers/troubleshooting/
+/store/slate https://slate.host/
+
+/mine/lotus/ https://lotus.filecoin.io/docs/storage-providers/overview/
+/mine/lotus/miner-setup/ https://lotus.filecoin.io/docs/storage-providers/setup/
+/mine/lotus/miner-configuration/ https://lotus.filecoin.io/docs/storage-providers/config/
+/mine/lotus/miner-upgrades/ https://lotus.filecoin.io/docs/storage-providers/upgrades/
+/mine/lotus/miner-lifecycle/ https://lotus.filecoin.io/docs/storage-providers/lifecycle/
+/mine/lotus/manage-storage-deals/ https://lotus.filecoin.io/docs/storage-providers/manage-storage-deals/
+/mine/lotus/dynamic-retrieval-pricing/ https://lotus.filecoin.io/docs/storage-providers/dynamic-retrieval-pricing/
+/mine/lotus/custom-storage-layout/ https://lotus.filecoin.io/docs/storage-providers/custom-storage-layout/
+/mine/lotus/sector-pledging/ https://lotus.filecoin.io/docs/storage-providers/sector-pledging/
+/mine/lotus/disputer/ https://lotus.filecoin.io/docs/storage-providers/disputer/
+/mine/lotus/connectivity/ https://lotus.filecoin.io/docs/storage-providers/connectivity/
+/mine/lotus/miner-addresses/ https://lotus.filecoin.io/docs/storage-providers/addresses/
+/mine/lotus/message-pool/ https://lotus.filecoin.io/docs/storage-providers/message-pool/
+/mine/lotus/seal-workers/ https://lotus.filecoin.io/docs/storage-providers/seal-workers/
+/mine/lotus/split-markets-miners/ https://lotus.filecoin.io/docs/storage-providers/split-markets-miners/
+/mine/lotus/dagstore/ https://lotus.filecoin.io/docs/storage-providers/dagstore/
+/mine/lotus/sector-pledging/ https://lotus.filecoin.io/docs/storage-providers/sector-pledging/
+/mine/lotus/disputer/ https://lotus.filecoin.io/docs/storage-providers/disputer/
+/mine/lotus/connectivity/ https://lotus.filecoin.io/docs/storage-providers/connectivity/
+/mine/lotus/miner-addresses/ https://lotus.filecoin.io/docs/storage-providers/addresses/
+/mine/lotus/message-pool/ https://lotus.filecoin.io/docs/storage-providers/message-pool/
+/mine/lotus/seal-workers/ https://lotus.filecoin.io/docs/storage-providers/seal-workers/
+/mine/lotus/split-markets-miners/ https://lotus.filecoin.io/docs/storage-providers/split-markets-miners/ 
+/mine/lotus/dagstore/ https://lotus.filecoin.io/docs/storage-providers/dagstore/
+/mine/lotus/benchmarks/ https://lotus.filecoin.io/docs/storage-providers/benchmarks/
+/mine/lotus/backup-and-restore/ https://lotus.filecoin.io/docs/storage-providers/backup-and-restore/
+/mine/lotus/gpus/ https://lotus.filecoin.io/docs/storage-providers/benchmarks/
+/mine/lotus/tips-running-in-china/ https://lotus.filecoin.io/docs/set-up/nodes-in-china/
+/mine/lotus/miner-journal/ https://lotus.filecoin.io/docs/storage-providers/miner-journal/
+/mine/lotus/miner-troubleshooting/ https://lotus.filecoin.io/docs/storage-providers/troubleshooting/
+
+/build/lotus/ https://lotus.filecoin.io/
+/build/get-started/lotus/installation/ https://lotus.filecoin.io/docs/set-up/install/
+/build/hosted-lotus https://lotus.filecoin.io/docs/developers/hosted-lotus/
+/build/lotus/lotus-lite/ https://lotus.filecoin.io/docs/set-up/lotus-lite/
+/build/lotus/enable-remote-api-access/ https://lotus.filecoin.io/docs/developers/api-access/
+/build/lotus/api-tokens/ https://lotus.filecoin.io/docs/developers/api-access/#api-tokens
+/build/lotus/api-client-libraries/ https://lotus.filecoin.io/docs/developers/api-access/#api-client-libraries
+/build/lotus/go-json-rpc/ https://lotus.filecoin.io/docs/developers/api-access/#go-json-rpc-client
+/build/lotus/payment-channels/ https://lotus.filecoin.io/docs/developers/payment-channels/
+/build/lotus/troubleshooting/ https://lotus.filecoin.io/docs/developers/troubleshooting/
+/build/local-devnet/ https://lotus.filecoin.io/docs/developers/developer-network/
+
+/reference/lotus-api/ https://lotus.filecoin.io/docs/apis/json-rpc/
+
+# Redirects from "miner" pages to "storage provider" pages.
+# ---------------------------------------------------------
+/mine/ /storage-provider/
+/mine/how-mining-works/* /storage-provider/how-providing-works/
+/mine/mining-architectures/* /storage-provider/storage-provider-architectures/
+/mine/hardware-requirements/* /storage-provider/hardware-requirements/
+/mine/slashing/* /storage-provider/slashing/
+/mine/mining-rewards/* /storage-provider/storage-provider-rewards/
+# ---------------------------------------------------------
+
+
+# redirect folks who try to visit the old go-filecoin docs site previously hosted at docs.filecoin.io
+
+/questions.html https://venus.filecoin.io/questions.html
+/questions https://venus.filecoin.io/questions.html
+/go-filecoin-tutorial/*  https://venus.filecoin.io/Getting-Started.html
+
+/introduction/what-is-filecoin/ /about-filecoin/what-is-filecoin/
+/introduction/why-filecoin/ /about-filecoin/why-filecoin/
+/introduction/ipfs-and-filecoin/ /about-filecoin/ipfs-and-filecoin/
+/introduction/filecoin-compared-to/ /about-filecoin/filecoin-compared-to/
+/introduction/faq/ /about-filecoin/faq/
+
+/how-to/install-filecoin/ /get-started/lotus/installation/
+/how-to/networks/ /networks/
+/how-to/join-a-network/ /get-started/lotus/installation/
+/how-to/store/prepare-data/ /store/lotus/store-data/
+/how-to/store/tokens/ /get-started/lotus/send-and-receive-fil/
+/how-to/store/making-storage-deals/ /mine/lotus/store-data/
+/how-to/store/retrieving-data/ /store/lotus/retrieve-data/
+
+/get-started/lotus/chain-snapshots/ /get-started/lotus/chain/
+/get-started/go-filecoin-tutorial/Getting-Started.html /get-started/
+/get-started/go-filecoin-tutorial/Home.html /get-started/
+/get-started/venus-tutorial/Getting-Started.html /get-started/
+
+/mine/storage-mining/ /mine/lotus/
+/mine/lotus-seal-worker/ /mine/lotus/seal-workers/
+/mine/setting-a-static-port/ /mine/lotus/miner-setup/#miner-initialization
+/mine/connectivity/ /mine/lotus/connectivity/
+/mine/mining-troubleshooting/ /mine/lotus/miner-troubleshooting/
+/mine/lotus/daemon-lifecycle/ /mine/lotus/miner-lifecycle/
+/mine/lotus/separate-address-window-post/ /mine/lotus/miner-addresses/
+/mine/lotus/replace-messages-in-mpool/ /mine/lotus/message-pool/
+/mine/spacerace/ https://spacerace.filecoin.io
+/mine/lotus/miner-wallets/ /mine/lotus/miner-addresses/
+/mine/lotus/miner-lifecycle/custom-storage-layout/ /mine/lotus/custom-storage-layout/
+
+/about-filecoin/network-performance/ /about-filecoin/networks
+/about-filecoin/networks /networks/
+
+/build/start-building/ /build/
+/build/start-building/interacting-with-the-network/ /build/
+/build/start-building/implementations/ /get-started/
+/build/reference/lotus-api/ /reference/lotus-api/
+
+/build/examples/ /get-started/
+/build/examples/meme-marketplace/step-1-blockchain-and-contracts-setup/ /get-started/
+/build/examples/meme-marketplace/step-5-connecting-app-with-blockchain/ /get-started/
+/build/examples/network-inspector/step-1-start-lotus-devnet-and-go-ipfs/ /get-started/
+/build/examples/network-inspector/step-4-explore-the-filecoin-network-inspector-app/ /get-started/
+
+/store/lotus/send-and-receive-fil/ /get-started/lotus/send-and-receive-fil/
+
+/build/tools/ /build/
+/build/tools/api-clients/ /build/lotus/api-client-libraries/
+/build/tools/filecoin-backed-pinning-services/ /build/filecoin-pinning-services/
+/build/tools/powergate/ /build/powergate/
+/build/tools/signing-libraries/ /build/signing-libraries/
+/build/tools/slate/ /store/#filecoin-software
+/build/tools/wallets/ /store/lotus/send-and-receive-fil/
+/build/lotus/hosted-nodes/ /build/hosted-lotus/
+/build/lotus/api-token-generation/ /build/lotus/api-tokens/
+/build/hosted-powergate/ /build/powergate/
+
+/build/core-products/filecoin-backed-pinning-services/ /build/filecoin-pinning-services/
+/build/core-products/powergate/ /build/powergate/
+/build/core-products/protocol-implementations/ /software/
+/build/developer-tools/wallets-signing-tools-api-clients/ /build/signing-libraries/
+
+/introduction/ /
+/build/start-building/deploy-your-application-to-the-filecoin-testnet/ /
+/build/onboard-testnet/ /
+
+{{- range $p := .Site.Pages -}}
+{{- range .Aliases }}
+{{ . }} {{ $p.RelPermalink -}}
+{{- end }}
+{{- end -}}

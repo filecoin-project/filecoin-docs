@@ -1,0 +1,22 @@
+<footer class="footer text-muted">
+    <div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }}">
+        <div class="row">
+            <div class="col-lg-8 order-last order-lg-first">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="{{ .Site.Params.footer_link | safeHTML }}">
+                            {{ .Site.Params.footer | safeHTML }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-8 order-first order-lg-last text-lg-end">
+                <ul class="list-inline">
+                    {{ range .Site.Menus.footer -}}
+                    <li class="list-inline-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                    {{ end -}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
