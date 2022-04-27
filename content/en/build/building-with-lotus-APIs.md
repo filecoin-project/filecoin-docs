@@ -1,12 +1,11 @@
 ---
 title: Building with Lotus APIs
 description: Lotus node provides comprehensive features via its JSON-RPC APIs for developers and builders to build on the Filecoin network. Developers can use any API client library to connect to Lotus node to use the build-in Lotus APIs.
-breadcrumb: 'Lotus APIs'
+menu:
+    build:
+        parent: "build-get-started"
+weight: 40
 ---
-
-# {{ $frontmatter.title }}
-
-{{ $frontmatter.description }} 
 
 In the Filecoin ecosystem, there are various node solutions to connect to the Filecoin network and provide  functions via RPC API calls. Developers can either install and run their own Lotus node locally to interact with the Filecoin network, or connect to other Lotus nodes hosted by Glif or Infura.
 
