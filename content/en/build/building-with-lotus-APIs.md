@@ -166,7 +166,7 @@ Let's look at some common chain data-related packages in the filecoin.js library
 - `LotusClient.state` - methods to query, inspect, and interact with chain state
 - more ...
 
-In the previous step, we already created a `chainDataQuery.mjs` file to demonstrate the basic steps to connect to the Lotus node and initialize a LotusClient to query chain data. Now let's write more code in there to learn other query functions that do not require auth-token to interact with the Lotus node.
+In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the basic steps to connect to the Lotus node and initialize a LotusClient to query chain data. Now, let's write more code in there to learn other query functions that do not require auth-token to interact with the Lotus node.
 
 1. Get current chain head
 
