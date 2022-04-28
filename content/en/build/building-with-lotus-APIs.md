@@ -101,7 +101,6 @@ If everything set up correctly, you should be able to verify to:
 
 ### Create a node.js project
 
-Let's also set up a Node.js project with necessary dependencies, we will write basic javascript functions to focus more on learning the code to interact with Filecoin Network. 
 
 1. Create a new node.js project
 
