@@ -144,7 +144,7 @@ There's a pretty large design space here, and we can do a bunch of different thi
 
 Notaries, selected through an application process, serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
 
-See [Filecoin Plus]({{< relref "../store/filecoin-plus.md#notary" >}}).
+See [Filecoin Plus]({{< relref "filecoin-plus" >}}).
 
 ### Will the existence of Filecoin mining pools lead to centralized storage and away from the vision of distributed storage?
 
