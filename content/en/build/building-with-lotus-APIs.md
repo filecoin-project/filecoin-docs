@@ -34,7 +34,7 @@ Before getting started, you should be familiar with:
 Also, make sure you have the following dependencies installed:
 
 - [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
+- [NPM](https://www.npmjs.com/)
 
 ## 1. Setup
 
@@ -54,14 +54,14 @@ To summarize, you need to:
    git checkout <vX.X.X> # tag for the latest release
    ```
 
-2. Build and install Lotus for the Calibration network
+2. Build and install Lotus for the Calibration network.
 
    ```shell
-   make clean calibnet # Calibration with min 32GiB sectors
+   make clean calibnet
    sudo make install
    ```
 
-3. Download the latest chain snapshot using the CID listed under "Genesis CAR file" (https://docs.filecoin.io/networks/overview/#calibration). Then sync to the network (it will take several hours to fully sync the chain).
+3. Download the latest chain snapshot using the CID listed under "Genesis CAR file" (https://docs.filecoin.io/networks/overview/#calibration). Then sync to the network which will take several hours to fully sync the chain.
 
    ```shell
    lotus daemon --import-snapshot <path-to-calibration-snapshot>
@@ -151,7 +151,7 @@ Now you're ready to write code to connect to your Lotus node and interact with t
     }
     ```
 
-If everything is set up correctly, your code will be able to connect to the Lotus node and return the chain data as shown above. Now, you're ready to explore more API features.
+If everything is set up correctly, your code will be able to connect to the Lotus node and return the chain data as shown above. You can also check the [Lotus Troubleshooting](https://lotus.filecoin.io/lotus/manage/troubleshooting/) for advices if you ran into errors setting up Lotus node . Now, you're ready to explore more API features.
 
 ## 2. Query basic chain data
 
@@ -165,9 +165,8 @@ Let's look at some common chain data-related packages in the filecoin.js library
 - `LotusClient.client` - methods to interact with the storage and retrieval markets as a client
 - `LotusClient.paych` - methods to interact with and manage payment channels
 - `LotusClient.state` - methods to query, inspect, and interact with chain state
-- ...and more
 
-In the previous step, we already created a `chainDataQuery.mjs` file to demonstrate the basic steps to connect to the Lotus node and initialize a LotusClient to query chain data. Now let's write more code in there to learn other query functions that do not require an auth token.
+In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the basic steps to connect to the Lotus node and initialize a LotusClient to query chain data. Now let's write more code in there to learn other query functions that do not require an auth token.
 
 1. Get current chain head
 
@@ -229,7 +228,7 @@ In the previous step, we already created a `chainDataQuery.mjs` file to demonstr
     ```
 Apart from the basic data queries shown above, there are many more features. Please see the [Lotus JSON-RPC API Reference](https://lotus.filecoin.io/developers/apis/json-rpc/) for all Lotus API definitions. Note that some API calls require an [authorization token](https://lotus.filecoin.io/developers/api-access/#obtaining-tokens).
 
-## Manage wallets and FIL tokens
+## 3. Manage wallets and FIL tokens
 
 Filecoin wallets represent the account (or address) that you will use to manage FIL tokens, sign transactions to store and retrieve data, pay for gas fees for every transaction, and more. In this section, we will demonstrate different ways to manage your Filecoin wallet as well as FIL token. There are two Filecoin wallet types:
 
@@ -509,7 +508,7 @@ The `filecoin.js` library also supports creating a light wallet from a mnemonic 
 
 By now, you have learned how to create a wallet on the Lotus node via RPC API call as well as create a light wallet and manage its assets via hosted Glif node. If you are interested in exploring more features of Lotus, keep following this tutorial. You can also go to the [Lotus JSON-RPC API](https://lotus.filecoin.io/developers/apis/json-rpc/) and start creating your own projects on Filecoin.
 
-## Make a storage deal
+## 4. Make a storage deal
 
 Storing data is one of the most important features of Filecoin. In this section, we will walk through the whole end-to-end process of storing your data decentralized on the Filecoin network. It covers importing your data to the local Lotus node, making a storage deal with a storage provider, and then waiting for the deal to complete. Let's dive in.
 
