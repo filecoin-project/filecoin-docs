@@ -34,9 +34,9 @@ Before getting started, you should be familiar with:
 
 Also, make sure you have all the dependencies installed:
 
-- Fully Synced Calibration TestNet Lotus node
-- node.js
-- npm
+- A fully-synced Lotus node on the calibration testnet
+- Node.js
+- NPM
 
 ## Setup
 
