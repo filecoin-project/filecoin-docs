@@ -85,7 +85,7 @@ Actors are a [software design pattern](https://en.wikipedia.org/wiki/Actor_model
 
 Actors are the Filecoin equivalent of smart contracts in the Ethereum Virtual Machine. As such, Actors are very central components of the system. Any change to the current state of the Filecoin blockchain has to be triggered through an Actor.
 
-See: [Filecoin spec > Virtual Machine](https://spec.filecoin.io/#section-systems.filecoin_vm)
+See: [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_vm)
 
 ## Addresses
 

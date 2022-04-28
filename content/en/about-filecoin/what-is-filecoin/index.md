@@ -47,7 +47,7 @@ Web3 is a movement within software development that is turning centralized appli
 
 Web3 is essentially what allows Filecoin to exist by allowing files to be shared between peers.
 
-You can find out more about it in [IPFS and Filecoin section]({{< relref "../ipfs-and-filecoin.md" >}}).
+You can find out more about it in [IPFS and Filecoin section]({{< relref "ipfs-and-filecoin" >}}).
 
 ## Vision
 
