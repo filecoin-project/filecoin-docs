@@ -90,7 +90,7 @@ If you have any information about any potential security problem or malicious co
 
 ### How likely is it that the Filecoin protocol will switch to the NSE Proof-of-Replication construction later?
 
-About Native Storage Extension (NSE): NSE is one of the best candidates for a proof upgrade, and teams are working on implementation. But there are other candidates too, which are promising as well. It may be that another algorithm ends up better than NSE -- we don't know yet. Proof upgrades will arrive after the mainnet launch and will coexist.
+Native storage extension (NSE) is one of the best candidates for a proof upgrade, and teams are working on implementation. But there are other candidates too, which are promising as well. It may be that another algorithm ends up better than NSE -- we don't know yet. Proof upgrades will arrive after the mainnet launch and will coexist.
 
 AMD may be optimal hardware for SDR. You can [see this description](https://github.com/filecoin-project/lotus/blob/master/documentation/en/sealing-procs.md) for more information on why.
 
@@ -144,7 +144,7 @@ There's a pretty large design space here, and we can do a bunch of different thi
 
 Notaries, selected through an application process, serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
 
-See [Filecoin Plus]({{< relref "store/filecoin-plus.md#notary" >}}).
+See [Filecoin Plus]({{< relref "filecoin-plus" >}}).
 
 ### Will the existence of Filecoin mining pools lead to centralized storage and away from the vision of distributed storage?
 
