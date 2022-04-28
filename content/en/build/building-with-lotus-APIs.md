@@ -7,7 +7,7 @@ menu:
 weight: 40
 ---
 
-In the Filecoin ecosystem, there are various node solutions to connect to the Filecoin network and provide  functions via RPC API calls. Developers can either install and run their own Lotus node locally to interact with the Filecoin network, or connect to other Lotus nodes hosted by Glif or Infura.
+In the Filecoin ecosystem, there are various node solutions to connect to the Filecoin network and provide functions via RPC API calls. Developers can either install and run their own Lotus node locally to interact with the Filecoin network, or connect to other Lotus nodes hosted by Glif or Infura.
 
 Developers can also use the API client libraries to utilize the features of Filecoin Network since those libraries take care of the low-level logic of connecting to Lotus node, requesting and handing the response via simple calls, etc. Currently, there are many libraries available:
 
