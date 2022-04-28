@@ -58,7 +58,7 @@ Executing messages, for example by including transactions or proofs in the chain
 
 Historically in other blockchains, miners specify a GasFee in a unit of native currency and then pay the block producing miners a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources, since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
 
-The amount of fees burned in the Filecoin network is determined by a dynamic \*_*BaseFee*_, which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers]({{< relref "../get-started/explore-the-network.md" >}}) or by inspecting the current head.
+The amount of fees burned in the Filecoin network is determined by a dynamic \*_*BaseFee*_, which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers]({{< relref "get-started/explore-the-network" >}}) or by inspecting the current head.
 
 Additionally, a number of gas-related parameters are attached to each message and determine the amount of rewards that storage providers get. Here's an overview of the terms and concepts:
 
