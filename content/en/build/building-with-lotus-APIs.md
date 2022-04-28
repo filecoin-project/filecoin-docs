@@ -46,7 +46,7 @@ Before you start writing code to interact with hosted local Lotus node, you shou
 
 If you have not installed a Lotus node locally and fully synced for Calibration TestNet, you should go back and do it following the guild to [Install and launch a Lotus node](https://lotus.filecoin.io/docs/set-up/install/).
 
-1. Download Lotus source code for the latest release
+1. Download Lotus source code for the latest release:
 
    ```shell
    git clone https://github.com/filecoin-project/lotus.git
