@@ -7,76 +7,77 @@ menu:
 weight: 40
 ---
 
-In the Filecoin ecosystem, there are various node solutions to connect to the Filecoin network and provide functions via RPC API calls. Developers can either install and run their own Lotus node locally to interact with the Filecoin network, or connect to other Lotus nodes hosted by Glif or Infura.
+Lotus offers a JSON-RPC API to connect directly to the Filecoin network for detailed control of messages and other network interactions. 
 
-Developers can also use the API client libraries to utilize the features of Filecoin Network since those libraries take care of the low-level logic of connecting to Lotus node, requesting and handing the response via simple calls, etc. Currently, there are many libraries available:
+Several API client libraries are available. They take care of the low-level logic of connecting to Lotus node, requesting and handing the response, and more. 
 
 - [filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/)
 - [filecoin-js-signer](https://github.com/blitslabs/filecoin-js-signer)
 - [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools)
 
-In this tutorial, we will run a local Lotus node and use the filecoin.js library to walk through the following examples: 
+To use the complete API, you'll need to run your own node locally. For read-only access, you can also use a hosted endpoint such as those provided by [Glif](https://lotus.filecoin.io/developers/glif-nodes/) or [Infura](https://blog.infura.io/introducing-infura-support-for-filecoin-developers/). (Note: Application developers seeking simple ways to store data on Filecoin should use a storage helper instead.)
 
-- Setting up a local Lotus node and connecting to [Calibration Testnet](https://docs.filecoin.io/networks/#calibration)
-- Using filecoin.js to write code to interact with Filecoin Network to
-   - query basic blockchain info
-   - manage Lotus wallet
-   - manage light wallet
-   - make a storage deal
+In this tutorial, we will run a local Lotus node and use the filecoin.js library. It is divided into the following parts:
+
+1. [Setup](#setup)
+2. [Query basic chain data](#query-basic-chain-data)
+3. [Manage wallets and FIL tokens](#manage-wallets-and-FIL-tokens)
+4. [Make a storage deal](#make-a-storage-deal)
 
 ## Prerequisites
 
 Before getting started, you should be familiar with:
 
 - [How Filecoin works](https://docs.filecoin.io/about-filecoin/how-filecoin-works/)
-- [How to install a Lotus node for the Calibration network](https://lotu.sh/lotus/install/prerequisites/#supported-platforms)
-- [How to use Lotus command line](https://lotu.sh/lotus/manage/lotus-cli/)
+- [Using the Lotus command line](https://lotus.filecoin.io/lotus/manage/lotus-cli/)
 
-Also, make sure you have all the dependencies installed:
+Also, make sure you have the following dependencies installed:
 
-- A fully-synced Lotus node on the calibration testnet
-- Node.js
-- NPM
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
-## Setup
+## 1. Setup
 
-Before you start writing code to interact with hosted local Lotus node, you should make sure everything is set up properly. Especially ensure you have a local Lotus node fully synced for Calibration TestNet. 
+In this section, you'll set up your Lotus node, install the filecoin.js library, and confirm that they work together correctly.
 
-### Set up lotus node
+### Set up Lotus node
 
-If you have not installed a Lotus node locally and fully synced for Calibration TestNet, you should go back and do it following the guild to [Install and launch a Lotus node](https://lotus.filecoin.io/docs/set-up/install/).
+Follow the steps to [Install a Lotus node](https://lotus.filecoin.io/docs/set-up/install/), then sync it to the [Calibration test network](https://docs.filecoin.io/networks/overview/#calibration).
 
-1. Download Lotus source code for the latest release:
+To summarize, you need to:
+
+1. Download the Lotus source code. The version number of the latest release can be found on the [lotus releases](https://github.com/filecoin-project/lotus/releases) page.
 
    ```shell
    git clone https://github.com/filecoin-project/lotus.git
    cd lotus/
-   git checkout <vX.X.X> # tag for a release, currently v1.15.0
+   git checkout <vX.X.X> # tag for the latest release
    ```
 
-2. Build and install Lotus for Calibnet
+2. Build and install Lotus for the Calibration network
 
    ```shell
    make clean calibnet # Calibration with min 32GiB sectors
    sudo make install
    ```
 
-3. Fast sync using latest snapshot (still need several hours to fully sync the chain)
+3. Download the latest chain snapshot using the CID listed under "Genesis CAR file" (https://docs.filecoin.io/networks/overview/#calibration). Then sync to the network (it will take several hours to fully sync the chain).
 
    ```shell
    lotus daemon --import-snapshot <path-to-calibration-snapshot>
    ```
 
-4. [Create a wallet](https://lotu.sh/lotus/manage/manage-fil/#creating-a-wallet) and request some TestNet FIL from [Faucet](https://faucet.calibration.fildev.network/)
+4. [Create a wallet](https://lotus.filecoin.io/lotus/manage/manage-fil/#creating-a-wallet) and request some test FIL from the [Faucet](https://faucet.calibration.fildev.network/).
 
-4. [Enable remote API access to your Lotus node](https://lotu.sh/developers/api-access/)
+4. [Enable remote API access to your Lotus node](https://lotus.filecoin.io/developers/api-access/).
 
-If everything set up correctly, you should be able to verify to:
 
-- make sure that everything is working correctly, check the status of your local node:
+### Verify your setup
+
+Let's check the status of your local node:
 
   ```shell with-output
-  #Check if the node sync to the highest tipset
+  # Check if the node is synced to the highest tipset
   lotus sync wait
   ```
 
@@ -87,10 +88,10 @@ If everything set up correctly, you should be able to verify to:
   Done!
   ```
 
-- Check your wallet balance
+Now, let's check that the test FIL has landed in your wallet:
 
   ```shell with-output
-  #Check wallet balance
+  # Check wallet balance
   lotus wallet list 
   ```
 
@@ -101,20 +102,20 @@ If everything set up correctly, you should be able to verify to:
 
 ### Create a node.js project
 
+Now, let's set up a Node.js project with the necessary dependencies.
 
-1. Create a new Node.js project:
+1. Create a new Node.js project.
 
    ```shell
    mkdir build-with-lotus && cd build-with-lotus
-   npm init #Initialize an project
+   npm init #Initialize the project
    ```
    
-2. Install the fielcoin.js library
+2. Install the filecoin.js library.
 
    ```shell
    npm install filecoin.js
    ```
-
 
 ### Test a simple function call
 
@@ -152,20 +153,21 @@ Now you're ready to write code to connect to your Lotus node and interact with t
 
 If everything is set up correctly, your code will be able to connect to the Lotus node and return the chain data as shown above. Now, you're ready to explore more API features.
 
-## Query chain data
+## 2. Query basic chain data
 
-Blockchain data is a fundamental part of any blockchain network. Using Lotus APIs, you can query chain data, including tipsets, blocks, messages, network status, storage deals, storage provider details, and more.
+Blockchain data is a fundamental part of any blockchain network. Using the Lotus API, you can query chain data, including tipsets, blocks, messages, network status, storage deals, storage provider details, and more.
 
 Let's look at some common chain data-related packages in the filecoin.js library's LotusClient. 
 
 - `LotusClient.common` - methods to get node info
 - `LotusClient.chain` - methods to interact with the blockchain
-- `LotusClient.wallet` - methods to manage wallet on the Lotus node
+- `LotusClient.wallet` - methods to manage wallets on the Lotus node
 - `LotusClient.client` - methods to interact with the storage and retrieval markets as a client
 - `LotusClient.paych` - methods to interact with and manage payment channels
 - `LotusClient.state` - methods to query, inspect, and interact with chain state
+- ...and more
 
-In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the basic steps to connect to the Lotus node and initialize a LotusClient to query chain data. Now, let's write more code in there to learn other query functions that do not require auth-token to interact with the Lotus node.
+In the previous step, we already created a `chainDataQuery.mjs` file to demonstrate the basic steps to connect to the Lotus node and initialize a LotusClient to query chain data. Now let's write more code in there to learn other query functions that do not require an auth token.
 
 1. Get current chain head
 
@@ -219,30 +221,29 @@ In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the 
 
 3. Get wallet balance
 
-    With a given TestNet wallet address, you can query its balance by calling lotusClient.wallet.balance() function.
+    With a given Calibration wallet address, you can query its balance by calling lotusClient.wallet.balance() function.
 
     ```javascript
     //Query Wallet balance
     const walletBalance = await lotusClient.wallet.balance("t1ne72cbn6r55wea7ifjv4ypyti7t2df5dumsjhzq");
     ```
+Apart from the basic data queries shown above, there are many more features. Please see the [Lotus JSON-RPC API Reference](https://lotus.filecoin.io/developers/apis/json-rpc/) for all Lotus API definitions. Note that some API calls require an [authorization token](https://lotus.filecoin.io/developers/api-access/#obtaining-tokens).
 
-Apart from the basic data queries shown above, there are more features that Lotus APIs provide. But different API calls require different levels of permission API token to access the API endpoints and obtain data from the Filecoin network. Please check the [JSON-RPC API](https://lotu.sh/developers/apis/json-rpc/) for all Lotus API definitions, and generate your auth token to access those APIs accordingly. To learn how to generate auth-token, check the instruction for [obtaining tokens](https://lotus.filecoin.io/developers/api-access/#obtaining-tokens).
+## Manage wallets and FIL tokens
 
-## Managing wallet and FIL
+Filecoin wallets represent the account (or address) that you will use to manage FIL tokens, sign transactions to store and retrieve data, pay for gas fees for every transaction, and more. In this section, we will demonstrate different ways to manage your Filecoin wallet as well as FIL token. There are two Filecoin wallet types:
 
-The Filecoin wallet represents the account/address that you will use in the Filecoin network to manage FIL tokens, to sign any transactions to store and retrieve data, to pay for gas fees for every transaction, etc. In this section, we will demonstrate different ways to manage your Filecoin wallet as well as FIL token using the following wallet types:
+1. [Lotus wallets](#create-and-manage-lotus-wallets): hosted in Lotus node
+2. [Light wallets](#create-and-manage-light-wallet): detached from any node and represented by key pairs
 
-1. Lotus wallet: hosted in Lotus node
-2. Light wallet: detached to any node and represented by key pairs.
+### Create and manage Lotus wallets
 
-### Lotus Wallet
+Lotus wallets are created and hosted in the Lotus node. When the Lotus node is running, the wallet is opened in the node and you can manage your wallet's addresses and balances via the command line or RPC API calls. You will need an auth token with sign permissions.
 
-Lotus wallet is created and hosted in the Lotus node. When the Lotus node is running, the wallet is opened in the node and you can manage your wallet addresses as well as FIL token via the command line or RPC API calls with the right level of auth-token.
-
-1. First, let's make sure your local Lotus node is running and the wallet address is filled with some TestNet FIL token from the first step.
+1. First, let's make sure your local Lotus node is running and the wallet address contains some mock FIL tokens.
 
     ```shell with-output
-    #Check wallet balance
+    # Check wallet balance
     lotus wallet list 
     ```
 
@@ -251,20 +252,20 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
     t154xvuihhicgluafwmohwzwmtmqp44pwwgewyvma  100 FIL          0
     ```
 
-    You need to generate an authorization token with sign permission via command line which you will use later in the code to create wallet and sign token transfer transaction.
+    Generate an authorization token with sign permission.
 
     ```shell with-output
     lotus auth create-token --perm sign
     ```
 
     ```shell
-    #this will be your auth token, record it and use later
+    # This will be your auth token, record it and use later
     eyJhbGciOiJIUzI1NiIsInRaaaaaa.xxxxxxx.bbbbbbbbbbbvq1W0ZjqrXHygd6fBRk
     ```
 
 2. Create `lotusWallet.mjs` file
 
-    Let's create a `lotusWallet.mjs` file in the node.js project for all the Lotus wallet-related code. First, import modules from filecoin.js and also initialize some necessary components, like HttpJsonRpcConnector, LotusClient as well as LotusWalletProvider.
+    Let's create a `lotusWallet.mjs` file in the same project for all the wallet-related code in this tutorial. First, import modules from filecoin.js and initialize the necessary components (HttpJsonRpcConnector, LotusClient, and LotusWalletProvider).
 
     In `lotusWallet.mjs`, add the following code to get started.
 
@@ -272,7 +273,7 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
     import { HttpJsonRpcConnector, LotusWalletProvider, LotusClient} from "filecoin.js";
     import BigNumber from "bignumber.js";
     
-    //Use your localNodeUrl and authToken to interact with Lotus wallet
+    //Use your localNodeUrl and auth token to interact with Lotus wallet
     const localNodeUrl = "http://127.0.0.1:1234/rpc/v0";
     const signAuthToken ="<YOUR-SIGN-AUTH-TOKEN>"
     const httpConnector = new HttpJsonRpcConnector({ url: localNodeUrl, token: signAuthToken });
@@ -282,9 +283,9 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
 
 3. Create a new wallet address
 
-    You can directly connect to your local lotus node and create a new wallet address. The new address will be created in your Lotus node and with 0 token balance.
+    Let's create a second wallet address so we can test transfers. The new address will be created in your Lotus node and start with 0 token balance.
 
-    Let's use the following code to create a new wallet to the `lotusWallet.mjs`.
+    Add the following code to the `lotusWallet.mjs`.
 
     ```javascript
     async function newWallet(){
@@ -300,7 +301,7 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
     newWallet();
     ```
 
-    You can run the nodeJs command under your project to test this code.
+    You can run the NodeJS command to test this code.
 
     ```shell with-output
     ~/build-with-lotus $ node lotusWallet.mjs 
@@ -324,9 +325,9 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
 
 4. Transfer FIL to the new address
 
-    Now, let's try to transfer the FIL token to this new address. What you need to do is to create a transaction to transfer FIL token from fromAddress to toAddress, sign this transaction using the Lotus wallet, and send the signed transaction to the Lotus node. Fortunately, these processes are taken care of by filecoin.js so that you can do all these by calling the lotusWallet.sendMessage(params) methods with required params.
+    Now, let's try to transfer the FIL token to this new address. Under the hood, this will create a transaction to transfer FIL token from fromAddress to toAddress, sign the transaction using the Lotus wallet, and send the signed transaction to the Lotus node. Fortunately, these processes are taken care of by filecoin.js so that you can do all these by calling the lotusWallet.sendMessage(params) methods.
 
-    In `lotusWallet.mjs`, you can add these codes to do the job.
+    In `lotusWallet.mjs`, add the following code:
 
     ```javascript
     async function transferFIL(){
@@ -334,8 +335,8 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
             const fromAddress = await lotusWallet.getDefaultAddress();
             const toAddress = "t1ax5kdqxrrecxpyys6svvxjing7shqju26ytcsoa";
     
-            //SendMessage will create a message, assign a nounce, 
-            //sign the message using the fromAddress and push it to mpool
+            // SendMessage will create a message, assign a nounce, 
+            // Sign the message using the fromAddress and push it to mpool
             const msgResult = await lotusWallet.sendMessage({
                 From: fromAddress,
                 To: toAddress,
@@ -347,12 +348,12 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
             console.log(error);
         }
     }
-    //Test FIL transfer function
+    // Test FIL transfer function
     transferFIL();
     ```
 
     ```shell with-output
-    #Run the code to test the FIL transfer
+    # Run the code to test the FIL transfer
     ~/build-with-lotus $ node lotusWallet.mjs
     ```
 
@@ -365,7 +366,7 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
 
 5. Check wallet balance
 
-   Now, you should have created a new address in your Lotus node and also transferred some FIL tokens to it. Let's write code to query the balance of all your wallet addresses in the Lotus node. 
+   Now, you should have created a new address in your Lotus node and also transferred some FIL tokens to it. Next, let's query the balance of all your wallet addresses in the Lotus node. 
 
    ```javascript
    async function walletBalance(){
@@ -384,7 +385,7 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
            console.log(error);
        }
    }
-   //Test walleBalance function
+   //Test walletBalance function
    walletBalance();
    ```
 
@@ -410,13 +411,13 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
    t154xvuihhicgluafwmohwzwmtmqp44pwwgewyvma  89.9999996759719525 FIL     2      X        
    t1ax5kdqxrrecxpyys6svvxjing7shqju26ytcsoa  10 FIL
 
-### Light Wallet
+### Create and manage light wallets
 
-`filecoin.js` also supports creating a light wallet from a mnemonic and a password. As long as you have the mnemonic and password of your wallet, you can recover it anywhere and use it by sending PRC requests to any lotus full nodes. Rather than relaying on a full built-in Lotus node for Lotus wallet.
+The `filecoin.js` library also supports creating a light wallet from a mnemonic and a password. As long as you have the mnemonic and password of your wallet, you can recover it anywhere and use it by sending PRC requests to any Lotus full nodes.
 
 1. Create `lightWallet.mjs` file
 
-   In your node.js project, let's create a `lightWallet.mjs` file. Since we are using a light wallet, we will use Glif node as the connection to the Filecoin network to send transactions. First, we import all the modules and create a connection and lightWallet client using the Glif node URL.
+   In your `build-with-lotus` project, let's create a `lightWallet.mjs` file. Since we are using a light wallet, we will use the Glif hosted endpoint as the connection to the Filecoin network to send transactions. First, we import all the modules and create a connection and lightWallet client using the Glif endpoint's URL.
 
    ```javascript
    import { HttpJsonRpcConnector, LotusClient, LightWalletProvider,MnemonicWalletProvider} from "filecoin.js";
@@ -429,12 +430,11 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
 
 2. Create a new light wallet
 
-   When creating a light wallet using the BIP39 standard, it is very important to back up the mnemonic code, encryptedWallet, and your password. Do not share them — anyone who has this information will have control of your light wallet and assets.
+   When creating a light wallet using the BIP39 standard, it is very important to back up the mnemonic code, encryptedWallet, and your password. Do not share them — anyone who has this information will have control of your light wallet and assets!
 
    ```javascript with-output
    async function createLightWallet(){
        try {
-         
            const lightWallet = new LightWalletProvider(glifClient, () => { return '<YOUR-Password>' }, 'test');
            let mnemonic = await lightWallet.createLightWallet('<YOUR-Password>');
          	console.log(mnemonic);
@@ -448,27 +448,27 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
            console.log(error);
        }
    }
-   //Test the function
+   // Test the function
    createLightWallet()
    ```
 
    ```shell
-   #Make sure to backup your mnemonic, encryptedWallet, and password and keep them safe.
+   # Make sure to backup your mnemonic, encryptedWallet, and password and keep them safe.
    mnemonic: mouse escape tilt destroy xxx top yyy spice art zzz price image
    encryptedWallet: {......}
    Wallet Address: t1qfyuosiqgoycy5ojwsxtpnlp44orxg4gtmuhhaq
    ```
 
-   Once you create a light wallet, request some TestNet FIL tokens from [Calibration Faucet](https://faucet.calibration.fildev.network/) for the next step.
+   Before moving to the next step, use your light wallet address to request some mock FIL tokens from the [Calibration Faucet](https://faucet.calibration.fildev.network/).
 
 3. Create a FIL transfer transaction
 
-   Now you create a light wallet and fill it with some TestNet FIL token. We can create a FIL transfer message, sign it with a light wallet, and sent it to the Glif node.
+   Let's transfer some FIL from your light wallet to another wallet. 
 
    ```javascript
    async function sendFromLightWallet(){
        try {
-          //This is just for demo. NOT recommend to expose your mnemonic and password in code.
+          //This is just for demo. We do NOT recommend exposing your mnemonic and password in code.
            const mnemonic = '<YOUR mnemonic code>';
          	const pw = '<YOUR-Password>';
            const lightWallet = new LightWalletProvider(glifClient, () => { return pw }, 'test');
@@ -482,7 +482,7 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
                Value: new BigNumber(15000000000000000000)//in autoFIL
            });
    
-         	//Sign and send the message vai Glif Node API
+         	//Sign and send the message
            const signedMessage = await lightWallet.signMessage(message);
            const msgCid = await lightWallet.sendSignedMessage(signedMessage);
            console.log(msgCid);
@@ -495,7 +495,7 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
    ```
 
    ```shell with-output
-   #Run the js code to test transfer
+   #Run the code to test this transfer
    ~/build-with-lotus $ node lightWallet.mjs
    ```
 
@@ -505,26 +505,28 @@ Lotus wallet is created and hosted in the Lotus node. When the Lotus node is run
    }
    ```
 
-   After the message persists on-chain, you will be able to verify the transfer message on [Filecoin Calibration Explore](https://calibration.filscan.io/tipset/message-detail?cid=bafy2bzaceamdsqcc3jccrhvwrz6kmpujfkg6crwynmrtal2nsmwkqv22bktrs).
+   After the message containing this transfer makes it on-chain, you will be able to see it via the [Filecoin Calibration Explorer] (https://calibration.filscan.io/tipset/message-list) website.
 
-By far, you have learned how to write code to create a wallet on the Lotus node via RPC API call as well as create a light wallet and manage its assets via hosted Glif node. If you are interested to explore more features of Lotus, keep following this tutorial or you can start creating your projects on Filecoin.
+By now, you have learned how to create a wallet on the Lotus node via RPC API call as well as create a light wallet and manage its assets via hosted Glif node. If you are interested in exploring more features of Lotus, keep following this tutorial. You can also go to the [Lotus JSON-RPC API](https://lotus.filecoin.io/developers/apis/json-rpc/) and start creating your own projects on Filecoin.
 
-## Making a storage deal
+## Make a storage deal
 
-As the decentralized storage network, storing data is definitely one of the most important features of Filecoin. In this part, we will walk you through the whole end-to-end process of storing your data decentralized on the Filecoin network. It covers importing your data to the local Lotus node, making a storage deal with the storage provider, and then waiting for the deal to complete. Let's dive into it.
+Storing data is one of the most important features of Filecoin. In this section, we will walk through the whole end-to-end process of storing your data decentralized on the Filecoin network. It covers importing your data to the local Lotus node, making a storage deal with a storage provider, and then waiting for the deal to complete. Let's dive in.
 
-The operation of important data into the Lotus node requires an admin authentication token, let's generate it first for later.
+1. Setup
+
+Start by generating an admin authorization token. This is required to import data into the Lotus node.
 
 ```shell with-output
 lotus auth create-token --perm admin
 ```
 
 ```shell
-#Record and back up your auth token for later
+# Record and back up your auth token for later
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9......n7ugba1aJECuZXkMgJxHUH08MKTENQ-hAtsosDu-HXg
 ```
 
-First, we will create a `storeFile.mjs` and add the following code structure in there.
+Create a `storeFile.mjs` file in your `build-with-lotus` project and add the following code.
 
 ```javascript
 import { HttpJsonRpcConnector, LotusClient} from "filecoin.js";
@@ -551,9 +553,9 @@ async function storeFile(){
 storeFile();
 ```
 
-1. Import data
+2. Import data
 
-   The first step is to import your data to the Lotus node and let the Lotus node knows which file will be stored using its CID which is the unique fingerprint of your data. 
+   The next step is to import your data to the Lotus node. This returns a CID which is the unique fingerprint of your data, and how you will refer to your data in future steps. 
 
    ```javascript
    //1. import files to Lotus node.
@@ -564,11 +566,11 @@ storeFile();
    console.log(importResult.Root);//Your data CID which will represent your data on Filecon
    ```
 
-2. Storage provider query
+3. Storage provider query
 
-   Once your data is imported, lotus will know which file you want to store by its CID. Then in order to store this data on the Filecoin network, we need to find a storage provider which is willing to accept your storage deal.
+   Next, we need to find a storage provider that is willing to accept your storage deal.
 
-   Since we are using the calibration network for this tutorial, find storage providers using the following lotus command. It will return a list of asks from the storage providers on the calibration network which are actively accepting deals.
+   Since we are using the calibration network for this tutorial, find storage providers using the following command. It will return a list of `asks` from the storage providers which are actively accepting deals, containing the details of their storage asks.
 
    ```shell with-output
    lotus client list-asks
@@ -583,7 +585,7 @@ storeFile();
    t032368: min:256 B max:32 GiB price:0.0000000005 FIL/GiB/Epoch verifiedPrice:0.00000000005 FIL/GiB/Epoch ping:294.554013ms
    ```
 
-   But if you are working on Filecoin MainNet, you can use [find a storage provider via Filecoin Plus](https://lotu.sh/tutorials/store-and-retrieve/store-data/#find-a-storage-provider-via-filecoin-plus) program to find the storage providers to offer free storage for verified clients.
+   If you are working on Filecoin Mainnet, you can also use the [Filecoin Plus](https://lotus.filecoin.io/tutorials/store-and-retrieve/store-data/#find-a-storage-provider-via-filecoin-plus) program to find storage providers offering free storage for verified clients.
 
    ```javascript
    //2. query Miner offers for storing this file
@@ -593,7 +595,7 @@ storeFile();
    console.log("Miner is active ?", isActive);
    ```
 
-3. Create a storage deal with a storage provider
+4. Create a storage deal with a storage provider
 
     If this SP is active, you can start making storage deals with it.
 
@@ -626,7 +628,9 @@ storeFile();
    }
    ```
 
-   By this step, you have made a storage deal with a storage provider successfully. Lotus node will start processing the data with the storage provider. The storage deal will need to go through many different processes to be finalized on-chain. You can also check the status of your storage deal via the Lotus command line using its CID. See the[ Processing states](https://lotu.sh/tutorials/store-and-retrieve/store-data/#processing-states) table below to find out which states happen and when.
+   By this step, you have made a storage deal with a storage provider successfully. The Lotus node will start processing the data and sending it to the storage provider. Your storage deal will need to go through many sub-processes to be finalized on-chain. See the [Deal states](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/store-data/#deal-states) table for more details.
+   
+You can check the status of your storage deal via the Lotus command line using its CID. 
 
    ```shell with-output
    lotus client list-deals --show-failed
@@ -639,4 +643,4 @@ storeFile();
    ...wb4wiuwq  0       t01105    StorageDealClientFunding  N          N         ...7rkejcnq  3.969 MiB  0.0001041094 FIL  520547    false 
    ```
 
-Congratulations. Now, you should have learned and tried the fundamental steps to interact with the Filecoin network using the API client library and hosted Lotus node. It could serve as the foundation for you to try and explore a lot more features that the Filecoin network has to offer.
+Congratulations on making it all the way through this tutorial! In this tutorial, we learned the basics of interacting with the Filecoin network using an API client library and local Lotus node. This can serve as the foundation for you explore the complete [Lotus JSON-RPC API](https://lotus.filecoin.io/developers/apis/json-rpc/).
