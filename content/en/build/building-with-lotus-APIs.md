@@ -102,7 +102,7 @@ If everything set up correctly, you should be able to verify to:
 ### Create a node.js project
 
 
-1. Create a new node.js project
+1. Create a new Node.js project:
 
    ```shell
    mkdir build-with-lotus && cd build-with-lotus
