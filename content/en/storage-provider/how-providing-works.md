@@ -44,7 +44,7 @@ Here's a general idea of the minimum hardware you'll need for providing storage:
 
 For more detail, see:
 
-- [Hardware requirements](./storage-provider/hardware-requirements/#general-hardware-requirements)
+- [Hardware requirements]({{< relref "hardware-requirements/#general-hardware-requirements" >}})
 - [ESPA Module 3C - Hardware requirements](https://www.youtube.com/watch?v=RKihuvJpev4&t=126s)
 
 Every provider's situation is different, but to give you an idea of the level of investment and the possible return, here is one example:
@@ -59,7 +59,7 @@ To store files, you'll need to install Lotus.
 
 Lotus is an application that tells computers that follow the same rules how to talk to each other, so providers can store data for clients.
 
-See [Lotus > Install > Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
+See [Lotus](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
 ### Storage provider collateral
 
@@ -77,8 +77,6 @@ See [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_mining.mi
 
 You must pay a nominal gas fee for resources used for sealing storage. You can set a gas limit, above which a transaction will not execute, allowing for control.
 
-![Gas fees are negligible compared to collateral.](./img/collateral-gas.png)
-
 ### Storage provider deals
 
 Deals are the core function of the Filecoin network. Each deal represents a storage agreement between a client and a provider.
@@ -91,18 +89,11 @@ Once a client has decided on a provider to store with, they notify the provider 
 
 See [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06).
 
-For more details on deals from the client's point of view, see:
-
-- [Store data > Create a deal](..get-started/store-and-retrieve/store-data/#create-a-deal)
-- [Retrieve data > Get the deal information](../get-started/store-and-retrieve/retrieve-data/#get-the-deal-information)
-
 ### Sealing: Proof of Replication (PoRep)
 
 After the deal is published, the client prepares the data for storage and transfers it to the provider. Upon receiving all the data, the provider packs the data into a sector (the fundamental storage unit used by Filecoin) and seals it.
 
 See [Preparing and transferring data](https://proto.school/verifying-storage-on-filecoin/02).
-
-## Sealing - Proof of Replication (PoRep)
 
 Sealing is accomplished by using the first of two kinds of storage proofs:
 
@@ -118,7 +109,7 @@ Sealing is computation-intense and is performed over a sector that results in a 
 See:
 
 - [Proof of Replication (PoRep)](https://proto.school/verifying-storage-on-filecoin/03)
-- [A Guide to Filecoin Storage Mining > Advanced Mining Considerations](https://filecoin.io/blog/posts/a-guide-to-filecoin-storage-mining/)
+- [A Guide to Filecoin Storage Mining](https://filecoin.io/blog/posts/a-guide-to-filecoin-storage-mining/)
 
 ### Proof of SpaceTime (PoSt)
 
@@ -158,7 +149,7 @@ Slashing is a key part of the incentivization that encourages good behavior amon
 
 For more information, see:
 - [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06)
-- [slashing](slashing.md)
+- [slashing]({{< relref "slashing" >}})
 
 ## Rewards
 
@@ -170,7 +161,7 @@ Additionally, providers submit storage proofs regularly to the chain. This enabl
 
 Block rewards are meant to bootstrap the Filecoin network. They decrement as real storage utility and fees take over.
 
-See [Storage provider rewards](storage-provider-rewards.md).
+See [Storage provider rewards]({{< relref "storage-provider-rewards" >}}).
 
 ### Verified storage deals
 
@@ -182,7 +173,7 @@ Clients looking to onboard storage onto the network apply to community-selected 
 
 Notaries are selected to serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
 
-See [Filecoin Plus](https://docs.filecoin.io/store/filecoin-plus/#frontmatter-title).
+See [Filecoin Plus]({{< relref "filecoin-plus/#frontmatter-title" >}}).
 
 ### Retrieval provider fees
 
@@ -206,7 +197,7 @@ The openness to new entrants is the lifeblood of decentralized platforms, and pr
 
 For further information, see:
 
-- Chat and discussion forums: [Chat & discussion forums](https://docs.filecoin.io/about-filecoin/chat-and-discussion-forums/).
+- Chat and discussion forums: [Chat & discussion forums]({{< relref "chat-and-discussion-forums" >}}).
 
 - Information on Filecoin as a whole and its direction: [Filecoin spec](https://spec.filecoin.io/). The Filecoin spec is a living document that you will want to return to regularly to see changes.
 
