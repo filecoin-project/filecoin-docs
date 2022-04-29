@@ -32,7 +32,9 @@ We think that the internet must return to its _decentralized roots_ to be resili
 
 ### What are the detailed parameters of Filecoin's crypto-economics?
 
-We are still finalizing our crypto-economic parameters, and they will continue to evolve. We will post on our blog when the parameters have been finalized.
+We are still finalizing our crypto-economic parameters, and they will continue to evolve.
+
+Here is a blog about Filecoin economics from December 2020: [Filecoin network economics](https://filecoin.io/blog/posts/filecoin-network-economics/).
 
 ### How expensive will Filecoin storage be at launch?
 
@@ -58,9 +60,13 @@ Lotus is the primary reference implementation for the Filecoin protocol. At this
 
 ### What is your recommendation on the right hardware to use?
 
-While the Filecoin team does not recommend any specific hardware configuration, [we have shared some setups]({{< relref "architectures.md" >}}). We also published [this guide to storage mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/) that we recommend storage providers read through before deciding to provide storage. However, it is overwhelmingly likely that there are more efficient setups, and we strongly encourage storage providers to test and experiment to find the best combinations.
+While the Filecoin team does not recommend any specific hardware configuration, [we have shared some setups]({{< relref "architectures" >}}). We also published [this guide to storage mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/) that we recommend storage providers read through before deciding to provide storage. However, it is overwhelmingly likely that there are more efficient setups, and we strongly encourage storage providers to test and experiment to find the best combinations.
 
 ### We are worried about the ability of our network to handle the additional overhead of running a Filecoin node and still provide fast services for our customers. What are the computational demands of a Lotus node? Are there any metrics for node performance given various requirements?
+
+For information on Lotus requirements, see [Prerequisites > Minimal requirements](https://lotus.filecoin.io/lotus/install/prerequisites/#minimal-requirements).
+
+For information on Lotus full nodes and lite nodes, see [Types of nodes](https://lotus.filecoin.io/lotus/get-started/use-cases/).
 
 ### We bought a lot of hard drives of data through the Discover project. When will they be shipped to China?
 
@@ -78,23 +84,23 @@ If you lost the data itself, then no, there's no way to recover that, and you wi
 
 ### Has Filecoin confirmed the use of the SDR algorithm? Is there any evidence of malicious construction?
 
-SDR is confirmed and used, and we have no evidence of malicious construction. The algorithm is also going through both internal and external security audits.
+SDR ([Stacked DRG PoRep](https://spec.filecoin.io/algorithms/porep-old/stacked_drg/#section-algorithms.porep-old.stacked_drg)) is confirmed and used, and we have no evidence of malicious construction. The algorithm is also going through both internal and external security audits.
 
 If you have any information about any potential security problem or malicious construction, reach out to our team at [security@filecoin.org](mailto:security@filecoin.org).
 
 ### How likely is it that the Filecoin protocol will switch to the NSE Proof-of-Replication construction later?
 
-About NSE: NSE is one of the best candidates for a proof upgrade, and teams are working on implementation. But there are other candidates too, which are promising as well. It may be that another algorithm ends up better than NSE -- we don't know yet. Proof upgrades will arrive after the mainnet launch and will coexist.
+Native storage extension (NSE) is one of the best candidates for a proof upgrade, and teams are working on implementation. But there are other candidates too, which are promising as well. It may be that another algorithm ends up better than NSE -- we don't know yet. Proof upgrades will arrive after the mainnet launch and will coexist.
 
 AMD may be optimal hardware for SDR. You can [see this description](https://github.com/filecoin-project/lotus/blob/master/documentation/en/sealing-procs.md) for more information on why.
 
 ### How are you working on bootstrapping the demand side of the marketplace? The Discover program is nice, but who is the target market for users, and how do you get them?
 
-In addition to Filecoin Discover, a number of groups are actively building tools and services to support the adoption of the Filecoin network with developers and clients. For example, check out the recordings from our [Virtual Community Meetup](https://filecoin.io/blog/filecoin-virtual-community-meetup-recap/) to see updates about Textile Powergate and Starling Storage. You can also read more about some of the teams building on Filecoin through HackFS in our [HackFS Week 1 Recap](https://filecoin.io/blog/hackfs-teams-vol-1/).
+In addition to [Filecoin Discover](https://filecoin.io/blog/posts/introducing-filecoin-discover/), a number of groups are actively building tools and services to support the adoption of the Filecoin network with developers and clients. For example, check out the recordings from our [Virtual Community Meetup](https://filecoin.io/blog/filecoin-virtual-community-meetup-recap/) to see updates about Textile Powergate and Starling Storage. You can also read more about some of the teams building on Filecoin through HackFS in our [HackFS Week 1 Recap](https://filecoin.io/blog/hackfs-teams-vol-1/).
 
 ### Does Filecoin have an implementation of client and storage provider order matching through order books?
 
-There will be off-chain order books and storage provider marketplaces -- some are in development now from some teams. They will work mostly off-chain because transactions per second on-chain are not enough for the volume of usage we expect on Filecoin. These order books build on the basic deal-flow on-chain. These order books will arrive in their own development trajectory -- most likely around or soon after the mainnet launch.
+There will be off-chain [order books](https://www.investopedia.com/terms/o/order-book.asp) and storage provider marketplaces -- some are in development now from some teams. They will work mostly off-chain because transactions per second on-chain are not enough for the volume of usage we expect on Filecoin. These order books build on the basic deal-flow on-chain. These order books will arrive in their own development trajectory -- most likely around or soon after the mainnet launch.
 
 ### Why does Filecoin mining work best on AMD?
 
@@ -102,11 +108,11 @@ Currently, Filecoin's Proof of Replication (PoRep) prefers to be run on AMD proc
 
 ### What do storage providers have to do to change a committed capacity (CC) sector into a "real-data" sector?
 
-Miners will publish storage deals that they will upgrade the CC sector with, announce to the chain that they are doing an upgrade, and prove to the chain that a new sector has been sealed correctly. We expect to evolve and make this cheaper and more attractive overtime after the mainnet launch.
+Storage providers will publish storage deals that they will upgrade the CC sector with, announce to the chain that they are doing an upgrade, and prove to the chain that a new sector has been sealed correctly. We expect to evolve and make this cheaper and more attractive over time after the mainnet launch.
 
 ### What does "terminating a sector" mean?
 
-When a committed capacity sector is added to the chain, it can upgrade to a sector with deals, extend its lifetime, or terminate through either faults or voluntary actions. While we don't expect this to happen very often on mainnet, a storage provider may deem it rational to terminate their promise to the network and their clients but accept a penalty for doing so.
+When a committed capacity sector is added to the chain, it can upgrade to a sector with deals, extend its lifetime, or terminate through either faults or voluntary actions. While we don't expect this to happen very often on mainnet, a storage provider may deem it rational to terminate their promise to the network and their clients, and accept a penalty for doing so.
 
 ### Does the committed capacity sector still need to be sealed before it upgrades to one with real data?
 
@@ -124,7 +130,7 @@ Automatic repair of faulted data is a feature we've pushed off until after the m
 
 To avoid extortion, always ensure you store your data with a fairly decentralized set of storage providers (and note: it's pretty difficult for a storage provider to be sure they are the only person storing a particular piece of data, especially if you encrypt the data).
 
-Miners currently provide a 'dumb box' interface and will serve anyone any data they have. Maybe in the future, storage providers will offer ACLs and logins and such, but that requires that you trust the storage provider. The recommended (and safest) approach here is to encrypt data you don't want others to see yourself before storing it.
+Storage providers currently provide a 'dumb box' interface and will serve anyone any data they have. Maybe in the future, storage providers will offer access control lists (ACLs) and logins and such, but that requires that you trust the storage provider. The recommended (and safest) approach here is to encrypt data you don't want others to see yourself before storing it.
 
 ### How do you update data stored on Filecoin?
 
@@ -136,7 +142,9 @@ There's a pretty large design space here, and we can do a bunch of different thi
 
 ### Who will be selected to be verifiers to verify clients on the network?
 
-We don't have more updates about verifiers at this time. We will post on our blog once we do.
+Notaries, selected through an application process, serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
+
+See [Filecoin Plus]({{< relref "filecoin-plus" >}}).
 
 ### Will the existence of Filecoin mining pools lead to centralized storage and away from the vision of distributed storage?
 
