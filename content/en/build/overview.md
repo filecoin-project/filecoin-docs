@@ -56,7 +56,6 @@ The following documentation links can help you start building on Filecoin:
 | ------------------------------------ | ------------------------------------------------------------------------------------ |
 | [Building on Lotus](https://lotus.filecoin.io) | Lotus nodes provide JSON-RPC API with JWT-token-based authorization.                 |
 | [Powergate]({{< relref "powergate.md" >}})            | Powergate is a multitiered storage solution that stores data with IPFS and Filecoin. |
-| [Local devnet]({{< relref "local-devnet.md" >}})      | Learn how to deploy a Filecoin network fully contained on your own computer.         |
 
 ## Additional resources
 
