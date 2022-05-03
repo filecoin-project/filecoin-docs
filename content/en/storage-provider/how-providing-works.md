@@ -173,7 +173,7 @@ Clients looking to onboard storage onto the network apply to community-selected 
 
 Notaries are selected to serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
 
-See [Filecoin Plus]({{< relref "filecoin-plus/#frontmatter-title" >}}).
+See [Filecoin Plus]({{< relref "filecoin-plus#frontmatter-title" >}}).
 
 ### Retrieval provider fees
 
