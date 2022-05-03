@@ -9,15 +9,15 @@ weight: 60
 
 ## Wallets
 
-Wallets allow you to manage your assets without having to meet the relatively high specifications required to run a Lotus node for Filecoin (see [Setup]({{< relref "set-up" >}})). Here are some wallets that you might consider.
+Wallets allow you to manage your assets without having to meet the [relatively high specifications required to run a Lotus node]({{< relref "set-up" >}}) for Filecoin. Here are some wallets that you might consider.
 
 {{< alert icon="warning" >}}
 **Unaudited Wallets**
 
-We don't support any of these wallets. We recommend that you use an audited wallet that comes with hardware-wallet integration, such as Glif web wallet. Wallets that _have_ gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks. Be incredibly cautious when using unaudited wallets.
+We do not support any of these wallets. We recommend that you use an audited wallet that comes with hardware-wallet integration, such as Glif web wallet. Wallets that _have_ gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks. However, just because a wallet has had an audit does not mean that it's 100% bug-proof. Be incredibly cautious when using unaudited wallets.
 {{< /alert >}}
 
-| Name                                           | Description                                                                                                                          | Audited |
+ Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
 | [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet.                                                                                                              | Unknown |
 | FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
@@ -31,9 +31,9 @@ We don't support any of these wallets. We recommend that you use an audited wall
 
 If you have created a wallet, here's how to add it to our list:
 
- - Create an issue in [Filecoin Docs](https://github.com/filecoin-project/filecoin-docs) with the name of the wallet and its features.
- - If the wallet is a mobile wallet, it must be available on both Android and iOS.
- - The wallet must have been audited. The results of this audit must be public.
+- Create an issue in [Filecoin Docs](https://github.com/filecoin-project/filecoin-docs) with the name of the wallet and its features.
+- If the wallet is a mobile wallet, it must be available on both Android and iOS.
+- The wallet must have been audited. The results of this audit must be public.
 
 ## Exchanges
 
