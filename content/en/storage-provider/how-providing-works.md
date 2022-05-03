@@ -44,7 +44,7 @@ Here's a general idea of the minimum hardware you'll need for providing storage:
 
 For more detail, see:
 
-- [Hardware requirements]({{< relref "hardware-requirements/#general-hardware-requirements" >}})
+- [Hardware requirements]({{< relref "hardware-requirements#general-hardware-requirements" >}})
 - [ESPA Module 3C - Hardware requirements](https://www.youtube.com/watch?v=RKihuvJpev4&t=126s)
 
 Every provider's situation is different, but to give you an idea of the level of investment and the possible return, here is one example:
