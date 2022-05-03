@@ -9,23 +9,31 @@ weight: 60
 
 ## Wallets
 
-Wallets allow you to manage your assets without having to deal with a Filecoin node directly.
+Wallets allow you to manage your assets without having to meet the relatively high specifications required to run a Lotus node for Filecoin (see [Setup]({{< relref "set-up" >}})). Here are some wallets that you might consider.
 
 {{< alert icon="warning" >}}
 **Unaudited Wallets**
 
-Be incredibly cautious when using unaudited wallets. Wallets that _have_ gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks.
+We don't support any of these wallets. We recommend that you use an audited wallet that comes with hardware-wallet integration, such as Glif web wallet. Wallets that _have_ gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks. Be incredibly cautious when using unaudited wallets.
 {{< /alert >}}
 
 | Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
-| FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
 | [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet.                                                                                                              | Unknown |
+| FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
+| [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by Filfox.                                                                                             | Yes     |
+| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
 | [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
 | [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
-| [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by Filfox                                                                                             | Yes     |
+
+### Add a wallet to our list
+
+If you have created a wallet, here's how to add it to our list:
+
+ - Create an issue in [Filecoin Docs](https://github.com/filecoin-project/filecoin-docs) with the name of the wallet and its features.
+ - If the wallet is a mobile wallet, it must be available on both Android and iOS.
+ - The wallet must have been audited. The results of this audit must be public.
 
 ## Exchanges
 
@@ -35,7 +43,7 @@ There are many exchanges that allow users to buy, sell, and trade FIL. Websites 
 
 ![Coinmarketcap show a list of exchanges that support FIL.](coinmarketcap-exchanges.png)
 
-Once you have found an exchange you want to use, you will have to create an account with that exchange. Many changes have strict verification and Know-Your-Customer (KYC) processes in place, so it may take a few days to create your account. However, most large exchanges can verify your information in a few minutes.
+Once you have found an exchange you want to use, you will have to create an account with that exchange. Many exchanges have strict verification and Know-Your-Customer (KYC) processes in place, so it may take a few days to create your account. However, most large exchanges can verify your information in a few minutes.
 
 Purchasing cryptocurrency varies from exchange to exchange, but the process is usually something like this:
 
@@ -44,7 +52,7 @@ Purchasing cryptocurrency varies from exchange to exchange, but the process is u
 
 ### Send FIL from your exchange
 
-Once you have FIL in your exchange account, you should be able to send some to the public address you made with your Lotus node. Again, the process for this is different for every exchange, but in general, it goes something like:
+Once you have FIL in your exchange account, you should be able to send some to the public [address]({{< relref "set-up" >}}) you made with your Lotus node. Again, the process for this is different for every exchange, but in general, it goes something like:
 
 1. Submit a withdrawal request with the exchange, including:
     - How much FIL you would like to withdraw.
