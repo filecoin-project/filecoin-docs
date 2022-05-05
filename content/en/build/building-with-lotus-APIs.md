@@ -170,13 +170,14 @@ In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the 
 
 1. Get current chain head
 
-   This function will return the current head of the chain, including current block height, a list of blocks, and a list of CIDs.
+   We can add the following code in `chainDataQuery.mjs` to query current head of the chain. 
+
      ```javascript with-output
       //Query the current block head
       const chainHead = await lotusClient.chain.getHead();
       console.log(chainHead);
      ```
-
+   As a result, it will return the current head of the chain, including current block height, a list of blocks, and a list of CIDs.
       ```shell
       {
         Cids: [
@@ -185,7 +186,7 @@ In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the 
           ],
         Blocks: [
           {...},
-          {...}
+          # long list of additional blocks
           ],
         Height: 781268
       }
@@ -199,7 +200,7 @@ In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the 
     const messages = await lotusClient.chain.getBlockMessages(tipSet.Cids[0]);
     console.log(messages);
     ```
-
+    Using the above code in`chainDataQuery.mjs` , we can also retrieve messages from a certain block height. And the returned message body will look like the following .
     ```shell
     {
       BlsMessages: [
@@ -629,6 +630,7 @@ storeFile();
 
    By this step, you have made a storage deal with a storage provider successfully. The Lotus node will start processing the data and sending it to the storage provider. Your storage deal will need to go through many sub-processes to be finalized on-chain. See the [Deal states](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/store-data/#deal-states) table for more details.
    
+
 You can check the status of your storage deal via the Lotus command line using its CID. 
 
    ```shell with-output
