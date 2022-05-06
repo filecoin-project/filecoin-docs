@@ -58,7 +58,7 @@ Executing messages, for example by including transactions or proofs in the chain
 
 Historically in other blockchains, miners specify a GasFee in a unit of native currency and then pay the block producing miners a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources, since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
 
-The amount of fees burned in the Filecoin network comes given by a dynamic \*_*BaseFee*_ which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers]({{< relref "../get-started/explore-the-network.md" >}}) or by inspecting the current head.
+The amount of fees burned in the Filecoin network is determined by a dynamic \*_*BaseFee*_, which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers]({{< relref "get-started/explore-the-network" >}}) or by inspecting the current head.
 
 Additionally, a number of gas-related parameters are attached to each message and determine the amount of rewards that storage providers get. Here's an overview of the terms and concepts:
 
@@ -67,7 +67,7 @@ Additionally, a number of gas-related parameters are attached to each message an
 - **_GasLimit_**: the limit on the amount of gas that a message's execution can consume, estimated and specified by a message sender. It is measured in units of Gas. The sum of _GasLimit_ for all messages included in a block must not exceed the _BlockGasLimit_. Messages will fail to execute if they run out of _Gas_, and any effects of the execution will be reverted.
 - **_GasFeeCap_**: the maximum token amount that a sender is willing to pay per GasUnit for including a message in a block. It is measured in units of attoFIL/Gas. A message sender must have a minimum balance of _GasFeeCap \* GasLimit_ when sending a message, even though not all of that will be consumed. _GasFeeCap_ can serve as a safeguard against high, unexpected _BaseFee_ fluctuations.
 - **_GasPremium_**: a priority fee that is paid to the block-producing storage provider. This is capped by _GasFeeCap_. The _BaseFee_ has a higher priority. It is measured in units of attoFIL/Gas and can be as low as 1 attoFIL/Gas.
-- **_Overestimation burn_**: an additional amount of gas to burn that grows larger when the difference between _GasLimit_ and _GasUsage_ is large. See [current implementation](https://github.com/filecoin-project/lotus/blob/v0.10.0/chain/vm/burn.go#L38)).
+- **_Overestimation burn_**: an additional amount of gas to burn that grows larger when the difference between _GasLimit_ and _GasUsage_ is large. (See [current implementation](https://github.com/filecoin-project/lotus/blob/v0.10.0/chain/vm/burn.go#L38)).
 
 The total cost of a message for a sender will be:
 
@@ -81,11 +81,11 @@ Filecoin implementations may choose the heuristics of how their storage provider
 
 ## Actors
 
-Actors are a [software design pattern](https://en.wikipedia.org/wiki/Actor_model) for managing state. Accounts, Multisigs, Miners, and anything with a state, such as an account balance, are implemented as an _actor_.
+Actors are a [software design pattern](https://en.wikipedia.org/wiki/Actor_model) for managing state. Accounts, Multisigs, Storage Providers, and anything with a state, such as an account balance, are implemented as an _actor_.
 
 Actors are the Filecoin equivalent of smart contracts in the Ethereum Virtual Machine. As such, Actors are very central components of the system. Any change to the current state of the Filecoin blockchain has to be triggered through an Actor.
 
-see: [https://spec.filecoin.io/#section-systems.filecoin_vm](https://spec.filecoin.io/#section-systems.filecoin_vm)
+See: [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_vm)
 
 ## Addresses
 
@@ -106,7 +106,7 @@ For example, the _burn account_ actor on the mainnet has the ID `99` and the ID 
 
 Actors managed directly by users, like accounts, are derived from a public-private key pair. If you have access to a private key, you can sign messages sent from that actor. The public key is used to derive an address for the actor.
 
-Public key addresses allow devices like the Ledger to derive a valid Filecoin address for your account from just the public key. It doens't need to ask a remote node what your ID address is.
+Public key addresses allow devices like the Ledger to derive a valid Filecoin address for your account from just the public key. It doesn't need to ask a remote node what your ID address is.
 
 Filecoin supports both secp256k1 addresses that begin with `f1` and BLS addresses that begin with `f3`.
 
