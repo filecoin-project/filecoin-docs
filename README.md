@@ -1,9 +1,7 @@
 # Filecoin Documentation
 
 
-<!--TO-DO: where can I get assets for Filecoin to replace IPFS logo and Build, Made, Project Icons?-->
-
-![IPFS documentation logo.](ipfs-docs-header.png)
+![Filecoin logo.](./static/images/filecoin-logo-black-type.svg)
 [![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai/)
 [![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
 
