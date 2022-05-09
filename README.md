@@ -2,8 +2,8 @@
 
 
 ![Filecoin logo.](./static/images/filecoin-logo-black-type.svg)
+
 [![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai/)
-[![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
 
 This repository organizes overall documentation issues across the Filecoin project.
 
