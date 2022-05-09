@@ -1,5 +1,4 @@
 # Filecoin Documentation
-Filecoin Docs
 
 
 <!--TO-DO: where can I get assets for Filecoin to replace IPFS logo and Build, Made, Project Icons?-->
