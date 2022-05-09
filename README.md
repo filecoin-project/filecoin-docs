@@ -11,9 +11,7 @@ This repository organizes overall documentation issues across the Filecoin proje
 
 ## Get involved
 
-<!--TO-DO: do we want to link to this same bounty page or is there a Filecoin specific one?-->
-
-We would **love ❤️ your help** to improve existing items or make new ones even better! [We also have bounties available](https://github.com/ipfs/devgrants/projects/1)!
+We would **love ❤️ your help** to improve existing items or make new ones even better! 
 
 ### Issues
 
