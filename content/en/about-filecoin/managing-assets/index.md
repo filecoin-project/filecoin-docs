@@ -1,6 +1,6 @@
 ---
-title: "Managing assets"
-description: "Many interactions with the Filecoin network require FIL to process. This page explains the different denominations of FIL, how to store it, and how to aquire it."
+title: "FIL token"
+description: "Many interactions with the Filecoin network require FIL to process. Additionally, participants in hackathons may receive FIL as payment for bounties and prizes. This page explains the different denominations of FIL, how to store it, and how to aquire it."
 menu:
     about:
         parent: "about-filecoin-assets"
