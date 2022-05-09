@@ -1,4 +1,4 @@
-# filecoin-docs
+# Filecoin Documentation
 Filecoin Docs
 
 
