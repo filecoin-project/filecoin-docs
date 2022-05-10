@@ -460,7 +460,7 @@ The `filecoin.js` library also supports creating a light wallet using a _mnemoni
     Wallet Address: t1qfyuosiqgoycy5ojwsxtpnlp44orxg4gtmuhhaq
     ```
 
-    Make sure to backup these three items.
+    Make sure to backup these three items by saving and storing `encryptedWallet`  as a json file, and recording mnemonic and wallet address somewhere safe.
 
 1. Request some FIL tokens from the [Calibration Faucet](https://faucet.calibration.fildev.network/) using the wallet address you just received.
 1. Next let's transfer some FIL from your light wallet to another wallet:
@@ -556,21 +556,23 @@ Storing data is one of the most important features of Filecoin. In this section,
     storeFile();
     ```
 
-1. The next step is to import your data to the Lotus node:
+3. The next step is to import your data to the Lotus node:
 
     ```javascript
     const importResult = await lotusClient.client.import({
         Path: "PATH_TO_YOUR_FILE",
         IsCAR: false,
     });
-
+    
     console.log(importResult.Root);
     ```
-    
+
     This returns a CID of your data we'll use to refer to the data in future steps:
 
     ```json
-    OUTPUT
+    {
+      '/': 'bafykbzaceclwpu76hyjemz3ggynjek4y2mh47pwamfp3rk3icnjvsmhsumio6'
+    }
     ```
 
 3. Next, we need to find a storage provider that is willing to accept your storage deal. Since we are using the calibration network for this tutorial, we can use the `list-asks` to find storage providers. It will return a list of `asks` from the storage providers which are actively accepting deals, containing the details of their storage asks:
@@ -643,7 +645,7 @@ Storing data is one of the most important features of Filecoin. In this section,
     ```
 
 By this step, you have made a storage deal with a storage provider successfully. The Lotus node will start processing the data and sending it to the storage provider. Your storage deal will need to go through many sub-processes to be finalized on-chain. See the [Deal states](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/store-data/#deal-states) table for more details.
-   
+
 You can check the status of your storage deal via the Lotus command line using its CID. 
 
 ```shell with-output
