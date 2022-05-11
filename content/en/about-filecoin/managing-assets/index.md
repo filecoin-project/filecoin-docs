@@ -10,7 +10,12 @@ weight: 60
 ## Wallets
 
 <!--TODO: request out to Johnny to verify what goes in relref for the link in this section-->
-Wallets provide a way to securely store digital assets. `FIL` is a native token, meaning it runs on its own blockchain and is not compatible with all wallets out of the box. [Wrapped FIL]{{< relref "wrapped-filecoin" >}} allows the token to interact with other blockchains if desired.
+`FIL` is the native token of the Filecoin network. FIL tokens are used as an economic incentive to ensure data is stored reliably over time.
+
+Wallets provide a way to securely store digital assets. Here are some wallets with FIL support that you might consider.
+
+Note: If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
+
 
 ### Custodial vs. non-custodial
 
