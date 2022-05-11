@@ -35,7 +35,6 @@ Wallets that have gone through an audit have had their codebase checked by a rec
 
 Never share your seed phrase, password, or private keys. Bad actors will often use social engineering tactics such as phishing emails or posing as customer service or tech support to lure users into handing over their private key or seed phrase.
 
-Wallets allow you to manage your assets without having to meet the [relatively high specifications required to run a Lotus node]({{< relref "set-up" >}}) for Filecoin. Here are some wallets that you might consider.
 
 We do not provide support for any of these wallets. We recommend that you use an audited wallet that comes with hardware-wallet integration, such as Glif web wallet.
 
