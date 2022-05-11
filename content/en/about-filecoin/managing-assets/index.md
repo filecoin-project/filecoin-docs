@@ -22,7 +22,7 @@ With non-custodial wallets, the user holds their own private key and has total c
 
 Hot wallet refers to any wallet which is permanently connected to the internet. They can be mobile, desktop, or browser based. Hot wallets make it faster and easier to access digital access, but being could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds you need to access frequently.
 
-Cold wallet most commonly refers to hardware wallet devices. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key which makes them more resistant to loss via theft. Transaction signing happens within the device itself and private keys are never exposed to the network. Cold wallets can take longer to access and are most useful for storing larger balances securely. 
+Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline, and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to loss via theft. Cold wallets can be less convenient, and are most useful for storing larger balances securely. 
 
 ### Security
 
