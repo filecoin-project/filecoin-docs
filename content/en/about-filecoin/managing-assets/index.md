@@ -1,6 +1,6 @@
 ---
 title: "FIL token"
-description: "Many interactions with the Filecoin network require FIL to process. Additionally, participants in hackathons may receive FIL as payment for bounties and prizes. This page explains the different denominations of FIL, how to store it, and how to acquire it."
+description: "FIL is the native token of the Filecoin network. This page explains how to acquire, store, and use FIL tokens."
 menu:
     about:
         parent: "about-filecoin-assets"
