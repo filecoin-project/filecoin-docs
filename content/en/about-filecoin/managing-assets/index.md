@@ -12,7 +12,7 @@ weight: 60
 <!--TODO: request out to Johnny to verify what goes in relref for the link in this section-->
 Wallets provide a way to securely store digital assets. `FIL` is a native token, meaning it runs on its own blockchain and is not compatible with all wallets out of the box. [Wrapped FIL]{{< relref "wrapped-filecoin" >}} allows the token to interact with other blockchains if desired.
 
-### Custodial vs non-custodial
+### Custodial vs. non-custodial
 
 A custodial wallet is one which is hosted by an exchange. These wallets can come with a greater sense of security as the exchange holds the private keys. Many will also provide insurance to help recover funds lost to fraud, similar to centralized stock or bank accounts. The tradeoff is assets in custodial wallets can be frozen or seized by the associated exchange. Most custodial wallets also have KYC (Know Your Customer) requirements which require users to verify their identity in order to use the service.
 
