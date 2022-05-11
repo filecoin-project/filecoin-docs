@@ -18,7 +18,7 @@ A custodial wallet is one which is hosted by an exchange. These wallets can come
 
 With non-custodial wallets, the user holds their own private key and has total control over the movement of assets. Non-custodial wallet users are also solely responsible for securing their assets. Protecting private keys and seed phrases is extremely important to prevent fraudulent access to assets. Most non-custodial wallets do not have KYC requirements and allow users to maintain anonymity.
 
-### Hot vs cold
+### Hot vs. cold
 
 Hot wallet refers to any wallet which is permanently connected to the internet. They can be mobile, desktop, or browser based. Hot wallets make it faster and easier to access digital access, but being could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds you need to access frequently.
 
