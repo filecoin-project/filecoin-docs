@@ -225,6 +225,7 @@ In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the 
     //Query Wallet balance
     const walletBalance = await lotusClient.wallet.balance("t1ne72cbn6r55wea7ifjv4ypyti7t2df5dumsjhzq");
     ```
+
 Apart from the basic data queries shown above, there are many more features. Please see the [Lotus JSON-RPC API Reference](https://lotus.filecoin.io/developers/apis/json-rpc/) for all Lotus API definitions. Note that some API calls require an [authorization token](https://lotus.filecoin.io/developers/api-access/#obtaining-tokens).
 
 ## Manage wallets and FIL tokens
@@ -260,7 +261,7 @@ Lotus wallets are created and hosted in the Lotus node. When the Lotus node is r
     This will output your auth token. Save this somewhere, we'll be using it later:
 
     ```shell
-    eyJhbGciOiJIUzI1NiIsInRaaaaaa.xxxxxxx.bbbbbbbbbbbvq1W0ZjqrXHygd6fBRk
+eyJhbGciOiJIUzI1NiIsInRaaaaaa.xxxxxxx.bbbbbbbbbbbvq1W0ZjqrXHygd6fBRk
     ```
 
 1. Create a new file called `lotusWallet.mjs` in the same project as earlier. This is where we'll write all out wallet-related code.
