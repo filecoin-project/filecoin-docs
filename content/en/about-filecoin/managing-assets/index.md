@@ -28,7 +28,7 @@ We do not provide technical support for any of these wallets.
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
 | [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
 
-### Hot vs. cold
+### Hot versus cold
 
 Hot wallet refers to any wallet which is permanently connected to the internet. They can be mobile, desktop, or browser based. Hot wallets make it faster and easier to access digital access, but being could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds you need to access frequently.
 
