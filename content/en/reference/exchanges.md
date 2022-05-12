@@ -8,11 +8,11 @@ menu:
 
 ## Filecoin Integration Guide
 
-This page lists the general steps and workflows you need to follow to offer filecoin (FIL) on an exchange. This page is not a complete guide, and you will likely have to have some communication with the Lotus team at some point. However, the information laid out here should give you a solid understanding of the work involved and serve as a jumping-off point for your project.
+This page lists the general steps and workflows you need to follow to offer FIL on an exchange. This page is not a complete guide, and you will likely have to have some communication with the Lotus team at some point. However, the information laid out here should give you a solid understanding of the work involved and serve as a jumping-off point for your project.
 
 ## Running a Filecoin node
 
-If you plan to offer filecoin (FIL) on your exchange, you will need to run a Filecoin node. [Lotus](https://lotus.filecoin.io) is the reference implementation node for the Filecoin network, and as such, is currently the most production-ready implementation available.
+If you plan to offer FIL on your exchange, you will need to run a Filecoin node. [Lotus](https://lotus.filecoin.io) is the reference implementation node for the Filecoin network, and as such, is currently the most production-ready implementation available.
 
 ### Node setup and installation
 

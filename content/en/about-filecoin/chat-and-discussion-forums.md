@@ -1,6 +1,6 @@
 ---
 title: "Chat & discussion forums"
-description: "Connect with the Filecoin community in dicussion forums or on IRC"
+description: "Connect with the Filecoin community in discussion forums or on IRC"
 menu:
     about:
         parent: "about-filecoin-community"

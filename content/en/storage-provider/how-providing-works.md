@@ -22,9 +22,9 @@ The Filecoin network has multiple types of providers:
 - _Retrieval providers_: (under development) will be responsible for providing quick pipes to retrieve files
 - _Repair providers_: to be implemented
 
-**Storage providers** are the heart of the network. They earn Filecoin by storing data for clients and computing cryptographic proofs to verify storage across time, and they earn rewards for adding new blocks of data. The probability of earning transaction fees and block rewards is proportional to the amount of storage the storage provider contributes to the Filecoin network.
+**Storage providers** are the heart of the network. They earn FIL by storing data for clients and computing cryptographic proofs to verify storage across time, and they earn rewards for adding new blocks of data. The probability of earning transaction fees and block rewards is proportional to the amount of storage the storage provider contributes to the Filecoin network.
 
-**Retrieval providers** will be the veins of the network. They will earn Filecoin by winning bids and provider fees, determined by the market value of the file they're retrieving. A retrieval provider’s bandwidth and bid/initial-response-time for deals (i.e., speed and how close to the client) will determine its ability to close retrieval deals on the network. The maximum bandwidth of a retrieval provider will set the total quantity of deals it can make.
+**Retrieval providers** will be the veins of the network. They will earn FIL by winning bids and provider fees, determined by the market value of the file they're retrieving. A retrieval provider’s bandwidth and bid/initial-response-time for deals (i.e., speed and how close to the client) will determine its ability to close retrieval deals on the network. The maximum bandwidth of a retrieval provider will set the total quantity of deals it can make.
 
 ## Requirements
 
