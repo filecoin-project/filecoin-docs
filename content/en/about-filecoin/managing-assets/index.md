@@ -64,9 +64,9 @@ Some exchanges place a limit on how much you can withdraw at once. The exchange 
 
 It may take a few minutes for your FIL to show up in your Lotus address. If you do not see the FIL in your Lotus address 30 minutes after the withdrawal is complete from your exchange, get in touch with your exchange's support team for help.
 
-## Denominations of Filecoin
+## Denominations of FIL
 
-Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than 1 whole `FIL`. The different denominations of `FIL` are:
+Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using FIL. This is because some actions on the Filecoin network require substantially less value than 1 whole FIL. The different denominations of FIL are:
 
 | Name     | Decimal             |
 | -------- | ------------------- |
