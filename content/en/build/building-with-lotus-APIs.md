@@ -40,24 +40,24 @@ The following the steps walk-through how to install a Lotus node. Further, more 
 
 1. Download the Lotus source code. The version number of the latest release can be found on the [lotus releases](https://github.com/filecoin-project/lotus/releases) page:
 
-   ```shell
-   git clone https://github.com/filecoin-project/lotus.git
-   cd lotus
-   git checkout vX.X.X # tag for the latest release
-   ```
+    ```shell
+    git clone https://github.com/filecoin-project/lotus.git
+    cd lotus
+    git checkout vX.X.X # tag for the latest release
+    ```
 
 1. Build and install Lotus for the Calibration network:
 
-   ```shell
-   make clean calibnet
-   sudo make install
-   ```
+    ```shell
+    make clean calibnet
+    sudo make install
+    ```
 
 1. Download the latest chain snapshot using the [CID listed under `Genesis CAR file`](https://docs.filecoin.io/networks/overview/#calibration). Then sync to the network which will take several hours to fully sync the chain:
 
-   ```shell
-   lotus daemon --import-snapshot curl -sI https://www.mediafire.com/file/q7tc2bmcc9d09vv/lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz/file
-   ```
+    ```shell
+    lotus daemon --import-snapshot curl -sI https://www.mediafire.com/file/q7tc2bmcc9d09vv/lotus_cali_snapshot_2021_07_14_high_73770.car.tar.xz/file
+    ```
 
 1. [Create a wallet](https://lotus.filecoin.io/lotus/manage/manage-fil/#creating-a-wallet) and request some test FIL from the [Faucet](https://faucet.calibration.fildev.network/).
 1. [Enable remote API access to your Lotus node](https://lotus.filecoin.io/developers/api-access/).
@@ -68,29 +68,29 @@ To make sure everything's running and set up properly, we should check a couple 
 
 1. First, check the status of your local node:
 
-  ```shell with-output
-  lotus sync wait
-  ```
+    ```shell with-output
+    lotus sync wait
+    ```
 
-  ```shell
-  > Worker: 10161; Base: 778820; Target: 778820 (diff: 0)
-  > State: complete; Current Epoch: 778820; Todo: 0
-  > 
-  > Done!
-  ```
+    ```shell
+    > Worker: 10161; Base: 778820; Target: 778820 (diff: 0)
+    > State: complete; Current Epoch: 778820; Todo: 0
+    > 
+    > Done!
+    ```
 
   This tells us that our node is fully synced and ready to go.
 
 1. Next, let's check that the test FIL has landed in your wallet:
 
-  ```shell with-output
-  lotus wallet list 
-  ```
+    ```shell with-output
+      lotus wallet list 
+      ```
 
-  ```shell
-  Address                                    Balance        Nonce  
-  t154xvuihhicgluafwmohwzwmtmqp44pwwgewyvma  100 FIL          0
-  ```
+      ```shell
+      Address                                    Balance        Nonce  
+      t154xvuihhicgluafwmohwzwmtmqp44pwwgewyvma  100 FIL          0
+      ```
 
   This tells us that the testnet faucet was able to send us some test FIL.
 
@@ -100,17 +100,17 @@ Let's set up a Node.js project with the necessary dependencies.
 
 1. Create a new Node.js project.
 
-   ```shell
-   mkdir build-with-lotus && cd build-with-lotus
+    ```shell
+    mkdir build-with-lotus && cd build-with-lotus
 
-   npm init
-   ```
+    npm init
+    ```
 
 2. Install the filecoin.js library.
 
-   ```shell
-   npm install filecoin.js
-   ```
+    ```shell
+    npm install filecoin.js
+    ```
 
 ### Test a simple function
 
@@ -169,32 +169,28 @@ In the previous step, we created a `chainDataQuery.mjs` file to demonstrate the 
 
 1. Get current chain head:
 
-   We can add the following code in `chainDataQuery.mjs` to query current head of the chain.
+    We can add the following code in `chainDataQuery.mjs` to query current head of the chain.
 
-     ```javascript with-output
-      //Query the current block head
-      const chainHead = await lotusClient.chain.getHead();
-      console.log(chainHead);
-     ```
+    ```javascript with-output
+     //Query the current block head
+     const chainHead = await lotusClient.chain.getHead();
+     console.log(chainHead);
+    ```
 
-   As a result, it will return the current head of the chain, including current block height, a list of blocks, and a list of CIDs.
+    As a result, it will return the current head of the chain, including current block height, a list of blocks, and a list of CIDs.
 
-      ```shell
-      {
-
+    ```shell
+    {
         Cids: [
-          {'/': 'bafy2bzacecdkonmhngylnnhrk4azkg2wkgcm6cnm5qn5sk4ww5cszjlvkgkd6'},
-          {'/': 'bafy2bzaceaglcpzhd5gfrzdyt7ce3e5asnbfz3s3stbqyxniziny5snewbpbg'}
-          ],
+            {'/': 'bafy2bzacecdkonmhngylnnhrk4azkg2wkgcm6cnm5qn5sk4ww5cszjlvkgkd6'},
+            {'/': 'bafy2bzaceaglcpzhd5gfrzdyt7ce3e5asnbfz3s3stbqyxniziny5snewbpbg'}
+        ],
         Blocks: [
-
-          {...},
-          # long list of additional blocks
-          ],
+            {...} # long list of additional blocks
+        ],
         Height: 781268
-      }
-
-      ```
+    }
+    ```
 
 2. Get messages in a block
 
@@ -264,7 +260,6 @@ Lotus wallets are created and hosted in the Lotus node. When the Lotus node is r
 1. Next, generate an authorization token with _sign_ permission:
 
     ```shell with-output
-
     lotus auth create-token --perm sign
     ```
 
@@ -376,8 +371,8 @@ Lotus wallets are created and hosted in the Lotus node. When the Lotus node is r
 
 1. Now, you should have created a new address in your Lotus node and also transferred some FIL tokens to it. Next, let's query the balance of all your wallet addresses in the Lotus node:
 
-   ```javascript
-   async function walletBalance(){
+    ```javascript
+    async function walletBalance(){
        try {
            //Get the list of wallet address on your Lotus node & query their balance
            const walletAdds = await lotusWallet.getAddresses();
@@ -392,24 +387,24 @@ Lotus wallets are created and hosted in the Lotus node. When the Lotus node is r
        } catch (error) {
            console.log(error);
        }
-   }
+    }
 
-   // Test walletBalance function
-   walletBalance();
-   ```
+    // Test walletBalance function
+    walletBalance();
+    ```
 
 1. Run the code to test the FIL transfer:
 
-   ```shell with-output
-   node lotusWallet.mjs
-   ```
+    ```shell with-output
+    node lotusWallet.mjs
+    ```
 
-   This will output the FIL values in attoFIL:
+    This will output the FIL values in attoFIL:
 
-   ```shell
-   t154xvuihhicgluafwmohwzwmtmqp44pwwgewyvma : 89999999675971952500
-   t1ax5kdqxrrecxpyys6svvxjing7shqju26ytcsoa : 10000000000000000000
-   ```
+    ```shell
+    t154xvuihhicgluafwmohwzwmtmqp44pwwgewyvma : 89999999675971952500
+    t1ax5kdqxrrecxpyys6svvxjing7shqju26ytcsoa : 10000000000000000000
+    ```
 
 1. You can also check the balance directly in your Lotus node through the command line:
 
@@ -526,7 +521,6 @@ The `filecoin.js` library also supports creating a light wallet using a _mnemoni
 
       '/': 'bafy2bzaceamdsqcc3jccrhvwrz6kmpujfkg6crwynmrtal2nsmwkqv22bktrs'
     }
-
     ```
 
     After the message containing this transfer makes it on-chain, you will be able to see it using the [Filecoin Calibration Explorer](https://calibration.filscan.io/tipset/message-list) website.
@@ -632,7 +626,6 @@ Storing data is one of the most important features of Filecoin. In this section,
 
     ```plaintext
     Provider is active: true
-
     ```
 
 1. Create a storage deal with a storage provider. Replace `t00001` with the storage provider ID you chose:
