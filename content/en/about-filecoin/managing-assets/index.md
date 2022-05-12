@@ -9,19 +9,24 @@ weight: 60
 
 ## Wallets
 
-<!--TODO: request out to Johnny to verify what goes in relref for the link in this section-->
 `FIL` is the native token of the Filecoin network. FIL tokens are used as an economic incentive to ensure data is stored reliably over time.
 
 Wallets provide a way to securely store digital assets. Here are some wallets with FIL support that you might consider.
 
 Note: If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
 
+We do not provide technical support for any of these wallets.
 
-### Custodial vs. non-custodial
-
-A custodial wallet is one which is hosted by an exchange. These wallets can come with a greater sense of security as the exchange holds the private keys. Many will also provide insurance to help recover funds lost to fraud, similar to centralized stock or bank accounts. The tradeoff is assets in custodial wallets can be frozen or seized by the associated exchange. Most custodial wallets also have KYC (Know Your Customer) requirements which require users to verify their identity in order to use the service.
-
-With non-custodial wallets, the user holds their own private key and has total control over the movement of assets. Non-custodial wallet users are also solely responsible for securing their assets. Protecting private keys and seed phrases is extremely important to prevent fraudulent access to assets. Most non-custodial wallets do not have KYC requirements and allow users to maintain anonymity.
+ Name                                           | Description                                                                                                                          | Audited |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet.                                                                                                              | Unknown |
+| FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
+| [FilWallet](https://filwallet.co) | A FIL-focused crypto wallet, available on Android and iOS. | Unknown |
+| [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by Filfox.                                                                                             | Yes     |
+| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
+| [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
+| [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
+| [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
 
 ### Hot vs. cold
 
@@ -34,21 +39,6 @@ Cold wallets most commonly refer to hardware wallet devices shaped like a USB st
 Wallets that have gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks. However, just because a wallet has had an audit does not mean that it’s 100% bug-proof. Be incredibly cautious when using unaudited wallets.
 
 Never share your seed phrase, password, or private keys. Bad actors will often use social engineering tactics such as phishing emails or posing as customer service or tech support to lure users into handing over their private key or seed phrase.
-
-
-We do not provide support for any of these wallets.
-
-
- Name                                           | Description                                                                                                                          | Audited |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet.                                                                                                              | Unknown |
-| FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
-| [FilWallet](https://filwallet.co) | A FIL-focused crypto wallet, available on Android and iOS. | Unknown |
-| [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by Filfox.                                                                                             | Yes     |
-| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
-| [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
-| [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
-| [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
 
 ### Add a wallet to our list
 
