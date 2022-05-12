@@ -1,0 +1,57 @@
+# Filecoin Documentation
+
+
+![Filecoin logo.](./static/images/filecoin-logo-black-type.svg)
+
+[![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai/)
+
+This repository organizes overall documentation issues across the Filecoin project.
+
+**If you'd just like to read the Filecoin docs, we recommend the website version of the info contained in this repo! https://docs.filecoin.io/**
+
+## Get involved
+
+We would **love ❤️ your help** to improve existing items or make new ones even better! 
+
+### Issues
+
+If you find something wrong within this repository, please raise an [issue here →](https://github.com/filecoin-project/filecoin-docs/issues). Unless the issue is urgent, updates will be batch-merged into `main` on Tuesdays or Thursdays.
+
+### Suggestions
+
+Everyone has an opinion when it comes to docs, and **that's a good thing**! Having folks from different backgrounds add to a discussion empowers everyone within that discussion. So if you've got something to add or would like to bring up a topic for discussion about the Filecoin Docs project, please do so! [Just create an issue using the `kind/discussion` tag!](https://github.com/filecoin-project/filecoin-docs/labels/kind%2Fdiscussion).
+
+#### Pull requests welcome
+
+Feel free to submit pull requests with any changes you'd like to see! If you're simply changing a typo or editing out a styling bug, you can add `ciskip` to the title of your pull request to stop Filecorgi from running.
+
+## Project set up
+
+If you want to build this site locally, run the following:
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/filecoin-project/filecoin-docs.git
+   ```
+
+1. Move into the `filecoin-docs` folder and install the NPM dependencies:
+
+   ```bash
+   cd filecoin-docs
+   npm install
+   ```
+
+1. Boot up the application in _dev mode_:
+
+   ```bash
+   npm start
+   ```
+
+1. Open [localhost:1313](http://localhost:1313/) in your browser.
+1. Close the local server with `CTRL` + `c`.
+1. To restart the local server, run `npm start` from within the `filecoin-docs` folder.
+
+## License
+
+All software code is copyright (c) Protocol Labs, Inc. under the **MIT license**. Other written documentation and content is copyright (c) Protocol Labs, Inc. under the [**Creative Commons Attribution-Share-Alike License**](https://creativecommons.org/licenses/by/4.0/).
