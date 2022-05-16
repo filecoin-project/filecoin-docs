@@ -18,15 +18,17 @@ To see if providing storage and/or retrieval is right for you, consider the requ
 
 The Filecoin network has multiple types of providers:
 
-- _Storage providers_: responsible for storing files and data on the network
-- _Retrieval providers_: (under development) will be responsible for providing quick pipes to retrieve files
-- _Repair providers_: to be implemented
+- _Storage providers_: responsible for storing files and data on the network.
+- _Retrieval providers_: (under development) will be responsible for providing quick pipes to retrieve files.
+- _Repair providers_: to be implemented.
 
-**Storage providers** are the heart of the network. They earn Filecoin by storing data for clients and computing cryptographic proofs to verify storage across time, and they earn rewards for adding new blocks of data. The probability of earning transaction fees and block rewards is proportional to the amount of storage the storage provider contributes to the Filecoin network.
+**Storage providers** are the heart of the network. They earn FIL by storing data for clients and computing cryptographic proofs to verify storage across time, and they earn rewards for adding new blocks of data. The probability of earning transaction fees and block rewards is proportional to the amount of storage the storage provider contributes to the Filecoin network.
 
-**Retrieval providers** will be the veins of the network. They will earn Filecoin by winning bids and provider fees, determined by the market value of the file they're retrieving. A retrieval provider’s bandwidth and bid/initial-response-time for deals (i.e., speed and how close to the client) will determine its ability to close retrieval deals on the network. The maximum bandwidth of a retrieval provider will set the total quantity of deals it can make.
+**Retrieval providers** will be the veins of the network. They will earn FIL by winning bids and provider fees, determined by the market value of the file they're retrieving. A retrieval provider’s bandwidth and bid/initial-response-time for deals (i.e., speed and how close to the client) will determine its ability to close retrieval deals on the network. The maximum bandwidth of a retrieval provider will set the total quantity of deals it can make.
 
-## Hardware requirements
+## Requirements
+
+### Hardware requirements
 
 The hardware requirements for providers are very demanding, but once you acquire them, they're not expected to increase in the foreseeable future. Money spent on hardware should provide you with many years of reliable service, paying for itself several times over.
 
@@ -51,7 +53,7 @@ For an 18-month period, an investment of $147k covered combined capital expenses
 
 See [Filecoin Storage Provider Bootcamp, by ESPA](https://www.youtube.com/watch?v=T-TgPILQD3c) (at 14:47).
 
-## Install Lotus application
+### Lotus application
 
 To store files, you'll need to install Lotus.
 
@@ -59,7 +61,7 @@ Lotus is an application that tells computers how to talk to other computers (tha
 
 See [Lotus > Install > Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
-## Storage provider collateral
+### Storage provider collateral
 
 Most permissionless blockchain networks require an upfront investment in resources to participate in the consensus. The more power an entity has on the network, the greater the share of total resources it needs to own, both in terms of physical resources and/or staked tokens (collateral).
 
@@ -71,13 +73,13 @@ Filecoin includes three different collateral mechanisms:
 
 See [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_mining.miner_collaterals).
 
-## Gas fees
+### Gas fees
 
 You must pay a nominal gas fee for resources used for sealing storage. You can set a gas limit, above which a transaction will not execute, allowing for control.
 
 ![Gas fees are negligible compared to collateral.](collateral-gas.png)
 
-## Storage provider deals
+### Storage provider deals
 
 Deals are the core function of the Filecoin network. Each deal represents a storage agreement between a client and a provider.
 
@@ -89,18 +91,11 @@ Once a client has decided on a provider to store with, they notify the provider 
 
 See [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06).
 
-For more details on deals from the client's point of view, see:
-
-- [Store data > Create a deal](..get-started/store-and-retrieve/store-data/#create-a-deal)
-- [Retrieve data > Get the deal information](../get-started/store-and-retrieve/retrieve-data/#get-the-deal-information)
-
-## Data transfer
+### Sealing: Proof of Replication (PoRep)
 
 After the deal is published, the client prepares the data for storage and transfers it to the provider. Upon receiving all the data, the provider packs the data into a sector (the fundamental storage unit used by Filecoin) and seals it.
 
 See [Preparing and transferring data](https://proto.school/verifying-storage-on-filecoin/02).
-
-## Sealing: Proof of Replication (PoRep)
 
 Sealing is accomplished by using the first of two kinds of storage proofs:
 
@@ -118,7 +113,7 @@ See:
 - [Proof of Replication (PoRep)](https://proto.school/verifying-storage-on-filecoin/03)
 - [A Guide to Filecoin Storage Mining > Advanced Mining Considerations](https://filecoin.io/blog/posts/a-guide-to-filecoin-storage-mining/)
 
-## Proof of SpaceTime (PoSt)
+### Proof of SpaceTime (PoSt)
 
 Once the data is sealed, the storage provider is ready to begin submitting ongoing proofs to the chain that the data continue to be stored and remain the same.
 
@@ -126,13 +121,13 @@ Throughout the lifetime of the deal, the provider submits ongoing proofs, PoSt, 
 
 See [Proof of Spacetime (PoSt)](https://proto.school/verifying-storage-on-filecoin/04).
 
-## Retrieval provider role
+### Retrieval provider role
 
 Retrieval providers will play a role at the end of a storage provider deal.
 
 To qualify for this role, a potential retrieval provider will need to perform a Proof of Retrievability (PoR), a compact proof that a target file is intact, in the sense that the client can fully recover it.
 
-## zk-SNARKs
+### zk-SNARKs
 
 Both the Proof of Replication and Proof of Spacetime processes use zk-SNARKs for compression.
 
@@ -142,7 +137,7 @@ zk-SNARKs are an important part of consensus mechanisms on the blockchain, becau
 
 See [zk-SNARKs](https://proto.school/verifying-storage-on-filecoin/05).
 
-## Slashing
+### Slashing
 
 _Slashing_ is a set of penalties that are to be paid by storage providers if they fail to provide sector reliability or decide to voluntarily exit the network.
 
@@ -158,7 +153,9 @@ For more information, see:
 - [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06)
 - [slashing](slashing.md)
 
-## Storage provider power and rewards
+## Rewards
+
+### Storage provider power and rewards
 
 Each Filecoin provider has an associated _power_ value in the network that is proportional to the amount of space contributed and determines the chances to win the right to add a block to an epoch (a specific point on the chain). By adding blocks, providers obtain _block rewards_ and collect fees for the messages included in that block.
 
@@ -168,7 +165,7 @@ Block rewards are meant to bootstrap the Filecoin network. They decrement as rea
 
 See [Storage provider rewards](storage-provider-rewards.md).
 
-## Verified storage deals
+### Verified storage deals
 
 Filecoin Plus aims to enable the demand side of the Filecoin network and maximize the amount of useful storage on Filecoin by adding a layer of social trust to the network and introducing a novel resource called DataCap.
 
@@ -180,7 +177,7 @@ Notaries are selected to serve as fiduciaries for the Filecoin Network and are r
 
 See [Filecoin Plus](https://docs.filecoin.io/store/filecoin-plus/#frontmatter-title).
 
-## Retrieval provider fees
+### Retrieval provider fees
 
 _Retrieval providers_ will not be additionally rewarded with the ability to add blocks to the Filecoin blockchain; their only reward will be the fee they extract from the client.
 

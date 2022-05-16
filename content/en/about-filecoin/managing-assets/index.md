@@ -1,6 +1,6 @@
 ---
-title: "Managing assets"
-description: "Many interactions with the Filecoin network require FIL to process. This page explains the different denominations of FIL, how to store it, and how to aquire it."
+title: "FIL token"
+description: "FIL is the native token of the Filecoin network. This page explains how to acquire, store, and use FIL tokens."
 menu:
     about:
         parent: "about-filecoin-assets"
@@ -9,13 +9,13 @@ weight: 60
 
 ## Wallets
 
-Wallets allow you to manage your assets without having to meet the [relatively high specifications required to run a Lotus node]({{< relref "set-up" >}}) for Filecoin. Here are some wallets that you might consider.
+`FIL` is the native token of the Filecoin network. FIL tokens are used as an economic incentive to ensure data is stored reliably over time.
 
-{{< alert icon="warning" >}}
-**Unaudited Wallets**
+Wallets provide a way to securely store digital assets. Here are some wallets with FIL support that you might consider.
 
-We do not support any of these wallets. We recommend that you use an audited wallet that comes with hardware-wallet integration, such as Glif web wallet. Wallets that _have_ gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks. However, just because a wallet has had an audit does not mean that it's 100% bug-proof. Be incredibly cautious when using unaudited wallets.
-{{< /alert >}}
+Note: If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
+
+We do not provide technical support for any of these wallets.
 
  Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
@@ -27,6 +27,18 @@ We do not support any of these wallets. We recommend that you use an audited wal
 | [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
 | [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
+
+### Hot versus cold
+
+Hot wallet refers to any wallet which is permanently connected to the internet. They can be mobile, desktop, or browser based. Hot wallets make it faster and easier to access digital access, but being could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds you need to access frequently.
+
+Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline, and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to loss via theft. Cold wallets can be less convenient, and are most useful for storing larger balances securely. 
+
+### Security
+
+Wallets that have gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks. However, just because a wallet has had an audit does not mean that it’s 100% bug-proof. Be incredibly cautious when using unaudited wallets.
+
+Never share your seed phrase, password, or private keys. Bad actors will often use social engineering tactics such as phishing emails or posing as customer service or tech support to lure users into handing over their private key or seed phrase.
 
 ### Add a wallet to our list
 
@@ -51,22 +63,9 @@ Purchasing cryptocurrency varies from exchange to exchange, but the process is u
 1. Add funds to your exchange account in your local currency (USD, EUR, YEN, etc.).
 1. Exchange your local currency for FIL at a set price.
 
-### Send FIL from your exchange
-
-Once you have FIL in your exchange account, you should be able to send some to the public [address]({{< relref "set-up" >}}) you made with your Lotus node. Again, the process for this is different for every exchange, but in general, it goes something like:
-
-1. Submit a withdrawal request with the exchange, including:
-    - How much FIL you would like to withdraw.
-    - Where you want the FIL to be sent to. This value should be the public address `f16mwi...` you made with your Lotus node.
-1. Wait for the withdrawal to finish.
-
-Some exchanges place a limit on how much you can withdraw at once. The exchange may also place a time-lock on your withdrawal.
-
-It may take a few minutes for your FIL to show up in your Lotus address. If you do not see the FIL in your Lotus address 30 minutes after the withdrawal is complete from your exchange, get in touch with your exchange's support team for help.
-
 ## Denominations of Filecoin
 
-Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than 1 whole `FIL`. The different denominations of `FIL` are:
+Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than 1 whole `FIL`. The different denominations of `FIL` you may see referenced across the ecosystem are:
 
 | Name     | Decimal             |
 | -------- | ------------------- |

@@ -72,13 +72,13 @@ Filecoin combines many elements of other file storage and distribution systems. 
     </tr>
 </table>
 
-### Filecoin vs. Bitcoin
+### Filecoin tokens (FIL) vs. Bitcoin tokens (BTC)
 
 <table class="comparison">
     <tr>
         <th></th>
-        <th>Filecoin</th>
-        <th>Bitcoin</th>
+        <th>FIL</th>
+        <th>BTC</th>
     </tr>
     <tr>
         <td>Main use case</td>
