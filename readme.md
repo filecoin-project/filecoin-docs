@@ -10,15 +10,12 @@ This repository organizes overall documentation issues across the Filecoin proje
 
 ## Get involved
 
-We would **love ❤️ your help** to improve existing items or make new ones even better! <!--[We also have bounties available](https://github.com/ipfs/devgrants/projects/1)!-->
+We would **love ❤️ your help** to improve existing items or make new ones even better!
+
 
 ### Issues
 
 If you find something wrong within this repository, please raise an [issue here →](https://github.com/filecoin-project/filecoin-docs/issues). Unless the issue is urgent, updates will be batch-merged into `main` on Tuesdays or Thursdays.
-
-<!--### Bounties
-
-You can earn the undying love of the Filecoin community _and_ make some money by closing an issue with the [`bounty` tag](https://github.com/ipfs/ipfs-docs/issues?q=is%3Aopen+is%3Aissue+label%3Abounty)! Submissions must be production-ready and meet all the specifications listed on the issue page. Check out the [current list of open bounties →](https://github.com/ipfs/devgrants/projects/1) -->
 
 If you are attempting to close an issue, great! Thanks for the help! Please leave a comment within the issue requesting to be assigned to that issue **before** submitting a pull request. This minimizes the chance of multiple different contributors duplicating work by submitting pull requests for the same issue. If you submit a pull request to an issue _without_ first being assigned to it, that pull request may not be accepted.
 
@@ -57,13 +54,6 @@ If you want to build this site locally, run the following:
 1. Close the local server with `CTRL` + `c`.
 1. To restart the local server, run `npm start` from within the `filecoin-docs` folder.
 1. To publish the site run: ```npm run build``` The project will be built and saved to /public.
-
-## Core members
-
-<!--TO-DO: keep these same key members or update for more Filecoin specific people?-->
-
-- [@johnnymatthews](https://github.com/johnnymatthews): Project leadership, organization, and primary contact
-- [@cwaring](https://github.com/cwaring): Development support
 
 ## License
 
