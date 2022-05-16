@@ -57,7 +57,7 @@ If you want to build this site locally, run the following:
 
 ## License
 
-The Filecoin documentation project is dual-licensed under Apache 2.0 and MIT terms, as explained in the Permissive License Stack:
+Dual-licensed by Protocol Labs under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0) and [MIT](http://opensource.org/licenses/MIT) terms, as explained in the [Permissive License Stack](https://protocol.ai/blog/announcing-the-permissive-license-stack/):
 
 Apache License, Version 2.0, (LICENSE-APACHE or http://www.apache.org/licenses/LICENSE-2.0)
 MIT license (LICENSE-MIT or http://opensource.org/licenses/MIT)
