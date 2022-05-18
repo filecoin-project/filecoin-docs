@@ -65,6 +65,7 @@ Tools to check status and details of the network and chain.
 
 ### Chain data and monitoring
 
+- [dashboard.starboard.ventures](https://dashboard.starboard.ventures/) - network health monitoring
 - [Filstats.io](https://filstats.io) - node telemetry monitoring - add your node!
 - Orphan blocks (not an official protocol term in the Filecoin Spec) - Blocks without rewards that were either mined on the wrong tipset that the network fails to deliver in time, or a mix resulting in reorgs.
   - [Orphan Block Statistics](https://filscout.com/en/orphan-block)
@@ -73,9 +74,10 @@ Tools to check status and details of the network and chain.
 
 ### Storage/Deals status
 
-- [Filecoin Storage Stats](https://storage.filecoin.io/) - general storage summary of Filecoin.
-- [filecoin.tools](https://filecoin.tools) - check your CID's storage deal status.
-- [file.app](https://file.app/) - Filecoin miner analytics.
+- [storageindex.io](https://www.storageindex.io/) - compares storage capacity of different networks
+- [storage.filecoin.io](https://storage.filecoin.io/) - general storage summary of Filecoin
+- [filecoin.tools](https://filecoin.tools) - check your CID's storage deal status
+- [file.app](https://file.app/) - Filecoin miner analytics
 - [Deals list at Filfox.io](https://filfox.info/en/deal)
 
 ## Storage Web Applications
