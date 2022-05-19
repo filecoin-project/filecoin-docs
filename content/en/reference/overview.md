@@ -218,6 +218,8 @@ Wallets that have conducted third-party audits of their open-source code by a re
 - [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **_recommended_** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger hardware (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below).
 - [**Ledger HW wallet** in Filecoin Docs](https://lotus.filecoin.io/lotus/manage/manage-fil/) - **_recommended_** - Ledger Live support for Filecoin is coming soon. Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node's CLI.
 
+Also see the [Wallet-related tools](#wallet-related-tools) section above.
+
 ### Other wallets
 
 The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
