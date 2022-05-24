@@ -7,6 +7,7 @@ menu:
         parent: "getstarted-overview"
 aliases:
     - /get-started
+    - /how-to/install-filecoin
 ---
 
 Working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
