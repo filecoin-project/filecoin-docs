@@ -26,7 +26,7 @@ The Filecoin network has multiple types of providers:
 
 **Retrieval providers** will be the veins of the network. They will earn FIL by winning bids and provider fees, determined by the market value of the file they're retrieving. A retrieval provider’s bandwidth and bid/initial-response-time for deals (i.e., speed and how close to the client) will determine its ability to close retrieval deals on the network. The maximum bandwidth of a retrieval provider will set the total quantity of deals it can make.
 
-## Requirements
+## Responsibilities
 
 ### Hardware requirements
 
@@ -89,13 +89,15 @@ However, providers need to monitor their system to acknowledge and respond to of
 
 Once a client has decided on a provider to store with, they notify the provider that they're interested in the deal. They then lock up sufficient funds in an associated wallet to cover the total cost of the deal. When the provider accepts the storage agreement, they publish the deal to the Filecoin blockchain, committing both parties to the deal.
 
-See [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06).
-
-### Sealing: Proof of Replication (PoRep)
-
-After the deal is published, the client prepares the data for storage and transfers it to the provider. Upon receiving all the data, the provider packs the data into a sector (the fundamental storage unit used by Filecoin) and seals it.
+The client then prepares the data for storage and transfers it to the provider.
 
 See [Preparing and transferring data](https://proto.school/verifying-storage-on-filecoin/02).
+
+### Proofs
+
+#### Sealing: Proof of Replication (PoRep)
+
+Upon receiving all the data, the provider packs the data into a sector (the fundamental storage unit used by Filecoin) and seals it.
 
 Sealing is accomplished by using the first of two kinds of storage proofs:
 
@@ -104,16 +106,17 @@ Sealing is accomplished by using the first of two kinds of storage proofs:
 
 Proofs are the consensus mechanisms by which users in a peer-to-peer network come to agreement without the need for a central authority. All participants in the network work together to verify each deal.
 
-PoRep is the confirmation that the provider sends the client, so the client can be certain the data is being stored properly, and the execution of the deal has officially begun. It seals the deal. PoRep happens just once, at the time the data is first stored by the storage provider. It takes up to 24 hours to seal the data.
+PoRep is the confirmation that the provider sends the client, so the client can be certain the data is being stored properly, and the execution of the deal has officially begun. PoRep happens just once, at the time the data is first stored by the storage provider. It takes up to 24 hours to seal the data.
 
 Sealing is computation-intense and is performed over a sector that results in a unique representation of the sector. The properties of this new representation are essential to proving that the data has been received and later to prove ongoing storage of the same data.
 
 See:
 
+- [Centralized and decentralized storage](https://proto.school/verifying-storage-on-filecoin/01) Scroll down to Cryptographic proofs.
 - [Proof of Replication (PoRep)](https://proto.school/verifying-storage-on-filecoin/03)
 - [A Guide to Filecoin Storage Mining > Advanced Mining Considerations](https://filecoin.io/blog/posts/a-guide-to-filecoin-storage-mining/)
 
-### Proof of SpaceTime (PoSt)
+#### Proof of SpaceTime (PoSt)
 
 Once the data is sealed, the storage provider is ready to begin submitting ongoing proofs to the chain that the data continue to be stored and remain the same.
 
@@ -121,13 +124,7 @@ Throughout the lifetime of the deal, the provider submits ongoing proofs, PoSt, 
 
 See [Proof of Spacetime (PoSt)](https://proto.school/verifying-storage-on-filecoin/04).
 
-### Retrieval provider role
-
-Retrieval providers will play a role at the end of a storage provider deal.
-
-To qualify for this role, a potential retrieval provider will need to perform a Proof of Retrievability (PoR), a compact proof that a target file is intact, in the sense that the client can fully recover it.
-
-### zk-SNARKs
+#### zk-SNARKs
 
 Both the Proof of Replication and Proof of Spacetime processes use zk-SNARKs for compression.
 
@@ -152,6 +149,12 @@ Slashing is a key part of the incentivization that encourages good behavior amon
 For more information, see:
 - [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06)
 - [slashing](slashing.md)
+
+### Retrieval provider role
+
+Retrieval providers will play a role at the end of a storage provider deal.
+
+To qualify for this role, a potential retrieval provider will need to perform a Proof of Retrievability (PoR), a compact proof that a target file is intact, in the sense that the client can fully recover it.
 
 ## Rewards
 
