@@ -83,7 +83,7 @@ You must pay a nominal gas fee for resources used for sealing storage. You can s
 
 Deals are the core function of the Filecoin network. Each deal represents a storage agreement between a client and a provider.
 
-The provider prepares himself by acquiring the required hardware and storage or retrieval capacity. Providers don't need to advertise their services, as Filecoin does that for them. A storage provider only needs to set their available capacity, duration, and desired price.
+The provider prepares themselves by acquiring the required hardware and storage or retrieval capacity. Providers don't need to advertise their services, as Filecoin does that for them. A storage provider only needs to set their available capacity, duration, and desired price.
 
 However, providers need to monitor their system to acknowledge and respond to offers. Monitoring used to be done by physically sitting in front of a computer, but the field is growing so quickly, that monitoring can now be automated by software created by Filecoin participants for this purpose. See [CID gravity](https://www.cidgravity.com/) for pricing and client management.
 
