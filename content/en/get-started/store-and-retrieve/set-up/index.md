@@ -58,6 +58,61 @@ You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebr
     ```
 
 1. Lotus is now installed on your computer.
+### MacOS Build from source
+{{< alert icon="warning" >}}**STEF: we should expand this to make it friendlier**
+{{< /alert >}}
+If Homebrew isn't working, or if you prefer to build from source, try these steps. 
+
+1. Check that the XCode command line tools are installed.
+
+    ```shell
+    xcode-select -p (if missing, run xcode-select --install )
+    ```
+1. Install the pre-requisites via Homebrew (STEF: install homebrew instructions first?)
+    ```shell
+    brew install go bzr jq pkg-config rustup hwloc
+    ```
+1. Clone the latest sources (STEF: should this be just a download of the tar.gz? )
+    ```shell
+    git clone https://github.com/filecoin-project/lotus.git
+    ```
+1. Switch into the lotus folder
+    ```shell
+    cd lotus/
+    ```
+1. Checkout the latest release
+    ```shell
+    git checkout tags/v1.15.1
+    ```
+1. Setup some environment variables correctly (STEF: check this homebrew path is necessary?)
+    ```shell
+    export LIBRARY_PATH=/opt/homebrew/lib
+    export FFI_BUILD_FROM_SOURCE=1
+    ```
+1. Install Rust (when prompted, choose the default 'install' option) 
+    ```shell
+    rustup-init
+    ```
+1. Make sure ~/.lotus does not exist. If it does, you have a previous lotus installation in place- be very careful not to destroy your wallet ids and data) (STEF: improve this instruction, also is this the right place?)
+
+1. Update all the dependencies 
+    ```shell
+    git submodule update --init
+    ```
+1. Build all the clients. Make a cup of tea.
+    ```shell
+    make all
+    ```
+
+{{< alert icon="tip" >}}If you get a warning: 'kIOMasterPortDefault' is deprecated: first deprecated in macOS 12.0 , don't worry - the build still worked. 
+{{< /alert >}}
+
+1. Finally, install the client into your system
+    ```shell
+    sudo make install
+    ```
+
+Now, you're ready to [run a Lotus lite node](http://localhost:1313/get-started/store-and-retrieve/set-up/#run-a-lotus-lite-node)
 
 ### Ubuntu
 
@@ -67,7 +122,9 @@ There are two simple ways to install Lotus on Ubuntu:
 - [Snap](#snap)
 
 #### AppImage
-
+{{< alert icon="warning" >}}
+AppImage is not currently available, please use another option.
+{{< /alert >}}
 1. Update and upgrade your system:
 
     ```shell
@@ -77,19 +134,19 @@ There are two simple ways to install Lotus on Ubuntu:
 1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/):
 
     ```shell
-    wget https://github.com/filecoin-project/lotus/releases/download/v1.11.1/Lotus-v1.11.1-x86_64.AppImage
+    wget https://github.com/filecoin-project/lotus/releases/download/v1.15.1/Lotus-v1.15.1-x86_64.AppImage
     ```
 
 1. Make the `AppImage` executable:
 
     ```shell
-    chmod +x Lotus-v1.11.1-x86_64.AppImage
+    chmod +x Lotus-v1.15.1-x86_64.AppImage
     ```
 
 1. Move the `AppImage` to `/usr/local/bin` and rename it `lotus`:
 
     ```shell
-    sudo mv Lotus-v1.11.1-x86_64.AppImage /usr/local/bin/lotus
+    sudo mv Lotus-v1.15.1-x86_64.AppImage /usr/local/bin/lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
@@ -181,6 +238,10 @@ It is incredibly important that you backup your addreses. Storing a copy of your
     This will create a new file called `my_address.key` in the current directory.
 
 Once you have your address in a file, you can copy it to another drive, securely send it to another computer, or even print it out. It's important to keep this file safe. If anything happens to your Lotus node, you can still access your funds using this file.
+
+## FIL or Filecoin Plus
+
+STEF: explain the difference.
 
 ## Filecoin Plus
 
