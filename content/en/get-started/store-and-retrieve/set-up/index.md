@@ -84,10 +84,9 @@ If Homebrew isn't working, or if you prefer to build from source, try these step
     ```shell
     git checkout tags/v1.15.1
     ```
-1. Setup some environment variables correctly (STEF: check this homebrew path is necessary?)
+1. Setup some environment variables correctly
     ```shell
-    export LIBRARY_PATH=/opt/homebrew/lib
-    export FFI_BUILD_FROM_SOURCE=1
+    export LIBRARY_PATH=/opt/homebrew/lib; export FFI_BUILD_FROM_SOURCE=1
     ```
 1. Install Rust (when prompted, choose the default 'install' option) 
     ```shell
@@ -99,12 +98,12 @@ If Homebrew isn't working, or if you prefer to build from source, try these step
     ```shell
     git submodule update --init
     ```
-1. Build all the clients. Make a cup of tea.
+1. Build the clients
     ```shell
     make all
     ```
 
-{{< alert icon="tip" >}}If you get a warning: 'kIOMasterPortDefault' is deprecated: first deprecated in macOS 12.0 , don't worry - the build still worked. 
+{{< alert icon="tip" >}}If you get a warning: 'kIOMasterPortDefault' is deprecated: first deprecated in macOS 12.0' , don't worry - the build still worked. 
 {{< /alert >}}
 
 1. Finally, install the client into your system
@@ -114,14 +113,17 @@ If Homebrew isn't working, or if you prefer to build from source, try these step
 
 Now, you're ready to [run a Lotus lite node](http://localhost:1313/get-started/store-and-retrieve/set-up/#run-a-lotus-lite-node)
 
-### Ubuntu
+### Linux
 
-There are two simple ways to install Lotus on Ubuntu:
+<!-- There are two simple ways to install Lotus on Linux (this is tested on Ubuntu): -->
 
-- [AppImage](#appimage)
+The easiest way to install the lotus client is to use Snap.
+<!--
+- [AppImage](#appimage) -->
 - [Snap](#snap)
 
-#### AppImage
+
+<!-- #### AppImage
 {{< alert icon="warning" >}}
 AppImage is not currently available, please use another option.
 {{< /alert >}}
@@ -150,7 +152,7 @@ AppImage is not currently available, please use another option.
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
-
+-->
 #### Snap
 
 {{< alert icon="warning" >}}**Requirements**
@@ -239,9 +241,9 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 
 Once you have your address in a file, you can copy it to another drive, securely send it to another computer, or even print it out. It's important to keep this file safe. If anything happens to your Lotus node, you can still access your funds using this file.
 
-## FIL or Filecoin Plus
+## buying FIL or Filecoin Plus?
 
-STEF: explain the difference.
+Before you can transact on the network, you usually have to add some Filecoin to your wallet. You can do this via an exchange (STEF: link to an easy one), but you can bypass this stage by applying for Filecoin Plus Datacap. 
 
 ## Filecoin Plus
 
