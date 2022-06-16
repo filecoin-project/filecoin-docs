@@ -23,19 +23,20 @@ Reset your Lotus full-node computer if you are still facing issues after editing
 
 Run `echo $SHELL` to find out which shell you are using:
 
-```shell with-output
-echo $SHELL
-```
-```                                                                                                ~
-/bin/zsh
-```
+    ```shell
+    echo $SHELL
+    ```
+
+    ```plaintext
+    /bin/zsh
+    ```
 
 ## Which CPU does my Mac have?
 
 Open a terminal window and run:
 
-```shell
-sysctl -n machdep.cpu.brand_string
-```
+    ```shell
+    sysctl -n machdep.cpu.brand_string
+    ```
 
 M1-based Macs will return `Apple M1`. Macs with AMD or Intel-based CPUs will get something like `Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz`

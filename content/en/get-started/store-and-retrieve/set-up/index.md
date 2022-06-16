@@ -118,11 +118,11 @@ Now that you have Lotus ready to run, you can start a Lotus lite-node on your co
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address:
 
-    ```shell with-output
+    ```shell
     FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
     ```
 
-    ```
+    ```plaintext
     ...
     2021-06-16T02:00:08.390Z        INFO    markets loggers/loggers.go:56   module ready   {"module": "storage client"}
     2021-06-16T02:00:08.392Z        INFO    markets loggers/loggers.go:56   module ready   {"module": "retrieval client"}
@@ -143,11 +143,11 @@ There are two parts to a Filecoin address: the public address and the private ke
 
 1. Open a new terminal window and create an address using the `lotus wallet new` command:
 
-    ```shell with-output
+    ```shell
     lotus wallet new
     ```
 
-    ```
+    ```plaintext
     f1fwavjcfb32nxbczmh3kgdxhbffqjfsfby2otloi
     ```
 
@@ -163,11 +163,11 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 
 1. If your public address `f1...` is still in the terminal window, copy it to your clipboard. If not, list the addresses associated with your Lotus node and copy your public address:
 
-    ```shell with-output
+    ```shell
     lotus wallet list
     ```
 
-    ```
+    ```plaintext
     Address                                    Balance  Nonce  Default
     f1nau67e6k6ggdwluatfz4waexetjfrqmx6fil3nq  0 FIL    0      X
     ```

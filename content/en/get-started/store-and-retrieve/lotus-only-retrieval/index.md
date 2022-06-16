@@ -60,9 +60,7 @@ Jun 21 23:00:07  bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy  0 
     lotus client get-deal bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy | jq '."DealInfo: "."Provider"'
     ```
 
-    This gives you the Miner ID:
-
-    ```
+    ```plaintext
     "f0127896"
     ```
 
@@ -75,8 +73,6 @@ Jun 21 23:00:07  bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy  0 
     ```shell
     lotus client get-deal bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy | jq '."DealInfo: "."DataRef"."Root"."/"'
     ```
-
-    This gives you the Data CID:
 
     ```shell
     "bafykbzacecjiqho3qy2wwvtdqwhwalsklpdwrssn7jmg7jzvuya75xtuir2yg"
@@ -91,8 +87,6 @@ Jun 21 23:00:07  bafyreig237v7gnohrn3k425v5xnavgn6pbddvhjm3whjpko5r4vqvjfdmy  0 
     ```shell
     lotus client retrieve --miner <MINER ID> <DATA CID> outfile.tar
     ```
-
-    So something like this:
 
     ```shell
     lotus client retrieve --miner f0127896 bafykbzacecjiqho3qy2wwvtdqwhwalsklpdwrssn7jmg7jzvuya75xtuir2yg ~/outfile.tar

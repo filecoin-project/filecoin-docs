@@ -112,11 +112,11 @@ We're going to use FilRep to check that the minimum deal size of the storage pro
 1. Click the **Settings** toggle to display a list of all available storage provider details.
 1. Make sure that the **Min File Size** column is selected:
 
-    ![](filrep-select-columns.png)
+    ![FilRep showing miner reputation.](filrep-select-columns.png)
 
 1. Now you can search for the storage providers you found before, using the miner ID.
 
-    ![](filrep-search-min-file-size.png)
+    ![Searching for an SP in Filrep.](filrep-search-min-file-size.png)
 
 1. Check that the minimum file size is lower than 5 GiB, and that they charge 0 FIL for verified deals.
 1. If the minimum file size shown for any of your storage providers is larger than 5 GiB, or they charge more thann 0 FIL for verified deals, go back to [the previous section](#filecoin-plus-provider-registry) and select a new storage provider.
@@ -137,13 +137,13 @@ To complete this section, you need the **Data CID** you received after running `
 
 1. Specify the CID of the payload you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/5gb-filecoin-payload.bin`:
 
-    ```plaintext output
+    ```plaintext
     Data CID (from lotus client import): bafykbz...
     ```
 
 1. Wait for Lotus to finish calculating the size of your payload. Lotus calculates this size by counting the individual bits in your payload to ensure that the size is accurate.
 
-    ```plaintext output
+    ```plaintext
     .. calculating data size
     ```
 
@@ -151,25 +151,25 @@ To complete this section, you need the **Data CID** you received after running `
 
 1. Enter the number of days you want to keep this file on Filecoin. The minimum is 180 days:
 
-    ```plaintext output
+    ```plaintext
     Deal duration (days): 180
     ```
 
 1. Tell Lotus whether or not this is a Filecoin Plus deal. Since you signed up to Filecoin Plus in an earlier step, select `yes` here:
 
-    ```plaintext output
+    ```plaintext
     Make this a verified deal? (yes/no): yes
     ```
 
 1. Enter the miner IDs from the previous section with an empty space separating the two IDs:
 
-    ```plaintext output
+    ```plaintext
     Miner Addresses (f0.. f0..), none to find: f01000 f01001
     ```
 
 1. Confirm your transaction by entering `yes`:
 
-    ```plaintext output
+    ```plaintext
     -----
     Proposing from f136b5uqa73jni2rr745d3nek4uw6qiy6b6zmmvcq
             Balance: 2 FIL
@@ -184,7 +184,7 @@ To complete this section, you need the **Data CID** you received after running `
 
 1. Lotus will returns two **Deal CIDs**:
 
-    ```plaintext output
+    ```plaintext
     .. executing
     Deal (f01000) CID: bafyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpteau
     Deal (f01001) CID: bafeauyreict2zhkbwy2arri3jgthk2jyznck47umvpqis3hc5oclvskwpt
@@ -212,9 +212,7 @@ Once the data has been sent to the storage clients, the storage deals can take s
     lotus client list-transfers
     ```
 
-    This command will output something like:
-
-    ```plaintext output
+    ```plaintext
     Sending Channels
     ID                   Status   Sending To   Root Cid     Initiated?  Transferred  Voucher
     1620782601911586915  Ongoing  ...KPFTTwY7  ...zyd3kapm  Y           224.1MiB     ...bqhcidjmajbelhlxfqry3d7qlu3tvar45a"}}
@@ -225,15 +223,14 @@ Once the data has been sent to the storage clients, the storage deals can take s
 
     If the output of `lotus client list-transfers` is empty, then your transfer has finished:
 
-    ```shell with-output
+    ```shell
     lotus client list-transfers
     ```
-    ```
+
+    ```plaintext
     Sending Channels
 
-
     Receiving Channels
-
 
     ```
 
