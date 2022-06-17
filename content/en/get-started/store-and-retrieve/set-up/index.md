@@ -118,7 +118,7 @@ Now, you're ready to [run a Lotus lite node](http://localhost:1313/get-started/s
 <!-- There are two simple ways to install Lotus on Linux (this is tested on Ubuntu): -->
 
 The easiest way to install the lotus client is to use Snap.
-<!--
+<!-- Commenting out AppImage until it builds again
 - [AppImage](#appimage) -->
 - [Snap](#snap)
 
@@ -241,9 +241,9 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 
 Once you have your address in a file, you can copy it to another drive, securely send it to another computer, or even print it out. It's important to keep this file safe. If anything happens to your Lotus node, you can still access your funds using this file.
 
-## buying FIL or Filecoin Plus?
+## Adding FIL to your wallet or using Filecoin Plus?
 
-Before you can transact on the network, you usually have to add some Filecoin to your wallet. You can do this via an exchange (STEF: link to an easy one), but you can bypass this stage by applying for Filecoin Plus Datacap. 
+Before you can transact on the network, you usually have to add some Filecoin to your wallet. You can do this via an exchange such as https://ftx.com or https://www.coinbase.com (STEF: add links to an easy one), but you can bypass this stage by applying for Filecoin Plus Datacap below. If you have Datacap on your wallet, then transaction fees are covered (STEF: How?), and you can start doing deals faster.  
 
 ## Filecoin Plus
 
