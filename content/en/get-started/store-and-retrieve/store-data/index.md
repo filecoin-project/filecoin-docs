@@ -36,19 +36,12 @@ For this tutorial, we're going to create a dummy 5GB file full of random data an
 
 1. Create a 5GB block of random data to serve as our payload:
 
-    **MacOS** users must run:
-
-    ```shell
-    dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1m count=5200
-    ```
-
-    **Linux** users should run:
 
     ```shell
     dd if=/dev/urandom of=5gb-filecoin-payload.bin bs=1M count=5200
     ```
 
-    This process will take about 60 seconds to create a dummy file.
+    This process will take up to 60 seconds to create a dummy file.
 
 We now have our payload file ready to be stored using the Filecoin network.
 
@@ -68,11 +61,17 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
     Import 3, Root bafykb...
     ```
 
-    This process takes about 60 seconds.
+    This process takes up to 60 seconds.
 
 1. Make a note of the CID `bafykb...`. This is your **Data CID**. We'll use it in an upcoming section.
 
-Now that Lotus knows which file we want to use, we can create a deal with a Filecoin storage provider to store our data!
+{{< alert icon="tip" >}}
+'lotus client local' will list all the currently imported CIDs
+{{< /alert >}}
+
+Now that Lotus has imported your file, we can create a deal with a Filecoin storage provider to store our data!
+
+
 
 ## Find a storage provider
 
@@ -99,6 +98,7 @@ Let's find a couple of storage providers to store our data.
     Some storage providers list multiple miner IDs. For these storage providers, just copy one of the IDs:
 
     ![A list of storage providers, highlighting one storage provider with multiple IDs.](miner-with-multiple-miner-ids.png)
+STEF: update these images 
 
 1. Make sure to write down the IDs of the storage providers you want to use. We'll be referring to these IDs in the next section.
 
