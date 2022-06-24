@@ -147,6 +147,7 @@ When storage providers agree to store data for a client, they're required to put
 Slashing is a key part of the incentivization that encourages good behavior amongst all the players in the Filecoin network.
 
 For more information, see:
+
 - [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06)
 - [slashing]({{< relref "slashing" >}}))
 
@@ -166,7 +167,7 @@ Additionally, providers submit storage proofs regularly to the chain. This enabl
 
 Block rewards are meant to bootstrap the Filecoin network. They decrement as real storage utility and fees take over.
 
-See [Storage provider rewards]({{< "storage-provider-rewards" >}}).
+See [Storage provider rewards]({{< relref "storage-provider/rewards" >}}).
 
 ### Verified storage deals
 
