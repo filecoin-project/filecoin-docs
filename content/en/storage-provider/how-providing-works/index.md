@@ -44,7 +44,7 @@ Here's a general idea of the minimum hardware you'll need for providing storage:
 
 For more detail, see:
 
-- [Hardware requirements](./storage-provider/hardware-requirements/#general-hardware-requirements)
+- [Hardware requirements]({{< relref "hardware-requirements#general-hardware-requirements" >}})
 - [ESPA Module 3C - Hardware requirements](https://www.youtube.com/watch?v=RKihuvJpev4&t=126s)
 
 Every provider's situation is different, but to give you an idea of the level of investment and the possible return, here is one example:
@@ -59,7 +59,7 @@ To store files, you'll need to install Lotus.
 
 Lotus is an application that tells computers how to talk to other computers (that follow the same rules), so they can store data for clients.
 
-See [Lotus > Install > Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
+See Lostus install [Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
 ### Storage provider collateral
 
@@ -114,7 +114,7 @@ See:
 
 - [Centralized and decentralized storage](https://proto.school/verifying-storage-on-filecoin/01) Scroll down to Cryptographic proofs.
 - [Proof of Replication (PoRep)](https://proto.school/verifying-storage-on-filecoin/03)
-- [A Guide to Filecoin Storage Mining > Advanced Mining Considerations](https://filecoin.io/blog/posts/a-guide-to-filecoin-storage-mining/)
+- [A Guide to Filecoin Storage Mining](https://filecoin.io/blog/posts/a-guide-to-filecoin-storage-mining/). See _Advanced mining considerations_.
 
 #### Proof of SpaceTime (PoSt)
 
@@ -147,8 +147,9 @@ When storage providers agree to store data for a client, they're required to put
 Slashing is a key part of the incentivization that encourages good behavior amongst all the players in the Filecoin network.
 
 For more information, see:
+
 - [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06)
-- [slashing](slashing.md)
+- [slashing]({{< relref "slashing" >}}))
 
 ### Retrieval provider role
 
@@ -166,7 +167,7 @@ Additionally, providers submit storage proofs regularly to the chain. This enabl
 
 Block rewards are meant to bootstrap the Filecoin network. They decrement as real storage utility and fees take over.
 
-See [Storage provider rewards](storage-provider-rewards.md).
+See [Storage provider rewards]({{< relref "storage-provider/rewards" >}}).
 
 ### Verified storage deals
 
