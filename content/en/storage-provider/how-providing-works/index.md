@@ -149,7 +149,7 @@ Slashing is a key part of the incentivization that encourages good behavior amon
 For more information, see:
 
 - [Verifying your deal](https://proto.school/verifying-storage-on-filecoin/06)
-- [slashing]({{< relref "slashing" >}}))
+- [slashing]({{< relref "slashing" >}})
 
 ### Retrieval provider role
 
