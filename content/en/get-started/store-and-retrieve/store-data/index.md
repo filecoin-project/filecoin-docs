@@ -95,14 +95,10 @@ Let's find a couple of storage providers to store our data.
 
     ![A collection of storage providers listed in the Filecoin Plus storage provider registry.](miner-x-listings.png)
 
-    Some storage providers list multiple miner IDs. For these storage providers, just copy one of the IDs:
-
-    ![A list of storage providers, highlighting one storage provider with multiple IDs.](miner-with-multiple-miner-ids.png)
-STEF: update these images 
 
 1. Make sure to write down the IDs of the storage providers you want to use. We'll be referring to these IDs in the next section.
 
- 
+
 ### Miner reputation systems
 
 The Filecoin Plus storage provider registry is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep, you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.

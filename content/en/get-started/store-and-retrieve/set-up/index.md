@@ -58,6 +58,9 @@ You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebr
     ```
 
 1. Lotus is now installed on your computer.
+
+[Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+
 ### MacOS Build from source
 
 If Homebrew doesn't work for you, or if you prefer to build from source, try these steps. 
@@ -162,7 +165,7 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
     ```shell
     sudo snap install lotus-filecoin
     ```
-2. Once the lotus-filecoin snap install returns the command prompt, stop the automatic lotus process.
+2. The snap installer automatically starts a full lotus node in the background. For the purposes of this tutorial, we don't want that, so stop it, and then we can run a lotus lite node instead.
 
     ```shell
     sudo snap stop lotus-filecoin
