@@ -102,6 +102,7 @@ STEF: update these images
 
 1. Make sure to write down the IDs of the storage providers you want to use. We'll be referring to these IDs in the next section.
 
+STEF: Does the following section make sense given that we've just asked them to choose 2 SPs - better to just get on with the deal? 
 ### Miner reputation systems
 
 The Filecoin Plus storage provider registry is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep, you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.
