@@ -181,16 +181,16 @@ Now that you have Lotus ready to run, you can start a Lotus lite-node on your co
 `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but should not be used in a development or in a production environment.
 {{< /alert >}}
 
-1. Open a terminal windows and run the `lotus-filecoin.lotus daemon --lite` command, using `api.chain.love` as the full-node address:
+{{< alert icon="tip" >}}
+if you installed via Snap, the binary name is 'lotus-filecoin.lotus' instead of just 'lotus'
+{{< /alert >}}
+
+1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address:
 
     ```shell with-output
     sudo FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
     ```
-    Or if you installed via Snap, the binary name is 'lotus-filecoin.lotus' instead of just 'lotus' 
-    ```shell with-output
-    sudo FULLNODE_API_INFO=wss://api.chain.love lotus-filecoin.lotus daemon --lite
-    ```
-
+    
     ```
     ...
     2021-06-16T02:00:08.390Z        INFO    markets loggers/loggers.go:56   module ready   {"module": "storage client"}
@@ -213,7 +213,7 @@ There are two parts to a Filecoin address: the public address and the private ke
 1. Open a new terminal window and create an address using the `lotus wallet new` command:
 
     ```shell with-output
-    sudo lotus-filecoin.lotus wallet new
+    sudo lotus wallet new
     ```
 
     ```
@@ -233,7 +233,7 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 1. If your public address `f1...` is still in the terminal window, copy it to your clipboard. If not, list the addresses associated with your Lotus node and copy your public address:
 
     ```shell with-output
-   sudo lotus-filecoin.lotus wallet list
+   sudo lotus wallet list
     ```
 
     ```
@@ -244,7 +244,7 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 1. Use `lotus wallet export` to export your private key, replacing `f1...` with your public key:
 
     ```shell
-    sudo lotus-filecoin.lotus wallet export f1... > my_address.key
+    sudo lotus wallet export f1... > my_address.key
     ```
 
     This will create a new file called `my_address.key` in the current directory.
