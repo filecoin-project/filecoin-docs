@@ -59,20 +59,19 @@ You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebr
 
 1. Lotus is now installed on your computer.
 ### MacOS Build from source
-{{< alert icon="warning" >}}**STEF: we should expand this to make it friendlier**
-{{< /alert >}}
-If Homebrew isn't working, or if you prefer to build from source, try these steps. 
+
+If Homebrew doesn't work for you, or if you prefer to build from source, try these steps. 
 
 1. Check that the XCode command line tools are installed.
 
     ```shell
     xcode-select -p (if missing, run xcode-select --install )
     ```
-1. Install the pre-requisites via Homebrew (STEF: install homebrew instructions first?)
+1. Install the pre-requisites via Homebrew
     ```shell
     brew install go bzr jq pkg-config rustup hwloc
     ```
-1. Clone the latest sources (STEF: should this be just a download of the tar.gz? )
+1. Clone the latest sources
     ```shell
     git clone https://github.com/filecoin-project/lotus.git
     ```
@@ -82,7 +81,7 @@ If Homebrew isn't working, or if you prefer to build from source, try these step
     ```
 1. Checkout the latest release
     ```shell
-    git checkout tags/v1.15.1
+    git checkout tags/v1.16.0
     ```
 1. Setup some environment variables correctly
     ```shell
@@ -92,7 +91,6 @@ If Homebrew isn't working, or if you prefer to build from source, try these step
     ```shell
     rustup-init
     ```
-1. Make sure ~/.lotus does not exist. If it does, you have a previous lotus installation in place- be very careful not to destroy your wallet ids and data) (STEF: improve this instruction, also is this the right place?)
 
 1. Update all the dependencies 
     ```shell
@@ -111,7 +109,7 @@ If Homebrew isn't working, or if you prefer to build from source, try these step
     sudo make install
     ```
 
-Now, you're ready to [run a Lotus lite node](http://localhost:1313/get-started/store-and-retrieve/set-up/#run-a-lotus-lite-node)
+Now, you're ready to [run a Lotus lite node](/get-started/store-and-retrieve/set-up/#run-a-lotus-lite-node)
 
 ### Linux
 
@@ -136,19 +134,19 @@ AppImage is not currently available, please use another option.
 1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/):
 
     ```shell
-    wget https://github.com/filecoin-project/lotus/releases/download/v1.15.1/Lotus-v1.15.1-x86_64.AppImage
+    wget https://github.com/filecoin-project/lotus/releases/download/v1.16.0/Lotus-v1.16.0-x86_64.AppImage
     ```
 
 1. Make the `AppImage` executable:
 
     ```shell
-    chmod +x Lotus-v1.15.1-x86_64.AppImage
+    chmod +x Lotus-v1.16.0-x86_64.AppImage
     ```
 
 1. Move the `AppImage` to `/usr/local/bin` and rename it `lotus`:
 
     ```shell
-    sudo mv Lotus-v1.15.1-x86_64.AppImage /usr/local/bin/lotus
+    sudo mv Lotus-v1.16.0-x86_64.AppImage /usr/local/bin/lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
@@ -248,7 +246,10 @@ Once you have your address in a file, you can copy it to another drive, securely
 
 ## Adding FIL to your wallet or using Filecoin Plus?
 
-Before you can transact on the network, you usually have to add some Filecoin to your wallet. You can do this via an exchange such as https://ftx.com or https://www.coinbase.com (STEF: add links to an easy one), but you can bypass this stage by applying for Filecoin Plus Datacap below. If you have Datacap on your wallet, then transaction fees are covered (STEF: How?), and you can start doing deals faster.  
+Before you can transact on the network, you usually have to add some Filecoin to your wallet. You can do this via an exchange such as [Coinbase](https://www.coinbase.com), but you can bypass this stage by applying for Filecoin Plus Datacap below. If you have Datacap on your wallet, then transaction fees are covered, and you can start doing deals faster.  
+
+{{< alert icon="tip" >}}[Read more about managing wallets](/about-filecoin/managing-assets)
+{{< /alert >}}
 
 ## Filecoin Plus
 
