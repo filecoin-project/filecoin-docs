@@ -132,6 +132,12 @@ To complete this section, you need the **Data CID** you received after running `
 
     The interactive deal assistant will now ask you some questions.
 
+{{< alert icon="warning" >}}
+If you get a error 'actor not found', it likely means this address has never had FIL or Datacap added to it. You'll need to add some of either before you can do a deal.
+[Add Datacap](/get-started/store-and-retrieve/set-up/#filecoin-plus)
+[Add FIL](/get-started/store-and-retrieve/set-up/#adding-fil-to-your-wallet-or-using-filecoin-plus)
+{{< /alert >}}
+
 1. Specify the CID of the payload you want to backup on Filecoin. This is the CID that you got from running `lotus client import ~/5gb-filecoin-payload.bin`:
 
     ```plaintext output

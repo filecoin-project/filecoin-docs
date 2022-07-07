@@ -95,10 +95,6 @@ If Homebrew doesn't work for you, or if you prefer to build from source, try the
     rustup-init
     ```
 
-1. Update all the dependencies 
-    ```shell
-    git submodule update --init
-    ```
 1. Build the clients
     ```shell
     make all
@@ -273,15 +269,24 @@ DataCap acts as a kind of _multiplier_ for block rewards. If a storage provider 
 Signing up to Filecoin Plus is easy and free!
 
 {{< alert icon="tip" >}}
-You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with the team on Filecoin Slack](https://filecoin.io/slack/).
+You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with #fil-lotus-help on Filecoin Slack](https://filecoinproject.slack.com/archives/CPFTWMY7N).
 {{< /alert >}}
 
 1. Go to [plus.fil.org](https://plus.fil.org).
-1. Under **For isClients**, click **Proceed**.
-1. Under **Get verified**, click **Get Verified**.
+1. Under **For Clients**, click **Proceed**.
+1. Under **Get Verified**, click **Get Datacap**.
 1. Click **Automatic Verification**.
-1. Click **Start** next to the GitHub logo.
+1. Click **Github** to connect to your Github account
 1. In the `Request` field, enter the public address you got from running `lotus wallet list`. This step may take a few minutes to complete.
+
+You can check your Filecoin Plus balance with
+```shell
+lotus filplus check-client-datacap f1...
+```
+
+{{< alert icon="tip" >}}
+You can only request automatic datacap once every 30 days for a single GitHub account.
+{{< /alert >}}
 
 ## Next steps
 
