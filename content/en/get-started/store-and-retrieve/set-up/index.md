@@ -84,7 +84,7 @@ If Homebrew doesn't work for you, or if you prefer to build from source, try the
     ```
 1. Checkout the latest release
     ```shell
-    git checkout tags/v1.16.0
+    git checkout tags/v1.16.1
     ```
 1. Setup some environment variables correctly
     ```shell
@@ -133,19 +133,19 @@ AppImage is not currently available, please use another option.
 1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/):
 
     ```shell
-    wget https://github.com/filecoin-project/lotus/releases/download/v1.16.0/Lotus-v1.16.0-x86_64.AppImage
+    wget https://github.com/filecoin-project/lotus/releases/download/v1.16.1/Lotus-v1.16.1-x86_64.AppImage
     ```
 
 1. Make the `AppImage` executable:
 
     ```shell
-    chmod +x Lotus-v1.16.0-x86_64.AppImage
+    chmod +x Lotus-v1.16.1-x86_64.AppImage
     ```
 
 1. Move the `AppImage` to `/usr/local/bin` and rename it `lotus`:
 
     ```shell
-    sudo mv Lotus-v1.16.0-x86_64.AppImage /usr/local/bin/lotus
+    sudo mv Lotus-v1.16.1-x86_64.AppImage /usr/local/bin/lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
