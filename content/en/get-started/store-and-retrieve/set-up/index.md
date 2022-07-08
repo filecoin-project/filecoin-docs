@@ -35,9 +35,6 @@ A lite-node lets your computer interact with the Filecoin network without having
 
 ![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](lite-nodes-process-diagram.png)
 
-To install a Lotus lite-node on your computer, you must have the tools required to _build_ a Lotus binary from the GitHub repository.
-
-Take a look at [the Lotus documentation](https://lotus.filecoin.io/docs/set-up/install/) to learn how to install Lotus on other operating systems.
 
 ### macOS
 
