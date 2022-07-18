@@ -67,32 +67,45 @@ If Homebrew doesn't work for you, or if you prefer to build from source, try the
     ```shell
     xcode-select -p (if missing, run xcode-select --install )
     ```
+
 1. Install the pre-requisites via Homebrew
+   
     ```shell
     brew install go bzr jq pkg-config rustup hwloc
     ```
+
 1. Clone the latest sources
+   
     ```shell
     git clone https://github.com/filecoin-project/lotus.git
     ```
+
 1. Switch into the lotus folder
+   
     ```shell
     cd lotus/
     ```
+
 1. Checkout the latest release
+   
     ```shell
     git checkout tags/v1.16.1
     ```
+
 1. Setup some environment variables correctly
+   
     ```shell
     export LIBRARY_PATH=/opt/homebrew/lib; export FFI_BUILD_FROM_SOURCE=1
     ```
+
 1. Install Rust (when prompted, choose the default 'install' option) 
+   
     ```shell
     rustup-init
     ```
 
 1. Build the clients
+   
     ```shell
     make all
     ```
@@ -101,6 +114,7 @@ If Homebrew doesn't work for you, or if you prefer to build from source, try the
 {{< /alert >}}
 
 1. Finally, install the client into your system
+    
     ```shell
     sudo make install
     ```
@@ -158,6 +172,7 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
     ```shell
     sudo snap install lotus-filecoin
     ```
+
 2. The snap installer automatically starts a full lotus node in the background. For the purposes of this tutorial, we don't want that, so stop it, and then we can run a lotus lite node instead.
 
     ```shell
@@ -277,6 +292,7 @@ You need a GitHub account that is at least 180 days old. If you don't have a Git
 1. In the `Request` field, enter the public address you got from running `lotus wallet list`. This step may take a few minutes to complete.
 
 You can check your Filecoin Plus balance with
+
 ```shell
 lotus filplus check-client-datacap f1...
 ```
