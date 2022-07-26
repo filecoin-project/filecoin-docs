@@ -38,7 +38,7 @@ The following applications allow you to store data on the Filecoin network with 
 
 ### Video
 
-- [File.video](https://file.video/) and [Voodfy](https://beta.voodfy.com/) both provide decentralized video hosting using decentralized transcoding using the [LivePeer](https://livepeer.org/) network.
+- [File.video](https://file.video/) provides decentralized video hosting using decentralized transcoding using the [LivePeer](https://livepeer.org/) network.
 
 ## Additional resources
 
