@@ -193,7 +193,6 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 - [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding)
   - incentivizes valuable data stored on Filecoin with a social trust network for verified data
   - Clients can apply to Notaries to receive DataCap and incentivize storage providers at 10x to their quality-adjusted power, increasing probability of block rewards
-- [Filecoin Discover Store](https://store.filecoin-discover.com/)
 - [Slingshot Competition](https://slingshot.filecoin.io/) - ended in 2021 and has now become [Filecoin Evergreen](https://evergreen.filecoin.io/)
 
 ### Retrieval Market resources (WIP experiments)
