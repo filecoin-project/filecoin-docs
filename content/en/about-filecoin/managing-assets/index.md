@@ -20,7 +20,7 @@ We do not provide technical support for any of these wallets.
  Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
 | [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet.                                                                                                              | Unknown |
-| [FilSnap MetaMask](https://pages.consensys.net/filecoin-metamask-snap-preview)                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
+| FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
 | [FilWallet](https://filwallet.co) | A FIL-focused crypto wallet, available on Android and iOS. | Unknown |
 | [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by Filfox.                                                                                             | Yes     |
 | [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
@@ -70,9 +70,9 @@ Much like how a US penny represents a fraction of a US dollar, there are many wa
 | Name     | Decimal             |
 | -------- | ------------------- |
 | FIL      | 1                   |
-| milliFIL | 1000                |
-| microFIL | 1000000             |
-| nanoFIL  | 1000000000          |
-| picoFIL  | 1000000000000       |
-| femtoFIL | 1000000000000000    |
-| attoFIL  | 1000000000000000000 |
+| milliFIL | 1,000                |
+| microFIL | 1,000,000             |
+| nanoFIL  | 1,000,000,000          |
+| picoFIL  | 1,000,000,000,000       |
+| femtoFIL | 1,000,000,000,000,000    |
+| attoFIL  | 1,000,000,000,000,000,000 |
