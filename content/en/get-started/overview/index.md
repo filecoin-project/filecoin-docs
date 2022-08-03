@@ -73,21 +73,23 @@ There are 4 Filecoin protocol implementations (or "node software") currently in 
 
 Each of these software clients implements the Filecoin protocol as described in the [Filecoin protocol specification](https://filecoin-project.github.io/specs). To learn more about why there are multiple Filecoin implementations, please read [this blog post](https://filecoin.io/blog/announcing-filecoin-implementations-in-rust-and-c++/).
 
-Here is a snapshot of each implementation's progress across the primary parts of the Filecoin protocol (updated June 24, 2020):
+Here is a snapshot of each implementation's progress across the primary parts of the Filecoin protocol (updated August 1, 2022):
 
-|                    | lotus | venus | forest | fuhon |
+|                    | Lotus | Venus | Forest | Fuhon (deprecated)|
 | ------------------ | ----- | ----- | ------ | ----- |
+| Base Language      | Go    | Go    | Rust   | C++  |
 | 1. Node            | ✅    | ✅    | ✅     | ✅    |
-| 2. Files & data    | ✅    | 🔶    | 🔶     | ✅    |
-| 3. Virtual Machine | ✅    | ✅    | 🔶     | 🔶    |
-| 4. VM Actors       | 🔶    | 🔶    | 🔶     | 🔶    |
+| 2. Files & data    | ✅    | ✅    | ⛔️     | ✅    |
+| 3. Virtual Machine | ✅    | 🔄    | 🔄     | ⛔️    |
+| 4. VM Actors       | ✅    | 🔄    | 🔄     | ⛔️    |
 | 5. Blockchain      | ✅    | ✅    | ✅     | ✅    |
 | 6. Token           | ✅    | ✅    | ✅     | ✅    |
-| 7. Storage Mining  | ✅    | 🔄    | 🔄     | 🔄    |
-| 8. Market          | ✅    | 🔶  | 🔄      | ⛔️     |
+| 7. Storage Mining  | ✅    | ✅    | ⛔️     | ⛔️    |
+| 8. Market          | ✅    | ✅    | ⛔️     | ⛔️    |
 
 ✅ : fully-featured implementation. 
 🔄 : reuses components from another implementation. 
 🔶 : partial implementation. 
 ⛔️ : pending implementation. 
 
+Since May 2022, Fuhon's C++ implementation has been deprecated and is currently out of support. The source code is available [here](https://github.com/filecoin-project/cpp-filecoin). There are no immediate plans to introduce another c++ implementation.
