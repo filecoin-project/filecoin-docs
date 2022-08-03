@@ -6,13 +6,13 @@ menu:
         parent: "storage-provider-basics"
 ---
 
-In most blockchain protocols, _miners_ are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency. The term _miner_ emerged in the initial Proof-of-Work era, comparing the work done by hardware miners using computational power to secure blockchains with that of gold miners who expended vast physical resources for a chance at a large payout.
+In most blockchain protocols, _miners_ are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency.
 
-Filecoin works quite differently, however -- instead of miners contributing computational power (hashing power), _providers_ contribute important utilities, storage capacity, and retrieval pipeline. Providers make deals with clients to store and retrieve data and receive FIL, Filecoin native cryptocurrency, in return.
+Filecoin works quite differently. Instead of miners contributing computational power (hashing power), _providers_ contribute important utilities, storage capacity, and retrieval pipeline. Providers make deals with clients to store and retrieve data and receive FIL, Filecoin native cryptocurrency, in return.
 
 On a decentralized, peer-to-peer network like IPFS, we can use cryptographic hashing to confirm that any number of peers are storing exact copies of our data. However, we're depending on the generosity of those parties and have no guarantee that our data will continue to be replicated over time. Filecoin, on the other hand, adds an incentive layer to promote long-term, verifiable storage on the decentralized web.
 
-To see if providing storage and/or retrieval is right for you, consider the requirements and rewards for this growing field of opportunity. As a provider, you can benefit from how it's growing, and you may even have ideas to contribute.  
+To see if providing storage and/or retrieval is right for you, consider the responsibilities and rewards for this growing field of opportunity. As a provider, you can benefit from how it's growing, and you may even have ideas to contribute.  
 
 ## Types of providers
 
