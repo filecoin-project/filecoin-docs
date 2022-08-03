@@ -196,7 +196,7 @@ if you installed via Snap, the binary name is 'lotus-filecoin.lotus' instead of 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address:
 
     ```shell with-output
-    sudo FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
+    FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
     ```
     
     ```
