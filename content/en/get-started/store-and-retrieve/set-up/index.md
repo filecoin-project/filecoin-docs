@@ -36,7 +36,7 @@ A lite-node lets your computer interact with the Filecoin network without having
 ![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](lite-nodes-process-diagram.png)
 
 
-### macOS
+### macOS Homebrew
 
 {{< alert icon="tip" >}}**Requirements**
 You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
@@ -123,18 +123,13 @@ Now, you're ready to [run a Lotus lite node](/get-started/store-and-retrieve/set
 
 ### Linux
 
-<!-- There are two simple ways to install Lotus on Linux (this is tested on Ubuntu): -->
+There are two simple ways to install Lotus on Linux (this is tested on Ubuntu):
 
-The easiest way to install the lotus client is to use Snap.
-<!-- Commenting out AppImage until it builds again
-- [AppImage](#appimage) -->
+- [AppImage](#appimage)
 - [Snap](#snap)
 
+#### AppImage
 
-<!-- #### AppImage
-{{< alert icon="warning" >}}
-AppImage is not currently available, please use another option.
-{{< /alert >}}
 1. Update and upgrade your system:
 
     ```shell
@@ -147,7 +142,7 @@ AppImage is not currently available, please use another option.
     wget https://github.com/filecoin-project/lotus/releases/download/v1.16.1/Lotus-v1.16.1-x86_64.AppImage
     ```
 
-1. Make the `AppImage` executable:
+1. Make the `AppImage` executable: STEF: which arch target
 
     ```shell
     chmod +x Lotus-v1.16.1-x86_64.AppImage
@@ -160,7 +155,7 @@ AppImage is not currently available, please use another option.
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
--->
+
 #### Snap
 
 {{< alert icon="warning" >}}**Requirements**
@@ -196,7 +191,7 @@ if you installed via Snap, the binary name is 'lotus-filecoin.lotus' instead of 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address:
 
     ```shell with-output
-    sudo FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
+    FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
     ```
     
     ```
