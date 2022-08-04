@@ -55,10 +55,13 @@ The table below lists the recommended wallet implementations:
 
 | Name                                             |                                                                                                                                                                                             |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Lotus](https://lotus.filecoin.io)                         | Lotus can manage bls, sec1p256k1 wallets and supports [Ledger integration](https://lotus.filecoin.io/docs/set-up/manage-fil/#ledger).                                                                                                |
-| [Glif wallet](https://wallet.glif.io/) | Glif is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). |
+| [Glif Wallet](https://wallet.glif.io/) | Glif Wallet is a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)).|
+| [Glif Safe](https://safe.glif.io/) | Glif Safe is a multisig wallet with a lightweight web interface to send and receive Filecoin with a Ledger device ([instructions](https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX)). Check out the [Glif Safe GitHub repo](https://github.com/glifio/safe) for more information.|
+| [Lotus](https://lotus.filecoin.io)                         | Lotus includes a command-line wallet that can manage bls, sec1p256k1, multisig wallets, and supports [Ledger integration](https://lotus.filecoin.io/docs/set-up/manage-fil/#ledger).|
 
-Both Lotus and the Glif wallet support [Ledger](https://www.ledger.com/) hardware devices, allowing you to use Filecoin without ever storing your private keys on a network-connected device. This can help protect your valuable private keys from malicious software on your computer and so is commonly used for accounts with large balances.
+Glif Safe and Lotus both support multisig wallets, a multisig wallet is a wallet that requires two or more private keys in order to sign and send transactions. Multisig wallets prevent any one private key holder from signing and sending a transaction, this is beneficial for wallets with multiple users and for people who are concerned about an attack on their wallet.
+
+Lotus, Glif Safe, and Glif Wallet all support [Ledger](https://www.ledger.com/) hardware devices, allowing you to use Filecoin without storing your private keys on a network-connected device. This can help protect your valuable private keys from malicious software on your computer and is commonly used for accounts with large balances.
 
 There are a number of [additional wallets](https://docs.filecoin.io/reference/#other-wallets) that support Filecoin tokens, including mobile wallets.
 
