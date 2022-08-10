@@ -42,16 +42,10 @@ A lite-node lets your computer interact with the Filecoin network without having
 You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
 {{< /alert >}}
 
-1. Add the `filecoin-project/lotus` Homebrew tap:
+1. Install Lotus from the filecoin-project tap
 
     ```shell
-    brew tap filecoin-project/lotus
-    ```
-
-1. Install Lotus:
-
-    ```shell
-    brew install lotus
+    brew install filecoin-project/lotus/lotus 
     ```
 
 1. Lotus is now installed on your computer.
@@ -89,7 +83,7 @@ If Homebrew doesn't work for you, or if you prefer to build from source, try the
 1. Checkout the latest release
    
     ```shell
-    git checkout tags/v1.16.1
+    git checkout releases
     ```
 
 1. Setup some environment variables correctly
@@ -123,44 +117,38 @@ Now, you're ready to [run a Lotus lite node](/get-started/store-and-retrieve/set
 
 ### Linux
 
-<!-- There are two simple ways to install Lotus on Linux (this is tested on Ubuntu): -->
+There are two simple ways to install Lotus on Linux (this is tested on Ubuntu):
 
-The easiest way to install the lotus client is to use Snap.
-<!-- Commenting out AppImage until it builds again
-- [AppImage](#appimage) -->
+- [AppImage](#appimage)
 - [Snap](#snap)
 
 
-<!-- #### AppImage
-{{< alert icon="warning" >}}
-AppImage is not currently available, please use another option.
-{{< /alert >}}
 1. Update and upgrade your system:
 
     ```shell
     sudo apt update -y && sudo apt upgrade -y
     ```
 
-1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/):
+1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/latest):
 
     ```shell
-    wget https://github.com/filecoin-project/lotus/releases/download/v1.16.1/Lotus-v1.16.1-x86_64.AppImage
+    wget https://github.com/filecoin-project/lotus/releases/download/v1.17.0/Lotus-v1.17.0-x86_64.AppImage
     ```
 
 1. Make the `AppImage` executable:
 
     ```shell
-    chmod +x Lotus-v1.16.1-x86_64.AppImage
+    chmod +x Lotus-v1.17.0-x86_64.AppImage
     ```
 
 1. Move the `AppImage` to `/usr/local/bin` and rename it `lotus`:
 
     ```shell
-    sudo mv Lotus-v1.16.1-x86_64.AppImage /usr/local/bin/lotus
+    sudo mv Lotus-v1.17.0-x86_64.AppImage /usr/local/bin/lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
--->
+
 #### Snap
 
 {{< alert icon="warning" >}}**Requirements**
@@ -170,16 +158,17 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
 1. To install Lotus using Snap, run:
 
     ```shell
-    sudo snap install lotus-filecoin
+    sudo snap install lotus
     ```
 
-2. The snap installer automatically starts a full lotus node in the background. For the purposes of this tutorial, we don't want that, so stop it, and then we can run a lotus lite node instead.
+2. The snap installer automatically starts a full lotus node as a daemon. For the purposes of this tutorial, which uses a lite-node, we don't want that, so disable it, and then we can run a lotus lite-node instead.
 
     ```shell
-    sudo snap stop lotus-filecoin
+    sudo snap disable lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+
 
 ## Run a Lotus lite-node
 
