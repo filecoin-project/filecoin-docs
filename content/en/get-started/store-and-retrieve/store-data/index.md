@@ -91,7 +91,7 @@ Let's find a couple of storage providers to store our data.
 
 1. Go to [plus.fil.org/miners](https://plus.fil.org/miners/).
 1. Using the table, find a couple of storage providers that suit your needs. Try to find storage providers that are geographically close to you.
-1. Once you have found a couple of suitable storage providers, make a note of their _miner IDs_ from the **Miner ID** column:
+1. Once you have found a couple of suitable storage providers, make a note of their _miner IDs_ from the **Provider ID** column:
 
     ![A collection of storage providers listed in the Filecoin Plus storage provider registry.](miner-x-listings.png)
 
@@ -99,7 +99,7 @@ Let's find a couple of storage providers to store our data.
 1. Make sure to write down the IDs of the storage providers you want to use. We'll be referring to these IDs in the next section.
 
 
-### Miner reputation systems
+### Storage Provider reputation systems
 
 The Filecoin Plus storage provider registry is a great resource, but it represents a small portion of the entire Filecoin mining community. Filecoin reputation systems like [FilRep](https://filrep.io) can help you compare storage providers based on their past performance and provide useful information about the deal parameters that a storage provider will accept. Using FilRep, you can compare storage provider metrics like location, storage power in the network, pricing, and overall success rate.
 
@@ -169,6 +169,9 @@ If you get an error 'actor not found', it likely means this address has never ha
     ```plaintext output
     Miner Addresses (f0.. f0..), none to find: f01000 f01001
     ```
+    {{< alert icon="tip" >}}**Scanning Storage Providers**
+You can search all Storage Providers for matching deals by not entering addresses (hit 'return') but it will take several minutes.
+{{< /alert >}}
 
 1. Confirm your transaction by entering `yes`:
 
