@@ -42,7 +42,7 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 | Name                                                             |                                                                                                                                                                                                                                                                                         |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Lotus](https://lotus.filecoin.io)                                         | Implementation of Filecoin node, maintained by Protocol Labs. <br /><br />For users that want to participate in the Filecoin network validating blocks, manage a wallet and perform deals on the command line.                                                                            |
-| [Slate](https://slate.host/)                                       | Slate is a fully open-source file-sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.io) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
+| [Slate](https://slate.host/)                                       | Slate is a fully open-source file-sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.tech) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
 | [Powergate]({{< relref "powergate" >}})                               | A multitiered storage solution that stores data with IPFS ("Hot" storage layer) and Filecoin ("Cold" storage layer).                                                                                                                                                                    |
 | [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets, and Powergate.                                                                                                                      |
 | [Starling]({{< relref "starling" >}})                                 | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
@@ -70,7 +70,7 @@ There are a number of [additional wallets](https://docs.filecoin.io/reference/#o
 There are 4 Filecoin protocol implementations (or "node software") currently in progress:
 
 - [lotus](https://github.com/filecoin-project/lotus/) (Go): This implementation is closest to feature-complete and is, therefore, the recommended Filecoin protocol implementation.
-- [venus](https://github.com/filecoin-project/venus) (Go): This implementation is currently running tens of nodes on the Filecoin network. Participants are encouraged to experiment with this implementation and provide feedback to the [Venus team](https://filecoinproject.slack.com/archives/CEHHJNJS3). 
+- [venus](https://github.com/filecoin-project/venus) (Go): This implementation is currently running tens of nodes on the Filecoin network. Participants are encouraged to experiment with this implementation and provide feedback to the [Venus team](https://filecoinproject.slack.com/archives/CEHHJNJS3).
 - [forest](https://github.com/chainsafe/forest) (Rust)
 - [fuhon](https://github.com/filecoin-project/cpp-filecoin) (C++)
 
@@ -90,9 +90,9 @@ Here is a snapshot of each implementation's progress across the primary parts of
 | 7. Storage Mining  | ✅    | ✅    | ⛔️     | ⛔️    |
 | 8. Market          | ✅    | ✅    | ⛔️     | ⛔️    |
 
-✅ : fully-featured implementation. 
-🔄 : reuses components from another implementation. 
-🔶 : partial implementation. 
-⛔️ : pending implementation. 
+✅ : fully-featured implementation.
+🔄 : reuses components from another implementation.
+🔶 : partial implementation.
+⛔️ : pending implementation.
 
 Since May 2022, Fuhon's C++ implementation has been deprecated and is currently out of support. The source code is available [here](https://github.com/filecoin-project/cpp-filecoin). There are no immediate plans to introduce another c++ implementation.

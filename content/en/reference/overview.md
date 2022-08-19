@@ -155,9 +155,9 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Data prep tools
 
-- [CAR files](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
+- [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
 - [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) - by FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
-- [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
+- [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
 
 ### Databases using IPFS and Filecoin
 
