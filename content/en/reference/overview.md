@@ -245,5 +245,5 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing monthly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
-- Accelerators
-  For a list of current accelerators please join [Filecoin Slack](https://filecoin.io/slack) and see regular updates in #_fil-lobby.
+- Accelerators 
+  - For a list of current accelerators please join [Filecoin Slack](https://filecoin.io/slack) and see regular updates in #_fil-lobby.
