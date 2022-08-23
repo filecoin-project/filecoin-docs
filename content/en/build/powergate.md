@@ -42,16 +42,19 @@ We will use the Filecoin mainnet as an example here. Learning how to use localne
 
    The [`pow` CLI tool](https://docs.textile.io/powergate/cli/pow/) will help us interact with the Powergate instance. You will need to [install the Go language](https://go.dev/dl/) as a prerequisite. After installing Go, Powergate CLI can be built and installed with:
 
-   ```sh
+   ```shell
    git clone https://github.com/textileio/powergate
    cd powergate
    make install-pow
    ```
-   The binary will be placed automatically in `$GOPATH/bin`. You may have to set the Path variables using the below commands
-   ```sh
+
+   The binary will be placed automatically in `$GOPATH/bin`. You may have to set the Path variables using the below commands:
+   
+   ```shell
    export PATH=$PATH:$(go env GOPATH)/bin
    export GOPATH=$(go env GOPATH)
    ```
+
    You can then run `pow` in your terminal.
 
 1. **Sync the blocks for Filecoin mainnet**:
