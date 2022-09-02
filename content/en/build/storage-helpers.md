@@ -9,13 +9,13 @@ weight: 2
 
 Storage helpers are the simplest way to integrate Filecoin storage into your application or smart contract.
 
-Here’s how they work: Developers use SDKs or APIs to send data to storage helpers. Behind the scenes, storage helpers receive the files, and upload data to IPFS nodes, make deals with Filecoin storage providers, or both. You can use the same APIs or other tools to retrieve data quickly.
+Here’s how they work: Developers use SDKs or APIs to send data to storage helpers. Behind the scenes, storage helpers receive the files, and upload data to IPFS (Interplanetary File System) nodes, make deals with Filecoin storage providers, or both. You can use the same APIs or other tools to retrieve data quickly.
 
-Storage helpers are available for NFTs or general data. If you are storing NFTs, check out [Storing NFTs](#storing-NFTs). For general data, skip to [General data storage](#general-data-storage).
+Storage helpers are available for NFTs (Non-fungible tokens) or general data. If you are storing NFTs, check out [Storing NFTs](#storing-NFTs). For general data, skip to [General data storage](#general-data-storage).
 
 ### Storing NFTs
 
-- [NFT.Storage](https://nft.storage/) offers free, long-term storage for your NFT metadata and assets. Its uses CIDs so you can create truly immutable NFTs and avoid rug pulls. Data uploads of up to 31 GiB per file are possible. NFT.Storage has a Javascript library, HTTP API, and browser-based uploader. There are also clients in Go, Java, PHP, Python, Ruby, and Rust automatically generated via OpenAPI.
+- [NFT.Storage](https://nft.storage/) offers free, long-term storage for your NFT metadata and assets. It uses CIDs (Content identifiers) so you can create truly immutable NFTs and avoid situations where files are deleted or replaced by other (also known as "rug pulls"). Data uploads of up to 31 GiB per file are possible. NFT.Storage has a Javascript library, HTTP API, and browser-based uploader. There are also clients in Go, Java, PHP, Python, Ruby, and Rust automatically generated via OpenAPI.
 
 ### General data storage
 
