@@ -46,6 +46,8 @@ Let's get building. Choose one of the following APIs. These are all storage help
 
 For more details and options, jump to [Build with Filecoin Storage Helpers]().
 
+If you’re building network or developer tools, jump to [Build Directly on Filecoin]().
+
 ## Filecoin and smart contracts
 You can improve speed and reduce gas fees by storing smart contract data on Filecoin. With Filecoin, the data itself is stored off-chain, but is used to generate verifiable CIDs and storage proofs that are recorded on the Filecoin chain and can be included in your smart contracts. This design pairs well with multiple smart contract networks such as Ethereum, Polygon, Avalanche, Solana, and more. Your smart contract only needs to include the compact content ids.
 
