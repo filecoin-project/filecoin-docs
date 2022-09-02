@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-description: "Overview of developer tools and options for adding Filecoin storage to software applications and workflows."
+description: "Overview of developer tools and options for adding Filecoin storage to software applications, smart contracts, and workflows."
 menu:
     build:
         parent: "build-get-started"
