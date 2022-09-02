@@ -11,13 +11,13 @@ Storage helpers are the simplest way to integrate Filecoin storage into your app
 
 Here’s how they work: Developers use SDKs or APIs to send data to storage helpers. Behind the scenes, storage helpers receive the files, and upload data to IPFS nodes, make deals with Filecoin storage providers, or both. You can use the same APIs or other tools to retrieve data quickly.
 
-Storage helpers are available for NFTs or general data. If you are storing NFTs, check out [NFT.Storage](https://nft.storage/). For general application data, skip to [General application data](#general-application-data).
+Storage helpers are available for NFTs or general data. If you are storing NFTs, check out [Storing NFTs](#storing-NFTs). For general data, skip to [General data storage](#general-data-storage).
 
 ### Storing NFTs
 
 - [NFT.Storage](https://nft.storage/) offers free, long-term storage for your NFT metadata and assets. Its uses CIDs so you can create truly immutable NFTs and avoid rug pulls. Data uploads of up to 31 GiB per file are possible. NFT.Storage has a Javascript library, HTTP API, and browser-based uploader. There are also clients in Go, Java, PHP, Python, Ruby, and Rust automatically generated via OpenAPI.
 
-### General application data
+### General data storage
 
 - [Chainsafe Storage API](https://docs.storage.chainsafe.io) is an underlayer to Chainsafe's encrypted IPFS & Filecoin file storage system. It offers S3-compatible bucket style APIs for easy migration of data. As of September 2022, it's the only storage helper with built-in encryption.
 
