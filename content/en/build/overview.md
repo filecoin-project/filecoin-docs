@@ -11,11 +11,9 @@ aliases:
 weight: 1
 ---
 
-## What Filecoin brings to developers
-
 If you are excited about the potential of the Filecoin protocol and decentralized storage network to build game-changing applications, you’ve come to the right place.
 
-### Why develop on Filecoin?
+## Why develop on Filecoin?
 Filecoin combines the benefits of storage on [IPFS](https://ipfs.tech/) (a peer-to-peer content-addressing system) with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
 
 Developers choose Filecoin because it:
@@ -27,10 +25,10 @@ Developers choose Filecoin because it:
 
 An [ecosystem of developer tools]() offers flexible, powerful choices for integrating Filecoin storage into your application or workflow.
 
-## How do Filecoin and IPFS work together? 
-Filecoin and IPFS are complementary protocols for storing and sharing data in the distributed web. Both systems are open-source and share many building blocks, including content addressing (CIDs) and network protocols (libp2p). 
+## Filecoin and IPFS
+How do Filecoin and IPFS work together? They are complementary protocols for storing and sharing data in the distributed web. Both systems are open-source and share many building blocks, including content addressing (CIDs) and network protocols (libp2p). 
 
-IPFS does not include built-in mechanisms to incentivize the storage of data for other people – to persist IPFS data, you must either run your own IPFS node or pay a provider.
+IPFS does not include built-in mechanisms to incentivize the storage of data for other people. To persist IPFS data, you must either run your own IPFS node or pay a provider.
 
 This is where Filecoin comes in. Filecoin adds an incentive layer to IPFS. Storage deals are recorded on-chain, and providers must submit proofs of storage to the network over time. Payments, penalties, and block rewards are all enforced by the decentralized protocol.
 
@@ -38,7 +36,7 @@ Filecoin and IPFS are designed as separate layers to give developers more choice
 
 To learn more about the protocol, go to [How Filecoin Works]().
 
-### How do I get started?
+## Get started
 Choose one of the following APIs for building with Filecoin:
 - [Chainsafe Storage API](https://docs.storage.chainsafe.io/) - for projects needing S3 compatibility
 - [Estuary](https://estuary.tech/) - for larger-scale applications and public data
@@ -48,6 +46,7 @@ Choose one of the following APIs for building with Filecoin:
 These are all storage helpers, or tools and services that abstract Filecoin’s robust dealmaking processes into simple, streamlined API calls. For more details, jump to [Build with Filecoin Storage Helpers]().
 
 If you’re building network or developer tools, jump to [Build Directly on Filecoin]().
+
 ## Filecoin and smart contracts
 You can improve speed and reduce gas fees by storing smart contract data on Filecoin. With Filecoin, the data itself is stored off-chain, but is used to generate verifiable CIDs and storage proofs that are recorded on the Filecoin chain and can be included in your smart contracts. This design pairs well with multiple smart contract networks such as Ethereum, Polygon, Avalanche, Solana, and more. Your smart contract only needs to include the compact content ids.
 
