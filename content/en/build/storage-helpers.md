@@ -21,9 +21,9 @@ Storage helpers are available for NFTs or general data. If you are storing NFTs,
 
 - [Chainsafe Storage API](https://docs.storage.chainsafe.io) is an underlayer to Chainsafe's encrypted IPFS & Filecoin file storage system. It offers S3-compatible bucket style APIs for easy migration of data. As of September 2022, it's the only storage helper with built-in encryption.
 
-- [Web3.Storage](https://web3.storage/docs) is a fast, open, and free service for decentralized web storage. Upload any data, and it will end up on a decentralized set of IPFS and Filecoin storage providers. There are JavaScript and Go libraries for the API, as well as a web uploader.
-
 - [Estuary](https://docs.estuary.tech) is a free, decentralized data storage service for IPFS and Filecoin. Users can store and retrieve content quickly, and have their data backed up with proposition receipts and successful deal receipts. Estuary’s API adheres to the IPFS Pinning Services API Spec. You can use Estuary via its HTTP API or rclone syncer. Note: Estuary is in alpha mode. Users wanting to store meaningful public data can apply for an API token.
+
+- [Web3.Storage](https://web3.storage/docs) is a fast, open, and free service for decentralized web storage. Upload any data, and it will end up on a decentralized set of IPFS and Filecoin storage providers. There are JavaScript and Go libraries for the API, as well as a web uploader.
 
 ### Advanced tools
 
