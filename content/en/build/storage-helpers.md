@@ -4,6 +4,7 @@ description: "Storage helpers are APIs and services that abstract Filecoin dealm
 menu:
     build:
         parent: "build-get-started"
+weight: 2
 ---
 
 Storage helpers are the simplest way to integrate Filecoin storage into your application or smart contract. They provide APIs, services, or SDKs to abstract and automate the storage deal process.
