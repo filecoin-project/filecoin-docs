@@ -7,7 +7,7 @@ menu:
 weight: 2
 ---
 
-Storage helpers are the simplest way to integrate Filecoin storage into your application or smart contract. They provide APIs, services, or SDKs to abstract and automate the storage deal process.
+Storage helpers are the simplest way to integrate Filecoin storage into your application or smart contract.
 
 Here’s how they work: Developers use SDKs or APIs to send data to storage helpers. Behind the scenes, storage helpers receive the files, and upload data to IPFS nodes, make deals with Filecoin storage providers, or both. You can use the same APIs or other tools to retrieve data quickly.
 
