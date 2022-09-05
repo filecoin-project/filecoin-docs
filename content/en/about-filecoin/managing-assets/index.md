@@ -70,9 +70,9 @@ Much like how a US penny represents a fraction of a US dollar, there are many wa
 | Name     | Decimal             |
 | -------- | ------------------- |
 | FIL      | 1                   |
-| milliFIL | 1,000                |
-| microFIL | 1,000,000             |
-| nanoFIL  | 1,000,000,000          |
-| picoFIL  | 1,000,000,000,000       |
-| femtoFIL | 1,000,000,000,000,000    |
-| attoFIL  | 1,000,000,000,000,000,000 |
+| milliFIL | 1000                |
+| microFIL | 1000000             |
+| nanoFIL  | 1000000000          |
+| picoFIL  | 1000000000000       |
+| femtoFIL | 1000000000000000    |
+| attoFIL  | 1000000000000000000 |

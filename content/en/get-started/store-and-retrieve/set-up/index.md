@@ -35,6 +35,9 @@ A lite-node lets your computer interact with the Filecoin network without having
 
 ![A diagram showing how Lotus lite-nodes interact with Lotus full-nodes.](lite-nodes-process-diagram.png)
 
+To install a Lotus lite-node on your computer, you must have the tools required to _build_ a Lotus binary from the GitHub repository.
+
+Take a look at [the Lotus documentation](https://lotus.filecoin.io/docs/set-up/install/) to learn how to install Lotus on other operating systems.
 
 ### macOS
 
@@ -42,86 +45,28 @@ A lite-node lets your computer interact with the Filecoin network without having
 You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
 {{< /alert >}}
 
-1. Install Lotus from the filecoin-project tap
+1. Add the `filecoin-project/lotus` Homebrew tap:
 
     ```shell
-    brew install filecoin-project/lotus/lotus 
+    brew tap filecoin-project/lotus
+    ```
+
+1. Install Lotus:
+
+    ```shell
+    brew install lotus
     ```
 
 1. Lotus is now installed on your computer.
 
-[Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
+### Ubuntu
 
-### MacOS Build from source
-
-If Homebrew doesn't work for you, or if you prefer to build from source, try these steps. 
-
-1. Check that the XCode command line tools are installed.
-
-    ```shell
-    xcode-select -p (if missing, run xcode-select --install )
-    ```
-
-1. Install the pre-requisites via Homebrew
-   
-    ```shell
-    brew install go bzr jq pkg-config rustup hwloc
-    ```
-
-1. Clone the latest sources
-   
-    ```shell
-    git clone https://github.com/filecoin-project/lotus.git
-    ```
-
-1. Switch into the lotus folder
-   
-    ```shell
-    cd lotus/
-    ```
-
-1. Checkout the latest release
-   
-    ```shell
-    git checkout releases
-    ```
-
-1. Setup some environment variables correctly
-   
-    ```shell
-    export LIBRARY_PATH=/opt/homebrew/lib; export FFI_BUILD_FROM_SOURCE=1
-    ```
-
-1. Install Rust (when prompted, choose the default 'install' option) 
-   
-    ```shell
-    rustup-init
-    ```
-
-1. Build the clients
-   
-    ```shell
-    make all
-    ```
-
-{{< alert icon="tip" >}}If you get a warning: 'kIOMasterPortDefault' is deprecated: first deprecated in macOS 12.0' , don't worry - the build still worked. 
-{{< /alert >}}
-
-1. Finally, install the client into your system
-    
-    ```shell
-    sudo make install
-    ```
-
-Now, you're ready to [run a Lotus lite node](/get-started/store-and-retrieve/set-up/#run-a-lotus-lite-node)
-
-### Linux
-
-There are two simple ways to install Lotus on Linux (this is tested on Ubuntu):
+There are two simple ways to install Lotus on Ubuntu:
 
 - [AppImage](#appimage)
 - [Snap](#snap)
 
+#### AppImage
 
 1. Update and upgrade your system:
 
@@ -129,22 +74,22 @@ There are two simple ways to install Lotus on Linux (this is tested on Ubuntu):
     sudo apt update -y && sudo apt upgrade -y
     ```
 
-1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/latest):
+1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/):
 
     ```shell
-    wget https://github.com/filecoin-project/lotus/releases/download/v1.17.0/Lotus-v1.17.0-x86_64.AppImage
+    wget https://github.com/filecoin-project/lotus/releases/download/v1.11.1/Lotus-v1.11.1-x86_64.AppImage
     ```
 
 1. Make the `AppImage` executable:
 
     ```shell
-    chmod +x Lotus-v1.17.0-x86_64.AppImage
+    chmod +x Lotus-v1.11.1-x86_64.AppImage
     ```
 
 1. Move the `AppImage` to `/usr/local/bin` and rename it `lotus`:
 
     ```shell
-    sudo mv Lotus-v1.17.0-x86_64.AppImage /usr/local/bin/lotus
+    sudo mv Lotus-v1.11.1-x86_64.AppImage /usr/local/bin/lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
@@ -158,17 +103,10 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
 1. To install Lotus using Snap, run:
 
     ```shell
-    sudo snap install lotus
-    ```
-
-2. The snap installer automatically starts a full lotus node as a daemon. For the purposes of this tutorial, which uses a lite-node, we don't want that, so disable it, and then we can run a lotus lite-node instead.
-
-    ```shell
-    sudo snap disable lotus
+    snap install lotus-filecoin
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
-
 
 ## Run a Lotus lite-node
 
@@ -176,10 +114,6 @@ Now that you have Lotus ready to run, you can start a Lotus lite-node on your co
 
 {{< alert icon="warning" >}}
 `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but should not be used in a development or in a production environment.
-{{< /alert >}}
-
-{{< alert icon="tip" >}}
-if you installed via Snap, the binary name is 'lotus-filecoin.lotus' instead of just 'lotus'
 {{< /alert >}}
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address:
@@ -241,19 +175,12 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 1. Use `lotus wallet export` to export your private key, replacing `f1...` with your public key:
 
     ```shell
-    sudo lotus wallet export f1... > my_address.key
+    lotus wallet export f1... > my_address.key
     ```
 
     This will create a new file called `my_address.key` in the current directory.
 
 Once you have your address in a file, you can copy it to another drive, securely send it to another computer, or even print it out. It's important to keep this file safe. If anything happens to your Lotus node, you can still access your funds using this file.
-
-## Adding FIL to your wallet or using Filecoin Plus?
-
-Before you can transact on the network, you usually have to add some Filecoin to your wallet. You can do this via an exchange such as [Coinbase](https://www.coinbase.com), but you can bypass this stage by applying for Filecoin Plus Datacap below. If you have Datacap on your wallet, then transaction fees are covered, and you can start doing deals faster.  
-
-{{< alert icon="tip" >}}[Read more about managing wallets](/about-filecoin/managing-assets)
-{{< /alert >}}
 
 ## Filecoin Plus
 
@@ -270,25 +197,15 @@ DataCap acts as a kind of _multiplier_ for block rewards. If a storage provider 
 Signing up to Filecoin Plus is easy and free!
 
 {{< alert icon="tip" >}}
-You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with #fil-lotus-help on Filecoin Slack](https://filecoinproject.slack.com/archives/CPFTWMY7N).
+You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with the team on Filecoin Slack](https://filecoin.io/slack/).
 {{< /alert >}}
 
 1. Go to [plus.fil.org](https://plus.fil.org).
-1. Under **For Clients**, click **Proceed**.
-1. Under **Get Verified**, click **Get Datacap**.
+1. Under **For isClients**, click **Proceed**.
+1. Under **Get verified**, click **Get Verified**.
 1. Click **Automatic Verification**.
-1. Click **Github** to connect to your Github account
+1. Click **Start** next to the GitHub logo.
 1. In the `Request` field, enter the public address you got from running `lotus wallet list`. This step may take a few minutes to complete.
-
-You can check your Filecoin Plus balance with
-
-```shell
-lotus filplus check-client-datacap f1...
-```
-
-{{< alert icon="tip" >}}
-You can only request automatic datacap once every 30 days for a single GitHub account.
-{{< /alert >}}
 
 ## Next steps
 

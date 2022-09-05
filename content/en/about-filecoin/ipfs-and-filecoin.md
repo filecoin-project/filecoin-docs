@@ -7,13 +7,13 @@ menu:
 weight: 40
 ---
 
-Filecoin and IPFS are complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks, including data representation formats (IPLD) and network communication protocols (libp2p). While interacting with IPFS does not require using Filecoin, all Filecoin nodes _are_ IPFS nodes under the hood, and (with some manual configuration) can connect to and fetch IPLD-formatted data from other IPFS nodes using libp2p. However, Filecoin nodes don't join or participate in the public IPFS DHT ([Distributed Hash Tables](https://docs.ipfs.tech/concepts/dht/#distributed-hash-tables-dhts)).
+Filecoin and IPFS are complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks, including data representation formats (IPLD) and network communication protocols (libp2p). While interacting with IPFS does not require using Filecoin, all Filecoin nodes _are_ IPFS nodes under the hood, and (with some manual configuration) can connect to and fetch IPLD-formatted data from other IPFS nodes using libp2p. However, Filecoin nodes don't join or participate in the public IPFS DHT ([Distributed Hash Tables](https://docs.ipfs.io/concepts/dht/#distributed-hash-tables-dhts)).
 
 This page aims to explain the relationship between the IPFS and Filecoin projects and help users decide which approach is best suited for their use-case.
 
 ## Data storage incentives
 
-[IPFS](https://ipfs.tech) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users usually persist the data they want **on their own IPFS nodes**. This is called [pinning](https://docs.ipfs.tech/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service or through groups of individual IPFS users (like [IPFS Collaborative Clusters](https://collab.ipfscluster.io/)). The data exists in the network as long as one user is storing it and can provide it to others when they request it.
+[IPFS](https://ipfs.io) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users usually persist the data they want **on their own IPFS nodes**. This is called [pinning](https://docs.ipfs.io/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service or through groups of individual IPFS users (like [IPFS Collaborative Clusters](https://collab.ipfscluster.io/)). The data exists in the network as long as one user is storing it and can provide it to others when they request it.
 
 IPFS alone does not include a built-in mechanism to incentivize the storage of data for _other_ people. This is the challenge Filecoin aims to solve. Filecoin is built on IPFS to create a distributed storage marketplace for long-term storage. Nodes with a large storage capacity can rent their storage to users and get paid for it.
 
@@ -49,6 +49,6 @@ Many solutions combine the two networks to get the best of both worlds: IPFS for
 Filecoin and IPFS are powered by the same technology at many levels:
 
 - [IPLD](https://ipld.io/) specifies data formats for content-addressed data like the blockchain or the way in which IPFS stores files.
-- [libp2p](https://libp2p.io/) provides peer-to-peer network capabilities, connection security and key discovery and data distribution features like the [Distributed Hash Tables (DHT)](https://docs.ipfs.tech/concepts/dht/#distributed-hash-tables-dhts)) and [Pubsub](https://docs.libp2p.io/concepts/publish-subscribe/).
+- [libp2p](https://libp2p.io/) provides peer-to-peer network capabilities, connection security and key discovery and data distribution features like the [Distributed Hash Tables (DHT)](https://docs.ipfs.io/concepts/dht/#distributed-hash-tables-dhts)) and [Pubsub](https://docs.libp2p.io/concepts/publish-subscribe/).
 - [Multiformats](https://multiformats.io) define future-proof identifiers and data-types.
 - [Graphsync](https://github.com/ipfs/go-graphsync) and [Bitswap](https://github.com/ipfs/go-bitswap) enable fast and efficient IPLD data transfers between nodes.

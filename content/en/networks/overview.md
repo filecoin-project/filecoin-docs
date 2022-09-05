@@ -17,11 +17,10 @@ The [Glif nodes section](https://lotus.filecoin.io/docs/developers/hosted-lotus/
 
 ## Available networks
 
-There are several networks available for Filecoin:
+There are two networks available for Filecoin:
 
 - [Mainnet](#mainnet), the only production Filecoin network.
 - [Calibration](#calibration), the primary testing network for Filecoin.
-- [Wallaby](#wallaby), an early testing network for bleeding edge [Filecoin Virtual Machine](https://fvm.filecoin.io) deployments.
 
 {{< alert icon="tip" >}}
 Check the status of each network and subscribe to updates at [status.filecoin.io](https://status.filecoin.io).
@@ -82,7 +81,6 @@ Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supp
 - [Block explorer: Filfox](https://filfox.io/)
 - [Block explorer: Filscan](https://filscan.io/)
 - [Block explorer: Filscout](https://filscout.com/)
-- [Message and CID search: Glif Explorer](https://explorer.glif.io/)
 
 ### Calibration
 
@@ -128,12 +126,6 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 - [Slack Channel for Questions: #fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS)
 - [Block explorer - Filscout for Calibration](https://calibration.filscout.com/en)
 - [Block explorer - filscan for Calibration](https://calibration.filscan.io/)
-
-### Wallaby
-
-The Wallaby testnet is intended for early testing of new Filecoin Virtual Machine features as the FVM is being actively developed. It is usually reset weekly with a new FVM release.
-
-More information on Wallaby can be found [here](https://github.com/filecoin-project/testnet-wallaby/).
 
 ### Deprecated networks
 

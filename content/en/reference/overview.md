@@ -77,7 +77,7 @@ Tools to check status and details of the network and chain.
 - [storageindex.io](https://www.storageindex.io/) - compares storage capacity of different networks
 - [storage.filecoin.io](https://storage.filecoin.io/) - general storage summary of Filecoin
 - [filecoin.tools](https://filecoin.tools) - check your CID's storage deal status
-- [file.app](https://file.app/) - Filecoin storage provider analytics
+- [file.app](https://file.app/) - Filecoin miner analytics
 - [Deals list at Filfox.io](https://filfox.info/en/deal)
 
 ## Storage Web Applications
@@ -151,13 +151,13 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 #### Storage provider index API
 
 - [Filrep.io API](https://filrep.io/api) - A suite of RESTFul JSON endpoints to discover the best storage provider to make deals with.
-- [Textile Storage Provider Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find storage providers by price, observed deals, speed from North American nodes.
+- [Textile Miner Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find miners by price, observed deals, speed from North American nodes.
 
 ### Data prep tools
 
-- [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
+- [CAR files](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
 - [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) - by FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
-- [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
+- [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
 
 ### Databases using IPFS and Filecoin
 
@@ -170,17 +170,17 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 - [js-rle](https://github.com/willscott/js-rle) - RLE+ Spec. Learn about [rle-bitset-encoding in the Filecoin Spec](https://spec.filecoin.io/#section-appendix.data_structures.rle-bitset-encoding).
 - [Truffle for Filecoin](https://www.trufflesuite.com/docs/filecoin/truffle/quickstart) - building apps to preserve files to IPFS and Filecoin.
 
-## Storage providers
+## Mining
 
-### Storage provider reputation systems
+### Miner reputation systems
 
-- [Codefi Storage](https://storage.codefi.network/) - view the Filecoin Storage Market, storage provider info, asking price, completed deals.
-- [FIL Swan](https://www.filswan.com/) - for offline deals, storage provider info, prices, offline deal acceptance.
-- [Filrep.io](https://filrep.io/) - Index of online storage providers and their pricing, ranked by power and reputation score.
-- [Textile Storage Provider Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find storage providers by price, observed deals, speed from North American nodes.
-- [SpaceGap](https://spacegap.github.io/) - shows storage proof deadlines and sector details for the top 50 storage providers.
+- [Codefi Storage](https://storage.codefi.network/) - view the Filecoin Storage Market, miner info, asking price, completed deals.
+- [FIL Swan](https://www.filswan.com/) - for offline deals, miner info, prices, offline deal acceptance.
+- [Filrep.io](https://filrep.io/) - Index of online miners and their pricing, ranked by power and reputation score.
+- [Textile Miner Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find miners by price, observed deals, speed from North American nodes.
+- [SpaceGap](https://spacegap.github.io/) - shows storage proof deadlines and sector details for the top 50 miners.
 
-### Storage provider tools
+### Miner tools
 
 - [Bidbot](https://github.com/textileio/bidbot) - A Filecoin Network sidecar to bid in storage deal auctions.
 - [Filgas.io](https://fgas.io/) - real-time Filecoin mining gas queries.
@@ -192,7 +192,8 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 - [Filecoin Storage Providers](https://sp.filecoin.io/) - Interested in becoming an SP? A bootcamp, grants and expert advice is available here!
 - [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding)
   - incentivizes valuable data stored on Filecoin with a social trust network for verified data
-  - Clients can apply to Notaries to receive DataCap and incentivize storage providers at 10x to their quality-adjusted power, increasing probability of block rewards
+  - Clients can apply to Notaries to receive DataCap and incentivize Miners at 10x to their quality-adjusted power, increasing probability of block rewards
+- [Filecoin Discover Store](https://store.filecoin-discover.com/)
 - [Slingshot Competition](https://slingshot.filecoin.io/) - ended in 2021 and has now become [Filecoin Evergreen](https://evergreen.filecoin.io/)
 
 ### Retrieval Market resources (WIP experiments)
@@ -245,5 +246,5 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing monthly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
-- Accelerators 
-  - For a list of current accelerators please join [Filecoin Slack](https://filecoin.io/slack) and see regular updates in #_fil-lobby.
+- Accelerators
+  For a list of current accelerators please join [Filecoin Slack](https://filecoin.io/slack) and see regular updates in #_fil-lobby.

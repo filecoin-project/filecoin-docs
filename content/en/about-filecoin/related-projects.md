@@ -20,7 +20,7 @@ IPLD is the data model of the content-addressable web. It allows us to treat all
 
 ## IPFS
 
-IPFS is a distributed system for storing and accessing files, websites, applications, and data. However, it does not have support for incentivization or guarantees of this distributed storage; Filecoin provides the incentive layer. Learn more at [https://ipfs.tech/](https://ipfs.tech/).
+IPFS is a distributed system for storing and accessing files, websites, applications, and data. However, it does not have support for incentivization or guarantees of this distributed storage; Filecoin provides the incentive layer. Learn more at [https://ipfs.io/](https://ipfs.io/).
 
 ## Multiformats
 

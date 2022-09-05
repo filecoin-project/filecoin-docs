@@ -264,7 +264,7 @@ Instead of asking for the chain head information, let's see if a given string is
          "jsonrpc": "2.0",
          "id": 0,
          "method": "Filecoin.WalletValidateAddress",
-         "params": [""]
+         "params": [""],
      }`
    }
    ```
@@ -287,7 +287,7 @@ Instead of asking for the chain head information, let's see if a given string is
          "jsonrpc": "2.0",
          "id": 0,
          "method": "Filecoin.WalletValidateAddress",
-         "params": ["f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi"]
+         "params": ["f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi"],
      }`
    }
    ```
