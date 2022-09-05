@@ -47,16 +47,16 @@
     "highlight.js": "^11.5",
     "hugo-installer": "^3.1",
     "instant.page": "^5.1",
-    "katex": "^0.15",
+    "katex": "^0.16",
     "lazysizes": "^5.3",
-    "netlify-plugin-submit-sitemap": "^0.3.0",
+    "netlify-plugin-submit-sitemap": "^0.4.0",
     "node-fetch": "^3.2",
     "postcss": "^8.4",
-    "postcss-cli": "^9.1",
+    "postcss-cli": "^10.0",
     "purgecss-whitelister": "^2.4",
     "shx": "^0.3.4",
     "stylelint": "^14.6",
-    "stylelint-config-standard-scss": "^4.0"
+    "stylelint-config-standard-scss": "^5.0"
   },
   "otherDependencies": {
     "hugo": "0.96.0"
