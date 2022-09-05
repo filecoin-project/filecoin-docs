@@ -104,8 +104,8 @@ If Homebrew doesn't work for you, or if you prefer to build from source, try the
     make all
     ```
 
-{{< alert icon="tip" >}}If you get a warning: 'kIOMasterPortDefault' is deprecated: first deprecated in macOS 12.0' , don't worry - the build still worked. 
-{{< /alert >}}
+    {{< alert icon="tip" >}}If you get a warning: 'kIOMasterPortDefault' is deprecated: first deprecated in macOS 12.0' , don't worry - the build still worked. 
+    {{< /alert >}}
 
 1. Finally, install the client into your system
     
