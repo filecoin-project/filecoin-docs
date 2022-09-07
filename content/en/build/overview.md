@@ -34,6 +34,8 @@ This is where Filecoin comes in. Filecoin adds an incentive layer to IPFS. Stora
 
 Filecoin and IPFS are designed as separate layers to give developers more choice and modularity, but many tools are available for combining their benefits. This diagram illustrates how these tools (often called [storage helpers]()) provide developer-friendly APIs for storing on IPFS, Filecoin, or both.
 
+<img width="1428" alt="Screen Shot 2022-09-07 at 1 31 43 pm" src="https://user-images.githubusercontent.com/100632895/188782977-d2f02742-4572-4675-ab2b-bcf74e16fca8.png">
+
 To learn more about the protocol, go to [How Filecoin Works]().
 
 ## Get started
