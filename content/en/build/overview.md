@@ -36,6 +36,7 @@ Filecoin and IPFS are designed as separate layers to give developers more choice
 
 <img width="1428" alt="Screen Shot 2022-09-07 at 1 31 43 pm" src="https://user-images.githubusercontent.com/100632895/188782977-d2f02742-4572-4675-ab2b-bcf74e16fca8.png">
 
+<br />
 To learn more about the protocol, go to [How Filecoin Works]().
 
 ## Get started
