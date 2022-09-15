@@ -7,15 +7,15 @@
 <br>
 
 <picture align=center>
-    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/9611008/185500541-565c4d4d-660b-43e8-bc4e-00e9e8fb48b2.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/9611008/185500539-e0a0e852-c3b6-452b-bc7c-fe2fd165fc15.png">
-    <img alt="Shows a black logo in light color mode and a white one in dark color mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://bafybeiaqdbd5zbl55x5vjmkwpjhqapt3ks3q4ykaclqkajhsdwyzlbz3g4.ipfs.w3s.link/Filecoin-logo-blue-white.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://bafybeihuk3hsy6d43dn36tqnvf6tvzleiijd5idbf2q7maw3nshnfm6wiu.ipfs.w3s.link/filecoin-logo-black-type.svg">
+    <img alt="The Filecoin project logo." src="https://bafybeihuk3hsy6d43dn36tqnvf6tvzleiijd5idbf2q7maw3nshnfm6wiu.ipfs.w3s.link/filecoin-logo-black-type.svg">
 </picture>
 
 <br>
 <br>
 
-<p align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>. This repo also contains the build scripts and tools to create the Filecoin docs website. <a href="https://docs.filecoin.io/">Explore the docs →</a></p>
+<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>. This repo also contains the build scripts and tools to create the Filecoin docs website. <a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
 
 <!-- /HEADER -->
 
@@ -90,7 +90,11 @@ Follow these steps to run a copy of this site on your local computer.
 <!-- ABOUT THE PROJECT -->
 ## About the project
 
-[![FVM Homepage][product-screenshot]](https://docs.filecoin.io/)
+<picture align=center>
+    <source media="(prefers-color-scheme: dark)" srcset="https://bafybeick5a6esj6qqtw35jdgrouyn3nrg5ckrmjptuvx3jjjnih7vkdzre.ipfs.w3s.link/filecoin-homepage-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://bafybeib2c67ernhjnqzrdcmtzn5cvi45qrftz6qlo37wr5cnnhvrs6ocg4.ipfs.w3s.link/filecoin-homepage-light.png">
+    <img alt="The Filecoin project logo." src="https://bafybeib2c67ernhjnqzrdcmtzn5cvi45qrftz6qlo37wr5cnnhvrs6ocg4.ipfs.w3s.link/filecoin-homepage-light.png">
+</picture>
 
 This repository manages the documentation for the Filecoin project. This repo also contains the build scripts and tools to create the Filecoin docs website and the API documentation. If you want to learn about Filecoin, how it works, or how to build on it, then you're in the right place.
 
