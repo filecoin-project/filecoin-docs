@@ -27,6 +27,7 @@ We do not provide technical support for any of these wallets.
 | [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
 | [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
+| Ledger (https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true)                                   | A multi-currency wallet.                                                                     | Unknown |
 
 ### Hot versus cold
 
