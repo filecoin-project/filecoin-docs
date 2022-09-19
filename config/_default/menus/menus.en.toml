@@ -145,7 +145,7 @@
   name = "FVM"
   weight = 15
   identifier = "build-fvm"
-  url = "/build/fvm"
+  url = "/build/fvm/fvm-start"
 
 [[build]]
   name = "Tools"
