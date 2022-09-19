@@ -140,6 +140,12 @@
   weight = 10
   identifier = "build-get-started"
   url = "/build/overview"
+  
+[[build]]
+  name = "FVM"
+  weight = 15
+  identifier = "build-fvm"
+  url = "/build/fvm"
 
 [[build]]
   name = "Tools"
