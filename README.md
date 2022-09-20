@@ -135,7 +135,7 @@ Want to help out? Pull requests (PRs) are always welcome! If you want to help ou
 
 Here's a collection of guides you can use to help manage and contribute to this site:
 
-- [Managing the top-bar navigation](https://bafybeidn4wxz44rssgdlu3p2dzh4tbyevuqd27xv7avioyf2m65jzlhnj4.ipfs.w3s.link/DaaS%20-%20Managing%20the%20topbar%20navigation%20-%20HD%201080p.mov
+- [Managing the top-bar navigation](https://bafybeidn4wxz44rssgdlu3p2dzh4tbyevuqd27xv7avioyf2m65jzlhnj4.ipfs.w3s.link/DaaS%20-%20Managing%20the%20topbar%20navigation%20-%20HD%201080p.mov)
 - [Move a page and add a redirect](https://bafybeibuwipv4rk2tzcqvouu2xlnebh4d7ol47mvmegtispbvlcruuwmhi.ipfs.w3s.link/Move%20and%20page%20and%20add%20a%20redirect.mp4)
 
 <!-- /CONTRIBUTING -->
