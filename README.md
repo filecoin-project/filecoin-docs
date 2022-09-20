@@ -131,7 +131,8 @@ This section lists the various files and folders and defines the purpose for eac
 
 Want to help out? Pull requests (PRs) are always welcome! If you want to help out but aren't sure where to start, check out the [issues board](https://github.com/filecoin-project/filecoin-docs/issues).
 
-### Video guides
+### Video guides for site management
+
 
 Here's a collection of guides you can use to help manage and contribute to this site:
 
