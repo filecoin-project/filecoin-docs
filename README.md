@@ -41,7 +41,7 @@
 <!-- GETTING STARTED-->
 ## Getting Started
 
-To get a local version of the site up and running, follow these simple example steps.
+Follow these simple example steps to get a local version of the site up and running.
 <!-- /GETTING STARTED-->
 
 
@@ -106,21 +106,21 @@ This section lists the various files and folders and defines the purpose for eac
 | Name | Purpose |
 | --- | --- |
 | `.git`, `.github` | Manage the git configurations and contain information for GitHub constant integrations. |
-| `README.md` | This file. Acts as an introduction to this repo, along with how to spin up a local copy of the `docs.filecoin.io` site. |
+| `README.md` | This file. Acts as an introduction to this repo and how to spin up a local copy of the `docs.filecoin.io` site. |
 | `archetypes/` | Used by Hugo to programmatically create new pages. |
-| `assets/` | Assets like JavaScript and fonts used by Hugo to create the static site. These assets are not explorable in a built site and must be referenced before the site is built. |
+| `assets/` | Assets like JavaScript and fonts used by Hugo to create the static site. These assets are not explorable in a built site. You must reference them in code before building the site. |
 | `babel.config.js` | A configuration file used for the Babel JS compiler. |
-| `config/` | Contains the configuration files for Hugo. Things like the topbar menu and site title can be managed within this directory. |
-| `content/` | This is where all the `.md` files live that control the content of this site. This is where most contributions happen. |
-| `data/` | Extra variables for Hugo to use when building pages can be supplied here. These variables act just like front-matter variables. See [Data Templates](https://gohugo.io/templates/data-templates/) in the Hugo docs for more info. |
-| `functions/` | Functions that can be called from any template, partial, or shortcode within Hugo. |
+| `config/` | Contains the configuration files for Hugo. You can manage things like the top-bar menu and site title within this directory. |
+| `content/` | This is where all the `.md` files live that control the content of this site. Most contributions happen in this directory. |
+| `data/` | You can supply extra variables for Hugo to use when building pages in this directory. These variables act just like front-matter variables. See [Data Templates](https://gohugo.io/templates/data-templates/) in the Hugo docs for more info. |
+| `functions/` | Functions callable from any template, partial, or shortcode within Hugo. |
 | `i18n/` | Contains files specific to managing different languages. |
-| `layouts/` | This is where web developers will spend most of their time. This folder contains the shortcodes and partials that Hugo uses to scaffold and build the site. |
-| `/node_modules/` | Where NPM throws it's packages. If you see this in GitHub, something's gone wrong. It should only show up on your computer after you run `npm install`. |
-| `package-lock.json` | One of the NPM configuration files. Specifies which version of packages to download. |
+| `layouts/` | This is where web developers will likely spend most of their time. This folder contains the shortcodes and partials that Hugo uses to scaffold and build the site. |
+| `node_modules/` | Where NPM throws its packages. If you see this in GitHub, something's gone wrong. It should only exist on your computer after you run `npm install`. |
+| `package-lock.json` | One of the NPM configuration files. Specify which version of packages to download. |
 | `package.json` | Another one of the NPM configuration files. Specifies which packages to download but doesn't specify which _version_ of the package to grab.
 | `resources/` | A cache where Hugo throws generated files like CSS and JSON after `npm run build` has been called. Unless `npm run clean` is called, Hugo will re-use these files when calling `npm run build`. |
-| `static/` | Images, css, fonts, and other misc files available at `docs.filecoin.io/` when the site is built. For example, `docs.filecoin.io/site.webmanifest`.
+| `static/` | Images, CSS, fonts, and other misc files available at `docs.filecoin.io/` when the site is built. For example, `docs.filecoin.io/site.webmanifest`.
 | `theme.toml` | A Hugo configuration file that specifies which theme to use. This file should not change that often. |
 <!-- /ABOUT THE PROJECT -->
 
