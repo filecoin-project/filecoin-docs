@@ -36,7 +36,6 @@ Filecoin and IPFS are designed as separate layers to give developers more choice
 
 ![Web3-Enabled Architecture by Filecoin](./images/web3-architecture.png)
 
-<br />
 To learn more about the protocol, go to [How Filecoin Works](../about-filecoin/how-filecoin-works/).
 
 ## Get started
