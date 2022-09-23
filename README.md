@@ -264,7 +264,8 @@ Each section has its own sidebar menu. The name of each sidebar menu is usually 
 | Section | Sidebar menu name |
 | --- | --- |
 | About Filecoin | `about` |
-| Build | `build |
+| Build | `build` |
+
 | Get started | `getstarted` |
 | Networks | `networks` |
 | Reference | `reference` |
