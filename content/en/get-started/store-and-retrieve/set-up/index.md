@@ -132,19 +132,19 @@ There are two simple ways to install Lotus on Linux (this is tested on Ubuntu):
 1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/latest):
 
     ```shell
-    wget https://github.com/filecoin-project/lotus/releases/download/v1.17.0/Lotus-v1.17.0-x86_64.AppImage
+    wget https://github.com/filecoin-project/lotus/releases/download/v1.17.1/Lotus-v1.17.1-x86_64.AppImage
     ```
 
 1. Make the `AppImage` executable:
 
     ```shell
-    chmod +x Lotus-v1.17.0-x86_64.AppImage
+    chmod +x Lotus-v1.17.1-x86_64.AppImage
     ```
 
 1. Move the `AppImage` to `/usr/local/bin` and rename it `lotus`:
 
     ```shell
-    sudo mv Lotus-v1.17.0-x86_64.AppImage /usr/local/bin/lotus
+    sudo mv Lotus-v1.17.1-x86_64.AppImage /usr/local/bin/lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
@@ -176,10 +176,6 @@ Now that you have Lotus ready to run, you can start a Lotus lite-node on your co
 
 {{< alert icon="warning" >}}
 `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but should not be used in a development or in a production environment.
-{{< /alert >}}
-
-{{< alert icon="tip" >}}
-if you installed via Snap, the binary name is 'lotus-filecoin.lotus' instead of just 'lotus'
 {{< /alert >}}
 
 1. Open a terminal windows and run the `lotus daemon --lite` command, using `api.chain.love` as the full-node address:
@@ -241,7 +237,7 @@ It is incredibly important that you backup your addreses. Storing a copy of your
 1. Use `lotus wallet export` to export your private key, replacing `f1...` with your public key:
 
     ```shell
-    sudo lotus wallet export f1... > my_address.key
+    lotus wallet export f1... > my_address.key
     ```
 
     This will create a new file called `my_address.key` in the current directory.
