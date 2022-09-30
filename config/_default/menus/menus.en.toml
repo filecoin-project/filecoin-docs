@@ -142,8 +142,14 @@
   url = "/build/overview"
 
 [[build]]
-  name = "Tools"
+  name = "Protocol Layer"
   weight = 20
+  identifier = "protocol-layer"
+  url = "/build/protocol-layer"
+
+[[build]]
+  name = "Tools"
+  weight = 40
   identifier = "build-tools"
   url = "/build/estuary"
 
