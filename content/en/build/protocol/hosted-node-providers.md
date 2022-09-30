@@ -7,8 +7,6 @@ menu:
 weight: 20
 ---
 
-# Hosted nodes
-
 Hosted node providers take care of running Filecoin node software for you so that you can focus on integrating and building on top of the FIlecoin layer. Here are the current hosted node providers for Filecoin Mainnet and various test networks.
 
 ### Hosted nodes for Mainnet
