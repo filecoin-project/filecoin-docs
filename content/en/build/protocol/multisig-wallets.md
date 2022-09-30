@@ -4,7 +4,7 @@ description: "How to programmatically create and manage multi-signature (multisi
 menu:
     build:
         parent: "protocol-layer"
-weight: 30
+weight: 40
 ---
 
 # Multisig wallets
