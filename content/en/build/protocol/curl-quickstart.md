@@ -1,3 +1,12 @@
+---
+title: "Curl Quickstart"
+description: "This quickstart aims to give you a taste of working directly with the Filecoin protocol in less than 5 minutes. We will use JSON RPC API calls and curl to read public chain data from Filecoin."
+menu:
+    build:
+        parent: "protocol-layer"
+weight: 10
+---
+
 # Curl Quickstart
 
 This quickstart aims to give you a taste of working directly with the Filecoin protocol in less than 5 minutes. We will use JSON RPC API calls along with [curl](https://curl.se/), a command-line utility that’s pre-installed into most Linux distributions, to read public chain data from Filecoin.
