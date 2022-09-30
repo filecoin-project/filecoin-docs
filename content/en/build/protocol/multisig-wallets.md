@@ -7,8 +7,6 @@ menu:
 weight: 40
 ---
 
-# Multisig wallets
-
 A single key is subject to accidents such as loss of the physical device. It is now a common feature for crypto wallets to provide multiple-signature (multisig) support. Whether it is one user with multiple keys to a wallet (one user with three devices), or multiple users needed to review and approve a transaction (one business account with multiple partners), multisig wallets provide additional security, flexibility, and recoverability.
 
 #### Create a multisig wallet via Lotus command line
