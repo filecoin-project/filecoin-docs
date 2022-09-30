@@ -28,3 +28,4 @@ Please take a look at the presentation Benjamin Hoejsbo gave where they examine 
 We are working to improve this section. If you would like to share your mining setup, please create an issue in the [Filecoin Docs Github repository](https://github.com/filecoin-project/filecoin-docs/issues)!
 {{< /alert >}}
 
+![Mircosoft Crunchbase](microsoft.png)
