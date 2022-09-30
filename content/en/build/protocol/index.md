@@ -1,5 +1,5 @@
 ---
-title: "Curl Quickstart"
+title: "Building on Filecoin's Protocol Layer"
 description: "This quickstart aims to give you a taste of working directly with the Filecoin protocol in less than 5 minutes. We will use JSON RPC API calls and curl to read public chain data from Filecoin."
 menu:
     build:
@@ -7,7 +7,11 @@ menu:
 weight: 10
 ---
 
-# Curl Quickstart
+If you are building tooling such as wallets, exchanges, and developer tools, you may wish to interact directly with Filecoin’s protocol layer. This section includes resource pages for building directly on the protocol layer, and quickstart guides for [curl](#curl-quickstart) and [NodeJS].
+
+See [Available Networks](https://docs.filecoin.io/networks/overview/) for information on test networks and Mainnet. 
+
+## Curl Quickstart
 
 This quickstart aims to give you a taste of working directly with the Filecoin protocol in less than 5 minutes. We will use JSON RPC API calls along with [curl](https://curl.se/), a command-line utility that’s pre-installed into most Linux distributions, to read public chain data from Filecoin.
 
@@ -16,9 +20,7 @@ In this tutorial, you will learn how to:
 * [Get tipset by height and find block CID](#get-tipset-by-height-and-find-block-cid)
 * [Get block details](#get-block-details)
 
-{{< alert icon="tip" >}}**Note: Authentication**
-
-Publicly hosted nodes only support unsigned methods that don’t require an API token. To use all of the methods, you’ll need to host your own node or get access to a [dedicated hosted node](https://lotus.filecoin.io/lotus/developers/glif-nodes/). For more details, see [Lotus API access](https://lotus.filecoin.io/reference/basics/api-access/).
+**A note on authentication:** Publicly hosted nodes only support unsigned methods that don’t require an API token. To use all of the methods, you’ll need to host your own node or get access to a [dedicated hosted node](https://lotus.filecoin.io/lotus/developers/glif-nodes/). For more details, see [Lotus API access](https://lotus.filecoin.io/reference/basics/api-access/).
 
 ### Get current block height
 
