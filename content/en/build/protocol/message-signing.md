@@ -7,8 +7,6 @@ menu:
 weight: 30
 ---
 
-# Message signing
-
 Signing a message is a way to verify that you control a certain wallet address. For a transaction or a message to get on-chain, it must be signed with a private key (usually from a wallet) and submitted along with its signature. 
 
 Here are several tools for signing messages on Filecoin:
