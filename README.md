@@ -281,7 +281,15 @@ menu:
 
 ##### Sub-menu
 
-You can think of a sub-menu as the dropdown item in the sidebar menu. Sub-menus are defined in `/config/\_default/menus/menus.en.toml`. Each sub-menu has its own `[[name]]` tag, similar to how the top-bar menu items are defined within the `[[main]]` tag:
+You can think of a sub-menu as the dropdown item in the sidebar menu. Sub-menus are defined in `/config/\_default/menus/menus.en.toml`. 
+Each sub-menu is a _child_ of a sidebar menu. A sidebar menu can contain multiple sub-menus, but a sub-menu can only belong to one sidebar menu.
+
+Sub-menus are made up of:
+
+- `name`: The visible text shown to the user.
+- `weight`: How high or low this sub-menu is shown within the sidebar.
+- `identifier`: A unique string used in the front-matter to specify this particular sub-menu.
+- `url`: The default page a user will go to if they click on this sub-menu link.
 
 ```YAML
 [[about]]
