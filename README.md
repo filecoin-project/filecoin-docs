@@ -265,12 +265,12 @@ Each section has its own sidebar menu. The name of each sidebar menu is usually 
 | --- | --- |
 | About Filecoin | `about` |
 | Build | `build` |
-
 | Get started | `getstarted` |
 | Networks | `networks` |
 | Reference | `reference` |
 | Storage provider | `storageprovider` |
 | Store | `store` |
+
 
 ```YAML
 ---
