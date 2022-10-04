@@ -24,8 +24,8 @@
   weight = 50
 
 [[main]]
-  name = "Build"
-  url = "/build/overview"
+  name = "Developers"
+  url = "/developers/overview"
   weight = 60
 
 [[main]]
@@ -135,17 +135,17 @@
 
 
 
-[[build]]
+[[developers]]
   name = "Get building"
   weight = 10
-  identifier = "build-get-started"
-  url = "/build/overview"
+  identifier = "developers-get-started"
+  url = "/developers/overview"
 
-[[build]]
+[[developers]]
   name = "Tools"
   weight = 20
-  identifier = "build-tools"
-  url = "/build/estuary"
+  identifier = "developers-tools"
+  url = "/developers/estuary"
 
 
 
