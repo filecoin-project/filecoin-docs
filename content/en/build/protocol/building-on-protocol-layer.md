@@ -1,5 +1,5 @@
 ---
-title: "Building on Filecoin's Protocol Layer"
+title: "Building on the protocol layer"
 description: "This quickstart aims to give you a taste of working directly with the Filecoin protocol in less than 5 minutes. We will use JSON RPC API calls and curl to read public chain data from Filecoin."
 menu:
     build:
