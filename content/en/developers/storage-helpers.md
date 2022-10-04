@@ -2,8 +2,8 @@
 title: "Storage Helpers"
 description: "Storage helpers are APIs and services that abstract Filecoin dealmaking into simple, streamlined API calls."
 menu:
-    build:
-        parent: "build-get-started"
+    developers:
+        parent: "developers-get-started"
 weight: 2
 ---
 

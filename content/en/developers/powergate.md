@@ -2,8 +2,8 @@
 title: "Powergate"
 description: "The Powergate is an API-driven storage solution for deploying multi-tiered storage across Filecoin (the cold-storage layer) and IPFS(the hot-storage layer)."
 menu:
-    build:
-        parent: "build-tools"
+    developers:
+        parent: "developers-tools"
 ---
 
 Powergate exposes higher-level APIs for developers that facilitate interaction with IPFS and Filecoin nodes. It also handles wallet management, long-term deal management, and provides many features that improve the overall experience of being a storage client on Filecoin. You can read more about Powergate in the [Textile docs](https://docs.textile.io/powergate/).

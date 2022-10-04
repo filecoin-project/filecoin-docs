@@ -2,8 +2,8 @@
 title: "Textile Buckets"
 description: "Buckets is a Textile product that provides storage to be used in a very similar fashion as standard cloud storage, but using IPFS and Filecoin under the hood."
 menu:
-    build:
-        parent: "build-tools"
+    developers:
+        parent: "developers-tools"
 ---
 
 Here are the steps to quickly get setup with buckets:

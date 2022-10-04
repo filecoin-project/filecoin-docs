@@ -2,9 +2,9 @@
 title: "Overview"
 description: "Overview of developer tools and options for adding Filecoin storage to software applications, smart contracts, and workflows."
 menu:
-    build:
-        parent: "build-get-started"
-        idenfitied: "build-get-started"
+    developers:
+        parent: "developers-get-started"
+        idenfitied: "developers-get-started"
 aliases:
     - /build/get-started
     - /build
