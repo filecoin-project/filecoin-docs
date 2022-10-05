@@ -4,6 +4,8 @@ description: "Want to jump into Filecoin and start building something? This sect
 menu:
     developers:
         parent: "developers-get-started"
+aliases:
+    - /build/get-started/
 weight: 20
 ---
 

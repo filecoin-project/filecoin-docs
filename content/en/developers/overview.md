@@ -6,8 +6,8 @@ menu:
         parent: "developers-get-started"
         idenfitied: "developers-get-started"
 aliases:
-    - /build/get-started
     - /build
+    - /build/overview
 weight: 1
 ---
 

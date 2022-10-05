@@ -4,6 +4,8 @@ description: "Filecoin-backed pinning services (FPS) are data storage and retrie
 menu:
     developers:
         parent: "developers-tools"
+aliases:
+    - /build/filecoin-pinning-services/
 ---
 
 ## How to use an FPS
