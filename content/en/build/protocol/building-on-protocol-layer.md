@@ -9,7 +9,7 @@ weight: 10
 
 If you are building tooling such as wallets, exchanges, and developer tools, you may wish to interact directly with Filecoin’s protocol layer. This section includes resource pages for building directly on the protocol layer, and quickstart guides for [curl](#curl-quickstart) and [NodeJS].
 
-See [Available Networks](https://docs.filecoin.io/networks/overview/) for information on test networks and Mainnet. 
+See [Available Networks](https://docs.filecoin.io/networks/overview/) for information on Testnet and Mainnet. 
 
 ## Curl Quickstart
 
