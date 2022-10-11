@@ -17,6 +17,7 @@ The process is split into three main parts: the set-up, storing your data and re
 <picture align=center>
   <source media="(prefers-color-scheme: dark)" srcset="end-to-end-process-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="end-to-end-process-light.png">
+   <img alt="end-to-end-process" src="end-to-end-process.png">
  </picture
 
 | Section | Sub-tasks |
