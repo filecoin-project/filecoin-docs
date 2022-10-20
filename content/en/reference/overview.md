@@ -229,6 +229,7 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 - [ImToken](https://token.im/)
 - [TrustWallet](https://trustwallet.com/)
   - [Open-source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
+- [BraveWallet](https://brave.com/de/wallet/)
 
 ## Ecosystem galleries
 
