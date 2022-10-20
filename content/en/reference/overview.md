@@ -222,13 +222,14 @@ Also see the [Wallet-related tools](#wallet-related-tools) section above.
 
 The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
 
-- [Fox Wallet](https://foxwallet.com/)
+- [BraveWallet](https://brave.com/de/wallet/)
 - [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
 - [Cobo](https://cobo.com/)
-- [MathWallet](https://mathwallet.org/)
+- [Fox Wallet](https://foxwallet.com/)
 - [ImToken](https://token.im/)
+- [MathWallet](https://mathwallet.org/)
+- [Open-source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 - [TrustWallet](https://trustwallet.com/)
-  - [Open-source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 
 ## Ecosystem galleries
 
