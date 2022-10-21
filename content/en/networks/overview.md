@@ -77,8 +77,8 @@ Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supp
 - [Latest chain snapshot (full)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car)
 - [Status page and incidents](https://filecoin.statuspage.io/)
 - [Stats dashboard](https://stats.filecoin.io/)
-- [Slack Channel for Updates: #fil-mainnet-announcements](https://filecoinproject.slack.com/archives/C019UFEACBT)
-- [Slack Channel for Questions: #fil-mainnet](https://filecoinproject.slack.com/archives/C0179RNEMU4)
+- [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
+- [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 - [Block explorer: Filfox](https://filfox.io/)
 - [Block explorer: Filscan](https://filscan.io/)
 - [Block explorer: Filscout](https://filscout.com/)
@@ -124,8 +124,8 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 
 - [Faucet](https://faucet.calibration.fildev.network/)
 - [Stats Dashboard](https://stats.calibration.fildev.network/)
-- [Slack Channel for Updates: #fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC)
-- [Slack Channel for Questions: #fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS)
+- [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
+- [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 - [Block explorer - Filscout for Calibration](https://calibration.filscout.com/en)
 - [Block explorer - filscan for Calibration](https://calibration.filscan.io/)
 
