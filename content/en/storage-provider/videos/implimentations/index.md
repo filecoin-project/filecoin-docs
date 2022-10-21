@@ -10,7 +10,7 @@ aliases:
 
 ## Filecoin Implementations
 
-Storage providers and data owners use multiple implementations to interact with the Filecoin network. In this video, James describes what an implementation is and the functions, characteristics, and advantages of each. 
+Storage providers and data owners use multiple implementations to interact with the Filecoin network. In this video, James describes what an implementation is, and the functions, characteristics, and advantages of each. 
 
 {{< youtube "aAv5JTIJHNU" >}}
 
