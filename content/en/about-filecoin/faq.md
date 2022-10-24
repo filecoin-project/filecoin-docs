@@ -1,6 +1,6 @@
 ---
-title: "Filecoin FAQ"
-description: "Filecoin frequently asked questions."
+title: "FAQ - Filecoin Use Cases, Storage Providers, Encryption & more"
+description: "Answers to your frequently asked questions on everything from Filecoin's crypto-economics and storage expenses to hardware and networking."
 menu:
     about:
         parent: "about-filecoin-basics"
