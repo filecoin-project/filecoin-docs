@@ -1,6 +1,6 @@
 ---
-title: "IPFS and Filecoin"
-description: "Learn more about the relationship and different use-cases between IPFS and Filecoin."
+title: "IPFS vs Filecoin - Their Relationship and Different Use-cases"
+description: "Learn about these complementary protocols for storing & sharing data in the distributed web. Both systems are free, open-source, & share many building blocks"
 menu:
     about:
         parent: "about-filecoin-basics"
