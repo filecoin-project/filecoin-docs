@@ -133,6 +133,11 @@
   identifier = "storage-provider-rewards"
   url = "/storage-provider/rewards"
 
+[[storageprovider]]
+  name = "Videos"
+  weight = 40
+  identifier = "storage-provider-videos"
+  url = "/storage-provider/videos"
 
 
 [[build]]
