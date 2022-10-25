@@ -56,9 +56,9 @@ Fees and confirmation:
 
 | **Name** | **Project** | **Infrastructure** | **Custodian** | **Main Blockchain**              | **Link**                            |
 |----------|-------------|--------------------|---------------|----------------------------------|-------------------------------------|
-| renFIL   | renBridge   | Decentralized      | Decentralized | Etherium, Binance, Polygon       | https://bridge\.renproject\.io/mint |
-| wFIL     | WRAPPED     | Centralized        | Anchorage     | Etherium                         | https://www\.wrapped\.com/          |
-| BFIL     | Binance     | Centralized        | Binance       | Etherium via Binance Token Canal | https://www\.binance\.com/          |
+| renFIL   | renBridge   | Decentralized      | Decentralized | Ethereum, Binance, Polygon       | https://bridge\.renproject\.io/mint |
+| wFIL     | WRAPPED     | Centralized        | Anchorage     | Ethereum                         | https://www\.wrapped\.com/          |
+| BFIL     | Binance     | Centralized        | Binance       | Ethereum via Binance Token Canal | https://www\.binance\.com/          |
 | vFIL     | Venus       | Decentralized      | Decentralized | Binance Smart Chain              | https://www\.venus\.io/             |
-| eFIL     | Gemini      | Decentralized      | Gemini        | Etherium                         | https://www\.gemini\.com/           |
-| HFIL     | Huobi       | Decentralized      | Huobi         | Etherium                         | https://www\.huobi\.com             |
+| eFIL     | Gemini      | Decentralized      | Gemini        | Ethereum                         | https://www\.gemini\.com/           |
+| HFIL     | Huobi       | Decentralized      | Huobi         | Ethereum                         | https://www\.huobi\.com             |
