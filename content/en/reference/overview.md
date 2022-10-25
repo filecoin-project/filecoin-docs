@@ -76,7 +76,7 @@ Tools to check status and details of the network and chain.
 
 - [storageindex.io](https://www.storageindex.io/) - compares storage capacity of different networks
 - [storage.filecoin.io](https://storage.filecoin.io/) - general storage summary of Filecoin
-- [filecoin.tools](https://filecoin.tools) - check your CID's storage deal status
+- [filecoin.tools](https://filecoin.tools) - check your CID's storage deal status. Also provides an API - check [filecoin.tools/docs](https://filecoin.tools/docs) for reference
 - [file.app](https://file.app/) - Filecoin storage provider analytics
 - [Deals list at Filfox.io](https://filfox.info/en/deal)
 
@@ -131,7 +131,7 @@ Developer tools, API clients & storage services that developers can use to build
 
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
-- [Glif nodes](https://lotus.filecoin.io/developers/glif-nodeshttps://lotus.filecoin.io/developers/glif-nodes/) and [Infura](https://infura.io/docs/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
+- [Glif nodes](https://lotus.filecoin.io/lotus/developers/glif-nodes/) and [Infura](https://infura.io/docs/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
   - These endpoints support read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Message signing tools](#message-signing-tools)).
 - [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   - [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
@@ -155,9 +155,9 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Data prep tools
 
-- [CAR files](https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
+- [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
 - [go-graphsplit](https://github.com/filedrive-team/go-graphsplit) - by FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
-- [IPFS](https://ipfs.io) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
+- [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
 
 ### Databases using IPFS and Filecoin
 
@@ -222,13 +222,14 @@ Also see the [Wallet-related tools](#wallet-related-tools) section above.
 
 The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
 
-- [Fox Wallet](https://foxwallet.com/)
+- [BraveWallet](https://brave.com/de/wallet/)
 - [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
 - [Cobo](https://cobo.com/)
-- [MathWallet](https://mathwallet.org/)
+- [Fox Wallet](https://foxwallet.com/)
 - [ImToken](https://token.im/)
+- [MathWallet](https://mathwallet.org/)
+- [Open-source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 - [TrustWallet](https://trustwallet.com/)
-  - [Open-source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
 
 ## Ecosystem galleries
 
@@ -245,5 +246,5 @@ The wallets below support FIL tokens. We recommend verifying that these have bee
 
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing monthly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
-- Accelerators
-  For a list of current accelerators please join [Filecoin Slack](https://filecoin.io/slack) and see regular updates in #_fil-lobby.
+- Accelerators 
+  - For a list of current accelerators please join [Filecoin Slack](https://filecoin.io/slack) and see regular updates in #_fil-lobby.

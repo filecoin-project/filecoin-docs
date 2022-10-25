@@ -138,7 +138,7 @@ Here are some links to useful introductory materials about the technology that p
 - IPFS:
 
   - [A beginner's guide to IPFS](https://hackernoon.com/a-beginners-guide-to-ipfs-20673fedd3f)
-  - [IPFS concepts](https://docs.ipfs.io/concepts/)
+  - [IPFS concepts](https://docs.ipfs.tech/concepts/)
   - [ProtoSchool tutorials](https://proto.school/#/tutorials)
 
 - libp2p:

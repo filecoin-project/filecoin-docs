@@ -5,10 +5,20 @@ var pre = document.getElementsByTagName('pre');
 for (var i = 0; i < pre.length; ++ i)
 {
   var element = pre[i];
-  var mermaid = element.getElementsByClassName('language-mermaid')[0];
 
-  if (mermaid == null) {
+  var mermaid = element.getElementsByClassName('language-mermaid')[0];
+  if (mermaid == null && (element.previousElementSibling.localName != "pre")) {
     element.insertAdjacentHTML('afterbegin', '<button class="btn btn-copy"></button>');
+    
+    if (element.nextElementSibling) {
+      if (element.nextElementSibling.localName == "pre") {
+        element.style.marginBottom = 0;
+      }
+    }
+  }
+  if (element.previousElementSibling.localName == "pre") {
+    element.style.marginTop = 0;
+    element.style.opacity = 0.5; 
   }
 }
 

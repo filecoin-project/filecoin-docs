@@ -34,8 +34,6 @@ Before you can retrieve data from a storage provider, you need to check that you
     lotus wallet list
     ```
 
-    Lotus will output something like:
-
     ```shell
     > Address                                    Balance  Nonce  Default
     > f16mwizoeloamhp4dea4uy367mlihddw2mflnb5vy  10 FIL   0      X
@@ -63,20 +61,14 @@ We're going to gather this information now.
 
 1. Copy this **address** to your clipboard: `f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq`.
 
-    {{< alert icon="tip" >}}**Using a different address**
-    If you want to retrieve data that **you stored** you can use that **address** in place of the one we're using in this tutorial. If you'd like to use the **address** on your local Lotus note, run `lotus wallet list` and copy it to your clipboard.
-
-    Remember, you will not be able to retrieve data stored less than 24 hours ago.
-    {{< /alert >}}
+    If you want to retrieve data that **you stored** you can use that **address** in place of the one we're using in this tutorial. If you'd like to use the **address** on your local Lotus note, run `lotus wallet list` and copy it to your clipboard. You will not be able to retrieve data stored less than 24 hours ago.
 
 1. Go to [filecoin.tools](https://filecoin.tools).
 1. Paste the **address** in the search bar and press `ENTER` to search for deals made by that **address**:
 
     ![Filecoin.tools showing all the deals made by a single address.](filecoin-tools-search-address.png)
 
-    {{< alert icon="warning" >}}**Using a different address**
     The default **address** supplied in this tutorial `f16wc2ees...` has only submitted one storage deal, so you'll only see one row in [filecoin.tools](https://filecoin.tools/f16wc2ees6nkmk4pguoaaly4zdkeemaajjbv7aqgq). If you are using a different **address**, you may see multiple rows. If you don't see _any_ rows, the **address** you searched for has not yet completed a deal. The **address** may have submitted a deal, but the storage provider is yet to _seal_ the data. Deals will only show up here once the storage provider has completed sealing the data.
-    {{< /alert >}}
 
 1. Click anywhere on a row to view information about that specific deal:
 
@@ -118,9 +110,7 @@ Next up is creating the command for Lotus to run. The structure for a retrieval 
     Success
     ```
 
-    {{< alert icon="warning" >}}
     You must keep the `lotus daemon` running for the duration of this process.
-    {{< /alert >}}
 
 1. That's it!
 
