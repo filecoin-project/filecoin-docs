@@ -30,4 +30,4 @@ To further incentivize the storage of "useful" data over simple capacity commitm
 
 ## Retrieval fees
 
-Retrieval fees are paid incrementally using _payment channels_ as the retrieval deals are fulfilled (by sending portions of the data to the client. This happens off-chain.
+Retrieval fees are paid incrementally using _payment channels_ as the retrieval deals are fulfilled by sending portions of the data to the client. This happens off-chain.
