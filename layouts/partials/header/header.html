@@ -115,19 +115,9 @@
 <nav class="doks-subnavbar py-2 sticky-lg-top{{ if eq .Site.Params.options.flexSearch false }} d-lg-none{{ end }}" aria-label="Secondary navigation">
   <div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }} d-flex align-items-md-center">
 
-    {{ if .Site.Params.options.flexSearch -}}
-    <script type="text/javascript">
-      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-      _st('install','ULzjAPKsAhE5mSiynyXU','2.0.0');
-    </script>
     <form class="position-relative">
       <input class="st-default-search-input" placeholder="Press enter to search..." aria-label="Search docs..." autocomplete="off">
     </form>
-    {{ end -}}
 
     {{ if eq .Site.Params.options.docsVersioning true -}}
     <div class="dropdown ms-3">
