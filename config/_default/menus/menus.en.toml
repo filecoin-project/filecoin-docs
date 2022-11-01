@@ -82,12 +82,6 @@
   url = "/get-started/overview/"
 
 [[getstarted]]
-  name = "Store and retrieve"
-  weight = 10
-  identifier = "getstarted-store-and-retrieve"
-  url = "/get-started/store-and-retrieve/"
-
-[[getstarted]]
   name = "Explore"
   weight = 20
   identifier = "getstarted-explore"
