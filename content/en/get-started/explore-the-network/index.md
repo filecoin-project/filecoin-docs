@@ -4,7 +4,7 @@ description: "There are several ways to explore and get insights from the Fileco
 menu:
     getstarted:
         parent: "getstarted-explore"
-weight: 7
+weight: 30
 ---
 
 ## Block explorers
