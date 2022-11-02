@@ -35,7 +35,7 @@ The following applications allow you to store data on the Filecoin network with 
 
 ### Digital Preservation
 
-- [Starling]({{< relref "starling.md" >}}) uses Lotus to simplify decentralized storage for digital _preservationists_ and archivists.
+- [Starling]({{< relref "starling" >}}) uses Lotus to simplify decentralized storage for digital _preservationists_ and archivists.
 
 ### Video
 
@@ -47,5 +47,5 @@ There are additional storage solutions that you should not miss. While they have
 
 - [Fleek](https://fleek.co) provides easy hosting and storage solutions on IPFS and their [SpaceDaemon](https://docs.fleek.co/space-daemon/overview/) and upcoming Space SDK use Filecoin.
 - [Pinata](https://pinata.cloud/) is an IPFS pinning service that will soon include Filecoin in its portfolio.
-- [Powergate](https://github.com/textileio/powergate) a multitiered storage solution that stores data with [IPFS and Filecoin]({{< relref "about-filecoin/ipfs-and-filecoin" >}}). It can be used [self-hosted]({{< relref "/build/powergate" >}}).
-- [Textile Buckets]({{< relref "/build/textile-buckets" >}}) provide S3-like storage using IPFS with Filecoin-backed archival and has an easy-to-use CLI.
+- [Powergate](https://github.com/textileio/powergate) a multitiered storage solution that stores data with [IPFS and Filecoin]({{< relref "about-filecoin/ipfs-and-filecoin" >}}). It can be used [self-hosted]({{< relref "build/tools/powergate" >}}).
+- [Textile Buckets]({{< relref "build/tools/textile-buckets" >}}) provide S3-like storage using IPFS with Filecoin-backed archival and has an easy-to-use CLI.

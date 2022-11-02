@@ -25,7 +25,7 @@ Looking for Lotus? You can find Lotus specific documentation over at [lotus.file
 
 ## Store content on Filecoin
 
-Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →]({{< relref "/store/overview" >}})
+Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →]({{< relref "store/overview" >}})
 
 - Visit [Slate](https://slate.host/) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](https://lotus.filecoin.io). Setup your first wallet and learn how to [send and receive ⨎](https://lotus.filecoin.io/docs/set-up/manage-fil/) and [make storage deals](https://lotus.filecoin.io/docs/storage-providers/manage-storage-deals/).
@@ -34,8 +34,8 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 
 ## Contribute to Filecoin
 
-- [Mine Filecoin]({{< relref "/storage-provider/overview" >}}): for those wanting to provide storage and retrieval capabilities to the Network.
-- [Build on Filecoin]({{< relref "/build/overview" >}}): for those wanting to build applications that interact with the Filecoin network.
+- [Mine Filecoin]({{< relref "storage-provider/overview" >}}): for those wanting to provide storage and retrieval capabilities to the Network.
+- [Build on Filecoin]({{< relref "build/get-building/overview" >}}): for those wanting to build applications that interact with the Filecoin network.
 
 ## Filecoin Software
 
