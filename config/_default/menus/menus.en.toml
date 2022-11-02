@@ -147,6 +147,12 @@
   identifier = "build-tools"
   url = "/build/estuary"
 
+[[build]]
+  name = "FVM"
+  weight = 20
+  identifier = "build-fvm"
+  url = "/build/fvm/overview"
+
 
 
 [[reference]]
