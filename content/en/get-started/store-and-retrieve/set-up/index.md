@@ -168,12 +168,6 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
     sudo snap install lotus
     ```
 
-2. The snap installer automatically starts a full lotus node as a daemon. For the purposes of this tutorial, which uses a lite-node, we don't want that, so disable it, and then we can run a lotus lite-node instead.
-
-    ```shell
-    sudo snap disable lotus
-    ```
-
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
 
 
