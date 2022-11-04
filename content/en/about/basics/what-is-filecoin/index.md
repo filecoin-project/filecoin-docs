@@ -1,9 +1,7 @@
 ---
 title: "What is Filecoin"
-description: ""
+description: "Explore Filecoin, a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time."
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -15,32 +13,50 @@ weight: 10
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+Filecoin is a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time.
 
-## Selvage
+In Filecoin, users pay to store their files on storage providers. Storage providers are computers responsible for storing files and proving they have stored the files correctly over time. Anyone who wants to store their files or get paid for storing other users’ files can join Filecoin. Available storage, and the price of that storage, is not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in.
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+Filecoin includes a blockchain and native cryptocurrency (FIL). Storage providers earn units of FIL for storing files. Filecoin’s blockchain records transactions to send and receive FIL, along with proofs from storage providers that they are storing their files correctly.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+![Diagram showing a four-step process for storing files with Filecoin. First step: User who wants to store a file pays storage provider to store their file. Second step: Miner commits publicly via Filecoin’s blockchain to storing the file. Third step: The network constantly verifies that storage providers are storing files correctly. Fourth step: User pays storage provider to retrieve their file.](what-is-filecoin-diagram.png)
 
-### Heirloom
+## For users
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+Filecoin enables users to store their files at hypercompetitive prices and verify that their files are being stored correctly.
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+Users can choose their preferred trade-off between cost, redundancy, and speed by selecting the storage provider whose storage offer is best suited for their needs. Applications that implement Filecoin can negotiate storage with any storage provider on the network. Unlike centralized storage systems, there is no need to implement a different API for each provider.
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+At any time, users can verify that their files are being stored correctly by looking at proofs on Filecoin’s blockchain.
 
-## Bushwick cold-pressed
+{{< alert >}}
+[Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
+{{< /alert >}}
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+## For storage providers
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+Filecoin enables storage providers to sell their storage on an open market.
 
-## Locavore swag
+Storage providers are people and organizations that run storage providers, earning Filecoin tokens for doing so. A storage provider could be any internet-connected computer with spare disk space or a dedicated system with lots of storage built specifically for Filecoin. Filecoin’s blockchain rewards storage providers for contributing useful storage to the internet, not for completing wasteful proof-of-work computations.
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+Once a storage provider implements the Filecoin protocol, they gain access to the entire market of Filecoin users. Providers don’t need to design their own storage API or advertise their offering themselves as this is handled by Filecoin’s protocol and network. Filecoin enables a thriving, decentralized ecosystem of independent storage providers by removing barriers to entry.
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+See [How providing storage works]({{< relref "how-providing-storage-works" >}}).
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+## New to web3
+
+If you are new to Filecoin or to the web3 space, welcome! We think you will enjoy getting to learn about some of the core concepts that make [IPFS](https://ipfs.tech), [Filecoin](https://filecoin.io), [Powergate](https://github.com/textileio/powergate), and other technologies possible as well as how to use them in your projects and applications.
+
+Web3 is a movement within software development that is turning centralized applications into _decentralized_ protocols. Instead of having a single point of control, applications built on web3 architecture can remove the _middle-man,_ reducing the risk of censorship by big corporations and services vulnerability to denial-of-service attacks. Web3 is a _trustless_ infrastructure that allows users to have ownership and reclaim control over their data.
+
+Web3 is essentially what allows Filecoin to exist by allowing files to be shared between peers.
+
+You can find out more about it in [IPFS and Filecoin section]({{< relref "ipfs-and-filecoin" >}}).
+
+## Vision
+
+- [Long-term Information Structure](http://longnow.org/seminars/02018/aug/06/long-term-info-structure/)
+- [What exactly is web3?](https://youtu.be/l44z35vabvA)
+- [The next Internet Revolution](https://youtu.be/2RCwZDRwk48)
+- [Protocol Labs: Creating New Networks](https://protocol.ai/blog/protocol-labs-creating-new-networks/)
+- [a16z Podcast: Getting Applications into People's Hands](https://a16z.com/2017/09/14/networks-protocols-labs-tokens/)
