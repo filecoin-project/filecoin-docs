@@ -11,6 +11,10 @@ menu:
     identifier: "what-is-Filecoin-96054562aad3b263b11394170d712f38"
 weight: 10
 toc: true
+aliases:
+    - "/about/"
+    - "/about-filecoin/"
+    - "/about-filecoin/what-is-filecoin"
 ---
 
 Filecoin is a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time.

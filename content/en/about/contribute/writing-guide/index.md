@@ -1,6 +1,6 @@
 ---
 title: "Writing guide"
-description: ""
+description: "Learn the specifics of how to write documentation for the Filecoin project."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
@@ -13,34 +13,88 @@ menu:
     identifier: "writing-guide-ab57e811ecee7c89e621f7bed59cd3e4"
 weight: 40
 toc: true
+aliases:
+    - "/about-filecoin/writing-guide"
+    - "/community/contribute/writing-guide/"
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+This guide explains things to keep in mind when writing for Filecoin's documentation. While the [grammar, formatting, and style guide]({{< relref "grammar-and-formatting" >}}) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
-## Selvage
+## Walkthroughs
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+The purpose of a walkthrough is to tell the user _how_ to do something. They do not need to convince the reader of something or explain a concept. Walkthroughs are a list of steps the reader must follow to achieve a process or function.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+The vast majority of documentation within the Filecoin Docs project falls under the _Walkthrough_ category. Walkthroughs are generally quite short, have a neutral tone, and teach the reader how to achieve a particular process or function. They present the reader with concrete steps on where to go, what to type, and things they should click on. There is little to no _conceptual_ information within walkthroughs.
 
-### Heirloom
+### Goals
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+Use the following goals when writing walkthroughs:
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+| Goal          | Keyword     | Explanation                                                       |
+| ------------- | ----------- | ----------------------------------------------------------------- |
+| **Audience**  | _General_   | Easy for anyone to read with minimal effort.                      |
+| **Formality** | _Neutral_   | Slang is restricted, but standard casual expressions are allowed. |
+| **Domain**    | _Technical_ | Acronyms and tech-specific language is used and expected.         |
+| **Tone**      | _Neutral_   | Writing contains little to no emotion.                            |
+| **Intent**    | _Instruct_  | Tell the reader _how_ to do something.                            |
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+#### Function or process
 
-## Bushwick cold-pressed
+The end goal of a walkthrough is for the reader to achieve a very particular function. _Installing the Filecoin Desktop application_ is an example. Following this walkthrough isn't going to teach the reader much about working with the decentralized web or what Filecoin is. Still, by the end, they'll have the Filecoin Desktop application installed on their computer.
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+#### Short length
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+Since walkthroughs cover one particular function or process, they tend to be quite short. The estimated reading time of a walkthrough is somewhere between 2 and 10 minutes. Most of the time, the most critical content in a walkthrough is presented in a numbered list. Images and gifs can help the reader understand what they should be doing.
 
-## Locavore swag
+If a walkthrough is converted into a video, that video should be no longer than 5 minutes.
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+### Walkthrough structure
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+Walkthroughs are split into three major sections:
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+1. What we're about to do.
+2. The steps we need to do.
+3. Summary of what we just did, and potential next steps.
+
+## Conceptual articles
+
+Articles are written with the intent to inform and explain something. These articles don't contain any steps or actions that the reader has to perform _right now_.
+
+These articles are vastly different in tone when compared to walkthroughs. Some topics and concepts can be challenging to understand, so creative writing and interesting diagrams are highly sought-after for these articles. Whatever writers can do to make a subject more understandable, the better.
+
+### Article goals
+
+Use the following goals when writing conceptual articles:
+
+| Goal          | Keyword                  | Explanation                                                                      |
+| ------------- | ------------------------ | -------------------------------------------------------------------------------- |
+| **Audience**  | _Knowledgeable_          | Requires a certain amount of focus to understand.                                |
+| **Formality** | _Neutral_                | Slang is restricted, but standard casual expressions are allowed.                |
+| **Domain**    | _Any_                    | Usually _technical_, but depends on the article.                                 |
+| **Tone**      | _Confident and friendly_ | The reader must feel confident that the writer knows what they're talking about. |
+| **Intent**    | _Describe_               | Tell the reader _why_ something does the thing that it does, or why it exists.   |
+
+### Article structure
+
+Articles are separated into five major sections:
+
+1. Introduction to the thing we're about to explain.
+2. What the thing is.
+3. Why it's essential.
+4. What other topics it relates to.
+5. Summary review of what we just read.
+
+## Tutorials
+
+When writing a tutorial, you're teaching a reader how to achieve a complex end-goal. Tutorials are a mix of walkthroughs and conceptual articles. Most tutorials will span several pages, and contain multiple walkthroughs within them.
+
+Take the hypothetical tutorial _Get up and running with Filecoin_, for example. This tutorial will likely have the following pages:
+
+1. A brief introduction to what Filecoin is.
+2. Choose and install a command line client.
+3. Understanding storage deals.
+4. Import and store a file.
+
+Pages `1` and `3` are conceptual articles, describing particular design patterns and ideas to the reader. All the other pages are walkthroughs instructing the user how to perform one specific action.
+
+When designing a tutorial, keep in mind the walkthroughs and articles that already exist, and note down any additional content items that would need to be completed before creating the tutorial.

@@ -1,6 +1,6 @@
 ---
 title: "Contribution tutorial"
-description: ""
+description: "Contribute to Filecoin documentation by finding issues, fixing them, and submitting them to the project."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
@@ -13,34 +13,105 @@ menu:
     identifier: "contribution-tutorial-68af5d3a314ee92f1d6669b228620bab"
 weight: 10
 toc: true
+aliases:
+    - "/about-filecoin/contribution-tutorial"
+    - "/community/contribute/contribution-tutorial/"
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+While the [grammar, formatting, and style]({{< relref "grammar-and-formatting" >}}) and the [writing guide]({{< relref "writing-guide" >}}) can both help you write excellent content for the Filecoin Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `filecoin-project/filecoin-docs` project.
 
-## Selvage
+There are plenty of small-sized issues around Filecoin documentation that make for easy, helpful contributions to the Filecoin project. Here, we'll walk through:
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+1. Finding an issue.
+2. Discussing the issue.
+3. Creating a fix.
+4. Submitting a _pull request_.
+5. Waiting for a review.
+6. Merging your fix.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+This may look like a lot of steps for a small issue fix, but they're all necessary to make sure we keep the docs in this project up to standard. Plus, you're not on your own — half these steps can be completed by Filecoin docs project maintainers!
 
-### Heirloom
+## Finding an issue
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+The Filecoin project is hosted in GitHub. There's a bunch of reasons for this, one of them being that GitHub comes with an issue tracker, which enables the core Filecoin team to field problems from the community. All community issues can read the docs, find issues, and raise issues in the docs repository (called a _repo_ for short).
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+All issues involving the Filecoin docs themselves can be found here in the `filecoin-project/filecoin-docs` repo under the [**Issues** tab](https://github.com/filecoin-project/filecoin-docs/issues/). Here you can see all the issues that are currently open. We try to tag each issue with relevant descriptive tags. Tags like _difficulty_ and _size_ can give a sense of the amount of effort a task will take to complete.
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+Let's jump into finding an issue.
 
-## Bushwick cold-pressed
+1. Go to the Filecoin Docs repository at [github.com/filecoin-project/filecoin-docs](https://github.com/filecoin-project/filecoin-docs).
+2. Select the **Issues** tab.
+3. Click the **Label** dropdown and select the **help wanted** tag.
+4. Select an issue that interests you.
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+Make a note of the issue number and keep it handy for later.
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+## Discussing the issue
 
-## Locavore swag
+As you can probably tell from the available tags, there are lots of different types of issues. Some are tiny one-sentence changes, and others are sizable projects that require a rewrite of several pages. For small issues, there may be very little or no discussion. There's no need to waste everybody's time talking about changing a broken link. But more significant issues will likely need input from different members of the project.
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+When adding to a discussion, remember that it may take days or weeks to conclude an issue. With this in mind, try to include all the relevant information anyone might need within each message.
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+Let's add to the discussion of the issue you've chosen:
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+1. Read through all the previous posts to get up to speed about the issue.
+2. Add any comments you feel are necessary.
+3. If you still want to tackle this issue, post a message saying that you'd like to take ownership of it.
+
+Once you've claimed ownership of an issue, a project maintainer will assign you to it. If this is a large issue, someone from the Filecoin team will check in with you from time to time and make sure you've got everything you need to progress with the issue.
+
+## Creating a fix
+
+If you've got this far, then you should have an issue in hand and a basic idea of how to fix it. Next up is implementing your fix! The process goes something like this:
+
+1. Create a _fork_.
+2. Make changes locally on your machine.
+3. Push your changes.
+
+A _fork_ of a project is your own personal copy of that project. You can make as many changes to this copy whenever you want, because you own it. The idea is that you can modify this personal copy and send your changes to the project team, who can then review all the work you've done.
+
+Here is the process for creating a fork of an existing piece of Filecoin documentation:
+
+1. Go to the `filecoin-project/filecoin-docs` repository in [GitHub](https://github.com/filecoin-project/filecoin-docs).
+2. Select **Fork** to create a copy of the project.
+3. Clone your copy of the project down to your local machine:
+
+   ```shell
+   git clone https://github.com/YOUR_USERNAME/filecoin-docs.git
+   ```
+
+4. Make your changes locally.
+5. Once all your changes are complete, make sure to push everything back to GitHub:
+
+   ```shell
+   git add .
+   git commit -m "Fixed a broken URL, issue #123."
+   git push
+   ```
+
+When adding a commit comment that actively fixes an issue within the project, try to summarize the fix in a few words, and quote the issue number. Following this convention makes it easier for other people to quickly see what you've done.
+
+## Create a pull request
+
+Once you're done making commits, and are ready to get a core team member's review of your work, it's time to create a pull request.
+
+1. Go to the `filecoin-project/filecoin-docs` repository on [GitHub](https://github.com/filecoin-project/filecoin-docs).
+2. Select the **Pull requests** tab.
+3. Click **New pull request**.
+4. Click **compare across forks** and select your repository from the **head repository** dropdown.
+5. Leave a comment to expand upon your changes.
+6. Click **Create pull request**.
+
+GitHub will check if your changes create any merge conflicts with the branch you are trying to merge into.
+
+## Waiting for a review
+
+All pull requests from the community must be reviewed by at least one project member before they are merged in. Depending on the size of the pull request, this could take anywhere from a few minutes to a few days to review everything. Depending on the complexity of the pull request, there may be further discussion regarding your changes. Keep returning to GitHub and checking your notifications page to make sure you don't miss anything.
+
+## Merge your fix
+
+Once your pull request has been approved, a project member with the correct rights will merge it. You'll be notified as soon as the merge is complete.
+
+## Finishing up
+
+So there you have it! You've successfully completed your first contribution to the Filecoin documentation. We're always on the lookout for great writers and educators to help us improve the Filecoin docs and make the internet better for everyone, so keep up the good work!
