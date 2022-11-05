@@ -1,9 +1,6 @@
 ---
 title: "Overview"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+description: "Overview of developer tools and options for adding Filecoin storage to software applications, smart contracts, and workflows."
 draft: false
 images: []
 type: docs
@@ -15,32 +12,60 @@ weight: 10
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+If you are excited about the potential of the Filecoin protocol and decentralized storage network to build game-changing applications, you’ve come to the right place.
 
-## Selvage
+## Why develop on Filecoin?
+Filecoin combines the benefits of storage on [IPFS](https://ipfs.tech/) (a peer-to-peer content-addressing system) with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+Developers choose Filecoin because it:
+- is the world’s largest distributed storage network, without centralized servers or authority
+- offers on-chain proofs to verify and authenticate data
+- is highly compatible with [IPFS](https://ipfs.tech/) and content addressing
+- is the only decentralized storage network with petabyte-scale capacity
+- stores data at extremely low cost (and keeps it that way for the long term)
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+An [ecosystem of developer tools]() offers flexible, powerful choices for integrating Filecoin storage into your application or workflow.
 
-### Heirloom
+## Filecoin and IPFS
+How do Filecoin and IPFS work together? They are complementary protocols for storing and sharing data in the distributed web. Both systems are open-source and share many building blocks, including content addressing (CIDs) and network protocols (libp2p). 
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+IPFS does not include built-in mechanisms to incentivize the storage of data for other people. To persist IPFS data, you must either run your own IPFS node or pay a provider.
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+This is where Filecoin comes in. Filecoin adds an incentive layer to IPFS. Storage deals are recorded on-chain, and providers must submit proofs of storage to the network over time. Payments, penalties, and block rewards are all enforced by the decentralized protocol.
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+Filecoin and IPFS are designed as separate layers to give developers more choice and modularity, but many tools are available for combining their benefits. This diagram illustrates how these tools (often called [storage helpers]({{< relref "/storage-helpers.md" >}})) provide developer-friendly APIs for storing on IPFS, Filecoin, or both.
 
-## Bushwick cold-pressed
+![Web3-Enabled Architecture by Filecoin](web3-architecture.png)
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+To learn more about the protocol, go to [How Filecoin Works]({{< relref "how-filecoin-works" >}})
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+## Get started
+Let's get building. Choose one of the following APIs. These are all storage helpers, or tools and services that abstract Filecoin’s robust dealmaking processes into simple, streamlined API calls. 
 
-## Locavore swag
+- [Chainsafe Storage API](https://docs.storage.chainsafe.io/) - for projects needing S3 compatibility
+- [Estuary](https://estuary.tech/) - for larger-scale applications and public data
+- [NFT.storage](https://nft.storage/) - for NFT data
+- [Web3.storage](https://web3.storage/) - for general application data
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+For more details and options, jump to [Build with Filecoin Storage Helpers]({{< relref "/storage-helpers.md" >}}).
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+If you’re building network or developer tools, jump to [Build Directly on Filecoin]().
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+## Filecoin and smart contracts
+You can improve speed and reduce gas fees by storing smart contract data on Filecoin. With Filecoin, the data itself is stored off-chain, but is used to generate verifiable CIDs and storage proofs that are recorded on the Filecoin chain and can be included in your smart contracts. This design pairs well with multiple smart contract networks such as Ethereum, Polygon, Avalanche, Solana, and more. Your smart contract only needs to include the compact content ids.
+
+Examples:
+
+- [Polygon tutorial](https://nftschool.dev/tutorial/mint-nftstorage-polygon/) on NFTschool.dev
+- [Flow tutorial](https://nftschool.dev/tutorial/flow-nft-marketplace/) on NFTschool.dev
+- [Avalanche tutorial](https://nftschool.dev/tutorial/avax-nft/) on NFTschool.dev
+- [Using IPFS & Filecoin on Harmony](https://docs.harmony.one/home/developers/tutorials/ipfs-filecoin)
+
+## Additional resources
+
+- [Filecoin integrations for web3 infrastructure](https://www.youtube.com/watch?v=Q0oe6i7d1u4) (video)
+- [What is an IPFS Pinning Service?](https://medium.com/pinata/what-is-an-ipfs-pinning-service-f6ed4cd7e475#:~:text=An%20IPFS%20pinning%20service%20is,running%20your%20own%20IPFS%20nodes.) (Pinata explainer)
+- [IPFS Docs: Persistence, permanence and pinning](https://docs.ipfs.tech/concepts/persistence/)
+- [Developing on Filecoin](https://www.youtube.com/watch?v=aGCpq0Xf-w8) (video)
+- Textile tools: [video](https://www.youtube.com/watch?v=IZ8M9m9_uJY) and [blog post](https://blog.textile.io/developer-tools-for-filecoin-ipfs-web/)
+- [Building decentralized apps using Fleek’s Space daemon](https://www.youtube.com/watch?v=pWJ5fty-7mA) (video)

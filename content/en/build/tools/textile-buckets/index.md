@@ -1,9 +1,6 @@
 ---
-title: "Textile buckets"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+title: "Textile Buckets"
+description: "Buckets is a Textile product that provides storage to be used in a very similar fashion as standard cloud storage, but using IPFS and Filecoin under the hood."
 draft: false
 images: []
 type: docs
@@ -15,32 +12,77 @@ weight: 50
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+Here are the steps to quickly get setup with buckets:
 
-## Selvage
+1. **Download and install the `hub` CLI**:
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+   The installation process is [documented here](https://docs.textile.io/hub/accounts/). You will need to grab the latest release from the [releases page](https://github.com/textileio/textile/releases/latest).
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+1. **Initialize the account and login**:
 
-### Heirloom
+   ```sh
+   hub init # Follow instructions
+   ...
+   hub login # if you already have a username
+   ```
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+   Detailed instructions can be found in the [official docs](https://docs.textile.io/hub/accounts/#account-setup).
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+1. **Initialize a new Bucket**:
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+   Buckets are mapped to local directories. In order to create a bucket from the working directory run:
 
-## Bushwick cold-pressed
+   ```sh
+   cd /path/to/your/data
+   hub bucket init
+   ```
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+   {{< alert icon="warning" >}}
+   Buckets are not encrypted by default. If you are going to store sensitive data, use the `hub bucket init --private` option. [Read more here](https://docs.textile.io/buckets/#encryption).
+   {{< /alert >}}
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+   It is also possible to retrieve existing buckets (or pull changes performed by others in the case of shared buckets) with the `hub bucket init --existing` flag.
 
-## Locavore swag
+1. **Make changes and push them**:
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+   After adding or modifying files in your bucket folder, you can publish the changes by pushing them:
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+   ```sh
+   hub bucket status # show changes to the bucket
+   hub bucket push   # publish changes to IPFS
+   ```
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+1. **Explore your content on IPFS**:
+
+   Your content has been pushed and is made available on IPFS. You can display thread, IPNS and website links associated to your bucket with:
+
+   ```sh
+   hub bucket links
+   ```
+
+   The first link should take you to the Hub gateway and allow you to inspect your files as currently published. You can use the IPNS link for example, if you are hosting a website, to open it on the browser.
+
+1. **Archive your bucket and back it up on Filecoin**:
+
+   You can archive your bucket at any point and store it on Filecoin:
+
+   ```sh
+   # Archive
+   hub bucket archive
+   # Check status
+   hub bucket archive status
+   # Or watch status
+   hub bucket archive status -w
+   ```
+
+1. **Learn more about Textile buckets**:
+
+   - All `hub` commands and subcommands take a `--help` flag that displays available flags and usage instructions. These are also [published here](https://docs.textile.io/hub/cli/hub_buck/).
+   - The instructions here are based on the [Buckets guide](https://docs.textile.io/buckets/), which contains more details, for example about [permissions](https://docs.textile.io/buckets/permissions/), shared buckets and organizations.
+   - Filecoin storage in Textile buckets is a very new feature! Make sure you read the [Bucket Archiving](https://docs.textile.io/buckets/archiving/) for the latest information on how it works, limits and price.
+   - This [blog post](https://blog.textile.io/buckets-diffing-syncing-archiving/) contains explanatory videos and information about archiving and recovery. Once you have a deal CID, you can also use Lotus to [retrieve the data](https://lotus.filecoin.io/docs/developers/retrieve-data/).
+
+1. **Use the Buckets API directly**:
+
+- [js-textile](https://textileio.github.io/js-textile/docs/hub.buckets) provides programmatic access to the Buckets API from Javascript. Some examples are [here](https://github.com/textileio/js-examples).
+- Go support is also [available](https://docs.textile.io/tutorials/go/getting-started/).

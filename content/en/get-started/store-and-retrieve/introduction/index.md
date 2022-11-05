@@ -15,7 +15,6 @@ weight: 10
 toc: true
 aliases:
     - "/get-started/store-and-retrieve/"
-    - ""
 ---
 
 The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial.

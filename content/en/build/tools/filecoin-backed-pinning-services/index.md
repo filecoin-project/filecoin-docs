@@ -1,9 +1,6 @@
 ---
-title: "Filecoin-backed pinning services"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+title: "Filecoin-backed Pinning Services"
+description: "Filecoin-backed pinning services (FPS) are data storage and retrieval services that offer the performance and availability of IPFS alongside the data persistence features of Filecoin's decentralized storage network."
 draft: false
 images: []
 type: docs
@@ -15,32 +12,43 @@ weight: 20
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+## How to use an FPS
 
-## Selvage
+While each FPS provider will have slightly different instructions for utilizing the service, the general flow remains the same:
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+- Create and configure your account with the FPS provider.
+- Retrieve your auth token for the FPS provider.
+- Make storage requests through the API of the service you are using.
+- Maintain and monitor your data storage.
+- Retrieve your data through the API of the service you are using.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+## Key benefits of FPSs
 
-### Heirloom
+1. Data is backed up on the Filecoin network for data persistence.
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+2. Developers do not need to worry about maintaining their own decentralized infrastructure. Using an FPS also avoids _vendor lock-in_, since all providers contribute to the same storage network.
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+3. FPSs are working towards the adoption of the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/). This common API is designed to work flexibly with any content-addressed storage solution, be it Filecoin, IPFS, or a service integrating both. Filecoin-specific workflows are abstracted from the users without sacrificing features like different geographies, redundant copies, and cryptographic storage receipts.
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+## How FPS solutions work
 
-## Bushwick cold-pressed
+FPS solutions run IPFS (for hot storage) and Filecoin (for cold storage) software clients under the hood, either communicating directly with these software clients through their native APIs or through tools like [Powergate]({{< relref "powergate.md" >}}). FPS services manage the flow of data between the different networks, employing intelligent caching strategies to keep popular data readily available.
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+![Diagram showing a simplified architecture for a Filecoin IPFS Pinning Service (FPS). User makes API request to the FPS. The FPS stores and retrieves data from embedded go-ipfs and lotus nodes, which communicate with each other via libp2p and IPLD data formats.](fps-data-flows.png)
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+While the specific architecture of each service will look different, most FPS solutions follow similar flows behind-the-scenes.
 
-## Locavore swag
+**Data storage**:
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+- When a user makes an API request to store a particular CID through an FPS, the FPS will pin that CID to its node (which is connected to the public IPFS network) -- or the “Hot” storage layer.
+- The FPS will simultaneously initiate Filecoin storage deals (“Cold” storage layer) to persist the data.
+- If the user specifies a replication factor greater than 1 for their file (X redundant copies of the data), the FPS will initiate X separate Filecoin storage deals for the data.
+- The user pays the FPS directly for providing this storage service.
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+**Data retrieval**:
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+- When a user makes an API request to retrieve a particular CID through an FPS, the FPS will attempt first to retrieve the CID through the “Hot” storage layer (pinned data on the public IPFS network).
+- If this is unsuccessful, the FPS will then retrieve the CID through the “Cold” storage layer (data stored with storage providers on the Filecoin network) and serve it back to the requestor.
+- The user pays the FPS directly for providing this retrieval service.
+
+Remember that these flows are hidden from the user and take place behind the scenes. Users will interact with a single interface that abstracts away data flows between systems, node management, and Filecoin deal management.
