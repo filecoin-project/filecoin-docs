@@ -30,7 +30,7 @@
 
 [[main]]
   name = "FVM"
-  url = "/fvm/introduction/overview"
+  url = "/fvm/basics/introduction"
   weight = 65
 
 [[main]]
