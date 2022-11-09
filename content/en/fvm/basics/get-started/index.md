@@ -1,10 +1,10 @@
 ---
-title: "Overview"
+title: "Get started"
 description: ""
 weight: 10
 menu:
     fvm:
-        parent: "fvm-introduction"
+        parent: "fvm-basics"
 ---
 
 Lorem ipsum.

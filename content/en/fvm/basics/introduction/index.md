@@ -1,10 +1,10 @@
 ---
-title: "Mainnet"
+title: "Introduction"
 description: ""
 weight: 10
 menu:
     fvm:
-        parent: "fvm-networks"
+        parent: "fvm-basics"
 ---
 
 Lorem ipsum.

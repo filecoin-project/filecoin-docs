@@ -155,22 +155,28 @@
 
 
 [[fvm]]
-  name = "Introduction"
+  name = "Basics"
   weight = 10
-  identifier = "fvm-introduction"
-  url = "/fvm/introduction/overview"
+  identifier = "fvm-basics"
+  url = "/fvm/basics/introduction"
 
 [[fvm]]
-  name = "Networks"
+  name = "Concepts"
   weight = 20
-  identifier = "fvm-networks"
-  url = "/fvm/networks/mainnet"
+  identifier = "fvm-concepts"
+  url = "/fvm/concepts"
 
 [[fvm]]
-  name = "Build"
+  name = "How tos"
   weight = 30
-  identifier = "fvm-build"
-  url = "/fvm/build/overview"
+  identifier = "fvm-how-tos"
+  url = "/fvm/how-tos"
+
+[[fvm]]
+  name = "Reference"
+  weight = 50
+  identifier = "fvm-reference"
+  url = "/fvm/reference"
 
 
 

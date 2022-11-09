@@ -1,10 +1,10 @@
 ---
-title: "Overview"
+title: "Accounts and assets"
 description: ""
 weight: 10
 menu:
     fvm:
-        parent: "fvm-build"
+        parent: "fvm-concepts"
 ---
 
 Lorem ipsum.
