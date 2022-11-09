@@ -9,3 +9,11 @@ menu:
 ---
 
 - A list of all the fancy words, acronyms, and weird terminology that we want users to understand.
+
+## Blake-256 hash
+
+## Expected concensus
+
+## Drand
+
+## Quality adjusted power
