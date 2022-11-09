@@ -8,7 +8,31 @@ menu:
         parent: "fvm-reference"
 ---
 
-- block explorers
-- What networks are available?
-- Is there a testnet? / What is Wallaby?
-- How often is Wallaby reset?
+## Available networks
+
+Here is a quick summary of networks available for FVM development:
+
+| Name | Type | Reset frequency | Faucet |
+| ---- | ---- | --------------- | ------ |
+| [Mainnet](#mainnet) | Live production network | Never | None |
+| [Wallaby](#wallaby-testnet) | Testnet | Weekly | [`wallaby.network#faucet`](https://wallaby.network/#faucet)
+
+### Mainnet
+
+Mainnet is the live production network that all nodes on the Filecoin network are connected to.
+
+### Wallaby testnet
+
+The Wallaby testnet is a _bleeding edge_ test network for the programmability features being developed for the FVM. You can deploy both WASM actors and EVM-compatible smart contracts to Wallaby. Wallaby is reset every week, making it unsuiteable for long-term testing of applications. The purpose of Wallaby is to allow developers to quickly poke and prod at any new features released within the latest development builds of the FVM.
+
+The Wallaby test is intended to be used by:
+
+- The FVM engineering team to test FEVM releases and updates.
+- Early builders from the community to test EVM smart contract deployment on FVM.
+- Early builders deploying native FVM actors.
+
+The Wallaby testnet is operated and maintained by [Factor8 Solutions](https://github.com/Factor8Solutions). You can find Wallaby specific documentation written by Factor8 at [kb.factor8.io/en/docs/fil/wallabynet](https://kb.factor8.io/en/docs/fil/wallabynet).
+
+## Block explorers
+
+Lorem ipsum.
