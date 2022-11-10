@@ -32,10 +32,6 @@ The reason the FVM is releasing now, and not when the Filecoin network first lau
 
 The features of the FVM will benefit everyone. However, this documentation is specifically for FVM developers.
 
-## How does it work
-
-Lorem ipsum.
-
 ## What are the use-cases
 
 Developers will be able to analyze, process, and manage data stored on the Filecoin network without having to download that data first! Everything can be dealt with on the blockchain! This feature opens up a huge array of opportunities for the network:
@@ -45,3 +41,7 @@ Developers will be able to analyze, process, and manage data stored on the Filec
 - Researchers can manage extra-large data sets without the hardware costs web2 processes require.
 - Storage contracts can be replicated and renewed automatically.
 - Other blockchains can directly access data stored on the Filecoin network.
+
+## What's next
+
+Want to learn more about how the FVM works? Check out the [Concepts section]({{< relref "/fvm/concepts/accounts-and-assets" >}}) to find out all you need to know! Want to jump in and start building on Filecoin using the FVM? Check out the [How Tos section]({{< relref "/fvm/how-tos/quickstart" >}}) for some quick guides to get your hands dirty.
