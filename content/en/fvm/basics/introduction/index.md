@@ -8,6 +8,12 @@ menu:
         parent: "fvm-basics"
 ---
 
+{{< alert >}}
+**THIS SECTION IS UNDER DEVELOPMENT**
+
+The FVM project is still in beta, as is this documentation. We're working on improving everything. In the meantime, you can dive into the docs, but keep in mind that things will likely change pretty often.
+{{< /alert >}}
+
 ## Filecoin EVM
 
 The Filecoin EVM (FEVM) is the Ethereum Virtual Machine (EVM) virtualized as a runtime on top of the Filecoin Virtual Machine. Before understanding the FEVM you must be familiar with the regular EVM.
