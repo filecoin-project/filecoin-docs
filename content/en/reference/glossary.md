@@ -11,9 +11,13 @@ weight: 10
 
 In the Filecoin network, an _address_ is a unique cryptographic value that serves to publicly identify a user. This value, a public key, is paired with a corresponding private key. The mathematical relationship between the two keys is such that access to the private key allows the creation of a signature that can be verified with the public key. Filecoin specifically employs the Boneh–Lynn–Shacham (BLS) signature scheme for this purpose.
 
+<!-- ## Blake-256 hash -->
+
 ## Block
 
 In a blockchain, a _block_ is the fundamental unit of record. Each block is cryptographically linked to one or more previous blocks. Blocks typically contain [messages](#message) relating changes to some state (for example, financial records) tracked by the blockchain.
+
+<!-- ## Block explorer -->
 
 ## Blockchain
 
@@ -35,6 +39,8 @@ In order to enter into a [storage deal](#deal), a [storage provider](#storage-pr
 
 Two participants in the Filecoin network can enter into a _deal_ in which one party contracts the services of the other. The Filecoin specification currently details _storage deals_ (in which one party agrees to store data for the other for a specified length of time) and _retrieval deals_ (in which one party agrees to transmit specified data to the other).
 
+<!-- ## Drand -->
+
 ## Election
 
 Every [epoch](#epoch), a small subset of Filecoin [storage providers](#storage-provider) are _elected_ to mine a new [block](#block) for the Filecoin blockchain. A provider's probability of being elected is roughly proportional to the share of the Filecoin network's total storage capacity that they contribute.
@@ -43,9 +49,7 @@ Every [epoch](#epoch), a small subset of Filecoin [storage providers](#storage-p
 
 Time in the Filecoin blockchain is discretized into _epochs_ that are currently thirty seconds in length. Every epoch, a subset of storage providers are elected to each add a new block to the Filecoin blockchain via [Winning Proof-of-Spacetime](#winning-proof-of-spacetime-winningpost).
 
-## FIL
-
-_FIL_ is the name of the Filecoin unit of currency; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
+<!-- ## Expected concensus -->
 
 ## Faucet
 
@@ -55,9 +59,15 @@ A _faucet_ is a service that provides free [FIL](#fil). Typically, faucets are r
 
 When a [storage provider](#storage-provider) fails to complete [Window Proof-of-Spacetime](#window-proof-of-spacetime-windowpost) for a given sector, the Filecoin network registers a _fault_ for that sector, and the provider is [_slashed_](#slash). If a storage provider does not resolve the fault quickly, the network assumes they have abandoned their commitment.
 
+## FIL
+
+_FIL_ is the name of the Filecoin unit of currency; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎).
+
 ## Filecoin
 
 The term _Filecoin_ is used generically to refer to the Filecoin project, protocol, and network.
+
+<!-- ## Filecoin EVM (FEVM) -->
 
 ## Finality
 
@@ -158,6 +168,12 @@ By basing its blockchain on tipsets, Filecoin can allow multiple [storage provid
 ## Verified client
 
 To further incentivize the storage of "useful" data over simple [capacity commitments](#capacity-commitment), [storage providers](#storage-provider) have the additional opportunity to compete for special [deals](#deal) offered by [verified clients](#verified-client). Such clients are certified with respect to their intent to offer deals involving the storage of meaningful data, and the power a storage provider earns for these deals is augmented by a multiplier.
+
+<!-- ## Virtual machine (VM) -->
+
+<!-- ## Wallaby -->
+
+<!-- ## Web Assembly (WASM) -->
 
 ## Window Proof-of-Spacetime (WindowPoSt)
 
