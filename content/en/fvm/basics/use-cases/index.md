@@ -8,11 +8,7 @@ menu:
         parent: "fvm-basics"
 ---
 
-{{< alert >}}
-**THIS SECTION IS UNDER DEVELOPMENT**
-
-The FVM project is still in beta, as is this documentation. We're working on improving everything. In the meantime, you can dive into the docs, but keep in mind that things will likely change pretty often.
-{{< /alert >}}
+{{< beta-warning >}}
 
 The FVM can be used for the creation of a new class of web3 dApps, many of which will have the potential to become 10x improvements to the network’s functionality and beyond. The FVM team and members of the Filecoin community have discussed what can be built with the FVM. Some ideas are:
 

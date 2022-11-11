@@ -8,11 +8,7 @@ menu:
         parent: "fvm-concepts"
 ---
 
-{{< alert >}}
-**THIS SECTION IS UNDER DEVELOPMENT**
-
-The FVM project is still in beta, as is this documentation. We're working on improving everything. In the meantime, you can dive into the docs, but keep in mind that things will likely change pretty often.
-{{< /alert >}}
+{{< beta-warning >}}
 
 The Filecoin network produces multiple blocks at every epoch. In simple terms, block producers run a local function that uses their _quality adjusted power_, as represented in the power table, and randomness from the Drand network to determine if they’re eligible to produce a block for the current epoch. This consensus protocol is called _expected consensus_.
 
