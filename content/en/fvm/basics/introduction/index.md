@@ -22,7 +22,7 @@ In summary, the FVM gives decentralized applications access to large storage ava
 
 ## Why is it being built now
 
-The reason the FVM is releasing now, and not when the Filecoin network first launched, is simple: the network needed to be secure and stable before developers could start building on top of it. The initial goal of the Filecoin network is to store data in a distributed way. That secondary goal is to allow development on top of the network. While it was possible to create applications on top of the Filecoin network _before_ the FVM, it was complex and not particularly robust. The FVM simplifies the creation and deployment of these applications.
+The reason the FVM is releasing now, and not when the Filecoin network first launched, is simple: the storage facilities needed to be secure and stable before developers could start introducing custom logic into the network. The initial goal of the Filecoin network is to store data in a distributed way. That secondary goal is to allow development on top of the network. While it was possible to create applications on top of the Filecoin network _before_ the FVM, it was complex and not particularly robust. The FVM simplifies the creation and deployment of these applications.
 
 ## Who is this for
 
