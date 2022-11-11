@@ -13,10 +13,10 @@ menu:
 The FVM project is still in beta, as is this documentation. We're working on improving everything. In the meantime, you can dive into the docs, but keep in mind that things will likely change pretty often.
 {{< /alert >}}
 
-- How do I get FIL to test? Is there a faucet?
-- Can I use Metamask?
-- Do I need Filsnap?
-- What is an F0 / F1 / F2 / F3 / F4 address?
-- Do I need ETH to use FEVM?
-- How do I get FIL
-- What do addresses look like
+<!-- - How do I get FIL to test? Is there a faucet? -->
+<!-- - Can I use Metamask? -->
+<!-- - Do I need Filsnap? -->
+<!-- - What is an F0 / F1 / F2 / F3 / F4 address? -->
+<!-- - Do I need ETH to use FEVM? -->
+<!-- - How do I get FIL -->
+<!-- - What do addresses look like -->

@@ -21,7 +21,8 @@ Here is a quick summary of networks available for FVM development:
 | Name | Type | Reset frequency | Faucet |
 | ---- | ---- | --------------- | ------ |
 | [Mainnet](#mainnet) | Live production network | Never | None |
-| [Wallaby](#wallaby-testnet) | Testnet | Weekly | [`wallaby.network#faucet`](https://wallaby.network/#faucet)
+| [Builder testnet (buildernet)](#mainnet) | Testnet | Only in the event of irrecoverable damage. | [`faucet.calibration.fildev.network`](https://faucet.calibration.fildev.network/) |
+| [Wallaby testnet](#wallaby-testnet) | Testnet | Weekly | [`wallaby.network#faucet`](https://wallaby.network/#faucet)
 
 ### Mainnet
 
