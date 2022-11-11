@@ -21,14 +21,14 @@ The goal of the FVM project is to add general programmability to the Filecoin bl
 - Automatically finding which storage providers are storing what data.
 - Many more data-based applications.
 
-Filecoin was the first network deploying programmability, post-genesis, to ensure the layer 0 of the Filecoin blockchain was stable and fully functional. Due to the large amounts of capital already secured within the Filecoin network, the development of the FVM needs to careful and gradual.
+Filecoin was the first network deploying programmability, post-genesis, to ensure that layer 0 of the Filecoin blockchain was stable and fully functional. Due to the large amounts of capital already secured within the Filecoin network, the development of the FVM needs to be careful and gradual.
 
 ## Roadmap
 
-The FVM roadmap is split into three inititives:
+The FVM roadmap is split into three initiatives:
 
-- Milestone 1: Initialize the project and allow built-in actors run on the FVM.
-- Milestone 2: Enable the deployment of Ethereum virtual machine (EVM) compatible smart contracts onto the FVM. Also allow developer to create and deploy their own native actors to the FVM.
+- Milestone 1: Initialize the project and allow built-in actors to run on the FVM.
+- Milestone 2: Enable the deployment of Ethereum virtual machine (EVM) compatible smart contracts onto the FVM. Also, allow developers to create and deploy their own native actors to the FVM.
 - Milestone 3: Continue to enhance programmability on FVM.
 
 {{< alert >}}

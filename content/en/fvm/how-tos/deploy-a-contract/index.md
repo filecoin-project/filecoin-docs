@@ -21,7 +21,7 @@ You must have the following installed:
 - [Git](https://git-scm.com/)
 - [Yarn](https://yarnpkg.com/)
 
-You should also have an address on the Filecoin Wallaby testnet. See the [Add to MetaMask page]({{< relref "add-to-metamask" >}}) for information on how to get an address. You also need test FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "use-a-faucet" >}}) page for information on how to get test funds.
+You should also have an address on the Filecoin Wallaby testnet. See the [Add to MetaMask page]({{< relref "add-to-metamask" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "use-a-faucet" >}}) page for information on how to get test funds.
 
 ### Steps
 
@@ -61,7 +61,7 @@ You should also have an address on the Filecoin Wallaby testnet. See the [Add to
     ✨  Done in 79.61s. 
     ```
 
-    The deployment process should take a couple of minutes. Once the contract has successfully deployed, Hardhat will give you a contract address you can use to interact with the contract.
+    The deployment process should take a couple of minutes. Once the contract has been successfully deployed, Hardhat will give you a contract address you can use to interact with the contract.
 
 1. You can now interact with your contract using the contract address given by Hardhat.
 1. Done!

@@ -5,11 +5,12 @@ lead: "Once you've created an actor, you need to valiate that it works properly.
 menu:
     fvm:
         parent: "fvm-how-tos"
-draft: true
 ---
 
 {{< beta-warning >}}
 
-## Truffle
+We're still working on this one.
 
-## Testnet
+<!-- ## Truffle -->
+
+<!-- ## Testnet -->

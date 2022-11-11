@@ -10,4 +10,4 @@ draft: true
 
 {{< beta-warning >}}
 
-Lorem ipsum.
+We're still working on this page.

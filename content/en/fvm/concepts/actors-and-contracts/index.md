@@ -10,7 +10,7 @@ menu:
 
 {{< beta-warning >}}
 
-<!-- - What actors and smart-contracts are. -->
+<!-- - What actors and smart contracts are. -->
 <!-- - How they interact with the FVM. -->
 <!-- - How the FVM processes actors/contracts. -->
 
@@ -29,6 +29,6 @@ Smart contracts are small, self-executing blocks of code that run on Ethereum. T
 
 ## Deeper dive
 
-I you want to learn more about how actors work, check out Zenground's on Filecoin Actors and how they work:
+If you want to learn more about how actors work, check out Zenground's on Filecoin Actors and how they work:
 
 {{< youtube "9JbwbTPonv0" >}}

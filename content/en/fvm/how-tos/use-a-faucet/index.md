@@ -33,8 +33,8 @@ Before we begin, you must have an address on the Wallaby testnet. Follow the [Ad
 
     ![Click the transaction link on the faucet.](transaction-link.png)
 
-1. The block explorer will show you the transaction history for your address. After a couple of minutes you should see 5000 tFIL transfered to your address.
-1. Open MetaMask to confirm that you received the tFIL:
+1. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5000 `tFIL` transferred to your address.
+1. Open MetaMask to confirm that you received the `tFIL`:
 
     ![View your funds in MetaMask.](metamask-with-funds.png)
 

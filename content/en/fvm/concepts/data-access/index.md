@@ -6,10 +6,11 @@ weight: 10
 menu:
     fvm:
         parent: "fvm-concepts"
-draft: true
 ---
 
 {{< beta-warning >}}
+
+We're still working on this page.
 
 <!-- - Can I access IPFS data from FVM? -->
 <!-- - Can I access Filecoin state information? -->

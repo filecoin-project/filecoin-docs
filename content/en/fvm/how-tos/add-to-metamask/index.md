@@ -15,7 +15,7 @@ images: ['metamask-home.png']
 The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-configured options at chainlist.org.
 
 1. Go to [chainlist.org](https://chainlist.org/).
-1. Enable the **Testnets** toggle and enter `Filecoin` into the searchbar.
+1. Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
     
     ![](chainlist-select-test-networks.png)
 
@@ -28,7 +28,7 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
     ![](chainlist-connect-with-metamask.png)
 
 1. Back on the Chainlist.org page, click the **Filecoin -- Wallaby** testnet connect button again.
-1. In MetaMask click **Approve** when promted to _Allow this site to add a network_:
+1. In MetaMask click **Approve** when prompted to _Allow this site to add a network_:
 
     ![](chainlist-allow-site-to-add-a-network.png)
 
@@ -36,7 +36,7 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
 
     ![](chainlist-switch-network.png)
 
-1. Open MetaMask and you should see that you're now on the Filecoin Wallaby testnet:
+1. Open MetaMask, and you should see that you're now on the Filecoin Wallaby testnet:
 
     ![](chainlist-complete.png)
 
@@ -44,18 +44,18 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
 
 ## Manual process
 
-If you can't, or don't want to use Chainlist, you can add the Wallaby network to your MetaMask manually.
+If you can't or don't want to use Chainlist, you can add the Wallaby network to your MetaMask manually.
 
 ### Prerequisities
 
-Before we get started, you'll need:
+Before we get started, you'll need the following:
 
 - A [Chromium-based browser](https://en.wikipedia.org/wiki/Chromium_web_browser#Browsers_based_on_Chromium), or [Firefox](https://www.mozilla.org/en-CA/firefox/products/).
 - A browser with [MetaMask](https://metamask.io/) installed.
 
 ### Steps
 
-The process for integrating Filecoin into MetaMask is fairly simple, but has some very specific variables that you must copy exactly.
+The process for integrating Filecoin into MetaMask is fairly simple but has some very specific variables that you must copy exactly.
 
 1. Open your browser and open the MetaMask plugin:
 
@@ -108,4 +108,4 @@ The process for integrating Filecoin into MetaMask is fairly simple, but has som
 
 ## Next steps
 
-You can now add funds into this wallet by using the [Wallaby testnet faucet]({{< relref "#use-the-wallaby-faucet" >}}).
+You can now add funds to this wallet by using the [Wallaby testnet faucet]({{< relref "#use-the-wallaby-faucet" >}}).
