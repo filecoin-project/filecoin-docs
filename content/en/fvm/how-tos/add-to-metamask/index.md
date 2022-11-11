@@ -10,14 +10,50 @@ images: ['metamask-home.png']
 
 {{< beta-warning >}}
 
-## Prerequisities
+## Simple method
+
+The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-configured options at chainlist.org.
+
+1. Go to [chainlist.org](https://chainlist.org/).
+1. Enable the **Testnets** toggle and enter `Filecoin` into the searchbar.
+    
+    ![](chainlist-select-test-networks.png)
+
+1. Scroll down to find the **Filecoin -- Wallaby** testnet:
+
+    ![](chainlist-filecoin-wallaby.png)
+
+1. In MetaMask click **Next** and then **Continue** when prompted to connect Chainlist.org to MetaMask:
+
+    ![](chainlist-connect-with-metamask.png)
+
+1. Back on the Chainlist.org page, click the **Filecoin -- Wallaby** testnet connect button again.
+1. In MetaMask click **Approve** when promted to _Allow this site to add a network_:
+
+    ![](chainlist-allow-site-to-add-a-network.png)
+
+1. Click **Switch network** when prompted by MetaMask:
+
+    ![](chainlist-switch-network.png)
+
+1. Open MetaMask and you should see that you're now on the Filecoin Wallaby testnet:
+
+    ![](chainlist-complete.png)
+
+1. Done!
+
+## Manual process
+
+If you can't, or don't want to use Chainlist, you can add the Wallaby network to your MetaMask manually.
+
+### Prerequisities
 
 Before we get started, you'll need:
 
 - A [Chromium-based browser](https://en.wikipedia.org/wiki/Chromium_web_browser#Browsers_based_on_Chromium), or [Firefox](https://www.mozilla.org/en-CA/firefox/products/).
 - A browser with [MetaMask](https://metamask.io/) installed.
 
-## Steps
+### Steps
 
 The process for integrating Filecoin into MetaMask is fairly simple, but has some very specific variables that you must copy exactly.
 
