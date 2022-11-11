@@ -12,7 +12,7 @@ draft: false
 
 ## Hardhat
 
-We're going to use the FEVM Hardhat Kit repository in the Filecoin Project GitHub organization to get started quickly.
+We're going to use the [FEVM Hardhat Kit repository](https://github.com/filecoin-project/FEVM-Hardhat-Kit) in the Filecoin Project GitHub organization to get started quickly.
 
 ### Prerequisites
 
