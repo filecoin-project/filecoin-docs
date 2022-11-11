@@ -1,7 +1,7 @@
 ---
 title: "Use-cases"
-description: "The FVM will enables developers to deploy actors and smart contracts to perform on-chain computation over state data in the Filecoin Network. This is a really powerful addition. Allowing users to program on-chain computation over provable distributed storage enables many downstream use cases and applications to emerge both on and off-chain. But what are these use-cases?"
-lead: "The FVM will enables developers to deploy actors and smart contracts to perform on-chain computation over state data in the Filecoin Network. This is a really powerful addition. Allowing users to program on-chain computation over provable distributed storage enables many downstream use cases and applications to emerge both on and off-chain. But what are these use-cases?"
+description: "The FVM enables developers to deploy actors and smart contracts to perform on-chain computation over state data in the Filecoin Network. This is a really powerful addition. Allowing users to program on-chain computation over provable distributed storage enables many downstream use cases and applications to emerge both on and off-chain. But what are these use-cases?"
+lead: "The FVM enables developers to deploy actors and smart contracts to perform on-chain computation over state data in the Filecoin Network. This is a really powerful addition. Allowing users to program on-chain computation over provable distributed storage enables many downstream use cases and applications to emerge both on and off-chain. But what are these use-cases?"
 weight: 15
 menu:
     fvm:
