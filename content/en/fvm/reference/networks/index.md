@@ -38,4 +38,7 @@ The Wallaby testnet is operated and maintained by [Factor8 Solutions](https://gi
 
 ## Block explorers
 
-Lorem ipsum.
+Block explorers allow you to view individual transactions and messages across the Filecoin network. This is a list of block explorers that support the FVM testnets:
+
+- [Glif](https://explorer.glif.io/actor/?network=wallaby)
+- [Filexplorer](https://explorer.filmine.io/)

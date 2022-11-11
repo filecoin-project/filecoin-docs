@@ -6,6 +6,7 @@ weight: 10
 menu:
     fvm:
         parent: "fvm-how-tos"
+draft: true
 ---
 
 {{< beta-warning >}}
