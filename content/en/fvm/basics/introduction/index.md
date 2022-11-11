@@ -40,4 +40,4 @@ Developers will be able to analyze, process, and manage data stored on the Filec
 
 ## What's next
 
-Want to learn more about how the FVM works? Check out the [Concepts section]({{< relref "/fvm/concepts/accounts-and-assets" >}}) to find out all you need to know! Want to jump in and start building on Filecoin using the FVM? Check out the [How Tos section]({{< relref "/fvm/how-tos/quickstart" >}}) for some quick guides to get your hands dirty.
+Want to learn more about how the FVM works? Check out the [Concepts section]({{< relref "/fvm/concepts/accounts-and-assets" >}}) to find out all you need to know! Want to jump in and start building on Filecoin using the FVM? Check out the How Tos section for some quick guides to get your hands dirty.
