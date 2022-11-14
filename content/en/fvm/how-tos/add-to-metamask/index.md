@@ -108,4 +108,4 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
 
 ## Next steps
 
-You can now add funds to this wallet by using the [Wallaby testnet faucet]({{< relref "#use-the-wallaby-faucet" >}}).
+You can now add funds to this wallet by using the [`Wallaby testnet faucet`](https://wallaby.network/#faucet).
