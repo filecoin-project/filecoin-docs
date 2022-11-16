@@ -48,11 +48,13 @@ Since the FVM is fully EVM-compatible, new ERC-20 tokens can be launched on the 
 
 ## Why now
 
-The three stages of Filecoin development:
+There are three stages to the development of Filecoin:
 
 1. Build a robust decentralized storage network.
 1. Onboard and safeguard humanity's most important data.
 1. Allow computation over that data to enable web-scale applications.
+
+The FVM covers stage 3. We had to ensure that the Filecoin network was stable, robust, and secure before we allowed any development on top of the network.
 
 ## FIL Lisbon
 
