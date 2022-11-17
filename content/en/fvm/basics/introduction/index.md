@@ -18,11 +18,9 @@ The FVM enables developers to build many new use cases on top of and with the Fi
 
 ### Data access control
 
-Centralized storage solutions, like AWS or Google Cloud Services, have one substantial advantage over web3 services: they can limit individual data access.
+One advantage centralized storage solutions have over web3 services is that they can limit individual data access.
 
 The FVM enables Filecoin network participants to do the same. Threshold encryption networks, like Medusa, can individually or programmatically govern who can access a data collection without any contracts or validators having access to the data themselves.
-
-Now, users can benefit from the decentralization that Filecoin offers, along with the safety and security of access controls.
 
 ### Data DAO
 
