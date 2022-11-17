@@ -193,6 +193,12 @@
   identifier = "reference-exchanges"
   url = "/reference/exchanges"
 
+[[reference]]
+  name = "APIs"
+  weight = 30
+  identifier = "reference-apis"
+  url = "/reference/apis/json-rpc"
+
 
 
 [[social]]
