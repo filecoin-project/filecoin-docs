@@ -11,6 +11,10 @@ languageCode = "en-US"
 paginate = 7
 rssLimit = 10
 
+# Allows you to disable all page types and will render nothing related to 'kind';
+# values = "page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"
+disableKinds = ["section"]
+
 # Multilingual
 defaultContentLanguage = "en"
 disableLanguages = ["de", "nl"]
