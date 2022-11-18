@@ -8,6 +8,7 @@ menu:
         parent: "fvm-basics"
 aliases:
     - "/fvm"
+    - "/fvm/basics"
 ---
 
 {{< beta-warning >}}
