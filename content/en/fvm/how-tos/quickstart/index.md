@@ -6,6 +6,8 @@ weight: 10
 menu:
     fvm:
         parent: "fvm-how-tos"
+aliases:
+    - /fvm/how-tos
 ---
 
 {{< beta-warning >}}
