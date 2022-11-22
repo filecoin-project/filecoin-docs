@@ -10,16 +10,15 @@ toc: true
 
 ## EthAccounts
 
-Use the `eth_accounts` functions to generate Ethereum accounts and sign transactions and data. `eth_accounts` will always return and empty array `[]` since Filecoin does not manage Ethereum private keys.
+This method is intended to return a list of addresses owned by client. However, `eth_accounts` will always return and empty array `[]` since Filecoin does not manage Ethereum private keys.
 
-Perms: read
-
-Inputs: `null`
+- Permissions: read
+- Inputs: none
 
 Example:
 
 ```curl
-curl --location --request POST '<NODE_ADDRESS>' \
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -37,19 +36,17 @@ curl --location --request POST '<NODE_ADDRESS>' \
 }
 ```
 
-<!-- TODO: find out where this came from. I can't find it in Eth docs. -->
 ## EthBlockNumber
 
-EthBlockNumber returns the height of the latest (heaviest) tipset.
+Returns the number of most recent block.
 
-Perms: read
-
-Inputs: `null`
+- Permissions: read
+- Inputs: none
 
 Example:
 
-```shell
-curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \                                         ~
+```curl
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -67,41 +64,74 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \          
 }
 ```
 
-## EthCall
+<!-- TODO: find an example of this function working. -->
+<!-- ## EthCall -->
 
-Perms: read
+<!-- Executes a new message call immediately without creating a transaction on the blockchain. -->
 
-Inputs:
+<!-- - Permissions: read -->
+<!-- - Input: -->
+<!--     1. Object - The transaction call object: -->
+<!--         - from: DATA, 20 Bytes - (optional) The address the transaction is sent from. -->
+<!--         - to: DATA, 20 Bytes - The address the transaction is directed to. -->
+<!--         - gas: QUANTITY - (optional) Integer of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions. -->
+<!--         - gasPrice: QUANTITY - (optional) Integer of the gasPrice used for each paid gas -->
+<!--         - value: QUANTITY - (optional) Integer of the value sent with this transaction -->
+<!--         - data: DATA - (optional) Hash of the method signature and encoded parameters. For details see [Ethereum Contract ABI in the Solidity documentation](https://docs.soliditylang.org/en/latest/abi-spec.html) -->
+<!--     1. QUANTITY|TAG - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`. See the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block-parameter). -->
 
-```json
-[
-  {
-    "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
-    "to": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
-    "gas": "0x5",
-    "gasPrice": "0x0",
-    "value": "0x0",
-    "data": "0x07"
-  },
-  "string value"
-]
-```
+<!-- Inputs: -->
 
-Response: `"0x07"`
+<!-- ```json -->
+<!-- [ -->
+<!--   { -->
+<!--     "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031", -->
+<!--     "to": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031", -->
+<!--     "gas": "0x5", -->
+<!--     "gasPrice": "0x0", -->
+<!--     "value": "0x0", -->
+<!--     "data": "0x07" -->
+<!--   }, -->
+<!--   "latest" -->
+<!-- ] -->
+<!-- ``` -->
+
+<!-- Response: `"0x07"` -->
 
 ## EthChainId
 
-Perms: read
+Returns the currently configured chain ID, a value used in replay-protected transaction signing as introduced by EIP-155.
 
-Inputs: `null`
+- Permissions: read
+- Inputs: none
 
-Response: `"0x5"`
+Example:
+
+```curl
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \    src/languages update/json-rpc-examples
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_chainId",
+    "params":[],
+    "id":1
+}' | jq
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "0x7ab7",
+  "id": 1
+}
+```
 
 ## EthEstimateGas
 
-Perms: read
+Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
-Inputs:
+- Permissions: read
+- Inputs:
 
 ```json
 [
@@ -120,7 +150,7 @@ Response: `"0x5"`
 
 ## EthFeeHistory
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -151,15 +181,15 @@ Response:
 
 ## EthGasPrice
 
-Perms: read
+Permissions: read
 
-Inputs: `null`
+Inputs: none
 
 Response: `"0x0"`
 
 ## EthGetBalance
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -174,7 +204,7 @@ Response: `"0x0"`
 
 ## EthGetBlockByHash
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -218,7 +248,7 @@ Response:
 
 ## EthGetBlockByNumber
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -264,7 +294,7 @@ Response:
 
 EthGetBlockTransactionCountByHash returns the number of messages in the TipSet
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -280,7 +310,7 @@ Response: `"0x5"`
 
 EthGetBlockTransactionCountByNumber returns the number of messages in the TipSet
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -294,7 +324,7 @@ Response: `"0x5"`
 
 ## EthGetCode
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -312,7 +342,7 @@ Response: `"0x07"`
 Polling method for a filter, returns event logs which occurred since last poll.
 (requires write perm since timestamp of last filter execution will be written)
 
-Perms: write
+Permissions: write
 
 Inputs:
 
@@ -335,7 +365,7 @@ Response:
 Returns event logs matching filter with given id.
 (requires write perm since timestamp of last filter execution will be written)
 
-Perms: write
+Permissions: write
 
 Inputs:
 
@@ -357,7 +387,7 @@ Response:
 
 Returns event logs matching given filter spec.
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -383,7 +413,7 @@ Response:
 
 ## EthGetStorageAt
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -399,7 +429,7 @@ Response: `"0x07"`
 
 ## EthGetTransactionByBlockHashAndIndex
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -436,7 +466,7 @@ Response:
 
 ## EthGetTransactionByBlockNumberAndIndex
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -473,7 +503,7 @@ Response:
 
 ## EthGetTransactionByHash
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -509,7 +539,7 @@ Response:
 
 ## EthGetTransactionCount
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -524,7 +554,7 @@ Response: `"0x5"`
 
 ## EthGetTransactionReceipt
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -571,9 +601,9 @@ Response:
 
 ## EthMaxPriorityFeePerGas
 
-Perms: read
+Permissions: read
 
-Inputs: `null`
+Inputs: none
 
 Response: `"0x0"`
 
@@ -581,9 +611,9 @@ Response: `"0x0"`
 
 Installs a persistent filter to notify when a new block arrives.
 
-Perms: write
+Permissions: write
 
-Inputs: `null`
+Inputs: none
 
 Response: `"c5564560217c43e4bc0484df655e9019"`
 
@@ -591,7 +621,7 @@ Response: `"c5564560217c43e4bc0484df655e9019"`
 
 Installs a persistent filter based on given filter spec.
 
-Perms: write
+Permissions: write
 
 Inputs:
 
@@ -613,23 +643,23 @@ Response: `"c5564560217c43e4bc0484df655e9019"`
 
 Installs a persistent filter to notify when new messages arrive in the message pool.
 
-Perms: write
+Permissions: write
 
-Inputs: `null`
+Inputs: none
 
 Response: `"c5564560217c43e4bc0484df655e9019"`
 
 ## EthProtocolVersion
 
-Perms: read
+Permissions: read
 
-Inputs: `null`
+Inputs: none
 
 Response: `"0x5"`
 
 ## EthSendRawTransaction
 
-Perms: read
+Permissions: read
 
 Inputs:
 
@@ -651,7 +681,7 @@ eventTypes is one or more of:
 params contains additional parameters used with the log event type
 The client will receive a stream of EthSubscriptionResponse values until EthUnsubscribe is called.
 
-Perms: write
+Permissions: write
 
 Inputs:
 
@@ -681,7 +711,7 @@ Response:
 
 Uninstalls a filter with given id.
 
-Perms: write
+Permissions: write
 
 Inputs:
 
@@ -697,7 +727,7 @@ Response: `true`
 
 Unsubscribe from a websocket subscription
 
-Perms: write
+Permissions: write
 
 Inputs:
 
