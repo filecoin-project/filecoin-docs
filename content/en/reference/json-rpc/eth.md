@@ -10,7 +10,7 @@ toc: true
 
 ## EthAccounts
 
-The `eth_accounts` functions to generate Ethereum accounts and sign transactions and data. `eth_accounts` will always return and empty array `[]` since we do not manage Ethereum private keys.
+Use the `eth_accounts` functions to generate Ethereum accounts and sign transactions and data. `eth_accounts` will always return and empty array `[]` since Filecoin does not manage Ethereum private keys.
 
 Perms: read
 
@@ -18,7 +18,7 @@ Inputs: `null`
 
 Example:
 
-```shell
+```curl
 curl --location --request POST '<NODE_ADDRESS>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -26,7 +26,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
     "method":"eth_accounts",
     "params":[],
     "id":1
-}'
+}' | jq
 ```
 
 ```json
@@ -40,13 +40,32 @@ curl --location --request POST '<NODE_ADDRESS>' \
 <!-- TODO: find out where this came from. I can't find it in Eth docs. -->
 ## EthBlockNumber
 
-EthBlockNumber returns the height of the latest (heaviest) TipSet
+EthBlockNumber returns the height of the latest (heaviest) tipset.
 
 Perms: read
 
 Inputs: `null`
 
-Response: `"0x5"`
+Example:
+
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \                                         ~
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_blockNumber",
+    "params":[],
+    "id":1
+}' | jq
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "0x3bb7",
+  "id": 1
+}
+```
 
 ## EthCall
 

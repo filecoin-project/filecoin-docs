@@ -60,5 +60,8 @@
   },
   "otherDependencies": {
     "hugo": "0.96.0"
+  },
+  "dependencies": {
+    "highlightjs-curl": "^1.3.0"
   }
 }
