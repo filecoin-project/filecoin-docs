@@ -74,7 +74,7 @@ editPage = true
 
 [options]
   lazySizes = true
-  clipBoard = false
+  clipBoard = true
   instantPage = true
   flexSearch = true
   darkMode = true
