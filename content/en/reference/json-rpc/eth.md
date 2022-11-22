@@ -126,66 +126,127 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \    src/la
 }
 ```
 
-## EthEstimateGas
+<!-- TODO: find out how to perform this call. -->
+<!-- ## EthEstimateGas -->
 
-Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
+<!-- Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance. -->
+
+<!-- - Permissions: read -->
+<!-- - Inputs: -->
+
+<!-- Example: -->
+
+<!-- ```curl -->
+<!-- curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \ -->
+<!--     --header 'Content-Type: application/json' \ -->
+<!--     --data-raw '{ -->
+<!--         "jsonrpc":"2.0", -->
+<!--         "method":"eth_estimateGas", -->
+<!--         "params":[{ -->
+<!--             "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031", -->
+<!--             "to": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031", -->
+<!--             "gas": "0x5", -->
+<!--             "gasPrice": "0x0", -->
+<!--             "value": "0x0", -->
+<!--             "data": "0x07" -->
+<!--         }], -->
+<!--         "id":1 -->
+<!--     }' | jq -->
+<!-- ``` -->
+
+<!-- ```json -->
+<!-- { -->
+<!--   "jsonrpc": "2.0", -->
+<!--   "id": 1, -->
+<!--   "error": { -->
+<!--     "code": 1, -->
+<!--     "message": "CallWithGas failed: call raw get actor: resolution lookup failed (t410fls7oz6m5h7nt6jpdbhgcmtzeboygmqbr55tzfdq): resolve address t410fls7oz6m5h7nt6jpdbhgcmtzeboygmqbr55tzfdq: actor not found" -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
+
+<!-- TODO: find out how to make this one work. -->
+## EthFeeHistory
+
+Returns a collection of historical gas information.
 
 - Permissions: read
 - Inputs:
+    - `BLOCKCOUNT` - Number of blocks in the requested range. Between 1 and 1024 blocks can be requested in a single query. Less than requested may be returned if not all blocks are available.
+    - `NEWESTBLOCK` - Highest number block of the requested range.
+    - `REWARDPERCENTILES` - (optional) A monotonically increasing list of percentile values to sample from each block's effective priority fees per gas in ascending order, weighted by gas used.
+- Returns:
+    - `object`:
+        - `OLDESTBLOCK` - Lowest number block of the returned range.
+        - `BASEFEEPERGAS` - An array of block base fees per gas. This includes the next block after the newest of the returned range, because this value can be derived from the newest block. Zeroes are returned for pre-EIP-1559 blocks.
+        - `GASUSEDRATIO` - An array of block gas used ratios. These are calculated as the ratio of gasUsed and gasLimit.
+        - `REWARD` - (Optional) An array of effective priority fees per gas data points from a single block. All zeroes are returned if the block is empty.
 
-```json
-[
-  {
-    "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
-    "to": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
-    "gas": "0x5",
-    "gasPrice": "0x0",
-    "value": "0x0",
-    "data": "0x07"
-  }
-]
+Example:
+
+```curl
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_feeHistory",
+    "params": [ "0x5", "latest", [ 0 ] ],
+    "id":1
+}' | jq
 ```
-
-Response: `"0x5"`
-
-## EthFeeHistory
-
-Permissions: read
-
-Inputs:
-
-```json
-[
-  "0x5",
-  "string value",
-  [
-    9
-  ]
-]
-```
-
-Response:
 
 ```json
 {
-  "oldestBlock": 42,
-  "baseFeePerGas": [
-    "0x0"
-  ],
-  "gasUsedRatio": [
-    12.3
-  ],
-  "reward": []
+  "jsonrpc": "2.0",
+  "result": {
+    "oldestBlock": 15510,
+    "baseFeePerGas": [
+      "0x64",
+      "0x64",
+      "0x64",
+      "0x64",
+      "0x64",
+      "0x64"
+    ],
+    "gasUsedRatio": [
+      0,
+      0,
+      0.0024320284,
+      0,
+      0
+    ]
+  },
+  "id": 1
 }
 ```
 
 ## EthGasPrice
 
-Permissions: read
+Returns the current price per gas in wei.
 
-Inputs: none
+- Permissions: read
+- Inputs: none
 
-Response: `"0x0"`
+Example:
+
+```curl
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_gasPrice",
+    "params": [],
+    "id":1
+}' | jq
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "0x30bbf",
+  "id": 1
+}
+```
 
 ## EthGetBalance
 

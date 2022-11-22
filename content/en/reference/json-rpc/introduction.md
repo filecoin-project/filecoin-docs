@@ -10,7 +10,22 @@ toc: true
 weight: 1
 ---
 
-## Basic example
+## Quick start
+
+The easiest way to test the API is to use Curl commands. A Curl command to the Filecoin network looks something like this:
+
+```curl
+curl --location --request POST '<NODE_ADDRESS>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"<API_METHOD_TO_CALL>",
+    "params": [<ARRAY OF PARAMETERS>],
+    "id":1
+}'
+```
+
+## Step-by-step example
 
 1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io) node.
 
