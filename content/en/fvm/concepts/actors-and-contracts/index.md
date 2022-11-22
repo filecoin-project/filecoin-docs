@@ -6,6 +6,8 @@ weight: 10
 menu:
     fvm:
         parent: "fvm-concepts"
+aliases:
+    - /fvm/concepts
 ---
 
 {{< beta-warning >}}
