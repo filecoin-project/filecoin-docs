@@ -25,7 +25,7 @@
 				</nav>
 			{{ end }}
 			<h1>{{ .Title }}</h1>
-			<p class="lead">{{ .Params.lead | safeHTML }}</p>
+			<p class="lead">{{ .Params.lead | safeHTML | markdownify }}</p>
 			{{ if ne .Params.toc false -}}
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				{{ partial "sidebar/docs-toc.html" . }}
