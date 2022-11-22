@@ -3,7 +3,7 @@ title: "Exchange integration"
 description: "Use this guide to help you list Filecoin on your exchange platform."
 menu:
     reference:
-        parent: "reference-exchanges"
+        parent: "reference-reference"
 ---
 
 ## Filecoin Integration Guide

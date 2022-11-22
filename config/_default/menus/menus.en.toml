@@ -188,16 +188,10 @@
   url = "/reference/overview"
 
 [[reference]]
-  name = "Exchanges"
-  weight = 20
-  identifier = "reference-exchanges"
-  url = "/reference/exchanges"
-
-[[reference]]
-  name = "APIs"
+  name = "JSON-RPC"
   weight = 30
-  identifier = "reference-apis"
-  url = "/reference/apis/json-rpc"
+  identifier = "reference-json-rpc"
+  url = "/reference/json-rpc/introduction"
 
 
 
