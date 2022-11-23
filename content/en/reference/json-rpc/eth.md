@@ -250,18 +250,39 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 
 ## EthGetBalance
 
+Returns the balance of the account of a given address.
+
 Permissions: read
 
-Inputs:
+Input:
 
-```json
-[
-  "0x0707070707070707070707070707070707070707",
-  "string value"
-]
+1. String - 20 Bytes - Address.
+1. String - Either the hex value of a block number OR One of the following block tags:
+    - `pending`: a sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
+    - `latest`: the most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
+    - `safe`: the most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged. Only available on Ethereum Mainnet and Goerli.
+    - `finalized`: the most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged. Only available on Ethereum Mainnet and Goerli.
+    - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
+
+
+```curl
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \           ~
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_getBalance",
+    "params": ["0x3e1F70090cf4476d788C5259F50F89E9fB88bF1a", "latest"],
+    "id":1
+}' | jq
 ```
 
-Response: `"0x0"`
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "0x0",
+  "id": 1
+}
+```
 
 ## EthGetBlockByHash
 
