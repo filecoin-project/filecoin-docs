@@ -7,6 +7,14 @@ menu:
 weight: 7
 ---
 
+## Account, actor & message explorers
+
+These explorers allow you to view the states of Filecoin accounts and actors (smart contracts) and the details of messages sent across the network.
+
+### Glif Explorer
+
+Website: [https://explorer.glif.io](https://explorer.glif.io)
+
 ## Block explorers
 
 Block explorers allow you to view the details of the Filecoin network on a single website. Individual block explorers contain different features that may be useful. None of these sites are created or maintained by Protocol Labs or the Filecoin Foundation. This list is in alphabetical order:
