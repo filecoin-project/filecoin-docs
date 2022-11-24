@@ -9,9 +9,10 @@ weight: 7
 
 ## Account, actor & message explorers
 
-Account, actor & transaction explors allow you to view the states of a Fielcoin accounts and actors(smart contracts) and the details of the messages sent in the Filecoin network.
+These explorers allow you to view the states of Filecoin accounts and actors (smart contracts) and the details of messages sent across the network.
 
 ### Glif Explorer
+
 Website: [https://explorer.glif.io](https://explorer.glif.io)
 
 ## Block explorers
