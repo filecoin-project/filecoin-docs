@@ -58,38 +58,55 @@ Filecoin clients and other storage providers continuously verify that the proofs
 
 ## Gas fees
 
-Executing messages, for example by including transactions or proofs in the chain, consumes both computation and storage resources on the network. _Gas_ is a measure of resources consumed by messages. The gas consumed by a message directly affects the cost that the sender has to pay for it to be included in a new block by a storage provider.
+Executing messages consumes both computation and storage resources on the network. _Gas_ is a measure of resources consumed by each message. The gas consumed by a message directly affects the cost that the sender has to pay for it to be included in a new block.
 
-Historically in other blockchains, miners specify a GasFee in a unit of native currency and then pay the block producing miners a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources, since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
+Historically in other blockchains, miners specify a _gas fee_ in a unit of native currency and then pay the block producing miners a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources, since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
 
-The amount of fees burned in the Filecoin network is determined by a dynamic \*_*BaseFee*_, which gets automatically adjusted according to the network congestion parameters (block sizes). The current value can be obtained from one of the [block explorers]({{< relref "get-started/explore-the-network" >}}) or by inspecting the current head.
+The amount of fees burned in the Filecoin network is determined by a dynamic `BaseFee` value. The `BaseFee` is automatically adjusted according to the network congestion parameters, also known as _block sizes_. The current value can be obtained from one of the [block explorers]({{< relref "get-started/explore-the-network" >}}) or by inspecting the current head of the chain.
 
 Additionally, a number of gas-related parameters are attached to each message and determine the amount of rewards that storage providers get. Here's an overview of the terms and concepts:
 
-- **_GasUsage_**: the amount of gas that a message's execution actually consumes. Current protocol does not know how much gas a message will exactly consume ahead of execution, but it can be estimated (see [prices](https://github.com/filecoin-project/lotus/blob/d678fe4bfa5b4c70bcebd46cdc38aafc452b42d1/chain/vm/gas.go#L87)). GasUsage measured in units of _Gas_.
-- **_BaseFee_**: the amount of FIL that gets burned _per unit of gas consumed_ for the execution of every message. It is measured in units of attoFIL/Gas.
-- **_GasLimit_**: the limit on the amount of gas that a message's execution can consume, estimated and specified by a message sender. It is measured in units of Gas. The sum of _GasLimit_ for all messages included in a block must not exceed the _BlockGasLimit_. Messages will fail to execute if they run out of _Gas_, and any effects of the execution will be reverted.
-- **_GasFeeCap_**: the maximum token amount that a sender is willing to pay per GasUnit for including a message in a block. It is measured in units of attoFIL/Gas. A message sender must have a minimum balance of _GasFeeCap \* GasLimit_ when sending a message, even though not all of that will be consumed. _GasFeeCap_ can serve as a safeguard against high, unexpected _BaseFee_ fluctuations.
-- **_GasPremium_**: a priority fee that is paid to the block-producing storage provider. This is capped by _GasFeeCap_. The _BaseFee_ has a higher priority. It is measured in units of attoFIL/Gas and can be as low as 1 attoFIL/Gas.
-- **_Overestimation burn_**: an additional amount of gas to burn that grows larger when the difference between _GasLimit_ and _GasUsage_ is large. (See [current implementation](https://github.com/filecoin-project/lotus/blob/v0.10.0/chain/vm/burn.go#L38)).
+### Gas usage
+
+The amount of gas that a message's execution actually consumes. Currently, nodes do not know how much gas a message will exactly consume ahead of execution, but it can be estimated. `GasUsage` measured in units of _Gas_.
+
+### Base fee
+
+The amount of FIL that gets burned per unit of gas consumed for the execution of every message. It is measured in units of `attoFIL ÷ Gas`.
+
+### Gas limit
+
+A limit on the amount of gas that a message's execution can consume, estimated and specified by the message sender. It is measured in units of `Gas`. The sum of _GasLimit_ for all messages included in a block must not exceed the _BlockGasLimit_. Messages will fail to execute if they run out of _Gas_, and any effects of the execution will be reverted.
+
+### Gas fee cap
+
+The maximum token amount that a sender is willing to pay per `GasUnit` for including a message in a block. It is measured in units of `attoFIL / Gas`. A message sender must have a minimum balance of `GasFeeCap × GasLimit` when sending a message, even though not all of that will be consumed. _GasFeeCap_ can serve as a safeguard against high, unexpected _BaseFee_ fluctuations.
+
+### Gas premium
+
+A priority fee that is paid to the block-producing storage provider. This is capped by _GasFeeCap_. The _BaseFee_ has a higher priority. It is measured in units of `attoFIL ÷ Gas` and can be as low as 1 `attoFIL ÷ Gas`.
+
+### Overestimation burn
+
+An additional amount of gas to burn that grows larger when the difference between `GasLimit` and `GasUsage` is large.
+
+### Total cost
 
 The total cost of a message for a sender will be:
 
-- _GasUsage \* BaseFee_ FIL (burned) **+**
-- _GasLimit \* GasPremium_ FIL (storage provider's reward) **+**
-- _OverEstimationBurn \* BaseFee_ FIL
+- `GasUsage × BaseFee` FIL + 
+- `GasLimit × GasPremium` FIL +
+- `OverEstimationBurn` × `BaseFee` FIL
 
-An important detail is that a message will always pay the _burn fee_, regardless of the _GasFeeCap_ used. Thus, a low _GasFeeCap_ may result in a reduced _GasPremium_ or even a negative one! In that case, the storage providers that include a message will have to pay the needed amounts out of their own pockets, which means they are unlikely to include such messages in new blocks.
+A message will **always pay the burn fee** regardless of the _GasFeeCap_ used. Thus, a low _GasFeeCap_ may result in a reduced _GasPremium_ or even a negative one! In that case, the storage providers that include a message will have to pay the needed amounts out of their own pockets, which means they are unlikely to include such messages in new blocks.
 
 Filecoin implementations may choose the heuristics of how their storage providers select messages for inclusion in new blocks, but they will usually attempt to maximize the storage provider's rewards.
 
 ## Actors
 
-Actors are a [software design pattern](https://en.wikipedia.org/wiki/Actor_model) for managing state. Accounts, Multisigs, Storage Providers, and anything with a state, such as an account balance, are implemented as an _actor_.
+Actors are a [software design pattern](https://en.wikipedia.org/wiki/Actor_model) for managing state. Accounts, multisigs, storage providers, and anything with a state, such as an account balance, are implemented as an _actor_.
 
-Actors are the Filecoin equivalent of smart contracts in the Ethereum Virtual Machine. As such, Actors are very central components of the system. Any change to the current state of the Filecoin blockchain has to be triggered through an Actor.
-
-See: [Filecoin Spec](https://spec.filecoin.io/#section-systems.filecoin_vm)
+Actors are the Filecoin equivalent of smart contracts in the Ethereum ecosystem. As such, actors are very central components of the system. Any change to the current state of the Filecoin blockchain has to be triggered through an actor.
 
 ## Addresses
 
