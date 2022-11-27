@@ -65,38 +65,36 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: find an example of this function working. -->
-<!-- ## EthCall -->
+## EthCall
 
-<!-- Executes a new message call immediately without creating a transaction on the blockchain. -->
+Executes a new message call immediately without creating a transaction on the blockchain.
 
-<!-- - Permissions: read -->
-<!-- - Input: -->
-<!--     1. Object - The transaction call object: -->
-<!--         - from: DATA, 20 Bytes - (optional) The address the transaction is sent from. -->
-<!--         - to: DATA, 20 Bytes - The address the transaction is directed to. -->
-<!--         - gas: QUANTITY - (optional) Integer of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions. -->
-<!--         - gasPrice: QUANTITY - (optional) Integer of the gasPrice used for each paid gas -->
-<!--         - value: QUANTITY - (optional) Integer of the value sent with this transaction -->
-<!--         - data: DATA - (optional) Hash of the method signature and encoded parameters. For details see [Ethereum Contract ABI in the Solidity documentation](https://docs.soliditylang.org/en/latest/abi-spec.html) -->
-<!--     1. QUANTITY|TAG - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`. See the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block-parameter). -->
+- Permissions: read
+- Input:
+    1. Object - The transaction call object:
+        - from: DATA, 20 Bytes - (optional) The address the transaction is sent from.
+        - to: DATA, 20 Bytes - The address the transaction is directed to.
+        - gas: QUANTITY - (optional) Integer of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
+        - gasPrice: QUANTITY - (optional) Integer of the gasPrice used for each paid gas
+        - value: QUANTITY - (optional) Integer of the value sent with this transaction
+        - data: DATA - (optional) Hash of the method signature and encoded parameters. For details see [Ethereum Contract ABI in the Solidity documentation](https://docs.soliditylang.org/en/latest/abi-spec.html)
+    1. QUANTITY|TAG - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`. See the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block-parameter).
 
-<!-- Inputs: -->
+Inputs:
 
-<!-- ```json -->
-<!-- [ -->
-<!--   { -->
-<!--     "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031", -->
-<!--     "to": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031", -->
-<!--     "gas": "0x5", -->
-<!--     "gasPrice": "0x0", -->
-<!--     "value": "0x0", -->
-<!--     "data": "0x07" -->
-<!--   }, -->
-<!--   "latest" -->
-<!-- ] -->
-<!-- ``` -->
-
-<!-- Response: `"0x07"` -->
+```json
+[
+  {
+    "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
+    "to": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
+    "gas": "0x5",
+    "gasPrice": "0x0",
+    "value": "0x0",
+    "data": "0x07"
+  },
+  "latest"
+]
+```
 
 ## EthChainId
 
@@ -127,43 +125,32 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \    src/la
 ```
 
 <!-- TODO: find out how to perform this call. -->
-<!-- ## EthEstimateGas -->
+## EthEstimateGas
 
-<!-- Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance. -->
+Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
-<!-- - Permissions: read -->
-<!-- - Inputs: -->
+- Permissions: read
+- Inputs:
 
-<!-- Example: -->
+Example:
 
-<!-- ```curl -->
-<!-- curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \ -->
-<!--     --header 'Content-Type: application/json' \ -->
-<!--     --data-raw '{ -->
-<!--         "jsonrpc":"2.0", -->
-<!--         "method":"eth_estimateGas", -->
-<!--         "params":[{ -->
-<!--             "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031", -->
-<!--             "to": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031", -->
-<!--             "gas": "0x5", -->
-<!--             "gasPrice": "0x0", -->
-<!--             "value": "0x0", -->
-<!--             "data": "0x07" -->
-<!--         }], -->
-<!--         "id":1 -->
-<!--     }' | jq -->
-<!-- ``` -->
-
-<!-- ```json -->
-<!-- { -->
-<!--   "jsonrpc": "2.0", -->
-<!--   "id": 1, -->
-<!--   "error": { -->
-<!--     "code": 1, -->
-<!--     "message": "CallWithGas failed: call raw get actor: resolution lookup failed (t410fls7oz6m5h7nt6jpdbhgcmtzeboygmqbr55tzfdq): resolve address t410fls7oz6m5h7nt6jpdbhgcmtzeboygmqbr55tzfdq: actor not found" -->
-<!--   } -->
-<!-- } -->
-<!-- ``` -->
+```curl
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "jsonrpc":"2.0",
+        "method":"eth_estimateGas",
+        "params":[{
+            "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
+            "to": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
+            "gas": "0x5",
+            "gasPrice": "0x0",
+            "value": "0x0",
+            "data": "0x07"
+        }],
+        "id":1
+    }' | jq
+```
 
 <!-- TODO: find out how to make this one work. -->
 ## EthFeeHistory
@@ -193,31 +180,6 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
     "params": [ "0x5", "latest", [ 0 ] ],
     "id":1
 }' | jq
-```
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "oldestBlock": 15510,
-    "baseFeePerGas": [
-      "0x64",
-      "0x64",
-      "0x64",
-      "0x64",
-      "0x64",
-      "0x64"
-    ],
-    "gasUsedRatio": [
-      0,
-      0,
-      0.0024320284,
-      0,
-      0
-    ]
-  },
-  "id": 1
-}
 ```
 
 ## EthGasPrice
@@ -276,19 +238,17 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \          
 }' | jq
 ```
 
-```json
-{
-  "jsonrpc": "2.0",
-  "result": "0x0",
-  "id": 1
-}
-```
-
+<!-- TODO: Find a tipset to use for this example. -->
 ## EthGetBlockByHash
 
-Permissions: read
+Returns information about a block by tipset, also known as a block hash.
 
-Inputs:
+- Permissions: read
+- Inputs:
+    - `array`:
+        - `string`: Tipset of block
+        - `boolean`: If true it returns the full transaction objects, if false only the hashes of the transactions. Defaults to false.
+
 
 ```json
 [
@@ -297,38 +257,10 @@ Inputs:
 ]
 ```
 
-Response:
-
-```json
-{
-  "hash": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "parentHash": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "sha3Uncles": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "miner": "0x0707070707070707070707070707070707070707",
-  "stateRoot": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "transactionsRoot": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "receiptsRoot": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "difficulty": "0x5",
-  "totalDifficulty": "0x5",
-  "number": "0x5",
-  "gasLimit": "0x5",
-  "gasUsed": "0x5",
-  "timestamp": "0x5",
-  "extraData": "Ynl0ZSBhcnJheQ==",
-  "mixHash": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "nonce": "0x0707070707070707",
-  "baseFeePerGas": "0x0",
-  "size": "0x5",
-  "transactions": [
-    {}
-  ],
-  "uncles": [
-    "0x0707070707070707070707070707070707070707070707070707070707070707"
-  ]
-}
-```
-
+<!-- TODO: wtf is a block number. It's not a tipset... -->
 ## EthGetBlockByNumber
+
+Returns information about a block by block number.
 
 Permissions: read
 
@@ -372,6 +304,7 @@ Response:
 }
 ```
 
+<!-- TODO: figure out how this works. -->
 ## EthGetBlockTransactionCountByHash
 
 EthGetBlockTransactionCountByHash returns the number of messages in the TipSet
@@ -388,23 +321,46 @@ Inputs:
 
 Response: `"0x5"`
 
+<!-- TODO: figure out how this works. -->
 ## EthGetBlockTransactionCountByNumber
 
-EthGetBlockTransactionCountByNumber returns the number of messages in the TipSet
+Returns the number of transactions in a block matching the given tipset.
 
-Permissions: read
+- Permissions: read
+- Inputs:
+    - `string`: Either the hex value of a block number OR One of the following block tags:
+        - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
+        - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
+        - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged. Only available on Ethereum Mainnet and Goerli.
+        - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged. Only available on Ethereum Mainnet and Goerli.
+        - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
-Inputs:
+Example:
+
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_getBlockTransactionCountByNumber",
+    "params": [ "0x5" ],
+    "id":1
+}' | jq
+```
 
 ```json
-[
-  "0x5"
-]
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x80"
+}
 ```
 
 Response: `"0x5"`
 
 ## EthGetCode
+
+
 
 Permissions: read
 
