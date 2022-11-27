@@ -13,6 +13,10 @@ In the Filecoin network, an _address_ is a unique cryptographic value that serve
 
 <!-- ## Blake-256 hash -->
 
+## Burn
+
+When a token is _burned_ it is sent to an irrecoverable address on the network. No one has access to this address, so the tokens sent there are figuratively destroyed. This idea of burning tokens is based on [Ethereum's EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
+
 ## Block
 
 In a blockchain, a _block_ is the fundamental unit of record. Each block is cryptographically linked to one or more previous blocks. Blocks typically contain [messages](#message) relating changes to some state (for example, financial records) tracked by the blockchain.
