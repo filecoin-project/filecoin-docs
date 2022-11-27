@@ -13,44 +13,48 @@ This page gives a basic introduction to how the Filecoin network operates. While
 
 The Filecoin network is a distributed, peer-to-peer network formed by Filecoin peers who participate in different ways.
 
-Peers communicate over secure channels that they use to distribute information to the network (gossiping), to transfer data among themselves, and to discover other peers, maintaining a well-connected swarm in which information like blocks and messages flows swiftly even when many thousands of peers participate.
+Peers communicate over secure channels that they use to distribute information to the network, also known as _gossiping_. These secure channels are used to transfer data among peers and discover other peers. This creates a well-connected swarm in which information like blocks and messages flow swiftly, even when many thousands of peers participate.
 
-## Filecoin nodes
+## Nodes
 
-_Filecoin Nodes_ or _Filecoin clients_ are peers that sync the Filecoin blockchain and validate the messages in every block, which, once applied, provide a global state.
+_Filecoin nodes_ are peers that sync the Filecoin blockchain and validate the messages in every block to provide a global state of the network.
 
-Filecoin Nodes can also publish different types of _messages_ to the network by broadcasting them. For example, a client can publish a message to send FIL from one address to a different one. Nodes can propose [storage and retrieval deals](#deals) to Filecoin storage providers and pay for them as they are executed.
+Filecoin nodes can also publish different types of _messages_ to the network by broadcasting them. For example, a client can publish a message to send FIL from one address to another. Nodes can propose [storage and retrieval deals](#deals) to storage providers and pay for them as they are executed.
 
-Running a Filecoin Node is a low-level task that usually implies keeping a program running 24/7. There are several Filecoin Node implementations in the works, with [Lotus](https://lotus.filecoin.io) being the most advanced.
+Running a Filecoin node is a low-level task that usually implies keeping a program running constantly. There are several Filecoin node implementations in the works, with [Lotus](https://lotus.filecoin.io) being the most advanced.
 
-## Filecoin storage providers
+## Storage providers
 
-The storage providers provide services to the network by executing different types of [deals](#deals) and appending new blocks to the chain (every 30 seconds), for which they collect FIL rewards. Additional details about types of storage providers, rewards, and deals execution from the storage provider perspective can be found in the [How providing storage works]({{< relref "how-providing-works" >}}) section.
+Storage providers (SPs) deliver services to the network by executing different types of [deals](#deals). SPs also append new blocks to the chain every 30 seconds, for which they collect FIL rewards. Additional details about types of providers, rewards, and deals execution from the storage provider perspective can be found in the [How providing storage works]({{< relref "how-providing-works" >}}) section.
 
-Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements]({{< relref "../storage-provider/hardware-requirements.md" >}}), as needed to complete the necessary [proofs](#proofs). The [Lotus Miner](https://lotus.filecoin.io) is the most advanced implementation of a Filecoin storage provider to this day.
+Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements]({{< relref "../storage-provider/hardware-requirements.md" >}}) The [`lotus-miner` application](https://lotus.filecoin.io) is currently the most advanced implementation of a Filecoin storage provider.
 
 ## Deals
 
 There are two main types of deals in Filecoin: _storage deals_ and _retrieval deals_.
 
-Storage deals are agreements between clients and _storage providers_ to store some data in the network. Once a deal is initiated, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) to the chain that it is still storing the data per the agreement so that it can collect [rewards]({{< relref "rewards.md" >}}). If not, the storage provider will be [slashed]({{< relref "../storage-provider/slashing.md" >}}) and lose FIL.
+### Storage deals
 
-Retrieval deals are agreements between clients and _retrieval providers_ (which may or not be also storage providers) to extract data that is stored in the network (hopefully in a fast and reliable manner). Unlike storage deals, these deals are fulfilled off-chain, using _payment channels_ to incrementally pay for the data received.
+Storage deals are agreements between clients and _storage providers_ to store data on the network. Once a deal is initiated, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) that it is still storing the data so that it can collect [rewards]({{< relref "rewards.md" >}}). If the storage provider cannot prove that they are still storing the data correctly, they are [slashed]({{< relref "../storage-provider/slashing.md" >}}) and lose FIL.
+
+### Retrieval deals
+
+Retrieval deals are agreements between clients and _retrieval providers_ to extract data stored on the network. Unlike storage deals, these deals are fulfilled off-chain using _payment channels_ to incrementally pay for the data received. Storage providers also often provide retrieval functions.
 
 ## Proofs
 
-As mentioned above, storage providers must prove that they are storing the data per the terms of a deal. That means that:
+Storage providers must prove that they are storing the data following the terms of a storage deal. That means that:
 
-- They must store all the data submitted by the client
-- They must store it during the whole lifetime of the deal
+- They must store all the data submitted by the client.
+- They must store it during the whole lifetime of the deal.
 
 Cryptographic proofs are used to these ends, as explained in this article about the [Filecoin proof system](https://filecoin.io/blog/filecoin-proof-system/).
 
-Using _Proof Of Replication (PoRep)_, storage providers demonstrate that they have received all the data and that they have encoded it in a way unique to that storage provider using their physical storage in a way that no other storage provider can replicate (so two deals for the same data cannot end up re-using the same disk). This proof is provided when the deal starts, and the _sealing_ operation completes.
+Using _Proof Of Replication (PoRep)_, storage providers demonstrate that they have received all the data and that they have encoded it in a way unique to that storage provider. The process of using their physical storage in a way that no other storage provider is important since this means that two deals for the same data cannot end up re-using the same disk. This proof is provided when the deal starts, and the _sealing_ operation completes.
 
-Once a deal is active and during its full lifetime, the storage provider will use _Proof of Spacetime (PoSt)_ to prove that it is _still_ storing the data associated with a deal. For PoSt, random storage providers need to prove that random parts of the data they store are still there.
+Once a deal is active the storage provider will use _Proof of Spacetime (PoSt)_ to prove that it is still storing the data associated with a deal. For PoSt, random storage providers need to prove that random parts of the data they store are still there.
 
-Filecoin clients and other storage providers continuously verify that the proofs included in each block are valid, providing the necessary security and penalizing storage providers that do not honor their deals.
+Filecoin clients and other storage providers continuously verify that the proofs included in each block are valid. This process delivers security and stability to the network by penalizing storage providers that do not honor their deals.
 
 ## Gas fees
 
