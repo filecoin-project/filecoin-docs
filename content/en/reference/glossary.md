@@ -7,9 +7,15 @@ menu:
 weight: 10
 ---
 
+## Actor
+
+Actors are a [software design pattern](https://en.wikipedia.org/wiki/Actor_model) for managing state. Accounts, multisigs, storage providers, and anything with a state, such as an account balance, are implemented as an _actor_.
+
 ## Address
 
 In the Filecoin network, an _address_ is a unique cryptographic value that serves to publicly identify a user. This value, a public key, is paired with a corresponding private key. The mathematical relationship between the two keys is such that access to the private key allows the creation of a signature that can be verified with the public key. Filecoin specifically employs the Boneh–Lynn–Shacham (BLS) signature scheme for this purpose.
+
+<!-- ## AttoFIL -->
 
 <!-- ## Blake-256 hash -->
 
@@ -20,6 +26,8 @@ When a token is _burned_ it is sent to an irrecoverable address on the network. 
 ## Block
 
 In a blockchain, a _block_ is the fundamental unit of record. Each block is cryptographically linked to one or more previous blocks. Blocks typically contain [messages](#message) relating changes to some state (for example, financial records) tracked by the blockchain.
+
+<!-- ## BlockGasLimit -->
 
 <!-- ## Block explorer -->
 
