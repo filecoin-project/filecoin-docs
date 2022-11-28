@@ -23,7 +23,7 @@ Developers choose Filecoin because it:
 - is the only decentralized storage network with petabyte-scale capacity
 - stores data at extremely low cost (and keeps it that way for the long term)
 
-An [ecosystem of developer tools]() offers flexible, powerful choices for integrating Filecoin storage into your application or workflow.
+An ecosystem of developer tools offers flexible, powerful choices for integrating Filecoin storage into your application or workflow.
 
 ## Filecoin and IPFS
 How do Filecoin and IPFS work together? They are complementary protocols for storing and sharing data in the distributed web. Both systems are open-source and share many building blocks, including content addressing (CIDs) and network protocols (libp2p). 
@@ -47,8 +47,6 @@ Let's get building. Choose one of the following APIs. These are all storage help
 - [Web3.storage](https://web3.storage/) - for general application data
 
 For more details and options, jump to [Build with Filecoin Storage Helpers]({{< relref "storage-helpers" >}}).
-
-If you’re building network or developer tools, jump to [Build Directly on Filecoin]().
 
 ## Filecoin and smart contracts
 You can improve speed and reduce gas fees by storing smart contract data on Filecoin. With Filecoin, the data itself is stored off-chain, but is used to generate verifiable CIDs and storage proofs that are recorded on the Filecoin chain and can be included in your smart contracts. This design pairs well with multiple smart contract networks such as Ethereum, Polygon, Avalanche, Solana, and more. Your smart contract only needs to include the compact content ids.
