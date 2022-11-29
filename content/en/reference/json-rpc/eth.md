@@ -69,6 +69,8 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 
 Executes a new message call immediately without creating a transaction on the blockchain.
 
+This documentation section is a work-in-progress.
+
 - Permissions: read
 - Input:
     1. Object - The transaction call object:
@@ -129,8 +131,18 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \    src/la
 
 Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
+This documentation section is a work-in-progress.
+
 - Permissions: read
-- Inputs:
+- Inputs: 
+    - `object`:
+        - `from`: DATA, 20 Bytes - (optional) The address the transaction is sent from.
+        - `to: DATA, 20 Bytes - The address to which the transaction is directed to.
+        - `gas: QUANTITY - (optional) Integer of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
+        - `gasPrice`: QUANTITY - (optional) Integer of the gasPrice used for each paid gas.
+        - `value`: QUANTITY - (optional) Integer of the value sent with this transaction
+        - `data`: DATA - (optional) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI
+    - `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending".
 
 Example:
 
@@ -222,13 +234,13 @@ Input:
 1. String - Either the hex value of a block number OR One of the following block tags:
     - `pending`: a sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
     - `latest`: the most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-    - `safe`: the most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged. Only available on Ethereum Mainnet and Goerli.
-    - `finalized`: the most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged. Only available on Ethereum Mainnet and Goerli.
+    - `safe`: the most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
+    - `finalized`: the most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
     - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 
 ```curl
-curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \           ~
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -236,6 +248,14 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \          
     "params": ["0x3e1F70090cf4476d788C5259F50F89E9fB88bF1a", "latest"],
     "id":1
 }' | jq
+```
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x0",
+    "id": 1
+}
 ```
 
 <!-- TODO: Find a tipset to use for this example. -->
@@ -257,69 +277,82 @@ Returns information about a block by tipset, also known as a block hash.
 ]
 ```
 
-<!-- TODO: wtf is a block number. It's not a tipset... -->
 ## EthGetBlockByNumber
 
 Returns information about a block by block number.
 
-Permissions: read
+- Permissions: read
+- Inputs:
+    - `QUANTITY|TAG`: integer of a block number, or the string `earliest`, `latest` or `pending`, as in the default block parameter.
+    - `Boolean`: If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
 
-Inputs:
-
-```json
-[
-  "string value",
-  true
-]
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_getBlockByNumber",
+    "params":["0x82c9", true],
+    "id":1
+}' | jq
 ```
-
-Response:
 
 ```json
 {
-  "hash": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "parentHash": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "sha3Uncles": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "miner": "0x0707070707070707070707070707070707070707",
-  "stateRoot": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "transactionsRoot": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "receiptsRoot": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "difficulty": "0x5",
-  "totalDifficulty": "0x5",
-  "number": "0x5",
-  "gasLimit": "0x5",
-  "gasUsed": "0x5",
-  "timestamp": "0x5",
-  "extraData": "Ynl0ZSBhcnJheQ==",
-  "mixHash": "0x0707070707070707070707070707070707070707070707070707070707070707",
-  "nonce": "0x0707070707070707",
-  "baseFeePerGas": "0x0",
-  "size": "0x5",
-  "transactions": [
-    {}
-  ],
-  "uncles": [
-    "0x0707070707070707070707070707070707070707070707070707070707070707"
-  ]
+  "jsonrpc": "2.0",
+  "result": {
+    "hash": "0xf9a8005d886e6a458003835f7c1fda53c666777fef19ce42db2614c9848adb3f",
+    "parentHash": "0x8aec5230892f858c4c7ee860ca9de1542c9a59e5b809a71125ae3e26c36b7997",
+    "sha3Uncles": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "miner": "0x0000000000000000000000000000000000000000",
+    "stateRoot": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "transactionsRoot": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "receiptsRoot": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+    "difficulty": "0x0",
+    "totalDifficulty": "0x0",
+    "number": "0x82c9",
+    "gasLimit": "0x2540be400",
+    "gasUsed": "0x0",
+    "timestamp": "0x63857585",
+    "extraData": "",
+    "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "nonce": "0x0000000000000000",
+    "baseFeePerGas": "0x64",
+    "size": "0x0",
+    "transactions": [],
+    "uncles": []
+  },
+  "id": 1
 }
 ```
 
-<!-- TODO: figure out how this works. -->
+<!-- TODO: Find a tipset to test. -->
 ## EthGetBlockTransactionCountByHash
 
-EthGetBlockTransactionCountByHash returns the number of messages in the TipSet
+Returns the number of messages in the tipset.
 
-Permissions: read
+- Permissions: read
+- Inputs:
 
-Inputs:
-
-```json
-[
-  "0x0707070707070707070707070707070707070707070707070707070707070707"
-]
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_getBlockTransactionCountByHash",
+    "params":["0xf9a8005d886e6a458003835f7c1fda53c666777fef19ce42db2614c9848adb3f"],
+    "id":1
+}' | jq
 ```
 
-Response: `"0x5"`
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "0x0",
+  "id": 1
+}
+```
 
 <!-- TODO: figure out how this works. -->
 ## EthGetBlockTransactionCountByNumber
@@ -328,11 +361,11 @@ Returns the number of transactions in a block matching the given tipset.
 
 - Permissions: read
 - Inputs:
-    - `string`: Either the hex value of a block number OR One of the following block tags:
+    - `string`: Either the hex value of a block number OR one of the following block tags:
         - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
         - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-        - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged. Only available on Ethereum Mainnet and Goerli.
-        - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged. Only available on Ethereum Mainnet and Goerli.
+        - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
+        - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
         - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 Example:
@@ -352,33 +385,50 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": "0x80"
+  "result": "0x0"
 }
 ```
 
-Response: `"0x5"`
-
+<!-- TODO: Get return example for this method. -->
 ## EthGetCode
 
+Returns code at a given address.
 
+This section of documentation is a work-in-progress.
 
-Permissions: read
+- Permissions: read
+- Inputs:
+    - `string`: 20 byte address.
+    - `string`: Either the hex value of a block number OR one of the following block tags:
+        - `pending` - A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
+        - `latest` - The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
+        - `safe` - The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
+        - `finalized` - The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+        - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
-Inputs:
-
-```json
-[
-  "0x0707070707070707070707070707070707070707",
-  "string value"
-]
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_getCode",
+    "params": [ "0x0707070707070707070707070707070707070707", "string value" ],
+    "id":1
+}' | jq
 ```
 
-Response: `"0x07"`
+```json
+{
+  "id": 0,
+  "jsonrpc": "string",
+  "result": "string"
+}
+```
 
+<!-- TODO: create a filter and add it here so that we can get a response. -->
 ## EthGetFilterChanges
 
-Polling method for a filter, returns event logs which occurred since last poll.
-(requires write perm since timestamp of last filter execution will be written)
+Polling method for a filter, which returns an array of logs which occurred since last poll.
 
 Permissions: write
 
@@ -592,6 +642,8 @@ Response: `"0x5"`
 
 ## EthGetTransactionReceipt
 
+Returns the receipt of a transaction by transaction hash.
+
 Permissions: read
 
 Inputs:
@@ -639,140 +691,232 @@ Response:
 
 ## EthMaxPriorityFeePerGas
 
-Permissions: read
+Returns a fee per gas that is an estimate of how much you can pay as a priority fee, or 'tip', to get a transaction included in the current block. Generally you will use the value returned from this method to set the `maxFeePerGas` in a subsequent transaction that you are submitting.
 
-Inputs: none
+- Permissions: read
+- Inputs: none
 
-Response: `"0x0"`
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_maxPriorityFeePerGas",
+    "params": [],
+    "id":1
+}' | jq
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "0x312da",
+  "id": 1
+}
+```
 
 ## EthNewBlockFilter
 
 Installs a persistent filter to notify when a new block arrives.
 
-Permissions: write
+- Permissions: write
+- Inputs: none
 
-Inputs: none
-
-Response: `"c5564560217c43e4bc0484df655e9019"`
-
-## EthNewFilter
-
-Installs a persistent filter based on given filter spec.
-
-Permissions: write
-
-Inputs:
-
-```json
-[
-  {
-    "fromBlock": "2301220",
-    "address": [
-      "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031"
-    ],
-    "topics": null
-  }
-]
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_newBlockFilter",
+    "params": [ ],
+    "id":1
+}' | jq
 ```
-
-Response: `"c5564560217c43e4bc0484df655e9019"`
-
-## EthNewPendingTransactionFilter
-
-Installs a persistent filter to notify when new messages arrive in the message pool.
-
-Permissions: write
-
-Inputs: none
-
-Response: `"c5564560217c43e4bc0484df655e9019"`
-
-## EthProtocolVersion
-
-Permissions: read
-
-Inputs: none
-
-Response: `"0x5"`
-
-## EthSendRawTransaction
-
-Permissions: read
-
-Inputs:
-
-```json
-[
-  "0x07"
-]
-```
-
-Response: `"0x0707070707070707070707070707070707070707070707070707070707070707"`
-
-## EthSubscribe
-
-Subscribe to different event types using websockets
-eventTypes is one or more of:
-    - newHeads: notify when new blocks arrive.
-    - pendingTransactions: notify when new messages arrive in the message pool.
-    - logs: notify new event logs that match a criteria
-params contains additional parameters used with the log event type
-The client will receive a stream of EthSubscriptionResponse values until EthUnsubscribe is called.
-
-Permissions: write
-
-Inputs:
-
-```json
-[
-  "string value",
-  {
-    "topics": [
-      [
-        "0x0707070707070707070707070707070707070707070707070707070707070707"
-      ]
-    ]
-  }
-]
-```
-
-Response:
 
 ```json
 {
-  "subscription": "b62df77831484129adf6682332ad0725",
-  "result": {}
+  "jsonrpc": "2.0",
+  "result": "5f1623cd-5901-4e4c-a0ec-b2c37c113b8e",
+  "id": 1
 }
 ```
+
+## EthNewFilter
+
+Creates a filter object, based on filter options, to notify when the state changes (logs). Unlike [`eth_newBlockFilter`](#EthNewBlockFilter) which notifies you of all new blocks, you can pass in filter options to track new logs matching the topics specified. To check if the state has changed, call [`eth_getFilterChanges`](#EthGetFilterChanges).
+
+- Permissions: write
+- Inputs:
+    - `array`:
+        - `object`:
+            - `string`: BlockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash blockHash. If blockHash is present in the filter criteria, then neither fromBlock nor toBlock are allowed.
+            - `array`:
+                - `string`: Contract address or a list of addresses from which logs should originate.
+                - `string`: Either the hex value of a block number OR one of the following block tags:
+                    - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
+                    - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
+                    - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
+                    - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+                    - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
+
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_newFilter",
+    "params": [{
+        "fromBlock": "2301220",
+        "address": [
+          "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031"
+        ],
+        "topics": null
+    }],
+    "id":1
+}' | jq
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "4d5981d6-5da2-40c3-85e0-18ecc6b3fd5d",
+  "id": 1
+}
+```
+
+## EthNewPendingTransactionFilter
+
+Creates a filter in the node, to notify when new pending transactions arrive. To check if the state has changed, call [`eth_getFilterChanges`](#EthGetFilterChanges).
+
+- Permissions: write
+- Inputs: none
+
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_newPendingTransactionFilter",
+    "params": [],
+    "id":1
+}' | jq
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "6512e91c-2bba-49be-ab56-903a84eee5b2",
+  "id": 1
+}
+```
+
+## EthProtocolVersion
+
+Returns the current ethereum protocol version.
+
+- Permissions: read
+- Inputs: none
+
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_protocolVersion",
+    "params": [],
+    "id":1
+}' | jq
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "0x12",
+  "id": 1
+}
+```
+
+<!-- TODO: I'm pretty sure this requires something to be signed before sending a transaction. Double check on this one. -->
+## EthSendRawTransaction
+
+Creates a new message call transaction or a contract creation for signed transactions. Returns 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
+
+- Permissions: read
+- Inputs:
+
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_sendRawTransaction",
+    "params": ["0x07"],
+    "id":1
+}' | jq
+```
+
+```json
+
+```
+
+<!-- TODO: this uses websockets and looks like a special request. Get more info on this. -->
+## EthSubscribe
+
+Subscribe to different Ethereum event types like newHeads, logs, pendingTransactions, and minedTransactions using WebSockets. Creates a new subscription for desired events. Sends data as soon as it occurs.
+
+- Permissions: write
+- Inputs:
+    - Event types: specifies the type of event to listen to (ex: new pending transactions, logs, etc).
+    - Optional params: optional parameters to include to describe the type of event to listen to (`address` for example).
 
 ## EthUninstallFilter
 
 Uninstalls a filter with given id.
 
-Permissions: write
+- Permissions: write
+- Inputs:
 
-Inputs:
-
-```json
-[
-  "c5564560217c43e4bc0484df655e9019"
-]
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_uninstallFilter",
+    "params": ["6512e91c-2bba-49be-ab56-903a84eee5b2"],
+    "id":1
+}' | jq
 ```
 
-Response: `true`
+```json
+{
+  "jsonrpc": "2.0",
+  "result": true,
+  "id": 1
+}
+```
 
 ## EthUnsubscribe
 
-Unsubscribe from a websocket subscription
+Unsubscribe from different Ethereum event types with a regular RPC call with `eth_unsubscribe` as the method and the `subscriptionId` as the first parameter.
 
-Permissions: write
+- Permissions: write
+- Inputs:
+    - `Subscription ID`: as previously returned from an `eth_subscribe` call.
 
-Inputs:
-
-```json
-[
-  "b62df77831484129adf6682332ad0725"
-]
+```shell
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc":"2.0",
+    "method":"eth_unsubscribe",
+    "params": ["b62df77831484129adf6682332ad0725"],                                                                      "id":1
+}' | jq
 ```
 
-Response: `true`
+```json
+{
+  "jsonrpc": "2.0",
+  "result": true,
+  "id": 1
+}
+```
