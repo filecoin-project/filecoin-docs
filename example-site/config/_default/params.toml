@@ -1,0 +1,116 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Docs Website"
+titleSeparator = "-"
+titleAddition = "A simple documentation platform."
+description = "This documentation platform helps teams write, build, and deploy a simple documentation site that's easy for users to navigate."
+
+## Documentation
+# docsVersion = "0.3"
+
+## Open Graph
+images = [""]
+ogLocale = ""
+domainTLD = ""
+titleHome = ""
+
+## Twitter Cards
+twitterSite = ""
+twitterCreator = ""
+
+## JSON-LD
+# schemaType = "Person"
+schemaType = ""
+schemaName = ""
+schemaAuthor = ""
+schemaAuthorTwitter = ""
+schemaAuthorLinkedIn = ""
+schemaAuthorGitHub = ""
+schemaLocale = ""
+schemaLogo = ""
+schemaLogoWidth = 512
+schemaLogoHeight = 512
+schemaImage = ""
+schemaImageWidth = 1280
+schemaImageHeight = 640
+schemaTwitter = ""
+schemaLinkedIn = ""
+schemaGitHub = ""
+schemaSection = ""
+
+## Sitelinks Search Box
+siteLinksSearchBox = false
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+smallLimit = "300"
+
+# Images
+imageResponsive = true
+imageConvertTo = "webp"
+imageImageSizes = ["480","720","1080","1280","1600","2048"]
+singleSize = false
+imageAddClass = "img-fluid lazyload blur-up"
+
+### Image template
+defaultImage = "default-image.png" # put in `./assets/images/`
+fillImage = "1270x740 Center" # normalize image size
+
+# Footer
+footer = ""
+# footer = 'Powered by <a class="text-muted" href="example.com">Example</a>, <a class="text-muted" href="https://gohugo.io">Hugo</a>, and <a class="text-muted" href="https://protocol.ai">Protocol Labs</a>'
+
+# Feed
+copyRight = ""
+# copyRight = "Copyright (c) Protocol Labs"
+
+# Alert
+alert = true
+alertDismissable = true
+alertText = "This alert pops up at the top of the webpage. It's useful to ask users for cookies and all that GDPR stuff. If you're happy with us using cooking, <a href='#'>click here</a>."
+
+# Edit Page
+repoHost = "GitHub"
+# repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ]
+docsRepo = ""
+docsRepoBranch = ""
+docsRepoSubPath = ""
+editPage = false
+lastMod = false
+
+[sections]
+  sectionNav = ["docs", "blog"]
+
+[options]
+  lazySizes = true
+  clipBoard = true
+  instantPage = true
+  flexSearch = true
+  searchSectionsShow = "ALL"
+  searchSectionsIndex = "ALL"
+  darkMode = true
+  bootStrapJs = true
+  breadCrumb = false
+  highLight = true
+  kaTex = false
+  multilingualMode = false
+  docsVersioning = false
+  fullWidth = true
+  navbarSticky = true
+  toTopButton = false
+  scrollSpy = false # experimental; needs Bootstrap >= 5.2.0-beta1
+  progressBar = true
+
+
+[menu]
+  [menu.section]
+    auto = true
+    collapsibleSidebar = false

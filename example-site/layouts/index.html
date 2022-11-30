@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="section container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1 class="mt-0">{{ .Page.Title }}</h1>
+            <p class="lead">{{ .Page.Description | safeHTML }}</p>
+            <hr>
+            <p>{{ .Params.content.text | safeHTML }}</p>
+        </div>
+        <div class="col-lg">
+            <img src="/images/dog.jpg">
+            <img src="/images/dogs.jpg">
+        </div>
+    </div>
+</section>
+{{ end }}
+
+
+
+{{ define "sidebar-footer" }}
+<section class="section section-sm container-fluid">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-9">
+            {{- .Content -}}
+        </div>
+    </div>
+</section>
+{{ end }}
