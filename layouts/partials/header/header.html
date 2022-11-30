@@ -12,7 +12,7 @@
   <nav class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }} flex-wrap flex-lg-nowrap" aria-label="Main navigation">
 
     <a class="navbar-brand order-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
-      {{ .Site.Params.Title }}
+        <img height=70 style="padding: 10px;" src="/android-chrome-192x192.png" />
     </a>
 
     {{ if (in .Site.Params.sections.sectionNav .Section) -}}
@@ -86,7 +86,7 @@
 
         {{ if $showFlexSearch -}}
         <hr class="text-black-50 my-4 d-lg-none">
-        <form class="doks-search position-relative flex-grow-1 ms-lg-auto me-lg-2">
+        <form class="doks-search position-relative flex-grow-1">
           <input id="search" class="form-control is-search" type="search" placeholder="{{ i18n "search-text" }}" aria-label="{{ i18n "search-text" }}" autocomplete="off">
           <div id="suggestions" class="shadow bg-white rounded d-none"></div>
         </form>
@@ -96,7 +96,7 @@
         <ul class="nav flex-column flex-lg-row">
           {{ range .Site.Menus.social -}}
             <li class="nav-item">
-              <a class="nav-link social-link" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}<small class="ms-2 d-lg-none">{{ .Name | safeHTML }}</small></a>
+              <a class="nav-link social-link d-lg-none d-xl-none d-xxl-block" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}<small class="ms-2 d-lg-none">{{ .Name | safeHTML }}</small></a>
             </li>
           {{ end -}}
         </ul>

@@ -5,6 +5,7 @@ title = "Filecoin Docs"
 titleSeparator = "-"
 titleAddition = "Home"
 description = "Documentation for Filecoin - A decentralized storage network for humanity's most important information."
+useLogo = true
 
 ## Documentation
 # docsVersion = "0.3"
