@@ -10,6 +10,8 @@ menu:
   build:
     parent: "build-concepts"
 toc: true
+aliases:
+    - "/fvm/concepts/actors-and-contracts/"
 ---
 
 {{< beta-warning >}}

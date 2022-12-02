@@ -1,5 +1,5 @@
 ---
-title: "FVM"
+title: "Filecoin Virtual Machine"
 description: ""
 lead: ""
 draft: false

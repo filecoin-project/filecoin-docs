@@ -10,6 +10,8 @@ menu:
   build:
     parent: "build-concepts"
 toc: true
+aliases:
+    "/fvm/concepts/filecoin-evm/"
 ---
 
 {{< beta-warning >}}

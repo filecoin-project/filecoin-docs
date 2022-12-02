@@ -14,6 +14,7 @@ toc: true
 aliases:
     - "/networks"
     - "/networks/available-networks"
+    - "/fvm/reference/networks/"
 ---
 
 This page contains information on the [networks available](#available-networks) for Filecoin.

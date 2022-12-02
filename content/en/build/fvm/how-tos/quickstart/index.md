@@ -10,6 +10,8 @@ menu:
   build:
     parent: "build-how-tos"
 toc: true
+aliases:
+    - "/fvm/how-tos/quickstart/"
 ---
 
 {{< beta-warning >}}

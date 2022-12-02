@@ -5,11 +5,13 @@ lead: "Got an FVM question that isn't answered by the rest of the docs? Check ou
 draft: false
 images: []
 type: docs
-weight: 50
+weight: 90
 menu:
   build:
     parent: "build-basics"
 toc: true
+aliases:
+    - "/fvm/basics/faqs/"
 ---
 
 {{< beta-warning >}}

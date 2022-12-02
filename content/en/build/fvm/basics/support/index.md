@@ -10,6 +10,8 @@ menu:
   build:
     parent: "build-basics"
 toc: true
+aliases:
+    - "/fvm/basics/support/"
 ---
 
 {{< beta-warning >}}

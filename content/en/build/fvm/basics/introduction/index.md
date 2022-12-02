@@ -11,6 +11,8 @@ menu:
   build:
     parent: "build-basics"
 toc: true
+aliases:
+    - "/fvm/basics/introduction/"
 ---
 
 {{< beta-warning >}}
