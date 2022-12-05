@@ -13,6 +13,10 @@ defaultContentLanguage = "en"
 disableLanguages = ["de", "nl"]
 # defaultContentLanguageInSubdir = true
 
+# Allows you to disable all page types and will render nothing related to 'kind';
+# values = "page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"
+disableKinds = [""]
+
 # add redirects/headers
 [outputs]
 home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]

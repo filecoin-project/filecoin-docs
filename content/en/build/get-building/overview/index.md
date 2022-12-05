@@ -10,6 +10,8 @@ menu:
     identifier: "overview-51d3d4c190707b50063dc8921d4cc3e1"
 weight: 10
 toc: true
+aliases:
+    - "/build"
 ---
 
 If you are excited about the potential of the Filecoin protocol and decentralized storage network to build game-changing applications, you’ve come to the right place.
