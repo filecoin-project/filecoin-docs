@@ -16,7 +16,7 @@ aliases:
 
 {{< beta-warning >}}
 
-The FVM can be used for the creation of a new class of web3 dApps, many of which will have the potential to become 10x improvements to the network’s functionality and beyond. The FVM team and members of the Filecoin community have discussed what can be built with the FVM. Some ideas are:
+The FVM can be used for the creation of a new class of {{< tooltip "web3" >}} {{< tooltip "dApps" >}}, many of which will have the potential to become 10x improvements to the network’s functionality and beyond. The FVM team and members of the Filecoin community have discussed what can be built with the FVM. Some ideas are:
 
 ## Tokenized datasets and Data DAOs
 
