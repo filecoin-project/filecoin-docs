@@ -50,17 +50,17 @@
 
 
 
-[[footer]]
-  name = "Privacy"
-  url = "/privacy"
-  weight = 10
+# [[footer]]
+#   name = "Privacy"
+#   url = "/privacy"
+#   weight = 10
 
-[[footer]]
-  name = "Terms"
-  url = "/terms"
-  weight = 20
+# [[footer]]
+#   name = "Terms"
+#   url = "/terms"
+#   weight = 20
 
-[[footer]]
-  name = "Contact"
-  url = "/contact"
-  weight = 30
+# [[footer]]
+#   name = "Contact"
+#   url = "/contact"
+#   weight = 30
