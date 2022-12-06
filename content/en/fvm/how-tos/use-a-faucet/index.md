@@ -24,7 +24,7 @@ Before we begin, you must have an address on the Wallaby testnet. Follow the [Ad
 
     ![Select your account in MetaMask.](select-account-in-metamask.png)
 
-1. Go to [`wallaby.network#faucet`](https://wallaby.network/#faucet).
+1. Go to [wallaby.network](https://wallaby.network/#faucet) and scrolldown to the **Faucet** section.
 1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
 
     ![Click the send button in MetaMask.](click-send.png)
