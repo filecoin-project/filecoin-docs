@@ -301,16 +301,17 @@ Instead of asking for the chain head information, let's see if a given string is
 
 1. Let's rerun the script to see what response we get:
 
-   ```shell with-output
+   ```shell
    node index.js
    ```
+
    ```
    Response:  {"jsonrpc":"2.0","result":"f1ydrwynitbbfs5ckb7c3qna5cu25la2agmapkchi","id":0}
    ```
 
    Great! The fact that we got our address back in the `result` field means that our address is valid. If we had sent over an invalid address, we'd get something like this:
 
-   ```text output
+   ```plaintext
    Response:  {"jsonrpc":"2.0","id":0,"error":{"code":1,"message":"invalid address payload"}}
    ```
 

@@ -244,6 +244,7 @@ Command-line examples can be truncated with three periods `...` to remove extran
     ```shell
     lotus-miner info
     ```
+
     ```shell
     Miner: t0103
     Sector Size: 16.0 MiB
@@ -251,23 +252,6 @@ Command-line examples can be truncated with three periods `...` to remove extran
     Sectors:  map[Committing:0 Proving:0 Total:0]
     ```
 ````
-
-If you have command-line output that isn't directly "tied" to a corresponding input block, you can use the `output` tag to get
-a similar visual styling to the `with-output` block. This can be useful when you want to add some explanatory text between input and output blocks:
-
-````markdown
-  ```shell with-output
-  some-shell-command
-  ```
-
-  Here's some text that explains the output...
-
-  ```text output
-  The command output...
-  ```
-````
-
-Note that you must have a language hint (e.g. `text`) and the `output` tag for the styles to be applied correctly.
 
 #### Inline code tags
 
