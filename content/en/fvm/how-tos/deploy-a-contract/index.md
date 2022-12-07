@@ -10,9 +10,45 @@ draft: false
 
 {{< beta-warning >}}
 
+## Remix
+
+You can quickly deploy a contract with [Remix](https://remix.ethereum.org/), the browser-based IDE maintained by the [Ethereum Foundation](https://ethereum.org/en/foundation/).
+
+1. Go to [remix.ethereum.org](https://remix.ethereum.org/).
+1. Create a new **Blank** workspace:
+
+    ![Select a blank workspace in Remix.](remix-select-blank-workspace.png)
+
+1. Create a new file called `contract.sol`.
+
+    ![Create a new file with the .sol extension.](remix-create-new-file.png)
+
+1. Write or paste your contract into the new file. When pasting, you may receive a warning about crypto scams.
+1. Compile your contract by either pressing `CTRL` + `s`, clicking on the **Save** button, or by selecting the **Compile** tab and clicking **Compile contract.sol**.
+
+    ![Compile your contract one of three ways.](remix-compile-your-contract.png)
+
+1. Select the **Deploy** tab:
+
+    ![Select the Deploy tab in Remix.](remix-select-deploy-tab.png)
+
+1. Select your network from the **Environment tab**. If you want to deploy your contract to the Wallaby testnet, follow the [Add to MetaMask guide]({{< relref "add-to-metamask" >}}):
+
+    ![Select your network in Remix.](remix-pick-network.png)
+
+1. Click **Deploy**:
+
+    ![Click Deploy in Remix.](remix-click-deploy.png)
+
+1. If everything was successful, you will see a success message at the bottom of the IDE window:
+
+    ![Successful deployment message in Remix.](remix-verify-deployment.png)
+
+1. Done!
+
 ## Hardhat
 
-We're going to use the [FEVM Hardhat Kit repository](https://github.com/filecoin-project/FEVM-Hardhat-Kit) in the Filecoin Project GitHub organization to get started quickly.
+You can deploy a contract using Hardhat. We're going to use the [FEVM Hardhat Kit repository](https://github.com/filecoin-project/FEVM-Hardhat-Kit) in the Filecoin Project GitHub organization to get started quickly.
 
 ### Prerequisites
 
