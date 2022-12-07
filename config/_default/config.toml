@@ -94,3 +94,10 @@ rel  = "sitemap"
     source = "node_modules/mermaid"
     target = "assets/js/vendor/mermaid"
 
+
+
+[privacy]
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
