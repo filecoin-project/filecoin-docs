@@ -127,7 +127,7 @@ We will use the Filecoin mainnet as an example here. Learning how to use localne
 For a more detailed description of how Powergate works, we recommend reading the following docs:
 
 - [Filecoin Developer Tools](https://blog.textile.io/filecoin-developer-tools-concepts/)
-- Powergate introduction: [docs](https://docs.textile.io/powergate/) and [video](https://www.youtube-nocookie.com/watch?v=aiOTSkz_6aY)
+- Powergate introduction: [docs](https://docs.textile.io/powergate/) and [video](https://www.youtube.com/watch?v=aiOTSkz_6aY)
 - [Using Powergate with LocalNet](https://docs.textile.io/powergate/localnet/)
 - [Learn all POW command lines](https://docs.textile.io/powergate/cli/pow/)
 - [FFS Design Overview](https://github.com/textileio/powergate/blob/master/ffs/Design.md)
