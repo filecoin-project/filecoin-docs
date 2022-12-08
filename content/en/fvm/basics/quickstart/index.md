@@ -7,7 +7,7 @@ menu:
     fvm:
         parent: "fvm-basics"
 aliases:
-    - /fvm/how-tos
+    - /fvm/how-tos/quickstart
 ---
 
 {{< beta-warning >}}
