@@ -29,6 +29,11 @@
   weight = 80
 
 [[main]]
+  name = "Developers"
+  url = "/developers"
+  weight = 80
+
+[[main]]
   name = "Reference"
   url = "/reference/reference/overview/"
   weight = 90

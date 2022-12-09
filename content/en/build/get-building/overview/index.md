@@ -35,7 +35,7 @@ IPFS does not include built-in mechanisms to incentivize the storage of data for
 
 This is where Filecoin comes in. Filecoin adds an incentive layer to IPFS. Storage deals are recorded on-chain, and providers must submit proofs of storage to the network over time. Payments, penalties, and block rewards are all enforced by the decentralized protocol.
 
-Filecoin and IPFS are designed as separate layers to give developers more choice and modularity, but many tools are available for combining their benefits. This diagram illustrates how these tools (often called [storage helpers]({{< relref "/storage-helpers.md" >}})) provide developer-friendly APIs for storing on IPFS, Filecoin, or both.
+Filecoin and IPFS are designed as separate layers to give developers more choice and modularity, but many tools are available for combining their benefits. This diagram illustrates how these tools (often called [storage helpers]({{< relref "/build/get-building/storage-helpers" >}})) provide developer-friendly APIs for storing on IPFS, Filecoin, or both.
 
 ![Web3-Enabled Architecture by Filecoin](web3-architecture.png)
 
@@ -49,7 +49,7 @@ Let's get building. Choose one of the following APIs. These are all storage help
 - [NFT.storage](https://nft.storage/) - for NFT data
 - [Web3.storage](https://web3.storage/) - for general application data
 
-For more details and options, jump to [Build with Filecoin Storage Helpers]({{< relref "/storage-helpers.md" >}}).
+For more details and options, jump to [Build with Filecoin Storage Helpers]({{< relref "/build/get-building/storage-helpers" >}}).
 
 If you’re building network or developer tools, jump to [Build Directly on Filecoin]().
 
