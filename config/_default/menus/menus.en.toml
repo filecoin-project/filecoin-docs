@@ -30,7 +30,7 @@
 
 [[main]]
   name = "Developers"
-  url = "/developers"
+  url = "/developers/introduction/filecoin-and-ipfs"
   weight = 80
 
 [[main]]
