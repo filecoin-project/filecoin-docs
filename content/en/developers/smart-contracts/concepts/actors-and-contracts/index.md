@@ -9,6 +9,7 @@ weight: 20
 menu:
   build:
     parent: "build-concepts"
+    identifier: "actors-and-contracts-fliuh2no2uygbo874t"
 toc: true
 aliases:
     - "/fvm/concepts/actors-and-contracts/"

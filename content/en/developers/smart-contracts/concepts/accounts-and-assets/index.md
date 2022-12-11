@@ -9,6 +9,7 @@ weight: 10
 menu:
   build:
     parent: "build-concepts"
+    identifier: "accounts-and-assets-3fbb8ytr2864t9fbs6t"
 toc: true
 aliases:
     - "/fvm/concepts/accounts-and-assets/"
