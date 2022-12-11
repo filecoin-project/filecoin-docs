@@ -1,9 +1,7 @@
 ---
 title: "What filecoin bring to applications"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+description: "Explore the features that make Filecoin a compelling system for storing files."
+lead: "Explore the features that make Filecoin a compelling system for storing files."
 draft: false
 images: []
 type: docs
@@ -13,34 +11,76 @@ menu:
     identifier: "what-filecoin-bring-to-applications-a869d5c9e43d2fdea56dd8175a157d5c"
 weight: 100
 toc: true
+aliases:
+    - "/about-filecoin/why-filecoin/"
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+This is an overview of features offered by Filecoin that make it a compelling system for storing files. This overview is intended for people already involved in large-scale data storage, for example, cloud storage or peer-to-peer storage networks.
 
-## Selvage
+### Verifiable storage
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+Filecoin has built-in processes to check the history of files and verify that they have been stored correctly over time. Every storage provider proves that they are maintaining their files in every 24-hour window. Clients can efficiently scan this history to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+{{< alert icon="tip" >}}
+[Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
+{{< /alert >}}
 
-### Heirloom
+### Open market
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a storage provider only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+### Competitive prices
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+Prices for storage and retrieval are determined by supply and demand, not corporate pricing departments. Filecoin makes reliable storage available at hyper-competitive prices. Miners compete based on their storage, reliability, and speed rather than through marketing or locking users in.
 
-## Bushwick cold-pressed
+### Reliable storage
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+Because storage is paid for, Filecoin provides a viable economic reason for files to stay available over time. Files are stored on computers that are reliable and well-connected to the internet.
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+### Reputation, not marketing
 
-## Locavore swag
+In Filecoin, storage providers prove their reliability through their track record published on the blockchain, not through marketing claims published by the providers themselves. Users don’t need to rely on status pages or self-reported statistics from storage providers.
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+### Choice of tradeoffs
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+Users get to choose their own tradeoffs between cost, redundancy, and speed. Users are not limited to a set group of data centers offered by their provider but can choose to store their files on any storage provider participating in Filecoin.
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+### Censorship resistance
+
+Filecoin resists censorship because no central provider can be coerced into deleting files or withholding service. The network is made up of many different computers run by many different people and organizations. Faulty or malicious actors are noticed by the network and removed automatically.
+
+### Useful blockchain
+
+In Filecoin, storage providers are rewarded for providing storage, not for performing wasteful computations. Filecoin secures its blockchain using proof of file replication and proof of storage over time. It doesn’t rely on energy-intensive proof-of-work schemes like other blockchains. Miners are incentivized to amass hard drives and put them to use by storing files. Filecoin doesn’t incentivize hoarding of graphics cards or application-specific integrated circuits for the sole purpose of mining.
+
+### Provides storage to other blockchains
+
+Filecoin’s blockchain is designed to store large files, whereas other blockchains can typically only store tiny amounts of data, very expensively. Filecoin can provide storage to other blockchains, allowing them to store large files. In the future, mechanisms will be added to Filecoin, enabling Filecoin’s blockchain to interoperate with transactions on other blockchains.
+
+### Content addressing
+
+Files are referred to by the data they contain, not by fragile identifiers such as URLs. Files remain available no matter where they are hosted or who they are hosted by. When a file becomes popular, it can be quickly distributed by swarms of computers instead of relying on a central computer, which can become overloaded by network traffic.
+
+When multiple users store the same file (and choose to make the file public by not encrypting it), everyone who wants to download the file benefits from Filecoin keeping it available. No matter where a file is downloaded from, downloaders can verify that they have received the correct file and that it is intact.
+
+### Content distribution network
+
+Retrieval providers are computers that have good network connections to lots of users who want to download files. By prefetching popular files and distributing them to nearby users, retrieval providers are rewarded for making network traffic flow smoothly, and files download quickly.
+
+### Single protocol
+
+Applications implementing Filecoin can store their data on any storage provider using the same protocol. There isn’t a different API to implement for each provider. Applications wishing to support several different providers aren’t limited to the lowest-common-denominator set of features supported by all their providers.
+
+### No lock-in
+
+Migrating to a different storage provider is made easier because they all offer the same services and APIs. Users aren’t locked into providers because they rely on a particular feature of the provider. Also, files are content-addressed, enabling them to be transferred directly between providers without the user having to download and re-upload the files.
+
+Traditional cloud storage providers lock users by making it cheap to store files but expensive to retrieve them again. Filecoin avoids this by facilitating a retrieval market where providers compete to give users their files back as fast as possible, at the lowest possible price.
+
+### Open source code
+
+The code that runs both clients and storage providers is open-source. Storage providers don’t have to develop their own software for managing their infrastructure. Everyone benefits from improvements made to Filecoin’s code.
+
+### Active community
+
+Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers, and storage providers. If you need help, you can reach the person who designed or built the system in question. Reach out on [Filecoin’s chat and forums]({{< relref "chat-and-discussion-forums" >}}).

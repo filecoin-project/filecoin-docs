@@ -1,7 +1,7 @@
 ---
 title: "Filecoin and IPFS"
-description: ""
-lead: ""
+description: "Learn more about the relationship and different use-cases between IPFS and Filecoin."
+lead: "Learn more about the relationship and different use-cases between IPFS and Filecoin."
 draft: false
 images: []
 type: docs
@@ -11,34 +11,52 @@ menu:
     identifier: "filecoin-and-ipfs-67533c5fcbb7ffe01eb15b8b1afd5cd3"
 weight: 100
 toc: true
+aliases:
+    - "/about-filecoin/ipfs-and-filecoin/"
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+Filecoin and IPFS are complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks, including data representation formats (IPLD) and network communication protocols (libp2p). While interacting with IPFS does not require using Filecoin, all Filecoin nodes _are_ IPFS nodes under the hood, and (with some manual configuration) can connect to and fetch IPLD-formatted data from other IPFS nodes using libp2p. However, Filecoin nodes don't join or participate in the public IPFS DHT ([Distributed Hash Tables](https://docs.ipfs.tech/concepts/dht/#distributed-hash-tables-dhts)).
 
-## Selvage
+This page aims to explain the relationship between the IPFS and Filecoin projects and help users decide which approach is best suited for their use-case.
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+## Data storage incentives
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+[IPFS](https://ipfs.tech) allows users to store and transfer verifiable, content-addressed data in a peer-to-peer network. IPFS users usually persist the data they want **on their own IPFS nodes**. This is called [pinning](https://docs.ipfs.tech/concepts/persistence). Sometimes the data may be pinned using a third-party pinning service or through groups of individual IPFS users (like [IPFS Collaborative Clusters](https://collab.ipfscluster.io/)). The data exists in the network as long as one user is storing it and can provide it to others when they request it.
 
-### Heirloom
+IPFS alone does not include a built-in mechanism to incentivize the storage of data for _other_ people. This is the challenge Filecoin aims to solve. Filecoin is built on IPFS to create a distributed storage marketplace for long-term storage. Nodes with a large storage capacity can rent their storage to users and get paid for it.
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+The Filecoin network ensures that data is safely stored. However, the processes of storing, verifying, and unsealing (referred to as sealing, proving, and retrieving, respectively) are computationally expensive and can take time. This is especially relevant for the retrieval of data, which should happen as fast as possible. For this reason, Filecoin enables an additional retrieval market where dedicated nodes can help quickly deliver content from the network for payment by keeping unsealed, cached copies. This delivery mechanism may make use of IPFS but is still in design. See [ResNetLab's Decentralized Data Delivery Market research](https://github.com/protocol/ResNetLab/blob/master/OPEN_PROBLEMS/DECENTRALIZED_DATA_DELIVERY_MARKETS.md) for more information on delivery mechanisms.
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+Filecoin aims to add longer-term persistence to safely store large batches of data, while IPFS optimizes for the quick retrieval and distribution of content.
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+## Using IPFS and Filecoin
 
-## Bushwick cold-pressed
+### Content addressing with IPFS
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+IPFS is great for getting started using content addressing for all sorts of distributed web applications. In the majority of these cases:
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+- Data is provided by the user's own nodes. Otherwise, must rely on other peers to voluntarily/altruistically storing data or on a centralized pinning service.
+- Centralized IPFS pinning services must be trusted to do their job. IPFS brings no built-in provisions to verify that data is being stored and correctly provided by the pinning service.
+- Popular content is more easily accessible. Popular content (with many providers) naturally becomes faster/easier to retrieve in IPFS, which is great when there are external incentives to sync and store data in multiple nodes, and for situations where strong social contracts can be used to ensure the content remains hosted and maintained long-term.
 
-## Locavore swag
+### Data persistence with Filecoin
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+Filecoin builds on the content addressing of IPFS to add longer term data persistence using cryptoeconomic incentives. With Filecoin:
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+- Clients make _storage deals_ with storage providers to store data. The network verifies that the storage providers are correctly storing the data. Small payments are made on a regular basis for the duration of the _storage deal_.
+- Storage providers that do not honor the storage deal are penalized.
+- Content retrieval might be offered by storage providers directly, or by specialized retrieval storage providers. The user requesting the data pays for this service.
+- Filecoin excels at storing large amounts of data for long periods of time.
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+### Using IPFS and Filecoin together
+
+Many solutions combine the two networks to get the best of both worlds: IPFS for content addressing & data discovery, and Filecoin for longer-term persistence. To achieve this, services like [Powergate]({{< relref "powergate" >}}) back up data on the Filecoin network while also ensuring content is discoverable in the IPFS Public DHT. Data is constantly available and can be retrieved quickly, while also making sure that it is safely and verifiably backed up on the Filecoin network over time.
+
+## The technology behind IPFS and Filecoin
+
+Filecoin and IPFS are powered by the same technology at many levels:
+
+- [IPLD](https://ipld.io/) specifies data formats for content-addressed data like the blockchain or the way in which IPFS stores files.
+- [libp2p](https://libp2p.io/) provides peer-to-peer network capabilities, connection security and key discovery and data distribution features like the [Distributed Hash Tables (DHT)](https://docs.ipfs.tech/concepts/dht/#distributed-hash-tables-dhts)) and [Pubsub](https://docs.libp2p.io/concepts/publish-subscribe/).
+- [Multiformats](https://multiformats.io) define future-proof identifiers and data-types.
+- [Graphsync](https://github.com/ipfs/go-graphsync) and [Bitswap](https://github.com/ipfs/go-bitswap) enable fast and efficient IPLD data transfers between nodes.
