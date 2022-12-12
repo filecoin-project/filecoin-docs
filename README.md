@@ -89,7 +89,7 @@ Follow these steps to run a copy of this site on your local computer.
 1. Build the project and serve it locally using Hugo's built-in server:
 
     ```shell
-    npm run build
+    npm run start
     ```
 
 1. Visit [localhost:1313](http://localhost:1313) to view the site.
