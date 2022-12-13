@@ -1,7 +1,7 @@
 ---
 title: "Block explorers"
-description: "There are several ways to explore and get insights from the Filecoin network."
-lead: "There are several ways to explore and get insights from the Filecoin network."
+description: "A block explorer is a tool that allows users to view and search the contents of blocks on a blockchain. This typically includes information about transactions, addresses, and other data stored on the blockchain. Block explorers are commonly used to track transactions and verify the authenticity of transactions on a given blockchain."
+lead: "A block explorer is a tool that allows users to view and search the contents of blocks on a blockchain. This typically includes information about transactions, addresses, and other data stored on the blockchain. Block explorers are commonly used to track transactions and verify the authenticity of transactions on a given blockchain."
 draft: false
 images: []
 type: docs

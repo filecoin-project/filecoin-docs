@@ -1,5 +1,5 @@
 ---
-title: "Testnets"
+title: "Networks"
 description: "Find out information about which networks are available, what their scheduled uptime is, and how you can connect to each network."
 lead: "Find out information about which networks are available, what their scheduled uptime is, and how you can connect to each network."
 draft: false
@@ -19,7 +19,7 @@ aliases:
 
 ## Available networks
 
-Here is a quick summary of networks available for FVM development:
+Here is a quick summary of networks available for Filecoin development:
 
 | Name | Type | Reset frequency | Faucet |
 | ---- | ---- | --------------- | ------ |
