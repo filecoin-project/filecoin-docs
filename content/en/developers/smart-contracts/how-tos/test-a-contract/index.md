@@ -1,5 +1,5 @@
 ---
-title: "Invoke"
+title: "Test a contract"
 description: ""
 lead: ""
 draft: false

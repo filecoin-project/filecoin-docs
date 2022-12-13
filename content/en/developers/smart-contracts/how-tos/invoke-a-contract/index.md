@@ -1,5 +1,5 @@
 ---
-title: "Deploy  "
+title: "Invoke a contract"
 description: ""
 lead: ""
 draft: false
