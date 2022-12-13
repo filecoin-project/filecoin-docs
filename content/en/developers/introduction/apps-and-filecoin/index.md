@@ -1,5 +1,5 @@
 ---
-title: "What filecoin bring to applications"
+title: "Apps and Filecoin"
 description: "Explore the features that make Filecoin a compelling system for storing files."
 lead: "Explore the features that make Filecoin a compelling system for storing files."
 draft: false
@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
+    parent: "developers-introduction"
     identifier: "what-filecoin-bring-to-applications-a869d5c9e43d2fdea56dd8175a157d5c"
-weight: 100
+weight: 20
 toc: true
 aliases:
     - "/about-filecoin/why-filecoin/"
