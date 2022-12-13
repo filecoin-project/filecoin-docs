@@ -9,7 +9,7 @@ menu:
   developers:
     parent: "lorem"
     identifier: "filecoin-and-ipfs-67533c5fcbb7ffe01eb15b8b1afd5cd3"
-weight: 10
+weight: 20
 toc: true
 aliases:
     - "/about-filecoin/ipfs-and-filecoin/"

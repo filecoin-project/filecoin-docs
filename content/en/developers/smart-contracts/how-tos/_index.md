@@ -9,4 +9,5 @@ menu:
     parent: "developers"
     identifier: "developers-how-tos"
 toc: true
+weight: 30
 ---

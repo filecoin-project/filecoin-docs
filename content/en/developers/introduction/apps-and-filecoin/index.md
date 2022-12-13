@@ -9,7 +9,7 @@ menu:
   developers:
     parent: "developers-introduction"
     identifier: "what-filecoin-bring-to-applications-a869d5c9e43d2fdea56dd8175a157d5c"
-weight: 20
+weight: 30
 toc: true
 aliases:
     - "/about-filecoin/why-filecoin/"

@@ -1,46 +1,744 @@
 ---
 title: "Chain"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
 menu:
   developers:
     parent: "lorem"
-    identifier: "chain-72215198cd292de7f9fb29101175511c"
+    identifier: "chain-f5c211d9072c9151128eb9597f12d127"
 weight: 100
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+The Chain method group contains methods for interacting with the
+blockchain, but that do not require any form of state computation.
 
-## Selvage
+## ChainDeleteObj
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+ChainDeleteObj deletes node referenced by the given CID
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+Perms: admin
 
-### Heirloom
+Inputs:
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+Response: `{}`
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+## ChainExport
 
-## Bushwick cold-pressed
+ChainExport returns a stream of bytes with CAR dump of chain data.
+The exported chain data includes the header chain from the given tipset
+back to genesis, the entire genesis state, and the most recent 'nroots'
+state trees.
+If oldmsgskip is set, messages from before the requested roots are also not included.
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+Perms: read
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+Inputs:
 
-## Locavore swag
+```json
+[
+  10101,
+  true,
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ]
+]
+```
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+Response: `"Ynl0ZSBhcnJheQ=="`
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+## ChainGetBlock
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+ChainGetBlock returns the block specified by the given CID.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+Response:
+
+```json
+{
+  "Miner": "f01234",
+  "Ticket": {
+    "VRFProof": "Ynl0ZSBhcnJheQ=="
+  },
+  "ElectionProof": {
+    "WinCount": 9,
+    "VRFProof": "Ynl0ZSBhcnJheQ=="
+  },
+  "BeaconEntries": [
+    {
+      "Round": 42,
+      "Data": "Ynl0ZSBhcnJheQ=="
+    }
+  ],
+  "WinPoStProof": [
+    {
+      "PoStProof": 8,
+      "ProofBytes": "Ynl0ZSBhcnJheQ=="
+    }
+  ],
+  "Parents": [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    }
+  ],
+  "ParentWeight": "0",
+  "Height": 10101,
+  "ParentStateRoot": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
+  "ParentMessageReceipts": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
+  "Messages": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
+  "BLSAggregate": {
+    "Type": 2,
+    "Data": "Ynl0ZSBhcnJheQ=="
+  },
+  "Timestamp": 42,
+  "BlockSig": {
+    "Type": 2,
+    "Data": "Ynl0ZSBhcnJheQ=="
+  },
+  "ForkSignaling": 42,
+  "ParentBaseFee": "0"
+}
+```
+
+## ChainGetBlockMessages
+
+ChainGetBlockMessages returns messages stored in the specified block.
+
+Note: If there are multiple blocks in a tipset, it's likely that some
+messages will be duplicated. It's also possible for blocks in a tipset to have
+different messages from the same sender at the same nonce. When that happens,
+only the first message (in a block with lowest ticket) will be considered
+for execution
+
+NOTE: THIS METHOD SHOULD ONLY BE USED FOR GETTING MESSAGES IN A SPECIFIC BLOCK
+
+DO NOT USE THIS METHOD TO GET MESSAGES INCLUDED IN A TIPSET
+Use ChainGetParentMessages, which will perform correct message deduplication
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+Response:
+
+```json
+{
+  "BlsMessages": [
+    {
+      "Version": 42,
+      "To": "f01234",
+      "From": "f01234",
+      "Nonce": 42,
+      "Value": "0",
+      "GasLimit": 9,
+      "GasFeeCap": "0",
+      "GasPremium": "0",
+      "Method": 1,
+      "Params": "Ynl0ZSBhcnJheQ==",
+      "CID": {
+        "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+      }
+    }
+  ],
+  "SecpkMessages": [
+    {
+      "Message": {
+        "Version": 42,
+        "To": "f01234",
+        "From": "f01234",
+        "Nonce": 42,
+        "Value": "0",
+        "GasLimit": 9,
+        "GasFeeCap": "0",
+        "GasPremium": "0",
+        "Method": 1,
+        "Params": "Ynl0ZSBhcnJheQ==",
+        "CID": {
+          "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+        }
+      },
+      "Signature": {
+        "Type": 2,
+        "Data": "Ynl0ZSBhcnJheQ=="
+      },
+      "CID": {
+        "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+      }
+    }
+  ],
+  "Cids": [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    }
+  ]
+}
+```
+
+## ChainGetGenesis
+
+ChainGetGenesis returns the genesis tipset.
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+
+```json
+{
+  "Cids": null,
+  "Blocks": null,
+  "Height": 0
+}
+```
+
+## ChainGetMessage
+
+ChainGetMessage reads a message referenced by the specified CID from the
+chain blockstore.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+Response:
+
+```json
+{
+  "Version": 42,
+  "To": "f01234",
+  "From": "f01234",
+  "Nonce": 42,
+  "Value": "0",
+  "GasLimit": 9,
+  "GasFeeCap": "0",
+  "GasPremium": "0",
+  "Method": 1,
+  "Params": "Ynl0ZSBhcnJheQ==",
+  "CID": {
+    "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+  }
+}
+```
+
+## ChainGetMessagesInTipset
+
+ChainGetMessagesInTipset returns message stores in current tipset
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ]
+]
+```
+
+Response:
+
+```json
+[
+  {
+    "Cid": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    "Message": {
+      "Version": 42,
+      "To": "f01234",
+      "From": "f01234",
+      "Nonce": 42,
+      "Value": "0",
+      "GasLimit": 9,
+      "GasFeeCap": "0",
+      "GasPremium": "0",
+      "Method": 1,
+      "Params": "Ynl0ZSBhcnJheQ==",
+      "CID": {
+        "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+      }
+    }
+  }
+]
+```
+
+## ChainGetNode
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  "string value"
+]
+```
+
+Response:
+
+```json
+{
+  "Cid": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
+  "Obj": {}
+}
+```
+
+## ChainGetParentMessages
+
+ChainGetParentMessages returns messages stored in parent tipset of the
+specified block.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+Response:
+
+```json
+[
+  {
+    "Cid": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    "Message": {
+      "Version": 42,
+      "To": "f01234",
+      "From": "f01234",
+      "Nonce": 42,
+      "Value": "0",
+      "GasLimit": 9,
+      "GasFeeCap": "0",
+      "GasPremium": "0",
+      "Method": 1,
+      "Params": "Ynl0ZSBhcnJheQ==",
+      "CID": {
+        "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+      }
+    }
+  }
+]
+```
+
+## ChainGetParentReceipts
+
+ChainGetParentReceipts returns receipts for messages in parent tipset of
+the specified block. The receipts in the list returned is one-to-one with the
+messages returned by a call to ChainGetParentMessages with the same blockCid.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+Response:
+
+```json
+[
+  {
+    "ExitCode": 0,
+    "Return": "Ynl0ZSBhcnJheQ==",
+    "GasUsed": 9
+  }
+]
+```
+
+## ChainGetPath
+
+ChainGetPath returns a set of revert/apply operations needed to get from
+one tipset to another, for example:
+
+```plaintext
+       to
+        ^
+from   tAA
+  ^     ^
+tBA    tAB
+ ^---*--^
+     ^
+    tRR
+```
+
+Would return `[revert(tBA), apply(tAB), apply(tAA)]`
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ],
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ]
+]
+```
+
+Response:
+
+```json
+[
+  {
+    "Type": "string value",
+    "Val": {
+      "Cids": null,
+      "Blocks": null,
+      "Height": 0
+    }
+  }
+]
+```
+
+## ChainGetRandomnessFromBeacon
+
+ChainGetRandomnessFromBeacon is used to sample the beacon for randomness.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ],
+  2,
+  10101,
+  "Ynl0ZSBhcnJheQ=="
+]
+```
+
+Response: `"Bw=="`
+
+## ChainGetRandomnessFromTickets
+
+ChainGetRandomnessFromTickets is used to sample the chain for randomness.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ],
+  2,
+  10101,
+  "Ynl0ZSBhcnJheQ=="
+]
+```
+
+Response: `"Bw=="`
+
+## ChainGetTipSet
+
+ChainGetTipSet returns the tipset specified by the given TipSetKey.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ]
+]
+```
+
+Response:
+
+```json
+{
+  "Cids": null,
+  "Blocks": null,
+  "Height": 0
+}
+```
+
+## ChainGetTipSetByHeight
+
+ChainGetTipSetByHeight looks back for a tipset at the specified epoch.
+If there are no blocks at the specified epoch, a tipset at an earlier epoch
+will be returned.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  10101,
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ]
+]
+```
+
+Response:
+
+```json
+{
+  "Cids": null,
+  "Blocks": null,
+  "Height": 0
+}
+```
+
+## ChainHasObj
+
+ChainHasObj checks if a given CID exists in the chain blockstore.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+Response: `true`
+
+## ChainHead
+
+ChainHead returns the current head of the chain.
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+
+```json
+{
+  "Cids": null,
+  "Blocks": null,
+  "Height": 0
+}
+```
+
+## ChainNotify
+
+ChainNotify returns channel with chain head updates.
+First message is guaranteed to be of len == 1, and type == 'current'.
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+
+```json
+[
+  {
+    "Type": "string value",
+    "Val": {
+      "Cids": null,
+      "Blocks": null,
+      "Height": 0
+    }
+  }
+]
+```
+
+## ChainReadObj
+
+ChainReadObj reads ipld nodes referenced by the specified CID from chain
+blockstore and returns raw bytes.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+Response: `"Ynl0ZSBhcnJheQ=="`
+
+## ChainSetHead
+
+ChainSetHead forcefully sets current chain head. Use with caution.
+
+Perms: admin
+
+Inputs:
+
+```json
+[
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ]
+]
+```
+
+Response: `{}`
+
+## ChainStatObj
+
+ChainStatObj returns statistics about the graph referenced by 'obj'.
+If 'base' is also specified, then the returned stat will be a diff
+between the two objects.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+Response:
+
+```json
+{
+  "Size": 42,
+  "Links": 42
+}
+```
+
+## ChainTipSetWeight
+
+ChainTipSetWeight computes weight for the specified tipset.
+
+Perms: read
+
+Inputs:
+
+```json
+[
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    {
+      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+    }
+  ]
+]
+```
+
+Response: `"0"`

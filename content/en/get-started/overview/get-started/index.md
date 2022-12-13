@@ -41,7 +41,7 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 ## Contribute to Filecoin
 
 - [Mine Filecoin]({{< relref "storage-provider/basics/overview" >}}): for those wanting to provide storage and retrieval capabilities to the Network.
-- [Build on Filecoin]({{< relref "build/get-building/overview" >}}): for those wanting to build applications that interact with the Filecoin network.
+- [Build on Filecoin]({{< relref "#build/get-building/overview" >}}): for those wanting to build applications that interact with the Filecoin network.
 
 ## Filecoin Software
 
