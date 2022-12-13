@@ -9,6 +9,8 @@ type: docs
 weight: 40
 draft: false
 images: []
+aliases:
+    - "/developers/smart-contracts/how-tos/use-a-faucet/"
 ---
 
 {{< beta-warning >}}

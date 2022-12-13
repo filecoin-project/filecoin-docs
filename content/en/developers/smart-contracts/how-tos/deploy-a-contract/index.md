@@ -10,6 +10,8 @@ menu:
     parent: "developers-how-tos"
 toc: true
 images: []
+aliases:
+    - "/fvm/how-tos/deploy-a-contract/"
 ---
 
 {{< beta-warning >}}

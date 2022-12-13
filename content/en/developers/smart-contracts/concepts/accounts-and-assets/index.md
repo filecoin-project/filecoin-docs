@@ -1,7 +1,7 @@
 ---
 title: "Accounts and assets"
-description: "Everything you need to know about how accounts and assets are managed within the FVM. A lot of this information is idential to how accounts and assets are managed within the Filecoin network as a whole, however there are some nuances."
-lead: "Everything you need to know about how accounts and assets are managed within the FVM. A lot of this information is idential to how accounts and assets are managed within the Filecoin network as a whole, however there are some nuances."
+description: "Everything you need to know about how accounts and assets are managed within the FVM. A lot of this information is identical to how accounts and assets are managed within the Filecoin network as a whole, however there are some nuances."
+lead: "Everything you need to know about how accounts and assets are managed within the FVM. A lot of this information is identical to how accounts and assets are managed within the Filecoin network as a whole, however there are some nuances."
 draft: false
 images: []
 type: docs

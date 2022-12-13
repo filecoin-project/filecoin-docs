@@ -10,6 +10,8 @@ menu:
   developers:
     parent: "developers-how-tos"
 toc: true
+aliases:
+    - "/developers/smart-contracts/how-tos/test-a-contract/"
 ---
 
 {{< beta-warning >}}

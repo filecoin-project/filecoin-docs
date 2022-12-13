@@ -1,7 +1,7 @@
 ---
 title: "Filecoin virtual machine"
-description: "What is the FVM? What problems does it solve? How is it related to the EVM? This page will answer all these questions, and give you a solid introduction to the Filecoin virtual machine."
-lead: "The Filecoin Virtual Machine (FVM) is a technology that lets developers deploy custom code to the Filecoin network and have the nodes on the network run that code. The FVM allows developers to link decentralized applications to verified storage -- a feature that needs to be added to the web3 ecosystem."
+lead: "The Filecoin virtual machine (FVM) is a runtime environment for smart contracts, also called actors, on the Filecoin network. These smart contracts can be written in Solidity or any lanaguge that compiles to WASM. Smart contracts enable users to create and enforce rules for storing and accessing data on the network. The FVM is responsible for executing these smart contracts and ensuring that they are executed correctly and securely."
+lead: "The Filecoin virtual machine (FVM) is a runtime environment for smart contracts, also called actors, on the Filecoin network. These smart contracts can be written in Solidity, and eventually any lanaguge that compiles to WASM will be supported. Smart contracts enable users to create and enforce rules for storing and accessing data on the network. The FVM is responsible for executing these smart contracts and ensuring that they are executed correctly and securely."
 draft: false
 images: []
 type: docs
@@ -11,6 +11,8 @@ menu:
     identifier: "introduction-304f49b81cae09b423aee1c85243b84d"
 weight: 10
 toc: true
+aliases:
+    - "/fvm/basics/introduction/"
 ---
 
 {{< beta-warning >}}

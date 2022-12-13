@@ -9,6 +9,8 @@ type: docs
 weight: 40
 draft: false
 images: []
+aliases:
+    - "/fvm/how-tos/add-to-metamask/"
 ---
 
 {{< beta-warning >}}

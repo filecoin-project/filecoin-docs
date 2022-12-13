@@ -6,7 +6,7 @@ draft: false
 images: []
 type: docs
 menu:
-  developers:
+  reference:
     parent: "lorem"
     identifier: "tools-b3da8820e6c5721c3688adf9a4d59c19"
 weight: 50

@@ -11,6 +11,8 @@ menu:
     identifier: "use-cases-05f274faf43e645503c0bb55c639045c"
 weight: 20
 toc: true
+aliases:
+    - "/fvm/basics/use-cases/"
 ---
 
 {{< beta-warning >}}

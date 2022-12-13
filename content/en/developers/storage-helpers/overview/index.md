@@ -9,7 +9,7 @@ menu:
   developers:
     parent: "lorem"
     identifier: "overview-9903c0c484d3d21510cd1d60e77135bc"
-weight: 100
+weight: 10
 toc: true
 aliases:
     - "/build/get-building/storage-helpers/"
