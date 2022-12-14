@@ -24,11 +24,6 @@
   weight = 70
 
 [[main]]
-  name = "Build"
-  url = "/build/get-building/overview/"
-  weight = 80
-
-[[main]]
   name = "Developers"
   url = "/developers/introduction/filecoin-and-ipfs"
   weight = 80
