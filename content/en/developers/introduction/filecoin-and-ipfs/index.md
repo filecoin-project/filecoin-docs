@@ -50,7 +50,7 @@ Filecoin builds on the content addressing of IPFS to add longer term data persis
 
 ### Using IPFS and Filecoin together
 
-Many solutions combine the two networks to get the best of both worlds: IPFS for content addressing & data discovery, and Filecoin for longer-term persistence. To achieve this, services like [Powergate]({{< relref "powergate" >}}) back up data on the Filecoin network while also ensuring content is discoverable in the IPFS Public DHT. Data is constantly available and can be retrieved quickly, while also making sure that it is safely and verifiably backed up on the Filecoin network over time.
+Many solutions combine the two networks to get the best of both worlds: IPFS for content addressing & data discovery, and Filecoin for longer-term persistence. To achieve this, services like [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) back up data on the Filecoin network while also ensuring content is discoverable in the IPFS Public DHT. Data is constantly available and can be retrieved quickly, while also making sure that it is safely and verifiably backed up on the Filecoin network over time.
 
 ## The technology behind IPFS and Filecoin
 
