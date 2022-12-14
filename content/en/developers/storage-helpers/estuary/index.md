@@ -11,6 +11,8 @@ menu:
     identifier: "estuary-dbdf998ec220638f12f7e7455ae9f9ca"
 weight: 100
 toc: true
+aliases:
+    - "/build/tools/estuary/"
 ---
 
 {{< beta-warning >}}

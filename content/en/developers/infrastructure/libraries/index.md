@@ -11,6 +11,8 @@ menu:
     identifier: "libraries-c53694e3311ab167496470d05062d7d9"
 weight: 100
 toc: true
+aliases:
+    - "/build/tools/signing-libraries/"
 ---
 
 {{< beta-warning >}}

@@ -24,7 +24,7 @@ Looking for Lotus? You can find Lotus specific documentation over at [lotus.file
 
 ## Become familiar with the concepts
 
-- Read [How Filecoin Works]({{< relref "how-filecoin-works" >}}) and [IPFS and Filecoin]({{< relref "ipfs-and-filecoin" >}}).
+- Read [How Filecoin Works]({{< relref "how-filecoin-works" >}}) and [IPFS and Filecoin]({{< relref "filecoin-and-ipfs" >}}).
 - Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look.
 - Check out the [existing networks](https://network.filecoin.io).
 - Explore the mainnet using one of the [available block explorers]({{< relref "explore-the-network" >}}). Discover the blocks, the messages, the scoreboards for storage providers. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
