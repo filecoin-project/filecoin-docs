@@ -5,8 +5,6 @@ menu:
     about:
         parent: "about-filecoin-assets"
 weight: 60
-aliases:
-	- "/about-filecoin/wrapped-filecoin/"
 ---
 
 ## Wallets
