@@ -14,7 +14,7 @@ toc: true
 
 Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus storage provider registry, creating a storage deal, and then waiting for the deal to complete. There's a lot to do, so let's dive in!
 
-{{< alert icon="warning" >}}
+{{< alert  >}}
 Filecoin is optimized for public data and doesn't yet support access controls. If storing private data, ensure you encrypt it before storage to ensure it remains unreadable by anyone without the ability to decrypt it. Keep in mind that if a vulnerability is found in your encryption process at any point in the future, then your data may be compromised.
 {{< /alert >}}
 
@@ -70,7 +70,7 @@ We need to tell our Lotus lite-node which file we want to store using Filecoin.
 
 1. Make a note of the CID `bafykb...`. This is your **Data CID**. We'll use it in an upcoming section.
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 'lotus client local' will list all the currently imported CIDs
 {{< /alert >}}
 
@@ -84,7 +84,7 @@ We need to find suitable storage providers before we can store our data. The Fil
 
 We're going to use the Filecoin Plus storage provider registry to find a couple of storage providers and then cross-check their information with a third-party storage provider reputation system.
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 Increasing the number of storage providers you use increases your data redundancy, and decreases the chances of your data being lost.
 {{< /alert >}}
 
@@ -137,7 +137,7 @@ To complete this section, you need the **Data CID** you received after running `
 
     The interactive deal assistant will now ask you some questions.
 
-{{< alert icon="warning" >}}
+{{< alert  >}}
 If you get an error 'actor not found', it likely means this address has never had FIL or Datacap added to it. You'll need to add some of either before you can do a deal.
 [Add Datacap](/get-started/store-and-retrieve/set-up/#filecoin-plus)
 [Add FIL](/get-started/store-and-retrieve/set-up/#adding-fil-to-your-wallet-or-using-filecoin-plus)
@@ -174,7 +174,7 @@ If you get an error 'actor not found', it likely means this address has never ha
     ```plaintext
     Miner Addresses (f0.. f0..), none to find: f01000 f01001
     ```
-    {{< alert icon="tip" >}}**Scanning Storage Providers**
+    {{< alert  >}}**Scanning Storage Providers**
 You can search all Storage Providers for matching deals by not entering addresses (hit 'return') but it will take several minutes.
 {{< /alert >}}
 
@@ -213,7 +213,7 @@ Once the data has been sent to the storage clients, the storage deals can take s
     lotus client list-deals --show-failed
     ```
 
-    {{< alert icon="warning" >}}**DO NOT TURN OFF YOUR LOTUS NODE**
+    {{< alert  >}}**DO NOT TURN OFF YOUR LOTUS NODE**
     Your Lotus lite-node needs to remain online until the deal state has reached `StorageDealActive`. See the [Processing states](#processing-states) table below to find out which states happen and when.
     {{< /alert >}}
 

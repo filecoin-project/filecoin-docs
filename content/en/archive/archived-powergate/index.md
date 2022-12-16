@@ -27,7 +27,7 @@ There are many ways to interact with the Powergate. These pathways are well-docu
 - **Powergate JS API client**: If you would like to use Powergate in your JS application, you can use the [Powergate JS Client](https://textileio.github.io/js-powergate-client/).
 - **Powergate Go API client**: If you would like to use Powergate in your Go application, you can use the [Powergate Go Client](https://pkg.go.dev/github.com/textileio/powergate/api/client?utm_source=godoc).
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 Sometimes the best way to learn is through examples.
 
 - See a full production application ([Slate](https://github.com/filecoin-project/slate/)) built on the **Powergate JS Client**.
@@ -37,7 +37,7 @@ Sometimes the best way to learn is through examples.
 
 This guide will help you get started with _Powergate CLI_. We will be using the _Powergate CLI_ to interact with the Powergate API endpoint.
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 Developers can also start with the localnet as you'll have access to all the APIs and capabilities without having to sync to the network right away. When you're ready, you can update your Powergate to connect to the live _mainnet_.
 
 We will use the Filecoin mainnet as an example here. Learning how to use localnet, see [Powergate localnet instruction](https://docs.textile.io/powergate/localnet/).

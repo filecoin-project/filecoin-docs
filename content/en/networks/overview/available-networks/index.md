@@ -19,7 +19,7 @@ aliases:
 
 This page contains information on the [networks available](#available-networks) for Filecoin.
 
-{{< alert icon="tip" >}}**Looking for Glif nodes?**
+{{< alert  >}}**Looking for Glif nodes?**
 The [Glif nodes section](https://lotus.filecoin.io/docs/developers/hosted-lotus/), along with all other Lotus-specific documentation, has moved to [lotus.filecoin.io](https://lotus.filecoin.io/docs/developers/hosted-lotus/)
 {{< /alert >}}
 
@@ -31,7 +31,7 @@ There are several networks available for Filecoin:
 - [Calibration](#calibration), the primary testing network for Filecoin.
 - [Wallaby](#wallaby), an early testing network for bleeding edge [Filecoin Virtual Machine](https://fvm.filecoin.io) deployments.
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 Check the status of each network and subscribe to updates at [status.filecoin.io](https://status.filecoin.io).
 {{< /alert >}}
 

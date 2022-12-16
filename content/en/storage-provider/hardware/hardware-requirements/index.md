@@ -38,7 +38,7 @@ The [authoritative list of supported GPUs](https://github.com/filecoin-project/b
 
 Additional GPU models need to be enabled manually ([instructions for Lotus](https://lotus.filecoin.io/docs/storage-providers/overview/)).
 
-{{< alert icon="warning" >}}
+{{< alert  >}}
 Mixing AMD and Nvidia GPUs in the same machine is known to cause issues with OpenCL and should be avoided.
 {{< /alert >}}
 

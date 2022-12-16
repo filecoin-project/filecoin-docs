@@ -21,7 +21,7 @@ Before you begin storing any data on the Filecoin network, you need to run throu
   <img alt="A flowchart showing to steps within this set up process." src="set-up-process.png">
  </picture>
 
-{{< alert icon="tip" >}}**What is Lotus?**
+{{< alert  >}}**What is Lotus?**
 Programs that interact with the Filecoin network are called _implementations_, and [Lotus](https://lotus.filecoin.io) is a command-line interface (CLI) implementation. There are other implementation being created alongside Lotus, however Lotus is the only Filecoin implementation created and maintained by Protocol Labs.
 {{< /alert >}}
 
@@ -51,7 +51,7 @@ A lite-node lets your computer interact with the Filecoin network without having
 
 ### macOS
 
-{{< alert icon="tip" >}}**Requirements**
+{{< alert  >}}**Requirements**
 You can install Lotus on MacOS 10.11 El Capitan or higher. You must have [Homebrew](https://brew.sh/) installed.
 {{< /alert >}}
 
@@ -117,7 +117,7 @@ If Homebrew doesn't work for you, or if you prefer to build from source, try the
     make all
     ```
 
-    {{< alert icon="tip" >}}If you get a warning: 'kIOMasterPortDefault' is deprecated: first deprecated in macOS 12.0' , don't worry - the build still worked. 
+    {{< alert  >}}If you get a warning: 'kIOMasterPortDefault' is deprecated: first deprecated in macOS 12.0' , don't worry - the build still worked. 
     {{< /alert >}}
 
 1. Finally, install the client into your system
@@ -163,7 +163,7 @@ There are two simple ways to install Lotus on Linux (this is tested on Ubuntu):
 
 #### Snap
 
-{{< alert icon="warning" >}}**Requirements**
+{{< alert  >}}**Requirements**
 You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
 {{< /alert >}}
 
@@ -186,7 +186,7 @@ You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
 
 Now that you have Lotus ready to run, you can start a Lotus lite-node on your computer and connect to the `api.chain.love` Lotus full-node!
 
-{{< alert icon="warning" >}}
+{{< alert  >}}
 `api.chain.love` is a Lotus full-node managed by Protocol Labs. It's ideal for use in this tutorial, but should not be used in a development or in a production environment.
 {{< /alert >}}
 
@@ -260,7 +260,7 @@ Once you have your address in a file, you can copy it to another drive, securely
 
 Before you can transact on the network, you usually have to add some Filecoin to your wallet. You can do this via an exchange such as [Coinbase](https://www.coinbase.com), but you can bypass this stage by applying for Filecoin Plus Datacap below. If you have Datacap on your wallet, then transaction fees are covered, and you can start doing deals faster.  
 
-{{< alert icon="tip" >}}[Read more about managing wallets](/about-filecoin/managing-assets)
+{{< alert  >}}[Read more about managing wallets](/about-filecoin/managing-assets)
 {{< /alert >}}
 
 ## Filecoin Plus
@@ -277,7 +277,7 @@ DataCap acts as a kind of _multiplier_ for block rewards. If a storage provider 
 
 Signing up to Filecoin Plus is easy and free!
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 You need a GitHub account that is at least 180 days old. If you don't have a GitHub account that's old enough, [get in touch with #fil-lotus-help on Filecoin Slack](https://filecoinproject.slack.com/archives/CPFTWMY7N).
 {{< /alert >}}
 
@@ -294,7 +294,7 @@ You can check your Filecoin Plus balance with
 lotus filplus check-client-datacap f1...
 ```
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 You can only request automatic datacap once every 30 days for a single GitHub account.
 {{< /alert >}}
 

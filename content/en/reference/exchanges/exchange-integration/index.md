@@ -31,7 +31,7 @@ Follow the [Lotus installation guide](https://lotus.filecoin.io/docs/set-up/inst
     - Syncing from a full snapshot.
     - Syncing from minimal snapshot
 
-{{< alert icon="warning" >}}
+{{< alert  >}}
 A snapshot only has the state trees from the recent tipset (2000 epochs) onward and nothing before that tipset, which means it does not have all the historical states of the network. In addition, only a full snapshot has full state trees from a certain tipset.
 {{< /alert >}}
 
@@ -81,7 +81,7 @@ Filecoin uses an account-based model. There are 4 types of account prefixes:
 
 `f1`, `f2`, and `f3` prefixed addresses are called account addresses. An account address is activated when it first receives a transaction. `f0` prefixed addresses are mapped to each active account address.
 
-{{< alert icon="tip" >}}**Testnet addresses**
+{{< alert  >}}**Testnet addresses**
 Within a testnet, the address prefix is `t`. So ID addresses become `t0`, Secp256k1 wallets become `t1`, etc.
 {{< /alert >}}
 

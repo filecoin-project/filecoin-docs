@@ -21,7 +21,7 @@ This is an overview of features offered by Filecoin that make it a compelling sy
 
 Filecoin has built-in processes to check the history of files and verify that they have been stored correctly over time. Every storage provider proves that they are maintaining their files in every 24-hour window. Clients can efficiently scan this history to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
 
-{{< alert icon="tip" >}}
+{{< alert >}}
 [Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
 {{< /alert >}}
 

@@ -35,7 +35,7 @@ Here are the steps to quickly get setup with buckets:
    hub bucket init
    ```
 
-   {{< alert icon="warning" >}}
+   {{< alert  >}}
    Buckets are not encrypted by default. If you are going to store sensitive data, use the `hub bucket init --private` option. [Read more here](https://docs.textile.io/buckets/#encryption).
    {{< /alert >}}
 

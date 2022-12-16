@@ -47,7 +47,7 @@ Before you can retrieve data from a storage provider, you need to check that you
 
     Any balance above 0.1 FIL is enough to retrieve the data we are requesting in this tutorial.
 
-{{< alert icon="warning" >}}**Low or no balance**
+{{< alert  >}}**Low or no balance**
 If you do not have enough FIL, you need to transfer some FIL to this account. You can either do this by using a cryptocurrency exchange or having a friend send you FIL. The address `f1...` listed when you run `lotus wallet list` is your public address; use this when requesting money from an exchange or your friend.
 
 Check out the [FIL token section]({{< relref "fil-token" >}}) for information on [withdrawing FIL from an exchange]({{< relref "fil-token#exchanges" >}}).

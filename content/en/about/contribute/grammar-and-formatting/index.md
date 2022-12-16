@@ -316,7 +316,7 @@ Custom containers can be defined by their types, titles, and contents.
 ##### Input
 
 <pre class="prettyprint lang-html">
-&#123;&#123;&#60; alert icon="tip" &#62; &#125;&#125;
+&#123;&#123;&#60; alert  &#62; &#125;&#125;
 This is a tip
 &#123;&#123;&#60; /alert &#62; &#125;&#125;
 
@@ -324,7 +324,7 @@ This is a tip
 This is a callout
 &#123;&#123;&#60; /alert &#62; &#125;&#125;
 
-&#123;&#123;&#60; alert icon="warning" &#62;&#125;&#125;
+&#123;&#123;&#60; alert  &#62;&#125;&#125;
 This is a dangerous warning
 &#123;&#123;&#60; /alert &#62; &#125;&#125;
 </pre>
@@ -333,7 +333,7 @@ This is a dangerous warning
 
 This output is not supported by Github Flavoured Markdown (GFM). However, they render properly when viewed through VuePress at [docs.filecoin.io/community/contribute/grammar-formatting-and-style](https://docs.filecoin.io/community/contribute/grammar-formatting-and-style/#custom-containers).
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 This is a tip
 {{< /alert >}}
 
@@ -341,7 +341,7 @@ This is a tip
 This is a callout
 {{< /alert >}}
 
-{{< alert icon="warning" >}}
+{{< alert  >}}
 This is a dangerous warning
 {{< /alert >}}
 

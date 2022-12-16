@@ -12,7 +12,7 @@ weight: 10
 toc: true
 ---
 
-{{< alert icon="tip" >}}
+{{< alert  >}}
 **Looking for Lotus?**
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 {{< /alert >}}

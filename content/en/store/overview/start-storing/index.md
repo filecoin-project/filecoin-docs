@@ -14,7 +14,7 @@ toc: true
 
 Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers.
 
-{{< alert icon="tip" >}}**Looking for Lotus?**
+{{< alert  >}}**Looking for Lotus?**
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 {{< /alert >}}
 
