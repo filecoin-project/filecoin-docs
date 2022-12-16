@@ -27,6 +27,37 @@
   name = "Developers"
   url = "/developers/introduction/filecoin-and-ipfs"
   weight = 80
+  identifier = "main-developers"
+
+    [[main]]
+      name = "Introduction"
+      url = "/developers/introduction/overview"
+      weight = 10
+      parent = "main-developers"
+
+    [[main]]
+      name = "Infrastructure"
+      url = "/developers/infrastructure/block-explorers"
+      weight = 20
+      parent = "main-developers"
+
+    [[main]]
+      name = "Smart contracts"
+      url = "/developers/smart-contracts/filecoin-virtual-machine"
+      weight = 30
+      parent = "main-developers"
+
+    [[main]]
+      name = "Storage helpers"
+      url = "/developers/storage-helpers/overview"
+      weight = 40
+      parent = "main-developers"
+
+    [[main]]
+      name = "JSON-RPC"
+      url = "/developers/reference/json-rpc/introduction"
+      weight = 50
+      parent = "main-developers"
 
 [[main]]
   name = "Reference"
