@@ -14,3 +14,7 @@ toc: true
 ---
 
 {{< beta-warning >}}
+
+![The Ceramic homepage.](ceramic-homepage.png)
+
+To find out more about Ceramic and how you can use it in your Filecoin project, check out the [Ceramic docs](https://developers.ceramic.network/learn/welcome/).

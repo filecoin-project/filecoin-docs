@@ -2,7 +2,7 @@
 title: "Lighthouse storage"
 description: ""
 lead: ""
-draft: false
+draft: true
 images: []
 type: docs
 menu:
