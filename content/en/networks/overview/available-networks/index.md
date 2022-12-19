@@ -11,10 +11,6 @@ menu:
     identifier: "available-networks-3873051de052ab107e1160ecff302b3d"
 weight: 10
 toc: true
-aliases:
-    - "/networks"
-    - "/networks/available-networks"
-    - "/fvm/reference/networks/"
 ---
 
 This page contains information on the [networks available](#available-networks) for Filecoin.

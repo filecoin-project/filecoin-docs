@@ -12,6 +12,7 @@ menu:
 toc: true
 aliases:
     - "/developers/smart-contracts/how-tos/test-a-contract/"
+    - "/fvm/how-tos/test-contracts/"
 ---
 
 {{< beta-warning >}}

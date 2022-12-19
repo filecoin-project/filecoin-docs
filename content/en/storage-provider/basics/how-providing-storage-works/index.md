@@ -10,6 +10,8 @@ menu:
     identifier: "how-providing-storage-works-1e29addf0ea9d46268f68b508d61b89e"
 weight: 20
 toc: true
+aliases:
+    - "/storage-provider/how-providing-works/"
 ---
 
 In most blockchain protocols, _miners_ are the participants on the network that do the work necessary to advance the blockchain and maintain its validity. For providing these services, miners are compensated in the native cryptocurrency.

@@ -1,16 +1,24 @@
 ---
 title: "Starling"
 description: "Starling is a decentralized storage application designed for use in archival settings, where the ability to demonstrate the authenticity of a file over the course of time is of paramount importance."
+lead: "Starling is a decentralized storage application designed for use in archival settings, where the ability to demonstrate the authenticity of a file over the course of time is of paramount importance."
 draft: false
 images: []
 type: docs
 menu:
-  store:
+  developers:
     parent: "lorem"
-    identifier: "starling-6918e5ef997c3cc12cb691406b237e5d"
+    identifier: "starling-dbdf143ec392003f12f7e7455ae9f9ca"
 weight: 100
 toc: true
+aliases:
+    - "/build/tools/starling/"
+    - "/store/starling/"
 ---
+
+{{< beta-warning >}}
+
+![A terminal window showing the Starling Filecoin application.](starling.png)
 
 This guide will quickly set up Starling on your computer.
 

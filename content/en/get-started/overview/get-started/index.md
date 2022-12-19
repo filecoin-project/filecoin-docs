@@ -14,6 +14,7 @@ toc: true
 aliases:
     - "/get-started"
     - "/how-to/install-filecoin"
+    - "/get-started/resources"
 ---
 
 Working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
@@ -35,7 +36,7 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 
 - Visit [Slate](https://slate.host/) to store content on Filecoin and make deals from your browser.
 - Install and launch your [Lotus Node](https://lotus.filecoin.io). Setup your first wallet and learn how to [send and receive ⨎](https://lotus.filecoin.io/docs/set-up/manage-fil/) and [make storage deals](https://lotus.filecoin.io/docs/storage-providers/manage-storage-deals/).
-- Use [Starling]({{< relref "starling" >}}) to simplify the management of storage deals in Lotus.
+- Use [Starling]({{< relref "developers/storage-helpers/starling" >}}) to simplify the management of storage deals in Lotus.
 - Check out the [Lotus API methods](https://lotus.filecoin.io/docs/apis/json-rpc/) to learn how to programmatically store data on the Filecoin network.
 
 ## Contribute to Filecoin
@@ -51,7 +52,7 @@ Looking for an easy way to store and access your files on Filecoin? Use one of t
 | [Slate](https://slate.host/)                                       | Slate is a fully open-source file-sharing network designed for research and collaboration, powered by [Textile](https://textile.io), [IPFS](https://ipfs.tech) and Filecoin. <br /><br /> For users that want to easily store their data in a cloud backed by decentralized technologies. |
 | [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/)                               | A multitiered storage solution that stores data with IPFS ("Hot" storage layer) and Filecoin ("Cold" storage layer).                                                                                                                                                                    |
 | [Fleek space daemon](https://blog.fleek.co/posts/daemon-release) | A wrapper around awesome IPFS tools to start coding a decentralized desktop app as fast as possible. It is built on top of Textile Threads, Buckets, and Powergate.                                                                                                                      |
-| [Starling]({{< relref "starling" >}})                                 | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
+| [Starling]({{< relref "developers/storage-helpers/starling" >}})                                 | A command-line interface for simplified, coordinated, decentralized storage on the Filecoin network.                                                                                                                                                                                    |
 
 ## Wallets
 

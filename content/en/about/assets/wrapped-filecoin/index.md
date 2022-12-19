@@ -14,7 +14,7 @@ menu:
 weight: 20
 toc: true
 aliases:
-    - "about-filecoin/wrapped-filecoin"
+    - "/about-filecoin/wrapped-filecoin"
 ---
 
 Wrapped tokens allow tokens from one blockchain to be used natively on another chain. The wrapping process usually involves locking the original tokens in a smart contract, which then mints an equivalent amount of wrapped tokens on another blockchain.

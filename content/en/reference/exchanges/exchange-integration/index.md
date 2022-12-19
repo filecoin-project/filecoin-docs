@@ -10,6 +10,8 @@ menu:
     identifier: "exchange-integration-c540e1529a0a6d3304e0c9158502ccc3"
 weight: 100
 toc: true
+aliases:
+    - "/reference/exchanges/"
 ---
 
 ## Filecoin Integration Guide

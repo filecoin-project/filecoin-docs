@@ -16,6 +16,7 @@ toc: true
 aliases:
     - "/community/contribute/grammar-formatting-and-style/"
     - "/about-filecoin/grammar-and-formatting"
+    - "/about-filecoin/grammar-formatting-and-style/"
 ---
 
 This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide]({{< relref "writing-guide" >}}).

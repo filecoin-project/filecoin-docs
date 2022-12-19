@@ -11,6 +11,7 @@ draft: false
 images: []
 aliases:
     - "/developers/smart-contracts/how-tos/use-a-faucet/"
+    - "/fvm/how-tos/use-a-faucet/"
 ---
 
 {{< beta-warning >}}

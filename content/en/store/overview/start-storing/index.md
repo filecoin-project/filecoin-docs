@@ -10,6 +10,8 @@ menu:
     identifier: "start-storing-85ab1f5b8a0bc0a1291758573d823c89"
 weight: 10
 toc: true
+aliases:
+    - "/store/overview/"
 ---
 
 Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers.
@@ -38,7 +40,7 @@ The following applications allow you to store data on the Filecoin network with 
 
 ### Digital Preservation
 
-- [Starling]({{< relref "starling" >}}) uses Lotus to simplify decentralized storage for digital _preservationists_ and archivists.
+- [Starling]({{< relref "developers/storage-helpers/starling" >}}) uses Lotus to simplify decentralized storage for digital _preservationists_ and archivists.
 
 ### Video
 

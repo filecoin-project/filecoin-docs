@@ -10,6 +10,8 @@ menu:
     identifier: "glossary-df33d6f81d8dda5454fea5593aaba0ae"
 weight: 20
 toc: true
+aliases:
+    - "/reference/glossary/"
 ---
 
 ## Address

@@ -10,6 +10,8 @@ menu:
     identifier: "hardware-requirements-a2f6bfc8c2c8202e9a7c5bb6b091830d"
 weight: 20
 toc: true
+aliases:
+    - "/storage-provider/hardware-requirements/"
 ---
 
 The hardware requirements for providing storage are tied to the computational resources needed to _seal_ a sector and generating regular _Proof of Spacetime_ for every sealed sector (_WindowPoSt_).

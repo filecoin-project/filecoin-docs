@@ -7,6 +7,8 @@ images: []
 type: docs
 weight: 100
 toc: true
+aliases:
+    - "/build/tools/powergate/"
 ---
 
 {{< archived-content >}}

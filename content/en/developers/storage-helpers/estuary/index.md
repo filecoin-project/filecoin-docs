@@ -13,6 +13,7 @@ weight: 100
 toc: true
 aliases:
     - "/build/tools/estuary/"
+    - "/store/estuary/"
 ---
 
 {{< beta-warning >}}

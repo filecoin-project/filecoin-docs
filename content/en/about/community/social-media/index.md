@@ -15,6 +15,7 @@ aliases:
     - "/about-filecoin/chat-and-discussion-forums"
     - "/community/social-media/"
     - "/community/social-media/social-media/"
+    - "/about-filecoin/social-media/"
 ---
 
 Filecoin is everywhere on the internet — and that includes social media. Find your favorite flavor here.

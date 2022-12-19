@@ -13,6 +13,9 @@ weight: 100
 toc: true
 aliases:
     - "/fvm/reference/networks/"
+    - "/networks"
+    - "/networks/available-networks"
+    - "/networks/overview/"
 ---
 
 {{< beta-warning >}}

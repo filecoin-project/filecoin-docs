@@ -10,6 +10,8 @@ menu:
     identifier: "storage-provider-rewards-35f055adcdce3977d45e6fcb078a2a11"
 weight: 20
 toc: true
+aliases:
+    - "/storage-provider/rewards/"
 ---
 
 There are two main types of rewards for their efforts: storage fees and block rewards.

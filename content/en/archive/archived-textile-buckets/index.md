@@ -6,6 +6,8 @@ images: []
 type: docs
 weight: 100
 toc: true
+aliases:
+    - "/build/tools/textile-buckets/"
 ---
 
 {{< archived-content >}}

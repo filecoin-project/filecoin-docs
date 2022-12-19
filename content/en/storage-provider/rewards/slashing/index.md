@@ -10,6 +10,8 @@ menu:
     identifier: "slashing-080aabd0b6cff052ccbf1c996f4b3b78"
 weight: 10
 toc: true
+aliases:
+    - "/storage-provider/slashing/"
 ---
 
 In Filecoin, storage providers are succeptible to two different kinds of slashing: _storage fault slashing_, and _consensus fault slashing_.

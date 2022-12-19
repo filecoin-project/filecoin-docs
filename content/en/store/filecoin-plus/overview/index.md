@@ -10,6 +10,8 @@ menu:
     identifier: "overview-031093cdb49d251de4cc0378c710d165"
 weight: 10
 toc: true
+aliases:
+    - "/store/filecoin-plus/"
 ---
 
 ## Concepts
