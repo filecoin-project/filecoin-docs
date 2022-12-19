@@ -26,9 +26,9 @@
 			{{ end }}
 			<h1>{{ .Title }}</h1>
             {{ if isset .Params "lead" -}}
-                <p class="lead">{{ .Params.lead | safeHTML }}</p>
+                <p class="lead">{{ .Params.lead | markdownify }}</p>
             {{ else -}}
-                <p class="lead">{{ .Params.description | safeHTML }}</p>
+                <p class="lead">{{ .Params.description }}</p>
             {{ end -}}
 			{{ if ne .Params.toc false -}}
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
