@@ -20,7 +20,7 @@ If you are excited about the potential of the Filecoin protocol and decentralize
 
 ## Why develop on Filecoin
 
-Filecoin combines the benefits of storage on [IPFS](https://ipfs.tech/) (a peer-to-peer content-addressing system) with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
+Filecoin combines the benefits of storage on {{< tooltip "IPFS" >}} with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
 
 Developers choose Filecoin because it:
 
