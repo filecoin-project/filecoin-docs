@@ -36,7 +36,7 @@ The Wallaby test is intended to be used by:
 - Early builders from the community to test EVM smart contract deployment on FVM.
 - Early builders deploying native FVM actors.
 
-The Wallaby testnet is operated and maintained by [Factor8 Solutions](https://github.com/Factor8Solutions). You can find Wallaby-specific documentation written by Factor8 at [kb.factor8.io/en/docs/fil/wallabynet](https://kb.factor8.io/en/docs/fil/wallabynet).
+The Wallaby testnet is operated and maintained by [Factor8 Solutions](https://github.com/Factor8Solutions). You can find Wallaby-specific documentation written by Factor8 at [kb.factor8.dev/docs/filecoin/testnets/wallaby](https://kb.factor8.dev/docs/filecoin/testnets/wallaby).
 
 ## Block explorers
 

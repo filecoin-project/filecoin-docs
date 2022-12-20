@@ -77,7 +77,7 @@ Not necessarily. You can use one of the two public Wallaby nodes:
 
 ### How do I install a node on the Wallaby testnet?
 
-Factor8, the team that runs the Wallaby testnet, has a [guide on how to spin up a Lotus node on the Wallaby testnet](https://kb.factor8.io/en/docs/fil/wallabynet).
+Factor8, the team that runs the Wallaby testnet, has a [guide on how to spin up a Lotus node on the Wallaby testnet](https://kb.factor8.dev/docs/filecoin/testnets/wallaby).
 
 ### What is the difference between the FVM and Bacalhau
 
