@@ -42,3 +42,98 @@ Access and manipulation of data stored in the network will happen via L2 solutio
 ## How do other EVMs compare to FEVM
 
 Unlike other EVM chains, FEVM specifically allows you to write contracts that orchestrate programmable storage. This means contracts that can coordinate storage providers, data health, perpetual storage mechanisms, and more. Other EVM chains do not have direct access to Filecoin blockchain state data.
+
+### What is an actor
+
+An actor is code that the Filecoin virtual machine can run. Actors are also referred to as smart contracts.
+
+### What are built-in actors
+
+[Built-in actors](https://github.com/filecoin-project/builtin-actors) are code that come precompilied into the Filecoin clients and can be run using the FVM. They are similar to [Ethereum precompiles](https://www.evm.codes/precompiled?fork=merge).
+
+### Why use the FEVM vs any other EVM compatible chain
+
+Having storage contracts as a native primitive open to smart contract developers. Reduce costs of writing to storage from an EVM smart contract to a separate storage service.
+
+### Why FEVM vs native FVM
+
+FEVM allows Solidity devs to easily write/port actors to the FVM using the tools that have already been introduced in the Ethereum ecosystem.
+
+### What applications make FVM/FEVM unique
+
+Applications that natively make use of storage contracts. Perpetual storage contracts, Data Daos, etc.
+
+### What is perpetual storage
+
+Perpetual storage is a unique actor design paradigm only available on the FVM that allows users the ability to renew Filecoin storage deals and to keep them active indefinitely. This could be achieved by using a Decentralized Autonomous Organization (DAO) structure for example.
+
+### What are DataDAOs
+
+DataDAOs are a unique design paradigm FVM developers could create which use Filecoin storage to store all their data instead of a service like AWS (which is currently used).
+
+### Is FVM part of Filecoin clients like Lotus
+
+Yes.
+
+### Do I have to install Lotus to work with FVM
+
+Not necessarily. You can use one of the two public Wallaby nodes:
+
+- [wallaby.node.glif.io](https://wallaby.node.glif.io/)
+- [api.zondax.ch/fil/node/wallaby/rpc/v0](https://api.zondax.ch/fil/node/wallaby/rpc/v0)
+
+### How do I install a node on the Wallaby testnet?
+
+Factor8, the team that runs the Wallaby testnet, has a [guide on how to spin up a Lotus node on the Wallaby testnet](https://kb.factor8.dev/docs/filecoin/testnets/wallaby).
+
+### What is the difference between the FVM and Bacalhau
+
+They are synergistic. Compute over data solutions such as [Bacalhau](https://github.com/filecoin-project/bacalhau) can use the FVM.
+
+### Why does the FVM use WASM
+
+Many [different languages](https://github.com/appcypher/awesome-wasm-langs) already compile to WASM so developers can pick their favorite.
+
+### Is the FEVM a bridge to the EVM
+
+No, the FEVM is its own instance of the EVM built on top of Filecoin. You will need to redeploy smart contracts that exist in the EVM to the FEVM. Bridges can be built to top of the FEVM which connect it to other blockchains however.
+
+### How is the Filecoin network accessed through Solidity
+
+When an EVM is deployed to FEVM, it is compiled with WASM and an actor instance is created in FEVM that runs the EVM bytecode. The user-defined FEVM actor is then able to interact with the Filecoin network via built-in actors like the Market and Miner APIs.
+
+### Can I deploy EVM bytecode to the native FVM
+
+No, it must be deployed to the FEVM.
+
+## Developers
+
+Here are some FAQs raised by developers.
+
+### What frontend framework should I use?
+
+React, Ether.js, web.js, ReactJs work well.
+
+### How do we convert from msg.sender in a FEVM contract, which returns an EVM `0x` address, to the underlying Filecoin `f` address?
+
+You can use the npm [@glif/filecoin-address](https://www.npmjs.com/package/@glif/filecoin-address) package or the [Zondax mock api](https://github.com/Zondax/fevm-solidity-mock-api) has the constructor that calls `mock_generate_deals();`.
+
+### How do I bound the replicator factor from solidity fevm?
+
+Store a number limit on running `DealClient` and `publish_deal` and have it authorized to replicate.
+
+## Storage
+
+These are some questions frequently raised in regards to storage.
+
+### How can I use FVM to store data to Filecoin
+
+The intent of FEVM/FVM is to compute over state data (the metadata of your stored data). Storage Providers are the ones that are able to store your data and upload the deal to the Filecoin network. Data retrieval happens via Retrieval Providers, accepting the client’s ask to retrieve and working with Storage Providers to decrypt the data to deliver to the client. FEVM/FVM is able to build logic around these 2 processes and automate, add verification and proofs, time-lock retrievals etc.
+
+### How do I close a storage deal on Filecoin and stop Storage Providers (SP) from storing my data on-chain
+
+It’s not impossible but SPs are incentivized not to close the storage deal as they are slashed for not providing [Proof of Spacetime (PoST)](https://spec.filecoin.io/algorithms/pos/). Someone has to pay for the broken promise a miner makes to the chain and you need a custom market actor for it most likely to make the deal. You need to make deals for a certain amount of time - right now the boundaries are 6-18 months. You cannot ask a storage provider to take down your data without contacting them off-chain.
+
+### How do I check SP’s balance with their FEVM address
+
+You can query balance of any address using [Zondax's API](https://docs.zondax.ch/openapi#tag--Account).
