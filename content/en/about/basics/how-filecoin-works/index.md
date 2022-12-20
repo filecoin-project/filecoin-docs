@@ -25,9 +25,9 @@ Running a Filecoin node is a low-level task that usually implies keeping a progr
 
 ## Storage providers
 
-Storage providers (SPs) deliver services to the network by executing different types of [deals](#deals). SPs also append new blocks to the chain every 30 seconds, for which they collect FIL rewards. Additional details about types of providers, rewards, and deals execution from the storage provider perspective can be found in the [How providing storage works]({{< relref "how-providing-works" >}}) section.
+Storage providers (SPs) deliver services to the network by executing different types of [deals](#deals). SPs also append new blocks to the chain every 30 seconds, for which they collect FIL rewards. Additional details about types of providers, rewards, and deals execution from the storage provider perspective can be found in the [How providing storage works]({{< relref "how-providing-storage-works" >}}) section.
 
-Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements]({{< relref "../storage-provider/hardware-requirements.md" >}}) The [`lotus-miner` application](https://lotus.filecoin.io) is currently the most advanced implementation of a Filecoin storage provider.
+Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements]({{< relref "hardware-requirements" >}}) The [`lotus-miner` application](https://lotus.filecoin.io) is currently the most advanced implementation of a Filecoin storage provider.
 
 ## Deals
 
@@ -35,7 +35,7 @@ There are two main types of deals in Filecoin: _storage deals_ and _retrieval de
 
 ### Storage deals
 
-Storage deals are agreements between clients and _storage providers_ to store data on the network. Once a user initiates a deal, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) that it is still storing the data so that it can collect [rewards]({{< relref "rewards.md" >}}). If the storage provider cannot prove that they are still storing the data correctly, they are [slashed]({{< relref "../storage-provider/slashing.md" >}}) and lose FIL.
+Storage deals are agreements between clients and _storage providers_ to store data on the network. Once a user initiates a deal, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) that it is still storing the data so that it can collect [rewards]({{< relref "rewards.md" >}}). If the storage provider cannot prove that they are still storing the data correctly, they are [slashed]({{< relref "slashing" >}}) and lose FIL.
 
 ### Retrieval deals
 
@@ -62,7 +62,7 @@ Executing messages consumes both computation and storage resources on the networ
 
 Historically in other blockchains, miners specify a _gas fee_ in a unit of native currency and then pay the block-producing miners a priority fee based on how much gas is consumed by the message. Filecoin works similarly, except an amount of the fees is burned (sent to an irrecoverable address) to compensate for the network expenditure of resources since all nodes need to validate the messages. The idea is based on Ethereum's [EIP1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
 
-A dynamic `BaseFee` value determines the amount of fees burned in the Filecoin network. The `BaseFee` is automatically adjusted according to the network congestion parameters, also known as _block sizes_. Users can obtain the current value from one of the [block explorers]({{< relref "get-started/explore-the-network" >}}) or by inspecting the current head of the chain.
+A dynamic `BaseFee` value determines the amount of fees burned in the Filecoin network. The `BaseFee` is automatically adjusted according to the network congestion parameters, also known as _block sizes_. Users can obtain the current value from one of the [block explorers]({{< relref "explore-the-network" >}}) or by inspecting the current head of the chain.
 
 Additionally, several gas-related parameters are attached to each message and determine the reward storage providers get. Here's an overview of the terms and concepts:
 
