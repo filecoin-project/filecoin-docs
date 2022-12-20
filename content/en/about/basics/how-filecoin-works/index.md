@@ -1,19 +1,13 @@
 ---
-title: "How Filecoin works"
-description: "Filecoin is a complex set of processes. This page gives a basic introduction to how the Filecoin network operates. While the Filecoin network is similar to other cryptocurrency networks, there are some differences that developers looking to build on the network should be aware of."
-lead: "Filecoin is a complex set of processes. This page gives a basic introduction to how the Filecoin network operates. While the Filecoin network is similar to other cryptocurrency networks, there are some differences that developers looking to build on the network should be aware of."
-draft: false
-images: []
-type: docs
+title: "How Filecoin Works"
+description: "An overview of how the Filecoin network operates - binding clients and storage providers through storage and retrieval deals."
 menu:
-  about:
-    parent: "lorem"
-    identifier: "how-Filecoin-works-07075c50f709d784995b27c2ec421991"
+    about:
+        parent: "about-filecoin-basics"
 weight: 20
-toc: true
-aliases:
-    - "/about-filecoin/how-filecoin-works"
 ---
+
+This page gives a basic introduction to how the Filecoin network operates. While the Filecoin network is similar to other cryptocurrency networks, there are some differences that developers looking to build on the network should be aware of.
 
 ## The Network
 
@@ -41,7 +35,7 @@ There are two main types of deals in Filecoin: _storage deals_ and _retrieval de
 
 ### Storage deals
 
-Storage deals are agreements between clients and _storage providers_ to store data on the network. Once a user initiates a deal, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) that it is still storing the data so that it can collect [rewards]({{< relref "storage-provider-rewards" >}}). If the storage provider cannot prove that they are still storing the data correctly, they are [slashed]({{< relref "slashing" >}}) and lose FIL.
+Storage deals are agreements between clients and _storage providers_ to store data on the network. Once a user initiates a deal, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) that it is still storing the data so that it can collect [rewards]({{< relref "rewards.md" >}}). If the storage provider cannot prove that they are still storing the data correctly, they are [slashed]({{< relref "slashing" >}}) and lose FIL.
 
 ### Retrieval deals
 
@@ -100,7 +94,7 @@ An additional amount of gas to burn that grows larger when the difference betwee
 
 The total cost of a message for a sender will be:
 
-```
+```plaintext
 (GasUsage × BaseFee FIL) + (GasLimit × GasPremium FIL) + (OverEstimationBurn × BaseFee FIL) = Total Cost
 ```
 
@@ -127,7 +121,7 @@ In Filecoin, addresses are used to identify actors. There are four address types
 
 ### ID addresses
 
-All actors have a short integer assigned to them by `InitActor`, a unique actor that can create _new_ actors. This integer that gets assigned is the ID of that actor. An _ID address_ is an actor's ID prefixed with the network identifier and the address type. 
+All actors have a short integer assigned to them by `InitActor`, a unique actor that can create _new_ actors. This integer that gets assigned is the ID of that actor. An _ID address_ is an actor's ID prefixed with the network identifier and the address type.
 
 Here's the structure for the mainnet burn account ID address `f099`:
 
@@ -185,8 +179,8 @@ BLS public key addresses are often referred to by their shorthand `f3`.
 Filecoin is built on top of several mature projects:
 
 - [Libp2p](https://libp2p.io/) provides networking, addressing, and message distribution.
-- [IPLD](https://ipld.io/) manages data formats, encoding, and content-addressed data structures. 
-- [IPFS](https://ipfs.tech/) enables data transfers. 
+- [IPLD](https://ipld.io/) manages data formats, encoding, and content-addressed data structures.
+- [IPFS](https://ipfs.tech/) enables data transfers.
 - [Multiformats](https://multiformats.io/) provides future-proof data types.
 
 ## Additional resources
