@@ -73,9 +73,9 @@ footer_link = "https://protocol.ai"
 copyRight = ""
 
 # Alert
-alert = false
+alert = true
 alertDismissable = true
-alertText = ""
+alertText = "You can view the legacy version of this docs site at <a href='https://legacy-docs.filecoin.io'>legacy-docs.filecoin.io</a>."
 
 # Edit Page
 repoHost = "GitHub"
