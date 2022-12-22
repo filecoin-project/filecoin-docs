@@ -1,5 +1,5 @@
 ---
-title: "Migrate a lotus markets service process to boost"
+title: "Migrate a Lotus markets service process to Boost"
 description: ""
 lead: ""
 date: 2022-01-25T14:41:39+01:00

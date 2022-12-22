@@ -1,5 +1,5 @@
 ---
-title: "JSON rpc API"
+title: "JSON-RPC API"
 description: ""
 lead: ""
 date: 2022-01-25T14:41:39+01:00
