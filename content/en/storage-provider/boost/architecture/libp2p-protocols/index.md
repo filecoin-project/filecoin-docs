@@ -1,9 +1,7 @@
 ---
 title: "Libp2p protocols"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+description: "Boost supports the same libp2p protocols as legacy markets, and adds new versions of the protocols used to propose a storage deal and to check the deal's status."
+lead: "Boost supports the same libp2p protocols as legacy markets, and adds new versions of the protocols used to propose a storage deal and to check the deal's status."
 draft: false
 images: []
 type: docs
@@ -15,32 +13,64 @@ weight: 40
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+## Propose Storage Deal Protocol
 
-## Selvage
+The client makes a deal proposal over `v1.2.0` of the Propose Storage Deal Protocol: `/fil/storage/mk/1.2.0`
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+It is a request / response protocol, where the request and response are CBOR-marshalled.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+### Request
 
-### Heirloom
+| Field              | Type               | Description                                                                                        |
+| ------------------ | ------------------ | -------------------------------------------------------------------------------------------------- |
+| DealUUID           | uuid               | A uuid for the deal specified by the client                                                        |
+| IsOffline          | boolean            | Indicates whether the deal is online or offline                                                    |
+| ClientDealProposal | ClientDealProposal | Same as `<v1 proposal>.DealProposal`                                                               |
+| DealDataRoot       | cid                | The root cid of the CAR file. Same as `<v1 proposal>.Piece.Root`                                   |
+| Transfer.Type      | string             | eg "http"                                                                                          |
+| Transfer.ClientID  | string             | Any id the client wants (useful for matching logs between client and server)                       |
+| Transfer.Params    | byte array         | Interpreted according to `Type`. eg for "http" `Transfer.Params` contains the http headers as JSON |
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+| Transfer.Size      | integer            | The size of the data that is sent across the network                                               |
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+### Response
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
 
-## Bushwick cold-pressed
+| Field    | Type    | Description                                        |
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+| -------- | ------- | -------------------------------------------------- |
+| Accepted | boolean | Indicates whether the deal proposal was accepted   |
+| Message  | string  | A message about why the deal proposal was rejected |
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+## Storage Deal Status Protocol
 
-## Locavore swag
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+The client requests the status of a deal over `v1.2.0` of the Storage Deal Status Protocol: `/fil/storage/status/1.2.0`
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+It is a request / response protocol, where the request and response are CBOR-marshalled.
+
+### Request
+
+
+| Field     | Type                                                                                                                                      | Description                                        |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+
+| DealUUID  | uuid                                                                                                                                      | The uuid of the deal                               |
+| Signature | [Signature](https://github.com/filecoin-project/go-state-types/blob/057cdfb837f7a0309c1607c7c4640f315e51d7af/crypto/signature.go#L36-L39) | A signature over the uuid with the client's wallet |
+
+### Response
+
+| Field               | Type         | Description                                                                                                                                                                                   |
+| ------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DealUUID            | uuid         | The uuid of the deal                                                                                                                                                                          |
+| Error               | string       | Non-empty if there's an error getting the deal status                                                                                                                                         |
+| IsOffline           | boolean      | Indicates whether the deal is online or offline                                                                                                                                               |
+| TransferSize        | integer      | The total size of the transfer in bytes                                                                                                                                                       |
+| NBytesReceived      | integer      | The number of bytes that have been downloaded                                                                                                                                                 |
+| DealStatus.Error    | string       | Non-empty if the deal has failed                                                                                                                                                              |
+| DealStatus.Status   | string       | The [checkpoint](https://github.com/filecoin-project/boost/blob/4fb17ba117784479e09db4012a3abf9862b8afd9/storagemarket/types/dealcheckpoints/checkpoints.go#L7-L15) that the deal has reached |
+| DealStatus.Proposal | DealProposal |                                                                                                                                                                                               |
+| SignedProposalCid   | cid          | cid of the client deal proposal + signature                                                                                                                                                   |
+| PublishCid          | cid          | The cid of the publish message, if the deal has been published                                                                                                                                |
+| ChainDealID         | integer      | The ID of the deal on chain, if it's been published                                                                                                                                           |
