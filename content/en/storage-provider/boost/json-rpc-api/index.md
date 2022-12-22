@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "json-rpc-api-679927b19f1a1b000fd383562260e232"
-weight: 100
+weight: 80
 toc: true
 ---
 

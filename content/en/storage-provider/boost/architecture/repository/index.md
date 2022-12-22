@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "repository-5976504fa6f9f2e838534e14c59cf8b8"
-weight: 100
+weight: 10
 toc: true
 ---
 

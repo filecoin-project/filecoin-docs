@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "http-transfer-limit-7d3068b091ac4b1dc49b7ef449b7d6d0"
-weight: 100
+weight: 20
 toc: true
 ---
 

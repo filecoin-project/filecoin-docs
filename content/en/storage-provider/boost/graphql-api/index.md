@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "graphql-api-664ecbfa51360e1e7e1646efe94f57e8"
-weight: 100
+weight: 90
 toc: true
 ---
 

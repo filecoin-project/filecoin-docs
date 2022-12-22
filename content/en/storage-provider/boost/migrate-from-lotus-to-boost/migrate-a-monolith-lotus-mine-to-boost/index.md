@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "migrate-a-monolith-lotus-mine-to-boost-662de0099a55bb54578d58b65623870f"
-weight: 100
+weight: 10
 toc: true
 ---
 

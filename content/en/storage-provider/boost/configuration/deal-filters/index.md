@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "deal-filters-561681d91a3fee21244988f9cbd8e156"
-weight: 100
+weight: 30
 toc: true
 ---
 

@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "how-to-store-files-with-boost-on-filecoin-d8d2803652b1ec8b622b4c9b1c4fba75"
-weight: 100
+weight: 10
 toc: true
 ---
 

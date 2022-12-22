@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "http-retrieval-15a197c89ab912c0e65453fcbb9c6abd"
-weight: 100
+weight: 10
 toc: true
 ---
 

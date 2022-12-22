@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "dag-store-71f2215a790e65e7ca91cd7362b26bb4"
-weight: 100
+weight: 30
 toc: true
 ---
 

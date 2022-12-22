@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "ui-settings-ffd161d7676fc41b78a6bc391acfd62d"
-weight: 100
+weight: 10
 toc: true
 ---
 

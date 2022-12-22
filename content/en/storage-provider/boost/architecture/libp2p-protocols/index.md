@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "libp2p-protocols-49573e61b1174eecb97353d8ab432d6e"
-weight: 100
+weight: 40
 toc: true
 ---
 

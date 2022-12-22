@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "bitswap-retrieval-533cc0cf115df09ca5f06d613c2c5c23"
-weight: 100
+weight: 20
 toc: true
 ---
 

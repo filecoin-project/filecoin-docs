@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "migrate-a-lotus-markets-service-process-to-boost-c76b99e7a40864db3595d2274b7529f4"
-weight: 100
+weight: 20
 toc: true
 ---
 

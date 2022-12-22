@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "as-a-client-4c0ca708371872d466d37fad19e7f4ae"
-weight: 100
+weight: 20
 toc: true
 ---
 

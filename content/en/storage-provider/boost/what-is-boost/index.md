@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "what-is-boost-e8a00f8fc7c3558d865717fe1fa7ee47"
-weight: 100
+weight: 10
 toc: true
 ---
 

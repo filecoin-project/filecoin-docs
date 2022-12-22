@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "database-e2eb1150f23d398c83038ae66daf26dc"
-weight: 100
+weight: 20
 toc: true
 ---
 
