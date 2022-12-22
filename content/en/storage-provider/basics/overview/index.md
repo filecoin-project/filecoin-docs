@@ -26,5 +26,5 @@ Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
 
 The documentation you will be reading assumes you are familiar with the documentation in the [Get started]({{< relref "get-started/overview/get-started" >}}) section, have a general grasp of how Filecoin works and are familiar with Filecoin node software and tooling.
 
-Running a successful storage provisioning operation on Filecoin has high [hardware requirements]({{< relref "hardware-requirements" >}}) and, apart from a strong familiarity with Filecoin, requires experience in systems deployment and administration.
+Running a successful storage provisioning operation on Filecoin has high [hardware requirements]({{< relref "storage-provider/hardware/hardware-requirements" >}}) and, apart from a strong familiarity with Filecoin, requires experience in systems deployment and administration.
 
