@@ -1,11 +1,11 @@
 ---
-title: "Troubleshooting"
+title: "Archived - Troubleshooting"
 description: "Running into problems with Filecoin storage and retrieval? Check out these troubleshooting steps."
 draft: false
 images: []
 type: docs
 menu:
-  get-started:
+  archive:
     parent: "lorem"
     identifier: "troubleshooting-165e1ff5f05090394f2ee9d6c46e23a2"
 weight: 50

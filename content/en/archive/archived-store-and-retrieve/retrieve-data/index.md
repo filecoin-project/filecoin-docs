@@ -1,12 +1,12 @@
 ---
-title: "Retrieve data"
+title: "Archived - Retrieve data"
 description: "Learn how to get data out of the Filecoin network using Lotus. The final piece of this tutorial is downloading data from the Filecoin network. This section covers creating a retrieval deal with a storage provider and downloading the data through your local Lotus lite-node."
 lead: ""
 draft: false
 images: []
 type: docs
 menu:
-  get-started:
+  archive:
     parent: "lorem"
     identifier: "retrieve-data-9ec6b4ab1de430a94c3b459f0b89b7a0"
 weight: 40

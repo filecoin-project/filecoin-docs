@@ -1,11 +1,11 @@
 ---
-title: "Store data"
+title: "Archived - Store data"
 description: "Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus storage provider registry, creating a storage deal, and then waiting for the deal to complete!"
 draft: false
 images: []
 type: docs
 menu:
-  get-started:
+  archive:
     parent: "lorem"
     identifier: "store-data-b72e5e0a3ab33a316d2898f85dc7e743"
 weight: 30
