@@ -1,27 +1,22 @@
 ---
 title: "Network performance"
-description: "It is highly non-trivial to provide highly reliable benchmarks for Filecoin network performance. However, as you begin interacting with Filecoin, you can use these heuristics to understand general Filecoin network performance and how it fits your use case."
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+description: "Providing complete accurate benchmarks for Filecoin network performance is difficult. However, as you begin interacting with Filecoin, you can use these heuristics to understand general Filecoin network performance and how it fits your use case."
+lead: "Providing complete accurate benchmarks for Filecoin network performance is difficult. However, as you begin interacting with Filecoin, you can use these heuristics to understand general Filecoin network performance and how it fits your use case."
 draft: false
 images: []
 type: docs
 menu:
-  networks:
+  developers:
     parent: "lorem"
-    identifier: "network-performance-c15f98a3350c2b1e3f64562d3e6d22d7"
-weight: 20
+    identifier: "network-performance-5be51d3d633c9e52761a6c28f2234fd0"
+weight: 100
 toc: true
 aliases:
-    - "/networks/network-performance"
+    - "/networks/overview/network-performance/"
+    - "/networks/network-performance/"
 ---
 
-The Filecoin Network is a decentralized storage market and network that provides data persistence via a decentralized protocol and publicly verifiable storage proofs on a blockchain. Current Filecoin network performance is primarily determined by security parameters and Filecoin's [proof constructions](https://spec.filecoin.io/#algorithms__pos).
-
-It is highly non-trivial to provide highly reliable benchmarks for Filecoin network performance. However, as you begin interacting with Filecoin, you can use these heuristics to understand general Filecoin network performance and how it fits your use case.
-
-### Financial transfers
+## Financial transfers
 
 A message that requires [transferring FIL](https://lotus.filecoin.io/docs/set-up/manage-fil/) is often extremely fast, and will take on average ~1 blocktime (or around 30 seconds) to be reflected on-chain. We consider 120 blocks (1 hour) a conservative number of confirmations for high-value transfers.
 
@@ -43,7 +38,7 @@ For most storage clients, the most important metric is the time it takes from de
 
 There are two methods by which one can directly [retrieve data](https://lotus.filecoin.io/docs/developers/retrieve-data/) from the Filecoin network:
 
-- **Fast retrieval**: By default, some Filecoin clients, like lotus, enable storage storage providers to store an unsealed copy of the stored data in addition to a sealed copy. The sealed copy is necessary for the ongoing storage proofs that a storage provider must submit, while the unsealed copy can be used for quicker retrievals of the data from the storage storage provider. While this is a valuable feature, there is no guarantee that all storage providers are storing extra unsealed copies of the stored data, as this is not a verifiable part of the protocol. In lotus, this feature is called _fast-retrieval_.
+- **Fast retrieval**: Some Filecoin client implementations, like [Lotus](https://lotus.filecoin.io), enable storage storage providers to store an unsealed copy of the stored data in addition to a sealed copy. The sealed copy is necessary for the ongoing storage proofs that a storage provider must submit, while the unsealed copy can be used for quicker retrievals of the data from the storage storage provider. While this is a valuable feature, there is no guarantee that all storage providers are storing extra unsealed copies of the stored data, as this is not a verifiable part of the protocol. In lotus, this feature is called _fast-retrieval_.
 - **Retrieval after unsealing**: Because of the Filecoin protocol’s design, storage storage providers are essentially cryptographically guaranteed to store client data in its sealed format. Therefore, if the storage storage provider doesn’t have an unsealed copy of the data stored, they will have to unseal the sealed data first (i.e., decoding the encoded data) and then serve it back up to the requester (i.e., the retrieval client).
 
 In both methods, the data retrieval process after a retrieval deal is accepted includes:
