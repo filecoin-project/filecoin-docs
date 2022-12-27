@@ -59,11 +59,6 @@
       weight = 50
       parent = "main-developers"
 
-[[main]]
-  name = "Reference"
-  url = "/reference/reference/overview/"
-  weight = 90
-
 
 
 [[social]]
