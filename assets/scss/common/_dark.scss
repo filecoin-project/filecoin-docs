@@ -580,3 +580,7 @@ $navbar-dark-active-color:          $link-color-dark;
   background: $body-overlay-dark;
   border: 1px solid $body-overlay-dark;
 }
+
+[data-dark-mode] #announcement a {
+    color: $primary;
+}
