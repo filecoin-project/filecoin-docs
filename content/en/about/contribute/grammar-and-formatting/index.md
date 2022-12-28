@@ -47,38 +47,28 @@ In a list of three or more items, follow each item except the last with a comma 
 As a proper noun, the name "Filecoin" (capitalized) should be used only to refer to the overarching project, to the protocol, or to the project's canonical network:
 
 > Filecoin [the project] has attracted contributors from around the globe!
-
 > Filecoin [the protocol] rewards contributions of data storage instead of computation!
-
 > Filecoin [the network] is currently storing 50 PiB of data!
 
 The name can also be used as an adjective:
 
 > The Filecoin ecosystem is thriving!
-
 > I love contributing to Filecoin documentation!
 
-When referring to the token used as Filecoin's currency, the name `FIL`, is preferred; it is alternatively denoted by the Unicode symbol for an integral with a double stroke (⨎). These symbols can be used as suffixes or prefixes, as seen fit:
+When referring to the token used as Filecoin's currency, the name `FIL`, is preferred. It is alternatively denoted by the Unicode symbol for an integral with a double stroke ⨎:
 
 - Unit prefix: **100 FIL**.
-- Unit suffix: **FIL 100**.
 - Symbol prefix: **⨎100**.
-- Symbol suffix: **100 ⨎**.
 
 The smallest and most common denomination of FIL is the `attoFIL` (10^-18 FIL).
 
-> The collateral for this storage deal is five FIL.
-
+> The collateral for this storage deal is 5 FIL.
 > I generated ⨎100 as a storage provider last month!
-
-> My wallet has thirty filecoin.
 
 Examples of discouraged usage:
 
 > Filecoin rewards storage providers with Filecoin.
-
 > There are many ways to participate in the filecoin community.
-
 > My wallet has thirty filecoins.
 
 Consistency in the usage of these terms helps keep these various concepts distinct.
@@ -316,7 +306,7 @@ Custom containers can be defined by their types, titles, and contents.
 
 ##### Input
 
-<pre class="prettyprint lang-html">
+```markdown
 &#123;&#123;&#60; alert  &#62; &#125;&#125;
 This is a tip
 &#123;&#123;&#60; /alert &#62; &#125;&#125;
@@ -328,7 +318,7 @@ This is a callout
 &#123;&#123;&#60; alert  &#62;&#125;&#125;
 This is a dangerous warning
 &#123;&#123;&#60; /alert &#62; &#125;&#125;
-</pre>
+```
 
 ##### Output
 
@@ -368,7 +358,7 @@ Store images in the same folder as the content that you're referencing the image
 
 The directory structure of this article looks like this:
 
-```
+```plaintext
 concepts/
 ├── content-addressed-data.md
 ├── proof-of-spacetime
@@ -383,7 +373,7 @@ There are no images within `proof-of-replication.md` or `content-addressed-data.
 
 All file names are lower-case with dashes `-` between words, including image files:
 
-```
+```plaintext
 concepts/
 ├── content-addressed-data.md
 ├── images
