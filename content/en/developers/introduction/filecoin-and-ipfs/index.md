@@ -1,7 +1,7 @@
 ---
 title: "Filecoin and IPFS"
-description: "Learn more about the relationship and different use-cases between IPFS and Filecoin."
-lead: "Learn more about the relationship and different use-cases between IPFS and Filecoin."
+description: "Learn about these complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks."
+lead: "Learn about these complementary protocols for storing and sharing data in the distributed web. Both systems are free, open-source, and share many building blocks."
 draft: false
 images: []
 type: docs
