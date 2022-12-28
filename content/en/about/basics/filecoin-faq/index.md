@@ -1,7 +1,7 @@
 ---
 title: "Filecoin FAQ"
-description: "Filecoin frequently asked questions."
-lead: ""
+description: "Answers to your frequently asked questions on everything from Filecoin's crypto-economics and storage expenses to hardware and networking."
+lead: "Answers to your frequently asked questions on everything from Filecoin's crypto-economics and storage expenses to hardware and networking."
 draft: false
 images: []
 type: docs
