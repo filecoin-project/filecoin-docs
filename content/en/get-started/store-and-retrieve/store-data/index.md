@@ -1,6 +1,7 @@
 ---
 title: "Store data"
 description: "Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus storage provider registry, creating a storage deal, and then waiting for the deal to complete!"
+lead: "Start storing your data on the Filecoin network. This section covers packaging your data, importing it into your local Lotus lite-node, finding a storage provider through the Filecoin Plus storage provider registry, creating a storage deal, and then waiting for the deal to complete!"
 draft: false
 images: []
 type: docs

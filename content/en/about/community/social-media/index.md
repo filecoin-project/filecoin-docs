@@ -1,7 +1,7 @@
 ---
 title: "Social media"
 description: "Connect with the Filecoin community in discussion forums or on IRC"
-lead: ""
+lead: "Filecoin is everywhere on the internet — and that includes social media. Find your favorite flavor here."
 draft: false
 images: []
 type: docs
@@ -17,8 +17,6 @@ aliases:
     - "/community/social-media/social-media/"
     - "/about-filecoin/social-media/"
 ---
-
-Filecoin is everywhere on the internet — and that includes social media. Find your favorite flavor here.
 
 ## YouTube
 

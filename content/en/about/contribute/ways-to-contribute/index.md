@@ -1,9 +1,7 @@
 ---
 title: "Ways to contribute"
 description: "How to contribute to Filecoin."
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+lead: "So you want to contribute to Filecoin and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open a issue."
 draft: false
 images: []
 type: docs
@@ -17,8 +15,6 @@ aliases:
     - "/about-filecoin/ways-to-contribute"
     - "/community/contribute/ways-to-contribute/"
 ---
-
-So you want to contribute to Filecoin and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open a issue.
 
 ### Code
 

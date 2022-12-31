@@ -1,9 +1,7 @@
 ---
 title: "Related projects"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+description: "Filecoin is a highly modular project that is itself made out of many different protocols and tools. Many of these exist as their own projects, supported by Protocol Labs."
+lead: "Filecoin is a highly modular project that is itself made out of many different protocols and tools. Many of these exist as their own projects, supported by [Protocol Labs](https://protocol.ai). Learn more about them below."
 draft: false
 images: []
 type: docs
@@ -17,8 +15,6 @@ aliases:
     - "/about-filecoin/related-projects"
     - "/project/related-projects/"
 ---
-
-Filecoin is a highly modular project that is itself made out of many different protocols and tools. Many of these exist as their own projects, supported by [Protocol Labs](https://protocol.ai). Learn more about them below.
 
 ## libp2p
 
