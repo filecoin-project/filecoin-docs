@@ -10,6 +10,8 @@ menu:
     identifier: "how-filecoin-works-new-ec6e1097b35d3e70370af202a084426d"
 weight: 20
 toc: true
+aliases:
+    - "/about-filecoin/how-filecoin-works"
 ---
 
 This page gives a basic introduction to how the Filecoin network operates. While the Filecoin network is similar to other cryptocurrency networks, there are some differences that developers looking to build on the network should be aware of.
