@@ -1,8 +1,7 @@
 ---
 title: "Filecoin compared to"
 description: "While Filecoin shares some similarities to other file storage solutions, the protocol has significant differences that one should consider."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+lead: "While Filecoin shares some similarities to other file storage solutions, the protocol has significant differences that one should consider."
 draft: false
 images: []
 type: docs

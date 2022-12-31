@@ -1,9 +1,7 @@
 ---
 title: "Grammar and formatting"
 description: "Learn the syntax and formatting rules for writing documentation for the Filecoin project."
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+lead: "Learn the syntax and formatting rules for writing documentation for the Filecoin project."
 draft: false
 images: []
 type: docs

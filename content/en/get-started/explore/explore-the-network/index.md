@@ -1,6 +1,7 @@
 ---
 title: "Explore the network"
 description: "There are several ways to explore and get insights from the Filecoin network."
+lead: "There are several ways to explore and get insights from the Filecoin network."
 draft: false
 images: []
 type: docs

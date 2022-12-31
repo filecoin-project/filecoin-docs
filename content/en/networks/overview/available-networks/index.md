@@ -1,7 +1,7 @@
 ---
 title: "Available networks"
 description: "The Filecoin network has several different networks for testing, staging, and production purposes."
-lead: ""
+lead: "The Filecoin network has several different networks for testing, staging, and production purposes. This page contains information on the [networks available](#available-networks) for Filecoin."
 draft: false
 images: []
 type: docs
@@ -12,8 +12,6 @@ menu:
 weight: 10
 toc: true
 ---
-
-This page contains information on the [networks available](#available-networks) for Filecoin.
 
 {{< alert  >}}**Looking for Glif nodes?**
 The [Glif nodes section](https://lotus.filecoin.io/docs/developers/hosted-lotus/), along with all other Lotus-specific documentation, has moved to [lotus.filecoin.io](https://lotus.filecoin.io/docs/developers/hosted-lotus/)
