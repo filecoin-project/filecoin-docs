@@ -47,6 +47,7 @@ body.docs {
 @include media-breakpoint-up(md) {
   body {
     font-size: $font-size-md;
+    -webkit-font-smoothing: antialiased;
 
     /*
     padding-top: 4rem !important;
