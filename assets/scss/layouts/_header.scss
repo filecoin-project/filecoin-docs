@@ -60,6 +60,7 @@
 
 .nav-item {
   margin-left: 0;
+  font-size: 1rem;
 }
 
 @include media-breakpoint-up(md) {
@@ -142,7 +143,7 @@ button#doks-versions {
   border-top: 4px solid;
   border-image-source: linear-gradient(90deg, #39C1CB, #006FEC);
   border-image-slice: 1;
-}
+}f
 
 .offcanvas .header-bar {
   margin-bottom: -4px;
