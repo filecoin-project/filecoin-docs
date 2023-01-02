@@ -49,8 +49,8 @@
       parent = "main-developers"
 
     [[main]]
-      name = "JSON-RPC"
-      url = "/developers/reference/json-rpc/introduction"
+      name = "Reference"
+      url = "/developers/reference/overview/"
       weight = 50
       parent = "main-developers"
 

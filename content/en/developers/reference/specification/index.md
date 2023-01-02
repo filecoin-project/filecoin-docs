@@ -9,7 +9,7 @@ menu:
   developers:
     parent: "lorem"
     identifier: "specification-cbfa22575521c26abdaff4cb468ab0bc"
-weight: 100
+weight: 20
 toc: true
 ---
 

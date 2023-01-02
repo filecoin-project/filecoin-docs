@@ -1,7 +1,7 @@
 ---
 title: "Overview"
 description: "Helpful reference materials for the Filecoin specification, implementations, and ecosystem."
-lead: ""
+lead: "Helpful reference materials for the Filecoin specification, implementations, and ecosystem."
 draft: false
 images: []
 type: docs
@@ -9,13 +9,11 @@ menu:
   developers:
     parent: "lorem"
     identifier: "overview-3bc51ccce30d2dd0439751961014d708"
-weight: 100
+weight: 10
 toc: true
 aliases:
     - "/reference/reference/overview/"
 ---
-
-This section contains links and reference materials for Filecoin.
 
 ## About Filecoin
 
