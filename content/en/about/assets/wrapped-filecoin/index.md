@@ -2,8 +2,6 @@
 title: "Wrapped Filecoin"
 description: "Wrapped tokens allow tokens from one blockchain to be used natively on another chain."
 lead: "Wrapped tokens allow tokens from one blockchain to be used natively on another chain."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs

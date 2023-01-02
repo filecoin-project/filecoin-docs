@@ -2,8 +2,6 @@
 title: "FIL token"
 description: "FIL is the native token of the Filecoin network. This page explains how to acquire, store, and use FIL tokens."
 lead: "FIL is the native token of the Filecoin network. This page explains how to acquire, store, and use FIL tokens."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs

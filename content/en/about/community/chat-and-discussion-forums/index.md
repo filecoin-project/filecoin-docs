@@ -1,9 +1,7 @@
 ---
 title: "Chat and discussion forums"
 description: "Connect with the Filecoin community in discussion forums or on IRC."
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+lead: "Connect with the Filecoin community in discussion forums or on IRC. The Filecoin community is active and here to answer your questions in your channel of choice."
 draft: false
 images: []
 type: docs
@@ -17,10 +15,7 @@ aliases:
     - "/about-filecoin/chat-and-discussion-forums"
     - "/community/"
     - "/community/chat-and-discussion-forums/"
-
 ---
-
-The Filecoin community is active and here to answer your questions in your channel of choice.
 
 ## Chat
 

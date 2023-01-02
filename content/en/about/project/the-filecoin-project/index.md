@@ -1,9 +1,7 @@
 ---
 title: "The Filecoin project"
 description: "Learn about the history, roadmap, current status and more for Filecoin"
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+lead: "Curious about how it all got started, or where we're headed? Learn about the history, current state, and future trajectory of the Filecoin project here."
 draft: false
 images: []
 type: docs
@@ -17,10 +15,8 @@ aliases:
     - "/about-filecoin/project"
     - "/project"
     - "/project/related-projects"
-
 ---
 
-Curious about how it all got started, or where we're headed? Learn about the history, current state, and future trajectory of the Filecoin project here.
 
 ## Roadmap
 
