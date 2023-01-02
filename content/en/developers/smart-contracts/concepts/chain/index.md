@@ -1,21 +1,35 @@
----
-title: "Tipsets"
-description: "The Filecoin network uses the idea of tipsets to manage blocks within the blockchain. This page details what a tipset is, how they differ to blocks in other blockchains, and how developers should deal with tipsets."
-lead: "The Filecoin network uses the idea of tipsets to manage blocks within the blockchain. This page details what a tipset is, how they differ to blocks in other blockchains, and how developers should deal with tipsets."
+--- 
+title: "Chain" 
+description: "" 
+lead: "" 
 draft: false
 images: []
 type: docs
-weight: 40
 menu:
-  build:
-    parent: "build-concepts"
-    identifier: "tipsets-1396487fgiusybtfy"
+  developers:
+    parent: "lorem"
+    identifier: "chain-758d217e512d2217c951011cb9f219f9"
+weight: 100
 toc: true
-aliases:
-    - "/fvm/concepts/tipsets/"
 ---
 
-{{< beta-warning >}}
+## Canonical message ordering
+
+Lorem ipsum.
+
+## Deferred execution
+
+Lorem ipsum.
+
+## Gas
+
+Lorem ipsum.
+
+## Message execution
+
+Lorem ipsum.
+
+## Tipsets
 
 The Filecoin network produces multiple blocks at every epoch. In simple terms, block producers run a local function that uses their _quality-adjusted power_, as represented in the power table, and randomness from the Drand network to determine if they're eligible to produce a block for the current epoch. This consensus protocol is called _expected consensus_.
 
