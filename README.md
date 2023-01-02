@@ -3,6 +3,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![Website status][website-status]][website-status-url]
 
 <br>
 
@@ -473,6 +474,8 @@ Project Link: [https://github.com/filecoin-project/filecoin-docs](https://github
 [license-shield]: https://img.shields.io/badge/license-MIT-blueviolet?style=for-the-badge
 [license-url]: https://github.com/filecoin-project/filecoin-docs/blob/master/LICENSE.txt
 [product-screenshot]: ./static/images/filecoin-docs-homepage.png
+[website-status]: https://img.shields.io/website.svg?down_color=red&style=for-the-badge&url=https%3A%2F%2Flotus.filecoin.io
+[website-status-url]: https://docs.filecoin.io/
 <!-- /MARKDOWN LINKS & IMAGES -->
 
 <!-- markdownlint-disable-file -->
