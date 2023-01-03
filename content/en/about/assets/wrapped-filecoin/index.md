@@ -25,20 +25,15 @@ Although Filecoin tokens (FIL) cannot be directly used on Ethereum (ETH) or othe
 
 Wrapped FIL is available in the following networks:
 
-- Ethereum (renFIL, wFIL)
-- Binance Smart Chain (renFIL, BFIL)
-- Fantom (renFIL)
-- Polygon (renFIL)
-- Avalanche (renFIL)
-- Solana (renFIL)
-- Arbitrum (renFIL)
+- Ethereum (wFIL)
+- Binance Smart Chain (BFIL)
 - Celo (wFIL)
 - STACKS (coming soon wFIL)
 - KADENA (coming soon wFIL)
 
 ## Custodial or non-custodial wrapping solution
 
-- **Non-custodial designs** (renFIL, vFIL) are governed only by on-chain, immutable smart contracts. No single or collective entity has a master key that could force trades, transactions, or other operations to follow one direction or the other.
+- **Non-custodial designs** (vFIL) are governed only by on-chain, immutable smart contracts. No single or collective entity has a master key that could force trades, transactions, or other operations to follow one direction or the other.
 - **Custodial designs** (wFIL, BFIL, eFIL, HFIL) are managed by a single third party. Centralized services always have a counter-party risk from their operator but could provide other advantages like insurance, guaranteed backing and support.
 
 ## How to wrap FIL
@@ -50,21 +45,10 @@ There are several web-based applications for token wrapping. Here is an overview
 3. **Choose the amount.** Double-check the fee structure, which may vary by network and application.
 4. **Click to mint.** You may need to wait several minutes for the target network to confirm the transaction.
 
-Here’s how it works in RenBridge, a decentralized application (dApp) that allows users to mint real FIL into renFIL on Ethereum and other networks.
-
-Asset selection process:
-
-![renBridge asset selection window](select-asset.png)
-
-Fees and confirmation:
-
-![renBridge fees and confitmation window](fees-and-confirm.png)
-
 ## Wrapping solutions comparison table
 
 | **Name** | **Project** | **Infrastructure** | **Custodian** | **Main Blockchain**              | **Link**                            |
 |----------|-------------|--------------------|---------------|----------------------------------|-------------------------------------|
-| renFIL   | renBridge   | Decentralized      | Decentralized | Ethereum, Binance, Polygon       | https://bridge\.renproject\.io/mint |
 | wFIL     | WRAPPED     | Centralized        | Anchorage     | Ethereum                         | https://www\.wrapped\.com/          |
 | BFIL     | Binance     | Centralized        | Binance       | Ethereum via Binance Token Canal | https://www\.binance\.com/          |
 | vFIL     | Venus       | Decentralized      | Decentralized | Binance Smart Chain              | https://www\.venus\.io/             |
