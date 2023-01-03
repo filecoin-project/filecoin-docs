@@ -1,6 +1,6 @@
 ---
 title: "As a storage provider"
-description: ""
+description: "Installation instructions for Filecoin Boost, for Storage Providers"
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
@@ -15,32 +15,139 @@ weight: 10
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+{{< alert  >}}
+If you are already running a standalone markets process, follow the guide at [migrate-a-lotus-markets-service-process-to-boost.md](../upgrade-from-lotus-to-boost/migrate-a-lotus-markets-service-process-to-boost.md "mention")
 
-## Selvage
+If you are already running a monolith lotus-miner instance, follow the guide at [migrate-a-monolith-lotus-miner-to-boost.md](../upgrade-from-lotus-to-boost/migrate-a-monolith-lotus-miner-to-boost.md "mention")
+{{< /alert  >}}
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+### Initialization and Running
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+1\. Make sure you have a Lotus node and miner running
 
-### Heirloom
+2\. Create and send funds to two new wallets on the lotus node to be used for Boost
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+Boost currently uses two wallets for storage deals:
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+* The publish storage deals wallet - This wallet pays the gas cost when Boost sends the `PublishStorageDeals` message.
+* The deal collateral wallet - When the Storage Provider accepts a deal, they must put collateral for the deal into escrow. Boost moves funds from this wallet into escrow with the `StorageMarketActor`.
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+```
+PUBLISH_STORAGE_DEALS_WALLET=`lotus wallet new bls`
+COLLAT_WALLET=`lotus wallet new bls`
+lotus send --from mywallet $PUBLISH_STORAGE_DEALS_WALLET 10
+lotus send --from mywallet $COLLAT_WALLET 10
+```
 
-## Bushwick cold-pressed
+3\. Set the publish storage deals wallet as a control wallet.
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+```
+lotus-miner actor control set --really-do-it $PUBMSG_WALLET
+```
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+4\. Create and initialize the Boost repository
 
-## Locavore swag
+{{< alert  >}}
+If you are already running a Lotus markets service process, you should\
+run `boostd migrate` instead of `boostd init`
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+See section [migrate-a-lotus-markets-service-process-to-boost.md](../upgrade-from-lotus-to-boost/migrate-a-lotus-markets-service-process-to-boost.md "mention") for more details.
+{{< /alert  >}}
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+Boost keeps all data in a directory called the repository. By default the repository is at `~/.boost`. To use a different location pass the `--boost-repo` parameter.
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+Export the environment variables needed for `boostd init` to connect to the lotus daemon and lotus miner.
+
+```
+export $(lotus auth api-info --perm=admin)
+export $(lotus-miner auth api-info --perm=admin)
+```
+
+Export environment variables that point to the API endpoints for the sealing and mining processes. They will be used by the `boost` node to make JSON-RPC calls to the `mining/sealing/proving` node.
+
+```
+export APISEALER=`lotus-miner auth api-info --perm=admin`
+export APISECTORINDEX=`lotus-miner auth api-info --perm=admin`
+```
+
+Run `boostd init` to create and initialize the repository:
+
+```
+boostd --vv init \
+       --api-sealer=$APISEALER \
+       --api-sector-index=$APISECTORINDEX \
+       --wallet-publish-storage-deals=$PUBLISH_STORAGE_DEALS_WALLET \
+       --wallet-deal-collateral=$COLLAT_WALLET \
+       --max-staging-deals-bytes=50000000000
+```
+
+* `--api-sealer` is the API info for the lotus-miner instance that does sealing
+* `--api-sector-index` is the API info for the lotus-miner instance that provides storage
+* `--max-staging-deals-bytes` is the maximum amount of storage to be used for downloaded files (once the limit is reached Boost will reject subsequent incoming deals)
+
+5\. Update `ulimit` file descriptor limit if necessary. Boost deals will fail if the file descriptor limit for the process is not set high enough. This limit can be raised temporarily before starting the Boost process by running the command `ulimit -n 1048576`. We recommend setting it permanently by following the [Permanently Setting Your ULIMIT System Value](https://lotus.filecoin.io/kb/soft-fd-limit/) guide.
+
+6\. Run the `boostd` service, which will start:
+
+* libp2p listeners for storage and retrieval
+* the JSON RPC API
+* the graphql interface (used by the react front-end)
+* the web server for the react front-end
+
+```
+boostd --vv run
+```
+
+{{< alert  >}}
+In your firewall you will need to open the ports that libp2p listens on, so that Boost can receive storage and retrieval deals.
+
+See the `Libp2p` section of `config.toml` in the [architecture.md](../boost-architecture/architecture.md "mention")
+{{< /alert  >}}
+
+### Web UI
+
+{{< alert  >}}
+When you build `boostd` using `make build` the react app is also part of the process. You can skip this section.
+
+Following steps are to be used only in case you are building binary and react app separately.
+{{< /alert  >}}
+
+1. Build the React frontend
+
+```
+cd react
+
+# Download and install npm packages needed by the React frontend
+npm install
+
+# Build the optimized JavaScript and CSS in boost/react/build
+npm run build
+```
+
+1. Open the Web UI
+
+Open http://localhost:8080 in your browser.
+
+{{< alert  >}}
+To access a web UI running on a remote server, you can open an SSH tunnel from your local machine:
+
+```
+ssh -L 8080:localhost:8080 myserver
+```
+{{< /alert  >}}
+
+### API Access
+
+Boost API can be accessed by setting the environment variable `BOOST_API_INFO` same as `LOTUS_MARKET_INFO`.&#x20;
+
+```
+boostd auth api-info --perm=admin
+
+export BOOST_API_INFO=<TOKEN>:<API Address>
+```
+
+You can also directly evaluate the `boostd auth` command with:
+
+```
+export $(boostd auth api-info --perm=admin)
+```
