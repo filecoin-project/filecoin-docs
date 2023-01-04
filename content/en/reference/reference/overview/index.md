@@ -1,6 +1,7 @@
 ---
 title: "Overview"
 description: "Helpful reference materials for the Filecoin specification, implementations, and ecosystem."
+lead: "Helpful reference materials for the Filecoin specification, implementations, and ecosystem."
 draft: false
 images: []
 type: docs
@@ -11,8 +12,6 @@ menu:
 weight: 10
 toc: true
 ---
-
-This section contains links and reference materials for Filecoin.
 
 ## About Filecoin
 

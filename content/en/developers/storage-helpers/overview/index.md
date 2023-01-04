@@ -1,7 +1,7 @@
 ---
 title: "Overview"
 description: "Storage helpers are APIs and services that abstract Filecoin dealmaking into simple, streamlined API calls."
-lead: "Storage helpers are APIs and services that abstract Filecoin dealmaking into simple, streamlined API calls."
+lead: "Storage helpers are APIs and services that abstract Filecoin dealmaking into simple, streamlined API calls. They are the simplest way to integrate Filecoin storage into your application or smart contract."
 draft: false
 images: []
 type: docs
@@ -14,8 +14,6 @@ toc: true
 aliases:
     - "/build/get-building/storage-helpers/"
 ---
-
-Storage helpers are the simplest way to integrate Filecoin storage into your application or smart contract.
 
 Here’s how they work: Developers use APIs or libraries to send data to storage helpers. Behind the scenes, storage helpers receive the data and handle the underlying processes to store it in a reliable and decentralized storage way, by saving it [IPFS](https://ipfs.tech) nodes, making deals with Filecoin storage providers -- or both. You can use the same APIs or other tools to retrieve data quickly.
 

@@ -23,7 +23,7 @@ aliases:
 
 ## Actors
 
-Actors are blocks of code that run on the Filecoin virtual machine (FVM). Application developers can use this code to create decentralized apps on the FVM. For those familiar with the Ethereum virtual machine (EVM), actors work similarly to smart contracts. There are two types of actors:
+For those familiar with the Ethereum virtual machine (EVM), actors work similarly to smart contracts. There are two types of actors:
 
 - Built-in actors: code that the Filecoin network team has written deployed directly into the Filecoin network. An example of a built-in actor is the multi-sig actor, a system that requires multiple private keys to perform some action.
 - User actors: code that any developer can write and deploy to the Filecoin network using the FVM.

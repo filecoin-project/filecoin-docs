@@ -1,6 +1,7 @@
 ---
 title: "Starling"
 description: "Starling is a decentralized storage application designed for use in archival settings, where the ability to demonstrate the authenticity of a file over the course of time is of paramount importance."
+lead: "Starling is a decentralized storage application designed for use in archival settings, where the ability to demonstrate the authenticity of a file over the course of time is of paramount importance. This guide will quickly set up Starling on your computer."
 draft: false
 images: []
 type: docs
@@ -11,8 +12,6 @@ menu:
 weight: 100
 toc: true
 ---
-
-This guide will quickly set up Starling on your computer.
 
 ## Prerequisites
 

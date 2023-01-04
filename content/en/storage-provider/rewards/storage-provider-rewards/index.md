@@ -1,6 +1,7 @@
 ---
 title: "Storage provider rewards"
 description: "In Filecoin, providers earn different types of rewards by contributing to the network."
+lead: "In Filecoin, providers earn different types of rewards by contributing to the network. There are two main types of rewards for their efforts: storage fees and block rewards."
 draft: false
 images: []
 type: docs
@@ -13,8 +14,6 @@ toc: true
 aliases:
     - "/storage-provider/rewards/"
 ---
-
-There are two main types of rewards for their efforts: storage fees and block rewards.
 
 ## Storage fees
 
