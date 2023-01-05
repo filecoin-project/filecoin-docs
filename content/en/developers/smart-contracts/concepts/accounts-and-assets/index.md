@@ -5,6 +5,7 @@ lead: "Everything you need to know about how accounts and assets are managed wit
 draft: false
 images: []
 type: docs
+weight: 10
 menu:
   build:
     parent: "build-concepts"
