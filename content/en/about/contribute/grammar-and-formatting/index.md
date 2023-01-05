@@ -17,8 +17,6 @@ aliases:
     - "/about-filecoin/grammar-formatting-and-style/"
 ---
 
-This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide]({{< relref "writing-guide" >}}).
-
 ## Grammar and spelling
 
 Here are some language-specific rules that the Filecoin documentation follows. If you use a writing service like [Grammarly](https://www.grammarly.com/), most of these rules are turned on by default.

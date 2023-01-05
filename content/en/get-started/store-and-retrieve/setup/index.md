@@ -15,8 +15,6 @@ aliases:
     - "/get-started/store-and-retrieve/set-up/"
 ---
 
-Before you begin storing any data on the Filecoin network, you need to run through a few steps to get everything set up. This section covers getting access to a Lotus full-node, creating a Lotus lite-node on your computer, getting a FIL address, and signing up to Filecoin+.
-
 <picture align=center>
   <source media="(prefers-color-scheme: dark)" srcset="set-up-process-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="set-up-process-light.png">

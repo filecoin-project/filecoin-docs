@@ -1,6 +1,7 @@
 ---
 title: "Start storing"
 description: "Start storing data on the Filecoin network."
+lead: "Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers."
 draft: false
 images: []
 type: docs
@@ -13,8 +14,6 @@ toc: true
 aliases:
     - "/store/overview/"
 ---
-
-Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers.
 
 {{< alert  >}}**Looking for Lotus?**
 Lotus documentation has moved to [lotus.filecoin.io](https://lotus.filecoin.io)
