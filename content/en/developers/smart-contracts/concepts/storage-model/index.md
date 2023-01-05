@@ -2,16 +2,12 @@
 title: "Storage model"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
     identifier: "storage-model-34e8f6874d9c986d7d2305e52d8050d8"
-weight: 100
 toc: true
 ---
 

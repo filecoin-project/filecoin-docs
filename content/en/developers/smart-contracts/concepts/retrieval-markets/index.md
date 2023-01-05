@@ -2,16 +2,12 @@
 title: "Retrieval markets"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
     identifier: "retrieval-markets-fe2284149782134753446a6b30858b66"
-weight: 100
 toc: true
 ---
 

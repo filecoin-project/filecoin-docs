@@ -5,7 +5,6 @@ lead: "The Filecoin EVM (FEVM) is the Ethereum Virtual Machine (EVM) virtualized
 draft: false
 images: []
 type: docs
-weight: 30
 menu:
   build:
     parent: "build-concepts"

@@ -7,9 +7,7 @@ images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
     identifier: "chain-758d217e512d2217c951011cb9f219f9"
-weight: 100
 toc: true
 ---
 
