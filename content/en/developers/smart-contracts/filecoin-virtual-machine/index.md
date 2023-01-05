@@ -13,6 +13,7 @@ weight: 3
 toc: true
 aliases:
     - "/fvm/basics/introduction/"
+    - "/fvm"
 ---
 
 {{< beta-warning >}}
