@@ -5,7 +5,6 @@ lead: "Actors are blocks of code that run on the Filecoin virtual machine. Smart
 draft: false
 images: []
 type: docs
-weight: 20
 menu:
   build:
     parent: "build-concepts"
