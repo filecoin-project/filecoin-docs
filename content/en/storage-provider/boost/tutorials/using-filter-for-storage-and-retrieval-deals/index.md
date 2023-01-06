@@ -15,32 +15,84 @@ weight: 20
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+Storage providers might demand very precise and dynamic control over a combination of deal parameters.
 
-## Selvage
+Boost, similarly to Lotus, provides two IPC hooks allowing you to name a command to execute for every deal before the storage provider accepts it:
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+* `Filter` for storage deals.
+* `RetrievalFilter` for retrieval deals.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+The executed command receives a JSON representation of the deal parameters, as well as the current state of the sealing pipeline, on standard input, and upon completion, its exit code is interpreted as:
 
-### Heirloom
+* `0`: success, proceed with the deal.
+* `non-0`: failure, reject the deal.
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+The most trivial filter rejecting any retrieval deal would be something like:\
+\
+`RetrievalFilter = "/bin/false"`.\
+\
+`/bin/false` is binary that immediately exits with a code of `1`.
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+[This Perl script](https://gist.github.com/ribasushi/53b7383aeb6e6f9b030210f4d64351d5/9bd6e898f94d20b50e7c7586dc8b8f3a45dab07c#file-dealfilter-pl) lets the miner deny specific clients and only accept deals that are set to start relatively soon.
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+You can also use a third party content policy framework like `bitscreen` by Murmuration Labs, or [CID gravity](https://cidgravity.com/):
 
-## Bushwick cold-pressed
+```shell
+# grab filter program
+go get -u -v github.com/Murmuration-Labs/bitscreen
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+# add it to both filters
+Filter = "/path/to/go/bin/bitscreen"
+RetrievalFilter = "/path/to/go/bin/bitscreen"
+```
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+Here is a sample JSON representation of the input sent to the deal filter:
 
-## Locavore swag
-
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
-
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
-
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+```json
+{
+  "DealParams": {
+    "DealUUID": "48c31c8c-dcc8-4372-a0ac-b5468eea555b",
+    "IsOffline": false,
+    "ClientDealProposal": {
+      "Proposal": {
+        "PieceCID": {
+          "/": "baga6ea4seaqh5prrl6ykov4t64k6m6giijsc44dcxtdnzsp4izjakqhs7twauiq"
+        },
+        "PieceSize": 2147483648,
+        "VerifiedDeal": false,
+        "Client": "f1sw5zjcyo4mff5cbvgsgmm7uoko6gcr4tptvtkhy",
+        "Provider": "f0127896",
+        "Label": "bafyaa7qsgafcmalqudsaeidrunclaep6mdbipm2gjfvuosjfd6cbqd6th7bshy5hi5npxe727yjaagelucbyabasgafcmalqudsaeieapsxspo2i36no36n7yitswsxdazvziwvgj4vbp2scuxasrc6n4ejaage3r7m3saykcqeaegeavdllsbzaqcaibaaeecakrvvzam",
+        "StartEpoch": 1717840,
+        "EndEpoch": 2236240,
+        "StoragePricePerEpoch": "1",
+        "ProviderCollateral": "363196619502649",
+        "ClientCollateral": "0"
+      },
+      "ClientSignature": {
+        "Type": 1,
+        "Data": "SmgcBnQE+0ZIb4zAXw7TpxLliSaliShEvX9P4+uwvxBhRDlJD+F6N3NFoNrA2y5bTeWF5aWWuL93w+SSmXFkoAA="
+      }
+    },
+    "DealDataRoot": {
+      "/": "bafyaa7qsgafcmalqudsaeidrunclaep6mdbipm2gjfvuosjfd6cbqd6th7bshy5hi5npxe727yjaagelucbyabasgafcmalqudsaeieapsxspo2i36no36n7yitswsxdazvziwvgj4vbp2scuxasrc6n4ejaage3r7m3saykcqeaegeavdllsbzaqcaibaaeecakrvvzam"
+    },
+    "Transfer": {
+      "Type": "http",
+      "ClientID": "",
+      "Params": "eyJVUkwiOiJodHRwczovL2FudG8uLXB1YmxpYy1idWNrZXQtYm9vc3QuczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcmFuZGZpbGVfMkdCXzAuY2FyIiwiSGVhZGVycyI6bnVsbH0=",
+      "Size": 2000177948
+    }
+  },
+  "SealingPipelineState": {
+    "SectorStates": {
+      "Available": 684,
+      "Proving": 307,
+      "Removed": 82,
+      "TerminateFailed": 1,
+      "TerminateWait": 5
+    },
+    "Workers": null
+  }
+}
+```
