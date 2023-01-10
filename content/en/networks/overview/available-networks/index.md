@@ -131,9 +131,19 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 - [Block explorer - Filscout for Calibration](https://calibration.filscout.com/en)
 - [Block explorer - filscan for Calibration](https://calibration.filscan.io/)
 
+### Hyperspace 
+
+The Hyperspace testnet is a pre-production developer focused testnet. Developers are welcomed to build and test their toolings, applications, smart contracts and etc on this network. This network is aimed to be stable and reliable.
+
+**Maintainer**: Factor 8
+
+More information on Hyperspace can be found [here]([url](https://github.com/filecoin-project/testnet-hyperspace)).
+
 ### Wallaby
 
 The Wallaby testnet is intended for early testing of new Filecoin Virtual Machine features as the FVM is being actively developed. It is usually reset weekly with a new FVM release.
+
+**Maintainer**: Factor 8
 
 More information on Wallaby can be found [here](https://github.com/filecoin-project/testnet-wallaby/).
 
