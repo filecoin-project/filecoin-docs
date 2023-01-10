@@ -1,5 +1,5 @@
 ---
-title: "Roll back to Lotus markets service process"
+title: "How to roll back from Filecoin Boost to the Lotus markets service"
 description: ""
 lead: ""
 date: 2022-01-25T14:41:39+01:00
