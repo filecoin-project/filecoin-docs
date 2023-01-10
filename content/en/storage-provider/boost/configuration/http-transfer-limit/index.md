@@ -1,5 +1,5 @@
 ---
-title: "HTTP transfer limit"
+title: "HTTP transfer limits"
 description: ""
 lead: ""
 date: 2022-01-25T14:41:39+01:00
@@ -15,32 +15,94 @@ weight: 20
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+Boost provides a capability to limit the number of simultaneous http transfers in progress to download the deal data from the clients.
 
-## Selvage
+This new configuration has been introduced in the `ConfigVersion = 3` of the boost configuration file.
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+### Configuration Variables
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+#### HTTP variables
 
-### Heirloom
+```
+  # The maximum number of concurrent storage deal HTTP downloads.
+  # Note that this is a soft maximum; if some downloads stall,
+  # more downloads are allowed to start.
+  #
+  # type: uint64
+  # env var: LOTUS_DEALMAKING_HTTPTRANSFERMAXCONCURRENTDOWNLOADS
+  #HttpTransferMaxConcurrentDownloads = 20
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+  # The period between checking if downloads have stalled.
+  #
+  # type: Duration
+  # env var: LOTUS_DEALMAKING_HTTPTRANSFERSTALLCHECKPERIOD
+  #HttpTransferStallCheckPeriod = "30s"
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+  # The time that can elapse before a download is considered stalled (and
+  # another concurrent download is allowed to start).
+  #
+  # type: Duration
+  # env var: LOTUS_DEALMAKING_HTTPTRANSFERSTALLTIMEOUT
+  #HttpTransferStallTimeout = "5m0s"
+```
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+#### Storage variables
 
-## Bushwick cold-pressed
+```
+  # The maximum allowed disk usage size in bytes of downloaded deal data
+  # that has not yet been passed to the sealing node by boost.
+  # When the client makes a new deal proposal to download data from a host,
+  # boost checks this config value against the sum of:
+  # - the amount of data downloaded in the staging area
+  # - the amount of data that is queued for download
+  # - the amount of data in the proposed deal
+  # If the total amount would exceed the limit, boost rejects the deal.
+  # Set this value to 0 to indicate there is no limit.
+  #
+  # type: int64
+  # env var: LOTUS_DEALMAKING_MAXSTAGINGDEALSBYTES
+  MaxStagingDealsBytes = 50000000000
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+  # The percentage of MaxStagingDealsBytes that is allocated to each host.
+  # When the client makes a new deal proposal to download data from a host,
+  # boost checks this config value against the sum of:
+  # - the amount of data downloaded from the host in the staging area
+  # - the amount of data that is queued for download from the host
+  # - the amount of data in the proposed deal
+  # If the total amount would exceed the limit, boost rejects the deal.
+  # Set this value to 0 to indicate there is no limit per host.
+  #
+  # type: uint64
+  # env var: LOTUS_DEALMAKING_MAXSTAGINGDEALSPERCENTPERHOST
+  #MaxStagingDealsPercentPerHost = 0
+```
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+### How TransferLimiter works
 
-## Locavore swag
+The `transferLimiter` maintains a queue of transfers with a soft upper limit on the number of concurrent transfers.
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+To prevent slow or stalled transfers from blocking up the queue there are a couple of mitigations: The queue is ordered such that we
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+* start transferring data for the oldest deal first
+* prefer to start transfers with peers that don't have any ongoing transfer
+* once the soft limit is reached, don't allow any new transfers with peers that have existing stalled transfers
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+![HTTP transfer limits](<http-transfer-limit.png>)
+
+
+
+Note that peers are distinguished by their host (eg foo.bar:8080) not by libp2p peer ID. For example, if there is
+
+* one active transfer with peer A
+* one pending transfer (peer A)
+* one pending transfer (peer B)
+
+The algorithm will prefer to start a transfer with peer B than peer A. This helps to ensure that slow peers don't block the transfer queue.
+
+The limit on the number of concurrent transfers is soft. Example: if there is a limit of 5 concurrent transfers and there are
+
+* three active transfers
+* two stalled transfers
+
+then two more transfers are permitted to start (as long as they're not with one of the stalled peers)
+
