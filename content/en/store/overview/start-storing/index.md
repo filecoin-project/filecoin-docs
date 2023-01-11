@@ -18,6 +18,7 @@ aliases:
     - "/get-started/go-filecoin-tutorial/storing-on-filecoin"
     - "/get-started/go-filecoin-tutorial/home"
     - "/go-filecoin-tutorial/getting-started"
+    - "/store/slate/"
 ---
 
 {{< alert  >}}**Looking for Lotus?**
