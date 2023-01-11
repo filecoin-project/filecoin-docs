@@ -137,7 +137,7 @@ The Hyperspace testnet is a pre-production developer focused testnet. Developers
 
 **Maintainer**: Factor 8
 
-More information on Hyperspace can be found [here]([url](https://github.com/filecoin-project/testnet-hyperspace)).
+More information on Hyperspace can be found [here](https://github.com/filecoin-project/testnet-hyperspace).
 
 ### Wallaby
 
