@@ -1,6 +1,6 @@
 ---
 title: "HTTP retrieval"
-description: ""
+description: "How to configure and use HTTP retrievals with Filecoin Boost"
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
@@ -14,33 +14,112 @@ menu:
 weight: 10
 toc: true
 ---
+<!-- STEF Are these features still experimental?-->
+Boost is introducing a new binary, `booster-http`, with release v1.2.0. This binary can be run alongside the `boostd` market process in order to serve retrievals over http.
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+Currently, there is no payment method or built-in security integrated in the new binary. It can be run with any stable release of `boostd` and can also be run on a separate machine from the `boostd` process.
 
-## Selvage
+### Trying It Out
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+To build and run `booster-http` :
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+1. Clone the main branch from the boost repo
 
-### Heirloom
+```
+git clone https://github.com/filecoin-project/boost.git
+```
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+2. Build the new binary
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+```
+make booster-http
+```
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+3. Collect the token information for boost, lotus-miner and lotus daemon API
 
-## Bushwick cold-pressed
+```
+boostd auth api-info --perm=admin
+```
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+```
+lotus auth api-info --perm=admin
+```
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+```
+lotus-miner auth api-info --perm=admin
+```
 
-## Locavore swag
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+Output of the above commands is in the following format
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+```<ENV VARIABLE NAME> = \<TOKEN>:\<API ADDRESS>```
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+Please use only \<TOKEN>:\<API ADDRESS> part for the next step:
+
+
+4. Start the `booster-http` server with the above details
+
+```
+booster-http run --api-boost=$BOOST_API_INFO --api-fullnode=$FULLNODE_API_INFO --api-storage=$MINER_API_INFO
+```
+
+
+You can also run multiple processes on the same machine but you would need to use different port for each `booster-http` instance by specifying the value using the `--port` flag. You can run multiple instances of the `booster-http` spread over multiple machines.
+
+
+5. To download files from the new http-server locally, you use the following endpoints:
+
+```
+# Download a piece by its PieceCID
+# Randomly selects the first deal/sector matching the CID
+# This will transfer the entire piece including all its (compressible) padding
+curl http://localhost:7777/piece/bagaSomePieceCID -o $HOME/download.piece 
+```
+
+## Running Public Boost HTTP Retrieval
+
+The booster-http server listens on localhost. To expose the server publically, SPs should run a reverse proxy such as NGINX to handle operational concerns like:
+
+* SSL
+* Authentication
+* Load balancing
+
+While booster-http may get more operational features over time, the intent is that providers who want to scale their HTTP operations will handle most of operational concerns via software in front of booster-http.
+
+### Making HTTP Retrieval Discoverable
+
+To enable public discovery of the Boost HTTP server, SPs should set the domain root in boostd's `config.toml`: Under the `[DealMaking]` section, set `HTTPRetrievalMultiaddr` to the public domain root in multi-address format.
+
+Example `config.toml` section:
+
+{{< alert  >}}
+Replace "example.com" in the lines below with your actual domain or IP address
+{{< /alert >}}
+
+```
+[DealMaking]
+  HTTPRetrievalMultiaddr = "/dns/example.com/tcp/443/https"
+```
+
+Clients can determine if an SP offers HTTP retrieval by running:
+
+```
+boost provider retrieval-transports <miner id>
+```
+
+Clients can check the HTTP URL scheme version and supported queries
+
+```
+// Supported queries
+curl https://example.com/index
+
+// Version
+curl https://example.com/info
+```
+
+Clients can download a piece using the domain root configured by the SP:
+
+```
+# Download a piece by its CID
+curl https://example.com/piece/bagaSomePieceCID -o $HOME/download.piece
+```
