@@ -11,6 +11,8 @@ menu:
     identifier: "explore-the-network-907ce577ef35ff2110ac2ddf7cbd2661"
 weight: 20
 toc: true
+aliases:
+    - "/build/the-filecoin-ecosystem/"
 ---
 
 ## Block explorers

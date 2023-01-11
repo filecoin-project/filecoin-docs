@@ -13,6 +13,7 @@ weight: 20
 toc: true
 aliases:
     - "/networks/network-performance"
+    - "/about-filecoin/network-performance/"
 ---
 
 The Filecoin Network is a decentralized storage market and network that provides data persistence via a decentralized protocol and publicly verifiable storage proofs on a blockchain. Current Filecoin network performance is primarily determined by security parameters and Filecoin's [proof constructions](https://spec.filecoin.io/#algorithms__pos).

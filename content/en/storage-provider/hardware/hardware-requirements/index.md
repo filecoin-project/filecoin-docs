@@ -12,6 +12,7 @@ weight: 20
 toc: true
 aliases:
     - "/storage-provider/hardware-requirements/"
+    - "/mine/hardware-requirements/"
 ---
 
 The hardware requirements for providing storage are tied to the computational resources needed to _seal_ a sector and generating regular _Proof of Spacetime_ for every sealed sector (_WindowPoSt_).

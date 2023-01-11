@@ -11,6 +11,8 @@ menu:
     identifier: "available-networks-3873051de052ab107e1160ecff302b3d"
 weight: 10
 toc: true
+aliases:
+    - "/build/local-devnet/"
 ---
 
 {{< alert  >}}**Looking for Glif nodes?**

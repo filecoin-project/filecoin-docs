@@ -14,6 +14,8 @@ toc: true
 aliases:
     - "/build/get-building/overview/"
     - "/build"
+    - "/build/examples/web-applications/overview/"
+    - "/build/examples/"
 ---
 
 If you are excited about the potential of the Filecoin protocol and decentralized storage network to build game-changing applications, you’ve come to the right place.

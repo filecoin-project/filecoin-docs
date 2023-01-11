@@ -11,6 +11,9 @@ menu:
     identifier: "overview-1bd030dd47502cc1ced0643c19859137"
 weight: 10
 toc: true
+aliases:
+    - "/build/developer-tools/wallets-signing-tools-api-clients/"
+    - "/build/signing-libraries/"
 ---
 
 ## About Filecoin

@@ -13,6 +13,7 @@ weight: 10
 toc: true
 aliases:
     - "/storage-provider/slashing/"
+    - "/mine/slashing/"
 ---
 
 ## Storage fault slashing

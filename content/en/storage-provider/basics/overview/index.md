@@ -12,6 +12,9 @@ weight: 10
 toc: true
 aliases:
     - "/storage-provider/overview/"
+    - "/mine/"
+    - "/mine/spacerace/"
+    - "/mine/connectivity"
 ---
 
 {{< alert  >}}
