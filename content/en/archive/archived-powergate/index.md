@@ -9,6 +9,7 @@ weight: 100
 toc: true
 aliases:
     - "/build/tools/powergate/"
+    - "/build/powergate/"
 ---
 
 {{< archived-content >}}

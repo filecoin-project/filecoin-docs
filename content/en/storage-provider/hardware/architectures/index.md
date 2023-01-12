@@ -12,6 +12,8 @@ weight: 10
 toc: true
 aliases:
     - "/storage-provider/architectures/"
+    - "/storage-provider/storage-provider-architectures/"
+    - "/mine/mining-architectures/"
 ---
 
 ## Community suggestions

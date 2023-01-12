@@ -13,6 +13,7 @@ weight: 20
 toc: true
 aliases:
     - "/storage-provider/rewards/"
+    - "/mine/mining-rewards"
 ---
 
 ## Storage fees

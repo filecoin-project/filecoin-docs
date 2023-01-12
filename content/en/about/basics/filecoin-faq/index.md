@@ -13,6 +13,7 @@ weight: 60
 toc: true
 aliases:
     - "/about-filecoin/faq"
+    - "/introduction/faq/"
 ---
 
 ### What are some of the primary use cases for Filecoin?

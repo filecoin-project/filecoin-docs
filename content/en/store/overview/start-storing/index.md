@@ -13,6 +13,12 @@ weight: 10
 toc: true
 aliases:
     - "/store/overview/"
+    - "/go-filecoin-tutorial/storing-on-filecoin"
+    - "/get-started/go-filecoin-tutorial/getting-started"
+    - "/get-started/go-filecoin-tutorial/storing-on-filecoin"
+    - "/get-started/go-filecoin-tutorial/home"
+    - "/go-filecoin-tutorial/getting-started"
+    - "/store/slate/"
 ---
 
 {{< alert  >}}**Looking for Lotus?**

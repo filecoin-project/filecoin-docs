@@ -13,6 +13,8 @@ weight: 100
 toc: true
 aliases:
     - "/build/tools/filecoin-pinning-services/"
+    - "/build/filecoin-pinning-services/"
+    - "/build/tools/filecoin-backed-pinning-services/"
 ---
 
 {{< archived-content >}}
