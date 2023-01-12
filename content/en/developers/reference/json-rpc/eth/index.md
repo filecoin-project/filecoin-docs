@@ -13,7 +13,7 @@ weight: 100
 toc: true
 ---
 
-## EthAccounts
+## eth_accounts
 
 This method is intended to return a list of addresses owned by client. However, `eth_accounts` will always return and empty array `[]` since Filecoin does not manage Ethereum private keys.
 
@@ -41,9 +41,9 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 }
 ```
 
-## EthBlockNumber
+## eth_blockNumber
 
-Returns the number of most recent block.
+Returns the number of most recent block/tipset.
 
 - Permissions: read
 - Inputs: none
@@ -70,11 +70,9 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: find an example of this function working. -->
-## EthCall
+## eth_call
 
 Executes a new message call immediately without creating a transaction on the blockchain.
-
-This documentation section is a work-in-progress.
 
 - Permissions: read
 - Input:
@@ -103,7 +101,7 @@ Inputs:
 ]
 ```
 
-## EthChainId
+## eth_chainId
 
 Returns the currently configured chain ID, a value used in replay-protected transaction signing as introduced by EIP-155.
 
@@ -113,7 +111,7 @@ Returns the currently configured chain ID, a value used in replay-protected tran
 Example:
 
 ```curl
-curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \    src/languages update/json-rpc-examples
+curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -132,11 +130,9 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \    src/la
 ```
 
 <!-- TODO: find out how to perform this call. -->
-## EthEstimateGas
+## eth_estimateGas
 
 Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
-
-This documentation section is a work-in-progress.
 
 - Permissions: read
 - Inputs: 
@@ -170,7 +166,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: find out how to make this one work. -->
-## EthFeeHistory
+## eth_feeHistory
 
 Returns a collection of historical gas information.
 
@@ -199,7 +195,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 }' | jq
 ```
 
-## EthGasPrice
+## eth_gasPrice
 
 Returns the current price per gas in wei.
 
@@ -227,7 +223,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 }
 ```
 
-## EthGetBalance
+## eth_getBalance
 
 Returns the balance of the account of a given address.
 
@@ -264,7 +260,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: Find a tipset to use for this example. -->
-## EthGetBlockByHash
+## eth_getBlockByHash
 
 Returns information about a block by tipset, also known as a block hash.
 
@@ -282,7 +278,7 @@ Returns information about a block by tipset, also known as a block hash.
 ]
 ```
 
-## EthGetBlockByNumber
+## eth_getBlockByNumber
 
 Returns information about a block by block number.
 
@@ -333,7 +329,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: Find a tipset to test. -->
-## EthGetBlockTransactionCountByHash
+## eth_getBlockTransactionCountByHash
 
 Returns the number of messages in the tipset.
 
@@ -360,7 +356,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: figure out how this works. -->
-## EthGetBlockTransactionCountByNumber
+## eth_getBlockTransactionCountByNumber
 
 Returns the number of transactions in a block matching the given tipset.
 
@@ -395,7 +391,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: Get return example for this method. -->
-## EthGetCode
+## eth_getCode
 
 Returns code at a given address.
 
@@ -431,7 +427,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: create a filter and add it here so that we can get a response. -->
-## EthGetFilterChanges
+## eth_getFilterChanges
 
 Polling method for a filter, which returns an array of logs which occurred since last poll.
 
@@ -453,7 +449,7 @@ Response:
 ]
 ```
 
-## EthGetFilterLogs
+## eth_getFilterLogs
 
 Returns event logs matching filter with given id.
 (requires write perm since timestamp of last filter execution will be written)
@@ -476,7 +472,7 @@ Response:
 ]
 ```
 
-## EthGetLogs
+## eth_getLogs
 
 Returns event logs matching given filter spec.
 
@@ -504,7 +500,7 @@ Response:
 ]
 ```
 
-## EthGetStorageAt
+## eth_getStorageAt
 
 Permissions: read
 
@@ -520,7 +516,7 @@ Inputs:
 
 Response: `"0x07"`
 
-## EthGetTransactionByBlockHashAndIndex
+## eth_getTransactionByBlockHashAndIndex
 
 Permissions: read
 
@@ -557,7 +553,7 @@ Response:
 }
 ```
 
-## EthGetTransactionByBlockNumberAndIndex
+## eth_getTransactionByBlockNumberAndIndex
 
 Permissions: read
 
@@ -594,7 +590,7 @@ Response:
 }
 ```
 
-## EthGetTransactionByHash
+## eth_getTransactionByHash
 
 Permissions: read
 
@@ -630,7 +626,7 @@ Response:
 }
 ```
 
-## EthGetTransactionCount
+## eth_getTransactionCount
 
 Permissions: read
 
@@ -645,7 +641,7 @@ Inputs:
 
 Response: `"0x5"`
 
-## EthGetTransactionReceipt
+## eth_getTransactionReceipt
 
 Returns the receipt of a transaction by transaction hash.
 
@@ -694,7 +690,7 @@ Response:
 }
 ```
 
-## EthMaxPriorityFeePerGas
+## eth_maxPriorityFeePerGas
 
 Returns a fee per gas that is an estimate of how much you can pay as a priority fee, or 'tip', to get a transaction included in the current block. Generally you will use the value returned from this method to set the `maxFeePerGas` in a subsequent transaction that you are submitting.
 
@@ -720,7 +716,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 }
 ```
 
-## EthNewBlockFilter
+## eth_newBlockFilter
 
 Installs a persistent filter to notify when a new block arrives.
 
@@ -746,7 +742,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 }
 ```
 
-## EthNewFilter
+## eth_newFilter
 
 Creates a filter object, based on filter options, to notify when the state changes (logs). Unlike [`eth_newBlockFilter`](#EthNewBlockFilter) which notifies you of all new blocks, you can pass in filter options to track new logs matching the topics specified. To check if the state has changed, call [`eth_getFilterChanges`](#EthGetFilterChanges).
 
@@ -789,7 +785,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 }
 ```
 
-## EthNewPendingTransactionFilter
+## eth_newPendingTransactionFilter
 
 Creates a filter in the node, to notify when new pending transactions arrive. To check if the state has changed, call [`eth_getFilterChanges`](#EthGetFilterChanges).
 
@@ -815,7 +811,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 }
 ```
 
-## EthProtocolVersion
+## eth_protocolVersion
 
 Returns the current ethereum protocol version.
 
@@ -842,7 +838,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: I'm pretty sure this requires something to be signed before sending a transaction. Double check on this one. -->
-## EthSendRawTransaction
+## eth_sendRawTransaction
 
 Creates a new message call transaction or a contract creation for signed transactions. Returns 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
@@ -865,7 +861,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 ```
 
 <!-- TODO: this uses websockets and looks like a special request. Get more info on this. -->
-## EthSubscribe
+## eth_subscribe
 
 Subscribe to different Ethereum event types like newHeads, logs, pendingTransactions, and minedTransactions using WebSockets. Creates a new subscription for desired events. Sends data as soon as it occurs.
 
@@ -874,7 +870,7 @@ Subscribe to different Ethereum event types like newHeads, logs, pendingTransact
     - Event types: specifies the type of event to listen to (ex: new pending transactions, logs, etc).
     - Optional params: optional parameters to include to describe the type of event to listen to (`address` for example).
 
-## EthUninstallFilter
+## eth_uninstallFilter
 
 Uninstalls a filter with given id.
 
@@ -900,7 +896,7 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 }
 ```
 
-## EthUnsubscribe
+## eth_unsubscribe
 
 Unsubscribe from different Ethereum event types with a regular RPC call with `eth_unsubscribe` as the method and the `subscriptionId` as the first parameter.
 
@@ -914,7 +910,8 @@ curl --location --request POST 'https://wallaby.node.glif.io/rpc/v0' \
 --data-raw '{
     "jsonrpc":"2.0",
     "method":"eth_unsubscribe",
-    "params": ["b62df77831484129adf6682332ad0725"],                                                                      "id":1
+    "params": ["b62df77831484129adf6682332ad0725"],
+    "id":1
 }' | jq
 ```
 

@@ -31,7 +31,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
 }'
 ```
 
-## Step-by-step example
+## Example
 
 1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io) node.
 
@@ -73,6 +73,15 @@ curl --location --request POST '<NODE_ADDRESS>' \
                     "Miner": "f0152747",
                     "Ticket": {
     ...
+    ```
+
+1. To call a method that requires arguments, enter the parameters into the `params` array. `ChainGetBlock` returns information for a specific block using it's CID as an input:
+
+    ```shell
+    curl -X POST 'https://api.node.glif.io' \
+        -H 'Content-Type: application/json' \
+        --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainGetBlock","params":["/", "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"]}' \
+        | jq
     ```
 
 ## Permissions
