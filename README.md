@@ -3,6 +3,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![Website status][website-status]][website-status-url]
 
 <br>
 
@@ -41,6 +42,10 @@
             - [Sub-menu](#sub-menu)
         - [Aliases](#aliases)
         - [Draft](#draft)
+    - [Features](#features)
+        - [Archived content](#archived-content)
+        - [Code tabs](#code-tabs)
+        - [Tooltips](#tooltips)
 - [Issues](#issues)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -142,6 +147,7 @@ This section lists the various files and folders and defines the purpose for eac
 Want to help out? Pull requests (PRs) are always welcome! If you want to help out but aren't sure where to start, check out the [issues board](https://github.com/filecoin-project/filecoin-docs/issues).
 
 ### Video guides for site management
+
 
 Here's a collection of guides you can use to help manage and contribute to this site:
 
@@ -353,6 +359,72 @@ draft: true
 
 This feature is generally used when we need to share content that isn't fully complete, but some users could benefit from its information at this exact moment.
 
+### Features
+
+This project contains some handy features you can include within your project.
+
+#### Archived content
+
+Old pages can be archived and hidden from the sidebar view. However, the can still be accessed for historical purposes. 
+
+![](/.static/images/archived-page.png)
+
+To archive a page:
+
+1. Move the page and any associated images into the `/content/en/archive` directory.
+1. Add an alias redirect using the original location of this file:
+
+    ```markdown
+    ---
+    ...
+    aliases:
+        - "/build/tools/filecoin-pinning-services/"
+    ---
+    ```
+
+1. Add the following shortcode to the top of the page, just below the front-matter
+
+    ```markdown
+    ---
+
+    {{< archived-content >}}
+
+    ...
+    ```
+
+Take a look at the `/content/en/archive` directory for examples.
+
+<!-- #### Code tabs -->
+
+
+
+#### Tooltips
+
+To make understand the docs a bit easier, users can hover over certain terms to get a short definition. These descriptions are located within a `dict` variable at the top of the `layouts/shortcodes/tooltip.html` shortcode:
+
+```go
+<!-- Create array/map of all possible tooltips. -->
+{{ $tooltips := dict
+    "dApps" "Decentralized applications that don't rely on centralized infrastructure."
+    "IPFS" "The InterPlanetary File System (IPFS) is a peer-to-peer protocol for sharing and storing files on the internet, designed to be decentralized and distributed."
+    "Lotus" "The reference node implementation for the filecoin network."
+    "Lily" "Software designed to simplify the recording of blockchain data."
+    "web3" "A new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics."
+}}
+
+...
+```
+
+Within your markdown you can use one of these tooltips with the following syntax:
+
+```markdown
+[...] storage on {{< tooltip "IPFS" >}} with blockchain-powered [...]
+```
+
+The tooltip should show up once the site has built:
+
+![](static/images/tooltip-example.png)
+
 <!-- /CONTRIBUTING -->
 
 
@@ -402,6 +474,8 @@ Project Link: [https://github.com/filecoin-project/filecoin-docs](https://github
 [license-shield]: https://img.shields.io/badge/license-MIT-blueviolet?style=for-the-badge
 [license-url]: https://github.com/filecoin-project/filecoin-docs/blob/master/LICENSE.txt
 [product-screenshot]: ./static/images/filecoin-docs-homepage.png
+[website-status]: https://img.shields.io/website.svg?down_color=red&style=for-the-badge&url=https%3A%2F%2Flotus.filecoin.io
+[website-status-url]: https://docs.filecoin.io/
 <!-- /MARKDOWN LINKS & IMAGES -->
 
 <!-- markdownlint-disable-file -->

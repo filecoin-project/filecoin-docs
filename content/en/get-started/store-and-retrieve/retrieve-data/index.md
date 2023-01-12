@@ -1,10 +1,16 @@
 ---
 title: "Retrieve data"
 description: "Learn how to get data out of the Filecoin network using Lotus. The final piece of this tutorial is downloading data from the Filecoin network. This section covers creating a retrieval deal with a storage provider and downloading the data through your local Lotus lite-node."
-weight: 4
+lead: "Learn how to get data out of the Filecoin network using Lotus. The final piece of this tutorial is downloading data from the Filecoin network. This section covers creating a retrieval deal with a storage provider and downloading the data through your local Lotus lite-node."
+draft: false
+images: []
+type: docs
 menu:
-    getstarted:
-        parent: "getstarted-store-and-retrieve"
+  get-started:
+    parent: "lorem"
+    identifier: "retrieve-data-9ec6b4ab1de430a94c3b459f0b89b7a0"
+weight: 40
+toc: true
 ---
 
 In the previous step, you stored some data on the Filecoin network. It takes up to 24 hours for a storage provider to _seal_ the data. If it's been more than 24 hours since you completed the last section, great! If not, don't worry; you can still follow this page to retrieve some example data that's already on the Filecoin network.
@@ -41,10 +47,10 @@ Before you can retrieve data from a storage provider, you need to check that you
 
     Any balance above 0.1 FIL is enough to retrieve the data we are requesting in this tutorial.
 
-{{< alert icon="warning" >}}**Low or no balance**
+{{< alert  >}}**Low or no balance**
 If you do not have enough FIL, you need to transfer some FIL to this account. You can either do this by using a cryptocurrency exchange or having a friend send you FIL. The address `f1...` listed when you run `lotus wallet list` is your public address; use this when requesting money from an exchange or your friend.
 
-Check out the [Managing assets section]({{< relref "managing-assets.md" >}}) for information on [withdrawing FIL from an exchange]({{< relref "managing-assets.md#exchanges" >}}).
+Check out the [FIL token section]({{< relref "fil-token" >}}) for information on [withdrawing FIL from an exchange]({{< relref "fil-token#exchanges" >}}).
 {{< /alert >}}
 
 ## Get the deal information

@@ -1,7 +1,10 @@
 {
   "name": "@hyas/doks",
   "description": "Doks theme",
-  "version": "0.4.1",
+  "version": "0.5.0",
+  "engines": {
+    "node": ">=16.16.0"
+  },
   "browserslist": [
     "defaults"
   ],
@@ -20,9 +23,11 @@
     "build:preview": "npm run build -D -F",
     "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json node_modules ",
-    "lint": "npm run -s lint:scripts && npm run -s lint:styles",
+    "lint": "npm run -s lint:scripts && npm run -s lint:styles && npm run -s lint:markdown",
     "lint:scripts": "eslint assets/js config functions",
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
+    "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
+    "lint:markdown-fix": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
     "server": "exec-bin node_modules/.bin/hugo/hugo server",
     "test": "npm run -s lint",
     "env": "env",
@@ -33,33 +38,35 @@
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17",
-    "@babel/core": "^7.17",
-    "@babel/preset-env": "^7.16",
+    "@babel/cli": "^7.18",
+    "@babel/core": "^7.18",
+    "@babel/preset-env": "^7.18",
     "@fullhuman/postcss-purgecss": "^5.0",
+    "@hyas/images": "^0.2.2",
     "auto-changelog": "^2.4",
     "autoprefixer": "^10.4",
-    "bootstrap": "^5.1",
+    "bootstrap": "^5.2.0-beta1",
     "clipboard": "^2.0",
-    "eslint": "^8.12",
+    "eslint": "^8.19",
     "exec-bin": "^1.0.0",
     "flexsearch": "^0.7.21",
     "highlight.js": "^11.5",
-    "hugo-installer": "^4.0",
+    "hugo-installer": "^3.1",
     "instant.page": "^5.1",
     "katex": "^0.16",
     "lazysizes": "^5.3",
+    "markdownlint-cli2": "^0.6.0",
     "netlify-plugin-submit-sitemap": "^0.4.0",
     "node-fetch": "^3.2",
     "postcss": "^8.4",
     "postcss-cli": "^10.0",
     "purgecss-whitelister": "^2.4",
     "shx": "^0.3.4",
-    "stylelint": "^14.6",
-    "stylelint-config-standard-scss": "^6.0"
+    "stylelint": "^14.9",
+    "stylelint-config-standard-scss": "^6.1"
   },
   "otherDependencies": {
-    "hugo": "0.96.0"
+    "hugo": "0.101.0"
   },
   "dependencies": {
     "highlightjs-curl": "^1.3.0"

@@ -1,6 +1,7 @@
 node_modules
 public
-/resources/
+resources
 .netlify
 .hugo_build.lock
 .DS_Store
+TODO

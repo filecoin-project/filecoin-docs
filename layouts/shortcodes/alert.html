@@ -1,13 +1,5 @@
-{{ $icon := .Get "icon" }}
-
-<div class="alert alert-warning d-flex" role="alert">
-  <div class="flex-shrink-1 alert-icon">
-    {{ if eq $icon "warning" }} ❗ 
-    {{ else if eq $icon "callout" }} 💬
-    {{ else if eq $icon "tip" }} 💡
-    {{ else }} 👉
-    {{ end }}
-  </div>
+<div class="alert alert-{{ with .Get "context" }}{{.}}{{ else }}doks{{ end }} d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">{{ with .Get "icon" }}{{.}} {{ end }}</div>
   {{ with .Get "text"}}
     <div class="w-100">{{ . | safeHTML }} </div>
   {{ else }}
@@ -18,4 +10,3 @@
     {{ end }}
   {{ end}}
 </div>
-

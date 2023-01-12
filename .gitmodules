@@ -1,0 +1,3 @@
+[submodule "docs-starter"]
+	path = docs-starter
+	url = https://github.com/protocol/docs-starter

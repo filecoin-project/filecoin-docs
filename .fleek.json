@@ -1,0 +1,8 @@
+{
+ "build": {
+   "image": "node:lts",
+   "command": "npm install && npm run build",
+   "publicDir": "public"
+ }
+}
+

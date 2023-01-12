@@ -5,9 +5,7 @@ title = "Filecoin Docs"
 titleSeparator = "-"
 titleAddition = "Home"
 description = "Documentation for Filecoin - A decentralized storage network for humanity's most important information."
-
-# Folders in content that the site will search through.
-mainSections = ["about-filecoin", "build", "community", "get-started", "networks", "project", "reference", "storage-provider", "store"]
+useLogo = true
 
 ## Documentation
 # docsVersion = "0.3"
@@ -23,7 +21,6 @@ twitterSite = "@filecoin"
 twitterCreator = "@protocollabs"
 
 ## JSON-LD
-# schemaType = "Person"
 schemaType = "Organization"
 schemaName = "Filecoin"
 schemaAuthor = "Protocol Labs"
@@ -42,6 +39,7 @@ schemaLinkedIn = ""
 schemaGitHub = "https://github.com/filecoin-project/filecoin-docs"
 schemaSection = "blog"
 
+
 ## Sitelinks Search Box
 siteLinksSearchBox = false
 
@@ -54,34 +52,65 @@ bgColor = "#fff"
 landscapePhotoWidths = [900, 800, 700, 600, 500]
 portraitPhotoWidths = [800, 700, 600, 500]
 lqipWidth = "20x"
+smallLimit = "300"
+
+# Images
+imageResponsive = true
+imageConvertTo = "webp"
+imageImageSizes = ["480","720","1080","1280","1600","2048"]
+singleSize = false
+imageAddClass = "img-fluid lazyload blur-up"
+
+### Image template
+defaultImage = "default-image.png" # put in `./assets/images/`
+fillImage = "1270x740 Center" # normalize image size
 
 # Footer
-footer = "Built by Protocol Labs."
+footer = "Built by Protocol Labs"
 footer_link = "https://protocol.ai"
 
 # Feed
 copyRight = ""
 
 # Alert
-alert = false
+alert = true
 alertDismissable = true
-alertText = ""
+alertText = "You can view the legacy version of this docs site at <a href='https://legacy-docs.filecoin.io'>legacy-docs.filecoin.io</a>."
 
 # Edit Page
-docsRepo = "https://github.com/filecoin-project/filecoin-docs/tree/main/"
+repoHost = "GitHub"
+# repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ]
+docsRepo = "https://github.com/filecoin-project/filecoin-docs"
 docsRepoBranch = "main"
+docsRepoSubPath = ""
 editPage = true
+lastMod = false
+
+[sections]
+#  sectionNav = ["docs", "blog"]
 
 [options]
   lazySizes = true
   clipBoard = true
   instantPage = true
   flexSearch = true
+  searchSectionsShow = "ALL"
+  searchSectionsIndex = ["about", "blog", "build", "developers", "fvm", "get-started", "networks", "reference", "storage-provider", "store"]
   darkMode = true
   bootStrapJs = true
   breadCrumb = false
   highLight = true
   kaTex = false
-  collapsibleSidebar = false
-  multilingualMode = true
-  docsVersioning = false # Not yet functional
+  multilingualMode = false
+  docsVersioning = false
+  fullWidth = false
+  navbarSticky = true
+  toTopButton = false
+  scrollSpy = false # experimental; needs Bootstrap >= 5.2.0-beta1
+  progressBar = true
+
+
+[menu]
+  [menu.section]
+    auto = true
+    collapsibleSidebar = false

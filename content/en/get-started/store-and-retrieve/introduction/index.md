@@ -1,15 +1,19 @@
 ---
 title: "Introduction"
 description: "The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial."
-weight: 1
+lead: "The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial."
+draft: false
+images: []
+type: docs
 menu:
-    getstarted:
-        parent: "getstarted-store-and-retrieve"
+  get-started:
+    parent: "lorem"
+    identifier: "introduction-43499088a8bdb1e2cc3ea42b35014ef4"
+weight: 10
+toc: true
 aliases:
-    - /get-started/store-and-retrieve/
+    - "/get-started/store-and-retrieve/"
 ---
-
-The process of storing and retrieving data using the Filecoin network is slightly different from how most storage platforms work. This tutorial walks you through the whole end-to-end process of keeping your data and then getting it back when you need it! We're going to use Lotus and the command-line in this tutorial.
 
 The process is split into three main parts: the set-up, storing your data and retrieving your data. Each section has several sub-processes that we need to follow.
 
@@ -28,7 +32,7 @@ The process is split into three main parts: the set-up, storing your data and re
 
 It will take about an hour to complete this tutorial. While there aren't too many steps involved, there's a bit of waiting around for the network to process your requests.
 
-{{< alert icon="warning" >}}**Running on mainnet**
+{{< alert  >}}**Running on mainnet**
 This tutorial uses the Filecoin mainnet. Everything you'll see over the next hour is happening on a production network with other users storing and retrieving data. But don't worry, this tutorial won't cost you anything! It's just important to know that you'll be dealing with real storage providers, real data, and real transactions.
 {{< /alert >}}
 
@@ -68,4 +72,4 @@ This tutorial contains some words and phrases that you might not be familiar wit
 
 ## Next steps
 
-Before we can manage data on the Filecoin network, we need to set up things like a Lotus node and a Filecoin wallet. [Head to the set-up section to start gathering your resources →]({{< relref "set-up" >}})
+Before we can manage data on the Filecoin network, we need to set up things like a Lotus node and a Filecoin wallet. [Head to the set-up section to start gathering your resources →]({{< relref "setup" >}})
