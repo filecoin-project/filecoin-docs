@@ -75,7 +75,7 @@ copyRight = ""
 # Alert
 alert = true
 alertDismissable = true
-alertText = "You can view the legacy version of this docs site at <a href='https://legacy-docs.filecoin.io'>legacy-docs.filecoin.io</a>."
+alertText = "Want to help us test out the Filecoin Virtual Machine? <br>Check out the <a href='https://ethglobal.com/events/spacewarp'>FVM Space Warp Hackathon</a> starting January 20th!"
 
 # Edit Page
 repoHost = "GitHub"
