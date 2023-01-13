@@ -75,13 +75,36 @@ curl --location --request POST '<NODE_ADDRESS>' \
     ...
     ```
 
-1. To call a method that requires arguments, enter the parameters into the `params` array. `ChainGetBlock` returns information for a specific block using it's CID as an input:
+1. To call a method that requires arguments, enter the parameters into the `params` array. `ChainGetBlock` returns information for a specific block using it's block ID CID as an input. In this case the block ID is `bafybeigvlkds...`:
 
     ```shell
     curl -X POST 'https://api.node.glif.io' \
-        -H 'Content-Type: application/json' \
-        --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainGetBlock","params":["/", "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"]}' \
-        | jq
+    --header 'Content-Type: application/json' \
+    --data '{
+        "id": 1,
+        "jsonrpc": "2.0",
+        "method": "Filecoin.ChainGetBlock",
+        "params": [
+            {
+                "/": "bafybeigvlkds7ar3fbyfyzkviq2nyj4asj6ocxta3kaqixolf2wfktxwyi"
+            }
+        ]
+    }' | jq
+    ```
+
+    ```plaintext
+    {
+        "jsonrpc": "2.0",
+            "result": {
+                "Miner": "f01501599",
+                "Ticket": {
+                    "VRFProof": "qrjFwNJXKEZpHoApd8JluQCz+VI/zQPpAOc9DFzpoXL3UNFknJCXwFTqKf7N+ZI9CXC4iwVDcLFCqYnZi9yRYy7Ks51UeG4CdcM+g9VjpCi9dxqRSax2wQK758ztHzaa"
+                },
+                "ElectionProof": {
+                    "WinCount": 1,
+                    "VRFProof": "q8JZ7CBbfpsXcVPLBfJivvexyFkMe8LnMt1B3wzGqNYYgtpa0Cqlp6nPsFsqNdthCN7aw5IcWY8DnE0IrO03VJJ5ztyYdzIHtUPYlPCS6qBjLPNpiR/96SlHKrJjLkTd"
+                },
+    ...
     ```
 
 ## Permissions
