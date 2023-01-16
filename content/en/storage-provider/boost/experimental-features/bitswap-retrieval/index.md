@@ -28,7 +28,7 @@ There are two primary "modes" for exposing `booster-bitswap` to the internet.
 
 ### Demo configuration
 
-You can configure booster-bitswap in the demo mode and familiarise yourself with the configuration. Once you are confident and familiar with the options, please go ahead and configure `booster-bitswap` for [production use](bitswap-retrieval.md#setup-booster-bitswap-to-serve-retrievals-publicly).
+You can configure booster-bitswap in the demo mode and familiarise yourself with the configuration. Once you are confident and familiar with the options, please go ahead and configure `booster-bitswap` for [production use](#set-up-booster-bitswap-to-serve-retrievals-publicly).
 
 1. Clone the `release/booster-bitswap` branch from the boost repo
 

@@ -1,5 +1,5 @@
 ---
-title: "HTTP retrieval"
+title: "HTTP retrievals"
 description: "How to configure and use HTTP retrievals with Filecoin Boost"
 lead: ""
 date: 2022-01-25T14:41:39+01:00
