@@ -7,7 +7,6 @@ images: []
 type: docs
 menu:
   networks:
-    parent: "lorem"
     identifier: "available-networks-3873051de052ab107e1160ecff302b3d"
 weight: 10
 toc: true
@@ -24,8 +23,9 @@ The [Glif nodes section](https://lotus.filecoin.io/docs/developers/hosted-lotus/
 There are several networks available for Filecoin:
 
 - [Mainnet](#mainnet), the only production Filecoin network.
-- [Calibration](#calibration), the primary testing network for Filecoin.
-- [Wallaby](#wallaby), an early testing network for bleeding edge [Filecoin Virtual Machine](https://fvm.filecoin.io) deployments.
+- [Calibration](#calibration), a test network for storage providers to test their node configuration.
+- [Hyperspace](#hyperspace), the primary test network for smart-contract and actor developers.
+- [Wallaby](#wallaby), an early smart-contract and actor test network for bleeding edge [Filecoin Virtual Machine]({{< relref "filecoin-virtual-machine" >}}) deployments.
 
 {{< alert  >}}
 Check the status of each network and subscribe to updates at [status.filecoin.io](https://status.filecoin.io).
@@ -57,7 +57,7 @@ Mainnet is the primary Filecoin network. Mainnet began on block 148,888. It supp
 
 **Bootstrap peers**:
 
-```
+```plaintext
 /dns4/bootstrap-0.mainnet.filops.net/tcp/1347/p2p/12D3KooWCVe8MmsEMes2FzgTpt9fXtmCY7wrq91GRiaC8PHSCCBj
 /dns4/bootstrap-1.mainnet.filops.net/tcp/1347/p2p/12D3KooWCwevHg1yLCvktf2nvLu7L9894mcrJR4MsBCcm4syShVc
 /dns4/bootstrap-2.mainnet.filops.net/tcp/1347/p2p/12D3KooWEWVwHGn2yR36gKLozmb4YjDJGerotAPGxmdWZx2nxMC4
@@ -118,7 +118,7 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 
 **Bootstrap peers**:
 
-```
+```plaintext
 /dns4/bootstrap-0.calibration.fildev.network/tcp/1347/p2p/12D3KooWRLZAseMo9h7fRD6ojn6YYDXHsBSavX5YmjBZ9ngtAEec
 /dns4/bootstrap-1.calibration.fildev.network/tcp/1347/p2p/12D3KooWJFtDXgZEQMEkjJPSrbfdvh2xfjVKrXeNFG1t8ioJXAzv
 /dns4/bootstrap-2.calibration.fildev.network/tcp/1347/p2p/12D3KooWP1uB9Lo7yCA3S17TD4Y5wStP5Nk7Vqh53m8GsFjkyujD
@@ -135,11 +135,55 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 
 ### Hyperspace 
 
-The Hyperspace testnet is a pre-production developer focused testnet. Developers are welcomed to build and test their toolings, applications, smart contracts and etc on this network. This network is aimed to be stable and reliable.
+The Hyperspace testnet is a pre-production developer focused testnet. This network is designed for developers to build and test their toolings, applications, smart contracts, and actors on a public network. Developers should consider the Hyperspace testnet stable as it will only be reset under catastrophic circumstances.
+
+- Supports 512MB and 32GiB sectors.
+- Has two miners auto-accepting new deals.
 
 **Maintainer**: Factor 8
 
 More information on Hyperspace can be found [here](https://github.com/filecoin-project/testnet-hyperspace).
+
+**Genesis**:
+
+- CAR File: `QmPe6sDt3btoN6TtpFJVrMjjsiFxojMkcVkm36khJ37JB6`
+- Reset Timestamp: `2022-11-17T12:19:22Z`
+- Genesis Block CID: `bafy2bzacebn3zgajhzrkelgihbt6sbveglecq4d3ezqfa652zok6c3a5enkzs`
+- sha1 Digest: `ee5fc220ea9d8e79eb47d03b1236e85d3f21dfdb`
+
+**Network parameters**:
+
+- Supported Sector Sizes: `512 MiB` and `32 GiB` and `64 GiB`
+- Consensus Miner Min Power: `16 GiB`
+- Epoch Duration Seconds: `30`
+- Expected Leaders per Epoch: `5`
+- WindowPoSt Proving Period: `2880`
+- WindowPoSt Challenge Window: `60`
+- WindowPoSt Period Deadlines: `48`
+- Pre-Commit Challenge Delay: `10`
+
+**Bootstrap peers**:
+
+```plaintext
+/dns4/de0.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWHAvUVk5XuxSwi2dNLWbTDDRSGeHxMuWdQ3SQpRuNHbLz
+/dns4/de1.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWBRqtxhJCtiLmCwKgAQozJtdGinEDdJGoS5oHw7vCjMGc
+/dns4/ca0.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWCApBpUk7EX9pmEfyky1gKC6N2KJ74S1AwFfvnkDqw3pK
+/dns4/sg0.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWLnYqr4hRoNHBJQVXsFGkDoKuoVfw5R2ASw1bHzrWU5Px
+```
+
+**FVM release**:
+
+- [FVM M2.1 Sapphire (r08)](https://github.com/filecoin-project/ref-fvm/issues/940)
+- Lotus commit: [cb838cedae49106e9ceb7302add3688a835dbdb4](https://github.com/filecoin-project/lotus/commit/cb838cedae49106e9ceb7302add3688a835dbdb4)
+- [List of FVM releases](https://github.com/filecoin-project/ref-fvm/issues/692)
+
+**Resources**:
+
+- [Faucet](https://hyperspace.filtest.network/#faucet)
+- [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
+- [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
+- [Block explorer - Filfox](https://hyperspace.filfox.info/en)
+- [Block explorer - Glif](https://explorer.glif.io/?network=hyperspace)
 
 ### Wallaby
 
@@ -147,7 +191,7 @@ The Wallaby testnet is intended for early testing of new Filecoin Virtual Machin
 
 **Maintainer**: Factor 8
 
-More information on Wallaby can be found [here](https://github.com/filecoin-project/testnet-wallaby/).
+Information for this networks changes frequently. Check out the [Testnet wallaby reposiotry for the most up-to-date information](https://github.com/filecoin-project/testnet-wallaby/).
 
 ### Deprecated networks
 
