@@ -1,14 +1,14 @@
 ---
 title: "Blueprints"
-description: ""
-lead: ""
+description: "A collection of blueprint examples that developers can use to design and create their projects on Filecoin."
+lead: "A collection of blueprint examples that developers can use to design and create their projects on Filecoin."
 draft: false
 images: []
 type: docs
 menu:
   developers:
     identifier: "blueprints-e572c427f0f9ec19b6aef4519ac2f40a"
-weight: 100
+weight: 25
 toc: true
 ---
 
@@ -65,13 +65,13 @@ The DataDAO contract can decide how to incentivize SPs by implementing their bus
 
 ## Perpetual Storage
 
-There are many use cases in the world that need perpetual storage. For example, NFT owners would love the binary data of their NFT being safely stored and can be retrieved indefinitely. 
+There are many use cases in the world that need perpetual storage. For example, NFT owners would love the binary data of their NFT being safely stored and can be retrieved indefinitely.
 
 Filecoin deals have an expiration date, usually a year, attached to it, and after the expiration date, deals will expire and data will be lost. With FVM, uploaders can specify the number of replications they want and the desired expiration date. The expiration date can be a long time into the future, or even indefinitely. As long as the uploader still has funds (FIL) in the contract account, the contract will keep incentivizing Storage Providers to create deals to meet the goal of replication.
 
 ### Solution architecture
 
-I highly recommend that you [read through the “Core Idea” section in this README](https://github.com/lotus-web3/client-contract) before continuing to reading this document. 
+I highly recommend that you [read through the “Core Idea” section in this README](https://github.com/lotus-web3/client-contract) before continuing to reading this document.
 
 ![Diagram showing the relationship between Market Actor, Client Contracts, and Storage Providers within the Filecoin network.](client-market-sp-mesh.png)
 
@@ -85,23 +85,89 @@ I highly recommend that you [read through the “Core Idea” section in this RE
 
 - The uploader should upload the file to a place where Storage Providers can download the data from, such as IPFS or AWS S3, and get the URL of the data
 - The uploader should send URL of the data, the desired number of replication, and the desired expiration date to the PerpStorage contract to create a PerpDeal
-    - The Dapp frontend can provide an estimation of how long the data can be stored based on the amount of FIL the uploader has in the contract
-    - The contract should reject the creation of the PerpDeal if the uploader does not have enough funds deposited in the contract
-- The PerpStorage contract should create and update PerpDealAd based on the storage situation of each PerpDeal
-    - The PerpStorage contract should determine the FIL it wants to give out for each PerpDealAd based on its business logic. For example, it can provide more bonuses if the PerpDeal does not have many replications or if its storage deals are about to expire. 
+    - The Dapp frontend can provide an estimation of how long the data can be stored based on the amount of FIL the uploader has in the contract.
+    - The contract should reject the creation of the PerpDeal if the uploader does not have enough funds deposited in the contract.
+- The PerpStorage contract should create and update PerpDealAd based on the storage situation of each PerpDeal.
+    - The PerpStorage contract should determine the FIL it wants to give out for each PerpDealAd based on its business logic. For example, it can provide more bonuses if the PerpDeal does not have many replications or if its storage deals are about to expire.
 
 #### PerpDeal information
 
-- The PerpStorage contract should provide an interface for storage providers to query the information about PerpDeals, including the URL of the data, the desired expiration date, the current number of replication, and the storage deals created by other storage providers
-- The PerpStorage contract should provide an interface for storage providers to query PerpDealAd
-- The PerpStorage contract should provide an interface for storage providers to query the funds that the uploader has put into the PerpStorage contract
+- The PerpStorage contract should provide an interface for storage providers to query the information about PerpDeals, including the URL of the data, the desired expiration date, the current number of replication, and the storage deals created by other storage providers.
+- The PerpStorage contract should provide an interface for storage providers to query PerpDealAd.
+- The PerpStorage contract should provide an interface for storage providers to query the funds that the uploader has put into the PerpStorage contract.
 
 #### Storage deals creation
 
-- Storage Providers can look at the list of PerpDealAd and determine which PerpDealAd they want to store
-- Storage Providers should download the content of the PerpDealAd. They should try to download from the URL of the content or use the CID to download the content from other storage providers
-- Storage Providers should seal the data of the PerpDealAd and publish the deal information to the market actor by calling `publish_deal` on the market actor. The PerpStorage contract will act as the client of the deal. (The command to seal the data and generate deal information is under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)) 
-    - The storage provider should put the PerpDealAd’s id into the label (this is the field used to store arbitrary data) of the deal, so the PerpStorage contract can identify which PerpDealAd the storage provider is targeting
+- Storage Providers can look at the list of PerpDealAd and determine which PerpDealAd they want to store.
+- Storage Providers should download the content of the PerpDealAd. They should try to download from the URL of the content or use the CID to download the content from other storage providers.
+- Storage Providers should seal the data of the PerpDealAd and publish the deal information to the market actor by calling `publish_deal` on the market actor. The PerpStorage contract will act as the client of the deal. (The command to seal the data and generate deal information is under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)).
+    - The storage provider should put the PerpDealAd’s id into the label (this is the field used to store arbitrary data) of the deal, so the PerpStorage contract can identify which PerpDealAd the storage provider is targeting.
     - The market actor will call the [AuthenticateMessage](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0044.md) native method on the PerpStorage contract to know if this deal should be created. This method will be called using the FRC42 method number as specified in the linked FRC.
     - You can handle this callback by exposing a `handle_filecoin_method(uint64, uint64, bytes)` Solidity method, which is how the FEVM runtime routes inbound FRC42 calls. [See this example](https://github.com/lotus-web3/client-contract/blob/8b53caadd9f7b028f897dfcd28ec2ca9ae98b9e3/src/DealClient.sol#LL49).
     - The PerpStorage contract should check if this replication is valid and send FIL to the storage provider if it successfully creates the deal.
+
+## Lending pool
+
+Storage providers (SPs) have to post collateral (in FIL) to onboard storage capacity to the network, and to accept storage deals. This collateral incentivises the storage provider to behave correctly, by presenting timely proofs of health of the data (PoRep, PoSt), or they risk getting slashed.
+
+While important, the need to pledge collateral creates friction and an immediate barrier that throttles SP participation and growth. On the other hand, the Filecoin network has a large base of long-term token holders that would like to see the network grow, and are willing to lend their FIL to reputable and growth-oriented SPs.
+
+A lending pool can solve this issue. Storage providers can borrow collateral from lenders and the smart contract will lock the future income (block rewards) until the storage providers have repaid their loan.
+
+### Required addresses
+
+#### Owner address
+
+- Income and returned collateral are paid to this address.
+- This address is also allowed to change the worker address for the miner
+- `change_owner_address` method can change the owner address
+
+#### [Beneficiary address](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0029.md)
+
+- Beneficiary is an entity the owner can declare that is allowed to withdrawal some of the miners FIL in available balance (as opposed to locked collateral)
+- There is a [BeneficaryTerm](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/typeLibraries/CommonTypes.sol#L75) that indicates.
+    - how much the beneficiary can withdraw from.
+    - the expiration date.
+    - how much the beneficiary has withdrawn from.
+- The Beneficiary is set to the same address of Owner when first creating a miner without specifying a beneficiary address.
+- [Get_beneficiary method](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/MinerAPI.sol#L64) can return current beneficiary information.
+- [ChangeBeneficary method](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/MinerAPI.sol#L52) can specify a new beneficiary.
+
+#### [Worker address](https://lotus.filecoin.io/storage-providers/operate/addresses/#the-worker-address)
+
+### Lending pool solution architecture
+
+#### Deposit
+
+- The capital contributor (lenders) can call a `deposit` method on the LendingMarket contract to deposit the FIL into the contract
+- The LendingMarket keeps track of the amount each lender deposits and their gain/loss
+
+#### Loan underwriting (can be custom to lender offchain)
+
+- (offchain) The storage providers submits the desired loan amount and loan period to the loan market
+- (offchain) The loan market determines the interest rate based on the on-chain information of the miner, such as slash rate, length of operations, power, …
+- (offchain) The loan market generates a signed loan specification that can be submitted on chain including the loan amount, loan period, and interest rate.
+- (offchain) The borrower submits the signed loan specification loan amount, loan period, and interest rate to the LendingMarket contract to create the loan
+
+#### Creating miner actors, owner contract, and beneficiary contract
+
+- The LendingMarket contract will create a smart contract (LoanAgent) using (CREATE2):
+    - LoanAgent contract will serve as the owner and beneficiary of the miner actor
+- The miner will transfer the ownership to the owner smart contract, through a separate message submitted externally (in the future, there will be a Miner method to change the owner address)
+- The LendingMarket contract will check if the miner actor’s owner are the LoanAgent
+- The LendingMarket calls the LoanAgent contract to call the ChangeBeneficiary method on the miner actor to specify the LoanAgent as its beneficiary
+
+#### Repayment of loan
+
+- The miner actor will accumulate block rewards as long as the storage providers keep providing storage to the network
+- The storage providers should be able to call a method on the LendingMarket contract to get the repayment schedule
+    - Including next payment date, and the amount expected to be paid
+- The LoanAgent should pull the required fund from the actor according to the repayment schedule
+- Whenever a repayment is made, the LendingMarket contract should calculate the interest each lender should get
+- After all repayments are completed, the owner should propose changing the beneficiary to itself and the beneficiary should approve it
+
+#### In terms of loan default
+
+- If the LoanAgent fails to pull fund from the miner actor, it would consider the loan as “at risk”. If the loan is at risk for a certain period of time, the LoanAgent can try to terminate sectors (not available now) and claim the balance left in the actor.
+
+![A diagram showing the lending pool flow.](lending-pool-flow.png)
