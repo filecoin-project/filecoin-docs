@@ -14,7 +14,9 @@ toc: true
 
 ## DataDAO solution
 
-There are many ways to create a DataDAO, so this document will only focus on one of the possibilities for the purpose of example.
+A Data DAO enables the creation of a dataset economy where users can capture and represent the value of those datasets to society. It's even possible to exchange those data tokens between peers and request computation services on that data, such as validation, joins, analysis, feature detection, and extraction.
+
+There are many ways to create a DataDAO. so this document will only focus on one of the possibilities for the purpose of example.
 
 As the [RFS](https://rfs.fvm.dev/) describes, DataDAOs enable groups of people to put together resources to preserve and utilize the data that are useful for their stakeholders. Imaging a DataDAO can mint a token $DATA, and incentivize Storage Providers to replicate the data it wants to store. The DataDAO can specify the data it wants to replicate and the number of replications it desires. For every replication, the DataDAO will mint some $DATA and send them to the SP as rewards. How datasets are chosen is left up to the governance process of the DataDAO.
 
