@@ -28,7 +28,8 @@ The Filecoin Boost source code repository is hosted at [github.com/filecoin-proj
 | v1.3.0        | v1.17.0, v1.17.1                       |
 | v1.4.0        | v1.17.0, v1.17.1, v1.17.2, v1.18.0-rc1 |
 | v1.5.0        | v1.18.0                                |
-| v1.5.1-rc2    | v1.18.0                                |
+| v1.5.1-rc2    | v1.18.0, v1.19.0                       |
+
 
 ### Building and installing
 
