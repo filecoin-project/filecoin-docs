@@ -1,6 +1,6 @@
 ---
 title: "JSON-RPC API"
-description: ""
+description: "All Boost API definitions and interfaces that are exposed as JSON-RPC 2.0 endpoints by the boostd daemon"
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
@@ -15,32 +15,1121 @@ weight: 80
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
 
-## Selvage
+# Using the Go RPC client with the Boost JSON-RPC API
+To use the Boost Go client, the Go RPC-API library can be used to interact with the Boost API node. <!-- STEF this sentence is really hard to parse- can we expand it?-->
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+1. Import the necessary Go module:
+```
+go get github.com/filecoin-project/go-jsonrpc
+```
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+2. Create the following script:
 
-### Heirloom
+```go
+package main
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+import (
+    "context"
+    "fmt"
+    "log"
+    "net/http"
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+    jsonrpc "github.com/filecoin-project/go-jsonrpc"
+    boostapi "github.com/filecoin-project/boost/api"
+)
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+func main() {
+    authToken := "<value found in ~/.boost/token>"
+    headers := http.Header{"Authorization": []string{"Bearer " + authToken}}
+    addr := "127.0.0.1:1288"
 
-## Bushwick cold-pressed
+    var api boostapi.BoostStruct
+    closer, err := jsonrpc.NewMergeClient(context.Background(), "ws://"+addr+"/rpc/v0", "Filecoin", []interface{}{&api.Internal, &api.CommonStruct.Internal}, headers)
+    if err != nil {
+        log.Fatalf("connecting with boost failed: %s", err)
+    }
+    defer closer()
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+    // Now you can call any API you're interested in.
+    netAddrs, err := api.NetAddrsListen(context.Background())
+    if err != nil {
+      log.Fatalf("calling netAddrsListen: %s", err)
+    }
+    fmt.Printf("Boost is listening on: %s", netAddrs.Addrs[0])
+}
+```
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+3. Run `go mod init` to set up your `go.mod` file
+4. You should now be able to interact with the Boost API. <!-- STEF: How?-->
 
-## Locavore swag
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+# Alphabetical API Reference
+* [Actor](#actor)
+  * [ActorSectorSize](#actorsectorsize)
+* [Auth](#auth)
+  * [AuthNew](#authnew)
+  * [AuthVerify](#authverify)
+* [Boost](#boost)
+  * [BoostDagstoreInitializeAll](#boostdagstoreinitializeall)
+  * [BoostDagstoreInitializeShard](#boostdagstoreinitializeshard)
+  * [BoostDeal](#boostdeal)
+  * [BoostDummyDeal](#boostdummydeal)
+  * [BoostIndexerAnnounceAllDeals](#boostindexerannouncealldeals)
+  * [BoostOfflineDealWithData](#boostofflinedealwithdata)
+* [Deals](#deals)
+  * [DealsConsiderOfflineRetrievalDeals](#dealsconsiderofflineretrievaldeals)
+  * [DealsConsiderOfflineStorageDeals](#dealsconsiderofflinestoragedeals)
+  * [DealsConsiderOnlineRetrievalDeals](#dealsconsideronlineretrievaldeals)
+  * [DealsConsiderOnlineStorageDeals](#dealsconsideronlinestoragedeals)
+  * [DealsConsiderUnverifiedStorageDeals](#dealsconsiderunverifiedstoragedeals)
+  * [DealsConsiderVerifiedStorageDeals](#dealsconsiderverifiedstoragedeals)
+  * [DealsPieceCidBlocklist](#dealspiececidblocklist)
+  * [DealsSetConsiderOfflineRetrievalDeals](#dealssetconsiderofflineretrievaldeals)
+  * [DealsSetConsiderOfflineStorageDeals](#dealssetconsiderofflinestoragedeals)
+  * [DealsSetConsiderOnlineRetrievalDeals](#dealssetconsideronlineretrievaldeals)
+  * [DealsSetConsiderOnlineStorageDeals](#dealssetconsideronlinestoragedeals)
+  * [DealsSetConsiderUnverifiedStorageDeals](#dealssetconsiderunverifiedstoragedeals)
+  * [DealsSetConsiderVerifiedStorageDeals](#dealssetconsiderverifiedstoragedeals)
+  * [DealsSetPieceCidBlocklist](#dealssetpiececidblocklist)
+* [I](#i)
+  * [ID](#id)
+* [Log](#log)
+  * [LogList](#loglist)
+  * [LogSetLevel](#logsetlevel)
+* [Market](#market)
+  * [MarketDataTransferUpdates](#marketdatatransferupdates)
+  * [MarketGetAsk](#marketgetask)
+  * [MarketGetRetrievalAsk](#marketgetretrievalask)
+  * [MarketImportDealData](#marketimportdealdata)
+  * [MarketListDataTransfers](#marketlistdatatransfers)
+  * [MarketListRetrievalDeals](#marketlistretrievaldeals)
+  * [MarketRestartDataTransfer](#marketrestartdatatransfer)
+  * [MarketSetAsk](#marketsetask)
+  * [MarketSetRetrievalAsk](#marketsetretrievalask)
+* [Net](#net)
+  * [NetAddrsListen](#netaddrslisten)
+  * [NetAgentVersion](#netagentversion)
+  * [NetAutoNatStatus](#netautonatstatus)
+  * [NetBandwidthStats](#netbandwidthstats)
+  * [NetBandwidthStatsByPeer](#netbandwidthstatsbypeer)
+  * [NetBandwidthStatsByProtocol](#netbandwidthstatsbyprotocol)
+  * [NetBlockAdd](#netblockadd)
+  * [NetBlockList](#netblocklist)
+  * [NetBlockRemove](#netblockremove)
+  * [NetConnect](#netconnect)
+  * [NetConnectedness](#netconnectedness)
+  * [NetDisconnect](#netdisconnect)
+  * [NetFindPeer](#netfindpeer)
+  * [NetPeerInfo](#netpeerinfo)
+  * [NetPeers](#netpeers)
+## Actor
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+### ActorSectorSize
+There are not yet any comments for this method.
+
+Perms: read
+
+Inputs:
+```json
+[
+  "f01234"
+]
+```
+
+Response: `34359738368`
+
+## Auth
+
+
+### AuthNew
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  [
+    "write"
+  ]
+]
+```
+
+Response: `"Ynl0ZSBhcnJheQ=="`
+
+### AuthVerify
+
+
+Perms: read
+
+Inputs:
+```json
+[
+  "string value"
+]
+```
+
+Response:
+```json
+[
+  "write"
+]
+```
+
+## Boost
+
+
+### BoostDagstoreInitializeAll
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  {
+    "MaxConcurrency": 123,
+    "IncludeSealed": true
+  }
+]
+```
+
+Response:
+```json
+{
+  "Key": "string value",
+  "Event": "string value",
+  "Success": true,
+  "Error": "string value",
+  "Total": 123,
+  "Current": 123
+}
+```
+
+### BoostDagstoreInitializeShard
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  "string value"
+]
+```
+
+Response: `{}`
+
+### BoostDeal
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  "07070707-0707-0707-0707-070707070707"
+]
+```
+
+Response:
+```json
+{
+  "DealUuid": "07070707-0707-0707-0707-070707070707",
+  "CreatedAt": "0001-01-01T00:00:00Z",
+  "ClientDealProposal": {
+    "Proposal": {
+      "PieceCID": {
+        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      },
+      "PieceSize": 1032,
+      "VerifiedDeal": true,
+      "Client": "f01234",
+      "Provider": "f01234",
+      "Label": "string value",
+      "StartEpoch": 10101,
+      "EndEpoch": 10101,
+      "StoragePricePerEpoch": "0",
+      "ProviderCollateral": "0",
+      "ClientCollateral": "0"
+    },
+    "ClientSignature": {
+      "Type": 2,
+      "Data": "Ynl0ZSBhcnJheQ=="
+    }
+  },
+  "IsOffline": true,
+  "ClientPeerID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+  "DealDataRoot": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
+  "InboundFilePath": "string value",
+  "Transfer": {
+    "Type": "string value",
+    "ClientID": "string value",
+    "Params": "Ynl0ZSBhcnJheQ==",
+    "Size": 42
+  },
+  "ChainDealID": 5432,
+  "PublishCID": null,
+  "SectorID": 9,
+  "Offset": 1032,
+  "Length": 1032,
+  "Checkpoint": 1,
+  "Err": "string value",
+  "NBytesReceived": 9
+}
+```
+
+### BoostDummyDeal
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  {
+    "DealUUID": "07070707-0707-0707-0707-070707070707",
+    "IsOffline": true,
+    "ClientDealProposal": {
+      "Proposal": {
+        "PieceCID": {
+          "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+        },
+        "PieceSize": 1032,
+        "VerifiedDeal": true,
+        "Client": "f01234",
+        "Provider": "f01234",
+        "Label": "string value",
+        "StartEpoch": 10101,
+        "EndEpoch": 10101,
+        "StoragePricePerEpoch": "0",
+        "ProviderCollateral": "0",
+        "ClientCollateral": "0"
+      },
+      "ClientSignature": {
+        "Type": 2,
+        "Data": "Ynl0ZSBhcnJheQ=="
+      }
+    },
+    "DealDataRoot": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    "Transfer": {
+      "Type": "string value",
+      "ClientID": "string value",
+      "Params": "Ynl0ZSBhcnJheQ==",
+      "Size": 42
+    }
+  }
+]
+```
+
+Response:
+```json
+{
+  "Accepted": true,
+  "Reason": "string value"
+}
+```
+
+### BoostIndexerAnnounceAllDeals
+There are not yet any comments for this method.
+
+Perms: admin
+
+Inputs: `null`
+
+Response: `{}`
+
+### BoostOfflineDealWithData
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  "string value"
+]
+```
+
+Response:
+```json
+{
+  "Accepted": true,
+  "Reason": "string value"
+}
+```
+
+## Deals
+
+
+### DealsConsiderOfflineRetrievalDeals
+
+
+Perms: admin
+
+Inputs: `null`
+
+Response: `true`
+
+### DealsConsiderOfflineStorageDeals
+
+
+Perms: admin
+
+Inputs: `null`
+
+Response: `true`
+
+### DealsConsiderOnlineRetrievalDeals
+
+
+Perms: admin
+
+Inputs: `null`
+
+Response: `true`
+
+### DealsConsiderOnlineStorageDeals
+There are not yet any comments for this method.
+
+Perms: admin
+
+Inputs: `null`
+
+Response: `true`
+
+### DealsConsiderUnverifiedStorageDeals
+
+
+Perms: admin
+
+Inputs: `null`
+
+Response: `true`
+
+### DealsConsiderVerifiedStorageDeals
+
+
+Perms: admin
+
+Inputs: `null`
+
+Response: `true`
+
+### DealsPieceCidBlocklist
+
+
+Perms: admin
+
+Inputs: `null`
+
+Response:
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+]
+```
+
+### DealsSetConsiderOfflineRetrievalDeals
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  true
+]
+```
+
+Response: `{}`
+
+### DealsSetConsiderOfflineStorageDeals
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  true
+]
+```
+
+Response: `{}`
+
+### DealsSetConsiderOnlineRetrievalDeals
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  true
+]
+```
+
+Response: `{}`
+
+### DealsSetConsiderOnlineStorageDeals
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  true
+]
+```
+
+Response: `{}`
+
+### DealsSetConsiderUnverifiedStorageDeals
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  true
+]
+```
+
+Response: `{}`
+
+### DealsSetConsiderVerifiedStorageDeals
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  true
+]
+```
+
+Response: `{}`
+
+### DealsSetPieceCidBlocklist
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  [
+    {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    }
+  ]
+]
+```
+
+Response: `{}`
+
+
+
+## ID
+### ID
+
+
+Perms: read
+
+Inputs: `null`
+
+Response: `"12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"`
+
+## Log
+
+
+### LogList
+
+
+Perms: write
+
+Inputs: `null`
+
+Response:
+```json
+[
+  "string value"
+]
+```
+
+### LogSetLevel
+
+
+Perms: write
+
+Inputs:
+```json
+[
+  "string value",
+  "string value"
+]
+```
+
+Response: `{}`
+
+## Market
+
+
+### MarketDataTransferUpdates
+
+
+Perms: write
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "TransferID": 3,
+  "Status": 1,
+  "BaseCID": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
+  "IsInitiator": true,
+  "IsSender": true,
+  "Voucher": "string value",
+  "Message": "string value",
+  "OtherPeer": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+  "Transferred": 42,
+  "Stages": {
+    "Stages": [
+      {
+        "Name": "string value",
+        "Description": "string value",
+        "CreatedTime": "0001-01-01T00:00:00Z",
+        "UpdatedTime": "0001-01-01T00:00:00Z",
+        "Logs": [
+          {
+            "Log": "string value",
+            "UpdatedTime": "0001-01-01T00:00:00Z"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### MarketGetAsk
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "Ask": {
+    "Price": "0",
+    "VerifiedPrice": "0",
+    "MinPieceSize": 1032,
+    "MaxPieceSize": 1032,
+    "Miner": "f01234",
+    "Timestamp": 10101,
+    "Expiry": 10101,
+    "SeqNo": 42
+  },
+  "Signature": {
+    "Type": 2,
+    "Data": "Ynl0ZSBhcnJheQ=="
+  }
+}
+```
+
+### MarketGetRetrievalAsk
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "PricePerByte": "0",
+  "UnsealPrice": "0",
+  "PaymentInterval": 42,
+  "PaymentIntervalIncrease": 42
+}
+```
+
+### MarketImportDealData
+
+
+Perms: write
+
+Inputs:
+```json
+[
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
+  "string value"
+]
+```
+
+Response: `{}`
+
+### MarketListDataTransfers
+
+
+Perms: write
+
+Inputs: `null`
+
+Response:
+```json
+[
+  {
+    "TransferID": 3,
+    "Status": 1,
+    "BaseCID": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    "IsInitiator": true,
+    "IsSender": true,
+    "Voucher": "string value",
+    "Message": "string value",
+    "OtherPeer": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+    "Transferred": 42,
+    "Stages": {
+      "Stages": [
+        {
+          "Name": "string value",
+          "Description": "string value",
+          "CreatedTime": "0001-01-01T00:00:00Z",
+          "UpdatedTime": "0001-01-01T00:00:00Z",
+          "Logs": [
+            {
+              "Log": "string value",
+              "UpdatedTime": "0001-01-01T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
+```
+
+### MarketListRetrievalDeals
+There are not yet any comments for this method.
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+[
+  {
+    "PayloadCID": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    "ID": 5,
+    "Selector": {
+      "Raw": "Ynl0ZSBhcnJheQ=="
+    },
+    "PieceCID": null,
+    "PricePerByte": "0",
+    "PaymentInterval": 42,
+    "PaymentIntervalIncrease": 42,
+    "UnsealPrice": "0",
+    "StoreID": 42,
+    "ChannelID": {
+      "Initiator": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+      "Responder": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+      "ID": 3
+    },
+    "PieceInfo": {
+      "PieceCID": {
+        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      },
+      "Deals": [
+        {
+          "DealID": 5432,
+          "SectorID": 9,
+          "Offset": 1032,
+          "Length": 1032
+        }
+      ]
+    },
+    "Status": 0,
+    "Receiver": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+    "TotalSent": 42,
+    "FundsReceived": "0",
+    "Message": "string value",
+    "CurrentInterval": 42,
+    "LegacyProtocol": true
+  }
+]
+```
+
+### MarketRestartDataTransfer
+
+
+Perms: write
+
+Inputs:
+```json
+[
+  3,
+  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+  true
+]
+```
+
+Response: `{}`
+
+### MarketSetAsk
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  "0",
+  "0",
+  10101,
+  1032,
+  1032
+]
+```
+
+Response: `{}`
+
+### MarketSetRetrievalAsk
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  {
+    "PricePerByte": "0",
+    "UnsealPrice": "0",
+    "PaymentInterval": 42,
+    "PaymentIntervalIncrease": 42
+  }
+]
+```
+
+Response: `{}`
+
+## Net
+
+
+### NetAddrsListen
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+  "Addrs": [
+    "/ip4/52.36.61.156/tcp/1347/p2p/12D3KooWFETiESTf1v4PGUvtnxMAcEFMzLZbJGg4tjWfGEimYior"
+  ]
+}
+```
+
+### NetAgentVersion
+
+
+Perms: read
+
+Inputs:
+```json
+[
+  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
+]
+```
+
+Response: `"string value"`
+
+### NetAutoNatStatus
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "Reachability": 1,
+  "PublicAddr": "string value"
+}
+```
+
+### NetBandwidthStats
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "TotalIn": 9,
+  "TotalOut": 9,
+  "RateIn": 12.3,
+  "RateOut": 12.3
+}
+```
+
+### NetBandwidthStatsByPeer
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "12D3KooWSXmXLJmBR1M7i9RW9GQPNUhZSzXKzxDHWtAgNuJAbyEJ": {
+    "TotalIn": 174000,
+    "TotalOut": 12500,
+    "RateIn": 100,
+    "RateOut": 50
+  }
+}
+```
+
+### NetBandwidthStatsByProtocol
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "/fil/hello/1.0.0": {
+    "TotalIn": 174000,
+    "TotalOut": 12500,
+    "RateIn": 100,
+    "RateOut": 50
+  }
+}
+```
+
+### NetBlockAdd
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  {
+    "Peers": [
+      "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
+    ],
+    "IPAddrs": [
+      "string value"
+    ],
+    "IPSubnets": [
+      "string value"
+    ]
+  }
+]
+```
+
+Response: `{}`
+
+### NetBlockList
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+{
+  "Peers": [
+    "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
+  ],
+  "IPAddrs": [
+    "string value"
+  ],
+  "IPSubnets": [
+    "string value"
+  ]
+}
+```
+
+### NetBlockRemove
+
+
+Perms: admin
+
+Inputs:
+```json
+[
+  {
+    "Peers": [
+      "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
+    ],
+    "IPAddrs": [
+      "string value"
+    ],
+    "IPSubnets": [
+      "string value"
+    ]
+  }
+]
+```
+
+Response: `{}`
+
+### NetConnect
+
+
+Perms: write
+
+Inputs:
+```json
+[
+  {
+    "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+    "Addrs": [
+      "/ip4/52.36.61.156/tcp/1347/p2p/12D3KooWFETiESTf1v4PGUvtnxMAcEFMzLZbJGg4tjWfGEimYior"
+    ]
+  }
+]
+```
+
+Response: `{}`
+
+### NetConnectedness
+
+
+Perms: read
+
+Inputs:
+```json
+[
+  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
+]
+```
+
+Response: `1`
+
+### NetDisconnect
+
+
+Perms: write
+
+Inputs:
+```json
+[
+  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
+]
+```
+
+Response: `{}`
+
+### NetFindPeer
+
+
+Perms: read
+
+Inputs:
+```json
+[
+  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
+]
+```
+
+Response:
+```json
+{
+  "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+  "Addrs": [
+    "/ip4/52.36.61.156/tcp/1347/p2p/12D3KooWFETiESTf1v4PGUvtnxMAcEFMzLZbJGg4tjWfGEimYior"
+  ]
+}
+```
+
+### NetPeerInfo
+
+
+Perms: read
+
+Inputs:
+```json
+[
+  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
+]
+```
+
+Response:
+```json
+{
+  "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+  "Agent": "string value",
+  "Addrs": [
+    "string value"
+  ],
+  "Protocols": [
+    "string value"
+  ],
+  "ConnMgrMeta": {
+    "FirstSeen": "0001-01-01T00:00:00Z",
+    "Value": 123,
+    "Tags": {
+      "name": 42
+    },
+    "Conns": {
+      "name": "2021-03-08T22:52:18Z"
+    }
+  }
+}
+```
+
+### NetPeers
+
+
+Perms: read
+
+Inputs: `null`
+
+Response:
+```json
+[
+  {
+    "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+    "Addrs": [
+      "/ip4/52.36.61.156/tcp/1347/p2p/12D3KooWFETiESTf1v4PGUvtnxMAcEFMzLZbJGg4tjWfGEimYior"
+    ]
+  }
+]
+```
