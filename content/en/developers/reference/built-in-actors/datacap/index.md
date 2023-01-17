@@ -1,46 +1,257 @@
 ---
 title: "Datacap"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+description: "DataCap Actor is responsible for DataCap token management."
+lead: "DataCap Actor is responsible for DataCap token management."
 draft: false
 images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
     identifier: "datacap-febe6a1038e5a5bbce6e89490d74cf58"
 weight: 100
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+The ActorCode for DataCap actor is `hex"0007"` which will be used to call DataCap actor APIs. You also need to specify method number of which method you want to invoke. Please refer the each method for its method number.
 
-## Selvage
+## Name
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+```go
+func Name() String {}
+```
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+Return the name of DataCap token which is 'DataCap'.
 
-### Heirloom
+`Unit` NameMethodNum : 48890204.
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+Params:
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+- null
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+Results:
 
-## Bushwick cold-pressed
+- `String` : DataCap
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+## Symbol
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+```go
+func Symbol() String {}
+```
 
-## Locavore swag
+Return the symbol of DataCap token which is 'DCAP'.
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+`unit` SymbolMethodNum: 2061153854.
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+Params:
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+- null
+
+Results:
+
+- `String` : DCAP
+
+## TotalSupply
+
+```go
+func TotalSupply() TokenAmount {}
+```
+
+Return the total supply of DataCap token.
+
+`uint` TotalSupplyMethodNum: 114981429.
+
+Params:
+
+- null
+
+Results:
+
+- `int256` TokenAmount - Total DataCap token supply.
+
+## Balance
+
+```go
+func Balance(params Address) TokenAmount {}
+```
+
+Return the DataCap token balance for the wallet address.
+
+`unit` BalanceOfMethodNum: 3261979605.
+
+Params:
+
+- `bytes` Address - the wallet address.
+
+Results:
+
+- `int256` TokenAmount - the DataCap token balance for the specified wallet address.
+
+## Transfer
+
+```go
+func Transfer(params TransferParams) TransferReturn {}
+```
+
+Transfers DataCap tokens from caller address to the to address.
+
+`uint`  TransferMethodNum = 80475954;
+
+Params:
+
+- `struct` TransferParams
+  - `bytes` To -  the address to receive DataCap token.
+  - `int256` Amount -  A non-negative amount to transfer.
+  - `bytes[]` OperatorData - Arbitrary data to pass on via the receiver hook.
+
+Results:
+
+- `struct` TransferReturn
+  - `int256` FromBalance - the balance of from_address.
+  - `int256` ToBalance - the balance of to_address.
+  - `bytes` RecipientData: data returned from receive hook.
+
+## TransferFrom
+
+```go
+func TransferFrom(params TransferFromParams) TransferFromReturn {}
+```
+
+Transfers DataCap tokens between from the from_address to the to_address.
+
+`uint`  TransferFromMethodNum = 3621052141.
+
+Params:
+
+- `bytes` TransferFromParams
+  - `bytes` From - the address to send DataCap Token.
+  - `bytes` To - the address to receive DataCap Token.
+  - `int256` Amount - A non-negative amount to transfer.
+  - `bytes` OperatorData: Arbitrary data to pass on via the receiver hook.
+
+Results:
+
+- `struct` TransferFromReturn
+  - `int256` FromBalance - the balance of from_address.
+  - `int256` ToBalance -  the balance of to_address.
+  - `int256` Allowance - the remaining allowance of owner address.
+  - `bytes` RecipientData - data returned from receive hook.
+
+## IncreaseAllowance
+
+```go
+func IncreaseAllowance(params IncreaseAllowanceParams) TokenAmount {}
+```
+
+Increase the DataCap token allowance that an operator can control of the owner's balance by the requested amount.
+
+`uint`  IncreaseAllowanceMethodNum = 1777121560.
+
+Params:
+
+- `struct` IncreaseAllowanceParams
+  - `bytes` Operator - the  wallet address of the operator.
+  - `int256` increaseAmount - increase DataCap token allowance for the operator address.
+
+Results:
+
+- `int256` TokenAmount - the new DataCap allowance of the operator address.
+
+## DecreaseAllowance
+
+```go
+func DecreaseAllowance(params DecreaseAllowanceParams) TokenAmount {}
+```
+
+Decrease the DataCap token allowance that an operator controls of the owner's balance by the requested amount.
+
+`uint` DecreaseAllowanceMethodNum = 1529376545;
+
+Params:
+
+- `struct` DecreaseAllowanceParams
+  - `bytes` Operator - the  wallet address of the operator.
+  - `int256` IncreaseAmount - the decreased DataCap token allowance of the operator address.
+
+Results:
+
+- `int256` TokenAmount - the new DataCap allowance of the operator address.
+
+## RevokeAllowance
+
+```go
+func RevokeAllowance(params RevokeAllowanceParams) TokenAmount {}
+```
+
+Revoke the DataCap token allowance from the operator and set the operator's allowance in behave of owner/caller address to 0.
+
+`uint` RevokeAllowanceMethodNum = 2765635761.
+
+Params:
+
+- `struct`  RevokeAllowanceParams
+  - `bytes` Operator - the wallet address of the operator.
+
+Results:
+
+- `int256` TokenAmount - the old Allowance amount of the operator address.
+
+## Burn
+
+```go
+func Burn(params BurnParams) TokenAmount {}
+```
+
+Burn an amount of DataCap token from the owner/caller address, decreasing total token supply.
+
+`uint` BurnMethodNum = 1434719642.
+
+Params:
+
+- `struct` BurnParams
+  - `int256` Amount - the amount the DataCap token to be burned.
+
+Results:
+
+- `int256` TokenAmount - the updated DataCap token balance of the owner/caller address.
+
+## BurnFrom
+
+```go
+func BurnFrom(params BurnFromParams) BurnFromReturn {}
+```
+
+Burn an amount of DataCap token from the specified address (owner address), decrease the allowance of operator/caller, and decrease total token supply.
+
+`uint` BurnFromMethodNum = 2979674018.
+
+Params:
+
+- `struct` BurnFromParams
+  - `bytes` Owner - the wallet address of the owner.
+  - `int256` Amount - the amount of DataCap token to be burned.
+
+Results:
+
+- `struct` BurnFromReturn
+  - `bytes`  Owner - the wallet address of the owner.
+  - `int256` Amount - the new balance of owner wallet.
+
+## Allowance
+
+```go
+func Allowance(params GetAllowanceParams) TokenAmount {}
+```
+
+Return the allowance between owner and operator address.
+
+`uint` AllowanceMethodNum = 4205072950;
+
+Params:
+
+- `struct` GetAllowanceParams
+  - `bytes` Owner : the wallet address of the owner.
+  - `bytes` Operator : the wallet address of the owner.
+
+Results:
+
+- `int256`  TokenAmount - the allowance that an operator can control of an owner's allowance.

@@ -1,46 +1,184 @@
 ---
 title: "Multisig"
-description: ""
-lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
+description: "Multisig built-in actor is responsible for dealing with operations involving the Filecoin wallet."
+lead: "Multisig built-in actor is responsible for dealing with operations involving the Filecoin wallet."
 draft: false
 images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
     identifier: "multisig-eb85a6dcc9e6f2eb10ebe541c924e402"
 weight: 100
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+To interact with specific multi-signature wallet address, you need to use this wallet address to invoke the methods in multisig built-in actor. You also need to specify method number of which method you want to invoke. Please refer the each method for its method number.
 
-## Selvage
+## Propose
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+```go
+func Propose(params ProposeParams) ProposeReturn {...}
+```
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+Propose a token transfer transaction for signers to approve, the proposer automatically approves this transaction.
 
-### Heirloom
+`uint` ProposeMethodNum = 1696838335.
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+Params:
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+- `struct` ProposeParams
+  - `bytes` ToAddress - the address to receive the token.
+  - `int256` Value - the token amount to be transferred.
+  - `uint64` Method: ?
+  - `bytep[]` Params: ?
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+Results:
 
-## Bushwick cold-pressed
+- `struct` ProposeReturn
+  - `int64` TxnID - the ID of the proposed transaction.
+  - `bool` Applied - if the transaction was applied as proposed or not?
+  - `uint31` Code - the exit code of the transaction, if Applied is false this field should be ignored.
+  - `bytes` Ret - the return value of the transaction, if Applied is false this field should be ignored.
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+## Approve
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+```go
+func Approve(params TxnIDParams) ApproveReturn {}
+```
 
-## Locavore swag
+Other signers of the multi-signature address can use this method to approve the proposed messages.
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+`uint` ApproveMethodNum = 1289044053.
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+Params:
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+- `struct` TxnIDParams
+  - `int64` ID - the signed message ID.
+  - `bytes` ProposalHash - Hash of proposal to ensure an operation can only apply to a specific proposal.
+
+Results:
+
+- `struct` ApproveReturn
+  - `bool` Applied - if the transaction was applied as proposed or not?
+  - `uint31` Code - the exit code of the transaction, if Applied is false this field should be ignored.
+  - `bytes` Ret - the return value of the transaction, if Applied is false this field should be ignored.
+
+## Cancel
+
+```go
+func Cancel(param TxnIDParams) EmptyValue {}
+```
+
+Multi-signature wallet signer to cancel a pending multi-signatures transaction.
+
+`uint` CancelMethodNum = 3365893656.
+
+Params:
+
+- `struct` TxnIDParams
+  - `int64` ID - the signed message ID.
+  - `bytes` ProposalHash - Hash of proposal to ensure an operation can only apply to a specific proposal.
+
+Results:
+
+- `struct` EmptyValue.
+
+## AddSigner
+
+```go
+func AddSigner(params AddSignerParams) EmptyValue {}
+```
+
+Add a signer to the multi-signature wallet.
+
+`uint` AddSignerMethodNum = 3028530033.
+
+Params:
+
+- `struct` AddSignerParams
+  - `bytes` Signer - the new signer address.
+  - `bool` Increase - increase threshold or not.
+
+Results:
+
+- `struct` EmptyValue.
+
+## RemoveSigner
+
+```go
+func RemoveSigner(params RemoveSignerParams) EmptyValue {}
+```
+
+Remove a signer from the multi-signature wallet.
+
+`uint` RemoveSignerMethodNum = 21182899.
+
+Params:
+
+- `struct` RemoveSignerParams
+  - `bytes` Signer - the signer address to be removed.
+  - `bool` Decrease - decrease threshold or not. Only able to decrease when threshold is larger than 2.
+
+Results:
+
+- `struct` EmptyValue.
+
+## SwapSigner
+
+```go
+func SwapSigner(params SwapSignerParams) EmptyValue {}
+```
+
+Swap signers for the multi-signature wallet.
+
+`uint` SwapSignerMethodNum = 3968117037;
+
+Params:
+
+- `struct` SwapSignerParams
+  - `bytes` From - the signer address should will be removed from multi-signature wallet.
+  - `bytes` To - the signer address should will be added to multi-signature wallet.
+
+Results:
+
+- `struct` EmptyValue.
+
+## ChangeNumApprovalsThreshold
+
+```go
+func ChangeNumApprovalsThreshold(params ChangeNumApprovalsThresholdParams) EmptyValue {}
+```
+
+Change the threshold number required for the approvals for the multi-signature wallet.
+
+`uint` ChangeNumApprovalsThresholdMethodNum = 3375931653.
+
+Params:
+
+- `struct` ChangeNumApprovalsThresholdParams
+  - `unit64` NewThreshold - the new threshold number.
+
+Results:
+
+- `struct` EmptyValue.
+
+## LockBalance
+
+```go
+func LockBalance(params LockBalanceParams) EmptyValue {}
+```
+
+Lock the amount of token from multi-signature wallet from start epoch to unlock epoch.
+
+`uint` LockBalanceMethodNum = 1999470977.
+
+Params:
+
+- `struct` LockBalanceParams
+  - `int64` StartEpoch - the epoch to start locking the balance.
+  - `int64` UnlockDuration - the epoch to unlock the balance.
+  - `int256` Amount - the amount of token to be locked.
+
+Results:
+
+- `struct` EmptyValue.
