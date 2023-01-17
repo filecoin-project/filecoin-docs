@@ -12,7 +12,7 @@ weight: 100
 toc: true
 ---
 
-The ActorCode for storage power built-in actor is `hex"0004"` which will be used to call methods in storage power actor. You also need to specify method number of which method you want to invoke. Please refer the each method for its method number.
+The ActorCode for the built-in storage power actor is `hex"0004"` which will be used to call methods in the storage power actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
 
 ## CreateMiner
 
@@ -31,7 +31,7 @@ Params:
   - `bytes` Worker - the address of the worker.
   - `RegisteredPoStProof` WindowPoStProofType - the type of RegisteredPoStProof.
   - `bytes` Peer - peerID.
-  - `bytes[]` Multiaddrs - the multi-address which is used to control new created miner.
+  - `bytes[]` Multiaddrs - the multi-address which is used to control the newly created miner.
 
 Results:
 
@@ -65,7 +65,7 @@ Results:
 func MinerRawPower(params MinerRawPowerParams) MinerRawPowerParams {}
 ```
 
-Return the raw power claimed by the specified miner, and whether the miner has more than the consensus minimum amount of storage active.
+Return the raw power claimed by the specified miner and whether the miner has more than the minimum amount of active storage.
 
 `uint` MinerRawPowerMethodNum = 3753401894.
 
@@ -105,7 +105,7 @@ Results:
 func MinerConsensusCount() MinerConsensusCountReturn {}
 ```
 
-Returns the total number of miners that have more than the consensus minimum amount of storage active.
+Returns the total number of miners that have more than the minimum amount of active storage.
 
 `uint`  MinerConsensusCountMethodNum = 196739875.
 
@@ -115,4 +115,4 @@ Params:
 
 Results:
 
-- `uint64`MinerConsensusCountReturn - the count of the miners meet the consensus minimum that the caller address has.
+- `uint64`MinerConsensusCountReturn - the count of the miners that meet the consensus minimum that the caller address has.

@@ -12,7 +12,7 @@ weight: 100
 toc: true
 ---
 
-To interact with specific multi-signature wallet address, you need to use this wallet address to invoke the methods in multisig built-in actor. You also need to specify method number of which method you want to invoke. Please refer the each method for its method number.
+To interact with a specific multi-signature wallet address, you need to use this wallet address to invoke the methods in the built-in multisig actor. You also need to specify the method number of which method you want to invoke. Please refer to each method for its method number.
 
 ## Propose
 
@@ -20,7 +20,7 @@ To interact with specific multi-signature wallet address, you need to use this w
 func Propose(params ProposeParams) ProposeReturn {...}
 ```
 
-Propose a token transfer transaction for signers to approve, the proposer automatically approves this transaction.
+Propose a token transfer transaction for signers to approve. The proposer automatically approves this transaction.
 
 `uint` ProposeMethodNum = 1696838335.
 
@@ -37,8 +37,8 @@ Results:
 - `struct` ProposeReturn
   - `int64` TxnID - the ID of the proposed transaction.
   - `bool` Applied - if the transaction was applied as proposed or not?
-  - `uint31` Code - the exit code of the transaction, if Applied is false this field should be ignored.
-  - `bytes` Ret - the return value of the transaction, if Applied is false this field should be ignored.
+  - `uint31` Code - the exit code of the transaction. If `Applied` is `false` this field can be ignored.
+  - `bytes` Ret - the return value of the transaction. If `Applied` is `false` this field can be ignored.
 
 ## Approve
 
@@ -60,8 +60,8 @@ Results:
 
 - `struct` ApproveReturn
   - `bool` Applied - if the transaction was applied as proposed or not?
-  - `uint31` Code - the exit code of the transaction, if Applied is false this field should be ignored.
-  - `bytes` Ret - the return value of the transaction, if Applied is false this field should be ignored.
+  - `uint31` Code - the exit code of the transaction. If `Applied` is `false` this field can be ignored.
+  - `bytes` Ret - the return value of the transaction. If `Applied` is `false` this field can be ignored.
 
 ## Cancel
 
@@ -117,7 +117,7 @@ Params:
 
 - `struct` RemoveSignerParams
   - `bytes` Signer - the signer address to be removed.
-  - `bool` Decrease - decrease threshold or not. Only able to decrease when threshold is larger than 2.
+  - `bool` Decrease - decrease threshold or not. Only able to decrease when the threshold is larger than 2.
 
 Results:
 
@@ -136,8 +136,8 @@ Swap signers for the multi-signature wallet.
 Params:
 
 - `struct` SwapSignerParams
-  - `bytes` From - the signer address should will be removed from multi-signature wallet.
-  - `bytes` To - the signer address should will be added to multi-signature wallet.
+  - `bytes` From - the signer address to be removed from the multi-signature wallet.
+  - `bytes` To - the signer address to be added to the multi-signature wallet.
 
 Results:
 
@@ -168,7 +168,7 @@ Results:
 func LockBalance(params LockBalanceParams) EmptyValue {}
 ```
 
-Lock the amount of token from multi-signature wallet from start epoch to unlock epoch.
+Lock a number of tokens in a multi-signature wallet from the `start` epoch to the `unlock` epoch.
 
 `uint` LockBalanceMethodNum = 1999470977.
 

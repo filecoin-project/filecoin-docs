@@ -12,7 +12,7 @@ weight: 100
 toc: true
 ---
 
-To interact with specific miner, you need to use this miner address to invoke the methods in miner built-in actor. You also need to specify method number of which method you want to invoke. Please refer the each method for its method number.
+To interact with a specific storage provider, you must use their miner address to invoke the methods in the built-in miner actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
 
 ## GetPeerID
 
@@ -152,7 +152,7 @@ Results:
 func GetOwner() GetOwnerReturn {}
 ```
 
-Return the the owner address of the caller/miner address.
+Return the owner address of the caller/miner address.
 
 `uint` GetOwnerMethodNum = 3275365574.
 
@@ -211,8 +211,8 @@ Results:
     - `bytes` newBeneficiary - the new beneficiary address.
     - `int256` NewQuota - the new quota token amount.
     - `uint64` NewExpiration - the epoch that the new quota will be expired.
-    - `bool` ApprovedByBeneficiary - if this proposal is approved by beneficiary or not.
-    - `bool` ApprovedByNominee -  if this proposal is approved by nominee or not.
+    - `bool` ApprovedByBeneficiary - if this proposal is approved by the beneficiary or not.
+    - `bool` ApprovedByNominee -  if this proposal is approved by the nominee or not.
 
 ## ChangeBeneficiary
 
@@ -305,7 +305,7 @@ Params:
 
 Results:
 
-- `int256`  WithdrawBalanceReturn - the token amount withdraw.
+- `int256`  WithdrawBalanceReturn - the token amount withdrawn.
 
 ## GetVestingFunds
 
@@ -326,4 +326,4 @@ Results:
 - `struct` GetVestingFundsReturn
   - `struct VestingFunds[]` Funds
     - `int64` Epoch - the epoch of funds vested.
-    - `int256` Amount - the amount of funds vested.
+    - `int256` Amount - the number of funds vested.

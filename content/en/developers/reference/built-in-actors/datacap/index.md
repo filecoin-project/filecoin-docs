@@ -12,7 +12,7 @@ weight: 100
 toc: true
 ---
 
-The ActorCode for DataCap actor is `hex"0007"` which will be used to call DataCap actor APIs. You also need to specify method number of which method you want to invoke. Please refer the each method for its method number.
+The ActorCode for DataCap actor is `hex"0007"` which will be used to call DataCap actor APIs. You also need to specify the method number of which method you want to invoke. Refer to each method for its method number.
 
 ## Name
 
@@ -56,7 +56,7 @@ Results:
 func TotalSupply() TokenAmount {}
 ```
 
-Return the total supply of DataCap token.
+Return the total supply of the DataCap token.
 
 `uint` TotalSupplyMethodNum: 114981429.
 
@@ -116,7 +116,7 @@ Results:
 func TransferFrom(params TransferFromParams) TransferFromReturn {}
 ```
 
-Transfers DataCap tokens between from the from_address to the to_address.
+Transfers DataCap between the from_address to the to_address.
 
 `uint`  TransferFromMethodNum = 3621052141.
 
@@ -142,7 +142,7 @@ Results:
 func IncreaseAllowance(params IncreaseAllowanceParams) TokenAmount {}
 ```
 
-Increase the DataCap token allowance that an operator can control of the owner's balance by the requested amount.
+Increase the DataCap token allowance that an operator can control by the requested amount.
 
 `uint`  IncreaseAllowanceMethodNum = 1777121560.
 

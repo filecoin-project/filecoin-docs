@@ -12,7 +12,7 @@ weight: 100
 toc: true
 ---
 
-The ActorCode for storage market actor is `hex"0005"` which will be used to call this actor. You also need to specify method number of which method you want to invoke. Please refer the each method for its method number.
+The ActorCode for storage market actor is `hex"0005"` which will be used to call this actor. You also need to specify the method number of the method you want to invoke. Please refer to each method for its method number.
 
 ## AddBalance
 
@@ -20,13 +20,13 @@ The ActorCode for storage market actor is `hex"0005"` which will be used to call
 func AddBalance(address Address) EmptyValue {}
 ```
 
-Deposit the received FIL token, which is received along with this message,  into the balance held in escrow address of the provider or client address.
+Deposit the received FIL token, which is received along with this message,  into the balance held in the escrow address of the provider or client address.
 
 `uint`  AddBalanceMethodNum = 822473126.
 
 Params:
 
-- `bytes` Address - the address of provider or client.
+- `bytes` Address - the address of the provider or client.
 
 Results:
 
@@ -50,7 +50,7 @@ Results:
 
 - `struct` GetBalanceReturn
   - `int256` Balance - the escrow balance for this address.
-  - `int256` Locked - the escrow locked amount for this address.
+  - `int256` Locked - the escrow-locked amount for this address.
 
 ## WithdrawBalance
 
@@ -65,7 +65,7 @@ Withdraw the specified amount from the balance held in escrow.
 Params:
 
 - `struct` WithdrawBalanceParams
-  - `bytes` ProviderOrClientAddress - the address of provider or client.
+  - `bytes` ProviderOrClientAddress - the address of the provider or client.
   - `int256` TokenAmount - the token amount to withdraw.
 
 Results:
@@ -79,7 +79,7 @@ Results:
 func PublishStorageDeals(params PublishStorageDealsParams) PublishStorageDealsReturn {}
 ```
 
-Publish a new set of storage deals which are not yet included in a sector.
+Publish a new set of storage deals that are not yet included in a sector.
 
 `uint` PublishStorageDealsMethodNum = 2236929350.
 
@@ -93,10 +93,10 @@ Params:
       - `bool` VerifiedDeal - if the deal is verified or not.
       - `bytes` Client - the address of the storage client.
       - `bytes` Provider - the address of the storage provider.
-      - `string` Label - any label that client choose for the deal.
+      - `string` Label - any label that the client chooses for the deal.
       - `int64` StartEpoch - the chain epoch to start the deal.
       - `int64` EndEpoch - the chain epoch to end the deal.
-      -  `int256` StoragePricePerEpoch -  the token amount to pay to provider per epoch.
+      -  `int256` StoragePricePerEpoch -  the token amount to pay to the provider per epoch.
       - `int256` ProviderCollateral - the token amount as collateral paid by the provider.
       - `int256` ClientCollateral - the token amount as collateral paid by the client.
 
@@ -218,7 +218,7 @@ Params:
 
 Results:
 
-- `int256` GetDealTotalPriceReturn - the token amount that will be paid by client to provider.
+- `int256` GetDealTotalPriceReturn - the token amount that will be paid by the client to the provider.
 
 ## GetDealClientCollateral
 
@@ -244,7 +244,7 @@ Results:
 func GetDealProviderCollateral(params GetDealProviderCollateralParams) GetDealProviderCollateralReturn {}
 ```
 
-Return the provide collateral requirement for a deal proposal.
+Return the provided collateral requirement for a deal proposal.
 
 `uint`  GetDealProviderCollateralMethodNum = 2986712137.
 
