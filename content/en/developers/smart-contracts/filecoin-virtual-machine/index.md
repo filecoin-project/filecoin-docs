@@ -1,6 +1,6 @@
 ---
 title: "Filecoin virtual machine"
-lead: "The Filecoin virtual machine (FVM) is a runtime environment for smart contracts, also called actors, on the Filecoin network. These smart contracts can be written in Solidity or any lanaguge that compiles to WASM. Smart contracts enable users to create and enforce rules for storing and accessing data on the network. The FVM is responsible for executing these smart contracts and ensuring that they are executed correctly and securely."
+lead: "The Filecoin virtual machine (FVM) is a runtime environment for smart contracts, also called actors, on the Filecoin network. These smart contracts can be written in Solidity or any language that compiles to WASM. Smart contracts enable users to create and enforce rules for storing and accessing data on the network. The FVM is responsible for executing these smart contracts and ensuring that they are executed correctly and securely."
 lead: "The Filecoin virtual machine (FVM) is a runtime environment for smart contracts, also called actors, on the Filecoin network. These smart contracts can be written in Solidity, and eventually any lanaguge that compiles to WASM will be supported. Smart contracts enable users to create and enforce rules for storing and accessing data on the network. The FVM is responsible for executing these smart contracts and ensuring that they are executed correctly and securely."
 draft: false
 images: []
@@ -38,13 +38,13 @@ Before the FVM, storage deals only lasted a year or two. If users wanted to cont
 
 Now, the FVM allows users to store once and have repair and replication bots manage the repetitive storage deal creation tasks. Using a smart contract, users can provision a wallet with FIL, and storage providers can use that FIL to fund data storage permanently. Repair bots can monitor the storage deals and replicate the data with other storage providers when necessary.
 
-This process gives users the long-term storage permanence that other blockchains claim while also benefitting from Filecoin's verifiable storage proofs, ensuring that the network stores and replicates the data correctly.
+This process gives users the long-term storage permanence that other blockchains claim while also benefiting from Filecoin's verifiable storage proofs, ensuring that the network stores and replicates the data correctly.
 
 ### Loans
 
 Put your FIL to work. FIL token holds can help Filecoin storage providers gain access to FIL for storage collateral and receive interest in exchange. These loans can be under-collateralized thanks to the on-chain storage history of past storage provider performance. Community members can use this history to generate reputation scores, enabling everyone to identify good borrowers. On top of that, loans can be automatically paid back to investors by using a multisig as the storage provider's _owner_ address that includes lenders and a third party to help negotiate payback.
 
-New FVM-enabled smart contracts give every FIL token holder access to new yield opportunities on their holdings while also benefitting the whole Filecoin economy.
+New FVM-enabled smart contracts give every FIL token holder access to new yield opportunities on their holdings while also benefiting the whole Filecoin economy.
 
 ### Ethereum compatibility
 
