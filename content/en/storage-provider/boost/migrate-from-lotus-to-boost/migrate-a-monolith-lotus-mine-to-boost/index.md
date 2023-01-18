@@ -77,13 +77,13 @@ export APISECTORINDEX=`lotus-miner auth api-info --perm=admin`
 
 4. Backup the lotus-miner repository
 
-5. Backup the lotus-miner datastore (in case you decide to roll back from Boost to Lotus) with: <!--STEF is rollback going to be possible?-->
+5. Backup the lotus-miner datastore (in case you decide to roll back from Boost to Lotus) with: <!--STEF BRENDA JENNIFER is rollback going to be possible?-->
 
 ```
 lotus-shed market export-datastore --repo <repo> --backup-dir <backup-dir>
 ```
 
-6. Set the environment variable `LOTUS_FULLNODE_API` to allow access to the lotus node API. <!--STEF how does the following command do that?-->
+6. Set the environment variable `LOTUS_FULLNODE_API` to allow access to the lotus node API. <!--STEF MAYANK how does the following command do that?missing export statement? export FULL_NODE_API=api.chain.love -->
 
 ```
 lotus auth api-info -perm admin
@@ -157,15 +157,17 @@ See the `Libp2p` section of `config.toml` in the [architecture.md](../boost-arch
 
 Open http://localhost:8080 in your browser.
 
-To access a web UI running on a remote server, you can open an SSH tunnel from your local machine: <!--STEF is this specific enough to boost-->
+{{< alert  >}}
+You can also access a web UI running on a remote server, you can open an SSH tunnel from your local machine: 
 
 ```
 ssh -L 8080:localhost:8080 myserver
 ```
+{{< /alert  >}}
 
 ### API Access
 
-Boost API can be accessed by setting the environment variable `BOOST_API_INFO` same as `LOTUS_MARKET_INFO`.
+Boost API can be accessed by setting the environment variable `BOOST_API_INFO` to be the same as `LOTUS_MARKET_INFO`.
 
 ```
 export BOOST_API_INFO=<TOKEN>:<API Address>

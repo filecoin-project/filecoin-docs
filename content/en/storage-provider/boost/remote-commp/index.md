@@ -16,35 +16,14 @@ toc: true
 ---
 # Remote CommP
 
-<!-- STEF Does this page need to explain what commP is better? and also does it really need to explain how to checkout and build boost?-->
+<!-- STEF Does this page need to explain what commP is better? and also does it really need to explain how to checkout and build boost? Link to this and add more explanation of commP and Piece CID https://spec.filecoin.io/systems/filecoin_files/piece/ -->
 
-Boost is introducing a new <!--STEF when? --> feature that allows computing commP during the deal on a lotus worker node. This should alleviate any chokepoints in the market due to the commP calculation and reduce the overall resource utilisation on the market nodes.
+Boost allows computing commP (Piece CID) during the deal on a lotus worker node. This should alleviate any chokepoints in the market due to the commP calculation and reduce the overall resource utilisation on the market nodes.
 
-To build `boostd` with remote commP feature please follow the below steps.
-
-1. Clone the main branch from the boost repo
-
-```
-git clone https://github.com/filecoin-project/boost.git
-```
-
-2. Checkout the v1.4.0 or higher release
-
-```
-git checkout v1.4.0
-```
-
-3. Build the boost binaries
-
-```
-make build
-```
-
-4. Enable remote commP in the config
+To enable remote commP calculation, enable this setting in the config file and restart the boost node
 
 ```
 [Dealmaking]
    RemoteCommp = true
 ```
 
-5. Start the boost node

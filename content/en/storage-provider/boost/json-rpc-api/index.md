@@ -16,8 +16,8 @@ toc: true
 ---
 
 
-# Using the Go RPC client with the Boost JSON-RPC API
-To use the Boost Go client, the Go RPC-API library can be used to interact with the Boost API node. <!-- STEF this sentence is really hard to parse- can we expand it?-->
+# Using the Go RPC client to interact with the Boost JSON-RPC API
+The Go RPC-API client library can be used to interact with the Boost API node. <!-- STEF MAYANK this sentence is really hard to parse- can we expand it?-->
 
 1. Import the necessary Go module:
 ```
@@ -61,7 +61,7 @@ func main() {
 ```
 
 3. Run `go mod init` to set up your `go.mod` file
-4. You should now be able to interact with the Boost API. <!-- STEF: How?-->
+4. You should now be able to interact with the Boost API. <!-- STEF MAYANK: How? couple of examples might help?-->
 
 
 # Alphabetical API Reference

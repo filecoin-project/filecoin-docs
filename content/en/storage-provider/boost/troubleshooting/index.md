@@ -17,7 +17,7 @@ toc: true
 
 ## Boost IP Inspect page
 
-The new _inspect_ page <!-- STEF We give example localhost URLs in other places should we do so here? --> in the Boost UI helps with debugging retrieval problems. It allows the user to check the following items using a payload CID or piece CID:
+The new _inspect_ page in the Boost UI helps with debugging retrieval problems. It allows the user to check the following items using a payload CID or piece CID:
 
 * Verify if the piece has been correctly added to the Piece Store
 * Validate if the piece is indexed in the DAG store
@@ -92,17 +92,16 @@ This is resolved by exporting the MARKETS\_API\_INFO variable on your lotus-mine
 ```
 export MARKETS_API_INFO=<Boost token:api>
 ```
- <!-- STEF does this require a restart-->
+
 
 ## Error "failed to lookup index for mh...err: datastore: key not found" when attempting a data retrieval
 
 The following error shows up when trying to retrieve data from a storage provider.
 
-
 ```
 ERROR: offer error: retrieval query offer errored: failed to fetch piece to retrieve from: getting pieces for cid Qmf1ykhUo63qB5dJ8KRyeths9MZfyxpVdT5xwnmoLKefz7: getting pieces containing block Qmf1ykhUo63qB5dJ8KRyeths92mfyxpVdT5xi1moLKefz7: failed to lookup index for mh 1220f7ce2d20772b959c1071868e9495712f12785b1710ee88752af120dd49338190, err: datastore: key not found
 ```
-<!--STEF what does 'mh' indicate here? -->
+<!--STEF MAYANK what does 'mh' indicate here? can we add a clarification -->
 
 The error indicates that dagstore does not have a corresponding index shard for the piece containing the requested data. When a retrieval is requested, the dagstore on the storage provider side is queried and a reverse lookup is used to determine the key(piece CID). This key is then used to query the piece store to find the sector containing the data and byte offset.
 

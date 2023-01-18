@@ -1,6 +1,6 @@
 ---
-title: "How to roll back from Filecoin Boost to the Lotus markets service"
-description: ""
+title: "Rolling Back to Lotus Markets"
+description: "How to roll back from Filecoin Boost to the Lotus markets service"
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
@@ -15,7 +15,12 @@ weight: 30
 toc: true
 ---
 
-<!-- STEF this page probably needs to go away or be updated to explain that Lotus Markets is being deprecated-->
+{{< alert  >}}
+Note: The Lotus Markets service will no longer be supported from February 2023 and will eventually be withdrawn and replaced by Boost. See these [release notes](https://github.com/filecoin-project/lotus/releases/tag/v1.18.0#:~:text=lotus%2Dmarket%20EOL%20notice) 
+
+{{< /alert  >}}
+
+
 {{< alert  >}}
 Before you begin migration from Lotus markets service process to Boost, make sure you have a backup of your Lotus repository, by following the [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/backup-and-restore/)
 

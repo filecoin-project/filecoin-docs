@@ -20,7 +20,7 @@ Boost exposes a GraphQL API that is used by the Web UI to query and update infor
 
 You can also run your own queries against the GraphQL API using CURL or a programming language that has a [GraphQL client](https://graphql.org/code/).
 
-Boost has a built-in GraphQL explorer at [http://localhost:8080/graphiql](http://localhost:8080/graphiql) <!--STEF 'graphiql' is this correct?-->
+Boost has a built-in GraphQL explorer at [http://localhost:8080/graphql](http://localhost:8080/graphql)
 
 You can test out queries, or explore the GraphQL API by clicking on the `< Docs` link at the top right of the page:
 

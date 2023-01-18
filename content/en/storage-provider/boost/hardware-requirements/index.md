@@ -15,7 +15,7 @@ weight: 100
 toc: true
 ---
 
-The hardware requirements for Boost are tied to the sealer part of the Lotus deployment it is attached to.<!--STEF tied how? can we expand on this -->
+The hardware requirements for Boost are related to the sealing process of the Lotus deployment it is attached to.
 
 Depending on how much data you need to onboard, and how many deals you need to make with clients, hardware requirements in terms of CPU and Disk will vary.
 

@@ -571,7 +571,7 @@ SectorIndexApiInfo = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkI
 This guide covers all the configuration in use by boostd process. Some of the configuration parameters found in the config.toml file are not used in boost and thus are not covered here. These configuration parameters can be ignored
 {{</alert>}}
 
-<!--STEF I don't know how to force the tables following this comment to wrap reasonably-->
+<!-- STEF JOHNNY I don't know how to force the tables following this comment to wrap reasonably-->
 ## Sealer
 
 | Parameter                | Example                                                                                                                                                               | Description                                                                                                                              |
