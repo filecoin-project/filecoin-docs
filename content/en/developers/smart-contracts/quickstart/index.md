@@ -16,9 +16,11 @@ aliases:
     - /fvm/basics/quickstart/
 ---
 
-{{< beta-warning >}}
-
 We're going to be creating an ERC-20 token in this quickstart. The ERC-20 contract is used a lot in representing a massive array of tokens across multiple blockchains, primarily the Ethereum blockchain.
+
+{{< alert "info" >}}
+If you're an Ethereum developer, check out the [FEVM Hardhat kit]({{< relref "hardhat" >}}).
+{{< /alert >}}
 
 ## Accounts and assets
 
