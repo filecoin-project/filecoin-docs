@@ -8,28 +8,28 @@ type: docs
 menu:
   developers:
     identifier: "hardhat-b363bf9e553014e146b735e0392b3a33"
-weight: 100
+weight: 6
 toc: true
 ---
 
-## About
+The [FEVM Hardhat kit](https://github.com/filecoin-project/fevm-hardhat-kit) contains three types of contracts:
 
-The [**FEVM Hardhat kit**](https://github.com/filecoin-project/fevm-hardhat-kit) contains 3 main types of contracts:
-
-- Basic Solidity Examples: Simple default contracts to show off basic solidity
-- Filecoin API Examples: Contracts that demo how to use the [**Filecoin API**](#filecoin-apis) in Solidity to access storage deals and other Filecoin-specific functions.
-- Filecoin Mock APIs: Contracts that mock the Filecoin APIs.
+- Basic Solidity Examples: simple default contracts to show off fundamental Solidity capabilities.
+- Filecoin API Examples: contracts demonstrating how to use the [Filecoin API](#filecoin-apis) in Solidity to access storage deals and other Filecoin-specific functions.
+- Filecoin Mock APIs: contracts that mock the Filecoin APIs intended for faster prototyping.
 
 ## Filecoin APIs
 
-The primary advantage of the FEVM over other EVM based chains is the ability to access and program around Filecoin storage deals. This can be done in the FEVM via the [Filecoin.sol library maintained by Zondax](https://github.com/Zondax/filecoin-solidity).
+The primary advantage of the Filecoin EVM runtime over other EVM-based chains is the ability to access Filecoin storage deals. This can be done in the Filecoin EVM runtime using the [Filecoin.sol library](https://github.com/Zondax/filecoin-solidity). This library is maintained by [Zondax](https://zondax.ch/).
 
-**Note this library is currently in BETA.** It is not yet audited, and the APIs will likely be changing with time.
+{{< alert "warning" >}}
+This library is currently in beta. It has yet to be audited, and the APIs will likely change frequently.
+{{< /alert >}}
 
-- [Docs for the Filecoin Solidity library](https://docs.zondax.ch/fevm/filecoin-solidity/)
+The library is [available from GitHub](https://github.com/Zondax/filecoin-solidity). The Zondax team writes and maintains this library's [documentation](https://docs.zondax.ch/fevm/filecoin-solidity).
 
-This library provides a Solidity interface to Filecoin's [built-in actors](https://spec.filecoin.io/#section-systems.filecoin_vm.sysactors), which are the core actors that power the Filecoin network. (Actors are Filecoin's equivalent of smart contracts.) [Here's a list](https://docs.zondax.ch/fevm/filecoin-solidity/api/) of all built-in actor methods currently supported by the Filecoin Solidity API.
+The Filecoin.sol library provides a Solidity interface to Filecoin's [built-in actors]({{< relref "/developers/reference/built-in-actors/account-actor" >}}), which are the core actors that power the Filecoin network. [Zondax provides a list](https://docs.zondax.ch/fevm/filecoin-solidity/api/) of all built-in actor methods currently supported by the Filecoin.sol API.
 
 ## Data DAO Example
 
-To get started using the Filecoin APIs, [here's an FVM-compatible deal bounty contract example](https://github.com/lotus-web3/deal-bounty-contract/) that empowers Filecoin Data DAO uses cases. This example provides lists data bounties to claim, and pays out the bounty when deals are proven to be made with the built-in Filecoin Market actor.
+To get started using the Filecoin APIs, [here's an FVM-compatible deal bounty contract example](https://github.com/lotus-web3/deal-bounty-contract/) that empowers Filecoin Data DAO uses cases. This example lists data bounties to claim and pays out the bounty when deals are made with the built-in Filecoin Market actor.
