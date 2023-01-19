@@ -19,8 +19,6 @@ Take a look at this short presentation by [@truckerfling]('https://twitter.com/t
 
 {{< youtube "lgUMVhM3FIM" >}}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lgUMVhM3FIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 <!-- - What does EVM compatibility mean -->
 <!-- - Can I use my EVM contracts? -->
 <!-- - Why FEVM? Why not just EVM? -->
