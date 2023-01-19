@@ -30,11 +30,23 @@ As a utility token that aligns participants’ incentives with the long-term gro
 
 Specifically, Filecoin uses a [dual minting model](https://spec.filecoin.io/%23section-systems.filecoin_token.minting_model&sa=D&source=editors&ust=1674147484220325&usg=AOvVaw25eQbNyiZGSVUEtPqqoNs_) for block reward minting:
 
-- [Baseline Minting](https://spec.filecoin.io/%23section-systems.filecoin_token.block_reward_minting.baseline-minting&sa=D&source=editors&ust=1674147484220662&usg=AOvVaw1vf2sVTFJtM9GHBzBY_qhG): up to 770M FIL tokens are minted based on the performance of the network. These tokens would only fully release if the Filecoin network reached a Yottabyte of storage capacity in under 20 years, estimated to be ~1000x larger than today’s cloud storage capacity.
-- [Simple Minting](https://spec.filecoin.io/%23section-systems.filecoin_token.block_reward_minting.simple-minting&sa=D&source=editors&ust=1674147484221089&usg=AOvVaw09re-gzBn_xxHxlt08dfot): 330M FIL tokens are released on a 6 year half-life based on time, meaning that 97% of these tokens will be released in approximately 30 years time.
-- Additionally, 300M FIL tokens are held back in the mining reserve to incentivize future types of mining.
-- Vesting: Mining rewards undergo a vesting schedule to encourage long-term network alignment. For example, 75% of block rewards earned by miners vest linearly over 180 days, while 25% are made immediately available to improve miner cash flow and profitability. And the remaining FIL tokens are vested to Protocol Labs teams and Filecoin Foundation over 6 years and SAFT investors over 3 years, as shown in the [vesting table](https://spec.filecoin.io/systems/filecoin_token/token_allocation/filtokenallocation.png&sa=D&source=editors&ust=1674147484221810&usg=AOvVaw0APuLa2qxi8zOsOWsvv500) here.
-- Collateral and Slashing: to encourage good behavior from network participants, during block reward mining, storage providers must lock Filecoin tokens as [pledge collateral](https://spec.filecoin.io/%23section-systems.filecoin_mining.miner_collaterals.initial-pledge-collateral&sa=D&source=editors&ust=1674147484222187&usg=AOvVaw0peY2CM6khJetFkBnendi5) for consensus security, storage reliability, and contract guarantees. Pledge collateral is determined by projected block rewards that a miner would earn. Collateral and all earned rewards by storage providers are subject to slashing throughout the lifetime of a sector if the storage does not pass a reliability check.
+### Baseline Minting
+
+Up to 770M FIL tokens are minted based on the performance of the network. These tokens would only fully release if the Filecoin network reached a Yottabyte of storage capacity in under 20 years, estimated to be ~1000x larger than today’s cloud storage capacity.
+
+### Simple Minting
+
+330M FIL tokens are released on a 6 year half-life based on time, meaning that 97% of these tokens will be released in approximately 30 years time.
+
+Additionally, 300M FIL tokens are held back in the mining reserve to incentivize future types of mining.
+
+### Vesting
+
+Mining rewards undergo a vesting schedule to encourage long-term network alignment. For example, 75% of block rewards earned by miners vest linearly over 180 days, while 25% are made immediately available to improve miner cash flow and profitability. And the remaining FIL tokens are vested to Protocol Labs teams and Filecoin Foundation over 6 years and SAFT investors over 3 years, as shown in the [vesting table](https://spec.filecoin.io/systems/filecoin_token/token_allocation/filtokenallocation.png&sa=D&source=editors&ust=1674147484221810&usg=AOvVaw0APuLa2qxi8zOsOWsvv500) here.
+
+### Collateral and slashing
+
+To encourage good behavior from network participants, during block reward mining, storage providers must lock Filecoin tokens as [pledge collateral](https://spec.filecoin.io/%23section-systems.filecoin_mining.miner_collaterals.initial-pledge-collateral&sa=D&source=editors&ust=1674147484222187&usg=AOvVaw0peY2CM6khJetFkBnendi5) for consensus security, storage reliability, and contract guarantees. Pledge collateral is determined by projected block rewards that a miner would earn. Collateral and all earned rewards by storage providers are subject to slashing throughout the lifetime of a sector if the storage does not pass a reliability check.
 
 ## The Filecoin blockchain
 
@@ -64,7 +76,7 @@ There are several [built-in system actors](https://spec.filecoin.io/%23section-
 - Storage Market Actor - managing storage deals.
 - Multisig Actor \- responsible for operations involving the Filecoin multi-signature wallet.
 - Payment Channel Actor - set up and settle payment channel funds.
-- DataCap Actor - responsible for DataCap token management.
+- Datacap Actor - responsible for datacap token management.
 - Verified Registry Actor - responsible for managing verified clients.
 - Ethereum address Manager (EAM) Actor\- responsible for assigning all Ethereum compatible addresses on Filecoin Network, including EVM smart contract addresses and Ethereum account addresses.
 - EVM Account Actor - a non-singleton built-in actor representing an external Ethereum identity backed by a secp256k1 key.
@@ -93,14 +105,16 @@ Filecoin is targeting multiple protocol implementations to guarantee the securit
 
 In the Filecoin network, addresses are used to identify actors in the Filecoin state. The address encodes information about the corresponding actor, providing a robust address format that is easy to use and resistant to errors. There are five types of addresses in Filecoin for either MainNet starts with f or TestNet starts with t.
 
-- f0/t0 - an ID address for an actor in a more “human friendly” way. For instance, f0123261 is the ID for a storage provider.
-- f1/t1 - A secp256k1 wallet address with encrypted key pair. Essentially, this is a wallet address generated from the secp256k1 public key.
-- f2/t2 - An address represents an actor (smart contract) and is assigned in a way that makes it safe to use during network forks.
-- f3/t3 - A BLS wallet address generated from a BLS public encryption key.
-- f4/t4 - the addresses which were created and assigned to user-defined actors by user-definable “address management” actors. This address can receive funds before an actor has been deployed to the address.
-- f410/t410 - the address space managed by Ethereum Address Manager (EAM) built-in actor. The original Ethereum addresses can be cast as f410/t410 addresses and vice versa to enable existing Ethereum tools to interact seamlessly with the Filecoin network.
+- `f0/t0`: an ID address for an actor in a more “human friendly” way. For instance, f0123261 is the ID for a storage provider.
+- `f1/t1`: a secp256k1 wallet address with encrypted key pair. Essentially, this is a wallet address generated from the secp256k1 public key.
+- `f2/t2`: an address represents an actor (smart contract) and is assigned in a way that makes it safe to use during network forks.
+- `f3/t3`: a BLS wallet address generated from a BLS public encryption key.
+- `f4/t4`: the addresses which were created and assigned to user-defined actors by user-definable “address management” actors. This address can receive funds before an actor has been deployed to the address.
+- `f410/t410`: the address space managed by Ethereum Address Manager (EAM) built-in actor. The original Ethereum addresses can be cast as f410/t410 addresses and vice versa to enable existing Ethereum tools to interact seamlessly with the Filecoin network.
 
 ### Consensus
+
+Let's quickly cover how consensus works in the Filecoin network.
 
 #### Expected consensus
 
@@ -121,26 +135,29 @@ The process of producing a block for each epoch can be briefly described as foll
 
 #### Finality
 
-EC enforces a version of soft finality whereby all miners at round N will reject all blocks that fork off before round N-F. F is currently set to 900. This is important to enforce a macroeconomically-enforced finality at no cost to liveness in the chain.
+EC enforces a version of soft finality whereby all miners at round `N` will reject all blocks that fork off before round `N - F`. `F` is set to `900`. This is important to enforce a macroeconomically-enforced finality at no cost to liveness in the chain.
 
 ### Proofs
 
-As a decentralized storage network, Filecoin is built on the Proof-of-Storage in which miners contribute their vacant storage space to the network to store data and then provide proofs for the client to verify if their data has been stored throughout a period.
+As a decentralized storage network, Filecoin is built on the proof-of-storage in which miners contribute their vacant storage space to the network to store data and then provide proofs for the client to verify if their data has been stored throughout a period.
 
-#### Proof of Replication
+#### Proof of replication
 
-Using Proof Of Replication (PoRep), storage providers prove that they have created a unique copy of the client’s data and stored it on behalf of the network.
+Using proof-of-replication (PoRep), storage providers prove that they have created a unique copy of the client’s data and stored it on behalf of the network.
 
-#### Proof of Spacetime
+#### Proof of spacetime
 
-Storage providers also need to continuously prove that they store clients’ data for the whole lifetime of the storage deal.  There are two types of challenges as part of the PoSt process.
+Storage providers also need to continuously prove that they store clients’ data for the whole lifetime of the storage deal. There are two types of challenges as part of the proof-of-spacetime (PoSt) process:
 
 - Winning PoSt guarantees that the storage provider maintains a copy of data at a specific time.
 - Window PoSt is used as proof that a copy of the data has been continuously maintained over time.
 
 #### Slashing
 
-If storage providers fail to provide reliable uptime or act maliciously against the network, they will be penalized by slashing. Filecoin implements two kinds of slashing: storage fault slashing to penalize storage providers for not being able to maintain healthy and reliable storage sectors for the network and consensus fault slashing to penalize storage providers for sabotaging the liveness and security of the consensus process.
+If storage providers fail to provide reliable uptime or act maliciously against the network, they will be penalized by slashing. Filecoin implements two kinds of slashing:
+
+- Storage fault slashing to penalize storage providers for not being able to maintain healthy and reliable storage sectors for the network.
+- Consensus fault slashing to penalize storage providers for sabotaging the liveness and security of the consensus process.
 
 ## Storage model overview
 
@@ -148,18 +165,18 @@ The storage model provides proven storage power in the network required for the
 
 ### Providers
 
-Based on the nature of the storage markets, there are two types of providers to provide service and earn FIL as rewards.
+Based on the nature of the storage markets, there are two types of providers to provide service and earn FIL as rewards:
 
 - Storage providers are responsible for storing files and data for clients on the network and providing cryptographic proofs to verify storage.
 - Retrieval providers are responsible for providing quick pipes to retrieve data per clients’ requests. Sometimes, storage providers who store client data also act as retrieval providers.
 
 ### Deals
 
-In the Filecoin network, providers provide their storage or retrieval service to data clients through deals that are negotiated and agreed upon between two parties, including terms like data size, price and deal duration, collateral, etc.
+In the Filecoin network, providers provide their storage or retrieval service to data clients through deals that are negotiated and agreed upon between two parties, including terms like data size, price and deal duration, and collateral.
 
 ### Sectors
 
-Sectors are the basic units of provable storage where storage providers store clients’ data and generate PoSt on behalf of the Filecoin network. Sectors have standard sizes and a lifetime that storage providers can extend before reaching the end of the lifetime. 32GiB and 64 GiB sector sizes are supported.
+Sectors are the basic units of provable storage where storage providers store clients’ data and generate PoSt on behalf of the Filecoin network. Sectors have standard sizes and a lifetime that storage providers can extend before reaching the end of the lifetime. `32 GiB` and `64 GiB` sector sizes are supported.
 
 ## Storage market
 
@@ -167,7 +184,7 @@ The storage market is the data entry point into the network where storage provid
 
 ### Deal making
 
-The lifecycle for a deal within the storage market contains distinct phases.
+The lifecycle for a deal within the storage market contains distinct phases:
 
 - Discovery: the client identifies storage providers and queries their current ask price.
 - Negotiation: both parties agree to the term of the storage deal.
@@ -176,13 +193,13 @@ The lifecycle for a deal within the storage market contains distinct phases.
 
 ### Filecoin plus  
 
-The mission of Filecoin Plus is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around DataCap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
+The mission of Filecoin Plus is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
 
-Verified clients can onboard data into Filecoin using DataCap, which they apply from community-selected notaries. In return for storing verified storage deals, storage providers receive DataCap with a 10x boost to their storage power which eventually increases their block rewards as an incentive.
+Verified clients can onboard data into Filecoin using datacap, which they apply from community-selected notaries. In return for storing verified storage deals, storage providers receive datacap with a 10x boost to their storage power which eventually increases their block rewards as an incentive.
 
-- Datacap: DataCap token will be allocated to a verified client to spend in the storage deals carrying a 10x deal quality multiplier.
-- Notaries: community-selected notaries govern the program by verifying storage clients and allocating DataCap tokens to verified clients.
-- Verified clients: Clients are active network participants with DataCap allocation for their data storage.
+- Datacap: a Datacap token will be allocated to a verified client to spend in the storage deals carrying a 10x deal quality multiplier.
+- Notaries: community-selected notaries govern the program by verifying storage clients and allocating datacap tokens to verified clients.
+- Verified clients: clients are active network participants with datacap allocation for their data storage.
 
 ### Storage on-ramps
 
@@ -190,7 +207,7 @@ To simplify the process of storing data on the network, there are many storage h
 
 Storage helpers provide libraries that abstract Filecoin deal-making into simple, streamlined API calls and storing the data on IPFS to provide more efficient and fast retrieval for your content.
 
-The available storage helpers:
+Here are some available storage helpers:
 
 - [boost.filecoin.io](https://boost.filecoin.io/&sa=D&source=editors&ust=1674147484234258&usg=AOvVaw1PFBrROfthUdAgHLwkkv63)
 - [estuary.tech](https://estuary.tech/&sa=D&source=editors&ust=1674147484234745&usg=AOvVaw1b_HzDFLP0Tmz_o-I4yV7P)
@@ -312,14 +329,14 @@ Currently, several Filecoin networks are available to serve different purposes, 
 
 - Public endpoint: [https://api.calibration.node.glif.i](https://api.calibration.node.glif.io/rpc/v0&sa=D&source=editors&ust=1674147484247708&usg=AOvVaw0u9YCwkFdJnzp1luGEZZkD)[o/rpc/v0](https://api.calibration.node.glif.io/rpc/v0&sa=D&source=editors&ust=1674147484247892&usg=AOvVaw2v0ZpCMofN-_N5NwsBcari)
 - Blockchain explorer: [https://calibration.filscan.io/](https://calibration.filscan.io/&sa=D&source=editors&ust=1674147484248185&usg=AOvVaw2w0Cy2DSs63TApLDFw9WSz)
-- Faucet: [https://faucet.calibration.fildev.network/](https://faucet.calibration.fildev.network/&sa=D&source=editors&ust=1674147484248498&usg=AOvVaw0cFTrKRBvrfbwhOCK-ahK1) 
+- Faucet: [https://faucet.calibration.fildev.network/](https://faucet.calibration.fildev.network/&sa=D&source=editors&ust=1674147484248498&usg=AOvVaw0cFTrKRBvrfbwhOCK-ahK1)
 
 ### Hyperspace testnet
 
 [Hyperspace](https://github.com/filecoin-project/testnet-hyperspace&sa=D&source=editors&ust=1674147484248855&usg=AOvVaw3kD1WYwLJUd72HvXfXWenE) testnet is the main pre-production developer testnet which is more stable and reliable. The Hyperspace testnet is a pre-production developer-focused testnet. It resets only in the event of irrecoverable damage. Developers are welcome to build and test their toolings, applications, and smart contracts on this network.
 
 - Public endpoint: [https://api.hyperspace.node.glif.io/rpc/v0](https://api.hyperspace.node.glif.io/rpc/v0&sa=D&source=editors&ust=1674147484249267&usg=AOvVaw2gjuhQr6h9sqGSqDj8uMot)
-- Blockchain explorer: [https://explorer.glif.io/?network=hyperspace](https://explorer.glif.io/?network%3Dhyperspace&sa=D&source=editors&ust=1674147484249567&usg=AOvVaw17jVoHPJNDo3Bh-N2OKsTz) 
+- Blockchain explorer: [https://explorer.glif.io/?network=hyperspace](https://explorer.glif.io/?network%3Dhyperspace&sa=D&source=editors&ust=1674147484249567&usg=AOvVaw17jVoHPJNDo3Bh-N2OKsTz)
 - Faucet: [https://hyperspace.filtest.network/#faucet](https://hyperspace.filtest.network/%23faucet&sa=D&source=editors&ust=1674147484249928&usg=AOvVaw1D2yPJG-nhAEyLV0yi9E27)
 
 ### Wallaby testnet
@@ -328,7 +345,7 @@ Currently, several Filecoin networks are available to serve different purposes, 
 
 You can find [Wallaby-specific documentation](http://kb.factor8.dev/docs/filecoin/testnets/wallaby&sa=D&source=editors&ust=1674147484250612&usg=AOvVaw1oYhw9JpWeLrlhI7ZoqtHB) here.
 
-- Public endpoint: [https://wallaby.node.glif.io/rpc/v0](https://wallaby.node.glif.io/rpc/v0&sa=D&source=editors&ust=1674147484250892&usg=AOvVaw0kR0Yy732gPgCek-6k-QqM) 
+- Public endpoint: [https://wallaby.node.glif.io/rpc/v0](https://wallaby.node.glif.io/rpc/v0&sa=D&source=editors&ust=1674147484250892&usg=AOvVaw0kR0Yy732gPgCek-6k-QqM)
 - Blockchain explorer: [https://wallaby.filfox.info/en](https://wallaby.filfox.info/en&sa=D&source=editors&ust=1674147484251220&usg=AOvVaw2pcwlDyfIvWdC5yhVi1D16)
 - Faucet:  [https://wallaby.network/#faucet](https://wallaby.network/%23faucet&sa=D&source=editors&ust=1674147484251572&usg=AOvVaw1r3dXEaUXlCD51OmZWjk8e)
 
