@@ -18,6 +18,16 @@ The [FEVM Hardhat kit](https://github.com/filecoin-project/fevm-hardhat-kit) con
 - Filecoin API Examples: contracts demonstrating how to use the [Filecoin API](#filecoin-apis) in Solidity to access storage deals and other Filecoin-specific functions.
 - Filecoin Mock APIs: contracts that mock the Filecoin APIs intended for faster prototyping.
 
+#### Filecoin API Examples
+
+- `FilecoinMarketConsumer.sol` - This contract shows how to get data on specific deals. It's a great way to become acquainted with the Filecoin Solidity API and start writing logic around existing deals.
+
+- ` DealRewarder.sol` - This contract is based on the `deal-bounty-contract` repo linked in the [Data DAO example](#data-dao-example) section below.
+
+  It demonstrates how to set a bounty for a Filecoin Piece CID (which represents a piece of data that's been turned into a CAR file to store on Filecoin). Once the Piece CID has been successfully stored with a Storage Provider, the contract will send the bounty reward to the storage client who made the deal.
+
+  (To make a storage deal on the Filecoin Hyperspace testnet you can use the Lotus CLI. See [Store data section](/get-started/store-and-retrieve/store-data/).)
+
 ## Filecoin APIs
 
 The primary advantage of the Filecoin EVM runtime over other EVM-based chains is the ability to access Filecoin storage deals. This can be done in the Filecoin EVM runtime using the [Filecoin.sol library](https://github.com/Zondax/filecoin-solidity). This library is maintained by [Zondax](https://zondax.ch/).
