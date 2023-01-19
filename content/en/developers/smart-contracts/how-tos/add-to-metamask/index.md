@@ -1,7 +1,7 @@
 ---
 title: "Add to MetaMask"
-description: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to integrate FIL into MetaMask using the Wallaby testnet."
-lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to integrate FIL into MetaMask using the Wallaby testnet."
+description: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to integrate FIL into MetaMask using the Hyperspace testnet."
+lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to integrate FIL into MetaMask using the Hyperspace testnet."
 menu:
     developers:
         parent: "developers-how-tos"
@@ -24,7 +24,7 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
     
     ![](chainlist-select-test-networks.png)
 
-1. Scroll down to find the **Filecoin -- Wallaby** testnet:
+1. Scroll down to find the **Filecoin -- Hyperspace** testnet:
 
     ![](chainlist-filecoin-wallaby.png)
 
@@ -32,7 +32,7 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
 
     ![](chainlist-connect-with-metamask.png)
 
-1. Back on the Chainlist.org page, click the **Filecoin -- Wallaby** testnet connect button again.
+1. Back on the Chainlist.org page, click the **Filecoin -- Hyperspace** testnet connect button again.
 1. In MetaMask click **Approve** when prompted to _Allow this site to add a network_:
 
     ![](chainlist-allow-site-to-add-a-network.png)
@@ -41,7 +41,7 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
 
     ![](chainlist-switch-network.png)
 
-1. Open MetaMask, and you should see that you're now on the Filecoin Wallaby testnet:
+1. Open MetaMask, and you should see that you're now on the Filecoin Hyperspace testnet:
 
     ![](chainlist-complete.png)
 
@@ -49,7 +49,7 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
 
 ## Manual process
 
-If you can't or don't want to use Chainlist, you can add the Wallaby network to your MetaMask manually.
+If you can't or don't want to use Chainlist, you can add the Hyperspace network to your MetaMask manually.
 
 ### Prerequisities
 
@@ -91,21 +91,21 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
 
     | Field | Value |
     | --- | --- |
-    | Network name | `Filecoin Wallaby` |
-    | New RPC URL | `https://wallaby.node.glif.io/rpc/v0` |
+    | Network name | `Filecoin Hyperspace` |
+    | New RPC URL | `https://api.hyperspace.node.glif.io/rpc/v1` |
     | Chain ID | `31415` |
     | Currency symbol | `tFIL` |
 
 1. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
 
-    - Glif Explorer: `https://explorer.glif.io/?network=wallaby`
-    - Filscan: `https://explorer.glif.io/?network=wallaby`
+    - Glif Explorer: `https://explorer.glif.io/?network=hyperspace`
+    - Filscan: `https://explorer.glif.io/?network=hyperspace`
 
 1. Review the values in the fields and click **Save**:
 
     ![](entering-network-options.png)
 
-1. The Wallaby testnet should now be shown in your MetaMask window:
+1. The Hyperspace testnet should now be shown in your MetaMask window:
 
     ![](wallaby-network-added.png)
 
@@ -113,4 +113,4 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
 
 ## Next steps
 
-You can now add funds to this wallet by using the [Wallaby testnet faucet]({{< relref "use-a-faucet" >}}).
+You can now add funds to this wallet by using the [Hyperspace testnet faucet]({{< relref "use-a-faucet" >}}).
