@@ -1,7 +1,7 @@
 ---
 title: "Quickstart"
-description: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called Metamask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
-lead: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called Metamask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
+description: "If you're an experienced EVM developer, check out the [**FEVM Hardhat kit**](https://github.com/filecoin-project/fevm-hardhat-kit) or [learn more here](/developers/smart-contracts/how-tos/fevm-hardhat-kit/). Otherwise in this quickstart tutorial we'll walk through how to deploy your first smart-contract to a Filecoin testnet using Remix."
+lead: "If you're an experienced EVM developer, check out the [**FEVM Hardhat kit**](https://github.com/filecoin-project/fevm-hardhat-kit) or [learn more here](/developers/smart-contracts/how-tos/fevm-hardhat-kit/). <br/><br/>Otherwise in this quickstart tutorial we'll walk through how to deploy your first smart-contract to a Filecoin testnet using Remix."
 draft: false
 images: []
 type: docs
