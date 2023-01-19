@@ -20,13 +20,14 @@ The [FEVM Hardhat kit](https://github.com/filecoin-project/fevm-hardhat-kit) con
 
 #### Filecoin API Examples
 
-- `FilecoinMarketConsumer.sol` - This contract shows how to get data on specific deals. It's a great way to become acquainted with the Filecoin Solidity API and start writing logic around existing deals.
+- `FilecoinMarketConsumer.sol`: shows how to get data on specific deals. It's a great way to become acquainted with the Filecoin Solidity API and write logic around existing deals.
+- ` DealRewarder.sol`: based on [the `deal-bounty-contract` repository](https://github.com/lotus-web3/deal-bounty-contract/).
 
-- ` DealRewarder.sol` - This contract is based on the `deal-bounty-contract` repo linked in the [Data DAO example](#data-dao-example) section below.
+    It demonstrates how to set a bounty for a Filecoin Piece CID, which represents a piece of data that's been turned into a CAR file to store on Filecoin. Once the Piece CID has been successfully stored with a storage provider, the contract will send the bounty reward to the storage client who made the deal.
 
-  It demonstrates how to set a bounty for a Filecoin Piece CID (which represents a piece of data that's been turned into a CAR file to store on Filecoin). Once the Piece CID has been successfully stored with a Storage Provider, the contract will send the bounty reward to the storage client who made the deal.
-
-  (To make a storage deal on the Filecoin Hyperspace testnet you can use the Lotus CLI. See [Store data section](/get-started/store-and-retrieve/store-data/).)
+{{< alert >}}
+You can use the [Lotus CLI to make a storage deal](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/set-up/) on the Filecoin Hyperspace testnet.
+{{< /alert >}}
 
 ## Filecoin APIs
 
