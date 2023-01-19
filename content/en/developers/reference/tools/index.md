@@ -41,7 +41,7 @@ aliases:
 
 ## Block Explorers
 
-- [Glif](https://explorer.glif.io/actor/?network=wallaby)
+- [Glif](https://explorer.glif.io/actor/?network=hyperspace)
 - [Filexplorer](https://explorer.filmine.io/)
 
 ## Filecoin Improvement Proposals (FIPs)
