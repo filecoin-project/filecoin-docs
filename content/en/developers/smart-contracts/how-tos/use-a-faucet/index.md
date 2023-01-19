@@ -20,29 +20,13 @@ aliases:
 
 Before we begin, you must have an address on the Hyperspace testnet. Follow the [Add to MetaMask guide]({{< relref "add-to-metamask" >}}) if you don't have one yet.
 
-<!-- ## Builder testnet (buildernet) -->
-<!-- 1. Lorem. -->
-<!-- 1. Ipsum. -->
-
 ## Hyperspace testnet
 
 1. Open your browser and open MetaMask.
 1. Click your account to copy the address to your clipboard:
-
-    ![Select your account in MetaMask.](select-account-in-metamask.png)
-
 1. Go to [hyperspace.yoga](https://hyperspace.yoga/#faucet) and scrolldown to the **Faucet** section.
 1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
-
-    ![Click the send button in MetaMask.](click-send.png)
-
 1. The faucet should give you a link to the transaction. Click it to view your transaction:
-
-    ![Click the transaction link on the faucet.](transaction-link.png)
-
 1. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5000 `tFIL` transferred to your address.
 1. Open MetaMask to confirm that you received the `tFIL`:
-
-    ![View your funds in MetaMask.](metamask-with-funds.png)
-
 1. Done!
