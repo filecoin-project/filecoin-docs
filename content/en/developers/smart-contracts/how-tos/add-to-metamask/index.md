@@ -56,7 +56,7 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
     | --- | --- |
     | Network name | `Filecoin Hyperspace` |
     | New RPC URL | `https://api.hyperspace.node.glif.io/rpc/v0` |
-    | Chain ID | `31415` |
+    | Chain ID | `3141` |
     | Currency symbol | `tFIL` |
 
 1. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
