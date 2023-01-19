@@ -77,14 +77,14 @@ Yes.
 
 ### Do I have to install Lotus to work with FVM
 
-Not necessarily. You can use one of the two public Wallaby nodes:
+Not necessarily. You can use one of the two public Hyperspace nodes:
 
-- [wallaby.node.glif.io](https://wallaby.node.glif.io/)
-- [api.zondax.ch/fil/node/wallaby/rpc/v0](https://api.zondax.ch/fil/node/wallaby/rpc/v0)
+- `api.hyperspace.node.glif.io/rpc/v1`
+- `api.zondax.ch/fil/node/hyperspace/rpc/v1`
 
-### How do I install a node on the Wallaby testnet?
+### How do I install a node on the Hyperspace testnet?
 
-Factor8, the team that runs the Wallaby testnet, has a [guide on how to spin up a Lotus node on the Wallaby testnet](https://kb.factor8.dev/docs/filecoin/testnets/wallaby).
+Factor8, the team that runs the Hyperspace testnet, has a [guide on how to spin up a Lotus node on the Hyperspace testnet](https://kb.factor8.dev/docs/filecoin/testnets/hyperspace).
 
 ### What is the difference between the FVM and Bacalhau
 
