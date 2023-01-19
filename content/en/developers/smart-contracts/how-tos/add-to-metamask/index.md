@@ -62,7 +62,7 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
 1. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
 
     - Glif Explorer: `https://explorer.glif.io/?network=hyperspace`
-    - Filscan: `https://explorer.glif.io/?network=hyperspace`
+    - Filscan: `https://hyperspace.filscan.io/`
 
 1. Review the values in the fields and click **Save**.
 1. The Hyperspace testnet should now be shown in your MetaMask window.
