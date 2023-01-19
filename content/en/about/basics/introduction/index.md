@@ -36,7 +36,9 @@ Specifically, Filecoin uses a [dual minting model](https://spec.filecoin.io/%23
 - Vesting: Mining rewards undergo a vesting schedule to encourage long-term network alignment. For example, 75% of block rewards earned by miners vest linearly over 180 days, while 25% are made immediately available to improve miner cash flow and profitability. And the remaining FIL tokens are vested to Protocol Labs teams and Filecoin Foundation over 6 years and SAFT investors over 3 years, as shown in the [vesting table](https://spec.filecoin.io/systems/filecoin_token/token_allocation/filtokenallocation.png&sa=D&source=editors&ust=1674147484221810&usg=AOvVaw0APuLa2qxi8zOsOWsvv500) here.
 - Collateral and Slashing: to encourage good behavior from network participants, during block reward mining, storage providers must lock Filecoin tokens as [pledge collateral](https://spec.filecoin.io/%23section-systems.filecoin_mining.miner_collaterals.initial-pledge-collateral&sa=D&source=editors&ust=1674147484222187&usg=AOvVaw0peY2CM6khJetFkBnendi5) for consensus security, storage reliability, and contract guarantees. Pledge collateral is determined by projected block rewards that a miner would earn. Collateral and all earned rewards by storage providers are subject to slashing throughout the lifetime of a sector if the storage does not pass a reliability check.
 
-## The Filecoin Blockchain
+## The Filecoin blockchain
+
+Let's quickly go over the fundamentals of the Filecoin blockchain.
 
 ### Tipsets
 
@@ -73,7 +75,7 @@ Along with the maturity of FVM, developers can write actors and deploy them to t
 
 You can check out this [talk here](https://curriculum.pl-launchpad.io/curriculum/filecoin/protocol/%23how-filecoin-actors-work--zenground0--protocol-labs&sa=D&source=editors&ust=1674147484225577&usg=AOvVaw1fhqffcWd0kUimWA9-YRr7) to learn more about how Filecoin Actor works.  
 
-### Distributed Randomness
+### Distributed randomness
 
 Filecoin uses distributed and publicly verifiable random beacon protocol - [Drand](https://drand.love) as the randomness beacon for the leader election during the [expected consensus](#consensus) to produce blocks. This randomness guarantees that the leader election is secret, fair, and verifiable.
 
@@ -100,7 +102,7 @@ In the Filecoin network, addresses are used to identify actors in the Filecoin 
 
 ### Consensus
 
-#### Expected Consensus
+#### Expected consensus
 
 Expected consensus (EC) is the underlying consensus algorithm used by Filecoin. EC is a probabilistic Byzantine fault-tolerant consensus protocol that runs a leader election among a set of storage providers to submit a block every epoch. Like proof-of-stake, Filecoin uses proof-of-storage for the leader election, meaning the likelihood of being elected depends on how much provable storage power a miner contributes to the network. The storage power of the network is stored in the storage power table and managed by the Storage Power Actor.
 
@@ -125,11 +127,11 @@ EC enforces a version of soft finality whereby all miners at round N will reject
 
 As a decentralized storage network, Filecoin is built on the Proof-of-Storage in which miners contribute their vacant storage space to the network to store data and then provide proofs for the client to verify if their data has been stored throughout a period.
 
-#### Proof of Replication (PoRep)
+#### Proof of Replication
 
 Using Proof Of Replication (PoRep), storage providers prove that they have created a unique copy of the client’s data and stored it on behalf of the network.
 
-#### Proof of Spacetime (PoSt)
+#### Proof of Spacetime
 
 Storage providers also need to continuously prove that they store clients’ data for the whole lifetime of the storage deal.  There are two types of challenges as part of the PoSt process.
 
@@ -140,7 +142,7 @@ Storage providers also need to continuously prove that they store clients’ dat
 
 If storage providers fail to provide reliable uptime or act maliciously against the network, they will be penalized by slashing. Filecoin implements two kinds of slashing: storage fault slashing to penalize storage providers for not being able to maintain healthy and reliable storage sectors for the network and consensus fault slashing to penalize storage providers for sabotaging the liveness and security of the consensus process.
 
-## Storage Model Overview
+## Storage model overview
 
 The storage model provides proven storage power in the network required for the consensus algorithm and also achieves the open storage market for storing and retrieving data on the Filecoin network. There are two major components to Filecoin markets, the storage and retrieval markets, which will be introduced in the following sections.
 
@@ -159,7 +161,7 @@ In the Filecoin network, providers provide their storage or retrieval service t
 
 Sectors are the basic units of provable storage where storage providers store clients’ data and generate PoSt on behalf of the Filecoin network. Sectors have standard sizes and a lifetime that storage providers can extend before reaching the end of the lifetime. 32GiB and 64 GiB sector sizes are supported.
 
-## Storage Market
+## Storage market
 
 The storage market is the data entry point into the network where storage providers and clients negotiate and publish storage deals on-chain.
 
@@ -167,22 +169,22 @@ The storage market is the data entry point into the network where storage provid
 
 The lifecycle for a deal within the storage market contains distinct phases.
 
-- Discovery - the client identifies storage providers and queries their current ask price.
-- Negotiation - both parties agree to the term of the storage deal.
-- Publishing - the deal and proof will be published on-chain.
-Handoff - once the deal is published on-chain, it will be added into a sector where data storage will be proven.
+- Discovery: the client identifies storage providers and queries their current ask price.
+- Negotiation: both parties agree to the term of the storage deal.
+- Publishing: the deal and proof will be published on-chain.
+- Handoff: once the deal is published on-chain, it will be added into a sector where data storage will be proven.
 
-### Filecoin Plus  
+### Filecoin plus  
 
 The mission of Filecoin Plus is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around DataCap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
 
 Verified clients can onboard data into Filecoin using DataCap, which they apply from community-selected notaries. In return for storing verified storage deals, storage providers receive DataCap with a 10x boost to their storage power which eventually increases their block rewards as an incentive.
 
-- Datacap - DataCap token will be allocated to a verified client to spend in the storage deals carrying a 10x deal quality multiplier.
-- Notaries  - community-selected notaries govern the program by verifying storage clients and allocating DataCap tokens to verified clients.
-- Verified clients  - Clients are active network participants with DataCap allocation for their data storage.
+- Datacap: DataCap token will be allocated to a verified client to spend in the storage deals carrying a 10x deal quality multiplier.
+- Notaries: community-selected notaries govern the program by verifying storage clients and allocating DataCap tokens to verified clients.
+- Verified clients: Clients are active network participants with DataCap allocation for their data storage.
 
-### Storage onramps
+### Storage on-ramps
 
 To simplify the process of storing data on the network, there are many storage helpers to provide an easier way to integrate Filecoin storage as well as IPFS into your applications or smart contracts.
 
@@ -190,13 +192,13 @@ Storage helpers provide libraries that abstract Filecoin deal-making into simple
 
 The available storage helpers:
 
-- Boost [boost.filecoin.io](https://boost.filecoin.io/&sa=D&source=editors&ust=1674147484234258&usg=AOvVaw1PFBrROfthUdAgHLwkkv63)
-- Estuary [estuary.tech](https://estuary.tech/&sa=D&source=editors&ust=1674147484234745&usg=AOvVaw1b_HzDFLP0Tmz_o-I4yV7P)
-- Web3.Storage [web3.storage](https://web3.storage/&sa=D&source=editors&ust=1674147484235114&usg=AOvVaw3YpID28KFS1K2RXMlravRA)
-- NFT.Storage [nft.storage](https://nft.storage/&sa=D&source=editors&ust=1674147484235484&usg=AOvVaw15IcqJMpzEfmvDH3Ls5jFG)
-- Lighthouse.Storage [lighthouse.storage](https://www.lighthouse.storage/&sa=D&source=editors&ust=1674147484235832&usg=AOvVaw3FpKwTYoVxHi9WfPLgEaWb)
+- [boost.filecoin.io](https://boost.filecoin.io/&sa=D&source=editors&ust=1674147484234258&usg=AOvVaw1PFBrROfthUdAgHLwkkv63)
+- [estuary.tech](https://estuary.tech/&sa=D&source=editors&ust=1674147484234745&usg=AOvVaw1b_HzDFLP0Tmz_o-I4yV7P)
+- [web3.storage](https://web3.storage/&sa=D&source=editors&ust=1674147484235114&usg=AOvVaw3YpID28KFS1K2RXMlravRA)
+- [nft.storage](https://nft.storage/&sa=D&source=editors&ust=1674147484235484&usg=AOvVaw15IcqJMpzEfmvDH3Ls5jFG)
+- [lighthouse.storage](https://www.lighthouse.storage/&sa=D&source=editors&ust=1674147484235832&usg=AOvVaw3FpKwTYoVxHi9WfPLgEaWb)
 
-## Retrieval Market
+## Retrieval market
 
 The retrieval market refers to negotiating retrieval deals for a provider to serve stored data to a client. In this agreement, the client agrees to pay the retrieval provider a certain amount of FIL for a given piece of data.
 
@@ -206,9 +208,9 @@ Currently, Filecoin nodes support direct retrieval from the storage miners who o
 
 Clients need to provide enough information to the storage provider for the data retrieval request, including:
 
-- Storage Provider ID - The ID of the storage provider where the data is stored.
-- Payload CID - also called Data CID.
-- Address - The address initially used to create the storage deal.
+- Storage Provider ID: The ID of the storage provider where the data is stored.
+- Payload CID: also called Data CID.
+- Address: The address initially used to create the storage deal.
 
 ### Saturn
 
@@ -216,7 +218,9 @@ Clients need to provide enough information to the storage provider for the data 
 
 ## Programming on Filecoin
 
-### Compute-over-data (Off-chain Compute)
+Let's quickly cover running computation over the Filecoin network.
+
+### Compute-over-data
 
 When it comes to data, a common need beyond storage and retrieval is data transformation. The goal with the compute-over-data protocols is generally to perform computation over [IPLD](https://youtu.be/Sgf6j_mCdjI&sa=D&source=editors&ust=1674147484237289&usg=AOvVaw32wwy9EPa-lmaPUmtYxoij), which is the data layer used by content-addressed systems like Filecoin. There are working groups working on different types of computing on Filecoin data, such as large-scale parallel compute (e.g., Bacalhau) and cryptographically verifiable compute (e.g. [Lurk](https://filecoin.io/blog/posts/introducing-lurk-a-programming-language-for-recursive-zk-snarks/&sa=D&source=editors&ust=1674147484237649&usg=AOvVaw1GL0xeMSkAuNXHOCuPr5BY)), etc.
 
@@ -224,7 +228,7 @@ For example, [Bacalhau](https://www.bacalhau.org/&sa=D&source=editors&ust=167414
 
 It is worth noting that Filecoin is uniquely positioned to support large-scale off-chain computation since the storage providers have to compute resources such as GPUs and CPUs colocated with their data. By supporting compute-over-data on the Filecoin network, we enable a new paradigm of computing on the data where the data exists rather than moving the data to external compute nodes.
 
-### Filecoin Virtual Machine (FVM)
+### Filecoin virtual machine
 
 The Filecoin virtual machine (FVM) is a runtime environment for smart contracts on the Filecoin network. Smart contracts enable users to run any bounded computation, including those that create and enforce rules for storing and accessing data on the network. The FVM is responsible for executing these smart contracts and ensuring they are executed correctly and securely.
 
@@ -234,29 +238,31 @@ According to the FVM roadmap, we initially support smart contracts written in
 
 The FVM enables compute-over-states on the Filecoin network and allows developers to build endless new use cases on top of Filecoin. Some example use cases are:
 
-#### Data Organizations
+#### Data organizations
 
 FVM can create a new kind of organization – one built around datasets of various kinds.
 
-##### Data DAO and Tokenized Datasets
+##### Data DAO and tokenized datasets
 
 The FVM enables the creation and management of data-based decentralized and autonomous organizations -- data DAOs. The FVM allows a group of individuals, or organizations, to curate and preserve data collection. Data DAOs can govern and monetize data access and pool the returns into a shared treasury to fund the collections preservation and long-term growth. One could even exchange those data tokens between peers and request computation services on that data, such as validation, joins, analysis, feature detection, and extraction, moving into machine learning.
 
-##### Perpetual Storage
+##### Perpetual storage
 
 FVM allows users to store once and have repair and replication bots manage the repetitive storage deal creation tasks so that data can be stored perpetually. Using a smart contract, users can provision a wallet with FIL, and storage providers can use that to fund data storage permanently. Repair bots can monitor the storage deals and replicate the data with other storage providers when necessary. This process gives users long-term storage permanence.
 
-#### Financial Services for Miners
+#### Financial services for miners
 
 FVM can provide a variety of financial services for storage providers. The needs of these SPs are unique to the Filecoin ecosystem.
 
-##### Lending and Staking Protocols
+##### Lending and staking protocols
 
 Users can lend out Filecoin to storage providers to use it as storage collateral and receive interest in return. These loans can be under-collateralized based on the on-chain storage history of past storage provider performance. Community members can use this history to generate reputation scores, enabling everyone to identify good borrowers. On top of that, loans can be automatically paid back to investors by using a multisig as the storage provider’s owner address, including lenders and a third party, to help negotiate payback. New FVM-enabled smart contracts give every FIL token holder access to new yield opportunities on their holdings while also benefiting the whole Filecoin economy by allowing entry ramps for providing storage on the network.
 
-##### [Insurance](https://rfs.fvm.dev/%23ca5450197bb947bd8d30a9eb96110553&sa=D&source=editors&ust=1674147484240273&usg=AOvVaw1kOBRECofdvEzKp_i-1vB-): SPs need to have financial products that help protect them from the risk they are undertaking in creating more storage solutions. Certain characteristics such as payment history, length of operation, and availability can be used to craft insurance policies just as they can be used to underwrite loans to SPs. This can protect them from the financial consequences of active faulting or token price drops.
+##### Insurance
 
-#### [Core Chain Infra](https://rfs.fvm.dev/%23e7b0b711aaed456f9affa5fa82a0971a&sa=D&source=editors&ust=1674147484240884&usg=AOvVaw3FFFfV15Rc_cZmgshz1M31)
+SPs need to have financial products that help protect them from the risk they are undertaking in creating more storage solutions. Certain characteristics such as payment history, length of operation, and availability can be used to craft insurance policies just as they can be used to underwrite loans to SPs. This can protect them from the financial consequences of active faulting or token price drops.
+
+#### Core chain infra
 
 We expect that FVM will gain feature parity with other chains that persist. This is required for any EVM chain to operate but is not necessarily tied to storage primitives.
 
@@ -264,7 +270,7 @@ We expect that FVM will gain feature parity with other chains that persist. This
 
 Users on FVM need to be able to exchange FIL for other tokens issued on-chain. This may be a decentralized exchange such as a fork of Uniswap or Sushi or involve building a decentralized order book similar to Serum on Solana.
 
-##### Token Bridges
+##### Token bridges
 
 While not immediately on the roadmap, bridges are needed from EVM chains, Move chains, and Cosmos chains to bring wrapped tokens from other ecosystems into the fold. With the current launch, we are more focused internally since the value proposition of Filecoin is unique enough that it does not need to bootstrap TVL from other chains. However, in the long run, we expect FVM to be part of a broader family of blockchains.
 
@@ -278,7 +284,7 @@ If you are interested in building these use cases, there is a list of solution b
 
 ## Filecoin EVM
 
-The Filecoin EVM (FEVM) is the Ethereum Virtual Machine (EVM) virtualized as a runtime on top of the Filecoin Virtual Machine (FVM). It will allow developers to port any existing EVM-based smart contracts straight onto the FVM and make them work out of the box. FEVM emulates EVM bytecode at the low level, supporting contracts written in Solidity, Vyper, and Yul. The EVM foreign runtime is based on pre-existing OSS libraries, including [SputnikVM](https://github.com/rust-blockchain/evm&sa=D&source=editors&ust=1674147484244405&usg=AOvVaw11yGUJ_B3XZjt421Lwiumt) and [revm](https://github.com/bluealloy/revm&sa=D&source=editors&ust=1674147484244576&usg=AOvVaw0JYAzKXNEmO9FGDbJdO4H7). You can find out more details in the [EVM <> FVM mapping specification](https://github.com/filecoin-project/fvm-project/blob/main/04-evm-mapping.md&sa=D&source=editors&ust=1674147484244789&usg=AOvVaw3bPEKtt7RJ7LQHsdJhFWDC).
+The Filecoin EVM runtime (FEVM) is the Ethereum Virtual Machine (EVM) virtualized as a runtime on top of the Filecoin Virtual Machine (FVM). It will allow developers to port any existing EVM-based smart contracts straight onto the FVM and make them work out of the box. FEVM emulates EVM bytecode at the low level, supporting contracts written in Solidity, Vyper, and Yul. The EVM foreign runtime is based on pre-existing OSS libraries, including [SputnikVM](https://github.com/rust-blockchain/evm&sa=D&source=editors&ust=1674147484244405&usg=AOvVaw11yGUJ_B3XZjt421Lwiumt) and [revm](https://github.com/bluealloy/revm&sa=D&source=editors&ust=1674147484244576&usg=AOvVaw0JYAzKXNEmO9FGDbJdO4H7). You can find out more details in the [EVM <> FVM mapping specification](https://github.com/filecoin-project/fvm-project/blob/main/04-evm-mapping.md&sa=D&source=editors&ust=1674147484244789&usg=AOvVaw3bPEKtt7RJ7LQHsdJhFWDC).
 
 Because Filecoin nodes offer the Ethereum JSON-RPC API support, FEVM is also completely compatible with any EVM development tools, such as Hardhat, Brownie, and Metamask. Most smart contracts ported to Filecoin shouldn't require changes or auditing. For example, new ERC-20 tokens can be launched on the Filecoin network or bridged directly to token pools on other chains.
 
@@ -296,7 +302,7 @@ If you build on FEVM, you might find some of the [example contracts](https://git
 
 Currently, several Filecoin networks are available to serve different purposes, as detailed below. This table also captures a quick [comparison of Filecoin networks](https://docs.filecoin.io/developers/infrastructure/networks/%23available-networks&sa=D&source=editors&ust=1674147484246615&usg=AOvVaw12KvjKI4yn5ZnMoJqPlP2N).
 
-### Mainnet 
+### Mainnet
 
 [Mainnet](https://docs.filecoin.io/networks/overview/available-networks/%23mainnet&sa=D&source=editors&ust=1674147484246936&usg=AOvVaw0Q8aXd92roXqWuypwDSBBX) is the live production network that all nodes on the Filecoin network are connected to. It never resets.
 
@@ -338,6 +344,4 @@ There are many dev tools available for developing on Filecoin. Some example lib
 
 ## The end
 
-That’s it! Congratulations, you have made it to the end of the Filecoin introduction! We look forward to seeing what you would build on top of the growing Filecoin ecosystem.
-
-Have fun building!
+That’s it! Congratulations, you have made it to the end of the Filecoin introduction! We look forward to seeing what you would build on top of the growing Filecoin ecosystem. Have fun building!
