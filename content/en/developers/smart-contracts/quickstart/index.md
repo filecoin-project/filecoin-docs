@@ -63,7 +63,7 @@ Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'
 
 1. Open your browser and open MetaMask.
 1. Click your account to copy the address to your clipboard:
-1. Go to [wallaby.network](https://wallaby.network/#faucet) and scrolldown to the **Faucet** section.
+1. Go to [hyperspace.yoga](https://hyperspace.yoga/#faucet) and scrolldown to the **Faucet** section.
 1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
 1. The faucet should give you a link to the transaction. Click it to view your transaction:
 1. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5000 `tFIL` transferred to your address.
