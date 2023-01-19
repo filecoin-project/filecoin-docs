@@ -130,57 +130,58 @@ Now, you're ready to [run a Lotus lite node](/get-started/store-and-retrieve/set
 
 ### Linux
 
-There are two simple ways to install Lotus on Linux (this is tested on Ubuntu):
+1. Install Lotus dependencies:
 
-- [AppImage](#appimage)
-- [Snap](#snap)
+Arch:
 
-1. Update and upgrade your system:
+```shell
+sudo pacman -Syu hwloc
+```
+
+Ubuntu/Debian:
+
+```shell
+sudo apt install -y hwloc
+```
+
+Fedora:
+
+```shell
+sudo dnf -y install hwloc
+```
+
+OpenSUSE:
+
+```shell
+sudo zypper in hwloc
+```
+
+Amazon Linux 2:
+
+```shell
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm; sudo yum install -y hwloc-devel
+```
+
+
+1. Download the latest Linux bundle from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/latest):
 
     ```shell
-    sudo apt update -y && sudo apt upgrade -y
+    wget https://github.com/filecoin-project/lotus/releases/download/v1.19.0/lotus_1.19.0_linux_amd64.tar.gz
     ```
 
-1. Download the latest `AppImage` file from the [Lotus GitHub releases page](https://github.com/filecoin-project/lotus/releases/latest):
+1. Extract tar -xvf archive.tar.gz executable:
 
     ```shell
-    wget https://github.com/filecoin-project/lotus/releases/download/v1.17.2/Lotus-v1.17.2-x86_64.AppImage
+    tar -xvf lotus_1.19.0_linux_amd64.tar.gz
     ```
 
-1. Make the `AppImage` executable:
+1. Move the `lotus` binary to `/usr/local/bin`:
 
     ```shell
-    chmod +x Lotus-v1.17.2-x86_64.AppImage
-    ```
-
-1. Move the `AppImage` to `/usr/local/bin` and rename it `lotus`:
-
-    ```shell
-    sudo mv Lotus-v1.17.2-x86_64.AppImage /usr/local/bin/lotus
+    sudo mv lotus_1.19.0_linux_amd64/lotus /usr/local/bin/lotus
     ```
 
 [Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
-
-#### Snap
-
-{{< alert  >}}**Requirements**
-You must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
-{{< /alert >}}
-
-1. To install Lotus using Snap, run:
-
-    ```shell
-    sudo snap install lotus
-    ```
-
-2. The snap installer automatically starts a full lotus node as a daemon. For the purposes of this tutorial, which uses a lite-node, we don't want that, so disable it, and then we can run a lotus lite-node instead.
-
-    ```shell
-    sudo snap disable lotus
-    ```
-
-[Head onto the next section to run your Lotus lite-node ↓](#run-a-lotus-lite-node)
-
 
 ## Run a Lotus lite-node
 
