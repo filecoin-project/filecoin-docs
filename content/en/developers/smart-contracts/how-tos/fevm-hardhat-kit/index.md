@@ -18,7 +18,7 @@ aliases:
 
 ## About
 
-The kit contains 3 main types of contracts:
+The [**FEVM Hardhat kit**](https://github.com/filecoin-project/fevm-hardhat-kit) contains 3 main types of contracts:
 
 - Basic Solidity Examples: Simple default contracts to show off basic solidity
 
