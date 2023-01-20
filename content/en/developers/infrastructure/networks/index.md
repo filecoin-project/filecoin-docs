@@ -182,7 +182,7 @@ More information on Hyperspace can be found [here](https://github.com/filecoin-p
 **Resources**:
 
 - [Faucet](https://hyperspace.filtest.network/#faucet)
-- [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
+- [Slack Channel for Updates/questions: #fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 - [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 - [Block explorer - Filfox](https://hyperspace.filfox.info/en)
 - [Block explorer - Glif](https://explorer.glif.io/?network=hyperspace)
