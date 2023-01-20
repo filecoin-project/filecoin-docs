@@ -101,7 +101,7 @@ boostd --vv run
 {{< alert  >}}
 In your firewall you will need to open the ports that libp2p listens on, so that Boost can receive storage and retrieval deals.
 
-See the `Libp2p` section of `config.toml` in the [architecture.md](../boost-architecture/architecture.md "mention")
+ See the `Libp2p` section of `config.toml` in the [configuration options]({{<ref "storage-provider/boost/configuration/overview#libp2p" >}}) 
 {{< /alert  >}}
 
 ### Web UI

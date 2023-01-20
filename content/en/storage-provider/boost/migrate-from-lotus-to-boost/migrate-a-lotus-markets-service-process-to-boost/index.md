@@ -15,7 +15,7 @@ weight: 20
 toc: true
 ---
 
-If you are running a `monolith` `lotus-miner`and have not yet split the `markets` service into an individual process, follow the steps in [migrate a monolith lotus miner to boost]({{<ref "migrate-a-monolith-lotus-mine-to-boost">}}).
+If you are running a `monolith` `lotus-miner`and have not yet split the `markets` service into an individual process, follow the steps in [migrate a monolith lotus miner to boost]({{<ref "migrate-a-monolith-lotus-miner-to-boost">}}).
 
 
 If you are running a `markets` service as a separate `lotus-miner` process:
@@ -102,7 +102,7 @@ boostd --vv run
 
 In your firewall you will need to open the ports that libp2p listens on, so that Boost can receive storage and retrieval deals.
 
-See the `Libp2p` of `config.toml` in the [Configuration]({{<ref "architecture">}}) section <!--STEF update when ready-->
+See the `Libp2p` of `config.toml` in the [configuration options]({{<ref "storage-provider/boost/configuration/overview#libp2p" >}}) section 
 
 ### Web user interface
 
