@@ -91,19 +91,22 @@ Follow these steps to run a copy of this site on your local computer.
     npm install
     ```
 
-1. Build the project 
+1. Build and serve the project locally: 
 
     ```shell
-    npm run build
-    ```
-
-1. Start the local webserver 
-    ```shell
-    npm start
+    npm run start
     ```
     
 1. Visit [localhost:1313](http://localhost:1313) to view the site.
 1. Press `CTRL` + `c` in the terminal to stop the local server.
+
+If you want to just build the site but _not_ serve it locally, run:
+
+```shell
+npm run build
+```
+
+A static site will be built and stored in the `/public` directory.
 <!-- /INSTALLATION -->
 
 
