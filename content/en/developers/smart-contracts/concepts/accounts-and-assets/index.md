@@ -17,11 +17,49 @@ aliases:
 
 {{< beta-warning >}}
 
-## Filecoin Addressing
+In Filecoin, addresses are used to identify actors. There are four address types:
 
-Take a look at this short presentation by [@Stebalien](https://github.com/Stebalien) on Filecoin addressing.
+| Address prefix | Description |
+| --- | --- |
+| `0` | An ID address. |
+| `1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
+| `2` | An actor address |
+| `3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
+| `4` | A user-programmable actor address. See [FIP-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md) for detailed information. |
 
-<iframe src="https://drive.google.com/file/d/17ngqxflu9B-gBqVl--5KqVhXsTLhkWtJ/preview" width="100%" height="480" allow="autoplay"></iframe>
+Address types `f0`, `f1`, `f2, and `f3` are specific to Filecoin. `f4` addresses, however, allow extensions to addressing-systems used in third-party blockchains like Ethereum.
+
+## F4 addresses
+
+An `f4` address is essentially an actor address that is user-programmable. It's possible to send funds to an `f1` or `f3` address that doesn't yet exist on-chain, but there's no way to send funds to a non-account actor that doesn't yet exist on-chain, such as a multisig actor with an `f2` address. This is where `f4` addresses come in.
+
+F4 addresses allow users to:
+
+- Implement foreign addressing systems in Filecoin, such as the system used in Ethereum.
+- Implement predictable addressing systems so that an actor's address may be computed before deployment.
+- Send funds to such a pre-computed actor address before actually deploying the actor there.
+
+Prior to the implementation of `f4` addresses, adding new address types and address derivation methods to the Filecoin network required extensive changes and a network upgrade. 
+
+### Format
+
+An address manager will own `f4` addresses starting with the {{< tooltip "leb128" >}} encoded actor ID and followed by an arbitrary sub-address: `[0x4 (f4 address class)] || {leb128(actor-id)} || {sub-address}`.
+
+In text, this address will be formatted as `f4{decimal(actor-id)}f{base32(sub-address || checksum)}` where `checksum` is the blake2b-32 (32bit/4byte {{< tooltip "blake2b" >}}) hash of the address in its binary representation. This is the same checksumming approach used in the textual representation of `f1` and `f3` addresses.
+
+An address management actor at `f010` will be able to assign addresses starting with `f410-` in text or `[4, 10, ...]` in binary. Where the address manager ID address is `f01111` and the sub-address is `0xeff924032365F51a36541efA24217bFc5B85bc6B`, the resulting textual format would be `f41111f574siazdmx2runsud35ciil37rnylpdl`.
+
+The textual format defined here is the universal textual format for `f4` addresses. It's expected that chain explorers and client implementations understand specific well-known address types and format these addresses according to their _native_ representation. Tooling should transparently convert Ethereum addresses in the `0x...` to and from the equivalent `f4` address. 
+
+For example, for an address manager `f01112` that manages a namespace of raw ASCII addresses _hello world_, the standard format would be `f41112fnbswy3dpeb3w64tmmqqq` though clients should recognize the address manager and display it as text `{hello world}`.
+
+### F2 and F4 comparison
+
+The key distinction is that `f2` addresses are designed to be stable and that `f4` addresses are designed to be "user-programmable".
+
+An `f2` address allows a user to create a chain of messages where a later message refers to an actor created in an earlier message. An `f2` address refers to the actor created by a specific message.
+
+An `f4` address allows an actor, referred to as an address manager, to _control_ an address-space. This allows the address manager to implement foreign addressing schemes and allows users to refer to addresses that could contain an actor with a set of properties enforced by the address manager.
 
 <!-- - How do I get FIL to test? Is there a faucet? -->
 <!-- - Can I use Metamask? -->
@@ -30,4 +68,3 @@ Take a look at this short presentation by [@Stebalien](https://github.com/Stebal
 <!-- - Do I need ETH to use FEVM? -->
 <!-- - How do I get FIL -->
 <!-- - What do addresses look like -->
-
