@@ -15,19 +15,17 @@ aliases:
     - "/fvm/concepts/accounts-and-assets/"
 ---
 
-{{< beta-warning >}}
-
 In Filecoin, addresses are used to identify actors. There are four address types:
 
-| Address prefix | Description |
+| Prefix | Description |
 | --- | --- |
-| `0` | An ID address. |
-| `1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
-| `2` | An actor address |
-| `3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
-| `4` | A user-programmable actor address. See [FIP-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md) for detailed information. |
+| `f0` | An ID address. |
+| `f1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
+| `f2` | An actor address |
+| `f3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
+| `f4` | A user-programmable actor address. See [FIP-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md) for detailed information. |
 
-Address types `f0`, `f1`, `f2, and `f3` are specific to Filecoin. `f4` addresses, however, allow extensions to addressing-systems used in third-party blockchains like Ethereum.
+Address types `f0`, `f1`, `f2`, and `f3` are specific to Filecoin. `f4` addresses, however, allow extensions to addressing-systems used in third-party blockchains like Ethereum.
 
 ## F4 addresses
 
@@ -39,13 +37,17 @@ F4 addresses allow users to:
 - Implement predictable addressing systems so that an actor's address may be computed before deployment.
 - Send funds to such a pre-computed actor address before actually deploying the actor there.
 
-Prior to the implementation of `f4` addresses, adding new address types and address derivation methods to the Filecoin network required extensive changes and a network upgrade. 
+Prior to the implementation of `f4` addresses, adding new address types and address derivation methods to the Filecoin network required extensive changes and a network upgrade.
 
 ### Format
 
-An address manager will own `f4` addresses starting with the {{< tooltip "leb128" >}} encoded actor ID and followed by an arbitrary sub-address: `[0x4 (f4 address class)] || {leb128(actor-id)} || {sub-address}`.
+An address manager will own `f4` addresses starting with the {{< tooltip "leb128" >}} encoded actor ID and followed by an arbitrary sub-address:
 
-In text, this address will be formatted as `f4{decimal(actor-id)}f{base32(sub-address || checksum)}` where `checksum` is the blake2b-32 (32bit/4byte {{< tooltip "blake2b" >}}) hash of the address in its binary representation. This is the same checksumming approach used in the textual representation of `f1` and `f3` addresses.
+```plaintext
+[0x4 (f4 address class)] || {leb128(actor-id)} || {sub-address}
+```
+
+In text, this address will be formatted as `f4{decimal(actor-id)}f{base32(sub-address || checksum)}` where `checksum` is the blake2b-32 (32bit/4byte {{< tooltip "blake2b" >}}) hash of the address in its binary representation. This is the same checksumming approach used in the textual representation of `f1`, `f2`, and `f3` addresses.
 
 An address management actor at `f010` will be able to assign addresses starting with `f410-` in text or `[4, 10, ...]` in binary. Where the address manager ID address is `f01111` and the sub-address is `0xeff924032365F51a36541efA24217bFc5B85bc6B`, the resulting textual format would be `f41111f574siazdmx2runsud35ciil37rnylpdl`.
 
