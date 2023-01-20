@@ -38,7 +38,7 @@ This tutorial uses the Filecoin mainnet. Everything you'll see over the next hou
 
 ## Prerequisites
 
-If you are using macOS you must have [Homebrew](https://brew.sh) installed. If you are using Linux you must have [Snapd](https://snapcraft.io/docs/installing-snapd) installed.
+If you are using macOS you must have [Homebrew](https://brew.sh) installed.
 
 ## Take notes
 
