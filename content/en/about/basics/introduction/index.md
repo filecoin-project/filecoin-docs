@@ -10,6 +10,10 @@ menu:
     identifier: "introduction-304db021e9413b888a29e53eac4bfc44"
 weight: 2
 toc: true
+aliases:
+    - "/introduction"
+    - "/introduction-to-filecoin"
+    - "/intro-to-filecoin"
 ---
 
 This post aims to provide a comprehensive overview of Filecoin to developers and serves as a reference that developers can check back on. We assume readers to have a basic understanding of [blockchain](https://en.wikipedia.org/wiki/Blockchain) and [Ethereum](https://ethereum.org/en/developers/docs/) and will focus specifically on the special designs of Filecoin that makes it a unique decentralized storage network in Web3. This process should take about 20 minutes to go through and would provide you with a solid foundation to start developing on Filecoin confidently!
