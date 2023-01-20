@@ -91,12 +91,17 @@ Follow these steps to run a copy of this site on your local computer.
     npm install
     ```
 
-1. Build the project and serve it locally using Hugo's built-in server:
+1. Build the project 
 
     ```shell
     npm run build
     ```
 
+1. Start the local webserver 
+    ```shell
+    npm start
+    ```
+    
 1. Visit [localhost:1313](http://localhost:1313) to view the site.
 1. Press `CTRL` + `c` in the terminal to stop the local server.
 <!-- /INSTALLATION -->
