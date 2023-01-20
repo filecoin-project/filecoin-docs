@@ -200,3 +200,10 @@ Here is a list of networks that are now deprecated:
 | Name | Description | Deprecated on |
 | --- | --- | --- |
 | Nerpa | A test network with tiny sector sizes. This network was for app developers to test the very basic functionality of their applications before moving over to the calibration testnet. | 2021-08-16 |
+
+## Block explorers
+
+Block explorers allow you to view individual transactions and messages across the Filecoin network. This is a list of block explorers that support the FVM testnets:
+
+- [Glif](https://explorer.glif.io/actor/?network=wallaby)
+- [Filexplorer](https://explorer.filmine.io/)
