@@ -12,6 +12,8 @@ weight: 25
 toc: true
 ---
 
+{{< beta-warning >}}
+
 ## DataDAO solution
 
 A Data DAO enables the creation of a dataset economy where users can capture and represent the value of those datasets to society. It's even possible to exchange those data tokens between peers and request computation services on that data, such as validation, joins, analysis, feature detection, and extraction.
