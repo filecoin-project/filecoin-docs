@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "remote-commp-fbf677ed83d5967606d2d0f55d739399"
-weight: 100
+weight: 88
 toc: true
 ---
 # Remote CommP

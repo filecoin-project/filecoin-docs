@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "need-help-608e415281286afe1012ce5c370f7f7e"
-weight: 120
+weight: 140
 toc: true
 ---
 1. If you have a question, please join the [Filecoin Slack](https://filecoin.io/slack/) and ask in [#boost-help](https://filecoinproject.slack.com/archives/C03CKDLEWG1), [#fil-lotus-help](https://filecoinproject.slack.com/archives/CPFTWMY7N),  [#fil-help](https://filecoinproject.slack.com/archives/CEGN061C5), or you can start a [discussion on GitHub](https://github.com/filecoin-project/boost/discussions).

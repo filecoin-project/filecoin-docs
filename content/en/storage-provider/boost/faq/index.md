@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "faq-6f5e5af5d372d6c2f42d127371dec593"
-weight: 150
+weight: 90
 toc: true
 ---
 

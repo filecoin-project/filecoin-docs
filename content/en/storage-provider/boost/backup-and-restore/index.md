@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "backup-and-restore-91547be36206b6e14d2c40c829266cc5"
-weight: 70
+weight: 80
 toc: true
 ---
 

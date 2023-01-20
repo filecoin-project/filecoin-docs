@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "hardware-requirements-26a3b19fda0b0528b0cb9c6ce7282c8f"
-weight: 100
+weight: 35
 toc: true
 ---
 
