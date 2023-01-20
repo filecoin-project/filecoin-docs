@@ -16,9 +16,11 @@ aliases:
     - /fvm/basics/quickstart/
 ---
 
-{{< beta-warning >}}
-
 We're going to be creating an ERC-20 token in this quickstart. The ERC-20 contract is used a lot in representing a massive array of tokens across multiple blockchains, primarily the Ethereum blockchain.
+
+{{< alert "info" >}}
+If you're an Ethereum developer, check out the [FEVM Hardhat kit]({{< relref "hardhat" >}}).
+{{< /alert >}}
 
 ## Accounts and assets
 
@@ -47,56 +49,27 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
 ### Switch networks
 
-You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the _Wallaby testnet_. We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
+You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Hyperspace testnet]({<< reref "available-networks#hyerspace" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
 
 1. Go to [chainlist.org](https://chainlist.org/).
 1. Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
-
-    ![Select a testnet in Chainlist.](chainlist-select-test-networks.png)
-
-1. Scroll down to find the **Filecoin -- Wallaby** testnet:
-
-    ![Find the Filecoin Wallaby testnet in Chainlist.](chainlist-filecoin-wallaby.png)
-
+1. Scroll down to find the **Filecoin -- Hyperspace** testnet:
 1. In MetaMask click **Next** and then **Continue** when prompted to connect Chainlist.org to MetaMask:
-
-    ![Connect Chainlist to MetaMask.](chainlist-connect-with-metamask.png)
-
-1. Back on the Chainlist.org page, click the **Filecoin -- Wallaby** testnet connect button again.
+1. Back on the Chainlist.org page, click the **Filecoin -- Hyperspace** testnet connect button again.
 1. In MetaMask click **Approve** when prompted to _Allow this site to add a network_:
-
-    ![Allow Chainlist to change networks.](chainlist-allow-site-to-add-a-network.png)
-
 1. Click **Switch network** when prompted by MetaMask:
-
-    ![Switch networks with Chainlist.](chainlist-switch-network.png)
-
-1. Open MetaMask, and you should see that you're now on the Filecoin Wallaby testnet:
-
-    ![Complete the process with Chainlist.](chainlist-complete.png)
-
-Nice! Now we've got the Filecoin Wallaby testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
+1. Open MetaMask, and you should see that you're now on the Filecoin Hyperspace testnet:
+Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
 
 ### Get some funds
 
 1. Open your browser and open MetaMask.
 1. Click your account to copy the address to your clipboard:
-
-    ![Select your account in MetaMask.](faucet-select-account-in-metamask.png)
-
-1. Go to [wallaby.network](https://wallaby.network/#faucet) and scrolldown to the **Faucet** section.
+1. Go to [hyperspace.yoga](https://hyperspace.yoga/#faucet) and scrolldown to the **Faucet** section.
 1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
-
-    ![Click the send button in MetaMask.](faucet-click-send.png)
-
 1. The faucet should give you a link to the transaction. Click it to view your transaction:
-
-    ![Click the transaction link on the faucet.](faucet-transaction-link.png)
-
 1. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5000 `tFIL` transferred to your address.
 1. Open MetaMask to confirm that you received the `tFIL`:
-
-    ![View your funds in MetaMask.](faucet-metamask-with-funds.png)
 
 That's all there is to it! Getting `tFil` is easy!
 
@@ -192,9 +165,6 @@ Let's call a method within the deployed contract to mint some tokens.
     ![Remix showing the mint method of a contract.](remix-expand-mint-method.png)
 
 1. The `to` field specifies where address you want these initial tokens sent to. Open MetaMask, copy your address, and paste it into this field.
-
-    ![Add an address into Remix.](remix-add-address.png)
-
 1. This field expects an `attoFil` value. 1 `FIL` is equal to 1,000,000,000,000,000,000 `attoFil`. So if you wanted to mint 100 `FIL`, you would enter `100` followed by 18 zeros: `100000000000000000000`.
 
     ![Enter a value into Remix.](remix-add-number.png)
@@ -217,20 +187,9 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
     ![Copy your contract's deployment address.](remix-copy-deploy-address.png)
 
 1. Open MetaMask, select **Assets**, and click **Import your tokens**:
-
-    ![Importing tokens into MetaMask.](metamask-assets-import-tokens.png)
-
 1. In the **Token contract address** field, paste the contract address you just copied from Remix and then click **Add custom token**. MetaMask should autofill the rest of the information based on what it can find from the Filecoin network.
-
-    ![Import your tokens into MataMask.](metamask-import-tokens-autofil.png)
-
 1. Click **Import token**.
-
-    ![Click the import token button in MetaMask.](metamask-import-token.png)
-
 1. You should now be able to see that you have 100 of your tokens within your MetaMask wallet!
-
-    ![Final token import page in MetaMask.](metamask-tokens-finished.png)
 
 ### Share your tokens
 

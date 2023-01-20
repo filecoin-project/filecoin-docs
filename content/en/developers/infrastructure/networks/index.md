@@ -45,10 +45,3 @@ The Wallaby test is intended to be used by:
 - Early builders deploying native FVM actors.
 
 The Wallaby testnet is operated and maintained by [Factor8 Solutions](https://github.com/Factor8Solutions). You can find Wallaby-specific documentation written by Factor8 at [kb.factor8.dev/docs/filecoin/testnets/wallaby](https://kb.factor8.dev/docs/filecoin/testnets/wallaby).
-
-## Block explorers
-
-Block explorers allow you to view individual transactions and messages across the Filecoin network. This is a list of block explorers that support the FVM testnets:
-
-- [Glif](https://explorer.glif.io/actor/?network=wallaby)
-- [Filexplorer](https://explorer.filmine.io/)

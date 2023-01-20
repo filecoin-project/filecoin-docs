@@ -15,7 +15,9 @@ toc: true
 
 {{< beta-warning >}}
 
-We're still working on this page.
+Take a look at this short presentation by [@truckerfling]('https://twitter.com/truckerfling') on Ethereum compatibility of FVM:
+
+{{< youtube "lgUMVhM3FIM" >}}
 
 <!-- - What does EVM compatibility mean -->
 <!-- - Can I use my EVM contracts? -->
