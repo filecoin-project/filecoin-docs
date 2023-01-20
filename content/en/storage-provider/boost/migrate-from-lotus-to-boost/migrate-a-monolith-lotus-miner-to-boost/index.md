@@ -1,5 +1,5 @@
 ---
-title: "Migrate a monolith lotus-miner to Boost"
+title: "Migrate a monolith lotus miner to boost"
 description: ""
 lead: ""
 date: 2022-01-25T14:41:39+01:00
@@ -10,11 +10,10 @@ type: docs
 menu:
   storage-provider:
     parent: "lorem"
-    identifier: "migrate-a-monolith-lotus-mine-to-boost-662de0099a55bb54578d58b65623870f"
+    identifier: "migrate-a-monolith-lotus-miner-to-boost-b4092c67e1b41454941298e90ee83a82"
 weight: 10
 toc: true
 ---
-
 
 If you have already split a your lotus-miner into a separate markets process (MRA), follow the steps in [migrate-a-lotus-markets-service-process-to-boost.md]({{< ref "migrate-a-lotus-markets-service-process-to-boost">}}}).
 
