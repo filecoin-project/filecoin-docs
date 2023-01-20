@@ -41,6 +41,7 @@ aliases:
 
 ## Block Explorers
 
+- [Beryx](https://beryx.zondax.ch/)
 - [Glif](https://explorer.glif.io/)
 - [Filexplorer](https://explorer.filmine.io/)
 
