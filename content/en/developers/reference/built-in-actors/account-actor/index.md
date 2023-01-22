@@ -35,7 +35,7 @@ Results:
 ## UniversalReceiverHook
 
 ```go
-func AuthenticateMessage(params RawBytes) EmptyValue ()
+func UniversalReceiverHook(params RawBytes) EmptyValue ()
 ```
 
 Whenever the account receives transfers, this method will be invoked.
