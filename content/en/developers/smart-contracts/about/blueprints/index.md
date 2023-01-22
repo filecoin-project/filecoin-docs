@@ -83,32 +83,32 @@ I highly recommend that you [read through the “Core Idea” section in this RE
 
 #### Deposit
 
-- Uploaders can deposit funds into the PerpStorage contract
+- Uploaders can deposit funds into the PerpetualStorage contract
 
-#### PerpDeal creation
+#### PerpetualDeal creation
 
 - The uploader should upload the file to a place where Storage Providers can download the data from, such as IPFS or AWS S3, and get the URL of the data
-- The uploader should send URL of the data, the desired number of replication, and the desired expiration date to the PerpStorage contract to create a PerpDeal
+- The uploader should send URL of the data, the desired number of replication, and the desired expiration date to the PerpetualStorage contract to create a PerpetualDeal
     - The Dapp frontend can provide an estimation of how long the data can be stored based on the amount of FIL the uploader has in the contract.
-    - The contract should reject the creation of the PerpDeal if the uploader does not have enough funds deposited in the contract.
-- The PerpStorage contract should create and update PerpDealAd based on the storage situation of each PerpDeal.
-    - The PerpStorage contract should determine the FIL it wants to give out for each PerpDealAd based on its business logic. For example, it can provide more bonuses if the PerpDeal does not have many replications or if its storage deals are about to expire.
+    - The contract should reject the creation of the PerpetualDeal if the uploader does not have enough funds deposited in the contract.
+- The PerpetualStorage contract should create and update PerpetualDealAd based on the storage situation of each PerpetualDeal.
+    - The PerpetualStorage contract should determine the FIL it wants to give out for each PerpetualDealAd based on its business logic. For example, it can provide more bonuses if the PerpetualDeal does not have many replications or if its storage deals are about to expire.
 
-#### PerpDeal information
+#### PerpetualDeal information
 
-- The PerpStorage contract should provide an interface for storage providers to query the information about PerpDeals, including the URL of the data, the desired expiration date, the current number of replication, and the storage deals created by other storage providers.
-- The PerpStorage contract should provide an interface for storage providers to query PerpDealAd.
-- The PerpStorage contract should provide an interface for storage providers to query the funds that the uploader has put into the PerpStorage contract.
+- The PerpetualStorage contract should provide an interface for storage providers to query the information about PerpetualDeals, including the URL of the data, the desired expiration date, the current number of replication, and the storage deals created by other storage providers.
+- The PerpetualStorage contract should provide an interface for storage providers to query PerpetualDealAd.
+- The PerpetualStorage contract should provide an interface for storage providers to query the funds that the uploader has put into the PerpetualStorage contract.
 
 #### Storage deals creation
 
-- Storage Providers can look at the list of PerpDealAd and determine which PerpDealAd they want to store.
-- Storage Providers should download the content of the PerpDealAd. They should try to download from the URL of the content or use the CID to download the content from other storage providers.
-- Storage Providers should seal the data of the PerpDealAd and publish the deal information to the market actor by calling `publish_deal` on the market actor. The PerpStorage contract will act as the client of the deal. (The command to seal the data and generate deal information is under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)).
-    - The storage provider should put the PerpDealAd’s id into the label (this is the field used to store arbitrary data) of the deal, so the PerpStorage contract can identify which PerpDealAd the storage provider is targeting.
-    - The market actor will call the [AuthenticateMessage](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0044.md) native method on the PerpStorage contract to know if this deal should be created. This method will be called using the FRC42 method number as specified in the linked FRC.
+- Storage Providers can look at the list of PerpetualDealAd and determine which PerpetualDealAd they want to store.
+- Storage Providers should download the content of the PerpetualDealAd. They should try to download from the URL of the content or use the CID to download the content from other storage providers.
+- Storage Providers should seal the data of the PerpetualDealAd and publish the deal information to the market actor by calling `publish_deal` on the market actor. The PerpetualStorage contract will act as the client of the deal. (The command to seal the data and generate deal information is under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)).
+    - The storage provider should put the PerpetualDealAd’s id into the label (this is the field used to store arbitrary data) of the deal, so the PerpetualStorage contract can identify which PerpetualDealAd the storage provider is targeting.
+    - The market actor will call the [AuthenticateMessage](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0044.md) native method on the PerpetualStorage contract to know if this deal should be created. This method will be called using the FRC42 method number as specified in the linked FRC.
     - You can handle this callback by exposing a `handle_filecoin_method(uint64, uint64, bytes)` Solidity method, which is how the FEVM runtime routes inbound FRC42 calls. [See this example](https://github.com/lotus-web3/client-contract/blob/8b53caadd9f7b028f897dfcd28ec2ca9ae98b9e3/src/DealClient.sol#LL49).
-    - The PerpStorage contract should check if this replication is valid and send FIL to the storage provider if it successfully creates the deal.
+    - The PerpetualStorage contract should check if this replication is valid and send FIL to the storage provider if it successfully creates the deal.
 
 ## Lending pool
 
