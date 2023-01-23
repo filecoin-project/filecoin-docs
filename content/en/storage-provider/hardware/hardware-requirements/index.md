@@ -1,6 +1,6 @@
 ---
 title: "Hardware requirements"
-description: "Minimum hardware requirements for providing storage to the Filecoin network."
+description: "A storage provider will need an 8+ core CPU, 128 GiB of RAM at the very least, and a powerful GPU. Find more hardware and specific operation requirements."
 draft: false
 images: []
 type: docs
