@@ -1,6 +1,7 @@
 ---
 title: "Get started"
 description: "The Filecoin Network is made with storage providers and clients. Discover how to build a node, maintain the blockchain and create a simple application."
+lead: ""
 draft: false
 images: []
 type: docs
