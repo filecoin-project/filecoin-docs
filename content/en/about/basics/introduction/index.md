@@ -32,7 +32,7 @@ The native currency of Filecoin, FIL, is a utility token used to incentivize per
 
 As a utility token that aligns participants’ incentives with the long-term growth of the network, Filecoin issuance is aligned with the overall provable utility of the network. The majority of Filecoin supply would only be minted if the network achieved growth and utility targets at scale.
 
-Specifically, Filecoin uses a [dual minting model](https://spec.filecoin.io/%23section-systems.filecoin_token.minting_model) for block reward minting:
+Specifically, Filecoin uses a [dual minting model](https://spec.filecoin.io/#section-systems.filecoin_token.minting_model) for block reward minting:
 
 ### Baseline Minting
 
@@ -50,7 +50,7 @@ Mining rewards undergo a vesting schedule to encourage long-term network alignme
 
 ### Collateral and slashing
 
-To encourage good behavior from network participants, during block reward mining, storage providers must lock Filecoin tokens as [pledge collateral](https://spec.filecoin.io/%23section-systems.filecoin_mining.miner_collaterals.initial-pledge-collateral) for consensus security, storage reliability, and contract guarantees. Pledge collateral is determined by projected block rewards that a miner would earn. Collateral and all earned rewards by storage providers are subject to slashing throughout the lifetime of a sector if the storage does not pass a reliability check.
+To encourage good behavior from network participants, during block reward mining, storage providers must lock Filecoin tokens as [pledge collateral](https://spec.filecoin.io/#section-systems.filecoin_mining.miner_collaterals.initial-pledge-collateral) for consensus security, storage reliability, and contract guarantees. Pledge collateral is determined by projected block rewards that a miner would earn. Collateral and all earned rewards by storage providers are subject to slashing throughout the lifetime of a sector if the storage does not pass a reliability check.
 
 ## The Filecoin blockchain
 
@@ -68,7 +68,7 @@ An Actor in the Filecoin Blockchain is the equivalent of the smart contract in t
 
 #### Built-in actors
 
-There are several [built-in system actors](https://spec.filecoin.io/%23section-systems.filecoin_vm.sysactors) that power the Filecoin network as the decentralized storage network.
+There are several [built-in system actors](https://spec.filecoin.io/#section-systems.filecoin_vm.sysactors) that power the Filecoin network as the decentralized storage network.
 
 - System Actor - general system actor.
 - Init actor - initializes new actors and records the network name.
@@ -89,7 +89,7 @@ There are several [built-in system actors](https://spec.filecoin.io/%23section-
 
 Along with the maturity of FVM, developers can write actors and deploy them to the Filecoin network in the same way as other blockchains. Other blockchains refer to these programs as _smart contracts_. User-programmable actors can also interact with built-in actors using the exported API from built-in actors.
 
-You can check out this [talk here](https://curriculum.pl-launchpad.io/curriculum/filecoin/protocol/%23how-filecoin-actors-work--zenground0--protocol-labs) to learn more about how Filecoin Actor works.  
+You can check out this [talk here](https://curriculum.pl-launchpad.io/curriculum/filecoin/protocol/#how-filecoin-actors-work--zenground0--protocol-labs) to learn more about how Filecoin Actor works.  
 
 ### Distributed randomness
 
@@ -309,7 +309,7 @@ The Filecoin EVM runtime (FEVM) is the Ethereum Virtual Machine (EVM) virtualize
 
 Because Filecoin nodes offer the Ethereum JSON-RPC API support, FEVM is also completely compatible with any EVM development tools, such as Hardhat, Brownie, and Metamask. Most smart contracts ported to Filecoin shouldn't require changes or auditing. For example, new ERC-20 tokens can be launched on the Filecoin network or bridged directly to token pools on other chains.
 
-Developers can deploy actors on either the FEVM or native FVM; which one should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don’t mind slightly less performance, deploy to the FEVM. You can find out more about the pros and cons of each in the [table here](https://docs.filecoin.io/developers/smart-contracts/concepts/filecoin-evm/%23fevm-and-native-fvm).
+Developers can deploy actors on either the FEVM or native FVM; which one should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don’t mind slightly less performance, deploy to the FEVM. You can find out more about the pros and cons of each in the [table here](https://docs.filecoin.io/developers/smart-contracts/concepts/filecoin-evm/#fevm-and-native-fvm).
 
 To sum it up, the FEVM allows current Web3 developers to quickly start writing actors on the Filecoin blockchain while using all of the tools, software packages, and languages they are used to while having access to Filecoin storage deals as a native.
 
@@ -321,15 +321,15 @@ If you build on FEVM, you might find some of the [example contracts](https://git
 
 ## Network and development tools
 
-Currently, several Filecoin networks are available to serve different purposes, as detailed below. This table also captures a quick [comparison of Filecoin networks](https://docs.filecoin.io/developers/infrastructure/networks/%23available-networks).
+Currently, several Filecoin networks are available to serve different purposes, as detailed below. This table also captures a quick [comparison of Filecoin networks](https://docs.filecoin.io/developers/infrastructure/networks/#available-networks).
 
 ### Mainnet
 
-[Mainnet](https://docs.filecoin.io/networks/overview/available-networks/%23mainnet) is the live production network that all nodes on the Filecoin network are connected to. It never resets.
+[Mainnet](https://docs.filecoin.io/networks/overview/available-networks/#mainnet) is the live production network that all nodes on the Filecoin network are connected to. It never resets.
 
 ### Calibration testnet
 
-[Calibration](https://docs.filecoin.io/networks/overview/available-networks/%23calibration) testnet is the most realistic simulation of the mainnet, where prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters, and prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage/retrieval functionality. It also has the same sector size as the mainnet.
+[Calibration](https://docs.filecoin.io/networks/overview/available-networks/#calibration) testnet is the most realistic simulation of the mainnet, where prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters, and prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage/retrieval functionality. It also has the same sector size as the mainnet.
 
 - Public endpoint: [https://api.calibration.node.glif.i](https://api.calibration.node.glif.io/rpc/v0)[o/rpc/v0](https://api.calibration.node.glif.io/rpc/v0)
 - Blockchain explorer: [https://calibration.filscan.io/](https://calibration.filscan.io/)
@@ -341,7 +341,7 @@ Currently, several Filecoin networks are available to serve different purposes, 
 
 - Public endpoint: [https://api.hyperspace.node.glif.io/rpc/v0](https://api.hyperspace.node.glif.io/rpc/v0)
 - Blockchain explorer: [https://explorer.glif.io/?network=hyperspace](https://explorer.glif.io/?network%3Dhyperspace)
-- Faucet: [https://hyperspace.filtest.network/#faucet](https://hyperspace.filtest.network/%23faucet)
+- Faucet: [https://hyperspace.filtest.network/#faucet](https://hyperspace.filtest.network/#faucet)
 
 ### Wallaby testnet
 
@@ -351,7 +351,7 @@ You can find [Wallaby-specific documentation](http://kb.factor8.dev/docs/filecoi
 
 - Public endpoint: [https://wallaby.node.glif.io/rpc/v0](https://wallaby.node.glif.io/rpc/v0)
 - Blockchain explorer: [https://wallaby.filfox.info/en](https://wallaby.filfox.info/en)
-- Faucet:  [https://wallaby.network/#faucet](https://wallaby.network/%23faucet)
+- Faucet:  [https://wallaby.network/#faucet](https://wallaby.network/#faucet)
 
 Filecoin has several block explorers that allow you to view individual transactions and messages across the Filecoin network. Here are some block explorers that support the FVM testnets:
 
