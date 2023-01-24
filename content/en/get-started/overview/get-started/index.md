@@ -30,13 +30,17 @@ Looking for Lotus? You can find Lotus specific documentation over at [lotus.file
 - Check out the [existing networks](https://network.filecoin.io).
 - Explore the mainnet using one of the [available block explorers]({{< relref "explore-the-network" >}}). Discover the blocks, the messages, the scoreboards for storage providers. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
 
-## Store content on Filecoin
+## Complete the lotus tutorial
 
-Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →]({{< relref "start-storing" >}})
+- Complete the beginner's [Lotus tutorial](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/set-up/). You'll learn how to: 
+  - Install the lotus client, create your first wallet and learn how to [send and receive ⨎](https://lotus.filecoin.io/docs/set-up/manage-fil/).
+  - [Prepare your data and complete your first deal](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/store-data/).
+  - [Perform your first data retrieval using lotus](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/retrieve-data/).
 
-- Visit [Slate](https://slate.host/) to store content on Filecoin and make deals from your browser.
-- Install and launch your [Lotus Node](https://lotus.filecoin.io). Setup your first wallet and learn how to [send and receive ⨎](https://lotus.filecoin.io/docs/set-up/manage-fil/) and [make storage deals](https://lotus.filecoin.io/docs/storage-providers/manage-storage-deals/).
+## Other things to explore
+- Looking for an easy way to store and access your files on Filecoin? Use one of the community built tools and services to get started. [Take a look now →]({{< relref "start-storing" >}})
 - Use [Starling]({{< relref "developers/storage-helpers/starling" >}}) to simplify the management of storage deals in Lotus.
+- Visit [Slate](https://slate.host/) to store content on Filecoin and make deals from your browser.
 - Check out the [Lotus API methods](https://lotus.filecoin.io/docs/apis/json-rpc/) to learn how to programmatically store data on the Filecoin network.
 
 ## Contribute to Filecoin
