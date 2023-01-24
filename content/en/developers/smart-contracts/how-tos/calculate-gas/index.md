@@ -94,3 +94,13 @@ curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
   "id": 1
 }
 ```
+
+You can convert the `result` field from hexadecimal to base-10 in your terminal. Take the `result` output and remove the `0x` from the start. Then use `echo` to output the conversion:
+
+```shell
+echo $((16#31157))
+```
+
+```plaintext
+201047
+```
