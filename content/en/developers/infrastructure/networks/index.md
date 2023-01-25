@@ -139,8 +139,7 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 
 The Hyperspace testnet is a pre-production developer focused testnet. This network is designed for developers to build and test their toolings, applications, smart contracts, and actors on a public network. Developers should consider the Hyperspace testnet stable as it will only be reset under catastrophic circumstances.
 
-- Supports 512 MiB and 32 GiB sectors.
-- Has two miners auto-accepting new deals.
+- Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
 
 **Maintainer**: Factor 8
 
@@ -173,17 +172,11 @@ More information on Hyperspace can be found [here](https://github.com/filecoin-p
 /dns4/sg0.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWLnYqr4hRoNHBJQVXsFGkDoKuoVfw5R2ASw1bHzrWU5Px
 ```
 
-**FVM release**:
-
-- [FVM M2.1 Sapphire (r08)](https://github.com/filecoin-project/ref-fvm/issues/940)
-- Lotus commit: [cb838cedae49106e9ceb7302add3688a835dbdb4](https://github.com/filecoin-project/lotus/commit/cb838cedae49106e9ceb7302add3688a835dbdb4)
-- [List of FVM releases](https://github.com/filecoin-project/ref-fvm/issues/692)
-
 **Resources**:
 
 - [Faucet](https://hyperspace.filtest.network/#faucet)
 - [Slack Channel for Updates/questions: #fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C01AC6999KQ)
-- [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
+- [Slack Channel for Questions: #fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY)
 - [Block explorer - Filfox](https://hyperspace.filfox.info/en)
 - [Block explorer - Glif](https://explorer.glif.io/?network=hyperspace)
 
