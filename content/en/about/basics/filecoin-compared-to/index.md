@@ -1,6 +1,6 @@
 ---
 title: "Filecoin compared to"
-description: "While Filecoin shares some similarities to other file storage solutions, the protocol has significant differences that one should consider."
+description: "What makes Filecoin unique is that it runs on an open, peer-to-peer network while still providing economic incentives and proofs to ensure correct file storage."
 lead: "While Filecoin shares some similarities to other file storage solutions, the protocol has significant differences that one should consider."
 draft: false
 images: []

@@ -1,7 +1,7 @@
 ---
 title: "What is Filecoin"
-description: "Filecoin is a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time."
-lead: "Filecoin is a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time."
+description: "Explore Filecoin, a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time."
+lead: "Explore Filecoin, a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time."
 draft: false
 images: []
 type: docs

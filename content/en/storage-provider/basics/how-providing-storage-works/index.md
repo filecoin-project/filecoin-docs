@@ -1,6 +1,6 @@
 ---
 title: "How providing storage works"
-description: "Providing storage to the Filecoin network involves accepting deals and honoring them by inserting proofs in the chain."
+description: "Discover the responsibilities and benefits of becoming a storage provider on the Filecoin network. Make deals, store data, and earn Filecoin."
 draft: false
 images: []
 type: docs
