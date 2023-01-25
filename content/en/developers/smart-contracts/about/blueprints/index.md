@@ -171,3 +171,5 @@ A lending pool can solve this issue. Storage providers can borrow collateral fro
 - After all repayments are completed, the owner should propose changing the beneficiary to itself and the beneficiary should approve it
 
 ![A diagram showing the lending pool flow.](lending-pool-flow.png)
+
+_Special thanks to the contribution and discussion of ideas from Glif and FVM community, together with Filecoin core developers._
