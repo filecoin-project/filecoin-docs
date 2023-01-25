@@ -170,8 +170,4 @@ A lending pool can solve this issue. Storage providers can borrow collateral fro
 - Whenever a repayment is made, the LendingMarket contract should calculate the interest each lender should get
 - After all repayments are completed, the owner should propose changing the beneficiary to itself and the beneficiary should approve it
 
-#### In terms of loan default
-
-- If the LoanAgent fails to pull fund from the miner actor, it would consider the loan as “at risk”. If the loan is at risk for a certain period of time, the LoanAgent can try to terminate sectors (not available now) and claim the balance left in the actor.
-
 ![A diagram showing the lending pool flow.](lending-pool-flow.png)
