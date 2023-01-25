@@ -1,7 +1,7 @@
 ---
 title: "Storage market"
-description: ""
-lead: ""
+description: "The storage market is the data entry point into the network where storage providers and clients negotiate and publish storage deals on-chain."
+lead: "The storage market is the data entry point into the network where storage providers and clients negotiate and publish storage deals on-chain."
 draft: false
 images: []
 type: docs
@@ -12,16 +12,14 @@ weight: 250
 toc: true
 ---
 
-The storage market is the data entry point into the network where storage providers and clients negotiate and publish storage deals on-chain.
-
 ## Deal making
 
-The lifecycle for a deal within the storage market contains distinct phases:
+The lifecycle for a deal within the storage market contains four distinct phases:
 
-- Discovery: the client identifies storage providers and queries their current ask price.
-- Negotiation: both parties agree to the term of the storage deal.
-- Publishing: the deal and proof will be published on-chain.
-- Handoff: once the deal is published on-chain, it will be added into a sector where data storage will be proven.
+- Discovery: the client identifies potential storage providers (SPs) and asks for their prices.
+- Negotiation: once the client has selected an SP both parties agree to the term of the deal.
+- Publishing: the deal is published on-chain.
+- Handoff: the deal is added into a sector where data storage can be proven by the SP.
 
 ## Filecoin plus  
 

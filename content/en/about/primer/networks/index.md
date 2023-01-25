@@ -1,7 +1,7 @@
 ---
 title: "Networks"
-description: ""
-lead: ""
+description: "There are several Filecoin networks available, each of which serves a different purposes. This page covers each network, it's use-case, and how to connect to it."
+lead: "There are several Filecoin networks available, each of which serves a different purposes. This page covers each network, it's use-case, and how to connect to it."
 draft: false
 images: []
 type: docs
@@ -12,13 +12,15 @@ weight: 280
 toc: true
 ---
 
-Currently, several Filecoin networks are available to serve different purposes, as detailed below. This table also captures a quick [comparison of Filecoin networks](https://docs.filecoin.io/developers/infrastructure/networks/%23available-networks&sa=D&source=editors&ust=1674147484246615&usg=AOvVaw12KvjKI4yn5ZnMoJqPlP2N).
-
 ## Mainnet
 
 [Mainnet](https://docs.filecoin.io/networks/overview/available-networks/%23mainnet&sa=D&source=editors&ust=1674147484246936&usg=AOvVaw0Q8aXd92roXqWuypwDSBBX) is the live production network that all nodes on the Filecoin network are connected to. It never resets.
 
-## Calibration testnet
+## Testnets
+
+Test networks, or testnets, are version of the Filecoin network that attempt to simulate various aspects of the Filecoin mainnet. Since they are for testing they should not be used for production applications or services.
+
+### Calibration
 
 [Calibration](https://docs.filecoin.io/networks/overview/available-networks/%23calibration&sa=D&source=editors&ust=1674147484247293&usg=AOvVaw3My7r2akNWZiA_lEbLJ1Oz) testnet is the most realistic simulation of the mainnet, where prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters, and prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage/retrieval functionality. It also has the same sector size as the mainnet.
 
@@ -26,7 +28,7 @@ Currently, several Filecoin networks are available to serve different purposes, 
 - Blockchain explorer: [https://calibration.filscan.io/](https://calibration.filscan.io/&sa=D&source=editors&ust=1674147484248185&usg=AOvVaw2w0Cy2DSs63TApLDFw9WSz)
 - Faucet: [https://faucet.calibration.fildev.network/](https://faucet.calibration.fildev.network/&sa=D&source=editors&ust=1674147484248498&usg=AOvVaw0cFTrKRBvrfbwhOCK-ahK1)
 
-## Hyperspace testnet
+### Hyperspace
 
 [Hyperspace](https://github.com/filecoin-project/testnet-hyperspace&sa=D&source=editors&ust=1674147484248855&usg=AOvVaw3kD1WYwLJUd72HvXfXWenE) testnet is the main pre-production developer testnet which is more stable and reliable. The Hyperspace testnet is a pre-production developer-focused testnet. It resets only in the event of irrecoverable damage. Developers are welcome to build and test their toolings, applications, and smart contracts on this network.
 
@@ -34,7 +36,7 @@ Currently, several Filecoin networks are available to serve different purposes, 
 - Blockchain explorer: [https://explorer.glif.io/?network=hyperspace](https://explorer.glif.io/?network%3Dhyperspace&sa=D&source=editors&ust=1674147484249567&usg=AOvVaw17jVoHPJNDo3Bh-N2OKsTz)
 - Faucet: [https://hyperspace.filtest.network/#faucet](https://hyperspace.filtest.network/%23faucet&sa=D&source=editors&ust=1674147484249928&usg=AOvVaw1D2yPJG-nhAEyLV0yi9E27)
 
-## Wallaby testnet
+### Wallaby
 
 [Wallaby](https://github.com/filecoin-project/testnet-wallaby/&sa=D&source=editors&ust=1674147484250250&usg=AOvVaw020jTMXQdGqzyw-rMVExTA) testnet is a bleeding-edge test network for the programmability features being developed for the FVM. You can deploy EVM-compatible smart contracts to Wallaby. Wallaby is reset every week, making it unsuitable for long-term testing of applications. The purpose of Wallaby is to allow developers to quickly poke and prod at any new features released within the latest development builds of the FVM. The Wallaby test is intended to be used by: the FVM engineering team to test FEVM releases and updates, early builders from the community to test EVM smart contract deployment on FVM, and to deploy native FVM actors.
 

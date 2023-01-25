@@ -9,7 +9,7 @@ menu:
   about:
     identifier: "introduction-e844d0fbae3841c195b230ab8e24c493"
 weight: 210
-toc: false
+toc: true
 aliases:
     - "/introduction"
     - "/introduction-to-filecoin"

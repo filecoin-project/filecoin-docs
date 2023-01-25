@@ -1,7 +1,7 @@
 ---
 title: "Retrieval market"
-description: ""
-lead: ""
+description: "The retrieval market refers to negotiating retrieval deals for a provider to serve stored data to a client. In this agreement, the client agrees to pay the retrieval provider a certain amount of FIL for a given piece of data."
+lead: "The retrieval market refers to negotiating retrieval deals for a provider to serve stored data to a client. In this agreement, the client agrees to pay the retrieval provider a certain amount of FIL for a given piece of data."
 draft: false
 images: []
 type: docs
@@ -11,8 +11,6 @@ menu:
 weight: 260
 toc: true
 ---
-
-The retrieval market refers to negotiating retrieval deals for a provider to serve stored data to a client. In this agreement, the client agrees to pay the retrieval provider a certain amount of FIL for a given piece of data.
 
 ## Basic retrieval  
 

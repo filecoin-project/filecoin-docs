@@ -1,7 +1,7 @@
 ---
 title: "Programming on Filecoin"
-description: ""
-lead: ""
+description: "Once data has been stored, it is possible to run computations and calculations on that data, without needing to retrieve the data from a storage provider. This page covers the basics of how programming on Filecoin works."
+lead: "Once data has been stored, it is possible to run computations and calculations on that data, without needing to retrieve the data from a storage provider. This page covers the basics of how programming on Filecoin works."
 draft: false
 images: []
 type: docs
@@ -11,8 +11,6 @@ menu:
 weight: 270
 toc: true
 ---
-
-Let's quickly cover running computation over the Filecoin network.
 
 ## Compute-over-data
 
@@ -76,7 +74,7 @@ If you are interested in building these use cases, there is a list of solution b
 - [Perp Storage Solution Blueprint](https://docs.google.com/document/d/19Kck1PiGGrUKyd6XBYj6NtsC5NiCjndUSsv0OFA1Lv0/edit&sa=D&source=editors&ust=1674147484243632&usg=AOvVaw2Bw84J_xdyPPCPlEjxhK9t)
 - [Lending pool cookbook](https://docs.google.com/document/d/18in74On0bY7KyEsPgItvNvfUUPcPtHjNQtVfLdJUyzM/edit&sa=D&source=editors&ust=1674147484243946&usg=AOvVaw3maWqHAx7Zz85AZdw3fA7-)
 
-## Filecoin EVM
+### Filecoin EVM
 
 The Filecoin EVM runtime (FEVM) is the Ethereum Virtual Machine (EVM) virtualized as a runtime on top of the Filecoin Virtual Machine (FVM). It will allow developers to port any existing EVM-based smart contracts straight onto the FVM and make them work out of the box. FEVM emulates EVM bytecode at the low level, supporting contracts written in Solidity, Vyper, and Yul. The EVM foreign runtime is based on pre-existing OSS libraries, including [SputnikVM](https://github.com/rust-blockchain/evm&sa=D&source=editors&ust=1674147484244405&usg=AOvVaw11yGUJ_B3XZjt421Lwiumt) and [revm](https://github.com/bluealloy/revm&sa=D&source=editors&ust=1674147484244576&usg=AOvVaw0JYAzKXNEmO9FGDbJdO4H7). You can find out more details in the [EVM <> FVM mapping specification](https://github.com/filecoin-project/fvm-project/blob/main/04-evm-mapping.md&sa=D&source=editors&ust=1674147484244789&usg=AOvVaw3bPEKtt7RJ7LQHsdJhFWDC).
 

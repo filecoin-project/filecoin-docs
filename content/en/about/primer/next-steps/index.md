@@ -1,8 +1,8 @@
 ---
 title: "Next steps"
-description: ""
-lead: ""
-draft: false
+description: "Now that you've finished reading through the Filecoin Primer, here are some next steps you can follow to further your understanding of the network."
+lead: "Now that you've finished reading through the Filecoin Primer, here are some next steps you can follow to further your understanding of the network."
+draft: true
 images: []
 type: docs
 menu:

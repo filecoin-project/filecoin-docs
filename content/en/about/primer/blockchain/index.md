@@ -1,7 +1,7 @@
 ---
 title: "Blockchain"
-description: ""
-lead: ""
+description: "A blockchain is a distributed database that is shared among the nodes of a computer network. This page covers how the Filecoin blockchain is designed, and the various functions it has."
+lead: "A blockchain is a distributed database that is shared among the nodes of a computer network. This page covers how the Filecoin blockchain is designed, and the various functions it has."
 draft: false
 images: []
 type: docs
@@ -11,8 +11,6 @@ menu:
 weight: 230
 toc: true
 ---
-
-Let's quickly go over the fundamentals of the Filecoin blockchain.
 
 ## Tipsets
 
