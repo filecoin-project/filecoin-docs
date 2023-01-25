@@ -41,7 +41,8 @@ aliases:
 
 ## Block Explorers
 
-- [Glif](https://explorer.glif.io/actor/?network=wallaby)
+- [Beryx](https://beryx.zondax.ch/)
+- [Glif](https://explorer.glif.io/)
 - [Filexplorer](https://explorer.filmine.io/)
 
 ## Filecoin Improvement Proposals (FIPs)

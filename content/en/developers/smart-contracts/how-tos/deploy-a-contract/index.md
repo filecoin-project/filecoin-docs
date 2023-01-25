@@ -38,7 +38,7 @@ You can quickly deploy a contract with [Remix](https://remix.ethereum.org/), the
 
     ![Select the Deploy tab in Remix.](remix-select-deploy-tab.png)
 
-1. Select your network from the **Environment tab**. If you want to deploy your contract to the Wallaby testnet, follow the [Add to MetaMask guide]({{< relref "add-to-metamask" >}}):
+1. Select your network from the **Environment tab**. If you want to deploy your contract to the Hyperspace testnet, follow the [Add to MetaMask guide]({{< relref "add-to-metamask" >}}):
 
     ![Select your network in Remix.](remix-pick-network.png)
 
@@ -63,7 +63,7 @@ You must have the following installed:
 - [Git](https://git-scm.com/)
 - [Yarn](https://yarnpkg.com/)
 
-You should also have an address on the Filecoin Wallaby testnet. See the [Add to MetaMask page]({{< relref "add-to-metamask" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "use-a-faucet" >}}) page for information on how to get test funds.
+You should also have an address on the Filecoin Hyperspace testnet. See the [Add to MetaMask page]({{< relref "add-to-metamask" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "use-a-faucet" >}}) page for information on how to get test funds.
 
 ### Steps
 

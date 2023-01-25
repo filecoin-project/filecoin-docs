@@ -43,4 +43,4 @@ The Filecoin.sol library provides a Solidity interface to Filecoin's [built-in a
 
 ## Data DAO Example
 
-To get started using the Filecoin APIs, [here's an FVM-compatible deal bounty contract example](https://github.com/lotus-web3/deal-bounty-contract/) that empowers Filecoin Data DAO uses cases. This example lists data bounties to claim and pays out the bounty when deals are made with the built-in Filecoin Market actor.
+To get started using the Filecoin APIs, [here's an FVM-compatible deal bounty contract example](https://github.com/lotus-web3/deal-bounty-contract/) that empowers Filecoin Data DAO use cases. This example lists data bounties to claim and pays out the bounty when deals are made with the built-in Filecoin Market actor.
