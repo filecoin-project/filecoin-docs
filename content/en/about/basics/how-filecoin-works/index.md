@@ -123,7 +123,7 @@ In Filecoin, addresses are used to identify actors. There are four address types
 | `1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
 | `2` | An actor address |
 | `3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
-| `4` | A user-programmable actor address. See [FIP-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md) for detail information. |
+| `4` | An extensible address class. See [FIP-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md) for detail information. |
 
 ### ID addresses
 
