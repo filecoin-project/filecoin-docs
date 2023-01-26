@@ -237,7 +237,6 @@ The last thing we need do to get our node setup is to build the package. The com
 
 Let's start the lite-node by connecting to a remote full-node. We can use the public full-nodes from glif.io:
 
-
 {{< tabs tabTotal="2">}}
 {{< tab tabName="Mainnet" >}}
 <br>
@@ -277,6 +276,115 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
 {{< /tab >}}
 {{< /tabs >}}
 
+## Expose API
+
+To send JSON-RPC requests to our lite-node we need to expose the API.
+
+{{< tabs tabTotal="2">}}
+{{< tab tabName="Mainnet" >}}
+<br>
+
+1. Open `~/.lotus/config.toml` and uncomment `ListenAddress` on line 6:
+
+    ```toml
+    [API]
+      # Binding address for the Lotus API
+      #
+      # type: string
+      # env var: LOTUS_API_LISTENADDRESS
+      ListenAddress = "/ip4/127.0.0.1/tcp/1234/http"
+
+      # type: string
+      # env var: LOTUS_API_REMOTELISTENADDRESS
+      # RemoteListenAddress = ""
+
+    ...
+    ```
+
+1. Open the terminal window where your lite-node is running and press `CTRL` + `c` to close the daemon.
+1. In the same window restart the lite-node:
+
+    ```shell
+    FULLNODE_API_INFO=wss://wss.mainnet.node.glif.io/apigw/lotus lotus daemon --lite
+    ```
+
+    ```shell
+    2023-01-26T11:18:54.251-0400    INFO    main    lotus/daemon.go:219     lotus repo: /Users/johnny/.lotus
+    2023-01-26T11:18:54.254-0400    WARN    cliutil util/apiinfo.go:94      API Token not set and requested, capabilities might be limited.
+
+    ...
+    ```
+
+1. The Lotus daemon will continute to run in this terminal window. All subsequent commands we use should be done in a seperate terminal window.
+{{< /tab >}}
+{{< tab tabName="Hyperspace" >}}
+<br>
+
+1. Open `~/.lotus/config.toml` and uncomment `ListenAddress` on line 6:
+
+    ```toml
+    [API]
+      # Binding address for the Lotus API
+      #
+      # type: string
+      # env var: LOTUS_API_LISTENADDRESS
+      ListenAddress = "/ip4/127.0.0.1/tcp/1234/http"
+
+      # type: string
+      # env var: LOTUS_API_REMOTELISTENADDRESS
+      # RemoteListenAddress = ""
+
+    ...
+    ```
+
+1. Open the terminal window where your lite-node is running and press `CTRL` + `c` to close the daemon.
+1. In the same window restart the lite-node:
+
+    ```shell
+    FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite
+    ```
+
+    ```shell
+    2023-01-26T11:18:54.251-0400    INFO    main    lotus/daemon.go:219     lotus repo: /Users/johnny/.lotus
+    2023-01-26T11:18:54.254-0400    WARN    cliutil util/apiinfo.go:94      API Token not set and requested, capabilities might be limited.
+
+    ...
+    ```
+
+1. The Lotus daemon will continute to run in this terminal window. All subsequent commands we use should be done in a seperate terminal window.
+{{< /tab >}}
+{{< /tabs >}}
+
+The lite-node is now set up to accept local JSON-RPC requests!
+
 ## Test
 
 Let's run a couple of commands to see if things are set up correctly.
+
+1. First, let's grab the head of the Filecoin network chain:
+
+    ```shell
+    curl -X POST '127.0.0.1:1234/rpc/v0' \
+    -H 'Content-Type: application/json' \
+    --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}' \
+    | jq 
+    ```
+
+    ```plaintext
+    {
+      "jsonrpc": "2.0",
+      "result": {
+        "Cids": [
+          {
+            "/": "bafy2bzacead2v2y6yob7rkm4y4snthibuamzy5a5iuzlwvy7rynemtkdywfuo"
+          },
+          {
+            "/": "bafy2bzaced4zahevivrcdoefqlh2j45sevfh5g3zsw6whpqxqjig6dxxf3ip6"
+          },
+    ...
+    ```
+
+1. Using the API token you just got, create a new wallet:
+
+    ```shell
+    lotus wallet 
