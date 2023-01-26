@@ -16,18 +16,12 @@ In this guide we're going to use the {{< tooltip "Lotus" >}} Filecoin implementa
 
 ## Prerequisites
 
-Please make sure you have the following software installed, and that your machine meets the hardware requirements.
-
-### Hardware
-
 Lite-nodes have fairly lightweight hardware requirements -- it's possible to run a lite-node on a Raspberry Pi 4. You machine should meet the following hardware requirements:
 
 1. At least 2 GiB of RAM
 1. A dual-core CPU.
 
-### Software
-
-Run the following command to install the software prerequisites:
+To build the lite-node you'll need some specific software. Run the following command to install the software prerequisites:
 
 {{< tabs tabTotal="2">}}
 {{< tab tabName="MacOS" >}}
@@ -40,13 +34,11 @@ Run the following command to install the software prerequisites:
     brew install go bzr jq pkg-config hwloc coreutils
     ```
 
-    ```plaintext
-    Running `brew update --auto-update`...
-    ==> Auto-updated Homebrew!
-    Updated 3 taps (homebrew/core, homebrew/cask and filecoin-project/lotus).
-    ==> New Formulae
+1. Install Rust and source the `~/.cargo/env` config file:
 
-    ...
+    ```shell
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    source "$HOME/.cargo/env"
     ```
 
 {{< /tab >}}
@@ -61,51 +53,52 @@ Run the following command to install the software prerequisites:
     sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y
     ```
 
-1. Install Rust:
-
-    ```shell
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    ```
-
-    Follow the prompts in the terminal to complete the Rust installation.
-
-1. Install [Go version 1.18.8 or higher](https://golang.org/dl/)
+1. Install Go and add `/usr/local/go/bin` to your `$PATH` variable:
 
     ```shell
     wget -c https://golang.org/dl/go1.18.8.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+    echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
     ```
+
+1. Install Rust and source the `~/.cargo/env` config file:
+
+    ```shell
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    source "$HOME/.cargo/env"
+    ```
+1. Done! You can move onto the [Pre-build](#pre-build) section.
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Build Lotus
+## Pre-build
 
-In this section we're going to build the Lotus lite-node binary. MacOS users should select their CPU architecure from the tabs:
+Before we can build the Lotus binaries, there's some set-up we need to do. MacOS users should select their CPU architecure from the tabs:
 
 {{< tabs tabTotal="3">}}
 {{< tab tabName="MacOS-Intel" >}}
 <br>
 
-1. Clone the repository:
+1. Clone the repository, move into the `lotus` directory:
 
     ```shell
     git clone https://github.com/filecoin-project/lotus.git
     cd lotus/
     ```
 
-1. Switch to the branch representing the network you want to switch to:
+1. Switch to the branch representing the network you want to use:
 
     ```shell
     git checkout releases # Mainnet
+    ```
+
+    Or...
+
+    ```shell
     git checkout ntwk/hyperspace # Hyperspace testnet
     ```
 
-1. Build and install Lotus:
-
-    ```shell
-    make clean all
-    sudo make install
-    ```
+1. Done! You can move onto the [Build](#build) section.
 
 {{< /tab >}}
 {{< tab tabName="MacOS-M1/M2" >}}
@@ -118,10 +111,15 @@ In this section we're going to build the Lotus lite-node binary. MacOS users sho
     cd lotus/
     ```
 
-1. Switch to the branch representing the network you want to switch to:
+1. Switch to the branch representing the network you want to use:
 
     ```shell
     git checkout releases # Mainnet
+    ```
+
+    Or...
+
+    ```shell
     git checkout ntwk/hyperspace # Hyperspace testnet
     ```
 
@@ -133,12 +131,7 @@ In this section we're going to build the Lotus lite-node binary. MacOS users sho
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
     ```
 
-1. Build and install the Lotus binary:
-
-    ```shell
-    make all
-    sudo make install
-    ```
+1. Done! You can move onto the [Build](#build) section.
 
 {{< /tab >}}
 {{< tab tabName="Ubuntu" >}}
@@ -151,13 +144,15 @@ In this section we're going to build the Lotus lite-node binary. MacOS users sho
     cd lotus/
     ```
 
-1. Switch to the branch representing the network you want to switch to:
-
-    - Mainnet: `git checkout releases`
-    - Hyperspace testnet: `git checkout ntwk/hyperspace`
+1. Switch to the branch representing the network you want to use:
 
     ```shell
     git checkout releases # Mainnet
+    ```
+
+    Or...
+
+    ```shell
     git checkout ntwk/hyperspace # Hyperspace testnet
     ```
 
@@ -168,27 +163,120 @@ In this section we're going to build the Lotus lite-node binary. MacOS users sho
     export FFI_BUILD_FROM_SOURCE=1
     ```
 
-    If in doubt, ignore this command and move onto the _Build and install Lotus_ command.
+    If in doubt, ignore this command and move onto [the next section](#build).
 
-1. Build and install Lotus:
+1. Done! You can move onto the [Build](#build) section.
+
+{{< /tab >}}
+{{< /tabs >}}
+
+## Build
+
+The last thing we need do to get our node setup is to build the package. The command you need to run depends on which network you want to connect to:
+
+{{< tabs tabTotal="2">}}
+{{< tab tabName="Mainnet" >}}
+<br>
+
+1. Remove or delete any existing Lotus confirguation files on your system:
+
+    ```shell
+    mv ~/.lotus ~/.lotus-backup
+    ```
+
+1. Make the Lotus binaries and install them:
 
     ```shell
     make clean all
     sudo make install
     ```
 
+1. Once the installation is finished, query the Lotus version to ensure everything installed successfully and for the correct network:
+
+    ```shell
+    lotus --version
+    ```
+
+    ```plaintext
+    lotus --version
+    lotus version 1.19.1-dev+mainnet+git.94b621dd5
+    ```
+
+{{< /tab >}}
+{{< tab tabName="Hyperspace" >}}
+<br>
+
+1. Remove or delete any existing Lotus confirguation files on your system:
+
+    ```shell
+    mv ~/.lotus ~/.lotus-backup
+    ```
+
+1. Make the Lotus binaries and install them:
+
+    ```shell
+    make clean && make hyperspacenet
+    sudo make install
+    ```
+
+1. Once the installation is finished, query the Lotus version to ensure everything installed successfully and for the correct network:
+
+    ```shell
+    lotus --version
+    ```
+
+    ```plaintext
+    lotus --version
+    lotus version 1.19.1-dev+hyperspacenet+git.94b621dd5.dirty
+    ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-Once the installation is finished, query the Lotus version to ensure everything installed successfully and for the correct network:
+## Start
 
-```shell
-lotus --version
-```
+Let's start the lite-node by connecting to a remote full-node. We can use the public full-nodes from glif.io:
 
 
+{{< tabs tabTotal="2">}}
+{{< tab tabName="Mainnet" >}}
+<br>
 
-<!-- Prerequisites -->
-<!-- Build Lotus Lite -->
-<!-- Configure -->
-<!-- Run -->
+1. Create an environment variable called `FULLNODE_API_INFO` and set it to the WebSockets address of the node you want to connect to. At the same time, start the Lotus daemon with the `--lite` tag:
+
+    ```shell
+    FULLNODE_API_INFO=wss://wss.mainnet.node.glif.io/apigw/lotus lotus daemon --lite
+    ```
+
+    ```shell
+    2023-01-26T11:18:54.251-0400    INFO    main    lotus/daemon.go:219     lotus repo: /Users/johnny/.lotus
+    2023-01-26T11:18:54.254-0400    WARN    cliutil util/apiinfo.go:94      API Token not set and requested, capabilities might be limited.
+
+    ...
+    ```
+
+1. The Lotus daemon will continute to run in this terminal window. All subsequent commands we use should be done in a seperate terminal window.
+{{< /tab >}}
+{{< tab tabName="Hyperspace" >}}
+<br>
+
+1. Create an environment variable called `FULLNODE_API_INFO` and set it to the WebSockets address of the node you want to connect to. At the same time, start the Lotus daemon with the `--lite` tag:
+
+    ```shell
+    FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite
+    ```
+
+    ```shell
+    2023-01-26T11:18:54.251-0400    INFO    main    lotus/daemon.go:219     lotus repo: /Users/johnny/.lotus
+    2023-01-26T11:18:54.254-0400    WARN    cliutil util/apiinfo.go:94      API Token not set and requested, capabilities might be limited.
+
+    ...
+    ```
+
+1. The Lotus daemon will continute to run in this terminal window. All subsequent commands we use should be done in a seperate terminal window.
+{{< /tab >}}
+{{< /tabs >}}
+
+## Test
+
+Let's run a couple of commands to see if things are set up correctly.
