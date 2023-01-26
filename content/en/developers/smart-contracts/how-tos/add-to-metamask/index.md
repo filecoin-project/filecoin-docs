@@ -54,7 +54,7 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
 
     | Field | Value |
     | --- | --- |
-    | Network name | `Filecoin Wallaby Testnet` |
+    | Network name | `Filecoin Hyperspace testnet` |
     | New RPC URL | `https://api.hyperspace.node.glif.io/rpc/v1` |
     | Chain ID | `3141` |
     | Currency symbol | `tFIL` |
