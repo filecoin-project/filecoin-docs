@@ -59,7 +59,7 @@ An address manager will own `f4` addresses starting with the {{< tooltip "leb128
 
 In text, this address will be formatted as `f4{decimal(actor-id)}f{base32(sub-address || checksum)}` where `checksum` is the blake2b-32 (32bit/4byte {{< tooltip "blake2b" >}}) hash of the address in its binary representation. This is the same checksumming approach used in the textual representation of `f1`, `f2`, and `f3` addresses.
 
-An address management actor at `f010` will be able to assign addresses starting with `f410-` in text or `[4, 10, ...]` in binary. Where the address manager ID address is `f01111` and the sub-address is `0xeff924032365F51a36541efA24217bFc5B85bc6B`, the resulting textual format would be `f41111f574siazdmx2runsud35ciil37rnylpdl`.
+An address management actor at `f010` will be able to assign addresses starting with `f410f` in text or `[4, 10, ...]` in binary. Where the address manager ID address is `f01111` and the sub-address is `0xeff924032365F51a36541efA24217bFc5B85bc6B`, the resulting textual format would be `f41111f574siazdmx2runsud35ciil37rnylpdl`.
 
 The textual format defined here is the universal textual format for `f4` addresses. It's expected that chain explorers and client implementations understand specific well-known address types and format these addresses according to their _native_ representation. Tooling should transparently convert Ethereum addresses in the `0x...` to and from the equivalent `f4` address.
 
