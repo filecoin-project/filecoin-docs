@@ -4,16 +4,6 @@
   weight = 20
 
 [[main]]
-  name = "Networks"
-  url = "/networks/overview/available-networks/"
-  weight = 20
-
-[[main]]
-  name = "Get started"
-  url = "/get-started/overview/get-started/"
-  weight = 30
-
-[[main]]
   name = "Store"
   url = "/store/overview/start-storing/"
   weight = 60

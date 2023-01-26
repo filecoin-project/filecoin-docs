@@ -18,6 +18,7 @@ aliases:
     - "/build/examples/"
     - "/build/examples/network-inspector/overview/"
     - "/build/examples/network-inspector/lotus-and-go-ipfs-interactions/"
+    - "/get-started/overview/get-started/"
 ---
 
 If you are excited about the potential of the Filecoin protocol and decentralized storage network to build game-changing applications, you’ve come to the right place.

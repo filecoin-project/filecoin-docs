@@ -8,7 +8,7 @@ type: docs
 menu:
   developers:
     identifier: "testnets-72882f7fc2bd635f217195194c89146a"
-weight: 100
+weight: 250
 toc: true
 aliases:
     - "/fvm/reference/networks/"
