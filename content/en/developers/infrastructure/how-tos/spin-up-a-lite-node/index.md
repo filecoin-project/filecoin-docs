@@ -355,11 +355,31 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
 {{< /tab >}}
 {{< /tabs >}}
 
-The lite-node is now set up to accept local JSON-RPC requests!
+The lite-node is now set up to accept local JSON-RPC requests! However, we don't have an authorization key so we won't have access to privileaged JSON-RPC methods.
+
+## Create a key
+
+To access privileaged JSON-RPC methods, like creating a new wallet, we need to supply an authentication key with our Curl requests.
+
+1. Create a new admin token and set the result to a new `LOTUS_ADMIN_KEY` environment variable:
+
+    ```shell
+    LOTUS_ADMIN_KEY=$(./lotus auth create-token --perm "admin")
+    ```
+
+1. You can check what you key is by echoing the `$LOTUS_ADMIN_KEY` variable:
+
+    ```shell
+    echo $LOTUS_ADMIN_KEY
+    ```
+
+    ```plaintext
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.um-LqY7g-SDOsMheDRbQ9JIaFzus_Pan0J88VQ6ZLVE
+    ```
 
 ## Test
 
-Let's run a couple of commands to see if things are set up correctly.
+Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 
 1. First, let's grab the head of the Filecoin network chain:
 
@@ -384,7 +404,20 @@ Let's run a couple of commands to see if things are set up correctly.
     ...
     ```
 
-1. Using the API token you just got, create a new wallet:
+1. Next, let's try to create a new wallet. Since this is a privileaged method we need to supply our `LOTUS_ADMIN_KEY` for authentication:
 
     ```shell
-    lotus wallet 
+    curl -X POST '127.0.0.1:1234/rpc/v0' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.um-LqY7g-SDOsMheDRbQ9JIaFzus_Pan0J88VQ6ZLVE' \
+    --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.WalletNew","params":["secp256k1"]}' \
+    | jq
+    ```
+
+    ```plaintext
+    {
+      "jsonrpc": "2.0",
+      "result": "t1vuc4eu2wgsdnce2ngygyzuxky3aqijqe7gj5qqa",
+      "id": 1
+    }
+    ```
