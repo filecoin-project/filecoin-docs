@@ -12,16 +12,16 @@ weight: 2210
 toc: true
 ---
 
-In this guide we're going to use the {{< tooltip "Lotus" >}} Filecoin implementation. We'll show how to install a lite-node on MacOS and Ubuntu. For other Linux distributions check out the [Lotus documentation](https://lotus.filecoin.io/lotus/install/linux/#building-from-source). To run a lite-node on Windows, install [WLS with Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview) on your system and follow the _Ubuntu_ instructions below.
+In this guide, we're going to use the {{< tooltip "Lotus" >}} Filecoin implementation. We'll show how to install a lite-node on MacOS and Ubuntu. For other Linux distributions, check out the [Lotus documentation](https://lotus.filecoin.io/lotus/install/linux/#building-from-source). To run a lite-node on Windows, install [WLS with Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview) on your system and follow the _Ubuntu_ instructions below.
 
 ## Prerequisites
 
-Lite-nodes have fairly lightweight hardware requirements -- it's possible to run a lite-node on a Raspberry Pi 4. You machine should meet the following hardware requirements:
+Lite-nodes have relatively lightweight hardware requirements -- it's possible to run a lite-node on a Raspberry Pi 4. Your machine should meet the following hardware requirements:
 
 1. At least 2 GiB of RAM
 1. A dual-core CPU.
 
-To build the lite-node you'll need some specific software. Run the following command to install the software prerequisites:
+To build the lite-node, you'll need some specific software. Run the following command to install the software prerequisites:
 
 {{< tabs tabTotal="2">}}
 {{< tab tabName="MacOS" >}}
@@ -66,20 +66,20 @@ To build the lite-node you'll need some specific software. Run the following com
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     source "$HOME/.cargo/env"
     ```
-1. Done! You can move onto the [Pre-build](#pre-build) section.
+1. Done! You can move on to the [Pre-build](#pre-build) section.
 
 {{< /tab >}}
 {{< /tabs >}}
 
 ## Pre-build
 
-Before we can build the Lotus binaries, there's some set-up we need to do. MacOS users should select their CPU architecure from the tabs:
+Before we can build the Lotus binaries, there's some setup we need to do. MacOS users should select their CPU architecture from the tabs:
 
 {{< tabs tabTotal="3">}}
 {{< tab tabName="MacOS-Intel" >}}
 <br>
 
-1. Clone the repository, move into the `lotus` directory:
+1. Clone the repository, and move into the `lotus` directory:
 
     ```shell
     git clone https://github.com/filecoin-project/lotus.git
@@ -98,7 +98,7 @@ Before we can build the Lotus binaries, there's some set-up we need to do. MacOS
     git checkout ntwk/hyperspace # Hyperspace testnet
     ```
 
-1. Done! You can move onto the [Build](#build) section.
+1. Done! You can move on to the [Build](#build) section.
 
 {{< /tab >}}
 {{< tab tabName="MacOS-M1/M2" >}}
@@ -131,7 +131,7 @@ Before we can build the Lotus binaries, there's some set-up we need to do. MacOS
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
     ```
 
-1. Done! You can move onto the [Build](#build) section.
+1. Done! You can move on to the [Build](#build) section.
 
 {{< /tab >}}
 {{< tab tabName="Ubuntu" >}}
@@ -163,22 +163,22 @@ Before we can build the Lotus binaries, there's some set-up we need to do. MacOS
     export FFI_BUILD_FROM_SOURCE=1
     ```
 
-    If in doubt, ignore this command and move onto [the next section](#build).
+    If in doubt, ignore this command and move on to [the next section](#build).
 
-1. Done! You can move onto the [Build](#build) section.
+1. Done! You can move on to the [Build](#build) section.
 
 {{< /tab >}}
 {{< /tabs >}}
 
-## Build
+## Build the binary
 
-The last thing we need do to get our node setup is to build the package. The command you need to run depends on which network you want to connect to:
+The last thing we need to do to get our node setup is to build the package. The command you need to run depends on which network you want to connect to:
 
 {{< tabs tabTotal="2">}}
 {{< tab tabName="Mainnet" >}}
 <br>
 
-1. Remove or delete any existing Lotus confirguation files on your system:
+1. Remove or delete any existing Lotus configuration files on your system:
 
     ```shell
     mv ~/.lotus ~/.lotus-backup
@@ -191,7 +191,7 @@ The last thing we need do to get our node setup is to build the package. The com
     sudo make install
     ```
 
-1. Once the installation is finished, query the Lotus version to ensure everything installed successfully and for the correct network:
+1. Once the installation finishes, query the Lotus version to ensure everything is installed successfully and for the correct network:
 
     ```shell
     lotus --version
@@ -206,7 +206,7 @@ The last thing we need do to get our node setup is to build the package. The com
 {{< tab tabName="Hyperspace" >}}
 <br>
 
-1. Remove or delete any existing Lotus confirguation files on your system:
+1. Remove or delete any existing Lotus configuration files on your system:
 
     ```shell
     mv ~/.lotus ~/.lotus-backup
@@ -219,7 +219,7 @@ The last thing we need do to get our node setup is to build the package. The com
     sudo make install
     ```
 
-1. Once the installation is finished, query the Lotus version to ensure everything installed successfully and for the correct network:
+1. Once the installation finishes, query the Lotus version to ensure everything is installed successfully and for the correct network:
 
     ```shell
     lotus --version
@@ -233,7 +233,7 @@ The last thing we need do to get our node setup is to build the package. The com
 {{< /tab >}}
 {{< /tabs >}}
 
-## Start
+## Start the node
 
 Let's start the lite-node by connecting to a remote full-node. We can use the public full-nodes from glif.io:
 
@@ -254,7 +254,7 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
     ...
     ```
 
-1. The Lotus daemon will continute to run in this terminal window. All subsequent commands we use should be done in a seperate terminal window.
+1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {{< /tab >}}
 {{< tab tabName="Hyperspace" >}}
 <br>
@@ -272,7 +272,7 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
     ...
     ```
 
-1. The Lotus daemon will continute to run in this terminal window. All subsequent commands we use should be done in a seperate terminal window.
+1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -302,7 +302,7 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
     ```
 
 1. Open the terminal window where your lite-node is running and press `CTRL` + `c` to close the daemon.
-1. In the same window restart the lite-node:
+1. In the same window, restart the lite-node:
 
     ```shell
     FULLNODE_API_INFO=wss://wss.mainnet.node.glif.io/apigw/lotus lotus daemon --lite
@@ -315,7 +315,7 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
     ...
     ```
 
-1. The Lotus daemon will continute to run in this terminal window. All subsequent commands we use should be done in a seperate terminal window.
+1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {{< /tab >}}
 {{< tab tabName="Hyperspace" >}}
 <br>
@@ -351,33 +351,29 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
     ...
     ```
 
-1. The Lotus daemon will continute to run in this terminal window. All subsequent commands we use should be done in a seperate terminal window.
+1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {{< /tab >}}
 {{< /tabs >}}
 
-The lite-node is now set up to accept local JSON-RPC requests! However, we don't have an authorization key so we won't have access to privileaged JSON-RPC methods.
+The lite-node is now set up to accept local JSON-RPC requests! However, we don't have an authorization key, so we won't have access to privileged JSON-RPC methods.
 
 ## Create a key
 
-To access privileaged JSON-RPC methods, like creating a new wallet, we need to supply an authentication key with our Curl requests.
+To access privileged JSON-RPC methods, like creating a new wallet, we need to supply an authentication key with our Curl requests.
 
 1. Create a new admin token and set the result to a new `LOTUS_ADMIN_KEY` environment variable:
 
     ```shell
-    LOTUS_ADMIN_KEY=$(./lotus auth create-token --perm "admin")
-    ```
-
-1. You can check what you key is by echoing the `$LOTUS_ADMIN_KEY` variable:
-
-    ```shell
-    echo $LOTUS_ADMIN_KEY
+    lotus auth create-token --perm "admin"
     ```
 
     ```plaintext
     eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.um-LqY7g-SDOsMheDRbQ9JIaFzus_Pan0J88VQ6ZLVE
     ```
 
-## Test
+1. Keep this key handy. We're going to use it in the next section.
+
+## Send requests
 
 Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 
@@ -404,7 +400,7 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
     ...
     ```
 
-1. Next, let's try to create a new wallet. Since this is a privileaged method we need to supply our `LOTUS_ADMIN_KEY` for authentication:
+1. Next, let's try to create a new wallet. Since this is a privileged method, we need to supply our auth key `eyJhbGc...`:
 
     ```shell
     curl -X POST '127.0.0.1:1234/rpc/v0' \
@@ -421,3 +417,26 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
       "id": 1
     }
     ```
+
+    The `result` field is the public key for our address. The private key is stored within our lite-node.
+
+1. Set the new address as the default wallet for our lite-node:
+
+    ```shell
+    curl -X POST '127.0.0.1:1234/rpc/v0' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.um-LqY7g-SDOsMheDRbQ9JIaFzus_Pan0J88VQ6ZLVE' \
+    --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.WalletSetDefault","params":["t1vuc4eu2wgsdnce2ngygyzuxky3aqijqe7gj5qqa"]}' \
+    | jq 
+    ```
+
+    ```plaintext
+    {
+      "jsonrpc": "2.0",
+      "id": 1
+    }
+    ```
+
+## Next steps
+
+You should now have a local lite-node connected to a remote full-node with an admin API key! You can use this setup to continute playing around with the JSON-RPC, or start building your applications on Filecoin!
