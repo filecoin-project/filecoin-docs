@@ -1,7 +1,7 @@
 ---
 title: "Accounts and assets"
 description: "Everything you need to know about how accounts and assets are managed within the FVM. A lot of this information is identical to how accounts and assets are managed within the Filecoin network as a whole, however there are some nuances."
-lead: "Everything you need to know about how accounts and assets are managed within the FVM. A lot of this information is identical to how accounts and assets are managed within the Filecoin network as a whole, however there are some nuances."
+lead: "An `f4` address allows an actor, referred to as an address manager, to _control_ an address-space. This allows the address manager to implement foreign addressing schemes and allows users to refer to addresses that could contain an actor with a set of properties enforced by the address manager."
 draft: false
 images: []
 type: docs
@@ -25,7 +25,7 @@ In Filecoin, addresses are used to identify actors. There are four address types
 | `f1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
 | `f2` | An actor address |
 | `f3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
-| `f4` | A user-programmable actor address. See [FIP-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md) for detailed information. |
+| `f4` | An extensible address class. See [FIP-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md) for detailed information. |
 
 Address types `f0`, `f1`, `f2`, and `f3` are specific to Filecoin. `f4` addresses, however, allow extensions to addressing-systems used in third-party blockchains like Ethereum.
 
@@ -39,7 +39,7 @@ Address types `f0`, `f1`, `f2`, and `f3` are specific to Filecoin. `f4` addresse
 
 ### F4 addresses
 
-An `f4` address is essentially an actor address that is user-programmable. It's possible to send funds to an `f1` or `f3` address that doesn't yet exist on-chain, but there's no way to send funds to a non-account actor that doesn't yet exist on-chain, such as a multisig actor with an `f2` address. This is where `f4` addresses come in.
+<!-- An `f4` address is essentially an actor address that is user-programmable. It's possible to send funds to an `f1` or `f3` address that doesn't yet exist on-chain, but there's no way to send funds to a non-account actor that doesn't yet exist on-chain, such as a multisig actor with an `f2` address. This is where `f4` addresses come in. -->
 
 F4 addresses allow users to:
 
@@ -65,13 +65,17 @@ The textual format defined here is the universal textual format for `f4` address
 
 For example, for an address manager `f01112` that manages a namespace of raw ASCII addresses _hello world_, the standard format would be `f41112fnbswy3dpeb3w64tmmqqq` though clients should recognize the address manager and display it as text `{hello world}`.
 
-#### F2 and F4 comparison
+<!-- OMMITING FOR NOW. CAN BRING BACK IN ONCE -->
+<!-- WE EXPLAIN F2 ADDRESSES IN THIS DOC -->
+<!-- ------------------------------------------->
+<!-- #### F2 and F4 comparison -->
 
-The key distinction is that `f2` addresses are designed to be stable and that `f4` addresses are designed to be "user-programmable".
+<!-- The key distinction is that `f2` addresses are designed to be stable and that `f4` addresses are designed to be "user-programmable". -->
 
-An `f2` address allows a user to create a chain of messages where a later message refers to an actor created in an earlier message. An `f2` address refers to the actor created by a specific message.
+<!-- An `f2` address allows a user to create a chain of messages where a later message refers to an actor created in an earlier message. An `f2` address refers to the actor created by a specific message. -->
 
-An `f4` address allows an actor, referred to as an address manager, to _control_ an address-space. This allows the address manager to implement foreign addressing schemes and allows users to refer to addresses that could contain an actor with a set of properties enforced by the address manager.
+<!-- An `f4` address allows an actor, referred to as an address manager, to _control_ an address-space. This allows the address manager to implement foreign addressing schemes and allows users to refer to addresses that could contain an actor with a set of properties enforced by the address manager. -->
+<!-- ------------------------------------------->
 
 <!-- ### Converting addresses -->
 
