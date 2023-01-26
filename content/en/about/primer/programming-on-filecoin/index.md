@@ -54,7 +54,7 @@ Users can lend out Filecoin to storage providers to use it as storage collatera
 
 SPs need to have financial products that help protect them from the risk they are undertaking in creating more storage solutions. Certain characteristics such as payment history, length of operation, and availability can be used to craft insurance policies just as they can be used to underwrite loans to SPs. This can protect them from the financial consequences of active faulting or token price drops.
 
-### Core chain infra
+### Core chain infrastructure
 
 We expect that FVM will gain feature parity with other chains that persist. This is required for any EVM chain to operate but is not necessarily tied to storage primitives.
 
@@ -65,6 +65,8 @@ Users on FVM need to be able to exchange FIL for other tokens issued on-chain. T
 #### Token bridges
 
 While not immediately on the roadmap, bridges are needed from EVM chains, Move chains, and Cosmos chains to bring wrapped tokens from other ecosystems into the fold. With the current launch, we are more focused internally since the value proposition of Filecoin is unique enough that it does not need to bootstrap TVL from other chains. However, in the long run, we expect FVM to be part of a broader family of blockchains.
+
+---
 
 Besides these, there are a lot more use cases that the FVM could enable, such as data access control ([Medusa](https://cryptonet.org/projects/project-medusa-scalable-threshold-network-on-chain&sa=D&source=editors&ust=1674147484241915&usg=AOvVaw0c_qjySYEL-Q_hsegs6BGA)), retrieval and trustless reputation systems, replication workers, storage bounties, and L2 networks. To learn more about what you can build on top of FVM, check out our [Request for Startup](https://protocollabs.notion.site/Request-for-Startups-FVM-edition-8cd3e76982d14e29b33335ca458fb087&sa=D&source=editors&ust=1674147484242578&usg=AOvVaw2zcOEP-aWW-iZX52FBveRd) post.
 
