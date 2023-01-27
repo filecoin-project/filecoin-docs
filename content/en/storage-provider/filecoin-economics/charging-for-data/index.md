@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "charging-for-data-85b036d8a119ae4709855cfff4d84369"
-weight: 8
+weight: 80
 toc: true
 ---
 

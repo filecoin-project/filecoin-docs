@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "committed-capacity-e0bd9f467013f7d8ccdb772c871b083a"
-weight: 3
+weight: 30
 toc: true
 ---
 

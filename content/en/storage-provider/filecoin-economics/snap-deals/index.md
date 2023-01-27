@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "snap-deals-434704aca7c26b7a1bf09d0a92f4c1ff"
-weight: 7
+weight: 70
 toc: true
 ---
 
