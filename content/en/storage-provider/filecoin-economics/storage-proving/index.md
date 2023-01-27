@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "storage-proving-fb90120cfc77a129895e55e7687075aa"
-weight: 100
+weight: 1
 toc: true
 ---
 
