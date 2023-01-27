@@ -4,6 +4,11 @@
   weight = 20
 
 [[main]]
+  name = "Intro"
+  url = "/intro/intro-to-filecoin/what-is-filecoin/"
+  weight = 30
+
+[[main]]
   name = "Store"
   url = "/store/overview/start-storing/"
   weight = 60
