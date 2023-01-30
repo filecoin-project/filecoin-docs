@@ -7,12 +7,11 @@ images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
     identifier: "block-explorers-09748f8479fcadf867afa042f9e4e1a7"
-weight: 100
+weight: 210
 toc: true
 aliases:
-    - /get-started/explore-the-network/
+    - "/get-started/explore-the-network/"
 ---
 
 ## Account, actor & message explorers

@@ -57,7 +57,7 @@ This tutorial contains some words and phrases that you might not be familiar wit
 | Word | Definition |
 | --- | --- |
 | Address | A string of letters and numbers that other users can send FIL to. |
-| [Block explorer]({{< relref "explore-the-network" >}}) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
+| [Block explorer]({{< relref "block-explorers" >}}) | A service, usually a website, that lets you view details of a blockchain such as transactions, deals, and addresses. |
 | Deal | An agreement between two computers about what to do with some data. |
 | FIL | The shorthand representation of the filecoin cryptocurrency. For example: _We charge 0.5 FIL per GiB._ |
 | Filecoin (upper-case `F`) | The network that transactions and storage deals take place on. For example: _Museums can use the Filecoin network to store their digital archives._ |

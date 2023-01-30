@@ -4,13 +4,8 @@
   weight = 20
 
 [[main]]
-  name = "Networks"
-  url = "/networks/overview/available-networks/"
-  weight = 20
-
-[[main]]
-  name = "Get started"
-  url = "/get-started/overview/get-started/"
+  name = "Intro"
+  url = "/intro/intro-to-filecoin/what-is-filecoin/"
   weight = 30
 
 [[main]]
