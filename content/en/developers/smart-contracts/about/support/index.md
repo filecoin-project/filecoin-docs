@@ -23,8 +23,7 @@ Like many other distributed teams, the FVM team works mostly on Slack. You can j
 
 - [`#fvm`](https://filecoinproject.slack.com/archives/C029MT4PQB1)
 - [`#fvm-docs`](https://filecoinproject.slack.com/archives/C03MDFERKMJ)
-- [`#fil-net-wallaby-discuss`](https://filecoinproject.slack.com/archives/C03KGBTJ0BY)
-- [`#fil-net-wallaby-help`](https://filecoinproject.slack.com/archives/C03KGBVJCKG)
+- [`#fil-net-hyperspace-discuss`](https://filecoinproject.slack.com/archives/C04JEJB82RY)
 
 ## Forum
 

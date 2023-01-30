@@ -2,7 +2,7 @@
 title: "Data access"
 description: "The FVM enables developers to create applications that directly tie-into Filecoin's decentralized storage network. This page details how actors and contracts can access this data, and what they can do with it."
 lead: "The FVM enables developers to create applications that directly tie-into Filecoin's decentralized storage network. This page details how actors and contracts can access this data, and what they can do with it."
-draft: false
+draft: true
 images: []
 type: docs
 weight: 30

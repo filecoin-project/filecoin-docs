@@ -1,6 +1,6 @@
 ---
 title: "Start storing"
-description: "Start storing data on the Filecoin network."
+description: "Harness the power of a distributed network and an open market served by thousands of different Filecoin storage providers."
 lead: "Storing data on Filecoin lets users harness the power of a distributed network and an open market served by thousands of different storage providers."
 draft: false
 images: []

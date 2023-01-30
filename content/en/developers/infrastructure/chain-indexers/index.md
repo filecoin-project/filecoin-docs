@@ -9,7 +9,7 @@ menu:
   developers:
     parent: "lorem"
     identifier: "chain-indexers-0215906fd6216285a41588f2ee571f20"
-weight: 100
+weight: 220
 toc: true
 ---
 

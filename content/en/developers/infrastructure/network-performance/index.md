@@ -6,14 +6,14 @@ draft: false
 images: []
 type: docs
 menu:
-  networks:
-    parent: "lorem"
-    identifier: "network-performance-c15f98a3350c2b1e3f64562d3e6d22d7"
-weight: 20
+  developers:
+    identifier: "network-performance-0aff8d16ee2b536359cd3c2716d32452"
+weight: 260
 toc: true
 aliases:
     - "/networks/network-performance"
     - "/about-filecoin/network-performance/"
+    - "/networks/overview/network-performance/"
 ---
 
 The Filecoin Network is a decentralized storage market and network that provides data persistence via a decentralized protocol and publicly verifiable storage proofs on a blockchain. Current Filecoin network performance is primarily determined by security parameters and Filecoin's [proof constructions](https://spec.filecoin.io/#algorithms__pos).

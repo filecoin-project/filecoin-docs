@@ -1,7 +1,7 @@
 ---
-title: "Get started"
-description: "The Filecoin Network is made with storage providers and clients. They make deals and contribute to maintaining the Filecoin blockchain, obtaining storage services, and receiving rewards in the process. This section walks you through how to get started, build a node, and create a simple application."
-lead: "The Filecoin Network is made with storage providers and clients. They make deals and contribute to maintaining the Filecoin blockchain, obtaining storage services, and receiving rewards in the process. This section walks your through how to get started, build a node, and create a simple application."
+title: "Archived - Get started"
+description: "The Filecoin Network is made with storage providers and clients. Discover how to build a node, maintain the blockchain and create a simple application."
+lead: ""
 draft: false
 images: []
 type: docs
@@ -17,6 +17,8 @@ aliases:
     - "/get-started/resources"
 ---
 
+{{< archived-content >}}
+
 Working with blockchains is difficult, and the inherent complexity of blockchains can be overwhelming for new developers. If you're not sure where to begin, we recommend you take a look at these sections before diving into more complex parts of Filecoin:
 
 {{< alert  >}}
@@ -28,7 +30,7 @@ Looking for Lotus? You can find Lotus specific documentation over at [lotus.file
 - Read [How Filecoin Works]({{< relref "how-filecoin-works" >}}) and [IPFS and Filecoin]({{< relref "filecoin-and-ipfs" >}}).
 - Complete the [Protoschool tutorial](https://proto.school/verifying-storage-on-filecoin/) to get a closer, practical look.
 - Check out the [existing networks](https://network.filecoin.io).
-- Explore the mainnet using one of the [available block explorers]({{< relref "explore-the-network" >}}). Discover the blocks, the messages, the scoreboards for storage providers. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
+- Explore the mainnet using one of the [available block explorers]({{< relref "block-explorers" >}}). Discover the blocks, the messages, the scoreboards for storage providers. Watch the self-adjusting base fee, the deals, and all the things tracked by the chain.
 
 ## Store content on Filecoin
 
