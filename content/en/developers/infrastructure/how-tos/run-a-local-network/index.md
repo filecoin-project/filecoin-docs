@@ -1,5 +1,5 @@
 ---
-title: "Start a local network"
+title: "Run a local network"
 description: "Local networks are a useful way to get started with Filecoin development. Everything happens locally on your computer, and the system requirements are quite low. This guide covers how to start a local network."
 lead: "Local networks are a useful way to get started with Filecoin development. Everything happens locally on your computer, and the system requirements are quite low. This guide covers how to start a local network. We're going to be using Lotus as the Filecoin node implementation."
 draft: false
@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   developers:
-    identifier: "start-a-local-network-84b62f6f35b4b7ff64df40028fe28764"
+    identifier: "run-a-local-network-84b62f6f35b4b7ff64df40028fe28764"
 weight: 100
 toc: true
 ---
@@ -233,10 +233,10 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 ### Client
 
 1. Open a new terminal window.
-1. Move into the `~/local-devnet` directory:
+1. Move into the `~/lotus-devnet` directory:
 
     ```shell
-    cd ~/local-devnet
+    cd ~/lotus-devnet
     ```
 
 1. Export the devnet-specific variables again to make sure we don't interfere with any existing Lotus installations on your system:
@@ -291,10 +291,10 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 ### Provider
 
 1. Open a new terminal window.
-1. Move into the `~/local-devnet` directory:
+1. Move into the `~/lotus-devnet` directory:
 
     ```shell
-    cd ~/local-devnet
+    cd ~/lotus-devnet
     ```
 
 1. Export the devnet-specific variables again to make sure we don't interfere with any existing Lotus installations on your system:
@@ -352,10 +352,10 @@ Now that we've got our local devnet running let's create a new wallet and send s
 There are multiple ways to create a new wallet. The simplest way is to use the Lotus CLI directly:
 
 1. Open a new terminal window.
-1. Move into the `~/local-devnet` directory:
+1. Move into the `~/lotus-devnet` directory:
 
     ```shell
-    cd ~/local-devnet
+    cd ~/lotus-devnet
     ```
 
 1. Export the devnet-specific variables again to make sure we don't interfere with any existing Lotus installations on your system:
@@ -396,10 +396,10 @@ There are multiple ways to create a new wallet. The simplest way is to use the L
 
 We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7...` account with `lotus send`:
 
-1. If you closed the terminal windows from the last section, open a new terminal window, move into the `~/local-devnet` directory, and export the devnnet-specific variables again with:
+1. If you closed the terminal windows from the last section, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:
 
     ```shell
-    cd ~/local-devnet
+    cd ~/lotus-devnet
     export LOTUS_PATH=~/.lotus-local-net
     export LOTUS_MINER_PATH=~/.lotus-miner-local-net
     export LOTUS_SKIP_GENESIS_CHECK=_yes_
@@ -439,10 +439,10 @@ We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7.
 
 You'll need to export your address from the client node to use this local devnet with other applications and services, like MetaMask and Remix.
 
-1. If you closed the terminal windows from the last section, open a new terminal window, move into the `~/local-devnet` directory, and export the devnnet-specific variables again with:
+1. If you closed the terminal windows from the last section, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:
 
     ```shell
-    cd ~/local-devnet
+    cd ~/lotus-devnet
     export LOTUS_PATH=~/.lotus-local-net
     export LOTUS_MINER_PATH=~/.lotus-miner-local-net
     export LOTUS_SKIP_GENESIS_CHECK=_yes_
@@ -492,10 +492,10 @@ You'll eventually want to stop your local devnet from running or may need to res
 
 ### Restart the devnet
 
-1. Open a new terminal window, move into the `~/local-devnet` directory, and export the devnnet-specific variables again with:
+1. Open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:
 
     ```shell
-    cd ~/local-devnet
+    cd ~/lotus-devnet
     export LOTUS_PATH=~/.lotus-local-net
     export LOTUS_MINER_PATH=~/.lotus-miner-local-net
     export LOTUS_SKIP_GENESIS_CHECK=_yes_
@@ -516,10 +516,10 @@ You'll eventually want to stop your local devnet from running or may need to res
     ```
 
 1. This command will continue to run. Leave this window open.
-1. For the provider node, open a new terminal window, move into the `~/local-devnet` directory, and export the devnnet-specific variables again with:
+1. For the provider node, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:
 
     ```shell
-    cd ~/local-devnet
+    cd ~/lotus-devnet
     export LOTUS_PATH=~/.lotus-local-net
     export LOTUS_MINER_PATH=~/.lotus-miner-local-net
     export LOTUS_SKIP_GENESIS_CHECK=_yes_
@@ -545,3 +545,17 @@ You'll eventually want to stop your local devnet from running or may need to res
 ## Next steps
 
 To summarize, you've started a local devnet, funded a new address, and exported that address to a file! You've got all the pieces ready to start developing applications on Filecoin!
+
+## Troubleshooting
+
+Running into issues? Check out these troubleshooting steps to figure out what's going on.
+
+### Could not get API info for FullNode
+
+You may encouter the following error message:
+
+```plaintext
+ERROR: could not get API info for FullNode: could not get api endpoint: API not running (no endpoint
+```
+
+If you receive this error when trying to call your Lotus daemon, either your `lotus daemon` isn't running (see [Restart the devnet](#restart-the-devnet)) or you haven't re-exported the necessary variables (see [the #Build section](#build)).
