@@ -390,20 +390,16 @@ There are multiple ways to create a new wallet. The simplest way is to use the L
     t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq  49999999.999763880085417692 FIL  2      X
     ```
 
+1. You can now close this terminal window, or you can keep it open for the next section.
+
 ### Send funds
 
 We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7...` account with `lotus send`:
 
-1. Open a new terminal window.
-1. Move into the `~/local-devnet` directory:
+1. If you closed the terminal windows from the last section, open a new terminal window, move into the `~/local-devnet` directory, and export the devnnet-specific variables again with:
 
     ```shell
     cd ~/local-devnet
-    ```
-
-1. Export the devnet-specific variables again to make sure we don't interfere with any existing Lotus installations on your system:
-
-    ```shell
     export LOTUS_PATH=~/.lotus-local-net
     export LOTUS_MINER_PATH=~/.lotus-miner-local-net
     export LOTUS_SKIP_GENESIS_CHECK=_yes_
@@ -437,20 +433,16 @@ We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7.
     2000 FIL
     ```
 
+1. You can now close this terminal window, or you can keep it open for the next section.
+
 ### Export an address
 
-You'll need to export your address from the client node if you want to use this local devnet with other applications and services, like MetaMask and Remix.
+You'll need to export your address from the client node to use this local devnet with other applications and services, like MetaMask and Remix.
 
-1. Open a new terminal window.
-1. Move into the `~/local-devnet` directory:
+1. If you closed the terminal windows from the last section, open a new terminal window, move into the `~/local-devnet` directory, and export the devnnet-specific variables again with:
 
     ```shell
     cd ~/local-devnet
-    ```
-
-1. Export the devnet-specific variables again to make sure we don't interfere with any existing Lotus installations on your system:
-
-    ```shell
     export LOTUS_PATH=~/.lotus-local-net
     export LOTUS_MINER_PATH=~/.lotus-miner-local-net
     export LOTUS_SKIP_GENESIS_CHECK=_yes_
@@ -479,6 +471,76 @@ You'll need to export your address from the client node if you want to use this 
     ```shell
     ./lotus wallet export t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq >> ~/lotus-devnet-address
     ```
+
+1. The private key for this address is now in the `lotus-devnet-address` file in your home `~` directory.
+1. You can now close this terminal window.
+
+## Stop and restart
+
+You'll eventually want to stop your local devnet from running or may need to restart it. Follow these steps.
+
+### Stop the devnet
+
+1. Open the provider terminal window.
+1. Press `CTRL` + `c` to stop the node.
+1. The node will print `Graceful shutdown successful` once it has fully stopped.
+1. You can now close the provider terminal window.
+1. Open the client terminal window.
+1. Press `CTRL` + `c` to stop the node.
+1. The node will stop but will not print any success messages.
+1. You can now close the provider terminal window.
+
+### Restart the devnet
+
+1. Open a new terminal window, move into the `~/local-devnet` directory, and export the devnnet-specific variables again with:
+
+    ```shell
+    cd ~/local-devnet
+    export LOTUS_PATH=~/.lotus-local-net
+    export LOTUS_MINER_PATH=~/.lotus-miner-local-net
+    export LOTUS_SKIP_GENESIS_CHECK=_yes_
+    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+    export CGO_CFLAGS="-D__BLST_PORTABLE__"
+    ```
+
+1. Start the client node with `lotus daemon`:
+
+    ```shell
+    ./lotus daemon --lotus-make-genesis=devgen.car --genesis-template=localnet.json --bootstrap=false
+    ```
+
+    ```plaintext
+    2023-01-31T10:57:41.022-0400    INFO    main    lotus/daemon.go:218     lotus repo: /home/johnny/.lotus
+    2023-01-31T10:57:41.022-0400    INFO    repo    repo/fsrepo.go:265      Initializing repo at '/home/johnny/.lotus'
+    2023-01-31T10:57:41.022-0400    INFO    paramfetch      go-paramfetch@v0.0.4/paramfetch.go:209  Parameter file /var/tmp/filecoin-proof-parameters/v28-stacked-proof-of-replication-merkletree-poseidon_hasher-8-0-0-sha256_hasher-ecd683648512ab1765faa2a5f14bab48f676e633467f0aa8aad4b55dcb0652bb.vk is ok 
+    ```
+
+1. This command will continue to run. Leave this window open.
+1. For the provider node, open a new terminal window, move into the `~/local-devnet` directory, and export the devnnet-specific variables again with:
+
+    ```shell
+    cd ~/local-devnet
+    export LOTUS_PATH=~/.lotus-local-net
+    export LOTUS_MINER_PATH=~/.lotus-miner-local-net
+    export LOTUS_SKIP_GENESIS_CHECK=_yes_
+    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+    export CGO_CFLAGS="-D__BLST_PORTABLE__"
+    ```
+
+1. Restart the provider node with `lotus-miner run`:
+
+    ```shell
+    ./lotus-miner run --nosync
+    ```
+
+    ```plaintext
+    2023-01-31T12:54:12.009-0400    INFO    main    lotus-miner/run.go:98   Checking full node sync status
+    2023-01-31T12:54:12.013-0400    INFO    modules modules/core.go:64      memory limits initialized    {"max_mem_heap": 0, "total_system_mem": 16444395520, "effective_mem_limit": 16444395520}
+    2023-01-31T12:54:12.013-0400    WARN    modules modules/core.go:124     failed to initialize cgroup-driven watchdog; err: failed to load cgroup for process: cgroups: cgroup mountpoint does not exist
+    ```
+
+1. This command will continue to run. Leave this window open.
+1. You must run all further commands from a new terminal window.
 
 ## Next steps
 
