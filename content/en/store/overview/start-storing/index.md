@@ -55,6 +55,7 @@ The following applications allow you to store data on the Filecoin network with 
 
 There are additional storage solutions that you should not miss. While they have a focus on developers, some of them have simple CLI interfaces that simplify their usage:
 
+- [Filebase](https://filebase.com) is a geo-redundant IPFS pinning service that offers automatic 3x replication for all IPFS files and an S3-compatible API for widespread versatility. 
 - [Fleek](https://fleek.co) provides easy hosting and storage solutions on IPFS and their [SpaceDaemon](https://docs.fleek.co/space-daemon/overview/) and upcoming Space SDK use Filecoin.
 - [Pinata](https://pinata.cloud/) is an IPFS pinning service that will soon include Filecoin in its portfolio.
 - [Powergate](https://github.com/textileio/powergate) a multitiered storage solution that stores data with [IPFS and Filecoin]({{< relref "filecoin-and-ipfs" >}}).
