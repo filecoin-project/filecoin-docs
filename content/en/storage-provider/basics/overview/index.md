@@ -1,5 +1,5 @@
 ---
-title: "The Path to a Filecoin Enterprise"
+title: "Introduction"
 description: "Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks."
 draft: false
 images: []
