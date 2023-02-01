@@ -44,7 +44,7 @@ Storage providers are people and organizations that run storage providers, earni
 
 Once a storage provider implements the Filecoin protocol, they gain access to the entire market of Filecoin users. Providers don’t need to design their own storage API or advertise their offering themselves as this is handled by Filecoin’s protocol and network. Filecoin enables a thriving, decentralized ecosystem of independent storage providers by removing barriers to entry.
 
-See [How providing storage works]({{< relref "how-providing-storage-works" >}}).
+See [Storage Provider]({{< relref "storage-provider" >}}).
 
 ## New to web3
 
