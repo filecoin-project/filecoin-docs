@@ -21,13 +21,17 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
 
 1. Go to [chainlist.org](https://chainlist.org/).
 1. Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
-1. Scroll down to find the **Filecoin -- Hyperspace** testnet:
-1. In MetaMask click **Next** and then **Continue** when prompted to connect Chainlist.org to MetaMask:
-1. Back on the Chainlist.org page, click the **Filecoin -- Hyperspace** testnet connect button again.
-1. In MetaMask click **Approve** when prompted to _Allow this site to add a network_:
-1. Click **Switch network** when prompted by MetaMask:
-1. Open MetaMask, and you should see that you're now on the Filecoin Hyperspace testnet:
-1. Done!
+1. Scroll down to find the **Filecoin - Hyperspace testnet**, then click **Connect Wallet**:
+
+    ![Search for and select the Hpyerspace Tesnet.](chainlist-select-testnet.png)
+
+1. In MetaMask click **Next**, then **Connect**, then **Approve** when prompted to connect Chainlist.org to MetaMask:
+
+    ![Follow prompt from MetaMask to approce the connection to the Hyperspace testnet.](connect-with-metamask-approve.png)
+
+2. You should now see that MetaMask is connected to the **Filecoin - Hyperspace testnet**:
+
+    ![MetaMask connected to the Hyperspace testnet.](metamask-connected-to-hyperspace.png)
 
 ## Manual process
 
@@ -46,11 +50,23 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
 
 1. Open your browser and open the MetaMask plugin. If you haven't opened the MetaMask plugin before, you'll be prompted to create a new wallet. Follow the prompts to create a wallet.
 1. If you haven't already, change your view to **Expanded view**.
-1. Click the user circle and select **Settings**
-1. Select **Networks**.
-1. Click **Add a network**.
-1. Scroll down and click **Add a network manually**.
-1. Enter the following information into the fields:
+
+    ![Expanding the MetaMask plugin to be a whole page.](metamask-expanded-view.png)
+
+2. Click the user circle and select **Settings**:
+
+    ![Getting to the settings menu in MetaMask.](metamask-user-settings.png)
+
+3. Select **Networks**.
+4. Click **Add a network**.
+
+    ![MetaMask network settings to add a network manually.](metamask-network-settings.png)
+
+5. Scroll down and click **Add a network manually**.
+
+    ![Selecting the "Add a network manually" option.](selecting-add-a-network-manually.png)
+
+6. Enter the following information into the fields:
 
     | Field | Value |
     | --- | --- |
@@ -59,14 +75,20 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
     | Chain ID | `3141` |
     | Currency symbol | `tFIL` |
 
-1. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
+7. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
 
     - Glif Explorer: `https://explorer.glif.io/?network=hyperspace`
     - Filscan: `https://hyperspace.filscan.io/`
 
-1. Review the values in the fields and click **Save**.
-1. The Hyperspace testnet should now be shown in your MetaMask window.
-1. Done!
+8. Review the values in the fields and click **Save**.
+
+    ![Adding in the required values and saving.](fill-in-the-fields-and-save.png)
+
+9.  The Hyperspace testnet should now be shown in your MetaMask window.
+
+    ![MetaMask connected to the Hyperspace testnet.](metamask-connected-to-hyperspace.png)
+
+10. Done!
 
 ## Next steps
 
