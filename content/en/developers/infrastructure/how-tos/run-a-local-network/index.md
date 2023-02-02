@@ -317,7 +317,7 @@ As mentioned earlier, we will be running two types of a node: a storage provider
     imported key t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq successfully!
     ```
 
-1. Start the genesis miner.
+1. Initialize the gensis miner:
 
     ```shell
     ./lotus-miner init --genesis-miner --actor=t01000 --sector-size=2KiB --pre-sealed-sectors=~/.genesis-sectors --pre-sealed-metadata=~/.genesis-sectors/pre-seal-t01000.json --nosync 
@@ -330,10 +330,7 @@ As mentioned earlier, we will be running two types of a node: a storage provider
     ...
     ```
 
-    This process can take several minutes. While The `lotus-miner` daemon is starting, you'll see logs and information messages appear in the client terminal window you left running. This is the provider node and client node talking to each other.
-
-1. Eventually, your provider terminal window will read `Miner successfully created, you can now start it with 'lotus-miner run'`.
-1. Start the provider node with `lotus-miner run`:
+1. Eventually, your provider terminal window will read `Miner successfully created, you can now start it with 'lotus-miner run'`. Start the provider node with `lotus-miner run`:
 
     ```shell
     ./lotus-miner run --nosync 
