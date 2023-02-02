@@ -22,9 +22,9 @@ aliases:
 
 To become a Storage Provider in the Filecoin network you need a range of technical, financial and business skills. The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. These mechanisms are the primary reason why the hardware and other requirements for running a Storage Provider business are significantly higher than regular blockchain mining operations. The mechanisms are designed this way because, in contrast to some other blockchain solutions where you can simply configure one or more nodes to “mine” tokens, the Filecoin network’s primary goal is to provide decentralized storage to store humanity’s most valuable data.
 
-In order to understand how you can run a profitable business as a Filecoin Storage Provider it is important to make sure you understand the Filecoin Economics. Once you understand all the the core concepts you can build out a strategy for your desired ROI. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable Storage Provider business. &lt;HYPERLINKS REQUIRED>
+In order to understand how you can run a profitable business as a Filecoin Storage Provider it is important to make sure you understand the Filecoin Economics. Once you understand all the the core concepts you can build out a strategy for your desired ROI. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable Storage Provider business.
 
-Storage Providers can also add additional value to clients when they offer certain certifications. With that a Storage Provider can charge customers for storing data on a certified platform. Think about industry and compliance standards and certifications like HIPAA, SOC2, PCI, GDPR and others. &lt;HYPERLINKS REQUIRED>
+Storage Providers can also add additional value to clients when they offer certain certifications. With that a Storage Provider can charge customers for storing data on a certified platform. Think about industry and compliance standards and certifications like HIPAA, SOC2, PCI, GDPR and others.
 
 
 ## People & Talent
