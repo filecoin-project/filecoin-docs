@@ -19,21 +19,21 @@ Before a Storage Provider can do anything on the network he has to create FIL wa
 
 To satisfy the multiple needs for collateral in a way that is minimally burdensome to Storage Providers, Filecoin includes three different collateral mechanisms: initial pledge collateral, block reward as collateral, and storage deal provider collateral. The first is an initial commitment of filecoin that a miner must provide with each sector. The second is a mechanism to reduce the initial token commitment by vesting block rewards over time. The third aligns incentives between miner and client, and can allow miners to differentiate themselves in the market. 
 
-For more detailed information about the calculation of collateral, see the following sections in the Filecoin spec: [https://spec.filecoin.io/systems/filecoin_mining/miner_collaterals/](https://spec.filecoin.io/systems/filecoin_mining/miner_collaterals/) 
+For more detailed information about the calculation of collateral, see the following sections in the [Filecoin spec](https://spec.filecoin.io/systems/filecoin_mining/miner_collaterals/).
 
-When a Storage Provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see &lt;STORAGE PROVING>) or when he takes his storage offline and thereby breaks the rules of the storage deal, he will get penalized against the provided collateral. This penalty is called “slashing” and means a portion of the pledged collateral is forfeited and the storage power of the Storage Provider is reduced.
+When a Storage Provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see [Storage Proving]({{< relref "storage-proving" >}})) or when he takes his storage offline and thereby breaks the rules of the storage deal, he will get penalized against the provided collateral. This penalty is called “slashing” and means a portion of the pledged collateral is forfeited and the storage power of the Storage Provider is reduced.
 
-Providing collateral for multiple PiB’s of data is not cheap. As the amount of required collateral depends on the amount of storage pledged to the Filecoin network, the bigger volume one stores, the more collateral is required. Programs like Fil+ that use a QAP multiplier increase the collateral requirement equal to the multiplier. See &lt;SECTION FIL+ HYPERLINK> for more information on that.
+Providing collateral for multiple PiB’s of data is not cheap. As the amount of required collateral depends on the amount of storage pledged to the Filecoin network, the bigger volume one stores, the more collateral is required. Programs like Fil+ that use a QAP multiplier increase the collateral requirement equal to the multiplier. See [Verified Deals with Filecoin Plus]({{< relref "verified-deals" >}}) for more information on that.
 
 The formula for the required collateral is:
 
-_Collateral needed for X TiBs = (Current Sector Initial Pledge) x (32) x (X TiBs)_
+> Collateral needed for X TiBs = (Current Sector Initial Pledge) x (32) x (X TiBs)
+>
+> So for instance for 100TiB at a 0.20FIL / 32GiB sector this means:
+>
+> 0.20FIL x 32 x 100 = 640 FIL
 
-So for instance for 100TiB at a 0.20FIL / 32GiB sector this means:
-
-_0.20FIL x 32 x 100 = 640 FIL_
-
-The “Current Sector Initial Pledge '' can be found on blockchain explorers like Filfox (&lt;HYPERLINK>) and Filscout (&lt;HYPERLINK>).
+The “Current Sector Initial Pledge '' can be found on blockchain explorers like [Filfox](https://filfox.info/en) and [Filscout](https://filscout.com/en).
 
 The ecosystem does have FIL Lenders who can provide you FIL (at a cost)  to get started which you can pay back over time and with the help of earned block rewards. Every lender will require you to hold 20% of the required collateral though.
 
