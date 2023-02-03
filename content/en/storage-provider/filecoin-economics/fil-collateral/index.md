@@ -27,11 +27,13 @@ The amount of required collateral depends on the amount of storage pledged to th
 
 The formula for the required collateral is:
 
->_Collateral needed for X TiBs = (Current Sector Initial Pledge) x (32) x (X TiBs)_
->
->So for instance for 100TiB at a 0.20FIL / 32GiB sector this means:
->
->_0.20FIL x 32 x 100 = 640 FIL_
+{{< alert  >}}
+_Collateral needed for X TiBs = (Current Sector Initial Pledge) x (32) x (X TiBs)_
+
+So for instance for 100TiB at a 0.20FIL / 32GiB sector this means:
+
+_0.20FIL x 32 x 100 = 640 FIL_
+{{< /alert >}}
 
 The “Current Sector Initial Pledge" can be found on blockchain explorers like [Filfox](https://filfox.info/en) and [Filscout](https://www.filscout.com/en).
 
