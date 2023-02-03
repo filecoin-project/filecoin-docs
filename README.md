@@ -164,25 +164,28 @@ Here's a collection of guides you can use to help manage and contribute to this 
 
 ### Creating sidebar labels and content pages
 
-To create sidebar labels, use the `npm create` command, like this:
+To create sidebar labels, use the `npm create` command:
 
-```
+```shell
 npm run create -- --kind sidebar storage-provider/hardware 
 ```
 
-will create the folder structure and a `_index.md` file containing the front-matter for the label.
+The above command will create the folder structure and a `_index.md` file containing the front-matter for the label.
 
 ### Creating content pages
 
-To create content pages, use the `npm create` command, like this:
+To create content pages, use the `npm create` command:
 
-```
+```shell
 npm run create -- --kind page storage-provider/hardware/architectures
 ```
-will create a folder and an `index.md` file containing the front-matter for that page, that can then be edited as below:
 
-* If you make a mistake and need to remove a page, or section, just delete the folder.
-* To move content from one place to another, create the new pages using `npm create`, copy the text across to the newly created pages and delete the originals.
+The above command will create a folder and an `index.md` file containing the front-matter for that page, that can then be edited.
+
+If you make a mistake and need to remove a page, or section, just delete the folder.
+
+To move content from one place to another, create the new pages using `npm create`, copy the text across to the newly created pages and delete the originals.
+
 
 
 ### Front-matter variables 
