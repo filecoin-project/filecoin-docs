@@ -15,7 +15,5 @@ weight: 30
 toc: true
 ---
 
-{{< alert  >}}
-Coming soon!
-{{< /alert >}}
+{{< beta-warning >}}
 
