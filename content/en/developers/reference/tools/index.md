@@ -31,14 +31,6 @@ aliases:
 - [FVM High-level Rust SDK](https://github.com/polyphene/fvm-rs-sdk) by Polyphene
 - [Tooling by Glif](https://glif.io/)
 
-## FEVM (EVM to FVM)
-
-- [Deploy an EVM smart contract to FVM (to testnet)](https://observablehq.com/@jimpick/fvm-actor-code-playground-erc20-sans-events-wallaby-testne?collection=@jimpick/filecoin-virtual-machine)
-- [Deploy an EVM smart contract to FVM via Hardhat starter kit (to testnet)](https://github.com/filecoin-project/FEVM-Hardhat-Kit)
-- [Deploy an EVM smart contract to FVM via Hardhat tutorial (to testnet)](https://fvm.discourse.group/t/deploying-your-first-simple-solidity-smart-contract-on-the-filecoin-ethereum-virtual-machine-fevm/38)
-- [Connect your Metamask Wallet](https://yosephks.medium.com/adding-fvm-wallaby-testnet-to-metamask-f1adeb85c46a)
-- [EVM to FVM Address Management (F4 Addressing)](https://drive.google.com/file/d/17ngqxflu9B-gBqVl--5KqVhXsTLhkWtJ/view)
-
 ## Block Explorers
 
 - [Beryx](https://beryx.zondax.ch/)
