@@ -1,7 +1,7 @@
 ---
 title: "Run a local network"
 description: "Local networks are a useful way to get started with Filecoin development. Everything happens locally on your computer, and the system requirements are quite low. This guide covers how to start a local network."
-lead: "Local networks are a useful way to get started with Filecoin development. Everything happens locally on your computer, and the system requirements are quite low. This guide covers how to start a local network. We're going to be using Lotus as the Filecoin node implementation."
+lead: "Local networks are a useful way to get started with Filecoin development. Everything happens locally on your computer, and the system requirements are quite low. This guide covers how to start a local network using Lotus as the Filecoin node implementation."
 draft: false
 images: []
 type: docs
@@ -16,7 +16,7 @@ A Filecoin network has two node types: provider nodes and client nodes. In our l
 
 ## Prerequisites
 
-While the nodes we're going to run have relatively lightweight hardware requirements, since we're running multiple instances at once, it's recommended that your computer meets the following requirements:
+The nodes we're going to run have relatively lightweight hardware requirements. However, since we're running multiple instances at once it's recommended that your computer meets the following requirements:
 
 1. At least 8 GiB of RAM
 1. A quad-core CPU.
@@ -57,13 +57,19 @@ To build the nodes, you'll need some specific software. Run the following comman
 
     ```shell
     wget -c https://golang.org/dl/go1.18.8.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
-    echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
     ```
+
+1. You may need to export `/usr/local/go/bin` to your `$PATH`. This process changes depending on which shell you're using:
+
+    | Shell | Export to `$PATH` example |
+    | ----- | ------- |
+    | Bash | `echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc`
+    | ZSH | `echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc && source ~/.zshrc`
 
 1. Install Rust and source the `~/.cargo/env` config file:
 
     ```shell
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    curl https://sh.rustup.rs -sSf | sh -s -- -y
     source "$HOME/.cargo/env"
     ```
 1. Done! You can move on to the [Pre-build](#pre-build) section.
@@ -73,7 +79,7 @@ To build the nodes, you'll need some specific software. Run the following comman
 
 ## Pre-build
 
-Before we can build the Lotus binaries, there's some setup we need to do. We'll create the executable binaries within a new `~/lotus-devnet` section so that the devnet doesn't interfere with any other Lotus installation you may already have on your computer.
+Before we can build the Lotus binaries, there's some setup we need to do. We'll create the executable binaries within a new `~/lotus-devnet`.
 
 {{< tabs tabTotal="3">}}
 {{< tab tabName="MacOS-Intel" >}}
