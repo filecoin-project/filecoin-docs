@@ -9,11 +9,12 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "slashing-080aabd0b6cff052ccbf1c996f4b3b78"
-weight: 10
+weight: 26
 toc: true
 aliases:
     - "/storage-provider/slashing/"
     - "/mine/slashing/"
+    - "storage-provider/rewards/slashing/"
 ---
 
 ## Storage fault slashing

@@ -15,6 +15,8 @@ aliases:
     - "/mine/hardware-requirements/"
 ---
 
+{{< beta-warning >}}
+
 The hardware requirements for providing storage are tied to the computational resources needed to _seal_ a sector and generating regular _Proof of Spacetime_ for every sealed sector (_WindowPoSt_).
 
 The Filecoin network requires storage providers to run computationally expensive operations. The cost of these operations depends on which network the storage provider is running; some testnets use a smaller sector size to increase the speeds of transactions artificially. For reference, the requirements listed below correspond to **32GiB sectors**, as used by mainnet and some testnets.
