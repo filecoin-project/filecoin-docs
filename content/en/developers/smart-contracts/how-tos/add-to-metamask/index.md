@@ -15,6 +15,8 @@ aliases:
 
 {{< beta-warning >}}
 
+This page assumes that you already have [MetaMask installed](https://metamask.io/) in your browser.
+
 ## Simple method
 
 The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-configured options at chainlist.org.

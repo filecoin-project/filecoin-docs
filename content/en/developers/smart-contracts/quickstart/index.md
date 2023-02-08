@@ -36,40 +36,84 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
     ![Get started with MetaMask.](metamask-get-started.png)
 
-1. Follow the prompts until you MetaMask asks if you are **New to MetaMask**.
-1. Because you still need an account on the Filecoin network, select **Create a wallet**.
+1. Click **Create a new wallet**.
+1. Enter a password to secure your MetaMask wallet. You will need to enter this password every time you use the wallet.
 
-    ![Create a wallet in MetaMask.](metamask-create-new-wallet.png)
+    ![Create a password for your MetaMask wallet.](metamask-create-password.png)
 
-1. Enter a secure password. You will use this password every time you want to open this wallet in this browser.
-1. Click **Next** until you get to the **Secret Recovery Phrase** window. Read the information about what this _recovery phrase_ is on this page.
-1. Once you've followed the instructions and saved your recovery phrase, click **Next**.
-1. Confirm that you saved the recovery phrase correctly by clicking on the words in order.
+1. Follow the prompts until you get to the **Secret Recovery Phrase** window. Read the information about what this _recovery phrase_ is on this page.
+1. Eventually you should get to the _Wallet creation success_ page!
+
+    ![Wallet creation successful!](metamask-creation-success.png)
+
 1. Once you've done that, you should have your account set up!
+
+    ![Default MetaMask page.](metamask-default-page.png)
 
 ### Switch networks
 
-You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Hyperspace testnet]({<< reref "available-networks#hyerspace" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
+You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Hyperspace testnet]({{< relref "/developers/infrastructure/networks" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
 
 1. Go to [chainlist.org](https://chainlist.org/).
 1. Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
+
+    ![Search for Filecoin testnets in Chainlist.](chainlist-search-for-filecoin-testnets.png)
+
 1. Scroll down to find the **Filecoin -- Hyperspace** testnet:
-1. In MetaMask click **Next** and then **Continue** when prompted to connect Chainlist.org to MetaMask:
-1. Back on the Chainlist.org page, click the **Filecoin -- Hyperspace** testnet connect button again.
-1. In MetaMask click **Approve** when prompted to _Allow this site to add a network_:
+
+    ![Find the Hyperspace testnet.](chainlist-select-hyperspace.png)
+
+1. In MetaMask click **Next**.
+
+    ![Click next in MetaMask.](chainlist-connect-with-metamask.png)
+
+1. Click **Connect**:
+
+    ![Click connect in MetaMask.](chainlist-click-connect-in-metamask.png)
+
+1. Click **Approve** when prompted to _Allow this site to add a network_:
+
+    ![Approve the new network in MetaMask](chainlist-approve-new-network.png)
+
 1. Click **Switch network** when prompted by MetaMask:
-1. Open MetaMask, and you should see that you're now on the Filecoin Hyperspace testnet:
+
+    ![Switch networks in MetaMask.](chainlist-switch-network.png)
+
+1. Open MetaMask from the browser extensions tab:
+
+    ![Open MetaMask from the browser extensions tab.](chainlist-open-metamask.png)
+
+1. You should see the Filecoin Hyperspace testnet listed at the top:
+
+    ![MetaMask on the Filecoin Hyperspace testnet.](chainlist-hyperspace-added.png)
+
 Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
 
 ### Get some funds
 
-1. Open your browser and open MetaMask.
-1. Click your account to copy the address to your clipboard:
-1. Go to [hyperspace.yoga](https://hyperspace.yoga/#faucet) and scrolldown to the **Faucet** section.
+1. In your browser, open MetaMask and copy your address to your clipboard:
+
+    ![Copy your address to your clipboard.](faucet-get-address.png)
+
+1. Go to [hyperspace.yoga](https://hyperspace.yoga) and click **Faucet** from the menu.
+
+    ![Go to the Faucet section of the website.](faucet-click-faucet.png)
+
 1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
-1. The faucet should give you a link to the transaction. Click it to view your transaction:
+
+    ![Verify you're a human.](faucet-verify.png)
+
+1. The faucet should give you a link to the transaction:
+
+    ![Click on the message link.](faucet-get-message-link.png)
+
 1. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5000 `tFIL` transferred to your address.
+
+    ![Show the message confirmation in a block explorer.](faucet-show-message-confirmation.png)
+
 1. Open MetaMask to confirm that you received the `tFIL`:
+
+    ![MetaMask showing a balance of FIL.](faucet-metamask-with-balance.png)
 
 That's all there is to it! Getting `tFil` is easy!
 
@@ -83,15 +127,9 @@ In Remix, workspaces are siloed environments where you can create a contract, or
 
 1. Open [remix.ethereum.org](https://remix.ethereum.org).
 1. Click the `+` icon next to **Workspaces** to create a new workspace:
-
-    ![Create a new Remix workspace.](remix-new-workspace.png)
-
 1. In the **Choose a template** dropdown, select **ERC 20**.
 1. Select the **Mintable** checkbox.
 1. Enter a fun name for your token in the **Workspace name** field. Something like `CorgiCoin` works fine.
-
-    ![Name your workspace in Remix.](remix-create-workspace.png)
-
 1. Click **OK** to create your new workspace.
 
 ### Customize the contract
@@ -101,9 +139,6 @@ The contract template we're using is pretty simple; we just need to modify a cou
 1. Under the **contract** directory, click **MyToken.sol**.
 1. In the editor panel, replace `MyToken` with whatever you'd like to name your token. In this example, we'll use `CorgiCoin`.
 1. On the same line, replace the second string with whatever you want the symbol of your token to be. In this example, we'll use `CRG`.
-
-    ![Edit your contract in Remix.](remix-edit-contract.png)
-
 That's all we need to change within this contract. You can see on line 4 that this contract is importing another contract from `@openzeppelin` for us, meaning that we can keep our custom token contract simple.
 
 ### Compile
@@ -111,39 +146,19 @@ That's all we need to change within this contract. You can see on line 4 that th
 1. Click the green play symbol at the top of the workspace to compile your contract. You can also press `CMD` + `s` on MacOS or `CTRL` + `s` on Linux and Windows.
 1. Remix automatically fetches the two `import` contracts from the top of our `.sol` contract. You can see these imported contracts under the `.deps` directory. You can browse the contracts there, but Remix will not save any changes you make.
 
-![Remix showing imported contracts.](remix-imported-contracts.png)
-
 ### Deploy
 
 Now that we've successfully compiled our contract, we need to deploy it somewhere! This is where our previous MetaMask setup comes into play.
 
 1. Click the **Deploy** tab from the left.
-
-    ![Click deploy within Remix.](remix-click-deploy.png)
-
 1. Under the **Environment** dropdown, select **Injected Provider - MetaMask**.
-
-    ![Select the proper network within Remix.](remix-select-network-dropdown.png)
-
 1. MetaMask will open a new window confirming that you want to connect your account to Remix.
 1. Click **Next** and then **Connect** to connect your `tFIL` account to Remix.
 1. Back in Remix, under the **Account** field, you'll see that it says something like `0x5A5... (5000 ether)`. This value is 5000 `tFIL`, but Remix doesn't natively support the Filecoin network and thus doesn't understand what `tFIL` is. This isn't a problem; it's just a little quirk of using Remix.
-
-    ![Remix showing 5000 tFil.](remix-5000-tfil.png)
-
 1. Under the **Contract** dropdown, ensure the contract you created is selected.
-
-    ![Select your contract in Remix.](remix-select-contract.png)
-
 1. Click **Deploy**.
-
-    ![Remix showing the deploy button.](remix-deploy-button.png)
-
 1. MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract.
 1. Back in Remix, a message at the bottom of the screen shows that the creation of your token is pending.
-
-    ![A pending transaction in Remix.](remix-transaction-pending.png)
-
 1. Wait around 90 seconds for the deployment to complete.
 
 On the Filecoin network, a new set of blocks, also called a tipset, is created every thirty seconds. When deploying a contract, the transaction needs to be received by the network, and then the network needs to confirm the contract. This process takes around one to two tipsets to process -- or around 60 to 90 seconds.
@@ -157,25 +172,11 @@ Now that we've compiled and deployed the contract, it's time to actually interac
 Let's call a method within the deployed contract to mint some tokens.
 
 1. Back in Remix, open the **Deployed Contracts** dropdown, within the **Deploy** sidebar tab.
-
-    ![Remix showing my deployed contracts.](remix-deployed-contracts-dropdown.png)
-
 1. Expand the `mint` method. You must fill in two fields here: `to` and `amount`.
-
-    ![Remix showing the mint method of a contract.](remix-expand-mint-method.png)
-
 1. The `to` field specifies where address you want these initial tokens sent to. Open MetaMask, copy your address, and paste it into this field.
 1. This field expects an `attoFil` value. 1 `FIL` is equal to 1,000,000,000,000,000,000 `attoFil`. So if you wanted to mint 100 `FIL`, you would enter `100` followed by 18 zeros: `100000000000000000000`.
-
-    ![Enter a value into Remix.](remix-add-number.png)
-
 1. Click **Transact**.
-
-    ![Click transact in Remix.](remix-click-transact.png)
-
 1. MetaMask will open a window and ask you to confirm the transaction. Again, you must wait for the network to process the transaction, which should take about 90 seconds. You can move on to the next section while you're waiting.
-
-    ![Remix pending the minting of a contract.](remix-mint-pending.png)
 
 ### Add to MetaMask
 
@@ -183,9 +184,6 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 
 1. Go back to Remix and open the **Deploy** sidebar tab.
 1. Under **Deployed Contracts**, you should see your contract address at the top. Click the copy icon to copy the address to your clipboard.
-
-    ![Copy your contract's deployment address.](remix-copy-deploy-address.png)
-
 1. Open MetaMask, select **Assets**, and click **Import your tokens**:
 1. In the **Token contract address** field, paste the contract address you just copied from Remix and then click **Add custom token**. MetaMask should autofill the rest of the information based on what it can find from the Filecoin network.
 1. Click **Import token**.
