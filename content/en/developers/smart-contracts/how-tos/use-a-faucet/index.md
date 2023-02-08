@@ -27,18 +27,18 @@ Before we begin, you must have an address on the Hyperspace testnet. Follow the 
 
     ![Copy your MetaMask address to your clipboard.](copy-address-to-clipboard.png)
 
-2. Go to [hyperspace.yoga](https://hyperspace.yoga/#faucet) and scrolldown to the **Faucet** section.
-3. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
+1. Go to [hyperspace.yoga](https://hyperspace.yoga/#faucet) and scrolldown to the **Faucet** section.
+1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
 
     ![Paste your MetaMask address into the field, complete the captcha, click send.](paste-address-into-field.png)
 
-4. The faucet should give you a link to the transaction. Click it to view your transaction: (Note that after clicking send, the link will appear and slowly fade away.)
+1. The faucet should give you a link to the transaction. Click it to view your transaction: (Note that after clicking send, the link will appear and slowly fade away.)
 
     ![Click the link that appears to view the transaction.](link-to-transaction.png)
 
-5. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5 `tFIL` transferred to your address.
-6. Open MetaMask to confirm that you received the `tFIL`:
+1. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5 `tFIL` transferred to your address.
+1. Open MetaMask to confirm that you received the `tFIL`:
 
     ![Open MetaMask to confirm that you have recieved the funds.](confirm-funds-metamask.png)
 
-7. Done!
+1. Done!
