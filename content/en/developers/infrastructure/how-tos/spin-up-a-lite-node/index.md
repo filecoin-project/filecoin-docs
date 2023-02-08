@@ -1,7 +1,7 @@
 ---
 title: "Spin up a lite node"
 description: "A full-node is a Filecoin node that has access to the full feature set of the Filecoin network. However, full-nodes can be difficult to spin up and expensive to maintain. Lite-nodes are a simplified node option that allow developers to perform lightweight tasks on a local node. This page covers how to spin-up a lite nodeon your local machine."
-lead: "A full-node is a Filecoin node that has access to the full feature set of the Filecoin network. However, full-nodes can be difficult to spin up and expensive to maintain. Lite-nodes are a simplified node option that allow developers to perform lightweight tasks on a local node. This page covers how to spin-up a lite nodeon your local machine."
+lead: "A full-node is a Filecoin node that has access to the full feature set of the Filecoin network. However, full-nodes can be difficult to spin up and expensive to maintain. Lite-nodes are a simplified node option that allow developers to perform lightweight tasks on a local node. This page covers how to spin-up a lite node on your local machine."
 draft: false
 images: []
 type: docs
@@ -276,7 +276,7 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
 {{< /tab >}}
 {{< /tabs >}}
 
-## Expose API
+## Expose the API
 
 To send JSON-RPC requests to our lite-node we need to expose the API.
 
@@ -439,4 +439,4 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 
 ## Next steps
 
-You should now have a local lite-node connected to a remote full-node with an admin API key! You can use this setup to continute playing around with the JSON-RPC, or start building your applications on Filecoin!
+You should now have a local lite-node connected to a remote full-node with an admin API key! You can use this setup to continue playing around with the JSON-RPC, or start building your applications on Filecoin!
