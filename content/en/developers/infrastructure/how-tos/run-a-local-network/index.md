@@ -37,7 +37,7 @@ To build the nodes, you'll need some specific software. Run the following comman
 1. Install Rust and source the `~/.cargo/env` config file:
 
     ```shell
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    curl https://sh.rustup.rs -sSf | sh -s -- -y
     source "$HOME/.cargo/env"
     ```
 
@@ -186,7 +186,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
     This process will take about 5 minutes to complete.
 
-1. Fetch the _proving_ parameters for a 2048-byte sector size:
+1. Fetch the proving parameters for a 2048-byte sector size:
 
     ```shell
     ./lotus fetch-params 2048
