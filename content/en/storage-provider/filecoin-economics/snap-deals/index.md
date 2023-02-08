@@ -17,6 +17,7 @@ toc: true
 
 Snap Deals are a way to convert Committed Capacity sectors (that store no real data) into data sectors to be used for storing actual data and potentially Fil+ data. Instead of destroying a previously sealed sector and recreate a new sector that needs to be sealed, Snap Deals allow data to be ingested into CC-sectors without the requirement of re-sealing the sector.
 
+## Why would you do snap deals?
 There are 2 main reasons why a Storage Provider could be doing Snap Deals (or “snapping up their sectors”):
 
 * The first reason is that the 10x storage power on the same volume of data stored is a strong incentive to upgrade to verified deals for those Storage Providers who started out on CC-sectors and wish to upgrade to verified deals with Fil+.
