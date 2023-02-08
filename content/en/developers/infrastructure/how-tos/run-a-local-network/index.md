@@ -20,6 +20,7 @@ The nodes we're going to run have relatively lightweight hardware requirements. 
 
 1. At least 8 GiB of RAM
 1. A quad-core CPU.
+1. (Optional) Because parts of this tutorial require multiple terminal windows, install a terminal multiplexer like [Tmux](https://github.com/tmux/tmux).
 
 To build the nodes, you'll need some specific software. Run the following command to install the software prerequisites:
 
@@ -27,17 +28,54 @@ To build the nodes, you'll need some specific software. Run the following comman
 {{< tab tabName="MacOS" >}}
 <br>
 
-1. Ensure you have [XCode](https://developer.apple.com/xcode/) and [Homebrew](https://brew.sh/) installed.
+1. Open a terminal window.
+1. Check that you have [Homebrew](https://brew.sh/) installed.
+
+    ```shell
+    brew --version
+    ```
+
+    ```plaintext
+    Homebrew 3.6.18
+    ...
+    ```
+
+    If you do not see a version number. or receive an error message, install [Homebrew](https://brew.sh/).
+
+
+1. Ensure you have [XCode](https://developer.apple.com/xcode/) installed.
+
+    ```shell
+    xcode-select -p
+    ```
+
+    ```plaintext
+    /Library/Developer/CommandLineTools
+    ```
+    
+    If you do not see the output above. or receive an error message, install [XCode](https://developer.apple.com/xcode/).
+
 1. Install the following dependencies:
 
     ```shell
     brew install go bzr jq pkg-config hwloc coreutils
     ```
 
-1. Install Rust and source the `~/.cargo/env` config file:
+1. Install Rust:
 
     ```shell
     curl https://sh.rustup.rs -sSf | sh -s -- -y
+    ```
+
+    ```plaintext
+    ...
+    Rust is installed now. Great!    
+    ...
+    ```
+
+1. Source the `~/.cargo/env` config file:
+
+    ```shell
     source "$HOME/.cargo/env"
     ```
 
@@ -108,6 +146,11 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
     ```shell
     git clone https://github.com/filecoin-project/lotus.git ~/lotus-devnet
+    ```
+
+1. Navigate to the `~/lotus-devnet` directory:
+
+    ```shell
     cd ~/lotus-devnet
     ```
 
@@ -119,11 +162,20 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
 1. Create the necessary environment variables to allow Lotus to run on M1 architecture:
 
-    ```shell
-    export LIBRARY_PATH=/opt/homebrew/lib
-    export FFI_BUILD_FROM_SOURCE=1
-    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-    ```
+    1. `LIBRARY_PATH`:
+        ```shell
+        export LIBRARY_PATH=/opt/homebrew/lib
+        ```
+
+    1. `FFI_BUILD_FROM_SOURCE`:
+        ```shell
+        export FFI_BUILD_FROM_SOURCE=1
+        ```
+
+    1. `PATH`:
+        ```shell
+        export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+        ```
 
 1. Done! You can move on to the [Build](#build) section.
 
@@ -162,13 +214,29 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
 1. Export these devnet-specific variables to make sure we don't interfere with any existing Lotus installations on your system:
 
-    ```shell
-    export LOTUS_PATH=~/.lotus-local-net
-    export LOTUS_MINER_PATH=~/.lotus-miner-local-net
-    export LOTUS_SKIP_GENESIS_CHECK=_yes_
-    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
-    export CGO_CFLAGS="-D__BLST_PORTABLE__"
-    ```
+    1. `LOTUS_PATH`:
+        ```shell
+        export LOTUS_PATH=~/.lotus-local-net
+        ```
+
+    1. `LOTUS_MINER_PATH`:
+        ```shell
+        export LOTUS_MINER_PATH=~/.lotus-miner-local-net
+        ```
+
+    1. `LOTUS_SKIP_GENESIS_CHECK`:
+        ```shell
+        export LOTUS_SKIP_GENESIS_CHECK=_yes_
+        ```
+    1. `CGO_CFLAGS_ALLOW`:
+        ```shell
+        export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+        ```
+
+    1. `CGO_CFLAGS`:
+        ```shell
+        export CGO_CFLAGS="-D__BLST_PORTABLE__"
+        ```
 
 1. Create the `2k` binary for Lotus:
 
@@ -323,7 +391,7 @@ As mentioned earlier, we will be running two types of a node: a storage provider
     imported key t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq successfully!
     ```
 
-1. Initialize the gensis miner:
+1. Initialize the genesis miner:
 
     ```shell
     ./lotus-miner init --genesis-miner --actor=t01000 --sector-size=2KiB --pre-sealed-sectors=~/.genesis-sectors --pre-sealed-metadata=~/.genesis-sectors/pre-seal-t01000.json --nosync 
@@ -555,7 +623,7 @@ Running into issues? Check out these troubleshooting steps to figure out what's 
 
 ### Could not get API info for FullNode
 
-You may encouter the following error message:
+You may encounter the following error message:
 
 ```plaintext
 ERROR: could not get API info for FullNode: could not get api endpoint: API not running (no endpoint
