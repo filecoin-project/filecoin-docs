@@ -40,7 +40,7 @@ There are two main types of deals in Filecoin: _storage deals_ and _retrieval de
 
 ### Storage deals
 
-Storage deals are agreements between clients and _storage providers_ to store data on the network. Once a user initiates a deal, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) that it is still storing the data so that it can collect [rewards]({{< relref "rewards.md" >}}). If the storage provider cannot prove that they are still storing the data correctly, they are [slashed]({{< relref "slashing" >}}) and lose FIL.
+Storage deals are agreements between clients and _storage providers_ to store data on the network. Once a user initiates a deal, and the storage provider has received the data to store, it will repeatedly [prove](#proofs) that it is still storing the data so that it can collect rewards. If the storage provider cannot prove that they are still storing the data correctly, they are slashed and lose FIL.
 
 ### Retrieval deals
 
