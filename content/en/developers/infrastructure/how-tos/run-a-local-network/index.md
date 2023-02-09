@@ -214,29 +214,11 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
 1. Export these devnet-specific variables to make sure we don't interfere with any existing Lotus installations on your system:
 
-    1. `LOTUS_PATH`:
-        ```shell
-        export LOTUS_PATH=~/.lotus-local-net
-        ```
-
-    1. `LOTUS_MINER_PATH`:
-        ```shell
-        export LOTUS_MINER_PATH=~/.lotus-miner-local-net
-        ```
-
-    1. `LOTUS_SKIP_GENESIS_CHECK`:
-        ```shell
-        export LOTUS_SKIP_GENESIS_CHECK=_yes_
-        ```
-    1. `CGO_CFLAGS_ALLOW`:
-        ```shell
-        export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
-        ```
-
-    1. `CGO_CFLAGS`:
-        ```shell
-        export CGO_CFLAGS="-D__BLST_PORTABLE__"
-        ```
+    ```shell
+    export LIBRARY_PATH=/opt/homebrew/lib
+    export FFI_BUILD_FROM_SOURCE=1
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+    ```
 
 1. Create the `2k` binary for Lotus:
 
