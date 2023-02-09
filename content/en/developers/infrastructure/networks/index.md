@@ -8,7 +8,7 @@ type: docs
 menu:
   developers:
     identifier: "testnets-72882f7fc2bd635f217195194c89146a"
-weight: 100
+weight: 250
 toc: true
 aliases:
     - "/fvm/reference/networks/"
@@ -26,7 +26,6 @@ There are several networks available for Filecoin:
 - [Mainnet](#mainnet), the only production Filecoin network.
 - [Calibration](#calibration), a test network for storage providers to test their node configuration.
 - [Hyperspace](#hyperspace), the primary test network for smart-contract and actor developers.
-- [Wallaby](#wallaby), an early smart-contract and actor test network for bleeding edge [Filecoin Virtual Machine]({{< relref "filecoin-virtual-machine" >}}) deployments.
 
 {{< alert  >}}
 Check the status of each network and subscribe to updates at [status.filecoin.io](https://status.filecoin.io).
@@ -166,10 +165,10 @@ More information on Hyperspace can be found [here](https://github.com/filecoin-p
 **Bootstrap peers**:
 
 ```plaintext
-/dns4/de0.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWHAvUVk5XuxSwi2dNLWbTDDRSGeHxMuWdQ3SQpRuNHbLz
-/dns4/de1.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWBRqtxhJCtiLmCwKgAQozJtdGinEDdJGoS5oHw7vCjMGc
-/dns4/ca0.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWCApBpUk7EX9pmEfyky1gKC6N2KJ74S1AwFfvnkDqw3pK
-/dns4/sg0.bootstrap.wallaby.network/tcp/1337/p2p/12D3KooWLnYqr4hRoNHBJQVXsFGkDoKuoVfw5R2ASw1bHzrWU5Px
+/dns4/de0.bootstrap.hyperspace.network/tcp/1337/p2p/12D3KooWHAvUVk5XuxSwi2dNLWbTDDRSGeHxMuWdQ3SQpRuNHbLz
+/dns4/de1.bootstrap.hyperspace.network/tcp/1337/p2p/12D3KooWBRqtxhJCtiLmCwKgAQozJtdGinEDdJGoS5oHw7vCjMGc
+/dns4/ca0.bootstrap.hyperspace.network/tcp/1337/p2p/12D3KooWCApBpUk7EX9pmEfyky1gKC6N2KJ74S1AwFfvnkDqw3pK
+/dns4/sg0.bootstrap.hyperspace.network/tcp/1337/p2p/12D3KooWLnYqr4hRoNHBJQVXsFGkDoKuoVfw5R2ASw1bHzrWU5Px
 ```
 
 **Resources**:
@@ -179,19 +178,3 @@ More information on Hyperspace can be found [here](https://github.com/filecoin-p
 - [Slack Channel for Questions: #fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY)
 - [Block explorer - Filfox](https://hyperspace.filfox.info/en)
 - [Block explorer - Glif](https://explorer.glif.io/?network=hyperspace)
-
-### Wallaby
-
-The Wallaby testnet is intended for early testing of new Filecoin Virtual Machine features as the FVM is being actively developed. It is usually reset weekly with a new FVM release.
-
-**Maintainer**: Factor 8
-
-Information for this networks changes frequently. Check out the [Testnet wallaby reposiotry for the most up-to-date information](https://github.com/filecoin-project/testnet-wallaby/).
-
-### Deprecated networks
-
-Here is a list of networks that are now deprecated:
-
-| Name | Description | Deprecated on |
-| --- | --- | --- |
-| Nerpa | A test network with tiny sector sizes. This network was for app developers to test the very basic functionality of their applications before moving over to the calibration testnet. | 2021-08-16 |

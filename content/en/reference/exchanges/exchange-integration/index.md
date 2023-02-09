@@ -296,4 +296,4 @@ Join the [Filecoin Slack](https://filecoinproject.slack.com/signup) and post any
 - [Filecoin Specs](https://spec.filecoin.io)
 - [Filecoin Networks](https://status.filecoin.io)
 - [Lotus](https://github.com/filecoin-project/lotus) - the reference implementation for the Filecoin network
-- [Block Explorers]({{< relref "explore-the-network#block-explorers" >}})
+- [Block Explorers]({{< relref "block-explorers" >}})

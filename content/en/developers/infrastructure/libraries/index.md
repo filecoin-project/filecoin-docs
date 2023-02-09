@@ -7,9 +7,8 @@ images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
     identifier: "libraries-c53694e3311ab167496470d05062d7d9"
-weight: 100
+weight: 230
 toc: true
 aliases:
     - "/build/tools/signing-libraries/"

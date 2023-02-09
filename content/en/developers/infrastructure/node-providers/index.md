@@ -9,7 +9,7 @@ menu:
   developers:
     parent: "lorem"
     identifier: "node-providers-c5f8055ae87352ce7519806cdf0885f0"
-weight: 100
+weight: 270
 toc: true
 ---
 

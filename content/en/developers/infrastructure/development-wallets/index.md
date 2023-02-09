@@ -7,9 +7,8 @@ images: []
 type: docs
 menu:
   developers:
-    parent: "lorem"
     identifier: "development-wallets-52c1d174195bc0cfa6b84999bce02be3"
-weight: 100
+weight: 240
 toc: true
 ---
 

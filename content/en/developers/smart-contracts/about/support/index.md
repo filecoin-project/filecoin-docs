@@ -21,9 +21,10 @@ aliases:
 
 Like many other distributed teams, the FVM team works mostly on Slack. You can join the Filecoin Project Slack for free by going to [filecoin.io/slack](https://filecoin.io/slack/). The FVM team hangs out in the following channels:
 
-- [`#fvm`](https://filecoinproject.slack.com/archives/C029MT4PQB1)
-- [`#fvm-docs`](https://filecoinproject.slack.com/archives/C03MDFERKMJ)
-- [`#fil-net-hyperspace-discuss`](https://filecoinproject.slack.com/archives/C04JEJB82RY)
+- [`#fil-builders`](https://filecoinproject.slack.com/archives/CRK2LKYHW) for building solutions on FVM and Filecoin
+- [`#fil-fvm-dev`](https://filecoinproject.slack.com/archives/C029MT4PQB1) for development of the FVM
+- [`#fvm-docs`](https://filecoinproject.slack.com/archives/C03MDFERKMJ) for FVM documentation
+- [`#fil-net-hyperspace-discuss`](https://filecoinproject.slack.com/archives/C04JEJB82RY) for the FVM test network (recommended for builders)
 
 ## Forum
 

@@ -7,7 +7,7 @@ for (var i = 0; i < pre.length; ++ i)
     var element = pre[i];
 
     var mermaid = element.getElementsByClassName('language-mermaid')[0];
-    if (mermaid == null && (element.previousElementSibling.localName != "pre")) {
+    if (mermaid == null) {
         element.insertAdjacentHTML('afterbegin', '<button class="btn btn-copy"></button>');
 
         if (element.nextElementSibling) {
@@ -16,9 +16,12 @@ for (var i = 0; i < pre.length; ++ i)
             }
         }
     }
-    if (element.previousElementSibling.localName == "pre") {
-        element.style.marginTop = 0;
-        element.style.opacity = 0.5; 
+    if (element.previousElementSibling) {
+        if (element.previousElementSibling.localName == "pre") {
+            element.style.marginTop = 0;
+            element.style.opacity = 0.5; 
+            element.querySelector(".btn-copy").remove();
+        }
     }
 }
 

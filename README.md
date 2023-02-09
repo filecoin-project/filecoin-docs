@@ -162,6 +162,32 @@ Here's a collection of guides you can use to help manage and contribute to this 
 - [Managing the top-bar navigation](https://bafybeidn4wxz44rssgdlu3p2dzh4tbyevuqd27xv7avioyf2m65jzlhnj4.ipfs.w3s.link/DaaS%20-%20Managing%20the%20topbar%20navigation%20-%20HD%201080p.mov)
 - [Move a page and add a redirect](https://bafybeibuwipv4rk2tzcqvouu2xlnebh4d7ol47mvmegtispbvlcruuwmhi.ipfs.w3s.link/Move%20and%20page%20and%20add%20a%20redirect.mp4)
 
+### Creating sidebar labels and content pages
+
+To create sidebar labels, use the `npm create` command:
+
+```shell
+npm run create -- --kind sidebar storage-provider/hardware 
+```
+
+The above command will create the folder structure and a `_index.md` file containing the front-matter for the label.
+
+### Creating content pages
+
+To create content pages, use the `npm create` command:
+
+```shell
+npm run create -- --kind page storage-provider/hardware/architectures
+```
+
+The above command will create a folder and an `index.md` file containing the front-matter for that page, that can then be edited.
+
+If you make a mistake and need to remove a page, or section, just delete the folder.
+
+To move content from one place to another, create the new pages using `npm create`, copy the text across to the newly created pages and delete the originals.
+
+
+
 ### Front-matter variables 
 
 The front-matter is that small section of metadata you can find at the top of each `.md` file within the [`/content` folder](https://github.com/filecoin-project/filecoin-docs/tree/main/content/en). Each variable has a specific purpose, and while not all are necessary, it's useful to know what they do and why they exist. 
