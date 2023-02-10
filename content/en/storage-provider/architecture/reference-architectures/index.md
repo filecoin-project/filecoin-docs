@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "reference-architectures-e4031132c8e0ea62ead8cb530a404d5c"
-weight: 100
+weight: 150
 toc: true
 aliases:
     - "/storage-provider/architectures/"

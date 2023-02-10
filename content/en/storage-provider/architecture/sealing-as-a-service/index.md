@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "sealing-as-a-service-65969c343e79242db575a1cb8e5a69b9"
-weight: 40
+weight: 140
 toc: true
 ---
 

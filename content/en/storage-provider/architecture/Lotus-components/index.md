@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "Lotus-components-eaf8e84a4d869e8377258acc4e25f684"
-weight: 10
+weight: 110
 toc: true
 ---
 

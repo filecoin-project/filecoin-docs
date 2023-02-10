@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "sealing-rate-7a3ff70165fcdc96149903585e0b327c"
-weight: 30
+weight: 130
 toc: true
 ---
 

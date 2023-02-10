@@ -8,7 +8,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "hardware-requirements-a2f6bfc8c2c8202e9a7c5bb6b091830d"
-weight: 110
+weight: 160
 toc: true
 aliases:
     - "/storage-provider/hardware-requirements/"
