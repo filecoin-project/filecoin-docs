@@ -17,11 +17,11 @@ toc: true
 
 Onboarding real client data is where the focus is nowadays, both for Filecoin and for Storage Providers. Although it is possible to find your own customers and datasets and have them verified through KYC to become a verified deal, there are also programs that help Storage Providers to receive (copies of) verified data.
 
-### Estuary 
+### Estuary
 
 One of those programs is **[Estuary](http://estuary.tech)**. Estuary is a public service on the internet (but can also be run as your own node) to upload data. As a client you can upload data which will later be aggregated into a deal that gets sealed and proven on-chain. Estuary does the data collection and data preparation part of the workflow and then hands off the sealing and long-term storing of the deals to Storage Providers. As a Storage Provider you can choose to accept deals from Estuary.  In order to receive deals from Estuary, a Storage Provider must sign up on the Estuary website. The Storage Provider is required to store sealed and unsealed copies of the data, and to enable retrievals from the unsealed copies for free.
 
-### Web3.storage 
+### Web3.storage
 
 Similar to Estuary there is **[web3.storage](http://web3.storage)**. Web3.storage runs on “Elastic IPFS” as the inbound storage protocol offering scalability, performance and reliability as the platform grows. It guarantees the user (typically developers) that the platform will always serve your data when you need it. In the backend the data is pushed towards Filecoin for long-term storage and cryptographic proofs.
 
@@ -38,11 +38,13 @@ Similar to Estuary there is **[web3.storage](http://web3.storage)**. Web3.storag
 **[Moon Landing](https://moon-landing.io)** is a program related to Slingshot and Evergreen. Moon Landing aims to provide assistance for new Storage Providers to enter the Slingshot program. They provide technical assistance as well as establishing contacts with other Storage Providers. Participants in the Moon Landing program are matched with other Storage Providers in a capsule. The intent is to grow communities of Storage Providers that can learn from each other and can share data replicas with each other.
 
 ### Big Data Exchange
+
 Another program that allows Storage Providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange)**. This platform allows Storage Providers to bid on datasets they are interested in storing. As a Storage Provider you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the Storage Provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why as a Storage Provider you might want to bid to store a copy.
 
 As mentioned before, storing real clients' data means there will be expectations on retrievability of that data. The Storage Provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (part of Lotus, see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
 
 ### Saturn
+
 A whole new access capability is being launched with **[Saturn](https://strn.network)**, which is the world’s first web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrievals of <1s in latency will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which Storage Providers can also participate.
 
 Many other programs and tools exist in the Filecoin community, developed by companies or Storage Providers.
