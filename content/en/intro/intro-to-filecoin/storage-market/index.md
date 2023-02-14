@@ -40,8 +40,8 @@ Storage helpers provide libraries that abstract Filecoin deal-making into simple
 
 Here are some available storage helpers:
 
-- [boost.filecoin.io](https://boost.filecoin.io/&sa=D&source=editors&ust=1674147484234258&usg=AOvVaw1PFBrROfthUdAgHLwkkv63)
-- [estuary.tech](https://estuary.tech/&sa=D&source=editors&ust=1674147484234745&usg=AOvVaw1b_HzDFLP0Tmz_o-I4yV7P)
-- [web3.storage](https://web3.storage/&sa=D&source=editors&ust=1674147484235114&usg=AOvVaw3YpID28KFS1K2RXMlravRA)
-- [nft.storage](https://nft.storage/&sa=D&source=editors&ust=1674147484235484&usg=AOvVaw15IcqJMpzEfmvDH3Ls5jFG)
-- [lighthouse.storage](https://www.lighthouse.storage/&sa=D&source=editors&ust=1674147484235832&usg=AOvVaw3FpKwTYoVxHi9WfPLgEaWb)
+- [boost.filecoin.io](https://boost.filecoin.io/)
+- [estuary.tech](https://estuary.tech/)
+- [web3.storage](https://web3.storage/)
+- [nft.storage](https://nft.storage/)
+- [lighthouse.storage](https://www.lighthouse.storage/)
