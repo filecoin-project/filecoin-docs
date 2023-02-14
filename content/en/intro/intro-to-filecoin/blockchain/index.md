@@ -24,7 +24,7 @@ An Actor in the Filecoin Blockchain is the equivalent of the smart contract in t
 
 ### Built-in actors
 
-There are several [built-in system actors](https://spec.filecoin.io/%23section-systems.filecoin_vm.sysactors&sa=D&source=editors&ust=1674147484223172&usg=AOvVaw3QP7fTDmWMtMTWPPGPog0p) that power the Filecoin network as the decentralized storage network.
+There are several [built-in system actors](https://spec.filecoin.io/%23section-systems.filecoin_vm.sysactors) that power the Filecoin network as the decentralized storage network.
 
 - System Actor - general system actor.
 - Init actor - initializes new actors and records the network name.
@@ -57,9 +57,9 @@ Nodes in the Filecoin network are primarily identified in terms of the services 
 
 Filecoin is targeting multiple protocol implementations to guarantee the security and resilience of the Filecoin network. Currently, the actively maintained implementations are:
 
-- Lotus [lotus.filecoin.io/](https://lotus.filecoin.io/&sa=D&source=editors&ust=1674147484226548&usg=AOvVaw3cFh7AKmqi4v8tZzn_1d-y)
-- Venus [github.com/filecoin-project/venus](https://github.com/filecoin-project/venus&sa=D&source=editors&ust=1674147484226901&usg=AOvVaw3xTT84WBcgDlG_78XpvFno)
-- Forest [github.com/ChainSafe/forest](https://github.com/ChainSafe/forest&sa=D&source=editors&ust=1674147484227231&usg=AOvVaw0Co642mTizoH50rlUOQuWU)
+- Lotus [lotus.filecoin.io/](https://lotus.filecoin.io/)
+- Venus [github.com/filecoin-project/venus](https://github.com/filecoin-project/venus)
+- Forest [github.com/ChainSafe/forest](https://github.com/ChainSafe/forest)
 
 ## Addresses
 
@@ -80,7 +80,7 @@ Let's quickly cover how consensus works in the Filecoin network.
 
 Expected consensus (EC) is the underlying consensus algorithm used by Filecoin. EC is a probabilistic Byzantine fault-tolerant consensus protocol that runs a leader election among a set of storage providers to submit a block every epoch. Like proof-of-stake, Filecoin uses proof-of-storage for the leader election, meaning the likelihood of being elected depends on how much provable storage power a miner contributes to the network. The storage power of the network is stored in the storage power table and managed by the Storage Power Actor.
 
-At a high level, the consensus process relies on [DRAND](https://drand.love/&sa=D&source=editors&ust=1674147484229241&usg=AOvVaw1e7Fsq4qETNCMGAPrPm10n) to provide distributed and verifiable randomness to keep leader election secret, fair and verifiable. All the election participants and their power are drawn from the Power Table, which is calculated and maintained over time by the Storage Power Consensus subsystem. Eventually, EC takes all valid blocks produced in this epoch and uses a weighting function to select the chain with the highest weight to add blocks.
+At a high level, the consensus process relies on [DRAND](https://drand.love/) to provide distributed and verifiable randomness to keep leader election secret, fair and verifiable. All the election participants and their power are drawn from the Power Table, which is calculated and maintained over time by the Storage Power Consensus subsystem. Eventually, EC takes all valid blocks produced in this epoch and uses a weighting function to select the chain with the highest weight to add blocks.
 
 ### Block production process
 
