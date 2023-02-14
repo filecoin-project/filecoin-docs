@@ -12,7 +12,7 @@ weight: 100
 toc: true
 ---
 
-A Filecoin network has two node types: provider nodes and client nodes. In our local developer network (devnet), we're going to create a single storage provider node to handle our requests, and we'll also create a client node to pass information into our network. Both of these nodes run in the terminal. In total, we'll have three terminal windows open at once.
+A Filecoin network has two node types: storage provider nodes and client nodes. In our local developer network (devnet), we're going to create a single storage provider node to handle our requests, and we'll also create a client node to pass information into our network. Both of these nodes run in the terminal. In total, we'll have three terminal windows open at once.
 
 ## Prerequisites
 
@@ -126,7 +126,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 1. Clone the repository:
 
     ```shell
-    git clone https://github.com/filecoin-project/lotus.git
+    git clone https://github.com/filecoin-project/lotus.git ~/lotus-devnet
     cd lotus/
     ```
 
@@ -146,11 +146,6 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
     ```shell
     git clone https://github.com/filecoin-project/lotus.git ~/lotus-devnet
-    ```
-
-1. Navigate to the `~/lotus-devnet` directory:
-
-    ```shell
     cd ~/lotus-devnet
     ```
 
@@ -162,20 +157,11 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
 1. Create the necessary environment variables to allow Lotus to run on M1 architecture:
 
-    1. `LIBRARY_PATH`:
-        ```shell
-        export LIBRARY_PATH=/opt/homebrew/lib
-        ```
-
-    1. `FFI_BUILD_FROM_SOURCE`:
-        ```shell
-        export FFI_BUILD_FROM_SOURCE=1
-        ```
-
-    1. `PATH`:
-        ```shell
-        export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-        ```
+    ```shell
+    export LIBRARY_PATH=/opt/homebrew/lib
+    export FFI_BUILD_FROM_SOURCE=1
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+    ```
 
 1. Done! You can move on to the [Build](#build) section.
 
@@ -212,14 +198,6 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
 ## Build
 
-1. Export these devnet-specific variables to make sure we don't interfere with any existing Lotus installations on your system:
-
-    ```shell
-    export LIBRARY_PATH=/opt/homebrew/lib
-    export FFI_BUILD_FROM_SOURCE=1
-    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-    ```
-
 1. Create the `2k` binary for Lotus:
 
     ```shell
@@ -248,6 +226,8 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
 
     ...
     ```
+
+    This process downloads a few files totalling to around 2 GiB in size. Depending on your internet speed, this process can take a few minutes to complete.
 
 1. Pre-seal two sectors for the genesis block:
 
@@ -307,29 +287,6 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 
     Because environmental variables are reset when you open a new terminal window, these variables must be exported every time we start a new terminal.
 
-1. Enable the external API for this client node by uncommenting out the `ListenAddress` variable on line 6 in `~/.lotus-local-net/config.toml`:
-
-    ```toml
-    [API]
-    # Binding address for the Lotus API
-    #
-    # type: string
-    # env var: LOTUS_API_LISTENADDRESS
-    ListenAddress = "/ip4/127.0.0.1/tcp/1234/http"
-  
-    # type: string
-    # env var: LOTUS_API_REMOTELISTENADDRESS
-    #RemoteListenAddress = ""
-  
-    # type: Duration
-    # env var: LOTUS_API_TIMEOUT
-    #Timeout = "30s"
- 
-    ...
-    ```
-
-    This step enables us to send JSON-RPC requests to this client node.
-
 1. Start the client node using `lotus daemon`:
 
     ```shell
@@ -344,7 +301,7 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 
 1. This command will continue to run. Leave this window open.
 
-### Provider
+### Storage provider
 
 1. Open a new terminal window.
 1. Move into the `~/lotus-devnet` directory:
@@ -384,9 +341,13 @@ As mentioned earlier, we will be running two types of a node: a storage provider
     2023-01-31T11:04:46.148-0400    INFO    main    lotus-miner/init.go:157 Checking proof parameters
 
     ...
+
+    2023-01-31T11:04:46.148-0400    INFO    main    lotus-miner/init.go:283 Miner successfully created, you can now start it with 'lotus-miner run'
     ```
 
-1. Eventually, your provider terminal window will read `Miner successfully created, you can now start it with 'lotus-miner run'`. Start the provider node with `lotus-miner run`:
+    This process take a few minutes to complete.
+
+1. Start the storage provider node with `lotus-miner run`:
 
     ```shell
     ./lotus-miner run --nosync 
@@ -394,7 +355,7 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 
     This terminal window will continue to run. You must run all further commands from a new terminal window.
 
-We now have a client node and a provider node successfully talking to each other! Next up, we can send requests to our client node to ensure everything is set up correctly.
+We now have a client node and a storage provider node successfully talking to each other! Next up, we can send requests to our client node to ensure everything is set up correctly.
 
 ## Get some FIL
 
@@ -460,7 +421,21 @@ We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7.
     export CGO_CFLAGS="-D__BLST_PORTABLE__"
     ```
 
-1. Create the send request with `lotus send`, supplying the `--from` address, the address we want to send FIL to, and the amount of FIL we want to send:
+1. View the wallets available on this node with `lotus wallet list`:
+
+    ```shell
+    ./lotus wallet list
+    ```
+
+    ```plaintext
+    Address                                                                                 Balance                          Nonce  Default
+    t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq                                               0 FIL                            0
+    t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq  49999999.999763880085417692 FIL  2      X
+    ```
+
+    In the above example, the `t3q4o...` address is the _pre-mined_ address we created in an earlier step. This has a very large balance of FIL. We want to send FIL from this pre-mined address to our new `t1snl...` address.
+
+1. Create the send request with `lotus send`, supplying the pre-mined `t3q4o...` address as the `--from` address, the new `t1snl...` address as the receiving address, and the amount of FIL we want to send:
 
     ```shell
     ./lotus send --from <PRE-MINED ADDRESS> <TO ADDRESS> <VALUE>
@@ -476,7 +451,13 @@ We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7.
     bafy2bzaceaqzbgiazwvtpago6wpkxl42puxfkvwv5cwjpime2irqatamji2bq
     ```
 
-1. Check the balance of your `t1snly7...` wallet with `lotus wallet balance`:
+1. Check the balance of your new `t1snl...` address with `lotus wallet balance`:
+
+    ```shell
+    ./lotus wallet balance <ADDRESS>
+    ```
+
+    For example:
 
     ```shell
     ./lotus wallet balance t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq
@@ -488,60 +469,42 @@ We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7.
 
 1. You can now close this terminal window, or you can keep it open for the next section.
 
-### Export an address
-
-You'll need to export your address from the client node to use this local devnet with other applications and services, like MetaMask and Remix.
-
-1. If you closed the terminal windows from the last section, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:
-
-    ```shell
-    cd ~/lotus-devnet
-    export LOTUS_PATH=~/.lotus-local-net
-    export LOTUS_MINER_PATH=~/.lotus-miner-local-net
-    export LOTUS_SKIP_GENESIS_CHECK=_yes_
-    export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
-    export CGO_CFLAGS="-D__BLST_PORTABLE__"
-    ```
-
-1. Export your address with `lotus wallet export`:
-
-    ```shell
-    ./lotus wallet export <ADDRESS>
-    ```
-
-    For example:
-
-    ```shell
-    ./lotus wallet export t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq
-    ```
-
-    ```plaintext
-    7b2254797065223a22736563703235366b31222c22507269766174654b6579223a226d376530352f714b354c704e76704e4b6f695a5463347738434330545469426a6f6f36743534414e4778513d227d
-    ```
-
-1. To export this address directly into a file, you can use `>>` to _echo_ the output of `lotus wallet export` directly into a file:
-
-    ```shell
-    ./lotus wallet export t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq >> ~/lotus-devnet-address
-    ```
-
-1. The private key for this address is now in the `lotus-devnet-address` file in your home `~` directory.
-1. You can now close this terminal window.
-
 ## Stop and restart
 
 You'll eventually want to stop your local devnet from running or may need to restart it. Follow these steps.
 
 ### Stop the devnet
 
-1. Open the provider terminal window.
-1. Press `CTRL` + `c` to stop the node.
-1. The node will print `Graceful shutdown successful` once it has fully stopped.
-1. You can now close the provider terminal window.
+1. Open the storage provider terminal window.
+1. Press `CTRL` + `c` to stop the node. The node will print `Graceful shutdown successful` once it has fully stopped:
+
+    ```plaintext
+    # CTRL + c 
+    ```
+
+    ```shell
+    ...
+
+    2023-02-14T10:54:42.030-0400    DEBUG   advmgr  sealer/sched_worker.go:603      worker 1fa5f6b1-eb4d-4d92-98b1-6114a0d7695d dropped
+    2023-02-14T10:54:42.056-0400    INFO    builder node/shutdown.go:44     miner shut down successfully
+    2023-02-14T10:54:42.056-0400    WARN    builder node/shutdown.go:47     Graceful shutdown successful
+    ```
+1. You can now close the storage provider terminal window.
 1. Open the client terminal window.
-1. Press `CTRL` + `c` to stop the node.
-1. The node will stop but will not print any success messages.
-1. You can now close the provider terminal window.
+1. Press `CTRL` + `c` to stop the node. The node will print `Graceful shutdown successful` once it has fully stopped:
+
+    ```plaintext
+    # CTRL + c 
+    ```
+
+    ```shell
+    ...
+
+    2023-02-14T10:55:42.475-0400    INFO    badgerbs        v2@v2.2007.3/db.go:554  Force compaction on level 0 done
+    2023-02-14T10:55:42.502-0400    INFO    builder node/shutdown.go:44     node shut down successfully
+    2023-02-14T10:55:42.502-0400    WARN    builder node/shutdown.go:47     Graceful shutdown successful
+    ```
+1. You can now close the client terminal window.
 
 ### Restart the devnet
 
@@ -569,7 +532,7 @@ You'll eventually want to stop your local devnet from running or may need to res
     ```
 
 1. This command will continue to run. Leave this window open.
-1. For the provider node, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:
+1. For the storage provider node, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:
 
     ```shell
     cd ~/lotus-devnet
@@ -580,7 +543,7 @@ You'll eventually want to stop your local devnet from running or may need to res
     export CGO_CFLAGS="-D__BLST_PORTABLE__"
     ```
 
-1. Restart the provider node with `lotus-miner run`:
+1. Restart the storage provider node with `lotus-miner run`:
 
     ```shell
     ./lotus-miner run --nosync
@@ -597,7 +560,9 @@ You'll eventually want to stop your local devnet from running or may need to res
 
 ## Next steps
 
-To summarize, you've started a local devnet, funded a new address, and exported that address to a file! You've got all the pieces ready to start developing applications on Filecoin!
+To summarize, you've started a local devnet, funded a new address, and exported that address to a file! You've got all the pieces ready to start developing applications on Filecoin! Next up, [try adding this local testnet to MetaMask]({{< relref "add-to-metamask" >}}), or even connecting it to [the Hardhat development framework]({{< relref "hardhat" >}}).
+
+---
 
 ## Troubleshooting
 
