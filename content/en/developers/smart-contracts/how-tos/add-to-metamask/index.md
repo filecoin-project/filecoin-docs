@@ -11,6 +11,7 @@ draft: false
 images: []
 aliases:
     - "/fvm/how-tos/add-to-metamask/"
+    - "/developers/smart-contracts/how-tos/add-to-metamask/"
 ---
 
 {{< beta-warning >}}
