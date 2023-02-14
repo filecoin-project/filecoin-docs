@@ -1,7 +1,7 @@
 ---
 title: "Crypto-economics"
-description: "Crypto-economics is the study of how cryptocurrency can incentivize useages of a blockchain network. This page covers how Filecoin manages incentivization within the network."
-lead: "Crypto-economics is the study of how cryptocurrency can incentivize useages of a blockchain network. This page covers how Filecoin manages incentivization within the network."
+description: "Crypto-economics is the study of how cryptocurrency can incentivize usages of a blockchain network. This page covers how Filecoin manages incentivization within the network."
+lead: "Crypto-economics is the study of how cryptocurrency can incentivize usages of a blockchain network. This page covers how Filecoin manages incentivization within the network."
 draft: false
 images: []
 type: docs
