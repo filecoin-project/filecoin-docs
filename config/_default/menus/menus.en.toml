@@ -31,15 +31,15 @@
       parent = "main-developers"
 
     [[main]]
-      name = "Infrastructure"
-      url = "/developers/infrastructure/block-explorers"
-      weight = 20
-      parent = "main-developers"
-
-    [[main]]
       name = "Smart contracts"
       url = "/developers/smart-contracts/filecoin-virtual-machine"
       weight = 30
+      parent = "main-developers"
+
+    [[main]]
+      name = "Infrastructure"
+      url = "/developers/infrastructure/block-explorers"
+      weight = 20
       parent = "main-developers"
 
     [[main]]
