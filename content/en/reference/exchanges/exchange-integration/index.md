@@ -217,7 +217,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `f1d7x4euqwtlk2bqzhclr6gubkufezgddkqftsnky` is the account address.
 
-#### [MpoolPushMessage]()https://lotus.filecoin.io/reference/lotus/mpool/#mpoolpushmessage
+#### [MpoolPushMessage](https://lotus.filecoin.io/reference/lotus/mpool/#mpoolpushmessage)
 
 ```shell
 curl -X POST -H 'Content-Type: application/json'
