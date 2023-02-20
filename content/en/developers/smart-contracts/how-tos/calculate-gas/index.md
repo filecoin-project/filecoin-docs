@@ -59,7 +59,7 @@ Filecoin nodes, such as Lotus, have severate JSON-API API endpoints designed to 
 - `GasEstimateGasPremium`: estimates what `GasPremium` price you should set to ensure a message will be included in `N` epochs. The smaller `N` is the larger `GasPremium` is likely to be.
 - `GasEstimateFeeCap`: estimate the `GasFeeCap` according to `BaseFee` in the parent blocks.
 
-If you want to learn more about how to use those JSON-RPC APIs for Filecoin gas model, please check the [JSON RPC API docs for Gas]({{< relref "/developers/reference/json-rpc/gas" >}}).
+If you want to learn more about how to use those JSON-RPC APIs for Filecoin gas model, please check the [JSON RPC API docs for Gas]({{< relref "/reference/json-rpc/gas" >}}).
 
 {{< alert  >}}
 Gas estimation vary from network to network. For example, the `BaseFee` on mainnet is different to the `BaseFee` on the Hyperspace testnet.
@@ -71,8 +71,8 @@ If you'd rather not calculate and estimate gas for every message, you can just l
 
 Since Filecion is fully EVM-compatible, Filecoin nodes also provide Ethereum compatible APIs to support gas estimation:
 
-- [EthEstimateGas]({{< relref "/developers/reference/json-rpc/eth#ethestimategas" >}}): generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-- [EthMaxPriorityFeePerGas]({{< relref "/developers/reference/json-rpc/eth#ethmaxpriorityfeepergas" >}}): returns a fee per gas that is an estimate of how much you can pay as a priority fee, or ’tip’, to get a transaction included in the current block.
+- [EthEstimateGas]({{< relref "/reference/json-rpc/eth#ethestimategas" >}}): generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+- [EthMaxPriorityFeePerGas]({{< relref "/reference/json-rpc/eth#ethmaxpriorityfeepergas" >}}): returns a fee per gas that is an estimate of how much you can pay as a priority fee, or ’tip’, to get a transaction included in the current block.
 
 To request the current max priority fee in the network you can send a request to a public Filecoin endpoint:
 
