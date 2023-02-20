@@ -88,3 +88,7 @@ Always check if there are upcoming proving deadlines before halting any services
     lotus-miner proving deadlines
 
 ## Lotus Worker(s)
+The Lotus Worker is the 3rd important component in the Lotus architecture. There can - and most likely will - be multiple workers in a single Storage Provider setup. Assigning designated roles to each worker in the setup allows for scaling out the setup in favor of higher throughput (see [Sealing Rate]({{<relref "sealing-rate">}})) and redundancy.
+
+As mentioned above, the proving tasks can be assigned to designated workers and worker can also get storage access.
+The remaining tasks for which workers are responsible, are those of the [Sealing Pipeline]({{<relref "sealing-pipeline">}})) which is discussed in the next section.
