@@ -73,9 +73,9 @@ footer_link = "https://protocol.ai"
 copyRight = ""
 
 # Alert
-alert = true
+alert = false
 alertDismissable = true
-alertText = "Want to help us test out the Filecoin Virtual Machine? <br>Check out the <a href='https://spacewarp.fvm.dev/'>FVM Space Warp Hackathon</a> starting January 20th!"
+alertText = ""
 
 # Edit Page
 repoHost = "GitHub"
