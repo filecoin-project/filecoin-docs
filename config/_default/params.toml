@@ -73,7 +73,7 @@ footer_link = "https://protocol.ai"
 copyRight = ""
 
 # Alert
-alert = true
+alert = false
 alertDismissable = true
 alertText = "Solidity developers, do you want to build on Filecoin using smart contracts?<br> <a href='/developers/smart-contracts/filecoin-virtual-machine/'>Check out the Filecoin Virtual Machine!</a>"
 
