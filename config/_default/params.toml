@@ -75,7 +75,7 @@ copyRight = ""
 # Alert
 alert = true
 alertDismissable = true
-alertText = "Want to help us test out the Filecoin Virtual Machine? <br>Check out the <a href='https://spacewarp.fvm.dev/'>FVM Space Warp Hackathon</a> starting January 20th!"
+alertText = "Solidity developers, do you want to build on Filecoin using smart contracts?<br> <a href='/developers/smart-contracts/filecoin-virtual-machine/'>Check out the Filecoin Virtual Machine!</a>"
 
 # Edit Page
 repoHost = "GitHub"
