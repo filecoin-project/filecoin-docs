@@ -1,10 +1,11 @@
 ---
 title: "Get test funds"
-description: "Test funds are available to developer so that they can test their smart contracts and applications within the confines of a test network."
+description: "Test funds are available to developers so they can test their smart contracts and applications within the confines of a test network."
 lead: "Test funds are available to developer so that they can test their smart contracts and applications within the confines of a test network. The process for getting test funds differs across test networks. This page covers how to get test funds from the Hyperspace testnet as well as from a local testnet."
 menu:
     developers:
         parent: "developers-how-tos"
+        identifier: "get-test-funds-sfh2o9fbaiubo4igeirbuyat"
 type: docs
 weight: 40
 draft: false
@@ -66,7 +67,7 @@ Before we begin, you must have a local testnet running. Follow the [Run a local 
     t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq  49999999.999763880085417692 FIL  2      X
     ```
 
-1. 1. Create the send request with `lotus send`, supplying the pre-mined `t3q4o...` address as the `--from` address, the new `t1snl...` address as the receiving address, and the amount of FIL we want to send:
+1. Create the send request with `lotus send`, supplying the pre-mined `t3q4o...` address as the `--from` address, the new `t1snl...` address as the receiving address, and the amount of FIL we want to send:
 
     ```shell
     ./lotus send --from <PRE-MINED ADDRESS> <TO ADDRESS> <VALUE>
@@ -98,4 +99,4 @@ Before we begin, you must have a local testnet running. Follow the [Run a local 
     2000 FIL
     ```
 
-If you have connected MetaMask to your local testnet, you should be able to see the new balance within the MetaMask extension.
+If you have [connected MetaMask to your local testnet]({{< relref "add-to-metamask" >}}), you should be able to see the new balance within the MetaMask extension.
