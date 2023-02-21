@@ -1,12 +1,12 @@
 ---
 title: "Exchange integration"
 description: "Use this guide to help you list Filecoin on your exchange platform."
+lead: "This page lists the general steps and workflows you need to follow to offer FIL on an exchange. This page is not a complete guide, and you will likely have to have some communication with the Lotus team at some point. However, the information laid out here should give you a solid understanding of the work involved and serve as a jumping-off point for your project."
 draft: false
 images: []
 type: docs
 menu:
   reference:
-    parent: "lorem"
     identifier: "exchange-integration-c540e1529a0a6d3304e0c9158502ccc3"
 weight: 100
 toc: true
@@ -14,17 +14,13 @@ aliases:
     - "/reference/exchanges/"
 ---
 
-## Filecoin Integration Guide
-
-This page lists the general steps and workflows you need to follow to offer FIL on an exchange. This page is not a complete guide, and you will likely have to have some communication with the Lotus team at some point. However, the information laid out here should give you a solid understanding of the work involved and serve as a jumping-off point for your project.
-
 ## Running a Filecoin node
 
 If you plan to offer FIL on your exchange, you will need to run a Filecoin node. [Lotus](https://lotus.filecoin.io) is the reference implementation node for the Filecoin network, and as such, is currently the most production-ready implementation available.
 
 ### Node setup and installation
 
-Follow the [Lotus installation guide](https://lotus.filecoin.io/docs/set-up/install/) to properly install the Lotus applications and launch node. The basic steps are:
+Follow the [Lotus installation guide](https://lotus.filecoin.io/lotus/install/prerequisites) to properly install the Lotus applications and launch node. The basic steps are:
 
 - Prepare your hardware by meeting the minimal requirements.
 - Install dependencies.
@@ -125,7 +121,7 @@ Some JavaScript libraries attempt to estimate the gas fees before sending the tr
 
 ## Integration
 
-You can interact with the network by using Lotus CLI or using the [JSON-RPC APIs](https://lotus.filecoin.io/docs/apis/json-rpc/). Follow the [API tokens guide](https://lotus.filecoin.io/docs/developers/api-access/) to set up API tokens on your node and grant necessary permissions. To find all CLI usage, run `lotus -h` in your lotus folder.
+You can interact with the network by using Lotus CLI or using the [JSON-RPC APIs](https://lotus.filecoin.io/reference/basics/overview/). Follow the [API tokens guide](https://lotus.filecoin.io/docs/developers/api-access/) to set up API tokens on your node and grant necessary permissions. To find all CLI usage, run `lotus -h` in your lotus folder.
 
 You can find some other API client libraries developed by the Filecoin community [within the API client libraries page](https://lotus.filecoin.io/docs/developers/api-access/#api-client-libraries).
 
@@ -133,7 +129,7 @@ You can find some other API client libraries developed by the Filecoin community
 
 Here are some Curl examples for connecting to a Lotus node using the JSON-RPC API:
 
-#### [ChainHead](https://lotus.filecoin.io/docs/apis/json-rpc#chainhead)
+#### [ChainHead](https://lotus.filecoin.io/reference/lotus/chain/#chainhead)
 
 ```shell
 curl -X POST  -H "Content-Type: application/json"  -H "Authorization: Bearer $(cat ~/.lotus/token)"  --data '{
@@ -146,7 +142,7 @@ curl -X POST  -H "Content-Type: application/json"  -H "Authorization: Bearer $(c
 }' http://127.0.0.1:1234/rpc/v0
 ```
 
-#### [ChainGetTipSetByHeight](https://lotus.filecoin.io/docs/apis/json-rpc#chaingettipsetbyheight)
+#### [ChainGetTipSetByHeight](https://lotus.filecoin.io/reference/lotus/chain/#chaingettipset)
 
 ```shell
 curl -X POST -H "Content-Type: application/json"
@@ -168,7 +164,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `bafy2bzacecxm6lhhzem3wshktatwzrcqbvc3k3jepzz7a6wqyc7w3fvav256i` is the block CID. This field is nullable.
 
-#### [ChainGetParentMessages](https://lotus.filecoin.io/docs/apis/json-rpc#chaingetparentmessages)
+#### [ChainGetParentMessages](https://lotus.filecoin.io/reference/lotus/chain/#chaingetparentmessages)
 
 ```shell
 curl -X POST -H "Content-Type: application/json"
@@ -187,7 +183,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `bafy2bzacedplsg3tqrv7e3v5rssvq3qwbd3c6g3en55zpqnyrymexhynz6ixu` is the block CID. You can pass in any one of the block CIDs included in the desired tipset.
 
-#### [WalletNew](https://lotus.filecoin.io/docs/apis/json-rpc#walletnew)
+#### [WalletNew](https://lotus.filecoin.io/reference/lotus/wallet/#walletnew)
 
 ```shell
 curl -X POST -H "Content-Type: application/json"
@@ -204,7 +200,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `1` for Secp2561K account and `2` for BLS account.
 
-#### [WalletBalance](https://lotus.filecoin.io/docs/apis/json-rpc#walletbalance)
+#### [WalletBalance](https://lotus.filecoin.io/reference/lotus/wallet/#walletbalance)
 
 ```shell
 curl -X POST -H "Content-Type: application/json"
@@ -221,7 +217,7 @@ curl -X POST -H "Content-Type: application/json"
 
 `f1d7x4euqwtlk2bqzhclr6gubkufezgddkqftsnky` is the account address.
 
-#### [MpoolPushMessage](https://lotus.filecoin.io/docs/apis/json-rpc#mpoolpushmessage)
+#### [MpoolPushMessage](https://lotus.filecoin.io/reference/lotus/mpool/#mpoolpushmessage)
 
 ```shell
 curl -X POST -H 'Content-Type: application/json'
@@ -255,21 +251,21 @@ curl -X POST -H 'Content-Type: application/json'
 
 ### How do I sign a message?
 
-Use [WalletSign](https://lotus.filecoin.io/docs/apis/json-rpc#walletsign) to sign the message and send the signed message using [MpoolPush](https://lotus.filecoin.io/docs/apis/json-rpc#mpoolpush).
+Use [WalletSign](https://lotus.filecoin.io/reference/lotus/wallet/#walletsign) to sign the message and send the signed message using [MpoolPush](https://lotus.filecoin.io/reference/lotus/mpool/#mpoolpush).
 
 You may also use this [Filecoin signing tool library](https://github.com/Zondax/filecoin-signing-tools), written by [Zondax](https://www.zondax.ch/).
 
 ### How do I retrieve the gas fees of a message?
 
-Call [StateReplay](https://lotus.filecoin.io/docs/apis/json-rpc#statereplay) and look up the `GasCost` in the response.
+Call [StateReplay](https://lotus.filecoin.io/reference/lotus/state/#statereplay) and look up the `GasCost` in the response.
 
 ### How to get the gas estimation of a message?
 
-You can estimate the gas cost of a message by calling [GasEstimateMessageGas](https://lotus.filecoin.io/docs/apis/json-rpc#gasestimatemessagegas). This API estimates the gas limit with a 25% overestimation based on the network condition under the given tipset key. You can change this value via the `GasLimitOverestimation` field.
+You can estimate the gas cost of a message by calling [GasEstimateMessageGas](https://lotus.filecoin.io/reference/lotus/gas/#gasestimatemessagegas). This API estimates the gas limit with a 25% overestimation based on the network condition under the given tipset key. You can change this value via the `GasLimitOverestimation` field.
 
 ### How do I ensure that all balances transfer in any messages are captured, including msig transfers?
 
-Call [StateCompute](https://lotus.filecoin.io/docs/apis/json-rpc#statecompute) or [StateReplay](https://lotus.filecoin.io/docs/apis/json-rpc#statereplay) and go through all the transactions in the execution trace. Whenever the value `!=0 && exit code == 0`, it indicates a balance transfer has occurred.
+Call [StateCompute](https://lotus.filecoin.io/reference/lotus/state/#statecompute) or [StateReplay](https://lotus.filecoin.io/reference/lotus/state/#statereplay) and go through all the transactions in the execution trace. Whenever the value `!=0 && exit code == 0`, it indicates a balance transfer has occurred.
 
 ### How can I check if my transaction is stuck?
 

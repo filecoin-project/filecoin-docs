@@ -2,7 +2,7 @@
 title: "Blockchain integration"
 description: ""
 lead: ""
-draft: false
+draft: true
 images: []
 type: docs
 weight: 40
