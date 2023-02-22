@@ -17,7 +17,8 @@ aliases:
 
 ## Hyperspace testnet
 
-Before we begin, you must have an address on the Hyperspace testnet. Follow the [Add to MetaMask guide]({{< relref "add-to-metamask" >}}) if you don't have one yet.
+MetaMask is one of the easier ways to manage addresses on the Hyperspace testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "add-to-metamask" >}}) if you havn't set up an address in your MetaMask wallet yet.
+w
 
 1. In your browser, open MetaMask and copy your address to your clipboard:
 
@@ -99,4 +100,4 @@ Before we begin, you must have a local testnet running. Follow the [Run a local 
     2000 FIL
     ```
 
-If you have [connected MetaMask to your local testnet]({{< relref "add-to-metamask" >}}), you should be able to see the new balance within the MetaMask extension.
+If you want to manage your local testnet tokens in MetaMask you will need to create a `t4` address. You can create a `t4` address using `lotus wallet new deleated`. Once you have a `t4` address you can [connect MetaMask to your local testnet]({{< relref "add-to-metamask" >}}) to see the new balance within the MetaMask extension.
