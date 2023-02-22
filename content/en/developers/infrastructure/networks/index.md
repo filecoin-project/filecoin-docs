@@ -17,8 +17,6 @@ aliases:
     - "/networks/overview/"
 ---
 
-{{< beta-warning >}}
-
 ## Available networks
 
 There are several networks available for Filecoin:
@@ -138,20 +136,18 @@ Calibration network is the most realistic simulation of the Filecoin mainnet:
 
 The Hyperspace testnet is a pre-production developer focused testnet. This network is designed for developers to build and test their toolings, applications, smart contracts, and actors on a public network. Developers should consider the Hyperspace testnet stable as it will only be reset under catastrophic circumstances.
 
-- Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
+Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
 
-**Maintainer**: Factor 8
+**Maintainer:** [@f8-fil-ops](https://github.com/f8-fil-ops)
 
-More information on Hyperspace can be found [here](https://github.com/filecoin-project/testnet-hyperspace).
+#### Genesis
 
-**Genesis**:
+- CAR File: `Qmbu9g75GMjbokCNHPQPXAyKZoY8NqVYtkY4PQT7Zvp2T6`
+- Reset Timestamp: `2023-01-16T6:00:00Z`
+- Genesis Block CID: `bafy2bzacebqfpeylmrl4h3pq4ofbdj2bfbw2i45fuy6qm4wxcyebpsxhrpqhu`
+- sha1 Digest: `52d82b6fcad138a726477152ff2543a91f2b83f8`
 
-- CAR File: `QmPe6sDt3btoN6TtpFJVrMjjsiFxojMkcVkm36khJ37JB6`
-- Reset Timestamp: `2022-11-17T12:19:22Z`
-- Genesis Block CID: `bafy2bzacebn3zgajhzrkelgihbt6sbveglecq4d3ezqfa652zok6c3a5enkzs`
-- sha1 Digest: `ee5fc220ea9d8e79eb47d03b1236e85d3f21dfdb`
-
-**Network parameters**:
+#### Network parameters
 
 - Supported Sector Sizes: `512 MiB` and `32 GiB` and `64 GiB`
 - Consensus Miner Min Power: `16 GiB`
@@ -162,22 +158,73 @@ More information on Hyperspace can be found [here](https://github.com/filecoin-p
 - WindowPoSt Period Deadlines: `48`
 - Pre-Commit Challenge Delay: `10`
 
-**Bootstrap peers**:
+#### Bootstrap peers
 
 ```plaintext
-/dns4/de0.bootstrap.hyperspace.network/tcp/1337/p2p/12D3KooWHAvUVk5XuxSwi2dNLWbTDDRSGeHxMuWdQ3SQpRuNHbLz
-/dns4/de1.bootstrap.hyperspace.network/tcp/1337/p2p/12D3KooWBRqtxhJCtiLmCwKgAQozJtdGinEDdJGoS5oHw7vCjMGc
-/dns4/ca0.bootstrap.hyperspace.network/tcp/1337/p2p/12D3KooWCApBpUk7EX9pmEfyky1gKC6N2KJ74S1AwFfvnkDqw3pK
-/dns4/sg0.bootstrap.hyperspace.network/tcp/1337/p2p/12D3KooWLnYqr4hRoNHBJQVXsFGkDoKuoVfw5R2ASw1bHzrWU5Px
+/dns4/de0.bootstrap.hyperspace.yoga/tcp/31000/p2p/12D3KooWRiwg6EHAJMR5w3DZTgpS5W4ncWPSVP2Mr1o4ey1RYSQo
+/dns4/de1.bootstrap.hyperspace.yoga/tcp/31000/p2p/12D3KooWM9HZsp1bh5jNu2m9FBSbkKSeSWUPPuDBQiiMfPDBAK3U
+/dns4/au0.bootstrap.hyperspace.yoga/tcp/31000/p2p/12D3KooWLup1gTdG9ipt3bSUyPCmM4CT86p9nNe12oqrCX8Zo8Na
+/dns4/ca0.bootstrap.hyperspace.yoga/tcp/31000/p2p/12D3KooWNJ4evKioh6gexD4fyvyeFecNtp2oTEPTyp3jtSQ3pWaP
+/dns4/sg0.bootstrap.hyperspace.yoga/tcp/31000/p2p/12D3KooWCENec46HHByaJKzbjSqz9TqVdSxSAdi9FKNwdMvfw3vp
 ```
 
-**Resources**:
+#### Snapshots
 
-- [Faucet](https://hyperspace.filtest.network/#faucet)
-- [Slack Channel for Updates/questions: #fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C01AC6999KQ)
-- [Slack Channel for Questions: #fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY)
-- [Block explorer - Filfox](https://hyperspace.filfox.info/en)
-- [Block explorer - Glif](https://explorer.glif.io/?network=hyperspace)
+- [Latest chain snapshot (pruned)](https://snapshots.hyperspace.yoga/hyperspace-latest-pruned.car)
+- [Latest chain snapshot (full)](https://snapshots.hyperspace.yoga/hyperspace-latest-full.car)
+
+#### FVM release
+
+- [FVM M2.1 Carbonado.2 (rr11)](https://github.com/filecoin-project/ref-fvm/issues/1371)
+- Lotus commit: [2a3989e4bd446b7f6ccee52ad6387b937072cf7f](https://github.com/filecoin-project/lotus/commit/2a3989e4bd446b7f6ccee52ad6387b937072cf7f)
+- [List of FVM releases](https://github.com/filecoin-project/ref-fvm/issues/692)
+
+#### Faucets
+
+- [Beryx by Zondax](https://beryx.zondax.ch/faucet)
+- [Hyperspace.yoga](https://hyperspace.yoga/#faucet)
+
+    - The faucet currently emits 5 tFIL per request with a max of 5 requests / wallet (to prevent draining attacks). If you are setting up a storage provider you may need more tFIL than this. Reach out to on [#fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY) for assistance.
+
+
+#### Block Explorers
+
+- [Beryx](https://beryx.zondax.ch)
+- [Filfox](https://hyperspace.filfox.info/en)
+- [Filscan](https://hyperspace.filscan.io/)
+- [Glif Explorer](https://explorer.glif.io/?network=hyperspace)
+- [Starboard](https://fvm.starboard.ventures/)
+
+#### Public RPC Endpoints
+
+These endpoints are limited to all read-only Filecoin JSON RPC API calls and `MPoolPush` for sending preemptively signed messages.
+
+##### [Glif](https://glif.io)
+
+- HTTPS: `https://api.hyperspace.node.glif.io/rpc/v1`
+- WebSockets: `wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1`
+- Lotus lite-node command: `FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite`
+
+##### [ChainStack](https://chainstack.com/labs/#filecoin)
+
+- HTTPS: `https://filecoin-hyperspace.chainstacklabs.com/rpc/v0`
+- WebSockets: `wss://ws-filecoin-hyperspace.chainstacklabs.com/rpc/v0`
+
+##### [Ankr](https://ankr.com)
+
+- HTTPS: `https://rpc.ankr.com/filecoin_testnet`
+- [Ankr documentation](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
+
+#### Resources
+
+- [Chain index](https://beryx.zondax.ch/)
+- [CID Checker](https://hyperspace.filecoin.tools/)
+- [Data cap request form](https://hyperspace.yoga/#notary)
+- [Hyperspace specific docs](https://kb.factor8.io/en/docs/filecoin/testnets/hyperspace)
+- [Network status](https://status.filecoin.io/)
+- [Reputation systems](https://hyperspace.filrep.io)
+- Slack Channel for Updates: [#fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY)
+- [Storage providers auto-accepting storage deals and simulating faults](https://kb.factor8.io/en/docs/filecoin/testnets/hyperspace/support-miners)
 
 ## Deprecated networks
 
