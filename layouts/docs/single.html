@@ -31,7 +31,7 @@
                 <p class="lead">{{ .Params.description }}</p>
             {{ end -}}
 			{{ if ne .Params.toc false -}}
-			<nav class="d-xl-none" aria-label="Quaternary navigation">
+			<nav class="d-xl-none" aria-label="Quaternary navigation" style="padding-bottom: 15px;">
 				{{ partial "sidebar/docs-toc.html" . }}
 			</nav>
 			{{ end -}}
