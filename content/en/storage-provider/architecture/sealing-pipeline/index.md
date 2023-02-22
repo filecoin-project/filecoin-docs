@@ -30,7 +30,7 @@ The AddPiece process takes the Piece and prepares it into the sealing scratch sp
 AddPiece is not a very intensive process and only uses some CPU cores. It is typically colocated on a server with other processes of the sealing pipeline. Most logically it runs on the PC1-server, as PC1 is the next process to run.
 
 ## PreCommit 1 (PC1)
-With PreCommit 1 (PC1) we arrived at the most intensive process of the entire sealing pipeline. PC1 is the step in which a sector (regardless if it contains data or not) is cryptographically secured. The worker process loads cryptographic parameters from a cache location (which should be stored on enterprise NVMe). These parameters are then used to run PoRep SDR encoding against the sector that was put into the sealing scratch space. This task is very CPU intense and requires a CPU with SHA256 extensions. Typically this requires a AMD Epyc Milan/Rome or Intel Xeon Ice Lake of 32 cores or more.
+With PreCommit 1 (PC1) we arrived at the most intensive process of the entire sealing pipeline. PC1 is the step in which a sector (regardless if it contains data or not) is cryptographically secured. The worker process loads cryptographic parameters from a cache location (which should be stored on enterprise NVMe). These parameters are then used to run PoRep SDR encoding against the sector that was put into the sealing scratch space. This task is single threaded and very CPU intense and requires a CPU with SHA256 extensions. Typically this requires a AMD Epyc Milan/Rome or Intel Xeon Ice Lake of 32 cores or more.
 
 The task will create 11 layers of the sector, using the scratch space. It is mandatory to have this scratch space on enterprise NVMe. This means every sector consumes 1+11 times its size on the scratch volume. This means for a 32GiB sector it takes 384GiB on the scratch volume, for a 64GiB sector that means 768GiB.
 
@@ -38,7 +38,7 @@ Additionaly the PC1 task requires 64GiB of memory per sector it seals.
 
 In order to seal at a decent rate it, and to make use of all the sealing capacity in a PC1-server, you will run multiple PC1 workers in parallel on a system. More about this in the chapter on [Sealing Rate]({{<relref "sealing-rate">}}). Sealing multiple sectors multiplies the requirements on CPU cores, RAM and scratch space by the amount of sectors done in parellel.
 
-Even on enterprise hardware the process of sealing one 32GiB sector takes around 5 hours.
+Even on enterprise hardware the process of sealing one 32GiB sector takes around 3 hours.
 
 ## PreCommit 2 (PC2)
 When PC1 has completed on a given sector, the entire scratch space for that sector (384GiB or 768GiB depending on the sector size) is moved over to the PC2 task. This task is typically executed on a different server than the PC1-server because it behaves differently. 

@@ -30,27 +30,29 @@ When building your infrastructure there will always be a bottleneck. It is the a
 
 > Assuming you obtain maximum hardware utilization from your PC1 server of 15 sectors in parallel. That would mean:
 
-> 15 sectors x 32GiB / 5 hours PC1 runtime x 24 hours = 2.25TiB /day
+> 15 sectors x 32GiB / 3 hours PC1 runtime x 24 hours / 1024 = 3.75TiB /day
 
 ### Parallel sectors
-A first way of increasing your sealing capacity on the hardware you have is by adding additional workers. You can run multiple instances of PC1 on a single server, or multiple instances of PC2. It just takes another `lotus-worker`process to run on the server with the correct tasks assigned.
+A way of increasing your sealing capacity on the hardware you have is by adding additional workers to the same system. You can run multiple instances of PC1 on a single server, or multiple instances of PC2. It just takes another `lotus-worker`process to run on the server with the correct tasks assigned.
 
 Do keep the limits of your systems in mind when doing so. Every PC1 worker takes 64GiB of memory (GiB, not GB!) so a system with 1TiB of memory will theoretically go to 16 parallel PC1-workers. In practice you will likely cap this at 15 because of the difference in GiB and GB, and because of the memory required for the operating system.
-Other limiting factors are the CPU and the available sealing scratch space.
+Other limiting factors are the CPU cores and the available sealing scratch space.
 
 ### Grouping similar tasks
-AP + PC1
+The process `lotus-worker` can run all the various tasks of the sealing pipeline. It comes down to configuration to tell which tasks a given worker should do. Because some tasks are similar in behavior and others are insignificant in resource consumption, it makes sense to group some tasks together on the same worker.
+
+A common grouping is AP + PC1 on a worker. The AddPiece essentially prepares the data for the PC1 task.
+If you have dedicated hardware for PC2, your sealing scratch content will move to that other server. If you would be grouping PC1 and PC2 on the same server, you don't have the sealing scratch copied but you will need a larger NVMe volume because the sectors will sit there longer. Eventually you would run out of sealing scratch space and not be able to start sealing additional sectors.
+
+The fact that PC1 is CPU-bound and PC2 is GPU-bound is another good reason to separate those tasks out on their dedicated hardware, if you are planning for a certain scale. Because C2 is again GPU-bound is makes sense to have PC2, C1 and C2 colocated on the same worker.
 PC 2 + C1 + C2
 
-Another rule of thumb is to have 2 PC2 workers per PC1 worker in your setup.
-<!-- Check with Angelo why, if PC1 is at 2.25TiB/day then following that formula, 1 PC2 would be:
-15 sectors x 32GiB / 0.3 hours PC2 runtime x 24 hours = 37.5 TiB/day
--->
+<!-- the below might need some further research & rewording -->
+Another rule of thumb is to have 2 PC2 workers per PC1 worker in your setup. After PC2 there is a WaitSeed phase which locks the scratch space for a sector ntil we continue through C1 and C2. In order to be able to keep on sealing sectors in PC1, you need enough capacity on PC2.
+<!--  -->
 
 ### Scaling out
-Scaling the Storage Provider setup would mean adding additional storage and expanding the sealing capacity.
+Scaling the Storage Provider setup would mean adding additional storage and expanding the sealing capacity. In essence your sealing capacity scales linearly with the hardware you add to it. If your current setup allows for a sealing rate of 3 TiB/day, doubling the workers would bring you to 6 TiB/day.
 
----
-
-The introduction of a completely new concept, [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}}), changes a lot of the requirements for Storage Providers.
+The introduction of a completely new concept, [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}}), changes a lot of the requirements for Storage Providers though.
 
