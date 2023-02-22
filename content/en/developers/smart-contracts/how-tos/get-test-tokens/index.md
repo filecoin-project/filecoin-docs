@@ -1,11 +1,11 @@
 ---
-title: "Get test funds"
+title: "Get test tokens"
 description: "Test funds are available to developers so they can test their smart contracts and applications within the confines of a test network."
 lead: "Test funds are available to developer so that they can test their smart contracts and applications within the confines of a test network. The process for getting test funds differs across test networks. This page covers how to get test funds from the Hyperspace testnet as well as from a local testnet."
 menu:
     developers:
         parent: "developers-how-tos"
-        identifier: "get-test-funds-sfh2o9fbaiubo4igeirbuyat"
+        identifier: "get-test-tokens-sfh2o9fbaiubo4igeirbuyat"
 type: docs
 weight: 40
 draft: false
