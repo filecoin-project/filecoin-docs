@@ -15,7 +15,6 @@ weight: 130
 toc: true
 ---
 
-{{< beta-warning >}}
 The previous section explained the various tasks involved in the sealing pipeline. For a Storage Provider to fill up your available capacity with sealed sectors, the rate at which you can seal is measured in TiB/day or PiB/day. This rate is referred to as the Sealing Rate, or Sealing Capacity.
 
 ## Cost vs. capacity
