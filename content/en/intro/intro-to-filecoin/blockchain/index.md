@@ -57,9 +57,9 @@ Nodes in the Filecoin network are primarily identified in terms of the services 
 
 Filecoin is targeting multiple protocol implementations to guarantee the security and resilience of the Filecoin network. Currently, the actively maintained implementations are:
 
-- Lotus [lotus.filecoin.io/](https://lotus.filecoin.io/)
-- Venus [github.com/filecoin-project/venus](https://github.com/filecoin-project/venus)
-- Forest [github.com/ChainSafe/forest](https://github.com/ChainSafe/forest)
+- [Lotus](https://lotus.filecoin.io/)
+- [Venus](https://github.com/filecoin-project/venus)
+- [Forest](https://github.com/ChainSafe/forest)
 
 ## Addresses
 
