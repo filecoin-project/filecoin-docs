@@ -48,9 +48,9 @@ Clients are required to have an on-chain Filecoin address where DataCap can be r
 
 _Note: As of network version 12, DataCap allocations are a single-use credit on a Filecoin address. If you receive an allocation and require more, you should make a new request with a unique address that you have initialized like above. [FIP-0012](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0012.md) was accepted and implemented in network version 13(actor v5), which allows client addresses to receive DataCap multiple times._
 
-Clients get DataCap by making a request to a notary. For your first DataCap allocation of 32GiB, you can use an auto-verifier such as https://verify.glif.io/. Auto-verifiers exist to grant DataCap immediately to clients that can authenticate themselves via a specific method. For example, the verify.glif.io automatic notary grants DataCap to clients who have a GitHub account that is > 180 days old and has not been used at this site in the past 30 days.
+Clients get DataCap by making a request to a notary. For your first DataCap allocation of 32GiB, you can use an auto-verifier such as [Verifier](https://verify.glif.io/). Auto-verifiers exist to grant DataCap immediately to clients that can authenticate themselves via a specific method. For example, the verify.glif.io automatic notary grants DataCap to clients who have a GitHub account that is > 180 days old and has not been used at this site in the past 30 days.
 
-1. Head over to https://verify.glif.io/
+1. Head over to [Verifier](https://verify.glif.io/)
 2. Connect your GitHub account - click the **Start** button on the top right of the page
 3. Sign in to GitHub if you have not already
 4. Paste in the address to which you'd like to receive DataCap in the box under "Request" and hit **Request**

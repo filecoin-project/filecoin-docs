@@ -45,10 +45,10 @@ There are several web-based applications for token wrapping. Here is an overview
 
 ## Wrapping solutions comparison table
 
-| **Name** | **Project** | **Infrastructure** | **Custodian** | **Main Blockchain**              | **Link**                            |
-|----------|-------------|--------------------|---------------|----------------------------------|-------------------------------------|
-| wFIL     | WRAPPED     | Centralized        | Anchorage     | Ethereum                         | https://www\.wrapped\.com/          |
-| BFIL     | Binance     | Centralized        | Binance       | Ethereum via Binance Token Canal | https://www\.binance\.com/          |
-| vFIL     | Venus       | Decentralized      | Decentralized | Binance Smart Chain              | https://www\.venus\.io/             |
-| eFIL     | Gemini      | Decentralized      | Gemini        | Ethereum                         | https://www\.gemini\.com/           |
-| HFIL     | Huobi       | Decentralized      | Huobi         | Ethereum                         | https://www\.huobi\.com             |
+| **Name** | **Project** | **Infrastructure** | **Custodian** | **Main Blockchain**              |
+|----------|-------------|--------------------|---------------|----------------------------------|
+| wFIL     | [WRAPPED](https://www.wrapped.com/)     | Centralized        | Anchorage     | Ethereum                         |
+| BFIL     | [Binance](https://www.binance.com/)     | Centralized        | Binance       | Ethereum via Binance Token Canal |
+| vFIL     | [Venus](https://www.venus.io/)          | Decentralized      | Decentralized | Binance Smart Chain              |
+| eFIL     | [Gemini](https://www.gemini.com/)       | Decentralized      | Gemini        | Ethereum                         |
+| HFIL     | [Huobi](https://www.huobi.com/)         | Decentralized      | Huobi         | Ethereum                         |
