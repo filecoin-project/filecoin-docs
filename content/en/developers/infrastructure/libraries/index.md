@@ -22,7 +22,11 @@ Zondax provides the [Filecoin Solidity npm package](#filecoin-solidity) and the 
 
 ### Filecoin Solidity
 
-The _Filecoin Solidity_ npm package provides a set of Solidity libraries that allows Solidity smart contracts to seamlessly call Filecoin built-in actors methods, and perform cross-platform calls to the real Filecoin built-in actors. Additionally, a set of mock libraries that respond to specific scenarios is available. The scenarios are based on the received parameters instead of real calls. For further, information, see the [official npm page](https://www.npmjs.com/package/@zondax/filecoin-solidity) and the [GitHub repository](https://github.com/Zondax/filecoin-solidity).
+{{< alert >}}
+The Filecoin Solidity project is [currently in beta](https://docs.zondax.ch/fevm/filecoin-solidity#disclaimer-%EF%B8%8F%EF%B8%8F).
+{{< /alert >}}
+
+The _Filecoin Solidity_ npm package provides a set of Solidity libraries that allows Solidity smart contracts to seamlessly call Filecoin built-in actors methods, and perform cross-platform calls to the real Filecoin built-in actors. Additionally, a set of mock libraries that respond to specific scenarios is available. The scenarios are based on the received parameters instead of real calls. For further information, including information on how to use the package, see the [official documentation](https://docs.zondax.ch/fevm/filecoin-solidity/).
 
 #### FEVM Precompiles
 
