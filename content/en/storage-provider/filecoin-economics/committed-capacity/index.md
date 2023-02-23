@@ -22,3 +22,5 @@ Because the Filecoin network needs consistency, a Storage Provider is required t
 
 ## What's next?
 Committed Capacity is the easiest way to get started as a Storage Provider but the economics of such a business are very dependent on the price of FIL. When FIL is priced low it is not profitable to only provide Committed Capacity. This is where [Filecoin Plus]({{<relref "verified-deals" >}}) comes in along with [extra services you can charge for]({{<relref "auxiliary-services" >}}) as a Storage Provider.
+
+I edited this for review.
