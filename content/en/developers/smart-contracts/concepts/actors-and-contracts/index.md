@@ -25,8 +25,50 @@ aliases:
 
 For those familiar with the Ethereum virtual machine (EVM), actors work similarly to smart contracts. There are two types of actors:
 
-- Built-in actors: code that the Filecoin network team has written deployed directly into the Filecoin network. An example of a built-in actor is the multi-sig actor, a system that requires multiple private keys to perform some action.
-- User actors: code that any developer can write and deploy to the Filecoin network using the FVM.
+- _Built-in actors_: code that the Filecoin network team has written deployed directly into the Filecoin network. An example of a built-in actor is the multi-sig actor, a system that requires multiple private keys to perform some action.
+
+## Filecoin flow
+
+SP provider actor takes in proof of storage
+notifies power actor, which accounts for it, gets storage power to SP
+During consensus, reward actor uses power actor state to reward blocks to providers in proportion to power
+
+## On chain storage market flow
+
+clients provide deals
+deals add to SP sector
+clients send filecoin to market to SP actor
+FIL + actor sends DataCap, which allows 10x value on special data
+
+## FVM and actors
+
+Users can create and deploy new actors without FIPS and network upgrades using solidity or wasm, without needing to worry a ton about security or protocol details
+
+
+## Types 
+
+Users can make these types on demand. 11 different types of actors
+
+- Storage provider: ?
+- Account: hold funds
+- Multisig: hold hunds with many keys 
+- Payment Channel: ?
+
+System actor singletons, for storage
+
+- f05 Storage market
+- f04 Storage power, tracks stored bytes of every provider on network
+- f06 FIL+ actor, deals with sending data cap, providing providers with more power
+- f02 Reward, schedule for releasing Fil as part of block reward
+- f099 account actor
+
+Internals, important
+
+- f03 cron
+- f01 init
+- f00 system
+
+- _User actors_: code that any developer can write and deploy to the Filecoin network using the FVM, otherwise known as a [smart contract](#smart-contracts).
 
 Unless otherwise specified, the term actor refers to a user actor.
 
