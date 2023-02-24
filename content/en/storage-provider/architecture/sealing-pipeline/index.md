@@ -43,7 +43,8 @@ Even on enterprise hardware the process of sealing one 32GiB sector takes around
 ## PreCommit 2 (PC2)
 When PC1 has completed on a given sector, the entire scratch space for that sector (384GiB or 768GiB depending on the sector size) is moved over to the PC2 task. This task is typically executed on a different server than the PC1-server because it behaves differently. 
 
-The PC2 task generates a Merkle Tree using the Poseidon hashing algorithm. Where PC1 is very CPU-bound, PC2 is executed on GPU. This task is also notably shorter than PC1. PC2 typically runs for 10-20 minutes on a capable GPU. This requires a GPU of 24+GB memory and 8000+ CUDA cores / shading units (in case of NVIDIA). Slower GPU's are possible but might create a bottleneck in the sealing pipeline.
+The PC2 task uses the Poseidon hashing algorithm over the Merkle Tree DAG that was created in PC1. In short: PC2 validates PC1. 
+Where PC1 is very CPU-bound, PC2 is executed on GPU. This task is also notably shorter than PC1. PC2 typically runs for 10-20 minutes on a capable GPU. This requires a GPU of 24+GB memory and 8000+ CUDA cores / shading units (in case of NVIDIA). Slower GPU's are possible but might create a bottleneck in the sealing pipeline.
 
 In case of a [Snap Deal]({{<relref "snap-deals">}}) an existing CC sector is filled with data. The PC1-task does not run again but the snapping process employs the PC2 task to add the data to the sector.
 
