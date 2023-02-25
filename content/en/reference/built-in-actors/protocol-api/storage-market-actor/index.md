@@ -6,8 +6,8 @@ draft: false
 images: []
 type: docs
 menu:
-  reference:
-    identifier: "storage-market-actor-233818ff2e5c84c63e3f876be7ce3ac4"
+  protocol-api:
+    identifier: "storage-market-actor-3c42ffc76e6b58883843a7fec323c1ee"
 weight: 100
 toc: true
 ---

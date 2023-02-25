@@ -1,5 +1,5 @@
 ---
-title: "Built-in actors"
+title: "Solidity API"
 description: ""
 lead: ""
 draft: false
