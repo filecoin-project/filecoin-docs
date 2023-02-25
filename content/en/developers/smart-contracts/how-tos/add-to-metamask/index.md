@@ -11,6 +11,7 @@ draft: false
 images: []
 aliases:
     - "/fvm/how-tos/add-to-metamask/"
+    - "/developers/smart-contracts/how-tos/add-to-metamask/"
 ---
 
 {{< beta-warning >}}
@@ -97,4 +98,4 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
 
 ## Next steps
 
-You can now add funds to this wallet by using the [Hyperspace testnet faucet]({{< relref "use-a-faucet" >}}).
+You can now add funds to this wallet by using the [Hyperspace testnet faucet]({{< relref "get-test-tokens" >}}).

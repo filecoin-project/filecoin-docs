@@ -25,14 +25,14 @@ Test networks, or testnets, are version of the Filecoin network that attempt to 
 
 [Calibration](https://docs.filecoin.io/networks/overview/available-networks/%23calibration) testnet is the most realistic simulation of the mainnet, where prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters, and prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage/retrieval functionality. It also has the same sector size as the mainnet.
 
-- Public endpoint: [https://api.calibration.node.glif.i](https://api.calibration.node.glif.io/rpc/v0)[o/rpc/v0](https://api.calibration.node.glif.io/rpc/v0)
-- Blockchain explorer: [https://calibration.filscan.io/](https://calibration.filscan.io/)
-- Faucet: [https://faucet.calibration.fildev.network/](https://faucet.calibration.fildev.network/)
+- [Public endpoint](https://api.calibration.node.glif.io/rpc/v0)
+- [Blockchain explorer](https://calibration.filscan.io/)
+- [Faucet](https://faucet.calibration.fildev.network/)
 
 ### Hyperspace
 
 [Hyperspace](https://github.com/filecoin-project/testnet-hyperspace) testnet is the main pre-production developer testnet which is more stable and reliable. The Hyperspace testnet is a pre-production developer-focused testnet. It resets only in the event of irrecoverable damage. Developers are welcome to build and test their toolings, applications, and smart contracts on this network.
 
-- Public endpoint: [https://api.hyperspace.node.glif.io/rpc/v0](https://api.hyperspace.node.glif.io/rpc/v0)
-- Blockchain explorer: [https://explorer.glif.io/?network=hyperspace](https://explorer.glif.io/?network%3Dhyperspace)
-- Faucet: [https://hyperspace.filtest.network/#faucet](https://hyperspace.filtest.network/%23faucet)
+- [Public endpoint](https://api.hyperspace.node.glif.io/rpc/v0)
+- [Blockchain explorer](https://explorer.glif.io/?network%3Dhyperspace)
+- [Faucet](https://hyperspace.filtest.network/%23faucet)
