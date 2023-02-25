@@ -75,7 +75,7 @@ copyRight = ""
 # Alert
 alert = false
 alertDismissable = true
-alertText = ""
+alertText = "Solidity developers, do you want to build on Filecoin using smart contracts?<br> <a href='/developers/smart-contracts/filecoin-virtual-machine/'>Check out the Filecoin Virtual Machine!</a>"
 
 # Edit Page
 repoHost = "GitHub"

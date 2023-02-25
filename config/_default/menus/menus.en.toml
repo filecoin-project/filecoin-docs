@@ -31,14 +31,14 @@
       parent = "main-developers"
 
     [[main]]
-      name = "Infrastructure"
-      url = "/developers/infrastructure/block-explorers"
+      name = "Smart contracts"
+      url = "/developers/smart-contracts/filecoin-virtual-machine"
       weight = 20
       parent = "main-developers"
 
     [[main]]
-      name = "Smart contracts"
-      url = "/developers/smart-contracts/filecoin-virtual-machine"
+      name = "Infrastructure"
+      url = "/developers/infrastructure/block-explorers"
       weight = 30
       parent = "main-developers"
 
@@ -48,15 +48,9 @@
       weight = 40
       parent = "main-developers"
 
-    [[main]]
-      name = "JSON-RPC"
-      url = "/developers/reference/json-rpc/introduction"
-      weight = 50
-      parent = "main-developers"
-
 [[main]]
   name = "Reference"
-  url = "/reference/reference/overview/"
+  url = "/reference/general/overview/"
   weight = 90
 
 
