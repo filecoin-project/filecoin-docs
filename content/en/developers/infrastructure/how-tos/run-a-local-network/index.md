@@ -560,7 +560,7 @@ You'll eventually want to stop your local devnet from running or may need to res
 
 ## Next steps
 
-To summarize, you've started a local devnet, funded a new address, and exported that address to a file! You've got all the pieces ready to start developing applications on Filecoin! Next up, [try adding this local testnet to MetaMask]({{< relref "add-to-metamask" >}}), or even connecting it to [the Hardhat development framework]({{< relref "hardhat" >}}).
+To summarize, you've started a local devnet, funded a new address, and exported that address to a file! You've got all the pieces ready to start developing applications on Filecoin! Next up, [try adding this local testnet to MetaMask]({{< relref "add-to-metamask" >}}), or even connecting it to the Hardhat development framework.
 
 ---
 

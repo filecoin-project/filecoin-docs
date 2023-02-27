@@ -19,34 +19,46 @@
   weight = 70
 
 [[main]]
-  name = "Developers"
+  name = "Smart contracts"
   url = "/developers/introduction/filecoin-and-ipfs"
   weight = 80
-  identifier = "main-developers"
+  identifier= "main-smart-contracts"
 
     [[main]]
-      name = "Introduction"
-      url = "/developers/introduction/overview"
+      name = "Fundamentals"
+      url = "/smart-contracts/fundamentals"
       weight = 10
-      parent = "main-developers"
+      parent = "main-smart-contracts"
 
     [[main]]
-      name = "Smart contracts"
-      url = "/developers/smart-contracts/filecoin-virtual-machine"
+      name = "Filecoin EVM runtime"
+      url = "/smart-contracts/filecoin-evm-runtime"
       weight = 20
-      parent = "main-developers"
+      parent = "main-smart-contracts"
 
     [[main]]
-      name = "Infrastructure"
-      url = "/developers/infrastructure/block-explorers"
+      name = "Ethereum wallet"
+      url = "/smart-contracts/ethereum-wallet"
       weight = 30
-      parent = "main-developers"
+      parent = "main-smart-contracts"
 
     [[main]]
-      name = "Storage helpers"
-      url = "/developers/storage-helpers/overview"
+      name = "Developing contracts"
+      url = "/smart-contracts/developing-contracts"
       weight = 40
-      parent = "main-developers"
+      parent = "main-smart-contracts"
+    
+    [[main]]
+      name = "Testing contracts"
+      url = "/smart-contracts/testing-contracts"
+      weight = 50
+      parent = "main-smart-contracts"
+
+    [[main]]
+      name = "Debugging contracts"
+      url = "/smart-contracts/debugging-contracts"
+      weight = 60
+      parent = "main-smart-contracts"
 
 [[main]]
   name = "Reference"
