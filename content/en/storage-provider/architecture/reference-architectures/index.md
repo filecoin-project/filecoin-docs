@@ -20,6 +20,9 @@ aliases:
 ---
 
 {{< beta-warning >}}
+## 1 PiB raw architecture
+![1 PiB raw reference architecture](1PIB.png)
+
 ## Community suggestions
 
 Hardware requirements and architecture suggestions constantly evolve based on market demands and available hardware. Because of this, we aren't listing any recommendations or examples on this page. Instead, look at the [Example Miner Hardware Profiles](https://github.com/filecoin-project/lotus/discussions/6071) in the Lotus project GitHub discussions.
