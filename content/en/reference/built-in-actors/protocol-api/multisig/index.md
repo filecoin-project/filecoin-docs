@@ -6,8 +6,8 @@ draft: false
 images: []
 type: docs
 menu:
-  reference:
-    identifier: "multisig-eb85a6dcc9e6f2eb10ebe541c924e402"
+  protocol-api:
+    identifier: "multisig-b12a846cdeef0962cb2049ee4cb51e5e"
 weight: 100
 toc: true
 ---

@@ -6,8 +6,8 @@ draft: false
 images: []
 type: docs
 menu:
-  reference:
-    identifier: "account-actor-54f808d644bb57c02f7c0abb9dbfc313"
+  protocol-api::
+    identifier: "account-actor-bb54b1c95a7f4b028fd63bf30c74c8d0"
 weight: 100
 toc: true
 ---

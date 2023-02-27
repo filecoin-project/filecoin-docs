@@ -6,8 +6,8 @@ draft: false
 images: []
 type: docs
 menu:
-  reference:
-    identifier: "miner-b1aca08cd6fe01000479268b71b7830a"
+  protocol-api:
+    identifier: "miner-8d170e60bc161f40ca28ab903ba80077"
 weight: 100
 toc: true
 ---

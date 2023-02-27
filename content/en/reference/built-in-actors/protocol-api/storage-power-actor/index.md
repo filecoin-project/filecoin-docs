@@ -6,8 +6,8 @@ draft: false
 images: []
 type: docs
 menu:
-  reference:
-    identifier: "storage-power-actor-b006f43ea0860f69385c7b40dc461d99"
+  protocol-api:
+    identifier: "storage-power-actor-6801cdf9c46744a5d606903b8e9bf003"
 weight: 100
 toc: true
 ---

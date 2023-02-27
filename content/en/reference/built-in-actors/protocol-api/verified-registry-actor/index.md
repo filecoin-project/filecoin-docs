@@ -6,8 +6,8 @@ draft: false
 images: []
 type: docs
 menu:
-  reference:
-    identifier: "verified-registry-actor-0477674322e4ebcac7f2d1c6dcef8f6a"
+  protocol-api:
+    identifier: "verified-registry-actor-c844eda6410c76fce32a22f767fecb7d"
 weight: 100
 toc: true
 ---
