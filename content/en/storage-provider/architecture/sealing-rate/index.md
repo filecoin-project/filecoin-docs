@@ -31,12 +31,14 @@ When building your infrastructure there will always be a bottleneck. It is the a
 
 > 15 sectors x 32GiB / 3 hours PC1 runtime x 24 hours / 1024 = 3.75TiB /day
 
+<!--
 ### Parallel sectors
 A way of increasing your sealing capacity on the hardware you have is by adding additional workers to the same system. You can run multiple instances of PC1 on a single server, or multiple instances of PC2. It just takes another `lotus-worker`process to run on the server with the correct tasks assigned.
 
 Do keep the limits of your systems in mind when doing so. Every PC1 worker takes 64GiB of memory (GiB, not GB!) so a system with 1TiB of memory will theoretically go to 16 parallel PC1-workers. In practice you will likely cap this at 15 because of the difference in GiB and GB, and because of the memory required for the operating system.
 Other limiting factors are the CPU cores and the available sealing scratch space.
 
+-->
 ### Grouping similar tasks
 The process `lotus-worker` can run all the various tasks of the sealing pipeline. It comes down to configuration to tell which tasks a given worker should do. Because some tasks are similar in behavior and others are insignificant in resource consumption, it makes sense to group some tasks together on the same worker.
 
