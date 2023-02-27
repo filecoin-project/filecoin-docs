@@ -53,6 +53,12 @@
       url = "/developers/reference/json-rpc/introduction"
       weight = 50
       parent = "main-developers"
+      
+    [[main]]
+      name = "Interplanetary Concensus"
+      url = "/developers/ipc/introduction"
+      weight = 60
+      parent = "main-developers"
 
 [[main]]
   name = "Reference"
