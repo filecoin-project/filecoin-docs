@@ -15,7 +15,7 @@ weight: 100
 toc: true
 ---
 
-Calculating the ROI of your Storage Provider business is important. See also the [ROI Calculator](https://observablehq.com/@starboard/sproi) for more details.
+Calculating the ROI of your Storage Provider business is important.
 
 It takes more variables than the cost vs. the income. In summary, the factors that influence your ROI are:
 
