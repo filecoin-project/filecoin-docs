@@ -29,7 +29,7 @@ There are 3 large blocks to understand:
 - Lotus Worker(s)
 
 ## Lotus Daemon
-The Lotus Daemon is the component that sync the chain, includes the client and holds the wallets of the Storage Provider. This machine requires public internet reachability for the Storage Provider setup to work.
+The Lotus Daemon is the component that syncs the chain, includes the client and holds the wallets of the Storage Provider. This machine requires public internet reachability for the Storage Provider setup to work.
 
 ### Chain
 Syncing the chain is a key activity of the daemon. It stays in sync with the other nodes on the blockchain network by syncing the messages. Messages are collected into blocks. Blocks are collected into tipsets. The Lotus Daemon you run receives all the messages on-chain. Because of the size of the chain since its genesis, it is not advised for Storage Providers to sync the entire history. Lightweight snapshots are available for import so that you only import the most recent messages. You would need to sync the entire chain however if you were to run a Blockchain Explorer like [Filfox](https://filfox.info) for instance.
@@ -39,9 +39,9 @@ The storage volume on which you sync the chain should be fast storage, at least 
 Another important consideration is the filesystem size and free space. The Filecoin chain grows every per day, which will eventually fill up any available space. Solutions like [SplitStore](https://lotus.filecoin.io/lotus/configure/splitstore/) and [compacting](https://lotus.filecoin.io/lotus/manage/chain-management/) allow to reduce the storage space used by the chain.
 
 ### Wallets
-Another key role of the Lotus Daemon is to host the Filecoin wallets that are required to run a Storage Provider setup. As a Storage Provider you will need 2 wallets at the minimum. One is the "owner" wallet, the other is the "worker" wallet.
+Another key role of the Lotus Daemon is to host the Filecoin wallets that are required to run a Storage Provider setup. As a Storage Provider you will need a minimum of 2 wallets. One is the "owner" wallet, the other is the "worker" wallet.
 
-It goes without saying that careful security measures are required to keep your Lotus wallets safe. This includes measures around physical access, network access, software security and making backups (that are secured again). As with any web3 wallet, access to the private key means access to your funds.
+It is important to note that careful security measures are required to keep your Lotus wallets safe. This includes measures around physical access, network access, software security and making backups (that are also secured). As with any web3 wallet, access to the private key means access to your funds.
 
 Type the following command to see your wallets and corresponding funds on them:
 
