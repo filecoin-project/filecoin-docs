@@ -15,9 +15,9 @@ weight: 120
 toc: true
 ---
 
-When you provide storage capacity to the Filecoin network (either as Committed Capacity or as Storage Deals), you need to create "sealed sectors". As discussed in other places in this documentation, sealing is required to then start proving the storage over time (Proof-of-SpaceTime). The process of sealing sectors goes through a series of steps which together form the "sealing pipeline".
+When you provide storage capacity to the Filecoin network (either as Committed Capacity or as Storage Deals), you need to create "sealed sectors". Sealing is required to then start proving the storage over time (Proof-of-SpaceTime). The process of sealing sectors goes through a series of steps which together form the "sealing pipeline".
 
-In the following paragraphs we will discuss the various steps in the sealing pipeline and specifically the considerations you should make as a Storage Provider. Having clear insights into the througput you can expect from your sealing pipeline is crucial to consistently onboard data. It could be a waste of resources if your hardware is under-utilized and could in fact seal more and faster than what you're doing in reality. But more harmful is to overload your sealing pipeline by trying to seal too many sectors at once or taking on a too big of a dataset for your infrastructure. We discuss [Sealing Rate]({{<relref "sealing-rate">}}) in greater detail in the next chapter.
+In the following paragraphs we will discuss the various steps in the sealing pipeline and specifically the considerations you should make as a Storage Provider. Having clear insights into the throughput you can expect from your sealing pipeline is crucial to consistently onboard data. You need to understand what you can expect from your sealing pipeline as you could be wasting resources if your hardware is under-utilized. Under-utilized hardware could mean that you could be sealing more and faster. Another, more harmful, affect of not understanding your expected throughput is overloading your sealing pipeline by trying to seal too many sectors at once or taking on a dataset which is too big for your infrastructure. We discuss [Sealing Rate]({{<relref "sealing-rate">}}) in greater detail in the next chapter.
 
 The sealing pipeline has the following tasks:
 
