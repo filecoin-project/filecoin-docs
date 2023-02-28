@@ -23,7 +23,7 @@ aliases:
 
 For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](#smart-contracts). In the Filecoin network, there are two types of actors:
 
-- [_Built-in actors_](#built-in-actors): Hardcoded programs similar to Eth smart contracts that run the Fil blockchain, written ahead of time by network engineers
+- [_Built-in actors_](#built-in-actors): Hardcoded programs, written ahead of time by network engineers that run the Filecoin blockchain, 
 
 - _User actors_: code that any developer can write and deploy to the Filecoin network using the FVM, otherwise known as a smart contract.
 
@@ -33,12 +33,8 @@ A _smart contract_ is a small, self-executing blocks of custom code that runs on
 
 ## Built-in actors
 
+Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network conensus at a given epoch. This global state is represented as a _state tree_, which is a map of actor IDs to the _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its Fil balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (VM) is the Filecoin system component that is in charge of execution of all actor code
 
-Hardcoded programs similar to Eth smart contracts that run the Fil blockchain, written ahead of time by network engineers
-
-### Actor model
-
-Actors are how Filecoin network organizes state transitions
 - State machine connected to blocks in chain 
 - Blocks contains 
   - inline data such as current block height, CIDs (used as pointers)
@@ -130,7 +126,11 @@ Internals, important
 
 #### f03 cron
 
+The `CronActor` sends messages to the StoragePowerActor and StorageMarketActor at the end of each epoch. The messages sent by `CronActor` inidicate to StoragePowerActor and StorageMarketActor how they should maintain internal state and process deferred events. This system actor is instantiated in the genesis block.
+
 #### f01 init
+
+The `InitActor` can initialize new actors on the filecoin network. This system actor is instantiated in the genesis block, and maintains a table resolving a public key and temporary actor addresses to their canonical ID addresses. 
 
 #### f00 system
 
