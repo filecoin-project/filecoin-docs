@@ -18,7 +18,7 @@ aliases:
 ---
 
 
-## Filecoin Economics
+## Becoming a Storage Provider
 
 To become a Storage Provider in the Filecoin network you need a range of technical, financial and business skills. The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. These mechanisms are the primary reason why the hardware and other requirements for running a Storage Provider business are significantly higher than regular blockchain mining operations. The mechanisms are designed this way because, in contrast to some other blockchain solutions where you can simply configure one or more nodes to “mine” tokens, the Filecoin network’s primary goal is to provide decentralized storage to store humanity’s most valuable data.
 
