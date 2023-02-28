@@ -41,7 +41,7 @@ Another important consideration is the filesystem size and free space. The Filec
 ### Wallets
 Another key role of the Lotus Daemon is to host the Filecoin wallets that are required to run a Storage Provider setup. As a Storage Provider you will need a minimum of 2 wallets. One is the "owner" wallet, the other is the "worker" wallet.
 
-It is important to note that careful security measures are required to keep your Lotus wallets safe. This includes measures around physical access, network access, software security and making backups (that are also secured). As with any web3 wallet, access to the private key means access to your funds. [Lotus supports Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), which is a recommended method for the owner wallet.
+It is important to note that careful security measures are required to keep your Lotus wallets safe. This includes measures around physical access, network access, software security and making backups (that are also secured). As with any web3 wallet, access to the private key means access to your funds. [Lotus supports Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), which is a recommended method for the owner wallet. You cannot keep the worker or control wallets on a hardware device because Lotus will require frequent access to those wallets. For instance, Lotus requires access to a worker or control wallet (depending on your setup) to send WindowsPoST proofs on-chain.
 
 Type the following command to see your wallets and corresponding funds on them:
 
