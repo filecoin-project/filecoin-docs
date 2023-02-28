@@ -24,7 +24,7 @@ The sealing pipeline has the following tasks:
 ![sealing tasks](sealing-tasks.png)
 
 ## AddPiece (AP)
-The sealing pipeline starts with the AddPiece part. A Piece in Filecoin represents data in a prepared format. This is a CAR-file produced by and [IPLD DAG](https://ipld.io) with corresponding PayloadCID and PieceCID. A piece can be any size up to the sector size (32 or 64GiB). If the content is larger than the sector size it must be split over multiple PieceCIDs during Data Preparation.
+The sealing pipeline starts with the AddPiece part. A Piece in Filecoin represents data in a prepared format. This is a CAR-file produced by an [IPLD DAG](https://ipld.io "could this have a tooltip?") with corresponding PayloadCID and PieceCID. A Piece can be any size up to the sector size (32 or 64GiB). If the content is larger than the sector size it must be split over multiple PieceCIDs during Data Preparation.
 
 The AddPiece process takes the Piece and prepares it into the sealing scratch space for the next task (PC1) to take over.
 AddPiece is not a very intensive process and only uses some CPU cores. It is typically colocated on a server with other processes of the sealing pipeline. Most logically it runs on the PC1-server, as PC1 is the next process to run.
@@ -38,12 +38,13 @@ Additionaly the PC1 task requires 64GiB of memory per sector it seals.
 
 In order to seal at a decent rate it, and to make use of all the sealing capacity in a PC1-server, you will run multiple PC1 workers in parallel on a system. More about this in the chapter on [Sealing Rate]({{<relref "sealing-rate">}}). Sealing multiple sectors multiplies the requirements on CPU cores, RAM and scratch space by the amount of sectors done in parellel.
 
-Even on enterprise hardware the process of sealing one 32GiB sector takes around 3 hours.
+Even on enterprise hardware the process of sealing one 32GiB sector takes around **3 hours**.
 
 ## PreCommit 2 (PC2)
 When PC1 has completed on a given sector, the entire scratch space for that sector (384GiB or 768GiB depending on the sector size) is moved over to the PC2 task. This task is typically executed on a different server than the PC1-server because it behaves differently. 
 
 The PC2 task uses the Poseidon hashing algorithm over the Merkle Tree DAG that was created in PC1. In short: PC2 validates PC1. 
+
 Where PC1 is very CPU-bound, PC2 is executed on GPU. This task is also notably shorter than PC1. PC2 typically runs for 10-20 minutes on a capable GPU. This requires a GPU of 24+GB memory and 8000+ CUDA cores / shading units (in case of NVIDIA). Slower GPU's are possible but might create a bottleneck in the sealing pipeline.
 
 In case of a [Snap Deal]({{<relref "snap-deals">}}) an existing CC sector is filled with data. The PC1-task does not run again but the snapping process employs the PC2 task to add the data to the sector.
