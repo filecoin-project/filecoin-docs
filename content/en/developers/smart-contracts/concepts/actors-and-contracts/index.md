@@ -33,20 +33,16 @@ A _smart contract_ is a small, self-executing blocks of custom code that runs on
 
 ## Built-in actors
 
-Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network conensus at a given epoch. This global state is represented as a _state tree_, which is a map of actor IDs to the _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its Fil balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (VM) is the Filecoin system component that is in charge of execution of all actor code
+Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network conensus at a given epoch. This global state is represented as a _state tree_, which is a map of actor IDs to the _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its Fil balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (VM) is the Filecoin network component that is in charge of execution of all actor code.  
 
-- State machine connected to blocks in chain 
-- Blocks contains 
-  - inline data such as current block height, CIDs (used as pointers)
-  - State tree pointer
-    - points to map of every global actor in network
-  - Messages block pointer
-    - state transition messages: causes transition between blocks
-    - new state encoded in state tree pointer
+### Blocks in detail
 
-Merkle Tree is used to map
-- State Tree pointer map (CID)
-- Messages pointer map (CID)
+Each block in the Filecoin chain contains: 
+  - Inline data such as current block height.
+  - A pointer ([CID]({{< relref "reference/reference/glossary/index.md#content-identifiercid" >}})) to the current state tree.
+  - A pointer (CID) to the set of messages that, when applied to the network, generated the current state tree.
+
+A Merkle Directed Acyclic Graph (Merkle DAG) is used map the state tree and the set of messages.
 
 Leafs in state machine map
 - Actor 
