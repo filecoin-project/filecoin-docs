@@ -24,7 +24,7 @@ The sealing pipeline has the following tasks:
 ![sealing tasks](sealing-tasks.png)
 
 ## AddPiece (AP)
-The sealing pipeline starts with the AddPiece part. A Piece in Filecoin represents data in a prepared format. This is a CAR-file produced by an [IPLD DAG](https://ipld.io "could this have a tooltip?") with corresponding PayloadCID and PieceCID. A Piece can be any size up to the sector size (32 or 64GiB). If the content is larger than the sector size it must be split over multiple PieceCIDs during Data Preparation.
+The sealing pipeline starts with the AddPiece part. A Piece in Filecoin represents data in a prepared format. This is a CAR-file produced by an [IPLD DAG](https://ipld.io <!--Ivanka: "could this have a tooltip?" - Bob:tooltips not in use on docs in general? Prefer links instead-->) with corresponding PayloadCID and PieceCID. A Piece can be any size up to the sector size (32 or 64GiB). If the content is larger than the sector size it must be split over multiple PieceCIDs during Data Preparation.
 
 The AddPiece process takes the Piece and prepares it into the sealing scratch space for the next task (PC1) to take over.
 AddPiece is not a very intensive process and only uses some CPU cores. It is typically colocated on a server with other processes of the sealing pipeline. Most logically it runs on the PC1-server, as PC1 is the next process to run.
