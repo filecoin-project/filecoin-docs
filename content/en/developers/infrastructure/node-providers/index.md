@@ -85,14 +85,6 @@ https://filecoin-hyperspace.chainstacklabs.com/rpc/v0
 wss://ws-filecoin-hyperspace.chainstacklabs.com/rpc/v0
 ```
 
-**Supported API methods:**
-
-?
-
-**Usage notes:**
-
-?
-
 #### Ankr RPC 
 
 The Ankr RPC API, maintained by Ankr, provides HTTP and websocket endpoint with a limited number of API methods for both mainnet and testnet. For the most up-to-date information on, see the [official Ankr documentation](https://www.ankr.com/docs/rpc-service/chains/chains-list/#networks-9)
@@ -103,22 +95,10 @@ The Ankr RPC API, maintained by Ankr, provides HTTP and websocket endpoint with 
 https://rpc.ankr.com/filecoin
 ```
 
-**Mainnet web socket endpoint**:
-
-```plaintext
-?
-```
-
 **Testnet HTTP endpoint**: 
 
 ```plaintext
 https://rpc.ankr.com/filecoin_testnet
-```
-
-**Testnet web socket endpoint**:
-
-```plaintext
-?
 ```
 
 **Supported API methods for mainnet endpoint:**
@@ -126,8 +106,3 @@ The HTTP and websocket endpoints for mainnet currently support [these API method
 
 **Supported API methods for testnet endpoint**
 The HTTP and websocket endpoints for testnet currently support all [supported mainet API methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#api-methods-9) listed above, along with applicable EVM-compatible methods, except for those listed as [unsupported](https://www.ankr.com/docs/rpc-service/chains/chains-list/#unsupported-9).
-
-
-**Usage notes:**
-
-?
