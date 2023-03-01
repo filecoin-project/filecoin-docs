@@ -15,7 +15,7 @@ toc: true
 
 ## Mainnet
 
-[Mainnet](https://docs.filecoin.io/networks/overview/available-networks/%23mainnet) is the live production network that all nodes on the Filecoin network are connected to. It never resets.
+[Mainnet]({{< relref "/developers/infrastructure/networks" >}}) is the live production network that all nodes on the Filecoin network are connected to. It never resets.
 
 ## Testnets
 
@@ -23,7 +23,7 @@ Test networks, or testnets, are version of the Filecoin network that attempt to 
 
 ### Calibration
 
-[Calibration](https://docs.filecoin.io/networks/overview/available-networks/%23calibration) testnet is the most realistic simulation of the mainnet, where prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters, and prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage/retrieval functionality. It also has the same sector size as the mainnet.
+[Calibration]({{< relref "/developers/infrastructure/networks" >}}) testnet is the most realistic simulation of the mainnet, where prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters, and prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage/retrieval functionality. It also has the same sector size as the mainnet.
 
 - [Public endpoint](https://api.calibration.node.glif.io/rpc/v0)
 - [Blockchain explorer](https://calibration.filscan.io/)
