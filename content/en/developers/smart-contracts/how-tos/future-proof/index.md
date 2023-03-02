@@ -1,7 +1,7 @@
 ---
 title: "Future-proof a contract"
-description: "Learn how to future-proof an existing smart contract for compatibility with the v1.20.0-hyperspace-nv20 release."
-lead: "Learn how to future-proof an existing smart contract for compatibility with the `v1.20.0-hyperspace-nv20` release and future network upgrades."
+description: "Learn how to future-proof an existing smart contract for compatibility with future network upgrades"
+lead: "Learn how to future-proof an existing smart contract for compatibility with future network upgrades."
 draft: false
 type: docs
 weight: 70
@@ -51,5 +51,5 @@ Any contracts sending funds to actors that are not native accounts (`f1` or `f3`
 
 ## Contracts interacting with built-in actors
 
-All contracts interacting with built-in actors must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](https://github.com/Zondax/filecoin-solidity/tree/master/contracts/v0.8). The IPLD codec used in the `handle_filecoin_method` solidity entrypoint and the call_actor should now be `CBOR (0x51)`, not `DAG_CBOR (0x71)`, as previously used. The underlying encoding (i.e. the payload bytes) are the same, but the codec numbers are now different. `DAG_CBOR` support will be re-enabled in the future but the usage of the codec implies additional runtime guarantees that have not yet been implemented.
+All contracts interacting with built-in actors must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](https://github.com/Zondax/filecoin-solidity/tree/master/contracts/v0.8). The IPLD codec used in the `handle_filecoin_method` solidity entrypoint and the `call_actor` should now be `CBOR (0x51)`, not `DAG_CBOR (0x71)`, as previously used. The underlying encoding (i.e. the payload bytes) are the same, but the codec numbers are now different. `DAG_CBOR` support will be re-enabled in the future but the usage of the codec implies additional runtime guarantees that have not yet been implemented.
 
