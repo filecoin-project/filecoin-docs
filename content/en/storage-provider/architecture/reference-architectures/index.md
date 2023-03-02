@@ -25,7 +25,7 @@ aliases:
 
 
 ## Beginner's corner
-<!-- Angelo to write a section on the use of refurbished hardware-->
+Angelo to write a section on the use of refurbished hardware
 
 ## Community suggestions
 
