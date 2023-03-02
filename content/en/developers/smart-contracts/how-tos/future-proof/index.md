@@ -16,7 +16,9 @@ aliases:
 
 {{< beta-warning >}}
 
-**Developers should take the time to thoroughly read through the following summary of possible contract future-proofing updates, as failure to properly future proof smart contracts may result in incompatibility with the [v1.20.0-hyperspace-nv20 release](https://github.com/filecoin-project/testnet-hyperspace/issues/9) and future Filecoin releases.**
+{{< alert >}}
+Developers should take the time to thoroughly read through the following summary of possible contract future-proofing updates, as failure to properly future proof smart contracts may result in incompatibility with the [v1.20.0-hyperspace-nv20 release](https://github.com/filecoin-project/testnet-hyperspace/issues/9) and future Filecoin releases.
+{{< /alert >}}
 
 - **All contracts** must [accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically, and use `CBOR (0x51)` in outputs](#all-contracts).
 - If a contract uses the FRC42 hash of `GranularityExported`, it must be [updated and redeployed](#contracts-using-granularityexported-hash)
