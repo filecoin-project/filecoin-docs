@@ -33,7 +33,7 @@ A _smart contract_ is a small, self-executing blocks of custom code that runs on
 
 ## Built-in actors
 
-Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network conensus at a given epoch. This global state is represented as a _state tree_, which is a map of actor IDs to the _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its Fil balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (VM) is the Filecoin network component that is in charge of execution of all actor code.  
+Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network conensus in that epoch. This global state is represented as a _state tree_, which maps an actor to an _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its Fil balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block in the chain can be thought of as a **proposed** global state, where the block selected by network consensus sets the **new** global state. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (VM) is the Filecoin network component that is in charge of execution of all actor code.  
 
 ### Blocks in detail
 
@@ -42,44 +42,26 @@ Each block in the Filecoin chain contains:
   - A pointer ([CID]({{< relref "reference/reference/glossary/index.md#content-identifiercid" >}})) to the current state tree.
   - A pointer (CID) to the set of messages that, when applied to the network, generated the current state tree.
 
-A Merkle Directed Acyclic Graph (Merkle DAG) is used map the state tree and the set of messages.
+### State tree in detail
 
-Leafs in state machine map
-- Actor 
-  - Fil balance
-  - Nonce (typical blokchain thing)
-  - CID pointer actor code
-  - CID pointer to actor state
-- Block Msg, transaction
-  - To Actor, From actor
-  - Target Method to call on actor
-  - Crypto signature
-  - Fil value transferred
+A Merkle Directed Acyclic Graph (Merkle DAG) is used map the state tree. and the set of messages. Nodes in the state tree contain information on:
+- Actors, like Fil balance, nonce and a pointer (CID) to actor state data.
+- Messages in the current block
 
-Actors represent state however it works for them, so mayb "shapes"
 
-Actor code (compared to Eth)
-- state machine 
-- seperated into different methods
-- takes in params from a caller and runtime
-- Runtime provides
-  - general state (READS)
-  - current epoch, balance, etc. not currently under actor state
-  - crypto signs, proof validations
-  - General state of network
-- gas model: charges for execution of actors
-- actors manage their OWN state
+### Messages in detail
 
-Interaction needs
-- params to send
-- actor, actor methods to call
+Like the state tree, a Merkle Directed Acyclic Graph (Merkle DAG) is used to map the set of messages for a given block. Nodes in the messages map contain information on:
+- The actor the message was sent to
+- The actor that sent the message
+- Target method to call on actor being sent the message
+- A cryptographic signature for verification
+- The amount of Fil transferred between actors
 
-Message sending
-- method calls to actors correspond to messages
-- state transitions occur with user specified messages
-- 
+### Actor code structure in detail
 
-Why does Filecoin have actors?
+The code that defines an actor in the Filecoin network is seperated into different methods. Messages sent to an actor contain information on which method(s) to call, and the input parameters for those methods. Additionally, actor code interacts with a _runtime_ object, which contains information on the general state of network, such as the current epoch, and cryptographic signatures and proof validations. gas model: charges for execution of actors
+
 
 ### Types of built-in actors
 
