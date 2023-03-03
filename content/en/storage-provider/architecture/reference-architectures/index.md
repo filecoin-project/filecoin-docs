@@ -23,6 +23,10 @@ aliases:
 ## 1 PiB raw architecture
 ![1 PiB raw reference architecture](1PIB.png)
 
+
+## Beginner's corner
+Angelo to write a section on the use of refurbished hardware
+
 ## Community suggestions
 
 Hardware requirements and architecture configurations evolve continually, based on evolving tech and software, market demands and available hardware. Because of this, we do not list any recommendations or examples on this page. Instead, look at the [example miner hardware profiles](https://github.com/filecoin-project/lotus/discussions/6071) in the Lotus project GitHub discussions.
@@ -31,6 +35,7 @@ Hardware requirements and architecture configurations evolve continually, based 
 
 This discussion is ongoing and frequently updated with the new recommendation from community storage providers.
 <!--TODO STEF erm, that discussion is locked and hasn't been updated since 2021? -->
+
 ## Solo storage providing
 
 Please take a look at the presentation Benjamin Hoejsbo <!--TODO STEF who? where from? why should I trust him? -->gave where they examine solo storage provider setups.
