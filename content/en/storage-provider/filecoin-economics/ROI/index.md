@@ -21,28 +21,28 @@ It takes more variables than the cost vs. the income. In summary, the factors th
 
 * **Verified Deals:**
 
-    How much of your total sealed capacity will be done with Verified Deals (Fil+)? Those deals give a far higher return because of the 10x multiplier that’s added to your storage power and block rewards.
+    How much of your total sealed capacity will be done with Verified Deals (Fil+)? Those deals give a far higher return because of the 10x multiplier that is added to your storage power and block rewards. <!-- TODO STEF why not just do all VDs?-->
 
-* **Pledged Capacity:**
+* **Committed Capacity:**
 
-    How much of your total sealed capacity will be done with just pledged sectors (committed capacity, CC)? These deals give a lower return compared to Verified Deals but are an easy way to get started in the network. Relying solely on this to generate income is challenging though, especially when the price of the FIL-token is low.
+    How much of your total sealed capacity will be just committed capacity (CC) sectors (sometimes also called pledged capacity)? These deals give a lower return compared to verified deals but are an easy way to get started in the network. Relying solely on this to generate income is challenging though, especially when the price of FIL is low.
 
 * **Sealing Capacity:**
 
-    How fast can you seal sectors? Faster sealing means you can start earning block rewards earlier and add more data faster. The downside is that it requires a lot of hardware.
+    How fast can you seal sectors? Faster sealing means you can start earning block rewards earlier and add more data faster. The downside is that it requires a lot of hardware. <!--TODO STEF how much? link -->
 
-* **Deal Durations:**
+* **Deal Duration:**
 
-    How long do you plan to run? Are you taking short-term deals only, or are you in it for the long run? Taking long-term deals comes with an associated risk: if you can’t keep your Storage Provider online for the duration of the deals, you will get penalized. Short-term deals that require extension have the downside of higher operational costs to extend and re-seal deals.
+    How long do you plan to run your Storage Provider? Are you taking short-term <!-- TODO STEF define --> deals only, or are you in it for the long run? <!-- TODO STEF but the range is 180d to 540d), what does the long run mean? is the max CC duration also 540 days?  --> Taking long-term deals comes with an associated risk: if you can’t keep your Storage Provider online for the duration of the deals <!-- TODO STEF  Does a deal get fully cancelled if there's a just a temporary outage?-->, you will get penalized. Short-term deals that require extension have the downside of higher operational costs to extend (which requires that the data be re-sealed.<!-- TODO STEF is this as expensive as initial sealing?-->).
 
-* **Fil Pledge:**
+* **FIL Collateral pledged:**
 
-    A substantial amount of FIL is needed to start accepting deals in the Filecoin network. Verified deals take a lot more pledge than CC-deals. Although the collateral is not lost if you run your Storage Provider business well, it does mean an upfront investment (or lending).
+    A substantial amount of FIL is needed to start accepting deals in the Filecoin network. Verified deals require more pledged collateral than CC-deals. Although the collateral is not lost if you run your Storage Provider business well, it does mean an upfront investment (or lending). <!-- TODO STEF how much? how can I get it?-->
 
 * **Hardware Investment:**
 
-    Sealing, proving and storing the data does require a significant hardware investment from a Storage Provider. Although relying on services like sealing-as-a-service can lower these requirements for you, it is still an investment in high-end hardware. Take the time to understand your requirements and your future plans so that you can invest in hardware that will support your business.
+    Sealing, storing, and proving the data does require a significant hardware investment as a Storage Provider. Although relying on services like sealing-as-a-service <!--TODO STEF link--> can lower these requirements for you, it is still an investment in high-end hardware. Take the time to understand your requirements and your future plans so that you can invest in hardware that will support your business. <!-- TODO STEF I get it, now how do I answer these questions?-->
 
-* **Operational Cost:**
+* **Operational Costs:**
 
-    Last but not least there’s the cost of operating the Storage Provider business. Both the costs for technical operations as well as business operations need to be taken into consideration.
+    Last but not least there’s the ongoing monthly cost of operating the Storage Provider business. Both the costs for technical operations as well as business operations need to be taken into consideration.
