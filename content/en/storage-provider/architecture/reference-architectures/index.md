@@ -29,15 +29,16 @@ Angelo to write a section on the use of refurbished hardware
 
 ## Community suggestions
 
-Hardware requirements and architecture suggestions constantly evolve based on market demands and available hardware. Because of this, we aren't listing any recommendations or examples on this page. Instead, look at the [Example Miner Hardware Profiles](https://github.com/filecoin-project/lotus/discussions/6071) in the Lotus project GitHub discussions.
+Hardware requirements and architecture configurations evolve continually, based on evolving tech and software, market demands and available hardware. Because of this, we do not list any recommendations or examples on this page. Instead, look at the [example miner hardware profiles](https://github.com/filecoin-project/lotus/discussions/6071) in the Lotus project GitHub discussions.
 
 [![Screenshot of a community discussion on GitHub.](github-arch-discussion.png)](https://github.com/filecoin-project/lotus/discussions/6071)
 
 This discussion is ongoing and frequently updated with the new recommendation from community storage providers.
+<!--TODO STEF erm, that discussion is locked and hasn't been updated since 2021? -->
 
 ## Solo storage providing
 
-Please take a look at the presentation Benjamin Hoejsbo gave where he examines solo storage provider setups.
+Please take a look at the presentation Benjamin Hoejsbo <!--TODO STEF who? where from? why should I trust him? -->gave where they examine solo storage provider setups.
 
 {{< youtube "LKMjCgo-fkA" >}}
 
