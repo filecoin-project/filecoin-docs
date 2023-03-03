@@ -135,7 +135,7 @@ The `VerifiedRegistryActor` is responsible for managing Fil+ clients. This actor
 
 ## User actors (smart contracts)
 
-A _user actor_ is code defined by **any developer** that can interact  FVM, otherwise known as a [smart contract](#smart-contracts).
+A _user actor_ is code defined by **any developer** that can interact  FVM, otherwise known as a _smart contract_.
 
 A _smart contract_ is a small, self-executing blocks of custom code that runs on other blockchains, like Ethereum. In the Filecoin network, the term is a synonym for [_user actor_](#user-actors). You may see the term _smart contract_ used in tandem with _user actor_, but there is no difference between the two.
 
