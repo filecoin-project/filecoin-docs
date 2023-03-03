@@ -36,7 +36,7 @@ If a storage provider doesn't find any available deal proposals appealing, they 
 
 ## Content IDentifier (CID)
 
-A self-describing format for referencing data in distributed information systems by it's _contents_, rather than its _location_ using cryptographic hashing and and self-describing formats. It is a core component of IPFS and IPLD, which are turn components of Filecoin.
+A self-describing format for referencing data in distributed information systems by it's _contents_, rather than its _location_ using cryptographic hashing and and self-describing formats. It is a core component of IPFS and IPLD, which are in turn components of Filecoin.
 
 ## Collateral
 
@@ -88,9 +88,9 @@ If used as a proper noun, capitalize the term: _"I am providing on Mainnet."_
 
 The term _message_ is used to refer to data stored as part of a [block](#block). A block can contain several messages.
 
-## Merkle Directed Acyclic Graph (Merkle DAG)
+## Merkle Directed Acyclic Graph 
 
-A graph data structure where nodes:
+Abbreviated as _Merkle DAG_. A graph data structure where nodes:
 
 - Have a unique identifier that is the hash of the nodes contents
 - Are directionally related to other nodes
