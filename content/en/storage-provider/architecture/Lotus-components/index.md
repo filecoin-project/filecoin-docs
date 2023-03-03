@@ -90,17 +90,17 @@ And to see the workers on which the miner can schedule jobs:
     lotus-miner sealing workers
 
 
-### Storage Proving
-One of the most important roled of the Lotus Miner is the [Storage Proving]({{<relref "storage-proving" >}}). Both WindowPoSt and WinningPoSt processes are usually handled by the Lotus Miner. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (workers) instead of using the Lotus Miner. 
+### Storage proving
+One of the most important roled of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both WindowPoSt and WinningPoSt <!--TODO STEF link to glossary-->processes are usually handled by the Lotus miner. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (workers) instead of using the Lotus miner. 
 
-The proving processes require low-latency access to the sealed sectors. The proving challenge requires a GPU to run on. The resulting zkProof will be sent on-chain in a message. There are strict deadlines for those messages to arrive on-chain (30 minutes for WindowPoSt and just 30 seconds for WinningPoSt). It is therefore important to properly size and configure the proving workers (be it on the Lotus Miner or separate) and to make sure there are dedicated wallets set up for these processes. If they would use the general worker wallet there is the risk of message congestion, resulting in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards.
+The proving processes require low-latency access to the sealed sectors. The proving challenge requires a GPU to run on. The resulting zkProof will be sent to the chain in a message. There are strict deadlines for those messages to arrive on-chain (30 minutes for WindowPoSt and just 30 seconds for WinningPoSt). It is therefore important to properly size and configure the proving workers (be it on the Lotus miner <!--TODO STEF this whole section mixes names for software processes and hardware instances a lot - suggest reviewing the whole thing to disambiguate-->or separate) and to make sure there are dedicated wallets set up for these processes. If they use the general worker wallet there is the risk of message congestion, resulting in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards.
 
-Always check if there are upcoming proving deadlines before halting any services for maintenance:
+Always check if there are upcoming proving deadlines before halting any services for maintenance:<!--TODO STEF if winningPoSt is every 30s, when are there ever windows for maintenance? How does one even do maintenance?-->
 
     lotus-miner proving deadlines
 
-## Lotus Worker(s)
-The Lotus Worker is the 3rd important component in the Lotus architecture. There can - and most likely will - be multiple workers in a single Storage Provider setup. Assigning designated roles to each worker in the setup allows for scaling out the setup in favor of higher throughput (see [Sealing Rate]({{<relref "sealing-rate">}}) and redundancy.
+## Lotus worker(s)
+The Lotus worker is the 3rd important component<!--TODO STEF hardware? software?--> in the Lotus architecture. There can be - and most likely will be - multiple workers in a single Storage Provider setup. Assigning designated roles to each worker in the setup allows for scaling the setup for higher throughput (see [Sealing Rate]({{<relref "sealing-rate">}}) and redundancy.
 
 As mentioned above, the proving tasks can be assigned to designated workers and worker can also get storage access.
-The remaining tasks for which workers are responsible, are those of the [Sealing Pipeline]({{<relref "sealing-pipeline">}}) which is discussed in the next section.
+The remaining worker tasks are running [Sealing Pipeline]({{<relref "sealing-pipeline">}}) which is discussed in the next section.
