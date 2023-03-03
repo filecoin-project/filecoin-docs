@@ -20,13 +20,13 @@ aliases:
 
 Zondax provides the [Filecoin Solidity npm package](#filecoin-solidity) and the [FEVM Precompiles library](#fevm-precompiles).
 
-### Filecoin Solidity
+## Filecoin.sol
 
 {{< alert >}}
 The Filecoin Solidity project is [currently in beta](https://docs.zondax.ch/fevm/filecoin-solidity#disclaimer-%EF%B8%8F%EF%B8%8F).
 {{< /alert >}}
 
-The _Filecoin Solidity_ npm package provides a set of Solidity libraries that allows Solidity smart contracts to seamlessly call Filecoin built-in actors methods, and perform cross-platform calls to the real Filecoin built-in actors. Additionally, a set of mock libraries that respond to specific scenarios is available. The scenarios are based on the received parameters instead of real calls. For further information, including information on how to use the package, see the [official documentation](https://docs.zondax.ch/fevm/filecoin-solidity/).
+_Filecoin.sol_ provides a set of libraries that allows Solidity smart contracts to seamlessly call built-in actors methods. Additionally, a set of mock libraries that respond to specific scenarios is available. The scenarios are based on the received parameters instead of real calls. For further information, including information on how to use the package, see the [official documentation](https://docs.zondax.ch/fevm/filecoin-solidity/).
 
 #### FEVM Precompiles
 
