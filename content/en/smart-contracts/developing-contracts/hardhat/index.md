@@ -12,8 +12,6 @@ weight: 100
 toc: true
 ---
 
-Hardhat is an open-source development environment for building and testing smart contracts. It is designed to provide developers with a flexible and extensible framework for building, testing, and deploying smart contracts in a reliable and efficient manner.
-
 While originally created for the Ethereum blockchain, the Filecoin EVM-runtime allows Hardhat to be used to develop and deploy smart contracts on the Filecoin network.
 
 ## Quickstart
@@ -103,7 +101,7 @@ There are two main types of contracts:
 Make sure that your account has funds. You won't be able to deploy any contracts without FIL or tFIL.
 {{< /alert >}}
 
-1. run `hardhat deploy` to deploy all the contracts. This can take a few minutes:
+1. Run `hardhat deploy` to deploy all the contracts. This can take a few minutes:
 
     ```shell
     yarn hardhat deploy
