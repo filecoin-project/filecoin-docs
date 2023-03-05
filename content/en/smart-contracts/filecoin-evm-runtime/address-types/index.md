@@ -1,5 +1,5 @@
 ---
-title: "Addresses"
+title: "Address types"
 description: "Everything you need to know about how different types of Filecoin addresses and when they will be used."
 lead: "In the Filecoin network, an _address_ is a unique identifier that refers to an actor in the Filecoin state. All actors in Filecoin have a corresponding address which varies from the different usages."
 draft: false
@@ -120,20 +120,20 @@ The subaddress of an `f410/t410` address is the original Ethereum address. Ether
 #### Example
 
 ```plaintext
-# The Ethereum wallet address
+# An Ethereum wallet address.
 0xd388ab098ed3e84c0d808776440b48f685198498
 
-# The corresponding Filecoin address on hyperspace
+# The corresponding Filecoin address on hyperspace.
 t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy
 ```
 
 If you have an Ethereum wallet address starting with `0x` , then the Ethereum Address Manager (EAM) will assign a corresponding `t410` Filecoin address to it. If you send 10 TFIL to `0xd388ab098ed3e84c0d808776440b48f685198498` address using a wallet like MetaMask, you will receive 10 TFIL to your `t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy` address on Filecoin Hyperspace testnet.
 
 ```plaintext
-# The Filecoin smart contract address
+# A Filecoin smart contract address.
 t410fl5qeigmkcytz7b6sqoojtcetqwf37dm4zv4aijq
 
-# The corresponding Ethereum smart contract address
+# The corresponding Ethereum smart contract address.
 0x5f6044198a16279f87d2839c998893858bbf8d9c
 ```
 
