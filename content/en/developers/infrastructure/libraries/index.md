@@ -20,7 +20,7 @@ aliases:
 
 Zondax provides the [Filecoin Solidity npm package](#filecoin-solidity) and the [FEVM Precompiles library](#fevm-precompiles).
 
-## Filecoin.sol
+## Filecoin.solidity
 
 {{< alert >}}
 The Filecoin Solidity project is [currently in beta](https://docs.zondax.ch/fevm/filecoin-solidity#disclaimer-%EF%B8%8F%EF%B8%8F).
