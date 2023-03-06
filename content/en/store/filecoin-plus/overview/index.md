@@ -76,6 +76,11 @@ Each request is tracked as a GitHub issue in the [Fil+ Client Onboarding repo](h
 
 To apply for a Large Dataset Notary, follow the steps at [Applying for a large DataCap allocation](https://github.com/filecoin-project/filecoin-plus-large-datasets#applying-for-a-large-datacap-allocation).
 
+### Smart Contracts
+Smart contracts can acquire DataCap just like any regular client. To do so, simply enter the address of the smart contract that requires DataCap as the client address when making a request. To receive the initial allocation of 32GiB, we recommend using the auto-verifier [Verify.glif.io](Verify.glif.io).
+
+It's important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. To address this issue, we are developing an FRC to allow DataCap to be held between redeployments.
+
 ### Spend DataCap
 
 Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because storage providers receive a deal quality multiplier for taking Fil+ deals, many storage providers offer special pricing and services to attract clients who use DataCap to make deals.
