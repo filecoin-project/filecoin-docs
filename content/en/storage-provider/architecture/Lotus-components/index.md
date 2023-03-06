@@ -39,9 +39,9 @@ The storage volume on which you keep the synced chain data should be fast storag
 Another important consideration is the filesystem size and available free space. The Filecoin chain grows every day<!--TODO STEF by how much, currently, and how big is it?-->, which will eventually fill up any available space. Solutions like [SplitStore](https://lotus.filecoin.io/lotus/configure/splitstore/) and [compacting](https://lotus.filecoin.io/lotus/manage/chain-management/) reduce the storage space used by the chain <!--TODO STEF by what %-->.
 
 ### Wallets
-Another key role of the Lotus Daemon is to host the Filecoin wallets that are required to run a Storage Provider setup. As a Storage Provider you will need a minimum of 2 wallets. One is the "owner" wallet, the other is the "worker" wallet.
+Another key role of the Lotus Daemon is to host the Filecoin wallets that are required to run a Storage Provider setup. As a Storage Provider you will need a minimum of 2 wallets. One is the "owner" wallet, the other is the "worker" wallet. A 3rd type of wallet, the "control" wallets will be required to scale your operations in a production environment.
 
-It is important to note that careful security measures are required to keep your Lotus wallets safe. This includes physical access, network access, software security and making backups (that are also secured). As with any crypto wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), which is recommended for the owner wallet. You cannot keep the worker or control <!--TODO STEF wait is this a 3rd kind of wallet not yet mentioned?--> wallets on a hardware device because Lotus requires frequent access to those types of wallets. For instance, Lotus requires access to a worker or control wallet (depending on your setup) to send WindowsPoST proofs on-chain.
+It is important to note that careful security measures are required to keep your Lotus wallets safe. This includes physical access, network access, software security and making backups (that are also secured). As with any crypto wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), which is recommended for the owner wallet. You cannot keep the worker or control  wallets on a hardware device because Lotus requires frequent access to those types of wallets. For instance, Lotus requires access to a worker or control wallet (depending on your setup) to send WindowsPoST proofs on-chain.
 
 Type the following command to see your wallets and corresponding funds on them:
 
@@ -95,7 +95,7 @@ One of the most important roled of the Lotus miner is the [Storage proving]({{<r
 
 The proving processes require low-latency access to the sealed sectors. The proving challenge requires a GPU to run on. The resulting zkProof will be sent to the chain in a message. There are strict deadlines for those messages to arrive on-chain (30 minutes for WindowPoSt and just 30 seconds for WinningPoSt). It is therefore important to properly size and configure the proving workers (be it on the Lotus miner <!--TODO STEF this whole section mixes names for software processes and hardware instances a lot - suggest reviewing the whole thing to disambiguate-->or separate) and to make sure there are dedicated wallets set up for these processes. If they use the general worker wallet there is the risk of message congestion, resulting in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards.
 
-Always check if there are upcoming proving deadlines before halting any services for maintenance:<!--TODO STEF if winningPoSt is every 30s, when are there ever windows for maintenance? How does one even do maintenance?-->
+Always check if there are upcoming proving deadlines before halting any services for maintenance.<!--TODO STEF if winningPoSt is every 30s, when are there ever windows for maintenance? How does one even do maintenance?-->
 
     lotus-miner proving deadlines
 

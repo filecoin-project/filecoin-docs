@@ -33,12 +33,10 @@ Hardware requirements and architecture configurations evolve continually, based 
 
 [![Screenshot of a community discussion on GitHub.](github-arch-discussion.png)](https://github.com/filecoin-project/lotus/discussions/6071)
 
-This discussion is ongoing and frequently updated with the new recommendation from community storage providers.
-<!--TODO STEF erm, that discussion is locked and hasn't been updated since 2021? -->
 
 ## Solo storage providing
 
-Please take a look at the presentation Benjamin Hoejsbo <!--TODO STEF who? where from? why should I trust him? -->gave where they examine solo storage provider setups.
+Please take a look at the presentation Benjamin Hoejsbo <!--TODO STEF who? where from? why should I trust him? -- Bob: existing text, probably to be removed-->gave where they examine solo storage provider setups.
 
 {{< youtube "LKMjCgo-fkA" >}}
 
