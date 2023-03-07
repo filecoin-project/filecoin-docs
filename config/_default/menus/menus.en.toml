@@ -1,27 +1,22 @@
 [[main]]
-  name = "About"
-  url = "/about/basics/what-is-filecoin/"
-  weight = 20
-
-[[main]]
-  name = "Intro"
-  url = "/intro/intro-to-filecoin/what-is-filecoin/"
-  weight = 30
+  name = "Basics"
+  url = "/basics/what-is-filecoin/overview"
+  weight = 10
 
 [[main]]
   name = "Store"
   url = "/store/overview/start-storing/"
-  weight = 60
+  weight = 20
 
 [[main]]
   name = "Providers"
   url = "/storage-provider/basics/overview/"
-  weight = 70
+  weight = 30
 
 [[main]]
   name = "Smart contracts"
   url = "/developers/introduction/filecoin-and-ipfs"
-  weight = 80
+  weight = 40
   identifier= "main-smart-contracts"
 
     [[main]]
@@ -63,7 +58,7 @@
 [[main]]
   name = "Reference"
   url = "/reference/general/overview/"
-  weight = 90
+  weight = 50
 
 
 
