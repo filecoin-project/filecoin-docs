@@ -23,7 +23,7 @@ This method is intended to return a list of addresses owned by client. However, 
 Example:
 
 ```curl
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -51,7 +51,7 @@ Returns the number of most recent block.
 Example:
 
 ```curl
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -113,7 +113,7 @@ Returns the currently configured chain ID, a value used in replay-protected tran
 Example:
 
 ```curl
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \    src/languages update/json-rpc-examples
+curl --location --request POST 'https://api.node.glif.io' \    src/languages update/json-rpc-examples
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -152,7 +152,7 @@ This documentation section is a work-in-progress.
 Example:
 
 ```curl
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
     --header 'Content-Type: application/json' \
     --data-raw '{
         "jsonrpc":"2.0",
@@ -189,7 +189,7 @@ Returns a collection of historical gas information.
 Example:
 
 ```curl
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -209,7 +209,7 @@ Returns the current price per gas in wei.
 Example:
 
 ```curl
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -245,7 +245,7 @@ Input:
 
 
 ```curl
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -292,7 +292,7 @@ Returns information about a block by block number.
     - `Boolean`: If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -341,7 +341,7 @@ Returns the number of messages in the tipset.
 - Inputs:
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -376,7 +376,7 @@ Returns the number of transactions in a block matching the given tipset.
 Example:
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -412,7 +412,7 @@ This section of documentation is a work-in-progress.
         - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -702,7 +702,7 @@ Returns a fee per gas that is an estimate of how much you can pay as a priority 
 - Inputs: none
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -728,7 +728,7 @@ Installs a persistent filter to notify when a new block arrives.
 - Inputs: none
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -765,7 +765,7 @@ Creates a filter object, based on filter options, to notify when the state chang
                     - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -797,7 +797,7 @@ Creates a filter in the node, to notify when new pending transactions arrive. To
 - Inputs: none
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -823,7 +823,7 @@ Returns the current ethereum protocol version.
 - Inputs: none
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -850,7 +850,7 @@ Creates a new message call transaction or a contract creation for signed transac
 - Inputs:
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -882,7 +882,7 @@ Uninstalls a filter with given id.
 - Inputs:
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -909,7 +909,7 @@ Unsubscribe from different Ethereum event types with a regular RPC call with `et
     - `Subscription ID`: as previously returned from an `eth_subscribe` call.
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",

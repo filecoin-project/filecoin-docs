@@ -77,7 +77,7 @@ Since Filecion is fully EVM-compatible, Filecoin nodes also provide Ethereum com
 To request the current max priority fee in the network you can send a request to a public Filecoin endpoint:
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
