@@ -43,7 +43,7 @@ Clients can use their DataCap to incentivize storage providers to serve their ne
 #### FVM Smart Contracts
 Smart contracts can acquire DataCap just like any regular client. To do so, simply enter the f410 address of the smart contract that requires DataCap as the client address when making a request. 
 
-For a smart contract's first DataCap allocation, we recommend using auto-verifier [Verify.glif.io](Verify.glif.io) to get 32 GiB of DataCap, as outline below. 
+For a smart contract's first DataCap allocation, we recommend using auto-verifier [Verify.glif.io](Verify.glif.io) to get 32 GiB of DataCap, as outlined below. 
 
 It's important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. To improve this experience, we are developing an FRC to allow DataCap to be held between redeployments.
 
