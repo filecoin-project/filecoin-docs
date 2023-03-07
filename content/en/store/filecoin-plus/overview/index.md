@@ -36,9 +36,16 @@ You can find a list of current [active notaries at plus.fil.org](https://plus.fi
 
 Notaries are selected through an [application process](https://github.com/filecoin-project/notary-governance/tree/main/notaries#application--selection-process). If approved, [root key-holders](https://github.com/filecoin-project/notary-governance/tree/main/root-key-holders#overview) (executors of the decisions made by the community on-chain) grant notary status and DataCap amounts. Those interested in becoming Notaries should apply for this role by filing an Issue in the [notary governance repo](https://github.com/filecoin-project/notary-governance/).
 
-### Client
+### Storage Client
 
 Clients can use their DataCap to incentivize storage providers to serve their needs. This can include providing additional features and levels of services that meet their specific requirements. In doing so, storage-related goods and services on Filecoin are made more valuable and competitive over time. Notaries vet clients to ensure the client receives DataCap commensurate with their reputation and needs and that the client responsibly allocates that DataCap.
+
+#### FVM Smart Contracts
+Smart contracts can acquire DataCap just like any regular client. To do so, simply enter the f410 address of the smart contract that requires DataCap as the client address when making a request. 
+
+For a smart contract's first DataCap allocation, we recommend using auto-verifier [Verify.glif.io](Verify.glif.io) to get 32 GiB of DataCap, as outline below. 
+
+It's important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. To improve this experience, we are developing an FRC to allow DataCap to be held between redeployments.
 
 ## Using DataCap
 
@@ -75,11 +82,6 @@ For applying directly to a specific notary:
 Each request is tracked as a GitHub issue in the [Fil+ Client Onboarding repo](https://github.com/filecoin-project/filecoin-plus-client-onboarding). You can follow the progress of your application there as well. Notaries may ask for additional information before they will allocate you DataCap.
 
 To apply for a Large Dataset Notary, follow the steps at [Applying for a large DataCap allocation](https://github.com/filecoin-project/filecoin-plus-large-datasets#applying-for-a-large-datacap-allocation).
-
-### FVM Smart Contracts
-Smart contracts can acquire DataCap just like any regular client. To do so, simply enter the f410 address of the smart contract that requires DataCap as the client address when making a request. To receive the initial allocation of 32GiB, we recommend using the auto-verifier [Verify.glif.io](Verify.glif.io). 
-
-It's important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. To address this issue, we are developing an FRC to allow DataCap to be held between redeployments.
 
 ### Spend DataCap
 
