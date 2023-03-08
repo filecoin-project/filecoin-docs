@@ -32,7 +32,7 @@ The [Filecoin signing tools](https://github.com/Zondax/filecoin-signing-tools) p
 - BLS
 - CBOR-JSON serialization of transactions
 
-Support for multisignature transaction signing is currently in progress, and the pure JavaScript implementation is less complete than the Rust and WASM implementations. 
+Support for multisignature transaction signing is currently in progress, and the pure JavaScript implementation is less complete than the Rust and WASM implementations. Learn more in the [official documentation](https://docs.zondax.ch/filecoin-signing-tools/).
 
 ## filecoin-address
 
