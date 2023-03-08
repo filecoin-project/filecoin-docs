@@ -46,31 +46,6 @@ For instructions on how import the `filecoin.solidity` library and call availabl
 | BurnFrom                                 | :heavy_check_mark:       |
 | Allowance                                | :heavy_check_mark:       |
 
-
-### Storage market
-| Method                                   | Supported?               |
-|:-----------------------------------------|:-------------------------|
-| Constructor                              | :heavy_multiplication_x: |
-| AddBalance                               | :heavy_check_mark:       |
-| WithdrawBalance                          | :heavy_check_mark:       |
-| PublishStorageDeals                      | :heavy_check_mark:       |
-| VerifyDealsForActivation                 | :heavy_multiplication_x: |
-| ActivateDeals                            | :heavy_multiplication_x: |
-| OnMinerSectorsTerminate                  | :heavy_multiplication_x: |
-| ComputeDataCommitment                    | :heavy_multiplication_x: |
-| CronTick                                 | :heavy_multiplication_x: |
-| GetBalance                               | :heavy_check_mark:       |
-| GetDealDataCommitment                    | :heavy_check_mark:       |
-| GetDealClient                            | :heavy_check_mark:       |
-| GetDealProvider                          | :heavy_check_mark:       |
-| GetDealLabel                             | :heavy_check_mark:       |
-| GetDealTerm                              | :heavy_check_mark:       |
-| GetDealEpochPrice                        | :heavy_check_mark:       |
-| GetDealClientCollateral                  | :heavy_check_mark:       |
-| GetDealProviderCollateral                | :heavy_check_mark:       |
-| GetDealVerified                          | :heavy_check_mark:       |
-| GetDealActivation                        | :heavy_check_mark:       |
-
 ### Miner
 | Method                                   | Supported?               |
 |:-----------------------------------------|:-------------------------|
@@ -130,6 +105,30 @@ For instructions on how import the `filecoin.solidity` library and call availabl
 | LockBalance                              | :heavy_check_mark:       |
 | UniversalReceiverHook                    | :heavy_check_mark:       |
 | List signers and threshold               | :heavy_multiplication_x: |
+
+### Storage market
+| Method                                   | Supported?               |
+|:-----------------------------------------|:-------------------------|
+| Constructor                              | :heavy_multiplication_x: |
+| AddBalance                               | :heavy_check_mark:       |
+| WithdrawBalance                          | :heavy_check_mark:       |
+| PublishStorageDeals                      | :heavy_check_mark:       |
+| VerifyDealsForActivation                 | :heavy_multiplication_x: |
+| ActivateDeals                            | :heavy_multiplication_x: |
+| OnMinerSectorsTerminate                  | :heavy_multiplication_x: |
+| ComputeDataCommitment                    | :heavy_multiplication_x: |
+| CronTick                                 | :heavy_multiplication_x: |
+| GetBalance                               | :heavy_check_mark:       |
+| GetDealDataCommitment                    | :heavy_check_mark:       |
+| GetDealClient                            | :heavy_check_mark:       |
+| GetDealProvider                          | :heavy_check_mark:       |
+| GetDealLabel                             | :heavy_check_mark:       |
+| GetDealTerm                              | :heavy_check_mark:       |
+| GetDealEpochPrice                        | :heavy_check_mark:       |
+| GetDealClientCollateral                  | :heavy_check_mark:       |
+| GetDealProviderCollateral                | :heavy_check_mark:       |
+| GetDealVerified                          | :heavy_check_mark:       |
+| GetDealActivation                        | :heavy_check_mark:       |
 
 ### Storage power
 | Method                                   | Supported?               |
@@ -220,8 +219,8 @@ Once you've either imported particular contracts manually or simply installed `f
 
 - [Account](#call-the-account-actor)
 - [DataCap](#call-the-datacap-actor)
-- [Storage market](#call-the-storage-market-actor)
 - [Miner](#call-the-miner-actor)
+- [Storage market](#call-the-storage-market-actor)
 - [Storage power](#call-the-storage-power-actor)
 - [Verified registry](#call-the-verified-registry-actor)
 
