@@ -131,7 +131,7 @@ The `VerifiedRegistryActor` is responsible for managing Fil+ clients. This actor
 
 #### SystemActor
 
-?
+For more information on `SystemActor`, see the [source code](https://github.com/filecoin-project/specs-actors/blob/master/actors/builtin/system/system_actor.go).
 
 ## User actors (smart contracts)
 
