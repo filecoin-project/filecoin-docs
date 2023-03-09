@@ -23,6 +23,87 @@ aliases:
 ## 1 PiB raw architecture
 ![1 PiB raw reference architecture](1PIB.png)
 
+The following reference architecture is designed for 1PiB of raw sectors or raw data to be stored. Let's discuss the various design choices of this architecture.
+
+### Virtual machines
+Lotus daemon and Boost run as Virtual Machines in this architecture. The advantages of virtualization are well-known nowadays, including easy reconfiguration of parameters (CPU, memory, disk) and portability. The daemon is not a very intensive process by itself but must be available at all times. We recommend having a second daemon running as another VM or on the backup infrastructure to which you can fail over.
+
+Boost is a resource intensive process, especially when deals are being ingested over the internet. It also feeds data of the deals into the Lotus miner.
+
+We recommend 12-16 cores per VM and 128GiB of memory. Lotus daemon and Boost need to run on fast storage (SSD or faster). The capacity requirements of Boost depend on the size of deals you are accepting as a Storage Provider. Its capacity must serve as a landing space for deals until the data can be processed by your sealing cluster in the backend.
+
+Both Lotus daemon and Boost require public internet connectivity. In the case of Boost you also need to consider bandwidth. Depending on the deal size you are accepting, you might require 1Gbps or 10Gbps internet bandwidth.
+
+### Lotus miner
+Lotus miner becomes less of an intensive process with dedicated PoST workers separated from it (as we did in this design). If you use a dedicated storage server or NAS system as the storage target for your sealed and unsealed sectors, Lotus miner eventually could also become a VM. This requires additional CPU and memory on the hypervisor host.
+
+We opted for a standalone Lotus miner in this design and gave it 256GiB of memory. This is because we operate ZFS at the storage layer, which requires a lot of memory for caching. Lotus miner has enough with 128GiB of memory when you choose for a dedicated storage server or NAS system for your storage.
+
+### SATA Storage
+In this architecture we have attached storage shelves to the Lotus miner with 2.4 PiB of usable capacity. This is the capacity after the creation of a RAIZ2 filesystem (double parity). We recommend vdevs of 12 disks wide. In RAIDZ2 this results in 10 data disks and 2 parity disks. Storage systems also don't behave well at 100% used capacity, so we designed for 20% extra capacity.
+
+On this system we store 1PiB of sealed sectors and 1PiB of unsealed sectors (for fast retrieval), however the I/O behavior on sealed sectors is very different from the I/O behavior on unsealed sectors.
+When [storage-proving]({{<relref "storage-proving">}}) happens only a very small portion of the data is read by WindowPoST. A large Storage Provider will have many sectors in multiple partitions for which WindowPoST requires fast access to the disks. This is unusual I/O behavior for any storage system.
+
+The unsealed copies are used for fast retrieval of the data towards the customer. Large datasets in chunks of 32GiB (or 64GiB depending on the configured sector size) are read. In order to avoid different tasks competing for read I/O on disk it is recommended to create separated disk pools with their own VDEVs (when using ZFS) for sealed and unsealed copies.
+
+### PoST workers
+We have split off the Winning and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelyhood of winning block rewards and reduces the likelyhood of missing a proving deadline. For redundancy you can run a standby WindowPoST worker on the WinningPoST server and vice versa.
+
+PoST workers require 128GiB of memory at the minimum and require a capable CPU with 24GB of memory and 6000 or more CUDA cores.
+
+### Sealing workers
+The sealing workers require the most attention during the design of a solution. Their performance as a whole will define the sealing rate of your setup, and how fast you can onboard client deals.
+
+Keep in mind that using [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}}) reduces the requirements to have a fast performing sealing setup considerably. In this design however we plan for an on-premise sealing setup of maximum 7TiB/day. This theoretical sealing capacity means that the entire sealing setup runs at full speed for 24 hrs/day.
+
+#### AP / PC1 worker
+We put the AddPiece and PreCommit1 tasks together on a first worker. This makes sense because AddPiece prepares the scratch space that will be used by the PC1 tasks thereafter.
+The first critical hardware component for PC1 is the CPU. This must be a CPU with SHA-256 extensions. Most Storage Providers opt for AMD Epyc (Rome, Milan or Genova) processors, although the latest Intel Xeon processors (Ice Lake and newer) also support these extensions.
+
+To verify if your CPU has the necessary extensions, run:
+
+    cat /proc/cpuinfo | grep --color sha_ni
+
+PC1 is a single-threaded process so we require enough CPU cores to run multiple PC1 tasks in parallel. This reference architecture has 32 cores in a PC1, which would allow for ~30 parallel PC1 processes.
+
+For this we also need 1TB of memory in the PC1 server.
+
+Every PC1 processes requires ~450GiB of sealing scratch space. This scratch space is vital to the performance of the entire sealing setup. It requires U.2 or U.3 NVMe media. For 30 parallel PC1 processes we then need ~15TiB of scratch space. RAID protection on this volume is not mandatory, however losing 30 sectors during sealing and having to start over does have an impact on your sealing rate.
+
+#### PC2 / C1 / C2 workers
+The next step in the sealing pipeline is PreCommit2 (PC2). You could decide to keep it together with PC1 but given the size of our setup (1PiB) and the likelyhood to scale beyond that, we split off PC2 in this archicture.
+
+We plan for twice the amount of PC2 workers compared to PC1, as explained under [sealing rate]({{<relref "sealing-rate">}}). Apart from the memory requirements this process specifically requires a capable GPU with preferably 24GB of memory and 6000 or more CUDA cores.
+
+The scratch space from PC1 is copied over to the PC2 worker. This PC2 worker also requires fast NVMe scratch space. Since we plan for 2 PC2 workers against 1 PC1 worker, the capacity of the scratch space per PC2 worker is half of the total scratch space capacity of the PC1 worker, 8TiB in our case.
+
+C1 doesn't require much attention for our architecture. C2 however requires a capable GPU again.
+
+### Network
+There are multiple aspects to be discussed when it comes to network requirements.
+First of all there is the internet bandwidth. Depending on the deal size and customer expectations you will need anything between 1Gbps and 10Gbps. It is possible to run at 1Gbps but you will not receive client data faster than ~100 MB/s, which might be insufficient.
+If you would be running a Saturn L1 CDN node on your setup as well, 10Gbps is a requirement.
+
+The network bandwidth for the copy task between PC1 and PC2 are also a important. Our theoretical 7TiB/day sealing capacity will be hindered by the network performance between PC1 and PC2. Any internal connectivity should be at least 10Gbps, with faster connectivity being more favorable.
+
+Keep in mind that not just your servers and switches must be capable of delivering the required throughput, but also your firewall. If your Boost instance sits behind your firewall, you will not get data in any faster than what the firewall is capable of.
+
+The same applies to inter-VLAN traffic. If you use firewall rules between your VLANs (which you should), your firewall is again likely to be the bottleneck. It is strongly advised to have all sealing workers, the Lotus miner and the storage system in the same VLAN. These systems require data access and copy data across each other via your network. Having them in the same VLAN keeps all traffic between them at layer 2, not involving routing and firewalling.
+
+### Backup
+It is crucial to have a backup of any production system. It is even more crucial to be able to restore from a backup. These concepts are very applicable to a Filecoin Storage Provider because not only are you storing customer data for which you have (on-chain) contracts, you also pledged a large amount of collateral for that data. If you are unable to restore your Lotus miner and start proving your storage on-chain, you will be losing a lot of money. If you are unable to come back online in 6 weeks, you are losing **all** of your collateral, which will most likely lead to bankruptcy. As such it matters less what kind of backup you have, as long as you are able to restore from it fast.
+
+A first level of protection comes from ZFS (if you are using ZFS as the filesystem for your storage). Having ZFS snapshots available protects you against human error that caused data loss, and potentially even against ransomware.
+
+A second level of defense comes from a dedicated backup system. Not only should you have backup storage (on a different storage array than the original data), you also need to have a backup server that can at a minimum run Lotus daemon, Lotus miner and 1 WindowPoST worker (note: this requires a GPU). With that you can sync the chain, offer retrievals and prove your storage on-chain.
+
+To be completely safe you might consider hosting your backup system (server + storage) in a different datacenter than your primary system.
+
+Keep in mind: any backup strategy is only good enough when you are able to restore from it.
+
+
+
 
 ## Beginner's corner
 Angelo to write a section on the use of refurbished hardware
@@ -36,7 +117,7 @@ Hardware requirements and architecture configurations evolve continually, based 
 
 ## Solo storage providing
 
-Please take a look at the presentation Benjamin Hoejsbo <!--TODO STEF who? where from? why should I trust him? -- Bob: existing text, probably to be removed-->gave where they examine solo storage provider setups.
+Please take a look at the presentation Benjamin Hoejsbo <!--TODO STEF who? where from? why should I trust him? Bob: existing text, probably to be removed--> gave where they examine solo storage provider setups.
 
 {{< youtube "LKMjCgo-fkA" >}}
 
