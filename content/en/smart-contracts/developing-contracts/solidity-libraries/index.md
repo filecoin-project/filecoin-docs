@@ -8,7 +8,7 @@ type: docs
 menu:
   smart-contracts:
     identifier: "solidity-libraries-bff1cc77a90c8bea84857e1139981325"
-weight: 100
+weight: 110
 toc: true
 ---
 
