@@ -13,6 +13,16 @@ weight: 320
 toc: true
 ---
 
+The protocol level built-in actors API is split into the following sections:
+
+- [Account actor](#account-actor)
+- [Datacap](#datacap)
+- [Miner](#miner)
+- [Multisig](#multisig)
+- [Storage market actor](#storage-market-actor)
+- [Storage power actor](#storage-power-actor)
+- [Verified registry actor](#verified-registry-actor)
+
 ## Account actor
 
 The account actor is responsible for user account. If you want to call these methods in your smart  contracts, you need to specify method number of that method you want to invoke. Please refer the each method for its method number.
