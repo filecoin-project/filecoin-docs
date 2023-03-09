@@ -6,7 +6,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-basics"
     identifier: "how-providing-storage-works-1e29addf0ea9d46268f68b508d61b89e"
 weight: 20
 toc: true

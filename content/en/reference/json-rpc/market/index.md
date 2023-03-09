@@ -5,7 +5,7 @@ images: []
 type: docs
 menu:
   reference:
-    parent: "lorem"
+    parent: "reference-json-rpc"
     identifier: "market-e3d0d6924f4a567136340ba532b1c41c"
 weight: 100
 toc: true

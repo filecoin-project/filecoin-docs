@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   store:
-    parent: "lorem"
+    parent: "store-overview"
     identifier: "start-storing-85ab1f5b8a0bc0a1291758573d823c89"
 weight: 10
 toc: true

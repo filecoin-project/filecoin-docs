@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-contribute"
     identifier: "writing-guide-ab57e811ecee7c89e621f7bed59cd3e4"
-weight: 40
+weight: 540
 toc: true
 aliases:
     - "/about-filecoin/writing-guide"

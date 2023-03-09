@@ -6,7 +6,7 @@ images: []
 type: docs
 menu:
   store:
-    parent: "lorem"
+    parent: "store-filecoin-plus"
     identifier: "overview-031093cdb49d251de4cc0378c710d165"
 weight: 10
 toc: true

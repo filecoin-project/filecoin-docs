@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-project"
     identifier: "the-Filecoin-project-3f392663e45ccdd72c46eb9e7296a8ad"
-weight: 20
+weight: 310
 toc: true
 aliases:
     - "/about-filecoin/project"

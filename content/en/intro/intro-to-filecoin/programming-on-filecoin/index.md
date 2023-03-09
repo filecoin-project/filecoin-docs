@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   intro:
-    parent: "lorem"
+    parent: "intro-intro-to-filecoin"
     identifier: "programming-on-filecoin-25d2a16d53529336f3a2af79979862c4"
 weight: 70
 toc: true

@@ -1,13 +1,14 @@
 ---
-title: "Filecoin.sol"
+title: "Integrating existing libraries"
 description: ""
 lead: ""
 draft: false
 images: []
 type: docs
 menu:
-  reference:
-    identifier: "filecoin-sol-79dc343151d27b37a4e8e6a41e11bae2"
+  smart-contracts:
+    parent: "smart-contracts-developing-contracts"
+    identifier: "integrating-existing-libraries-e0b2c827da6ced7e92bfaf452add675c"
 weight: 100
 toc: true
 ---

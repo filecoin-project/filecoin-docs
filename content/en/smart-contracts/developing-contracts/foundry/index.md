@@ -1,43 +1,138 @@
 ---
 title: "Foundry"
-description: ""
+description: "Learn how to use Foundry with the Filecoin network."
 lead: ""
 draft: false
 images: []
 type: docs
 menu:
   smart-contracts:
-    identifier: "foundry-c9d70a9bb594275b17454ac6fc9abfaa"
+    parent: "smart-contracts-developing-contracts"
+    identifier: "foundry-riejwu384uw9eus8wu283uw9riwus8w"
 weight: 100
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+While originally created for the Ethereum blockchain, the Filecoin EVM-runtime allows Hardhat to be used to develop and deploy smart contracts on the Filecoin network.
 
-## Selvage
+## Quickstart
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+The [Filecoin EVM-runtime Hardhat kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit) is a starter hardhat project for developing, deploying, and testing Solidity smart contracts on the Filecoin network. It functions in the same way as other Hardhat development kits. Check out the quickstart below to test it out!
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+### Prerequisites
 
-### Heirloom
+This guide assumes you have the following installed:
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+- [Yarn](https://yarnpkg.com/)
+- A Filecoin address stored in [MetaMask]({{< relref "/smart-contracts/ethereum-wallet/metamask" >}})
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+### Environment setup
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+First, we need to grab the starter kit and install the dependencies.
 
-## Bushwick cold-pressed
+1. Clone the Hardhat starter kit and move into the new `fevm-hardhat-kit` directory:
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+    ```shell
+    git clone https://github.com/filecoin-project/fevm-hardhat-kit.git
+    cd fevm-hardhat-kit
+    ```
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+    ```plaintext
+    Cloning into 'fevm-hardhat-kit'...
+    remote: Enumerating objects: 758, done.
+    remote: Counting objects: 100% (725/725), done.
 
-## Locavore swag
+    ...
+    ```
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+1. Use Yarn to install the project's dependencies:
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+    ```shell
+    yarn install
+    ```
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+    ```plaintext
+    [1/4] 🔍  Resolving packages...
+    [2/4] 🚚  Fetching packages...
+    [3/4] 🔗  Linking dependencies...
+
+    ...
+
+    ✨  Done in 16.34s.
+    ```
+
+1. Create an environment variable for your private key. You can [export it from MetaMask]({{< relref "/smart-contracts/ethereum-wallet/metamask" >}}).
+
+    ```shell
+    export PRIVATE_KEY='<YOUR PRIVATE KEY>'
+    ```
+
+    For example:
+
+    ```shell
+    export PRIVATE_KEY='d52cd65a5746ae71cf3d07a8cf392ca29d7acb96deba7d94b19a9cf3c9f63022'
+    ```
+
+    Always be careful when dealing with your private key. Double-check that you're not hardcoding it anywhere or committing it to source control like GitHub. Anyone with access to your private key has complete control over your funds.
+
+1. Get the deployer address from Hardhat:
+
+    ```shell
+    yarn hardhat get-address
+    ```
+
+    ```plaintext
+    Ethereum address (this addresss should work for most tools): 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
+    f4address (also known as t4 address on testnets): f410fch6aods4buzaete3mpatnejuaxqhzdci3j67vyi
+    ✨  Done in 1.40s.
+    ```
+
+    This will show you the Ethereum-style address associated with that private key and the Filecoin-style `f4` or `t4` address. The Ethereum address can be used for almost all Ethereum tooling.
+
+Now that we've got the kit set up, we can start using it to develop and deploy our contracts.
+
+### Manage the contracts
+
+There are two main types of contracts:
+
+- Basic Solidity examples: Simple contracts to show off basic Solidity.
+- Filecoin API Examples: Contracts that demo how to use the Filecoin APIs in Solidity to access storage deals and other Filecoin-specific functions.
+
+{{< alert >}}
+Make sure that your account has funds. You won't be able to deploy any contracts without FIL or tFIL.
+{{< /alert >}}
+
+1. Run `hardhat deploy` to deploy all the contracts. This can take a few minutes:
+
+    ```shell
+    yarn hardhat deploy
+    ```
+
+    ```plaintext
+    Compiled 18 Solidity files successfully
+    Wallet Ethereum Address: 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
+    Deploying Simplecoin...
+
+    ...
+
+    ✨  Done in 211.76s.
+    ```
+
+    This will compile all the contracts in the contracts folder and deploy them to the Hyperspace test network automatically!
+
+1. Interact with the contracts using the available functions within the `tasks` folder. For example, you can get the balance of the `simple-coin` contract by calling the `get-balance` function:
+
+    ```shell
+    yarn hardhat get-balance --contract '0xA855520fcCB6422976F7Ac78534edec2379Be5f6' --account '0x11Fc070e5c0D32024c9B63c136913405e07C8c48'
+    ```
+
+    ```plaintext
+    Reading SimpleCoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 on network hyperspace
+    Amount of Simplecoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 is 12000
+    Total amount of minted tokens is 12000
+    ✨  Done in 3.73s.
+    ```
+
+## Hardhat docs
+
+You can view the official Hardhat documentation over at [hardhart.org/docs](https://hardhat.org/docs).

@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
+    parent: "smart-contracts-filecoin-evm-runtime"
     identifier: "how-gas-works-b2f64e9deac2e82424df15a11874914b"
 weight: 100
 toc: true

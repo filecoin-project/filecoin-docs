@@ -5,7 +5,7 @@ images: []
 type: docs
 menu:
   reference:
-    parent: "lorem"
+    parent: "reference-json-rpc"
     identifier: "wallet-e2e7ece0c9a458f044c3a6c625b4c2cd"
 weight: 100
 toc: true

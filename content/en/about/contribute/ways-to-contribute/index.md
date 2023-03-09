@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-contribute"
     identifier: "ways-to-contribute-3fd041b1b3f90b0782164fc348d38033"
-weight: 30
+weight: 530
 toc: true
 aliases:
     - "/about-filecoin/ways-to-contribute"

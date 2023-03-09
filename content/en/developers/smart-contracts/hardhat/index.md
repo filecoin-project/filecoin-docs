@@ -39,7 +39,7 @@ This library is currently in beta. It has yet to be audited, and the APIs will l
 
 The library is [available from GitHub](https://github.com/Zondax/filecoin-solidity). The Zondax team writes and maintains this library's [documentation](https://docs.zondax.ch/fevm/filecoin-solidity).
 
-The Filecoin.sol library provides a Solidity interface to Filecoin's [built-in actors]({{< relref "/reference/built-in-actors/protocol-api/account-actor" >}}), which are the core actors that power the Filecoin network. [Zondax provides a list](https://docs.zondax.ch/fevm/filecoin-solidity/api/) of all built-in actor methods currently supported by the Filecoin.sol API.
+The Filecoin.sol library provides a Solidity interface to Filecoin's [built-in actors]({{< relref "#" >}}), which are the core actors that power the Filecoin network. [Zondax provides a list](https://docs.zondax.ch/fevm/filecoin-solidity/api/) of all built-in actor methods currently supported by the Filecoin.sol API.
 
 ## Data DAO Example
 

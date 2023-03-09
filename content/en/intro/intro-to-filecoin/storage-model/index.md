@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   intro:
-    parent: "lorem"
+    parent: "intro-intro-to-filecoin"
     identifier: "storage-model-42563558fd04d7d7e30889d8c06e829d"
 weight: 40
 toc: true

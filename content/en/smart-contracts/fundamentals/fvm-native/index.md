@@ -1,5 +1,5 @@
 ---
-title: "Quickstart"
+title: "FVM native"
 description: ""
 lead: ""
 draft: false
@@ -8,7 +8,7 @@ type: docs
 menu:
   smart-contracts:
     parent: "smart-contracts-fundamentals"
-    identifier: "quickstart-0be0da9b102ca7f5af95f58567cc2bae"
-weight: 120
+    identifier: "fvm-native-15fc137eb28d8a027268b96272cbe9fd"
+weight: 130
 toc: true
 ---

@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   about:
-    parent: "about-assets"
+    parent: "assets"
     identifier: "fil-token-421106ce93f167e33193ddb64dc5af06"
 weight: 210
 toc: true
