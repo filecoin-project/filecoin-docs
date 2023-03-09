@@ -219,17 +219,17 @@
   identifier = "reference-built-in-actors"
   url = "/reference/built-in-actors"
 
-    [[built-in-actors]]
-      name = "Protocol API"
-      weight = 10
-      identifier = "reference-built-in-actors-protocol-api"
-      url = "/reference/built-in-actors/protocol-api"
+    # [[built-in-actors]]
+    #   name = "Protocol API"
+    #   weight = 10
+    #   identifier = "reference-built-in-actors-protocol-api"
+    #   url = "/reference/built-in-actors/protocol-api"
 
-    [[built-in-actors]]
-      name = "Solidity API"
-      weight = 20
-      identifier = "reference-built-in-actors-solidity-api"
-      url = "/reference/built-in-actors/solidity-api"
+    # [[built-in-actors]]
+    #   name = "Solidity API"
+    #   weight = 20
+    #   identifier = "reference-built-in-actors-solidity-api"
+    #   url = "/reference/built-in-actors/solidity-api"
 
 [[reference]]
   name = "External APIs"
