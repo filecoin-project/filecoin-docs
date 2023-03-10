@@ -48,7 +48,7 @@ An EVM smart contract actor hosts a single EVM smart contract. Every EVM smart c
 An EVM smart contract can be deployed in one of three ways:
 
 1. An existing EVM smart contract can use the EVM's `CREATE`/`CREATE2` opcode.
-1. Ethereum-native tooling can be used in conjunction with an Ethereum-style account such as [Remix]({{< relref "remix" >}}) or [Hardhat]({{< relref "Hardhat" >}]).
+1. Ethereum-native tooling can be used in conjunction with an Ethereum-style account such as [Remix]({{< relref "remix" >}}) or [Hardhat]({{< relref "/smart-contracts/developing-contracts/hardhat" >}}).
 1. A native account can call method `4` on the Ethereum account manager `f010`, passing the EVM init code as a CBOR-encoded byte-string (major type 2) in the message parameters.
 
 ### Calling
