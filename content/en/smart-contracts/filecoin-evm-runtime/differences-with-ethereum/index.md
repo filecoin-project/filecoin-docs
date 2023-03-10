@@ -1,5 +1,5 @@
 ---
-title: "Differences with ethereum"
+title: "Differences with Ethereum"
 description: ""
 lead: ""
 draft: false
