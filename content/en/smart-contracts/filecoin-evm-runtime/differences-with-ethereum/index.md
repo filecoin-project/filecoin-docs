@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
+    parent: "smart-contracts-filecoin-evm-runtime"
     identifier: "differences-with-ethereum-e2c404b7736d394fbdb9f96395bedbb3"
 weight: 100
 toc: true

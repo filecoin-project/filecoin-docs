@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   intro:
-    parent: "lorem"
+    parent: "intro-intro-to-filecoin"
     identifier: "retrieval-market-3e38d1adc272f05b4a3f470e25c1773d"
 weight: 60
 toc: true

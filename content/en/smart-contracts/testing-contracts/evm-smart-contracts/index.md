@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
+    parent: "smart-contracts-testing-contracts"
     identifier: "evm-smart-contracts-1e1be3e0b74db7e156f93b7d2a8a7aa3"
 weight: 100
 toc: true

@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   intro:
-    parent: "lorem"
+    parent: "intro-intro-to-filecoin"
     identifier: "crypto-economics-143c9881701c30993def24fb1f1619f8"
 weight: 20
 toc: true

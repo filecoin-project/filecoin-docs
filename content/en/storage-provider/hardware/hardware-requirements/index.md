@@ -6,7 +6,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-hardware"
     identifier: "hardware-requirements-a2f6bfc8c2c8202e9a7c5bb6b091830d"
 weight: 20
 toc: true

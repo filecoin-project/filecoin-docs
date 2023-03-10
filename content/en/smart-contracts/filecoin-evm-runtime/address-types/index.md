@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
+    parent: "smart-contracts-filecoin-evm-runtime"
     identifier: "address-types-183b68cf3fb42bf260ccfa42d899590d"
 weight: 100
 toc: true

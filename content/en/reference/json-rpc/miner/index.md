@@ -5,7 +5,7 @@ images: []
 type: docs
 menu:
   reference:
-    parent: "lorem"
+    parent: "reference-json-rpc"
     identifier: "miner-aa6b1f6803cec48bd79b170072000a18"
 weight: 100
 toc: true

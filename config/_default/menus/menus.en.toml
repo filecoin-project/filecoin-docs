@@ -65,6 +65,192 @@
   url = "/reference/general/overview/"
   weight = 90
 
+# docs.filecoin.io/about
+# ----------------------
+[[about]]
+  name = "Basics"
+  weight = 10
+  identifier = "about-basics"
+  url = "/about/basics"
+
+[[about]]
+  name = "Assets"
+  weight = 20
+  identifier = "about-assets"
+  url = "/about/assets"
+
+[[about]]
+  name = "Project"
+  weight = 30
+  identifier = "about-project"
+  url = "/about/project"
+
+[[about]]
+  name = "Community"
+  weight = 40
+  identifier = "about-community"
+  url = "/about/community"
+
+[[about]]
+  name = "Contribute"
+  weight = 50
+  identifier = "about-contribute"
+  url = "/about/contribute"
+# ----------------------
+
+
+
+# docs.filecoin.io/intro
+# ----------------------
+[[intro]]
+  name = "Intro to Filecoin"
+  weight = 10
+  identifier = "intro-intro-to-filecoin"
+  url = "/intro/intro-to-filecoin"
+# ----------------------
+
+
+
+# docs.filecoin.io/store
+# ----------------------
+[[store]]
+  name = "Overview"
+  weight = 10
+  identifier = "store-overview"
+  url = "/store/overview"
+
+[[store]]
+  name = "Tools"
+  weight = 20
+  identifier = "store-tools"
+  url = "/store/tools"
+
+[[store]]
+  name = "Filecoin Plus"
+  weight = 30
+  identifier = "store-filecoin-plus"
+  url = "/store/filecoin-plus"
+# ----------------------
+
+
+
+# docs.filecoin.io/providers
+# ----------------------
+[[storage-provider]]
+  name = "Basics"
+  weight = 10
+  identifier = "providers-basics"
+  url = "/storage-provider/basics"
+
+[[storage-provider]]
+  name = "Hardware"
+  weight = 20
+  identifier = "providers-hardware"
+  url = "/storage-provider/hardware"
+
+[[storage-provider]]
+  name = "Rewards"
+  weight = 30
+  identifier = "providers-rewards"
+  url = "/storage-provider/rewards"
+# ----------------------
+
+
+
+# docs.filecoin.io/smart-contracts
+# ----------------------
+[[smart-contracts]]
+  name = "Fundamentals"
+  weight = 10
+  identifier = "smart-contracts-fundamentals"
+  url = "/smart-contracts/Fundamentals"
+
+[[smart-contracts]]
+  name = "Filecoin EVM-runtime"
+  weight = 20
+  identifier = "smart-contracts-filecoin-evm-runtime"
+  url = "/smart-contracts/filecoin-evm-runtime"
+
+[[smart-contracts]]
+  name = "Ethereum wallets"
+  weight = 30
+  identifier = "smart-contracts-ethereum-wallets"
+  url = "/smart-contracts/ethereum-wallets"
+
+[[smart-contracts]]
+  name = "Developing contracts"
+  weight = 40
+  identifier = "smart-contracts-developing-contracts"
+  url = "/smart-contracts/developing-contracts"
+
+[[smart-contracts]]
+  name = "Testing contracts"
+  weight = 50
+  identifier = "smart-contracts-testing-contracts"
+  url = "/smart-contracts/testing-contracts"
+
+[[smart-contracts]]
+  name = "Debugging contracts"
+  weight = 60
+  identifier = "smart-contracts-debugging-contracts"
+  url = "/smart-contracts/debugging-contracts"
+
+# ----------------------
+
+
+
+# docs.filecoin.io/reference
+# ----------------------
+[[reference]]
+  name = "General"
+  weight = 10
+  identifier = "reference-general"
+  url = "/reference/general"
+
+[[reference]]
+  name = "Exchanges"
+  weight = 20
+  identifier = "reference-exchanges"
+  url = "/reference/exchanges"
+
+[[reference]]
+  name = "Built-in actors"
+  weight = 30
+  identifier = "reference-built-in-actors"
+  url = "/reference/built-in-actors"
+
+    # [[built-in-actors]]
+    #   name = "Protocol API"
+    #   weight = 10
+    #   identifier = "reference-built-in-actors-protocol-api"
+    #   url = "/reference/built-in-actors/protocol-api"
+
+    # [[built-in-actors]]
+    #   name = "Solidity API"
+    #   weight = 20
+    #   identifier = "reference-built-in-actors-solidity-api"
+    #   url = "/reference/built-in-actors/solidity-api"
+
+[[reference]]
+  name = "External APIs"
+  weight = 40
+  identifier = "reference-external-apis"
+  url = "/reference/external-apis"
+
+[[reference]]
+  name = "External APIs"
+  weight = 40
+  identifier = "reference-external-apis"
+  url = "/reference/external-apis"
+
+[[reference]]
+  name = "JSON-RPC"
+  weight = 50
+  identifier = "reference-json-rpc"
+  url = "/reference/json-rpc"
+
+
+
 
 
 [[social]]

@@ -1,16 +1,19 @@
 ---
-title: "Using Filecoin.sol"
-description: "Filecoin.sol is a Solidity library used to interact with Filecoin built-in actors."
-lead: "Filecoin.sol is a set of Solidity libraries that allow developers to write smart contracts that seamlessly call exported methods of Filecoin built-in actors, as well as to access Filecoin specific system-calls idiomatically."
+title: "Solidity libraries"
+description: "External Solidity libraries can help developers create their applications quicker by offloading some of the work to already existing smart contracts."
+lead: "External Solidity libraries can help developers create their applications quicker by offloading some of the work to already existing smart contracts."
 draft: false
 images: []
 type: docs
 menu:
   smart-contracts:
-    identifier: "filecoin-sol-bff1cc77a90c8bea84857e1139981325"
-weight: 110
+    parent: "smart-contracts-developing-contracts"
+    identifier: "solidity-libraries-bff1cc77a90c8bea84857e1139981325"
+weight: 100
 toc: true
 ---
+
+## Filecoin.sol
 
 Filecoin.sol allows developers to:
 
@@ -20,21 +23,19 @@ Filecoin.sol allows developers to:
 - OpenZeppelin-like utilities specific to Filecoin.
 - CBOR serialization and deserialization for params and return data.
 
-## Overview
-
 In order to access exported Filecoin built-in actor methods in your smart contract, you will need to import Filecoin.sol in your Solidity project. As they are embeddable libraries, they don't need to be present on-chain. You can just import the library you desire and call its methods.
 
-Once the library is installed in your project, you can write Solidity code to call APIs from different built-in actors, using Filecoin-specific data types or data conversions from the utility library.
+Once the library is installed in your project, you can write Solidity code to call APIs from different built-in actors using Filecoin-specific data types or data conversions from the utility library.
 
-## Add to your contract
+### Add to your contract
 
-Run the following command in your Solidity project, which is created using any smart contract development frameworks such as Hardhat, Truffle, or Foundry.
+Run the following command in your Solidity project, which is created using any smart contract development framework such as Hardhat, Truffle, or Foundry.
 
 ```shell
 npm install @zondax/filecoin-solidity
 ```
 
-## Usage
+### Usage
 
 Once installed, you can call built-in actors in the library after importing them into your smart contract.
 
@@ -75,7 +76,7 @@ import "@zondax/filecoin-solidity/contracts/v0.8/utils/BigInts.sol";
 import "@zondax/filecoin-solidity/contracts/v0.8/utils/FilAddresses.sol";
 ```
 
-## Example
+### Example
 
 We can write a simple Solidity smart contract to query basic information for a Filecoin storage deal:
 
@@ -94,12 +95,12 @@ contract StorageDealQuery {
         return MarketAPI.getDealTerm(dealID);
     }
 
-    // Query the storage provider who store the date for this deal.
+    // Query the storage provider who stores the date for this deal.
     function get_deal_provider(uint64 dealID) public returns (uint64) {
         return MarketAPI.getDealProvider(dealID);
     }
 
-    // Query the collateral required from storage provider for this deal proposal.
+    // Query the collateral required from the storage provider for this deal proposal.
     function get_deal_provider_collateral(uint64 dealID) public returns (CommonTypes.BigInt memory) {
         return MarketAPI.getDealProviderCollateral(dealID);
     }
@@ -107,7 +108,7 @@ contract StorageDealQuery {
 }
 ```
 
-## Next steps
+### Next steps
 
 Check out these links to learn more about the Filecoin.sol library.
 

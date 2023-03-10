@@ -7,8 +7,9 @@ images: []
 type: docs
 menu:
   about:
+    parent: "about-basics"
     identifier: "how-filecoin-works-new-ec6e1097b35d3e70370af202a084426d"
-weight: 20
+weight: 120
 toc: true
 aliases:
     - "/about-filecoin/how-filecoin-works"

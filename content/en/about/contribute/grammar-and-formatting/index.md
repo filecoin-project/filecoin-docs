@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-contribute"
     identifier: "grammar-and-formatting-1a0bcde0cf5bc09ef8d11536957a6a89"
-weight: 20
+weight: 520
 toc: true
 aliases:
     - "/community/contribute/grammar-formatting-and-style/"

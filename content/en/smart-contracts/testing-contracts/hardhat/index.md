@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
+    parent: "smart-contracts-testing-contracts"
     identifier: "hardhat-4e5535b3ba6b31033261e9bf743330e9"
 weight: 100
 toc: true

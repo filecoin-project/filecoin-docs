@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   intro:
+    parent: "intro-intro-to-filecoin"
     identifier: "what-is-filecoin-fc4b388a2b14e53cb0914934ad042e8e"
 weight: 10
 toc: true

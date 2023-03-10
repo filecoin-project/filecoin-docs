@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-assets"
     identifier: "wrapped-Filecoin-4c7eeb65523375faefe658b7599e8b00"
-weight: 20
+weight: 220
 toc: true
 aliases:
     - "/about-filecoin/wrapped-filecoin"
