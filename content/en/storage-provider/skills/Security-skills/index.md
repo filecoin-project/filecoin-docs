@@ -14,14 +14,30 @@ menu:
 weight: 220
 toc: true
 ---
-
-## System security
-- Host-based firewall (UFW)
-- SELinux
-- not running as root
-- privelege escalation
+As a Filecoin Storage Provider you are not only storing customer data, you are also storing Filecoin wallets and running systems that require 24/7 uptime to not lose collateral. In the event of a security intrusion on your network and systems being compromised, you risk downtime or even losing access to your systems or storage. Proper security measures therefore are a must.
 
 ## Network security
-- Firewalling
-- Inter-VLAN firewalling
-- IPS
+A first layer of defense from outside is by implementing good network security. Plan for a redundant firewall setup through which not only you can filter incoming traffic but also traffic between your VLANs.
+By using a NGFW (Next-Generation-Firewall) you can also implement an IPS (Intrusion Prevention System) at the network perimeter.
+Do keep in mind though that if you plan on using a NGFW with IPS enabled that your internet bandwidth will be limited to the speed of the IPS.
+
+## System security
+A second layer of defense is system security. There are multiple concepts that contribute to good system security:
+
+- Host-based firewall (UFW)
+
+  Implement a host-based firewall on your systems (also called UFW on Ubuntu), which is `iptables` based.
+
+- SELinux
+
+  Linux comes with an additional security implementation called `SELinux` (Security Enhanced Linux). Most system administrators will not implement this by default because it takes additional consideration and administration. Once activated though it offers the highest grade of process and user isolation possible on Linux and contributes greatly to better security.
+
+- not running as root
+
+  It is a common mistake to run processes or containers as `root`. This is a serious security risk because any attacker who compromises a service running as root automatically obtains root privileges on that system.
+  
+  Lotus software does not require root privileges and therefore should run under a normal account (service account, for installed called `lotus`) on the system.
+
+- privelege escalation
+
+  Since it is not required that Lotus runs as root, it is also not required for the service account to have privilege escalation. This means you should not allow the `lotus` account to use `sudo`.
