@@ -172,4 +172,4 @@ Alternatively, you can do the same using the `forge create` command:
     The deployment process should be almost instantaneous. Once the contract has been successfully deployed, Foundry will give you a contract address you can use to interact with the contract.
 
 2. You can now interact with your contract using the contract address given by Foundry.
-3. Done!
+3. Done! For more information, see the [Foundry book](https://book.getfoundry.sh/).
