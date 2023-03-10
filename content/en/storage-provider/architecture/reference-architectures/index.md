@@ -47,6 +47,17 @@ When [storage-proving]({{<relref "storage-proving">}}) happens only a very small
 
 The unsealed copies are used for fast retrieval of the data towards the customer. Large datasets in chunks of 32GiB (or 64GiB depending on the configured sector size) are read. In order to avoid different tasks competing for read I/O on disk it is recommended to create separated disk pools with their own VDEVs (when using ZFS) for sealed and unsealed copies.
 
+Write access towards the storage also requires your attention. Depending how your storage array is connected (SAS or Ethernet) you will have different transfer speeds towards the sealed storage path. At a sealing capacity of 6 TiB/day you will effectively be writing 12 TiB/day towards the storage (6 TiB sealed, 6 TiB unsealed copies). Both your storage layout and your network need to be able to handle this.
+
+If this 12 TiB were equally spread across the 24hrs of a day, this would already require 1.14 Gbps.
+
+> 12 TiB * 1024 / 24 hr / 3600 sec * 8 = 1.14 Gbps
+
+The sealing pipeline produces 32 GiB sectors (64 GiB depending on your configured sector size) which are writte to the storage. If you configured _batching_ of the commit messages (to reduce total gas fees) then you will write multiple sectors towards disk at once.
+
+A minimum network bandwidth of 10 Gbps is recommended and write cache at the storage layer will be beneficial too.
+
+
 ### PoST workers
 We have split off the Winning and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelyhood of winning block rewards and reduces the likelyhood of missing a proving deadline. For redundancy you can run a standby WindowPoST worker on the WinningPoST server and vice versa.
 

@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "Storage-skills-7a9fdaa672cf6167e7e2990566ec2dbb"
-weight: 40
+weight: 230
 toc: true
 ---
 

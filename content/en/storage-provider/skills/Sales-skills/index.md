@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "lorem"
     identifier: "Sales-skills-36cf993d6c75fb3dce57d2f18be424c9"
-weight: 50
+weight: 240
 toc: true
 ---
 
