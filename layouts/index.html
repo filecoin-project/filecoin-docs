@@ -1,149 +1,268 @@
 {{ define "main" }}
+<link rel="stylesheet" href="assets/scss/components/_hero.scss" />
+<link rel="stylesheet" href="./index.scss" />
 
+<style>
+  @font-face {
+    font-family: "Sohne-Buch";
+    src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/tldr/Sohne-Buch.woff")
+      format("woff");
+  }
 
+  @font-face {
+    font-family: "Sohne-Halbfett";
+    src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/tldr/Sohne-Halbfett.woff")
+      format("woff");
+  }
+  .h1 {
+    font-family: "Sohne-Buch";
+    color: #1d2d35;
+  }
 
+  .h2 {
+    font-family: "Sohne-Buch";
+    color: #1d2d35;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    border: 1px solid #bababa;
+    /* border-left: 1px solid #bababa; */
+  }
+
+  .hero-content-container {
+    width: 60%;
+  }
+
+  .hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  }
+
+  .hero-svg {
+    margin: 0 auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    background: #3b8ef7;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 200ms ease;
+    margin-top: 5rem;
+  }
+
+  .button:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #307bdc;
+  }
+
+  .h1-button-gap {
+    padding-bottom: 1rem;
+  }
+
+  .p-button-gap {
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-image {
+    width: 22rem;
+  }
+
+  .columns-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .column {
+    width: 50%;
+    height: 25rem;
+    border-left: 1px solid #bababa;
+  }
+</style>
 
 <!-- HEADER SECTION -->
-<section class="section container-fluid mt-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <h1 class="display-5 fw-bold">Filecoin Docs</h1>
-            <p class="fs-4">Filecoin is a peer-to-peer network that allows anyone to store and retrieve data on the internet. Built-in economic incentives ensure that files are stored and retrieved reliably and continuously for however long a user specifies.</p>
-            <p class="fs-4"><a href="#persona-section">Find out more ↓</a></p>
-        </div>
-        <div class="col-lg-4 pt-5 px-5 d-none d-lg-block">
-            <svg height="400" fill="#3b8ef7" viewBox="0 0 400 400">
-                <g>
-                    <path d="m100.353416 0c54.609523.3256353 99.460952 45.0189686 99.034285 100.514207-.419047 54.455238-44.817143 99.007619-99.6876188 98.831218-55.0285715.210686-99.94857146-44.814075-99.7000822-100.1435992.25055836-54.6971429 44.9515107-99.53142859 100.353416-99.2018258zm13.958095 48.7315401c-5.554286 7.5980952-7.990476 16.5314285-10.641905 25.36-.773333 2.5771428-1.43619 5.1885714-2.213333 8.0171428-9.6857146-1.4019047-18.9771432-2.7466666-28.539048-4.127619-.3390476 2.5809524-.6552381 5.0019047-.9923809 7.5733333 9.4666666 1.4571429 18.5238095 2.8495238 27.8838095 4.2895238-1.2533333 5.28-2.4209524 10.207619-3.6209524 15.262857-9.1809524-1.283809-17.8857143-2.497143-26.6495238-3.723809-.3714286 2.830476-.6514286 4.969523-.9828571 7.487619 8.8019047 1.344762 17.287619 2.64 25.8304762 3.944762 0 .963809.1047619 1.523809-.0171429 2.032381-2.7257143 11.617142-5.2609524 23.285714-8.3180952 34.813333-1.4609524 5.497143-3.8114286 10.803809-8.3809524 14.666667-3.7619048 3.179047-7.8952381 2.647619-10.7238095-1.297143-1.2780953-1.777143-2.344762-3.887619-4.032381-5.133334-1.232381-.912381-3.9752381-1.460952-4.88-.729523-1.3409524 1.085714-2.312381 3.487619-2.1980952 5.251428.0971428 1.56381 1.6019047 3.392381 2.9828571 4.459048 4.6533333 3.582857 10.1295238 4.102857 15.6780952 3.011428 9.2933334-1.830476 15.8476191-7.628571 19.9104762-15.828571 3.192381-6.445714 5.5828572-13.329524 7.8419052-20.180953 2.045714-6.203809 3.434285-12.624761 5.167619-19.169523 9.127619 1.323809 18.074285 2.620952 27.205714 3.944762.754286-2.605715 1.434286-4.96381 2.167619-7.502858-9.554286-1.403809-18.670476-2.746666-27.864762-4.099047 1.104762-5.396191 2.087619-10.2019049 3.158095-15.4361906 8.693334 1.2285714 17.190477 2.4266666 25.950477 3.6647619.737142-2.6361905 1.363809-4.8838096 2.081904-7.4533334-9.009524-1.3333333-17.607619-2.6057143-26.84-3.9714285 3.104762-10.9866667 5.786667-21.4914286 9.140953-31.7809524 1.104762-3.3866667 3.573333-6.5657143 6.089523-9.1961905 3.300953-3.4476191 7.868572-2.6838095 10.664762 1.1047619 1.171429 1.5866667 2.274286 3.2647619 3.678096 4.6228571 1.792381 1.7314286 4.434285 2.5733334 6.234285.8876191 1.182857-1.1066667 1.144762-3.7104762 1.255238-5.6685714.04381-.7866667-.883809-1.712381-1.525714-2.4380953-3.125714-3.5390476-7.348571-4.7923809-11.807619-4.9790476-9.948571-.4171429-17.087619 4.6552381-22.693333 12.3219048z" />
-                </g>
-            </svg>
-        </div>
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content-container">
+      <h1 class="h1 h1-button-gap">Filecoin Docs</h1>
+      <p class="paragraph p-button-gap">
+        Filecoin is a peer-to-peer network that allows anyone to store and
+        retrieve data on the internet. Built-in economic incentives ensure that
+        files are stored and retrieved reliably and continuously for however
+        long a user specifies.
+      </p>
+      <p class="">
+        <a class="button" href="#persona-section">Find out more ↓ </a>
+      </p>
+    </div>
+    <div class="hero-image-container">
+      <img
+        class="hero-image"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Filecoin.svg/1200px-Filecoin.svg.png"
+      />
+    </div>
+  </div>
 </section>
-
-<!-- HEADER SECTION -->
-
-
-
-
 
 <!-- FVM CALLOUT SECTION -->
-<section class="section container-fluid bg-light rounded shadow-lg">
-    <div class="row justify-content-center">
-        <div class="col-lg-12 text-center ">
-            <svg fill="none" height="150px" viewBox="0 0 74 111">
-                <clipPath id="a">
-                    <path d="m.461121.525742h72.7021v110.155h-72.7021z"></path>
-                </clipPath>
-                <g clip-path="url(#a)">
-                    <path d="m72.3068 83.6744-13.8199-8.0117c-.078-.0162-.1582-.0162-.2361 0l-11.3099-6.5715 10.8964-6.3314h.2657l13.7905-8.0119c.2728-.136.4996-.3511.6521-.6182.1524-.267.2235-.5741.2042-.8822v-15.8735c-.0041-.3037-.0851-.6013-.2351-.864-.1499-.2628-.3638-.4819-.6212-.6363l-6.9985-3.9909 6.9689-4.0509.3839-.2701c.3003-.3376.4683-.7752.4724-1.2302v-15.8737c-.0041-.3037-.085-.60114-.235-.86389-.15-.26276-.3639-.48201-.6213-.63644l-13.8199-7.92163c-.2593-.13927-.5483-.212087-.8416-.212087-.2934 0-.5822.072817-.8416.212087l-55.04335 31.62706c-.25568.1463-.467575.3603-.613161.6192-.145585.2589-.219507.5529-.213758.8511v15.9335c.000323.3005.080083.5954.2307.854.150618.2586.366699.4714.625779.6163l6.96896 4.021-6.99852 4.1109c-.25568.1463-.467575.3603-.613161.6192-.145585.2589-.219507.553-.213758.8511v15.9336c.000323.3005.080083.5954.2307.854.150618.2586.366699.4714.625779.6163l13.81989 7.9218.3839.2401h.2656l27.2856 15.8139c.078-.016.1582-.016.2361 0l13.4656 7.771c.2123.106.4433.167.6793.18h.2656c.2472-.024.4875-.095.7087-.21l13.7905-7.922c.2591-.144.4752-.357.6258-.616.1506-.258.2302-.553.2305-.854v-15.9334c-.0256-.2591-.1112-.5082-.2498-.7272-.1386-.2191-.3262-.4017-.5475-.533zm-15.6212-5.0411h.2363l11.0145 6.3914-10.3945 6.0014-12.9634-7.5017h-.2658l-11.2213-6.5114 10.3354-6.0013zm-52.53324-14.4032 10.04004 5.7312v12.0027l-10.04004-5.8213zm52.53324-31.7772h-.2363l-27.2854 15.7836h-.2656l-11.1919 6.4813v-12.0027l12.8749-7.4416 7.1168-4.1109 6.6146-3.8109.5019-.2699 13.1999-7.6517 10.8669-6.2715.3248-.2101v12.0027zm-39.8059-4.8611 40.4261-23.37516 10.3943 6.00136-1.3287.7802-9.6858 5.5211h-.1476l-12.6683 7.3217-1.0335.6001-6.1718 3.5709-7.3824 4.2909h-.1772l-12.9634 7.5317-10.3945-6.0013zm-12.99318 9.4522 10.45348 6.0014v12.0026l-10.45348-6.0013zm7.88438 20.4346 3.4255 1.9503c.1762.0851.3665.136.5611.15h.2657c.2359-.0134.467-.0746.6793-.18l13.4655-7.8017h.2657l27.2854-15.8136h.2658l3.396-1.9804 6.1716 3.5108-10.926 6.3313h-.2361l-7.855 4.5311-5.9059 3.3908-13.4656 7.8317h-.2656l-12.9636 7.5017-3.1597-1.8004-7.23483-4.1409zm32.7781 42.0094-26.8426-15.5735v-13.8931l12.6388-7.3217h.2361l27.2856-15.8136h.2656l11.2804-6.5414v12.0027l-12.7273 7.0515h-.2363l-27.433 15.9636c-.2557.1463-.4676.3603-.6131.6192-.1456.2589-.2196.553-.2138.8511-.0018.3014.0735.5983.2184.8613.145.263.3546.4831.6085.639h.2952l13.8199 7.9819h.2363l1.2698.7201 11.369 6.6016v12.0023l-11.1328-6.0911zm25.2774.63-10.4241 6.001v-12.0023l10.4241-6.0014z" fill="currentColor"></path>
-                </g>
-            </svg>
-        </div>
-        <div class="col-lg-12 text-center">
-            <h2 class="fw-bold">Filecoin Virtual Machine</h2>
-            <p class="mb-4">The Filecoin Virtual Machine is here, allowing developers to build applications and smart-contracts that utilize the Filecoin storage network! Find out how you can leverage the worlds fastest growing storage network</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-center">
-                <a href="/developers/smart-contracts/filecoin-virtual-machine/" class="px-4 me-md-2 fw-bold">Learn more</a>
-            </div>
-        </div>
+
+<section class="">
+  <div class="columns-row">
+    <div class="column">
+      <h2 class="h2">Filecoin Virtual Machine</h2>
+      <p class="paragraph">
+        The Filecoin Virtual Machine is here, allowing developers to build
+        applications and smart-contracts that utilize the Filecoin storage
+        network! Find out how you can leverage the worlds fastest growing
+        storage network
+      </p>
+      <div class="">
+        <a
+          href="/developers/smart-contracts/filecoin-virtual-machine/"
+          class="button"
+          >Learn more</a
+        >
+      </div>
     </div>
+
+    <div class="column"></div>
+  </div>
 </section>
+
 <!-- /FVM CALLOUT SECTION -->
-
-
-
 
 <!-- PERSONA SECTION -->
 <a id="persona-section"></a>
 <section class="section container-fluid">
-    <div class="row justify-content-center">
-        <h2 class="text-center">Choose your own adventure</h2>
-        <div class="row row-cols-1 row-cols-md-2">
-            <div class="col">
-                <div class="card shadow-lg bg-light py-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Learn the basics</h4>
-                        <p class="card-text">Want to understand the fundamental concepts of Filecoin, but aren't sure where to start? The <a href="/about/basics/what-is-filecoin/">Basics section</a> is the perfect place to begin your journey!</p>
-                        <a href="/about/basics/what-is-filecoin/" class="btn btn-primary">Start learning</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-lg bg-light py-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Build with Filecoin</h4>
-                        <p class="card-text">Eager to build on top of the Filecoin network but aren't sure how to begin? Head over to the <a href="/developers/introduction/overview/">Developers section</a> to find examples and guides to help build your project!</p>
-                        <a href="/developers/introduction/overview/" class="btn btn-primary">Get building</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-lg bg-light py-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Become a provider</h4>
-                        <p class="card-text">Starting up a provider node on the Filecoin network can be a daunting task. Head over to the <a href="/storage-provider/basics/overview/">Provider section</a> to find out everything you need to know.</p>
-                        <a href="/storage-provider/basics/overview/" class="btn btn-primary">Provide storage</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-lg bg-light py-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Store data</h4>
-                        <p class="card-text">Want to store large amount of data on the Filecoin network? There are plenty of storage options that you can choose from! Check out the <a href="/store/overview/start-storing/">Store section</a> for more information!</p>
-                        <a href="/store/overview/start-storing/" class="btn btn-primary">Store your data</a>
-                    </div>
-                </div>
-            </div>
+  <div class="row justify-content-center">
+    <h2 class="text-center">Choose your own adventure</h2>
+    <div class="row row-cols-1 row-cols-md-2">
+      <div class="col">
+        <div class="card shadow-lg bg-light py-3">
+          <div class="card-body">
+            <h4 class="card-title">Learn the basics</h4>
+            <p class="card-text">
+              Want to understand the fundamental concepts of Filecoin, but
+              aren't sure where to start? The
+              <a href="/about/basics/what-is-filecoin/">Basics section</a> is
+              the perfect place to begin your journey!
+            </p>
+            <a href="/about/basics/what-is-filecoin/" class="btn btn-primary"
+              >Start learning</a
+            >
+          </div>
         </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-lg bg-light py-3">
+          <div class="card-body">
+            <h4 class="card-title">Build with Filecoin</h4>
+            <p class="card-text">
+              Eager to build on top of the Filecoin network but aren't sure how
+              to begin? Head over to the
+              <a href="/developers/introduction/overview/"
+                >Developers section</a
+              >
+              to find examples and guides to help build your project!
+            </p>
+            <a href="/developers/introduction/overview/" class="btn btn-primary"
+              >Get building</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-lg bg-light py-3">
+          <div class="card-body">
+            <h4 class="card-title">Become a provider</h4>
+            <p class="card-text">
+              Starting up a provider node on the Filecoin network can be a
+              daunting task. Head over to the
+              <a href="/storage-provider/basics/overview/">Provider section</a>
+              to find out everything you need to know.
+            </p>
+            <a href="/storage-provider/basics/overview/" class="btn btn-primary"
+              >Provide storage</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-lg bg-light py-3">
+          <div class="card-body">
+            <h4 class="card-title">Store data</h4>
+            <p class="card-text">
+              Want to store large amount of data on the Filecoin network? There
+              are plenty of storage options that you can choose from! Check out
+              the <a href="/store/overview/start-storing/">Store section</a> for
+              more information!
+            </p>
+            <a href="/store/overview/start-storing/" class="btn btn-primary"
+              >Store your data</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- /PERSONA SECTION -->
 
-
-
-
-
-
-
-
 <!-- LOOKING FOR LOTUS SECTION -->
 <section class="section container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-lg-4 text-center d-none d-lg-block">
-            <svg fill="none" viewBox="0 0 160 140">
-                <g>
-                    <path d="M157.782 66.8361C157.112 66.0314 143.566 48.5285 125.124 44.4378C131.428 26.2644 123.917 5.34139 123.581 4.33548L122.24 0.580078L118.284 1.0495C117.211 1.18363 93.1358 4.06724 80.4613 20.0277C67.7198 4.1343 43.645 1.25069 42.572 1.11656L38.6154 0.647139L37.2742 4.40254C36.8718 5.40846 29.361 26.3314 35.6647 44.5049C17.156 48.5285 3.60967 66.0314 3.00612 66.9032L0.658997 69.9209L3.00612 73.0057C3.67673 73.8105 17.223 91.3133 35.6647 95.4041C29.361 113.578 36.8718 134.501 37.2071 135.506L38.5483 139.262L42.5049 138.792C43.5779 138.658 67.6527 135.775 80.3272 119.814C93.0017 135.775 117.009 138.725 118.15 138.792L122.106 139.262L123.447 135.506C123.783 134.501 131.36 113.578 124.99 95.4041C143.498 91.3804 157.045 73.8775 157.648 73.0057L159.995 69.9209L157.782 66.8361ZM118.753 6.14612C118.753 6.14612 126.398 26.935 119.96 43.7672C119.155 43.7002 118.351 43.7002 117.546 43.7002C111.443 43.7002 105.676 45.3767 100.513 47.8579C97.0254 44.639 92.8676 42.359 88.3745 41.1519C87.838 35.5858 86.3627 29.8186 83.345 24.5878C94.5441 8.89562 118.753 6.14612 118.753 6.14612ZM80.3943 110.09C78.919 106.804 78.0472 103.25 77.5777 99.763C78.4495 99.8301 79.3884 99.8971 80.2602 99.8971H80.3943H80.4613C81.4002 99.8971 82.272 99.8301 83.2108 99.763C82.7414 103.25 81.8696 106.737 80.3943 110.09ZM80.4613 94.8005H80.3943H80.3272C66.6468 94.8005 55.5147 83.6013 55.5147 69.7868C55.5818 56.1735 66.6468 45.0414 80.3943 45.0414C80.4613 45.0414 80.5284 45.0414 80.5284 45.0414C94.1417 45.1084 105.341 56.2405 105.207 70.1221C105.14 83.6684 94.1417 94.8005 80.4613 94.8005ZM52.6311 58.7218C49.0098 56.1064 45.6568 52.8204 43.1755 48.7297C47.9369 48.7297 52.4299 49.9368 56.5877 51.7475C55.0453 53.8263 53.637 56.1735 52.6311 58.7218ZM56.5877 88.1615C52.4299 89.9721 47.9369 91.1792 43.1755 91.1792C45.6568 87.0885 48.9428 83.8696 52.6311 81.1872C53.637 83.6684 54.9782 86.0155 56.5877 88.1615ZM80.3943 29.8186C81.8696 33.1046 82.7414 36.6588 83.2108 40.146C82.3391 40.0789 81.4673 40.0118 80.5955 40.0118H80.3943C79.4554 40.0118 78.5166 40.0789 77.5777 40.146C78.0472 36.6588 78.919 33.1046 80.3943 29.8186ZM108.09 81.1872C111.712 83.8025 115.065 87.0885 117.546 91.1792C112.785 91.1792 108.292 89.9721 104.134 88.1615C105.743 86.0155 107.084 83.6684 108.09 81.1872ZM104.134 51.7475C108.292 49.9368 112.785 48.7297 117.546 48.7297C115.065 52.8204 111.779 56.0394 108.09 58.7218C107.152 56.1735 105.81 53.8934 104.134 51.7475ZM42.0355 6.14612C42.0355 6.14612 66.2445 8.89562 77.3765 24.5208C74.3588 29.7515 72.8835 35.5188 72.347 41.0848C67.7869 42.359 63.6291 44.7061 60.276 47.7909C55.1124 45.3096 49.4122 43.6331 43.2426 43.6331C42.4379 43.6331 41.6331 43.7002 40.8284 43.7002C34.3906 26.8679 42.0355 6.14612 42.0355 6.14612ZM7.02977 69.9209C7.02977 69.9209 20.3078 52.4851 37.6766 49.1992C38.0119 49.9368 38.4142 50.6074 38.8166 51.278C41.9684 56.5088 46.3274 60.5995 51.0217 63.7513C50.6193 65.6961 50.4181 67.7079 50.4181 69.7198C50.4181 71.8657 50.6193 73.9446 51.0217 76.0235C46.3274 79.1753 41.9684 83.199 38.8166 88.4968C38.4142 89.1674 38.0119 89.9051 37.6766 90.5757C20.3078 87.3568 7.02977 69.9209 7.02977 69.9209ZM42.0355 133.696C42.0355 133.696 34.3906 112.907 40.8284 96.0747C41.6331 96.1417 42.4379 96.1417 43.2426 96.1417C49.3451 96.1417 55.1124 94.4652 60.276 91.9839C63.7632 95.2029 67.921 97.4829 72.414 98.69C72.9505 104.256 74.4259 110.023 77.4436 115.254C66.2445 130.946 42.0355 133.696 42.0355 133.696ZM118.753 133.696C118.753 133.696 94.5441 130.946 83.412 115.321C86.4298 110.09 87.9051 104.39 88.4416 98.7571C93.0017 97.4829 97.1595 95.1358 100.58 91.9839C105.676 94.4652 111.443 96.2088 117.613 96.2088C118.418 96.2088 119.222 96.1417 120.027 96.1417C126.398 112.974 118.753 133.696 118.753 133.696ZM123.045 90.6427C122.71 89.9051 122.307 89.2345 121.905 88.5639C118.753 83.3331 114.394 79.2424 109.7 76.0905C110.102 74.2128 110.303 72.201 110.303 70.1892C110.303 67.9762 110.102 65.8973 109.633 63.7513C114.327 60.5995 118.686 56.5758 121.838 51.278C122.24 50.6074 122.643 49.8698 122.978 49.1992C140.347 52.4851 153.625 69.9209 153.625 69.9209C153.625 69.9209 140.414 87.3568 123.045 90.6427Z" fill="currentColor"/>
-                    <path d="M91.8617 54.6311L92.1299 54.4299L92.0629 54.3628C91.2581 53.491 90.1852 53.0216 88.7098 52.9546C86.2956 52.8875 84.2838 53.8934 82.6073 56.2405C81.2661 58.0512 80.6625 60.1971 80.059 62.2089L79.9249 62.6113C79.7907 63.0137 79.6566 63.4831 79.5225 63.9525V64.0866L72.4811 63.0137L72.0787 66.0314L78.8519 67.1044L78.2483 69.6527L71.6764 68.7138L71.274 71.7316L77.6448 72.7375C77.5107 73.4081 77.3095 74.0787 77.1754 74.7493L77.1083 74.8834C76.6389 76.8953 76.1695 79.0412 75.633 81.1201C75.2306 82.6625 74.6271 83.6684 73.7553 84.4061C73.487 84.6073 73.2858 84.7414 73.0176 84.7414C72.6152 84.8084 72.2799 84.6072 72.0117 84.2049C71.9446 84.1378 71.8776 84.0037 71.8105 83.9366L71.7434 83.8696C71.4752 83.5343 71.274 83.1319 70.8717 82.7966C70.5363 82.5284 69.9328 82.3942 69.5304 82.3942C69.3293 82.3942 69.1281 82.4613 68.994 82.5954C68.5245 82.9978 68.1892 83.7355 68.2563 84.4061C68.3233 85.0096 68.7928 85.6132 69.1951 85.9485C70.0669 86.6191 71.0728 86.9544 72.2129 86.9544H72.4141C72.7494 86.9544 73.1517 86.8873 73.5541 86.8203C75.9012 86.3508 77.7119 84.8755 78.8519 82.5954C79.6566 80.9189 80.2602 79.1753 80.7967 77.5659C81.132 76.4929 81.4002 75.3529 81.6684 74.2799L81.7355 74.1458C81.8026 73.8775 81.8696 73.6093 81.9367 73.341L88.5757 74.2799L89.4475 71.2622L82.5402 70.2562L83.0767 67.6409L88.911 68.4456H89.3804L90.1852 65.4949L83.6132 64.489C83.7473 63.9525 83.8815 63.416 84.0826 62.8796C84.5521 61.0689 85.0885 59.1912 85.6921 57.3806C85.8933 56.777 86.3627 56.1064 87.0333 55.3687C87.2345 55.1676 87.4357 55.0334 87.7039 55.0334C88.1063 54.9664 88.4416 55.1676 88.7769 55.5699L88.911 55.7711C89.1793 56.1064 89.3804 56.4417 89.7157 56.777C89.8499 56.9111 90.051 57.0453 90.1852 57.1123C90.8558 57.5147 91.5934 57.4476 92.0629 56.9782C92.4652 56.5758 92.5323 55.9052 92.5323 55.3687V55.1676C92.5323 54.7652 92.2641 54.4299 92.0629 54.2287L91.8617 54.6311Z" fill="currentColor"/>
-                </g>
-            </svg>
-        </div>
-        <div class="col-lg-8">
-            <h5>Looking for Lotus? Head to <a href="https://lotus.filecoin.io">lotus.filecoin.io →</a></h5>
-            <p>Lotus is the reference implementation for the Filecoin network. It is written in Go, and is maintained by the Protocol Labs team. At the start of 2022, the Protocol Labs docs team moved all the Lotus documentation to its own repository and its own website. This way, folks like yourself can easily segment the documentation you need. This is the place for conceptual Filecoin related content, while <a href="https://lotus.filecoin.io">lotus.filecoin.io</a> is where you'll find installation instructions and guides for running a Lotus node.</p>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-4 text-center d-none d-lg-block">
+      <svg fill="none" viewBox="0 0 160 140">
+        <g>
+          <path
+            d="M157.782 66.8361C157.112 66.0314 143.566 48.5285 125.124 44.4378C131.428 26.2644 123.917 5.34139 123.581 4.33548L122.24 0.580078L118.284 1.0495C117.211 1.18363 93.1358 4.06724 80.4613 20.0277C67.7198 4.1343 43.645 1.25069 42.572 1.11656L38.6154 0.647139L37.2742 4.40254C36.8718 5.40846 29.361 26.3314 35.6647 44.5049C17.156 48.5285 3.60967 66.0314 3.00612 66.9032L0.658997 69.9209L3.00612 73.0057C3.67673 73.8105 17.223 91.3133 35.6647 95.4041C29.361 113.578 36.8718 134.501 37.2071 135.506L38.5483 139.262L42.5049 138.792C43.5779 138.658 67.6527 135.775 80.3272 119.814C93.0017 135.775 117.009 138.725 118.15 138.792L122.106 139.262L123.447 135.506C123.783 134.501 131.36 113.578 124.99 95.4041C143.498 91.3804 157.045 73.8775 157.648 73.0057L159.995 69.9209L157.782 66.8361ZM118.753 6.14612C118.753 6.14612 126.398 26.935 119.96 43.7672C119.155 43.7002 118.351 43.7002 117.546 43.7002C111.443 43.7002 105.676 45.3767 100.513 47.8579C97.0254 44.639 92.8676 42.359 88.3745 41.1519C87.838 35.5858 86.3627 29.8186 83.345 24.5878C94.5441 8.89562 118.753 6.14612 118.753 6.14612ZM80.3943 110.09C78.919 106.804 78.0472 103.25 77.5777 99.763C78.4495 99.8301 79.3884 99.8971 80.2602 99.8971H80.3943H80.4613C81.4002 99.8971 82.272 99.8301 83.2108 99.763C82.7414 103.25 81.8696 106.737 80.3943 110.09ZM80.4613 94.8005H80.3943H80.3272C66.6468 94.8005 55.5147 83.6013 55.5147 69.7868C55.5818 56.1735 66.6468 45.0414 80.3943 45.0414C80.4613 45.0414 80.5284 45.0414 80.5284 45.0414C94.1417 45.1084 105.341 56.2405 105.207 70.1221C105.14 83.6684 94.1417 94.8005 80.4613 94.8005ZM52.6311 58.7218C49.0098 56.1064 45.6568 52.8204 43.1755 48.7297C47.9369 48.7297 52.4299 49.9368 56.5877 51.7475C55.0453 53.8263 53.637 56.1735 52.6311 58.7218ZM56.5877 88.1615C52.4299 89.9721 47.9369 91.1792 43.1755 91.1792C45.6568 87.0885 48.9428 83.8696 52.6311 81.1872C53.637 83.6684 54.9782 86.0155 56.5877 88.1615ZM80.3943 29.8186C81.8696 33.1046 82.7414 36.6588 83.2108 40.146C82.3391 40.0789 81.4673 40.0118 80.5955 40.0118H80.3943C79.4554 40.0118 78.5166 40.0789 77.5777 40.146C78.0472 36.6588 78.919 33.1046 80.3943 29.8186ZM108.09 81.1872C111.712 83.8025 115.065 87.0885 117.546 91.1792C112.785 91.1792 108.292 89.9721 104.134 88.1615C105.743 86.0155 107.084 83.6684 108.09 81.1872ZM104.134 51.7475C108.292 49.9368 112.785 48.7297 117.546 48.7297C115.065 52.8204 111.779 56.0394 108.09 58.7218C107.152 56.1735 105.81 53.8934 104.134 51.7475ZM42.0355 6.14612C42.0355 6.14612 66.2445 8.89562 77.3765 24.5208C74.3588 29.7515 72.8835 35.5188 72.347 41.0848C67.7869 42.359 63.6291 44.7061 60.276 47.7909C55.1124 45.3096 49.4122 43.6331 43.2426 43.6331C42.4379 43.6331 41.6331 43.7002 40.8284 43.7002C34.3906 26.8679 42.0355 6.14612 42.0355 6.14612ZM7.02977 69.9209C7.02977 69.9209 20.3078 52.4851 37.6766 49.1992C38.0119 49.9368 38.4142 50.6074 38.8166 51.278C41.9684 56.5088 46.3274 60.5995 51.0217 63.7513C50.6193 65.6961 50.4181 67.7079 50.4181 69.7198C50.4181 71.8657 50.6193 73.9446 51.0217 76.0235C46.3274 79.1753 41.9684 83.199 38.8166 88.4968C38.4142 89.1674 38.0119 89.9051 37.6766 90.5757C20.3078 87.3568 7.02977 69.9209 7.02977 69.9209ZM42.0355 133.696C42.0355 133.696 34.3906 112.907 40.8284 96.0747C41.6331 96.1417 42.4379 96.1417 43.2426 96.1417C49.3451 96.1417 55.1124 94.4652 60.276 91.9839C63.7632 95.2029 67.921 97.4829 72.414 98.69C72.9505 104.256 74.4259 110.023 77.4436 115.254C66.2445 130.946 42.0355 133.696 42.0355 133.696ZM118.753 133.696C118.753 133.696 94.5441 130.946 83.412 115.321C86.4298 110.09 87.9051 104.39 88.4416 98.7571C93.0017 97.4829 97.1595 95.1358 100.58 91.9839C105.676 94.4652 111.443 96.2088 117.613 96.2088C118.418 96.2088 119.222 96.1417 120.027 96.1417C126.398 112.974 118.753 133.696 118.753 133.696ZM123.045 90.6427C122.71 89.9051 122.307 89.2345 121.905 88.5639C118.753 83.3331 114.394 79.2424 109.7 76.0905C110.102 74.2128 110.303 72.201 110.303 70.1892C110.303 67.9762 110.102 65.8973 109.633 63.7513C114.327 60.5995 118.686 56.5758 121.838 51.278C122.24 50.6074 122.643 49.8698 122.978 49.1992C140.347 52.4851 153.625 69.9209 153.625 69.9209C153.625 69.9209 140.414 87.3568 123.045 90.6427Z"
+            fill="currentColor"
+          />
+          <path
+            d="M91.8617 54.6311L92.1299 54.4299L92.0629 54.3628C91.2581 53.491 90.1852 53.0216 88.7098 52.9546C86.2956 52.8875 84.2838 53.8934 82.6073 56.2405C81.2661 58.0512 80.6625 60.1971 80.059 62.2089L79.9249 62.6113C79.7907 63.0137 79.6566 63.4831 79.5225 63.9525V64.0866L72.4811 63.0137L72.0787 66.0314L78.8519 67.1044L78.2483 69.6527L71.6764 68.7138L71.274 71.7316L77.6448 72.7375C77.5107 73.4081 77.3095 74.0787 77.1754 74.7493L77.1083 74.8834C76.6389 76.8953 76.1695 79.0412 75.633 81.1201C75.2306 82.6625 74.6271 83.6684 73.7553 84.4061C73.487 84.6073 73.2858 84.7414 73.0176 84.7414C72.6152 84.8084 72.2799 84.6072 72.0117 84.2049C71.9446 84.1378 71.8776 84.0037 71.8105 83.9366L71.7434 83.8696C71.4752 83.5343 71.274 83.1319 70.8717 82.7966C70.5363 82.5284 69.9328 82.3942 69.5304 82.3942C69.3293 82.3942 69.1281 82.4613 68.994 82.5954C68.5245 82.9978 68.1892 83.7355 68.2563 84.4061C68.3233 85.0096 68.7928 85.6132 69.1951 85.9485C70.0669 86.6191 71.0728 86.9544 72.2129 86.9544H72.4141C72.7494 86.9544 73.1517 86.8873 73.5541 86.8203C75.9012 86.3508 77.7119 84.8755 78.8519 82.5954C79.6566 80.9189 80.2602 79.1753 80.7967 77.5659C81.132 76.4929 81.4002 75.3529 81.6684 74.2799L81.7355 74.1458C81.8026 73.8775 81.8696 73.6093 81.9367 73.341L88.5757 74.2799L89.4475 71.2622L82.5402 70.2562L83.0767 67.6409L88.911 68.4456H89.3804L90.1852 65.4949L83.6132 64.489C83.7473 63.9525 83.8815 63.416 84.0826 62.8796C84.5521 61.0689 85.0885 59.1912 85.6921 57.3806C85.8933 56.777 86.3627 56.1064 87.0333 55.3687C87.2345 55.1676 87.4357 55.0334 87.7039 55.0334C88.1063 54.9664 88.4416 55.1676 88.7769 55.5699L88.911 55.7711C89.1793 56.1064 89.3804 56.4417 89.7157 56.777C89.8499 56.9111 90.051 57.0453 90.1852 57.1123C90.8558 57.5147 91.5934 57.4476 92.0629 56.9782C92.4652 56.5758 92.5323 55.9052 92.5323 55.3687V55.1676C92.5323 54.7652 92.2641 54.4299 92.0629 54.2287L91.8617 54.6311Z"
+            fill="currentColor"
+          />
+        </g>
+      </svg>
     </div>
+
+    <div class="col-lg-8">
+      <h5>
+        Looking for Lotus? Head to
+        <a href="https://lotus.filecoin.io">lotus.filecoin.io →</a>
+      </h5>
+      <p>
+        Lotus is the reference implementation for the Filecoin network. It is
+        written in Go, and is maintained by the Protocol Labs team. At the start
+        of 2022, the Protocol Labs docs team moved all the Lotus documentation
+        to its own repository and its own website. This way, folks like yourself
+        can easily segment the documentation you need. This is the place for
+        conceptual Filecoin related content, while
+        <a href="https://lotus.filecoin.io">lotus.filecoin.io</a> is where
+        you'll find installation instructions and guides for running a Lotus
+        node.
+      </p>
+    </div>
+  </div>
 </section>
 <!-- LOOKING FOR LOTUS SECTION -->
 
-
-
-
-{{ end }}
-
-
-{{ define "sidebar-prefooter" }}
-{{ if eq $.Site.Language.LanguageName "English" }}
-{{ end }}
-{{ end }}
-
-
-{{ define "sidebar-footer" }}
+{{ end }} {{ define "sidebar-prefooter" }} {{ if eq $.Site.Language.LanguageName
+"English" }} {{ end }} {{ end }} {{ define "sidebar-footer" }}
 <section class="section section-sm container-fluid">
-    <div class="row justify-content-center text-center">
-        <div class="col-lg-9">
-            {{- .Content -}}
-        </div>
-    </div>
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">{{- .Content -}}</div>
+  </div>
 </section>
 {{ end }}
