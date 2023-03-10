@@ -1,7 +1,7 @@
 ---
 title: "Solidity libraries"
-description: ""
-lead: ""
+description: "External Solidity libraries can help developers create their applications quicker by offloading some of the work to already existing smart contracts."
+lead: "External Solidity libraries can help developers create their applications quicker by offloading some of the work to already existing smart contracts."
 draft: false
 images: []
 type: docs
@@ -13,32 +13,106 @@ weight: 100
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+## Filecoin.sol
 
-## Selvage
+Filecoin.sol allows developers to:
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+- Solidity libraries to interact with Filecoin built-in actors.
+- Simplify the interaction with the Filecoin storage market, miner actors, the verified registry for FIL+ automation, and more.
+- Filecoin-specific data types such as `FilAddress`, `FilActorID`, `CIDs`, storage deals, and more.
+- OpenZeppelin-like utilities specific to Filecoin.
+- CBOR serialization and deserialization for params and return data.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+In order to access exported Filecoin built-in actor methods in your smart contract, you will need to import Filecoin.sol in your Solidity project. As they are embeddable libraries, they don't need to be present on-chain. You can just import the library you desire and call its methods.
 
-### Heirloom
+Once the library is installed in your project, you can write Solidity code to call APIs from different built-in actors using Filecoin-specific data types or data conversions from the utility library.
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+### Add to your contract
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+Run the following command in your Solidity project, which is created using any smart contract development framework such as Hardhat, Truffle, or Foundry.
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+```shell
+npm install @zondax/filecoin-solidity
+```
 
-## Bushwick cold-pressed
+### Usage
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+Once installed, you can call built-in actors in the library after importing them into your smart contract.
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+```solidity
+// contracts/MyNFT.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.13;
 
-## Locavore swag
+import "@zondax/filecoin-solidity/contracts/v0.8/MarketAPI.sol";
+import "@zondax/filecoin-solidity/contracts/v0.8/types/MarketTypes.sol";
+import "@zondax/filecoin-solidity/contracts/v0.8/types/CommonTypes.sol";
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+contract MyFilecoinContract {
+    ...
+}
+```
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+You can find the list of supported built-in actors and methods in [Zondax's Filecoin.Sol documentation](https://docs.zondax.ch/fevm/filecoin-solidity/api/). You can access certain Filecoin-related features through these actors:
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+- `AccountAPI.sol`: validates signatures from an address.
+- `MinerAPI.sol`: manages storage provider operation. 
+- `MarketAPI.sol`: manages storage deals on Filecoin.
+- `PowerAPI.sol`: manages storage power for each storage provider and the whole network.
+- `DataCap.sol` and `VerifRegAPI.sol`: manages DataCap and verified clients for Filecoin Plus.
+
+Unlike OpenZeppelin contracts, you do not need to inherit contracts to use their features. With Filecoin.sol you just need to call the methods from those solidity contracts: 
+
+```solidity
+CommonTypes.FilActorId minerID = CommonTypes.FilActorId.wrap(1130);
+CommonTypes.BigInt memory returnData = MinerAPI.getVestingFunds(minerID);
+```
+
+Filecoin.sol also offers several utility libraries to help developers to convert data types for different variables, including FILAddress, BigIntegers, ActorID, and CBOR. You can import those libraries from the `utils` folder:
+
+```solidity
+import "@zondax/filecoin-solidity/contracts/v0.8/utils/Actor.sol";
+import "@zondax/filecoin-solidity/contracts/v0.8/utils/BigInts.sol";
+import "@zondax/filecoin-solidity/contracts/v0.8/utils/FilAddresses.sol";
+```
+
+### Example
+
+We can write a simple Solidity smart contract to query basic information for a Filecoin storage deal:
+
+```solidity
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.17;
+
+import "@zondax/filecoin-solidity/contracts/v0.8/MarketAPI.sol";
+import "@zondax/filecoin-solidity/contracts/v0.8/types/MarketTypes.sol";
+import "hardhat/console.sol";
+
+contract StorageDealQuery {
+
+    // Query the start epoch and duration(in epochs) of a deal proposal.
+    function get_deal_term(uint64 dealID) public returns (MarketTypes.GetDealTermReturn memory) {
+        return MarketAPI.getDealTerm(dealID);
+    }
+
+    // Query the storage provider who stores the date for this deal.
+    function get_deal_provider(uint64 dealID) public returns (uint64) {
+        return MarketAPI.getDealProvider(dealID);
+    }
+
+    // Query the collateral required from the storage provider for this deal proposal.
+    function get_deal_provider_collateral(uint64 dealID) public returns (CommonTypes.BigInt memory) {
+        return MarketAPI.getDealProviderCollateral(dealID);
+    }
+    
+}
+```
+
+### Next steps
+
+Check out these links to learn more about the Filecoin.sol library.
+
+- [Filecoin-Solidity GitHub](https://github.com/Zondax/filecoin-solidity)
+- [Docs](https://docs.zondax.ch/fevm/filecoin-solidity/)
+- [Built-In Actor APIs](https://docs.zondax.ch/fevm/filecoin-solidity/api/)
+- [FEVM-Hardhat-Kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit/)

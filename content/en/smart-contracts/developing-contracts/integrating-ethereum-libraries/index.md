@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
+    parent: "smart-contracts-developing-contracts"
     identifier: "integrating-existing-ethereum-libraries-e0b2c827da6ced7e92bfaf452add675c"
 weight: 120
 toc: true
@@ -61,19 +62,19 @@ Let's take an ERC20 contract as an example to write and deploy it on the Hypersp
 
 ## ERC20 Contract
 
-Before we begin, make sure you have [connected your MetaMask wallet to the Hyperspace testnet]{{< relref "etherem-wallet/metamask" >}} , and grabbed some tFIL from the faucet.
+Before we begin, make sure you have [connected your MetaMask wallet to the Hyperspace testnet]{{< relref "metamask" >}} , and grabbed some tFIL from the faucet.
 
 ### Create an ERC20 workspace
 
 1. Go to [remix.ethereum.org](https://remix.ethereum.org/) and click the `+` icon next to **Workspaces** to create a new workspace.
 2. In the **Choose a template** dropdown, select **ERC 20**, then select the **Mintable** checkbox.
 
-   ![Set workspace details.](./images/create-a-workspace-details.png)
+   ![Set workspace details.](create-a-workspace-details.png)
 
 3. Once you click **OK** to create your new workspace, you will have an ERC token created called **MyToken.sol**.
 4. Under the **contract** directory, open **MyToken.sol** and change the Token name and symbol.
 
-   ![Change token name.](./images/customize-change-token-name.png)
+   ![Change token name.](customize-change-token-name.png)
 
 That's all we need to change within this contract. You can see on line 4 that this contract is importing another contract from `@openzeppelin` for us, meaning that we can keep our custom token contract simple.
 
@@ -81,13 +82,13 @@ That's all we need to change within this contract. You can see on line 4 that th
 
 1. Click the green play symbol at the top of the workspace to compile your contract.
 
-   ![Compile the contract.](images/compile-compile.png)
+   ![Compile the contract.](compile-compile.png)
 
 2. Once you have successfully compiled our contract, you can open the **Deploy** tab from the left.
 3. Under the **Environment** dropdown, select **Injected Provider - MetaMask** and then confirmed connection in the MetaMask popup window.
 4. Back in Remix, under the **Account** field, you'll see the connected wallet `0x11F... (5 ether)`, which is 5 `tFIL`, and the compiled token contract.
 
-   ![Select contract in Remix.](images/deploy-select-contract.png)
+   ![Select contract in Remix.](deploy-select-contract.png)
 
 5. Click **Deploy**, and confirm the transaction on MetaMask. Your token contract will be deployed to Filecoin Hyperspace after the transaction is confirmed on-chain.
 
@@ -98,7 +99,7 @@ After the contract is deployed to Filecoin, you can interact with it. Let's call
 1. Back in Remix, open the **Deployed Contracts** dropdown. Expand the `mint` method. You must fill in two fields here: `to` and `amount`.
 1. Input your own wallet address into the `to` and `100000000000000000000`, which represents 1 `FIL` into the `amount`.
 
-   ![Click Deploy in Remix.](images/deploy-remix-deploy.png)
+   ![Click Deploy in Remix.](deploy-remix-deploy.png)
 
 1. Click **Transact**, and confirm the transaction on MetaMask. Wait for the network to process the transaction, then you will have 1 ERC20 token minted to your wallet address.
 
