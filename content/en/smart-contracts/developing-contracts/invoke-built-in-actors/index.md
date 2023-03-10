@@ -16,13 +16,49 @@ toc: true
 For conceptual information on built-in actors, including their purposes, how they work and available types, see the [conceptual guide]({{< ref "built-in-actors-overview" >}})
 {{< /alert >}}
 
-Built-in actors can be invoked using the Protocol Labs API or the Zondax filecoin.solidity API. These APIs are different from the JSON-RPC API because
+Built-in actors can be invoked using the Protocol Labs _JSON-RPC_ API or the Zondax _filecoin.solidity_ API. 
 
-?
+## APIs compared
+
+The Protocol Labs _JSON-RPC_ API:
+
+- Is maintained by Protocol Labs (PL).
+- Uses JSON-RPC, a standardized way to encode remote procedure calls in JSON that can be transported using HTTP or Websockets.
+- Provides a language agnostic interface for Filecoin functionality.
+- Allows applications to access Filecoin functionality using HTTP or Websockets calls to a Filecoin node, like the Lotus daemon.
+- Requires authentication for some API calls.
+- Supports full Filecoin functionality, including access to built-in actors and their methods.
+- Serves as the foundation for language-specific libraries (some of which are maintained by organizations other than PL) such as [filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/).
+
+The Zondax _filecoin.solidity_ API:
+
+- Is maintianed by [Zondax](https://docs.zondax.ch/).
+- Supports [_some but not all_ of the built-in actors and their methods](#available-actors-and-methods).
+- 
 
 ## Using the Protocol API
 
-?
+### 
+
+### Client libraries
+
+Several API client libraries are available. These libraries manage the low-level logic of connecting to Lotus node, making requests, and handing the responses.
+
+- [filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/), a JavaScript and TypeScript library for interacting with the Filecoin's Lotus node, with support for external signers.
+- [filecoin-js-signer](https://github.com/blitslabs/filecoin-js-signer) (maintained by [Blits Labs](https://github.com/blitslabs)), a Typescript / Javascript signing library and RPC client with the necessary methods to create, sign and broadcast messages to send FIL, and interact with Filecoin's built-in actors.
+Filecoin Signing Tools
+- [filecoin-signing-tools](https://github.com/Zondax/filecoin-signing-tools) (maintained by [Zondaz]([Zondax](https://docs.zondax.ch/))) 
+- [filecoin-shipyard/lotus-client-rpc](https://www.npmjs.com/package/@filecoin-shipyard/lotus-client-rpc) - a simple NPM package that passes parameters to the Lotus JSON-RPC with no extra formatting, and returns results as plain JavaScript objects.
+
+### Provider Libraries 
+
+Pluggable _provider libraries_ provide modules to connect to a Lotus node from a particular environment, such as a web page, Node.js, or a mobile app, and were inspired by [Ethereum providers](https://docs.ethers.org/v5/api/providers/#providers). The interfaces that providers must implement are not yet defined, and will likely evolve over time.
+
+- [filecoin-shipyard/lotus-client-provider-browser](https://www.npmjs.com/package/@filecoin-shipyard/lotus-client-provider-browser) - lightweight provider for web browsers that communicates with Lotus using WebSockets or HTTP.
+
+- [filecoin-shipyard/lotus-client-provider-nodejs](https://www.npmjs.com/package/@filecoin-shipyard/lotus-client-provider-nodejs) - provider for Node.js that communicates to Lotus using WebSockets or HTTP. The library wraps the browser provider and includes browser-compatible Fetch API support, and `ws` and `node-fetch` for WebSockets.
+
+The interfaces that providers must implement are not yet defined, and will likely evolve over time.
 
 ## Using filecoin.solidity
 
