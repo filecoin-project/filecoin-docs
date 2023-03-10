@@ -1,5 +1,5 @@
 ---
-title: "Integrating Ethereum libraries"
+title: "Ethereum libraries"
 description: ""
 lead: "With the EVM-compatibility, FVM developers will be able to use existing Ethereum smart contract libraries to build and deploy solidity smart contract on the Filecoin network."
 draft: false
