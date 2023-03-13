@@ -1,0 +1,126 @@
+---
+title: "FilForwarder"
+description: "The FilFowarder is a smart contract that lets users transfer FIL from an Ethereum-based f4 address to a Filecoin address of a different type."
+lead: "The FilFowarder is a smart contract that lets users transfer FIL from an Ethereum-based f4 address to a Filecoin address of a different type. For instance, this allows developers to take FIL out of a smart contract and send it to a multi-sig account or an exchange."
+draft: false
+images: []
+type: docs
+menu:
+  smart-contracts:
+    parent: "smart-contracts-ethereum-wallets"
+    identifier: "filforwarder-ei3j49389wieutidhruejwi293829w"
+weight: 100
+toc: true
+---
+
+## The problem
+
+Filecoin has multiple [address spaces]({{< relref "address-types#delegated-addresses" >}}): `f0`, `f1`, `f2`, `f3`, and `f4`. Each address space fits a particular need for the Filecoin network. The `f410` address spaces allows for the integration of Ethereum addresses on the Filecoin network.
+
+Users interacting with the Filecoin EVM-runtime need to use `f4` addresses, masked to the Ethereum-style `0x` address. These addresses can be created from wallets like MetaMask, Coinbase wallet, or any other EVM-based wallet that allows for custom networks. There are use cases where a user with FIL in an `0x`-style address would want to send FIL to an `f1`, `f2`, or `f3` address. For example, taking FIL out of a smart contract and sending it to a multi-sig account or an exchange. 
+
+This is where the problem lies. Ethereum-based wallets do not nativly recognize the `f1`, `f2`, or `f3` address formats, making it impossible to send FIL from an Ethereum-style address.
+
+## The solution 
+
+The FilForwarder exposes a smart contract method called `forward` that takes a byte-level definition of a protocol address in an _f-style_, and a message value. It then uses the internal Filecoin APIs exposed using the Filecoin EVM-runtime to properly send FIL funds reliably and as cheaply as possible. This also has the side effect of creating the actor ID should the address recieving address be considered new. In this way, using FilForwarder from an Ethereum wallet to any other Filecoin address space is safe and reliable.
+
+## Use FILForwarder
+
+You can use the FilForwarder contract in two ways:
+
+- Using the Glif.io browser wallet
+- Manually invoking the contract
+
+### Glif.io
+
+### Manually
+
+The FilForwarder contract can be interacted with using standard Ethereum tooling like Hardhat or Remix. In this guide, we're going to use Hardhat, but these steps can be easily replicated using the [web-based IDE Remix]({{< relref "remix" >}}).
+
+#### Prerequisites
+
+This guide assumes you have the following installed:
+
+- [Yarn](https://yarnpkg.com/)
+- A Filecoin address stored in [MetaMask]({{< relref "/smart-contracts/ethereum-wallet/metamask" >}})
+
+#### Environment setup
+
+First, we need to grab the FilFowarder kit and install the dependencies:
+
+1. Clone the FilForwarder repository and install the dependencies:
+
+    ```shell
+    git clone https://github.com/filecoin-project/fevm-hardhat-kit.git
+    cd fevm-hardhat-kit
+    ```
+
+1. Use Yarn to install the project's dependencies:
+
+    ```shell
+    yarn install
+    ```
+
+    ```plaintext
+    [1/4] 🔍  Resolving packages...
+    [2/4] 🚚  Fetching packages...
+    [3/4] 🔗  Linking dependencies...
+
+    ...
+
+    ✨  Done in 16.34s.
+    ```
+
+1. Create an environment variable for your private key. You can [export it from MetaMask]({{< relref "/smart-contracts/ethereum-wallet/metamask" >}}).
+
+    ```shell
+    export PRIVATE_KEY='<YOUR PRIVATE KEY>'
+    ```
+
+    For example:
+
+    ```shell
+    export PRIVATE_KEY='d52cd65a5746ae71cf3d07a8cf392ca29d7acb96deba7d94b19a9cf3c9f63022'
+    ```
+
+Always be careful when dealing with your private key. Double-check that you're not hardcoding it anywhere or committing it to source control like GitHub. Anyone with access to your private key has complete control over your funds.
+
+#### Invoke the contract
+
+The contract is deterministically deployed on all Filecoin networks at `0xAac40637A3590713f0588CF165E58f7A2c868d93`. Any contract claiming to be a FilForwarder that does not reside at this address should not be trusted. Any dApp can connect to the wallet, and use the ABI in this repository to call this method using any frontend. See the [Glif section](#glif-io) above for steps on using a GUI.
+
+Inside of this repository is a Hardhat task called `forward`. This task will use the private key to send funds using the contract. This task uses the `fil-forwarder-{CHAIN_ID}.json` file to determine the deployed contract address for a given network. These addresses should always be the same, but these files prevent you from having to specify it each time.
+
+The `forward` command uses the following syntax:
+
+```shell
+yarn hardhat forward \
+    --network <NETWORK> \
+    --destination <DESTINATION_ADDRESS> \
+    --amount <AMOUNT>
+```
+
+- `NETWORK`: The network you want to use. The options are `mainnet`, `hyperspace`, and `calibration`.
+- `DESTINATION_ADDRESS`: The address you want to send FIL to. This is a string, like `t01024` or `t3tejq3lb3szsq7spvttqohsfpsju2jof2dbive2qujgz2idqaj2etuolzgbmro3owsmpuebmoghwxgt6ricvq`.
+- `AMOUNT`: The amount of FIL you want to send. The value `3.141` would be 3.141 FIL. 
+
+#### Examples
+
+1. To send 9 FIL to a `t3` address on the Hyperspace testnet, run:
+
+    ```shell
+    yarn hardhat forward \
+        --network hyperspace \
+        --destination t3tejq3lb3szsq7spvttqohsfpsju2jof2dbive2qujgz2idqaj2etuolzgbmro3owsmpuebmoghwxgt6ricvq \
+        --amount 9.0
+    ```
+
+1. To send 42.5 FIL to a `t1` address on the Calibration testnet, run:
+
+    ```shell
+    yarn hardhat forward \
+        --network calibration \
+        --destination t010135 \
+        --amount 42.5
+    ```
