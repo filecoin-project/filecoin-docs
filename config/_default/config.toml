@@ -16,7 +16,7 @@ disableLanguages = ["de", "nl"]
 
 # Allows you to disable all page types and will render nothing related to 'kind';
 # values = "page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"
-disableKinds = [""]
+disableKinds = ["section"]
 
 # add redirects/headers
 [outputs]

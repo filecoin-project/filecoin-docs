@@ -7,23 +7,24 @@ images: []
 type: docs
 menu:
   reference:
+    parent: "reference-built-in-actors"
     identifier: "overview-d50c5100ced0178d673c1314d43b29c9"
-weight: 100
+weight: 310
 toc: true
 ---
 
-## Using the Protocol Labs API
+## Using the Protocol API
 
-Smart contracts can directly access built-in actors and methods using the Protocol Labs API. Links to the reference guides for each of the available actor methods is listed below:
+Smart contracts can directly access built-in actors and methods using the Protocol API. Links to the reference guides for each of the available actor methods is listed below:
 
-- [Account actor]({{< ref "/reference/built-in-actors/protocol-api/account-actor" >}})
-- [Datacap]({{< ref "/reference/built-in-actors/protocol-api/datacap" >}})
-- [Miner]({{< ref "/reference/built-in-actors/protocol-api/miner" >}})
-- [Multisig]({{< ref "/reference/built-in-actors/protocol-api/multisig" >}})
-- [Storage market actor]({{< ref "/reference/built-in-actors/protocol-api/storage-market-actor" >}})
-- [Storage power actor]({{< ref "/reference/built-in-actors/protocol-api/storage-power-actor" >}})
-- [Verified registry actor]({{< ref "/reference/built-in-actors/protocol-api/verified-registry-actor" >}})
+- [Account actor]({{< ref "/reference/built-in-actors/protocol-api#account-actor" >}})
+- [Datacap]({{< ref "/reference/built-in-actors/protocol-api#datacap" >}})
+- [Miner]({{< ref "/reference/built-in-actors/protocol-api#miner" >}})
+- [Multisig]({{< ref "/reference/built-in-actors/protocol-api#multisig" >}})
+- [Storage market actor]({{< ref "/reference/built-in-actors/protocol-api#storage-market-actor" >}})
+- [Storage power actor]({{< ref "/reference/built-in-actors/protocol-api#storage-power-actor" >}})
+- [Verified registry actor]({{< ref "/reference/built-in-actors/protocol-api#verified-registry-actor" >}})
 
-## Using filecoin.solidity
+## Using Filecoin.sol
 
-Smart contracts can access built-in actor methods with the `filecoin.solidity` library, a set of Solidity libraries that allow Solidity smart contracts to seamlessly call methods of Filecoin built-in actors. For more information, see the [reference page]({{< ref "/reference/built-in-actors/solidity-api/filecoin-sol" >}})
+Smart contracts can access built-in actor methods with the `Filecoin.sol` library, a set of Solidity libraries that allow smart contracts to seamlessly call methods of Filecoin built-in actors. For more information, see the [reference page]({{< ref "/reference/built-in-actors/filecoin-sol" >}})

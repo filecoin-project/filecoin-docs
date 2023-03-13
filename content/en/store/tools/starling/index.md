@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   store:
-    parent: "lorem"
+    parent: "store-tools"
     identifier: "starling-6918e5ef997c3cc12cb691406b237e5d"
 weight: 100
 toc: true

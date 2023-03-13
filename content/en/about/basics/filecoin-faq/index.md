@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-basics"
     identifier: "Filecoin-FAQ-c50c7d0b3323ff7114cc0ae1fd9ace6f"
-weight: 60
+weight: 140
 toc: true
 aliases:
     - "/about-filecoin/faq"
@@ -152,8 +152,6 @@ There's a pretty large design space here, and we can do a bunch of different thi
 ### Who will be selected to be verifiers to verify clients on the network?
 
 Notaries, selected through an application process, serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
-
-See [Filecoin Plus]({{< relref "filecoin-plus" >}}).
 
 ### Will the existence of Filecoin mining pools lead to centralized storage and away from the vision of distributed storage?
 

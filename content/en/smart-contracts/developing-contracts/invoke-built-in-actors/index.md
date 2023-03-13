@@ -38,13 +38,13 @@ The Zondax _filecoin.solidity_ API:
 
 Smart contracts can directly access built-in actors and methods using the Protocol Labs API. Links to the reference guides for each of the available actor methods is listed below:
 
-- [Account actor]({{< ref "/reference/built-in-actors/protocol-api/account-actor" >}})
-- [Datacap]({{< ref "/reference/built-in-actors/protocol-api/datacap" >}})
-- [Miner]({{< ref "/reference/built-in-actors/protocol-api/miner" >}})
-- [Multisig]({{< ref "/reference/built-in-actors/protocol-api/multisig" >}})
-- [Storage market actor]({{< ref "/reference/built-in-actors/protocol-api/storage-market-actor" >}})
-- [Storage power actor]({{< ref "/reference/built-in-actors/protocol-api/storage-power-actor" >}})
-- [Verified registry actor]({{< ref "/reference/built-in-actors/protocol-api/verified-registry-actor" >}})
+- [Account actor]({{< ref "/reference/built-in-actors/protocol-api.md#account-actor" >}})
+- [Datacap]({{< ref "/reference/built-in-actors/protocol-api.md#datacap" >}})
+- [Miner]({{< ref "/reference/built-in-actors/protocol-api.md#miner" >}})
+- [Multisig]({{< ref "/reference/built-in-actors/protocol-api.md#multisig" >}})
+- [Storage market actor]({{< ref "/reference/built-in-actors/protocol-api.md#storage-market-actor" >}})
+- [Storage power actor]({{< ref "/reference/built-in-actors/protocol-api.md#storage-power-actor" >}})
+- [Verified registry actor]({{< ref "/reference/built-in-actors/protocol-api.md#verified-registry-actor" >}})
 
 ## Using filecoin.solidity
 
@@ -253,4 +253,4 @@ The `filecoin.solidity` library is embeddable into your smart contract, which me
 
 ### Call a built-in actor
 
-Once you've either imported particular contracts manually or simply installed `filecoin-solidity` using npm, create a callable method to access the built-in actor methods the way you normally would in a Solidity smart contract. Working examples of smart contracts that call built-in actor methods are available in the [reference guide]({{< ref "/reference/built-in-actors/solidity-api/filecoin-sol" >}}).
+Once you've either imported particular contracts manually or simply installed `filecoin-solidity` using npm, create a callable method to access the built-in actor methods the way you normally would in a Solidity smart contract. Working examples of smart contracts that call built-in actor methods are available in the [reference guide]({{< ref "/reference/built-in-actors/filecoin-sol" >}}).

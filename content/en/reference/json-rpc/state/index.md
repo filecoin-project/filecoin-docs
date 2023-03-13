@@ -5,7 +5,7 @@ images: []
 type: docs
 menu:
   reference:
-    parent: "lorem"
+    parent: "reference-json-rpc"
     identifier: "state-5be85295263ee699faeaae9d73381649"
 weight: 100
 toc: true
