@@ -60,48 +60,39 @@
   url = "/reference/general/overview/"
   weight = 50
 
-# docs.filecoin.io/about
-# ----------------------
-[[about]]
-  name = "Basics"
-  weight = 10
-  identifier = "about-basics"
-  url = "/about/basics"
 
-[[about]]
-  name = "Assets"
+
+# docs.filecoin.io/basics
+# ----------------------
+[[basics]]
+  name = "What is Filecoin"
+  weight = 10
+  identifier = "basics-what-is-filecoin"
+  url = "/basics/what-is-filecoin"
+
+[[basics]]
+  name = "The blockchain"
   weight = 20
-  identifier = "about-assets"
-  url = "/about/assets"
+  identifier = "basics-the-blockchain"
+  url = "/basics/the-blockchain"
 
-[[about]]
-  name = "Project"
+[[basics]]
+  name = "How storage works"
   weight = 30
-  identifier = "about-project"
-  url = "/about/project"
+  identifier = "basics-how-storage-works"
+  url = "/basics/how-storage-works"
 
-[[about]]
-  name = "Community"
+[[basics]]
+  name = "How retrieval works"
   weight = 40
-  identifier = "about-community"
-  url = "/about/community"
+  identifier = "basics-how-retrieval-works"
+  url = "/basics/how-retrieval-works"
 
-[[about]]
-  name = "Contribute"
+[[basics]]
+  name = "Programming on Filecoin"
   weight = 50
-  identifier = "about-contribute"
-  url = "/about/contribute"
-# ----------------------
-
-
-
-# docs.filecoin.io/intro
-# ----------------------
-[[intro]]
-  name = "Intro to Filecoin"
-  weight = 10
-  identifier = "intro-intro-to-filecoin"
-  url = "/intro/intro-to-filecoin"
+  identifier = "basics-programming-on-filecoin"
+  url = "/basics/programming-on-filecoin"
 # ----------------------
 
 
