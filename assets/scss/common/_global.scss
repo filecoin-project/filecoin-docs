@@ -114,13 +114,11 @@ a.btn:focus {
 }
 */
 
+/*
 body {
-  // --color-black: #1d2d35;
-  // --color-gray: #adb5bd;
-  // --color-white: #ffffff;
-  // --color-filecoin-blue: #3b8ef7;
-  // --color-filecoin-blue-hover: #2369c5;
+  padding-top: 3.5625rem;
 }
+*/
 
 .docs-sidebar {
   order: 2;
@@ -275,7 +273,7 @@ body {
 
 .card-bar {
   border-top: 4px solid;
-  border-image-source: linear-gradient(90deg, $primary, #3b8ef7 50%, #d32e9d);
+  border-image-source: linear-gradient(90deg, $primary, $blue-400 50%, #d32e9d);
   border-image-slice: 1;
 }
 
