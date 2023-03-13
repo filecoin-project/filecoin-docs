@@ -61,7 +61,7 @@ A minimum network bandwidth of 10 Gbps is recommended and write cache at the sto
 ### PoST workers
 We have split off the Winning and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelyhood of winning block rewards and reduces the likelyhood of missing a proving deadline. For redundancy you can run a standby WindowPoST worker on the WinningPoST server and vice versa.
 
-PoST workers require 128GiB of memory at the minimum and require a capable CPU with 24GB of memory and 6000 or more CUDA cores.
+PoST workers require 128GiB of memory at the minimum and require a capable GPU with 24GB of memory and 6000 or more CUDA cores.
 
 ### Sealing workers
 The sealing workers require the most attention during the design of a solution. Their performance as a whole will define the sealing rate of your setup, and how fast you can onboard client deals.
