@@ -116,6 +116,17 @@ $font-family-sans-serif: "Aileron", monospace, -apple-system, blinkmacsystemfont
 $font-family-monospace: sfmono-regular, menlo, monaco, consolas,
   "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
+@font-face {
+  font-family: "Sohne-Buch";
+  src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/tldr/Sohne-Buch.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Sohne-Halbfett";
+  src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/tldr/Sohne-Halbfett.woff")
+    format("woff");
+}
 // stylelint-enable value-keyword-case
 
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`

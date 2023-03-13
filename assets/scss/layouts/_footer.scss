@@ -53,6 +53,12 @@
 
       .neutral-link {
         cursor: pointer;
+        transition: color 0.2 ease;
+
+        &:hover {
+          color: $blue-500;
+          text-decoration: none;
+        }
       }
 
       @include media-breakpoint-down(md) {
@@ -65,9 +71,21 @@
     }
   }
 
-  .social-links {
+  .social-links-container {
     display: flex;
-    gap: 1rem;
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    @media (max-width: 1280px) {
+      flex-direction: column;
+
+      ul.social-links {
+        padding: 0;
+      }
+    }
   }
 
   .logo-container {
@@ -79,6 +97,7 @@
     @include media-breakpoint-up(md) {
       justify-content: flex-start;
       align-self: flex-start;
+      margin-top: 0rem;
     }
 
     .logo {
