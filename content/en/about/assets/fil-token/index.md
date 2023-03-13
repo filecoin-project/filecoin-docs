@@ -23,19 +23,17 @@ Wallets provide a way to securely store digital assets. Here are some wallets wi
 
 Note: If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
 
-We do not provide technical support for any of these wallets.
+We do not provide technical support for any of these wallets. Please use caution when researching and using the wallets listed below. Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are marked *recommended* below.
 
  Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet.                                                                                                              | Unknown |
-| FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki). This system is currently in beta. | No      |
-| [FilWallet](https://filwallet.co) | A FIL-focused crypto wallet, available on Android and iOS. | Unknown |
-| [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by Filfox.                                                                                             | Yes     |
-| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device.                                                   | Yes     |
+| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true)                                   | A multi-currency hardware wallet. *Recommended.*                                                                   | Yes |
+| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. *Recommended.*                                                   | Yes     |
+| [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet, official wallet of Binance.                                                                     | Unknown |
 | [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
-| [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet. This is the official wallet of Binance.                                                                     | Unknown |
-| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true)                                   | A multi-currency wallet.                                                                     | Unknown |
+| [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                                                                                            | Yes     |
+| FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki), currently in beta. | No      |
 
 ### Hot versus cold
 
@@ -61,7 +59,7 @@ If you have created a wallet, here's how to add it to our list:
 
 A cryptocurrency exchange, or simply just _exchange_, is a service that lets you swap cash for cryptocurrency, cryptocurrency for cash, or even one cryptocurrency for another cryptocurrency. They work similarly to currency exchanges that you find at airports, where you can swap your home currency for one of the countries you are traveling to. If you have purchased cryptocurrency before, you have likely used an exchange before.
 
-There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
+There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coingecko.com](https://www.coingecko.com/) and [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
 
 ![Coinmarketcap show a list of exchanges that support FIL.](coinmarketcap-exchanges.png)
 
