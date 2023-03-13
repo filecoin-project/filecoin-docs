@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "integrating-existing-ethereum-libraries-e0b2c827da6ced7e92bfaf452add675c"
-weight: 120
+weight: 430
 toc: true
 ---
 

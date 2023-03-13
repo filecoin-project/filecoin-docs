@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "foundry-riejwu384uw9eus8wu283uw9riwus8w"
-weight: 100
+weight: 440
 toc: true
 ---
 
