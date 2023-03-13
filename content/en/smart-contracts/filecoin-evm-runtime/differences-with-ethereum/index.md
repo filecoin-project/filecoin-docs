@@ -53,4 +53,5 @@ In Filecoin, any actor can use `method 0`, also called a bare-value send, to tra
 
 ## Precompiles
 
-The Filecoin EVM runtime, unlike Ethereum, does not usually enforce gas limits when calling precompiles. This means that it isn't possible to prevent a precompile from consuming all remaining gas.
+The Filecoin EVM runtime, unlike Ethereum, does not usually enforce gas limits when calling precompiles. This means that it isn't possible to prevent a precompile from consuming all remaining gas. The `call actor` and `call actor id` precompiles are the exception. However, they apply the passed gas limit to the actor call, not the entire precompile operation (i.e., the full precompile execution end-to-end can use more gas than specified, it's only the final `send` to the target actor that will be limited).
+
