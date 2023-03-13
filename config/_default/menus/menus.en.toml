@@ -156,19 +156,6 @@
   weight = 40
   identifier = "smart-contracts-developing-contracts"
   url = "/smart-contracts/developing-contracts"
-
-[[smart-contracts]]
-  name = "Testing contracts"
-  weight = 50
-  identifier = "smart-contracts-testing-contracts"
-  url = "/smart-contracts/testing-contracts"
-
-[[smart-contracts]]
-  name = "Debugging contracts"
-  weight = 60
-  identifier = "smart-contracts-debugging-contracts"
-  url = "/smart-contracts/debugging-contracts"
-
 # ----------------------
 
 
