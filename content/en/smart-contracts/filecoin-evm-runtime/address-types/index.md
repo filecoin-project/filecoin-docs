@@ -144,24 +144,21 @@ Again, assume you have deployed a solidity smart contract on Filecoin Hyperspace
 
 When you try to invoke this smart contract on Filecoin using Ethereum toolings, you need to use your `0x5f6044198a16279f87d2839c998893858bbf8d9c` smart contract address.
 
-## Converting from a Filecoin address to a 0x-style address
+## Converting to a 0x-style address
 
-FEVM introduces support for `0x` (Ethereum) style addresses. Filecoin addresses starting with either `f0` or `f410f` can be converted to the `0x` format as follows:
+The Filecoin EVM runtime introduces support for `0x` Ethereum-style addresses. Filecoin addresses starting with either `f0` or `f410f` can be converted to the `0x` format as follows:
 
-- Addresses starting with `f0` address can be converted to the `0x` format by
-  - Extracting the `actor_id` (e.g., the `1234` in `f01234`).
-  - Hex encode with a `0xff` prefix: `sprintf("0xff0000000000000000000000%016x", actor_id)`.
+Addresses starting with `f0` address can be converted to the `0x` format by:
+- Extracting the `actor_id` (e.g., the `1234` in `f01234`).
+- Hex encode with a `0xff` prefix: `sprintf("0xff0000000000000000000000%016x", actor_id)`.
 
-- Addresses starting with `f410f` address can be converted to the `0x`  format by:
+Addresses starting with `f410f` address can be converted to the `0x`  format by:
+- Removing the `f410f` prefix.
+- Decoding the remainder as base32 (RFC 4648 without padding).
+- Trim off the last 4 bytes. This is a _checksum_ that can optionally be verified, but that's beyond the scope of this documentation.
+- Assert that the remaining address is 20 bytes long.
+- Hex-encode: `sprintf(0x%040x", actor_id)`.
 
-  - Removing the `f410f` prefix.
-
-  - Decoding the remainder as base32 (RFC 4648 without padding).
-
-  - Trim off the last 4 bytes. This is a *checksum* that can optionally be verified, but that's beyond the scope of this documentation.
-
-  - Assert that the remaining address is 20 bytes long.
-
-  - Hex-encode: `sprintf(0x%040x", actor_id)`.
-
-However, remember that `f0` addresses are *not* re-org stable and should not be used until the chain has settled.
+{{< alert >}}
+⚠️ Remember that `f0` addresses are **not** re-org stable and should not be used until the chain has settled.
+{{< /alert >}}
