@@ -34,6 +34,46 @@ You can use the FilForwarder contract in two ways:
 
 ### Glif.io
 
+Before we start, make sure you know the address that you'd like to forward your FIL to. You'll need to ensure that `f410` Ethereum-style address has enough FIL to cover the transaction costs.
+
+1. Go to [Glif.io](https://glif.io).
+1. Select the network you want to use from the dropdown, and click **Connect Wallet**.
+
+    ![Select the network you want to use.](glif-01-select-network.png)
+
+    In this example, we're using the Hyperspace testnet.
+
+1. Confirm that you want to connect your wallet to Glif.io. You will only be prompted to do this once.
+
+    ![Choose a wallet provider.](glif-02-choose-wallet-provider.png)
+
+1. Click **Close** on the connection confirmation screen.
+
+    ![Wallet successfully connected to Glif](glif-03-wallet-successfully-connected.png)
+
+1. Select your wallet address from the dropdown and click **Forward FIL**.
+
+    ![Select FIL Forward](glif-04-select-forward.png)
+
+1. Enter the destination address for your FIL, along with the amount of FIL you want to send:
+
+    ![Enter a destination address and an amount.](glif-05-address-and-amount.png)
+
+1. Double-check that your destination address is correct and click **Send**.
+1. You can check the transaction by clicking the transaction ID.
+
+    ![Check your transaction by clicking the ID.](glif-06-transaction-id.png)
+
+1. Your funds should be available at the destination after around two minutes. You can check that your funds have arrived by searching for the destination address in a block explorer.
+
+    ![Funds in a block explorer.](glif-07-funds-in-a-block-explorer.png)
+
+1. If you can't see your funds, make sure you're viewing the correct network.
+
+    ![Change network within a block explorer.](glif-08-change-network.png)
+
+It generally takes around two minutes for a transaction to complete and for the funds to be available at the destination.
+
 ### Manually
 
 The FilForwarder contract can be interacted with using standard Ethereum tooling like Hardhat or Remix. In this guide, we're going to use Hardhat, but these steps can be easily replicated using the [web-based IDE Remix]({{< relref "remix" >}}).
