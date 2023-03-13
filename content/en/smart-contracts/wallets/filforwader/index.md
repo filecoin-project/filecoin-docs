@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   smart-contracts:
-    parent: "smart-contracts-ethereum-wallets"
+    parent: "smart-contracts-wallets"
     identifier: "filforwarder-ei3j49389wieutidhruejwi293829w"
-weight: 100
+weight: 310
 toc: true
 ---
 
@@ -83,7 +83,7 @@ The FilForwarder contract can be interacted with using standard Ethereum tooling
 This guide assumes you have the following installed:
 
 - [Yarn](https://yarnpkg.com/)
-- A Filecoin address stored in [MetaMask]({{< relref "/smart-contracts/ethereum-wallet/metamask" >}})
+- A Filecoin address stored in [MetaMask]({{< relref "/smart-contracts/wallets/metamask" >}})
 
 #### Environment setup
 
@@ -112,7 +112,7 @@ First, we need to grab the FilFowarder kit and install the dependencies:
     ✨  Done in 16.34s.
     ```
 
-1. Create an environment variable for your private key. You can [export it from MetaMask]({{< relref "/smart-contracts/ethereum-wallet/metamask" >}}).
+1. Create an environment variable for your private key. You can [export it from MetaMask]({{< relref "/smart-contracts/wallets/metamask" >}}).
 
     ```shell
     export PRIVATE_KEY='<YOUR PRIVATE KEY>'

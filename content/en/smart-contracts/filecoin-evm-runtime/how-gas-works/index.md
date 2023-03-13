@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-filecoin-evm-runtime"
     identifier: "how-gas-works-b2f64e9deac2e82424df15a11874914b"
-weight: 100
+weight: 230
 toc: true
 ---
 
@@ -113,10 +113,8 @@ echo $((16#31157))
 
 ## Additional Resources
 
-Gas FIPs:
-- https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0032.md
-- https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0037.md
-- https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0054.md
-
-Primitive Gas Price list:
-- https://github.com/filecoin-project/ref-fvm/blob/master/fvm/src/gas/price_list.rs
+- Gas Filecoin improvement proposals (FIPs):
+    - [FIP 0032](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0032.md)
+    - [FIP 0037](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0037.md)
+    - [FIP 0054](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0054.md)
+- [Primitive Gas Price list](https://github.com/filecoin-project/ref-fvm/blob/master/fvm/src/gas/price_list.rs)

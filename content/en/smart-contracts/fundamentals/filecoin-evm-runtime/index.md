@@ -1,5 +1,5 @@
 ---
-title: "About the runtime"
+title: "Filecoin EVM runtime"
 description: "The Filecoin Virtual Machine (FVM) contains an Ethereum Virtual Machine (EVM) runtime, allowing Ethereum and Solidity developers to run their contracts on the FVM with little to no modifications. This page details what exactly this EVM compatibility means, and any other information that Ethereum developers may need to build applications on the FVM."
 lead: "The FVM contains an Ethereum Virtual Machine (EVM) runtime, allowing Ethereum and Solidity developers to run their contracts on the FVM with little to no modifications. This page details what exactly this EVM compatibility means, and any other information that Ethereum developers may need to build applications on the FVM."
 draft: false
@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   smart-contracts:
-    parent: "smart-contracts-filecoin-evm-runtime"
-    identifier: "about-the-runtime-932a1ced1a966c0e7849ec231bb47424"
-weight: 100
+    parent: "smart-contracts-fundamentals"
+    identifier: "filecoin-evm-runtime-932a1ced1a966c0e7849ec231bb47424"
+weight: 140
 toc: true
 ---
 

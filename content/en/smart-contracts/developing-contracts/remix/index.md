@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "remix-4c28be2b94737a684948515c69efbf89"
-weight: 100
+weight: 460
 toc: true
 ---
 
@@ -18,7 +18,7 @@ toc: true
 As a simple introduction, we're going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we're using the Hyperspace testnet, but this process is the same for mainnet.
 
 {{< alert >}}
-This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out the guide we've put together]({{< relref "/smart-contracts/ethereum-wallet/metamask" >}}).
+This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out the guide we've put together]({{< relref "/smart-contracts/wallets/metamask" >}}).
 {{< /alert >}}
 
 ### Create a workspace
@@ -70,7 +70,7 @@ That's all we need to change within this contract. You can see on line 4 that th
 Now that we've successfully compiled our contract, we need to deploy it somewhere! This is where our previous MetaMask setup comes into play.
 
 {{< alert >}}
-This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out the guide we've put together]({{< relref "/smart-contracts/ethereum-wallet/metamask" >}}).
+This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out the guide we've put together]({{< relref "/smart-contracts/wallets/metamask" >}}).
 {{< /alert >}}
 
 1. Click the **Deploy** tab from the left.
