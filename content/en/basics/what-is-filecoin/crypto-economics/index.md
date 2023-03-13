@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   basics:
+    parent: "basics-what-is-filecoin"
     identifier: "crypto-economics-19f71f3f61913482bdf083c891094e1c"
 weight: 20
 toc: true

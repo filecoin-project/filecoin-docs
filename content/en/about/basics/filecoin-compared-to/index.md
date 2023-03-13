@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-basics"
     identifier: "Filecoin-compared-to-010a4bc4c8b839486e375ca6622e3fda"
-weight: 50
+weight: 130
 toc: true
 aliases:
     - "/about-filecoin/filecoin-compared-to"

@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   basics:
+    parent: "basics-how-retrieval-works"
     identifier: "saturn-e2ea30b5ceab1f7ace9c70922fd47c22"
 weight: 100
 toc: true

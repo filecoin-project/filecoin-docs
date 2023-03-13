@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   basics:
+    parent: "basics-what-is-filecoin"
     identifier: "retrieval-market-74f7da553cd0e23c7f431d8e01237b2a"
 weight: 60
 toc: true

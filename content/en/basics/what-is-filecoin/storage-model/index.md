@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   basics:
+    parent: "basics-what-is-filecoin"
     identifier: "storage-model-edd6d3235797c6805400948d5d82fe88"
 weight: 40
 toc: true

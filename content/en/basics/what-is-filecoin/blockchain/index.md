@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   basics:
+    parent: "basics-what-is-filecoin"
     identifier: "blockchain-0b1a5bc9c50789118de7a7fbba355514"
 weight: 30
 toc: true

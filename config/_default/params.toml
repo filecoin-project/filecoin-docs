@@ -87,7 +87,7 @@ editPage = true
 lastMod = false
 
 [sections]
-#  sectionNav = ["docs", "blog"]
+  sectionNav = ["about", "intro", "store", "providers", "smart-contracts", "reference"]
 
 [options]
   lazySizes = true
@@ -95,7 +95,7 @@ lastMod = false
   instantPage = true
   flexSearch = true
   searchSectionsShow = "ALL"
-  searchSectionsIndex = ["about", "blog", "build", "developers", "fvm", "get-started", "networks", "reference", "storage-provider", "store"]
+  searchSectionsIndex = ["about", "intro", "store", "providers", "smart-contracts", "reference"]
   darkMode = true
   bootStrapJs = true
   breadCrumb = false
@@ -112,5 +112,5 @@ lastMod = false
 
 [menu]
   [menu.section]
-    auto = true
+    auto = false
     collapsibleSidebar = false

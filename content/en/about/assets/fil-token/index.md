@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-assets"
     identifier: "fil-token-421106ce93f167e33193ddb64dc5af06"
-weight: 10
+weight: 210
 toc: true
 aliases:
     - /about-filecoin/managing-assets/

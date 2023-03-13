@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   basics:
+    parent: "basics-the-blockchain"
     identifier: "tipsets-9c429ba5c09b3b3f9247ef22571dd7df"
 weight: 100
 toc: true

@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
+    parent: "smart-contracts-testing-contracts"
     identifier: "live-network-testing-c6ea8561e37cd088ea1fe64e8b4cc9be"
 weight: 100
 toc: true

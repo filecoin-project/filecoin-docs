@@ -6,7 +6,7 @@ images: []
 type: docs
 menu:
   store:
-    parent: "lorem"
+    parent: "store-tools"
     identifier: "estuary-decf178f9967cbaa824520fd2fe9e935"
 weight: 100
 toc: true

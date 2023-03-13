@@ -7,8 +7,9 @@ images: []
 type: docs
 menu:
   basics:
+    parent: "basics-what-is-filecoin"
     identifier: "networks-7da5a52c1427d233e3ebfc1aba5fe0e1"
-weight: 80
+weight: 90
 toc: true
 ---
 

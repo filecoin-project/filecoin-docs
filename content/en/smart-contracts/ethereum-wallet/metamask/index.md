@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
+    parent: "smart-contracts-ethereum-wallets"
     identifier: "metamask-582f6bb878fee29349ce0adec7039227"
 weight: 100
 toc: true

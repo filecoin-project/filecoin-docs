@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   about:
-    parent: "lorem"
+    parent: "about-community"
     identifier: "chat-and-discussion-forums-0b632ec1720694924e09e5ee05f782e6"
-weight: 10
+weight: 410
 toc: true
 aliases:
     - "/about-filecoin/chat-and-discussion-forums"
