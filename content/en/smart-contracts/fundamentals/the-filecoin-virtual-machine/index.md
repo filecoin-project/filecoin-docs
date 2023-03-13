@@ -1,5 +1,5 @@
 ---
-title: "The Filecoin Virtual Machine"
+title: "The FVM"
 description: "The Filecoin virtual machine (FVM) is a runtime environment for smart contracts on the Filecoin network, responsible for executing and securing them. These smart contracts, also called actors, can be written in Solidity or any language that compiles to WASM."
 lead: "The Filecoin virtual machine (FVM) is a runtime environment for smart contracts on the Filecoin network, responsible for executing and securing them. These smart contracts, also called actors, can be written in Solidity or any language that compiles to WASM."
 draft: false
@@ -8,7 +8,7 @@ type: docs
 menu:
   smart-contracts:
     parent: "smart-contracts-fundamentals"
-    identifier: "the-filecoin-virtual-machine-da0916626661af4bebfa119906cb0481"
+    identifier: "the-fvm-da0916626661af4bebfa119906cb0481"
 weight: 110
 toc: true
 aliases:

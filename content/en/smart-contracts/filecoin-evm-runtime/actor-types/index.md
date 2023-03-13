@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-filecoin-evm-runtime"
     identifier: "actor-types-djeiwo9283l5k6njdhu89e1kqjamsnz7"
-weight: 100
+weight: 200
 toc: true
 ---
 
