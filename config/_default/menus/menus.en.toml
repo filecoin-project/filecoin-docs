@@ -32,8 +32,8 @@
       parent = "main-smart-contracts"
 
     [[main]]
-      name = "Ethereum wallet"
-      url = "/smart-contracts/ethereum-wallet/metamask/"
+      name = "Wallets"
+      url = "/smart-contracts/wallets/metamask/"
       weight = 30
       parent = "main-smart-contracts"
 
@@ -146,10 +146,10 @@
   url = "/smart-contracts/filecoin-evm-runtime"
 
 [[smart-contracts]]
-  name = "Ethereum wallets"
+  name = "Wallets"
   weight = 30
-  identifier = "smart-contracts-ethereum-wallets"
-  url = "/smart-contracts/ethereum-wallets"
+  identifier = "smart-contracts-wallets"
+  url = "/smart-contracts/wallets"
 
 [[smart-contracts]]
   name = "Developing contracts"
