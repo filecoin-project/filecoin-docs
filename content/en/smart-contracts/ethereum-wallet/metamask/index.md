@@ -13,32 +13,84 @@ weight: 100
 toc: true
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+## Add to MetaMask
 
-## Selvage
+This guide shows you how to integrate the Filecoin network into MetaMask. This process is the same for mainnet, Hyperspace testnet, Calibration testnet, and a local testnet.
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+### Simple method
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-configured options at chainlist.org.
 
-### Heirloom
+1. Go to [chainlist.org](https://chainlist.org/).
+1. Enter `Filecoin` into the search bar. If you would like to connect to a testnet, enable the **Testnets** toggle:
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+    ![Search for Filecoin testnets in Chainlist.](chainlist-search-for-filecoin-testnets.png)
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+1. Scroll down to find the network that you want to connect to:
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+    ![Find the Hyperspace testnet.](chainlist-select-hyperspace.png)
 
-## Bushwick cold-pressed
+1. In MetaMask click **Next**.
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+    ![Click next in MetaMask.](chainlist-connect-with-metamask.png)
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+1. Click **Connect**:
 
-## Locavore swag
+    ![Click connect in MetaMask.](chainlist-click-connect-in-metamask.png)
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+1. Click **Approve** when prompted to _Allow this site to add a network_:
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+    ![Approve the new network in MetaMask](chainlist-approve-new-network.png)
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+1. Click **Switch network** when prompted by MetaMask:
+
+    ![Switch networks in MetaMask.](chainlist-switch-network.png)
+
+1. Open MetaMask from the browser extensions tab:
+
+    ![Open MetaMask from the browser extensions tab.](chainlist-open-metamask.png)
+
+1. You should see the Filecoin Hyperspace testnet listed at the top:
+
+    ![MetaMask on the Filecoin Hyperspace testnet.](chainlist-hyperspace-added.png)
+
+### Manual process
+
+If you can't or don't want to use Chainlist, you can add the Hyperspace network to your MetaMask manually.
+
+#### Prerequisities
+
+Before we get started, you'll need the following:
+
+- A [Chromium-based browser](https://en.wikipedia.org/wiki/Chromium_web_browser#Browsers_based_on_Chromium), or [Firefox](https://www.mozilla.org/en-CA/firefox/products/).
+- A browser with [MetaMask](https://metamask.io/) installed.
+
+#### Steps
+
+The process for integrating Filecoin into MetaMask is fairly simple but has some very specific variables that you must copy exactly.
+
+1. Open your browser and open the MetaMask plugin. If you haven't opened the MetaMask plugin before, you'll be prompted to create a new wallet. Follow the prompts to create a wallet.
+2. Click the user circle and select **Settings**:
+
+    ![Click Settings from within MetaMask](manual-show-settings.jpg)
+
+3. Select **Networks**.
+4. Click **Add a network**.
+5. Scroll down and click **Add a network manually**.
+6. Enter the following information into the fields:
+
+    | Field | Value |
+    | --- | --- |
+    | Network name | `Filecoin Hyperspace testnet` |
+    | New RPC URL | `https://api.hyperspace.node.glif.io/rpc/v1` |
+    | Chain ID | `3141` |
+    | Currency symbol | `tFIL` |
+
+7. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
+
+    - Glif Explorer: `https://explorer.glif.io/?network=hyperspace`
+    - Filscan: `https://hyperspace.filscan.io/`
+
+8. Review the values in the fields and click **Save**.
+9.  The Hyperspace testnet should now be shown in your MetaMask window.
+10. Done!
