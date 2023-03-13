@@ -92,8 +92,8 @@ First, we need to grab the FilFowarder kit and install the dependencies:
 1. Clone the FilForwarder repository and install the dependencies:
 
     ```shell
-    git clone https://github.com/filecoin-project/fevm-hardhat-kit.git
-    cd fevm-hardhat-kit
+    git clone https://github.com/lotus-web3/FilForwarder
+    cd FilForwarder
     ```
 
 1. Use Yarn to install the project's dependencies:
