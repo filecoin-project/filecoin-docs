@@ -140,7 +140,7 @@ button#doks-versions {
 
 .header-bar {
   border-top: 4px solid;
-  border-image-source: linear-gradient(90deg, $primary, #8ed6fb 50%, #d32e9d);
+  border-image-source: linear-gradient(90deg, $primary, #3b8ef7 50%, #d32e9d);
   border-image-slice: 1;
 }
 
@@ -306,11 +306,15 @@ button#doks-versions {
     width: auto !important;
   }
 
-  .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column {
+  .algolia-autocomplete
+    .algolia-docsearch-suggestion
+    .algolia-docsearch-suggestion--subcategory-column {
     font-weight: normal;
   }
 
-  .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column::after {
+  .algolia-autocomplete
+    .algolia-docsearch-suggestion
+    .algolia-docsearch-suggestion--subcategory-column::after {
     content: "/";
     margin-right: 0.25rem;
   }
@@ -491,4 +495,3 @@ button#doks-versions {
     padding-left: 0.5rem;
   }
 }
-

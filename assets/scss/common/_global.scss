@@ -76,16 +76,18 @@ body.docs {
 
 a:hover,
 a:focus {
+  cursor: pointer;
   text-decoration: underline;
 }
 
 a.btn:hover,
 a.btn:focus {
+  cursor: pointer;
   text-decoration: none;
 }
 
 .lead {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .section {
@@ -112,11 +114,13 @@ a.btn:focus {
 }
 */
 
-/*
 body {
-  padding-top: 3.5625rem;
+  --color-black: #1d2d35;
+  --color-gray: #adb5bd;
+  --color-white: #ffffff;
+  --color-filecoin-blue: #3b8ef7;
+  --color-filecoin-blue-hover: #2369c5;
 }
-*/
 
 .docs-sidebar {
   order: 2;
@@ -128,7 +132,7 @@ body {
     border-right: 1px solid $gray-200;
   }
 
-  @supports ((position:-webkit-sticky) or (position:sticky)) {
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
     .docs-sidebar {
       position: -webkit-sticky;
       position: sticky;
@@ -175,7 +179,7 @@ body {
   order: 2;
 }
 
-@supports ((position:-webkit-sticky) or (position:sticky)) {
+@supports ((position: -webkit-sticky) or (position: sticky)) {
   .docs-toc {
     position: -webkit-sticky;
     position: sticky;
@@ -258,7 +262,7 @@ body {
 // https://fossheim.io/writing/posts/css-text-gradient/
 .gradient-text {
   background-color: $primary;
-  background-image: linear-gradient(90deg, $primary, $blue-300 50%, $pink-500);
+  background-image: linear-gradient(90deg, $primary, $blue-400 50%, $pink-500);
   background-size: 100%;
   background-repeat: repeat;
   background-clip: text;
@@ -271,7 +275,7 @@ body {
 
 .card-bar {
   border-top: 4px solid;
-  border-image-source: linear-gradient(90deg, $primary, #8ed6fb 50%, #d32e9d);
+  border-image-source: linear-gradient(90deg, $primary, #3b8ef7 50%, #d32e9d);
   border-image-slice: 1;
 }
 
@@ -289,6 +293,6 @@ body {
   }
 }
 
-.d-xl-padding{
+.d-xl-padding {
   padding-bottom: 15px;
 }
