@@ -9,7 +9,7 @@ type: docs
 menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
-    identifier: "fvm-storage-deals"
+    identifier: "storage-deals-fvm"
 weight: 500
 toc: true
 ---
