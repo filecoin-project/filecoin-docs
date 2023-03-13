@@ -14,18 +14,18 @@ toc: true
 ---
 
 {{< alert >}}
-For conceptual information on built-in actors, including their purposes, how they work and more, see the [conceptual guide]({{< ref "built-in-actors-overview" >}}).
+For conceptual information on built-in actors, including their purposes, how they work and more, see the [conceptual guide]({{< ref "/reference/built-in-actors/overview" >}}).
 {{< /alert >}}
 
 ## Prerequisites
 
-Before you can call a built-in actor using the API, you must [import filecoin.solidity using one of the available methods]({{< ref "smart-contracts/developing-contracts/invoke-built-in-actors/index.md#using-filecoinsolidity" >}}).
+Before you can call a built-in actor using the API, you must [import filecoin.solidity using one of the available methods]({{< ref "smart-contracts/developing-contracts/call-built-in-actors/index.md#using-filecoinsolidity" >}}).
 
 
 ## Call a built-in actor
 
 {{< alert >}}
-For available actors and methods see [Available actors and methods]({{< ref "smart-contracts/developing-contracts/invoke-built-in-actors/index.md#available-actors-and-methods" >}}).
+For available actors and methods see [Available actors and methods]({{< ref "smart-contracts/developing-contracts/call-built-in-actors/index.md#available-actors-and-methods" >}}).
 {{< /alert >}}
 
 Once you've either imported particular contracts manually or simply installed `filecoin-solidity` using npm, create a callable method to access the built-in actor methods the way you normally would in a Solidity smart contract. Working examples of smart contracts that call built-in actor methods are available below.
@@ -38,7 +38,7 @@ Once you've either imported particular contracts manually or simply installed `f
 - [Verified registry](#call-the-verified-registry-actor)
 
 {{< alert >}}
-For conceptual information on built-in actors, including their purposes, how they work and available types, see the [conceptual guide]({{< ref "built-in-actors-overview" >}}).
+For conceptual information on built-in actors, including their purposes, how they work and available types, see the [conceptual guide]({{< ref "/reference/built-in-actors/overview" >}}).
 {{< /alert >}}
 
 ### Call the account actor
