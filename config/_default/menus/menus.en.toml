@@ -1,27 +1,22 @@
 [[main]]
-  name = "About"
-  url = "/about/basics/what-is-filecoin/"
-  weight = 20
-
-[[main]]
-  name = "Intro"
-  url = "/intro/intro-to-filecoin/what-is-filecoin/"
-  weight = 30
+  name = "Basics"
+  url = "/basics/what-is-filecoin/overview"
+  weight = 10
 
 [[main]]
   name = "Store"
   url = "/store/overview/start-storing/"
-  weight = 60
+  weight = 20
 
 [[main]]
   name = "Providers"
   url = "/storage-provider/basics/overview/"
-  weight = 70
+  weight = 30
 
 [[main]]
   name = "Smart contracts"
   url = "/developers/introduction/filecoin-and-ipfs"
-  weight = 80
+  weight = 40
   identifier= "main-smart-contracts"
 
     [[main]]
@@ -63,50 +58,41 @@
 [[main]]
   name = "Reference"
   url = "/reference/general/overview/"
-  weight = 90
-
-# docs.filecoin.io/about
-# ----------------------
-[[about]]
-  name = "Basics"
-  weight = 10
-  identifier = "about-basics"
-  url = "/about/basics"
-
-[[about]]
-  name = "Assets"
-  weight = 20
-  identifier = "about-assets"
-  url = "/about/assets"
-
-[[about]]
-  name = "Project"
-  weight = 30
-  identifier = "about-project"
-  url = "/about/project"
-
-[[about]]
-  name = "Community"
-  weight = 40
-  identifier = "about-community"
-  url = "/about/community"
-
-[[about]]
-  name = "Contribute"
   weight = 50
-  identifier = "about-contribute"
-  url = "/about/contribute"
+
+
+
+# docs.filecoin.io/basics
 # ----------------------
-
-
-
-# docs.filecoin.io/intro
-# ----------------------
-[[intro]]
-  name = "Intro to Filecoin"
+[[basics]]
+  name = "What is Filecoin"
   weight = 10
-  identifier = "intro-intro-to-filecoin"
-  url = "/intro/intro-to-filecoin"
+  identifier = "basics-what-is-filecoin"
+  url = "/basics/what-is-filecoin"
+
+[[basics]]
+  name = "The blockchain"
+  weight = 20
+  identifier = "basics-the-blockchain"
+  url = "/basics/the-blockchain"
+
+[[basics]]
+  name = "How storage works"
+  weight = 30
+  identifier = "basics-how-storage-works"
+  url = "/basics/how-storage-works"
+
+[[basics]]
+  name = "How retrieval works"
+  weight = 40
+  identifier = "basics-how-retrieval-works"
+  url = "/basics/how-retrieval-works"
+
+[[basics]]
+  name = "Programming on Filecoin"
+  weight = 50
+  identifier = "basics-programming-on-filecoin"
+  url = "/basics/programming-on-filecoin"
 # ----------------------
 
 
