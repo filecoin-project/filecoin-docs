@@ -15,44 +15,32 @@
 
 [[main]]
   name = "Smart contracts"
-  url = "/developers/introduction/filecoin-and-ipfs"
+  url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
   weight = 40
   identifier= "main-smart-contracts"
 
     [[main]]
       name = "Fundamentals"
-      url = "/smart-contracts/fundamentals"
+      url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
       weight = 10
       parent = "main-smart-contracts"
 
     [[main]]
       name = "Filecoin EVM runtime"
-      url = "/smart-contracts/filecoin-evm-runtime"
+      url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
       weight = 20
       parent = "main-smart-contracts"
 
     [[main]]
       name = "Ethereum wallet"
-      url = "/smart-contracts/ethereum-wallet"
+      url = "/smart-contracts/ethereum-wallet/metamask/"
       weight = 30
       parent = "main-smart-contracts"
 
     [[main]]
       name = "Developing contracts"
-      url = "/smart-contracts/developing-contracts"
+      url = "/smart-contracts/developing-contracts/ethereum-libraries/"
       weight = 40
-      parent = "main-smart-contracts"
-    
-    [[main]]
-      name = "Testing contracts"
-      url = "/smart-contracts/testing-contracts"
-      weight = 50
-      parent = "main-smart-contracts"
-
-    [[main]]
-      name = "Debugging contracts"
-      url = "/smart-contracts/debugging-contracts"
-      weight = 60
       parent = "main-smart-contracts"
 
 [[main]]
@@ -168,19 +156,6 @@
   weight = 40
   identifier = "smart-contracts-developing-contracts"
   url = "/smart-contracts/developing-contracts"
-
-[[smart-contracts]]
-  name = "Testing contracts"
-  weight = 50
-  identifier = "smart-contracts-testing-contracts"
-  url = "/smart-contracts/testing-contracts"
-
-[[smart-contracts]]
-  name = "Debugging contracts"
-  weight = 60
-  identifier = "smart-contracts-debugging-contracts"
-  url = "/smart-contracts/debugging-contracts"
-
 # ----------------------
 
 
