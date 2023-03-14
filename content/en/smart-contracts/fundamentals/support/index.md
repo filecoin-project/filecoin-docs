@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-fundamentals"
     identifier: "support-0be0dajeidjwk32iaf95f58567cc2bae"
-weight: 120
+weight: 190
 toc: true
 aliases:
     - "/developers/smart-contracts/about/support/"
