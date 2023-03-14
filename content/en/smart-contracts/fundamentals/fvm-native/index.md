@@ -2,7 +2,7 @@
 title: "FVM native"
 description: "FVM native refers to user-defined native actors, written specifically for the FVM runtime. This is separate from FVM built-in native actors, which refer to built-in actors on the Filecoin network."
 lead: "FVM native refers to user-defined native actors, written specifically for the FVM runtime. This is separate from FVM built-in native actors, which refer to built-in actors on the Filecoin network."
-draft: false
+draft: true
 images: []
 type: docs
 menu:
