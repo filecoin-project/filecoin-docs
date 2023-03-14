@@ -13,7 +13,23 @@ weight: 130
 toc: true
 ---
 
+## [Glif](https://glif.io)
+
+Please note that a publicly available hosted endpoint guarantees **only 2000 of the latest blocks.**
+
+- HTTPS: `https://api.node.glif.io/rpc/v1`
+
+- WebSockets: `wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1`
+
+- Lotus lite-node command
+
+  ```shell
+  FULLNODE_API_INFO=wss://wss.node.glif.io/apigw/lotus lotus daemon --lite
+  ```
+
+- [Glif Node documentation](https://hosting.glif.io/)
+
 ## [Ankr](https://ankr.com)
 
-- HTTPS: `https://rpc.ankr.com/filecoin_testnet`
-- [Ankr documentation](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
+- HTTPS: `https://rpc.ankr.com/filecoin`
+- [Supported Filecoin API methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
