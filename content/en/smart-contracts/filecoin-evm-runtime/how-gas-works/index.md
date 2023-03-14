@@ -11,6 +11,8 @@ menu:
     identifier: "how-gas-works-b2f64e9deac2e82424df15a11874914b"
 weight: 230
 toc: true
+aliases:
+    - "/developers/smart-contracts/how-tos/calculate-gas/"
 ---
 
 When executing a message that invokes an EVM contract, the Filecoin virtual machine charges for the message chain inclusion (when the message originates off-chain) and then invokes the actor that hosts the contract. The actor is an instance of the EVM actor, which uses the Filecoin EVM runtime interpreter to execute the contract.

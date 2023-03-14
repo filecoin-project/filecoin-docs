@@ -11,6 +11,8 @@ menu:
     identifier: "differences-with-ethereum-e2c404b7736d394fbdb9f96395bedbb3"
 weight: 220
 toc: true
+aliases:
+    - "/developers/smart-contracts/concepts/ethereum-compatibility/"
 ---
 
 While Filecoin EVM runtime aims to be compatible with the Ethereum ecosystem, it has some marked differences.

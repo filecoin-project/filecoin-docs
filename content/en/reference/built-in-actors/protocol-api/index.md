@@ -11,6 +11,14 @@ menu:
     identifier: "protocol-api-djeowie8948dhsuxjdfi391029382jsi"
 weight: 320
 toc: true
+aliases:
+    - "/developers/reference/built-in-actors/account-actor/"
+    - "/developers/reference/built-in-actors/datacap/"
+    - "/developers/reference/built-in-actors/miner/"
+    - "/developers/reference/built-in-actors/multisig/"
+    - "/developers/reference/built-in-actors/storage-market-actor/"
+    - "/developers/reference/built-in-actors/storage-power-actor/"
+    - "/developers/reference/built-in-actors/verified-registry-actor/"
 ---
 
 The protocol level built-in actors API is split into the following sections:
