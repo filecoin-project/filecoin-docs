@@ -51,25 +51,25 @@
 
     [[main]]
       name = "Mainnet"
-      url = "/networks/mainnet"
+      url = "/networks/mainnet/details"
       weight = 10
       parent = "main-networks"
 
     [[main]]
       name = "Hyperspace"
-      url = "/networks/hyperspace"
+      url = "/networks/hyperspace/details"
       weight = 20
       parent = "main-networks"
 
-    # [[main]]
-    #   name = "Calibration"
-    #   url = "/networks/calibration"
-    #   weight = 30
-    #   parent = "main-networks"
+    [[main]]
+      name = "Calibration"
+      url = "/networks/calibration/details"
+      weight = 30
+      parent = "main-networks"
 
     [[main]]
       name = "Local testnet"
-      url = "/networks/local-testnet"
+      url = "/networks/local-testnet/set-up"
       weight = 40
       parent = "main-networks"
 

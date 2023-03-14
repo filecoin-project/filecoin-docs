@@ -9,8 +9,11 @@ menu:
   networks:
     parent: "networks-local-testnet"
     identifier: "set-up-72a301344c7e2a40efea82726d9b66b8"
-weight: 100
+weight: 410
 toc: true
+aliases:
+    - "/networks/local-testnet"
+    - "/developers/infrastructure/how-tos/run-a-local-network"
 ---
 
 A Filecoin network has two node types: storage provider nodes and client nodes. In our local developer network (devnet), we're going to create a single storage provider node to handle our requests, and we'll also create a client node to pass information into our network. Both of these nodes run in the terminal. In total, we'll have three terminal windows open at once.
@@ -561,7 +564,7 @@ You'll eventually want to stop your local devnet from running or may need to res
 
 ## Next steps
 
-To summarize, you've started a local devnet, funded a new address, and exported that address to a file! You've got all the pieces ready to start developing applications on Filecoin! Next up, [try adding this local testnet to MetaMask]({{< relref "/networks/local-testnet/add-to-metamask" >}}).
+To summarize, you've started a local devnet, funded a new address, and exported that address to a file! You've got all the pieces ready to start developing applications on Filecoin!
 
 ---
 
