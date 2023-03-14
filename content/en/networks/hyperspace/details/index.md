@@ -11,6 +11,8 @@ menu:
     identifier: "details-99ac2d1ae70dd2547ed5bd79734d237f"
 weight: 210
 toc: true
+aliases:
+    - "/networks/hyperspace"
 ---
 
 Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.

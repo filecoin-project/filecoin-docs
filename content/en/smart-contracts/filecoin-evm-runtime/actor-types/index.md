@@ -11,6 +11,8 @@ menu:
     identifier: "actor-types-djeiwo9283l5k6njdhu89e1kqjamsnz7"
 weight: 200
 toc: true
+aliases:
+    - "/smart-contracts/filecoin-evm-runtime/"
 ---
 
 The Filecoin EVM runtime introduces three new actor types:

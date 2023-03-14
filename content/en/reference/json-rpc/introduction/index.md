@@ -12,7 +12,7 @@ menu:
 weight: 10
 toc: true
 aliases:
-    - "/reference/overview/"
+    - "/reference/json-rpc/"
     - "/reference/lotus-api/"
     - "/developers/reference/json-rpc/introduction/"
 ---

@@ -27,7 +27,7 @@
 
     [[main]]
       name = "Filecoin EVM runtime"
-      url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
+      url = "/smart-contracts/filecoin-evm-runtime/actor-types/"
       weight = 20
       parent = "main-smart-contracts"
 
@@ -39,7 +39,7 @@
 
     [[main]]
       name = "Developing contracts"
-      url = "/smart-contracts/developing-contracts/ethereum-libraries/"
+      url = "/smart-contracts/developing-contracts/best-practices/"
       weight = 40
       parent = "main-smart-contracts"
 

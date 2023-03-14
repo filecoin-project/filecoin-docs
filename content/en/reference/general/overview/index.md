@@ -12,6 +12,8 @@ menu:
 weight: 10
 toc: true
 aliases:
+    - "/reference"
+    - "/reference/general"
     - "/build/developer-tools/wallets-signing-tools-api-clients/"
     - "/build/signing-libraries/"
     - "/reference/reference/overview/"

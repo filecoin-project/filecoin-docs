@@ -11,6 +11,7 @@ menu:
 weight: 10
 toc: true
 aliases:
+    - "/storage-provider/"
     - "/storage-provider/overview/"
     - "/mine/"
     - "/mine/spacerace/"

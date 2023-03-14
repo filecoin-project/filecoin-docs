@@ -12,6 +12,7 @@ menu:
 weight: 10
 toc: true
 aliases:
+    - "/store/"
     - "/store/overview/"
     - "/go-filecoin-tutorial/storing-on-filecoin"
     - "/get-started/go-filecoin-tutorial/getting-started"

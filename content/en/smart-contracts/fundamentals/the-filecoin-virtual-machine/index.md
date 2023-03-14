@@ -14,6 +14,7 @@ toc: true
 aliases:
     - "/smart-contracts/fundamentals/"
     - "/developers/smart-contracts/about/blueprints/"
+    - "/smart-contracts/"
 ---
 
 ## Features

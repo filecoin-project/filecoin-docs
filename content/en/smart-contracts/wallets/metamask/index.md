@@ -11,6 +11,8 @@ menu:
     identifier: "metamask-582f6bb878fee29349ce0adec7039227"
 weight: 300
 toc: true
+aliases:
+    - "/smart-contracts/wallets/"
 ---
 
 ## Add to MetaMask
