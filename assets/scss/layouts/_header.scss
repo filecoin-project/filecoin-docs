@@ -306,15 +306,11 @@ button#doks-versions {
     width: auto !important;
   }
 
-  .algolia-autocomplete
-    .algolia-docsearch-suggestion
-    .algolia-docsearch-suggestion--subcategory-column {
+  .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column {
     font-weight: normal;
   }
 
-  .algolia-autocomplete
-    .algolia-docsearch-suggestion
-    .algolia-docsearch-suggestion--subcategory-column::after {
+  .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column::after {
     content: "/";
     margin-right: 0.25rem;
   }
@@ -393,25 +389,25 @@ button#doks-versions {
   display: none;
 }
 
-.navbar .menu-btn:checked ~ .navbar-collapse {
+.navbar .menu-btn:checked~.navbar-collapse {
   display: block;
   max-height: 100vh;
 }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon {
+.navbar .menu-btn:checked~.menu-icon .navicon {
   background: transparent;
 }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon::before {
+.navbar .menu-btn:checked~.menu-icon .navicon::before {
   transform: rotate(-45deg);
 }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon::after {
+.navbar .menu-btn:checked~.menu-icon .navicon::after {
   transform: rotate(45deg);
 }
 
-.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before,
-.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after {
+.navbar .menu-btn:checked~.menu-icon:not(.steps) .navicon::before,
+.navbar .menu-btn:checked~.menu-icon:not(.steps) .navicon::after {
   top: 0;
 }
 
