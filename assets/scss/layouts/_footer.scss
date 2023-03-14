@@ -3,6 +3,17 @@
   padding-top: 1.125rem;
   padding-bottom: 1.125rem;
 
+  .list-item {
+    line-height: 1.6rem;
+  }
+
+  .section-title {
+    font-size: $font-size-sm;
+    margin-top: 0;
+    font-weight: 400;
+    margin-right: 1rem;
+  }
+
   .footer-container {
     display: flex;
     flex-direction: row wrap;
@@ -34,21 +45,10 @@
       display: flex;
       margin: 0 !important;
 
-      .section-title {
-        margin-top: 0;
-        font-weight: 400;
-        margin-right: 1rem;
-      }
-
       .unordered-list {
         text-decoration: none;
         list-style: none;
         border-left: 2px solid $blue-400;
-      }
-
-      .list-item {
-        line-height: 2rem;
-        font-size: 1.125rem;
       }
 
       .neutral-link {
@@ -64,9 +64,6 @@
       @include media-breakpoint-down(md) {
         flex-direction: column;
 
-        .section-title {
-          font-size: 1.5rem;
-        }
       }
     }
   }
@@ -122,10 +119,4 @@
 .footer li {
   font-size: $font-size-sm;
   margin-bottom: 0;
-}
-
-@include media-breakpoint-down(md) {
-  .footer li {
-    font-size: $font-size-base;
-  }
 }
