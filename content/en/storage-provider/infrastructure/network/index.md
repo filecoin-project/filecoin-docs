@@ -22,7 +22,7 @@ First of all there is the internet bandwidth. Depending on the deal size and cus
 If you would be running a Saturn L1 CDN node on your setup as well, 10Gbps is a requirement.
 
 ## LAN bandwidth
-The network bandwidth for the copy task between PC1 and PC2 are also a important. Our theoretical 7TiB/day sealing capacity will be hindered by the network performance between PC1 and PC2. Any internal connectivity should be at least 10Gbps, with faster connectivity being more favorable.
+The network bandwidth for the copy task between PC1 and PC2 are also a important. Any planned sealing capacity will be hindered by the network performance between PC1 and PC2. Internal connectivity should be at least 10Gbps, with faster connectivity being more favorable.
 
 Keep in mind that not just your servers and switches must be capable of delivering the required throughput, but also your firewall. If your Boost instance sits behind your firewall, you will not get data in any faster than what the firewall is capable of.
 
