@@ -13,6 +13,7 @@ weight: 100
 toc: true
 aliases:
     - "/store/overview/start-storing/"
+    - "/store/filecoin-plus/overview/"
 ---
 
 ## Concepts

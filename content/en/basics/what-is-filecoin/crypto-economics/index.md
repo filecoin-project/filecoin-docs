@@ -11,6 +11,8 @@ menu:
     identifier: "crypto-economics-19f71f3f61913482bdf083c891094e1c"
 weight: 20
 toc: true
+aliases:
+    - "/intro/intro-to-filecoin/crypto-economics/"
 ---
 
 ## Native currency

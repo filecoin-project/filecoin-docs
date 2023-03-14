@@ -11,6 +11,8 @@ menu:
     identifier: "storage-market-018aea7dc8c0a6534f00570df4e1c315"
 weight: 50
 toc: true
+aliases:
+    - "/intro/intro-to-filecoin/storage-market/"
 ---
 
 ## Deal making

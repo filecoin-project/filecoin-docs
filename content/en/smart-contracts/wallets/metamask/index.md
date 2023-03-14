@@ -13,6 +13,8 @@ weight: 300
 toc: true
 aliases:
     - "/smart-contracts/wallets/"
+    - "/about/assets/fil-token/"
+    - "/about/assets/wrapped-filecoin/"
 ---
 
 ## Add to MetaMask

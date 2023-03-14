@@ -16,6 +16,10 @@ aliases:
     - "/developers/smart-contracts/about/blueprints/"
     - "/smart-contracts/"
     - "/developers/smart-contracts/filecoin-virtual-machine/"
+    - "/developers/introduction/overview/"
+    - "/developers/introduction/filecoin-and-ipfs/"
+    - "/developers/introduction/apps-and-filecoin/"
+    - "/developers/smart-contracts/about/use-cases/"
 ---
 
 ## Features
