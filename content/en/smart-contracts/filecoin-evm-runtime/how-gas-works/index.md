@@ -29,7 +29,7 @@ The total gas fee of a message is calculated as the following:
 + (OverEstimationBurn × BaseFee)
 ```
 
-Take a look at the [Gas usage section of the How Filecoin works page]({{< relref "how-filecoin-works#gas-usage" >}}) for more information on the various gas-related parameters attached to each message.
+Take a look at the [Gas usage section of the How Filecoin works page]({{< relref "how-gas-works" >}}) for more information on the various gas-related parameters attached to each message.
 
 Let's take a transaction as an example. Our gas parameters are:
 
