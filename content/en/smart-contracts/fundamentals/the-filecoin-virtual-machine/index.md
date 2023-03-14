@@ -12,6 +12,7 @@ menu:
 weight: 110
 toc: true
 aliases:
+    - "/fvm"
     - "/smart-contracts/fundamentals/"
     - "/developers/smart-contracts/about/blueprints/"
     - "/smart-contracts/"
