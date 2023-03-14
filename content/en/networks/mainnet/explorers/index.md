@@ -13,6 +13,7 @@ weight: 120
 toc: true
 aliases:
     - "/get-started/explore-the-network/"
+    - "/developers/infrastructure/block-explorers/"
 ---
 
 ## Account, actor & message explorers

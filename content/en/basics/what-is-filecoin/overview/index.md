@@ -13,10 +13,13 @@ weight: 10
 toc: true
 aliases:
     - "/about/basics/introduction/"
+    - "/about/basics/what-is-filecoin/"
+    - "/about/basics/how-filecoin-works/"
     - "/basics/"
     - "/get-started/overview/"
     - "/get-started/"
     - "/get-started/store-and-retrieve/setup/"
+    - "/intro/intro-to-filecoin/what-is-filecoin/"
 ---
 
 [Filecoin](https://docs.filecoin.io/) is a peer-to-peer network that stores files, with built-in economic incentives and cryptography to ensure files are stored reliably over time. In Filecoin, users pay to store their files on storage providers. Storage providers are computers responsible for storing files and proving they have stored them correctly over time. Anyone who wants to store their files or get paid for storing other users’ files can join Filecoin. Available storage, and the price of that storage, are not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in.

@@ -13,6 +13,7 @@ weight: 210
 toc: true
 aliases:
     - "/networks/hyperspace"
+    - "/developers/infrastructure/networks/"
 ---
 
 Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.

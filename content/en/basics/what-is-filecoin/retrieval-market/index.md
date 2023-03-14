@@ -11,6 +11,8 @@ menu:
     identifier: "retrieval-market-74f7da553cd0e23c7f431d8e01237b2a"
 weight: 60
 toc: true
+aliases:
+    - "/intro/intro-to-filecoin/retrieval-market/"
 ---
 
 ## Basic retrieval  
