@@ -46,7 +46,7 @@ aliases:
 
 ### Networks
 
-[**Network.filecoin.io**](https://network.filecoin.io) - lists all current Filecoin networks and related informations.
+[**Network.filecoin.io**](https://network.filecoin.io) - lists all current Filecoin networks and related information.
 
 - **Mainnet**
   - [Mainnet network status](https://filecoin.statuspage.io/) - reports the status and incident of the Filecoin Mainnet.

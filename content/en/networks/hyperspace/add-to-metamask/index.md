@@ -56,7 +56,7 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
 
 If you can't or don't want to use Chainlist, you can add the Hyperspace network to your MetaMask manually.
 
-### Prerequisities
+### Prerequisites
 
 Before we get started, you'll need the following:
 

@@ -25,7 +25,7 @@ In this method, you will create a "burner wallet" using Glif, transfer Fil to th
 
 1. Navigate to [https://wallet.glif.io/](https://wallet.glif.io/).
 1. Under **Burner wallets**, click **Create Seed Phase**.
-1. Write down your seed phrase somewhere safe. You can also copy or download the seed phrase. You will need it later.*
+1. Write down your seed phrase somewhere safe. You can also copy or download the seed phrase. You will need it later.
 1. Click **I've recorded my seed phrase**.
 1. Using your seed phrase, enter the missing words in the blank text fields.
 1. Click **Next**.

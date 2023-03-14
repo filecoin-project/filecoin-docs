@@ -68,7 +68,7 @@ To store files, you'll need to install Lotus.
 
 Lotus is an application that tells computers how to talk to other computers (that follow the same rules), so they can store data for clients.
 
-See Lostus install [Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
+See Lotus install [Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
 ### Storage provider collateral
 

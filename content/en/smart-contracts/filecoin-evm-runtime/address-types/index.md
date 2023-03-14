@@ -88,7 +88,7 @@ Filecoin supports extensible, user-defined actor addresses through the `4` addre
 
 - Implement foreign addressing systems in Filecoin.
 - A predictable addressing scheme to support interactions with addresses that do not yet exist on-chain.
-- User-defined, programable addressing systems without extensive changes and network upgrades.
+- User-defined, programmable addressing systems without extensive changes and network upgrades.
 
 For example, a testnet delegated address using the Ethereum Addressing System is structured as follows:
 

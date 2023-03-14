@@ -24,7 +24,7 @@ All Filecoin addresses begin with an `f` to indicate the network (Filecoin), fol
 | `1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
 | `2` | An actor address. |
 | `3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
-| `4` | Extensible, user-defined actor addressess. |
+| `4` | Extensible, user-defined actor addresses. |
 
 Each of the address types is described below.
 
@@ -85,4 +85,4 @@ An `f4` address is structured as `f4<address-manager-actor-id>f<new-actor-id>`, 
 Currently, per [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. Once users are able to deploy custom WebAssembly actors, this restriction will likely be relaxed, in a future FIP. 
 {{< /alert >}}
 
-As an example: suppose an address manager has an actor ID (an `f0` address) `123`, and that address manager creates a new actor. Then, the `f4` address of the actor created by the address manager is `f4123fa3491xyz`, where `f4` is the address class, `123` is the actor ID of the address manager, `f` is a seperator, and `a3491xyz` is the arbitrary `<new-actor-id>` chosen by that actor.
+As an example: suppose an address manager has an actor ID (an `f0` address) `123`, and that address manager creates a new actor. Then, the `f4` address of the actor created by the address manager is `f4123fa3491xyz`, where `f4` is the address class, `123` is the actor ID of the address manager, `f` is a separator, and `a3491xyz` is the arbitrary `<new-actor-id>` chosen by that actor.
