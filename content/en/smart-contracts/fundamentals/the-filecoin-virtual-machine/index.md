@@ -25,7 +25,7 @@ aliases:
 
 ## Features
 
-We created the FVM to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, loans, and Ethereum-compatible fungible and non-fungible tokens. To deliver a quality developer experience, we delayed development until the Filecoin network was stable, robust, and secure.
+We created the FVM to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, collateral leasing, and Ethereum-compatible fungible and non-fungible tokens. To deliver a quality developer experience, we delayed development until the Filecoin network was stable, robust, and secure.
 
 ### Data access control
 
@@ -39,9 +39,9 @@ FVM data access control enables the creation and management of data centered dec
 
 The FVM allows users to store data permanently, managed by repair and replication bots, which also benefit from Filecoin’s verifiable storage proofs.
 
-### Loans
+### Leasing
 
-FIL token holders can use their holdings to provide storage collateral and receive interest, and community-generated reputation scores enable everyone to identify good borrowers.
+FIL token holders can use their holdings to provide storage collateral and receive leasing fees, and community-generated reputation scores enable everyone to identify good borrowers.
 
 ### Ethereum compatibility
 
@@ -77,7 +77,7 @@ There are many more use cases to unlock with FVM. Some other projects include:
 - Storage bounties and auction mechanisms.
 - Enabling L2 bridges.
 - Futures and derivatives on storage that compose in DeFi fashion.
-- Conditional loans for sector pledging.
+- Conditional leases for sector pledging.
 
 If you have a great idea or suggestion, join the discussion on the [FVM forum](https://fvm-forum.filecoin.io).
 
@@ -181,13 +181,13 @@ I highly recommend that you [read through the “Core Idea” section in this RE
     - You can handle this callback by exposing a `handle_filecoin_method(uint64, uint64, bytes)` Solidity method, which is how the FEVM runtime routes inbound FRC42 calls. [See this example](https://github.com/lotus-web3/client-contract/blob/8b53caadd9f7b028f897dfcd28ec2ca9ae98b9e3/src/DealClient.sol#LL49).
     - The PerpetualStorage contract should check if this replication is valid and send FIL to the storage provider if it successfully creates the deal.
 
-### Lending pool
+### Collateral Leasing
 
 Storage providers (SPs) have to post collateral (in FIL) to onboard storage capacity to the network, and to accept storage deals. This collateral incentivises the storage provider to behave correctly, by presenting timely proofs of health of the data (PoRep, PoSt), or they risk getting slashed.
 
 While important, the need to pledge collateral creates friction and an immediate barrier that throttles SP participation and growth. On the other hand, the Filecoin network has a large base of long-term token holders that would like to see the network grow, and are willing to lend their FIL to reputable and growth-oriented SPs.
 
-A lending pool can solve this issue. Storage providers can borrow collateral from lenders and the smart contract will lock the future income (block rewards) until the storage providers have repaid their loan.
+Collateral leasing can solve this issue. Storage providers can lease FIL collateral from token holders and the smart contract will lock the future income (block rewards) until the storage providers have repaid their leased FIL.
 
 #### Required addresses
 
@@ -210,19 +210,19 @@ A lending pool can solve this issue. Storage providers can borrow collateral fro
 
 ##### [Worker address](https://lotus.filecoin.io/storage-providers/operate/addresses/#the-worker-address)
 
-#### Lending pool solution architecture
+#### Collateral leasing solution architecture
 
 ##### Deposit
 
-- The capital contributor (lenders) can call a `deposit` method on the LendingMarket contract to deposit the FIL into the contract
-- The LendingMarket keeps track of the amount each lender deposits and their gain/loss
+- The FIL token holder can call a `deposit` method on the LendingMarket contract to deposit the FIL into the contract
+- The LendingMarket keeps track of the amount each token holder deposits and their gain/loss
 
-##### Loan underwriting (can be custom to lender offchain)
+##### Collateral underwriting (can be custom to lender offchain)
 
-- (offchain) The storage providers submits the desired loan amount and loan period to the loan market
-- (offchain) The loan market determines the interest rate based on the on-chain information of the miner, such as slash rate, length of operations, power, …
-- (offchain) The loan market generates a signed loan specification that can be submitted on chain including the loan amount, loan period, and interest rate.
-- (offchain) The borrower submits the signed loan specification loan amount, loan period, and interest rate to the LendingMarket contract to create the loan
+- (offchain) The storage providers submits the desired lease amount and lease period to the lease market
+- (offchain) The lease market determines the interest rate based on the on-chain information of the miner, such as slash rate, length of operations, power, …
+- (offchain) The lease market generates a signed lease specification that can be submitted on chain including the lease amount, lease period, and interest rate.
+- (offchain) The borrower submits the signed lease specification lease amount, lease period, and interest rate to the LendingMarket contract to create the lease.
 
 ##### Creating miner actors, owner contract, and beneficiary contract
 
