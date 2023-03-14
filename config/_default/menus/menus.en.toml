@@ -44,9 +44,39 @@
       parent = "main-smart-contracts"
 
 [[main]]
+  name = "Networks"
+  url = "/networks/"
+  weight = 50
+  identifier= "main-networks"
+
+    [[main]]
+      name = "Mainnet"
+      url = "/networks/mainnet"
+      weight = 10
+      parent = "main-networks"
+
+    [[main]]
+      name = "Hyperspace"
+      url = "/networks/hyperspace"
+      weight = 20
+      parent = "main-networks"
+
+    # [[main]]
+    #   name = "Calibration"
+    #   url = "/networks/calibration"
+    #   weight = 30
+    #   parent = "main-networks"
+
+    [[main]]
+      name = "Local testnet"
+      url = "/networks/local-testnet"
+      weight = 40
+      parent = "main-networks"
+
+[[main]]
   name = "Reference"
   url = "/reference/general/overview/"
-  weight = 50
+  weight = 60
 
 
 
@@ -144,6 +174,36 @@
   weight = 40
   identifier = "smart-contracts-developing-contracts"
   url = "/smart-contracts/developing-contracts"
+# ----------------------
+
+
+
+
+# docs.filecoin.io/networks
+# ----------------------
+[[networks]]
+  name = "Mainnet"
+  weight = 10
+  identifier = "networks-mainnet"
+  url = "/networks/mainnet"
+
+[[networks]]
+  name = "Hyperspace"
+  weight = 20
+  identifier = "networks-hyperspace"
+  url = "/networks/hyperspace"
+
+[[networks]]
+  name = "Calibration"
+  weight = 30
+  identifier = "networks-calibration"
+  url = "/networks/calibration"
+
+[[networks]]
+  name = "Local testnet"
+  weight = 40
+  identifier = "networks-local-testnet"
+  url = "/networks/local-testnet"
 # ----------------------
 
 
