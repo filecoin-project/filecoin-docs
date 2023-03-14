@@ -53,7 +53,7 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
 ### Switch networks
 
-You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Hyperspace testnet]({{< relref "/developers/infrastructure/networks" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
+You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Hyperspace testnet]({{< relref "/networks/hyperspace/details" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
 
 1. Go to [chainlist.org](https://chainlist.org/).
 1. Enable the **Testnets** toggle and enter `Filecoin` into the search bar.

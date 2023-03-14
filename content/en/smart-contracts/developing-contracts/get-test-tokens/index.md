@@ -50,9 +50,9 @@ That's all there is to it! Getting `tFil` is easy!
 
 ## Local testnet
 
-Before we begin, you must have a local testnet running. Follow the [Run a local network guide]({{< relref "run-a-local-network" >}}) if you haven't got a local testnet set up yet.
+Before we begin, you must have a local testnet running. Follow the [Run a local network guide]({{< relref "/networks/local-testnet/set-up" >}}) if you haven't got a local testnet set up yet.
 
-1. Change directory to where you created the `lotus` and `lotus-miner` binaries. If you followed the [Run a local network guide]({{< relref "run-a-local-network" >}}) these binaries will be in `~/lotus-devnet`:
+1. Change directory to where you created the `lotus` and `lotus-miner` binaries. If you followed the [Run a local network guide]({{< relref "/networks/local-testnet/set-up" >}}) these binaries will be in `~/lotus-devnet`:
 
     ```shell
     cd ~/lotus-devnet
