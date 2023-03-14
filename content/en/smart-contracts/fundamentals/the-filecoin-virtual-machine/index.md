@@ -219,10 +219,10 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 
 ##### Collateral underwriting (can be custom to lender offchain)
 
-- (offchain) The storage providers submits the desired lease amount and lease period to the lease market
+- (offchain) The storage providers submits the desired lease amount and lease period to the lease market.
 - (offchain) The lease market determines the interest rate based on the on-chain information of the miner, such as slash rate, length of operations, power, …
 - (offchain) The lease market generates a signed lease specification that can be submitted on chain including the lease amount, lease period, and interest rate.
-- (offchain) The borrower submits the signed lease specification lease amount, lease period, and interest rate to the LendingMarket contract to create the lease.
+- (offchain) The storage provider submits the signed lease specification lease amount, lease period, and interest rate to the LendingMarket contract to create the lease.
 
 ##### Creating miner actors, owner contract, and beneficiary contract
 
