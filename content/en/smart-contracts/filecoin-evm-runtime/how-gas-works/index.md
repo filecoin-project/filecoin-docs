@@ -11,6 +11,8 @@ menu:
     identifier: "how-gas-works-b2f64e9deac2e82424df15a11874914b"
 weight: 230
 toc: true
+aliases:
+    - "/developers/smart-contracts/how-tos/calculate-gas/"
 ---
 
 When executing a message that invokes an EVM contract, the Filecoin virtual machine charges for the message chain inclusion (when the message originates off-chain) and then invokes the actor that hosts the contract. The actor is an instance of the EVM actor, which uses the Filecoin EVM runtime interpreter to execute the contract.
@@ -29,7 +31,7 @@ The total gas fee of a message is calculated as the following:
 + (OverEstimationBurn × BaseFee)
 ```
 
-Take a look at the [Gas usage section of the How Filecoin works page]({{< relref "how-filecoin-works#gas-usage" >}}) for more information on the various gas-related parameters attached to each message.
+Take a look at the [Gas usage section of the How Filecoin works page]({{< relref "how-gas-works" >}}) for more information on the various gas-related parameters attached to each message.
 
 Let's take a transaction as an example. Our gas parameters are:
 

@@ -1,7 +1,7 @@
 ---
 title: "Addresses"
-description: ""
-lead: ""
+description: "A Filecoin address is an identifier that refers to an actor in the Filecoin state."
+lead: "A Filecoin address is an identifier that refers to an actor in the Filecoin state. All actors (miner actors, the storage market actor, account actors) have an address. This address encodes information about the network to which an actor belongs, the specific type of address encoding, the address payload itself, and a checksum. The goal of this format is to provide a robust address format that is both easy to use and resistant to errors."
 draft: false
 images: []
 type: docs
@@ -11,34 +11,78 @@ menu:
     identifier: "addresses-5b9fc6e83faf9e62ed663a916d333935"
 weight: 100
 toc: true
+aliases:
+    - "/fvm/concepts/accounts-and-assets/"
+    - "/developers/smart-contracts/concepts/accounts-and-assets/"
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+All Filecoin addresses begin with an `f` to indicate the network (Filecoin), followed by any of the address prefix numbers (`0`, `1`, `2`, `3`, `4`) to indicate the address type. There are five address types:
 
-## Selvage
+| Address prefix | Description |
+| --- | --- |
+| `0` | An ID address. |
+| `1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
+| `2` | An actor address. |
+| `3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
+| `4` | Extensible, user-defined actor addressess. |
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+Each of the address types is described below.
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+## Actor IDs
 
-### Heirloom
+All actors have a short integer assigned to them by `InitActor`, a unique actor that can create _new_ actors. This integer that gets assigned is the ID of that actor. An _ID address_ is an actor's ID prefixed with the network identifier and the address type.
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+Actor ID addresses are not _robust_, in the sense that they _do_ depend on chain state, and are defined on-chain by the `InitActor`. Additionally, actor IDs can change for a brief time after creation if the same ID is assigned to different actors on different forks. Actor ID addresses are similar to monotonically increasing numeric primary keys in a relational database. So, when a chain reorganization occurs (similar to a rollback in a SQL database), you can refer to the same ID for different rows. The [expected consensus](https://spec.filecoin.io/#section-algorithms.expected_consensus) algorithm will resolve the conflict. Once the state that defines a new ID reaches finality, no changes can occur, and the ID is bound to that actor forever.
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+For example, the mainnet burn account ID address, `f099`, is structured as follows:
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+```plaintext
+  Address type
+  |
+f 0 9 9
+|    |
+|    Actor ID
+|
+Network identifier
+```
 
-## Bushwick cold-pressed
+ID addresses are often referred to by their shorthand `f0`.
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+## Public keys 
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+Actors managed directly by users, like accounts, are derived from a public-private key pair. If you have access to a private key, you can sign messages sent from that actor. The public key is used to derive an address for the actor. Public key addresses are referred to as _robust addresses_ as they do not depend on the Filecoin chain state.
 
-## Locavore swag
+Public key addresses allow devices, like hardware wallets, to derive a valid Filecoin address for your account using just the public key. The device doesn't need to ask a remote node what your ID address is. Public key addresses provide a concise, safe, human-readable way to reference actors before the chain state is final. ID addresses are used as a space-efficient way to identify actors in the Filecoin chain state, where every byte matters.
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+Filecoin supports two types of public key addresses:
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+- [`secp256k1` addresses](https://en.bitcoin.it/wiki/Secp256k1) that begin with the prefix `f1`.
+- [BLS addresses](https://en.wikipedia.org/wiki/BLS_digital_signature) that begin with the prefix `f3`.
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+For BLS addresses, Filecoin uses `curve bls12-381` for BLS signatures, which is a pair of two related curves, `G1` and `G2`. 
+
+Filecoin uses `G1` for public keys, as G1 allows for a smaller representation of public keys, and `G2` for signatures. This implements the same design as ETH2, but contrasts with Zcash, which has signatures on `G1` and public keys on `G2`. However, unlike ETH2, which stores private keys in big-endian order, Filecoin stores and interprets private keys in little-endian order. 
+
+Public key addresses are often referred to by their shorthand, `f1` or `f3`.
+
+## Actors
+
+Actor addresses provide a way to create robust addresses for actors not associated with a public key. They are generated by taking a `sha256` hash of the output of the account creation. The ZH storage provider has the actor address `f2plku564ddywnmb5b2ky7dhk4mb6uacsxuuev3pi` and the ID address `f01248`.
+
+Actor addresses are often referred to by their shorthand, `f2`.
+
+## Extensible user-defined actors
+
+Filecoin supports extensible, user-defined actor addresses through the `f4` address class, introduced in [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md). The `f4` address class provides the following benefits to the network:
+
+- A predictable addressing scheme to support interactions with addresses that do not yet exist on-chain.
+- User-defined, custom addressing systems without extensive changes and network upgrades.
+- Support for native addressing schemes from foreign runtimes such as the EVM.
+
+An `f4` address is structured as `f4<address-manager-actor-id>f<new-actor-id>`, where `<address-manager-actor-id>` is the actor ID of the _address manager_, and `<new-actor-id>` is the arbitrary actor ID chosen by that actor. An _address manager_ is an actor that can create new actors and assign an `f4` address to the new actor. 
+
+{{< alert >}}
+Currently, per [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. Once users are able to deploy custom WebAssembly actors, this restriction will likely be relaxed, in a future FIP. 
+{{< /alert >}}
+
+As an example: suppose an address manager has an actor ID (an `f0` address) `123`, and that address manager creates a new actor. Then, the `f4` address of the actor created by the address manager is `f4123fa3491xyz`, where `f4` is the address class, `123` is the actor ID of the address manager, `f` is a seperator, and `a3491xyz` is the arbitrary `<new-actor-id>` chosen by that actor.

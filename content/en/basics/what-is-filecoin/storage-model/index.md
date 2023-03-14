@@ -11,6 +11,8 @@ menu:
     identifier: "storage-model-edd6d3235797c6805400948d5d82fe88"
 weight: 40
 toc: true
+aliases:
+    - "/intro/intro-to-filecoin/storage-model/"
 ---
 
 The Filecoin storage model consists of three components:

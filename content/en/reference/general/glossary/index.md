@@ -37,6 +37,10 @@ The _height_ of a [block](#block) corresponds to the number of [epochs](#epoch) 
 
 If a storage provider doesn't find any available deal proposals appealing, they can alternatively make a _capacity commitment_, filling a [sector](#sector) with arbitrary data, rather than with client data. Maintaining this sector allows the storage provider to provably demonstrate that they are reserving space on behalf of the network.
 
+## Content IDentifier (CID)
+
+A self-describing format for referencing data in distributed information systems by it's _contents_, rather than its _location_ using cryptographic hashing and and self-describing formats. It is a core component of IPFS and IPLD, which are in turn components of Filecoin.
+
 ## Collateral
 
 In order to enter into a [storage deal](#deal), a [storage provider](#storage-provider) is required to provide [FIL](#fil) as _collateral_, to be paid out as compensation to a client in the event that the provider fails to uphold their storage commitment.
@@ -86,6 +90,16 @@ If used as a proper noun, capitalize the term: _"I am providing on Mainnet."_
 ## Message
 
 The term _message_ is used to refer to data stored as part of a [block](#block). A block can contain several messages.
+
+## Merkle Directed Acyclic Graph 
+
+Abbreviated as _Merkle DAG_. A graph data structure where nodes:
+
+- Have a unique identifier that is the hash of the nodes contents
+- Are directionally related to other nodes
+- Never form a closed loop
+
+Merkle DAGs are a fundamental component for the representation of relationships between content-addressed data in IPLD, which is in turn used by Filecoin.
 
 ## Miner
 

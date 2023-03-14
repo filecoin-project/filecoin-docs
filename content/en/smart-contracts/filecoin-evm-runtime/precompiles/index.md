@@ -32,7 +32,7 @@ Resolves a Filecoin address (e.g., "f01", "f2abcde") into a Filecoin actor ID (`
     - If the target actor doesn't exist, succeed with no return value.
     - If the supplied address is invalid (cannot be parsed as a Filecoin address), revert.
 
-### Example
+Example:
 
 ```solidity
 (bool success, bytes memory actor_id_bytes) = address(0xfe00000000000000000000000000000000000001).staticcall(fil_address_bytes);
@@ -57,7 +57,7 @@ Looks up the "delegated address" (f4 address) of an actor by ID. This precompile
     - If the target actor exists and has a delegated address, succeed and return the delegated address as raw bytes.
     - Otherwise, succeed with no return value.
 
-### Example
+Example:
 
 ```solidity
 (bool success, bytes memory delegated_address_bytes) = address(0xfe00000000000000000000000000000000000002).staticcall(abi.encode(uint256(actor_id)));
@@ -102,7 +102,7 @@ Calls the specified actor using the native FVM calling convention by its _Fileco
 ⚠️ This precompile only reverts if an input is statically invalid. If the precompile fails to call the target actor for any other reason, it will return a non-zero `exit_code` but will not revert.
 {{< /alert >}}
 
-### Example
+Example:
 
 ```solidity
 (bool success, bytes memory data) = address(0xfe00000000000000000000000000000000000003).delegatecall(abi.encode(method, value, flags, codec, params, filAddress));
@@ -121,7 +121,7 @@ This precompile is identical to the "Call Actor By Address" (0xfe00..03) except 
 (uint64 method, uint256 value, uint64 flags, uint64 codec, bytes params, uint64 actorId)
 ```
 
-### Example
+Example:
 
 ```solidity
 (bool success, bytes memory data) = address(0xfe00000000000000000000000000000000000005).delegatecall(abi.encode(method, value, flags, codec, params, id));

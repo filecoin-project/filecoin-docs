@@ -1,7 +1,7 @@
 ---
 title: "Metamask"
-description: ""
-lead: ""
+description: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to integrate FIL into MetaMask using the Hyperspace testnet."
+lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to integrate FIL into MetaMask using the Hyperspace testnet."
 draft: false
 images: []
 type: docs
@@ -11,6 +11,10 @@ menu:
     identifier: "metamask-582f6bb878fee29349ce0adec7039227"
 weight: 300
 toc: true
+aliases:
+    - "/smart-contracts/wallets/"
+    - "/about/assets/fil-token/"
+    - "/about/assets/wrapped-filecoin/"
 ---
 
 ## Add to MetaMask

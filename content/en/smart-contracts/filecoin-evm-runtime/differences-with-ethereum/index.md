@@ -11,6 +11,8 @@ menu:
     identifier: "differences-with-ethereum-e2c404b7736d394fbdb9f96395bedbb3"
 weight: 220
 toc: true
+aliases:
+    - "/developers/smart-contracts/concepts/ethereum-compatibility/"
 ---
 
 While Filecoin EVM runtime aims to be compatible with the Ethereum ecosystem, it has some marked differences.
@@ -53,4 +55,14 @@ In Filecoin, any actor can use `method 0`, also called a bare-value send, to tra
 
 ## Precompiles
 
-The Filecoin EVM runtime, unlike Ethereum, does not usually enforce gas limits when calling precompiles. This means that it isn't possible to prevent a precompile from consuming all remaining gas.
+The Filecoin EVM runtime, unlike Ethereum, does not usually enforce gas limits when calling precompiles. This means that it isn't possible to prevent a precompile from consuming all remaining gas. The `call actor` and `call actor id` precompiles are the exception. However, they apply the passed gas limit to the actor call, not the entire precompile operation (i.e., the full precompile execution end-to-end can use more gas than specified, it's only the final `send` to the target actor that will be limited).
+
+## Multiple Addresses
+
+In Filecoin, contracts generally have multiple addresses. Two of these address types, `f0` and `f410f`, can be converted to 0x-style (Ethereum) addresses which can be used in the `CALL` opcode. See [Converting to a 0x-style address]({{< relref "address-types#converting-to-a-0x-style-address" >}}) for details on how these addresses are derived.
+
+Importantly, this means that any contract can be called by either its "normal" EVM address (corresponding to the contract's `f410f` address) or its "masked ID address" (corresponding from the contract's `f0` address).
+
+However, the addresses returned by the CALLER, ORIGIN, and ADDRESS instructions will always be the same for the same contract.
+- The ADDRESS will always be derived from the executing contract's `f410f` address, even if the contract was called via a masked ID address.
+- The CALLER/ORIGIN will be derived from the caller/origin's `f410f` address, if the caller/origin is an Ethereum-style account or an EVM smart contract. Otherwise, the caller/origin's "masked ID address" (derived from their `f0` address) will be used.

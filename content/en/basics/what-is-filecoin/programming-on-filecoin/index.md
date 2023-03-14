@@ -11,7 +11,11 @@ menu:
     identifier: "programming-on-filecoin-eiuh22piury087btxyo87bowo87bg22"
 weight: 70
 toc: true
+aliases:
+    - "/intro/intro-to-filecoin/programming-on-filecoin/"
 ---
+
+{{< releasing-on-mainnet >}}
 
 ## Compute-over-data
 

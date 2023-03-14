@@ -11,6 +11,8 @@ menu:
     identifier: "hardhat-493e35b7b05034632e53a13b339be61f"
 weight: 450
 toc: true
+aliases:
+    - "/developers/smart-contracts/hardhat/"
 ---
 
 While originally created for the Ethereum blockchain, the Filecoin EVM-runtime allows Hardhat to be used to develop and deploy smart contracts on the Filecoin network.

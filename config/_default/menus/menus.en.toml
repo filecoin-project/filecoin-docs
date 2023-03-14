@@ -27,7 +27,7 @@
 
     [[main]]
       name = "Filecoin EVM runtime"
-      url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
+      url = "/smart-contracts/filecoin-evm-runtime/actor-types/"
       weight = 20
       parent = "main-smart-contracts"
 
@@ -39,14 +39,50 @@
 
     [[main]]
       name = "Developing contracts"
-      url = "/smart-contracts/developing-contracts/ethereum-libraries/"
+      url = "/smart-contracts/developing-contracts/best-practices/"
       weight = 40
       parent = "main-smart-contracts"
 
 [[main]]
+  name = "Networks"
+  url = "/networks/"
+  weight = 50
+  identifier= "main-networks"
+
+    [[main]]
+      name = "Status →"
+      url = "https://status.filecoin.io"
+      weight = 1
+      parent = "main-networks"
+
+    [[main]]
+      name = "Mainnet"
+      url = "/networks/mainnet/details"
+      weight = 10
+      parent = "main-networks"
+
+    [[main]]
+      name = "Hyperspace"
+      url = "/networks/hyperspace/details"
+      weight = 20
+      parent = "main-networks"
+
+    [[main]]
+      name = "Calibration"
+      url = "/networks/calibration/details"
+      weight = 30
+      parent = "main-networks"
+
+    [[main]]
+      name = "Local testnet"
+      url = "/networks/local-testnet/set-up"
+      weight = 40
+      parent = "main-networks"
+
+[[main]]
   name = "Reference"
   url = "/reference/general/overview/"
-  weight = 50
+  weight = 60
 
 
 
@@ -77,10 +113,10 @@
   url = "/basics/how-retrieval-works"
 
 [[basics]]
-  name = "Programming on Filecoin"
+  name = "Project and community"
   weight = 50
-  identifier = "basics-programming-on-filecoin"
-  url = "/basics/programming-on-filecoin"
+  identifier = "basics-project-and-community"
+  url = "/basics/project-and-community/the-filecoin-project"
 # ----------------------
 
 
@@ -98,12 +134,6 @@
   weight = 20
   identifier = "store-tools"
   url = "/store/tools"
-
-[[store]]
-  name = "Filecoin Plus"
-  weight = 30
-  identifier = "store-filecoin-plus"
-  url = "/store/filecoin-plus"
 # ----------------------
 
 
@@ -160,6 +190,36 @@
 
 
 
+
+# docs.filecoin.io/networks
+# ----------------------
+[[networks]]
+  name = "Mainnet"
+  weight = 10
+  identifier = "networks-mainnet"
+  url = "/networks/mainnet"
+
+[[networks]]
+  name = "Hyperspace"
+  weight = 20
+  identifier = "networks-hyperspace"
+  url = "/networks/hyperspace"
+
+[[networks]]
+  name = "Calibration"
+  weight = 30
+  identifier = "networks-calibration"
+  url = "/networks/calibration"
+
+[[networks]]
+  name = "Local testnet"
+  weight = 40
+  identifier = "networks-local-testnet"
+  url = "/networks/local-testnet"
+# ----------------------
+
+
+
 # docs.filecoin.io/reference
 # ----------------------
 [[reference]]
@@ -192,17 +252,11 @@
     #   identifier = "reference-built-in-actors-solidity-api"
     #   url = "/reference/built-in-actors/solidity-api"
 
-[[reference]]
-  name = "External APIs"
-  weight = 40
-  identifier = "reference-external-apis"
-  url = "/reference/external-apis"
-
-[[reference]]
-  name = "External APIs"
-  weight = 40
-  identifier = "reference-external-apis"
-  url = "/reference/external-apis"
+# [[reference]]
+#   name = "External APIs"
+#   weight = 40
+#   identifier = "reference-external-apis"
+#   url = "/reference/external-apis"
 
 [[reference]]
   name = "JSON-RPC"
