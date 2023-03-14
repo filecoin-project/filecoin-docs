@@ -433,7 +433,7 @@ Take a look at the `/content/en/archive` directory for examples.
 
 #### Tooltips
 
-To make understand the docs a bit easier, users can hover over certain terms to get a short definition. These descriptions are located within a `dict` variable at the top of the `layouts/shortcodes/tooltip.html` shortcode:
+To make understanding terms in the docs a bit easier, users can hover over certain terms to get a short definition. These descriptions are located within a `dict` variable at the top of the `layouts/shortcodes/tooltip.html` shortcode:
 
 ```go
 <!-- Create array/map of all possible tooltips. -->
