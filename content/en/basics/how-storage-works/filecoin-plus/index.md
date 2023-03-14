@@ -153,6 +153,6 @@ There are a few different ways in which a client can find a storage provider to 
 If you are interested in participating in governance and shaping the program, here is how you can get involved:
 
 - Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack.
-- Participate in FIL notary community covernance calls, which happen every other Tuesday. Use the [Filecoin Community Events Calendar](https://calendar.google.com/calendar/u/1?cid=Y19rMWdrZm9vbTE3ZzBqOGM2YmFtNnVmNDNqMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
+- Participate in FIL notary community governance calls, which happen every other Tuesday. Use the [Filecoin Community Events Calendar](https://calendar.google.com/calendar/u/1?cid=Y19rMWdrZm9vbTE3ZzBqOGM2YmFtNnVmNDNqMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 to join or watch for updates in #fil-plus
 - Create and comment on open issues in the [notary governance repo](https://github.com/filecoin-project/notary-governance/issues).

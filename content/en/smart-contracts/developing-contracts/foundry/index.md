@@ -13,7 +13,7 @@ weight: 440
 toc: true
 ---
 
-The template repository contains submodules and remappings for ds-test assertions for testing, solmate building blocks for contracts, and forge-std to layer on top of hevm cheatcodes to improve UX.
+The template repository contains submodules and remappings for ds-test assertions for testing, solmate building blocks for contracts, and forge-std to layer on top of evm cheatcodes to improve UX.
 
 ## Prerequisites
 

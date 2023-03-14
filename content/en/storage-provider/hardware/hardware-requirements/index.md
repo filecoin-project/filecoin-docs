@@ -35,7 +35,7 @@ We strongly recommend a CPU model with support for _Intel SHA Extensions_: AMD s
 
 ### GPU
 
-A powerful GPU is **recommended** as it can significantly speed up SNARK computations. See below for operations which can take advantange of GPU presence.
+A powerful GPU is **recommended** as it can significantly speed up SNARK computations. See below for operations which can take advantage of GPU presence.
 
 The [authoritative list of supported GPUs](https://github.com/filecoin-project/bellman#supported--tested-cards) is in the [Bellman repository](https://github.com/filecoin-project/bellman#supported--tested-cards).
 

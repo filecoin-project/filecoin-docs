@@ -149,7 +149,7 @@ Response: `"f01234"`
 
 ## WalletSetDefault
 
-WalletSetDefault marks the given address as as the default one.
+WalletSetDefault marks the given address as the default one.
 
 Perms: write
 
