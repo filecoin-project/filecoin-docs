@@ -50,6 +50,12 @@
   identifier= "main-networks"
 
     [[main]]
+      name = "Status →"
+      url = "https://status.filecoin.io"
+      weight = 1
+      parent = "main-networks"
+
+    [[main]]
       name = "Mainnet"
       url = "/networks/mainnet/details"
       weight = 10

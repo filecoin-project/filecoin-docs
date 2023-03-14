@@ -7,7 +7,7 @@ enableGitInfo = false
 enableRobotsTXT = true
 paginate = 7
 rssLimit = 10
-timeout = "120s"
+timeout = "200s"
 
 # Multilingual
 defaultContentLanguage = "en"

@@ -11,6 +11,8 @@ menu:
     identifier: "rpcs-f72fd86a6a78b4fe41647b3488235373"
 weight: 230
 toc: true
+aliases:
+    - "/developers/infrastructure/node-providers/"
 ---
 
 These endpoints are limited to all read-only Filecoin JSON RPC API calls and `MPoolPush` for sending preemptively signed messages.

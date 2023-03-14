@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-fundamentals"
     identifier: "erc-20-quickstart-0be0da9b102ca7f5af95f58567cc2bae"
-weight: 120
+weight: 141
 toc: true
 aliases:
     - "/fvm/how-tos/quickstart"
