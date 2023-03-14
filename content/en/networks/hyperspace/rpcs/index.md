@@ -26,8 +26,8 @@ These endpoints are limited to all read-only Filecoin JSON RPC API calls and `MP
 
 ## [ChainStack](https://chainstack.com/labs/#filecoin)
 
-- HTTPS: `https://filecoin-hyperspace.chainstacklabs.com/rpc/v0`
-- WebSockets: `wss://ws-filecoin-hyperspace.chainstacklabs.com/rpc/v0`
+- HTTPS: `https://filecoin-hyperspace.chainstacklabs.com/rpc/v1`
+- WebSockets: `wss://ws-filecoin-hyperspace.chainstacklabs.com/rpc/v1`
 
 ## [Ankr](https://ankr.com)
 
