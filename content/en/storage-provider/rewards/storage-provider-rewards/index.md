@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-rewards"
     identifier: "storage-provider-rewards-35f055adcdce3977d45e6fcb078a2a11"
 weight: 20
 toc: true

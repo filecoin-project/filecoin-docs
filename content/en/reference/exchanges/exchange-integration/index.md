@@ -7,6 +7,7 @@ images: []
 type: docs
 menu:
   reference:
+    parent: "reference-exchanges"
     identifier: "exchange-integration-c540e1529a0a6d3304e0c9158502ccc3"
 weight: 100
 toc: true
@@ -292,4 +293,4 @@ Join the [Filecoin Slack](https://filecoinproject.slack.com/signup) and post any
 - [Filecoin Specs](https://spec.filecoin.io)
 - [Filecoin Networks](https://status.filecoin.io)
 - [Lotus](https://github.com/filecoin-project/lotus) - the reference implementation for the Filecoin network
-- [Block Explorers]({{< relref "block-explorers" >}})
+- [Block Explorers]({{< relref "/networks/mainnet/explorers" >}})

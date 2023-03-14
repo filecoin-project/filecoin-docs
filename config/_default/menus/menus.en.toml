@@ -1,63 +1,264 @@
 [[main]]
-  name = "About"
-  url = "/about/basics/what-is-filecoin/"
-  weight = 20
-
-[[main]]
-  name = "Intro"
-  url = "/intro/intro-to-filecoin/what-is-filecoin/"
-  weight = 30
+  name = "Basics"
+  url = "/basics/what-is-filecoin/overview"
+  weight = 10
 
 [[main]]
   name = "Store"
   url = "/store/overview/start-storing/"
-  weight = 60
+  weight = 20
 
 [[main]]
   name = "Providers"
   url = "/storage-provider/basics/overview/"
-  weight = 70
+  weight = 30
 
 [[main]]
-  name = "Developers"
-  url = "/developers/introduction/filecoin-and-ipfs"
-  weight = 80
-  identifier = "main-developers"
+  name = "Smart contracts"
+  url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
+  weight = 40
+  identifier= "main-smart-contracts"
 
     [[main]]
-      name = "Introduction"
-      url = "/developers/introduction/overview"
+      name = "Fundamentals"
+      url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
       weight = 10
-      parent = "main-developers"
+      parent = "main-smart-contracts"
 
     [[main]]
-      name = "Infrastructure"
-      url = "/developers/infrastructure/block-explorers"
+      name = "Filecoin EVM runtime"
+      url = "/smart-contracts/filecoin-evm-runtime/actor-types/"
       weight = 20
-      parent = "main-developers"
+      parent = "main-smart-contracts"
 
     [[main]]
-      name = "Smart contracts"
-      url = "/developers/smart-contracts/filecoin-virtual-machine"
+      name = "Wallets"
+      url = "/smart-contracts/wallets/metamask/"
       weight = 30
-      parent = "main-developers"
+      parent = "main-smart-contracts"
 
     [[main]]
-      name = "Storage helpers"
-      url = "/developers/storage-helpers/overview"
+      name = "Developing contracts"
+      url = "/smart-contracts/developing-contracts/best-practices/"
       weight = 40
-      parent = "main-developers"
+      parent = "main-smart-contracts"
+
+[[main]]
+  name = "Networks"
+  url = "/networks/"
+  weight = 50
+  identifier= "main-networks"
 
     [[main]]
-      name = "JSON-RPC"
-      url = "/developers/reference/json-rpc/introduction"
-      weight = 50
-      parent = "main-developers"
+      name = "Status →"
+      url = "https://status.filecoin.io"
+      weight = 1
+      parent = "main-networks"
+
+    [[main]]
+      name = "Mainnet"
+      url = "/networks/mainnet/details"
+      weight = 10
+      parent = "main-networks"
+
+    [[main]]
+      name = "Hyperspace"
+      url = "/networks/hyperspace/details"
+      weight = 20
+      parent = "main-networks"
+
+    [[main]]
+      name = "Calibration"
+      url = "/networks/calibration/details"
+      weight = 30
+      parent = "main-networks"
+
+    [[main]]
+      name = "Local testnet"
+      url = "/networks/local-testnet/set-up"
+      weight = 40
+      parent = "main-networks"
 
 [[main]]
   name = "Reference"
-  url = "/reference/reference/overview/"
-  weight = 90
+  url = "/reference/general/overview/"
+  weight = 60
+
+
+
+# docs.filecoin.io/basics
+# ----------------------
+[[basics]]
+  name = "What is Filecoin"
+  weight = 10
+  identifier = "basics-what-is-filecoin"
+  url = "/basics/what-is-filecoin"
+
+[[basics]]
+  name = "The blockchain"
+  weight = 20
+  identifier = "basics-the-blockchain"
+  url = "/basics/the-blockchain"
+
+[[basics]]
+  name = "How storage works"
+  weight = 30
+  identifier = "basics-how-storage-works"
+  url = "/basics/how-storage-works"
+
+[[basics]]
+  name = "How retrieval works"
+  weight = 40
+  identifier = "basics-how-retrieval-works"
+  url = "/basics/how-retrieval-works"
+# ----------------------
+
+
+
+# docs.filecoin.io/store
+# ----------------------
+[[store]]
+  name = "Overview"
+  weight = 10
+  identifier = "store-overview"
+  url = "/store/overview"
+
+[[store]]
+  name = "Tools"
+  weight = 20
+  identifier = "store-tools"
+  url = "/store/tools"
+# ----------------------
+
+
+
+# docs.filecoin.io/providers
+# ----------------------
+[[storage-provider]]
+  name = "Basics"
+  weight = 10
+  identifier = "providers-basics"
+  url = "/storage-provider/basics"
+
+[[storage-provider]]
+  name = "Hardware"
+  weight = 20
+  identifier = "providers-hardware"
+  url = "/storage-provider/hardware"
+
+[[storage-provider]]
+  name = "Rewards"
+  weight = 30
+  identifier = "providers-rewards"
+  url = "/storage-provider/rewards"
+# ----------------------
+
+
+
+# docs.filecoin.io/smart-contracts
+# ----------------------
+[[smart-contracts]]
+  name = "Fundamentals"
+  weight = 10
+  identifier = "smart-contracts-fundamentals"
+  url = "/smart-contracts/Fundamentals"
+
+[[smart-contracts]]
+  name = "Filecoin EVM-runtime"
+  weight = 20
+  identifier = "smart-contracts-filecoin-evm-runtime"
+  url = "/smart-contracts/filecoin-evm-runtime"
+
+[[smart-contracts]]
+  name = "Wallets"
+  weight = 30
+  identifier = "smart-contracts-wallets"
+  url = "/smart-contracts/wallets"
+
+[[smart-contracts]]
+  name = "Developing contracts"
+  weight = 40
+  identifier = "smart-contracts-developing-contracts"
+  url = "/smart-contracts/developing-contracts"
+# ----------------------
+
+
+
+
+# docs.filecoin.io/networks
+# ----------------------
+[[networks]]
+  name = "Mainnet"
+  weight = 10
+  identifier = "networks-mainnet"
+  url = "/networks/mainnet"
+
+[[networks]]
+  name = "Hyperspace"
+  weight = 20
+  identifier = "networks-hyperspace"
+  url = "/networks/hyperspace"
+
+[[networks]]
+  name = "Calibration"
+  weight = 30
+  identifier = "networks-calibration"
+  url = "/networks/calibration"
+
+[[networks]]
+  name = "Local testnet"
+  weight = 40
+  identifier = "networks-local-testnet"
+  url = "/networks/local-testnet"
+# ----------------------
+
+
+
+# docs.filecoin.io/reference
+# ----------------------
+[[reference]]
+  name = "General"
+  weight = 10
+  identifier = "reference-general"
+  url = "/reference/general"
+
+[[reference]]
+  name = "Exchanges"
+  weight = 20
+  identifier = "reference-exchanges"
+  url = "/reference/exchanges"
+
+[[reference]]
+  name = "Built-in actors"
+  weight = 30
+  identifier = "reference-built-in-actors"
+  url = "/reference/built-in-actors"
+
+    # [[built-in-actors]]
+    #   name = "Protocol API"
+    #   weight = 10
+    #   identifier = "reference-built-in-actors-protocol-api"
+    #   url = "/reference/built-in-actors/protocol-api"
+
+    # [[built-in-actors]]
+    #   name = "Solidity API"
+    #   weight = 20
+    #   identifier = "reference-built-in-actors-solidity-api"
+    #   url = "/reference/built-in-actors/solidity-api"
+
+# [[reference]]
+#   name = "External APIs"
+#   weight = 40
+#   identifier = "reference-external-apis"
+#   url = "/reference/external-apis"
+
+[[reference]]
+  name = "JSON-RPC"
+  weight = 50
+  identifier = "reference-json-rpc"
+  url = "/reference/json-rpc"
+
+
 
 
 
