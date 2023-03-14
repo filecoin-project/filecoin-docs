@@ -1,7 +1,7 @@
 ---
 title: "Basic retrieval"
-description: ""
-lead: ""
+description: "There are multiple ways to fetch data from a storage provider. This pages covers some of the most popular methods."
+lead: "There are multiple ways to fetch data from a storage provider. This pages covers some of the most popular methods."
 draft: false
 images: []
 type: docs
@@ -11,34 +11,127 @@ menu:
     identifier: "basic-retrieval-76fb85b69ed8bd7589dbb01a8e291904"
 weight: 100
 toc: true
+aliases:
+    - "/developers/storage-helpers/how-tos/retrieve-data/"
 ---
 
-This is a sidebar item page. Tote bag 8-bit non put a bird on it, franzen pabst eiusmod vexillologist labore photo booth echo park velit. Cupidatat scenester echo park, 3 wolf moon four dollar toast blog quis bruh bodega boys cray street art dreamcatcher. Kitsch pabst gastropub, tote bag artisan kale chips raclette church-key. Poutine roof party laboris in. Nostrud ea vibecession helvetica thundercats. Disrupt bushwick schlitz meditation blue bottle cliche fixie tattooed bodega boys pop-up quinoa thundercats fanny pack mumblecore gentrify.
+## Lassie
 
-## Selvage
+Lassie is a simple retrieval client for Filecoin. It finds and fetches your data over the best retrieval protocols available.
 
-I'm baby yOLO praxis ethical health goth marfa. Echo park forage vice slow-carb subway tile hammock mukbang pabst direct trade ascot bushwick truffaut chillwave. Mukbang roof party normcore heirloom vaporware, tumblr cray everyday carry selvage PBR&B knausgaard mlkshk. Tumblr raw denim pok pok hexagon salvia.
+### Prerequisites
 
-Pug gluten-free scenester mustache sartorial hoodie. Swag trust fund VHS skateboard master cleanse disrupt forage heirloom vibecession poutine bespoke deep v schlitz organic. DIY green juice pok pok pinterest DSA tilde ethical. Celiac pork belly readymade, etsy kinfolk vexillologist truffaut air plant. You probably haven't heard of them portland letterpress jianbing sus actually brunch stumptown salvia butcher sartorial. Squid taiyaki activated charcoal bushwick umami viral.
+Make sure that you have [Go](https://go.dev/) installed and that your `GOPATH` is set up. By default, your `GOPATH` will be set to `~/go`.
 
-### Heirloom
+### Install Lassie
 
-Banh mi mixtape swag lumbersexual jean shorts, jianbing PBR&B pok pok lomo meditation hammock actually fashion axe squid gochujang. Squid poke shabby chic church-key mlkshk schlitz. Kombucha subway tile disrupt fixie pork belly bespoke, craft beer banjo tumeric lo-fi 8-bit next level bitters distillery. Squid XOXO yuccie authentic. Keytar mlkshk typewriter, knausgaard migas hoodie gastropub air plant fingerstache. Heirloom salvia 3 wolf moon shaman.
+1. Download and install Lassie using the Go package manager:
 
-Iceland next level literally, butcher pok pok gentrify readymade shaman. Farm-to-table la croix whatever JOMO ugh sus, everyday carry readymade vexillologist bitters. +1 blog intelligentsia hashtag umami, celiac vice photo booth. Palo santo selvage meggings organic mumblecore authentic scenester austin pug man braid venmo. Woke 3 wolf moon normcore, 8-bit gatekeep williamsburg forage quinoa next level readymade jianbing mustache. Trust fund swag godard tumblr chicharrones mlkshk vaporware.
+    ```shell
+    go install github.com/filecoin-project/lassie/cmd/lassie@latest
+    ```
 
-Succulents taiyaki lyft man bun pug tonx plaid meh salvia tofu. Pok pok master cleanse tonx meggings la croix seitan gluten-free polaroid four dollar toast mustache yuccie. Roof party woke polaroid praxis gatekeep etsy shaman. Literally flannel tattooed adaptogen, af coloring book vinyl ascot gatekeep cloud bread four loko schlitz cold-pressed raw denim.
+    ```plaintext
+    go: downloading github.com/filecoin-project/lassie v0.3.1
+    go: downloading github.com/libp2p/go-libp2p v0.23.2
+    go: downloading github.com/filecoin-project/go-state-types v0.9.9
 
-## Bushwick cold-pressed
+    ...
+    ```
 
-Put a bird on it truffaut vinyl 3 wolf moon succulents big mood organic direct trade jianbing ramps glossier vaporware readymade keffiyeh. Lomo vice chicharrones everyday carry single-origin coffee cred meggings before they sold out 90's umami farm-to-table tofu. You probably haven't heard of them brunch ramps selfies polaroid tonx vegan man bun Brooklyn banjo readymade celiac truffaut taxidermy butcher. Mixtape affogato vape bespoke, selvage humblebrag la croix. Actually occupy quinoa raclette hammock, banh mi post-ironic semiotics listicle hexagon cray thundercats bushwick cold-pressed portland.
+1. Install the [go-car](https://github.com/ipld/go-car) package using the Go package manager:
 
-Pitchfork keytar hoodie, disrupt gastropub biodiesel green juice VHS celiac. Ethical cliche tousled vaporware authentic blog. Quinoa thundercats shaman, cred plaid chartreuse banjo swag. Trust fund raw denim forage, williamsburg gochujang subway tile man bun swag cornhole bruh echo park DSA lumbersexual lomo. Mlkshk distillery fanny pack kinfolk subway tile edison bulb.
+    ```shell
+    go install github.com/ipld/go-car/cmd/car@latest
+    ```
 
-## Locavore swag
+    ```plaintext
+    go: downloading github.com/ipld/go-car v0.6.0
+    go: downloading github.com/ipld/go-car/cmd v0.0.0-20230215023242-a2a8d2f9f60f
+    go: downloading github.com/ipld/go-codec-dagpb v1.6.0 
 
-Chartreuse flannel 90's coloring book keffiyeh. Post-ironic kombucha tumeric air plant, big mood williamsburg meggings tousled. Vibecession schlitz mumblecore tofu photo booth austin cred. Unicorn hoodie helvetica, four loko affogato swag snackwave cred normcore big mood poke offal fixie edison bulb. Shabby chic tumeric shoreditch fanny pack mlkshk. Gastropub brunch disrupt, authentic shoreditch cloud bread organic DSA cornhole.
+    ...
+    ```
 
-Normcore pinterest gluten-free skateboard godard. Cardigan man bun cred locavore etsy ugh vape tousled swag. Sus art party migas kickstarter tattooed activated charcoal pok pok. Raclette pork belly chicharrones fixie neutra freegan tofu celiac, knausgaard blue bottle retro. +1 tattooed pork belly waistcoat.
+    The go-car package makes it easier to work with content-addressed archive (CAR) files.
 
-Gentrify fixie schlitz +1 90's tousled. Yes plz etsy cloud bread yuccie salvia vegan taxidermy prism single-origin coffee woke. Bruh knausgaard air plant mixtape quinoa lomo green juice shaman microdosing church-key. Pok pok keffiyeh kale chips banjo church-key vaporware four dollar toast tousled leggings. Authentic ramps PBR&B, biodiesel bruh tumblr butcher echo park vice. Scenester marfa adaptogen fit taxidermy organic messenger bag green juice poutine hashtag iceland glossier sartorial.
+You now have everything you need to retrieve a file with Lassie and extract the contents with Go-car.
+
+### Retrieve
+
+To retrieve data from Filecoin using Lassie, all you need is the CID of the content you want to download. You can use the following CIDs to test the process:
+
+1. The format for retrieving data using Lassie is:
+
+    ```shell
+    lassie fetch -o <OUTFILE_FILE_NAME> -p <CID>
+    ```
+
+    For example:
+
+    ```shell
+    lassie fetch -o output.car -p bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6
+    ```
+
+    ```plaintext
+    Fetching bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6
+    Querying indexer for bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6...
+    Found 4 storage providers candidates from the indexer, querying all of them:
+            12D3KooWPNbkEgjdBNeaCGpsgCrPRETe4uBZf1ShFXStobdN18ys
+            12D3KooWNHwmwNRkMEP6VqDCpjSZkqripoJgN7eWruvXXqC2kG9f
+            12D3KooWKGCcFVSAUXxe7YP62wiwsBvpCmMomnNauJCA67XbmHYj
+            12D3KooWLDf6KCzeMv16qPRaJsTLKJ5fR523h65iaYSRNfrQy7eU
+    Querying [12D3KooWLDf6KCzeMv16qPRaJsTLKJ5fR523h65iaYSRNfrQy7eU] (started)...
+    Querying [12D3KooWKGCcFVSAUXxe7YP62wiwsBvpCmMomnNauJCA67XbmHYj] (started)...
+
+    ...
+    ```
+
+1. This will create an `output.car` file within your current directory:
+
+    ```shell
+    ls -l
+    ```
+
+    ```shell
+    total 143M
+    -rw-rw-r-- 1 user user 143M Feb 16 11:21 output.car
+    ```
+
+### Extract data
+
+Now that we’ve downloaded a CAR file, we need to find out what’s inside it. 
+
+1. The format for extracting a `.car` file using Go-car is:
+
+    ```shell
+    car extract --file <INPUT_FILE>
+    ```
+
+1. Extract the `output.car` file we just downloaded using Lassie:
+
+    ```shell
+    car extract --file output.car
+    ```
+
+    This command does not output anything on success.
+
+1. You can list the output of the `car` command with `ls`:
+
+    ```shell
+    ls -lh
+    ```
+
+    ```plaintext
+    -rw-rw-r-- 1 user user 143M Feb 16 11:21 output.car
+    -rw-rw-r-- 1 user user 143M Feb 16 11:36 moon-data.tar.gz
+    ```
+
+1. You can then manage the data as you need.
+
+And there we have it! Downloading and managing data from Filecoin is super simple when you use Lassie and Go-car!
+
+<!-- TODO: Complete Lotus node retrieval method. -->
+<!-- ## Lotus node -->
+
+<!-- It is possible to download data from the Filecoin network using a Lotus node. -->

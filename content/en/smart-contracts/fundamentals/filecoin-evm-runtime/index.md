@@ -11,25 +11,30 @@ menu:
     identifier: "filecoin-evm-runtime-932a1ced1a966c0e7849ec231bb47424"
 weight: 140
 toc: true
+aliases:
+    - "/developers/smart-contracts/concepts/filecoin-evm/"
 ---
 
-The Filecoin EVM is the Ethereum Virtual Machine (EVM) virtualized as a runtime on top of the Filecoin Virtual Machine (FVM). It allows developers to port existing Solidity smart contracts straight onto the FVM, where they are deployed and referred to as actors). This is achieved by compiling the Solidity code to EVM bytecode and deploying it as an FVM actor, to the Filecoin network.
+The Ethereum Virtual Machine is an execution environment initially designed, built for, and run on the Ethereum blockchain. The EVM was revolutionary because, for the first time, any arbitrary code could be deployed to and run on a blockchain. This code inherited all the decentralized properties of the Ethereum blockchain. Before the EVM, a new blockchain had to be created with custom logic and then bootstrapped with validators every time a new type of decentralized application needed to be built.
 
-FEVM is also completely compatible with all EVM development tools, such as Hardhat, Foundry, Metamask and more, making deploying and interacting with EVM-based actors easy.
+Code deployed to EVM is typically written in the high-level language Solidity, although other languages, such as Vyper, exist. The high-level Solidity code is compiled to EVM bytecode which is what is actually deployed to and run on the EVM. Due to it being the first virtual machine to run on top of a blockchain, the EVM has developed one of the strongest developer ecosystems in Web3 to date. Today, many different blockchains run their own instance of the EVM to allow developers to easily port their existing applications into the new blockchain's ecosystem.
 
-- EVM runtime compiles to WASM, which allows the FVM to emulate EVM bytecode and support EVM as a foreign runtime.
-- The new F4 addressing class allows an imported EVM to be addressed in the Filecoin network via it's Ethereum address.
-- Familiar EVM tooling, like MetaMask, Hardhart, Remix and more, can interact with Lotus nodes via the Ethereum JSON-RPC API.
-- An imported EVM can interact with the FVM, providing access to Filecoin-specific features, like built-in actors.
+## Ethereum Virtual Machine
 
-So, for developers, _EVM compatibility_ means that their existing Solidity smart contracts (with support for other EVM-compatible languages planned in later upgrades) can be ported into an EVM virtualized as a runtime on top of the Filecoin Virtual Machine, called the _Filecoin Ethereum Virtual Machine (FEVM)_. Through the FEVM, developers can create, test and deploy smart contracts using languages, concepts and tools that they are already familiar with, and enjoy the rich functionality of the Filecoin network at the same time.
+The Filecoin EVM, often just refered to as _FEVM_, is the Ethereum virtual machine virtualized as a runtime on top of the Filecoin virtual machine. It allows developers to port any existing EVM-based smart contracts straight onto the FVM. The Filecoin EVM runtime is completely compatible with any EVM development tools, such as Hardhat, Brownie, and Metamask, making deploying and interacting with EVM-based actors easy! This is because Filecoin nodes offer the Ethereum JSON-RPC API.
 
-## Contraints
+## FEVM and native FVM
 
-However, there are a number of tradeoffs that should be considered when choosing whether to deploy a smart contract onto the FEVM or the FVM:
+Once [Milestone 2.2 of the FVM roadmap]({{< relref "roadmap" >}}) is complete, developers will have the option to deploy actors on either the FEVM or native FVM, or both if they really want to. But which should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don't mind less performance, deploy to the FEVM. See the pros and cons of each below:
 
-- Due to the virtualization overhead, contracts on the FEVM have higher gas fees and lower performance than FVM native contracts.
-- FVM-specific tooling is not yet as mature as Ethereum-native tooling.
+| &nbsp; | FVM | FEVM |
+| ------ | --- | ---- |
+| **Pros** | Native execution speed and performance on Filecoin (i.e., less gas cost per unit of actor code executed).<br><br>Write actors in any language that compiles to WASM 1. | Take advantage of current Solidity and EVM tooling to quickly port or write actors. |
+| **Cons** | Tooling is not yet as mature as EVM tooling. | Higher gas fees and lower performance due to the virtualization overhead of the FEVM. |
+
+In both cases, you have access to all the awesome power of the Filecoin blockchain, including storage contracts as a native primitive!
+
+## Deep dive
 
 For a deeper dive into the concepts discussed on this page, see this presentation by [@truckerfling]('https://twitter.com/truckerfling') on Ethereum compatibility of FVM:
 
