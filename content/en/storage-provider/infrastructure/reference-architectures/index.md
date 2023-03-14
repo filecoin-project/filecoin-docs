@@ -19,7 +19,6 @@ aliases:
     - "/mine/mining-architectures/"
 ---
 
-{{< beta-warning >}}
 ## 1 PiB raw architecture
 ![1 PiB raw reference architecture](1PIB.png)
 
