@@ -13,7 +13,7 @@ weight: 100
 toc: true
 ---
 
-This page covers how Drand is used within the Filecoin network. For more informatoin on Drand generally, [take a look at the project's documentation](https://drand.love/about/).
+This page covers how Drand is used within the Filecoin network. For more information on Drand generally, [take a look at the project's documentation](https://drand.love/about/).
 
 ## Randomness outputs
 
@@ -51,7 +51,7 @@ It is possible to simply store the hash of this chain info and to retrieve the c
 Thereafter, the Filecoin client can call drand’s endpoints:
 
 - `/public/latest` to get the latest randomness value produced by the beacon.
-- `/public/<round>` to get the randoomness value produced by the beacon at a given round.
+- `/public/<round>` to get the randomness value produced by the beacon at a given round.
 
 ## Using Drand
 
