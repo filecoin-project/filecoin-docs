@@ -42,22 +42,6 @@ We opted for a standalone Lotus miner in this design and gave it 256GiB of memor
 ### SATA Storage
 In this architecture we have attached storage shelves to the Lotus miner with 2.4 PiB of usable capacity. This is the capacity after the creation of a RAIZ2 filesystem (double parity). We recommend vdevs of 12 disks wide. In RAIDZ2 this results in 10 data disks and 2 parity disks. Storage systems also don't behave well at 100% used capacity, so we designed for 20% extra capacity.
 
-On this system we store 1PiB of sealed sectors and 1PiB of unsealed sectors (for fast retrieval), however the I/O behavior on sealed sectors is very different from the I/O behavior on unsealed sectors.
-When [storage-proving]({{<relref "storage-proving">}}) happens only a very small portion of the data is read by WindowPoST. A large Storage Provider will have many sectors in multiple partitions for which WindowPoST requires fast access to the disks. This is unusual I/O behavior for any storage system.
-
-The unsealed copies are used for fast retrieval of the data towards the customer. Large datasets in chunks of 32GiB (or 64GiB depending on the configured sector size) are read. In order to avoid different tasks competing for read I/O on disk it is recommended to create separated disk pools with their own VDEVs (when using ZFS) for sealed and unsealed copies.
-
-Write access towards the storage also requires your attention. Depending how your storage array is connected (SAS or Ethernet) you will have different transfer speeds towards the sealed storage path. At a sealing capacity of 6 TiB/day you will effectively be writing 12 TiB/day towards the storage (6 TiB sealed, 6 TiB unsealed copies). Both your storage layout and your network need to be able to handle this.
-
-If this 12 TiB were equally spread across the 24hrs of a day, this would already require 1.14 Gbps.
-
-> 12 TiB * 1024 / 24 hr / 3600 sec * 8 = 1.14 Gbps
-
-The sealing pipeline produces 32 GiB sectors (64 GiB depending on your configured sector size) which are writte to the storage. If you configured _batching_ of the commit messages (to reduce total gas fees) then you will write multiple sectors towards disk at once.
-
-A minimum network bandwidth of 10 Gbps is recommended and write cache at the storage layer will be beneficial too.
-
-
 ### PoST workers
 We have split off the Winning and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelyhood of winning block rewards and reduces the likelyhood of missing a proving deadline. For redundancy you can run a standby WindowPoST worker on the WinningPoST server and vice versa.
 
@@ -90,31 +74,6 @@ We plan for twice the amount of PC2 workers compared to PC1, as explained under 
 The scratch space from PC1 is copied over to the PC2 worker. This PC2 worker also requires fast NVMe scratch space. Since we plan for 2 PC2 workers against 1 PC1 worker, the capacity of the scratch space per PC2 worker is half of the total scratch space capacity of the PC1 worker, 8TiB in our case.
 
 C1 doesn't require much attention for our architecture. C2 however requires a capable GPU again.
-
-### Network
-There are multiple aspects to be discussed when it comes to network requirements.
-First of all there is the internet bandwidth. Depending on the deal size and customer expectations you will need anything between 1Gbps and 10Gbps. It is possible to run at 1Gbps but you will not receive client data faster than ~100 MB/s, which might be insufficient.
-If you would be running a Saturn L1 CDN node on your setup as well, 10Gbps is a requirement.
-
-The network bandwidth for the copy task between PC1 and PC2 are also a important. Our theoretical 7TiB/day sealing capacity will be hindered by the network performance between PC1 and PC2. Any internal connectivity should be at least 10Gbps, with faster connectivity being more favorable.
-
-Keep in mind that not just your servers and switches must be capable of delivering the required throughput, but also your firewall. If your Boost instance sits behind your firewall, you will not get data in any faster than what the firewall is capable of.
-
-The same applies to inter-VLAN traffic. If you use firewall rules between your VLANs (which you should), your firewall is again likely to be the bottleneck. It is strongly advised to have all sealing workers, the Lotus miner and the storage system in the same VLAN. These systems require data access and copy data across each other via your network. Having them in the same VLAN keeps all traffic between them at layer 2, not involving routing and firewalling.
-
-### Backup
-It is crucial to have a backup of any production system. It is even more crucial to be able to restore from a backup. These concepts are very applicable to a Filecoin Storage Provider because not only are you storing customer data for which you have (on-chain) contracts, you also pledged a large amount of collateral for that data. If you are unable to restore your Lotus miner and start proving your storage on-chain, you will be losing a lot of money. If you are unable to come back online in 6 weeks, you are losing **all** of your collateral, which will most likely lead to bankruptcy. As such it matters less what kind of backup you have, as long as you are able to restore from it fast.
-
-A first level of protection comes from ZFS (if you are using ZFS as the filesystem for your storage). Having ZFS snapshots available protects you against human error that caused data loss, and potentially even against ransomware.
-
-A second level of defense comes from a dedicated backup system. Not only should you have backup storage (on a different storage array than the original data), you also need to have a backup server that can at a minimum run Lotus daemon, Lotus miner and 1 WindowPoST worker (note: this requires a GPU). With that you can sync the chain, offer retrievals and prove your storage on-chain.
-
-To be completely safe you might consider hosting your backup system (server + storage) in a different datacenter than your primary system.
-
-Keep in mind: any backup strategy is only good enough when you are able to restore from it.
-
-
-
 
 ## Beginner's corner
 Angelo to write a section on the use of refurbished hardware
