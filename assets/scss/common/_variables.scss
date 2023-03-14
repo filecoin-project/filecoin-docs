@@ -110,23 +110,16 @@ $border-color: $gray-200;
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: "Aileron", monospace, -apple-system, blinkmacsystemfont,
-  "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-monospace: sfmono-regular, menlo, monaco, consolas,
-  "Liberation Mono", "Courier New", monospace;
-$font-family-base: $font-family-sans-serif;
-@font-face {
-  font-family: "Sohne-Buch";
-  src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/tldr/Sohne-Buch.woff")
-    format("woff");
-}
+$font-family-system-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-@font-face {
-  font-family: "Sohne-Halbfett";
-  src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/tldr/Sohne-Halbfett.woff")
-    format("woff");
-}
+$font-family-sans-serif: 'suisse_intl', $font-family-system-sans-serif;
+
+$font-family-heading: 'suisse_intl', $font-family-system-sans-serif;
+
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-family-base: $font-family-system-sans-serif;
+
 // stylelint-enable value-keyword-case
 
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
@@ -135,10 +128,10 @@ $font-size-lg: $font-size-base * 1.25;
 $font-size-md: $font-size-base * 1.125;
 $font-size-sm: $font-size-base * 0.875;
 
-// $line-height-base:            1.5;
+$line-height-base: 1.5;
 
-$headings-font-family: null;
-$headings-font-weight: 700;
+$headings-font-family: $font-family-heading;
+$headings-font-weight: 500;
 
 $lead-font-weight: 200;
 
