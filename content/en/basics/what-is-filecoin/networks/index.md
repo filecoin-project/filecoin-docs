@@ -12,11 +12,14 @@ menu:
 weight: 90
 toc: true
 aliases:
+    - "/about-filecoin/network-performance/"
+    - "/developers/infrastructure/networks/"
     - "/fvm/reference/networks/"
     - "/networks"
     - "/networks/available-networks"
+    - "/networks/network-performance"
     - "/networks/overview/"
-    - "//developers/infrastructure/networks/"
+    - "/networks/overview/network-performance/"
 ---
 
 ## Available networks
