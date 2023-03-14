@@ -75,12 +75,6 @@
   weight = 40
   identifier = "basics-how-retrieval-works"
   url = "/basics/how-retrieval-works"
-
-[[basics]]
-  name = "Programming on Filecoin"
-  weight = 50
-  identifier = "basics-programming-on-filecoin"
-  url = "/basics/programming-on-filecoin"
 # ----------------------
 
 
@@ -98,12 +92,6 @@
   weight = 20
   identifier = "store-tools"
   url = "/store/tools"
-
-[[store]]
-  name = "Filecoin Plus"
-  weight = 30
-  identifier = "store-filecoin-plus"
-  url = "/store/filecoin-plus"
 # ----------------------
 
 
@@ -192,17 +180,11 @@
     #   identifier = "reference-built-in-actors-solidity-api"
     #   url = "/reference/built-in-actors/solidity-api"
 
-[[reference]]
-  name = "External APIs"
-  weight = 40
-  identifier = "reference-external-apis"
-  url = "/reference/external-apis"
-
-[[reference]]
-  name = "External APIs"
-  weight = 40
-  identifier = "reference-external-apis"
-  url = "/reference/external-apis"
+# [[reference]]
+#   name = "External APIs"
+#   weight = 40
+#   identifier = "reference-external-apis"
+#   url = "/reference/external-apis"
 
 [[reference]]
   name = "JSON-RPC"
