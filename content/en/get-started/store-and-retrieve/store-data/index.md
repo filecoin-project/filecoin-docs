@@ -89,7 +89,7 @@ Increasing the number of storage providers you use increases your data redundanc
 
 ### Filecoin Plus provider registry
 
-The Filecoin Plus storage provider registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page]({{< relref "/store/filecoin-plus" >}}) to find out more about the program.
+The Filecoin Plus storage provider registry is a collection of geographically diverse storage providers that are willing to accept low-cost or free storage deals from users. The more storage providers that offer storage in different parts of the world, the faster we can work toward Filecoin’s underlying mission to store humanity’s most important information. Checkout the [Filecoin Plus page]({{< relref "filecoin-plus" >}}) to find out more about the program.
 
 Let's find a couple of storage providers to store our data.
 
