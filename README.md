@@ -1,4 +1,3 @@
-<!-- HEADER -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
@@ -61,7 +60,7 @@ Follow these simple example steps to get a local version of the site up and runn
 
 
 
-<!-- PREREQUISITIES -->
+<!-- PREREQUISITES -->
 ### Prerequisites
 
 To run these commands, you must have [NPM installed](https://www.npmjs.com/). If you already have NPM installed, make sure you are running the latest version:
@@ -69,7 +68,7 @@ To run these commands, you must have [NPM installed](https://www.npmjs.com/). If
 ```shell
 npm install npm@latest -g
 ```
-<!-- /PREREQUISITIES -->
+<!-- /PREREQUISITES -->
 
 
 
@@ -369,7 +368,7 @@ The identifier of each sub-menu is usually the menu object name and the title of
 
 #### Aliases
 
-The `aliases` variable defines URLs will rediect to this page. Each page can have multiple `aliases`, but each alias can only apear once throughout all the `.md` files within the `/content` folder.
+The `aliases` variable defines URLs will redirect to this page. Each page can have multiple `aliases`, but each alias can only appear once throughout all the `.md` files within the `/content` folder.
 
 For example, the `/get-started/overview` page can list `/get-started` as one of its aliases. However, no other page can list `/get-started` as an alias. If you attempt to assign another page the `/get-started` alias, Hugo will throw an error when you or Fleek try to build the website.
 
@@ -434,7 +433,7 @@ Take a look at the `/content/en/archive` directory for examples.
 
 #### Tooltips
 
-To make understand the docs a bit easier, users can hover over certain terms to get a short definition. These descriptions are located within a `dict` variable at the top of the `layouts/shortcodes/tooltip.html` shortcode:
+To make understanding terms in the docs a bit easier, users can hover over certain terms to get a short definition. These descriptions are located within a `dict` variable at the top of the `layouts/shortcodes/tooltip.html` shortcode:
 
 ```go
 <!-- Create array/map of all possible tooltips. -->

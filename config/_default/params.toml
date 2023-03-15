@@ -66,8 +66,8 @@ defaultImage = "default-image.png" # put in `./assets/images/`
 fillImage = "1270x740 Center" # normalize image size
 
 # Footer
-footer = "Built by Protocol Labs"
-footer_link = "https://protocol.ai"
+footer = ""
+footer_link = ""
 
 # Feed
 copyRight = ""
@@ -75,7 +75,7 @@ copyRight = ""
 # Alert
 alert = false
 alertDismissable = true
-alertText = ""
+alertText = "Solidity developers, do you want to build on Filecoin using smart contracts?<br> <a href='/developers/smart-contracts/filecoin-virtual-machine/'>Check out the Filecoin Virtual Machine!</a>"
 
 # Edit Page
 repoHost = "GitHub"
@@ -87,15 +87,15 @@ editPage = true
 lastMod = true
 
 [sections]
-#  sectionNav = ["docs", "blog"]
+  sectionNav = ["about", "intro", "store", "providers", "smart-contracts", "reference"]
 
 [options]
   lazySizes = true
   clipBoard = true
-  instantPage = true
+  instantPage = false
   flexSearch = true
   searchSectionsShow = "ALL"
-  searchSectionsIndex = ["about", "blog", "build", "developers", "fvm", "get-started", "networks", "reference", "storage-provider", "store"]
+  searchSectionsIndex = ["about", "intro", "store", "providers", "smart-contracts", "reference"]
   darkMode = true
   bootStrapJs = true
   breadCrumb = false
@@ -112,5 +112,5 @@ lastMod = true
 
 [menu]
   [menu.section]
-    auto = true
+    auto = false
     collapsibleSidebar = false

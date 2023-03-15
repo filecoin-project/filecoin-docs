@@ -6,7 +6,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-basics"
     identifier: "how-providing-storage-works-1e29addf0ea9d46268f68b508d61b89e"
 weight: 20
 toc: true
@@ -68,7 +68,7 @@ To store files, you'll need to install Lotus.
 
 Lotus is an application that tells computers how to talk to other computers (that follow the same rules), so they can store data for clients.
 
-See Lostus install [Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
+See Lotus install [Prerequisites](https://lotus.filecoin.io/lotus/install/prerequisites/).
 
 ### Storage provider collateral
 
