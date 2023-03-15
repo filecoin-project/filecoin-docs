@@ -11,5 +11,7 @@ menu:
     identifier: "overview-3c054d0ec1b698cc417d3013d90157d2"
 weight: 10
 toc: true
+aliases:
+    - "/archive"
 ---
 
