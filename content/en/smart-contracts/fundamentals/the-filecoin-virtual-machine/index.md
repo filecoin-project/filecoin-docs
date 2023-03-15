@@ -220,9 +220,9 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 ##### Collateral underwriting (can be custom to lender off-chain)
 
 - (off-chain) The storage providers submits the desired lease amount and lease period to the lease market.
-- (off-chain) The lease market determines the interest rate based on the on-chain information of the miner, such as slash rate, length of operations, power, …
-- (off-chain) The lease market generates a signed lease specification that can be submitted on-chain, including the lease amount, lease period, and interest rate.
-- (off-chain) The storage provider submits the signed lease specification lease amount, lease period, and interest rate to the LendingMarket contract to create the lease.
+- (off-chain) The lease market determines the leasing fees rate based on the on-chain information of the miner, such as slash rate, length of operations, power, …
+- (off-chain) The lease market generates a signed lease specification that can be submitted on-chain, including the lease amount, lease period, and leasing fees rate.
+- (off-chain) The storage provider submits the signed lease specification lease amount, lease period, and leasing fees rate to the LendingMarket contract to create the lease.
 
 ##### Creating miner actors, owner contracts, and beneficiary contract
 
@@ -238,7 +238,7 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 - The storage providers should be able to call a method on the LendingMarket contract to get the repayment schedule
     - Including the next payment date and the amount expected to be paid
 - The LoanAgent should pull the required fund from the actor according to the repayment schedule
-- Whenever a repayment is made, the LendingMarket contract should calculate the interest each lender should get
+- Whenever a repayment is made, the LendingMarket contract should calculate the leasing fees each lender should get
 - After all the repayments are completed, the owner should propose changing the beneficiary to itself, and the beneficiary should approve it
 
 ![A diagram showing the lending pool flow.](lending-pool-flow.png)
