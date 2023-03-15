@@ -44,6 +44,10 @@ The exact process to send FIL from a Filecoin-style (`f1`, `f2`, `f3`)  account 
 
 If you are funding a Filecoin Ethereum-style (`0x`) account from an exchange, you must use one that supports this account type account. The following exchanges support withdrawing directly to Filecoin Ethereum-style addresses:
 
+{{< alert  >}}
+Any exchange that trades Filecoin, but is not listed below, can only send FIL directly to an `f3` address.
+{{< /alert >}}
+
   - [Anchorage](https://www.anchorage.com/)
   - [Bittrex](https://bittrex.com/)
   - [Btcturk](https://www.btcturk.com/)
@@ -51,6 +55,3 @@ If you are funding a Filecoin Ethereum-style (`0x`) account from an exchange, yo
   - [Gemini](https://www.gemini.com/)
   - [Huobi](https://www.huobi.com/)
   - [Kraken](https://www.kraken.com/)
-
-  </br>
-
