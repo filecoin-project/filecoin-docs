@@ -300,6 +300,13 @@
 
 
 
+# docs.filecoin.io/archive
+# ----------------------
+[[archive]]
+  name = "Archive"
+  weight = 10
+  identifier = "archive"
+  url = "/archive"
 
 
 [[social]]
