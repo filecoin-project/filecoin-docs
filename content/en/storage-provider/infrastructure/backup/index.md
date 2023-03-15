@@ -56,7 +56,7 @@ RPO for data owners is less of a concern, especially once the data is sealed. Th
 
 ## Backup techniques
 
-- A first level of protection comes from ZFS (if you are using ZFS as the filesystem for your storage). Having ZFS snapshots available protects you against human error that caused data loss, and potentially even against ransomware. Other filesystems typically also have a way to make snapshots, albeit not equally efficient as ZFS.
+- A first level of protection comes from ZFS (if you are using ZFS as the filesystem for your storage). Having ZFS snapshots available protects you against human error that caused data loss, and potentially even against ransomware. Other filesystems typically also have a way to make snapshots, albeit not as efficient as ZFS.
 
 - A second level of defense comes from a dedicated backup system. Not only should you have backup storage (on a different storage array than the original data), you also need to have a backup server that can at a minimum run Lotus daemon, Lotus miner and 1 WindowPoST worker (note: this requires a GPU). With that you can sync the chain, offer retrievals and prove your storage on-chain.
 
