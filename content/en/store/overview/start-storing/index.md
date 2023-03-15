@@ -39,7 +39,7 @@ The following applications allow you to store data on the Filecoin network with 
 - [Space Storage](https://space.storage/) by Fleek is an open-source, user-controlled, encrypted file storage and sharing platform using IPFS and Filecoin, tied to Ethereum accounts or common web OAuth options.
 - [Web3.Storage](https://web3.storage) is an IPFS pinning service and Filecoin storage platform built-in-one. Upload files to Web3.Storage and access them instantly, safe in the knowledge that your data is securely backed up using the Filecoin network.
 - [Slate](https://slate.host/) Slate is a search tool designed to help you remember and keep track of things you care about on the web.
-- 
+
 ### Filecoin Node Client
 
 - [Lotus](https://lotus.filecoin.io) imports data and performs deals on the chain using its daemon and CLI. Lotus users get full control of the deals, the chosen providers, and the wallets used to pay. Make sure you are familiar with Lotus and have it installed and running.
