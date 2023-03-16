@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "Storage providers in the Filecoin network are in charge of storing data, providing capacity and issuing new blocks."
+description: "Storage providers in the Filecoin network are in charge of providing capacity, storing data and issuing new blocks."
 draft: false
 images: []
 type: docs
