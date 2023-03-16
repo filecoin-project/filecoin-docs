@@ -1,7 +1,7 @@
 ---
 title: "The FIL token"
-description: "FIL is the ticker for the Filecoin crytocurrency. This page explains what FIL is and it's denominations."
-lead: ""
+description: "FIL is the cryptocurrency that powers the Filecoin network. This page explains what FIL is and how it can be used."
+lead: "FIL is the cryptocurrency that powers the Filecoin network. This page explains what FIL is and how it can be used."
 draft: false
 images: []
 type: docs
@@ -13,4 +13,38 @@ weight: 510
 toc: true
 ---
 
-FIL is the cryptocurrency that powers the Filecoin network
+## Uses
+
+Here are some ways in which FIL is used on the Filecoin network:
+
+### Storage payments
+
+When a user wants to store data on the Filecoin network, they pay in FIL to the storage providers who offer their storage space. The payment is made in advance for a certain amount of time that the data will be stored on the network. The storage providers are then rewarded with FIL for providing their storage space and performing other useful tasks on the network.
+
+### Retrieval payments
+
+When a user wants to retrieve their data from the Filecoin network, they make a payment in FIL to the storage providers who stored the data. This payment incentivizes the storage providers to keep the data available for retrieval at all times.
+
+### Blockchain rewards
+
+FIL is used to reward providers who validate and add new blocks to the Filecoin blockchain. Providers receive a block reward in FIL for each new block they add to the blockchain, and also earn transaction fees in FIL for processing storage and retrieval transactions.
+
+### Governance
+
+FIL is used for network governance, allowing FIL holders to vote on proposals and make decisions that impact the future development and direction of the network.
+
+## Denomonations
+
+FIL, NanoFIL, and PicoFIL are all denominated in the same cryptocurrency unit, but they represent different levels of precision and granularity. For most users, FIL is the main unit of measurement and is used for most transactions and payments on the Filecoin network.
+
+### FIL
+
+This is the base unit of Filecoin and is used to pay for storage and retrieval of data on the network.
+
+### NanoFIL
+
+One NanoFIL (nFIL) is equivalent to `0.000000001` FIL. NanoFIL is used to represent very small amounts of FIL and is often used for transaction fees and other small payments.
+
+### PicoFIL
+
+One PicoFIL (pFIL) is equivalent to `0.000000000001` FIL. PicoFIL is the smallest unit of Filecoin and is rarely used except for highly specialized applications.
