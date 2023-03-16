@@ -66,8 +66,8 @@ defaultImage = "default-image.png" # put in `./assets/images/`
 fillImage = "1270x740 Center" # normalize image size
 
 # Footer
-footer = "Built by Protocol Labs"
-footer_link = "https://protocol.ai"
+footer = ""
+footer_link = ""
 
 # Feed
 copyRight = ""
@@ -92,7 +92,7 @@ lastMod = false
 [options]
   lazySizes = true
   clipBoard = true
-  instantPage = true
+  instantPage = false
   flexSearch = true
   searchSectionsShow = "ALL"
   searchSectionsIndex = ["about", "intro", "store", "providers", "smart-contracts", "reference"]
