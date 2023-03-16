@@ -21,7 +21,7 @@ Having clear insights into the throughput you can expect from your sealing pipel
 
 The sealing pipeline has the following tasks:
 
-![sealing tasks](sealing-tasks.png)
+[![sealing tasks](sealing-tasks.png)](sealing-tasks.png)
 
 ## AddPiece (AP)
 The sealing pipeline starts with the AddPiece part. A Piece in Filecoin represents data in a prepared format. This is a CAR-file produced by an [IPLD DAG](https://ipld.io) with corresponding PayloadCID and PieceCID. A Piece can be any size up to the sector size (32 or 64GiB). If the content is larger than the sector size it must be split over multiple PieceCIDs during Data Preparation.
