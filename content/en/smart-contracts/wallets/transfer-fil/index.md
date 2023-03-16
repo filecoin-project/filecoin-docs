@@ -71,7 +71,6 @@ The following exchanges support withdrawing directly to Filecoin Eth-style (0x) 
 - Bittrex
 - Btcturk
 - Coinbase
-- Gemini (f410 only, 0x coming soon)
 - Kraken
 
 ### From a cold wallet or exchange that does not yet support Filecoin Eth-style (0x) accounts
