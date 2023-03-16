@@ -20,7 +20,13 @@ aliases:
 ---
 
 ## 1 PiB raw architecture
-![1 PiB raw reference architecture](1PIB.png)
+
+[![1 PiB raw reference architecture](1PIB.png)](1PIB.png)
+
+{{< alert >}}
+(click the image to enlarge)
+{{< /alert >}}
+
 
 The following reference architecture is designed for 1PiB of raw sectors or raw data to be stored. Let's discuss the various design choices of this architecture.
 
