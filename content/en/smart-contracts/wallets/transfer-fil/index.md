@@ -17,21 +17,21 @@ toc: true
 
 To send FIL from an Eth-style (0x) account, on the Filecoin network, you will need to use an Ethereum wallet such as MetaMask. The exact process depends on the destination. 
 
-### Sending to another Eth-style (0x) address
+### To another Eth-style (0x) address
 
 Simply open your Ethereum wallet and use its transfer function. It doesn’t matter if the destination is an account or a smart contract. You can follow the [standard MetaMask instructions](https://support.metamask.io/hc/en-us/articles/360015488931-How-to-send-tokens-from-your-MetaMask-wallet).
 
-### Sending to a Filecoin-style (`f1`, `f2`, `f3`) address
+### To a Filecoin-style (`f1`, `f2`, `f3`) address
 
 Check out the [FilFowarder]({{< relref "/smart-contracts/wallets/filforwader" >}}) article we put together.
 
 ## Sending FIL from a Filecoin-style (`f1`, `f2`, `f3`) account
 
-### Sending to another Filecoin-style (`f1`, `f2`, `f3`) address
+### To another Filecoin-style (`f1`, `f2`, `f3`) address
 
 Use a Filecoin wallet, such as [Glif](https://glif.io) or [Ledger Live](https://www.ledger.com/ledger-live). Just enter the f-style address and make the transfer as per the wallet instructions.
 
-### Sending to an Eth-style (0x) address
+### To an Eth-style (0x) address
 
 #### Using a Ledger hardware wallet
 
@@ -39,13 +39,32 @@ NOTE: Currently Ledger Live does not support `0x` or `f4` addresses, so you cann
 
 Glif wallet supports both address styles, and can send from an `f1` address to a `0x` address. So you can connect your Ledger device to a Glif wallet. You get the benefit of Glif's functionality, with your keys remaining on your Ledger hardware wallet.
 
-1. Ensure your Ledger device is connected to your computer and the Filecoin app is open on your hardware wallet and it says "Filecoin ready"
-2. Go to [Glif](https://glif.io) and click "Connect Wallet" at the top of the screen
-3. Select "Ledger (Filecoin)"
-4. Click "Send FIL" at the bottom of the screen
-5. Enter the `0x` address you with to send to and the amount
-6. Click send
+1. Log in to Ledger Live dashboard and update your Ledger device’s Filecoin app to version 0.22.9 
+
+  ![Screen Shot 2023-03-15 at 5 34 56 PM](https://user-images.githubusercontent.com/113331491/225487581-045147b8-586f-4e58-9423-4c2801e51ee8.png)
+
+2. Ensure your Ledger device is connected to your computer and the Filecoin app is open on your hardware wallet and it says "Filecoin ready"
+3. Go to [Glif](https://glif.io) and click "Connect Wallet" at the top of the screen
+
+![Screen Shot 2023-03-15 at 5 45 22 PM](https://user-images.githubusercontent.com/113331491/225487652-02f64b53-09dd-4e05-bf60-05cfc8793772.png)
+
+4. Select “Ledger (Filecoin)” and unlock your Ledger device, selecting the Filecoin application
+
+![Screen Shot 2023-03-15 at 6 05 51 PM](https://user-images.githubusercontent.com/113331491/225487711-e0c9ee09-6d8a-42e8-9582-039ef15351dc.png)
+
+Connected!
+
+![Screen Shot 2023-03-15 at 5 28 41 PM](https://user-images.githubusercontent.com/113331491/225487875-5492345d-cbcb-4618-b358-dd94bc5fa00c.png)
+
+5. Click "Send FIL" at the bottom of the screen
+6. Enter the 0x address you with to send to and the amount, which will be automatically converted to a f4 address and click “Send”
+
+![Screen Shot 2023-03-15 at 6 12 07 PM](https://user-images.githubusercontent.com/113331491/225487916-c4e9e0ec-29f9-4f77-b8a2-ed6e159d61a7.png)
+
 7. Verify and accept the transaction on your hardware device
+8. Check for transfer status. This one shows successful sending!
+
+![Screen Shot 2023-03-15 at 6 14 03 PM](https://user-images.githubusercontent.com/113331491/225488037-97af20d6-43ca-4c44-b25e-022133668711.png)
 
 #### Using a Glif 'burner' wallet
 
