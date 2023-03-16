@@ -1,5 +1,5 @@
 ---
-title: "Fund a 0x address"
+title: "Fund an Eth address"
 description: "The FilFowarder is a smart contract that lets users transfer FIL from an Ethereum-based f4 address to a Filecoin address of a different type."
 lead: "Filecoin `f4` addresses can be used directly with Ethereum development tools like Metamask, Remix, Hardhat, wallets like Ledger, and supported exchanges. While support for direct transfer to an f4 address is being rolled out more widely, you will need to temporarily transfer your FIL to a wallet that supports `f4` addresses, and then transfer the Fil from that wallet to a `0x`-style address. There are currently multiple options for doing this, which vary based on your situation, and are described on this page."
 draft: false
