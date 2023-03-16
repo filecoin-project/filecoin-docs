@@ -119,8 +119,14 @@
   url = "/basics/how-retrieval-works"
 
 [[basics]]
-  name = "Project and community"
+  name = "Assets"
   weight = 50
+  identifier = "basics-assets"
+  url = "/basics/assets"
+
+[[basics]]
+  name = "Project and community"
+  weight = 60
   identifier = "basics-project-and-community"
   url = "/basics/project-and-community/the-filecoin-project"
 # ----------------------
