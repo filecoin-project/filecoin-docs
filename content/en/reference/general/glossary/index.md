@@ -37,6 +37,10 @@ The _height_ of a [block](#block) corresponds to the number of [epochs](#epoch) 
 
 If a storage provider doesn't find any available deal proposals appealing, they can alternatively make a _capacity commitment_, filling a [sector](#sector) with arbitrary data, rather than with client data. Maintaining this sector allows the storage provider to provably demonstrate that they are reserving space on behalf of the network.
 
+## CommP
+
+The commitment phase of the Proof-of-Replication (PoRep) process. PoRep is a mechanism used to verify that a storage provider is storing data on behalf of a client by requiring the provider to prove that they have replicated the client's data to their storage space.
+
 ## Content IDentifier (CID)
 
 A self-describing format for referencing data in distributed information systems by it's _contents_, rather than its _location_ using cryptographic hashing and and self-describing formats. It is a core component of IPFS and IPLD, which are in turn components of Filecoin.

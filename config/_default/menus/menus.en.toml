@@ -14,6 +14,12 @@
   weight = 30
 
 [[main]]
+  name = "Nodes"
+  url = "/nodes/implementations/overview"
+  weight = 35
+  identifier= "main-nodes"
+
+[[main]]
   name = "Smart contracts"
   url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
   weight = 40
@@ -161,13 +167,41 @@
 
 
 
+# docs.filecoin.io/nodes
+# ----------------------
+[[nodes]]
+  name = "Implementations"
+  weight = 10
+  identifier = "nodes-implementations"
+  url = "/nodes/implementations"
+
+[[nodes]]
+  name = "Full-nodes"
+  weight = 20
+  identifier = "nodes-full-nodes"
+  url = "/nodes/full-nodes"
+
+[[nodes]]
+  name = "Lite-nodes"
+  weight = 30
+  identifier = "nodes-lite-nodes"
+  url = "/nodes/lite-nodes"
+
+[[nodes]]
+  name = "Node providers"
+  weight = 40
+  identifier = "nodes-node-providers"
+  url = "/nodes/node-providers"
+
+
+
 # docs.filecoin.io/smart-contracts
 # ----------------------
 [[smart-contracts]]
   name = "Fundamentals"
   weight = 10
   identifier = "smart-contracts-fundamentals"
-  url = "/smart-contracts/Fundamentals"
+  url = "/smart-contracts/fundamentals"
 
 [[smart-contracts]]
   name = "Filecoin EVM-runtime"
@@ -266,6 +300,13 @@
 
 
 
+# docs.filecoin.io/archive
+# ----------------------
+[[archive]]
+  name = "Archive"
+  weight = 10
+  identifier = "archive"
+  url = "/archive"
 
 
 [[social]]
