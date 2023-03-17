@@ -84,7 +84,7 @@ docsRepo = "https://github.com/filecoin-project/filecoin-docs"
 docsRepoBranch = "main"
 docsRepoSubPath = ""
 editPage = true
-lastMod = false
+lastMod = true
 
 [sections]
   sectionNav = ["about", "intro", "store", "providers", "smart-contracts", "reference"]
