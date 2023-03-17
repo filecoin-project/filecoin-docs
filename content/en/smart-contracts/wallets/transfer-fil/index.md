@@ -51,5 +51,4 @@ Any exchange that trades Filecoin, but is not listed below, can only send FIL di
   - [Anchorage](https://www.anchorage.com/)
   - [Bittrex](https://bittrex.com/)
   - [Btcturk](https://www.btcturk.com/)
-  - [Huobi](https://www.huobi.com/)
   - [Kraken](https://www.kraken.com/)
