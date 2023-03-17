@@ -24,6 +24,8 @@ When a client wants the data back from a storage provider, it sends a request kn
 
 When a storage deal is originally made, the client can opt to make the data publically discoverable. If this is the case, the storage provider must publish an advertisement of the storage deal to the Interplanetary Network Indexer (IPNI). The IPNI contains a CID-to-SP mapping. This mapping allows clients to query the IPNI to discover where content is on Filecoin.
 
+The IPNI also tracks which data transfer protocols you can use to retrieve specific CIDs. Currently, Filecoin SPs have the ability to serve retrievals over graphsync, bitswap, and http. This is dependent on the SP setup. 
+
 ## Retrieval process
 
 If a client wants to retrieve publicly available data from the Filecoin network, then they generally follow this process.
@@ -34,17 +36,11 @@ Before the client can submit a retrieval deal to a storage provider, they first 
 
 ### Select a provider
 
-Assuming the IPNI returns more than one storage provider, the client can select which provider they'd like to deal with. Once a provider has been selected, the client sends a retrieval proposal to the storage provider, specifying the content they want and the price they are willing to pay for the data.
-
-### Review the deal
-
-The storage provider receives the retrieval deal proposal and, based on certain parameters, such as price, decides whether or not to accept the deal. Storage providers can also reject a deal if it is asking for deny-listed content.
-
-Once a retrieval deal is accepted, the storage provider replies to the client with details about the requested data, such as size, as well as payment details.
+Assuming the IPNI returns more than one storage provider, the client can select which provider they'd like to deal with. Here, they will also get additional details (if needed) based on the retrieval protocol they want to retrieve the content over. 
 
 ### Initiate retrieval
 
-To start the retrieval process, the client creates a new `RetrievalDealStream`. Currently, this connection is kept open through the entire deal until completion or failure. Making deals pausable as well as surviving a restart is a planned future feature.
+The client then attempts to retrieve the data from the SP over bitswap, graphsync, or http. Note that currently, clients can only get full piece retrievals via http. 
 
 When attempting this retrieval deal using graphsync, payment channels are used to pay FIL to the storage provider. These payment channels watch the data flow and pay the storage provider after each chunk of data is retrieved successfully.
 
