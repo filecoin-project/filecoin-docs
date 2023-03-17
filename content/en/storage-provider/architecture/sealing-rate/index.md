@@ -53,7 +53,7 @@ Another rule of thumb is to have 2 PC2 workers per PC1 worker in your setup. Aft
 <!--  -->
 
 ### Scaling out
-Scaling the Storage Provider setup would mean adding additional storage and expanding the sealing capacity. In essence your sealing capacity scales linearly with the hardware you add to it. If your current setup allows for a sealing rate of 3 TiB/day, doubling the workers would bring you to 6 TiB/day.
+Scaling the Storage Provider setup would mean adding additional storage and expanding the sealing capacity. In essence your sealing capacity scales linearly with the hardware you add to it. If your current setup allows for a sealing rate of 3 TiB/day, doubling the workers could bring you to 6 TiB/day. This requires all components of your infrastructure to be able to handle this additional throught. Take a closer look at your network and storage throughput for this.
 
 The introduction of a completely new concept, [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}}), changes a lot of the requirements for Storage Providers.
 
