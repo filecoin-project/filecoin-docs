@@ -1,0 +1,33 @@
+<label for="from">From address:</label>
+<input type="text" id="from">
+<br>
+<label for="to">To address:</label>
+<input type="text" id="to">
+<br>
+<button onclick="checkInputs()">Submit</button>
+<br><br>
+<pre><code id="output"></code></pre>
+
+<script>
+    function checkInputs() {
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let output = document.getElementById("output");
+
+        if ((from.startsWith("f") || from.startsWith("F")) && (to.startsWith("f") || to.startsWith("F"))) {
+            output.textContent = "Filecoin to Filecoin";
+        } else if ((from.startsWith("f") || from.startsWith("F")) && to.startsWith("0x")) {
+            output.textContent = "Ethereum to Filecoin";
+        } else if (from.startsWith("0x") && (to.startsWith("f") || to.startsWith("F"))) {
+            output.textContent = "Ethereum to Ethereum";
+        } else if (from.startsWith("0x") && to.startsWith("0x")) {
+            output.textContent = "Filecoin to Ethereum";
+        } else if (!from.startsWith("f") && !from.startsWith("F") && !from.startsWith("0x")) {
+            output.textContent = "The 'From Address' field must be a Filecoin or Ethereum address.";
+        } else if (!to.startsWith("f") && !to.startsWith("F") && !to.startsWith("0x")) {
+            output.textContent = "The 'To Address' field must be a Filecoin or Ethereum address.";
+        } else {
+            output.textContent = "ERROR";
+        }
+    }
+</script>

@@ -1,7 +1,7 @@
 ---
 title: "The FIL token"
 description: "FIL is the cryptocurrency that powers the Filecoin network. This page explains what FIL is and how it can be used."
-lead: "FIL is the cryptocurrency that powers the Filecoin network. This page explains what FIL is and how it can be used."
+lead: "FIL is the cryptocurrency that powers the Filecoin network. This page explains what FIL is, how it can be used, and it's denominations."
 draft: false
 images: []
 type: docs
@@ -15,7 +15,7 @@ toc: true
 
 ## Uses
 
-Here are some ways in which FIL is used on the Filecoin network:
+FIL plays a vital role in incentivizing users to participate in the Filecoin network and ensuring its smooth operation. Here are some ways in which FIL is used on the Filecoin network:
 
 ### Storage payments
 
