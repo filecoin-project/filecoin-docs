@@ -1,7 +1,7 @@
 ---
 title: "Serving retrievals"
-description: "Storage providers are expected to accept retrieval deals. This page explains what the retrieval process looks like from a storage providers perspective."
-lead: "Storage providers are expected to accept retrieval deals. This page explains what the retrieval process looks like from a storage providers perspective."
+description: "This article discusses the functions of storage providers in the Filecoin network, the role of the indexer, and the retrieval process for publicly available data in a decentralized storage network."
+lead: "In the Filecoin network, storage providers (SPs) play a vital role by storing data and serving it back to clients upon request. To make the data publically discoverable, the client can choose to advertise the storage deal to the Interplanetary Network Indexer (IPNI), which contains a CID-to-SP mapping. This mapping enables clients to query the IPNI and discover where content is located on the Filecoin network. In this article, we will discuss the functions of storage providers in the Filecoin network, the role of the indexer, and the retrieval process for publicly available data."
 draft: false
 images: []
 type: docs
@@ -12,13 +12,6 @@ menu:
 weight: 420
 toc: true
 ---
-
-In the Filecoin network, storage providers (SPs) serve two major functions:
-
-- To store data.
-- To serve that data back to the client.
-
-When a client wants the data back from a storage provider, it sends a request known as a _retrieval_.
 
 ## The indexer
 
