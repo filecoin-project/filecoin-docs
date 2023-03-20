@@ -1,5 +1,5 @@
 ---
-title: "Blocks and "
+title: "Blocks and tipsets"
 description: "Learn more about blocks, tipsets, their relationship to each, and their use in Filecoin."
 lead: "Like many other blockchains, _blocks_ are a fundamental concept in Filecoin. However, unlike other blockchains, Filecoin is a chain of groups of blocks called _tipsets_, rather than a chain of individual blocks. This page discusses blocks, tipsets, their relationship to each, and their use in Filecoin in detail."
 draft: false
@@ -30,7 +30,7 @@ A _message_ represents communication between two actors, and thus changes in net
 
 ## Tipsets
 
-As described in [Consensus]({{< relref "consensus" >}}), multiple potential block producers may be elected via Expected Consensus (EC) to create a block in each epoch. All valid blocks with the same height and same parent block are assembled into a group called a _tipset_. 
+As described in [Consensus]({{< relref "consensus" >}}), multiple potential block producers may be elected via Expected Consensus (EC) to create a block in each epoch, which means that more than one valid block may be produced in a given epoch. All valid blocks with the same height and same parent block are assembled into a group called a _tipset_. 
 
 ### Benefits of tipsets
 
@@ -43,9 +43,9 @@ In other blockchains, blocks are used as the fundamental representation of netwo
 Because Filecoin is a chain of tipsets rather than individual blocks, the network enjoys the following benefits:
 
 - All valid blocks generated in a given round are used to determine network state, increasing network efficiency and throughput.
-- All valid work is rewarded (that is, all validated blokc producers in an epoch receive a block reward).
+- All valid work is rewarded (that is, all validated block producers in an epoch receive a block reward).
 - All potential block producers are incentivized to produce blocks, disincentivizing centralization and promoting collaboration.
-- Because all blocks in a tipset have the same height and parent, Filecoin is able to achieve rapid convergenece in the case of forks.
+- Because all blocks in a tipset have the same height and parent, Filecoin is able to achieve rapid convergence in the case of forks.
 
 In summary, blocks, which contain actor messages, are grouped into tipsets in each epoch, which can be thought of as the overall description of network state for a given epoch.
 
