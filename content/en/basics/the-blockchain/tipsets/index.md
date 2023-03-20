@@ -1,7 +1,7 @@
 ---
-title: "Tipsets"
-description: "The Filecoin network uses the idea of tipsets to manage blocks within the blockchain. This page details what a tipset is, how they differ to blocks in other blockchains, and how developers should deal with tipsets."
-lead: "The Filecoin network uses the idea of tipsets to manage blocks within the blockchain. This page details what a tipset is, how they differ to blocks in other blockchains, and how developers should deal with tipsets."
+title: "Blocks and "
+description: "Learn more about blocks, tipsets, their relationship to each, and their use in Filecoin."
+lead: "Like many other blockchains, _blocks_ are a fundamental concept in Filecoin. However, unlike other blockchains, Filecoin is a chain of groups of blocks called _tipsets_, rather than a chain of individual blocks. This page discusses blocks, tipsets, their relationship to each, and their use in Filecoin in detail."
 draft: false
 images: []
 type: docs
@@ -16,18 +16,45 @@ aliases:
     - "/developers/smart-contracts/concepts/tipsets/"
 ---
 
-## Blocks
+## Blocks 
 
-The Filecoin network produces multiple blocks at every epoch. In simple terms, block producers run a local function that uses their _quality-adjusted power_, as represented in the power table, and randomness from the Drand network to determine if they're eligible to produce a block for the current epoch. This consensus protocol is called _expected consensus_.
+In Filecoin, a block consists of:
 
-These blocks are assembled in a **tipset**, and the execution of their messages is deferred to the next tipset. Theoretically, there can be `0` to infinite blocks in a tipset. In practice, however, we see `5` to `10` blocks per tipset.
+- A block header
+- A list of _messages_ contained in the block
+- A signed copy of each message listed
 
-## Introduction of Ethereum
+Every block refers to at least one _parent block_; that is, a block produced in a prior epoch.
 
-Wherever you see the term _block_ in the Ethereum JSON-RPC, you should mentally read _tipset_. Before the inclusion of the Filecoin EVM-runtime, there was no single hash referring to a tipset. A tipset ID was the concatenation of block CIDs, which led to a variable length ID, and a pretty poor experience.
+A _message_ represents communication between two actors, and thus changes in network state. The messages are listed in their order of appearance, deduplicated and returned in canonical order of execution. So, in other words, a block describes all changes to the network state in a given epoch.
 
-With the Ethereum JSON-RPC, we introduced the concept of the tipset CID for the first time! It is calculated by hashing the former _tipset key_ using a blake-256 hash. Therefore:
+## Tipsets
 
-- Wherever you see _block hash_, think _tipset hash_.
-- Wherever you see _block height_, think _tipset epoch_.
-- Wherever you see _block messages_, think _messages in all blocks in a tipset, in their order of appearance, deduplicated and returned in canonical order of execution_.
+As described in [Consensus]({{< relref "consensus" >}}), multiple potential block producers may be elected via Expected Consensus (EC) to create a block in each epoch. All valid blocks with the same height and same parent block are assembled into a group called a _tipset_. 
+
+### Benefits of tipsets
+
+In other blockchains, blocks are used as the fundamental representation of network state; that is, the overall status of each participant in the network at a given time. However, this structure has the following disadvantages:
+
+- Potential block producers may be hobbled by network latency.
+- Not all valid work is rewarded.
+- Decentralization and collaboration in block production is not incentivized.
+
+Because Filecoin is a chain of tipsets rather than individual blocks, the network enjoys the following benefits:
+
+- All valid blocks generated in a given round are used to determine network state, increasing network efficiency and throughput.
+- All valid work is rewarded (that is, all validated blokc producers in an epoch receive a block reward).
+- All potential block producers are incentivized to produce blocks, disincentivizing centralization and promoting collaboration.
+- Because all blocks in a tipset have the same height and parent, Filecoin is able to achieve rapid convergenece in the case of forks.
+
+In summary, blocks, which contain actor messages, are grouped into tipsets in each epoch, which can be thought of as the overall description of network state for a given epoch.
+
+### Tipsets in the Ethereum JSON-RPC
+
+Wherever you see the term _block_ in the Ethereum JSON-RPC, you should mentally read _tipset_. Before the inclusion of the Filecoin EVM-runtime, there was no single hash referring to a tipset. A tipset ID was the concatenation of block CIDs, which led to a variable length ID, and poor user experience.
+
+With the Ethereum JSON-RPC, we introduced the concept of the _tipset CID_ for the first time. It is calculated by hashing the former _tipset key_ using a blake-256 hash. Therefore, when you see the term:
+
+- _block hash_, think _tipset hash_.
+- _block height_, think _tipset epoch_.
+- _block messages_, think _messages in all blocks in a tipset, in their order of appearance, deduplicated and returned in canonical order of execution_.
