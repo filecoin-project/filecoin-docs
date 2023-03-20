@@ -17,19 +17,19 @@ aliases:
 
 ## Lassie
 
-Lassie is a simple retrieval client for Filecoin. It finds and fetches your data over the best retrieval protocols available. Lassie makes Filecoin retrieval easy. While Lassie is powerful, the core functionality is expressed in a single CLI command:
+Lassie is a simple retrieval client for IPFS and Filecoin. It finds and fetches your data over the best retrieval protocols available. Lassie makes Filecoin retrieval easy. While Lassie is powerful, the core functionality is expressed in a single CLI command:
 
 ```shell
 lassie fetch <CID>
 ```
 
-Lassie can also be used as a reference library to fetch data from Filecoin. In the absence of a single uber-protocol which meet all data transfer needs, Lassie was designed to use multiple protocols for data transfers.
+Lassie can also be used as a library to fetch data from Filecoin from within your application. Due to the diversity of data transport protocols in the IPFS ecosystem Lassie is able to use the Graphsync or Bitswap protocols, depending on how to the requested data is available to be fetched.
 
 ![Lassie Architecture](lassie_architecture.png)
 
 ### Lassie HTTP daemon
 
-The Lassie HTTP Daemon is an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. It fetches content over the GraphSync and Bitswap protocols and provides the resulting data in CAR format.
+The Lassie HTTP daemon is an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. It fetches content from peers known to have it, and provides the resulting data in CAR format.
 
 ```shell
 GET /ipfs/{cid}[/path][?params]
@@ -123,7 +123,7 @@ Retrieves from peers that have the content identified by the given root CID, str
 
 - `X-Trace-ID` - Returns the given `X-Request-Id` header value if provided, otherwise returns an ID that uniquely identifies the retrieval request.
 
-### Lassie Car files
+### Lassie's CAR format
 
 Under normal operation, Lassie only returns IPLD data in CAR format. Specifically, the [CARv1](https://ipld.io/specs/transport/car/carv1/) format. Below sections describes the nature of the CAR data returned by Lassie and the various options available to the client for varying the data included.
 
