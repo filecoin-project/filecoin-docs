@@ -24,7 +24,7 @@ Expected Consensus (EC) has the following properties:
 
 - Each epoch has potentially multiple elected leaders who may propose a block.
 - A winner is elected randomly from a set of network participants weighted according to the respective storage power they contribute to the Filecoin network. 
-- All blocks proposed are grouped together in a _tipset_ (discussed below), from which the final chain is selected.
+- All blocks proposed are grouped together in a _tipset_, from which the final chain is selected.
 - A block producer can be verified by any participant in the network.
 - The identity of a block producer is anonymous until they release their block to the network.
 
@@ -33,7 +33,6 @@ Expected Consensus (EC) has the following properties:
 In summary, EC involves the following steps at each _{{< tooltip "epoch" >}}_:
 
 1. A storage provider checks to see if they are elected to propose a block by generating an [_election proof_](https://spec.filecoin.io/#section-glossary.election-proof).
-
 1. Zero, one or multiple storage providers may be elected to propose a block. This does not mean that an elected participant is guaranteed to be able to submit a block. In the case where:
 
    - **No storage providers are elected to propose a block in a given epoch**, a new election is run in the next epoch to ensure that the network remains live.
@@ -44,7 +43,7 @@ In summary, EC involves the following steps at each _{{< tooltip "epoch" >}}_:
 1. Each potential block producer elected generates a storage proof using [WinningPoSt]({{< relref "proofs.md#winningpost" >}}) for a randomly selected _{{< tooltip "sector" >}}_ within in short window of time. Potential block producers that fail this step are not eligible to produce a block. In this step, the following could occur:
 
    - **All potential block producers fail WinningPoSt**, in which case EC returns to step 1 (described above).
-   - **One or more potential block producers passes WinningPoSt**, which means they are eligible to submit that block to the epochs tipset (discussed in the next step)
+   - **One or more potential block producers passes WinningPoSt**, which means they are eligible to submit that block to the epochs tipset.
    
    </br>
 
