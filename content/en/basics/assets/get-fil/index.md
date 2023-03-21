@@ -2,7 +2,7 @@
 title: "Get FIL"
 description: ""
 lead: ""
-draft: true
+draft: false
 images: []
 type: docs
 menu:
@@ -14,6 +14,8 @@ toc: true
 ---
 
 ## Exchanges
+
+For information on which exchanges support FIL, and how to fund or widthdraw from them, check out the [Exchanges section]({{< relref "/reference/exchanges/fund-and-withdraw" >}}).
 
 ## Test FIL
 

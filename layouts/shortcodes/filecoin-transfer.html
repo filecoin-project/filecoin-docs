@@ -1,11 +1,27 @@
-<label for="from">From address:</label>
-<input type="text" id="from">
-<br>
-<label for="to">To address:</label>
-<input type="text" id="to">
-<br>
-<button onclick="checkInputs()">Submit</button>
-<br><br>
+<form>
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">From address</div>
+        </div>
+        <input id="from" type="text" class="form-control" id="inlineFormInputGroup">
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">To address</div>
+        </div>
+        <input id="to" type="text" class="form-control" id="inlineFormInputGroup">
+      </div>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary mb-2" onclick="checkInputs()">Submit</button>
+    </div>
+  </div>
+</form>
+
 <pre><code id="output"></code></pre>
 
 <script>
