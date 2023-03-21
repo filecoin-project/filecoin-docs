@@ -16,10 +16,10 @@ draft: false
 
 ## Overview
 
-Different blockchains use different cryptographic proving systems (proofs) based on the network's specific purpose, goals, and functionality. Regardless of which method is used, however, proofs have the following in common:
+Different blockchains use different cryptographic proving systems (proofs) based on the network's specific purpose, goals, and functionality. Regardless of which method is used, proofs have the following in common:
 
-- All blockchain networks achieve _{{< tooltip "consensus" >}}_ through proofs.  
-- Proofs incentive network participants to behave in certain ways and allow the network to penalize participants that do not abide by network standards.
+- All blockchain networks seek to achieve _{{< tooltip "consensus" >}}_, and rely on proofs as part of this process.  
+- Proofs incentivize network participants to behave in certain ways and allow the network to penalize participants that do not abide by network standards.
 - Proofs allow decentralized systems to agree on a network state without a central authority.
 
 Proof-of-Work and Proof-of-Stake are both fairly common proof methods:
