@@ -27,6 +27,12 @@ It's important to note that while crypto exchanges can offer convenience and liq
 
 Due to the huge number of differnet cryptocurrencies available, not all exchanges support _all_ cryptocurrencies. One way to find exchanges that support Filecoin is to look at the available markets on a coin-price website. For example, Coinmarketcap.com lists available markets under the [**Markets** tab for Filecoin](https://coinmarketcap.com/currencies/filecoin/markets/).
 
+### Fund and widthdraw
+
+Some exchanges allow users to fund and widthdraw FIL using any of the [Filecoin address type]({{< relref "/basics/the-blockchain/addresses" >}}). However, some exchanges only support on, or a handful, of the available address types. Most exchanges do not currently support {{< tooltip "f410 addresses" >}}.
+
+If your exchange does not yet support Filecoin Eth-style 0x addresses, then you need to create a wallet to _relay_ the funds through. Take a look at the [Transer FIL page]({{< relref "basics/assets/transfer-fil" >}}) for details on how to transfer your funds safely.
+
 ## Test FIL
 
-If you're just looking to get FIL to test your applications on a testnet, like Hyperspace or Calibration, then check how to [Get test tokens]({{< relref "/smart-contracts/developing-contracts/get-test-tokens" >}})!
+If you're looking to get FIL to test your applications on a testnet, like Hyperspace or Calibration, then check how to [Get test tokens]({{< relref "/smart-contracts/developing-contracts/get-test-tokens" >}})! Test FIL is often referred to as tFIL.
