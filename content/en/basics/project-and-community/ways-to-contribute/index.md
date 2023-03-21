@@ -177,26 +177,24 @@ So there you have it! You've successfully completed your first contribution to t
 
 This guide explains things to keep in mind when writing for Filecoin's documentation. While the [grammar, formatting, and style guide]({{< relref "#grammar-and-formatting" >}}) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
-### Banned words
+### Terms to avoid
 
-When creating _any content_ in the Filecoin docs, do not use the words listed here. Instead, use one of the suggested alternatives.
+Due to the delicate pairing of cryptocurrency and the legal system, it's important that the docs use clear language when dealing with the financial aspects of Filecoin. See the table below, and consider using the alternatives whenever possible.
 
-| Don't use     | Alternatives|    
-| ------------- | ----------- | 
-| Loan, borrow (as a verb) | Lease      | 
-| Loan (as a noun)         | Collateral, lease  | 
+| Don't use | Alternatives |    
+| --- | --- | 
+| Loan, borrow (as a verb) | Lease | 
+| Loan (as a noun) | Collateral, Lease | 
 | Interest rate, Interest | Leasing fees |
-| Lender, Capital contributor    | Token holder |
-| Miner     | Storage provider |
-| Lending   | Lending pool, Collateral leasing |
+| Lender, Capital contributor | Token holder |
+| Miner | Storage provider |
+| Lending | Lending pool, Collateral leasing |
 
-Examples of sentences written using banned words and the same sentence rewritten using an alternative:
+- **Avoid**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **loans**._
+- **Use**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **collateral leasing**._
 
-- **Wrong**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **loans**._
-- **Correct**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **collateral leasing**._
-
-- **Wrong**: _Tracks the amount each **lender** deposits and their gain/loss._
-- **Correct**: _Tracks the amount each **token holder** deposits and their gain/loss._
+- **Avoid**: _Tracks the amount each **lender** deposits and their gain/loss._
+- **Use**: _Tracks the amount each **token holder** deposits and their **delta**._
 
 
 ### Walkthroughs
