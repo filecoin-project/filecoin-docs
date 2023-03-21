@@ -177,6 +177,28 @@ So there you have it! You've successfully completed your first contribution to t
 
 This guide explains things to keep in mind when writing for Filecoin's documentation. While the [grammar, formatting, and style guide]({{< relref "#grammar-and-formatting" >}}) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
+### Banned words
+
+When creating _any content_ in the Filecoin docs, do not use the words listed here. Instead, use one of the suggested alternatives.
+
+| Don't use     | Alternatives|    
+| ------------- | ----------- | 
+| Loan, borrow (as a verb) | Lease      | 
+| Loan (as a noun)         | Collateral, lease  | 
+| Interest rate, Interest | Leasing fees |
+| Lender, Capital contributor    | Token holder |
+| Miner     | Storage provider |
+| Lending   | Lending pool, Collateral leasing |
+
+Examples of sentences written using banned words and the same sentence rewritten using an alternative:
+
+- **Wrong**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **loans**._
+- **Correct**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **collateral leasing**._
+
+- **Wrong**: _Tracks the amount each **lender** deposits and their gain/loss._
+- **Correct**: _Tracks the amount each **token holder** deposits and their gain/loss._
+
+
 ### Walkthroughs
 
 The purpose of a walkthrough is to tell the user _how_ to do something. They do not need to convince the reader of something or explain a concept. Walkthroughs are a list of steps the reader must follow to achieve a process or function.
