@@ -13,9 +13,9 @@ weight: 520
 toc: true
 ---
 
-When someone sends cryptocurrency to your wallet address, the transaction is recorded on the blockchain network and the funds are added to your wallet balance. Similarly, when you send cryptocurrency from your wallet to someone else's wallet, the transaction is recorded on the blockchain network and the funds are deducted from your wallet balance.
+When someone sends cryptocurrency to your wallet address, the transaction is recorded on the blockchain network, and the funds are added to your wallet balance. Similarly, when you send cryptocurrency from your wallet to someone else's wallet, the transaction is recorded on the blockchain network, and the funds are deducted from your wallet balance.
 
-There are various types of cryptocurrency wallets, including desktop, mobile, hardware, and web-based wallets, each with their own unique features and levels of security. It's important to choose a reputable and secure wallet to ensure the safety of your digital assets.
+There are various types of cryptocurrency wallets, including desktop, mobile, hardware, and web-based wallets, each with its own unique features and levels of security. It's important to choose a reputable and secure wallet to ensure the safety of your digital assets.
 
 ## Compatible wallets
 
@@ -24,9 +24,9 @@ Here are some crypto-wallets that are compatible with Filecoin. We do not provid
 | Name | Description |
 | ---| ---|
 | [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet. |
-| [FilWallet](https://filwallet.co) | A FIL-focused crypto wallet, available on Android and iOS. |
+| [FilWallet](https://filwallet.co) | A FIL-focused crypto wallet available on Android and iOS. |
 | [FoxWallet](https://foxwallet.com/) | A multi-currency mobile wallet by Filfox. |
-| [Glif web wallet](https://wallet.glif.io) | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. |
+| [Glif web wallet](https://wallet.glif.io) | Supports sending & receiving FIL. It can be integrated with a Ledger hardware device. |
 | [ImToken](https://token.im/)| A multi-currency wallet. |
 | [MathWallet](https://mathwallet.org/en-us/) | A multi-currency wallet. |
 | [MetaMask](https://metamask.io/) | A browser-based wallet extension |
@@ -34,9 +34,9 @@ Here are some crypto-wallets that are compatible with Filecoin. We do not provid
 
 ### Hot versus cold
 
-Hot wallet refers to any wallet which is permanently connected to the internet. They can be mobile, desktop, or browser based. Hot wallets make it faster and easier to access digital access, but being could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds you need to access frequently.
+A hot wallet refers to any wallet which is permanently connected to the internet. They can be mobile, desktop, or browser-based. Hot wallets make it faster and easier to access digital access, but being could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets. Only use hot wallets to hold funds you need to access frequently.
 
-Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline, and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to loss via theft. Cold wallets can be less convenient, and are most useful for storing larger balances securely. 
+Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to theft. Cold wallets can be less convenient and are most useful for storing larger balances securely. 
 
 ### Security
 

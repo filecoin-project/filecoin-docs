@@ -34,7 +34,7 @@ The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-c
 
     ![Find the Hyperspace testnet.](chainlist-select-hyperspace.png)
 
-1. In MetaMask click **Next**.
+1. In MetaMask, click **Next**.
 
     ![Click next in MetaMask.](chainlist-connect-with-metamask.png)
 
@@ -74,14 +74,14 @@ Before we get started, you'll need the following:
 The process for integrating Filecoin into MetaMask is fairly simple but has some very specific variables that you must copy exactly.
 
 1. Open your browser and open the MetaMask plugin. If you haven't opened the MetaMask plugin before, you'll be prompted to create a new wallet. Follow the prompts to create a wallet.
-2. Click the user circle and select **Settings**:
+1. Click the user circle and select **Settings**:
 
     ![Click Settings from within MetaMask](manual-show-settings.jpg)
 
-3. Select **Networks**.
-4. Click **Add a network**.
-5. Scroll down and click **Add a network manually**.
-6. Enter the following information into the fields:
+1. Select **Networks**.
+1. Click **Add a network**.
+1. Scroll down and click **Add a network manually**.
+1. Enter the following information into the fields:
 
     | Field | Value |
     | --- | --- |
@@ -90,11 +90,11 @@ The process for integrating Filecoin into MetaMask is fairly simple but has some
     | Chain ID | `3141` |
     | Currency symbol | `tFIL` |
 
-7. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
+1. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
 
     - Glif Explorer: `https://explorer.glif.io/?network=hyperspace`
     - Filscan: `https://hyperspace.filscan.io/`
 
-8. Review the values in the fields and click **Save**.
-9.  The Hyperspace testnet should now be shown in your MetaMask window.
-10. Done!
+1. Review the values in the fields and click **Save**.
+1. The Hyperspace testnet should now be shown in your MetaMask window.
+1. Done!

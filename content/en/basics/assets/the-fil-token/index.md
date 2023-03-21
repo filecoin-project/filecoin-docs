@@ -27,7 +27,7 @@ When a user wants to retrieve their data from the Filecoin network, they make a 
 
 ### Blockchain rewards
 
-FIL is used to reward providers who validate and add new blocks to the Filecoin blockchain. Providers receive a block reward in FIL for each new block they add to the blockchain, and also earn transaction fees in FIL for processing storage and retrieval transactions.
+FIL is used to reward providers who validate and add new blocks to the Filecoin blockchain. Providers receive a block reward in FIL for each new block they add to the blockchain and also earn transaction fees in FIL for processing storage and retrieval transactions.
 
 ### Governance
 
@@ -39,7 +39,7 @@ FIL, NanoFIL, and PicoFIL are all denominated in the same cryptocurrency unit, b
 
 ### FIL
 
-This is the base unit of Filecoin and is used to pay for storage and retrieval of data on the network.
+This is the base unit of Filecoin and is used to pay for the storage and retrieval of data on the network.
 
 ### NanoFIL
 

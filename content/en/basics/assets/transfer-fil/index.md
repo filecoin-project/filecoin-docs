@@ -54,41 +54,26 @@ Currently, most wallets and exchanges only support `f1` or `f3` addresses. The m
 
 ### Ledger device
 
-Currently Ledger Live does not support `0x` or `f4` addresses, so you cannot use it to directly send funds to a `0x` address. However, you can connect your Ledger device to the Glif.io wallet and transfer FIL from a Filecoin address to an Etheruem-style `0x` address. This method is more secure than the [Hot wallet](#hot-wallet) method detailed below, since your private keys never leave your Ledger device.
+Currently, Ledger Live does not support `0x` or `f4` addresses, so you cannot use it to directly send funds to a `0x` address. However, you can connect your Ledger device to the Glif.io wallet and transfer FIL from a Filecoin address to an Etheruem-style `0x` address. This method is more secure than the [Hot wallet](#hot-wallet) method detailed below since your private keys never leave your Ledger device.
 
-In this method, you will connect your Ledger device to the Glif.io website app, and use the app to send FIL from your Ledger to an Ethereum-style address.
+In this method, you will connect your Ledger device to the Glif.io website app and use the app to send FIL from your Ledger to an Ethereum-style address.
 
-1. Log in to Ledger Live dashboard and update your Ledger device’s Filecoin app to version `0.22.9`:
+1. Log in to the Ledger Live dashboard and update your Ledger device’s Filecoin app to version `0.22.9`:
 1. Ensure your Ledger device is connected to your computer and the Filecoin app is open on your hardware wallet. Your Ledger should display **Filecoin ready**:
 1. Go to [Glif](https://glif.io) and click **Connect Wallet**:
-
-    ![Screen Shot 2023-03-15 at 5 45 22 PM](https://user-images.githubusercontent.com/113331491/225487652-02f64b53-09dd-4e05-bf60-05cfc8793772.png)
-
 1. Select **Ledger (Filecoin)** and unlock your Ledger device, selecting the Filecoin application:
-
-    ![Screen Shot 2023-03-15 at 6 05 51 PM](https://user-images.githubusercontent.com/113331491/225487711-e0c9ee09-6d8a-42e8-9582-039ef15351dc.png)
-
-1. Once connected you should see the details of your Filecoin account stored on your Ledger:
-
-    ![Screen Shot 2023-03-15 at 5 28 41 PM](https://user-images.githubusercontent.com/113331491/225487875-5492345d-cbcb-4618-b358-dd94bc5fa00c.png)
-
+1. Once connected, you should see the details of your Filecoin account stored on your Ledger:
 1. Click **Send FIL**.
-1. Enter the Ethereum-style `0x` address you with to send to. Glif with automatically converted the `0x` address into an `f4` address.
-
-    ![Screen Shot 2023-03-15 at 6 12 07 PM](https://user-images.githubusercontent.com/113331491/225487916-c4e9e0ec-29f9-4f77-b8a2-ed6e159d61a7.png)
-
+1. Enter the Ethereum-style `0x` address you wish to send to. Glif will automatically convert the `0x` address into an `f4` address.
 1. Enter the amount of FIL you want to send.
 1. Click **Send**.
-1. Verify the information on screen is correct and accept the transaction on your hardware device.
+1. Verify the information is correct and accept the transaction on your hardware device.
 1. You can check the status of this transfer by clicking the transaction ID link:
-
-    ![Screen Shot 2023-03-15 at 6 14 03 PM](https://user-images.githubusercontent.com/113331491/225488037-97af20d6-43ca-4c44-b25e-022133668711.png)
-
-1. The transferred FIL will take around 2 mintutes to show up at the Ethereum-style `0x` address.
+1. The transferred FIL will take around two minutes to show up at the Ethereum-style `0x` address.
 
 ### Hot wallet
 
-A hot wallet is a cryptocurreny wallet that is always connected to the internet. They allow you to store, send, and receive tokens. Because hot wallets are always connected to the internet, they tend to be somewhat more vulnerable to hacks and theft than cold storage methods. However, they a generaly easier to use than cold, and do not require any specific hardware like a Ledger device.
+A hot wallet is a cryptocurrency wallet that is always connected to the internet. They allow you to store, send, and receive tokens. Because hot wallets are always connected to the internet, they tend to be somewhat more vulnerable to hacks and theft than cold storage methods. However, they a generally easier to use than cold wallets and do not require any specific hardware like a Ledger device.
 
 In this method, you will create a _burner wallet_ using Glif, transfer FIL to the burner wallet, and then transfer FIL from the burner wallet to Metamask.
 
