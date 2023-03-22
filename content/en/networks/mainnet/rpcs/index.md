@@ -19,7 +19,7 @@ Please note that a publicly available hosted endpoint guarantees **only 2000 of 
 
 - HTTPS: `https://api.node.glif.io/rpc/v1`
 
-- WebSockets: `wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1`
+- WebSocket: `wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1`
 
 - Lotus lite-node command
 
@@ -33,3 +33,9 @@ Please note that a publicly available hosted endpoint guarantees **only 2000 of 
 
 - HTTPS: `https://rpc.ankr.com/filecoin`
 - [Supported Filecoin API methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
+
+## [Chainstack](https://www.chainstack.com)
+
+- HTTPS: `https://filecoin-mainnet.chainstacklabs.com/rpc/v1`
+- WebSocket: `wss://ws-filecoin-mainnet.chainstacklabs.com/rpc/v1`
+- [Chainstack documentation](https://docs.chainstack.com)
