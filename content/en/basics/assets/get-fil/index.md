@@ -25,9 +25,17 @@ It's important to note that while crypto exchanges can offer convenience and liq
 
 ### Supported exchanges
 
-Due to the huge number of cryptocurrencies available, not all exchanges support _all_ cryptocurrencies. One way to find exchanges that support Filecoin is to look at the available markets on a coin-price website. For example, Coinmarketcap.com lists available markets under the [**Markets** tab for Filecoin](https://coinmarketcap.com/currencies/filecoin/markets/).
+There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coingecko.com](https://www.coingecko.com/) and [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
 
-### Fund and withdraw
+Once you have found an exchange you want to use, you will have to create an account with that exchange. Many exchanges have strict verification and Know-Your-Customer (KYC) processes in place, so it may take a few days to create your account. However, most large exchanges can verify your information in a few minutes.
+
+Purchasing cryptocurrency varies from exchange to exchange, but the process is usually something like this:
+
+1. Add funds to your exchange account in your local currency (USD, EUR, YEN, etc.).
+1. Exchange your local currency for FIL at a set price.
+
+
+### Address compatibility
 
 Some exchanges allow users to fund and withdraw FIL using any of the [Filecoin address type]({{< relref "/basics/the-blockchain/addresses" >}}). However, some exchanges only support one, or a handful, of the available address types. Most exchanges do not currently support {{< tooltip "f410 addresses" >}}.
 
