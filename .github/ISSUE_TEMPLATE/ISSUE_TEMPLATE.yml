@@ -13,12 +13,11 @@ body:
     attributes:
       value: >
         To ensure we can quickly address your request, please enter all available
-        information. **If you are requesting troubleshooting support or
-        technical assistance with Filecoin software, please use ...
+        information.
   - type: dropdown
     id: version
     attributes:
-      label: Version
+      label: Request type
       description: Are you requesting new content, changes to existing content, or
         something else?
       options:
