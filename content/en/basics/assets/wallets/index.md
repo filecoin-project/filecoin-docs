@@ -19,18 +19,19 @@ There are various types of cryptocurrency wallets, including desktop, mobile, ha
 
 ## Compatible wallets
 
-Here are some crypto-wallets that are compatible with Filecoin. We do not provide technical support for any of these wallets.
+We do not provide technical support for any of these wallets. Please use caution when researching and using the wallets listed below. Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are marked *recommended* below.
 
-| Name | Description |
-| ---| ---|
-| [Filfox wallet](https://wallet.filfox.info/en) | A browser-based wallet. |
-| [FilWallet](https://filwallet.co) | A FIL-focused crypto wallet available on Android and iOS. |
-| [FoxWallet](https://foxwallet.com/) | A multi-currency mobile wallet by Filfox. |
-| [Glif web wallet](https://wallet.glif.io) | Supports sending & receiving FIL. It can be integrated with a Ledger hardware device. |
-| [ImToken](https://token.im/)| A multi-currency wallet. |
-| [MathWallet](https://mathwallet.org/en-us/) | A multi-currency wallet. |
-| [MetaMask](https://metamask.io/) | A browser-based wallet extension |
-| [Trust wallet](https://trustwallet.com/) | A multi-currency wallet. This is the official wallet of Binance. |
+Note: If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
+
+ Name                                           | Description                                                                                                                          | Audited |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true)                                   | A multi-currency hardware wallet. *Recommended.*                                                                   | Yes |
+| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. *Recommended.*                                                   | Yes     |
+| [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet, official wallet of Binance.                                                                     | Unknown |
+| [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
+| [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
+| [FoxWallet](https://foxwallet.com/)            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                                                                                            | Yes     |
+| FilSnap MetaMask plugin                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki), currently in beta. | No      |
 
 ### Hot versus cold
 

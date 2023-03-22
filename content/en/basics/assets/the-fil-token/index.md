@@ -37,14 +37,14 @@ FIL is used for network governance, allowing FIL holders to vote on proposals an
 
 FIL, NanoFIL, and PicoFIL are all denominated in the same cryptocurrency unit, but they represent different levels of precision and granularity. For most users, FIL is the main unit of measurement and is used for most transactions and payments on the Filecoin network.
 
-### FIL
+Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than 1 whole `FIL`. The different denominations of `FIL` you may see referenced across the ecosystem are:
 
-This is the base unit of Filecoin and is used to pay for the storage and retrieval of data on the network.
-
-### NanoFIL
-
-One NanoFIL (nFIL) is equivalent to `0.000000001` FIL. NanoFIL is used to represent very small amounts of FIL and is often used for transaction fees and other small payments.
-
-### PicoFIL
-
-One PicoFIL (pFIL) is equivalent to `0.000000000001` FIL. PicoFIL is the smallest unit of Filecoin and is rarely used except for highly specialized applications.
+| Name     | Decimal             |
+| -------- | ------------------- |
+| FIL      | 1                   |
+| milliFIL | 1,000                |
+| microFIL | 1,000,000             |
+| nanoFIL  | 1,000,000,000          |
+| picoFIL  | 1,000,000,000,000       |
+| femtoFIL | 1,000,000,000,000,000    |
+| attoFIL  | 1,000,000,000,000,000,000 |
