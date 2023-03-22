@@ -25,7 +25,7 @@ For more detailed information about how collateral requirements are calculated, 
 When a Storage Provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see [Storage Proving]({{<relref "storage-proving" >}})) or when you take your storage offline and thereby break the rules of the storage deal, you will get penalized against the provided collateral. This penalty is called [slashing]({{<relref slashing>}}) and means a portion of the pledged collateral is forfeited <!--TODO STEF where does it go? who gets it? Does it all go? -->and your storage power is reduced.
 
 ## How much collateral?
-The amount of required collateral depends on the amount of storage pledged to the Filecoin network. The bigger volume you store, the more collateral is required. Providing collateral for multiple PiBs of data is not cheap. Programs like Filecoin Plus <!--TODO STEF are there others?--> that use a QAP <!--TODO STEF link-->multiplier increase the collateral requirement equal to the multiplier. See [Verified Deals with Filecoin Plus]({{<relref "verified-deals" >}}) for more information on that.
+The amount of required collateral depends on the amount of storage pledged to the Filecoin network. The bigger volume you store, the more collateral is required. Providing collateral for multiple PiBs of data is not cheap. Filecoin Plus <!--TODO STEF are there others?--> uses a [QAP](https://docs.filecoin.io/reference/general/glossary/#quality-adjusted-storage-power) multiplier increase the collateral requirement equal to the multiplier. See [Verified Deals with Filecoin Plus]({{<relref "verified-deals" >}}) for more information on that.
 
 The formula for the required collateral is:
 
