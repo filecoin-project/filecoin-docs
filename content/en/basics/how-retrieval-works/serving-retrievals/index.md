@@ -17,7 +17,7 @@ toc: true
 
 When a storage deal is originally made, the client can opt to make the data publically discoverable. If this is the case, the storage provider must publish an advertisement of the storage deal to the Interplanetary Network Indexer (IPNI). The IPNI contains a CID-to-SP mapping. This mapping allows clients to query the IPNI to discover where content is on Filecoin.
 
-The IPNI also tracks which data transfer protocols you can use to retrieve specific CIDs. Currently, Filecoin SPs have the ability to serve retrievals over graphsync, bitswap, and http. This is dependent on the SP setup. 
+The IPNI also tracks which data transfer protocols you can use to retrieve specific CIDs. Currently, Filecoin SPs have the ability to serve retrievals over graphsync, bitswap, and HTTP. This is dependent on the SP setup. 
 
 ## Retrieval process
 
@@ -33,7 +33,7 @@ Assuming the IPNI returns more than one storage provider, the client can select 
 
 ### Initiate retrieval
 
-The client then attempts to retrieve the data from the SP over bitswap, graphsync, or http. Note that currently, clients can only get full piece retrievals via http. 
+The client then attempts to retrieve the data from the SP over bitswap, graphsync, or HTTP. Note that currently, clients can only get full-piece retrievals using HTTP. 
 
 When attempting this retrieval deal using graphsync, payment channels are used to pay FIL to the storage provider. These payment channels watch the data flow and pay the storage provider after each chunk of data is retrieved successfully.
 
