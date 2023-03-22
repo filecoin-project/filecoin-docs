@@ -18,16 +18,14 @@ toc: true
 Please note that a publicly available hosted endpoint guarantees **only 2000 of the latest blocks.**
 
 - HTTPS: `https://api.node.glif.io/rpc/v1`
-
 - WebSocket: `wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1`
-
 - Lotus lite-node command
 
   ```shell
   FULLNODE_API_INFO=wss://wss.node.glif.io/apigw/lotus lotus daemon --lite
   ```
 
-- [Glif Node documentation](https://hosting.glif.io/)
+- [Glif documentation](https://hosting.glif.io/)
 
 ## [Ankr](https://ankr.com)
 
