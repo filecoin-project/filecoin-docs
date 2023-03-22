@@ -1,5 +1,5 @@
-name: Content Request / Issue
-description: File a request for new content or changes, fixes and updates to existing content.
+name: Content request
+description: File a request for new content, fixes, or updates.
 title: "[Request]: "
 labels: ["need/triage"]
 assignees:
