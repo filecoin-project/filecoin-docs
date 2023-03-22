@@ -9,7 +9,7 @@ menu:
   basics:
     parent: "basics-how-retrieval-works"
     identifier: "basic-retrieval-76fb85b69ed8bd7589dbb01a8e291904"
-weight: 100
+weight: 410
 toc: true
 aliases:
     - "/developers/storage-helpers/how-tos/retrieve-data/"
