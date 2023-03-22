@@ -1,20 +1,25 @@
+---
 name: Content Request / Issue
-description: File a request for new content or changes, fixes and updates to existing content.
+description: File a request for new content or changes, fixes and updates to
+  existing content.
 title: "[Request]: "
-labels: ["need/triage"]
+labels:
+  - need/triage
 assignees:
   - johnnymatthews
   - ElPaisano
 body:
   - type: markdown
     attributes:
-      value: |
-        To ensure we can quickly address your request, please enter all available information. **If you are requesting troubleshooting support or technical assistance with Filecoin software, please use ...
-    - type: dropdown
+      value: >
+        To ensure we can quickly address your request, please enter all available
+        information.
+  - type: dropdown
     id: version
     attributes:
-      label: Version
-      description: Are you requesting new content, changes to existing content, or something else?
+      label: Request type
+      description: Are you requesting new content, changes to existing content, or
+        something else?
       options:
         - New content
         - Changes to existing content
@@ -32,14 +37,16 @@ body:
     id: other
     attributes:
       label: Is there any other information we need to know?
-      description: Please include additional information that is relevant to this content request.
+      description: Please include additional information that is relevant to this
+        content request.
     validations:
       required: false
   - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md)
+      description: By submitting this issue, you agree to follow our [Code of
+        Conduct](https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md)
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
