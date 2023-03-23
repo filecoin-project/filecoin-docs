@@ -169,6 +169,12 @@
   weight = 30
   identifier = "providers-rewards"
   url = "/storage-provider/rewards"
+
+[[storage-provider]]
+  name = "Videos"
+  weight = 40
+  identifier = "providers-videos"
+  url = "/storage-provider/videos"
 # ----------------------
 
 
