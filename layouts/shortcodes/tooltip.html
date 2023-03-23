@@ -1,11 +1,15 @@
 <!-- Create array/map of all possible tooltips. -->
 {{ $tooltips := dict
     "block reward" "FIL awarded based on the amount of storage power a storage provider is able to provide, weighted by quality multipliers of the different deal types stored."    "consensus" " Any procedure used to achieve agreement, trust, and security in a decentralized network."
+    "Byzantine fault-tolerant" "The ability of a blockchain to continue to operate correctly even if some nodes fail, stop performing their functions, or act maliciously."
     "commP" "The commitment phase of the Proof-of-Replication (PoRep) process."
     "cryptographic proving systems" "A cryptographic protocol where a prover proves something to a verifier. Used by all blockchains."
+    "consensus" "Any method used to achieve agreement, trust, and security in a blockchain. "
+    "drand" "A publicly verifiable, unbiasable random beacon protocol used to generate a series of deterministic, verifiable random values."
     "DataCap" "A resource that can be added storage deals, increasing that deal's value for storage providers by a factor of 10."
     "dApps" "Decentralized applications that don't rely on centralized infrastructure."
     "epoch" "The fundamental unit of time in the Filecoin blockchain, currently 30 seconds in length."
+    "f410 addresses" "An Ethereum-style 0x address on the Filecoin network."
     "IPFS" "The InterPlanetary File System (IPFS) is a peer-to-peer protocol for sharing and storing files on the internet, designed to be decentralized and distributed."
     "Lotus" "The reference node implementation for the filecoin network."
     "Lily" "Software designed to simplify the recording of blockchain data."
@@ -15,7 +19,8 @@
     "power" " A measurement of the amount of storage provided over time by a storage provider."
     "proving period" "24 hours, broken down into 30 minute, non-overlapping deadlines, for a total of 48 deadlines."
     "sector" "The basic units of storage on Filecoin. Sectors have standard sizes, as well as well-defined time-increments for commitments, and can contain pieces from multiple deals and clients."
-    "web3" "The latest iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics."
+    "tFIL" "Test FIL used on Filecoin testnets. tFIL has no real-world value."
+    "web3" "A new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics."
 }}
 
 <!-- Pick the item from the array/map we want based on -->
