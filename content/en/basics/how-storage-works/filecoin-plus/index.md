@@ -14,6 +14,7 @@ toc: true
 aliases:
     - "/store/overview/start-storing/"
     - "/store/filecoin-plus/overview/"
+    - "/store/filecoin-plus"
 ---
 
 ## Concepts
