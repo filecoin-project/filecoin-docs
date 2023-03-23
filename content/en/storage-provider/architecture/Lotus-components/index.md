@@ -21,7 +21,7 @@ Although you can find detailed information on how to install and configure Lotus
 
 The following picture shows the major components of Lotus:
 
-![Lotus software components](lotus-components.png)
+[![Lotus software components](lotus-components.png)](lotus-components.png)
 
 There are 3 large blocks to understand:
 - Lotus daemon

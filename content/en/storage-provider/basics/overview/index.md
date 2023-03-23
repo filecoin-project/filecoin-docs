@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks."
+description: "Storage providers in the Filecoin network are in charge of providing capacity, storing data and issuing new blocks."
 draft: false
 images: []
 type: docs
@@ -11,12 +11,11 @@ menu:
 weight: 10
 toc: true
 aliases:
-    - "/storage-provider/overview/"
-    - "/mine/"
-    - "/mine/spacerace/"
-    - "/mine/connectivity"
+  - "/storage-provider/overview/"
+  - "/mine/"
+  - "/mine/spacerace/"
+  - "/mine/connectivity"
 ---
-
 
 ## Becoming a Storage Provider
 
@@ -26,13 +25,11 @@ To understand how you can run a profitable business as a Filecoin Storage Provid
 
 Storage Providers can also add additional value to clients when they offer certain certifications. These can enable a Storage Provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR <!--TODO hyperlink these to definitions -->and others.
 
-
 ## People & Talent
 
 As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstate data availability to the network. There are many things that can go wrong in a datacenter, on your network, on your OS, or at an application level.
 
 You will need skilled people to operate your Storage Provider business. Depending on the size and complexity of your setup this can be 1 person with skills across many different domains, or multiple dedicated people or teams.
-
 
 ## Infrastructure & Architecture
 

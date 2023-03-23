@@ -23,11 +23,6 @@ aliases:
 
 [![1 PiB raw reference architecture](1PIB.png)](1PIB.png)
 
-{{< alert >}}
-(click the image to enlarge)
-{{< /alert >}}
-
-
 The following reference architecture is designed for 1PiB of raw sectors or raw data to be stored. Let's discuss the various design choices of this architecture.
 
 ### Virtual machines
@@ -80,9 +75,10 @@ The scratch space from PC1 is copied over to the PC2 worker. This PC2 worker als
 
 C1 doesn't require much attention for our architecture. C2 however requires a capable GPU again.
 
+<!--
 ## Beginner's corner
 Angelo to write a section on the use of refurbished hardware
-
+-->
 ## Community suggestions
 
 Hardware requirements and architecture configurations evolve continually, based on evolving tech and software, market demands and available hardware. Because of this, we do not list any recommendations or examples on this page. Instead, look at the [example miner hardware profiles](https://github.com/filecoin-project/lotus/discussions/6071) in the Lotus project GitHub discussions.

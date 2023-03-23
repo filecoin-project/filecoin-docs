@@ -1,5 +1,5 @@
 ---
-title: "Filecoin Plus programs"
+title: "Filecoin programs"
 description: ""
 lead: ""
 date: 2022-01-25T14:41:39+01:00
@@ -24,6 +24,14 @@ Although it is possible to find your own data storage customers with valuable da
 ### Web3.storage
 
 **[web3.storage](http://web3.storage)**. Web3.storage runs on “Elastic IPFS” as the inbound storage protocol offering scalability, performance and reliability as the platform grows. It guarantees the user (typically developers) that the platform will always serve your data when you need it. In the backend the data is uploaded onto the Filecoin Network for long-term storage.
+
+### Filecoin Green
+
+**[Filecoin Green](https://green.filecoin.io)**. Filecoin Green aims to measure the environmental impacts of Filecoin and verifiably drive them below zero, building infrastructure along the way that allows anyone to make transparent and substantive environmental claims. The team maintains the [Filecoin Energy Dashboard](https://filecoin.energy/) and works with Storage Providers to decarbonize their operations through the [Energy Validation Process](https://filecoin-green.gitbook.io/filecoin-green-documentation/storage-providers-green-guidance-documentation/storage-providers-tiered-sustainability-claims). Connect with the team on Slack at **#fil-green**, or via email at [green@filecoin.org](mailto:green@filecoin.org)
+
+### CO2.Storage
+
+**[CO2.Storage](https://co2.storage)**. CO2.Storage is a decentralized storage solution for structured data based on content addressed data schemas. CO2.Storage primarily focuses on structured data for environmental assets, such as Renewable Energy Credits, Carbon Offsets, and geospatial datasets and maps inputs to base data schemas (IPLD DAGs) for off-chain data (like metadata, images, attestation documents, and other assets) to promote the development of standard data schemas for environmental assets. This project is in *alpha*, and while many features can be considered stable, we are waiting until we are feature complete to fully launch. The Filecoin Green team is actively working on this project and welcomes contributions from the community.
 
 ### Slingshot
 
