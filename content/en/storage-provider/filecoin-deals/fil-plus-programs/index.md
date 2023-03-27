@@ -35,8 +35,10 @@ Although it is possible to find your own data storage customers with valuable da
 
 ### Slingshot
 
-**[Slingshot](https://slingshot.filecoin.io)** is a program that unites Data Clients, Data Preparers and Storage Providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot is a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provides deals to registered and certified Storage Providers. The data is prepared and uploaded using a tool called Singularity. The program has clear expectations of a Storage Provider regarding their capabilities. <!-- TODO STEF and they are?-->
+**[Slingshot](https://slingshot.filecoin.io)** is a program that unites Data Clients, Data Preparers and Storage Providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot is a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provides deals to registered and certified Storage Providers. The data is prepared and uploaded using a tool called Singularity. The program has clear expectations of a Storage Provider regarding their capabilities. <!-- TODO STEF and they are? --Bob: clearly listed on their website-->
 
+See the below video for more information on Slingshot:
+{{<youtube "14sasiEThig">}}
 ### Evergreen
 
 **[Evergreen](https://evergreen.filecoin.io/)** extends the Slingshot program by aiming to store the open datasets forever. Standard deals have a maximum duration of 540 days which is not long enough for valuable, open datasets that might need to be stored forever. Evergreen uses a deal engine (**[Spade](https://github.com/ribasushi/spade)**) that automatically extends the lifetime of the dataset on-chain. It makes sure the data gets stored at a Storage Provider in the network. <!-- TODO STEF wait how does spade relate to boost?-->
