@@ -26,7 +26,7 @@ lassie fetch <CID>
 Lassie fetches content in content-addressed archive (CAR) form, so in most cases you will need additional tooling to deal with CAR files.
 Lassie can also be used as a library to fetch data from Filecoin from within your application. Due to the diversity of data transport protocols in the IPFS ecosystem Lassie is able to use the Graphsync or Bitswap protocols, depending on how to the requested data is available to be fetched. One of the most prominent use case of Lassie library is **Saturn Network** nodes fetching the content from Filecoin and IPFS to serve the retrievals. 
 
-![Lassie Architecture](lassie_architecture.png)
+![Lassie Architecture](Lassie_architecture.jpg "Lassie Architecture")
 
 ### Retrieve using Lassie
 
@@ -68,7 +68,10 @@ You now have everything you need to retrieve a file with Lassie and extract the 
 
 #### Retrieve
 
-To retrieve data from Filecoin using Lassie, all you need is the CID of the content you want to download. You can use the following CIDs to test the process:
+To retrieve data from Filecoin using Lassie, all you need is the CID of the content you want to download.
+
+Below video demonstrate how Lassie can be used to render content directly from Filecoin/IPFS.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h_zCd7ssKCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Lassie and go-car can work together to retrieve and extract data from Filecoin, all you need is the CID of the content to download.
 
