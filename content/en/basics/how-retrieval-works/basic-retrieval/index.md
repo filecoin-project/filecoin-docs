@@ -34,7 +34,9 @@ Make sure that you have [Go](https://go.dev/) installed and that your `GOPATH` i
 
 #### Install Lassie
 
-1. Download and install Lassie using the Go package manager:
+1. Download the [Lassie Binary from the latest release](https://github.com/filecoin-project/lassie/releases/latest) based on your system architecture.
+
+   Or download and install Lassie using the Go package manager:
 
     ```shell
     go install github.com/filecoin-project/lassie/cmd/lassie@latest
@@ -48,7 +50,9 @@ Make sure that you have [Go](https://go.dev/) installed and that your `GOPATH` i
     ...
     ```
 
-2. Install the [go-car](https://github.com/ipld/go-car) package using the Go package manager:
+2. Download the [go-car binary from the latest release](https://github.com/ipld/go-car/releases/latest) based on your system architecture
+
+   or install the [go-car](https://github.com/ipld/go-car) package using the Go package manager:
 
     ```shell
     go install github.com/ipld/go-car/cmd/car@latest
