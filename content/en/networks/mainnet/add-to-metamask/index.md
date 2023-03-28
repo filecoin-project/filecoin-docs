@@ -1,7 +1,7 @@
 ---
 title: "Add to metamask"
-description: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to integrate FIL into MetaMask using the Filecoin mainnet."
-lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to integrate FIL into MetaMask using the Filecoin mainnet."
+description: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet."
+lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet."
 draft: false
 images: []
 type: docs
@@ -18,7 +18,7 @@ aliases:
 
 ## Simple method
 
-The easiest way to add a Filecoin testnet to your MetaMask is by using the pre-configured options at chainlist.org.
+The easiest way to add a Filecoin network to your MetaMask is by using the pre-configured options at chainlist.org.
 
 1. Go to [chainlist.org](https://chainlist.org/).
 1. Enter `Filecoin` into the search bar.
@@ -43,7 +43,7 @@ Before we get started, you'll need the following:
 
 ### Steps
 
-The process for integrating Filecoin into MetaMask is fairly simple but has some very specific variables that you must copy exactly.
+The process for configuring MetaMask to use Filecoin is fairly simple, but has some very specific variables that you must copy exactly.
 
 1. Open your browser and open the MetaMask plugin. If you haven't opened the MetaMask plugin before, you'll be prompted to create a new wallet. Follow the prompts to create a wallet.
 2. Click the user circle and select **Settings**:
