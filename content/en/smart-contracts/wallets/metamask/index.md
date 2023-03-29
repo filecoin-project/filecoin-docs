@@ -21,7 +21,7 @@ MetaMask can be downloaded as a browser extension for Google Chrome, Mozilla Fir
 
 ## Configure MetaMask
 
-MetaMask is an Ethereum-based application, so it does not natively support Filecoin. However, it can be configured to use the Filecoin network fairly simply. This process is the same for mainnet, Hyperspace testnet, Calibration testnet, and a local testnet. In this guide we're going to connect MetaMask to the Filecoin Hyperspace testnet.
+MetaMask is an Ethereum-based application, so it does not natively support Filecoin. However, it can be configured to use the Filecoin network fairly simply. This process is the same for mainnet, Hyperspace testnet, Calibration testnet, and a local testnet. In this guide, we're going to connect MetaMask to the Filecoin Hyperspace testnet.
 
 1. Go to [chainlist.org](https://chainlist.org/).
 1. Enter `Filecoin` into the search bar. If you would like to connect to a testnet, enable the **Testnets** toggle:
@@ -84,7 +84,7 @@ If you can't or don't want to use Chainlist, you can add the Hyperspace network 
     | Mainnet | Filscan: `https://filscan.io` <br> Glif: `https://explorer.glif.io/` |
     | Calibration | Filscan: `https://calibration.filscan.io/` <br> Glif: `https://explorer.glif.io/?network=calibrationnet` |
     | Hyperspace | Filscan: `https://hyperspace.filscan.io/` <br> Glif: `https://explorer.glif.io/?network=hyperspace` |
-    | Local testnet | Unfortunately there's currently no option for running a block explorer for a local network. |
+    | Local testnet | There's currently no option for running a block explorer for a local network. |
 
 1. Review the values in the fields and click **Save**.
 1. The Hyperspace testnet should now be shown in your MetaMask window.
