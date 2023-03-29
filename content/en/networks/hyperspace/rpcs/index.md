@@ -22,7 +22,14 @@ These endpoints are limited to all read-only Filecoin JSON RPC API calls and `MP
 
 - HTTPS: `https://api.hyperspace.node.glif.io/rpc/v1`
 - WebSockets: `wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1`
-- Lotus lite-node command: `FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite`
+- Lotus lite-node command: 
+
+    ```shell
+    FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite`
+    ```
+
+    When using a lite-node, you must omit the `/rpc/v1` from Glif's WebSocket address.
+
 
 ## [ChainStack](https://chainstack.com/labs/#filecoin)
 
