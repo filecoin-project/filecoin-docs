@@ -15,7 +15,7 @@ toc: true
 
 ## [Glif](https://glif.io)
 
-Please note that a publicly available hosted endpoint guarantees **only 2000 of the latest blocks.**
+Please note that publicly available hosted endpoints **only guarantee 2000 of the latest blocks.**
 
 - HTTPS: `https://api.node.glif.io/rpc/v1`
 - WebSocket: `wss://wss.node.glif.io/apigw/lotus/rpc/v1`
@@ -25,7 +25,7 @@ Please note that a publicly available hosted endpoint guarantees **only 2000 of 
   FULLNODE_API_INFO=wss://wss.node.glif.io/apigw/lotus lotus daemon --lite
   ```
 
-  When using a lite-node, you must omit the `/rpc/v1` from Glif's WebSocket address.
+  When using a lite-node, omit `/rpc/v1` from Glif's WebSocket address.
 
 - [Glif documentation](https://hosting.glif.io/)
 

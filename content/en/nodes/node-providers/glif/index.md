@@ -1,7 +1,7 @@
 ---
 title: "Glif"
 description: ""
-lead: "Instead of running a node and manually managing that infrastructure, developers can use third-party node providers like Glif to execute their transactions."
+lead: "Instead of manually managing and running a node, developers can use third-party node providers like Glif to execute transactions."
 draft: false
 images: []
 type: docs
@@ -13,7 +13,7 @@ weight: 100
 toc: true
 ---
 
-The Glif Node RPC API is a publicly hosted Lotus endpoint that supports JSON-RPC POST requests against the Lotus API. The Glif Nodes RPC API provides both a standard endpoint and a web socket endpoint. For further information, see the [official endpoint page](https://api.hyperspace.node.glif.io/rpc/v1).
+The Glif Node RPC API is a publicly hosted Lotus endpoint that supports JSON-RPC POST requests against the Lotus API. The Glif Nodes RPC API provides both a standard endpoint and a WebSocket endpoint. For further information, see the [official endpoint page](https://api.hyperspace.node.glif.io/rpc/v1).
 
 ## HTTP endpoints
 

@@ -1,7 +1,7 @@
 ---
 title: "Chainstack"
 description: ""
-lead: "Instead of running a node and manually managing that infrastructure, developers can use third-party node providers like Chainstack to execute their transactions."
+lead: "Instead of manually managing and running a node, developers can use third-party node providers like Chainstack to execute transactions."
 draft: false
 images: []
 type: docs
@@ -13,7 +13,7 @@ weight: 100
 toc: true
 ---
 
-The ChainStack RPC API, maintained by Chainstack Labs, provides high-performance Hyperspace testnet nodes for Filecoin builders, especially for applications built on the Filecoin Virtual Machine. The ChainStack RPC API provides both a standard endpoint and a web socket endpoint. For further information, see the [official page](https://chainstack.com/labs/#filecoin)
+The ChainStack RPC API, maintained by [Chainstack Labs](https://chainstack.com/), provides high-performance Hyperspace testnet nodes for Filecoin builders, especially for applications built on the Filecoin Virtual Machine. The ChainStack RPC API provides both a standard endpoint and a WebSocket endpoint. For further information, see the [official page](https://chainstack.com/labs/#filecoin)
 
 ## HTTP endpoints 
 
