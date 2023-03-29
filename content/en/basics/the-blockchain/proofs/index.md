@@ -32,7 +32,7 @@ The Filecoin network aims to provide useful, reliable storage to its participant
 In particular, the Filecoin proof process must verify the data was properly stored at the time of the initial request and is continuing to be stored based on the terms of the agreement between the client and the SP. In order for the proof processes to be robust, the process must:
 
 - Target a random part of the data.
-- Occur at a time interval such that it is not possible, profitable, or rationale for an SP to discard and re-fetch the copy of data.
+- Occur at a time interval such that it is not possible, profitable, or rational for an SP to discard and re-fetch the copy of data.
 
 In Filecoin, this process is known as _Proof-of-Storage_, and consists of two distinct types of proofs:
 
@@ -53,8 +53,8 @@ In the Filecoin storage lifecycle process, _Proof-of-Replication (PoRep)_ is use
 
 The unique encoding created during the sealing process is generated using the following pieces of information:
 
-- The data is sealed.
-- The storage provider seals the data.
+- The data being sealed.
+- The storage provider who seals the data.
 - The time at which the data was sealed.
 
 Because of the principles of cryptographic hashing, a new encoding will be generated if the data changes, the storage provider sealing the data changes, or the time of sealing changes. This encoding is unique and can be used to verify that a specific storage provider did, in fact, store a particular piece of client data at a specific time. 
