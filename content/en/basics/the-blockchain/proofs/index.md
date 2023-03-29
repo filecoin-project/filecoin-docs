@@ -53,7 +53,7 @@ In the Filecoin storage lifecycle process, _Proof-of-Replication (PoRep)_ is use
 
 The unique encoding created during the sealing process is generated using the following pieces of information:
 
-- The data sealed.
+- The data being sealed.
 - The storage provider who seals the data.
 - The time at which the data was sealed.
 
