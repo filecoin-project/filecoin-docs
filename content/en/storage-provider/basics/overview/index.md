@@ -1,6 +1,7 @@
 ---
-title: "Introduction"
-description: "Storage providers in the Filecoin network are in charge of providing capacity, storing data and issuing new blocks."
+title: "Becoming a Storage Provider"
+description: ""
+
 draft: false
 images: []
 type: docs
@@ -16,23 +17,46 @@ aliases:
   - "/mine/spacerace/"
   - "/mine/connectivity"
 ---
+The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 
-## Becoming a Storage Provider
+To become a Storage Provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable Storage Provider business.
 
-To become a Storage Provider in the Filecoin network you need a range of technical, financial and business skills. The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. These mechanisms are the primary reason why the hardware and other requirements for running a Storage Provider business are significantly higher than regular blockchain mining operations. The mechanisms are designed this way because, in contrast to some other blockchain solutions, where you can simply configure one or more nodes to “mine” tokens, the Filecoin network’s primary goal is to provide decentralized storage for humanity’s most valuable data.
+Follow these steps to begin your storage provider journey:
 
-To understand how you can run a profitable business as a Filecoin Storage Provider, it is important to make sure you understand the economics of Filecoin. Once you understand all the the core concepts, you can build out a strategy for your desired ROI. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable Storage Provider business.
+1. Understand Filecoin economics
+2. Plan your business
+3. Make sure you have the right skills
+4. Build the right infrastructure
 
-Storage Providers can also add additional value to clients when they offer certain certifications. These can enable a Storage Provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR <!--TODO hyperlink these to definitions -->and others.
+## Understand Filecoin economics
 
-## People & Talent
+To understand how you can run a profitable business as a Filecoin Storage Provider, it is important to make sure you understand the economics of Filecoin. Once you understand all the the core concepts, you can build out a strategy for your desired ROI.
 
-As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstate data availability to the network. There are many things that can go wrong in a datacenter, on your network, on your OS, or at an application level.
+Storage Providers can also add additional value to clients when they offer certain certifications. These can enable a Storage Provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
+
+**[Filecoin economics →]({{<relref "storage-proving" >}})**
+
+## Plan your business
+
+The hardware and other requirements for running a Filecoin Storage Provider business are significantly higher than regular blockchain mining operations. The mechanisms are designed this way because, in contrast to some other blockchain solutions, where you can simply configure one or more nodes to “mine” tokens, the Filecoin network’s primary goal is to provide decentralized storage for humanity’s most valuable data.
+
+You need to understand the various earning mechanisms in the Filecoin network.
+
+**[Filecoin deals →]({{<relref "storage-deals" >}})**
+
+## Make sure you have the right skills
+
+As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstrate data availability to the network. There are many things that can go wrong in a datacenter, on your network, on your OS, or at an application level.
 
 You will need skilled people to operate your Storage Provider business. Depending on the size and complexity of your setup this can be 1 person with skills across many different domains, or multiple dedicated people or teams.
 
-## Infrastructure & Architecture
+**[People and skills →]({{<relref "linux-skills" >}})**
 
-At the lowest level, you will need datacenter infrastructure. You need people capable of architecting, racking, wiring and operating infrastructure components. Alternatively, you can get it colocated, or even entirely as a service from a datacenter provider.
+## Build the right infrastructure
 
-Take availability and suitable redudancy into consideration when choosing your datacenter or colocation provider. Any unavailability of your servers, network or storage can result in automatic financial penalties on the Filecoin network. <!-- TODO STEF do we have guidance on what HA % people should aim for - feels like more detail would be helpful here -->
+At the lowest level, you will need datacenter infrastructure. You need people capable of architecting, racking, wiring and operating infrastructure components. Alternatively, you can get it collocated, or even entirely as a service from a datacenter provider.
+
+Take availability and suitable redundancy into consideration when choosing your datacenter or collocation provider. Any unavailability of your servers, network or storage can result in automatic financial penalties on the Filecoin network.
+
+**[Software architecture →]({{<relref "lotus-components" >}})**
+**[Infrastructure →]({{<relref "storage" >}})**
