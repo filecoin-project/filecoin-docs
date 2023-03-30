@@ -120,3 +120,5 @@ The Lotus worker is the 3rd important software component in the Lotus architectu
 
 As mentioned above, the proving tasks can be assigned to designated workers and worker can also get storage access.
 The remaining worker tasks are running [Sealing Pipeline]({{<relref "sealing-pipeline">}}) which is discussed in the next section.
+
+{{< sp-calls-to-action >}}
