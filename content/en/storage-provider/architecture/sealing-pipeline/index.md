@@ -52,11 +52,13 @@ When PC1 has completed on a given sector, the entire scratch space for that sect
 
 The PC2 task uses the Poseidon hashing algorithm over the Merkle Tree DAG that was created in PC1. In short: PC2 validates PC1.
 
-Where PC1 is very CPU-bound, PC2 is executed on GPU. This task is also notably shorter than PC1. PC2 typically runs for 10-20 minutes on a capable GPU. This requires a GPU of 24+GB memory and 8000+ CUDA cores / shading units (in case of NVIDIA). Slower GPU's are possible but might create a bottleneck in the sealing pipeline.
+Where PC1 is very CPU-bound, PC2 is executed on GPU. This task is also notably shorter than PC1. PC2 typically runs for 10-20 minutes on a capable GPU. This requires a GPU of 10+ GB of memory and 3500+ CUDA cores / shading units (in case of NVIDIA). Slower GPU's are possible but might create a bottleneck in the sealing pipeline.
 
-In case of a [Snap Deal]({{<relref "snap-deals">}}) an existing CC sector is filled with data. The PC1-task does not run again but the snapping process employs the PC2 task to add the data to the sector.
+For best performance compile lotus with cuda support instead of OpenCL : [CUDA Setup](https://lotus.filecoin.io/tutorials/lotus-miner/cuda/)
 
-When PC2 is done for a sector, a "precommit" message is posted on-chain. Lotus will batch these messages to avoid sending messages to the chain for every single sector. Next to batching there is a configured timeout interval (24h by default) after which the message will be sent on-chain. These configuration parameters are found in the `.lotusminer/config.toml` file.
+In case of a [Snap Deal]({{<relref "snap-deals">}}) an existing CC sector is filled with data. The PC1-task does not run again but the snapping process employs the replica-update and prove-replica-update task to add the data to the sector which you can run on the PC2 worker or on a separate worker depending on your sealing pipeline capacity.
+
+When PC2 is done for a sector, a "precommit" message is posted on-chain. Lotus will batch these messages (if batching is configured) to avoid sending messages to the chain for every single sector. Next to batching there is a configured timeout interval (24h by default) after which the message will be sent on-chain. These configuration parameters are found in the `.lotusminer/config.toml` file.
 
 If you want to force the precommit-message on-chain (for testing purposes for instance), run:
 
