@@ -109,11 +109,11 @@ lotus-miner sealing workers
 
 ### Storage proving
 
-One of the most important roles of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the Lotus miner. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (workers) instead of using the Lotus miner. 
+One of the most important roles of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the lotus-miner process. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (proving workers) instead of using the Lotus miner. 
 
 The proving processes require low-latency access to the sealed sectors. The proving challenge requires a GPU to run on. The resulting zkProof will be sent to the chain in a message. There are strict deadlines for those messages to arrive on-chain (30 minutes for WindowPoSt and just 30 seconds for WinningPoSt). It is therefore important to properly size and configure the proving workers (be it on the Lotus miner <!--TODO STEF this whole section mixes names for software processes and hardware instances a lot - suggest reviewing the whole thing to disambiguate-->or separate) and to make sure there are dedicated wallets set up for these processes. If they use the general worker wallet there is the risk of message congestion, resulting in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards.
 
-Always check if there are upcoming proving deadlines before halting any services for maintenance. Foe a detailed process, please refer to the [lotus maintentience](https://lotus.filecoin.io/storage-providers/operate/maintenance/) documents. 
+Always check if there are upcoming proving deadlines before halting any services for maintenance. For a detailed process overview, please refer to the [lotus maintenance](https://lotus.filecoin.io/storage-providers/operate/maintenance/) documents. 
 
     lotus-miner proving deadlines
 
@@ -121,7 +121,7 @@ Always check if there are upcoming proving deadlines before halting any services
 
 The Lotus worker is the 3rd important software component in the Lotus architecture. There can be - and most likely will be - multiple workers in a single Storage Provider setup. Assigning designated roles to each worker in the setup allows for scaling the setup for higher throughput (see [Sealing Rate]({{<relref "sealing-rate">}})) and redundancy.
 
-As mentioned above, the proving tasks can be assigned to designated workers and worker can also get storage access.
+As mentioned above, the proving tasks can be assigned to designated workers and a worker can also get storage access if needed.
 The remaining worker tasks are running [Sealing Pipeline]({{<relref "sealing-pipeline">}}) which is discussed in the next section.
 
 {{< sp-calls-to-action >}}
