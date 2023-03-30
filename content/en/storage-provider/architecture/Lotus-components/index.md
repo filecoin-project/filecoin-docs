@@ -43,8 +43,9 @@ Another key role of the Lotus Daemon is to host the Filecoin wallets that are re
 
 It is important to note that careful security measures are required to keep your Lotus wallets safe. This includes physical access, network access, software security and making backups (that are also secured). As with any crypto wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), which is recommended for the owner wallet (and potentially for the terminate wallet). You cannot keep the worker or control  wallets on a hardware device because Lotus requires frequent access to those types of wallets. For instance, Lotus requires access to a worker or control wallet (depending on your setup) to send WindowsPoST proofs on-chain.
 
-In essence, Lotus will create a **multisig wallet** if you choose to integrate your Ledger device. One signer of the multisig would be Lotus, the other signer would be your Ledger device. For more information and a demonstration of this, see the following video:
+For more information and a demonstration of integrating your Ledger device with Lotus, see the following video:
 {{< youtube "u_S5F6WyBAU" >}}
+
 
 Type the following command to see your wallets and corresponding funds on them:
 
@@ -59,7 +60,6 @@ Five different control wallets can be created:
 - Terminate wallet
 
 PoST is by far the most important wallet to split off from the main "worker" wallet for reasons explained in the below Storage Proving paragraph.
-
 
 ## Lotus miner
 Lotus miner is the process that coordinates most of the Storage Provider (storage miner) activities. Its main responsibilities can be split up into 3:
