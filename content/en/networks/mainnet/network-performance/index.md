@@ -28,17 +28,17 @@ A message that requires [transferring FIL](https://lotus.filecoin.io/docs/set-up
 
 ## Data storage
 
-The Filecoin [data storage protocol](https://lotus.filecoin.io/docs/developers/store-data/) has a few key components once a deal is proposed and accepted:
+In the Filecoin [data storage protocol](https://lotus.filecoin.io/docs/developers/store-data/), the following occurs once a deal is proposed and accepted:
 
-1. Funding the storage market actor: This process takes ~1-2 minutes and ensures that both the client and the storage provider have funds and collateral to pay for the deal.
+1. _Funding the storage market actor_: This process takes roughly 1-2 minutes and ensures that both the client and the storage provider have funds and collateral to pay for the deal.
 
-2. Data transfer: This portion of the deal flow involves the client's node sending the relevant data to the providing node. The data transfer rate varies widely, depending on the client and the storage provider's network and disk bandwidths. Usually, the network speed between client and storage provider will be the critical determining factor.
+2. _Data transfer_: This portion of the deal flow involves the client's node sending the relevant data to the providing node. The data transfer rate varies widely, depending on the client and the storage provider's network and disk bandwidths. Generally, the network speed between client and storage provider is the limiting factor in transfer rate.
 
-3. Deal shows up on-chain: once the storage provider receives the data, they verify it to make sure it matches the deal parameters, and then they publish the deal on the chain.
+3. _Deal shows up on-chain_: Once the data is received, the storage provider verifies that it matches the deal parameters. Then, the provider publishes the deal on the chain.
 
-4. Sector sealing: Once the deal shows up on-chain, the storage provider must still complete [generating a Proof-of-Replication and sealing the sector](https://spec.filecoin.io/#systems__filecoin_mining__sector__adding_storage). This process is currently estimated to take ~1.5hours for a 32 GB sector on a machine that meets these [minimum hardware requirements for storage providers]({{< relref "reference-architectures" >}}).
+4. _Sector sealing_: Once the deal shows up on-chain, the storage provider must still [generate Proof-of-Replication and seal the sector](https://spec.filecoin.io/#systems__filecoin_mining__sector__adding_storage). This process is currently estimated to take roughly 1.5hours for a 32 GB sector on a machine that meets the [minimum hardware requirements for storage providers]({{< relref "reference-architectures" >}}).
 
-For most storage clients, the most important metric is the time it takes from deal acceptance to deal appearance on-chain. This metric is the sum of steps (1) to (3) above. Based on current high-level benchmarks, these steps are estimated to take around ~5-10 minutes for a 1 MiB file.
+For the majority of clients, the most important metric is the time from deal acceptance to deal appearance on-chain. This metric is the sum of the time required to complete steps (1) through (3), described above. Based on current high-level benchmarks, these steps are estimated to take roughly 5-10 minutes for a 1 MiB file.
 
 ## Data retrieval
 
