@@ -1,7 +1,7 @@
 ---
 title: "Network indexer"
 description: ""
-lead: ""
+lead: "InterPlanetary Network Indexer (IPNI) enables search for content-addressable data available from storage providers, such as those on the Filecoin and IPFS networks. Storage providers can publish the content IDs (CIDs) of their data to a _Network Indexer_, and clients can query the network indexer to learn where to retrieve the content identified by those CIDs. This documemt describes what storage providers should know about IPNI, such as how network indexers work and how storage providers should use them."
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
 draft: false
@@ -15,25 +15,25 @@ weight: 141
 toc: true
 ---
 
-InterPlanetary Network Indexer (IPNI) exists to enable searching for content-addressable data available from storage providers, such as those on the Filecoin and IPFS networks. Storage providers can publish the content IDs (CIDs) of their data to the Network Indexer, and clients can query the Network indexer to learn where to retrieve the content identified by those CIDs.
+
 
 ## What is a Network Indexer
 
-A Network Indexer is a system that maps CIDs to records of who has the data (provider data records). It is built to handle the scale of data in the Filecoin network and is usable by the IPFS network for locating data.
+A _Network Indexer_, also referred to as an _indexer node_ or _indexer_, maps content identifiers (CIDs) to records of who has the data and how to retrieve that data. These records are called _provider data records_. Indexers are built to scale in environments with massive amounts of data like the Filecoin network, and are also used by the IPFS network to located data. Because the Filecoin network stores so much data, clients can’t perform efficient retrieval without proper indexing; hence, indexer nodes work like a specialized key-value store for efficient retrieval of content-addressed data. for the following groups of users:
 
-Storage providers publish data to indexers, for clients to be able to find <!-- TODO STEF is this like cid.contact? are there others? --> A client that wants to know where a piece of information is stored can query an indexer, using the CID or multihash of the content. The indexer responds to the client with information about the provider(s). This tells the client where the content can be retrieved from, and how the content can be retrieved.
-
-As a Storage Provider, you will need to run an Indexer Node in your setup. See the [IPNI documentation](https://github.com/ipni/storetheindex/blob/main/doc/creating-an-index-provider.md) for more information on how to create an Index Provider.
+- _Storage providers_ advertise their available content by storing data in the indexer. This process is handled by the indexer's _ingest_ logic.
+- _Retrieval clients_ query the indexer to determine which storage providers have the content, and what protocol to use (i.e. graphsync, bitswap, etc.). This process is handled by the indexer's _find_ logic.
 
 ## How does the Network Indexer work?
 
-Filecoin stores a great deal of data, but without proper indexing, clients can’t perform efficient retrieval. To improve Filecoin content discoverability, Indexer nodes are developed to store mappings of CID multi-hashes to content provider records. A client uses a CID or multihash to lookup a provider record, and then uses that provider record to retrieve data from a storage provider. In short, the indexer works like a specialized key-value store for the following two groups of users:
-
-Storage providers advertise their available content by storing data in the Indexer. This is handled by the Indexer’s ingest logic.
-Retrieval clients query the Indexer to find which storage providers have the content, and how to retrieve it (i.e. graphsync, bitswap, etc.). This is handled by the Indexer’s find logic.
-
-This diagram summarizes the different actors in indexer ecosystem, and how they interact with each other:
+This diagram summarizes the different actors in the indexer ecosystem, and how they interact with each other:
 
 [![Network Indexer ecosystem](indexer.png)](indexer.png)
 
 For more info on how the indexer works, read this [blog post](https://filecoin.io/blog/posts/how-does-the-network-indexer-work/).
+
+## IPNI and storage providers
+
+Storage providers publish data to indexers so that clients can find that data using the CID or multihash of the content. <!-- TODO STEF is this like cid.contact? are there others? --> When a client queries the indexer using a CID or multihash, the indexer then responds to the client with the provider data record, which tells client where and how the content can be retrieved.
+
+As a Storage Provider, you will need to run an indexer in your setup so that your clients know where and how to retrieve data. For more information on how to create an index provider, see the [IPNI documentation](https://github.com/ipni/storetheindex/blob/main/doc/creating-an-index-provider.md).
