@@ -59,4 +59,5 @@ At the lowest level, you will need datacenter infrastructure. You need people ca
 Take availability and suitable redundancy into consideration when choosing your datacenter or collocation provider. Any unavailability of your servers, network or storage can result in automatic financial penalties on the Filecoin network.
 
 **[Software architecture →]({{<relref "lotus-components" >}})**
+
 **[Infrastructure →]({{<relref "storage" >}})**
