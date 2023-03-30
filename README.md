@@ -1,4 +1,3 @@
-<!-- HEADER -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
@@ -61,7 +60,7 @@ Follow these simple example steps to get a local version of the site up and runn
 
 
 
-<!-- PREREQUISITIES -->
+<!-- PREREQUISITES -->
 ### Prerequisites
 
 To run these commands, you must have [NPM installed](https://www.npmjs.com/). If you already have NPM installed, make sure you are running the latest version:
@@ -69,7 +68,7 @@ To run these commands, you must have [NPM installed](https://www.npmjs.com/). If
 ```shell
 npm install npm@latest -g
 ```
-<!-- /PREREQUISITIES -->
+<!-- /PREREQUISITES -->
 
 
 
@@ -91,14 +90,22 @@ Follow these steps to run a copy of this site on your local computer.
     npm install
     ```
 
-1. Build the project and serve it locally using Hugo's built-in server:
+1. Build and serve the project locally: 
 
     ```shell
-    npm run build
+    npm run start
     ```
-
+    
 1. Visit [localhost:1313](http://localhost:1313) to view the site.
 1. Press `CTRL` + `c` in the terminal to stop the local server.
+
+If you want to just build the site but _not_ serve it locally, run:
+
+```shell
+npm run build
+```
+
+A static site will be built and stored in the `/public` directory.
 <!-- /INSTALLATION -->
 
 
@@ -153,6 +160,32 @@ Here's a collection of guides you can use to help manage and contribute to this 
 
 - [Managing the top-bar navigation](https://bafybeidn4wxz44rssgdlu3p2dzh4tbyevuqd27xv7avioyf2m65jzlhnj4.ipfs.w3s.link/DaaS%20-%20Managing%20the%20topbar%20navigation%20-%20HD%201080p.mov)
 - [Move a page and add a redirect](https://bafybeibuwipv4rk2tzcqvouu2xlnebh4d7ol47mvmegtispbvlcruuwmhi.ipfs.w3s.link/Move%20and%20page%20and%20add%20a%20redirect.mp4)
+
+### Creating sidebar labels and content pages
+
+To create sidebar labels, use the `npm create` command:
+
+```shell
+npm run create -- --kind sidebar storage-provider/hardware 
+```
+
+The above command will create the folder structure and a `_index.md` file containing the front-matter for the label.
+
+### Creating content pages
+
+To create content pages, use the `npm create` command:
+
+```shell
+npm run create -- --kind page storage-provider/hardware/architectures
+```
+
+The above command will create a folder and an `index.md` file containing the front-matter for that page, that can then be edited.
+
+If you make a mistake and need to remove a page, or section, just delete the folder.
+
+To move content from one place to another, create the new pages using `npm create`, copy the text across to the newly created pages and delete the originals.
+
+
 
 ### Front-matter variables 
 
@@ -335,7 +368,7 @@ The identifier of each sub-menu is usually the menu object name and the title of
 
 #### Aliases
 
-The `aliases` variable defines URLs will rediect to this page. Each page can have multiple `aliases`, but each alias can only apear once throughout all the `.md` files within the `/content` folder.
+The `aliases` variable defines URLs will redirect to this page. Each page can have multiple `aliases`, but each alias can only appear once throughout all the `.md` files within the `/content` folder.
 
 For example, the `/get-started/overview` page can list `/get-started` as one of its aliases. However, no other page can list `/get-started` as an alias. If you attempt to assign another page the `/get-started` alias, Hugo will throw an error when you or Fleek try to build the website.
 
@@ -400,7 +433,7 @@ Take a look at the `/content/en/archive` directory for examples.
 
 #### Tooltips
 
-To make understand the docs a bit easier, users can hover over certain terms to get a short definition. These descriptions are located within a `dict` variable at the top of the `layouts/shortcodes/tooltip.html` shortcode:
+To make understanding terms in the docs a bit easier, users can hover over certain terms to get a short definition. These descriptions are located within a `dict` variable at the top of the `layouts/shortcodes/tooltip.html` shortcode:
 
 ```go
 <!-- Create array/map of all possible tooltips. -->
