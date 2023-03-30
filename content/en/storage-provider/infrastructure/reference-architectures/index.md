@@ -68,13 +68,13 @@ In this architecture we have attached storage shelves to the Lotus miner with 2.
 - 16 CPU Cores
 - 128 GB RAM
 - 2x 1TB SSD storage
-- 1x GPU 24+ GB memory, 6000+ CUDA cores
+- 1x GPU 10+ GB memory, 3500+ CUDA cores
 - 2x 10GbE ethernet NICs
 {{< /alert >}}
 
 We have split off the Winning PoST and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelihood of winning block rewards and reduces the likelihood of missing a proving deadline. For redundancy, you can run a standby WindowPoST worker on the WinningPoST server and vice versa.
 
-PoST workers require 128GiB of memory at the minimum and require a capable GPU with 24GB of memory and 6000 or more CUDA cores.
+PoST workers require 128GiB of memory at the minimum and require a capable GPU with min 10GB of memory and 3500 or more CUDA cores.
 
 ### Sealing workers
 
@@ -88,8 +88,8 @@ Keep in mind that using [Sealing-as-a-Service]({{<relref "sealing-as-a-service">
 
 - 32 CPU Cores **with SHA-extensions**
 - 1 TB RAM
-- 2x 1TB SSD scratch storage
-- 15+ TB U.3 NVMe main storage
+- 2x 1TB SSD OS storage
+- 15+ TB U.3 NVMe sealing / scratch storage
 - 2x 10GbE (or faster) ethernet NICs
 {{< /alert >}}
 
@@ -115,7 +115,7 @@ Every PC1 processes requires ~450GiB of sealing scratch space. This scratch spac
 - 32 CPU Cores
 - 512 GB RAM
 - 2x 1TB SSD
-- 1x GPU 24+ GB memory, 6000+ CUDA cores
+- 1x GPU 10+ GB memory, 3500+ CUDA cores
 - 2x 10GbE (or faster)
 {{< /alert >}}
 
@@ -136,14 +136,3 @@ TODO Angelo to write a section on the use of refurbished hardware
 Hardware requirements and architecture configurations evolve continually, based on evolving tech and software, market demands and available hardware. Because of this, we do not list any recommendations or examples on this page. Instead, look at the [example miner hardware profiles](https://github.com/filecoin-project/lotus/discussions/6071) in the Lotus project GitHub discussions.
 
 [![Screenshot of a community discussion on GitHub.](github-arch-discussion.png)](https://github.com/filecoin-project/lotus/discussions/6071)
-
-
-## Solo storage providing
-
-Please take a look at the presentation Benjamin Hoejsbo <!--TODO STEF who? where from? why should I trust him? Bob: existing text, probably to be removed--> gave where they examine solo storage provider setups.
-
-{{< youtube "LKMjCgo-fkA" >}}
-
-{{< alert icon="callout" >}}
-We are working to improve this section. If you would like to share your mining setup, please create an issue in the [Filecoin Docs Github repository](https://github.com/filecoin-project/filecoin-docs/issues)!
-{{< /alert >}}
