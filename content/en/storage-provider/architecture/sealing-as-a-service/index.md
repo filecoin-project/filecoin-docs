@@ -1,7 +1,7 @@
 ---
-title: "Sealing-as-a-Service"
+title: "Sealing-as-a-service"
 description: ""
-lead: ""
+lead: "Storage providers with hardware cost or availability constraints can use _Sealing-as-a-service_, in which another provider performs sector sealing on the storage providers behalf. This page describes how sealing-as-a-service works, and the benefits to storage providers."
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
 draft: false
@@ -15,18 +15,24 @@ weight: 140
 toc: true
 ---
 
-## What is Sealing-as-a-Service?
+## Overview
 
-In a traditional setup, a Storage Provider needs high-end hardware to build out a [sealing pipeline]({{<relref "sealing-pipeline">}}). That hardware is not cheap and sometimes not readily available. Sealing-as-a-Service is a service in which another provider does the sealing for you. As a Storage Provider you provide the data to the sealer, who seals the data into sectors and provides you with sealed sectors in exchange for a service cost. Other solutions are possible where the sealing partner seals CC sectors for you, which you in turn [snap up]({{<relref "snap-deals">}}) to data sectors.
+In a traditional setup, a Storage Provider needs high-end hardware to build out a [sealing pipeline]({{<relref "sealing-pipeline">}}). Storage providers with hardware cost or availability constraints can use _Sealing-as-a-Service_, a service in which another provider performs sector sealing on the storage providers behalf. In this model, the following occurs:
+
+1. The storage provider provides the data to the sealer
+1. The sealer seals the data into sectors.
+1. The sealer returns the sealed sectors in exchange for a service cost.
+
+## Benefits
+
+Sealing-as-a-service provides multiple benefits for storage providers:
+
+- Available storage can be filled faster, thereby maximizing block rewards, without investing in a complex, expensive sealing pipeline.
+- Bigger deals can be onboarded, as Sealing-as-a-Service essentially offers a burst capability in your sealing capacity. Thus, storage providers can take on larger deals without worrying about sealing time and not meeting client expectations.
+- Storage capacity on the Filecoin network can be expanded without investing in a larger sealing pipeline.
+
+Other solutions are possible where the sealing partner seals CC sectors for you, which you in turn [snap up]({{<relref "snap-deals">}}) to data sectors.
 
 See the following video from [Aligned](https://aligned.co/sealing-as-a-service) about their offering of Sealing-as-a-Service:
 {{< youtube "v4l1lGsUXvs" >}}
 <!--TODO STEF Sounds great. Who (plural) is providing this? What does it cost? What are the terms? What is the turnaround time? How risky is it? -->
-
-## Benefits of Sealing-as-a-Service
-
-There are multiple benefits that Sealing-as-a-Service enables for Storage Providers.
-
-- With Sealing-as-a-Service you can fill up your available storage faster, so you can start earning maximum block rewards without investing in a complex, expensive sealing pipeline.
-- You can potentially onboard bigger deals, that you might otherwise not be able to seal in time in order to meet customer expectations. Sealing-as-a-Service essentially offers a burst capability in your sealing capacity.
-- You can expand your storage capacity on the Filecoin network without investing in a big(ger) sealing pipeline.
