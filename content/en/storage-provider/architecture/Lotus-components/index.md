@@ -81,7 +81,7 @@ Run the following command to check the storage configuration for your Lotus mine
 
 This will return your _sealed space_ and your _scratch space_ (cache) if you have properly configured your miner by following the steps in the [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
-It is extremely important to keep a backup of your sealed sectors, and ideally also of the unsealed sectors. Additionally also backup the *sectorstore.json* file that lives under your storage path. This file is also required to be restored in the event of a failure.You can read more about the sectorstore.json file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
+It is extremely important to keep a backup of your sealed sectors, and ideally also of the unsealed sectors. Additionally also backup the _sectorstore.json_ file that lives under your storage path. This file is also required to be restored in the event of a failure.You can read more about the sectorstore.json file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
 ### Scheduling
 Another key responsibility of the Lotus Miner is scheduling of tasks. Tasks to be scheduled include those of the [sealing pipeline]({{<relref "sealing-pipeline" >}}) and of the Storage Proving (see below).
 
