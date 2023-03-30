@@ -1,3 +1,18 @@
+button {
+  background: $blue-400;
+  color: $white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background-color 200ms ease;
+  border: none;
+}
+
+button:hover {
+  color: $white;
+  text-decoration: none;
+  background-color: $blue-500;
+}
+
 .navbar .btn-link {
   color: $navbar-light-color;
   padding: 0.4375rem 0;

@@ -16,13 +16,20 @@ aliases:
 
 ---
 
-These endpoints are limited to all read-only Filecoin JSON RPC API calls and `MPoolPush` for sending preemptively signed messages.
+These endpoints are limited to all [read-only Filecoin JSON RPC API calls]({{< relref "/reference/json-rpc/introduction" >}}) and [`MPoolPush`]({{< relref "/reference/json-rpc/mpool#mpoolpush" >}}) for sending messages that have already been signed.
 
 ## [Glif](https://glif.io)
 
 - HTTPS: `https://api.hyperspace.node.glif.io/rpc/v1`
 - WebSockets: `wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1`
-- Lotus lite-node command: `FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite`
+- Lotus lite-node command: 
+
+    ```shell
+    FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite`
+    ```
+
+    When using a lite-node, omit `/rpc/v1` from Glif's WebSocket address.
+
 
 ## [ChainStack](https://chainstack.com/labs/#filecoin)
 
