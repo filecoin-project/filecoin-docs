@@ -14,12 +14,12 @@
   weight = 30
 
 [[main]]
-  name = "Store"
+  name = "Storing data"
   url = "/store/overview/start-storing/"
   weight = 60
 
 [[main]]
-  name = "Providers"
+  name = "Storage Providers"
   url = "/storage-provider/basics/overview/"
   weight = 70
 

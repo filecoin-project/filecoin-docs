@@ -32,7 +32,7 @@ Running a Filecoin node is a low-level task that usually implies keeping a progr
 
 Storage providers (SPs) deliver services to the network by executing different types of [deals](#deals). SPs also append new blocks to the chain every 30 seconds, for which they collect FIL rewards. Additional details about types of providers, rewards, and deals execution from the storage provider perspective can be found in the [Storage Provider]({{< relref "storage-provider" >}}) section.
 
-Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements]({{< relref "hardware-requirements" >}}) The [`lotus-miner` application](https://lotus.filecoin.io) is currently the most advanced implementation of a Filecoin storage provider.
+Running a Filecoin storage provider is a highly-technical task with strong [hardware requirements]({{< relref "reference-architectures" >}}) The [`lotus-miner` application](https://lotus.filecoin.io) is currently the most advanced implementation of a Filecoin storage provider.
 
 ## Deals
 

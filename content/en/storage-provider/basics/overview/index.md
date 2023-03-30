@@ -1,6 +1,7 @@
 ---
 title: "Becoming a Storage Provider"
 description: ""
+
 draft: false
 images: []
 type: docs
@@ -11,10 +12,10 @@ menu:
 weight: 10
 toc: true
 aliases:
-    - "/storage-provider/overview/"
-    - "/mine/"
-    - "/mine/spacerace/"
-    - "/mine/connectivity"
+  - "/storage-provider/overview/"
+  - "/mine/"
+  - "/mine/spacerace/"
+  - "/mine/connectivity"
 ---
 The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 
