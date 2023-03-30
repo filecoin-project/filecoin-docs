@@ -30,6 +30,22 @@ Network security is another important consideration for storage provider setups.
 
 In summary, network skills are essential for building and maintaining a high-performing storage provider setup. A solid understanding of network architecture, topology, protocols, and security principles can help optimize performance, prevent bottlenecks, and protect against security threats. Monitoring the network is also crucial in identifying potential issues and ensuring smooth data flow.
 
+## Network infrastructure
+
+Network infrastructure, including switches, routers, and firewalls, plays a crucial role in the performance, reliability, and security of any network. Having the right infrastructure in place is essential to ensuring smooth and seamless network connectivity.
+
+Switches are essential for connecting multiple devices within a network. They direct data traffic between devices on the same network, allowing for efficient communication and data transfer. Switches come in a variety of sizes and configurations, from small desktop switches for home networks to large modular switches for enterprise networks. Choosing the right switch for your network can help ensure optimal performance and reliability.
+
+Routers, on the other hand, are responsible for connecting different networks together. They enable communication between devices on different networks, such as connecting a home network to the internet or connecting multiple offices in a business network. Routers also provide advanced features such as firewall protection and traffic management to help ensure network security and optimize network performance.
+
+Firewalls act as a first line of defense against external threats. They filter traffic coming into and out of a network, blocking malicious traffic and allowing legitimate traffic to pass through. Firewalls come in various forms, from hardware firewalls to software firewalls, and can be configured to block specific types of traffic or restrict access to certain parts of the network.
+
+When it comes to network infrastructure, it's important to choose switches, routers, and firewalls that are reliable, efficient, and secure. This means taking into account factors such as network size, bandwidth requirements, and security needs when selecting infrastructure components.
+
+In addition to choosing the right components, it's also important to properly configure and maintain them. This includes tasks such as setting up VLANs, implementing security features such as access control lists (ACLs), and regularly updating firmware and software to ensure optimal performance and security.
+
+In summary, network infrastructure, including switches, routers, and firewalls, is essential for building a reliable and secure network. Whether you are building a small home network or a large-scale enterprise network, investing in the right infrastructure components and properly configuring and maintaining them can help ensure optimal network performance, reliability, and security.
+
 ## Performance
 Performance is a critical aspect of a storage provider setup, particularly when dealing with high network throughput requirements between multiple systems. To ensure optimal performance, it is important to use network benchmarking tools such as iperf and iperf3. These tools make it easy to test network throughput and identify bottlenecks in the network setup.
 
