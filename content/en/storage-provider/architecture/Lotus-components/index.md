@@ -31,7 +31,7 @@ There are 3 large blocks to understand:
 
 ## Lotus daemon
 
-The Lotus daemon is the component that syncs the chain, includes the client and holds the wallets of the Storage Provider. This machine running the Lotus daemon requires continuously available public internet reachability <!--TODO STEF How fast, on which ports, what HA?--> for the Storage Provider to function.
+The Lotus daemon is the component that syncs the chain, includes the client and holds the wallets of the Storage Provider. This machine running the Lotus daemon requires continuously available public internet reachability for the Storage Provider to function. You can review connectivity requirements on the connectivity page within the [lotus documents](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider). 
 
 ### Chain
 
@@ -47,8 +47,9 @@ Another key role of the Lotus Daemon is to host the Filecoin wallets that are re
 
 It is important to note that careful security measures are required to keep your Lotus wallets safe. This includes physical access, network access, software security and making backups (that are also secured). As with any crypto wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), which is recommended for the owner wallet (and potentially for the terminate wallet). You cannot keep the worker or control  wallets on a hardware device because Lotus requires frequent access to those types of wallets. For instance, Lotus requires access to a worker or control wallet (depending on your setup) to send WindowsPoST proofs on-chain.
 
-In essence, Lotus will create a **multisig wallet** if you choose to integrate your Ledger device. One signer of the multisig would be Lotus, the other signer would be your Ledger device. For more information and a demonstration of this, see the following video:
+For more information and a demonstration of integrating your Ledger device with Lotus, see the following video:
 {{< youtube "u_S5F6WyBAU" >}}
+
 
 Type the following command to see your wallets and corresponding funds on them:
 
@@ -87,9 +88,7 @@ Run the following command to check the storage configuration for your Lotus mine
 
 This will return your _sealed space_ and your _scratch space_ (cache) if you have properly configured your miner by following the steps in the [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
-It is extremely important to keep a backup of your sealed sectors, and ideally also of the unsealed sectors. Additionally also backup the *sectorstore.json* file that lives under your storage path. This file is also required to be restored in the event of a failure.You can read more about the sectorstore.json file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
-
-### Scheduling
+It is extremely important to keep a backup of your sealed sectors, and ideally also of the unsealed sectors. Additionally also backup the _sectorstore.json_ file that lives under your storage path. This file is also required to be restored in the event of a failure.You can read more about the sectorstore.json file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
 
 Another key responsibility of the Lotus Miner is scheduling of tasks. Tasks to be scheduled include those of the [sealing pipeline]({{<relref "sealing-pipeline" >}}) and of the Storage Proving (see below).
 
@@ -106,11 +105,11 @@ And to see the workers on which the miner can schedule jobs:
 
 ### Storage proving
 
-One of the most important roled of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both WindowPoSt and WinningPoSt <!--TODO STEF link to glossary-->processes are usually handled by the Lotus miner. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (workers) instead of using the Lotus miner. 
+One of the most important roles of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the Lotus miner. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (workers) instead of using the Lotus miner. 
 
 The proving processes require low-latency access to the sealed sectors. The proving challenge requires a GPU to run on. The resulting zkProof will be sent to the chain in a message. There are strict deadlines for those messages to arrive on-chain (30 minutes for WindowPoSt and just 30 seconds for WinningPoSt). It is therefore important to properly size and configure the proving workers (be it on the Lotus miner <!--TODO STEF this whole section mixes names for software processes and hardware instances a lot - suggest reviewing the whole thing to disambiguate-->or separate) and to make sure there are dedicated wallets set up for these processes. If they use the general worker wallet there is the risk of message congestion, resulting in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards.
 
-Always check if there are upcoming proving deadlines before halting any services for maintenance.<!--TODO STEF if winningPoSt is every 30s, when are there ever windows for maintenance? How does one even do maintenance?-->
+Always check if there are upcoming proving deadlines before halting any services for maintenance. Foe a detailed process, please refer to the [lotus maintentience](https://lotus.filecoin.io/storage-providers/operate/maintenance/) documents. 
 
     lotus-miner proving deadlines
 

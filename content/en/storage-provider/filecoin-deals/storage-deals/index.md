@@ -18,7 +18,7 @@ toc: true
 The real purpose of Filecoin is to store humanity's most important information. As a Storage Provider that means you’re accepting storage deals and store deal sectors with real data in it. Those sectors are still (as before) either 32GiB or 64GiB in size and they require the data to be prepared in a certain format, CAR  (content archive). 
 
 ## Data preparation
-Data preparation <!-- TODO STEF What is it, and what is required- link? -->is either done by a separate actor in the network, called the Data Preparer, but oftentimes Storage Providers also take this responsibility and act as a Data Preparer themselves. <!-- TODO STEF Which is most common? Which is easiest if just getting started?-->
+Data preparation, which includes packaging files into size appropriate car files is either done by a separate actor in the network, called the Data Preparer, but oftentimes Storage Providers also take this responsibility and act as a Data Preparer themselves. It is more common for new storage providers to do this on their own as they normally only have a few files that need preperation. 
 
 Data preparation can be done with tools such as [Singularity](https://github.com/tech-greedy/singularity), which is a command-line tool to put data into CAR-files, create CIDs (Content ID, see [IPFS](https://docs.ipfs.tech/concepts/content-addressing/) for more information), and even initiate deals with Storage Providers.
 
