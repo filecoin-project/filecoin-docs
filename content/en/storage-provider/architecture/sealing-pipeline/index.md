@@ -38,7 +38,7 @@ The task will create 11 layers of the sector, using the scratch space. It is man
 
 Additionaly the PC1 task requires 64GiB of memory per sector it seals.
 
-In order to seal at a decent rate it, and to make use of all the sealing capacity in a PC1-server, you will run multiple PC1 workers in parallel on a system. More about this in the chapter on [Sealing Rate]({{<relref "sealing-rate">}}). Sealing multiple sectors multiplies the requirements on CPU cores, RAM and scratch space by the amount of sectors done in parellel.
+In order to seal at a decent rate it, and to make use of all the sealing capacity in a PC1-server, you will run multiple PC1 processes in parallel on a system. More about this in the chapter on [Sealing Rate]({{<relref "sealing-rate">}}). Sealing multiple sectors multiplies the requirements on CPU cores, RAM and scratch space by the amount of sectors done in parallel.
 
 Even on enterprise hardware the process of sealing one 32GiB sector takes around **3 hours**.
 
