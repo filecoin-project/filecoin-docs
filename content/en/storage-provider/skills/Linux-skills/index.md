@@ -53,11 +53,11 @@ Lotus needs to open a lot of files simultaneously, and it is necessary to reconf
 This is one of the examples where not every Linux distribution is the same. On Ubuntu, run the following commands:
 
 ```shell
-    sudo echo "* soft nofile 32000000" >> /etc/security/limits.conf
-    sudo echo "* hard nofile 128000000" >> /etc/security/limits.conf
-    sudo echo "fs.nr_open=128000000" >> /etc/sysctl.conf
-    sudo echo "fs.file-max=128000000" >> /etc/sysctl.conf
-    sudo sysctl -p
+sudo echo "* soft nofile 32000000" >> /etc/security/limits.conf
+sudo echo "* hard nofile 128000000" >> /etc/security/limits.conf
+sudo echo "fs.nr_open=128000000" >> /etc/sysctl.conf
+sudo echo "fs.file-max=128000000" >> /etc/sysctl.conf
+sudo sysctl -p
 ```
 
 ### Performance analysis
@@ -71,15 +71,15 @@ There are many good resources to check out when it comes to Linux performance tr
  The commands used are:
 
 ```shell
-    uptime
-    dmesg | tail
-    vmstat 1
-    mpstat -P ALL 1
-    pidstat 1
-    iostat -xz 1
-    free -m
-    sar -n DEV 1
-    sar -n TCP,ETCP 1
-    top
+uptime
+dmesg | tail
+vmstat 1
+mpstat -P ALL 1
+pidstat 1
+iostat -xz 1
+free -m
+sar -n DEV 1
+sar -n TCP,ETCP 1
+top
 ```
 

@@ -94,14 +94,14 @@ Another key responsibility of the Lotus Miner is scheduling of tasks. Tasks to b
 
 To see the jobs being scheduled, run:
 
-    ```shell
-    lotus-miner sealing jobs
-    ```
+```shell
+lotus-miner sealing jobs
+```
 And to see the workers on which the miner can schedule jobs:
 
-    ```shell
-    lotus-miner sealing workers
-    ```
+```shell
+lotus-miner sealing workers
+```
 
 ### Storage proving
 

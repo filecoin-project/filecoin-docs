@@ -98,9 +98,9 @@ The first critical hardware component for PC1 is the CPU. This must be a CPU wit
 
 To verify if your CPU has the necessary extensions, run:
 
-    ```shell
-    cat /proc/cpuinfo | grep --color sha_ni
-    ```
+```shell
+cat /proc/cpuinfo | grep --color sha_ni
+```
 
 PC1 is a single-threaded process so we require enough CPU cores to run multiple PC1 tasks in parallel. This reference architecture has 32 cores in a PC1, which would allow for ~30 parallel PC1 processes.
 
