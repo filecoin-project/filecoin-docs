@@ -29,12 +29,12 @@ There are 3 large blocks to understand:
 - Lotus worker(s)
 
 ## Lotus daemon
-The Lotus daemon is the component that syncs the chain, includes the client and holds the wallets of the Storage Provider. This machine running the Lotus daemon requires continuously available public internet reachability <!--TODO STEF How fast, on which ports, what HA?--> for the Storage Provider to function.
+The Lotus daemon is the component that syncs the chain, includes the client and holds the wallets of the Storage Provider. This machine running the Lotus daemon requires continuously available public internet reachability for the Storage Provider to function. You can review connectivity requirements on the connectivity page within the [lotus documents](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider). 
 
 ### Chain
 Syncing the chain is a key activity of the daemon. It stays in sync with the other nodes on the blockchain network by syncing messages. Messages are collected into [blocks](https://docs.filecoin.io/reference/general/glossary/#block). Blocks are collected into [tipsets](https://docs.filecoin.io/reference/general/glossary/#tipset). The Lotus daemon you run receives all the messages on-chain. Because of the growth in size of the chain since its genesis, it is not advised for Storage Providers to sync the entire history. Lightweight snapshots are available for import so that you only import the most recent messages. However, you would need to sync the entire chain if you were to run a Blockchain Explorer like [Filfox](https://filfox.info), for instance.
 
-The storage volume on which you keep the synced chain data should be fast storage, at least SSD and preferably NVMe. Slow syncing of the chain can lead to all kinds of unwanted effects in your Storage Provider setup. For instance, it can lead to delays in critical messages to be sent on-chain from your Lotus miner, resulting in faulting of sectors<!--TODO STEF and slashing? -->.
+The storage volume on which you keep the synced chain data should be fast storage, at least SSD and preferably NVMe. Slow syncing of the chain can lead to all kinds of unwanted effects in your Storage Provider setup. For instance, it can lead to delays in critical messages to be sent on-chain from your Lotus miner, resulting in faulting of sectors. Faulty sectors will result in slashing over time, which has a direct financial impact on the storage provider. Further information on on slashing can be found in the [lotus economics page](https://lotus.filecoin.io/storage-providers/get-started/economics/#storage-fault-slashing). 
 
 Another important consideration is the filesystem size and available free space. The Filecoin chain grows every day<!--TODO STEF by how much, currently, and how big is it?-->, which will eventually fill up any available space. Solutions like [SplitStore](https://lotus.filecoin.io/lotus/configure/splitstore/) and [compacting](https://lotus.filecoin.io/lotus/manage/chain-management/) reduce the storage space used by the chain <!--TODO STEF by what %-->.
 
@@ -95,11 +95,11 @@ And to see the workers on which the miner can schedule jobs:
 
 
 ### Storage proving
-One of the most important roled of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both WindowPoSt and WinningPoSt <!--TODO STEF link to glossary-->processes are usually handled by the Lotus miner. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (workers) instead of using the Lotus miner. 
+One of the most important roled of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the Lotus miner. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (workers) instead of using the Lotus miner. 
 
 The proving processes require low-latency access to the sealed sectors. The proving challenge requires a GPU to run on. The resulting zkProof will be sent to the chain in a message. There are strict deadlines for those messages to arrive on-chain (30 minutes for WindowPoSt and just 30 seconds for WinningPoSt). It is therefore important to properly size and configure the proving workers (be it on the Lotus miner <!--TODO STEF this whole section mixes names for software processes and hardware instances a lot - suggest reviewing the whole thing to disambiguate-->or separate) and to make sure there are dedicated wallets set up for these processes. If they use the general worker wallet there is the risk of message congestion, resulting in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards.
 
-Always check if there are upcoming proving deadlines before halting any services for maintenance.<!--TODO STEF if winningPoSt is every 30s, when are there ever windows for maintenance? How does one even do maintenance?-->
+Always check if there are upcoming proving deadlines before halting any services for maintenance. Foe a detailed process, please refer to the [lotus maintentience](https://lotus.filecoin.io/storage-providers/operate/maintenance/) documents. 
 
     lotus-miner proving deadlines
 
