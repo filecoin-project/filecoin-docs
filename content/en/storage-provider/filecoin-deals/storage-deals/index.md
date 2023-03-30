@@ -22,6 +22,10 @@ Data preparation, which includes packaging files into size appropriate car files
 
 Data preparation can be done with tools such as [Singularity](https://github.com/tech-greedy/singularity), which is a command-line tool to put data into CAR-files, create CIDs (Content ID, see [IPFS](https://docs.ipfs.tech/concepts/content-addressing/) for more information), and even initiate deals with Storage Providers.
 
+See the following video for a demonstration on Singularity:
+{{< youtube "1ZjKxkI6-Ic" >}}
+
+
 ## Deal Market
 In order for Storage Providers to accept deals and set their deal terms, they need to install some market software, such as [Boost](https://boost.filecoin.io/). This component interacts with data owners, accepts deals if they meet the configured requirements, gets a copy of the prepared data (CAR-files) and puts it through the [sealing pipeline]({{<relref "sealing-pipeline" >}}), after which it is in the state required to be proven to the network. 
 

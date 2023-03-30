@@ -20,6 +20,8 @@ The Filecoin network is constantly evolving and creating new opportunities for c
 ## What is Sealing-as-a-Service?
 In a traditional setup, a Storage Provider needs high-end hardware to build out a [sealing pipeline]({{<relref "sealing-pipeline">}}). That hardware is not cheap and sometimes not readily available. Sealing-as-a-Service is a service in which another provider does the sealing for you. As a Storage Provider you provide the data to the sealer, who seals the data into sectors and provides you with sealed sectors in exchange for a service cost. Other solutions are possible where the sealing partner seals CC sectors for you, which you in turn [snap up]({{<relref "snap-deals">}}) to data sectors.
 
+See the following video from [Aligned](https://aligned.co/sealing-as-a-service) about their offering of Sealing-as-a-Service:
+{{< youtube "v4l1lGsUXvs" >}}
 <!--TODO STEF Sounds great. Who (plural) is providing this? What does it cost? What are the terms? What is the turnaround time? How risky is it? -->
 
 ## Benefits of Sealing-as-a-Service
