@@ -21,7 +21,7 @@ Of all the technical skills needed to run a Storage Provider business, storage k
 Where most enterprise storage systems (NAS, SAN and other types) do not require the administrator to have hands-on Linux experience, Filecoin does require a lot more knowledge about Linux. For starters, this is because Filecoin is not just a storage system. It is a blockchain platform that offers decentralized storage. As a Storage Provider you are dealing with all the things required to run a alway-on production system, not just storage.
 
 ## Ubuntu Server LTS
-Although Lotus also runs on Mac, production systems generally all run on Linux. More specifically, most Storage Providers run on Ubuntu. Any Linux distribution should be possible but running Ubuntu makes it easier to find support in the community. Every distribution is a bit different and knowing that all components have been built and tested on Ubuntu, and knowing you have the same OS variables in your environment as someone else, lowers the barrier to starting as a Storage Provider significantly. Go for Ubuntu Server and choose the latest **LTS** version.
+Although Lotus can run on Mac for testing and development, production systems all run on Linux. More specifically, most Storage Providers run on Ubuntu. Any Linux distribution should be possible but running Ubuntu makes it easier to find support in the community. Every distribution is a bit different and knowing that all components have been built and tested on Ubuntu, and knowing you have the same OS variables in your environment as someone else, lowers the barrier to starting as a Storage Provider significantly. Go for Ubuntu Server and choose the latest 20.04 **LTS** version as of March 2023. <!--Angelo: Bob, 22.04 gives issues with lotus-->
 
 Install Ubuntu LTS as a **headless server**. This means there is no desktop environment or GUI installed. It requires you to do everything on the command line. Not having a desktop environment on your server(s) has multiple advantages:
 
@@ -32,6 +32,8 @@ Install Ubuntu LTS as a **headless server**. This means there is no desktop envi
 
 ## Command-line and environment variables
 All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus it is recommended to build the binaries from source code. Upgrades to lotus happen every two months or so. If you are unable to perform a mandatory lotus upgrade you may become disconnected from the filecoin network, which means you could be penalised and lose money, so it's vital to keep lotus up-to-date.
+
+Setup lotus: [Online Docs](https://lotus.filecoin.io/lotus/install/linux/)
 
 Configuration parameters for the lotus client are stored in 2 places:
 
