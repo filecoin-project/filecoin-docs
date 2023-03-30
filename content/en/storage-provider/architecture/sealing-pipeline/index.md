@@ -15,7 +15,7 @@ weight: 120
 toc: true
 ---
 
-When you provide storage capacity to the Filecoin network (either as Committed Capacity or as Storage Deals), you need to create _sealed sectors_. Sealing is required convert the data sectors into a form which can provide the cryptographic proofs that demonstrate ongoing storage over time (Proof-of-SpaceTime). The process of sealing sectors goes through a series of steps which together form the _sealing pipeline_.
+When you provide storage capacity to the Filecoin network (either as Committed Capacity or as Storage Deals), you need to create _sealed sectors_. Sealing is required to convert the data sectors into a form which provides cryptographic proofs that demonstrates ongoing storage over time (Proof-of-SpaceTime). The process of sealing sectors goes through a series of steps which together form the _sealing pipeline_.
 
 Having clear insights into the throughput you can expect from your sealing pipeline is crucial to consistently and efficiently onboarding data. Each step has different performance (memory, disk, cpu, gpu, etc) characteristics, and fine-tuning is required to align the different steps optimally. If you don't understand your expected throughput you may end up overloading your sealing pipeline, for example, by trying to seal too many sectors at once, or taking on a dataset which is too large for your infrastructure. We discuss [Sealing Rate]({{<relref "sealing-rate">}}) in greater detail in the next chapter.
 
@@ -28,7 +28,11 @@ The sealing pipeline has the following tasks:
 The sealing pipeline starts with the AddPiece part. A Piece in Filecoin represents data in a prepared format. This is a CAR-file produced by an [IPLD DAG](https://ipld.io) with corresponding PayloadCID and PieceCID. A Piece can be any size up to the sector size (32 or 64GiB). If the content is larger than the sector size it must be split over multiple PieceCIDs during Data Preparation.
 
 The AddPiece process takes the Piece and prepares it into the sealing scratch space for the next task (PC1) to take over.
-AddPiece is not a very intensive process and only uses some CPU cores. It is typically colocated on a server with other processes of the sealing pipeline. Most logically it runs on the PC1-server, as PC1 is the next process to run.
+AddPiece is not a very intensive process and only uses some CPU cores. It is typically collocated on a server with other worker processes of the sealing pipeline. Most logically it runs on the PC1-server, as PC1 is the next process to run.
+
+Consider limiting the AP process to a few cores by using (where xx-xx is the range on which cores the process needs to run on):
+
+    taskset -c xx-xx lotus-worker run ...
 
 ## PreCommit 1 (PC1)
 
