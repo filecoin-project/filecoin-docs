@@ -19,6 +19,9 @@ toc: true
 
 Calculating the ROI of your Storage Provider business is important. Check out the [Storage Provider Forecast Calculator](https://calc.filecoin.eu/) for more details.
 
+For more information and context see the following video:
+{{< youtube "zboAgawHT-o" >}} <!--Angelo: "Or what do you think, Bob?" -->
+
 It takes more variables than the cost vs. the income. In summary, the factors that influence your ROI are:
 
 * **Verified Deals:**

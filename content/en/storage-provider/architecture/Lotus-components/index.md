@@ -68,7 +68,7 @@ PoST is by far the most important wallet to split off from the main "worker" wal
 
 ## Lotus miner
 
-Lotus miner is the process that coordinates most of the Storage Provider (storage miner) activities. It has 3 main responsibilities:
+Lotus-miner is the process that coordinates most of the Storage Provider (storage miner) activities. It has 3 main responsibilities:
 
 - Storing the data
 - Scheduling jobs
@@ -78,7 +78,7 @@ Lotus miner is the process that coordinates most of the Storage Provider (storag
 
 As a Storage Provider on the Filecoin network you store sectors. They either contain data or not, but either way you are storing "sealed sectors" for the capacity you provide to the network. If you are storing data deals you will also need to store "unsealed sectors" because retrievals happen from unsealed sectors.
 
-Originally, the Lotus miner was the component with storage access. This means the miner hardware either has internal disks, direct-attached storage shelves (e.g. [JBODs](https://en.wikipedia.org/wiki/Non-RAID_drive_architectures#JBOD)), Network-Attached-Storage (NAS), or a storage cluster.
+Originally, the lotus-miner was the only component with storage access. This means the lotus-miner hardware either has internal disks, direct-attached storage shelves (e.g. [JBODs](https://en.wikipedia.org/wiki/Non-RAID_drive_architectures#JBOD)), Network-Attached-Storage (NAS), or a storage cluster.
 
 More recently, Lotus has added a more scalable storage access solution in which workers can also be assigned storage access. This removes the bottleneck from the Lotus miner. Low-latency storage access is critical because of the impact on Storage Proving processes.
 
@@ -88,7 +88,11 @@ Run the following command to check the storage configuration for your Lotus mine
 
 This will return your _sealed space_ and your _scratch space_ (cache) if you have properly configured your miner by following the steps in the [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
-It is extremely important to keep a backup of your sealed sectors, and ideally also of the unsealed sectors. Additionally also backup the _sectorstore.json_ file that lives under your storage path. This file is also required to be restored in the event of a failure.You can read more about the sectorstore.json file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
+It is extremely important to keep a backup of your sealed sectors, the cache directory and ideally also of the unsealed sectors. Additionally also backup the _sectorstore.json_ file that lives under your storage path. This file is also required to be restored in the event of a failure. You can read more about the sectorstore.json file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
+
+It is also imperative to have at least a daily backup of your lotus-miner state. Backups can be made with:
+
+    lotus-miner backup
 
 Another key responsibility of the Lotus Miner is scheduling of tasks. Tasks to be scheduled include those of the [sealing pipeline]({{<relref "sealing-pipeline" >}}) and of the Storage Proving (see below).
 
@@ -105,11 +109,11 @@ lotus-miner sealing workers
 
 ### Storage proving
 
-One of the most important roles of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the Lotus miner. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (workers) instead of using the Lotus miner. 
+One of the most important roles of the Lotus miner is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the lotus-miner process. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (proving workers) instead of using the Lotus miner. 
 
 The proving processes require low-latency access to the sealed sectors. The proving challenge requires a GPU to run on. The resulting zkProof will be sent to the chain in a message. There are strict deadlines for those messages to arrive on-chain (30 minutes for WindowPoSt and just 30 seconds for WinningPoSt). It is therefore important to properly size and configure the proving workers (be it on the Lotus miner <!--TODO STEF this whole section mixes names for software processes and hardware instances a lot - suggest reviewing the whole thing to disambiguate-->or separate) and to make sure there are dedicated wallets set up for these processes. If they use the general worker wallet there is the risk of message congestion, resulting in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards.
 
-Always check if there are upcoming proving deadlines before halting any services for maintenance. Foe a detailed process, please refer to the [lotus maintentience](https://lotus.filecoin.io/storage-providers/operate/maintenance/) documents. 
+Always check if there are upcoming proving deadlines before halting any services for maintenance. For a detailed process overview, please refer to the [lotus maintenance](https://lotus.filecoin.io/storage-providers/operate/maintenance/) documents. 
 
     lotus-miner proving deadlines
 
@@ -117,7 +121,7 @@ Always check if there are upcoming proving deadlines before halting any services
 
 The Lotus worker is the 3rd important software component in the Lotus architecture. There can be - and most likely will be - multiple workers in a single Storage Provider setup. Assigning designated roles to each worker in the setup allows for scaling the setup for higher throughput (see [Sealing Rate]({{<relref "sealing-rate">}})) and redundancy.
 
-As mentioned above, the proving tasks can be assigned to designated workers and worker can also get storage access.
+As mentioned above, the proving tasks can be assigned to designated workers and a worker can also get storage access if needed.
 The remaining worker tasks are running [Sealing Pipeline]({{<relref "sealing-pipeline">}}) which is discussed in the next section.
 
 {{< sp-calls-to-action >}}
