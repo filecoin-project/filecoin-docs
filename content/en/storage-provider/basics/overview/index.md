@@ -7,15 +7,16 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-basics"
     identifier: "overview-01107340c9c1e03db862dd1475ccd953"
 weight: 10
 toc: true
 aliases:
-  - "/storage-provider/overview/"
-  - "/mine/"
-  - "/mine/spacerace/"
-  - "/mine/connectivity"
+    - "/storage-provider/overview/"
+    - "/mine/"
+    - "/mine/spacerace/"
+    - "/mine/connectivity"
+    - "/storage-provider/"
 ---
 The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 
@@ -27,6 +28,8 @@ Follow these steps to begin your storage provider journey:
 2. Plan your business
 3. Make sure you have the right skills
 4. Build the right infrastructure
+
+The documentation you will be reading assumes you are familiar with the documentation in the [Get started]({{< relref "/smart-contracts/fundamentals/the-filecoin-virtual-machine" >}}) section, have a general grasp of how Filecoin works and are familiar with Filecoin node software and tooling.
 
 ## Understand Filecoin economics
 

@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-rewards"
     identifier: "slashing-080aabd0b6cff052ccbf1c996f4b3b78"
 weight: 26
 toc: true

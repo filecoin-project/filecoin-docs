@@ -12,13 +12,13 @@ $border-dark: $gray-800;
 $body-color-dark: $gray-300;
 $dots-dark: darken($body-color-dark, 50%);
 
-$link-color-dark: $blue-300;
+$link-color-dark: $blue-400;
 $button-color-dark: $link-color-dark;
 $focus-color-dark: lighten($link-color-dark, 2.5%);
 
-$navbar-dark-color:                 $body-color-dark;
-$navbar-dark-hover-color:           $link-color-dark;
-$navbar-dark-active-color:          $link-color-dark;
+$navbar-dark-color: $body-color-dark;
+$navbar-dark-hover-color: $link-color-dark;
+$navbar-dark-active-color: $link-color-dark;
 
 /** Theme styles */
 
@@ -236,7 +236,8 @@ $navbar-dark-active-color:          $link-color-dark;
   color: $link-color-dark;
 }
 
-[data-dark-mode] body .content img[src^="https://latex.codecogs.com/svg.latex"] {
+[data-dark-mode] body .content img[src^="https://latex.codecogs.com/svg.latex"]
+{
   filter: invert(1);
 }
 
@@ -582,5 +583,16 @@ $navbar-dark-active-color:          $link-color-dark;
 }
 
 [data-dark-mode] #announcement a {
-    color: $primary;
+  color: $primary;
+}
+
+[data-dark-mode] .footer a.neutral-link {
+  color: $white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $blue-400;
+  }
 }
