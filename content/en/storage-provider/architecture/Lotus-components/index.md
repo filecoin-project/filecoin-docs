@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-architecture"
     identifier: "Lotus-components-eaf8e84a4d869e8377258acc4e25f684"
 weight: 110
 toc: true

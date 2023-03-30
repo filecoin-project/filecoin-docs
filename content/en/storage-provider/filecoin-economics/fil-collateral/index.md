@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-filecoin-economics"
     identifier: "fil-collateral-5410330c778d23a6de3c962d57bf85fb"
 weight: 20
 toc: true

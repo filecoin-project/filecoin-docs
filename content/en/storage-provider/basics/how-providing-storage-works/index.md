@@ -51,11 +51,6 @@ Here's a general idea of the minimum hardware you'll need for providing storage:
 - 1TiB NVMe-based disk space for cache storage
 - Additional hard drives for storing _sealed sectors_, the Lotus chain, and more.
 
-For more detail, see:
-
-- [Hardware requirements]({{< relref "hardware-requirements#general-hardware-requirements" >}})
-- [ESPA Module 3C - Hardware requirements](https://www.youtube.com/watch?v=RKihuvJpev4&t=126s)
-
 Every provider's situation is different, but to give you an idea of the level of investment and the possible return, here is one example:
 
 For an 18-month period, an investment of $147k covered combined capital expenses, operating expenses, and FIL loan with 15% collateral. In this example, the storage provider received $267k in FIL rewards (starting at $21), for a profit of $120k over 18 months.
@@ -173,8 +168,6 @@ Each Filecoin provider has an associated _power_ value in the network that is pr
 Additionally, providers submit storage proofs regularly to the chain. This enables them to obtain _storage fees_ from the clients that have made deals with them.
 
 Block rewards are meant to bootstrap the Filecoin network. They decrement as real storage utility and fees take over.
-
-See [Storage provider rewards]({{< relref "storage-provider/rewards" >}}).
 
 ### Verified storage deals
 

@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-filecoin-deals"
     identifier: "fil-plus-programs-4b56249ff18e9e82e6306a59b575d97e"
 weight: 60
 toc: true

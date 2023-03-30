@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-filecoin-economics"
     identifier: "committed-capacity-e0bd9f467013f7d8ccdb772c871b083a"
 weight: 30
 toc: true

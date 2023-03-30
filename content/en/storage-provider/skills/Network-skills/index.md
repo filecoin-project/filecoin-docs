@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-skills"
     identifier: "Network-skills-573588bb794fe86159ac9bf17e40fecb"
 weight: 210
 toc: true

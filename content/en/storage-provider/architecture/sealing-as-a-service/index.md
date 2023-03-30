@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-architecture"
     identifier: "sealing-as-a-service-65969c343e79242db575a1cb8e5a69b9"
 weight: 140
 toc: true

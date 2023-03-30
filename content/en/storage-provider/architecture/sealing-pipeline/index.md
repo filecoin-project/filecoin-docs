@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-architecture"
     identifier: "sealing-pipeline-cdb43930e348fa2b1be72028d8ea7fd2"
 weight: 120
 toc: true

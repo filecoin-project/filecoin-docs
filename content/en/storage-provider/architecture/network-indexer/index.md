@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-architecture"
     identifier: "network-indexer-b1b5a5cef1596a5dadb6245c9b954b11"
 weight: 141
 toc: true

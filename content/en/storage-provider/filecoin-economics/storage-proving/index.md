@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-filecoin-economics"
     identifier: "storage-proving-fb90120cfc77a129895e55e7687075aa"
 weight: 10
 toc: true

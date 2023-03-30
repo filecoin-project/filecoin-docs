@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-architecture"
     identifier: "sealing-rate-7a3ff70165fcdc96149903585e0b327c"
 weight: 130
 toc: true

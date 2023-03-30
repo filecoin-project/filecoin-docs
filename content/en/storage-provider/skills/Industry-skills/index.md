@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-skills"
     identifier: "Industry-skills-3b17c97ec5c3df3ce1504889ce435602"
 weight: 250
 toc: true

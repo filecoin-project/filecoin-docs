@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-filecoin-deals"
     identifier: "charging-for-data-85b036d8a119ae4709855cfff4d84369"
 weight: 80
 toc: true

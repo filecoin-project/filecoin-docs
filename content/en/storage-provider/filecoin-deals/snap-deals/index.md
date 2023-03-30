@@ -9,7 +9,7 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "lorem"
+    parent: "providers-filecoin-deals"
     identifier: "snap-deals-434704aca7c26b7a1bf09d0a92f4c1ff"
 weight: 70
 toc: true
