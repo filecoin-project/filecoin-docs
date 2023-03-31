@@ -1,7 +1,7 @@
 ---
 title: "Sealing rate"
 description: ""
-lead: ""
+lead: "The Sealing Pipeline section explained the various tasks involved in the sealing pipeline in the context of Storage Provider requirements. The rate at which storage providers complete this process is measured in TiB/day or PiB/day, and is referred to as _Sealing Rate_, or _Sealing Capacity_. This page describes considerations and advice for storage providers in regards to sealing rate."
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
 draft: false
@@ -15,13 +15,13 @@ weight: 130
 toc: true
 ---
 
-The previous section explained the various tasks involved in the sealing pipeline. For a Storage Provider to fill up your available capacity with sealed sectors, the rate at which you can seal is measured in TiB/day or PiB/day. This rate is referred to as the Sealing Rate, or Sealing Capacity.
+For more information on the steps involved in sealing sectors, see the [Sealing Pipeline]({{<relref "sealing-pipeline">}}).
 
-## Cost vs. capacity
-An important consideration to define the desired sealing capacity is cost. When setting up their business, Storage Providers ask themselves how fast they should seal, and thus how much sealing hardware they should buy. Let's assume you are starting with a storage capacity of 100TiB, which would account for 1PiB QAP if all the sectors contain Fil+ verified deals. If your sealing capacity is 2.5TiB/day, you would seal your full 100TiB in 40 days. Is it worth investing in double the sealing capacity to fill your storage in just 20 days? It might be if you are planning to grow way beyond 100TiB, to 1PiB raw and beyond.
+## Cost 
+When setting up their business, Storage Providers must determine how fast they should seal, and thus how much sealing hardware they should buy. In other words, cost is an important factor in determining a stroage providers sealing rate. For example, suppose you have an initial storage capacity of 100TiB, which would account for 1PiB QAP if all the sectors contain Fil+ verified deals. If your sealing capacity is 2.5TiB/day, you would seal your full 100TiB in 40 days. Is it worth investing in double the sealing capacity to fill your storage in just 20 days? It might be if you are planning to grow way beyond 100TiB, to 1PiB raw and beyond. This is an example of the sort of cost considerations storage providers must factor in tuning sealing rate.
 
 ## Customer expectations
-There are reasons why you would want or need to seal faster. One of those reasons is customer expectations. When you take on a customer deal, there can often be requirements to seal a dataset of a certain size within a certain time window. If you are a starting Storage Provider with 2.5TiB/day in sealing capacity you cannot take on a deal of 2PiB that needs to be on-chain in 1 month. At least, you could not do it with your own sealing infrastructure. [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}}) could help you over this barrier.
+A common reason that a storage provider may want or need a faster sealing rate is customer expectations. When you take on a customer deal, there are often requirements to seal a dataset of a certain size within a certain time window. If you are a new storage provider with 2.5TiB/day in sealing capacity, you cannot take on a deal of 2PiB that needs to be on-chain in 1 month; at the very least, you could not take deal using your own sealing infrastructure. Instead, you can use [Sealing-as-a-service]({{<relref "sealing-as-a-service">}}), which can help you scale your sealing capabilities.
 
 ## Balancing the sealing pipeline
 ### Bottlenecks

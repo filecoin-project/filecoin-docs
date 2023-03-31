@@ -25,7 +25,7 @@ The sealing pipeline can be broken into the following steps:
 
 ## 1. AddPiece (AP)
 
-The sealing pipeline begins with _AddPiece_ part (abbreviated as AP), where the pipeline takes a _Piece_ and prepares it into the sealing scratch space for the _PreCommit 1_ task ([PC1]({{<relref "#2-precommit-1-pc1">}}) ) to take over. In Filecoin, a _Piece_ is data in CAR-file format produced by an [IPLD DAG](https://ipld.io) with a corresponding `PayloadCID` and `PieceCID`. The maximum Piece size is equal to the sector size (32 or 64GiB). If the content is larger than the sector size, it must be split into more than one `PieceCID` during data preparation.
+The sealing pipeline begins with _AddPiece_ part (abbreviated as AP), where the pipeline takes a _Piece_ and prepares it into the sealing scratch space for the _PreCommit 1_ task ([PC1]({{<relref "#2-precommit-1-pc1">}})) to take over. In Filecoin, a _Piece_ is data in CAR-file format produced by an [IPLD DAG](https://ipld.io) with a corresponding `PayloadCID` and `PieceCID`. The maximum Piece size is equal to the sector size (32 or 64GiB). If the content is larger than the sector size, it must be split into more than one `PieceCID` during data preparation.
 
 The AddPiece process is not a very intensive process and only uses some CPU cores. It is typically collocated on a server with other worker processes from the sealing pipeline. As PC1 is the next process in the sealing pipeline, running AddPiece on the same server as the PC1 process is a logical architecture.
 
