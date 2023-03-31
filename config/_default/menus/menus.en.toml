@@ -125,16 +125,16 @@
   url = "/basics/assets"
 
 [[basics]]
-  name = "Project and community"
-  weight = 60
-  identifier = "basics-project-and-community"
-  url = "/basics/project-and-community/the-filecoin-project"
-
-[[basics]]
   name = "Interplanetary Consensus"
-  weight = 70
+  weight = 60
   identifier = "basics-interplanetary-consensus"
   url = "/basics/interplanetary-consensus-overview"
+
+[[basics]]
+  name = "Project and community"
+  weight = 70
+  identifier = "basics-project-and-community"
+  url = "/basics/project-and-community/the-filecoin-project"
 # ----------------------
 
 
