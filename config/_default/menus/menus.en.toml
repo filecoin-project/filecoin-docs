@@ -129,6 +129,12 @@
   weight = 60
   identifier = "basics-project-and-community"
   url = "/basics/project-and-community/the-filecoin-project"
+
+[[basics]]
+  name = "Interplanetary Consensus"
+  weight = 70
+  identifier = "basics-interplanetary-consensus"
+  url = "/basics/interplanetary-consensus-overview"
 # ----------------------
 
 
