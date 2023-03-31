@@ -16,6 +16,7 @@ toc: true
 ---
 
 Each step in the sealing process has different performance (memory, disk, CPU, GPU, etc) considerations, and fine-tuning is required to align the different steps optimally. For example, storage providers that don't understand the process expected throughput may end up overloading the sealing pipeline, by trying to seal too many sectors at once, or taking on a dataset which is too large for available infrastructure. This can lead to a slower _sealing rate_, which is discussed in greater detail in [Sealing Rate]({{<relref "sealing-rate">}}).
+When you provide storage capacity to the Filecoin network (either as Committed Capacity or as Storage Deals), you need to create _sealed sectors_. Sealing is required convert the data sectors into a form which can provide the cryptographic proofs that demonstrate ongoing storage over time (Proof-of-SpaceTime). The process of sealing sectors goes through a series of steps which together form the _sealing pipeline_.
 
 ## Overview
 
@@ -45,7 +46,7 @@ Using the scratch space, the PC1 task will creates 11 layers of the sector. Stor
 - For a 32GiB sector, PC1 requires 384GiB on the scratch volume
 - For a 64GiB sector, PC1 requires 768GiB.
 
-Additionally, the PC1 task requires 64GiB of memory per sector it seals.
+In order to seal at a decent rate it, and to make use of all the sealing capacity in a PC1-server, you will run multiple PC1 workers in parallel on a system. More about this in the chapter on [Sealing Rate]({{<relref "sealing-rate">}}). Sealing multiple sectors multiplies the requirements on CPU cores, RAM and scratch space by the amount of sectors done in parallel.
 
 Sealing multiple sectors multiplies the requirements on CPU cores, RAM and scratch space by the amount of sectors done in parallel. In order to achieve a decent sealing rate and make use of all sealing capacity in a PC1 server, storage providers should run multiple PC1 processes in parallel on a system. More information on this can be found in [Sealing Rate]({{<relref "sealing-rate">}}). 
 

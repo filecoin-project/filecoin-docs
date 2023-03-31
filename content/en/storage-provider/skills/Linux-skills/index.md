@@ -15,16 +15,13 @@ weight: 200
 toc: true
 ---
 
-To become a successful Storage Provider, a team with a diverse range of skills is required. While storage knowledge is undoubtedly important, having a deep understanding of the Linux operating system is arguably even more critical.
+Becoming a Storage Provider requires a team with a variety of skills.
+Of all the technical skills needed to run a Storage Provider business, storage knowledge is important, but arguably, it is even more important to have deep understanding of the Linux operating system.
 
-While many enterprise storage systems such as NAS and SAN do not require administrators to have hands-on experience with Linux, this is not the case with Filecoin. As a blockchain platform that offers decentralized storage, Filecoin requires Storage Providers to have extensive knowledge of Linux. This is because Storage Providers are responsible for managing an always-on production system, not just a storage system.
-
-In addition to storage, Storage Providers must also be familiar with the various components required to run a successful production environment. This includes managing servers, networking equipment, and other critical infrastructure components. Therefore, a thorough understanding of Linux is essential for Storage Providers to ensure smooth operation of the entire system.
-
-In summary, while storage knowledge is important for a Storage Provider, a deep understanding of Linux is critical for success. This is because Filecoin is a blockchain platform that requires Storage Providers to manage an always-on production system, which involves much more than just storage. As such, Storage Providers must have the necessary skills and expertise to manage all components of the system, and a strong foundation in Linux is a must-have skill for achieving this.
+Where most enterprise storage systems (NAS, SAN and other types) do not require the administrator to have hands-on Linux experience, Filecoin does require a lot more knowledge about Linux. For starters, this is because Filecoin is not just a storage system. It is a blockchain platform that offers decentralized storage. As a Storage Provider you are dealing with all the things required to run a alway-on production system, not just storage.
 
 ## Ubuntu Server LTS
-Although Lotus can run on Mac for testing and development, production systems all run on Linux. More specifically, most Storage Providers run on Ubuntu. Any Linux distribution should be possible but running Ubuntu makes it easier to find support in the community. Every distribution is a bit different and knowing that all components have been built and tested on Ubuntu, and knowing you have the same OS variables in your environment as someone else, lowers the barrier to starting as a Storage Provider significantly. Go for Ubuntu Server and choose the latest 20.04 **LTS** version as of March 2023. <!--Angelo: Bob, 22.04 gives issues with lotus-->
+Although Lotus also runs on Mac, production systems generally all run on Linux. More specifically, most Storage Providers run on Ubuntu. Any Linux distribution should be possible but running Ubuntu makes it easier to find support in the community. Every distribution is a bit different and knowing that all components have been built and tested on Ubuntu, and knowing you have the same OS variables in your environment as someone else, lowers the barrier to starting as a Storage Provider significantly. Go for Ubuntu Server and choose the latest **LTS** version.
 
 Install Ubuntu LTS as a **headless server**. This means there is no desktop environment or GUI installed. It requires you to do everything on the command line. Not having a desktop environment on your server(s) has multiple advantages:
 
@@ -35,8 +32,6 @@ Install Ubuntu LTS as a **headless server**. This means there is no desktop envi
 
 ## Command-line and environment variables
 All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus it is recommended to build the binaries from source code. Upgrades to lotus happen every two months or so. If you are unable to perform a mandatory lotus upgrade you may become disconnected from the filecoin network, which means you could be penalised and lose money, so it's vital to keep lotus up-to-date.
-
-Setup lotus: [Online Docs](https://lotus.filecoin.io/lotus/install/linux/)
 
 Configuration parameters for the lotus client are stored in 2 places:
 
