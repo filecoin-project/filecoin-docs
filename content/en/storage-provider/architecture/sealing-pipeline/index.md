@@ -81,7 +81,7 @@ WaitSeed is not an actual task that is executed but it is a step in the pipeline
 
 The _Commit 1 (C1)_ phase is an intermediate phase that performs preparation necessary to generate a proof. It is CPU-bound and typically completes in seconds. It is recommended that storage providers run this process on the server where PC2 was run.
 
-## 6 Commit 2 (C2)
+## 6. Commit 2 (C2)
 
 The last and final step in the sealing pipeline is _Commit 2 (C2)_. This step involves the creation of a zkSNARK proof. LIke PC2, this task is GPU-bound and is therefore best colocated with the PC2 task.
 
