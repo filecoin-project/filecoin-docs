@@ -192,7 +192,7 @@ jsonrpc_api_http = "http://127.0.0.1:1235/rpc/v1"
 auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.j94YYOr8_AWhGGHQd0q8JuQVuNhJA017SK9EUkqDOO0"
 accounts = ["t1cp4q4lqsdhob23ysywffg2tvbmar5cshia4rweq"]
 ```
-{{< alert icon="📓" >}}Beware: If you are already running the daemon, changes in the config file are only picked up after running `./bin/ipc-agent reload-config` so be sure to run it after editing your config.{{< /alert >}}
+{{< alert icon="⚠️" >}}Beware: If you are already running the daemon, changes in the config file are only picked up after running `./bin/ipc-agent reload-config` so be sure to run it after editing your config.{{< /alert >}}
 
 Finally, to test if the connection to the rootnet has been successful, we can for instance try to create a new wallet in the rootnet: 
 ```
