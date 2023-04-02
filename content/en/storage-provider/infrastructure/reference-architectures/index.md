@@ -140,7 +140,7 @@ Hardware requirements and architecture configurations evolve continually, based 
 
 ## Solo storage providing
 
-Please take a look at the presentation Benjamin Hoejsbo <!--TODO STEF who? where from? why should I trust him? Bob: existing text, probably to be removed--> gave where they examine solo storage provider setups.
+Please take a look at the presentation Benjamin Hoejsbo, from [PIKNIK](https://www.piknik.com) gave where they examine solo storage provider setups. <!-- TODO NOBLOCK STEF BOB I have pinged Ben to see if there's a more recent version -->
 
 {{< youtube "LKMjCgo-fkA" >}}
 

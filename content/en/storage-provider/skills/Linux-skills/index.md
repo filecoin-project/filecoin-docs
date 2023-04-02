@@ -28,7 +28,8 @@ Install Ubuntu LTS as a **headless server**. This means there is no desktop envi
 - It reduces the attack surface of your systems. Fewer packages installed means fewer patches and updates but more importantly also fewer potential vulnerabilities.
 - As you will be running several tasks on GPU (see [Reference Architectures]({{<relref "reference-architectures">}})), it's best to avoid running a Desktop Environment which might compete for resources on the GPU.
 
-**Bonus tip**: Exclude the `nvidia-drivers` and `cuda` packages from your updates <!--TODO STEF link to how--> - once you have a working setup for your specific GPU, you won't want to risk breaking it without testing these packages first.
+**Bonus tip**: Exclude the `nvidia-drivers` and `cuda` packages from your updates <!--TODO NOBLOCK STEF BOB link to how - stef says actually I think this tip is really unhelpful unless we link to a tutorial on how these drivers are installed since they are not part of core Unbuntu https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/ --> - once you have a working setup for your specific GPU, you won't want to risk breaking it without testing these packages first.
+
 
 ## Command-line and environment variables
 All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus it is recommended to build the binaries from source code. Upgrades to lotus happen every two months or so. If you are unable to perform a mandatory lotus upgrade you may become disconnected from the filecoin network, which means you could be penalised and lose money, so it's vital to keep lotus up-to-date.
