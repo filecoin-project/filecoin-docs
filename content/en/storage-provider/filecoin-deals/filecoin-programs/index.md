@@ -33,13 +33,14 @@ Although it is possible to find your own data storage customers with valuable da
 
 ## Slingshot
 
-**[Slingshot](https://slingshot.filecoin.io)** is a program that unites Data Clients, Data Preparers and Storage Providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot is a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provides deals to registered and certified Storage Providers. The data is prepared and uploaded using a tool called Singularity. The program has clear expectations of a Storage Provider regarding their capabilities. <!-- TODO STEF and they are? --Bob: clearly listed on their website-->
+**[Slingshot](https://slingshot.filecoin.io)** is a program that unites Data clients, Data preparers and Storage Providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot is a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provides deals to registered and certified Storage Providers. The data is prepared and uploaded using a tool called Singularity. The program has [clear requirements of a Storage Provider](https://slingshot.filecoin.io/requirements#participating-as-a-storage-provider-sp) regarding their capabilities.
 
 See the below video for more information on Slingshot:
 {{<youtube "14sasiEThig">}}
+
 ## Evergreen
 
-**[Evergreen](https://evergreen.filecoin.io/)** extends the Slingshot program by aiming to store the open datasets forever. Standard deals have a maximum duration of 540 days which is not long enough for valuable, open datasets that might need to be stored forever. Evergreen uses a deal engine (**[Spade](https://github.com/ribasushi/spade)**) that automatically extends the lifetime of the dataset on-chain. It makes sure the data gets stored at a Storage Provider in the network. <!-- TODO STEF wait how does spade relate to boost?-->
+**[Evergreen](https://evergreen.filecoin.io/)** extends the Slingshot program by aiming to store the open datasets forever. Standard deals have a maximum duration of 540 days, which is not long enough for valuable, open datasets that might need to be stored forever. Evergreen uses a deal engine (**[Spade](https://github.com/ribasushi/spade)**) that automatically renews deals to extend the lifetime of the dataset on-chain.
 
 ## Moon Landing
 
@@ -50,17 +51,19 @@ See the below video for more information on Slingshot:
 A whole new access capability is being launched with **[Saturn](https://strn.network)**, which is the world’s first web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrievals of <1s in latency will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which Storage Providers can also participate.
 
 ## Partner tools and programs
+
 Many other programs and tools exist in the Filecoin community, developed by partners or Storage Providers. We list some examples below.
 
 ### CIDGravity
 
-**[CIDGravity](https://www.cidgravity.com/)** for instance is a software-as-a-service that allows Storage Providers to handle dynamic pricing and client management towards your solution. <!-- TODO STEF sounds like a markets or deals engine? how does it relate to boost and spade?-->
+**[CIDGravity](https://www.cidgravity.com/)** for instance is a software-as-a-service that allows Storage Providers to handle dynamic pricing and client management towards your solution. It integrates with deal engines such as [Boost](https://boost.filecoin.io).
 
 ### Big Data Exchange
 
-Another program that allows Storage Providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange)**. This platform allows Storage Providers to bid on datasets they are interested in storing. As a Storage Provider you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the Storage Provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why as a Storage Provider you might want to bid to store a copy. <!-- TODO STEF wait so I'm supposed to charge for data storage but also bid to store data for free? How does that work>? How big are these BDE sets-->
+Another program that allows Storage Providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange.io)**. This platform allows Storage Providers to bid on datasets they are interested in storing. As a Storage Provider, you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the Storage Provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why, as a Storage Provider, you might want to bid to store a copy.
 
-Storing real clients' data means there will be expectations on retrievability of that data. The Storage Provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
+Storing real client data means there will be expectations on retrievability of that data. The Storage Provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
+
 ### Filswan
 
 **[Filswan](https://www.filswan.com/homepage)** is - much like Big Data Exchange - an auctioning platform that matches clients with Storage Providers.

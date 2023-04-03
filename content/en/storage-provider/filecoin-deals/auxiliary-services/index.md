@@ -17,13 +17,12 @@ As a Storage Provider, you can set your business apart from the rest by offering
 
 ## Saturn
 
-One of the additional services is participation in retrieval markets with Saturn. [Saturn](https://strn.network) is a web3 CDN (“content delivery network”) which is [launching in stages in 2023](https://strn.network/#roadmap). It’s a first-of-a-kind decentralized CDN, not only aiming to be the biggest web3 CDN, but also the biggest CDN altogether. With the introduction of Saturn, data stored on Filecoin can no longer just be archive data or cold storage but can now be cached into a CDN layer for fast retrieval. Data that needs to be available quickly can then be stored on Filecoin and retrieved through Saturn.
-
-Saturn comes with 2 layers of caching, L1 and L2. <!--TODO STEF can we define the differences a little more here?--> Specifically, the L1 nodes are most interesting for Storage Providers. These require enterprise hardware to be allocated and a 10Gbps internet connection to be available. The L1 provider earns FIL through caching and serving data to clients.
+One of the additional services is participation in Saturn retrieval markets. [Saturn](https://strn.network) is a web3 CDN (“content delivery network”), and will [launch in stages in 2023](https://strn.network/#roadmap). Saturn aims to be the biggest Web3 CDN, and biggest CDN overall.With the introduction of Saturn, data stored on Filecoin is no longer limited to archive or cold storage, but can also be cached into a CDN layer for fast retrieval. Data that needs to be available quickly can then be stored on Filecoin and retrieved through Saturn.
+Saturn comes with 2 layers of caching, L1 and L2. L1 nodes typically run in datacenters, require high availability and 10Gbs minimum connectivity. The L1 Saturn provider earns FIL through caching and serving data to clients. L2 nodes can be run via an app on desktop hardware.
 
 ## FVM
 
-Other new opportunities are emerging with the launch <!--TODO STEF when? --> of FVM (Filecoin Virtual Machine). The FVM allows smart contracts to be executed on the Filecoin blockchain. The FVM is Ethereum-compatible (also called the FEVM) and allows for entire new use cases to be developed in the Filecoin ecosystem. Think of on-chain FIL lending as an example, but the opportunities are countless.
+Other new opportunities are emerging since the launch of FVM (Filecoin Virtual Machine) in March 2023. The FVM allows smart contracts to be executed on the Filecoin blockchain. The FVM is Ethereum-compatible (also called the FEVM) and allows for entire new use cases to be developed in the Filecoin ecosystem. Think of on-chain FIL lending as an example, but the opportunities are countless.
 
 ## Bacalhau
 
@@ -31,4 +30,4 @@ A next step after the introduction of FVM is [Bacalhau](https://docs.bacalhau.or
 
 ## Storage tiering
 
-Another potential service to offer is storage tiers with various performance profiles. For example, Storage Providers can offer hot/online storage by keeping the unsealed <!-- TODO STEF have we explained sealing yet? link --> data available for hot retrieval, for a premium.
+Another potential service to offer is storage tiers with various performance profiles. For example, Storage Providers can offer hot/online storage by keeping an additional copy of the unsealed data available for immediate retrieval, as well as the sealed that has been stored on the Filecoin Network.

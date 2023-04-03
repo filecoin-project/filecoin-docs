@@ -32,5 +32,6 @@ Sealing-as-a-service provides multiple benefits for storage providers:
 Other solutions are possible where the sealing partner seals CC sectors for you, which you in turn [snap up]({{<relref "snap-deals">}}) to data sectors.
 
 See the following video from [Aligned](https://aligned.co/sealing-as-a-service) about their offering of Sealing-as-a-Service:
+
 {{< youtube "v4l1lGsUXvs" >}}
-<!--TODO STEF Sounds great. Who (plural) is providing this? What does it cost? What are the terms? What is the turnaround time? How risky is it? -->
+
