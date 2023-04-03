@@ -9,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-skills"
     identifier: "industry-3b17c97ec5c3df3ce1504889ce435602"
-weight: 250
+weight: 660
 toc: true
 ---
 

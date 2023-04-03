@@ -9,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-skills"
     identifier: "storage-7a9fdaa672cf6167e7e2990566ec2dbb"
-weight: 230
+weight: 640
 toc: true
 ---
 Storage skills might seem the most obvious skill requirement to run a Storage Provider. In contrast to classical storage arrays and classical storage administration however, Filecoin requires an end-to-end skillset for running a 24/7 application.

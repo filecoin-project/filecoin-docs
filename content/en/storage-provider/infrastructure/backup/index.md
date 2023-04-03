@@ -9,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-infrastructure"
     identifier: "backup-and-distaster-recovery-4aa043edbcfcc235ab3cb13503f2603d"
-weight: 143
+weight: 530
 toc: true
 ---
 

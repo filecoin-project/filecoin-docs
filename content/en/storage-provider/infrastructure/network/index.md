@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "providers-infrastructure"
     identifier: "network-f01027668c6cdc4e458959c512d126b0"
-weight: 142
+weight: 520
 toc: true
 ---
 

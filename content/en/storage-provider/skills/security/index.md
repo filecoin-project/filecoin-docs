@@ -9,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-skills"
     identifier: "security-c7fb5906c984e58752a462f3c42a6aa0"
-weight: 220
+weight: 630
 toc: true
 ---
 As a Filecoin Storage Provider you are not only storing customer data, you are also storing Filecoin wallets and running systems that require 24/7 uptime, so as not to lose collateral. In the event of a security intrusion on your network and systems being compromised, you risk downtime or even losing access to your systems or storage. Maintaining proper security is essential.
