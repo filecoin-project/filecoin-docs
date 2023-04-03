@@ -19,4 +19,4 @@ Understanding networking is an important part of building a high-performing, wel
 
 As we are dealing with high network throughput requirements between multiple systems (to and from Boost, between the PC1 and PC2 workers and from PC2 to lotus-miner) it is worth learning to work with [`iperf` and `iperf3`](https://iperf.fr), which allow for easy network benchmarking.
 
-As a Storage Provider you also have to make the trade-off between performance and cost for your setup. Not everybody needs 100 GbE. It requires some calculation to know if you should invest in a higher bandwidth network or not. <!--TODO STEF BOB - can we link to some guidance on that?-->
+As a Storage Provider you also have to make the trade-off between performance and cost for your setup. Not everybody needs 100 GbE. It requires some calculation to know if you should invest in a higher bandwidth network or not. <!--TODO STEF ANGELO BOB - can we link to some guidance on that?-->

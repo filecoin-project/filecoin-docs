@@ -58,11 +58,11 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 ### CIDGravity
 
-**[CIDGravity](https://www.cidgravity.com/)** for instance is a software-as-a-service that allows Storage Providers to handle dynamic pricing and client management towards your solution. <!-- TODO STEF sounds like a markets or deals engine? how does it relate to boost and spade?-->
+**[CIDGravity](https://www.cidgravity.com/)** for instance is a software-as-a-service that allows Storage Providers to handle dynamic pricing and client management towards your solution. It integrates with deal engines such as [Boost](https://boost.filecoin.io).
 
 ### Big Data Exchange
 
-Another program that allows Storage Providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange)**. This platform allows Storage Providers to bid on datasets they are interested in storing. As a Storage Provider you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the Storage Provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why as a Storage Provider you might want to bid to store a copy. <!-- TODO BOB STEF wait so I'm supposed to charge for data storage but also bid to store data for free? How does that work? How big are these BDE sets?-->
+Another program that allows Storage Providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange.io)**. This platform allows Storage Providers to bid on datasets they are interested in storing. As a Storage Provider you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the Storage Provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why as a Storage Provider you might want to bid to store a copy.
 
 Storing real clients' data means there will be expectations on retrievability of that data. The Storage Provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
 

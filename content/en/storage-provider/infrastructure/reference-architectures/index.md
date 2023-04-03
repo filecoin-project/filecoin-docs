@@ -129,18 +129,12 @@ C1 doesn't require much attention for our architecture. C2 however requires a ca
 
 <!--
 ## Beginner's corner
-TODO Angelo to write a section on the use of refurbished hardware
+TODO NOBLOCK ANGELO to write a section on the use of refurbished hardware
 -->
-## Community suggestions
-<!-- TODO STEF BOB the linked discussions here are from 2021. Is there something more recent or a slack channel we can deeplink to? otherwise we should remove.-->
-Hardware requirements and architecture configurations evolve continually, based on evolving tech and software, market demands and available hardware. Because of this, we do not list any recommendations or examples on this page. Instead, look at the [example miner hardware profiles](https://github.com/filecoin-project/lotus/discussions/6071) in the Lotus project GitHub discussions.
-
-[![Screenshot of a community discussion on GitHub.](github-arch-discussion.png)](https://github.com/filecoin-project/lotus/discussions/6071)
-
 
 ## Solo storage providing
 
-Please take a look at the presentation Benjamin Hoejsbo, from [PIKNIK](https://www.piknik.com) gave where they examine solo storage provider setups. <!-- TODO NOBLOCK STEF BOB I have pinged Ben to see if there's a more recent version -->
+Please take a look at the presentation Benjamin Hoejsbo, from [PIKNIK](https://www.piknik.com) gave where they examine solo storage provider setups. The presentation is from 2022 but the content is still relevant (in March 2023).
 
 {{< youtube "LKMjCgo-fkA" >}}
 
