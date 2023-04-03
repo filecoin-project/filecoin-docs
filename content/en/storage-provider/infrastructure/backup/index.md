@@ -1,16 +1,14 @@
 ---
-title: "Backup / Disaster Recovery"
-description: ""
+title: "Backup and disaster recovery"
+description: "It is crucial to have a backup of any production system. It is even more crucial to be able to restore from a backup."
 lead: "A backup strategy is only as good as the last successful restore."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
 menu:
   storage-provider:
     parent: "providers-infrastructure"
-    identifier: "backup-4aa043edbcfcc235ab3cb13503f2603d"
+    identifier: "backup-and-distaster-recovery-4aa043edbcfcc235ab3cb13503f2603d"
 weight: 143
 toc: true
 ---

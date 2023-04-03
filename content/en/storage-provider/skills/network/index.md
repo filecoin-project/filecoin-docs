@@ -1,6 +1,6 @@
 ---
 title: "Network"
-description: ""
+description: "Understanding networking is an important part of building a high performing, well balanced Storage Provider setup."
 lead: ""
 draft: false
 images: []

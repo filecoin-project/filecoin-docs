@@ -1,6 +1,6 @@
 ---
 title: "Industry"
-description: ""
+description: "When working with customers from certain industries, certain requirements might apply. Think of certifications and compliance standards"
 lead: ""
 draft: false
 images: []

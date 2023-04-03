@@ -1,6 +1,6 @@
 ---
 title: "Lotus components"
-description: ""
+description: "Lotus is the software reference implementation written by Protocol Labs to interact with the Filecoin blockchain."
 lead: "Lotus is the reference implementation for the Filecoin network written in Go and maintained by [Protocol Labs](https://protocol.ai). This page  describes the main components of Lotus. Understanding these components is necessary in understanding subsequent sections on sealing, and what it means to build a well-balanced Storage Provider architecture."
 draft: false
 images: []

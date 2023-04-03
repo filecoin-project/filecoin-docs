@@ -1,6 +1,6 @@
 ---
 title: "Storage deals"
-description: ""
+description: "The real purpose of Filecoin is to store humanity's most important information. As a Storage Provider that means you’re accepting storage deals."
 lead: ""
 draft: false
 images: []
