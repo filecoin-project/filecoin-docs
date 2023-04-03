@@ -2,8 +2,6 @@
 title: "Sealing pipeline"
 description: ""
 lead: "When you provide storage capacity to the Filecoin network, either as Committed Capacity or Storage Deals, you must create _sealed sectors_. Sealing is required to convert the data sectors into a form which provides cryptographic proof of ongoing storage over time, called _Proof-of-SpaceTime_. The process of sealing sectors is called the _sealing pipeline_, and is important for Storage Providers to understand. The steps of the process, as well as recommendations for storage providers in regards to each step, are described in detail on this page."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-architecture"
     identifier: "sealing-pipeline-cdb43930e348fa2b1be72028d8ea7fd2"
-weight: 120
+weight: 420
 toc: true
 ---
 

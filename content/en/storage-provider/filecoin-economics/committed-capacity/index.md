@@ -11,7 +11,7 @@ menu:
   storage-provider:
     parent: "providers-filecoin-economics"
     identifier: "committed-capacity-e0bd9f467013f7d8ccdb772c871b083a"
-weight: 30
+weight: 250
 toc: true
 ---
 

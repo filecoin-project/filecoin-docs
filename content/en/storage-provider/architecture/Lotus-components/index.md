@@ -2,8 +2,6 @@
 title: "Lotus components"
 description: ""
 lead: "Lotus is the reference implementation for the Filecoin network written in Go and maintained by [Protocol Labs](https://protocol.ai). This page  describes the main components of Lotus. Understanding these components is necessary in understanding subsequent sections on sealing, and what it means to build a well-balanced Storage Provider architecture."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-architecture"
     identifier: "Lotus-components-eaf8e84a4d869e8377258acc4e25f684"
-weight: 110
+weight: 410
 toc: true
 ---
 

@@ -2,16 +2,14 @@
 title: "Filecoin programs"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
 menu:
   storage-provider:
     parent: "providers-filecoin-deals"
-    identifier: "fil-plus-programs-4b56249ff18e9e82e6306a59b575d97e"
-weight: 60
+    identifier: "filecoin-programs-4b56249ff18e9e82e6306a59b575d97e"
+weight: 330
 toc: true
 ---
 

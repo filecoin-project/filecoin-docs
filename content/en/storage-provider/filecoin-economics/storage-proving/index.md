@@ -2,8 +2,6 @@
 title: "Storage proving"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-filecoin-economics"
     identifier: "storage-proving-fb90120cfc77a129895e55e7687075aa"
-weight: 10
+weight: 210
 toc: true
 ---
 

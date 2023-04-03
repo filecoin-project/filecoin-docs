@@ -1,17 +1,15 @@
 ---
-title: "Return-on-Investment"
+title: "Return-on-investment"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
 menu:
   storage-provider:
     parent: "providers-filecoin-deals"
-    identifier: "ROI-e45486c9bda1da94b8ca38092b2b15fa"
-weight: 91
+    identifier: "return-on-investment-e45486c9bda1da94b8ca38092b2b15fa"
+weight: 370
 toc: true
 ---
 

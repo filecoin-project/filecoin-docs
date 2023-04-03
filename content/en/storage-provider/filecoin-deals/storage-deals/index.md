@@ -2,8 +2,6 @@
 title: "Storage deals"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-filecoin-deals"
     identifier: "storage-deals-854132fc8fcae7442c0095e1087fba58"
-weight: 40
+weight: 310
 toc: true
 ---
 

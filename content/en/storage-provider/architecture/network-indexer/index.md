@@ -2,8 +2,6 @@
 title: "Network indexer"
 description: ""
 lead: "InterPlanetary Network Indexer (IPNI) enables search for content-addressable data available from storage providers, such as those on the Filecoin and IPFS networks. Storage providers can publish the content IDs (CIDs) of their data to a _Network Indexer_, and clients can query the network indexer to learn where to retrieve the content identified by those CIDs. This documemt describes what storage providers should know about IPNI, such as how network indexers work and how storage providers should use them."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-architecture"
     identifier: "network-indexer-b1b5a5cef1596a5dadb6245c9b954b11"
-weight: 141
+weight: 450
 toc: true
 ---
 

@@ -2,8 +2,6 @@
 title: "Charging for data"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-filecoin-deals"
     identifier: "charging-for-data-85b036d8a119ae4709855cfff4d84369"
-weight: 80
+weight: 350
 toc: true
 ---
 

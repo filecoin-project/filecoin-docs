@@ -2,8 +2,6 @@
 title: "Sealing rate"
 description: ""
 lead: "The Sealing Pipeline section explained the various tasks involved in the sealing pipeline in the context of Storage Provider requirements. The rate at which storage providers complete this process is measured in TiB/day or PiB/day, and is referred to as _Sealing Rate_, or _Sealing Capacity_. This page describes considerations and advice for storage providers in regards to sealing rate."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-architecture"
     identifier: "sealing-rate-7a3ff70165fcdc96149903585e0b327c"
-weight: 130
+weight: 430
 toc: true
 ---
 

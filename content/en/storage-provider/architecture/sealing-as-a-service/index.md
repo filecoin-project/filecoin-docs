@@ -2,8 +2,6 @@
 title: "Sealing-as-a-service"
 description: ""
 lead: "Storage providers with hardware cost or availability constraints can use _Sealing-as-a-service_, in which another provider performs sector sealing on the storage providers behalf. This page describes how sealing-as-a-service works, and the benefits to storage providers."
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-architecture"
     identifier: "sealing-as-a-service-65969c343e79242db575a1cb8e5a69b9"
-weight: 140
+weight: 440
 toc: true
 ---
 

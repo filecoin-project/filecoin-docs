@@ -1,7 +1,6 @@
 ---
 title: "Becoming a Storage Provider"
 description: ""
-
 draft: false
 images: []
 type: docs
@@ -9,7 +8,7 @@ menu:
   storage-provider:
     parent: "providers-basics"
     identifier: "overview-01107340c9c1e03db862dd1475ccd953"
-weight: 10
+weight: 110
 toc: true
 aliases:
     - "/storage-provider/overview/"

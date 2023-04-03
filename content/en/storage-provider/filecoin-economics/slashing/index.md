@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   storage-provider:
-    parent: "providers-rewards"
+    parent: "providers-filecoin-economics"
     identifier: "slashing-080aabd0b6cff052ccbf1c996f4b3b78"
-weight: 26
+weight: 240
 toc: true
 aliases:
     - "/storage-provider/slashing/"

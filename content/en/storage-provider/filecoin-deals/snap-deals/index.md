@@ -2,8 +2,6 @@
 title: "Snap deals"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-filecoin-deals"
     identifier: "snap-deals-434704aca7c26b7a1bf09d0a92f4c1ff"
-weight: 70
+weight: 340
 toc: true
 ---
 

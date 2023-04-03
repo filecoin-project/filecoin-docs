@@ -2,8 +2,6 @@
 title: "Auxiliary services"
 description: ""
 lead: ""
-date: 2022-01-25T14:41:39+01:00
-lastmod: 2022-01-25T14:41:39+01:00
 draft: false
 images: []
 type: docs
@@ -11,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-filecoin-deals"
     identifier: "auxiliary-services-323aae388a7394a36f9f37703b235bf6"
-weight: 90
+weight: 360
 toc: true
 ---
 
