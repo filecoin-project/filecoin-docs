@@ -19,9 +19,8 @@ As a Storage Provider, you can set your business apart from the rest by offering
 
 ## Saturn
 
-One of the additional services is participation in retrieval markets with Saturn. [Saturn](https://strn.network) is a web3 CDN (“content delivery network”) which is [launching in stages in 2023](https://strn.network/#roadmap). It’s a first-of-a-kind decentralized CDN, not only aiming to be the biggest web3 CDN, but also the biggest CDN altogether. With the introduction of Saturn, data stored on Filecoin can no longer just be archive data or cold storage but can now be cached into a CDN layer for fast retrieval. Data that needs to be available quickly can then be stored on Filecoin and retrieved through Saturn.
-
-Saturn comes with 2 layers of caching, L1 and L2. L1 nodes typically run in Datacenters and require high availability and 10Gbs minimum connectivity. The L1 Saturn provider earns FIL through caching and serving data to clients. L2 nodes can be run via an app on desktop hardware.
+One of the additional services is participation in Saturn retrieval markets. [Saturn](https://strn.network) is a web3 CDN (“content delivery network”), and will [launch in stages in 2023](https://strn.network/#roadmap). Saturn aims to be the biggest Web3 CDN, and biggest CDN overall.With the introduction of Saturn, data stored on Filecoin is no longer limited to archive or cold storage, but can also be cached into a CDN layer for fast retrieval. Data that needs to be available quickly can then be stored on Filecoin and retrieved through Saturn.
+Saturn comes with 2 layers of caching, L1 and L2. L1 nodes typically run in datacenters, require high availability and 10Gbs minimum connectivity. The L1 Saturn provider earns FIL through caching and serving data to clients. L2 nodes can be run via an app on desktop hardware.
 
 ## FVM
 

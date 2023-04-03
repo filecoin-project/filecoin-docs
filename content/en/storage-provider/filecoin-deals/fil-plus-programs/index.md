@@ -42,7 +42,7 @@ See the below video for more information on Slingshot:
 
 ## Evergreen
 
-**[Evergreen](https://evergreen.filecoin.io/)** extends the Slingshot program by aiming to store the open datasets forever. Standard deals have a maximum duration of 540 days which is not long enough for valuable, open datasets that might need to be stored forever. Evergreen uses a deal engine (**[Spade](https://github.com/ribasushi/spade)**) that automatically renews deals to extend the lifetime of the dataset on-chain.
+**[Evergreen](https://evergreen.filecoin.io/)** extends the Slingshot program by aiming to store the open datasets forever. Standard deals have a maximum duration of 540 days, which is not long enough for valuable, open datasets that might need to be stored forever. Evergreen uses a deal engine (**[Spade](https://github.com/ribasushi/spade)**) that automatically renews deals to extend the lifetime of the dataset on-chain.
 
 ## Moon Landing
 
@@ -62,9 +62,9 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 ### Big Data Exchange
 
-Another program that allows Storage Providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange.io)**. This platform allows Storage Providers to bid on datasets they are interested in storing. As a Storage Provider you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the Storage Provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why as a Storage Provider you might want to bid to store a copy.
+Another program that allows Storage Providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange.io)**. This platform allows Storage Providers to bid on datasets they are interested in storing. As a Storage Provider, you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the Storage Provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why, as a Storage Provider, you might want to bid to store a copy.
 
-Storing real clients' data means there will be expectations on retrievability of that data. The Storage Provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
+Storing real client data means there will be expectations on retrievability of that data. The Storage Provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
 
 ### Filswan
 
