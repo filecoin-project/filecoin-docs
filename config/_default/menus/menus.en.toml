@@ -9,7 +9,7 @@
   weight = 20
 
 [[main]]
-  name = "Providers"
+  name = "Storage Providers"
   url = "/storage-provider/basics/overview/"
   weight = 30
 
@@ -159,22 +159,34 @@
   url = "/storage-provider/basics"
 
 [[storage-provider]]
-  name = "Hardware"
+  name = "Filecoin economics"
   weight = 20
-  identifier = "providers-hardware"
-  url = "/storage-provider/hardware"
+  identifier = "providers-filecoin-economics"
+  url = "/storage-provider/filecoin-economics"
 
 [[storage-provider]]
-  name = "Rewards"
+  name = "Filecoin deals"
   weight = 30
-  identifier = "providers-rewards"
-  url = "/storage-provider/rewards"
+  identifier = "providers-filecoin-deals"
+  url = "/storage-provider/filecoin-deals"
 
 [[storage-provider]]
-  name = "Videos"
+  name = "Architecture"
   weight = 40
-  identifier = "providers-videos"
-  url = "/storage-provider/videos"
+  identifier = "providers-architecture"
+  url = "/storage-provider/architecture"
+
+[[storage-provider]]
+  name = "Infrastructure"
+  weight = 50
+  identifier = "providers-infrastructure"
+  url = "/storage-provider/infrastructure"
+
+[[storage-provider]]
+  name = "Skills"
+  weight = 60
+  identifier = "providers-skills"
+  url = "/storage-provider/skills"
 # ----------------------
 
 
