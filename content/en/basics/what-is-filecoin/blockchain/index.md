@@ -27,7 +27,7 @@ An Actor in the Filecoin Blockchain is the equivalent of the smart contract in t
 
 ### Built-in actors
 
-There are several [built-in system actors](https://spec.filecoin.io/%23section-systems.filecoin_vm.sysactors) that power the Filecoin network as the decentralized storage network.
+There are several [built-in system actors](https://spec.filecoin.io#section-systems.filecoin_vm.sysactors) that power the Filecoin network as the decentralized storage network.
 
 - System Actor - general system actor.
 - Init actor - initializes new actors and records the network name.

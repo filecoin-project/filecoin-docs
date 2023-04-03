@@ -21,7 +21,7 @@ The native currency of Filecoin, FIL, is a utility token used to incentivize per
 
 As a utility token that aligns participants’ incentives with the long-term growth of the network, Filecoin issuance is aligned with the overall provable utility of the network. The majority of Filecoin supply would only be minted if the network achieved growth and utility targets at scale.
 
-Specifically, Filecoin uses a [dual minting model](https://spec.filecoin.io/%23section-systems.filecoin_token.minting_model) for block reward minting:
+Specifically, Filecoin uses a [dual minting model](https://spec.filecoin.io#section-systems.filecoin_token.minting_model) for block reward minting:
 
 ## Baseline minting
 
