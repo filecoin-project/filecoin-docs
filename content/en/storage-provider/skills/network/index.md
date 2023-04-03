@@ -8,7 +8,7 @@ type: docs
 menu:
   storage-provider:
     parent: "providers-skills"
-    identifier: "Network-skills-573588bb794fe86159ac9bf17e40fecb"
+    identifier: "network-573588bb794fe86159ac9bf17e40fecb"
 weight: 210
 toc: true
 ---
