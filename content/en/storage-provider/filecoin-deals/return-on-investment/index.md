@@ -1,6 +1,6 @@
 ---
 title: "Return-on-investment"
-description: ""
+description: "Calculating the ROI of your Storage Provider business is important. It takes more variables than the cost vs. the income."
 lead: ""
 draft: false
 images: []

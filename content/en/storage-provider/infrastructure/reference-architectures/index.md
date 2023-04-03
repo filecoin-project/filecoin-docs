@@ -1,6 +1,6 @@
 ---
 title: "Reference architectures"
-description: ""
+description: "Reference architecture is designed for 1PiB of raw sectors or raw data to be stored. Let's discuss the various design choices of this architecture."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

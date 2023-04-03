@@ -1,6 +1,6 @@
 ---
 title: "Block rewards"
-description: "How Storage Providers earn Filecoin for making storage capacity available"
+description: "WinningPoSt is the cryptographic challenge through which Storage Providers are rewarded for their contributions to the network."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

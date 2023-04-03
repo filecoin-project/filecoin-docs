@@ -1,6 +1,6 @@
 ---
 title: "Snap deals"
-description: ""
+description: "Snap Deals are a way to convert Committed Capacity sectors (that store no real data) into data sectors to be used for storing actual data."
 lead: ""
 draft: false
 images: []

@@ -1,6 +1,6 @@
 ---
 title: "Storage proving"
-description: ""
+description: "Storage proving, known as “Proof of Spacetime” (“PoSt”) is the mechanism that validate storage providers are storing the data they claim."
 lead: ""
 draft: false
 images: []

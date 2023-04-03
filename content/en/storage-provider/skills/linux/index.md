@@ -1,6 +1,6 @@
 ---
 title: "Linux"
-description: ""
+description: "Becoming a Storage Provider requires a team with a variety of skills, which we will discuss in this section."
 lead: ""
 draft: false
 images: []

@@ -1,6 +1,6 @@
 ---
 title: "Filecoin programs"
-description: ""
+description: "It is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC for programs like Filecoin Plus"
 lead: ""
 draft: false
 images: []

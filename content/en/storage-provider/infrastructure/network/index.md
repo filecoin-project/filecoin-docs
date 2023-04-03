@@ -1,6 +1,6 @@
 ---
 title: "Network"
-description: ""
+description: "There are multiple aspects to be discussed when it comes to network requirements. Bandwidth, Vlans, and redundancy are all areas of interest."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

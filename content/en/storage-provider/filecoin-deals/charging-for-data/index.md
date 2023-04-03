@@ -1,6 +1,6 @@
 ---
 title: "Charging for data"
-description: ""
+description: "Running a Storage Provider business purely based on the tokenomics of the network (block rewards) is extremely dependent on the volatility of the price of the token (FIL)."
 lead: ""
 draft: false
 images: []

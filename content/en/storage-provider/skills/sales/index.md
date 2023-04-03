@@ -1,6 +1,6 @@
 ---
 title: "Sales"
-description: ""
+description: "Being successful at running a Storage Provider business depends on multiple factors. Having the right technical skills and team is one of them."
 lead: ""
 draft: false
 images: []
