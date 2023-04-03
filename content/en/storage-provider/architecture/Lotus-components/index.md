@@ -1,6 +1,6 @@
 ---
 title: "Lotus components"
-description: ""
+description: "Lotus is the software reference implementation written by Protocol Labs to interact with the Filecoin blockchain."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

@@ -1,6 +1,6 @@
 ---
 title: "Storage skills"
-description: ""
+description: "Storage skills might seem the most obvious skill requirement to run a Storage Provider. Filecoin requires an end-to-end skillset for running a 24/7 application."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

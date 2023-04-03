@@ -1,6 +1,6 @@
 ---
 title: "Linux skills"
-description: ""
+description: "Becoming a Storage Provider requires a team with a variety of skills, which we will discuss in this section."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

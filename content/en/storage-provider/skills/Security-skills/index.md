@@ -1,6 +1,6 @@
 ---
 title: "Security skills"
-description: ""
+description: "As a Filecoin Storage Provider you are not only storing customer data, you are also storing Filecoin wallets and running systems that require 24/7 uptime."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

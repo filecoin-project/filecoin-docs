@@ -1,6 +1,6 @@
 ---
 title: "Network skills"
-description: ""
+description: "Understanding networking is an important part of building a high performing, well balanced Storage Provider setup."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

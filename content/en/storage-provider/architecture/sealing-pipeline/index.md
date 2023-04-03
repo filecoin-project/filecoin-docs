@@ -1,6 +1,6 @@
 ---
 title: "Sealing pipeline"
-description: ""
+description: "When you provide storage capacity to the Filecoin network (either as Committed Capacity or as Storage Deals), you need to create "sealed sectors"."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

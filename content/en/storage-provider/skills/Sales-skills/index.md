@@ -1,6 +1,6 @@
 ---
 title: "Sales skills"
-description: ""
+description: "Being successful at running a Storage Provider business depends on multiple factors. Having the right technical skills and team is one of them."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

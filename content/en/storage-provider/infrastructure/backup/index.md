@@ -1,6 +1,6 @@
 ---
 title: "Backup / DR"
-description: ""
+description: "It is crucial to have a backup of any production system. It is even more crucial to be able to restore from a backup."
 lead: "A backup strategy is only as good as the last successful restore."
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

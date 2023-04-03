@@ -1,6 +1,6 @@
 ---
 title: "Verified deals"
-description: ""
+description: "The goal of Filecoin is to be the decentralized storage network for humanity’s most important information."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

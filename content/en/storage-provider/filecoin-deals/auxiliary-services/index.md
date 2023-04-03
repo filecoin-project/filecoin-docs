@@ -1,6 +1,6 @@
 ---
 title: "Auxiliary services"
-description: ""
+description: "As a Storage Provider, you can set your business apart from the rest by offering additional services to your customers."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

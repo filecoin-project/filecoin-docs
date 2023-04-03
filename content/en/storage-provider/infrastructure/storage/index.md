@@ -1,6 +1,6 @@
 ---
 title: "Storage"
-description: ""
+description: "Storage systems use RAID for protection against data corruption and data loss. Storage Providers are concerned with costs and therefore must choose the correct systems."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

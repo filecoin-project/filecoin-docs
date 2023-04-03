@@ -1,6 +1,6 @@
 ---
 title: "Committed capacity"
-description: ""
+description: "One way of partcipating in the Filecoin network is by providing Committed Capacity sectors."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00

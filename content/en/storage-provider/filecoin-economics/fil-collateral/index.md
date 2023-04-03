@@ -1,6 +1,6 @@
 ---
 title: "FIL collateral"
-description: ""
+description: "Before you can do anything as a Storage Provider on the network you will have to create FIL wallets and add FIL to them."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
