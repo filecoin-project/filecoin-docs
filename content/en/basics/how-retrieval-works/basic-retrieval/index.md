@@ -24,7 +24,7 @@ lassie fetch <CID>
 ```
 
 Lassie fetches content in content-addressed archive (CAR) form, so in most cases you will need additional tooling to deal with CAR files.
-Lassie can also be used as a library to fetch data from Filecoin from within your application. Due to the diversity of data transport protocols in the IPFS ecosystem Lassie is able to use the Graphsync or Bitswap protocols, depending on how to the requested data is available to be fetched. One of the most prominent use case of Lassie library is **Saturn Network** nodes fetching the content from Filecoin and IPFS to serve the retrievals. 
+Lassie can also be used as a library to fetch data from Filecoin from within your application. Due to the diversity of data transport protocols in the IPFS ecosystem Lassie is able to use the Graphsync or Bitswap protocols, depending on how to the requested data is available to be fetched. One of the most prominent use cases of Lassie as a library is the **Saturn Network**. Saturn nodes fetch content from Filecoin and IPFS through Lassie in order to serve retrievals. 
 
 ![Lassie Architecture](Lassie_architecture.jpg "Lassie Architecture")
 
@@ -74,7 +74,7 @@ You now have everything you need to retrieve a file with Lassie and extract the 
 
 To retrieve data from Filecoin using Lassie, all you need is the CID of the content you want to download.
 
-Below video demonstrate how Lassie can be used to render content directly from Filecoin/IPFS.
+The video below demonstrates how Lassie can be used to render content directly from Filecoin/IPFS.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h_zCd7ssKCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Lassie and go-car can work together to retrieve and extract data from Filecoin, all you need is the CID of the content to download.
@@ -83,7 +83,7 @@ Lassie and go-car can work together to retrieve and extract data from Filecoin, 
 lassie fetch -o - <CID> | car extract
 ```
 
-This command uses a `|` to chain two commands together, this will work on Linux or a macOS. Windows users may need to use PowerShell to use this form. Alternatively, you can use the commands separately as explained later in this page.
+This command uses a `|` to chain two commands together. This will work on Linux or macOS. Windows users may need to use PowerShell to use this form. Alternatively, you can use the commands separately as explained later in this page.
 
 An example of fetching and extracting a single file, identified by its CID:
 
