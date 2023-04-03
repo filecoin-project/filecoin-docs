@@ -25,16 +25,19 @@ Although Lotus also runs on Mac, production systems generally all run on Linux. 
 
 Install Ubuntu LTS as a **headless server**. This means there is no desktop environment or GUI installed. It requires you to do everything on the command line. Not having a desktop environment on your server(s) has multiple advantages:
 
-- It reduces the attack surface of your systems. Fewer packages installed means fewer patches and updates but more importantly also fewer potential vulnerabilities.
-- As you will be running several tasks on GPU (see [Reference Architectures]({{<relref "reference-architectures">}})), it's best to avoid running a Desktop Environment which might compete for resources on the GPU.
+- It reduces the attack surface of your systems. Fewer packages installed means fewer patches and updates, but more importantly, fewer potential vulnerabilities.
+- As you will be running several tasks on GPU (see [Reference Architectures]({{<relref "reference-architectures">}})), it's best to avoid running a desktop environment, which might compete for resources on the GPU.
 
-**Bonus tip**: Exclude the `nvidia-drivers` and `cuda` packages from your updates <!--TODO NOBLOCK STEF BOB link to how - stef says actually I think this tip is really unhelpful unless we link to a tutorial on how these drivers are installed since they are not part of core Unbuntu https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/ --> - once you have a working setup for your specific GPU, you won't want to risk breaking it without testing these packages first.
+{{< alert >}}
+**Bonus tip**: 
 
+Exclude the `nvidia-drivers` and `cuda` packages from your updates. <!--TODO NOBLOCK STEF BOB link to how - stef says actually I think this tip is really unhelpful unless we link to a tutorial on how these drivers are installed since they are not part of core Unbuntu https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/ --> Once you have a working setup for your specific GPU, you won't want to risk breaking it without testing these packages first.
+{{< /alert >}}
 
 ## Command-line and environment variables
-All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus it is recommended to build the binaries from source code. Upgrades to lotus happen every two months or so. If you are unable to perform a mandatory lotus upgrade you may become disconnected from the filecoin network, which means you could be penalised and lose money, so it's vital to keep lotus up-to-date.
+All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus, it is recommended to build the binaries from source code. Upgrades to Lotus happen every two months or so. If you are unable to perform a mandatory Lotus upgrade, you may become disconnected from the filecoin network, which means you could be penalized and lose money, so it's vital to keep Lotus up-to-date.
 
-Configuration parameters for the lotus client are stored in 2 places:
+Configuration parameters for the Lotus client are stored in 2 places:
 
 - into `config.toml` files in `~/.lotus`, `~/.lotusminer` and `~/.lotusworker`
 - into environment variables in `~/.bashrc` if you are using Bash as your shell

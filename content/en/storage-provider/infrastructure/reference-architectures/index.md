@@ -134,7 +134,7 @@ TODO NOBLOCK ANGELO to write a section on the use of refurbished hardware
 
 ## Solo storage providing
 
-Please take a look at the presentation Benjamin Hoejsbo, from [PIKNIK](https://www.piknik.com) gave where they examine solo storage provider setups. The presentation is from 2022 but the content is still relevant (in March 2023).
+Please take a look at the presentation Benjamin Hoejsbo from [PIKNIK](https://www.piknik.com) gave, in which solo storage provider setups are examined. The presentation is from 2022, but the content is still relevant as of March 2023.
 
 {{< youtube "LKMjCgo-fkA" >}}
 
