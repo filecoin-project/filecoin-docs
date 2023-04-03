@@ -13,9 +13,25 @@ weight: 370
 toc: true
 ---
 
-<!-- THIS IS A SUMMARY - EXPECT NO EXPANSION ON STATEMENTS ON THIS PAGE -->
+Calculating the Return-on-Investment (ROI) of your Storage Provider business is essential to determine the profitability and sustainability of your operations. The ROI indicates the return or profit on your investment relative to the cost of that investment. There are several factors to consider when calculating the ROI of a Storage Provider business.
+
+**First**, the cost of the initial hardware investment and the collateral in FIL required to participate in the network must be considered. These costs are significant and will likely require financing from investors, venture capitalists, or banks.
+
+**Second**, the income generated from the block rewards must be factored into the ROI calculation. However, this income is subject to the volatility of the FIL token price, which can be highly unpredictable.
+
+**Third**, it is important to consider the cost of sales when calculating the ROI. Sales costs include the cost of acquiring new customers, marketing, and any fees associated with payment processing. These costs can vary depending on the sales strategy and the size of the business.
+
+**Fourth**, the total cost of ownership must be considered. This includes the cost of backups, providing access to ingest and retrieve data, preparing the data, and any other costs associated with operating a Storage Provider business.
+
+**Finally**, the forecasted growth of the network and the demand for storage will also impact the ROI calculation. If the network and demand for storage grow rapidly, the ROI may increase. However, if the growth is slower than anticipated, the ROI may decrease.
+
+**Overall**, calculating the ROI of a Storage Provider business is complex and requires a thorough understanding of the costs and income streams involved. The Storage Provider Forecast Calculator can assist in determining the ROI by accounting for various factors such as hardware costs, token price, and expected growth of the network.
 
 Calculating the ROI of your Storage Provider business is important. Check out the [Storage Provider Forecast Calculator](https://calc.filecoin.eu/) for more details.
+
+For more information and context see the following video:
+
+{{< youtube "zboAgawHT-o" >}}
 
 It takes more variables than the cost vs. the income. In summary, the factors that influence your ROI are:
 
