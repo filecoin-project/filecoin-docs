@@ -52,7 +52,7 @@ As will become clear, running a storage operation is a serious business, with cl
 
 You will need skilled people to operate your Storage Provider business. Depending on the size and complexity of your setup this can be 1 person with skills across many different domains, or multiple dedicated people or teams.
 
-**[People and skills →]({{<relref "linux-skills" >}})**
+**[People and skills →]({{<relref "linux" >}})**
 
 ## Build the right infrastructure
 
@@ -62,4 +62,4 @@ Take availability and suitable redundancy into consideration when choosing your 
 
 **[Software architecture →]({{<relref "lotus-components" >}})**
 
-**[Infrastructure →]({{<relref "storage" >}})**
+**[Infrastructure →]({{<relref "/storage-provider/skills/storage" >}})**
