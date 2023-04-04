@@ -12,13 +12,21 @@ menu:
 weight: 630
 toc: true
 ---
-As a Filecoin Storage Provider you are not only storing customer data, you are also storing Filecoin wallets and running systems that require 24/7 uptime, so as not to lose collateral. In the event of a security intrusion on your network and systems being compromised, you risk downtime or even losing access to your systems or storage. Maintaining proper security is essential.
+Being a Filecoin Storage Provider involves more than just storing customer data. You are also responsible for managing Filecoin wallets and running systems that require 24/7 uptime to avoid losing collateral. This means that if your network or systems are compromised due to a security intrusion, you risk experiencing downtime or even losing access to your systems and storage. Therefore, maintaining proper security is of utmost importance.
+
+As a Storage Provider, you must have the necessary skills and expertise to identify and mitigate potential security threats. This includes understanding common attack vectors such as phishing, malware, and social engineering, and implementing appropriate security controls such as firewalls, intrusion detection and prevention systems, and access controls.
+
+Additionally, you must also be able to keep up with the latest security trends and technologies to ensure that your systems remain secure over time. This can involve ongoing training and education, as well as staying informed about new threats and vulnerabilities.
+
+In summary, as a Filecoin Storage Provider, you have a responsibility to ensure the security of your customers' data, your own systems, and the Filecoin network as a whole. This requires a thorough understanding of security best practices, ongoing training and education, and a commitment to staying informed about the latest security trends and technologies.
 
 ## Network security
 
-As a first layer of defense, plan for a redundant firewall setup through which not only you can filter incoming traffic but also traffic between your VLANs.
-By using a NGFW (Next-Generation-Firewall) you can also implement an IPS (Intrusion Prevention System) at the network perimeter.
-Do keep in mind though that if you plan on using a NGFW with IPS enabled, that your internet bandwidth will be limited to the speed of the IPS.
+When it comes to network security, it is important to have a solid first line of defense in place. One effective strategy is to implement a redundant firewall setup that can filter incoming traffic as well as traffic between your VLANs.
+
+A next-generation firewall (NGFW) can provide even more robust security by incorporating an intrusion prevention system (IPS) at the network perimeter. This can help to detect and prevent potential threats before they can do any harm.
+
+However, it is important to note that implementing a NGFW with IPS enabled can also have an impact on your internet bandwidth. This is because the IPS will inspect all incoming and outgoing traffic, which can slow down your network performance. As such, it is important to carefully consider your bandwidth requirements and plan accordingly.
 
 ## System security
 

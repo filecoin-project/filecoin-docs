@@ -12,25 +12,25 @@ menu:
 weight: 640
 toc: true
 ---
-Storage is a critical component of running a successful storage provider in the Filecoin network. While it may seem obvious that having strong storage skills is important, Filecoin requires a unique end-to-end skill set to run a 24/7 application.
+Storage is a critical component of running a successful Storage Provider in the Filecoin network. While it may seem obvious that having strong storage skills is important, Filecoin requires a unique end-to-end skill set to run a 24/7 application.
 
-Unlike traditional storage arrays and administration, the nature of [Storage Proving]({{<relref "storage-proving">}}) in Filecoin requires atypical read-behavior on the storage system. This means that the storage administrator must have the ability to design for this behavior and analyze the storage system accordingly.
+[Storage Proving]({{<relref "storage-proving">}}) requires atypical read-behavior from a storage system. This means that the storage administrator must be able to design for this behavior and analyze the storage system accordingly.
 
-In addition, it is important for storage providers to understand the importance of reliable and efficient storage. Filecoin is designed to incentivize storage providers to keep data safe and secure, and as such, the storage system must be able to maintain high levels of reliability and availability.
+In addition, it is important for storage providers to understand the importance of reliable and efficient storage. Filecoin is designed to incentivize Storage Providers to keep data safe and secure, and as such, the storage system must be able to maintain high levels of reliability and availability.
 
-Moreover, storage providers need to be able to implement and maintain storage infrastructure that meets the needs of clients who require large amounts of storage space. This requires knowledge of various storage technologies, as well as the ability to troubleshoot issues that may arise.
+Storage Providers need to be able to implement and maintain storage infrastructure that meets the needs of clients who require large amounts of storage space. This requires knowledge of various storage technologies, as well as the ability to troubleshoot issues that may arise.
 
-Overall, storage is a critical aspect of the Filecoin network and storage providers must possess the necessary skills and knowledge to provide high-quality storage services to clients.
+Overall, storage is a critical aspect of the Filecoin network and Storage Providers must have the necessary skills and knowledge to provide high-quality storage services to clients.
 
 ## ZFS
 
 ZFS (Zettabyte File System) is a combined file system and logical volume manager that provides advanced features such as pooled storage, data integrity verification and automatic repair, and data compression. It is a popular choice among Storage Providers due to its reliability, scalability, and performance.
 
-Configuring ZFS requires knowledge and skills that go beyond the basics of traditional file systems. Storage Providers need to understand how ZFS manages data, including how it distributes data across disks and how it handles data redundancy and protection. They must also know how to configure ZFS for optimal performance and how to troubleshoot issues that may arise with ZFS.
+Configuring ZFS requires knowledge and skills that go beyond the basics of traditional file systems. As a Storage Provider you need to understand how ZFS manages data, including how it distributes data across disks and how it handles data redundancy and data protection. You must also know how to configure ZFS for optimal performance and how to troubleshoot issues that may arise with ZFS.
 
-In addition to configuring ZFS, Storage Providers must also be able to manage the disks and hardware used for storage. This includes selecting and purchasing appropriate hardware, installing and configuring disks and disk controllers, and monitoring disk health and performance.
+In addition to configuring ZFS, Storage Providers must also be able to manage the disks and other hardware used for storage. This includes selecting and purchasing appropriate hardware, installing and configuring disks and disk controllers, and monitoring disk health and performance.
 
-Overall, having the knowledge and skills to configure ZFS is crucial for Storage Providers, as it enables them to provide reliable and high-performance storage services to their clients. Without this expertise, Storage Providers may struggle to deliver the level of service that their clients expect, which could lead to decreased customer satisfaction and loss of business.
+Having the knowledge and skills to configure ZFS is crucial as a Storage Providers, as it enables you to provide reliable and high-performance storage services to your clients. Without this expertise, you may struggle to deliver the level of service that your clients expect, which could lead to decreased customer satisfaction and loss of business.
 
 ### RAIDZ2
 
@@ -48,7 +48,7 @@ Finally, creating datasets is another important aspect of ZFS configuration. Dat
 
 ZFS provides built-in protection for data in the form of snapshots. Snapshots are read-only copies of a ZFS file system at a particular point in time. By taking regular snapshots, you can protect your data against accidental deletions, file corruption, or other disasters.
 
-To ensure that your data is fully protected, it's important to configure a snapshot rotation schema. This means defining a schedule for taking snapshots and retaining them for a specified period of time. For example, you might take hourly snapshots and retain them for 24 hours, and then take daily snapshots and retain them for a week.
+To ensure that your data is fully protected, it is important to configure a snapshot rotation schema. This means defining a schedule for taking snapshots and retaining them for a specified period of time. For example, you might take hourly snapshots and retain them for 24 hours, and then take daily snapshots and retain them for a week.
 
 In addition to snapshots, ZFS also allows you to replicate them to another system running ZFS. This can be useful for creating backups or for replicating data to a remote site for disaster recovery purposes. ZFS replication works by sending incremental changes to the destination system, which ensures that only the changes are sent over the network, rather than the entire dataset. This can significantly reduce the amount of data that needs to be transferred and can help minimize network bandwidth usage.
 
@@ -56,6 +56,6 @@ In addition to snapshots, ZFS also allows you to replicate them to another syste
 
 As a Storage Provider, it is crucial to be able to troubleshoot and resolve any performance issues that may arise. This requires a deep understanding of the underlying storage system and the ability to use Linux performance analytic tools such as `iostat`. These tools can help identify potential bottlenecks in the storage system, such as high disk utilization or slow response times.
 
-In addition to troubleshooting, Storage Providers must also be able to optimize the performance of their storage system. One way to improve performance is by implementing an NVMe write-cache. NVMe (Non-Volatile Memory Express) is a protocol designed specifically for solid-state drives, which can greatly improve the speed of write operations. By adding an NVMe write-cache to the storage system, Storage Providers can reduce the latency of write operations and improve overall system performance.
+In addition to troubleshooting, you must also be able to optimize the performance of your storage system. One way to improve performance is by implementing an NVMe write-cache. NVMe (Non-Volatile Memory Express) is a protocol designed specifically for solid-state drives, which can greatly improve the speed of write operations. By adding an NVMe write-cache to the storage system, you can reduce the latency of write operations and improve overall system performance.
 
-It's worth noting that read-cache is typically not useful in the context of Filecoin. This is because sealed sectors are read very randomly, and unsealed sectors will typically not be read twice. Therefore, storing data in a read-cache would be redundant and add unnecessary overhead to the system.
+Read-cache on the other hand is typically not useful in the context of Filecoin. This is because sealed sectors are read very randomly, and unsealed sectors will typically not be read twice. Therefore, storing data in a read-cache would be redundant and add unnecessary overhead to the system.
