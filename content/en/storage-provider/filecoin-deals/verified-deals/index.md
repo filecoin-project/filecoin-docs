@@ -38,14 +38,9 @@ Data preparation, which includes seperating files and folders in car files, take
 Once the data is sealed and you are proving your copies on-chain (i.e. on the blockchain), you will need to offer retrievals to your customer as well. This obviously requires network bandwidth once more, so you may need to charge for retrievals accordingly.
 
 ## Tools
-<<<<<<< HEAD
+
 Tools and programs exist for this <!--TODO STEF what? --> to work but a Storage Provider needs to know how to operate this entire workflow. See [Filecoin Plus Programs]({{<relref "filecoin-programs" >}}) for more information on available programs. See [Architecture]({{<relref "lotus-components" >}}) for more information on the tooling and software components.
-=======
 
-<!-- TODO NOBLOCK STEF BOB this section doesn't add much in the way of actionable specifics? delete?-->
-Tools and programs exist for this to work, but a Storage Provider needs to know how to operate the Filecoin Plus workflow. See [Filecoin Programs]({{<relref "filecoin-programs" >}}) for more information on available programs. See [Architecture]({{<relref "lotus-components" >}}) for more information on the tooling and software components.
-
->>>>>>> 287c27d1df0907794b4248ebd2701a7774d0c540
 
 ## Rewards & penalties
 
