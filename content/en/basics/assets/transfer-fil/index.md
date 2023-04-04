@@ -37,7 +37,7 @@ Use the [FilForwarder process]({{< relref "/smart-contracts/wallets/filforwader"
 
 ## Filecoin → Eth-style address
 
-Most wallets and exchanges currely only support `f1` or `f3` addresses. The majority of exchanges are still implementing support for `f4` addresses. This means that many wallets and exchanges won’t let you directly transfer FIL to an `f4` or Ethereum-style address. We recommend filing a support issue with the exchange to help accelerate the support of `f4` addresses. The process for sending FIL from a Filecoin address to an Ethereum address depends on the kind of wallet you have.
+Most wallets and exchanges currently only support `f1` or `f3` addresses. The majority of exchanges are still implementing support for `f4` addresses. Many wallets and exchanges won’t let you directly transfer FIL to an `f4` or Ethereum-style address. We recommend filing a support issue with the exchange to help accelerate the support of `f4` addresses. The process for sending FIL from a Filecoin address to an Ethereum address depends on the kind of wallet you have.
 
 ### Ledger device
 
