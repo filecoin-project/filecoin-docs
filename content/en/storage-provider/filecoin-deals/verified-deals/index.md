@@ -12,8 +12,6 @@ menu:
 weight: 320
 toc: true
 ---
-<!--TODO STEF BOB should this page be called Filecoin Plus, not Verified deals?-->
-## Filecoin Plus
 
 The goal of Filecoin is to be the decentralized storage network for humanity’s most important information. With that in mind, it is vital to onboard real and valuable data onto the network. Filecoin Plus (Fil+) is a social trust program that incentivizes storage providers to store that data in _verified deals_. A deal is _verified_ when the data owner (i.e. the client) undergoes a verification process, where a group of community _notaries_ judge the client and their particular usage of Filecoin to be useful or valuable in some way<!--TODO NOBLOCK STEF BOB how? -->. Notaries are responsible for asking questions to the client and conducting due diligence to build reasonable confidence in the trustworthiness of the client and their use case.
 
@@ -39,8 +37,7 @@ Once the data is sealed and you are proving your copies on-chain (i.e. on the bl
 
 ## Tools
 
-Tools and programs exist to support Filecoin Plus, but a storage provider needs to know how to operate this entire workflow. See [Filecoin Plus Programs]({{<relref "filecoin-programs" >}}) for more information on available programs. See [Architecture]({{<relref "lotus-components" >}}) for more information on the tooling and software components.
-
+Tools and programs exist to support Filecoin Plus, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs]({{<relref "filecoin-programs" >}}) for more information on available programs. See [Architecture]({{<relref "lotus-components" >}}) for more information on the tooling and software components.
 
 ## Rewards & penalties
 
