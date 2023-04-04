@@ -159,7 +159,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 #### Storage provider index API
 
 - [Filrep.io API](https://filrep.io/api) - A suite of RESTFul JSON endpoints to discover the best storage provider to make deals with.
-- [Textile Storage Provider Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find storage providers by price, observed deals, speed from North American nodes.
+- [Textile storage provider Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find storage providers by price, observed deals, speed from North American nodes.
 
 ### Data prep tools
 
@@ -185,7 +185,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 - [Codefi Storage](https://storage.codefi.network/) - view the Filecoin Storage Market, storage provider info, asking price, completed deals.
 - [FIL Swan](https://www.filswan.com/) - for offline deals, storage provider info, prices, offline deal acceptance.
 - [Filrep.io](https://filrep.io/) - Index of online storage providers and their pricing, ranked by power and reputation score.
-- [Textile Storage Provider Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find storage providers by price, observed deals, speed from North American nodes.
+- [Textile storage provider Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find storage providers by price, observed deals, speed from North American nodes.
 - [SpaceGap](https://spacegap.github.io/) - shows storage proof deadlines and sector details for the top 50 storage providers.
 
 ### Storage provider tools
@@ -197,7 +197,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Storage client and miner programs
 
-- [Filecoin Storage Providers](https://sp.filecoin.io/) - Interested in becoming an SP? A bootcamp, grants and expert advice is available here!
+- [Filecoin storage providers](https://sp.filecoin.io/) - Interested in becoming an SP? A bootcamp, grants and expert advice is available here!
 - [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding)
   - incentivizes valuable data stored on Filecoin with a social trust network for verified data
   - Clients can apply to Notaries to receive DataCap and incentivize storage providers at 10x to their quality-adjusted power, increasing probability of block rewards
