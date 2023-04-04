@@ -1,7 +1,7 @@
 ---
 title: "Sealing rate"
-description: "For a Storage Provider to fill up your available capacity with sealed sectors, the rate at which you can seal is measured in TiB/day or PiB/day."
-lead: "The Sealing Pipeline section explained the various tasks involved in the sealing pipeline in the context of Storage Provider requirements. The rate at which storage providers complete this process is measured in TiB/day or PiB/day, and is referred to as _Sealing Rate_, or _Sealing Capacity_. This page describes considerations and advice for storage providers in regards to sealing rate."
+description: "For a storage provider to fill up your available capacity with sealed sectors, the rate at which you can seal is measured in TiB/day or PiB/day."
+lead: "The Sealing Pipeline section explained the various tasks involved in the sealing pipeline in the context of storage provider requirements. The rate at which storage providers complete this process is measured in TiB/day or PiB/day, and is referred to as _Sealing Rate_, or _Sealing Capacity_. This page describes considerations and advice for storage providers in regards to sealing rate."
 draft: false
 images: []
 type: docs
@@ -16,7 +16,7 @@ toc: true
 For more information on the steps involved in sealing sectors, see the [Sealing Pipeline]({{<relref "sealing-pipeline">}}).
 
 ## Cost 
-When setting up their business, Storage Providers must determine how fast they should seal, and thus how much sealing hardware they should buy. In other words, cost is an important factor in determining a storage providers sealing rate. For example, suppose you have an initial storage capacity of 100TiB, which would account for 1PiB QAP if all the sectors contain Fil+ verified deals. If your sealing capacity is 2.5TiB/day, you would seal your full 100TiB in 40 days. Is it worth investing in double the sealing capacity to fill your storage in just 20 days? It might be if you are planning to grow way beyond 100TiB, to 1PiB raw and beyond. This is an example of the sort of cost considerations storage providers must factor in tuning sealing rate.
+When setting up their business, storage providers must determine how fast they should seal, and thus how much sealing hardware they should buy. In other words, cost is an important factor in determining a storage providers sealing rate. For example, suppose you have an initial storage capacity of 100TiB, which would account for 1PiB QAP if all the sectors contain Fil+ verified deals. If your sealing capacity is 2.5TiB/day, you would seal your full 100TiB in 40 days. Is it worth investing in double the sealing capacity to fill your storage in just 20 days? It might be if you are planning to grow way beyond 100TiB, to 1PiB raw and beyond. This is an example of the sort of cost considerations storage providers must factor in tuning sealing rate.
 
 ## Customer expectations
 A common reason that a storage provider may want or need a faster sealing rate is customer expectations. When you take on a customer deal, there are often requirements to seal a dataset of a certain size within a certain time window. If you are a new storage provider with 2.5TiB/day in sealing capacity, you cannot take on a deal of 2PiB that needs to be on-chain in 1 month; at the very least, you could not take deal using your own sealing infrastructure. Instead, you can use [Sealing-as-a-service]({{<relref "sealing-as-a-service">}}), which can help you scale your sealing capabilities.
@@ -56,4 +56,4 @@ Another rule of thumb is to have 2 PC2 workers for every PC1 worker in your setu
 
 ### Scaling out
 
-A Storage Providers sealing capacity scales linearly with the hardware you add to it. For example, if your current setup allows for a sealing rate of 3 TiB/day, doubling the number of workers could bring you to 6 TiB/day. This requires that all components of your infrastructure are able to handle this additional throughput. [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}} allows you to scale your sealing capacity without adding more hardware.
+A storage providers sealing capacity scales linearly with the hardware you add to it. For example, if your current setup allows for a sealing rate of 3 TiB/day, doubling the number of workers could bring you to 6 TiB/day. This requires that all components of your infrastructure are able to handle this additional throughput. [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}} allows you to scale your sealing capacity without adding more hardware.

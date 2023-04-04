@@ -1,7 +1,7 @@
 ---
 title: "Lotus components"
 description: "Lotus is the software reference implementation written by Protocol Labs to interact with the Filecoin blockchain."
-lead: "Lotus is the reference implementation for the Filecoin network written in Go and maintained by [Protocol Labs](https://protocol.ai). Understanding these components is necessary in understanding subsequent sections on sealing, and what it means to build a well-balanced Storage Provider architecture."
+lead: "Lotus is the reference implementation for the Filecoin network written in Go and maintained by [Protocol Labs](https://protocol.ai). Understanding these components is necessary in understanding subsequent sections on sealing, and what it means to build a well-balanced storage provider architecture."
 draft: false
 images: []
 type: docs
@@ -28,23 +28,23 @@ The following components, described on this page, are the most important to unde
 The daemon is a key Lotus component that does the following:
 
 - Syncs the chain
-- Holds the wallets of the Storage Provider
+- Holds the wallets of the storage provider
 
-The machine running the Lotus daemon must be continuously connection to the public internet for the Storage Provider to function. For information on connectivity requirements, see the [Lotus documentation](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider). 
+The machine running the Lotus daemon must be continuously connection to the public internet for the storage provider to function. For information on connectivity requirements, see the [Lotus documentation](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider). 
 
 ### Syncing the chain
 
 Syncing the chain is a key role of the daemon. It syncs with the other nodes on the blockchain network by sending messages, which are in turn collected into [blocks](https://docs.filecoin.io/reference/general/glossary/#block). Then, blocks are collected into [tipsets](https://docs.filecoin.io/reference/general/glossary/#tipset). Your Lotus daemon then receives the messages on-chain, enabling you to maintain consensus about the state of the Filecoin Network with all the other participants.
 
-Due to the growth in the size of the chain since its genesis, it is not advised for Storage Providers to sync the entire history. Instead, use the available [lightweight snapshots](https://lotus.filecoin.io/kb/chain-snapshots/) to import the most recent messages (note, as of April 2022, on mainnet, even the lightweight snapshot is 72Gb). One exception in which a provider would need to sync the entire chain would be to run a Blockchain Explorer like [Filfox](https://filfox.info).
+Due to the growth in the size of the chain since its genesis, it is not advised for storage providers to sync the entire history. Instead, use the available [lightweight snapshots](https://lotus.filecoin.io/kb/chain-snapshots/) to import the most recent messages (note, as of April 2022, on mainnet, even the lightweight snapshot is 72Gb). One exception in which a provider would need to sync the entire chain would be to run a Blockchain Explorer like [Filfox](https://filfox.info).
 
-The storage volume for the synced chain data should be an SSD at minimum, with NVMe recommended. A slow chain sync can lead to all kinds of unwanted effects in your Storage Provider setup. For instance, it can lead to delays in critical messages being sent on-chain from your Lotus miner, resulting in faulting of sectors and slashing of collateral.
+The storage volume for the synced chain data should be an SSD at minimum, with NVMe recommended. A slow chain sync can lead to all kinds of unwanted effects in your storage provider setup. For instance, it can lead to delays in critical messages being sent on-chain from your Lotus miner, resulting in faulting of sectors and slashing of collateral.
 
 Another important consideration is the size of the file system and available free space. Because the Filecoin chain grows every day<!--TODO NOBLOCK STEF by how much, currently, and how big is it? 04-02 I have asked around in slack -->, any available space will eventually fill up. Solutions like [SplitStore](https://lotus.filecoin.io/lotus/configure/splitstore/) and [compacting](https://lotus.filecoin.io/lotus/manage/chain-management/#compacting-the-chain-data) reduce the storage space used by the chain. Compacting involves replacing the built-up chain data with a recent lightweight snapshot.
 
 ### Holding wallets
 
-Another key role of the Lotus Daemon is to host the Filecoin wallets that are required to run a Storage Provider setup. As a Storage Provider, you will need a minimum of 2 wallets: an _owner wallet_ and a _worker wallet_. A 3rd type of wallet, the [_control_ wallet]({{< relref "#control-wallets" >}}), is required to scale your operations in a production environment.
+Another key role of the Lotus Daemon is to host the Filecoin wallets that are required to run a storage provider setup. As a storage provider, you will need a minimum of 2 wallets: an _owner wallet_ and a _worker wallet_. A 3rd type of wallet, the [_control_ wallet]({{< relref "#control-wallets" >}}), is required to scale your operations in a production environment.
 
 To keep wallets safe, providers should consider physical access, network access, software security and making secure backups. As with any cryptocurrency wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), which are recommended for the owner wallet and the terminate wallet. The worker and control wallets can not be kept on a hardware device because Lotus requires frequent access to those types of wallets. For instance, depending on your setup, Lotus may require access to a worker or control wallet to send WindowsPoST proofs on-chain.
 
@@ -69,7 +69,7 @@ The PoSt wallet is by far the most important wallet to split off from the main w
 
 ## Lotus miner
 
-The Lotus miner is the process that coordinates most of the Storage Provider activities. It has 3 main responsibilities:
+The Lotus miner is the process that coordinates most of the storage provider activities. It has 3 main responsibilities:
 
 - Storing sectors and data
 - Scheduling jobs
@@ -124,14 +124,14 @@ For information on how to check if there are upcoming proving deadlines, see [He
 
 ## Lotus worker
 
-The Lotus worker is the 3rd important software component in the Lotus architecture. There can be - and most likely will be - multiple workers in a single Storage Provider setup. Assigning designated roles to each worker enables higher throughput, [sealing rate]({{<relref "sealing-rate">}}), and improved redundancy.
+The Lotus worker is the 3rd important software component in the Lotus architecture. There can be - and most likely will be - multiple workers in a single storage provider setup. Assigning designated roles to each worker enables higher throughput, [sealing rate]({{<relref "sealing-rate">}}), and improved redundancy.
 
 As mentioned above, proving tasks can be assigned to dedicated workers, and workers can also get storage access.
 The remaining worker tasks are running a [sealing pipeline]({{<relref "sealing-pipeline">}}), which is discussed in the next section.
 
 ## Helpful commands
 
-The following commands can help Storage Providers with their setup.
+The following commands can help storage providers with their setup.
 
 ### Backup Lotus miner state
 
