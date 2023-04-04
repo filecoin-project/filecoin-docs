@@ -185,7 +185,7 @@ Lassie's HTTP interface can be a very powerful tool for web applications which r
 
 ### Lassie's CAR format
 
-Under normal operation, Lassie only returns IPLD data in CAR format; specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie's car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for varying the data included.
+Under normal operation, Lassie only returns IPLD data in CAR format; specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie's car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for manipulating the output.
 
 
 <!-- TODO: Complete Lotus node retrieval method. -->
