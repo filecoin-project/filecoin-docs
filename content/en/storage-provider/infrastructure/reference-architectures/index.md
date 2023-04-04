@@ -68,13 +68,13 @@ In this architecture we have attached storage shelves to the Lotus miner with 2.
 - 16 CPU Cores
 - 128 GB RAM
 - 2x 1TB SSD storage
-- 1x GPU 24+ GB memory, 6000+ CUDA cores
+- 1x GPU 10+ GB memory, 3500+ CUDA cores
 - 2x 10GbE ethernet NICs
 {{< /alert >}}
 
 We have split off the Winning PoST and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelihood of winning block rewards and reduces the likelihood of missing a proving deadline. For redundancy, you can run a standby WindowPoST worker on the WinningPoST server and vice versa.
 
-PoST workers require 128GiB of memory at the minimum and require a capable GPU with 24GB of memory and 6000 or more CUDA cores.
+PoST workers require 128GiB of memory at the minimum and require a capable GPU with 10GB of memory and 3500 or more CUDA cores.
 
 ### Sealing workers
 
@@ -88,8 +88,8 @@ Keep in mind that using [Sealing-as-a-Service]({{<relref "sealing-as-a-service">
 
 - 32 CPU Cores **with SHA-extensions**
 - 1 TB RAM
-- 2x 1TB SSD scratch storage
-- 15+ TB U.3 NVMe main storage
+- 2x 1TB SSD OS storage
+- 15+ TB U.3 NVMe sealing / scratch storage
 - 2x 10GbE (or faster) ethernet NICs
 {{< /alert >}}
 
@@ -115,7 +115,7 @@ Every PC1 processes requires ~450GiB of sealing scratch space. This scratch spac
 - 32 CPU Cores
 - 512 GB RAM
 - 2x 1TB SSD
-- 1x GPU 24+ GB memory, 6000+ CUDA cores
+- 1x GPU 10+ GB memory, 3500+ CUDA cores
 - 2x 10GbE (or faster)
 {{< /alert >}}
 
