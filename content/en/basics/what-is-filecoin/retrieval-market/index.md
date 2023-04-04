@@ -21,7 +21,7 @@ Currently, Filecoin nodes support direct retrieval from the storage miners who o
 
 Clients need to provide enough information to the storage provider for the data retrieval request, including:
 
-- Storage Provider ID: The ID of the storage provider where the data is stored.
+- storage provider ID: The ID of the storage provider where the data is stored.
 - Payload CID: also called Data CID.
 - Address: The address initially used to create the storage deal.
 
