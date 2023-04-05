@@ -50,10 +50,8 @@ A common grouping is _AddPiece (AP)_ and PreCommit1 (PC1) because AP essentially
 
 As PC1 is CPU-bound and PC2 is GPU-bound, this is another good reason to separate those tasks out onto dedicated hardware, if you are planning to scale. Because PC2 is GPU-bound is makes sense to have PC2, C1 and C2 colocated on the same worker.
 
-<!-- the below might need some further research & rewording -->
 Another rule of thumb is to have 2 PC2 workers for every PC1 worker in your setup. The WaitSeed phase occurs after PC2, which locks the scratch space for a sector until C1 and C2. In order to keep sealing sectors in PC1, PC2 must have sufficient capacity.
-<!--  -->
 
 ### Scaling out
 
-A storage providers sealing capacity scales linearly with the hardware you add to it. For example, if your current setup allows for a sealing rate of 3 TiB/day, doubling the number of workers could bring you to 6 TiB/day. This requires that all components of your infrastructure are able to handle this additional throughput. [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}} allows you to scale your sealing capacity without adding more hardware.
+A storage providers sealing capacity scales linearly with the hardware you add to it. For example, if your current setup allows for a sealing rate of 3 TiB/day, doubling the number of workers could bring you to 6 TiB/day. This requires that all components of your infrastructure are able to handle this additional throughput. [Sealing-as-a-Service]({{<relref "sealing-as-a-service">}}) allows you to scale your sealing capacity without adding more hardware.
