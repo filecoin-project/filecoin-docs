@@ -1,6 +1,6 @@
 ---
 title: "FIL collateral"
-description: "Before you can do anything as a Storage Provider on the network you will have to create FIL wallets and add FIL to them."
+description: "Before you can do anything as a storage provider on the network you will have to create FIL wallets and add FIL to them."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
@@ -15,15 +15,15 @@ weight: 220
 toc: true
 ---
 
-As a Storage Provider on the network, you will have to create FIL wallets, and add FIL to them. This is used to send messages to the blockchain, but is also used for collateral. Providing storage capacity to the network requires you to provide FIL as collateral, which goes into a locked wallet on your Lotus instance. The [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/addresses/) details the process of setting up your wallets and funding wallets for the initial setup. Filecoin uses upfront token collateral, as in proof-of-stake protocols, proportional to the storage hardware committed. This gets the best of both worlds to protect the network: attacking the network requires both acquiring and running the hardware, but it also requires acquiring large quantities of the token.
+As a storage provider on the network, you will have to create FIL wallets, and add FIL to them. This is used to send messages to the blockchain, but is also used for collateral. Providing storage capacity to the network requires you to provide FIL as collateral, which goes into a locked wallet on your Lotus instance. The [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/addresses/) details the process of setting up your wallets and funding wallets for the initial setup. Filecoin uses upfront token collateral, as in proof-of-stake protocols, proportional to the storage hardware committed. This gets the best of both worlds to protect the network: attacking the network requires both acquiring and running the hardware, but it also requires acquiring large quantities of the token.
 
 ## Types of collateral
 
-To satisfy the multiple needs for collateral in a way that is minimally burdensome to Storage Providers, Filecoin includes three different collateral mechanisms: initial pledge collateral, block rewards as collateral, and storage deal provider collateral. The first is an initial commitment of Fil that a miner must provide with each sector. The second is a mechanism to reduce the initial token commitment by vesting block rewards over time. The third aligns incentives between Storage Provider and client, and can allow miners to differentiate themselves in the market. <!--TODO NOBLOCK STEF BOB needs more explanation or linking? is the second basically re-investing earned blocks to give greater future capacity?-->
+To satisfy the multiple needs for collateral in a way that is minimally burdensome to storage providers, Filecoin includes three different collateral mechanisms: initial pledge collateral, block rewards as collateral, and storage deal provider collateral. The first is an initial commitment of Fil that a miner must provide with each sector. The second is a mechanism to reduce the initial token commitment by vesting block rewards over time. The third aligns incentives between storage provider and client, and can allow miners to differentiate themselves in the market. <!--TODO NOBLOCK STEF BOB needs more explanation or linking? is the second basically re-investing earned blocks to give greater future capacity?-->
 
 For more detailed information about how collateral requirements are calculated, see the [miner collateral section in the Filecoin spec](https://spec.filecoin.io/systems/filecoin_mining/miner_collaterals/).
 
-When a Storage Provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see [Storage Proving]({{<relref storage-proving >}})), or when you take your storage offline and thereby break the rules of the storage deal, you will get penalized against the provided collateral. This penalty is called [_slashing_]({{<relref slashing>}}) and means that a portion of the pledged collateral is forfeited <!--TODO NOBLOCK STEF BOB where does it go? who gets it? Does it all go? -->and your storage power is reduced.
+When a storage provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see [Storage Proving]({{<relref storage-proving >}})), or when you take your storage offline and thereby break the rules of the storage deal, you will get penalized against the provided collateral. This penalty is called [_slashing_]({{<relref slashing>}}) and means that a portion of the pledged collateral is forfeited <!--TODO NOBLOCK STEF BOB where does it go? who gets it? Does it all go? -->and your storage power is reduced.
 
 ## How much collateral?
 

@@ -91,7 +91,7 @@ A Data DAO enables the creation of a dataset economy where users can capture and
 
 There are many ways to create a DataDAO. This document will only focus on one of the possibilities for the purpose of example.
 
-As the [RFS](https://rfs.fvm.dev/) describes, DataDAOs enable groups of people to put together resources to preserve and utilize the data that are useful for their stakeholders. Imaging a DataDAO can mint a token $DATA, and incentivize Storage Providers to replicate the data it wants to store. The DataDAO can specify the data it wants to replicate and the number of replications it desires. For every replication, the DataDAO will mint some $DATA and send them to the SP as rewards. How datasets are chosen is left up to the governance process of the DataDAO.
+As the [RFS](https://rfs.fvm.dev/) describes, DataDAOs enable groups of people to put together resources to preserve and utilize the data that are useful for their stakeholders. Imaging a DataDAO can mint a token $DATA, and incentivize storage providers to replicate the data it wants to store. The DataDAO can specify the data it wants to replicate and the number of replications it desires. For every replication, the DataDAO will mint some $DATA and send them to the SP as rewards. How datasets are chosen is left up to the governance process of the DataDAO.
 
 #### Solution Architecture
 
@@ -121,7 +121,7 @@ The DataDAO contract should check if the deal was published according to its bus
 
 The DataDAO contract should mint some $DATA and send it to the storage provider who successfully published the deal.
 
-![Diagram showing the relationship between Market Actor, Client Contracts, and Storage Providers within the Filecoin network.](client-market-sp-mesh.png)
+![Diagram showing the relationship between Market Actor, Client Contracts, and storage providers within the Filecoin network.](client-market-sp-mesh.png)
 
 [Reference](https://github.com/lotus-web3/client-contract)
 
@@ -142,13 +142,13 @@ The DataDAO contract can decide how to incentivize SPs by implementing their bus
 
 There are many use cases in the world that need perpetual storage. For example, the safe and indefinite storage of NFTs would greatly assist the NFT marketplace.
 
-Filecoin deals have an expiration date attached to them, and after the expiration date, deals expire, and data is lost. With the FVM, uploaders can specify the number of replications they want and the desired expiration date. The expiration date can be a long time in the future or even indefinitely. As long as the uploader still has funds (FIL) in the contract account, the contract will keep incentivizing Storage Providers to create deals to meet the goal of replication.
+Filecoin deals have an expiration date attached to them, and after the expiration date, deals expire, and data is lost. With the FVM, uploaders can specify the number of replications they want and the desired expiration date. The expiration date can be a long time in the future or even indefinitely. As long as the uploader still has funds (FIL) in the contract account, the contract will keep incentivizing storage providers to create deals to meet the goal of replication.
 
 #### Solution architecture
 
 I highly recommend that you [read through the “Core Idea” section in this README](https://github.com/lotus-web3/client-contract) before continuing to read this document.
 
-![Diagram showing the relationship between Market Actor, Client Contracts, and Storage Providers within the Filecoin network.](client-market-sp-mesh.png)
+![Diagram showing the relationship between Market Actor, Client Contracts, and storage providers within the Filecoin network.](client-market-sp-mesh.png)
 
 [Reference](https://github.com/lotus-web3/client-contract)
 
@@ -158,7 +158,7 @@ I highly recommend that you [read through the “Core Idea” section in this RE
 
 ##### PerpetualDeal creation
 
-- The uploader should upload the file to a place where Storage Providers can download the data from, such as IPFS or AWS S3, and get the URL of the data
+- The uploader should upload the file to a place where storage providers can download the data from, such as IPFS or AWS S3, and get the URL of the data
 - The uploader should send the URL of the data, the desired number of replication, and the desired expiration date to the PerpetualStorage contract to create a PerpetualDeal
     - The dApp front end can provide an estimation of how long the data can be stored based on the amount of FIL the uploader has in the contract.
     - The contract should reject the creation of the PerpetualDeal if the uploader does not have enough funds deposited in the contract.
@@ -173,9 +173,9 @@ I highly recommend that you [read through the “Core Idea” section in this RE
 
 ##### Storage deals creation
 
-- Storage Providers can look at the list of PerpetualDealAd and determine which PerpetualDealAd they want to store.
-- Storage Providers should download the content of the PerpetualDealAd. They should try to download from the URL of the content or use the CID to download the content from other storage providers.
-- Storage Providers should seal the data of the PerpetualDealAd and publish the deal information to the market actor by calling `publish_deal` on the market actor. The PerpetualStorage contract will act as the client of the deal. (The command to seal the data and generate deal information is under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)).
+- Storage providers can look at the list of PerpetualDealAd and determine which PerpetualDealAd they want to store.
+- Storage providers should download the content of the PerpetualDealAd. They should try to download from the URL of the content or use the CID to download the content from other storage providers.
+- Storage providers should seal the data of the PerpetualDealAd and publish the deal information to the market actor by calling `publish_deal` on the market actor. The PerpetualStorage contract will act as the client of the deal. (The command to seal the data and generate deal information is under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)).
     - The storage provider should put the PerpetualDealAd’s id into the label (this is the field used to store arbitrary data) of the deal, so the PerpetualStorage contract can identify which PerpetualDealAd the storage provider is targeting.
     - The market actor will call the [AuthenticateMessage](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0044.md) native method on the PerpetualStorage contract to know if this deal should be created. This method will be called using the FRC42 method number as specified in the linked FRC.
     - You can handle this callback by exposing a `handle_filecoin_method(uint64, uint64, bytes)` Solidity method, which is how the FEVM runtime routes inbound FRC42 calls. [See this example](https://github.com/lotus-web3/client-contract/blob/8b53caadd9f7b028f897dfcd28ec2ca9ae98b9e3/src/DealClient.sol#LL49).
