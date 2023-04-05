@@ -123,7 +123,7 @@ Lassie usage for retrieving data is:
 lassie fetch -p -o <OUTFILE_FILE_NAME> <CID>/path/to/content
 ```
 
-* `-p` is an optional flag that tells Lassie that you would like to see detailed progress information as it fetches your data.
+- `-p` is an optional flag that tells Lassie that you would like to see detailed progress information as it fetches your data.
 
   For example:
 
@@ -141,11 +141,14 @@ lassie fetch -p -o <OUTFILE_FILE_NAME> <CID>/path/to/content
     ...
     ```
 
-* `-o` is an optional flag that tells Lassie where to write the output to. If you don't specify a file, it will append `.car` to your CID and use that as the output file name.
+- `-o` is an optional flag that tells Lassie where to write the output to. If you don't specify a file, it will append `.car` to your CID and use that as the output file name.
 
 If you specify `-`, as in our above example, the output will be written to `stdout` so it can be piped to another command, such as `go-car`, or redirected to a file.
 
-* `<CID>/path/to/content` is the CID of the content you want to retrieve, and an optional path to a specific file within that content.
+- `<CID>/path/to/content` is the CID of the content you want to retrieve, and an optional path to a specific file within that content. Example:
+    ```
+    lassie fetch -o - bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Cryptographic_hash_function | car extract - | less
+    ```
 
 A CID is always necessary and, if you don't specify a path, Lassie will attempt to download the entire content. If you specify a path, Lassie will only download that specific file or, if it is a directory, the entire directory and its contents.
 
@@ -157,11 +160,11 @@ The `car extract` command can be used to extract files and directories from a CA
 car extract -f <INPUT_FILE>[/path/to/file/or/directory] [<OUTPUT_DIR>]
 ```
 
-* `-f` is an optional flag that tells `go-car` where to read the input from. If omitted, it will read from `stdin`, as in our example above where we piped `lassie fetch -o -` output to `car extract`.
+- `-f` is an optional flag that tells `go-car` where to read the input from. If omitted, it will read from `stdin`, as in our example above where we piped `lassie fetch -o -` output to `car extract`.
 
-* `/path/to/file/or/directory` is an optional path to a specific file or directory within the CAR. If omitted, it will attempt to extract the entire CAR.
+- `/path/to/file/or/directory` is an optional path to a specific file or directory within the CAR. If omitted, it will attempt to extract the entire CAR.
 
-* `<OUTPUT_DIR>` is an optional argument that tells `go-car` where to write the output to. If omitted, it will write to the current directory.
+- `<OUTPUT_DIR>` is an optional argument that tells `go-car` where to write the output to. If omitted, it will write to the current directory.
 
 If you supply `-`, as in the above example, it will attempt to extract the content directly to `stdout`. This will only work if we are extracting a single file.
 
