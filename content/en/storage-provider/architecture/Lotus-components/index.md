@@ -57,7 +57,7 @@ For information on how to view wallets and their funds, see [Helpful commands]({
 
 #### Control wallets
 
-Control wallets are required to scale your operations in a production environment. In production, just using the general worker wallet increases the risk of message congestion, resulting in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards. It is recommended that providers create wallets for each subprocess. There are five different types of control wallets a storage provider can create:
+Control wallets are required to scale your operations in a production environment. In production, only using the general worker wallet increases the risk of message congestion, which can result in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards. It is recommended that providers create wallets for each subprocess. There are five different types of control wallets a storage provider can create:
 
 - PoSt wallet
 - PreCommit wallet
@@ -110,7 +110,7 @@ For information on how to view scheduled jobs, see [View scheduled jobs]({{< rel
 
 ### Storage proving
 
-One of the most important roles of the Lotus miner is [storage proving]({{< relref "storage-proving" >}}). Both the {{< tooltip "WindowPoSt" >}} and {{< tooltip "WinningPoSt" >}} processes are usually handled by the Lotus miner. For scalability and reliability purposes, providers can also run these processes on dedicated servers, known as workers, instead of using the Lotus miner.
+One of the most important roles of the Lotus miner is [storage proving]({{< relref "storage-proving" >}}). Both the {{< tooltip "WindowPoSt" >}} and {{< tooltip "WinningPoSt" >}} processes are usually handled by the Lotus miner. For scalability and reliability purposes, providers can also run these processes on dedicated servers, known as _workers_, instead of using the Lotus miner.
 
 The proving processes require low-latency access to sealed sectors. The proving challenge requires a GPU to run on. The resulting `zkProof` will be sent to the chain in a message. Messages must arrive within 30 minutes for WindowPoSt, and 30 seconds for WinningPoSt. It is extremely important that providers properly size and configure the proving workers, whether they are using just the Lotus miner or separate workers. Additionally, dedicated wallets, described in [Control wallets]({{< relref "#control-wallets" >}}), should be set up for these processes.
 
