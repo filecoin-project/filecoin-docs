@@ -165,7 +165,7 @@ car extract -f <INPUT_FILE>[/path/to/file/or/directory] [<OUTPUT_DIR>]
 
 If you supply `-`, as in the above example, it will attempt to extract the content directly to `stdout`. This will only work if we are extracting a single file.
 
-  In the example above, the `>` operator was used to redirect the output of `car extract` to a named file,. This is because the content we fetched was raw file data that did not have a name encoded. In this case, if we didn't use `-` and `> filename`, `go-car` would write to a file named `unknown`.
+  In the example above where we fetched a file named `lidar-data.tar`, the `>` operator was used to redirect the output of `car extract` to a named file,. This is because the content we fetched was raw file data that did not have a name encoded. In this case, if we didn't use `-` and `> filename`, `go-car` would write to a file named `unknown`. In this instance `go-car` was used to reconstitute the file from the raw blocks contained within Lassie's CAR output.
 
 `go-car` has other useful commands. The first is `car ls`, which can be used to list the contents of a CAR, The second is `car inspect`, which can be used to inspect the contents of the CAR, and optionally verify the integrity of a CAR.
 
@@ -185,7 +185,7 @@ Lassie's HTTP interface can be a very powerful tool for web applications which r
 
 ### Lassie's CAR format
 
-Under normal operation, Lassie only returns IPLD data in CAR format; specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie's car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for manipulating the output.
+Lassie only returns data in CAR format; specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie's car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for manipulating the output.
 
 
 <!-- TODO: Complete Lotus node retrieval method. -->
