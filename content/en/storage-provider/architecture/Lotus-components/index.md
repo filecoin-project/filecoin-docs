@@ -27,10 +27,11 @@ The following components are the most important to understand:
 
 The daemon is a key Lotus component that does the following:
 
-- Syncs the chain.
-- Holds the wallets of the storage provider.
+- Syncs the chain
+- Holds the wallets of the storage provider
 
 The machine running the Lotus daemon must be connected to the public internet for the storage provider to function. See the [Lotus documentation](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider) for more in-depth information on connectivity requirements. 
+
 
 ### Syncing the chain
 

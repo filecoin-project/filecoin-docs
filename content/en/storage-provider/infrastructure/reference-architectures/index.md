@@ -39,7 +39,7 @@ Lotus daemon and Boost run as Virtual Machines in this architecture. The advanta
 
 Boost is a resource-intensive process, especially when deals are being ingested over the internet. It also feeds data payload of the deals into the Lotus miner.
 
-We recommend 12-16 cores per VM and 128GiB of memory. Lotus daemon and Boost need to run on fast storage (SSD or faster). The capacity requirements of Boost depend on the size of deals you are accepting as a Storage Provider. Its capacity must be sufficient to be landing space for deals until the data can be processed by your sealing cluster in the backend.
+We recommend 12-16 cores per VM and 128GiB of memory. Lotus daemon and Boost need to run on fast storage (SSD or faster). The capacity requirements of Boost depend on the size of deals you are accepting as a storage provider. Its capacity must be sufficient to be landing space for deals until the data can be processed by your sealing cluster in the backend.
 
 Both Lotus daemon and Boost require public internet connectivity. In the case of Boost you also need to consider bandwidth. Depending on the deal size you are accepting, you might require 1Gbps or 10Gbps internet bandwidth.
 
@@ -68,13 +68,13 @@ In this architecture we have attached storage shelves to the Lotus miner with 2.
 - 16 CPU Cores
 - 128 GB RAM
 - 2x 1TB SSD storage
-- 1x GPU 24+ GB memory, 6000+ CUDA cores
+- 1x GPU 10+ GB memory, 3500+ CUDA cores
 - 2x 10GbE ethernet NICs
 {{< /alert >}}
 
 We have split off the Winning PoST and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelihood of winning block rewards and reduces the likelihood of missing a proving deadline. For redundancy, you can run a standby WindowPoST worker on the WinningPoST server and vice versa.
 
-PoST workers require 128GiB of memory at the minimum and require a capable GPU with 24GB of memory and 6000 or more CUDA cores.
+PoST workers require 128GiB of memory at the minimum and require a capable GPU with 10GB of memory and 3500 or more CUDA cores.
 
 ### Sealing workers
 
@@ -88,13 +88,13 @@ Keep in mind that using [Sealing-as-a-Service]({{<relref "sealing-as-a-service">
 
 - 32 CPU Cores **with SHA-extensions**
 - 1 TB RAM
-- 2x 1TB SSD scratch storage
-- 15+ TB U.3 NVMe main storage
+- 2x 1TB SSD OS storage
+- 15+ TB U.3 NVMe sealing / scratch storage
 - 2x 10GbE (or faster) ethernet NICs
 {{< /alert >}}
 
 We put the AddPiece and PreCommit1 tasks together on a first worker. This makes sense because AddPiece prepares the scratch space that will be used by the PC1 tasks thereafter.
-The first critical hardware component for PC1 is the CPU. This must be a CPU with SHA-256 extensions. Most Storage Providers opt for AMD Epyc (Rome, Milan or Genova) processors, although Ice Lake and newer Intel Xeon processors also support these extensions.
+The first critical hardware component for PC1 is the CPU. This must be a CPU with SHA-256 extensions. Most storage providers opt for AMD Epyc (Rome, Milan or Genova) processors, although Ice Lake and newer Intel Xeon processors also support these extensions.
 
 To verify if your CPU has the necessary extensions, run:
 
@@ -115,7 +115,7 @@ Every PC1 processes requires ~450GiB of sealing scratch space. This scratch spac
 - 32 CPU Cores
 - 512 GB RAM
 - 2x 1TB SSD
-- 1x GPU 24+ GB memory, 6000+ CUDA cores
+- 1x GPU 10+ GB memory, 3500+ CUDA cores
 - 2x 10GbE (or faster)
 {{< /alert >}}
 

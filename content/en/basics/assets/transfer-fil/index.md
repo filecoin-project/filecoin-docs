@@ -16,20 +16,16 @@ aliases:
     - "/smart-contracts/wallets/fil-to-zero-x/"
 ---
 
-
 Etheruem-style addresses start with `0x`. Filecoin addresses start with `f`. There are four paths for transferring funds across the Filecoin network depending on which address type you are transferring from and to:
 
 |   | From an Eth-style address | From a Filecoin address |
 | --- | --- | --- |
-| **To an Eth-style address** | [Ethereum → Ethereum](#eth-style-address--eth-style-address) | [Filecoin → Ethereum](#filecoin--eth-style-address) |
-| **To a Filecoin address** | [Ethereum → Filecoin](#eth-style-address--filecoin) | [Filecoin → Filecoin](#filecoin--filecoin) |
+| **To an Eth-style address** | [Eth-style address → Eth-style address](#eth-style-address--eth-style-address) | [Filecoin → Eth-style address](#filecoin--eth-style-address) |
+| **To a Filecoin address** | [Eth-style address → Filecoin](#eth-style-address--filecoin) | [Filecoin → Filecoin](#filecoin--filecoin) |
 
 {{< alert >}}
 ⚠️ **ASSETS ON THE FILECOIN NETWORK ARE NOT AVAILABLE ON ANY OTHER NETWORK**.<hr>Remember that Filecoin is fully compatible with Ethereum tools, like wallets. But that doesn’t mean you’re using the Ethereum network. These instructions transfer assets only within the Filecoin network. [Learn how to configure your Ethereum wallet on the Filecoin network]({{< relref "/smart-contracts/wallets/metamask" >}}).
 {{< /alert >}}
-<!-- Use the form below to find out which type of transfer you should use: -->
-
-<!-- {{< filecoin-transfer >}} -->
 
 ## Eth-style address → Eth-style address
 
@@ -41,7 +37,7 @@ Use the [FilForwarder process]({{< relref "/smart-contracts/wallets/filforwader"
 
 ## Filecoin → Eth-style address
 
-Currently, most wallets and exchanges only support `f1` or `f3` addresses. The majority of exchanges are still implementing support for `f4` addresses. This means that many wallets and exchanges won’t let you directly transfer FIL to an `f4` address. The process for sending FIL from a Filecoin address to an Ethereum address depends on the kind of wallet you have.
+Most wallets and exchanges currently only support `f1` or `f3` addresses. The majority of exchanges are still implementing support for `f4` addresses. Many wallets and exchanges won’t let you directly transfer FIL to an `f4` or Ethereum-style address. We recommend filing a support issue with the exchange to help accelerate the support of `f4` addresses. The process for sending FIL from a Filecoin address to an Ethereum address depends on the kind of wallet you have.
 
 ### Ledger device
 
