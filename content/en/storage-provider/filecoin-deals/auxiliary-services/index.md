@@ -26,7 +26,7 @@ Other new opportunities are emerging since the launch of FVM (Filecoin Virtual M
 
 ## Bacalhau
 
-A next step after the introduction of FVM is [Bacalhau](https://docs.bacalhau.org/)), which will be offering Compute over Data (COD). After the introduction of a compute layer on Filecoin, Bacalhau’s COD promises to run compute jobs over the data where the data resides, at the storage provider. Today, data scientists have to transer their datasets to compute farms in order for their AI, ML or other data processing activities to run. Bacalhau will allow them to run compute activities on the data, in situ, thereby removing the expensive requirement to move data around. storage providers will be able to offer - and get rewarded for - providing compute power to data scientists and other parties who want to execute COD.
+A next step after the introduction of FVM is [Bacalhau](https://docs.bacalhau.org/)), which will be offering Compute over Data (COD). After the introduction of a compute layer on Filecoin, Bacalhau’s COD promises to run compute jobs over the data where the data resides, at the storage provider. Today, data scientists have to transer their datasets to compute farms in order for their AI, ML or other data processing activities to run. Bacalhau will allow them to run compute activities on the data, in situ, thereby removing the expensive requirement to move data around. Storage providers will be able to offer - and get rewarded for - providing compute power to data scientists and other parties who want to execute COD.
 
 ## Storage tiering
 
