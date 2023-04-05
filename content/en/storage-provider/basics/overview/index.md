@@ -1,5 +1,5 @@
 ---
-title: "Becoming a Storage Provider"
+title: "Becoming a storage provider"
 description: "This page will help you understand how to design a suitable storage provider architecture, make the right hardware investments, and run a profitable business."
 draft: false
 images: []
@@ -34,7 +34,7 @@ The documentation you will be reading assumes you are familiar with the document
 
 To understand how you can run a profitable business as a Filecoin storage provider, it is important to make sure you understand the economics of Filecoin. Once you understand all the the core concepts, you can build out a strategy for your desired ROI.
 
-Storage Providers can also add additional value to clients when they offer certain certifications. These can enable a storage provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
+Storage providers can also add additional value to clients when they offer certain certifications. These can enable a storage provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
 
 **[Filecoin economics →]({{<relref "storage-proving" >}})**
 

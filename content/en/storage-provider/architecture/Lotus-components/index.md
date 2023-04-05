@@ -62,7 +62,7 @@ _Control wallets_ are required to scale your operations in a production environm
 - PoSt wallet
 - PreCommit wallet
 - Commit wallet
-- Publish Storage Deals wallet
+- Publish storage deals wallet
 - Terminate wallet
 
 The PoSt wallet is by far the most important wallet to split off from the main worker wallet for reasons explained in the next section.
@@ -77,7 +77,7 @@ The Lotus miner is the process that coordinates most of the storage provider act
 
 ### Storing sectors and data
 
-Storage Providers on the Filecoin network store [_sectors_]({{< relref "glossary#sectors" >}}). There are two types of sectors that a provider may store:
+Storage providers on the Filecoin network store [_sectors_]({{< relref "glossary#sectors" >}}). There are two types of sectors that a provider may store:
 
 - _Sealed sectors_, which may or may not actually contain data, but for which the provider is rewarded for capacity provided to the network. 
 - _Unsealed sectors_, which are used when storing data deals, as retrievals happen from unsealed sectors.

@@ -25,10 +25,10 @@ Although RAIDZ2 provides high fault tolerance, configuring wide VDEVs also has a
 
 Another implication of large RAID sets that gets aggravated with very large capacity per disk is the time it takes to _resilver_. Resilvering (or rebuilding) is the I/O intensive process that takes place when a disk in a RAID group is replaced (typically after a disk failed). If you choose to configure very wide VDEVs while using very large spindles (20TB+) you might experience very long resilver times which again get in the way of high priority tasks like storage proving.
 
-It is possible though to configure wider VDEVs (RAID groups) for the unsealed sectors. Physically separating sealed and unsealed copies has other advantages, which are explained under [Custom Storage Layout](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
+It is possible though to configure wider VDEVs (RAID groups) for the unsealed sectors. Physically separating sealed and unsealed copies has other advantages, which are explained in the [Custom storage layout section](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
 ## I/O Behavior
-Storage Providers keep copies of sealed sectors and unsealed sectors (for fast retrieval) on their storage systems. However the I/O behavior on sealed sectors is very different from the I/O behavior on unsealed sectors.
+Storage providers keep copies of sealed sectors and unsealed sectors (for fast retrieval) on their storage systems. However the I/O behavior on sealed sectors is very different from the I/O behavior on unsealed sectors.
 When [storage-proving]({{<relref "storage-proving">}}) happens only a very small portion of the data is read by WindowPoST. A large storage provider will have many sectors in multiple partitions for which WindowPoST requires fast access to the disks. This is unusual I/O behavior for any storage system.
 
 The unsealed copies are used for fast retrieval of the data towards the customer. Large datasets in chunks of 32GiB (or 64GiB depending on the configured sector size) are read. 
