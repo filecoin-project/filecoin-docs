@@ -63,3 +63,5 @@ Take availability and suitable redundancy into consideration when choosing your 
 **[Software architecture →]({{<relref "lotus-components" >}})**
 
 **[Infrastructure →]({{<relref "/storage-provider/skills/storage" >}})**
+
+{{< sp-calls-to-action >}}
