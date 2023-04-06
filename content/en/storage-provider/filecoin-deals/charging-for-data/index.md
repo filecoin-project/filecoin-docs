@@ -18,3 +18,5 @@ Charging for data stored on your storage provider network is an essential aspect
 Although some [programs]({{< relref "filecoin-programs" >}}) require storage providers to accept deals for free, or even to bid in auctions to get a deal, it is good practice to charge customers for the vast majority of client deals. When you’re doing business development to scout for new customers, there is a cost-of-sales that you need to incorporate into the ROI calculation of your storage provider business.
 
 Next to the sales cost, there are other things that contribute to the total cost of ownership of your storage provider business. Think of backups of your setup and the data, providing an access layer to ingest data and for retrievals, preparing the data (if not done already), and more.
+
+{{< sp-calls-to-action >}}

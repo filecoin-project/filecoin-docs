@@ -57,3 +57,5 @@ As a storage provider, you also need to make trade-offs between performance and 
 **For example**, if your storage provider setup requires high network throughput, but your budget is limited, you may need to prioritize certain network components, such as switches and network cards, over others. By analyzing the performance impact of each component and comparing it to the cost, you can make informed decisions about which components to invest in.
 
 **In summary**, performance is a critical aspect of a storage provider setup, particularly when dealing with high network throughput requirements. Network benchmarking tools such as iperf and iperf3 can help identify potential performance issues and optimize the network setup. To make informed decisions about the network setup, you also need to make trade-offs between performance and cost by analyzing the impact of each component and comparing it to the cost.
+
+{{< sp-calls-to-action >}}

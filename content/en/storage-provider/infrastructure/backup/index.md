@@ -66,3 +66,5 @@ RPO for data owners is less of a concern, especially once the data is sealed. Th
 - An alternative technique to having a dedicated backup system and copy is to have a storage cluster. This still requires a backup system to run the Lotus daemon, Lotus miner and PoST worker on. Implementing a storage cluster is usually only done for large-scale deployments as it comes with additional operational tasks.
 
 For maximum resilience, you could host your backup system (server + storage) in a different datacenter than your primary system.
+
+{{< sp-calls-to-action >}}
