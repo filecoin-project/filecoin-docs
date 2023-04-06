@@ -40,3 +40,5 @@ Depending on the size of the network, different network topologies may be used t
 Spine-leaf architectures provide predictable latency and linear scalability by having multiple L2 leaf switches that connect to the spine switches. On the other hand, smaller networks can be set up with redundant L3 switches or a collapsed spine/leaf design that connect to redundant routers/firewalls. 
 
 It is important to determine the appropriate topology based on the specific needs of the organization.
+
+{{< sp-calls-to-action >}}

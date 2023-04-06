@@ -41,7 +41,7 @@ Due to the growth in the size of the chain since its genesis, it is not advised 
 
 Synced chain data should be stored on an SSD; however, faster NVMe drives are strongly recommended. A slow chain sync can lead to delays in critical messages being sent on-chain from your Lotus miner, resulting in the faulting of sectors and the slashing of collateral.
 
-Another important consideration is the size of the file system and available free space. Because the Filecoin chain grows every day, any available space will eventually fill up. Solutions like [SplitStore](https://lotus.filecoin.io/lotus/configure/splitstore/) and [compacting](https://lotus.filecoin.io/lotus/manage/chain-management/#compacting-the-chain-data) can help to reduce the storage space used by the chain.
+Another important consideration is the size of the file system and available free space. Because the Filecoin chain grows as much as 50GB a day, any available space will eventually fill up. It is up to storage providers to manage the size of the chain on disk and prune it as needed. Solutions like [SplitStore](https://lotus.filecoin.io/lotus/configure/splitstore/) and [compacting](https://lotus.filecoin.io/lotus/manage/chain-management/#compacting-the-chain-data) reduce the storage space used by the chain. Compacting involves replacing the built-up chain data with a recent lightweight snapshot.
 
 ### Holding wallets
 

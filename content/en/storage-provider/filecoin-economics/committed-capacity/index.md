@@ -24,3 +24,5 @@ Because the Filecoin network needs consistency, meaning all data stored is still
 ## What's next?
 
 Providing Committed Capacity is the easiest way to get started as a storage provider, but the economics are very dependent on the price of FIL. When the price of FIL is low, <!-- TODO NOBLOCK STEF BOB what is low? maybe give a dated example?--> it is not profitable to only provide Committed Capacity. This is where [Filecoin Plus]({{<relref "verified-deals" >}}) comes in along, with [extra services you can charge for]({{<relref "auxiliary-services" >}}).
+
+{{< sp-calls-to-action >}}

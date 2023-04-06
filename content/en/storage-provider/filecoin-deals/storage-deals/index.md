@@ -30,3 +30,5 @@ In order for storage providers to accept deals and set their deal terms, they ne
 The storage provider can (and should) keep unsealed data copies available for retrieval requests from the client. It is the same software component, Boost, that is responsible for HTTP retrievals from the client and for setting the price for retrievals.
 
 <!-- TODO NOBLOCK STEF BOB feels like this section could be expanded. How do the markets work? what are the parameters of a deal? What's a good deal (for the client or for me. Who am I competing with? can we link out to something, or give it a page. -->
+
+{{< sp-calls-to-action >}}

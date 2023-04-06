@@ -25,3 +25,5 @@ There are 2 main reasons why a storage provider could be doing Snap Deals (or �
 Snapping up sectors with snap deals puts a lot less stress on the storage provider’s infrastructure. The only task that’s executed from the [sealing pipeline]({{<relref "sealing-pipeline" >}}) is the PreCommit 2 phase (PC2). The CPU-intensive PreCommit 1 phase is not required in this process. For more information on sealing pipeline, PC1, PC2 and more.
 
 Do not forget to provide the collateral funds when snapping up to a verified deal. The same volume requires more collateral when it counts as Fil+ data, namely 10x the collateral compared to raw storage power.
+
+{{< sp-calls-to-action >}}

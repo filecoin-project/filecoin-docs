@@ -45,3 +45,5 @@ The “Current Sector Initial Pledge" can be found on blockchain explorers like 
 
 The ecosystem does have [FIL Lenders](https://filecoin-lending.com/read-more) <!-- TODO NOBLOCK STEF BOB is this platform actually doing anything?--> who can provide you FIL (with interest) to get you started, which you can pay back over time and with the help of earned block rewards. Every lender, though, will still require you to supply up to 20% of the required collateral.
 The [Filecoin Virtual Machine]({{<relref "the-filecoin-virtual-machine" >}}), introduced in March 2023, enables the creation of new lending mechanisms via smart contracts.
+
+{{< sp-calls-to-action >}}
