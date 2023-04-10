@@ -1,6 +1,6 @@
 ---
 title: "Linux"
-description: "Becoming a Storage Provider requires a team with a variety of skills, which we will discuss in this section."
+description: "Becoming a storage provider requires a team with a variety of skills, which we will discuss in this section."
 lead: ""
 draft: false
 images: []
@@ -13,13 +13,13 @@ weight: 610
 toc: true
 ---
 
-Becoming a Storage Provider requires a team with a variety of skills.
-Of all the technical skills needed to run a Storage Provider business, storage knowledge is important, but arguably, it is even more important to have deep understanding of the Linux operating system.
+Becoming a storage provider requires a team with a variety of skills.
+Of all the technical skills needed to run a storage provider business, storage knowledge is important, but arguably, it is even more important to have deep understanding of the Linux operating system.
 
-Where most enterprise storage systems (NAS, SAN and other types) do not require the administrator to have hands-on Linux experience, Filecoin does require a lot more knowledge about Linux. For starters, this is because Filecoin is not just a storage system. It is a blockchain platform that offers decentralized storage. As a Storage Provider you are dealing with all the things required to run a alway-on production system, not just storage.
+Where most enterprise storage systems (NAS, SAN and other types) do not require the administrator to have hands-on Linux experience, Filecoin does require a lot more knowledge about Linux. For starters, this is because Filecoin is not just a storage system. It is a blockchain platform that offers decentralized storage. As a storage provider you are dealing with all the things required to run a alway-on production system, not just storage.
 
 ## Ubuntu Server LTS
-Although Lotus also runs on Mac, production systems generally all run on Linux. More specifically, most Storage Providers run on Ubuntu. Any Linux distribution should be possible but running Ubuntu makes it easier to find support in the community. Every distribution is a bit different and knowing that all components have been built and tested on Ubuntu, and knowing you have the same OS variables in your environment as someone else, lowers the barrier to starting as a Storage Provider significantly. Go for Ubuntu Server and choose the latest **LTS** version.
+Although Lotus also runs on Mac, production systems generally all run on Linux. More specifically, most storage providers run on Ubuntu. Any Linux distribution should be possible but running Ubuntu makes it easier to find support in the community. Every distribution is a bit different and knowing that all components have been built and tested on Ubuntu, and knowing you have the same OS variables in your environment as someone else, lowers the barrier to starting as a storage provider significantly. Go for Ubuntu Server and choose the latest **LTS** version.
 
 Install Ubuntu LTS as a **headless server**. This means there is no desktop environment or GUI installed. It requires you to do everything on the command line. Not having a desktop environment on your server(s) has multiple advantages:
 
@@ -46,7 +46,7 @@ Configuration parameters, and most environment variables, are covered in the [Lo
 
 ### Scheduler
 
-Some Storage Providers fine-tune their setups by enabling CPU-core-pinning of certain tasks (especially PC1), as a starting Storage Provider it's not necessary to do that level of tuning. It is essential, however, to have some level of understanding of the [Linux kernel scheduler](https://www.kernel.org/doc/html/latest/scheduler/index.html) to know how to prioritize and deprioritize other tasks in the OS. In the case of Lotus workers you certainly want to prioritize the `lotus-worker` process(es).
+Some storage providers fine-tune their setups by enabling CPU-core-pinning of certain tasks (especially PC1), as a starting storage provider it's not necessary to do that level of tuning. It is essential, however, to have some level of understanding of the [Linux kernel scheduler](https://www.kernel.org/doc/html/latest/scheduler/index.html) to know how to prioritize and deprioritize other tasks in the OS. In the case of Lotus workers you certainly want to prioritize the `lotus-worker` process(es).
 
 ### Configuring open file limits
 

@@ -39,7 +39,7 @@ Lotus daemon and Boost run as Virtual Machines in this architecture. The advanta
 
 Boost is a resource-intensive process, especially when deals are being ingested over the internet. It also feeds data payload of the deals into the Lotus miner.
 
-We recommend 12-16 cores per VM and 128GiB of memory. Lotus daemon and Boost need to run on fast storage (SSD or faster). The capacity requirements of Boost depend on the size of deals you are accepting as a Storage Provider. Its capacity must be sufficient to be landing space for deals until the data can be processed by your sealing cluster in the backend.
+We recommend 12-16 cores per VM and 128GiB of memory. Lotus daemon and Boost need to run on fast storage (SSD or faster). The capacity requirements of Boost depend on the size of deals you are accepting as a storage provider. Its capacity must be sufficient to be landing space for deals until the data can be processed by your sealing cluster in the backend.
 
 Both Lotus daemon and Boost require public internet connectivity. In the case of Boost you also need to consider bandwidth. Depending on the deal size you are accepting, you might require 1Gbps or 10Gbps internet bandwidth.
 
@@ -94,7 +94,7 @@ Keep in mind that using [Sealing-as-a-Service]({{<relref "sealing-as-a-service">
 {{< /alert >}}
 
 We put the AddPiece and PreCommit1 tasks together on a first worker. This makes sense because AddPiece prepares the scratch space that will be used by the PC1 tasks thereafter.
-The first critical hardware component for PC1 is the CPU. This must be a CPU with SHA-256 extensions. Most Storage Providers opt for AMD Epyc (Rome, Milan or Genova) processors, although Ice Lake and newer Intel Xeon processors also support these extensions.
+The first critical hardware component for PC1 is the CPU. This must be a CPU with SHA-256 extensions. Most storage providers opt for AMD Epyc (Rome, Milan or Genova) processors, although Ice Lake and newer Intel Xeon processors also support these extensions.
 
 To verify if your CPU has the necessary extensions, run:
 

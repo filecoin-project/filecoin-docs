@@ -142,12 +142,12 @@ Store a number limit on running `DealClient` and `publish_deal` and have it auth
 
 #### How can I use FVM to store data to Filecoin
 
-The intent of FEVM/FVM is to compute over state data (the metadata of your stored data). Storage Providers are the ones that are able to store your data and upload the deal to the Filecoin network. Data retrieval happens via Retrieval Providers, accepting the client’s ask to retrieve and working with Storage Providers to decrypt the data to deliver to the client. FEVM/FVM is able to build logic around these 2 processes and automate, add verification and proofs, time-lock retrievals etc.
+The intent of FEVM/FVM is to compute over state data (the metadata of your stored data). Storage providers are the ones that are able to store your data and upload the deal to the Filecoin network. Data retrieval happens via Retrieval Providers, accepting the client’s ask to retrieve and working with storage providers to decrypt the data to deliver to the client. FEVM/FVM is able to build logic around these 2 processes and automate, add verification and proofs, time-lock retrievals etc.
 
-#### How do I close a storage deal on Filecoin and stop Storage Providers (SP) from storing my data on-chain
+#### How do I close a storage deal on Filecoin and stop storage providers (SP) from storing my data on-chain
 
-It’s not impossible but SPs are incentivized not to close the storage deal as they are slashed for not providing [Proof of Spacetime (PoST)](https://spec.filecoin.io/algorithms/pos/). Someone has to pay for the broken promise a miner makes to the chain and you need a custom market actor for it most likely to make the deal. You need to make deals for a certain amount of time - right now the boundaries are 6-18 months. You cannot ask a storage provider to take down your data without contacting them off-chain.
+It’s not impossible but storage providers are incentivized not to close the storage deal as they are slashed for not providing [Proof of Spacetime (PoSt)](https://spec.filecoin.io/algorithms/pos/). Someone has to pay for the broken promise a miner makes to the chain and you need a custom market actor for it most likely to make the deal. You need to make deals for a certain amount of time - right now the boundaries are 6-18 months. You cannot ask a storage provider to take down your data without contacting them off-chain.
 
-#### How do I check SP’s balance with their FEVM address
+#### How do I check a storage provider’s balance with their FEVM address
 
 You can query balance of any address using [Zondax's API](https://docs.zondax.ch/openapi#tag--Account).

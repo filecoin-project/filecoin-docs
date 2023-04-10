@@ -1,6 +1,6 @@
 ---
 title: "Storage"
-description: "Storage systems use RAID for protection against data corruption and data loss. Storage Providers are concerned with costs and therefore must choose the correct systems."
+description: "Storage systems use RAID for protection against data corruption and data loss. Storage providers are concerned with costs and therefore must choose the correct systems."
 lead: ""
 date: 2022-01-25T14:41:39+01:00
 lastmod: 2022-01-25T14:41:39+01:00
@@ -16,7 +16,7 @@ toc: true
 ---
 
 ## RAID configurations
-Storage systems use RAID for protection against data corruption and data loss. Since cost is an important aspect for Storage Providers, and you are dealing with cold storage mostly, you will be opting for SATA disks is RAID configurations that favor capacity (and read performance). This leads to RAID5, RAID6, RAIDZ and RAIDZ2. Double parity configurations like RAID6 and RAIDZ2 are preferred.
+Storage systems use RAID for protection against data corruption and data loss. Since cost is an important aspect for storage providers, and you are dealing with cold storage mostly, you will be opting for SATA disks is RAID configurations that favor capacity (and read performance). This leads to RAID5, RAID6, RAIDZ and RAIDZ2. Double parity configurations like RAID6 and RAIDZ2 are preferred.
 
 The _width of a volume_ is defined by how many spindles (SATA disks) there are in a RAID group. Typical configurations range between 10+2 and 13+2 disks in a group (in a VDEV in the case of ZFS).
 
@@ -26,11 +26,11 @@ Although RAIDZ2 provides high fault tolerance, configuring wide VDEVs also has a
 
 Another implication of large RAID sets that gets aggravated with very large capacity per disk is the time it takes to _resilver_. Resilvering (or rebuilding) is the I/O intensive process that takes place when a disk in a RAID group is replaced (typically after a disk failed). If you choose to configure very wide VDEVs while using very large spindles (20TB+) you might experience very long resilver times which again get in the way of high priority tasks like storage proving.
 
-It is possible though to configure wider VDEVs (RAID groups) for the unsealed sectors. Physically separating sealed and unsealed copies has other advantages, which are explained under the [Custom Storage Layout section](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
+It is possible though to configure wider VDEVs (RAID groups) for the unsealed sectors. Physically separating sealed and unsealed copies has other advantages, which are explained in [Custom Storage Layout](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
 ## I/O Behavior
-Storage Providers keep copies of sealed sectors and unsealed sectors (for fast retrieval) on their storage systems. However the I/O behavior on sealed sectors is very different from the I/O behavior on unsealed sectors.
-When [storage-proving]({{<relref "storage-proving">}}) happens only a very small portion of the data is read by WindowPoST. A large Storage Provider will have many sectors in multiple partitions for which WindowPoST requires fast access to the disks. This is unusual I/O behavior for any storage system.
+Storage providers keep copies of sealed sectors and unsealed sectors (for fast retrieval) on their storage systems. However the I/O behavior on sealed sectors is very different from the I/O behavior on unsealed sectors.
+When [storage-proving]({{<relref "storage-proving">}}) happens only a very small portion of the data is read by WindowPoST. A large storage provider will have many sectors in multiple partitions for which WindowPoST requires fast access to the disks. This is unusual I/O behavior for any storage system.
 
 The unsealed copies are used for fast retrieval of the data towards the customer. Large datasets in chunks of 32GiB (or 64GiB depending on the configured sector size) are read. 
 

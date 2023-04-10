@@ -1,6 +1,6 @@
 ---
 title: "Security"
-description: "As a Filecoin Storage Provider you are not only storing customer data, you are also storing Filecoin wallets and running systems that require 24/7 uptime."
+description: "As a Filecoin storage provider you are not only storing customer data, you are also storing Filecoin wallets and running systems that require 24/7 uptime."
 lead: ""
 draft: false
 images: []
