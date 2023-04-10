@@ -23,7 +23,7 @@ To satisfy the multiple needs for collateral in a way that is minimally burdenso
 
 For more detailed information about how collateral requirements are calculated, see the [miner collateral section in the Filecoin spec](https://spec.filecoin.io/systems/filecoin_mining/miner_collaterals/).
 
-When a storage provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see [Storage Proving]({{<relref storage-proving >}})), or when you take your storage offline and thereby break the rules of the storage deal, you will get penalized against the provided collateral. This penalty is called [_slashing_]({{<relref slashing>}}) and means that a portion of the pledged collateral is forfeited <!--TODO NOBLOCK STEF BOB where does it go? who gets it? Does it all go? -->and your storage power is reduced.
+When a storage provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see [Storage Proving]({{<relref storage-proving >}})), or when you take your storage offline and thereby break the rules of the storage deal, you will get penalized against the provided collateral. This penalty is called [_slashing_]({{<relref slashing>}}) and means that a portion of the pledged collateral is forfeited to the f099 address from your locked or available rewards and your storage power is reduced. The f099 address is the address in which all burned <!--TreyTODO add a glossary item for burn--> fil go to.  
 
 ## How much collateral?
 
