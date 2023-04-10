@@ -69,7 +69,7 @@ The PoSt wallet is by far the most important wallet to split off from the main w
 
 ## Lotus miner
 
-Lotus-miner is the process that coordinates most of the Storage Provider activities. It has 3 main responsibilities:
+The Lotus miner, often referred to using the daemon naming syntax `lotus-miner`, is the process that coordinates most of the storage provider activities. It has 3 main responsibilities:
 
 - Storing sectors and data
 - Scheduling jobs
@@ -90,9 +90,9 @@ More recently, Lotus has added a more scalable storage access solution in which 
 For information on how to check the storage configuration for your Lotus miner instance, see [Helpful commands]({{< relref "#check-storage-configuration" >}}).
 {{< /alert >}}
 
-It is extremely important to keep a backup of your sealed sectors, the cache directory and ideally also of the unsealed sectors. Additionally also backup the _sectorstore.json_ file that lives under your storage path. This file is also required to be restored in the event of a failure. You can read more about the sectorstore.json file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
+Keeping a backup of your sealed sectors, the cache directory, and any unsealed sectors is crucial. Additionally, you should keep a backup of the `sectorstore.json` file that lives under your storage path. The `sectorestore.json` file is required to restore your system in the event of a failure. You can read more about the `sectorstore.json` file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
 
-It is also imperative to have at least a daily backup of your lotus-miner state. Backups can be made with:
+It is also imperative to have at least a daily backup of your `lotus-miner` state. Backups can be made with:
 
 ```shell
 lotus-miner backup 

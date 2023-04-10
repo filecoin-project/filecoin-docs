@@ -21,11 +21,12 @@ Storage systems use RAID for protection against data corruption and data loss. S
 The _width of a volume_ is defined by how many spindles (SATA disks) there are in a RAID group. Typical configurations range between 10+2 and 13+2 disks in a group (in a VDEV in the case of ZFS).
 
 ## RAID implications
+
 Although RAIDZ2 provides high fault tolerance, configuring wide VDEVs also has an impact on performance and availablility. ZFS performs an automatic healing task called _scrubbing_ which performs a checksum validation over the data and recovers from data corruption. This task is I/O intensive and might get in the way of other tasks that should get priority, like _storage proving_ of sealed sectors.
 
 Another implication of large RAID sets that gets aggravated with very large capacity per disk is the time it takes to _resilver_. Resilvering (or rebuilding) is the I/O intensive process that takes place when a disk in a RAID group is replaced (typically after a disk failed). If you choose to configure very wide VDEVs while using very large spindles (20TB+) you might experience very long resilver times which again get in the way of high priority tasks like storage proving.
 
-It is possible though to configure wider VDEVs (RAID groups) for the unsealed sectors. Physically separating sealed and unsealed copies has other advantages, which are explained under [Custom Storage Layout](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
+It is possible though to configure wider VDEVs (RAID groups) for the unsealed sectors. Physically separating sealed and unsealed copies has other advantages, which are explained under the [Custom Storage Layout section](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
 ## I/O Behavior
 Storage Providers keep copies of sealed sectors and unsealed sectors (for fast retrieval) on their storage systems. However the I/O behavior on sealed sectors is very different from the I/O behavior on unsealed sectors.
