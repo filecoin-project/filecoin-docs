@@ -179,23 +179,24 @@ This guide explains things to keep in mind when writing for Filecoin's documenta
 
 ### Terms to avoid
 
-Due to the delicate pairing of cryptocurrency and the legal system, it's important that the docs use clear language when dealing with the financial aspects of Filecoin. See the table below, and consider using the alternatives whenever possible.
+It's important that the docs use clear, accurate language when describing Filecoin collateral markets, including in the context of FVM, especially due to the delicate pairing of cryptocurrency and the legal system. See the table below, and consider using the alternatives whenever possible.
 
 | Don't use | Alternatives |    
 | --- | --- | 
 | Loan, borrow (as a verb) | Lease | 
 | Loan (as a noun) | Collateral, Lease | 
 | Interest rate, Interest | Leasing fees |
-| Lender, Capital contributor | Token holder |
+| Lender, Investor, Capital contributor | Token holder |
 | Miner | Storage provider |
-| Lending | Lending pool, Collateral leasing |
+| Lending FIL | Leasing FIL |
+| Staking FIL | Pledging FIL |
+| Capital or Capital markets | Collateral or FIL collateral markets
 
 - **Avoid**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **loans**._
-- **Use**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **collateral leasing**._
+- **Use**: _The FVM was created to enable developers to build new use cases on top of the Filecoin network, such as data access control, data DAOs, perpetual storage, and **FIL collateral markets**._
 
 - **Avoid**: _Tracks the amount each **lender** deposits and their gain/loss._
-- **Use**: _Tracks the amount each **token holder** deposits and their **delta**._
-
+- **Use**: _Tracks the amount each **token holder** deposits and their **fees**._
 
 ### Walkthroughs
 
