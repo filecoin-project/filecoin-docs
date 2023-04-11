@@ -19,7 +19,7 @@ As a storage provider, you must have the necessary skills and expertise to ident
 
 Additionally, you must also be able to keep up with the latest security trends and technologies to ensure that your systems remain secure over time. This can involve ongoing training and education, as well as staying informed about new threats and vulnerabilities.
 
-In summary, as a Filecoin storage provider, you have a responsibility to ensure the security of your customers' data, your own systems, and the Filecoin network as a whole. This requires a thorough understanding of security best practices, ongoing training and education, and a commitment to staying informed about the latest security trends and technologies.
+In summary, as a Filecoin storage provider, you have a responsibility to ensure the security of your customer's data, your own systems, and the Filecoin network as a whole. This requires a thorough understanding of security best practices, ongoing training and education, and a commitment to staying informed about the latest security trends and technologies.
 
 ## Network security
 
