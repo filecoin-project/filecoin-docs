@@ -67,7 +67,7 @@ Control wallets are required to scale your operations in a production environmen
 
 ## Lotus miner
 
-The Lotus miner is the process that coordinates most of the storage provider activities. It has three main responsibilities:
+The Lotus miner, often referred to using the daemon naming syntax `lotus-miner`, is the process that coordinates most of the storage provider activities. It has 3 main responsibilities:
 
 - Storing sectors and data
 - Scheduling jobs
@@ -80,7 +80,7 @@ Storage Providers on the Filecoin network store [sectors]({{< tooltip "sector" >
 - Sealed sectors: these sectors may or may not actually contain data, but they provide capacity to the network, for which the provider is rewarded. 
 - Unsealed sectors: used when storing data deals, as retrievals happen from unsealed sectors.
 
-Originally, the Lotus miner was the component with storage access. This resulted in miner hardware using internal disks directly attached to storage shelves like [JBODs](https://en.wikipedia.org/wiki/Non-RAID_drive_architectures#JBOD), network-attached-storage (NAS) devices, or a storage cluster. However, this design introduced a bottleneck on the Lotus miner.
+Originally, `lotus-miner` was the component with storage access. This resulted in `lotus-miner` hardware using internal disks, directly attached storage shelves like [JBODs](https://en.wikipedia.org/wiki/Non-RAID_drive_architectures#JBOD), Network-Attached-Storage (NAS), or a storage cluster. However, this design introduced a bottleneck on the Lotus miner.
 
 More recently, Lotus has added a more scalable storage access solution in which workers can also be assigned storage access. This removes the bottleneck from the Lotus miner. Low-latency storage access is critical because of the impact on storage-proving processes.
 
@@ -88,11 +88,13 @@ More recently, Lotus has added a more scalable storage access solution in which 
 For information on how to check the storage configuration for your Lotus miner instance, see [Helpful commands]({{< relref "#check-storage-configuration" >}}).
 {{< /alert >}}
 
-It is extremely important to keep backups of the following:
+Keeping a backup of your sealed sectors, the cache directory, and any unsealed sectors is crucial. Additionally, you should keep a backup of the `sectorstore.json` file that lives under your storage path. The `sectorestore.json` file is required to restore your system in the event of a failure. You can read more about the `sectorstore.json` file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).
 
-- Sealed sectors
-- Unsealed sectors
-- The `sectorstore.json` file  
+It is also imperative to have at least a daily backup of your `lotus-miner` state. Backups can be made with:
+
+```shell
+lotus-miner backup 
+```
 
 {{< alert "info" >}}
 For information on how to back up Lotus miner state, see [Helpful commands]({{< relref "#backup-lotus-miner-state" >}}).
@@ -110,7 +112,7 @@ For information on how to view scheduled jobs, see [View scheduled jobs]({{< rel
 
 ### Storage proving
 
-One of the most important roles of the Lotus miner is [storage proving]({{< relref "storage-proving" >}}). Both the {{< tooltip "WindowPoSt" >}} and {{< tooltip "WinningPoSt" >}} processes are usually handled by the Lotus miner. For scalability and reliability purposes, providers can also run these processes on dedicated servers, known as _workers_, instead of using the Lotus miner.
+One of the most important roles of `lotus-miner` is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the `lotus-miner` process. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (proving workers) instead of using the Lotus miner. 
 
 The proving processes require low-latency access to sealed sectors. The proving challenge requires a GPU to run on. The resulting `zkProof` will be sent to the chain in a message. Messages must arrive within 30 minutes for WindowPoSt, and 30 seconds for WinningPoSt. It is extremely important that providers properly size and configure the proving workers, whether they are using just the Lotus miner or separate workers. Additionally, dedicated wallets, described in [Control wallets]({{< relref "#control-wallets" >}}), should be set up for these processes.
 
