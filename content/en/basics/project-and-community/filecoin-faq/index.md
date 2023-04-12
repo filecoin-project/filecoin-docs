@@ -68,7 +68,7 @@ Lotus is the primary reference implementation for the Filecoin protocol. At this
 
 ### What is your recommendation on the right hardware to use?
 
-While the Filecoin team does not recommend any specific hardware configuration, [we have shared some setups]({{< relref "architectures" >}}). We also published [this guide to storage mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/) that we recommend storage providers read through before deciding to provide storage. However, it is overwhelmingly likely that there are more efficient setups, and we strongly encourage storage providers to test and experiment to find the best combinations.
+While the Filecoin team does not recommend a specific hardware configuration, we document various setups [here]({{< relref "reference-architectures" >}}). Additionally, [this guide to storage mining](https://filecoin.io/blog/filecoin-guide-to-storage-mining/) details hardware considerations and setups for storage providers. However, it is likely that there are more efficient setups, and we strongly encourage storage providers to test and experiment to find the best combinations.
 
 ### We are worried about the ability of our network to handle the additional overhead of running a Filecoin node and still provide fast services for our customers. What are the computational demands of a Lotus node? Are there any metrics for node performance given various requirements?
 

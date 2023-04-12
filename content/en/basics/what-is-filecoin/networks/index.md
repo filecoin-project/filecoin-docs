@@ -37,4 +37,4 @@ Test networks, or testnets, are version of the Filecoin network that attempt to 
 
 - [Public endpoint](https://api.hyperspace.node.glif.io/rpc/v0)
 - [Blockchain explorer](https://explorer.glif.io/?network%3Dhyperspace)
-- [Faucet](https://hyperspace.filtest.network/%23faucet)
+- [Faucet](https://hyperspace.filtest.network#faucet)
