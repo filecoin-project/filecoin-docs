@@ -33,6 +33,7 @@ For more information and context see the following video:
 
 {{< youtube "zboAgawHT-o" >}}
 
+
 It takes more variables than the cost vs. the income. In summary, the factors that influence your ROI are:
 
 * **Verified Deals:**
