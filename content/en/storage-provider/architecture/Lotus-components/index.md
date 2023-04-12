@@ -75,7 +75,7 @@ The Lotus miner, often referred to using the daemon naming syntax `lotus-miner`,
 
 ### Storing sectors and data
 
-Storage Providers on the Filecoin network store [sectors]({{< tooltip "sector" >}}). There are two types of sectors that a provider may store:
+Storage Providers on the Filecoin network store sectors. There are two types of sectors that a provider may store:
 
 - Sealed sectors: these sectors may or may not actually contain data, but they provide capacity to the network, for which the provider is rewarded. 
 - Unsealed sectors: used when storing data deals, as retrievals happen from unsealed sectors.
