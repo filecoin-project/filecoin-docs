@@ -20,7 +20,7 @@
   identifier= "main-nodes"
 
 [[main]]
-  name = "Smart contracts"
+  name = "Smart Contracts"
   url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
   weight = 40
   identifier= "main-smart-contracts"
