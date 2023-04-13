@@ -69,4 +69,4 @@ However, the addresses returned by the CALLER, ORIGIN, and ADDRESS instructions 
 
 ## Deferred execution model
 
-When calling an Ethereum method that allows the user to ask for the `latest` block, Filecoin will return the `chain head` - `1` block. This behavior was implemented for compatibility with the {{< tooltip "deferred execution" >}} mode that Filecoin uses. In this mode, messages submitted at a certain height, are only processed at `height + 1`. This means receipts for a block produced at `height` are only available at `height` + `1`
+When calling an Ethereum method that allows the user to ask for the `latest` block, Filecoin will return the `chain head` - `1` block. This behavior was implemented for compatibility with the {{< tooltip "deferred execution" >}} mode that Filecoin uses. In this mode, messages submitted at a given `height` are only processed at `height` + `1`. This means that receipts for a block produced at `height` are only available at `height` + `1`.
