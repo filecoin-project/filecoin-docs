@@ -36,7 +36,8 @@ To understand how you can run a profitable business as a Filecoin storage provid
 
 Storage providers can also add additional value to clients when they offer certain certifications. These can enable a storage provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
 
-**[Filecoin economics →]({{<relref "storage-proving" >}})**
+{{<button url="https://docs.filecoin.io/storage-provider/filecoin-economics/storage-proving/">}}Filecoin economics → {{</button>}}
+
 
 ## Plan your business
 
@@ -44,7 +45,7 @@ The hardware and other requirements for running a Filecoin storage provider busi
 
 You need to understand the various earning mechanisms in the Filecoin network.
 
-**[Filecoin deals →]({{<relref "storage-deals" >}})**
+{{<button url="https://docs.filecoin.io/storage-provider/filecoin-deals/storage-deals/">}}Filecoin deals → {{</button>}}
 
 ## Make sure you have the right skills
 
@@ -52,7 +53,7 @@ As will become clear, running a storage operation is a serious business, with cl
 
 You will need skilled people to operate your storage provider business. Depending on the size and complexity of your setup this can be 1 person with skills across many different domains, or multiple dedicated people or teams.
 
-**[People and skills →]({{<relref "linux" >}})**
+{{<button url="https://docs.filecoin.io/storage-provider/skills/linux/">}}People and skills → {{</button>}}
 
 ## Build the right infrastructure
 
@@ -60,8 +61,8 @@ At the lowest level, you will need datacenter infrastructure. You need people ca
 
 Take availability and suitable redundancy into consideration when choosing your datacenter or collocation provider. Any unavailability of your servers, network or storage can result in automatic financial penalties on the Filecoin network.
 
-**[Software architecture →]({{<relref "lotus-components" >}})**
+{{<button url="https://docs.filecoin.io/storage-provider/architecture/lotus-components/">}}Software architecture → {{</button>}} {{<button url="https://docs.filecoin.io/storage-provider/skills/storage/">}}Infrastructure →{{</button>}}
 
-**[Infrastructure →]({{<relref "/storage-provider/skills/storage" >}})**
+
 
 {{< sp-calls-to-action >}}
