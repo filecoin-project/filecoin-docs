@@ -13,7 +13,7 @@ weight: 320
 toc: true
 ---
 
-The goal of Filecoin is to be the decentralized storage network for humanity’s most important information. With that in mind, it is vital to onboard real and valuable data onto the network. Filecoin Plus (Fil+) is a social trust program that incentivizes storage providers to store that data in _verified deals_. A deal is _verified_ when the data owner (i.e. the client) undergoes a verification process, where a group of community _notaries_ judge the client and their particular usage of Filecoin to be useful or valuable in some way<!--TODO NOBLOCK STEF BOB how? -->. Notaries are responsible for asking questions to the client and conducting due diligence to build reasonable confidence in the trustworthiness of the client and their use case.
+The goal of Filecoin is to be the decentralized storage network for humanity’s most important information. With that in mind, it is vital to onboard real and valuable data onto the network. Filecoin Plus (Fil+) is a social trust program that incentivizes storage providers to store that data in _verified deals_. A deal is _verified_ when the data owner (i.e. the client) undergoes a verification process, where a group of community _notaries_ judge the client and their particular usage of Filecoin to be useful or valuable towards the Filecoin mission statement, to store and preserve humanity's most important data. Notaries are responsible for asking questions to the client and conducting due diligence to build reasonable confidence in the trustworthiness of the client and their use case.
 
 ## DataCap
 
@@ -29,7 +29,7 @@ When storing real customer data and not simply [CC sectors](https://docs.filecoi
 
 As a storage provider, you are a vital part of the ecosystem. Being a storage provider is not like being a miner on other blockchains - it requires much more than providing some disk space to the network. Making deals, and doing your own business development is vital to growing a business on Filecoin. You can get copies of data to store from other storage providers (as clients often store multiple copies with different providers, for redundancy), but even that requires you to network and build relationships with others. Bringing your own customers onto the Filecoin network requires people and processes for business development, sales and marketing, and might mean you have to hire additional sales people for your team.
 
-Getting a copy of the data requires systems and infrastructure to allow for large volumes, sometimes up to <!--TODO STEF BOB can we give a meaningful example here--> of data to be ingested into your system. This requires substantial internet bandwidth, with a minimum of 10Gb. However, many large storage providers use up to 100Gb internet connections. As an example, transferring 1 PiB of data takes XX hours on a 10Gb connection.
+Getting a copy of the data requires systems and infrastructure to allow for large volumes, sometimes up to a PiB of data to be ingested into your system. This requires substantial internet bandwidth, with a minimum of 10Gb. However, many large storage providers use up to 100Gb internet connections. As an example, transferring 1 PiB of data takes ~240 hours on a 10Gb connection.
 
 Data preparation, which includes seperating files and folders in car files, takes time and skill. You can offload this task to a Data Preparer at a service cost, or you can choose to take on this role yourself. Tools like [Singularity](https://singularity.storage/) make this easier.
 
