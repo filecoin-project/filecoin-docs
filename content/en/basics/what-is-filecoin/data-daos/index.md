@@ -1,6 +1,6 @@
 ---
 title: "Data DAOs"
-description: "A blockchain is a distributed database that is shared among the nodes of a computer network. This page covers how the Filecoin blockchain is designed, and the various functions it has."
+description: "Learn Data DAO key concepts and how to get started with Data DAOs."
 lead: "The Filecoin Virtual Machine (FVM) enables the creation and management of specialized decentralized autonomous organizations (DAOs) called _Data DAOs_ that collect, curate, organize, manage and monetize useful data in a decentralized manner. Because stake in Data DAOs can be tokenized, the value and utility of data can be objectively expressed and transacted within markets in exchange for services to be performed on the data. This page provides an overview of key concepts and how Filecoin users can get started with Data DAOs."
 draft: false
 images: []
