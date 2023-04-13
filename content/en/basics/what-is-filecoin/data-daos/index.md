@@ -15,15 +15,17 @@ aliases:
     - "/intro/intro-to-filecoin/data-daos/"
 ---
 
-## Conceptual prerequisites
-
+<details>
 Before reading this page, ensure that you are familiar with the following concepts:
 
-- **Decentralized autonomous organizations (DAOs)** are distributed entities whose ownership, governance, and decision-making processes are transparently conducted via on-chain activities, and are tasked with a collective mission.
+- **Decentralized autonomous organizations (DAOs)**: Distributed entities whose ownership, governance, and decision-making processes are transparently conducted via on-chain activities, and are tasked with a collective mission.
 
-- **Smart contracts** are self-executing programs that operate on the Filecoin Virtual Machine and are used to automate the enforcement and execution of agreements between network participants. Smart contracts on the Filecoin network can be used to manage storage and retrieval deals, allocate storage resources, and facilitate the governance of decentralized autonomous organizations (DAOs) and other decentralized applications (dApps).
+- **Smart contracts**: Self-executing programs that operate on the Filecoin Virtual Machine and are used to automate the enforcement and execution of agreements between network participants. Smart contracts on the Filecoin network can be used to manage storage and retrieval deals, allocate storage resources, and facilitate the governance of decentralized autonomous organizations (DAOs) and other decentralized applications (dApps).
+</details>
 
-### Example
+## Use cases and problems solved
+
+## Example
 
 Imagine a data DAO with a mission to augment the value, worth, and utility of existing raw data sets. In such a DAO, members could harvest tokens by performing useful analysis, computations and modeling on existing datasets, and the DAO could in turn sell the augmented data to interested parties. Stakeholders could then spend tokens to incentivize even production of even more raw data, resulting in a circular, data-centric economy.
 
@@ -43,3 +45,4 @@ There is no canonical Data DAO solution. However, when designing and developing 
 - Storage provider reputation, geography, etc.
 - Tokenization
 
+## Next steps
