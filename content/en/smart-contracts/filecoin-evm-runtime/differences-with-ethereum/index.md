@@ -66,3 +66,7 @@ Importantly, this means that any contract can be called by either its "normal" E
 However, the addresses returned by the CALLER, ORIGIN, and ADDRESS instructions will always be the same for the same contract.
 - The ADDRESS will always be derived from the executing contract's `f410f` address, even if the contract was called via a masked ID address.
 - The CALLER/ORIGIN will be derived from the caller/origin's `f410f` address, if the caller/origin is an Ethereum-style account or an EVM smart contract. Otherwise, the caller/origin's "masked ID address" (derived from their `f0` address) will be used.
+
+## Deferred execution model
+
+When calling an Ethereum method that allows the user to ask for the `latest` block, Filecoin will return the `chain head` - `1` block. This behavior was implemented for compatibility with the {{< tooltip "deferred execution" >}} mode that Filecoin uses. In this mode, messages submitted at a certain height, are only processed at `height + 1`. This means receipts for a block produced at `height` are only available at `height` + `1`
