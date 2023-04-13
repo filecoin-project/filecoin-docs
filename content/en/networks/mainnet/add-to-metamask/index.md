@@ -20,11 +20,8 @@ aliases:
 
 The easiest way to add a Filecoin network to your MetaMask is by using the pre-configured options at chainlist.org.
 
-1. Go to [chainlist.org](https://chainlist.org/).
-1. Enter `Filecoin` into the search bar.
-1. Scroll down to find the **Filecoin** network.
-1. In MetaMask click **Next**.
-1. Click **Connect**.
+1. Go to the [Filecoin network page on chainlist.org](https://chainlist.org/chain/314).
+1. Click **Connect Wallet**.
 1. Click **Approve** when prompted to _Allow this site to add a network_.
 1. Click **Switch network** when prompted by MetaMask.
 1. Open MetaMask from the browser extensions tab.
