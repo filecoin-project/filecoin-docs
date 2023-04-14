@@ -39,7 +39,7 @@
 
     [[main]]
       name = "Wallets"
-      url = "/smart-contracts/wallets/metamask/"
+      url = "/basics/assets/metamask-setup"
       weight = 30
       parent = "main-smart-contracts"
 
