@@ -62,7 +62,7 @@ Let's take an ERC20 contract as an example to write and deploy it on the Hypersp
 
 ## ERC20 Contract
 
-Before we begin, make sure you have [connected your MetaMask wallet to the Hyperspace testnet]{{< relref "/networks/hyperspace/add-to-metamask" >}} , and grabbed some tFIL from the faucet.
+Before we begin, make sure you have [connected your MetaMask wallet to the Hyperspace testnet]{{< relref "/basics/assets/metamask-setup" >}} , and grabbed some tFIL from the faucet.
 
 ### Create an ERC20 workspace
 
