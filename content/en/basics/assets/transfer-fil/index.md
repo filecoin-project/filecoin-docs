@@ -24,7 +24,7 @@ Etheruem-style addresses start with `0x`. Filecoin addresses start with `f`. The
 | **To a Filecoin address** | [Eth-style address → Filecoin](#eth-style-address--filecoin) | [Filecoin → Filecoin](#filecoin--filecoin) |
 
 {{< alert >}}
-⚠️ **ASSETS ON THE FILECOIN NETWORK ARE NOT AVAILABLE ON ANY OTHER NETWORK**.<hr>Remember that Filecoin is fully compatible with Ethereum tools, like wallets. But that doesn’t mean you’re using the Ethereum network. These instructions transfer assets only within the Filecoin network. [Learn how to configure your Ethereum wallet on the Filecoin network]({{< relref "/smart-contracts/wallets/metamask" >}}).
+⚠️ **ASSETS ON THE FILECOIN NETWORK ARE NOT AVAILABLE ON ANY OTHER NETWORK**.<hr>Remember that Filecoin is fully compatible with Ethereum tools, like wallets. But that doesn’t mean you’re using the Ethereum network. These instructions transfer assets only within the Filecoin network. [Learn how to configure your Ethereum wallet on the Filecoin network]({{< relref "/networks/mainnet/add-to-metamask" >}}).
 {{< /alert >}}
 
 ## Eth-style address → Eth-style address
@@ -33,7 +33,7 @@ There are no special steps or requirements for sending Filecoin from one Eth-sty
 
 ## Eth-style address → Filecoin
 
-Use the [FilForwarder process]({{< relref "/smart-contracts/wallets/filforwader" >}}).
+Use the [FilForwarder process]({{< relref "ethereum-address-compatibility" >}}).
 
 ## Filecoin → Eth-style address
 

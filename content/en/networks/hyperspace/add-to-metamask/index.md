@@ -11,6 +11,8 @@ menu:
     identifier: "add-to-metamask-2aa790040f223ada9ccebbd878c732d4"
 weight: 240
 toc: true
+aliases:
+    - "/smart-contracts/wallets/metamask"
 ---
 
 This page assumes that you already have [MetaMask installed](https://metamask.io/) in your browser.

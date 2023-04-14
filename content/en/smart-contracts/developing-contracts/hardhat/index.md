@@ -26,7 +26,7 @@ The [Filecoin EVM-runtime Hardhat kit](https://github.com/filecoin-project/FEVM-
 This guide assumes you have the following installed:
 
 - [Yarn](https://yarnpkg.com/)
-- A Filecoin address stored in [MetaMask]({{< relref "/smart-contracts/wallets/metamask" >}})
+- A Filecoin address stored in [MetaMask]({{< relref "/basics/assets/wallets" >}})
 
 ### Environment setup
 
@@ -63,7 +63,7 @@ First, we need to grab the starter kit and install the dependencies.
     ✨  Done in 16.34s.
     ```
 
-1. Create an environment variable for your private key. You can [export it from MetaMask]({{< relref "/smart-contracts/wallets/metamask" >}}).
+1. Create an environment variable for your private key. Each wallet has a different process for exporting your private key - check your wallet's official documentation.
 
     ```shell
     export PRIVATE_KEY='<YOUR PRIVATE KEY>'
