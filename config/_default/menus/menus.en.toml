@@ -234,14 +234,8 @@
   url = "/smart-contracts/filecoin-evm-runtime"
 
 [[smart-contracts]]
-  name = "Wallets"
-  weight = 30
-  identifier = "smart-contracts-wallets"
-  url = "/smart-contracts/wallets"
-
-[[smart-contracts]]
   name = "Developing contracts"
-  weight = 40
+  weight = 30
   identifier = "smart-contracts-developing-contracts"
   url = "/smart-contracts/developing-contracts"
 # ----------------------

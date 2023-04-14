@@ -7,9 +7,9 @@ images: []
 type: docs
 menu:
   smart-contracts:
-    parent: "smart-contracts-wallets"
+    parent: "smart-contracts-filecoin-evm-runtime"
     identifier: "filforwarder-ei3j49389wieutidhruejwi293829w"
-weight: 310
+weight: 215
 toc: true
 ---
 
