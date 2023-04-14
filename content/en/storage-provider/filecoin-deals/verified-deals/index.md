@@ -13,7 +13,7 @@ weight: 320
 toc: true
 ---
 
-The goal of Filecoin is to be the decentralized storage network for humanity’s most important information. With that in mind, it is vital to onboard real and valuable data onto the network. Filecoin Plus (Fil+) is a social trust program that incentivizes storage providers to store that data in _verified deals_. A deal is _verified_ when the data owner (i.e. the client) undergoes a verification process, where a group of community _notaries_ judge the client and their particular usage of Filecoin to be useful or valuable in some way<!--TODO NOBLOCK STEF BOB how? -->. Notaries are responsible for asking questions to the client and conducting due diligence to build reasonable confidence in the trustworthiness of the client and their use case.
+Filecoin aims to be a decentralized storage network for humanity's essential information. To achieve this, it's crucial to add valuable data to the network. Filecoin Plus (Fil+) is a social trust program encouraging storage providers to store data in _verified deals_. A deal becomes _verified_ after the data owner (client) completes a verification process, where community _notaries_ assess the client's use of Filecoin to determine its relevance and value to the Filecoin mission: storing and preserving humanity's vital data. Notaries conduct due diligence by questioning clients and building reasonable confidence in their trustworthiness and use case.
 
 ## DataCap
 
@@ -27,11 +27,17 @@ When storing real customer data and not simply [CC sectors](https://docs.filecoi
 
 ## Responsibilities
 
-As a storage provider, you are a vital part of the ecosystem. Being a storage provider is not like being a miner on other blockchains - it requires much more than providing some disk space to the network. Making deals, and doing your own business development is vital to growing a business on Filecoin. You can get copies of data to store from other storage providers (as clients often store multiple copies with different providers, for redundancy), but even that requires you to network and build relationships with others. Bringing your own customers onto the Filecoin network requires people and processes for business development, sales and marketing, and might mean you have to hire additional sales people for your team.
+As a storage provider, you play a crucial role in the ecosystem. Unlike miners in other blockchains, storage providers must do more than offer disk space to the network. Whether onboarding new customers to the network, or storing copies data from other storage providers for clients seeking redundancy, providing storage can involve:
 
-Getting a copy of the data requires systems and infrastructure to allow for large volumes, sometimes up to <!--TODO STEF BOB can we give a meaningful example here--> of data to be ingested into your system. This requires substantial internet bandwidth, with a minimum of 10Gb. However, many large storage providers use up to 100Gb internet connections. As an example, transferring 1 PiB of data takes XX hours on a 10Gb connection.
+- Business development.
+- Sales and marketing efforts.
+- Hiring additional personnel.
+- Networking.
+- Relationship building.
 
-Data preparation, which includes seperating files and folders in car files, takes time and skill. You can offload this task to a Data Preparer at a service cost, or you can choose to take on this role yourself. Tools like [Singularity](https://singularity.storage/) make this easier.
+Acquiring data copies requires systems and infrastructure capable of ingesting large volumes of data, sometimes up to a PiB. This necessitates significant internet bandwidth, with a minimum of 10 Gb. For instance, transferring 1 PiB of data takes approximately 240 hours on a 10 Gb connection. However, many large storage providers use up to 100 Gb internet connections. ```
+
+Data preparation, which involves separating files and folders in CAR files, is time-consuming and requires expertise. You can delegate this task to a Data Preparer for a fee or assume the role yourself. Tools like [Singularity](https://singularity.storage/) simplify this process.
 
 Once the data is sealed and you are proving your copies on-chain (i.e. on the blockchain), you will need to offer retrievals to your customer as well. This obviously requires network bandwidth once more, so you may need to charge for retrievals accordingly.
 
