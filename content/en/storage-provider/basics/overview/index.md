@@ -1,6 +1,6 @@
 ---
 title: "Becoming a storage provider"
-description: "This page will help you understand how to plan a profitable business, design a suitable storage provider architecture, and and make the right hardware investments."
+description: "This page will help you understand how to plan a profitable business, design a suitable storage provider architecture, and make the right hardware investments."
 draft: false
 images: []
 type: docs
