@@ -22,7 +22,7 @@ Using the programmatic storage building blocks provided by the FVM, developers c
 For more FVM use case ideas, see the [Request for Startups](https://rfs.fvm.dev/).
 {{< /alert >}}
 
-Descriptions of each method, as well as links to tutorials describing the methods and best practices for programmatic storage deal making, are provided below.
+Descriptions of each method are provided below.
 
 ## Using a client contract 
 
@@ -31,8 +31,6 @@ In this method, an FEVM smart contract, refererred to as the _client contract_, 
 - Data preparation is required before initiating the deal proposal from the client contract, as the data preparation outputs several pieces of information that is required for the deal proposal - specifically, a [CAR file](https://spec.filecoin.io/systems/filecoin_files/piece/#:~:text=A%20CAR%20file%20is%20an,provider%20as%20we%20discuss%20later.) link, the CAR file size, the data file size and the [data CID](https://spec.filecoin.io/systems/filecoin_files/piece/). Manual and automated options for the data preparation will be shown in the client contract tutorial. 
 
 - Currently, the client contract only works with SPs running the latest [Boost](https://boost.filecoin.io/) release, [v1.6.0](https://github.com/filecoin-project/boost/releases/tag/v1.6.0) AND who have enabled the FVM dealmaking deature. SPs who meet these requirements will be listening on-chain for client contract deal proposals events to accept. 
-
-For more information, see the tutorial describing this method.
 
 ## Using a deal bounty contract 
 
@@ -45,7 +43,7 @@ The deal bounty contract:
 - Will pay out the deal bounty to the bounty hunter once a deal is made and the deal ID is returned and validated.
 - Will check with the Filecoin built-in storage market actor to confirm whether the supplied deal ID is activated and stores the claimed data.
 
-As with the [client contract method](#using-a-client-contract), data has to be prepared in order to add the data CID to the contract. For more information, see the tutorial describing this method.
+As with the [client contract method](#using-a-client-contract), data has to be prepared in order to add the data CID to the contract.
 
 ## Best practices 
 
