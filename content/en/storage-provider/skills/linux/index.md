@@ -29,7 +29,7 @@ Install Ubuntu LTS as a **headless server**. This means there is no desktop envi
 {{< alert >}}
 **Bonus tip**: 
 
-Exclude the `nvidia-drivers` and `cuda` packages from your updates using [the appropriate command](https://tecadmin.net/exclude-packages-from-apt-upgrade/) set. Once you have a working setup for your specific GPU, you won't want to risk breaking it without testing these packages first. Many storage providers may need to [install CUDA](https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/) because it's not included in the default build for some operating systems. 
+Exclude the `nvidia-drivers` and `cuda` packages from your updates using [the appropriate command](https://tecadmin.net/exclude-packages-from-apt-upgrade/) set. Once you have a working setup for your specific GPU, you will want to test these packages before you risk breaking them. Many storage providers may need to [install CUDA](https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/) since some operating systems do not include this package by default. 
 {{< /alert >}}
 
 ## Command-line and environment variables
