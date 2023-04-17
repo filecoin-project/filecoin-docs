@@ -107,28 +107,28 @@
   url = "/basics/the-blockchain"
 
 [[basics]]
-  name = "How storage works"
-  weight = 30
-  identifier = "basics-how-storage-works"
-  url = "/basics/how-storage-works"
-
-[[basics]]
-  name = "How retrieval works"
-  weight = 40
-  identifier = "basics-how-retrieval-works"
-  url = "/basics/how-retrieval-works"
-
-[[basics]]
   name = "Assets"
-  weight = 50
+  weight = 30
   identifier = "basics-assets"
   url = "/basics/assets"
 
 [[basics]]
   name = "Interplanetary Consensus"
-  weight = 60
+  weight = 40
   identifier = "basics-interplanetary-consensus"
   url = "/basics/interplanetary-consensus-overview"
+
+[[basics]]
+  name = "How storage works"
+  weight = 50
+  identifier = "basics-how-storage-works"
+  url = "/basics/how-storage-works"
+
+[[basics]]
+  name = "How retrieval works"
+  weight = 60
+  identifier = "basics-how-retrieval-works"
+  url = "/basics/how-retrieval-works"
 
 [[basics]]
   name = "Project and community"
