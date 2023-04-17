@@ -21,7 +21,7 @@ aliases:
 
 ## Using ChainList
 
-The easiest way to add a Filecoin network to your MetaMask is by using the pre-configured options at chainlist.org.
+Chainlist is a website that lets users easily connect their wallets to EVM-compatible blockchains. Chainlist is managed by [DeFi Llama](https://defillama.com/). Chainlist is the simplest way to add the Filecoin network to your MetaMask wallet.
 
 {{< tabs tabTotal="4" >}}
 {{< tab tabName="Mainnet" >}}
