@@ -258,16 +258,16 @@
   url = "/networks/mainnet"
 
 [[networks]]
-  name = "Hyperspace"
-  weight = 20
-  identifier = "networks-hyperspace"
-  url = "/networks/hyperspace"
-
-[[networks]]
   name = "Calibration"
-  weight = 30
+  weight = 20
   identifier = "networks-calibration"
   url = "/networks/calibration"
+
+[[networks]]
+  name = "Hyperspace"
+  weight = 30
+  identifier = "networks-hyperspace"
+  url = "/networks/hyperspace"
 
 [[networks]]
   name = "Local testnet"
