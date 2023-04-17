@@ -123,7 +123,7 @@ The next step in the sealing pipeline is PreCommit2 (PC2). You could decide to k
 
 We plan for twice the amount of PC2 workers compared to PC1, as explained under [sealing rate]({{<relref "sealing-rate">}}). Apart from the memory requirements this process specifically requires a capable GPU with preferably 24GB of memory and 6000 or more CUDA cores.
 
-The scratch space from PC1 is copied <!-- TODO BOB can you clarify - this means the data stored on the scratch, ie. that the scratch is shared? --> over to the PC2 worker. This PC2 worker also requires fast NVMe scratch space. Since we plan for 2 PC2 workers against 1 PC1 worker, the capacity of the scratch space per PC2 worker is half of the total scratch space capacity of the PC1 worker, 8TiB in our case.
+The scratch space contents from PC1 is copied over to the PC2 worker. This PC2 worker also requires fast NVMe scratch space. Since we plan for 2 PC2 workers against 1 PC1 worker, the capacity of the scratch space per PC2 worker is half of the total scratch space capacity of the PC1 worker, 8TiB in our case.
 
 C1 doesn't require much attention for our architecture. C2 however requires a capable GPU again.
 
