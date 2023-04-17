@@ -38,15 +38,9 @@
       parent = "main-smart-contracts"
 
     [[main]]
-      name = "Wallets"
-      url = "/basics/assets/metamask-setup"
-      weight = 30
-      parent = "main-smart-contracts"
-
-    [[main]]
       name = "Developing contracts"
       url = "/smart-contracts/developing-contracts/best-practices/"
-      weight = 40
+      weight = 30
       parent = "main-smart-contracts"
 
 [[main]]
