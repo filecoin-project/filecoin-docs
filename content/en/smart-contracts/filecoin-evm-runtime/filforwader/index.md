@@ -1,5 +1,5 @@
 ---
-title: "Ethereum address compatibility"
+title: "FILForwarder"
 description: "The FilFowarder is a smart contract that lets users transfer FIL from an Ethereum-based f4 address to a Filecoin address of a different type."
 lead: "The FilFowarder is a smart contract that lets users transfer FIL from an Ethereum-based f4 address to a Filecoin address of a different type. For instance, this allows developers to take FIL out of a smart contract and send it to a multi-sig account or an exchange."
 draft: false
@@ -11,6 +11,8 @@ menu:
     identifier: "filforwarder-ei3j49389wieutidhruejwi293829w"
 weight: 215
 toc: true
+aliases:
+    - "/smart-contracts/wallets/filforwader"
 ---
 
 ## The problem

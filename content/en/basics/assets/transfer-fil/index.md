@@ -33,7 +33,7 @@ There are no special steps or requirements for sending Filecoin from one Eth-sty
 
 ## Eth-style address → Filecoin
 
-Use the [FilForwarder process]({{< relref "ethereum-address-compatibility" >}}).
+Use the [FilForwarder process]({{< relref "filforwader" >}}).
 
 ## Filecoin → Eth-style address
 
