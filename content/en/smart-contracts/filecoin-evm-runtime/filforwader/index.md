@@ -1,5 +1,5 @@
 ---
-title: "FilForwarder"
+title: "FILForwarder"
 description: "The FilFowarder is a smart contract that lets users transfer FIL from an Ethereum-based f4 address to a Filecoin address of a different type."
 lead: "The FilFowarder is a smart contract that lets users transfer FIL from an Ethereum-based f4 address to a Filecoin address of a different type. For instance, this allows developers to take FIL out of a smart contract and send it to a multi-sig account or an exchange."
 draft: false
@@ -7,10 +7,12 @@ images: []
 type: docs
 menu:
   smart-contracts:
-    parent: "smart-contracts-wallets"
+    parent: "smart-contracts-filecoin-evm-runtime"
     identifier: "filforwarder-ei3j49389wieutidhruejwi293829w"
-weight: 310
+weight: 215
 toc: true
+aliases:
+    - "/smart-contracts/wallets/filforwader"
 ---
 
 ## The problem
@@ -83,7 +85,7 @@ The FilForwarder contract can be interacted with using standard Ethereum tooling
 This guide assumes you have the following installed:
 
 - [Yarn](https://yarnpkg.com/)
-- A Filecoin address stored in [MetaMask]({{< relref "/smart-contracts/wallets/metamask" >}})
+- A Filecoin address stored in [MetaMask]({{< relref "/basics/assets/wallets#compatible-wallets" >}})
 
 #### Environment setup
 
@@ -112,7 +114,7 @@ First, we need to grab the FilFowarder kit and install the dependencies:
     ✨  Done in 16.34s.
     ```
 
-1. Create an environment variable for your private key. You can [export it from MetaMask]({{< relref "/smart-contracts/wallets/metamask" >}}).
+1. Create an environment variable for your private key.
 
     ```shell
     export PRIVATE_KEY='<YOUR PRIVATE KEY>'

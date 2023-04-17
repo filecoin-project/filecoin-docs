@@ -22,7 +22,7 @@ You must have the following installed:
 - [Git](https://git-scm.com/)
 - [Yarn](https://yarnpkg.com/)
 
-You should also have an address on the Filecoin Hyperspace testnet. See the [Add to MetaMask page]({{< relref "/networks/hyperspace/add-to-metamask" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "get-test-tokens" >}}) page for information on how to get test funds.
+You should also have an address on the Filecoin Hyperspace testnet. See the [Add to MetaMask page]({{< relref "/basics/assets/metamask-setup" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "get-test-tokens" >}}) page for information on how to get test funds.
 
 ## Steps
 
