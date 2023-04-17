@@ -15,11 +15,9 @@ aliases:
     - "/networks/calibration"
 ---
 
-Calibration network is the most realistic simulation of the Filecoin mainnet.
+The Calibration testnet is the most realistic simulation of the Filecoin mainnet.
 
-- Prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters.
-- Prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage + retrieval functionality.
-- Same sector size as mainnet. The calibration network supports 32 GiB and 64 GiB sectors.
+Prospective storage providers can experience more realistic sealing performance and hardware requirements using final proofs constructions and parameters. Storage clients can store and retrieve _real data_ on the network. Clients can also participate in deal-making workflows and storage and retrieval functionality. The sector size on the Calibration testnet is the same as on the Filecoin mainnet; 32 GiB and 64 GiB sectors are supported. Finally, the Calibration testnet includes the Filecoin EVM-runtime features found on the Filecoin mainnet.
 
 **Maintainer**: [Protocol Labs](https://protocol.ai)
 
