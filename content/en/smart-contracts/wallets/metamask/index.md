@@ -21,7 +21,7 @@ MetaMask can be downloaded as a browser extension for Google Chrome, Mozilla Fir
 
 ## Configure MetaMask
 
-MetaMask is an Ethereum-based application, so it does not natively support Filecoin. However, it can be configured to use the Filecoin network fairly simply. This process is the same for mainnet, Hyperspace testnet, Calibration testnet, and a local testnet. In this guide, we're going to connect MetaMask to the Filecoin Hyperspace testnet.
+MetaMask is an Ethereum-based application, so it does not natively support Filecoin. However, it can be configured to use the Filecoin network fairly simply. This process is the same for mainnet, Calibration testnet, Calibration testnet, and a local testnet. In this guide, we're going to connect MetaMask to the Filecoin Calibration testnet.
 
 1. Go to [chainlist.org](https://chainlist.org/).
 1. Enter `Filecoin` into the search bar. If you would like to connect to a testnet, enable the **Testnets** toggle:
@@ -30,7 +30,7 @@ MetaMask is an Ethereum-based application, so it does not natively support Filec
 
 1. Scroll down to find the network that you want to connect to:
 
-    ![Find the Hyperspace testnet.](chainlist-select-hyperspace.png)
+    ![Find the Calibration testnet.](chainlist-select-calibration.png)
 
 1. In MetaMask, click **Next**.
 
@@ -52,13 +52,13 @@ MetaMask is an Ethereum-based application, so it does not natively support Filec
 
     ![Open MetaMask from the browser extensions tab.](chainlist-open-metamask.png)
 
-1. You should see the Filecoin Hyperspace testnet listed at the top:
+1. You should see the Filecoin Calibration testnet listed at the top:
 
-    ![MetaMask on the Filecoin Hyperspace testnet.](chainlist-hyperspace-added.png)
+    ![MetaMask on the Filecoin Calibration testnet.](chainlist-calibration-added.png)
 
 ### Manual process
 
-If you can't or don't want to use Chainlist, you can add the Hyperspace network to your MetaMask manually.
+If you can't or don't want to use Chainlist, you can add the Calibration network to your MetaMask manually.
 
 1. Open your browser and open the MetaMask plugin. If you haven't opened the MetaMask plugin before, you'll be prompted to create a new wallet. Follow the prompts to create a wallet.
 1. Click the user circle and select **Settings**:
@@ -74,7 +74,6 @@ If you can't or don't want to use Chainlist, you can add the Hyperspace network 
     | --- | --- | --- | --- |
     | Mainnet | `https://api.node.glif.io/rpc/v1` | `314` | `tFIL` | 
     | Calibnet|  `https://api.calibnet.node.glif.io/rpc/v1` | `314159` | `tFIL` | 
-    | Hyperspace | `https://api.hyperspace.node.glif.io/rpc/v1` | `3141` | `tFIL` | 
     | Local testnet | `http://localhost:1234/rpc/v1` | `31415926` | `tFIL` | 
 
 1. Pick one of the following block explorers, and enter the URL into the **Block explorer (optional)** field:
@@ -83,9 +82,8 @@ If you can't or don't want to use Chainlist, you can add the Hyperspace network 
     | ------- | --- |
     | Mainnet | Filscan: `https://filscan.io` <br> Glif: `https://explorer.glif.io/` |
     | Calibration | Filscan: `https://calibration.filscan.io/` <br> Glif: `https://explorer.glif.io/?network=calibrationnet` |
-    | Hyperspace | Filscan: `https://hyperspace.filscan.io/` <br> Glif: `https://explorer.glif.io/?network=hyperspace` |
     | Local testnet | There's currently no option for running a block explorer for a local network. |
 
 1. Review the values in the fields and click **Save**.
-1. The Hyperspace testnet should now be shown in your MetaMask window.
+1. The testnet should now be shown in your MetaMask window.
 1. Done!
