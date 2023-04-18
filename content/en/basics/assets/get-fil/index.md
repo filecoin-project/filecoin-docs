@@ -43,4 +43,4 @@ If your exchange does not yet support Filecoin Eth-style 0x addresses, you must 
 
 ## Test FIL
 
-If you're looking to get FIL to test your applications on a testnet, like Hyperspace or Calibration, then check how to [Get test tokens]({{< relref "/smart-contracts/developing-contracts/get-test-tokens" >}})! Test FIL is often referred to as tFIL.
+If you're looking to get FIL to test your applications on a testnet like Calibration then check how to [Get test tokens]({{< relref "/smart-contracts/developing-contracts/get-test-tokens" >}})! Test FIL is often referred to as tFIL.
