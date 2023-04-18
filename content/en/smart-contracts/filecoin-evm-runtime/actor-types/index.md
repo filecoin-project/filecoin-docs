@@ -39,8 +39,6 @@ An Ethereum-style account is the Filecoin EVM runtime equivalent of an account w
 3. These accounts can be used to transfer funds to native or Ethereum-style. 
 4. They can be used to call EVM smart contracts and can be used to deploy EVM smart contracts. However, they cannot be used to call native actors such as multisig or miner actors.
 
-You can create an [Etheruem-style account using MetaMask]({{< relref "metamask" >}}).
-
 ## EVM smart contract
 
 An EVM smart contract actor hosts a single EVM smart contract. Every EVM smart contract will have a `0x`-style address.
@@ -58,7 +56,7 @@ An EVM smart contract can be deployed in one of three ways:
 An EVM smart contract may be called in one of three ways:
 
 1. An EVM smart contract can use the EVM's `CALL` opcode.
-1. Ethereum-native tooling, like [Metamask]({{< relref "metamask" >}}), can be used in conjunction with an Ethereum-style account.
+1. Ethereum-native tooling, like [Metamask]({{< relref "/basics/assets/wallets#compatible-wallets" >}}), can be used in conjunction with an Ethereum-style account.
 1. Finally, a native account can call method `3844450837` (`FRC42(InvokeEVM)`):
     1. The input data should either be empty or encoded as a CBOR byte string.
     1. The return data will either be empty or encoded as a CBOR byte string.

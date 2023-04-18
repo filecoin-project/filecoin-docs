@@ -20,7 +20,7 @@ aliases:
 As a simple introduction, we're going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we're using the Calibration testnet, but this process is the same for mainnet.
 
 {{< alert >}}
-This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out the guide we've put together]({{< relref "/smart-contracts/wallets/metamask" >}}).
+This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out this guide to add the Hyperspace testnet to MetaMask]({{< relref "/basics/assets/metamask-setup" >}}).
 {{< /alert >}}
 
 ### Create a workspace
@@ -72,7 +72,7 @@ That's all we need to change within this contract. You can see on line 4 that th
 Now that we've successfully compiled our contract, we need to deploy it somewhere! This is where our previous MetaMask setup comes into play.
 
 {{< alert >}}
-This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out the guide we've put together]({{< relref "/smart-contracts/wallets/metamask" >}}).
+This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out this guide to add the Hyperspace testnet to MetaMask]({{< relref "/basics/assets/metamask-setup" >}}).
 {{< /alert >}}
 
 1. Click the **Deploy** tab from the left.

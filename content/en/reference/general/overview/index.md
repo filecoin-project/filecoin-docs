@@ -212,32 +212,6 @@ The Retrieval Market is in early development; research and development teams are
 - [Decentralized Data Delivery Markets - Open Problems and RFCs](https://github.com/protocol/ResNetLab/blob/master/OPEN_PROBLEMS/DECENTRALIZED_DATA_DELIVERY_MARKETS.md)
 - [July 2020 Retrieval Markets Workshop](https://www.youtube.com/watch?v=eUcsZ1JS9pM) - list of [Sessions](https://docs.google.com/document/d/17bEHP2CHkQFYYQnl7YpatAOh6kWxjlNgihdc4F66SVM/edit)
 
-## Wallets
-
-Tools for sending and receiving FIL tokens. For dev tooling see [message signing tools](https://docs.filecoin.io/reference/overview/#message-signing-tools) above
-
-### Wallets (audited)
-
-Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are **_recommended_** below.
-
-- [Glif web wallet](https://github.com/openworklabs/filecoin-web-wallet) - **_recommended_** - security-audited web wallet that supports sending & receiving FIL, also integrated with Ledger hardware (uses the audited [filecoin-signing-tools library](https://github.com/Zondax/filecoin-signing-tools) below).
-- [**Ledger HW wallet** in Filecoin Docs](https://lotus.filecoin.io/lotus/manage/manage-fil/) - **_recommended_** - Ledger Live support for Filecoin is coming soon. Ledger hardware wallets can be used with the Glif.io or a Filecoin Lotus node's CLI.
-
-Also see the [Wallet-related tools](#wallet-related-tools) section above.
-
-### Other wallets
-
-The wallets below support FIL tokens. We recommend verifying that these have been security audited by reputable 3rd party auditors and that the codebase is open sourced. _Please evaluate these wallets for security risks at your own discretion_, as an insecure wallet may lead to loss of funds.
-
-- [BraveWallet](https://brave.com/de/wallet/)
-- [BlitsWallet](https://blits.net/) - by the team behind Filecoin.loans
-- [Cobo](https://cobo.com/)
-- [Fox Wallet](https://foxwallet.com/)
-- [ImToken](https://token.im/)
-- [MathWallet](https://mathwallet.org/)
-- [Open-source](https://github.com/trustwallet/wallet-core) on Github, official mobile wallet of Binance
-- [TrustWallet](https://trustwallet.com/)
-
 ## Ecosystem galleries
 
 - [**Community Projects Showcase**](https://github.com/filecoin-project/community/#ecosystem-projects) - updated news about ecosystem projects
