@@ -13,24 +13,24 @@ weight: 100
 toc: true
 ---
 
-The ChainStack RPC API, maintained by [Chainstack Labs](https://chainstack.com/), provides high-performance Hyperspace testnet nodes for Filecoin builders, especially for applications built on the Filecoin Virtual Machine. The ChainStack RPC API provides both a standard endpoint and a WebSocket endpoint. For further information, see the [official page](https://chainstack.com/labs/#filecoin)
+The ChainStack RPC API, maintained by [Chainstack Labs](https://chainstack.com/), provides high-performance testnet nodes for Filecoin builders, especially for applications built on the Filecoin Virtual Machine. The ChainStack RPC API provides both a standard endpoint and a WebSocket endpoint. For further information, see the [official page](https://chainstack.com/labs/#filecoin)
 
 ## HTTP endpoints 
 
 ```plaintext
-https://filecoin-hyperspace.chainstacklabs.com/rpc/v0
+https://filecoin-calibration.chainstacklabs.com/rpc/v0
 ```
 
 ## Web socket endpoints
 
 ```plaintext
-wss://ws-filecoin-hyperspace.chainstacklabs.com/rpc/v0
+wss://ws-filecoin-calibration.chainstacklabs.com/rpc/v0
 ```
 
 ## Curl example
 
 ```shell
-curl -X POST 'https://filecoin-hyperspace.chainstacklabs.com/rpc/v0' \
+curl -X POST 'https://filecoin-calibration.chainstacklabs.com/rpc/v0' \
     -H 'Content-Type: application/json' \
     --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}'
 ```

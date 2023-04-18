@@ -13,18 +13,18 @@ weight: 100
 toc: true
 ---
 
-The Glif Node RPC API is a publicly hosted Lotus endpoint that supports JSON-RPC POST requests against the Lotus API. The Glif Nodes RPC API provides both a standard endpoint and a WebSocket endpoint. For further information, see the [official endpoint page](https://api.hyperspace.node.glif.io/rpc/v1).
+The Glif Node RPC API is a publicly hosted Lotus endpoint that supports JSON-RPC POST requests against the Lotus API. The Glif Nodes RPC API provides both a standard endpoint and a WebSocket endpoint. For further information, see the [official endpoint page](https://api.calibration.node.glif.io/rpc/v1).
 
 ## HTTP endpoints
 
 ```plaintext
-https://api.hyperspace.node.glif.io/rpc/v1
+https://api.calibration.node.glif.io/rpc/v1
 ```
 
 ## WebSockets endpoints
 
 ```plaintext
-wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1
+wss://wss.calibration.node.glif.io/apigw/lotus/rpc/v1
 ```
 
 ## Curl example
@@ -48,4 +48,4 @@ The Glif Node API supports all API request methods listed in the [Lotus JSON-RPC
 Here is some extra information you might need to consider when using these nodes.
 
 - All JSON-RPC requests must include the header `"Content-Type": "application/json"`
-- For Lotus Lite, use `FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite`
+- For Lotus Lite, use `FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite`
