@@ -58,11 +58,11 @@ The token standards are the most widely used smart contract libraries from OpenZ
 
 Solidity smart contracts inherited from those libraries can be integrated and deployed into the Filecoin network and run _as normal_ due to the Filecoin EVM-runtime.
 
-Let's take an ERC20 contract as an example to write and deploy it on the Hyperspace testnet using Remix & MetaMask:
+Let's take an ERC20 contract as an example to write and deploy it on the Calibration testnet using Remix & MetaMask:
 
 ## ERC20 Contract
 
-Before we begin, make sure you have [connected your MetaMask wallet to the Hyperspace testnet]{{< relref "metamask" >}} , and grabbed some tFIL from the faucet.
+Before we begin, make sure you have [connected your MetaMask wallet to the Calibration testnet]{{< relref "metamask" >}} , and grabbed some tFIL from the faucet.
 
 ### Create an ERC20 workspace
 
@@ -90,7 +90,7 @@ That's all we need to change within this contract. You can see on line 4 that th
 
    ![Select contract in Remix.](deploy-select-contract.png)
 
-5. Click **Deploy**, and confirm the transaction on MetaMask. Your token contract will be deployed to Filecoin Hyperspace after the transaction is confirmed on-chain.
+5. Click **Deploy**, and confirm the transaction on MetaMask. Your token contract will be deployed to Filecoin Calibration after the transaction is confirmed on-chain.
 
 ### Mint your tokens
 

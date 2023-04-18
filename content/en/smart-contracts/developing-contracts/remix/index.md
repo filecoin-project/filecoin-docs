@@ -17,7 +17,7 @@ aliases:
 
 ## Launch an ERC-20 token
 
-As a simple introduction, we're going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we're using the Hyperspace testnet, but this process is the same for mainnet.
+As a simple introduction, we're going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we're using the Calibration testnet, but this process is the same for mainnet.
 
 {{< alert >}}
 This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out the guide we've put together]({{< relref "/smart-contracts/wallets/metamask" >}}).
