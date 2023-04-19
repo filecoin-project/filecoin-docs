@@ -74,9 +74,15 @@
       parent = "main-networks"
 
     [[main]]
+      name = "Spacenet"
+      url = "/networks/spacenet/details"
+      weight = 40
+      parent = "main-networks"
+
+    [[main]]
       name = "Local testnet"
       url = "/networks/local-testnet/set-up"
-      weight = 40
+      weight = 50
       parent = "main-networks"
 
 [[main]]
@@ -264,8 +270,14 @@
   url = "/networks/calibration"
 
 [[networks]]
-  name = "Local testnet"
+  name = "Spacenet"
   weight = 40
+  identifier = "networks-spacenet"
+  url = "/networks/spacenet"
+
+[[networks]]
+  name = "Local testnet"
+  weight = 50
   identifier = "networks-local-testnet"
   url = "/networks/local-testnet"
 # ----------------------
