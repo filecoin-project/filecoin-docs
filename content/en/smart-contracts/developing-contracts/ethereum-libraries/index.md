@@ -1,6 +1,6 @@
 ---
 title: "Solidity libraries"
-lead: "A _Solidity library_ is a Solidity contract that provides building reusable, standardized building blocks that developers can use to quickly build custom smart contracts. With Filecoin Virtual Machine (FVM), Solidity developers can use existing libraries listed on this page in their FVM smart contracts."
+lead: "A _Solidity library_ is a Solidity contract that provides reusable, standardized building blocks that developers can use to quickly build custom smart contracts. With Filecoin Virtual Machine (FVM), Solidity developers can use existing libraries listed on this page in their FVM smart contracts."
 description: "Learn how to use existing Solidity libraries with FVM projects."
 draft: false
 images: []
@@ -15,7 +15,7 @@ toc: true
 
 ## OpenZeppelin
 
-[OpenZeppelin](https://www.openzeppelin.com/contracts), one of the most popular and widely used libraries, provides a set of well-documented, modular smart contract templates. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
+[OpenZeppelin](https://www.openzeppelin.com/contracts) provides a library of battle-tested smart contract templates, including widely used implementations of ERC token standards. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
 
 ### Benefits 
 
