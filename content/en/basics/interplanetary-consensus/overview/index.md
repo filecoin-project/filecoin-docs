@@ -58,4 +58,10 @@ The introduction of IPC enables the following use cases on the Filecoin network:
 
 [Spacenet]({{< relref "networks/spacenet/details">}}) is an early builder testnet for Interplanetary Consensus, Mir, and Trantor focused on high throughput and low latency with smart contract capabilities.
 
+## Support
 
+The IPC team and community work mostly on Slack. Join the [Filecoin Slack workspace](https://filecoin.io/slack/) and meet us in the following channels:
+- `#ipc-help`, for any questions and as a general entry point to the world of IPC
+- `#ipc-announcements`, for relevant announcements related to the software and network
+- `#ipc-dev`, for development discussions
+- `#ipc-docs`, for documentation discussions
