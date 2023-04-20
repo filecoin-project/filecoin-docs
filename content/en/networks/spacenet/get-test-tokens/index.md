@@ -8,12 +8,12 @@ type: docs
 menu:
   networks:
     parent: "networks-spacenet"
-    identifier: "get-test-tokens-cc2f6523d058385c2a47e56e2955119e"
+    identifier: "spacenet-get-test-tokens"
 weight: 100
 toc: true
 ---
 
-A faucet is available at [spacenet.consensus.ninja](https://spacenet.consensus.ninja) for developers to get test Filecoin (tFIL) on the Spacenet testnet. The faucet has the following restrictions:
+A faucet is available at [faucet.spacenet.ipc.space](https://faucet.spacenet.ipc.space) for developers to get test Filecoin (tFIL) on the Spacenet testnet. The faucet has the following restrictions:
 
 - The per-request allowance given by the faucet is of 10 tFIL.
 - There is a daily maximum of 20 tFIL per address.
@@ -26,5 +26,5 @@ A faucet is available at [spacenet.consensus.ninja](https://spacenet.consensus.n
 If you need more Spacenet tFIL for your application, feel free to drop us a message in one of the following locations:
 
 - The [`#spacenet` channel in Filecoin Slack](https://filecoinproject.slack.com/archives/C043ZAHPFKL)
-- Email [consensuslab@protocol.ai](mailto:consensuslab@protocol.ai)
-- Fill-in a request using [this Google form](https://docs.google.com/forms/d/1O3_kHb2WJhil9sqXOxgGGGsqkAA61J1rKMfnb5os5yo/edit).
+- Email [ipc@protocol.ai](mailto:ipc@protocol.ai)
+- Submit the [request form](https://docs.google.com/forms/d/1O3_kHb2WJhil9sqXOxgGGGsqkAA61J1rKMfnb5os5yo/edit).
