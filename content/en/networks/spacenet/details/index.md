@@ -13,6 +13,8 @@ weight: 100
 toc: true
 ---
 
+**Maintainer**: [ConsensusLab](https://consensuslab.world)
+
 Spacenet is not _just_ another Filecoin testnet. It's been modified to run the high-performance [Trantor BFT consensus](https://hackmd.io/P59lk4hnSBKN5ki5OblSFg), implemented atop [Mir](https://github.com/filecoin-project/mir), a framework for implementing distributed protocols. And did we forget to mention Spacenet comes with built-in [Interplanetary Consensus (IPC)]({{< relref "basics/interplanetary-consensus/overview" >}}) support?
 
 Spacenet aims to provide developers with a testbed to deploy decentralized applications that can benefit from the capabilities provided by IPC, in particular the ability to deploy and transact in subnets. It is also a way for us to test our consensus innovations with real applications and real users. Developers will be able to deploy their own subnets from Spacenet while maintaining the ability to interact with accounts and applications in the root network.
@@ -23,12 +25,18 @@ To learn more about what you can do on Spacenet, visit the [Interplanetary Conse
 - [Spacenet Genesis](https://github.com/consensus-shipyard/lotus/blob/spacenet/build/genesis/spacenet.car)
 
 ## Network parameters
-- TBD
+- Supported Sector Sizes: `2 KiB` and `8 MiB`
+- Consensus Miner Min Power: `2 KiB`
+- Epoch Duration Seconds: `15`
+- WindowPoSt Proving Period: `2880`
+- WindowPoSt Challenge Window: `60`
+- WindowPoSt Period Deadlines: `48`
+- Pre-Commit Challenge Delay: `10`
 
 ## Bootstrap peers
 ```plaintext
 /dns4/bootstrap-1.spacenet.ipc.space/tcp/1347/p2p/12D3KooWBgvwdJfJzi33n3RtesHdXvW16pGqaVgzD2WCijxvwEp1
-/dns4/bootstrap-1.spacenet.ipc.space/tcp/1347/p2p/12D3KooW9u5RNjcw5zbkZcWGo2WWwjEbvr1Qz7sTs9GpxNw5xNzC
+/dns4/bootstrap-2.spacenet.ipc.space/tcp/1347/p2p/12D3KooW9u5RNjcw5zbkZcWGo2WWwjEbvr1Qz7sTs9GpxNw5xNzC
 ```
 
 ## Resources
