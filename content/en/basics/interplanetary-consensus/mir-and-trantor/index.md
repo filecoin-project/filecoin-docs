@@ -28,6 +28,6 @@ The first use of Mir is as a scalable and efficient consensus layer in Filecoin 
 
 Trantor is a modern multi-leader Byzantine fault-tolerant (BFT) protocol, inspired by recently proposed high-throughput BFT consensus protocols, namely ISS and Narwahl. It iterates through instances of PBFT with immediate finality, each block containing an ordered list of decided transactions and a certificate for verification, with every ∆-th block containing a checkpoint of the state.
 
-Learn more on [GitHub](https://github.com/filecoin-project/mir/tree/main/pkg/systems/trantor). 
+Learn more on [GitHub](https://github.com/filecoin-project/mir/tree/main/pkg/trantor). 
 
 To keep up with the development of Mir and Trantor, consider joining the `#mir-dev` channel in the  [Filecoin Slack workspace](https://filecoin.io/slack/). 
