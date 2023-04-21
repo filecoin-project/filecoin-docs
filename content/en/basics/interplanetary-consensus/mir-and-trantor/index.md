@@ -17,7 +17,7 @@ Beyond their function as a scaling tool, IPC subnets will be deployed to meet th
 
 ## Mir framework
 
-Mir is a framework for implementing, debugging, and analyzing distributed protocols. It takes the form of a library that provides abstractions representing different components of a distributed system and an engine orchestrating their interaction.
+[Mir](https://github.com/filecoin-project/mir) is a framework for implementing, debugging, and analyzing distributed protocols. It is organized as a library that provides abstractions representing different components of a distributed system, as well as an engine to orchestrate their interaction.
 
 Mir aims to be general enough to enable implementing distributed protocols in a way that is agnostic to network transport, storage, and cryptographic primitive implementation. All these (and other) usual components of a distributed protocol implementation are encapsulated in abstractions with well-defined interfaces. While Mir provides some implementations of those abstractions to be used directly "out of the box", the consumer is free to provide their own implementations.
 
@@ -30,4 +30,4 @@ Trantor is a modern multi-leader Byzantine fault-tolerant (BFT) protocol, inspir
 
 Learn more on [GitHub](https://github.com/filecoin-project/mir/tree/main/pkg/trantor). 
 
-To keep up with the development of Mir and Trantor, consider joining the `#mir-dev` channel in the  [Filecoin Slack workspace](https://filecoin.io/slack/). 
+To stay updated on Mir and Trantor development, join the `#mir-dev` channel in the  [Filecoin Slack workspace](https://filecoin.io/slack/). 

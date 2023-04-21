@@ -22,15 +22,15 @@ A full overview of the architecture can be found in the [IPC Design Reference](h
 
 ## IPC Agent
 
-The IPC Agent is the entry point to interacting with IPC. It is a client application that provides a simple and easy-to-use interface to interact with IPC as a user and run all the processes required for the operation of a subnet. The agent acts as an orchestrator, connecting to a number of blockchain nodes, one in each relevant subnet, and handles the entire IPC workflow, from subnet creation, cross-net message passing, and checkpointing.
+The IPC Agent is the entry point to interacting with IPC. It is a client application that provides a simple and easy-to-use interface to interact with IPC as a user and run all the processes required for the operation of a subnet. The agent acts as an orchestrator, connecting to one blockchain node in each relevant subnet. It also handles the entire IPC workflow, including subnet creation, cross-net message passing, and checkpointing.
 
 More information on the IPC Agent, as well as comprehensive documentation, can be found on [GitHub](https://github.com/consensus-shipyard/ipc-agent).
 
 ## IPC Actors
 
-IPC relies on two actors, the IPC Subnet Actor (ISA) and the IPC Gateway Actor (IGA), which are instantiated in each subnet and provide a number of convenience and governance functions. 
+IPC relies on two actors, the _IPC Subnet Actor (ISA)_ and the _IPC Gateway Actor (IGA)_, which are instantiated in each subnet and provide a number of convenience and governance functions. 
 
-The IGA is an actor that contains all IPC-related information and logic associated with a subnet that needs to be replicated in the subnet itself. The ISA is the IGA’s parent-side counterpart, i.e., it is deployed in a subnet’s parent and containing all the data and logic associated with the particular child subnet.
+The IGA is an actor that contains all IPC-related information and logic associated with a subnet that needs to be replicated in the subnet itself. The ISA is the IGA’s parent-side counterpart; that is, it is deployed to a subnet’s parent and contains all data and logic associated with the particular child subnet.
 
 The [actors](https://github.com/consensus-shipyard/ipc-actors) are currently implemented in Rust and provided as built-in wasm actors in [Spacenet]({{< relref "networks/spacenet/details">}}). We are currently working on an Solidity implementation.
 

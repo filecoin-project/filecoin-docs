@@ -32,19 +32,19 @@ The introduction of IPC enables the following use cases on the Filecoin network:
 ## Components
 
 The IPC project is split into two main components, which we briefly describe here.
-- [The hierarchical consensus framework]({{< relref "basics/interplanetary-consensus/hierarchical-consensus">}}), consisting of the base protocol, the actors, the ipc-agent, and the eudico node
-- [The Trantor consensus algorithm]({{< relref "basics/interplanetary-consensus/mir-and-trantor">}}), implemented atop the Mir framework
+- [The hierarchical consensus framework]({{< relref "basics/interplanetary-consensus/hierarchical-consensus">}}), consisting of the base protocol, the actors, the ipc-agent, and the eudico node.
+- [The Trantor consensus algorithm]({{< relref "basics/interplanetary-consensus/mir-and-trantor">}}), implemented atop the Mir framework.
 
 ## Public testnet
 
-[Spacenet]({{< relref "networks/spacenet/details">}}) is an early builder testnet for Interplanetary Consensus, Mir, and Trantor focused on high throughput and low latency with smart contract capabilities.
+[Spacenet]({{< relref "networks/spacenet/details">}}) is an early builder testnet for Interplanetary Consensus, Mir, and Trantor. It provides high throughput and low latency with FEVM support.
 
 ## Support
 
 The [IPC Agent repository](https://github.com/consensus-shipyard/ipc-agent) features extensive documentation on how to get started with IPC. We recommend that you start your journey there.
 
 If you have questions, ideas, or wish to get involved, join the [Filecoin Slack workspace](https://filecoin.io/slack/) and meet us in the following channels:
-- `#ipc-help`, for any questions and as a general entry point to the world of IPC
-- `#ipc-announcements`, for relevant announcements related to the software and network
-- `#ipc-dev`, for development discussions
-- `#ipc-docs`, for documentation discussions
+- `#ipc-help`, for any questions and as a general entry point to the world of IPC.
+- `#ipc-announcements`, for relevant announcements related to the software and network.
+- `#ipc-dev`, for development discussions.
+- `#ipc-docs`, for documentation discussions.
