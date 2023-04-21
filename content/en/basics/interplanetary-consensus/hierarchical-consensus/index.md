@@ -36,8 +36,8 @@ The [actors](https://github.com/consensus-shipyard/ipc-actors) are currently imp
 
 ## Eudico
 
-Eudico is a modularized implementation of [Lotus]({{< relref "nodes/implementations/lotus">}}) itself an implementation of the Filecoin Distributed Storage Network. It is designed with the flexibility to support distinct use cases, and, particularly relevant to IPC, the ability to load different consensus protocols. 
+Eudico is a modularized implementation of [Lotus]({{< relref "nodes/implementations/lotus">}}), itself an implementation of the Filecoin Distributed Storage Network. It is designed with the flexibility to support distinct use cases, and, particularly relevant to IPC, the ability to load different consensus protocols. 
 
 In our architecture, Eudico is used as the blockchain node. One instance of Eudico is deployed for each subnet, as well as one for interaction with the Filecoin root. 
 
-The Eudico node is available on [GitHub](https://github.com/filecoin-project/lotus).
+The Eudico node is available on [GitHub](https://github.com/consensus-shipyard/lotus).
