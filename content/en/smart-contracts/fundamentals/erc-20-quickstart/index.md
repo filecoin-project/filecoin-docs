@@ -213,6 +213,34 @@ Now that we've successfully compiled our contract, we need to deploy it somewher
 
 On the Filecoin network, a new set of blocks, also called a tipset, is created every thirty seconds. When deploying a contract, the transaction needs to be received by the network, and then the network needs to confirm the contract. This process takes around one to two tipsets to process -- or around 60 to 90 seconds.
 
+## Verify your contract (main net deployment only)
+
+If you are deploying your contract to main net, we highly recommend verifying your contract, to upkeep security and transparency on the network. 
+
+1. In Remix, within the **File Explorer** sidebar tab, under **contracts**, right click on your contract and choose "generate UML" to flatten the .sol file to ensure all components and tasks are included. 
+
+    <img width="779" alt="Screen Shot 2023-04-21 at 4 56 01 PM" src="https://user-images.githubusercontent.com/113331491/233750337-b15e51b3-aad5-4a50-bf62-6fc6625799d2.png">
+
+2. A contract ending in "_ flattened.sol" will be generated below your original contract. Ensure that the license and solidity version in the flattened contract is the same as in your original contract, edit as needed and click "save". 
+
+    <img width="779" alt="Screen Shot 2023-04-21 at 4 59 01 PM" src="https://user-images.githubusercontent.com/113331491/233750517-5a95f65e-5cc2-46c4-8dc7-80ee248097de.png">
+
+3. Right click on the flattened contract and click "download" and save the file. Copy your deployed contract's address. 
+
+    <img width="779" alt="Screen Shot 2023-04-21 at 5 02 33 PM" src="https://user-images.githubusercontent.com/113331491/233750731-34bd6298-6e09-46be-a505-a8f4b90e69c8.png">
+
+4. Head over to a contract verifier of your choice. You can use [Filfox](https://filfox.info/en/contract) or [Beryx](https://beryx.zondax.ch/contract_verifier). We will use Filfox as an example here. Paste in your deployed contract's address, choose the same compiler version and license, as you used in Remix.
+
+    <img width="776" alt="Screen Shot 2023-04-21 at 5 05 56 PM" src="https://user-images.githubusercontent.com/113331491/233750902-863385da-8325-43c0-b516-6597adaeb54b.png">
+
+5. Click "Continue" and upload your flattened .sol file. Click "Verify and Publish".
+
+    <img width="776" alt="Screen Shot 2023-04-21 at 5 07 39 PM" src="https://user-images.githubusercontent.com/113331491/233750996-00bfeff1-e89e-4578-ae98-f30659bc6e92.png">
+
+6. Success! Your contract is now verified.
+
+    <img width="776" alt="Screen Shot 2023-04-21 at 5 08 47 PM" src="https://user-images.githubusercontent.com/113331491/233751035-d3ae7a4e-d03e-419b-8958-e4109df9b9eb.png">
+
 ## Use your contract
 
 Now that we've compiled and deployed the contract, it's time to actually interact with it!
