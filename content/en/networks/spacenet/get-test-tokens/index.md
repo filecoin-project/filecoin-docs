@@ -25,6 +25,5 @@ A faucet is available at [faucet.spacenet.ipc.space](https://faucet.spacenet.ipc
 
 If you need more Spacenet tFIL for your application, feel free to drop us a message in one of the following locations:
 
-- The [`#spacenet` channel in Filecoin Slack](https://filecoinproject.slack.com/archives/C043ZAHPFKL)
-- Email [ipc@protocol.ai](mailto:ipc@protocol.ai)
-- Submit the [request form](https://docs.google.com/forms/d/1O3_kHb2WJhil9sqXOxgGGGsqkAA61J1rKMfnb5os5yo/edit)
+- [`#spacenet` channel in Filecoin Slack](https://filecoinproject.slack.com/archives/C043ZAHPFKL)
+- [ipc@protocol.ai](mailto:ipc@protocol.ai)
