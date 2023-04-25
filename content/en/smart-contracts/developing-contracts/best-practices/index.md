@@ -68,7 +68,9 @@ All contracts interacting with built-in actors must upgrade to the [latest versi
 
 ## Contract Verification
 
-When deploying contracts to main net, it is important to verify your contracts to improve transparency, security and trustlessness of the network. Verifying your contract involves recompiling your contract's source code to ensure that the produce bytecode, matches your contract's bytecode that is already on the network since your deployment. It is highly recommended for all FVM smart contracts to complete the verification process, soon after deployment. 
+When deploying contracts to mainnet, it is important to verify your contracts to improve transparency, security and trustlessness of the network. The process of verifying your contract involves recompiling your contract's source code to ensure that the produced bytecode matches the bytecode that is already live on the network since it was deployed.
+
+It is highly recommended for all FVM smart contracts to complete the verification process, soon after deployment. 
 
 Developers can easily do so through the following block explorers:
 - [Filfox contract verifier](https://filfox.info/en/contract)
