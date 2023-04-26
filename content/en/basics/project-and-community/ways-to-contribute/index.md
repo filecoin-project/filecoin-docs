@@ -1,7 +1,7 @@
 ---
 title: "Ways to contribute"
 description: "How to contribute to Filecoin."
-lead: "So you want to contribute to Filecoin and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open a issue."
+lead: "So you want to contribute to Filecoin and the ecosystem? Here is a quick listing of things to which you can contribute and an overview on how you can get started. The community also welcomes other contributions - even if what you want to do is not yet listed here! If you're unsure, please open a issue."
 draft: false
 images: []
 type: docs
@@ -41,7 +41,7 @@ If you want to start contributing to the core of Filecoin, those repositories ar
 
 ### Documentation
 
-Filecoin is a huge project and undertaking, and with lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, we’d absolutely love your help!
+Filecoin is a huge project and undertaking, and with lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, any and all help is welcome!
 
 Before contributing to the Filecoin docs, please read these quick guides; they'll save you time and help keep the docs accurate and consistent!
 
@@ -52,19 +52,21 @@ If you have never contributed to an open-source project before, or just need a r
 
 ### Community
 
-If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums]({{< relref "chat-and-discussion-forums" >}}) to say hello, meet others who share your goals, and connect with other members of the community.
+If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums]({{< relref "chat-and-discussion-forums" >}}) to say hello, meet others who share your goals, and connect with other members of the community. You should also consider joining [Filecoin Slack](https://filecoin.io/slack). 
 
 ### Build Applications
 
 Filecoin is designed for you to integrate into your own applications and services.
 
-Get started by looking at the list of projects currently built on Filecoin. Build anything you think is missing! If you're unsure about something, you can join the chat and discussion forums to get help or feedback on your specific problem/idea. You can also apply for a Filecoin Developer Grant to support the development of your project.
+Get started by looking at the list of projects currently built on Filecoin. Build anything you think is missing! If you're unsure about something, you can join the chat and discussion forums to get help or feedback on your specific problem/idea. You can also join a Filecoin Hackathon, apply for a Filecoin Developer Grant or apply to the Filecoin accelerator program to support the development of your project.
 
+- [Filecoin Hackathons](https://hackathons.filecoin.io/)
 - [Filecoin Dev Grants](https://filecoin.io/grants/)
+- [Filecoin Accelerator Program](https://ecosystem-wg.notion.site/Protocol-Labs-Accelerator-Program-d45d8792a7d544eca9beb7d3e3d3b05d)
 
 ### Protocol Design
 
-Filecoin is ultimately about building better protocols, and we always welcome ideas and feedback on how to improve those protocols.
+Filecoin is ultimately about building better protocols, and the community always welcome ideas and feedback on how to improve those protocols.
 
 - [filecoin-project/specs](https://github.com/filecoin-project/specs)
 - [Filecoin Research Website](https://research.filecoin.io/)
