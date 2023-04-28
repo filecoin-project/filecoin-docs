@@ -17,11 +17,11 @@ Beyond their function as a scaling tool, IPC subnets will be deployed to meet th
 
 ## Mir framework
 
-[Mir](https://github.com/filecoin-project/mir) is a framework for implementing, debugging, and analyzing distributed protocols. It is organized as a library that provides abstractions representing different components of a distributed system, as well as an engine to orchestrate their interaction.
+[Mir](https://github.com/filecoin-project/mir) is a framework for implementing, debugging, and analyzing distributed protocols. It is organized as a library that provides abstractions representing different components of a distributed system and an engine to orchestrate their interaction.
 
-The goal of Mir is to enable implementation of distributed protocols in a way that is agnostic to network transport, storage, and cryptographic primitive implementation. All of these components of a distributed protocol implementation, as well as others, are encapsulated in abstractions with well-defined interfaces. While Mir provides some implementations of abstractions  for direct use "out of the box", the user is free to define their own implementations.
+The goal of Mir is to enable the implementation of distributed protocols in a way that is agnostic to network transport, storage, and cryptographic primitives. These components of a distributed protocol implementation are encapsulated in abstractions with well-defined interfaces. While Mir provides some out-of-the-box implementations, users are free to define their own.
 
-Mir is currently being used as a scalable and efficient consensus layer in Filecoin subnets. Learn more at [GitHub](https://github.com/filecoin-project/mir).
+Mir is used as a scalable and efficient consensus layer in Filecoin subnets. Learn more at [GitHub](https://github.com/filecoin-project/mir).
 
 ## Trantor consensus protocol
 

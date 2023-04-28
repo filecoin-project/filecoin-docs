@@ -13,7 +13,7 @@ weight: 100
 toc: true
 ---
 
-Many blockchain networks, including Filecoin, require that all validators process all transactions. This causes a major bottleneck for the network, and makes it difficult to increase network performance by scaling out. On top of that, different applications have different performance and security requirements, making it difficult for a single consensus layer to accommodate the needs of all Web3 applications.
+Many blockchain networks, including Filecoin, require that all validators process all transactions. This creates a bottleneck and makes it challenging to increase network performance by scaling out. On top of that, different applications have different performance and security requirements, making it difficult for a single consensus layer to accommodate the needs of all Web3 applications.
 
 Interplanetary Consensus (IPC) is a framework that enables on-demand, horizontal scalability of Filecoin by deploying subnets that:
 
@@ -37,7 +37,7 @@ The introduction of IPC enables the following use cases on the Filecoin network:
 
 ## Components
 
-The IPC project is split into two main components, which we briefly describe here.
+The IPC project is split into two main components, which we briefly describe here:
 - [The hierarchical consensus framework]({{< relref "basics/interplanetary-consensus/hierarchical-consensus">}}), consisting of the base protocol, the actors, the ipc-agent, and the eudico node.
 - [The Trantor consensus algorithm]({{< relref "basics/interplanetary-consensus/mir-and-trantor">}}), implemented atop the Mir framework.
 
