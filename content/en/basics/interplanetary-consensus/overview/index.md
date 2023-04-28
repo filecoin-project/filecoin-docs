@@ -13,9 +13,15 @@ weight: 100
 toc: true
 ---
 
-Many blockchain networks, including Filecoin, require all validators to process _all_ transactions. This causes a major bottleneck for the network and makes it difficult to increase network performance by scaling out. On top of that, different applications have different performance and security requirements, making it difficult for a single consensus layer to accommodate any type of web3 application.
+Many blockchain networks, including Filecoin, require that all validators process all transactions. This causes a major bottleneck for the network, and makes it difficult to increase network performance by scaling out. On top of that, different applications have different performance and security requirements, making it difficult for a single consensus layer to accommodate the needs of all Web3 applications.
 
-Interplanetary Consensus (IPC) is a framework to enable on-demand, horizontal scalability of Filecoin by deploying subnets that spawn their own state, validate messages in parallel, and seamlessly interact with any network in the hierarchy, as well as with the Filecoin root network. Subnets can run different consensus algorithms depending on application requirements, and are particularly well suited to scenarios requiring fast finality.
+Interplanetary Consensus (IPC) is a framework that enables on-demand, horizontal scalability of Filecoin by deploying subnets that:
+
+- Spawn their own state.
+- Validate messages in parallel.
+- Interact with any other subnet in the hierarchy, as well as with the Filecoin root network. 
+
+Subnets can run different consensus algorithms depending on application requirements, and are particularly well suited to scenarios requiring fast finality.
 
 Check out this short introduction from [ConsensusLab](https://consensuslab.world/):
 

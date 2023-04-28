@@ -1,7 +1,7 @@
 ---
 title: "Hierarchical consensus"
-description: "Our solution is different from traditional sharding designs, which explicitly divide the network's state. We use the concept of subnets that can be created on demand to manage new states.."
-lead: "Our solution is different from traditional sharding designs, which explicitly divide the network's state. We use the concept of subnets that can be created on demand to manage new states."
+description: "Traditional sharding designs explicitly divide the network's state. In Interplanetary consensus, subnets can be created on demand to manage new states. This page describes hierarchical consensus in detail. "
+lead: "IPC subnets are organized as a tree and periodically checkpoint their state onto their parent in order to leverage its security."
 draft: false
 images: []
 type: docs
@@ -13,9 +13,11 @@ weight: 110
 toc: true
 ---
 
-These subnets are organized in a hierarchy, each subnet have its own consensus instance, cryptoeconomic rules, and even agreement algorithm.  This increases the network's capacity and allows for new applications with different requirements.
+## Overview
 
-Additionally, subnets periodically save their state by checkpointing it with their parent network, and are also able to interact with other subnets by means of cross-net transactions. IPC subnets can resemble different L2 platforms, such as an optimistic or ZK-rollup, or a side-chain with a native communication bridge.
+In IPC, subnets are organized in a hierarchy, with each subnet defining its own consensus instance, cryptoeconomic rules, and agreement algorithm. This design increases the network's capacity and accomodates new applications with varying consensus requirements.
+
+Subnets periodically save their state by checkpointing it with their parent network, and are also able to interact with other subnets via cross-net transactions. IPC subnets can resemble other L2 platforms, such as [optimistic rollups](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/), [ZK rollups](https://ethereum.org/en/developers/docs/scaling/zk-rollups/), or a side-chain with a native communication bridge.
 
 A full overview of the architecture can be found in the [IPC Design Reference](https://github.com/consensus-shipyard/IPC-design-reference-spec/raw/main/main.pdf).
 
@@ -32,7 +34,7 @@ IPC relies on two actors, the _IPC Subnet Actor (ISA)_ and the _IPC Gateway Acto
 
 The IGA is an actor that contains all IPC-related information and logic associated with a subnet that needs to be replicated in the subnet itself. The ISA is the IGA’s parent-side counterpart; that is, it is deployed to a subnet’s parent and contains all data and logic associated with the particular child subnet.
 
-The [actors](https://github.com/consensus-shipyard/ipc-actors) are currently implemented in Rust and provided as built-in wasm actors in [Spacenet]({{< relref "networks/spacenet/details">}}). We are currently working on an Solidity implementation.
+The [actors](https://github.com/consensus-shipyard/ipc-actors) are currently implemented in Rust and provided as built-in WASM actors in [Spacenet]({{< relref "networks/spacenet/details">}}). We are currently working on a Solidity implementation.
 
 ## Eudico
 
