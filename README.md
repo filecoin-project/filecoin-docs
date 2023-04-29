@@ -77,7 +77,7 @@ npm install npm@latest -g
 
 Follow these steps to run a copy of this site on your local computer. 
 
-1. Clone tha repo:
+1. Clone this repo:
 
     ```shell
     git clone https://github.com/filecoin-project/filecoin-docs
