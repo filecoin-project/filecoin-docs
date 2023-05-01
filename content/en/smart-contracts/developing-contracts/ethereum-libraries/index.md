@@ -1,7 +1,7 @@
 ---
-title: "Ethereum libraries"
-description: ""
-lead: "With the EVM-compatibility, FVM developers will be able to use existing Ethereum smart contract libraries to build and deploy solidity smart contract on the Filecoin network."
+title: "Solidity libraries"
+lead: "A _Solidity library_ is a Solidity contract that provides reusable, standardized building blocks that developers can use to quickly build custom smart contracts. With Filecoin Virtual Machine (FVM), Solidity developers can use existing libraries listed on this page in their FVM smart contracts."
+description: "Learn how to use existing Solidity libraries with FVM projects."
 draft: false
 images: []
 type: docs
@@ -13,110 +13,147 @@ weight: 430
 toc: true
 ---
 
-A Solidity library is a type of smart contact that either implements existing reusable behaviors or implements various smart contract standards. Those libraries can be used as building blocks to expedite the development of new smart contracts.
-
-In the Ethereum ecosystem, there are many open-source smart contract libraries to provide reusable implementations that facilitate the development of new contracts. For instance, [OpenZeppelin](https://www.openzeppelin.com/contracts) is one of the most popular and widely used smart contract libraries.
-
-Since the FVM is EVM-compatible, Solidity developers are able to use those existing Ethereum smart contract libraries directly in their FVM smart contract projects.
-
 ## OpenZeppelin
 
-OpenZeppelin contracts offer a modular, reusable, and secure smart contracts library written in Solidity for fast and secure smart contract development. It offers:
+[OpenZeppelin](https://www.openzeppelin.com/contracts) provides a library of battle-tested smart contract templates, including widely used implementations of ERC token standards. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
+
+### Benefits 
+
+OpenZeppelin offers the following to smart contract developers:
 
 - Implementations of standards like ERC20, ERC721, and ERC1155.
 - Flexible access control schemes like `Ownable`, `AccessControl`, and `onlyRole`.
-- Useful and secure utilities like verifying a signature, `SafeMath`, and powerful collections.
+- Useful and secure utilities for signature verification, `SafeMath`, etc..
 
-These features can be used by inheritance or simply as imported libraries. First, you need to install the libraries, import the specific library you want to use, and then inherit it in your smart contract.
+Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20), are the most widely used smart contract libraries from OpenZepplin. These contracts, listed below, implement both _fungible_ and _non-fungible_ tokens:
 
-```bash
-npm install @openzeppelin/contracts
-```
+- [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) is the simplest and most widespread token standard for fungible assets. 
+- [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721) is the de-facto solution for non-fungible tokens and is often used for collectibles and games.
+- [ERC777](https://docs.openzeppelin.com/contracts/4.x/erc777) provides a richer standard for fungible tokens, supporting new use cases and backwards compatibility with ERC20.
+- [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155) is a new standard for _multi-tokens_, where a single contract represents multiple fungible and non-fungible tokens, and operations are batched for increased gas efficiency.
 
-Here is a simple Solidity contract as an example:
+### Using OpenZeppelin with FVM
 
-```solidity
-// contracts/GLDToken.sol
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+The _general_ procedure for using OpenZeppelin with FVM is as follows:
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+1. Install OpenZeppelin. For example, using `npm`:
 
-contract MyToken is ERC20 {
-    constructor(uint256 initialSupply) ERC20("FVM Token", "FVM-T") {
-        _mint(msg.sender, initialSupply);
-    }
-}
-```
+   ```bash
+   npm install @openzeppelin/contracts
+   ```
 
-The token standards are the most widely used smart contract libraries from OpenZepplin. These contracts implement both _fungible_ and _non-fungible_ tokens:
+1. Import the specific library you want to use.
+1. In your smart contract, inherit the library.
 
-- [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20): the most widespread token standard for fungible assets; albeit somewhat limited by its simplicity.
-- [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721): the de-facto solution for non-fungible tokens, often used for collectibles and games.
-- [ERC777](https://docs.openzeppelin.com/contracts/4.x/erc777): a richer standard for fungible tokens, enabling new use-cases and building on past learnings. Backward compatible with ERC20.
-- [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155): a novel standard for multi-tokens, allowing for a single contract to represent multiple fungible and non-fungible tokens, along with batched operations for increased gas efficiency.
+Thanks to the FVM, your contract can be integrated and deployed on the Filecoin network with OpenZepplin inheritance. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
 
-Solidity smart contracts inherited from those libraries can be integrated and deployed into the Filecoin network and run _as normal_ due to the Filecoin EVM-runtime.
+### Example using an ERC20 contract
 
-Let's take an ERC20 contract as an example to write and deploy it on the Hyperspace testnet using Remix & MetaMask:
+In the following tutorial, you'll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Hyperspace testnet using Remix and MetaMask:
 
-## ERC20 Contract
+#### Prerequisites
 
-Before we begin, make sure you have [connected your MetaMask wallet to the Hyperspace testnet]{{< relref "/basics/assets/metamask-setup" >}} , and grabbed some tFIL from the faucet.
+Before you begin, you must have:
 
-### Create an ERC20 workspace
+- Remix.
+- MetaMask.
+- [MetaMask connected to the Hyperspace testnet]({{< relref "/basics/assets/metamask-setup" >}}).
+- Test tokens (tFIL) [from the faucet]({{< relref "/networks/hyperspace/get-test-tokens">}}).
 
-1. Go to [remix.ethereum.org](https://remix.ethereum.org/) and click the `+` icon next to **Workspaces** to create a new workspace.
-2. In the **Choose a template** dropdown, select **ERC 20**, then select the **Mintable** checkbox.
+#### Procedure
+
+In this procedure, you will create, deploy, mint and send an [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) token on Hyperspace using Remix and MetaMask. 
+
+1. Navigate to [remix.ethereum.org](https://remix.ethereum.org/).
+
+1. Next to **Workspaces**, click the **+** icon to create a new workspace.
+
+1. In the **Choose a template** dropdown, select **ERC 20** along with the **Mintable** checkbox.
 
    ![Set workspace details.](create-a-workspace-details.png)
 
-3. Once you click **OK** to create your new workspace, you will have an ERC token created called **MyToken.sol**.
-4. Under the **contract** directory, open **MyToken.sol** and change the Token name and symbol.
+1. Click **OK**. 
 
-   ![Change token name.](customize-change-token-name.png)
+   {{< alert >}}
+   **Checkpoint**
 
-That's all we need to change within this contract. You can see on line 4 that this contract is importing another contract from `@openzeppelin` for us, meaning that we can keep our custom token contract simple.
+   A new workspace and an ERC20 token called `MyToken.sol` have been created.
+   {{< /alert >}}
 
-### Compile & Deploy your contract on Filecoin
+1. In the **contract** directory, open **MyToken.sol**.
 
-1. Click the green play symbol at the top of the workspace to compile your contract.
+1. Set the token `<name>` and `<symbol>`:
+
+   ```solidity
+   // contracts/GLDToken.sol
+   // SPDX-License-Identifier: MIT
+   pragma solidity ^0.8.0;
+
+   import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+   contract MyToken is ERC20 {
+      constructor(uint256 initialSupply) ERC20(<name>, <symbol>) {
+         _mint(msg.sender, initialSupply);
+      }
+   }
+   ```
+
+   Next, compile and deploy the contract on Filecoin.
+
+1. At the top of the workspace, click the green play symbol to compile the contract.
 
    ![Compile the contract.](compile-compile.png)
 
-2. Once you have successfully compiled our contract, you can open the **Deploy** tab from the left.
-3. Under the **Environment** dropdown, select **Injected Provider - MetaMask** and then confirmed connection in the MetaMask popup window.
-4. Back in Remix, under the **Account** field, you'll see the connected wallet `0x11F... (5 ether)`, which is 5 `tFIL`, and the compiled token contract.
+1. Once the contract compiles, open the **Deploy** tab on the left.
+
+1. Under the **Environment** dropdown, select **Injected Provider - MetaMask**. 
+
+1. In the MetaMask popup window, select **Confirmed connection**.
 
    ![Select contract in Remix.](deploy-select-contract.png)
 
-5. Click **Deploy**, and confirm the transaction on MetaMask. Your token contract will be deployed to Filecoin Hyperspace after the transaction is confirmed on-chain.
+1. Click **Deploy**.
 
-### Mint your tokens
+1. In MetaMask, confirm the transaction. 
 
-After the contract is deployed to Filecoin, you can interact with it. Let's call the deployed contract to mint some tokens.
+   {{< alert >}}
+   **Checkpoint**
 
-1. Back in Remix, open the **Deployed Contracts** dropdown. Expand the `mint` method. You must fill in two fields here: `to` and `amount`.
-1. Input your own wallet address into the `to` and `100000000000000000000`, which represents 1 `FIL` into the `amount`.
+   After the transaction is confirmed on-chain, your token contract is deployed to the Hyperspace network. Now, you can mint tokens.
+   {{< /alert >}}
+
+1. In Remix, open the **Deployed Contracts** dropdown. 
+
+1. In the `mint` method, set:
+   -  `to` to your wallet address.
+   -  `amount` to `100000000000000000000` (1 `FIL`).
 
    ![Click Deploy in Remix.](deploy-remix-deploy.png)
 
-1. Click **Transact**, and confirm the transaction on MetaMask. Wait for the network to process the transaction, then you will have 1 ERC20 token minted to your wallet address.
+1. Click **Transact**.
 
-Here is a basic example to demonstrate that developers can easily use existing Ethereum libraries to create their Solidity smart contracts on the Filecoin Network. If you want to learn more about how to use OpenZeppelin, check their resources.
+1. In MetaMask, confirm the transaction. 
+
+Once the network processes the transaction, the token is minted and sent to your network address. Congratulations, you've completed the tutorial!
+
+### Additional resources
+
+Learn more about OpenZepplin with the following resources:
 
 - [OpenZeppelin Contracts website](https://www.openzeppelin.com/contracts)
-- [Documentations](https://docs.openzeppelin.com/contracts/4.x/)
+- [Documentation](https://docs.openzeppelin.com/contracts/4.x/)
 - [GitHub](https://github.com/OpenZeppelin/openzeppelin-contracts)
 
-## Other libraries
+## DappSys
 
-DappSys: safe, simple, and flexible Ethereum contract building blocks have solutions for common problems in Ethereum/Solidity.
+The DappSys library provides safe, simple, and flexible Ethereum contract building blocks for common Ethereum and Solidity use cases.
 
-- [Documentations](https://dappsys.readthedocs.io/en/latest/)
-- [GItHub](https://github.com/dapphub/dappsys)
+- [Documentation](https://dappsys.readthedocs.io/en/latest/)
+- [GitHub](https://github.com/dapphub/dappsys)
 
-0x protocol: a set of secure smart contracts that facilitate the peer-to-peer exchange of Ethereum-based assets.
+## 0x protocol
 
-- [Documentations](https://docs.0x.org/introduction/introduction-to-0x)
+ The 0x protocol library provides a set of secure smart contracts that facilitate peer-to-peer exchange of Ethereum-based assets.
+
+- [Documentation](https://docs.0x.org/introduction/introduction-to-0x)
 - [GitHub](https://github.com/0xProject)
