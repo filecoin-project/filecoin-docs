@@ -14,6 +14,7 @@ toc: true
 aliases:
     - "/networks"
     - "/networks/mainnet"
+    - "/networks/overview"
 ---
 
 **Maintainer**: [Protocol Labs](https://protocol.ai)
