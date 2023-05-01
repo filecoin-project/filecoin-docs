@@ -23,11 +23,13 @@
     "build:preview": "npm run build -D -F",
     "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json node_modules ",
-    "lint": "npm run -s lint:scripts && npm run -s lint:styles && npm run -s lint:markdown",
+    "md-lint": "npm run -s lint:md-spelling && npm run -s lint:md-style",
+    "lint:md-outbound-links": "markdown-link-check *.md",
     "lint:scripts": "eslint assets/js config functions",
+    "lint:md-spelling": "markdown-spellcheck -r -a -n --en-us **/*.md",
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
-    "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
-    "lint:markdown-fix": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
+    "lint:md-style": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
+    "lint:md-style-fix": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
     "server": "exec-bin node_modules/.bin/hugo/hugo server",
     "test": "npm run -s lint",
     "env": "env",
@@ -37,6 +39,7 @@
     "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo",
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
+  "pre-commit": [ "md-lint" ],
   "devDependencies": {
     "@babel/cli": "^7.18",
     "@babel/core": "^7.18",
@@ -67,5 +70,8 @@
   },
   "otherDependencies": {
     "hugo": "0.101.0"
+  },
+  "dependencies": {
+    "markdown-spellcheck": "^1.3.1"
   }
 }

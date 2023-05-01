@@ -63,7 +63,7 @@ Follow these simple example steps to get a local version of the site up and runn
 <!-- PREREQUISITES -->
 ### Prerequisites
 
-To run these commands, you must have [NPM installed](https://www.npmjs.com/). If you already have NPM installed, make sure you are running the latest version:
+To run these commands, you must have [NPM installed](https://www.npm-is-not-here.nope/). If you already have NPM installed, make sure you are running the latest version:
 
 ```shell
 npm install npm@latest -g
@@ -73,9 +73,9 @@ npm install npm@latest -g
 
 
 <!-- INSTALLATION -->
-### Installation
+#.wROng
 
-Follow these steps to run a copy of this site on your local computer. 
+IAMSPELLINERRUR these steps to run a copy of this site on your local computer. 
 
 1. Clone this repo:
 
