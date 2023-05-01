@@ -15,8 +15,7 @@ aliases:
     - "/intro/intro-to-filecoin/data-daos/"
 ---
 
-{{< details "Data DAOs" >}}
-Before reading this page, ensure that you are familiar with the following concepts:
+{{< details "Before reading this page, ensure that you are familiar with the following concepts:" >}}
 
 - **Decentralized autonomous organizations (DAOs)**: Distributed entities whose ownership, governance, and decision-making processes are transparently conducted via on-chain activities, and are tasked with a collective mission.
 
