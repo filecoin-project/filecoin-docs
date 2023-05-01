@@ -22,7 +22,7 @@ aliases:
 
 Here’s how they work: Developers use APIs or libraries to send data to storage helpers. Behind the scenes, storage helpers receive the data and handle the underlying processes to store it in a reliable and decentralized storage way, by saving it [IPFS](https://ipfs.tech) nodes, making deals with Filecoin storage providers -- or both. You can use the same APIs or other tools to retrieve data quickly.
 
-Storage helpers are available for NFTs (non-fungible tokens) or general data. If you are storing NFTs, check out [Storing NFTs](#storing-NFTs). For general data, skip to [General data storage](#general-data-storage).
+Storage helpers are available for NFTs (non-fungible tokens) or general data. If you are storing NFTs, check out [Storing NFTs](#storing-nfts). For general data, skip to [General data storage](#general-data-storage).
 
 ### Storing NFTs
 
@@ -34,7 +34,7 @@ Storage helpers are available for NFTs (non-fungible tokens) or general data. If
 
 - [Estuary](https://docs.estuary.tech) is a free, decentralized data storage service for IPFS and Filecoin. Users can store and retrieve content quickly, and have their data backed up with proposition receipts and successful deal receipts. Estuary’s API adheres to the IPFS Pinning Services API Spec. You can use Estuary via its HTTP API or rclone syncer. Note: Estuary is in alpha mode. Users wanting to store meaningful public data can apply for an API token.
 
-- [Web3.Storage](https://web3.storage/docs) is a fast and open developer platform for [ storing and interacting with data](https://blog.web3.storage/posts/say-hello-to-the-data-layer-1-3-intro-to-web3-storage). Upload any data, and Web3.storage will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There are JavaScript and Go libraries for the API, as well as a no-code web uploader. Free and paid plans are available.
+- [Web3.Storage](https://web3.storage/docs) is a fast and open developer platform for [storing and interacting with data](https://blog.web3.storage/posts/say-hello-to-the-data-layer-1-3-intro-to-web3-storage). Upload any data, and Web3.storage will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There are JavaScript and Go libraries for the API, as well as a no-code web uploader. Free and paid plans are available.
 
 ### Advanced tools
 

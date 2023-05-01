@@ -34,7 +34,6 @@ Purchasing cryptocurrency varies from exchange to exchange, but the process is u
 1. Add funds to your exchange account in your local currency (USD, EUR, YEN, etc.).
 1. Exchange your local currency for FIL at a set price.
 
-
 ### Address compatibility
 
 Some exchanges allow users to fund and withdraw FIL using any of the [Filecoin address type]({{< relref "/basics/the-blockchain/addresses" >}}). However, some exchanges only support one, or a handful, of the available address types. Most exchanges do not currently support {{< tooltip "f410 addresses" >}}.

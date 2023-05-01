@@ -26,7 +26,7 @@ lassie fetch <CID>
 Lassie also provides an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. Developers can use this interface directly in their applications to retrieve the data. You can find more details about running a [Lassie HTTP daemon](#lassie-http-daemon) below.
 
 Lassie fetches content in content-addressed archive (CAR) form, so in most cases you will need additional tooling to deal with CAR files.
-Lassie can also be used as a library to fetch data from Filecoin from within your application. Due to the diversity of data transport protocols in the IPFS ecosystem, Lassie is able to use the Graphsync or Bitswap protocols, depending on how the requested data is available to be fetched. One prominent use case of Lassie as a library is the **Saturn Network**. Saturn nodes fetch content from Filecoin and IPFS through Lassie in order to serve retrievals. 
+Lassie can also be used as a library to fetch data from Filecoin from within your application. Due to the diversity of data transport protocols in the IPFS ecosystem, Lassie is able to use the Graphsync or Bitswap protocols, depending on how the requested data is available to be fetched. One prominent use case of Lassie as a library is the **Saturn Network**. Saturn nodes fetch content from Filecoin and IPFS through Lassie in order to serve retrievals.
 
 ![Lassie Architecture](Lassie_architecture.jpg "Lassie Architecture")
 
@@ -146,6 +146,7 @@ lassie fetch -p -o <OUTFILE_FILE_NAME> <CID>/path/to/content
 If you specify `-`, as in our above example, the output will be written to `stdout` so it can be piped to another command, such as `go-car`, or redirected to a file.
 
 - `<CID>/path/to/content` is the CID of the content you want to retrieve, and an optional path to a specific file within that content. Example:
+
     ```
     lassie fetch -o - bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Cryptographic_hash_function | car extract - | less
     ```
@@ -184,12 +185,11 @@ GET /ipfs/{cid}[/path][?params]
 
 A `GET` query against a Lassie HTTP daemon allows retrieval from peers that have the content identified by the given root CID, streaming the DAG in the response in [CAR (v1)](https://ipld.io/specs/transport/car/carv1/) format.
 You can read more about the HTTP request and response to the daemon in [Lassie's HTTP spec](https://github.com/filecoin-project/lassie/blob/main/docs/HTTP_SPEC.md).
-Lassie's HTTP interface can be a very powerful tool for web applications which require fetching data from Filecoin and IPFS. 
+Lassie's HTTP interface can be a very powerful tool for web applications which require fetching data from Filecoin and IPFS.
 
 ### Lassie's CAR format
 
 Lassie only returns data in CAR format; specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie's car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for manipulating the output.
-
 
 <!-- TODO: Complete Lotus node retrieval method. -->
 <!-- ## Lotus node -->

@@ -22,7 +22,7 @@ If you want to quickly upload any data that is to be hosted on IPFS and stored o
 
 1. Go to [Estuary.tech](https://estuary.tech) and log in.
 1. Select **Deals** from the sidebar menu.
-1. Click **Upload data** and select the file you want to upload and create a storage deal for. Once the file is successfully uploaded, Estuary will output the cost for storing the data on the Filecoin Network, in both [FIL](https://docs.filecoin.io/reference/glossary/#fil) and USD, size of the data, amount of the storage providers that the file is stored with, duration of the storage and whether the[ deal is verified](https://spec.filecoin.io/#section-algorithms.verified_clients).
+1. Click **Upload data** and select the file you want to upload and create a storage deal for. Once the file is successfully uploaded, Estuary will output the cost for storing the data on the Filecoin Network, in both [FIL](https://docs.filecoin.io/reference/glossary/#fil) and USD, size of the data, amount of the storage providers that the file is stored with, duration of the storage and whether the[deal is verified](https://spec.filecoin.io/#section-algorithms.verified_clients).
 
     ![Estuary upload file successfully](estuary-upload.png)
 

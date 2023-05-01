@@ -229,7 +229,7 @@ The `filecoin.sol` library is embeddable into your smart contract, which means i
 1. Install [yarn](https://yarnpkg.com/) if you don't have it installed.
 
 1. Install `filecoin.sol`:
- 
+
     ```shell
     yarn add @zondax/filecoin.sol
     ```

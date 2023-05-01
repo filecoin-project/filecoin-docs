@@ -38,7 +38,7 @@ rustup target add wasm32-unknown-unknown
 make build
 ```
 
-This builds the binary of the IPC agent in the `./bin` folder of your repo. If you want to make the command available everywhere, add this folder to the binary `PATH` of your system. To see if the installation was successfully you can run the following command: 
+This builds the binary of the IPC agent in the `./bin` folder of your repo. If you want to make the command available everywhere, add this folder to the binary `PATH` of your system. To see if the installation was successfully you can run the following command:
 
 ```shell
 ./bin/ipc-agent --help
@@ -76,7 +76,7 @@ Options:
 
 ## Infrastructure
 
-IPC currently uses [a fork of Lotus](https://github.com/consensus-shipyard/lotus), that we like to call _Eudico_, to run its subnets. The IPC agent does nothing by itself, and is just an orchestrator over existing subnet deployments. To ease the deployment of new subnets and nodes, we provide a set of convenient scripts to deploy all the infrastructure required to run IPC. 
+IPC currently uses [a fork of Lotus](https://github.com/consensus-shipyard/lotus), that we like to call _Eudico_, to run its subnets. The IPC agent does nothing by itself, and is just an orchestrator over existing subnet deployments. To ease the deployment of new subnets and nodes, we provide a set of convenient scripts to deploy all the infrastructure required to run IPC.
 
 ### Install infrastructure scripts
 
@@ -93,7 +93,7 @@ $ sudo usermod -aG docker $USER newgrp docker
 $ newgrp docker
 ```
 
-To check if the installation of the image and all infra-related scripts was successful you can run the following command, and it should return a similar output: 
+To check if the installation of the image and all infra-related scripts was successful you can run the following command, and it should return a similar output:
 
 ```shell
 $ docker images | grep eudico
@@ -114,7 +114,7 @@ If you `cat ~/.ipc-agent/config.toml` you should see a new config populated with
 
 ### Running the daemon
 
-The IPC agent runs as a foreground daemon process that spawns a new JSON RPC server to interact with it, and all the processes to automatically handle checkpoints and the execution of cross-net messages for the subnets our agent is participating in. The agent determines the list of subnets it should interact with from its config file. 
+The IPC agent runs as a foreground daemon process that spawns a new JSON RPC server to interact with it, and all the processes to automatically handle checkpoints and the execution of cross-net messages for the subnets our agent is participating in. The agent determines the list of subnets it should interact with from its config file.
 
 Alternatively, the agent can also be used as a CLI to interact with IPC. Under the hood, this cli sends new commands to the RPC server of the daemon. To run the IPC agent daemon you can run:
 
@@ -124,13 +124,13 @@ Alternatively, the agent can also be used as a CLI to interact with IPC. Under t
 
 Running the agent at this point will throw an error, because we haven´t configured it to interact with any IPC network. In the next few sections we will walk you through different alternatives to spawn and connect your agent to a running IPC instance.
 
-The RPC server of the daemon will be listening to the endpoint determined in the `json_rpc_address` field of the config. If you are looking for your agent to be accessible from Docker or externally, remember to listen from `0.0.0.0` instead of `127.0.0.1` as specified in the empty configuration. 
+The RPC server of the daemon will be listening to the endpoint determined in the `json_rpc_address` field of the config. If you are looking for your agent to be accessible from Docker or externally, remember to listen from `0.0.0.0` instead of `127.0.0.1` as specified in the empty configuration.
 
 ## Interacting with a rootnet
 
 ### Spacenet
 
-For more information about the Spacenet testnet have a look at the [Spacenet repo](https://github.com/consensus-shipyard/spacenet). In this section we will guide you through how to connect your IPC agent to a running instance of Spacenet. Spacenet hosts all the IPC actors and can be used as a rootnet to deploy new subnets from. 
+For more information about the Spacenet testnet have a look at the [Spacenet repo](https://github.com/consensus-shipyard/spacenet). In this section we will guide you through how to connect your IPC agent to a running instance of Spacenet. Spacenet hosts all the IPC actors and can be used as a rootnet to deploy new subnets from.
 
 In order to use the IPC agent with Spacenet we need to have access to a full-node syncing with the network. The easiest way to achieve this is to run your own Spacenet node. Running you own Spacenet node is as simple as [installing the dependencies](https://github.com/consensus-shipyard/lotus#basic-build-instructions), cloning the Eudico repo, and compiling and running it:
 
@@ -139,7 +139,7 @@ git clone https://github.com/consensus-shipyard/lotus
 cd lotus
 ```
 
-`spacenet` is the master branch of the repo. To find the latest release deployed over spacenet, you can check the last release  published in the repo and use checkout that tag. 
+`spacenet` is the master branch of the repo. To find the latest release deployed over spacenet, you can check the last release  published in the repo and use checkout that tag.
 
 ```shell
 git checkout <release/branch>
@@ -217,7 +217,7 @@ To deploy sample rootnet locally for testing you can use the IPC scripts install
 ./bin/ipc-infra/run-root-docker-1val.sh <lotus-api-port> <validator-libp2p-port>
 ```
 
-For instance, running `./bin/ipc-infra/run-root-docker-1val.sh 1235 1379` will run a rootnet daemon listening at `localhost:1235`, and a single validator mining in the rootnet listening through its libp2p host in `localhost:1379`. The end of the log in the execution of this script should look something like: 
+For instance, running `./bin/ipc-infra/run-root-docker-1val.sh 1235 1379` will run a rootnet daemon listening at `localhost:1235`, and a single validator mining in the rootnet listening through its libp2p host in `localhost:1379`. The end of the log in the execution of this script should look something like:
 
 ```plaintext
 >>> Root daemon running in container: 84711d67cf162e30747c4525d69728c4dea8c6b4b35cd89f6d0947fee14bf908
@@ -243,7 +243,7 @@ accounts = ["t1cp4q4lqsdhob23ysywffg2tvbmar5cshia4rweq"]
 If you are already running the daemon, changes in the config file are only picked up after running `./bin/ipc-agent reload-config` so be sure to run it after editing your config.
 {{< /alert >}}
 
-Finally, to test if the connection to the rootnet has been successful, we can for instance try to create a new wallet in the rootnet: 
+Finally, to test if the connection to the rootnet has been successful, we can for instance try to create a new wallet in the rootnet:
 
 ```shell
 ./bin/ipc-agent wallet-new --key-type=bls --subnet=/root
@@ -251,7 +251,7 @@ Finally, to test if the connection to the rootnet has been successful, we can fo
 
 ## Running a subnet
 
-To spawn a new subnet, our IPC agent should be connected to at least the subnet of the parent we want to spawn the subnet from. You can refer to the previous section for information on how to run or connect to a rootnet. This instructions will assume the deployment of a subnet from `/root`, but the steps are equivalent for any other parent subnet. 
+To spawn a new subnet, our IPC agent should be connected to at least the subnet of the parent we want to spawn the subnet from. You can refer to the previous section for information on how to run or connect to a rootnet. This instructions will assume the deployment of a subnet from `/root`, but the steps are equivalent for any other parent subnet.
 
 ### Spawn subnet actor
 
@@ -382,7 +382,7 @@ In the current implementation of IPC the gateway actor is deployed as a system a
 
 ### Mining in a subnet
 
-With our subnet daemon deployed, and having joined the network, as the minimum number of validators we set for our subnet is 0, we can start mining and creating new blocks in the subnet. Doing so is a simple as running the following script using as an argument the container of our subnet node: 
+With our subnet daemon deployed, and having joined the network, as the minimum number of validators we set for our subnet is 0, we can start mining and creating new blocks in the subnet. Doing so is a simple as running the following script using as an argument the container of our subnet node:
 
 ```shell
 ./bin/ipc-infra/mine-subnet.sh <node-container-id>
@@ -417,7 +417,7 @@ Subnets are periodically committing checkpoints to their parent every `check-per
 
 It is common for the checkpointing process to fail if while configuring a child subnet: either because the auth token is not correct, or because no wallet addresses have been configured in the subnet, etc. If this happens, running `./bin/ipc-agent reload-config` will restart the checkpoint manager and pick up the latest config values. Whenever you see an error in the checkpointing process, check that your subnet's configuration is correct and `reload-config` to restart the process.
 
-Finally, if you want to inspect the information of a range of checkpoints committed in the parent for a subnet, you can use the `list-checkpoints` command provided by the agent as follows: 
+Finally, if you want to inspect the information of a range of checkpoints committed in the parent for a subnet, you can use the `list-checkpoints` command provided by the agent as follows:
 
 ```shell
 # List checkpoints between two epochs for a subnet
@@ -457,7 +457,7 @@ Leaving a subnet will release the collateral for the validator and remove all th
 
 ### Importing a wallet to a subnet node
 
-Depending on if the subnet is running inside a docker container or not, we can use the following commands to import a wallet to a subnet node: 
+Depending on if the subnet is running inside a docker container or not, we can use the following commands to import a wallet to a subnet node:
 
 ```shell
 # Importing directly into the node
@@ -478,13 +478,13 @@ docker exec -it 91d2af805346 sh -c "eudico wallet import --format=json-lotus inp
 
 In this section, we will deploy a subnet where the IPC agent is responsible for handling more than one validator in the subnet. Throughout this guide, we use the `ipc-infra` scripts to deploy the nodes in Docker containers, but a similar steps could be used to deploy the nodes on bare-metal or any other runtime.
 
-For the rest of this tutorial, we'll assume that you have your agent already configured and interacting with a rootnet. For more information on how to connect to a rootnet check [revisit this section](#Interacting-with-a-rootnet). We are going to deploy a subnet with 5 validators. The first thing we'll need to do is creating a new wallet for every validator we want to run. We can do this directly through the agent with the following command:
+For the rest of this tutorial, we'll assume that you have your agent already configured and interacting with a rootnet. For more information on how to connect to a rootnet check [revisit this section](#interacting-with-a-rootnet). We are going to deploy a subnet with 5 validators. The first thing we'll need to do is creating a new wallet for every validator we want to run. We can do this directly through the agent with the following command:
 
 ```shell
 ./bin/ipc-agent wallet-new --key-type=secp256k1 --subnet=/root
 ```
 
-We also need to provide with some funds our wallets so they can put collateral to join the subnet. According to the rootnet you are connected to, you may need to get some funds from the faucet, or send some from your main wallet. Funds can be send from your main wallet also through the agent with: 
+We also need to provide with some funds our wallets so they can put collateral to join the subnet. According to the rootnet you are connected to, you may need to get some funds from the faucet, or send some from your main wallet. Funds can be send from your main wallet also through the agent with:
 
 ```shell
 ./bin/ipc-agent send-value --subnet=/root --to=<target-wallet> <amount_FIL>
@@ -499,7 +499,7 @@ With this, we can already create the subnet with `/root` as its parent. We are g
 
 ### Deploying the infrastructure
 
-In order to deploy the 5 validators for the subnet, we will have to first export the keys from our root node so we can import them to our validators. Depending on how you are running your rootnet node you'll have to make a call to the docker container, or your nodes API. More information about exporting keys from your node can be found under [this section](#Exporting-wallet-keys).
+In order to deploy the 5 validators for the subnet, we will have to first export the keys from our root node so we can import them to our validators. Depending on how you are running your rootnet node you'll have to make a call to the docker container, or your nodes API. More information about exporting keys from your node can be found under [this section](#exporting-wallet-keys).
 
 With the five keys conveniently exported, we can deploy the subnet nodes using the `infra-scripts`. The following code snippet showcases the deployment of five sample nodes. Note that each node should be importing a different wallet key for their validator, and should be exposing different ports for their API and validators:
 
@@ -528,7 +528,7 @@ t1ivy6mo2ofxw4fdmft22nel66w63fb7cuyslm4cy@/ip4/127.0.0.1/tcp/1347/p2p/12D3KooWEJ
 
 ### Configuring the agent
 
-To configure the agent for its use with all the validators, we need to connect to the RPC API of one of the validators, and import all of the wallets of the validators in that node, so the agent is able through the same API to act on behalf of any validator. More information about importing [keys can be found in this section](#Importing-a-wallet-to-a-subnet-node).
+To configure the agent for its use with all the validators, we need to connect to the RPC API of one of the validators, and import all of the wallets of the validators in that node, so the agent is able through the same API to act on behalf of any validator. More information about importing [keys can be found in this section](#importing-a-wallet-to-a-subnet-node).
 
 Here's an example of the configuration connecting to the RPC of the first validator, and configuring all the wallets for the validators in the subnet.
 
@@ -572,6 +572,7 @@ The mining process is currently run in the foreground in interactive mode. Consi
 ## Troubleshooting
 
 ### I need to upgrade my IPC agent
+
 Sometimes, things break, and we'll need to push a quick path to fix some bug. If this happens, and you need to upgrade your agent version, kill you agent daemon if you have any running, pull the latest changes from this repo, build the binary, and start your daemon again. This should pick up the latest version for the agent. In the future, we will provide a better way to upgrade your agent.
 
 ```shell
@@ -591,7 +592,7 @@ High-level you just need to clone the [eudico repo](https://github.com/consensus
 
 ### My subnet node doesn't start
 
-Either because the dockerized subnet node after running `./bin/ipc-infra/run-subnet-docker.sh` gets stuck waiting for the API to be started with the following message: 
+Either because the dockerized subnet node after running `./bin/ipc-infra/run-subnet-docker.sh` gets stuck waiting for the API to be started with the following message:
 
 ```plaintext
 Not online yet... (could not get API info for FullNode: could not get api endpoint: API not running (no endpoint))

@@ -38,7 +38,6 @@ Storage providers can also add additional value to clients when they offer certa
 
 {{<button url="https://docs.filecoin.io/storage-provider/filecoin-economics/storage-proving/">}}Filecoin economics → {{</button>}}
 
-
 ## Plan your business
 
 The hardware and other requirements for running a Filecoin storage provider business are significantly higher than regular blockchain mining operations. The mechanisms are designed this way because, in contrast to some other blockchain solutions, where you can simply configure one or more nodes to “mine” tokens, the Filecoin network’s primary goal is to provide decentralized storage for humanity’s most valuable data.
@@ -62,7 +61,5 @@ At the lowest level, you will need datacenter infrastructure. You need people ca
 Take availability and suitable redundancy into consideration when choosing your datacenter or collocation provider. Any unavailability of your servers, network or storage can result in automatic financial penalties on the Filecoin network.
 
 {{<button url="https://docs.filecoin.io/storage-provider/architecture/lotus-components/">}}Software architecture → {{</button>}} {{<button url="https://docs.filecoin.io/storage-provider/skills/storage/">}}Infrastructure →{{</button>}}
-
-
 
 {{< sp-calls-to-action >}}

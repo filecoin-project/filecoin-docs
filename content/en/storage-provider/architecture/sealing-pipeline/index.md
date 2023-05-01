@@ -45,7 +45,7 @@ Using the scratch space, the PC1 task will create 11 layers of the sector. Stora
 
 In order to seal at a decent rate and to make use of all the sealing capacity in a PC1-server, you will run multiple PC1 workers in parallel on a system. You can learn more about this in the chapter on [Sealing Rate]({{<relref "sealing-rate">}}). Sealing several sectors multiplies the requirements on CPU cores, RAM, and scratch space by the number of sectors being sealed in parallel.
 
-In order to achieve a decent sealing rate and make use of all sealing capacity in a PC1 server, storage providers should run multiple PC1 processes in parallel on a system. More information on this can be found in [Sealing Rate]({{<relref "sealing-rate">}}). 
+In order to achieve a decent sealing rate and make use of all sealing capacity in a PC1 server, storage providers should run multiple PC1 processes in parallel on a system. More information on this can be found in [Sealing Rate]({{<relref "sealing-rate">}}).
 
 The process of sealing a single 32 GiB sector takes roughly **3 hours**.
 
@@ -71,7 +71,7 @@ The sealed sector and its 11 layers are kept on the scratch volume until Commit 
 
 ### WaitSeed
 
-WaitSeed is not an actual task that is executed, but it is a step in the pipeline in which the blockchain forces the pipeline to wait for 150 epochs as a built-in security mechanism. With Filecoin's 30-second epochs, this means 75 minutes must elapse between PC2 and the next task, Commit 1 (C1). 
+WaitSeed is not an actual task that is executed, but it is a step in the pipeline in which the blockchain forces the pipeline to wait for 150 epochs as a built-in security mechanism. With Filecoin's 30-second epochs, this means 75 minutes must elapse between PC2 and the next task, Commit 1 (C1).
 
 ### Commit 1
 

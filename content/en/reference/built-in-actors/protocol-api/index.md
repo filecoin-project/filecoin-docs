@@ -48,8 +48,8 @@ Authenticates whether the provided signature is valid for the provided message.
 Params:
 
 - `struct` AuthenticateMessageParams
-    - `bytes` AuthenticateMessageParamsSignature - it should be a raw byte of signature, NOT a serialized signature object with a signatureType.
-    - ` bytes` Message -  The message which is signed by the corresponding account address.
+  - `bytes` AuthenticateMessageParamsSignature - it should be a raw byte of signature, NOT a serialized signature object with a signatureType.
+  - `bytes` Message -  The message which is signed by the corresponding account address.
 
 Results:
 
@@ -896,7 +896,7 @@ Params:
       - `string` Label - any label that the client chooses for the deal.
       - `int64` StartEpoch - the chain epoch to start the deal.
       - `int64` EndEpoch - the chain epoch to end the deal.
-      -  `int256` StoragePricePerEpoch -  the token amount to pay to the provider per epoch.
+      - `int256` StoragePricePerEpoch -  the token amount to pay to the provider per epoch.
       - `int256` ProviderCollateral - the token amount as collateral paid by the provider.
       - `int256` ClientCollateral - the token amount as collateral paid by the client.
 
@@ -1244,7 +1244,7 @@ Params:
 Results:
 
 - `struct` RemoveExpiredAllocationsReturn
-  - `unit64[] `Considered - Allocation IDs are either specified by the caller or discovered to be expired.
+  - `unit64[]`Considered - Allocation IDs are either specified by the caller or discovered to be expired.
   - `BatachReturn` Results - results for each processed allocation.
   - `int256` DataCapRecoverd - The amount of DataCap token reclaimed for the client.
 
@@ -1269,7 +1269,7 @@ Results:
 - `struct` GetClaimsReturn
   - `struct` BatchReturn
     - `uint32` SuccessCount - total successes in the batch.
-    - `struct ` FailCode[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
+    - `struct` FailCode[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
 
   - `struct Claim[]` Claims - list of Claims returned.
     - `uint64` Provider - The provider that is storing the data.
@@ -1295,8 +1295,8 @@ Params:
 
 - `struct` ExtendClaimTermsParams
   - `struct ClaimTerm[]` Terms
-    - `uint64 ` Provider - The provider address which stores the data.
-    - `uint64 ` CliamID - Claim ID.
+    - `uint64` Provider - The provider address which stores the data.
+    - `uint64` CliamID - Claim ID.
     - `int64` TermMax - The max chain epoch to extend.
 
 Results:
@@ -1304,7 +1304,7 @@ Results:
 - `struct` ExtendClaimTermsReturn
   - `struct` BatchReturn
     - `uint32` SuccessCount - total successes in the batch.
-    - `struct ` FailCodes[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
+    - `struct` FailCodes[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
 
 ### RemoveExpiredClaims
 

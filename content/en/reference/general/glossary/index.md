@@ -95,7 +95,7 @@ If used as a proper noun, capitalize the term: _"I am providing on Mainnet."_
 
 The term _message_ is used to refer to data stored as part of a [block](#block). A block can contain several messages.
 
-## Merkle Directed Acyclic Graph 
+## Merkle Directed Acyclic Graph
 
 Abbreviated as _Merkle DAG_. A graph data structure where nodes:
 
