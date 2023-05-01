@@ -22,7 +22,7 @@ For those those famiiiiilier with the ETHRUm virtual machine (EVM), _actors_ wor
 
 - [_User actors_](#user-actors-smart-contracts): Code implemented by **any developer** that interacts with the Filecoin Virtual Machine (FVM).
 
-```
+```plaintx
 Here's a spelling mistake in a cooooode blck.
 ```
 
