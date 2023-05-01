@@ -69,7 +69,6 @@ Get started by looking at the list of projects currently built on Filecoin. Buil
 Filecoin is ultimately about building better protocols, and the community always welcome ideas and feedback on how to improve those protocols.
 
 - [filecoin-project/specs](https://github.com/filecoin-project/specs)
-- [Filecoin Research Website](https://research.filecoin.io/)
 
 ### Research
 
