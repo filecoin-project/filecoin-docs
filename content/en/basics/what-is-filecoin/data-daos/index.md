@@ -15,13 +15,13 @@ aliases:
     - "/intro/intro-to-filecoin/data-daos/"
 ---
 
-<details>
+{{< details "Data DAOs" >}}
 Before reading this page, ensure that you are familiar with the following concepts:
 
 - **Decentralized autonomous organizations (DAOs)**: Distributed entities whose ownership, governance, and decision-making processes are transparently conducted via on-chain activities, and are tasked with a collective mission.
 
 - **Smart contracts**: Self-executing programs that operate on the Filecoin Virtual Machine and are used to automate the enforcement and execution of agreements between network participants. Smart contracts on the Filecoin network can be used to manage storage and retrieval deals, allocate storage resources, and facilitate the governance of decentralized autonomous organizations (DAOs) and other decentralized applications (dApps).
-</details>
+{{< /details >}}
 
 ## Use cases and problems solved
 
