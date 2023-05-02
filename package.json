@@ -17,20 +17,18 @@
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
     "prestart": "npm run clean",
-    "precommit-msg": "echo 'CHECKING SPELLING, LINKS AND FORMATTING... SEE THE DOCS :) ' && exit 0",
-    "post-pc-msg": "echo 'MARKDOWN QUALITY CHECKS PASSED :) ...' && exit 0",
     "start": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender",
     "prebuild": "npm run clean",
     "build": "exec-bin node_modules/.bin/hugo/hugo --gc --minify",
     "build:preview": "npm run build -D -F",
     "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json node_modules ",
-    "md-lint": "npm run -s lint:md-spell",
+    "md-lint": "sh pre-commit-lint.sh",
     "check-outbound-links": "markdown-link-check -q -p *.md",
     "lint:scripts": "eslint assets/js config functions",
-    "check-spelling": "mdspell -r -a -n --en-us **/*.md",
+    "check-spelling": "mdspell -r -a -n --en-us *.md",
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
-    "check-md-formatting": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
+    "check-md-formatting": "markdownlint-cli2 \"*.md\"",
     "fix-md-formatting": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
     "server": "exec-bin node_modules/.bin/hugo/hugo server",
     "env": "env",
@@ -41,11 +39,7 @@
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "pre-commit": [
-    "precommit-msg",
-    "check-outbound-links",
-    "check-spelling",
-    "check-md-formatting",
-    "post-pc-msg"
+    "md-lint"
   ],
   "devDependencies": {
     "@babel/cli": "^7.18",
