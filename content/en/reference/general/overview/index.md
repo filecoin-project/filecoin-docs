@@ -95,7 +95,7 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 - [Estuary](https://estuary.tech) allows uploading and storing content on the Filecoin network directly from your browser. Allows anyone with public data to store and retrieve using a few API calls.
 - [**Slate.host**](https://slate.host) - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
 - [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with Oauth or general Metamask
-- [File.video](https://file.video/) and [Voodfy](https://beta.voodfy.com/) - video hosting with decentralized transcoding from LivePeer
+- [File.video](https://file.video/) - video hosting with decentralized transcoding from LivePeer
 - [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   - to securely capture, store and verify human history
   - learn more at [starlinglab.org/78days](https://www.starlinglab.org/78days/) or the [Filecoin blog interview](https://filecoin.io/blog/starling-framework/)
@@ -192,7 +192,6 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 - [Bidbot](https://github.com/textileio/bidbot) - A Filecoin Network sidecar to bid in storage deal auctions.
 - [Filgas.io](https://fgas.io/) - real-time Filecoin mining gas queries.
 - [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - Prometheus, Grafana and Python monitoring dashboard.
-- [Mining Benchmarks](https://filecoin-benchmarks.on.fleek.co/): Hardware performance comparisons from the Filecoin community.
 
 ### Storage client and miner programs
 
