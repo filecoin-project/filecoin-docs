@@ -43,7 +43,7 @@ In Filecoin, this process is known as _Proof-of-Storage_, and consists of two di
 
 In the Filecoin storage lifecycle process, _Proof-of-Replication (PoRep)_ is used when an SP agrees to store data on behalf of a client and receives a piece of client data. In this process:
 
-1. The data is placed into a _{{< tooltip "sector" >}}_.
+1. The data is placed into a {{< tooltip "sector" >}}.
 1. The sector is sealed by the SP.
 1. A unique encoding, which serves as proof that the SP has replicated a copy of the data they agreed to store, is generated (described in [Sealing as proof]({{< relref "#sealing-as-proof" >}})).
 1. The proof is compressed.
