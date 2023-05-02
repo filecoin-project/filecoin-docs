@@ -17,7 +17,7 @@ aliases:
 
 The Ankr RPC API, maintained by [Ankr](https://www.ankr.com/), provides HTTP and WebSocket endpoint with a limited number of API methods for both mainnet and testnet. For the most up-to-date information on available methods, see the [official Ankr documentation](https://www.ankr.com/docs/rpc-service/chains/chains-list/#networks-9)
 
-## Mainnet endpoints 
+## Mainnet endpoints
 
 ```plaintext
 https://rpc.ankr.com/filecoin
@@ -29,7 +29,7 @@ https://rpc.ankr.com/filecoin
 https://rpc.ankr.com/filecoin_testnet
 ```
 
-## Supported methods 
+## Supported methods
 
 Supported methods for these nodes vary between mainnet and testnet.
 

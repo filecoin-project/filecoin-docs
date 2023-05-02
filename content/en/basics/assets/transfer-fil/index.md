@@ -79,7 +79,7 @@ In this method, you will create a _burner wallet_ using Glif, transfer FIL to th
 1. Enter the necessary information into the text fields:
    - In the **Recipient** field, enter your 0x style address. GLIF automatically converts it to an f4 address.
    - In the **Amount** field, enter the amount of Fil to send.
-   - In **Params**, add optional Base64 parameters. 
+   - In **Params**, add optional Base64 parameters.
 1. Click **Review**.
 1. Once you've reviewed, click **Send**.
 1. The Fil will arrive in your Metamask wallet shortly.

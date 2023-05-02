@@ -116,7 +116,7 @@ echo $((16#31157))
 ## Additional Resources
 
 - Gas Filecoin improvement proposals (FIPs):
-    - [FIP 0032](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0032.md)
-    - [FIP 0037](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0037.md)
-    - [FIP 0054](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0054.md)
+  - [FIP 0032](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0032.md)
+  - [FIP 0037](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0037.md)
+  - [FIP 0054](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0054.md)
 - [Primitive Gas Price list](https://github.com/filecoin-project/ref-fvm/blob/master/fvm/src/gas/price_list.rs)

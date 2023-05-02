@@ -127,7 +127,6 @@ When an EVM is deployed to FEVM, it is compiled with WASM and an actor instance 
 
 No, it must be deployed to the FEVM.
 
-
 #### What frontend framework should I use?
 
 React, Ether.js, web.js, ReactJs work well.

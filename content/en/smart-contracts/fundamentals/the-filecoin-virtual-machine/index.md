@@ -129,7 +129,7 @@ The DataDAO contract should mint some $DATA and send it to the storage provider 
 
 - The DataDAO contract should have a method that provides all the deals managed by it.
 - The DataDAO contract should have a method that provides all the CIDs it wants to replicate and the current number of replications, and the desired number of replications.
-    - It should have a mechanism to refresh the number of replications based on the `stard_epoch` and `end_epoch` attributes of each deal it manages.
+  - It should have a mechanism to refresh the number of replications based on the `stard_epoch` and `end_epoch` attributes of each deal it manages.
 - Users can retrieve the data of the CID by using the `lotus client retrieve` command.
 
 #### Possible future directions
@@ -160,10 +160,10 @@ I highly recommend that you [read through the “Core Idea” section in this RE
 
 - The uploader should upload the file to a place where storage providers can download the data from, such as IPFS or AWS S3, and get the URL of the data
 - The uploader should send the URL of the data, the desired number of replication, and the desired expiration date to the PerpetualStorage contract to create a PerpetualDeal
-    - The dApp front end can provide an estimation of how long the data can be stored based on the amount of FIL the uploader has in the contract.
-    - The contract should reject the creation of the PerpetualDeal if the uploader does not have enough funds deposited in the contract.
+  - The dApp front end can provide an estimation of how long the data can be stored based on the amount of FIL the uploader has in the contract.
+  - The contract should reject the creation of the PerpetualDeal if the uploader does not have enough funds deposited in the contract.
 - The PerpetualStorage contract should create and update PerpetualDealAd based on the storage situation of each PerpetualDeal.
-    - The PerpetualStorage contract should determine the FIL it wants to give out for each PerpetualDealAd based on its business logic. For example, it can provide more bonuses if the PerpetualDeal does not have many replications or if its storage deals are about to expire.
+  - The PerpetualStorage contract should determine the FIL it wants to give out for each PerpetualDealAd based on its business logic. For example, it can provide more bonuses if the PerpetualDeal does not have many replications or if its storage deals are about to expire.
 
 ##### PerpetualDeal information
 
@@ -176,10 +176,10 @@ I highly recommend that you [read through the “Core Idea” section in this RE
 - Storage providers can look at the list of PerpetualDealAd and determine which PerpetualDealAd they want to store.
 - Storage providers should download the content of the PerpetualDealAd. They should try to download from the URL of the content or use the CID to download the content from other storage providers.
 - Storage providers should seal the data of the PerpetualDealAd and publish the deal information to the market actor by calling `publish_deal` on the market actor. The PerpetualStorage contract will act as the client of the deal. (The command to seal the data and generate deal information is under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)).
-    - The storage provider should put the PerpetualDealAd’s id into the label (this is the field used to store arbitrary data) of the deal, so the PerpetualStorage contract can identify which PerpetualDealAd the storage provider is targeting.
-    - The market actor will call the [AuthenticateMessage](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0044.md) native method on the PerpetualStorage contract to know if this deal should be created. This method will be called using the FRC42 method number as specified in the linked FRC.
-    - You can handle this callback by exposing a `handle_filecoin_method(uint64, uint64, bytes)` Solidity method, which is how the FEVM runtime routes inbound FRC42 calls. [See this example](https://github.com/lotus-web3/client-contract/blob/8b53caadd9f7b028f897dfcd28ec2ca9ae98b9e3/src/DealClient.sol#LL49).
-    - The PerpetualStorage contract should check if this replication is valid and send FIL to the storage provider if it successfully creates the deal.
+  - The storage provider should put the PerpetualDealAd’s id into the label (this is the field used to store arbitrary data) of the deal, so the PerpetualStorage contract can identify which PerpetualDealAd the storage provider is targeting.
+  - The market actor will call the [AuthenticateMessage](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0044.md) native method on the PerpetualStorage contract to know if this deal should be created. This method will be called using the FRC42 method number as specified in the linked FRC.
+  - You can handle this callback by exposing a `handle_filecoin_method(uint64, uint64, bytes)` Solidity method, which is how the FEVM runtime routes inbound FRC42 calls. [See this example](https://github.com/lotus-web3/client-contract/blob/8b53caadd9f7b028f897dfcd28ec2ca9ae98b9e3/src/DealClient.sol#LL49).
+  - The PerpetualStorage contract should check if this replication is valid and send FIL to the storage provider if it successfully creates the deal.
 
 ### Collateral Leasing
 
@@ -201,9 +201,9 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 
 - Beneficiary is an entity the owner can declare that is allowed to withdraw some of the storage providers FIL in available balance (as opposed to locked collateral)
 - There is a [BeneficaryTerm](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/typeLibraries/CommonTypes.sol#L75) that indicates.
-    - how much the beneficiary can withdraw.
-    - the expiration date.
-    - how much the beneficiary has withdrawn.
+  - how much the beneficiary can withdraw.
+  - the expiration date.
+  - how much the beneficiary has withdrawn.
 - The Beneficiary is set to the same address as the owner when first creating a miner without specifying a beneficiary address.
 - [Get_beneficiary method](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/MinerAPI.sol#L64) can return current beneficiary information.
 - [ChangeBeneficary method](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/MinerAPI.sol#L52) can specify a new beneficiary.
@@ -227,7 +227,7 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 ##### Creating miner actors, owner contracts, and beneficiary contract
 
 - The LendingMarket contract will create a smart contract (LoanAgent) using (CREATE2):
-    - LoanAgent contract will serve as the owner and beneficiary of the miner actor
+  - LoanAgent contract will serve as the owner and beneficiary of the miner actor
 - The miner will transfer the ownership to the smart contract owner through a separate message submitted externally. In the future, there will be a `Miner` method to change the owner address.
 - The LendingMarket contract will check if the `miner` actor’s owner is the LoanAgent
 - The LendingMarket calls the LoanAgent contract to call the ChangeBeneficiary method on the miner actor to specify the LoanAgent as its beneficiary
@@ -236,7 +236,7 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 
 - The miner actor will accumulate block rewards as long as the storage providers keep providing storage to the network
 - The storage providers should be able to call a method on the LendingMarket contract to get the repayment schedule
-    - Including the next payment date and the amount expected to be paid
+  - Including the next payment date and the amount expected to be paid
 - The LoanAgent should pull the required fund from the actor according to the repayment schedule
 - Whenever a repayment is made, the LendingMarket contract should calculate the leasing fees each lender should get
 - After all the repayments are completed, the owner should propose changing the beneficiary to itself, and the beneficiary should approve it

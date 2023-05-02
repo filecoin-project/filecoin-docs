@@ -26,9 +26,9 @@ Follow the [Lotus installation guide](https://lotus.filecoin.io/lotus/install/pr
 - Prepare your hardware by meeting the minimal requirements.
 - Install dependencies.
 - Start the Lotus daemon and sync the chain by either:
-    - Syncing from scratch: in your lotus directory run `lotus daemon`
-    - Syncing from a full snapshot.
-    - Syncing from minimal snapshot
+  - Syncing from scratch: in your lotus directory run `lotus daemon`
+  - Syncing from a full snapshot.
+  - Syncing from minimal snapshot
 
 {{< alert  >}}
 A snapshot only has the state trees from the recent tipset (2000 epochs) onward and nothing before that tipset, which means it does not have all the historical states of the network. In addition, only a full snapshot has full state trees from a certain tipset.

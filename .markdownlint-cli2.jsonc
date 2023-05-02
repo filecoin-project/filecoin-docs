@@ -1,0 +1,31 @@
+/*
+Based off https://github.com/DavidAnson/markdownlint-cli2/blob/main/test/markdownlint-cli2-jsonc-example/.markdownlint-cli2.jsonc
+*/
+{
+    /* PL DOCS CUSTOM RULES HIERARCHY:
+
+    DEFAULT RULES https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+    Disable MD013 - Line length
+    Disable MD014 - Dollar signs used before commands without showing output
+    Disable MD041 - First line in a file should be a top-level heading
+    Disable MD033
+    Disable MD051
+    MD048 - Code fence style, set to use `
+    MD049 - Emphasis style should be consistent, set to use _.
+    MD050 - Strong style should be consistent, set to use *.
+    */
+    "config": {
+      "default": true,
+      "MD013": false,
+      "MD014": false, 
+      "MD041": false,
+      "MD033": false,
+      "MD051": false,
+      "MD048": {"style": "backtick"},
+      "MD049": {"style": "underscore"},
+      "MD050": {"style": "asterisk"}        
+    },
+
+    // Fix any fixable errors
+    "fix": true
+}

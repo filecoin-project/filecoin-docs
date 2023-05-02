@@ -48,7 +48,7 @@ Network identifier
 
 ID addresses are often referred to by their shorthand `f0`.
 
-## Public keys 
+## Public keys
 
 Actors managed directly by users, like accounts, are derived from a public-private key pair. If you have access to a private key, you can sign messages sent from that actor. The public key is used to derive an address for the actor. Public key addresses are referred to as _robust addresses_ as they do not depend on the Filecoin chain state.
 
@@ -59,9 +59,9 @@ Filecoin supports two types of public key addresses:
 - [`secp256k1` addresses](https://en.bitcoin.it/wiki/Secp256k1) that begin with the prefix `f1`.
 - [BLS addresses](https://en.wikipedia.org/wiki/BLS_digital_signature) that begin with the prefix `f3`.
 
-For BLS addresses, Filecoin uses `curve bls12-381` for BLS signatures, which is a pair of two related curves, `G1` and `G2`. 
+For BLS addresses, Filecoin uses `curve bls12-381` for BLS signatures, which is a pair of two related curves, `G1` and `G2`.
 
-Filecoin uses `G1` for public keys, as G1 allows for a smaller representation of public keys, and `G2` for signatures. This implements the same design as ETH2, but contrasts with Zcash, which has signatures on `G1` and public keys on `G2`. However, unlike ETH2, which stores private keys in big-endian order, Filecoin stores and interprets private keys in little-endian order. 
+Filecoin uses `G1` for public keys, as G1 allows for a smaller representation of public keys, and `G2` for signatures. This implements the same design as ETH2, but contrasts with Zcash, which has signatures on `G1` and public keys on `G2`. However, unlike ETH2, which stores private keys in big-endian order, Filecoin stores and interprets private keys in little-endian order.
 
 Public key addresses are often referred to by their shorthand, `f1` or `f3`.
 
@@ -79,10 +79,10 @@ Filecoin supports extensible, user-defined actor addresses through the `f4` addr
 - User-defined, custom addressing systems without extensive changes and network upgrades.
 - Support for native addressing schemes from foreign runtimes such as the EVM.
 
-An `f4` address is structured as `f4<address-manager-actor-id>f<new-actor-id>`, where `<address-manager-actor-id>` is the actor ID of the _address manager_, and `<new-actor-id>` is the arbitrary actor ID chosen by that actor. An _address manager_ is an actor that can create new actors and assign an `f4` address to the new actor. 
+An `f4` address is structured as `f4<address-manager-actor-id>f<new-actor-id>`, where `<address-manager-actor-id>` is the actor ID of the _address manager_, and `<new-actor-id>` is the arbitrary actor ID chosen by that actor. An _address manager_ is an actor that can create new actors and assign an `f4` address to the new actor.
 
 {{< alert >}}
-Currently, per [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. Once users are able to deploy custom WebAssembly actors, this restriction will likely be relaxed, in a future FIP. 
+Currently, per [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. Once users are able to deploy custom WebAssembly actors, this restriction will likely be relaxed, in a future FIP.
 {{< /alert >}}
 
 As an example: suppose an address manager has an actor ID (an `f0` address) `123`, and that address manager creates a new actor. Then, the `f4` address of the actor created by the address manager is `f4123fa3491xyz`, where `f4` is the address class, `123` is the actor ID of the address manager, `f` is a separator, and `a3491xyz` is the arbitrary `<new-actor-id>` chosen by that actor.
