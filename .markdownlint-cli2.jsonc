@@ -5,9 +5,11 @@ Based off https://github.com/DavidAnson/markdownlint-cli2/blob/main/test/markdow
     /* PL DOCS CUSTOM RULES HIERARCHY:
 
     DEFAULT RULES https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
-    MD013 - Line length
-    MD014 - Dollar signs used before commands without showing output
-    MD041 - First line in a file should be a top-level heading
+    Disable MD013 - Line length
+    Disable MD014 - Dollar signs used before commands without showing output
+    Disable MD041 - First line in a file should be a top-level heading
+    Disable MD033
+    Disable MD051
     MD048 - Code fence style, set to use `
     MD049 - Emphasis style should be consistent, set to use _.
     MD050 - Strong style should be consistent, set to use *.
