@@ -48,7 +48,7 @@ See the below video for more information on Slingshot:
 
 ## Saturn
 
-A whole new access capability is being launched with **[Saturn](https://strn.network)**, which is the world’s first web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrievals of <1s in latency will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which storage providers can also participate.
+A whole new access capability is being launched with **[Saturn](https://saturn.tech)**, which is the world’s first web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrievals of <1s in latency will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which storage providers can also participate.
 
 ## Partner tools and programs
 

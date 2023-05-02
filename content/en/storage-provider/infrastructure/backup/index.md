@@ -52,7 +52,7 @@ Both storage providers and data owners (customers) should look at RPO and RTO op
 RTO for data owners is a matter of how fast the storage provider(s) can provide you the data.
 
 - Do your storage providers offer "fast retrieval" of the data through unsealed copies? If not, the unsealing process (typically multiple hours) must be calculated into the RTO.
-- Do your storage providers offer retrieval through [Saturn, (the Web3 CDN)](https://strn.network) for ultra-fast retrieval?
+- Do your storage providers offer retrieval through [Saturn, (the Web3 CDN)](https://saturn.tech) for ultra-fast retrieval?
 - Do your storage providers pin your data on IPFS, in addition to storing it on Filecoin?
 
 RPO for data owners is less of a concern, especially once the data is sealed. The Filecoin blockchain will enforce availability and durability of the data being stored, once it is sealed. It is therefore important, as a data owner, to know how fast your storage provider can prove the data on-chain.

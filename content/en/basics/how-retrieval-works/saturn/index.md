@@ -13,7 +13,7 @@ weight: 430
 toc: true
 ---
 
-[![Saturn homepage.](saturn-homepage.png)](https://strn.network)
+[![Saturn homepage.](saturn-homepage.png)](https://saturn.tech)
 
 Saturn is a Web3 CDN in Filecoin’s retrieval market. On one side of the network, websites buy fast, low-cost content delivery. On the other side, Saturn node operators earn Filecoin by fulfilling requests.
 
@@ -23,4 +23,4 @@ Content on Saturn is IPFS content-addressed. Every piece of content is immutable
 
 Crypto-incentives unite, align, and grow the network. Node operators earn Filecoin for accelerating web content and websites get faster content delivery for less.
 
-Find out more over at [strn.network](https://strn.network/)
+Find out more over at [saturn.tech](https://saturn.tech).
