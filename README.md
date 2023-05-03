@@ -448,7 +448,7 @@ The following occurs:
 - A summary of all spelling errors found in the changed file is displayed.
 - _Interactive spelling fix mode_ starts. 
 
-Using interactive spelling mode, you can quickly address each spelling error (highlighted in red) by doing the follwo:
+Using interactive spelling mode, you can quickly address each spelling error (highlighted in red) by doing the following:
 1. Using the arrow keys, select one of the following options:
    - `Ignore` will ignore the word and not ask about it again in the current run. If spell check is run again, it will be flagged.
    - `Add to file ignores` will ignore the word in this file only. 

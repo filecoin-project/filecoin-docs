@@ -15,7 +15,8 @@ echo "${bold}PRE-COMMIT CHECK${normal}"
 echo "We're checking all the markdown files changed in"
 echo "this commit for any broken links, spelling mistakes,"
 echo "or formatting errors."
-echo "For details, see $DOCLINK."
+echo "For details, see"
+echo "$DOCLINK."
 
 if [ ${#mdFileList} -gt 0 ]; then
 
@@ -73,7 +74,7 @@ if [ ${#mdFileList} -gt 0 ]; then
         echo "$DOCLINK."
         echo $errorBar
         echo " "
-        exit 0
+        exit 1
     else
         echo " "
         echo $regularBar
