@@ -400,7 +400,7 @@ This project contains some handy features you can include within your project.
 
 > This feature is currently in beta
 
-As a pre-commit step, a custom shell script to check Markdown file quality using NPM packages. When you `git commit` a Markdown file in the repository, the script:
+As a pre-commit step, a custom shell script to check Markdown file quality using NPM packages is run. When you `git commit` a Markdown file in the repository, the script:
 
 1. _Fails and rejects the commit_ if any of the following issues are flagged:
    - Spelling
