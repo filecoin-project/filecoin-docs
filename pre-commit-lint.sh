@@ -18,9 +18,10 @@ echo "or formatting errors."
 if [ ${#mdFileList} -gt 0 ]; then
 
     errors=0
-    echo "The following files were changed:\n"
+    echo " "
+    echo "The following files were changed:"
     for file in $mdFileList; do
-        echo "- $file"
+        echo " - $file"
     done
     echo $boldBar
 
