@@ -16,15 +16,7 @@ aliases:
     - "/developers/smart-contracts/concepts/actors-and-contracts/"
 ---
 
-For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](#smart-contracts). In the Filecoin network, there are two types of actors: 
-
-Here are some splling misstakes. Along with some _inconsistent_ _formatting_. Finally, here's a codeblock with some mistakes in it:
-
-asfklgjhzflkj
-
-```plaintxt
-These wrd is splt wrong.
-```
+For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](#smart-contracts). In the Filecoin network, there are two types of actors:
 
 - [_Built-in actors_](#built-in-actors): Hardcoded programs, written ahead of time by network engineers that manage and orchestrate key subprocesses and subsystems in the Filecoin network.
 
