@@ -13,45 +13,44 @@ weight: 100
 toc: true
 ---
 
-## The problem with consensus
+Many blockchain networks, including Filecoin, require that all validators process all transactions. This creates a bottleneck and makes it challenging to increase network performance by scaling out. On top of that, different applications have different performance and security requirements, making it difficult for a single consensus layer to accommodate the needs of all Web3 applications.
 
-Many blockchain networks, including Filecoin, require all validators to process _all_ transactions. This causes a major bottleneck for the network and makes it difficult to increase network performance by scaling out. On top of that, different applications have different performance and security requirements, making it difficult for a single consensus layer to accommodate any type of web3 application.
+Interplanetary Consensus (IPC) is a framework that enables on-demand, horizontal scalability of Filecoin by deploying subnets that:
 
-Interplanetary Consensus (IPC) is a framework to enable on-demand, horizontal scalability of Filecoin by deploying subnets that spawn their own state, validate messages in parallel, and seamlessly interact with any network in the hierarchy, as well as with the Filecoin root network. Subnets can run different consensus algorithms depending on application requirements.
+- Spawn their own state.
+- Validate messages in parallel.
+- Interact with any other subnet in the hierarchy, as well as with the Filecoin root network. 
 
-Check out this introduction presentation from [Consensus Lab](https://research.protocol.ai/groups/consensuslab/):
+Subnets can run different consensus algorithms depending on application requirements, and are particularly well suited to scenarios requiring fast finality.
+
+Check out this short introduction from [ConsensusLab](https://consensuslab.world/):
 
 {{< youtube "aRyj9kOvW7I" >}}
-
-## Components
-
-The IPC project is split into several individual components:
-
-### Subnets
-
-Our solution is different from traditional sharding designs, which explicitly divide the network's state. We use the concept of subnets that can be created on demand to manage new states. These subnets are organized in a hierarchy, where parent subnets are separated from child subnets, have their own rules, and use a different consensus algorithm. This increases the network's capacity and allows for new applications. Subnets also periodically save their state and can interact with other subnets. IPC subnets can resemble different L2 platforms, such as an optimistic or ZK-rollup or a side-chain with a native communication bridge.
-
-- [Interplanetary Consensus White Paper](https://research.protocol.ai/publications/hierarchical-consensus-a-horizontal-scaling-framework-for-blockchains/delarocha2022.pdf)
-- [Interplanetary Consensus Spec](https://github.com/protocol/ConsensusLab/blob/main/specs/hierarchical_consensus.md)
-
-### Mir and Trantor
-
-Mir is a framework used for implementing, debugging, and analyzing distributed protocols. We use Mir to create Trantor, which is a state machine replication system that arranges client requests in a specific order and has safety and liveness features. Trantor is scalable without needing a primary node to make periodic protocol decisions. It uses multiple instances of a leader-driven consensus protocol that all work simultaneously and independently.
-
-- [Mir on GitHub](https://github.com/filecoin-project/mir)
-- [Trantor on GitHub](https://github.com/filecoin-project/mir/tree/main/pkg/systems/trantor)
 
 ## Use cases
 
 The introduction of IPC enables the following use cases on the Filecoin network:
-
 - **Computation**: Spawn ephemeral subnets to run distributed computation jobs.
-- **Coordination**: Assemble into smaller subnets for decentralized orchestration. Coordinate resources with high throughput and low fees.
-- **Localization**: Leverage proximity to improve performance. Operate at very low latency in geographically constrained settings.
-- **Partition tolerance**: Deploy blockchain substrates in mobile settings or environments with limited connectivity.
+- **Coordination**: Assemble into smaller subnets for decentralized orchestration with high throughput and low fees.
+- **Localization**: Leverage proximity to improve performance and operate with very low latency in geographically constrained settings.
+- **Partition tolerance**: Deploy blockchain substrates in mobile settings or other environments with limited connectivity.
+
+## Components
+
+The IPC project is split into two main components, which we briefly describe here:
+- [The hierarchical consensus framework]({{< relref "basics/interplanetary-consensus/hierarchical-consensus">}}), consisting of the base protocol, the actors, the ipc-agent, and the eudico node.
+- [The Trantor consensus algorithm]({{< relref "basics/interplanetary-consensus/mir-and-trantor">}}), implemented atop the Mir framework.
 
 ## Public testnet
 
-Spacenet is an early builder testnet for Interplanetary Consensus, Mir, and Trantor focused on high throughput and low latency with smart contract capabilities.
+[Spacenet]({{< relref "networks/spacenet/details">}}) is an early builder testnet for Interplanetary Consensus, Mir, and Trantor. It provides high throughput and low latency with FEVM support.
 
-The Spacenet testnet is different from other Filecoin testnets because of its increased network throughput and reduced block time of around 1 second. As more applications are added to the Filecoin network using FVM, some use cases may not be possible with Filecoin alone. Spacenet is a testbed for developers to try out these new FVM use cases and create new Web3 applications. In early 2023, IPC will be released in Spacenet, which allows developers to deploy their own subnets while being able to interact with states and applications in the original network.
+## Support
+
+The [IPC Agent repository](https://github.com/consensus-shipyard/ipc-agent) features extensive documentation on how to get started with IPC. We recommend that you start your journey there.
+
+If you have questions, ideas, or wish to get involved, join the [Filecoin Slack workspace](https://filecoin.io/slack/) and meet us in the following channels:
+- `#ipc-help`, for any questions and as a general entry point to the world of IPC.
+- `#ipc-announcements`, for relevant announcements related to the software and network.
+- `#ipc-dev`, for development discussions.
+- `#ipc-docs`, for documentation discussions.
