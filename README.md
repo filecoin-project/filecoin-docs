@@ -442,6 +442,7 @@ Open a terminal window in the root directory of `filecoin-docs` and run `spell-f
    ```shell
    sh spell-fix.sh
    ```
+[](./README.md#pre-commit-linters)
 
 The following occurs:
 - A summary of all spelling errors found in the changed file is displayed.
