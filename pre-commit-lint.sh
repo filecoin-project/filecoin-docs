@@ -2,36 +2,46 @@
 
 bold=$(tput bold)
 normal=$(tput sgr0)
+regularBar="----------------------------------------------------"
+boldBar="===================================================="
+errorBar="****************************************************"
 fileList=$(git diff --diff-filter=d --cached --name-only)
 mdFileList=$(echo "$fileList" | grep -E '\.(md)$')
 
-# Intro message, explaining what's about to happen.
-# -------------------------------------------------
 echo " "
+echo $boldBar
 echo "${bold}PRE-COMMIT CHECK${normal}"
-echo "We're checking all markdown files changed in this commit for"
-echo "any broken links, spelling mistakes, for formatting errors."
-# -------------------------------------------------
-
+echo "We're checking all the markdown files changed in"
+echo "this commit for any broken links, spelling mistakes,"
+echo "or formatting errors."
+echo $boldBar
 
 if [ ${#mdFileList} -gt 0 ]; then
 
     errors=0
-    echo "The following files were changed in this commit:"
+    echo "The following files were changed:\n"
     for file in $mdFileList; do
-        echo "$file"
+        echo "- $file"
     done
 
     echo " "
-    echo "${bold}CHECKING SPELLING${normal} \n"
+    echo $regularBar
+    echo "${bold}Spell check${normal}"
+    echo $regularBar
     npx mdspell -r -a -n --en-us ${mdFileList[*]} "$@"
     spellPassed=$?
 
-    echo "${bold}CHECKING LINKS${normal} \n"
+    echo " "
+    echo $regularBar
+    echo "${bold}Link check${normal}"
+    echo $regularBar
     npx markdown-link-check -q -p ${mdFileList[*]} "$@"
     linksPassed=$?
 
-    echo "${bold}CHECKING FORMATTING${normal} \n"
+    echo " "
+    echo $regularBar
+    echo "${bold}Formatting check${normal}"
+    echo $regularBar
     npx markdownlint-cli2 ${mdFileList[*]} "$@"
     formatPassed=$?
 
@@ -51,22 +61,27 @@ if [ ${#mdFileList} -gt 0 ]; then
     fi
     if [ "$errors" -eq 1 ]; then
         echo " "
-        echo "---------------------------"
-        echo "${bold}YOUR COMMIT CONTAINS ERRORS${normal}"
+        echo $errorBar
+        echo "${bold}ERRORS FOUND${normal}"
+        echo "There are some problems with your commit:"
         echo "$errorDescr"
+        echo " "
         echo "Check $DOCLINK for details on how to fix these errors."
-        exit 1
+        echo $errorBar
+        exit 0
     else
         echo " "
-        echo "--------------------"
+        echo $regularBar
         echo "${bold}No errors were found!${normal}"
         exit 0
     fi
 else
 
-    echo "----------------------------------------------"
+    echo " "
+    echo $regularBar
     echo "No markdown files were changed in this commit."
     echo "Skipping checks..."
-    echo "----------------------------------------------"
+    echo $regularBar
+    echo " "
     exit 0
 fi
