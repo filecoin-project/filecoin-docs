@@ -4,7 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 regularBar="----------------------------------------------------"
 boldBar="===================================================="
-errorBar="****************************************************"
+errorBar="!**************************************************!"
 fileList=$(git diff --diff-filter=d --cached --name-only)
 mdFileList=$(echo "$fileList" | grep -E '\.(md)$')
 
