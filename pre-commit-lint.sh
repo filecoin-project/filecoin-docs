@@ -9,6 +9,7 @@ echo " "
 echo "PRE-COMMIT SPELLING, FORMATTING AND BROKEN LINK CHECK FOR CHANGED FILES: "
 
 if [ ${#mdFileList} -gt 0 ]; then
+    errors=0
     echo "------------"
     for file in $mdFileList; do
         echo "$file"
