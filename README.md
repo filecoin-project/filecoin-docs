@@ -42,6 +42,7 @@
         - [Aliases](#aliases)
         - [Draft](#draft)
     - [Features](#features)
+        - [Pre-commit quality check](#pre-commit-linters)
         - [Archived content](#archived-content)
         - [Tooltips](#tooltips)
 - [Issues](#issues)
@@ -407,9 +408,13 @@ As a pre-commit step, a custom shell script to check Markdown file quality using
    - Broken links
 1. _Succeeds and accepts the commit_ if no markdown files were changed or no errors were found.
 
-> If you believe that the pre-commit incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
+> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
 
 Before you can commit to the repository, you must fix any errors identified. To do so, follow the steps below:
+
+- [Fix broken links](#fix-broken-links)
+- [Fix markdown formatting](#fix-markdown-formatting)
+- [Fix spelling mistakes](#fix-spelling-mistakes)
 
 ##### Fix broken links
 
