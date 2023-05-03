@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCLINK = "https://github.com/filecoin-project/filecoin-docs/blob/main/README.md#pre-commit-linters"
+DOCLINK="https://github.com/filecoin-project/filecoin-docs/blob/main/README.md#pre-commit-linters"
 bold=$(tput bold)
 normal=$(tput sgr0)
 regularBar="----------------------------------------------------"
