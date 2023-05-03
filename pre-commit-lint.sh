@@ -1,5 +1,6 @@
 #!/bin/bash
 
+DOCLINK = "https://github.com/filecoin-project/filecoin-docs/blob/main/README.md#pre-commit-linters"
 bold=$(tput bold)
 normal=$(tput sgr0)
 regularBar="----------------------------------------------------"
@@ -14,6 +15,7 @@ echo "${bold}PRE-COMMIT CHECK${normal}"
 echo "We're checking all the markdown files changed in"
 echo "this commit for any broken links, spelling mistakes,"
 echo "or formatting errors."
+echo "For details, see $DOCLINK."
 
 if [ ${#mdFileList} -gt 0 ]; then
 
@@ -67,7 +69,8 @@ if [ ${#mdFileList} -gt 0 ]; then
         echo "There are some problems with your commit:"
         echo "$errorDescr"
         echo " "
-        echo "Check $DOCLINK for details on how to fix these errors."
+        echo "For details on how to fix these errors, see"
+        echo "$DOCLINK."
         echo $errorBar
         echo " "
         exit 0
