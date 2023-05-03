@@ -43,7 +43,7 @@ if [ ${#mdFileList} -gt 0 ]; then
         errorDescr+="\n-FORMATTING ERRORS. SEE DOCLINK.\n"
         errors=1
     fi
-    if [ $errors -eq 1 ]; then
+    if [ "$errors" -eq 1 ]; then
         echo " "
         echo "---------"
         echo "$PREFIX"
