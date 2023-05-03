@@ -1,0 +1,23 @@
+# markdown-spellcheck spelling configuration file
+# Format - lines beginning # are comments
+# global dictionary is at the start, file overrides afterwards
+# one word per line, to define a file override use ' - filename'
+# where filename is relative to this configuration file
+Filecoin
+tooltips
+localhost
+programmatically
+explorable
+shortcode
+shortcodes
+metadata
+config
+dropdown
+Fleek
+Pre-commit
+linters
+pre-commit
+tooltip
+v2
+Doks
+license-url
