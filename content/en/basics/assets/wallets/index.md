@@ -35,7 +35,7 @@ Note: If you are already running your own lotus node, you can also [manage FIL w
 
 ### Hot versus cold
 
-A hot wallet refers to any wallet which is permanently connected to the internet. They can be mobile, desktop, or browser-based. Hot wallets make it faster and easier to access digital access, but being could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets. Only use hot wallets to hold funds you need to access frequently.
+A hot wallet refers to any wallet that is permanently connected to the internet. They can be mobile, desktop, or browser-based. Hot wallets make it faster and easier to access digital assets but could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds that need to be accessed frequently.
 
 Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to theft. Cold wallets can be less convenient and are most useful for storing larger balances securely. 
 

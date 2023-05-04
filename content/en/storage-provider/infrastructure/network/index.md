@@ -19,7 +19,7 @@ When setting up a network, there are various factors to consider to ensure optim
 
 ## Internet bandwidth
 
-The amount of internet bandwidth required for a network largely depends on the size of the organization and customer expectations. A bandwidth between 1Gbps and 10Gbps is generally sufficient for most organizations, but the specific requirements should be determined based on the expected traffic. A minimum bandwidth of 10Gbps is recommended for setups that include a [Saturn](https://strn.network) node. Saturn requires a high-speed connection to handle large amounts of data.
+The amount of internet bandwidth required for a network largely depends on the size of the organization and customer expectations. A bandwidth between 1Gbps and 10Gbps is generally sufficient for most organizations, but the specific requirements should be determined based on the expected traffic. A minimum bandwidth of 10Gbps is recommended for setups that include a [Saturn](https://saturn.tech) node. Saturn requires a high-speed connection to handle large amounts of data.
 
 ## LAN bandwidth
 
