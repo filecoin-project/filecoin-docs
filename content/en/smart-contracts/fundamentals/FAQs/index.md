@@ -1,41 +1,22 @@
 ---
-title: "Support"
-description: "If you need assistance while exploring the Filecoin virtual machine, you can reach out to the team and community using the links on this page."
-lead: "If you need assistance while exploring the Filecoin virtual machine, you can reach out to the team and community using the links on this page."
+title: "FAQs"
+description: "A list of frequent asked questions about FVM, FEVM."
+lead: "A list of frequent asked questions about FVM, FEVM and how to build on Filecoin network. "
 draft: false
 images: []
 type: docs
 menu:
   smart-contracts:
     parent: "smart-contracts-fundamentals"
-    identifier: "support-0be0dajeidjwk32iaf95f58567cc2bae"
-weight: 190
+    identifier: "FAQs-0be0dajeidjwk32iaf95f58567cc2bae"
+weight: 200
 toc: true
 aliases:
-    - "/developers/smart-contracts/about/support/"
     - "/developers/smart-contracts/about/faqs/"
-    - "/fvm/basics/support/"
+    - "/fvm/basics/faqs/"
 ---
 
-## Slack
-
-Like many other distributed teams, the FVM team works mostly on Slack. You can join the Filecoin Project Slack for free by going to [filecoin.io/slack](https://filecoin.io/slack/). The FVM team hangs out in the following channels:
-
-- [`#fil-builders`](https://filecoinproject.slack.com/archives/CRK2LKYHW) for building solutions on FVM and Filecoin
-- [`#fil-fvm-dev`](https://filecoinproject.slack.com/archives/C029MT4PQB1) for development of the FVM
-- [`#fil-net-hyperspace-discuss`](https://filecoinproject.slack.com/archives/C04JEJB82RY) for the FVM test network (recommended for builders)
-
-## Forum
-
-If you just need a general pointer or looking for technical FAQs, you can head over to the [FVM GitHub Discussion tab](https://github.com/filecoin-project/community/discussions/categories/developers).
-
-## Developer grants
-
-The [Filecoin Grant Platform](https://github.com/filecoin-project/devgrants) connects grantmakers with builders and researchers in the Filecoin community. Whether you represent a foundation that wants to move the space forward, a company looking to accelerate development on the features your application needs, or a dev team itching to hack on the FVM, [take a look at the supported grant types and available opportunities →](https://github.com/filecoin-project/devgrants)
-
-## Frequently asked questions
-
-Here's a collection of FAQs that the team has gathered recently:
+Here's a collection of general FAQs that the team has gathered. If you are looking for more technical FAQs, please head to [Filecoin Community Discussion](https://github.com/filecoin-project/community/discussions/categories/q-a).
 
 #### What is FVM
 
@@ -104,7 +85,7 @@ Not necessarily. You can use one of the two public Hyperspace nodes:
 
 #### How do I install a node on the Hyperspace testnet?
 
-Factor8, the team that runs the Hyperspace testnet, has a [guide on how to spin up a Lotus node on the Hyperspace testnet](https://kb.factor8.io/docs/filecoin/testnets/hyperspace).
+Factor8, the team that runs the Hyperspace testnet, has a [guide on how to spin up a Lotus node on the Hyperspace testnet](https://kb.factor8.dev/docs/filecoin/testnets/hyperspace).
 
 #### What is the difference between the FVM and Bacalhau
 
@@ -125,6 +106,7 @@ When an EVM is deployed to FEVM, it is compiled with WASM and an actor instance 
 #### Can I deploy EVM bytecode to the native FVM
 
 No, it must be deployed to the FEVM.
+
 
 #### What frontend framework should I use?
 
