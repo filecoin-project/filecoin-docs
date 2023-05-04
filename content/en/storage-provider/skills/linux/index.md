@@ -19,6 +19,7 @@ Of all the technical skills needed to run a storage provider business, storage k
 Where most enterprise storage systems (NAS, SAN and other types) do not require the administrator to have hands-on Linux experience, Filecoin does require a lot more knowledge about Linux. For starters, this is because Filecoin is not just a storage system. It is a blockchain platform that offers decentralized storage. As a storage provider you are dealing with all the things required to run a alway-on production system, not just storage.
 
 ## Ubuntu Server LTS
+
 Although Lotus also runs on Mac, production systems generally all run on Linux. More specifically, most storage providers run on Ubuntu. Any Linux distribution should be possible but running Ubuntu makes it easier to find support in the community. Every distribution is a bit different and knowing that all components have been built and tested on Ubuntu, and knowing you have the same OS variables in your environment as someone else, lowers the barrier to starting as a storage provider significantly. Go for Ubuntu Server and choose the latest **LTS** version.
 
 Install Ubuntu LTS as a **headless server**. This means there is no desktop environment or GUI installed. It requires you to do everything on the command line. Not having a desktop environment on your server(s) has multiple advantages:
@@ -27,10 +28,11 @@ Install Ubuntu LTS as a **headless server**. This means there is no desktop envi
 - As you will be running several tasks on GPU (see [Reference Architectures]({{<relref "reference-architectures">}})), it's best to avoid running a desktop environment, which might compete for resources on the GPU.
 
 {{< alert >}}
-Exclude the `nvidia-drivers` and `cuda` packages from your updates using [the appropriate command](https://tecadmin.net/exclude-packages-from-apt-upgrade/) set. Once you have a working setup for your specific GPU, you will want to test these packages before you risk breaking them. Many storage providers may need to [install CUDA](https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/) since some operating systems do not include this package by default. 
+Exclude the `nvidia-drivers` and `cuda` packages from your updates using [the appropriate command](https://tecadmin.net/exclude-packages-from-apt-upgrade/) set. Once you have a working setup for your specific GPU, you will want to test these packages before you risk breaking them. Many storage providers may need to [install CUDA](https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/) since some operating systems do not include this package by default.
 {{< /alert >}}
 
 ## Command-line and environment variables
+
 All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus, it is recommended to build the binaries from source code. Upgrades to Lotus happen every two months or so. If you are unable to perform a mandatory Lotus upgrade, you may become disconnected from the filecoin network, which means you could be penalized and lose money, so it's vital to keep Lotus up-to-date.
 
 Configuration parameters for the Lotus client are stored in 2 places:
@@ -48,7 +50,7 @@ Some storage providers fine-tune their setups by enabling CPU-core-pinning of ce
 
 ### Configuring open file limits
 
-Lotus needs to open a lot of files simultaneously, and it is necessary to reconfigure the OS to support this. 
+Lotus needs to open a lot of files simultaneously, and it is necessary to reconfigure the OS to support this.
 
 This is one of the examples where not every Linux distribution is the same. On Ubuntu, run the following commands:
 
@@ -67,7 +69,7 @@ Diagnosing performance bottlenecks on a system is vital to keeping a well balanc
 There are many good resources to check out when it comes to Linux performance troubleshooting. Brendan Gregg's [Linux performance analysis in 60 seconds](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55) is an excellent introduction. Each one of these commands deserves a chapter on its own but can be further researched in their man pages.
 
 {{< youtube "ZdVpKx6Wmc8" >}}
- 
+
  The commands used are:
 
 ```shell

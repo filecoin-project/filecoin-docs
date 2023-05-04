@@ -17,7 +17,7 @@ toc: true
 
 [OpenZeppelin](https://www.openzeppelin.com/contracts) provides a library of battle-tested smart contract templates, including widely used implementations of ERC token standards. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
 
-### Benefits 
+### Benefits
 
 OpenZeppelin offers the following to smart contract developers:
 
@@ -27,7 +27,7 @@ OpenZeppelin offers the following to smart contract developers:
 
 Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20), are the most widely used smart contract libraries from OpenZepplin. These contracts, listed below, implement both _fungible_ and _non-fungible_ tokens:
 
-- [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) is the simplest and most widespread token standard for fungible assets. 
+- [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) is the simplest and most widespread token standard for fungible assets.
 - [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721) is the de-facto solution for non-fungible tokens and is often used for collectibles and games.
 - [ERC777](https://docs.openzeppelin.com/contracts/4.x/erc777) provides a richer standard for fungible tokens, supporting new use cases and backwards compatibility with ERC20.
 - [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155) is a new standard for _multi-tokens_, where a single contract represents multiple fungible and non-fungible tokens, and operations are batched for increased gas efficiency.
@@ -62,7 +62,7 @@ Before you begin, you must have:
 
 #### Procedure
 
-In this procedure, you will create, deploy, mint and send an [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) token on Hyperspace using Remix and MetaMask. 
+In this procedure, you will create, deploy, mint and send an [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) token on Hyperspace using Remix and MetaMask.
 
 1. Navigate to [remix.ethereum.org](https://remix.ethereum.org/).
 
@@ -72,7 +72,7 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
 
    ![Set workspace details.](create-a-workspace-details.png)
 
-1. Click **OK**. 
+1. Click **OK**.
 
    {{< alert >}}
    **Checkpoint**
@@ -106,7 +106,7 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
 
 1. Once the contract compiles, open the **Deploy** tab on the left.
 
-1. Under the **Environment** dropdown, select **Injected Provider - MetaMask**. 
+1. Under the **Environment** dropdown, select **Injected Provider - MetaMask**.
 
 1. In the MetaMask popup window, select **Confirmed connection**.
 
@@ -114,7 +114,7 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
 
 1. Click **Deploy**.
 
-1. In MetaMask, confirm the transaction. 
+1. In MetaMask, confirm the transaction.
 
    {{< alert >}}
    **Checkpoint**
@@ -122,17 +122,17 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
    After the transaction is confirmed on-chain, your token contract is deployed to the Hyperspace network. Now, you can mint tokens.
    {{< /alert >}}
 
-1. In Remix, open the **Deployed Contracts** dropdown. 
+1. In Remix, open the **Deployed Contracts** dropdown.
 
 1. In the `mint` method, set:
-   -  `to` to your wallet address.
-   -  `amount` to `100000000000000000000` (1 `FIL`).
+   - `to` to your wallet address.
+   - `amount` to `100000000000000000000` (1 `FIL`).
 
    ![Click Deploy in Remix.](deploy-remix-deploy.png)
 
 1. Click **Transact**.
 
-1. In MetaMask, confirm the transaction. 
+1. In MetaMask, confirm the transaction.
 
 Once the network processes the transaction, the token is minted and sent to your network address. Congratulations, you've completed the tutorial!
 

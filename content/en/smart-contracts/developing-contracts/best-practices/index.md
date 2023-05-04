@@ -38,19 +38,21 @@ Developers should take the time to thoroughly read through the following summary
 - If a contract sends funds to actors that are non-native, Ethereum, or EVM smart contract accounts, it [must use the `call_actor` precompile](#contracts-sending-funds-to-specific-actors).
 - If a contract is interacting with built-in actors, it must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](#contracts-interacting-with-built-in-actors).
 
-### All contracts 
+### All contracts
 
 All contracts must do the following:
 
 #### Accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically
 
 Smart contracts should accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically. Specifically:
+
 - Treat `DAG_CBOR` and `CBOR` as equivalent when returned from the `call_actor` precompile.
 - Treat `DAG_CBOR` and `CBOR` as equivalent when received as a parameter to `handle_filecoin_method`.
 
 #### Use CBOR (0x51) in outputs
 
 Smart contracts should use `CBOR (0x51)` in outputs. Specifically:
+
 - Always pass `CBOR` to the `call_actor` precompile. `DAG_CBOR` is currently forbidden.
 - Always return `CBOR` from `handle_filecoin_method`. `DAG_CBOR` is currently forbidden.
 
@@ -70,9 +72,10 @@ All contracts interacting with built-in actors must upgrade to the [latest versi
 
 When deploying contracts to mainnet, it is important to verify your contracts to improve transparency, security and trustlessness of the network. The process of verifying your contract involves recompiling your contract's source code to ensure that the produced bytecode matches the bytecode that is already live on the network since it was deployed.
 
-It is highly recommended for all FVM smart contracts to complete the verification process, soon after deployment. 
+It is highly recommended for all FVM smart contracts to complete the verification process, soon after deployment.
 
 Developers can easily do so through the following block explorers:
+
 - [Filfox contract verifier](https://filfox.info/en/contract)
 - [Beryx contract verifier](https://beryx.zondax.ch/contract_verifier)
 

@@ -13,7 +13,7 @@ weight: 210
 toc: true
 ---
 
-Filecoin has five address classes, and actors tend to have *multiple* addresses. Furthermore, each address class has its own rules for converting between binary and text.
+Filecoin has five address classes, and actors tend to have _multiple_ addresses. Furthermore, each address class has its own rules for converting between binary and text.
 
 The goal of using different types of addresses is to provide a robust address format that is scalable, easy to use, and reliable. These addresses encode information including：
 
@@ -42,7 +42,7 @@ The protocol indicator identifies the address type, which describes how a method
 - `2`: An actor address.
 - `3`: A wallet address generated from BLS public key.
 - `4`: A delegated address for user-defined foreign actors:
-    - `410`: Ethereum-compatible address space managed by the Ethereum Address Manager (EAM).
+  - `410`: Ethereum-compatible address space managed by the Ethereum Address Manager (EAM).
 
 Each address type is described below.
 
@@ -149,10 +149,12 @@ When you try to invoke this smart contract on Filecoin using Ethereum toolings, 
 The Filecoin EVM runtime introduces support for `0x` Ethereum-style addresses. Filecoin addresses starting with either `f0` or `f410f` can be converted to the `0x` format as follows:
 
 Addresses starting with `f0` can be converted to the `0x` format by:
+
 - Extracting the `actor_id` (e.g., the `1234` in `f01234`).
 - Hex encode with a `0xff` prefix: `sprintf("0xff0000000000000000000000%016x", actor_id)`.
 
 Addresses starting with `f410f` address can be converted to the `0x`  format by:
+
 - Removing the `f410f` prefix.
 - Decoding the remainder as base 32 (RFC 4648 without padding).
 - Trim off the last 4 bytes. This is a _checksum_ that can optionally be verified, but that's beyond the scope of this documentation.

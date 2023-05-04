@@ -19,11 +19,11 @@ aliases:
 
 Filecoin has multiple [address spaces]({{< relref "address-types#delegated-addresses" >}}): `f0`, `f1`, `f2`, `f3`, and `f4`. Each address space fits a particular need for the Filecoin network. The `f410` address spaces allow Ethereum addresses to be integrated into the Filecoin network.
 
-Users interacting with the Filecoin EVM runtime need to use `f4` addresses, masked to the Ethereum-style `0x` address. These addresses can be created from wallets like MetaMask, Coinbase wallet, or any other EVM-based wallet that allows for custom networks. There are use cases where a user with FIL in an `0x`-style address would want to send FIL to an `f1`, `f2`, or `f3` address. For example, taking FIL out of a smart contract and sending it to a multi-sig account or an exchange. 
+Users interacting with the Filecoin EVM runtime need to use `f4` addresses, masked to the Ethereum-style `0x` address. These addresses can be created from wallets like MetaMask, Coinbase wallet, or any other EVM-based wallet that allows for custom networks. There are use cases where a user with FIL in an `0x`-style address would want to send FIL to an `f1`, `f2`, or `f3` address. For example, taking FIL out of a smart contract and sending it to a multi-sig account or an exchange.
 
 This is where the problem lies. Ethereum-based wallets do not natively recognize the `f1`, `f2`, or `f3` address formats, making it impossible to send FIL from an Ethereum-style address.
 
-## The solution 
+## The solution
 
 The FilForwarder exposes a smart contract method called `forward` that takes a byte-level definition of a protocol address in an _f-style_ and a message value. It then uses the internal Filecoin APIs exposed using the Filecoin EVM runtime to properly send FIL funds reliably and as cheaply as possible. This also has the side effect of creating the actor ID should the address receiving address be considered new. In this way, using FilForwarder from an Ethereum wallet to any other Filecoin address space is safe and reliable.
 
@@ -145,7 +145,7 @@ yarn hardhat forward \
 
 - `NETWORK`: The network you want to use. The options are `mainnet`, `hyperspace`, and `calibration`.
 - `DESTINATION_ADDRESS`: The address you want to send FIL to. This is a string, like `t01024` or `t3tejq3lb3szsq7spvttqohsfpsju2jof2dbive2qujgz2idqaj2etuolzgbmro3owsmpuebmoghwxgt6ricvq`.
-- `AMOUNT`: The amount of FIL you want to send. The value `3.141` would be 3.141 FIL. 
+- `AMOUNT`: The amount of FIL you want to send. The value `3.141` would be 3.141 FIL.
 
 #### Examples
 

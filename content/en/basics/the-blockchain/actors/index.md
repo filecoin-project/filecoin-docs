@@ -36,20 +36,18 @@ A basic example of how actors are used in Filecoin is the process by which stora
 
 ### Blocks
 
-Each block in the Filecoin chain contains: 
+Each block in the Filecoin chain contains:
 
-  - Inline data such as current block height.
-  - A pointer ([CID]({{< relref "glossary#content-identifier-cid" >}})) to the current state tree.
-  - A pointer ([CID]({{< relref "glossary#content-identifier-cid" >}})) to the set of messages that, when applied to the network, generated the current state tree.
+- Inline data such as current block height.
+- A pointer ([CID]({{< relref "glossary#content-identifier-cid" >}})) to the current state tree.
+- A pointer ([CID]({{< relref "glossary#content-identifier-cid" >}})) to the set of messages that, when applied to the network, generated the current state tree.
 
 ### State tree
-
 
 A [Merkle Directed Acyclic Graph (Merkle DAG)]({{< relref "glossary#merkle-directed-acyclic-graph" >}}) is used to map the state tree and the set of messages. Nodes in the state tree contain information on:
 
 - Actors, like Fil balance, nonce and a pointer (CID) to actor state data.
 - Messages in the current block
-
 
 ### Messages
 
@@ -105,10 +103,10 @@ The `StorageMarketActor` is responsible for processing and managing on-chain dea
 
 The `StorageMinerActor` is created by the `StoragePowerActor`, and is responsible for storage mining operations and the collection of mining proofs. This actor is a key part of the Filecoin storage mining subsystem, which ensures a storage miner can effectively commit storage to the Filecoin,  handles the following:
 
-- Committing new storage 
-- Continuously proving storage 
-- Declaring storage faults 
-- Recovering from storage faults 
+- Committing new storage
+- Continuously proving storage
+- Declaring storage faults
+- Recovering from storage faults
 
 This actor does not interact directly with the FVM.
 

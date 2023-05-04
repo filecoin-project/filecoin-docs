@@ -64,6 +64,7 @@ In Filecoin, contracts generally have multiple addresses. Two of these address t
 Importantly, this means that any contract can be called by either its "normal" EVM address (corresponding to the contract's `f410f` address) or its "masked ID address" (corresponding from the contract's `f0` address).
 
 However, the addresses returned by the CALLER, ORIGIN, and ADDRESS instructions will always be the same for the same contract.
+
 - The ADDRESS will always be derived from the executing contract's `f410f` address, even if the contract was called via a masked ID address.
 - The CALLER/ORIGIN will be derived from the caller/origin's `f410f` address, if the caller/origin is an Ethereum-style account or an EVM smart contract. Otherwise, the caller/origin's "masked ID address" (derived from their `f0` address) will be used.
 

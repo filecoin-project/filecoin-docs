@@ -45,9 +45,9 @@ Clients can use _DataCap_ to incentivize storage providers to serve their needs.
 
 #### Smart contracts
 
-Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` address of the smart contract as the client address when making a request for DataCap. 
+Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` address of the smart contract as the client address when making a request for DataCap.
 
-For a smart contract's first DataCap allocation, we recommend using [verify.glif.io](https://verify.glif.io) to get 32 GiB of DataCap easily, as outlined below. 
+For a smart contract's first DataCap allocation, we recommend using [verify.glif.io](https://verify.glif.io) to get 32 GiB of DataCap easily, as outlined below.
 
 It's important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. To improve this experience, we are developing an Filecoin request for comments (FRC) to allow DataCap to be held between redeployments.
 
@@ -73,11 +73,11 @@ For receiving DataCap at a larger scale (for business needs and production use c
 - Applying directly to a specific notary - best for clients looking for < 100TiB of DataCap
 - Applying for a Large Dataset notary dedicated to a specific project - best for clients looking for > 100TiB of DataCap (usually in the 500TiB-5PiB range)
 
-
 For applying directly to a specific notary:
+
 1. Head over to the [Filecoin Plus Registry](https://plus.fil.org/), and proceed with **For Clients**
 2. Click **Get Verified**
-3. Click on **General Verification**. This link will take you to the notary registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under
+3. Click on **General Verification**. This link will take you to the notary registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of _Use Case_ you would classify yourself under
 4. Identify the notary you would like to apply to by selecting the checkbox on their row, and click **Make Request**
 5. Fill out the form that should pop up. This is used by notaries in conducting any necessary due diligence before granting you the requested DataCap
 6. Click **Sign in with GitHub** to allow the app to create a GitHub issue on your behalf
@@ -135,6 +135,7 @@ lotus filplus check-client-datacap f00000
 ```
 
 #### With lotus v1.9.0 and below
+
 _Note: [Lotus-shed](https://github.com/filecoin-project/lotus/tree/master/cmd/lotus-shed) is a separate package you will need to build and install (`make lotus-shed` in the [Lotus](https://github.com/filecoin-project/lotus) source), although these features are slated to be merged into Lotus._
 
 ```
@@ -144,6 +145,7 @@ lotus-shed verifreg check-client f00000
 ### Finding storage providers to take Fil+ deals
 
 There are a few different ways in which a client can find a storage provider to take a Fil+ storage deal:
+
 1. In the **For Clients** section of the [Filecoin Plus Registry](https://plus.fil.org/), there is a [Miner Registry](https://plus.fil.org/miners) which lists a self-selected set of storage providers who are willing to take Fil+ storage deals
 1. Use a Miner Reputation system such as [Filecoin Reputation System](http://filrep.io/) or Textile's [Miner Index](https://docs.textile.io/filecoin/miner-index/) to identify storage providers who can meet your needs
 1. Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack to discuss storage options

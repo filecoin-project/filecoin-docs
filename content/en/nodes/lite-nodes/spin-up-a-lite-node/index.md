@@ -69,6 +69,7 @@ To build the lite-node, you'll need some specific software. Run the following co
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     source "$HOME/.cargo/env"
     ```
+
 1. Done! You can move on to the [Pre-build](#pre-build) section.
 
 {{< /tab >}}

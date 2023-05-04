@@ -16,7 +16,7 @@ aliases:
     - "/developers/smart-contracts/concepts/tipsets/"
 ---
 
-## Blocks 
+## Blocks
 
 In Filecoin, a block consists of:
 
@@ -30,7 +30,7 @@ A _message_ represents communication between two actors, and thus changes in net
 
 ## Tipsets
 
-As described in [Consensus]({{< relref "consensus" >}}), multiple potential block producers may be elected via Expected Consensus (EC) to create a block in each epoch, which means that more than one valid block may be produced in a given epoch. All valid blocks with the same height and same parent block are assembled into a group called a _tipset_. 
+As described in [Consensus]({{< relref "consensus" >}}), multiple potential block producers may be elected via Expected Consensus (EC) to create a block in each epoch, which means that more than one valid block may be produced in a given epoch. All valid blocks with the same height and same parent block are assembled into a group called a _tipset_.
 
 ### Benefits of tipsets
 

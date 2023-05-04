@@ -141,15 +141,15 @@ Generates and returns an estimate of how much gas is necessary to allow the tran
 This documentation section is a work-in-progress.
 
 - Permissions: read
-- Inputs: 
-    - `object`:
-        - `from`: DATA, 20 Bytes - (optional) The address the transaction is sent from.
-        - `to: DATA, 20 Bytes - The address to which the transaction is directed to.
-        - `gas: QUANTITY - (optional) Integer of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
-        - `gasPrice`: QUANTITY - (optional) Integer of the gasPrice used for each paid gas.
-        - `value`: QUANTITY - (optional) Integer of the value sent with this transaction
-        - `data`: DATA - (optional) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI
-    - `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending".
+- Inputs:
+  - `object`:
+    - `from`: DATA, 20 Bytes - (optional) The address the transaction is sent from.
+    - `to: DATA, 20 Bytes - The address to which the transaction is directed to.
+    - `gas: QUANTITY - (optional) Integer of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
+    - `gasPrice`: QUANTITY - (optional) Integer of the gasPrice used for each paid gas.
+    - `value`: QUANTITY - (optional) Integer of the value sent with this transaction
+    - `data`: DATA - (optional) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI
+  - `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending".
 
 Example:
 
@@ -178,15 +178,15 @@ Returns a collection of historical gas information.
 
 - Permissions: read
 - Inputs:
-    - `BLOCKCOUNT` - Number of blocks in the requested range. Between 1 and 1024 blocks can be requested in a single query. Less than requested may be returned if not all blocks are available.
-    - `NEWESTBLOCK` - Highest number block of the requested range.
-    - `REWARDPERCENTILES` - (optional) A monotonically increasing list of percentile values to sample from each block's effective priority fees per gas in ascending order, weighted by gas used.
+  - `BLOCKCOUNT` - Number of blocks in the requested range. Between 1 and 1024 blocks can be requested in a single query. Less than requested may be returned if not all blocks are available.
+  - `NEWESTBLOCK` - Highest number block of the requested range.
+  - `REWARDPERCENTILES` - (optional) A monotonically increasing list of percentile values to sample from each block's effective priority fees per gas in ascending order, weighted by gas used.
 - Returns:
-    - `object`:
-        - `OLDESTBLOCK` - Lowest number block of the returned range.
-        - `BASEFEEPERGAS` - An array of block base fees per gas. This includes the next block after the newest of the returned range, because this value can be derived from the newest block. Zeroes are returned for pre-EIP-1559 blocks.
-        - `GASUSEDRATIO` - An array of block gas used ratios. These are calculated as the ratio of gasUsed and gasLimit.
-        - `REWARD` - (Optional) An array of effective priority fees per gas data points from a single block. All zeroes are returned if the block is empty.
+  - `object`:
+    - `OLDESTBLOCK` - Lowest number block of the returned range.
+    - `BASEFEEPERGAS` - An array of block base fees per gas. This includes the next block after the newest of the returned range, because this value can be derived from the newest block. Zeroes are returned for pre-EIP-1559 blocks.
+    - `GASUSEDRATIO` - An array of block gas used ratios. These are calculated as the ratio of gasUsed and gasLimit.
+    - `REWARD` - (Optional) An array of effective priority fees per gas data points from a single block. All zeroes are returned if the block is empty.
 
 Example:
 
@@ -245,7 +245,6 @@ Input:
     - `finalized`: the most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
     - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
-
 ```curl
 curl --location --request POST 'https://api.node.glif.io' \
 --header 'Content-Type: application/json' \
@@ -272,10 +271,9 @@ Returns information about a block by tipset, also known as a block hash.
 
 - Permissions: read
 - Inputs:
-    - `array`:
-        - `string`: Tipset of block
-        - `boolean`: If true it returns the full transaction objects, if false only the hashes of the transactions. Defaults to false.
-
+  - `array`:
+    - `string`: Tipset of block
+    - `boolean`: If true it returns the full transaction objects, if false only the hashes of the transactions. Defaults to false.
 
 ```json
 [
@@ -290,8 +288,8 @@ Returns information about a block by block number.
 
 - Permissions: read
 - Inputs:
-    - `QUANTITY|TAG`: integer of a block number, or the string `earliest`, `latest` or `pending`, as in the default block parameter.
-    - `Boolean`: If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
+  - `QUANTITY|TAG`: integer of a block number, or the string `earliest`, `latest` or `pending`, as in the default block parameter.
+  - `Boolean`: If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
 
 ```shell
 curl --location --request POST 'https://api.node.glif.io' \
@@ -368,12 +366,12 @@ Returns the number of transactions in a block matching the given tipset.
 
 - Permissions: read
 - Inputs:
-    - `string`: Either the hex value of a block number OR one of the following block tags:
-        - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
-        - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-        - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
-        - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
-        - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
+  - `string`: Either the hex value of a block number OR one of the following block tags:
+    - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
+    - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
+    - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
+    - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+    - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 Example:
 
@@ -405,13 +403,13 @@ This section of documentation is a work-in-progress.
 
 - Permissions: read
 - Inputs:
-    - `string`: 20 byte address.
-    - `string`: Either the hex value of a block number OR one of the following block tags:
-        - `pending` - A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
-        - `latest` - The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-        - `safe` - The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
-        - `finalized` - The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
-        - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
+  - `string`: 20 byte address.
+  - `string`: Either the hex value of a block number OR one of the following block tags:
+    - `pending` - A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
+    - `latest` - The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
+    - `safe` - The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
+    - `finalized` - The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+    - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 ```shell
 curl --location --request POST 'https://api.node.glif.io' \
@@ -754,17 +752,17 @@ Creates a filter object, based on filter options, to notify when the state chang
 
 - Permissions: write
 - Inputs:
-    - `array`:
-        - `object`:
-            - `string`: BlockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash blockHash. If blockHash is present in the filter criteria, then neither fromBlock nor toBlock are allowed.
-            - `array`:
-                - `string`: Contract address or a list of addresses from which logs should originate.
-                - `string`: Either the hex value of a block number OR one of the following block tags:
-                    - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
-                    - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-                    - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
-                    - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
-                    - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
+  - `array`:
+    - `object`:
+      - `string`: BlockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash blockHash. If blockHash is present in the filter criteria, then neither fromBlock nor toBlock are allowed.
+      - `array`:
+        - `string`: Contract address or a list of addresses from which logs should originate.
+        - `string`: Either the hex value of a block number OR one of the following block tags:
+          - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
+          - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
+          - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
+          - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+          - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 ```shell
 curl --location --request POST 'https://api.node.glif.io' \
@@ -873,8 +871,8 @@ Subscribe to different Ethereum event types like newHeads, logs, pendingTransact
 
 - Permissions: write
 - Inputs:
-    - Event types: specifies the type of event to listen to (ex: new pending transactions, logs, etc).
-    - Optional params: optional parameters to include to describe the type of event to listen to (`address` for example).
+  - Event types: specifies the type of event to listen to (ex: new pending transactions, logs, etc).
+  - Optional params: optional parameters to include to describe the type of event to listen to (`address` for example).
 
 ## EthUninstallFilter
 
@@ -908,7 +906,7 @@ Unsubscribe from different Ethereum event types with a regular RPC call with `et
 
 - Permissions: write
 - Inputs:
-    - `Subscription ID`: as previously returned from an `eth_subscribe` call.
+  - `Subscription ID`: as previously returned from an `eth_subscribe` call.
 
 ```shell
 curl --location --request POST 'https://api.node.glif.io' \

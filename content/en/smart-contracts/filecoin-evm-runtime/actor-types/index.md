@@ -36,7 +36,7 @@ An Ethereum-style account is the Filecoin EVM runtime equivalent of an account w
 
 1. These accounts have `0x`-style addresses and an equivalent `f`-style address starting with `f410f`.
 2. Messages from these accounts can be sent with Ethereum wallets like Metamask by connecting the wallet to a Filecoin client.
-3. These accounts can be used to transfer funds to native or Ethereum-style. 
+3. These accounts can be used to transfer funds to native or Ethereum-style.
 4. They can be used to call EVM smart contracts and can be used to deploy EVM smart contracts. However, they cannot be used to call native actors such as multisig or miner actors.
 
 ## EVM smart contract
