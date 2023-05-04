@@ -9,7 +9,7 @@ menu:
   storage-provider:
     parent: "providers-filecoin-economics"
     identifier: "network-impact-cd6677c8e83110999cfac168cdf2047e"
-weight: 100
+weight: 260
 toc: true
 ---
 
