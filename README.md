@@ -146,8 +146,6 @@ This section lists the various files and folders and defines the purpose for eac
 | `theme.toml` | A Hugo configuration file that specifies which theme to use. This file should not change that often. |
 <!-- /ABOUT THE PROJECT -->
 
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
