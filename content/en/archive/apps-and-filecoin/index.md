@@ -18,7 +18,7 @@ aliases:
 
 ### Verifiable storage
 
-Filecoin has built-in processes to check the history of files and verify that they have been stored correctly over time. Every storage provider proves that they are maintaining their files in every 24-hour window. Clients can efficiently scan this history to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
+Filecoin has built-in processes to check the history of files and verify that they have been stored correctly over time. Every storage provider proves that they are maintaining their files in every 24 hour window. Clients can efficiently scan this history to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
 
 {{< alert >}}
 [Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
@@ -60,7 +60,7 @@ Filecoin’s blockchain is designed to store large files, whereas other blockcha
 
 Files are referred to by the data they contain, not by fragile identifiers such as URLs. Files remain available no matter where they are hosted or who they are hosted by. When a file becomes popular, it can be quickly distributed by swarms of computers instead of relying on a central computer, which can become overloaded by network traffic.
 
-When multiple users store the same file (and choose to make the file public by not encrypting it), everyone who wants to download the file benefits from Filecoin keeping it available. No matter where a file is downloaded from, downloaders can verify that they have received the correct file and that it is intact.
+When multiple users store the same file (and choose to make the file public by not encrypting it), everyone who wants to download the file benefits from Filecoin keeping it available. No matter where a file is downloaded from, users can verify that they have received the correct file and that it is intact.
 
 ### Content distribution network
 
@@ -83,4 +83,4 @@ The code that runs both clients and storage providers is open-source. Storage pr
 ### Active community
 
 Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers, and storage providers. If you need help, you can reach the person who designed or built the system in question. Reach out on [Filecoin’s chat and forums]({{< relref "chat-and-discussion-forums" >}}).
-<!--REVIEWED!-->
+<!--REVIEWED and EDITED!-->
