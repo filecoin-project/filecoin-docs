@@ -147,7 +147,7 @@ If you specify `-`, as in our above example, the output will be written to `stdo
 
 - `<CID>/path/to/content` is the CID of the content you want to retrieve, and an optional path to a specific file within that content. Example:
 
-    ```
+    ```shell
     lassie fetch -o - bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Cryptographic_hash_function | car extract - | less
     ```
 
@@ -195,3 +195,4 @@ Lassie only returns data in CAR format; specifically, [CARv1](https://ipld.io/sp
 <!-- ## Lotus node -->
 
 <!-- It is possible to download data from the Filecoin network using a Lotus node. -->
+<!--REVIEWED!-->

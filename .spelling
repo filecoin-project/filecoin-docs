@@ -59,6 +59,11 @@ https
 f4
 Fil
 Base64
+Graphsync
+Bitswap
+macOS
+PowerShell
+CARv1
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -69,3 +74,5 @@ chainlist.org
  - content/en/basics/assets/transfer-fil/index.md
 Etheruem-style
 Params
+ - content/en/basics/how-retrieval-works/basic-retrieval/index.md
+v1
