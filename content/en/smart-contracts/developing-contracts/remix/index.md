@@ -104,7 +104,7 @@ This guide assumes you've already connected your MetaMask extension to a Filecoi
 
     ![Click Deploy in Remix.](deploy-remix-deploy.png)
 
-1. MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract. If you're deploying to mainnet, we advise you to [adjust your gas fees](#hint-adjust-your-gas-fees) for a cheaper deployment.
+1. MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract. If you're deploying to mainnet, we advise you to [adjust your gas fees](#adjusting-your-gas-fees) for a cheaper deployment.
 
     ![Remix and MetaMask deploying a contract.](deploy-metamask-confirm.png)
 
@@ -173,14 +173,14 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 
 And that's it! Deploying an ERC-20 token on Filecoin is simple!
 
-### Hint: Adjust your gas fees
+### Adjusting your gas fees
 
-Remix uses a default of 2.5 nanoFIL per gas as a priority fee, which is usually too high for the Filecoin network. If you don't adjust this, you may end up overpaying unnecessarily when deploying to mainnet. Therefore, we advise you to switch from the site-suggested gas fees to oracle-supplied gas fees when deploying your contract.
+Remix uses a default of 2.5 nanoFIL per gas as a priority fee, which is usually too high for the Filecoin network. If you don't adjust this, you may end up overpaying when deploying to mainnet. We recommend that you switch from the site-suggested gas fees to oracle-supplied gas fees when deploying your contract.
 
-1. When the deployment transaction confirmation pop-up window shows up, click on "site-suggested fees".
+1. When the deployment transaction confirmation pop-up window shows up, click on **Site suggested**.
 
     ![MetaMask showing a deployment transaction confirmation window, with the gas configuration option highlighted.](gas-prompt.png)
 
-1. Switch to Market (recommended), Aggressive, or Low, depending on your preference. 
+1. Switch to **Market**, **Aggressive**, or **Low**. The **Market** option is generally suitable for most situations.
 
     ![MetaMash showing the gas fee editor.](gas-fee-editor.png)
