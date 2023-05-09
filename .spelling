@@ -64,6 +64,8 @@ Bitswap
 macOS
 PowerShell
 CARv1
+Web3
+permissionless
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -76,3 +78,5 @@ Etheruem-style
 Params
  - content/en/basics/how-retrieval-works/basic-retrieval/index.md
 v1
+ - content/en/basics/how-retrieval-works/saturn/index.md
+saturn.tech
