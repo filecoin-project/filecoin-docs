@@ -86,6 +86,14 @@ Chainsafe
 rclone
 Web3.Storage
 Powergate
+subnets
+subnet
+cryptoeconomic
+checkpointing
+rollups
+sidechain
+Spacenet
+Eudico
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -113,3 +121,5 @@ v1.9.0
 fil-plus
  - content/en/basics/how-storage-works/storage-onramps/index.md
 S3-compatible
+ - content/en/basics/interplanetary-consensus/hierarchical-consensus/index.md
+IPC-related
