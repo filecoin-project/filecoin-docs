@@ -13,7 +13,7 @@ weight: 120
 toc: true
 ---
 
-The IPC Agent is the entrypoint to interacting with IPC. It is a client application that provides a simple and easy-to-use interface to interact with IPC as a user and run all the processes required for the operation of a subnet.
+The IPC Agent is the entry point to interacting with IPC. It is a client application that provides a simple and easy-to-use interface to interact with IPC as a user and run all the processes required for the operation of a subnet.
 
 See the [GitHub docs](https://github.com/consensus-shipyard/ipc-agent/tree/main/docs) for a conceptual overview.
 
@@ -29,7 +29,7 @@ According to the operating system you are running, you may have to install addit
 
 ### Build instructions
 
-To build the binary for the IPC agent you need to build the requirements in your environment, clone this repo, and build the binary following these steps:
+To build the binary for the IPC agent you need to build the requirements in your environment, clone this repository, and build the binary following these steps:
 
 ```shell
 git clone https://github.com/consensus-shipyard/ipc-agent.git
@@ -38,7 +38,7 @@ rustup target add wasm32-unknown-unknown
 make build
 ```
 
-This builds the binary of the IPC agent in the `./bin` folder of your repo. If you want to make the command available everywhere, add this folder to the binary `PATH` of your system. To see if the installation was successfully you can run the following command:
+This builds the binary of the IPC agent in the `./bin` folder of your repository. If you want to make the command available everywhere, add this folder to the binary `PATH` of your system. To see if the installation was successfully you can run the following command:
 
 ```shell
 ./bin/ipc-agent --help
@@ -86,7 +86,7 @@ IPC currently uses [a fork of Lotus](https://github.com/consensus-shipyard/lotus
 Some users have reported issues trying to build the required images using Docker Desktop, if this is the case, try installing a version of [Docker engine](https://docs.docker.com/engine/install/#server) supported by your system.
 {{< /alert >}}
 
-With Docker installed, you can then `make install-infra` in the root of the `ipc-agent`. This make rule will clone the eudico repo, build the docker image that you need to run subnets, and install the infrastructure scripts in the `./bin` folder. In Unix-based systems, it is highly recommended to include your user inside the `docker` group to avoid having to run many of the commands from this tutorial using `sudo`. You can achieve this running the following commands:
+With Docker installed, you can then `make install-infra` in the root of the `ipc-agent`. This make rule will clone the Eudico repository, build the docker image that you need to run subnets, and install the infrastructure scripts in the `./bin` folder. In Unix-based systems, it is highly recommended to include your user inside the `docker` group to avoid having to run many of the commands from this tutorial using `sudo`. You can achieve this running the following commands:
 
 ```shell
 $ sudo usermod -aG docker $USER newgrp docker
@@ -130,22 +130,22 @@ The RPC server of the daemon will be listening to the endpoint determined in the
 
 ### Spacenet
 
-For more information about the Spacenet testnet have a look at the [Spacenet repo](https://github.com/consensus-shipyard/spacenet). In this section we will guide you through how to connect your IPC agent to a running instance of Spacenet. Spacenet hosts all the IPC actors and can be used as a rootnet to deploy new subnets from.
+For more information about the Spacenet testnet have a look at the [Spacenet repository](https://github.com/consensus-shipyard/spacenet). In this section we will guide you through how to connect your IPC agent to a running instance of Spacenet. Spacenet hosts all the IPC actors and can be used as a rootnet to deploy new subnets from.
 
-In order to use the IPC agent with Spacenet we need to have access to a full-node syncing with the network. The easiest way to achieve this is to run your own Spacenet node. Running you own Spacenet node is as simple as [installing the dependencies](https://github.com/consensus-shipyard/lotus#basic-build-instructions), cloning the Eudico repo, and compiling and running it:
+In order to use the IPC agent with Spacenet we need to have access to a full-node syncing with the network. The easiest way to achieve this is to run your own Spacenet node. Running you own Spacenet node is as simple as [installing the dependencies](https://github.com/consensus-shipyard/lotus#basic-build-instructions), cloning the Eudico repository, and compiling and running it:
 
 ```shell
 git clone https://github.com/consensus-shipyard/lotus
 cd lotus
 ```
 
-`spacenet` is the master branch of the repo. To find the latest release deployed over spacenet, you can check the last release  published in the repo and use checkout that tag.
+`spacenet` is the master branch of the repository. To find the latest release deployed over Spacenet, you can check the last release  published in the repository and use checkout that tag.
 
 ```shell
 git checkout <release/branch>
 ```
 
-Compile eudico for Spacenet:
+Compile Eudico for Spacenet:
 
 ```shell
 make spacenet
@@ -160,7 +160,7 @@ Run your node:
 With this, your node should automatically connect to the bootstraps of the network and start syncing the latest state of the chain.
 
 {{< alert icon="📓" >}}
-More information and further details about the operation of Spacenet can be found in the [Spacenet repo](https://github.com/consensus-shipyard/spacenet)
+More information and further details about the operation of Spacenet can be found in the [Spacenet repository](https://github.com/consensus-shipyard/spacenet)
 {{< /alert >}}
 
 With the node running, you are ready to connect the IPC agent to Spacenet. For this, you'll need to get an authentication token for your node, and point to the RPC API of the node (by default running on port `1234`).
@@ -172,7 +172,7 @@ With the node running, you are ready to connect the IPC agent to Spacenet. For t
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.8vIV7pCrWx-nxOBAAw_IayDzrGf22kMjagRYmj_8Qqw
 ```
 
-Additionally, you should create a new wallet address (if you don't have one already) to use for your IPC interactions. You can create a new wallet by running the following command in your eudico node:
+Additionally, you should create a new wallet address (if you don't have one already) to use for your IPC interactions. You can create a new wallet by running the following command in your Eudico node:
 
 ```shell
 # Create new wallet
@@ -211,7 +211,7 @@ Finally, to be able to interact with Spacenet and run new subnets, some FIL shou
 
 ### Local deployment
 
-To deploy sample rootnet locally for testing you can use the IPC scripts installed in `./bin/ipc-infra` (refer to the [installation of infrastructure](#Installation-infrastructure-scripts)) by running:
+To deploy sample rootnet locally for testing you can use the IPC scripts installed in `./bin/ipc-infra` (refer to the [installation of infrastructure](#install-infrastructure-scripts)) by running:
 
 ```shell
 ./bin/ipc-infra/run-root-docker-1val.sh <lotus-api-port> <validator-libp2p-port>
@@ -378,7 +378,7 @@ As a sanity-check that we have joined the subnet successfully and that we provid
 [2023-03-30T17:00:25Z INFO  ipc_agent::cli::commands::manager::list_subnets] /root/t01003 - status: 0, collateral: 2 FIL, circ.supply: 0.0 FIL
 ```
 
-In the current implementation of IPC the gateway actor is deployed as a system actor on the default addres `t064`, so whenever one of the IPC commands requests the address of the gateway actor you can use that value.
+In the current implementation of IPC the gateway actor is deployed as a system actor on the default address `t064`, so whenever one of the IPC commands requests the address of the gateway actor you can use that value.
 
 ### Mining in a subnet
 
@@ -478,7 +478,7 @@ docker exec -it 91d2af805346 sh -c "eudico wallet import --format=json-lotus inp
 
 In this section, we will deploy a subnet where the IPC agent is responsible for handling more than one validator in the subnet. Throughout this guide, we use the `ipc-infra` scripts to deploy the nodes in Docker containers, but a similar steps could be used to deploy the nodes on bare-metal or any other runtime.
 
-For the rest of this tutorial, we'll assume that you have your agent already configured and interacting with a rootnet. For more information on how to connect to a rootnet check [revisit this section](#Interacting-with-a-rootnet). We are going to deploy a subnet with 5 validators. The first thing we'll need to do is creating a new wallet for every validator we want to run. We can do this directly through the agent with the following command:
+For the rest of this tutorial, we'll assume that you have your agent already configured and interacting with a rootnet. For more information on how to connect to a rootnet check [revisit this section](#interacting-with-a-rootnet). We are going to deploy a subnet with 5 validators. The first thing we'll need to do is creating a new wallet for every validator we want to run. We can do this directly through the agent with the following command:
 
 ```shell
 ./bin/ipc-agent wallet-new --key-type=secp256k1 --subnet=/root
@@ -499,7 +499,7 @@ With this, we can already create the subnet with `/root` as its parent. We are g
 
 ### Deploying the infrastructure
 
-In order to deploy the 5 validators for the subnet, we will have to first export the keys from our root node so we can import them to our validators. Depending on how you are running your rootnet node you'll have to make a call to the docker container, or your nodes API. More information about exporting keys from your node can be found under [this section](#Exporting-wallet-keys).
+In order to deploy the 5 validators for the subnet, we will have to first export the keys from our root node so we can import them to our validators. Depending on how you are running your rootnet node you'll have to make a call to the docker container, or your nodes API. More information about exporting keys from your node can be found under [this section](#exporting-wallet-keys).
 
 With the five keys conveniently exported, we can deploy the subnet nodes using the `infra-scripts`. The following code snippet showcases the deployment of five sample nodes. Note that each node should be importing a different wallet key for their validator, and should be exposing different ports for their API and validators:
 
@@ -528,7 +528,7 @@ t1ivy6mo2ofxw4fdmft22nel66w63fb7cuyslm4cy@/ip4/127.0.0.1/tcp/1347/p2p/12D3KooWEJ
 
 ### Configuring the agent
 
-To configure the agent for its use with all the validators, we need to connect to the RPC API of one of the validators, and import all of the wallets of the validators in that node, so the agent is able through the same API to act on behalf of any validator. More information about importing [keys can be found in this section](#Importing-a-wallet-to-a-subnet-node).
+To configure the agent for its use with all the validators, we need to connect to the RPC API of one of the validators, and import all of the wallets of the validators in that node, so the agent is able through the same API to act on behalf of any validator. More information about importing [keys can be found in this section](#importing-a-wallet-to-a-subnet-node).
 
 Here's an example of the configuration connecting to the RPC of the first validator, and configuring all the wallets for the validators in the subnet.
 
@@ -573,7 +573,7 @@ The mining process is currently run in the foreground in interactive mode. Consi
 
 ### I need to upgrade my IPC agent
 
-Sometimes, things break, and we'll need to push a quick path to fix some bug. If this happens, and you need to upgrade your agent version, kill you agent daemon if you have any running, pull the latest changes from this repo, build the binary, and start your daemon again. This should pick up the latest version for the agent. In the future, we will provide a better way to upgrade your agent.
+Sometimes, things break, and we'll need to push a quick path to fix some bug. If this happens, and you need to upgrade your agent version, kill you agent daemon if you have any running, pull the latest changes from this repository, build the binary, and start your daemon again. This should pick up the latest version for the agent. In the future, we will provide a better way to upgrade your agent.
 
 ```shell
 # Pull latest changes
@@ -588,7 +588,7 @@ make build
 
 `make install-infra` may fail and not build the `eudico` image if your system is not configured correctly. If this happens, you can always try to build the image yourself to have a finer-grain report of the issues to help you debug them. For this you can [follow these instructions](https://github.com/consensus-shipyard/lotus/blob/spacenet/scripts/ipc/README.md).
 
-High-level you just need to clone the [eudico repo](https://github.com/consensus-shipyard/lotus), and run `docker build -t eudico .` in the root of the repo.
+High-level you just need to clone the [Eudico repository](https://github.com/consensus-shipyard/lotus), and run `docker build -t eudico .` in the root of the repository.
 
 ### My subnet node doesn't start
 
@@ -610,8 +610,9 @@ tmux a
 Generally, the issue is that:
 
 - You haven't passed the validator key correctly and it couldn't be imported.
-- There was some network instability, and lotus params couldn't be downloaded successfully.
+- There was some network instability, and lotus parameters couldn't be downloaded successfully.
 
 ### My agent is not submitting checkpoints after an error
 
 Try running `./bin/ipc-agent reload-config`, this should pick up the latest config and restart all checkpointing processes. If the error has been fixed or it was an network instability between the agent and your subnet daemon, checkpoints should start being committed again seamlessly.
+<!--REVIEWED!-->

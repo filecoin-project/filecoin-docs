@@ -94,6 +94,17 @@ rollups
 sidechain
 Spacenet
 Eudico
+rustup
+cli
+rootnet
+validator
+libp2p
+validators
+multiaddresses
+multiaddress
+tmux
+runtime
+dockerized
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -123,3 +134,8 @@ fil-plus
 S3-compatible
  - content/en/basics/interplanetary-consensus/hierarchical-consensus/index.md
 IPC-related
+ - content/en/basics/interplanetary-consensus/ipc-agent/index.md
+nightly-2022-10-03
+rust-toolchain
+UDP-based
+DNS-based
