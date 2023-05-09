@@ -35,11 +35,18 @@ Subscribe to the [Filecoin newsletter](https://filecoin.io/build/#events) for of
 
 Get your Filecoin news in tweet-sized bites. Follow these accounts for the latest:
 
+<!-- markdown-link-check-disable -->
+<!--
+Link checker tool flagged these links. 
+They've been manually checked and confirmed to work.
+-->
 - [@Filecoin](https://twitter.com/filecoin) for news and other updates from the Filecoin project
 - [@ProtoSchool](https://twitter.com/protoschool) for updates on ProtoSchool workshops and tutorials
+<!-- markdown-link-check-enable -->
 
 ## WeChat
 
 Follow FilecoinOfficial on [WeChat](https://www.wechat.com/mobile) for project updates and announcements in Chinese.
 
 ![WeChat logo](wechat-qr.jpg)
+<!--REVIEWED!-->
