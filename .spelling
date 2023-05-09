@@ -78,6 +78,14 @@ onboarded
 Dataset
 onboarding
 e.g.
+NFTs
+NFT.Storage
+uploader
+OpenAPI
+Chainsafe
+rclone
+Web3.Storage
+Powergate
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -103,3 +111,5 @@ v5
 v1.10.0
 v1.9.0
 fil-plus
+ - content/en/basics/how-storage-works/storage-onramps/index.md
+S3-compatible
