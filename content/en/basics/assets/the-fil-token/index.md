@@ -33,7 +33,7 @@ FIL is used to reward providers who validate and add new blocks to the Filecoin 
 
 FIL is used for network governance, allowing FIL holders to vote on proposals and make decisions that impact the future development and direction of the network.
 
-## Denomonations
+## Denominations
 
 FIL, NanoFIL, and PicoFIL are all denominated in the same cryptocurrency unit, but they represent different levels of precision and granularity. For most users, FIL is the main unit of measurement and is used for most transactions and payments on the Filecoin network.
 
@@ -48,3 +48,4 @@ Much like how a US penny represents a fraction of a US dollar, there are many wa
 | picoFIL  | 1,000,000,000,000       |
 | femtoFIL | 1,000,000,000,000,000    |
 | attoFIL  | 1,000,000,000,000,000,000 |
+<!--REVIEWED!-->
