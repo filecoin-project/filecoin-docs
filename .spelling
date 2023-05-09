@@ -70,6 +70,14 @@ CIDs
 SPs
 graphsync
 bitswap
+DataCap
+plus.fil.org
+verify.glif.io
+redeployments
+onboarded
+Dataset
+onboarding
+e.g.
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -84,3 +92,14 @@ Params
 v1
  - content/en/basics/how-retrieval-works/saturn/index.md
 saturn.tech
+ - content/en/basics/how-storage-works/filecoin-plus/index.md
+FIP-0003
+10x
+FIP-0012
+v5
+32GiB
+100TiB
+500TiB-5PiB
+v1.10.0
+v1.9.0
+fil-plus

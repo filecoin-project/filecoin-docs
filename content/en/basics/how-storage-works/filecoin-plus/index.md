@@ -37,7 +37,7 @@ Notaries are selected to serve as fiduciaries for the Filecoin Network and are r
 
 You can find a list of current [active notaries at plus.fil.org](https://plus.fil.org).
 
-Notaries are selected through an [application process](https://github.com/filecoin-project/notary-governance/tree/main/notaries#application--selection-process). If approved, [root key-holders](https://github.com/filecoin-project/notary-governance/tree/main/root-key-holders#overview) (executors of the decisions made by the community on-chain) grant notary status and DataCap amounts. Those interested in becoming Notaries should apply for this role by filing an Issue in the [notary governance repo](https://github.com/filecoin-project/notary-governance/).
+Notaries are selected through an [application process](https://github.com/filecoin-project/notary-governance/tree/main/notaries#application--selection-process). If approved, [root key-holders](https://github.com/filecoin-project/notary-governance/tree/main/root-key-holders#overview) (executors of the decisions made by the community on-chain) grant notary status and DataCap amounts. Those interested in becoming Notaries should apply for this role by filing an Issue in the [notary governance repository](https://github.com/filecoin-project/notary-governance/).
 
 ### Storage client
 
@@ -83,7 +83,7 @@ For applying directly to a specific notary:
 6. Click **Sign in with GitHub** to allow the app to create a GitHub issue on your behalf
 7. After you are signed in, the button should change to **Send request**. Click this to have an issue created on your behalf and sent to the right notary!
 
-Each request is tracked as a GitHub issue in the [Fil+ Client Onboarding repo](https://github.com/filecoin-project/filecoin-plus-client-onboarding). You can follow the progress of your application there as well. Notaries may ask for additional information before they will allocate you DataCap.
+Each request is tracked as a GitHub issue in the [Fil+ Client onboarding repository](https://github.com/filecoin-project/filecoin-plus-client-onboarding). You can follow the progress of your application there as well. Notaries may ask for additional information before they will allocate you DataCap.
 
 To apply for a Large Dataset Notary, follow the steps at [Applying for a large DataCap allocation](https://github.com/filecoin-project/filecoin-plus-large-datasets#applying-for-a-large-datacap-allocation).
 
@@ -130,7 +130,7 @@ Once you have received DataCap to an address, you can check the remaining balanc
 
 #### With lotus v1.10.0 ^
 
-```
+```shell
 lotus filplus check-client-datacap f00000
 ```
 
@@ -138,7 +138,7 @@ lotus filplus check-client-datacap f00000
 
 _Note: [Lotus-shed](https://github.com/filecoin-project/lotus/tree/master/cmd/lotus-shed) is a separate package you will need to build and install (`make lotus-shed` in the [Lotus](https://github.com/filecoin-project/lotus) source), although these features are slated to be merged into Lotus._
 
-```
+```shell
 lotus-shed verifreg check-client f00000
 ```
 
@@ -146,7 +146,7 @@ lotus-shed verifreg check-client f00000
 
 There are a few different ways in which a client can find a storage provider to take a Fil+ storage deal:
 
-1. In the **For Clients** section of the [Filecoin Plus Registry](https://plus.fil.org/), there is a [Miner Registry](https://plus.fil.org/miners) which lists a self-selected set of storage providers who are willing to take Fil+ storage deals
+1. In the **For Clients** section of the [Filecoin Plus Registry](https://filplus.fil.org/), there is a [Miner Registry](https://filplus.fil.org/#/miners) which lists a self-selected set of storage providers who are willing to take Fil+ storage deals
 1. Use a Miner Reputation system such as [Filecoin Reputation System](http://filrep.io/) or Textile's [Miner Index](https://docs.textile.io/filecoin/miner-index/) to identify storage providers who can meet your needs
 1. Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack to discuss storage options
 1. Hop into the network with your node and query storage providers (using `query-ask`) to check their verified deal prices
@@ -158,4 +158,5 @@ If you are interested in participating in governance and shaping the program, he
 - Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack.
 - Participate in FIL notary community governance calls, which happen every other Tuesday. Use the [Filecoin Community Events Calendar](https://calendar.google.com/calendar/u/1?cid=Y19rMWdrZm9vbTE3ZzBqOGM2YmFtNnVmNDNqMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 to join or watch for updates in #fil-plus
-- Create and comment on open issues in the [notary governance repo](https://github.com/filecoin-project/notary-governance/issues).
+- Create and comment on open issues in the [notary governance repository](https://github.com/filecoin-project/notary-governance/issues).
+<!--REVIEWED!-->
