@@ -49,6 +49,16 @@ nanoFIL
 picoFIL
 femtoFIL
 attoFIL
+Ethereum
+FilForwarder
+Glif.io
+Glif
+Metamask
+https
+0x
+f4
+Fil
+Base64
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -56,3 +66,6 @@ coinmarketcap.com
  - content/en/basics/assets/metamask-setup/index.md
 EVM-compatible
 chainlist.org
+ - content/en/basics/assets/transfer-fil/index.md
+Etheruem-style
+Params

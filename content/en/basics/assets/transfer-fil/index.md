@@ -87,3 +87,4 @@ In this method, you will create a _burner wallet_ using Glif, transfer FIL to th
 ## Filecoin → Filecoin
 
 There are no special steps or requirements for sending Filecoin from one Filecoin-style address to another on the Filecoin network.
+<!--REVIEWED!-->
