@@ -17,7 +17,7 @@ aliases:
 
 ### What are some of the primary use cases for Filecoin?
 
-Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include publicly verifiable cryptographic storage proofs, [crypto-economic mechanisms](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a trustless decentralized storage network.
+Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include publicly verifiable cryptographic storage proofs, [cryptoeconomic mechanisms](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a trustless decentralized storage network.
 
 On top of the core Filecoin protocol, there are a number of layer 2 solutions that enable a broad array of use cases and applications, many of which also use [IPFS](https://ipfs.tech). These solutions include [Powergate](https://docs.textile.io/powergate/), [Textile Hub](https://blog.textile.io/announcing-the-textile-protocol-hub/), and more. Using these solutions, any use case that can be built on top of IPFS can also be built on Filecoin!
 
@@ -38,9 +38,9 @@ It's going to require a major shift in how we think about the internet. At the s
 
 We think that the internet must return to its _decentralized roots_ to be resilient, robust, and efficient enough for the challenges of the next several decades. Early developers in the Filecoin ecosystem are those who believe in that same vision and potential for the internet, and we're excited to work with them to build this space.
 
-### What are the detailed parameters of Filecoin's crypto-economics?
+### What are the detailed parameters of Filecoin's cryptoeconomics?
 
-We are still finalizing our crypto-economic parameters, and they will continue to evolve.
+We are still finalizing our cryptoeconomic parameters, and they will continue to evolve.
 
 Here is a blog about Filecoin economics from December 2020: [Filecoin network economics](https://filecoin.io/blog/posts/filecoin-network-economics/).
 
@@ -78,7 +78,7 @@ For information on Lotus full nodes and lite nodes, see [Types of nodes](https:/
 
 ### We bought a lot of hard drives of data through the Discover project. When will they be shipped to China?
 
-There are a number of details that are still being finalized between the verified deals construction and the associated crypto-economic parameters.
+There are a number of details that are still being finalized between the verified deals construction and the associated cryptoeconomic parameters.
 
 Our aim is to allow these details to finalize before shipping, but given timelines, we're considering enabling teams to take receipt of these drives before the parameters are set. We will publish updates on the status of the Discover project on the Filecoin blog.
 
@@ -163,3 +163,4 @@ Also, note that world location matters for mining: many clients will prefer stor
 ### Even though Filecoin will be backed up to our normal IPFS pinning layer, we still need to know how quickly we can access data from the Filecoin network. How fast will retrieval be from the Filecoin network?
 
 If you are retrieving your data from IPFS or a remote pinning layer, retrieval should take on the order of milliseconds to seconds in the worst case. Our latest tests for retrieval from the Filecoin network directly show that a sealed sector holding data takes ~1 hour to unseal. 1-5 hours is our best real-world estimate to go from sector unsealing to delivery of the data. If you need faster data retrieval for your application, we recommend building on Powergate or an FPS.
+<!--REVIEWED!-->

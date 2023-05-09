@@ -109,6 +109,17 @@ Trantor
 Narwahl
 ConsensusLab
 ipc-agent
+timestamped
+datasets
+cryptoeconomics
+mainnet
+WindowPoSt
+PoRep
+filecoin.org
+meetup
+HackFS
+CPUs
+ACLs
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -143,3 +154,5 @@ nightly-2022-10-03
 rust-toolchain
 UDP-based
 DNS-based
+ - content/en/basics/project-and-community/filecoin-faq/index.md
+timelines
