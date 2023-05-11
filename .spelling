@@ -173,6 +173,10 @@ v7
 GenesisTime
 PublicKey
 GenesisSeed
+Spacetime
+toc
+retrievability
+lifecycle
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -220,3 +224,5 @@ _
 toc
  - content/en/basics/the-blockchain/drand/index.md
 BLS12-381
+ - content/en/basics/the-blockchain/proofs/index.md
+_

@@ -8,7 +8,7 @@ type: docs
 menu:
   basics:
     parent: "basics-the-blockchain"
-    identifier: "proofs-8abae3f79b34ba2207b6d5e266464ea8"
+    identifier: "proofs-8abae3f79b34ba2207b6d5e266464tha8"
 weight: 100
 toc: true
 draft: false
@@ -85,6 +85,7 @@ If an SP misses the submission deadline, no penalty is incurred, but the SP miss
 
 ### WindowPoSt
 
-_WindowPoSt_ is used to prove that, for any and all SPs in the network, a copy of the data that was agreed to be stored is being continuously maintained over time and is used to audit SPs continuously. In WindowPoSt, all SPs must demonstrate the availability of all sectors claimed every {{< tooltip "proving period" >}}. Sector availability is not proved individually; rather, SPs must prove a whole {{< tooltip "partition" >}} at once, and that sector must be proved by the deadline assigned (a 30-minute interval in the proving period).
+_WindowPoSt_ is used to prove that, for any and all SPs in the network, a copy of the data that was agreed to be stored is being continuously maintained over time and is used to audit SPs continuously. In WindowPoSt, all SPs must demonstrate the availability of all sectors claimed every {{< tooltip "proving period" >}}. Sector availability is not proved individually; rather, SPs must prove a whole {{< tooltip "partition" >}} at once, and that sector must be proved by the deadline assigned (a 30 minute interval in the proving period).
 
 The more sectors an SP has pledged to store, the more the partitions of sectors that the SP will need to prove per deadline. As this requires that the SP has access to sealed copies of each of the requested sectors, it makes it irrational for the SP to seal data every time they need to provide a WindowPoSt proof, thus ensuring that SPs on the network are continuously maintaining the data agreed to. Additionally, failure to submit WindowPoSt for a sector will result in the SPs' pledge collateral being forfeited and their storage power being reduced.
+<!--REVIEWED!-->
