@@ -233,6 +233,8 @@ web3.storage
 nft.storage
 lighthouse.storage
 timestamp
+Filscout
+Filscan
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -287,3 +289,6 @@ f0123261
  - content/en/basics/what-is-filecoin/programming-on-filecoin/index.md
 FVM-enabled
 EVM-based
+ - content/en/networks/calibration/explorers/index.md
+calibration.filscout.com
+calibration.filscan.io

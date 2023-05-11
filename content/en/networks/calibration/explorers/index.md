@@ -15,8 +15,7 @@ toc: true
 
 ## Filscout
 
-[calibration.filscout.com](https://calibration.filscout.com/en)
-
 ## Filscan
 
 [calibration.filscan.io](https://calibration.filscan.io/)
+<!--REVIEWED!-->
