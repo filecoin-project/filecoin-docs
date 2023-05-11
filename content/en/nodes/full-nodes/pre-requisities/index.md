@@ -25,3 +25,4 @@ Before installing Lotus on your computer, you will need to meet the following pr
 ## Lotus documentation
 
 To get more information, check out the official [Lotus documentation](https://lotus.filecoin.io/lotus/install/prerequisites/).
+<!--REVIEWED!-->
