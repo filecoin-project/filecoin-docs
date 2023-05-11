@@ -50,4 +50,5 @@ To install Lotus on your computer, follow these steps:
 
 ## Deeper dive
 
-For a deeper dive into how to install Lotus on your system, including more advanced setups and confirguation, check out the official [Lotus documentation](https://lotus.filecoin.io/lotus/install/prerequisites/).
+For a deeper dive into how to install Lotus on your system, including more advanced setups and configuration, check out the official [Lotus documentation](https://lotus.filecoin.io/lotus/install/prerequisites/).
+<!--REVIEWED!-->
