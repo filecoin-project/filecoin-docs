@@ -254,6 +254,10 @@ WebSockets
 ChainStack
 Ankr
 pre-mined
+blocktime
+MiB
+i.e.
+versioned
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -321,3 +325,5 @@ hyperspace.yoga
  - content/en/networks/mainnet/details/index.md
 fil-network-announcements
 fil-help
+ - content/en/networks/mainnet/explorers/index.md
+Filexplore
