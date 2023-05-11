@@ -166,6 +166,13 @@ runtimes
 WebAssembly
 tipset
 WinningPoSt
+Drand
+uint64
+drand
+v7
+GenesisTime
+PublicKey
+GenesisSeed
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -209,4 +216,7 @@ rust-fil-proofs
 fip-0048
  - content/en/basics/the-blockchain/consensus/index.md
 688d0e228f7debf695c906ad442cb46227812
+_
 toc
+ - content/en/basics/the-blockchain/drand/index.md
+BLS12-381
