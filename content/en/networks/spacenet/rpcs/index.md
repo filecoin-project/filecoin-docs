@@ -22,3 +22,4 @@ This endpoint is currently limited to read-only [JSON RPC API calls]({{< relref 
     ```shell
     FULLNODE_API_INFO=/dns4/api.spacenet.ipc.space/tcp/1234/http ./eudico mir daemon --lite
     ```
+<!--REVIEWED!-->

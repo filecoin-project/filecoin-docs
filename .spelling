@@ -329,3 +329,5 @@ fil-network-announcements
 fil-help
  - content/en/networks/mainnet/explorers/index.md
 Filexplore
+ - content/en/networks/spacenet/get-test-tokens/index.md
+faucet.spacenet.ipc.space
