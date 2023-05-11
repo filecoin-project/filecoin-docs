@@ -250,6 +250,9 @@ explorer.filmine.io
 filscan.io
 filscout
 fvm.starboard.ventures
+WebSockets
+ChainStack
+Ankr
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -312,3 +315,5 @@ calibration.filscan.io
 fil-net-hyperspace-discuss
  - content/en/networks/hyperspace/explorers/index.md
 Filexplore
+ - content/en/networks/hyperspace/get-test-tokens/index.md
+hyperspace.yoga
