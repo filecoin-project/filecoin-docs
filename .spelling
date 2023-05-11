@@ -164,6 +164,8 @@ big-endian
 little-endian
 runtimes
 WebAssembly
+tipset
+WinningPoSt
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -205,3 +207,6 @@ filecoin-project
 rust-fil-proofs
  - content/en/basics/the-blockchain/addresses/index.md
 fip-0048
+ - content/en/basics/the-blockchain/consensus/index.md
+688d0e228f7debf695c906ad442cb46227812
+toc
