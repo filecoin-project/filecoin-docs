@@ -40,8 +40,9 @@ Retrieval providers, often called RPs, are responsible for providing users quick
 
 In the Filecoin network, SPs and RPs provide their storage or retrieval service to data clients through deals. These deals are negotiated and agreed upon between two parties, and include terms like data size, price, deal duration, and collateral.
 
-The deal-making process happens _off-chain_. Once both parties agree to the terms of a deal, that deal is published _on_chain_ for the rest of the network to see and validate.
+The deal-making process happens _off-chain_. Once both parties agree to the terms of a deal, that deal is published _on-chain_ for the rest of the network to see and validate.
 
 ## Sectors
 
 Sectors are the basic units of provable storage where storage providers store clients’ data and generate PoSt on behalf of the Filecoin network. Sectors have standard sizes and a lifetime that storage providers can extend before reaching the end of the lifetime. `32 GiB` and `64 GiB` sector sizes are supported.
+<!--REVIEWED!-->
