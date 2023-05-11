@@ -202,6 +202,29 @@ Web2
 Audius
 Huddle01
 backend
+Bacalhau
+wasm
+GPUs
+colocated
+EcmaScript
+eBPF
+roadmap
+tokenized
+DAOs
+undercollateralized
+multisig
+Uniswap
+Solana
+DataDAO
+Perp
+virtualized
+bytecode
+Vyper
+Yul
+SputnikVM
+revm
+ERC-20
+syscalls
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -253,3 +276,6 @@ BLS12-381
 _
  - content/en/basics/what-is-filecoin/blockchain/index.md
 f0123261
+ - content/en/basics/what-is-filecoin/programming-on-filecoin/index.md
+FVM-enabled
+EVM-based
