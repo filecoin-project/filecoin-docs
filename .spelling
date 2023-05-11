@@ -242,6 +242,14 @@ rr11
 Beryx
 Zondax
 Hyperspace.yoga
+explorer.glif.io
+beryx.zondax.ch
+filfox
+filfox.io
+explorer.filmine.io
+filscan.io
+filscout
+fvm.starboard.ventures
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -302,3 +310,5 @@ calibration.filscan.io
  - content/en/networks/hyperspace/details/index.md
 2a3989e4bd446b7f6ccee52ad6387b937072cf7f
 fil-net-hyperspace-discuss
+ - content/en/networks/hyperspace/explorers/index.md
+Filexplore
