@@ -350,3 +350,5 @@ www.glif.io
 Pre-build
  - content/en/nodes/node-providers/ankr/index.md
 EVM-compatible
+ - content/en/reference/built-in-actors/filecoin-sol/index.md
+filecoin.solidity
