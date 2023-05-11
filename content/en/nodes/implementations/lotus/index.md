@@ -41,4 +41,5 @@ Many hosting service provide access to Lotus nodes on the Filecoin network. Chec
 
 ## More information
 
-For more indepth information about Lotus, including advanced configuration, check out the Lotus documentation site [lotus.filecoin.io](https://lotus.filecoin.io).
+For more information about Lotus, including advanced configuration, check out the Lotus documentation site [lotus.filecoin.io](https://lotus.filecoin.io).
+<!--REVIEWED!-->
