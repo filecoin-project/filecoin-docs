@@ -225,6 +225,13 @@ SputnikVM
 revm
 ERC-20
 syscalls
+onboard
+10x
+boost.filecoin.io
+estuary.tech
+web3.storage
+nft.storage
+lighthouse.storage
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
