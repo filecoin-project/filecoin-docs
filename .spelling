@@ -339,3 +339,5 @@ lotus.filecoin.io
  - content/en/nodes/implementations/overview/index.md
 overview-b37cdcd01c1954971463d00e1d28305c
 chainsafe.github.io
+ - content/en/nodes/implementations/venus/index.md
+venus.filecoin.io
