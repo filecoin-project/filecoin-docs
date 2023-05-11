@@ -177,6 +177,12 @@ Spacetime
 toc
 retrievability
 lifecycle
+deduplicated
+Tipsets
+tipsets
+disincentivizing
+JSON-RPC
+blake-256
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
