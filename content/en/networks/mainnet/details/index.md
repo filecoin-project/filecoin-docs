@@ -24,7 +24,7 @@ aliases:
 - CAR File: `QmavMCf95w2UMYGD1J5GpHcWBWXR2jTFYmtAkgeroMmpk1`
 - Reset Timestamp: `2020-08-24T22:00:00Z`
 - Genesis Block CID: `bafy2bzacecnamqgqmifpluoeldx7zzglxcljo6oja4vrmtj7432rphldpdmm2`
-- sha1 Digest: `4782cb42b4b01793b5cd9f593cc3dc87b6d3c7b4`
+- SHA-1 Digest: `4782cb42b4b01793b5cd9f593cc3dc87b6d3c7b4`
 
 ## Network parameters
 
@@ -59,10 +59,13 @@ aliases:
 
 ## Resources
 
+<!-- markdown-link-check-disable -->
 - [Latest chain snapshot (pruned)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car)
 - [Latest chain snapshot (full)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car)
+<!-- markdown-link-check-enable -->
 - [Status page and incidents](https://filecoin.statuspage.io/)
 - [Stats dashboard](https://stats.filecoin.io/)
 - [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 - [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 - [Message and CID search: Glif Explorer](https://explorer.glif.io/)
+<!--REVIEWED!-->
