@@ -49,3 +49,4 @@ Here is some extra information you might need to consider when using these nodes
 
 - All JSON-RPC requests must include the header `"Content-Type": "application/json"`
 - For Lotus Lite, use `FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite`
+<!--REVIEWED!-->
