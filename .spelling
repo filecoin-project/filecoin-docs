@@ -159,6 +159,11 @@ SystemActor
 unminted
 microtransactions
 DApps
+Zcash
+big-endian
+little-endian
+runtimes
+WebAssembly
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -198,3 +203,5 @@ timelines
  - content/en/basics/project-and-community/ways-to-contribute/index.md
 filecoin-project
 rust-fil-proofs
+ - content/en/basics/the-blockchain/addresses/index.md
+fip-0048

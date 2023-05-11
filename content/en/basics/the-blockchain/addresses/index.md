@@ -32,7 +32,7 @@ Each of the address types is described below.
 
 All actors have a short integer assigned to them by `InitActor`, a unique actor that can create _new_ actors. This integer that gets assigned is the ID of that actor. An _ID address_ is an actor's ID prefixed with the network identifier and the address type.
 
-Actor ID addresses are not _robust_, in the sense that they _do_ depend on chain state, and are defined on-chain by the `InitActor`. Additionally, actor IDs can change for a brief time after creation if the same ID is assigned to different actors on different forks. Actor ID addresses are similar to monotonically increasing numeric primary keys in a relational database. So, when a chain reorganization occurs (similar to a rollback in a SQL database), you can refer to the same ID for different rows. The [expected consensus](https://spec.filecoin.io/#section-algorithms.expected_consensus) algorithm will resolve the conflict. Once the state that defines a new ID reaches finality, no changes can occur, and the ID is bound to that actor forever.
+Actor ID addresses are not _robust_, in the sense that they do depend on chain state, and are defined on-chain by the `InitActor`. Additionally, actor IDs can change for a brief time after creation if the same ID is assigned to different actors on different forks. Actor ID addresses are similar to monotonically increasing numeric primary keys in a relational database. So, when a chain reorganization occurs (similar to a rollback in a SQL database), you can refer to the same ID for different rows. The [expected consensus](https://spec.filecoin.io/#section-algorithms.expected_consensus) algorithm will resolve the conflict. Once the state that defines a new ID reaches finality, no changes can occur, and the ID is bound to that actor forever.
 
 For example, the mainnet burn account ID address, `f099`, is structured as follows:
 
@@ -86,3 +86,4 @@ Currently, per [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/F
 {{< /alert >}}
 
 As an example: suppose an address manager has an actor ID (an `f0` address) `123`, and that address manager creates a new actor. Then, the `f4` address of the actor created by the address manager is `f4123fa3491xyz`, where `f4` is the address class, `123` is the actor ID of the address manager, `f` is a separator, and `a3491xyz` is the arbitrary `<new-actor-id>` chosen by that actor.
+<!--REVIEWED!-->
