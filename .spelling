@@ -235,6 +235,13 @@ lighthouse.storage
 timestamp
 Filscout
 Filscan
+f8-fil-ops
+M2.1
+Carbonado.2
+rr11
+Beryx
+Zondax
+Hyperspace.yoga
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -292,3 +299,6 @@ EVM-based
  - content/en/networks/calibration/explorers/index.md
 calibration.filscout.com
 calibration.filscan.io
+ - content/en/networks/hyperspace/details/index.md
+2a3989e4bd446b7f6ccee52ad6387b937072cf7f
+fil-net-hyperspace-discuss

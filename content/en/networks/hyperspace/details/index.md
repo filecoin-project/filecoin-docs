@@ -25,7 +25,7 @@ Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
 - CAR File: `Qmbu9g75GMjbokCNHPQPXAyKZoY8NqVYtkY4PQT7Zvp2T6`
 - Reset Timestamp: `2023-01-16T6:00:00Z`
 - Genesis Block CID: `bafy2bzacebqfpeylmrl4h3pq4ofbdj2bfbw2i45fuy6qm4wxcyebpsxhrpqhu`
-- sha1 Digest: `52d82b6fcad138a726477152ff2543a91f2b83f8`
+- SHA-1 Digest: `52d82b6fcad138a726477152ff2543a91f2b83f8`
 
 ## Network parameters
 
@@ -59,7 +59,7 @@ Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
 - Lotus commit: [2a3989e4bd446b7f6ccee52ad6387b937072cf7f](https://github.com/filecoin-project/lotus/commit/2a3989e4bd446b7f6ccee52ad6387b937072cf7f)
 - [List of FVM releases](https://github.com/filecoin-project/ref-fvm/issues/692)
 
-#### Faucets
+### Faucets
 
 - [Beryx by Zondax](https://beryx.zondax.ch/faucet)
 - [Hyperspace.yoga](https://hyperspace.yoga/#faucet)
@@ -76,3 +76,4 @@ Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
 - [Reputation systems](https://hyperspace.filrep.io)
 - Slack Channel for Updates: [#fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY)
 - [Storage providers auto-accepting storage deals and simulating faults](https://kb.factor8.io/en/docs/filecoin/testnets/hyperspace/support-miners)
+<!--REVIEWED!-->
