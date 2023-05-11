@@ -17,7 +17,7 @@ aliases:
     - "/fvm/how-tos/use-a-faucet/"
 ---
 
-MetaMask is one of the easier ways to manage addresses on the Hyperspace testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "/basics/assets/metamask-setup" >}}) if you havn't set up an address in your MetaMask wallet yet.
+MetaMask is one of the easier ways to manage addresses on the Hyperspace testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "/basics/assets/metamask-setup" >}}) if you haven't set up an address in your MetaMask wallet yet.
 w
 
 1. In your browser, open MetaMask and copy your address to your clipboard:
@@ -28,7 +28,7 @@ w
 
     ![Go to the Faucet section of the website.](faucet-click-faucet.png)
 
-1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
+1. Paste your address into the address field, complete the **I am human** CAPTCHA, and then click **Send**:
 
     ![Verify you're a human.](faucet-verify.png)
 
@@ -45,3 +45,4 @@ w
     ![MetaMask showing a balance of FIL.](faucet-metamask-with-balance.png)
 
 That's all there is to it! Getting `tFil` is easy!
+<!--REVIEWED!-->
