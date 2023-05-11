@@ -142,6 +142,23 @@ Walkthroughs
 walkthrough
 walkthroughs
 gifs
+hardcoded
+subprocesses
+merkle
+CronActor
+InitActor
+AccountActor
+RewardActor
+StorageMarketActor
+StorageMinerActor
+MultisigActor
+PaymentChannelActor
+StoragePowerActor
+VerifiedRegistryActor
+SystemActor
+unminted
+microtransactions
+DApps
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com

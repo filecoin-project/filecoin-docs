@@ -16,7 +16,7 @@ aliases:
     - "/developers/smart-contracts/concepts/actors-and-contracts/"
 ---
 
-For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](#smart-contracts). In the Filecoin network, there are two types of actors:
+For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](#user-actors-smart-contracts). In the Filecoin network, there are two types of actors:
 
 - [_Built-in actors_](#built-in-actors): Hardcoded programs, written ahead of time by network engineers that manage and orchestrate key subprocesses and subsystems in the Filecoin network.
 
@@ -81,11 +81,11 @@ The 11 different types of built-in actors are as follows:
 
 #### CronActor
 
-The `CronActor` sends messages to the `StoragePowerActor` and `StorageMarketActor` at the end of each epoch. The messages sent by `CronActor` inidicate to StoragePowerActor and StorageMarketActor how they should maintain internal state and process deferred events. This system actor is instantiated in the genesis block, and interacts directly with the FVM.
+The `CronActor` sends messages to the `StoragePowerActor` and `StorageMarketActor` at the end of each epoch. The messages sent by `CronActor` indicate to StoragePowerActor and StorageMarketActor how they should maintain internal state and process deferred events. This system actor is instantiated in the genesis block, and interacts directly with the FVM.
 
 #### InitActor
 
-The `InitActor` can initialize new actors on the filecoin network. This system actor is instantiated in the genesis block, and maintains a table resolving a public key and temporary actor addresses to their canonical ID addresses. The `InitActor` interacts directly with the FVM.
+The `InitActor` can initialize new actors on the Filecoin network. This system actor is instantiated in the genesis block, and maintains a table resolving a public key and temporary actor addresses to their canonical ID addresses. The `InitActor` interacts directly with the FVM.
 
 #### AccountActor
 
@@ -134,6 +134,7 @@ For more information on `SystemActor`, see the [source code](https://github.com/
 
 A _user actor_ is code defined by **any developer** that can interact  FVM, otherwise known as a _smart contract_.
 
-A _smart contract_ is a small, self-executing blocks of custom code that runs on other blockchains, like Ethereum. In the Filecoin network, the term is a synonym for [_user actor_](#user-actors). You may see the term _smart contract_ used in tandem with _user actor_, but there is no difference between the two.
+A _smart contract_ is a small, self-executing blocks of custom code that runs on other blockchains, like Ethereum. In the Filecoin network, the term is a synonym for [_user actor_](#user-actors-smart-contracts). You may see the term _smart contract_ used in tandem with _user actor_, but there is no difference between the two.
 
 With the FVM, actors can be written in Solidity. In future updates, any language that compiles to WASM will be supported. With user actors, users can create and enforce custom rules for storing and accessing data on the network. The FVM is responsible for actors and ensuring that they are executed correctly and securely.
+<!--REVIEWED!-->
