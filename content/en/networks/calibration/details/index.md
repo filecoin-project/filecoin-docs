@@ -28,7 +28,7 @@ Calibration network is the most realistic simulation of the Filecoin mainnet.
 - CAR File: `QmY581cXXtNwHweiC69jECupu9EBx274huHjSgxPNv1zAAj`
 - Reset Timestamp: `2021-02-19T23:10:00Z`
 - Genesis Block CID: `bafy2bzaceapb7hfdkewspic7udnogw4xnhjvhm74xy5snwa24forre5z4s2lm`
-- sha1 Digest: `944c0c13172b9f552dfed5dfaffaba95113c8254`
+- SHA-1 Digest: `944c0c13172b9f552dfed5dfaffaba95113c8254`
 
 ## Network parameters
 
@@ -54,5 +54,6 @@ Calibration network is the most realistic simulation of the Filecoin mainnet.
 
 - [Faucet](https://faucet.calibration.fildev.network/)
 - [Stats Dashboard](https://stats.calibration.fildev.network/)
-- [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
-- [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
+- [Slack Channel for Updates](https://filecoinproject.slack.com/archives/C01AC6999KQ)
+- [Slack Channel for Questions](https://filecoinproject.slack.com/archives/CEGN061C5)
+<!--REVIEWED!-->
