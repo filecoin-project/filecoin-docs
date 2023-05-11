@@ -24,7 +24,7 @@ aliases:
 
 ### Code
 
-Filecoin and its sister-projects are big, with lots of code written in multiple languages. We always need help writing and maintaining code, but it can be daunting to just jump in. We use the label _Help Wanted_ on features or bugfixes that people can help out with. They are an excellent place for you to start contributing code.
+Filecoin and its sister-projects are big, with lots of code written in multiple languages. We always need help writing and maintaining code, but it can be daunting to just jump in. We use the label _Help Wanted_ on features or bug fixes that people can help out with. They are an excellent place for you to start contributing code.
 
 The biggest and most active repositories we have today are:
 
@@ -256,3 +256,4 @@ Take the hypothetical tutorial _Get up and running with Filecoin_, for example. 
 Pages `1` and `3` are conceptual articles, describing particular design patterns and ideas to the reader. All the other pages are walkthroughs instructing the user how to perform one specific action.
 
 When designing a tutorial, keep in mind the walkthroughs and articles that already exist, and note down any additional content items that would need to be completed before creating the tutorial.
+<!--REVIEWED!-->

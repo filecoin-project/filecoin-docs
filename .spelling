@@ -130,6 +130,18 @@ WeChat
 FilecoinOfficial
 Roadmap
 CryptoLab
+venus
+hackathon
+hackathons
+Dev
+protocol.ai
+repo
+github.com
+filecoin-docs
+Walkthroughs
+walkthrough
+walkthroughs
+gifs
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -166,3 +178,6 @@ UDP-based
 DNS-based
  - content/en/basics/project-and-community/filecoin-faq/index.md
 timelines
+ - content/en/basics/project-and-community/ways-to-contribute/index.md
+filecoin-project
+rust-fil-proofs
