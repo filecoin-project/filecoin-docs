@@ -183,6 +183,16 @@ tipsets
 disincentivizing
 JSON-RPC
 blake-256
+Cron
+Multisig
+Datacap
+datacap
+secp256k1
+f410
+t410
+liveness
+spacetime
+uptime
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -232,3 +242,5 @@ toc
 BLS12-381
  - content/en/basics/the-blockchain/proofs/index.md
 _
+ - content/en/basics/what-is-filecoin/blockchain/index.md
+f0123261

@@ -98,7 +98,7 @@ The process of producing a block for each epoch can be briefly described as foll
 
 ### Finality
 
-EC enforces a version of soft finality whereby all miners at round `N` will reject all blocks that fork off before round `N - F`. `F` is set to `900`. This is important to enforce a macroeconomically-enforced finality at no cost to liveness in the chain.
+EC enforces a version of soft finality whereby all miners at round `N` will reject all blocks that fork off before round `N - F`. `F` is set to `900`. This is important to enforce finality at no cost to liveness in the chain.
 
 ## Proofs
 
@@ -121,3 +121,4 @@ If storage providers fail to provide reliable uptime or act maliciously against 
 
 - Storage fault slashing to penalize storage providers for not being able to maintain healthy and reliable storage sectors for the network.
 - Consensus fault slashing to penalize storage providers to sabotage the liveness and security of the consensus process.
+<!--REVIEWED!-->
