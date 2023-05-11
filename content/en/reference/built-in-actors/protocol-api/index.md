@@ -1329,3 +1329,4 @@ Results:
   - `struct` BatchReturn
     - `uint32` SuccessCount - total successes in the batch
     - `struct` FailCodes[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
+<!--REVIEWED!-->

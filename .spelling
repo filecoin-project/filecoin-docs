@@ -352,3 +352,5 @@ Pre-build
 EVM-compatible
  - content/en/reference/built-in-actors/filecoin-sol/index.md
 filecoin.solidity
+ - content/en/reference/built-in-actors/overview/index.md
+filecoin.solidity
