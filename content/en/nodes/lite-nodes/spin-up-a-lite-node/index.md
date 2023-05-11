@@ -102,7 +102,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. MacOS 
     git checkout ntwk/hyperspace # Hyperspace testnet
     ```
 
-1. Done! You can move on to the [Build](#build) section.
+1. Done! You can move on to the [Build](#build-the-binary) section.
 
 {{< /tab >}}
 {{< tab tabName="MacOS-M1/M2" >}}
@@ -135,7 +135,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. MacOS 
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
     ```
 
-1. Done! You can move on to the [Build](#build) section.
+1. Done! You can move on to the [Build](#build-the-binary) section.
 
 {{< /tab >}}
 {{< tab tabName="Ubuntu" >}}
@@ -167,9 +167,9 @@ Before we can build the Lotus binaries, there's some setup we need to do. MacOS 
     export FFI_BUILD_FROM_SOURCE=1
     ```
 
-    If in doubt, ignore this command and move on to [the next section](#build).
+    If in doubt, ignore this command and move on to [the next section](#build-the-binary).
 
-1. Done! You can move on to the [Build](#build) section.
+1. Done! You can move on to the [Build](#build-the-binary) section.
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -239,7 +239,7 @@ The last thing we need to do to get our node setup is to build the package. The 
 
 ## Start the node
 
-Let's start the lite-node by connecting to a remote full-node. We can use the public full-nodes from glif.io:
+Let's start the lite-node by connecting to a remote full-node. We can use the public full-nodes from [https://www.glif.io](https://www.glif.io):
 
 {{< tabs tabTotal="2">}}
 {{< tab tabName="Mainnet" >}}
@@ -444,3 +444,4 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 ## Next steps
 
 You should now have a local lite-node connected to a remote full-node with an admin API key! You can use this setup to continue playing around with the JSON-RPC, or start building your applications on Filecoin!
+<!--REVIEWED!-->

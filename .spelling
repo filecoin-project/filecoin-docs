@@ -263,6 +263,10 @@ Chainstack
 64-bit
 codebase
 IPFSForce
+MacOS
+XCode
+Homebrew
+uncomment
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -341,3 +345,6 @@ overview-b37cdcd01c1954971463d00e1d28305c
 chainsafe.github.io
  - content/en/nodes/implementations/venus/index.md
 venus.filecoin.io
+ - content/en/nodes/lite-nodes/spin-up-a-lite-node/index.md
+www.glif.io
+Pre-build
