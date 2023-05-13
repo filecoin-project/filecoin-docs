@@ -24,7 +24,7 @@ The [Filecoin Community Roadmap](https://github.com/filecoin-project/community/d
 
 ## Research
 
-Learn about the ongoing cryptography research and design efforts that underpin the Filecoin protocol on the [Filecoin Research website](https://research.filecoin.io/). The [CryptoLab at Protocol Labs](https://research.protocol.ai/groups/cryptolab/) also actively researches improvements.
+The [CryptoLab at Protocol Labs](https://research.protocol.ai/groups/cryptolab/) actively researches improvements.
 
 ## Code of conduct
 

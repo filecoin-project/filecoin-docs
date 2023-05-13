@@ -23,7 +23,7 @@ aliases:
 
 ## Develop on Filecoin
 
-Filecoin combines the benefits of content-addressed data leveraged by {{< tooltip "IPFS" >}} with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
+Filecoin combines the benefits of content-addressed data leveraged by {{< tooltip "IPFS" >}} with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives. 
 
 Developers choose Filecoin because it:
 

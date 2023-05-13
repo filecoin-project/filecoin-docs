@@ -21,7 +21,7 @@ aliases:
 
 Filecoin Plus is based on a set of guiding principles, [detailed in FIP-0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md), that focus the program on increasing Filecoin's effectiveness at becoming the decentralized storage network for humanity's most important information.
 
-Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of {{< tooltip "DataCap" >}}. Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
+Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of {{< tooltip "DataCap" >}}. Notaries retrieve Filecoin DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
 
 ### DataCap
 
@@ -29,7 +29,7 @@ DataCap, when allocated to a client, can be spent by the client in storage deals
 
 ### Notary
 
-Notaries are selected to serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases. The base responsibilities of notaries include:
+Filecoin notaries are selected to serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases. The base responsibilities of notaries include:
 
 - Allocate DataCap responsibly to clients to subsidize reliable and valuable storage on the network.
 - Ensure that in the allocation of the DataCap, no party is given excessive trust in any form that might jeopardize the network.
