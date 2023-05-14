@@ -55,7 +55,7 @@ FVM can create incentives to solve problems that Filecoin participants face toda
 
 #### How does the FVM directly interact with data on Filecoin
 
-The FVM operates on blockchain state data — it does _not_ operate on data stored in the Filecoin network. This is because access to that data depends on network requests, an unsealed copy's availability, and the SPs' availability to supply that data.
+The FVM operates on [blockchain](https://docs.filecoin.io/reference/general/glossary/#blockchain) state data — it does _not_ operate on data stored in the Filecoin network. This is because access to that data depends on network requests, an unsealed copy's availability, and the SPs' availability to supply that data.
 
 Access and manipulation of data stored in the network will happen via L2 solutions, for example, retrieval networks or compute-over-data networks, e.g., Saturn or CoD.
 
@@ -120,7 +120,7 @@ No, the FEVM is its own instance of the EVM built on top of Filecoin. You will n
 
 #### How is the Filecoin network accessed through Solidity
 
-When an EVM is deployed to FEVM, it is compiled with WASM and an actor instance is created in FEVM that runs the EVM bytecode. The user-defined FEVM actor is then able to interact with the Filecoin network via built-in actors like the Market and Miner APIs.
+When an EVM is deployed to FEVM, it is compiled with WASM and an actor instance is created in FEVM that runs the EVM bytecode. The user-defined FEVM actor is then able to interact with the Filecoin network via built-in actors like the Market and [Miner](https://docs.filecoin.io/reference/general/glossary/#miner) APIs.
 
 #### Can I deploy EVM bytecode to the native FVM
 
@@ -140,7 +140,7 @@ Store a number limit on running `DealClient` and `publish_deal` and have it auth
 
 #### How can I use FVM to store data to Filecoin
 
-The intent of FEVM/FVM is to compute over state data (the metadata of your stored data). Storage providers are the ones that are able to store your data and upload the deal to the Filecoin network. Data retrieval happens via Retrieval Providers, accepting the client’s ask to retrieve and working with storage providers to decrypt the data to deliver to the client. FEVM/FVM is able to build logic around these 2 processes and automate, add verification and proofs, time-lock retrievals etc.
+The intent of FEVM/FVM is to compute over state data (the metadata of your stored data). Storage providers are the ones that are able to store your data and upload the [deal](https://docs.filecoin.io/reference/general/glossary/#deal) to the Filecoin network. Data retrieval happens via Retrieval Providers, accepting the client’s ask to retrieve and working with storage providers to decrypt the data to deliver to the client. FEVM/FVM is able to build logic around these 2 processes and automate, add verification and proofs, time-lock retrievals etc.
 
 #### How do I close a storage deal on Filecoin and stop storage providers (SP) from storing my data on-chain
 

@@ -21,11 +21,11 @@ aliases:
 
 Filecoin Plus is based on a set of guiding principles, [detailed in FIP-0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md), that focus the program on increasing Filecoin's effectiveness at becoming the decentralized storage network for humanity's most important information.
 
-Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of {{< tooltip "DataCap" >}}. Notaries retrieve Filecoin DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
+Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of {{< tooltip "DataCap" >}}. Notaries retrieve Filecoin DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their [block](https://docs.filecoin.io/reference/general/glossary/#block) reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
 
 ### DataCap
 
-DataCap, when allocated to a client, can be spent by the client in storage deals with storage providers. Those deals carry a higher deal quality multiplier, which increases the "quality adjusted power" of the storage provider on the network by a factor of 10, yielding better block rewards for the storage provider over time. DataCap is granted in batches to Notaries, who can allocate it to clients that spend the DataCap to fund storage deals. DataCap is consumed as it is used to make deals.
+DataCap, when allocated to a client, can be spent by the client in storage deals with storage providers. Those deals carry a higher [deal](https://docs.filecoin.io/reference/general/glossary/#deal) quality multiplier, which increases the [quality adjusted power](https://docs.filecoin.io/reference/general/glossary/#proof-of-spacetime-post) of the [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) on the network by a factor of 10, yielding better block rewards for the storage provider over time. DataCap is granted in batches to Notaries, who can allocate it to clients that spend the DataCap to fund storage deals. DataCap is consumed as it is used to make deals.
 
 ### Notary
 
@@ -45,7 +45,7 @@ Clients can use _DataCap_ to incentivize storage providers to serve their needs.
 
 #### Smart contracts
 
-Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` address of the smart contract as the client address when making a request for DataCap. 
+Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` [address](https://docs.filecoin.io/reference/general/glossary/#address) of the smart contract as the client address when making a request for DataCap. 
 
 For a smart contract's first DataCap allocation, we recommend using [verify.glif.io](https://verify.glif.io) to get 32 GiB of DataCap easily, as outlined below. 
 
@@ -65,7 +65,7 @@ Clients get DataCap by making a request to a notary. For your first DataCap allo
 2. Connect your GitHub account - click the **Start** button on the top right of the page
 3. Sign in to GitHub if you have not already
 4. Paste in the address to which you'd like to receive DataCap in the box under "Request" and hit **Request**
-5. The auto-notary will now attempt to send a message to the Filecoin Network whereby your address will be granted 32GiB of DataCap. This will take about 1 min
+5. The auto-notary will now attempt to send a [message](https://docs.filecoin.io/reference/general/glossary/#message) to the Filecoin Network whereby your address will be granted 32GiB of DataCap. This will take about 1 min
 6. When complete, you now have 32GiB to start making deals with! You can always come back to this site and use the "Check" box to see how much DataCap you have left on a specific address
 
 For receiving DataCap at a larger scale (for business needs and production use cases), depending on the amount of data being onboarded to the network, a client has two options:
@@ -145,7 +145,7 @@ lotus-shed verifreg check-client f00000
 
 There are a few different ways in which a client can find a storage provider to take a Fil+ storage deal:
 1. In the **For Clients** section of the [Filecoin Plus Registry](https://plus.fil.org/), there is a [Miner Registry](https://plus.fil.org/miners) which lists a self-selected set of storage providers who are willing to take Fil+ storage deals
-1. Use a Miner Reputation system such as [Filecoin Reputation System](http://filrep.io/) or Textile's [Miner Index](https://docs.textile.io/filecoin/miner-index/) to identify storage providers who can meet your needs
+1. Use a [Miner](https://docs.filecoin.io/reference/general/glossary/#miner) Reputation system such as [Filecoin Reputation System](http://filrep.io/) or Textile's [Miner Index](https://docs.textile.io/filecoin/miner-index/) to identify storage providers who can meet your needs
 1. Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack to discuss storage options
 1. Hop into the network with your node and query storage providers (using `query-ask`) to check their verified deal prices
 

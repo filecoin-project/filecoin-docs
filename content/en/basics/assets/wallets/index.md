@@ -13,7 +13,7 @@ weight: 520
 toc: true
 ---
 
-When someone sends cryptocurrency to your wallet address, the transaction is recorded on the blockchain network, and the funds are added to your wallet balance. Similarly, when you send cryptocurrency from your wallet to someone else's wallet, the transaction is recorded on the blockchain network, and the funds are deducted from your wallet balance.
+When someone sends cryptocurrency to your wallet [address](https://docs.filecoin.io/reference/general/glossary/#address), the transaction is recorded on the [blockchain](https://docs.filecoin.io/reference/general/glossary/#blockchain) network, and the funds are added to your wallet balance. Similarly, when you send cryptocurrency from your wallet to someone else's wallet, the transaction is recorded on the blockchain network, and the funds are deducted from your wallet balance.
 
 There are various types of cryptocurrency wallets, including desktop, mobile, hardware, and web-based wallets, each with its own unique features and levels of security. It's important to choose a reputable and secure wallet to ensure the safety of your digital assets.
 

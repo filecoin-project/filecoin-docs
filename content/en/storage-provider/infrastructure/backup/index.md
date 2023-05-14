@@ -13,7 +13,7 @@ weight: 530
 toc: true
 ---
 
-It is crucial to have a backup of any production system. It is even more crucial to be able to restore from that backup. These concepts are vital to a Filecoin storage provider because not only are you storing customer data for which you have (on-chain) contracts, you have also pledged a large amount of collateral for that data.
+It is crucial to have a backup of any production system. It is even more crucial to be able to restore from that backup. These concepts are vital to a Filecoin [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) because not only are you storing customer data for which you have (on-chain) contracts, you have also pledged a large amount of [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral) for that data.
 
 If you are unable to restore your Lotus miner and start proving your storage on-chain, you risk losing a lot of money. If you are unable to come back online in 6 weeks, you are losing **all** of your collateral, which will most likely lead to bankruptcy.
 
@@ -37,7 +37,7 @@ When planning for backup and recovery, the terms RPO and RTO are important conce
 
 Although 'RPO zero' and 'RTO zero' are the ideal, in practice it is rarely economical. DR planning requires compromises and if you are a storage provider you need to consider cost versus RPO.
 
-RTO is typically less concerning for storage providers. The most critical parts to recover are your sealed storage and your wallets. Wallet addresses typically do not change, so the only thing to worry about is your sealed storage. With storage level snapshots (such as ZFS snapshots), you can reduce your RTO to almost zero.
+RTO is typically less concerning for storage providers. The most critical parts to recover are your sealed storage and your wallets. Wallet [addresses](https://docs.filecoin.io/reference/general/glossary/#address) typically do not change, so the only thing to worry about is your sealed storage. With storage level snapshots (such as ZFS snapshots), you can reduce your RTO to almost zero.
 
 For RPO, although synchronous replication, together with snapshots, can reduce RPO to nearly zero, that is not a cost-efficient solution. Asynchronous replication of sealed storage is the most viable option if you are running at small-to-medium scale. Once you grow beyond 10PB of storage, even replicating the data will become an expensive solution.
 
@@ -55,13 +55,13 @@ RTO for data owners is a matter of how fast the storage provider(s) can provide 
 - Do your storage providers offer retrieval through [Saturn, (the Web3 CDN)](https://saturn.tech) for ultra-fast retrieval?
 - Do your storage providers pin your data on IPFS, in addition to storing it on Filecoin?
 
-RPO for data owners is less of a concern, especially once the data is sealed. The Filecoin blockchain will enforce availability and durability of the data being stored, once it is sealed. It is therefore important, as a data owner, to know how fast your storage provider can prove the data on-chain.
+RPO for data owners is less of a concern, especially once the data is sealed. The Filecoin [blockchain](https://docs.filecoin.io/reference/general/glossary/#blockchain) will enforce availability and durability of the data being stored, once it is sealed. It is therefore important, as a data owner, to know how fast your storage provider can prove the data on-chain.
 
 ## Backup techniques
 
 - A first level of protection comes from ZFS (if you are using ZFS as the filesystem for your storage). Having ZFS snapshots available protects you against data loss caused by human error or tech failure, and potentially even against ransomware. Other filesystems typically also have a way to make snapshots, albeit not as efficiently as ZFS.
 
-- A second level of defense comes from a dedicated backup system. Not only should you have backup storage (on a different storage array than the original data), you also need to have a backup server that can at a minimum run the Lotus daemon, Lotus miner and 1 WindowPoST worker (note: this requires a GPU). With that you can sync the chain, offer retrievals and prove your storage on-chain, from your backup system, whilst you bring your primary back online.
+- A second level of defense comes from a dedicated backup system. Not only should you have backup storage (on a different storage array than the original data), you also need to have a backup server that can at a minimum run the Lotus daemon, Lotus miner and 1 [WindowPoST](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) worker (note: this requires a GPU). With that you can sync the chain, offer retrievals and prove your storage on-chain, from your backup system, whilst you bring your primary back online.
 
 - An alternative technique to having a dedicated backup system and copy is to have a storage cluster. This still requires a backup system to run the Lotus daemon, Lotus miner and PoST worker on. Implementing a storage cluster is usually only done for large-scale deployments as it comes with additional operational tasks.
 

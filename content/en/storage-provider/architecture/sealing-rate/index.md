@@ -15,11 +15,11 @@ toc: true
 
 ## Cost
 
-When setting up their business, storage providers must determine how fast they should seal and, thus, how much sealing hardware they should buy. In other words, the cost is an important factor in determining a storage provider's sealing rate. For example, suppose you have an initial storage capacity of 100 TiB, which would account for 1 PiB {{< tooltip "QAP" >}} if all the sectors contain Fil+ verified deals. If your sealing capacity is 2.5 TiB per day, you will seal your full 100 TiB in 40 days. Is it worth investing in double the sealing capacity to fill your storage in just 20 days? It might be if you are planning to grow way beyond 100 TiB. This is an example of the sort of cost considerations storage providers must factor in tuning the sealing rate.
+When setting up their business, [storage providers](https://docs.filecoin.io/reference/general/glossary/#storage-provider) must determine how fast they should [seal](https://docs.filecoin.io/reference/general/glossary/#seal) and, thus, how much sealing hardware they should buy. In other words, the cost is an important factor in determining a storage provider's sealing rate. For example, suppose you have an initial storage capacity of 100 TiB, which would account for 1 PiB {{< tooltip "QAP" >}} if all the sectors contain Fil+ verified deals. If your sealing capacity is 2.5 TiB per day, you will seal your full 100 TiB in 40 days. Is it worth investing in double the sealing capacity to fill your storage in just 20 days? It might be if you are planning to grow way beyond 100 TiB. This is an example of the sort of cost considerations storage providers must factor in tuning the sealing rate.
 
 ## Customer expectations
 
-A common reason that a storage provider may want or need a faster sealing rate is customer expectations. When you take on a customer deal, there are often requirements to seal a dataset of a certain size within a certain time window. If you are a new storage provider with 2.5 TiB per day in sealing capacity, you cannot take on a deal of 2 PiB that needs to be on-chain in 1 month; at the very least, you could not take the deal using your own sealing infrastructure. Instead, you can use a [Sealing-as-a-service provider]({{<relref "sealing-as-a-service">}}), which can help you scale your sealing capabilities.
+A common reason that a storage provider may want or need a faster sealing rate is customer expectations. When you take on a customer deal, there are often requirements to seal a dataset of a certain size within a certain time window. If you are a new storage provider with 2.5 TiB per day in sealing capacity, you cannot take on a [deal](https://docs.filecoin.io/reference/general/glossary/#deal) of 2 PiB that needs to be on-chain in 1 month; at the very least, you could not take the deal using your own sealing infrastructure. Instead, you can use a [Sealing-as-a-service provider]({{<relref "sealing-as-a-service">}}), which can help you scale your sealing capabilities.
 
 ## Balancing the sealing pipeline
 
@@ -53,7 +53,7 @@ A common grouping is _AddPiece (AP)_ and PreCommit1 (PC1) because AP essentially
 
 As PC1 is CPU-bound and PC2 is GPU-bound, this is another good reason to separate those tasks into dedicated hardware, especially if you are planning to scale. Because PC2 is GPU-bound, it makes sense to have PC2, C1, and C2 colocated on the same worker.
 
-Another rule of thumb is to have two PC2 workers for every PC1 worker in your setup. The _WaitSeed_ phase occurs after PC2, which locks the scratch space for a sector until C1 and C2. In order to keep sealing sectors in PC1, PC2 must have sufficient capacity.
+Another rule of thumb is to have two PC2 workers for every PC1 worker in your setup. The _WaitSeed_ phase occurs after PC2, which locks the scratch space for a [sector](https://docs.filecoin.io/reference/general/glossary/#sector) until C1 and C2. In order to keep sealing sectors in PC1, PC2 must have sufficient capacity.
 
 ### Scaling out
 

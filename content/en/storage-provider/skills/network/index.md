@@ -13,7 +13,7 @@ weight: 620
 toc: true
 ---
 
-Network skills are crucial for building and maintaining a well-functioning storage provider setup. The network architecture plays a vital role in the overall performance of the storage system. Without a proper network architecture, the system can easily become bogged down and suffer from poor performance.
+Network skills are crucial for building and maintaining a well-functioning [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) setup. The network architecture plays a vital role in the overall performance of the storage system. Without a proper network architecture, the system can easily become bogged down and suffer from poor performance.
 
 To ensure optimal performance, it is essential to understand where the bottlenecks in the network setup are. This requires a good understanding of network topology, protocols, and hardware. It is also important to be familiar with network monitoring tools that can help identify performance issues and optimize network traffic.
 

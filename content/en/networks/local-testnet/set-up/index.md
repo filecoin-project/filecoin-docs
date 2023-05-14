@@ -253,7 +253,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
     ./lotus-seed genesis new localnet.json
     ```
 
-1. Create a pre-miner and an address with some funds: 
+1. Create a pre-miner and an [address](https://docs.filecoin.io/reference/general/glossary/#address) with some funds: 
 
     ```shell
     ./lotus-seed genesis add-miner localnet.json ~/.genesis-sectors/pre-seal-t01000.json
