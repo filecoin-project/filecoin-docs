@@ -51,9 +51,10 @@ These are some tools that developers will find useful when dealing with built-in
 Filecoin improvement proposals (FIPs) are a way for the Filecoin community to discuss potential changes and improvements to the Filecoin network.
 
 - [About](https://github.com/filecoin-project/FIPs)
-- [Join the discussion #fil-fips](https://filecoinproject.slack.com/archives/C01EU76LPCJ)
+- [Filecoin Slack channel for FIP discussion](https://filecoinproject.slack.com/archives/C01EU76LPCJ)
 - Build with FVM Foundry Early Builders Program
 - [Program Overview & Application](https://airtable.com/shr48kiPOqjwxzX6u)
 - [FVM Foundry Cohort Update Recordings](https://www.youtube.com/playlist?list=PL_0VrY55uV18DBdFIkN0jdBMF8nadVxWQ)
 - [FVM Foundry Early Builders F/0 Cohort Showcase - Oct 3 2022](https://drive.google.com/file/d/1JLR45vSNScZX7edz9DxwlpYGnVfGm30Q/view?usp=sharing)
 - [FVM Foundry Early Builders F/1 Cohort Kick Off - Oct 5 2022](https://drive.google.com/file/d/1mV0PMunDUvIBqmuNw9VjUJIf4zE4z9LV/view?usp=sharing)
+<!--REVIEWED!-->

@@ -4,10 +4,19 @@
 # one word per line, to define a file override use ' - filename'
 # where filename is relative to this configuration file
 Filecoin
+AssemblyScript
+multisignature
+checksums
 YouTube
+FIPs
 CoinSummer
 devnet
+filecoin-address
+CBOR
+JSON
 GoLang
+Polyphene
+TinyGo
 Fuhon
 tooltips
 localhost
@@ -368,3 +377,5 @@ EVM-compatible
 filecoin.solidity
  - content/en/reference/built-in-actors/overview/index.md
 filecoin.solidity
+ - content/en/reference/general/specifications/index.md
+specs.filecoin.io
