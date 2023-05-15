@@ -290,6 +290,9 @@ Shacham
 CommP
 discretized
 zk-SNARK
+AuthNew
+AuthVerify
+BeaconGetEntry
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
