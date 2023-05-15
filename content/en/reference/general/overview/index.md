@@ -26,7 +26,7 @@ aliases:
 - [**Filecoin Slack**](https://filecoin.io/slack) - announcement, open discussion of Filecoin.
 - [**Filecoin Community**](https://github.com/filecoin-project/community) - Filecoin community and ecosystem channels, discussion forums, and more.
 - [**Filecoin 中文社区**](https://github.com/filecoin-project/community-china) - resources and forum for the Chinese community, maintained and moderated by CoinSummer & PL.
-- [**Filecoin Youtube channel**](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) -  various Filecoin workshops, conference talks, and meetups.
+- [**Filecoin YouTube channel**](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) -  various Filecoin workshops, conference talks, and meetups.
 - [**Filecoin Core Dev meeting**](https://github.com/filecoin-project/tpm) - technical meeting to bring together various Filecoin teams for protocol development.
 
 ## Filecoin Network
@@ -51,10 +51,10 @@ aliases:
 - **Mainnet**
   - [Mainnet network status](https://filecoin.statuspage.io/) - reports the status and incident of the Filecoin Mainnet.
 - **Calibration**
-  - Largest testnet which support 32GiB and 64GiB sectors.
+  - Largest testnet which support 32 GiB and 64 GiB sectors.
   - See [#fil-net-calibration-announce](https://filecoinproject.slack.com/archives/C01C5PT7ETC) for announcements and [#fil-net-calibration-discuss](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack).
 - **Local Devnet**
-  - [Run a Local Devnet using Lotus](https://docs.filecoin.io/build/local-devnet).
+  - [Run a Local Devnet using Lotus](https://lotus.filecoin.io/lotus/developers/local-network/).
   - [Textile's Local Devnet](https://docs.textile.io/powergate/localnet/#localnet-with-lotus-client) -  uses a mocked sector builder for faster deal confirmation and it is for storage app prototyping.
   - [Ganache for Filecoin](https://www.trufflesuite.com/docs/filecoin/ganache/overview) - local network to support development with Filecoin by various ways.
 
@@ -94,7 +94,7 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 
 - [Estuary](https://estuary.tech) allows uploading and storing content on the Filecoin network directly from your browser. Allows anyone with public data to store and retrieve using a few API calls.
 - [**Slate.host**](https://slate.host) - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
-- [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with Oauth or general Metamask
+- [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with OAuth or general Metamask
 - [File.video](https://file.video/) - video hosting with decentralized transcoding from LivePeer
 - [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   - to securely capture, store and verify human history
@@ -110,14 +110,14 @@ Developer tools, API clients & storage services that developers can use to build
 - [Estuary](https://estuary.tech) - a simple IPFS node that integrates with Filecoin. For infrastructure operators, developers and users.
   - [Estuary Docs](https://docs.estuary.tech)
   - [Estuary www](https://github.com/application-research/estuary-www) - a simple web app example
-  - [Estuary Rclone](https://docs.estuary.tech/tutorial-managing-files-with-rclone) - sync to and from different cloud storage providers and Estuary
+  - [Estuary Rclone](https://docs.estuary.tech/Learn/tutorial-managing-files-with-rclone) - sync to and from different cloud storage providers and Estuary
 - [NFT.storage](https://nft.storage/) - beta service from Protocol Labs for storing off-chain _NFT_ data on IPFS and Filecoin.
 - [Web3.storage](https://web3.storage/) - beta service from Protocol Labs for storing off-chain _dapp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
 - [Slate.host](https://github.com/filecoin-project/slate/#developer-api) - has a Developer API that allows you upload files with an account
 - [Textile.io's tools](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin
   - includes The Hub, Buckets, ThreadsDB, Powergate, [Tableland](https://blog.textile.io/tableland-is-coming-build-web3-with-sql/) (new) and Filecoin bridges to Polygon and NEAR
   - [Powergate](https://docs.textile.io/powergate/) - infrastructure tool for using IPFS for hot storage and retrieval and Filecoin for cold, with deal helpers and other convenience features
-  - [Textile Buckets](https://docs.filecoin.io/build/textile-buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood
+  - [Textile Buckets](https://docs.textile.io/buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood
 - [Fleek's tools](https://fleek.co/) - provides access to Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
   - [Space SDK](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services
   - [Space Daemon](https://fleek.co/space-daemon/) - GoLang library for building desktop apps
@@ -139,7 +139,7 @@ Developer tools, API clients & storage services that developers can use to build
 
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
-- [Glif nodes](https://lotus.filecoin.io/lotus/developers/glif-nodes/) and [Infura](https://infura.io/docs/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
+- [Glif nodes](https://lotus.filecoin.io/lotus/developers/glif-nodes/) and [Infura](https://docs.infura.io/infura/networks/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
   - These endpoints support read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Message signing tools](#message-signing-tools)).
 - [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   - [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
@@ -227,3 +227,4 @@ The Retrieval Market is in early development; research and development teams are
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing monthly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
 - Accelerators
+<!--REVIEWED!-->

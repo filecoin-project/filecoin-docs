@@ -4,10 +4,19 @@
 # one word per line, to define a file override use ' - filename'
 # where filename is relative to this configuration file
 Filecoin
+YouTube
+CoinSummer
+devnet
+GoLang
+Fuhon
 tooltips
 localhost
+GitHub
+meetups
 programmatically
 explorable
+analytics
+transcoding
 shortcode
 shortcodes
 metadata
