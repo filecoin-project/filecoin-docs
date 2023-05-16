@@ -8,7 +8,7 @@ type: docs
 menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
-    identifier: "get-test-tokens-c9d70a9bb594275b17454ac6fc9abfaa"
+    identifier: "get-test-tokens-c9d70a9bb594275b17454thc6fc9abfaa"
 weight: 410
 aliases:
 aliases:
@@ -19,7 +19,7 @@ aliases:
 
 ## Hyperspace testnet
 
-MetaMask is one of the easier ways to manage addresses on the Hyperspace testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "/basics/assets/metamask-setup" >}}) if you havn't set up an address in your MetaMask wallet yet.
+MetaMask is one of the easier ways to manage addresses on the Hyperspace testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "/basics/assets/metamask-setup" >}}) if you haven't set up an address in your MetaMask wallet yet.
 w
 
 1. In your browser, open MetaMask and copy your address to your clipboard:
@@ -30,7 +30,7 @@ w
 
     ![Go to the Faucet section of the website.](faucet-click-faucet.png)
 
-1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
+1. Paste your address into the address field, complete the **I am human** CAPTCHA, and then click **Send**:
 
     ![Verify you're a human.](faucet-verify.png)
 
@@ -103,3 +103,4 @@ Before we begin, you must have a local testnet running. Follow the [Run a local 
     ```
 
 If you want to manage your local testnet tokens in MetaMask you will need to create a `t4` address. You can create a `t4` address using `lotus wallet new deleated`. Once you have a `t4` address you can [connect MetaMask to your local testnet]({{< relref "/basics/assets/metamask-setup" >}}) to see the new balance within the MetaMask extension.
+<!--REVIEWED!-->
