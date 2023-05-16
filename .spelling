@@ -328,6 +328,9 @@ codec
 entrypoint
 trustlessness
 quickstart
+OpenZeppelin
+mintable
+DappSys
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -421,3 +424,6 @@ specs.filecoin.io
 v1.20.0
 hyperspace-nv20
 0x51
+ - content/en/smart-contracts/developing-contracts/ethereum-libraries/index.md
+remix.ethereum.org
+MyToken.sol
