@@ -340,6 +340,7 @@ prepended
 secp256k
 namespace
 subaddress
+precompiles
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com

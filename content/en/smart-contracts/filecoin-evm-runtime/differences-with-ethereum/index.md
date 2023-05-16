@@ -32,7 +32,7 @@ Filecoin charges Filecoin gas only. This includes the Filecoin EVM runtime. Inst
 
 ## Gas stipend
 
-Solidity calls to `address.transfer` and `address.send` grant a fixed gas stipend of 2300 Ethereum gas to the called contract. The Filecoin EVM runtime automatically detects such calls, and sets the gas limit to 10 million Filecoin gas. This is a relatively more generous limit than Ethereum's, but it's future-proof. You should expect the callee to be able to carry out more work than in Ethereum.
+Solidity calls `address.transfer` and `address.send` to grant a fixed gas stipend of 2300 Ethereum gas to the called contract. The Filecoin EVM runtime automatically detects such calls, and sets the gas limit to 10 million Filecoin gas. This is a relatively more generous limit than Ethereum's, but it's future-proof. You should expect the address called to be able to carry out more work than in Ethereum.
 
 ## Self destruct
 
@@ -51,7 +51,7 @@ The `CALLCODE` opcode has not been implemented. Use the newer `DELEGATECALL` opc
 
 In Ethereum, `SELFDESTRUCT` is the only way to send funds to a smart contract without giving the target smart contract a chance to execute code.
 
-In Filecoin, any actor can use `method 0`, also called a bare-value send, to transfer funds to any other actor without invoking the target actor's code. You can think of this behaviour as having the suggested [`PAY` opcode](https://eips.ethereum.org/EIPS/eip-5920) already implemented in Filecoin.
+In Filecoin, any actor can use `method 0`, also called a bare-value send, to transfer funds to any other actor without invoking the target actor's code. You can think of this behavior as having the suggested [`PAY` opcode](https://eips.ethereum.org/EIPS/eip-5920) already implemented in Filecoin.
 
 ## Precompiles
 
@@ -71,3 +71,4 @@ However, the addresses returned by the CALLER, ORIGIN, and ADDRESS instructions 
 ## Deferred execution model
 
 When calling an Ethereum method that allows the user to ask for the `latest` block, Filecoin will return the `chain head` - `1` block. This behavior was implemented for compatibility with the {{< tooltip "deferred execution" >}} mode that Filecoin uses. In this mode, messages submitted at a given `height` are only processed at `height` + `1`. This means that receipts for a block produced at `height` are only available at `height` + `1`.
+<!--REVIEWED!-->
