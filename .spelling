@@ -333,6 +333,7 @@ mintable
 DappSys
 submodules
 remappings
+autofill
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -434,3 +435,8 @@ ds-test
 solmate
  - content/en/smart-contracts/developing-contracts/get-test-tokens/index.md
 hyperspace.yoga
+ - content/en/smart-contracts/developing-contracts/hardhat/index.md
+hardhart.org
+ - content/en/smart-contracts/developing-contracts/remix/index.md
+remix.ethereum.org
+MyToken.sol
