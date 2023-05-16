@@ -50,7 +50,7 @@ The reference FVM implementation has been integrated into a fork of Lotus (the F
 
 _Completed in March 2022_
 
-Any node operator can sync the Filecoin Mainnet using the FVM and Rust built-in actors, integrated in lotus, venus, forest, and fuhon implementations. It implies no network upgrade.
+Any node operator can sync the Filecoin Mainnet using the FVM and Rust built-in actors, integrated in Lotus, Venus, Forest, and Fuhon implementations. It implies no network upgrade.
 
 ### ✅ Milestone 1
 
@@ -58,13 +58,13 @@ Any node operator can sync the Filecoin Mainnet using the FVM and Rust built-in 
 
 _Completed in May 2022_
 
-Mainnet will atomically switch from the current legacy VMs to the WASM-based reference FVM. A new gas model will be activated that accounts for actual WASM execution costs. Only Rust built-in actors will be supported at this time. This milestone requires a network upgrade.
+Mainnet will atomically switch from the current legacy virtual machines to the WASM-based reference FVM. A new gas model will be activated that accounts for actual WASM execution costs. Only Rust built-in actors will be supported at this time. This milestone requires a network upgrade.
 
 #### ✅ Network Version 17 (nv17): Initial protocol refactors for programmability
 
 _Completed in November 2022_
 
-An initial set of protocol refactors targeting built-in actors, including the ability to introduce new storage markets via user-defined smart contracts. Review the full planned scope of [Filecoin Network Version 17](https://github.com/filecoin-project/tpm/discussions/91).
+An initial set of protocol refactors targeting built-in actors, including the ability to introduce new storage markets via user-defined smart contracts.
 
 ### ✅ Milestone 2.1
 
@@ -90,7 +90,7 @@ The Filecoin EVM runtime is deployed on Filecoin mainnet via the [Filecoin nv18 
 
 #### 🔄 Ability to deploy Wasm actors to mainnet
 
-_To complete mid-2023_
+_To complete midway through 2023_
 
 Developers will be able to deploy custom smart contracts written in Rust, AssemblyScript, or Go, and compiled to WASM bytecode. SDKs, tutorials, and other developer materials will be generally available. This milestone requires a network upgrade.
 
@@ -100,4 +100,5 @@ Developers will be able to deploy custom smart contracts written in Rust, Assemb
 
 _To complete in 2023_
 
-A series of additional incremental protocol upgrades (besides nv17) to move system functionality from privileged space to user space. The result will be a lighter and less opinionated base Filecoin protocol, where storage markets, deal-making, incentives, etc. are extensible, modular, and highly customizable through user-deployed actors. Enhanced programming features such as user-provided cron, async call patterns, and more will start to be developed at this stage.
+A series of additional incremental protocol upgrades (besides nv17) to move system functionality from privileged space to user space. The result will be a lighter and less opinionated base Filecoin protocol, where storage markets, deal-making, incentives, etc. are extensible, modular, and highly customizable through user-deployed actors. Enhanced programming features such as user-provided cron, asynchronous call patterns, and more will start to be developed at this stage.
+<!--REVIEWED!-->

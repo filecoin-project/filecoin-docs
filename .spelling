@@ -376,6 +376,8 @@ ReactJS
 npm
 SDKs
 superset
+Hygge
+customizable
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -502,3 +504,9 @@ virtualization
 truckerfling
  - content/en/smart-contracts/fundamentals/fvm-native/index.md
 stdlibs
+ - content/en/smart-contracts/fundamentals/overview/index.md
+NFTschool.dev
+ - content/en/smart-contracts/fundamentals/roadmap/index.md
+nv17
+nv18
+cron
