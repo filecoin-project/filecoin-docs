@@ -16,6 +16,7 @@ devnet
 filecoin-address
 oldmsgskip
 CBOR
+opcode
 ChainDeleteObj
 ChainExport
 ChainGetBlock

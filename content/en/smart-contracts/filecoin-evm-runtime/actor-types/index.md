@@ -18,8 +18,8 @@ aliases:
 The Filecoin EVM runtime introduces three new actor types:
 
 1. [Placeholder actors](#placeholder).
-2. [Ethereum-style accounts](#ethereum-style-accounts), also called `EthAccount`.
-3. [EVM smart contracts](#evm-smart-contracts).
+2. [Ethereum-style accounts](#ethereum-style-account), also called `EthAccount`.
+3. [EVM smart contracts](#evm-smart-contract).
 
 ## Placeholder
 
@@ -60,3 +60,4 @@ An EVM smart contract may be called in one of three ways:
 1. Finally, a native account can call method `3844450837` (`FRC42(InvokeEVM)`):
     1. The input data should either be empty or encoded as a CBOR byte string.
     1. The return data will either be empty or encoded as a CBOR byte string.
+<!--REVIEWED!-->
