@@ -331,6 +331,8 @@ quickstart
 OpenZeppelin
 mintable
 DappSys
+submodules
+remappings
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -427,3 +429,6 @@ hyperspace-nv20
  - content/en/smart-contracts/developing-contracts/ethereum-libraries/index.md
 remix.ethereum.org
 MyToken.sol
+ - content/en/smart-contracts/developing-contracts/foundry/index.md
+ds-test
+solmate
