@@ -23,7 +23,7 @@ Clients need to provide enough information to the storage provider for the data 
 
 - Storage provider ID: The ID of the storage provider where the data is stored.
 - Payload CID: also called Data CID.
-- Address: The address initially used to create the storage deal.
+- Address: The [address](https://docs.filecoin.io/reference/general/glossary/#address) initially used to create the storage deal.
 
 ## Saturn
 

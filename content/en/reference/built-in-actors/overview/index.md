@@ -15,7 +15,7 @@ aliases:
     - "/reference/built-in-actors/"
 ---
 
-Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network consensus in that epoch. This global state is represented as a _state tree_, which maps an actor to an _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its Fil balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block in the chain can be thought of as a **proposed** global state, where the block selected by network consensus sets the **new** global state. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (FVM) is the Filecoin network component that is in charge of execution of all actor code.  
+Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network consensus in that epoch. This global state is represented as a _state tree_, which maps an actor to an _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its Fil balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each [block](https://docs.filecoin.io/reference/general/glossary/#block) in the chain can be thought of as a **proposed** global state, where the block selected by network consensus sets the **new** global state. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (FVM) is the Filecoin network component that is in charge of execution of all actor code.  
 
 A basic example of how built-in actors are used in Filecoin is the process by which storage providers prove storage and are subsequently rewarded. The process is as follows:
 
@@ -29,13 +29,13 @@ A basic example of how built-in actors are used in Filecoin is the process by wh
 
 Each block in the Filecoin chain contains:
 
-- Inline data such as current block height.
+- Inline data such as current [block height](https://docs.filecoin.io/reference/general/glossary/#block-height).
 - A pointer (CID) to the current state tree.
 - A pointer (CID) to the set of messages that, when applied to the network, generated the current state tree.
 
 ## State tree
 
-A Merkle Directed Acyclic Graph (Merkle DAG) is used map the state tree. and the set of messages. Nodes in the state tree contain information on:
+A [Merkle Directed Acyclic Graph](https://docs.filecoin.io/reference/general/glossary/#merkle-directed-acyclic-graph) (Merkle DAG) is used map the state tree. and the set of messages. Nodes in the state tree contain information on:
 
 - Actors, like Fil balance, nonce and a pointer (CID) to actor state data.
 - Messages in the current block
@@ -44,7 +44,7 @@ A Merkle Directed Acyclic Graph (Merkle DAG) is used map the state tree. and the
 
 Like the state tree, a Merkle Directed Acyclic Graph (Merkle DAG) is used to map the set of messages for a given block. Nodes in the messages map contain information on:
 
-- The actor the message was sent to
+- The actor the[ message ](https://docs.filecoin.io/reference/general/glossary/#message) was sent to
 - The actor that sent the message
 - Target method to call on actor being sent the message
 - A cryptographic signature for verification
@@ -84,11 +84,11 @@ The `AccountActor` is responsible for user accounts. Account actors are not crea
 
 ### RewardActor
 
-The `RewardActor` manages unminted Filecoin tokens, and distributes rewards directly to miner actors, where they are locked for vesting. The reward value used for the current epoch is updated at the end of an epoch. The `RewardActor` interacts directly with the FVM.
+The `RewardActor` manages unminted Filecoin tokens, and distributes rewards directly to [miner](https://docs.filecoin.io/reference/general/glossary/#miner) actors, where they are locked for vesting. The reward value used for the current epoch is updated at the end of an epoch. The `RewardActor` interacts directly with the FVM.
 
 ### StorageMarketActor
 
-The `StorageMarketActor` is responsible for processing and managing on-chain deals. This is also the entry point of all storage deals and data into the system. This actor keeps track of storage deals, and the of locked balances of both the client storing data and the storage provider. When a deal is posted on chain through the `StorageMarketActor`, the actor will first check if both transacting parties have sufficient balances locked up and include the deal on chain. Additionally, the `StorageMarketActor` holds _Storage Deal Collateral_ provided by the storage provider to collateralize deals. This collateral is returned to the storage provider when all deals in the sector successfully conclude. This actor does not interact directly with the FVM.
+The `StorageMarketActor` is responsible for processing and managing on-chain deals. This is also the entry point of all storage deals and data into the system. This actor keeps track of storage deals, and the of locked balances of both the client storing data and the storage provider. When a deal is posted on chain through the `StorageMarketActor`, the actor will first check if both transacting parties have sufficient balances locked up and include the [deal](https://docs.filecoin.io/reference/general/glossary/#deal) on chain. Additionally, the `StorageMarketActor` holds _Storage Deal Collateral_ provided by the storage provider to collateralize deals. This collateral is returned to the storage provider when all deals in the [sector](https://docs.filecoin.io/reference/general/glossary/#sector) successfully conclude. This actor does not interact directly with the FVM.
 
 ### StorageMinerActor
 
@@ -115,7 +115,7 @@ The `StoragePowerActor` is responsible for keeping track of the storage power al
 
 ### VerifiedRegistryActor
 
-The `VerifiedRegistryActor` is responsible for managing Fil+ clients. This actor can add a verified client to the Fil+ program, remove and reclaim  expired DataCap allocations and manage claims. This actor does not interact directly with the FVM.
+The `VerifiedRegistryActor` is responsible for managing Fil+ clients. This actor can add a [verified client](https://docs.filecoin.io/reference/general/glossary/#verified-client) to the Fil+ program, remove and reclaim  expired DataCap allocations and manage claims. This actor does not interact directly with the FVM.
 
 ### SystemActor
 

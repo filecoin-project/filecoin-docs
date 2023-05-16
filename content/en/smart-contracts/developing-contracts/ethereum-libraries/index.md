@@ -30,7 +30,7 @@ Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc
 - [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) is the simplest and most widespread token standard for fungible assets. 
 - [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721) is the de-facto solution for non-fungible tokens and is often used for collectibles and games.
 - [ERC777](https://docs.openzeppelin.com/contracts/4.x/erc777) provides a richer standard for fungible tokens, supporting new use cases and backwards compatibility with ERC20.
-- [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155) is a new standard for _multi-tokens_, where a single contract represents multiple fungible and non-fungible tokens, and operations are batched for increased gas efficiency.
+- [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155) is a new standard for _multi-tokens_, where a single contract represents multiple fungible and non-fungible tokens, and operations are batched for increased [gas](https://docs.filecoin.io/reference/general/glossary/#gas) efficiency.
 
 ### Using OpenZeppelin with FVM
 
@@ -49,7 +49,7 @@ Thanks to the FVM, your contract can be integrated and deployed on the Filecoin 
 
 ### Example using an ERC20 contract
 
-In the following tutorial, you'll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Hyperspace testnet using Remix and MetaMask:
+In the following tutorial, you'll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Hyperspace [testnet](https://docs.filecoin.io/reference/general/glossary/#testnet) using Remix and MetaMask:
 
 #### Prerequisites
 

@@ -13,7 +13,7 @@ weight: 130
 toc: true
 ---
 
-Users have the ability to write native user-defined actors in any programming language that compiles to Wasm. However, language-specific overheads (e.g. runtime, garbage collection, stdlibs, etc.) may lead to oversized Wasm bytecode and execution overheads, translating to higher gas costs. This is exemplified by the current FVM user-defined foreign runtime actors, in the Filecoin EVM.
+Users have the ability to write native user-defined actors in any programming language that compiles to Wasm. However, language-specific overheads (e.g. runtime, garbage collection, stdlibs, etc.) may lead to oversized Wasm bytecode and execution overheads, translating to higher [gas](https://docs.filecoin.io/reference/general/glossary/#gas) costs. This is exemplified by the current FVM user-defined foreign runtime actors, in the Filecoin EVM.
 
 ## Mainnet
 

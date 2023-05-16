@@ -13,7 +13,7 @@ weight: 120
 toc: true
 ---
 
-Beyond their function as a scaling tool, IPC subnets will be deployed to meet the requirements of applications that cannot be run on the Filecoin rootnet. The combination of Mir and Trantor provides a high-performance consensus mechanism with faster finality and higher throughput. Moreover, Trantor can be further configured for each subnet.
+Beyond their function as a scaling tool, IPC subnets will be deployed to meet the requirements of applications that cannot be run on the Filecoin rootnet. The combination of Mir and Trantor provides a high-performance consensus mechanism with faster [finality](https://docs.filecoin.io/reference/general/glossary/#finality) and higher throughput. Moreover, Trantor can be further configured for each subnet.
 
 ## Mir framework
 
@@ -25,7 +25,7 @@ Mir is used as a scalable and efficient consensus layer in Filecoin subnets. Lea
 
 ## Trantor consensus protocol
 
-[Trantor](https://github.com/filecoin-project/mir/tree/main/pkg/trantor) is a modern, multi-leader, Byzantine fault-tolerant (BFT) protocol. It was inspired by recently proposed, high-throughput, BFT consensus protocols, namely ISS and Narwahl. Trantor iterates through instances of PBFT with immediate finality, each block containing an ordered list of decided transactions and a certificate for verification, with every nth block containing a checkpoint of the state.
+[Trantor](https://github.com/filecoin-project/mir/tree/main/pkg/trantor) is a modern, multi-leader, Byzantine fault-tolerant (BFT) protocol. It was inspired by recently proposed, high-throughput, BFT consensus protocols, namely ISS and Narwahl. Trantor iterates through instances of PBFT with immediate finality, each [block](https://docs.filecoin.io/reference/general/glossary/#block) containing an ordered list of decided transactions and a certificate for verification, with every nth block containing a checkpoint of the state.
 
 Learn more on [GitHub](https://github.com/filecoin-project/mir/tree/main/pkg/trantor). 
 

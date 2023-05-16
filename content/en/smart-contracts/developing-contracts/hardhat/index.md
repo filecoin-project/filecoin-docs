@@ -26,7 +26,7 @@ The [Filecoin EVM-runtime Hardhat kit](https://github.com/filecoin-project/FEVM-
 This guide assumes you have the following installed:
 
 - [Yarn](https://yarnpkg.com/)
-- A Filecoin address stored in [MetaMask]({{< relref "/basics/assets/wallets" >}})
+- A Filecoin [address](https://docs.filecoin.io/reference/general/glossary/#address) stored in [MetaMask]({{< relref "/basics/assets/wallets" >}})
 
 ### Environment setup
 

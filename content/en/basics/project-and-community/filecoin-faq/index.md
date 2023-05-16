@@ -48,9 +48,9 @@ Here is a blog about Filecoin economics from December 2020: [Filecoin network ec
 
 As Filecoin is a free market, the price will be determined by a number of variables related to the supply and demand for storage. It's difficult to predict before launch. However, a few design elements of the network help support inexpensive storage.
 
-Along with revenue from active storage deals, Storage Miners receive block rewards, where the expected value of winning a given block reward is proportional to the amount of storage they have on the network. These block rewards are weighted heavily towards the early days of the network (with the frequency of block rewards exponentially decaying over time). As a result, Storage Miners are relatively incentivized to charge less for storage to win more deals, which would increase their expected block reward.
+Along with revenue from active storage deals, Storage Miners receive [block](https://docs.filecoin.io/reference/general/glossary/#block) rewards, where the expected value of winning a given block reward is proportional to the amount of storage they have on the network. These block rewards are weighted heavily towards the early days of the network (with the frequency of block rewards exponentially decaying over time). As a result, Storage Miners are relatively incentivized to charge less for storage to win more deals, which would increase their expected block reward.
 
-Further, Filecoin introduces a concept called _Verified Clients_, where clients can be verified to actually be storing useful data. Storage Miners who store data from _Verified Clients_ also increase their expected block reward. Anyone running a Filecoin-backed IPFS Pinning Services should qualify as a _Verified Client_. We do not have the process of verification finalized, but we expect it to be similar to submitting a GitHub profile.
+Further, Filecoin introduces a concept called [Verified Clients](https://docs.filecoin.io/reference/general/glossary/#verified-client), where clients can be verified to actually be storing useful data. Storage Miners who store data from _Verified Clients_ also increase their expected block reward. Anyone running a Filecoin-backed IPFS Pinning Services should qualify as a _Verified Client_. We do not have the process of verification finalized, but we expect it to be similar to submitting a GitHub profile.
 
 ### Will it be cheaper to store data on Filecoin than other centralized cloud services?
 
@@ -96,9 +96,9 @@ SDR ([Stacked DRG PoRep](https://spec.filecoin.io/algorithms/porep-old/stacked_d
 
 If you have any information about any potential security problem or malicious construction, reach out to our team at [security@filecoin.org](mailto:security@filecoin.org).
 
-### How likely is it that the Filecoin protocol will switch to the NSE Proof-of-Replication construction later?
+### How likely is it that the Filecoin protocol will switch to the NSE  construction later?
 
-Native storage extension (NSE) is one of the best candidates for a proof upgrade, and teams are working on implementation. But there are other candidates too, which are promising as well. It may be that another algorithm ends up better than NSE -- we don't know yet. Proof upgrades will arrive after the mainnet launch and will coexist.
+Native storage extension (NSE) is one of the best candidates for a proof upgrade, and teams are working on implementation. But there are other candidates too, which are promising as well. It may be that another algorithm ends up better than NSE -- we don't know yet. Proof upgrades will arrive after the [mainnet](https://docs.filecoin.io/reference/general/glossary/#mainnet) launch and will coexist.
 
 AMD may be optimal hardware for SDR. You can [see this description](https://github.com/filecoin-project/lotus/blob/master/documentation/en/sealing-procs.md) for more information on why.
 
@@ -108,11 +108,11 @@ In addition to [Filecoin Discover](https://filecoin.io/blog/posts/introducing-fi
 
 ### Does Filecoin have an implementation of client and storage provider order matching through order books?
 
-There will be off-chain [order books](https://www.investopedia.com/terms/o/order-book.asp) and storage provider marketplaces -- some are in development now from some teams. They will work mostly off-chain because transactions per second on-chain are not enough for the volume of usage we expect on Filecoin. These order books build on the basic deal-flow on-chain. These order books will arrive in their own development trajectory -- most likely around or soon after the mainnet launch.
+There will be off-chain [order books](https://www.investopedia.com/terms/o/order-book.asp) and [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) marketplaces -- some are in development now from some teams. They will work mostly off-chain because transactions per second on-chain are not enough for the volume of usage we expect on Filecoin. These order books build on the basic deal-flow on-chain. These order books will arrive in their own development trajectory -- most likely around or soon after the mainnet launch.
 
 ### Why does Filecoin mining work best on AMD?
 
-Currently, Filecoin's Proof of Replication (PoRep) prefers to be run on AMD processors. See this description of Filecoin sealing for more information. More accurately, it runs much slower on Intel CPUs. It runs competitively fast on some ARM processors, like the ones in newer Samsung phones, but they lack the RAM to seal the larger sector sizes. The main reason that we see this benefit on AMD processors is due to their implementation of the SHA hardware instructions.
+Currently, Filecoin's Proof of Replication (PoRep) prefers to be run on AMD processors. See this description of Filecoin sealing for more information. More accurately, it runs much slower on Intel CPUs. It runs competitively fast on some ARM processors, like the ones in newer Samsung phones, but they lack the RAM to [seal](https://docs.filecoin.io/reference/general/glossary/#seal) the larger [sector](https://docs.filecoin.io/reference/general/glossary/#sector) sizes. The main reason that we see this benefit on AMD processors is due to their implementation of the SHA hardware instructions.
 
 ### What do storage providers have to do to change a committed capacity (CC) sector into a "real-data" sector?
 

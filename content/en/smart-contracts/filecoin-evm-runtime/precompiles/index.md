@@ -13,7 +13,7 @@ weight: 240
 toc: true
 ---
 
-The Filecoin virtual machine (FVM) has several pre-compiled contracts called precompiles. Each precompile address starts with `0xfe000...`. Specifically:
+The Filecoin virtual machine (FVM) has several pre-compiled contracts called precompiles. Each precompile [address](https://docs.filecoin.io/reference/general/glossary/#address) starts with `0xfe000...`. Specifically:
 
 - [Resolve address `0xfe00..01`](#resolve-address)
 - [Lookup delegated address `0xfe00..02`](#lookup-delegated-address)
