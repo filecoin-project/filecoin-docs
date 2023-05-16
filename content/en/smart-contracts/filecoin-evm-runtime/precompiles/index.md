@@ -92,7 +92,7 @@ Calls the specified actor using the native FVM calling convention by its _Fileco
   - `exit_code` is one of:
     - `= 0` to indicate the call exited successfully.
     - `> 0` to indicate that the target actor _referted_ with the specified `exit_code`.
-    - `< 0` to indicate the call itself failed with the [syscall-error][] `-exit_code`.
+    - `< 0` to indicate the call itself failed with the [syscall-error](https://docs.rs/fvm_sdk/0.6.1/fvm_sdk/sys/enum.ErrorNumber.html) `-exit_code`.
   - `return_codec` codec of returned data. This will be one of (for now):
     - 0x51 or 0x71 - CBOR
     - 0x55 - raw (the target actor returned raw data)
@@ -109,7 +109,7 @@ Example:
 (int256 exit, uint64 return_codec, bytes memory return_value) = abi.decode(data, (int256, uint64, bytes));
 ```
 
-[syscall-error]: https://docs.rs/fvm_sdk/0.6.1/fvm_sdk/sys/enum.ErrorNumber.html
+[syscall-error](https://docs.rs/fvm_sdk/0.6.1/fvm_sdk/sys/enum.ErrorNumber.html)
 
 ## Call Actor By ID
 
