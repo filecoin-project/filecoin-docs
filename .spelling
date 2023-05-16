@@ -354,6 +354,13 @@ GasFeeCap
 EVM-compatible
 EthEstimateGas
 EthMaxPriorityFeePerGas
+pre-compiled
+ABI-encoded
+u64
+u256
+0x51
+0x00
+callee
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -465,3 +472,9 @@ _n_
 fip-0048
  - content/en/smart-contracts/filecoin-evm-runtime/filforwader/index.md
 Glif.io.
+ - content/en/smart-contracts/filecoin-evm-runtime/precompiles/index.md
+f01
+f2abcde
+0x71
+0x55
+0xfe00
