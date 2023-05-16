@@ -385,6 +385,7 @@ NVMe
 SplitStore
 subprocess
 JBODs
+multihash
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -538,3 +539,6 @@ LoanAgent
 ChangeBeneficiary
  - content/en/storage-provider/architecture/Lotus-components/index.md
 PreCommit
+ - content/en/storage-provider/architecture/network-indexer/index.md
+Masih
+Derkani
