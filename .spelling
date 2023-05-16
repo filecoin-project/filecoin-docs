@@ -348,6 +348,12 @@ hardcoding
 dApp
 frontend
 EVM-based
+GasLimit
+GasPremium
+GasFeeCap
+EVM-compatible
+EthEstimateGas
+EthMaxPriorityFeePerGas
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com

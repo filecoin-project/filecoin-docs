@@ -1,7 +1,7 @@
 ---
 title: "How gas works"
 description: "Gas in the Filecoin EVM runtime works quite differently from the regular Ethereum virtual machine (EVM)."
-lead: "Gas in the Filecoin EVM runtime works quite differently from the regular Ethereum virtual machine (EVM). Instead of assigning a fixed gas cost in each instruction, the Filecoin EVM runtime charges FIL gas based on the WASM code execution of the Filecoin EVM runtime interpreter."
+lead: "Gas in the Filecoin EVM runtime (FEVM) works quite differently from the regular Ethereum virtual machine (EVM). Instead of assigning a fixed gas cost in each instruction, the Filecoin EVM runtime charges FIL gas based on the WASM code execution of the Filecoin EVM runtime interpreter."
 draft: false
 images: []
 type: docs
@@ -17,7 +17,7 @@ aliases:
 
 When executing a message that invokes an EVM contract, the Filecoin virtual machine charges for the message chain inclusion (when the message originates off-chain) and then invokes the actor that hosts the contract. The actor is an instance of the EVM actor, which uses the Filecoin EVM runtime interpreter to execute the contract.
 
-The Filecoin EVM-runtime interpreter must first load its state, including the contract state, which costs additional gas. The interpreter then begins the execution of the contract bytecode. Each opcode interpreted may perform computation, syscalls, state i/o, and send new messages, all of which are charged with FIL gas. Finally, if the contract state is modified, the interpreter must flush it to the blockstore, which costs additional gas.
+The FEVM interpreter must first load its state, including the contract state, which costs additional gas. The interpreter then begins the execution of the contract bytecode. Each opcode interpreted may perform computation, syscalls, state i/o, and send new messages, all of which are charged with FIL gas. Finally, if the contract state is modified, the interpreter must flush it to the blockstore, which costs additional gas.
 
 Generally, it is not possible to compute gas costs for a contract invocation without using gas estimation through speculative execution.
 
@@ -77,10 +77,10 @@ If you'd rather not calculate and estimate gas for every message, you can just l
 
 ## Ethereum compatibility
 
-Since Filecion is fully EVM-compatible, Filecoin nodes also provide Ethereum-compatible APIs to support gas estimation:
+Since Filecoin is fully EVM-compatible, Filecoin nodes also provide Ethereum-compatible APIs to support gas estimation:
 
 - [EthEstimateGas]({{< relref "/reference/json-rpc/eth#ethestimategas" >}}): generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-- [EthMaxPriorityFeePerGas]({{< relref "/reference/json-rpc/eth#ethmaxpriorityfeepergas" >}}): returns a fee per gas that is an estimate of how much you can pay as a priority fee, or ’tip’, to get a transaction included in the current block.
+- [EthMaxPriorityFeePerGas]({{< relref "/reference/json-rpc/eth#ethmaxpriorityfeepergas" >}}): returns a fee per gas that is an estimate of how much you can pay as a priority fee, or "tip", to get a transaction included in the current block.
 
 To request the current max priority fee in the network, you can send a request to a public Filecoin endpoint:
 
@@ -103,7 +103,7 @@ curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
 }
 ```
 
-You can convert the `result` field from hexadecimal to base-10 in your terminal. Take the `result` output and remove the `0x` from the start. Then use `echo` to output the conversion:
+You can convert the `result` field from hexadecimal to base 10 in your terminal. Take the `result` output and remove the `0x` from the start. Then use `echo` to output the conversion:
 
 ```shell
 echo $((16#31157))
@@ -120,3 +120,4 @@ echo $((16#31157))
   - [FIP 0037](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0037.md)
   - [FIP 0054](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0054.md)
 - [Primitive Gas Price list](https://github.com/filecoin-project/ref-fvm/blob/master/fvm/src/gas/price_list.rs)
+<!--REVIEWED!-->
