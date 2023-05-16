@@ -366,6 +366,14 @@ chainlist.org
 hyperspace.yoga
 remix.ethereum.org
 MyToken.sol
+Aptos
+precompilied
+natively
+Factor8
+Ethers.js
+web.js
+ReactJS
+npm
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -483,3 +491,7 @@ f2abcde
 0x71
 0x55
 0xfe00
+ - content/en/smart-contracts/fundamentals/FAQs/index.md
+EVMs
+msg.sender
+glif

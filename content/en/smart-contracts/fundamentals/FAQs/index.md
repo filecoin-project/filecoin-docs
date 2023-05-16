@@ -58,19 +58,19 @@ Having storage contracts as a native primitive open to smart contract developers
 
 #### Why FEVM vs native FVM
 
-FEVM allows Solidity devs to easily write/port actors to the FVM using the tools that have already been introduced in the Ethereum ecosystem.
+FEVM allows Solidity developers to easily write/port actors to the FVM using the tools that have already been introduced in the Ethereum ecosystem.
 
 #### What applications make FVM/FEVM unique
 
-Applications that natively make use of storage contracts. Perpetual storage contracts, Data Daos, etc.
+Applications that natively make use of storage contracts. Perpetual storage contracts, Data DAOs, etc.
 
 #### What is perpetual storage
 
 Perpetual storage is a unique actor design paradigm only available on the FVM that allows users the ability to renew Filecoin storage deals and to keep them active indefinitely. This could be achieved by using a Decentralized Autonomous Organization (DAO) structure for example.
 
-#### What are DataDAOs
+#### What are Data DAOs
 
-DataDAOs are a unique design paradigm FVM developers could create which use Filecoin storage to store all their data instead of a service like AWS (which is currently used).
+Data DAOs are a unique design paradigm FVM developers could create which use Filecoin storage to store all their data instead of a service like AWS (which is currently used).
 
 #### Is FVM part of Filecoin clients like Lotus
 
@@ -107,16 +107,15 @@ When an EVM is deployed to FEVM, it is compiled with WASM and an actor instance 
 
 No, it must be deployed to the FEVM.
 
-
 #### What frontend framework should I use?
 
-React, Ether.js, web.js, ReactJs work well.
+React, Ethers.js, web.js, ReactJS work well.
 
 #### How do we convert from msg.sender in a FEVM contract, which returns an EVM `0x` address, to the underlying Filecoin `f` address?
 
-You can use the npm [@glif/filecoin-address](https://www.npmjs.com/package/@glif/filecoin-address) package or the [Zondax mock api](https://github.com/Zondax/fevm-solidity-mock-api) has the constructor that calls `mock_generate_deals();`.
+You can use the npm [@glif/filecoin-address](https://www.npmjs.com/package/@glif/filecoin-address) package or the [Zondax mock API](https://github.com/Zondax/fevm-solidity-mock-api) has the constructor that calls `mock_generate_deals();`.
 
-#### How do I bound the replicator factor from solidity fevm?
+#### How do I bound the replicator factor from solidity FEVM?
 
 Store a number limit on running `DealClient` and `publish_deal` and have it authorized to replicate.
 
@@ -131,3 +130,4 @@ It’s not impossible but storage providers are incentivized not to close the st
 #### How do I check a storage provider’s balance with their FEVM address
 
 You can query balance of any address using [Zondax's API](https://docs.zondax.ch/openapi#tag--Account).
+<!--REVIEWED!-->
