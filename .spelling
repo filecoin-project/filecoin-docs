@@ -381,6 +381,10 @@ superset
 Hygge
 customizable
 tokenomics
+NVMe
+SplitStore
+subprocess
+JBODs
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -532,3 +536,5 @@ ChangeBeneficary
 LendingMarket
 LoanAgent
 ChangeBeneficiary
+ - content/en/storage-provider/architecture/Lotus-components/index.md
+PreCommit
