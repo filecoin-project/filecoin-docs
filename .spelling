@@ -13,6 +13,8 @@ FIPs
 CoinSummer
 blockCid
 devnet
+dataset
+tokenizing
 filecoin-address
 oldmsgskip
 CBOR
@@ -242,7 +244,7 @@ undercollateralized
 multisig
 Uniswap
 Solana
-DataDAO
+DAO
 Perp
 virtualized
 bytecode
@@ -378,6 +380,7 @@ SDKs
 superset
 Hygge
 customizable
+tokenomics
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -515,3 +518,17 @@ filecoin.io
 EVMs
 msg.sender
 glif
+ - content/en/smart-contracts/fundamentals/the-filecoin-virtual-machine/index.md
+ERC20PresetMinterPauser
+AuthenticateMessage
+uploaders
+PerpetualStorage
+PerpetualDeal
+PerpetualDealAd
+PerpetualDeals
+BeneficaryTerm
+Get_beneficiary
+ChangeBeneficary
+LendingMarket
+LoanAgent
+ChangeBeneficiary
