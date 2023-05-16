@@ -374,6 +374,8 @@ Ethers.js
 web.js
 ReactJS
 npm
+SDKs
+superset
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -498,3 +500,5 @@ glif
  - content/en/smart-contracts/fundamentals/filecoin-evm-runtime/index.md
 virtualization
 truckerfling
+ - content/en/smart-contracts/fundamentals/fvm-native/index.md
+stdlibs
