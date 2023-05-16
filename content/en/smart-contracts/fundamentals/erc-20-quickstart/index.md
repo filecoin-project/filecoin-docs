@@ -88,7 +88,7 @@ You may notice that we are currently connected to the **Ethereum Mainnet**. We n
 
     ![MetaMask on the Filecoin Hyperspace testnet.](chainlist-hyperspace-added.png)
 
-Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
+Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. `TFIL` is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
 
 ### Get some funds
 
@@ -100,7 +100,7 @@ Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'
 
     ![Go to the Faucet section of the website.](faucet-click-faucet.png)
 
-1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
+1. Paste your address into the address field, complete the **I am human** CAPTCHA, and then click **Send**:
 
     ![Verify you're a human.](faucet-verify.png)
 
@@ -187,7 +187,7 @@ Now that we've successfully compiled our contract, we need to deploy it somewher
 
     ![Click Connect in MetaMask.](deploy-metamask-click-connect.png)
 
-1. Back in Remix, under the **Account** field, you'll see that it says something like `0x11F... (5 ether)`. This value is 5 `tFIL`, but Remix doesn't natively support the Filecoin network so doesn't understand what `tFIL` is. This isn't a problem, it's just a little quirk of using Remix.
+1. Back in Remix, under the **Account** field, you'll see that it says something like `0x11F... (5 ether)`. This value is 5 `tFIL`, but Remix doesn't support the Filecoin network so doesn't understand what `tFIL` is. This isn't a problem, it's just a little quirk of using Remix.
 
     ![Remix and MetaMask linked.](deploy-remix-metamask-linked.png)
 
@@ -223,7 +223,7 @@ Let's call a method within the deployed contract to mint some tokens.
 
 1. Back in Remix, open the **Deployed Contracts** dropdown, within the **Deploy** sidebar tab.
 
-    ![](use-mint-select-deployed-contracts.png)
+    ![Deploy the contracts.](use-mint-select-deployed-contracts.png)
 
 1. Expand the `mint` method. You must fill in two fields here: `to` and `amount`.
 
@@ -268,4 +268,5 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 
 ### Share your tokens
 
-Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](#create-a-wallet) and [Switch networks](#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](#add-your-tokens-to-metamask) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can't, it might be because they [don't have any `tFil`](#get-some-funds).
+Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](#create-a-wallet) and [Switch networks](#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](#add-to-metamask) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can't, it might be because they [don't have any `tFil`](#get-some-funds).
+<!--REVIEWED!-->

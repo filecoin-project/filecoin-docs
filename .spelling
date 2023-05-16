@@ -361,6 +361,11 @@ u256
 0x51
 0x00
 callee
+web3-based
+chainlist.org
+hyperspace.yoga
+remix.ethereum.org
+MyToken.sol
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
