@@ -259,8 +259,6 @@ When designing a tutorial, keep in mind the walkthroughs and articles that alrea
 
 ## Grammar and formatting
 
-## Grammar and spelling
-
 Here are some language-specific rules that the Filecoin documentation follows. If you use a writing service like [Grammarly](https://www.grammarly.com/), most of these rules are turned on by default.
 
 ### American English
