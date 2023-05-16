@@ -31,7 +31,7 @@ Follow the [Lotus installation guide](https://lotus.filecoin.io/lotus/install/pr
     - Syncing from minimal snapshot
 
 {{< alert  >}}
-A snapshot only has the state trees from the recent tipset (2000 epochs) onward and nothing before that tipset, which means it does not have all the historical states of the network. In addition, only a full snapshot has full state trees from a certain tipset.
+A snapshot only has the state trees from the recent [tipset](https://docs.filecoin.io/reference/general/glossary/#tipset) (2000 epochs) onward and nothing before that tipset, which means it does not have all the historical states of the network. In addition, only a full snapshot has full state trees from a certain tipset.
 {{< /alert >}}
 
 ### Check sync status
@@ -67,13 +67,13 @@ You can run `lotus sync wait` to wait for the sync to be complete. Lotus will ou
 
 ## Basic network technology info
 
-The Filecoin network uses a [Proof of Storage (PoRep)](https://spec.filecoin.io#section-glossary.proof-of-replication-porep) + [Proof of SpaceTime (PoSt)](https://spec.filecoin.io#section-glossary.proof-of-spacetime-post) consensus algorithm. Time in the Filecoin network is dissected into [epochs](https://spec.filecoin.io#section-glossary.epoch) set to 30 seconds. A new set of blocks is produced for every epoch for a [tipset](https://spec.filecoin.io#section-glossary.tipset). The hard finality of the Filecoin network is 900 epochs.
+The Filecoin network uses a [Proof of Storage (PoRep)](https://spec.filecoin.io#section-glossary.proof-of-replication-porep) + [Proof of SpaceTime (PoSt)](https://spec.filecoin.io#section-glossary.proof-of-spacetime-post) consensus algorithm. Time in the Filecoin network is dissected into [epochs](https://spec.filecoin.io#section-glossary.epoch) set to 30 seconds. A new set of blocks is produced for every epoch for a [tipset](https://spec.filecoin.io#section-glossary.tipset). The hard [finality](https://docs.filecoin.io/reference/general/glossary/#finality) of the Filecoin network is 900 epochs.
 
 ## Accounts and wallets
 
 Filecoin uses an account-based model. There are 4 types of account prefixes:
 
-- `f0` for ID address
+- `f0` for ID [address](https://docs.filecoin.io/reference/general/glossary/#address)
 - `f1` for Secp256k1 wallets
 - `f2`for [actor](https://spec.filecoin.io#section-glossary.actor) accounts
 - `f3` for BLS wallets
@@ -95,20 +95,20 @@ Details and reference implementations can be found [in the Filecoin specificatio
 
 ## Messages
 
-There are two message types:
+There are two [message](https://docs.filecoin.io/reference/general/glossary/#message) types:
 
 - [Signed messages](https://github.com/filecoin-project/lotus/blob/9deda06ec632da3f7a035cc63b9408de72c96f79/chain/types/signedmessage.go#L44)
 - [Unsigned messages](https://github.com/filecoin-project/lotus/blob/9deda06ec632da3f7a035cc63b9408de72c96f79/chain/types/message.go#L28).
 
 Messages are fully irreversible at 900 epochs. Waiting 200 epochs for message confirmation is acceptable.
 
-There are multiple gas fees associated with each message. Refer to the [practical guide to gas section of this blog post](https://filecoin.io/blog/filecoin-features-gas-fees/) for details.
+There are multiple [gas](https://docs.filecoin.io/reference/general/glossary/#gas) fees associated with each message. Refer to the [practical guide to gas section of this blog post](https://filecoin.io/blog/filecoin-features-gas-fees/) for details.
 
 An `ExitCode` of `0` in the message receipt indicates that the message was sent successfully.
 
 ### Mempool
 
-When a user sends a transaction to the network, it gets placed into the mempool queue. If a transaction doesn't have enough gas, it stays in the mempool and doesn't go anywhere. To new users, it looks like this transaction is lost forever. However, users can update the transaction with an updated `GasLimit`, `GasFeeCap`, and/or `GasPremium`. As long as you don't change anything else in the transaction (`nonse`, `to`, `from`, `value`), then the transaction that is sat in the mempool will get updated with the new gas allowance.
+When a user sends a transaction to the network, it gets placed into the mempool queue. If a transaction doesn't have enough gas, it stays in the mempool and doesn't go anywhere. To new users, it looks like this transaction is lost forever. However, users can update the transaction with an updated `GasLimit`, `GasFeeCap`, and/or `GasPremium`. As long as you don't change anything else in the transaction (`nonse`, `to`, `from`, `value`), then the transaction that is sat in the mempool will get updated with the new [gas](https://docs.filecoin.io/reference/general/glossary/#gas) allowance.
 
 #### Expiration
 
@@ -262,7 +262,7 @@ Call [StateReplay](https://lotus.filecoin.io/reference/lotus/state/#statereplay)
 
 ### How to get the gas estimation of a message?
 
-You can estimate the gas cost of a message by calling [GasEstimateMessageGas](https://lotus.filecoin.io/reference/lotus/gas/#gasestimatemessagegas). This API estimates the gas limit with a 25% overestimation based on the network condition under the given tipset key. You can change this value via the `GasLimitOverestimation` field.
+You can estimate the gas cost of a message by calling [GasEstimateMessageGas](https://lotus.filecoin.io/reference/lotus/gas/#gasestimatemessagegas). This API estimates the gas limit with a 25% overestimation based on the network condition under the given [tipset](https://docs.filecoin.io/reference/general/glossary/#tipset) key. You can change this value via the `GasLimitOverestimation` field.
 
 ### How do I ensure that all balances transfer in any messages are captured, including msig transfers?
 

@@ -36,7 +36,7 @@ w
 
     ![Click on the message link.](faucet-get-message-link.png)
 
-1. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5 `tFIL` transferred to your address.
+1. The [block](https://docs.filecoin.io/reference/general/glossary/#block) explorer will show you the transaction history for your address. After a couple of minutes, you should see 5 `tFIL` transferred to your address.
 
     ![Show the message confirmation in a block explorer.](faucet-show-message-confirmation.png)
 

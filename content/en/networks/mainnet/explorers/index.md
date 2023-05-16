@@ -26,7 +26,7 @@ Website: [explorer.glif.io](https://explorer.glif.io)
 
 ## Block explorers
 
-Block explorers allow you to view the details of the Filecoin network on a single website. Individual block explorers contain different features that may be useful. None of these sites are created or maintained by Protocol Labs or the Filecoin Foundation. This list is in alphabetical order:
+[Block](https://docs.filecoin.io/reference/general/glossary/#block) explorers allow you to view the details of the Filecoin network on a single website. Individual block explorers contain different features that may be useful. None of these sites are created or maintained by Protocol Labs or the Filecoin Foundation. This list is in alphabetical order:
 
 ### Beryx
 

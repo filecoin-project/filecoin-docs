@@ -13,10 +13,10 @@ weight: 120
 toc: true
 ---
 
-A faucet is available at [faucet.spacenet.ipc.space](https://faucet.spacenet.ipc.space) for developers to get test Filecoin (tFIL) on the Spacenet testnet. The faucet has the following restrictions:
+A [faucet](https://docs.filecoin.io/reference/general/glossary/#faucet) is available at [faucet.spacenet.ipc.space](https://faucet.spacenet.ipc.space) for developers to get test Filecoin (tFIL) on the Spacenet testnet. The faucet has the following restrictions:
 
 - The per-request allowance given by the faucet is 10 tFIL.
-- There is a daily maximum of 20 tFIL per address.
+- There is a daily maximum of 20 tFIL per [address](https://docs.filecoin.io/reference/general/glossary/#address).
 - And we have also limited the maximum amount of funds that can be withdrawn daily.
 
 ![The Spacenet faucet homepage.](faucet.png)

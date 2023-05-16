@@ -23,11 +23,11 @@ The Filecoin EVM runtime introduces three new actor types:
 
 ## Placeholder
 
-A _placeholder_ is a particular type of pseudo-actor that holds funds until an actual actor is deployed at a specific address. When funds are sent to an address starting with `f410f` that doesn't belong to any existing actor, a _placeholder_ is created to hold the said funds until either an account or smart contract is deployed to that address.
+A _placeholder_ is a particular type of pseudo-actor that holds funds until an actual actor is deployed at a specific [address](https://docs.filecoin.io/reference/general/glossary/#address). When funds are sent to an address starting with `f410f` that doesn't belong to any existing actor, a _placeholder_ is created to hold the said funds until either an account or smart contract is deployed to that address.
 
 A placeholder can become a _real_ actor in one of two ways:
 
-1. A message is sent from the account that would exist at that placeholder's address. If this happens, the placeholder is automatically upgraded into an account.
+1. A [message](https://docs.filecoin.io/reference/general/glossary/#message) is sent from the account that would exist at that placeholder's address. If this happens, the placeholder is automatically upgraded into an account.
 2. An EVM smart contract is deployed to the address.
 
 ## Ethereum-style account

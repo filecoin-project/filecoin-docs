@@ -15,7 +15,7 @@ toc: true
 
 ## Overview
 
-A _network indexer_, also referred to as an _indexer node_ or  _indexer_, is a node that maps content identifiers (CIDs) to records of who has the data and how to retrieve that data. These records are called _provider data records_. Indexers are built to scale in environments with massive amounts of data, like the Filecoin network, and are also used by the IPFS network to locate data. Because the Filecoin network stores so much data, clients can’t perform efficient retrieval without proper indexing. Indexer nodes work like a specialized key-value store for efficient retrieval of content-addressed data.
+A _network indexer_, also referred to as an _indexer node_ or  _indexer_, is a node that maps [content identifiers](https://docs.filecoin.io/reference/general/glossary/#content-identifier-cid) (CIDs) to records of who has the data and how to retrieve that data. These records are called _provider data records_. Indexers are built to scale in environments with massive amounts of data, like the Filecoin network, and are also used by the IPFS network to locate data. Because the Filecoin network stores so much data, clients can’t perform efficient retrieval without proper indexing. Indexer nodes work like a specialized key-value store for efficient retrieval of content-addressed data.
 
 There are two groups of users within the network indexer process:
 

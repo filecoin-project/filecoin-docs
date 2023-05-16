@@ -16,7 +16,7 @@ aliases:
 The State methods are used to query, inspect, and interact with chain state.
 Most methods take a TipSetKey as a parameter. The state looked up is the parent state of the tipset.
 
-A nil TipSetKey can be provided as a param, this will cause the heaviest tipset in the chain to be used.
+A nil TipSetKey can be provided as a param, this will cause the heaviest [tipset](https://docs.filecoin.io/reference/general/glossary/#tipset) in the chain to be used.
 
 ## StateAccountKey
 
@@ -324,7 +324,7 @@ When called, StateCompute will:
   - Execute state upgrade if any were scheduled at the epoch, or in null
     blocks preceding the tipset
   - Call the cron actor on null blocks preceding the tipset
-  - For each block in the tipset
+  - For each [block](https://docs.filecoin.io/reference/general/glossary/#block) in the tipset
     - Apply messages in blocks in the specified
     - Award block reward by calling the reward actor
   - Call the cron actor for the current epoch

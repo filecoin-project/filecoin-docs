@@ -17,9 +17,9 @@ aliases:
 
 ## Tipsets
 
-The Filecoin blockchain is a chain of tipsets rather than a chain of blocks. A tipset is a set of blocks with the same height and parent tipset. Therefore, multiple storage providers can produce blocks for each epoch to increase network throughput.
+The Filecoin blockchain is a chain of tipsets rather than a chain of blocks. A tipset is a set of blocks with the same height and parent tipset. Therefore, multiple storage providers can produce blocks for each [epoch](https://docs.filecoin.io/reference/general/glossary/#epoch) to increase network throughput.
 
-Each tipset is assigned a weight, so the consensus protocol directs nodes to build on the heaviest chain. This provides a certain level of security to the Filecoin network by preventing a node from intentionally intervening with other nodes to produce valid blocks.
+Each [tipset](https://docs.filecoin.io/reference/general/glossary/#tipset) is assigned a weight, so the consensus protocol directs nodes to build on the heaviest chain. This provides a certain level of security to the Filecoin network by preventing a node from intentionally intervening with other nodes to produce valid blocks.
 
 ## Actors
 
@@ -40,7 +40,7 @@ There are several [built-in system actors](https://spec.filecoin.io#section-sys
 - Multisig Actor \- responsible for operations involving the Filecoin multi-signature wallet.
 - Payment Channel Actor - set up and settle payment channel funds.
 - Datacap Actor - responsible for datacap token management.
-- Verified Registry Actor - responsible for managing verified clients.
+- Verified Registry Actor - responsible for managing [verified clients](https://docs.filecoin.io/reference/general/glossary/#verified-client).
 - Ethereum address Manager (EAM) Actor\- responsible for assigning all Ethereum compatible addresses on Filecoin Network, including EVM smart contract addresses and Ethereum account addresses.
 - EVM Account Actor - a non-singleton built-in actor representing an external Ethereum identity backed by a secp256k1 key.
 
@@ -52,11 +52,11 @@ You can check out this [talk on How Filecoin Actors Work](https://curriculum.pl-
 
 ## Distributed randomness
 
-Filecoin uses distributed and publicly verifiable random beacon protocol - [Drand](https://drand.love) as the randomness beacon for the leader election during the [expected consensus](#consensus) to produce blocks. This randomness guarantees that the leader election is secret, fair, and verifiable.
+Filecoin uses distributed and publicly verifiable random beacon protocol - [Drand](https://drand.love) as the randomness beacon for the leader [election](https://docs.filecoin.io/reference/general/glossary/#election) during the [expected consensus](#consensus) to produce blocks. This randomness guarantees that the leader election is secret, fair, and verifiable.
 
 ## Nodes
 
-Nodes in the Filecoin network are primarily identified in terms of the services they provide to serve the Filecoin storage network, including chain verifier nodes, client nodes, storage provider nodes, and retrieval provider nodes. Any node participating in the Filecoin network should provide the chain verification service as a minimum.
+Nodes in the Filecoin network are primarily identified in terms of the services they provide to serve the Filecoin storage network, including chain verifier nodes, client nodes, [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) nodes, and [retrieval provider](https://docs.filecoin.io/reference/general/glossary/#retrieval-provider) nodes. Any node participating in the Filecoin network should provide the chain verification service as a minimum.
 
 Filecoin is targeting multiple protocol implementations to guarantee the security and resilience of the Filecoin network. Currently, the actively maintained implementations are:
 
@@ -81,7 +81,7 @@ Let's quickly cover how consensus works in the Filecoin network.
 
 ### Expected consensus
 
-Expected consensus (EC) is the underlying consensus algorithm used by Filecoin. EC is a probabilistic Byzantine fault-tolerant consensus protocol that runs a leader election among a set of storage providers to submit a block every epoch. Like proof-of-stake, Filecoin uses proof-of-storage for the leader election, meaning the likelihood of being elected depends on how much provable storage power a miner contributes to the network. The storage power of the network is stored in the storage power table and managed by the Storage Power Actor.
+Expected consensus (EC) is the underlying consensus algorithm used by Filecoin. EC is a probabilistic Byzantine fault-tolerant consensus protocol that runs a leader election among a set of storage providers to submit a block every epoch. Like proof-of-stake, Filecoin uses [proof-of-storage](https://docs.filecoin.io/reference/general/glossary/#proof-of-storage) for the leader election, meaning the likelihood of being elected depends on how much provable storage power a miner contributes to the network. The storage power of the network is stored in the storage power table and managed by the Storage Power Actor.
 
 At a high level, the consensus process relies on [DRAND](https://drand.love/) to provide distributed and verifiable randomness to keep leader election secret, fair and verifiable. All the election participants and their power are drawn from the Power Table, which is calculated and maintained over time by the Storage Power Consensus subsystem. Eventually, EC takes all valid blocks produced in this epoch and uses a weighting function to select the chain with the highest weight to add blocks.
 
@@ -91,7 +91,7 @@ The process of producing a block for each epoch can be briefly described as foll
 
 - Elect leaders from eligible miners.
 - Miners need to check if they are elected.
-- An elected miner gets the randomness value to generate WinningPoSt.
+- An elected miner gets the randomness value to generate [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost).
 - If all above is successful, miners build and propagate a block.
 - Verify whether a miner won the block and verify the leader election.
 - Eventually, select the heaviest chain to add blocks.
@@ -106,11 +106,11 @@ As a decentralized storage network, Filecoin is built on the proof-of-storage in
 
 ### Proof of replication
 
-Using proof-of-replication (PoRep), storage providers prove that they have created a unique copy of the client’s data and stored it on behalf of the network.
+Using [proof-of-replication](https://docs.filecoin.io/reference/general/glossary/#proof-of-replication-porep) (PoRep), storage providers prove that they have created a unique copy of the client’s data and stored it on behalf of the network.
 
 ### Proof of spacetime
 
-Storage providers also need to continuously prove that they store clients’ data for the whole lifetime of the storage deal. There are two types of challenges as part of the proof-of-spacetime (PoSt) process:
+Storage providers also need to continuously prove that they store clients’ data for the whole lifetime of the storage deal. There are two types of challenges as part of the [proof-of-spacetime](https://docs.filecoin.io/reference/general/glossary/#proof-of-spacetime-post) (PoSt) process:
 
 - Winning PoSt guarantees that the storage provider maintains a copy of data at a specific time.
 - Window PoSt is used as proof that a copy of the data has been continuously maintained over time.
@@ -119,5 +119,5 @@ Storage providers also need to continuously prove that they store clients’ dat
 
 If storage providers fail to provide reliable uptime or act maliciously against the network, they will be penalized by slashing. Filecoin implements two kinds of slashing:
 
-- Storage fault slashing to penalize storage providers for not being able to maintain healthy and reliable storage sectors for the network.
+- Storage [fault](https://docs.filecoin.io/reference/general/glossary/#fault) slashing to penalize storage providers for not being able to maintain healthy and reliable storage sectors for the network.
 - Consensus fault slashing to penalize storage providers to sabotage the liveness and security of the consensus process.

@@ -18,7 +18,7 @@ retrieval markets as a client
 
 ## ClientCalcCommP
 
-ClientCalcCommP calculates the CommP for a specified file
+ClientCalcCommP calculates the [CommP](https://docs.filecoin.io/reference/general/glossary/#commp) for a specified file
 
 Perms: write
 
