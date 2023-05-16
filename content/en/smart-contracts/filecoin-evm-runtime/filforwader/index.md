@@ -21,7 +21,7 @@ Filecoin has multiple [address spaces]({{< relref "address-types#delegated-addre
 
 Users interacting with the Filecoin EVM runtime need to use `f4` addresses, masked to the Ethereum-style `0x` address. These addresses can be created from wallets like MetaMask, Coinbase wallet, or any other EVM-based wallet that allows for custom networks. There are use cases where a user with FIL in an `0x`-style address would want to send FIL to an `f1`, `f2`, or `f3` address. For example, taking FIL out of a smart contract and sending it to a multi-sig account or an exchange.
 
-This is where the problem lies. Ethereum-based wallets do not natively recognize the `f1`, `f2`, or `f3` address formats, making it impossible to send FIL from an Ethereum-style address.
+This is where the problem lies. Ethereum-based wallets do not recognize the `f1`, `f2`, or `f3` address formats, making it impossible to send FIL from an Ethereum-style address.
 
 ## The solution
 
@@ -130,7 +130,7 @@ Always be careful when dealing with your private key. Double-check that you're n
 
 #### Invoke the contract
 
-The contract is deterministically deployed on all Filecoin networks at `0x2b3ef6906429b580b7b2080de5ca893bc282c225`. Any contract claiming to be a FilForwarder that does not reside at this address should not be trusted. Any dApp can connect to the wallet and use the ABI in this repository to call this method using any frontend. See the [Glif section](#glif-io) above for steps on using a GUI.
+The contract is deterministically deployed on all Filecoin networks at `0x2b3ef6906429b580b7b2080de5ca893bc282c225`. Any contract claiming to be a FilForwarder that does not reside at this address should not be trusted. Any dApp can connect to the wallet and use the ABI in this repository to call this method using any frontend. See the [Glif section](#glifio) above for steps on using a GUI.
 
 Inside this repository is a Hardhat task called `forward`. This task will use the private key to send funds using the contract. This task uses the `fil-forwarder-{CHAIN_ID}.json` file to determine the deployed contract address for a given network. These addresses should always be the same, but these files prevent you from having to specify it each time.
 
@@ -166,3 +166,4 @@ yarn hardhat forward \
         --destination t010135 \
         --amount 42.5
     ```
+<!--REVIEWED!-->
