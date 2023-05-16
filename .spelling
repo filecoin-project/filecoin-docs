@@ -320,6 +320,14 @@ ChainReadObj
 ChainSetHead
 ChainStatObj
 ChainTipSetWeight
+mempool
+toolchains
+futureproofing
+precompile
+codec
+entrypoint
+trustlessness
+quickstart
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -409,3 +417,7 @@ filecoin.solidity
 filecoin.solidity
  - content/en/reference/general/specifications/index.md
 specs.filecoin.io
+ - content/en/smart-contracts/developing-contracts/best-practices/index.md
+v1.20.0
+hyperspace-nv20
+0x51
