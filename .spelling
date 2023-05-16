@@ -335,6 +335,11 @@ DappSys
 submodules
 remappings
 autofill
+checksum
+prepended
+secp256k
+namespace
+subaddress
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -441,3 +446,6 @@ hardhart.org
  - content/en/smart-contracts/developing-contracts/remix/index.md
 remix.ethereum.org
 MyToken.sol
+ - content/en/smart-contracts/filecoin-evm-runtime/address-types/index.md
+_n_
+fip-0048

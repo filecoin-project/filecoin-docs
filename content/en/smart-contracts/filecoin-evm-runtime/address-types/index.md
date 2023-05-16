@@ -110,7 +110,7 @@ The _new actor ID_ is the arbitrary actor ID chosen by that actor.
 
 Currently, per [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. This restriction will likely be relaxed once users are able to deploy custom WebAssembly actors.
 
-This address type plays an essential role in supporting the EVM-compatible FVM. It allows the Filecoin network to be able to recognize the foreign address and validate and execute the transactions sent and signed by the supported foreign addresses.
+This address type plays an essential role in supporting the FEVM. It allows the Filecoin network to be able to recognize the foreign address and validate and execute the transactions sent and signed by the supported foreign addresses.
 
 The supported foreign addresses can be cast as `f4/t4` addresses, and vice-versa.  But not with `f1/t1` or `f3/t3` addresses.
 
@@ -142,7 +142,7 @@ t410fl5qeigmkcytz7b6sqoojtcetqwf37dm4zv4aijq
 
 Again, assume you have deployed a solidity smart contract on Filecoin Hyperspace. Then you will receive a smart contract address starting with `t410`. EAM will also assign a corresponding `0x` Ethereum address to it.
 
-When you try to invoke this smart contract on Filecoin using Ethereum toolings, you need to use your `0x5f6044198a16279f87d2839c998893858bbf8d9c` smart contract address.
+When you try to invoke this smart contract on Filecoin using Ethereum tooling, you need to use your `0x5f6044198a16279f87d2839c998893858bbf8d9c` smart contract address.
 
 ### Converting to a 0x-style address
 
@@ -164,3 +164,4 @@ Addresses starting with `f410f` address can be converted to the `0x`  format by:
 {{< alert >}}
 ⚠️ `f0` addresses are **not** re-org stable and should not be used until the chain has settled.
 {{< /alert >}}
+<!--REVIEWED!-->
