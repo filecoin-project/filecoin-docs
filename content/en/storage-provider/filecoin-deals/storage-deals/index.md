@@ -13,7 +13,7 @@ weight: 310
 toc: true
 ---
 
-The real purpose of Filecoin is to store humanity's most important information. As a storage provider, that means accepting storage deals and storing deal sectors with real data in it. As before, those sectors are either 32GiB or 64GiB in size and require that the data be prepared as a content archive; that is, as a CAR file..
+The real purpose of Filecoin is to store humanity's most important information. As a storage provider, that means accepting storage deals and storing deal sectors with real data in it. As before, those sectors are either 32 GiB or 64 GiB in size and require that the data be prepared as a content archive; that is, as a CAR file..
 
 ## Data preparation
 
@@ -33,3 +33,4 @@ The storage provider can (and should) keep unsealed data copies available for re
 For more information on markets and deals, review the [Lotus storage deals page](https://lotus.filecoin.io/storage-providers/operate/manage-storage-deals/).
 
 {{< sp-calls-to-action >}}
+<!--REVIEWED!-->
