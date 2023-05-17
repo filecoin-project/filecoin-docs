@@ -394,6 +394,10 @@ datacenter
 architecting
 tiering
 GBs
+schemas
+geospatial
+CIDGravity
+Filswan
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -550,3 +554,7 @@ PreCommit
  - content/en/storage-provider/architecture/network-indexer/index.md
 Masih
 Derkani
+ - content/en/storage-provider/filecoin-deals/filecoin-programs/index.md
+fil-green
+CO2.Storage
+Boost-http
