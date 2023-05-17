@@ -406,6 +406,13 @@ ransomware
 file systems
 Gbps
 VLANs
+GbE
+ethernet
+virtualization
+hypervisor
+SHA-256
+Xeon
+PreCommit2
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -570,3 +577,11 @@ Boost-http
 RTOs
 Ceph
 RPOs
+ - content/en/storage-provider/infrastructure/reference-architectures/index.md
+NICs
+vdevs
+U.3
+AddPiece
+PreCommit1
+U.2
+Hoejsbo
