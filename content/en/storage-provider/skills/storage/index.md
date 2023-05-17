@@ -62,3 +62,4 @@ In addition to troubleshooting, you must also be able to optimize the performanc
 Read-cache on the other hand is typically not useful in the context of Filecoin. This is because sealed sectors are read very randomly, and unsealed sectors will typically not be read twice. Therefore, storing data in a read-cache would be redundant and add unnecessary overhead to the system.
 
 {{< sp-calls-to-action >}}
+<!--REVIEWED!-->

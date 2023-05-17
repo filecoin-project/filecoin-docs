@@ -417,6 +417,7 @@ PCI-DSS
 deprioritize
 iperf
 iperf3
+zettabyte
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -595,3 +596,5 @@ resilver
 Resilvering
  - content/en/storage-provider/skills/security/index.md
 SELinux
+ - content/en/storage-provider/skills/storage/index.md
+VDEVs
