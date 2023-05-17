@@ -413,6 +413,7 @@ hypervisor
 SHA-256
 Xeon
 PreCommit2
+PCI-DSS
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
