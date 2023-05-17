@@ -48,3 +48,4 @@ Acquiring your own customers, and bringing their data onto the Filecoin network,
 It takes additional effort to work with customers and their data, but it has the additional advantage of being able to charge your customer for the data being stored. This means an additional revenue stream compared to only storing copies of deals, and earning block rewards.
 
 {{< sp-calls-to-action >}}
+<!--REVIEWED!-->
