@@ -76,3 +76,4 @@ You need to have a couple of things installed before you can interact with Starl
     ```
 
 Check the [official documentation](https://starlingstorage.io/commands.html) for a more in-depth look into what Starling can do.
+<!--REVIEWED!-->
