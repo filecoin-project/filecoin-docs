@@ -402,6 +402,8 @@ forecasted
 PreCommit
 PiB
 f099
+ransomware
+file systems
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -562,3 +564,7 @@ Derkani
 fil-green
 CO2.Storage
 Boost-http
+ - content/en/storage-provider/infrastructure/backup/index.md
+RTOs
+Ceph
+RPOs
