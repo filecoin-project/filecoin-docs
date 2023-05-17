@@ -418,6 +418,11 @@ deprioritize
 iperf
 iperf3
 zettabyte
+ChainSafe
+LivePeer
+Filebase
+geo-redundant
+SpaceDaemon
  - content/en/basics/assets/get-fil/index.md
 coingecko.com
 coinmarketcap.com
@@ -598,3 +603,9 @@ Resilvering
 SELinux
  - content/en/storage-provider/skills/storage/index.md
 VDEVs
+ - content/en/store/overview/start-storing/index.md
+lotus.filecoin.io
+File.video
+3x
+S3-compatible
+S3-like
