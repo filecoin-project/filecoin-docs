@@ -42,7 +42,7 @@ Please note that publicly available hosted endpoints **only guarantee 2000 of th
 
 ## [NOWNodes](https://nownodes.io/)
 
+These nodes are available for free to users for the [first month](https://nownodes.io/pricing), after which the user will have to pay to maintain access.
+
 - HTTPS: `https://fil.nownodes.io`
-- [NOWNodes documentation](https://documenter.getpostman.com/view/13630829/TVmFkLwy#7f656a5d-bba9-43f8-affe-ce0ca8c3cbbd)
-
-
+- [NOWNodes documentation](https://documenter.getpostman.com/view/13630829/TVmFkLwy)
