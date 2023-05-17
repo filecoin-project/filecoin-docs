@@ -19,15 +19,15 @@ When setting up a network, there are various factors to consider to ensure optim
 
 ## Internet bandwidth
 
-The amount of internet bandwidth required for a network largely depends on the size of the organization and customer expectations. A bandwidth between 1Gbps and 10Gbps is generally sufficient for most organizations, but the specific requirements should be determined based on the expected traffic. A minimum bandwidth of 10Gbps is recommended for setups that include a [Saturn](https://saturn.tech) node. Saturn requires a high-speed connection to handle large amounts of data.
+The amount of internet bandwidth required for a network largely depends on the size of the organization and customer expectations. A bandwidth between 1 Gbps and 10 Gbps is generally sufficient for most organizations, but the specific requirements should be determined based on the expected traffic. A minimum bandwidth of 10 Gbps is recommended for setups that include a [Saturn](https://saturn.tech) node. Saturn requires a high-speed connection to handle large amounts of data.
 
 ## LAN bandwidth
 
-The bandwidth between different components of a network is also important, especially when transferring data between servers. The internal connectivity between servers should be at least 10Gbps to ensure that planned sealing capacity is not limited by network performance. It is important to ensure that the servers and switches are capable of delivering the required throughput, and that firewalls are not the bottleneck for this throughput.
+The bandwidth between different components of a network is also important, especially when transferring data between servers. The internal connectivity between servers should be at least 10 Gbps to ensure that planned sealing capacity is not limited by network performance. It is important to ensure that the servers and switches are capable of delivering the required throughput, and that firewalls are not the bottleneck for this throughput.
 
 ## VLANs
 
-Virtual Local Area Networks (VLANs) are commonly used to separate network traffic and enhance security. However, if firewall rules are implemented between VLANs, the firewall can become the bottleneck. To prevent this, it is recommended to keep all sealing workers, Lotus miners, and storage systems in the same VLAN. This allows for data access and transfer without involving routing and firewalling, thus improving network performance.
+Virtual Local Area Networks (VLANs) are commonly used to separate network traffic and enhance security. However, if firewall rules are implemented between VLANs, the firewall can become the bottleneck. To prevent this, it is recommended to keep all sealing workers, Lotus miners, and storage systems in the same VLAN. This allows for data access and transfer without involving routing and firewalls, thus improving network performance.
 
 ## Redundancy
 
@@ -42,3 +42,4 @@ Spine-leaf architectures provide predictable latency and linear scalability by h
 It is important to determine the appropriate topology based on the specific needs of the organization.
 
 {{< sp-calls-to-action >}}
+<!--REVIEWED!-->
