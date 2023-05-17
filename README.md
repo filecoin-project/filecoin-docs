@@ -28,6 +28,7 @@
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [About the project](#about-the-project)
+    - [Merge process](#merge-process)
     - [Files and folders](#files-and-folders)
 - [Contributing](#contributing)
     - [Video guides for site management](#video-guides-for-site-management)
@@ -46,6 +47,7 @@
         - [Code tabs](#code-tabs)
         - [Tooltips](#tooltips)
 - [Issues](#issues)
+    - [Priority](#priority)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 <!-- /TABLE OF CONTENTS -->
@@ -121,6 +123,16 @@ A static site will be built and stored in the `/public` directory.
 
 This repository manages the documentation for the Filecoin project. This repo also contains the build scripts and tools to create the Filecoin docs website and the API documentation. If you want to learn about Filecoin, how it works, or how to build on it, then you're in the right place.
 
+### Merge process
+
+This project receives _a lot_ of pull requests from many individual contributors. Because of this, the Filecoin Docs team merges any new changes into `main` on Thursdays only. Any commits or PRs into docs any other day will go into the `staging` branch. This has several benefits:
+
+- Reviewing and editing content becomes easier.
+- Mass formatting, spelling, and grammar changes can happen on a single branch.
+- Breaking changes are much less likely.
+
+Only issues and PRs tagged as `p0` will be merged directly into `main` outside of the Thursday merge window. Take a look at the [Priority section](#priority) for information on how we tag issues.
+
 ### Files and folders
 
 This section lists the various files and folders and defines the purpose for each of them.
@@ -130,7 +142,7 @@ This section lists the various files and folders and defines the purpose for eac
 | `.git`, `.github` | Manage the git configurations and contain information for GitHub constant integrations. |
 | `README.md` | This file. Acts as an introduction to this repo and how to spin up a local copy of the `docs.filecoin.io` site. |
 | `archetypes/` | Used by Hugo to programmatically create new pages. |
-| `assets/` | Assets like JavaScript and fonts used by Hugo to create the static site. These assets are not explorable in a built site. You must reference them in code before building the site. |
+| `assets/` | Assets like JavaScript and fonts used by Hugo to create the static site. These assets are not explorable in a built site. You must reference them in the code before building the site. |
 | `babel.config.js` | A configuration file used for the Babel JS compiler. |
 | `config/` | Contains the configuration files for Hugo. You can manage things like the top-bar menu and site title within this directory. |
 | `content/` | This is where all the `.md` files live that control the content of this site. Most contributions happen in this directory. |
@@ -142,7 +154,7 @@ This section lists the various files and folders and defines the purpose for eac
 | `package-lock.json` | One of the NPM configuration files. Specify which version of packages to download. |
 | `package.json` | Another one of the NPM configuration files. Specifies which packages to download but doesn't specify which _version_ of the package to grab.
 | `resources/` | A cache where Hugo throws generated files like CSS and JSON after `npm run build` has been called. Unless `npm run clean` is called, Hugo will re-use these files when calling `npm run build`. |
-| `static/` | Images, CSS, fonts, and other misc files available at `docs.filecoin.io/` when the site is built. For example, `docs.filecoin.io/site.webmanifest`.
+| `static/` | Images, CSS, fonts, and other misc files that are available at `docs.filecoin.io/` when the site is built. For example, `docs.filecoin.io/site.webmanifest`.
 | `theme.toml` | A Hugo configuration file that specifies which theme to use. This file should not change that often. |
 <!-- /ABOUT THE PROJECT -->
 
@@ -152,40 +164,6 @@ This section lists the various files and folders and defines the purpose for eac
 ## Contributing
 
 Want to help out? Pull requests (PRs) are always welcome! If you want to help out but aren't sure where to start, check out the [issues board](https://github.com/filecoin-project/filecoin-docs/issues).
-
-### Video guides for site management
-
-
-Here's a collection of guides you can use to help manage and contribute to this site:
-
-- [Managing the top-bar navigation](https://bafybeidn4wxz44rssgdlu3p2dzh4tbyevuqd27xv7avioyf2m65jzlhnj4.ipfs.w3s.link/DaaS%20-%20Managing%20the%20topbar%20navigation%20-%20HD%201080p.mov)
-- [Move a page and add a redirect](https://bafybeibuwipv4rk2tzcqvouu2xlnebh4d7ol47mvmegtispbvlcruuwmhi.ipfs.w3s.link/Move%20and%20page%20and%20add%20a%20redirect.mp4)
-
-### Creating sidebar labels and content pages
-
-To create sidebar labels, use the `npm create` command:
-
-```shell
-npm run create -- --kind sidebar storage-provider/hardware 
-```
-
-The above command will create the folder structure and a `_index.md` file containing the front-matter for the label.
-
-### Creating content pages
-
-To create content pages, use the `npm create` command:
-
-```shell
-npm run create -- --kind page storage-provider/hardware/architectures
-```
-
-The above command will create a folder and an `index.md` file containing the front-matter for that page, that can then be edited.
-
-If you make a mistake and need to remove a page, or section, just delete the folder.
-
-To move content from one place to another, create the new pages using `npm create`, copy the text across to the newly created pages and delete the originals.
-
-
 
 ### Front-matter variables 
 
@@ -223,7 +201,7 @@ title: "Get started"
 
 #### Description
 
-The `description` variable defines what is in the [meta `<description>`](https://moz.com/learn/seo/meta-description) tag within the `<head>` tag of this page's HTML.  This description often shows up in search engine results, and social network embeds. This description is meant to give the reader an idea of the content on this page and how it relates to their search query.
+The `description` variable defines what is in the [meta `<description>`](https://moz.com/learn/seo/meta-description) tag within the `<head>` tag of this page's HTML. This description often shows up in search engine results and social network embeds. This description is meant to give the reader an idea of the content on this page and how it relates to their search query.
 
 ```YAML
 ---
@@ -302,20 +280,20 @@ Each section has its own sidebar menu. The name of each sidebar menu is usually 
 
 | Section | Sidebar menu name |
 | --- | --- |
-| About Filecoin | `about` |
-| Build | `build` |
-| Get started | `getstarted` |
+| Basics | `basics` |
+| Store | `store` |
+| Storage providers | `providers` |
+| Nodes | `nodes` |
+| Smart contracts| `smart-contracts` |
 | Networks | `networks` |
 | Reference | `reference` |
-| Storage provider | `storageprovider` |
-| Store | `store` |
 
 
 ```YAML
----
 menu:
-    storageprovider:
----
+  smart-contracts:
+    parent: "smart-contracts-fundamentals"
+    identifier: "overview-3c010e7c403589b274c1d6d9dd0311c5"
 ```
 
 ##### Sub-menu
@@ -331,27 +309,23 @@ Sub-menus are made up of:
 - `url`: The default page a user will go to if they click on this sub-menu link.
 
 ```YAML
-[[about]]
-  name = "Basics"
-  weight = 10
-  identifier = "about-filecoin-basics"
-  url = "/about-filecoin/what-is-filecoin"
+[[main]]
+  name = "Smart Contracts"
+  url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
+  weight = 40
+  identifier= "main-smart-contracts"
 
-...
+    [[main]]
+      name = "Fundamentals"
+      url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
+      weight = 10
+      parent = "main-smart-contracts"
 
-[[networks]]
-  name = "Overview"
-  weight = 10
-  identifier = "networks-overview"
-  url = "/networks/"
-
-...
-
-[[getstarted]]
-  name = "Overview"
-  weight = 1 
-  identifier = "getstarted-overview"
-  url = "/get-started/overview/"
+    [[main]]
+      name = "Filecoin EVM runtime"
+      url = "/smart-contracts/filecoin-evm-runtime/actor-types/"
+      weight = 20
+      parent = "main-smart-contracts"
 ```
 
 To assign a page to a sub-menu, you must supply both the menu object name and the `identifier` value into the front-matter:
@@ -368,7 +342,7 @@ The identifier of each sub-menu is usually the menu object name and the title of
 
 #### Aliases
 
-The `aliases` variable defines URLs will redirect to this page. Each page can have multiple `aliases`, but each alias can only appear once throughout all the `.md` files within the `/content` folder.
+The `aliases` variable defines URLs that will redirect to this page. Each page can have multiple `aliases`, but each alias can only appear once throughout all the `.md` files within the `/content` folder.
 
 For example, the `/get-started/overview` page can list `/get-started` as one of its aliases. However, no other page can list `/get-started` as an alias. If you attempt to assign another page the `/get-started` alias, Hugo will throw an error when you or Fleek try to build the website.
 
@@ -396,9 +370,10 @@ This feature is generally used when we need to share content that isn't fully co
 
 This project contains some handy features you can include within your project.
 
+<!-- Archived content -->
 #### Archived content
 
-Old pages can be archived and hidden from the sidebar view. However, the can still be accessed for historical purposes. 
+Old pages can be archived and hidden from the sidebar view. However, they can still be accessed for historical purposes. 
 
 ![](/.static/images/archived-page.png)
 
@@ -426,17 +401,59 @@ To archive a page:
     ```
 
 Take a look at the `/content/en/archive` directory for examples.
+<!-- /Archived content -->
 
-<!-- #### Code tabs -->
+<!-- Code tabs -->
+#### Code tabs
+
+We can use code tabs to split a section or instruction into different parts based on programming language, operating system, or something else.
+
+The following code creates three code tabs called _JavaScript_, _Go_, and _Rust_:
+
+```markdown
+{{< tabs tabTotal="3">}}
+{{< tab tabName="JavaScript" >}}
+
+<pre>
+function main() {
+    console.log("Hello world");
+}
+</pre>
+
+{{< /tab >}}
+{{< tab tabName="Go" >}}
+
+<pre>
+package main
+import "fmt"
+
+func main() {
+    fmt.Println("Hello world")
+}
+</pre>
 
 
+{{< /tab >}}
+{{< tab tabName="Rust">}}
 
+<pre>
+fn main() {
+    println!("Hello World");
+}
+</pre>
+
+{{< /tab >}}
+{{< /tabs >}}
+```
+<!-- /Code tabs -->
+
+<!-- Tooltips -->
 #### Tooltips
 
 To make understanding terms in the docs a bit easier, users can hover over certain terms to get a short definition. These descriptions are located within a `dict` variable at the top of the `layouts/shortcodes/tooltip.html` shortcode:
 
 ```go
-<!-- Create array/map of all possible tooltips. -->
+<!-- Create an array/map of all possible tooltips. -->
 {{ $tooltips := dict
     "dApps" "Decentralized applications that don't rely on centralized infrastructure."
     "IPFS" "The InterPlanetary File System (IPFS) is a peer-to-peer protocol for sharing and storing files on the internet, designed to be decentralized and distributed."
@@ -444,19 +461,18 @@ To make understanding terms in the docs a bit easier, users can hover over certa
     "Lily" "Software designed to simplify the recording of blockchain data."
     "web3" "A new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics."
 }}
-
-...
 ```
 
-Within your markdown you can use one of these tooltips with the following syntax:
+Within your markdown, you can use one of these tooltips with the following syntax:
 
 ```markdown
 [...] storage on {{< tooltip "IPFS" >}} with blockchain-powered [...]
 ```
 
-The tooltip should show up once the site has built:
+The tooltip should show up once the site has been built:
 
 ![](static/images/tooltip-example.png)
+<!-- /Tooltips -->
 
 <!-- /CONTRIBUTING -->
 
@@ -466,6 +482,18 @@ The tooltip should show up once the site has built:
 ## Issues 
 
 Found a problem with the Filecoin docs site? [Please raise an issue](https://github.com/filecoin-project/filecoin-docs/issues/new). Be as specific and descriptive as possible; screenshots help!
+
+### Priority
+
+We use `p` tags to define the priority of an issue. The priority is defined by the docs team using the following definitions:
+
+| Label | Impact | Due date | Example |
+| ----- | ------ | -------- | ------- |
+| P0 | Severely business-impacting | Same day. Drop everything and fix it immediately. | The website is down. |
+| P1 | Business-impacting. | Within three days. | The API endpoint for a project is about to change. |
+| P2 | Planned project request. | Within two weeks. | A new method will soon be added to a project API. |
+| P3 | Suggestion or conceptual update. | No due date. | A blog post discussing the benefits of decentralization for web developers. |
+| P4 | Deprioritized suggestions. These will not be addressed unless significat activity or community requests are received. | No due date. | Add a dark theme to the docs. |
 <!-- /ISSUES -->
 
 
@@ -475,13 +503,6 @@ Found a problem with the Filecoin docs site? [Please raise an issue](https://git
 
 Dual-licensed: [MIT](./LICENSE-MIT), [Apache Software License v2](./LICENSE-APACHE), by way of the [Permissive License Stack](https://protocol.ai/blog/announcing-the-permissive-license-stack/).
 <!-- /LICENSE -->
-
-
-<!-- TODO
-## Contact
-
-Project Link: [https://github.com/filecoin-project/filecoin-docs](https://github.com/filecoin-project/filecoin-docs)
--->
 
 
 
@@ -512,3 +533,4 @@ Project Link: [https://github.com/filecoin-project/filecoin-docs](https://github
 <!-- /MARKDOWN LINKS & IMAGES -->
 
 <!-- markdownlint-disable-file -->
+
