@@ -27,7 +27,7 @@ To satisfy the varied collateral needs of storage providers in a minimally burde
 
 For more detailed information about how collateral requirements are calculated, see the [miner collateral section in the Filecoin spec](https://spec.filecoin.io/systems/filecoin_mining/miner_collaterals/).
 
-When a storage provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see [Storage Proving]({{<relref storage-proving >}})), storage is taken offline, or any storage deal rules are broken, the provider is penalized against the provided collateral. This penalty is called [_slashing_]({{<relref slashing>}}) and means that a portion of the pledged collateral is forfeited to the `f099` address from your locked or available rewards and your storage power is reduced. The `f099` address is the address where all burned FIL goes.
+When a storage provider fails to answer to the WindowPoSt challenges within the 30 minute deadline (see [Storage Proving]({{<relref storage-proving >}})), storage is taken offline, or any storage deal rules are broken, the provider is penalized against the provided collateral. This penalty is called [_slashing_]({{<relref slashing>}}) and means that a portion of the pledged collateral is forfeited to the `f099` address from your locked or available rewards and your storage power is reduced. The `f099` address is the address where all burned FIL goes.
 
 ## How much collateral?
 
@@ -36,11 +36,11 @@ The amount of required collateral depends on the amount of storage pledged to th
 The formula for the required collateral is:
 
 {{< alert  >}}
-_Collateral needed for X TiBs = (Current Sector Initial Pledge) x (32) x (X TiBs)_
+_Collateral needed for X TiB = (Current Sector Initial Pledge) x (32) x (X TiB)_
 
-So for instance for 100TiB at a 0.20FIL / 32GiB sector this means:
+For instance, for 100 TiB at 0.20 FIL / 32 GiB sector, this means:
 
-_0.20FIL x 32 x 100 = 640 FIL_
+_0.20 FIL x 32 x 100 = 640 FIL_
 {{< /alert >}}
 
 The “Current Sector Initial Pledge" can be found on blockchain explorers like [Filfox](https://filfox.info/en) and [Filscout](https://www.filscout.com/en).
@@ -51,3 +51,4 @@ The ecosystem does have [FIL Lenders](https://filecoin-lending.com/read-more) <!
 The [Filecoin Virtual Machine]({{<relref "the-filecoin-virtual-machine" >}}), introduced in March 2023, enables the creation of new lending mechanisms via smart contracts.
 
 {{< sp-calls-to-action >}}
+<!--REVIEWED!-->
