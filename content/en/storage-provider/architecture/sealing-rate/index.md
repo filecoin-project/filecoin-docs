@@ -58,3 +58,4 @@ Another rule of thumb is to have two PC2 workers for every PC1 worker in your se
 ### Scaling out
 
 A storage provider's sealing capacity scales linearly with the hardware you add to it. For example, if your current setup allows for a sealing rate of 3 TiB per day, doubling the number of workers could bring you to 6 TiB per day. This requires that all components of your infrastructure are able to handle this additional throughput. Using [Sealing-as-a-Service providers]({{<relref "sealing-as-a-service">}}) allows you to scale your sealing capacity without adding more hardware.
+<!--REVIEWED!-->
