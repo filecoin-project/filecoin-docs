@@ -27,7 +27,7 @@ When a user wants to retrieve their data from the Filecoin network, they make a 
 
 ### Blockchain rewards
 
-FIL is used to reward providers who validate and add new blocks to the Filecoin [blockchain] (https://docs.filecoin.io/reference/general/glossary/#blockchain). Providers receive a block reward in FIL for each new [block](https://docs.filecoin.io/reference/general/glossary/#block) they add to the blockchain and also earn transaction fees in FIL for processing storage and retrieval transactions.
+FIL is used to reward providers who validate and add new blocks to the Filecoin blockchain. Providers receive a block reward in FIL for each new block they add to the blockchain and also earn transaction fees in FIL for processing storage and retrieval transactions.
 
 ### Governance
 

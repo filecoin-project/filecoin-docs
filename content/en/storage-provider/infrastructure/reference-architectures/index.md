@@ -39,9 +39,9 @@ Lotus daemon and Boost run as Virtual Machines in this architecture. The advanta
 
 Boost is a resource-intensive process, especially when deals are being ingested over the internet. It also feeds data payload of the deals into the Lotus miner.
 
-We recommend 12-16 cores per VM and 128GiB of memory. Lotus daemon and Boost need to run on fast storage (SSD or faster). The capacity requirements of Boost depend on the size of deals you are accepting as a [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider). Its capacity must be sufficient to be landing space for deals until the data can be processed by your sealing cluster in the backend.
+We recommend 12-16 cores per VM and 128GiB of memory. Lotus daemon and Boost need to run on fast storage (SSD or faster). The capacity requirements of Boost depend on the size of deals you are accepting as a storage provider. Its capacity must be sufficient to be landing space for deals until the data can be processed by your sealing cluster in the backend.
 
-Both Lotus daemon and Boost require public internet connectivity. In the case of Boost you also need to consider bandwidth. Depending on the [deal](https://docs.filecoin.io/reference/general/glossary/#deal) size you are accepting, you might require 1Gbps or 10Gbps internet bandwidth.
+Both Lotus daemon and Boost require public internet connectivity. In the case of Boost you also need to consider bandwidth. Depending on the deal size you are accepting, you might require 1Gbps or 10Gbps internet bandwidth.
 
 ### Lotus miner
 
@@ -53,7 +53,7 @@ Both Lotus daemon and Boost require public internet connectivity. In the case of
 - 2x 10GbE ethernet NICs
 {{< /alert >}}
 
-Lotus [miner](https://docs.filecoin.io/reference/general/glossary/#miner) becomes a less intensive process with dedicated PoST workers separated from it (as in this design). If you use a dedicated storage server or NAS system as the storage target for your sealed and unsealed sectors, Lotus miner eventually could also become a VM. This requires additional CPU and memory on the hypervisor host.
+Lotus miner becomes a less intensive process with dedicated PoST workers separated from it (as in this design). If you use a dedicated storage server or NAS system as the storage target for your sealed and unsealed sectors, Lotus miner eventually could also become a VM. This requires additional CPU and memory on the hypervisor host.
 
 We opted for a standalone Lotus miner in this design and gave it 256GiB of memory. This is because we operate ZFS at the storage layer, which requires a lot of memory for caching. Lotus miner has enough with 128GiB of memory when you opt for a dedicated storage server or NAS system for your storage.
 
@@ -72,7 +72,7 @@ In this architecture we have attached storage shelves to the Lotus miner with 2.
 - 2x 10GbE ethernet NICs
 {{< /alert >}}
 
-We have split off the Winning PoST and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelihood of winning block rewards and reduces the likelihood of missing a proving deadline. For redundancy, you can run a standby [WindowPoST](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) worker on the [WinningPoST](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) server and vice versa.
+We have split off the Winning PoST and Window PoST tasks from the Lotus miner. Using dedicated systems for those processes increase the likelihood of winning block rewards and reduces the likelihood of missing a proving deadline. For redundancy, you can run a standby WindowPoST worker on the WinningPoST server and vice versa.
 
 PoST workers require 128GiB of memory at the minimum and require a capable GPU with 10GB of memory and 3500 or more CUDA cores.
 

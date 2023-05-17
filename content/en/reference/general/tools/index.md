@@ -33,7 +33,7 @@ Support for multisignature transaction signing is currently in progress, and the
 
 ### Filecoin addresses
 
-The _filecoin-address_ library is a JavaScript implementation of the Filecoin [address](https://docs.filecoin.io/reference/general/glossary/#address) type, and can create new address instances, encode addresses, and decode and validate checksums. For further information, including how to install and use, see the [GitHub repository](https://github.com/glifio/modules/tree/primary/packages/filecoin-address).
+The _filecoin-address_ library is a JavaScript implementation of the Filecoin address type, and can create new address instances, encode addresses, and decode and validate checksums. For further information, including how to install and use, see the [GitHub repository](https://github.com/glifio/modules/tree/primary/packages/filecoin-address).
 
 ## Built-in Native Actors
 

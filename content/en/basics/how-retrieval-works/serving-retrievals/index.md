@@ -15,7 +15,7 @@ toc: true
 
 ## The indexer
 
-When a storage [deal](https://docs.filecoin.io/reference/general/glossary/#deal) is originally made, the client can opt to make the data publically discoverable. If this is the case, the [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) must publish an advertisement of the storage deal to the Interplanetary Network Indexer (IPNI). The IPNI contains a CID-to-SP mapping. This mapping allows clients to query the IPNI to discover where content is on Filecoin.
+When a storage deal is originally made, the client can opt to make the data publically discoverable. If this is the case, the storage provider must publish an advertisement of the storage deal to the Interplanetary Network Indexer (IPNI). The IPNI contains a CID-to-SP mapping. This mapping allows clients to query the IPNI to discover where content is on Filecoin.
 
 The IPNI also tracks which data transfer protocols you can use to retrieve specific CIDs. Currently, Filecoin SPs have the ability to serve retrievals over graphsync, bitswap, and HTTP. This is dependent on the SP setup. 
 

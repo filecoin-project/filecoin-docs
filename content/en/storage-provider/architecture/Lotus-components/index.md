@@ -30,7 +30,7 @@ The daemon is a key Lotus component that does the following:
 - Syncs the chain
 - Holds the wallets of the storage provider
 
-The machine running the Lotus daemon must be connected to the public internet for the [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) to function. See the [Lotus documentation](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider) for more in-depth information on connectivity requirements. 
+The machine running the Lotus daemon must be connected to the public internet for the storage provider to function. See the [Lotus documentation](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider) for more in-depth information on connectivity requirements. 
 
 
 ### Syncing the chain
@@ -39,7 +39,7 @@ Syncing the chain is a key role of the daemon. It communicates with the other no
 
 Due to the growth in the size of the chain since its genesis, it is not advised for storage providers to sync the entire history of the network. Instead, providers should use the available [lightweight snapshots](https://lotus.filecoin.io/kb/chain-snapshots/) to import the most recent messages. One exception in which a provider would need to sync the entire chain would be to run a [blockchain explorer]({{< relref "/networks/mainnet/explorers" >}}).
 
-Synced chain data should be stored on an SSD; however, faster NVMe drives are strongly recommended. A slow chain sync can lead to delays in critical messages being sent on-chain from your Lotus miner, resulting in the faulting of sectors and the slashing of [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral).
+Synced chain data should be stored on an SSD; however, faster NVMe drives are strongly recommended. A slow chain sync can lead to delays in critical messages being sent on-chain from your Lotus miner, resulting in the faulting of sectors and the slashing of collateral.
 
 Another important consideration is the size of the file system and available free space. Because the Filecoin chain grows as much as 50GB a day, any available space will eventually fill up. It is up to storage providers to manage the size of the chain on disk and prune it as needed. Solutions like [SplitStore](https://lotus.filecoin.io/lotus/configure/splitstore/) and [compacting](https://lotus.filecoin.io/lotus/manage/chain-management/#compacting-the-chain-data) reduce the storage space used by the chain. Compacting involves replacing the built-up chain data with a recent lightweight snapshot.
 
@@ -57,7 +57,7 @@ For information on how to view wallets and their funds, see [Helpful commands]({
 
 #### Control wallets
 
-Control wallets are required to scale your operations in a production environment. In production, only using the general worker wallet increases the risk of message congestion, which can result in delayed message delivery on-chain and potential [sector](https://docs.filecoin.io/reference/general/glossary/#sector) faulting, slashing, or lost [block](https://docs.filecoin.io/reference/general/glossary/#block) rewards. It is recommended that providers create wallets for each subprocess. There are five different types of control wallets a storage provider can create:
+Control wallets are required to scale your operations in a production environment. In production, only using the general worker wallet increases the risk of message congestion, which can result in delayed message delivery on-chain and potential sector faulting, slashing, or lost block rewards. It is recommended that providers create wallets for each subprocess. There are five different types of control wallets a storage provider can create:
 
 - PoSt wallet
 - PreCommit wallet
@@ -85,7 +85,7 @@ Originally, `lotus-miner` was the component with storage access. This resulted i
 More recently, Lotus has added a more scalable storage access solution in which workers can also be assigned storage access. This removes the bottleneck from the Lotus miner. Low-latency storage access is critical because of the impact on storage-proving processes.
 
 {{< alert "info" >}}
-For information on how to check the storage configuration for your Lotus [miner](https://docs.filecoin.io/reference/general/glossary/#miner) instance, see [Helpful commands]({{< relref "#check-storage-configuration" >}}).
+For information on how to check the storage configuration for your Lotus miner instance, see [Helpful commands]({{< relref "#check-storage-configuration" >}}).
 {{< /alert >}}
 
 Keeping a backup of your sealed sectors, the cache directory, and any unsealed sectors is crucial. Additionally, you should keep a backup of the `sectorstore.json` file that lives under your storage path. The `sectorestore.json` file is required to restore your system in the event of a failure. You can read more about the `sectorstore.json` file in the [lotus docs](https://lotus.filecoin.io/storage-providers/seal-workers/seal-workers/#sector-storage-groups).

@@ -321,7 +321,7 @@ Results:
 
 ## Miner
 
-The [miner](https://docs.filecoin.io/reference/general/glossary/#miner) built-in actor responsible to deal with storage mining operations and collect proof. To interact with a specific storage provider, you must use their miner address to invoke the methods in the built-in miner actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
+The miner built-in actor responsible to deal with storage mining operations and collect proof. To interact with a specific storage provider, you must use their miner address to invoke the methods in the built-in miner actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
 
 ### GetPeerID
 
@@ -1203,7 +1203,7 @@ Results:
 
 ## Verified registry actor
 
-Verified registry actor is responsible for managing [verified clients](https://docs.filecoin.io/reference/general/glossary/#verified-client). The ActorCode for the verified registry built-in actor is `hex"0006"` which will be used to call the exported methods in the verified registry built-in actor. You need to specify the method number for the method you want to invoke. Please referer to each method for its method number.
+Verified registry actor is responsible for managing verified clients. The ActorCode for the verified registry built-in actor is `hex"0006"` which will be used to call the exported methods in the verified registry built-in actor. You need to specify the method number for the method you want to invoke. Please referer to each method for its method number.
 
 ### AddVerifiedClient
 

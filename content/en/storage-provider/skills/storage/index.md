@@ -13,7 +13,7 @@ weight: 640
 toc: true
 ---
 
-Storage is a critical component of running a successful [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) in the Filecoin network. While it may seem obvious that having strong storage skills is important, Filecoin requires a unique end-to-end skill set to run a 24/7 application.
+Storage is a critical component of running a successful storage provider in the Filecoin network. While it may seem obvious that having strong storage skills is important, Filecoin requires a unique end-to-end skill set to run a 24/7 application.
 
 [Storage proving]({{< relref "storage-proving">}}) requires atypical read-behavior from a storage system. This means that the storage administrator must be able to design for this behavior and analyze the storage system accordingly.
 

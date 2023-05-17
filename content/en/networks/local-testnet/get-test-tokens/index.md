@@ -13,7 +13,7 @@ weight: 420
 toc: true
 ---
 
-Before we begin, you must have a local [testnet](https://docs.filecoin.io/reference/general/glossary/#testnet) running. Follow the [Run a local network guide]({{< relref "/networks/local-testnet/set-up" >}}) if you haven't got a local testnet set up yet.
+Before we begin, you must have a local testnet running. Follow the [Run a local network guide]({{< relref "/networks/local-testnet/set-up" >}}) if you haven't got a local testnet set up yet.
 
 1. Change directory to where you created the `lotus` and `lotus-miner` binaries. If you followed the [Run a local network guide]({{< relref "/networks/local-testnet/set-up" >}}) these binaries will be in `~/lotus-devnet`:
 
@@ -33,7 +33,7 @@ Before we begin, you must have a local [testnet](https://docs.filecoin.io/refere
     t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq  49999999.999763880085417692 FIL  2      X
     ```
 
-1. Create the send request with `lotus send`, supplying the pre-mined `t3q4o...` [address](https://docs.filecoin.io/reference/general/glossary/#address) as the `--from` address, the new `t1snl...` address as the receiving address, and the amount of FIL we want to send:
+1. Create the send request with `lotus send`, supplying the pre-mined `t3q4o...` address as the `--from` address, the new `t1snl...` address as the receiving address, and the amount of FIL we want to send:
 
     ```shell
     ./lotus send --from <PRE-MINED ADDRESS> <TO ADDRESS> <VALUE>

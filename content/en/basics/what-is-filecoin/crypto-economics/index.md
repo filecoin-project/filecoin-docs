@@ -21,7 +21,7 @@ The native currency of Filecoin, FIL, is a utility token used to incentivize per
 
 As a utility token that aligns participants’ incentives with the long-term growth of the network, Filecoin issuance is aligned with the overall provable utility of the network. The majority of Filecoin supply would only be minted if the network achieved growth and utility targets at scale.
 
-Specifically, Filecoin uses a [dual minting model](https://spec.filecoin.io#section-systems.filecoin_token.minting_model) for [block](https://docs.filecoin.io/reference/general/glossary/#block) reward minting:
+Specifically, Filecoin uses a [dual minting model](https://spec.filecoin.io#section-systems.filecoin_token.minting_model) for block reward minting:
 
 ## Baseline minting
 
@@ -35,11 +35,11 @@ Additionally, 300M FIL tokens are held back in the mining reserve to incentivize
 
 ## Vesting
 
-Mining rewards undergo a vesting schedule to encourage long-term network alignment. For example, 75% of block rewards earned by miners vest linearly over 180 days, while 25% are made immediately available to improve [miner](https://docs.filecoin.io/reference/general/glossary/#miner) cash flow and profitability. And the remaining FIL tokens are vested to Protocol Labs teams and Filecoin Foundation over 6 years and SAFT investors over 3 years, as shown in the [vesting table](https://spec.filecoin.io/systems/filecoin_token/token_allocation/filtokenallocation.png) here.
+Mining rewards undergo a vesting schedule to encourage long-term network alignment. For example, 75% of block rewards earned by miners vest linearly over 180 days, while 25% are made immediately available to improve miner cash flow and profitability. And the remaining FIL tokens are vested to Protocol Labs teams and Filecoin Foundation over 6 years and SAFT investors over 3 years, as shown in the [vesting table](https://spec.filecoin.io/systems/filecoin_token/token_allocation/filtokenallocation.png) here.
 
 ## Collateral and slashing
 
-To encourage good behavior from network participants, during block reward mining, storage providers must lock Filecoin tokens as [pledge collateral](https://spec.filecoin.io/#section-systems.filecoin_mining.miner_collaterals) for consensus security, storage reliability, and contract guarantees. Pledge collateral is determined by projected block rewards that a miner would earn. Collateral and all earned rewards by storage providers are subject to slashing throughout the lifetime of a [sector](https://docs.filecoin.io/reference/general/glossary/#sector) if the storage does not pass a reliability check.
+To encourage good behavior from network participants, during block reward mining, storage providers must lock Filecoin tokens as [pledge collateral](https://spec.filecoin.io/#section-systems.filecoin_mining.miner_collaterals) for consensus security, storage reliability, and contract guarantees. Pledge collateral is determined by projected block rewards that a miner would earn. Collateral and all earned rewards by storage providers are subject to slashing throughout the lifetime of a sector if the storage does not pass a reliability check.
 
 ## Total supply
 

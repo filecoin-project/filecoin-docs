@@ -1,6 +1,6 @@
 ---
-title: "What is Filecoin"
-description: "Explore Filecoin, a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time."
+title: "Overview"
+description: "Filecoin is a complex system. This section aims to provide a comprehensive overview of Filecoin to developers and serves as a reference that developers can check back on."
 lead: "This section aims to provide a comprehensive overview of Filecoin to developers and serves as a reference that developers can check back on. We assume readers to have a basic understanding of [blockchain](https://en.wikipedia.org/wiki/Blockchain) and [Ethereum](https://ethereum.org/en/developers/docs/) and will focus specifically on the special designs of Filecoin that makes it a unique decentralized storage network in Web3."
 draft: false
 images: []

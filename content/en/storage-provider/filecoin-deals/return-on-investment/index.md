@@ -13,9 +13,9 @@ weight: 370
 toc: true
 ---
 
-Calculating the Return-on-Investment (ROI) of your [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) business is essential to determine the profitability and sustainability of your operations. The ROI indicates the return or profit on your investment relative to the cost of that investment. There are several factors to consider when calculating the ROI of a storage provider business.
+Calculating the Return-on-Investment (ROI) of your storage provider business is essential to determine the profitability and sustainability of your operations. The ROI indicates the return or profit on your investment relative to the cost of that investment. There are several factors to consider when calculating the ROI of a storage provider business.
 
-**First**, the cost of the initial hardware investment and the [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral) in FIL required to participate in the network must be considered. These costs are significant and will likely require financing from investors, venture capitalists, or banks.
+**First**, the cost of the initial hardware investment and the collateral in FIL required to participate in the network must be considered. These costs are significant and will likely require financing from investors, venture capitalists, or banks.
 
 **Second**, the income generated from the block rewards must be factored into the ROI calculation. However, this income is subject to the volatility of the FIL token price, which can be highly unpredictable.
 
@@ -38,7 +38,7 @@ It takes more variables than the cost vs. the income. In summary, the factors th
 
 * **Verified Deals:**
 
-    How much of your total sealed capacity will be done with Verified Deals (Fil+)? Those deals give a far higher return because of the 10x multiplier that is added to your [storage power](https://docs.filecoin.io/reference/general/glossary/#storage-power) and block rewards.
+    How much of your total sealed capacity will be done with Verified Deals (Fil+)? Those deals give a far higher return because of the 10x multiplier that is added to your storage power and block rewards.
 
 * **Committed Capacity:**
 
@@ -46,11 +46,11 @@ It takes more variables than the cost vs. the income. In summary, the factors th
 
 * **Sealing Capacity:**
 
-    How fast can you [seal](https://docs.filecoin.io/reference/general/glossary/#seal) sectors? Faster sealing means you can start earning block rewards earlier and add more data faster. The downside is that it requires a lot of [hardware]({{<relref "reference-architectures">}}).
+    How fast can you seal sectors? Faster sealing means you can start earning block rewards earlier and add more data faster. The downside is that it requires a lot of [hardware]({{<relref "reference-architectures">}}).
 
 * **Deal Duration:**
 
-    How long do you plan to run your storage provider? Are you taking short-term [deals](https://docs.filecoin.io/reference/general/glossary/#deal) only, or are you in it for the long run? Taking long-term deals comes with an associated risk: if you can’t keep your storage provider online for the duration of the deals, you will get penalized. Short-term deals that require extension have the downside of higher operational costs to extend (which requires that the data be re-sealed.).
+    How long do you plan to run your storage provider? Are you taking short-term deals only, or are you in it for the long run? Taking long-term deals comes with an associated risk: if you can’t keep your storage provider online for the duration of the deals, you will get penalized. Short-term deals that require extension have the downside of higher operational costs to extend (which requires that the data be re-sealed.).
 
 * **FIL Collateral pledged:**
 

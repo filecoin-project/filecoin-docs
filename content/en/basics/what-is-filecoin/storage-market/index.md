@@ -22,13 +22,13 @@ The lifecycle for a deal within the storage market contains four distinct phases
 - Discovery: the client identifies potential storage providers (SPs) and asks for their prices.
 - Negotiation: once the client has selected an SP both parties agree to the term of the deal.
 - Publishing: the deal is published on-chain.
-- Handoff: the deal is added into a [sector](https://docs.filecoin.io/reference/general/glossary/#sector) where data storage can be proven by the SP.
+- Handoff: the deal is added into a sector where data storage can be proven by the SP.
 
 ## Filecoin plus  
 
-The mission of Filecoin Plus is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering [verified clients](https://docs.filecoin.io/reference/general/glossary/#verified-client) cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
+The mission of Filecoin Plus is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
 
-Verified clients can onboard data into Filecoin using datacap, which they apply from community-selected notaries. In return for storing verified storage deals, storage providers receive datacap with a 10x boost to their storage power which eventually increases their [block](https://docs.filecoin.io/reference/general/glossary/#block) rewards as an incentive.
+Verified clients can onboard data into Filecoin using datacap, which they apply from community-selected notaries. In return for storing verified storage deals, storage providers receive datacap with a 10x boost to their storage power which eventually increases their block rewards as an incentive.
 
 - Datacap: a Datacap token will be allocated to a verified client to spend in the storage deals carrying a 10x deal quality multiplier.
 - Notaries: community-selected notaries govern the program by verifying storage clients and allocating datacap tokens to verified clients.

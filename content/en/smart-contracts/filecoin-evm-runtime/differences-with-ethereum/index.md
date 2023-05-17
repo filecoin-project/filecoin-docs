@@ -19,7 +19,7 @@ While Filecoin EVM runtime aims to be compatible with the Ethereum ecosystem, it
 
 ## Gas costs
 
-Filecoin charges Filecoin [gas](https://docs.filecoin.io/reference/general/glossary/#gas) only. This includes the Filecoin EVM runtime. Instead of the Filecoin EVM runtime charging gas according to the EVM spec for each EVM opcode executed, the Filecoin virtual machine (FVM) charges Filecoin gas for executing the EVM interpreter itself. The [How gas works]({{< relref "how-gas-works" >}}) page goes into this in more detail. Importantly, this means that Filecoin EVM runtime gas costs and EVM gas costs will be very different:
+Filecoin charges Filecoin gas only. This includes the Filecoin EVM runtime. Instead of the Filecoin EVM runtime charging gas according to the EVM spec for each EVM opcode executed, the Filecoin virtual machine (FVM) charges Filecoin gas for executing the EVM interpreter itself. The [How gas works]({{< relref "how-gas-works" >}}) page goes into this in more detail. Importantly, this means that Filecoin EVM runtime gas costs and EVM gas costs will be very different:
 
 1. EVM and Filecoin gas are different units of measurement and are not 1:1. Purely based on chain throughput (gas/second), the ratio of Ethereum gas to Filecoin gas is about 1:444. Expect Filecoin gas numbers to look _much_ larger than those in Ethereum.
 1. Because Filecoin charges Filecoin gas for executing the Filecoin EVM runtime interpreter:

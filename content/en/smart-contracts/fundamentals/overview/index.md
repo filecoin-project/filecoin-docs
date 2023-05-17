@@ -23,7 +23,7 @@ aliases:
 
 ## Develop on Filecoin
 
-Filecoin combines the benefits of content-addressed data leveraged by {{< tooltip "IPFS" >}} with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives. 
+Filecoin combines the benefits of content-addressed data leveraged by {{< tooltip "IPFS" >}} with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
 
 Developers choose Filecoin because it:
 
@@ -39,7 +39,7 @@ How do Filecoin and IPFS work together? They are complementary protocols for sto
 
 IPFS does not include built-in mechanisms to incentivize the storage of data for other people. To persist IPFS data, you must either run your own IPFS node or pay a provider.
 
-This is where Filecoin comes in. Filecoin adds an incentive layer to content-addressed data. Storage deals are recorded on-chain, and providers must submit proofs of storage to the network over time. Payments, penalties, and [block](https://docs.filecoin.io/reference/general/glossary/#block) rewards are all enforced by the decentralized protocol.
+This is where Filecoin comes in. Filecoin adds an incentive layer to content-addressed data. Storage deals are recorded on-chain, and providers must submit proofs of storage to the network over time. Payments, penalties, and block rewards are all enforced by the decentralized protocol.
 
 Filecoin and IPFS are designed as separate layers to give developers more choice and modularity, but many tools are available for combining their benefits. This diagram illustrates how these tools (often called storage helpers) provide developer-friendly APIs for storing on IPFS, Filecoin, or both.
 

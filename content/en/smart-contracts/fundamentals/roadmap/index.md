@@ -42,7 +42,7 @@ The FVM roadmap is split into three initiatives:
 
 _Completed in February 2022_
 
-The reference FVM implementation has been integrated into a fork of Lotus (the Filecoin reference client). A fleet of canary nodes have been launched on [mainnet](https://docs.filecoin.io/reference/general/glossary/#mainnet), running WASM-compiled built-in actors on the FVM. The canaries are monitored for consensus faults and to gather telemetry. This milestone is a testing milestone that's critical to collect raw execution data to feed into the overhaul of the [gas](https://docs.filecoin.io/reference/general/glossary/#gas) model, in preparation for user-programmability. It implies no network upgrade.
+The reference FVM implementation has been integrated into a fork of Lotus (the Filecoin reference client). A fleet of canary nodes have been launched on mainnet, running WASM-compiled built-in actors on the FVM. The canaries are monitored for consensus faults and to gather telemetry. This milestone is a testing milestone that's critical to collect raw execution data to feed into the overhaul of the gas model, in preparation for user-programmability. It implies no network upgrade.
 
 ### ✅ Milestone 0.5
 
@@ -78,7 +78,7 @@ The Filecoin network will become user-programmable for the first time. Developer
 
 _Completed on January 16th 2023_
 
-A new stable developer [testnet](https://docs.filecoin.io/reference/general/glossary/#testnet) called Hyperspace will be launched as the pre-production testnet. The community is invited to participate in heavy functional, technical, and security testing. Incentives and bounties will be available for developers and security researchers.
+A new stable developer testnet called Hyperspace will be launched as the pre-production testnet. The community is invited to participate in heavy functional, technical, and security testing. Incentives and bounties will be available for developers and security researchers.
 
 #### ✅ FEVM goes live on mainnet
 

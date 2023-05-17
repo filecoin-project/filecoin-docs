@@ -25,7 +25,7 @@ This is where the problem lies. Ethereum-based wallets do not natively recognize
 
 ## The solution 
 
-The FilForwarder exposes a smart contract method called `forward` that takes a byte-level definition of a protocol address in an _f-style_ and a [message](https://docs.filecoin.io/reference/general/glossary/#message) value. It then uses the internal Filecoin APIs exposed using the Filecoin EVM runtime to properly send FIL funds reliably and as cheaply as possible. This also has the side effect of creating the actor ID should the address receiving address be considered new. In this way, using FilForwarder from an Ethereum wallet to any other Filecoin address space is safe and reliable.
+The FilForwarder exposes a smart contract method called `forward` that takes a byte-level definition of a protocol address in an _f-style_ and a message value. It then uses the internal Filecoin APIs exposed using the Filecoin EVM runtime to properly send FIL funds reliably and as cheaply as possible. This also has the side effect of creating the actor ID should the address receiving address be considered new. In this way, using FilForwarder from an Ethereum wallet to any other Filecoin address space is safe and reliable.
 
 ## Use FILForwarder
 

@@ -13,7 +13,7 @@ weight: 630
 toc: true
 ---
 
-Being a Filecoin [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) involves more than just storing customer data. You are also responsible for managing Filecoin wallets and running systems that require 24/7 uptime to avoid losing [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral). This means that if your network or systems are compromised due to a security intrusion, you risk experiencing downtime or even losing access to your systems and storage. Therefore, maintaining proper security is of utmost importance.
+Being a Filecoin storage provider involves more than just storing customer data. You are also responsible for managing Filecoin wallets and running systems that require 24/7 uptime to avoid losing collateral. This means that if your network or systems are compromised due to a security intrusion, you risk experiencing downtime or even losing access to your systems and storage. Therefore, maintaining proper security is of utmost importance.
 
 As a storage provider, you must have the necessary skills and expertise to identify and mitigate potential security threats. This includes understanding common attack vectors such as phishing, malware, and social engineering. On top of that, you must be proficient at implementing appropriate security controls such as firewalls, intrusion detection and prevention systems, and access controls.
 

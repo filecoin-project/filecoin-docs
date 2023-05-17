@@ -24,13 +24,13 @@ It is highly non-trivial to provide highly reliable benchmarks for Filecoin netw
 
 ### Financial transfers
 
-A [message](https://docs.filecoin.io/reference/general/glossary/#message) that requires [transferring FIL](https://lotus.filecoin.io/docs/set-up/manage-fil/) is often extremely fast, and will take on average ~1 blocktime (or around 30 seconds) to be reflected on-chain. We consider 120 blocks (1 hour) a conservative number of confirmations for high-value transfers.
+A message that requires [transferring FIL](https://lotus.filecoin.io/docs/set-up/manage-fil/) is often extremely fast, and will take on average ~1 blocktime (or around 30 seconds) to be reflected on-chain. We consider 120 blocks (1 hour) a conservative number of confirmations for high-value transfers.
 
 ## Data storage
 
-In the Filecoin [data storage protocol](https://docs.filecoin.io/basics/what-is-filecoin/storage-market/), the following occurs once a deal is proposed and accepted:
+In the Filecoin [data storage protocol](https://lotus.filecoin.io/docs/developers/store-data/), the following occurs once a deal is proposed and accepted:
 
-1. _Funding the storage market actor_: This process takes roughly 1-2 minutes and ensures that both the client and the [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) have funds and [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral) to pay for the deal.
+1. _Funding the storage market actor_: This process takes roughly 1-2 minutes and ensures that both the client and the storage provider have funds and collateral to pay for the deal.
 
 2. _Data transfer_: This portion of the deal flow involves the client's node sending the relevant data to the providing node. The data transfer rate varies widely, depending on the client and the storage provider's network and disk bandwidths. Generally, the network speed between client and storage provider is the limiting factor in transfer rate.
 

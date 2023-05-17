@@ -13,7 +13,7 @@ weight: 320
 toc: true
 ---
 
-Filecoin aims to be a decentralized storage network for humanity's essential information. To achieve this, it's crucial to add valuable data to the network. Filecoin Plus (Fil+) is a social trust program encouraging storage providers to store data in _verified deals_. A [deal](https://docs.filecoin.io/reference/general/glossary/#deal) becomes _verified_ after the data owner (client) completes a verification process, where community _notaries_ assess the client's use of Filecoin to determine its relevance and value to the Filecoin mission: storing and preserving humanity's vital data. Notaries conduct due diligence by questioning clients and building reasonable confidence in their trustworthiness and use case.
+Filecoin aims to be a decentralized storage network for humanity's essential information. To achieve this, it's crucial to add valuable data to the network. Filecoin Plus (Fil+) is a social trust program encouraging storage providers to store data in _verified deals_. A deal becomes _verified_ after the data owner (client) completes a verification process, where community _notaries_ assess the client's use of Filecoin to determine its relevance and value to the Filecoin mission: storing and preserving humanity's vital data. Notaries conduct due diligence by questioning clients and building reasonable confidence in their trustworthiness and use case.
 
 ## DataCap
 
@@ -21,7 +21,7 @@ Notaries are responsible for allocating a resource called _DataCap_ to clients w
 
 ## Quality Adjusted Power (QAP)
 
-Storage providers are incentivized by the Filecoin network to store verified deals. A 10x quality adjustment multiplier is set at the protocol level for storage offered for verified deals. A 100TiB dataset will account for 1PiB of _Quality-Adjusted-Power_ (QAP). This means the [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) has a larger share of storage power on the Filecoin network and will be more likely to get elected for [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) (see [Storage proving]({{<relref "storage-proving" >}})). The storage provider will earn 10x more block rewards for the same capacity made available to the network, if that capacity is storing verified deals.
+Storage providers are incentivized by the Filecoin network to store verified deals. A 10x quality adjustment multiplier is set at the protocol level for storage offered for verified deals. A 100TiB dataset will account for 1PiB of _Quality-Adjusted-Power_ (QAP). This means the storage provider has a larger share of storage power on the Filecoin network and will be more likely to get elected for WinningPoSt (see [Storage proving]({{<relref "storage-proving" >}})). The storage provider will earn 10x more block rewards for the same capacity made available to the network, if that capacity is storing verified deals.
 
 When storing real customer data and not simply [CC sectors](https://docs.filecoin.io/reference/general/glossary/#capacity-commitment), a whole new set of responsibilities arises. A storage provider must have the capacity to make deals, to be able to obtain a copy of the data, to prepare the data for the network, prove the data on-chain via sealing, and last but not least, have a means to offer retrieval of the data to the client when requested.
 
@@ -47,7 +47,7 @@ Tools and programs exist to support Filecoin Plus, but storage providers need to
 
 ## Rewards & penalties
 
-With great power, comes great responsibility, which also counts for storage power: rewards on Filecoin Plus deals are 10x, but so are the penalties. Because a [sector](https://docs.filecoin.io/reference/general/glossary/#sector) of 32GiB counts for 320GiB of storage power (10x), the rewards and the penalties are calculated on the QAP of 320GiB. Filecoin Plus allows a storage provider to earn more block rewards on a verified deal, compared to a regular data deal. The 10x multiplier on storage power that comes with a verified deal, however, also requires 10x [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral) from the storage provider.
+With great power, comes great responsibility, which also counts for storage power: rewards on Filecoin Plus deals are 10x, but so are the penalties. Because a sector of 32GiB counts for 320GiB of storage power (10x), the rewards and the penalties are calculated on the QAP of 320GiB. Filecoin Plus allows a storage provider to earn more block rewards on a verified deal, compared to a regular data deal. The 10x multiplier on storage power that comes with a verified deal, however, also requires 10x collateral from the storage provider.
 
 If the storage provider is then not capable of keeping the data and systems online and fails to submit the daily required proofs (WindowPoSt) for that data, the penalties (_slashing_) are also 10x higher than over regular data deals or CC sectors. Larger storage power means larger block rewards, larger collateral and larger slashing. The stakes are high - after all, we’re storing humanity’s most important information with Filecoin.
 

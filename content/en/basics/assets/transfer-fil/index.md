@@ -16,7 +16,7 @@ aliases:
     - "/smart-contracts/wallets/fil-to-zero-x/"
 ---
 
-Etheruem-style addresses start with `0x`. Filecoin [addresses](https://docs.filecoin.io/reference/general/glossary/#address) start with `f`. There are four paths for transferring funds across the Filecoin network depending on which address type you are transferring from and to:
+Etheruem-style addresses start with `0x`. Filecoin addresses start with `f`. There are four paths for transferring funds across the Filecoin network depending on which address type you are transferring from and to:
 
 |   | From an Eth-style address | From a Filecoin address |
 | --- | --- | --- |

@@ -19,11 +19,11 @@ aliases:
 
 ## Address
 
-In the Filecoin network, an [_address_](https://docs.filecoin.io/reference/general/glossary/#address) is a unique cryptographic value that serves to publicly identify a user. This value, a public key, is paired with a corresponding private key. The mathematical relationship between the two keys is such that access to the private key allows the creation of a signature that can be verified with the public key. Filecoin specifically employs the Boneh–Lynn–Shacham (BLS) signature scheme for this purpose.
+In the Filecoin network, an _address_ is a unique cryptographic value that serves to publicly identify a user. This value, a public key, is paired with a corresponding private key. The mathematical relationship between the two keys is such that access to the private key allows the creation of a signature that can be verified with the public key. Filecoin specifically employs the Boneh–Lynn–Shacham (BLS) signature scheme for this purpose.
 
 ## Block
 
-In a blockchain, a _block_ is the fundamental unit of record. Each [block](https://docs.filecoin.io/reference/general/glossary/#block) is cryptographically linked to one or more previous blocks. Blocks typically contain [messages](#message) relating changes to some state (for example, financial records) tracked by the blockchain.
+In a blockchain, a _block_ is the fundamental unit of record. Each block is cryptographically linked to one or more previous blocks. Blocks typically contain [messages](#message) relating changes to some state (for example, financial records) tracked by the blockchain.
 
 ## Blockchain
 
@@ -31,15 +31,15 @@ Fundamentally, a _blockchain_ is a system of record in which new records, or [bl
 
 ## Block height
 
-The _height_ of a [block](#block) corresponds to the number of [epochs](#epoch) elapsed before the block was added to the blockchain and is called [block height](https://docs.filecoin.io/reference/general/glossary/#block-height). The height of the Filecoin [blockchain](#blockchain) is defined to be the maximum height of any block in the blockchain.
+The _height_ of a [block](#block) corresponds to the number of [epochs](#epoch) elapsed before the block was added to the blockchain. The height of the Filecoin [blockchain](#blockchain) is defined to be the maximum height of any block in the blockchain.
 
 ## Capacity commitment
 
-If a storage provider doesn't find any available [deal](https://docs.filecoin.io/reference/general/glossary/#deal) proposals appealing, they can alternatively make a [_capacity commitment_](https://docs.filecoin.io/reference/general/glossary/#capacity-commitment), filling a [sector](#sector) with arbitrary data, rather than with client data. Maintaining this [sector](https://docs.filecoin.io/reference/general/glossary/#sector) allows the storage provider to provably demonstrate that they are reserving space on behalf of the network.
+If a storage provider doesn't find any available deal proposals appealing, they can alternatively make a _capacity commitment_, filling a [sector](#sector) with arbitrary data, rather than with client data. Maintaining this sector allows the storage provider to provably demonstrate that they are reserving space on behalf of the network.
 
 ## CommP
 
-The commitment phase of the [Proof-of-Replication](https://docs.filecoin.io/reference/general/glossary/#proof-of-replication-porep) (PoRep) process is called [CommP](https://docs.filecoin.io/reference/general/glossary/#commp). PoRep is a mechanism used to verify that a storage provider is storing data on behalf of a client by requiring the provider to prove that they have replicated the client's data to their storage space.
+The commitment phase of the Proof-of-Replication (PoRep) process. PoRep is a mechanism used to verify that a storage provider is storing data on behalf of a client by requiring the provider to prove that they have replicated the client's data to their storage space.
 
 ## Content IDentifier (CID)
 
@@ -83,7 +83,7 @@ Finality refers to the immutability of messages and state recorded to the Fileco
 
 ## Gas
 
-_Gas_ is a property of a [message](#message), corresponding to the resources involved in including that message in a given [block](#block). For each [message](https://docs.filecoin.io/reference/general/glossary/#message) included in a block, the block's creator extracts a fee from the message's sender; this fee is proportional to the message's gas.
+_Gas_ is a property of a [message](#message), corresponding to the resources involved in including that message in a given [block](#block). For each message included in a block, the block's creator extracts a fee from the message's sender; this fee is proportional to the message's gas.
 
 ## Mainnet
 
@@ -111,7 +111,7 @@ The Filecoin project uses the term _provider_ to refer to participants in the ne
 
 ## Pledged storage
 
-Storage capacity that a provider has promised to reserve for the Filecoin network via [Proof-of-Replication](#proof-of-replication-porep) is termed [_pledged storage_](https://docs.filecoin.io/reference/general/glossary/#pledged-storage).
+Storage capacity that a provider has promised to reserve for the Filecoin network via [Proof-of-Replication](#proof-of-replication-porep) is termed _pledged storage_.
 
 ## Proof-of-Storage
 
@@ -131,7 +131,7 @@ _Proof-of-Spacetime_ is a procedure by which a [storage-provider](#storage-provi
 
 ## Quality-adjusted storage power
 
-The storage power a [storage provider](#storage-provider) earns from a storage [deal](https://docs.filecoin.io/reference/general/glossary/#deal) offered by a [verified client](#verified-client) will be augmented by a multiplier. Power totals that take into account this multiplier are termed _quality adjusted_.
+The storage power a [storage provider](#storage-provider) earns from a storage deal offered by a [verified client](#verified-client) will be augmented by a multiplier. Power totals that take into account this multiplier are termed _quality adjusted_.
 
 ## Retrieval provider
 
@@ -167,7 +167,7 @@ An _argument of knowledge_ is a construction by which one party, called the _pro
 
 - A _succinct_ argument of knowledge is one that can be "quickly" verified, and which is "small", for appropriate definitions of both of those terms.
 
-A zero-knowledge, succinct non-interactive argument of knowledge, also called a [zk-SNARK](https://docs.filecoin.io/reference/general/glossary/#zero-knowledge-succinct-non-interactive-argument-of-knowledge-zk-snark) embodies all of these properties. Filecoin utilizes these constructions to enable its distributed network to efficiently verify that [storage providers](#storage-provider) are storing files they pledged to store, without requiring the verifiers to maintain copies of these files themselves.
+A zero-knowledge, succinct non-interactive argument of knowledge (zk-SNARK) embodies all of these properties. Filecoin utilizes these constructions to enable its distributed network to efficiently verify that [storage providers](#storage-provider) are storing files they pledged to store, without requiring the verifiers to maintain copies of these files themselves.
 
 ## Testnet
 

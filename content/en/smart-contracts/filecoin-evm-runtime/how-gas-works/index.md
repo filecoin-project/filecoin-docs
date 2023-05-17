@@ -19,7 +19,7 @@ When executing a message that invokes an EVM contract, the Filecoin virtual mach
 
 The Filecoin EVM-runtime interpreter must first load its state, including the contract state, which costs additional gas. The interpreter then begins the execution of the contract bytecode. Each opcode interpreted may perform computation, syscalls, state i/o, and send new messages, all of which are charged with FIL gas. Finally, if the contract state is modified, the interpreter must flush it to the blockstore, which costs additional gas.
 
-Generally, it is not possible to compute [gas](https://docs.filecoin.io/reference/general/glossary/#gas) costs for a contract invocation without using gas estimation through speculative execution.
+Generally, it is not possible to compute gas costs for a contract invocation without using gas estimation through speculative execution.
 
 ## Calculation example
 
@@ -70,7 +70,7 @@ Filecoin nodes, such as Lotus, have several JSON-API API endpoints designed to h
 If you want to learn more about how to use those JSON-RPC APIs for the Filecoin gas model, please check the [JSON RPC API docs for Gas]({{< relref "reference/json-rpc/gas" >}}).
 
 {{< alert  >}}
-Gas estimation varies from network to network. For example, the `BaseFee` on [mainnet](https://docs.filecoin.io/reference/general/glossary/#mainnet) is different from the `BaseFee` on the Hyperspace testnet.
+Gas estimation varies from network to network. For example, the `BaseFee` on mainnet is different from the `BaseFee` on the Hyperspace testnet.
 {{< / alert  >}}
 
 If you'd rather not calculate and estimate gas for every message, you can just leave the optional fields unset. The gas fields will be estimated and set when the message is pushed to the mempool.

@@ -18,7 +18,7 @@ observing the lotus sync service.
 
 ## SyncCheckBad
 
-SyncCheckBad checks if a [block](https://docs.filecoin.io/reference/general/glossary/#block) was marked as bad, and if it was, returns
+SyncCheckBad checks if a block was marked as bad, and if it was, returns
 the reason.
 
 Perms: read

@@ -24,7 +24,7 @@ A complete overview of the architecture can be found in the [IPC Design Referenc
 
 ## IPC Agent
 
-The IPC Agent is the entry point to interacting with IPC. It is a client application that provides a simple and easy-to-use interface to interact with IPC as a user and run all the processes required to operate a subnet. The agent acts as an orchestrator, connecting to one [blockchain](https://docs.filecoin.io/reference/general/glossary/#blockchain) node in each relevant subnet. It also handles the entire IPC workflow, including subnet creation, cross-net message passing, and checkpointing.
+The IPC Agent is the entry point to interacting with IPC. It is a client application that provides a simple and easy-to-use interface to interact with IPC as a user and run all the processes required to operate a subnet. The agent acts as an orchestrator, connecting to one blockchain node in each relevant subnet. It also handles the entire IPC workflow, including subnet creation, cross-net message passing, and checkpointing.
 
 More information on the IPC Agent, as well as comprehensive documentation, can be found on [GitHub](https://github.com/consensus-shipyard/ipc-agent).
 

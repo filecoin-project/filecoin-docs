@@ -43,7 +43,7 @@ The FVM enables the creation and management of data-based decentralized and auto
 
 #### Perpetual storage
 
-FVM allows users to store once and have repair and replication bots manage the repetitive storage [deal](https://docs.filecoin.io/reference/general/glossary/#deal) creation tasks so that data can be stored perpetually. Using a smart contract, users can provision a wallet with FIL, and storage providers can use that to fund data storage permanently. Repair bots can monitor the storage deals and replicate the data with other storage providers when necessary. This process gives users long-term storage permanence.
+FVM allows users to store once and have repair and replication bots manage the repetitive storage deal creation tasks so that data can be stored perpetually. Using a smart contract, users can provision a wallet with FIL, and storage providers can use that to fund data storage permanently. Repair bots can monitor the storage deals and replicate the data with other storage providers when necessary. This process gives users long-term storage permanence.
 
 ### Financial services for miners
 
@@ -51,7 +51,7 @@ FVM can provide a variety of financial services for storage providers. The needs
 
 #### Lending and staking protocols
 
-Users can lend out Filecoin to storage providers to use it as storage [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral) and receive interest in return. These loans can be under-collateralized based on the on-chain storage history of past [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) performance. Community members can use this history to generate reputation scores, enabling everyone to identify good borrowers. On top of that, loans can be automatically paid back to investors by using a multisig as the storage provider’s owner [address](https://docs.filecoin.io/reference/general/glossary/#address), including lenders and a third party, to help negotiate payback. New FVM-enabled smart contracts give every FIL token holder access to new yield opportunities on their holdings while also benefiting the whole Filecoin economy by allowing entry ramps for providing storage on the network.
+Users can lend out Filecoin to storage providers to use it as storage collateral and receive interest in return. These loans can be under-collateralized based on the on-chain storage history of past storage provider performance. Community members can use this history to generate reputation scores, enabling everyone to identify good borrowers. On top of that, loans can be automatically paid back to investors by using a multisig as the storage provider’s owner address, including lenders and a third party, to help negotiate payback. New FVM-enabled smart contracts give every FIL token holder access to new yield opportunities on their holdings while also benefiting the whole Filecoin economy by allowing entry ramps for providing storage on the network.
 
 #### Insurance
 
@@ -87,9 +87,9 @@ Because Filecoin nodes offer the Ethereum JSON-RPC API support, FEVM is also com
 
 Developers can deploy actors on either the FEVM or native FVM; which one should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don’t mind slightly less performance, deploy to the FEVM. You can find out more about the pros and cons of each in the [table here](https://docs.filecoin.io/developers/smart-contracts/concepts/filecoin-evm/#fevm-and-native-fvm).
 
-To sum it up, the FEVM allows current Web3 developers to quickly start writing actors on the Filecoin [blockchain](https://docs.filecoin.io/reference/general/glossary/#blockchain) while using all of the tools, software packages, and languages they are used to while having access to Filecoin storage deals as a native.
+To sum it up, the FEVM allows current Web3 developers to quickly start writing actors on the Filecoin blockchain while using all of the tools, software packages, and languages they are used to while having access to Filecoin storage deals as a native.
 
-The difference between FEVM and EVM contracts is that contracts deployed on FEVM can interact with built-in actors to interact with Filecoin-specific actors, such as [miner](https://docs.filecoin.io/reference/general/glossary/#miner) actors, as mentioned in the built-in actor section. This allows developers to build Filecoin-native decentralized applications for the new use cases mentioned above. Smart contracts deployed to the Ethereum blockchain have no direct access to the Filecoin network or Filecoin-specific actors.
+The difference between FEVM and EVM contracts is that contracts deployed on FEVM can interact with built-in actors to interact with Filecoin-specific actors, such as miner actors, as mentioned in the built-in actor section. This allows developers to build Filecoin-native decentralized applications for the new use cases mentioned above. Smart contracts deployed to the Ethereum blockchain have no direct access to the Filecoin network or Filecoin-specific actors.
 
 To allow Solidity smart contracts on FEVM to seamlessly call methods on Filecoin built-in actors and access Filecoin-specific syscalls idiomatically, a Filecoin-Solidity API library has been developed, you can use it for building your use cases, such as interacting with storage deals.
 

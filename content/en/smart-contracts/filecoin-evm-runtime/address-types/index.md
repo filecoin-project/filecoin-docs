@@ -13,7 +13,7 @@ weight: 210
 toc: true
 ---
 
-Filecoin has five [address](https://docs.filecoin.io/reference/general/glossary/#address) classes, and actors tend to have *multiple* addresses. Furthermore, each address class has its own rules for converting between binary and text.
+Filecoin has five address classes, and actors tend to have *multiple* addresses. Furthermore, each address class has its own rules for converting between binary and text.
 
 The goal of using different types of addresses is to provide a robust address format that is scalable, easy to use, and reliable. These addresses encode information including：
 
@@ -50,7 +50,7 @@ Each address type is described below.
 
 All addresses have a short integer assigned to them by `InitActor` sequentially, a unique actor that can create _new_ actors. The integer that gets assigned is the ID of that actor. An _ID address_ is an actor's ID prefixed with the network identifier and the protocol indicator. Therefore, any address in the Filecoin network has a unique ID address assigned to it.
 
-The[ mainnet ](https://docs.filecoin.io/reference/general/glossary/#mainnet) burn account ID address is `f099` and is structured as follows:
+The mainnet burn account ID address is `f099` and is structured as follows:
 
 ```plaintext
   Protocol Indicator

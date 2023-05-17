@@ -13,7 +13,7 @@ weight: 650
 toc: true
 ---
 
-Running a [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) business is not just about having technical expertise and providing storage services. It is also about building and maintaining relationships with clients, negotiating contracts, and managing finances effectively. A storage provider must be able to communicate the value of their services to potential clients, as well as ensure that current clients are satisfied and receive the support they need.
+Running a storage provider business is not just about having technical expertise and providing storage services. It is also about building and maintaining relationships with clients, negotiating contracts, and managing finances effectively. A storage provider must be able to communicate the value of their services to potential clients, as well as ensure that current clients are satisfied and receive the support they need.
 
 **Sales skills** are important for storage providers to differentiate themselves from the competition, market their services effectively, and attract new customers. This requires an understanding of the market, the needs of potential clients, and how to tailor their services to meet those needs. Storage providers should also be able to identify opportunities for growth and expansion, and have a strategy in place for pursuing those opportunities.
 
@@ -22,7 +22,7 @@ In addition to sales skills, financial management skills are also crucial for ru
 Overall, sales skills are essential for storage providers to succeed in a competitive market. By combining technical expertise with strong business and commercial skills, storage providers can build a successful and sustainable business.
 
 ## Business aspects
-Running a storage provider business involves several business aspects that require careful attention to ensure long-term success. The first and most obvious aspect is investment in hardware and FIL as [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral). Hardware is the backbone of any storage provider's business, and ensuring that you have the right equipment to provide reliable and high-performance storage is critical. Additionally, FIL is the primary currency used within the Filecoin network, and as a storage provider, you need to ensure that you have a sufficient amount of FIL as collateral to cover your storage deals.
+Running a storage provider business involves several business aspects that require careful attention to ensure long-term success. The first and most obvious aspect is investment in hardware and FIL as collateral. Hardware is the backbone of any storage provider's business, and ensuring that you have the right equipment to provide reliable and high-performance storage is critical. Additionally, FIL is the primary currency used within the Filecoin network, and as a storage provider, you need to ensure that you have a sufficient amount of FIL as collateral to cover your storage deals.
 
 As your business grows, the amount of hardware and FIL needed will increase, and it is important to have a clear plan for scaling your business. This involves not only investing in additional hardware and FIL but also managing operational costs such as electricity, cooling, and maintenance. Having a skilled business team that can manage and plan for these costs is essential.
 
@@ -43,6 +43,6 @@ A storage provider needs to get storage deals to grow his network power and to e
 
 Acquiring your own customers, and bringing their data onto the Filecoin network, requires business development skills and people on your team who actively work with data owners (customers) to educate them about the advantages of decentralized storage.
   
-It takes additional effort to work with customers and their data, but it has the additional advantage of being able to charge your customer for the data being stored. This means an additional revenue stream compared to only storing copies of deals, and earning [block](https://docs.filecoin.io/reference/general/glossary/#block) rewards.
+It takes additional effort to work with customers and their data, but it has the additional advantage of being able to charge your customer for the data being stored. This means an additional revenue stream compared to only storing copies of deals, and earning block rewards.
 
 {{< sp-calls-to-action >}}

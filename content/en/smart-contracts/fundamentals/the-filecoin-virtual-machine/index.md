@@ -25,7 +25,7 @@ aliases:
 
 ## Features
 
-The Filecoin virtual machine (FVM) was created to enable developers to build new use cases on top of the Filecoin network. Data access control, data DAOs, perpetual storage, [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral) leasing, and Ethereum-compatible fungible and non-fungible tokens are just some of the use-cases for the FVM.
+The Filecoin virtual machine (FVM) was created to enable developers to build new use cases on top of the Filecoin network. Data access control, data DAOs, perpetual storage, collateral leasing, and Ethereum-compatible fungible and non-fungible tokens are just some of the use-cases for the FVM.
 
 ### Data access control
 
@@ -45,7 +45,7 @@ FIL token holders can use their holdings to provide storage collateral and recei
 
 ### Ethereum compatibility
 
-The FVM is fully EVM-compatible, allowing new ERC-20 tokens to be launched on the Filecoin network and enabling layer two networks to leverage its [storage power](https://docs.filecoin.io/reference/general/glossary/#storage-power) and security. The majority of EVM tooling can also be used within the Filecoin ecosystem.
+The FVM is fully EVM-compatible, allowing new ERC-20 tokens to be launched on the Filecoin network and enabling layer two networks to leverage its storage power and security. The majority of EVM tooling can also be used within the Filecoin ecosystem.
 
 ## Use-cases
 
@@ -67,7 +67,7 @@ The smart contract could also be able to transfer your data just once into the f
 
 ### Smarter storage markets
 
-Imagine richer functionality in storage markets with features like auto-renewal of deals or self-repairing deals in the event of [sector](https://docs.filecoin.io/reference/general/glossary/#sector) issues. Other possibilities are time-locked or event-driven data deals where retrieval only occurs under a specified timeframe or event trigger.
+Imagine richer functionality in storage markets with features like auto-renewal of deals or self-repairing deals in the event of sector issues. Other possibilities are time-locked or event-driven data deals where retrieval only occurs under a specified timeframe or event trigger.
 
 ### The list goes on
 
@@ -107,7 +107,7 @@ The DataDAO should be the minter of a standard ERC20 token $DATA and have the ab
 
 ##### Publish a deal to the DataDAO
 
-Storage providers should [seal](https://docs.filecoin.io/reference/general/glossary/#seal) the data and publish the [deal](https://docs.filecoin.io/reference/general/glossary/#deal) information to the market actor by calling `publish_deal` on the market actor. The DataDAO will act as the client of the deal. (The command to seal the data and generate deal information are under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)).
+Storage providers should seal the data and publish the deal information to the market actor by calling `publish_deal` on the market actor. The DataDAO will act as the client of the deal. (The command to seal the data and generate deal information are under development and will be updated here when more information is available) (p.s. [`publish_deal` is called `publish_storage_deals` in the mock solidity API](https://github.com/Zondax/fevm-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol#L170)).
 
 The market actor will call the [AuthenticateMessage](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0044.md) native method on the DataDAO contract to know if this deal should be created. This method will be called using the FRC42 method number as specified in the linked FRC.
 
@@ -119,7 +119,7 @@ The DataDAO contract should check if the deal was published according to its bus
 - If the CID of the deal does not have enough replications, the DataDAO contract should allow the creation of this deal
 - The DataDAO should reject other deals, not in the above cases
 
-The DataDAO contract should mint some $DATA and send it to the [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) who successfully published the deal.
+The DataDAO contract should mint some $DATA and send it to the storage provider who successfully published the deal.
 
 ![Diagram showing the relationship between Market Actor, Client Contracts, and storage providers within the Filecoin network.](client-market-sp-mesh.png)
 
@@ -193,8 +193,8 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 
 ##### Owner address
 
-- Income and returned collateral are paid to this [address](https://docs.filecoin.io/reference/general/glossary/#address).
-- This address is also allowed to change the worker address for the [miner](https://docs.filecoin.io/reference/general/glossary/#miner)
+- Income and returned collateral are paid to this address.
+- This address is also allowed to change the worker address for the miner
 - `change_owner_address` method can change the owner address
 
 ##### [Beneficiary address](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0029.md)
@@ -220,7 +220,7 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 ##### Collateral underwriting (can be custom to lender off-chain)
 
 - (off-chain) The storage providers submits the desired lease amount and lease period to the lease market.
-- (off-chain) The lease market determines the leasing fees rate based on the on-chain information of the miner, such as [slash](https://docs.filecoin.io/reference/general/glossary/#slash) rate, length of operations, power, …
+- (off-chain) The lease market determines the leasing fees rate based on the on-chain information of the miner, such as slash rate, length of operations, power, …
 - (off-chain) The lease market generates a signed lease specification that can be submitted on-chain, including the lease amount, lease period, and leasing fees rate.
 - (off-chain) The storage provider submits the signed lease specification lease amount, lease period, and leasing fees rate to the LendingMarket contract to create the lease.
 
@@ -228,7 +228,7 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 
 - The LendingMarket contract will create a smart contract (LoanAgent) using (CREATE2):
     - LoanAgent contract will serve as the owner and beneficiary of the miner actor
-- The miner will transfer the ownership to the smart contract owner through a separate [message](https://docs.filecoin.io/reference/general/glossary/#message) submitted externally. In the future, there will be a `Miner` method to change the owner address.
+- The miner will transfer the ownership to the smart contract owner through a separate message submitted externally. In the future, there will be a `Miner` method to change the owner address.
 - The LendingMarket contract will check if the `miner` actor’s owner is the LoanAgent
 - The LendingMarket calls the LoanAgent contract to call the ChangeBeneficiary method on the miner actor to specify the LoanAgent as its beneficiary
 

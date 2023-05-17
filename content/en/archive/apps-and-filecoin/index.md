@@ -18,7 +18,7 @@ aliases:
 
 ### Verifiable storage
 
-Filecoin has built-in processes to check the history of files and verify that they have been stored correctly over time. Every [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) proves that they are maintaining their files in every 24-hour window. Clients can efficiently scan this history to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
+Filecoin has built-in processes to check the history of files and verify that they have been stored correctly over time. Every storage provider proves that they are maintaining their files in every 24-hour window. Clients can efficiently scan this history to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
 
 {{< alert >}}
 [Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
@@ -26,7 +26,7 @@ Filecoin has built-in processes to check the history of files and verify that th
 
 ### Open market
 
-In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
+In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a storage provider only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
 
 ### Competitive prices
 
@@ -50,7 +50,7 @@ Filecoin resists censorship because no central provider can be coerced into dele
 
 ### Useful blockchain
 
-In Filecoin, storage providers are rewarded for providing storage, not for performing wasteful computations. Filecoin secures its [blockchain](https://docs.filecoin.io/reference/general/glossary/#blockchain) using proof of file replication and proof of storage over time. It doesn’t rely on energy-intensive proof-of-work schemes like other blockchains. Miners are incentivized to amass hard drives and put them to use by storing files. Filecoin doesn’t incentivize hoarding of graphics cards or application-specific integrated circuits for the sole purpose of mining.
+In Filecoin, storage providers are rewarded for providing storage, not for performing wasteful computations. Filecoin secures its blockchain using proof of file replication and proof of storage over time. It doesn’t rely on energy-intensive proof-of-work schemes like other blockchains. Miners are incentivized to amass hard drives and put them to use by storing files. Filecoin doesn’t incentivize hoarding of graphics cards or application-specific integrated circuits for the sole purpose of mining.
 
 ### Provides storage to other blockchains
 

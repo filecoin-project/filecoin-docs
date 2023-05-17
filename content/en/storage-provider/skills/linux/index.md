@@ -13,7 +13,7 @@ weight: 610
 toc: true
 ---
 
-Becoming a [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) requires a team with a variety of skills.
+Becoming a storage provider requires a team with a variety of skills.
 Of all the technical skills needed to run a storage provider business, storage knowledge is important, but arguably, it is even more important to have deep understanding of the Linux operating system.
 
 Where most enterprise storage systems (NAS, SAN and other types) do not require the administrator to have hands-on Linux experience, Filecoin does require a lot more knowledge about Linux. For starters, this is because Filecoin is not just a storage system. It is a blockchain platform that offers decentralized storage. As a storage provider you are dealing with all the things required to run a alway-on production system, not just storage.

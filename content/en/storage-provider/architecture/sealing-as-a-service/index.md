@@ -15,7 +15,7 @@ toc: true
 
 ## Overview
 
-In a traditional setup, a [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) needs high-end hardware to build out a [sealing pipeline]({{<relref "sealing-pipeline">}}). Storage providers with hardware cost or availability constraints can use _Sealing-as-a-Service_ providers, where another provider performs sector sealing on the storage provider's behalf. In this model, the following occurs:
+In a traditional setup, a storage provider needs high-end hardware to build out a [sealing pipeline]({{<relref "sealing-pipeline">}}). Storage providers with hardware cost or availability constraints can use _Sealing-as-a-Service_ providers, where another provider performs sector sealing on the storage provider's behalf. In this model, the following occurs:
 
 1. The storage provider provides the data to the sealer
 1. The sealer seals the data into sectors.

@@ -64,7 +64,7 @@ Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
 - [Beryx by Zondax](https://beryx.zondax.ch/faucet)
 - [Hyperspace.yoga](https://hyperspace.yoga/#faucet)
 
-    - The [faucet](https://docs.filecoin.io/reference/general/glossary/#faucet) currently emits 5 tFIL per request with a max of 5 requests / wallet (to prevent draining attacks). If you are setting up a [storage provider](https://docs.filecoin.io/reference/general/glossary/#storage-provider) you may need more tFIL than this. Reach out to on [#fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY) for assistance.
+    - The faucet currently emits 5 tFIL per request with a max of 5 requests / wallet (to prevent draining attacks). If you are setting up a storage provider you may need more tFIL than this. Reach out to on [#fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY) for assistance.
 
 ## Resources
 

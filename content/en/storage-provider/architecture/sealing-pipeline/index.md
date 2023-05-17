@@ -13,7 +13,7 @@ weight: 420
 toc: true
 ---
 
-Each step in the sealing process has different performance considerations, and fine-tuning is required to align the different steps optimally. For example, storage providers that don't understand the process expected throughput may end up overloading the sealing pipeline by trying to [seal](https://docs.filecoin.io/reference/general/glossary/#seal) too many sectors at once or taking on a dataset that is too large for available infrastructure. This can lead to a slower _sealing rate_, which is discussed in greater detail in [Sealing Rate]({{<relref "sealing-rate">}}).
+Each step in the sealing process has different performance considerations, and fine-tuning is required to align the different steps optimally. For example, storage providers that don't understand the process expected throughput may end up overloading the sealing pipeline by trying to seal too many sectors at once or taking on a dataset that is too large for available infrastructure. This can lead to a slower _sealing rate_, which is discussed in greater detail in [Sealing Rate]({{<relref "sealing-rate">}}).
 
 ## Overview
 
@@ -23,7 +23,7 @@ The sealing pipeline can be broken into the following steps:
 
 ### AddPiece
 
-The sealing pipeline begins with _AddPiece_ (AP), where the pipeline takes a _Piece_ and prepares it into the sealing scratch space for the _PreCommit 1_ task ([PC1]({{<relref "#2-precommit-1-pc1">}})) to take over. In Filecoin, a _Piece_ is data in CAR-file format produced by an [IPLD DAG](https://ipld.io) with a corresponding `PayloadCID` and `PieceCID`. The maximum Piece size is equal to the [sector](https://docs.filecoin.io/reference/general/glossary/#sector) size, which is either 32 GiB or 64 GiB. If the content is larger than the sector size, it must be split into more than one `PieceCID` during data preparation.
+The sealing pipeline begins with _AddPiece_ (AP), where the pipeline takes a _Piece_ and prepares it into the sealing scratch space for the _PreCommit 1_ task ([PC1]({{<relref "#2-precommit-1-pc1">}})) to take over. In Filecoin, a _Piece_ is data in CAR-file format produced by an [IPLD DAG](https://ipld.io) with a corresponding `PayloadCID` and `PieceCID`. The maximum Piece size is equal to the sector size, which is either 32 GiB or 64 GiB. If the content is larger than the sector size, it must be split into more than one `PieceCID` during data preparation.
 
 The AddPiece process is not a very intensive process and only uses some CPU cores; it doesn't require the use of a GPU. It is typically co-located on a server with other worker processes from the sealing pipeline. As PC1 is the next process in the sealing pipeline, running AddPiece on the same server as the PC1 process is a logical architecture configuration.
 
@@ -35,7 +35,7 @@ taskset -c <xx-xx> lotus-worker run ...
 
 ### PreCommit 1
 
-PreCommit 1 (PC1) is the most intensive process of the entire sealing pipeline. PC1 is the step in which a sector, regardless of whether it contains data or not, is cryptographically secured. The worker process loads cryptographic parameters from a cache location, which should be stored on enterprise NVMe for latency reduction. These parameters are then used to run [Proof-of-Replication](https://docs.filecoin.io/reference/general/glossary/#proof-of-replication-porep) (PoRep) SDR encoding against the sector that was put into the sealing scratch space. This task is single-threaded and very CPU intensive, so it requires a CPU with SHA256 extensions. Typical CPUs that meet this requirement include the AMD Epyc Milan/Rome or an Intel Xeon Ice Lake with 32 cores or more.
+PreCommit 1 (PC1) is the most intensive process of the entire sealing pipeline. PC1 is the step in which a sector, regardless of whether it contains data or not, is cryptographically secured. The worker process loads cryptographic parameters from a cache location, which should be stored on enterprise NVMe for latency reduction. These parameters are then used to run Proof-of-Replication (PoRep) SDR encoding against the sector that was put into the sealing scratch space. This task is single-threaded and very CPU intensive, so it requires a CPU with SHA256 extensions. Typical CPUs that meet this requirement include the AMD Epyc Milan/Rome or an Intel Xeon Ice Lake with 32 cores or more.
 
 Using the scratch space, the PC1 task will create 11 layers of the sector. Storage providers must host scratch space for this on enterprise NVMe. This means that:
 
@@ -59,7 +59,7 @@ For best performance, compile Lotus with CUDA support instead of OpenCL. For fur
 
 In the case of a [Snap Deal]({{<relref "snap-deals">}}), an existing committed capacity sector is filled with data. When this happens, the entire PC1 task does not run again; however, the snapping process employs PC1's `replica-update` and `prove-replica-update` to add the data to the sector. This can run on the PC2 worker or on a separate worker depending on your sealing pipeline capacity.
 
-When PC2 is complete for a sector, a _precommit_ message is posted on-chain. If batching is configured, Lotus will batch these messages to avoid sending messages to the chain for every single sector. In addition, there is a configurable timeout interval, after which the [message](https://docs.filecoin.io/reference/general/glossary/#message) will be sent on-chain. This timeout is set to 24 hours by default. These configuration parameters are found in the `.lotusminer/config.toml` file.
+When PC2 is complete for a sector, a _precommit_ message is posted on-chain. If batching is configured, Lotus will batch these messages to avoid sending messages to the chain for every single sector. In addition, there is a configurable timeout interval, after which the message will be sent on-chain. This timeout is set to 24 hours by default. These configuration parameters are found in the `.lotusminer/config.toml` file.
 
 If you want to force the pre-commit message on-chain for testing purposes, run:
 
@@ -71,7 +71,7 @@ The sealed sector and its 11 layers are kept on the scratch volume until Commit 
 
 ### WaitSeed
 
-WaitSeed is not an actual task that is executed, but it is a step in the pipeline in which the [blockchain](https://docs.filecoin.io/reference/general/glossary/#blockchain) forces the pipeline to wait for 150 epochs as a built-in security mechanism. With Filecoin's 30-second epochs, this means 75 minutes must elapse between PC2 and the next task, Commit 1 (C1). 
+WaitSeed is not an actual task that is executed, but it is a step in the pipeline in which the blockchain forces the pipeline to wait for 150 epochs as a built-in security mechanism. With Filecoin's 30-second epochs, this means 75 minutes must elapse between PC2 and the next task, Commit 1 (C1). 
 
 ### Commit 1
 

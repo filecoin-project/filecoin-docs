@@ -38,7 +38,7 @@ Retrieval providers, often called RPs, are responsible for providing users quick
 
 ## Deals
 
-In the Filecoin network, SPs and RPs provide their storage or retrieval service to data clients through deals. These deals are negotiated and agreed upon between two parties, and include terms like data size, price, deal duration, and [collateral](https://docs.filecoin.io/reference/general/glossary/#collateral).
+In the Filecoin network, SPs and RPs provide their storage or retrieval service to data clients through deals. These deals are negotiated and agreed upon between two parties, and include terms like data size, price, deal duration, and collateral.
 
 The deal-making process happens _off-chain_. Once both parties agree to the terms of a deal, that deal is published _on_chain_ for the rest of the network to see and validate.
 

@@ -21,7 +21,7 @@ aliases:
 
 ## Testnets
 
-Test networks, or [testnets](https://docs.filecoin.io/reference/general/glossary/#testnet), are version of the Filecoin network that attempt to simulate various aspects of the Filecoin mainnet. Since they are for testing they should not be used for production applications or services.
+Test networks, or testnets, are version of the Filecoin network that attempt to simulate various aspects of the Filecoin mainnet. Since they are for testing they should not be used for production applications or services.
 
 ### Calibration
 

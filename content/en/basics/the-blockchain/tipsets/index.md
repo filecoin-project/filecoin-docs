@@ -18,7 +18,7 @@ aliases:
 
 ## Blocks 
 
-In Filecoin, a [block](https://docs.filecoin.io/reference/general/glossary/#block) consists of:
+In Filecoin, a block consists of:
 
 - A block header
 - A list of _messages_ contained in the block
@@ -45,7 +45,7 @@ Because Filecoin is a chain of tipsets rather than individual blocks, the networ
 - All valid blocks generated in a given round are used to determine network state, increasing network efficiency and throughput.
 - All valid work is rewarded (that is, all validated block producers in an epoch receive a block reward).
 - All potential block producers are incentivized to produce blocks, disincentivizing centralization and promoting collaboration.
-- Because all blocks in a [tipset](https://docs.filecoin.io/reference/general/glossary/#tipset) have the same height and parent, Filecoin is able to achieve rapid convergence in the case of forks.
+- Because all blocks in a tipset have the same height and parent, Filecoin is able to achieve rapid convergence in the case of forks.
 
 In summary, blocks, which contain actor messages, are grouped into tipsets in each epoch, which can be thought of as the overall description of network state for a given epoch.
 
