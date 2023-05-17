@@ -48,7 +48,7 @@ You need to understand the various earning mechanisms in the Filecoin network.
 
 ## Make sure you have the right skills
 
-As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstrate data availability to the network. There are many things that can go wrong in a datacenter, on your network, on your OS, or at an application level.
+As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstrate data availability to the network. There are many things that can go wrong in a data center, on your network, on your OS, or at an application level.
 
 You will need skilled people to operate your storage provider business. Depending on the size and complexity of your setup this can be 1 person with skills across many different domains, or multiple dedicated people or teams.
 
@@ -63,3 +63,4 @@ Take availability and suitable redundancy into consideration when choosing your 
 {{<button url="https://docs.filecoin.io/storage-provider/architecture/lotus-components/">}}Software architecture → {{</button>}} {{<button url="https://docs.filecoin.io/storage-provider/skills/storage/">}}Infrastructure →{{</button>}}
 
 {{< sp-calls-to-action >}}
+<!--REVIEWED!-->
