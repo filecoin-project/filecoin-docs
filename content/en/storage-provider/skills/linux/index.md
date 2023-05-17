@@ -16,7 +16,7 @@ toc: true
 Becoming a storage provider requires a team with a variety of skills.
 Of all the technical skills needed to run a storage provider business, storage knowledge is important, but arguably, it is even more important to have deep understanding of the Linux operating system.
 
-Where most enterprise storage systems (NAS, SAN and other types) do not require the administrator to have hands-on Linux experience, Filecoin does require a lot more knowledge about Linux. For starters, this is because Filecoin is not just a storage system. It is a blockchain platform that offers decentralized storage. As a storage provider you are dealing with all the things required to run a alway-on production system, not just storage.
+Where most enterprise storage systems (NAS, SAN and other types) do not require the administrator to have hands-on Linux experience, Filecoin does require a lot more knowledge about Linux. For starters, this is because Filecoin is not just a storage system. It is a blockchain platform that offers decentralized storage. As a storage provider, you must ensure that your production system is always available, not just providing the storage. 
 
 ## Ubuntu Server LTS
 
@@ -33,7 +33,7 @@ Exclude the `nvidia-drivers` and `cuda` packages from your updates using [the ap
 
 ## Command-line and environment variables
 
-All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus, it is recommended to build the binaries from source code. Upgrades to Lotus happen every two months or so. If you are unable to perform a mandatory Lotus upgrade, you may become disconnected from the filecoin network, which means you could be penalized and lose money, so it's vital to keep Lotus up-to-date.
+All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus, it is recommended to build the binaries from source code. Upgrades to Lotus happen every two months or so. If you are unable to perform a mandatory Lotus upgrade, you may become disconnected from the Filecoin network, which means you could be penalized and lose money, so it's vital to keep Lotus up-to-date.
 
 Configuration parameters for the Lotus client are stored in 2 places:
 
@@ -86,3 +86,4 @@ top
 ```
 
 {{< sp-calls-to-action >}}
+<!--REVIEWED!-->
