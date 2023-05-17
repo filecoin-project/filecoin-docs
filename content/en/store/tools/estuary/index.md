@@ -26,11 +26,11 @@ If you want to quickly upload any data that is to be hosted on IPFS and stored o
 
     ![Estuary upload file successfully](estuary-upload.png)
 
-1. If your file is larger than 3.57Gib, that's it; you can then click **Make storage deal**, and Estuary will first host the file on IPFS and attempt to make storage deals with six storage providers! To check your deal information, select **Deals** from the sidebar menu.
+1. If your file is larger than 3.57 Gib, that's it; you can then click **Make storage deal**, and Estuary will first host the file on IPFS and attempt to make storage deals with six storage providers! To check your deal information, select **Deals** from the sidebar menu.
 
     ![Estuary deals](estuary-user-deal.png)
 
-1. If your data is less than 3.57Gib, it will be hosted on IPFS first and placed in the `Staging Zone`. A storage deal will be made a few hours later for the data to be stored on Filecoin Network.
+1. If your data is less than 3.57 Gib, it will be hosted on IPFS first and placed in the `Staging Zone`. A storage deal will be made a few hours later for the data to be stored on Filecoin Network.
 
 ## Retrieve Your Data
 
@@ -44,8 +44,8 @@ Your data is retrievable even it is in the _Staging Zone_! Just select **Staging
 
 ## Additional resources
 
-- [Estuary Github repository](https://github.com/application-research/estuary)
+- [Estuary GitHub repository](https://github.com/application-research/estuary)
 - [Estuary documentation](https://docs.estuary.tech)
-- [Build with Estuary](https://docs.filecoin.io/build/estuary/)
 - [Sample application built with Estuary](https://github.com/application-research/estuary-www)
 - [Who is ARG](https://arg.protocol.ai)
+<!--REVIEWED!-->
