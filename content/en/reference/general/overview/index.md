@@ -139,7 +139,7 @@ Developer tools, API clients & storage services that developers can use to build
 
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
-- [Glif nodes](https://lotus.filecoin.io/lotus/developers/glif-nodes/) and [Infura](https://infura.io/docs/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
+- [Glif nodes](https://lotus.filecoin.io/lotus/developers/glif-nodes/) and [Infura](https://docs.infura.io/infura/networks/filecoin) - Hosted endpoints to Filecoin mainnet and testnet.
   - These endpoints support read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Message signing tools](#message-signing-tools)).
 - [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   - [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
