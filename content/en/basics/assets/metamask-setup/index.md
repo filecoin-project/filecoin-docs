@@ -187,4 +187,4 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
 {{< /tabs >}}
 
 You can now use MetaMask to interact with the Filecoin network.
-<!--REVIEWED!-->
+ED!-->
