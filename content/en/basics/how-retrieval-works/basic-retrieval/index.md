@@ -195,4 +195,3 @@ Lassie only returns data in CAR format; specifically, [CARv1](https://ipld.io/sp
 <!-- ## Lotus node -->
 
 <!-- It is possible to download data from the Filecoin network using a Lotus node. -->
-ED!-->
