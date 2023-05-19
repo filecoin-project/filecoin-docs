@@ -39,4 +39,3 @@ In both cases, you have access to all the awesome power of the Filecoin blockcha
 For a deeper dive into the concepts discussed on this page, see this presentation Ethereum compatibility of FVM, see:
 
 {{< youtube "lgUMVhM3FIM" >}}
-<!--REVIEWED!-->

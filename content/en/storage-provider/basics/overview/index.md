@@ -63,4 +63,3 @@ Take availability and suitable redundancy into consideration when choosing your 
 {{<button url="https://docs.filecoin.io/storage-provider/architecture/lotus-components/">}}Software architecture → {{</button>}} {{<button url="https://docs.filecoin.io/storage-provider/skills/storage/">}}Infrastructure →{{</button>}}
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

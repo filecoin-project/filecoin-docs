@@ -80,4 +80,3 @@ Developers can easily do so through the following block explorers:
 - [Beryx contract verifier](https://beryx.zondax.ch/contract_verifier)
 
 You can find this tutorial in the [FEVM ERC-20 Quickstart](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/).
-<!--REVIEWED!-->

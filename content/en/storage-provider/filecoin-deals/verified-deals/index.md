@@ -52,4 +52,3 @@ With great power, comes great responsibility, which also counts for storage powe
 If the storage provider is then not capable of keeping the data and systems online and fails to submit the daily required proofs (WindowPoSt) for that data, the penalties (_slashing_) are also 10x higher than over regular data deals or CC sectors. Larger storage power means larger block rewards, larger collateral and larger slashing. The stakes are high - after all, we’re storing humanity’s most important information with Filecoin.
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

@@ -57,4 +57,3 @@ Filecoin improvement proposals (FIPs) are a way for the Filecoin community to di
 - [FVM Foundry Cohort Update Recordings](https://www.youtube.com/playlist?list=PL_0VrY55uV18DBdFIkN0jdBMF8nadVxWQ)
 - [FVM Foundry Early Builders F/0 Cohort Showcase - Oct 3 2022](https://drive.google.com/file/d/1JLR45vSNScZX7edz9DxwlpYGnVfGm30Q/view?usp=sharing)
 - [FVM Foundry Early Builders F/1 Cohort Kick Off - Oct 5 2022](https://drive.google.com/file/d/1mV0PMunDUvIBqmuNw9VjUJIf4zE4z9LV/view?usp=sharing)
-<!--REVIEWED!-->

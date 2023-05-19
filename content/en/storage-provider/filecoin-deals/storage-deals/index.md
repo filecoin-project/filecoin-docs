@@ -33,4 +33,3 @@ The storage provider can (and should) keep unsealed data copies available for re
 For more information on markets and deals, review the [Lotus storage deals page](https://lotus.filecoin.io/storage-providers/operate/manage-storage-deals/).
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

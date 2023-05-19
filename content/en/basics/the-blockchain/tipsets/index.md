@@ -58,4 +58,3 @@ With the Ethereum JSON-RPC, we introduced the concept of the _tipset CID_ for th
 - _block hash_, think _tipset hash_.
 - _block height_, think _tipset epoch_.
 - _block messages_, think _messages in all blocks in a tipset, in their order of appearance, deduplicated and returned in canonical order of execution_.
-<!--REVIEWED!-->

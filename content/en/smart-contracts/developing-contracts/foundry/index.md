@@ -73,4 +73,3 @@ You should also have an address on the Filecoin Hyperspace testnet. See the [Add
 
 1. You can now interact with your contract using the contract address given by Foundry.
 1. Done! For more information, see the [Foundry book](https://book.getfoundry.sh/).
-<!--REVIEWED!-->

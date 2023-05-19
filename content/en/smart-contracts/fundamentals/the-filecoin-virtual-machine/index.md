@@ -242,4 +242,3 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 - After all the repayments are completed, the owner should propose changing the beneficiary to itself, and the beneficiary should approve it
 
 ![A diagram showing the lending pool flow.](lending-pool-flow.png)
-<!--REVIEWED!-->

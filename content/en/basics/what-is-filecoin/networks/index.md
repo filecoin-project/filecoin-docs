@@ -46,4 +46,3 @@ Test networks, or testnets, are version of the Filecoin network that attempt to 
 - [Details]({{< relref "/networks/spacenet/details" >}})
 - [Public endpoint]({{< relref "/networks/spacenet/rpcs" >}})
 - [Faucet]({{< relref "/networks/spacenet/get-test-tokens" >}})
-<!--REVIEWED!-->

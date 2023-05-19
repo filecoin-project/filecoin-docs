@@ -19,4 +19,3 @@ WinningPoSt (short for [Winning Proof of SpaceTime](https://spec.filecoin.io/alg
 The election mechanism of the Filecoin network is based on the “storage power” of the storage providers. A minimum of 10 TiB in storage power is required to be eligible for WinningPoSt, and hence to earn block rewards. The more storage power a storage provider has, the more likely they will be elected to mine a block. This concept becomes incredibly advantageous in the context of [Filecoin Plus verified deals](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/).
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

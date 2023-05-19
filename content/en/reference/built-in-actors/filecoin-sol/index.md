@@ -346,4 +346,3 @@ contract VerifRegApiTest {
     }
 }
 ```
-<!--REVIEWED!-->

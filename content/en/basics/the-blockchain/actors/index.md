@@ -137,4 +137,3 @@ A _user actor_ is code defined by **any developer** that can interact  FVM, othe
 A _smart contract_ is a small, self-executing blocks of custom code that runs on other blockchains, like Ethereum. In the Filecoin network, the term is a synonym for [_user actor_](#user-actors-smart-contracts). You may see the term _smart contract_ used in tandem with _user actor_, but there is no difference between the two.
 
 With the FVM, actors can be written in Solidity. In future updates, any language that compiles to WASM will be supported. With user actors, users can create and enforce custom rules for storing and accessing data on the network. The FVM is responsible for actors and ensuring that they are executed correctly and securely.
-<!--REVIEWED!-->

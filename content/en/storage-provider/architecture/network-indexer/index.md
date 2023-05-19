@@ -37,4 +37,3 @@ For more info on how the indexer works, read this [blog post by Masih Derkani](h
 Storage providers publish data to indexers so that clients can find that data using the CID or multihash of the content. When a client queries the indexer using a CID or multihash, the indexer then responds to the client with the provider data record, which tells the client where and how the content can be retrieved.
 
 As a storage provider, you will need to run an indexer in your setup so that your clients know where and how to retrieve data. For more information on how to create an index provider, see the [IPNI documentation](https://github.com/ipni/storetheindex/blob/main/doc/creating-an-index-provider.md).
-<!--REVIEWED!-->

@@ -27,4 +27,3 @@ Snapping up sectors with snap deals puts a lot less stress on the storage provid
 Do not forget to provide the collateral funds when snapping up a verified deal. The same volume requires more collateral when it counts as FIL+ data, namely 10x the collateral compared to raw storage power.
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

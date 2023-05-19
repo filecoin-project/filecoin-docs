@@ -49,4 +49,3 @@ They've been manually checked and confirmed to work.
 Follow FilecoinOfficial on [WeChat](https://www.wechat.com/mobile) for project updates and announcements in Chinese.
 
 ![WeChat logo](wechat-qr.jpg)
-<!--REVIEWED!-->

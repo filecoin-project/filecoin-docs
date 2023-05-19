@@ -68,4 +68,3 @@ RPO for data owners is less of a concern, especially once the data is sealed. Th
 For maximum resilience, you could host your backup system (server + storage) in a different datacenter than your primary system.
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

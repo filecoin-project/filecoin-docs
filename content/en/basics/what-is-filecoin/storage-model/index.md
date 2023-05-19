@@ -45,4 +45,3 @@ The deal-making process happens _off-chain_. Once both parties agree to the term
 ## Sectors
 
 Sectors are the basic units of provable storage where storage providers store clients’ data and generate PoSt on behalf of the Filecoin network. Sectors have standard sizes and a lifetime that storage providers can extend before reaching the end of the lifetime. `32 GiB` and `64 GiB` sector sizes are supported.
-<!--REVIEWED!-->

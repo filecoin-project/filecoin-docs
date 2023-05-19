@@ -56,4 +56,3 @@ Calibration network is the most realistic simulation of the Filecoin mainnet.
 - [Stats Dashboard](https://stats.calibration.fildev.network/)
 - [Slack Channel for Updates](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 - [Slack Channel for Questions](https://filecoinproject.slack.com/archives/CEGN061C5)
-<!--REVIEWED!-->

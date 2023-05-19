@@ -26,4 +26,3 @@ By charging for data stored on your network, you can create a sustainable busine
 Next to the sales cost, there are other things that contribute to the total cost of ownership of your storage provider business. Think of backups of your setup and the data, providing an access layer to ingest data and for retrievals, preparing the data (if not done already), and more.
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

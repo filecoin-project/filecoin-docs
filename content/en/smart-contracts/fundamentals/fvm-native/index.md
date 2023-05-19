@@ -26,4 +26,3 @@ FVM native is not yet available on the Filecoin mainnet but can be used in a loc
 [FVM TinyGo SDK by Venus (IPFSForce)](https://www.notion.so/Filecoin-Virtual-Machine-FVM-Developer-Resources-94cabfd650184f4b9664bd4974e4d329): This SDK helps developers build actors for the FVM in TinyGo. It provides developers with tooling to build actors while exposing useful structures and needed functions.
 
 [FVM High-level Rust SDK](https://github.com/polyphene/fvm-rs-sdk) by Polyphene: This SDK helps developers build actors for the FVM in Rust. It provides developers with tooling to build actors while exposing useful structures and needed functions. It also serves procedural macros to generate glue code for state management and actor's interface definition.
-<!--REVIEWED!-->

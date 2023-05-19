@@ -47,4 +47,3 @@ To learn more about what you can do on Spacenet, visit the [Interplanetary Conse
 - [Spacenet repository](https://github.com/consensus-shipyard/spacenet)
 - [Spacenet status page](https://spacenet.statuspage.io/)
 - [Contact form](https://docs.google.com/forms/d/1O3_kHb2WJhil9sqXOxgGGGsqkAA61J1rKMfnb5os5yo/edit)
-<!--REVIEWED!-->

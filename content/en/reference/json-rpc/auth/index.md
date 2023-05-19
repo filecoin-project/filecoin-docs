@@ -48,4 +48,3 @@ Response:
   "write"
 ]
 ```
-<!--REVIEWED!-->

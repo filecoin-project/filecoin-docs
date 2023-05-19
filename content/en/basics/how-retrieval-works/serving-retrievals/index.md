@@ -40,4 +40,3 @@ When attempting this retrieval deal using graphsync, payment channels are used t
 ### Finalize the retrieval
 
 Once the client has received the last chunk of data, the connection is closed.
-<!--REVIEWED!-->

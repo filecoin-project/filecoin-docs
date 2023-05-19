@@ -135,4 +135,3 @@ Filecoin combines many elements of other file storage and distribution systems. 
         <td>Mainnet running since 2009</td>
     </tr>
 </table>
-<!--REVIEWED!-->

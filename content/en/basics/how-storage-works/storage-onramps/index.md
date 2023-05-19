@@ -41,4 +41,3 @@ Storage helpers are available for NFTs (non-fungible tokens) or general data. If
 The following tools offer more customization and configuration options. You can choose specific individual storage providers, customize pricing, and more. Note that you may have to manage storage deals individually, including designing your own redundancy plans, keeping track of expiring deals, and renewing them and more.
 
 - [Textile Powergate](https://docs.textile.io/powergate/) combines IPFS and Filecoin nodes directly, and offers advanced configuration options such as miner selection, replication factor, deal renewal, and repair. It includes JavaScript and Go libraries, and administrative APIs to create and manage users.
-<!--REVIEWED!-->

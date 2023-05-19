@@ -61,4 +61,3 @@ There are additional storage solutions that you should not miss. While they have
 - [Pinata](https://pinata.cloud/) is an IPFS pinning service that will soon include Filecoin in its portfolio.
 - [Powergate](https://github.com/textileio/powergate) a multi-tiered storage solution that stores data with IPFS and Filecoin.
 - [Textile Buckets](https://docs.textile.io/buckets/) provide S3-like storage using IPFS with Filecoin-backed archival and has an easy-to-use CLI.
-<!--REVIEWED!-->

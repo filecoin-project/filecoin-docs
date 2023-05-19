@@ -30,4 +30,3 @@ Mir is used as a scalable and efficient consensus layer in Filecoin subnets. Lea
 Learn more on [GitHub](https://github.com/filecoin-project/mir/tree/main/pkg/trantor).
 
 To stay updated on Mir and Trantor development, join the `#mir-dev` channel in the  [Filecoin Slack workspace](https://filecoin.io/slack/).
-<!--REVIEWED!-->

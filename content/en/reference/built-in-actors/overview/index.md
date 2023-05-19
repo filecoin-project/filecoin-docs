@@ -133,4 +133,3 @@ The Filecoin Solidity project is [currently in beta](https://docs.zondax.ch/fevm
 - _Filecoin.solidity_, maintained by [Zondax](https://docs.zondax.ch/), is a set of libraries that allows Solidity smart contracts to seamlessly call built-in actors methods. **Not all built-in actors and methods are supported** - for a complete list, see the [actors and methods supported](https://docs.zondax.ch/fevm/filecoin-solidity/api/#actors-and-methods-supported). For further information, including information on how to use the package, see the [official documentation](https://docs.zondax.ch/fevm/filecoin-solidity/) and the [GitHub repository](https://github.com/Zondax/filecoin-solidity).
 
 For information on how invoke and access built-in actors in your smart contracts, see the [developers guide]({{< relref "call-built-in-actors" >}}).
-<!--REVIEWED!-->

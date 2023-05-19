@@ -121,4 +121,3 @@ If storage providers fail to provide reliable uptime or act maliciously against 
 
 - Storage fault slashing to penalize storage providers for not being able to maintain healthy and reliable storage sectors for the network.
 - Consensus fault slashing to penalize storage providers to sabotage the liveness and security of the consensus process.
-<!--REVIEWED!-->

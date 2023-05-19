@@ -27,4 +27,3 @@ If you need more Spacenet tFIL for your application, feel free to drop us a mess
 
 - [`#spacenet` channel in Filecoin Slack](https://filecoinproject.slack.com/archives/C043ZAHPFKL)
 - [ipc@protocol.ai](mailto:ipc@protocol.ai)
-<!--REVIEWED!-->

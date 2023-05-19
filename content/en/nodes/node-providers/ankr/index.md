@@ -40,4 +40,3 @@ The HTTP and WebSocket endpoints for mainnet currently support [these API method
 ### Testnet endpoint
 
 The HTTP and WebSocket endpoints for testnet currently support all [mainnet API methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#api-methods-9) listed above, along with applicable EVM-compatible methods. However, some methods are [unsupported](https://www.ankr.com/docs/rpc-service/chains/chains-list/#unsupported-9).
-<!--REVIEWED!-->

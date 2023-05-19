@@ -45,4 +45,3 @@ w
     ![MetaMask showing a balance of FIL.](faucet-metamask-with-balance.png)
 
 That's all there is to it! Getting `tFil` is easy!
-<!--REVIEWED!-->

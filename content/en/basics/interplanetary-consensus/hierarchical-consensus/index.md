@@ -42,4 +42,3 @@ Eudico is a modularized implementation of [Lotus]({{< relref "nodes/implementati
 In our architecture, Eudico is used as the blockchain node. A separate instance of Eudico is run for each subnet in which a given node participates.
 
 The Eudico node is available on [GitHub](https://github.com/consensus-shipyard/lotus).
-<!--REVIEWED!-->

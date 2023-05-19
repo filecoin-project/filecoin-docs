@@ -744,4 +744,3 @@ Inputs:
 ```
 
 Response: `"0"`
-<!--REVIEWED!-->

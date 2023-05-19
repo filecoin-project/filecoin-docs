@@ -256,4 +256,3 @@ Take the hypothetical tutorial _Get up and running with Filecoin_, for example. 
 Pages `1` and `3` are conceptual articles, describing particular design patterns and ideas to the reader. All the other pages are walkthroughs instructing the user how to perform one specific action.
 
 When designing a tutorial, keep in mind the walkthroughs and articles that already exist, and note down any additional content items that would need to be completed before creating the tutorial.
-<!--REVIEWED!-->

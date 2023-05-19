@@ -149,4 +149,3 @@ It’s not impossible but storage providers are incentivized not to close the st
 ### How do I check a storage provider’s balance with their FEVM address
 
 You can query balance of any address using [Zondax's API](https://docs.zondax.ch/openapi#tag--Account).
-<!--REVIEWED!-->

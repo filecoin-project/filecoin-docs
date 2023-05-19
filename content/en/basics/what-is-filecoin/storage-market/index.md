@@ -47,4 +47,3 @@ Here are some available storage helpers:
 - [web3.storage](https://web3.storage/)
 - [nft.storage](https://nft.storage/)
 - [lighthouse.storage](https://www.lighthouse.storage/)
-<!--REVIEWED!-->

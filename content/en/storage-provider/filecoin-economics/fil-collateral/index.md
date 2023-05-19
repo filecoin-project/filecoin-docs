@@ -51,4 +51,3 @@ The ecosystem does have [FIL Lenders](https://filecoin-lending.com/read-more) <!
 The [Filecoin Virtual Machine]({{<relref "the-filecoin-virtual-machine" >}}), introduced in March 2023, enables the creation of new lending mechanisms via smart contracts.
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

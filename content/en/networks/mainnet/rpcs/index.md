@@ -39,4 +39,3 @@ Please note that publicly available hosted endpoints **only guarantee 2000 of th
 - HTTPS: `https://filecoin-mainnet.chainstacklabs.com/rpc/v1`
 - WebSocket: `wss://ws-filecoin-mainnet.chainstacklabs.com/rpc/v1`
 - [Chainstack documentation](https://docs.chainstack.com)
-<!--REVIEWED!-->

@@ -67,4 +67,3 @@ Forest is an implementation of Filecoin written in Rust. It is currently in beta
 - Integrating functional components for storage mining and storage & retrieval markets to compose a fully functional Filecoin node implementation.
 
 You can find the [Forest codebase on GitHub](https://github.com/ChainSafe/forest) and the documentation site at [chainsafe.github.io/forest](https://chainsafe.github.io/forest/).
-<!--REVIEWED!-->

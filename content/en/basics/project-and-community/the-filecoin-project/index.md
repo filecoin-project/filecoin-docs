@@ -29,4 +29,3 @@ Learn about the ongoing cryptography research and design efforts that underpin t
 ## Code of conduct
 
 The Filecoin community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in Filecoin read and respect our [code of conduct](https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md).
-<!--REVIEWED!-->

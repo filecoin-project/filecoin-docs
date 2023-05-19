@@ -143,4 +143,3 @@ We are working to improve this section. If you would like to share your mining s
 {{< /alert >}}
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

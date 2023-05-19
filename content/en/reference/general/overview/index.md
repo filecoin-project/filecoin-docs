@@ -227,4 +227,3 @@ The Retrieval Market is in early development; research and development teams are
 - [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing monthly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
   - funded by the [Filecoin Foundation](https://fil.org)
 - Accelerators
-<!--REVIEWED!-->

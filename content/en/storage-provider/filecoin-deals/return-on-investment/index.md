@@ -64,4 +64,3 @@ It takes more variables than the cost vs. the income. In summary, the factors th
     Last but not least there’s the ongoing monthly cost of operating the storage provider business. Both the costs for technical operations as well as business operations need to be taken into consideration.
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

@@ -615,4 +615,3 @@ Generally, the issue is that:
 ### My agent is not submitting checkpoints after an error
 
 Try running `./bin/ipc-agent reload-config`, this should pick up the latest config and restart all checkpointing processes. If the error has been fixed or it was an network instability between the agent and your subnet daemon, checkpoints should start being committed again seamlessly.
-<!--REVIEWED!-->

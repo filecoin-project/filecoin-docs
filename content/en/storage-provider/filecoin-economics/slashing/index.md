@@ -30,4 +30,3 @@ This term encompasses a broad set of penalties which are to be paid by storage p
 This penalty is incurred when committing consensus faults. This penalty is applied to storage providers that have acted maliciously against the network's consensus functionality.
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

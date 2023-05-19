@@ -444,4 +444,3 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 ## Next steps
 
 You should now have a local lite-node connected to a remote full-node with an admin API key! You can use this setup to continue playing around with the JSON-RPC, or start building your applications on Filecoin!
-<!--REVIEWED!-->

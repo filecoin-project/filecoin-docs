@@ -159,4 +159,3 @@ If you are interested in participating in governance and shaping the program, he
 - Participate in FIL notary community governance calls, which happen every other Tuesday. Use the [Filecoin Community Events Calendar](https://calendar.google.com/calendar/u/1?cid=Y19rMWdrZm9vbTE3ZzBqOGM2YmFtNnVmNDNqMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 to join or watch for updates in #fil-plus
 - Create and comment on open issues in the [notary governance repository](https://github.com/filecoin-project/notary-governance/issues).
-<!--REVIEWED!-->

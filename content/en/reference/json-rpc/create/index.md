@@ -31,4 +31,3 @@ Inputs:
 ```
 
 Response: `{}`
-<!--REVIEWED!-->

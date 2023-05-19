@@ -172,4 +172,3 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
     ![MetaMask showing a new token.](add-complete.png)
 
 And that's it! Deploying an ERC-20 token on Filecoin is simple!
-<!--REVIEWED!-->

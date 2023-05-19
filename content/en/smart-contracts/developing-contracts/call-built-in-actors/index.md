@@ -259,4 +259,3 @@ The `filecoin.sol` library is embeddable into your smart contract, which means i
 ### Call a built-in actor
 
 Once you've either imported particular contracts manually or simply installed `filecoin.sol` using npm, create a callable method to access the built-in actor methods the way you normally would in a Solidity smart contract. Working examples of smart contracts that call built-in actor methods are available in the [reference guide]({{< ref "/reference/built-in-actors/filecoin-sol" >}}).
-<!--REVIEWED!-->

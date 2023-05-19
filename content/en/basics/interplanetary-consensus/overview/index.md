@@ -57,4 +57,3 @@ If you have questions, ideas, or wish to get involved, join the [Filecoin Slack 
 - `#ipc-announcements`, for relevant announcements related to the software and network.
 - `#ipc-dev`, for development discussions.
 - `#ipc-docs`, for documentation discussions.
-<!--REVIEWED!-->

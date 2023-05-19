@@ -54,4 +54,3 @@ In summary, EC involves the following steps at each _{{< tooltip "epoch" >}}_:
 1. Using the selected tipset, the chain state is propagated.
 
 1. EC returns to step 1 in the next epoch.
-<!--REVIEWED!-->

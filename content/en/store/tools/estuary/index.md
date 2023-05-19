@@ -48,4 +48,3 @@ Your data is retrievable even it is in the _Staging Zone_! Just select **Staging
 - [Estuary documentation](https://docs.estuary.tech)
 - [Sample application built with Estuary](https://github.com/application-research/estuary-www)
 - [Who is ARG](https://arg.protocol.ai)
-<!--REVIEWED!-->

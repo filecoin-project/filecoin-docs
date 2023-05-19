@@ -69,4 +69,3 @@ Storing real client data means there will be expectations on retrievability of t
 **[Filswan](https://www.filswan.com/homepage)** is - much like Big Data Exchange - an auctioning platform that matches clients with storage providers.
 
 {{< sp-calls-to-action >}}
-<!--REVIEWED!-->

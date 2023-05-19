@@ -56,4 +56,3 @@ In both methods, the data retrieval process after a retrieval deal is accepted i
 3. **Data transfer**: The storage provider begins transferring the data back to the data requester. This is also transferred back at a rate similar to the original data transfer rate, which depends on several factors.
 
 Because of the various steps involved in the data retrieval process, Filecoin storage currently meets similar performance bars as traditional _warm_ or _cold_ storage. To get performance that is similar to other hot storage solutions, most users utilize Filecoin with a caching layer such as IPFS. These hybrid and multi-tiered storage solutions use IPFS for hot storage and Filecoin for affordable, frequent, and versioned backups. Some example hybrid storage products include [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) and [Textile Buckets](https://docs.textile.io/buckets/).
-<!--REVIEWED!-->

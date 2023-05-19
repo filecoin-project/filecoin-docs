@@ -75,4 +75,3 @@ Examples:
 - [Developing on Filecoin](https://www.youtube.com/watch?v=aGCpq0Xf-w8) (video)
 - Textile tools: [video](https://www.youtube.com/watch?v=IZ8M9m9_uJY) and [blog post](https://blog.textile.io/developer-tools-for-filecoin-ipfs-web/)
 - [Building decentralized apps using Fleek’s Space daemon](https://www.youtube.com/watch?v=pWJ5fty-7mA) (video)
-<!--REVIEWED!-->

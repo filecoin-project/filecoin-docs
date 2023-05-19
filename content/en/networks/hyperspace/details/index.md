@@ -76,4 +76,3 @@ Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
 - [Reputation systems](https://hyperspace.filrep.io)
 - Slack Channel for Updates: [#fil-net-hyperspace-discuss](https://filecoinproject.slack.com/archives/C04JEJB82RY)
 - [Storage providers auto-accepting storage deals and simulating faults](https://kb.factor8.io/en/docs/filecoin/testnets/hyperspace/support-miners)
-<!--REVIEWED!-->

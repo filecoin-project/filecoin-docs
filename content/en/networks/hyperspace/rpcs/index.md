@@ -39,4 +39,3 @@ These endpoints are limited to all [read-only Filecoin JSON RPC API calls]({{< r
 
 - HTTPS: `https://rpc.ankr.com/filecoin_testnet`
 - [Ankr documentation](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
-<!--REVIEWED!-->

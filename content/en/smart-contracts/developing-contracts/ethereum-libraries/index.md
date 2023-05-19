@@ -157,4 +157,3 @@ The DappSys library provides safe, simple, and flexible Ethereum contract buildi
 
 - [Documentation](https://docs.0x.org/introduction/introduction-to-0x)
 - [GitHub](https://github.com/0xProject)
-<!--REVIEWED!-->
