@@ -16,7 +16,7 @@ draft: false
 
 ## Overview
 
-In the Filecoin blockchain, network _{{< tooltip "consensus" >}}_ is achieved using the Expected Consenus (EC) algorithm, a probabilistic, _{{< tooltip "Byzantine fault-tolerant" >}}_ consensus protocol. At a high-level, EC achieves consensus by running a secret, fair and verifiable _leader election_ at every {{< tooltip "epoch" >}} where a set number of participants may become eligible to submit a block to the chain based on fair and verifiable criteria.
+In the Filecoin blockchain, network _{{< tooltip "consensus" >}}_ is achieved using the Expected Consensus (EC) algorithm, a probabilistic, _{{< tooltip "Byzantine fault-tolerant" >}}_ consensus protocol. At a high-level, EC achieves consensus by running a secret, fair and verifiable _leader election_ at every {{< tooltip "epoch" >}} where a set number of participants may become eligible to submit a block to the chain based on fair and verifiable criteria.
 
 ## Properties
 

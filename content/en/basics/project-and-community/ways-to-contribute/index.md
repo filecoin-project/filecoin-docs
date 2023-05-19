@@ -61,7 +61,7 @@ Filecoin is designed for you to integrate into your own applications and service
 Get started by looking at the list of projects currently built on Filecoin. Build anything you think is missing! If you're unsure about something, you can join the chat and discussion forums to get help or feedback on your specific problem/idea. You can also join a Filecoin Hackathon, apply for a Filecoin Developer Grant or apply to the Filecoin accelerator program to support the development of your project.
 
 - [Filecoin Hackathons](https://hackathons.filecoin.io/)
-- [Filecoin Dev Grants](https://filecoin.io/grants/)
+- [Filecoin Developer Grants](https://filecoin.io/grants/)
 - [Filecoin Accelerator Program](https://ecosystem-wg.notion.site/Protocol-Labs-Accelerator-Program-d45d8792a7d544eca9beb7d3e3d3b05d)
 
 ### Protocol Design
@@ -93,7 +93,7 @@ This may look like a lot of steps for a small issue fix, but they're all necessa
 
 The Filecoin project is hosted in GitHub. There's a bunch of reasons for this, one of them being that GitHub comes with an issue tracker, which enables the core Filecoin team to field problems from the community. All community issues can read the docs, find issues, and raise issues in the docs repository (called a _repo_ for short).
 
-All issues involving the Filecoin docs themselves can be found here in the `filecoin-project/filecoin-docs` repo under the [**Issues** tab](https://github.com/filecoin-project/filecoin-docs/issues/). Here you can see all the issues that are currently open. We try to tag each issue with relevant descriptive tags. Tags like _difficulty_ and _size_ can give a sense of the amount of effort a task will take to complete.
+All issues involving the Filecoin docs themselves can be found here in the `filecoin-project/filecoin-docs` repository under the [**Issues** tab](https://github.com/filecoin-project/filecoin-docs/issues/). Here you can see all the issues that are currently open. We try to tag each issue with relevant descriptive tags. Tags like _difficulty_ and _size_ can give a sense of the amount of effort a task will take to complete.
 
 Let's jump into finding an issue.
 
@@ -202,7 +202,7 @@ The end goal of a walkthrough is for the reader to achieve a very particular fun
 
 ##### Short length
 
-Since walkthroughs cover one particular function or process, they tend to be quite short. The estimated reading time of a walkthrough is somewhere between 2 and 10 minutes. Most of the time, the most critical content in a walkthrough is presented in a numbered list. Images and gifs can help the reader understand what they should be doing.
+Since walkthroughs cover one particular function or process, they tend to be quite short. The estimated reading time of a walkthrough is somewhere between 2 and 10 minutes. Most of the time, the most critical content in a walkthrough is presented in a numbered list. Images and GIFs can help the reader understand what they should be doing.
 
 If a walkthrough is converted into a video, that video should be no longer than 5 minutes.
 

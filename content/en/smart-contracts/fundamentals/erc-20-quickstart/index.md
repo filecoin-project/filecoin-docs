@@ -1,7 +1,7 @@
 ---
 title: "ERC-20 quickstart"
-description: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called Metamask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
-lead: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called Metamask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
+description: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called MetaMask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
+lead: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called MetaMask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
 draft: false
 images: []
 type: docs

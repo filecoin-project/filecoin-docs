@@ -45,7 +45,7 @@ Authenticates whether the provided signature is valid for the provided message.
 
 `uint` AuthenticateMessageMethodNum = 2643134072.
 
-Params:
+Parameters:
 
 - `struct` AuthenticateMessageParams
   - `bytes` AuthenticateMessageParamsSignature - it should be a raw byte of signature, NOT a serialized signature object with a signatureType.
@@ -65,7 +65,7 @@ Whenever the account receives transfers, this method will be invoked.
 
 `uint`  UniversalReceiverHookMethodNum = 3726118371.
 
-Params:
+Parameters:
 
 - `bytes[]` RawBytes - passes the bytes through how it is received.
 
@@ -87,7 +87,7 @@ Return the name of DataCap token which is 'DataCap'.
 
 `Unit` NameMethodNum : 48890204.
 
-Params:
+Parameters:
 
 - null
 
@@ -105,7 +105,7 @@ Return the symbol of DataCap token which is 'DCAP'.
 
 `unit` SymbolMethodNum: 2061153854.
 
-Params:
+Parameters:
 
 - null
 
@@ -123,7 +123,7 @@ Return the total supply of the DataCap token.
 
 `uint` TotalSupplyMethodNum: 114981429.
 
-Params:
+Parameters:
 
 - null
 
@@ -141,7 +141,7 @@ Return the DataCap token balance for the wallet address.
 
 `unit` BalanceOfMethodNum: 3261979605.
 
-Params:
+Parameters:
 
 - `bytes` Address - the wallet address.
 
@@ -159,7 +159,7 @@ Transfers DataCap tokens from caller address to the to address.
 
 `uint`  TransferMethodNum = 80475954;
 
-Params:
+Parameters:
 
 - `struct` TransferParams
   - `bytes` To -  the address to receive DataCap token.

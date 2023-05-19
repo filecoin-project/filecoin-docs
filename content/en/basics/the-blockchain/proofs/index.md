@@ -1,7 +1,7 @@
 ---
 title: "Proofs"
 description: "This page discusses what proofs are, and how they are used in the Filecoin network."
-lead: "In Filecoin cryptographic proving systems, often simply referred to as _proofs_, are used to validate that a storage provider is properly storing data. This process is called Proof-of-Storage and it consists of two distinct types of proofs, _[Proof of Replication (PoRep)](#proof-of-replication-porep)_ and _[Proof of Spacetime (PoST)](#proof-of-spacetime-post)_, each of which serves a different purpose."
+lead: "In Filecoin cryptographic proving systems, often simply referred to as _proofs_, are used to validate that a storage provider (SP) is properly storing data. This process is called Proof-of-Storage and it consists of two distinct types of proofs, _[Proof of Replication (PoRep)](#proof-of-replication-porep)_ and _[Proof of Spacetime (PoST)](#proof-of-spacetime-post)_, each of which serves a different purpose."
 draft: true
 images: []
 type: docs

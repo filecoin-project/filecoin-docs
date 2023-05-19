@@ -116,7 +116,7 @@ If you `cat ~/.ipc-agent/config.toml` you should see a new config populated with
 
 The IPC agent runs as a foreground daemon process that spawns a new JSON RPC server to interact with it, and all the processes to automatically handle checkpoints and the execution of cross-net messages for the subnets our agent is participating in. The agent determines the list of subnets it should interact with from its config file.
 
-Alternatively, the agent can also be used as a CLI to interact with IPC. Under the hood, this cli sends new commands to the RPC server of the daemon. To run the IPC agent daemon you can run:
+Alternatively, the agent can also be used as a CLI to interact with IPC. Under the hood, this CLI sends new commands to the RPC server of the daemon. To run the IPC agent daemon you can run:
 
 ```shell
 ./bin/ipc-agent daemon

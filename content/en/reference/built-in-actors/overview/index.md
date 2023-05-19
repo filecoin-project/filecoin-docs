@@ -15,7 +15,7 @@ aliases:
     - "/reference/built-in-actors/"
 ---
 
-Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network consensus in that epoch. This global state is represented as a _state tree_, which maps an actor to an _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its Fil balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block in the chain can be thought of as a **proposed** global state, where the block selected by network consensus sets the **new** global state. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (FVM) is the Filecoin network component that is in charge of execution of all actor code.  
+Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network consensus in that epoch. This global state is represented as a _state tree_, which maps an actor to an _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its FIL balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block in the chain can be thought of as a **proposed** global state, where the block selected by network consensus sets the **new** global state. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (FVM) is the Filecoin network component that is in charge of execution of all actor code.  
 
 A basic example of how built-in actors are used in Filecoin is the process by which storage providers prove storage and are subsequently rewarded. The process is as follows:
 
@@ -23,7 +23,7 @@ A basic example of how built-in actors are used in Filecoin is the process by wh
 1. The storage provider is awarded storage power based on whether the proof is valid or not.
 1. The [`StoragePowerActor`](#storagepoweractor) accounts for the storage power.
 1. During block validation, the `StoragePowerActor`'s state, which includes information on storage power allocated to each storage provider, is read.
-1. Using the state information, the consensus mechanism randomly awards blocks to the storage providers with the most power, and the [`RewardActor`](#rewardactor) sends Fil to storage providers.
+1. Using the state information, the consensus mechanism randomly awards blocks to the storage providers with the most power, and the [`RewardActor`](#rewardactor) sends FIL to storage providers.
 
 ## Blocks
 
@@ -37,7 +37,7 @@ Each block in the Filecoin chain contains:
 
 A Merkle Directed Acyclic Graph (Merkle DAG) is used map the state tree. and the set of messages. Nodes in the state tree contain information on:
 
-- Actors, like Fil balance, nonce and a pointer (CID) to actor state data.
+- Actors, like FIL balance, nonce and a pointer (CID) to actor state data.
 - Messages in the current block
 
 ## Messages
@@ -48,11 +48,11 @@ Like the state tree, a Merkle Directed Acyclic Graph (Merkle DAG) is used to map
 - The actor that sent the message
 - Target method to call on actor being sent the message
 - A cryptographic signature for verification
-- The amount of Fil transferred between actors
+- The amount of FIL transferred between actors
 
 ## Actor code
 
-The code that defines an actor in the Filecoin network is separated into different methods. Messages sent to an actor contain information on which method(s) to call, and the input parameters for those methods. Additionally, actor code interacts with a _runtime_ object, which contains information on the general state of network, such as the current epoch, and cryptographic signatures and proof validations. Like smart contracts in other blockchains, actors must pay a _gas fee_, which is some predetermined amount of Fil to offset the cost (network resources used, etc.) of a transaction. Every actor has a Filecoin balance attributed to it, a state pointer, a code which tells the system what type of actor it is, and a nonce, which tracks the number of messages sent by this actor
+The code that defines an actor in the Filecoin network is separated into different methods. Messages sent to an actor contain information on which method(s) to call, and the input parameters for those methods. Additionally, actor code interacts with a _runtime_ object, which contains information on the general state of network, such as the current epoch, and cryptographic signatures and proof validations. Like smart contracts in other blockchains, actors must pay a _gas fee_, which is some predetermined amount of FIL to offset the cost (network resources used, etc.) of a transaction. Every actor has a Filecoin balance attributed to it, a state pointer, a code which tells the system what type of actor it is, and a nonce, which tracks the number of messages sent by this actor
 
 ## Types of built-in actors
 
@@ -107,7 +107,7 @@ The `MultisigActor` is responsible for dealing with operations involving the Fil
 
 ### PaymentChannelActor
 
-The `PaymentChannelActor` creates and manages _payment channels_, a mechanism for off-chain microtransactions for Filecoin DApps to be reconciled on-chain at a later time with less overhead than a standard on-chain transaction, and no gas costs. Payment channels are uni-directional and can be funded by adding to their balance. To create a payment channel and deposit fund, a user calls the `PaymentChannelActor`. This actor does not interact directly with the FVM.
+The `PaymentChannelActor` creates and manages _payment channels_, a mechanism for off-chain microtransactions for Filecoin dApps to be reconciled on-chain at a later time with less overhead than a standard on-chain transaction, and no gas costs. Payment channels are uni-directional and can be funded by adding to their balance. To create a payment channel and deposit fund, a user calls the `PaymentChannelActor`. This actor does not interact directly with the FVM.
 
 ### StoragePowerActor
 

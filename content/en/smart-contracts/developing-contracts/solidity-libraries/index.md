@@ -23,7 +23,7 @@ Filecoin.sol allows developers to:
 - Simplify the interaction with the Filecoin storage market, miner actors, the verified registry for FIL+ automation, and more.
 - Filecoin-specific data types such as `FilAddress`, `FilActorID`, `CIDs`, storage deals, and more.
 - OpenZeppelin-like utilities specific to Filecoin.
-- CBOR serialization and deserialization for params and return data.
+- CBOR serialization and deserialization for parameters and return data.
 
 In order to access exported Filecoin built-in actor methods in your smart contract, you will need to import Filecoin.sol in your Solidity project. As they are embeddable libraries, they don't need to be present on-chain. You can just import the library you desire and call its methods.
 

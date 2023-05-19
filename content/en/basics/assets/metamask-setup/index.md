@@ -1,5 +1,5 @@
 ---
-title: "Metamask setup"
+title: "MetaMask setup"
 description: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet."
 lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet, Calibration testnet, or the Hyperspace testnet."
 draft: false
@@ -19,7 +19,7 @@ aliases:
     - "/developers/smart-contracts/how-tos/add-to-metamask/"
 ---
 
-## Using ChainList
+## Using Chainlist
 
 Chainlist is a website that lets users easily connect their wallets to EVM-compatible blockchains. Chainlist is managed by [DeFi Llama](https://defillama.com/). Chainlist is the simplest way to add the Filecoin network to your MetaMask wallet.
 

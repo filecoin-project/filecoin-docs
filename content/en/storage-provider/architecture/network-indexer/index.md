@@ -20,7 +20,7 @@ A _network indexer_, also referred to as an _indexer node_ or  _indexer_, is a n
 There are two groups of users within the network indexer process:
 
 - _Storage providers_ advertise their available content by storing data in the indexer. This process is handled by the indexer's _ingest_ logic.
-- _Retrieval clients_ query the indexer to determine which storage providers have the content and what protocol to use, such as graphsync, bitswap, etc. This process is handled by the indexer's _find_ logic.
+- _Retrieval clients_ query the indexer to determine which storage providers have the content and what protocol to use, such as Graphsync, Bitswap, etc. This process is handled by the indexer's _find_ logic.
 
 ## How the indexer works
 

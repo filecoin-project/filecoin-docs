@@ -27,7 +27,6 @@ aliases:
 - [**Filecoin Community**](https://github.com/filecoin-project/community) - Filecoin community and ecosystem channels, discussion forums, and more.
 - [**Filecoin 中文社区**](https://github.com/filecoin-project/community-china) - resources and forum for the Chinese community, maintained and moderated by CoinSummer & PL.
 - [**Filecoin YouTube channel**](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) -  various Filecoin workshops, conference talks, and meetups.
-- [**Filecoin Core Dev meeting**](https://github.com/filecoin-project/tpm) - technical meeting to bring together various Filecoin teams for protocol development.
 
 ## Filecoin Network
 
@@ -82,7 +81,6 @@ Tools to check status and details of the network and chain.
 
 ### Storage/Deals status
 
-- [storageindex.io](https://www.storageindex.io/) - compares storage capacity of different networks
 - [storage.filecoin.io](https://storage.filecoin.io/) - general storage summary of Filecoin
 - [filecoin.tools](https://filecoin.tools) - check your CID's storage deal status. Also provides an API - check [filecoin.tools/docs](https://filecoin.tools/docs) for reference
 - [file.app](https://file.app/) - Filecoin storage provider analytics
@@ -94,7 +92,7 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 
 - [Estuary](https://estuary.tech) allows uploading and storing content on the Filecoin network directly from your browser. Allows anyone with public data to store and retrieve using a few API calls.
 - [**Slate.host**](https://slate.host) - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on Github at [filecoin-project/slate](https://github.com/filecoin-project/slate/)
-- [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with OAuth or general Metamask
+- [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with OAuth or general MetaMask
 - [File.video](https://file.video/) - video hosting with decentralized transcoding from LivePeer
 - [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   - to securely capture, store and verify human history
@@ -112,15 +110,15 @@ Developer tools, API clients & storage services that developers can use to build
   - [Estuary www](https://github.com/application-research/estuary-www) - a simple web app example
   - [Estuary Rclone](https://docs.estuary.tech/Learn/tutorial-managing-files-with-rclone) - sync to and from different cloud storage providers and Estuary
 - [NFT.storage](https://nft.storage/) - beta service from Protocol Labs for storing off-chain _NFT_ data on IPFS and Filecoin.
-- [Web3.storage](https://web3.storage/) - beta service from Protocol Labs for storing off-chain _dapp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
+- [Web3.storage](https://web3.storage/) - beta service from Protocol Labs for storing off-chain _dApp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
 - [Slate.host](https://github.com/filecoin-project/slate/#developer-api) - has a Developer API that allows you upload files with an account
 - [Textile.io's tools](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin
   - includes The Hub, Buckets, ThreadsDB, Powergate, [Tableland](https://blog.textile.io/tableland-is-coming-build-web3-with-sql/) (new) and Filecoin bridges to Polygon and NEAR
   - [Powergate](https://docs.textile.io/powergate/) - infrastructure tool for using IPFS for hot storage and retrieval and Filecoin for cold, with deal helpers and other convenience features
   - [Textile Buckets](https://docs.textile.io/buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood
 - [Fleek's tools](https://fleek.co/) - provides access to Fleek's hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
-  - [Space SDK](https://fleek.co/space-sdk/) - JS library backed by Fleek's hosted services
-  - [Space Daemon](https://fleek.co/space-daemon/) - GoLang library for building desktop apps
+  - [Space SDK](https://docs.fleek.co/space-sdk/overview/) -  modular Javascript/Typescript library and set of interfaces that packages tools and features enabled by Open Web protocols like IPFS, Textile, Filecoin, and Ethereum.
+  - [Space Daemon](https://docs.fleek.co/space-daemon/overview/) - packages together IPFS, Textile Threads and Buckets, and Textile Powergate into one easy to install background service
 
 ### Message signing tools
 
@@ -169,7 +167,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Databases using IPFS and Filecoin
 
-- [Tableland](https://tableland.xyz/) - (new) create familiar SQL tables to read and write dynamic NFT metadata or application data for dapps, from Textile
+- [Tableland](https://tableland.xyz/) - (new) create familiar SQL tables to read and write dynamic NFT metadata or application data for dApps, from Textile
 - [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [orbit-db-powergate-io](https://github.com/filecoin-shipyard/orbit-db-powergate-io).
 - [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS, from Textile
 
@@ -224,6 +222,4 @@ The Retrieval Market is in early development; research and development teams are
 
 ### Grants and accelerators
 
-- [**Filecoin Dev Grants**](https://filecoin.io/grants) - ongoing monthly dev grant program to support open source projects + new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin
-  - funded by the [Filecoin Foundation](https://fil.org)
-- Accelerators
+- [**Filecoin Developer Grants**](https://filecoin.io/grants) - ongoing monthly developer grant program to support open source projects and new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin, funded by the [Filecoin Foundation](https://fil.org)
