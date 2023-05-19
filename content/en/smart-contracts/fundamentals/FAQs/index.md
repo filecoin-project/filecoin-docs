@@ -83,10 +83,6 @@ Not necessarily. You can use one of the two public Hyperspace nodes:
 - `api.hyperspace.node.glif.io/rpc/v1`
 - `api.zondax.ch/fil/node/hyperspace/rpc/v1`
 
-#### How do I install a node on the Hyperspace testnet?
-
-Factor8, the team that runs the Hyperspace testnet, has a [guide on how to spin up a Lotus node on the Hyperspace testnet](https://kb.factor8.dev/docs/filecoin/testnets/hyperspace).
-
 #### What is the difference between the FVM and Bacalhau
 
 They are synergistic. Compute over data solutions such as [Bacalhau](https://github.com/filecoin-project/bacalhau) can use the FVM.
@@ -113,7 +109,7 @@ React, Ethers.js, web.js, ReactJS work well.
 
 #### How do we convert from msg.sender in a FEVM contract, which returns an EVM `0x` address, to the underlying Filecoin `f` address?
 
-You can use the npm [@glif/filecoin-address](https://www.npmjs.com/package/@glif/filecoin-address) package or the [Zondax mock API](https://github.com/Zondax/fevm-solidity-mock-api) has the constructor that calls `mock_generate_deals();`.
+You can use the npm [`@glif/filecoin-address`](https://www.npmjs.com/package/@glif/filecoin-address) package or the [Zondax mock API](https://github.com/Zondax/fevm-solidity-mock-api) has the constructor that calls `mock_generate_deals();`.
 
 #### How do I bound the replicator factor from solidity FEVM?
 
@@ -129,4 +125,4 @@ It’s not impossible but storage providers are incentivized not to close the st
 
 #### How do I check a storage provider’s balance with their FEVM address
 
-You can query balance of any address using [Zondax's API](https://docs.zondax.ch/openapi#tag--Account).
+You can query balance of any address using the Zondax [Account API](https://docs.zondax.ch/openapi).

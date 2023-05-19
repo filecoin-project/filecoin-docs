@@ -72,11 +72,11 @@ The 11 different types of built-in actors are as follows:
 
 ### CronActor
 
-The `CronActor` sends messages to the `StoragePowerActor` and `StorageMarketActor` at the end of each epoch. The messages sent by `CronActor` inidicate to StoragePowerActor and StorageMarketActor how they should maintain internal state and process deferred events. This system actor is instantiated in the genesis block, and interacts directly with the FVM.
+The `CronActor` sends messages to the `StoragePowerActor` and `StorageMarketActor` at the end of each epoch. The messages sent by `CronActor` indicate to StoragePowerActor and StorageMarketActor how they should maintain internal state and process deferred events. This system actor is instantiated in the genesis block, and interacts directly with the FVM.
 
 ### InitActor
 
-The `InitActor` can initialize new actors on the filecoin network. This system actor is instantiated in the genesis block, and maintains a table resolving a public key and temporary actor addresses to their canonical ID addresses. The `InitActor` interacts directly with the FVM.
+The `InitActor` can initialize new actors on the Filecoin network. This system actor is instantiated in the genesis block, and maintains a table resolving a public key and temporary actor addresses to their canonical ID addresses. The `InitActor` interacts directly with the FVM.
 
 ### AccountActor
 
@@ -115,7 +115,7 @@ The `StoragePowerActor` is responsible for keeping track of the storage power al
 
 ### VerifiedRegistryActor
 
-The `VerifiedRegistryActor` is responsible for managing Fil+ clients. This actor can add a verified client to the Fil+ program, remove and reclaim  expired DataCap allocations and manage claims. This actor does not interact directly with the FVM.
+The `VerifiedRegistryActor` is responsible for managing Filecoin Plus (Fil+) clients. This actor can add a verified client to the Fil+ program, remove and reclaim expired DataCap allocations and manage claims. This actor does not interact directly with the FVM.
 
 ### SystemActor
 

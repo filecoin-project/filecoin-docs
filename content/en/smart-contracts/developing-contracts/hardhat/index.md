@@ -137,4 +137,4 @@ Make sure that your account has funds. You won't be able to deploy any contracts
 
 ## Hardhat docs
 
-You can view the official Hardhat documentation over at [hardhart.org/docs](https://hardhat.org/docs).
+You can view the official Hardhat documentation over at [`hardhart.org/docs`](https://hardhat.org/docs).

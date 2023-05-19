@@ -32,7 +32,7 @@ The documentation you will be reading assumes you are familiar with the document
 
 ## Understand Filecoin economics
 
-To understand how you can run a profitable business as a Filecoin storage provider, it is important to make sure you understand the economics of Filecoin. Once you understand all the the core concepts, you can build out a strategy for your desired ROI.
+To understand how you can run a profitable business as a Filecoin storage provider, it is important to make sure you understand the economics of Filecoin. Once you understand all core concepts, you can build out a strategy for your desired ROI.
 
 Storage providers can also add additional value to clients when they offer certain certifications. These can enable a storage provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
 

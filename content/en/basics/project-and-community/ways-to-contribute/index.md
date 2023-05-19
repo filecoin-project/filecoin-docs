@@ -28,9 +28,9 @@ Filecoin and its sister-projects are big, with lots of code written in multiple 
 
 The biggest and most active repositories we have today are:
 
-- [filecoin-project/venus](https://github.com/filecoin-project/venus)
-- [filecoin-project/lotus](https://github.com/filecoin-project/lotus)
-- [filecoin-project/rust-fil-proofs](https://github.com/filecoin-project/rust-fil-proofs)
+- [`filecoin-project/venus`](https://github.com/filecoin-project/venus)
+- [`filecoin-project/lotus`](https://github.com/filecoin-project/lotus)
+- [`filecoin-project/rust-fil-proofs`](https://github.com/filecoin-project/rust-fil-proofs)
 
 If you want to start contributing to the core of Filecoin, those repositories are a great place start. But the _Help Wanted_ label exists in several related projects:
 
@@ -68,7 +68,7 @@ Get started by looking at the list of projects currently built on Filecoin. Buil
 
 Filecoin is ultimately about building better protocols, and the community always welcome ideas and feedback on how to improve those protocols.
 
-- [filecoin-project/specs](https://github.com/filecoin-project/specs)
+- [`filecoin-project/specs`](https://github.com/filecoin-project/specs)
 
 ### Research
 
@@ -76,7 +76,7 @@ Finally, we see Protocol Labs as a research lab, where YOUR ideas can become tec
 
 ## Contribution tutorial
 
-While the [grammar, formatting, and style]({{< relref "#grammar-and-formatting" >}}) and the [writing guide]({{< relref "#writing-guide" >}}) can both help you write excellent content for the Filecoin Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `filecoin-project/filecoin-docs` project.
+While the [grammar, formatting, and style]({{< relref "#grammar-and-formatting" >}}) and the [writing guide]({{< relref "#writing-guide" >}}) can both help you write excellent content for the Filecoin documentation project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `filecoin-project/filecoin-docs` project.
 
 There are plenty of small-sized issues around Filecoin documentation that make for easy, helpful contributions to the Filecoin project. Here, we'll walk through:
 
@@ -97,7 +97,7 @@ All issues involving the Filecoin docs themselves can be found here in the `file
 
 Let's jump into finding an issue.
 
-1. Go to the Filecoin Docs repository at [github.com/filecoin-project/filecoin-docs](https://github.com/filecoin-project/filecoin-docs).
+1. Go to the Filecoin documentation repository at [github.com/filecoin-project/filecoin-docs](https://github.com/filecoin-project/filecoin-docs).
 2. Select the **Issues** tab.
 3. Click the **Label** dropdown and select the **help wanted** tag.
 4. Select an issue that interests you.
@@ -182,7 +182,7 @@ This guide explains things to keep in mind when writing for Filecoin's documenta
 
 The purpose of a walkthrough is to tell the user _how_ to do something. They do not need to convince the reader of something or explain a concept. Walkthroughs are a list of steps the reader must follow to achieve a process or function.
 
-The vast majority of documentation within the Filecoin Docs project falls under the _Walkthrough_ category. Walkthroughs are generally quite short, have a neutral tone, and teach the reader how to achieve a particular process or function. They present the reader with concrete steps on where to go, what to type, and things they should click on. There is little to no _conceptual_ information within walkthroughs.
+The vast majority of documentation within the Filecoin documentation project falls under the _Walkthrough_ category. Walkthroughs are generally quite short, have a neutral tone, and teach the reader how to achieve a particular process or function. They present the reader with concrete steps on where to go, what to type, and things they should click on. There is little to no _conceptual_ information within walkthroughs.
 
 #### Goals
 

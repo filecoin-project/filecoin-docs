@@ -26,7 +26,7 @@ The lifecycle for a deal within the storage market contains four distinct phases
 
 ## Filecoin plus  
 
-The mission of Filecoin Plus is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
+The mission of Filecoin Plus (Fil+) is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
 
 Verified clients can onboard data into Filecoin using datacap, which they apply from community-selected notaries. In return for storing verified storage deals, storage providers receive datacap with a 10x boost to their storage power which eventually increases their block rewards as an incentive.
 

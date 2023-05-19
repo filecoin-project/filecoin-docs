@@ -84,7 +84,7 @@ Filecoin supports two types of public key addresses:
 
 ## Delegated addresses
 
-Filecoin supports extensible, user-defined actor addresses through the `4` address class, introduced in [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md). The `4` address class provides the following benefits to the network:
+Filecoin supports extensible, user-defined actor addresses through the `4` address class, introduced in [Filecoin Improvement Proposal (FIP) 0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md). The `4` address class provides the following benefits to the network:
 
 - Implement foreign addressing systems in Filecoin.
 - A predictable addressing scheme to support interactions with addresses that do not yet exist on-chain.
@@ -108,7 +108,7 @@ The _new actor ID_ is the arbitrary actor ID chosen by that actor.
 
 ### Restrictions
 
-Currently, per [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. This restriction will likely be relaxed once users are able to deploy custom WebAssembly actors.
+Currently, per [FIP 0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. This restriction will likely be relaxed once users are able to deploy custom WebAssembly actors.
 
 This address type plays an essential role in supporting the FEVM. It allows the Filecoin network to be able to recognize the foreign address and validate and execute the transactions sent and signed by the supported foreign addresses.
 
@@ -164,4 +164,3 @@ Addresses starting with `f410f` address can be converted to the `0x`  format by:
 {{< alert >}}
 ⚠️ `f0` addresses are **not** re-org stable and should not be used until the chain has settled.
 {{< /alert >}}
-

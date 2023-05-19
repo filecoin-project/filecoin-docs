@@ -28,6 +28,12 @@ backend
 Base64
 BeaconGetEntry
 Beryx
+k8
+Filrep.io
+MathWallet
+boolean
+FoxWallet
+ImToken
 beryx.zondax.ch
 big-endian
 bitswap
@@ -40,6 +46,7 @@ blockCid
 blockstore
 blocktime
 Boneh
+OAuth
 boost.filecoin.io
 bytecode
 callee
@@ -135,18 +142,23 @@ Ethers.js
 EthEstimateGas
 EthMaxPriorityFeePerGas
 Eudico
+pubsub
 EVM-based
 EVM-compatible
 explorable
 explorer.filmine.io
 explorer.glif.io
 f099
+Ganache
+Grafana
+SpaceGap
 f4
 f410
 f8-fil-ops
 Factor8
 femtoFIL
 FIL
+Fil+
 file systems
 Filebase
 Filecoin
@@ -161,9 +173,9 @@ filfox
 filfox.io
 Filscan
 filscan.io
-filscout
 Filscout
 Filswan
+FIP
 FIPs
 Fleek
 forecasted
@@ -189,7 +201,6 @@ Glif
 Glif.io
 GoLang
 GPUs
-graphsync
 Graphsync
 hackathon
 hackathons
@@ -463,8 +474,6 @@ timelines
  - content/en/basics/project-and-community/ways-to-contribute/index.md
 filecoin-project
 rust-fil-proofs
- - content/en/basics/the-blockchain/addresses/index.md
-fip-0048
  - content/en/basics/the-blockchain/consensus/index.md
 688d0e228f7debf695c906ad442cb46227812
 _
@@ -532,7 +541,6 @@ remix.ethereum.org
 MyToken.sol
  - content/en/smart-contracts/filecoin-evm-runtime/address-types/index.md
 _n_
-fip-0048
  - content/en/smart-contracts/filecoin-evm-runtime/filforwader/index.md
 Glif.io.
  - content/en/smart-contracts/filecoin-evm-runtime/precompiles/index.md
@@ -577,9 +585,6 @@ LoanAgent
 ChangeBeneficiary
  - content/en/storage-provider/architecture/Lotus-components/index.md
 PreCommit
- - content/en/storage-provider/architecture/network-indexer/index.md
-Masih
-Derkani
  - content/en/storage-provider/filecoin-deals/filecoin-programs/index.md
 fil-green
 CO2.Storage
@@ -591,6 +596,7 @@ RPOs
  - content/en/storage-provider/infrastructure/reference-architectures/index.md
 NICs
 vdevs
+VDEV
 U.3
 AddPiece
 PreCommit1
@@ -598,8 +604,6 @@ U.2
 Hoejsbo
  - content/en/storage-provider/infrastructure/storage/index.md
 VDEVs
-resilver
-Resilvering
  - content/en/storage-provider/skills/security/index.md
 SELinux
  - content/en/storage-provider/skills/storage/index.md

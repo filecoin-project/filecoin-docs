@@ -19,7 +19,7 @@ aliases:
 
 ## Slack
 
-Like many other distributed teams, the FVM team works mostly on Slack. You can join the Filecoin Project Slack for free by going to [filecoin.io/slack](https://filecoin.io/slack/). The FVM team hangs out in the following channels:
+Like many other distributed teams, the FVM team works mostly on Slack. You can join the Filecoin Project Slack for free by going to [`filecoin.io/slack`](https://filecoin.io/slack/). The FVM team hangs out in the following channels:
 
 - [`#fil-builders`](https://filecoinproject.slack.com/archives/CRK2LKYHW) for building solutions on FVM and Filecoin
 - [`#fil-fvm-dev`](https://filecoinproject.slack.com/archives/C029MT4PQB1) for development of the FVM
@@ -132,7 +132,7 @@ React, Ethers.js, web.js, ReactJS work well.
 
 ### How do we convert from msg.sender in a FEVM contract, which returns an EVM `0x` address, to the underlying Filecoin `f` address?
 
-You can use the npm [@glif/filecoin-address](https://www.npmjs.com/package/@glif/filecoin-address) package or the [Zondax mock API](https://github.com/Zondax/fevm-solidity-mock-api) has the constructor that calls `mock_generate_deals();`.
+You can use the npm [`@glif/filecoin-address`](https://www.npmjs.com/package/@glif/filecoin-address) package or the [Zondax mock API](https://github.com/Zondax/fevm-solidity-mock-api) has the constructor that calls `mock_generate_deals();`.
 
 ### How do I bound the replicator factor from solidity FEVM?
 
@@ -148,4 +148,4 @@ It’s not impossible but storage providers are incentivized not to close the st
 
 ### How do I check a storage provider’s balance with their FEVM address
 
-You can query balance of any address using [Zondax's API](https://docs.zondax.ch/openapi#tag--Account).
+You can query balance of any address using the Zondax [Account API](https://docs.zondax.ch/openapi).

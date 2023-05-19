@@ -25,7 +25,7 @@ Note: If you are already running your own lotus node, you can also [manage FIL w
 
  Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true)                                   | A multi-currency hardware wallet. _Recommended._                                                                   | Yes |
+| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL?support=true)                                   | A multi-currency hardware wallet. _Recommended._                                                                   | Yes |
 | [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. _Recommended._                                                   | Yes     |
 | [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet, official wallet of Binance.                                                                     | Unknown |
 | [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
@@ -49,6 +49,6 @@ Never share your seed phrase, password, or private keys. Bad actors will often u
 
 If you know of a wallet that supports Filecoin, you can submit a pull request to this page and add it!
 
-- Create an issue in [Filecoin Docs](https://github.com/filecoin-project/filecoin-docs) with the name of the wallet and its features.
+- Create an issue in [`filecoin-project/filecoin-docs`](https://github.com/filecoin-project/filecoin-docs) with the name of the wallet and its features.
 - If the wallet is a mobile wallet, it must be available on both Android and iOS.
 - The wallet must have been audited. The results of this audit must be public.

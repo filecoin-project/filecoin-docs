@@ -1,6 +1,6 @@
 ---
 title: "Filecoin programs"
-description: "It is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC for programs like Filecoin Plus"
+description: "It is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC for programs like Filecoin Plus (Fil+)"
 lead: ""
 draft: false
 images: []
@@ -13,7 +13,7 @@ weight: 330
 toc: true
 ---
 
-Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know_your_customer)) to create verified deals for [Filecoin Plus](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/#), there are also programs and platforms that make it easier for storage providers to receive verified deals.
+Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know_your_customer)) to create verified deals for [Fil+](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/#), there are also programs and platforms that make it easier for storage providers to receive verified deals.
 
 ## Estuary
 
@@ -60,7 +60,7 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 ### Big Data Exchange
 
-Another program that allows storage providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange.io)**. This platform allows storage providers to bid on datasets they are interested in storing. As a storage provider, you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the storage provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why, as a storage provider, you might want to bid to store a copy.
+Another program that allows storage providers easy access to Fil+ deals is **[Big Data Exchange](https://www.bigdataexchange.io/)**. This platform allows storage providers to bid on datasets they are interested in storing. As a storage provider, you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the storage provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why, as a storage provider, you might want to bid to store a copy.
 
 Storing real client data means there will be expectations on retrievability of that data. The storage provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
 

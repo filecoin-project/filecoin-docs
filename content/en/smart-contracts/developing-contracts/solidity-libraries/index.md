@@ -115,6 +115,6 @@ contract StorageDealQuery {
 Check out these links to learn more about the Filecoin.sol library.
 
 - [Filecoin-Solidity GitHub](https://github.com/Zondax/filecoin-solidity)
-- [Docs](https://docs.zondax.ch/fevm/filecoin-solidity/)
+- [Documentation](https://docs.zondax.ch/fevm/filecoin-solidity/)
 - [Built-In Actor APIs](https://docs.zondax.ch/fevm/filecoin-solidity/api/)
 - [FEVM-Hardhat-Kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit/)

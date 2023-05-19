@@ -139,7 +139,7 @@ Please take a look at the presentation Benjamin Hoejsbo from [PIKNIK](https://ww
 {{< youtube "LKMjCgo-fkA" >}}
 
 {{< alert icon="callout" >}}
-We are working to improve this section. If you would like to share your mining setup, please create an issue in the [Filecoin Docs GitHub repository](https://github.com/filecoin-project/filecoin-docs/issues)!
+We are working to improve this section. If you would like to share your mining setup, please create an issue in the [Filecoin documentation GitHub repository](https://github.com/filecoin-project/filecoin-docs/issues)!
 {{< /alert >}}
 
 {{< sp-calls-to-action >}}

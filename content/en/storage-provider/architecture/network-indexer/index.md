@@ -29,7 +29,7 @@ This diagram summarizes the different _actors_ in the indexer ecosystem and how 
 [![Network Indexer ecosystem](indexer.png)](indexer.png)
 
 {{< alert "info" >}}
-For more info on how the indexer works, read this [blog post by Masih Derkani](https://filecoin.io/blog/posts/how-does-the-network-indexer-work/).
+For more info on how the indexer works, read the [Filecoin blog post](https://filecoin.io/blog/posts/how-does-the-network-indexer-work/).
 {{< /alert >}}
 
 ## IPNI and storage providers

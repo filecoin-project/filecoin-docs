@@ -71,7 +71,7 @@ Examples:
 
 - [Filecoin integrations for Web3 infrastructure](https://www.youtube.com/watch?v=Q0oe6i7d1u4) (video)
 - [What is an IPFS Pinning Service?](https://medium.com/pinata/what-is-an-ipfs-pinning-service-f6ed4cd7e475#:~:text=An%20IPFS%20pinning%20service%20is,running%20your%20own%20IPFS%20nodes.) (Pinata explainer)
-- [IPFS Docs: Persistence, permanence and pinning](https://docs.ipfs.tech/concepts/persistence/)
+- [IPFS documentation: Persistence, permanence and pinning](https://docs.ipfs.tech/concepts/persistence/)
 - [Developing on Filecoin](https://www.youtube.com/watch?v=aGCpq0Xf-w8) (video)
 - Textile tools: [video](https://www.youtube.com/watch?v=IZ8M9m9_uJY) and [blog post](https://blog.textile.io/developer-tools-for-filecoin-ipfs-web/)
 - [Building decentralized apps using Fleek’s Space daemon](https://www.youtube.com/watch?v=pWJ5fty-7mA) (video)

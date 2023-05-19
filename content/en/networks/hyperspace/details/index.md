@@ -18,7 +18,7 @@ aliases:
 
 Supports `512 MiB`, `32 GiB`, and `64 GiB` sectors.
 
-**Maintainer:** [@f8-fil-ops](https://github.com/f8-fil-ops)
+**Maintainer:** [`@f8-fil-ops`](https://github.com/f8-fil-ops)
 
 ## Genesis
 

@@ -37,7 +37,7 @@ It takes more variables than the cost vs. the income. In summary, the factors th
 
 * **Verified Deals:**
 
-    How much of your total sealed capacity will be done with Verified Deals (Fil+)? Those deals give a far higher return because of the 10x multiplier that is added to your storage power and block rewards.
+    How much of your total sealed capacity will be done with Verified Deals (Filecoin Plus)? Those deals give a far higher return because of the 10x multiplier that is added to your storage power and block rewards.
 
 * **Committed Capacity:**
 

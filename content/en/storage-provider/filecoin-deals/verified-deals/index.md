@@ -43,11 +43,11 @@ Once the data is sealed and you are proving your copies on-chain (i.e. on the bl
 
 ## Tools
 
-Tools and programs exist to support Filecoin Plus, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs]({{<relref "filecoin-programs" >}}) for more information on available programs. See [Architecture]({{<relref "lotus-components" >}}) for more information on the tooling and software components.
+Tools and programs exist to support Fil+, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs]({{<relref "filecoin-programs" >}}) for more information on available programs. See [Architecture]({{<relref "lotus-components" >}}) for more information on the tooling and software components.
 
 ## Rewards & penalties
 
-With great power, comes great responsibility, which also counts for storage power: rewards on Filecoin Plus deals are 10x, but so are the penalties. Because a sector of 32 GiB counts for 320 GiB of storage power (10x), the rewards and the penalties are calculated on the QAP of 320 GiB. Filecoin Plus allows a storage provider to earn more block rewards on a verified deal, compared to a regular data deal. The 10x multiplier on storage power that comes with a verified deal, however, also requires 10x collateral from the storage provider.
+With great power, comes great responsibility, which also counts for storage power: rewards on Fil+ deals are 10x, but so are the penalties. Because a sector of 32 GiB counts for 320 GiB of storage power (10x), the rewards and the penalties are calculated on the QAP of 320 GiB. Fil+ allows a storage provider to earn more block rewards on a verified deal, compared to a regular data deal. The 10x multiplier on storage power that comes with a verified deal, however, also requires 10x collateral from the storage provider.
 
 If the storage provider is then not capable of keeping the data and systems online and fails to submit the daily required proofs (WindowPoSt) for that data, the penalties (_slashing_) are also 10x higher than over regular data deals or CC sectors. Larger storage power means larger block rewards, larger collateral and larger slashing. The stakes are high - after all, we’re storing humanity’s most important information with Filecoin.
 

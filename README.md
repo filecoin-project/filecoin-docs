@@ -501,7 +501,7 @@ To make understanding terms in the docs a bit easier, users can hover over certa
 {{ $tooltips := dict
     "dApps" "Decentralized applications that don't rely on centralized infrastructure."
     "IPFS" "The InterPlanetary File System (IPFS) is a peer-to-peer protocol for sharing and storing files on the internet, designed to be decentralized and distributed."
-    "Lotus" "The reference node implementation for the filecoin network."
+    "Lotus" "The reference node implementation for the Filecoin network."
     "Lily" "Software designed to simplify the recording of blockchain data."
     "web3" "A new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics."
 }}
