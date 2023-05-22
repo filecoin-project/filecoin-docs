@@ -240,9 +240,9 @@ Input:
 1. String - 20 Bytes - Address.
 1. String - Either the hex value of a block number OR One of the following block tags:
     - `pending`: a sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
-    - `latest`: the most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-    - `safe`: the most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
-    - `finalized`: the most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+    - `latest`: the most recent block in the canonical chain observed by the client, this block may be reorganized out of the canonical chain even under healthy/normal conditions.
+    - `safe`: the most recent crypto-economically secure block, cannot be reorganized outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be reorganized.
+    - `finalized`: the most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be reorganized outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be reorganized.
     - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 ```curl
@@ -368,9 +368,9 @@ Returns the number of transactions in a block matching the given tipset.
 - Inputs:
   - `string`: Either the hex value of a block number OR one of the following block tags:
     - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
-    - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-    - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
-    - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+    - `latest`: The most recent block in the canonical chain observed by the client, this block may be reorganized out of the canonical chain even under healthy/normal conditions.
+    - `safe`: The most recent crypto-economically secure block, cannot be reorganized outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be reorganized.
+    - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be reorganized outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be reorganized.
     - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 Example:
@@ -406,9 +406,9 @@ This section of documentation is a work-in-progress.
   - `string`: 20 byte address.
   - `string`: Either the hex value of a block number OR one of the following block tags:
     - `pending` - A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
-    - `latest` - The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-    - `safe` - The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
-    - `finalized` - The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+    - `latest` - The most recent block in the canonical chain observed by the client, this block may be reorganized out of the canonical chain even under healthy/normal conditions.
+    - `safe` - The most recent crypto-economically secure block, cannot be reorganized outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be reorganized.
+    - `finalized` - The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be reorganized outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be reorganized.
     - `earliest` - The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 ```shell
@@ -748,7 +748,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 
 ## EthNewFilter
 
-Creates a filter object, based on filter options, to notify when the state changes (logs). Unlike [`eth_newBlockFilter`](#EthNewBlockFilter) which notifies you of all new blocks, you can pass in filter options to track new logs matching the topics specified. To check if the state has changed, call [`eth_getFilterChanges`](#EthGetFilterChanges).
+Creates a filter object, based on filter options, to notify when the state changes (logs). Unlike [`eth_newBlockFilter`](#ethnewblockfilter) which notifies you of all new blocks, you can pass in filter options to track new logs matching the topics specified. To check if the state has changed, call [`eth_getFilterChanges`](#ethgetfilterchanges).
 
 - Permissions: write
 - Inputs:
@@ -759,9 +759,9 @@ Creates a filter object, based on filter options, to notify when the state chang
         - `string`: Contract address or a list of addresses from which logs should originate.
         - `string`: Either the hex value of a block number OR one of the following block tags:
           - `pending`: A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool. Intuitively, you can think of these as blocks that have not been mined yet.
-          - `latest`: The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions.
-          - `safe`: The most recent crypto-economically secure block, cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be re-orged.
-          - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be re-orged outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be re-orged.
+          - `latest`: The most recent block in the canonical chain observed by the client, this block may be reorganized out of the canonical chain even under healthy/normal conditions.
+          - `safe`: The most recent crypto-economically secure block, cannot be reorganized outside of manual intervention driven by community coordination. Intuitively, this block is “unlikely” to be reorganized.
+          - `finalized`: The most recent crypto-economically secure block, that has been accepted by >2/3 of validators. Cannot be reorganized outside of manual intervention driven by community coordination. Intuitively, this block is very unlikely to be reorganized.
           - `earliest`: The lowest numbered block the client has available. Intuitively, you can think of this as the first block created.
 
 ```shell
@@ -791,7 +791,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 
 ## EthNewPendingTransactionFilter
 
-Creates a filter in the node, to notify when new pending transactions arrive. To check if the state has changed, call [`eth_getFilterChanges`](#EthGetFilterChanges).
+Creates a filter in the node, to notify when new pending transactions arrive. To check if the state has changed, call [`eth_getFilterChanges`](#ethgetfilterchanges).
 
 - Permissions: write
 - Inputs: none
@@ -872,7 +872,7 @@ Subscribe to different Ethereum event types like newHeads, logs, pendingTransact
 - Permissions: write
 - Inputs:
   - Event types: specifies the type of event to listen to (ex: new pending transactions, logs, etc).
-  - Optional params: optional parameters to include to describe the type of event to listen to (`address` for example).
+  - Optional parameters: optional parameters to include to describe the type of event to listen to (`address` for example).
 
 ## EthUninstallFilter
 
