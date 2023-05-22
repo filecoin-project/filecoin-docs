@@ -398,13 +398,37 @@ This project contains some handy features you can include within your project.
 
 > This feature is currently in beta
 
-As a pre-commit step, a custom shell script to check Markdown file quality using NPM packages is run. When you `git commit` a Markdown file in the repository, the script:
+Before local changes can be committed to `filecoin-docs`, a custom shell script to check Markdown file quality using NPM packages is run. The workflow is as follows:
 
-1. _Fails and rejects the commit_ if any of the following issues are flagged:
-   - Spelling
-   - Markdown formatting
-   - Broken links
-1. _Succeeds and accepts the commit_ if no markdown files were changed or no errors were found.
+1. In a local copy of the repository, changes are made to one or more Markdown files.
+1. Changes are staged:
+
+    ```shell
+    git add .
+    ```
+
+1. Staged changes are committed locally with a short and useful message describing the commit `<commit-msg>`:
+
+
+    ```shell
+    git commit -m "<commit-msg>"
+    ```
+
+1. The pre-commit step is triggered, where the following open-source linters are run against all locally committed files, as described below:
+
+    | Linter              | Usage                                      | Command used                                                | Configuration              |
+    | ------------------- | ------------------------------------------ | ----------------------------------------------------------- | -------------------------- |
+    | [`markdown-spellcheck`](https://www.npmjs.com/package/markdown-spellcheck) | Flag misspelled words, improper terminology | `mdspell -r -a -n --en-us`                                    | `.spelling`              |
+    | [`markdownlint-cli2`](https://github.com/DavidAnson/markdownlint-cli2)   | Flag improperly formatted markdown         | `markdownlint-cli2`                                           | `.markdownlint-cli2.jsonc` |
+    | [`markdown-link-check`](https://github.com/tcort/markdown-link-check) | Flag broken URLs                           | `markdown-link-check --config .mdlinkcheck-config.json -q -p` | `.mdlinkcheck-config.json` |
+
+    The script combines the output of these linters, and does one of the following:
+    
+    -  _Fails and rejects the commit_ if any issues are flagged, and reports those issues to the user:
+        - Spelling
+        - Markdown formatting
+        - Broken links
+    - _Succeeds and accepts the commit_ if no markdown files were changed or no errors were found.
 
 > If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
 
@@ -416,10 +440,14 @@ Before you can commit to the repository, you must fix any errors identified. To 
 
 ##### Fix broken links
 
+> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
+
 1. Fix any improperly formatted links.
 1. Remove or replace any links that are returning a 404.
 
 ##### Fix markdown formatting
+
+> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
 
 1. Open a terminal window in the root directory of `filecoin-docs` and run `format-fix.sh`:
 
@@ -434,6 +462,8 @@ Before you can commit to the repository, you must fix any errors identified. To 
 1. Fix the remaining Markdown formatting errors.
 
 ##### Fix spelling mistakes
+
+> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
 
 Open a terminal window in the root directory of `filecoin-docs` and run `spell-fix.sh`:
 
