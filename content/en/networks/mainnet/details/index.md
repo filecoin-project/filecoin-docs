@@ -59,10 +59,9 @@ aliases:
 
 ## Resources
 
-<!-- markdown-link-check-disable -->
 - [Latest chain snapshot (pruned)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car)
 - [Latest chain snapshot (full)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car)
-<!-- markdown-link-check-enable -->
+- [Latest lightweight snapsnot](https://snapshots.mainnet.filops.net/minimal/latest)
 - [Status page and incidents](https://filecoin.statuspage.io/)
 - [Stats dashboard](https://stats.filecoin.io/)
 - [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)

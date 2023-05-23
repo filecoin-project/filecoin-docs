@@ -15,7 +15,7 @@ toc: true
 
 ![Venus logo.](venus-logo.png)
 
-Venus is an open-source implementation of the Filecoin network, developed by the blockchain company IPFSForce. Venus is built in Rust and is designed to be fast, efficient, and scalable.
+Venus is an open-source implementation of the Filecoin network, developed by the blockchain company IPFSForce. Venus is built in Go and is designed to be fast, efficient, and scalable.
 
 Venus is a full-featured implementation of the Filecoin protocol, providing storage, retrieval, and mining functionalities. It is compatible with the Lotus implementation and can interoperate with other Filecoin nodes on the network.
 
@@ -25,7 +25,7 @@ Venus also includes several advanced features, such as automatic fault tolerance
 
 ## Interact with Venus
 
-There are several ways you can interact with Venus, the Rust-based implementation of the Filecoin protocol. Here are some of the most common ways to interact with Venus:
+Here are some of the most common ways to interact with Venus:
 
 ### Venus API
 
@@ -41,4 +41,4 @@ If you are interested in contributing to the development of Venus itself, you ca
 
 ## More information
 
-For more information about Venus, including advanced configuration, check out the Venus documentation site [venus.filecoin.io](https://venus.filecoin.io).
+For more information about Venus, including advanced configuration, see the [Venus documentation site](https://venus.filecoin.io).
