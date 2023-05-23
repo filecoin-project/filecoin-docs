@@ -60,7 +60,8 @@ aliases:
 
 ## Resources
 
-- [Latest lightweight snapsnot](https://snapshots.mainnet.filops.net/minimal/latest)
+- [Latest lightweight snapshot](https://snapshots.mainnet.filops.net/minimal/latest)
+- [Mirror snapshot provided by the Forest team at ChainSafe](https://forest.chainsafe.io/mainnet/snapshot-latest.car)
 - [Status page and incidents](https://filecoin.statuspage.io/)
 - [Stats dashboard](https://stats.filecoin.io/)
 - [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)

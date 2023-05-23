@@ -56,3 +56,4 @@ Calibration network is the most realistic simulation of the Filecoin mainnet.
 - [Stats Dashboard](https://stats.calibration.fildev.network/)
 - [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 - [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
+- [Mirror snapshot provided by the Forest team at ChainSafe](https://forest.chainsafe.io/calibnet/snapshot-latest.car)
