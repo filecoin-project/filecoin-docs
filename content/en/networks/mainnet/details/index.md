@@ -60,8 +60,8 @@ aliases:
 
 ## Resources
 
-- [Latest lightweight snapshot](https://snapshots.mainnet.filops.net/minimal/latest)
-- [Latest lightweight snapshot by Forest 🌲 from ChainSafe](https://forest.chainsafe.io/mainnet/snapshot-latest)
+- [Latest lightweight snapshot](https://snapshots.mainnet.filops.net/minimal/latest) generated with [Lotus](https://lotus.filecoin.io/) by [Protocol Labs](https://protocol.ai/)
+- [Latest lightweight snapshot](https://forest.chainsafe.io/mainnet/snapshot-latest) generated with [Forest 🌲](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
 - [Status page and incidents](https://filecoin.statuspage.io/)
 - [Stats dashboard](https://stats.filecoin.io/)
 - [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
