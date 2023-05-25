@@ -46,3 +46,7 @@ These nodes are available for free to users for the [first month](https://nownod
 
 - HTTPS: `https://fil.nownodes.io`
 - [NOWNodes documentation](https://documenter.getpostman.com/view/13630829/TVmFkLwy)
+## [ChainupCloud](https://cloud.chainup.com)
+- HTTPS: `https://filecoin.chainup.net/rpc/v1`
+- WebSocket: `wss://filecoin.chainup.net/rpc/v1`
+- [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
