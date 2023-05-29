@@ -29,6 +29,22 @@ const deployment = await upgrades.deployProxy(contract, preparedArguments, {
 });
 ```
 
+### Unstuck a message from the mempool
+
+When users/devs send messages to the Filecoin network, those messages will first land into mempool of Filecoin nodes. Once a node receives your message, it will verify the gas fee and the signature, and then process the transaction. This may take some time depending on network traffic and other factors. 
+
+If a message is not confirmed on the Filecoin network, it means that the transaction has not been processed and seating in the mempool of Lotus nodes. There could be several reasons why a message may not be confirmed, such as network congestion, insufficient gas fees, or an invalid message signature. 
+
+Therefore,  we highly recommend devs/users try to resubmit the message with a higher gas fee or priority fee so those messages will not block the mempool and potentially impact the block-producing time. It's important to note that gas fees on the Filecoin network can fluctuate depending on network demand, so it's always a good idea to monitor gas prices and adjust your fees accordingly to ensure that your transaction is processed in a timely manner.
+
++ **MetaMask**: If you are building your project using MetaMask, it would be easier to educate the users to speed up a transaction which stuck in the mempool by increasing the gas fee directly on MetaMask. Please refer to this [tutorial](https://support.metamask.io/hc/en-us/articles/360015489251-How-to-speed-up-or-cancel-a-pending-transaction) from MetaMak.
++ **Lotus**: If you are using Lotus, you can follow this tutorial to [replace message with updated gas fee](https://lotus.filecoin.io/kb/update-msg-gas-fee/).
++ **Creating messages with SDK**: If you are processing messages using SDKs like ether.js or web3.js, you need to replace the message with higher gas fees following the logic down below. 
+  + Get the original message using its hash.
+  + Create a new message with the same nonce as the original message, also set the `nonce`, `to`, `value` fields same values as the original message.
+  + Set a higher `gasLimit` and `gasPrice` for this message.
+  + Sign and send the new message.
+
 ## Futureproofing
 
 Developers should take the time to thoroughly read through the following summary of possible contract future-proofing updates, as failure to properly future proof smart contracts may result in incompatibility with the [v1.20.0-hyperspace-nv20 release](https://github.com/filecoin-project/testnet-hyperspace/issues/9) and future Filecoin releases.
