@@ -52,6 +52,10 @@ Prospective storage providers can experience more realistic sealing performance 
 /dns4/bootstrap-3.calibration.fildev.network/tcp/1347/p2p/12D3KooWLrPM4WPK1YRGPCUwndWcDX8GCYgms3DiuofUmxwvhMCn
 ```
 
+## Snapshots
+
+- [Latest minimal snapshot](https://snapshots.calibrationnet.filops.net/minimal/latest.zst)
+
 ## Resources
 
 - [Faucet](https://faucet.calibration.fildev.network/)
