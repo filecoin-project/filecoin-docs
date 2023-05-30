@@ -1,7 +1,7 @@
 ---
 title: "Verify a contract"
-description: "External Solidity libraries can help developers create their applications quicker by offloading some of the work to already existing smart contracts."
-lead: "External Solidity libraries can help developers create their applications quicker by offloading some of the work to already existing smart contracts."
+description: "Before deploying a contract to Mainnet, we recommend that you verify your contract. This page lists various Filecoin Ethereum Virtual Machine (FEVM) explorers with verification tools, and provides a tutorial on how to verify a contract using Filfox."
+lead: "Before deploying a contract to Mainnet, we recommend that you verify your contract. This page lists various Filecoin Ethereum Virtual Machine (FEVM) explorers with verification tools, and provides a tutorial on how to verify a contract using Filfox."
 draft: false
 images: []
 type: docs
@@ -15,30 +15,31 @@ aliases:
     - "/developers/infrastructure/libraries/"
 ---
 
-## Verify your contract
-If you are deploying your FEVM contract to mainnet, we highly recommend verifying your contract, to upkeep security and transparency on the network.
-There are a few FEVM-supported explorers that allow you to do this today:
+## Verification tools
 
+The following FEVM-compatible chain explorers offer contract verification tools. For more information, click the appropriate link below.
 
-## Using Filfox
+- [Filfox](https://filfox.info/en/contract)
+- [Starboard](https://fvm.starboard.ventures/explorer/verifier) 
+- [Beryx](https://beryx.zondax.ch/contract_verifier)
+
+## Verification tutorial with Filfox
+
+The following guide walks you through the process of contract verification using the [Filfox](https://filfox.info/en/contract) explorer.
 
 ### Prerequisites
 
-- Remix
-- Access to one of the following contract verification tools.
-    - [Filfox](https://filfox.info/en/contract)
-    - [Starboard](https://fvm.starboard.ventures/explorer/verifier) 
-    - [Beryx](https://beryx.zondax.ch/contract_verifier)
+- A smart contract (`.sol` file)
+- [Remix](https://remix.ethereum.org/)
+- Access to one of the [verification tools](#verification-tools)
 
 ### Procedure
 
-First
-
 1. Open Remix.
 
-1. In the **File Explorer** sidebar tab, under **contracts**, right click on your contract.
+1. In the **File Explorer** sidebar tab, under **contracts**, right click on the contract you want to verify.
 
-1. From the menu, select **generate UM** to flatten `<contract-name>.sol` file and ensure all components and tasks are included. 
+1. From the menu, select **generate UML** to flatten the `<contract-name>.sol` file and ensure that all components and tasks are included. 
 
     A new contract with the name `<contract-name>_flattened.sol` is generated below your original contract.
 
@@ -50,23 +51,39 @@ First
 
 1. In the menu, click **Download** to save the file. 
 
-1. Copy the address of your deployed contract. 
+1. Note the following information, as you will need it later:
 
-1. Navigate to [Filfox](https://filfox.info/en/contract) as an example.
+    - The address of your deployed contract
 
-1. In the form, enter the following information:
-   - The address of your deployed contract.
-   - The compiler version used in 
-   - The license type used in
+    - The contract license type (if any)
 
-1. Click **Continue** to upload your flattened .sol file. 
+    - The Solidity compiler version
+
+
+1. Navigate to [Filfox](https://filfox.info/en/contract).
+
+1. In the form, enter the information noted previously for the deployed contract you would like to verify:
+
+    - The address 
+
+    - The license type
+
+    - The compiler version
+
+1. Click **Continue**.
+
+1. Click **Select *.sol files**.
+
+1. Select your flattened `.sol` file.
 
 1. Click **Verify and Publish**.
 
-   Success! Your contract is now verified.
+   Success! Your contract is now verified. 
 
-1. In Filfox's search bar, enter your contract address.
+1. To view your verified contract:
 
-1. Select the **Contract** tab to you can view your contract's source code and ABI.
+    1. Enter the address of the contract in the [Filfox search bar](https://filfox.info/).
 
-> You may also view other verified contracts' source code and ABI by heading back to Filfox contract verification page and clicking on 'Verified Contract List'. You can click into contract addresses and follow the steps above, in this section.
+    1. Scroll down the contract page and select the **Contract** tab.
+
+       A **Contract Source Code Verified** banner is displayed, along with contract information and source code. You can also [view other verified contracts on Filfox](https://filfox.info/en/stats/verified-contracts).
