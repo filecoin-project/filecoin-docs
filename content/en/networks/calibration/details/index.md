@@ -13,6 +13,10 @@ weight: 100
 toc: true
 aliases:
     - "/networks/calibration"
+    - "/networks/hyperspace/details/"
+    - "/networks/hyperspace/explorers/"
+    - "/networks/hyperspace/rpcs/"
+    - "/networks/hyperspace/get-test-tokens/"
 ---
 
 The Calibration testnet is the most realistic simulation of the Filecoin mainnet.
