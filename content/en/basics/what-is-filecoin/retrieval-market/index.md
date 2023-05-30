@@ -27,4 +27,4 @@ Clients need to provide enough information to the storage provider for the data 
 
 ## Saturn
 
-[Saturn](https://strn.network/) is a Web3 CDN in Filecoin’s retrieval market which serves the data stored on Filecoin with low latency and at low cost. It consists of independent retrieval providers specifically dedicated to that business, making retrieval an efficient, fast, and reliable operation.
+[Saturn](https://saturn.tech/) is a Web3 CDN in Filecoin’s retrieval market which serves the data stored on Filecoin with low latency and at low cost. It consists of independent retrieval providers specifically dedicated to that business, making retrieval an efficient, fast, and reliable operation.
