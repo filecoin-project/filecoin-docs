@@ -62,15 +62,9 @@
       parent = "main-networks"
 
     [[main]]
-      name = "Hyperspace"
-      url = "/networks/hyperspace/details"
-      weight = 20
-      parent = "main-networks"
-
-    [[main]]
       name = "Calibration"
       url = "/networks/calibration/details"
-      weight = 30
+      weight = 20
       parent = "main-networks"
 
     [[main]]
@@ -258,14 +252,8 @@
   url = "/networks/mainnet"
 
 [[networks]]
-  name = "Hyperspace"
-  weight = 20
-  identifier = "networks-hyperspace"
-  url = "/networks/hyperspace"
-
-[[networks]]
   name = "Calibration"
-  weight = 30
+  weight = 20
   identifier = "networks-calibration"
   url = "/networks/calibration"
 

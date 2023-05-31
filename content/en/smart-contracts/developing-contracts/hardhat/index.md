@@ -120,7 +120,7 @@ Make sure that your account has funds. You won't be able to deploy any contracts
     ✨  Done in 211.76s.
     ```
 
-    This will compile all the contracts in the contracts folder and deploy them to the Hyperspace test network automatically!
+    This will compile all the contracts in the contracts folder and deploy them to the Calibration test network automatically!
 
 1. Interact with the contracts using the available functions within the `tasks` folder. For example, you can get the balance of the `simple-coin` contract by calling the `get-balance` function:
 
@@ -129,7 +129,7 @@ Make sure that your account has funds. You won't be able to deploy any contracts
     ```
 
     ```plaintext
-    Reading SimpleCoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 on network hyperspace
+    Reading SimpleCoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 on network calibration
     Amount of Simplecoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 is 12000
     Total amount of minted tokens is 12000
     ✨  Done in 3.73s.

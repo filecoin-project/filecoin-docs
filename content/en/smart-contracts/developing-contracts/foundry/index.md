@@ -22,7 +22,7 @@ You must have the following installed:
 - [Git](https://git-scm.com/)
 - [Yarn](https://yarnpkg.com/)
 
-You should also have an address on the Filecoin Hyperspace testnet. See the [Add to MetaMask page]({{< relref "/basics/assets/metamask-setup" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "get-test-tokens" >}}) page for information on how to get test funds.
+You should also have an address on the Filecoin Calibration testnet. See the [Add to MetaMask page]({{< relref "metamask-setup" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "get-test-tokens" >}}) page for information on how to get test funds.
 
 ## Steps
 
@@ -44,14 +44,14 @@ You should also have an address on the Filecoin Hyperspace testnet. See the [Add
 
     ```markdown
     PRIVATE_KEY=eed8e9d727a647f7302bab440d405ea87d36726e7d9f233ab3ff88036cfbce9c
-    HYPERSPACE_RPC_URL=https://api.hyperspace.node.glif.io/rpc/v1
+    HYPERSPACE_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
     ```
 
 1. Inside the `src` folder in a contract called `SimpleCoin.sol`. Deploy this contract using Foundry:
 
     ```shell
     forge build
-    forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --broadcast --verify -vvvv
+    forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.calibration.node.glif.io/rpc/v1 --broadcast --verify -vvvv
     ```
 
     ```plaintext
@@ -66,7 +66,7 @@ You should also have an address on the Filecoin Hyperspace testnet. See the [Add
     ```shell
     forge build
 
-    forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY src/SimpleCoin.sol:SimpleCoin
+    forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY src/SimpleCoin.sol:SimpleCoin
     ```
 
     The deployment process should be almost instantaneous. Once the contract has been successfully deployed, Foundry will give you a contract address you can use to interact with the contract.
