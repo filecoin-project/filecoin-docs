@@ -116,9 +116,9 @@ A static site will be built and stored in the `/public` directory.
 ## About the project
 
 <picture align=center>
-    <source media="(prefers-color-scheme: dark)" srcset="https://bafybeick5a6esj6qqtw35jdgrouyn3nrg5ckrmjptuvx3jjjnih7vkdzre.ipfs.w3s.link/filecoin-homepage-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://bafybeib2c67ernhjnqzrdcmtzn5cvi45qrftz6qlo37wr5cnnhvrs6ocg4.ipfs.w3s.link/filecoin-homepage-light.png">
-    <img alt="The Filecoin project logo." src="https://bafybeib2c67ernhjnqzrdcmtzn5cvi45qrftz6qlo37wr5cnnhvrs6ocg4.ipfs.w3s.link/filecoin-homepage-light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://ipfs.io/ipfs/QmWMouW8v6Rp9mAdmLJAtGD1nS4GfVUE51fYWE4ZCt7WWw">
+    <source media="(prefers-color-scheme: light)" srcset="https://ipfs.io/ipfs/QmPDzxTqqPKKwhEys2Ah9hRCowNDx2fbXGj8yKB7T5Qiby">
+    <img alt="The Filecoin project logo." src="https://ipfs.io/ipfs/QmPDzxTqqPKKwhEys2Ah9hRCowNDx2fbXGj8yKB7T5Qiby">
 </picture>
 
 This repository manages the documentation for the Filecoin project. This repo also contains the build scripts and tools to create the Filecoin docs website and the API documentation. If you want to learn about Filecoin, how it works, or how to build on it, then you're in the right place.
