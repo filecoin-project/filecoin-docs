@@ -125,13 +125,13 @@ This repository manages the documentation for the Filecoin project. This repo al
 
 ### Merge process
 
-This project receives _a lot_ of pull requests from many individual contributors. Because of this, the Filecoin Docs team merges any new changes into `main` on Wednesday only. Any commits or PRs into docs any other day will go into the `staging` branch. This process has several benefits:
+This project receives _a lot_ of pull requests from many individual contributors. Because of this, the Filecoin Docs team merges any new changes into `production` on Wednesdays only. Any commits or PRs into this repo on any other day will land in the `staging` branch. This process has several benefits:
 
 - Reviewing and editing content is more manageable.
 - Mass formatting, spelling, and grammar changes can happen on a single branch.
 - Breaking changes are much less likely.
 
-Only issues and PRs tagged as `p0` will be merged directly into `main` outside the Wednesday merge window. Take a look at the [Priority section](#priority) for information on how we tag issues.
+Only issues and PRs tagged as `p0` will be merged directly into `production` outside the Wednesday merge window. Take a look at the [Priority section](#priority) for information on how we tag issues.
 
 ### Files and folders
 
