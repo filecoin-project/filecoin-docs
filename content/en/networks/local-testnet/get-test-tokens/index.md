@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-local-testnet"
     identifier: "get-test-tokens-c5522c84915e0e7f1d9358e2a635c652"
-weight: 420
+weight: 510
 toc: true
 ---
 

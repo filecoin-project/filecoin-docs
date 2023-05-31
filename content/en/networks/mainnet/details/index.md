@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-mainnet"
     identifier: "details-85ab1f5b8a0bc0a1291758573d823c89"
-weight: 110
+weight: 100
 toc: true
 aliases:
     - "/networks"
