@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-calibration"
     identifier: "details-f75237b2d7edd2d77d413de509a99ca4"
-weight: 100
+weight: 300
 toc: true
 aliases:
     - "/networks/calibration"

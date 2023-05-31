@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-mainnet"
     identifier: "network-performance-0aff8d16ee2b536359cd3c2716d32452"
-weight: 260
+weight: 140
 toc: true
 aliases:
     - "/networks/network-performance"

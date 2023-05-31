@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-mainnet"
     identifier: "explorers-85ab1f5b8a0bc0a1291758573d823c89"
-weight: 120
+weight: 110
 toc: true
 aliases:
     - "/get-started/explore-the-network/"

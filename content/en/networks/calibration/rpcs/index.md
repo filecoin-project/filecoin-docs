@@ -1,5 +1,5 @@
 ---
-title: "Rpcs"
+title: "RPCs"
 description: "Public RPC endpoints are available for the Calibration testnet."
 lead: "Public RPC endpoints are available for the Calibration testnet."
 draft: false
@@ -7,8 +7,9 @@ images: []
 type: docs
 menu:
   networks:
+    parent: "networks-calibration"
     identifier: "rpcs-f83788f36772434a1a2346d867ebbf54"
-weight: 230
+weight: 320
 toc: true
 ---
 

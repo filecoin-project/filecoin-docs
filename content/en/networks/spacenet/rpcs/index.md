@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-spacenet"
     identifier: "spacenet-rpcs"
-weight: 110
+weight: 410
 toc: true
 
 ---
