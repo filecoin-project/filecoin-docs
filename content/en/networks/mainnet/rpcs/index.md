@@ -18,17 +18,17 @@ toc: true
 - HTTPS: `https://rpc.ankr.com/filecoin`
 - [Supported Filecoin API methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
 
-## [ChainupCloud](https://cloud.chainup.com)
-
-- HTTPS: `https://filecoin.chainup.net/rpc/v1`
-- WebSocket: `wss://filecoin.chainup.net/rpc/v1`
-- [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
-
 ## [Chainstack](https://www.chainstack.com)
 
 - HTTPS: `https://filecoin-mainnet.chainstacklabs.com/rpc/v1`
 - WebSocket: `wss://ws-filecoin-mainnet.chainstacklabs.com/rpc/v1`
 - [Chainstack documentation](https://docs.chainstack.com)
+
+## [ChainupCloud](https://cloud.chainup.com)
+
+- HTTPS: `https://filecoin.chainup.net/rpc/v1`
+- WebSocket: `wss://filecoin.chainup.net/rpc/v1`
+- [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
 
 ## [Glif](https://glif.io)
 
