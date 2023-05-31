@@ -25,7 +25,7 @@ These endpoints are limited to [read-only Filecoin JSON RPC API calls]({{< relre
 
 Please note that publicly available hosted endpoints **only guarantee 2000 of the latest blocks.**
 
-- HTTPS: `https://api.calibration.node.glif.io/rpc/v0`
+- HTTPS: `https://api.calibration.node.glif.io/rpc/v1`
 - WebSocket: `wss://wss.calibration.node.glif.io`
 - Lotus lite-node command
 
