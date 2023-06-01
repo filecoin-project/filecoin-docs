@@ -21,7 +21,7 @@ The election mechanism of the Filecoin network is based on the â€œstorage powerâ
 
 ## Filecoin's storage capacity
 
-The Filecoin network is composed of storage providers who offer storage capacity to the network. This capacity is used to secure the network, as it takes a significant amount of storage to take part in the consensus mechanism. This large capacity makes it impossible for a single party to reach 51% of the network power. Therefore, it is important that the raw capacity also referred to as _raw byte power_, remains high. The Filecoin spec also included a _baseline power_ above which the network yields maximum returns for the storage providers.
+The Filecoin network is composed of storage providers who offer storage capacity to the network. This capacity is used to secure the network, as it takes a significant amount of storage to take part in the consensus mechanism. This large capacity makes it impractical for a single party to reach 51% of the network power, since an attacker would need 10 EiB in storage to control the network. Therefore, it is important that the raw capacity also referred to as _raw byte power_, remains high. The Filecoin spec also included a _baseline power_ above which the network yields maximum returns for the storage providers.
 
 The graph below shows the evolution of network capacity on the Filecoin network. As can be seen, the baseline power goes up over time (and becomes exponential). This means from May 2021 to February 2023 the network yielded maximum returns for storage providers. However, in recent history, Quality Adjusted Power (QAP) has taken over as a leading indicator of relevance for the Filecoin network. QAP is the result of the multiplier when storing verified deals.
 
