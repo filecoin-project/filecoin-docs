@@ -29,7 +29,7 @@ For more detailed information about how collateral requirements are calculated, 
 
 When a storage provider fails to answer to the WindowsPoSt challenges within the 30 minute deadline (see [Storage Proving]({{<relref storage-proving >}})), storage is taken offline, or any storage deal rules are broken, the provider is penalized against the provided collateral. This penalty is called [_slashing_]({{<relref slashing>}}) and means that a portion of the pledged collateral is forfeited to the `f099` address from your locked or available rewards and your storage power is reduced. The `f099` address is the address where all burned FIL goes.
 
-## How much collateral?
+## Commit Pledge
 
 The amount of required collateral depends on the amount of storage pledged to the Filecoin network. The bigger volume you store, the more collateral is required. Additionally, Filecoin Plus uses a [QAP](https://docs.filecoin.io/reference/general/glossary/#quality-adjusted-storage-power) multiplier to increase the collateral requirement. See [Verified Deals with Filecoin Plus]({{<relref "verified-deals" >}}) for more information.
 
@@ -43,7 +43,14 @@ So for instance for 100TiB at a 0.20FIL / 32GiB sector this means:
 _0.20FIL x 32 x 100 = 640 FIL_
 {{< /alert >}}
 
-The “Current Sector Initial Pledge" can be found on blockchain explorers like [Filfox](https://filfox.info/en) and [Filscout](https://www.filscout.com/en).
+The “Current Sector Initial Pledge" can be found on blockchain explorers like [Filfox](https://filfox.info/en) and [Filscout](https://www.filscout.com/en) and on the [Starboard dashboards](https://dashboard.starboard.ventures/capacity-services#commit-pledge-per-32gib-qap).
+
+
+## Gas fees
+
+Another cost factor in the network is gas. Storage providers not only pledge collateral for the capacity they announce on-chain. The network also burns FIL in the form of gas fees. Most activity on-chain has some level of gas involved. For storage providers this is the case for committing sectors.
+
+The gas fees fluctuate over time and can be followed on various website like [FGas](https://fgas.io/).
 
 ## FIL lending programs
 
