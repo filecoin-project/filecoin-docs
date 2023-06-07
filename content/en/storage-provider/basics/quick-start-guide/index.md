@@ -34,13 +34,13 @@ It's time to roll up your sleeves and embark on a hands-on adventure. With a mul
 
 ## Initial Setup: Transforming Into a Storage Provider
 
-Congratulations on taking the next leap in becoming a full-fledged storage provider! Now is the time to determine your starting capacity and architect a tailored solution to accommodate it. Equip yourself with the [necessary hardware](https://docs.filecoin.io/storage-provider/infrastructure/reference-architectures/) to kickstart your journey on the mainnet. Test your setup on the calibration testnet to fine-tune your skills and ensure seamless operations. Once you're ready, brace yourself for the excitement of joining the mainnet and unlocking a world of opportunities.
+Congratulations on taking the next leap in becoming a full-fledged storage provider! Now is the time to determine your starting capacity and architect a tailored solution to accommodate it. Equip yourself with the [necessary hardware](https://docs.filecoin.io/storage-provider/infrastructure/reference-architectures/) to kickstart your journey on the mainnet. Test your setup on the calibration testnet to fine-tune your skills and ensure seamless operations. Once you're ready, brace yourself for the excitement of joining the mainnet.
 
 ## Boost: Supercharge Your Mainnet Experience
 
 As you step into the vibrant realm of the mainnet, it's time to supercharge your storage provider capabilities with [Boost](https://boost.filecoin.io). Discover the immense potential of this powerful software designed to help you secure storage deals and offer efficient data retrieval services to data owners. Unleash the full force of Boost and witness the transformative impact it has on your Filecoin journey.
 
-## Data Programs: Unlock a World of Verified Deals and Tools
+## Data Programs: Discover the World of Verified Deals and Tools
 
 Within the Filecoin network there are many [programs and tools](https://docs.filecoin.io/storage-provider/filecoin-deals/filecoin-programs/) designed to enhance your storage provider setup. Explore the Estuary, Slingshot, Spade, and more, each offering unique opportunities to secure verified deals. Uncover the power of these tools as you dive into the documentation, gaining valuable insights and expanding your knowledge. Make the best use of data programs on your path to success.
 
