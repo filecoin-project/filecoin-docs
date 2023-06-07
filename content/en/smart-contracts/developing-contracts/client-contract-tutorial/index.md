@@ -1,6 +1,6 @@
 ---
-title: "Client Contract Tutorial"
-description: "A tutorial on how to use the Client Contract to make storage deals via smart contracts."
+title: "Client contract tutorial"
+description: "A tutorial on how to use the client contract to make storage deals using smart contracts."
 lead: "The Client Contract allows developers to create storage deals programmatically via smart contracts."
 draft: false
 images: []
@@ -14,82 +14,62 @@ toc: true
 aliases:
     - "/developers/infrastructure/libraries/"
 ---
+
 ## Creating Storage Deals Via Smart Contracts
 
-In this tutorial, we will cover the background of creating storage deals via smart contracts and how to create storage deals with smart contracts on the FEVM (Ethereum Virtual Machine on top of the Filecoin blockchain). Before continuing you will need the following software preinstalled on your computer: \
- \
+In this tutorial, we will cover the background of creating storage deals via smart contracts and how to create storage deals with smart contracts on the FEVM (Ethereum Virtual Machine on top of the Filecoin blockchain). Before continuing you will need the following software preinstalled on your computer:
 
-
-
-
-* Git
-* NodeJS
-* Yarn or NPM (Yarn is used in this tutorial)
-* A code editor such as VS Code
-* [A wallet with Calibration testnet FIL](https://docs.filecoin.io/developers/smart-contracts/quickstart/#create-a-wallet)
+- Git
+- NodeJS
+- Yarn or NPM (Yarn is used in this tutorial)
+- A code editor such as VS Code
+- [A wallet with Calibration testnet FIL]({{< relref "/developers/smart-contracts/quickstart" >}})
 
 You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel](https://www.youtube.com/watch?v=27EV3gQGY9k). 
 
+## Workflows
 
-## Why Smart Contract Storage Deals
+Before we get started, let's quickly cover the two workflows for creating storage deals.
 
+### Regular deal creation workflow
 
-### Regular Storage Deal Creation Workflow
+Filecoin is a blockchain tailor-made for processing storage deals. Before the Filecoin virtual machine was implemented into the network, storage deals could only be created using the following workflow:
 
-Filecoin is a blockchain tailor-made for processing **_storage deals. _**Before the FVM storage deals followed the following workflow in the diagram below: \
+![Offline deal-making workflow](deal-workflow.png)
 
+This process requires a lot of different actions to be taken by both the client and the storage provider. But with the advent of the Filecoin Virtual Machine, [smart contracts]({{< relref "/developers/smart-contracts/filecoin-virtual-machine/" >}}) can be deployed on top of the Filecoin blockchain. This allows developers to access and now create Filecoin Storage Deals within smart contracts! And thus, now developers can also create new storage deals on the Filecoin blockchain. This reduces the number of actions clients and storage providers have to take to generate storage deals.
 
- \
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to ./deal-workflow.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](./deal-workflow.png "image_tooltip")
-
-
-This requires a lot of different actions to be taken by both the client and the storage provider. But with the advent of the Filecoin Virtual Machine, “[smart contracts](https://docs.filecoin.io/developers/smart-contracts/filecoin-virtual-machine/)” can be deployed on top of the Filecoin blockchain. This allows developers to access and now create Filecoin Storage Deals within smart contracts! And thus, now developers can also create new storage deals on the Filecoin blockchain. This reduces the number of actions clients and storage providers have to take to generate storage deals.
-
-
-### Smart Contract Storage Deals Workflow
+### Smart contract deal creation workflow
 
 To create storage deals, smart contracts need a specific Solidity event called `DealProposalCreate`. Storage Providers running [Boost software](https://boost.filecoin.io/) can then listen for this event and, if the deal is acceptable to them, pick up the deal automatically. The workflow can be seen below.
 
- \
- \
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to new-deal-workflow.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](new-deal-workflow.png "image_tooltip")
-  
-
- 
-
+![Smart contract deal creation workflow](new-deal-workflow.png)
 
 ## Tutorial
 
 Let’s now run through how to create storage deals via smart contracts.
 
+### Getting the FEVM deal making kit
 
-###  \
- \
-Getting the FEVM Deal Making Kit
+1. Open up a terminal, or command prompt, go to the directory of your choice, and type in the following command:
 
-Open up a terminal, or command prompt, go to the directory of your choice, and type in the following command:
+    ```shell
+    git clone --recurse-submodules https://github.com/filecoin-project/fvm-starter-kit-deal-making.git
+    ```
 
-`git clone --recurse-submodules
+    This will copy the fvm deal making kit into your current directory and initiate the `go-generate-car` submodule. 
 
- https://github.com/filecoin-project/fvm-starter-kit-deal-making.git`
+1. Now change into that directory by typing the following command in:
 
-This will copy the fvm deal making kit into your current directory and initiate the `go-generate-car` submodule. Now change into that directory by typing the following command in: \
- \
-`cd fvm-starter-kit-deal-making` 
+    ```shell
+    cd fvm-starter-kit-deal-making
+    ```
 
-Now type in the following command to download all the dependencies needed for this repo: \
- \
-`yarn`
+1. Enter the following command to download all the dependencies needed for this repo:
+
+    ```shell
+    yarn
+    ```
 
 Now that all the packages are downloaded we will need to add a .env with your private key. This is so the hardhat kit knows what wallet to use for transactions. Open up the repo in your code editor of choice and find the file titled `.env.example`. Rename the file to `.env`. Now replace the fake private key with your actual private key. If you are using Metamask, follow [this tutorial to get your private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key#:~:text=On%20the%20account%20page%2C%20click,click%20%E2%80%9CConfirm%E2%80%9D%20to%20proceed.). Remember to take precautions to never share your private key with anyone or check it into git! The .gitignore of the hardhat kit is already set to ignore .env files.
 
@@ -145,6 +125,3 @@ Now if you’ve invoked the task with all the correct parameters, the method wil
 ### Conclusion
 
 During this tutorial, we have shown the significance of making deals via smart contracts and then walked through making a storage deal using the fvm deal making kit and web3.storage. Developers can make use of this workflow to integrate decentralized storage on Filecoin with their smart contracts and decentralized applications. 
-
-
-
