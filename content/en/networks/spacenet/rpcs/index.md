@@ -20,7 +20,6 @@ toc: true
   - `https://api.spacenet.node.glif.io/rpc/v0`
   - `https://api.spacenet.node.glif.io/rpc/v1`
 
-
 ## Basic
 
 This endpoint is currently limited to read-only [JSON RPC API calls]({{< relref "/reference/json-rpc/introduction" >}}).
