@@ -1,7 +1,7 @@
 ---
 title: "RPCs"
-description: "A public RPC endpoint is available for the Spacenet testnet."
-lead: "A public RPC endpoint is available for the Spacenet testnet."
+description: "Public RPC endpoints are available for the Spacenet testnet."
+lead: "Public RPC endpoints are available for the Spacenet testnet."
 draft: false
 images: []
 type: docs
@@ -13,6 +13,14 @@ weight: 410
 toc: true
 
 ---
+
+## [Glif](https://glif.io) (recommended)
+
+- HTTPS: `https://api.spacenet.node.glif.io/` (defaults to /rpc/v1)
+  - `https://api.spacenet.node.glif.io/rpc/v0`
+  - `https://api.spacenet.node.glif.io/rpc/v1`
+
+## Basic
 
 This endpoint is currently limited to read-only [JSON RPC API calls]({{< relref "/reference/json-rpc/introduction" >}}).
 
