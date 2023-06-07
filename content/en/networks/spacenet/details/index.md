@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-spacenet"
     identifier: "details-dijo3928yfisgo8gg38"
-weight: 100
+weight: 400
 toc: true
 ---
 

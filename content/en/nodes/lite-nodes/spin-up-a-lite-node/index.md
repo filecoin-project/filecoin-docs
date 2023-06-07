@@ -98,7 +98,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. MacOS 
     Or...
 
     ```shell
-    git checkout ntwk/hyperspace # Hyperspace testnet
+    git checkout ntwk/calibration # Calibration testnet
     ```
 
 1. Done! You can move on to the [Build](#build) section.
@@ -123,7 +123,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. MacOS 
     Or...
 
     ```shell
-    git checkout ntwk/hyperspace # Hyperspace testnet
+    git checkout ntwk/calibration # Calibration testnet
     ```
 
 1. Create the necessary environment variables to allow Lotus to run on M1 architecture:
@@ -156,7 +156,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. MacOS 
     Or...
 
     ```shell
-    git checkout ntwk/hyperspace # Hyperspace testnet
+    git checkout ntwk/calibration # Calibration testnet
     ```
 
 1. If your processor was released later than an AMD Zen or Intel Ice Lake CPU, enable the use of SHA extensions by adding these two environment variables:
@@ -206,7 +206,7 @@ The last thing we need to do to get our node setup is to build the package. The 
     ```
 
 {{< /tab >}}
-{{< tab tabName="Hyperspace" >}}
+{{< tab tabName="Calibration" >}}
 <br>
 
 1. Remove or delete any existing Lotus configuration files on your system:
@@ -218,7 +218,7 @@ The last thing we need to do to get our node setup is to build the package. The 
 1. Make the Lotus binaries and install them:
 
     ```shell
-    make clean && make hyperspacenet
+    make clean && make calibrationnet
     sudo make install
     ```
 
@@ -230,7 +230,7 @@ The last thing we need to do to get our node setup is to build the package. The 
 
     ```plaintext
     lotus --version
-    lotus version 1.19.1-dev+hyperspacenet+git.94b621dd5.dirty
+    lotus version 1.19.1-dev+calibrationnet+git.94b621dd5.dirty
     ```
 
 {{< /tab >}}
@@ -259,13 +259,13 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
 
 1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {{< /tab >}}
-{{< tab tabName="Hyperspace" >}}
+{{< tab tabName="Calibration" >}}
 <br>
 
 1. Create an environment variable called `FULLNODE_API_INFO` and set it to the WebSockets address of the node you want to connect to. At the same time, start the Lotus daemon with the `--lite` tag:
 
     ```shell
-    FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite
+    FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
     ```
 
     ```shell
@@ -320,7 +320,7 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
 
 1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {{< /tab >}}
-{{< tab tabName="Hyperspace" >}}
+{{< tab tabName="Calibration" >}}
 <br>
 
 1. Open `~/.lotus/config.toml` and uncomment `ListenAddress` on line 6:
@@ -344,7 +344,7 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
 1. In the same window restart the lite-node:
 
     ```shell
-    FULLNODE_API_INFO=wss://wss.hyperspace.node.glif.io/apigw/lotus lotus daemon --lite
+    FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
     ```
 
     ```shell

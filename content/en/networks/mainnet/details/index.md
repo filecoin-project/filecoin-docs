@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-mainnet"
     identifier: "details-85ab1f5b8a0bc0a1291758573d823c89"
-weight: 110
+weight: 100
 toc: true
 aliases:
     - "/networks"
@@ -60,8 +60,8 @@ aliases:
 
 ## Resources
 
-- [Latest chain snapshot (pruned)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car)
-- [Latest chain snapshot (full)](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/complete_chain_with_finality_stateroots_latest.car)
+- [Latest lightweight snapshot](https://snapshots.mainnet.filops.net/minimal/latest) generated with [Lotus](https://lotus.filecoin.io/) by [Protocol Labs](https://protocol.ai/)
+- [Latest lightweight snapshot](https://forest.chainsafe.io/mainnet/snapshot-latest) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
 - [Status page and incidents](https://filecoin.statuspage.io/)
 - [Stats dashboard](https://stats.filecoin.io/)
 - [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)

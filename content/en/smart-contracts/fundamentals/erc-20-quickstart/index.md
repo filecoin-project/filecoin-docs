@@ -53,16 +53,16 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
 ### Switch networks
 
-You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Hyperspace testnet]({{< relref "/networks/hyperspace/details" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
+You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet]({{< relref "/networks/calibration/details" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
 
 1. Go to [chainlist.org](https://chainlist.org/).
 1. Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
 
     ![Search for Filecoin testnets in Chainlist.](chainlist-search-for-filecoin-testnets.png)
 
-1. Scroll down to find the **Filecoin -- Hyperspace** testnet:
+1. Scroll down to find the **Filecoin -- Calibration** testnet:
 
-    ![Find the Hyperspace testnet.](chainlist-select-hyperspace.png)
+    ![Find the Calibration testnet.](chainlist-select-calibration.png)
 
 1. In MetaMask click **Next**.
 
@@ -84,11 +84,11 @@ You may notice that we are currently connected to the **Ethereum Mainnet**. We n
 
     ![Open MetaMask from the browser extensions tab.](chainlist-open-metamask.png)
 
-1. You should see the Filecoin Hyperspace testnet listed at the top:
+1. You should see the _Filecoin Calibration_ testnet listed at the top:
 
-    ![MetaMask on the Filecoin Hyperspace testnet.](chainlist-hyperspace-added.png)
+    ![MetaMask on the Filecoin Calibration testnet.](chainlist-calibration-added.png)
 
-Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
+Nice! Now we've got the Filecoin Calibration testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
 
 ### Get some funds
 
@@ -96,7 +96,7 @@ Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'
 
     ![Copy your address to your clipboard.](faucet-get-address.png)
 
-1. Go to [hyperspace.yoga](https://hyperspace.yoga) and click **Faucet** from the menu.
+1. Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Faucet** from the menu.
 
     ![Go to the Faucet section of the website.](faucet-click-faucet.png)
 
