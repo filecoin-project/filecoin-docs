@@ -21,7 +21,7 @@ In this tutorial, we will cover the background of creating storage deals via sma
 - NodeJS
 - Yarn or NPM (Yarn is used in this tutorial)
 - A code editor such as VS Code
-- [A wallet with Calibration testnet FIL]({{< relref "/developers/smart-contracts/quickstart" >}})
+- [A wallet with Calibration testnet FIL]({{< relref "/networks/calibration/details" >}})
 
 You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel](https://www.youtube.com/watch?v=27EV3gQGY9k). 
 
@@ -35,7 +35,7 @@ Filecoin is a blockchain tailor-made for processing storage deals. Before the Fi
 
 ![Offline deal-making workflow](deal-workflow.png)
 
-This process requires a lot of different actions to be taken by both the client and the storage provider. But with the advent of the Filecoin Virtual Machine, [smart contracts]({{< relref "/developers/smart-contracts/filecoin-virtual-machine/" >}}) can be deployed on top of the Filecoin blockchain. This allows developers to access and now create Filecoin Storage Deals within smart contracts! And thus, now developers can also create new storage deals on the Filecoin blockchain. This reduces the number of actions clients, and storage providers have to take to generate storage deals.
+This process requires a lot of different actions to be taken by both the client and the storage provider. But with the advent of the Filecoin Virtual Machine, smart contracts can be deployed on top of the Filecoin blockchain. This allows developers to access and now create Filecoin Storage Deals within smart contracts! And thus, now developers can also create new storage deals on the Filecoin blockchain. This reduces the number of actions clients, and storage providers have to take to generate storage deals.
 
 ### Smart contract deal creation workflow
 
