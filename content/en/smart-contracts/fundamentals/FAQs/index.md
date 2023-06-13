@@ -78,7 +78,7 @@ Yes.
 
 #### Do I have to install Lotus to work with FVM
 
-Not necessarily. You can use one of the two public Hyperspace nodes:
+Not necessarily. You can use any of the public RPC nodes on either [mainnet]({{< relref "/networks/mainnet/details" >}}) or the [Calibration testnet]({{< relref "/networks/calibration/details" >}}
 
 - `api.hyperspace.node.glif.io/rpc/v1`
 - `api.zondax.ch/fil/node/hyperspace/rpc/v1`

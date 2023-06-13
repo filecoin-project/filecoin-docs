@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-local-testnet"
     identifier: "set-up-72a301344c7e2a40efea82726d9b66b8"
-weight: 410
+weight: 500
 toc: true
 aliases:
     - "/networks/local-testnet"

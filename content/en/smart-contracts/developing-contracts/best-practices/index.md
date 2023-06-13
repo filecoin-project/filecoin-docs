@@ -29,9 +29,34 @@ const deployment = await upgrades.deployProxy(contract, preparedArguments, {
 });
 ```
 
+### Unstuck a message from the mempool
+
+When users send messages to the Filecoin network, those messages will first land in the mempool. Once a node receives your message, it will verify the gas fee and signature and then process the transaction. Depending on network traffic and other factors, this process may take some time. 
+
+If the Filecoin network still needs to confirm a message, it's because it has yet to be processed and is sitting in the mempool. Several causes exist, such as network congestion, insufficient gas fees, or an invalid message signature. 
+
+We recommend users resubmit the message with a higher gas fee or priority fee so those messages will not block the mempool and potentially impact the block-producing time. Gas fees on the network can fluctuate depending on network demand, so it's always a good idea to monitor gas prices and adjust your fees accordingly to ensure your transaction is processed promptly.
+
+#### Metamask
+
+If you are building your project using MetaMask, it would be easier to educate the users to speed up a transaction by increasing the gas fee directly in MetaMask. Refer to the [official MetaMask documentation](https://support.metamask.io/hc/en-us/articles/360015489251-How-to-speed-up-or-cancel-a-pending-transaction) for more details.
+
+#### Lotus
+
+Developers using Lotus can [replace an existing message with an updated gas fee](https://lotus.filecoin.io/kb/update-msg-gas-fee/).
+
+#### SDKs
+
+Developers processing messages using SDKs, such as ethers.js or web3.js, must replace the message with higher gas fees by following these steps:
+
+1. Get the original message using its hash.
+1. Create a new message with the same `nonce`, `to`, and `value` fields as the original message.
+1. Set a higher `gasLimit` and `gasPrice` for this message.
+1. Sign and send the new message.
+
 ## Futureproofing
 
-Developers should take the time to thoroughly read through the following summary of possible contract future-proofing updates, as failure to properly future proof smart contracts may result in incompatibility with the [v1.20.0-hyperspace-nv20 release](https://github.com/filecoin-project/testnet-hyperspace/issues/9) and future Filecoin releases.
+Developers should take the time to thoroughly read through the following summary of possible contract future-proofing updates, as failure to properly future proof smart contracts may result in incompatibility with future Filecoin releases.
 
 - **All contracts** must [accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically, and use `CBOR (0x51)` in outputs](#all-contracts).
 - If a contract uses the FRC42 hash of `GranularityExported`, it must be [updated and redeployed](#contracts-using-granularityexported-hash)

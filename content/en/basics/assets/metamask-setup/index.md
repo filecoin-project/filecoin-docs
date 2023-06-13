@@ -153,11 +153,11 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
     | Field | Value |
     | --- | --- |
     | Network name | `Filecoin Hyperspace testnet` |
-    | New RPC URL | Either:<br> - `https://api.hyperspace.node.glif.io/rpc/v1` <br> - `https://filecoin-hyperspace.chainup.net/rpc/v1` <br> - `https://filecoin-hyperspace.chainstacklabs.com/rpc/v1` <br> - `https://rpc.ankr.com/filecoin_testnet` |
+    | New RPC URL | Either:<br> - `https://api.calibration.node.glif.io/rpc/v1` <br> - `https://filecoin-calibration.chainup.net/rpc/v1` <br> - `https://filecoin-calibration.chainstacklabs.com/rpc/v1` <br> - `https://rpc.ankr.com/filecoin_testnet` |
     | Chain ID | `3141` |
     | Currency symbol | `tFIL` |
 
-1. Pick one a [block explorers]({{< relref "/networks/hyperspace/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
+1. Pick one a [block explorers]({{< relref "/networks/calibration/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
 1. Review the values in the fields and click **Save**.
 1. The Filecoin network should now be shown in your MetaMask window.
 1. Done!
@@ -179,7 +179,7 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
     | Chain ID | `31415926` |
     | Currency symbol | `tFIL` |
 
-1. Pick one a [block explorers]({{< relref "/networks/hyperspace/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
+1. Pick one a [block explorers]({{< relref "/networks/calibration/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
 1. Review the values in the fields and click **Save**.
 1. The Filecoin network should now be shown in your MetaMask window.
 1. Done!

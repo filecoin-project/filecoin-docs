@@ -31,14 +31,6 @@ Test networks, or testnets, are version of the Filecoin network that attempt to 
 - [Blockchain explorer](https://calibration.filscan.io/)
 - [Faucet](https://faucet.calibration.fildev.network/)
 
-### Hyperspace
-
-[Hyperspace](https://github.com/filecoin-project/testnet-hyperspace) testnet is the main pre-production developer testnet which is more stable and reliable. The Hyperspace testnet is a pre-production developer-focused testnet. It resets only in the event of irrecoverable damage. Developers are welcome to build and test their tooling, applications, and smart contracts on this network.
-
-- [Public endpoint](https://api.hyperspace.node.glif.io/rpc/v0)
-- [Blockchain explorer](https://explorer.glif.io/?network%3Dhyperspace)
-- [Faucet](https://hyperspace.filtest.network#faucet)
-
 ### Spacenet
 
 [Spacenet]({{< relref "/networks/spacenet/details" >}}) is a Filecoin testnet that’s been modified to support Interplanetary Consensus (IPC). It aims to provide developers with a testbed to deploy their FVM use cases and innovate with new Web3 applications that leverage IPC subnets and the high-performance consensus provided by the Mir framework and the Trantor BFT consensus protocol.

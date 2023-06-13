@@ -70,7 +70,7 @@ Filecoin nodes, such as Lotus, have several JSON-API API endpoints designed to h
 If you want to learn more about how to use those JSON-RPC APIs for the Filecoin gas model, please check the [JSON RPC API docs for Gas]({{< relref "reference/json-rpc/gas" >}}).
 
 {{< alert  >}}
-Gas estimation varies from network to network. For example, the `BaseFee` on mainnet is different from the `BaseFee` on the Hyperspace testnet.
+Gas estimation varies from network to network. For example, the `BaseFee` on mainnet is different from the `BaseFee` on the Calibration testnet.
 {{< / alert  >}}
 
 If you'd rather not calculate and estimate gas for every message, you can just leave the optional fields unset. The gas fields will be estimated and set when the message is pushed to the mempool.
@@ -85,7 +85,7 @@ Since Filecoin is fully EVM-compatible, Filecoin nodes also provide Ethereum-com
 To request the current max priority fee in the network, you can send a request to a public Filecoin endpoint:
 
 ```shell
-curl --location --request POST 'https://api.hyperspace.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://api.calibration.node.glif.io/rpc/v1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",

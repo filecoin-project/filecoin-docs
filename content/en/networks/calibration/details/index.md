@@ -9,17 +9,30 @@ menu:
   networks:
     parent: "networks-calibration"
     identifier: "details-f75237b2d7edd2d77d413de509a99ca4"
-weight: 100
+weight: 300
 toc: true
 aliases:
     - "/networks/calibration"
+    - "/networks/hyperspace/details/"
+    - "/networks/hyperspace/explorers/"
+    - "/networks/hyperspace/rpcs/"
+    - "/networks/hyperspace/get-test-tokens/"
 ---
 
-Calibration network is the most realistic simulation of the Filecoin mainnet.
+The Calibration testnet is the most realistic simulation of the Filecoin mainnet.
 
-- Prospective storage providers can experience more realistic sealing performance and hardware requirements due to the use of final proofs constructions and parameters.
-- Prospective storage clients can store and retrieve real data on the network. Clients can participate in deal-making workflows and storage + retrieval functionality.
-- Same sector size as mainnet. The calibration network supports 32 GiB and 64 GiB sectors.
+Prospective storage providers can experience more realistic sealing performance and hardware requirements using final proofs constructions and parameters. Storage clients can store and retrieve _real data_ on the network. Clients can also participate in deal-making workflows and storage and retrieval functionality. The sector size on the Calibration testnet is the same as on the Filecoin mainnet; 32 GiB and 64 GiB sectors are supported. This testnet also includes the Filecoin EVM-runtime features found on the Filecoin mainnet.
+
+{{< alert >}}
+**Large sector sizes**
+
+A drawback of 32 GiB and 64 GiB sectors is that storage providers generally prefer deals that use a significant amount of the sector. This could cause issues for builders wanting to store less than 4 GiB of data. 
+
+[PiKNiK](https://www.piknik.com/) is running a Boost-enabled storage provider that will listen out for small deals to solve this issue. The PiKNiK SP will attempt to aggregate these deals into 32 GiB sectors. If a deal has yet to be bundled into a 32 GiB sector after 12 hours, then the PiKNiK SP will publish it in whatever state it is in.
+{{< /alert >}}
+
+Developers can reference pre-existing deals that are already available on the network. [See the PiKNiK documentation for more details](#). See the [`#fil-net-calibration-discuss` channel in the Filecoin Slack](https://filecoinproject.slack.com/archives/C01D42NNLMS) for support.
+
 
 **Maintainer**: [Protocol Labs](https://protocol.ai)
 
@@ -50,9 +63,14 @@ Calibration network is the most realistic simulation of the Filecoin mainnet.
 /dns4/bootstrap-3.calibration.fildev.network/tcp/1347/p2p/12D3KooWLrPM4WPK1YRGPCUwndWcDX8GCYgms3DiuofUmxwvhMCn
 ```
 
+## Snapshots
+
+- [Latest minimal snapshot](https://snapshots.calibrationnet.filops.net/minimal/latest.zst)
+
 ## Resources
 
 - [Faucet](https://faucet.calibration.fildev.network/)
 - [Stats Dashboard](https://stats.calibration.fildev.network/)
-- [Slack Channel for Updates](https://filecoinproject.slack.com/archives/C01AC6999KQ)
-- [Slack Channel for Questions](https://filecoinproject.slack.com/archives/CEGN061C5)
+- [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
+- [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
+- [Latest lightweight snapshot](https://forest.chainsafe.io/calibnet/snapshot-latest) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)

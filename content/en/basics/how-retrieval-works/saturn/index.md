@@ -13,7 +13,7 @@ weight: 430
 toc: true
 ---
 
-[![Saturn homepage.](saturn-homepage.png)](https://saturn.tech)
+[![Saturn homepage](saturn-homepage.png)](https://saturn.tech)
 
 Saturn is a Web3 CDN in Filecoin’s retrieval market. On one side of the network, websites buy fast, low-cost content delivery. On the other side, Saturn node operators earn Filecoin by fulfilling requests.
 

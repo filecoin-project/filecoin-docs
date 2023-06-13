@@ -116,22 +116,22 @@ A static site will be built and stored in the `/public` directory.
 ## About the project
 
 <picture align=center>
-    <source media="(prefers-color-scheme: dark)" srcset="https://bafybeick5a6esj6qqtw35jdgrouyn3nrg5ckrmjptuvx3jjjnih7vkdzre.ipfs.w3s.link/filecoin-homepage-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://bafybeib2c67ernhjnqzrdcmtzn5cvi45qrftz6qlo37wr5cnnhvrs6ocg4.ipfs.w3s.link/filecoin-homepage-light.png">
-    <img alt="The Filecoin project logo." src="https://bafybeib2c67ernhjnqzrdcmtzn5cvi45qrftz6qlo37wr5cnnhvrs6ocg4.ipfs.w3s.link/filecoin-homepage-light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://ipfs.io/ipfs/QmWMouW8v6Rp9mAdmLJAtGD1nS4GfVUE51fYWE4ZCt7WWw">
+    <source media="(prefers-color-scheme: light)" srcset="https://ipfs.io/ipfs/QmPDzxTqqPKKwhEys2Ah9hRCowNDx2fbXGj8yKB7T5Qiby">
+    <img alt="The Filecoin project logo." src="https://ipfs.io/ipfs/QmPDzxTqqPKKwhEys2Ah9hRCowNDx2fbXGj8yKB7T5Qiby">
 </picture>
 
 This repository manages the documentation for the Filecoin project. This repository also contains the build scripts and tools to create the Filecoin docs website and the API documentation. If you want to learn about Filecoin, how it works, or how to build on it, then you're in the right place.
 
 ### Merge process
 
-This project receives _a lot_ of pull requests from many individual contributors. Because of this, the Filecoin Docs team merges any new changes into `main` on Thursdays only. Any commits or PRs into docs any other day will go into the `staging` branch. This has several benefits:
+This project receives _a lot_ of pull requests from many individual contributors. Because of this, the Filecoin Docs team merges any new changes into `production` on Wednesdays only. Any commits or PRs into this repo on any other day will land in the `staging` branch. This process has several benefits:
 
-- Reviewing and editing content becomes easier.
+- Reviewing and editing content is more manageable.
 - Mass formatting, spelling, and grammar changes can happen on a single branch.
 - Breaking changes are much less likely.
 
-Only issues and PRs tagged as `p0` will be merged directly into `main` outside of the Thursday merge window. Take a look at the [Priority section](#priority) for information on how we tag issues.
+Only issues and PRs tagged as `p0` will be merged directly into `production` outside the Wednesday merge window. Take a look at the [Priority section](#priority) for information on how we tag issues.
 
 ### Files and folders
 

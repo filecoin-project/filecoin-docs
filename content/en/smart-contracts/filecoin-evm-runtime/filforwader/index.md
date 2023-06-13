@@ -43,7 +43,7 @@ Before we start, make sure you know the address you'd like to forward your FIL t
 
     ![Select the network you want to use.](glif-01-select-network.png)
 
-    In this example, we're using the Hyperspace testnet.
+    In this example, we're using the Calibration testnet.
 
 1. Confirm that you want to connect your wallet to Glif.io. You will only be prompted to do this once.
 
@@ -143,17 +143,17 @@ yarn hardhat forward \
     --amount <AMOUNT>
 ```
 
-- `NETWORK`: The network you want to use. The options are `mainnet`, `hyperspace`, and `calibration`.
+- `NETWORK`: The network you want to use. The options are `mainnet` and `calibration`.
 - `DESTINATION_ADDRESS`: The address you want to send FIL to. This is a string, like `t01024` or `t3tejq3lb3szsq7spvttqohsfpsju2jof2dbive2qujgz2idqaj2etuolzgbmro3owsmpuebmoghwxgt6ricvq`.
 - `AMOUNT`: The amount of FIL you want to send. The value `3.141` would be 3.141 FIL.
 
 #### Examples
 
-1. To send 9 FIL to a `t3` address on the Hyperspace testnet, run:
+1. To send 9 FIL to a `t3` address on the Calibration testnet, run:
 
     ```shell
     yarn hardhat forward \
-        --network hyperspace \
+        --network calibration \
         --destination t3tejq3lb3szsq7spvttqohsfpsju2jof2dbive2qujgz2idqaj2etuolzgbmro3owsmpuebmoghwxgt6ricvq \
         --amount 9.0
     ```

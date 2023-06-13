@@ -126,11 +126,11 @@ The subaddress of an `f410/t410` address is the original Ethereum address. Ether
 # An Ethereum wallet address.
 0xd388ab098ed3e84c0d808776440b48f685198498
 
-# The corresponding Filecoin address on hyperspace.
+# The corresponding Filecoin address on Calibration.
 t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy
 ```
 
-If you have an Ethereum wallet address starting with `0x`, then the Ethereum Address Manager (EAM) will assign a corresponding `t410` Filecoin address to it. If you send 10 TFIL to `0xd388ab098ed3e84c0d808776440b48f685198498` using a wallet like MetaMask, you will receive 10 TFIL to your `t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy` address on Filecoin Hyperspace testnet.
+If you have an Ethereum wallet address starting with `0x`, then the Ethereum Address Manager (EAM) will assign a corresponding `t410` Filecoin address to it. If you send 10 TFIL to `0xd388ab098ed3e84c0d808776440b48f685198498` using a wallet like MetaMask, you will receive 10 TFIL to your `t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy` address on Filecoin Calibration testnet.
 
 ```plaintext
 # A Filecoin smart contract address.
@@ -140,7 +140,7 @@ t410fl5qeigmkcytz7b6sqoojtcetqwf37dm4zv4aijq
 0x5f6044198a16279f87d2839c998893858bbf8d9c
 ```
 
-Again, assume you have deployed a solidity smart contract on Filecoin Hyperspace. Then you will receive a smart contract address starting with `t410`. EAM will also assign a corresponding `0x` Ethereum address to it.
+Again, assume you have deployed a solidity smart contract on Filecoin Calibration. Then you will receive a smart contract address starting with `t410`. EAM will also assign a corresponding `0x` Ethereum address to it.
 
 When you try to invoke this smart contract on Filecoin using Ethereum tooling, you need to use your `0x5f6044198a16279f87d2839c998893858bbf8d9c` smart contract address.
 

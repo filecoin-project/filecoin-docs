@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-mainnet"
     identifier: "explorers-85ab1f5b8a0bc0a1291758573d823c89"
-weight: 120
+weight: 110
 toc: true
 aliases:
     - "/get-started/explore-the-network/"
@@ -44,8 +44,6 @@ Website: [filfox.io](https://filfox.io)
 
 Website: [explorer.filmine.io](https://explorer.filmine.io/)
 
-![Screen Shot 2023-01-30 at 1 13 52 PM](https://user-images.githubusercontent.com/113331491/215596443-0bf2ceb5-7793-49a1-829b-627df9dd1a19.png)
-
 ### Filscan
 
 Website: [filscan.io](https://filscan.io)
@@ -61,8 +59,6 @@ Website: [Filscout](https://filscout.io)
 ### Starboard
 
 Website: [fvm.starboard.ventures](https://fvm.starboard.ventures/)
-
-![Screen Shot 2023-01-30 at 1 08 57 PM](https://user-images.githubusercontent.com/113331491/215595597-629cccb0-aa0f-4a12-b12c-c46155b09ea8.png)
 
 ## API requests
 

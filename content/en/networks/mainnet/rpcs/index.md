@@ -13,6 +13,23 @@ weight: 130
 toc: true
 ---
 
+## [Ankr](https://ankr.com)
+
+- HTTPS: `https://rpc.ankr.com/filecoin`
+- [Supported Filecoin API methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
+
+## [Chainstack](https://www.chainstack.com)
+
+- HTTPS: `https://filecoin-mainnet.chainstacklabs.com/rpc/v1`
+- WebSocket: `wss://ws-filecoin-mainnet.chainstacklabs.com/rpc/v1`
+- [Chainstack documentation](https://docs.chainstack.com)
+
+## [ChainupCloud](https://cloud.chainup.com)
+
+- HTTPS: `https://filecoin.chainup.net/rpc/v1`
+- WebSocket: `wss://filecoin.chainup.net/rpc/v1`
+- [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
+
 ## [Glif](https://glif.io)
 
 Please note that publicly available hosted endpoints **only guarantee 2000 of the latest blocks.**
@@ -28,17 +45,6 @@ Please note that publicly available hosted endpoints **only guarantee 2000 of th
   When using a lite-node, omit `/rpc/v1` from Glif's WebSocket address.
 
 - [Glif documentation](https://hosting.glif.io/)
-
-## [Ankr](https://ankr.com)
-
-- HTTPS: `https://rpc.ankr.com/filecoin`
-- [Supported Filecoin API methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
-
-## [Chainstack](https://www.chainstack.com)
-
-- HTTPS: `https://filecoin-mainnet.chainstacklabs.com/rpc/v1`
-- WebSocket: `wss://ws-filecoin-mainnet.chainstacklabs.com/rpc/v1`
-- [Chainstack documentation](https://docs.chainstack.com)
 
 ## [NOWNodes](https://nownodes.io/)
 

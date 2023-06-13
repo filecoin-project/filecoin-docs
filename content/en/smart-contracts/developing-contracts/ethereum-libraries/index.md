@@ -49,39 +49,29 @@ Thanks to the FVM, your contract can be integrated and deployed on the Filecoin 
 
 ### Example using an ERC20 contract
 
-In the following tutorial, you'll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Hyperspace testnet using Remix and MetaMask:
+In the following tutorial, you'll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Calibration testnet using Remix and MetaMask:
 
 #### Prerequisites
 
-Before you begin, you must have:
+Let's take an ERC20 contract as an example to write and deploy it on the Calibration testnet using Remix & MetaMask:
 
 - Remix.
 - MetaMask.
-- [MetaMask connected to the Hyperspace testnet]({{< relref "/basics/assets/metamask-setup" >}}).
-- Test tokens (tFIL) [from the faucet]({{< relref "/networks/hyperspace/get-test-tokens">}}).
+- [MetaMask connected to the Calibration testnet]({{< relref "/basics/assets/metamask-setup" >}}).
+- Test tokens (tFIL) [from the faucet](https://faucet.calibration.fildev.network/funds.html).
 
 #### Procedure
 
-In this procedure, you will create, deploy, mint and send an [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) token on Hyperspace using Remix and MetaMask.
+In this procedure, you will create, deploy, mint and send an [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) token on Calibration using Remix and MetaMask. 
 
 1. Navigate to [remix.ethereum.org](https://remix.ethereum.org/).
-
 1. Next to **Workspaces**, click the **+** icon to create a new workspace.
-
 1. In the **Choose a template** dropdown, select **ERC 20** along with the **Mintable** checkbox.
 
    ![Set workspace details.](create-a-workspace-details.png)
 
 1. Click **OK**.
-
-   {{< alert >}}
-   **Checkpoint**
-
-   A new workspace and an ERC20 token called `MyToken.sol` have been created.
-   {{< /alert >}}
-
 1. In the **contract** directory, open **MyToken.sol**.
-
 1. Set the token `<name>` and `<symbol>`:
 
    ```solidity
@@ -105,25 +95,13 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
    ![Compile the contract.](compile-compile.png)
 
 1. Once the contract compiles, open the **Deploy** tab on the left.
-
-1. Under the **Environment** dropdown, select **Injected Provider - MetaMask**.
-
-1. In the MetaMask pop-up window, select **Confirmed connection**.
+1. Under the **Environment** dropdown, select **Injected Provider - MetaMask**. 
+1. In the MetaMask popup window, select **Confirmed connection**.
 
    ![Select contract in Remix.](deploy-select-contract.png)
 
-1. Click **Deploy**.
-
-1. In MetaMask, confirm the transaction.
-
-   {{< alert >}}
-   **Checkpoint**
-
-   After the transaction is confirmed on-chain, your token contract is deployed to the Hyperspace network. Now, you can mint tokens.
-   {{< /alert >}}
-
-1. In Remix, open the **Deployed Contracts** dropdown.
-
+1. Click **Deploy**, and confirm the transaction on MetaMask. Your token contract will be deployed to the Calibration testnet once the network confirms the transaction.
+1. In Remix, open the **Deployed Contracts** dropdown. 
 1. In the `mint` method, set:
    - `to` to your wallet address.
    - `amount` to `100000000000000000000` (1 `FIL`).
@@ -131,8 +109,7 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
    ![Click Deploy in Remix.](deploy-remix-deploy.png)
 
 1. Click **Transact**.
-
-1. In MetaMask, confirm the transaction.
+1. In MetaMask, confirm the transaction. 
 
 Once the network processes the transaction, the token is minted and sent to your network address. Congratulations, you've completed the tutorial!
 

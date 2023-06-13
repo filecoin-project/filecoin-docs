@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-spacenet"
     identifier: "spacenet-get-test-tokens"
-weight: 120
+weight: 420
 toc: true
 ---
 

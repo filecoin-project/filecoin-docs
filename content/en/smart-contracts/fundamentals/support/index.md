@@ -23,7 +23,7 @@ Like many other distributed teams, the FVM team works mostly on Slack. You can j
 
 - [`#fil-builders`](https://filecoinproject.slack.com/archives/CRK2LKYHW) for building solutions on FVM and Filecoin
 - [`#fil-fvm-dev`](https://filecoinproject.slack.com/archives/C029MT4PQB1) for development of the FVM
-- [`#fil-net-hyperspace-discuss`](https://filecoinproject.slack.com/archives/C04JEJB82RY) for the FVM test network (recommended for builders)
+- [`#fvm-docs`](https://filecoinproject.slack.com/archives/C03MDFERKMJ) for FVM documentation
 
 ## Forum
 
@@ -97,14 +97,10 @@ Yes.
 
 ### Do I have to install Lotus to work with FVM
 
-Not necessarily. You can use one of the two public Hyperspace nodes:
+Not necessarily. You can use one of the public Calibration nodes:
 
-- `api.hyperspace.node.glif.io/rpc/v1`
-- `api.zondax.ch/fil/node/hyperspace/rpc/v1`
-
-### How do I install a node on the Hyperspace testnet?
-
-Factor8, the team that runs the Hyperspace testnet, has a [guide on how to spin up a Lotus node on the Hyperspace testnet](https://kb.factor8.io/docs/filecoin/testnets/hyperspace).
+- `api.calibration.node.glif.io/rpc/v1`
+- `api.zondax.ch/fil/node/calibration/rpc/v1`
 
 ### What is the difference between the FVM and Bacalhau
 
