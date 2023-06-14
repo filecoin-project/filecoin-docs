@@ -16,7 +16,7 @@ aliases:
     - "/developers/smart-contracts/concepts/tipsets/"
 ---
 
-## Blocks 
+## Blocks
 
 In Filecoin, a block consists of:
 
@@ -30,7 +30,7 @@ A _message_ represents communication between two actors, and thus changes in net
 
 ## Tipsets
 
-As described in [Consensus]({{< relref "consensus" >}}), multiple potential block producers may be elected via Expected Consensus (EC) to create a block in each epoch, which means that more than one valid block may be produced in a given epoch. All valid blocks with the same height and same parent block are assembled into a group called a _tipset_. 
+As described in [Consensus]({{< relref "consensus" >}}), multiple potential block producers may be elected via Expected Consensus (EC) to create a block in each epoch, which means that more than one valid block may be produced in a given epoch. All valid blocks with the same height and same parent block are assembled into a group called a _tipset_.
 
 ### Benefits of tipsets
 
@@ -51,7 +51,7 @@ In summary, blocks, which contain actor messages, are grouped into tipsets in ea
 
 ### Tipsets in the Ethereum JSON-RPC
 
-Wherever you see the term _block_ in the Ethereum JSON-RPC, you should mentally read _tipset_. Before the inclusion of the Filecoin EVM-runtime, there was no single hash referring to a tipset. A tipset ID was the concatenation of block CIDs, which led to a variable length ID, and poor user experience.
+Wherever you see the term _block_ in the Ethereum JSON-RPC, you should mentally read _tipset_. Before the inclusion of the Filecoin EVM runtime, there was no single hash referring to a tipset. A tipset ID was the concatenation of block CIDs, which led to a variable length ID, and poor user experience.
 
 With the Ethereum JSON-RPC, we introduced the concept of the _tipset CID_ for the first time. It is calculated by hashing the former _tipset key_ using a blake-256 hash. Therefore, when you see the term:
 

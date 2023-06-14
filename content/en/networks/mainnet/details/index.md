@@ -24,7 +24,7 @@ aliases:
 - CAR File: `QmavMCf95w2UMYGD1J5GpHcWBWXR2jTFYmtAkgeroMmpk1`
 - Reset Timestamp: `2020-08-24T22:00:00Z`
 - Genesis Block CID: `bafy2bzacecnamqgqmifpluoeldx7zzglxcljo6oja4vrmtj7432rphldpdmm2`
-- sha1 Digest: `4782cb42b4b01793b5cd9f593cc3dc87b6d3c7b4`
+- SHA-1 Digest: `4782cb42b4b01793b5cd9f593cc3dc87b6d3c7b4`
 
 ## Network parameters
 
@@ -38,7 +38,6 @@ aliases:
 - Pre-Commit Challenge Delay: `150`
 
 ## Bootstrap peers
-
 
 ```plaintext
 /dns4/bootstrap-0.mainnet.filops.net/tcp/1347/p2p/12D3KooWCVe8MmsEMes2FzgTpt9fXtmCY7wrq91GRiaC8PHSCCBj

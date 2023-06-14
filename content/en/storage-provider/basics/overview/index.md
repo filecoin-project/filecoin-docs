@@ -32,12 +32,11 @@ The documentation you will be reading assumes you are familiar with the document
 
 ## Understand Filecoin economics
 
-To understand how you can run a profitable business as a Filecoin storage provider, it is important to make sure you understand the economics of Filecoin. Once you understand all the the core concepts, you can build out a strategy for your desired ROI.
+To understand how you can run a profitable business as a Filecoin storage provider, it is important to make sure you understand the economics of Filecoin. Once you understand all core concepts, you can build out a strategy for your desired ROI.
 
 Storage providers can also add additional value to clients when they offer certain certifications. These can enable a storage provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
 
 {{<button url="https://docs.filecoin.io/storage-provider/filecoin-economics/storage-proving/">}}Filecoin economics → {{</button>}}
-
 
 ## Plan your business
 
@@ -49,7 +48,7 @@ You need to understand the various earning mechanisms in the Filecoin network.
 
 ## Make sure you have the right skills
 
-As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstrate data availability to the network. There are many things that can go wrong in a datacenter, on your network, on your OS, or at an application level.
+As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstrate data availability to the network. There are many things that can go wrong in a data center, on your network, on your OS, or at an application level.
 
 You will need skilled people to operate your storage provider business. Depending on the size and complexity of your setup this can be 1 person with skills across many different domains, or multiple dedicated people or teams.
 
@@ -62,7 +61,5 @@ At the lowest level, you will need datacenter infrastructure. You need people ca
 Take availability and suitable redundancy into consideration when choosing your datacenter or collocation provider. Any unavailability of your servers, network or storage can result in automatic financial penalties on the Filecoin network.
 
 {{<button url="https://docs.filecoin.io/storage-provider/architecture/lotus-components/">}}Software architecture → {{</button>}} {{<button url="https://docs.filecoin.io/storage-provider/skills/storage/">}}Infrastructure →{{</button>}}
-
-
 
 {{< sp-calls-to-action >}}

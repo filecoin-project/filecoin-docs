@@ -1,7 +1,7 @@
 ---
 title: "Networks"
 description: "Find out information about which networks are available, what their scheduled uptime is, and how you can connect to each network."
-lead: "The Filecoin network has several different networks for testing, staging, and production purposes. This page contains information on the [networks available](#available-networks) for Filecoin."
+lead: "The Filecoin network has several different networks for testing, staging, and production purposes. This page contains information on available networks."
 draft: false
 images: []
 type: docs

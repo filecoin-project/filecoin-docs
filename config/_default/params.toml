@@ -79,7 +79,7 @@ alertText = "Solidity developers, do you want to build on Filecoin using smart c
 
 # Edit Page
 repoHost = "GitHub"
-# repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ]
+# repoHost [GitHub | Gitea | GitLab | Bitbucket | BitbucketServer ]
 docsRepo = "https://github.com/filecoin-project/filecoin-docs"
 docsRepoBranch = "main"
 docsRepoSubPath = ""

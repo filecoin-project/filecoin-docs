@@ -30,8 +30,7 @@ The daemon is a key Lotus component that does the following:
 - Syncs the chain
 - Holds the wallets of the storage provider
 
-The machine running the Lotus daemon must be connected to the public internet for the storage provider to function. See the [Lotus documentation](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider) for more in-depth information on connectivity requirements. 
-
+The machine running the Lotus daemon must be connected to the public internet for the storage provider to function. See the [Lotus documentation](https://lotus.filecoin.io/storage-providers/setup/initialize/#connectivity-to-the-storage-provider) for more in-depth information on connectivity requirements.
 
 ### Syncing the chain
 
@@ -77,7 +76,7 @@ The Lotus miner, often referred to using the daemon naming syntax `lotus-miner`,
 
 Storage Providers on the Filecoin network store sectors. There are two types of sectors that a provider may store:
 
-- Sealed sectors: these sectors may or may not actually contain data, but they provide capacity to the network, for which the provider is rewarded. 
+- Sealed sectors: these sectors may or may not actually contain data, but they provide capacity to the network, for which the provider is rewarded.
 - Unsealed sectors: used when storing data deals, as retrievals happen from unsealed sectors.
 
 Originally, `lotus-miner` was the component with storage access. This resulted in `lotus-miner` hardware using internal disks, directly attached storage shelves like [JBODs](https://en.wikipedia.org/wiki/Non-RAID_drive_architectures#JBOD), Network-Attached-Storage (NAS), or a storage cluster. However, this design introduced a bottleneck on the Lotus miner.
@@ -112,7 +111,7 @@ For information on how to view scheduled jobs, see [View scheduled jobs]({{< rel
 
 ### Storage proving
 
-One of the most important roles of `lotus-miner` is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the `lotus-miner` process. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (proving workers) instead of using the Lotus miner. 
+One of the most important roles of `lotus-miner` is the [Storage proving]({{<relref "storage-proving" >}}). Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the `lotus-miner` process. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (proving workers) instead of using the Lotus miner.
 
 The proving processes require low-latency access to sealed sectors. The proving challenge requires a GPU to run on. The resulting `zkProof` will be sent to the chain in a message. Messages must arrive within 30 minutes for WindowPoSt, and 30 seconds for WinningPoSt. It is extremely important that providers properly size and configure the proving workers, whether they are using just the Lotus miner or separate workers. Additionally, dedicated wallets, described in [Control wallets]({{< relref "#control-wallets" >}}), should be set up for these processes.
 
@@ -159,7 +158,7 @@ lotus-miner storage list
 
 This command return information on your _sealed space_ and your _scratch space_, otherwise known as a cache. These spaces are only available if you have properly configured your Lotus miner by following the steps described in the [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
-### View scheduled jobs 
+### View scheduled jobs
 
 To view the scheduled sealing jobs, run the following:
 

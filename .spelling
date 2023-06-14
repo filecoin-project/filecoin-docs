@@ -1,0 +1,616 @@
+# markdown-spellcheck spelling configuration file
+# Format - lines beginning # are comments
+# global dictionary is at the start, file overrides afterwards
+# one word per line, to define a file override use ' - filename'
+# where filename is relative to this configuration file
+0x
+0x00
+0x51
+1000x
+10x
+64-bit
+ABI-encoded
+AccountActor
+ACLs
+analytics
+Ankr
+APIs
+Aptos
+architecting
+AssemblyScript
+attoFIL
+Audius
+AuthNew
+AuthVerify
+autofill
+Bacalhau
+backend
+Base64
+BeaconGetEntry
+Beryx
+k8
+Filrep.io
+MathWallet
+boolean
+FoxWallet
+ImToken
+beryx.zondax.ch
+big-endian
+bitswap
+Binance
+Bitswap
+blake-256
+blockchain
+blockchains
+blockCid
+blockstore
+blocktime
+Boneh
+OAuth
+boost.filecoin.io
+bytecode
+callee
+Carbonado.2
+CARv1
+CBOR
+ChainDeleteObj
+ChainExport
+ChainGetBlock
+ChainGetBlockMessages
+ChainGetGenesis
+ChainGetMessage
+ChainGetMessagesInTipset
+ChainGetNode
+ChainGetParentMessages
+ChainGetParentReceipts
+ChainGetPath
+ChainGetRandomnessFromBeacon
+ChainGetRandomnessFromTickets
+ChainGetTipSet
+ChainGetTipSetByHeight
+ChainHasObj
+ChainHead
+Chainlist
+chainlist.org
+ChainNotify
+ChainReadObj
+Chainsafe
+ChainSafe
+ChainSetHead
+Chainstack
+ChainStack
+ChainStatObj
+ChainTipSetWeight
+checkbox
+checkpointing
+checksum
+checksums
+CIDGravity
+CIDs
+cli
+codebase
+codec
+Coinbase
+CoinSummer
+colocated
+CommP
+config
+ConsensusLab
+CPUs
+Cron
+CronActor
+cryptocurrencies
+cryptocurrency
+cryptoeconomic
+cryptoeconomics
+CryptoLab
+customizable
+DAO
+DAOs
+dApp
+dApps
+DappSys
+datacap
+Datacap
+DataCap
+datacenter
+dataset
+Dataset
+datasets
+deduplicated
+deduplication
+DeFi
+deprioritize
+Dev
+devnet
+discretized
+disincentivizing
+dockerized
+Doks
+Drand
+dropdown
+e.g.
+eBPF
+EcmaScript
+entrypoint
+Epyc
+ERC-20
+estuary.tech
+Ethereum
+ethernet
+Ethers.js
+EthEstimateGas
+EthMaxPriorityFeePerGas
+Eudico
+pubsub
+EVM-based
+EVM-compatible
+explorable
+explorer.filmine.io
+explorer.glif.io
+f099
+Ganache
+Grafana
+SpaceGap
+f4
+f410
+f8-fil-ops
+Factor8
+femtoFIL
+FIL
+Fil+
+file systems
+Filebase
+Filecoin
+filecoin-address
+filecoin-docs
+filecoin.org
+FilecoinOfficial
+FilForwarder
+FILForwarder
+FilFowarder
+filfox
+filfox.io
+Filscan
+filscan.io
+Filscout
+Filswan
+FIP
+FIPs
+Fleek
+forecasted
+frontend
+Fuhon
+futureproofing
+fvm.starboard.ventures
+GasFeeCap
+GasLimit
+GasPremium
+GbE
+Gbps
+GBs
+GenesisSeed
+GenesisTime
+geo-redundant
+geospatial
+GIF
+GIFs
+GitHub
+github.com
+Glif
+Glif.io
+GoLang
+GPUs
+Graphsync
+hackathon
+hackathons
+HackFS
+hardcoded
+hardcoding
+Homebrew
+https
+Huddle01
+Hygge
+hyperspace.yoga
+Hyperspace.yoga
+hypervisor
+i.e.
+incentivized
+incentivizes
+incentivizing
+InitActor
+interoperate
+ipc-agent
+iperf
+iperf3
+ipfs.tech
+IPFSForce
+ipld.io
+JBODs
+JSON
+JSON-RPC
+libp2p
+libp2p.io
+license-url
+lifecycle
+lighthouse.storage
+linters
+little-endian
+LivePeer
+localhost
+M2.1
+macOS
+MacOS
+mainnet
+meetup
+meetups
+mempool
+merkle
+metadata
+MetaMask
+metaverse
+MiB
+microFIL
+microtransactions
+milliFIL
+mintable
+multiaddress
+multiaddresses
+multiformat
+multiformats
+multiformats.io
+multihash
+multisig
+Multisig
+MultisigActor
+multisignature
+MyToken.sol
+namespace
+nanoFIL
+NanoFIL
+Narwahl
+natively
+nft.storage
+NFT.Storage
+NFTs
+NFT
+NodeJS
+npm
+nroots
+Nvidia
+NVMe
+oldmsgskip
+onboard
+onboarded
+onboarding
+opcode
+OpenAPI
+OpenCL
+OpenZeppelin
+PaymentChannelActor
+PCI-DSS
+permissionless
+PiB
+picoFIL
+PicoFIL
+plus.fil.org
+Polyphene
+PoRep
+Powergate
+PowerShell
+pre-commit
+Pre-commit
+pre-compiled
+pre-mined
+pre-production
+PreCommit
+PreCommit2
+precompile
+precompiles
+precompilied
+prefetching
+prepended
+programmatically
+proto.school
+protocol.ai
+ProtoSchool
+PublicKey
+quickstart
+ransomware
+rclone
+ReactJS
+redeployments
+remappings
+remix.ethereum.org
+repo
+retrievability
+revm
+RewardActor
+roadmap
+Roadmap
+rollup
+rollups
+rootnet
+rr11
+runtime
+runtimes
+rustup
+schemas
+SDKs
+secp256k
+secp256k1
+SHA-256
+Shacham
+shortcode
+shortcodes
+sidechain
+Solana
+SpaceDaemon
+Spacenet
+spacetime
+Spacetime
+SplitStore
+SPs
+SputnikVM
+StorageMarketActor
+StorageMinerActor
+StoragePowerActor
+subaddress
+submodules
+subnet
+subnets
+subprocess
+subprocesses
+superset
+syscalls
+SystemActor
+t410
+testnet
+testnets
+Testnets
+tFIL
+TiB
+tiering
+timestamp
+timestamped
+TinyGo
+tipset
+TipSetKey
+tipsets
+Tipsets
+tmux
+toc
+tokenized
+tokenizing
+tokenomics
+toolchains
+tooltip
+tooltips
+tradeoffs
+transcoding
+Trantor
+trustlessness
+u256
+u64
+uint64
+uncomment
+undercollateralized
+Uniswap
+unminted
+uploader
+uptime
+v2
+v7
+validator
+validators
+venus
+VerifiedRegistryActor
+verify.glif.io
+versioned
+virtualization
+virtualized
+VLANs
+Vyper
+walkthrough
+walkthroughs
+Walkthroughs
+wasm
+web.js
+Web2
+Web3
+web3-based
+web3.storage
+Web3.Storage
+WebAssembly
+WebSocket
+WebSockets
+WeChat
+WindowPoSt
+WinningPoSt
+XCode
+Xeon
+yottabyte
+YouTube
+Yul
+Zcash
+zettabyte
+zk-SNARK
+Zondax
+ - content/en/basics/assets/get-fil/index.md
+coingecko.com
+coinmarketcap.com
+0x
+ - content/en/basics/assets/metamask-setup/index.md
+EVM-compatible
+chainlist.org
+ - content/en/basics/assets/transfer-fil/index.md
+Etheruem-style
+ - content/en/basics/how-retrieval-works/basic-retrieval/index.md
+v1
+ - content/en/basics/how-retrieval-works/saturn/index.md
+saturn.tech
+ - content/en/basics/how-storage-works/filecoin-plus/index.md
+FIP-0003
+10x
+FIP-0012
+v5
+32GiB
+100TiB
+500TiB-5PiB
+v1.10.0
+v1.9.0
+fil-plus
+ - content/en/basics/how-storage-works/storage-onramps/index.md
+S3-compatible
+ - content/en/basics/interplanetary-consensus/hierarchical-consensus/index.md
+IPC-related
+ - content/en/basics/interplanetary-consensus/ipc-agent/index.md
+nightly-2022-10-03
+rust-toolchain
+UDP-based
+DNS-based
+ - content/en/basics/project-and-community/filecoin-faq/index.md
+timelines
+ - content/en/basics/project-and-community/ways-to-contribute/index.md
+filecoin-project
+rust-fil-proofs
+ - content/en/basics/the-blockchain/consensus/index.md
+688d0e228f7debf695c906ad442cb46227812
+_
+toc
+ - content/en/basics/the-blockchain/drand/index.md
+BLS12-381
+ - content/en/basics/the-blockchain/proofs/index.md
+_
+ - content/en/basics/what-is-filecoin/blockchain/index.md
+f0123261
+ - content/en/basics/what-is-filecoin/programming-on-filecoin/index.md
+FVM-enabled
+EVM-based
+ - content/en/networks/calibration/explorers/index.md
+calibration.filscout.com
+calibration.filscan.io
+ - content/en/networks/hyperspace/details/index.md
+2a3989e4bd446b7f6ccee52ad6387b937072cf7f
+fil-net-hyperspace-discuss
+ - content/en/networks/hyperspace/explorers/index.md
+Filexplore
+ - content/en/networks/hyperspace/get-test-tokens/index.md
+hyperspace.yoga
+ - content/en/networks/mainnet/details/index.md
+fil-network-announcements
+fil-help
+ - content/en/networks/mainnet/explorers/index.md
+Filexplore
+ - content/en/networks/spacenet/get-test-tokens/index.md
+faucet.spacenet.ipc.space
+ - content/en/nodes/implementations/lotus/index.md
+lotus.filecoin.io
+ - content/en/nodes/implementations/overview/index.md
+overview-b37cdcd01c1954971463d00e1d28305c
+chainsafe.github.io
+ - content/en/nodes/implementations/venus/index.md
+venus.filecoin.io
+ - content/en/nodes/lite-nodes/spin-up-a-lite-node/index.md
+www.glif.io
+Pre-build
+ - content/en/nodes/node-providers/ankr/index.md
+EVM-compatible
+ - content/en/reference/built-in-actors/filecoin-sol/index.md
+filecoin.solidity
+ - content/en/reference/built-in-actors/overview/index.md
+filecoin.solidity
+ - content/en/reference/general/specifications/index.md
+specs.filecoin.io
+ - content/en/smart-contracts/developing-contracts/best-practices/index.md
+v1.20.0
+hyperspace-nv20
+0x51
+ - content/en/smart-contracts/developing-contracts/ethereum-libraries/index.md
+remix.ethereum.org
+MyToken.sol
+ - content/en/smart-contracts/developing-contracts/foundry/index.md
+ds-test
+solmate
+ - content/en/smart-contracts/developing-contracts/get-test-tokens/index.md
+hyperspace.yoga
+ - content/en/smart-contracts/developing-contracts/hardhat/index.md
+hardhart.org
+ - content/en/smart-contracts/developing-contracts/remix/index.md
+remix.ethereum.org
+MyToken.sol
+ - content/en/smart-contracts/filecoin-evm-runtime/address-types/index.md
+_n_
+ - content/en/smart-contracts/filecoin-evm-runtime/filforwader/index.md
+Glif.io.
+ - content/en/smart-contracts/filecoin-evm-runtime/precompiles/index.md
+f01
+f2abcde
+0x71
+0x55
+0xfe00
+ - content/en/smart-contracts/fundamentals/FAQs/index.md
+EVMs
+msg.sender
+glif
+ - content/en/smart-contracts/fundamentals/filecoin-evm-runtime/index.md
+virtualization
+truckerfling
+ - content/en/smart-contracts/fundamentals/fvm-native/index.md
+stdlibs
+ - content/en/smart-contracts/fundamentals/overview/index.md
+NFTschool.dev
+ - content/en/smart-contracts/fundamentals/roadmap/index.md
+nv17
+nv18
+cron
+ - content/en/smart-contracts/fundamentals/support/index.md
+filecoin.io
+EVMs
+msg.sender
+glif
+ - content/en/smart-contracts/fundamentals/the-filecoin-virtual-machine/index.md
+ERC20PresetMinterPauser
+AuthenticateMessage
+uploaders
+PerpetualStorage
+PerpetualDeal
+PerpetualDealAd
+PerpetualDeals
+BeneficaryTerm
+Get_beneficiary
+ChangeBeneficary
+LendingMarket
+LoanAgent
+ChangeBeneficiary
+ - content/en/storage-provider/architecture/Lotus-components/index.md
+PreCommit
+ - content/en/storage-provider/filecoin-deals/filecoin-programs/index.md
+fil-green
+CO2.Storage
+Boost-http
+ - content/en/storage-provider/infrastructure/backup/index.md
+RTOs
+Ceph
+RPOs
+ - content/en/storage-provider/infrastructure/reference-architectures/index.md
+NICs
+vdevs
+VDEV
+U.3
+AddPiece
+PreCommit1
+U.2
+Hoejsbo
+ - content/en/storage-provider/infrastructure/storage/index.md
+VDEVs
+ - content/en/storage-provider/skills/security/index.md
+SELinux
+ - content/en/storage-provider/skills/storage/index.md
+VDEVs
+ - content/en/store/overview/start-storing/index.md
+lotus.filecoin.io
+File.video
+3x
+S3-compatible
+S3-like

@@ -1,5 +1,5 @@
 ---
-title: "Metamask setup"
+title: "MetaMask setup"
 description: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet."
 lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet, Calibration testnet, or the Hyperspace testnet."
 draft: false
@@ -113,10 +113,9 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
 
 1. Pick one a [block explorers]({{< relref "/networks/mainnet/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
 1. Review the values in the fields and click **Save**.
-1.  The Filecoin network should now be shown in your MetaMask window.
+1. The Filecoin network should now be shown in your MetaMask window.
 1. Done!
 {{< /tab >}}
-
 
 {{< tab tabName="Calibration" >}}
 <br>
@@ -137,7 +136,7 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
 
 1. Pick one a [block explorers]({{< relref "/networks/calibration/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
 1. Review the values in the fields and click **Save**.
-1.  The Filecoin network should now be shown in your MetaMask window.
+1. The Filecoin network should now be shown in your MetaMask window.
 1. Done!
 {{< /tab >}}
 
@@ -160,7 +159,7 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
 
 1. Pick one a [block explorers]({{< relref "/networks/calibration/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
 1. Review the values in the fields and click **Save**.
-1.  The Filecoin network should now be shown in your MetaMask window.
+1. The Filecoin network should now be shown in your MetaMask window.
 1. Done!
 {{< /tab >}}
 {{< tab tabName="Local-testnet" >}}
@@ -182,7 +181,7 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
 
 1. Pick one a [block explorers]({{< relref "/networks/calibration/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
 1. Review the values in the fields and click **Save**.
-1.  The Filecoin network should now be shown in your MetaMask window.
+1. The Filecoin network should now be shown in your MetaMask window.
 1. Done!
 {{< /tab >}}
 {{< /tabs >}}

@@ -17,7 +17,7 @@ toc: true
 
 [OpenZeppelin](https://www.openzeppelin.com/contracts) provides a library of battle-tested smart contract templates, including widely used implementations of ERC token standards. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
 
-### Benefits 
+### Benefits
 
 OpenZeppelin offers the following to smart contract developers:
 
@@ -25,10 +25,10 @@ OpenZeppelin offers the following to smart contract developers:
 - Flexible access control schemes like `Ownable`, `AccessControl`, and `onlyRole`.
 - Useful and secure utilities for signature verification, `SafeMath`, etc..
 
-Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20), are the most widely used smart contract libraries from OpenZepplin. These contracts, listed below, implement both _fungible_ and _non-fungible_ tokens:
+Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20), are the most widely used smart contract libraries from OpenZeppelin. These contracts, listed below, implement both _fungible_ and _non-fungible_ tokens:
 
-- [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) is the simplest and most widespread token standard for fungible assets. 
-- [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721) is the de-facto solution for non-fungible tokens and is often used for collectibles and games.
+- [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) is the simplest and most widespread token standard for fungible assets.
+- [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721) is the standard solution for non-fungible tokens and is often used for collectibles and games.
 - [ERC777](https://docs.openzeppelin.com/contracts/4.x/erc777) provides a richer standard for fungible tokens, supporting new use cases and backwards compatibility with ERC20.
 - [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155) is a new standard for _multi-tokens_, where a single contract represents multiple fungible and non-fungible tokens, and operations are batched for increased gas efficiency.
 
@@ -45,7 +45,7 @@ The _general_ procedure for using OpenZeppelin with FVM is as follows:
 1. Import the specific library you want to use.
 1. In your smart contract, inherit the library.
 
-Thanks to the FVM, your contract can be integrated and deployed on the Filecoin network with OpenZepplin inheritance. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
+Thanks to the FVM, your contract can be integrated and deployed on the Filecoin network with OpenZeppelin inheritance. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
 
 ### Example using an ERC20 contract
 
@@ -103,8 +103,8 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
 1. Click **Deploy**, and confirm the transaction on MetaMask. Your token contract will be deployed to the Calibration testnet once the network confirms the transaction.
 1. In Remix, open the **Deployed Contracts** dropdown. 
 1. In the `mint` method, set:
-   -  `to` to your wallet address.
-   -  `amount` to `100000000000000000000` (1 `FIL`).
+   - `to` to your wallet address.
+   - `amount` to `100000000000000000000` (1 `FIL`).
 
    ![Click Deploy in Remix.](deploy-remix-deploy.png)
 
@@ -115,7 +115,7 @@ Once the network processes the transaction, the token is minted and sent to your
 
 ### Additional resources
 
-Learn more about OpenZepplin with the following resources:
+Learn more about OpenZeppelin with the following resources:
 
 - [OpenZeppelin Contracts website](https://www.openzeppelin.com/contracts)
 - [Documentation](https://docs.openzeppelin.com/contracts/4.x/)

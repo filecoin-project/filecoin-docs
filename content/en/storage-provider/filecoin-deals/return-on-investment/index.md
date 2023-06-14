@@ -33,12 +33,11 @@ For more information and context see the following video:
 
 {{< youtube "zboAgawHT-o" >}}
 
-
 It takes more variables than the cost vs. the income. In summary, the factors that influence your ROI are:
 
 * **Verified Deals:**
 
-    How much of your total sealed capacity will be done with Verified Deals (Fil+)? Those deals give a far higher return because of the 10x multiplier that is added to your storage power and block rewards.
+    How much of your total sealed capacity will be done with Verified Deals (Filecoin Plus)? Those deals give a far higher return because of the 10x multiplier that is added to your storage power and block rewards.
 
 * **Committed Capacity:**
 
@@ -63,5 +62,5 @@ It takes more variables than the cost vs. the income. In summary, the factors th
 * **Operational Costs:**
 
     Last but not least there’s the ongoing monthly cost of operating the storage provider business. Both the costs for technical operations as well as business operations need to be taken into consideration.
-    
+
 {{< sp-calls-to-action >}}

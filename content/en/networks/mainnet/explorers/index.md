@@ -52,7 +52,7 @@ Website: [filscan.io](https://filscan.io)
 
 ### Filscout
 
-Website: [filscout](https://filscout.io)
+Website: [Filscout](https://filscout.io)
 
 ![Filscout website.](filscout.png)
 

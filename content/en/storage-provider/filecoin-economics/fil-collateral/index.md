@@ -17,9 +17,9 @@ As a storage provider on the network, you will have to create FIL wallets and ad
 
 ## Types of collateral
 
-To satisfy the varied collateral needs of storage providers in a minimally burdensome way, Filecoin includes three different collateral mechanisms: 
+To satisfy the varied collateral needs of storage providers in a minimally burdensome way, Filecoin includes three different collateral mechanisms:
 
-- _Initial pledge collateral_, an initial commitment of Fil that a miner must provide with each sector. 
+- _Initial pledge collateral_, an initial commitment of FIL that a miner must provide with each sector.
 - _Block rewards as collateral_, a mechanism to reduce the initial token commitment by vesting block rewards over time.
 - _Storage deal provider collateral_, which aligns incentives between storage provider and client and can allow storage providers to differentiate themselves in the market.
 
@@ -34,11 +34,11 @@ The amount of required collateral depends on the amount of storage pledged to th
 The formula for the required collateral is as follows:
 
 {{< alert  >}}
-_Collateral needed for X TiBs = (Current Sector Initial Pledge) x (32) x (X TiBs)_
+_Collateral needed for X TiB = (Current Sector Initial Pledge) x (32) x (X TiB)_
 
-So for instance for 100TiB at a 0.20FIL / 32GiB sector this means:
+For instance, for 100 TiB at 0.20 FIL / 32 GiB sector, this means:
 
-_0.20FIL x 32 x 100 = 640 FIL_
+_0.20 FIL x 32 x 100 = 640 FIL_
 {{< /alert >}}
 
 The “Current Sector Initial Pledge" can be found on blockchain explorers like [Filfox](https://filfox.info/en) and [Filscout](https://www.filscout.com/en) and on the [Starboard dashboards](https://dashboard.starboard.ventures/capacity-services#commit-pledge-per-32gib-qap).

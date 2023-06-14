@@ -17,11 +17,11 @@ toc: true
 
 A cryptocurrency exchange is a digital platform where users can buy, sell, and trade cryptocurrencies for other cryptocurrencies or traditional fiat currencies like USD, EUR, or JPY.
 
-Crypto exchanges provide a marketplace for users to trade their digital assets and are typically run by private companies that facilitate these transactions. These exchanges can differ in terms of fees, security protocols, and the variety of cryptocurrencies they support.
+Cryptocurrency exchanges provide a marketplace for users to trade their digital assets and are typically run by private companies that facilitate these transactions. These exchanges can differ in terms of fees, security protocols, and the variety of cryptocurrencies they support.
 
-Users can typically sign up for an account with a crypto exchange, deposit funds into their account, and then use those funds to purchase or sell cryptocurrencies at the current market price. Some exchanges offer advanced trading features like margin trading, stop-loss orders, and trading bots.
+Users can typically sign up for an account with a cryptocurrency exchange, deposit funds into their account, and then use those funds to purchase or sell cryptocurrencies at the current market price. Some exchanges offer advanced trading features like margin trading, stop-loss orders, and trading bots.
 
-It's important to note that while crypto exchanges can offer convenience and liquidity for traders, they also come with risks like hacking and regulatory uncertainty. Therefore, users should take precautions to protect their funds and do their own research before using any particular exchange.
+It's important to note that while cryptocurrency exchanges can offer convenience and liquidity for traders, they also come with risks like hacking and regulatory uncertainty. Therefore, users should take precautions to protect their funds and do their own research before using any particular exchange.
 
 ### Supported exchanges
 
@@ -33,7 +33,6 @@ Purchasing cryptocurrency varies from exchange to exchange, but the process is u
 
 1. Add funds to your exchange account in your local currency (USD, EUR, YEN, etc.).
 1. Exchange your local currency for FIL at a set price.
-
 
 ### Address compatibility
 
