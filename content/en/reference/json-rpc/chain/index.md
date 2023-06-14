@@ -629,7 +629,7 @@ Response:
 ## ChainNotify
 
 ChainNotify returns channel with chain head updates.
-First message is guaranteed to be of len == 1, and type == 'current'.
+First message is guaranteed to be of length `1`, and type `current`.
 
 Perms: read
 
@@ -652,7 +652,7 @@ Response:
 
 ## ChainReadObj
 
-ChainReadObj reads ipld nodes referenced by the specified CID from chain
+ChainReadObj reads IPLD nodes referenced by the specified CID from chain
 blockstore and returns raw bytes.
 
 Perms: read

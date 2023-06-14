@@ -20,22 +20,22 @@ Etheruem-style addresses start with `0x`. Filecoin addresses start with `f`. The
 
 |   | From an Eth-style address | From a Filecoin address |
 | --- | --- | --- |
-| **To an Eth-style address** | [Eth-style address → Eth-style address](#eth-style-address--eth-style-address) | [Filecoin → Eth-style address](#filecoin--eth-style-address) |
-| **To a Filecoin address** | [Eth-style address → Filecoin](#eth-style-address--filecoin) | [Filecoin → Filecoin](#filecoin--filecoin) |
+| **To an Eth-style address** | [Eth-style address to Eth-style address](#eth-style-address-to-eth-style-address) | [Filecoin to Eth-style address](#filecoin-to-eth-style-address) |
+| **To a Filecoin address** | [Eth-style address to Filecoin](#eth-style-address-to-filecoin) | [Filecoin to Filecoin](#filecoin-to-filecoin) |
 
 {{< alert >}}
 ⚠️ **ASSETS ON THE FILECOIN NETWORK ARE NOT AVAILABLE ON ANY OTHER NETWORK**.<hr>Remember that Filecoin is fully compatible with Ethereum tools, like wallets. But that doesn’t mean you’re using the Ethereum network. These instructions transfer assets only within the Filecoin network. [Learn how to configure your Ethereum wallet on the Filecoin network]({{< relref "/basics/assets/metamask-setup" >}}).
 {{< /alert >}}
 
-## Eth-style address → Eth-style address
+## Eth-style address to Eth-style address
 
 There are no special steps or requirements for sending Filecoin from one Eth-style address to another on the Filecoin network. Follow the standard process for your wallet. [MetaMask has a simple guide](https://support.metamask.io/hc/en-us/articles/360015488931-How-to-send-tokens-from-your-MetaMask-wallet) for how to send Ethereum from one account to another.
 
-## Eth-style address → Filecoin
+## Eth-style address to Filecoin
 
 Use the [FilForwarder process]({{< relref "filforwader" >}}).
 
-## Filecoin → Eth-style address
+## Filecoin to Eth-style address
 
 Most wallets and exchanges currently only support `f1` or `f3` addresses. The majority of exchanges are still implementing support for `f4` addresses. Many wallets and exchanges won’t let you directly transfer FIL to an `f4` or Ethereum-style address. We recommend filing a support issue with the exchange to help accelerate the support of `f4` addresses. The process for sending FIL from a Filecoin address to an Ethereum address depends on the kind of wallet you have.
 
@@ -62,7 +62,7 @@ In this method, you will connect your Ledger device to the Glif.io website app a
 
 A hot wallet is a cryptocurrency wallet that is always connected to the internet. They allow you to store, send, and receive tokens. Because hot wallets are always connected to the internet, they tend to be somewhat more vulnerable to hacks and theft than cold storage methods. However, they a generally easier to use than cold wallets and do not require any specific hardware like a Ledger device.
 
-In this method, you will create a _burner wallet_ using Glif, transfer FIL to the burner wallet, and then transfer FIL from the burner wallet to Metamask.
+In this method, you will create a _burner wallet_ using Glif, transfer FIL to the burner wallet, and then transfer FIL from the burner wallet to MetaMask.
 
 1. Navigate to [https://wallet.glif.io/](https://wallet.glif.io/).
 1. Under **Burner wallets**, click **Create Seed Phase**.
@@ -74,16 +74,16 @@ In this method, you will create a _burner wallet_ using Glif, transfer FIL to th
 1. In the upper left corner of your wallet dashboard, click on the double squares icon next to your address to copy it.
 1. Record this address. You will need it later.
 1. From your main wallet account or exchange, transfer some funds to this address.
-1. From Metamask, copy your 0x address.
+1. From MetaMask, copy your 0x address.
 1. Once the funds appear in the burner wallet, click on **Send**.
 1. Enter the necessary information into the text fields:
    - In the **Recipient** field, enter your 0x style address. GLIF automatically converts it to an f4 address.
-   - In the **Amount** field, enter the amount of Fil to send.
-   - In **Params**, add optional Base64 parameters. 
+   - In the **Amount** field, enter the amount of FIL to send.
+   - In **Params**, add optional Base64 parameters.
 1. Click **Review**.
 1. Once you've reviewed, click **Send**.
-1. The Fil will arrive in your Metamask wallet shortly.
+1. The FIL will arrive in your MetaMask wallet shortly.
 
-## Filecoin → Filecoin
+## Filecoin to Filecoin
 
 There are no special steps or requirements for sending Filecoin from one Filecoin-style address to another on the Filecoin network.

@@ -41,7 +41,7 @@ Developers can reference pre-existing deals that are already available on the ne
 - CAR File: `QmY581cXXtNwHweiC69jECupu9EBx274huHjSgxPNv1zAAj`
 - Reset Timestamp: `2021-02-19T23:10:00Z`
 - Genesis Block CID: `bafy2bzaceapb7hfdkewspic7udnogw4xnhjvhm74xy5snwa24forre5z4s2lm`
-- sha1 Digest: `944c0c13172b9f552dfed5dfaffaba95113c8254`
+- SHA-1 Digest: `944c0c13172b9f552dfed5dfaffaba95113c8254`
 
 ## Network parameters
 

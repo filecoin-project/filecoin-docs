@@ -24,13 +24,13 @@ aliases:
 
 ### Code
 
-Filecoin and its sister-projects are big, with lots of code written in multiple languages. We always need help writing and maintaining code, but it can be daunting to just jump in. We use the label _Help Wanted_ on features or bugfixes that people can help out with. They are an excellent place for you to start contributing code.
+Filecoin and its sister-projects are big, with lots of code written in multiple languages. We always need help writing and maintaining code, but it can be daunting to just jump in. We use the label _Help Wanted_ on features or bug fixes that people can help out with. They are an excellent place for you to start contributing code.
 
 The biggest and most active repositories we have today are:
 
-- [filecoin-project/venus](https://github.com/filecoin-project/venus)
-- [filecoin-project/lotus](https://github.com/filecoin-project/lotus)
-- [filecoin-project/rust-fil-proofs](https://github.com/filecoin-project/rust-fil-proofs)
+- [`filecoin-project/venus`](https://github.com/filecoin-project/venus)
+- [`filecoin-project/lotus`](https://github.com/filecoin-project/lotus)
+- [`filecoin-project/rust-fil-proofs`](https://github.com/filecoin-project/rust-fil-proofs)
 
 If you want to start contributing to the core of Filecoin, those repositories are a great place start. But the _Help Wanted_ label exists in several related projects:
 
@@ -52,7 +52,7 @@ If you have never contributed to an open-source project before, or just need a r
 
 ### Community
 
-If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums]({{< relref "chat-and-discussion-forums" >}}) to say hello, meet others who share your goals, and connect with other members of the community. You should also consider joining [Filecoin Slack](https://filecoin.io/slack). 
+If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums]({{< relref "chat-and-discussion-forums" >}}) to say hello, meet others who share your goals, and connect with other members of the community. You should also consider joining [Filecoin Slack](https://filecoin.io/slack).
 
 ### Build Applications
 
@@ -61,14 +61,14 @@ Filecoin is designed for you to integrate into your own applications and service
 Get started by looking at the list of projects currently built on Filecoin. Build anything you think is missing! If you're unsure about something, you can join the chat and discussion forums to get help or feedback on your specific problem/idea. You can also join a Filecoin Hackathon, apply for a Filecoin Developer Grant or apply to the Filecoin accelerator program to support the development of your project.
 
 - [Filecoin Hackathons](https://hackathons.filecoin.io/)
-- [Filecoin Dev Grants](https://filecoin.io/grants/)
+- [Filecoin Developer Grants](https://filecoin.io/grants/)
 - [Filecoin Accelerator Program](https://ecosystem-wg.notion.site/Protocol-Labs-Accelerator-Program-d45d8792a7d544eca9beb7d3e3d3b05d)
 
 ### Protocol Design
 
 Filecoin is ultimately about building better protocols, and the community always welcome ideas and feedback on how to improve those protocols.
 
-- [filecoin-project/specs](https://github.com/filecoin-project/specs)
+- [`filecoin-project/specs`](https://github.com/filecoin-project/specs)
 
 ### Research
 
@@ -76,7 +76,7 @@ Finally, we see Protocol Labs as a research lab, where YOUR ideas can become tec
 
 ## Contribution tutorial
 
-While the [grammar, formatting, and style]({{< relref "#grammar-and-formatting" >}}) and the [writing guide]({{< relref "#writing-guide" >}}) can both help you write excellent content for the Filecoin Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `filecoin-project/filecoin-docs` project.
+While the [grammar, formatting, and style]({{< relref "#grammar-and-formatting" >}}) and the [writing guide]({{< relref "#writing-guide" >}}) can both help you write excellent content for the Filecoin documentation project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `filecoin-project/filecoin-docs` project.
 
 There are plenty of small-sized issues around Filecoin documentation that make for easy, helpful contributions to the Filecoin project. Here, we'll walk through:
 
@@ -93,11 +93,11 @@ This may look like a lot of steps for a small issue fix, but they're all necessa
 
 The Filecoin project is hosted in GitHub. There's a bunch of reasons for this, one of them being that GitHub comes with an issue tracker, which enables the core Filecoin team to field problems from the community. All community issues can read the docs, find issues, and raise issues in the docs repository (called a _repo_ for short).
 
-All issues involving the Filecoin docs themselves can be found here in the `filecoin-project/filecoin-docs` repo under the [**Issues** tab](https://github.com/filecoin-project/filecoin-docs/issues/). Here you can see all the issues that are currently open. We try to tag each issue with relevant descriptive tags. Tags like _difficulty_ and _size_ can give a sense of the amount of effort a task will take to complete.
+All issues involving the Filecoin docs themselves can be found here in the `filecoin-project/filecoin-docs` repository under the [**Issues** tab](https://github.com/filecoin-project/filecoin-docs/issues/). Here you can see all the issues that are currently open. We try to tag each issue with relevant descriptive tags. Tags like _difficulty_ and _size_ can give a sense of the amount of effort a task will take to complete.
 
 Let's jump into finding an issue.
 
-1. Go to the Filecoin Docs repository at [github.com/filecoin-project/filecoin-docs](https://github.com/filecoin-project/filecoin-docs).
+1. Go to the Filecoin documentation repository at [github.com/filecoin-project/filecoin-docs](https://github.com/filecoin-project/filecoin-docs).
 2. Select the **Issues** tab.
 3. Click the **Label** dropdown and select the **help wanted** tag.
 4. Select an issue that interests you.
@@ -182,7 +182,7 @@ This guide explains things to keep in mind when writing for Filecoin's documenta
 
 The purpose of a walkthrough is to tell the user _how_ to do something. They do not need to convince the reader of something or explain a concept. Walkthroughs are a list of steps the reader must follow to achieve a process or function.
 
-The vast majority of documentation within the Filecoin Docs project falls under the _Walkthrough_ category. Walkthroughs are generally quite short, have a neutral tone, and teach the reader how to achieve a particular process or function. They present the reader with concrete steps on where to go, what to type, and things they should click on. There is little to no _conceptual_ information within walkthroughs.
+The vast majority of documentation within the Filecoin documentation project falls under the _Walkthrough_ category. Walkthroughs are generally quite short, have a neutral tone, and teach the reader how to achieve a particular process or function. They present the reader with concrete steps on where to go, what to type, and things they should click on. There is little to no _conceptual_ information within walkthroughs.
 
 #### Goals
 
@@ -202,7 +202,7 @@ The end goal of a walkthrough is for the reader to achieve a very particular fun
 
 ##### Short length
 
-Since walkthroughs cover one particular function or process, they tend to be quite short. The estimated reading time of a walkthrough is somewhere between 2 and 10 minutes. Most of the time, the most critical content in a walkthrough is presented in a numbered list. Images and gifs can help the reader understand what they should be doing.
+Since walkthroughs cover one particular function or process, they tend to be quite short. The estimated reading time of a walkthrough is somewhere between 2 and 10 minutes. Most of the time, the most critical content in a walkthrough is presented in a numbered list. Images and GIFs can help the reader understand what they should be doing.
 
 If a walkthrough is converted into a video, that video should be no longer than 5 minutes.
 

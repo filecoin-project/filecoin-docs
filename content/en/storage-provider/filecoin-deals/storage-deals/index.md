@@ -13,7 +13,7 @@ weight: 310
 toc: true
 ---
 
-The real purpose of Filecoin is to store humanity's most important information. As a storage provider, that means accepting storage deals and storing deal sectors with real data in it. As before, those sectors are either 32GiB or 64GiB in size and require that the data be prepared as a content archive; that is, as a CAR file..
+The real purpose of Filecoin is to store humanity's most important information. As a storage provider, that means accepting storage deals and storing deal sectors with real data in it. As before, those sectors are either 32 GiB or 64 GiB in size and require that the data be prepared as a content archive; that is, as a CAR file..
 
 ## Data preparation
 
@@ -23,6 +23,7 @@ Data preparation can be done with tools such as [Singularity](https://github.com
 
 See the following video for a demonstration on Singularity:
 {{< youtube "1ZjKxkI6-Ic" >}}
+
 ## Deal Market
 
 In order for storage providers to accept deals and set their deal terms, they need to install some market software, such as [Boost](https://boost.filecoin.io/). This component interacts with data owners, accepts deals if they meet the configured requirements, gets a copy of the prepared data (CAR files), and puts it through the [sealing pipeline]({{<relref "sealing-pipeline" >}}), after which it is in the state required to be proven to the network.

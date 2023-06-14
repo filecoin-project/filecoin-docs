@@ -22,27 +22,26 @@ You need to have a couple of things installed before you can interact with Starl
 
 ## Steps
 
-1.  Ensure that the Lotus daemon is running, and has fully synced.
-1.  In a new terminal window, get your Lotus API token and endpoint with:
+1. Ensure that the Lotus daemon is running, and has fully synced.
+1. In a new terminal window, get your Lotus API token and endpoint with:
 
     ```shell with-output
     lotus auth api-info --perm admin
     ```
 
-    This will output something like: 
+    This will output something like:
 
     ```plaintext
     FULLNODE_API_INFO=eyJhbGcabdjwieusyiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwdj3isu2938X0.tmdXnxUflc8nhghfjiwo2l1o9T1QwT0jLskdEV5cYEc:/ip4/127.0.0.1/tcp/1234/http
     ```
 
-
-1.  Clone the Starling repository:
+1. Clone the Starling repository:
 
     ```shell
     git clone https://github.com/filecoin-project/starling
     ```
 
-1.  Move into the `starling` directory and install the dependencies:
+1. Move into the `starling` directory and install the dependencies:
 
     ```shell
     cd starling
@@ -50,7 +49,7 @@ You need to have a couple of things installed before you can interact with Starl
     sudo npm link
     ```
 
-1.  Configure Starling settings:
+1. Configure Starling settings:
 
     ```shell
     starling config
@@ -58,19 +57,19 @@ You need to have a couple of things installed before you can interact with Starl
 
 ## Run Starling
 
-1.  Store a single file run:
+1. Store a single file run:
 
     ```shell
     starling store full/path/to/file
     ```
 
-1.  Store a folder run:
+1. Store a folder run:
 
     ```shell
     starling store full/path/to/folder
     ```
 
-1.  Launch the interactive monitoring interface:
+1. Launch the interactive monitoring interface:
 
     ```shell
     starling monitor

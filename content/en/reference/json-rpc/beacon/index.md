@@ -17,7 +17,7 @@ The Beacon method group contains methods for interacting with the random beacon 
 
 ## BeaconGetEntry
 
-BeaconGetEntry returns the beacon entry for the given filecoin epoch. If
+BeaconGetEntry returns the beacon entry for the given Filecoin epoch. If
 the entry has not yet been produced, the call will block until the entry
 becomes available
 

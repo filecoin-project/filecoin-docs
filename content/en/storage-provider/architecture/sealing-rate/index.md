@@ -15,7 +15,7 @@ toc: true
 
 ## Cost
 
-When setting up their business, storage providers must determine how fast they should seal and, thus, how much sealing hardware they should buy. In other words, the cost is an important factor in determining a storage provider's sealing rate. For example, suppose you have an initial storage capacity of 100 TiB, which would account for 1 PiB {{< tooltip "QAP" >}} if all the sectors contain Fil+ verified deals. If your sealing capacity is 2.5 TiB per day, you will seal your full 100 TiB in 40 days. Is it worth investing in double the sealing capacity to fill your storage in just 20 days? It might be if you are planning to grow way beyond 100 TiB. This is an example of the sort of cost considerations storage providers must factor in tuning the sealing rate.
+When setting up their business, storage providers must determine how fast they should seal and, thus, how much sealing hardware they should buy. In other words, the cost is an important factor in determining a storage provider's sealing rate. For example, suppose you have an initial storage capacity of 100 TiB, which would account for 1 PiB {{< tooltip "QAP" >}} if all the sectors contain Filecoin Plus verified deals. If your sealing capacity is 2.5 TiB per day, you will seal your full 100 TiB in 40 days. Is it worth investing in double the sealing capacity to fill your storage in just 20 days? It might be if you are planning to grow way beyond 100 TiB. This is an example of the sort of cost considerations storage providers must factor in tuning the sealing rate.
 
 ## Customer expectations
 

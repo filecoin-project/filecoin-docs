@@ -15,11 +15,11 @@ aliases:
     - "/developers/smart-contracts/hardhat/"
 ---
 
-While originally created for the Ethereum blockchain, the Filecoin EVM-runtime allows Hardhat to be used to develop and deploy smart contracts on the Filecoin network.
+While originally created for the Ethereum blockchain, the Filecoin Ethereum Virtual Machine runtime (FEVM) allows Hardhat to be used to develop and deploy smart contracts on the Filecoin network.
 
 ## Quickstart
 
-The [Filecoin EVM-runtime Hardhat kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit) is a starter hardhat project for developing, deploying, and testing Solidity smart contracts on the Filecoin network. It functions in the same way as other Hardhat development kits. Check out the quickstart below to test it out!
+The [FEVM Hardhat kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit) is a starter hardhat project for developing, deploying, and testing Solidity smart contracts on the Filecoin network. It functions in the same way as other Hardhat development kits. Check out the quickstart below to test it out!
 
 ### Prerequisites
 
@@ -77,7 +77,7 @@ First, we need to grab the starter kit and install the dependencies.
 
     Always be careful when dealing with your private key. Double-check that you're not hardcoding it anywhere or committing it to source control like GitHub. Anyone with access to your private key has complete control over your funds.
 
-1. Get the deployer address from Hardhat:
+1. Get the addresses associated with the private key from Hardhat:
 
     ```shell
     yarn hardhat get-address
@@ -137,4 +137,4 @@ Make sure that your account has funds. You won't be able to deploy any contracts
 
 ## Hardhat docs
 
-You can view the official Hardhat documentation over at [hardhart.org/docs](https://hardhat.org/docs).
+You can view the official Hardhat documentation over at [`hardhart.org/docs`](https://hardhat.org/docs).

@@ -8,7 +8,7 @@ type: docs
 menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
-    identifier: "get-test-tokens-c9d70a9bb594275b17454ac6fc9abfaa"
+    identifier: "get-test-tokens-c9d70a9bb594275b17454thc6fc9abfaa"
 weight: 410
 aliases:
 aliases:
@@ -30,7 +30,7 @@ w
 
     ![Go to the Faucet section of the website.](faucet-click-faucet.png)
 
-1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
+1. Paste your address into the address field, complete the **I am human** CAPTCHA, and then click **Send**:
 
     ![Verify you're a human.](faucet-verify.png)
 
@@ -57,7 +57,7 @@ Before we begin, you must have a local testnet running. Follow the [Run a local 
     ```shell
     cd ~/lotus-devnet
     ```
-    
+
 1. View the wallets available on this node with `lotus wallet list`:
 
     ```shell

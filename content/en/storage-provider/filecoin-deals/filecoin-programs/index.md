@@ -1,6 +1,6 @@
 ---
 title: "Filecoin programs"
-description: "It is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC for programs like Filecoin Plus"
+description: "It is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC for programs like Filecoin Plus (Fil+)"
 lead: ""
 draft: false
 images: []
@@ -13,7 +13,7 @@ weight: 330
 toc: true
 ---
 
-Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know_your_customer)) to create verified deals for [Filecoin Plus](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/#), there are also programs and platforms that make it easier for storage providers to receive verified deals.
+Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know_your_customer)) to create verified deals for [Fil+](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/#), there are also programs and platforms that make it easier for storage providers to receive verified deals.
 
 ## Estuary
 
@@ -29,7 +29,7 @@ Although it is possible to find your own data storage customers with valuable da
 
 ## CO2.Storage
 
-**[CO2.Storage](https://co2.storage)**. CO2.Storage is a decentralized storage solution for structured data based on content addressed data schemas. CO2.Storage primarily focuses on structured data for environmental assets, such as Renewable Energy Credits, Carbon Offsets, and geospatial datasets and maps inputs to base data schemas (IPLD DAGs) for off-chain data (like metadata, images, attestation documents, and other assets) to promote the development of standard data schemas for environmental assets. This project is in *alpha*, and while many features can be considered stable, we are waiting until we are feature complete to fully launch. The Filecoin Green team is actively working on this project and welcomes contributions from the community.
+**[CO2.Storage](https://co2.storage)**. CO2.Storage is a decentralized storage solution for structured data based on content addressed data schemas. CO2.Storage primarily focuses on structured data for environmental assets, such as Renewable Energy Credits, Carbon Offsets, and geospatial datasets and maps inputs to base data schemas (IPLD DAGs) for off-chain data (like metadata, images, attestation documents, and other assets) to promote the development of standard data schemas for environmental assets. This project is in _alpha_, and while many features can be considered stable, we are waiting until we are feature complete to fully launch. The Filecoin Green team is actively working on this project and welcomes contributions from the community.
 
 ## Slingshot
 
@@ -48,7 +48,7 @@ See the below video for more information on Slingshot:
 
 ## Saturn
 
-A whole new access capability is being launched with **[Saturn](https://saturn.tech)**, which is the world’s first web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrievals of <1s in latency will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which storage providers can also participate.
+A whole new access capability is being launched with **[Saturn](https://saturn.tech)**, which is the world’s first Web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrieval times of less than 1 second will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which storage providers can also participate.
 
 ## Partner tools and programs
 
@@ -60,7 +60,7 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 ### Big Data Exchange
 
-Another program that allows storage providers easy access to Fil+ deals is **[Big Data Exchange](https://bigd.exchange.io)**. This platform allows storage providers to bid on datasets they are interested in storing. As a storage provider, you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the storage provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why, as a storage provider, you might want to bid to store a copy.
+Another program that allows storage providers easy access to Fil+ deals is **[Big Data Exchange](https://www.bigdataexchange.io/)**. This platform allows storage providers to bid on datasets they are interested in storing. As a storage provider, you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the storage provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why, as a storage provider, you might want to bid to store a copy.
 
 Storing real client data means there will be expectations on retrievability of that data. The storage provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
 

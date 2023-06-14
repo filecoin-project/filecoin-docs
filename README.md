@@ -15,7 +15,7 @@
 <br>
 <br>
 
-<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>. This repo also contains the build scripts and tools to create the Filecoin docs website. <a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
+<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>. This repository also contains the build scripts and tools to create the Filecoin docs website. <a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
 
 <!-- /HEADER -->
 
@@ -43,8 +43,8 @@
         - [Aliases](#aliases)
         - [Draft](#draft)
     - [Features](#features)
+        - [Pre-commit quality check](#pre-commit-linters)
         - [Archived content](#archived-content)
-        - [Code tabs](#code-tabs)
         - [Tooltips](#tooltips)
 - [Issues](#issues)
     - [Priority](#priority)
@@ -79,7 +79,7 @@ npm install npm@latest -g
 
 Follow these steps to run a copy of this site on your local computer. 
 
-1. Clone this repo:
+1. Clone this repository:
 
     ```shell
     git clone https://github.com/filecoin-project/filecoin-docs
@@ -97,7 +97,7 @@ Follow these steps to run a copy of this site on your local computer.
     ```shell
     npm run start
     ```
-    
+ <!-- markdown-link-check-disable-next-line -->
 1. Visit [localhost:1313](http://localhost:1313) to view the site.
 1. Press `CTRL` + `c` in the terminal to stop the local server.
 
@@ -121,7 +121,7 @@ A static site will be built and stored in the `/public` directory.
     <img alt="The Filecoin project logo." src="https://ipfs.io/ipfs/QmPDzxTqqPKKwhEys2Ah9hRCowNDx2fbXGj8yKB7T5Qiby">
 </picture>
 
-This repository manages the documentation for the Filecoin project. This repo also contains the build scripts and tools to create the Filecoin docs website and the API documentation. If you want to learn about Filecoin, how it works, or how to build on it, then you're in the right place.
+This repository manages the documentation for the Filecoin project. This repository also contains the build scripts and tools to create the Filecoin docs website and the API documentation. If you want to learn about Filecoin, how it works, or how to build on it, then you're in the right place.
 
 ### Merge process
 
@@ -140,7 +140,7 @@ This section lists the various files and folders and defines the purpose for eac
 | Name | Purpose |
 | --- | --- |
 | `.git`, `.github` | Manage the git configurations and contain information for GitHub constant integrations. |
-| `README.md` | This file. Acts as an introduction to this repo and how to spin up a local copy of the `docs.filecoin.io` site. |
+| `README.md` | This file. Acts as an introduction to this repository and how to spin up a local copy of the `docs.filecoin.io` site. |
 | `archetypes/` | Used by Hugo to programmatically create new pages. |
 | `assets/` | Assets like JavaScript and fonts used by Hugo to create the static site. These assets are not explorable in a built site. You must reference them in the code before building the site. |
 | `babel.config.js` | A configuration file used for the Babel JS compiler. |
@@ -157,8 +157,6 @@ This section lists the various files and folders and defines the purpose for eac
 | `static/` | Images, CSS, fonts, and other misc files that are available at `docs.filecoin.io/` when the site is built. For example, `docs.filecoin.io/site.webmanifest`.
 | `theme.toml` | A Hugo configuration file that specifies which theme to use. This file should not change that often. |
 <!-- /ABOUT THE PROJECT -->
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -183,7 +181,7 @@ aliases:
 ---
 ```
 
-It's also good to note that we use the YAML as our front-matter format. We could use [JSON or TOML](https://gohugo.io/content-management/front-matter#front-matter-formats) if we really wanted, but we found YAML the easiest to read. Plus, _yammal_ is fun to say.
+It's also good to note that we use the YAML as our front-matter format. We could use [JSON or TOML](https://gohugo.io/content-management/front-matter#front-matter-formats) if we really wanted, but we found YAML the easiest to read. Plus, _YAML_ is fun to say.
 
 This list has been created in order of commonality; variables you will come across most often are closer to the top of this list.
 
@@ -338,7 +336,7 @@ menu:
 
 The identifier of each sub-menu is usually the menu object name and the title of the sub-menu, all in lowercase with dashes `-`:
 
-![](/.static/images/front-matter-variables-sub-menus.png)
+![](./static/images/front-matter-variables-sub-menus.png)
 
 #### Aliases
 
@@ -370,12 +368,104 @@ This feature is generally used when we need to share content that isn't fully co
 
 This project contains some handy features you can include within your project.
 
-<!-- Archived content -->
+#### Pre-commit linters
+
+> This feature is currently in beta
+
+Before local changes can be committed to `filecoin-docs`, a custom shell script to check Markdown file quality using NPM packages is run. The workflow is as follows:
+
+1. In a local copy of the repository, changes are made to one or more Markdown files.
+1. Changes are staged:
+
+    ```shell
+    git add .
+    ```
+
+1. Staged changes are committed locally with a short and useful message describing the commit `<commit-msg>`:
+
+
+    ```shell
+    git commit -m "<commit-msg>"
+    ```
+
+1. The pre-commit step is triggered, where the following open-source linters are run against all locally committed files, as described below:
+
+    | Linter              | Usage                                      | Command used                                                | Configuration              |
+    | ------------------- | ------------------------------------------ | ----------------------------------------------------------- | -------------------------- |
+    | [`markdown-spellcheck`](https://www.npmjs.com/package/markdown-spellcheck) | Flag misspelled words, improper terminology | `mdspell -r -a -n --en-us`                                    | `.spelling`              |
+    | [`markdownlint-cli2`](https://github.com/DavidAnson/markdownlint-cli2)   | Flag improperly formatted markdown         | `markdownlint-cli2`                                           | `.markdownlint-cli2.jsonc` |
+    | [`markdown-link-check`](https://github.com/tcort/markdown-link-check) | Flag broken URLs                           | `markdown-link-check --config .mdlinkcheck-config.json -q -p` | `.mdlinkcheck-config.json` |
+
+    The script combines the output of these linters, and does one of the following:
+    
+    -  _Fails and rejects the commit_ if any issues are flagged, and reports those issues to the user:
+        - Spelling
+        - Markdown formatting
+        - Broken links
+    - _Succeeds and accepts the commit_ if no markdown files were changed or no errors were found.
+
+> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
+
+Before you can commit to the repository, you must fix any errors identified. To do so, follow the steps below:
+
+- [Fix broken links](#fix-broken-links)
+- [Fix markdown formatting](#fix-markdown-formatting)
+- [Fix spelling mistakes](#fix-spelling-mistakes)
+
+##### Fix broken links
+
+> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
+
+1. Fix any improperly formatted links.
+1. Remove or replace any links that are returning a 404.
+
+##### Fix markdown formatting
+
+> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
+
+1. Open a terminal window in the root directory of `filecoin-docs` and run `format-fix.sh`:
+
+   ```shell
+   sh format-fix.sh
+   ```
+
+    The following occurs:
+    - The script attempts to auto-fix identified errors. **Only certain errors are automatically fixable, so this will not usually catch everything.**
+    - A summary of any remaining errors that the script could not automatically fix is displayed.
+
+1. Fix the remaining Markdown formatting errors.
+
+##### Fix spelling mistakes
+
+> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
+
+Open a terminal window in the root directory of `filecoin-docs` and run `spell-fix.sh`:
+
+   ```shell
+   sh spell-fix.sh
+   ```
+[](./README.md#pre-commit-linters)
+
+The following occurs:
+- A summary of all spelling errors found in the changed file is displayed.
+- _Interactive spelling fix mode_ starts. 
+
+Using interactive spelling mode, you can quickly address each spelling error (highlighted in red) by doing the following:
+1. Using the arrow keys, select one of the following options:
+   - `Ignore` will ignore the word and not ask about it again in the current run. If spell check is run again, it will be flagged.
+   - `Add to file ignores` will ignore the word in this file only. 
+   - `Add to dictionary - case insensitive` will add to the dictionary for all files and match any case. **Because this option updates the repository dictionary, the docs team will require further review.** 
+   - `Add to dictionary - case sensitive` will add to the dictionary for all files and match the case that has been used. **Because this option updates the repository dictionary, the docs team will require further review.** 
+   - `Enter correct spelling` will allow you to manually enter the correct spelling.
+   - Any of the suggested fixes that the tool lists below `Enter correct spelling`.
+1. Once you've selected an option, press the **Enter** key.
+1. Repeat steps 2 and 3 until no more errors remain.
+
 #### Archived content
 
 Old pages can be archived and hidden from the sidebar view. However, they can still be accessed for historical purposes. 
 
-![](/.static/images/archived-page.png)
+![](./static/images/archived-page.png)
 
 To archive a page:
 
@@ -457,7 +547,7 @@ To make understanding terms in the docs a bit easier, users can hover over certa
 {{ $tooltips := dict
     "dApps" "Decentralized applications that don't rely on centralized infrastructure."
     "IPFS" "The InterPlanetary File System (IPFS) is a peer-to-peer protocol for sharing and storing files on the internet, designed to be decentralized and distributed."
-    "Lotus" "The reference node implementation for the filecoin network."
+    "Lotus" "The reference node implementation for the Filecoin network."
     "Lily" "Software designed to simplify the recording of blockchain data."
     "web3" "A new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics."
 }}
@@ -501,7 +591,9 @@ We use `p` tags to define the priority of an issue. The priority is defined by t
 <!-- LICENSE -->
 ## License
 
-Dual-licensed: [MIT](./LICENSE-MIT), [Apache Software License v2](./LICENSE-APACHE), by way of the [Permissive License Stack](https://protocol.ai/blog/announcing-the-permissive-license-stack/).
+[]()
+
+Dual-licensed: MIT, Apache Software License v2, by way of the [Permissive License Stack](https://protocol.ai/blog/announcing-the-permissive-license-stack/).
 <!-- /LICENSE -->
 
 
@@ -526,7 +618,6 @@ Dual-licensed: [MIT](./LICENSE-MIT), [Apache Software License v2](./LICENSE-APAC
 [issues-shield]: https://img.shields.io/github/issues/filecoin-project/filecoin-docs.svg?style=for-the-badge
 [issues-url]: https://github.com/filecoin-project/filecoin-docs/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-blueviolet?style=for-the-badge
-[license-url]: https://github.com/filecoin-project/filecoin-docs/blob/master/LICENSE.txt
 [product-screenshot]: ./static/images/filecoin-docs-homepage.png
 [website-status]: https://img.shields.io/website.svg?down_color=red&style=for-the-badge&url=https%3A%2F%2Flotus.filecoin.io
 [website-status-url]: https://docs.filecoin.io/
