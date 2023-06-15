@@ -41,7 +41,7 @@ This process requires a lot of different actions to be taken by both the client 
 
 To create storage deals, smart contracts need a specific Solidity event called `DealProposalCreate`. Storage Providers running [Boost software](https://boost.filecoin.io/) can then listen for this event and, if the deal is acceptable to them, pick up the deal automatically. The workflow can be seen below.
 
-![Smart contract deal creation workflow](new-deal-workflow.png)
+<img src="new-deal-workflow.png" alt="Smart contract deal creation workflow" />
 
 ## Steps
 
