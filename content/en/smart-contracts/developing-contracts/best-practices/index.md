@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "foundry-c9d70a9bb594275b17454ac6fc9abfaa"
-weight: 410
+weight: 500
 aliases:
     - "/developers/smart-contracts/how-tos/future-proof/"
     - "/smart-contracts/developing-contracts/"

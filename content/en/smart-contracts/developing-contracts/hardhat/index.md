@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "hardhat-493e35b7b05034632e53a13b339be61f"
-weight: 450
+weight: 430
 toc: true
 aliases:
     - "/developers/smart-contracts/hardhat/"

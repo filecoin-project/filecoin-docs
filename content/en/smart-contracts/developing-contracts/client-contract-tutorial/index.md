@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "client-contract-tutorial"
-weight: 460
+weight: 490
 toc: true
 aliases:
     - "/developers/infrastructure/libraries/"

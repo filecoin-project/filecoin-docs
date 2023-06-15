@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "verify-contracts-cff1cc77a90c8bea84857e1139981325"
-weight: 460
+weight: 495
 toc: true
 aliases:
     - "/developers/infrastructure/libraries/"
