@@ -370,18 +370,18 @@ This project contains some handy features you can include within your project.
 
 #### Pre-commit linters
 
-> This feature is currently in beta
+> This feature is currently in beta. If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, or you just need help with the linters, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public [#pl-docs](https://filecoinproject.slack.com/archives/C02PCRL3Z99) channel.
 
-Before local changes can be committed to `filecoin-docs`, a custom shell script to check Markdown file quality using NPM packages is run. The workflow is as follows:
+Before local changes can be committed to `filecoin-docs`, a custom shell script to check Markdown file quality using NPM packages is run. To use the pre-commit linters, follow the steps described below:
 
-1. In a local copy of the repository, changes are made to one or more Markdown files.
-1. Changes are staged:
+1. In a local copy of the repository, make changes to one or more more Markdown files.
+1. Stage the changes:
 
     ```shell
     git add .
     ```
 
-1. Staged changes are committed locally with a short and useful message describing the commit `<commit-msg>`:
+1. Commit the staged changes locally with a short and useful message describing the commit `<commit-msg>`:
 
 
     ```shell
@@ -404,8 +404,6 @@ Before local changes can be committed to `filecoin-docs`, a custom shell script 
         - Broken links
     - _Succeeds and accepts the commit_ if no markdown files were changed or no errors were found.
 
-> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
-
 Before you can commit to the repository, you must fix any errors identified. To do so, follow the steps below:
 
 - [Fix broken links](#fix-broken-links)
@@ -414,14 +412,10 @@ Before you can commit to the repository, you must fix any errors identified. To 
 
 ##### Fix broken links
 
-> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
-
 1. Fix any improperly formatted links.
 1. Remove or replace any links that are returning a 404.
 
 ##### Fix markdown formatting
-
-> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
 
 1. Open a terminal window in the root directory of `filecoin-docs` and run `format-fix.sh`:
 
@@ -436,8 +430,6 @@ Before you can commit to the repository, you must fix any errors identified. To 
 1. Fix the remaining Markdown formatting errors.
 
 ##### Fix spelling mistakes
-
-> If you believe that the pre-commit step incorrectly flagged something that it shouldn't have, **please reach out to the docs team directly so we may assist you.** For the fastest response, find us in the public #pl-docs channel.
 
 Open a terminal window in the root directory of `filecoin-docs` and run `spell-fix.sh`:
 

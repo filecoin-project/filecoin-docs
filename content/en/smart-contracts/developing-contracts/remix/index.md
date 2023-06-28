@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "remix-4c28be2b94737a684948515c69efbf89"
-weight: 460
+weight: 420
 toc: true
 aliases:
     - "/developers/smart-contracts/how-tos/deploy-a-contract/"

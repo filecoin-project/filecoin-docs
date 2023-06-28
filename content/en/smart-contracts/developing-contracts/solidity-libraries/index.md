@@ -1,5 +1,5 @@
 ---
-title: "Solidity libraries"
+title: "Filecoin.Solidity"
 description: "External Solidity libraries can help developers create their applications quicker by offloading some of the work to already existing smart contracts."
 lead: "External Solidity libraries can help developers create their applications quicker by offloading some of the work to already existing smart contracts."
 draft: false
@@ -9,15 +9,15 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "solidity-libraries-bff1cc77a90c8bea84857e1139981325"
-weight: 460
+weight: 480
 toc: true
 aliases:
     - "/developers/infrastructure/libraries/"
 ---
 
-## Filecoin.sol
+## Filecoin-solidity
 
-Filecoin.sol allows developers to:
+Filecoin-solidity allows developers to:
 
 - Solidity libraries to interact with Filecoin built-in actors.
 - Simplify the interaction with the Filecoin storage market, miner actors, the verified registry for FIL+ automation, and more.

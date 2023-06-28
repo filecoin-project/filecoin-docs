@@ -43,6 +43,12 @@
       weight = 30
       parent = "main-smart-contracts"
 
+     [[main]]
+       name = "Advanced"
+       url = "/smart-contracts/advanced/wrapped-fil"
+       weight = 40
+       parent = "main-smart-contracts"
+
 [[main]]
   name = "Networks"
   url = "/networks/"
@@ -238,6 +244,12 @@
   weight = 30
   identifier = "smart-contracts-developing-contracts"
   url = "/smart-contracts/developing-contracts"
+
+ [[smart-contracts]]
+   name = "Advanced"
+   weight = 40
+   identifier = "smart-contracts-advanced"
+   url = "/smart-contracts/advanced"
 # ----------------------
 
 
