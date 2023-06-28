@@ -11,6 +11,11 @@ menu:
     identifier: "node-providers-58a50d5583518ff60c2c708c895fee07"
 weight: 100
 toc: true
+aliases:
+    - "/nodes/node-providers"
+    - "/nodes/node-providers/ankr"
+    - "/nodes/node-providers/chainstack"
+    - "/nodes/node-providers/glif"
 ---
 
 Nodes are essential components of the Filecoin network. They maintain copies of the blockchain's entire transaction history and verify the validity of new transactions and blocks. Running a node requires significant computational resources and storage capacity, which can be demanding for individual developers or teams.
