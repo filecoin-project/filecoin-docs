@@ -1,7 +1,7 @@
 ---
 title: "Quick start guide"
 description: "This page is a quick start guide for storage providers in the Filecoin ecosystem."
-lead: "This page is a quick start guide for storage providers in the Filecoin ecosystem. It provides an overview of the resources available in the storage provider documentation and emphasizes the importance of understanding return on investment (ROI) and collateral for a successful storage provider business."
+lead: "Welcome to the Filecoin ecosystem! This page serves as your exhilarating quick start guide, igniting your journey towards becoming a storage provider. Allow us to unveil the vast array of invaluable resources by explaining you the different steps to gain the knowledge and tools to achieve success in the space of decentralized storage."
 draft: false
 images: []
 type: docs
