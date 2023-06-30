@@ -27,21 +27,9 @@ You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel]
 
 ## Workflows
 
-Before we get started, let's quickly cover the two workflows for creating storage deals.
+Before we get started, [checkout the different storage deal workflows]() to better understand how data is stored with storage providers.
 
-### Regular deal creation workflow
-
-Filecoin is a blockchain tailor-made for processing storage deals. Before the Filecoin virtual machine was implemented into the network, storage deals could only be created using the following workflow:
-
-![Offline deal-making workflow](deal-workflow.png)
-
-This process requires a lot of different actions to be taken by both the client and the storage provider. But with the advent of the Filecoin Virtual Machine, smart contracts can be deployed on top of the Filecoin blockchain. This allows developers to access and now create Filecoin Storage Deals within smart contracts! And thus, now developers can also create new storage deals on the Filecoin blockchain. This reduces the number of actions clients, and storage providers have to take to generate storage deals.
-
-### Smart contract deal creation workflow
-
-To create storage deals, smart contracts need a specific Solidity event called `DealProposalCreate`. Storage Providers running [Boost software](https://boost.filecoin.io/) can then listen for this event and, if the deal is acceptable to them, pick up the deal automatically. The workflow can be seen below.
-
-![Smart contract deal creation workflow](new-deal-workflow.png)
+If you are interested in getting your deals verified with FIL+, and recieving datacap, checkout the [docs on FIL Plus](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/).
 
 ## Steps
 
@@ -133,11 +121,28 @@ yarn hardhat make-deal-proposal \
     --remove-unsealed-copy true \
 ```
 
-Parameters such as the `collateral` and `price-per-epoch` are set to `0`. On mainnet, these would be determined by storage providers, but since this is on the Calibration testnet, the storage providers should pick up the jobs even with these parameters set to `0`.
+Parameters such as the `collateral` and `price-per-epoch` are set to `0`. On mainnet, these would be determined by storage providers, but since this is on the Calibration testnet, the storage providers should pick up the jobs even with these parameters set to `0`. 
+
+If you have a verified deal with data cap, be sure to set the "verified-deal" parameter to "true".
 
 ### Storage provider picks up the job
 
 Now if you’ve invoked the task with all the correct parameters, the method will execute on-chain and emit an event that Boost storage providers will be listening to. If the deal is well-formed and the parameters are acceptable, they will download the .car file, double-check to ensure the `piece-cid` and `piece-size` match the deal and publish your storage deal! This could take up to a day. Once the deal is published, you can find it on a [Calibration testnet block explorer]({{< relref "/networks/calibration/explorers" >}}). The client in the deal should be the `t4` address of the smart contract we called `MakeStorageDeal` on.
+
+### Check Deal Status on Chain
+
+You can check the status of the deal by running the [get-deal-status](https://github.com/filecoin-project/fevm-hardhat-kit/blob/main/tasks/deal-client/get-deal-status) task in the hardhat starter kit. To do run this command in your terminal:
+
+`yarn hardhat get-deal-status --pieceCid 
+baga6ea4seaqktvwmaowt3ghzpxyyyah7zhv2smjoqmgh6ax4zlqdwr6il73jsli`
+
+replacing the piece cid above with on you want to lookup. The deal can be in one of the following statuses:
+
+  * None: The deal hasn't been accepted by the Storage Provider
+  * RequestSubmitted: The deal has picked up by the Storage Provider
+  * DealPublished: The deal has been published on-chain. This mean the storage provider has begun sealing the deal.
+  * DealActivated: The deal is active and the provider is providing storage proofs on-chain
+  * DealTerminated: The deal has ended
 
 ### Conclusion
 
