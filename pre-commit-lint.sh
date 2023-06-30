@@ -32,21 +32,21 @@ if [ ${#mdFileList} -gt 0 ]; then
     echo $regularBar
     echo "${bold}Spell check${normal}"
     echo $regularBar
-    npx mdspell -r -a -n --en-us ${mdFileList[*]} "$@"
+    npx mdspell -r -a -n --en-us $mdFileList "$@"
     spellPassed=$?
 
     echo " "
     echo $regularBar
     echo "${bold}Link check${normal}"
     echo $regularBar
-    npx markdown-link-check --config .mdlinkcheck-config.json -q -p ${mdFileList[*]} "$@"
+    npx markdown-link-check --config .mdlinkcheck-config.json -q -p $mdFileList "$@"
     linksPassed=$?
 
     echo " "
     echo $regularBar
     echo "${bold}Formatting check${normal}"
     echo $regularBar
-    npx markdownlint-cli2 ${mdFileList[*]} "$@"
+    npx markdownlint-cli2 $mdFileList "$@"
     formatPassed=$?
 
     errorDescr=""
