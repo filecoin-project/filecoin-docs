@@ -1,5 +1,5 @@
 ---
-title: "Cross Chain Bridges"
+title: "Cross-chain bridges"
 description: "This page introduces cross-chain bridges in regards to the Filecoin network."
 lead: "Blockchain networks are often isolated and cannot interact with each other directly, so cross-chain bridges serve as a link between them and bring interoperability between different blockchains. Bridges connect two blockchain networks, allowing users to move assets or on-chain messages from one network to another."
 draft: false
