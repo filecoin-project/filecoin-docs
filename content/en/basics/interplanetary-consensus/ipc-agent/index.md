@@ -107,7 +107,7 @@ eudico                      latest        8fb6db609712   2 minutes ago   341MB
 If you are running the agent for the first time, the first thing you need to do is to create a new config. The default config path for the agent is `~/.ipc-agent/config.toml`. The agent will always try to pick up the config from this path unless told otherwise. To populate a sample config file in the default path, you can run the following command:
 
 ```shell
-./bin/ipc-agent init-config
+./bin/ipc-agent config init
 ```
 
 If you `cat ~/.ipc-agent/config.toml` you should see a new config populated with a sample root and subnet configurations.
@@ -139,7 +139,7 @@ git clone https://github.com/consensus-shipyard/lotus
 cd lotus
 ```
 
-`spacenet` is the master branch of the repository. To find the latest release deployed over Spacenet, you can check the last release  published in the repository and use checkout that tag.
+`spacenet` is the master branch of the repository. To find the latest release deployed over Spacenet, you can check the [last release](https://github.com/consensus-shipyard/lotus/releases)  published in the repository and use checkout that tag.
 
 ```shell
 git checkout <release/branch>
@@ -181,7 +181,7 @@ Additionally, you should create a new wallet address (if you don't have one alre
 t1cp4q4lqsdhob23ysywffg2tvbmar5cshia4rweq
 ```
 
-With all this information, the config of the agent should be updated to connect to the peer and start interacting with Spacenet's IPC by adding the following section for the `/root`:
+With all this information, the config of the agent should be updated to connect to the peer and start interacting with Spacenet's IPC by editing the following section for the `/root`:
 
 ```toml
 [[subnets]]
@@ -202,7 +202,7 @@ In the current implementation of Spacenet, the gateway is always deployed in the
 To check if the agent has been connected to Spacenet successfully you can try creating a new wallet in the network, but this type through the agent by running:
 
 ```shell
-./bin/ipc-agent wallet-new --key-type=bls --subnet=/root
+./bin/ipc-agent wallet new --key-type=bls
 
 2023-03-30T12:01:11Z INFO  ipc_agent::cli::commands::manager::wallet] created new wallet with address WalletNewResponse { address: "t1om5pijjq5dqic4ccnqqrvv6zgzwrlxf6bh2apvi" } in subnet "/root"
 ```
@@ -240,13 +240,13 @@ accounts = ["t1cp4q4lqsdhob23ysywffg2tvbmar5cshia4rweq"]
 ```
 
 {{< alert icon="⚠️" >}}
-If you are already running the daemon, changes in the config file are only picked up after running `./bin/ipc-agent reload-config` so be sure to run it after editing your config.
+If you are already running the daemon, changes in the config file are only picked up after running `./bin/ipc-agent config reload` so be sure to run it after editing your config.
 {{< /alert >}}
 
 Finally, to test if the connection to the rootnet has been successful, we can for instance try to create a new wallet in the rootnet:
 
 ```shell
-./bin/ipc-agent wallet-new --key-type=bls --subnet=/root
+./bin/ipc-agent wallet new --key-type=bls
 ```
 
 ## Running a subnet
@@ -258,11 +258,11 @@ To spawn a new subnet, our IPC agent should be connected to at least the subnet 
 To run a subnet the first thing is to configure and create the subnet actor that will govern the subnet's operation:
 
 ```shell
-./bin/ipc-agent create-subnet -p <parent-id> -n <subnet-name> --min-validator-stake 1 --min-validators <num-validators> --finality-threshold <number-epochs> --check-period <epochs-between-checks>
+./bin/ipc-agent subnet create -p <parent-id> -n <subnet-name> --min-validator-stake 1 --min-validators <num-validators> --bottomup-check-period <number-epochs> --topdown-check-period <epochs-between-checks>
 
 # Sample command execution
-./bin/ipc-agent create-subnet -p /root -n test --min-validator-stake 1 \
---min-validators 0 --finality-threshold 10 --check-period 10
+./bin/ipc-agent subnet create -p /root -n test --min-validator-stake 1 \
+--min-validators 0 --bottomup-check-period 10 --topdown-check-period 10
 
 [2023-03-21T09:32:58Z INFO  ipc_agent::cli::commands::manager::create] created subnet actor with id: /root/t01002
 ```
@@ -299,7 +299,7 @@ Let's illustrate the flow by creating a new wallet in our recently deployed root
 
 ```shell
 # Create the new wallet
-./bin/ipc-agent wallet-new --key-type=secp256k1 --subnet=/root
+./bin/ipc-agent wallet new --key-type=secp256k1
 [2023-03-29T09:32:52Z INFO  ipc_agent::cli::commands::manager::wallet] created new wallet with address WalletNewResponse { address: "t17rnww5qirr2fh5uiqy6fyi6ix7otwjzgu6pgpey" } in subnet "/root"
 
 # Export the created wallet into ipc-agent
@@ -350,17 +350,17 @@ auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3Jpd
 accounts = ["t1cp4q4lqsdhob23ysywffg2tvbmar5cshia4rweq"]
 ```
 
-As always, remember to run `./bin/ipc-agent reload-config` for changes in the config of the agent to be picked up by the daemon.
+As always, remember to run `./bin/ipc-agent config reload` for changes in the config of the agent to be picked up by the daemon.
 
 ### Joining a subnet
 
 With the daemon for the subnet deployed, we can join the subnet:
 
 ```shell
-$ ./bin/ipc-agent join-subnet --subnet=<subnet-id> --collateral=<collateral_amount> --validator-net-addr=<libp2p-add-validator>
+$ ./bin/ipc-agent subnet join --subnet=<subnet-id> --collateral=<collateral_amount> --validator-net-addr=<libp2p-add-validator>
 
 # Sample execution
-$ ./bin/ipc-agent join-subnet --subnet=/root/t01002 --collateral=2 --validator-net-addr="GET_ADDRESS_FROM_SCRIPT"
+$ ./bin/ipc-agent subnet join --subnet=/root/t01002 --collateral=2 --validator-net-addr="GET_ADDRESS_FROM_SCRIPT"
 ```
 
 This command specifies the subnet to join, the amount of collateral to provide and the validator net address used by other validators to dial them. We can pick up this information from the execution of the script above or running `eudico mir validator config validator-addr` from your deployment. Bear in mind that the multiaddress provided for the validator needs to be accessible publicly by other validators. According to the deployment used you may need to tweak the IP addresses of the multiaddresses and the ones provided by these scripts and commands won't be usable out-of-the-box.
@@ -370,10 +370,10 @@ For instance, in the example above, we are using the DNS endpoint `/dns/host.doc
 As a sanity-check that we have joined the subnet successfully and that we provided enough collateral to register the subnet to IPC, we can list the child subnets of our parent with the following command:
 
 ```shell
-./bin/ipc-agent list-subnets --gateway-address=<gateway-addr> --subnet=<parent-subnet-id>
+./bin/ipc-agent subnet list --gateway-address=<gateway-addr> --subnet=<parent-subnet-id>
 
 # Sample execution
-./bin/ipc-agent list-subnets --gateway-address=t064 --subnet=/root
+./bin/ipc-agent subnet list --gateway-address=t064 --subnet=/root
 
 [2023-03-30T17:00:25Z INFO  ipc_agent::cli::commands::manager::list_subnets] /root/t01003 - status: 0, collateral: 2 FIL, circ.supply: 0.0 FIL
 ```
@@ -400,31 +400,31 @@ It may be the case that while joining the subnet, you didn't set the multiaddres
 Changing the validator is as simple as running the following command:
 
 ```shell
-./bin/ipc-agent set-validator-net-addr --subnet=<subnet-id> --validator-net-addr=<new-validator-addr>
+./bin/ipc-agent subnet set-validator-net-addr --subnet=<subnet-id> --validator-net-addr=<new-validator-addr>
 
 # Sample execution
-./bin/ipc-agent set-validator-net-addr --subnet=/root/t01002 --validator-net-addr="/dns/host.docker.internal/tcp/1349/p2p/12D3KooWDeN3bTvZEH11s9Gq5bDeZZLKgRZiMDcy2KmA6mUaT9KE"
+./bin/ipc-agent subnet set-validator-net-addr --subnet=/root/t01002 --validator-net-addr="/dns/host.docker.internal/tcp/1349/p2p/12D3KooWDeN3bTvZEH11s9Gq5bDeZZLKgRZiMDcy2KmA6mUaT9KE"
 ```
 
 ### Committing checkpoints from a subnet
 
-Subnets are periodically committing checkpoints to their parent every `check-period` (parameter defined when creating the subnet). When you configure the connection to your child subnet in the agent config, and `reload-config`, your agent should automatically start the process responsible for creating the checkpoints and submitting them to the parent. This process will only commit new subnet if you are a validator in that subnet. If the agent has spawned successfully the checkpointing process, you should start seeing every now and then these logs:
+Subnets are periodically committing checkpoints to their parent every `check-period` (parameter defined when creating the subnet). When you configure the connection to your child subnet in the agent config, and `config reload`, your agent should automatically start the process responsible for creating the checkpoints and submitting them to the parent. This process will only commit new subnet if you are a validator in that subnet. If the agent has spawned successfully the checkpointing process, you should start seeing every now and then these logs:
 
 ```plaintext
 [2023-03-29T09:52:48Z INFO  ipc_agent::manager::checkpoint] Submitting checkpoint for account t1cp4q4lqsdhob23ysywffg2tvb
 [2023-03-29T09:52:55Z INFO  ipc_agent::manager::checkpoint] successfully published checkpoint submission for epoch 50
 ```
 
-It is common for the checkpointing process to fail if while configuring a child subnet: either because the auth token is not correct, or because no wallet addresses have been configured in the subnet, etc. If this happens, running `./bin/ipc-agent reload-config` will restart the checkpoint manager and pick up the latest config values. Whenever you see an error in the checkpointing process, check that your subnet's configuration is correct and `reload-config` to restart the process.
+It is common for the checkpointing process to fail if while configuring a child subnet: either because the auth token is not correct, or because no wallet addresses have been configured in the subnet, etc. If this happens, running `./bin/ipc-agent config reload` will restart the checkpoint manager and pick up the latest config values. Whenever you see an error in the checkpointing process, check that your subnet's configuration is correct and execute `config reload` to restart the process.
 
-Finally, if you want to inspect the information of a range of checkpoints committed in the parent for a subnet, you can use the `list-checkpoints` command provided by the agent as follows:
+Finally, if you want to inspect the information of a range of checkpoints committed in the parent for a subnet, you can use the `list-bottomup` command provided by the agent as follows:
 
 ```shell
 # List checkpoints between two epochs for a subnet
-./bin/ipc-agent list-checkpoints --from-epoch=<range-start> --to-epoch=<range-end> --subnet=<subnet-id>
+./bin/ipc-agent checkpoint list-bottomup --from-epoch=<range-start> --to-epoch=<range-end> --subnet=<subnet-id>
 
 # Sample execution
-./bin/ipc-agent list-checkpoints --from-epoch=0 --to-epoch=100 --subnet=/
+./bin/ipc-agent checkpoint list-bottomup --from-epoch=0 --to-epoch=100 --subnet=/
 root/t01002
 [2023-03-29T12:43:42Z INFO  ipc_agent::cli::commands::manager::list_checkpoints] epoch 0 - prev_check={"/":"bafy2bzacedkoa623kvi5gfis2yks7xxjl73vg7xwbojz4tpq63dd5jpfz757i"}, cross_msgs=null, child_checks=null
 [2023-03-29T12:43:42Z INFO  ipc_agent::cli::commands::manager::list_checkpoints] epoch 10 - prev_check={"/":"bafy2bzacecsatvda6lodrorh7y7foxjt3a2dexxx5jiyvtl7gimrrvywb7l5m"}, cross_msgs=null, child_checks=null
@@ -436,10 +436,10 @@ root/t01002
 The agent provides a command to conveniently exchange funds between addresses of the same subnet. This can be achieved through the following command:
 
 ```shell
-./bin/ipc-agent send-value --subnet=<subnet-id> --to=<to-addr> <value>
+./bin/ipc-agent subnet send-value --subnet=<subnet-id> --to=<to-addr> <value>
 
 # Sample execution
-./bin/ipc-agent send-value --subnet=/root/t01002 --to=t1xbevqterae2tanmh2kaqksnoacflrv6w2dflq4i 10
+./bin/ipc-agent subnet send-value --subnet=/root/t01002 --to=t1xbevqterae2tanmh2kaqksnoacflrv6w2dflq4i 10
 ```
 
 ### Leaving a subnet
@@ -447,10 +447,10 @@ The agent provides a command to conveniently exchange funds between addresses of
 To leave a subnet, the following agent command can be used:
 
 ```shell
-./bin/ipc-agent leave-subnet --subnet=<subnet-id>
+./bin/ipc-agent subnet leave --subnet=<subnet-id>
 
 # Sample execution
-./bin/ipc-agent leave-subnet --subnet=/root/t01002
+./bin/ipc-agent subnet leave --subnet=/root/t01002
 ```
 
 Leaving a subnet will release the collateral for the validator and remove all the validation rights from its account. This means that if you have a validator running in that subnet, its validation process will immediately terminate.
@@ -481,20 +481,20 @@ In this section, we will deploy a subnet where the IPC agent is responsible for 
 For the rest of this tutorial, we'll assume that you have your agent already configured and interacting with a rootnet. For more information on how to connect to a rootnet check [revisit this section](#interacting-with-a-rootnet). We are going to deploy a subnet with 5 validators. The first thing we'll need to do is creating a new wallet for every validator we want to run. We can do this directly through the agent with the following command:
 
 ```shell
-./bin/ipc-agent wallet-new --key-type=secp256k1 --subnet=/root
+./bin/ipc-agent wallet new --key-type=secp256k1
 ```
 
 We also need to provide with some funds our wallets so they can put collateral to join the subnet. According to the rootnet you are connected to, you may need to get some funds from the faucet, or send some from your main wallet. Funds can be send from your main wallet also through the agent with:
 
 ```shell
-./bin/ipc-agent send-value --subnet=/root --to=<target-wallet> <amount_FIL>
+./bin/ipc-agent subnet send-value --subnet=/root --to=<target-wallet> <amount_FIL>
 ```
 
 With this, we can already create the subnet with `/root` as its parent. We are going to set the `--min-validators 5` so no new blocks can be created without this number of validators in the subnet.
 
 ```shell
 # Creating a sample subnet with 5 as the minimum number of validators.
-./bin/ipc-agent create-subnet -p /root -n test --min-validator-stake 1 --min-validators 5 --finality-threshold 10 --check-period 10
+./bin/ipc-agent subnet create -p /root -n test --min-validator-stake 1 --min-validators 5 --bottomup-check-period 10 --topdown-check-period 10
 ```
 
 ### Deploying the infrastructure
@@ -542,7 +542,7 @@ auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3Jpd
 accounts = ["t1ivy6mo2ofxw4fdmft22nel66w63fb7cuyslm4cy", "t1cp4q4lqsdhob23ysywffg2tvbmar5cshia4rweq", "t1nv5jrdxk4ljzndaecfjgmu35k6iz54pkufktvua", "t1pr3qzqieikp33pfdaygwkwt5v35a5ljsxsu64xq", "t1pmxk3nhg2u2ge7ioilrk7c5rmdmmbgpazipvzyy"]
 ```
 
-Remember to run `./bin/ipc-agent reload-config` for your agent to pick up the latest changes for the config.
+Remember to run `./bin/ipc-agent config reload` for your agent to pick up the latest changes for the config.
 
 ### Joining the subnet
 
@@ -551,10 +551,10 @@ All the infrastructure for the subnet is now deployed, and we can join our valid
 This is the command that needs to be executed for every validator to join the subnet:
 
 ```shell
-./bin/ipc-agent join-subnet --from=<validator-wallet> --subnet=/root/t01002 --collateral=<amount-collateral> --validator-net-addr="/dns/host.docker.internal/tcp/<VALIDATOR_PORT>/p2p/<VALIDATOR_MULTIADDR>"
+./bin/ipc-agent subnet join --from=<validator-wallet> --subnet=/root/t01002 --collateral=<amount-collateral> --validator-net-addr="/dns/host.docker.internal/tcp/<VALIDATOR_PORT>/p2p/<VALIDATOR_MULTIADDR>"
 
 # Sample execution for the validator whose logs where shared above for 2FIL collateral
-./bin/ipc-agent join-subnet --from=t1ivy6mo2ofxw4fdmft22nel66w63fb7cuyslm4cy --subnet=/root/t01002 --collateral=2 --validator-net-addr="/dns/host.docker.internal/tcp/1359/p2p/12D3KooWEJXcSPw6Yv4jDk52xvp2rdeG3J6jCPX9AgBJE2mRCVoR
+./bin/ipc-agent subnet join --from=t1ivy6mo2ofxw4fdmft22nel66w63fb7cuyslm4cy --subnet=/root/t01002 --collateral=2 --validator-net-addr="/dns/host.docker.internal/tcp/1359/p2p/12D3KooWEJXcSPw6Yv4jDk52xvp2rdeG3J6jCPX9AgBJE2mRCVoR
 ```
 
 Remember doing the above step for the five validators.
@@ -614,4 +614,4 @@ Generally, the issue is that:
 
 ### My agent is not submitting checkpoints after an error
 
-Try running `./bin/ipc-agent reload-config`, this should pick up the latest config and restart all checkpointing processes. If the error has been fixed or it was an network instability between the agent and your subnet daemon, checkpoints should start being committed again seamlessly.
+Try running `./bin/ipc-agent config reload`, this should pick up the latest config and restart all checkpointing processes. If the error has been fixed or it was an network instability between the agent and your subnet daemon, checkpoints should start being committed again seamlessly.

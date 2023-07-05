@@ -10,7 +10,7 @@ menu:
     parent: "smart-contracts-advanced"
     identifier: "wrapped-fil-56abe0f4e0eb036df8d2684f2dd5d624"
 aliases:
-    - "/developers/smart-contracts/advanced/wfil"
+    - "/smart-contracts/advanced/wfil"
 weight: 100
 toc: true
 ---

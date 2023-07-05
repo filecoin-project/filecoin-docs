@@ -217,12 +217,6 @@
   identifier = "nodes-lite-nodes"
   url = "/nodes/lite-nodes"
 
-[[nodes]]
-  name = "Node providers"
-  weight = 40
-  identifier = "nodes-node-providers"
-  url = "/nodes/node-providers"
-
 
 
 # docs.filecoin.io/smart-contracts
