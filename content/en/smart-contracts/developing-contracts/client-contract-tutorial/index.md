@@ -27,9 +27,9 @@ You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel]
 
 ## Workflows
 
-Before we get started, [checkout the different storage deal workflows]() to better understand how data is stored with storage providers.
+Before we get started, [checkout the different storage deal workflows]({{< relref "#workflows" >}}) to better understand how data is stored with storage providers.
 
-If you are interested in getting your deals verified with FIL+, and recieving datacap, checkout the [docs on FIL Plus](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/).
+If you are interested in getting your deals verified with FIL+ and receiving datacap, checkout the [docs on FIL+]({{< relref "storage-provider/filecoin-deals/verified-deals/" >}}).
 
 ## Steps
 
@@ -123,7 +123,7 @@ yarn hardhat make-deal-proposal \
 
 Parameters such as the `collateral` and `price-per-epoch` are set to `0`. On mainnet, these would be determined by storage providers, but since this is on the Calibration testnet, the storage providers should pick up the jobs even with these parameters set to `0`. 
 
-If you have a verified deal with data cap, be sure to set the "verified-deal" parameter to "true".
+If you have a verified deal with data cap, be sure to set the `verified-deal` parameter to `true`.
 
 ### Storage provider picks up the job
 
@@ -133,16 +133,17 @@ Now if you’ve invoked the task with all the correct parameters, the method wil
 
 You can check the status of the deal by running the [get-deal-status](https://github.com/filecoin-project/fevm-hardhat-kit/blob/main/tasks/deal-client/get-deal-status) task in the hardhat starter kit. To do run this command in your terminal:
 
-`yarn hardhat get-deal-status --pieceCid 
-baga6ea4seaqktvwmaowt3ghzpxyyyah7zhv2smjoqmgh6ax4zlqdwr6il73jsli`
+```shell
+yarn hardhat get-deal-status --pieceCid baga6ea4seaqktvwmaowt3ghzpxyyyah7zhv2smjoqmgh6ax4zlqdwr6il73jsli
+```
 
-replacing the piece cid above with on you want to lookup. The deal can be in one of the following statuses:
+Make sure to replace the piece CID above with the one you want to lookup. The deal can be in one of the following statuses:
 
-  * None: The deal hasn't been accepted by the Storage Provider
-  * RequestSubmitted: The deal has picked up by the Storage Provider
-  * DealPublished: The deal has been published on-chain. This mean the storage provider has begun sealing the deal.
-  * DealActivated: The deal is active and the provider is providing storage proofs on-chain
-  * DealTerminated: The deal has ended
+- `None`: The deal hasn't been accepted by the storage provider.
+- `RequestSubmitted`: The deal has picked up by the storage provider.
+- `DealPublished`: The deal has been published on-chain. This mean the storage provider has begun sealing the deal.
+- `DealActivated`: The deal is active and the provider is providing storage proofs on-chain.
+- `DealTerminated`: The deal has ended.
 
 ### Conclusion
 
