@@ -1096,7 +1096,7 @@ Results:
 
 ## Storage power actor
 
-Strorage power actor is responsible for keeping track of the storage power allocated at each storage miner. The ActorCode for the built-in storage power actor is `hex"0004"` which will be used to call methods in the storage power actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
+Storage power actor is responsible for keeping track of the storage power allocated at each storage miner. The ActorCode for the built-in storage power actor is `hex"0004"` which will be used to call methods in the storage power actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
 
 ### CreateMiner
 

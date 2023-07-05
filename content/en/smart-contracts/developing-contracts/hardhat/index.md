@@ -84,7 +84,7 @@ First, we need to grab the starter kit and install the dependencies.
     ```
 
     ```plaintext
-    Ethereum address (this addresss should work for most tools): 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
+    Ethereum address (this address should work for most tools): 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
     f4address (also known as t4 address on testnets): f410fch6aods4buzaete3mpatnejuaxqhzdci3j67vyi
     ✨  Done in 1.40s.
     ```

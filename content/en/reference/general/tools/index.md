@@ -1,7 +1,7 @@
 ---
 title: "Tools"
-description: "This page lists a collection of tools and resources you can use to build ontop of the Filecoin network using the FVM."
-lead: "This page lists a collection of tools and resources you can use to build ontop of the Filecoin network using the FVM."
+description: "This page lists a collection of tools and resources you can use to build on top of the Filecoin network using the FVM."
+lead: "This page lists a collection of tools and resources you can use to build on top of the Filecoin network using the FVM."
 draft: false
 images: []
 type: docs

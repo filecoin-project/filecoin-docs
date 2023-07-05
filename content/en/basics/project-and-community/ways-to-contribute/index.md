@@ -430,7 +430,7 @@ Tag code blocks with the syntax of the core they are presenting:
     ```
 ```
 
-Output from command-line actions can be displayed by adding another codeblock directly after the input codeblock. Here's an example telling the use to run `go version` and then the output of that command in a seperate codeblock immediately after the first:
+Output from command-line actions can be displayed by adding another codeblock directly after the input codeblock. Here's an example telling the use to run `go version` and then the output of that command in a separate codeblock immediately after the first:
 
 ````markdown
     ```shell 
