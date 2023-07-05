@@ -30,7 +30,7 @@ Please note that publicly available hosted endpoints **only guarantee 2000 of th
 - Lotus lite-node command
 
   ```shell
-  FULLNODE_API_INFO=wss://wss.calibration.node.glif.io lotus daemon --lite
+  FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
   ```
 
   When using a lite-node, omit `/rpc/v1` from Glif's WebSocket address.
