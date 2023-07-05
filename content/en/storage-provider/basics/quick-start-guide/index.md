@@ -1,7 +1,7 @@
 ---
 title: "Quick start guide"
 description: "This page is a quick start guide for storage providers in the Filecoin ecosystem."
-lead: "This page is a quick start guide for storage providers in the Filecoin ecosystem. It provides an overview of the resources available in the storage provider documentation and emphasizes the importance of understanding return on investment (ROI) and collateral for a successful storage provider business."
+lead: "Welcome to the Filecoin ecosystem! This page serves as your exhilarating quick start guide, igniting your journey towards becoming a storage provider. Allow us to unveil the vast array of invaluable resources by explaining you the different steps to gain the knowledge and tools to achieve success in the space of decentralized storage."
 draft: false
 images: []
 type: docs
@@ -12,6 +12,7 @@ menu:
 weight: 111
 toc: true
 ---
+
 {{< imageWithText title="Explore the storage provider documentation" src="home-icon.png" >}}
 
 Get ready to dive into the valuable resources of the [storage provider documentation](https://docs.filecoin.io/storage-provider). This comprehensive guide offers a wealth of information about the role of storage providers in the Filecoin ecosystem, including insights into the economic aspects. You'll also gain knowledge about the software architecture, hardware infrastructure, and the necessary skills for success.
