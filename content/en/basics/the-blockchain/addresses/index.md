@@ -86,3 +86,5 @@ Currently, per [FIP 0048](https://github.com/filecoin-project/FIPs/blob/master/F
 {{< /alert >}}
 
 As an example: suppose an address manager has an actor ID (an `f0` address) `123`, and that address manager creates a new actor. Then, the `f4` address of the actor created by the address manager is `f4123fa3491xyz`, where `f4` is the address class, `123` is the actor ID of the address manager, `f` is a separator, and `a3491xyz` is the arbitrary `<new-actor-id>` chosen by that actor.
+
+For Ethereum users, the Filecoin network can recognize and interact with `0x` Ethereum-style addresses (e.g. `0x63703B85f417834e258abc03ccA3Ee43bC513AAb`), by interpreting them as `f410` addresses (e.g. `f410fmnydxbpuc6bu4jmkxqb4zi7oio6fcovlhe7opua`). `410` refers to the Ethereum-compatible address space. `f410` addresses are equivalent to their `0x` counterparts. You can convert them easily [here](https://beryx.zondax.ch/address_converter) and read more about the Ethereum-compatible address space [here](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/address-types/).
