@@ -31,7 +31,9 @@ Exclude the `nvidia-drivers` and `cuda` packages from your updates using [the ap
 {{< /alert >}}
 
 {{< alert >}}
-It is advised **not to configure a swap partition** for the servers involved in Lotus. Most of the systems will have high memory capacity (some with 1TB and possibly more), so adding a normal sized swap partition will not really increase the total memory. More importantly though because swap writes on disk it is a lot slower than RAM. It could lead to unpredictable behavior if your Lotus systems would start swapping to disk. It is therefore better to know the limits and (sealing) bandwidth of your setup and to configure accordingly, without evacuating to swap.
+**Do not use swap partitions**.
+
+Most systems have high memory capacity (some with 1TB and possibly more), so adding a normal-sized swap partition will not significantly increase the total memory. More importantly, swap partition write speeds are [substantially slower than RAM](https://www.techtarget.com/searchwindowsserver/definition/swap-file-swap-space-or-pagefile). This decrease in write speed can lead to unpredictable behavior. We recommend that you review the limits and bandwidth of your setup and configure it accordingly without using a swap partition.
 {{< /alert >}}
 
 
