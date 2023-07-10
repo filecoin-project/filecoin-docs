@@ -31,6 +31,13 @@ Install Ubuntu LTS as a **headless server**. This means there is no desktop envi
 Exclude the `nvidia-drivers` and `cuda` packages from your updates using [the appropriate command](https://tecadmin.net/exclude-packages-from-apt-upgrade/) set. Once you have a working setup for your specific GPU, you will want to test these packages before you risk breaking them. Many storage providers may need to [install CUDA](https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/) since some operating systems do not include this package by default.
 {{< /alert >}}
 
+{{< alert >}}
+**Do not use swap partitions**.
+
+Most systems have high memory capacity (some with 1TB and possibly more), so adding a normal-sized swap partition will not significantly increase the total memory. More importantly, swap partition write speeds are [substantially slower than RAM](https://www.techtarget.com/searchwindowsserver/definition/swap-file-swap-space-or-pagefile). This decrease in write speed can lead to unpredictable behavior. We recommend that you review the limits and bandwidth of your setup and configure it accordingly without using a swap partition.
+{{< /alert >}}
+
+
 ## Command-line and environment variables
 
 All installation tasks and operational activities happen from the CLI. When installing and upgrading Lotus, it is recommended to build the binaries from source code. Upgrades to Lotus happen every two months or so. If you are unable to perform a mandatory Lotus upgrade, you may become disconnected from the Filecoin network, which means you could be penalized and lose money, so it's vital to keep Lotus up-to-date.
