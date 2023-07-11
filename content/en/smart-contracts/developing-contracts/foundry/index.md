@@ -40,11 +40,11 @@ You should also have an address on the Filecoin Calibration testnet. See the [Ad
     ```
 
 1. Export your private key from MetaMask. See the [MetaMask documentation](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) to find out how to export your private key.
-1. In your `.env.example`, create an environment variable called `PRIVATE_KEY` and paste in the private key from MetaMask. Also, do the same for the `HYPERSPACE_RPC_URL`. Then rename the file to `.env`:
+1. In your `.env.example`, create an environment variable called `PRIVATE_KEY` and paste in the private key from MetaMask. Also, do the same for the `CALIBRATION_RPC_URL`. Then rename the file to `.env`:
 
     ```markdown
     PRIVATE_KEY=eed8e9d727a647f7302bab440d405ea87d36726e7d9f233ab3ff88036cfbce9c
-    HYPERSPACE_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+    CALIBRATION_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
     ```
 
 1. Inside the `src` folder in a contract called `SimpleCoin.sol`. Deploy this contract using Foundry:
