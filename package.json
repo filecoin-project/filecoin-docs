@@ -67,7 +67,7 @@
     "purgecss-whitelister": "^2.4",
     "shx": "^0.3.4",
     "stylelint": "^15.10",
-    "stylelint-config-standard-scss": "^6.1"
+    "stylelint-config-standard-scss": "^10.0"
   },
   "otherDependencies": {
     "hugo": "0.101.0"
