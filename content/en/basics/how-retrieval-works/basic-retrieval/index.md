@@ -17,11 +17,7 @@ aliases:
 
 ## Lassie
 
-Lassie is a simple retrieval client for IPFS and Filecoin. It finds and fetches your data over the best retrieval protocols available. Lassie makes Filecoin retrieval easy. While Lassie is powerful, the core functionality is expressed in a single CLI command:
-
-```shell
-lassie fetch <CID>
-```
+Lassie is a simple retrieval client for IPFS and Filecoin. It finds and fetches your data over the best retrieval protocols available. Lassie makes Filecoin retrieval easy. While Lassie is powerful, the core functionality is expressed in a single CLI command - `lassie fetch <CID>`
 
 Lassie also provides an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. Developers can use this interface directly in their applications to retrieve the data. You can find more details about running a [Lassie HTTP daemon](#lassie-http-daemon) below.
 
@@ -32,43 +28,11 @@ Lassie can also be used as a library to fetch data from Filecoin from within you
 
 ### Retrieve using Lassie
 
-Make sure that you have [Go](https://go.dev/) installed and that your `GOPATH` is set up. By default, your `GOPATH` will be set to `~/go`.
-
-#### Install Lassie
+#### Install Lassie and go-car
 
 1. Download the [Lassie Binary from the latest release](https://github.com/filecoin-project/lassie/releases/latest) based on your system architecture.
 
-   Or download and install Lassie using the Go package manager:
-
-    ```shell
-    go install github.com/filecoin-project/lassie/cmd/lassie@latest
-    ```
-
-    ```plaintext
-    go: downloading github.com/filecoin-project/lassie v0.3.1
-    go: downloading github.com/libp2p/go-libp2p v0.23.2
-    go: downloading github.com/filecoin-project/go-state-types v0.9.9
-
-    ...
-    ```
-
-2. Download the [go-car binary from the latest release](https://github.com/ipld/go-car/releases/latest) based on your system architecture
-
-   or install the [go-car](https://github.com/ipld/go-car) package using the Go package manager:
-
-    ```shell
-    go install github.com/ipld/go-car/cmd/car@latest
-    ```
-
-    ```plaintext
-    go: downloading github.com/ipld/go-car v0.6.0
-    go: downloading github.com/ipld/go-car/cmd v0.0.0-20230215023242-a2a8d2f9f60f
-    go: downloading github.com/ipld/go-codec-dagpb v1.6.0 
-
-    ...
-    ```
-
-   The go-car package makes it easier to work with content-addressed archive (CAR) files.
+2. Download the [go-car binary from the latest release](https://github.com/ipld/go-car/releases/latest) based on your system architecture. The go-car package makes it easier to work with content-addressed archive (CAR) files.
 
 You now have everything you need to retrieve a file with Lassie and extract the contents with `go-car`.
 
@@ -90,21 +54,21 @@ This command uses a `|` to chain two commands together. This will work on Linux 
 An example of fetching and extracting a single file, identified by its CID:
 
 ```shell
-lassie fetch -o - bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6 | car extract - > lidar-data.tar
+lassie fetch -o - bafykbzacecjedcvniq5wylq7cqre7la6diaxwsue5ssy3f3rzftwu3ielspru | car extract - > Juantalks.mp4
 ```
 
 Basic progress information, similar to the output show below, is displayed:
 
 ```plaintext
-Fetching bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6................................................................................................................................................
-Fetched [bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6] from [12D3KooWPNbkEgjdBNeaCGpsgCrPRETe4uBZf1ShFXStobdN18ys]:
+Fetching bafykbzacecjedcvniq5wylq7cqre7la6diaxwsue5ssy3f3rzftwu3ielspru................................................................................................................................................
+Fetched [bafykbzacecjedcvniq5wylq7cqre7la6diaxwsue5ssy3f3rzftwu3ielspru] from [12D3KooWBwUERBhJPtZ7hg5N3q1DesvJ67xx9RLdSaStBz9Y6Ny8]:
         Duration: 42.259908785s
           Blocks: 144
            Bytes: 143 MiB
 extracted 1 file(s)
 ```
 
-The resulting file is a tar archive:
+The resulting file is an MP4 video file:
 
 ```shell
 ls -l
@@ -112,7 +76,7 @@ ls -l
 
 ```shell
 total 143M
--rw-rw-r-- 1 user user 143M Feb 16 11:21 lidar-data.tar
+-rw-rw-r-- 1 user user 143M Feb 16 11:21 Juantalks.mp4
 ```
 
 ##### Lassie CLI usage
