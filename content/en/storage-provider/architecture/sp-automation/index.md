@@ -10,6 +10,8 @@ menu:
     identifier: "lotus-automation-eaf8e84a4d869e8377258acc4e25f684"
 weight: 411
 toc: true
+aliases:
+  - "/storage-provider/architecture/lotus-automation"
 ---
 
 {{< alert >}}
