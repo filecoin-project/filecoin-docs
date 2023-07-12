@@ -18,7 +18,7 @@ toc: true
 
 ## Why this automation?
 
-It can be rather overwhelming for new storage providers to learn everything about Filecoin and the Lotus software components. In order to help with the learning process, we provide a fully automated installation of the Lotus stack. This automation should allow anyone to go on mainnet or the Calibration testnet in no time.
+It can be rather overwhelming for new storage providers to learn everything about Filecoin and the various software components. In order to help with the learning process, we provide a fully automated installation of the Lotus and Boost stack. This automation should allow anyone to go on mainnet or the Calibration testnet in no time.
 
 ## What are we automating?
 
