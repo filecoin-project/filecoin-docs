@@ -1,6 +1,6 @@
 ---
-title: "Lotus automation"
-description: "1-click deployment automation for Lotus allows new storage providers to quickly learn and deploy Lotus."
+title: "SP automation"
+description: "1-click deployment automation for the SP stack allows new storage providers to quickly learn and deploy Lotus and Boost."
 draft: false
 images: []
 type: docs
