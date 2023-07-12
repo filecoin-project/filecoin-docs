@@ -575,7 +575,7 @@ We use `p` tags to define the priority of an issue. The priority is defined by t
 | P1 | Business-impacting. | Within three days. | The API endpoint for a project is about to change. |
 | P2 | Planned project request. | Within two weeks. | A new method will soon be added to a project API. |
 | P3 | Suggestion or conceptual update. | No due date. | A blog post discussing the benefits of decentralization for web developers. |
-| P4 | Deprioritized suggestions. These will not be addressed unless significat activity or community requests are received. | No due date. | Add a dark theme to the docs. |
+| P4 | Deprioritized suggestions. These will not be addressed unless significant activity or community requests are received. | No due date. | Add a dark theme to the docs. |
 <!-- /ISSUES -->
 
 

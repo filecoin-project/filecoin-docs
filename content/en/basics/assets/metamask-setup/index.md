@@ -1,7 +1,7 @@
 ---
 title: "MetaMask setup"
 description: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet."
-lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet, Calibration testnet, or the Hyperspace testnet."
+lead: "MetaMask is a popular browser extension that allows users to interact with blockchain applications. This guide shows you how to configure MetaMask to work with the Filecoin mainnet, Calibration testnet, or a local testnet."
 draft: false
 images: []
 type: docs
@@ -23,7 +23,7 @@ aliases:
 
 Chainlist is a website that lets users easily connect their wallets to EVM-compatible blockchains. Chainlist is managed by [DeFi Llama](https://defillama.com/). Chainlist is the simplest way to add the Filecoin network to your MetaMask wallet.
 
-{{< tabs tabTotal="4" >}}
+{{< tabs tabTotal="3" >}}
 {{< tab tabName="Mainnet" >}}
 <br>
 
@@ -47,19 +47,6 @@ Chainlist is a website that lets users easily connect their wallets to EVM-compa
 1. You may be shown a warning that you are connecting to a test network. If prompted, click **Accept**.
 1. Click **Switch network** when prompted by MetaMask.
 1. Open MetaMask from the browser extensions tab. You should see _Filecoin Calibration_ listed at the top.
-{{< /tab >}}
-{{< tab tabName="Hyperspace" >}}
-<br>
-
-1. Go [chainlist.org](https://chainlist.org).
-
-1. Click the **Include Testnets** checkbox.
-1. Search for [`Filecoin Hyperspace`](https://chainlist.org/chain/3141).
-1. Click **Connect Wallet**.
-1. Click **Approve** when prompted to _Allow this site to add a network_.
-1. You may be shown a warning that you are connecting to a test network. If prompted, click **Accept**.
-1. Click **Switch network** when prompted by MetaMask.
-1. Open MetaMask from the browser extensions tab. You should see _Filecoin Hyperspace_ listed at the top.
 {{< /tab >}}
 {{< tab tabName="Local-testnet" >}}
 <br>
@@ -93,7 +80,7 @@ Before we get started, you'll need the following:
 
 The process for configuring MetaMask to use Filecoin is fairly simple, but has some very specific variables that you must copy exactly.
 
-{{< tabs tabTotal="4" >}}
+{{< tabs tabTotal="3" >}}
 {{< tab tabName="Mainnet" >}}
 <br>
 
@@ -140,28 +127,6 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
 1. Done!
 {{< /tab >}}
 
-{{< tab tabName="Hyperspace" >}}
-<br>
-
-1. Open your browser and open the MetaMask plugin. If you haven't opened the MetaMask plugin before, you'll be prompted to create a new wallet. Follow the prompts to create a wallet.
-1. Click the user circle and select **Settings**:
-1. Select **Networks**.
-1. Click **Add a network**.
-1. Scroll down and click **Add a network manually**.
-1. Enter the following information into the fields:
-
-    | Field | Value |
-    | --- | --- |
-    | Network name | `Filecoin Hyperspace testnet` |
-    | New RPC URL | Either:<br> - `https://api.calibration.node.glif.io/rpc/v1` <br> - `https://filecoin-calibration.chainup.net/rpc/v1` <br> - `https://filecoin-calibration.chainstacklabs.com/rpc/v1` <br> - `https://rpc.ankr.com/filecoin_testnet` |
-    | Chain ID | `3141` |
-    | Currency symbol | `tFIL` |
-
-1. Pick one a [block explorers]({{< relref "/networks/calibration/explorers" >}}), and enter the URL into the **Block explorer (optional)** field.
-1. Review the values in the fields and click **Save**.
-1. The Filecoin network should now be shown in your MetaMask window.
-1. Done!
-{{< /tab >}}
 {{< tab tabName="Local-testnet" >}}
 <br>
 

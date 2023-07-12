@@ -19,7 +19,7 @@ aliases:
 
 ## Calibration testnet
 
-MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "metamask-setup" >}}) if you havn't set up an address in your MetaMask wallet yet.
+MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "metamask-setup" >}}) if you haven't set up an address in your MetaMask wallet yet.
 w
 
 1. In your browser, open MetaMask and copy your address to your clipboard:
