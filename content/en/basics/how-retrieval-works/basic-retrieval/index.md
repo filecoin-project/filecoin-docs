@@ -46,41 +46,41 @@ The video below demonstrates how Lassie can be used to render content directly f
 
 Lassie and `go-car` can work together to retrieve and extract data from Filecoin. All you need is the CID of the content to download.
 
-"`shell
+```shell
 lassie fetch -o - <CID> | car extract
 ```
 
 This command uses a `|` to chain two commands together. This will work on Linux or macOS. Windows users may need to use PowerShell to use this form. Alternatively, you can use the commands separately. An example of fetching and extracting a single file, identified by its CID:
 
-"`shell
-lassie fetch -o - bafykbzacecjedcvniq5wylq7cqre7la6diaxwsue5ssy3f3rzftwu3ielspru | car extract - > Juantalks.mp4
+```shell
+lassie fetch -o - bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6 | car extract - > lidar-data.tar
 ```
 
-"`plaintext
-Fetching bafykbzacecjedcvniq5wylq7cqre7la6diaxwsue5ssy3f3rzftwu3ielspru................................................................................................................................................
-Fetched [bafykbzacecjedcvniq5wylq7cqre7la6diaxwsue5ssy3f3rzftwu3ielspru] from [12D3KooWBwUERBhJPtZ7hg5N3q1DesvJ67xx9RLdSaStBz9Y6Ny8]:
+```plaintext
+Fetching bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6...
+Fetched [bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6] from [12D3KooWPNbkEgjdBNeaCGpsgCrPRETe4uBZf1ShFXStobdN18ys]
         Duration: 42.259908785s
           Blocks: 144
            Bytes: 143 MiB
 extracted 1 file(s)
 ```
 
-The resulting file is an MP4 video file:
+The resulting file is a tar archive:
 
-"`shell
+```shell
 ls -l
 ```
 
-"`shell
+```plaintext
 total 143M
--rw-rw-r-- 1 user user 143M Feb 16 11:21 Juantalks.mp4
+-rw-rw-r-- 1 user user 143M Feb 16 11:21 lidar-data.tar
 ```
 
 ##### Lassie CLI usage
 
 To retrieve data using Lassie, run the following:
 
-"`shell
+```shell
 lassie fetch -p -o <OUTFILE_FILE_NAME> <CID>/path/to/content
 ```
 
@@ -90,7 +90,7 @@ The following variables and flags are available:
 
   For example:
 
-    "`plaintext
+    ```plaintext
     Fetching bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6
     Querying indexer for bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6...
     Found 4 storage providers candidates from the indexer, querying all of them:
@@ -104,13 +104,13 @@ The following variables and flags are available:
     ...
     ```
 
-- `-o' is an optional flag that tells Lassie where to write the output to. If you don't specify a file, it will append `.car` to your CID and use that as the output file name.
+- `-o' is an optional flag that tells Lassie where to write the output to. If you don't specify a file, it will append`.car` to your CID and use that as the output file name.
 
 If you specify `-`, the output will be written to `stdout` and can be piped to another command. For example, you can pipe the output to `go-car` or redirect it to a file.
 
-- `<CID>/path/to/content` is the CID of the content you want to retrieve and an optional path to a specific file within that content. Example:
+- `<CID>/path/to/content` is the CID of the content you want to retrieve and an optional path to a specific file within that content. For example:
 
-    "`shell
+    ```shell
     lassie fetch -o - bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Cryptographic_hash_function | car extract - | less
     ```
 
@@ -120,7 +120,7 @@ A CID is always necessary. If you don't specify a path, Lassie will attempt to d
 
 The `car extract` command can be used to extract files and directories from a CAR:
 
-"`shell
+```shell
 car extract -f <INPUT_FILE>[/path/to/file/or/directory] [<OUTPUT_DIR>]
 ```
 
@@ -144,7 +144,7 @@ And there we have it! Downloading and managing data from Filecoin is super simpl
 
 The Lassie HTTP daemon is an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. It fetches content from peers known to have it and provides the resulting data in CAR format.
 
-"`shell
+```shell
 GET /ipfs/{cid}[/path][?params]
 ```
 
