@@ -30,9 +30,9 @@ if [ ${#mdFileList} -gt 0 ]; then
 
     echo " "
     echo $regularBar
-    echo "${bold}Spell check${normal}"
+    echo "${bold}Spelling and writing style check${normal}"
     echo $regularBar
-    npx mdspell -r -a -n --en-us $mdFileList "$@"
+    pre-commit run
     spellPassed=$?
 
     echo " "

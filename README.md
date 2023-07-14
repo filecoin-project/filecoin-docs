@@ -61,7 +61,6 @@ Follow these simple example steps to get a local version of the site up and runn
 <!-- /GETTING STARTED-->
 
 
-
 <!-- PREREQUISITES -->
 ### Prerequisites
 
@@ -71,7 +70,6 @@ To run these commands, you must have [NPM installed](https://www.npmjs.com/). If
 npm install npm@latest -g
 ```
 <!-- /PREREQUISITES -->
-
 
 
 <!-- INSTALLATION -->

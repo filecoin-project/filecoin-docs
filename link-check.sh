@@ -3,7 +3,7 @@
 fileList=$(git diff --diff-filter=d --cached --name-only)
 mdFileList=$(echo "$fileList" | grep -E '\.(md)$')
 
-echo "\nFORMATTING AUTOMATICALLY FIXABLE ERRORS... \n"
-npx markdownlint-cli2 ${mdFileList[*]} "$@"
+echo "\nCHECKING FOR BROKEN LINKS... \n"
+npx markdown-link-check --config .mdlinkcheck-config.json -q -p $mdFileList "$@"
 
 exit 0
