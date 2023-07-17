@@ -49,9 +49,8 @@ DAO
 DAOs
 dApp
 dApps
-data
-data's
 Datastore
+Doks
 datastore
 dClimate
 deduplicate
@@ -212,6 +211,7 @@ sandboxed
 Satoshi
 serverless
 sharding
+shortcode
 snapshotted
 stackparse
 stdout

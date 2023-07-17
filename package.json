@@ -26,7 +26,7 @@
     "md-lint": "sh pre-commit-lint.sh",
     "check-outbound-links": "markdown-link-check -q -p *.md",
     "lint:scripts": "eslint assets/js config functions",
-    "check-spelling": "mdspell -r -a -n --en-us *.md",
+    "check-spelling": "pre-commit run",
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
     "check-md-formatting": "markdownlint-cli2 \"*.md\"",
     "fix-md-formatting": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
