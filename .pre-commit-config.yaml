@@ -8,5 +8,4 @@ repos:
         args: [sync]
       - id: vale
         name: RUN VALE LINTER
-        args: [--minAlertLevel=error]
         files: '\.md$'
