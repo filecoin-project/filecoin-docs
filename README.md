@@ -31,7 +31,6 @@
     - [Merge process](#merge-process)
     - [Files and folders](#files-and-folders)
 - [Contributing](#contributing)
-    - [Video guides for site management](#video-guides-for-site-management)
     - [Front-matter variables](#front-matter-variables)
         - [Title](#title)
         - [Description](#description)
@@ -74,8 +73,6 @@ npm install npm@latest -g
 
 <!-- INSTALLATION -->
 ### Installation
-
-Fresssssshhhh typoz
 
 Follow these steps to run a copy of this site on your local computer. 
 
