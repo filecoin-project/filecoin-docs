@@ -292,3 +292,11 @@ body {
 .d-xl-padding {
   padding-bottom: 15px;
 }
+
+table td:first-child, table th:first-child {
+    min-width: 20%;
+}
+
+td {
+    word-break: break-word;
+}
