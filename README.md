@@ -610,6 +610,7 @@ Dual-licensed: MIT, Apache Software License v2, by way of the [Permissive Licens
 [issues-shield]: https://img.shields.io/github/issues/filecoin-project/filecoin-docs.svg?style=for-the-badge
 [issues-url]: https://github.com/filecoin-project/filecoin-docs/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-blueviolet?style=for-the-badge
+[license-url]: https://protocol.ai/blog/announcing-the-permissive-license-stack/
 [product-screenshot]: ./static/images/filecoin-docs-homepage.png
 [website-status]: https://img.shields.io/website.svg?down_color=red&style=for-the-badge&url=https%3A%2F%2Flotus.filecoin.io
 [website-status-url]: https://docs.filecoin.io/
