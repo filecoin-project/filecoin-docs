@@ -1,7 +1,7 @@
 ---
 title: "Call built-in actors"
-description: "Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Zondax filecoin.solifity library. This page provides instructions on how to use each method."
-lead: "Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Zondax filecoin.solifity library. This page provides instructions on how to use each method."
+description: "Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Filecoin.solidity library. This page provides instructions on how to use each method."
+lead: "Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Filecoin.solidity library. This page provides instructions on how to use each method."
 draft: false
 images: []
 type: docs
@@ -17,7 +17,7 @@ toc: true
 For conceptual information on built-in actors, including their purposes, how they work and available types, see the [conceptual guide]({{< ref "/reference/built-in-actors/overview" >}})
 {{< /alert >}}
 
-Built-in actors can be invoked using the Protocol _JSON-RPC_ API or the Zondax _filecoin.sol_ API.
+Built-in actors can be invoked using the Protocol JSON-RPC API or the Filecoin.solidity API.
 
 ## APIs compared
 
@@ -30,9 +30,9 @@ The Protocol _JSON-RPC_ API:
 - Requires authentication for some API calls.
 - Serves as the foundation for language-specific libraries (some of which are maintained by organizations other than PL) such as [filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/).
 
-The Zondax _filecoin.sol_ API:
+The _Filecoin.sol_ API:
 
-- Is maintained by [Zondax](https://docs.zondax.ch/).
+- Is maintained by Protocol Labs (PL).
 - Supports [_some but not all_ of the built-in actors and their methods](#available-actors-and-methods).
 
 ## Protocol API
@@ -254,7 +254,7 @@ The `filecoin.sol` library is embeddable into your smart contract, which means i
     cd libs
     ```
 
-1. Copy the Zondax contracts with the methods you wish to call from [the contracts folder](https://github.com/Zondax/filecoin-solidity/tree/master/contracts/v0.8) into `libs`.
+1. Copy the contracts with the methods you wish to call from [the contracts folder](https://github.com/filecoin-project/filecoin-solidity/tree/master/contracts/v0.8) into `libs`.
 
 ### Call a built-in actor
 
