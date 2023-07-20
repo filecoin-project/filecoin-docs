@@ -1,5 +1,5 @@
 ---
-title: "SP automation"
+title: "Storage provider automation"
 description: "1-click deployment automation for the SP stack allows new storage providers to quickly learn and deploy Lotus and Boost."
 draft: false
 images: []
