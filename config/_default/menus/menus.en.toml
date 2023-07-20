@@ -4,11 +4,6 @@
   weight = 10
 
 [[main]]
-  name = "Store"
-  url = "/store/overview/start-storing/"
-  weight = 20
-
-[[main]]
   name = "Storage Providers"
   url = "/storage-provider/basics/overview/"
   weight = 30
