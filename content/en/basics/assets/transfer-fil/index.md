@@ -16,11 +16,12 @@ aliases:
     - "/smart-contracts/wallets/fil-to-zero-x/"
 ---
 
-## Start here
+Etheruem-style addresses start with `0x`. Filecoin addresses start with `f`. There are four paths for transferring funds across the Filecoin network depending on which address type you are transferring from and to:
 
-Figuring out which process to follow can be tricky. To simplify things, enter the addresses you want to send _from_ and _to_ in the fields below:
-
-{{< filecoin-transfer >}}
+|   | From an Eth-style address | From a Filecoin address |
+| --- | --- | --- |
+| **To an Eth-style address** | [Eth-style address to Eth-style address](#eth-style-address-to-eth-style-address) | [Filecoin to Eth-style address](#filecoin-to-eth-style-address) |
+| **To a Filecoin address** | [Eth-style address to Filecoin](#eth-style-address-to-filecoin) | [Filecoin to Filecoin](#filecoin-to-filecoin) |
 
 {{< alert >}}
 ⚠️ **ASSETS ON THE FILECOIN NETWORK ARE NOT AVAILABLE ON ANY OTHER NETWORK**.<hr>Remember that Filecoin is fully compatible with Ethereum tools, like wallets. But that doesn’t mean you’re using the Ethereum network. These instructions transfer assets only within the Filecoin network. [Learn how to configure your Ethereum wallet on the Filecoin network]({{< relref "/basics/assets/metamask-setup" >}}).
