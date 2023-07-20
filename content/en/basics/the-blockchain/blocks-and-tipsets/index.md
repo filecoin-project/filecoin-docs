@@ -8,11 +8,12 @@ type: docs
 menu:
   basics:
     parent: "basics-the-blockchain"
-    identifier: "tipsets-9c429ba5c09b3b3f9247ef22571dd7df"
+    identifier: "blocks-and-tipsets-9c429ba5c09b3b3f9247ef22571dd7df"
 weight: 100
 toc: true
 aliases:
     - "/fvm/concepts/tipsets/"
+    - "/basics/the-blockchain/tipsets/"
     - "/developers/smart-contracts/concepts/tipsets/"
 ---
 
@@ -27,6 +28,19 @@ In Filecoin, a block consists of:
 Every block refers to at least one _parent block_; that is, a block produced in a prior epoch.
 
 A _message_ represents communication between two actors, and thus changes in network state. The messages are listed in their order of appearance, deduplicated and returned in canonical order of execution. So, in other words, a block describes all changes to the network state in a given epoch.
+
+### Blocktime
+
+Blocktime is a concept that represents the average time it takes to mine or produce a new block on a blockchain. In Ethereum, for example, the blocktime is approximately 15 seconds on average, meaning that a new block is added to the Ethereum blockchain roughly every 15 seconds.
+
+In the Filecoin network, storage providers compete to produce blocks by providing storage capacity and participating in the consensus protocol. The block time determines how frequently new blocks are added to the blockchain, which impacts the overall speed and responsiveness of the network.
+
+Filecoin has a block time of 30 seconds, and this duration was chosen for two main reasons:
+
+- **Hardware requirements**: If the block time were faster while maintaining the same gas limit or the number of messages per block, it would lead to increased hardware requirements. This includes the need for more storage space to accommodate the larger chain data resulting from more frequent block production.
+- **Storage provider operations**: The block time also takes into account the various operations that occur during that duration on the storage provider (SP) side. As SPs generate new blocks, the 30 second block time allows for the necessary processes and computations to be carried out effectively. If the blocktime were shorter, SPs would encounter significantly more blocktime failures.
+
+By considering these factors, the Filecoin network has established a block time of 30 seconds, balancing the need for efficient operations and hardware requirements.
 
 ## Tipsets
 
@@ -51,7 +65,7 @@ In summary, blocks, which contain actor messages, are grouped into tipsets in ea
 
 ### Tipsets in the Ethereum JSON-RPC
 
-Wherever you see the term _block_ in the Ethereum JSON-RPC, you should mentally read _tipset_. Before the inclusion of the Filecoin EVM runtime, there was no single hash referring to a tipset. A tipset ID was the concatenation of block CIDs, which led to a variable length ID, and poor user experience.
+Wherever you see the term _block_ in the Ethereum JSON-RPC, you should mentally read _tipset_. Before the inclusion of the {{< tooltip "Filecoin EVM runtime" >}}, there was no single hash referring to a tipset. A tipset ID was the concatenation of block CIDs, which led to a variable length ID, and poor user experience.
 
 With the Ethereum JSON-RPC, we introduced the concept of the _tipset CID_ for the first time. It is calculated by hashing the former _tipset key_ using a blake-256 hash. Therefore, when you see the term:
 
