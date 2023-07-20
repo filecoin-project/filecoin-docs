@@ -1,6 +1,6 @@
 ---
 title: "Storage provider automation"
-description: "1-click deployment automation for the SP stack allows new storage providers to quickly learn and deploy Lotus and Boost."
+description: "1-click deployment automation for the storage provider stack allows new storage providers to quickly learn and deploy Lotus and Boost."
 draft: false
 images: []
 type: docs
@@ -35,12 +35,12 @@ This automation is still evolving and will receive more features and capabilitie
 
 The initial use case of this automation is to use sealing-as-a-service instead of doing your own sealing. As such, there is no Lotus Worker configured for the setup. It is possible to extend the setup with a remote worker. However, this Lotus Worker will require dedicated and custom hardware.
 
-## Composable deployment
+## Compossible deployment
 
-One of the next features coming to this automation is a composable deployment method. Today Lotus Daemon, Lotus Miner, and Boost are all installed on a single machine. Many production setups, however, will split out those services into their own dedicated hardware. A composable deployment will allow you to deploy singular components on separate servers.
+One of the next features coming to this automation is a compossible deployment method. Today Lotus Daemon, Lotus Miner, and Boost are all installed on a single machine. Many production setups, however, will split out those services into their own dedicated hardware. A compossible deployment will allow you to deploy singular components on separate servers.
 
 ## Prerequisites
 
-Read the README carefully on the [Github repo](https://github.com/ng-solutions-architecture/lotus-automation) to make sure you have all the required prerequisites in place.
+Read the README carefully on the [GitHub repo](https://github.com/ng-solutions-architecture/lotus-automation) to make sure you have all the required prerequisites in place.
 
 {{< sp-calls-to-action >}}
