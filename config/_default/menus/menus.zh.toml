@@ -1,0 +1,359 @@
+[[main]]
+  name = "Basics"
+  url = "/basics/what-is-filecoin/overview"
+  weight = 10
+
+[[main]]
+  name = "存储提供商"
+  url = "/storage-provider/basics/overview/"
+  weight = 30
+
+[[main]]
+  name = "Nodes"
+  url = "/nodes/implementations/overview"
+  weight = 35
+  identifier= "main-nodes"
+
+[[main]]
+  name = "Smart Contracts"
+  url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
+  weight = 40
+  identifier= "main-smart-contracts"
+
+    [[main]]
+      name = "Fundamentals"
+      url = "/smart-contracts/fundamentals/the-filecoin-virtual-machine/"
+      weight = 10
+      parent = "main-smart-contracts"
+
+    [[main]]
+      name = "Filecoin EVM runtime"
+      url = "/smart-contracts/filecoin-evm-runtime/actor-types/"
+      weight = 20
+      parent = "main-smart-contracts"
+
+    [[main]]
+      name = "Developing contracts"
+      url = "/smart-contracts/developing-contracts/best-practices/"
+      weight = 30
+      parent = "main-smart-contracts"
+
+     [[main]]
+       name = "Advanced"
+       url = "/smart-contracts/advanced/wrapped-fil"
+       weight = 40
+       parent = "main-smart-contracts"
+
+[[main]]
+  name = "Networks"
+  url = "/networks/"
+  weight = 50
+  identifier= "main-networks"
+
+    [[main]]
+      name = "Status →"
+      url = "https://status.filecoin.io"
+      weight = 1
+      parent = "main-networks"
+
+    [[main]]
+      name = "Mainnet"
+      url = "/networks/mainnet/details"
+      weight = 10
+      parent = "main-networks"
+
+    [[main]]
+      name = "Calibration"
+      url = "/networks/calibration/details"
+      weight = 20
+      parent = "main-networks"
+
+    [[main]]
+      name = "Spacenet"
+      url = "/networks/spacenet/details"
+      weight = 40
+      parent = "main-networks"
+
+    [[main]]
+      name = "Local testnet"
+      url = "/networks/local-testnet/set-up"
+      weight = 50
+      parent = "main-networks"
+
+[[main]]
+  name = "Reference"
+  url = "/reference/general/overview/"
+  weight = 60
+
+
+
+# docs.filecoin.io/basics
+# ----------------------
+[[basics]]
+  name = "What is Filecoin"
+  weight = 10
+  identifier = "basics-what-is-filecoin"
+  url = "/basics/what-is-filecoin"
+
+[[basics]]
+  name = "The blockchain"
+  weight = 20
+  identifier = "basics-the-blockchain"
+  url = "/basics/the-blockchain"
+
+[[basics]]
+  name = "Assets"
+  weight = 30
+  identifier = "basics-assets"
+  url = "/basics/assets"
+
+[[basics]]
+  name = "Interplanetary Consensus"
+  weight = 40
+  identifier = "basics-interplanetary-consensus"
+  url = "/basics/interplanetary-consensus-overview"
+
+[[basics]]
+  name = "How storage works"
+  weight = 50
+  identifier = "basics-how-storage-works"
+  url = "/basics/how-storage-works"
+
+[[basics]]
+  name = "How retrieval works"
+  weight = 60
+  identifier = "basics-how-retrieval-works"
+  url = "/basics/how-retrieval-works"
+
+[[basics]]
+  name = "Project and community"
+  weight = 70
+  identifier = "basics-project-and-community"
+  url = "/basics/project-and-community/the-filecoin-project"
+# ----------------------
+
+
+
+# docs.filecoin.io/store
+# ----------------------
+[[store]]
+  name = "Overview"
+  weight = 10
+  identifier = "store-overview"
+  url = "/store/overview"
+
+[[store]]
+  name = "Tools"
+  weight = 20
+  identifier = "store-tools"
+  url = "/store/tools"
+# ----------------------
+
+
+
+# docs.filecoin.io/providers
+# ----------------------
+[[storage-provider]]
+  name = "基本"
+  weight = 10
+  identifier = "providers-basics"
+  url = "/storage-provider/basics"
+
+[[storage-provider]]
+  name = "文件币经济学"
+  weight = 20
+  identifier = "providers-filecoin-economics"
+  url = "/storage-provider/filecoin-economics"
+
+[[storage-provider]]
+  name = "交易"
+  weight = 30
+  identifier = "providers-filecoin-deals"
+  url = "/storage-provider/filecoin-deals"
+
+[[storage-provider]]
+  name = "建筑学"
+  weight = 40
+  identifier = "providers-architecture"
+  url = "/storage-provider/architecture"
+
+[[storage-provider]]
+  name = "基础设施"
+  weight = 50
+  identifier = "providers-infrastructure"
+  url = "/storage-provider/infrastructure"
+
+[[storage-provider]]
+  name = "技能"
+  weight = 60
+  identifier = "providers-skills"
+  url = "/storage-provider/skills"
+# ----------------------
+
+
+
+# docs.filecoin.io/nodes
+# ----------------------
+[[nodes]]
+  name = "Implementations"
+  weight = 10
+  identifier = "nodes-implementations"
+  url = "/nodes/implementations"
+
+[[nodes]]
+  name = "Full-nodes"
+  weight = 20
+  identifier = "nodes-full-nodes"
+  url = "/nodes/full-nodes"
+
+[[nodes]]
+  name = "Lite-nodes"
+  weight = 30
+  identifier = "nodes-lite-nodes"
+  url = "/nodes/lite-nodes"
+
+
+
+# docs.filecoin.io/smart-contracts
+# ----------------------
+[[smart-contracts]]
+  name = "Fundamentals"
+  weight = 10
+  identifier = "smart-contracts-fundamentals"
+  url = "/smart-contracts/fundamentals"
+
+[[smart-contracts]]
+  name = "Filecoin EVM-runtime"
+  weight = 20
+  identifier = "smart-contracts-filecoin-evm-runtime"
+  url = "/smart-contracts/filecoin-evm-runtime"
+
+[[smart-contracts]]
+  name = "Developing contracts"
+  weight = 30
+  identifier = "smart-contracts-developing-contracts"
+  url = "/smart-contracts/developing-contracts"
+
+ [[smart-contracts]]
+   name = "Advanced"
+   weight = 40
+   identifier = "smart-contracts-advanced"
+   url = "/smart-contracts/advanced"
+# ----------------------
+
+
+
+
+# docs.filecoin.io/networks
+# ----------------------
+[[networks]]
+  name = "Mainnet"
+  weight = 10
+  identifier = "networks-mainnet"
+  url = "/networks/mainnet"
+
+[[networks]]
+  name = "Calibration"
+  weight = 20
+  identifier = "networks-calibration"
+  url = "/networks/calibration"
+
+[[networks]]
+  name = "Spacenet"
+  weight = 40
+  identifier = "networks-spacenet"
+  url = "/networks/spacenet"
+
+[[networks]]
+  name = "Local testnet"
+  weight = 50
+  identifier = "networks-local-testnet"
+  url = "/networks/local-testnet"
+# ----------------------
+
+
+
+# docs.filecoin.io/reference
+# ----------------------
+[[reference]]
+  name = "General"
+  weight = 10
+  identifier = "reference-general"
+  url = "/reference/general"
+
+[[reference]]
+  name = "Exchanges"
+  weight = 20
+  identifier = "reference-exchanges"
+  url = "/reference/exchanges"
+
+[[reference]]
+  name = "Built-in actors"
+  weight = 30
+  identifier = "reference-built-in-actors"
+  url = "/reference/built-in-actors"
+
+    # [[built-in-actors]]
+    #   name = "Protocol API"
+    #   weight = 10
+    #   identifier = "reference-built-in-actors-protocol-api"
+    #   url = "/reference/built-in-actors/protocol-api"
+
+    # [[built-in-actors]]
+    #   name = "Solidity API"
+    #   weight = 20
+    #   identifier = "reference-built-in-actors-solidity-api"
+    #   url = "/reference/built-in-actors/solidity-api"
+
+# [[reference]]
+#   name = "External APIs"
+#   weight = 40
+#   identifier = "reference-external-apis"
+#   url = "/reference/external-apis"
+
+[[reference]]
+  name = "JSON-RPC"
+  weight = 50
+  identifier = "reference-json-rpc"
+  url = "/reference/json-rpc"
+
+
+
+# docs.filecoin.io/archive
+# ----------------------
+[[archive]]
+  name = "Archive"
+  weight = 10
+  identifier = "archive"
+  url = "/archive"
+
+
+[[social]]
+  name = "GitHub"
+  pre = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-github\"><path d=\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22\"></path></svg>"
+  url = "https://github.com/filecoin-project/filecoin-docs"
+  post = "v0.1.0"
+  weight = 10
+
+[[social]]
+  name = "Twitter"
+  pre = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-twitter\"><path d=\"M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z\"></path></svg>"
+  url = "https://twitter.com/filecoin"
+  weight = 20
+
+
+
+# [[footer]]
+#   name = "Privacy"
+#   url = "/privacy"
+#   weight = 10
+
+# [[footer]]
+#   name = "Terms"
+#   url = "/terms"
+#   weight = 20
+
+# [[footer]]
+#   name = "Contact"
+#   url = "/contact"
+#   weight = 30
