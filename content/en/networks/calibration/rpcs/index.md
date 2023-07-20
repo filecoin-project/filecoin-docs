@@ -15,6 +15,10 @@ toc: true
 
 These endpoints are limited to [read-only Filecoin JSON RPC API calls]({{< relref "/reference/json-rpc/introduction" >}}) and [`MPoolPush`]({{< relref "/reference/json-rpc/mpool#mpoolpush" >}}) for sending messages that have already been signed.
 
+{{< alert >}}
+[Chainlist](https://chainlist.org/chain/314159) contains a dynamically updated list of available RPCs along with stats like current block-height and latency. [Find out more at chainlist.org](https://chainlist.org/chain/314159)
+{{< /alert >}}
+
 ## [Ankr](https://www.ankr.com/rpc/filecoin)
 
 - HTTPS: `https://rpc.ankr.com/filecoin_testnet`

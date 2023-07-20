@@ -13,6 +13,10 @@ weight: 130
 toc: true
 ---
 
+{{< alert >}}
+[Chainlist](https://chainlist.org/chain/314) contains a dynamically updated list of available RPCs along with stats like current block-height and latency. [Find out more at chainlist.org](https://chainlist.org/chain/314)
+{{< /alert >}}
+
 ## [Ankr](https://ankr.com)
 
 - HTTPS: `https://rpc.ankr.com/filecoin`
