@@ -1,6 +1,6 @@
 ---
-title: "Becoming a storage provider"
-description: "This page will help you understand how to plan a profitable business, design a suitable storage provider architecture, and make the right hardware investments."
+title: "成为存储提供商"
+description: "本页将帮助您了解如何规划盈利业务、设计合适的存储提供商架构以及进行正确的硬件投资。"
 draft: false
 images: []
 type: docs
@@ -17,47 +17,50 @@ aliases:
     - "/mine/connectivity"
     - "/storage-provider/"
 ---
-The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 
-To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
+Filecoin 网络提供去中心化的数据存储，并确保数据经过验证、始终可用且不可变。 Filecoin 网络中的存储提供商负责存储、提供内容和发布新区块。
 
-Follow these steps to begin your storage provider journey:
+要成为 Filecoin 网络中的存储提供商，您需要一系列技术、财务和业务技能。 我们将解释您需要了解的所有关键概念，以便设计合适的架构、进行正确的硬件投资以及运营可盈利的存储提供商业务。
 
-1. Understand Filecoin economics
-2. Plan your business
-3. Make sure you have the right skills
-4. Build the right infrastructure
+请按照以下步骤开始您的存储提供商之旅：
 
-## Understand Filecoin economics
+1.了解Filecoin经济学
+2. 规划您的业务
+3. 确保您拥有合适的技能
+4. 建立合适的基础设施
 
-To understand how you can run a profitable business as a Filecoin storage provider, it is important to make sure you understand the economics of Filecoin. Once you understand all core concepts, you can build out a strategy for your desired ROI.
+您将阅读的文档假设您熟悉入门 部分中的文档，有一个大致的了解 了解 Filecoin 的工作原理并熟悉 Filecoin 节点软件和工具。
 
-Storage providers can also add additional value to clients when they offer certain certifications. These can enable a storage provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
+## 了解 Filecoin 经济学
 
-{{<button url="https://docs.filecoin.io/storage-provider/filecoin-economics/storage-proving/">}}Filecoin economics → {{</button>}}
+要了解如何作为 Filecoin 存储提供商运营盈利业务，重要的是要确保您了解 Filecoin 的经济学。 一旦您了解了所有核心概念，您就可以制定实现所需投资回报率的策略。
 
-## Plan your business
+存储提供商在提供某些认证时还可以为客户增加附加价值。 这些可以使存储提供商向客户收取额外的费用来存储符合这些标准的数据，例如 HIPAA、SOC2、PCI、GDPR 等。
 
-The hardware and other requirements for running a Filecoin storage provider business are significantly higher than regular blockchain mining operations. The mechanisms are designed this way because, in contrast to some other blockchain solutions, where you can simply configure one or more nodes to “mine” tokens, the Filecoin network’s primary goal is to provide decentralized storage for humanity’s most valuable data.
+{{<button url="https://docs.filecoin.io/storage-provider/filecoin-economics/storage-proving/">}}Filecoin 经济学原理 {{</button>}}
 
-You need to understand the various earning mechanisms in the Filecoin network.
+## 规划您的业务
 
-{{<button url="https://docs.filecoin.io/storage-provider/filecoin-deals/storage-deals/">}}Filecoin deals → {{</button>}}
+运行 Filecoin 存储提供商业务的硬件和其他要求明显高于常规区块链挖矿业务。 这些机制之所以如此设计，是因为与其他一些区块链解决方案相比，您可以简单地配置一个或多个节点来挖掘代币，Filecoin 网络的主要目标是为人类最有价值的数据提供去中心化存储。
 
-## Make sure you have the right skills
+您需要了解 Filecoin 网络中的各种赚取机制。
 
-As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstrate data availability to the network. There are many things that can go wrong in a data center, on your network, on your OS, or at an application level.
+{{<button url="https://docs.filecoin.io/storage-provider/filecoin-deals/storage-deals/">}}Filecoin 优惠{{</button>}}
 
-You will need skilled people to operate your storage provider business. Depending on the size and complexity of your setup this can be 1 person with skills across many different domains, or multiple dedicated people or teams.
+## 确保您拥有合适的技能
 
-{{<button url="https://docs.filecoin.io/storage-provider/skills/linux/">}}People and skills → {{</button>}}
+显而易见，运营存储运营是一项严肃的业务，涉及客户数据和质押资金。 您将需要运行高可用性服务，如果您无法向网络证明数据可用性，则会自动受到经济处罚。 数据中心、网络、操作系统或应用程序级别上有很多地方可能会出现问题。
 
-## Build the right infrastructure
+您将需要熟练的人员来运营您的存储提供商业务。 根据您的设置的规模和复杂性，这可以是 1 名具有跨多个不同领域技能的人员，也可以是多个专门人员或团队。
 
-At the lowest level, you will need datacenter infrastructure. You need people capable of architecting, racking, wiring and operating infrastructure components. Alternatively, you can get it collocated, or even entirely as a service from a datacenter provider.
+{{<button url="https://docs.filecoin.io/storage-provider/skills/linux/">}}人员和技能 {{</button>}}
 
-Take availability and suitable redundancy into consideration when choosing your datacenter or collocation provider. Any unavailability of your servers, network or storage can result in automatic financial penalties on the Filecoin network.
+## 建立正确的基础设施
 
-{{<button url="https://docs.filecoin.io/storage-provider/architecture/lotus-components/">}}Software architecture → {{</button>}} {{<button url="https://docs.filecoin.io/storage-provider/skills/storage/">}}Infrastructure →{{</button>}}
+在最低级别，您将需要数据中心基础设施。 您需要能够构建、机架、布线和操作基础设施组件的人员。 或者，您可以将其并置，甚至完全作为数据中心提供商的服务。
 
-{{< sp-calls-to-action >}}
+选择数据中心或托管提供商时，请考虑可用性和适当的冗余。 服务器、网络或存储的任何不可用都可能导致 Filecoin 网络自动受到经济处罚。
+
+{{<button url="https://docs.filecoin.io/storage-provider/architecture/lotus-components/">}}软件架构{{</button>}} {{<button url="https ://docs.filecoin.io/storage-provider/skills/storage/">}}基础设施{{</button>}}
+
+{{< zh-sp-calls-to-action >}}
