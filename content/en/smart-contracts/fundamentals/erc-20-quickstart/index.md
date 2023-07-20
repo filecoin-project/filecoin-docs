@@ -53,18 +53,18 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
 ### Switch networks
 
-You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet]({{< relref "/networks/calibration/details" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
+You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet]({{< relref "/networks/calibration/details" >}}). We'll use a website called [chainlist.network](https://chainlist.network/) to give MetaMask the information it needs quickly.
 
-1. Go to [chainlist.org](https://chainlist.org/).
-1. Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
+1. Go to [chainlist.network](https://chainlist.network/).
+1. Enter `Filecoin` into the search bar.
 
     ![Search for Filecoin testnets in Chainlist.](chainlist-search-for-filecoin-testnets.png)
 
-1. Scroll down to find the **Filecoin -- Calibration** testnet:
+1. Scroll down to find the **Filecoin - Calibration** testnet:
 
     ![Find the Calibration testnet.](chainlist-select-calibration.png)
 
-1. In MetaMask click **Next**.
+1. In MetaMask, click **Next**.
 
     ![Click next in MetaMask.](chainlist-connect-with-metamask.png)
 

@@ -27,39 +27,36 @@ Chainlist is a website that lets users easily connect their wallets to EVM-compa
 {{< tab tabName="Mainnet" >}}
 <br>
 
-1. Search for [`Filecoin`](https://chainlist.org/chain/314) on [chainlist.org](https://chainlist.org).
-
+1. Navigate to [chainlist.network](https://chainlist.network).
+1. Search for `Filecoin - Mainnet`.
 1. Click **Connect Wallet**.
 1. Click **Approve** when prompted to _Allow this site to add a network_.
 1. Click **Switch network** when prompted by MetaMask.
 1. Open MetaMask from the browser extensions tab.
 1. You should see _Filecoin_ listed at the top.
+
 {{< /tab >}}
 {{< tab tabName="Calibration" >}}
 <br>
 
-1. Go [chainlist.org](https://chainlist.org).
-
-1. Click the **Include Testnets** checkbox.
-1. Search for [`Filecoin Calibration`](https://chainlist.org/chain/314159).
+1. Navigate to [chainlist.network](https://chainlist.network).
+1. Search for `Filecoin - Calibration`.
 1. Click **Connect Wallet**.
 1. Click **Approve** when prompted to _Allow this site to add a network_.
 1. You may be shown a warning that you are connecting to a test network. If prompted, click **Accept**.
 1. Click **Switch network** when prompted by MetaMask.
-1. Open MetaMask from the browser extensions tab. You should see _Filecoin Calibration_ listed at the top.
+1. Open MetaMask from the browser extensions tab. You should see _Filecoin - Calibration_ listed at the top.
 {{< /tab >}}
 {{< tab tabName="Local-testnet" >}}
 <br>
 
-1. Go [chainlist.org](https://chainlist.org).
-
-1. Click the **Include Testnets** checkbox.
-1. Search for [`Filecoin Local testnet`](https://chainlist.org/chain/31415926).
+1. Navigate to [chainlist.network](https://chainlist.network).
+1. Search for `Filecoin - Local testnet`.
 1. Click **Connect Wallet**.
 1. Click **Approve** when prompted to _Allow this site to add a network_.
 1. You may be shown a warning that you are connecting to a test network. If prompted, click **Accept**.
 1. Click **Switch network** when prompted by MetaMask.
-1. Open MetaMask from the browser extensions tab. You should see _Filecoin Local testnet_ listed at the top.
+1. Open MetaMask from the browser extensions tab. You should see _Filecoin - Local testnet_ listed at the top.
 {{< /tab >}}
 {{< /tabs >}}
 
