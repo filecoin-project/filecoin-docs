@@ -31,9 +31,9 @@ const deployment = await upgrades.deployProxy(contract, preparedArguments, {
 
 ### Unstuck a message from the mempool
 
-When users send messages to the Filecoin network, those messages will first land in the mempool. Once a node receives your message, it will verify the gas fee and signature and then process the transaction. Depending on network traffic and other factors, this process may take some time. 
+When users send messages to the Filecoin network, those messages will first land in the mempool. Once a node receives your message, it will verify the gas fee and signature and then process the transaction. Depending on network traffic and other factors, this process may take some time.
 
-If the Filecoin network still needs to confirm a message, it's because it has yet to be processed and is sitting in the mempool. Several causes exist, such as network congestion, insufficient gas fees, or an invalid message signature. 
+If the Filecoin network still needs to confirm a message, it's because it has yet to be processed and is sitting in the mempool. Several causes exist, such as network congestion, insufficient gas fees, or an invalid message signature.
 
 We recommend users resubmit the message with a higher gas fee or priority fee so those messages will not block the mempool and potentially impact the block-producing time. Gas fees on the network can fluctuate depending on network demand, so it's always a good idea to monitor gas prices and adjust your fees accordingly to ensure your transaction is processed promptly.
 
@@ -91,7 +91,7 @@ Any contracts sending funds to actors that are not native accounts (`f1` or `f3`
 
 ### Contracts interacting with built-in actors
 
-All contracts interacting with built-in actors must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](https://github.com/Zondax/filecoin-solidity/tree/master/contracts/v0.8). The IPLD codec used in the `handle_filecoin_method` solidity entrypoint and the `call_actor` should now be `CBOR (0x51)`, not `DAG_CBOR (0x71)`, as previously used. The underlying encoding (i.e. the payload bytes) are the same, but the codec numbers are now different. `DAG_CBOR` support will be re-enabled in the future but the usage of the codec implies additional runtime guarantees that have not yet been implemented.
+All contracts interacting with built-in actors must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](https://github.com/filecoin-project/filecoin-solidity/tree/master/contracts/v0.8). The IPLD codec used in the `handle_filecoin_method` solidity entrypoint and the `call_actor` should now be `CBOR (0x51)`, not `DAG_CBOR (0x71)`, as previously used. The underlying encoding (i.e. the payload bytes) are the same, but the codec numbers are now different. `DAG_CBOR` support will be re-enabled in the future but the usage of the codec implies additional runtime guarantees that have not yet been implemented.
 
 ## Contract Verification
 
