@@ -1,49 +1,48 @@
-<form>
-  <div class="form-row align-items-center">
-    <div class="col-auto">
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">From address</div>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-md mb">
+                <label for="fromAddress" class="form-label">From address:</label>
+                <input type="text" id="fromAddress" name="fromAddress" required oninput="updateOutput()" class="form-control" placeholder="f... / 0x...">
+            </div>
+            <div class="col-md mb">
+                <label for="toAddress" class="form-label">To address:</label>
+                <input type="text" id="toAddress" name="toAddress" required oninput="updateOutput()" class="form-control" placeholder="f... / 0x...">
+            </div>
         </div>
-        <input id="from" type="text" class="form-control" id="inlineFormInputGroup">
-      </div>
+    </form>
+    <div class="mt-3 d-flex justify-content-center align-items-center">
+        <a href="" id="outputFieldLink">
+            <p id="outputField">&nbsp;</p>
+        </a>
     </div>
-    <div class="col-auto">
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">To address</div>
-        </div>
-        <input id="to" type="text" class="form-control" id="inlineFormInputGroup">
-      </div>
-    </div>
-    <div class="col-auto">
-      <button class="btn btn-primary mb-2" onclick="checkInputs()">Submit</button>
-    </div>
-  </div>
-</form>
+</div>
+<script type="text/javascript">
+    function updateOutput() {
+        var fromAddress = document.getElementById('fromAddress').value;
+        var toAddress = document.getElementById('toAddress').value;
+        var output = document.getElementById('outputField');
+        var outputLink = document.getElementById('outputFieldLink');
 
-<pre><code id="output"></code></pre>
-
-<script>
-    function checkInputs() {
-        let from = document.getElementById("from").value;
-        let to = document.getElementById("to").value;
-        let output = document.getElementById("output");
-
-        if ((from.startsWith("f") || from.startsWith("F")) && (to.startsWith("f") || to.startsWith("F"))) {
-            output.textContent = "Filecoin to Filecoin";
-        } else if ((from.startsWith("f") || from.startsWith("F")) && to.startsWith("0x")) {
-            output.textContent = "Ethereum to Filecoin";
-        } else if (from.startsWith("0x") && (to.startsWith("f") || to.startsWith("F"))) {
-            output.textContent = "Ethereum to Ethereum";
-        } else if (from.startsWith("0x") && to.startsWith("0x")) {
-            output.textContent = "Filecoin to Ethereum";
-        } else if (!from.startsWith("f") && !from.startsWith("F") && !from.startsWith("0x")) {
-            output.textContent = "The 'From Address' field must be a Filecoin or Ethereum address.";
-        } else if (!to.startsWith("f") && !to.startsWith("F") && !to.startsWith("0x")) {
-            output.textContent = "The 'To Address' field must be a Filecoin or Ethereum address.";
+        if(!fromAddress.startsWith("0x") && !fromAddress.startsWith("f")) {
+            output.innerText = "Unrecognized address in From address";
+        } else if(!toAddress.startsWith("0x") && !toAddress.startsWith("f")) {
+            output.innerText = "Unrecognized address in To address";
+        } else if(fromAddress.startsWith("0x") && toAddress.startsWith("0x")) {
+            output.innerText = "Transfer from an Eth-style address to an Eth-style address.";
+            outputLink.href= "#eth-style-address-to-eth-style-address";
+        } else if(fromAddress.startsWith("0x") && toAddress.startsWith("f")) {
+            output.innerText = "Transfer from an Eth-style address to a Filecoin address.";
+            outputLink.href= "#eth-style-address-to-filecoin";
+        } else if(fromAddress.startsWith("f") && toAddress.startsWith("f")) {
+            output.innerText = "Transfer from a Filecoin address to a Filecoin address.";
+            outputLink.href= "#filecoin-to-filecoin";
+        } else if(fromAddress.startsWith("f") && toAddress.startsWith("0x")) {
+            output.innerText = "Transfer from a Filecoin address to an Eth-style address.";
+            outputLink.href= "#filecoin-to-eth-style-address";
         } else {
-            output.textContent = "ERROR";
+            output.innerText = "";
         }
     }
 </script>
+
