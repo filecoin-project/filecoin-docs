@@ -5,11 +5,13 @@ draft: false
 images: []
 type: docs
 menu:
-  store:
-    parent: "store-tools"
+  archive:
+    parent: "archive"
     identifier: "estuary-decf178f9967cbaa824520fd2fe9e935"
 weight: 100
 toc: true
+aliases:
+    - "/store/tools/estuary"
 ---
 
 [Estuary](https://estuary.tech) automates storage activities with Filecoin. At its core, Estuary is a simple IPFS node that integrates a minimal Filecoin client library. It is an open-source project built by [ARG](https://arg.protocol.ai/) and is available at [`github.com/application-research/estuary`](https://github.com/application-research/estuary).

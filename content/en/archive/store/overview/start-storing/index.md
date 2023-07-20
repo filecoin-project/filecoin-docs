@@ -6,14 +6,15 @@ draft: false
 images: []
 type: docs
 menu:
-  store:
-    parent: "store-overview"
+  archive:
+    parent: "archive"
     identifier: "start-storing-85ab1f5b8a0bc0a1291758573d823c89"
 weight: 10
 toc: true
 aliases:
     - "/store/"
     - "/store/overview/"
+    - "/store/overview/start-storing"
     - "/go-filecoin-tutorial/storing-on-filecoin"
     - "/get-started/go-filecoin-tutorial/getting-started"
     - "/get-started/go-filecoin-tutorial/storing-on-filecoin"
