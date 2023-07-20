@@ -18,6 +18,9 @@ aliases:
     - "/developers/storage-helpers/nft-storage/"
     - "/developers/storage-helpers/starling/"
     - "/developers/storage-helpers/web3-storage/"
+    - "/store/"
+    - "/store/tools/"
+    - "/store/tools/estuary/"
 ---
 
 Here’s how they work: Developers use APIs or libraries to send data to storage helpers. Behind the scenes, storage helpers receive the data and handle the underlying processes to store it in a reliable and decentralized storage way, by saving it [IPFS](https://ipfs.tech) nodes, making deals with Filecoin storage providers -- or both. You can use the same APIs or other tools to retrieve data quickly.

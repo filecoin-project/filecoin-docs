@@ -15,11 +15,22 @@ toc: true
 
 These endpoints are limited to [read-only Filecoin JSON RPC API calls]({{< relref "/reference/json-rpc/introduction" >}}) and [`MPoolPush`]({{< relref "/reference/json-rpc/mpool#mpoolpush" >}}) for sending messages that have already been signed.
 
+## [Ankr](https://www.ankr.com/rpc/filecoin)
+
+- HTTPS: `https://rpc.ankr.com/filecoin_testnet`
+- [Ankr documentation](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
+
 ## [ChainupCloud](https://cloud.chainup.com)
 
 - HTTPS: `https://filecoin-calibration.chainup.net/rpc/v1`
 - WebSocket: `wss://filecoin-calibration.chainup.net/rpc/v1`
 - [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
+
+## [ChainStack](https://chainstacklabs.com)
+
+- HTTPS: `https://filecoin-calibration.chainstacklabs.com/rpc/v1`
+- WebSocket: `wss://ws-filecoin-calibration.chainstacklabs.com/rpc/v1`
+- [Chainstack documentation](https://chainstack.com/labs/#filecoin)
 
 ## [Glif](https://glif.io)
 

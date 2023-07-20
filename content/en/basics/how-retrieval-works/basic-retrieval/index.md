@@ -17,58 +17,22 @@ aliases:
 
 ## Lassie
 
-Lassie is a simple retrieval client for IPFS and Filecoin. It finds and fetches your data over the best retrieval protocols available. Lassie makes Filecoin retrieval easy. While Lassie is powerful, the core functionality is expressed in a single CLI command:
-
-```shell
-lassie fetch <CID>
-```
+Lassie is a simple retrieval client for IPFS and Filecoin. It finds and fetches your data over the best retrieval protocols available. Lassie makes Filecoin retrieval easy. While Lassie is powerful, the core functionality is expressed in a single CLI command.
 
 Lassie also provides an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. Developers can use this interface directly in their applications to retrieve the data. You can find more details about running a [Lassie HTTP daemon](#lassie-http-daemon) below.
 
-Lassie fetches content in content-addressed archive (CAR) form, so in most cases you will need additional tooling to deal with CAR files.
+Lassie fetches content in content-addressed archive (CAR) form, so in most cases, you will need additional tooling to deal with CAR files.
 Lassie can also be used as a library to fetch data from Filecoin from within your application. Due to the diversity of data transport protocols in the IPFS ecosystem, Lassie is able to use the Graphsync or Bitswap protocols, depending on how the requested data is available to be fetched. One prominent use case of Lassie as a library is the **Saturn Network**. Saturn nodes fetch content from Filecoin and IPFS through Lassie in order to serve retrievals.
 
 ![Lassie Architecture](Lassie_architecture.jpg "Lassie Architecture")
 
 ### Retrieve using Lassie
 
-Make sure that you have [Go](https://go.dev/) installed and that your `GOPATH` is set up. By default, your `GOPATH` will be set to `~/go`.
-
-#### Install Lassie
+#### Install Lassie and go-car
 
 1. Download the [Lassie Binary from the latest release](https://github.com/filecoin-project/lassie/releases/latest) based on your system architecture.
 
-   Or download and install Lassie using the Go package manager:
-
-    ```shell
-    go install github.com/filecoin-project/lassie/cmd/lassie@latest
-    ```
-
-    ```plaintext
-    go: downloading github.com/filecoin-project/lassie v0.3.1
-    go: downloading github.com/libp2p/go-libp2p v0.23.2
-    go: downloading github.com/filecoin-project/go-state-types v0.9.9
-
-    ...
-    ```
-
-2. Download the [go-car binary from the latest release](https://github.com/ipld/go-car/releases/latest) based on your system architecture
-
-   or install the [go-car](https://github.com/ipld/go-car) package using the Go package manager:
-
-    ```shell
-    go install github.com/ipld/go-car/cmd/car@latest
-    ```
-
-    ```plaintext
-    go: downloading github.com/ipld/go-car v0.6.0
-    go: downloading github.com/ipld/go-car/cmd v0.0.0-20230215023242-a2a8d2f9f60f
-    go: downloading github.com/ipld/go-codec-dagpb v1.6.0 
-
-    ...
-    ```
-
-   The go-car package makes it easier to work with content-addressed archive (CAR) files.
+2. Download the [go-car binary from the latest release](https://github.com/ipld/go-car/releases/latest) based on your system architecture. The go-car package makes it easier to work with content-addressed archive (CAR) files.
 
 You now have everything you need to retrieve a file with Lassie and extract the contents with `go-car`.
 
@@ -77,7 +41,8 @@ You now have everything you need to retrieve a file with Lassie and extract the 
 To retrieve data from Filecoin using Lassie, all you need is the CID of the content you want to download.
 
 The video below demonstrates how Lassie can be used to render content directly from Filecoin and IPFS.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/h_zCd7ssKCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+{{< youtube "h_zCd7ssKCQ" >}}
 
 Lassie and `go-car` can work together to retrieve and extract data from Filecoin. All you need is the CID of the content to download.
 
@@ -85,19 +50,15 @@ Lassie and `go-car` can work together to retrieve and extract data from Filecoin
 lassie fetch -o - <CID> | car extract
 ```
 
-This command uses a `|` to chain two commands together. This will work on Linux or macOS. Windows users may need to use PowerShell to use this form. Alternatively, you can use the commands separately as explained later in this page.
-
-An example of fetching and extracting a single file, identified by its CID:
+This command uses a `|` to chain two commands together. This will work on Linux or macOS. Windows users may need to use PowerShell to use this form. Alternatively, you can use the commands separately. An example of fetching and extracting a single file, identified by its CID:
 
 ```shell
 lassie fetch -o - bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6 | car extract - > lidar-data.tar
 ```
 
-Basic progress information, similar to the output show below, is displayed:
-
 ```plaintext
-Fetching bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6................................................................................................................................................
-Fetched [bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6] from [12D3KooWPNbkEgjdBNeaCGpsgCrPRETe4uBZf1ShFXStobdN18ys]:
+Fetching bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6...
+Fetched [bafykbzaceatihez66rzmzuvfx5nqqik73hlphem3dvagmixmay3arvqd66ng6] from [12D3KooWPNbkEgjdBNeaCGpsgCrPRETe4uBZf1ShFXStobdN18ys]
         Duration: 42.259908785s
           Blocks: 144
            Bytes: 143 MiB
@@ -110,18 +71,20 @@ The resulting file is a tar archive:
 ls -l
 ```
 
-```shell
+```plaintext
 total 143M
 -rw-rw-r-- 1 user user 143M Feb 16 11:21 lidar-data.tar
 ```
 
 ##### Lassie CLI usage
 
-Lassie usage for retrieving data is:
+To retrieve data using Lassie, run the following:
 
 ```shell
 lassie fetch -p -o <OUTFILE_FILE_NAME> <CID>/path/to/content
 ```
+
+The following variables and flags are available:
 
 - `-p` is an optional flag that tells Lassie that you would like to see detailed progress information as it fetches your data.
 
@@ -141,19 +104,19 @@ lassie fetch -p -o <OUTFILE_FILE_NAME> <CID>/path/to/content
     ...
     ```
 
-- `-o` is an optional flag that tells Lassie where to write the output to. If you don't specify a file, it will append `.car` to your CID and use that as the output file name.
+- `-o' is an optional flag that tells Lassie where to write the output to. If you don't specify a file, it will append`.car` to your CID and use that as the output file name.
 
-If you specify `-`, as in our above example, the output will be written to `stdout` so it can be piped to another command, such as `go-car`, or redirected to a file.
+If you specify `-`, the output will be written to `stdout` and can be piped to another command. For example, you can pipe the output to `go-car` or redirect it to a file.
 
-- `<CID>/path/to/content` is the CID of the content you want to retrieve, and an optional path to a specific file within that content. Example:
+- `<CID>/path/to/content` is the CID of the content you want to retrieve and an optional path to a specific file within that content. For example:
 
     ```shell
     lassie fetch -o - bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Cryptographic_hash_function | car extract - | less
     ```
 
-A CID is always necessary and, if you don't specify a path, Lassie will attempt to download the entire content. If you specify a path, Lassie will only download that specific file or, if it is a directory, the entire directory and its contents.
+A CID is always necessary. If you don't specify a path, Lassie will attempt to download the entire content. If you specify a path, Lassie will only download that specific file. If the CID refers to a directory, Lassie will download the entire directory and its contents.
 
-##### go-car CLI usage
+##### Using the go-car CLI
 
 The `car extract` command can be used to extract files and directories from a CAR:
 
@@ -161,23 +124,25 @@ The `car extract` command can be used to extract files and directories from a CA
 car extract -f <INPUT_FILE>[/path/to/file/or/directory] [<OUTPUT_DIR>]
 ```
 
+The following variables and flags are available:
+
 - `-f` is an optional flag that tells `go-car` where to read the input from. If omitted, it will read from `stdin`, as in our example above where we piped `lassie fetch -o -` output to `car extract`.
 
 - `/path/to/file/or/directory` is an optional path to a specific file or directory within the CAR. If omitted, it will attempt to extract the entire CAR.
 
 - `<OUTPUT_DIR>` is an optional argument that tells `go-car` where to write the output to. If omitted, it will write to the current directory.
 
-If you supply `-`, as in the above example, it will attempt to extract the content directly to `stdout`. This will only work if we are extracting a single file.
+If you supply `-`, Lassie will attempt to extract the content directly to `stdout`. This will only work if we are extracting a single file.
 
-  In the example above where we fetched a file named `lidar-data.tar`, the `>` operator was used to redirect the output of `car extract` to a named file,. This is because the content we fetched was raw file data that did not have a name encoded. In this case, if we didn't use `-` and `> filename`, `go-car` would write to a file named `unknown`. In this instance `go-car` was used to reconstitute the file from the raw blocks contained within Lassie's CAR output.
+In the above example, the `>` operator was used to redirect the output of `car extract` to a file. This is because the content we fetched was raw file data that did not have a name encoded. In this case, if we didn't use `-` and `> filename`, `go-car` would write to a file named `unknown`. In this instance, `go-car` was used to reconstitute the file from the raw blocks contained within Lassie's CAR output.
 
-`go-car` has other useful commands. The first is `car ls`, which can be used to list the contents of a CAR, The second is `car inspect`, which can be used to inspect the contents of the CAR, and optionally verify the integrity of a CAR.
+`go-car` has other useful commands. The first is `car ls`, which can be used to list the contents of a CAR. The second is `car inspect`, which can be used to inspect the contents of the CAR, and optionally verify the integrity of a CAR.
 
 And there we have it! Downloading and managing data from Filecoin is super simple when you use Lassie and Go-car!
 
 ### Lassie HTTP daemon
 
-The Lassie HTTP daemon is an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. It fetches content from peers known to have it, and provides the resulting data in CAR format.
+The Lassie HTTP daemon is an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. It fetches content from peers known to have it and provides the resulting data in CAR format.
 
 ```shell
 GET /ipfs/{cid}[/path][?params]
@@ -185,13 +150,8 @@ GET /ipfs/{cid}[/path][?params]
 
 A `GET` query against a Lassie HTTP daemon allows retrieval from peers that have the content identified by the given root CID, streaming the DAG in the response in [CAR (v1)](https://ipld.io/specs/transport/car/carv1/) format.
 You can read more about the HTTP request and response to the daemon in [Lassie's HTTP spec](https://github.com/filecoin-project/lassie/blob/main/docs/HTTP_SPEC.md).
-Lassie's HTTP interface can be a very powerful tool for web applications which require fetching data from Filecoin and IPFS.
+Lassie's HTTP interface can be a very powerful tool for web applications that require fetching data from Filecoin and IPFS.
 
 ### Lassie's CAR format
 
-Lassie only returns data in CAR format; specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie's car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for manipulating the output.
-
-<!-- TODO: Complete Lotus node retrieval method. -->
-<!-- ## Lotus node -->
-
-<!-- It is possible to download data from the Filecoin network using a Lotus node. -->
+Lassie only returns data in CAR format, specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie's car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for manipulating the output.

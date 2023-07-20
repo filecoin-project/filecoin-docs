@@ -1,7 +1,7 @@
 ---
 title: "Transfer FIL"
-description: "Due to the nature of Filecoin and Ethereum having different address types in the Filecoin network, the process for transfering FIL between addresses can be a bit nuanced. This page explains the process for transferring FIL."
-lead: "Due to the nature of Filecoin and Etheruem having different address types in the Filecoin network, the process for transfering FIL between addresses can be a bit nuanced. This page explains the process for transferring FIL."
+description: "Due to the nature of Filecoin and Ethereum having different address types in the Filecoin network, the process for transferring FIL between addresses can be a bit nuanced. This page explains the process for transferring FIL."
+lead: "Due to the nature of Filecoin and Etheruem having different address types in the Filecoin network, the process for transferring FIL between addresses can be a bit nuanced. This page explains the process for transferring FIL."
 draft: false
 images: []
 type: docs

@@ -55,7 +55,7 @@ contract MyFilecoinContract {
 }
 ```
 
-You can find the list of supported built-in actors and methods in [Zondax's Filecoin.Sol documentation](https://docs.zondax.ch/fevm/filecoin-solidity/api/). You can access certain Filecoin-related features through these actors:
+You can access certain Filecoin-related features through these actors:
 
 - `AccountAPI.sol`: validates signatures from an address.
 - `MinerAPI.sol`: manages storage provider operation.
@@ -109,12 +109,3 @@ contract StorageDealQuery {
     
 }
 ```
-
-### Next steps
-
-Check out these links to learn more about the Filecoin.sol library.
-
-- [Filecoin-Solidity GitHub](https://github.com/Zondax/filecoin-solidity)
-- [Documentation](https://docs.zondax.ch/fevm/filecoin-solidity/)
-- [Built-In Actor APIs](https://docs.zondax.ch/fevm/filecoin-solidity/api/)
-- [FEVM-Hardhat-Kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit/)

@@ -70,6 +70,7 @@ Developers can reference pre-existing deals that are already available on the ne
 ## Resources
 
 - [Faucet](https://faucet.calibration.fildev.network/)
+- [DataCap allocation](https://faucet.calibration.fildev.network/)
 - [Stats Dashboard](https://stats.calibration.fildev.network/)
 - [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 - [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)

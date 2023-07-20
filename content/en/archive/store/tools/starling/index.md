@@ -6,11 +6,13 @@ draft: false
 images: []
 type: docs
 menu:
-  store:
-    parent: "store-tools"
+  archive:
+    parent: "archive"
     identifier: "starling-6918e5ef997c3cc12cb691406b237e5d"
 weight: 100
 toc: true
+aliases:
+    - "/store/tools/starling"
 ---
 
 ## Prerequisites

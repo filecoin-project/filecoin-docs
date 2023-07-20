@@ -80,9 +80,6 @@ Yes.
 
 Not necessarily. You can use any of the public RPC nodes on either [mainnet]({{< relref "/networks/mainnet/details" >}}) or the [Calibration testnet]({{< relref "/networks/calibration/details" >}}
 
-- `api.hyperspace.node.glif.io/rpc/v1`
-- `api.zondax.ch/fil/node/hyperspace/rpc/v1`
-
 #### What is the difference between the FVM and Bacalhau
 
 They are synergistic. Compute over data solutions such as [Bacalhau](https://github.com/filecoin-project/bacalhau) can use the FVM.
