@@ -42,7 +42,7 @@ The protocol indicator identifies the address type, which describes how a method
 - `2`: An actor address.
 - `3`: A wallet address generated from BLS public key.
 - `4`: A delegated address for user-defined foreign actors:
-  - `410`: Ethereum-compatible address space managed by the Ethereum Address Manager (EAM).
+  - `410`: Ethereum-compatible address space managed by the Ethereum Address Manager (EAM). Each 410 address is equivalent to an 0x address.
 
 Each address type is described below.
 
