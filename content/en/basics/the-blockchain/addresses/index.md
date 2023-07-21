@@ -20,11 +20,11 @@ All Filecoin addresses begin with an `f` to indicate the network (Filecoin), fol
 
 | Address prefix | Description |
 | --- | --- |
-| `0` | An ID address. |
-| `1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
-| `2` | An actor address. |
-| `3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
-| `4` | Extensible, user-defined actor addresses. |
+| `f0` | An ID address. |
+| `f1` | A [SECP256K1](https://en.bitcoin.it/wiki/Secp256k1) public key address. |
+| `f2` | An actor address. |
+| `f3` | A [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) public key address. |
+| `f4` | Extensible, user-defined actor addresses. f410 addresses refers to Ethereum-compatible address space, each f410 address is equivalent to an 0x address.|
 
 Each of the address types is described below.
 
