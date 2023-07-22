@@ -62,6 +62,12 @@
   {{ $slice = $slice | append $katexConfig -}}
 {{ end -}}
 
+{{ if .Site.Params.options.progressBar -}}
+  {{ $progressbarConfig := resources.Get "js/progressbar.js" -}}
+  {{ $progressbarConfig := $progressbarConfig | js.Build -}}
+  {{ $slice = $slice | append $progressbarConfig -}}
+{{ end -}}
+
 {{ $scrollLock := resources.Get "js/scroll-lock.js" | js.Build -}}
 {{ $slice = $slice | append $scrollLock -}}
 
