@@ -15,7 +15,7 @@ toc: true
 
 ## Exchanges
 
-A cryptocurrency exchange is a digital platform where users can buy, sell, and trade cryptocurrencies for other cryptocurrencies or traditional fiat currencies like USD, EUR, or JPY. 
+A cryptocurrency exchange is a digital platform where users can buy, sell, and trade cryptocurrencies for other cryptocurrencies or traditional fiat currencies like USD, EUR, or JPY.
 
 Cryptocurrency exchanges provide a marketplace for users to trade their digital assets and are typically run by private companies that facilitate these transactions. These exchanges can differ in terms of fees, security protocols, and the variety of cryptocurrencies they support.
 
