@@ -21,11 +21,13 @@ Cryptocurrency exchanges provide a marketplace for users to trade their digital 
 
 Users can typically sign up for an account with a cryptocurrency exchange, deposit funds into their account, and then use those funds to purchase or sell cryptocurrencies at the current market price. Some exchanges offer advanced trading features like margin trading, stop-loss orders, and trading bots.
 
+![Diagram showing the process for getting FIL from an exchange.](exchange-process.svg)
+
 It's important to note that while cryptocurrency exchanges can offer convenience and liquidity for traders, they also come with risks like hacking and regulatory uncertainty. Therefore, users should take precautions to protect their funds and do their own research before using any particular exchange.
 
 ### Supported exchanges
 
-There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coingecko.com](https://www.coingecko.com/) and [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
+There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coingecko.com](https://www.coingecko.com/en/coins/filecoin#markets) and [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
 
 Once you have found an exchange you want to use, you will have to create an account with that exchange. Many exchanges have strict verification and Know-Your-Customer (KYC) processes in place, so it may take a few days to create your account. However, most large exchanges can verify your information in a few minutes.
 

@@ -1,0 +1,18 @@
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#fff',
+      'textColor': '#3b8ef7',
+      'primaryBorderColor': '#111'
+    }
+  }
+}%%
+
+sequenceDiagram
+    autonumber
+    User-->>Exchange: Sign into exchange
+    User->>Exchange: Deposit Fiat
+    Exchange-->>Exchange: Wait for trade completion
+    Exchange->>User: Send FIL
+    User->>External Wallet: Send FIL
