@@ -23,44 +23,31 @@ aliases:
 
 Chainlist is a website that lets users easily connect their wallets to EVM-compatible blockchains. Chainlist is managed by [DeFi Llama](https://defillama.com/). Chainlist is the simplest way to add the Filecoin network to your MetaMask wallet.
 
-{{< tabs tabTotal="3" >}}
-{{< tab tabName="Mainnet" >}}
-<br>
-
 1. Navigate to [chainlist.network](https://chainlist.network).
-1. Search for `Filecoin - Mainnet`.
-1. Click **Connect Wallet**.
+1. Search for `Filecoin` and click **Add to MetaMask** for the network you want to connect to:
+
+    ![](1a-chainlist-network-website.png)
+
+1. MetaMask should pop up. Click **Next**.
+
+    ![](1b-connect-with-metamask.png)
+
+1. Click **Connect**.
+
+    ![](1c-confirm-connection.png)
+
+1. At this point, MetaMask may close. If this happens, click **Add to MetaMask** for the network you want to connect to.
 1. Click **Approve** when prompted to _Allow this site to add a network_.
+
+    ![](1d-approve-network.png)
+
 1. Click **Switch network** when prompted by MetaMask.
-1. Open MetaMask from the browser extensions tab.
-1. You should see _Filecoin_ listed at the top.
 
-{{< /tab >}}
-{{< tab tabName="Calibration" >}}
-<br>
+    ![](1e-switch-network.png)
 
-1. Navigate to [chainlist.network](https://chainlist.network).
-1. Search for `Filecoin - Calibration`.
-1. Click **Connect Wallet**.
-1. Click **Approve** when prompted to _Allow this site to add a network_.
-1. You may be shown a warning that you are connecting to a test network. If prompted, click **Accept**.
-1. Click **Switch network** when prompted by MetaMask.
-1. Open MetaMask from the browser extensions tab. You should see _Filecoin - Calibration_ listed at the top.
-{{< /tab >}}
-{{< tab tabName="Local-testnet" >}}
-<br>
+1. Re-open MetaMask. You should see _Filecoin_ listed at the top:
 
-1. Navigate to [chainlist.network](https://chainlist.network).
-1. Search for `Filecoin - Local testnet`.
-1. Click **Connect Wallet**.
-1. Click **Approve** when prompted to _Allow this site to add a network_.
-1. You may be shown a warning that you are connecting to a test network. If prompted, click **Accept**.
-1. Click **Switch network** when prompted by MetaMask.
-1. Open MetaMask from the browser extensions tab. You should see _Filecoin - Local testnet_ listed at the top.
-{{< /tab >}}
-{{< /tabs >}}
-
-You can now use MetaMask to interact with the Filecoin network.
+    ![](1f-check-network.png)
 
 ## Manual process
 
