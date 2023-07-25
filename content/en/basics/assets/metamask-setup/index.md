@@ -26,28 +26,28 @@ Chainlist is a website that lets users easily connect their wallets to EVM-compa
 1. Navigate to [chainlist.network](https://chainlist.network).
 1. Search for `Filecoin` and click **Add to MetaMask** for the network you want to connect to:
 
-    ![](1a-chainlist-network-website.png)
+    ![Search for the specific Filecoin network you need.](1a-chainlist-network-website.png)
 
 1. MetaMask should pop up. Click **Next**.
 
-    ![](1b-connect-with-metamask.png)
+    ![Connect to the network with MetaMask.](1b-connect-with-metamask.png)
 
 1. Click **Connect**.
 
-    ![](1c-confirm-connection.png)
+    ![Confirm the connection.](1c-confirm-connection.png)
 
 1. At this point, MetaMask may close. If this happens, click **Add to MetaMask** for the network you want to connect to.
 1. Click **Approve** when prompted to _Allow this site to add a network_.
 
-    ![](1d-approve-network.png)
+    ![Allow the network to integrate with MetaMask.](1d-approve-network.png)
 
 1. Click **Switch network** when prompted by MetaMask.
 
-    ![](1e-switch-network.png)
+    ![Switch networks within MetaMask.](1e-switch-network.png)
 
 1. Re-open MetaMask. You should see _Filecoin_ listed at the top:
 
-    ![](1f-check-network.png)
+    ![Confirm you are now on the Filecoin network.](1f-check-network.png)
 
 ## Manual process
 
