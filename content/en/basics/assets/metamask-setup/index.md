@@ -19,6 +19,8 @@ aliases:
     - "/developers/smart-contracts/how-tos/add-to-metamask/"
 ---
 
+<!-- REVIEWED !-->
+
 ## Using Chainlist
 
 Chainlist is a website that lets users easily connect their wallets to EVM-compatible blockchains. Chainlist is managed by [DeFi Llama](https://defillama.com/). Chainlist is the simplest way to add the Filecoin network to your MetaMask wallet.
