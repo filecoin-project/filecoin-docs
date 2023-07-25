@@ -31,7 +31,6 @@
     - [Merge process](#merge-process)
     - [Files and folders](#files-and-folders)
 - [Contributing](#contributing)
-    - [Video guides for site management](#video-guides-for-site-management)
     - [Front-matter variables](#front-matter-variables)
         - [Title](#title)
         - [Description](#description)
@@ -61,7 +60,6 @@ Follow these simple example steps to get a local version of the site up and runn
 <!-- /GETTING STARTED-->
 
 
-
 <!-- PREREQUISITES -->
 ### Prerequisites
 
@@ -71,7 +69,6 @@ To run these commands, you must have [NPM installed](https://www.npmjs.com/). If
 npm install npm@latest -g
 ```
 <!-- /PREREQUISITES -->
-
 
 
 <!-- INSTALLATION -->
@@ -383,23 +380,20 @@ Before local changes can be committed to `filecoin-docs`, a custom shell script 
 
 1. Commit the staged changes locally with a short and useful message describing the commit `<commit-msg>`:
 
-
     ```shell
     git commit -m "<commit-msg>"
     ```
 
-1. The pre-commit step is triggered, where the following open-source linters are run against all locally committed files, as described below:
+1. The pre-commit step is triggered, where the following open-source linters are run against all locally committed files:
 
-    | Linter              | Usage                                      | Command used                                                | Configuration              |
-    | ------------------- | ------------------------------------------ | ----------------------------------------------------------- | -------------------------- |
-    | [`markdown-spellcheck`](https://www.npmjs.com/package/markdown-spellcheck) | Flag misspelled words, improper terminology | `mdspell -r -a -n --en-us`                                    | `.spelling`              |
-    | [`markdownlint-cli2`](https://github.com/DavidAnson/markdownlint-cli2)   | Flag improperly formatted markdown         | `markdownlint-cli2`                                           | `.markdownlint-cli2.jsonc` |
-    | [`markdown-link-check`](https://github.com/tcort/markdown-link-check) | Flag broken URLs                           | `markdown-link-check --config .mdlinkcheck-config.json -q -p` | `.mdlinkcheck-config.json` |
+   - [markdown-link-check](https://github.com/tcort/markdown-link-check)
+   - [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+   - [vale.sh](https://vale.sh/)
 
     The script combines the output of these linters, and does one of the following:
     
-    -  _Fails and rejects the commit_ if any issues are flagged, and reports those issues to the user:
-        - Spelling
+    -  _Fails and rejects the commit_ if any issues are flagged, and reports those issues to the user, in the following order:
+        - Spelling, writing style and reading level
         - Markdown formatting
         - Broken links
     - _Succeeds and accepts the commit_ if no markdown files were changed or no errors were found.
@@ -412,12 +406,48 @@ Before you can commit to the repository, you must fix any errors identified. To 
 
 ##### Fix broken links
 
-1. Fix any improperly formatted links.
-1. Remove or replace any links that are returning a 404.
+1. Open a terminal window in the root directory of `filecoin-docs`.
+1. Stage the changes you want to check:
+
+    ```shell
+    git add .
+    ```
+1. View staged changes:
+
+    ```shell
+    git status 
+    ```
+1. Run the following command:
+
+   After a moment, output like the following displays:
+   
+   ```shell
+   CHECKING FOR BROKEN LINKS... 
+
+   Checking... [=========================] 100%
+
+   ERROR: 1 dead links found in README.md !
+   [✖] #video-guides-for-site-management → Status: 404
+   ```
+
+   This output indicates the specific link that is broken and the error code that it is returning.
+1. Search for the broken link(s) displayed in the output.
+1. Update or remove the bad link(s).
 
 ##### Fix markdown formatting
 
-1. Open a terminal window in the root directory of `filecoin-docs` and run `format-fix.sh`:
+1. Open a terminal window in the root directory of `filecoin-docs`.
+1. Stage the changes you want to check:
+
+    ```shell
+    git add .
+    ```
+1. View staged changes:
+
+    ```shell
+    git status 
+    ```
+1. Run the following command:
 
    ```shell
    sh format-fix.sh
@@ -431,27 +461,55 @@ Before you can commit to the repository, you must fix any errors identified. To 
 
 ##### Fix spelling mistakes
 
-Open a terminal window in the root directory of `filecoin-docs` and run `spell-fix.sh`:
+1. Open a terminal window in the root directory of `filecoin-docs`.
+1. Stage the changes you want to check:
+
+    ```shell
+    git add .
+    ```
+1. View staged changes:
+
+    ```shell
+    git status 
+    ```
+1. Run the following command:
 
    ```shell
-   sh spell-fix.sh
+   npm run check-spelling
    ```
-[](./README.md#pre-commit-linters)
 
-The following occurs:
-- A summary of all spelling errors found in the changed file is displayed.
-- _Interactive spelling fix mode_ starts. 
+    The following information is shown:
+    - The [Flesch reading ease score](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests#Flesch_reading_ease). **Note that this score will always display on the first line of output, and is calculated for the entire file, not a specific line.**
+    - Spelling issues, determined by an American-English dictionary and a custom list of accepted words (`styles/Vocab/fil-docs-vocab/accept.txt`)
+    - Writing style issues, as defined in the `styles` directory
 
-Using interactive spelling mode, you can quickly address each spelling error (highlighted in red) by doing the following:
-1. Using the arrow keys, select one of the following options:
-   - `Ignore` will ignore the word and not ask about it again in the current run. If spell check is run again, it will be flagged.
-   - `Add to file ignores` will ignore the word in this file only. 
-   - `Add to dictionary - case insensitive` will add to the dictionary for all files and match any case. **Because this option updates the repository dictionary, the docs team will require further review.** 
-   - `Add to dictionary - case sensitive` will add to the dictionary for all files and match the case that has been used. **Because this option updates the repository dictionary, the docs team will require further review.** 
-   - `Enter correct spelling` will allow you to manually enter the correct spelling.
-   - Any of the suggested fixes that the tool lists below `Enter correct spelling`.
-1. Once you've selected an option, press the **Enter** key.
-1. Repeat steps 2 and 3 until no more errors remain.
+    Each row in the output corresponds to a particular issue. For each row, there are four columns:
+
+    | Column 1                                                                               | Column 2                                        | Column 3                   | Column 4                   |
+    |----------------------------------------------------------------------------------------|-------------------------------------------------|----------------------------|----------------------------|
+    | Line number and position. For example, `4:42` means line number 4 starting at character 42 | The severity level (error, warning, suggestion) | A description of the error | The specific rule violated |
+
+    See the [example](#vale-example).
+
+1. Fix the issues displayed until no more issues remain. 
+
+###### Vale example
+Consider the example output shown below:
+
+```shell
+README.md
+ 1:1      warning  Try to keep the Flesch reading  Readability.FleschReadingEase 
+                   ease score (66.82) above 70.      
+ 78:15    error    Did you really mean 'typoz'?    Vale.Spelling                                 
+ 157:112  warning  'is built' may be passive       write-good.Passive            
+                   voice. Use active voice if you                                
+                   can.                                                             
+```
+
+The output indicates a:
+- Low [Flesch reading ease score](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests#Flesch_reading_ease) for the entire file.
+- Spelling error (`typoz`) on line 78.
+- Writing style violation on line 157 (the use of passive voice).
 
 #### Archived content
 
