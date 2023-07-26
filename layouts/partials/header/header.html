@@ -6,7 +6,9 @@
 <div class="sticky-top">
 {{ end -}}
 
-<div class="header-bar"></div>
+<div class="progress-container">
+    <div class="progress-bar header-bar" id="progress_bar"></div>
+</div>
 
 <header class="navbar navbar-expand-lg navbar-light doks-navbar">
   <nav class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }} flex-wrap flex-lg-nowrap" aria-label="Main navigation">
@@ -95,7 +97,7 @@
         {{ if $showFlexSearch -}}
         <hr class="text-black-50 my-4 d-lg-none">
         <form class="flex-column flex-lg-row" style="padding-top: 7px;">
-          <input style="width: auto;" class="form-control is-search st-default-search-input" type="search" placeholder="Press enter to search..." aria-label="{{ i18n "search-text" }}" autocomplete="off">
+          <input id="search" style="width: auto;" class="form-control is-search st-default-search-input" type="search" placeholder="Press enter to search..." aria-label="{{ i18n "search-text" }}" autocomplete="off">
           <div id="suggestions" class="shadow bg-white rounded d-none"></div>
         </form>
         {{ end -}}
