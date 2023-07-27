@@ -39,13 +39,12 @@ FIL, NanoFIL, and PicoFIL are all denominated in the same cryptocurrency unit, b
 
 Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than 1 whole `FIL`. The different denominations of `FIL` you may see referenced across the ecosystem are:
 
-| Name     | Decimal             |
-| -------- | ------------------- |
-| FIL      | 1                   |
-| milliFIL | 1,000                |
-| microFIL | 1,000,000             |
-| nanoFIL  | 1,000,000,000          |
-| picoFIL  | 1,000,000,000,000       |
-| femtoFIL | 1,000,000,000,000,000    |
-| attoFIL  | 1,000,000,000,000,000,000 |
--->
+| Name     | Decimal             | Following zeros |
+| -------- | ------------------- | --------------- |
+| FIL      | 1                   | 0 |
+| milliFIL | 1,000                | 3 |
+| microFIL | 1,000,000             | 6 |
+| nanoFIL  | 1,000,000,000          | 9 |
+| picoFIL  | 1,000,000,000,000       | 12 |
+| femtoFIL | 1,000,000,000,000,000    | 15 |
+| attoFIL  | 1,000,000,000,000,000,000 | 18 |
