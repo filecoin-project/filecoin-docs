@@ -1,4 +1,4 @@
-// When the user scrolls the page, execute myFunction
+// When the user scrolls the page, move the progress bar.
 window.onscroll = function() {move_progressbar()};
 
 function move_progressbar() {
