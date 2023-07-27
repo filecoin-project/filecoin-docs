@@ -138,14 +138,25 @@ button#doks-versions {
 }
 */
 
+/* Progress bar */
 .header-bar {
-  border-top: 4px solid;
-  border-image-source: linear-gradient(90deg, $primary, $blue-400 50%, #d32e9d);
-  border-image-slice: 1;
+    height: 4px;
 }
 
-.offcanvas .header-bar {
-  margin-bottom: -4px;
+/* The progress container */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: white;
+}
+
+/* The progress bar scroll indicator */
+.progress-bar {
+  width:  0%;
+  height: 4px;
+  border-top: 4px solid;
+  border-image-source: linear-gradient(90deg, $primary, #d32e9d);
+  border-image-slice: 1;
 }
 
 .home .navbar {
