@@ -145,7 +145,6 @@ button#doks-versions {
 
 /* The progress container */
 .progress-container {
-    // margin-top: 8px;
     width: 100%;
     height: 4px;
     background: white;
@@ -153,6 +152,7 @@ button#doks-versions {
 
 /* The progress bar scroll indicator */
 .progress-bar {
+  width:  0%;
   height: 4px;
   border-top: 4px solid;
   border-image-source: linear-gradient(90deg, $primary, #d32e9d);

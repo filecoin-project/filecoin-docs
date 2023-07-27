@@ -87,6 +87,10 @@ $navbar-dark-active-color: $link-color-dark;
   border-bottom: 1px solid $border-dark;
 }
 
+[data-dark-mode] body .progress-container {
+  background: $border-dark;
+}
+
 [data-dark-mode] body.home .navbar {
   border-bottom: 0;
 }
