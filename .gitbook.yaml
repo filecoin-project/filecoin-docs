@@ -6,3 +6,4 @@ structure:
 
 # redirects:  
 #     previous/page: new-folder/page.md
+      basics/what-is-filecoin/overview: basics/readme.md
