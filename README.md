@@ -15,11 +15,7 @@
 <br>
 <br>
 
-<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>. This repository also contains the build scripts and tools to create the Filecoin docs website. <a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
-
-## About this project
-
-This repository holds the content for [docs.filecoin.io](https://docs.filecoin.io) which is built and hosted by [GitBook](https://gitbook.com).
+<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>, built and hosted by [GitBook](https://gitbook.com). <a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
 
 ## Contributing
 
