@@ -15,7 +15,7 @@
 <br>
 <br>
 
-<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>, built and hosted by [GitBook](https://gitbook.com). <a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
+<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>, built and hosted by <a href="https://gitbook.com">GitBook</a>.<br><a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
 
 ## Contributing
 
