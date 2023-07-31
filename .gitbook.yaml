@@ -1,8 +1,55 @@
 root: ./
 
 structure:  
-    readme: README.md  
+    readme: basics/what-is-filecoin/README.md
     summary: SUMMARY.md
 
 redirects:  
-      basics/what-is-filecoin/overview: basics/readme.md
+    basics/what-is-filecoin/overview: basics/what-is-filecoin.md
+    basics/interplanetary-consensus/overview: basics/interplanetary-consensus.md
+    storage-provider/basics/overview: storage-providers/basics.md
+    storage-provider/basics/quick-start-guide: storage-providers/basics/quickstart-guide.md
+    storage-provider/filecoin-economics/storage-proving: storage-providers/filecoin-economics/storage-proving
+    storage-provider/basics/overview: storage-providers/basics.md
+    storage-provider/basics/quick-start-guide: storage-providers/basics/quickstart-guide.md
+    storage-provider/filecoin-economics/storage-proving: storage-providers/filecoin-economics/storage-proving.md
+    storage-provider/filecoin-economics/fil-collateral: storage-providers/filecoin-economics/fil-collateral.md
+    storage-provider/filecoin-economics/block-rewards: storage-providers/filecoin-economics/block-rewards.md
+    storage-provider/filecoin-economics/slashing: storage-providers/filecoin-economics/slashing.md
+    storage-provider/filecoin-economics/committed-capacity: storage-providers/filecoin-economics/committed-capacity.md
+    storage-provider/filecoin-deals/storage-deals: storage-providers/filecoin-deals/storage-deals.md
+    storage-provider/filecoin-deals/verified-deals: storage-providers/filecoin-deals/verified-deals.md
+    storage-provider/filecoin-deals/filecoin-programs: storage-providers/filecoin-deals/filecoin-programs.md
+    storage-provider/filecoin-deals/snap-deals: storage-providers/filecoin-deals/snap-deals.md
+    storage-provider/filecoin-deals/charging-for-data: storage-providers/filecoin-deals/charging-for-data.md
+    storage-provider/filecoin-deals/auxiliary-services: storage-providers/filecoin-deals/auxiliary-services.md
+    storage-provider/filecoin-deals/return-on-investment: storage-providers/filecoin-deals/return-on-investment.md
+    storage-provider/architecture/lotus-components: storage-providers/architecture/lotus-components.md
+    storage-provider/architecture/storage-provider-automation: storage-providers/architecture/lotus-automation.md
+    storage-provider/architecture/sealing-pipeline: storage-providers/architecture/sealing-pipeline.md
+    storage-provider/architecture/sealing-rate: storage-providers/architecture/sealing-rate.md
+    storage-provider/architecture/sealing-as-a-service: storage-providers/architecture/sealing-as-a-service.md
+    storage-provider/architecture/network-indexer: storage-providers/architecture/network-indexer.md
+    storage-provider/infrastructure/storage: storage-providers/infrastructure/storage.md
+    storage-provider/infrastructure/network: storage-providers/infrastructure/network.md
+    storage-provider/infrastructure/backup: storage-providers/infrastructure/backup-and-disaster-recovery.md
+    storage-provider/infrastructure/reference-architectures: storage-providers/infrastructure/reference-architectures.md
+    storage-provider/skills/linux: storage-providers/skills/linux.md
+    storage-provider/skills/network: storage-providers/skills/network.md
+    storage-provider/skills/security: storage-providers/skills/security.md
+    storage-provider/skills/storage: storage-providers/skills/storage.md
+    storage-provider/skills/sales: storage-providers/skills/sales.md
+    storage-provider/skills/industry: storage-providers/skills/industry.md
+    nodes/implementations/overview: nodes/implementations.md
+    smart-contracts/fundamentals/overview: smart-contracts/fundamentals.md
+    smart-contracts/fundamentals/the-filecoin-virtual-machine: smart-contracts/fundamentals/the-fvm.md
+    smart-contracts/developing-contracts/ethereum-libraries: smart-contracts/developing-contracts/solidity-libraries.md
+    smart-contracts/developing-contracts/solidity-libraries: smart-contracts/developing-contracts/filecoin.sol.md
+    smart-contracts/developing-contracts/verify-contracts: smart-contracts/developing-contracts/verify-a-contract.md
+    smart-contracts/advanced/bridges: smart-contracts/advanced/cross-chain-bridges.md
+    networks/mainnet/details: networks/mainnet.md
+    networks/calibration/details: networks/calibration.md
+    networks/spacenet/details: networks/spacenet.md
+    networks/local-testnet/set-up: networks/local-testnet.md
+    reference/built-in-actors/overview: reference/built-in-actors.md
+    reference/json-rpc/introduction: reference/json-rpc.md
