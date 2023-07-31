@@ -4,6 +4,5 @@ structure:
     readme: README.md  
     summary: SUMMARY.md
 
-# redirects:  
-#     previous/page: new-folder/page.md
+redirects:  
       basics/what-is-filecoin/overview: basics/readme.md
