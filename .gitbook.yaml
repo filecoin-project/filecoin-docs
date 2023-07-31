@@ -9,9 +9,6 @@ redirects:
     basics/interplanetary-consensus/overview: basics/interplanetary-consensus.md
     storage-provider/basics/overview: storage-providers/basics.md
     storage-provider/basics/quick-start-guide: storage-providers/basics/quickstart-guide.md
-    storage-provider/filecoin-economics/storage-proving: storage-providers/filecoin-economics/storage-proving
-    storage-provider/basics/overview: storage-providers/basics.md
-    storage-provider/basics/quick-start-guide: storage-providers/basics/quickstart-guide.md
     storage-provider/filecoin-economics/storage-proving: storage-providers/filecoin-economics/storage-proving.md
     storage-provider/filecoin-economics/fil-collateral: storage-providers/filecoin-economics/fil-collateral.md
     storage-provider/filecoin-economics/block-rewards: storage-providers/filecoin-economics/block-rewards.md
