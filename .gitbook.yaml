@@ -48,5 +48,5 @@ redirects:
     networks/calibration/details: networks/calibration.md
     networks/spacenet/details: networks/spacenet.md
     networks/local-testnet/set-up: networks/local-testnet.md
-    reference/built-in-actors/overview: reference/built-in-actors.md
+    reference/built-in-actors/overview: reference/built-in-actors/README.md
     reference/json-rpc/introduction: reference/json-rpc.md
