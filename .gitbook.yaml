@@ -146,7 +146,6 @@ redirects:
     intro/intro-to-filecoin/what-is-filecoin: basics/the-blockchain.md
     mine: storage-providers/basics.md
     mine/connectivity: storage-providers/basics.md
-    mine/connectivity: storage-providers/basics.md
     mine/lotus: storage-providers/basics.md
     mine/lotus/miner-addresses: storage-providers/basics.md
     mine/lotus/miner-configuration: storage-providers/basics.md
@@ -181,7 +180,6 @@ redirects:
     nodes/node-providers/chainstack: nodes/implementations.md
     nodes/node-providers/glif: nodes/implementations.md
     project: basics/project-and-community.md
-    project/related-projects: basics/project-and-community/related-projects.md
     project/related-projects: basics/project-and-community/related-projects.md
     reference: reference/general.md
     reference/built-in-actors: reference/built-in-actors.md
