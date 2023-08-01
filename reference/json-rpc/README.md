@@ -10,7 +10,7 @@ description: >-
 
 The easiest way to test the API is to use Curl commands. A Curl command to the Filecoin network looks something like this:
 
-```curl
+```sh
 curl --location --request POST '<NODE_ADDRESS>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -23,50 +23,46 @@ curl --location --request POST '<NODE_ADDRESS>' \
 
 ## Step-by-step example
 
-1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io) node.\
+1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io) node.
 
+```sh
+curl -X POST 'https://api.node.glif.io' \
+    -H 'Content-Type: application/json' \
+    --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}'
+```
 
-*   ```shell
-    curl -X POST 'https://api.node.glif.io' \
-        -H 'Content-Type: application/json' \
-        --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}'
-    ```
+The ChainHead endpoint doesn’t require any input parameters, so we’ve left `params` an empty array `[]`.
 
-    ```shell
-    {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceayoigaf3v5muqmknpjfkguse43jp4t2zxhpmykhqynqhkdgpgybc"},{"/":"bafy2bzacecnrtzlhn6h75gm7tozhzuw77plvdhniwzfj7wgmyuju6wn573h22"},{"/":"bafy2bzacecygiaxfsqv7ecb2gvodzh74eret3pchwe5e4j5a3mzlwasvndi6i"},{"/":"bafy2bzacebe477tdmijfse4je2g63gnnkdgzj3ftq6zbygd7toszkrsjts6uu"},{"/":"bafy2bzacedoe6hcxy2cgqzbg4p7qolbd5imbjpjnz2tj4n7o3kw2md4uv2ttq"},{"/":"bafy2bzacec7wbqvskwvolireljmufszdu5nk37yyg4qtxgnrwbyipgoenmhc6"},{"/":"bafy2bzaceahxdiauteywlbjnwj3ntr72qcbamtq3nbvjzyn5wruithpyqyxbm"}],"Blocks":[{"Miner":"f0693008","Ticket":{"VRFProof":"uLR0LHfNBAfQzyYUVBiIEXzyblPv3yPIEsJQGTpaAvO1ZriPZ7wC2IFpw7mrz1RvDQEfsgRXGxb6APTRvrPiFEAe35RFNLKC9SYb64PNcDYwGY4de5LdlHfyUv+Ovwg5"}...
-    ```
+2. The above command will output a large chunk of JSON data. You can use [JSON processor JQ](https://stedolan.github.io/jq/) to _prettify_ the output:
 
-    The ChainHead endpoint doesn’t require any input parameters, so we’ve left `params` an empty array `[]`.
-*   The above command will output a large chunk of JSON data. You can use [JSON processor JQ](https://stedolan.github.io/jq/) to _prettify_ the output:
+{% code fullWidth="false" %}
+```sh
+curl -X POST 'https://api.node.glif.io' \
+    -H 'Content-Type: application/json' \
+    --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}'
+```
+{% endcode %}
 
-    ```
-    ```
+This will output something like:
 
-1.  ```shell
-    curl -X POST 'https://api.node.glif.io' \
-        -H 'Content-Type: application/json' \
-        --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}' \
-        | jq
-    ```
-
-    ```json
-    {
-        "jsonrpc": "2.0",
-            "result": {
-                "Cids": [
-                {
-                    "/": "bafy2bzacecrbhy67by4upktab6rvbgd3w5jml7zog4ifoaupo35yo4rbbc4am"
-                },
-                {
-                    "/": "bafy2bzacecm42csr2ysmgpj54lz762iom4n4gcafkerijirzsfzq3jni2gqyu"
-                }
-                ],
-                "Blocks": [
-                {
-                    "Miner": "f0152747",
-                    "Ticket": {
-    ...
-    ```
+```json
+{
+    "jsonrpc": "2.0",
+        "result": {
+            "Cids": [
+            {
+                "/": "bafy2bzacecrbhy67by4upktab6rvbgd3w5jml7zog4ifoaupo35yo4rbbc4am"
+            },
+            {
+                "/": "bafy2bzacecm42csr2ysmgpj54lz762iom4n4gcafkerijirzsfzq3jni2gqyu"
+            }
+            ],
+            "Blocks": [
+            {
+                "Miner": "f0152747",
+                "Ticket": {
+...
+```
 
 ## Permissions
 
