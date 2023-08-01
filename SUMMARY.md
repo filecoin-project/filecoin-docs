@@ -140,6 +140,7 @@
   * [Get test tokens](networks/spacenet/get-test-tokens.md)
 * [Local testnet](networks/local-testnet/README.md)
   * [Get test tokens](networks/local-testnet/get-test-tokens.md)
+* [Status](https://status.filecoin.io)
 
 ## Reference
 
