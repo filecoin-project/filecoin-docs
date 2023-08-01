@@ -5,9 +5,9 @@ structure:
     summary: SUMMARY.md
 
 redirects:  
-    basics/what-is-filecoin/overview: basics/what-is-filecoin.md
-    basics/interplanetary-consensus/overview: basics/interplanetary-consensus.md
-    storage-provider/basics/overview: storage-providers/basics.md
+    basics/what-is-filecoin/overview: basics/what-is-filecoin/README.md
+    basics/interplanetary-consensus/overview: basics/interplanetary-consensus/README.md
+    storage-provider/basics/overview: storage-providers/basics/README.md
     storage-provider/basics/quick-start-guide: storage-providers/basics/quickstart-guide.md
     storage-provider/filecoin-economics/storage-proving: storage-providers/filecoin-economics/storage-proving.md
     storage-provider/filecoin-economics/fil-collateral: storage-providers/filecoin-economics/fil-collateral.md
@@ -37,8 +37,8 @@ redirects:
     storage-provider/skills/storage: storage-providers/skills/storage.md
     storage-provider/skills/sales: storage-providers/skills/sales.md
     storage-provider/skills/industry: storage-providers/skills/industry.md
-    nodes/implementations/overview: nodes/implementations.md
-    smart-contracts/fundamentals/overview: smart-contracts/fundamentals.md
+    nodes/implementations/overview: nodes/implementations/README.md
+    smart-contracts/fundamentals/overview: smart-contracts/fundamentals/README.md
     smart-contracts/fundamentals/the-filecoin-virtual-machine: smart-contracts/fundamentals/the-fvm.md
     smart-contracts/developing-contracts/ethereum-libraries: smart-contracts/developing-contracts/solidity-libraries.md
     smart-contracts/developing-contracts/solidity-libraries: smart-contracts/developing-contracts/filecoin.sol.md
