@@ -73,13 +73,12 @@ footer_link = ""
 copyRight = ""
 
 # Alert
-alert = false
+alert = true
 alertDismissable = true
-alertText = "Solidity developers, do you want to build on Filecoin using smart contracts?<br> <a href='/developers/smart-contracts/filecoin-virtual-machine/'>Check out the Filecoin Virtual Machine!</a>"
+alertText = "You are viewing the <b>legacy version</b> of Filecoin Docs. This website is no longer maintained, and the content may be out of date.<br>To view the current Filecoin Docs, head over to <a style='color: purple' href='https://docs.filecoin.io'>docs.filecoin.io</a>."
 
 # Edit Page
 repoHost = "GitHub"
-# repoHost [GitHub | Gitea | GitLab | Bitbucket | BitbucketServer ]
 docsRepo = "https://github.com/filecoin-project/filecoin-docs"
 docsRepoBranch = "main"
 docsRepoSubPath = ""
