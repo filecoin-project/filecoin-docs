@@ -13,6 +13,10 @@ updates:
       dev-dependencies:
         patterns:
           - "*"
+    ignore:
+      - dependency-name: "@hyas/images"
+        # For Express, ignore all Dependabot updates for version 4 and 5
+        versions: ["3.x"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
