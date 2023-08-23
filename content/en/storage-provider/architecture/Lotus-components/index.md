@@ -1,5 +1,5 @@
 ---
-title: "Lotus components"
+title: "Software components"
 description: "Lotus is the software reference implementation written by Protocol Labs to interact with the Filecoin blockchain."
 lead: "Lotus is the reference implementation for the Filecoin network written in Go and maintained by [Protocol Labs](https://protocol.ai). Understanding the components of Lotus is necessary in understanding subsequent sections on sealing, and what it means to build well-balanced storage provider architecture."
 draft: false
@@ -22,6 +22,9 @@ The following components are the most important to understand:
 - [Lotus daemon]({{< relref "#lotus-daemon" >}})
 - [Lotus miner]({{< relref "#lotus-miner" >}})
 - [Lotus worker]({{< relref "#lotus-worker" >}})
+- [Boost]({{< relref "#boost" >}})
+
+[Click here](https://boost.filecoin.io/getting-started) for a compatibility matrix of the different components and the required Golang version.
 
 ## Lotus daemon
 
@@ -46,7 +49,7 @@ Another important consideration is the size of the file system and available fre
 
 Another key role of the Lotus daemon is to host the Filecoin wallets that are required to run a storage provider (SP). As an SP, you will need a minimum of 2 wallets: an _owner wallet_ and a _worker wallet_. A third wallet called the [_control_ wallet]({{< relref "#control-wallets" >}}) is required to scale your operations in a production environment.
 
-To keep wallets safe, providers should consider physical access, network access, software security, and secure backups. As with any cryptocurrency wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), the use of which is recommended. The worker and control wallets can not be kept on a hardware device because Lotus requires frequent access to those types of wallets. For instance, Lotus may require access to a worker or control wallet to send {{< tooltip "WindowPoSt" >}} proofs on-chain.
+To keep wallets safe, providers should consider physical access, network access, software security, and secure backups. As with any cryptocurrency wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), the use of which is recommended, or remote wallets with `lotus-wallet` on a remote machine (see [remote lotus wallet](https://lotus.filecoin.io/tutorials/lotus/remote-lotus-wallet/) for instructions). The worker and control wallets can not be kept on a hardware device because Lotus requires frequent access to those types of wallets. For instance, Lotus may require access to a worker or control wallet to send {{< tooltip "WindowPoSt" >}} proofs on-chain.
 
 {{< alert "info" >}}
 For information on how to view wallets and their funds, see [Helpful commands]({{< relref "#view-wallets-and-funds" >}}). For information and instructions on integrating your Ledger device with Lotus, see the following video:
@@ -63,6 +66,8 @@ Control wallets are required to scale your operations in a production environmen
 - Commit wallet
 - Publish storage deals wallet
 - Terminate wallet
+
+The `lotus-miner` also gets an address to which funds can/should be sent. This address can be used to pay any fees and collateral. Withdrawal from this address is **only** possible with the _owner wallet_ private key.
 
 ## Lotus miner
 
@@ -128,6 +133,12 @@ The Lotus worker is another important component of the Lotus architecture. There
 As mentioned above, proving tasks can be assigned to dedicated workers, and workers can also get storage access.
 The remaining worker tasks encompass running a [sealing pipeline]({{<relref "sealing-pipeline">}}), which is discussed in the next section.
 
+## Boost
+
+[Boost](https://boost.filecoin.io) is the market component for storage providers to interact with clients. Boost is made of several components (such as boostd, boostd-data, yugabytedb, booster-http etc.). It works as a deal-taking engine (from deals made by clients or other tools), and serves data retrievals to clients who request a copy of the data.
+
+Boost has become a critical component in the software stack of a storage provider and it is therefore necessecary to read the Boost documentation carefully.
+
 ## Helpful commands
 
 The following commands can help storage providers with their setup.
@@ -157,6 +168,12 @@ lotus-miner storage list
 ```
 
 This command return information on your _sealed space_ and your _scratch space_, otherwise known as a cache. These spaces are only available if you have properly configured your Lotus miner by following the steps described in the [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
+
+In some cases it might be usefull to check if the system has access to the storage paths to a certain sector. To check the storage paths to sector 1 for instance, use:
+
+```shell
+lotus-miner storage find 1
+```
 
 ### View scheduled jobs
 

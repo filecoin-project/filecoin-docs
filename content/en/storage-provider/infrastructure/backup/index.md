@@ -67,4 +67,12 @@ RPO for data owners is less of a concern, especially once the data is sealed. Th
 
 For maximum resilience, you could host your backup system (server + storage) in a different datacenter than your primary system.
 
+## DR failover techniques
+
+One way to prepare for an easy failover of the software components in the event of a failure is to configure floating IP addresses. Instead of pinning lotus daemon and lotus-miner to the host IP address of the server they are running on, you can configure a secondary IP address and pin the daemon to its own IP, and lotus-miner to yet another IP.
+
+This helps to reduce the amount of manual tasks for a failover drastically. If the recovered daemon or miner instance changes IP address it requires quite a lot of reconfiguration in various places.
+
+Having the services on a floating IP allows to assign this IP to another machine and start the service on it.
+
 {{< sp-calls-to-action >}}
