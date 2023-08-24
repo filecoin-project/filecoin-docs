@@ -25,7 +25,7 @@ Lotus is the reference implementation of the Filecoin protocol, developed by Pro
 
 ![The Venus implementation logo.](venus-logo.png)
 
-Venus is an open-source implementation of the Filecoin network, developed by IPFSForce. The project is built in Rust and is designed to be fast, efficient, and scalable.
+Venus is an open-source implementation of the Filecoin network, developed by IPFSForce. The project is built in Go and is designed to be fast, efficient, and scalable.
 
 Venus is a full-featured implementation of the Filecoin protocol, providing storage, retrieval, and mining functionalities. It is compatible with the Lotus implementation and can interoperate with other Filecoin nodes on the network.
 
