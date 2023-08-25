@@ -55,7 +55,7 @@ FVM Actors enable a huge range of use cases to be built on Filecoin.  Here are j
 
 Additional use cases enabled by FVM include, but are not limited to, tokenized data sets, trustless reputation systems, NFTs, storage bounties and auctions, Layer 2 bridges, futures and derivatives, or conditional leasing.  Visit the Protocol Labs [FVM Request for Startups](https://rfs.fvm.dev/) page to see in-depth descriptions of the use cases you may want to build and how Protocol Labs prioritizes them. 
 
-### Start Building on FVM
+### Start building on the FVM
 
 If you’re ready to start building on FVM, here are some resources you should explore: 
 
