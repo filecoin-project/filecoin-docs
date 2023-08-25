@@ -57,7 +57,7 @@ Additional use cases enabled by FVM include, but are not limited to, tokenized d
 
 ### Start building on the FVM
 
-If you’re ready to start building on FVM, here are some resources you should explore: 
+If you’re ready to start building on the FVM, here are some resources you should explore: 
 
 - FVM Quickstart Guide | The [Quickstart guide](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/) will walk you through deploying your first ERC-20 contract on FVM.   In addition to being provided this code, we also walk you through the developer environment set-up.  
 
