@@ -11,6 +11,8 @@ menu:
     identifier: "filecoin-programs-4b56249ff18e9e82e6306a59b575d97e"
 weight: 330
 toc: true
+aliases:
+    - "/storage-provider/filecoin-deals/filecoin-programs"
 ---
 
 Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know_your_customer)) to create verified deals for [Fil+](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/#), there are also programs and platforms that make it easier for storage providers to receive verified deals.
