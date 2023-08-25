@@ -1,7 +1,7 @@
 ---
 title: "The FVM"
 description: "The Filecoin Virtual Machine (FVM) is a runtime environment enabling users to deploy their own smart contracts on the Filecoin blockchain. This page covers the basics of the FVM."
-lead: "The Filecoin Virtual Machine (FVM) is a runtime environment enabling users to deploy their own smart contracts on the Filecoin blockchain.  These smart contracts are called “actors,” and allow for on-chain computation, or “computation over state,” on Filecoin."
+lead: "The Filecoin Virtual Machine (FVM) is a runtime environment enabling users to deploy their own smart contracts on the Filecoin blockchain. These smart contracts are called _actors_, and allow for on-chain computation, or _computation-over-state_, on Filecoin."
 draft: false
 images: []
 type: docs
