@@ -11,6 +11,8 @@ menu:
     identifier: "lotus-components-eaf8e84a4d869e8377258acc4e25f684"
 weight: 410
 toc: true
+aliases:
+    - "/storage-provider/architecture/Lotus-components"
 ---
 
 The diagram below shows the major components of Lotus:
