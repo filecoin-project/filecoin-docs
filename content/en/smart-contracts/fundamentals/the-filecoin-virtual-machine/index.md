@@ -59,8 +59,8 @@ Additional use cases enabled by FVM include, but are not limited to, tokenized d
 
 If you’re ready to start building on the FVM, here are some resources you should explore: 
 
-- FVM Quickstart Guide: The [Quickstart guide](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/) will walk you through deploying your first ERC-20 contract on FVM.   In addition to being provided this code, we also walk you through the developer environment set-up.  
+- FVM Quickstart Guide: The [Quickstart guide]({{< relref "/smart-contracts/fundamentals/erc-20-quickstart" >}}) will walk you through deploying your first ERC-20 contract on FVM.   In addition to being provided this code, we also walk you through the developer environment set-up.  
 
-- Developing Contracts: If you are ready to build your dApp on FVM, you can skip ahead and review our [best practices](https://docs.filecoin.io/smart-contracts/developing-contracts/best-practices/) section for developing contracts.  Here, you can find a guide for the Filecoin solidity libraries, details on tools such as Foundry, Remix, and Hardhat, and tutorials for calling built-in actors and building client contracts. 
+- Developing Contracts: If you are ready to build your dApp on FVM, you can skip ahead and review our [best practices]({{< relref "/smart-contracts/developing-contracts/best-practices" >}}) section for developing contracts.  Here, you can find a guide for the Filecoin solidity libraries, details on tools such as Foundry, Remix, and Hardhat, and tutorials for calling built-in actors and building client contracts. 
 
 The next page will walk you through the process of deciding whether you need to use FVM’s programmatic storage when building a dApp with storage on Filecoin. 
