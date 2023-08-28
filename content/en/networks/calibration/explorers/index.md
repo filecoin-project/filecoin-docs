@@ -19,11 +19,7 @@ toc: true
 
 ## Filfox
 
-[calibration.filfox.info](https://calibration/filfox.info)
-
-## Filscout
-
-[calibration.filscout.com](https://calibration.filscout.com/en)
+[calibration.filfox.info](https://calibration.filfox.info)
 
 ## Filscan
 

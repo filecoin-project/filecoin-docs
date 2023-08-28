@@ -40,8 +40,8 @@ Get your Filecoin news in tweet-sized bites. Follow these accounts for the lates
 Link checker tool flagged these links. 
 They've been manually checked and confirmed to work.
 -->
-- [`@Filecoin`](https://twitter.com/filecoin) for news and other updates from the Filecoin project
-- [`@ProtoSchool`](https://twitter.com/protoschool) for updates on ProtoSchool workshops and tutorials
+- `@Filecoin` for news and other updates from the Filecoin project
+- `@ProtoSchool` for updates on ProtoSchool workshops and tutorials
 <!-- markdown-link-check-enable -->
 
 ## WeChat
