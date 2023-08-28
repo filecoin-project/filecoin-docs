@@ -35,7 +35,7 @@ Notaries are selected to serve as fiduciaries for the Filecoin Network and are r
 - Ensure that in the allocation of the DataCap, no party is given excessive trust in any form that might jeopardize the network.
 - Follow operational guidelines, keep a record of decision flow, and respond to any requests for audits of their allocation decisions.
 
-You can find a list of current [active notaries at plus.fil.org](https://filplus.fil.org).
+You can find a list of current [active notaries at filplus.fil.org](https://filplus.fil.org).
 
 Notaries are selected through an [application process](https://github.com/filecoin-project/notary-governance/tree/main/notaries#application--selection-process). If approved, [root key-holders](https://github.com/filecoin-project/notary-governance/tree/main/root-key-holders#overview) (executors of the decisions made by the community on-chain) grant notary status and DataCap amounts. Those interested in becoming Notaries should apply for this role by filing an Issue in the [notary governance repository](https://github.com/filecoin-project/notary-governance/).
 
@@ -75,7 +75,7 @@ For receiving DataCap at a larger scale (for business needs and production use c
 
 For applying directly to a specific notary:
 
-1. Head over to the [Fil+ Registry](plus.fil.org/), and proceed with **For Clients**
+1. Head over to the [Fil+ Registry](https://filplus.fil.org/), and proceed with **For Clients**
 2. Click **Get Verified**
 3. Click on **General Verification**. This link will take you to the notary registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of _Use Case_ you would classify yourself under
 4. Identify the notary you would like to apply to by selecting the checkbox on their row, and click **Make Request**
