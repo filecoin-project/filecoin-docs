@@ -98,7 +98,7 @@ Follow these steps to run a copy of this site on your local computer.
     npm run start
     ```
  <!-- markdown-link-check-disable-next-line -->
-1. Visit [localhost:1313](http://localhost:1313) to view the site.
+1. Visit `localhost:1313` to view the site.
 1. Press `CTRL` + `c` in the terminal to stop the local server.
 
 If you want to just build the site but _not_ serve it locally, run:

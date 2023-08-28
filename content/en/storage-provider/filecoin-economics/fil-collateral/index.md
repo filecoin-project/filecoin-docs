@@ -41,7 +41,7 @@ For instance, for 100 TiB at 0.20 FIL / 32 GiB sector, this means:
 _0.20 FIL x 32 x 100 = 640 FIL_
 {{< /alert >}}
 
-The “Current Sector Initial Pledge" can be found on blockchain explorers like [Filfox](https://filfox.info/en) and [Filscout](https://www.filscout.com/en) and on the [Starboard dashboards](https://dashboard.starboard.ventures/capacity-services#commit-pledge-per-32gib-qap).
+The “Current Sector Initial Pledge" can be found on blockchain explorers like [Filfox](https://filfox.info/en) and on the [Starboard dashboards](https://dashboard.starboard.ventures/capacity-services#commit-pledge-per-32gib-qap).
 
 ## Gas fees
 
