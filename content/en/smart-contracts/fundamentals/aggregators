@@ -1,0 +1,47 @@
+---
+title: "Data Aggregation for Small Deals "
+description: "Developers can aggregate their small deals, typically any deal <4GB in size, with other small deals, into one larger deal more attractive to Storage Providers."
+lead: "Developers can aggregate their small deals, typically any deal <4GB in size, with other small deals, into one larger deal more attractive to Storage Providers."
+draft: false
+images: []
+type: docs
+menu:
+  smart-contracts:
+    parent: "smart-contracts-fundamentals"
+    identifier: "aggregators"
+weight: 110
+toc: true
+aliases:
+
+---
+
+## Introduction
+
+The Filecoin storage marketplace is where clients, who want to store data, and Storage Providers, who offer their data centers as storage space for client data, engage in storage deals with each other.  
+
+Filecoin is designed to allow clients to store large amounts of data (typically >4GB) for a long period of time.   This is because large amounts of data will fill up more Filecoin [sectors](https://spec.filecoin.io/systems/filecoin_mining/sector/), the basic unit of Filecoin storage, in their data centers.  Sectors are 32 GB or 64 GB in size. 
+
+However, some storage clients come to the Filecoin storage marketplace with small datasets  (typically <4GB).  Because it is more profitable and convenient for the Storage Provider to accept deals from clients with large datasets, clients (or developers) with small datasets may be left out and find their storage deals may not be picked up by Storage Providers. 
+
+To resolve this issue, clients (developers) can aggregate their small deals, typically any deal <4GB in size, with other small deals, into one larger deal.  For an in-depth discussion on aggregators, refer to [this Notion page](https://www.notion.so/pl-strflt/Aggregation-2d5dc56ee06a4abfbdc2bc5d0b2542aa?pvs=4). 
+
+## The Data Aggregation Process, Explained
+
+The data aggregation process begins when multiple files are uploaded to a file compiler, which groups these files into a system object, called a bucket.  The purpose of this is to turn multiple separate files into one larger object that storage providers would be more interested in accepting and storing as part of a Filecoin deal.
+
+The files in the bucket are attached together to form a collection of data segments, a necessary step for the generation of inclusion proofs and verifier data.  Decentralized protocols require cryptographic proofs to ensure trust between transacting parties.  
+
+In data aggregation, a Proof of Data Segment Inclusion (PoDSI) ensures clients are able to verify their data is included in a larger aggregated deal.  Both on-chain and off-chain aggregators can provide these PoDSIs.  
+
+The PoDSIs prove to the client that their data was indeed aggregated into a larger data segment that will later be included by a storage provider in a Filecoin deal.  
+
+Finally, a CAR file, the data file type for Filecoin, of the aggregated data is created and passed to a software called Delta for a Filecoin storage deal to be made.  This is standard for all Filecoin storage deals, whether they include an aggregation process or not. 
+
+## Off-chain vs. On-chain Aggregation
+
+There are two ways aggregation can be done –with a centralized, off-chain aggregator, such as [Lighthouse](https://www.lighthouse.storage/), or with a decentralized, on-chain aggregator through smart contracts on FVM.
+
+On-chain aggregators compute [commP](https://docs.filecoin.io/reference/general/glossary/#commp) in the contract on-chain, which is more transparent.  Distributed nodes of on-chain aggregators prevents any single server point of failure, providing robustness.  
+
+For more information about off-chain aggregation, visit this [Lighthouse documentation](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/podsi-a-simple-overview).  For more information about on-chain aggregation, visit this [documentation](https://www.notion.so/pl-strflt/Aggregation-2d5dc56ee06a4abfbdc2bc5d0b2542aa?pvs=4#70e3cb8a8b9f4f4384d34bc9031ecdfd).
+
