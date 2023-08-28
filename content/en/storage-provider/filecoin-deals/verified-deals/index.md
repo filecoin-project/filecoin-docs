@@ -43,7 +43,7 @@ Once the data is sealed and you are proving your copies on-chain (i.e. on the bl
 
 ## Tools
 
-Tools and programs exist to support Fil+, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs]({{<relref "filecoin-programs" >}}) for more information on available programs. See [Architecture]({{<relref "lotus-components" >}}) for more information on the tooling and software components.
+Tools and programs exist to support Fil+, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs]({{<relref "filecoin-programs-and-tools" >}}) for more information on available programs. See [Architecture]({{<relref "software-components" >}}) for more information on the tooling and software components.
 
 ## Rewards & penalties
 
