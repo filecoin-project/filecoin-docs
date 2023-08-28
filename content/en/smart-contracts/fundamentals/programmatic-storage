@@ -1,0 +1,49 @@
+---
+title: "Programmatic Storage"
+description: "How does a developer do Filecoin storage and retrieval initiated by a smart contract on Filecoin Virtual Machine?"
+lead: "How does a developer do Filecoin storage and retrieval initiated by a smart contract on Filecoin Virtual Machine?"
+draft: false
+images: []
+type: docs
+menu:
+  smart-contracts:
+    parent: "smart-contracts-fundamentals"
+    identifier: "programmatic-storage"
+weight: 110
+toc: true
+aliases:
+---
+
+## Filecoin Storage before Filecoin Virtual Machine
+
+Understanding how Filecoin storage works, without Filecoin Virtual Machine, will help you understand programmatic storage enabled by smart contracts. 
+
+The Filecoin storage dealmaking workflow is as follows: 
+
+1. Starting with the client, if you are a client, the first step is to find the wallet with a certain amount of FIL token so that the client can pay the storage service fee or pay collateral for the storage.  Note that a Client can either pay storage fees and collateral using FIL tokens or become a verified client to use DataCAP to take advantage of free storage. 
+
+2. The first step to store data is data preparation, converting a regular file into a CAR file, which is the data format used on Filecoin and IPFS based on the IPLD standard and retrievable by CID.
+
+3. A storage deal proposal is made to the storage provider by the client.  Based on what the storage provider requests and their geography, if the deal is good for them, they will accept the deal and eventually request the data you want to store from the File server / IPFS.  
+
+4. Once this is done, they will publish the storage deal on the Filecoin blockchain, providing a proof of replication and then routine proof of spacetimes.
+
+The deal is on-chain, which includes the piece CID, piece Size, start epoch, end epoch, storage price, collaterals, and minerID. 
+
+The most important parameter is the starting and ending epoch, which indicates how long the storage deal will live on Filecoin as long as whether the storage deal is active on Filecoin or not.  This is important for renew and repair, as well as making sure that enough replications are stored for the client.
+
+## Programmatic Storage
+
+Assuming you have already decided you want to build a dApp with Filecoin storage, the next question to determine is whether or not you need programmatic storage.  
+
+Programmatic storage allows the developer to apply custom logic using smart contracts, or actors, to storage workflows on Filecoin.  
+
+Examples of [use cases](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/) where programmatic storage is needed include DatoDAO’s, perpetual storage, and storage automation, whereas if you needed light storage in your dApp, such as storing JSON files, you might consider using [non-programmatic storage onramps](https://docs.filecoin.io/basics/how-storage-works/storage-onramps/#:~:text=Storage%20on%2Dramps%20and%20helpers,your%20application%20or%20smart%20contract.) instead.
+
+If programmatic storage for Filecoin storage workflows is necessary for the developer to build their dApp, then you can use FVM’s smart contracts to achieve this.  
+
+- Data Aggregation for Small Deals:  Note that the unit of storage that storage providers work with are sectors, which are generally 32 or 64 GiB –this means that storage providers are biased towards wanting to accept deals with clients that have large amounts of data since they will end up filling full sectors.  If the data stored in the Filecoin storage workflows of your dApp is small, <4 GB, you may need deal aggregation to ensure that Storage Providers are interested in including your data in one of their sectors.  Deal aggregation bundles your small storage deal with many others to create one larger storage deal, which storage providers are more incentivized to accept.  Examples of deal aggregators you can use in your dApp include [Lighthouse.storage](https://www.lighthouse.storage/documentation) or [Filecoin Data Tools' Edge-UR tool](https://github.com/application-research/edge-ur/blob/car-gen/docs/aggregation.md). 
+
+- Direct Deal Making for Large Deals: If the data stored in the Filecoin storage workflows of your dApp is large, >4 GB, then you may consider using client contracts to make deal proposals directly with the storage provider.  Visit the [Deal Making Starter Kit](https://github.com/filecoin-project/fvm-starter-kit-deal-making) for additional information on how to achieve this. 
+
+For additional resources for building on FVM, visit the [FVM Section in Awesome Filecoin](https://github.com/filecoin-project/awesome-filecoin#fvmfilecoin-virtual-machine).
