@@ -1,0 +1,47 @@
+---
+title: "Direct Dealmaking"
+description: "This article conceptually explains the client contract / direct deal-making process."
+lead: "This article conceptually explains the client contract / direct deal-making process."
+draft: false
+images: []
+type: docs
+menu:
+  smart-contracts:
+    parent: "smart-contracts-fundamentals"
+    identifier: "direct-dealmaking"
+weight: 110
+toc: true
+aliases:
+
+---
+
+## Direct Dealmaking
+
+The design of Filecoin is to allow clients to store large amounts of data for a long period of time.  In order to make a deal proposal via smart contract on the FVM directly with a storage provider for data > 4GB, the [client contract](github.com/filecoin-project/fvm-starter-kit-deal-making/blob/main/contracts/DealClient.sol) can be used. 
+
+This article conceptually explains the client contract / direct deal-making process.
+
+The process begins when the client puts funds in escrow with the Storage Market Actor, a [built-in smart contract](docs.filecoin.io/reference/built-in-actors/overview/), on the blockchain.  The purpose of this is so that Storage Providers will know both (1) whether a deal is attractive enough financially and also (2) whether or not a client looking to do a Filecoin deal will have enough Filecoin to fund the duration of the deal.  
+
+Note that there are two methods for a developer to pay for a storage deal: 
+
+- Directly pay for storage price according to what Storage Providers ask. In this way, the client will need to have FIL in their wallet to pay for GAS fees, storage fees, and collateral, or, 
+
+- A verified client stores data using DataCap from the [FIL+ program](docs.filecoin.io/basics/how-storage-works/filecoin-plus/).  The client needs to apply for DataCap, a resource that can be added to storage deals, increasing that deal’s value for storage providers by a factor of ten.  They will then propose deals as verified deals so that they do not have to pay storage fees and collateral, but only GAS fees for transactions.
+
+The client then will upload a CAR file of the data they would like stored on Filecoin to a web server.  For more information on CAR files, the file format used for data stored on Filecoin, see [this definition](spec.filecoin.io/systems/filecoin_files/piece/#:~:text=A%20CAR%20file%20is%20an,provider%20as%20we%20discuss%20later.) in the context of Filecoin pieces.  For more information on how the data is structured into a directed acyclic graph in a CAR file, refer to [this short course](proto.school/course/ipld) on Interplanetary Linked Data.  
+
+The client will deploy the client contract and propose a deal, including the URL of the CAR file in the proposal.  Once the client contract is deployed, an event is emitted on-chain and Storage Providers who are running [Boost](boost.filecoin.io/), a tool for Storage Providers to manage data onboarding and retrieval on the Filecoin network, will receive the deal proposal.  The Storage Provider will then decide if they want to take the proposal and pick up the deal
+
+There are a variety of factors influencing whether or not a Storage Provider will accept the deal, including if there is a pre-existing relationship between the client and the Storage Provider, whether the deal is financially attractive to the Storage Provider, whether the Storage Provider is able to accommodate the size of the data, or whether the clients have datacap.  
+
+If the Storage Provider accepts the deal through Boost, the Storage Provider will download the CAR file from the web server, and publish the storage deal on chain.  A client can check that the deal was successfully published on the blockchain. 
+
+A storage deal published on-chain denotes the intent for a Storage Provider to make a storage deal, but does not mean that the deal is complete.  The deal is only completed once a Storage Provider has sealed the data into sectors and the dealID is published on-chain.   For more information on the Filecoin storage deal process, see [this documentation](docs.filecoin.io/basics/what-is-filecoin/storage-market/#deal-making).
+
+The timelines for the published storage deals and the DealID confirmation have undefined timelines.  Note this process can take hours to days, and this is because storage providers do not necessarily publish storage deals once they come in. Even if the deal is accepted, depending on the size of the data, the storage provider may wait until they have enough data from other deals to fill a sector.  
+
+For a complete tutorial on how to use the client contract to initiate a deal from FVM, see our Client Contract Tutorial [HERE](docs.filecoin.io/smart-contracts/developing-contracts/client-contract-tutorial/). 
+
+A full explanation of the client contract in the context of a direct deal-making starter kit can be found [HERE](github.com/filecoin-project/fvm-starter-kit-deal-making).
+
