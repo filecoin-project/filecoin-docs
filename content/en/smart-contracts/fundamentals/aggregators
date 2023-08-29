@@ -1,5 +1,5 @@
 ---
-title: "Data Aggregation for Small Deals "
+title: "Aggregated Dealmaking"
 description: "Developers can aggregate their small deals, typically any deal <4GB in size, with other small deals, into one larger deal more attractive to Storage Providers."
 lead: "Developers can aggregate their small deals, typically any deal <4GB in size, with other small deals, into one larger deal more attractive to Storage Providers."
 draft: false
@@ -15,33 +15,67 @@ aliases:
 
 ---
 
-## Introduction
+## Aggregation
 
-The Filecoin storage marketplace is where clients, who want to store data, and Storage Providers, who offer their data centers as storage space for client data, engage in storage deals with each other.  
+The design of Filecoin is to allow clients to store large amounts of data for a long period of time. Clients with small-scale data (<4 GiB) can aggregate their data, together with other small deals, into one large deal. For programmatic small-scale data storing (data >4GiB), a smart contract can be used to request for an aggregated storage deal to be made via FVM. 
+This article explains the programmatic aggregated dealmaking process, via the aggregator standard. We will refer to small-scale data as 'subpiece data'.
 
-Filecoin is designed to allow clients to store large amounts of data (typically >4GB) for a long period of time.   This is because large amounts of data will fill up more Filecoin [sectors](https://spec.filecoin.io/systems/filecoin_mining/sector/), the basic unit of Filecoin storage, in their data centers.  Sectors are 32 GB or 64 GB in size. 
+Aggregation can be done off-chain or on-chain. For on-chain aggregation smart contracts, developers interact with them to submit subpiece data and to verify proof of storage for their data. The contract also allows for verification of provided PoDSI, which refers to the subpiece proof. For off-chain aggregation, developers interact with the Aggregator platform instead, although all required components are managed by the platform for a simpler UI to clients. Typically, off-chain aggregation requires a centralized platform to host various components. On-chain aggregator can typically function in a decentralized manner.
 
-However, some storage clients come to the Filecoin storage marketplace with small datasets  (typically <4GB).  Because it is more profitable and convenient for the Storage Provider to accept deals from clients with large datasets, clients (or developers) with small datasets may be left out and find their storage deals may not be picked up by Storage Providers. 
+The base interface requires 4 components:
+- Client who has data to upload
+- Aggregator platform (a type of storage solution) that clients can interact with to make a deal and retrieve proof of storage
+- Off-chain aggregation node to aggregate the subpiece data into a larger file
+- On-chain Aggregation smart contract that clients can interact with to request to make a deal and verify proof of storage
 
-To resolve this issue, clients (developers) can aggregate their small deals, typically any deal <4GB in size, with other small deals, into one larger deal.  For an in-depth discussion on aggregators, refer to [this Notion page](https://www.notion.so/pl-strflt/Aggregation-2d5dc56ee06a4abfbdc2bc5d0b2542aa?pvs=4). 
+### Proof of Deal Subpiece Inclusion (PoDSI)
 
-## The Data Aggregation Process, Explained
+Proof of Deal Subpiece Inclusion (PoDSI) is motivated by a need for subpiece data uploads, to have verification and proof that the data was included in an associated deal on Filecoin. PoDSI is heavily used in the aggregated dealmaking workflow. 
 
-The data aggregation process begins when multiple files are uploaded to a file compiler, which groups these files into a system object, called a bucket.  The purpose of this is to turn multiple separate files into one larger object that storage providers would be more interested in accepting and storing as part of a Filecoin deal.
+PoDSI is a proofing library that allows the generation of proof for each subpiece CID (within the large data segment) and stores it in an off-chain database. You can store 
 
-The files in the bucket are attached together to form a collection of data segments, a necessary step for the generation of inclusion proofs and verifier data.  Decentralized protocols require cryptographic proofs to ensure trust between transacting parties.  
+The proof consists of two inclusion proofs:
+- An inclusion proof of a sub-tree corresponding to the tree of the client’s data. Optionally, this sub-tree can be misaligned with the proving tree.
+- An inclusion proof of the double leaf data segment descriptor within the data segment index.
 
-In data aggregation, a Proof of Data Segment Inclusion (PoDSI) ensures clients are able to verify their data is included in a larger aggregated deal.  Both on-chain and off-chain aggregators can provide these PoDSIs.  
+See a sample of one of its implementations with [Lighthouse.storage](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/podsi-a-simple-overview).
 
-The PoDSIs prove to the client that their data was indeed aggregated into a larger data segment that will later be included by a storage provider in a Filecoin deal.  
+For further technical discussion, see the Filecoin Improvement Proposal (FIP) [here](https://github.com/filecoin-project/FIPs/discussions/512).
 
-Finally, a CAR file, the data file type for Filecoin, of the aggregated data is created and passed to a software called Delta for a Filecoin storage deal to be made.  This is standard for all Filecoin storage deals, whether they include an aggregation process or not. 
+### Off-chain aggregation and dealmaking
 
-## Off-chain vs. On-chain Aggregation
+1. Client submits subpiece data to an off-chain API. The API generates the subpiece metadata and informs an Aggregator (e.g. subpiece CID, known as pCID, and URL to download the CAR file). 
 
-There are two ways aggregation can be done –with a centralized, off-chain aggregator, such as [Lighthouse](https://www.lighthouse.storage/), or with a decentralized, on-chain aggregator through smart contracts on FVM.
+2. The aggregator hosts an off-chain aggregation node, which downloads these subpiece CAR files and aggregates them into a larger CAR file. 
 
-On-chain aggregators compute [commP](https://docs.filecoin.io/reference/general/glossary/#commp) in the contract on-chain, which is more transparent.  Distributed nodes of on-chain aggregators prevents any single server point of failure, providing robustness.  
+3. Simultaneously, the aggregator aggregates indexed data segments (based on specs [here](https://github.com/filecoin-project/FIPs/discussions/512)). It runs the PoDSI proofing library and generates proofs for each subpiece pCID and stores it in an off-chain database. 
 
-For more information about off-chain aggregation, visit this [Lighthouse documentation](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/podsi-a-simple-overview).  For more information about on-chain aggregation, visit this [documentation](https://www.notion.so/pl-strflt/Aggregation-2d5dc56ee06a4abfbdc2bc5d0b2542aa?pvs=4#70e3cb8a8b9f4f4384d34bc9031ecdfd).
+4. The aggregator uses the [Boost API](https://boost.filecoin.io/experimental-features/fvm-contract-deals) (programmatic) or uses Lotus node (manual) to make storage deals with storage providers for the aggregated larger CAR file. 
 
+5. Storage Providers download the aggregated CAR file and publish storage deals. 
+
+6. Clients can query a proofing endpoint provided by the aggregator (example [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/podsi-and-deal-info), which will look up the subpiece CID (pCID) in the database and return the PoDSI proof, aggregated CID, and associated dealID.
+
+7. Clients can use the subpiece pCID for on-chain verification with the aggregation smart contract, which will verify merkle proof to ensure the pCID hash matches the commPa of the associated dealID. 
+
+### On-chain aggregation and dealmaking
+
+1. Client submits a subpiece CID (CommPc) with metadata (e.g. metadata of the subpiece and URL to download the CAR file) directly to the aggregation smart contract.
+
+2. The aggregator watches the aggregation contract and when there are enough pieces to produce a 32GiB aggregated piece CID (CommPa), it downloads all subpieces for the aggregated piece from the CAR file URL. 
+
+3. The aggregator aggregates indexed data segments into a larger data file for dealmaking (based on specs [here](https://github.com/filecoin-project/FIPs/discussions/512)).
+
+4. The aggregator combines the subpiece CIDs into the aggregated 32GiB CommP (CommPa) by computing within the aggregation smart contract.
+
+5. The aggregator uses the [Boost API](https://boost.filecoin.io/experimental-features/fvm-contract-deals) to make storage deals with storage providers for the aggregated larger CAR file. 
+
+6. Storage Providers download the aggregated CAR file and publish storage deals. Upon client's request, they can find the data via subpiece CID.
+
+6. Clients can query the aggregation smart contract, which notifies the aggregator to look up the subpiece CID (pCID) in its aggregation node's database and return the PoDSI proof, aggregated CID, and associated dealID.
+
+7. Simultaenously, clients can use the subpiece pCID for on-chain verification with the aggregation smart contract, which will verify merkle proof to ensure the pCID hash matches the commPa of the associated dealID. 
+
+For uploading subpiece data for off-chain aggregation with a SDK, check out one of the implementations at [Lighthouse.storage](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/functions/upload).
+
+To build your own on-chain aggregator, check out one of the implementations with [Filecoin Data Tools](https://github.com/application-research/fevm-data-segment).
