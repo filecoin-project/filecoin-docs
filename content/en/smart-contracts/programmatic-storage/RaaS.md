@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
-    parent: "smart-contracts-fundamentals"
+    parent: "programmatic-storage"
     identifier: "RaaS"
 weight: 110
 toc: true
