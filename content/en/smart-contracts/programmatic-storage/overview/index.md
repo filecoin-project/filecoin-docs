@@ -1,17 +1,29 @@
 ---
-title: "Programmatic storage"
-description: "This page covers the differences between manual storage and programmatic storage of data onto the Filecoin network, as well as how storage deals are organized by their size."
+title: "Overview"
+description: "This section discusses programmtic storage on the Filecoin network, and how developer can implement it into new or existing projects."
 lead: "The introduction of the Filecoin virtual machine (FVM) allows for the programmatic storage of data onto the network. This page covers the differences between manual storage and programmatic storage, as well as how storage deals are organized by their size."
 draft: false
 images: []
 type: docs
 menu:
   smart-contracts:
-    parent: "smart-contracts-fundamentals"
-    identifier: "programmatic-storage"
+    parent: "smart-contracts-programmatic-storage"
+    identifier: "programmatic-storage-overview"
 weight: 190
 toc: true
 ---
+
+Programmatic storage is a concept where storage operations are controlled, automated, or orchestrated through code. Processes like reading, writing, and data management can all happen automatically and without human intervention.
+
+<!-- how programmatic storage differs from "manual" storage. -->
+
+<!-- benefits -->
+
+<!--     Use-cases -->
+
+<!-- drawbacks -->
+
+<!--     Times where programmatic storage may not be necessary. -->
 
 ## Manual storage
 

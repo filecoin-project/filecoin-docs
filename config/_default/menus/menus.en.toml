@@ -38,6 +38,12 @@
       weight = 30
       parent = "main-smart-contracts"
 
+    [[main]]
+      name = "Programmatic storage"
+      url = "/smart-contracts/programmatic-storage/overiew"
+      weight = 40
+      parent = "main-smart-contracts"
+
      [[main]]
        name = "Advanced"
        url = "/smart-contracts/advanced/wrapped-fil"
@@ -234,9 +240,15 @@
   identifier = "smart-contracts-developing-contracts"
   url = "/smart-contracts/developing-contracts"
 
+[[smart-contracts]]
+  name = "Programmatic storage"
+  weight = 40
+  identifier = "smart-contracts-programmatic-storage"
+  url = "/smart-contracts/programmatic-storage"
+
  [[smart-contracts]]
    name = "Advanced"
-   weight = 40
+   weight = 50
    identifier = "smart-contracts-advanced"
    url = "/smart-contracts/advanced"
 # ----------------------
