@@ -53,4 +53,4 @@ Here is a diagram showing each of these steps in turn:
 
 ## Next steps
 
-For a complete tutorial on how to use the client contract to initiate a deal from FVM, see our [client contract tutorial]({{< relref "/smart-contracts/developing-contracts/client-contract-tutorial" >}}). A full explanation of the client contract in the context of a direct deal-making starter kit can be found [on GitHub](github.com/filecoin-project/fvm-starter-kit-deal-making).
+For a complete tutorial on how to use the client contract to initiate a deal from FVM, see our [client contract tutorial]({{< relref "/smart-contracts/developing-contracts/client-contract-tutorial" >}}). A full explanation of the client contract in the context of a direct deal-making starter kit can be found [here](https://github.com/filecoin-project/fvm-starter-kit-deal-making/tree/main).
