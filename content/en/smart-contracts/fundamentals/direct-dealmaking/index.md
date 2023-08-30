@@ -7,7 +7,7 @@ images: []
 type: docs
 menu:
   smart-contracts:
-    parent: "smart-contracts-fundamentals"
+    parent: "smart-contracts-programmatic-storage"
     identifier: "direct-dealmaking"
 weight: 191
 toc: true
