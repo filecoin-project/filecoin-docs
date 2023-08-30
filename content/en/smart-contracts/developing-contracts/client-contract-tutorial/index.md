@@ -127,7 +127,7 @@ Now if you’ve invoked the task with all the correct parameters, the method wil
 
 ### Monitoring deal proposal acceptance
 
-After emitting an event and while waiting for Storage Providers to accept your deal, you can monitor its status on a provided Boost logs dashboard (for calibration testnet only). You can see a guide [here](https://github.com/filecoin-project/community/discussions/659) on how to diagnose why deals might not be being accepted and adjust your proposal for re-submission.
+After emitting an event and waiting for storage providers to accept your deal, you can monitor its status on a provided Boost logs dashboard. This feature is only available on the Calibration testnet. [See this guide on GitHub](https://github.com/filecoin-project/community/discussions/659) for help diagnosing why deals might not be accepted and adjusting your proposal for re-submission.
 
 ### Conclusion
 
