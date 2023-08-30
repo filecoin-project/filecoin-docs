@@ -26,13 +26,10 @@ Prospective storage providers can experience more realistic sealing performance 
 {{< alert >}}
 **Large sector sizes**
 
-A drawback of 32 GiB and 64 GiB sectors is that storage providers generally prefer deals that use a significant amount of the sector. This could cause issues for builders wanting to store less than 4 GiB of data. 
-
-[PiKNiK](https://www.piknik.com/) is running a Boost-enabled storage provider that will listen out for small deals to solve this issue. The PiKNiK SP will attempt to aggregate these deals into 32 GiB sectors. If a deal has yet to be bundled into a 32 GiB sector after 12 hours, then the PiKNiK SP will publish it in whatever state it is in.
+A drawback of 32 GiB and 64 GiB sectors is that storage providers generally prefer deals that use a significant amount of the sector. This could cause issues for builders wanting to store less than 4 GiB of data. Check out the [Active storage providers section](#active-storage-providers) for details on SPs you can connect to.
 {{< /alert >}}
 
-Developers can reference pre-existing deals that are already available on the network. [See the PiKNiK documentation for more details](#). See the [`#fil-net-calibration-discuss` channel in the Filecoin Slack](https://filecoinproject.slack.com/archives/C01D42NNLMS) for support.
-
+Developers can reference pre-existing deals that are already available on the network. See the [`#fil-net-calibration-discuss` channel in the Filecoin Slack](https://filecoinproject.slack.com/archives/C01D42NNLMS) for support.
 
 **Maintainer**: [Protocol Labs](https://protocol.ai)
 
@@ -45,14 +42,14 @@ Developers can reference pre-existing deals that are already available on the ne
 
 ## Network parameters
 
-- Supported Sector Sizes: `32 GiB` and `64 GiB`
-- Consensus Miner Min Power: `32 GiB`
-- Epoch Duration Seconds: `30`
-- Expected Leaders per Epoch: `5`
-- WindowPoSt Proving Period: `2880`
-- WindowPoSt Challenge Window: `60`
-- WindowPoSt Period Deadlines: `48`
-- Pre-Commit Challenge Delay: `150`
+* Supported Sector Sizes: `32 GiB` and `64 GiB`
+* Consensus Miner Min Power: `32 GiB`
+* Epoch Duration Seconds: `30`
+* Expected Leaders per Epoch: `5`
+* WindowPoSt Proving Period: `2880`
+* WindowPoSt Challenge Window: `60`
+* WindowPoSt Period Deadlines: `48`
+* Pre-Commit Challenge Delay: `150`
 
 ## Bootstrap peers
 
@@ -65,13 +62,21 @@ Developers can reference pre-existing deals that are already available on the ne
 
 ## Snapshots
 
-- [Latest minimal snapshot](https://snapshots.calibrationnet.filops.net/minimal/latest.zst)
+* [Latest minimal snapshot](https://snapshots.calibrationnet.filops.net/minimal/latest.zst)
+
+## Active storage providers
+
+The following storage providers are running on the Calibration testnet.
+
+### [PiKNiK](https://github.com/benjaminh83/fvm-calib-deal-miners)
+
+* **t017840**: Every deal accepted by this SP will be aggregated into 32 GiB sectors, which is the minimum size for calibration network. This miner has a preset sealing capacity of 2x 32 GiB sectors per day, defined as sectors in waitdeals will be flushed every 12 hours. [More information](https://github.com/benjaminh83/fvm-calib-deal-miners)
 
 ## Resources
 
-- [Faucet](https://faucet.calibration.fildev.network/)
-- [DataCap allocation](https://faucet.calibration.fildev.network/)
-- [Stats Dashboard](https://stats.calibration.fildev.network/)
-- [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
-- [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
-- [Latest lightweight snapshot](https://forest.chainsafe.io/calibnet/snapshot-latest) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
+* [Faucet](https://faucet.calibration.fildev.network/)
+* [DataCap allocation](https://faucet.calibration.fildev.network/)
+* [Stats Dashboard](https://stats.calibration.fildev.network/)
+* [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
+* [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
+* [Latest lightweight snapshot](https://forest.chainsafe.io/calibnet/snapshot-latest) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
