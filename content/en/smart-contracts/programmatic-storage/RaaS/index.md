@@ -1,18 +1,16 @@
 ---
 title: "RaaS"
-description: "RaaS refers to replication, renew and repair of storage deals. It is a feature of programmatic storage on Filecoin, enabled by FVM."
+description: "This page introduces RaaS, which refers to replication, renew and repair of storage deals."
 lead: "RaaS refers to replication, renew and repair of storage deals. It is a feature of programmatic storage on Filecoin, enabled by FVM."
 draft: false
 images: []
 type: docs
 menu:
   smart-contracts:
-    parent: "programmatic-storage"
+    parent: "smart-contracts-programmatic-storage"
     identifier: "RaaS"
-weight: 110
+weight: 120
 toc: true
-aliases:
-
 ---
 
 ## Introduction
