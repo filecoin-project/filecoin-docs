@@ -79,3 +79,7 @@ For further technical discussion, see the Filecoin Improvement Proposal (FIP) [h
 For uploading subpiece data for off-chain aggregation with a SDK, check out one of the implementations at [Lighthouse.storage](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/functions/upload).
 
 To build your own on-chain aggregator, check out one of the implementations with [Filecoin Data Tools](https://github.com/application-research/fevm-data-segment).
+
+### Aggregator + RaaS (Replication, Renew and Repair as a Service)
+
+Finally, both onchain and offchain aggregators can extend the use case beyond aggregation and dealmaking, to also cover renewal and replication services for stored data. Read more in this article.
