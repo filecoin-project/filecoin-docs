@@ -49,4 +49,4 @@ Here is a brief outline of the RaaS process:
 
 4. If the deal requires replication, renewal and/or repair, the RaaS node fetches data from the given deal ID (and provided data CID) and requests the aggregator to make a new deal. 
 
-Read more about the interfaces and how to build with them here.
+Read more about the interfaces and how to build with them here or get started with the RaaS starter kit [here](https://github.com/filecoin-project/raas-starter-kit).
