@@ -42,7 +42,7 @@ Storage helpers provide libraries that abstract Filecoin deal-making into simple
 
 Here are some available storage helpers:
 
-- [web3.storage](https://web3.storage/)
-- [nft.storage](https://nft.storage/)
-- [lighthouse.storage](https://www.lighthouse.storage/)
 - [boost.filecoin.io](https://boost.filecoin.io/)
+- [lighthouse.storage](https://www.lighthouse.storage/)
+- [nft.storage](https://nft.storage/)
+- [web3.storage](https://web3.storage/)
