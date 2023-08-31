@@ -145,6 +145,7 @@ Eudico
 pubsub
 EVM-based
 EVM-compatible
+EVM-runtime
 explorable
 explorer.filmine.io
 explorer.glif.io
@@ -158,7 +159,9 @@ f8-fil-ops
 Factor8
 femtoFIL
 FIL
+Fil
 Fil+
+FIL+
 file systems
 Filebase
 Filecoin
@@ -171,6 +174,8 @@ FILForwarder
 FilFowarder
 filfox
 filfox.io
+fil-network-announcements
+fil-help
 Filscan
 filscan.io
 Filscout
@@ -293,6 +298,7 @@ permissionless
 PiB
 picoFIL
 PicoFIL
+PiKNiK
 plus.fil.org
 Polyphene
 PoRep
@@ -301,6 +307,7 @@ PowerShell
 pre-commit
 Pre-commit
 pre-compiled
+pre-existing
 pre-mined
 pre-production
 PreCommit
@@ -414,6 +421,7 @@ Vyper
 walkthrough
 walkthroughs
 Walkthroughs
+waitdeals
 wasm
 web.js
 Web2

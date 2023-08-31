@@ -40,21 +40,11 @@ Website: [filfox.io](https://filfox.io)
 
 ![Filfox website.](filfox.png)
 
-### Filexplore
-
-Website: [explorer.filmine.io](https://explorer.filmine.io/)
-
 ### Filscan
 
 Website: [filscan.io](https://filscan.io)
 
 ![Filscan website.](filscan.png)
-
-### Filscout
-
-Website: [Filscout](https://filscout.io)
-
-![Filscout website.](filscout.png)
 
 ### Starboard
 

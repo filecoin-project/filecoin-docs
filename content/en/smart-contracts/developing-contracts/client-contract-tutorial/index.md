@@ -25,23 +25,9 @@ In this tutorial, we will cover the background of creating storage deals via sma
 
 You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel](https://www.youtube.com/watch?v=27EV3gQGY9k). 
 
-## Workflows
+## Dealmaking workflows
 
-Before we get started, let's quickly cover the two workflows for creating storage deals.
-
-### Regular deal creation workflow
-
-Filecoin is a blockchain tailor-made for processing storage deals. Before the Filecoin virtual machine was implemented into the network, storage deals could only be created using the following workflow:
-
-![Offline deal-making workflow](deal-workflow.png)
-
-This process requires a lot of different actions to be taken by both the client and the storage provider. But with the advent of the Filecoin Virtual Machine, smart contracts can be deployed on top of the Filecoin blockchain. This allows developers to access and now create Filecoin Storage Deals within smart contracts! And thus, now developers can also create new storage deals on the Filecoin blockchain. This reduces the number of actions clients, and storage providers have to take to generate storage deals.
-
-### Smart contract deal creation workflow
-
-To create storage deals, smart contracts need a specific Solidity event called `DealProposalCreate`. Storage Providers running [Boost software](https://boost.filecoin.io/) can then listen for this event and, if the deal is acceptable to them, pick up the deal automatically. The workflow can be seen below.
-
-![Smart contract deal creation workflow](new-deal-workflow.png)
+Before we get started, we recommend reading about programmatic storage with Filecoin here. There are two methods to programmtic storage, which are direct dealmaking and aggregated dealmaking. We will cover direct dealmaking with the client contract tutorial.
 
 ## Steps
 
@@ -138,6 +124,10 @@ Parameters such as the `collateral` and `price-per-epoch` are set to `0`. On mai
 ### Storage provider picks up the job
 
 Now if you’ve invoked the task with all the correct parameters, the method will execute on-chain and emit an event that Boost storage providers will be listening to. If the deal is well-formed and the parameters are acceptable, they will download the .car file, double-check to ensure the `piece-cid` and `piece-size` match the deal and publish your storage deal! This could take up to a day. Once the deal is published, you can find it on a [Calibration testnet block explorer]({{< relref "/networks/calibration/explorers" >}}). The client in the deal should be the `t4` address of the smart contract we called `MakeStorageDeal` on.
+
+### Monitoring deal proposal acceptance
+
+After emitting an event and waiting for storage providers to accept your deal, you can monitor its status on a provided Boost logs dashboard. This feature is only available on the Calibration testnet. [See this guide on GitHub](https://github.com/filecoin-project/community/discussions/659) for help diagnosing why deals might not be accepted and adjusting your proposal for re-submission.
 
 ### Conclusion
 

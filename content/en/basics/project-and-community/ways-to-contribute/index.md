@@ -535,7 +535,7 @@ This is a dangerous warning
 
 ##### Output
 
-This output is not supported by Github Flavoured Markdown (GFM). However, they render properly when viewed through VuePress at [docs.filecoin.io/community/contribute/grammar-formatting-and-style](https://docs.filecoin.io/community/contribute/grammar-formatting-and-style/#custom-containers).
+This output is not supported by Github Flavoured Markdown (GFM).
 
 {{< alert  >}}
 This is a tip

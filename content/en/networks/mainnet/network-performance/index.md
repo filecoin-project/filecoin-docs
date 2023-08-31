@@ -28,7 +28,7 @@ A message that requires [transferring FIL](https://lotus.filecoin.io/docs/set-up
 
 ## Data storage
 <!-- markdown-link-check-disable -->
-In the Filecoin [data storage protocol](https://lotus.filecoin.io/docs/developers/store-data/), the following occurs once a deal is proposed and accepted:
+In the Filecoin [data storage protocol](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/store-data/), the following occurs once a deal is proposed and accepted:
 <!-- markdown-link-check-enable -->
 1. _Funding the storage market actor_: This process takes roughly 1-2 minutes and ensures that both the client and the storage provider have funds and collateral to pay for the deal.
 
