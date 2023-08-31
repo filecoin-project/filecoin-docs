@@ -73,9 +73,9 @@ footer_link = ""
 copyRight = ""
 
 # Alert
-alert = false
+alert = true
 alertDismissable = true
-alertText = "You are viewing the <b>legacy version</b> of Filecoin Docs. This website is no longer maintained, and the content may be out of date. To view the current Filecoin Docs, head over to <a style='color: purple' href='https://docs.filecoin.io'>docs.filecoin.io</a>. DNS for this site will be removed on 2023-08-31. Copies will continue to be available over IPFS."
+alertText = "Filecoin Docs is moving to GitBook!<br><a href='https://filecoin.io/blog/posts/filecoin-docs-is-moving-to-gitbook/'>Read more about it on the Filecoin Blog →</a>"
 
 # Edit Page
 repoHost = "GitHub"
