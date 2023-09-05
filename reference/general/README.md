@@ -51,7 +51,6 @@ Tools to check status and details of the network and chain.
 
 * [`Filfox.info`](https://filfox.info/en) - Mainnet
 * [Filscan](https://filscan.io) - Mainnet & Calibration
-* [Filscout](https://filscout.com) - Mainnet & Calibration
 * [Grafana](https://stats.filecoin.io/) - Network Statistics Dashboard
   * [Mainnet](https://stats.filecoin.io/)
   * [Calibration](https://stats.calibration.fildev.network/d/z6FtI92Zz/chain?orgId=1\&refresh=25s\&from=now-30m\&to=now\&kiosk)
@@ -61,8 +60,6 @@ Tools to check status and details of the network and chain.
 * [`dashboard.starboard.ventures`](https://dashboard.starboard.ventures/) - network health monitoring
 * [Filstats.io](https://filstats.io) - node telemetry monitoring - add your node!
 * Orphan blocks (not an official protocol term in the Filecoin Spec) - Blocks without rewards that were either mined on the wrong tipset that the network fails to deliver in time, or a mix resulting in reorgs.
-  * [Orphan Block Statistics](https://filscout.com/en/orphan-block)
-  * [Orphan Block List](https://filscout.com/en/orphan-block/alllist)
 * [Sentinel Project](https://lilium.sh/) - Filecoin Network Monitoring and Analysis System
 
 ### Storage/Deals status

@@ -4,13 +4,9 @@ description: >-
   take part in.
 ---
 
-# Filecoin programs
+# Filecoin programs and tools
 
 Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know\_your\_customer)) to create verified deals for [Fil+](../../basics/how-storage-works/filecoin-plus.md), there are also programs and platforms that make it easier for storage providers to receive verified deals.
-
-## Estuary
-
-[Estuary](https://estuary.tech/) is a service on the internet (but you can also host your own estuary node) that enables clients to upload data to the Filecoin Network via a web interface (and API).Estuary supports a maximum file size of 32 GB, has no limit on total upload size, and while in the alpha phase, its free! As a client you can upload data which will later be aggregated into a deal that gets sealed and proven on-chain. Estuary does the data collection and data preparation part of the workflow, and then hands off the sealing and long-term storing of the deals to storage providers. As a storage provider, you can choose to accept deals from Estuary. In order to receive deals from Estuary, a storage provider must sign up on the Estuary website. The storage provider is required to store sealed and unsealed copies of the data, and to enable retrievals from the unsealed copies for free.
 
 ## Web3.storage
 

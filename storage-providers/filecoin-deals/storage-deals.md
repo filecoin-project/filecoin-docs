@@ -14,9 +14,8 @@ Data preparation, which includes packaging files into size appropriate CAR files
 
 Data preparation can be done in various ways, depending on your use-case. Here are some valuable sources of information:
 
-* [Filecoin Data Tools](https://docs.filecoindata.tools/about/) is a collection of tools for data preparation and deal making.
 * The [data-prep-tools repo](https://github.com/filecoin-project/data-prep-tools) has a set of CLI tools for more specific use-cases.
-* [Singularity](https://github.com/tech-greedy/singularity) is a command-line tool to put data into CAR files, create [CIDs](../../reference/general/glossary#content-identifier-cid), and even initiate deals with storage providers.
+* [Singularity](https://github.com/tech-greedy/singularity) is a command-line tool to put data into CAR files, create [CIDs](../../reference/general/glossary/#content-identifier-cid), and even initiate deals with storage providers.
 
 See the following video for a demonstration on Singularity:
 
@@ -30,4 +29,4 @@ In order for storage providers to accept deals and set their deal terms, they ne
 
 The storage provider can (and should) keep unsealed data copies available for retrieval requests from the client. It is the same software component, Boost, that is responsible for HTTP retrievals from the client and for setting the price for retrievals.
 
-Many tools and platforms act as a deal making engine in front of Boost. This is the case for [Delta](https://docs.filecoindata.tools/about/delta-tech-stack/overview-of-delta-technology-stack) and [Spade](https://github.com/ribasushi/spade) for instance.
+Many tools and platforms act as a deal making engine in front of Boost. This is the case for [Spade](https://github.com/ribasushi/spade) for instance.

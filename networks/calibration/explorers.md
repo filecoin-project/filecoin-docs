@@ -14,10 +14,6 @@ description: >-
 
 [calibration.filfox.info](https://calibration/filfox.info)
 
-## Filscout
-
-[calibration.filscout.com](https://calibration.filscout.com/en)
-
 ## Filscan
 
 [calibration.filscan.io](https://calibration.filscan.io/)
