@@ -1,7 +1,7 @@
 ---
 description: >-
   FIL is the cryptocurrency that powers the Filecoin network. This page explains
-  what FIL is, how it can be used, and it’s denominations.
+  what FIL is, how it can be used, and its denominations.
 ---
 
 # The FIL token
@@ -30,7 +30,7 @@ FIL is used for network governance, allowing FIL holders to vote on proposals an
 
 FIL, NanoFIL, and PicoFIL are all denominated in the same cryptocurrency unit, but they represent different levels of precision and granularity. For most users, FIL is the main unit of measurement and is used for most transactions and payments on the Filecoin network.
 
-Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than 1 whole `FIL`. The different denominations of `FIL` you may see referenced across the ecosystem are:
+Much like how a US penny represents a fraction of a US dollar, there are many ways to represent value using Filecoin. This is because some actions on the Filecoin network require substantially less value than one whole `FIL`. The different denominations of `FIL` you may see referenced across the ecosystem are:
 
 | Name     | Decimal                   |
 | -------- | ------------------------- |

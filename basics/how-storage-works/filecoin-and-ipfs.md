@@ -9,13 +9,13 @@ description: >-
 
 #### Verifiable storage
 
-Filecoin has built-in processes to check the history of files and verify that they have been stored correctly over time. Every storage provider proves that they are maintaining their files in every 24 hour window. Clients can efficiently scan this history to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
+Filecoin has built-in processes to check the history of files and verify that they have been stored correctly over time. Every storage provider proves that they are maintaining their files in every 24-hour window. Clients can efficiently scan this history to confirm that their files have been stored correctly, even if the client was offline at the time. Any observer can check any storage provider’s track record and will notice if the provider has been faulty or offline in the past.
 
 [Learn about storage verification at ProtoSchool](https://proto.school/#/verifying-storage-on-filecoin)
 
 #### Open market
 
-In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. Running a storage provider only requires an internet connection and spare disk space. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
+In Filecoin, file storage and retrieval deals are negotiated in open markets. Anybody can join the Filecoin network without needing permission. By lowering the barriers to entry, Filecoin enables a thriving ecosystem of many independent storage providers.
 
 #### Competitive prices
 
@@ -39,7 +39,7 @@ Filecoin resists censorship because no central provider can be coerced into dele
 
 #### Useful blockchain
 
-In Filecoin, storage providers are rewarded for providing storage, not for performing wasteful computations. Filecoin secures its blockchain using proof of file replication and proof of storage over time. It doesn’t rely on energy-intensive proof-of-work schemes like other blockchains. Miners are incentivized to amass hard drives and put them to use by storing files. Filecoin doesn’t incentivize hoarding of graphics cards or application-specific integrated circuits for the sole purpose of mining.
+In Filecoin, storage providers are rewarded for providing storage, not for performing wasteful computations. Filecoin secures its blockchain using proof of file replication and proof of storage over time. It doesn’t rely on energy-intensive proof-of-work schemes like other blockchains. Miners are incentivized to amass hard drives and put them to use by storing files. Filecoin doesn’t incentivize the hoarding of graphics cards or application-specific integrated circuits for the sole purpose of mining.
 
 #### Provides storage to other blockchains
 
@@ -49,11 +49,11 @@ Filecoin’s blockchain is designed to store large files, whereas other blockcha
 
 Files are referred to by the data they contain, not by fragile identifiers such as URLs. Files remain available no matter where they are hosted or who they are hosted by. When a file becomes popular, it can be quickly distributed by swarms of computers instead of relying on a central computer, which can become overloaded by network traffic.
 
-When multiple users store the same file (and choose to make the file public by not encrypting it), everyone who wants to download the file benefits from Filecoin keeping it available. No matter where a file is downloaded from, users can verify that they have received the correct file and that it is intact.
+When multiple users store the same file (and choose to make the file public by not encrypting it), everyone who wants to download the file benefits from Filecoin, keeping it available. No matter where a file is downloaded from, users can verify that they have received the correct file and that it is intact.
 
 #### Content distribution network
 
-Retrieval providers are computers that have good network connections to lots of users who want to download files. By prefetching popular files and distributing them to nearby users, retrieval providers are rewarded for making network traffic flow smoothly, and files download quickly.
+Retrieval providers are computers that have good network connections to lots of users who want to download files. By prefetching popular files and distributing them to nearby users, retrieval providers are rewarded for making network traffic flow smoothly and files download quickly.
 
 #### Single protocol
 

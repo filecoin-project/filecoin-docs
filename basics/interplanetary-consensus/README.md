@@ -1,8 +1,8 @@
 ---
 description: >-
-  Interplanetary Consensus (IPC) is a framework enables on-demand horizontal
+  Interplanetary Consensus (IPC) is a framework that enables on-demand horizontal
   scalability of Filecoin by deploying subnets running different consensus
-  algorithms depending on application.
+  algorithms depending on the application.
 ---
 
 # Interplanetary consensus
@@ -15,7 +15,7 @@ Interplanetary Consensus (IPC) is a framework that enables on-demand, horizontal
 * Validate messages in parallel.
 * Interact with any other subnet in the hierarchy, as well as with the Filecoin root network.
 
-Subnets can run different consensus algorithms depending on application requirements, and are particularly well suited to scenarios requiring fast finality.
+Subnets can run different consensus algorithms depending on application requirements and are particularly well suited to scenarios requiring fast finality.
 
 {% embed url="https://www.youtube.com/watch?v=aRyj9kOvW7I" %}
 Check out this short introduction from [ConsensusLab](https://consensuslab.world/)
@@ -35,7 +35,7 @@ The introduction of IPC enables the following use cases on the Filecoin network:
 The IPC project is split into two main components, which we briefly describe here:
 
 * The hierarchical consensus framework, consisting of the base protocol, the actors, the ipc-agent, and the Eudico node.
-* The Trantor consensus algorithm, implemented atop the Mir framework.
+* The Trantor consensus algorithm is implemented atop the Mir framework.
 
 ### Public testnet
 
@@ -45,9 +45,10 @@ The IPC project is split into two main components, which we briefly describe her
 
 The [IPC Agent repository](https://github.com/consensus-shipyard/ipc-agent) features extensive documentation on how to get started with IPC. We recommend that you start your journey there.
 
-If you have questions, ideas, or wish to get involved, join the [Filecoin Slack workspace](https://filecoin.io/slack/) and meet us in the following channels:
+If you have any questions or wish to get involved, join the [Filecoin Slack workspace](https://filecoin.io/slack/) and meet us in the following channels:
 
-* `#ipc-help`, for any questions and as a general entry point to the world of IPC.
-* `#ipc-announcements`, for relevant announcements related to the software and network.
+* `#ipc-help` for any questions and as a general entry point to the world of IPC.
+* `#ipc-announcements` for relevant announcements related to the software and network.
 * `#ipc-dev`, for development discussions.
 * `#ipc-docs`, for documentation discussions.
+

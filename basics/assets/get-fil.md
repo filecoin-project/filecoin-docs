@@ -19,7 +19,7 @@ It’s important to note that while cryptocurrency exchanges can offer convenien
 
 ### Supported exchanges
 
-There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coingecko.com](https://www.coingecko.com/) and [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help decide which exchange to use.
+There are many exchanges that allow users to buy, sell, and trade FIL. Websites like [coingecko.com](https://www.coingecko.com/) and [coinmarketcap.com](https://coinmarketcap.com/currencies/filecoin/markets/) keep track of which exchanges support which cryptocurrencies. You can use these lists to help you decide which exchange to use.
 
 Once you have found an exchange you want to use, you will have to create an account with that exchange. Many exchanges have strict verification and Know-Your-Customer (KYC) processes in place, so it may take a few days to create your account. However, most large exchanges can verify your information in a few minutes.
 
@@ -30,10 +30,10 @@ Purchasing cryptocurrency varies from exchange to exchange, but the process is u
 
 ### Address compatibility
 
-Some exchanges allow users to fund and withdraw FIL using any of the [Filecoin address type](../../smart-contracts/filecoin-evm-runtime/address-types.md). However, some exchanges only support one, or a handful, of the available address types. Most exchanges do not currently support [f410 addresses](../the-blockchain/addresses.md) .
+Some exchanges allow users to fund and withdraw FIL using any of the [Filecoin address type](../../smart-contracts/filecoin-evm-runtime/address-types.md). However, some exchanges only support one or a handful of the available address types. Most exchanges do not currently support [f410 addresses](../the-blockchain/addresses.md) .
 
 If your exchange does not yet support Filecoin Eth-style 0x addresses, you must create a wallet to _relay_ the funds through. Take a look at the [Transfer FIL page](transfer-fil.md) for details on how to transfer your funds safely.
 
 ## Test FIL
 
-If you’re looking to get FIL to test your applications on a testnet like [Calibration](../../networks/calibration/) then check how to get test tokens! Test FIL is often referred to as `tFIL`.
+If you’re looking to get FIL to test your applications on a testnet like [Calibration](../../networks/calibration/), then check how to get test tokens! Test FIL is often referred to as `tFIL`.

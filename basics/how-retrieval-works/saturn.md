@@ -12,8 +12,8 @@ Saturn is a Web3 CDN in Filecoin’s retrieval market. On one side of the networ
 
 Saturn is trustless, permissionless, and inclusive. Anyone can run Saturn software, contribute to the network, and earn Filecoin.
 
-Content on Saturn is IPFS content-addressed. Every piece of content is immutable and every response verifiable.
+Content on Saturn is IPFS content-addressed. Every piece of content is immutable, and every response is verifiable.
 
-Incentives unite, align, and grow the network. Node operators earn Filecoin for accelerating web content and websites get faster content delivery for less.
+Incentives unite, align, and grow the network. Node operators earn Filecoin for accelerating web content, and websites get faster content delivery for less.
 
 Find out more over at [saturn.tech](https://saturn.tech).

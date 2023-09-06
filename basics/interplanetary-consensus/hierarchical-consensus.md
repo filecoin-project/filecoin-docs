@@ -1,7 +1,7 @@
 ---
 description: >-
   IPC subnets are organized as a tree and periodically checkpoint their state
-  onto their parent to leverage its security.
+  onto their parent to leverage their security.
 ---
 
 # Hierarchical consensus
@@ -35,3 +35,4 @@ Eudico is a modularized implementation of [Lotus](../../nodes/implementations/lo
 In our architecture, Eudico is used as the blockchain node. A separate instance of Eudico is run for each subnet in which a given node participates.
 
 The Eudico node is available on [GitHub](https://github.com/consensus-shipyard/lotus).
+

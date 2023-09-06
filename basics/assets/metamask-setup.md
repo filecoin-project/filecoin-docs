@@ -62,7 +62,7 @@ Before we get started, you’ll need the following:
 
 ### Steps
 
-The process for configuring MetaMask to use Filecoin is fairly simple, but has some very specific variables that you must copy exactly.
+The process for configuring MetaMask to use Filecoin is fairly simple but has some very specific variables that you must copy exactly.
 
 1. Open your browser and open the MetaMask plugin. If you haven’t opened the MetaMask plugin before, you’ll be prompted to create a new wallet. Follow the prompts to create a wallet.
 2. Click the user circle and select **Settings.**
@@ -85,7 +85,7 @@ The process for configuring MetaMask to use Filecoin is fairly simple, but has s
 {% endtab %}
 {% endtabs %}
 
-7. Pick one a block explorers from the [Networks section](broken-reference/), and enter the URL into the **Block explorer (optional)** field.
+7. Pick one block explorer from the [Networks section](broken-reference/), and enter the URL into the **Block explorer (optional)** field.
 8. Review the values in the fields and click **Save**.
 9. The Filecoin network should now be shown in your MetaMask window.
 10. Done!
