@@ -1,6 +1,6 @@
 ---
 description: >-
-  Notaries, clients and storage providers interact through the allocation and
+  Notaries, clients, and storage providers interact through the allocation and
   spending of DataCap. Filecoin Plus increases the effectiveness of the network.
 ---
 
@@ -8,9 +8,9 @@ description: >-
 
 ## Concepts
 
-Filecoin Plus is based on a set of guiding principles, [detailed in Filecoin Improvement Proposal (FIP) 0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md), that focus the program on increasing Filecoin’s effectiveness at becoming the decentralized storage network for humanity’s most important information.
+Filecoin Plus is based on a set of guiding principles, [detailed in Filecoin Improvement Proposal (FIP) 0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md) that focus the program on increasing Filecoin’s effectiveness at becoming the decentralized storage network for humanity’s most important information.
 
-Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of DataCap . Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
+Root key-holders, notaries, clients, and storage providers interact through the allocation and spending of DataCap. Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
 
 ### DataCap
 
@@ -38,7 +38,7 @@ Smart contracts can acquire and use DataCap just like any regular client. To do 
 
 For a smart contract’s first DataCap allocation, we recommend using [verify.glif.io](https://verify.glif.io) to get 32 GiB of DataCap easily, as outlined below.
 
-It’s important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. To improve this experience, we are developing an Filecoin request for comments (FRC) to allow DataCap to be held between redeployments.
+It’s important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. To improve this experience, we are developing a Filecoin request for comments (FRC) to allow DataCap to be held between redeployments.
 
 ## Using DataCap
 
@@ -48,13 +48,13 @@ Clients are required to have an on-chain Filecoin address where DataCap can be r
 
 _Note: As of network version 12, DataCap allocations are a single-use credit on a Filecoin address. If you receive an allocation and require more, you should make a new request with a unique address that you have initialized like above._ [_Filecoin Improvement Proposal (FIP) 0012_](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0012.md) _was accepted and implemented in network version 13(actor v5), which allows client addresses to receive DataCap multiple times._
 
-Clients get DataCap by making a request to a notary. For your first DataCap allocation of 32GiB, you can use an auto-verifier such as [Verifier](https://verify.glif.io/). Auto-verifiers exist to grant DataCap immediately to clients that can authenticate themselves via a specific method. For example, the verify.glif.io automatic notary grants DataCap to clients who have a GitHub account that is > 180 days old and has not been used at this site in the past 30 days.
+Clients get DataCap by making a request to a notary. For your first DataCap allocation of 32GiB, you can use an auto-verifier such as [Verifier](https://verify.glif.io/). Auto-verifiers exist to grant DataCap immediately to clients who can authenticate themselves via a specific method. For example, the verify.glif.io automatic notary grants DataCap to clients who have a GitHub account that is > 180 days old and has not been used at this site in the past 30 days.
 
 1. Head over to [Verifier](https://verify.glif.io/).
 2. Connect your GitHub account - click the **Start** button on the top right of the page
 3. Sign in to GitHub if you have not already
 4. Paste in the address to which you’d like to receive DataCap in the box under “Request” and hit **Request**
-5. The auto-notary will now attempt to send a message to the Filecoin Network whereby your address will be granted 32GiB of DataCap. This will take about 1 min
+5. The auto-notary will now attempt to send a message to the Filecoin Network, whereby your address will be granted 32GiB of DataCap. This will take about 1 min
 6. When complete, you now have 32GiB to start making deals with! You can always come back to this site and use the “Check” box to see how much DataCap you have left on a specific address
 
 For receiving DataCap at a larger scale (for business needs and production use cases), depending on the amount of data being onboarded to the network, a client has two options:
@@ -66,8 +66,8 @@ For applying directly to a specific notary:
 
 1. Head over to the [Fil+ Registry](https://filplus.fil.org/), and proceed with **For Clients**
 2. Click **Get Verified**
-3. Click on **General Verification**. This link will take you to the notary registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they’ll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of _Use Case_ you would classify yourself under
-4. Identify the notary you would like to apply to by selecting the checkbox on their row, and click **Make Request**
+3. Click on **General Verification**. This link will take you to the notary registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of _Use Case_ you would classify yourself under
+4. Identify the notary you would like to apply to by selecting the checkbox on their row and clicking **Make Request**
 5. Fill out the form that should pop up. This is used by notaries in conducting any necessary due diligence before granting you the requested DataCap
 6. Click **Sign in with GitHub** to allow the app to create a GitHub issue on your behalf
 7. After you are signed in, the button should change to **Send request**. Click this to have an issue created on your behalf and sent to the right notary!
