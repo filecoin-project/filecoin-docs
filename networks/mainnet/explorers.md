@@ -23,21 +23,13 @@ Block explorers allow you to view the details of the Filecoin network on a singl
 
 Website [beryx.zondax.ch](https://beryx.zondax.ch/)
 
-![Beryx website.](https://docs.filecoin.io/networks/mainnet/explorers/beryx\_hu84492b243d8c64825d405f43fe45559f\_233311\_2880x0\_resize\_q75\_h2\_box\_3.webp)
-
 ### Filfox
 
 Website: [filfox.io](https://filfox.io)
 
-![Filfox website.](https://docs.filecoin.io/networks/mainnet/explorers/filfox\_hu5e433edb7cfc564d1ac7c07faa492571\_92672\_1842x0\_resize\_q75\_h2\_box\_3.webp)
-
 ### Filscan
 
 Website: [filscan.io](https://filscan.io)
-
-![Filscan website.](https://docs.filecoin.io/networks/mainnet/explorers/filscan\_hu92d81e9a3a2f1f5710fc13f1e869bf3b\_130725\_1841x0\_resize\_q75\_h2\_box\_3.webp)
-
-![Filscout website.](https://docs.filecoin.io/networks/mainnet/explorers/filscout\_hu4405f3082e1746dd19fbaab3ffc2aa03\_88354\_1841x0\_resize\_q75\_h2\_box\_3.webp)
 
 ### Starboard
 

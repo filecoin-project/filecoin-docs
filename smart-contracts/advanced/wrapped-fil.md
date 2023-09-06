@@ -34,15 +34,8 @@ To wrap FIL into wFIL, follow these steps:
 
 1. **Obtain FIL**: Ensure you have FIL in your MetaMask wallet before wrapping it.
 2. **Connect your wallet**: You will need to connect your wallet to a platform that supports wFIL wrapping, such as [Glif](https://www.glif.io/) or [wfil.io](https://wfil.io/).
-3.  **Wrap your FIL**: After you’ve connected your wallet, you can wrap your FIL by following the platform’s instructions. Generally, you’ll need to select the amount of FIL you want to wrap and confirm the transaction on MetaMask. The platform will then mint an equivalent amount of wFIL and deposit it into your wallet:\
-
-
-    ![Wrapped FIL
-    ](https://docs.filecoin.io/smart-contracts/advanced/wrapped-fil/wfil\_hue0368fef827d11184e70a4249b6bca8b\_1336435\_2388x0\_resize\_q75\_h2\_box\_3.webp)
-4.  **Use wFIL**: Once you have wFIL in your wallet, you can use it on various Defi products that support token swapping or briding wFIL to other blockchains.\
-
-
-    ![Squid router is an example of a bridging protocol.](https://docs.filecoin.io/smart-contracts/advanced/wrapped-fil/squid\_hu6d4ea54c5b5dbb973db7c63450d06d41\_1125795\_2388x0\_resize\_q75\_h2\_box\_3.webp)
+3. **Wrap your FIL**: After you’ve connected your wallet, you can wrap your FIL by following the platform’s instructions. Generally, you’ll need to select the amount of FIL you want to wrap and confirm the transaction on MetaMask. The platform will then mint an equivalent amount of wFIL and deposit it into your wallet.
+4. **Use wFIL**: Once you have wFIL in your wallet, you can use it on various Defi products that support token swapping or briding wFIL to other blockchains.
 
 To unwrap FIL and receive FIL back to your wallet, users can directly go to supported platforms such as [Glif](https://www.glif.io/) or [wfil.io](https://docs.filecoin.io/smart-contracts/advanced/wrapped-fil/) to unwrap FIL following the platform’s instructions. Once the network confirms the unwrap transaction, FIL tokens are transferred back to your wallet address.
 

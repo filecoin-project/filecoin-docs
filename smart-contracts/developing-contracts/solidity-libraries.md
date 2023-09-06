@@ -59,9 +59,7 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
 
 1. Navigate to [remix.ethereum.org](https://remix.ethereum.org/).
 2. Next to **Workspaces**, click the **+** icon to create a new workspace.
-3.  In the **Choose a template** dropdown, select **ERC 20** along with the **Mintable** checkbox.
-
-    ![Set workspace details.](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/create-a-workspace-details\_hube86baae893ca7489237727aa1192243\_224220\_1440x0\_resize\_q75\_h2\_box\_3.webp)
+3. In the **Choose a template** dropdown, select **ERC 20** along with the **Mintable** checkbox
 4. Click **OK**.
 5. In the **contract** directory, open **MyToken.sol**.
 6. Set the token `<name>` and `<symbol>`:
@@ -81,22 +79,15 @@ contract MyToken is ERC20 {
 ```
 
 7. Next, compile and deploy the contract on Filecoin.
-8.  At the top of the workspace, click the green play symbol to compile the contract.
-
-    ![Compile the contract.](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/compile-compile\_hua008cb1425d8e699523982de82d086e6\_177342\_1440x0\_resize\_q75\_h2\_box\_3.webp)
+8. At the top of the workspace, click the green play symbol to compile the contract.
 9. Once the contract compiles, open the **Deploy** tab on the left.
 10. Under the **Environment** dropdown, select **Injected Provider - MetaMask**.
 11. In the MetaMask popup window, select **Confirmed connection**.
-
-    ![Select contract in Remix.](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/deploy-select-contract\_hu5e7dd01aaa120ef2206ebfbec574837a\_198604\_1440x0\_resize\_q75\_h2\_box\_3.webp)
 12. Click **Deploy**, and confirm the transaction on MetaMask. Your token contract will be deployed to the Calibration testnet once the network confirms the transaction.
 13. In Remix, open the **Deployed Contracts** dropdown.
 14. In the `mint` method, set:
-
     * `to` to your wallet address.
     * `amount` to `100000000000000000000` (1 `FIL`).
-
-    ![Click Deploy in Remix.](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/deploy-remix-deploy\_hu7d78b47d33a9107814817c1ce5c2db9d\_197089\_1440x0\_resize\_q75\_h2\_box\_3.webp)
 15. Click **Transact**.
 16. In MetaMask, confirm the transaction.
 

@@ -32,31 +32,31 @@ Before we start, make sure you know the address you’d like to forward your FIL
 1. Go to [Glif.io](https://glif.io).
 2.  Select the network you want to use from the dropdown and click **Connect Wallet**.
 
-    ![Select the network you want to use.](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-01-select-network\_hud48bae661a53d2bfb1e4ee5b5886228d\_1412363\_2194x0\_resize\_q75\_h2\_box\_3.webp)
+    ![Select the network you want to use.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-select-network.webp)
 
     In this example, we’re using the (now depricated) Hyperspace testnet.
 3.  Confirm that you want to connect your wallet to Glif.io. You will only be prompted to do this once.
 
-    ![Choose a wallet provider.](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-02-choose-wallet-provider\_hud48bae661a53d2bfb1e4ee5b5886228d\_1069246\_2194x0\_resize\_q75\_h2\_box\_3.webp)
+    ![Choose a wallet provider.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-choose-wallet.webp)
 4.  Click **Close** on the connection confirmation screen.
 
-    ![Wallet successfully connected to Glif](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-03-wallet-successfully-connected\_hud48bae661a53d2bfb1e4ee5b5886228d\_745883\_2194x0\_resize\_q75\_h2\_box\_3.webp)
+    ![Wallet successfully connected to Glif](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-wallet-connected.webp)
 5.  Select your wallet address from the dropdown and click **Forward FIL**.
 
-    ![Select FIL Forward](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-04-select-forward\_hud48bae661a53d2bfb1e4ee5b5886228d\_1419999\_2194x0\_resize\_q75\_h2\_box\_3.webp)
+    ![Select FIL Forward](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-select-forward.webp)
 6.  Enter the destination address for your FIL, along with the amount of FIL you want to send:
 
-    ![Enter a destination address and an amount.](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-05-address-and-amount\_hub82e28e76599e4ab51f9816d42640164\_904281\_2194x0\_resize\_q75\_h2\_box\_3.webp)
+    ![Enter a destination address and an amount.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-address-account.webp)
 7. Double-check that your destination address is correct and click **Send**.
 8.  You can check the transaction by clicking the transaction ID.
 
-    ![Check your transaction by clicking the ID.](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-06-transaction-id\_hub82e28e76599e4ab51f9816d42640164\_895507\_2194x0\_resize\_q75\_h2\_box\_3.webp)
+    ![Check your transaction by clicking the ID.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-transaction-id.webp)
 9.  Your funds should be available at the destination after around two minutes. You can check that your funds have arrived by searching for the destination address in a block explorer.
 
-    ![Funds in a block explorer.](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-07-funds-in-a-block-explorer\_hub82e28e76599e4ab51f9816d42640164\_1111167\_2194x0\_resize\_q75\_h2\_box\_3.webp)
+    ![Funds in a block explorer.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-block-explorer.webp)
 10. If you can’t see your funds, make sure you’re viewing the correct network.
 
-    ![Change network within a block explorer.](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-08-change-network\_hub82e28e76599e4ab51f9816d42640164\_1178987\_2194x0\_resize\_q75\_h2\_box\_3.webp)
+    ![Change network within a block explorer.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-explorer-network.webp)
 
 It generally takes around two minutes for a transaction to complete and for the funds to be available at the destination.
 
