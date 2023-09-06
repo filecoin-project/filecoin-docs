@@ -30,7 +30,7 @@ redirects:
   basics/interplanetary-consensus/overview: basics/interplanetary-consensus/README.md
   basics/the-blockchain/tipsets: basics/the-blockchain/blocks-and-tipsets.md
   basics/what-is-filecoin/overview: basics/what-is-filecoin/README.md
-  build: smart-contracts/fundamentals.md
+  build: smart-contracts/fundamentals/README.md
   build/developer-tools/wallets-signing-tools-api-clients: reference/general.md
   build/examples: smart-contracts/fundamentals.md
   build/examples/network-inspector/lotus-and-go-ipfs-interactions: smart-contracts/fundamentals.md
@@ -178,7 +178,7 @@ redirects:
   smart-contracts/wallets/fil-to-zero-x: basics/assets/transfer-fil.md
   smart-contracts/wallets/filforwader: smart-contracts/filecoin-evm-runtime/filforwarder.md
   smart-contracts/wallets/transfer-fil: basics/assets/transfer-fil.md
-  storage-provider: storage-providers/basics.md
+  storage-provider: storage-providers/basics/README.md
   storage-provider/architecture/lotus-automation: storage-providers/architecture/lotus-automation.md
   storage-provider/architecture/Lotus-components: storage-providers/architecture/lotus-components.md
   storage-provider/architectures: storage-providers/infrastructure/reference-architectures.md
