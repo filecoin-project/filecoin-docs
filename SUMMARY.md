@@ -1,8 +1,10 @@
 # Table of contents
 
+* [Welcome to Filecoin Docs](README.md)
+
 ## Basics
 
-* [What is Filecoin](README.md)
+* [What is Filecoin](<README (1).md>)
   * [Crypto-economics](basics/what-is-filecoin/crypto-economics.md)
   * [Blockchain](basics/what-is-filecoin/blockchain.md)
   * [Storage model](basics/what-is-filecoin/storage-model.md)
