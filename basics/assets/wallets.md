@@ -1,7 +1,7 @@
 ---
 description: >-
   Wallets provide a way to securely store Filecoin, along with other digital
-  assets. These wallets consist of a public and private key, which work similar
+  assets. These wallets consist of a public and private key, which work similarly
   to a bank account number and password.
 ---
 
@@ -21,7 +21,7 @@ If you are already running your own lotus node, you can also [manage FIL wallets
 | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- |
 | [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL?support=true) | A multi-currency hardware wallet. _Recommended._                                                                      | Yes     |
 | [Glif web wallet](https://wallet.glif.io)                                                      | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. _Recommended._                     | Yes     |
-| [Trust wallet](https://trustwallet.com/)                                                       | A multi-currency wallet, official wallet of Binance.                                                                  | Unknown |
+| [Trust wallet](https://trustwallet.com/)                                                       | A multi-currency wallet, the official wallet of Binance.                                                                  | Unknown |
 | [ImToken](https://token.im/)                                                                   | A multi-currency wallet.                                                                                              | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)                                                    | A multi-currency wallet.                                                                                              | Unknown |
 | [FoxWallet](https://foxwallet.com/)                                                            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                                                   | Yes     |
@@ -31,7 +31,7 @@ If you are already running your own lotus node, you can also [manage FIL wallets
 
 A hot wallet refers to any wallet that is permanently connected to the internet. They can be mobile, desktop, or browser-based. Hot wallets make it faster and easier to access digital assets but could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds that need to be accessed frequently.
 
-Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to theft. Cold wallets can be less convenient and are most useful for storing larger balances securely.
+Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline and only connected to the internet for transactions. Accessing a cold wallet requires physical possession of the device plus knowledge of the private key, which makes them more resistant to theft. Cold wallets can be less convenient and are most useful for storing larger balances securely.
 
 ### Security
 
