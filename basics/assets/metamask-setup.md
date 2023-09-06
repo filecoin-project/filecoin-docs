@@ -85,7 +85,7 @@ The process for configuring MetaMask to use Filecoin is fairly simple but has so
 {% endtab %}
 {% endtabs %}
 
-7. Pick one block explorer from the [Networks section](broken-reference/), and enter the URL into the **Block explorer (optional)** field.
+7. Pick one block explorer from the [Networks section](../../networks/mainnet/README.md), and enter the URL into the **Block explorer (optional)** field.
 8. Review the values in the fields and click **Save**.
 9. The Filecoin network should now be shown in your MetaMask window.
 10. Done!

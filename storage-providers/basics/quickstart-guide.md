@@ -8,7 +8,7 @@ description: >-
 
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Explore the storage provider documentation
 
-Get ready to dive into the valuable resources of the [storage provider documentation](broken-reference/). This comprehensive guide offers a wealth of information about the role of storage providers in the Filecoin ecosystem, including insights into the economic aspects. You’ll also gain knowledge about the software architecture, hardware infrastructure, and the necessary skills for success.
+Get ready to dive into the valuable resources of the storage provider documentation](../../storage-providers/basics/README.md). This comprehensive guide offers a wealth of information about the role of storage providers in the Filecoin ecosystem, including insights into the economic aspects. You’ll also gain knowledge about the software architecture, hardware infrastructure, and the necessary skills for success.
 
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Gain insights into ROI and collateral’s role
 

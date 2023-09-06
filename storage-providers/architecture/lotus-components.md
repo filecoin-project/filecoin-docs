@@ -13,10 +13,10 @@ The diagram below shows the major components of Lotus:
 
 The following components are the most important to understand:
 
-* [Lotus daemon](broken-reference)
-* [Lotus miner](broken-reference)
-* [Lotus worker](broken-reference)
-* [Boost](broken-reference)
+* Lotus daemon
+* Lotus miner
+* Lotus worker
+* Boost
 
 [Click here](https://boost.filecoin.io/getting-started) for a compatibility matrix of the different components and the required Golang version.
 
@@ -41,9 +41,9 @@ Another important consideration is the size of the file system and available fre
 
 #### Holding wallets <a href="#holding-wallets" id="holding-wallets"></a>
 
-Another key role of the Lotus daemon is to host the Filecoin wallets that are required to run a storage provider (SP). As an SP, you will need a minimum of 2 wallets: an _owner wallet_ and a _worker wallet_. A third wallet called the [_control_ wallet](broken-reference) is required to scale your operations in a production environment.
+Another key role of the Lotus daemon is to host the Filecoin wallets that are required to run a storage provider (SP). As an SP, you will need a minimum of 2 wallets: an _owner wallet_ and a _worker wallet_. A third wallet called the _control_ wallet) is required to scale your operations in a production environment.
 
-To keep wallets safe, providers should consider physical access, network access, software security, and secure backups. As with any cryptocurrency wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), the use of which is recommended, or remote wallets with `lotus-wallet` on a remote machine (see [remote lotus wallet](https://lotus.filecoin.io/tutorials/lotus/remote-lotus-wallet/) for instructions). The worker and control wallets can not be kept on a hardware device because Lotus requires frequent access to those types of wallets. For instance, Lotus may require access to a worker or control wallet to send [WindowPoSt](broken-reference) proofs on-chain.
+To keep wallets safe, providers should consider physical access, network access, software security, and secure backups. As with any cryptocurrency wallet, access to the private key means access to your funds. Lotus supports [Ledger hardware wallets](https://lotus.filecoin.io/lotus/manage/ledger/), the use of which is recommended, or remote wallets with `lotus-wallet` on a remote machine (see [remote lotus wallet](https://lotus.filecoin.io/tutorials/lotus/remote-lotus-wallet/) for instructions). The worker and control wallets can not be kept on a hardware device because Lotus requires frequent access to those types of wallets. For instance, Lotus may require access to a worker or control wallet to send WindowPoSt proofs on-chain.
 
 **Control wallets**
 
@@ -94,7 +94,7 @@ Another key responsibility of the Lotus Miner is the scheduling of jobs for the 
 
 One of the most important roles of `lotus-miner` is the Storage proving. Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the `lotus-miner` process. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (proving workers) instead of using the Lotus miner.
 
-The proving processes require low-latency access to sealed sectors. The proving challenge requires a GPU to run on. The resulting `zkProof` will be sent to the chain in a message. Messages must arrive within 30 minutes for WindowPoSt, and 30 seconds for WinningPoSt. It is extremely important that providers properly size and configure the proving workers, whether they are using just the Lotus miner or separate workers. Additionally, dedicated wallets, described in [Control wallets](broken-reference), should be set up for these processes.
+The proving processes require low-latency access to sealed sectors. The proving challenge requires a GPU to run on. The resulting `zkProof` will be sent to the chain in a message. Messages must arrive within 30 minutes for WindowPoSt, and 30 seconds for WinningPoSt. It is extremely important that providers properly size and configure the proving workers, whether they are using just the Lotus miner or separate workers. Additionally, dedicated wallets, described in Control wallets, should be set up for these processes.
 
 Always check if there are upcoming proving deadlines before halting any services for maintenance. For detailed instructions, refer to the [Lotus maintenance guide](https://lotus.filecoin.io/storage-providers/operate/maintenance/).
 

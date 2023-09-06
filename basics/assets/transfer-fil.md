@@ -33,7 +33,7 @@ Apart from that, you just need to follow the standard process using your preferr
 
 ## 0x => f address
 
-If you want to transfer FIL tokens from an Ethereum style `0x` address to another Filecoin address type, like an `f1` or `f3` address, follow the steps in [FilForwarder](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/) tutorial.
+If you want to transfer FIL tokens from an Ethereum style `0x` address to another Filecoin address type, like an `f1` or `f3` address, follow the steps in [FilForwarder](../../smart-contracts/filecoin-evm-runtime/filforwarder.md) tutorial.
 
 ## f => 0x address
 
@@ -100,9 +100,6 @@ If you want to transfer your FIL tokens from the `f1\f3` to the `0x` address, bu
 6. From your main wallet account or exchange, transfer your FIL token to this address.
 7. Connect to MetaMask and copy your `0x` address.
 8. Once the funds appear in the burner wallet, click on **Send FIL**.
-
-![Send FIL](https://docs.filecoin.io/basics/assets/transfer-fil/sendFIL\_huba2822ca70a37641c4d623de30d9d397\_315407\_1000x0\_resize\_q75\_h2\_box\_3.webp)
-
 9. Enter the necessary information into the text fields:
 
 * In the **Recipient** field, enter your `0x` style address. GLIF automatically converts it to an `f4` address.
