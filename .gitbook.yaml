@@ -136,7 +136,6 @@ redirects:
   mine/slashing: storage-providers/filecoin-economics/slashing.md
   mine/spacerace: storage-providers/basics.md
   networks: networks/mainnet.md
-  networks/calibration:.md
   networks/calibration/add-to-metamask: basics/assets/metamask-setup.md
   networks/calibration/details: networks/calibration/README.md
   networks/hyperspace/add-to-metamask: basics/assets/metamask-setup.md
@@ -194,4 +193,3 @@ redirects:
   store/filecoin-plus/overview: filecoin-docs/basics/how-storage-works/filecoin-plus.md
   store/overview/start-storing: filecoin-docs/basics/how-storage-works/filecoin-plus.md
   store/tools: basics/how-storage-works/storage-onramps.md
-  store/tools/estuary: basics/how-storage-works/storage-onramps.md
