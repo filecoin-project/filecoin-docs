@@ -4,7 +4,7 @@
 
 ## Basics
 
-* [What is Filecoin](<README (1).md>)
+* [What is Filecoin](basics/what-is-filecoin/README.md)
   * [Crypto-economics](basics/what-is-filecoin/crypto-economics.md)
   * [Blockchain](basics/what-is-filecoin/blockchain.md)
   * [Storage model](basics/what-is-filecoin/storage-model.md)
