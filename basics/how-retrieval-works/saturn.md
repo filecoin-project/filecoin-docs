@@ -6,7 +6,7 @@ description: >-
 
 # Saturn
 
-<figure><img src="https://docs.filecoin.io/basics/how-retrieval-works/saturn/saturn-homepage_hudb464253350709f4eebed6874d173158_1678978_0b2cf2249460f74d7567c3f0130966e9.webp" alt="" width="563"><figcaption><p><a href="https://saturn.tech/">https://saturn.tech/</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/basics-how-retrieval-works-saturn-saturn-homepage (1).webp" alt=""><figcaption><p><a href="https://saturn.tech/">https://saturn.tech/</a></p></figcaption></figure>
 
 Saturn is a Web3 CDN in Filecoin’s retrieval market. On one side of the network, websites buy fast, low-cost content delivery. On the other side, Saturn node operators earn Filecoin by fulfilling requests.
 

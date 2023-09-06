@@ -10,6 +10,6 @@ The Filecoin specification is the technical document that outlines the details o
 
 The Filecoin specification is a _living_ document, with frequent updates and changes as the Filecoin network grows. The specification is available to view at [specs.filecoin.io](https://spec.filecoin.io/).
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-07-14 102519.png" alt="" width="563"><figcaption><p>specs.filecoin.io</p></figcaption></figure>
+<figure><img src="broken-reference" alt="" width="563"><figcaption><p>specs.filecoin.io</p></figcaption></figure>
 
 You can suggest changes to the specification [over on GitHub](https://github.com/filecoin-project/specs).

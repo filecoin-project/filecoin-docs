@@ -9,7 +9,7 @@ description: >-
 
 The diagram below shows the major components of Lotus:
 
-<figure><img src="../../.gitbook/assets/lotus components_hu86c2504741f8af61d441f5f2db294881_471623_1410x0_resize_q75_h2_box_3.webp" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/storage-provider-architecture-software-components-components.png" alt=""><figcaption></figcaption></figure>
 
 The following components are the most important to understand:
 

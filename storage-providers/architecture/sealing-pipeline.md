@@ -12,7 +12,7 @@ Each step in the sealing process has different performance considerations, and f
 
 The sealing pipeline can be broken into the following steps:
 
-<figure><img src="https://docs.filecoin.io/storage-provider/architecture/sealing-pipeline/sealing-tasks_hu9268c492255deb0a4b7b412df6151e82_116179_941x0_resize_q75_h2_box_3.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/storage-provider-architecture-sealing-pipeline-tasks.png" alt=""><figcaption></figcaption></figure>
 
 ### AddPiece
 

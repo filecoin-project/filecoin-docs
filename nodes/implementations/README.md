@@ -9,7 +9,7 @@ description: >-
 
 ## Lotus
 
-![The Lotus implementation logo.](https://docs.filecoin.io/nodes/implementations/overview/lotus-logo\_hu94e87517a6539b07b7a47f27cd289c82\_8394\_150x0\_resize\_q75\_h2\_box\_3.webp)
+![The Lotus implementation logo.](../../.gitbook/assets/nodes-implementations-overview-lotus-logo.webp)
 
 Lotus is the reference implementation of the Filecoin protocol, developed by Protocol Labs, the organization behind Filecoin. Lotus is a full-featured implementation of the Filecoin network, including the storage, retrieval, and mining functionalities. It is written in Go and is designed to be modular, extensible, and highly scalable.
 
@@ -17,7 +17,7 @@ Lotus is the reference implementation of the Filecoin protocol, developed by Pro
 
 ## Venus
 
-![The Venus implementation logo.](https://docs.filecoin.io/nodes/implementations/overview/venus-logo\_hu39e623891ff184c93ed6ad5a1d61312e\_10430\_150x0\_resize\_q75\_h2\_box\_3.webp)
+![The Venus implementation logo.](../../.gitbook/assets/nodes-implementations-overview-venus-logo.webp)
 
 Venus is an open-source implementation of the Filecoin network, developed by IPFSForce. The project is built in Go and is designed to be fast, efficient, and scalable.
 
@@ -53,7 +53,7 @@ The following implementations exist, but aren’t fully featured.
 
 ### Forest
 
-![Forest logo.](https://docs.filecoin.io/nodes/implementations/overview/forest-logo\_hu328798fb63b8913efa4ee5d19499fa75\_8567\_150x0\_resize\_q75\_h2\_box\_3.webp)
+![Forest logo.](../../.gitbook/assets/nodes-implementations-overview-venus-forest.webp)
 
 Forest is an implementation of Filecoin written in Rust. It is currently in beta. The implementation will take a modular approach to building a full Filecoin node in two parts:
 

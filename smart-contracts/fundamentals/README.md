@@ -28,7 +28,7 @@ This is where Filecoin comes in. Filecoin adds an incentive layer to content-add
 
 Filecoin and IPFS are designed as separate layers to give developers more choice and modularity, but many tools are available for combining their benefits. This diagram illustrates how these tools (often called storage helpers) provide developer-friendly APIs for storing on IPFS, Filecoin, or both.
 
-![Web3-Enabled Architecture by Filecoin](https://docs.filecoin.io/smart-contracts/fundamentals/overview/web3-architecture\_hu3e83233343686501f76831d055c9ac40\_1659851\_2856x0\_resize\_q75\_h2\_box\_3.webp)
+![Web3-Enabled Architecture by Filecoin](../../.gitbook/assets/smart-contracts-fundamentals-overview-web3-architecture.webp)
 
 ## Filecoin and smart contracts
 

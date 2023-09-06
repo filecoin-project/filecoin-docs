@@ -18,7 +18,7 @@ There are two groups of users within the network indexer process:
 
 This diagram summarizes the different _actors_ in the indexer ecosystem and how they interact with each other. In this context, these actors are not the same as [smart-contract actors](../../smart-contracts/filecoin-evm-runtime/actor-types.md).
 
-<figure><img src="https://docs.filecoin.io/storage-provider/architecture/network-indexer/indexer.png" alt=""><figcaption><p>For more info on how the indexer works, read the <a href="https://filecoin.io/blog/posts/how-does-the-network-indexer-work/">Filecoin blog post</a>.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/storage-providers-architecture-network-indexer-indexer.png" alt=""><figcaption><p>For more info on how the indexer works, read the <a href="https://filecoin.io/blog/posts/how-does-the-network-indexer-work/">Filecoin blog post</a>.</p></figcaption></figure>
 
 ## IPNI and storage providers
 

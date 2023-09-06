@@ -8,7 +8,7 @@ description: >-
 
 ## 1 PiB raw architecture
 
-<figure><img src="https://docs.filecoin.io/storage-provider/infrastructure/reference-architectures/1PIB.png" alt="" width="563"><figcaption><p>1 PiB raw reference architecture.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/storage-provider-infrastructure-reference-architectures-1PIB.png" alt=""><figcaption><p>1 PiB raw reference architecture.</p></figcaption></figure>
 
 The following reference architecture is designed for 1 PiB of raw sectors or raw data to be stored. Let’s discuss the various design choices of this architecture.
 
