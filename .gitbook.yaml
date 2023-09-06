@@ -32,7 +32,7 @@ redirects:
 
 
     # LEGACY-DOCS REDIRECTS
-    # ---------------------
+    # ----------------------------------------------------------------
     # BASICS/ASSETS
     networks/mainnet/add-to-metamask: basics/assets/metamask-setup
     networks/hyperspace/add-to-metamask: basics/assets/metamask-setup
@@ -239,20 +239,29 @@ redirects:
     developers/smart-contracts/about/use-cases: smart-contracts/fundamentals/the-fvm
 
     # STORAGE-PROVIDER/ARCHITECTURE
+    storage-provider/architecture/Lotus-components: storage-providers/architecture/lotus-components
+    storage-provider/architecture/lotus-automation: storage-providers/architecture/lotus-automation
      
     # STORAGE-PROVIDER/BASICS
-     
+	storage-provider/overview: storage-providers/basics
+    mine: storage-providers/basics
+    mine/spacerace: storage-providers/basics
+    mine/connectivity: storage-providers/basics
+    storage-provider: storage-providers/basics
+
     # STORAGE-PROVIDER/FILECOIN-DEALS
+    storage-provider/filecoin-deals/filecoin-programs: storage-providers/filecoin-deals/filecoin-programs
     
     # STORAGE-PROVIDER/FILECOIN-ECONOMICS
+	storage-provider/slashing: storage-providers/filecoin-economics/slashing
+    mine/slashing: storage-providers/filecoin-economics/slashing
+    storage-provider/rewards/slashing: storage-providers/filecoin-economics/slashing
     
     # STORAGE-PROVIDER/INFRASTRUCTURE
-    
-    # STORAGE-PROVIDER/SKILLS
+    storage-provider/architectures: storage-providers/infrastructure/reference-architectures
+    storage-provider/storage-provider-architectures: storage-providers/infrastructure/reference-architectures
+    mine/mining-architectures: storage-providers/infrastructure/reference-architectures
 
-
-    
-
-    # ---------------------
+    # ----------------------------------------------------------------
 
 
