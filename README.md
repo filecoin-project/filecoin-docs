@@ -39,7 +39,7 @@ We use `p` tags to define the priority of an issue. The priority is defined by t
 
 Dual-licensed: MIT, Apache Software License v2, by way of the [Permissive License Stack](https://protocol.ai/blog/announcing-the-permissive-license-stack/).
 
-[license-shield]: https://img.shields.io/badge/license-MIT-blueviolet?style=for-the-badge
+[license-shield]: https://img.shields.io/badge/license-MIT-blueviolet
 [license-url]: https://protocol.ai/blog/announcing-the-permissive-license-stack/
-[website-status]: https://img.shields.io/website.svg?down_color=red&style=for-the-badge&url=https%3A%2F%2Fdocs.filecoin.io
+[website-status]: https://img.shields.io/website.svg?url=https%3A%2F%2Fdocs.filecoin.io
 [website-status-url]: https://docs.filecoin.io/
