@@ -37,6 +37,7 @@
   * [Basic retrieval](basics/how-retrieval-works/basic-retrieval.md)
   * [Serving retrievals](basics/how-retrieval-works/serving-retrievals.md)
   * [Saturn](basics/how-retrieval-works/saturn.md)
+* [Governance](basics/governance/README.md)
 * [Project and community](basics/project-and-community/README.md)
   * [Chat and discussion forums](basics/project-and-community/chat-and-discussion-forums.md)
   * [Filecoin compared to](basics/project-and-community/filecoin-compared-to.md)
