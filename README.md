@@ -1,38 +1,45 @@
----
-description: >-
-  Filecoin is a peer-to-peer network that allows anyone to store and retrieve
-  data on the internet. Built-in economic incentives ensure that files are
-  stored and retrieved reliably and continuously.
-cover: .gitbook/assets/home-hero-image-drives.png
-coverY: 171
-layout:
-  cover:
-    visible: true
-    size: full
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
+[![MIT License][license-shield]][license-url]
+[![Website status][website-status]][website-status-url]
+![Link Checker Passed](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml/badge.svg)
 
-# Welcome to Filecoin Docs
+<br>
 
-{% hint style="info" %}
-**This is the new Filecoin documentation site, hosted by** [**GitBook**](https://gitbook.com)**.**
+<picture align=center>
+    <source media="(prefers-color-scheme: dark)" srcset="https://bafybeiaqdbd5zbl55x5vjmkwpjhqapt3ks3q4ykaclqkajhsdwyzlbz3g4.ipfs.w3s.link/Filecoin-logo-blue-white.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://bafybeihuk3hsy6d43dn36tqnvf6tvzleiijd5idbf2q7maw3nshnfm6wiu.ipfs.w3s.link/filecoin-logo-black-type.svg">
+    <img alt="The Filecoin project logo." src="https://bafybeihuk3hsy6d43dn36tqnvf6tvzleiijd5idbf2q7maw3nshnfm6wiu.ipfs.w3s.link/filecoin-logo-black-type.svg">
+</picture>
 
-This site [docs.filecoin.io](https://docs.filecoin.io) will continue to be updated, while [legacy-docs.filecoin.io](https://legacy-docs.filecoin.io) will serve as a historical entity only and will receive no further updates. DNS for the legacy site will be removed on `2023-09-30`. However, copies of the site may remain available [over IPFS](https://fleek.ipfs.io/ipfs/QmeyfnoothgLP9ft2MYBVXw1WeaPqvV6Z1JU4QUbZsAQKM/).
+<br>
+<br>
 
-[Checkout the Filecoin blog for more information →](https://filecoin.io/blog/posts/filecoin-docs-is-moving-to-gitbook/)
-{% endhint %}
+<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>. The content is built and hosted by <a href="https://gitbook.com">GitBook</a>. <a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><h3>Filecoin Virtual Machine</h3></td><td>The Filecoin Virtual Machine is here, allowing developers to build applications and smart-contracts that utilize the Filecoin storage network! Find out how you can leverage the worlds fastest growing storage network</td><td></td><td><a href="smart-contracts/fundamentals/">fundamentals</a></td><td><a href=".gitbook/assets/home-fvm-logo-colour.png">home-fvm-logo-colour.png</a></td></tr><tr><td><h3>Looking For Lotus?</h3></td><td>Lotus is the reference implementation of the Filecoin protocol, developed and maintained by Protocol Labs. It allows users to participate in the Filecoin network, by enabling them to earn the FIL token, provide storage, and retrieve stored files.</td><td></td><td><a href="https://lotus.filecoin.io">https://lotus.filecoin.io</a></td><td><a href=".gitbook/assets/home-lotus-logo-colour.png">home-lotus-logo-colour.png</a></td></tr></tbody></table>
+## Contributing
 
-## Choose your own adventure
+Want to help out? Pull requests (PRs) are always welcome! If you want to help out but aren't sure where to start, check out the [issues board](https://github.com/filecoin-project/filecoin-docs/issues).
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h3><span data-gb-custom-inline data-tag="emoji" data-code="1f4a1">💡</span> Learn the basics</h3></td><td>Want to understand the fundamental concepts of Filecoin, but aren't sure where to start? The Basics section is the perfect place to begin your journey!</td><td></td><td><a href="basics/what-is-filecoin/">what-is-filecoin</a></td></tr><tr><td><h3><span data-gb-custom-inline data-tag="emoji" data-code="1f527">🔧</span> Build with Filecoin</h3></td><td>Eager to build on top of the Filecoin network but aren't sure how to begin? Head over to the Developers section to find examples and guides to help build your project!</td><td></td><td><a href="smart-contracts/fundamentals/the-fvm.md">the-fvm.md</a></td></tr><tr><td><h3><span data-gb-custom-inline data-tag="emoji" data-code="1f3d7">🏗</span> Become a provider</h3></td><td>Starting up a provider node on the Filecoin network can be a daunting task. Head over to the Provider section to find out everything you need to know.</td><td></td><td><a href="./storage-providers/basics/README.md">Broken link</a></td></tr><tr><td><h3><span data-gb-custom-inline data-tag="emoji" data-code="1f4ca">📊</span> Store data</h3></td><td>Want to store large amount of data on the Filecoin network? There are plenty of storage options that you can choose from! Check out the Store section for more information!</td><td></td><td><a href="basics/what-is-filecoin/storage-model.md">storage-model.md</a></td></tr></tbody></table>
+## Issues 
+
+Found a problem with the Filecoin docs site? [Please raise an issue](https://github.com/filecoin-project/filecoin-docs/issues/new). Be as specific and descriptive as possible; screenshots help!
+
+### Priority
+
+We use `p` tags to define the priority of an issue. The priority is defined by the docs team using the following definitions:
+
+| Label | Impact | Due date | Example |
+| ----- | ------ | -------- | ------- |
+| P0 | Severely business-impacting | Same day. Drop everything and fix it immediately. | The website is down. |
+| P1 | Business-impacting. | Within three days. | The API endpoint for a project is about to change. |
+| P2 | Planned project request. | Within two weeks. | A new method will soon be added to a project API. |
+| P3 | Suggestion or conceptual update. | No due date. | A blog post discussing the benefits of decentralization for web developers. |
+| P4 | Deprioritized suggestions. These will not be addressed unless significant activity or community requests are received. | No due date. | Translate the docs into Klingon. |
+
+## License
+
+Dual-licensed: MIT, Apache Software License v2, by way of the [Permissive License Stack](https://protocol.ai/blog/announcing-the-permissive-license-stack/).
+
+[license-shield]: https://img.shields.io/badge/license-MIT-blueviolet
+[license-url]: https://protocol.ai/blog/announcing-the-permissive-license-stack/
+[website-status]: https://img.shields.io/website.svg?url=https%3A%2F%2Fdocs.filecoin.io
+[website-status-url]: https://docs.filecoin.io/

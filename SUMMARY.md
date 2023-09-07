@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome to Filecoin Docs](README.md)
+* [Welcome to Filecoin Docs](WELCOME.md)
 
 ## Basics
 
