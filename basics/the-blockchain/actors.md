@@ -7,7 +7,7 @@ description: >-
 
 # Actors
 
-For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](broken-reference). In the Filecoin network, there are two types of actors:
+For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](../../smart-contracts/fundamentals/README.md). In the Filecoin network, there are two types of actors:
 
 * [_Built-in actors_](actors.md#built-in-actors): Hardcoded programs written ahead of time by network engineers that manage and orchestrate key subprocesses and subsystems in the Filecoin network.
 * [_User actors_](actors.md#user-actors-smart-contracts): Code implemented by **any developer** that interacts with the Filecoin Virtual Machine (FVM).

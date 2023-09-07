@@ -12,7 +12,7 @@ description: >-
 
 ## Filfox
 
-[calibration.filfox.info](https://calibration/filfox.info)
+[calibration.filfox.info](https://calibration.filfox.info)
 
 ## Filscan
 

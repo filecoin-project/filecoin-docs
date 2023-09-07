@@ -15,7 +15,7 @@ Data preparation, which includes packaging files into size appropriate CAR files
 Data preparation can be done in various ways, depending on your use-case. Here are some valuable sources of information:
 
 * The [data-prep-tools repo](https://github.com/filecoin-project/data-prep-tools) has a set of CLI tools for more specific use-cases.
-* [Singularity](https://github.com/tech-greedy/singularity) is a command-line tool to put data into CAR files, create [CIDs](../../reference/general/glossary/#content-identifier-cid), and even initiate deals with storage providers.
+* [Singularity](https://github.com/tech-greedy/singularity) is a command-line tool to put data into CAR files, create [CIDs](../../reference/general/glossary.md), and even initiate deals with storage providers.
 
 See the following video for a demonstration on Singularity:
 
