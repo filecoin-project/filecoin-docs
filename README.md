@@ -1,6 +1,6 @@
 [![MIT License][license-shield]][license-url]
 [![Website status][website-status]][website-status-url]
-![Link Checker Passed](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml/badge.svg)
+[![Link Checker Passed](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml/badge.svg)](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml)
 
 <br>
 
