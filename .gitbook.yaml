@@ -1,7 +1,7 @@
 root: ./
 
 structure:
-  readme: README.md
+  readme: welcome-to-filecoin.md
   summary: SUMMARY.md
 
 redirects:
