@@ -7,7 +7,7 @@ description: >-
 
 # Get test tokens
 
-A faucet is available at [faucet.spacenet.ipc.space](https://faucet.spacenet.ipc.space) for developers to get test Filecoin (tFIL) on the Spacenet testnet. The faucet has the following restrictions:
+A faucet is available at `faucet.spacenet.ipc.space` for developers to get test Filecoin (tFIL) on the Spacenet testnet. The faucet has the following restrictions:
 
 * The per-request allowance given by the faucet is 10 tFIL.
 * There is a daily maximum of 20 tFIL per address.
