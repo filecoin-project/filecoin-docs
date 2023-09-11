@@ -27,7 +27,6 @@
   * [Transfer FIL](basics/assets/transfer-fil.md)
 * [Interplanetary consensus](basics/interplanetary-consensus/README.md)
   * [Hierarchical consensus](basics/interplanetary-consensus/hierarchical-consensus.md)
-  * [IPC agent](basics/interplanetary-consensus/ipc-agent.md)
   * [Mir and Trantor](basics/interplanetary-consensus/mir-and-trantor.md)
 * [How storage works](basics/how-storage-works/README.md)
   * [Filecoin plus](basics/how-storage-works/filecoin-plus.md)

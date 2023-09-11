@@ -28,6 +28,7 @@ redirects:
   about/project/the-filecoin-project: basics/project-and-community/the-filecoin-project.md
   basics: basics/what-is-filecoin/README.md
   basics/interplanetary-consensus/overview: basics/interplanetary-consensus/README.md
+  basics/interplanetary-consensus/ipc-agent: basics/interplanetary-consensus/README.md
   basics/the-blockchain/tipsets: basics/the-blockchain/blocks-and-tipsets.md
   basics/what-is-filecoin/overview: basics/what-is-filecoin/README.md
   build: smart-contracts/fundamentals/README.md
