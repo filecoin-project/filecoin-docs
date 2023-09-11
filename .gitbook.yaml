@@ -151,7 +151,8 @@ redirects:
   networks/network-performance: networks/mainnet/network-performance.md
   networks/overview: networks/mainnet.md
   networks/overview/network-performance: networks/mainnet/network-performance.md
-  networks/spacenet/details: networks/spacenet/README.md
+  networks/spacenet: networks/deprecated-networks/README.md
+  networks/spacenet/details: networks/deprecated-networks/README.md
   nodes/implementations/overview: nodes/implementations/README.md
   nodes/node-providers: nodes/full-nodes/node-providers.md
   nodes/node-providers/ankr: nodes/full-nodes/node-providers.md

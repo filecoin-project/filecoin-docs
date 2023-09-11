@@ -26,8 +26,6 @@ IPC relies on two actors, the _IPC Subnet Actor (ISA)_ and the _IPC Gateway Acto
 
 The IGA is an actor that contains all IPC-related information and logic associated with a subnet that needs to be replicated within the subnet. The ISA is the IGA’s parent-side counterpart; that is, it is deployed to a subnet’s parent and contains all data and logic associated with the particular child subnet.
 
-The [actors](https://github.com/consensus-shipyard/ipc-actors) are currently implemented in Rust and provided as built-in WASM actors in [Spacenet](../../networks/spacenet/). We are currently working on a Solidity implementation.
-
 ### Eudico
 
 Eudico is a modularized implementation of [Lotus](../../nodes/implementations/lotus.md), itself an implementation of the Filecoin Distributed Storage Network. It is designed with the flexibility to support different use cases and, particularly relevant to IPC, the ability to load different consensus protocols.
