@@ -1,8 +1,9 @@
-[![MIT License][license-shield]][license-url]
-[![Website status][website-status]][website-status-url]
-[![Link Checker Passed](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml/badge.svg)](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml)
-
-<br>
+<div align=center>
+    
+[![MIT License](https://img.shields.io/badge/license-MIT-blueviolet?style=for-the-badge)](https://protocol.ai/blog/announcing-the-permissive-license-stack/)
+[![Website status](https://img.shields.io/website.svg?style=for-the-badge&url=https%3A%2F%2Fdocs.filecoin.io)](https://docs.filecoin.io/)
+[![Backlog](https://img.shields.io/badge/backlog-Updated-blue?style=for-the-badge)](https://github.com/orgs/filecoin-project/projects/103/views/1)
+![Link Checker](https://img.shields.io/github/actions/workflow/status/filecoin-project/filecoin-docs/check-external-links.yml?style=for-the-badge&label=External%20link%20checker)
 
 <picture align=center>
     <source media="(prefers-color-scheme: dark)" srcset="https://bafybeiaqdbd5zbl55x5vjmkwpjhqapt3ks3q4ykaclqkajhsdwyzlbz3g4.ipfs.w3s.link/Filecoin-logo-blue-white.svg">
@@ -10,10 +11,20 @@
     <img alt="The Filecoin project logo." src="https://bafybeihuk3hsy6d43dn36tqnvf6tvzleiijd5idbf2q7maw3nshnfm6wiu.ipfs.w3s.link/filecoin-logo-black-type.svg">
 </picture>
 
-<br>
-<br>
+</div>
 
-<h4 align="center"> This repository manages the documentation for the <a href="https://filecoin.io">Filecoin network</a>. The content is built and hosted by <a href="https://gitbook.com">GitBook</a>. <a href="https://docs.filecoin.io/">Explore the docs →</a></h4>
+## Table of contents
+
+- [About this repo](#about-this-repo)
+- [Contributing](#contributing)
+- [Issues](#issues)
+    - [Backlog](#backlog)
+    - [Priority](#priority)
+- [License](#license)
+
+## About this repo
+
+This repository manages the documentation for the [Filecoin network](https://filecoin.io). The content is built and hosted by [GitBook](https://github.com). View the docs site at [docs.filecoin.io](https://docs.filecoin.io).
 
 ## Contributing
 
@@ -22,6 +33,10 @@ Want to help out? Pull requests (PRs) are always welcome! If you want to help ou
 ## Issues 
 
 Found a problem with the Filecoin docs site? [Please raise an issue](https://github.com/filecoin-project/filecoin-docs/issues/new). Be as specific and descriptive as possible; screenshots help!
+
+### Backlog
+
+You can view the backlog of issues, as well as what we're working on next, [over on the project board](https://github.com/orgs/filecoin-project/projects/103/views/1)
 
 ### Priority
 
@@ -38,8 +53,3 @@ We use `p` tags to define the priority of an issue. The priority is defined by t
 ## License
 
 Dual-licensed: MIT, Apache Software License v2, by way of the [Permissive License Stack](https://protocol.ai/blog/announcing-the-permissive-license-stack/).
-
-[license-shield]: https://img.shields.io/badge/license-MIT-blueviolet
-[license-url]: https://protocol.ai/blog/announcing-the-permissive-license-stack/
-[website-status]: https://img.shields.io/website.svg?url=https%3A%2F%2Fdocs.filecoin.io
-[website-status-url]: https://docs.filecoin.io/
