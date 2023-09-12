@@ -37,10 +37,6 @@ The IPC project is split into two main components, which we briefly describe her
 * The hierarchical consensus framework, consisting of the base protocol, the actors, the ipc-agent, and the Eudico node.
 * The Trantor consensus algorithm is implemented atop the Mir framework.
 
-### Public testnet
-
-[Spacenet](../../networks/spacenet/) is an early builder testnet for Interplanetary Consensus, Mir, and Trantor. It provides high throughput and low latency with FEVM support.
-
 ### Support
 
 The [IPC Agent repository](https://github.com/consensus-shipyard/ipc-agent) features extensive documentation on how to get started with IPC. We recommend that you start your journey there.

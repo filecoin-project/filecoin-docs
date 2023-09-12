@@ -27,7 +27,6 @@
   * [Transfer FIL](basics/assets/transfer-fil.md)
 * [Interplanetary consensus](basics/interplanetary-consensus/README.md)
   * [Hierarchical consensus](basics/interplanetary-consensus/hierarchical-consensus.md)
-  * [IPC agent](basics/interplanetary-consensus/ipc-agent.md)
   * [Mir and Trantor](basics/interplanetary-consensus/mir-and-trantor.md)
 * [How storage works](basics/how-storage-works/README.md)
   * [Filecoin plus](basics/how-storage-works/filecoin-plus.md)
@@ -137,11 +136,9 @@
 * [Calibration](networks/calibration/README.md)
   * [Explorers](networks/calibration/explorers.md)
   * [RPCs](networks/calibration/rpcs.md)
-* [Spacenet](networks/spacenet/README.md)
-  * [RPCs](networks/spacenet/rpcs.md)
-  * [Get test tokens](networks/spacenet/get-test-tokens.md)
 * [Local testnet](networks/local-testnet/README.md)
   * [Get test tokens](networks/local-testnet/get-test-tokens.md)
+* [Deprecated networks](networks/deprecated-networks/README.md)
 
 ## Reference
 

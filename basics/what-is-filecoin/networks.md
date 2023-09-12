@@ -21,11 +21,3 @@ Test networks, or testnets, are version of the Filecoin network that attempt to 
 * [Public endpoint](https://api.calibration.node.glif.io/rpc/v0)
 * [Blockchain explorer](https://calibration.filscan.io/)
 * [Faucet](https://faucet.calibration.fildev.network/)
-
-### Spacenet
-
-[Spacenet](../../networks/spacenet/) is a Filecoin testnet that’s been modified to support Interplanetary Consensus (IPC). It aims to provide developers with a testbed to deploy their FVM use cases and innovate with new Web3 applications that leverage IPC subnets and the high-performance consensus provided by the Mir framework and the Trantor BFT consensus protocol.
-
-* [Details](../../networks/spacenet/)
-* [Public endpoint](../../networks/spacenet/rpcs.md)
-* [Faucet](../../networks/spacenet/get-test-tokens.md)
