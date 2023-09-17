@@ -175,6 +175,7 @@ redirects:
   smart-contracts/advanced/wfil: smart-contracts/advanced/wrapped-fil.md
   smart-contracts/developing-contracts: smart-contracts/developing-contracts/best-practices.md
   smart-contracts/filecoin-evm-runtime: smart-contracts/filecoin-evm-runtime/actor-types.md
+  smart-contracts/filforwarder: basics/assets/transfer-fil.md
   smart-contracts/fundamentals: smart-contracts/fundamentals/the-fvm.md
   smart-contracts/fundamentals/overview: nodes/implementations/README.md
   smart-contracts/wallets/fil-to-zero-x: basics/assets/transfer-fil.md
