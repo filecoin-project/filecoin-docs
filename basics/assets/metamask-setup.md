@@ -107,12 +107,20 @@ Before you can connect MetaMask to your Ledger, you must install the Filecoin Le
 1. In **My Ledger**, head over to **App catalog** and search for **Filecoin**.
 1. Click **Install**.
 
+For more details on the official Filecoin Ledger app, [check out the Ledger documentation](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true). 
+
 ### Enable expert-mode
 
 MetaMask requires that the Filecoin app on your Ledger device is set to _Expert mode_.
 
 1. Open the Filecoin app on your Ledger device.
+
+    ![A Ledger with the Filecoin app open.](../../.gitbook/assets/basics-assets-metamask-ledger-1-filecoin-app.jpg)
+
 1. Use the buttons on your device to navigate to **Expert mode**.
+
+    ![A Ledger showing the expert mode option.](../../.gitbook/assets/basics-assets-metamask-ledger-2-expert-mode.jpg)
+
 1. Press both buttons simultaneously to _enable_ **Expert mode**.
 
 ### Connect to MetaMask
@@ -121,8 +129,21 @@ Once you have installed the Filecoin app on your Ledger device and enabled exper
 
 1. Open your browser and open the MetaMask extension.
 1. In the **Accounts** menu, select **Add hardware wallet**.
+
+    ![MetaMask with the 'Add hardware wallet' option highlighted.](../../.gitbook/assets/basics-assets-metamask-ledger-3-add-hw-wallet.jpg)
+
 1. Select **Ledger** 
+
+    ![MetaMask showing the available hardware wallet options.](../../.gitbook/assets/basics-assets-metamask-ledger-4-select-ledger.jpg)
+
 1. A list of accounts should appear. Select an `0x...` account.
+
+    ![MetaMask showing multiple accounts from a Ledger device.](../../.gitbook/assets/basics-assets-metamask-ledger-5-select-account.jpg)
+
 1. Done!
 
 That's it! You've now successfully connected your Ledger device to MetaMask. When you submit any transactions through MetaMask using this account, the Filecoin Ledger app will prompt you for a confirmation on the Ledger device.
+
+You may see a _blind signing_ warning on your MetaMask device. This is expected, and is the reason why **Expert Mode** must be enabled before you can interact with the Filecoin Ledger app.
+
+![A Ledger device showing a blind signing warning.](../../.gitbook/assets/basics-assets-metamask-ledger-7-blind-signing.jpg)
