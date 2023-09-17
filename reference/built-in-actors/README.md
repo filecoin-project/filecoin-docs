@@ -1,7 +1,7 @@
 ---
 description: >-
   Built-in actors are how the Filecoin network manages and updates global state.
-  This page contains information on how to smart contracts can access built-in
+  This page contains information on how smart contracts can access built-in
   actors.
 ---
 
@@ -27,7 +27,7 @@ Each block in the Filecoin chain contains:
 
 ## State tree
 
-A Merkle Directed Acyclic Graph (Merkle DAG) is used map the state tree. and the set of messages. Nodes in the state tree contain information on:
+A Merkle Directed Acyclic Graph (Merkle DAG) is used to map the state tree. and the set of messages. Nodes in the state tree contain information on:
 
 * Actors, like FIL balance, nonce and a pointer (CID) to actor state data.
 * Messages in the current block
