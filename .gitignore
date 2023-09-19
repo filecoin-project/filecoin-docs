@@ -1,7 +1,11 @@
-node_modules
-public
-resources
-.netlify
-.hugo_build.lock
+# OS generated files #
+######################
 .DS_Store
-TODO
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+:Zone.Identifier
+**/:Zone.Identifier
