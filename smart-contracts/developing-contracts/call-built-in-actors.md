@@ -55,8 +55,6 @@ To invoke built-in actor methods using `filecoin.sol`, follow these steps:
 
 The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and Verified Registry actor methods are supported and are listed below. **Cron, Payment Channel, Reward and System actor methods are currently not supported.**
 
-[procedure](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/#import-filecoinsol)
-
 #### **Account**
 
 | Method                | Supported? |
