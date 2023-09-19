@@ -12,11 +12,18 @@ description: >-
 MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask uses the `t4` [address type](../filecoin-evm-runtime/address-types.md), which allows developers to create and manage Solidity contracts easily. Follow the [MetaMask setup guide](../../basics/assets/metamask-setup.md) if you havn’t set up an address in your MetaMask wallet yet.
 
 1. In your browser, open MetaMask and copy your address to your clipboard.
-2. Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Faucet** from the menu.
-3. Paste your address into the address field, complete the **I am human** CAPTCHA, and then click **Send.**
-4. The faucet should give you a link to the transaction.
-5. The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5 `tFIL` transferred to your address.
-6. Open MetaMask to confirm that you received the `tFIL`.
+2. Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Send Funds**.
+3. Paste your address into the address field and click **Send funds**:
+
+    ![The Calibration faucet website.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-send-funds.png)
+
+4. The webpage will give you a transaction ID:
+
+    ![A transaction ID returned by the Calibration faucet.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-id-returned.png)
+
+5. You can copy this ID into a block explorer to track the progress of your transaction:
+
+    ![A block explorer showing a pending transaction on the Calibration testnet.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-block-explorer.png)
 
 That’s all there is to it! Getting `tFil` is easy!
 
@@ -26,25 +33,26 @@ Before we begin, you must have a local testnet running. Follow the [Run a local 
 
 1. Change directory to where you created the `lotus` and `lotus-miner` binaries. If you followed the [Run a local network guide](https://docs.filecoin.io/networks/local-testnet/set-up/) these binaries will be in `~/lotus-devnet`:
 
-```
+```shell
 cd ~/lotus-devnet
 ```
 
 2. View the wallets available on this node with `lotus wallet list`:
 
-```
+```shell
 ./lotus wallet list
 ```
 
 3. Create the send request with `lotus send`, supplying the pre-mined `t3q4o...` address as the `--from` address, the new `t1snl...` address as the receiving address, and the amount of FIL we want to send:
 
-```
+```shell
+./lotus wallet list
 ./lotus send --from <PRE-MINED ADDRESS> <TO ADDRESS> <VALUE>
 ```
 
 For example:
 
-```
+```shell
 ./lotus send --from t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq 2000
 ```
 
@@ -56,7 +64,7 @@ For example:
 
 For example:
 
-```
+```shell
 ./lotus wallet balance t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq
 ```
 
