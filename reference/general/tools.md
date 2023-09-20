@@ -12,13 +12,13 @@ These infrastructure libraries and tools exist to speed up the development of so
 
 #### Filecoin signing tools
 
-The [Filecoin signing tools](https://github.com/Zondax/filecoin-signing-tools) provide basic functionality for signing Filecoin transactions in pure JavaScript, WASM and Rust. Currently, the Rust and WASM implementations support:
+The [Filecoin signing tools](../general/README.md) provide basic functionality for signing Filecoin transactions in pure JavaScript, WASM and Rust. Currently, the Rust and WASM implementations support:
 
 * Secp256k1
 * BLS
 * CBOR-JSON serialization of transactions
 
-Support for multisignature transaction signing is currently in progress, and the pure JavaScript implementation is less complete than the Rust and WASM implementations. Learn more in the [official documentation](https://docs.zondax.ch/filecoin-signing-tools/).
+Support for multisignature transaction signing is currently in progress, and the pure JavaScript implementation is less complete than the Rust and WASM implementations.
 
 #### Filecoin addresses
 

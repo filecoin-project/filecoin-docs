@@ -26,7 +26,6 @@ The Protocol _JSON-RPC_ API:
 
 The Zondax _filecoin.sol_ API:
 
-* Is maintained by [Zondax](https://docs.zondax.ch/).
 * Supports [_some but not all_ of the built-in actors and their methods](call-built-in-actors.md#available-actors-and-methods).
 
 ## Protocol API
@@ -221,9 +220,13 @@ The `filecoin.sol` library is embeddable into your smart contract, which means i
 1. Install [yarn](https://yarnpkg.com/) if you don’t have it installed.
 2. Install `filecoin.sol`:
 
-```
+```shell
 yarn add @zondax/filecoin.sol
 ```
+
+{% hint style="info" %}
+Until mid-2023, Zondax was the legacy maintainer of Filecoin.sol. Protocol Labs took over the project, and are in the process of moving NPM packages over to the `protocollabs` NPM account.
+{% endhint %}
 
 #### **Import filecoin.sol manually**
 
