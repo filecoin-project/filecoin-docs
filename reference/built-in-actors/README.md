@@ -115,11 +115,7 @@ For more information on `SystemActor`, see the [source code](https://github.com/
 
 ## Access and invoke built-in actors
 
-Developers can access and invoke built-in actors the _Protocol API_ or the Zondax _filecoin.solidity_ API
-
-The Filecoin Solidity project is [currently in beta](https://docs.zondax.ch/fevm/filecoin-solidity#disclaimer-%EF%B8%8F%EF%B8%8F).
-
 * _Protocol API_, maintained by [Protocol Labs](https://protocol.ai/), …
-* _Filecoin.solidity_, maintained by [Zondax](https://docs.zondax.ch/), is a set of libraries that allows Solidity smart contracts to seamlessly call built-in actors methods. **Not all built-in actors and methods are supported** - for a complete list, see the [actors and methods supported](https://docs.zondax.ch/fevm/filecoin-solidity/api/#actors-and-methods-supported). For further information, including information on how to use the package, see the [official documentation](https://docs.zondax.ch/fevm/filecoin-solidity/) and the [GitHub repository](https://github.com/filecoin-project/filecoin-solidity).
+* _Filecoin.solidity_, maintained by [Protocol Labs](https://protocol.ai/), is a set of libraries that allows Solidity smart contracts to seamlessly call built-in actors methods. **Not all built-in actors and methods are supported** - for a complete list, see the [actors and methods supported](../built-in-actors/filecoin.sol.md).
 
 For information on how invoke and access built-in actors in your smart contracts, see the [developers guide](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/).

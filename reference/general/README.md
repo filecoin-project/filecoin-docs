@@ -105,8 +105,7 @@ Developer tools, API clients & storage services that developers can use to build
 
 ### Message signing tools
 
-* [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
-  * Also available on npm at [`@zondax/filecoin-signing-tools`](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
+* [Filecoin Signing Tools](../built-in-actors/README.md) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
   * For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on GitHub.
 * [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - \[_last update: June 2021_] pure TS / JS library for creating signed messages and interacting with Filecoin’s built-in Actors (like Payment Channel and Multisig), used by the [Filecoin Loans grant project](https://github.com/blitslabs/filecoin.loans-monorepo).
   * On npm at [`@blitslabs/filecoin-js-signer`](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)

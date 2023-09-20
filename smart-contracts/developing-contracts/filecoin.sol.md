@@ -26,6 +26,10 @@ Run the following command in your Solidity project, which is created using any s
 npm install @zondax/filecoin-solidity
 ```
 
+{% hint style="info" %}
+Until mid-2023, Zondax was the legacy maintainer of Filecoin.sol. Protocol Labs took over the project, and are in the process of moving NPM packages over to the `protocollabs` NPM account.
+{% endhint %}
+
 ## Usage
 
 Once installed, you can call built-in actors in the library after importing them into your smart contract.
@@ -44,7 +48,7 @@ contract MyFilecoinContract {
 }
 ```
 
-You can find the list of supported built-in actors and methods in [Zondax’s Filecoin.Sol documentation](https://docs.zondax.ch/fevm/filecoin-solidity/api/). You can access certain Filecoin-related features through these actors:
+You can find the list of supported built-in actors and methods in the [Filecoin.sol documentation](../../reference/built-in-actors/filecoin.sol.md). You can access certain Filecoin-related features through these actors:
 
 * `AccountAPI.sol`: validates signatures from an address.
 * `MinerAPI.sol`: manages storage provider operation.
@@ -104,6 +108,5 @@ contract StorageDealQuery {
 Check out these links to learn more about the Filecoin.sol library.
 
 * [Filecoin-Solidity GitHub](https://github.com/filecoin-project/filecoin-solidity)
-* [Zondax Documentation](https://docs.zondax.ch/fevm/filecoin-solidity/)
-* [Built-In Actor APIs](https://docs.zondax.ch/fevm/filecoin-solidity/api/)
+* [Built-In Actor APIs](../../reference/built-in-actors/filecoin.sol.md)
 * [FEVM-Hardhat-K](https://github.com/filecoin-project/FEVM-Hardhat-Kit/)
