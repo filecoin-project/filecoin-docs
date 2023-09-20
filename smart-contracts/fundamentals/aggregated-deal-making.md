@@ -51,7 +51,7 @@ Here is the process for on-chain aggregation:
 1. Clients can query the aggregation smart contract, which notifies the aggregator to look up the sub-piece CID (pCID) in its aggregation node's database and return the PoDSI proof, aggregated CID, and associated deal ID.
 1. Simultaneously, clients can use the sub-piece pCID for on-chain verification with the aggregation smart contract, which will verify the Merkle proof to ensure the pCID hash matches the commPa of the associated deal ID.
 
-![Flowchart showing the on-chain deal-aggregation process.](../../.gitbook/assets/smart-contracts-fundamentals-aggregated-deal-on-chain.png)
+![Flowchart showing the on-chain deal-aggregation process.](../../.gitbook/assets/smart-contracts-fundamentals-aggregated-deal-making-on-chain.png)
 
 For uploading sub-piece data for off-chain aggregation with an SDK, check out one of the implementations at [Lighthouse.storage](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/functions/upload).
 
@@ -71,4 +71,4 @@ Here is the process for off-chain aggregation:
 1. Clients can query a proofing endpoint provided by the aggregator (example [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/section-a), which will look up the sub-piece CID (pCID) in the database and return the PoDSI proof, aggregated CID, and associated deal ID.
 1. Clients can use the sub-piece pCID for on-chain verification with the aggregation smart contract, which will verify the Merkle proof to ensure the pCID hash matches the commPa of the associated deal ID.
 
-![Flowchart showing the off-chain deal-aggregation process.](../../.gitbook/assets/smart-contracts-fundamentals-aggregated-deal-off-chain.png)
+![Flowchart showing the off-chain deal-aggregation process.](../../.gitbook/assets/smart-contracts-fundamentals-aggregated-deal-making-off-chain.png)
