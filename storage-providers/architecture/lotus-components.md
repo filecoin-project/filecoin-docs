@@ -106,9 +106,9 @@ As mentioned above, proving tasks can be assigned to dedicated workers, and work
 
 ### Boost <a href="#boost" id="boost"></a>
 
-[Boost](https://boost.filecoin.io/) is the market component for storage providers to interact with clients. Boost is made of several components (such as boostd, boostd-data, yugabytedb, booster-http etc.). It works as a deal-taking engine (from deals made by clients or other tools), and serves data retrievals to clients who request a copy of the data.
+[Boost](https://boost.filecoin.io/) is the market component for storage providers to interact with clients. Boost is made of several components (such as boostd, boostd-data, yugabytedb, booster-http etc.). It works as a deal-taking engine (from deals made by clients or other tools), and serves data retrievals to clients who request a copy of the data over graphsync, bitswap or http.
 
-Boost has become a critical component in the software stack of a storage provider and it is therefore necessecary to read the Boost documentation carefully.
+Boost has become a critical component in the software stack of a storage provider and it is therefore necessary to read the Boost documentation carefully.
 
 ### Helpful commands <a href="#helpful-commands" id="helpful-commands"></a>
 
