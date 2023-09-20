@@ -32,7 +32,7 @@ The proof consists of two inclusion proofs:
 - An inclusion proof of a sub-tree corresponding to the tree of the client’s data. Optionally, this sub-tree can be misaligned with the proving tree.
 - An inclusion proof of the double leaf data segment descriptor within the data segment index.
 
-A sample [proof is available at lighthouse.storage](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/podsi-a-simple-overview).
+A sample [proof is available at lighthouse.storage](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/section-a).
 
 For further technical discussion, see the [Filecoin Improvement Proposal 512](https://github.com/filecoin-project/FIPs/discussions/512).
 
@@ -68,7 +68,7 @@ Here is the process for off-chain aggregation:
 1. Simultaneously, the aggregator aggregates indexed data segments (based on specs [here](https://github.com/filecoin-project/FIPs/discussions/512)). It runs the PoDSI proofing library and generates proofs for each sub-piece pCID, storing them in an off-chain database.
 1. The aggregator uses the [Boost API](https://boost.filecoin.io/experimental-features/fvm-contract-deals) (programmatic) or uses Lotus node (manual) to make storage deals with storage providers for the aggregated larger CAR file.
 1. Storage Providers download the aggregated CAR file and publish storage deals.
-1. Clients can query a proofing endpoint provided by the aggregator (example [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/podsi-and-deal-info), which will look up the sub-piece CID (pCID) in the database and return the PoDSI proof, aggregated CID, and associated deal ID.
+1. Clients can query a proofing endpoint provided by the aggregator (example [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/section-a), which will look up the sub-piece CID (pCID) in the database and return the PoDSI proof, aggregated CID, and associated deal ID.
 1. Clients can use the sub-piece pCID for on-chain verification with the aggregation smart contract, which will verify the Merkle proof to ensure the pCID hash matches the commPa of the associated deal ID.
 
 ![Flowchart showing the off-chain deal-aggregation process.](../../.gitbook/assets/smart-contracts-fundamentals-aggregated-deal-off-chain.png)
