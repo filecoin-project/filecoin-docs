@@ -54,4 +54,4 @@ The following guide walks you through the process of contract verification using
     1. Enter the address of the contract in the [Filfox search bar](https://filfox.info/).
     2.  Scroll down the contract page and select the **Contract** tab.
 
-        A **Contract Source Code Verified** banner is displayed, along with contract information and source code. You can also [view other verified contracts on Filfox](https://filfox.info/en/stats/verified-contracts).
+        A **Contract Source Code Verified** banner is displayed, along with contract information and source code.
