@@ -5,7 +5,7 @@ description: Public RPC endpoints are available for the Filecoin mainnet.
 # RPCs
 
 {% hint style="info" %}
-[Chainlist](https://chainlist.org/chain/314159) contains a dynamically updated list of available RPCs along with stats like current block-height and latency. [Find out more at chainlist.org](https://chainlist.org/chain/314159)
+[ChainID.network](https://chainid.network) contains a dynamically updated list of available RPCs along with stats like current block-height and latency. [Find out more at chainid.network](https://chainid.network).
 {% endhint %}
 
 ## [Ankr](https://ankr.com)
