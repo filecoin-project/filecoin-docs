@@ -24,14 +24,7 @@ To build the lite-node, you’ll need some specific software. Run the following 
 2. Install the following dependencies:
 
     ```sh
-    brew install go bzr jq pkg-config hwloc coreutils
-    ```
-
-3.  Install Rust and source the `~/.cargo/env` config file:
-
-    ```sh
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    source "$HOME/.cargo/env"
+    brew install go bzr jq pkg-config hwloc coreutils rust
     ```
 
 {% endtab %}
