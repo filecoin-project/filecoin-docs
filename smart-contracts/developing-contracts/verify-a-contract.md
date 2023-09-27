@@ -26,9 +26,9 @@ The following guide walks you through the process of contract verification using
 
 ### Procedure
 
-1. Open Remix.
+1. Open Remix:
 
-            ![remix image.](../../.gitbook/assets/remix.webp)
+![](../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-remix.jpg)
 
 2. In the **File Explorer** sidebar tab, under **contracts**, right click on the contract you want to verify.
 3.  From the menu, select **generate UML** to flatten the `<contract-name>.sol` file and ensure that all components and tasks are included.
@@ -48,28 +48,26 @@ The following guide walks you through the process of contract verification using
     * The license type
     * The compiler version
 
-            ![filfox image.](../../.gitbook/assets/filfox.webp)
+![](../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-filfox.jpg)
 
 11. Click **Continue**.
 12. Click \*_Select .sol files_.
 13. Select your flattened `.sol` file.
 14. Click **Verify and Publish**.
 
-            ![verify and publish.](../../.gitbook/assets/verify and publish.webp)
+![](../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-verify-and -publish.jpg)
 
     Success! Your contract is now verified.
 
-            ![contract verified.](../../.gitbook/assets/success.webp)
+![](../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-success.jpg)
 
 15. To view your verified contract:
     1. Enter the address of the contract in the [Filfox search bar](https://filfox.info/).
 
-            ![filfox search bar.](.gitbook/assets/contract tab.webp)
+![](.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-contract-tab.jpg)
 
     2.  Scroll down the contract page and select the **Contract** tab.
 
-            ![contract tab.](../../.gitbook/assets/contract tab.webp)
-
         A **Contract Source Code Verified** banner is displayed, along with contract information and source code. You can also [view other verified contracts on Filfox](https://filfox.info/en/stats/verified-contracts).
 
-            ![verified Contract List.](../../.gitbook/assets/verified contract list.webp)
+![](../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-verified-contract-list.jpg)
