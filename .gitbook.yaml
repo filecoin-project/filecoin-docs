@@ -395,5 +395,5 @@ redirects:
   store/starling: basics/what-is-filecoin.md
   store/tools/estuary: reference/general.md
   store/tools/starling: basics/project-and-community/filecoin-faqs.md
-  uild/examples/sample-architectures: storage-providers/infrastructure/reference-architectures.md
-  uild/lotus/api-token-generation: reference/built-in-actors/protocol-api.md
+  build/examples/sample-architectures: storage-providers/infrastructure/reference-architectures.md
+  build/lotus/api-token-generation: reference/built-in-actors/protocol-api.md
