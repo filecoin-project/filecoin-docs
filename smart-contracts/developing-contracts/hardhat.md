@@ -26,7 +26,7 @@ First, we need to grab the starter kit and install the dependencies.
 
 1. Clone the Hardhat starter kit and move into the new `fevm-hardhat-kit` directory:
 
-```
+```shell
 git clone https://github.com/filecoin-project/fevm-hardhat-kit.git
 cd fevm-hardhat-kit
 
@@ -39,7 +39,7 @@ cd fevm-hardhat-kit
 
 2. Use Yarn to install the project’s dependencies:
 
-```
+```shell
 yarn install
 
 # [1/4] 🔍  Resolving packages...
@@ -51,19 +51,19 @@ yarn install
 # ✨  Done in 16.34s.
 ```
 
-3. Create an environment variable for your private key. Each wallet has a different process for exporting your private key - check your wallet’s official documentation.
+3. Add your private key to the `.env` file:
 
-```sh
-export PRIVATE_KEY='<YOUR PRIVATE KEY>'
-
-# For example
-# export PRIVATE_KEY='d52cd65a5746ae71cf3d07a8cf392ca29d7acb96deba7d94b19a9cf3c9f63022'
+```shell
+PRIVATE_KEY= <YOUR PRIVATE KEY>
 ```
 
-4. Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to source control like GitHub. Anyone with access to your private key has complete control over your funds.
-5. Get the addresses associated with the private key from Hardhat:
+{% hint style="info" %}
+Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git. Remember: anyone with access to your private key has complete control over your funds.
+{% endhint %}
 
-```sh
+4. Get the addresses associated with the private key from Hardhat:
+
+```shell
 yarn hardhat get-address
 
 # Ethereum address (this addresss should work for most tools): 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
@@ -84,7 +84,7 @@ Make sure that your account has funds. You won’t be able to deploy any contrac
 
 1. Run `hardhat deploy` to deploy all the contracts. This can take a few minutes:
 
-```sh
+```shell
 yarn hardhat deploy
 
 # Compiled 18 Solidity files successfully
@@ -98,7 +98,7 @@ yarn hardhat deploy
 
 2. Interact with the contracts using the available functions within the `tasks` folder. For example, you can get the balance of the `simple-coin` contract by calling the `get-balance` function:
 
-```sh
+```shell
 yarn hardhat get-balance --contract '0xA855520fcCB6422976F7Ac78534edec2379Be5f6' --account '0x11Fc070e5c0D32024c9B63c136913405e07C8c48'
 
 # Reading SimpleCoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 on network calibration
