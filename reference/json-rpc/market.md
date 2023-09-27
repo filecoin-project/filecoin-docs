@@ -8,17 +8,11 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "f01234",
-  "0"
-]
+["f01234", "f01234", "0"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -34,11 +28,8 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response: `"0"`
@@ -51,12 +42,8 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "0"
-]
+["f01234", "0"]
 ```
 
 Response: `{}`
@@ -69,17 +56,11 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "f01234",
-  "0"
-]
+["f01234", "f01234", "0"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -95,17 +76,11 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "f01234",
-  "0"
-]
+["f01234", "f01234", "0"]
 ```
 
 Response:
-
 
 ```json
 {

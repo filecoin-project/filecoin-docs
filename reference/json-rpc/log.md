@@ -8,7 +8,6 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 [
   {
@@ -39,11 +38,8 @@ Inputs: `null`
 
 Response:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 ## LogSetLevel
@@ -52,10 +48,8 @@ Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "string value",
-  "string value"
-]
+["string value", "string value"]
 ```
+
+Response: `{}`

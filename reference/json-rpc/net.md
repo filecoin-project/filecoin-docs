@@ -8,7 +8,6 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 {
   "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
@@ -24,11 +23,8 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response: `"string value"`
@@ -41,11 +37,10 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 {
   "Reachability": 1,
-  "PublicAddr": "string value"
+  "PublicAddrs": ["string value"]
 }
 ```
 
@@ -56,7 +51,6 @@ Perms: read
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -74,7 +68,6 @@ Perms: read
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -95,7 +88,6 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 {
   "/fil/hello/1.0.0": {
@@ -113,19 +105,12 @@ Perms: admin
 
 Inputs:
 
-
 ```json
 [
   {
-    "Peers": [
-      "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-    ],
-    "IPAddrs": [
-      "string value"
-    ],
-    "IPSubnets": [
-      "string value"
-    ]
+    "Peers": ["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"],
+    "IPAddrs": ["string value"],
+    "IPSubnets": ["string value"]
   }
 ]
 ```
@@ -140,18 +125,11 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 {
-  "Peers": [
-    "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-  ],
-  "IPAddrs": [
-    "string value"
-  ],
-  "IPSubnets": [
-    "string value"
-  ]
+  "Peers": ["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"],
+  "IPAddrs": ["string value"],
+  "IPSubnets": ["string value"]
 }
 ```
 
@@ -161,19 +139,12 @@ Perms: admin
 
 Inputs:
 
-
 ```json
 [
   {
-    "Peers": [
-      "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-    ],
-    "IPAddrs": [
-      "string value"
-    ],
-    "IPSubnets": [
-      "string value"
-    ]
+    "Peers": ["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"],
+    "IPAddrs": ["string value"],
+    "IPSubnets": ["string value"]
   }
 ]
 ```
@@ -185,7 +156,6 @@ Response: `{}`
 Perms: write
 
 Inputs:
-
 
 ```json
 [
@@ -206,11 +176,8 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response: `1`
@@ -221,11 +188,8 @@ Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response: `{}`
@@ -236,15 +200,11 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -261,15 +221,11 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -284,32 +240,32 @@ Response:
 }
 ```
 
+## NetListening
+
+Perms: read
+
+Inputs: `null`
+
+Response: `true`
+
 ## NetPeerInfo
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response:
-
 
 ```json
 {
   "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
   "Agent": "string value",
-  "Addrs": [
-    "string value"
-  ],
-  "Protocols": [
-    "string value"
-  ],
+  "Addrs": ["string value"],
+  "Protocols": ["string value"],
   "ConnMgrMeta": {
     "FirstSeen": "0001-01-01T00:00:00Z",
     "Value": 123,
@@ -331,7 +287,6 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 [
   {
@@ -349,11 +304,8 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response: `60000000000`
@@ -364,13 +316,8 @@ Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  [
-    "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-  ]
-]
+[["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]]
 ```
 
 Response: `{}`
@@ -383,11 +330,8 @@ Inputs: `null`
 
 Response:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 ## NetProtectRemove
@@ -396,13 +340,8 @@ Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  [
-    "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-  ]
-]
+[["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]]
 ```
 
 Response: `{}`
@@ -414,7 +353,6 @@ Perms: read
 Inputs: `null`
 
 Response:
-
 
 ```json
 [
@@ -444,7 +382,6 @@ Perms: admin
 
 Inputs:
 
-
 ```json
 [
   "string value",
@@ -469,15 +406,11 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -529,3 +462,11 @@ Response:
   }
 }
 ```
+
+## NetVersion
+
+Perms: read
+
+Inputs: `null`
+
+Response: `"string value"`

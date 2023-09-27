@@ -6,13 +6,8 @@ Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  [
-    "write"
-  ]
-]
+[["write"]]
 ```
 
 Response: `"Ynl0ZSBhcnJheQ=="`
@@ -23,18 +18,12 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 Response:
 
-
 ```json
-[
-  "write"
-]
+["write"]
 ```

@@ -1,19 +1,16 @@
----
-description: >-
-  The Sync method group contains methods for interacting with and observing the
-  lotus sync service.
----
-
 # Sync
+
+The Sync method group contains methods for interacting with and
+observing the lotus sync service.
 
 ## SyncCheckBad
 
-SyncCheckBad checks if a block was marked as bad, and if it was, returns the reason.
+SyncCheckBad checks if a block was marked as bad, and if it was, returns
+the reason.
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -27,12 +24,11 @@ Response: `"string value"`
 
 ## SyncCheckpoint
 
-SyncCheckpoint marks a blocks as checkpointed, meaning that it won’t ever fork away from it.
+SyncCheckpoint marks a blocks as checkpointed, meaning that it won't ever fork away from it.
 
 Perms: admin
 
 Inputs:
-
 
 ```json
 [
@@ -51,14 +47,14 @@ Response: `{}`
 
 ## SyncIncomingBlocks
 
-SyncIncomingBlocks returns a channel streaming incoming, potentially not yet synced block headers.
+SyncIncomingBlocks returns a channel streaming incoming, potentially not
+yet synced block headers.
 
 Perms: read
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -114,12 +110,12 @@ Response:
 
 ## SyncMarkBad
 
-SyncMarkBad marks a blocks as bad, meaning that it won’t ever by synced. Use with extreme caution.
+SyncMarkBad marks a blocks as bad, meaning that it won't ever by synced.
+Use with extreme caution.
 
 Perms: admin
 
 Inputs:
-
 
 ```json
 [
@@ -140,7 +136,6 @@ Perms: read
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -170,12 +165,12 @@ Response:
 
 ## SyncSubmitBlock
 
-SyncSubmitBlock can be used to submit a newly created block to the. network through this node
+SyncSubmitBlock can be used to submit a newly created block to the.
+network through this node
 
 Perms: write
 
 Inputs:
-
 
 ```json
 [
@@ -263,7 +258,6 @@ Perms: admin
 
 Inputs:
 
-
 ```json
 [
   {
@@ -281,7 +275,6 @@ SyncValidateTipset indicates whether the provided tipset is valid or not
 Perms: read
 
 Inputs:
-
 
 ```json
 [

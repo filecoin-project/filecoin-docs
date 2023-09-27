@@ -8,11 +8,8 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response: `"0"`
@@ -35,11 +32,8 @@ Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response: `{}`
@@ -52,15 +46,11 @@ Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -77,11 +67,8 @@ Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response: `true`
@@ -93,7 +80,6 @@ WalletImport receives a KeyInfo, which includes a private key, and imports it in
 Perms: admin
 
 Inputs:
-
 
 ```json
 [
@@ -116,43 +102,36 @@ Inputs: `null`
 
 Response:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 ## WalletNew
 
-WalletNew creates a new address in the wallet with the given sigType. Available key types: bls, secp256k1, secp256k1-ledger Support for numerical types: 1 - secp256k1, 2 - BLS is deprecated
+WalletNew creates a new address in the wallet with the given sigType.
+Available key types: bls, secp256k1, secp256k1-ledger
+Support for numerical types: 1 - secp256k1, 2 - BLS is deprecated
 
 Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "bls"
-]
+["bls"]
 ```
 
 Response: `"f01234"`
 
 ## WalletSetDefault
 
-WalletSetDefault marks the given address as the default one.
+WalletSetDefault marks the given address as as the default one.
 
 Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response: `{}`
@@ -165,16 +144,11 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "Ynl0ZSBhcnJheQ=="
-]
+["f01234", "Ynl0ZSBhcnJheQ=="]
 ```
 
 Response:
-
 
 ```json
 {
@@ -190,7 +164,6 @@ WalletSignMessage signs the given message using the given address.
 Perms: sign
 
 Inputs:
-
 
 ```json
 [
@@ -214,7 +187,6 @@ Inputs:
 ```
 
 Response:
-
 
 ```json
 {
@@ -251,23 +223,20 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 Response: `"f01234"`
 
 ## WalletVerify
 
-WalletVerify takes an address, a signature, and some bytes, and indicates whether the signature is valid. The address does not have to be in the wallet.
+WalletVerify takes an address, a signature, and some bytes, and indicates whether the signature is valid.
+The address does not have to be in the wallet.
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
