@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# ---------------------
+# This script grabs the Lotus JSON-RPC API methods from github.com/filecoin-project/lotus and splits it into individual files. It also runs Prettier against each file, and reduces the header levels.
+# To run this script, install Prettier with `npm install -g prettier` and execute the file with ./create-api-docs.sh
+# ---------------------
+
 # Download the Markdown file.
 curl -o api.md https://raw.githubusercontent.com/filecoin-project/lotus/master/documentation/en/api-v1-unstable-methods.md
 
