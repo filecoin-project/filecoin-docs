@@ -1,13 +1,12 @@
-# Log
+## Log
 
-## LogAlerts
+### LogAlerts
 
 Perms: admin
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 [
@@ -31,7 +30,7 @@ Response:
 ]
 ```
 
-## LogList
+### LogList
 
 Perms: write
 
@@ -39,23 +38,18 @@ Inputs: `null`
 
 Response:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
-## LogSetLevel
+### LogSetLevel
 
 Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "string value",
-  "string value"
-]
+["string value", "string value"]
 ```
+
+Response: `{}`

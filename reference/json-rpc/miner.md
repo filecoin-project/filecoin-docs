@@ -1,11 +1,10 @@
-# Miner
+## Miner
 
-## MinerCreateBlock
+### MinerCreateBlock
 
 Perms: write
 
 Inputs:
-
 
 ```json
 [
@@ -72,7 +71,6 @@ Inputs:
 
 Response:
 
-
 ```json
 {
   "Header": {
@@ -137,14 +135,13 @@ Response:
 }
 ```
 
-## MinerGetBaseInfo
+### MinerGetBaseInfo
 
 There are not yet any comments for this method.
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -163,7 +160,6 @@ Inputs:
 
 Response:
 
-
 ```json
 {
   "MinerPower": "0",
@@ -172,7 +168,9 @@ Response:
     {
       "SealProof": 8,
       "SectorNumber": 9,
-      "SectorKey": null,
+      "SectorKey": {
+        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      },
       "SealedCID": {
         "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
       }

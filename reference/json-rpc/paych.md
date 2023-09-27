@@ -1,102 +1,88 @@
----
-description: The Paych methods are for interacting with and managing payment channels
----
+## Paych
 
-# Paych
+The Paych methods are for interacting with and managing payment channels
 
-## PaychAllocateLane
+### PaychAllocateLane
 
 Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response: `42`
 
-## PaychAvailableFunds
+### PaychAvailableFunds
 
 Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response:
 
-
 ```json
 {
-  "Channel": "\u003cempty\u003e",
+  "Channel": "f01234",
   "From": "f01234",
   "To": "f01234",
   "ConfirmedAmt": "0",
   "PendingAmt": "0",
   "NonReservedAmt": "0",
   "PendingAvailableAmt": "0",
-  "PendingWaitSentinel": null,
+  "PendingWaitSentinel": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
   "QueuedAmt": "0",
   "VoucherReedeemedAmt": "0"
 }
 ```
 
-## PaychAvailableFundsByFromTo
+### PaychAvailableFundsByFromTo
 
 Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "f01234"
-]
+["f01234", "f01234"]
 ```
 
 Response:
 
-
 ```json
 {
-  "Channel": "\u003cempty\u003e",
+  "Channel": "f01234",
   "From": "f01234",
   "To": "f01234",
   "ConfirmedAmt": "0",
   "PendingAmt": "0",
   "NonReservedAmt": "0",
   "PendingAvailableAmt": "0",
-  "PendingWaitSentinel": null,
+  "PendingWaitSentinel": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
   "QueuedAmt": "0",
   "VoucherReedeemedAmt": "0"
 }
 ```
 
-## PaychCollect
+### PaychCollect
 
 Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -104,25 +90,20 @@ Response:
 }
 ```
 
-## PaychGet
+### PaychFund
 
-There are not yet any comments for this method.
+PaychFund gets or creates a payment channel between address pair.
+The specified amount will be added to the channel through on-chain send for future use
 
 Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "f01234",
-  "0"
-]
+["f01234", "f01234", "0"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -133,12 +114,48 @@ Response:
 }
 ```
 
-## PaychGetWaitReady
+### PaychGet
+
+PaychGet gets or creates a payment channel between address pair
+The specified amount will be reserved for use. If there aren't enough non-reserved funds
+available, funds will be added through an on-chain message.
+
+- When opts.OffChain is true, this call will not cause any messages to be sent to the chain (no automatic
+  channel creation/funds adding). If the operation can't be performed without sending a message an error will be
+  returned. Note that even when this option is specified, this call can be blocked by previous operations on the
+  channel waiting for on-chain operations.
 
 Perms: sign
 
 Inputs:
 
+```json
+[
+  "f01234",
+  "f01234",
+  "0",
+  {
+    "OffChain": true
+  }
+]
+```
+
+Response:
+
+```json
+{
+  "Channel": "f01234",
+  "WaitSentinel": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
+}
+```
+
+### PaychGetWaitReady
+
+Perms: sign
+
+Inputs:
 
 ```json
 [
@@ -150,7 +167,7 @@ Inputs:
 
 Response: `"f01234"`
 
-## PaychList
+### PaychList
 
 Perms: read
 
@@ -158,19 +175,15 @@ Inputs: `null`
 
 Response:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
-## PaychNewPayment
+### PaychNewPayment
 
 Perms: sign
 
 Inputs:
-
 
 ```json
 [
@@ -194,7 +207,6 @@ Inputs:
 
 Response:
 
-
 ```json
 {
   "Channel": "f01234",
@@ -206,7 +218,7 @@ Response:
       "ChannelAddr": "f01234",
       "TimeLockMin": 10101,
       "TimeLockMax": 10101,
-      "SecretPreimage": "Ynl0ZSBhcnJheQ==",
+      "SecretHash": "Ynl0ZSBhcnJheQ==",
       "Extra": {
         "Actor": "f01234",
         "Method": 1,
@@ -231,21 +243,17 @@ Response:
 }
 ```
 
-## PaychSettle
+### PaychSettle
 
 Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -253,21 +261,17 @@ Response:
 }
 ```
 
-## PaychStatus
+### PaychStatus
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -276,12 +280,11 @@ Response:
 }
 ```
 
-## PaychVoucherAdd
+### PaychVoucherAdd
 
 Perms: write
 
 Inputs:
-
 
 ```json
 [
@@ -290,7 +293,7 @@ Inputs:
     "ChannelAddr": "f01234",
     "TimeLockMin": 10101,
     "TimeLockMax": 10101,
-    "SecretPreimage": "Ynl0ZSBhcnJheQ==",
+    "SecretHash": "Ynl0ZSBhcnJheQ==",
     "Extra": {
       "Actor": "f01234",
       "Method": 1,
@@ -318,12 +321,11 @@ Inputs:
 
 Response: `"0"`
 
-## PaychVoucherCheckSpendable
+### PaychVoucherCheckSpendable
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -332,7 +334,7 @@ Inputs:
     "ChannelAddr": "f01234",
     "TimeLockMin": 10101,
     "TimeLockMax": 10101,
-    "SecretPreimage": "Ynl0ZSBhcnJheQ==",
+    "SecretHash": "Ynl0ZSBhcnJheQ==",
     "Extra": {
       "Actor": "f01234",
       "Method": 1,
@@ -360,12 +362,11 @@ Inputs:
 
 Response: `true`
 
-## PaychVoucherCheckValid
+### PaychVoucherCheckValid
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -374,7 +375,7 @@ Inputs:
     "ChannelAddr": "f01234",
     "TimeLockMin": 10101,
     "TimeLockMax": 10101,
-    "SecretPreimage": "Ynl0ZSBhcnJheQ==",
+    "SecretHash": "Ynl0ZSBhcnJheQ==",
     "Extra": {
       "Actor": "f01234",
       "Method": 1,
@@ -400,23 +401,17 @@ Inputs:
 
 Response: `{}`
 
-## PaychVoucherCreate
+### PaychVoucherCreate
 
 Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "0",
-  42
-]
+["f01234", "0", 42]
 ```
 
 Response:
-
 
 ```json
 {
@@ -424,7 +419,7 @@ Response:
     "ChannelAddr": "f01234",
     "TimeLockMin": 10101,
     "TimeLockMax": 10101,
-    "SecretPreimage": "Ynl0ZSBhcnJheQ==",
+    "SecretHash": "Ynl0ZSBhcnJheQ==",
     "Extra": {
       "Actor": "f01234",
       "Method": 1,
@@ -449,21 +444,17 @@ Response:
 }
 ```
 
-## PaychVoucherList
+### PaychVoucherList
 
 Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response:
-
 
 ```json
 [
@@ -471,7 +462,7 @@ Response:
     "ChannelAddr": "f01234",
     "TimeLockMin": 10101,
     "TimeLockMax": 10101,
-    "SecretPreimage": "Ynl0ZSBhcnJheQ==",
+    "SecretHash": "Ynl0ZSBhcnJheQ==",
     "Extra": {
       "Actor": "f01234",
       "Method": 1,
@@ -495,12 +486,11 @@ Response:
 ]
 ```
 
-## PaychVoucherSubmit
+### PaychVoucherSubmit
 
 Perms: sign
 
 Inputs:
-
 
 ```json
 [
@@ -509,7 +499,7 @@ Inputs:
     "ChannelAddr": "f01234",
     "TimeLockMin": 10101,
     "TimeLockMax": 10101,
-    "SecretPreimage": "Ynl0ZSBhcnJheQ==",
+    "SecretHash": "Ynl0ZSBhcnJheQ==",
     "Extra": {
       "Actor": "f01234",
       "Method": 1,
@@ -536,7 +526,6 @@ Inputs:
 ```
 
 Response:
-
 
 ```json
 {

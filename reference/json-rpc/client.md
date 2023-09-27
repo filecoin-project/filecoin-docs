@@ -1,12 +1,9 @@
----
-description: >-
-  The Client methods all have to do with interacting with the storage and
-  retrieval markets as a client
----
+## Client
 
-# Client
+The Client methods all have to do with interacting with the storage and
+retrieval markets as a client
 
-## ClientCalcCommP
+### ClientCalcCommP
 
 ClientCalcCommP calculates the CommP for a specified file
 
@@ -14,15 +11,11 @@ Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -33,7 +26,7 @@ Response:
 }
 ```
 
-## ClientCancelDataTransfer
+### ClientCancelDataTransfer
 
 ClientCancelDataTransfer cancels a data transfer with the given transfer ID and other peer
 
@@ -41,18 +34,13 @@ Perms: write
 
 Inputs:
 
-
 ```json
-[
-  3,
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
-  true
-]
+[3, "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf", true]
 ```
 
 Response: `{}`
 
-## ClientCancelRetrievalDeal
+### ClientCancelRetrievalDeal
 
 ClientCancelRetrievalDeal cancels an ongoing retrieval deal based on DealID
 
@@ -60,23 +48,19 @@ Perms: write
 
 Inputs:
 
-
 ```json
-[
-  5
-]
+[5]
 ```
 
 Response: `{}`
 
-## ClientDataTransferUpdates
+### ClientDataTransferUpdates
 
 Perms: write
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -110,14 +94,13 @@ Response:
 }
 ```
 
-## ClientDealPieceCID
+### ClientDealPieceCID
 
 ClientCalcCommP calculates the CommP and data size of the specified CID
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -128,7 +111,6 @@ Inputs:
 ```
 
 Response:
-
 
 ```json
 {
@@ -140,14 +122,13 @@ Response:
 }
 ```
 
-## ClientDealSize
+### ClientDealSize
 
 ClientDealSize calculates real deal data size
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -159,7 +140,6 @@ Inputs:
 
 Response:
 
-
 ```json
 {
   "PayloadSize": 9,
@@ -167,7 +147,39 @@ Response:
 }
 ```
 
-## ClientFindData
+### ClientExport
+
+ClientExport exports a file stored in the local filestore to a system file
+
+Perms: admin
+
+Inputs:
+
+```json
+[
+  {
+    "Root": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    "DAGs": [
+      {
+        "DataSelector": "Links/21/Hash/Links/42/Hash",
+        "ExportMerkleProof": true
+      }
+    ],
+    "FromLocalCAR": "string value",
+    "DealID": 5
+  },
+  {
+    "Path": "string value",
+    "IsCAR": true
+  }
+]
+```
+
+Response: `{}`
+
+### ClientFindData
 
 ClientFindData identifies peers that have a certain file, and returns QueryOffers (one per peer).
 
@@ -175,18 +187,18 @@ Perms: read
 
 Inputs:
 
-
 ```json
 [
   {
     "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
   },
-  null
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
 ]
 ```
 
 Response:
-
 
 ```json
 [
@@ -195,7 +207,9 @@ Response:
     "Root": {
       "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
     },
-    "Piece": null,
+    "Piece": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
     "Size": 42,
     "MinPrice": "0",
     "UnsealPrice": "0",
@@ -206,20 +220,21 @@ Response:
     "MinerPeer": {
       "Address": "f01234",
       "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
-      "PieceCID": null
+      "PieceCID": {
+        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      }
     }
   }
 ]
 ```
 
-## ClientGenCar
+### ClientGenCar
 
 ClientGenCar generates a CAR file for the specified file.
 
 Perms: write
 
 Inputs:
-
 
 ```json
 [
@@ -233,14 +248,13 @@ Inputs:
 
 Response: `{}`
 
-## ClientGetDealInfo
+### ClientGetDealInfo
 
 ClientGetDealInfo returns the latest information about a given deal.
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -252,7 +266,6 @@ Inputs:
 
 Response:
 
-
 ```json
 {
   "ProposalCid": {
@@ -283,7 +296,9 @@ Response:
     "Root": {
       "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
     },
-    "PieceCid": null,
+    "PieceCid": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
     "PieceSize": 1024,
     "RawBlockSize": 42
   },
@@ -333,7 +348,7 @@ Response:
 }
 ```
 
-## ClientGetDealStatus
+### ClientGetDealStatus
 
 ClientGetDealStatus returns status given a code
 
@@ -341,16 +356,13 @@ Perms: read
 
 Inputs:
 
-
 ```json
-[
-  42
-]
+[42]
 ```
 
 Response: `"string value"`
 
-## ClientGetDealUpdates
+### ClientGetDealUpdates
 
 ClientGetDealUpdates returns the status of updated deals
 
@@ -360,7 +372,6 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 {
   "ProposalCid": {
@@ -391,7 +402,9 @@ Response:
     "Root": {
       "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
     },
-    "PieceCid": null,
+    "PieceCid": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
     "PieceSize": 1024,
     "RawBlockSize": 42
   },
@@ -441,7 +454,7 @@ Response:
 }
 ```
 
-## ClientGetRetrievalUpdates
+### ClientGetRetrievalUpdates
 
 ClientGetRetrievalUpdates returns status of updated retrieval deals
 
@@ -451,14 +464,15 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 {
   "PayloadCID": {
     "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
   },
   "ID": 5,
-  "PieceCID": null,
+  "PieceCID": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
   "PricePerByte": "0",
   "UnsealPrice": "0",
   "Status": 0,
@@ -505,14 +519,13 @@ Response:
 }
 ```
 
-## ClientHasLocal
+### ClientHasLocal
 
 ClientHasLocal indicates whether a certain CID is locally stored.
 
 Perms: write
 
 Inputs:
-
 
 ```json
 [
@@ -524,14 +537,13 @@ Inputs:
 
 Response: `true`
 
-## ClientImport
+### ClientImport
 
 ClientImport imports file under the specified path into filestore.
 
 Perms: admin
 
 Inputs:
-
 
 ```json
 [
@@ -544,7 +556,6 @@ Inputs:
 
 Response:
 
-
 ```json
 {
   "Root": {
@@ -554,7 +565,7 @@ Response:
 }
 ```
 
-## ClientListDataTransfers
+### ClientListDataTransfers
 
 ClientListTransfers returns the status of all ongoing transfers of data
 
@@ -563,7 +574,6 @@ Perms: write
 Inputs: `null`
 
 Response:
-
 
 ```json
 [
@@ -599,7 +609,7 @@ Response:
 ]
 ```
 
-## ClientListDeals
+### ClientListDeals
 
 ClientListDeals returns information about the deals made by the local client.
 
@@ -608,7 +618,6 @@ Perms: write
 Inputs: `null`
 
 Response:
-
 
 ```json
 [
@@ -641,7 +650,9 @@ Response:
       "Root": {
         "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
       },
-      "PieceCid": null,
+      "PieceCid": {
+        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      },
       "PieceSize": 1024,
       "RawBlockSize": 42
     },
@@ -692,7 +703,7 @@ Response:
 ]
 ```
 
-## ClientListImports
+### ClientListImports
 
 ClientListImports lists imported files and their root CIDs
 
@@ -702,13 +713,14 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 [
   {
     "Key": 50,
     "Err": "string value",
-    "Root": null,
+    "Root": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
     "Source": "string value",
     "FilePath": "string value",
     "CARPath": "string value"
@@ -716,16 +728,15 @@ Response:
 ]
 ```
 
-## ClientListRetrievals
+### ClientListRetrievals
 
-ClientQueryAsk returns a signed StorageAsk from the specified miner. ClientListRetrievals returns information about retrievals made by the local client
+ClientListRetrievals returns information about retrievals made by the local client
 
 Perms: write
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 [
@@ -734,7 +745,9 @@ Response:
       "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
     },
     "ID": 5,
-    "PieceCID": null,
+    "PieceCID": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
     "PricePerByte": "0",
     "UnsealPrice": "0",
     "Status": 0,
@@ -782,7 +795,7 @@ Response:
 ]
 ```
 
-## ClientMinerQueryOffer
+### ClientMinerQueryOffer
 
 ClientMinerQueryOffer returns a QueryOffer for the specific miner and file.
 
@@ -790,19 +803,19 @@ Perms: read
 
 Inputs:
 
-
 ```json
 [
   "f01234",
   {
     "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
   },
-  null
+  {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  }
 ]
 ```
 
 Response:
-
 
 ```json
 {
@@ -810,7 +823,9 @@ Response:
   "Root": {
     "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
   },
-  "Piece": null,
+  "Piece": {
+    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  },
   "Size": 42,
   "MinPrice": "0",
   "UnsealPrice": "0",
@@ -821,42 +836,44 @@ Response:
   "MinerPeer": {
     "Address": "f01234",
     "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
-    "PieceCID": null
+    "PieceCID": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    }
   }
 }
 ```
 
-## ClientQueryAsk
+### ClientQueryAsk
+
+ClientQueryAsk returns a signed StorageAsk from the specified miner.
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
-  "f01234"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf", "f01234"]
 ```
 
 Response:
 
-
 ```json
 {
-  "Price": "0",
-  "VerifiedPrice": "0",
-  "MinPieceSize": 1032,
-  "MaxPieceSize": 1032,
-  "Miner": "f01234",
-  "Timestamp": 10101,
-  "Expiry": 10101,
-  "SeqNo": 42
+  "Response": {
+    "Price": "0",
+    "VerifiedPrice": "0",
+    "MinPieceSize": 1032,
+    "MaxPieceSize": 1032,
+    "Miner": "f01234",
+    "Timestamp": 10101,
+    "Expiry": 10101,
+    "SeqNo": 42
+  },
+  "DealProtocols": ["string value"]
 }
 ```
 
-## ClientRemoveImport
+### ClientRemoveImport
 
 ClientRemoveImport removes file import
 
@@ -864,16 +881,13 @@ Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  50
-]
+[50]
 ```
 
 Response: `{}`
 
-## ClientRestartDataTransfer
+### ClientRestartDataTransfer
 
 ClientRestartDataTransfer attempts to restart a data transfer with the given transfer ID and other peer
 
@@ -881,18 +895,13 @@ Perms: write
 
 Inputs:
 
-
 ```json
-[
-  3,
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
-  true
-]
+[3, "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf", true]
 ```
 
 Response: `{}`
 
-## ClientRetrieve
+### ClientRetrieve
 
 ClientRetrieve initiates the retrieval of a file, as specified in the order.
 
@@ -900,17 +909,17 @@ Perms: admin
 
 Inputs:
 
-
 ```json
 [
   {
     "Root": {
       "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
     },
-    "Piece": null,
-    "DatamodelPathSelector": "Links/21/Hash/Links/42/Hash",
+    "Piece": {
+      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+    },
+    "DataSelector": "Links/21/Hash/Links/42/Hash",
     "Size": 42,
-    "FromLocalCAR": "string value",
     "Total": "0",
     "UnsealPrice": "0",
     "PaymentInterval": 42,
@@ -920,87 +929,53 @@ Inputs:
     "MinerPeer": {
       "Address": "f01234",
       "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
-      "PieceCID": null
-    }
-  },
-  {
-    "Path": "string value",
-    "IsCAR": true
-  }
-]
-```
-
-Response: `{}`
-
-## ClientRetrieveTryRestartInsufficientFunds
-
-ClientRetrieveTryRestartInsufficientFunds attempts to restart stalled retrievals on a given payment channel which are stuck due to insufficient funds
-
-Perms: write
-
-Inputs:
-
-
-```json
-[
-  "f01234"
-]
-```
-
-Response: `{}`
-
-## ClientRetrieveWithEvents
-
-ClientRetrieveWithEvents initiates the retrieval of a file, as specified in the order, and provides a channel of status updates.
-
-Perms: admin
-
-Inputs:
-
-
-```json
-[
-  {
-    "Root": {
-      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      "PieceCID": {
+        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      }
     },
-    "Piece": null,
-    "DatamodelPathSelector": "Links/21/Hash/Links/42/Hash",
-    "Size": 42,
-    "FromLocalCAR": "string value",
-    "Total": "0",
-    "UnsealPrice": "0",
-    "PaymentInterval": 42,
-    "PaymentIntervalIncrease": 42,
-    "Client": "f01234",
-    "Miner": "f01234",
-    "MinerPeer": {
-      "Address": "f01234",
-      "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
-      "PieceCID": null
-    }
-  },
-  {
-    "Path": "string value",
-    "IsCAR": true
+    "RemoteStore": "00000000-0000-0000-0000-000000000000"
   }
 ]
 ```
 
 Response:
 
-
 ```json
 {
-  "Event": 5,
-  "Status": 0,
-  "BytesReceived": 42,
-  "FundsSpent": "0",
-  "Err": "string value"
+  "DealID": 5
 }
 ```
 
-## ClientStartDeal
+### ClientRetrieveTryRestartInsufficientFunds
+
+ClientRetrieveTryRestartInsufficientFunds attempts to restart stalled retrievals on a given payment channel
+which are stuck due to insufficient funds
+
+Perms: write
+
+Inputs:
+
+```json
+["f01234"]
+```
+
+Response: `{}`
+
+### ClientRetrieveWait
+
+ClientRetrieveWait waits for retrieval to be complete
+
+Perms: admin
+
+Inputs:
+
+```json
+[5]
+```
+
+Response: `{}`
+
+### ClientStartDeal
 
 ClientStartDeal proposes a deal with a miner.
 
@@ -1008,7 +983,6 @@ Perms: admin
 
 Inputs:
 
-
 ```json
 [
   {
@@ -1017,7 +991,9 @@ Inputs:
       "Root": {
         "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
       },
-      "PieceCid": null,
+      "PieceCid": {
+        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      },
       "PieceSize": 1024,
       "RawBlockSize": 42
     },
@@ -1033,9 +1009,15 @@ Inputs:
 ]
 ```
 
-Response: `null`
+Response:
 
-## ClientStatelessDeal
+```json
+{
+  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+}
+```
+
+### ClientStatelessDeal
 
 ClientStatelessDeal fire-and-forget-proposes an offline deal to a miner without subsequent tracking.
 
@@ -1043,7 +1025,6 @@ Perms: write
 
 Inputs:
 
-
 ```json
 [
   {
@@ -1052,7 +1033,9 @@ Inputs:
       "Root": {
         "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
       },
-      "PieceCid": null,
+      "PieceCid": {
+        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+      },
       "PieceSize": 1024,
       "RawBlockSize": 42
     },
@@ -1068,4 +1051,10 @@ Inputs:
 ]
 ```
 
-Response: `null`
+Response:
+
+```json
+{
+  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+}
+```

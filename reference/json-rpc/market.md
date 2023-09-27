@@ -1,6 +1,6 @@
-# Market
+## Market
 
-## MarketAddBalance
+### MarketAddBalance
 
 MarketAddBalance adds funds to the market actor
 
@@ -8,17 +8,11 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "f01234",
-  "0"
-]
+["f01234", "f01234", "0"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -26,7 +20,7 @@ Response:
 }
 ```
 
-## MarketGetReserved
+### MarketGetReserved
 
 MarketGetReserved gets the amount of funds that are currently reserved for the address
 
@@ -34,16 +28,13 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234"
-]
+["f01234"]
 ```
 
 Response: `"0"`
 
-## MarketReleaseFunds
+### MarketReleaseFunds
 
 MarketReleaseFunds releases funds reserved by MarketReserveFunds
 
@@ -51,17 +42,13 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "0"
-]
+["f01234", "0"]
 ```
 
 Response: `{}`
 
-## MarketReserveFunds
+### MarketReserveFunds
 
 MarketReserveFunds reserves funds for a deal
 
@@ -69,17 +56,11 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "f01234",
-  "0"
-]
+["f01234", "f01234", "0"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -87,7 +68,7 @@ Response:
 }
 ```
 
-## MarketWithdraw
+### MarketWithdraw
 
 MarketWithdraw withdraws unlocked funds from the market actor
 
@@ -95,17 +76,11 @@ Perms: sign
 
 Inputs:
 
-
 ```json
-[
-  "f01234",
-  "f01234",
-  "0"
-]
+["f01234", "f01234", "0"]
 ```
 
 Response:
-
 
 ```json
 {

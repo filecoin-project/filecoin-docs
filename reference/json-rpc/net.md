@@ -1,13 +1,12 @@
-# Net
+## Net
 
-## NetAddrsListen
+### NetAddrsListen
 
 Perms: read
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -18,45 +17,40 @@ Response:
 }
 ```
 
-## NetAgentVersion
+### NetAgentVersion
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response: `"string value"`
 
-## NetAutoNatStatus
+### NetAutoNatStatus
 
 Perms: read
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
   "Reachability": 1,
-  "PublicAddr": "string value"
+  "PublicAddrs": ["string value"]
 }
 ```
 
-## NetBandwidthStats
+### NetBandwidthStats
 
 Perms: read
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -67,14 +61,13 @@ Response:
 }
 ```
 
-## NetBandwidthStatsByPeer
+### NetBandwidthStatsByPeer
 
 Perms: read
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -87,14 +80,13 @@ Response:
 }
 ```
 
-## NetBandwidthStatsByProtocol
+### NetBandwidthStatsByProtocol
 
 Perms: read
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 {
@@ -107,32 +99,25 @@ Response:
 }
 ```
 
-## NetBlockAdd
+### NetBlockAdd
 
 Perms: admin
 
 Inputs:
 
-
 ```json
 [
   {
-    "Peers": [
-      "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-    ],
-    "IPAddrs": [
-      "string value"
-    ],
-    "IPSubnets": [
-      "string value"
-    ]
+    "Peers": ["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"],
+    "IPAddrs": ["string value"],
+    "IPSubnets": ["string value"]
   }
 ]
 ```
 
 Response: `{}`
 
-## NetBlockList
+### NetBlockList
 
 Perms: read
 
@@ -140,52 +125,37 @@ Inputs: `null`
 
 Response:
 
-
 ```json
 {
-  "Peers": [
-    "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-  ],
-  "IPAddrs": [
-    "string value"
-  ],
-  "IPSubnets": [
-    "string value"
-  ]
+  "Peers": ["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"],
+  "IPAddrs": ["string value"],
+  "IPSubnets": ["string value"]
 }
 ```
 
-## NetBlockRemove
+### NetBlockRemove
 
 Perms: admin
 
 Inputs:
 
-
 ```json
 [
   {
-    "Peers": [
-      "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-    ],
-    "IPAddrs": [
-      "string value"
-    ],
-    "IPSubnets": [
-      "string value"
-    ]
+    "Peers": ["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"],
+    "IPAddrs": ["string value"],
+    "IPSubnets": ["string value"]
   }
 ]
 ```
 
 Response: `{}`
 
-## NetConnect
+### NetConnect
 
 Perms: write
 
 Inputs:
-
 
 ```json
 [
@@ -200,51 +170,41 @@ Inputs:
 
 Response: `{}`
 
-## NetConnectedness
+### NetConnectedness
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response: `1`
 
-## NetDisconnect
+### NetDisconnect
 
 Perms: write
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response: `{}`
 
-## NetFindPeer
+### NetFindPeer
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -255,21 +215,17 @@ Response:
 }
 ```
 
-## NetLimit
+### NetLimit
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -284,32 +240,32 @@ Response:
 }
 ```
 
-## NetPeerInfo
+### NetListening
+
+Perms: read
+
+Inputs: `null`
+
+Response: `true`
+
+### NetPeerInfo
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response:
-
 
 ```json
 {
   "ID": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
   "Agent": "string value",
-  "Addrs": [
-    "string value"
-  ],
-  "Protocols": [
-    "string value"
-  ],
+  "Addrs": ["string value"],
+  "Protocols": ["string value"],
   "ConnMgrMeta": {
     "FirstSeen": "0001-01-01T00:00:00Z",
     "Value": 123,
@@ -323,14 +279,13 @@ Response:
 }
 ```
 
-## NetPeers
+### NetPeers
 
 Perms: read
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 [
@@ -343,39 +298,31 @@ Response:
 ]
 ```
 
-## NetPing
+### NetPing
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
 Response: `60000000000`
 
-## NetProtectAdd
+### NetProtectAdd
 
 Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  [
-    "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-  ]
-]
+[["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]]
 ```
 
 Response: `{}`
 
-## NetProtectList
+### NetProtectList
 
 Perms: read
 
@@ -383,38 +330,29 @@ Inputs: `null`
 
 Response:
 
-
 ```json
-[
-  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-]
+["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
-## NetProtectRemove
+### NetProtectRemove
 
 Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  [
-    "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"
-  ]
-]
+[["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]]
 ```
 
 Response: `{}`
 
-## NetPubsubScores
+### NetPubsubScores
 
 Perms: read
 
 Inputs: `null`
 
 Response:
-
 
 ```json
 [
@@ -438,12 +376,11 @@ Response:
 ]
 ```
 
-## NetSetLimit
+### NetSetLimit
 
 Perms: admin
 
 Inputs:
-
 
 ```json
 [
@@ -463,21 +400,17 @@ Inputs:
 
 Response: `{}`
 
-## NetStat
+### NetStat
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 Response:
-
 
 ```json
 {
@@ -529,3 +462,11 @@ Response:
   }
 }
 ```
+
+### NetVersion
+
+Perms: read
+
+Inputs: `null`
+
+Response: `"string value"`

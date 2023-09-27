@@ -1,40 +1,29 @@
-# Auth
+## Auth
 
-## AuthNew
+### AuthNew
 
 Perms: admin
 
 Inputs:
 
-
 ```json
-[
-  [
-    "write"
-  ]
-]
+[["write"]]
 ```
 
 Response: `"Ynl0ZSBhcnJheQ=="`
 
-## AuthVerify
+### AuthVerify
 
 Perms: read
 
 Inputs:
 
-
 ```json
-[
-  "string value"
-]
+["string value"]
 ```
 
 Response:
 
-
 ```json
-[
-  "write"
-]
+["write"]
 ```
