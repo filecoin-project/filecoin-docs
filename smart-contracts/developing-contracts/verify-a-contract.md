@@ -64,7 +64,7 @@ The following guide walks you through the process of contract verification using
 15. To view your verified contract:
     1. Enter the address of the contract in the [Filfox search bar](https://filfox.info/).
 
-![](.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-contract-tab.jpg)
+![](../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-contract-tab.jpg)
 
     2.  Scroll down the contract page and select the **Contract** tab.
 
