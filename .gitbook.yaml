@@ -168,6 +168,7 @@ redirects:
   reference/general: reference/general/README.md
   reference/general/overview: reference/general/README.md
   reference/glossary: reference/general/glossary.md
+  reference/json-rpc/beacon: reference/general/README.md
   reference/json-rpc/introduction: reference/json-rpc/README.md
   reference/reference/glossary: reference/general/glossary.md
   reference/reference/overview: reference/general/README.md
