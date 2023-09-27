@@ -1,8 +1,8 @@
-## Node
+# Node
 
 These methods are general node management and status commands
 
-### NodeStatus
+## NodeStatus
 
 There are not yet any comments for this method.
 

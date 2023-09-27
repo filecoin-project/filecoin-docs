@@ -1,6 +1,6 @@
-## Gas
+# Gas
 
-### GasEstimateFeeCap
+## GasEstimateFeeCap
 
 GasEstimateFeeCap estimates gas fee cap
 
@@ -39,7 +39,7 @@ Inputs:
 
 Response: `"0"`
 
-### GasEstimateGasLimit
+## GasEstimateGasLimit
 
 GasEstimateGasLimit estimates gas used by the message and returns it.
 It fails if message fails to execute.
@@ -78,7 +78,7 @@ Inputs:
 
 Response: `9`
 
-### GasEstimateGasPremium
+## GasEstimateGasPremium
 
 GasEstimateGasPremium estimates what gas price should be used for a
 message to have high likelihood of inclusion in `nblocksincl` epochs.
@@ -105,7 +105,7 @@ Inputs:
 
 Response: `"0"`
 
-### GasEstimateMessageGas
+## GasEstimateMessageGas
 
 GasEstimateMessageGas estimates gas values for unset message gas fields
 

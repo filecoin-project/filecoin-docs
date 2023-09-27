@@ -1,9 +1,9 @@
-## Chain
+# Chain
 
 The Chain method group contains methods for interacting with the
 blockchain, but that do not require any form of state computation.
 
-### ChainBlockstoreInfo
+## ChainBlockstoreInfo
 
 ChainBlockstoreInfo returns some basic information about the blockstore
 
@@ -19,7 +19,7 @@ Response:
 }
 ```
 
-### ChainCheckBlockstore
+## ChainCheckBlockstore
 
 ChainCheckBlockstore performs an (asynchronous) health check on the chain/state blockstore
 if supported by the underlying implementation.
@@ -30,7 +30,7 @@ Inputs: `null`
 
 Response: `{}`
 
-### ChainDeleteObj
+## ChainDeleteObj
 
 ChainDeleteObj deletes node referenced by the given CID
 
@@ -48,7 +48,7 @@ Inputs:
 
 Response: `{}`
 
-### ChainExport
+## ChainExport
 
 ChainExport returns a stream of bytes with CAR dump of chain data.
 The exported chain data includes the header chain from the given tipset
@@ -77,7 +77,7 @@ Inputs:
 
 Response: `"Ynl0ZSBhcnJheQ=="`
 
-### ChainExportRangeInternal
+## ChainExportRangeInternal
 
 ChainExportRangeInternal triggers the export of a chain
 CAR-snapshot directly to disk. It is similar to ChainExport,
@@ -122,7 +122,7 @@ Inputs:
 
 Response: `{}`
 
-### ChainGetBlock
+## ChainGetBlock
 
 ChainGetBlock returns the block specified by the given CID.
 
@@ -192,7 +192,7 @@ Response:
 }
 ```
 
-### ChainGetBlockMessages
+## ChainGetBlockMessages
 
 ChainGetBlockMessages returns messages stored in the specified block.
 
@@ -274,7 +274,7 @@ Response:
 }
 ```
 
-### ChainGetEvents
+## ChainGetEvents
 
 ChainGetEvents returns the events under an event AMT root CID.
 
@@ -308,7 +308,7 @@ Response:
 ]
 ```
 
-### ChainGetGenesis
+## ChainGetGenesis
 
 ChainGetGenesis returns the genesis tipset.
 
@@ -326,7 +326,7 @@ Response:
 }
 ```
 
-### ChainGetMessage
+## ChainGetMessage
 
 ChainGetMessage reads a message referenced by the specified CID from the
 chain blockstore.
@@ -363,7 +363,7 @@ Response:
 }
 ```
 
-### ChainGetMessagesInTipset
+## ChainGetMessagesInTipset
 
 ChainGetMessagesInTipset returns message stores in current tipset
 
@@ -411,7 +411,7 @@ Response:
 ]
 ```
 
-### ChainGetNode
+## ChainGetNode
 
 Perms: read
 
@@ -432,7 +432,7 @@ Response:
 }
 ```
 
-### ChainGetParentMessages
+## ChainGetParentMessages
 
 ChainGetParentMessages returns messages stored in parent tipset of the
 specified block.
@@ -476,7 +476,7 @@ Response:
 ]
 ```
 
-### ChainGetParentReceipts
+## ChainGetParentReceipts
 
 ChainGetParentReceipts returns receipts for messages in parent tipset of
 the specified block. The receipts in the list returned is one-to-one with the
@@ -509,7 +509,7 @@ Response:
 ]
 ```
 
-### ChainGetPath
+## ChainGetPath
 
 ChainGetPath returns a set of revert/apply operations needed to get from
 one tipset to another, for example:
@@ -567,7 +567,7 @@ Response:
 ]
 ```
 
-### ChainGetTipSet
+## ChainGetTipSet
 
 ChainGetTipSet returns the tipset specified by the given TipSetKey.
 
@@ -598,7 +598,7 @@ Response:
 }
 ```
 
-### ChainGetTipSetAfterHeight
+## ChainGetTipSetAfterHeight
 
 ChainGetTipSetAfterHeight looks back for a tipset at the specified epoch.
 If there are no blocks at the specified epoch, the first non-nil tipset at a later epoch
@@ -632,7 +632,7 @@ Response:
 }
 ```
 
-### ChainGetTipSetByHeight
+## ChainGetTipSetByHeight
 
 ChainGetTipSetByHeight looks back for a tipset at the specified epoch.
 If there are no blocks at the specified epoch, a tipset at an earlier epoch
@@ -666,7 +666,7 @@ Response:
 }
 ```
 
-### ChainHasObj
+## ChainHasObj
 
 ChainHasObj checks if a given CID exists in the chain blockstore.
 
@@ -684,7 +684,7 @@ Inputs:
 
 Response: `true`
 
-### ChainHead
+## ChainHead
 
 ChainHead returns the current head of the chain.
 
@@ -702,7 +702,7 @@ Response:
 }
 ```
 
-### ChainHotGC
+## ChainHotGC
 
 ChainHotGC does online (badger) GC on the hot store; only supported if you are using
 the splitstore
@@ -723,7 +723,7 @@ Inputs:
 
 Response: `{}`
 
-### ChainNotify
+## ChainNotify
 
 ChainNotify returns channel with chain head updates.
 First message is guaranteed to be of len == 1, and type == 'current'.
@@ -747,7 +747,7 @@ Response:
 ]
 ```
 
-### ChainPrune
+## ChainPrune
 
 ChainPrune forces compaction on cold store and garbage collects; only supported if you
 are using the splitstore
@@ -767,7 +767,7 @@ Inputs:
 
 Response: `{}`
 
-### ChainPutObj
+## ChainPutObj
 
 ChainPutObj puts a given object into the block store
 
@@ -781,7 +781,7 @@ Inputs:
 
 Response: `{}`
 
-### ChainReadObj
+## ChainReadObj
 
 ChainReadObj reads ipld nodes referenced by the specified CID from chain
 blockstore and returns raw bytes.
@@ -800,7 +800,7 @@ Inputs:
 
 Response: `"Ynl0ZSBhcnJheQ=="`
 
-### ChainSetHead
+## ChainSetHead
 
 ChainSetHead forcefully sets current chain head. Use with caution.
 
@@ -823,7 +823,7 @@ Inputs:
 
 Response: `{}`
 
-### ChainStatObj
+## ChainStatObj
 
 ChainStatObj returns statistics about the graph referenced by 'obj'.
 If 'base' is also specified, then the returned stat will be a diff
@@ -853,7 +853,7 @@ Response:
 }
 ```
 
-### ChainTipSetWeight
+## ChainTipSetWeight
 
 ChainTipSetWeight computes weight for the specified tipset.
 

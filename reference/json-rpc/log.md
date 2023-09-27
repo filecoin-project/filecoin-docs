@@ -1,6 +1,6 @@
-## Log
+# Log
 
-### LogAlerts
+## LogAlerts
 
 Perms: admin
 
@@ -30,7 +30,7 @@ Response:
 ]
 ```
 
-### LogList
+## LogList
 
 Perms: write
 
@@ -42,7 +42,7 @@ Response:
 ["string value"]
 ```
 
-### LogSetLevel
+## LogSetLevel
 
 Perms: write
 

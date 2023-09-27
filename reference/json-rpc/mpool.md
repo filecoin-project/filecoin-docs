@@ -1,9 +1,9 @@
-## Mpool
+# Mpool
 
 The Mpool methods are for interacting with the message pool. The message pool
 manages all incoming and outgoing 'messages' going over the network.
 
-### MpoolBatchPush
+## MpoolBatchPush
 
 MpoolBatchPush batch pushes a signed message to mempool.
 
@@ -52,7 +52,7 @@ Response:
 ]
 ```
 
-### MpoolBatchPushMessage
+## MpoolBatchPushMessage
 
 MpoolBatchPushMessage batch pushes a unsigned message to mempool.
 
@@ -117,7 +117,7 @@ Response:
 ]
 ```
 
-### MpoolBatchPushUntrusted
+## MpoolBatchPushUntrusted
 
 MpoolBatchPushUntrusted batch pushes a signed message to mempool from untrusted sources.
 
@@ -166,7 +166,7 @@ Response:
 ]
 ```
 
-### MpoolCheckMessages
+## MpoolCheckMessages
 
 MpoolCheckMessages performs logical checks on a batch of messages
 
@@ -219,7 +219,7 @@ Response:
 ]
 ```
 
-### MpoolCheckPendingMessages
+## MpoolCheckPendingMessages
 
 MpoolCheckPendingMessages performs logical checks for all pending messages from a given address
 
@@ -251,7 +251,7 @@ Response:
 ]
 ```
 
-### MpoolCheckReplaceMessages
+## MpoolCheckReplaceMessages
 
 MpoolCheckReplaceMessages performs logical checks on pending messages with replacement
 
@@ -301,7 +301,7 @@ Response:
 ]
 ```
 
-### MpoolClear
+## MpoolClear
 
 MpoolClear clears pending messages from the mpool.
 If clearLocal is true, ALL messages will be cleared.
@@ -317,7 +317,7 @@ Inputs:
 
 Response: `{}`
 
-### MpoolGetConfig
+## MpoolGetConfig
 
 MpoolGetConfig returns (a copy of) the current mpool config
 
@@ -338,7 +338,7 @@ Response:
 }
 ```
 
-### MpoolGetNonce
+## MpoolGetNonce
 
 MpoolGetNonce gets next nonce for the specified sender.
 Note that this method may not be atomic. Use MpoolPushMessage instead.
@@ -353,7 +353,7 @@ Inputs:
 
 Response: `42`
 
-### MpoolPending
+## MpoolPending
 
 MpoolPending returns pending mempool messages.
 
@@ -405,7 +405,7 @@ Response:
 ]
 ```
 
-### MpoolPush
+## MpoolPush
 
 MpoolPush pushes a signed message to mempool.
 
@@ -450,7 +450,7 @@ Response:
 }
 ```
 
-### MpoolPushMessage
+## MpoolPushMessage
 
 MpoolPushMessage atomically assigns a nonce, signs, and pushes a message
 to mempool.
@@ -516,7 +516,7 @@ Response:
 }
 ```
 
-### MpoolPushUntrusted
+## MpoolPushUntrusted
 
 MpoolPushUntrusted pushes a signed message to mempool from untrusted sources.
 
@@ -561,7 +561,7 @@ Response:
 }
 ```
 
-### MpoolSelect
+## MpoolSelect
 
 MpoolSelect returns a list of pending messages for inclusion in the next block
 
@@ -614,7 +614,7 @@ Response:
 ]
 ```
 
-### MpoolSetConfig
+## MpoolSetConfig
 
 MpoolSetConfig sets the mpool config to (a copy of) the supplied config
 
@@ -637,7 +637,7 @@ Inputs:
 
 Response: `{}`
 
-### MpoolSub
+## MpoolSub
 
 Perms: read
 

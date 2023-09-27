@@ -1,10 +1,10 @@
-## State
+# State
 
 The State methods are used to query, inspect, and interact with chain state.
 Most methods take a TipSetKey as a parameter. The state looked up is the parent state of the tipset.
 A nil TipSetKey can be provided as a param, this will cause the heaviest tipset in the chain to be used.
 
-### StateAccountKey
+## StateAccountKey
 
 StateAccountKey returns the public key address of the given ID address for secp and bls accounts
 
@@ -28,7 +28,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### StateActorCodeCIDs
+## StateActorCodeCIDs
 
 StateActorCodeCIDs returns the CIDs of all the builtin actors for the given network version
 
@@ -42,7 +42,7 @@ Inputs:
 
 Response: `{}`
 
-### StateActorManifestCID
+## StateActorManifestCID
 
 StateActorManifestCID returns the CID of the builtin actors manifest for the given network version
 
@@ -62,7 +62,7 @@ Response:
 }
 ```
 
-### StateAllMinerFaults
+## StateAllMinerFaults
 
 StateAllMinerFaults returns all non-expired Faults that occur within lookback epochs of the given tipset
 
@@ -95,7 +95,7 @@ Response:
 ]
 ```
 
-### StateCall
+## StateCall
 
 StateCall runs the given message and returns its result without any persisted changes.
 
@@ -243,7 +243,7 @@ Response:
 }
 ```
 
-### StateChangedActors
+## StateChangedActors
 
 StateChangedActors returns all the actors whose states change between the two given state CIDs
 TODO: Should this take tipset keys instead?
@@ -281,7 +281,7 @@ Response:
 }
 ```
 
-### StateCirculatingSupply
+## StateCirculatingSupply
 
 StateCirculatingSupply returns the exact circulating supply of Filecoin at the given tipset.
 This is not used anywhere in the protocol itself, and is only for external consumption.
@@ -305,7 +305,7 @@ Inputs:
 
 Response: `"0"`
 
-### StateCompute
+## StateCompute
 
 StateCompute is a flexible command that applies the given messages on the given tipset.
 The messages are run as though the VM were at the provided height.
@@ -491,7 +491,7 @@ Response:
 }
 ```
 
-### StateComputeDataCID
+## StateComputeDataCID
 
 StateComputeDataCID computes DataCID from a set of on-chain deals
 
@@ -523,7 +523,7 @@ Response:
 }
 ```
 
-### StateDealProviderCollateralBounds
+## StateDealProviderCollateralBounds
 
 StateDealProviderCollateralBounds returns the min and max collateral a storage provider
 can issue. It takes the deal size and verified status as parameters.
@@ -556,7 +556,7 @@ Response:
 }
 ```
 
-### StateDecodeParams
+## StateDecodeParams
 
 StateDecodeParams attempts to decode the provided params, based on the recipient actor address and method number.
 
@@ -582,7 +582,7 @@ Inputs:
 
 Response: `{}`
 
-### StateEncodeParams
+## StateEncodeParams
 
 StateEncodeParams attempts to encode the provided json params to the binary from
 
@@ -602,7 +602,7 @@ Inputs:
 
 Response: `"Ynl0ZSBhcnJheQ=="`
 
-### StateGetActor
+## StateGetActor
 
 StateGetActor returns the indicated actor's nonce and balance.
 
@@ -640,7 +640,7 @@ Response:
 }
 ```
 
-### StateGetAllocation
+## StateGetAllocation
 
 StateGetAllocation returns the allocation for a given address and allocation ID.
 
@@ -679,7 +679,7 @@ Response:
 }
 ```
 
-### StateGetAllocationForPendingDeal
+## StateGetAllocationForPendingDeal
 
 StateGetAllocationForPendingDeal returns the allocation for a given deal ID of a pending deal. Returns nil if
 pending allocation is not found.
@@ -718,7 +718,7 @@ Response:
 }
 ```
 
-### StateGetAllocations
+## StateGetAllocations
 
 StateGetAllocations returns the all the allocations for a given client.
 
@@ -742,7 +742,7 @@ Inputs:
 
 Response: `{}`
 
-### StateGetBeaconEntry
+## StateGetBeaconEntry
 
 StateGetBeaconEntry returns the beacon entry for the given filecoin epoch. If
 the entry has not yet been produced, the call will block until the entry
@@ -765,7 +765,7 @@ Response:
 }
 ```
 
-### StateGetClaim
+## StateGetClaim
 
 StateGetClaim returns the claim for a given address and claim ID.
 
@@ -805,7 +805,7 @@ Response:
 }
 ```
 
-### StateGetClaims
+## StateGetClaims
 
 StateGetClaims returns the all the claims for a given provider.
 
@@ -829,7 +829,7 @@ Inputs:
 
 Response: `{}`
 
-### StateGetNetworkParams
+## StateGetNetworkParams
 
 StateGetNetworkParams return current network params
 
@@ -877,7 +877,7 @@ Response:
 }
 ```
 
-### StateGetRandomnessDigestFromBeacon
+## StateGetRandomnessDigestFromBeacon
 
 StateGetRandomnessDigestFromBeacon is used to sample the beacon for randomness.
 
@@ -901,7 +901,7 @@ Inputs:
 
 Response: `"Bw=="`
 
-### StateGetRandomnessDigestFromTickets
+## StateGetRandomnessDigestFromTickets
 
 StateGetRandomnessDigestFromTickets. is used to sample the chain for randomness.
 
@@ -925,7 +925,7 @@ Inputs:
 
 Response: `"Bw=="`
 
-### StateGetRandomnessFromBeacon
+## StateGetRandomnessFromBeacon
 
 StateGetRandomnessFromBeacon is used to sample the beacon for randomness.
 
@@ -951,7 +951,7 @@ Inputs:
 
 Response: `"Bw=="`
 
-### StateGetRandomnessFromTickets
+## StateGetRandomnessFromTickets
 
 StateGetRandomnessFromTickets is used to sample the chain for randomness.
 
@@ -977,7 +977,7 @@ Inputs:
 
 Response: `"Bw=="`
 
-### StateListActors
+## StateListActors
 
 StateListActors returns the addresses of every actor in the state
 
@@ -1004,7 +1004,7 @@ Response:
 ["f01234"]
 ```
 
-### StateListMessages
+## StateListMessages
 
 StateListMessages looks back and returns all messages with a matching to or from address, stopping at the given height.
 
@@ -1040,7 +1040,7 @@ Response:
 ]
 ```
 
-### StateListMiners
+## StateListMiners
 
 StateListMiners returns the addresses of every miner that has claimed power in the Power Actor
 
@@ -1067,7 +1067,7 @@ Response:
 ["f01234"]
 ```
 
-### StateLookupID
+## StateLookupID
 
 StateLookupID retrieves the ID address of the given address
 
@@ -1091,7 +1091,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### StateLookupRobustAddress
+## StateLookupRobustAddress
 
 StateLookupRobustAddress returns the public key address of the given ID address for non-account addresses (multisig, miners etc)
 
@@ -1115,7 +1115,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### StateMarketBalance
+## StateMarketBalance
 
 StateMarketBalance looks up the Escrow and Locked balances of the given address in the Storage Market
 
@@ -1146,7 +1146,7 @@ Response:
 }
 ```
 
-### StateMarketDeals
+## StateMarketDeals
 
 StateMarketDeals returns information about every deal in the Storage Market
 
@@ -1197,7 +1197,7 @@ Response:
 }
 ```
 
-### StateMarketParticipants
+## StateMarketParticipants
 
 StateMarketParticipants returns the Escrow and Locked balances of every participant in the Storage Market
 
@@ -1229,7 +1229,7 @@ Response:
 }
 ```
 
-### StateMarketStorageDeal
+## StateMarketStorageDeal
 
 StateMarketStorageDeal returns information about the indicated deal
 
@@ -1279,7 +1279,7 @@ Response:
 }
 ```
 
-### StateMinerActiveSectors
+## StateMinerActiveSectors
 
 StateMinerActiveSectors returns info about sectors that a given miner is actively proving.
 
@@ -1329,7 +1329,7 @@ Response:
 ]
 ```
 
-### StateMinerAllocated
+## StateMinerAllocated
 
 StateMinerAllocated returns a bitfield containing all sector numbers marked as allocated in miner state
 
@@ -1357,7 +1357,7 @@ Response:
 [0]
 ```
 
-### StateMinerAvailableBalance
+## StateMinerAvailableBalance
 
 StateMinerAvailableBalance returns the portion of a miner's balance that can be withdrawn or spent
 
@@ -1381,7 +1381,7 @@ Inputs:
 
 Response: `"0"`
 
-### StateMinerDeadlines
+## StateMinerDeadlines
 
 StateMinerDeadlines returns all the proving deadlines for the given miner
 
@@ -1414,7 +1414,7 @@ Response:
 ]
 ```
 
-### StateMinerFaults
+## StateMinerFaults
 
 StateMinerFaults returns a bitfield indicating the faulty sectors of the given miner
 
@@ -1442,7 +1442,7 @@ Response:
 [5, 1]
 ```
 
-### StateMinerInfo
+## StateMinerInfo
 
 StateMinerInfo returns info about the indicated miner
 
@@ -1496,7 +1496,7 @@ Response:
 }
 ```
 
-### StateMinerInitialPledgeCollateral
+## StateMinerInitialPledgeCollateral
 
 StateMinerInitialPledgeCollateral returns the initial pledge collateral for the specified miner's sector
 
@@ -1533,7 +1533,7 @@ Inputs:
 
 Response: `"0"`
 
-### StateMinerPartitions
+## StateMinerPartitions
 
 StateMinerPartitions returns all partitions in the specified deadline
 
@@ -1570,7 +1570,7 @@ Response:
 ]
 ```
 
-### StateMinerPower
+## StateMinerPower
 
 StateMinerPower returns the power of the indicated miner
 
@@ -1608,7 +1608,7 @@ Response:
 }
 ```
 
-### StateMinerPreCommitDepositForPower
+## StateMinerPreCommitDepositForPower
 
 StateMinerInitialPledgeCollateral returns the precommit deposit for the specified miner's sector
 
@@ -1645,7 +1645,7 @@ Inputs:
 
 Response: `"0"`
 
-### StateMinerProvingDeadline
+## StateMinerProvingDeadline
 
 StateMinerProvingDeadline calculates the deadline at some epoch for a proving period
 and returns the deadline-related calculations.
@@ -1687,7 +1687,7 @@ Response:
 }
 ```
 
-### StateMinerRecoveries
+## StateMinerRecoveries
 
 StateMinerRecoveries returns a bitfield indicating the recovering sectors of the given miner
 
@@ -1715,7 +1715,7 @@ Response:
 [5, 1]
 ```
 
-### StateMinerSectorAllocated
+## StateMinerSectorAllocated
 
 StateMinerSectorAllocated checks if a sector number is marked as allocated.
 
@@ -1740,7 +1740,7 @@ Inputs:
 
 Response: `true`
 
-### StateMinerSectorCount
+## StateMinerSectorCount
 
 StateMinerSectorCount returns the number of sectors in a miner's sector set and proving set
 
@@ -1772,7 +1772,7 @@ Response:
 }
 ```
 
-### StateMinerSectors
+## StateMinerSectors
 
 StateMinerSectors returns info about the given miner's sectors. If the filter bitfield is nil, all sectors are included.
 
@@ -1823,7 +1823,7 @@ Response:
 ]
 ```
 
-### StateNetworkName
+## StateNetworkName
 
 StateNetworkName returns the name of the network the node is synced to
 
@@ -1833,7 +1833,7 @@ Inputs: `null`
 
 Response: `"lotus"`
 
-### StateNetworkVersion
+## StateNetworkVersion
 
 StateNetworkVersion returns the network version at the given tipset
 
@@ -1856,7 +1856,7 @@ Inputs:
 
 Response: `21`
 
-### StateReadState
+## StateReadState
 
 StateReadState returns the indicated actor's state.
 
@@ -1890,7 +1890,7 @@ Response:
 }
 ```
 
-### StateReplay
+## StateReplay
 
 StateReplay replays a given message, assuming it was included in a block in the specified tipset.
 
@@ -2038,7 +2038,7 @@ Response:
 }
 ```
 
-### StateSearchMsg
+## StateSearchMsg
 
 StateSearchMsg looks back up to limit epochs in the chain for a message, and returns its receipt and the tipset where it was executed
 
@@ -2107,7 +2107,7 @@ Response:
 }
 ```
 
-### StateSectorExpiration
+## StateSectorExpiration
 
 StateSectorExpiration returns epoch at which given sector will expire
 
@@ -2139,7 +2139,7 @@ Response:
 }
 ```
 
-### StateSectorGetInfo
+## StateSectorGetInfo
 
 StateSectorGetInfo returns the on-chain info for the specified miner's sector. Returns null in case the sector info isn't found
 NOTE: returned info.Expiration may not be accurate in some cases, use StateSectorExpiration to get accurate
@@ -2190,7 +2190,7 @@ Response:
 }
 ```
 
-### StateSectorPartition
+## StateSectorPartition
 
 StateSectorPartition finds deadline/partition with the specified sector
 
@@ -2222,7 +2222,7 @@ Response:
 }
 ```
 
-### StateSectorPreCommitInfo
+## StateSectorPreCommitInfo
 
 StateSectorPreCommitInfo returns the PreCommit info for the specified miner's sector.
 Returns nil and no error if the sector isn't precommitted.
@@ -2272,7 +2272,7 @@ Response:
 }
 ```
 
-### StateVMCirculatingSupplyInternal
+## StateVMCirculatingSupplyInternal
 
 StateVMCirculatingSupplyInternal returns an approximation of the circulating supply of Filecoin at the given tipset.
 This is the value reported by the runtime interface to actors code.
@@ -2307,7 +2307,7 @@ Response:
 }
 ```
 
-### StateVerifiedClientStatus
+## StateVerifiedClientStatus
 
 StateVerifiedClientStatus returns the data cap for the given address.
 Returns nil if there is no entry in the data cap table for the
@@ -2333,7 +2333,7 @@ Inputs:
 
 Response: `"0"`
 
-### StateVerifiedRegistryRootKey
+## StateVerifiedRegistryRootKey
 
 StateVerifiedRegistryRootKey returns the address of the Verified Registry's root key
 
@@ -2356,7 +2356,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### StateVerifierStatus
+## StateVerifierStatus
 
 StateVerifierStatus returns the data cap for the given address.
 Returns nil if there is no entry in the data cap table for the
@@ -2382,7 +2382,7 @@ Inputs:
 
 Response: `"0"`
 
-### StateWaitMsg
+## StateWaitMsg
 
 StateWaitMsg looks back up to limit epochs in the chain for a message.
 If not found, it blocks until the message arrives on chain, and gets to the

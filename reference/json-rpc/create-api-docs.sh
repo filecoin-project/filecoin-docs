@@ -24,8 +24,22 @@ while IFS= read -r line; do
     # Create a new file for each header.
     if [[ $filename != "tableofcontents" ]]; then
       output_file="$output_dir/$filename.md"
-      echo "$line" > "$output_file"
+      echo "# $header" > "$output_file"
     fi
+  elif [[ $line == "### "* ]]; then
+
+    # Modify the line to start with "## ".
+    modified_line=$(echo "$line" | sed 's/^### /## /')
+
+    # Append the modified line to the current output file.
+    echo "$modified_line" >> "$output_file"
+  elif [[ $line == "#### "* ]]; then
+
+    # Modify the line to start with "### ".
+    modified_line=$(echo "$line" | sed 's/^#### /### /')
+
+    # Append the modified line to the current output file.
+    echo "$modified_line" >> "$output_file"
   elif [[ -n "$output_file" ]]; then
 
     # Append the line to the current output file.
@@ -40,5 +54,5 @@ rm api.md .md
 # Run prettier on each generated file.
 for file in "$output_dir"/*.md; do
   npx prettier --write "$file"
-
 done
+

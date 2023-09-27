@@ -1,9 +1,9 @@
-## Sync
+# Sync
 
 The Sync method group contains methods for interacting with and
 observing the lotus sync service.
 
-### SyncCheckBad
+## SyncCheckBad
 
 SyncCheckBad checks if a block was marked as bad, and if it was, returns
 the reason.
@@ -22,7 +22,7 @@ Inputs:
 
 Response: `"string value"`
 
-### SyncCheckpoint
+## SyncCheckpoint
 
 SyncCheckpoint marks a blocks as checkpointed, meaning that it won't ever fork away from it.
 
@@ -45,7 +45,7 @@ Inputs:
 
 Response: `{}`
 
-### SyncIncomingBlocks
+## SyncIncomingBlocks
 
 SyncIncomingBlocks returns a channel streaming incoming, potentially not
 yet synced block headers.
@@ -108,7 +108,7 @@ Response:
 }
 ```
 
-### SyncMarkBad
+## SyncMarkBad
 
 SyncMarkBad marks a blocks as bad, meaning that it won't ever by synced.
 Use with extreme caution.
@@ -127,7 +127,7 @@ Inputs:
 
 Response: `{}`
 
-### SyncState
+## SyncState
 
 SyncState returns the current status of the lotus sync system.
 
@@ -163,7 +163,7 @@ Response:
 }
 ```
 
-### SyncSubmitBlock
+## SyncSubmitBlock
 
 SyncSubmitBlock can be used to submit a newly created block to the.
 network through this node
@@ -240,7 +240,7 @@ Inputs:
 
 Response: `{}`
 
-### SyncUnmarkAllBad
+## SyncUnmarkAllBad
 
 SyncUnmarkAllBad purges bad block cache, making it possible to sync to chains previously marked as bad
 
@@ -250,7 +250,7 @@ Inputs: `null`
 
 Response: `{}`
 
-### SyncUnmarkBad
+## SyncUnmarkBad
 
 SyncUnmarkBad unmarks a blocks as bad, making it possible to be validated and synced again.
 
@@ -268,7 +268,7 @@ Inputs:
 
 Response: `{}`
 
-### SyncValidateTipset
+## SyncValidateTipset
 
 SyncValidateTipset indicates whether the provided tipset is valid or not
 

@@ -1,6 +1,6 @@
-## Web3
+# Web3
 
-### Web3ClientVersion
+## Web3ClientVersion
 
 Returns the client version
 

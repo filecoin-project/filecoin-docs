@@ -1,6 +1,6 @@
-## Net
+# Net
 
-### NetAddrsListen
+## NetAddrsListen
 
 Perms: read
 
@@ -17,7 +17,7 @@ Response:
 }
 ```
 
-### NetAgentVersion
+## NetAgentVersion
 
 Perms: read
 
@@ -29,7 +29,7 @@ Inputs:
 
 Response: `"string value"`
 
-### NetAutoNatStatus
+## NetAutoNatStatus
 
 Perms: read
 
@@ -44,7 +44,7 @@ Response:
 }
 ```
 
-### NetBandwidthStats
+## NetBandwidthStats
 
 Perms: read
 
@@ -61,7 +61,7 @@ Response:
 }
 ```
 
-### NetBandwidthStatsByPeer
+## NetBandwidthStatsByPeer
 
 Perms: read
 
@@ -80,7 +80,7 @@ Response:
 }
 ```
 
-### NetBandwidthStatsByProtocol
+## NetBandwidthStatsByProtocol
 
 Perms: read
 
@@ -99,7 +99,7 @@ Response:
 }
 ```
 
-### NetBlockAdd
+## NetBlockAdd
 
 Perms: admin
 
@@ -117,7 +117,7 @@ Inputs:
 
 Response: `{}`
 
-### NetBlockList
+## NetBlockList
 
 Perms: read
 
@@ -133,7 +133,7 @@ Response:
 }
 ```
 
-### NetBlockRemove
+## NetBlockRemove
 
 Perms: admin
 
@@ -151,7 +151,7 @@ Inputs:
 
 Response: `{}`
 
-### NetConnect
+## NetConnect
 
 Perms: write
 
@@ -170,7 +170,7 @@ Inputs:
 
 Response: `{}`
 
-### NetConnectedness
+## NetConnectedness
 
 Perms: read
 
@@ -182,7 +182,7 @@ Inputs:
 
 Response: `1`
 
-### NetDisconnect
+## NetDisconnect
 
 Perms: write
 
@@ -194,7 +194,7 @@ Inputs:
 
 Response: `{}`
 
-### NetFindPeer
+## NetFindPeer
 
 Perms: read
 
@@ -215,7 +215,7 @@ Response:
 }
 ```
 
-### NetLimit
+## NetLimit
 
 Perms: read
 
@@ -240,7 +240,7 @@ Response:
 }
 ```
 
-### NetListening
+## NetListening
 
 Perms: read
 
@@ -248,7 +248,7 @@ Inputs: `null`
 
 Response: `true`
 
-### NetPeerInfo
+## NetPeerInfo
 
 Perms: read
 
@@ -279,7 +279,7 @@ Response:
 }
 ```
 
-### NetPeers
+## NetPeers
 
 Perms: read
 
@@ -298,7 +298,7 @@ Response:
 ]
 ```
 
-### NetPing
+## NetPing
 
 Perms: read
 
@@ -310,7 +310,7 @@ Inputs:
 
 Response: `60000000000`
 
-### NetProtectAdd
+## NetProtectAdd
 
 Perms: admin
 
@@ -322,7 +322,7 @@ Inputs:
 
 Response: `{}`
 
-### NetProtectList
+## NetProtectList
 
 Perms: read
 
@@ -334,7 +334,7 @@ Response:
 ["12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf"]
 ```
 
-### NetProtectRemove
+## NetProtectRemove
 
 Perms: admin
 
@@ -346,7 +346,7 @@ Inputs:
 
 Response: `{}`
 
-### NetPubsubScores
+## NetPubsubScores
 
 Perms: read
 
@@ -376,7 +376,7 @@ Response:
 ]
 ```
 
-### NetSetLimit
+## NetSetLimit
 
 Perms: admin
 
@@ -400,7 +400,7 @@ Inputs:
 
 Response: `{}`
 
-### NetStat
+## NetStat
 
 Perms: read
 
@@ -463,7 +463,7 @@ Response:
 }
 ```
 
-### NetVersion
+## NetVersion
 
 Perms: read
 

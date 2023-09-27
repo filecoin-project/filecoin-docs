@@ -1,6 +1,6 @@
-## Filecoin
+# Filecoin
 
-### FilecoinAddressToEthAddress
+## FilecoinAddressToEthAddress
 
 FilecoinAddressToEthAddress converts an f410 or f0 Filecoin Address to an EthAddress
 

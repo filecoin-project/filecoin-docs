@@ -1,10 +1,10 @@
-## Eth
+# Eth
 
 These methods are used for Ethereum-compatible JSON-RPC calls
 
 EthAccounts will always return [] since we don't expect Lotus to manage private keys
 
-### EthAccounts
+## EthAccounts
 
 There are not yet any comments for this method.
 
@@ -18,7 +18,7 @@ Response:
 ["0x5cbeecf99d3fdb3f25e309cc264f240bb0664031"]
 ```
 
-### EthAddressToFilecoinAddress
+## EthAddressToFilecoinAddress
 
 EthAddressToFilecoinAddress converts an EthAddress into an f410 Filecoin Address
 
@@ -32,7 +32,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### EthBlockNumber
+## EthBlockNumber
 
 EthBlockNumber returns the height of the latest (heaviest) TipSet
 
@@ -42,7 +42,7 @@ Inputs: `null`
 
 Response: `"0x5"`
 
-### EthCall
+## EthCall
 
 Perms: read
 
@@ -64,7 +64,7 @@ Inputs:
 
 Response: `"0x07"`
 
-### EthChainId
+## EthChainId
 
 Perms: read
 
@@ -72,7 +72,7 @@ Inputs: `null`
 
 Response: `"0x5"`
 
-### EthEstimateGas
+## EthEstimateGas
 
 Perms: read
 
@@ -93,7 +93,7 @@ Inputs:
 
 Response: `"0x5"`
 
-### EthFeeHistory
+## EthFeeHistory
 
 Perms: read
 
@@ -114,7 +114,7 @@ Response:
 }
 ```
 
-### EthGasPrice
+## EthGasPrice
 
 Perms: read
 
@@ -122,7 +122,7 @@ Inputs: `null`
 
 Response: `"0x0"`
 
-### EthGetBalance
+## EthGetBalance
 
 Perms: read
 
@@ -134,7 +134,7 @@ Inputs:
 
 Response: `"0x0"`
 
-### EthGetBlockByHash
+## EthGetBlockByHash
 
 Perms: read
 
@@ -174,7 +174,7 @@ Response:
 }
 ```
 
-### EthGetBlockByNumber
+## EthGetBlockByNumber
 
 Perms: read
 
@@ -214,7 +214,7 @@ Response:
 }
 ```
 
-### EthGetBlockTransactionCountByHash
+## EthGetBlockTransactionCountByHash
 
 EthGetBlockTransactionCountByHash returns the number of messages in the TipSet
 
@@ -228,7 +228,7 @@ Inputs:
 
 Response: `"0x5"`
 
-### EthGetBlockTransactionCountByNumber
+## EthGetBlockTransactionCountByNumber
 
 EthGetBlockTransactionCountByNumber returns the number of messages in the TipSet
 
@@ -242,7 +242,7 @@ Inputs:
 
 Response: `"0x5"`
 
-### EthGetCode
+## EthGetCode
 
 Perms: read
 
@@ -254,7 +254,7 @@ Inputs:
 
 Response: `"0x07"`
 
-### EthGetFilterChanges
+## EthGetFilterChanges
 
 Polling method for a filter, returns event logs which occurred since last poll.
 (requires write perm since timestamp of last filter execution will be written)
@@ -273,7 +273,7 @@ Response:
 [{}]
 ```
 
-### EthGetFilterLogs
+## EthGetFilterLogs
 
 Returns event logs matching filter with given id.
 (requires write perm since timestamp of last filter execution will be written)
@@ -292,7 +292,7 @@ Response:
 [{}]
 ```
 
-### EthGetLogs
+## EthGetLogs
 
 Returns event logs matching given filter spec.
 
@@ -316,7 +316,7 @@ Response:
 [{}]
 ```
 
-### EthGetMessageCidByTransactionHash
+## EthGetMessageCidByTransactionHash
 
 Perms: read
 
@@ -334,7 +334,7 @@ Response:
 }
 ```
 
-### EthGetStorageAt
+## EthGetStorageAt
 
 Perms: read
 
@@ -346,7 +346,7 @@ Inputs:
 
 Response: `"0x07"`
 
-### EthGetTransactionByBlockHashAndIndex
+## EthGetTransactionByBlockHashAndIndex
 
 Perms: read
 
@@ -383,7 +383,7 @@ Response:
 }
 ```
 
-### EthGetTransactionByBlockNumberAndIndex
+## EthGetTransactionByBlockNumberAndIndex
 
 Perms: read
 
@@ -420,7 +420,7 @@ Response:
 }
 ```
 
-### EthGetTransactionByHash
+## EthGetTransactionByHash
 
 Perms: read
 
@@ -457,7 +457,7 @@ Response:
 }
 ```
 
-### EthGetTransactionByHashLimited
+## EthGetTransactionByHashLimited
 
 Perms: read
 
@@ -494,7 +494,7 @@ Response:
 }
 ```
 
-### EthGetTransactionCount
+## EthGetTransactionCount
 
 Perms: read
 
@@ -506,7 +506,7 @@ Inputs:
 
 Response: `"0x5"`
 
-### EthGetTransactionHashByCid
+## EthGetTransactionHashByCid
 
 Perms: read
 
@@ -522,7 +522,7 @@ Inputs:
 
 Response: `"0x37690cfec6c1bf4c3b9288c7a5d783e98731e90b0a4c177c2a374c7a9427355e"`
 
-### EthGetTransactionReceipt
+## EthGetTransactionReceipt
 
 Perms: read
 
@@ -568,7 +568,7 @@ Response:
 }
 ```
 
-### EthGetTransactionReceiptLimited
+## EthGetTransactionReceiptLimited
 
 Perms: read
 
@@ -614,7 +614,7 @@ Response:
 }
 ```
 
-### EthMaxPriorityFeePerGas
+## EthMaxPriorityFeePerGas
 
 Perms: read
 
@@ -622,7 +622,7 @@ Inputs: `null`
 
 Response: `"0x0"`
 
-### EthNewBlockFilter
+## EthNewBlockFilter
 
 Installs a persistent filter to notify when a new block arrives.
 
@@ -632,7 +632,7 @@ Inputs: `null`
 
 Response: `"0x37690cfec6c1bf4c3b9288c7a5d783e98731e90b0a4c177c2a374c7a9427355e"`
 
-### EthNewFilter
+## EthNewFilter
 
 Installs a persistent filter based on given filter spec.
 
@@ -652,7 +652,7 @@ Inputs:
 
 Response: `"0x37690cfec6c1bf4c3b9288c7a5d783e98731e90b0a4c177c2a374c7a9427355e"`
 
-### EthNewPendingTransactionFilter
+## EthNewPendingTransactionFilter
 
 Installs a persistent filter to notify when new messages arrive in the message pool.
 
@@ -662,7 +662,7 @@ Inputs: `null`
 
 Response: `"0x37690cfec6c1bf4c3b9288c7a5d783e98731e90b0a4c177c2a374c7a9427355e"`
 
-### EthProtocolVersion
+## EthProtocolVersion
 
 Perms: read
 
@@ -670,7 +670,7 @@ Inputs: `null`
 
 Response: `"0x5"`
 
-### EthSendRawTransaction
+## EthSendRawTransaction
 
 Perms: read
 
@@ -682,7 +682,7 @@ Inputs:
 
 Response: `"0x37690cfec6c1bf4c3b9288c7a5d783e98731e90b0a4c177c2a374c7a9427355e"`
 
-### EthSubscribe
+## EthSubscribe
 
 Subscribe to different event types using websockets
 eventTypes is one or more of:
@@ -703,7 +703,7 @@ Inputs:
 
 Response: `"0x37690cfec6c1bf4c3b9288c7a5d783e98731e90b0a4c177c2a374c7a9427355e"`
 
-### EthSyncing
+## EthSyncing
 
 Perms: read
 
@@ -711,7 +711,7 @@ Inputs: `null`
 
 Response: `false`
 
-### EthTraceBlock
+## EthTraceBlock
 
 TraceAPI related methods
 
@@ -753,7 +753,7 @@ Response:
 ]
 ```
 
-### EthTraceReplayBlockTransactions
+## EthTraceReplayBlockTransactions
 
 Replays all transactions in a block returning the requested traces for each transaction
 
@@ -797,7 +797,7 @@ Response:
 ]
 ```
 
-### EthUninstallFilter
+## EthUninstallFilter
 
 Uninstalls a filter with given id.
 
@@ -811,7 +811,7 @@ Inputs:
 
 Response: `true`
 
-### EthUnsubscribe
+## EthUnsubscribe
 
 Unsubscribe from a websocket subscription
 

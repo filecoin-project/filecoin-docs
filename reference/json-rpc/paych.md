@@ -1,8 +1,8 @@
-## Paych
+# Paych
 
 The Paych methods are for interacting with and managing payment channels
 
-### PaychAllocateLane
+## PaychAllocateLane
 
 Perms: sign
 
@@ -14,7 +14,7 @@ Inputs:
 
 Response: `42`
 
-### PaychAvailableFunds
+## PaychAvailableFunds
 
 Perms: sign
 
@@ -43,7 +43,7 @@ Response:
 }
 ```
 
-### PaychAvailableFundsByFromTo
+## PaychAvailableFundsByFromTo
 
 Perms: sign
 
@@ -72,7 +72,7 @@ Response:
 }
 ```
 
-### PaychCollect
+## PaychCollect
 
 Perms: sign
 
@@ -90,7 +90,7 @@ Response:
 }
 ```
 
-### PaychFund
+## PaychFund
 
 PaychFund gets or creates a payment channel between address pair.
 The specified amount will be added to the channel through on-chain send for future use
@@ -114,7 +114,7 @@ Response:
 }
 ```
 
-### PaychGet
+## PaychGet
 
 PaychGet gets or creates a payment channel between address pair
 The specified amount will be reserved for use. If there aren't enough non-reserved funds
@@ -151,7 +151,7 @@ Response:
 }
 ```
 
-### PaychGetWaitReady
+## PaychGetWaitReady
 
 Perms: sign
 
@@ -167,7 +167,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### PaychList
+## PaychList
 
 Perms: read
 
@@ -179,7 +179,7 @@ Response:
 ["f01234"]
 ```
 
-### PaychNewPayment
+## PaychNewPayment
 
 Perms: sign
 
@@ -243,7 +243,7 @@ Response:
 }
 ```
 
-### PaychSettle
+## PaychSettle
 
 Perms: sign
 
@@ -261,7 +261,7 @@ Response:
 }
 ```
 
-### PaychStatus
+## PaychStatus
 
 Perms: read
 
@@ -280,7 +280,7 @@ Response:
 }
 ```
 
-### PaychVoucherAdd
+## PaychVoucherAdd
 
 Perms: write
 
@@ -321,7 +321,7 @@ Inputs:
 
 Response: `"0"`
 
-### PaychVoucherCheckSpendable
+## PaychVoucherCheckSpendable
 
 Perms: read
 
@@ -362,7 +362,7 @@ Inputs:
 
 Response: `true`
 
-### PaychVoucherCheckValid
+## PaychVoucherCheckValid
 
 Perms: read
 
@@ -401,7 +401,7 @@ Inputs:
 
 Response: `{}`
 
-### PaychVoucherCreate
+## PaychVoucherCreate
 
 Perms: sign
 
@@ -444,7 +444,7 @@ Response:
 }
 ```
 
-### PaychVoucherList
+## PaychVoucherList
 
 Perms: write
 
@@ -486,7 +486,7 @@ Response:
 ]
 ```
 
-### PaychVoucherSubmit
+## PaychVoucherSubmit
 
 Perms: sign
 

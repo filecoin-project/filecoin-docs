@@ -1,6 +1,6 @@
-## Auth
+# Auth
 
-### AuthNew
+## AuthNew
 
 Perms: admin
 
@@ -12,7 +12,7 @@ Inputs:
 
 Response: `"Ynl0ZSBhcnJheQ=="`
 
-### AuthVerify
+## AuthVerify
 
 Perms: read
 
