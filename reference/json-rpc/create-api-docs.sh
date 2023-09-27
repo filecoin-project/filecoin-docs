@@ -4,7 +4,7 @@
 curl -o api.md https://raw.githubusercontent.com/filecoin-project/lotus/master/documentation/en/api-v1-unstable-methods.md
 
 # Define the output directory
-output_dir="output"
+output_dir="./"
 
 # Create the output directory if it doesn't exist
 mkdir -p "$output_dir"
