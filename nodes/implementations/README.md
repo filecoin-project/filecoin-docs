@@ -29,11 +29,7 @@ One of the key features of Venus is its support for the Chinese language and mar
 
 ## Implementation differences
 
-while Lotus and Venus share many similarities, they differ in their development, language, feature sets, focus, and community support. Depending on your needs and interests, you may prefer one implementation over the other:
-
-### Language
-
-Lotus is written in Go, while Venus is written in Rust.
+While Lotus and Venus share many similarities, they differ in their development, feature sets, focus, and community support. Depending on your needs and interests, you may prefer one implementation over the other:
 
 ### Compatibility
 
