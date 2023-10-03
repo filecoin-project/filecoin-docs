@@ -36,14 +36,15 @@ To build the lite-node, you’ll need some specific software. Run the following 
     sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y
     ```
 
-2.  Install Go and add `/usr/local/go/bin` to your `$PATH` variable:
+2.  [Install Go](https://go.dev/doc/install) and add `/usr/local/go/bin` to your `$PATH` variable:
 
     ```sh
-    wget -c https://golang.org/dl/go1.18.8.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+    wget https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
+    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
     echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
     ```
 
-3.  Install Rust and source the `~/.cargo/env` config file:
+3.  [Install Rust](https://www.rust-lang.org/tools/install) and source the `~/.cargo/env` config file:
 
     ```sh
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
