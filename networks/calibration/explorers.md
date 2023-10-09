@@ -18,7 +18,7 @@ description: >-
 
 [calibration.filscan.io](https://calibration.filscan.io/)
 
-## Glif Explorer [#](https://docs.filecoin.io/networks/calibration/explorers/#glif-explorer) <a href="#glif-explorer" id="glif-explorer"></a>
+## Glif Explorer
 
 [explorer.glif.io](https://explorer.glif.io/?network=calibration)
 
