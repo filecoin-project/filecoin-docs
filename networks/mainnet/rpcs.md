@@ -25,7 +25,7 @@ description: Public RPC endpoints are available for the Filecoin mainnet.
 * WebSocket: `wss://filecoin.chainup.net/rpc/v1`
 * [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
 
-## [Glif](https://glif.io)
+## [Glif](https://api.node.glif.io)
 
 Please note that publicly available hosted endpoints **only guarantee 2000 of the latest blocks.**
 
