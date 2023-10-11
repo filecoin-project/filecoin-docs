@@ -11,11 +11,8 @@ Filecoin Improvement Proposals (FIPs) can be authored by anyone in the community
 A FIP is an important piece of the governance process within Filecoin for several key reasons:
 
 -It gives community members a chance to guide the network by making recommendations which may then be implemented
-
 -It creates an important forum for community engagement where people can come together to discuss proposed ideas and work together in collaboration to explore solutions
-
 -It creates an open record of all ideas proposed, the conversation around those ideas, and why they were or were not implemented
-
 -It provides a clear process for making changes to the network and clearly defines the roles that people within the community can play in terms of shaping the proposals, making edits or recommendations, and moving the FIP through the stages from creation to implementation
 
 FIPs should be contain a single idea or proposal, and be focused on how this proposal will improve the network. The more concise and focused the FIP, the more likely it is to succeed and be implemented.
@@ -23,13 +20,9 @@ FIPs should be contain a single idea or proposal, and be focused on how this pro
 There are five categories of FIPs, listed in order of increasing complexity and risk to the network:
 
 **Network Standards (FRCs)**—These FIPs do not require consensus, and are proposals to document network best practices and key recommendations
-
 **Technical FIPs**—These FIPs require consensus and are for changes to the core protocol stack
-
 **Cryptoeconomic FIPs**—These FIPs are to propose changes that will affect the economic policy of the network, or for changes that are likely to have a substantial impact on existing token dynamics and network incentives
-
 **Community FIPs**—These FIPs introduce structural or programmatic changes to the Filecoin Community, including changes to its governance process
-
 **Security FIPs**—These FIPs are for emergency technical changes to the core protocol in event of attack, capture, outage, or other immediate threats to the network 
 
 ## FIP Roles, Stages, and Paths to Acceptance
