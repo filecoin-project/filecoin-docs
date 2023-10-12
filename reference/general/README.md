@@ -113,7 +113,7 @@ Developer tools, API clients & storage services that developers can use to build
 ### Wallet-related tools
 
 * [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges.
-* [FilSnap MetaMask Plugin](https://metamask.io/flask/) - MetaMask has a new plugin system currently still in beta that developers can try out. The MM UI will not change but Filecoin keys are in the MM vault. Try it with [https://filsnap.chainsafe.io/](https://filsnap.chainsafe.io/)
+* [FilSnap MetaMask Plugin](https://metamask.io/flask/) - MetaMask has a new plugin system currently still in beta that developers can try out. The MM UI will not change but Filecoin keys are in the MM vault.
 
 ### Node Infrastructure & APIs
 
