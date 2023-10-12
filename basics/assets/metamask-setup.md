@@ -7,13 +7,13 @@ description: >-
 
 # Metamask setup
 
-## Using Chainlist
+## Using ChainID
 
-Chainlist is a website that lets users easily connect their wallets to EVM-compatible blockchains. Chainlist is managed by [DeFi Llama](https://defillama.com/). Chainlist is the simplest way to add the Filecoin network to your MetaMask wallet.
+ChainID.network is a website that lets users easily connect their wallets to EVM-compatible blockchains. ChainID is the simplest way to add the Filecoin network to your MetaMask wallet.
 
 {% tabs %}
 {% tab title="Mainnet" %}
-1. Navigate to [chainlist.network](https://chainlist.network).
+1. Navigate to [chainid.network](https://chainid.network).
 2. Search for `Filecoin Mainnet`.
 3. Click **Connect Wallet**.
 4. Click **Approve** when prompted to _Allow this site to add a network_.
@@ -25,7 +25,7 @@ You can now use MetaMask to interact with the Filecoin network.
 {% endtab %}
 
 {% tab title="Calibration" %}
-1. Navigate to [chainlist.network](https://chainlist.network).
+1. Navigate to [chainid.network](https://chainid.network).
 2. Search for `Filecoin Calibration`.
 3. Click **Connect Wallet**.
 4. Click **Approve** when prompted to _Allow this site to add a network_.
@@ -37,7 +37,7 @@ You can now use MetaMask to interact with the Filecoin network.
 {% endtab %}
 
 {% tab title="Local testnet" %}
-1. Navigate to [chainlist.network](https://chainlist.network).
+1. Navigate to [chainid.network](https://chainid.network).
 2. Search for `Filecoin Local testnet`.
 3. Click **Connect Wallet**.
 4. Click **Approve** when prompted to _Allow this site to add a network_.
@@ -51,7 +51,7 @@ You can now use MetaMask to interact with the Filecoin network.
 
 ## Manual process
 
-If you can't or don't want to use Chainlist, you can add the Filecoin network to your MetaMask manually.
+If you can't or don't want to use ChainID, you can add the Filecoin network to your MetaMask manually.
 
 ### Prerequisites
 
@@ -85,7 +85,7 @@ The process for configuring MetaMask to use Filecoin is fairly simple but has so
 {% endtab %}
 {% endtabs %}
 
-7. Pick one block explorer from the [Networks section](../../networks/mainnet/README.md), and enter the URL into the **Block explorer (optional)** field.
+7. Pick one block explorer from the [Networks section](../../networks/mainnet/), and enter the URL into the **Block explorer (optional)** field.
 8. Review the values in the fields and click **Save**.
 9. The Filecoin network should now be shown in your MetaMask window.
 10. Done!
@@ -101,46 +101,41 @@ MetaMask is compatible with the Ledger hardware wallet. Follow these instruction
 Before you can connect MetaMask to your Ledger, you must install the Filecoin Ledger app on your Ledger device.
 
 1. Open Ledger Live and navigate to **My Ledger**.
-1. Connect your Ledger device and unlock it.
-1. Confirm that you allow My Ledger to access your Ledger device. You can do that by clicking both buttons on your Ledger device simultaneously. 
-1. Go back to Ledger Live on your computer. 
-1. In **My Ledger**, head over to **App catalog** and search for **Filecoin**.
-1. Click **Install**.
+2. Connect your Ledger device and unlock it.
+3. Confirm that you allow My Ledger to access your Ledger device. You can do that by clicking both buttons on your Ledger device simultaneously.
+4. Go back to Ledger Live on your computer.
+5. In **My Ledger**, head over to **App catalog** and search for **Filecoin**.
+6. Click **Install**.
 
-For more details on the official Filecoin Ledger app, [check out the Ledger documentation](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true). 
+For more details on the official Filecoin Ledger app, [check out the Ledger documentation](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true).
 
 ### Enable expert-mode
 
 MetaMask requires that the Filecoin app on your Ledger device is set to _Expert mode_.
 
-1. Open the Filecoin app on your Ledger device.
+1.  Open the Filecoin app on your Ledger device.
 
     ![A Ledger with the Filecoin app open.](../../.gitbook/assets/basics-assets-metamask-ledger-1-filecoin-app.jpg)
-
-1. Use the buttons on your device to navigate to **Expert mode**.
+2.  Use the buttons on your device to navigate to **Expert mode**.
 
     ![A Ledger showing the expert mode option.](../../.gitbook/assets/basics-assets-metamask-ledger-2-expert-mode.jpg)
-
-1. Press both buttons simultaneously to _enable_ **Expert mode**.
+3. Press both buttons simultaneously to _enable_ **Expert mode**.
 
 ### Connect to MetaMask
 
 Once you have installed the Filecoin app on your Ledger device and enabled expert mode, you can connect your device to MetaMask.
 
 1. Open your browser and open the MetaMask extension.
-1. In the **Accounts** menu, select **Add hardware wallet**.
+2.  In the **Accounts** menu, select **Add hardware wallet**.
 
     ![MetaMask with the 'Add hardware wallet' option highlighted.](../../.gitbook/assets/basics-assets-metamask-ledger-3-add-hw-wallet.jpg)
-
-1. Select **Ledger** 
+3.  Select **Ledger**
 
     ![MetaMask showing the available hardware wallet options.](../../.gitbook/assets/basics-assets-metamask-ledger-4-select-ledger.jpg)
-
-1. A list of accounts should appear. Select an `0x...` account.
+4.  A list of accounts should appear. Select an `0x...` account.
 
     ![MetaMask showing multiple accounts from a Ledger device.](../../.gitbook/assets/basics-assets-metamask-ledger-5-select-account.jpg)
-
-1. Done!
+5. Done!
 
 That's it! You've now successfully connected your Ledger device to MetaMask. When you submit any transactions through MetaMask using this account, the Filecoin Ledger app will prompt you for a confirmation on the Ledger device.
 
