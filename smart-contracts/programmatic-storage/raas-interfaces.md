@@ -59,4 +59,4 @@ Check out the [RaaS starter kit](https://github.com/filecoin-project/raas-starte
 
 ## Aggregator-hosted RaaS
 
-The aggregator-hosted RaaS refers to a solution that requires an aggregator to host all the components of RaaS and provides a seamless interface to the client. [Lighthouse.storage](https://www.lighthouse.storage/) is the first FVM project to provide an aggregator-hosted RaaS, via its SDK. See the docs [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/fvm-contract-overview).
+The aggregator-hosted RaaS refers to a solution that requires an aggregator to host all the components of RaaS and provides a seamless interface to the client. [Lighthouse.storage](https://www.lighthouse.storage/) is the first FVM project to provide an aggregator-hosted RaaS, via its SDK.
