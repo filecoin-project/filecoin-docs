@@ -29,7 +29,7 @@ Backups and (tested) restores are the basis for a DR (disaster recovery) plan an
 
 When planning for backup and recovery, the terms RPO and RTO are important concepts to know about.
 
-- **Recovery Time Objective (RTO)** is the time taken to recover a certain application or dataset in the event of a failure. Fast recovery means a shorter RTO (typically measured in hours/minutes/seconds). Enterprises plan for very short RTOs when downtime is not acceptable to their business. Application and filesystem snapshots typically provide the lowest possible RTO.
+- **Recovery Time Objective (RTO)** is the time taken to recover a certain application or dataset in the event of a failure. Fast recovery means a shorter RTO (typically measured in hours/minutes/seconds). Enterprises plan for very short RTOs when downtime is not acceptable to their business. Application and file system snapshots typically provide the lowest possible RTO.
 
 - **Recovery Point Objective (RPO)** is the last known working backup from which you can recover. A shorter RPO means the time between the last backup and the failure is short. Enterprises plan for very short RPOs for systems and data that changes very often (like databases). Synchronous replication of systems and data typically provides the lowest possible RPO.
 
@@ -41,13 +41,13 @@ RTO is typically less concerning for storage providers. The most critical parts 
 
 For RPO, although synchronous replication, together with snapshots, can reduce RPO to nearly zero, that is not a cost-efficient solution. Asynchronous replication of sealed storage is the most viable option if you are running at small-to-medium scale. Once you grow beyond 10PB of storage, even replicating the data will become an expensive solution.
 
-In such cases you might want to look into _storage cluster_ solutions with built-in redundancy. Very large storage providers will operate [Ceph-clusters](https://en.wikipedia.org/wiki/Ceph_(software)) or other solutions with built-in _erasure coding_. Although this does more become more like a HA setup than a DR setup, at scale, it becomes the only economically viable option.
+In such cases you might want to look into _storage cluster_ solutions with built-in redundancy. Very large storage providers will operate [Ceph clusters](https://en.wikipedia.org/wiki/Ceph_(software)) or other solutions with built-in _erasure coding_. Although this does more become more like a HA setup than a DR setup, at scale, it becomes the only economically viable option.
 
 Running a storage cluster comes with its own operational challenges though, which does not make this a good fit for small-to-medium setups.
 
 ### RPO/RTO for customers
 
-Both storage providers and data owners (customers) should look at RPO and RTO options. As a customer, you can achieve HA/DR by having multiple copies of your data stored (and proven) across multiple storage providers. In the event of data loss at one provider, other providers will hold a copy of your data from which you can retrieve. As a customer, you choose how much redundacy you need, by doing storage deals with more providers.
+Both storage providers and data owners (customers) should look at RPO and RTO options. As a customer, you can achieve HA/DR by having multiple copies of your data stored (and proven) across multiple storage providers. In the event of data loss at one provider, other providers will hold a copy of your data from which you can retrieve. As a customer, you choose how much redundancy you need, by doing storage deals with more providers.
 
 RTO for data owners is a matter of how fast the storage provider(s) can provide you the data.
 
@@ -59,12 +59,20 @@ RPO for data owners is less of a concern, especially once the data is sealed. Th
 
 ## Backup techniques
 
-- A first level of protection comes from ZFS (if you are using ZFS as the filesystem for your storage). Having ZFS snapshots available protects you against data loss caused by human error or tech failure, and potentially even against ransomware. Other filesystems typically also have a way to make snapshots, albeit not as efficiently as ZFS.
+- A first level of protection comes from ZFS (if you are using ZFS as the file system for your storage). Having ZFS snapshots available protects you against data loss caused by human error or tech failure, and potentially even against ransomware. Other file systems typically also have a way to make snapshots, albeit not as efficiently as ZFS.
 
-- A second level of defense comes from a dedicated backup system. Not only should you have backup storage (on a different storage array than the original data), you also need to have a backup server that can at a minimum run the Lotus daemon, Lotus miner and 1 WindowPoST worker (note: this requires a GPU). With that you can sync the chain, offer retrievals and prove your storage on-chain, from your backup system, whilst you bring your primary back online.
+- A second level of defense comes from a dedicated backup system. Not only should you have backup storage (on a different storage array than the original data), you also need to have a backup server that can at a minimum run the Lotus daemon, Lotus miner and 1 WindowPoSt worker (note: this requires a GPU). With that you can sync the chain, offer retrievals and prove your storage on-chain, from your backup system, whilst you bring your primary back online.
 
 - An alternative technique to having a dedicated backup system and copy is to have a storage cluster. This still requires a backup system to run the Lotus daemon, Lotus miner and PoST worker on. Implementing a storage cluster is usually only done for large-scale deployments as it comes with additional operational tasks.
 
 For maximum resilience, you could host your backup system (server + storage) in a different datacenter than your primary system.
+
+## DR failover techniques
+
+One way to prepare for an easy failover of the software components in the event of a failure is to configure floating IP addresses. Instead of pinning lotus daemon and lotus-miner to the host IP address of the server they are running on, you can configure a secondary IP address and pin the daemon to its own IP, and lotus-miner to yet another IP.
+
+This helps to reduce the amount of manual tasks for a failover drastically. If the recovered daemon or miner instance changes IP address it requires quite a lot of reconfiguration in various places.
+
+Having the services on a floating IP allows to assign this IP to another machine and start the service on it.
 
 {{< sp-calls-to-action >}}

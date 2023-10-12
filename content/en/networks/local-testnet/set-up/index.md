@@ -9,7 +9,7 @@ menu:
   networks:
     parent: "networks-local-testnet"
     identifier: "set-up-72a301344c7e2a40efea82726d9b66b8"
-weight: 410
+weight: 500
 toc: true
 aliases:
     - "/networks/local-testnet"
@@ -46,7 +46,6 @@ To build the nodes, you'll need some specific software. Run the following comman
 
     If you do not see a version number. or receive an error message, install [Homebrew](https://brew.sh/).
 
-
 1. Ensure you have [XCode](https://developer.apple.com/xcode/) installed.
 
     ```shell
@@ -56,7 +55,7 @@ To build the nodes, you'll need some specific software. Run the following comman
     ```plaintext
     /Library/Developer/CommandLineTools
     ```
-    
+
     If you do not see the output above. or receive an error message, install [XCode](https://developer.apple.com/xcode/).
 
 1. Install the following dependencies:
@@ -114,6 +113,7 @@ To build the nodes, you'll need some specific software. Run the following comman
     curl https://sh.rustup.rs -sSf | sh -s -- -y
     source "$HOME/.cargo/env"
     ```
+
 1. Done! You can move on to the [Pre-build](#pre-build) section.
 
 {{< /tab >}}
@@ -253,7 +253,7 @@ Before we can build the Lotus binaries, there's some setup we need to do. We'll 
     ./lotus-seed genesis new localnet.json
     ```
 
-1. Create a pre-miner and an address with some funds: 
+1. Create a pre-miner and an address with some funds:
 
     ```shell
     ./lotus-seed genesis add-miner localnet.json ~/.genesis-sectors/pre-seal-t01000.json
@@ -493,6 +493,7 @@ You'll eventually want to stop your local devnet from running or may need to res
     2023-02-14T10:54:42.056-0400    INFO    builder node/shutdown.go:44     miner shut down successfully
     2023-02-14T10:54:42.056-0400    WARN    builder node/shutdown.go:47     Graceful shutdown successful
     ```
+
 1. You can now close the storage provider terminal window.
 1. Open the client terminal window.
 1. Press `CTRL` + `c` to stop the node. The node will print `Graceful shutdown successful` once it has fully stopped:
@@ -508,6 +509,7 @@ You'll eventually want to stop your local devnet from running or may need to res
     2023-02-14T10:55:42.502-0400    INFO    builder node/shutdown.go:44     node shut down successfully
     2023-02-14T10:55:42.502-0400    WARN    builder node/shutdown.go:47     Graceful shutdown successful
     ```
+
 1. You can now close the client terminal window.
 
 ### Restart the devnet

@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "integrating-existing-ethereum-libraries-e0b2c827da6ced7e92bfaf452add675c"
-weight: 430
+weight: 460
 toc: true
 ---
 
@@ -17,7 +17,7 @@ toc: true
 
 [OpenZeppelin](https://www.openzeppelin.com/contracts) provides a library of battle-tested smart contract templates, including widely used implementations of ERC token standards. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
 
-### Benefits 
+### Benefits
 
 OpenZeppelin offers the following to smart contract developers:
 
@@ -25,10 +25,10 @@ OpenZeppelin offers the following to smart contract developers:
 - Flexible access control schemes like `Ownable`, `AccessControl`, and `onlyRole`.
 - Useful and secure utilities for signature verification, `SafeMath`, etc..
 
-Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20), are the most widely used smart contract libraries from OpenZepplin. These contracts, listed below, implement both _fungible_ and _non-fungible_ tokens:
+Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20), are the most widely used smart contract libraries from OpenZeppelin. These contracts, listed below, implement both _fungible_ and _non-fungible_ tokens:
 
-- [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) is the simplest and most widespread token standard for fungible assets. 
-- [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721) is the de-facto solution for non-fungible tokens and is often used for collectibles and games.
+- [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) is the simplest and most widespread token standard for fungible assets.
+- [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721) is the standard solution for non-fungible tokens and is often used for collectibles and games.
 - [ERC777](https://docs.openzeppelin.com/contracts/4.x/erc777) provides a richer standard for fungible tokens, supporting new use cases and backwards compatibility with ERC20.
 - [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155) is a new standard for _multi-tokens_, where a single contract represents multiple fungible and non-fungible tokens, and operations are batched for increased gas efficiency.
 
@@ -45,43 +45,33 @@ The _general_ procedure for using OpenZeppelin with FVM is as follows:
 1. Import the specific library you want to use.
 1. In your smart contract, inherit the library.
 
-Thanks to the FVM, your contract can be integrated and deployed on the Filecoin network with OpenZepplin inheritance. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
+Thanks to the FVM, your contract can be integrated and deployed on the Filecoin network with OpenZeppelin inheritance. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](#example-using-an-erc20-contract).
 
 ### Example using an ERC20 contract
 
-In the following tutorial, you'll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Hyperspace testnet using Remix and MetaMask:
+In the following tutorial, you'll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Calibration testnet using Remix and MetaMask:
 
 #### Prerequisites
 
-Before you begin, you must have:
+Let's take an ERC20 contract as an example to write and deploy it on the Calibration testnet using Remix & MetaMask:
 
 - Remix.
 - MetaMask.
-- [MetaMask connected to the Hyperspace testnet]({{< relref "/basics/assets/metamask-setup" >}}).
-- Test tokens (tFIL) [from the faucet]({{< relref "/networks/hyperspace/get-test-tokens">}}).
+- [MetaMask connected to the Calibration testnet]({{< relref "/basics/assets/metamask-setup" >}}).
+- Test tokens (tFIL) [from the faucet](https://faucet.calibration.fildev.network/funds.html).
 
 #### Procedure
 
-In this procedure, you will create, deploy, mint and send an [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) token on Hyperspace using Remix and MetaMask. 
+In this procedure, you will create, deploy, mint and send an [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) token on Calibration using Remix and MetaMask. 
 
 1. Navigate to [remix.ethereum.org](https://remix.ethereum.org/).
-
 1. Next to **Workspaces**, click the **+** icon to create a new workspace.
-
 1. In the **Choose a template** dropdown, select **ERC 20** along with the **Mintable** checkbox.
 
    ![Set workspace details.](create-a-workspace-details.png)
 
-1. Click **OK**. 
-
-   {{< alert >}}
-   **Checkpoint**
-
-   A new workspace and an ERC20 token called `MyToken.sol` have been created.
-   {{< /alert >}}
-
+1. Click **OK**.
 1. In the **contract** directory, open **MyToken.sol**.
-
 1. Set the token `<name>` and `<symbol>`:
 
    ```solidity
@@ -105,40 +95,27 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
    ![Compile the contract.](compile-compile.png)
 
 1. Once the contract compiles, open the **Deploy** tab on the left.
-
 1. Under the **Environment** dropdown, select **Injected Provider - MetaMask**. 
-
 1. In the MetaMask popup window, select **Confirmed connection**.
 
    ![Select contract in Remix.](deploy-select-contract.png)
 
-1. Click **Deploy**.
-
-1. In MetaMask, confirm the transaction. 
-
-   {{< alert >}}
-   **Checkpoint**
-
-   After the transaction is confirmed on-chain, your token contract is deployed to the Hyperspace network. Now, you can mint tokens.
-   {{< /alert >}}
-
+1. Click **Deploy**, and confirm the transaction on MetaMask. Your token contract will be deployed to the Calibration testnet once the network confirms the transaction.
 1. In Remix, open the **Deployed Contracts** dropdown. 
-
 1. In the `mint` method, set:
-   -  `to` to your wallet address.
-   -  `amount` to `100000000000000000000` (1 `FIL`).
+   - `to` to your wallet address.
+   - `amount` to `100000000000000000000` (1 `FIL`).
 
    ![Click Deploy in Remix.](deploy-remix-deploy.png)
 
 1. Click **Transact**.
-
 1. In MetaMask, confirm the transaction. 
 
 Once the network processes the transaction, the token is minted and sent to your network address. Congratulations, you've completed the tutorial!
 
 ### Additional resources
 
-Learn more about OpenZepplin with the following resources:
+Learn more about OpenZeppelin with the following resources:
 
 - [OpenZeppelin Contracts website](https://www.openzeppelin.com/contracts)
 - [Documentation](https://docs.openzeppelin.com/contracts/4.x/)

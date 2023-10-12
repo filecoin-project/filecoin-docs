@@ -1,7 +1,7 @@
 ---
 title: "Call built-in actors"
-description: "Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Zondax filecoin.solifity library. This page provides instructions on how to use each method."
-lead: "Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Zondax filecoin.solifity library. This page provides instructions on how to use each method."
+description: "Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Filecoin.solidity library. This page provides instructions on how to use each method."
+lead: "Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Filecoin.solidity library. This page provides instructions on how to use each method."
 draft: false
 images: []
 type: docs
@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: call-built-in-actors-5544d4c9d2960540625aa69529c6fc50"
-weight: 420
+weight: 470
 toc: true
 ---
 
@@ -17,22 +17,22 @@ toc: true
 For conceptual information on built-in actors, including their purposes, how they work and available types, see the [conceptual guide]({{< ref "/reference/built-in-actors/overview" >}})
 {{< /alert >}}
 
-Built-in actors can be invoked using the Protocol _JSON-RPC_ API or the Zondax _filecoin.sol_ API.
+Built-in actors can be invoked using the Protocol JSON-RPC API or the Filecoin.solidity API.
 
 ## APIs compared
 
 The Protocol _JSON-RPC_ API:
 
 - Is maintained by Protocol Labs (PL).
-- Uses JSON-RPC, a standardized way to encode remote procedure calls in JSON that can be transported using HTTP or Websockets.
+- Uses JSON-RPC, a standardized way to encode remote procedure calls in JSON that can be transported using HTTP or WebSockets.
 - Provides a language agnostic interface for Filecoin functionality.
-- Allows applications to access Filecoin functionality using HTTP or Websockets calls to a Filecoin node, like the Lotus daemon.
+- Allows applications to access Filecoin functionality using HTTP or WebSockets calls to a Filecoin node, like the Lotus daemon.
 - Requires authentication for some API calls.
 - Serves as the foundation for language-specific libraries (some of which are maintained by organizations other than PL) such as [filecoin.js](https://filecoin-shipyard.github.io/filecoin.js/).
 
-The Zondax _filecoin.sol_ API:
+The _Filecoin.sol_ API:
 
-- Is maintained by [Zondax](https://docs.zondax.ch/).
+- Is maintained by Protocol Labs (PL).
 - Supports [_some but not all_ of the built-in actors and their methods](#available-actors-and-methods).
 
 ## Protocol API
@@ -54,14 +54,14 @@ Smart contracts can access built-in actor methods with the `filecoin.sol` librar
 To invoke built-in actor methods using `filecoin.sol`, follow these steps:
 
 1. Review the [available actors and methods](#available-actors-and-methods).
-1. [Import `filecoin.sol`](#import-filecoinsolidity).
+1. [Import `filecoin.sol`](#import-filecoinsol).
 1. [Call a built-in actor](#call-a-built-in-actor).
 
 ### Available actors and methods
 
 The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and Verified Registry actor methods are supported and are listed below. **Cron, Payment Channel, Reward and System actor methods are currently not supported.**
 
-[procedure](#import-filecoinsolidity)
+[procedure](#import-filecoinsol)
 
 #### Account
 
@@ -222,14 +222,14 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 
 ### Import filecoin.sol
 
-The `filecoin.sol` library is embeddable into your smart contract, which means it does not need be present on chain first. Instead, you can just import the library and call the available methods. The `filecoin.sol` library can be [added via `npm`](#import-filecoinsolidity-with-npm) or [manually imported](#import-filecoinsolidity-manually) into your contract. The `npm`-based import is simpler, and is recommended.
+The `filecoin.sol` library is embeddable into your smart contract, which means it does not need be present on chain first. Instead, you can just import the library and call the available methods. The `filecoin.sol` library can be [added via `npm`](#import-filecoinsol-with-npm) or [manually imported](#import-filecoinsol-manually) into your contract. The `npm`-based import is simpler, and is recommended.
 
 #### Import filecoin.sol with npm
 
 1. Install [yarn](https://yarnpkg.com/) if you don't have it installed.
 
 1. Install `filecoin.sol`:
- 
+
     ```shell
     yarn add @zondax/filecoin.sol
     ```
@@ -254,7 +254,7 @@ The `filecoin.sol` library is embeddable into your smart contract, which means i
     cd libs
     ```
 
-1. Copy the Zondax contracts with the methods you wish to call from [the contracts folder](https://github.com/Zondax/filecoin.sol/tree/master/contracts/v0.8) into `libs`.
+1. Copy the contracts with the methods you wish to call from [the contracts folder](https://github.com/filecoin-project/filecoin-solidity/tree/master/contracts/v0.8) into `libs`.
 
 ### Call a built-in actor
 

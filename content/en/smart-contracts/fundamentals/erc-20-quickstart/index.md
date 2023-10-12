@@ -1,7 +1,7 @@
 ---
 title: "ERC-20 quickstart"
-description: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called Metamask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
-lead: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called Metamask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
+description: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called MetaMask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
+lead: "In this quickstart tutorial we'll walk through how to deploy your first smart-contract to the Filecoin network. We're going to install a browser-based wallet called MetaMask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network."
 draft: false
 images: []
 type: docs
@@ -53,18 +53,18 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
 ### Switch networks
 
-You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Hyperspace testnet]({{< relref "/networks/hyperspace/details" >}}). We'll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
+You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet]({{< relref "/networks/calibration/details" >}}). We'll use a website called [chainlist.network](https://chainlist.network/) to give MetaMask the information it needs quickly.
 
-1. Go to [chainlist.org](https://chainlist.org/).
-1. Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
+1. Go to [chainlist.network](https://chainlist.network/).
+1. Enter `Filecoin` into the search bar.
 
     ![Search for Filecoin testnets in Chainlist.](chainlist-search-for-filecoin-testnets.png)
 
-1. Scroll down to find the **Filecoin -- Hyperspace** testnet:
+1. Scroll down to find the **Filecoin - Calibration** testnet:
 
-    ![Find the Hyperspace testnet.](chainlist-select-hyperspace.png)
+    ![Find the Calibration testnet.](chainlist-select-calibration.png)
 
-1. In MetaMask click **Next**.
+1. In MetaMask, click **Next**.
 
     ![Click next in MetaMask.](chainlist-connect-with-metamask.png)
 
@@ -84,11 +84,11 @@ You may notice that we are currently connected to the **Ethereum Mainnet**. We n
 
     ![Open MetaMask from the browser extensions tab.](chainlist-open-metamask.png)
 
-1. You should see the Filecoin Hyperspace testnet listed at the top:
+1. You should see the _Filecoin Calibration_ testnet listed at the top:
 
-    ![MetaMask on the Filecoin Hyperspace testnet.](chainlist-hyperspace-added.png)
+    ![MetaMask on the Filecoin Calibration testnet.](chainlist-calibration-added.png)
 
-Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
+Nice! Now we've got the Filecoin Calibration testnet set up within MetaMask. You'll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We'll grab some `TFIL` next.
 
 ### Get some funds
 
@@ -96,11 +96,11 @@ Nice! Now we've got the Filecoin Hyperspace testnet set up within MetaMask. You'
 
     ![Copy your address to your clipboard.](faucet-get-address.png)
 
-1. Go to [hyperspace.yoga](https://hyperspace.yoga) and click **Faucet** from the menu.
+1. Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Faucet** from the menu.
 
     ![Go to the Faucet section of the website.](faucet-click-faucet.png)
 
-1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
+1. Paste your address into the address field, complete the **I am human** CAPTCHA, and then click **Send**:
 
     ![Verify you're a human.](faucet-verify.png)
 
@@ -187,7 +187,7 @@ Now that we've successfully compiled our contract, we need to deploy it somewher
 
     ![Click Connect in MetaMask.](deploy-metamask-click-connect.png)
 
-1. Back in Remix, under the **Account** field, you'll see that it says something like `0x11F... (5 ether)`. This value is 5 `tFIL`, but Remix doesn't natively support the Filecoin network so doesn't understand what `tFIL` is. This isn't a problem, it's just a little quirk of using Remix.
+1. Back in Remix, under the **Account** field, you'll see that it says something like `0x11F... (5 ether)`. This value is 5 `tFIL`, but Remix doesn't support the Filecoin network so doesn't understand what `tFIL` is. This isn't a problem, it's just a little quirk of using Remix.
 
     ![Remix and MetaMask linked.](deploy-remix-metamask-linked.png)
 
@@ -223,7 +223,7 @@ Let's call a method within the deployed contract to mint some tokens.
 
 1. Back in Remix, open the **Deployed Contracts** dropdown, within the **Deploy** sidebar tab.
 
-    ![](use-mint-select-deployed-contracts.png)
+    ![Deploy the contracts.](use-mint-select-deployed-contracts.png)
 
 1. Expand the `mint` method. You must fill in two fields here: `to` and `amount`.
 
@@ -268,5 +268,4 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 
 ### Share your tokens
 
-Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](#create-a-wallet) and [Switch networks](#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](#add-your-tokens-to-metamask) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can't, it might be because they [don't have any `tFil`](#get-some-funds).
-
+Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](#create-a-wallet) and [Switch networks](#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](#add-to-metamask) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can't, it might be because they [don't have any `tFil`](#get-some-funds).

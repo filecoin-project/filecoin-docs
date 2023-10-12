@@ -9,17 +9,17 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "hardhat-493e35b7b05034632e53a13b339be61f"
-weight: 450
+weight: 430
 toc: true
 aliases:
     - "/developers/smart-contracts/hardhat/"
 ---
 
-While originally created for the Ethereum blockchain, the Filecoin EVM-runtime allows Hardhat to be used to develop and deploy smart contracts on the Filecoin network.
+While originally created for the Ethereum blockchain, the Filecoin Ethereum Virtual Machine runtime (FEVM) allows Hardhat to be used to develop and deploy smart contracts on the Filecoin network.
 
 ## Quickstart
 
-The [Filecoin EVM-runtime Hardhat kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit) is a starter hardhat project for developing, deploying, and testing Solidity smart contracts on the Filecoin network. It functions in the same way as other Hardhat development kits. Check out the quickstart below to test it out!
+The [FEVM Hardhat kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit) is a starter hardhat project for developing, deploying, and testing Solidity smart contracts on the Filecoin network. It functions in the same way as other Hardhat development kits. Check out the quickstart below to test it out!
 
 ### Prerequisites
 
@@ -77,14 +77,14 @@ First, we need to grab the starter kit and install the dependencies.
 
     Always be careful when dealing with your private key. Double-check that you're not hardcoding it anywhere or committing it to source control like GitHub. Anyone with access to your private key has complete control over your funds.
 
-1. Get the deployer address from Hardhat:
+1. Get the addresses associated with the private key from Hardhat:
 
     ```shell
     yarn hardhat get-address
     ```
 
     ```plaintext
-    Ethereum address (this addresss should work for most tools): 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
+    Ethereum address (this address should work for most tools): 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
     f4address (also known as t4 address on testnets): f410fch6aods4buzaete3mpatnejuaxqhzdci3j67vyi
     ✨  Done in 1.40s.
     ```
@@ -120,7 +120,7 @@ Make sure that your account has funds. You won't be able to deploy any contracts
     ✨  Done in 211.76s.
     ```
 
-    This will compile all the contracts in the contracts folder and deploy them to the Hyperspace test network automatically!
+    This will compile all the contracts in the contracts folder and deploy them to the Calibration test network automatically!
 
 1. Interact with the contracts using the available functions within the `tasks` folder. For example, you can get the balance of the `simple-coin` contract by calling the `get-balance` function:
 
@@ -129,7 +129,7 @@ Make sure that your account has funds. You won't be able to deploy any contracts
     ```
 
     ```plaintext
-    Reading SimpleCoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 on network hyperspace
+    Reading SimpleCoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 on network calibration
     Amount of Simplecoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 is 12000
     Total amount of minted tokens is 12000
     ✨  Done in 3.73s.
@@ -137,4 +137,4 @@ Make sure that your account has funds. You won't be able to deploy any contracts
 
 ## Hardhat docs
 
-You can view the official Hardhat documentation over at [hardhart.org/docs](https://hardhat.org/docs).
+You can view the official Hardhat documentation over at [`hardhart.org/docs`](https://hardhat.org/docs).

@@ -1,14 +1,14 @@
 ---
 title: "Get test tokens"
 description: "Test funds are available to developers so they can test their smart contracts and applications within the confines of a test network."
-lead: "Test funds are available to developer so that they can test their smart contracts and applications within the confines of a test network. The process for getting test funds differs across test networks. This page covers how to get test funds from the Hyperspace testnet as well as from a local testnet."
+lead: "Test funds are available to developer so that they can test their smart contracts and applications within the confines of a test network. The process for getting test funds differs across test networks. This page covers how to get test funds from the Calibration testnet as well as from a local testnet."
 draft: false
 images: []
 type: docs
 menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
-    identifier: "get-test-tokens-c9d70a9bb594275b17454ac6fc9abfaa"
+    identifier: "get-test-tokens-c9d70a9bb594275b17454thc6fc9abfaa"
 weight: 410
 aliases:
 aliases:
@@ -17,20 +17,20 @@ aliases:
     - "/developers/smart-contracts/how-tos/get-test-tokens/"
 ---
 
-## Hyperspace testnet
+## Calibration testnet
 
-MetaMask is one of the easier ways to manage addresses on the Hyperspace testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "/basics/assets/metamask-setup" >}}) if you havn't set up an address in your MetaMask wallet yet.
+MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask uses the `t4` [address type]({{< relref "blockchain#addresses" >}}), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide]({{< relref "metamask-setup" >}}) if you haven't set up an address in your MetaMask wallet yet.
 w
 
 1. In your browser, open MetaMask and copy your address to your clipboard:
 
     ![Copy your address to your clipboard.](faucet-get-address.png)
 
-1. Go to [hyperspace.yoga](https://hyperspace.yoga) and click **Faucet** from the menu.
+1. Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Faucet** from the menu.
 
     ![Go to the Faucet section of the website.](faucet-click-faucet.png)
 
-1. Paste your address into the address field, complete the **I am human** captcha, and then click **Send**:
+1. Paste your address into the address field, complete the **I am human** CAPTCHA, and then click **Send**:
 
     ![Verify you're a human.](faucet-verify.png)
 
@@ -57,7 +57,7 @@ Before we begin, you must have a local testnet running. Follow the [Run a local 
     ```shell
     cd ~/lotus-devnet
     ```
-    
+
 1. View the wallets available on this node with `lotus wallet list`:
 
     ```shell
@@ -102,4 +102,4 @@ Before we begin, you must have a local testnet running. Follow the [Run a local 
     2000 FIL
     ```
 
-If you want to manage your local testnet tokens in MetaMask you will need to create a `t4` address. You can create a `t4` address using `lotus wallet new deleated`. Once you have a `t4` address you can [connect MetaMask to your local testnet]({{< relref "/basics/assets/metamask-setup" >}}) to see the new balance within the MetaMask extension.
+If you want to manage your local testnet tokens in MetaMask you will need to create a `t4` address. You can create a `t4` address using `lotus wallet new deleated`. Once you have a `t4` address you can [connect MetaMask to your local testnet]({{< relref "metamask-setup" >}}) to see the new balance within the MetaMask extension.

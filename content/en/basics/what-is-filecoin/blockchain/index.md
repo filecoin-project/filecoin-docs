@@ -66,7 +66,7 @@ Filecoin is targeting multiple protocol implementations to guarantee the securit
 
 ## Addresses
 
-In the Filecoin network, addresses are used to identify actors in the Filecoin state. The address encodes information about the corresponding actor, providing a robust address format that is easy to use and resistant to errors. There are five types of addresses in Filecoin for either MainNet starts with f or TestNet starts with t.
+In the Filecoin network, addresses are used to identify actors in the Filecoin state. The address encodes information about the corresponding actor, providing a robust address format that is easy to use and resistant to errors. There are five types of addresses in Filecoin.  Mainnet addresses begin with the letter `f`, and Testnet addresses begin with the letter `t`.
 
 - `f0/t0`: an ID address for an actor in a more “human friendly” way. For instance, f0123261 is the ID for a storage provider.
 - `f1/t1`: a secp256k1 wallet address with encrypted key pair. Essentially, this is a wallet address generated from the secp256k1 public key.
@@ -98,7 +98,7 @@ The process of producing a block for each epoch can be briefly described as foll
 
 ### Finality
 
-EC enforces a version of soft finality whereby all miners at round `N` will reject all blocks that fork off before round `N - F`. `F` is set to `900`. This is important to enforce a macroeconomically-enforced finality at no cost to liveness in the chain.
+EC enforces a version of soft finality whereby all miners at round `N` will reject all blocks that fork off before round `N - F`. `F` is set to `900`. This is important to enforce finality at no cost to chain availability and functionality.
 
 ## Proofs
 

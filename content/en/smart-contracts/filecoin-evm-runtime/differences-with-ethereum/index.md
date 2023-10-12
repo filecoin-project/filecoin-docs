@@ -32,7 +32,7 @@ Filecoin charges Filecoin gas only. This includes the Filecoin EVM runtime. Inst
 
 ## Gas stipend
 
-Solidity calls to `address.transfer` and `address.send` grant a fixed gas stipend of 2300 Ethereum gas to the called contract. The Filecoin EVM runtime automatically detects such calls, and sets the gas limit to 10 million Filecoin gas. This is a relatively more generous limit than Ethereum's, but it's future-proof. You should expect the callee to be able to carry out more work than in Ethereum.
+Solidity calls `address.transfer` and `address.send` to grant a fixed gas stipend of 2300 Ethereum gas to the called contract. The Filecoin EVM runtime automatically detects such calls, and sets the gas limit to 10 million Filecoin gas. This is a relatively more generous limit than Ethereum's, but it's future-proof. You should expect the address called to be able to carry out more work than in Ethereum.
 
 ## Self destruct
 
@@ -51,7 +51,7 @@ The `CALLCODE` opcode has not been implemented. Use the newer `DELEGATECALL` opc
 
 In Ethereum, `SELFDESTRUCT` is the only way to send funds to a smart contract without giving the target smart contract a chance to execute code.
 
-In Filecoin, any actor can use `method 0`, also called a bare-value send, to transfer funds to any other actor without invoking the target actor's code. You can think of this behaviour as having the suggested [`PAY` opcode](https://eips.ethereum.org/EIPS/eip-5920) already implemented in Filecoin.
+In Filecoin, any actor can use `method 0`, also called a bare-value send, to transfer funds to any other actor without invoking the target actor's code. You can think of this behavior as having the suggested [`PAY` opcode](https://eips.ethereum.org/EIPS/eip-5920) already implemented in Filecoin.
 
 ## Precompiles
 
@@ -64,6 +64,7 @@ In Filecoin, contracts generally have multiple addresses. Two of these address t
 Importantly, this means that any contract can be called by either its "normal" EVM address (corresponding to the contract's `f410f` address) or its "masked ID address" (corresponding from the contract's `f0` address).
 
 However, the addresses returned by the CALLER, ORIGIN, and ADDRESS instructions will always be the same for the same contract.
+
 - The ADDRESS will always be derived from the executing contract's `f410f` address, even if the contract was called via a masked ID address.
 - The CALLER/ORIGIN will be derived from the caller/origin's `f410f` address, if the caller/origin is an Ethereum-style account or an EVM smart contract. Otherwise, the caller/origin's "masked ID address" (derived from their `f0` address) will be used.
 

@@ -87,6 +87,10 @@ $navbar-dark-active-color: $link-color-dark;
   border-bottom: 1px solid $border-dark;
 }
 
+[data-dark-mode] body .progress-container {
+  background: $border-dark;
+}
+
 [data-dark-mode] body.home .navbar {
   border-bottom: 0;
 }
@@ -382,8 +386,9 @@ $navbar-dark-active-color: $link-color-dark;
 }
 
 [data-dark-mode] body .card {
-  background: $body-bg-dark;
-  border: 1px solid $border-dark;
+    background: $body-bg-dark;
+    color: $body-bg;
+    border: 1px solid $border-dark;
 }
 
 [data-dark-mode] body .card.bg-light {

@@ -40,12 +40,12 @@ PreCommit 1 (PC1) is the most intensive process of the entire sealing pipeline. 
 Using the scratch space, the PC1 task will create 11 layers of the sector. Storage providers must host scratch space for this on enterprise NVMe. This means that:
 
 - Every sector consumes memory equal to 1+11 times its size on the scratch volume.
-- For a 32GiB sector, PC1 requires 384GiB on the scratch volume
-- For a 64GiB sector, PC1 requires 768GiB.
+- For a 32 GiB sector, PC1 requires 384 GiB on the scratch volume
+- For a 64 GiB sector, PC1 requires 768 GiB.
 
-In order to seal at a decent rate and to make use of all the sealing capacity in a PC1-server, you will run multiple PC1 workers in parallel on a system. You can learn more about this in the chapter on [Sealing Rate]({{<relref "sealing-rate">}}). Sealing several sectors multiplies the requirements on CPU cores, RAM, and scratch space by the number of sectors being sealed in parallel.
+In order to seal at a decent rate and to make use of all the sealing capacity in a PC1 server, you will run multiple PC1 workers in parallel on a system. You can learn more about this in the chapter on [Sealing Rate]({{<relref "sealing-rate">}}). Sealing several sectors multiplies the requirements on CPU cores, RAM, and scratch space by the number of sectors being sealed in parallel.
 
-In order to achieve a decent sealing rate and make use of all sealing capacity in a PC1 server, storage providers should run multiple PC1 processes in parallel on a system. More information on this can be found in [Sealing Rate]({{<relref "sealing-rate">}}). 
+In order to achieve a decent sealing rate and make use of all sealing capacity in a PC1 server, storage providers should run multiple PC1 processes in parallel on a system. More information on this can be found in [Sealing Rate]({{<relref "sealing-rate">}}).
 
 The process of sealing a single 32 GiB sector takes roughly **3 hours**.
 
@@ -71,7 +71,7 @@ The sealed sector and its 11 layers are kept on the scratch volume until Commit 
 
 ### WaitSeed
 
-WaitSeed is not an actual task that is executed, but it is a step in the pipeline in which the blockchain forces the pipeline to wait for 150 epochs as a built-in security mechanism. With Filecoin's 30-second epochs, this means 75 minutes must elapse between PC2 and the next task, Commit 1 (C1). 
+WaitSeed is not an actual task that is executed, but it is a step in the pipeline in which the blockchain forces the pipeline to wait for 150 epochs as a built-in security mechanism. With Filecoin's 30 second epochs, this means 75 minutes must elapse between PC2 and the next task, Commit 1 (C1).
 
 ### Commit 1
 
@@ -79,7 +79,7 @@ The Commit 1 (C1) phase is an intermediate phase that performs the preparation n
 
 ### Commit 2
 
-The last and final step in the sealing pipeline is Commit 2 (C2). This step involves the creation of a zkSNARK proof. Like PC2, this task is GPU-bound and is, therefore, best co-located with the PC2 task.
+The last and final step in the sealing pipeline is Commit 2 (C2). This step involves the creation of zk-SNARK proof. Like PC2, this task is GPU-bound and is, therefore, best co-located with the PC2 task.
 
 Finally, the proof is committed on-chain in a message. As with the pre-commit messages, the commit messages are batched and held for 24 hours by default before committing on-chain to avoid sending messages for each and every sector. You can again avoid batching by running:
 

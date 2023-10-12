@@ -1,6 +1,6 @@
 ---
 title: "Filecoin plus"
-description: "Notaries, clients and storage providers interact through the allocation and spending of DataCap. Filecoin Plus increases the effectiveness of the network."
+description: "Notaries, clients and storage providers interact through the allocation and spending of DataCap. Filecoin Plus (Fil+) increases the effectiveness of the network."
 lead: "Notaries, clients and storage providers interact through the allocation and spending of DataCap. Filecoin Plus increases the effectiveness of the network."
 draft: false
 images: []
@@ -19,7 +19,7 @@ aliases:
 
 ## Concepts
 
-Filecoin Plus is based on a set of guiding principles, [detailed in FIP-0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md), that focus the program on increasing Filecoin's effectiveness at becoming the decentralized storage network for humanity's most important information.
+Filecoin Plus is based on a set of guiding principles, [detailed in Filecoin Improvement Proposal (FIP) 0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md), that focus the program on increasing Filecoin's effectiveness at becoming the decentralized storage network for humanity's most important information.
 
 Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of {{< tooltip "DataCap" >}}. Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
 
@@ -35,9 +35,9 @@ Notaries are selected to serve as fiduciaries for the Filecoin Network and are r
 - Ensure that in the allocation of the DataCap, no party is given excessive trust in any form that might jeopardize the network.
 - Follow operational guidelines, keep a record of decision flow, and respond to any requests for audits of their allocation decisions.
 
-You can find a list of current [active notaries at plus.fil.org](https://plus.fil.org).
+You can find a list of current [active notaries at filplus.fil.org](https://filplus.fil.org).
 
-Notaries are selected through an [application process](https://github.com/filecoin-project/notary-governance/tree/main/notaries#application--selection-process). If approved, [root key-holders](https://github.com/filecoin-project/notary-governance/tree/main/root-key-holders#overview) (executors of the decisions made by the community on-chain) grant notary status and DataCap amounts. Those interested in becoming Notaries should apply for this role by filing an Issue in the [notary governance repo](https://github.com/filecoin-project/notary-governance/).
+Notaries are selected through an [application process](https://github.com/filecoin-project/notary-governance/tree/main/notaries#application--selection-process). If approved, [root key-holders](https://github.com/filecoin-project/notary-governance/tree/main/root-key-holders#overview) (executors of the decisions made by the community on-chain) grant notary status and DataCap amounts. Those interested in becoming Notaries should apply for this role by filing an Issue in the [notary governance repository](https://github.com/filecoin-project/notary-governance/).
 
 ### Storage client
 
@@ -45,9 +45,9 @@ Clients can use _DataCap_ to incentivize storage providers to serve their needs.
 
 #### Smart contracts
 
-Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` address of the smart contract as the client address when making a request for DataCap. 
+Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` address of the smart contract as the client address when making a request for DataCap.
 
-For a smart contract's first DataCap allocation, we recommend using [verify.glif.io](https://verify.glif.io) to get 32 GiB of DataCap easily, as outlined below. 
+For a smart contract's first DataCap allocation, we recommend using [verify.glif.io](https://verify.glif.io) to get 32 GiB of DataCap easily, as outlined below.
 
 It's important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. To improve this experience, we are developing an Filecoin request for comments (FRC) to allow DataCap to be held between redeployments.
 
@@ -57,7 +57,7 @@ It's important to note that DataCap allocations are a one-time credit for a File
 
 Clients are required to have an on-chain Filecoin address where DataCap can be received. If you are setting up a new address, make sure to initialize it by sending a minimal amount of FIL to the address by purchasing some FIL from an exchange, for example. You will need an address to proceed with getting DataCap in any of the following ways.
 
-_Note: As of network version 12, DataCap allocations are a single-use credit on a Filecoin address. If you receive an allocation and require more, you should make a new request with a unique address that you have initialized like above. [FIP-0012](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0012.md) was accepted and implemented in network version 13(actor v5), which allows client addresses to receive DataCap multiple times._
+_Note: As of network version 12, DataCap allocations are a single-use credit on a Filecoin address. If you receive an allocation and require more, you should make a new request with a unique address that you have initialized like above. [Filecoin Improvement Proposal (FIP) 0012](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0012.md) was accepted and implemented in network version 13(actor v5), which allows client addresses to receive DataCap multiple times._
 
 Clients get DataCap by making a request to a notary. For your first DataCap allocation of 32GiB, you can use an auto-verifier such as [Verifier](https://verify.glif.io/). Auto-verifiers exist to grant DataCap immediately to clients that can authenticate themselves via a specific method. For example, the verify.glif.io automatic notary grants DataCap to clients who have a GitHub account that is > 180 days old and has not been used at this site in the past 30 days.
 
@@ -73,17 +73,17 @@ For receiving DataCap at a larger scale (for business needs and production use c
 - Applying directly to a specific notary - best for clients looking for < 100TiB of DataCap
 - Applying for a Large Dataset notary dedicated to a specific project - best for clients looking for > 100TiB of DataCap (usually in the 500TiB-5PiB range)
 
-
 For applying directly to a specific notary:
-1. Head over to the [Filecoin Plus Registry](https://plus.fil.org/), and proceed with **For Clients**
+
+1. Head over to the [Fil+ Registry](https://filplus.fil.org/), and proceed with **For Clients**
 2. Click **Get Verified**
-3. Click on **General Verification**. This link will take you to the notary registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of *Use Case* you would classify yourself under
+3. Click on **General Verification**. This link will take you to the notary registry, where you can request DataCap to a specific notary. Notaries may specialize in the types of requests they'll choose to support. It is recommended that you select a notary in your region of operation that also covers the general category of _Use Case_ you would classify yourself under
 4. Identify the notary you would like to apply to by selecting the checkbox on their row, and click **Make Request**
 5. Fill out the form that should pop up. This is used by notaries in conducting any necessary due diligence before granting you the requested DataCap
 6. Click **Sign in with GitHub** to allow the app to create a GitHub issue on your behalf
 7. After you are signed in, the button should change to **Send request**. Click this to have an issue created on your behalf and sent to the right notary!
 
-Each request is tracked as a GitHub issue in the [Fil+ Client Onboarding repo](https://github.com/filecoin-project/filecoin-plus-client-onboarding). You can follow the progress of your application there as well. Notaries may ask for additional information before they will allocate you DataCap.
+Each request is tracked as a GitHub issue in the [Fil+ Client onboarding repository](https://github.com/filecoin-project/filecoin-plus-client-onboarding). You can follow the progress of your application there as well. Notaries may ask for additional information before they will allocate you DataCap.
 
 To apply for a Large Dataset Notary, follow the steps at [Applying for a large DataCap allocation](https://github.com/filecoin-project/filecoin-plus-large-datasets#applying-for-a-large-datacap-allocation).
 
@@ -130,24 +130,34 @@ Once you have received DataCap to an address, you can check the remaining balanc
 
 #### With lotus v1.10.0 ^
 
-```
+```shell
 lotus filplus check-client-datacap f00000
 ```
 
 #### With lotus v1.9.0 and below
+
 _Note: [Lotus-shed](https://github.com/filecoin-project/lotus/tree/master/cmd/lotus-shed) is a separate package you will need to build and install (`make lotus-shed` in the [Lotus](https://github.com/filecoin-project/lotus) source), although these features are slated to be merged into Lotus._
 
-```
+```shell
 lotus-shed verifreg check-client f00000
 ```
 
 ### Finding storage providers to take Fil+ deals
 
 There are a few different ways in which a client can find a storage provider to take a Fil+ storage deal:
-1. In the **For Clients** section of the [Filecoin Plus Registry](https://plus.fil.org/), there is a [Miner Registry](https://plus.fil.org/miners) which lists a self-selected set of storage providers who are willing to take Fil+ storage deals
+
+1. In the **For Clients** section of the [Fil+ Registry](https://filplus.fil.org/), there is a [Miner Registry](https://filplus.fil.org/#/miners) which lists a self-selected set of storage providers who are willing to take Fil+ storage deals
 1. Use a Miner Reputation system such as [Filecoin Reputation System](http://filrep.io/) or Textile's [Miner Index](https://docs.textile.io/filecoin/miner-index/) to identify storage providers who can meet your needs
 1. Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack to discuss storage options
 1. Hop into the network with your node and query storage providers (using `query-ask`) to check their verified deal prices
+
+### Storage extensions
+
+Filecoin improvement proposal 45 ([FIP-0045](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0045.md)) introduced the ability to extend the duration of a storage deal for storage deals created with DataCap. From the FIP:
+
+> A verified client can extend the term for a claim beyond the initial maximum term by spending new DataCap. The claim's term maximum can be extended up to MaximumVerifiedAllocationTerm beyond the current epoch. The client extending the claim need not be the one that made the original allocation. This is similar to issuing a new allocation/claim for the same data, but avoids overheads of re-sealing.
+
+Check out [FIP-0045 for more information](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0045.md#extension-of-claim-term-by-client)
 
 ## Get involved in Fil+ governance
 
@@ -156,4 +166,4 @@ If you are interested in participating in governance and shaping the program, he
 - Join the [#fil-plus](https://filecoinproject.slack.com/archives/C01DLAPKDGX) channel on Filecoin Slack.
 - Participate in FIL notary community governance calls, which happen every other Tuesday. Use the [Filecoin Community Events Calendar](https://calendar.google.com/calendar/u/1?cid=Y19rMWdrZm9vbTE3ZzBqOGM2YmFtNnVmNDNqMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 to join or watch for updates in #fil-plus
-- Create and comment on open issues in the [notary governance repo](https://github.com/filecoin-project/notary-governance/issues).
+- Create and comment on open issues in the [notary governance repository](https://github.com/filecoin-project/notary-governance/issues).

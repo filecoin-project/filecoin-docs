@@ -1,7 +1,7 @@
 ---
 title: "Tools"
-description: "This page lists a collection of tools and resources you can use to build ontop of the Filecoin network using the FVM."
-lead: "This page lists a collection of tools and resources you can use to build ontop of the Filecoin network using the FVM."
+description: "This page lists a collection of tools and resources you can use to build on top of the Filecoin network using the FVM."
+lead: "This page lists a collection of tools and resources you can use to build on top of the Filecoin network using the FVM."
 draft: false
 images: []
 type: docs
@@ -51,7 +51,7 @@ These are some tools that developers will find useful when dealing with built-in
 Filecoin improvement proposals (FIPs) are a way for the Filecoin community to discuss potential changes and improvements to the Filecoin network.
 
 - [About](https://github.com/filecoin-project/FIPs)
-- [Join the discussion #fil-fips](https://filecoinproject.slack.com/archives/C01EU76LPCJ)
+- [Filecoin Slack channel for FIP discussion](https://filecoinproject.slack.com/archives/C01EU76LPCJ)
 - Build with FVM Foundry Early Builders Program
 - [Program Overview & Application](https://airtable.com/shr48kiPOqjwxzX6u)
 - [FVM Foundry Cohort Update Recordings](https://www.youtube.com/playlist?list=PL_0VrY55uV18DBdFIkN0jdBMF8nadVxWQ)

@@ -13,7 +13,7 @@ weight: 440
 toc: true
 ---
 
-The template repository contains submodules and remappings for ds-test assertions for testing, solmate building blocks for contracts, and forge-std to layer on top of evm cheatcodes to improve UX.
+The template repository contains submodules and remappings for ds-test assertions for testing, solmate building blocks for contracts, and forge-std to layer on top of EVM cheat codes to improve UX.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ You must have the following installed:
 - [Git](https://git-scm.com/)
 - [Yarn](https://yarnpkg.com/)
 
-You should also have an address on the Filecoin Hyperspace testnet. See the [Add to MetaMask page]({{< relref "/basics/assets/metamask-setup" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "get-test-tokens" >}}) page for information on how to get test funds.
+You should also have an address on the Filecoin Calibration testnet. See the [Add to MetaMask page]({{< relref "metamask-setup" >}}) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet]({{< relref "get-test-tokens" >}}) page for information on how to get test funds.
 
 ## Steps
 
@@ -39,19 +39,19 @@ You should also have an address on the Filecoin Hyperspace testnet. See the [Add
     yarn install
     ```
 
-1. Export your private key from MetaMask. See the [MetaMask documentation](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) to find out how to export your private key.
-1. In your .env.example, create an environment variable called `PRIVATE_KEY` and paste in the private key from MetaMask. Also, do the same for the `HYPERSPACE_RPC_URL`. Then rename the file to .env:
+1. Export your private key from MetaMask. See the [MetaMask documentation](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) to find out how to export your private key.
+1. In your `.env.example`, create an environment variable called `PRIVATE_KEY` and paste in the private key from MetaMask. Also, do the same for the `CALIBRATION_RPC_URL`. Then rename the file to `.env`:
 
     ```markdown
     PRIVATE_KEY=eed8e9d727a647f7302bab440d405ea87d36726e7d9f233ab3ff88036cfbce9c
-    HYPERSPACE_RPC_URL=https://api.hyperspace.node.glif.io/rpc/v1
+    CALIBRATION_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
     ```
 
 1. Inside the `src` folder in a contract called `SimpleCoin.sol`. Deploy this contract using Foundry:
 
     ```shell
     forge build
-    forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --broadcast --verify -vvvv
+    forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.calibration.node.glif.io/rpc/v1 --broadcast --verify -vvvv
     ```
 
     ```plaintext
@@ -66,7 +66,7 @@ You should also have an address on the Filecoin Hyperspace testnet. See the [Add
     ```shell
     forge build
 
-    forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY src/SimpleCoin.sol:SimpleCoin
+    forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY src/SimpleCoin.sol:SimpleCoin
     ```
 
     The deployment process should be almost instantaneous. Once the contract has been successfully deployed, Foundry will give you a contract address you can use to interact with the contract.

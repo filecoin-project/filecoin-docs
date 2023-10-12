@@ -45,11 +45,11 @@ Authenticates whether the provided signature is valid for the provided message.
 
 `uint` AuthenticateMessageMethodNum = 2643134072.
 
-Params:
+Parameters:
 
 - `struct` AuthenticateMessageParams
-    - `bytes` AuthenticateMessageParamsSignature - it should be a raw byte of signature, NOT a serialized signature object with a signatureType.
-    - ` bytes` Message -  The message which is signed by the corresponding account address.
+  - `bytes` AuthenticateMessageParamsSignature - it should be a raw byte of signature, NOT a serialized signature object with a signatureType.
+  - `bytes` Message -  The message which is signed by the corresponding account address.
 
 Results:
 
@@ -65,7 +65,7 @@ Whenever the account receives transfers, this method will be invoked.
 
 `uint`  UniversalReceiverHookMethodNum = 3726118371.
 
-Params:
+Parameters:
 
 - `bytes[]` RawBytes - passes the bytes through how it is received.
 
@@ -87,7 +87,7 @@ Return the name of DataCap token which is 'DataCap'.
 
 `Unit` NameMethodNum : 48890204.
 
-Params:
+Parameters:
 
 - null
 
@@ -105,7 +105,7 @@ Return the symbol of DataCap token which is 'DCAP'.
 
 `unit` SymbolMethodNum: 2061153854.
 
-Params:
+Parameters:
 
 - null
 
@@ -123,7 +123,7 @@ Return the total supply of the DataCap token.
 
 `uint` TotalSupplyMethodNum: 114981429.
 
-Params:
+Parameters:
 
 - null
 
@@ -141,7 +141,7 @@ Return the DataCap token balance for the wallet address.
 
 `unit` BalanceOfMethodNum: 3261979605.
 
-Params:
+Parameters:
 
 - `bytes` Address - the wallet address.
 
@@ -159,7 +159,7 @@ Transfers DataCap tokens from caller address to the to address.
 
 `uint`  TransferMethodNum = 80475954;
 
-Params:
+Parameters:
 
 - `struct` TransferParams
   - `bytes` To -  the address to receive DataCap token.
@@ -896,7 +896,7 @@ Params:
       - `string` Label - any label that the client chooses for the deal.
       - `int64` StartEpoch - the chain epoch to start the deal.
       - `int64` EndEpoch - the chain epoch to end the deal.
-      -  `int256` StoragePricePerEpoch -  the token amount to pay to the provider per epoch.
+      - `int256` StoragePricePerEpoch -  the token amount to pay to the provider per epoch.
       - `int256` ProviderCollateral - the token amount as collateral paid by the provider.
       - `int256` ClientCollateral - the token amount as collateral paid by the client.
 
@@ -1096,7 +1096,7 @@ Results:
 
 ## Storage power actor
 
-Strorage power actor is responsible for keeping track of the storage power allocated at each storage miner. The ActorCode for the built-in storage power actor is `hex"0004"` which will be used to call methods in the storage power actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
+Storage power actor is responsible for keeping track of the storage power allocated at each storage miner. The ActorCode for the built-in storage power actor is `hex"0004"` which will be used to call methods in the storage power actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
 
 ### CreateMiner
 
@@ -1244,7 +1244,7 @@ Params:
 Results:
 
 - `struct` RemoveExpiredAllocationsReturn
-  - `unit64[] `Considered - Allocation IDs are either specified by the caller or discovered to be expired.
+  - `unit64[]`Considered - Allocation IDs are either specified by the caller or discovered to be expired.
   - `BatachReturn` Results - results for each processed allocation.
   - `int256` DataCapRecoverd - The amount of DataCap token reclaimed for the client.
 
@@ -1269,7 +1269,7 @@ Results:
 - `struct` GetClaimsReturn
   - `struct` BatchReturn
     - `uint32` SuccessCount - total successes in the batch.
-    - `struct ` FailCode[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
+    - `struct` FailCode[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
 
   - `struct Claim[]` Claims - list of Claims returned.
     - `uint64` Provider - The provider that is storing the data.
@@ -1295,8 +1295,8 @@ Params:
 
 - `struct` ExtendClaimTermsParams
   - `struct ClaimTerm[]` Terms
-    - `uint64 ` Provider - The provider address which stores the data.
-    - `uint64 ` CliamID - Claim ID.
+    - `uint64` Provider - The provider address which stores the data.
+    - `uint64` CliamID - Claim ID.
     - `int64` TermMax - The max chain epoch to extend.
 
 Results:
@@ -1304,7 +1304,7 @@ Results:
 - `struct` ExtendClaimTermsReturn
   - `struct` BatchReturn
     - `uint32` SuccessCount - total successes in the batch.
-    - `struct ` FailCodes[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
+    - `struct` FailCodes[] {`uint32` idx, `uint32` code} -  list of failure code and index for all failures in batch.
 
 ### RemoveExpiredClaims
 

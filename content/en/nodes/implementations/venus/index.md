@@ -41,4 +41,4 @@ If you are interested in contributing to the development of Venus itself, you ca
 
 ## More information
 
-For more in depth information about Venus, including advanced configuration, check out the Venus documentation site [venus.filecoin.io](https://venus.filecoin.io).
+For more information about Venus, including advanced configuration, see the [Venus documentation site](https://venus.filecoin.io).

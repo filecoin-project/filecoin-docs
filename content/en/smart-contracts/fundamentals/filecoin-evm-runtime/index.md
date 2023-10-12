@@ -21,7 +21,7 @@ Code deployed to EVM is typically written in the high-level language Solidity, a
 
 ## Ethereum Virtual Machine
 
-The Filecoin EVM, often just referred to as _FEVM_, is the Ethereum virtual machine virtualized as a runtime on top of the Filecoin virtual machine. It allows developers to port any existing EVM-based smart contracts straight onto the FVM. The Filecoin EVM runtime is completely compatible with any EVM development tools, such as Hardhat, Brownie, and Metamask, making deploying and interacting with EVM-based actors easy! This is because Filecoin nodes offer the Ethereum JSON-RPC API.
+The Filecoin EVM, often just referred to as _FEVM_, is the Ethereum virtual machine virtualized as a runtime on top of the Filecoin virtual machine. It allows developers to port any existing EVM-based smart contracts straight onto the FVM. The Filecoin EVM runtime is completely compatible with any EVM development tools, such as Hardhat, Brownie, and MetaMask, making deploying and interacting with EVM-based actors easy! This is because Filecoin nodes offer the Ethereum JSON-RPC API.
 
 ## FEVM and native FVM
 
@@ -36,6 +36,8 @@ In both cases, you have access to all the awesome power of the Filecoin blockcha
 
 ## Deep dive
 
-For a deeper dive into the concepts discussed on this page, see this presentation by [@truckerfling]('https://twitter.com/truckerfling') on Ethereum compatibility of FVM:
+For a deeper dive into the concepts discussed on this page, see this presentation Ethereum compatibility of FVM, see:
 
 {{< youtube "lgUMVhM3FIM" >}}
+
+For more videos like this, check out the [Filecoin Ecosystem YouTube channel](https://www.youtube.com/@FilecoinProject).

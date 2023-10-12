@@ -9,7 +9,7 @@ menu:
   smart-contracts:
     parent: "smart-contracts-developing-contracts"
     identifier: "remix-4c28be2b94737a684948515c69efbf89"
-weight: 460
+weight: 420
 toc: true
 aliases:
     - "/developers/smart-contracts/how-tos/deploy-a-contract/"
@@ -17,10 +17,10 @@ aliases:
 
 ## Launch an ERC-20 token
 
-As a simple introduction, we're going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we're using the Hyperspace testnet, but this process is the same for mainnet.
+As a simple introduction, we're going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we're using the Calibration testnet, but this process is the same for mainnet.
 
 {{< alert >}}
-This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out this guide to add the Hyperspace testnet to MetaMask]({{< relref "/basics/assets/metamask-setup" >}}).
+This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out this guide to add the Calibration testnet to MetaMask]({{< relref "/basics/assets/metamask-setup" >}}).
 {{< /alert >}}
 
 ### Create a workspace
@@ -72,7 +72,7 @@ That's all we need to change within this contract. You can see on line 4 that th
 Now that we've successfully compiled our contract, we need to deploy it somewhere! This is where our previous MetaMask setup comes into play.
 
 {{< alert >}}
-This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out this guide to add the Hyperspace testnet to MetaMask]({{< relref "/basics/assets/metamask-setup" >}}).
+This guide assumes you've already connected your MetaMask extension to a Filecoin network. If you haven't done so yet, [check out this guide to add the Calibration testnet to MetaMask]({{< relref "/basics/assets/metamask-setup" >}}).
 {{< /alert >}}
 
 1. Click the **Deploy** tab from the left.
@@ -92,7 +92,7 @@ This guide assumes you've already connected your MetaMask extension to a Filecoi
 
     ![Click Connect in MetaMask.](deploy-metamask-click-connect.png)
 
-1. Back in Remix, under the **Account** field, you'll see that it says something like `0x11F... (5 ether)`. This value is 5 `tFIL`, but Remix doesn't natively support the Filecoin network, so it doesn't understand what `tFIL` is. This isn't a problem; it's just a little quirk of using Remix.
+1. Back in Remix, under the **Account** field, you'll see that it says something like `0x11F... (5 ether)`. This value is 5 `tFIL`, but Remix doesn't support the Filecoin network, so it doesn't understand what `tFIL` is. This isn't a problem; it's just a little quirk of using Remix.
 
     ![Remix and MetaMask linked.](deploy-remix-metamask-linked.png)
 
@@ -128,7 +128,7 @@ Let's call a method within the deployed contract to mint some tokens.
 
 1. Back in Remix, open the **Deployed Contracts** dropdown, within the **Deploy** sidebar tab.
 
-    ![](use-mint-select-deployed-contracts.png)
+    ![Open the deployed contracts dropdown.](use-mint-select-deployed-contracts.png)
 
 1. Expand the `mint` method. You must fill in two fields here: `to` and `amount`.
 

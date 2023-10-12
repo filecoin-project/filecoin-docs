@@ -22,6 +22,7 @@ In addition to sales skills, financial management skills are also crucial for ru
 Overall, sales skills are essential for storage providers to succeed in a competitive market. By combining technical expertise with strong business and commercial skills, storage providers can build a successful and sustainable business.
 
 ## Business aspects
+
 Running a storage provider business involves several business aspects that require careful attention to ensure long-term success. The first and most obvious aspect is investment in hardware and FIL as collateral. Hardware is the backbone of any storage provider's business, and ensuring that you have the right equipment to provide reliable and high-performance storage is critical. Additionally, FIL is the primary currency used within the Filecoin network, and as a storage provider, you need to ensure that you have a sufficient amount of FIL as collateral to cover your storage deals.
 
 As your business grows, the amount of hardware and FIL needed will increase, and it is important to have a clear plan for scaling your business. This involves not only investing in additional hardware and FIL but also managing operational costs such as electricity, cooling, and maintenance. Having a skilled business team that can manage and plan for these costs is essential.
@@ -31,6 +32,7 @@ Another important aspect of running a storage provider business is managing your
 In summary, the business aspects of running a storage provider business are critical to its success. This involves managing investments in hardware and FIL, planning for scalability and managing operational costs, and building strong relationships with investors, venture capitalists, and banks.
 
 ## Commercial aspects
+
 A storage provider needs to get storage deals to grow his network power and to earn money. There are at least 2 ways to get storage deals, each one requiring specific sales skills.
 
 - Obtaining data replicas from other storage providers and programs:

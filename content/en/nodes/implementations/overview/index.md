@@ -25,14 +25,13 @@ Lotus is the reference implementation of the Filecoin protocol, developed by Pro
 
 ![The Venus implementation logo.](venus-logo.png)
 
-Venus is an open-source implementation of the Filecoin network, developed by IPFSForce. The project is built in Rust and is designed to be fast, efficient, and scalable.
+Venus is an open-source implementation of the Filecoin network, developed by IPFSForce. The project is built in Go and is designed to be fast, efficient, and scalable.
 
 Venus is a full-featured implementation of the Filecoin protocol, providing storage, retrieval, and mining functionalities. It is compatible with the Lotus implementation and can interoperate with other Filecoin nodes on the network.
 
 One of the key features of Venus is its support for the Chinese language and market. Venus provides a Chinese language user interface and documentation, making it easier for Chinese users to participate in the Filecoin network.
 
 [Learn more about Venus]({{< relref "nodes/implementations/venus" >}})
-
 
 ## Implementation differences
 
@@ -64,9 +63,7 @@ The following implementations exist, but aren't fully featured.
 
 Forest is an implementation of Filecoin written in Rust. It is currently in beta. The implementation will take a modular approach to building a full Filecoin node in two parts:
 
-- Building Filecoin’s security critical systems in Rust from the Filecoin Protocol Specification, specifically the virtual machine, blockchain, and node system, 
+- Building Filecoin’s security critical systems in Rust from the Filecoin Protocol Specification, specifically the virtual machine, blockchain, and node system,
 - Integrating functional components for storage mining and storage & retrieval markets to compose a fully functional Filecoin node implementation.
 
-You can find the [Forest codebase on GitHub](https://github.com/ChainSafe/forest) and the documentation site at [chainsafe.github.io/forest](https://chainsafe.github.io/forest/).
-
-
+You can find the [Forest codebase on GitHub](https://github.com/ChainSafe/forest) and the documentation site at [`chainsafe.github.io/forest`](https://chainsafe.github.io/forest/).

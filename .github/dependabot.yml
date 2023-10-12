@@ -9,3 +9,14 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*"
+    ignore:
+      - dependency-name: "@hyas/images"
+        versions: ["3.x"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

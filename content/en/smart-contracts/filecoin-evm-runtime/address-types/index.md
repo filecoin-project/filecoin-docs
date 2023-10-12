@@ -13,7 +13,7 @@ weight: 210
 toc: true
 ---
 
-Filecoin has five address classes, and actors tend to have *multiple* addresses. Furthermore, each address class has its own rules for converting between binary and text.
+Filecoin has five address classes, and actors tend to have _multiple_ addresses. Furthermore, each address class has its own rules for converting between binary and text.
 
 The goal of using different types of addresses is to provide a robust address format that is scalable, easy to use, and reliable. These addresses encode information including：
 
@@ -42,7 +42,7 @@ The protocol indicator identifies the address type, which describes how a method
 - `2`: An actor address.
 - `3`: A wallet address generated from BLS public key.
 - `4`: A delegated address for user-defined foreign actors:
-    - `410`: Ethereum-compatible address space managed by the Ethereum Address Manager (EAM).
+  - `410`: Ethereum-compatible address space managed by the Ethereum Address Manager (EAM). Each 410 address is equivalent to an 0x address.
 
 Each address type is described below.
 
@@ -84,7 +84,7 @@ Filecoin supports two types of public key addresses:
 
 ## Delegated addresses
 
-Filecoin supports extensible, user-defined actor addresses through the `4` address class, introduced in [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md). The `4` address class provides the following benefits to the network:
+Filecoin supports extensible, user-defined actor addresses through the `4` address class, introduced in [Filecoin Improvement Proposal (FIP) 0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md). The `4` address class provides the following benefits to the network:
 
 - Implement foreign addressing systems in Filecoin.
 - A predictable addressing scheme to support interactions with addresses that do not yet exist on-chain.
@@ -108,9 +108,9 @@ The _new actor ID_ is the arbitrary actor ID chosen by that actor.
 
 ### Restrictions
 
-Currently, per [fip-0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. This restriction will likely be relaxed once users are able to deploy custom WebAssembly actors.
+Currently, per [FIP 0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md), `f4` addresses may only be assigned by and in association with specific, built-in actors called _address managers_. This restriction will likely be relaxed once users are able to deploy custom WebAssembly actors.
 
-This address type plays an essential role in supporting the EVM-compatible FVM. It allows the Filecoin network to be able to recognize the foreign address and validate and execute the transactions sent and signed by the supported foreign addresses.
+This address type plays an essential role in supporting the FEVM. It allows the Filecoin network to be able to recognize the foreign address and validate and execute the transactions sent and signed by the supported foreign addresses.
 
 The supported foreign addresses can be cast as `f4/t4` addresses, and vice-versa.  But not with `f1/t1` or `f3/t3` addresses.
 
@@ -126,11 +126,11 @@ The subaddress of an `f410/t410` address is the original Ethereum address. Ether
 # An Ethereum wallet address.
 0xd388ab098ed3e84c0d808776440b48f685198498
 
-# The corresponding Filecoin address on hyperspace.
+# The corresponding Filecoin address on Calibration.
 t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy
 ```
 
-If you have an Ethereum wallet address starting with `0x`, then the Ethereum Address Manager (EAM) will assign a corresponding `t410` Filecoin address to it. If you send 10 TFIL to `0xd388ab098ed3e84c0d808776440b48f685198498` using a wallet like MetaMask, you will receive 10 TFIL to your `t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy` address on Filecoin Hyperspace testnet.
+If you have an Ethereum wallet address starting with `0x`, then the Ethereum Address Manager (EAM) will assign a corresponding `t410` Filecoin address to it. If you send 10 TFIL to `0xd388ab098ed3e84c0d808776440b48f685198498` using a wallet like MetaMask, you will receive 10 TFIL to your `t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy` address on Filecoin Calibration testnet.
 
 ```plaintext
 # A Filecoin smart contract address.
@@ -140,19 +140,21 @@ t410fl5qeigmkcytz7b6sqoojtcetqwf37dm4zv4aijq
 0x5f6044198a16279f87d2839c998893858bbf8d9c
 ```
 
-Again, assume you have deployed a solidity smart contract on Filecoin Hyperspace. Then you will receive a smart contract address starting with `t410`. EAM will also assign a corresponding `0x` Ethereum address to it.
+Again, assume you have deployed a solidity smart contract on Filecoin Calibration. Then you will receive a smart contract address starting with `t410`. EAM will also assign a corresponding `0x` Ethereum address to it.
 
-When you try to invoke this smart contract on Filecoin using Ethereum toolings, you need to use your `0x5f6044198a16279f87d2839c998893858bbf8d9c` smart contract address.
+When you try to invoke this smart contract on Filecoin using Ethereum tooling, you need to use your `0x5f6044198a16279f87d2839c998893858bbf8d9c` smart contract address.
 
 ### Converting to a 0x-style address
 
 The Filecoin EVM runtime introduces support for `0x` Ethereum-style addresses. Filecoin addresses starting with either `f0` or `f410f` can be converted to the `0x` format as follows:
 
 Addresses starting with `f0` can be converted to the `0x` format by:
+
 - Extracting the `actor_id` (e.g., the `1234` in `f01234`).
 - Hex encode with a `0xff` prefix: `sprintf("0xff0000000000000000000000%016x", actor_id)`.
 
 Addresses starting with `f410f` address can be converted to the `0x`  format by:
+
 - Removing the `f410f` prefix.
 - Decoding the remainder as base 32 (RFC 4648 without padding).
 - Trim off the last 4 bytes. This is a _checksum_ that can optionally be verified, but that's beyond the scope of this documentation.

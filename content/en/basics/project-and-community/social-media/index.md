@@ -35,8 +35,14 @@ Subscribe to the [Filecoin newsletter](https://filecoin.io/build/#events) for of
 
 Get your Filecoin news in tweet-sized bites. Follow these accounts for the latest:
 
-- [@Filecoin](https://twitter.com/filecoin) for news and other updates from the Filecoin project
-- [@ProtoSchool](https://twitter.com/protoschool) for updates on ProtoSchool workshops and tutorials
+<!-- markdown-link-check-disable -->
+<!--
+Link checker tool flagged these links. 
+They've been manually checked and confirmed to work.
+-->
+- `@Filecoin` for news and other updates from the Filecoin project
+- `@ProtoSchool` for updates on ProtoSchool workshops and tutorials
+<!-- markdown-link-check-enable -->
 
 ## WeChat
 

@@ -1,0 +1,15 @@
+<div
+  class="image-with-text"
+  style="display: flex; align-items: center; justify-content: flex-start"
+>
+  {{ with .Get "src" }}
+  <img
+    class="image-with-text-image"
+    style="height: 3rem"
+    src="{{ . }}"
+    alt="{{ . }}"
+  />
+  {{ end }} {{ with .Get "title" }}
+  <h2 class="image-with-text-title">{{ . }}</h2>
+  {{ end }}
+</div>

@@ -1,6 +1,6 @@
 ---
 title: "Storage market"
-description: "The storage market is the data entry point into the network where storage providers and clients negotiate and publish storage deals on-chain."
+description: "The storage market is the data entry point into the network where storage providers (SPs) and clients negotiate and publish storage deals on-chain."
 lead: "The storage market is the data entry point into the network where storage providers and clients negotiate and publish storage deals on-chain."
 draft: false
 images: []
@@ -19,14 +19,14 @@ aliases:
 
 The lifecycle for a deal within the storage market contains four distinct phases:
 
-- Discovery: the client identifies potential storage providers (SPs) and asks for their prices.
+- Discovery: the client identifies potential SPs and asks for their prices.
 - Negotiation: once the client has selected an SP both parties agree to the term of the deal.
 - Publishing: the deal is published on-chain.
 - Handoff: the deal is added into a sector where data storage can be proven by the SP.
 
 ## Filecoin plus  
 
-The mission of Filecoin Plus is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
+The mission of Filecoin Plus (Fil+) is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.  
 
 Verified clients can onboard data into Filecoin using datacap, which they apply from community-selected notaries. In return for storing verified storage deals, storage providers receive datacap with a 10x boost to their storage power which eventually increases their block rewards as an incentive.
 
@@ -43,7 +43,6 @@ Storage helpers provide libraries that abstract Filecoin deal-making into simple
 Here are some available storage helpers:
 
 - [boost.filecoin.io](https://boost.filecoin.io/)
-- [estuary.tech](https://estuary.tech/)
-- [web3.storage](https://web3.storage/)
-- [nft.storage](https://nft.storage/)
 - [lighthouse.storage](https://www.lighthouse.storage/)
+- [nft.storage](https://nft.storage/)
+- [web3.storage](https://web3.storage/)

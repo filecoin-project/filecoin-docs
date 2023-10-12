@@ -19,14 +19,14 @@ There are various types of cryptocurrency wallets, including desktop, mobile, ha
 
 ## Compatible wallets
 
-We do not provide technical support for any of these wallets. Please use caution when researching and using the wallets listed below. Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are marked *recommended* below.
+We do not provide technical support for any of these wallets. Please use caution when researching and using the wallets listed below. Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are marked _recommended_ below.
 
 Note: If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
 
  Name                                           | Description                                                                                                                          | Audited |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true)                                   | A multi-currency hardware wallet. *Recommended.*                                                                   | Yes |
-| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. *Recommended.*                                                   | Yes     |
+| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL?support=true)                                   | A multi-currency hardware wallet. _Recommended._                                                                   | Yes |
+| [Glif web wallet](https://wallet.glif.io)                                | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. _Recommended._                                                   | Yes     |
 | [Trust wallet](https://trustwallet.com/)                                   | A multi-currency wallet, official wallet of Binance.                                                                     | Unknown |
 | [ImToken](https://token.im/)                   | A multi-currency wallet.                                                                                                             | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)    | A multi-currency wallet.                                                                                                             | Unknown |
@@ -37,7 +37,7 @@ Note: If you are already running your own lotus node, you can also [manage FIL w
 
 A hot wallet refers to any wallet that is permanently connected to the internet. They can be mobile, desktop, or browser-based. Hot wallets make it faster and easier to access digital assets but could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds that need to be accessed frequently.
 
-Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to theft. Cold wallets can be less convenient and are most useful for storing larger balances securely. 
+Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to theft. Cold wallets can be less convenient and are most useful for storing larger balances securely.
 
 ### Security
 
@@ -49,6 +49,6 @@ Never share your seed phrase, password, or private keys. Bad actors will often u
 
 If you know of a wallet that supports Filecoin, you can submit a pull request to this page and add it!
 
-- Create an issue in [Filecoin Docs](https://github.com/filecoin-project/filecoin-docs) with the name of the wallet and its features.
+- Create an issue in [`filecoin-project/filecoin-docs`](https://github.com/filecoin-project/filecoin-docs) with the name of the wallet and its features.
 - If the wallet is a mobile wallet, it must be available on both Android and iOS.
 - The wallet must have been audited. The results of this audit must be public.

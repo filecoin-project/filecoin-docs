@@ -20,7 +20,7 @@ aliases:
 
 ## Chat
 
-For shorter-lived discussions, our community chat open to all on both Slack and Matrix, with bridged channels allowing you to particate in the same conversations from either platform:
+For shorter-lived discussions, our community chat open to all on both Slack and Matrix, with bridged channels allowing you to participate in the same conversations from either platform:
 
 - [Slack](https://filecoin.io/slack/)
 - [Matrix](https://matrix.to/#/#ipfs-space:ipfs.io)

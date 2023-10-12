@@ -31,31 +31,31 @@ By polling the appropriate endpoint, a Filecoin node will get back a Drand value
 - `previous_signature`: the threshold BLS signature from the previous Drand round.
 - `round`: the index of randomness in the sequence of all random values produced by this Drand network.
 
-The message signed is the concatenation of the round number treated as a uint64 and the previous signature. At the moment, drand uses BLS signatures on the BLS12-381 curve with the latest v7 RFC of hash-to-curve and the signature is made over G1
+The message signed is the concatenation of the round number treated as a uint64 and the previous signature. At the moment, Drand uses BLS signatures on the BLS12-381 curve with the latest v7 RFC of hash-to-curve and the signature is made over G1
 
 ## Polling the network
 
-Filecoin nodes fetch the drand entry from the distribution network of the selected drand network.
+Filecoin nodes fetch the Drand entry from the distribution network of the selected Drand network.
 
-drand distributes randomness using multiple distribution channels such as HTTP servers, S3 buckets, gossiping, etc. Simply put, the Drand nodes themselves will not be directly accessible by consumers, rather, highly-available relays will be set up to serve Drand values over these distribution channels.
+Drand distributes randomness using multiple distribution channels such as HTTP servers, S3 buckets, gossiping, etc. Simply put, the Drand nodes themselves will not be directly accessible by consumers, rather, highly-available relays will be set up to serve Drand values over these distribution channels.
 
 On initialization, Filecoin initializes a Drand client with chain info that contains the following information:
 
-- Period: the period of time between each drand randomness generation.
-- GenesisTime: at which the first round in the drand randomness chain is created.
+- Period: the period of time between each Drand randomness generation.
+- GenesisTime: at which the first round in the Drand randomness chain is created.
 - PublicKey: the public key to verify randomness.
 - GenesisSeed: the seed that has been used for creating the first randomness.
 
 It is possible to simply store the hash of this chain info and to retrieve the contents from the Drand distribution network as well on the `/info` endpoint.
 
-Thereafter, the Filecoin client can call drand’s endpoints:
+Thereafter, the Filecoin client can call Drand’s endpoints:
 
 - `/public/latest` to get the latest randomness value produced by the beacon.
 - `/public/<round>` to get the randomness value produced by the beacon at a given round.
 
 ## Using Drand
 
-Drand is used as a randomness beacon for leader election in Filecoin. While drand returns multiple values with every call to the beacon (see above), Filecoin blocks need only store a subset of these in order to track a full drand chain. This information can then be mixed with on-chain data for use in Filecoin.
+Drand is used as a randomness beacon for leader election in Filecoin. While Drand returns multiple values with every call to the beacon (see above), Filecoin blocks need only store a subset of these in order to track a full Drand chain. This information can then be mixed with on-chain data for use in Filecoin.
 
 ## Edge cases and outages
 

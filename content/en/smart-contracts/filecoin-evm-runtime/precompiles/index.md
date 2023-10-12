@@ -28,9 +28,9 @@ Resolves a Filecoin address (e.g., "f01", "f2abcde") into a Filecoin actor ID (`
 
 - Input: The Filecoin address in its _bytes_ representation.
 - Output:
-    - If the target actor exists, succeed and return an ABI-encoded actor ID (u64).
-    - If the target actor doesn't exist, succeed with no return value.
-    - If the supplied address is invalid (cannot be parsed as a Filecoin address), revert.
+  - If the target actor exists, succeed and return an ABI-encoded actor ID (u64).
+  - If the target actor doesn't exist, succeed with no return value.
+  - If the supplied address is invalid (cannot be parsed as a Filecoin address), revert.
 
 Example:
 
@@ -53,9 +53,9 @@ Looks up the "delegated address" (f4 address) of an actor by ID. This precompile
 
 - Input: An ABI-encoded actor ID (u64 encoded as a u256).
 - Output:
-    - If the supplied actor ID is larger than max u64, revert.
-    - If the target actor exists and has a delegated address, succeed and return the delegated address as raw bytes.
-    - Otherwise, succeed with no return value.
+  - If the supplied actor ID is larger than max u64, revert.
+  - If the target actor exists and has a delegated address, succeed and return the delegated address as raw bytes.
+  - Otherwise, succeed with no return value.
 
 Example:
 
@@ -90,13 +90,13 @@ Calls the specified actor using the native FVM calling convention by its _Fileco
   ```
 
   - `exit_code` is one of:
-      - `= 0` to indicate the call exited successfully.
-      - `> 0` to indicate that the target actor _referted_ with the specified `exit_code`.
-      - `< 0` to indicate the call itself failed with the [syscall-error][] `-exit_code`.
+    - `= 0` to indicate the call exited successfully.
+    - `> 0` to indicate that the target actor _reverted_ with the specified `exit_code`.
+    - `< 0` to indicate the call itself failed with the [syscall-error](https://docs.rs/fvm_sdk/0.6.1/fvm_sdk/sys/enum.ErrorNumber.html) `-exit_code`.
   - `return_codec` codec of returned data. This will be one of (for now):
-      - 0x51 or 0x71 - CBOR
-      - 0x55 - raw (the target actor returned raw data)
-      - 0x00 - nothing (the returned data will be empty as well).
+    - 0x51 or 0x71 - CBOR
+    - 0x55 - raw (the target actor returned raw data)
+    - 0x00 - nothing (the returned data will be empty as well).
 
 {{< alert >}}
 ⚠️ This precompile only reverts if an input is statically invalid. If the precompile fails to call the target actor for any other reason, it will return a non-zero `exit_code` but will not revert.
@@ -109,7 +109,7 @@ Example:
 (int256 exit, uint64 return_codec, bytes memory return_value) = abi.decode(data, (int256, uint64, bytes));
 ```
 
-[syscall-error]: https://docs.rs/fvm_sdk/0.6.1/fvm_sdk/sys/enum.ErrorNumber.html
+[syscall-error](https://docs.rs/fvm_sdk/0.6.1/fvm_sdk/sys/enum.ErrorNumber.html)
 
 ## Call Actor By ID
 
