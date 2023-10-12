@@ -43,39 +43,11 @@ The process for sending FIL from a Filecoin `f` address to an Ethereum-style `0x
 
 ### Ledger device
 
-Currently, Ledger Live has not supported `0x` or `f4` addresses yet, so you cannot directly use it to send FIL tokens to a `0x` or `f4` address. However, you can connect your Ledger device to the [Glif.io](https://glif.io) wallet and transfer FIL from a Filecoin `f1/f3` address to an Ethereum-style `0x` address. This method is more secure than the [Hot wallet](transfer-fil.md#hot-wallet) method detailed below since your private keys never leave your Ledger device.
+Ledger Live supports sending to a Filecoin `f4` address, which has an automatic `0x` equivalent that you can look up on any [block explorer](../../networks/mainnet/explorers.md). This allows you to directly transfer your FIL to an Ethereum-style `0x` address using its `f4` equivalent.
 
-In this method, you will connect your Ledger device to the [Glif.io](https://www.glif.io/) website and send FIL from your `f` address on the Ledger to an Ethereum-style `0x` address.
-
-1. Ensure your Ledger device is connected to your computer, then log in to the Ledger Live dashboard and update your Ledger device’s Filecoin app to version `0.22.9`.
-
-<figure><img src="../../.gitbook/assets/basics-assets-transfer-fil-ledger-live.webp" alt=""><figcaption></figcaption></figure>
-
-2. Make sure the Filecoin app is open on your Ledger wallet. Your Ledger should display **Filecoin ready**.
-3. Go to [Glif](https://glif.io) and click **Connect Wallet**.
-
-<figure><img src="../../.gitbook/assets/basics-assets-transfer-fil-connect-wallet.webp" alt=""><figcaption></figcaption></figure>
-
-4. Select **Ledger (Filecoin)** and unlock your Ledger device, selecting the Filecoin application.
-
-![Choose Ledger(Filecoin)](../../.gitbook/assets/basics-assets-transfer-fil-ledger-filecoin.webp)
-
-5. Once connected, you should see the details of your Filecoin account stored on your Ledger. Click **Send FIL**.
-
-![Send FIL](../../.gitbook/assets/basics-assets-transfer-fil-send-fil.webp)
-
-6. Enter the `0x` address you wish to send to. Glif will automatically convert the `0x` address into an `f4` address.
-
-![Transfer details](../../.gitbook/assets/basics-assets-transfer-fil-send-detail.webp)
-
-7. Enter the amount of FIL you want to send. Click **Send**.
-8. Verify the information is correct and accept the transaction on your hardware device.
-9. The transferred FIL will show up at the Eth-style `0x` address once this transaction is finalized on-chain, which will take 60 - 90 seconds.
-10. You can check the status of this transfer by clicking the transaction ID link.
-
-![Transaction Detail on Filfox](../../.gitbook/assets/basics-assets-transfer-fil-transaction-detail.webp)
-
-You can also follow this [Guide: How to transfer FIL from Ledger to MetaMask (0x)](https://blog.filecointldr.io/guide-how-to-transfer-fil-from-ledger-to-metamask-0x-9760f869b28e).
+{% hint style="warning" %}
+Sending directly to a `0x` address does not work in Ledger Live. You must use the `f4` equivalent.
+{% endhint %}
 
 ### Hot wallet
 
