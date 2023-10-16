@@ -140,7 +140,7 @@ lotus-miner storage list
 
 This command return information on your _sealed space_ and your _scratch space_, otherwise known as a cache. These spaces are only available if you have properly configured your Lotus miner by following the steps described in the [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
-In some cases it might be usefull to check if the system has access to the storage paths to a certain sector. To check the storage paths to sector 1 for instance, use:
+In some cases it might be useful to check if the system has access to the storage paths to a certain sector. To check the storage paths to sector 1 for instance, use:
 
 ```
 lotus-miner storage find 1

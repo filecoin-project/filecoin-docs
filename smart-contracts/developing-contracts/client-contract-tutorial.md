@@ -11,7 +11,7 @@ You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel]
 
 ## Prerequisites
 
-Before continuing, make sure you have the following software installed and prerequisities ready:
+Before continuing, make sure you have the following software installed and prerequisites ready:
 
 * Git
 * NodeJS
