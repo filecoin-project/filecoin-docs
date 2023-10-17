@@ -1,9 +1,8 @@
+---
 root: ./
-
 structure:
   readme: ./WELCOME.md
   summary: SUMMARY.md
-
 redirects:
   about-filecoin/chat-and-discussion-forums: basics/project-and-community/chat-and-discussion-forums.md
   about-filecoin/contribution-tutorial: basics/project-and-community/ways-to-contribute.md
@@ -388,23 +387,18 @@ redirects:
   store/tools/starling: basics/project-and-community/filecoin-faqs.md
   store/tools: basics/how-storage-works/storage-onramps.md
   store: basics/how-storage-works/storage-onramps.md
-	
-  about-Filecoin/ipfs-and-Filecoin:	basics/how-storage-works/filecoin-and-ipfs.md
-  about-filecoin/what-is-filecoin:	basics/what-is-filecoin.md
-  about-filecoin/what-is-filecoin/?ref=blog.dclimate.net: basics/what-is-filecoin.md	
+  about-Filecoin/ipfs-and-Filecoin: basics/how-storage-works/filecoin-and-ipfs.md
+  about-filecoin/what-is-filecoin/?ref=blog.dclimate.net: basics/what-is-filecoin.md
   about-filecoin/what-is-filecoin/?ref=infura.ghost.io: basics/what-is-filecoin.md
-  build/core-products/filecoin-backed-pinning-services:	smart-contracts/fundamentals/the-fvm.md
-  build/local-devnet:	basics/what-is-filecoin/networks.md
-  docs/apis/json-rpc:	reference/json-rpc.md
-  get-started/go-filecoin-tutorial/Getting-Started.html:	storage-providers/basics/quickstart-guide.md
-  get-started/go-filecoin-tutorial/Home.html:	storage-providers/basics/quickstart-guide.md
-  get-started/go-filecoin-tutorial/Storing-on-Filecoin.html:	storage-providers/basics/quickstart-guide.md
-  getstarted/lotus/switing-networks:	basics/what-is-filecoin/networks.md
-  go-filecoin-tutorial/Explorer-and-Dashboard.html:	reference/general.md
-  go-filecoin-tutorial/Getting-Started.html:	storage-providers/basics/quickstart-guide.md
-  go-filecoin-tutorial/How-Filecoin-Works.html:	basics/what-is-filecoin.md
+  get-started/go-filecoin-tutorial/Getting-Started.html: storage-providers/basics/quickstart-guide.md
+  get-started/go-filecoin-tutorial/Home.html: storage-providers/basics/quickstart-guide.md
+  get-started/go-filecoin-tutorial/Storing-on-Filecoin.html: storage-providers/basics/quickstart-guide.md
+  getstarted/lotus/switing-networks: basics/what-is-filecoin/networks.md
+  go-filecoin-tutorial/Explorer-and-Dashboard.html: reference/general.md
+  go-filecoin-tutorial/Getting-Started.html: storage-providers/basics/quickstart-guide.md
+  go-filecoin-tutorial/How-Filecoin-Works.html: basics/what-is-filecoin.md
   storage-providers/filecoin-economics/block-rewards: basics/what-is-filecoin.md
-  mine/mining-rewards.html:	storage-providers/filecoin-economics/block-rewards.md
+  mine/mining-rewards.html: storage-providers/filecoin-economics/block-rewards.md
   smart-contracts/fundamentals/the-fvm: basics/what-is-filecoin.md
-  storage-provider/how-providing-works/storage-provider/hardware-requirements:	storage-providers/infrastructure/reference-architectures.md
-  v:	storage-providers/basics/quickstart-guide.md
+  storage-provider/how-providing-works/storage-provider/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
+  v: storage-providers/basics/quickstart-guide.md
