@@ -1,8 +1,9 @@
----
 root: ./
+
 structure:
   readme: ./WELCOME.md
   summary: SUMMARY.md
+  
 redirects:
   about-filecoin/chat-and-discussion-forums: basics/project-and-community/chat-and-discussion-forums.md
   about-filecoin/contribution-tutorial: basics/project-and-community/ways-to-contribute.md
