@@ -45,15 +45,12 @@ Lotus has a more global focus, while Venus has a stronger focus on the Chinese m
 
 ## Other implementations
 
-The following implementations exist, but aren’t fully featured.
-
 ### Forest
 
 ![Forest logo.](../../.gitbook/assets/nodes-implementations-overview-venus-forest.webp)
 
-Forest is an implementation of Filecoin written in Rust. It is currently in beta. The implementation will take a modular approach to building a full Filecoin node in two parts:
+Forest is the Rust implementation of the Filecoin protocol with low hardware requirements (16 GiB, 4 cores), developed by ChainSafe. Forest is focused on blockchain analytics, and does not support storage, retrieval or mining.
 
-* Building Filecoin’s security critical systems in Rust from the Filecoin Protocol Specification, specifically the virtual machine, blockchain, and node system,
-* Integrating functional components for storage mining and storage & retrieval markets to compose a fully functional Filecoin node implementation.
+Forest is currently used for generating up-to-date snapshots and managing archival copies of the Filecoin blockchain. Currently, the Forest team is hosting the entire Filecoin archival data for the community to use. This can be downloaded for free [here](https://forest-archive.chainsafe.dev/list/).
 
 You can find the [Forest codebase on GitHub](https://github.com/ChainSafe/forest) and the documentation site at [`chainsafe.github.io/forest`](https://chainsafe.github.io/forest/).
