@@ -388,3 +388,28 @@ redirects:
   store/tools/starling: basics/project-and-community/filecoin-faqs.md
   store/tools: basics/how-storage-works/storage-onramps.md
   store: basics/how-storage-works/storage-onramps.md
+	
+  about-Filecoin/ipfs-and-Filecoin:	basics/how-storage-works/filecoin-and-ipfs.md
+  about-filecoin/what-is-filecoin:	basics/what-is-filecoin.md
+  about-filecoin/what-is-filecoin/?ref=blog.dclimate.net: basics/what-is-filecoin.md	
+  about-filecoin/what-is-filecoin/?ref=infura.ghost.io: basics/what-is-filecoin.md
+  about-filecoin/what-is-filecoin/what-is-filecoin-diagram_hu960f1821f2e29c7d1afab50445135dac_34953_700x0_resize_box_3.png: basics/what-is-filecoin.md	
+  assets/img/ledger.332f43da.png: basics/what-is-filecoin.md	
+  assets/img/what-is-filecoin-diagram.c07b6058.png: basics/what-is-filecoin.md	
+  build/core-products/filecoin-backed-pinning-services:	smart-contracts/fundamentals/the-fvm.md
+  build/local-devnet:	basics/what-is-filecoin/networks.md
+  docs/apis/json-rpc:	reference/json-rpc.md
+  get-started/go-filecoin-tutorial/Getting-Started.html:	storage-providers/basics/quickstart-guide.md
+  get-started/go-filecoin-tutorial/Home.html:	storage-providers/basics/quickstart-guide.md
+  get-started/go-filecoin-tutorial/Storing-on-Filecoin.html:	storage-providers/basics/quickstart-guide.md
+  getstarted/lotus/switing-networks:	basics/what-is-filecoin/networks.md
+  go-filecoin-tutorial/Explorer-and-Dashboard.html:	reference/general.md
+  go-filecoin-tutorial/Getting-Started.html:	storage-providers/basics/quickstart-guide.md
+  go-filecoin-tutorial/How-Filecoin-Works.html:	basics/what-is-filecoin.md
+  storage-providers/filecoin-economics/block-rewards: basics/what-is-filecoin.md
+  images/social-card.png: basics/what-is-filecoin.md
+  mine/mining-rewards.html:	storage-providers/filecoin-economics/block-rewards.md
+  smart-contracts/developing-contracts/get-test-tokens/faucet-get-address_hu511fb870b227f441051bc067b9f419d0_204132_441x0_resize_q75_h2_box_3.webp:	networks/calibration.md
+  smart-contracts/developing-contracts/get-test-tokens/faucet-verify_huf20c2a4bf454bdefc9cb52bafd199d7f_1516790_1440x0_resize_q75_h2_box_3.webp	smart-contracts/fundamentals/the-fvm: basics/what-is-filecoin.md
+  storage-provider/how-providing-works/storage-provider/hardware-requirements:	storage-providers/infrastructure/reference-architectures.md
+  v:	storage-providers/basics/quickstart-guide.md
