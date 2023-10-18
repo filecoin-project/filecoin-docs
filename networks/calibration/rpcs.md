@@ -21,12 +21,6 @@ These endpoints are limited to [read-only Filecoin JSON RPC API calls](../../ref
 * WebSocket: `wss://filecoin-calibration.chainup.net/rpc/v1`
 * [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
 
-## [ChainStack](https://chainstacklabs.com)
-
-* HTTPS: `https://filecoin-calibration.chainstacklabs.com/rpc/v1`
-* WebSocket: `wss://ws-filecoin-calibration.chainstacklabs.com/rpc/v1`
-* [Chainstack documentation](https://chainstack.com/labs/#filecoin)
-
 ## [Glif](https://api.calibration.node.glif.io)
 
 Please note that publicly available hosted endpoints **only guarantee 2000 of the latest blocks.**
