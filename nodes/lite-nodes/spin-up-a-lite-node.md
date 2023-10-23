@@ -210,7 +210,7 @@ The last thing we need to do to get our node setup is to build the package. The 
 
 ## Start the node
 
-Let's start the lite-node by connecting to a remote full-node. We can use the public full-nodes from [https://www.glif.io](https://www.glif.io):
+Let's start the lite-node by connecting to a remote full-node. We can use the public full-nodes from [glif.io](https://www.glif.io/en):
 
 {% tabs %}
 {% tab title="Mainnet" %}
