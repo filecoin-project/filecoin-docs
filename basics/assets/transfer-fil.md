@@ -55,7 +55,7 @@ A hot wallet is a cryptocurrency wallet that is always connected to the internet
 
 If you want to transfer your FIL tokens from the `f1\f3` to the `0x` address, but the wallet or exchange you are using does not support the `f4` and `0x` style addresses. Then, you can create a _burner wallet_ using Glif, transfer FIL to the burner wallet, and then transfer FIL from the burner wallet to the `0x` address on MetaMask.
 
-1. Navigate to [https://wallet.glif.io/](https://wallet.glif.io/). Create a **Burner wallet**.
+1. Navigate to [glif.io/](https://www.glif.io/en?txtype=send). Create a **Burner wallet**.
 
 ![Create burner wallet](../../.gitbook/assets/basics-assets-transfer-fil-burner-wallet.webp)
 

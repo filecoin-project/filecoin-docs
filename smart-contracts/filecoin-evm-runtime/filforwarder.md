@@ -29,7 +29,7 @@ You can use the FilForwarder contract in two ways:
 
 Before we start, make sure you know the address you’d like to forward your FIL to. You’ll need to ensure that the `f410` Ethereum-style address has enough FIL to cover the transaction costs.
 
-1. Go to [Glif.io](https://glif.io).
+1. Go to [Glif.io](https://glif.io/en).
 2.  Select the network you want to use from the dropdown and click **Connect Wallet**.
 
     ![Select the network you want to use.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-select-network.webp)

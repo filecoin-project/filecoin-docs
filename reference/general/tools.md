@@ -33,7 +33,7 @@ These are some tools that developers will find useful when dealing with built-in
 * [FVM AssemblyScript SDK](https://github.com/Zondax/fvm-as-sdk) by Zondax
 * [FVM TinyGo SDK](https://www.notion.so/Filecoin-Virtual-Machine-FVM-Developer-Resources-94cabfd650184f4b9664bd4974e4d329) by Venus (IPFSForce)
 * [FVM High-level Rust SDK](https://github.com/polyphene/fvm-rs-sdk) by Polyphene
-* [Tooling by Glif](https://glif.io/)
+* [Tooling by Glif](https://glif.io/en)
 
 ### Filecoin improvement proposals
 

@@ -23,7 +23,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
 
 ## Step-by-step example
 
-1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io) node.\
+1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io/en) node.\
 
 - ```shell
   curl -X POST 'https://api.node.glif.io' \
@@ -85,4 +85,4 @@ Each node implementation has different ways to generate and manage authenticatio
 - [Lotus](https://lotus.filecoin.io)
 - [Venus](https://venus.filecoin.io)
 
-If you are using a node provider service like [Glif](https://glif.io) or [Chain.love](https://chain.love), take a look at your providers documentation to find out how to manage authentication tokens.
+If you are using a node provider service like [Glif](https://glif.io/en) or [Chain.love](https://chain.love), take a look at your providers documentation to find out how to manage authentication tokens.
