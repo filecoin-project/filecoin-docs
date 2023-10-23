@@ -106,9 +106,9 @@ As mentioned above, proving tasks can be assigned to dedicated workers, and work
 
 ### Boost <a href="#boost" id="boost"></a>
 
-[Boost](https://boost.filecoin.io/) is the market component for storage providers to interact with clients. Boost is made of several components (such as boostd, boostd-data, yugabytedb, booster-http etc.). It works as a deal-taking engine (from deals made by clients or other tools), and serves data retrievals to clients who request a copy of the data.
+[Boost](https://boost.filecoin.io/) is the market component for storage providers to interact with clients. Boost is made of several components (such as boostd, boostd-data, yugabytedb, booster-http etc.). It works as a deal-taking engine (from deals made by clients or other tools), and serves data retrievals to clients who request a copy of the data over graphsync, bitswap or http.
 
-Boost has become a critical component in the software stack of a storage provider and it is therefore necessecary to read the Boost documentation carefully.
+Boost has become a critical component in the software stack of a storage provider and it is therefore necessary to read the Boost documentation carefully.
 
 ### Helpful commands <a href="#helpful-commands" id="helpful-commands"></a>
 
@@ -140,7 +140,7 @@ lotus-miner storage list
 
 This command return information on your _sealed space_ and your _scratch space_, otherwise known as a cache. These spaces are only available if you have properly configured your Lotus miner by following the steps described in the [Lotus documentation](https://lotus.filecoin.io/storage-providers/operate/custom-storage-layout/).
 
-In some cases it might be usefull to check if the system has access to the storage paths to a certain sector. To check the storage paths to sector 1 for instance, use:
+In some cases it might be useful to check if the system has access to the storage paths to a certain sector. To check the storage paths to sector 1 for instance, use:
 
 ```
 lotus-miner storage find 1

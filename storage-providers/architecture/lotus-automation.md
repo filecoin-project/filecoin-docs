@@ -7,7 +7,7 @@ description: >-
 # Storage provider automation
 
 {% hint style="info" %}
-[Find the automation code here!](https://github.com/ng-solutions-architecture/lotus-automation)
+[Find the automation code here!](https://github.com/filecoin-project/sp-automation)
 {% endhint %}
 
 ## Why this automation?
@@ -29,8 +29,8 @@ The initial use case of this automation is to use sealing-as-a-service instead o
 
 ## Composable deployment
 
-One of the next features coming to this automation is a compossible deployment method. Today Lotus Daemon, Lotus Miner, and Boost are all installed on a single machine. Many production setups, however, will split out those services into their own dedicated hardware. A compossible deployment will allow you to deploy singular components on separate servers.
+One of the next features coming to this automation is a composable deployment method. Today Lotus Daemon, Lotus Miner, and Boost are all installed on a single machine. Many production setups, however, will split out those services into their own dedicated hardware. A composable deployment will allow you to deploy singular components on separate servers.
 
 ## Prerequisites
 
-Read the `README` carefully on the [GitHub repo](https://github.com/ng-solutions-architecture/lotus-automation) to make sure you have all the required prerequisites in place.
+Read the `README` carefully on the [GitHub repo](https://github.com/filecoin-project/sp-automation) to make sure you have all the required prerequisites in place.

@@ -34,7 +34,7 @@ Before we start, make sure you know the address you’d like to forward your FIL
 
     ![Select the network you want to use.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-select-network.webp)
 
-    In this example, we’re using the (now depricated) Hyperspace testnet.
+    In this example, we’re using the (now deprecated) Hyperspace testnet.
 3.  Confirm that you want to connect your wallet to Glif.io. You will only be prompted to do this once.
 
     ![Choose a wallet provider.](../../.gitbook/assets/smart-contracts-filecoin-evm-runtime-filforwader-choose-wallet.webp)

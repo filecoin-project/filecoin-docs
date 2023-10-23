@@ -40,7 +40,10 @@ There are several built-in system actors that power the Filecoin network as the 
 
 Along with the maturity of FVM, developers can write actors and deploy them to the Filecoin network in the same way as other blockchains. Other blockchains refer to these programs as _smart contracts_. User-programmable actors can also interact with built-in actors using the exported API from built-in actors.
 
-You can check out this [talk on How Filecoin Actors Work](https://curriculum.pl-launchpad.io/curriculum/filecoin/protocol/#how-filecoin-actors-work--zenground0--protocol-labs) to learn more.
+You can check out this talk on How Filecoin Actors Work to learn more:
+
+{% youtube %}9JbwbTPonv0{% endyoutube %}
+
 
 ## Distributed randomness
 

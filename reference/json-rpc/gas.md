@@ -8,7 +8,6 @@ Perms: read
 
 Inputs:
 
-
 ```json
 [
   {
@@ -42,12 +41,12 @@ Response: `"0"`
 
 ## GasEstimateGasLimit
 
-GasEstimateGasLimit estimates gas used by the message and returns it. It fails if message fails to execute.
+GasEstimateGasLimit estimates gas used by the message and returns it.
+It fails if message fails to execute.
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -81,12 +80,12 @@ Response: `9`
 
 ## GasEstimateGasPremium
 
-GasEstimateGasPremium estimates what gas price should be used for a message to have high likelihood of inclusion in `nblocksincl` epochs.
+GasEstimateGasPremium estimates what gas price should be used for a
+message to have high likelihood of inclusion in `nblocksincl` epochs.
 
 Perms: read
 
 Inputs:
-
 
 ```json
 [
@@ -114,7 +113,6 @@ Perms: read
 
 Inputs:
 
-
 ```json
 [
   {
@@ -133,7 +131,8 @@ Inputs:
     }
   },
   {
-    "MaxFee": "0"
+    "MaxFee": "0",
+    "MsgUuid": "07070707-0707-0707-0707-070707070707"
   },
   [
     {
@@ -147,7 +146,6 @@ Inputs:
 ```
 
 Response:
-
 
 ```json
 {

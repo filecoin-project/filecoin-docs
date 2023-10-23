@@ -1,6 +1,6 @@
 ---
 description: >-
-  This page lists a collection of tools and resources you can use to build ontop
+  This page lists a collection of tools and resources you can use to build on top
   of the Filecoin network using the FVM.
 ---
 

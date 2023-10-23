@@ -5,7 +5,7 @@ description: Public RPC endpoints are available for the Filecoin mainnet.
 # RPCs
 
 {% hint style="info" %}
-[Chainlist](https://chainlist.org/chain/314159) contains a dynamically updated list of available RPCs along with stats like current block-height and latency. [Find out more at chainlist.org](https://chainlist.org/chain/314159)
+[ChainID.network](https://chainid.network) contains a dynamically updated list of available RPCs along with stats like current block-height and latency. [Find out more at chainid.network](https://chainid.network).
 {% endhint %}
 
 ## [Ankr](https://ankr.com)
@@ -13,19 +13,13 @@ description: Public RPC endpoints are available for the Filecoin mainnet.
 * HTTPS: `https://rpc.ankr.com/filecoin`
 * [Supported Filecoin API methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
 
-## [Chainstack](https://www.chainstack.com)
-
-* HTTPS: `https://filecoin-mainnet.chainstacklabs.com/rpc/v1`
-* WebSocket: `wss://ws-filecoin-mainnet.chainstacklabs.com/rpc/v1`
-* [Chainstack documentation](https://docs.chainstack.com)
-
 ## [ChainupCloud](https://cloud.chainup.com)
 
 * HTTPS: `https://filecoin.chainup.net/rpc/v1`
 * WebSocket: `wss://filecoin.chainup.net/rpc/v1`
 * [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
 
-## [Glif](https://glif.io)
+## [Glif](https://api.node.glif.io)
 
 Please note that publicly available hosted endpoints **only guarantee 2000 of the latest blocks.**
 
