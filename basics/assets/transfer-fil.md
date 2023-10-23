@@ -43,16 +43,16 @@ The process for sending FIL from a Filecoin `f` address to an Ethereum-style `0x
 
 ### Ledger device
 
-Currently, Ledger Live has not supported `0x` or `f4` addresses yet, so you cannot directly use it to send FIL tokens to a `0x` or `f4` address. However, you can connect your Ledger device to the [Glif.io](https://glif.io) wallet and transfer FIL from a Filecoin `f1/f3` address to an Ethereum-style `0x` address. This method is more secure than the [Hot wallet](transfer-fil.md#hot-wallet) method detailed below since your private keys never leave your Ledger device.
+Currently, Ledger Live has not supported `0x` or `f4` addresses yet, so you cannot directly use it to send FIL tokens to a `0x` or `f4` address. However, you can connect your Ledger device to the [Glif.io](https://glif.io/en) wallet and transfer FIL from a Filecoin `f1/f3` address to an Ethereum-style `0x` address. This method is more secure than the [Hot wallet](transfer-fil.md#hot-wallet) method detailed below since your private keys never leave your Ledger device.
 
-In this method, you will connect your Ledger device to the [Glif.io](https://www.glif.io/) website and send FIL from your `f` address on the Ledger to an Ethereum-style `0x` address.
+In this method, you will connect your Ledger device to the [Glif.io](https://www.glif.io/en) website and send FIL from your `f` address on the Ledger to an Ethereum-style `0x` address.
 
 1. Ensure your Ledger device is connected to your computer, then log in to the Ledger Live dashboard and update your Ledger device’s Filecoin app to version `0.22.9`.
 
 <figure><img src="../../.gitbook/assets/basics-assets-transfer-fil-ledger-live.webp" alt=""><figcaption></figcaption></figure>
 
 2. Make sure the Filecoin app is open on your Ledger wallet. Your Ledger should display **Filecoin ready**.
-3. Go to [Glif](https://glif.io) and click **Connect Wallet**.
+3. Go to [Glif](https://glif.io/en) and click **Connect Wallet**.
 
 <figure><img src="../../.gitbook/assets/basics-assets-transfer-fil-connect-wallet.webp" alt=""><figcaption></figcaption></figure>
 
@@ -83,7 +83,7 @@ A hot wallet is a cryptocurrency wallet that is always connected to the internet
 
 If you want to transfer your FIL tokens from the `f1\f3` to the `0x` address, but the wallet or exchange you are using does not support the `f4` and `0x` style addresses. Then, you can create a _burner wallet_ using Glif, transfer FIL to the burner wallet, and then transfer FIL from the burner wallet to the `0x` address on MetaMask.
 
-1. Navigate to [https://wallet.glif.io/](https://wallet.glif.io/). Create a **Burner wallet**.
+1. Navigate to [glif.io/](https://www.glif.io/en?txtype=send). Create a **Burner wallet**.
 
 ![Create burner wallet](../../.gitbook/assets/basics-assets-transfer-fil-burner-wallet.webp)
 
