@@ -32,9 +32,7 @@ PoDSI is a proof construction and is generated for each sub-piece CID (within th
 The proof consists of two elements:
 
 1. An inclusion proof of a sub-tree, which contains the size and position of the sub-piece data in the larger aggregated data piece, corresponding to the tree of the aggregator's committed larger aggregated data piece. 
-1. An inclusion proof of the double leaf data segment descriptor, which describes the sub-piece data within the larger [data segment index]([https://github.com/filecoin-project/go-data-segment](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0058.md#data-segment-index)), which is contained at the end of a deal, describing all the data segments contained within that deal.
-
-Read more about the technical details of PoDSI [here](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0058.md#proof-of-data-segment-inclusion).
+1. An inclusion proof of the double leaf data segment descriptor, which describes the sub-piece data within the larger [data segment index](https://github.com/filecoin-project/go-data-segment), which is contained at the end of a deal, describing all the data segments contained within that deal.
 
 ### Requesting for aggregation off-chain
 
