@@ -9,7 +9,7 @@ description: >-
 
 ## Introduction
 
-Filecoin’s storage and retrieval capabilities can be thought of as the base layer of the Filecoin blockchain, and FVM can be thought of as a layer on top of Filecoin that unlocks programmability on the network (e.g. programmable storage primitives).
+Filecoin’s storage and retrieval capabilities can be thought of as the base layer of the Filecoin blockchain, and [FVM](fvm.filecoin.io) can be thought of as a layer on top of Filecoin that unlocks programmability on the network (e.g. programmable storage primitives).
 
 Whereas other blockchains do have smart contract capabilities, FVM’s smart contracts can use Filecoin storage and retrieval primitives with computational logic conditions. FVM will also enable Layer 2 capabilities, such as “compute over data” and [content delivery networks](https://saturn.tech/).
 
@@ -37,6 +37,7 @@ Additional use cases enabled by FVM include, but are not limited to, tokenized d
 
 If you’re ready to start building on the FVM, here are some resources you should explore:
 
+* FVM Reference Implementation: The [Github repo](https://github.com/filecoin-project/ref-fvm) containing the reference implementation for FVM. 
 * FVM Quickstart Guide: The Quickstart guide will walk you through deploying your first ERC-20 contract on FVM. In addition to being provided this code, we also walk you through the developer environment set-up.
 * Developing Contracts: If you are ready to build your dApp on FVM, you can skip ahead and review our [best practices](../developing-contracts/best-practices.md) section for developing contracts. Here, you can find a guide for the Filecoin solidity libraries, details on tools such as Foundry, Remix, and Hardhat, and tutorials for calling built-in actors and building client contracts.
 

@@ -10,7 +10,7 @@ Here’s a collection of general FAQs that the team has gathered. If you are loo
 
 ## **What is FVM**
 
-The FVM (Filecoin virtual machine) enables developers to write and deploy custom code to run on top of the Filecoin blockchain. This means developers can create apps, markets, and organizations built around data stored on Filecoin.
+The [FVM](fvm.filecoin.io) (Filecoin virtual machine) enables developers to write and deploy custom code to run on top of the Filecoin blockchain. This means developers can create apps, markets, and organizations built around data stored on Filecoin.
 
 ## **What broader implications does FVM have**
 
