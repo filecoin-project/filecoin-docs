@@ -34,8 +34,6 @@ The proof consists of two elements:
 1. An inclusion proof of a sub-tree, which contains the size and position of the sub-piece data in the larger aggregated data piece, corresponding to the tree of the aggregator's committed larger aggregated data piece. 
 1. An inclusion proof of the double leaf data segment descriptor, which describes the sub-piece data within the larger [data segment index]([https://github.com/filecoin-project/go-data-segment](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0058.md#data-segment-index)), which is contained at the end of a deal, describing all the data segments contained within that deal.
 
-Lighthouse.storage is the first aggregator platform to enable PoDSI. You can view the tutorial in their docs [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/section-a#step-3-understanding-podsi-getting-the-podsi-for-your-file).
-
 Read more about the technical details of PoDSI [here](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0058.md#proof-of-data-segment-inclusion).
 
 ### Requesting for aggregation off-chain
@@ -47,10 +45,10 @@ To request for aggregation and PoDSI off-chain, developers interact with an aggr
 1. Simultaneously, the aggregator aggregates indexed data segments (based on specs [here](https://github.com/filecoin-project/FIPs/discussions/512)). It runs the proofing library and generates PoDSI proofs for each sub-piece pCID, storing them in an off-chain database.
 1. The aggregator uses [programmatic deal-making]([url](https://docs.filecoin.io/smart-contracts/programmatic-storage/direct-deal-making)) or [manual deal-making](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/store-data/) to make storage deals with storage providers for the aggregated larger CAR file.
 1. Storage Providers download the aggregated CAR file and publish storage deals.
-1. Clients can query a proofing endpoint provided by the aggregator (example [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/section-a), which will look up the sub-piece CID (pCID) in the database and return the PoDSI proof, aggregated CID, and associated deal ID.
+1. Clients can query a proofing endpoint provided by the aggregator, which will look up the sub-piece CID (pCID) in the database and return the PoDSI proof, aggregated CID, and associated deal ID.
 1. Clients can use the sub-piece pCID for on-chain verification with the aggregation smart contract, which will verify the Merkle proof to ensure the sub-piece pCID (CommPc) matches the piece CID (CommPa) of the associated deal ID.
 
-[Lighthouse.storage](https://www.lighthouse.storage/) is the first aggregator platform available. You can find their docs on how to utilize their SDK for the above process [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/section-a#step-3-understanding-podsi-getting-the-podsi-for-your-file).
+[Lighthouse.storage](https://www.lighthouse.storage/) is the first aggregator platform available. You can find their [docs on how to utilize their SDK for the above process](https://docs.lighthouse.storage/).
 
 <img width="800" alt="Aggregation off-chain" src="https://github.com/filecoin-project/filecoin-docs/assets/113331491/47691259-5665-43c7-bea6-79ed2b453f86">
 
@@ -58,7 +56,7 @@ To request for aggregation and PoDSI off-chain, developers interact with an aggr
 
 On-chain aggregation and PoDSI requests go through aggregator oracle smart contracts:
 
-1. The client [prepares the data](https://docs.filecoin.io/storage-providers/filecoin-deals/storage-deals#data-preparation) and generates the sub-piece CID, known as pCID (CommPc). Here is an easy [data preparation tool](https://data.lighthouse.storage/) by [lighthouse.storage](lighthouse.storage).
+1. The client [prepares the data](https://docs.filecoin.io/storage-providers/filecoin-deals/storage-deals#data-preparation) and generates the sub-piece CID, known as pCID (CommPc). Here is an easy [data preparation tool](https://data.lighthouse.storage/) by [lighthouse.storage](https://lighthouse.storage).
 1. The client submits a sub-piece CID (CommPc) with metadata (e.g. URL to download the sub-piece CAR file) directly to the aggregation smart contract.
 1. The aggregator watches the aggregation contract, and when the aggregator decides there are enough sub-pieces, it downloads all sub-piece data, to generate the aggregated piece from the CAR file URL.
 1. The aggregator aggregates indexed data segments into a larger data file for deal-making (based on specs [here](https://github.com/filecoin-project/FIPs/discussions/512)).
