@@ -126,6 +126,7 @@
   * [RaaS](smart-contracts/programmatic-storage/raas.md)
   * [RaaS interfaces](smart-contracts/programmatic-storage/raas-interfaces.md)
   * [Direct deal-making](smart-contracts/programmatic-storage/direct-deal-making.md)
+  * [Aggregated deal-making](smart-contracts/programmatic-storage/aggregated-deal-making.md)
 * [Advanced](smart-contracts/advanced/README.md)
   * [Wrapped FIL](smart-contracts/advanced/wrapped-fil.md)
   * [Oracles](smart-contracts/advanced/oracles.md)

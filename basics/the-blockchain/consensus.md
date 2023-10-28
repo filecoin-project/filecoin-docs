@@ -2,7 +2,7 @@
 description: >-
   In the Filecoin blockchain, network consensus is achieved using the Expected
   Consensus (EC) algorithm, a secret, fair, and verifiable consensus protocol
-  used by the network to agree on the chain state.
+  used by the network to agree on the chain state
 ---
 
 # Consensus
@@ -36,4 +36,3 @@ In summary, EC involves the following steps at each _epoch_:
 5. The tipset that reflects the biggest amount of committed storage on the network is selected.
 6. Using the selected tipset, the chain state is propagated.
 7. EC returns to step 1 in the next epoch.
-

@@ -1,8 +1,8 @@
 ---
 description: >-
   Due to the nature of Filecoin and Ethereum having different address types in
-  the Filecoin network, the process for transferring FIL between addresses can be
-  a bit nuanced.
+  the Filecoin network, the process for transferring FIL between addresses can
+  be a bit nuanced.
 ---
 
 # Transfer FIL
@@ -77,7 +77,7 @@ If you want to transfer your FIL tokens from the `f1\f3` to the `0x` address, bu
 * In the **Recipient** field, enter your `0x` style address. GLIF automatically converts it to an `f4` address.
 * In the **Amount** field, enter the amount of FIL to send. Make sure you have enough FIL to cover the GAS cost.
 
-![Fill out send detail](../../.gitbook/assets/basics-assets-transfer-fil-send-detail-burner-wallet.webp)
+![Fill out send detail](<../../.gitbook/assets/basics-assets-transfer-fil-send-detail-burner-wallet (1).webp>)
 
 10. Click **Send**. The FIL will arrive in your MetaMask wallet shortly.
 
