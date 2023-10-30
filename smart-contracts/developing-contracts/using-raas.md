@@ -1,21 +1,22 @@
 ---
 description: >-
-  This page gives a tutorial on how to use RaaS from a smart contract.
+  This page is a tutorial on how to replicate, renew and repair storage deals on
+  Filecoin.
 ---
 
 # Using RaaS
 
-RaaS refers to replication, renewal and repair as a service, for data stored in storage deals on Filecoin. You can read more here.
+RaaS refers to replication, renewal and repair as a service, for data stored in storage deals on Filecoin. You can read more [here](../programmatic-storage/raas-interfaces.md).
 
 In this article, we will cover how to create storage deals, with replication, renew and repair requirements, via a smart contract. This utilizes the [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit).
 
-## Interacting with the Smart Contract
+### Interacting with the Smart Contract
 
 First, you need to:
 
-- EITHER start an instance of the BaseInterface by deploying a contract that inherits from `IAggregatorOracle` (you can do so via. `yarn deploy` in the [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit))
-- OR use an existing instance of the FullInterface located at
-  - Calibration Testnet: `0x6ec8722e6543fB5976a547434c8644b51e24785b`
+* EITHER start an instance of the BaseInterface by deploying a contract that inherits from `IAggregatorOracle` (you can do so via. `yarn deploy` in the [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit))
+* OR use an existing instance of the FullInterface located at
+  * Calibration Testnet: `0x6ec8722e6543fB5976a547434c8644b51e24785b`
 
 Interact with the smart contract by submitting a CID of your choice to the `submit` function. This will create a new deal request that will be picked up by the RaaS services.
 
@@ -30,7 +31,7 @@ The [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit) pro
 
 Before that, you need to know how to register the various RaaS workers. Note that RaaS functionality will NOT function automatically if deals are only created using submit function.
 
-## Add Replication, Renewal, Repair Workers
+### Add Replication, Renewal, Repair Workers
 
 You can add workers to perform replication, renewal, and repair jobs by having them listen to the `SubmitAggregatorRequest`. The methods for doing so differ between the Base and Full interfaces.
 
@@ -45,9 +46,7 @@ async function initializeDealCreationListener() {
 
   /// Logic for handling SubmitAggregatorRequest events
   function handleEvent(transactionId, cid) {
-    console.log(
-      `Received SubmitAggregatorRequest event: (Transaction ID: ${transactionId}, CID: ${cid})`,
-    );
+    console.log(`Received SubmitAggregatorRequest event: (Transaction ID: ${transactionId}, CID: ${cid})`);
     // ... other code to handle the event emission
 
     (async () => {
