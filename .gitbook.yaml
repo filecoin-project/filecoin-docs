@@ -117,7 +117,7 @@ redirects:
   developers/reference/built-in-actors/storage-power-actor: reference/built-in-actors/protocol-api.md
   developers/reference/built-in-actors/verified-registry-actor: reference/built-in-actors/protocol-api.md
   developers/reference/json-rpc/auth: reference/json-rpc/auth.md
-  developers/reference/json-rpc/beacon: reference/json-rpc/beacon.md
+  developers/reference/json-rpc/beacon: reference/json-rpc/state.md
   developers/reference/json-rpc/chain: reference/json-rpc/chain.md
   developers/reference/json-rpc/client: networks/mainnet/rpcs.md
   developers/reference/json-rpc/create: reference/json-rpc/create.md
@@ -231,6 +231,7 @@ redirects:
   go-filecoin-tutorial/Explorer-and-Dashboard: networks/mainnet/explorers.md
   go-filecoin-tutorial/How-Filecoin-Works: basics/how-storage-works/filecoin-and-ipfs.md
   go-filecoin-tutorial/Mining-Filecoin: basics/what-is-filecoin/storage-model.md
+  go-filecoin-tutorial/Mining-Filecoin.html: basics/what-is-filecoin/storage-model.md
   go-filecoin-tutorial/Storing-on-Filecoin: basics/how-storage-works/README.md
   go-filecoin-tutorial/getting-started: storage-providers/basics/quickstart-guide.md
   go-filecoin-tutorial/storing-on-filecoin: storage-providers/filecoin-deals/storage-deals.md
@@ -356,7 +357,7 @@ redirects:
   storage-provider/storage-provider-architectures: storage-providers/infrastructure/reference-architectures.md
   storage-provider/storage-provider-rewards: storage-providers/filecoin-economics/block-rewards.md
   storage-provider/videos/actors: basics/the-blockchain/actors.md
-  storage-provider/videos/cryptoecon: basics/what-is-filecoin/crypto-economics
+  storage-provider/videos/cryptoecon: basics/what-is-filecoin/crypto-economics.md
   storage-provider/videos/fvm: smart-contracts/fundamentals/README.md
   storage-provider/videos/gdpr: storage-providers/skills/linux.md
   storage-provider/videos/green: basics/what-is-filecoin/README.md
@@ -398,6 +399,7 @@ redirects:
   go-filecoin-tutorial/Explorer-and-Dashboard.html: reference/general/README.md
   go-filecoin-tutorial/Getting-Started.html: storage-providers/basics/quickstart-guide.md
   go-filecoin-tutorial/How-Filecoin-Works.html: basics/what-is-filecoin/README.md
+  go-filecoin-tutorial/Storing-on-Filecoin.html: basics/how-storage-works/storage-onramps.md
   storage-providers/filecoin-economics/block-rewards: basics/what-is-filecoin/README.md
   mine/mining-rewards.html: storage-providers/filecoin-economics/block-rewards.md
   smart-contracts/fundamentals/the-fvm: basics/what-is-filecoin/README.md
