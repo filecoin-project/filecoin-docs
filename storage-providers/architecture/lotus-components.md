@@ -110,6 +110,8 @@ As mentioned above, proving tasks can be assigned to dedicated workers, and work
 
 Boost has become a critical component in the software stack of a storage provider and it is therefore necessary to read the Boost documentation carefully.
 
+Boost requires YugabyteDB as of version 2.0. Plan your deployment so that you understand the concepts of Yugabyte well enough. See the [Boost](https://boost.filecoin.io/) documentation for more details.
+
 ### Helpful commands <a href="#helpful-commands" id="helpful-commands"></a>
 
 The following commands can help storage providers with their setup.
