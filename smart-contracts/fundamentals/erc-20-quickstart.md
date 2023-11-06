@@ -92,16 +92,23 @@ In Remix, workspaces are where you can create a contract, or group of contracts,
 ### Customize the contract
 
 The contract template we’re using is pretty simple. We just need to modify a couple of variables.
+1.  Click the compiler icon to open the compiler panel. Update the compiler version by selecting `0.8.20` from the compiler dropdown.
 
-1.  Under the **contract** directory, click **MyToken.sol**.
+    ![Update the compiler version](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-compiler.webp)
+
+2.  Under the **contract** directory, click **MyToken.sol**.
 
     ![Open the MyToken contract.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-customize.webp)
-2.  In the editor panel, replace `MyToken` with whatever you’d like to name your token. In this example, we’ll use `CorgiCoin`.
+
+3.  Update the **pragma solidity** field to `^0.8.20`.
+
+    ![Update the pragma solidity field.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-pragma.webp)
+4.  In the editor panel, replace `MyToken` with whatever you’d like to name your token. In this example, we’ll use `CorgiCoin`.
 
     ![Change token name.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-token-name.webp)
-3.  On the same line, replace the second string with whatever you want the symbol of your token to be. In this example, we’ll use `CRG`.
+5.  On the same line, replace the second string with whatever you want the symbol of your token to be. In this example, we’ll use `CRG`.
 
-    ![Change token ticket.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-ticker.webp)
+    ![Change token ticket.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-ticker.webp)  
 
 That’s all we need to change within this contract. You can see on line 4 that this contract is importing another contract from `@openzeppelin` for us, meaning that we can keep our custom token contract simple.
 
