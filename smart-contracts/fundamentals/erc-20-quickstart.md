@@ -79,9 +79,9 @@ The development environment we’re going to be using is called Remix, viewable 
 In Remix, workspaces are where you can create a contract, or group of contracts, for each project. Let’s create a new workspace to create our new ERC-20 token.
 
 1. Open [remix.ethereum.org](https://remix.ethereum.org).
-2.  Click the `+` icon next to **Workspaces** to create a new workspace:
+2. Open the drop down menu and click `create new workspace`.
 
-    ![Create a new workspace.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-create.webp)
+    ![Create a new workspace.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-dropdown.webp)
 3. In the **Choose a template** dropdown, select **ERC 20**.
 4. Select the **Mintable** checkbox.
 5. Enter a fun name for your token in the **Workspace name** field. Something like `CorgiCoin` works fine.
@@ -100,10 +100,7 @@ The contract template we’re using is pretty simple. We just need to modify a c
 
     ![Open the MyToken contract.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-customize.webp)
 
-3.  Update the **pragma solidity** field to `^0.8.20`.
-
-    ![Update the pragma solidity field.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-pragma.webp)
-4.  In the editor panel, replace `MyToken` with whatever you’d like to name your token. In this example, we’ll use `CorgiCoin`.
+3.  In the editor panel, replace `MyToken` with whatever you’d like to name your token. In this example, we’ll use `CorgiCoin`.
 
     ![Change token name.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-token-name.webp)
 5.  On the same line, replace the second string with whatever you want the symbol of your token to be. In this example, we’ll use `CRG`.
@@ -116,10 +113,10 @@ That’s all we need to change within this contract. You can see on line 4 that 
 
 1.  Click the green play symbol at the top of the workspace to compile your contract. You can also press `CMD` + `s` on MacOS or `CTRL` + `s` on Linux and Windows.
 
-    ![Compile the contract.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-compile.webp)
-2.  Remix automatically fetches the two `import` contracts from the top of our `.sol` contract. You can see these imported contracts under the `.deps` directory. You can browse the contracts there, but Remix will not save any changes you make.
+    ![Compile the contract.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-play.webp)
+2.  Remix automatically fetches the three `import` contracts from the top of our `.sol` contract. You can see these imported contracts under the `.deps` directory. You can browse the contracts there, but Remix will not save any changes you make.
 
-    ![Compile and get the dependencies](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-deps.webp)
+    ![Compile and get the dependencies](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-expand.webp)
 
 ### Deploy
 
@@ -127,10 +124,10 @@ Now that we’ve successfully compiled our contract, we need to deploy it somewh
 
 1.  Click the **Deploy** tab from the left.
 
-    ![Select the deploy tab.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-deploy-tab.webp)
+    ![Select the deploy tab.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-compile-button.webp)
 2.  Under the **Environment** dropdown, select **Injected Provider - MetaMask**.
 
-    ![Select MetaMask within Remix.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-select-mm.webp)
+    ![Select MetaMask within Remix.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-inject-meta.webp)
 3. MetaMask will open a new window confirming that you want to connect your account to Remix.
 4.  Click **Next**:
 
@@ -140,18 +137,24 @@ Now that we’ve successfully compiled our contract, we need to deploy it somewh
     ![Click Connect in MetaMask.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-mm-connect.webp)
 6.  Back in Remix, under the **Account** field, you’ll see that it says something like `0x11F... (5 ether)`. This value is 5 `tFIL`, but Remix doesn’t support the Filecoin network so doesn’t understand what `tFIL` is. This isn’t a problem, it’s just a little quirk of using Remix.
 
-    ![Remix and MetaMask linked.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-inject.webp)
+    ![Remix and MetaMask linked.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-accountid.webp)
 7.  Under the **Contract** dropdown, ensure the contract you created is selected.
 
     ![Select contract in Remix.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-deploy-select.webp)
-8.  Click **Deploy**.
+
+8.  Gather your MetaMask account address and populate the deploy field in Remix.
+
+    ![Copy the address in MetaMask](../../.gitbook/assets/smart-contract-fundamentals-erc-20-quickstart-mm-account.webp)
+
+    ![Populate the deploy address](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-deploy-address.webp)
+9.  Click **Deploy**.
 
     ![Click Deploy in Remix.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-click-deploy.webp)
-9. MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract.
-10. Back in Remix, a message at the bottom of the screen shows that the creation of your token is pending.
+10. MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract.
+11. Back in Remix, a message at the bottom of the screen shows that the creation of your token is pending.
 
     ![Deployment confirmation in Remix.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-confirmation.webp)
-11. Wait around 90 seconds for the deployment to complete.
+12. Wait around 90 seconds for the deployment to complete.
 
     ![Deployment complete.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-complete.webp)
 
