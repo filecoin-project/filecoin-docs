@@ -56,6 +56,7 @@ With better performance, lower fees and faster transactions, IPC can rapidly imp
 
 ### Get involved
 
-* Visit the IPC [website](https://www.ipc.space/)
+* Visit the [website](https://www.ipc.space/)
 * Read the [docs](https://docs.ipc.space/)
+* Check out the [repository](https://github.com/consensus-shipyard/ipc)
 * Connect with the community on [Discord](https://discord.gg/QtNbXf75)
