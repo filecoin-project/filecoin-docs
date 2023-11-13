@@ -51,9 +51,6 @@ Tools to check status and details of the network and chain.
 
 * [`Filfox.info`](https://filfox.info/en) - Mainnet
 * [Filscan](https://filscan.io) - Mainnet & Calibration
-* [Grafana](https://stats.filecoin.io/) - Network Statistics Dashboard
-  * [Mainnet](https://stats.filecoin.io/)
-  * [Calibration](https://stats.calibration.fildev.network/d/z6FtI92Zz/chain?orgId=1\&refresh=25s\&from=now-30m\&to=now\&kiosk)
 
 ### Chain data and monitoring
 
