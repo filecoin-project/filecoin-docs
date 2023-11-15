@@ -59,7 +59,7 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
 
 1. Navigate to [remix.ethereum.org](https://remix.ethereum.org/).
 2. Next to **Workspaces**, click the **+** icon to create a new workspace.
-3. In the **Choose a template** dropdown, select **ERC 20** along with the **Mintable** checkbox
+3. In the **Choose a template** dropdown, select **ERC20** along with the **Mintable** checkbox
 4. Click **OK**.
 5. In the **contract** directory, open **MyToken.sol**.
 6. Set the token `<name>` and `<symbol>`:

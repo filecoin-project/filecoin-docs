@@ -79,11 +79,11 @@ The development environment we’re going to be using is called Remix, viewable 
 In Remix, workspaces are where you can create a contract, or group of contracts, for each project. Let’s create a new workspace to create our new ERC-20 token.
 
 1. Open [remix.ethereum.org](https://remix.ethereum.org).
-2. Open the drop down menu and click `create new workspace`.
+2. Open the dropdown menu and click **create a new workspace**.
 
     ![Create a new workspace.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-dropdown.webp)
-3. In the **Choose a template** dropdown, select **ERC 20**.
-4. Select the **Mintable** checkbox.
+3. In the **Choose a template** dropdown, select **ERC20**.
+4. Under **Customize template** > **Features**, check the **Mintable** box.
 5. Enter a fun name for your token in the **Workspace name** field. Something like `CorgiCoin` works fine.
 6.  Click **OK** to create your new workspace.
 
@@ -95,17 +95,15 @@ The contract template we’re using is pretty simple. We just need to modify a c
 1.  Click the compiler icon to open the compiler panel. Update the compiler version by selecting `0.8.20` from the compiler dropdown.
 
     ![Update the compiler version](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-compiler.webp)
-
 2.  Under the **contract** directory, click **MyToken.sol**.
 
     ![Open the MyToken contract.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-customize.webp)
-
 3.  In the editor panel, replace `MyToken` with whatever you’d like to name your token. In this example, we’ll use `CorgiCoin`.
 
     ![Change token name.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-token-name.webp)
-5.  On the same line, replace the second string with whatever you want the symbol of your token to be. In this example, we’ll use `CRG`.
+4.  On the same line, replace the second string with whatever you want the symbol of your token to be. In this example, we’ll use `CRG`.
 
-    ![Change token ticket.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-ticker.webp)  
+    ![Change token ticket.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-ticker.webp)
 
 That’s all we need to change within this contract. You can see on line 4 that this contract is importing another contract from `@openzeppelin` for us, meaning that we can keep our custom token contract simple.
 

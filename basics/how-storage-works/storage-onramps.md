@@ -1,7 +1,7 @@
 ---
 description: >-
   Storage on-ramps and helpers are APIs and services that abstract Filecoin
-  dealmaking into simple, streamlined API calls.z
+  dealmaking into simple, streamlined API calls.
 ---
 
 # Storage on-ramps
