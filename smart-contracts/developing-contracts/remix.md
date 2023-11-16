@@ -18,7 +18,7 @@ In Remix, workspaces are where you can create a contract, or group of contracts,
 
 1. Open [remix.ethereum.org](https://remix.ethereum.org).
 2. Click the `+` icon next to **Workspaces** to create a new workspace.
-3. In the **Choose a template** dropdown, select **ERC 20**.
+3. In the **Choose a template** dropdown, select **ERC20**.
 4. Select the **Mintable** checkbox.
 5. Enter a fun name for your token in the **Workspace name** field. Something like `CorgiCoin` works fine.
 6. Click **OK** to create your new workspace.

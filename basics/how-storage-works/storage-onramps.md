@@ -17,7 +17,7 @@ Storage helpers are available for NFTs (non-fungible tokens) or general data. If
 #### General data storage
 
 * [Chainsafe Storage API](https://docs.storage.chainsafe.io) is an underlayer to Chainsafe’s encrypted IPFS & Filecoin file storage system. It offers S3-compatible bucket-style APIs for easy migration of data. As of September 2022, it’s the only storage helper with built-in encryption.
-* [Web3.Storage](https://web3.storage/docs) is a fast and open developer platform for [storing and interacting with data](https://blog.web3.storage/posts/say-hello-to-the-data-layer-1-3-intro-to-web3-storage). Upload any data and Web3.Storage will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There are JavaScript and Go libraries for the API, as well as a no-code web uploader. Free and paid plans are available.
+* [Web3.Storage](https://web3.storage/docs) is a fast and open developer platform for [storing and interacting with data](https://blog.web3.storage/). Upload any data and Web3.Storage will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There are JavaScript and Go libraries for the API, as well as a no-code web uploader. Free and paid plans are available.
 
 #### Advanced tools
 
