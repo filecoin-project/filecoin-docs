@@ -6,6 +6,10 @@ description: >-
 
 # Mainnet
 
+{% hint style="info" %}
+Also see [Mainnet RPCs](./rpcs.md) and [Mainnet Explorers](./explorers.md).
+{% endhint %}
+
 **Maintainer**: [Protocol Labs](https://protocol.ai)
 
 ## Genesis
