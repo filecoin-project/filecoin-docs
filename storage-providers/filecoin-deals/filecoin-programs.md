@@ -34,10 +34,6 @@ A overview of the Slingshot project from the Enterprise Storage Provider Acceler
 
 [Evergreen](https://evergreen.filecoin.io/) extends the Slingshot program by aiming to store the open datasets forever. Standard deals have a maximum duration of 540 days, which is not long enough for valuable, open datasets that might need to be stored forever. Evergreen uses a deal engine ([Spade](https://github.com/ribasushi/spade)) that automatically renews deals to extend the lifetime of the dataset on-chain.
 
-## Moon Landing
-
-[Moon Landing](https://moon-landing.io) is a program related to Slingshot and Evergreen. Moon Landing aims to provide assistance for new storage providers to enter the Slingshot program. They provide technical assistance as well as establishing contacts with other storage providers. Participants in the Moon Landing program are matched with other storage providers in a capsule. The intent is to grow communities of storage providers that can learn from each other and can share data replicas with each other.
-
 ## Saturn
 
 A whole new access capability is being launched with [Saturn](https://saturn.tech), which is the world’s first Web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrieval times of less than 1 second will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which storage providers can also participate.
