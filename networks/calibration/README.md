@@ -4,7 +4,11 @@ description: >-
   Filecoin mainnet.
 ---
 
-# Calibration
+# Calibration testnet
+
+{% hint style="info" %}
+Also see [Calibration RPCs](./rpcs.md) and [Calibration Explorers](./explorers.md).
+{% endhint %}
 
 Prospective storage providers can experience more realistic sealing performance and hardware requirements using final proofs constructions and parameters. Storage clients can store and retrieve _real data_ on the network. Clients can also participate in deal-making workflows and storage and retrieval functionality. The sector size on the Calibration testnet is the same as on the Filecoin mainnet; 32 GiB and 64 GiB sectors are supported. This testnet also includes the Filecoin EVM-runtime features found on the Filecoin mainnet.
 

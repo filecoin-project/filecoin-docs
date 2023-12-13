@@ -71,7 +71,6 @@ Tools to check status and details of the network and chain.
 Web-based applications that store your data on Filecoin. No command-line or coding experience required.
 
 * [Estuary](https://estuary.tech) allows uploading and storing content on the Filecoin network directly from your browser. Allows anyone with public data to store and retrieve using a few API calls.
-* [**Slate.host**](https://slate.host) - a storage application on Filecoin to collect, organize, and link files together and share them, listed on [Product Hunt here](https://www.producthunt.com/posts/slate-f195dcdd-18e2-4dc2-8c70-45208ccbb862) on GitHub at [`filecoin-project/slate`](https://github.com/filecoin-project/slate/)
 * [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with OAuth or general MetaMask
 * [`File.video`](https://file.video/) - video hosting with decentralized transcoding from LivePeer
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
