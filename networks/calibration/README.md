@@ -43,10 +43,6 @@ Developers can reference pre-existing deals that are already available on the ne
 /dns4/bootstrap-3.calibration.fildev.network/tcp/1347/p2p/12D3KooWFWUqE9jgXvcKHWieYs9nhyp6NF4ftwLGAHm4sCv73jjK
 ```
 
-## Snapshots <a href="#snapshots" id="snapshots"></a>
-
-* [Latest minimal snapshot](https://snapshots.calibrationnet.filops.net/minimal/latest.zst)
-
 ## Active storage providers <a href="#active-storage-providers" id="active-storage-providers"></a>
 
 The following storage providers are running on the Calibration testnet.
