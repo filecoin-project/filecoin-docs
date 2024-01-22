@@ -45,7 +45,7 @@ Developers can reference pre-existing deals that are already available on the ne
 
 ## Snapshots <a href="#snapshots" id="snapshots"></a>
 
-* [Latest minimal snapshot](https://snapshots.calibrationnet.filops.net/minimal/latest.zst)
+* [Latest minimal snapshot](https://forest-archive.chainsafe.dev/latest/calibnet)
 
 ## Active storage providers <a href="#active-storage-providers" id="active-storage-providers"></a>
 
