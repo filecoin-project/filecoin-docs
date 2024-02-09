@@ -23,6 +23,14 @@ layout:
 
 # Welcome to Filecoin Docs
 
+{% hint style="info" %}
+**This is the new Filecoin documentation site, hosted by** [**GitBook**](https://gitbook.com)**.**
+
+This site [docs.filecoin.io](https://docs.filecoin.io) will continue to be updated, while [legacy-docs.filecoin.io](https://legacy-docs.filecoin.io) will serve as a historical entity only and will receive no further updates. DNS for the legacy site will be removed on `2023-09-30`. However, copies of the site may remain available [over IPFS](https://fleek.ipfs.io/ipfs/QmeyfnoothgLP9ft2MYBVXw1WeaPqvV6Z1JU4QUbZsAQKM/).
+
+[Checkout the Filecoin blog for more information →](https://filecoin.io/blog/posts/filecoin-docs-is-moving-to-gitbook/)
+{% endhint %}
+
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><h4>Filecoin Virtual Machine</h4></td><td>The Filecoin Virtual Machine is here, allowing developers to build applications and smart-contracts that utilize the Filecoin storage network! Find out how you can leverage the worlds fastest growing storage network</td><td></td><td><a href="smart-contracts/fundamentals/">fundamentals</a></td><td><a href=".gitbook/assets/home-fvm-logo-colour.png">home-fvm-logo-colour.png</a></td></tr><tr><td><h4>Looking For Lotus?</h4></td><td>Lotus is the reference implementation of the Filecoin protocol, developed and maintained by Protocol Labs. It allows users to participate in the Filecoin network, by enabling them to earn the FIL token, provide storage, and retrieve stored files.</td><td></td><td><a href="https://lotus.filecoin.io">https://lotus.filecoin.io</a></td><td><a href=".gitbook/assets/home-lotus-logo-colour.png">home-lotus-logo-colour.png</a></td></tr></tbody></table>
 
 ## Choose your own adventure
