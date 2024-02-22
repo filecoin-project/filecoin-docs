@@ -52,7 +52,6 @@ Also see [Mainnet RPCs](./rpcs.md) and [Mainnet Explorers](./explorers.md).
 
 ## Resources
 
-* [Latest lightweight snapshot](https://snapshots.mainnet.filops.net/minimal/latest) generated with [Lotus](https://lotus.filecoin.io/) by [Protocol Labs](https://protocol.ai/)
 * [Latest lightweight snapshot](https://forest-archive.chainsafe.dev/latest/mainnet/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
 * [Complete Filecoin blockchain archival data](https://forest-archive.chainsafe.dev/list/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
 * [Status page and incidents](https://filecoin.statuspage.io/)
