@@ -23,12 +23,8 @@ Once the library is installed in your project, you can write Solidity code to ca
 Run the following command in your Solidity project, which is created using any smart contract development framework such as Hardhat, Truffle, or Foundry.
 
 ```shell
-npm install @zondax/filecoin-solidity
+npm install filecoin-solidity-api
 ```
-
-{% hint style="info" %}
-Until mid-2023, Zondax was the legacy maintainer of Filecoin.sol. Protocol Labs took over the project, and are in the process of moving NPM packages over to the `protocollabs` NPM account.
-{% endhint %}
 
 ## Usage
 
@@ -39,9 +35,10 @@ Once installed, you can call built-in actors in the library after importing them
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-import "@zondax/filecoin-solidity/contracts/v0.8/MarketAPI.sol";
-import "@zondax/filecoin-solidity/contracts/v0.8/types/MarketTypes.sol";
-import "@zondax/filecoin-solidity/contracts/v0.8/types/CommonTypes.sol";
+import { MarketAPI } from "filecoin-solidity-api/contracts/v0.8/MarketAPI.sol";
+import { CommonTypes } from "filecoin-solidity-api/contracts/v0.8/types/CommonTypes.sol";
+import { MarketTypes } from "filecoin-solidity-api/contracts/v0.8/types/MarketTypes.sol";
+import { BigIntCBOR } from "filecoin-solidity-api/contracts/v0.8/cbor/BigIntCbor.sol";
 
 contract MyFilecoinContract {
     ...
@@ -66,9 +63,9 @@ CommonTypes.BigInt memory returnData = MinerAPI.getVestingFunds(minerID);
 Filecoin.sol also offers several utility libraries to help developers to convert data types for different variables, including FILAddress, BigIntegers, ActorID, and CBOR. You can import those libraries from the `utils` folder:
 
 ```solidity
-import "@zondax/filecoin-solidity/contracts/v0.8/utils/Actor.sol";
-import "@zondax/filecoin-solidity/contracts/v0.8/utils/BigInts.sol";
-import "@zondax/filecoin-solidity/contracts/v0.8/utils/FilAddresses.sol";
+import "filecoin-solidity-api/contracts/v0.8/utils/Actor.sol";
+import "filecoin-solidity-api/contracts/v0.8/utils/BigInts.sol";
+import "filecoin-solidity-api/contracts/v0.8/utils/FilAddresses.sol";
 ```
 
 ## Example
@@ -79,8 +76,8 @@ We can write a simple Solidity smart contract to query basic information for a F
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.17;
 
-import "@zondax/filecoin-solidity/contracts/v0.8/MarketAPI.sol";
-import "@zondax/filecoin-solidity/contracts/v0.8/types/MarketTypes.sol";
+import "filecoin-solidity-api/contracts/v0.8/MarketAPI.sol";
+import "filecoin-solidity-api/contracts/v0.8/types/MarketTypes.sol";
 import "hardhat/console.sol";
 
 contract StorageDealQuery {

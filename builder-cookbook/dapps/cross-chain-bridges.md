@@ -1,102 +1,136 @@
 ---
-description: Learn to support multichain dApp use cases with cross-chain bridges.
+description: Learn to support multi-chain dApp use cases with cross-chain bridges.
 ---
 
 # Cross-Chain Bridges
 
-### <mark style="color:blue;">Bridge wFIL with Axelar</mark>
+Cross-chain bridges enable developers to build dApps, decentralized exchanges, and payment protocols using assets native to other blockchains. &#x20;
 
-Cross-chain bridges enable developers to build “decentralized exchanges to support the trading of assets from multiple blockchain networks” or “allow users to access decentralized applications (dApps) on different networks.” &#x20;
+There are currently two options for cross-chain bridges between Filecoin and other blockchains, [Axelar](https://axelar.network/) and [Celer](https://cbridge.celer.network/1/314).  This cookbook will focus on the use of Celer since it is available on both Calibration testnet and Mainnet, while Axelar is currently only available on Mainnet.
 
-There are currently two options for cross-chain bridges between Filecoin and other blockchains, [Axelar](https://axelar.network/) and [Celer](https://cbridge.celer.network/1/314); this section will focus on the use of Axelar’s wFIL to achieve a cross-chain transaction.
+### <mark style="color:blue;">Token Transfers with cBridge</mark>
 
-**Ingredients**
-
-* [Remix](https://remix.ethereum.org/#lang=en\&optimize=false\&runs=200\&evmVersion=null)
-* [Solidity](https://docs.soliditylang.org/en/v0.8.23/)
-* [Axelar Services Portal](https://axelar.network/)
-* [Axelar Cross-chain Bridge Mainnet Addresses ](https://docs.filecoin.io/smart-contracts/advanced/cross-chain-bridges)
-* Watch: [Getting Started with Axelar on FVM](https://www.youtube.com/watch?v=L7cw5FhxW4s)
-
-**Instructions**&#x20;
-
-Sending Tokens: There are three methods from Axelar that enables a developer to send tokens from one chain to another:&#x20;
-
-* From Ethereum, create a deposit address so that the tokens end up on Filecoin on FEVM.&#x20;
-* Use the sendToken() method on the EVM gateway contract. &#x20;
-* &#x20;Use the Interchain Token standard from the Axelar Services Portal that allows you to take any ERC20 and create a version of that token on all other blockchains, creating your own bridge for your token.
-
-```solidity
-sendToken(
-    "avalanche", // destination chain name
-    "0xAAAAA", // Address 
-    "USDC", // asset symbol
-    100000000 // amount in atomic units 
-)
-```
-
-Sending Messages: Axelar’s General Message Passing allows a developer to move compute in any arbitrary ways, moving compute to where the assets are. \
-
-
-1. Using the callContract() from the source chain, specify the destination chain, address, and payload you want to send.   On the destination chain, there is an internal method called  \_execute(), where source chain, source address, and payload variables are stored.
-
-```solidity
-function callContract(
-    string memory destChain,
-    string memory destAddress, 
-    bytes memory payload
-) external;
-```
-
-```solidity
-function _execute(
-    string memory sourceChain,
-    string memory sourceAddress, 
-    bytes callData payload
-) internal virtual {}
-```
-
-2. Use the payNativeGasForContractCall() method to ensure that the gas needed for the execution of the contract on the destination chain is paid for on the source chain. &#x20;
-
-```
-function payNativeGasForContractCall(
-    address sender, 
-    string calldata destChain, 
-    string calldata destAddress, 
-    bytes calldata payload, 
-    address refundAddress
-) external payablel 
-```
-
-### <mark style="color:blue;">Smart Contracts as Liquidity Pools with Celer on Testnet</mark>
-
-Although Celer's wFIL contract is only available on mainnet, there are other tokens supported on Calibration testnet.   &#x20;
+cBridge is a cross-chain asset transfer solution that does not require upfront liquidity.&#x20;
 
 **Ingredients**
 
 * [Celer Documentation](https://cbridge.celer.network/1/56/USDC)
 * [Celer Tutorial](https://cbridge-docs.celer.network/tutorial/cross-chain-transfer)
 * [Celer cBridge SDK](https://cbridge-docs.celer.network/developer/cbridge-sdk)
-* A full tutorial on how to develop a smart contract as a liquidity pol can be found [HERE](https://cbridge-docs.celer.network/tutorial/smart-contract-as-lp).
-* [Inter-chain Messaging](https://im-docs.celer.network/developer/development-guide/contract-examples/hello-world)
+* A full [tutorial](https://cbridge-docs.celer.network/tutorial/smart-contract-as-lp) on how to develop a smart contract as a liquidity pool
 
-**Sample Code**
+**Instructions**&#x20;
 
-Here is a simple example of an inter-chain message of "Hellow World" as found in the Celer documentation:&#x20;
+1. Sender sends [transferOut](https://github.com/celer-network/cBridge-contracts/blob/v1.0.0/contracts/CBridge.sol#L57) tx on the source chain.
 
 ```solidity
-// A HelloWorld example for basic cross-chain message passing
-contract MsgExampleBasic is MessageApp {
-    event MessageReceived(
-        address srcContract,
-        uint64 srcChainId,
-        address sender,
-        bytes message
-    );
+ /**
+     * @dev transfer sets up a new outbound transfer with hash time lock.
+     */
+    function transferOut(
+        address _bridge,
+        address _token,
+        uint256 _amount,
+        bytes32 _hashlock,
+        uint64 _timelock,
+        uint64 _dstChainId,
+        address _dstAddress
+    ) external {
+        bytes32 transferId = _transfer(_bridge, _token, _amount, _hashlock, _timelock);
+        emit LogNewTransferOut(
+            transferId,
+            msg.sender,
+            _bridge,
+            _token,
+            _amount,
+            _hashlock,
+            _timelock,
+            _dstChainId,
+            _dstAddress
+        );
+    }
 
-    constructor(address _messageBus) MessageApp(_messageBus) {}
+```
 
-    // called by user on source chain to send cross-chain messages
+2. Bridge node sends [transferIn](https://github.com/celer-network/cBridge-contracts/blob/v1.0.0/contracts/CBridge.sol#L83) tx on the destination chain, using the same `hashlock` set by the sender.
+
+```solidity
+   /**
+     * @dev transfer sets up a new inbound transfer with hash time lock.
+     */
+    function transferIn(
+        address _dstAddress,
+        address _token,
+        uint256 _amount,
+        bytes32 _hashlock,
+        uint64 _timelock,
+        uint64 _srcChainId,
+        bytes32 _srcTransferId
+    ) external {
+        bytes32 transferId = _transfer(_dstAddress, _token, _amount, _hashlock, _timelock);
+        emit LogNewTransferIn(
+            transferId,
+            msg.sender,
+            _dstAddress,
+            _token,
+            _amount,
+            _hashlock,
+            _timelock,
+            _srcChainId,
+            _srcTransferId
+        );
+    }
+```
+
+3. Sender [confirms](https://github.com/celer-network/cBridge-contracts/blob/v1.0.0/contracts/CBridge.sol#L112) the transfer on the source chain.
+4. Bridge node [confirms](https://github.com/celer-network/cBridge-contracts/blob/v1.0.0/contracts/CBridge.sol#L112) the transfer on the destination chain.
+
+```solidity
+ /**
+     * @dev confirm a transfer.
+     *
+     * @param _transferId Id of pending transfer.
+     * @param _preimage key for the hashlock
+     */
+    function confirm(bytes32 _transferId, bytes32 _preimage) external {
+        Transfer memory t = transfers[_transferId];
+
+        require(t.status == TransferStatus.Pending, "not pending transfer");
+        require(t.hashlock == keccak256(abi.encodePacked(_preimage)), "incorrect preimage");
+
+        transfers[_transferId].status = TransferStatus.Confirmed;
+
+        IERC20(t.token).safeTransfer(t.receiver, t.amount);
+        emit LogTransferConfirmed(_transferId, _preimage);
+    }
+```
+
+The contract addresses for Celer are as follows:&#x20;
+
+| Name | Mainnet                                      | Calibration                                  |
+| ---- | -------------------------------------------- | -------------------------------------------- |
+| wFIL | `0x60E1773636CF5E4A227d9AC24F20fEca034ee25A` |                                              |
+| USDC | `0x2421db204968A367CC2C866CD057fA754Cb84EdF` | `0xf5C6825015280CdfD0b56903F9F8B5A2233476F5` |
+| USDT | `0x422849b355039bc58f2780cc4854919fc9cfaf94` | `0x7d43AABC515C356145049227CeE54B608342c0ad` |
+| WBTC | `0x592786e04c47844aa3b343b19ef2f50a255a477f` | `0x265B25e22bcd7f10a5bD6E6410F10537Cc7567e8` |
+| WETH | `0x522b61755b5ff8176b2931da7bf1a5f9414eb710` | `0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4` |
+
+For further details on cBridge transfers, see the Celer created Github repo [HERE](https://github.com/celer-network/cBridge-contracts).&#x20;
+
+### <mark style="color:blue;">Interchain Messaging</mark>
+
+Celer also enables general message passing between chains. Below is sample code showing how one party can send a message to a counterparty on a different blockchain. &#x20;
+
+**Ingredients**
+
+* [Inter-chain Messaging](https://im-docs.celer.network/developer/development-guide/contract-examples/hello-world)
+
+**Instructions**&#x20;
+
+1. Someone looking to send a message to a wallet on another chain sends that message using the the function `sendMessage()` .
+
+```solidity
+// called by user on source chain to send cross-chain messages
     function sendMessage(
         address _dstContract,
         uint64 _dstChainId,
@@ -106,7 +140,12 @@ contract MsgExampleBasic is MessageApp {
         sendMessage(_dstContract, _dstChainId, message, msg.value);
     }
 
-    // called by MessageBus on destination chain to receive cross-chain messages
+```
+
+2. The function `executeMessage()` is used by the intended recipient in the destination chain to receive and emit the message.&#x20;
+
+```solidity
+// called by MessageBus on destination chain to receive cross-chain messages
     function executeMessage(
         address _srcContract,
         uint64 _srcChainId,
@@ -120,10 +159,18 @@ contract MsgExampleBasic is MessageApp {
         emit MessageReceived(_srcContract, _srcChainId, sender, message);
         return ExecutionStatus.Success;
     }
-}
+    
 ```
 
-The MessageBus contract ID on the Calibration testnet is `0xd5818D039A702DdccfD11A900A40B3dc6DA03CEc`. &#x20;
+The MessageBus contract addresses are below:&#x20;
+
+| Name       | Mainnet                                      | Calibration                                  |
+| ---------- | -------------------------------------------- | -------------------------------------------- |
+| MessageBus | `0x6ff2130fbdd2837b0c92d7f56f6c017642d84f66` | `0xd5818D039A702DdccfD11A900A40B3dc6DA03CEc` |
+
+For more information on cross-chain messaging, see the Celer documentation [here](https://im-docs.celer.network/developer/development-guide/contract-examples/hello-world).
+
+### <mark style="color:blue;">A note on Finality with Celer</mark>
 
 Note that there is an expected finality period when conducting inter-chain messaging with Celer.  See details on Filecoin's finality [here](https://docs.filecoin.io/reference/general/glossary#finality).  There are two incoming improvements that developers can follow for the latest developments:&#x20;
 
