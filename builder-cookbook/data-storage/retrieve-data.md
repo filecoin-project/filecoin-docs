@@ -123,4 +123,6 @@ const options = {
 
 ***
 
+For quick retrieval of existing datasets with the methods above, check out the [Filecoin Dataset Explorer](https://dataset-explorer.vercel.app/).
+
 ***

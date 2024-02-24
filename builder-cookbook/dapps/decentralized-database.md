@@ -26,6 +26,8 @@ Let's take storage deal aggregator/RaaS as an example to demonstrate how to inte
 
 When uploading data via aggregator/RaaS providers to the Filecoin network, you can choose to store its metadata in Tableland tables instead of storing it in the chain state. This metadata can then be easily accessed from the Tableland database and utilized directly within your application.
 
+If you require sample datasets to use, you can use the [Filecoin Dataset Explorer](https://dataset-explorer.vercel.app/).
+
 As an example, let's design the deal aggregator table as follows. However, you can certainly add more columns to this table to include additional information, such as RaaS registration.
 
 | column    | data Type    |
