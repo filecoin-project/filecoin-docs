@@ -94,8 +94,8 @@ func main() {
 
 The following code example demonstrates how to use the Saturn in the Javascript program to fetch a CID.
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>import { Saturn } from '@filecoin-saturn/js-client';
-</strong>
+```javascript
+import { Saturn } from '@filecoin-saturn/js-client';
 // initialize a Saturn instance
 const saturn = new Saturn({
     clientKey: "...", // Key used for verification
@@ -119,7 +119,7 @@ const options = {
     console.error('Error fetching content:', error);
   }
 })();
-</code></pre>
+```
 
 ***
 

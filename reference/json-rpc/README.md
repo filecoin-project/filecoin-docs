@@ -85,4 +85,4 @@ Each node implementation has different ways to generate and manage authenticatio
 - [Lotus](https://lotus.filecoin.io)
 - [Venus](https://venus.filecoin.io)
 
-If you are using a node provider service like [Glif](https://glif.io/en) or [Chain.love](https://chain.love), take a look at your providers documentation to find out how to manage authentication tokens.
+If you are using a node provider service like [Glif](https://glif.io/en), take a look at your providers documentation to find out how to manage authentication tokens.
