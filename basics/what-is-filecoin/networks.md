@@ -20,5 +20,5 @@ Test networks, or testnets, are version of the Filecoin network that attempt to 
 
 * [Public endpoint](https://api.calibration.node.glif.io/rpc/v0)
 * [Blockchain explorer](https://calibration.filscan.io/)
-* [Calibration Faucet - Zondax](https://faucet.calibnet.chainsafe-fil.io)
+* [Calibration Faucet - Chainsafe](https://faucet.calibnet.chainsafe-fil.io)
 * [Calibration Faucet - Zondax](https://beryx.zondax.ch/faucet/)
