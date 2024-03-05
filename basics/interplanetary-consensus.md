@@ -23,7 +23,7 @@ For decentralized applications (dApps), there are several key motivations to ado
 
 IPC is a scaling solution intentionally designed to achieve considerable performance, decentralization and security for dApps.
 
-It achieves scaling through the permissionless spawning of new blockchain sub-systems, which are composed of [subnets](https://docs.ipc.space/key-concepts/subnets).&#x20;
+It achieves scaling through the permissionless spawning of new blockchain sub-systems, which are composed of [subnets](https://docs.ipc.space/concepts/subnets).&#x20;
 
 Subnets are organized in a hierarchy, with one parent subnet being able to spawn infinite child subnets. Within a hierarchical subsystem, subnets can seamlessly communicate with each other, reducing the need for cross-chain bridges.
 

@@ -51,7 +51,7 @@ Let’s take an ERC20 contract as an example to write and deploy it on the Calib
 * Remix.
 * MetaMask.
 * [MetaMask connected to the Calibration testnet](../../networks/calibration/).
-* Test tokens (tFIL) [from the faucet](https://faucet.calibration.fildev.network/funds.html).
+* Test tokens (tFIL) [from the faucet](https://faucet.calibnet.chainsafe-fil.io).
 
 **Procedure**
 
