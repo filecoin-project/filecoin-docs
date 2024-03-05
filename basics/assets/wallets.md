@@ -25,7 +25,7 @@ If you are already running your own lotus node, you can also [manage FIL wallets
 | [ImToken](https://token.im/)                                                                   | A multi-currency wallet.                                                                                              | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)                                                    | A multi-currency wallet.                                                                                              | Unknown |
 | [FoxWallet](https://foxwallet.com/)                                                            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                                                   | Yes     |
-| FilSnap MetaMask plugin                                                                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki), currently in beta. | No      |
+| FilSnap MetaMask plugin                                                                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki), currently in beta. | Yes      |
 
 ### Hot versus cold
 
