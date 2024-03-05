@@ -1,7 +1,7 @@
 ---
 description: >-
   A precompile refers to a pre-existing piece of code or a smart contract that
-  is already deployed on the Filecoin network for use be developers.
+  is already deployed on the Filecoin network for use by developers.
 ---
 
 # Precompiles
