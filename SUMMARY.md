@@ -178,3 +178,17 @@
   * [Sync](reference/json-rpc/sync.md)
   * [Wallet](reference/json-rpc/wallet.md)
   * [Web3](reference/json-rpc/web3.md)
+
+## Builder Cookbook
+
+* [Overview](builder-cookbook/overview.md)
+* [Table of Contents](builder-cookbook/table-of-contents.md)
+* [Data Storage](builder-cookbook/data-storage/README.md)
+  * [Store Data](builder-cookbook/data-storage/store-data.md)
+  * [Retrieve Data](builder-cookbook/data-storage/retrieve-data.md)
+  * [Privacy & Access Control](builder-cookbook/data-storage/privacy-and-access-control.md)
+* [dApps](builder-cookbook/dapps/README.md)
+  * [Chain-Data Query](builder-cookbook/dapps/chain-data-query.md)
+  * [Oracles](builder-cookbook/dapps/oracles.md)
+  * [Cross-Chain Bridges](builder-cookbook/dapps/cross-chain-bridges.md)
+  * [Decentralized Database](builder-cookbook/dapps/decentralized-database.md)

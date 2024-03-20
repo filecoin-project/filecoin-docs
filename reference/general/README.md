@@ -195,8 +195,8 @@ The Retrieval Market is in early development; research and development teams are
 
 * [Upcoming Hackathons](https://hackathons.filecoin.io/)
   * Keep a lookout for upcoming hackathons!
-  * All winners are eligible for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/microgrants/microgrants.md) after the Hackathon!
+  * All winners are eligible for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/Program%20Resources/Microgrants%20README.md) after the Hackathon!
 
 ### Grants and accelerators
 
-* [**Filecoin Developer Grants**](https://filecoin.io/grants) - ongoing monthly developer grant program to support open source projects and new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin, funded by the [Filecoin Foundation](https://fil.org)
+* [**Filecoin Developer Grants**](https://filecoin.io/grants) - ongoing monthly developer grant program to support open source projects and new [Open Grants](https://github.com/filecoin-project/devgrants/blob/master/Program%20Resources/Open%20Grants%20README.md) on Filecoin, funded by the [Filecoin Foundation](https://fil.org)

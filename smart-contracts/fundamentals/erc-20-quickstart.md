@@ -39,9 +39,9 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
 ### Switch networks
 
-You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet](../../networks/calibration/). We’ll use a website called [chainlist.network](https://chainlist.network) to give MetaMask the information it needs quickly.
+You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet](../../networks/calibration/). We’ll use a website called [chainlist.org](https://chainlist.org) to give MetaMask the information it needs quickly.
 
-1. Go to [chainlist.network](https://chainlist.network).
+1. Go to [chainlist.org](https://chainlist.org).
 2.  Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
 
     ![Search for Filecoin testnets in Chainlist.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-chainlist-search.webp)
@@ -64,7 +64,7 @@ Nice! Now we’ve got the Filecoin Calibration testnet set up within MetaMask. Y
 1.  In your browser, open MetaMask and copy your address to your clipboard:
 
     ![Copy your address to your clipboard.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-faucet-get-address.webp)
-2. Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Send Funds.**
+2. Go to [faucet.calibration.chainsafe-fil.io](https://faucet.calibnet.chainsafe-fil.io) and click **Send Funds.**
 3. Paste your address into the address field, and click **Send Funds**.
 4. The faucet will show a transaction ID. You can copy this ID into a Calibration testnet [block explorer](../../networks/calibration/explorers.md) to view your transaction. After a couple of minutes, you should see some `tFIL` transferred to your address.
 
