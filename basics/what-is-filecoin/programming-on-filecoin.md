@@ -2,7 +2,7 @@
 description: >-
   Once data has been stored, it is possible to run computations and calculations
   on that data, without needing to retrieve the data from a storage provider.
-  This page covers the basics of how programmin
+  This page covers the basics of how programming works with Filecoin.
 ---
 
 # Programming on Filecoin
