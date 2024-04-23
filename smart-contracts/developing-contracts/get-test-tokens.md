@@ -12,7 +12,7 @@ description: >-
 MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask uses the `t4` [address type](../filecoin-evm-runtime/address-types.md), which allows developers to create and manage Solidity contracts easily. Follow the [MetaMask setup guide](../../basics/assets/metamask-setup.md) if you havn’t set up an address in your MetaMask wallet yet.
 
 1. In your browser, open MetaMask and copy your address to your clipboard.
-2. Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Send Funds**.
+2. Go to [faucet.calibnet.chainsafe-fil.io](https://faucet.calibnet.chainsafe-fil.io) and click **Send Funds**.
 3. Paste your address into the address field and click **Send funds**:
 
     ![The Calibration faucet website.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-send-funds.png)

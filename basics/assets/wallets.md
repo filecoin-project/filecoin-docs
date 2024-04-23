@@ -20,12 +20,12 @@ If you are already running your own lotus node, you can also [manage FIL wallets
 | Name                                                                                           | Description                                                                                                           | Audited |
 | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- |
 | [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL?support=true) | A multi-currency hardware wallet. _Recommended._                                                                      | Yes     |
-| [Glif web wallet](https://www.glif.io/en?txtype=send)                                                      | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. _Recommended._                     | Yes     |
-| [Trust wallet](https://trustwallet.com/)                                                       | A multi-currency wallet, the official wallet of Binance.                                                                  | Unknown |
+| [Glif web wallet](https://www.glif.io/en?txtype=send)                                                      | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. _Recommended._         | Yes     |
+| [Trust wallet](https://trustwallet.com/)                                                       | A multi-currency wallet, the official wallet of Binance.                                                              | Unknown |
 | [ImToken](https://token.im/)                                                                   | A multi-currency wallet.                                                                                              | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)                                                    | A multi-currency wallet.                                                                                              | Unknown |
 | [FoxWallet](https://foxwallet.com/)                                                            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                                                   | Yes     |
-| FilSnap MetaMask plugin                                                                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki), currently in beta. | No      |
+| [FilSnap MetaMask Snap](https://snaps.metamask.io/snap/npm/filsnap/)                           | MetaMask has an extension system called [Snaps](https://metamask.io/snaps/).                                           | Yes      |
 
 ### Hot versus cold
 

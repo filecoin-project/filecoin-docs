@@ -43,6 +43,10 @@ Developers can reference pre-existing deals that are already available on the ne
 /dns4/bootstrap-3.calibration.fildev.network/tcp/1347/p2p/12D3KooWFWUqE9jgXvcKHWieYs9nhyp6NF4ftwLGAHm4sCv73jjK
 ```
 
+## Snapshots <a href="#snapshots" id="snapshots"></a>
+
+* [Latest minimal snapshot](https://forest-archive.chainsafe.dev/latest/calibnet) (note, as of March 2024, this is a 3.5GB download)
+
 ## Active storage providers <a href="#active-storage-providers" id="active-storage-providers"></a>
 
 The following storage providers are running on the Calibration testnet.
@@ -53,8 +57,9 @@ The following storage providers are running on the Calibration testnet.
 
 ## Resources <a href="#resources" id="resources"></a>
 
-* [Faucet](https://faucet.calibration.fildev.network/)
-* [DataCap allocation](https://faucet.calibration.fildev.network/)
+* [Calibration Faucet - Chainsafe](https://faucet.calibnet.chainsafe-fil.io)
+* [Calibration Faucet - Zondax](https://beryx.zondax.ch/faucet/)
+* [DataCap allocation](https://faucet.calibnet.chainsafe-fil.io)
 * [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 * [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 * [Latest lightweight snapshot](https://forest-archive.chainsafe.dev/latest/calibnet/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
