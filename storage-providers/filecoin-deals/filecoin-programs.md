@@ -33,7 +33,8 @@ Although it is possible to find your own data storage customers with valuable da
 
 ## Slingshot
 
-![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-project/slingshot) 
+![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-project/slingshot)
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C01AZP8BKRQ)
 
 [Slingshot](https://slingshot.filecoin.io) is a program that unites Data clients, Data preparers and storage providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot is a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provides deals to registered and certified storage providers. The data is prepared and uploaded using a tool called Singularity. The program has [clear requirements of a storage provider](https://slingshot.filecoin.io/requirements#participating-as-a-storage-provider-sp) regarding their capabilities.
@@ -59,6 +60,22 @@ A overview of the Slingshot project from the Enterprise Storage Provider Acceler
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C03DH0BL02E)
 
 A whole new access capability is being launched with [Saturn](https://saturn.tech), which is the world’s first Web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrieval times of less than 1 second will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which storage providers can also participate.
+
+## Singularity
+
+[![Github Repo stars](https://img.shields.io/github/stars/data-preservation-programs/singularity)](https://github.com/data-preservation-programs/singularity)
+[![Read the doc](https://img.shields.io/badge/docs-gitbook.io-blue)](https://data-programs.gitbook.io/singularity)
+[![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C05JABREATH)
+
+[Singularity](https://singularity.storage) is an end-to-end solution for onboarding datasets to Filecoin storage providers, supporting [PiB-scale data](https://stats.singularity.storage/). It offers modular compatibility with various data preparation and deal-making tools, allowing efficient processing from local or remote storage. Singularity integrates with over 40 storage solutions and introduces inline preparation, which links CAR files to their original data sources, preserving dataset hierarchies. It also supports content distribution and retrieval through multiple protocols and provides push and pull modes for deal making along with robust wallet management features.
+
+## Estuary
+
+[![Github repo stars](https://img.shields.io/github/stars/application-research/estuary)](https://github.com/application-research/estuary)
+[![Read the doc](https://img.shields.io/badge/docs-estuary.tech-blue)](https://docs.estuary.tech)
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
+
+[Estuary](https://docs.estuary.tech/Learn/what-is-estuary) is open-source software designed for sending public data to the Filecoin network, facilitating data retrieval from anywhere. It integrates IPFS and Filecoin technologies to provide a seamless end-to-end example for data storage and retrieval. When a file is uploaded, Estuary immediately makes multiple storage deals with different providers to ensure redundancy and security. The software automates many aspects of deal making and retrieval, offering tools for managing connections, block storage, and deal tracking. Estuary aims to simplify the use of decentralized storage networks for developers and users.
 
 ## Partner tools and programs
 
