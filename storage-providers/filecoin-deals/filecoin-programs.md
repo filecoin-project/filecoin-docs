@@ -66,6 +66,9 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 ### CIDGravity
 
+[![Read the doc](https://img.shields.io/badge/docs-cidgravity.com-blue)](https://docs.cidgravity.com)
+[![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C04SCAG37FH)
+
 [CIDGravity](https://www.cidgravity.com/) is a software-as-a-service that allows storage providers to handle dynamic pricing and client management towards your solution. It integrates with deal engines such as [Boost](https://boost.filecoin.io).
 
 ### Big Data Exchange
@@ -75,5 +78,9 @@ Another program that allows storage providers easy access to Fil+ deals is [Big 
 Storing real client data means there will be expectations on retrievability of that data. The storage provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
 
 ### Filswan
+
+[![GitHub Org's stars](https://img.shields.io/github/stars/filswan)](https://github.com/filswan)
+[![Read the doc](https://img.shields.io/badge/docs-filswan.com-blue)](https://docs.filswan.com/)
+[![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C04LBAMBDPD)
 
 [Filswan](https://www.filswan.com/homepage) is an auctioning platform that matches clients with storage providers.
