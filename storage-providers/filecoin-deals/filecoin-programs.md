@@ -11,6 +11,7 @@ Although it is possible to find your own data storage customers with valuable da
 ## Web3.storage
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/web3-storage/web3.storage)](https://github.com/web3-storage/web3.storage)
+![GitHub last commit](https://img.shields.io/github/last-commit/web3-storage/web3.storage)
 [![Docs site](https://img.shields.io/badge/docs-web3.storage-blue)](https://web3.storage/docs/)
 ![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
 
@@ -26,6 +27,7 @@ Although it is possible to find your own data storage customers with valuable da
 ## CO2.Storage
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/protocol/co2-storage)](https://github.com/protocol/co2-storage)
+![GitHub last commit](https://img.shields.io/github/last-commit/protocol/co2-storage)
 [![Read the doc](https://img.shields.io/badge/docs-gitbook.io-blue)](https://filecoin-green.gitbook.io/filecoin-green-documentation/co2.storage-docs)
 [![Join Slack](https://img.shields.io/badge/join-slack-purple)](https://filecoinproject.slack.com/archives/C02HZ215B7Y)
 
@@ -33,7 +35,8 @@ Although it is possible to find your own data storage customers with valuable da
 
 ## Slingshot
 
-![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-project/slingshot)
+[![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-project/slingshot)](https://github.com/filecoin-project/slingshot)
+![GitHub last commit](https://img.shields.io/github/last-commit/filecoin-project/slingshot)
 ![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C01AZP8BKRQ)
 
@@ -48,6 +51,7 @@ A overview of the Slingshot project from the Enterprise Storage Provider Acceler
 ## Evergreen
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/data-preservation-programs/spade)](https://github.com/data-preservation-programs/spade)
+![GitHub last commit](https://img.shields.io/github/last-commit/data-preservation-programs/spade)
 [![Read the doc](https://img.shields.io/badge/docs-README-blue)](https://github.com/data-preservation-programs/spade/blob/master/README.md)
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C0377FJCG1L)
 
@@ -56,6 +60,7 @@ A overview of the Slingshot project from the Enterprise Storage Provider Acceler
 ## Saturn
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-saturn/L1-node)](https://github.com/filecoin-saturn/L1-node)
+![GitHub last commit](https://img.shields.io/github/last-commit/filecoin-saturn/L1-node)
 [![Read the doc](https://img.shields.io/badge/docs-saturn.tech-blue)](https://doc.saturn.tech)
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C03DH0BL02E)
 
@@ -64,6 +69,7 @@ A whole new access capability is being launched with [Saturn](https://saturn.tec
 ## Singularity
 
 [![Github Repo stars](https://img.shields.io/github/stars/data-preservation-programs/singularity)](https://github.com/data-preservation-programs/singularity)
+![GitHub last commit](https://img.shields.io/github/last-commit/data-preservation-programs/singularity)
 [![Read the doc](https://img.shields.io/badge/docs-gitbook.io-blue)](https://data-programs.gitbook.io/singularity)
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C05JABREATH)
 
@@ -72,10 +78,29 @@ A whole new access capability is being launched with [Saturn](https://saturn.tec
 ## Estuary
 
 [![Github repo stars](https://img.shields.io/github/stars/application-research/estuary)](https://github.com/application-research/estuary)
+![GitHub last commit](https://img.shields.io/github/last-commit/application-research/estuary)
 [![Read the doc](https://img.shields.io/badge/docs-estuary.tech-blue)](https://docs.estuary.tech)
 ![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
 
 [Estuary](https://docs.estuary.tech/Learn/what-is-estuary) is open-source software designed for sending public data to the Filecoin network, facilitating data retrieval from anywhere. It integrates IPFS and Filecoin technologies to provide a seamless end-to-end example for data storage and retrieval. When a file is uploaded, Estuary immediately makes multiple storage deals with different providers to ensure redundancy and security. The software automates many aspects of deal making and retrieval, offering tools for managing connections, block storage, and deal tracking. Estuary aims to simplify the use of decentralized storage networks for developers and users.
+
+## Filecoin Dataset Explorer
+
+[Filecoin Dataset Explorer](https://datasets.filecoin.io/) showcases data stored on the Filecoin network between 2020 and 2022, including telemetry, historical archives, Creative Commons media, entertainment archives, scientific research, and machine learning datasets. It highlights Filecoin's capability to store large datasets redundantly, ensuring availability from multiple Storage Providers worldwide. Each dataset is identified by a unique content identifier (CID). The platform aims to make diverse datasets accessible to users globally.
+
+See also: [Legacy Explorer](https://legacy.datasets.filecoin.io/)
+
+## Filecoin Tracker
+
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
+
+[Filecoin Tracker](https://filecoin-tracker.com/) was deprecated on April 20, 2024.
+
+Here are great existing and working Filecoin dashboards that cover similar topics:
+
+- [Starboard](https://dashboard.starboard.ventures/dashboard)
+- [Filecoin Dune Daily Metrics](https://dune.com/kalen/filecoin-daily-metrics)
+- [Filecoin Pulse (PoC)](https://filecoinpulse.pages.dev/)
 
 ## Partner tools and programs
 
@@ -94,10 +119,45 @@ Another program that allows storage providers easy access to Fil+ deals is [Big 
 
 Storing real client data means there will be expectations on retrievability of that data. The storage provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io) ) provides a way to access data.
 
-### Filswan
+### Swan (Filswan)
 
 [![GitHub Org's stars](https://img.shields.io/github/stars/filswan)](https://github.com/filswan)
 [![Read the doc](https://img.shields.io/badge/docs-filswan.com-blue)](https://docs.filswan.com/)
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C04LBAMBDPD)
 
-[Filswan](https://www.filswan.com/homepage) is an auctioning platform that matches clients with storage providers.
+[Swan](https://www.filswan.com/homepage) is a leading provider of cross-chain cloud computing solutions. Its suite of tools revolutionizes how developers access resources across multiple chains.
+
+Swan Cloud provides decentralized cloud computing solutions for Web3 projects by integrating storage, computing, and payment into one suite.
+
+The Swan Web3 suite includes:
+
+#### Swan Client
+[![GitHub Org's stars](https://img.shields.io/github/stars/filswan/go-swan-client)](https://github.com/filswan/go-swan-client)
+![GitHub last commit](https://img.shields.io/github/last-commit/filswan/go-swan-client)
+[![Read the doc](https://img.shields.io/badge/docs-README-blue)](https://github.com/filswan/go-swan-client/README.md)
+
+Swan-client is an important Web3 toolkit. It provides different tools to help users connect to the Web3 world. 
+
+#### Swan Provider
+
+[![Github repo stars](https://img.shields.io/github/stars/filswan/go-swan-provider)](https://github.com/filswan/go-swan-provider)
+![GitHub last commit](https://img.shields.io/github/last-commit/filswan/go-swan-provider)
+[![Read the doc](https://img.shields.io/badge/docs-README-blue)](https://github.com/filswan/go-swan-provider/README.md)
+
+A golang implementation for Swan Service provider.
+
+#### Multichain Storage
+
+[![Github repo stars](https://img.shields.io/github/stars/filswan/multi-chain-storage)](https://github.com/filswan/multi-chain-storage)
+![GitHub last commit](https://img.shields.io/github/last-commit/filswan/multi-chain-storage)
+[![Read the doc](https://img.shields.io/badge/docs-README-blue)](https://github.com/filswan/multi-chain-storage/README.md)
+
+[Multichain Storage](https://multichain.storage/home) is a smart-contract-based cross-chain storage gateway integrated with Oracle technology and the Filecoin networks. It accelerates the mass adoption of decentralized storage by bridging multiple blockchain networks.
+
+#### FS3
+
+[![Github repo stars](https://img.shields.io/github/stars/filswan/fs3)](https://github.com/filswan/fs3)
+![GitHub last commit](https://img.shields.io/github/last-commit/filswan/fs3)
+[![Read the doc](https://img.shields.io/badge/docs-README-blue)](https://github.com/filswan/fs3/README.md)
+
+A high Performance, Kubernetes Native Object Storage.
