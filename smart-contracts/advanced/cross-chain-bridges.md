@@ -30,6 +30,7 @@ Currently, Axelar supports Filecoin Mainnet.
 | axlUSDT | `0x7f5373AE26c3E8FfC4c77b7255DF7eC1A9aF52a6` |
 | axlWBTC | `0x1a35EE4640b0A3B87705B0A4B45D227Ba60Ca2ad` |
 | axlWETH | `0xb829b68f57CC546dA7E5806A929e53bE32a4625D` |
+| axlDAI  | `0x5C7e299CF531eb66f2A1dF637d37AbB78e6200C7` |
 
 #### **Further Axelar resources**
 
