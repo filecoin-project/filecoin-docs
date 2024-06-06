@@ -77,6 +77,12 @@ Swan is a provider of cross-chain cloud computing solutions. Developers can use 
 
 Swan Cloud provides decentralized cloud computing solutions for Web3 projects by integrating storage, computing, and payment into one suite.
 
+### [Open Panda](https://openpanda.io/)
+
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
+
+Open Panda was a platform for data researchers, analysts, students, and enthusiasts to interact with the largest open datasets in the world. Data available through the platform was stored on Filecoin, a decentralized storage network comprised of thousands of independent Storage Providers around the world.
+
 ## Former programs and tools
 
 Here is a comprehensive list of deprecated tools and projects.
@@ -113,12 +119,6 @@ Here are great existing and working Filecoin dashboards that cover similar topic
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C01AZP8BKRQ)
 
 Slingshot was a program that united Data clients, Data preparers and storage providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot was a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provided deals to registered and certified storage providers. The data was prepared and uploaded using a tool called [Singularity](#singularity).
-
-### [Open Panda](https://openpanda.io/)
-
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
-
-Open Panda was a platform for data researchers, analysts, students, and enthusiasts to interact with the largest open datasets in the world. Data available through the platform was stored on Filecoin, a decentralized storage network comprised of thousands of independent Storage Providers around the world.
 
 ### [Dataprograms.org](https://dataprograms.org)
 
