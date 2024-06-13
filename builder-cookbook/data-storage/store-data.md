@@ -22,7 +22,7 @@ To provide the data to the SP which we make storage deals with, we need to prepa
 
 We can use the following tools to prepare your data into CAR for storage via FVM.
 
-* [FVM DNOt ata Depot](https://data.lighthouse.storage/) - powered by [lighthouse.storage](https://www.lighthouse.storage/)
+* [FVM Data Depot](https://data.lighthouse.storage/) - powered by [lighthouse.storage](https://www.lighthouse.storage/)
 * CAR libraries\
   `web3.storage/ipfs-car` or `ipld/car`
 * IPFS node\
