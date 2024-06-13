@@ -147,7 +147,7 @@ lotus-shed verifreg check-client f00000
 
 ## Visualizing the Blockchain Data for Filecoin+ 
 
-There are two resources you can use to check the current status of the Filecoin+ deals and participants: 
+There are two resources you can use to check the current status of the Filecoin+ deals and participants:
 
 - The [Filecoin Pulse dashbord](https://filecoinpulse.pages.dev/allocators/), which includes visualizations of and tables for data about Filecoin+ deals on the Filecoin blockchain, organized by Allocators, Clients, and Storage Providers. 
 
