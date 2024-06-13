@@ -28,9 +28,15 @@ Including Filecoin+ deals in a sector increases the Quality Adjusted Power of a 
 
 Consider first a network with ten storage providers.  Initially, each storage provider has an equal 10% probability of winning available block rewards in a given period.
 
+<img width="155" alt="filecoinplus1" src="https://github.com/filecoin-project/filecoin-docs/assets/46801006/d577d1d7-5e4f-4b3d-9b60-f102b5ca27bb">
+
 If two of these storage providers begin filling their sectors with verified deals, their chances of winning a block reward increases by a factor of ten relative to their peers.  Each one of these storage providers with verified deals in their sectors has a 36% chance of winning the block reward, while storage providers with only [regular deals](https://spec.filecoin.io/systems/filecoin_blockchain/storage_power_consensus/#section-systems.filecoin_mining.sector.sector_quality) in their sectors have a 4% probability of winning the block rewards.  
 
+![filecoinplus2](https://github.com/filecoin-project/filecoin-docs/assets/46801006/a13dcf38-0115-49b0-896c-11da82808d70)
+
 If two of these storage providers begin filling their sectors with verified deals, their chances of winning a block reward increases by a factor of ten relative to their peers.  Each one of these storage providers with verified deals in their sectors has a 36% chance of winning the block reward, while storage providers with only regular deals in their sectors have a 4% probability of winning the block rewards.  
+
+![filecoinplus3](https://github.com/filecoin-project/filecoin-docs/assets/46801006/a7ec2921-ea7c-4c0b-94d8-94f8eb5a2824)
 
 Incentives for storage providers to accept verified deals is strongest initially.  As more and more storage providers include verified deals in their sectors, the probability any one of them earns the block rewards returns to an equal chance.   
 
@@ -51,6 +57,8 @@ The participants of the Filecoin+ program, along with how they interact with eac
 - Storage providers | Storage providers who receive DataCap as part of a deal are able to use this DataCap to increase their “quality adjusted power” of the storage provider on the network by a factor of ten.  As described above, this increases their probability of being selected as the verifier for a block, affording them the opportunity to earn block rewards.   
 
 A visualization of the interactions between parties involved in a Filecoin+ deal described above is shown below in Figure 1.  
+
+![filecoinplus4](https://github.com/filecoin-project/filecoin-docs/assets/46801006/48788262-165b-450c-abee-8ed875a4250a)
 
 Figure 1 | Diagram showing participant interactions in a Filecoin+ deal.  
 
@@ -139,6 +147,8 @@ lotus-shed verifreg check-client f00000
 
 ## Visualizing the Blockchain Data for Filecoin+ 
 
-There are two resources you can use to check the current status 
+There are two resources you can use to check the current status of the Filecoin+ deals and participants: 
+
 - The [Filecoin Pulse dashbord](https://filecoinpulse.pages.dev/allocators/), which includes visualizations of and tables for data about Filecoin+ deals on the Filecoin blockchain, organized by Allocators, Clients, and Storage Providers. 
+
 - The [Starboard Dashboard](https://dashboard.starboard.ventures/market-deals), which includes network health data related to Filecoin+.  
