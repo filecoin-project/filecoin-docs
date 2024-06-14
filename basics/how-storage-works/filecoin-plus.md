@@ -1,6 +1,6 @@
 ---
 description: >-
-Allocators verify that the data clients want to store with a Filecoin Storage Providor is useful.  Storage Providers are heavily incentivized to accept Filecoin+ deals.  Filecoin+ increases the effectiveness & utilization of the data-storage network.
+  Allocators verify that the data clients want to store with a Filecoin Storage Providor is useful.  Storage Providers are heavily incentivized to accept Filecoin+ deals.  Filecoin+ increases the effectiveness & utilization of the data-storage network.
 ---
 
 # Filecoin+
