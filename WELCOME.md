@@ -26,7 +26,7 @@ layout:
 {% hint style="info" %}
 **This is the new Filecoin documentation site, hosted by** [**GitBook**](https://gitbook.com)**.**
 
-This site [docs.filecoin.io](https://docs.filecoin.io) will continue to be updated, while [legacy-docs.filecoin.io](https://legacy-docs.filecoin.io) will serve as a historical entity only and will receive no further updates. DNS for the legacy site will be removed on `2023-09-30`. However, copies of the site may remain available [over IPFS](https://fleek.ipfs.io/ipfs/QmeyfnoothgLP9ft2MYBVXw1WeaPqvV6Z1JU4QUbZsAQKM/).
+This site [docs.filecoin.io](https://docs.filecoin.io) will continue to be updated, while [legacy-docs.filecoin.io](https://legacy-docs.filecoin.io) will serve as a historical entity only and will receive no further updates. DNS for the legacy site will be removed on `2023-09-30`. 
 
 [Checkout the Filecoin blog for more information →](https://filecoin.io/blog/posts/filecoin-docs-is-moving-to-gitbook/)
 {% endhint %}
