@@ -21,36 +21,6 @@ Oracles enable builders to integrate the following features into their projects:
 
 There are several oracle-protocols built upon the FVM. Builders can integrate these oracles into their applications today.
 
-### [Pyth](https://pyth.network/)
-
-Pyth data is sourced directly from financial institutions across both traditional finance and the cryptocurrency industry.
-
-Pyth publishes both the price feed and a confidence interval for each product. Learn more about [Pyth confidence intervals](https://docs.pyth.network/price-feeds/best-practices#confidence-intervals).
-
-**Pyth smart contracts**
-
-Pyth’s smart contracts are live on the Filecoin Mainnet and Calibration testnet.
-
-
-| Name             | Address                                      | Mainnet | Calibration |
-| ---------------- | -------------------------------------------- | ------- | ----------- |
-| [Pyth - Mainnet](https://filecoin.blockscout.com/address/0xA2aa501b19aff244D90cc15a4Cf739D2725B5729?tab=contract) | `0x045CE60839d108B43dF9e703d4b25402a6a28a0d` | ✔️      |             |
-| [Pyth - Calibration](https://calibration.filfox.info/en/address/0xA2aa501b19aff244D90cc15a4Cf739D2725B5729) | `0x15e6Cc0D69A162151Cadfba035aa10b82b12b970` |         | ✔️          |
-
-
-**Pyth x Filecoin Price Feed IDs**
-
-Price Feed IDs for FIL are also available on various chains. These can be found at [Pyth - Price Feed IDs](https://pyth.network/developers/price-feed-ids) and search for 'FIL'. Learn more at [Pyth docs - Price Feed IDs](https://docs.pyth.network/price-feeds/price-feed-ids).
-
-
-#### **Further Pyth resources**
-
-* [Pyth docs](https://docs.pyth.network/)
-* [Pyth - Best Practices](https://docs.pyth.network/price-feeds/best-practices)
-* [Pyth Benchmarks - historical price feeds](https://docs.pyth.network/benchmarks)
-
-
-
 ### [Tellor](https://tellor.io/)
 
 Tellor is an _optimistic_ oracle. Builders should not accept instant price quotes and should wait a few minutes before locking in details.
