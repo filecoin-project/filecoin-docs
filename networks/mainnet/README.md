@@ -57,4 +57,4 @@ Also see [Mainnet RPCs](./rpcs.md) and [Mainnet Explorers](./explorers.md).
 * [Status page and incidents](https://filecoin.statuspage.io/)
 * [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 * [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
-* [Message and CID search: Glif Explorer](https://explorer.glif.io/)
+* [Mainnet block explorer: FilFOX](https://filfox.info/en)
