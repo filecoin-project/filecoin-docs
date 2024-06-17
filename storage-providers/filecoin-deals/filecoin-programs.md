@@ -133,7 +133,7 @@ Estuary was an open-source software designed for sending public data to the File
 
 Estuary was discontinued in July 2023, and the website shut down in April 2024.
 
-### [Big Data Exchange](https://www.bigdataexchange.io/)
+### Big Data Exchange
 
 ![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
 
