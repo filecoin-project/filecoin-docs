@@ -63,7 +63,7 @@ Tools to check status and details of the network and chain.
 
 * [`storage.filecoin.io`](https://storage.filecoin.io/) - general storage summary of Filecoin
 * [`filecoin.tools`](https://filecoin.tools) - check your CID’s storage deal status. Also provides an API - check [`filecoin.tools/docs`](https://filecoin.tools/docs) for reference
-* [`file.app`](https://file.app/) - Filecoin storage provider analytics
+* [Starboard]([https://file.app](https://dashboard.starboard.ventures/capacity-services)) - Filecoin storage provider analytics
 * [Deals list at `Filfox.io`](https://filfox.info/en/deal)
 
 ## Storage Web Applications
