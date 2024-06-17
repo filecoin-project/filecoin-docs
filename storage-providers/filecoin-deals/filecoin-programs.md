@@ -52,12 +52,6 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 CIDGravity is a software-as-a-service that allows storage providers to handle dynamic pricing and client management towards your solution. It integrates with deal engines such as [Boost](https://boost.filecoin.io).
 
-### [Big Data Exchange](https://www.bigdataexchange.io/)
-
-Another program that allows storage providers easy access to Fil+ deals is Big Data Exchange. This platform allows storage providers to bid on datasets they are interested in storing. As a storage provider, you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the storage provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why, as a storage provider, you might want to bid to store a copy.
-
-Storing real client data means there will be expectations on retrievability of that data. The storage provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io)) provides a way to access data.
-
 ### [Swan (Filswan)](https://github.com/filswan)
 
 [![GitHub Org's stars](https://img.shields.io/github/stars/filswan)](https://github.com/filswan)
@@ -138,3 +132,11 @@ See also: Legacy Explorer (legacy.datasets.filecoin.io)
 Estuary was an open-source software designed for sending public data to the Filecoin network, facilitating data retrieval from anywhere. It integrated IPFS and Filecoin technologies to provide a seamless end-to-end example for data storage and retrieval. When a file was uploaded, Estuary immediately made multiple storage deals with different providers to ensure redundancy and security. The software automated many aspects of deal making and retrieval, offering tools for managing connections, block storage, and deal tracking. Estuary aimed to simplify the use of decentralized storage networks for developers and users.
 
 Estuary was discontinued in July 2023, and the website shut down in April 2024.
+
+### [Big Data Exchange](https://www.bigdataexchange.io/)
+
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+
+Big Data Exchange was a program that allowed storage providers easy access to Filecoin+ deals through an auction where Storage Providers could bid on datasets by offering to pay clients FIL to choose the bidder as their Storage Provider.
+
+
