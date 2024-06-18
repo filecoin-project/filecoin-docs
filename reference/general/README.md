@@ -63,7 +63,7 @@ Tools to check status and details of the network and chain.
 
 * [`storage.filecoin.io`](https://storage.filecoin.io/) - general storage summary of Filecoin
 * [`filecoin.tools`](https://filecoin.tools) - check your CID’s storage deal status. Also provides an API - check [`filecoin.tools/docs`](https://filecoin.tools/docs) for reference
-* [`file.app`](https://file.app/) - Filecoin storage provider analytics
+* [Starboard](https://dashboard.starboard.ventures/capacity-services) - Filecoin storage provider analytics
 * [Deals list at `Filfox.io`](https://filfox.info/en/deal)
 
 ## Storage Web Applications
@@ -138,7 +138,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Data prep tools
 
-* [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
+* [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [building with the Lotus API](https://lotus.filecoin.io/tutorials/lotus/build-with-lotus-api/).
 * [`go-graphsplit`](https://github.com/filedrive-team/go-graphsplit) - FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
 * [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://docs.filecoin.io/builder-cookbook/data-storage/store-data).
 

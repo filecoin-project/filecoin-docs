@@ -10,21 +10,13 @@ description: >-
 
 [beryx.zondax.ch](https://beryx.zondax.ch)
 
-## Filfox
+## FILFOX
 
-[calibration.filfox.info](https://calibration.filfox.info)
+[https://calibration.filfox.info/en](https://calibration.filfox.info/en)
 
 ## Filscan
 
 [calibration.filscan.io](https://calibration.filscan.io/)
-
-## Filutils
-
-[calibration.filutils.com](https://calibration.filutils.com/en)
-
-## Glif Explorer
-
-[explorer.glif.io](https://explorer.glif.io/?network=calibration)
 
 ## Starboard
 
