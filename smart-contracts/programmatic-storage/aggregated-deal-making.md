@@ -45,7 +45,7 @@ To request for aggregation and PoDSI off-chain, developers interact with an aggr
 1. The client submits sub-piece data to an aggregator platform. The aggregator prepares the data and generates the sub-piece CID, known as pCID, and URL to download the CAR file.
 2. The aggregator hosts an off-chain aggregation node, which aggregates the sub-piece CAR files into a larger aggregated CAR file.
 3. Simultaneously, the aggregator aggregates indexed data segments (based on specs [here](https://github.com/filecoin-project/FIPs/discussions/512)). It runs the proofing library and generates PoDSI proofs for each sub-piece pCID, storing them in an off-chain database.
-4. The aggregator uses programmatic deal-making or [manual deal-making](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/store-data/) to make storage deals with storage providers for the aggregated larger CAR file.
+4. The aggregator uses programmatic deal-making or [manual deal-making](https://lotus.filecoin.io/tutorials/lotus/build-with-lotus-api/) to make storage deals with storage providers for the aggregated larger CAR file.
 5. Storage Providers download the aggregated CAR file and publish storage deals.
 6. Clients can query a proofing endpoint provided by the aggregator (example [here](https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/section-a), which will look up the sub-piece CID (pCID) in the database and return the PoDSI proof, aggregated CID, and associated deal ID.
 7. Clients can use the sub-piece pCID for on-chain verification with the aggregation smart contract, which will verify the Merkle proof to ensure the sub-piece pCID (CommPc) matches the piece CID (CommPa) of the associated deal ID.
@@ -63,7 +63,7 @@ On-chain aggregation and PoDSI requests go through aggregator oracle smart contr
 3. The aggregator watches the aggregation contract, and when the aggregator decides there are enough sub-pieces, it downloads all sub-piece data, to generate the aggregated piece from the CAR file URL.
 4. The aggregator aggregates indexed data segments into a larger data file for deal-making (based on specs [here](https://github.com/filecoin-project/FIPs/discussions/512)).
 5. The aggregator combines the sub-piece data into the aggregated CommP (CommPa) by computing within aggregator's off-chain node.
-6. The aggregator uses programmatic deal-making or [manual deal-making](https://lotus.filecoin.io/tutorials/lotus/store-and-retrieve/store-data/) to make storage deals with storage providers for the aggregated larger CAR file.
+6. The aggregator uses programmatic deal-making or [manual deal-making](https://lotus.filecoin.io/tutorials/lotus/build-with-lotus-api/) to make storage deals with storage providers for the aggregated larger CAR file.
 7. Storage Providers download the aggregated CAR file and publish storage deals. Upon the client's request, they can find the data via sub-piece CID.
 8. Clients can query the aggregation smart contract, which notifies the aggregator platform to look up the sub-piece CID (pCID) in its aggregation node's database and return the PoDSI proof, aggregated CID, and associated deal ID.
 9. Simultaneously, clients can use the sub-piece pCID for on-chain verification with the aggregation smart contract, which will verify the Merkle proof to ensure the sub-piece pCID (CommPc) matches the piece CID (CommPa) of the associated deal ID.

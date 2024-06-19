@@ -23,15 +23,6 @@ Web3.storage runs on “Elastic IPFS” as the inbound storage protocol offering
 
 Filecoin Green aims to measure the environmental impacts of Filecoin and verifiably drive them below zero, building infrastructure along the way that allows anyone to make transparent and substantive environmental claims. The team maintains the [Filecoin Energy Dashboard](https://filecoin.energy/) and works with storage providers to decarbonize their operations through the [Energy Validation Process](https://filecoin-green.gitbook.io/filecoin-green-documentation/storage-providers-green-guidance-documentation/storage-providers-tiered-sustainability-claims). Connect with the team on Slack at [#fil-green](https://filecoinproject.slack.com/archives/C02HZ215B7Y), or via email at [green@filecoin.org](mailto:green@filecoin.org).
 
-## [Saturn](https://saturn.tech)
-
-[![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-saturn/L1-node)](https://github.com/filecoin-saturn/L1-node)
-![GitHub last commit](https://img.shields.io/github/last-commit/filecoin-saturn/L1-node)
-[![Read the doc](https://img.shields.io/badge/docs-saturn.tech-blue)](https://doc.saturn.tech)
-[![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C03DH0BL02E)
-
-A whole new access capability is being launched with Saturn, which is the world’s first Web3 Content Delivery Network (CDN). Saturn, as a fully distributed CDN, allows clients to access their data via Saturn nodes close to them. Content retrieval times of less than 1 second will open up various new use-cases for Filecoin and create a new market for retrieval providers (L1 Saturn nodes) in which storage providers can also participate.
-
 ## [Spade](https://github.com/data-preservation-programs/spade)
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/data-preservation-programs/spade)](https://github.com/data-preservation-programs/spade)
@@ -60,12 +51,6 @@ Many other programs and tools exist in the Filecoin community, developed by part
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C04SCAG37FH)
 
 CIDGravity is a software-as-a-service that allows storage providers to handle dynamic pricing and client management towards your solution. It integrates with deal engines such as [Boost](https://boost.filecoin.io).
-
-### [Big Data Exchange](https://www.bigdataexchange.io/)
-
-Another program that allows storage providers easy access to Fil+ deals is Big Data Exchange. This platform allows storage providers to bid on datasets they are interested in storing. As a storage provider, you take part in an online auction where you offer FIL to store large data sets. The dataset is explained, together with the technical requirements for the storage provider. The volumes of the datasets offered here are - as the name suggests - big, which can yield big returns in block rewards. That is why, as a storage provider, you might want to bid to store a copy.
-
-Storing real client data means there will be expectations on retrievability of that data. The storage provider can provide the data to the client by keeping unsealed copies of the data and creating an access layer (web or other) for the client. Also Boost-http (see [https://lotus.filecoin.io](https://lotus.filecoin.io)) provides a way to access data.
 
 ### [Swan (Filswan)](https://github.com/filswan)
 
@@ -147,3 +132,11 @@ See also: Legacy Explorer (legacy.datasets.filecoin.io)
 Estuary was an open-source software designed for sending public data to the Filecoin network, facilitating data retrieval from anywhere. It integrated IPFS and Filecoin technologies to provide a seamless end-to-end example for data storage and retrieval. When a file was uploaded, Estuary immediately made multiple storage deals with different providers to ensure redundancy and security. The software automated many aspects of deal making and retrieval, offering tools for managing connections, block storage, and deal tracking. Estuary aimed to simplify the use of decentralized storage networks for developers and users.
 
 Estuary was discontinued in July 2023, and the website shut down in April 2024.
+
+### Big Data Exchange
+
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+
+Big Data Exchange was a program that allowed storage providers easy access to Filecoin+ deals through an auction where Storage Providers could bid on datasets by offering to pay clients FIL to choose the bidder as their Storage Provider.
+
+

@@ -86,8 +86,8 @@ Now that we have the `.car` file prepared in the data depot, we can invoke the M
 * `piece-cid: gathered from the previous step.
 * `piece-size`: gathered from the previous step.
 * `car-size`: gathered from the previous step.
-* `start-epoch`: The block number you want the deal to begin on. It should be a block in the future. You can find the current block number on [FilFox Calibration](https://calibration.filfox.info/en).
-* `end-epoch`: The block number you want the deal to end on. It should be a block in the future and after the `Start-Epoch`. You can find the current block number on [FilFox Calibration](https://calibration.filfox.info/en).
+* `start-epoch`: The block number you want the deal to begin on. It should be a block in the future. You can find the current block number on [Beryx](https://beryx.io/), making sure to select the correct network.
+* `end-epoch`: The block number you want the deal to end on. It should be a block in the future and after the `Start-Epoch`. You can find the current block number on [FILFOX](https://calibration.filfox.info/en).
 * `location-ref`: The location of where the storage provider can find the .car file. This is the `URL` from the previous step.
 
 When calling the `make-deal-proposal` task in Hardhat, your command will look something like this:

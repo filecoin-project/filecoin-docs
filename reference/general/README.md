@@ -63,7 +63,7 @@ Tools to check status and details of the network and chain.
 
 * [`storage.filecoin.io`](https://storage.filecoin.io/) - general storage summary of Filecoin
 * [`filecoin.tools`](https://filecoin.tools) - check your CID’s storage deal status. Also provides an API - check [`filecoin.tools/docs`](https://filecoin.tools/docs) for reference
-* [`file.app`](https://file.app/) - Filecoin storage provider analytics
+* [Starboard](https://dashboard.starboard.ventures/capacity-services) - Filecoin storage provider analytics
 * [Deals list at `Filfox.io`](https://filfox.info/en/deal)
 
 ## Storage Web Applications
@@ -92,7 +92,7 @@ Developer tools, API clients & storage services that developers can use to build
 * [`Web3.storage`](https://web3.storage/) - beta service from Protocol Labs for storing off-chain _dApp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
 * [`Slate.host`](https://github.com/filecoin-project/slate/#developer-api) - has a Developer API that allows you upload files with an account
 * [`Textile.io's tools`](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin
-  * includes The Hub, Buckets, ThreadsDB, Powergate, [Tableland](https://blog.textile.io/tableland-is-coming-build-web3-with-sql/) (new) and Filecoin bridges to Polygon and NEAR
+  * includes The Hub, Buckets, ThreadsDB, Powergate, [Tableland](https://tableland.xyz/), and Filecoin bridges to Polygon and NEAR
   * [Powergate](https://docs.textile.io/powergate/) - infrastructure tool for using IPFS for hot storage and retrieval and Filecoin for cold, with deal helpers and other convenience features
   * [Textile Buckets](https://docs.textile.io/buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood
 * [Fleek’s tools](https://fleek.co/) - provides access to Fleek’s hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
@@ -135,13 +135,12 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 **Storage provider index API**
 
 * [Filrep.io API](https://filrep.io/api) - A suite of RESTFul JSON endpoints to discover the best storage provider to make deals with.
-* [Textile storage provider Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find storage providers by price, observed deals, speed from North American nodes.
 
 ### Data prep tools
 
-* [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
+* [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [building with the Lotus API](https://lotus.filecoin.io/tutorials/lotus/build-with-lotus-api/).
 * [`go-graphsplit`](https://github.com/filedrive-team/go-graphsplit) - FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
-* [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
+* [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://docs.filecoin.io/builder-cookbook/data-storage/store-data).
 
 ### Databases using IPFS and Filecoin
 

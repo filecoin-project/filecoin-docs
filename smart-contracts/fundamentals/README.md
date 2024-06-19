@@ -39,7 +39,6 @@ You can improve speed and reduce gas fees by storing smart contract data on File
 Let’s get building. Choose one of the following APIs. These are all storage helpers, or tools and services that abstract Filecoin’s robust deal making processes into simple, streamlined API calls.
 
 * [Chainsafe Storage API](https://docs.storage.chainsafe.io/) - for projects needing S3 compatibility
-* [Estuary](https://estuary.tech/) - for larger-scale applications and public data
 * [NFT.storage](https://nft.storage/) - for NFT data
 * [Web3.storage](https://web3.storage/) - for general application data
 
@@ -56,5 +55,5 @@ Examples:
 * [What is an IPFS Pinning Service?](https://medium.com/pinata/what-is-an-ipfs-pinning-service-f6ed4cd7e475) (Pinata explainer)
 * [IPFS documentation: Persistence, permanence and pinning](https://docs.ipfs.tech/concepts/persistence/)
 * [Developing on Filecoin](https://www.youtube.com/watch?v=aGCpq0Xf-w8) (video)
-* Textile tools: [video](https://www.youtube.com/watch?v=IZ8M9m9\_uJY) and [blog post](https://blog.textile.io/developer-tools-for-filecoin-ipfs-web/)
+* Textile tools: [video](https://www.youtube.com/watch?v=IZ8M9m9\_uJY) and [documentation](https://docs.textile.io/)
 * [Building decentralized apps using Fleek’s Space daemon](https://www.youtube.com/watch?v=pWJ5fty-7mA) (video)
