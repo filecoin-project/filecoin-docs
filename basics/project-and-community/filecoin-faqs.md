@@ -10,7 +10,7 @@ description: >-
 
 Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include publicly verifiable cryptographic storage proofs, [cryptoeconomic mechanisms](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a trustless decentralized storage network.
 
-On top of the core Filecoin protocol, there are a number of layer 2 solutions that enable a broad array of use cases and applications, many of which also use [IPFS](https://ipfs.tech). These solutions include [Powergate](https://docs.textile.io/powergate/), [Tableland](https://tableland.xyz/), and more. Using these solutions, any use case that can be built on top of IPFS can also be built on Filecoin!
+On top of the core Filecoin protocol, there are a number of layer 2 solutions that enable a broad array of use cases and applications, many of which also use [IPFS](https://ipfs.tech), such as [Lighthouse](https://www.lighthouse.storage/) or [Tableland](https://tableland.xyz/). Using these solutions, any use case that can be built on top of IPFS can also be built on Filecoin!
 
 Some of the primary areas for development on Filecoin are:
 
