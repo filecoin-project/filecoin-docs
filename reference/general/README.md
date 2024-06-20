@@ -69,7 +69,6 @@ Tools to check status and details of the network and chain.
 
 Web-based applications that store your data on Filecoin. No command-line or coding experience required.
 
-* [Estuary](https://estuary.tech) allows uploading and storing content on the Filecoin network directly from your browser. Allows anyone with public data to store and retrieve using a few API calls.
 * [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with OAuth or general MetaMask
 * [`File.video`](https://file.video/) - video hosting with decentralized transcoding from LivePeer
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
@@ -83,12 +82,9 @@ Developer tools, API clients & storage services that developers can use to build
 
 ### Storage APIs for app builders
 
-* [Estuary](https://estuary.tech) - a simple IPFS node that integrates with Filecoin. For infrastructure operators, developers and users.
-  * [Estuary documentation](https://docs.estuary.tech)
-  * [Estuary www](https://github.com/application-research/estuary-www) - a simple web app example
-  * [Estuary Rclone](https://docs.estuary.tech/Learn/tutorial-managing-files-with-rclone) - sync to and from different cloud storage providers and Estuary
-* [`NFT.storage`](https://nft.storage/) - beta service from Protocol Labs for storing off-chain _NFT_ data on IPFS and Filecoin.
-* [`Web3.storage`](https://web3.storage/) - beta service from Protocol Labs for storing off-chain _dApp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
+* [Lighthouse](https://www.lighthouse.storage/) - Lighthouse offers a suite of tools to enable builders to store data on Filecoin when biulding apps.
+* [`NFT.storage`](https://nft.storage/) - service from Protocol Labs for storing off-chain _NFT_ data on IPFS and Filecoin.
+* [`Web3.storage`](https://web3.storage/) - service from Protocol Labs for storing off-chain _dApp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
 * [`Slate.host`](https://github.com/filecoin-project/slate/#developer-api) - has a Developer API that allows you upload files with an account
 * [`Textile.io's tools`](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin, including [Tableland](https://tableland.xyz/) and Filecoin bridges to Polygon and NEAR.  
 * [Fleek’s tools](https://fleek.co/) - provides access to Fleek’s hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
