@@ -40,7 +40,6 @@ description: >-
   * See [`#fil-net-calibration-announce`](https://filecoinproject.slack.com/archives/C01C5PT7ETC) for announcements and [`#fil-net-calibration-discuss`](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack).
 * **Local Devnet**
   * [Run a Local Devnet using Lotus](https://lotus.filecoin.io/lotus/developers/local-network/).
-  * [Textile’s local devnet](https://docs.textile.io/powergate/localnet/#localnet-with-lotus-client) - uses a mocked sector builder for faster deal confirmation and it is for storage app prototyping.
   * [Ganache for Filecoin](https://www.trufflesuite.com/docs/filecoin/ganache/overview) - local network to support development with Filecoin by various ways.
 
 ## Network status
@@ -91,13 +90,10 @@ Developer tools, API clients & storage services that developers can use to build
 * [`NFT.storage`](https://nft.storage/) - beta service from Protocol Labs for storing off-chain _NFT_ data on IPFS and Filecoin.
 * [`Web3.storage`](https://web3.storage/) - beta service from Protocol Labs for storing off-chain _dApp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
 * [`Slate.host`](https://github.com/filecoin-project/slate/#developer-api) - has a Developer API that allows you upload files with an account
-* [`Textile.io's tools`](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin
-  * includes The Hub, Buckets, ThreadsDB, Powergate, [Tableland](https://tableland.xyz/), and Filecoin bridges to Polygon and NEAR
-  * [Powergate](https://docs.textile.io/powergate/) - infrastructure tool for using IPFS for hot storage and retrieval and Filecoin for cold, with deal helpers and other convenience features
-  * [Textile Buckets](https://docs.textile.io/buckets/) - simplified cloud bucket store on IPFS with archive to Filecoin option using Powergate under the hood
+* [`Textile.io's tools`](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin, including [Tableland](https://tableland.xyz/) and Filecoin bridges to Polygon and NEAR.  
 * [Fleek’s tools](https://fleek.co/) - provides access to Fleek’s hosted services using IPFS, Textile, Filecoin, Ethereum, etc.
   * [Space SDK](https://docs.fleek.co/space-sdk/overview/) - modular JavaScript/Typescript library and set of interfaces that packages tools and features enabled by Open Web protocols like IPFS, Textile, Filecoin, and Ethereum.
-  * [Space Daemon](https://docs.fleek.co/space-daemon/overview/) - packages together IPFS, Textile Threads and Buckets, and Textile Powergate into one easy to install background service
+  * [Space Daemon](https://docs.fleek.co/space-daemon/overview/) - packages together IPFS and tools from Textile into one easy to install background service.
 
 ### Message signing tools
 
@@ -144,9 +140,9 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Databases using IPFS and Filecoin
 
-* [Tableland](https://tableland.xyz/) - (new) create familiar SQL tables to read and write dynamic NFT metadata or application data for dApps, from Textile
-* [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [`orbit-db-powergate-io`](https://github.com/filecoin-shipyard/orbit-db-powergate-io).
-* [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS, from Textile
+* [Tableland](https://tableland.xyz/) - (new) create familiar SQL tables to read and write dynamic NFT metadata or application data for dApps, from Textile.
+* [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs.
+* [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS, from Textile.
 
 ### Other developer tools
 
