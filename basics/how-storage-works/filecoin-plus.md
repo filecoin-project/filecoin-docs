@@ -149,6 +149,7 @@ lotus-shed verifreg check-client f00000
 
 There are two resources you can use to check the current status of the Filecoin+ deals and participants: 
 
-- The [Filecoin Pulse dashbord](https://filecoinpulse.pages.dev/allocators/), which includes visualizations of and tables for data about Filecoin+ deals on the Filecoin blockchain, organized by Allocators, Clients, and Storage Providers. 
+- The [Filecoin Pulse dashboard](https://filecoinpulse.pages.dev/allocators/) includes visualizations of and tables for data about Filecoin+ deals on the Filecoin blockchain, organized by Allocators, Clients, and Storage Providers.
+- The [Datacap Stats dashboard](datacapstats.io) shows the number of allocators, clients, and storage providers. You can also see number and size of deals, along with quantity of DataCap allocated to allocators.
 
-- The [Starboard Dashboard](https://dashboard.starboard.ventures/market-deals), which includes network health data related to Filecoin+.  
+- The [Starboard Dashboard](https://dashboard.starboard.ventures/market-deals) includes network health data related to Filecoin+ verified deals. 
