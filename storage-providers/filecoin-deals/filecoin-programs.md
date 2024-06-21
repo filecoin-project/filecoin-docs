@@ -64,7 +64,7 @@ Swan Cloud provides decentralized cloud computing solutions for Web3 projects by
 
 ### [Open Panda](https://openpanda.io/)
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
+[![Maintenance status](https://img.shields.io/badge/maintenance-deprecated-red.svg)](https://openpanda.io/)
 
 Open Panda was a platform for data researchers, analysts, students, and enthusiasts to interact with the largest open datasets in the world. Data available through the platform was stored on Filecoin, a decentralized storage network comprised of thousands of independent Storage Providers around the world.
 
@@ -74,19 +74,19 @@ Here is a comprehensive list of deprecated tools and projects.
 
 ### Evergreen
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
 
 Evergreen extended the [Slingshot](#slingshot) program by aiming to store open datasets forever. Standard deals had a maximum duration of 540 days, which was not long enough for valuable, open datasets that might need to be stored forever. Evergreen used the [Spade](#spade) deal engine, which automatically renewed deals to extend the lifetime of the dataset on-chain.
 
 ### CO2.Storage
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+![Maintenance Status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
 
 CO2.Storage was a decentralized storage solution for structured data based on content-addressed data schemas. CO2.Storage primarily focused on structured data for environmental assets, such as Renewable Energy Credits, Carbon Offsets, and geospatial datasets, and mapped inputs to base data schemas (IPLD DAGs) for off-chain data (like metadata, images, attestation documents, and other assets) to promote the development of standard data schemas for environmental assets. This project was in alpha, and while many features could be considered stable, it was waiting until being feature complete to fully launch. The Filecoin Green team was actively working on this project and welcomed contributions from the community.
 
 ### Filecoin Tracker (filecoin-tracker.com)
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
 
 Filecoin Tracker was deprecated on April 20, 2024.
 
@@ -100,26 +100,26 @@ Here are great existing and working Filecoin dashboards that cover similar topic
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-project/slingshot)](https://github.com/filecoin-project/slingshot)
 ![GitHub last commit](https://img.shields.io/github/last-commit/filecoin-project/slingshot)
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
+![Maintenance status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple)](https://filecoinproject.slack.com/archives/C01AZP8BKRQ)
 
 Slingshot was a program that united Data clients, Data preparers and storage providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot was a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provided deals to registered and certified storage providers. The data was prepared and uploaded using a tool called [Singularity](#singularity).
 
 ### [Dataprograms.org](https://dataprograms.org)
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
 
 dataprograms.org listed tools, products, and incentive programs designed to drive growth and make data storage on Filecoin more accessible. It was discontinued in April 2024.
 
 ### Moonlanding
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
 
 Moon Landing was designed to ramp up storage providers in the Filecoin network by enabling them to serve verified deals at scale.
 
 ### Filecoin Dataset Explorer (datasets.filecoin.io)
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
 
 Filecoin Dataset Explorer showcased data stored on the Filecoin network between 2020 and 2022, including telemetry, historical archives, Creative Commons media, entertainment archives, scientific research, and machine learning datasets. It highlighted Filecoin's capability to store large datasets redundantly, ensuring availability from multiple Storage Providers worldwide. Each dataset is identified by a unique content identifier (CID). The platform aimed to make diverse datasets accessible to users globally.
 
@@ -127,7 +127,7 @@ See also: Legacy Explorer (legacy.datasets.filecoin.io)
 
 ## Estuary (estuary.tech)
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_07/2023-red.svg)
+![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_07/2023-red.svg)
 
 Estuary was an open-source software designed for sending public data to the Filecoin network, facilitating data retrieval from anywhere. It integrated IPFS and Filecoin technologies to provide a seamless end-to-end example for data storage and retrieval. When a file was uploaded, Estuary immediately made multiple storage deals with different providers to ensure redundancy and security. The software automated many aspects of deal making and retrieval, offering tools for managing connections, block storage, and deal tracking. Estuary aimed to simplify the use of decentralized storage networks for developers and users.
 
@@ -135,7 +135,7 @@ Estuary was discontinued in July 2023, and the website shut down in April 2024.
 
 ### Big Data Exchange
 
-![maintenance-status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
+![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg)
 
 Big Data Exchange was a program that allowed storage providers easy access to Filecoin+ deals through an auction where Storage Providers could bid on datasets by offering to pay clients FIL to choose the bidder as their Storage Provider.
 
