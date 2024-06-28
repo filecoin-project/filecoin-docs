@@ -10,7 +10,7 @@ description: >-
 
 Filecoin is a protocol that provides core primitives, enabling a truly trustless decentralized storage network. These primitives and features include publicly verifiable cryptographic storage proofs, [cryptoeconomic mechanisms](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/), and a public blockchain. Filecoin provides these primitives to solve the really hard problem of creating a trustless decentralized storage network.
 
-On top of the core Filecoin protocol, there are a number of layer 2 solutions that enable a broad array of use cases and applications, many of which also use [IPFS](https://ipfs.tech). These solutions include [Powergate](https://docs.textile.io/powergate/), [Tableland](https://tableland.xyz/), and more. Using these solutions, any use case that can be built on top of IPFS can also be built on Filecoin!
+On top of the core Filecoin protocol, there are a number of layer 2 solutions that enable a broad array of use cases and applications, many of which also use [IPFS](https://ipfs.tech), such as [Lighthouse](https://www.lighthouse.storage/) or [Tableland](https://tableland.xyz/). Using these solutions, any use case that can be built on top of IPFS can also be built on Filecoin!
 
 Some of the primary areas for development on Filecoin are:
 
@@ -95,7 +95,7 @@ AMD may be optimal hardware for SDR. You can [see this description](https://gith
 
 #### How are you working on bootstrapping the demand side of the marketplace? The Discover program is nice, but who is the target market for users, and how do you get them?
 
-In addition to [Filecoin Discover](https://filecoin.io/blog/posts/introducing-filecoin-discover/), a number of groups are actively building tools and services to support the adoption of the Filecoin network with developers and clients. For example, check out the recordings from our [Virtual Community Meetup](https://filecoin.io/blog/filecoin-virtual-community-meetup-recap/) to see updates about Textile Powergate and Starling Storage. You can also read more about some of the teams building on Filecoin through HackFS in our [HackFS Week 1 Recap](https://filecoin.io/blog/hackfs-teams-vol-1/).
+In addition to [Filecoin Discover](https://filecoin.io/blog/posts/introducing-filecoin-discover/), a number of groups are actively building tools and services to support the adoption of the Filecoin network with developers and clients. For example, check out the recordings from our [Virtual Community Meetup](https://filecoin.io/blog/filecoin-virtual-community-meetup-recap/) to see updates about Textile and Starling Storage. You can also read more about some of the teams building on Filecoin through HackFS in our [HackFS Week 1 Recap](https://filecoin.io/blog/hackfs-teams-vol-1/).
 
 #### Does Filecoin have an implementation of client and storage provider order matching through order books?
 
@@ -153,4 +153,4 @@ Also, note that world location matters for mining: many clients will prefer stor
 
 #### Even though Filecoin will be backed up to our normal IPFS pinning layer, we still need to know how quickly we can access data from the Filecoin network. How fast will retrieval be from the Filecoin network?
 
-If you are retrieving your data from IPFS or a remote pinning layer, retrieval should take on the order of milliseconds to seconds in the worst case. Our latest tests for retrieval from the Filecoin network directly show that a sealed sector holding data takes \~1 hour to unseal. 1-5 hours is our best real-world estimate to go from sector unsealing to delivery of the data. If you need faster data retrieval for your application, we recommend building on Powergate or an FPS.
+If you are retrieving your data from IPFS or a remote pinning layer, retrieval should take on the order of milliseconds to seconds in the worst case. Our latest tests for retrieval from the Filecoin network directly show that a sealed sector holding data takes \~1 hour to unseal. 1-5 hours is our best real-world estimate to go from sector unsealing to delivery of the data. If you need faster data retrieval for your application, we recommend building on IFPS.
