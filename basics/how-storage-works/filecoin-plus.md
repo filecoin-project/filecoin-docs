@@ -57,7 +57,7 @@ The participants of the Filecoin+ program, along with how they interact with eac
 
 A visualization of the interactions between parties involved in a Filecoin+ deal described above is shown below in Figure 1.  
 
-![filecoinplus4](https://github.com/filecoin-project/filecoin-docs/assets/46801006/48788262-165b-450c-abee-8ed875a4250a)
+<img width="928" alt="Screenshot 2024-06-28 at 12 11 23 AM" src="https://github.com/filecoin-project/filecoin-docs/assets/46801006/efd006ae-ea6f-4851-b072-ae73787e6975">
 
 Figure 1 | Diagram showing participant interactions in a Filecoin+ deal.  
 
