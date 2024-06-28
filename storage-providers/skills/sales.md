@@ -30,7 +30,7 @@ A storage provider needs to get storage deals to grow his network power and to e
 
 *   Obtaining data replicas from other storage providers and programs:
 
-    Filecoin data programs specify the minimum amount of replicas for a deal. Programs like Slingshot require a minimum of 6 replicas per deal. This means deals need to be stored across multiple storage providers in the ecosystem, so you can work with peers in the network to share clients’ data replicas.
+    Certain Filecoin data programs will specify the minimum amount of replicas needed to perform a deal.  This means deals need to be stored across multiple storage providers in the ecosystem, so you can work with peers in the network to share clients’ data replicas.
 
     Working in the ecosystem and building connections with other storage providers takes time and effort, and is essentially a sales activity.
 * Onboarding your own customers:
