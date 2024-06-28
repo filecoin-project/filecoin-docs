@@ -23,7 +23,7 @@ Storage providers are also rewarded with FIL for providing their storage space a
 
 ### Governance
 
-As members of the Filecoin community, FIL holders are encouraged to participate in the Filecoin governance process.  They can do so by proposing, deliberating, designing, and/or contributing to consensus for network changes, alongside other stakeholders in the Filecoin community- including implementers, Core Devs, storage providers, and other ecosystem partners. Learn more about the (Filecoin Governance process)[https://fil.org/governance].
+As members of the Filecoin community, FIL holders are encouraged to participate in the Filecoin governance process.  They can do so by proposing, deliberating, designing, and/or contributing to consensus for network changes, alongside other stakeholders in the Filecoin community- including implementers, Core Devs, storage providers, and other ecosystem partners. Learn more about the [Filecoin Governance process](https://fil.org/governance).
 
 ## Denominations
 
