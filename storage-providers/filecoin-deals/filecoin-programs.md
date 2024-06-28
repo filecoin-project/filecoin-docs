@@ -94,7 +94,7 @@ Here are great existing and working Filecoin dashboards that cover similar topic
 - [Filecoin Dune Daily Metrics](https://dune.com/kalen/filecoin-daily-metrics)
 - [Filecoin Pulse (PoC)](https://filecoinpulse.pages.dev/)
 
-### [Slingshot](https://slingshot.filecoin.io)
+### Slingshot (slingshot.filecoin.io)
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-project/slingshot?style=for-the-badge)](https://github.com/filecoin-project/slingshot)
 ![GitHub last commit](https://img.shields.io/github/last-commit/filecoin-project/slingshot?style=for-the-badge)
@@ -103,7 +103,7 @@ Here are great existing and working Filecoin dashboards that cover similar topic
 
 Slingshot was a program that united Data clients, Data preparers and storage providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot was a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provided deals to registered and certified storage providers. The data was prepared and uploaded using a tool called [Singularity](#singularity).
 
-### [Dataprograms.org](https://dataprograms.org)
+### Dataprograms.org (dataprograms.org)
 
 ![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_04/2024-red.svg?style=for-the-badge)
 
