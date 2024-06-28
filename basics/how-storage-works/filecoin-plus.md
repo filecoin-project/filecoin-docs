@@ -63,35 +63,38 @@ Figure 1 | Diagram showing participant interactions in a Filecoin+ deal.
 
 ## Acquiring DataCap for Clients & Builders
 
-Clients can secure datacap by making a request to an allocator.  Each one of the allocators maintain their own applications for requesting DataCap.  
+Clients can secure DataCap by making a request to an allocator.  Each one of the allocators maintain their own applications for requesting DataCap.  
 
 One such allocator is Filecoin Incentive Design Labs (FIDL).  They maintain a [Github repository](https://github.com/fidlabs) that includes an [application](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose) where clients can make a request of FIDL for DataCap.  Clients and builders looking to acquire DataCap may consider applying directly with FIDL, noting that all DataCap applications are transparent and open for public review on the [issues page](https://github.com/fidlabs/Open-Data-Pathway/issues). 
 
 The steps a client should follow to acquire DataCap are as follows: 
 
-- Establish a Filecoin wallet.  See details about Filecoin wallets [HERE](https://docs.filecoin.io/basics/assets/wallets). 
+1. Establish a [Filecoin wallet](https://docs.filecoin.io/basics/assets/wallets).  
 
-- Choose an allocator.  You can see the full list of active allocators at this [Github repository](https://github.com/filecoin-project/Allocator-registry) and see an active list of allocators who have verified public datasets [HERE](https://allocator.tech/).
+2. Choose an allocator from the [full list of active allocators](https://github.com/filecoin-project/Allocator-registry) or the [active list of allocators](https://allocator.tech/) who have verified public datasets.
 
-- Check that you satisfy the requirements of the allocator.  In the case of uploading open source datasets with FIDL as the allocator, the client will need to demonstrate to FIDL that they can (1) satisfy a third party KYC (identity) check, (2) provide the details of storage provider (entity, storage location) where the data is intended to be stored, and (3) demonstrate proof that the dataset can be actively retrieved.  More details on FIDL’s requirements can be found [HERE](https://www.fidl.tech/apply-for-datacap).  
+3. Check that you satisfy the requirements of the allocator.  In the case of uploading open source datasets with FIDL as the allocator, the client will need to demonstrate to FIDL that they can (1) satisfy a third party KYC (identity) check, (2) provide the details of storage provider (entity, storage location) where the data is intended to be stored, and (3) demonstrate proof that the dataset can be actively retrieved.  More details on FIDL’s requirements can be found [HERE](https://www.fidl.tech/apply-for-datacap).  
 
-- Submit an application for DataCap from an allocator.  You can submit a request to FIDL via their [Github application](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose) or [Google Form](https://www.fidl.tech/apply-for-datacap). 
+4. Submit an application for DataCap from an allocator.  You can submit a request to FIDL via their [Github application](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose) or [Google Form](https://www.fidl.tech/apply-for-datacap). 
 
-- Use the DataCap in a storage deal.  
+5. Use the DataCap in a storage deal.  
 
 For builders on the Calibration testnet who need testnet DataCap to test their applications, a faucet is available.   The steps a builder should follow to acquire testnet DataCap are as follows: 
 
-- Establish a wallet on Filecoin Calibration testnet. For more information, see the Calibration [docs](https://docs.filecoin.io/networks/calibration) or [Github](https://github.com/filecoin-project/testnet-calibration).  
+1. Establish a wallet on Filecoin Calibration testnet. For more information, see the Calibration [docs](https://docs.filecoin.io/networks/calibration) or [Github](https://github.com/filecoin-project/testnet-calibration).  
 
-- Grant the wallet address DataCap by using this [faucet](https://faucet.calibnet.chainsafe-fil.io/datacap.html).
+2. Grant the wallet address DataCap by using this [faucet](https://faucet.calibnet.chainsafe-fil.io/datacap.html).
 
 ## **Smart contracts**
 
-Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` address of the smart contract as the client address when making a request for DataCap.  It’s important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. 
+Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` address of the smart contract as the client address when making a request for DataCap.  
+
+[!Important]
+It’s important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap. 
 
 ## Spend DataCap
 
-Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because storage providers receive a deal quality multiplier for taking Fil+ deals, many storage providers offer special pricing and services to attract clients who use DataCap to make deals.
+Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because storage providers receive a deal quality multiplier for taking Filecoin+ deals, many storage providers offer special pricing and services to attract clients who use DataCap to make deals.
 
 By default, when you make a deal with an address with DataCap allocated, you will spend DataCap when making the deal.
 
@@ -128,20 +131,12 @@ If making deals from the command line, make sure to pass the flag `--verified-de
 
 ### Checking remaining DataCap balance
 
-Once you have received DataCap to an address, you can check the remaining balance either by visiting a site that enables this (e.g. [verify.glif.io](https://verify.glif.io/)) or by querying your address on a node.
+Once you have received DataCap to an address, you can check the remaining balance by querying your address on a node.
 
 #### **With lotus v1.10.0 ^**
 
 ```shell
 lotus filplus check-client-datacap f00000
-```
-
-#### **With lotus v1.9.0 and below**
-
-_Note:_ [_Lotus-shed_](https://github.com/filecoin-project/lotus/tree/master/cmd/lotus-shed) _is a separate package you will need to build and install (`make lotus-shed` in the_ [_Lotus_](https://github.com/filecoin-project/lotus) _source), although these features are slated to be merged into Lotus._
-
-```shell
-lotus-shed verifreg check-client f00000
 ```
 
 ## Visualizing the Blockchain Data for Filecoin+ 
@@ -150,4 +145,4 @@ There are two resources you can use to check the current status of the Filecoin+
 
 - The [Filecoin Pulse dashboard](https://filecoinpulse.pages.dev/allocators/) includes visualizations of and tables for data about Filecoin+ deals on the Filecoin blockchain, organized by Allocators, Clients, and Storage Providers.
 - The [Datacap Stats dashboard](https://datacapstats.io) shows DataCap allocations, including the number of allocators, clients, and storage providers. You can also see number and size of deals.
-- The [Starboard Dashboard](https://dashboard.starboard.ventures/market-deals) includes network health data related to Filecoin+ verified deals. 
+- The [Starboard Dashboard](https://dashboard.starboard.ventures/market-deals) includes network health data related to Filecoin+ verified deals.
