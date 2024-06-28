@@ -157,7 +157,6 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Storage provider reputation systems
 
-* [FIL Swan](https://www.filswan.com/) - for offline deals, storage provider info, prices, offline deal acceptance.
 * [Filrep.io](https://filrep.io/) - Index of online storage providers and their pricing, ranked by power and reputation score.
 * [SpaceGap](https://spacegap.github.io/) - shows storage proof deadlines and sector details for the top 50 storage providers.
 
