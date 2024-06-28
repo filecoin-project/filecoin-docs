@@ -12,9 +12,9 @@ FIL plays a vital role in incentivizing users to participate in the Filecoin net
 
 ### Network payments
 
-When a user wants to store data on the Filecoin network, they pay in FIL to the storage providers who offer their storage space. The payment is made in advance for a certain amount of time that the data will be stored on the network.
-When a user wants to retrieve their data from the Filecoin network, they can make a payment in FIL to the storage providers who stored the data. This payment incentivizes the storage providers to keep the data available for retrieval at all times.
-Storage providers choose their own terms and payment mechanisms for providing storage and retrieval services so other options (such as fiat payments) can be available.
+When a user wants to store data on the Filecoin network, they pay in FIL to the storage providers who offer their storage space. The payment is made in advance, for a certain amount of time that the data will be stored on the network.
+
+In addition, Storage providers choose their own terms and payment mechanisms for providing storage and retrieval services so other options (such as fiat payments) can be available.
 
 ### Blockchain rewards
 
