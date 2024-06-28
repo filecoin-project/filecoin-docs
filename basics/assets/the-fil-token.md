@@ -10,21 +10,20 @@ description: >-
 
 FIL plays a vital role in incentivizing users to participate in the Filecoin network and ensuring its smooth operation. Here are some ways in which FIL is used on the Filecoin network:
 
-### Storage payments
+### Network payments
 
-When a user wants to store data on the Filecoin network, they pay in FIL to the storage providers who offer their storage space. The payment is made in advance for a certain amount of time that the data will be stored on the network. The storage providers are then rewarded with FIL for providing their storage space and performing other useful tasks on the network.
+When a user wants to store data on the Filecoin network, they pay in FIL to the storage providers who offer their storage space. The payment is made in advance for a certain amount of time that the data will be stored on the network. 
+When a user wants to retrieve their data from the Filecoin network, they can make a payment in FIL to the storage providers who stored the data. This payment incentivizes the storage providers to keep the data available for retrieval at all times. 
+Storage providers choose their own terms and payment mechanisms for providing storage and retrieval services so other options (such as fiat payments) can be available.
 
-### Retrieval payments
-
-When a user wants to retrieve their data from the Filecoin network, they make a payment in FIL to the storage providers who stored the data. This payment incentivizes the storage providers to keep the data available for retrieval at all times.
 
 ### Blockchain rewards
 
-FIL is used to reward providers who validate and add new blocks to the Filecoin blockchain. Providers receive a block reward in FIL for each new block they add to the blockchain and also earn transaction fees in FIL for processing storage and retrieval transactions.
+Storage providers are also rewarded with FIL for providing their storage space and performing other useful tasks on the network. FIL is used to reward storage providers who validate and add new blocks to the Filecoin blockchain. Providers receive a block reward in FIL for each new block they add to the blockchain and also earn transaction fees in FIL for processing storage and retrieval transactions.
 
 ### Governance
 
-FIL is used for network governance, allowing FIL holders to vote on proposals and make decisions that impact the future development and direction of the network.
+As members of the Filecoin community, FIL holders are encouraged to participate in the Filecoin governance process.  They can do so by proposing, deliberating, designing, and/or contributing to consensus for network changes, alongside other stakeholders in the Filecoin community- including implementers, Core Devs, storage providers, and other ecosystem partners. Learn more about the (Filecoin Governance process)[https://fil.org/governance].
 
 ## Denominations
 
