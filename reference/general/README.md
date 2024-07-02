@@ -83,7 +83,8 @@ Developer tools, API clients & storage services that developers can use to build
 ### Storage APIs for app builders
 
 * [Lighthouse](https://www.lighthouse.storage/) - Lighthouse offers a suite of tools to enable builders to store data on Filecoin when biulding apps.
-* [`NFT.storage`](https://nft.storage/) - service from Protocol Labs for storing off-chain _NFT_ data on IPFS and Filecoin.
+* [`NFT.storage`](https://nft.storage/) - Preserve your NFTs with our new low-cost, easy-to-use solution, ensuring verifiable long-term storage on Filecoin.
+* [`NFT.Storage Classic`](https://classic.nft.storage/) NFT.Storage Classic offered free decentralized storage for NFTs, but no new uploads are accepted as of June 30, 2024.
 * [`Web3.storage`](https://web3.storage/) - service from Protocol Labs for storing off-chain _dApp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
 * [`Slate.host`](https://github.com/filecoin-project/slate/#developer-api) - has a Developer API that allows you upload files with an account
 * [`Textile.io's tools`](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin, including [Tableland](https://tableland.xyz/) and Filecoin bridges to Polygon and NEAR.  
