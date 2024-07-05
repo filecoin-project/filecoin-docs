@@ -12,7 +12,9 @@ Storage helpers are available for NFTs (non-fungible tokens) or general data. If
 
 #### Storing NFTs
 
-* [NFT.Storage](https://nft.storage/) offers free, long-term storage for your NFT metadata and assets. It uses CIDs (content identifiers) so you can create truly immutable NFTs and avoid situations where files are accidentally (also known as “rug pulls”). Data uploads of up to 31 GiB per file are possible. NFT.Storage has a JavaScript library, HTTP API, and a browser-based uploader. There are also clients in Go, Java, PHP, Python, Ruby, and Rust automatically generated via OpenAPI.
+* [The NFT.Storage flagship product](https://nft.storage/nft-storage-flagship-product) focuses on the enduring preservation of NFTs with a low one-time fee per. First mint your NFTs, then send us the NFT data that we preserve in endowment-backed long-term Filecoin storage. As an NFT.Storage user, you support our platform when you choose Pinata and Lighthouse for hot storage and [use our referral links here](https://nft.storage/blog/announcing-our-new-partnerships-with-pinata-and-lighthouse), helping to sustain our valuable public goods. Your NFTs will also be included in the NFT Token Checker, a tool for block explorers, marketplaces and wallets to show verification that NFT collections, tokens, and CIDs are preserved by NFT.Storage.
+
+* [NFT.Storage Classic](https://nft.storage/nft-storage-classic) is a free service that provides hot data storage on the decentralized Filecoin network with fast retrieval through IPFS. As of June 30, 2024, we have officially decommissioned NFT.Storage Classic uploads, however retrieval of existing data remains operational. For NFT data already uploaded through NFT.Storage Classic, the NFT.Storage Gateway makes the data retrievable on block explorers, marketplaces and dapps. 
 
 #### General data storage
 
