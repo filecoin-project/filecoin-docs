@@ -29,6 +29,10 @@ Website: [filutils.com](https://www.filutils.com/en)
 
 Website: [fvm.starboard.ventures](https://fvm.starboard.ventures/)
 
+### Blockscout Open-Source FEVM Explorer
+
+Website: [filecoin.blockscout.com](https://filecoin.blockscout.com/)
+
 ## API requests
 
 If you have access to a Filecoin node, you can send a JSON-RPC request to get block information.
