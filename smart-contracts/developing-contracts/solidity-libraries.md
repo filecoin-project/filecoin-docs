@@ -87,7 +87,7 @@ contract MyToken is ERC20 {
 13. In Remix, open the **Deployed Contracts** dropdown.
 14. In the `mint` method, set:
     * `to` to your wallet address.
-    * `amount` to `100000000000000000000` (1 `FIL`).
+    * `amount` to `1000000000000000000` (1 `FIL`).
 15. Click **Transact**.
 16. In MetaMask, confirm the transaction.
 
