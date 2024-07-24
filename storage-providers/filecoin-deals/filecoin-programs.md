@@ -127,7 +127,7 @@ See also: Legacy Explorer (legacy.datasets.filecoin.io)
 
 ![Maintenance status](https://img.shields.io/badge/maintenance-deprecated_07/2023-red.svg?style=for-the-badge)
 
-Estuary was an open-source software designed for sending public data to the Filecoin network, facilitating data retrieval from anywhere. It integrated IPFS and Filecoin technologies to provide a seamless end-to-end example for data storage and retrieval. When a file was uploaded, Estuary immediately made multiple storage deals with different providers to ensure redundancy and security. The software automated many aspects of deal making and retrieval, offering tools for managing connections, block storage, and deal tracking. Estuary aimed to simplify the use of decentralized storage networks for developers and users.
+Estuary was an experimental software platform designed for sending public data to the Filecoin network, facilitating data retrieval from anywhere. It integrated IPFS and Filecoin technologies to provide a seamless end-to-end example for data storage and retrieval. When a file was uploaded, Estuary immediately made multiple storage deals with different providers to ensure redundancy and security. The software automated many aspects of deal making and retrieval, offering tools for managing connections, block storage, and deal tracking. Estuary aimed to simplify the use of decentralized storage networks for developers and users.
 
 Estuary was discontinued in July 2023, and the website shut down in April 2024.
 
