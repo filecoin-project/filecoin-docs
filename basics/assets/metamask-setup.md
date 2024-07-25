@@ -107,7 +107,7 @@ Before you can connect MetaMask to your Ledger, you must install the Filecoin Le
 5. In **My Ledger**, head over to **App catalog** and search for **Filecoin**.
 6. Click **Install**.
 
-For more details on the official Filecoin Ledger app, [check out the Ledger documentation](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL-?docs=true).
+For more details on the official Filecoin Ledger app, [check out the Ledger documentation](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL).
 
 ### Enable expert-mode
 
