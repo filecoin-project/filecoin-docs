@@ -11,12 +11,10 @@ Multicall is a powerful tool that offers several advantages for interacting with
 ## Contract address
 
 Multicall has the same, precomputed address for all of the networks it is deployed on. 
-```
 | Name             | Address                                      | Mainnet | Calibration |
 | ---------------- | -------------------------------------------- | ------- | ----------- |
-| [Multicall - Mainnet](https://filfox.info/en/address/0xcA11bde05977b3631167028862bE2a173976CA11?t=3) | `0xcA11bde05977b3631167028862bE2a173976CA11` | ✔️      |             |
-| [Multicall - Calibration](https://calibration.filscan.io/en/address/0xcA11bde05977b3631167028862bE2a173976CA11/) | `0xcA11bde05977b3631167028862bE2a173976CA11` |         | ✔️          |
-```
+| [Multicall - Mainnet](https://filfox.info/en/address/0xcA11bde05977b3631167028862bE2a173976CA11?t=3) | `0xcA11bde05977b3631167028862bE2a173976CA11` | ✔️      | ❌          |
+| [Multicall - Calibration](https://calibration.filscan.io/en/address/0xcA11bde05977b3631167028862bE2a173976CA11/) | `0xcA11bde05977b3631167028862bE2a173976CA11` | ❌      | ✔️          |
 
 ## Usage
 
