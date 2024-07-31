@@ -45,6 +45,13 @@ Singularity is an end-to-end solution for onboarding datasets to Filecoin storag
 
 Many other programs and tools exist in the Filecoin community, developed by partners or storage providers. We list some examples below.
 
+### [Decentrally](https://www.decentrally.cloud/)
+
+[![Read the doc](https://img.shields.io/badge/docs-decentrally.cloud-blue?style=for-the-badge)](https://docs.decentrally.cloud)
+[![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C07FN47FCFJ)
+
+Our Sync & Share platform a.k.a. DataDrop, empowered by Filecoin’s decentralized storage, transforms data management into an art. Creating paid deals for Storage Poviders and bringing more utility to the Filecoin eosystem. It integrates with deal engines in the back-end such as [Boost](https://boost.filecoin.io).
+
 ### [CIDGravity](https://www.cidgravity.com/)
 
 [![Read the doc](https://img.shields.io/badge/docs-cidgravity.com-blue?style=for-the-badge)](https://docs.cidgravity.com)
