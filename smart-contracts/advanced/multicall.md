@@ -26,8 +26,8 @@ The ABI can be found on https://multicall3.com/abi, where it can be downloaded o
 - Solidity interface.
 - JSON ABI, prettified.
 - JSON ABI, minified.
-- ethers.js human readable ABI.
-- viem human readable ABI.
+- [ethers.js](https://docs.ethers.org/v5/) human readable ABI.
+- [viem](https://viem.sh/) human readable ABI.
 
 Alternatively, you can:
 
@@ -46,7 +46,7 @@ Batching contract reads, one of the most common use cases, allows a single `eth_
 
 3. **Detection of Stale Data**: Multicall enables the block number or timestamp to be returned with the read data. This feature helps in detecting stale data, as developers can compare the block number or timestamp with the current state of the blockchain to ensure the data is up-to-date.
 
-Many libraries and tools such as [ethers-rs](https://docs.rs/ethers/latest/ethers/), [viem](https://viem.sh/docs/), and [ape](https://docs.apeworx.io/sdk/introduction) have native Multicall3 integration.
+Many libraries and tools such as [ethers-rs](https://docs.rs/ethers/latest/ethers/), [viem](https://viem.sh/), and [ape](https://apeworx.io/) have native Multicall3 integration.
 
 When directly interacting with the Multicall3 contract to batch calls, you'll typically use the `aggregate3` method. This method allows you to execute multiple contract calls in a single transaction. Here's an explanation of how it works, along with examples:
 
@@ -76,7 +76,6 @@ When directly interacting with the Multicall3 contract to batch calls, you'll ty
    ```javascript
    const { ethers } = require("ethers");
 
-   // Setup provider and Multicall3 contract
    const provider = new ethers.providers.JsonRpcProvider("https://api.node.glif.io/rpc/v1");
    const multicallAddress = "0xcA11bde05977b3631167028862bE2a173976CA11";
    const multicallAbi = [/* Multicall3 ABI */];
@@ -95,7 +94,6 @@ When directly interacting with the Multicall3 contract to batch calls, you'll ty
      return results.map(result => ethers.utils.defaultAbiCoder.decode(["uint256"], result.returnData)[0]);
    }
 
-   // Usage
    batchBalanceChecks(["0x123...", "0x456...", "0x789..."]).then(console.log);
    ```
 
