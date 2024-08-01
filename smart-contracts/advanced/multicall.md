@@ -4,19 +4,9 @@ description: >-
   and execute multiple state-changing calls in a single transaction on the FVM.
 ---
 
-# Multicall
+# Multicall3
 
 [Multicall3](https://www.multicall3.com/) is a powerful tool that offers batch contract calls to smart contracts on the Filecoin Virtual Machine (FVM). 
-
-## Contract address
-
-Multicall has the same, precomputed address for all of the networks it is deployed on. 
-| Name             | Address                                      | Mainnet | Calibration |
-| ---------------- | -------------------------------------------- | ------- | ----------- |
-| [Multicall - Mainnet](https://filfox.info/en/address/0xcA11bde05977b3631167028862bE2a173976CA11?t=3) | `0xcA11bde05977b3631167028862bE2a173976CA11` | ✔️      | ❌          |
-| [Multicall - Calibration](https://calibration.filscan.io/en/address/0xcA11bde05977b3631167028862bE2a173976CA11/) | `0xcA11bde05977b3631167028862bE2a173976CA11` | ❌      | ✔️          |
-
-## Contract Deployments and ABI
 
 Multicall3 is deployed on over 100 chains at `0xcA11bde05977b3631167028862bE2a173976CA11`.
 A sortable, searchable list of all chains it's deployed on can be found [here](https://multicall3.com/deployments).
@@ -34,6 +24,14 @@ Alternatively, you can:
 - Download the ABI from the [releases](https://github.com/mds1/multicall/releases) page.
 - Copy the ABI from [Etherscan](https://etherscan.io/address/0xcA11bde05977b3631167028862bE2a173976CA11#code).
 - Install [Foundry](https://github.com/gakonst/foundry/) and run `cast interface 0xcA11bde05977b3631167028862bE2a173976CA11`.
+
+## Contract address
+
+Multicall has the same, precomputed address for all of the networks it is deployed on. 
+| Name             | Address                                      | Mainnet | Calibration |
+| ---------------- | -------------------------------------------- | ------- | ----------- |
+| [Multicall - Mainnet](https://filfox.info/en/address/0xcA11bde05977b3631167028862bE2a173976CA11?t=3) | `0xcA11bde05977b3631167028862bE2a173976CA11` | ✔️      | ❌          |
+| [Multicall - Calibration](https://calibration.filscan.io/en/address/0xcA11bde05977b3631167028862bE2a173976CA11/) | `0xcA11bde05977b3631167028862bE2a173976CA11` | ❌      | ✔️          |
 
 ## Usage
 Many libraries and tools such as [ethers-rs](https://docs.rs/ethers/latest/ethers/), [viem](https://viem.sh/), and [ape](https://apeworx.io/) have native Multicall3 integration which can be used in your projects directly. To learn how to use Multicall3 with these tools, check out [Multicall3 examples folder](https://github.com/mds1/multicall/blob/main/examples)
