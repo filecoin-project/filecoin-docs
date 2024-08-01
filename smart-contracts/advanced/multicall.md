@@ -35,6 +35,7 @@ Multicall has the same, precomputed address for all of the networks it is deploy
 
 ## Usage
 Many libraries and tools such as [ethers-rs](https://docs.rs/ethers/latest/ethers/), [viem](https://viem.sh/), and [ape](https://apeworx.io/) have native Multicall3 integration which can be used in your projects directly. To learn how to use Multicall3 with these tools, check out [Multicall3 examples folder](https://github.com/mds1/multicall/blob/main/examples)
+
 ### Batching Contract Reads
 Batching contract reads, one of the most common use cases, allows a single `eth_call` JSON RPC request to return the results of multiple contract function calls. It has many benefits:
 
@@ -120,15 +121,13 @@ Whenever a CALL is executed, the _context_ changes.
 New context means storage operations will be performed on the called contract, there is a new value (i.e. `msg.value`), and a new caller (i.e. `msg.sender`).
 
 The FVM also supports the [`DELEGATECALL`](https://www.evm.codes/#f4) opcode, which is similar to `CALL`, but different in a very important way: it _does not_ change the context of the call.
-This means the contract being delegatecalled will see the same `msg.sender`, the same `msg.value`, and operate on the same storage as the calling contract. This is very powerful, but can also be dangerous.
+This means the contract being delegatecalled will see the same `msg.sender`, the same `msg.value`, and operate on the same storage as the calling contract.
 
-It's important to note that you cannot delegatecall from an EOA—an EOA can only call a contract, not delegatecall it.
-
-Now that we understand the difference between `CALL` and `DELEGATECALL`, let's see how this applies to `msg.sender` and `msg.value` concerns.
-We know that we can either `CALL` or `DELEGATECALL` to a contract, and that `msg.sender` will be different depending on which opcode we use.
+It's important to note that you cannot delegatecall from an EOA — an EOA can only call a contract, not delegatecall it.
 
 Because you cannot delegatecall from an EOA, this significantly reduces the benefit of calling Multicall3 from an EOA—any calls the Multicall3 executes will have the MultiCall3 address as the `msg.sender`.
-**This means you should only call Multicall3 from an EOA if the `msg.sender` does not matter.**
+
+**This means you should only call Multicall3 from an EOA if the `msg.sender` does not matter.** `msg.sender` will be different depending on which opcode you use.
 
 If you are using a contract wallet or executing a call to Multicall3 from another contract, you can either CALL or DELEGATECALL.
 Calls will behave the same as described above for the EOA case, and delegatecalls will preserve the context.
