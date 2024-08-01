@@ -36,7 +36,7 @@ Alternatively, you can:
 - Install [Foundry](https://github.com/gakonst/foundry/) and run `cast interface 0xcA11bde05977b3631167028862bE2a173976CA11`.
 
 ## Usage
-
+Many libraries and tools such as [ethers-rs](https://docs.rs/ethers/latest/ethers/), [viem](https://viem.sh/), and [ape](https://apeworx.io/) have native Multicall3 integration which can be used in your projects directly. To learn how to use Multicall3 with these tools, check out [Multicall3 examples folder](https://github.com/mds1/multicall/blob/main/examples)
 ### Batching Contract Reads
 Batching contract reads, one of the most common use cases, allows a single `eth_call` JSON RPC request to return the results of multiple contract function calls. It has many benefits:
 
