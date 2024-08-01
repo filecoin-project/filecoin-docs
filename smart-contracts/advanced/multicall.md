@@ -21,7 +21,7 @@ Multicall has the same, precomputed address for all of the networks it is deploy
 Multicall3 is deployed on over 100 chains at `0xcA11bde05977b3631167028862bE2a173976CA11`.
 A sortable, searchable list of all chains it's deployed on can be found [here](https://multicall3.com/deployments).
 
-The ABI can be found on https://multicall3.com/abi, where it can be downloaded or copied to the clipboard in various formats, including:
+The [multicall3 ABI](https://multicall3.com/abi) can be downloaded or copied to the clipboard in various formats, including:
 
 - Solidity interface.
 - JSON ABI, prettified.
