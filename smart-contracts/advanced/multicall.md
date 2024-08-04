@@ -114,39 +114,12 @@ This example demonstrates how to use Multicall3 to batch multiple `balanceOf` ca
 
 ### Batch Contract Writes
 
-_If using Multicall3 for this purpose, be aware it is unaudited, so use at your own risk._
-_However, because it is a stateless contract, it should be safe when used correctly—**it should never hold your funds after a transaction ends, and you should never approve Multicall3 to spend your tokens**_.
+Multicall3, while unaudited, can be safely used for batching on-chain writes when used correctly. As a stateless contract, it should never hold funds after a transaction ends, and users should never approve it to spend tokens.
 
-Multicall3 can also be used to batch on-chain transactions using the methods described in the [Batch Contract Reads](#batch-contract-reads) section.
+When using Multicall3, it's crucial to understand two key aspects: the behavior of `msg.sender` in calls versus delegatecalls, and the risks associated with `msg.value` in multicalls.
 
-When using Multicall3 for this purpose, there are **two important details you MUST understand**.
+In FVM, there are two types of accounts: Externally Owned Accounts (EOAs) controlled by private keys, and Contract Accounts controlled by code. The `msg.sender` value during contract execution depends on whether a CALL or DELEGATECALL opcode is used. CALL changes the execution context, while DELEGATECALL preserves it.
 
-1. How `msg.sender` behaves when calling vs. delegatecalling to a contract.
-2. The risks of using `msg.value` in a multicall.
+For EOAs, which can only use CALL, Multicall3's address becomes the `msg.sender` for subsequent calls. This limits its usefulness from EOAs to scenarios where **`msg.sender` is irrelevant**. However, contract wallets or other contracts can use either CALL or DELEGATECALL, with the latter preserving the original `msg.sender`.
 
-Before explaining both of these, let's first cover some background.
-
-There are two types of accounts: Externally Owned Accounts (EOAs) and Contract Accounts.
-EOAs are controlled by private keys, and Contract Accounts are controlled by code.
-
-When an EOA calls a contract, the `msg.sender` value during execution of the call provides the address of that EOA. This is also true if the call was executed by a contract.
-The word "call" here specifically refers to the [`CALL`](https://www.evm.codes/#f1?fork=shanghai) opcode.
-Whenever a CALL is executed, the _context_ changes.
-New context means storage operations will be performed on the called contract, there is a new value (i.e. `msg.value`), and a new caller (i.e. `msg.sender`).
-
-The FVM also supports the [`DELEGATECALL`](https://www.evm.codes/#f4) opcode, which is similar to `CALL`, but different in a very important way: it _does not_ change the context of the call.
-This means the contract being delegatecalled will see the same `msg.sender`, the same `msg.value`, and operate on the same storage as the calling contract.
-
-It's important to note that you cannot delegatecall from an EOA — an EOA can only call a contract, not delegatecall it.
-
-Because you cannot delegatecall from an EOA, this significantly reduces the benefit of calling Multicall3 from an EOA—any calls the Multicall3 executes will have the MultiCall3 address as the `msg.sender`.
-
-**This means you should only call Multicall3 from an EOA if the `msg.sender` does not matter.** `msg.sender` will be different depending on which opcode you use.
-
-If you are using a contract wallet or executing a call to Multicall3 from another contract, you can either CALL or DELEGATECALL.
-Calls will behave the same as described above for the EOA case, and delegatecalls will preserve the context.
-This means if you delegatecall to Multicall3 from a contract, the `msg.sender` of the calls executed by Multicall3 will be that contract.
-This can be very useful, and is how the Gnosis Safe [Transaction Builder](https://help.safe.global/en/articles/40841-transaction-builder) works to batch calls from a Safe.
-
-Similarly, because `msg.value` does not change with a delegatecall, you must be careful relying on `msg.value` within a multicall.
-To learn more about this, see [here](https://github.com/runtimeverification/verified-smart-contracts/wiki/List-of-Security-Vulnerabilities#payable-multicall) and [here](https://samczsun.com/two-rights-might-make-a-wrong/).
+The handling of `msg.value` in multicalls requires caution. Since `msg.value` doesn't change with delegatecalls, relying on it within a multicall can lead to security vulnerabilities. To learn more about this, see [here](https://github.com/runtimeverification/verified-smart-contracts/wiki/List-of-Security-Vulnerabilities#payable-multicall) and [here](https://samczsun.com/two-rights-might-make-a-wrong/).
