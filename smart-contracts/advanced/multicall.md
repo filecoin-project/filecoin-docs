@@ -34,6 +34,20 @@ Multicall has the same, precomputed address for all of the networks it is deploy
 | [Multicall - Calibration](https://calibration.filscan.io/en/address/0xcA11bde05977b3631167028862bE2a173976CA11/) | `0xcA11bde05977b3631167028862bE2a173976CA11` | ❌      | ✔️          |
 
 ## Usage
+To use Multicall3 to send batch contract read/write to your smart contract, you will need to:
+
+1. Obtain the Multicall3 contract address for the network you're using (Filecoin mainnet or Calibration testnet).
+2. Get the Multicall3 ABI, which can be downloaded or copied from various sources mentioned above.
+3. Create an instance of the Multicall3 contract using a web3 library like ethers.js or viem.
+4. Prepare your batch calls, including the target contract addresses, function selectors, and input data.
+5. Use the appropriate Multicall3 method (e.g., `aggregate3` for multiple calls) to execute your batch operations.
+6. Process the returned data from the Multicall3 contract.
+
+The steps above differ slightly for integrations using smart contracts, where steps 2 and 3 are replaced with:
+
+2. Import the Multicall3 interface in your smart contract.
+3. Create a function that interacts with the Multicall3 contract using the imported interface.
+
 Many libraries and tools such as [ethers-rs](https://docs.rs/ethers/latest/ethers/), [viem](https://viem.sh/), and [ape](https://apeworx.io/) have native Multicall3 integration which can be used in your projects directly. To learn how to use Multicall3 with these tools, check out [Multicall3 examples folder](https://github.com/mds1/multicall/blob/main/examples)
 
 ### Batching Contract Reads
