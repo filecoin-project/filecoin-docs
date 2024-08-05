@@ -113,7 +113,9 @@ This example demonstrates how to use Multicall3 to batch multiple `balanceOf` ca
 
 ### Batch Contract Writes
 
-Multicall3, while unaudited, can be safely used for batching on-chain writes when used correctly. As a stateless contract, it should never hold funds after a transaction ends, and users should never approve it to spend tokens.
+
+> :warning: Multicall3, while unaudited, can be safely used for batching on-chain writes when used correctly. As a stateless contract, it should never hold funds after a transaction ends, and users should never approve it to spend tokens.
+
 
 When using Multicall3, it's crucial to understand two key aspects: the behavior of `msg.sender` in calls versus delegatecalls, and the risks associated with `msg.value` in multicalls.
 
