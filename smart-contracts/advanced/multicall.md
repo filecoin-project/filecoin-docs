@@ -59,7 +59,6 @@ Batching contract reads, one of the most common use cases, allows a single `eth_
 
 3. **Detection of Stale Data**: Multicall enables the block number or timestamp to be returned with the read data. This feature helps in detecting stale data, as developers can compare the block number or timestamp with the current state of the blockchain to ensure the data is up-to-date.
 
-Many libraries and tools such as [ethers-rs](https://docs.rs/ethers/latest/ethers/), [viem](https://viem.sh/), and [ape](https://apeworx.io/) have native Multicall3 integration.
 
 When directly interacting with the Multicall3 contract to batch calls, you'll typically use the `aggregate3` method. This method allows you to execute multiple contract calls in a single transaction. Here's an explanation of how it works, along with examples:
 
