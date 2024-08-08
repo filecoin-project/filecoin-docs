@@ -81,12 +81,11 @@ Tellor’s smart contracts are live on the Filecoin Mainnet and Calibration test
 
 ### [EOracle](https://www.eoracle.io/)
 
-
-EOracle is a
+EOracle is an oracle built on Eigenlayer, benefitting from cryptoeconomic security supported by Ethereum validators. eOracle provides on-chain native price feeds that require no permissions for integration. Users can develop their own oracle using the [ODK](https://eoracle.gitbook.io/eoracle/ovs-developer-guides/eoracle-odk-oracle-development-kit), or use the existing price feeds listed below.
 
 **EOracle Smart Contracts**
 
-Tellor’s smart contracts are live on the Filecoin Calibration testnet.
+EOracle's smart contracts are live on the Filecoin Calibration testnet.
 
 | Name             | Address                                      | Mainnet | Calibration |
 | ---------------- | -------------------------------------------- | ------- | ----------- |
@@ -104,3 +103,9 @@ Tellor’s smart contracts are live on the Filecoin Calibration testnet.
 | EOFeedAdapter - sFRAX/FRAX   | `0xd56f6CC400f3bFC77faeC4bBb1e0400c6A26A925` |         | ✔️          |
 | EOFeedAdapter - sfrxETH/frxETH   | `0x626A1Cb309289Eb542710D6093C6341562769983` |         | ✔️          |
 | EOFeedAdapter - stETH/ETH   | `0x0834Bb4baf2758a3642636C89D18F97ED6672D1C` |         | ✔️          |
+
+#### **Further eOracle resources**
+
+* [eOracle docs](https://docs.eoracle.io/)
+* [eOracle GitHub](https://github.com/eoracle)
+* [eOracle Price Feed Integration Guide](https://eoracle.gitbook.io/eoracle/price-feeds/integration-guide)
