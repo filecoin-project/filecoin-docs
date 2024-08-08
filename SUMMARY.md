@@ -129,7 +129,7 @@
 * [Advanced](smart-contracts/advanced/README.md)
   * [Wrapped FIL](smart-contracts/advanced/wrapped-fil.md)
   * [Oracles](smart-contracts/advanced/oracles.md)
-  * [Multicall3](smart-contracts/advanced/multicall3.md)
+  * [Multicall](smart-contracts/advanced/multicall.md)
   * [Cross-chain bridges](smart-contracts/advanced/cross-chain-bridges.md)
   * [Aggregated deal-making](smart-contracts/advanced/aggregated-deal-making.md)
 
