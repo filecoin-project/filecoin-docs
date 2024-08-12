@@ -6,7 +6,7 @@ description: >-
 
 # Verified deals
 
-Filecoin aims to be a decentralized storage network for humanity’s essential information. To achieve this, it’s crucial to add valuable data to the network. Filecoin Plus (Fil+) is a social trust program encouraging storage providers to store data in _verified deals_. A deal becomes _verified_ after the data owner (client) completes a verification process, where community _notaries_ assess the client’s use of Filecoin to determine its relevance and value to the Filecoin mission: storing and preserving humanity’s vital data. Notaries conduct due diligence by questioning clients and building reasonable confidence in their trustworthiness and use case.
+Filecoin aims to be a decentralized storage network for humanity’s essential information. To achieve this, it’s crucial to add valuable data to the network. Filecoin Plus is a social trust program encouraging storage providers to store data in _verified deals_. A deal becomes _verified_ after the data owner (client) completes a verification process, where community _allocators_ assess the client’s use of Filecoin to determine its relevance and value to the Filecoin mission: storing and preserving humanity’s vital data. Allocators conduct due diligence by questioning clients and building reasonable confidence in their trustworthiness and use case.
 
 ## DataCap
 
