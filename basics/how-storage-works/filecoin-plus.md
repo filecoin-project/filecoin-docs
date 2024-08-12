@@ -1,32 +1,32 @@
 ---
 description: >-
-  Learn how the Filecoin+ program works, how DataCap is obtained and used by clients, and how allocators verify that the data clients want to store with a Filecoin storage provider is useful.
+  Learn how the Filecoin Plus program works, how DataCap is obtained and used by clients, and how allocators verify that the data clients want to store with a Filecoin storage provider is useful.
 ---
 
-# Filecoin+
+# Filecoin Plus
 
-## What is Filecoin+?
+## What is Filecoin Plus?
 
-The goal of the Filecoin+ program is to increase the amount of useful data stored with storage providers by clients on the Filecoin network.
+The goal of the Filecoin Plus program is to increase the amount of useful data stored with storage providers by clients on the Filecoin network.
 
 In short, this is achieved by appointing allocators responsible for assigning DataCap tokens to clients that are vetted by the allocator as trusted parties storing useful data.  Clients then pay DataCap to storage providers as part of a storage deal, which increases a storage provider’s probability of earning block rewards. A full description of this mechanism is described below.
 
-Filecoin+ creates demand on the Filecoin network, ensuring the datasets stored on the network are legitimate and useful to either the clients, or a third party.  
+Filecoin Plus creates demand on the Filecoin network, ensuring the datasets stored on the network are legitimate and useful to either the clients, or a third party.  
 
 ## Storage Providers & DataCap
 
-Filecoin+ introduces two concepts important to interactions on the Filecoin network – DataCap and Quality Adjusted Power (QAP).  
+Filecoin Plus introduces two concepts important to interactions on the Filecoin network – DataCap and Quality Adjusted Power (QAP).  
 
 ### DataCap
 
-DataCap is a token paid to storage providers as part of a deal in which the client and the data they are storing is verified by a Filecoin+ allocator.  Batches of DataCap are granted to allocators by root-key holders, allocators give DataCap to verified clients, and clients pay DataCap to storage providers as part of a deal.  The more DataCap a storage provider ends up with, the higher probability they have to earn block rewards.  The role of each of these participants, and how DataCap is used in a Filecoin+ deal, is described below in the "Filecoin+ Processes & Participants" section.
+DataCap is a token paid to storage providers as part of a deal in which the client and the data they are storing is verified by a Filecoin Plus allocator.  Batches of DataCap are granted to allocators by root-key holders, allocators give DataCap to verified clients, and clients pay DataCap to storage providers as part of a deal.  The more DataCap a storage provider ends up with, the higher probability they have to earn block rewards.  The role of each of these participants, and how DataCap is used in a Filecoin Plus deal, is described below in the "Filecoin Plus Processes & Participants" section.
 
 ### Quality Adjusted Power
 
-Quality Adjusted Power is an assigned rating to a given [sector](https://spec.filecoin.io/systems/filecoin_mining/sector/), the basic unit of storage on the Filecoin network.  Quality Adjusted Power is a function of a number of features of the sector, including, but not limited to, the sector’s size and promised duration,  and whether the sector includes a Filecoin+ deal.  It's clear to the network that a sector includes a Filecoin+ deal if a deal in that sector involves DataCap paid to the storage provider.  The more Filecoin+ verified data the storage provider has in a sector, the higher the Quality-Adjusted Power a storage provider has, which linearly increases the number of votes a miner has in the [Secret Leader Election](https://spec.filecoin.io/algorithms/expected_consensus/), determining which storage provider gets to serve as the verifier for the next block in the blockchain, and thus increasing the probability the storage provider is afforded the opportunity to earn block rewards.  For more details on Quality Adjusted Power, see the [Filecoin specification](https://spec.filecoin.io/systems/filecoin_blockchain/storage_power_consensus/).  
+Quality Adjusted Power is an assigned rating to a given [sector](https://spec.filecoin.io/systems/filecoin_mining/sector/), the basic unit of storage on the Filecoin network.  Quality Adjusted Power is a function of a number of features of the sector, including, but not limited to, the sector’s size and promised duration,  and whether the sector includes a Filecoin+ deal.  It's clear to the network that a sector includes a Filecoin Plus deal if a deal in that sector involves DataCap paid to the storage provider.  The more Filecoin Plus verified data the storage provider has in a sector, the higher the Quality-Adjusted Power a storage provider has, which linearly increases the number of votes a miner has in the [Secret Leader Election](https://spec.filecoin.io/algorithms/expected_consensus/), determining which storage provider gets to serve as the verifier for the next block in the blockchain, and thus increasing the probability the storage provider is afforded the opportunity to earn block rewards.  For more details on Quality Adjusted Power, see the [Filecoin specification](https://spec.filecoin.io/systems/filecoin_blockchain/storage_power_consensus/).  
 
 [!IMPORTANT]
-There is a common misconception that a Filecoin+ deal increases the miner’s reward paid to a Filecoin storage provider by a factor of ten.  This is not true, Filecoin+ does not increase the amount of block rewards available to storage providers.  Including Filecoin+ deals in a sector increases the Quality Adjusted Power of a storage provider, which increases the probability a storage provider is selected as the block verifier for the next block on the Filecoin blockchain, and thus increases the probability they earn block rewards.  
+There is a common misconception that a Filecoin Plus deal increases the miner’s reward paid to a Filecoin storage provider by a factor of ten.  This is not true, Filecoin+ does not increase the amount of block rewards available to storage providers.  Including Filecoin Plus deals in a sector increases the Quality Adjusted Power of a storage provider, which increases the probability a storage provider is selected as the block verifier for the next block on the Filecoin blockchain, and thus increases the probability they earn block rewards.  
 
 Consider first a network with ten storage providers. Initially, each storage provider has an equal 10% probability of winning available block rewards in a given period:
 
@@ -42,7 +42,7 @@ Incentives for storage providers to accept verified deals is strongest initially
 
 ![filecoinplus3](https://github.com/filecoin-project/filecoin-docs/assets/46801006/a7ec2921-ea7c-4c0b-94d8-94f8eb5a2824)
 
-As seen in the diagrams above, Filecoin+ increases the collateral requirements needed by a storage provider.  As a higher percentage of storage providers include verified deals in their sectors, the collateral needed by each storage provider will increase.  To learn more about storage provider collateral, see [this link](https://docs.filecoin.io/storage-providers/filecoin-economics/fil-collateral).  
+As seen in the diagrams above, Filecoin Plus increases the collateral requirements needed by a storage provider.  As a higher percentage of storage providers include verified deals in their sectors, the collateral needed by each storage provider will increase.  To learn more about storage provider collateral, see [this link](https://docs.filecoin.io/storage-providers/filecoin-economics/fil-collateral).  
 
 ## Filecoin+ Processes & Participants
 
