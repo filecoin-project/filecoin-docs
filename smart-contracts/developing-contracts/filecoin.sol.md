@@ -9,7 +9,7 @@ description: >-
 The Filecoin Solidity library allows developers to:
 
 * Interact with Filecoin built-in actors.
-* Simplify the interaction with the Filecoin storage market, miner actors, the verified registry for FIL+ automation, and more.
+* Simplify the interaction with the Filecoin storage market, miner actors, the verified registry for Filecoin Plus automation, and more.
 * Filecoin-specific data types such as `FilAddress`, `FilActorID`, `CIDs`, storage deals, and more.
 * OpenZeppelin-like utilities specific to Filecoin.
 * CBOR serialization and deserialization for parameters and return data.

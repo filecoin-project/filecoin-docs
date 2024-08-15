@@ -114,7 +114,7 @@ The `StoragePowerActor` is responsible for keeping track of the storage power al
 
 #### VerifiedRegistryActor
 
-The `VerifiedRegistryActor` is responsible for managing Filecoin Plus (Fil+) clients. This actor can add a verified client to the Fil+ program, remove and reclaim expired DataCap allocations, and manage claims. This actor does not interact directly with the FVM.
+The `VerifiedRegistryActor` is responsible for managing Filecoin Plus clients. This actor can add a verified client to the Filecoin Plus program, remove and reclaim expired DataCap allocations, and manage claims. This actor does not interact directly with the FVM.
 
 #### SystemActor
 

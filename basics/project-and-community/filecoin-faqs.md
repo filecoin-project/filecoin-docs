@@ -141,7 +141,7 @@ There’s a pretty large design space here, and we can do a bunch of different t
 
 #### Who will be selected to be verifiers to verify clients on the network?
 
-Notaries, selected through an application process, serve as fiduciaries for the Filecoin Network and are responsible for allocating DataCap to clients with valuable storage use cases.
+Allocators, selected through an application process, serve as fiduciaries for the Filecoin network and are responsible for allocating DataCap to clients with valuable storage use cases.
 
 See [Filecoin Plus](../how-storage-works/filecoin-plus.md).
 

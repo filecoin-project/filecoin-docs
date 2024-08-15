@@ -6,7 +6,7 @@ description: >-
 
 # Filecoin programs and tools
 
-Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know\_your\_customer)) to create verified deals for [Fil+](../../basics/how-storage-works/filecoin-plus.md), there are also programs and platforms that make it easier for storage providers to receive verified deals.
+Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know\_your\_customer)) to create verified deals for [Filecoin Plus](../../basics/how-storage-works/filecoin-plus.md), there are also programs and platforms that make it easier for storage providers to receive verified deals.
 
 ## [Web3.storage](https://web3.storage/)
 
