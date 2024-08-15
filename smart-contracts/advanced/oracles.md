@@ -81,7 +81,7 @@ Tellor’s smart contracts are live on the Filecoin Mainnet and Calibration test
 
 ### [EOracle](https://www.eoracle.io/)
 
-EOracle is an oracle built on Eigenlayer, benefitting from cryptoeconomic security supported by Ethereum validators. eOracle provides on-chain native price feeds that require no permissions for integration. Users can develop their own oracle using the [ODK](https://eoracle.gitbook.io/eoracle/ovs-developer-guides/eoracle-odk-oracle-development-kit), or use the existing price feeds listed below.
+eOracle extends Ethereum's trust to connect decentralized applications with off-chain data as the largest restaking protocol backed by over $5B of stake ETH through 120,000 stakers and over 110 validators distributed around the globe. eOracle provides reliable and secure on-chain price feeds, as well as custom data feeds.
 
 **EOracle Smart Contracts**
 
