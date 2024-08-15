@@ -1,7 +1,6 @@
 ---
 description: >-
-  Multicall allows you to aggregate multiple contract reads into a single JSON-RPC request,
-  and execute multiple state-changing calls in a single transaction on the FVM.
+  Multicall allows you to aggregate multiple contract reads into a single JSON-RPC request, and execute multiple state-changing calls in a single transaction on the FVM.
 ---
 
 # Multicall3
