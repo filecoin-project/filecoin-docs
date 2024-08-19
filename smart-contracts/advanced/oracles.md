@@ -59,7 +59,7 @@ Tellor supports a price feed oracle and a data oracle for the Filecoin network. 
 
 **Tellor smart contracts**
 
-Teller’s smart contracts are live on the Filecoin Mainnet and Calibration testnet.
+Tellor’s smart contracts are live on the Filecoin Mainnet and Calibration testnet.
 
 | Name             | Address                                      | Mainnet | Calibration |
 | ---------------- | -------------------------------------------- | ------- | ----------- |
@@ -77,3 +77,35 @@ Teller’s smart contracts are live on the Filecoin Mainnet and Calibration test
 * [Tellor docs](https://docs.tellor.io/)
 * [Filecoin Storage Insurance Contract](https://github.com/tellor-io/filecoin-query-insurance-impl/tree/main)
 * [Getting Tellor Data for any use case](https://www.youtube.com/watch?v=AQIDqTLguyI) - FVM Dataverse Hackathon
+
+
+### [EOracle](https://www.eoracle.io/)
+
+eOracle extends Ethereum's trust to connect decentralized applications with off-chain data as the largest restaking protocol backed by over $5B of stake ETH through 120,000 stakers and over 110 validators distributed around the globe. eOracle provides reliable and secure on-chain price feeds, as well as custom data feeds.
+
+**EOracle Smart Contracts**
+
+EOracle's smart contracts are live on the Filecoin Calibration testnet.
+
+| Name             | Address                                      | Mainnet | Calibration |
+| ---------------- | -------------------------------------------- | ------- | ----------- |
+| EOFeedManager      | `0x4BCafd5f3fB32221BaEAF6B986d1449772885D1E` |       | ✔️            |
+| EOFeedAdapter - AUD/USD   | `0x6243357B9241Fe9C3BAfbA79DeD3300a855113FA` |         | ✔️          |
+| EOFeedAdapter - BTC/USD   | `0x705256d9B37950628F97A1a8De7Ab557345a0A80` |         | ✔️          |
+| EOFeedAdapter - ETH/USD   | `0x2bada837140A310f4A1d9D0e7fab114da6b87031` |         | ✔️          |
+| EOFeedAdapter - EUR/USD   | `0x7C01e105B9c3772Bc72ef55F450b9B96f81EDE82` |         | ✔️          |
+| EOFeedAdapter - FIL/USD   | `0x335C47CF754cf7f5d6DF78EF9fAb065aa5988D89` |         | ✔️          |
+| EOFeedAdapter - GBP/USD   | `0x2Af9bb239936aC3e5a35CC804CD09a8CF3B589e7` |         | ✔️          |
+| EOFeedAdapter - LINK/USD   | `0x7E8326Fd75aCa5A7dF43E999A1119c392EDFC93a` |         | ✔️          |
+| EOFeedAdapter - SOL/USD   | `0x7E3e2953d69890f6B7E5831144986113E9199593` |         | ✔️          |
+| EOFeedAdapter - USDT/USD   | `0x30f43F80279b7BB1b9206896DB90Aabf69494c16` |         | ✔️          |
+| EOFeedAdapter - XAU/USD   | `0x8609B3087D473cD2B6bc7674dD54FF13c909027f` |         | ✔️          |
+| EOFeedAdapter - sFRAX/FRAX   | `0xd56f6CC400f3bFC77faeC4bBb1e0400c6A26A925` |         | ✔️          |
+| EOFeedAdapter - sfrxETH/frxETH   | `0x626A1Cb309289Eb542710D6093C6341562769983` |         | ✔️          |
+| EOFeedAdapter - stETH/ETH   | `0x0834Bb4baf2758a3642636C89D18F97ED6672D1C` |         | ✔️          |
+
+#### **Further eOracle resources**
+
+* [eOracle docs](https://eoracle.gitbook.io/eoracle)
+* [eOracle GitHub](https://github.com/eoracle)
+* [eOracle Price Feed Integration Guide](https://eoracle.gitbook.io/eoracle/price-feeds/integration-guide)
