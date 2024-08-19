@@ -2,7 +2,7 @@
 description: >-
   Snap Deals are a way to convert Committed Capacity sectors (that store no real
   data) into data sectors to be used for storing actual data and potentially
-  FIL+ data.
+  Filecoin Plus data.
 ---
 
 # Snap deals
@@ -18,4 +18,4 @@ There are two main reasons why a storage provider could be doing Snap Deals, als
 
 Snapping up sectors with snap deals puts a lot less stress on the storage provider’s infrastructure. The only task that is executed from the [sealing pipeline](../architecture/sealing-pipeline.md) is the replica-update and prove-replica-update phase, which is similar to the PC2 process. The CPU-intensive PreCommit 1 phase is not required in this process.
 
-Do not forget to provide the collateral funds when snapping up a verified deal. The same volume requires more collateral when it counts as FIL+ data, namely 10x the collateral compared to raw storage power.
+Do not forget to provide the collateral funds when snapping up a verified deal. The same volume requires more collateral when it counts as Filecoin Plus data, namely 10x the collateral compared to raw storage power.
