@@ -14,5 +14,5 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v1.8.0
         with:
-          args: --accept 200,429,403 '**/*.md'
+          args: --accept 200,429,403 --timeout 60 --retry-wait-time 15 --max-retries 10 '**/*.md'
           fail: true
