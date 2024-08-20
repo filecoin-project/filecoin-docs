@@ -79,13 +79,13 @@ Tellor’s smart contracts are live on the Filecoin Mainnet and Calibration test
 * [Getting Tellor Data for any use case](https://www.youtube.com/watch?v=AQIDqTLguyI) - FVM Dataverse Hackathon
 
 
-### [EOracle](https://www.eoracle.io/)
+### [eOracle](https://www.eoracle.io/)
 
 eOracle extends Ethereum's trust to connect decentralized applications with off-chain data as the largest restaking protocol backed by over $5B of stake ETH through 120,000 stakers and over 110 validators distributed around the globe. eOracle provides reliable and secure on-chain price feeds, as well as custom data feeds.
 
-**EOracle Smart Contracts**
+**eOracle Smart Contracts**
 
-EOracle's smart contracts are live on the Filecoin Calibration testnet.
+eOracle's smart contracts are live on the Filecoin Calibration testnet.
 
 | Name             | Address                                      | Mainnet | Calibration |
 | ---------------- | -------------------------------------------- | ------- | ----------- |
