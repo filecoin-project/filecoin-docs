@@ -37,3 +37,7 @@ As you step into the vibrant realm of the mainnet, it’s time to supercharge yo
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Discover the world of verified deals and tools
 
 Within the Filecoin network there are many [programs and tools](../filecoin-deals/filecoin-programs.md) designed to enhance your storage provider setup. Uncover the power of these tools as you dive into the documentation, gaining valuable insights and expanding your knowledge. Make the best use of data programs on your path to success.
+
+## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> All about deal renewals
+
+Placeholder text here and link to a dedicated page on this topic.
