@@ -25,7 +25,6 @@ Safe is a popular smart account infrastructure provider that allows users to man
 
 **Note**: The Safe.global web UI does not currently support Filecoin. Users can only interact with Safe on the Filecoin network using the CLI and Filecoin explorers.
 
-
 **Safe Smart Contracts**
 
 Gnosis Safe’s smart contracts are live on the Filecoin Mainnet and Calibration testnet.
