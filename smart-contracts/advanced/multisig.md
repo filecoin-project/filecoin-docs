@@ -23,6 +23,9 @@ There are several multisig wallet implementations built upon the FVM. Builders c
 
 Safe is a popular smart account infrastructure provider that allows users to manage their digital assets securely. It is formally verified, secures over $100B in assets, and is used by more than 200 projects.
 
+**Note**: The Safe.global web UI does not currently support Filecoin. Users can only interact with Safe on the Filecoin network using the CLI and Filecoin explorers.
+
+
 **Safe Smart Contracts**
 
 Gnosis Safe’s smart contracts are live on the Filecoin Mainnet and Calibration testnet.
