@@ -40,4 +40,4 @@ Within the Filecoin network there are many [programs and tools](../filecoin-deal
 
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> All about deal renewals
 
-Placeholder text here and link to a dedicated page on this topic.
+As a storage provider, you play a passive role in renewing expiring deals. Although it is common for clients to initiate the renewal, it is important to know how the process work to maintain great user experience and even assist clients in the process. Start your [Deal Renewal 101](../filecoin-deals/deal-renewal-101.md) journey here.
