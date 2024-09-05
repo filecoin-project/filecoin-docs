@@ -18,9 +18,9 @@ description: >-
 ### Node implementations
 
 * [**Lotus**](https://github.com/filecoin-project/lotus) - _**Recommended**_ most advanced implementation and [security audited](https://spec.filecoin.io/#section-intro.implementations-status), in GoLang.
-* Other implementations (In progress):
-  * [Forest](https://github.com/ChainSafe/forest) - Rust
-  * [Venus](https://github.com/filecoin-project/venus) (formerly `go-filecoin`) - also in GoLang ([Venus documentation](https://venus.filecoin.io/)).
+* Other implementations:
+  * [Venus](https://github.com/filecoin-project/venus) - also in GoLang ([Venus documentation](https://venus.filecoin.io/)).
+  * [Forest](https://github.com/ChainSafe/forest) - Rust.
 * Lotus Docker Hub Images (unofficial):
   * [`glif/lotus`](https://github.com/glifio/filecoin-docker)
   * [`textile/lotus`](https://hub.docker.com/r/textile/lotus) 
