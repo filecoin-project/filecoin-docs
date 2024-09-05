@@ -146,7 +146,6 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Storage provider tools
 
-* [Bidbot](https://github.com/textileio/bidbot) - A Filecoin Network sidecar to bid in storage deal auctions.
 * [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - Prometheus, Grafana and Python monitoring dashboard.
 
 ### Storage client and miner programs
