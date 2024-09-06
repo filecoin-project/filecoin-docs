@@ -50,7 +50,7 @@ This method supports all Filecoin address types:
 
 Requirements:
 
-- For f1/f2/f3 addresses, they must be instantiated on-chain, as f0 ID addresses are only assigned to actors when they are created on-chain.
+- For `f1/f2/f3` addresses, they must be instantiated on-chain, as `f0` ID addresses are only assigned to actors when they are created on-chain.
   The simplest way to instantiate an address on chain is to send a transaction to the address.
 
 Parameters:
