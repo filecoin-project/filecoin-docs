@@ -39,7 +39,7 @@ FilecoinAddressToEthAddress converts any Filecoin address to an EthAddress.
 This method supports all Filecoin address types:
 
 - `f0` and `f4` addresses: Converted directly.
-- f1/f2/f3 addresses: First converted to their corresponding f0 ID address, then to an EthAddress.
+- `f1/f2/f3` addresses: First converted to their corresponding `f0` ID address, then to an `0x` EthAddress.
 
 > **Note:**
 > 
