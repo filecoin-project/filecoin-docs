@@ -32,6 +32,59 @@ Inputs:
 
 Response: `"f01234"`
 
+## FilecoinAddressToEthAddress
+
+FilecoinAddressToEthAddress converts any Filecoin address to an EthAddress.
+
+This method supports all Filecoin address types:
+
+- `f0` and `f4` addresses: Converted directly.
+- `f1/f2/f3` addresses: First converted to their corresponding `f0` ID address, then to an `0x` EthAddress.
+
+> **Note:**
+> 
+> f0 ID addresses are not permanent and can be affected by chain reorganizations. To account for this,
+> the API includes a `blkNum` parameter, which specifies the block number that is used to determine the tipset state to use for converting an
+> f1/f2/f3 address to an f0 address. This parameter functions similarly to the `blkNum` parameter in the existing `EthGetBlockByNumber` API.
+> See [Alchemy Docs - eth_getBlockByNumber](https://docs.alchemy.com/reference/eth-getblockbynumber) for more details.
+
+Requirements:
+
+- For `f1/f2/f3` addresses, they must be instantiated on-chain, as `f0` ID addresses are only assigned to actors when they are created on-chain.
+  The simplest way to instantiate an address on chain is to send a transaction to the address.
+
+Parameters:
+
+- filecoinAddress: The Filecoin address to convert.
+- blkNum: The block number or state for the conversion. Defaults to "finalized" for maximum safety.
+  Possible values: "pending", "latest", "finalized", "safe", or a specific block number represented as hex.
+
+Perms: read
+
+Input:
+
+```json
+["t410fghja63ghyzd54cbswfapglsutx5e64xnm7mazwi"]
+```
+
+Response:
+
+```json
+"0x31d20f6cc7c647de0832b140f32e549dfa4f72ed"
+```
+
+Input:
+
+```json
+["t15xwdubazj7aft6ylmiw54fa27zyyl3rpc6olgcy", "safe"]
+```
+
+Response:
+
+```json
+"0xff00000000000000000000000000000000000064"
+```
+
 ## EthBlockNumber
 
 EthBlockNumber returns the height of the latest (heaviest) TipSet
@@ -48,7 +101,7 @@ Perms: read
 
 Inputs:
 
-```json
+```jsona
 [
   {
     "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",
