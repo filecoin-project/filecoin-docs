@@ -61,20 +61,28 @@ Parameters:
 
 Perms: read
 
-Inputs:
+Input:
 
 ```json
-["f410", "finalized"]
-
-["f1", "safe"]
+["t410fghja63ghyzd54cbswfapglsutx5e64xnm7mazwi"]
 ```
 
 Response:
 
 ```json
-"0x5cbeecf99d3fdb3f25e309cc264f240bb0664031"
+"0x31d20f6cc7c647de0832b140f32e549dfa4f72ed"
+```
 
-"0x1234567890abcdef1234567890abcdef12345678"
+Input:
+
+```json
+["t15xwdubazj7aft6ylmiw54fa27zyyl3rpc6olgcy", "safe"]
+```
+
+Response:
+
+```json
+"0xff00000000000000000000000000000000000064"
 ```
 
 ## EthBlockNumber
