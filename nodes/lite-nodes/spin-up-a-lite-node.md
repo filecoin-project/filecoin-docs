@@ -44,7 +44,7 @@ To build the lite-node, you’ll need some specific software. Run the following 
     echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
     ```
 
-3.  [Install Rust](https://www.rust-lang.org/tools/install) with standard installation and source the `~/.cargo/env` config file:
+3.  [Install Rust](https://www.rust-lang.org/tools/install), choose the standard installation option, and source the `~/.cargo/env` config file:
 
     ```sh
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -390,7 +390,7 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 
     The result field is the public key for our address. The private key is stored within our lite-node.
 
-3.  Set the new address as the default wallet for our lite-node, reminder to replace the Bearer token with our auth key `eyJhbGc...` and the `"params"` value with the wallet address returned from the previous command:
+3.  Set the new address as the default wallet for our lite-node, reminder to replace the Bearer token with our auth key `eyJhbGc...` and the `"params"` value with the wallet address, `f1vuc4...`, returned from the previous command:
 
     ```shell
     curl -X POST '127.0.0.1:1234/rpc/v0' \
