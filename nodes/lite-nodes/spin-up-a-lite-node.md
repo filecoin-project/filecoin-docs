@@ -67,16 +67,16 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
     cd lotus/
     ```
 
-2.  Switch to the branch representing the network you want to use. Mainnet always uses the `releases` branch:
+2.  Checkout the latest release branch. First retrieve the latest release version:
 
     ```sh
-    git checkout releases
+    git tag -l 'v*' | grep -v 'rc' | sort -V -r | head -n 1
     ```
 
-    Or you can checkout to the Calibration testnet release using the `ntwk/calibration` branch:
+    Using the value returned from the previous command, i.e. v1.29.0, and checkout that branch:
 
     ```sh
-    git checkout ntwk/calibration
+    git checkout v1.29.0
     ```
 
 3. Done! You can move on to the [Build](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary) section.
@@ -89,16 +89,16 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
     cd lotus
     ```
 
-2.  Switch to the branch representing the network you want to use. Mainnet always uses the `releases` branch:
+2.  Checkout the latest release branch. First retrieve the latest release version:
 
     ```sh
-    git checkout releases
+    git tag -l 'v*' | grep -v 'rc' | sort -V -r | head -n 1
     ```
 
-    Or you can checkout to the Calibration testnet release using the `ntwk/calibration` branch:
+    Using the value returned from the previous command, i.e. v1.29.0, and checkout that branch:
 
     ```sh
-    git checkout ntwk/calibration
+    git checkout v1.29.0
     ```
 
 3.  Create the necessary environment variables to allow Lotus to run on M1 architecture:
@@ -119,16 +119,16 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
     cd lotus
     ```
 
-2.  Switch to the branch representing the network you want to use. Mainnet always uses the `releases` branch:
+2.  Checkout the latest release branch. First retrieve the latest release version:
 
     ```sh
-    git checkout releases
+    git tag -l 'v*' | grep -v 'rc' | sort -V -r | head -n 1
     ```
 
-    Or you can checkout to the Calibration testnet release using the `ntwk/calibration` branch:
+    Using the value returned from the previous command, i.e. v1.29.0, and checkout that branch:
 
     ```sh
-    git checkout ntwk/calibration
+    git checkout v1.29.0
     ```
 
 3.  If your processor was released later than an AMD Zen or Intel Ice Lake CPU, enable the use of SHA extensions by adding these two environment variables. If in doubt, ignore this command and move on to [the next section](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary).
