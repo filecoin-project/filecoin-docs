@@ -382,21 +382,21 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 
     ```plaintext
     {
+      "id": 1,
       "jsonrpc": "2.0",
-      "result": "t1vuc4eu2wgsdnce2ngygyzuxky3aqijqe7gj5qqa",
-      "id": 1
+      "result": "f1vuc4eu2wgsdnce2ngygyzuxky3aqijqe7gj5qqa"
     }
     ```
 
     The result field is the public key for our address. The private key is stored within our lite-node.
 
-3.  Set the new address as the default wallet for our lite-node:
+3.  Set the new address as the default wallet for our lite-node, reminder to replace the Bearer token with our auth key `eyJhbGc...` and the `"params"` value with the wallet address returned from the previous command:
 
     ```shell
     curl -X POST '127.0.0.1:1234/rpc/v0' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.um-LqY7g-SDOsMheDRbQ9JIaFzus_Pan0J88VQ6ZLVE' \
-    --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.WalletSetDefault","params":["t1vuc4eu2wgsdnce2ngygyzuxky3aqijqe7gj5qqa"]}' \
+    --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.WalletSetDefault","params":["f1vuc4eu2wgsdnce2ngygyzuxky3aqijqe7gj5qqa"]}' \
     | jq 
     ```
 
@@ -404,8 +404,9 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 
     ```plaintext
     {
+      "id": 1,
       "jsonrpc": "2.0",
-      "id": 1
+      "result": null
     }
     ```
     {% endcode %}
