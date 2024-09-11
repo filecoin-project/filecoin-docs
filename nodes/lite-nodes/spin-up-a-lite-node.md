@@ -70,7 +70,7 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
 2.  Checkout the latest release branch. First retrieve the latest release version:
 
     ```sh
-    git tag -l 'v*' | grep -v 'rc' | sort -V -r | head -n 1
+    git tag -l 'v*' | grep -v '-' | sort -V -r | head -n 1
     ```
 
     Using the value returned from the previous command, i.e. v1.29.0, and checkout that branch:
@@ -92,7 +92,7 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
 2.  Checkout the latest release branch. First retrieve the latest release version:
 
     ```sh
-    git tag -l 'v*' | grep -v 'rc' | sort -V -r | head -n 1
+    git tag -l 'v*' | grep -v '-' | sort -V -r | head -n 1
     ```
 
     Using the value returned from the previous command, i.e. v1.29.0, and checkout that branch:
@@ -122,7 +122,7 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
 2.  Checkout the latest release branch. First retrieve the latest release version:
 
     ```sh
-    git tag -l 'v*' | grep -v 'rc' | sort -V -r | head -n 1
+    git tag -l 'v*' | grep -v '-' | sort -V -r | head -n 1
     ```
 
     Using the value returned from the previous command, i.e. v1.29.0, and checkout that branch:
@@ -170,7 +170,7 @@ The last thing we need to do to get our node setup is to build the package. The 
     This will output something like:
 
     ```plaintext
-    lotus version 1.19.1-dev+mainnet+git.94b621dd5
+    lotus version 1.29.0+mainnet+git.1ff3b360b
     ```
 {% endtab %}
 {% tab title="Calibration" %}
@@ -196,7 +196,7 @@ The last thing we need to do to get our node setup is to build the package. The 
     This will output something like:
 
     ```plaintext
-    lotus version 1.19.1-dev+calibrationnet+git.94b621dd5.dirty
+    lotus version 1.29.0+calibnet+git.1ff3b360b
     ```
 
 {% endtab %}
