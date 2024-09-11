@@ -39,8 +39,8 @@ To build the lite-node, you’ll need some specific software. Run the following 
 2.  [Install Go](https://go.dev/doc/install) and add `/usr/local/go/bin` to your `$PATH` variable:
 
     ```sh
-    wget https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
-    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
+    wget https://go.dev/dl/go1.21.7.linux-amd64.tar.gz
+    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.21.7.linux-amd64.tar.gz
     echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
     ```
 
