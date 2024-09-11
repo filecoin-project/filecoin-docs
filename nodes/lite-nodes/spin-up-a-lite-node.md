@@ -24,7 +24,7 @@ To build the lite-node, you’ll need some specific software. Run the following 
 2. Install the following dependencies:
 
     ```sh
-    brew install go bzr jq pkg-config hwloc coreutils rust
+    brew install go jq pkg-config hwloc coreutils rust
     ```
 
 {% endtab %}
@@ -33,7 +33,7 @@ To build the lite-node, you’ll need some specific software. Run the following 
 
     ```sh
     sudo apt update -y
-    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y
+    sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y
     ```
 
 2.  [Install Go](https://go.dev/doc/install) and add `/usr/local/go/bin` to your `$PATH` variable:
