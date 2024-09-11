@@ -44,7 +44,7 @@ To build the lite-node, you’ll need some specific software. Run the following 
     echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
     ```
 
-3.  [Install Rust](https://www.rust-lang.org/tools/install) and source the `~/.cargo/env` config file:
+3.  [Install Rust](https://www.rust-lang.org/tools/install) with standard installation and source the `~/.cargo/env` config file:
 
     ```sh
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
