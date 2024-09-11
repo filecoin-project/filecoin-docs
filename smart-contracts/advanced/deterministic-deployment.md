@@ -68,6 +68,7 @@ By following these steps, you can deploy the factory contract to multiple blockc
     - Deployed by Masa Finance, Starlings lab, and align.network on many blockchains.
     - [Masa Finance](https://www.masa.ai/)
     - [align.network](http://align.network)
+    - [Repository Link](https://github.com/safe-global/safe-singleton-factory)
 
 ### **3. CreateX / xdeployer by pcaversaccio**
 - **Address:** `0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed`
