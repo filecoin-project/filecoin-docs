@@ -211,7 +211,7 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
 1. Create an environment variable called `FULLNODE_API_INFO` and set it to the WebSockets address of the node you want to connect to. At the same time, start the Lotus daemon with the `--lite` tag:
 
     ```shell
-    FULLNODE_API_INFO=wss://wss.mainnet.node.glif.io/apigw/lotus lotus daemon --lite
+    FULLNODE_API_INFO=wss://wss.node.glif.io/apigw/lotus lotus daemon --lite
     ```
 
     This will output something like:
@@ -269,7 +269,7 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
 3. In the same window, restart the lite-node:
 
     ```shell
-    FULLNODE_API_INFO=wss://wss.mainnet.node.glif.io/apigw/lotus lotus daemon --lite
+    FULLNODE_API_INFO=wss://wss.node.glif.io/apigw/lotus lotus daemon --lite
     ```
 
     This will output something like:
