@@ -91,8 +91,11 @@ curl --location --request POST 'https://filfox.info/api/v1/tools/verifyContract'
 
 See below for a list of common success and error codes (and their meanings):
 
+Here is the list of common success and error codes, formatted for clarity:
 
-**Verify ok**
+---
+
+### **Verify ok**
 
 ```json
 {
@@ -104,36 +107,56 @@ See below for a list of common success and error codes (and their meanings):
 }
 ```
 
+**Description:**  
 Your contract is now verified.
-​
-**Source files not found**
+
+---
+
+### **Source files not found**
 
 ```json
 {
   "success": false,
-  "errorCode": 1,
+  "errorCode": 1
 }
 ```
 
+**Description:**  
 No source file was provided.
-​
-**Contract initcode not found**
+
+---
+
+### **Contract initcode not found**
+
+```json
 {
   "success": false,
-  "errorCode": 2,
+  "errorCode": 2
 }
+```
 
+**Description:**  
 Please contact Filfox on Telegram/Slack if you encounter this error.
-​
-**Load remote compiler failed**
+
+---
+
+### **Load remote compiler failed**
+
+```json
 {
   "success": false,
-  "errorCode": 3,
+  "errorCode": 3
 }
+```
 
+**Description:**  
 The compiler version string must be in the long format. For example, if you would like to use version v0.7.6, you need to include the commit hash of the release like this: `v0.7.6+commit.7338295f`. Please try again later with the correct compiler version string if you encounter this error.
-​
-**Verify failed**
+
+---
+
+### **Verify failed**
+
+```json
 {
   "success": false,
   "errorCode": 4,
@@ -141,34 +164,56 @@ The compiler version string must be in the long format. For example, if you woul
   "initCode": "6080604052348015610010...",
   "byteCode": "6080604052348015610010..."
 }
+```
 
-Compiled bytecode doesn't match the contract's initcode, please make sure all source files and compiler configs are correct.
-​
-**Unsupported language**
+**Description:**  
+Compiled bytecode doesn't match the contract's initcode. Please make sure all source files and compiler configs are correct.
+
+---
+
+### **Unsupported language**
+
+```json
 {
   "success": false,
-  "errorCode": 5,
+  "errorCode": 5
 }
+```
 
-Only support Solidity for now.
-​
-**Contract already verified**
+**Description:**  
+Only Solidity is supported for now.
+
+---
+
+### **Contract already verified**
+
+```json
 {
   "success": false,
-  "errorCode": 6,
+  "errorCode": 6
 }
+```
 
+**Description:**  
 The contract you are trying to verify has already been verified before.
-​
-**Compilation error**
+
+---
+
+### **Compilation error**
+
+```json
 {
   "success": false,
   "errorCode": 7,
   "errorMsg": "DeclarationError: Identifier not found or not unique..."
 }
+```
 
-There is something wrong with your source files, please fix it and try again.
-​
+**Description:**  
+There is something wrong with your source files. Please fix the issue and try again.
+
+---
+
 #### Via. UI
 
 1. Open Remix:
