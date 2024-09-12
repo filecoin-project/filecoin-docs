@@ -36,12 +36,12 @@ Please note that publicly available hosted endpoints **only guarantee 2000 of th
     When using a lite-node, omit `/rpc/v1` from Glif’s WebSocket address.
 * [Glif documentation](https://hosting.glif.io/)
 
-* ## [GetBlock](https://getblock.io/nodes/fil/)
+## [GetBlock](https://getblock.io/nodes/fil/)
 
 GetBlock offers users access to shared and dedicated nodes with a simple pricing model. Developers can try out their services with a free plan, after which paid options are available for continued access.
 
-HTTPS: https://filecoin.getblock.io
-[GetBlock documentation](https://getblock.io/docs/getblock-explorer/get-started/)
+* HTTPS: https://filecoin.getblock.io
+* [GetBlock documentation](https://getblock.io/docs/getblock-explorer/get-started/)
 
 ## [NOWNodes](https://nownodes.io/)
 
