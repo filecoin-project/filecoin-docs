@@ -22,7 +22,7 @@ The mission of Filecoin Plus is to maximize the amount of useful storage on the 
 Verified clients can onboard data into Filecoin using datacap, which they apply from community-selected allocators. In return for storing verified storage deals, storage providers receive datacap with a 10x boost to their storage power which eventually increases their block rewards as an incentive.
 
 * Datacap: a Datacap token will be allocated to a verified client to spend in the storage deals carrying a 10x deal quality multiplier.
-* Notaries: community-selected notaries govern the program by verifying storage clients and allocating datacap tokens to verified clients.
+* Allocators: community-selected allocators govern the program by verifying storage clients and allocating datacap tokens to verified clients.
 * Verified clients: clients are active network participants with datacap allocation for their data storage.
 
 ## Storage on-ramps
@@ -33,7 +33,10 @@ Storage helpers provide libraries that abstract Filecoin deal-making into simple
 
 Here are some available storage helpers:
 
-* [boost.filecoin.io](https://boost.filecoin.io/)
-* [lighthouse.storage](https://www.lighthouse.storage/)
-* [nft.storage](https://nft.storage/)
-* [web3.storage](https://web3.storage/)
+* [lighthouse.storage](https://www.lighthouse.storage/) - an SDK for builders that includes tools to do storage from dApps.
+* [web3.storage](https://web3.storage/) - easy to use client for accessing decentralized protocols like IPFS and UCAN.
+* [Akave](https://www.akave.ai/) - innovating data management with a decentralized, modular L2 solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces. 
+* [Storacha](https://storacha.network/) - a decentralized hot storage network for data at scale, offering user-owned data with decentralized permissioning, leveraging Filecoin.
+* [Curio](https://curiostorage.org/) - a next-gen platform in the Filecoin ecosystem, streamlining storage provider operations.
+* [boost.filecoin.io](https://boost.filecoin.io/) - a tool for Storage Providers to manage data onboarding and retrieval on the Filecoin network.
+
