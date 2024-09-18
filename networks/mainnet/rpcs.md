@@ -4,7 +4,7 @@ description: Public RPC endpoints are available for the Filecoin mainnet.
 
 # RPCs
 
-[Chainlist](https://chainlist.org/?search=filecoin&testnets=true) provides a dynamically updated list of [available Filecoin - Mainnet RPCs](https://chainlist.org/?search=filecoin&testnets=true).
+[Chainlist](https://chainlist.org/?search=filecoin&testnets=true) provides a dynamically updated list of [available Filecoin - Mainnet RPCs](https://chainlist.org/?search=filecoin&testnets=false).
 
 These endpoints are limited to [read-only Filecoin JSON RPC API calls](../../reference/json-rpc/) including Filecoin Eth RPC methods and [`MPoolPush`](../../reference/json-rpc/mpool.md) for sending already signed messages.
 
