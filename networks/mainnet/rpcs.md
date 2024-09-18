@@ -160,7 +160,7 @@ These endpoints are limited to [read-only Filecoin JSON RPC API calls](../../ref
 
 ## Additional Notes:
 
-*  Glif Nodes offers a [Lotus Lite node](https://lotus.filecoin.io/lotus/install/lotus-lite/) endpoint with the following command:
+*  Glif Nodes offers a [Lotus Lite node](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node) endpoint with the following command:
 
     ```shell
     FULLNODE_API_INFO=wss://wss.node.glif.io/apigw/lotus lotus daemon --lite
