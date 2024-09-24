@@ -69,7 +69,7 @@ Swan is a provider of cross-chain cloud computing solutions. Developers can use 
 
 Swan Cloud provides decentralized cloud computing solutions for Web3 projects by integrating storage, computing, and payment into one suite.
 
-### [Open Panda](https://openpanda.io/)
+### [Open Panda](https://github.com/data-preservation-programs/open-panda)
 
 Open Panda was a platform for data researchers, analysts, students, and enthusiasts to interact with the largest open datasets in the world. Data available through the platform was stored on Filecoin, a decentralized storage network comprised of thousands of independent Storage Providers around the world.
 
