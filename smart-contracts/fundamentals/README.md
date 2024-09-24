@@ -44,9 +44,9 @@ Let’s get building. Choose one of the following APIs. These are all storage he
 
 Examples:
 
-* [Polygon tutorial](https://nftschool.dev/tutorial/mint-nftstorage-polygon/) on NFTschool.dev
-* [Flow tutorial](https://nftschool.dev/tutorial/flow-nft-marketplace/) on NFTschool.dev
-* [Avalanche tutorial](https://nftschool.dev/tutorial/avax-nft/) on NFTschool.dev
+* [Polygon tutorial](https://github.com/protocol/nft-website/blob/main/docs/tutorial/mint-nftstorage-polygon.md)
+* [Flow tutorial](https://github.com/protocol/nft-website/blob/main/docs/tutorial/flow-nft-marketplace.md) 
+* [Avalanche tutorial](https://github.com/protocol/nft-website/blob/main/docs/tutorial/avax-nft.md) 
 * [Using IPFS & Filecoin on Harmony](https://docs.harmony.one/home/developers/tutorials/ipfs-filecoin)
 
 ## Additional resources
