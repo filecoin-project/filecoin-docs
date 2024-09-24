@@ -38,7 +38,7 @@ The “Current Sector Initial Pledge" can be found on blockchain explorers like 
 
 Another cost factor in the network is gas. Storage providers not only pledge collateral for the capacity they announce on-chain. The network also burns FIL in the form of gas fees. Most activity on-chain has some level of gas involved. For storage providers, this is the case for committing sectors.
 
-The gas fees fluctuate over time and can be followed on various websites like [FGas](https://fgas.io/).
+The gas fees fluctuate over time and can be followed on various websites like [Filfox - Gas Statistics](https://filfox.info/en/stats/gas) and [Beryx - Gas Estimator](https://beryx.io/estimate_gas).
 
 ## FIL lending programs
 
