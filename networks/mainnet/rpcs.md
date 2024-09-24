@@ -13,9 +13,9 @@ These endpoints are limited to the read-only [Filecoin JSON RPC API](../../refer
 
 <table>
   <tr>
-    <td rowspan="5">
+    <th rowspan="5">
       <a href="https://api.node.glif.io/">Glif Nodes</a>
-    </td>
+    </th>
     <td>
       HTTPS
     </td>
@@ -56,9 +56,9 @@ These endpoints are limited to the read-only [Filecoin JSON RPC API](../../refer
     </td>
   </tr>
   <tr>
-    <td rowspan="4">
+    <th rowspan="4">
       <a href="https://ankr.com">Ankr</a>
-    </td>
+    </th>
     <td>
       HTTPS
     </td>
@@ -91,9 +91,9 @@ These endpoints are limited to the read-only [Filecoin JSON RPC API](../../refer
     </td>
   </tr>  
   <tr>
-    <td rowspan="3">
+    <th rowspan="3">
       <a href="https://cloud.chainup.com/">Chainup Cloud</a>
-    </td>
+    </th>
     <td>
       HTTPS
     </td>
@@ -118,14 +118,22 @@ These endpoints are limited to the read-only [Filecoin JSON RPC API](../../refer
     </td>
   </tr>
   <tr>
-    <td rowspan="2">
+    <th rowspan="3">
       <a href="https://nownodes.io/">NOWNodes</a>
-    </td>
+    </th>
     <td>
       HTTPS
     </td>
     <td>
-      <code>https://fil.nownodes.io</code> (Free for 1 month with <a href="https://nownodes.io/pricing">signup</a>)
+      <code>https://fil.nownodes.io</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Terms
+    </td>
+    <td>
+      Free for 1 month with <a href="https://nownodes.io/pricing">signup</a>
     </td>
   </tr>
   <tr>
@@ -137,14 +145,22 @@ These endpoints are limited to the read-only [Filecoin JSON RPC API](../../refer
     </td>
   </tr>
   <tr>
-    <td rowspan="2">
+    <th rowspan="3">
       <a href="https://getblock.io/nodes/fil">GetBlock</a>
-    </td>
+    </th>
     <td>
       HTTPS
     </td>
     <td>
-      <code>https://filecoin.getblock.io</code> (Free with <a href="https://getblock.io/nodes/fil/">signup</a>)
+      <code>https://filecoin.getblock.io</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Terms
+    </td>
+    <td>
+      Free with <a href="https://getblock.io/nodes/fil/">signup</a>
     </td>
   </tr>
   <tr>
