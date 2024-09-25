@@ -37,3 +37,7 @@ As you step into the vibrant realm of the mainnet, it’s time to supercharge yo
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Discover the world of verified deals and tools
 
 Within the Filecoin network there are many [programs and tools](../filecoin-deals/filecoin-programs.md) designed to enhance your storage provider setup. Uncover the power of these tools as you dive into the documentation, gaining valuable insights and expanding your knowledge. Make the best use of data programs on your path to success.
+
+## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> All about deal renewals
+
+As a storage provider, you play a passive role in renewing expiring deals. Although it is common for clients to initiate the renewal, it is important to know how the process work to maintain great user experience and even assist clients in the process. Start your [Deal Renewal 101](../filecoin-deals/deal-renewal-101.md) journey here.
