@@ -3,7 +3,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blueviolet?style=for-the-badge)](https://protocol.ai/blog/announcing-the-permissive-license-stack/)
 [![Website status](https://img.shields.io/website.svg?style=for-the-badge&url=https%3A%2F%2Fdocs.filecoin.io)](https://docs.filecoin.io/)
 [![Backlog](https://img.shields.io/badge/backlog-Updated-blue?style=for-the-badge)](https://github.com/orgs/filecoin-project/projects/103/views/1)
-[![Check Links](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml/badge.svg)](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml)
+[![Check Links](https://img.shields.io/github/actions/workflow/status/filecoin-project/filecoin-docs/check-external-links.yml?style=for-the-badge&label=External%20link%20checker)](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml)
 
 <picture align=center>
     <source media="(prefers-color-scheme: dark)" srcset="https://bafybeiaqdbd5zbl55x5vjmkwpjhqapt3ks3q4ykaclqkajhsdwyzlbz3g4.ipfs.w3s.link/Filecoin-logo-blue-white.svg">
