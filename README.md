@@ -3,7 +3,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blueviolet?style=for-the-badge)](https://protocol.ai/blog/announcing-the-permissive-license-stack/)
 [![Website status](https://img.shields.io/website.svg?style=for-the-badge&url=https%3A%2F%2Fdocs.filecoin.io)](https://docs.filecoin.io/)
 [![Backlog](https://img.shields.io/badge/backlog-Updated-blue?style=for-the-badge)](https://github.com/orgs/filecoin-project/projects/103/views/1)
-![Link Checker](https://img.shields.io/github/actions/workflow/status/filecoin-project/filecoin-docs/check-external-links.yml?style=for-the-badge&label=External%20link%20checker)
+[![Check Links](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml/badge.svg)](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml)
 
 <picture align=center>
     <source media="(prefers-color-scheme: dark)" srcset="https://bafybeiaqdbd5zbl55x5vjmkwpjhqapt3ks3q4ykaclqkajhsdwyzlbz3g4.ipfs.w3s.link/Filecoin-logo-blue-white.svg">
@@ -13,13 +13,14 @@
 
 </div>
 
-## Table of contents
+## Table of contents <!-- omit in toc -->
 
 - [About this repo](#about-this-repo)
 - [Contributing](#contributing)
+  - [Link checking](#link-checking)
 - [Issues](#issues)
-    - [Backlog](#backlog)
-    - [Priority](#priority)
+  - [Backlog](#backlog)
+  - [Priority](#priority)
 - [License](#license)
 
 ## About this repo
@@ -29,6 +30,10 @@ This repository manages the documentation for the [Filecoin network](https://fil
 ## Contributing
 
 Want to help out? Pull requests (PRs) are always welcome! If you want to help out but aren't sure where to start, check out the [issues board](https://github.com/filecoin-project/filecoin-docs/issues).
+
+### Link checking
+
+Links are checked using [lychee-action](https://github.com/lycheeverse/lychee-action) as confirugred by [check-external-links.yml](.github/workflows/check-external-links.yml).  Working links are required before merging.  If you have a link that should be excluded from checking use [`.lycheeignore`](https://github.com/lycheeverse/lychee-action?tab=readme-ov-file#excluding-links-from-getting-checked) 
 
 ## Issues 
 
