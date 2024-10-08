@@ -119,7 +119,7 @@ To create a task that runs your Web3 Function every minute, visit:
 ✨  Done in 3.56s.
 ```
 
-Finally, go to the [Gelato App](https://app.gelato.app), create a new task, decide on the trigger, and input the CID.
+Finally, go to the [Gelato App](https://app.gelato.network), create a new task, decide on the trigger, and input the CID.
 
 For a detailed guide on creating and deploying Web3 Functions, including setting up your development environment, triggers, and security configurations, refer to the full developer guide [here](https://docs.gelato.network/web3-services/web3-functions/quick-start/writing-typescript-functions).
 
