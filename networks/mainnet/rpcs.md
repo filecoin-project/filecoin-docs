@@ -12,11 +12,11 @@ These endpoints are limited to the read-only [Filecoin JSON RPC API](../../refer
 
 Provider | HTTPS endpoint | WSS endpoint | Docs | API Support
 -- | -- | -- | -- | --
-[Glif Nodes](https://api.node.glif.io/) | https://api.node.glif.io/rpc/v1 | wss://wss.node.glif.io/apigw/lotus/rpc/v1 | [Glif Nodes - Docs](https://api.node.glif.io/) | All Filecoin and Eth JSON RPC methods including MPoolPush
-[Ankr](https://ankr.com/) | https://rpc.ankr.com/filecoin | By request at: https://www.ankr.com/rpc/filecoin | [Ankr Docs - Filecoin](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin) | All Filecoin and Eth JSON RPC methods including MPoolPush
-[Chainup Cloud](https://cloud.chainup.com/) | https://filecoin.chainup.net/rpc/v1 | wss://filecoin.chainup.net/rpc/v1 | [Chainup Cloud Docs - Filecoin](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis) |  
-[NOWNodes](https://nownodes.io/) | https://fil.nownodes.io (Free for 1 month with signup) |   | [NOWNodes - Docs](https://documenter.getpostman.com/view/13630829/TVmFkLwy) |  
-[GetBlock](https://getblock.io/nodes/fil) | https://filecoin.getblock.io (Free with signup) |   | [GetBlock - Docs](https://getblock.io/docs/getblock-explorer/get-started/) |  
+[Glif Nodes](https://api.node.glif.io/) | `https://api.node.glif.io/rpc/v1` | `wss://wss.node.glif.io/apigw/lotus/rpc/v1` | [Glif Nodes - Docs](https://api.node.glif.io/) | All Filecoin and Eth JSON RPC methods including MPoolPush
+[Ankr](https://ankr.com/) | `https://rpc.ankr.com/filecoin` | By request at: https://www.ankr.com/rpc/filecoin | [Ankr Docs - Filecoin](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin) | All Filecoin and Eth JSON RPC methods including MPoolPush
+[Chainup Cloud](https://cloud.chainup.com/) | `https://filecoin.chainup.net/rpc/v1` | `wss://filecoin.chainup.net/rpc/v1` | [Chainup Cloud Docs - Filecoin](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis) |  
+[NOWNodes](https://nownodes.io/) | `https://fil.nownodes.io` (Free for 1 month with signup) |   | [NOWNodes - Docs](https://documenter.getpostman.com/view/13630829/TVmFkLwy) |  
+[GetBlock](https://getblock.io/nodes/fil) | `https://filecoin.getblock.io` (Free with signup) |   | [GetBlock - Docs](https://getblock.io/docs/getblock-explorer/get-started/) |  
 
 ## Additional Notes:
 
