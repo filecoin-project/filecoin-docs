@@ -142,3 +142,7 @@ That's it! You've now successfully connected your Ledger device to MetaMask. Whe
 You may see a _blind signing_ warning on your MetaMask device. This is expected, and is the reason why **Expert Mode** must be enabled before you can interact with the Filecoin Ledger app.
 
 ![A Ledger device showing a blind signing warning.](../../.gitbook/assets/basics-assets-metamask-ledger-7-blind-signing.jpg)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

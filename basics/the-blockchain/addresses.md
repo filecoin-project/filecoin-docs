@@ -70,3 +70,6 @@ Currently, per [FIP 0048](https://github.com/filecoin-project/FIPs/blob/master/F
 
 As an example, suppose an address manager has an actor ID (an `f0` address) `123`, and that address manager creates a new actor. Then, the `f4` address of the actor created by the address manager is `f4123fa3491xyz`, where `f4` is the address class, `123` is the actor ID of the address manager, `f` is a separator, and `a3491xyz` is the arbitrary `<new-actor-id>` chosen by that actor.
 
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

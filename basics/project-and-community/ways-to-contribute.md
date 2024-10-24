@@ -229,8 +229,8 @@ The following rules apply to editing and styling text.
 1. All titles follow sentence structure. Only _names_ and _places_ are capitalized, along with the first letter of the title. All other letters are lower-case:
 
 <pre class="language-markdown"><code class="lang-markdown"><strong>## This is a title
-</strong><strong>
-</strong>### Only capitalize names and places
+</strong>
+### Only capitalize names and places
 
 ### The capital city of France is Paris
 </code></pre>
@@ -392,3 +392,7 @@ All images contain alt text so that screen-reading programs can describe the ima
 ```markdown
 ![Screenshot of an image being uploaded through the Filecoin command line.](filecoin-image-upload-screen.png)
 ```
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

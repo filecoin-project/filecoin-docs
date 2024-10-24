@@ -1,8 +1,8 @@
 ---
 description: >-
   Wallets provide a way to securely store Filecoin, along with other digital
-  assets. These wallets consist of a public and private key, which work similarly
-  to a bank account number and password.
+  assets. These wallets consist of a public and private key, which work
+  similarly to a bank account number and password.
 ---
 
 # Wallets
@@ -17,16 +17,16 @@ We do not provide technical support for any of these wallets. Please use caution
 
 If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
 
-| Name                                                                                           | Description                                                                                                           | Audited |
-| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- |
-| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL?support=true) | A multi-currency hardware wallet. _Recommended._                                                                      | Yes     |
-| [Glif web wallet](https://www.glif.io/en?txtype=send)                                          | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. _Recommended._         | Yes     |
-| [Brave Wallet](https://brave.com/wallet/)                                                      | A multi-currency software wallet built-in to the Brave browser. | Yes| 
-| [Trust wallet](https://trustwallet.com/)                                                       | A multi-currency wallet, the official wallet of Binance.                                                              | Unknown |
-| [ImToken](https://token.im/)                                                                   | A multi-currency wallet.                                                                                              | Unknown |
-| [MathWallet](https://mathwallet.org/en-us/)                                                    | A multi-currency wallet.                                                                                              | Unknown |
-| [FoxWallet](https://foxwallet.com/)                                                            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                                                   | Yes     |
-| [FilSnap MetaMask Snap](https://snaps.metamask.io/snap/npm/filsnap/)                           | MetaMask has an extension system called [Snaps](https://metamask.io/snaps/).                                           | Yes      |
+| Name                                                                                           | Description                                                                                       | Audited |
+| ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------- |
+| [Ledger](https://support.ledger.com/hc/en-us/articles/4402721277329-Filecoin-FIL?support=true) | A multi-currency hardware wallet. _Recommended._                                                  | Yes     |
+| [Glif web wallet](https://www.glif.io/en?txtype=send)                                          | Supports sending & receiving FIL. Can be integrated with a Ledger hardware device. _Recommended._ | Yes     |
+| [Brave Wallet](https://brave.com/wallet/)                                                      | A multi-currency software wallet built-in to the Brave browser.                                   | Yes     |
+| [Trust wallet](https://trustwallet.com/)                                                       | A multi-currency wallet, the official wallet of Binance.                                          | Unknown |
+| [ImToken](https://token.im/)                                                                   | A multi-currency wallet.                                                                          | Unknown |
+| [MathWallet](https://mathwallet.org/en-us/)                                                    | A multi-currency wallet.                                                                          | Unknown |
+| [FoxWallet](https://foxwallet.com/)                                                            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                               | Yes     |
+| [FilSnap MetaMask Snap](https://snaps.metamask.io/snap/npm/filsnap/)                           | MetaMask has an extension system called [Snaps](https://metamask.io/snaps/).                      | Yes     |
 
 ### Hot versus cold
 
@@ -47,3 +47,7 @@ If you know of a wallet that supports Filecoin, you can submit a pull request to
 * Create an issue in [`filecoin-project/filecoin-docs`](https://github.com/filecoin-project/filecoin-docs) with the name of the wallet and its features.
 * If the wallet is a mobile wallet, it must be available on both Android and iOS.
 * The wallet must have been audited. The results of this audit must be public.
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

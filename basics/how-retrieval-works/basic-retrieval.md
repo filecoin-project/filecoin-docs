@@ -25,7 +25,7 @@ Lassie fetches content in content-addressed archive (CAR) form, so in most cases
 Make sure that you have [Go](https://go.dev/) installed and that your `GOPATH` is set up. By default, your `GOPATH` will be set to `~/go`.\
 **Install Lassie** [**#**](https://docs.filecoin.io/basics/how-retrieval-works/basic-retrieval/#install-lassie)
 
-1. Download the [Lassie Binary from the latest release](https://github.com/filecoin-project/lassie/releases/latest) based on your system architecture.
+1.  Download the [Lassie Binary from the latest release](https://github.com/filecoin-project/lassie/releases/latest) based on your system architecture.
 
     Or download and install Lassie using the Go package manager:
 
@@ -148,3 +148,7 @@ A `GET` query against a Lassie HTTP daemon allows retrieval from peers that have
 #### Lassie’s CAR format
 
 Lassie only returns data in CAR format, specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie’s car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for manipulating the output.
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

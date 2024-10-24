@@ -11,3 +11,7 @@ Filecoin is a peer-to-peer network that stores files, with built-in economic inc
 Filecoin is built on top of the same software powering [IPFS protocol](https://docs.ipfs.tech/), which is a peer-to-peer distributed storage network that leverages [content addressing](https://docs.ipfs.tech/concepts/content-addressing/) to allow permanent references to the data, and avoids relying on specific devices or cloud servers for addressing the content. Filecoin is different from IPFS because it has an incentive layer on top to incentivize contents to be reliably stored and accessed.
 
 Filecoin enables several use cases, from Web3 native NFT and metaverse/game assets storage, incentivized permanent storage, to archiving Web2 datasets as a cheaper alternative to cloud storage. For example, [NFT.Storage](https://nft.storage/) utilizes Filecoin to provide a simple decentralized storage solution for NFT contents and metadata, while [Shoah Foundation](https://sfi.usc.edu/) and [Internet Archive](https://archive.org/) leverages Filecoin to backup their contents. Filecoin also supports a wide range of formats of data, including audio and video files, allowing Web3 platforms such as [Audius](https://audius.co/) and [Huddle01](https://huddle01.com/) to leverage Filecoin as the decentralized storage backend for music streaming and video conferencing.
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

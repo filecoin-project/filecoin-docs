@@ -39,3 +39,7 @@ Filecoin combines many elements of other file storage and distribution systems. 
 | Types of provider   | Storage provider, retrieval provider, repair provider                | All providers perform proof of work                                   |
 | Uptime requirements | Storage providers rewarded for uptime, penalized for downtime        | Miners can go offline without being penalized                         |
 | Network status      | Mainnet running since 2020                                           | Mainnet running since 2009                                            |
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

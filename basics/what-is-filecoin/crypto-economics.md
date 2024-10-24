@@ -36,3 +36,7 @@ To encourage good behavior from network participants, during block reward mining
 ## Total supply
 
 FIL has a maximum circulating supply of 2,000,000,000 FIL, meaning that at most 2B Filecoin will ever be created. In practice, this max supply would never be reached since a considerable amount of FIL are burnt as gas fees, penalties etc., and are permanently removed from circulating supply.
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

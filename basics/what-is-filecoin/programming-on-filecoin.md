@@ -2,7 +2,7 @@
 description: >-
   Once data has been stored, it is possible to run computations and calculations
   on that data, without needing to retrieve the data from a storage provider.
-  This page covers the basics of how programming works with Filecoin.
+  This page covers the basics of how programmin
 ---
 
 # Programming on Filecoin
@@ -84,3 +84,7 @@ The difference between FEVM and EVM contracts is that contracts deployed on FEVM
 To allow Solidity smart contracts on FEVM to seamlessly call methods on Filecoin built-in actors and access Filecoin-specific syscalls idiomatically, a Filecoin-Solidity API library has been developed, you can use it for building your use cases, such as interacting with storage deals.
 
 If you build on FEVM, you might find some of the [example contracts here](https://github.com/lotus-web3/client-contract) helpful.
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

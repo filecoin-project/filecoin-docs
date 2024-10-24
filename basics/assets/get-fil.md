@@ -36,15 +36,15 @@ If your exchange does not yet support Filecoin Eth-style 0x addresses, you must 
 
 ## Fiat on-ramps
 
-A fiat on-ramp is a service or platform that allows individuals to convert traditional fiat currencies such as the US dollar, Euro, or any other government-issued currency into cryptocurrencies. These on-ramps serve as entry points for people who want to start participating in the cryptocurrency ecosystem by purchasing digital currencies with their money but don't want to sign up with a cryptocurrency exchange. 
+A fiat on-ramp is a service or platform that allows individuals to convert traditional fiat currencies such as the US dollar, Euro, or any other government-issued currency into cryptocurrencies. These on-ramps serve as entry points for people who want to start participating in the cryptocurrency ecosystem by purchasing digital currencies with their money but don't want to sign up with a cryptocurrency exchange.
 
-FIL is supported by a number of fiat on-ramps, such as: 
+FIL is supported by a number of fiat on-ramps, such as:
 
-- [Changelly](https://changelly.com/)
-- [ChangeNow](https://changenow.io/)
-- [MoonPay](https://www.moonpay.com/) 
-- [Ramp Network](https://ramp.network/)
-- [Simplex](https://www.simplex.com/).
+* [Changelly](https://changelly.com/)
+* [ChangeNow](https://changenow.io/)
+* [MoonPay](https://www.moonpay.com/)
+* [Ramp Network](https://ramp.network/)
+* [Simplex](https://www.simplex.com/).
 
 {% hint style="info" %}
 If you know of any other services that can be added to list this, [raise an issue on GitHub](https://github.com/filecoin-project/filecoin-docs/issues/new).
@@ -61,3 +61,7 @@ Using a Bitcoin ATM often comes with higher fees than online exchanges. Fees can
 ## Test FIL
 
 If you’re looking to get FIL to test your applications on a testnet like [Calibration](../../networks/calibration/), then check how to get test tokens! Test FIL is often referred to as `tFIL`.
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

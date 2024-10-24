@@ -154,3 +154,7 @@ Also, note that world location matters for mining: many clients will prefer stor
 #### Even though Filecoin will be backed up to our normal IPFS pinning layer, we still need to know how quickly we can access data from the Filecoin network. How fast will retrieval be from the Filecoin network?
 
 If you are retrieving your data from IPFS or a remote pinning layer, retrieval should take on the order of milliseconds to seconds in the worst case. Our latest tests for retrieval from the Filecoin network directly show that a sealed sector holding data takes \~1 hour to unseal. 1-5 hours is our best real-world estimate to go from sector unsealing to delivery of the data. If you need faster data retrieval for your application, we recommend building on IFPS.
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

@@ -22,7 +22,7 @@ Storage providers are also rewarded with FIL for providing their storage space a
 
 ### Governance
 
-As members of the Filecoin community, FIL holders are encouraged to participate in the Filecoin governance process.  They can do so by proposing, deliberating, designing, and/or contributing to consensus for network changes, alongside other stakeholders in the Filecoin community- including implementers, Core Devs, storage providers, and other ecosystem partners. Learn more about the [Filecoin Governance process](https://fil.org/governance).
+As members of the Filecoin community, FIL holders are encouraged to participate in the Filecoin governance process. They can do so by proposing, deliberating, designing, and/or contributing to consensus for network changes, alongside other stakeholders in the Filecoin community- including implementers, Core Devs, storage providers, and other ecosystem partners. Learn more about the [Filecoin Governance process](https://fil.org/governance).
 
 ## Denominations
 
@@ -39,3 +39,5 @@ Much like how a US penny represents a fraction of a US dollar, there are many wa
 | picoFIL  | 1,000,000,000,000         |
 | femtoFIL | 1,000,000,000,000,000     |
 | attoFIL  | 1,000,000,000,000,000,000 |
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

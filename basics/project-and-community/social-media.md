@@ -30,3 +30,7 @@ Get your Filecoin news in tweet-sized bites. Follow these accounts for the lates
 Follow FilecoinOfficial on [WeChat](https://www.wechat.com/mobile) for project updates and announcements in Chinese.
 
 ![WeChat logo](../../.gitbook/assets/basics-project-and-community-social-media-wechat.webp)
+
+
+
+&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;
