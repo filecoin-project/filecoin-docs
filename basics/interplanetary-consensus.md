@@ -60,7 +60,3 @@ With better performance, lower fees and faster transactions, IPC can rapidly imp
 * Read the [docs](https://docs.ipc.space/)
 * Check out the [repository](https://github.com/consensus-shipyard/ipc)
 * Connect with the community on [Discord](https://discord.gg/QtNbXf75)
-
-
-
-&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

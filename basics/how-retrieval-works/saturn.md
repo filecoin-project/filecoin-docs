@@ -18,6 +18,3 @@ Incentives unite, align, and grow the network. Node operators earn Filecoin for 
 
 Find out more over at [saturn.tech](https://saturn.tech).
 
-
-
-&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

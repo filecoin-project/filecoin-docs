@@ -27,6 +27,3 @@ The Multiformats Project is a collection of protocols which aim to future-proof 
 
 Interactive tutorials on decentralized web protocols, designed to introduce you to decentralized web concepts, protocols, and tools. Complete code challenges right in your web browser and track your progress as you go. Explore ProtoSchool’s tutorials on Filecoin at [proto.school/](https://proto.school/#/tutorials?course=filecoin).
 
-
-
-&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;

@@ -78,7 +78,3 @@ If an SP misses the submission deadline, no penalty is incurred, but the SP miss
 _WindowPoSt_ is used to prove that, for any and all SPs in the network, a copy of the data that was agreed to be stored is being continuously maintained over time and is used to audit SPs continuously. In WindowPoSt, all SPs must demonstrate the availability of all sectors claimed every [proving period](https://docs.filecoin.io/basics/the-blockchain/proofs/). Sector availability is not proved individually; rather, SPs must prove a whole [partition](https://docs.filecoin.io/basics/the-blockchain/proofs/) at once, and that sector must be proved by the deadline assigned (a 30-minute interval in the proving period).
 
 The more sectors an SP has pledged to store, the more the partitions of sectors that the SP will need to prove per deadline. As this requires that the SP has access to sealed copies of each of the requested sectors, it makes it irrational for the SP to seal data every time they need to provide a WindowPoSt proof, thus ensuring that SPs on the network are continuously maintaining the data agreed to. Additionally, failure to submit WindowPoSt for a sector will result in the SPs’ pledge collateral being forfeited and their storage power being reduced.
-
-
-
-&#x20;[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page%20URL=https%3A%2F%2Fapp.gitbook.com%2Fo%2FNNmD4UvLc26b1TmEYgzE%2Fs%2FxNWFG7bQkjLkl5BBGjbD%2F)&#x20;
