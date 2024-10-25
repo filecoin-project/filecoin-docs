@@ -33,7 +33,7 @@ Consider first a network with ten storage providers. Initially, each storage pro
 
 ![filecoinplus1](https://github.com/filecoin-project/filecoin-docs/assets/46801006/d577d1d7-5e4f-4b3d-9b60-f102b5ca27bb)
 
-In the above visualization, "VD" means "verfied deals", that is, deals that have been reviewed by allocators and have associated spending of datacap.
+In the above visualization, "VD" means "verified deals", that is, deals that have been reviewed by allocators and have associated spending of datacap.
 
 If two of these storage providers begin filling their sectors with verified deals, their chances of winning a block reward increases by a factor of ten relative to their peers. Each one of these storage providers with verified deals in their sectors has a 36% chance of winning the block reward, while storage providers with only [regular deals](https://spec.filecoin.io/systems/filecoin\_blockchain/storage\_power\_consensus/#section-systems.filecoin\_mining.sector.sector\_quality) in their sectors have a 4% probability of winning the block rewards.
 
