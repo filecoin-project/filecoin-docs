@@ -34,3 +34,7 @@ One of the next features coming to this automation is a composable deployment me
 ## Prerequisites
 
 Read the `README` carefully on the [GitHub repo](https://github.com/filecoin-project/sp-automation) to make sure you have all the required prerequisites in place.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/architecture/lotus-automation)

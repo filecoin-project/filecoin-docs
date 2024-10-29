@@ -8,7 +8,7 @@ description: >-
 
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Explore the storage provider documentation
 
-Get ready to dive into the valuable resources of the [storage provider documentation](../../storage-providers/basics/README.md). This comprehensive guide offers a wealth of information about the role of storage providers in the Filecoin ecosystem, including insights into the economic aspects. You’ll also gain knowledge about the software architecture, hardware infrastructure, and the necessary skills for success.
+Get ready to dive into the valuable resources of the [storage provider documentation](./). This comprehensive guide offers a wealth of information about the role of storage providers in the Filecoin ecosystem, including insights into the economic aspects. You’ll also gain knowledge about the software architecture, hardware infrastructure, and the necessary skills for success.
 
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Gain insights into ROI and collateral’s role
 
@@ -37,3 +37,7 @@ As you step into the vibrant realm of the mainnet, it’s time to supercharge yo
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Discover the world of verified deals and tools
 
 Within the Filecoin network there are many [programs and tools](../filecoin-deals/filecoin-programs.md) designed to enhance your storage provider setup. Uncover the power of these tools as you dive into the documentation, gaining valuable insights and expanding your knowledge. Make the best use of data programs on your path to success.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/basics/quickstart-guide)

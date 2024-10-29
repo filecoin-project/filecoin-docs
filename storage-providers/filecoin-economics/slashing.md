@@ -18,3 +18,7 @@ This term encompasses a broad set of penalties which are to be paid by storage p
 ## Consensus fault slashing
 
 This penalty is incurred when committing consensus faults. This penalty is applied to storage providers that have acted maliciously against the network’s consensus functionality.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-economics/slashing)

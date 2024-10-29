@@ -107,3 +107,7 @@ Please take a look at the presentation Benjamin Hoejsbo from [PIKNIK](https://ww
 {% hint style="info" %}
 We are working to improve this section. If you would like to share your mining setup, please create an issue in the [Filecoin documentation GitHub repository](https://github.com/filecoin-project/filecoin-docs/issues)!
 {% endhint %}
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/infrastructure/reference-architectures)

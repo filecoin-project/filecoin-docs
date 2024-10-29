@@ -16,3 +16,7 @@ Because the Filecoin network needs consistency, meaning all data stored is still
 ## What’s next?
 
 Providing committed capacity is the easiest way to get started as a storage provider, but the economics are very dependent on the price of FIL. If the price of FIL is low, it can be unprofitable to provide only committed capacity. The optimal FIL-price your business needs to be profitable will depend on your setup. Profitability can be increased by utilizing [Filecoin Plus](../../basics/how-storage-works/filecoin-plus.md), along with [extra services you can charge for](../filecoin-deals/auxiliary-services.md).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-economics/committed-capacity)

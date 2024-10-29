@@ -33,7 +33,7 @@ The machine running the Lotus daemon must be connected to the public internet fo
 
 Syncing the chain is a key role of the daemon. It communicates with the other nodes on the network by sending messages, which are, in turn, collected into [blocks](https://docs.filecoin.io/reference/general/glossary/#block). These blocks are then collected into [tipsets](https://docs.filecoin.io/reference/general/glossary/#tipset). Your Lotus daemon receives the messages on-chain, enabling you to maintain consensus about the state of the Filecoin network with all the other participants.
 
-Due to the growth in the size of the chain since its genesis, it is not advised for storage providers to sync the entire history of the network. Instead, providers should use the available [lightweight snapshots]( https://forest-archive.chainsafe.dev/list) to import the most recent messages. One exception in which a provider would need to sync the entire chain would be to run a blockchain explorer.
+Due to the growth in the size of the chain since its genesis, it is not advised for storage providers to sync the entire history of the network. Instead, providers should use the available [lightweight snapshots](https://forest-archive.chainsafe.dev/list) to import the most recent messages. One exception in which a provider would need to sync the entire chain would be to run a blockchain explorer.
 
 Synced chain data should be stored on an SSD; however, faster NVMe drives are strongly recommended. A slow chain sync can lead to delays in critical messages being sent on-chain from your Lotus miner, resulting in the faulting of sectors and the slashing of collateral.
 
@@ -171,3 +171,7 @@ To check if there are upcoming proving deadlines, run the following:
 ```
 lotus-miner proving deadlines
 ```
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/architecture/lotus-components)

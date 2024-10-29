@@ -19,3 +19,7 @@ There are two main reasons why a storage provider could be doing Snap Deals, als
 Snapping up sectors with snap deals puts a lot less stress on the storage provider’s infrastructure. The only task that is executed from the [sealing pipeline](../architecture/sealing-pipeline.md) is the replica-update and prove-replica-update phase, which is similar to the PC2 process. The CPU-intensive PreCommit 1 phase is not required in this process.
 
 Do not forget to provide the collateral funds when snapping up a verified deal. The same volume requires more collateral when it counts as Filecoin Plus data, namely 10x the collateral compared to raw storage power.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals/snap-deals)

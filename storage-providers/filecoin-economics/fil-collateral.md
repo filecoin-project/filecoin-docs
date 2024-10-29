@@ -38,8 +38,12 @@ The “Current Sector Initial Pledge" can be found on blockchain explorers like 
 
 Another cost factor in the network is gas. Storage providers not only pledge collateral for the capacity they announce on-chain. The network also burns FIL in the form of gas fees. Most activity on-chain has some level of gas involved. For storage providers, this is the case for committing sectors.
 
-The gas fees fluctuate over time and can be followed on various websites like [Filfox - Gas Statistics](https://filfox.info/en/stats/gas) and [Beryx - Gas Estimator](https://beryx.io/estimate_gas).
+The gas fees fluctuate over time and can be followed on various websites like [Filfox - Gas Statistics](https://filfox.info/en/stats/gas) and [Beryx - Gas Estimator](https://beryx.io/estimate\_gas).
 
 ## FIL lending programs
 
 The ecosystem does have [FIL Lenders](https://filecoin-lending.com/read-more) who can provide you FIL (with interest) to get you started, which you can pay back over time and with the help of earned block rewards. Every lender, though, will still require you to supply up to 20% of the required collateral. The [Filecoin Virtual Machine](../../smart-contracts/fundamentals/the-fvm.md), introduced in March 2023, enables the creation of new lending mechanisms via smart contracts.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-economics/fil-collateral)

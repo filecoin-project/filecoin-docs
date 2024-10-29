@@ -53,3 +53,7 @@ There are 2 types of read operations that are important in the context of Fileco
 *   sequential read I/O:
 
     When retrievals happens, entire sectors are read from disk and streamed towards the customer via Boost.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/infrastructure/storage)

@@ -46,3 +46,7 @@ You can run multiple lotus-workers on the same GPU by splitting out their`tmp`fo
 ### Scaling out
 
 A storage provider’s sealing capacity scales linearly with the hardware you add to it. For example, if your current setup allows for a sealing rate of 3 TiB per day, doubling the number of workers could bring you to 6 TiB per day. This requires that all components of your infrastructure are able to handle this additional throughput. Using [Sealing-as-a-Service providers](sealing-as-a-service.md) allows you to scale your sealing capacity without adding more hardware.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/architecture/sealing-rate)

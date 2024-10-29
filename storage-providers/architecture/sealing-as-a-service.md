@@ -29,3 +29,7 @@ Other solutions are possible where the sealing partner seals committed capacity 
 See the following video from [Aligned](https://aligned.co/sealing-as-a-service) about their offering of Sealing-as-a-Service:
 
 {% embed url="https://www.youtube.com/watch?v=v4l1lGsUXvs" %}
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/architecture/sealing-as-a-service)

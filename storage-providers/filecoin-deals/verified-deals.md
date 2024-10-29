@@ -43,3 +43,7 @@ Tools and programs exist to support Filecoin Plus, but storage providers need to
 With great power, comes great responsibility, which also counts for storage power: rewards on Fil+ deals are 10x, but so are the penalties. Because a sector of 32 GiB counts for 320 GiB of storage power (10x), the rewards and the penalties are calculated on the QAP of 320 GiB. Filecoin Plus allows a storage provider to earn more block rewards on a verified deal, compared to a regular data deal. The 10x multiplier on storage power that comes with a verified deal, however, also requires 10x collateral from the storage provider.
 
 If the storage provider is then not capable of keeping the data and systems online and fails to submit the daily required proofs (WindowPoSt) for that data, the penalties (_slashing_) are also 10x higher than over regular data deals or CC sectors. Larger storage power means larger block rewards, larger collateral and larger slashing. The stakes are high - after all, we’re storing humanity’s most important information with Filecoin.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals/verified-deals)

@@ -22,3 +22,7 @@ A next step after the introduction of FVM is [Bacalhau](https://docs.bacalhau.or
 ## Storage tiering
 
 Another potential service to offer is storage tiers with various performance profiles. For example, storage providers can offer hot/online storage by keeping an additional copy of the unsealed data available for immediate retrieval, as well as the sealed that has been stored on the Filecoin Network.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals/auxiliary-services)

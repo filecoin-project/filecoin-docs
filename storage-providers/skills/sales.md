@@ -30,7 +30,7 @@ A storage provider needs to get storage deals to grow his network power and to e
 
 *   Obtaining data replicas from other storage providers and programs:
 
-    Certain Filecoin data programs will specify the minimum amount of replicas needed to perform a deal.  This means deals need to be stored across multiple storage providers in the ecosystem, so you can work with peers in the network to share clients’ data replicas.
+    Certain Filecoin data programs will specify the minimum amount of replicas needed to perform a deal. This means deals need to be stored across multiple storage providers in the ecosystem, so you can work with peers in the network to share clients’ data replicas.
 
     Working in the ecosystem and building connections with other storage providers takes time and effort, and is essentially a sales activity.
 * Onboarding your own customers:
@@ -38,3 +38,7 @@ A storage provider needs to get storage deals to grow his network power and to e
 Acquiring your own customers, and bringing their data onto the Filecoin network, requires business development skills and people on your team who actively work with data owners (customers) to educate them about the advantages of decentralized storage.
 
 It takes additional effort to work with customers and their data, but it has the additional advantage of being able to charge your customer for the data being stored. This means an additional revenue stream compared to only storing copies of deals, and earning block rewards.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/skills/sales)

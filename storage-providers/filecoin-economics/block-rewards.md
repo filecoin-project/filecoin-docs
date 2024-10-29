@@ -35,3 +35,7 @@ The below graph shows the evolution of FIL per block reward over time:
 There is a positive side to releasing less FIL per block reward too. As Filecoin has a capped maximum token supply of 2 billion FIL, the slower minting rate allows for minting over a longer period. A lower circulating supply also has a positive effect on the price of FIL.
 
 See the [Crypto Economics](../../basics/what-is-filecoin/crypto-economics.md) page of this documentation and the [Filecoin spec](https://spec.filecoin.io/#section-systems.filecoin\_token.minting\_model) for more information.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-economics/block-rewards)

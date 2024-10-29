@@ -75,3 +75,7 @@ sar -n DEV 1
 sar -n TCP,ETCP 1
 top
 ```
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/skills/linux)

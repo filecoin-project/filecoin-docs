@@ -49,3 +49,7 @@ It takes more variables than the cost vs. the income. In summary, the factors th
 *   **Operational Costs:**
 
     Last but not least there’s the ongoing monthly cost of operating the storage provider business. Both the costs for technical operations as well as business operations need to be taken into consideration.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals/return-on-investment)

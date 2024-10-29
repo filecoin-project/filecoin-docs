@@ -17,3 +17,7 @@ In addition to sales costs, other factors contribute to your business’ total c
 By charging for data stored on your network, you can create a sustainable business model that allows you to invest in hardware and FIL as collateral, as well as grow your business over time. This requires skilled people capable of running a business at scale and interacting with investors, venture capitalists, and banks to secure the necessary funding for growth.
 
 Next to the sales cost, there are other things that contribute to the total cost of ownership of your storage provider business. Think of backups of your setup and the data, providing an access layer to ingest data and for retrievals, preparing the data (if not done already), and more.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals/charging-for-data)

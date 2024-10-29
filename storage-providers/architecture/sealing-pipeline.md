@@ -81,3 +81,7 @@ lotus-miner sectors batching commit --publish-now
 ```
 
 Finally, the sealed sector is stored in the miner’s long-term storage space, along with unsealed sectors, which are required for retrievals if configured to do so.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/architecture/sealing-pipeline)
