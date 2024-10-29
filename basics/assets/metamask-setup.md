@@ -145,3 +145,4 @@ You may see a _blind signing_ warning on your MetaMask device. This is expected,
 
 
 
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/assets/metamask-setup)

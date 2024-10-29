@@ -23,3 +23,6 @@ Test networks, or testnets, are version of the Filecoin network that attempt to 
 * [Calibration Faucet - Chainsafe](https://faucet.calibnet.chainsafe-fil.io)
 * [Calibration Faucet - Zondax](https://beryx.zondax.ch/faucet/)
 
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/networks)&#x20;

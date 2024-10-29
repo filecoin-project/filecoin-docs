@@ -40,3 +40,6 @@ Much like how a US penny represents a fraction of a US dollar, there are many wa
 | femtoFIL | 1,000,000,000,000,000     |
 | attoFIL  | 1,000,000,000,000,000,000 |
 
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/assets/the-fil-token)

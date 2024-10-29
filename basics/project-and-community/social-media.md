@@ -33,3 +33,6 @@ Follow FilecoinOfficial on [WeChat](https://www.wechat.com/mobile) for project u
 
 
 
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/project-and-community/social-media)

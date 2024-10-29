@@ -89,3 +89,6 @@ If you are transferring FIL from any exchange to your `0x` address on MetaMask, 
 
 There are no special steps or requirements for sending Filecoin from one Filecoin-style address to another on the Filecoin network.
 
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/assets/transfer-fil)

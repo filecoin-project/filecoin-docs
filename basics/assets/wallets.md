@@ -48,3 +48,6 @@ If you know of a wallet that supports Filecoin, you can submit a pull request to
 * If the wallet is a mobile wallet, it must be available on both Android and iOS.
 * The wallet must have been audited. The results of this audit must be public.
 
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/assets/wallets)

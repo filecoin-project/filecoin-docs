@@ -62,3 +62,6 @@ Using a Bitcoin ATM often comes with higher fees than online exchanges. Fees can
 
 If you’re looking to get FIL to test your applications on a testnet like [Calibration](../../networks/calibration/), then check how to get test tokens! Test FIL is often referred to as `tFIL`.
 
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/assets/get-fil)

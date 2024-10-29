@@ -141,3 +141,6 @@ There are three resources you can use to check the current status of the Filecoi
 * The [Datacap Stats dashboard](https://datacapstats.io) shows DataCap allocations, including the number of allocators, clients, and storage providers. You can also see number and size of deals.
 * The [Starboard Dashboard](https://dashboard.starboard.ventures/market-deals) includes network health data related to Filecoin+ verified deals.
 
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/how-storage-works/filecoin-plus)

@@ -393,3 +393,6 @@ All images contain alt text so that screen-reading programs can describe the ima
 ![Screenshot of an image being uploaded through the Filecoin command line.](filecoin-image-upload-screen.png)
 ```
 
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/project-and-community/ways-to-contribute)

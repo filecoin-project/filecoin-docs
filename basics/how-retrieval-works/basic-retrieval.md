@@ -148,3 +148,7 @@ A `GET` query against a Lassie HTTP daemon allows retrieval from peers that have
 #### Lassie’s CAR format
 
 Lassie only returns data in CAR format, specifically, [CARv1](https://ipld.io/specs/transport/car/carv1/) format. [Lassie’s car spec](https://github.com/filecoin-project/lassie/blob/main/docs/CAR.md) describes the nature of the CAR data returned by Lassie and the various options available to the client for manipulating the output.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/how-retrieval-works/basic-retrieval)

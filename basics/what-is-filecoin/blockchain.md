@@ -113,3 +113,7 @@ If storage providers fail to provide reliable uptime or act maliciously against 
 
 * Storage fault slashing to penalize storage providers for not being able to maintain healthy and reliable storage sectors for the network.
 * Consensus fault slashing to penalize storage providers to sabotage the liveness and security of the consensus process.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/blockchain)
