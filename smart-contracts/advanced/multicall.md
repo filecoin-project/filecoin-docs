@@ -126,5 +126,5 @@ The handling of `msg.value` in multicalls requires caution. Since `msg.value` do
 
 # Hints
 
-Lotus RPC API supports Ethereum batch transactions. The key difference between `multicall` and batch transactions is that `multicall` aggregates multiple RPC requests into a single call, while batch transactions are simply an array of transactions executed sequentially but sent in one request. For more details, please refer to the [Ethereum documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc/batch).
+Lotus FEVM RPC supports Ethereum batch transactions. The key difference between `multicall` and batch transactions is that `multicall` aggregates multiple RPC requests into a single call, while batch transactions are simply an array of transactions executed sequentially but sent in one request. For more details, please refer to the [Ethereum documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc/batch).
 
