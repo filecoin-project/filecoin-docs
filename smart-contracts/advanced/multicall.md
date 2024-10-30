@@ -123,3 +123,8 @@ In FVM, there are two types of accounts: Externally Owned Accounts (EOAs) contro
 For EOAs, which can only use CALL, Multicall3's address becomes the `msg.sender` for subsequent calls. This limits its usefulness from EOAs to scenarios where **`msg.sender` is irrelevant**. However, contract wallets or other contracts can use either CALL or DELEGATECALL, with the latter preserving the original `msg.sender`.
 
 The handling of `msg.value` in multicalls requires caution. Since `msg.value` doesn't change with delegatecalls, relying on it within a multicall can lead to security vulnerabilities. To learn more about this, see [here](https://github.com/runtimeverification/verified-smart-contracts/wiki/List-of-Security-Vulnerabilities#payable-multicall) and [here](https://samczsun.com/two-rights-might-make-a-wrong/).
+
+# Hints
+
+Lotus RPC API supports Ethereum batch transactions. The key difference between `multicall` and batch transactions is that `multicall` aggregates multiple RPC requests into a single call, while batch transactions are simply an array of transactions executed sequentially but sent in one request. For more details, please refer to the [Ethereum documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc/batch).
+
