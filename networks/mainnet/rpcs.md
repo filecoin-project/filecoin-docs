@@ -10,6 +10,8 @@ These endpoints are limited to the read-only [Filecoin JSON RPC API](../../refer
 
 {% hint style="info" %} Please note that most publicly hosted endpoints <strong>only guarantee recent state, i.e. 2000 of the latest blocks (last 16.67 hours).</strong> To request an archival node you can contact a provider below. {% endhint %}
 
+In order to check the current benchmarked performance of each of the below endpoints, please see the [Filecoin ETH RPC Benchmark app](https://benchmark-rpc.vercel.app/).
+
 Provider | HTTPS endpoint | WSS endpoint | Docs | API Support
 -- | -- | -- | -- | --
 [Glif Nodes](https://api.node.glif.io/) | `https://api.node.glif.io/rpc/v1` | `wss://wss.node.glif.io/apigw/lotus/rpc/v1` | [Glif Nodes - Docs](https://api.node.glif.io/) | All Filecoin and Eth JSON RPC methods including MPoolPush
