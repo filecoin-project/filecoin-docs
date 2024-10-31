@@ -25,7 +25,7 @@ New *methods* of open source governance include the development of new tools and
 
 That said, there is no “right way” to govern a project.  Some projects are governed better than others, but no two open source projects are governed in the same way. 
 
-Each open-source project or community represents a distinct set of technologies, contributors, and/or mission and purpose.  As such, governance is often a complicated combination of people and technology working together to oversee collective interest. 
+Each open source project or community represents a distinct set of technologies, contributors, and/or mission and purpose.  As such, governance is often a complicated combination of people and technology working together to oversee collective interest. 
 
 And, as these things slowly shift and change, so too does the governance of a system. 
 
