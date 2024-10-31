@@ -24,71 +24,63 @@ Additionally, blockchain indexers provides better developer experience by levera
 
 - **Subgraphs**: Customizable schemas that define how to index data from specific blockchain smart contracts and events.
 - **GraphQL**: A query language that allows clients to request exactly the data they need, making data fetching more efficient.
-- **[Graph Academy](https://thegraph.academy)**: Best way to quickly learn how to develop and query the subgraphs
 
-## Querying subgraphs on Filecoin FEVM
-There are many ways to query the existing subgraph. 
-One of them is to deploy
+### Querying subgraphs on Filecoin FEVM
+There are many ways to query the existing subgraph, including numerous well-known libraries on [JS](https://thegraph.com/docs/en/querying/querying-from-an-application/) and [Python](https://thegraph.com/docs/en/querying/querying-with-python/)
+But even without any 3rd-party tooling, querying the subgraph is no more complicated than querying [RPC nodes](https://docs.filecoin.io/reference/json-rpc), but the only complexity is that you have to know the schema of the subgraph beforehand, similarly as you have to know SQL DB tables and columns before being able to query it. Luckily, The Graph provides several ways to discover the subgraph schema. The most convenient one is called ["Playground"](https://graphql.org/blog/2020-04-03-graphiql-graphql-playground/), and is available upon GET request to the subgraph query URL. Alternatively, one may query the discovery method that exists on every subgraph, called [Introspection Query](https://graphql.org/learn/introspection/).
 
-## Developing subgraphs on Filecoin FEVM
+### Developing subgraphs on Filecoin FEVM
+Developing a subgraph requires specialized knowledge that can be obtained through [The Graph Academy](https://thegraph.academy). Although it is not very complicated, the exact structure of the subgraph is everchanging process, so the details will stay out of scope for this documentation. 
 
+### Deploying Subgraphs
 
+Same as with database data queried through SQL, subgraphs have to be stored somewhere. One may run a self-hosted instance as describe in [The Graph Academy examples](https://thegraph.academy/developers/local-development/) and deploy a subgraph over there, however, same as with RPC nodes and databases - running subgraphs locally in production is not recommended from the uptime standpoint. For hosting the subgraph, it is reasonable to use online web services such as AWS or refer to professional subgraphs providers such as [Protofire (aka Glif Nodes)](https://api.node.glif.io).
 
-## Example: Deploying Subgraphs with Glif Nodes
+#### Example: Deploying subgraph with Glif Nodes (Protofire)
+[Protofire (aka Glif Nodes)](https://api.node.glif.io) offers public access to The Graph services, simplifying the process of deploying and managing subgraphs.
 
-[Glif Nodes](https://api.node.glif.io) offers public access to The Graph services over Filecoin FEVM, simplifying the process of deploying and managing subgraphs.
-
-### Querying Existing Subgraphs
-
-- Visit the [Glif Nodes API](https://api.node.glif.io).
-- Navigate to the **The Graph** tab.
-- Browse and select existing subgraphs to query.
-- Use the provided endpoints to execute GraphQL queries.
-
-### Deploying Your Own Subgraph
+##### Deploying Your Own Subgraph
 
 1. **Connect Your Wallet**
-   - Go to the [Glif Nodes API](https://api.node.glif.io) and connect your Filecoin-compatible wallet.
+   - On the [Protofire (Glif Nodes) platform](https://api.node.glif.io) connect your [Filecoin-compatible wallet](https://docs.filecoin.io/basics/assets/wallets).
 
 2. **Create an API Key**
+   - Switch to **SUBGRAPHS** and then choose **API keys** tab
+   - Click **Create new key**
    - Generate an API key to authenticate your requests.
 
 3. **Activate Your Free Subscription**
-   - Provide your credit card details to activate a free subscription.
-     - **Note**: Glif Nodes currently offers this service completely free of charge. If this changes, you will be notified at least one month in advance. We recommend leaving your contact details on our website to receive updates.
-     - **Privacy Assurance**: Credit card details are used solely for DDoS protection. No charges will be made without prior notification.
-     - **Service Suspension**: Subgraphs without credit card details may be suspended after a one-month public notification period, but no charges will be incurred.
+   - Go to **Subscription** tab
+   - If you have created a key - you will see one The Graph subscription pending
+   - Click **Pay** and proceed with providing your credit card details to activate a free subscription.
+
+{% hint style="warning" %}
+Glif Nodes currently offers this service completely **free of charge**. If this ever changes, you will be notified at least one month in advance. It is recommended to provider your contact details on Glif Nodes website to receive updates. Credit card details are used solely for DDoS protection. No charges will be made without prior notification.
+{% endhint %}
 
 4. **Create a Subgraph**
-   - Click on **Create Subgraph** to set up a new subgraph instance.
+   - Switch back to the "Subgraphs" tab
+   - Click on **Create a New Subgraph** to set up a new subgraph instance.
 
 5. **Manage Your Subgraphs**
-   - Navigate to the **My Subgraphs** section.
-   - Select your subgraph to access deployment instructions and endpoints.
+   - Select **MY** in subgraphs switcher
+   - Select subgraph you just created to access deployment instructions and endpoints.
+   - Shall you have any additional inquires - do not hesitate to contact Glif Nodes team through the "Contact us" button in the website header.
 
-6. **Deploy via CLI**
-   - Follow the provided instructions to deploy your subgraph using The Graph CLI.
-     - Authenticate using your API key:
-       ```bash
-       graph auth --studio <YOUR_API_KEY>
-       ```
-     - Deploy your subgraph:
-       ```bash
-       graph deploy --studio <SUBGRAPH_NAME>
-       ```
+### Querying Existing Subgraphs
 
-## Additional Resources
-
-- [The Graph Documentation](https://thegraph.com/docs/)
-- [Filecoin FEVM Documentation](https://docs.filecoin.io/smart-contracts/filecoin-evm/)
-- [Glif Nodes Documentation](https://docs.glif.io/)
-
-## Support and Feedback
-
-- **The Graph Community**: Join the [Discord server](https://discord.gg/vtvv7FP) for support and discussion.
-- **Filecoin Community**: Engage with the community on [Slack](https://filecoin.io/slack) or the [discussion forum](https://discuss.filecoin.io/).
-- **Glif Nodes Support**: Contact us through our [website](https://glif.io/contact) or leave your contact details for updates.
-
----
-
-By integrating The Graph with Filecoin FEVM, you can build powerful, data-driven applications with ease. Whether you're querying existing data or indexing new smart contracts, The Graph provides the tools you need to interact with the Filecoin blockchain efficiently. Explore the possibilities today with the help of services like Glif Nodes!
+One of the popular subgraphs is basically a subgraph containing information about all the blocks on the networks, essentially providing an alternative to `eth_getBlock...` subset of commands. Lets see how we can query the `eth_getBlockByNumber` using Linux command line interface and Protofire (Glif Nodes) platform.
+- Visit the [Protofire (Glif Nodes) platform](https://api.node.glif.io).
+- Navigate to the **SUBGRAPHS** tab.
+- Select the **[blocks](https://api.node.glif.io/graph/21/mainnet%2Fblocks)** subgraph.
+- Through the opened "Playground" tab click "Show GraphiQL Explorer" button (folder icon, 3rd from the top in the left bar) to verify the subgraph schema
+- Click elements that you are looking to query and adjust query if necessary. For the sake of this example lets query the first block this subgraph supports (#2867000). The resulting query should look the following way:
+```
+query MyQuery {
+  blocks(block: {number: 2867000}) {
+    number
+  }
+}
+```
+- Click "Execute query" (alternatively Ctrl+Enter, the icon with white triangle in the red square) and adjust query if needed. 
+- Copy "Queries (HTTP)" URL on the top of the Playground as well as resulting query to your code. The subgraph querying is free so far, although it requires an [API key](#deploying-your-own-subgraph).
