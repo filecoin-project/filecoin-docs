@@ -65,5 +65,5 @@ Key changes from FIP0001 to FIP00XX include:
  *  Consensus pathways unique to each FIP type, and; 
  *  Tooling and institutional support for the above, including building on-chain vote tooling, sentiment analysis polling, and the establishment of the Filecoin Community Guild. 
 
-Full version history for both documents is available in the FIPs repo. 
+Full version history for both documents is available in the [FIPs repo](https://github.com/filecoin-project/FIPs). 
 
