@@ -12,13 +12,13 @@ These endpoints are limited to the read-only [Filecoin JSON RPC API](../../refer
 
 In order to check the current benchmarked performance of each of the below endpoints, please see the [Filecoin ETH RPC Benchmark app](https://benchmark-rpc.vercel.app/).
 
-Provider | HTTPS endpoint | WSS endpoint | Docs | API Support
--- | -- | -- | -- | --
-[Glif Nodes](https://api.node.glif.io/) | `https://api.node.glif.io/rpc/v1` | `wss://wss.node.glif.io/apigw/lotus/rpc/v1` | [Glif Nodes - Docs](https://api.node.glif.io/) | All Filecoin and Eth JSON RPC methods including MPoolPush
-[Ankr](https://ankr.com/) | `https://rpc.ankr.com/filecoin` | By request at: https://www.ankr.com/rpc/filecoin | [Ankr Docs - Filecoin](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin) | All Filecoin and Eth JSON RPC methods including MPoolPush
-[Chainup Cloud](https://cloud.chainup.com/) | `https://filecoin.chainup.net/rpc/v1` | `wss://filecoin.chainup.net/rpc/v1` | [Chainup Cloud Docs - Filecoin](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis) |  
-[NOWNodes](https://nownodes.io/) | `https://fil.nownodes.io` (Free for 1 month with signup) |   | [NOWNodes - Docs](https://documenter.getpostman.com/view/13630829/TVmFkLwy) |  
-[GetBlock](https://getblock.io/nodes/fil) | `https://filecoin.getblock.io` (Free with signup) |   | [GetBlock - Docs](https://getblock.io/docs/getblock-explorer/get-started/) |  
+Provider | HTTPS endpoint | WSS endpoint | Docs | Filecoin API Support | ETH API Support | Archive 
+-- | -- | -- | -- | -- | -- | --
+[Glif Nodes](https://api.node.glif.io/) | `https://api.node.glif.io/rpc/v1` | `wss://wss.node.glif.io/apigw/lotus/rpc/v1` | [Glif Nodes - Docs](https://api.node.glif.io/) | Read-only methods + MPoolPush | All methods | Create a "Dedicated" key with "Archive" functionality
+[Ankr](https://ankr.com/) | `https://rpc.ankr.com/filecoin` | By request at: https://www.ankr.com/rpc/filecoin | [Ankr Docs - Filecoin](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin) | Read-only methods + MPoolPush | See the list of [excluded methods](https://www.ankr.com/docs/rpc-service/chains/chains-list/#unsupported-22) | Contact for more details
+[Chainup Cloud](https://cloud.chainup.com/) | `https://filecoin.chainup.net/rpc/v1` | `wss://filecoin.chainup.net/rpc/v1` | [Chainup Cloud Docs - Filecoin](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis) |  [Read-only methods + MPoolPush](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis#available-filecoin-api-request-methods) | [Yes](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis#available-filecoin-api-request-methods) | Contact for more details
+[DRPC](https://drpc.com) | `https://filecoin.drpc.org` | `wss://filecoin.drpc.org` | [DRPC Docs](https://drpc.org/chainlist/filecoin) | Read-only methods + MPoolPush | Yes | Contact for more details
+
 
 ## Additional Notes:
 
