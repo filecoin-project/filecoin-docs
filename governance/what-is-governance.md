@@ -30,7 +30,7 @@ Each open source project or community represents a distinct set of technologies,
 And, as these things slowly shift and change, so too does the governance of a system. 
 
 ## Governance of Filecoin 
-Filecoin’s community -led governance system exists to support the innovative, open-source, and [mission -aligned](https://github.com/filecoin-project/FIPs/blob/master/mission.md) development of the Filecoin protocol.  
+Filecoin’s community -led governance system exists to support the innovative, open source, and [mission -aligned](https://github.com/filecoin-project/FIPs/blob/master/mission.md) development of the Filecoin protocol.  
 
 Appropriately, Filecoin’s governance system has changed slowly over time. This slowness reflects both the difficulty with which governance systems can be formally altered, as well as the ultimate need for systems to adapt as their communities and projects change. 
 
