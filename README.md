@@ -33,8 +33,8 @@ Want to help out? Pull requests (PRs) are always welcome! If you want to help ou
 
 ### Link checking
 
-Links are checked using [lychee-action](https://github.com/lycheeverse/lychee-action) as confirugred by [check-external-links.yml](.github/workflows/check-external-links.yml).  Working links are required before merging.  If you have a link that should be excluded from checking:
-1. wrap it in `` `backquoetes` `` OR
+Links are checked using [lychee-action](https://github.com/lycheeverse/lychee-action) as configured by [check-external-links.yml](.github/workflows/check-external-links.yml).  Working links are required before merging.  If you have a link that should be excluded from checking:
+1. wrap it in `` `backticks` `` OR
 2. wrap it in `<code>` blocks OR
 3. use [`.lycheeignore`](https://github.com/lycheeverse/lychee-action?tab=readme-ov-file#excluding-links-from-getting-checked) 
 
