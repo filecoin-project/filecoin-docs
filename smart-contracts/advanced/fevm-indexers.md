@@ -45,7 +45,8 @@ Just as with database data queried through SQL, subgraphs have to be stored some
    - On the [Protofire (Glif Nodes) platform](https://api.node.glif.io), connect your [Filecoin-compatible wallet](https://docs.filecoin.io/basics/assets/wallets).
 
 2. **Create an API Key**
-   - Switch to the **SUBGRAPHS** tab and then choose the **API keys** tab.
+   - Switch to the [**SUBGRAPHS** tab](https://api.node.glif.io/graph). 
+   - Choose the **API keys** tab.
    - Click **Create new key**.
    - Generate an API key to authenticate your requests.
 
