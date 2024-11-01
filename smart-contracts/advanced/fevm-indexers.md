@@ -41,8 +41,6 @@ Just as with database data queried through SQL, subgraphs have to be stored some
 
 [Protofire (aka Glif Nodes)](https://api.node.glif.io) offers public access to The Graph services, simplifying the process of deploying and managing subgraphs.
 
-##### Deploying Your Own Subgraph
-
 1. **Connect Your Wallet**
    - On the [Protofire (Glif Nodes) platform](https://api.node.glif.io), connect your [Filecoin-compatible wallet](https://docs.filecoin.io/basics/assets/wallets).
 
