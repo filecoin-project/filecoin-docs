@@ -86,5 +86,5 @@ One of the popular subgraphs is a subgraph containing information about all the 
 ```
 
 - Click "Execute query" (alternatively Ctrl+Enter, the icon with white triangle in the red square) and adjust query if needed. 
-- Copy "Queries (HTTP)" URL on the top of the Playground as well as resulting query to your code. The subgraph querying is free so far, although it requires an [API key](#deploying-your-own-subgraph).
+- Copy "Queries (HTTP)" URL on the top of the Playground as well as resulting query to your code. The subgraph querying is free so far, although it requires an API key.
 
