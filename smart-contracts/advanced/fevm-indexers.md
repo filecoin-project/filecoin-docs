@@ -35,7 +35,7 @@ Developing a subgraph requires specialized knowledge that can be obtained throug
 
 ### Deploying Subgraphs
 
-Just as with database data queried through SQL, subgraphs have to be stored somewhere. You may run a self-hosted instance as described in [The Graph Academy examples](https://thegraph.academy/developers/local-development/) and deploy a subgraph there. However, as with RPC nodes and databases, running subgraphs locally in production is not recommended from an uptime standpoint. For hosting the subgraph, it is reasonable to use online web services such as AWS or refer to professional subgraph providers such as [Protofire (aka Glif Nodes)](https://api.node.glif.io).
+Just as with database data queried through SQL, subgraphs have to be stored somewhere. You may run a self-hosted instance as described in [The Graph Academy examples](https://thegraph.academy/developers/local-development/) and deploy a subgraph there. However, as with RPC nodes and databases, running subgraphs locally in production is not recommended from an uptime standpoint. For hosting the subgraph, it is reasonable to use online web services such as AWS or refer to professional subgraph providers such as [Protofire (aka Glif Nodes)](https://api.node.glif.io/graph).
 
 #### Example: Deploying a Subgraph with Glif Nodes (Protofire)
 
