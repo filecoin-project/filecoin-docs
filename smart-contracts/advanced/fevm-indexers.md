@@ -6,13 +6,13 @@ description: >-
 # FEVM Blockchain Indexers
 > *Not to be confused with [IPNI Indexer](https://docs.filecoin.io/storage-providers/architecture/network-indexer)*
 
-Blockchain indexers are used for accessing blockchain data efficiently. They process and organize storage-optimized raw blockchain data into retrieve-optimized and well-queryable formats. This solves five key problems for developers and users looking to retrieve specific information:
+Blockchain indexers are used for accessing blockchain data efficiently. They process and organize storage-optimized raw blockchain data into retrieve-optimized and well-queryable formats. This benefits developers and users looking to retrieve specific information because they don't need to:
 
-1. The need to run your own [archival node](https://docs.filecoin.io/networks/mainnet/rpcs).
-2. The need to parse entire blockchain histories to crawl for events that might not exist for thousands of [tipsets](https://docs.filecoin.io/basics/the-blockchain/blocks-and-tipsets#tipsets).
-3. The significant time required to retrieve data from the blockchain node.
-4. The complex interconnections between smart contracts are not easily identifiable.
-5. The substantial compute power needed to calculate advanced queries.
+1. Run their own [archival node](https://docs.filecoin.io/networks/mainnet/rpcs).
+2. Parse entire blockchain histories to crawl for events that might not exist for thousands of [tipsets](https://docs.filecoin.io/basics/the-blockchain/blocks-and-tipsets#tipsets).
+3. Spend significant time required to retrieve data from the blockchain node.
+4. Determine complex interconnections between smart contracts.
+5. Spend substantial compute power to calculate advanced queries.
 
 Additionally, blockchain indexers provide a better developer experience by leveraging well-known API standards and query languages like GraphQL.
 
