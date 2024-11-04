@@ -38,7 +38,7 @@ Pyth’s smart contracts are live on the Filecoin Mainnet and Calibration testne
 
 **Pyth x Filecoin Price Feed IDs**
 
-Price Feed IDs for FIL are also available on various chains. These can be found at [Pyth - Price Feed IDs](https://pyth.network/developers/price-feed-ids) and search for 'FIL'. Learn more at [Pyth docs - Price Feed IDs](https://docs.pyth.network/price-feeds/price-feed-ids).
+Price Feed IDs for FIL are also available on various chains. These can be found at [Pyth - Price Feed IDs](https://pyth.network/developers/price-feed-ids) and search for 'FIL'.
 
 #### **Further Pyth resources**
 
