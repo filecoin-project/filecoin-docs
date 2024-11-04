@@ -1,45 +1,42 @@
 ---
 description: >-
-  The storage market is the data entry point into the network where storage
-  providers and clients negotiate and publish storage deals on-chain.
+  The storage market is the entry point where storage providers and clients negotiate and publish storage deals on-chain.
 ---
 
-# Storage market
+# Storage Market
 
-## Deal making
+## Deal Making
 
-The lifecycle for a deal within the storage market contains four distinct phases:
+The lifecycle of a deal within the storage market includes four distinct phases:
 
-* Discovery: the client identifies potential SPs and asks for their prices.
-* Negotiation: once the client has selected an SP both parties agree to the term of the deal.
-* Publishing: the deal is published on-chain.
-* Handoff: the deal is added into a sector where data storage can be proven by the SP.
+- **Discovery**: The client identifies potential storage providers (SPs) and requests their prices.
+- **Negotiation**: After selecting an SP, both parties agree to the terms of the deal.
+- **Publishing**: The deal is published on-chain.
+- **Handoff**: The deal is added to a sector, where the SP can provide cryptographic proofs of data storage.
 
-## Filecoin plus
+## Filecoin Plus
 
-The mission of Filecoin Plus is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.
+Filecoin Plus aims to maximize useful storage on the Filecoin network by incentivizing the storage of meaningful and valuable data. It offers verified clients low-cost or free storage through a system called datacap, a storage quota that boosts incentives for storage providers.
 
-Verified clients can onboard data into Filecoin using datacap, which they apply from community-selected allocators. In return for storing verified storage deals, storage providers receive datacap with a 10x boost to their storage power which eventually increases their block rewards as an incentive.
+Verified clients use datacap allocated by community-selected allocators to store data on the network. In exchange for storing verified deals, storage providers receive a 10x boost in storage power, which increases their block rewards as an incentive.
 
-* Datacap: a Datacap token will be allocated to a verified client to spend in the storage deals carrying a 10x deal quality multiplier.
-* Allocators: community-selected allocators govern the program by verifying storage clients and allocating datacap tokens to verified clients.
-* Verified clients: clients are active network participants with datacap allocation for their data storage.
+- **Datacap**: A token allocated to verified clients to spend on storage deals, offering a 10x quality multiplier for deals.
+- **Allocators**: Community-selected entities responsible for verifying storage clients and allocating datacap tokens.
+- **Verified Clients**: Active participants with datacap allocations for their data storage needs.
 
-## Storage on-ramps
+## Storage On-Ramps
 
-To simplify the process of storing data on the network, there are many storage helpers to provide an easier way to integrate Filecoin storage as well as IPFS into your applications or smart contracts.
+To simplify data storage on the Filecoin network, several tools offer streamlined integration of Filecoin and IPFS storage for applications or smart contracts.
 
-Storage helpers provide libraries that abstract Filecoin deal-making into simple, streamlined API calls and storing the data on IPFS to provide more efficient and fast retrieval for your content.
+These storage helpers provide libraries that abstract the Filecoin deal-making process into simple API calls. They also store data on IPFS for efficient and fast content retrieval.
 
-Here are some available storage helpers:
+Available storage helpers include:
 
-* [lighthouse.storage](https://www.lighthouse.storage/) - an SDK for builders that includes tools to do storage from dApps.
-* [web3.storage](https://web3.storage/) - easy to use client for accessing decentralized protocols like IPFS and UCAN.
-* [Akave](https://www.akave.ai/) - innovating data management with a decentralized, modular L2 solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces.
-* [Storacha](https://storacha.network/) - a decentralized hot storage network for data at scale, offering user-owned data with decentralized permissioning, leveraging Filecoin.
-* [Curio](https://curiostorage.org/) - a next-gen platform in the Filecoin ecosystem, streamlining storage provider operations.
-* [boost.filecoin.io](https://boost.filecoin.io/) - a tool for Storage Providers to manage data onboarding and retrieval on the Filecoin network.
+- [lighthouse.storage](https://www.lighthouse.storage/): An SDK for builders, providing tools for storing data from dApps.
+- [web3.storage](https://web3.storage/): A user-friendly client for accessing decentralized protocols like IPFS and UCAN.
+- [Akave](https://www.akave.ai/): A modular L2 solution for decentralized data management, combining Filecoin storage with encryption and easy-to-use interfaces.
+- [Storacha](https://storacha.network/): A decentralized hot storage network for scalable, user-owned data with decentralized permissions, leveraging Filecoin.
+- [Curio](https://curiostorage.org/): A next-gen platform within the Filecoin ecosystem, streamlining storage provider operations.
+- [boost.filecoin.io](https://boost.filecoin.io/): A tool for storage providers to manage data onboarding and retrieval on the Filecoin network.
 
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/storage-market)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/storage-market)
