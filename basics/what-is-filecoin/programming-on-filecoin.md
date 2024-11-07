@@ -1,90 +1,84 @@
 ---
 description: >-
-  Once data has been stored, it is possible to run computations and calculations
-  on that data, without needing to retrieve the data from a storage provider.
-  This page covers the basics of how programmin
+  Once data is stored, computations can be performed directly on it without needing retrieval. This page covers the basics of programming on Filecoin.
 ---
 
-# Programming on Filecoin
+# Programming on filecoin
 
 ## Compute-over-data
 
-When it comes to data, a common need beyond storage and retrieval is data transformation. The goal with the compute-over-data protocols is generally to perform computation over IPLD, which is the data layer used by content-addressed systems like Filecoin. There are working groups working on different types of computing on Filecoin data, such as large-scale parallel compute (e.g., Bacalhau) and cryptographically verifiable compute (e.g. [Lurk](https://filecoin.io/blog/posts/introducing-lurk-a-programming-language-for-recursive-zk-snarks/)), etc.
+Beyond storage and retrieval, data often needs transformation. Compute-over-data protocols enable computations over IPLD, the data layer used by content-addressed systems like Filecoin. Working groups are developing compute solutions for Filecoin data, including large-scale parallel compute (e.g., [Bacalhau](https://www.bacalhau.org/)) and cryptographically verifiable compute (e.g., [Lurk](https://filecoin.io/blog/posts/introducing-lurk-a-programming-language-for-recursive-zk-snarks/)).
 
-For example, [Bacalhau](https://www.bacalhau.org/) is a platform for public, transparent, and optionally verifiable distributed computation. It enables users to run arbitrary Docker containers and WebAssembly (wasm) images as tasks against data stored in the InterPlanetary File System (IPFS).
+For example, Bacalhau provides a platform for public, transparent, and verifiable distributed computation, allowing users to run Docker containers and WebAssembly (Wasm) images as tasks on data stored in InterPlanetary File System (IPFS).
 
-It is worth noting that Filecoin is uniquely positioned to support large-scale off-chain computation since the storage providers have to compute resources such as GPUs and CPUs colocated with their data. By supporting compute-over-data on the Filecoin network, we enable a new paradigm of computing on the data where the data exists rather than moving the data to external compute nodes.
+Filecoin is uniquely positioned to support large-scale off-chain computation because storage providers have compute resources, such as GPUs and CPUs, colocated with their data. This setup enables a new paradigm where computations occur directly on the data where it resides, reducing the need to move data to external compute nodes.
 
-## Filecoin virtual machine
+## Filecoin Virtual Machine
 
-The Filecoin virtual machine (FVM) is a runtime environment for smart contracts on the Filecoin network. Smart contracts enable users to run any bounded computation, including those that create and enforce rules for storing and accessing data on the network. The FVM is responsible for executing these smart contracts and ensuring they are executed correctly and securely.
+The Filecoin Virtual Machine (FVM) is a runtime environment for executing smart contracts on the Filecoin network. These smart contracts allow users to run bounded computations and establish rules for storing and accessing data. The FVM ensures that these contracts are executed securely and reliably.
 
-FVM is designed to support native Filecoin actors written in languages that compile to WASM, as well as smart contracts written for foreign runtimes, including Solidity contracts for Ethereum Virtual Machine (EVM), Secure EcmaScript (SES), and eBPF. The [reference FVM](https://github.com/filecoin-project/ref-fvm) and SDK are written in Rust.
+The FVM is designed to support both native Filecoin actors written in languages that compile to Wasm and smart contracts from other runtimes, such as Solidity for the Ethereum Virtual Machine (EVM), Secure EcmaScript (SES), and eBPF. The [reference FVM](https://github.com/filecoin-project/ref-fvm) and SDK are written in Rust, ensuring high performance and security.
 
-According to the FVM roadmap, we initially support smart contracts written in Solidity and eventually support any language that compiles to WASM.
+Initially, the FVM supports smart contracts written in Solidity, with plans to expand to other languages that compile to Wasm, as outlined in the FVM roadmap.
 
-The FVM enables compute-over-states on the Filecoin network and allows developers to build endless new use cases on top of Filecoin. Some example use cases are:
+By enabling compute-over-states on the Filecoin network, the FVM unlocks a wide range of potential use cases. Examples include:
 
-### Data organizations
+### Data Organizations
 
-FVM can create a new kind of organization – one built around datasets of various kinds.
+FVM enables a new kind of organization centered around data.
 
-#### Data DAO and tokenized datasets
+#### Data DAOs and tokenized datasets
 
-The FVM enables the creation and management of data-based decentralized and autonomous organizations – data DAOs. The FVM allows a group of individuals, or organizations, to curate and preserve data collection. Data DAOs can govern and monetize data access and pool the returns into a shared treasury to fund the collections preservation and long-term growth. One could even exchange those data tokens between peers and request computation services on that data, such as validation, joins, analysis, feature detection, and extraction, moving into machine learning.
+The FVM makes it possible to create and manage decentralized and autonomous organizations (Data DAOs) focused on data curation and preservation. Data DAOs allow groups of individuals or organizations to govern and monetize data access, pooling returns into a shared treasury to fund preservation and growth. These data tokens can also be exchanged among peers or used to request computation services, such as validation, analysis, feature detection, and machine learning.
 
 #### Perpetual storage
 
-FVM allows users to store once and have repair and replication bots manage the repetitive storage deal creation tasks so that data can be stored perpetually. Using a smart contract, users can provision a wallet with FIL, and storage providers can use that to fund data storage permanently. Repair bots can monitor the storage deals and replicate the data with other storage providers when necessary. This process gives users long-term storage permanence.
+The FVM allows users to store data once and use repair and replication bots to manage ongoing storage deals, ensuring perpetual data storage. Through smart contracts, users can fund a wallet with FIL, allowing storage providers to maintain data storage indefinitely. Repair bots monitor these storage deals and replicate data across providers as needed, offering long-term data permanence.
 
 ### Financial services for miners
 
-FVM can provide a variety of financial services for storage providers. The needs of these SPs are unique to the Filecoin ecosystem.
+The FVM can facilitate unique financial services tailored for storage providers (SPs) in the Filecoin ecosystem.
 
 #### Lending and staking protocols
 
-Users can lend out Filecoin to storage providers to use it as storage collateral and receive interest in return. These loans can be undercollateralized based on the on-chain storage history of past storage provider performance. Community members can use this history to generate reputation scores, enabling everyone to identify good borrowers. On top of that, loans can be automatically paid back to investors by using a multisig as the storage provider’s owner address, including lenders and a third party, to help negotiate payback. New FVM-enabled smart contracts give every FIL token holder access to new yield opportunities on their holdings while also benefiting the whole Filecoin economy by allowing entry ramps for providing storage on the network.
+Users can lend Filecoin to storage providers to be used as storage collateral, earning interest in return. Loans may be undercollateralized based on SP performance history, with reputation scores generated from on-chain data. Loans can also be automatically repaid to investors using a multisig wallet, which includes lenders and a third-party arbitrator. New FVM-enabled smart contracts create yield opportunities for FIL holders while supporting the growth of storage services on the network.
 
 #### Insurance
 
-SPs need to have financial products that help protect them from the risk they are undertaking in creating more storage solutions. Certain characteristics such as payment history, length of operation, and availability can be used to craft insurance policies just as they can be used to underwrite loans to SPs. This can protect them from the financial consequences of active faulting or token price drops.
+SPs may require financial products to protect against risks in providing storage solutions. Attributes such as payment history, operational length, and availability can be used to underwrite insurance policies, shielding SPs from financial impacts due to storage faults or token price fluctuations.
 
 ### Core chain infrastructure
 
-We expect that FVM will gain feature parity with other chains that persist. This is required for any EVM chain to operate but is not necessarily tied to storage primitives.
+The FVM is expected to achieve feature parity with other persistent EVM chains, supporting critical infrastructure for decentralized exchanges and token bridges.
 
 #### Decentralized exchanges
 
-Users on FVM need to be able to exchange FIL for other tokens issued on-chain. This may be a decentralized exchange such as a fork of Uniswap or Sushi or involve building a decentralized order book similar to Serum on Solana.
+To facilitate on-chain token exchange, the FVM may support decentralized exchanges like Uniswap or Sushi, or implement decentralized order books similar to Serum on Solana.
 
 #### Token bridges
 
-While not immediately on the roadmap, bridges are needed from EVM chains, Move chains, and Cosmos chains to bring wrapped tokens from other ecosystems into the fold. With the current launch, we are more focused internally since the value proposition of Filecoin is unique enough that it does not need to bootstrap TVL from other chains. However, in the long run, we expect FVM to be part of a broader family of blockchains.
+Although not an immediate focus, token bridges will eventually connect Filecoin to EVM, Move, and Cosmos chains, enabling cross-chain wrapped tokens. While Filecoin currently offers unique value without needing to bootstrap liquidity from other chains, long-term integration with other blockchains is anticipated.
 
-Besides these, there are a lot more use cases that the FVM could enable, such as data access control ([Medusa](https://cryptonet.org/projects/project-medusa-scalable-threshold-network-on-chain)), retrieval and trustless reputation systems, replication workers, storage bounties, and L2 networks. To learn more about what you can build on top of FVM, check out our [Request for Startup](https://protocollabs.notion.site/Request-for-Startups-FVM-edition-8cd3e76982d14e29b33335ca458fb087) post.
+In addition to these, the FVM could support various other use cases, such as data access control ([Medusa](https://cryptonet.org/projects/project-medusa-scalable-threshold-network-on-chain)), trustless reputation systems, replication workers, storage bounties, and L2 networks. For more details on potential use cases, see our [Request for Startups](https://protocollabs.notion.site/Request-for-Startups-FVM-edition-8cd3e76982d14e29b33335ca458fb087) post.
 
-If you are interested in building these use cases, there is a list of solution blueprints that might help as a reference point regarding how some of these could work on a high level:
+If you are interested in building these use cases, the following solution blueprints may be helpful:
 
-* [DataDAO Solution Blueprint](https://docs.google.com/document/d/1OYDh\_gs7mAk2M\_O9m-2KedQA7MNo6ysIzH6eaQZxMOk/edit?pli%3D1)
-* [Perpetual Storage Solution Blueprint](https://docs.google.com/document/d/19Kck1PiGGrUKyd6XBYj6NtsC5NiCjndUSsv0OFA1Lv0/edit)
-* [Lending pool cookbook](https://docs.google.com/document/d/18in74On0bY7KyEsPgItvNvfUUPcPtHjNQtVfLdJUyzM/edit)
+- [DataDAO Solution Blueprint](https://docs.google.com/document/d/1OYDh_gs7mAk2M_O9m-2KedQA7MNo6ysIzH6eaQZxMOk/edit?pli=1)
+- [Perpetual Storage Solution Blueprint](https://docs.google.com/document/d/19Kck1PiGGrUKyd6XBYj6NtsC5NiCjndUSsv0OFA1Lv0/edit)
+- [Lending Pool Cookbook](https://docs.google.com/document/d/18in74On0bY7KyEsPgItvNvfUUPcPtHjNQtVfLdJUyzM/edit)
 
 ### Filecoin EVM
 
-The Filecoin EVM runtime (FEVM) is the Ethereum Virtual Machine (EVM) virtualized as a runtime on top of the Filecoin Virtual Machine (FVM). It will allow developers to port any existing EVM-based smart contracts straight onto the FVM and make them work out of the box. FEVM emulates EVM bytecode at the low level, supporting contracts written in Solidity, Vyper, and Yul. The EVM foreign runtime is based on preexisting OSS libraries, including [SputnikVM](https://github.com/rust-blockchain/evm) and Revm. You can find out more details in the [EVM <> FVM mapping specification](https://github.com/filecoin-project/fvm-project/blob/main/04-evm-mapping.md).
+The Filecoin EVM (FEVM) is an Ethereum Virtual Machine (EVM) runtime built on top of the FVM. It allows developers to port existing EVM-based smart contracts directly onto Filecoin. The FEVM emulates EVM bytecode at a low level, supporting contracts written in Solidity, Vyper, and Yul. The EVM runtime is based on open-source libraries, including [SputnikVM](https://github.com/rust-blockchain/evm) and Revm. More details can be found in the [EVM <> FVM mapping specification](https://github.com/filecoin-project/fvm-project/blob/main/04-evm-mapping.md).
 
-Because Filecoin nodes offer the Ethereum JSON-RPC API support, FEVM is also completely compatible with any EVM development tools, such as Hardhat, Brownie, and MetaMask. Most smart contracts ported to Filecoin shouldn’t require changes or auditing. For example, new ERC-20 tokens can be launched on the Filecoin network or bridged directly to token pools on other chains.
+Since Filecoin nodes support the Ethereum JSON-RPC API, FEVM is compatible with existing EVM development tools, such as Hardhat, Brownie, and MetaMask. Most smart contracts deployed to Filecoin require minimal adjustments, if any. For example, new ERC-20 tokens can be launched on Filecoin or bridged to other chains.
 
-Developers can deploy actors on either the FEVM or native FVM; which one should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don’t mind slightly less performance, deploy to the FEVM.
+Developers can choose between deploying actors on the FEVM or native FVM: for optimal performance, actors should be written in languages that compile to Wasm and deployed to the native FVM. For familiarity with Solidity and EVM tools, the FEVM is a convenient alternative.
 
-To sum it up, the FEVM allows current Web3 developers to quickly start writing actors on the Filecoin blockchain while using all of the tools, software packages, and languages they are used to while having access to Filecoin storage deals as a native.
+In summary, the FEVM provides a straightforward path for Web3 developers to begin building on Filecoin using familiar tools and languages, while gaining native access to Filecoin storage deals.
 
-The difference between FEVM and EVM contracts is that contracts deployed on FEVM can interact with built-in actors to interact with Filecoin-specific actors, such as miner actors, as mentioned in the built-in actor section. This allows developers to build Filecoin-native decentralized applications for the new use cases mentioned above. Smart contracts deployed to the Ethereum blockchain have no direct access to the Filecoin network or Filecoin-specific actors.
+The primary difference between FEVM and EVM contracts is that FEVM contracts can interact directly with Filecoin-specific actors, such as miner actors, which are inaccessible to Ethereum contracts. To enable seamless integration, a Filecoin-Solidity API library has been developed to facilitate interactions with Filecoin-specific actors and syscalls.
 
-To allow Solidity smart contracts on FEVM to seamlessly call methods on Filecoin built-in actors and access Filecoin-specific syscalls idiomatically, a Filecoin-Solidity API library has been developed, you can use it for building your use cases, such as interacting with storage deals.
+For example FEVM contracts, see the available [example contracts here](https://github.com/lotus-web3/client-contract).
 
-If you build on FEVM, you might find some of the [example contracts here](https://github.com/lotus-web3/client-contract) helpful.
-
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/programming-on-filecoin)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/programming-on-filecoin)

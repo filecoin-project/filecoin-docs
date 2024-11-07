@@ -1,11 +1,11 @@
 ---
 description: >-
-    This page covers the client contract, and includes a tutorial on how developers can use the client contract to create storage deals programmatically.
+  This page covers the client contract, and includes a tutorial on how developers can use the client contract to create storage deals programmatically.
 ---
 
 # Client contract tutorial
 
-In this tutorial we will cover the background of creating storage deals using smart contracts, and how to create storage deals with smart contracts on the [Filecoin virtual machine](../../reference/general/glossary.md#filecoin-virtual-machine). 
+In this tutorial we will cover the background of creating storage deals using smart contracts, and how to create storage deals with smart contracts on the [Filecoin virtual machine](../../reference/general/glossary.md#filecoin-virtual-machine).
 
 You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel](https://www.youtube.com/watch?v=27EV3gQGY9k).
 
@@ -13,11 +13,11 @@ You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel]
 
 Before continuing, make sure you have the following software installed and prerequisites ready:
 
-* Git
-* NodeJS
-* Yarn or NPM (Yarn is used in this tutorial)
-* A code editor such as VS Code
-* A wallet with Calibration testnet FIL
+- Git
+- NodeJS
+- Yarn or NPM (Yarn is used in this tutorial)
+- A code editor such as VS Code
+- A wallet with Calibration testnet FIL
 
 ## Steps
 
@@ -68,32 +68,32 @@ Before storing a file with a storage provider it needs to be prepared by turning
 
 1. Go to the [FVM Data Depot website](https://data.lighthouse.storage/) and create an account.
 2. Click **Upload File** and select a file you wish to upload.
-3.  Select the **File ID** of the file to read all the relevant metadata. Make a note of the:
+3. Select the **File ID** of the file to read all the relevant metadata. Make a note of the:
 
-    * Piece CID
-    * Payload CID
-    * Car size
-    * Piece size
-    * URL
+   - Piece CID
+   - Payload CID
+   - Car size
+   - Piece size
+   - URL
 
-    We’ll use this information in the next step when invoking the `MakeDealProposal` method.
+   We’ll use this information in the next step when invoking the `MakeDealProposal` method.
 
 ### Invoke the `MakeDealProposal` method
 
 Now that we have the `.car` file prepared in the data depot, we can invoke the MakeDealProposal method on the smart contract we deployed earlier. To do this, we will run the `make-deal-proposal` task in Hardhat. There are quite a few parameters to include in this call:
 
-* `contract`: the address of your deployed `ClientContract.sol`.
-* `piece-cid: gathered from the previous step.
-* `piece-size`: gathered from the previous step.
-* `car-size`: gathered from the previous step.
-* `start-epoch`: The block number you want the deal to begin on. It should be a block in the future. You can find the current block number on [Beryx](https://beryx.io/), making sure to select the correct network.
-* `end-epoch`: The block number you want the deal to end on. It should be a block in the future and after the `Start-Epoch`. You can find the current block number on [FILFOX](https://calibration.filfox.info/en).
-* `location-ref`: The location of where the storage provider can find the .car file. This is the `URL` from the previous step.
+- `contract`: the address of your deployed `ClientContract.sol`.
+- `piece-cid: gathered from the previous step.
+- `piece-size`: gathered from the previous step.
+- `car-size`: gathered from the previous step.
+- `start-epoch`: The block number you want the deal to begin on. It should be a block in the future. You can find the current block number on [Beryx](https://beryx.io/), making sure to select the correct network.
+- `end-epoch`: The block number you want the deal to end on. It should be a block in the future and after the `Start-Epoch`. You can find the current block number on [FILFOX](http://47.109.105.51/en).
+- `location-ref`: The location of where the storage provider can find the .car file. This is the `URL` from the previous step.
 
 When calling the `make-deal-proposal` task in Hardhat, your command will look something like this:
 
 ```shell
-yarn hardhat make-deal-proposal \ 
+yarn hardhat make-deal-proposal \
     --contract 0x0219eB1740C315fe5e20612D7E13AE2A883dB3f4 \
     --piece-cid baga6ea4seaqn4eomxfk3ttog7lnvlvedu7nia377w4gotw2pm746k6kq7gwe6ga \
     --piece-size 2097152 \

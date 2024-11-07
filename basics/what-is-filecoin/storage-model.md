@@ -1,42 +1,39 @@
 ---
 description: >-
-  A storage model defines how data is stored within a system. This page covers
-  the basic aspects of Filecoin’s storage model.
+  A storage model defines how data is stored within a system. This page covers the basic aspects of Filecoin’s storage model.
 ---
 
-# Storage model
+# Storage Model
 
-The Filecoin storage model consists of three components:
+The Filecoin storage model consists of three main components:
 
-* Providers
-* Deals
-* Sectors
+- Providers
+- Deals
+- Sectors
 
 ## Providers
 
-Providers, as the name suggests, provide a service to users of the network. There are two types of provider:
+Providers offer storage and retrieval services to network users. There are two types of providers:
 
-* Storage providers
-* Retrieval providers
+- Storage Providers
+- Retrieval Providers
 
 ### Storage providers
 
-Storage providers, often called SPs, are responsible for storing files and data for clients on the network and providing cryptographic proofs to verify storage. The vast majority of providers on the Filecoin network are SPs.
+Storage providers, often called SPs, are responsible for storing files and data for clients on the network. They also provide cryptographic proofs to verify that data is stored securely. The majority of providers on the Filecoin network are SPs.
 
 ### Retrieval providers
 
-Retrieval providers, often called RPs, are responsible for providing users quick access to their data. They focus on rapid access to data, rather than long-term storage. Most of the time storage providers also provide retrieval access to their users as part of the same system. However, more and more stand-alone RPs are joining the network.
+Retrieval providers, or RPs, specialize in delivering quick access to data rather than long-term storage. While many storage providers also offer retrieval services, stand-alone RPs are increasingly joining the network to enhance data accessibility.
 
 ## Deals
 
-In the Filecoin network, SPs and RPs provide their storage or retrieval service to data clients through deals. These deals are negotiated and agreed upon between two parties, and include terms like data size, price, deal duration, and collateral.
+In the Filecoin network, SPs and RPs offer storage or retrieval services to clients through deals. These deals are negotiated between two parties and outline terms such as data size, price, duration, and collateral.
 
-The deal-making process happens _off-chain_. Once both parties agree to the terms of a deal, that deal is published _on-chain_ for the rest of the network to see and validate.
+The deal-making process initially occurs _off-chain_. Once both parties agree to the terms, the deal is published _on-chain_ for network-wide visibility and validation.
 
 ## Sectors
 
-Sectors are the basic units of provable storage where storage providers store clients’ data and generate PoSt on behalf of the Filecoin network. Sectors have standard sizes and a lifetime that storage providers can extend before reaching the end of the lifetime. `32 GiB` and `64 GiB` sector sizes are supported.
+Sectors are the fundamental units of provable storage where storage providers securely store client data and generate PoSt (Proof of Spacetime) for the Filecoin network. Sectors come in standard sizes, typically `32 GiB` or `64 GiB`, and have a set lifespan that providers can extend before it expires.
 
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/storage-model)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/storage-model)

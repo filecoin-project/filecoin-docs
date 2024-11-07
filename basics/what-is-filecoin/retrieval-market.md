@@ -1,26 +1,22 @@
 ---
 description: >-
-  The retrieval market refers to negotiating retrieval deals for a provider to
-  serve stored data to a client. In this agreement, the client agrees to pay the
-  retrieval provider a certain amount of FIL f
+  The retrieval market facilitates the negotiation of retrieval deals for serving stored data to clients in exchange for FIL.
 ---
 
 # Retrieval market
 
 ## Basic retrieval
 
-Currently, Filecoin nodes support direct retrieval from the storage miners who originally stored the data. Clients can directly send retrieval requests to a storage provider to retrieve their data by paying some FIL for retrieval.
+Currently, Filecoin nodes support direct retrieval from the storage miners who originally stored the data. Clients can send retrieval requests directly to a storage provider and pay a small amount of FIL to retrieve their data.
 
-Clients need to provide enough information to the storage provider for the data retrieval request, including:
+To request data retrieval, clients need to provide the following information to the storage provider:
 
-* Storage provider ID: The ID of the storage provider where the data is stored.
-* Payload CID: also called Data CID.
-* Address: The address initially used to create the storage deal.
+- **Storage Provider ID**: The ID of the storage provider where the data is stored.
+- **Payload CID**: Also known as Data CID.
+- **Address**: The address initially used to create the storage deal.
 
 ## Saturn
 
-[Saturn](https://saturn.tech/) is a Web3 CDN in Filecoin’s retrieval market which serves the data stored on Filecoin with low latency and at low cost. It consists of independent retrieval providers specifically dedicated to that business, making retrieval an efficient, fast, and reliable operation.
+[Saturn](https://saturn.tech/) is a Web3 CDN within Filecoin’s retrieval market that serves data stored on Filecoin with low latency and at a low cost. It consists of independent retrieval providers dedicated to efficient, fast, and reliable data retrieval operations.
 
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/retrieval-market)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/retrieval-market)
