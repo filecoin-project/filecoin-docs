@@ -3,9 +3,9 @@ description: >-
   The storage market is the entry point where storage providers and clients negotiate and publish storage deals on-chain.
 ---
 
-# Storage Market
+# Storage market
 
-## Deal Making
+## Deal making
 
 The lifecycle of a deal within the storage market includes four distinct phases:
 
@@ -24,7 +24,7 @@ Verified clients use datacap allocated by community-selected allocators to store
 - **Allocators**: Community-selected entities responsible for verifying storage clients and allocating datacap tokens.
 - **Verified Clients**: Active participants with datacap allocations for their data storage needs.
 
-## Storage On-Ramps
+## Storage on-ramps
 
 To simplify data storage on the Filecoin network, several tools offer streamlined integration of Filecoin and IPFS storage for applications or smart contracts.
 

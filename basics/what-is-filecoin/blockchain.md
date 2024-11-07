@@ -15,30 +15,30 @@ Each tipset is assigned a weight, enabling the consensus protocol to guide nodes
 
 An actor in the Filecoin blockchain is similar to a smart contract in the Ethereum Virtual Machine. It functions as an ‘object’ within the Filecoin network, with a state and a set of methods for interaction.
 
-### Built-in Actors
+### Built-in actors
 
 Several built-in system actors power the Filecoin network as a decentralized storage network:
 
-- **System Actor**: General system actor.
-- **Init Actor**: Initializes new actors and records the network name.
-- **Cron Actor**: Scheduler that runs critical functions at every epoch.
-- **Account Actor**: Manages user accounts (non-singleton).
-- **Reward Actor**: Manages block rewards and token vesting (singleton).
-- **Storage Miner Actor**: Manages storage mining operations and validates storage proofs.
-- **Storage Power Actor**: Tracks storage power allocation for each provider.
-- **Storage Market Actor**: Manages storage deals.
-- **Multisig Actor**: Handles Filecoin multi-signature wallet operations.
-- **Payment Channel Actor**: Sets up and settles payment channel funds.
-- **Datacap Actor**: Manages datacap tokens.
-- **Verified Registry Actor**: Manages verified clients.
-- **Ethereum Address Manager (EAM) Actor**: Assigns Ethereum-compatible addresses on Filecoin, including EVM smart contract addresses.
-- **EVM Account Actor**: Represents an external Ethereum identity backed by a secp256k1 key.
+- **System actor**: General system actor.
+- **Init actor**: Initializes new actors and records the network name.
+- **Cron actor**: Scheduler that runs critical functions at every epoch.
+- **Account actor**: Manages user accounts (non-singleton).
+- **Reward actor**: Manages block rewards and token vesting (singleton).
+- **Storage miner actor**: Manages storage mining operations and validates storage proofs.
+- **Storage power actor**: Tracks storage power allocation for each provider.
+- **Storage market actor**: Manages storage deals.
+- **Multisig actor**: Handles Filecoin multi-signature wallet operations.
+- **Payment channel actor**: Sets up and settles payment channel funds.
+- **Datacap actor**: Manages datacap tokens.
+- **Verified registry actor**: Manages verified clients.
+- **Ethereum Address Manager (EAM) actor**: Assigns Ethereum-compatible addresses on Filecoin, including EVM smart contract addresses.
+- **Ethereum Virtual Machine (EVM) account actor**: Represents an external Ethereum identity backed by a secp256k1 key.
 
-### User-Programmable Actors
+### User-programmable actors
 
 With the maturity of the FVM, developers can write actors and deploy them on the Filecoin network, similar to other blockchains' smart contracts. User-programmable actors can interact with built-in actors via the exported API from built-in actors.
 
-## Distributed Randomness
+## Distributed randomness
 
 Filecoin uses the [Drand](https://drand.love) protocol as a randomness beacon for leader election in the [expected consensus](blockchain.md#expected-consensus) process. This randomness ensures leader election is secret, fair, and verifiable.
 
@@ -65,13 +65,13 @@ In the Filecoin network, addresses identify actors in the Filecoin state. Each a
 
 ## Consensus
 
-### Expected Consensus
+### Expected consensus
 
 Expected Consensus (EC) is the consensus algorithm underlying Filecoin. EC is a probabilistic, Byzantine fault-tolerant protocol that conducts a leader election among storage providers each epoch to determine which provider submits a block. Similar to proof-of-stake, Filecoin’s leader election relies on proof-of-storage, meaning the probability of being elected depends on how much provable storage power a miner contributes to the network. This storage power is recorded in the storage power table, managed by the Storage Power Actor.
 
 At a high level, the consensus process uses [Drand](https://drand.love) to provide distributed, verifiable randomness, ensuring that leader election is secret, fair, and unbiased. Election participants and their storage power are drawn from the Power Table, which is continuously calculated and maintained by the Storage Power Consensus subsystem. Ultimately, EC gathers all valid blocks produced in an epoch and applies a weighting function to select the heaviest chain, adding blocks accordingly.
 
-### Block Production Process
+### Block production process
 
 The block production process for each epoch is as follows:
 
@@ -90,11 +90,11 @@ EC enforces soft finality, where miners at round `N` reject blocks forking off b
 
 Filecoin operates on proof-of-storage, where miners offer storage space and provide proofs to verify data storage.
 
-### Proof of Replication
+### Proof of replication
 
 With proof-of-replication (PoRep), storage providers prove they have created a unique copy of the client’s data for the network.
 
-### Proof of Spacetime
+### Proof of spacetime
 
 Storage providers must continuously prove that they are storing clients' data throughout the entire duration of the storage deal. The proof-of-spacetime (PoSt) process includes two types of challenges:
 

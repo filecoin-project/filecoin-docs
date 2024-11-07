@@ -19,7 +19,7 @@ layout:
     visible: true
 ---
 
-# Welcome to the Filecoin Documentation
+# Welcome to the Filecoin documentation
 
 Choose your own path to start exploring Filecoin:
 
@@ -34,7 +34,7 @@ Choose your own path to start exploring Filecoin:
   </thead>
   <tbody>
     <tr>
-      <td>💡 <strong>Learn the Basics</strong></td>
+      <td>💡 <strong>Learn the basics</strong></td>
       <td>New to Filecoin and looking for foundational concepts? Start with the Basics section to understand the essentials and kick off your journey!</td>
       <td></td>
       <td><a href="basics/what-is-filecoin/">what-is-filecoin</a></td>
@@ -52,7 +52,7 @@ Choose your own path to start exploring Filecoin:
       <td><a href="storage-providers/basics/">basics</a></td>
     </tr>
     <tr>
-      <td>📊 <strong>Store Data</strong></td>
+      <td>📊 <strong>Store data</strong></td>
       <td>Looking to store large volumes of data? Explore the Store section to review the various storage options Filecoin offers.</td>
       <td></td>
       <td><a href="basics/what-is-filecoin/storage-model.md">storage-model.md</a></td>

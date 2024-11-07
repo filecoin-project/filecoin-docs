@@ -18,11 +18,11 @@ Providers offer storage and retrieval services to network users. There are two t
 - Storage Providers
 - Retrieval Providers
 
-### Storage Providers
+### Storage providers
 
 Storage providers, often called SPs, are responsible for storing files and data for clients on the network. They also provide cryptographic proofs to verify that data is stored securely. The majority of providers on the Filecoin network are SPs.
 
-### Retrieval Providers
+### Retrieval providers
 
 Retrieval providers, or RPs, specialize in delivering quick access to data rather than long-term storage. While many storage providers also offer retrieval services, stand-alone RPs are increasingly joining the network to enhance data accessibility.
 

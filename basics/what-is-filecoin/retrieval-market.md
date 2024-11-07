@@ -3,9 +3,9 @@ description: >-
   The retrieval market facilitates the negotiation of retrieval deals for serving stored data to clients in exchange for FIL.
 ---
 
-# Retrieval Market
+# Retrieval market
 
-## Basic Retrieval
+## Basic retrieval
 
 Currently, Filecoin nodes support direct retrieval from the storage miners who originally stored the data. Clients can send retrieval requests directly to a storage provider and pay a small amount of FIL to retrieve their data.
 

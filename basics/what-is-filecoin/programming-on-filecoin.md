@@ -3,9 +3,9 @@ description: >-
   Once data is stored, computations can be performed directly on it without needing retrieval. This page covers the basics of programming on Filecoin.
 ---
 
-# Programming on Filecoin
+# Programming on filecoin
 
-## Compute-over-Data
+## Compute-over-data
 
 Beyond storage and retrieval, data often needs transformation. Compute-over-data protocols enable computations over IPLD, the data layer used by content-addressed systems like Filecoin. Working groups are developing compute solutions for Filecoin data, including large-scale parallel compute (e.g., [Bacalhau](https://www.bacalhau.org/)) and cryptographically verifiable compute (e.g., [Lurk](https://filecoin.io/blog/posts/introducing-lurk-a-programming-language-for-recursive-zk-snarks/)).
 
@@ -27,19 +27,19 @@ By enabling compute-over-states on the Filecoin network, the FVM unlocks a wide 
 
 FVM enables a new kind of organization centered around data.
 
-#### Data DAOs and Tokenized Datasets
+#### Data DAOs and tokenized datasets
 
 The FVM makes it possible to create and manage decentralized and autonomous organizations (Data DAOs) focused on data curation and preservation. Data DAOs allow groups of individuals or organizations to govern and monetize data access, pooling returns into a shared treasury to fund preservation and growth. These data tokens can also be exchanged among peers or used to request computation services, such as validation, analysis, feature detection, and machine learning.
 
-#### Perpetual Storage
+#### Perpetual storage
 
 The FVM allows users to store data once and use repair and replication bots to manage ongoing storage deals, ensuring perpetual data storage. Through smart contracts, users can fund a wallet with FIL, allowing storage providers to maintain data storage indefinitely. Repair bots monitor these storage deals and replicate data across providers as needed, offering long-term data permanence.
 
-### Financial Services for Miners
+### Financial services for miners
 
 The FVM can facilitate unique financial services tailored for storage providers (SPs) in the Filecoin ecosystem.
 
-#### Lending and Staking Protocols
+#### Lending and staking protocols
 
 Users can lend Filecoin to storage providers to be used as storage collateral, earning interest in return. Loans may be undercollateralized based on SP performance history, with reputation scores generated from on-chain data. Loans can also be automatically repaid to investors using a multisig wallet, which includes lenders and a third-party arbitrator. New FVM-enabled smart contracts create yield opportunities for FIL holders while supporting the growth of storage services on the network.
 
@@ -47,15 +47,15 @@ Users can lend Filecoin to storage providers to be used as storage collateral, e
 
 SPs may require financial products to protect against risks in providing storage solutions. Attributes such as payment history, operational length, and availability can be used to underwrite insurance policies, shielding SPs from financial impacts due to storage faults or token price fluctuations.
 
-### Core Chain Infrastructure
+### Core chain infrastructure
 
 The FVM is expected to achieve feature parity with other persistent EVM chains, supporting critical infrastructure for decentralized exchanges and token bridges.
 
-#### Decentralized Exchanges
+#### Decentralized exchanges
 
 To facilitate on-chain token exchange, the FVM may support decentralized exchanges like Uniswap or Sushi, or implement decentralized order books similar to Serum on Solana.
 
-#### Token Bridges
+#### Token bridges
 
 Although not an immediate focus, token bridges will eventually connect Filecoin to EVM, Move, and Cosmos chains, enabling cross-chain wrapped tokens. While Filecoin currently offers unique value without needing to bootstrap liquidity from other chains, long-term integration with other blockchains is anticipated.
 
