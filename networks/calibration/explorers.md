@@ -18,6 +18,9 @@ description: >-
 
 [calibration.filscan.io](https://calibration.filscan.io/)
 
+## Blockscout Open-Source FEVM Explorer
+[filecoin-testnet.blockscout.com](https://filecoin-testnet.blockscout.com)
+
 ## Starboard
 
 [fvm.starboard.ventures](https://fvm.starboard.ventures/)
