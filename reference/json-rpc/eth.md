@@ -2,7 +2,7 @@
 
 These methods are used for Ethereum-compatible JSON-RPC calls
 
-EthAccounts will always return [] since we don't expect Lotus to manage private keys
+EthAccounts will always return \[] since we don't expect Lotus to manage private keys
 
 ## EthAccounts
 
@@ -38,26 +38,21 @@ FilecoinAddressToEthAddress converts any Filecoin address to an EthAddress.
 
 This method supports all Filecoin address types:
 
-- `f0` and `f4` addresses: Converted directly.
-- `f1/f2/f3` addresses: First converted to their corresponding `f0` ID address, then to an `0x` EthAddress.
+* `f0` and `f4` addresses: Converted directly.
+* `f1/f2/f3` addresses: First converted to their corresponding `f0` ID address, then to an `0x` EthAddress.
 
 > **Note:**
-> 
-> f0 ID addresses are not permanent and can be affected by chain reorganizations. To account for this,
-> the API includes a `blkNum` parameter, which specifies the block number that is used to determine the tipset state to use for converting an
-> f1/f2/f3 address to an f0 address. This parameter functions similarly to the `blkNum` parameter in the existing `EthGetBlockByNumber` API.
-> See [Alchemy Docs - eth_getBlockByNumber](https://docs.alchemy.com/reference/eth-getblockbynumber) for more details.
+>
+> f0 ID addresses are not permanent and can be affected by chain reorganizations. To account for this, the API includes a `blkNum` parameter, which specifies the block number that is used to determine the tipset state to use for converting an f1/f2/f3 address to an f0 address. This parameter functions similarly to the `blkNum` parameter in the existing `EthGetBlockByNumber` API. See [Alchemy Docs - eth\_getBlockByNumber](https://docs.alchemy.com/reference/eth-getblockbynumber) for more details.
 
 Requirements:
 
-- For `f1/f2/f3` addresses, they must be instantiated on-chain, as `f0` ID addresses are only assigned to actors when they are created on-chain.
-  The simplest way to instantiate an address on chain is to send a transaction to the address.
+* For `f1/f2/f3` addresses, they must be instantiated on-chain, as `f0` ID addresses are only assigned to actors when they are created on-chain. The simplest way to instantiate an address on chain is to send a transaction to the address.
 
 Parameters:
 
-- filecoinAddress: The Filecoin address to convert.
-- blkNum: The block number or state for the conversion. Defaults to "finalized" for maximum safety.
-  Possible values: "pending", "latest", "finalized", "safe", or a specific block number represented as hex.
+* filecoinAddress: The Filecoin address to convert.
+* blkNum: The block number or state for the conversion. Defaults to "finalized" for maximum safety. Possible values: "pending", "latest", "finalized", "safe", or a specific block number represented as hex.
 
 Perms: read
 
@@ -309,8 +304,7 @@ Response: `"0x07"`
 
 ## EthGetFilterChanges
 
-Polling method for a filter, returns event logs which occurred since last poll.
-(requires write perm since timestamp of last filter execution will be written)
+Polling method for a filter, returns event logs which occurred since last poll. (requires write perm since timestamp of last filter execution will be written)
 
 Perms: read
 
@@ -328,8 +322,7 @@ Response:
 
 ## EthGetFilterLogs
 
-Returns event logs matching filter with given id.
-(requires write perm since timestamp of last filter execution will be written)
+Returns event logs matching filter with given id. (requires write perm since timestamp of last filter execution will be written)
 
 Perms: read
 
@@ -737,14 +730,11 @@ Response: `"0x37690cfec6c1bf4c3b9288c7a5d783e98731e90b0a4c177c2a374c7a9427355e"`
 
 ## EthSubscribe
 
-Subscribe to different event types using websockets
-eventTypes is one or more of:
+Subscribe to different event types using websockets eventTypes is one or more of:
 
-- newHeads: notify when new blocks arrive.
-- pendingTransactions: notify when new messages arrive in the message pool.
-- logs: notify new event logs that match a criteria
-  params contains additional parameters used with the log event type
-  The client will receive a stream of EthSubscriptionResponse values until EthUnsubscribe is called.
+* newHeads: notify when new blocks arrive.
+* pendingTransactions: notify when new messages arrive in the message pool.
+* logs: notify new event logs that match a criteria params contains additional parameters used with the log event type The client will receive a stream of EthSubscriptionResponse values until EthUnsubscribe is called.
 
 Perms: read
 
@@ -877,3 +867,7 @@ Inputs:
 ```
 
 Response: `true`
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/eth)

@@ -8,9 +8,9 @@ description: >-
 
 ### <mark style="color:blue;">Prepare data for Filecoin storage</mark>
 
-A CAR file is a standardized format for bundling and exchanging content-addressable data. It provides a way to organize and encapsulate data, ensuring it can be easily verified and retrieved. &#x20;
+A CAR file is a standardized format for bundling and exchanging content-addressable data. It provides a way to organize and encapsulate data, ensuring it can be easily verified and retrieved.
 
-Before sending data to Filecoin storage providers, it is necessary to package the data into CAR (Content Addressable aRchive) files, regardless of whether you store the data via a smart contract or data onramp toolings.&#x20;
+Before sending data to Filecoin storage providers, it is necessary to package the data into CAR (Content Addressable aRchive) files, regardless of whether you store the data via a smart contract or data onramp toolings.
 
 To provide the data to the SP which we make storage deals with, we need to prepare data and provide the following information when making storage deals via smart contracts or aggregators.
 
@@ -44,7 +44,7 @@ Upload files, generate CAR, and get CAR links - we can do all these on the FVM D
 
 `ipfs-car` is a thin wrapper over [@ipld/car](https://github.com/ipld/js-car) and [unix-fs](https://github.com/ipfs/js-ipfs-unixfs) which provides a library and CLI tool to pack and unpack CAR(Content Addressable aRchives) files.
 
-After installing `ipfs-car` via NPM, we can use it as a CLI or JS library to pack your data into a CAR file. You can refer to[ ipfs-car GitHub](https://github.com/web3-storage/ipfs-car) to learn more about how to use it.&#x20;
+After installing `ipfs-car` via NPM, we can use it as a CLI or JS library to pack your data into a CAR file. You can refer to[ ipfs-car GitHub](https://github.com/web3-storage/ipfs-car) to learn more about how to use it.
 
 **Pack files using CLI**
 
@@ -65,7 +65,7 @@ Then we can upload `a.car` file to the ipfs using [lighthouse.storage](https://w
 
 3. **upload to IPFS Desktop**
 
-Another option is to upload data to the IPFS network using an IPFS node, such as IPFS Desktop or Kubo.  By following this [tutorial](https://docs.ipfs.tech/how-to/desktop-app/#add-local-files), you can learn how to add files using IPFS Desktop.
+Another option is to upload data to the IPFS network using an IPFS node, such as IPFS Desktop or Kubo. By following this [tutorial](https://docs.ipfs.tech/how-to/desktop-app/#add-local-files), you can learn how to add files using IPFS Desktop.
 
 Afterward, you can obtain the CID or URL of the uploaded data to propose storage deals via FVM on the Filecoin network.
 
@@ -79,7 +79,7 @@ Client Contract serves as a crucial component in making on-chain storage deal pr
 
 * pieceCID
 * CarLink
-* car size&#x20;
+* car size
 * piece Size
 * starting and ending epoch
 
@@ -91,7 +91,7 @@ Client Contract serves as a crucial component in making on-chain storage deal pr
 
 #### Instructions
 
-The Client Contract library implements the basic functions to make storage deal proposals as well as callback functions for successful storage deal creation.&#x20;
+The Client Contract library implements the basic functions to make storage deal proposals as well as callback functions for successful storage deal creation.
 
 One of the key methods within this library is the `makeDealProposal` method, which is responsible for initiating a fully on-chain storage deal proposal. To invoke the `makeDealProposal` method, you will need to interact with the deployed DealClient contract on Calibration. This method accepts the required parameters for the storage deal, such as the data CID or URL, car size, piece size, the duration of the deal, and any other relevant details specific to your use case.
 
@@ -157,15 +157,15 @@ A Javascript function to invoke the `makeDealProposal` method should be like:
   };
 </code></pre>
 
-The full tutorial of proposal storage deals through the client contract can be found [here](https://docs.filecoin.io/smart-contracts/developing-contracts/client-contract-tutorial).&#x20;
+The full tutorial of proposal storage deals through the client contract can be found [here](https://docs.filecoin.io/smart-contracts/developing-contracts/client-contract-tutorial).
 
 ***
 
 ### <mark style="color:blue;">Store small data with storage onramps</mark>
 
-Filecoin is primarily designed for storing large data over extended periods. Due to economic considerations, it is generally not good for Service Providers (SPs) to accept small-scale datasets and allocate them to their 32 or 64 Gib storage sectors. As a result, it is unlikely that SPs will directly accept storage deals proposed by the client contract for small datasets.&#x20;
+Filecoin is primarily designed for storing large data over extended periods. Due to economic considerations, it is generally not good for Service Providers (SPs) to accept small-scale datasets and allocate them to their 32 or 64 Gib storage sectors. As a result, it is unlikely that SPs will directly accept storage deals proposed by the client contract for small datasets.
 
-In the case of small datasets, a more viable option is to store them with [storage onramps](../../basics/how-storage-works/storage-onramps.md). Storage onramps combine multiple small datasets into a larger dataset and generate Proof of Deal Sub-piece Inclusion (PoDSI). PoDSI can be utilized to verify and provide evidence that the sub-piece datasets are included in a storage deal on the Filecoin network.&#x20;
+In the case of small datasets, a more viable option is to store them with [storage onramps](../../basics/how-storage-works/storage-onramps.md). Storage onramps combine multiple small datasets into a larger dataset and generate Proof of Deal Sub-piece Inclusion (PoDSI). PoDSI can be utilized to verify and provide evidence that the sub-piece datasets are included in a storage deal on the Filecoin network.
 
 One of the storage onramps we can use is [Lighthouse.storage](https://lighthouse.storage/) which is a perpetual file storage protocol that provides both on-chain and off-chain deal aggregation services. It provides a solution for storing small datasets on Filecoin while also enabling verification of deal inclusion using PoDSI. This combination of services can be valuable for ensuring the integrity and accessibility of small datasets stored on the Filecoin network.
 
@@ -173,7 +173,7 @@ One of the storage onramps we can use is [Lighthouse.storage](https://lighthouse
 
 * [Lighthouse.storage](https://lighthouse.storage/)
   * [SDK](https://github.com/lighthouse-web3/lighthouse-package): a JavaScript library that allows you to upload files to the Filecoin network.
-  * [smart contract](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol): solidity contract to submit and process storage deal aggregation requests.&#x20;
+  * [smart contract](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol): solidity contract to submit and process storage deal aggregation requests.
 
 #### Instructions
 
@@ -181,7 +181,7 @@ Lighthouse.storage provides users with two options for uploading data and making
 
 1. **store data with lighthouse SDK**
 
-By creating an account with Lighthouse storage and generating an API key, you can easily upload data to the Filecoin network using the Lighthouse SDK within any JavaScript application. Data stored using lighthouse SDK will be automatically registered for deal aggregation as well as RaaS(replication, renewal, and repair).&#x20;
+By creating an account with Lighthouse storage and generating an API key, you can easily upload data to the Filecoin network using the Lighthouse SDK within any JavaScript application. Data stored using lighthouse SDK will be automatically registered for deal aggregation as well as RaaS(replication, renewal, and repair).
 
 First, install lighthouse SDK in your project with the command `npm install -g @lighthouse-web3/sdk`. Then use the following code to upload data to the lighthouse for deal aggregation.
 
@@ -206,9 +206,9 @@ The expected output of `uploadResponse`.
 
 2. **store data via lighthouse smart contract**
 
-Lighthouse has also implemented an aggregator smart contract based on [IAggregatorOracle](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/interfaces/IAggregatorOracle.sol). This smart contract is deployed on the Filecoin Calibration testnet, allowing users to submit deal aggregation requests on-chain.&#x20;
+Lighthouse has also implemented an aggregator smart contract based on [IAggregatorOracle](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/interfaces/IAggregatorOracle.sol). This smart contract is deployed on the Filecoin Calibration testnet, allowing users to submit deal aggregation requests on-chain.
 
-We can call the smart contract at `0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960` and submit a CID for aggregation via `submit(bytes memory _cid) external returns (uint256)` methods.&#x20;
+We can call the smart contract at `0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960` and submit a CID for aggregation via `submit(bytes memory _cid) external returns (uint256)` methods.
 
 A Javascript function to invoke the `submit` method should be like:
 
@@ -252,16 +252,16 @@ The full tutorial for uploading data using Lighthouse SDK and smart contract can
 
 RaaS (Replication, Renewal, and Repair as a Service) refers to the service provided for data stored in storage deals on the Filecoin network. When making storage deals with deal aggregators, such as lighthouse.storage, users have the option to register the RaaS job for the stored data. Subsequently, the aggregators monitor the status of the registered storage deals and initiate the necessary actions for replication, renewal, and repair as required.
 
-When storing data using either the Lighthouse SDK or smart contracts, we can register a RaaS job.&#x20;
+When storing data using either the Lighthouse SDK or smart contracts, we can register a RaaS job.
 
 * Lighthouse SDK: register replication, renew, and repair service by setting deal parameters when uploading data.
-* Lighthouse smart contract:  calling `submitRaaS` attaching RaaS parameters for the storage deal aggregation.
+* Lighthouse smart contract: calling `submitRaaS` attaching RaaS parameters for the storage deal aggregation.
 
 #### Ingredients
 
 * [Lighthouse.storage](https://www.lighthouse.storage/)
   * [SDK](https://github.com/lighthouse-web3/lighthouse-package): a JavaScript library that allows you to upload files to the Filecoin network.
-  * [smart contract](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol): solidity contract to submit and process storage deal aggregation requests.&#x20;
+  * [smart contract](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol): solidity contract to submit and process storage deal aggregation requests.
 
 #### Instructions
 
@@ -327,15 +327,15 @@ const SubmitRaaS = async () => {
 
 ### <mark style="color:blue;">Monitor storage deal status from a smart contract</mark>
 
-The [Deal Bounty Contract](https://github.com/FILCAT/deal-bounty-contract/tree/main) also demonstrates a way to monitor the status of a Filecoin Storage Deal.  &#x20;
+The [Deal Bounty Contract](https://github.com/FILCAT/deal-bounty-contract/tree/main) also demonstrates a way to monitor the status of a Filecoin Storage Deal.
 
-#### 1.  Import the [MarketAPI](https://github.com/Zondax/filecoin-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol).
+#### 1. Import the [MarketAPI](https://github.com/Zondax/filecoin-solidity-mock-api/blob/master/contracts/v0.8/MarketAPI.sol).
 
 ```solidity
 import { MarketAPI } from "../lib/filecoin-solidity/contracts/v0.8/MarketAPI.sol";
 ```
 
-#### 2.  Use the MarketAPI functions to check the current status of a deal.  An example is shown in claim\_bounty():&#x20;
+#### 2. Use the MarketAPI functions to check the current status of a deal. An example is shown in claim\_bounty():
 
 ```solidity
 function claim_bounty(uint64 deal_id) public {
@@ -357,21 +357,21 @@ function claim_bounty(uint64 deal_id) public {
 
 ### <mark style="color:blue;">Incentivized data storage</mark>
 
-There are two sides to incentivizing data onboarding –the first is to incentivize the client to upload data, which can be done with an ERC20 token included in a DataDAO that pays to wallets that upload data through the DataDAO.  The second is to incentivize the storage providers to take a deal.  Both are demonstrated in the [Deal Bounty Contract](https://github.com/FILCAT/deal-bounty-contract/tree/main).&#x20;
+There are two sides to incentivizing data onboarding –the first is to incentivize the client to upload data, which can be done with an ERC20 token included in a DataDAO that pays to wallets that upload data through the DataDAO. The second is to incentivize the storage providers to take a deal. Both are demonstrated in the [Deal Bounty Contract](https://github.com/FILCAT/deal-bounty-contract/tree/main).
 
 #### **Ingredients**
 
-* [Foundry](https://github.com/foundry-rs/foundry/blob/master/README.md)&#x20;
+* [Foundry](https://github.com/foundry-rs/foundry/blob/master/README.md)
 * [Solidity](https://docs.soliditylang.org/en/v0.8.23/)
-* [Filecoin Storage](https://dataonboarding.filecoin.io/)&#x20;
+* [Filecoin Storage](https://dataonboarding.filecoin.io/)
 * [Filecoin Retrieval](https://docs.filecoin.io/basics/how-retrieval-works/basic-retrieval)
 
 #### **Instructions**
 
-Note that the full solidity file for the Deal Bounty Contract can be found [HERE](https://github.com/FILCAT/deal-bounty-contract/blob/main/src/DealRewarder.sol).  This cookbook will pull relevant functions for you as a way to base your own code on.&#x20;
+Note that the full solidity file for the Deal Bounty Contract can be found [HERE](https://github.com/FILCAT/deal-bounty-contract/blob/main/src/DealRewarder.sol). This cookbook will pull relevant functions for you as a way to base your own code on.
 
 1. The contract owner will deploy the contract, establishing the rules of the dataDAO.
-2. Data pinners will add the deal CIDs intended to be incentivized to the list.  This will allow storage providers to see which deals have additional incentives.&#x20;
+2. Data pinners will add the deal CIDs intended to be incentivized to the list. This will allow storage providers to see which deals have additional incentives.
 
 ```jsx
 function addCID(bytes calldata cidraw, uint size) public {
@@ -402,7 +402,7 @@ function call_actor_id(uint64 method, uint256 value, uint64 flags, uint64 codec,
 
 ```
 
-4. Finally, the bounty is claimed by the storage providers that accepted the deal.  This is done by using the MarketAPI to check the status of a deal.
+4. Finally, the bounty is claimed by the storage providers that accepted the deal. This is done by using the MarketAPI to check the status of a deal.
 
 ```solidity
 function claim_bounty(uint64 deal_id) public {
@@ -421,3 +421,5 @@ function claim_bounty(uint64 deal_id) public {
 ```
 
 ***
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/builder-cookbook/data-storage/store-data)

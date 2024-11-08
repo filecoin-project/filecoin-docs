@@ -107,3 +107,7 @@ Check out these links to learn more about the Filecoin.sol library.
 * [Filecoin-Solidity GitHub](https://github.com/filecoin-project/filecoin-solidity)
 * [Built-In Actor APIs](../../reference/built-in-actors/filecoin.sol.md)
 * [FEVM-Hardhat-K](https://github.com/filecoin-project/FEVM-Hardhat-Kit/)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/filecoin.sol)

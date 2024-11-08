@@ -281,3 +281,7 @@ Join the [Filecoin Slack](https://filecoinproject.slack.com/signup) and post any
 * [Filecoin Networks](https://status.filecoin.io)
 * [Lotus](https://github.com/filecoin-project/lotus) - the reference implementation for the Filecoin network
 * [Block Explorers](https://docs.filecoin.io/networks/mainnet/explorers/)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/exchanges/exchange-integration)

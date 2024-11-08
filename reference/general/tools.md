@@ -1,7 +1,7 @@
 ---
 description: >-
-  This page lists a collection of tools and resources you can use to build on top
-  of the Filecoin network using the FVM.
+  This page lists a collection of tools and resources you can use to build on
+  top of the Filecoin network using the FVM.
 ---
 
 # Tools
@@ -12,7 +12,7 @@ These infrastructure libraries and tools exist to speed up the development of so
 
 #### Filecoin signing tools
 
-The [Filecoin signing tools](../general/README.md) provide basic functionality for signing Filecoin transactions in pure JavaScript, WASM and Rust. Currently, the Rust and WASM implementations support:
+The [Filecoin signing tools](./) provide basic functionality for signing Filecoin transactions in pure JavaScript, WASM and Rust. Currently, the Rust and WASM implementations support:
 
 * Secp256k1
 * BLS
@@ -45,3 +45,7 @@ Filecoin improvement proposals (FIPs) are a way for the Filecoin community to di
 * [FVM Foundry Cohort Update Recordings](https://www.youtube.com/playlist?list=PL\_0VrY55uV18DBdFIkN0jdBMF8nadVxWQ)
 * [FVM Foundry Early Builders F/0 Cohort Showcase - Oct 3 2022](https://drive.google.com/file/d/1JLR45vSNScZX7edz9DxwlpYGnVfGm30Q/view?usp=sharing)
 * [FVM Foundry Early Builders F/1 Cohort Kick Off - Oct 5 2022](https://drive.google.com/file/d/1mV0PMunDUvIBqmuNw9VjUJIf4zE4z9LV/view?usp=sharing)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/general/tools)

@@ -64,3 +64,7 @@ forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key
 7. You can now interact with your contract using the contract address given by Foundry.
 
 Done! For more information, see the [Foundry book](https://book.getfoundry.sh/).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/foundry)

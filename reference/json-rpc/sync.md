@@ -1,12 +1,10 @@
 # Sync
 
-The Sync method group contains methods for interacting with and
-observing the lotus sync service.
+The Sync method group contains methods for interacting with and observing the lotus sync service.
 
 ## SyncCheckBad
 
-SyncCheckBad checks if a block was marked as bad, and if it was, returns
-the reason.
+SyncCheckBad checks if a block was marked as bad, and if it was, returns the reason.
 
 Perms: read
 
@@ -47,8 +45,7 @@ Response: `{}`
 
 ## SyncIncomingBlocks
 
-SyncIncomingBlocks returns a channel streaming incoming, potentially not
-yet synced block headers.
+SyncIncomingBlocks returns a channel streaming incoming, potentially not yet synced block headers.
 
 Perms: read
 
@@ -110,8 +107,7 @@ Response:
 
 ## SyncMarkBad
 
-SyncMarkBad marks a blocks as bad, meaning that it won't ever by synced.
-Use with extreme caution.
+SyncMarkBad marks a blocks as bad, meaning that it won't ever by synced. Use with extreme caution.
 
 Perms: admin
 
@@ -165,8 +161,7 @@ Response:
 
 ## SyncSubmitBlock
 
-SyncSubmitBlock can be used to submit a newly created block to the.
-network through this node
+SyncSubmitBlock can be used to submit a newly created block to the. network through this node
 
 Perms: write
 
@@ -290,3 +285,7 @@ Inputs:
 ```
 
 Response: `true`
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/sync)

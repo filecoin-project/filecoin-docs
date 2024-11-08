@@ -183,3 +183,7 @@ The Filecoin network expects constant availability of stored data. Failing to su
 _Winning Proof-of-Spacetime_ (WinningPoSt) is the mechanism by which [storage providers](https://docs.filecoin.io/reference/general/glossary/#storage-provider) are rewarded for their contributions to the Filecoin network. At the beginning of each [epoch](https://docs.filecoin.io/reference/general/glossary/#epoch), a small number of storage providers are [elected](https://docs.filecoin.io/reference/general/glossary/#election) to each mine a new [block](https://docs.filecoin.io/reference/general/glossary/#block). As a requirement for doing so, each provider is tasked with submitting a compressed [Proof-of-Storage](https://docs.filecoin.io/reference/general/glossary/#proof-of-storage) for a specified [sector](https://docs.filecoin.io/reference/general/glossary/#sector). Each elected provider who successfully creates a block is granted [FIL](https://docs.filecoin.io/reference/general/glossary/#fil), as well as the opportunity to charge other Filecoin participants fees to include [messages](https://docs.filecoin.io/reference/general/glossary/#message) in the block.
 
 Storage providers who fail to do this in the necessary window will forfeit their opportunity to mine a block, but will not otherwise incur penalties for their failure to do so.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/general/glossary)

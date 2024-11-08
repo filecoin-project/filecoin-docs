@@ -1,13 +1,10 @@
 # Msig
 
-The Msig methods are used to interact with multisig wallets on the
-filecoin network
+The Msig methods are used to interact with multisig wallets on the filecoin network
 
 ## MsigAddApprove
 
-MsigAddApprove approves a previously proposed AddSigner message
-It takes the following params: <multisig address>, <sender address of the approve msg>, <proposed message ID>,
-<proposer address>, <new signer>, <whether the number of required signers should be increased>
+MsigAddApprove approves a previously proposed AddSigner message It takes the following params: , , , , ,
 
 Perms: sign
 
@@ -42,9 +39,7 @@ Response:
 
 ## MsigAddCancel
 
-MsigAddCancel cancels a previously proposed AddSigner message
-It takes the following params: <multisig address>, <sender address of the cancel msg>, <proposed message ID>,
-<new signer>, <whether the number of required signers should be increased>
+MsigAddCancel cancels a previously proposed AddSigner message It takes the following params: , , , ,
 
 Perms: sign
 
@@ -79,9 +74,7 @@ Response:
 
 ## MsigAddPropose
 
-MsigAddPropose proposes adding a signer in the multisig
-It takes the following params: <multisig address>, <sender address of the propose msg>,
-<new signer>, <whether the number of required signers should be increased>
+MsigAddPropose proposes adding a signer in the multisig It takes the following params: , , ,
 
 Perms: sign
 
@@ -116,8 +109,7 @@ Response:
 
 ## MsigApprove
 
-MsigApprove approves a previously-proposed multisig message by transaction ID
-It takes the following params: <multisig address>, <proposed transaction ID> <signer address>
+MsigApprove approves a previously-proposed multisig message by transaction ID It takes the following params: ,
 
 Perms: sign
 
@@ -152,12 +144,7 @@ Response:
 
 ## MsigApproveTxnHash
 
-MsigApproveTxnHash approves a previously-proposed multisig message, specified
-using both transaction ID and a hash of the parameters used in the
-proposal. This method of approval can be used to ensure you only approve
-exactly the transaction you think you are.
-It takes the following params: <multisig address>, <proposed message ID>, <proposer address>, <recipient address>, <value to transfer>,
-<sender address of the approve msg>, <method to call in the proposed message>, <params to include in the proposed message>
+MsigApproveTxnHash approves a previously-proposed multisig message, specified using both transaction ID and a hash of the parameters used in the proposal. This method of approval can be used to ensure you only approve exactly the transaction you think you are. It takes the following params: , , , , , , ,
 
 Perms: sign
 
@@ -192,8 +179,7 @@ Response:
 
 ## MsigCancel
 
-MsigCancel cancels a previously-proposed multisig message
-It takes the following params: <multisig address>, <proposed transaction ID> <signer address>
+MsigCancel cancels a previously-proposed multisig message It takes the following params: ,
 
 Perms: sign
 
@@ -228,9 +214,7 @@ Response:
 
 ## MsigCancelTxnHash
 
-MsigCancel cancels a previously-proposed multisig message
-It takes the following params: <multisig address>, <proposed transaction ID>, <recipient address>, <value to transfer>,
-<sender address of the cancel msg>, <method to call in the proposed message>, <params to include in the proposed message>
+MsigCancel cancels a previously-proposed multisig message It takes the following params: , , , , , ,
 
 Perms: sign
 
@@ -265,9 +249,7 @@ Response:
 
 ## MsigCreate
 
-MsigCreate creates a multisig wallet
-It takes the following params: <required number of senders>, <approving addresses>, <unlock duration>
-<initial balance>, <sender address of the create msg>, <gas price>
+MsigCreate creates a multisig wallet It takes the following params: , , , ,
 
 Perms: sign
 
@@ -326,9 +308,7 @@ Response: `"0"`
 
 ## MsigGetPending
 
-MsigGetPending returns pending transactions for the given multisig
-wallet. Once pending transactions are fully approved, they will no longer
-appear here.
+MsigGetPending returns pending transactions for the given multisig wallet. Once pending transactions are fully approved, they will no longer appear here.
 
 Perms: read
 
@@ -365,8 +345,7 @@ Response:
 
 ## MsigGetVested
 
-MsigGetVested returns the amount of FIL that vested in a multisig in a certain period.
-It takes the following params: <multisig address>, <start epoch>, <end epoch>
+MsigGetVested returns the amount of FIL that vested in a multisig in a certain period. It takes the following params: , ,
 
 Perms: read
 
@@ -430,9 +409,7 @@ Response:
 
 ## MsigPropose
 
-MsigPropose proposes a multisig message
-It takes the following params: <multisig address>, <recipient address>, <value to transfer>,
-<sender address of the propose msg>, <method to call in the proposed message>, <params to include in the proposed message>
+MsigPropose proposes a multisig message It takes the following params: , , , , ,
 
 Perms: sign
 
@@ -467,11 +444,7 @@ Response:
 
 ## MsigRemoveSigner
 
-MsigRemoveSigner proposes the removal of a signer from the multisig.
-It accepts the multisig to make the change on, the proposer address to
-send the message from, the address to be removed, and a boolean
-indicating whether or not the signing threshold should be lowered by one
-along with the address removal.
+MsigRemoveSigner proposes the removal of a signer from the multisig. It accepts the multisig to make the change on, the proposer address to send the message from, the address to be removed, and a boolean indicating whether or not the signing threshold should be lowered by one along with the address removal.
 
 Perms: sign
 
@@ -506,9 +479,7 @@ Response:
 
 ## MsigSwapApprove
 
-MsigSwapApprove approves a previously proposed SwapSigner
-It takes the following params: <multisig address>, <sender address of the approve msg>, <proposed message ID>,
-<proposer address>, <old signer>, <new signer>
+MsigSwapApprove approves a previously proposed SwapSigner It takes the following params: , , , , ,
 
 Perms: sign
 
@@ -543,9 +514,7 @@ Response:
 
 ## MsigSwapCancel
 
-MsigSwapCancel cancels a previously proposed SwapSigner message
-It takes the following params: <multisig address>, <sender address of the cancel msg>, <proposed message ID>,
-<old signer>, <new signer>
+MsigSwapCancel cancels a previously proposed SwapSigner message It takes the following params: , , , ,
 
 Perms: sign
 
@@ -580,9 +549,7 @@ Response:
 
 ## MsigSwapPropose
 
-MsigSwapPropose proposes swapping 2 signers in the multisig
-It takes the following params: <multisig address>, <sender address of the propose msg>,
-<old signer>, <new signer>
+MsigSwapPropose proposes swapping 2 signers in the multisig It takes the following params: , , ,
 
 Perms: sign
 
@@ -614,3 +581,7 @@ Response:
   "ValidNonce": true
 }
 ```
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/msig)

@@ -52,3 +52,7 @@ An EVM smart contract may be called in one of three ways:
 3. Finally, a native account can call method `3844450837` (`FRC42(InvokeEVM)`):
    1. The input data should either be empty or encoded as a CBOR byte string.
    2. The return data will either be empty or encoded as a CBOR byte string.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/actor-types)

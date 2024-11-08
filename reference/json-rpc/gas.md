@@ -41,8 +41,7 @@ Response: `"0"`
 
 ## GasEstimateGasLimit
 
-GasEstimateGasLimit estimates gas used by the message and returns it.
-It fails if message fails to execute.
+GasEstimateGasLimit estimates gas used by the message and returns it. It fails if message fails to execute.
 
 Perms: read
 
@@ -80,8 +79,7 @@ Response: `9`
 
 ## GasEstimateGasPremium
 
-GasEstimateGasPremium estimates what gas price should be used for a
-message to have high likelihood of inclusion in `nblocksincl` epochs.
+GasEstimateGasPremium estimates what gas price should be used for a message to have high likelihood of inclusion in `nblocksincl` epochs.
 
 Perms: read
 
@@ -164,3 +162,7 @@ Response:
   }
 }
 ```
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/gas)

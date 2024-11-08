@@ -23,7 +23,7 @@ description: >-
   * [Forest](https://github.com/ChainSafe/forest) - Rust.
 * Lotus Docker Hub Images (unofficial):
   * [`glif/lotus`](https://github.com/glifio/filecoin-docker)
-  * [`textile/lotus`](https://hub.docker.com/r/textile/lotus) 
+  * [`textile/lotus`](https://hub.docker.com/r/textile/lotus)
 
 ### Networks
 
@@ -78,14 +78,14 @@ Developer tools, API clients & storage services that developers can use to build
 * [Lighthouse](https://www.lighthouse.storage/) - Lighthouse offers a suite of tools to enable builders to store data on Filecoin when biulding apps.
 * [`NFT.storage`](https://nft.storage/) - Preserve your NFTs with our new low-cost, easy-to-use solution, ensuring verifiable long-term storage on Filecoin.
 * [`Web3.storage`](https://web3.storage/) - service from Protocol Labs for storing off-chain _dApp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
-* [`Textile.io's tools`](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin, including [Tableland](https://tableland.xyz/) and Filecoin bridges to Polygon and NEAR.  
-* [Fleek’s tools](https://fleek.co/) - provides access to Fleek’s hosted services using IPFS, Textile, Filecoin, Ethereum, etc.  More Fleek developer resources are available at [Fleek.xyz](https://fleek.xyz/).
+* [`Textile.io's tools`](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin, including [Tableland](https://tableland.xyz/) and Filecoin bridges to Polygon and NEAR.
+* [Fleek’s tools](https://fleek.co/) - provides access to Fleek’s hosted services using IPFS, Textile, Filecoin, Ethereum, etc. More Fleek developer resources are available at [Fleek.xyz](https://fleek.xyz/).
   * [Space SDK](https://docs.fleek.co/space-sdk/overview/) - modular JavaScript/Typescript library and set of interfaces that packages tools and features enabled by Open Web protocols like IPFS, Textile, Filecoin, and Ethereum.
   * [Space Daemon](https://docs.fleek.co/space-daemon/overview/) - packages together IPFS and tools from Textile into one easy to install background service.
 
 ### Message signing tools
 
-* [Filecoin Signing Tools](../built-in-actors/README.md) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
+* [Filecoin Signing Tools](../built-in-actors/) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
   * For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on GitHub.
 * [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - \[_last update: June 2021_] pure TS / JS library for creating signed messages and interacting with Filecoin’s built-in Actors (like Payment Channel and Multisig), used by the [Filecoin Loans grant project](https://github.com/blitslabs/filecoin.loans-monorepo).
   * On npm at [`@blitslabs/filecoin-js-signer`](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
@@ -99,7 +99,7 @@ Developer tools, API clients & storage services that developers can use to build
 
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
-* [GLIF nodes](https://lotus.filecoin.io/lotus/developers/glif-nodes/) - A hosted endpoint to Filecoin mainnet and testnet.  Note: as of Q1 2023, Infura no longer supports Filecoin.
+* [GLIF nodes](https://lotus.filecoin.io/lotus/developers/glif-nodes/) - A hosted endpoint to Filecoin mainnet and testnet. Note: as of Q1 2023, Infura no longer supports Filecoin.
   * The GLIF endpoint supports read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Message signing tools](https://docs.filecoin.io/reference/general/overview/#message-signing-tools)).
 * [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   * [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
@@ -164,3 +164,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 ### Grants and accelerators
 
 * [**Filecoin Developer Grants**](https://www.fil.org/grants) - ongoing monthly developer grant program to support open source projects and new [Open Grants](https://github.com/filecoin-project/devgrants/blob/master/Program%20Resources/Open%20Grants%20README.md) on Filecoin.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/general)

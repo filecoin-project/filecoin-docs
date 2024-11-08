@@ -1,8 +1,6 @@
 # State
 
-The State methods are used to query, inspect, and interact with chain state.
-Most methods take a TipSetKey as a parameter. The state looked up is the parent state of the tipset.
-A nil TipSetKey can be provided as a param, this will cause the heaviest tipset in the chain to be used.
+The State methods are used to query, inspect, and interact with chain state. Most methods take a TipSetKey as a parameter. The state looked up is the parent state of the tipset. A nil TipSetKey can be provided as a param, this will cause the heaviest tipset in the chain to be used.
 
 ## StateAccountKey
 
@@ -99,9 +97,7 @@ Response:
 
 StateCall runs the given message and returns its result without any persisted changes.
 
-StateCall applies the message to the tipset's parent state. The
-message is not applied on-top-of the messages in the passed-in
-tipset.
+StateCall applies the message to the tipset's parent state. The message is not applied on-top-of the messages in the passed-in tipset.
 
 Perms: read
 
@@ -245,8 +241,7 @@ Response:
 
 ## StateChangedActors
 
-StateChangedActors returns all the actors whose states change between the two given state CIDs
-TODO: Should this take tipset keys instead?
+StateChangedActors returns all the actors whose states change between the two given state CIDs TODO: Should this take tipset keys instead?
 
 Perms: read
 
@@ -283,8 +278,7 @@ Response:
 
 ## StateCirculatingSupply
 
-StateCirculatingSupply returns the exact circulating supply of Filecoin at the given tipset.
-This is not used anywhere in the protocol itself, and is only for external consumption.
+StateCirculatingSupply returns the exact circulating supply of Filecoin at the given tipset. This is not used anywhere in the protocol itself, and is only for external consumption.
 
 Perms: read
 
@@ -307,39 +301,29 @@ Response: `"0"`
 
 ## StateCompute
 
-StateCompute is a flexible command that applies the given messages on the given tipset.
-The messages are run as though the VM were at the provided height.
+StateCompute is a flexible command that applies the given messages on the given tipset. The messages are run as though the VM were at the provided height.
 
 When called, StateCompute will:
 
-- Load the provided tipset, or use the current chain head if not provided
-- Compute the tipset state of the provided tipset on top of the parent state
-  - (note that this step runs before vmheight is applied to the execution)
-  - Execute state upgrade if any were scheduled at the epoch, or in null
-    blocks preceding the tipset
-  - Call the cron actor on null blocks preceding the tipset
-  - For each block in the tipset
-    - Apply messages in blocks in the specified
-    - Award block reward by calling the reward actor
-  - Call the cron actor for the current epoch
-- If the specified vmheight is higher than the current epoch, apply any
-  needed state upgrades to the state
-- Apply the specified messages to the state
+* Load the provided tipset, or use the current chain head if not provided
+* Compute the tipset state of the provided tipset on top of the parent state
+  * (note that this step runs before vmheight is applied to the execution)
+  * Execute state upgrade if any were scheduled at the epoch, or in null blocks preceding the tipset
+  * Call the cron actor on null blocks preceding the tipset
+  * For each block in the tipset
+    * Apply messages in blocks in the specified
+    * Award block reward by calling the reward actor
+  * Call the cron actor for the current epoch
+* If the specified vmheight is higher than the current epoch, apply any needed state upgrades to the state
+* Apply the specified messages to the state
 
-The vmheight parameter sets VM execution epoch, and can be used to simulate
-message execution in different network versions. If the specified vmheight
-epoch is higher than the epoch of the specified tipset, any state upgrades
-until the vmheight will be executed on the state before applying messages
-specified by the user.
+The vmheight parameter sets VM execution epoch, and can be used to simulate message execution in different network versions. If the specified vmheight epoch is higher than the epoch of the specified tipset, any state upgrades until the vmheight will be executed on the state before applying messages specified by the user.
 
-Note that the initial tipset state computation is not affected by the
-vmheight parameter - only the messages in the `apply` set are
+Note that the initial tipset state computation is not affected by the vmheight parameter - only the messages in the `apply` set are
 
-If the caller wants to simply compute the state, vmheight should be set to
-the epoch of the specified tipset.
+If the caller wants to simply compute the state, vmheight should be set to the epoch of the specified tipset.
 
-Messages in the `apply` parameter must have the correct nonces, and gas
-values set.
+Messages in the `apply` parameter must have the correct nonces, and gas values set.
 
 Perms: read
 
@@ -525,8 +509,7 @@ Response:
 
 ## StateDealProviderCollateralBounds
 
-StateDealProviderCollateralBounds returns the min and max collateral a storage provider
-can issue. It takes the deal size and verified status as parameters.
+StateDealProviderCollateralBounds returns the min and max collateral a storage provider can issue. It takes the deal size and verified status as parameters.
 
 Perms: read
 
@@ -681,8 +664,7 @@ Response:
 
 ## StateGetAllocationForPendingDeal
 
-StateGetAllocationForPendingDeal returns the allocation for a given deal ID of a pending deal. Returns nil if
-pending allocation is not found.
+StateGetAllocationForPendingDeal returns the allocation for a given deal ID of a pending deal. Returns nil if pending allocation is not found.
 
 Perms: read
 
@@ -744,9 +726,7 @@ Response: `{}`
 
 ## StateGetBeaconEntry
 
-StateGetBeaconEntry returns the beacon entry for the given filecoin epoch. If
-the entry has not yet been produced, the call will block until the entry
-becomes available
+StateGetBeaconEntry returns the beacon entry for the given filecoin epoch. If the entry has not yet been produced, the call will block until the entry becomes available
 
 Perms: read
 
@@ -1647,8 +1627,7 @@ Response: `"0"`
 
 ## StateMinerProvingDeadline
 
-StateMinerProvingDeadline calculates the deadline at some epoch for a proving period
-and returns the deadline-related calculations.
+StateMinerProvingDeadline calculates the deadline at some epoch for a proving period and returns the deadline-related calculations.
 
 Perms: read
 
@@ -1894,21 +1873,13 @@ Response:
 
 StateReplay replays a given message, assuming it was included in a block in the specified tipset.
 
-If a tipset key is provided, and a replacing message is not found on chain,
-the method will return an error saying that the message wasn't found
+If a tipset key is provided, and a replacing message is not found on chain, the method will return an error saying that the message wasn't found
 
-If no tipset key is provided, the appropriate tipset is looked up, and if
-the message was gas-repriced, the on-chain message will be replayed - in
-that case the returned InvocResult.MsgCid will not match the Cid param
+If no tipset key is provided, the appropriate tipset is looked up, and if the message was gas-repriced, the on-chain message will be replayed - in that case the returned InvocResult.MsgCid will not match the Cid param
 
-If the caller wants to ensure that exactly the requested message was executed,
-they MUST check that InvocResult.MsgCid is equal to the provided Cid.
-Without this check both the requested and original message may appear as
-successfully executed on-chain, which may look like a double-spend.
+If the caller wants to ensure that exactly the requested message was executed, they MUST check that InvocResult.MsgCid is equal to the provided Cid. Without this check both the requested and original message may appear as successfully executed on-chain, which may look like a double-spend.
 
-A replacing message is a message with a different CID, any of Gas values, and
-different signature, but with all other parameters matching (source/destination,
-nonce, params, etc.)
+A replacing message is a message with a different CID, any of Gas values, and different signature, but with all other parameters matching (source/destination, nonce, params, etc.)
 
 Perms: read
 
@@ -2042,20 +2013,11 @@ Response:
 
 StateSearchMsg looks back up to limit epochs in the chain for a message, and returns its receipt and the tipset where it was executed
 
-NOTE: If a replacing message is found on chain, this method will return
-a MsgLookup for the replacing message - the MsgLookup.Message will be a different
-CID than the one provided in the 'cid' param, MsgLookup.Receipt will contain the
-result of the execution of the replacing message.
+NOTE: If a replacing message is found on chain, this method will return a MsgLookup for the replacing message - the MsgLookup.Message will be a different CID than the one provided in the 'cid' param, MsgLookup.Receipt will contain the result of the execution of the replacing message.
 
-If the caller wants to ensure that exactly the requested message was executed,
-they must check that MsgLookup.Message is equal to the provided 'cid', or set the
-`allowReplaced` parameter to false. Without this check, and with `allowReplaced`
-set to true, both the requested and original message may appear as
-successfully executed on-chain, which may look like a double-spend.
+If the caller wants to ensure that exactly the requested message was executed, they must check that MsgLookup.Message is equal to the provided 'cid', or set the `allowReplaced` parameter to false. Without this check, and with `allowReplaced` set to true, both the requested and original message may appear as successfully executed on-chain, which may look like a double-spend.
 
-A replacing message is a message with a different CID, any of Gas values, and
-different signature, but with all other parameters matching (source/destination,
-nonce, params, etc.)
+A replacing message is a message with a different CID, any of Gas values, and different signature, but with all other parameters matching (source/destination, nonce, params, etc.)
 
 Perms: read
 
@@ -2141,9 +2103,7 @@ Response:
 
 ## StateSectorGetInfo
 
-StateSectorGetInfo returns the on-chain info for the specified miner's sector. Returns null in case the sector info isn't found
-NOTE: returned info.Expiration may not be accurate in some cases, use StateSectorExpiration to get accurate
-expiration epoch
+StateSectorGetInfo returns the on-chain info for the specified miner's sector. Returns null in case the sector info isn't found NOTE: returned info.Expiration may not be accurate in some cases, use StateSectorExpiration to get accurate expiration epoch
 
 Perms: read
 
@@ -2224,12 +2184,9 @@ Response:
 
 ## StateSectorPreCommitInfo
 
-StateSectorPreCommitInfo returns the PreCommit info for the specified miner's sector.
-Returns nil and no error if the sector isn't precommitted.
+StateSectorPreCommitInfo returns the PreCommit info for the specified miner's sector. Returns nil and no error if the sector isn't precommitted.
 
-Note that the sector number may be allocated while PreCommitInfo is nil. This means that either allocated sector
-numbers were compacted, and the sector number was marked as allocated in order to reduce size of the allocated
-sectors bitfield, or that the sector was precommitted, but the precommit has expired.
+Note that the sector number may be allocated while PreCommitInfo is nil. This means that either allocated sector numbers were compacted, and the sector number was marked as allocated in order to reduce size of the allocated sectors bitfield, or that the sector was precommitted, but the precommit has expired.
 
 Perms: read
 
@@ -2274,8 +2231,7 @@ Response:
 
 ## StateVMCirculatingSupplyInternal
 
-StateVMCirculatingSupplyInternal returns an approximation of the circulating supply of Filecoin at the given tipset.
-This is the value reported by the runtime interface to actors code.
+StateVMCirculatingSupplyInternal returns an approximation of the circulating supply of Filecoin at the given tipset. This is the value reported by the runtime interface to actors code.
 
 Perms: read
 
@@ -2309,9 +2265,7 @@ Response:
 
 ## StateVerifiedClientStatus
 
-StateVerifiedClientStatus returns the data cap for the given address.
-Returns nil if there is no entry in the data cap table for the
-address.
+StateVerifiedClientStatus returns the data cap for the given address. Returns nil if there is no entry in the data cap table for the address.
 
 Perms: read
 
@@ -2358,9 +2312,7 @@ Response: `"f01234"`
 
 ## StateVerifierStatus
 
-StateVerifierStatus returns the data cap for the given address.
-Returns nil if there is no entry in the data cap table for the
-address.
+StateVerifierStatus returns the data cap for the given address. Returns nil if there is no entry in the data cap table for the address.
 
 Perms: read
 
@@ -2384,24 +2336,13 @@ Response: `"0"`
 
 ## StateWaitMsg
 
-StateWaitMsg looks back up to limit epochs in the chain for a message.
-If not found, it blocks until the message arrives on chain, and gets to the
-indicated confidence depth.
+StateWaitMsg looks back up to limit epochs in the chain for a message. If not found, it blocks until the message arrives on chain, and gets to the indicated confidence depth.
 
-NOTE: If a replacing message is found on chain, this method will return
-a MsgLookup for the replacing message - the MsgLookup.Message will be a different
-CID than the one provided in the 'cid' param, MsgLookup.Receipt will contain the
-result of the execution of the replacing message.
+NOTE: If a replacing message is found on chain, this method will return a MsgLookup for the replacing message - the MsgLookup.Message will be a different CID than the one provided in the 'cid' param, MsgLookup.Receipt will contain the result of the execution of the replacing message.
 
-If the caller wants to ensure that exactly the requested message was executed,
-they must check that MsgLookup.Message is equal to the provided 'cid', or set the
-`allowReplaced` parameter to false. Without this check, and with `allowReplaced`
-set to true, both the requested and original message may appear as
-successfully executed on-chain, which may look like a double-spend.
+If the caller wants to ensure that exactly the requested message was executed, they must check that MsgLookup.Message is equal to the provided 'cid', or set the `allowReplaced` parameter to false. Without this check, and with `allowReplaced` set to true, both the requested and original message may appear as successfully executed on-chain, which may look like a double-spend.
 
-A replacing message is a message with a different CID, any of Gas values, and
-different signature, but with all other parameters matching (source/destination,
-nonce, params, etc.)
+A replacing message is a message with a different CID, any of Gas values, and different signature, but with all other parameters matching (source/destination, nonce, params, etc.)
 
 Perms: read
 
@@ -2445,3 +2386,7 @@ Response:
   "Height": 10101
 }
 ```
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/state)

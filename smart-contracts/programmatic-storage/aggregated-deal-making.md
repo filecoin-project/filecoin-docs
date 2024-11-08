@@ -71,3 +71,7 @@ On-chain aggregation and PoDSI requests go through aggregator oracle smart contr
 <figure><img src="https://github.com/filecoin-project/filecoin-docs/assets/113331491/3588073e-a98e-4245-8a85-a087f4e403d2" alt=""><figcaption><p>Requesting for aggregation of data to store, via an on-chain smart contract</p></figcaption></figure>
 
 To build your own on-chain aggregator oracle smart contract, check out one of the implementations with [Filecoin Data Tools](https://github.com/application-research/fevm-data-segment).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/programmatic-storage/aggregated-deal-making)

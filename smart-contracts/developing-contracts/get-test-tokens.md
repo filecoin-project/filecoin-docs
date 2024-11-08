@@ -13,15 +13,13 @@ MetaMask is one of the easier ways to manage addresses on the Calibration testne
 
 1. In your browser, open MetaMask and copy your address to your clipboard.
 2. Go to [faucet.calibnet.chainsafe-fil.io](https://faucet.calibnet.chainsafe-fil.io) and click **Send Funds**.
-3. Paste your address into the address field and click **Send funds**:
+3.  Paste your address into the address field and click **Send funds**:
 
     ![The Calibration faucet website.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-send-funds.png)
-
-4. The webpage will give you a transaction ID:
+4.  The webpage will give you a transaction ID:
 
     ![A transaction ID returned by the Calibration faucet.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-id-returned.png)
-
-5. You can copy this ID into a block explorer to track the progress of your transaction:
+5.  You can copy this ID into a block explorer to track the progress of your transaction:
 
     ![A block explorer showing a pending transaction on the Calibration testnet.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-block-explorer.png)
 
@@ -69,3 +67,7 @@ For example:
 ```
 
 If you want to manage your local testnet tokens in MetaMask you will need to create a `t4` address. You can create a `t4` address using `lotus wallet new deleated`. Once you have a `t4` address you can [connect MetaMask to your local testnet](https://docs.filecoin.io/basics/assets/metamask-setup/) to see the new balance within the MetaMask extension.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens)

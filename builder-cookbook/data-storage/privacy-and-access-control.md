@@ -295,3 +295,7 @@ Lighthouse also provides a number of methods to gate access a given data set.  I
 ```
 
 To review the Lighthouse documentation in its entirety, please visit: [https://docs.lighthouse.storage/lighthouse-1/](https://docs.lighthouse.storage/lighthouse-1/)&#x20;
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/builder-cookbook/data-storage/privacy-and-access-control)

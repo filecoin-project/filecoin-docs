@@ -1306,3 +1306,7 @@ Results:
   * `struct` BatchReturn
     * `uint32` SuccessCount - total successes in the batch
     * `struct` FailCodes\[] {`uint32` idx, `uint32` code} - list of failure code and index for all failures in batch.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/built-in-actors/protocol-api)

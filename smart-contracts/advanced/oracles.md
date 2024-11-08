@@ -13,9 +13,9 @@ Oracles are an essential component of many blockchain applications, as they enab
 
 Oracles enable builders to integrate the following features into their projects:
 
-- **Price feeds**: DeFi protocols like cross-chain lending rely on oracles for various token or token pair prices.
-- **Cross-chain storage deal verification**: enable applications running on any blockchains to use the Filecoin decentralized storage and allow them to verify deal status and proofs.
-- **Perpetual storage**: enable automated deal renewal and repair with the oracle providing deal status off-chain.
+* **Price feeds**: DeFi protocols like cross-chain lending rely on oracles for various token or token pair prices.
+* **Cross-chain storage deal verification**: enable applications running on any blockchains to use the Filecoin decentralized storage and allow them to verify deal status and proofs.
+* **Perpetual storage**: enable automated deal renewal and repair with the oracle providing deal status off-chain.
 
 ## Available oracles
 
@@ -42,9 +42,9 @@ Price Feed IDs for FIL are also available on various chains. These can be found 
 
 #### **Further Pyth resources**
 
-- [Pyth docs](https://docs.pyth.network/)
-- [Pyth - Best Practices](https://docs.pyth.network/price-feeds/best-practices)
-- [Pyth Benchmarks - historical price feeds](https://docs.pyth.network/benchmarks)
+* [Pyth docs](https://docs.pyth.network/)
+* [Pyth - Best Practices](https://docs.pyth.network/price-feeds/best-practices)
+* [Pyth Benchmarks - historical price feeds](https://docs.pyth.network/benchmarks)
 
 ### [Tellor](https://tellor.io/)
 
@@ -69,9 +69,9 @@ Tellor’s smart contracts are live on the Filecoin Mainnet and Calibration test
 
 #### **Further Tellor resources**
 
-- [Tellor docs](https://docs.tellor.io/)
-- [Filecoin Storage Insurance Contract](https://github.com/tellor-io/filecoin-query-insurance-impl/tree/main)
-- [Getting Tellor Data for any use case](https://www.youtube.com/watch?v=AQIDqTLguyI) - FVM Dataverse Hackathon
+* [Tellor docs](https://docs.tellor.io/)
+* [Filecoin Storage Insurance Contract](https://github.com/tellor-io/filecoin-query-insurance-impl/tree/main)
+* [Getting Tellor Data for any use case](https://www.youtube.com/watch?v=AQIDqTLguyI) - FVM Dataverse Hackathon
 
 ### [eOracle](https://www.eoracle.io/)
 
@@ -100,6 +100,10 @@ eOracle's smart contracts are live on the Filecoin Calibration testnet.
 
 #### **Further eOracle resources**
 
-- [eOracle docs](https://eoracle.gitbook.io/eoracle)
-- [eOracle GitHub](https://github.com/eoracle)
-- [eOracle Price Feed Integration Guide](https://eoracle.gitbook.io/eoracle/price-feeds/integration-guide)
+* [eOracle docs](https://eoracle.gitbook.io/eoracle)
+* [eOracle GitHub](https://github.com/eoracle)
+* [eOracle Price Feed Integration Guide](https://eoracle.gitbook.io/eoracle/price-feeds/integration-guide)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/advanced/oracles)

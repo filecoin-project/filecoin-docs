@@ -7,7 +7,7 @@ description: >-
 # Mainnet
 
 {% hint style="info" %}
-Also see [Mainnet RPCs](./rpcs.md) and [Mainnet Explorers](./explorers.md).
+Also see [Mainnet RPCs](rpcs.md) and [Mainnet Explorers](explorers.md).
 {% endhint %}
 
 **Maintainer**: [Protocol Labs](https://protocol.ai)
@@ -34,10 +34,9 @@ Also see [Mainnet RPCs](./rpcs.md) and [Mainnet Explorers](./explorers.md).
 
 Bootstrap peers for mainnet can be found at:
 
-`https://github.com/filecoin-project/lotus/blob/release/`**[latest release]**`/build/bootstrap/mainnet.pi`
+`https://github.com/filecoin-project/lotus/blob/release/`**\[latest release]**`/build/bootstrap/mainnet.pi`
 
 The latest Lotus release can be found at https://github.com/filecoin-project/lotus/releases/latest/
-
 
 ## Resources
 
@@ -47,3 +46,7 @@ The latest Lotus release can be found at https://github.com/filecoin-project/lot
 * [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 * [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 * [Mainnet block explorer: FilFOX](https://filfox.info/en)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/networks/mainnet)

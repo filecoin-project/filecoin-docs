@@ -26,8 +26,7 @@ To build the nodes, you’ll need some specific software. Run the following comm
 {% tabs %}
 {% tab title="MacOS" %}
 1. Open a terminal window.
-2.  Check that you have [Homebrew](https://brew.sh/) installed.\
-
+2.  Check that you have [Homebrew](https://brew.sh/) installed.\\
 
     ```shell
     brew --version
@@ -38,8 +37,7 @@ To build the nodes, you’ll need some specific software. Run the following comm
 
     \
     If you do not see a version number. or receive an error message, install [Homebrew](https://brew.sh/).
-3.  Ensure you have [XCode](https://developer.apple.com/xcode/) installed.\
-
+3.  Ensure you have [XCode](https://developer.apple.com/xcode/) installed.\\
 
     ```shell
     xcode-select -p
@@ -49,16 +47,12 @@ To build the nodes, you’ll need some specific software. Run the following comm
 
     \
     If you do not see the output above. or receive an error message, install [XCode](https://developer.apple.com/xcode/).
-4.  Install the following dependencies:\
-
+4.  Install the following dependencies:\\
 
     ```shell
     brew install go bzr jq pkg-config hwloc coreutils
     ```
-
-
-5.  Install Rust:\
-
+5.  Install Rust:\\
 
     ```shell
     curl https://sh.rustup.rs -sSf | sh -s -- -y
@@ -68,10 +62,7 @@ To build the nodes, you’ll need some specific software. Run the following comm
     # Rust is installed now. Great!    
     # ...
     ```
-
-
-6.  Source the `~/.cargo/env` config file:\
-
+6.  Source the `~/.cargo/env` config file:\\
 
     ```shell
     source "$HOME/.cargo/env"
@@ -79,23 +70,17 @@ To build the nodes, you’ll need some specific software. Run the following comm
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-1.  Install the following dependencies:\
-
+1.  Install the following dependencies:\\
 
     ```shell
     sudo apt update -y
     sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y
     ```
-
-
-2.  Install Go and add `/usr/local/go/bin` to your `$PATH` variable:\
-
+2.  Install Go and add `/usr/local/go/bin` to your `$PATH` variable:\\
 
     ```shell
     wget -c https://golang.org/dl/go1.18.8.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
     ```
-
-
 3. You may need to export `/usr/local/go/bin` to your `$PATH`. This process changes depending on which shell you’re using:
 
 | Shell | Export to $PATH example                                                       |
@@ -120,77 +105,55 @@ Before we can build the Lotus binaries, there’s some setup we need to do. We�
 
 {% tabs %}
 {% tab title="MacOS Intel" %}
-1.  Clone the repository:\
-
+1.  Clone the repository:\\
 
     ```shell
     git clone https://github.com/filecoin-project/lotus.git ~/lotus-devnet
     cd lotus
     ```
-
-
-2.  Checkout to the latest stable branch:\
-
+2.  Checkout to the latest stable branch:\\
 
     ```shell
     git checkout releases
     ```
-
-
 3. Done! You can move on to the [Build](https://docs.filecoin.io/networks/local-testnet/set-up/#build) section.
 {% endtab %}
 
 {% tab title="MacOS ARM" %}
-1.  Clone the repository into a new `~/lotus-devnet` directory:\
-
+1.  Clone the repository into a new `~/lotus-devnet` directory:\\
 
     ```shell
     git clone https://github.com/filecoin-project/lotus.git ~/lotus-devnet
     cd ~/lotus-devnet
     ```
-
-
-2.  Checkout to the latest stable branch:\
-
+2.  Checkout to the latest stable branch:\\
 
     ```shell
     git checkout releases
     ```
-
-
-3.  Create the necessary environment variables to allow Lotus to run on M1 architecture:\
-
+3.  Create the necessary environment variables to allow Lotus to run on M1 architecture:\\
 
     ```shell
     export LIBRARY_PATH=/opt/homebrew/lib
     export FFI_BUILD_FROM_SOURCE=1
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
     ```
-
-
 4. Done! You can move on to the [Build](https://docs.filecoin.io/networks/local-testnet/set-up/#build) section.
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-1.  Clone the repository into a new `~/lotus-devnet` directory:\
-
+1.  Clone the repository into a new `~/lotus-devnet` directory:\\
 
     ```shell
     git clone https://github.com/filecoin-project/lotus.git ~/lotus-devnet
     cd ~/lotus-devnet
     ```
-
-
-2.  Checkout to the latest stable branch:\
-
+2.  Checkout to the latest stable branch:\\
 
     ```shell
     git checkout releases
     ```
-
-
-3.  If your processor was released later than an AMD Zen or Intel Ice Lake CPU, enable the use of SHA extensions by adding these two environment variables:\
-
+3.  If your processor was released later than an AMD Zen or Intel Ice Lake CPU, enable the use of SHA extensions by adding these two environment variables:\\
 
     ```shell
     export RUSTFLAGS="-C target-cpu=native -g"
@@ -205,16 +168,14 @@ Before we can build the Lotus binaries, there’s some setup we need to do. We�
 
 ### Build
 
-1.  Create the `2k` binary for Lotus:\
-
+1.  Create the `2k` binary for Lotus:\\
 
     ```shell
     make 2k
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     git submodule update --init --recursive
@@ -226,16 +187,14 @@ Before we can build the Lotus binaries, there’s some setup we need to do. We�
 
     \
     This process will take about 5 minutes to complete.
-2.  Fetch the proving parameters for a 2048-byte sector size:\
-
+2.  Fetch the proving parameters for a 2048-byte sector size:\\
 
     ```shell
     ./lotus fetch-params 2048
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     2023-01-31T10:44:43.058-0400    INFO    paramfetch      go-paramfetch@v0.0.4/paramfetch.go:244  Fetching /var/tmp/filecoin-proof-parameters/v28-proof-of-spacetime-fallback-merkletree-poseidon_hasher-8-8-0-559e581f022bb4e4ec6e719e563bf0e026ad6de42e56c18714a2c692b1b88d7e.vk from https://proofs.filecoin.io/ipfs
@@ -246,16 +205,14 @@ Before we can build the Lotus binaries, there’s some setup we need to do. We�
 
     \
     This process downloads a few files totalling to around 2 GiB in size. Depending on your internet speed, this process can take a few minutes to complete.
-3.  Pre-seal two sectors for the genesis block:\
-
+3.  Pre-seal two sectors for the genesis block:\\
 
     ```shell
     ./lotus-seed pre-seal --sector-size 2KiB --num-sectors 2
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     sector-id: {{1000 1} 5}, piece info: {2048 baga6ea4seaqf7ovs6euxa4ktencg2gza7lua32l2ugqu76uqgvnjocek6gtoufi}
@@ -264,24 +221,19 @@ Before we can build the Lotus binaries, there’s some setup we need to do. We�
 
     ...
     ```
-4.  Create the genesis block:\
-
+4.  Create the genesis block:\\
 
     ```shell
     ./lotus-seed genesis new localnet.json
     ```
-
-
-5.  Create a pre-miner and an address with some funds:\
-
+5.  Create a pre-miner and an address with some funds:\\
 
     ```shell
     ./lotus-seed genesis add-miner localnet.json ~/.genesis-sectors/pre-seal-t01000.json
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     2023-01-31T10:52:03.855-0400    INFO    lotus-seed      lotus-seed/genesis.go:129       Adding miner t01000 to genesis template
@@ -297,16 +249,12 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 #### Client
 
 1. Open a new terminal window.
-2.  Move into the `~/lotus-devnet` directory:\
-
+2.  Move into the `~/lotus-devnet` directory:\\
 
     ```shell
     cd ~/lotus-devnet
     ```
-
-
-3.  Export the devnet-specific variables again to make sure we don’t interfere with any existing Lotus installations on your system:\
-
+3.  Export the devnet-specific variables again to make sure we don’t interfere with any existing Lotus installations on your system:\\
 
     ```shell
     export LOTUS_PATH=~/.lotus-local-net
@@ -318,16 +266,14 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 
     \
     Because environmental variables are reset when you open a new terminal window, these variables must be exported every time we start a new terminal.
-4.  Start the client node using `lotus daemon`:\
-
+4.  Start the client node using `lotus daemon`:\\
 
     ```shell
     ./lotus daemon --lotus-make-genesis=devgen.car --genesis-template=localnet.json --bootstrap=false
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     2023-01-31T10:57:41.022-0400    INFO    main    lotus/daemon.go:218     lotus repo: /home/johnny/.lotus
@@ -341,16 +287,12 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 #### Storage provider
 
 1. Open a new terminal window.
-2.  Move into the `~/lotus-devnet` directory:\
-
+2.  Move into the `~/lotus-devnet` directory:\\
 
     ```shell
     cd ~/lotus-devnet
     ```
-
-
-3.  Export the devnet-specific variables again to make sure we don’t interfere with any existing Lotus installations on your system:\
-
+3.  Export the devnet-specific variables again to make sure we don’t interfere with any existing Lotus installations on your system:\\
 
     ```shell
     export LOTUS_PATH=~/.lotus-local-net
@@ -359,30 +301,26 @@ As mentioned earlier, we will be running two types of a node: a storage provider
     export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
     export CGO_CFLAGS="-D__BLST_PORTABLE__"
     ```
-4.  Import the genesis miner key:\
-
+4.  Import the genesis miner key:\\
 
     ```shell
     ./lotus wallet import --as-default ~/.genesis-sectors/pre-seal-t01000.key 
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     imported key t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq successfully!
     ```
-5.  Initialize the genesis miner:\
-
+5.  Initialize the genesis miner:\\
 
     ```shell
     ./lotus-miner init --genesis-miner --actor=t01000 --sector-size=2KiB --pre-sealed-sectors=~/.genesis-sectors --pre-sealed-metadata=~/.genesis-sectors/pre-seal-t01000.json --nosync 
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     2023-01-31T11:04:46.148-0400    INFO    main    lotus-miner/init.go:130 Initializing lotus miner
@@ -395,8 +333,7 @@ As mentioned earlier, we will be running two types of a node: a storage provider
 
     \
     This process take a few minutes to complete.
-6.  Start the storage provider node with `lotus-miner run`:\
-
+6.  Start the storage provider node with `lotus-miner run`:\\
 
     ```shell
     ./lotus-miner run --nosync 
@@ -416,16 +353,12 @@ Now that we’ve got our local devnet running let’s create a new wallet and se
 There are multiple ways to create a new wallet. The simplest way is to use the Lotus CLI directly:
 
 1. Open a new terminal window.
-2.  Move into the `~/lotus-devnet` directory:\
-
+2.  Move into the `~/lotus-devnet` directory:\\
 
     ```shell
     cd ~/lotus-devnet
     ```
-
-
-3.  Export the devnet-specific variables again to make sure we don’t interfere with any existing Lotus installations on your system:\
-
+3.  Export the devnet-specific variables again to make sure we don’t interfere with any existing Lotus installations on your system:\\
 
     ```shell
     export LOTUS_PATH=~/.lotus-local-net
@@ -434,48 +367,39 @@ There are multiple ways to create a new wallet. The simplest way is to use the L
     export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
     export CGO_CFLAGS="-D__BLST_PORTABLE__"
     ```
-4.  Create a new wallet with `lotus wallet new`:\
-
+4.  Create a new wallet with `lotus wallet new`:\\
 
     ```shell
     ./lotus wallet new
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq
     ```
-
-
-5.  View the wallets available on this node with `lotus wallet list`:\
-
+5.  View the wallets available on this node with `lotus wallet list`:\\
 
     ```shell
     ./lotus wallet list
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     Address                                                                                 Balance                          Nonce  Default
     t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq                                               0 FIL                            0
     t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq  49999999.999763880085417692 FIL  2      X
     ```
-
-
 6. You can now close this terminal window, or you can keep it open for the next section.
 
 #### Send funds
 
 We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7...` account with `lotus send`:
 
-1.  If you closed the terminal windows from the last section, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:\
-
+1.  If you closed the terminal windows from the last section, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:\\
 
     ```shell
     cd ~/lotus-devnet
@@ -485,18 +409,14 @@ We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7.
     export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
     export CGO_CFLAGS="-D__BLST_PORTABLE__"
     ```
-
-
-2.  View the wallets available on this node with `lotus wallet list`:\
-
+2.  View the wallets available on this node with `lotus wallet list`:\\
 
     ```shell
     ./lotus wallet list
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     Address                                                                                 Balance                          Nonce  Default
@@ -506,42 +426,34 @@ We can now send FIL from the pre-mined `t3q4o7g...` account to our new `t1snly7.
 
     \
     In the above example, the `t3q4o...` address is the _pre-mined_ address we created in an earlier step. This has a very large balance of FIL. We want to send FIL from this pre-mined address to our new `t1snl...` address.
-3.  Create the send request with `lotus send`, supplying the pre-mined `t3q4o...` address as the `--from` address, the new `t1snl...` address as the receiving address, and the amount of FIL we want to send:\
-
+3.  Create the send request with `lotus send`, supplying the pre-mined `t3q4o...` address as the `--from` address, the new `t1snl...` address as the receiving address, and the amount of FIL we want to send:\\
 
     ```shell
     ./lotus send --from <PRE-MINED ADDRESS> <TO ADDRESS> <VALUE>
     ```
 
     \
-    For example:\
-
+    For example:\\
 
     ```shell
     ./lotus send --from t3q4o7gkwe7p7xokhgws4rwntj7yqfhpj5pm6cqc7dycl7cwk4uvgh2odwdvge5re7ne5gcc6xluifss5uu5cq t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq 2000
 
     # bafy2bzaceaqzbgiazwvtpago6wpkxl42puxfkvwv5cwjpime2irqatamji2bq
     ```
-
-
-4.  Check the balance of your new `t1snl...` address with `lotus wallet balance`:\
-
+4.  Check the balance of your new `t1snl...` address with `lotus wallet balance`:\\
 
     ```shell
     ./lotus wallet balance <ADDRESS>
     ```
 
     \
-    For example:\
-
+    For example:\\
 
     ```shell
     ./lotus wallet balance t1snly7vh4mjtjznwze56ihrdhzfwvbajywwmrenq
 
     # 2000 FIL
     ```
-
-
 5. You can now close this terminal window, or you can keep it open for the next section.
 
 ### Stop and restart
@@ -551,16 +463,14 @@ You’ll eventually want to stop your local devnet from running or may need to r
 #### Stop the devnet
 
 1. Open the storage provider terminal window.
-2.  Press `CTRL` + `c` to stop the node. The node will print `Graceful shutdown successful` once it has fully stopped:\
-
+2.  Press `CTRL` + `c` to stop the node. The node will print `Graceful shutdown successful` once it has fully stopped:\\
 
     ```plaintext
     # CTRL + c 
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```shell
     ...
@@ -569,12 +479,9 @@ You’ll eventually want to stop your local devnet from running or may need to r
     2023-02-14T10:54:42.056-0400    INFO    builder node/shutdown.go:44     miner shut down successfully
     2023-02-14T10:54:42.056-0400    WARN    builder node/shutdown.go:47     Graceful shutdown successful
     ```
-
-
 3. You can now close the storage provider terminal window.
 4. Open the client terminal window.
-5.  Press `CTRL` + `c` to stop the node. The node will print `Graceful shutdown successful` once it has fully stopped:\
-
+5.  Press `CTRL` + `c` to stop the node. The node will print `Graceful shutdown successful` once it has fully stopped:\\
 
     ```plaintext
     ...
@@ -583,14 +490,11 @@ You’ll eventually want to stop your local devnet from running or may need to r
     2023-02-14T10:55:42.502-0400    INFO    builder node/shutdown.go:44     node shut down successfully
     2023-02-14T10:55:42.502-0400    WARN    builder node/shutdown.go:47     Graceful shutdown successful
     ```
-
-
 6. You can now close the client terminal window.
 
 #### Restart the devnet
 
-1.  Open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:\
-
+1.  Open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:\\
 
     ```shell
     cd ~/lotus-devnet
@@ -600,18 +504,14 @@ You’ll eventually want to stop your local devnet from running or may need to r
     export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
     export CGO_CFLAGS="-D__BLST_PORTABLE__"
     ```
-
-
-2.  Start the client node with `lotus daemon`:\
-
+2.  Start the client node with `lotus daemon`:\\
 
     ```shell
     ./lotus daemon --lotus-make-genesis=devgen.car --genesis-template=localnet.json --bootstrap=false
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     2023-01-31T10:57:41.022-0400    INFO    main    lotus/daemon.go:218     lotus repo: /home/johnny/.lotus
@@ -621,8 +521,7 @@ You’ll eventually want to stop your local devnet from running or may need to r
 
     \
     This command will continue to run. Leave this window open.
-3.  For the storage provider node, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:\
-
+3.  For the storage provider node, open a new terminal window, move into the `~/lotus-devnet` directory, and export the devnnet-specific variables again with:\\
 
     ```shell
     cd ~/lotus-devnet
@@ -632,26 +531,20 @@ You’ll eventually want to stop your local devnet from running or may need to r
     export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
     export CGO_CFLAGS="-D__BLST_PORTABLE__"
     ```
-
-
-4.  Restart the storage provider node with `lotus-miner run`:\
-
+4.  Restart the storage provider node with `lotus-miner run`:\\
 
     ```shell
     ./lotus-miner run --nosync
     ```
 
     \
-    This will output something like:\
-
+    This will output something like:\\
 
     ```plaintext
     2023-01-31T12:54:12.009-0400    INFO    main    lotus-miner/run.go:98   Checking full node sync status
     2023-01-31T12:54:12.013-0400    INFO    modules modules/core.go:64      memory limits initialized    {"max_mem_heap": 0, "total_system_mem": 16444395520, "effective_mem_limit": 16444395520}
     2023-01-31T12:54:12.013-0400    WARN    modules modules/core.go:124     failed to initialize cgroup-driven watchdog; err: failed to load cgroup for process: cgroups: cgroup mountpoint does not exist
     ```
-
-
 5. This command will continue to run. Leave this window open.
 6. You must run all further commands from a new terminal window.
 
@@ -672,3 +565,7 @@ ERROR: could not get API info for FullNode: could not get api endpoint: API not 
 ```
 
 If you receive this error when trying to call your Lotus daemon, either your `lotus daemon` isn’t running (see [Restart the devnet](./#stop-and-restart)) or you haven’t re-exported the necessary variables (see the [Build section](./#build)).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/networks/local-testnet)

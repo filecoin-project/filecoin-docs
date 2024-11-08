@@ -142,3 +142,7 @@ console.log(results);
 ```
 
 To learn how to write different select statements using Tableland SDK, you can refer to [here](https://docs.tableland.xyz/sdk/database/prepared-statements).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/builder-cookbook/dapps/decentralized-database)

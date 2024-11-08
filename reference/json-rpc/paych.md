@@ -92,8 +92,7 @@ Response:
 
 ## PaychFund
 
-PaychFund gets or creates a payment channel between address pair.
-The specified amount will be added to the channel through on-chain send for future use
+PaychFund gets or creates a payment channel between address pair. The specified amount will be added to the channel through on-chain send for future use
 
 Perms: sign
 
@@ -116,14 +115,9 @@ Response:
 
 ## PaychGet
 
-PaychGet gets or creates a payment channel between address pair
-The specified amount will be reserved for use. If there aren't enough non-reserved funds
-available, funds will be added through an on-chain message.
+PaychGet gets or creates a payment channel between address pair The specified amount will be reserved for use. If there aren't enough non-reserved funds available, funds will be added through an on-chain message.
 
-- When opts.OffChain is true, this call will not cause any messages to be sent to the chain (no automatic
-  channel creation/funds adding). If the operation can't be performed without sending a message an error will be
-  returned. Note that even when this option is specified, this call can be blocked by previous operations on the
-  channel waiting for on-chain operations.
+* When opts.OffChain is true, this call will not cause any messages to be sent to the chain (no automatic channel creation/funds adding). If the operation can't be performed without sending a message an error will be returned. Note that even when this option is specified, this call can be blocked by previous operations on the channel waiting for on-chain operations.
 
 Perms: sign
 
@@ -532,3 +526,7 @@ Response:
   "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
 }
 ```
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/paych)

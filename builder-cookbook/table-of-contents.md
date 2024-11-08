@@ -33,3 +33,7 @@ description: >-
   * [Bridge wFIL with Axelar](dapps/cross-chain-bridges.md#bridge-wfil-with-axelar)
 * **Decentralized Database**
   * [Store data with Tableland](dapps/decentralized-database.md#store-data-with-tableland)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/builder-cookbook/table-of-contents)

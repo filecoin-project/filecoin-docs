@@ -23,3 +23,7 @@ Node providers often limit the specifications of the nodes that they offer. Some
 ### Node providers
 
 There are multiple node providers for the Filecoin mainnet and each of the testnets. Checkout the [Networks section](https://docs.filecoin.io/nodes/full-nodes/node-providers/) for details.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/nodes/full-nodes/node-providers)

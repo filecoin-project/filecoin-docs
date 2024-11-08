@@ -108,7 +108,7 @@ Always be careful when dealing with your private key. Double-check that you’re
 
 #### **Invoke the contract**
 
-The contract is deterministically deployed on all Filecoin networks at `0x2b3ef6906429b580b7b2080de5ca893bc282c225`. Any contract claiming to be a FilForwarder that does not reside at this address should not be trusted. Any dApp can connect to the wallet and use the ABI in this repository to call this method using any frontend. See the [Glif section](../../smart-contracts/filecoin-evm-runtime/filforwarder.md) above for steps on using a GUI.
+The contract is deterministically deployed on all Filecoin networks at `0x2b3ef6906429b580b7b2080de5ca893bc282c225`. Any contract claiming to be a FilForwarder that does not reside at this address should not be trusted. Any dApp can connect to the wallet and use the ABI in this repository to call this method using any frontend. See the [Glif section](filforwarder.md) above for steps on using a GUI.
 
 Inside this repository is a Hardhat task called `forward`. This task will use the private key to send funds using the contract. This task uses the `fil-forwarder-{CHAIN_ID}.json` file to determine the deployed contract address for a given network. These addresses should always be the same, but these files prevent you from having to specify it each time.
 
@@ -144,3 +144,7 @@ yarn hardhat forward \
     --destination t010135 \
     --amount 42.5
 ```
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwarder)

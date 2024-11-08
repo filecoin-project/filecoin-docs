@@ -116,6 +116,10 @@ For more information on `SystemActor`, see the [source code](https://github.com/
 ## Access and invoke built-in actors
 
 * _Protocol API_, maintained by [Protocol Labs](https://protocol.ai/), …
-* _Filecoin.solidity_, maintained by [Protocol Labs](https://protocol.ai/), is a set of libraries that allows Solidity smart contracts to seamlessly call built-in actors methods. **Not all built-in actors and methods are supported** - for a complete list, see the [actors and methods supported](../built-in-actors/filecoin.sol.md).
+* _Filecoin.solidity_, maintained by [Protocol Labs](https://protocol.ai/), is a set of libraries that allows Solidity smart contracts to seamlessly call built-in actors methods. **Not all built-in actors and methods are supported** - for a complete list, see the [actors and methods supported](filecoin.sol.md).
 
 For information on how invoke and access built-in actors in your smart contracts, see the [developers guide](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/built-in-actors)

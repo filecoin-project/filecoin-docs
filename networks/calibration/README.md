@@ -4,10 +4,10 @@ description: >-
   Filecoin mainnet.
 ---
 
-# Calibration testnet
+# Calibration
 
 {% hint style="info" %}
-Also see [Calibration RPCs](./rpcs.md) and [Calibration Explorers](./explorers.md).
+Also see [Calibration RPCs](rpcs.md) and [Calibration Explorers](explorers.md).
 {% endhint %}
 
 Prospective storage providers can experience more realistic sealing performance and hardware requirements using final proofs constructions and parameters. Storage clients can store and retrieve _real data_ on the network. Clients can also participate in deal-making workflows and storage and retrieval functionality. The sector size on the Calibration testnet is the same as on the Filecoin mainnet; 32 GiB and 64 GiB sectors are supported. This testnet also includes the Filecoin EVM-runtime features found on the Filecoin mainnet.
@@ -38,7 +38,7 @@ Developers can reference pre-existing deals that are already available on the ne
 
 Bootstrap peers for Calibration testnet can be found at:
 
-`https://github.com/filecoin-project/lotus/blob/release/`**[latest release]**`/build/bootstrap/calibnet.pi`
+`https://github.com/filecoin-project/lotus/blob/release/`**\[latest release]**`/build/bootstrap/calibnet.pi`
 
 The latest Lotus release can be found at https://github.com/filecoin-project/lotus/releases/latest/
 
@@ -63,3 +63,7 @@ The following storage providers are running on the Calibration testnet.
 * [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 * [Latest lightweight snapshot](https://forest-archive.chainsafe.dev/latest/calibnet/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
 * [Complete calibration net archival data](https://forest-archive.chainsafe.dev/list/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/networks/calibration)

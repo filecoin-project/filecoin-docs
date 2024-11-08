@@ -11,10 +11,10 @@ Filecoin has five address classes, and actors tend to have _multiple_ addresses.
 
 The goal of using different types of addresses is to provide a robust address format that is scalable, easy to use, and reliable. These addresses encode information including：
 
-- Network prefix: indicates the network the actor belongs to.
-- Protocol indicator: identify the type and version of this address.
-- Payload: identify the actor according to the protocol.
-- Checksum: validate the address.
+* Network prefix: indicates the network the actor belongs to.
+* Protocol indicator: identify the type and version of this address.
+* Payload: identify the actor according to the protocol.
+* Checksum: validate the address.
 
 Filecoin addresses can be represented either as raw bytes or a string. Raw bytes format will always be used on-chain. An address can also be encoded to a string, including a checksum and network prefix. The string format will never appear on-chain and is only for human-readable purposes.
 
@@ -26,17 +26,17 @@ Filecoin address can be broken down like this:
 
 The network prefix is prepended to an address when encoding to a string. The network prefix indicates which network an address belongs to. Network prefixes never appear on-chain and are only used when encoding an address to a human-readable format.
 
-- `f` - addresses on the Filecoin mainnet.
-- `t` - addresses used on any Filecoin testnet.
+* `f` - addresses on the Filecoin mainnet.
+* `t` - addresses used on any Filecoin testnet.
 
 The protocol indicator identifies the address type, which describes how a method should interpret the information in the `payload` field of an address.
 
-- `0`: An ID address.
-- `1`: A wallet address generated from a secp256k public key.
-- `2`: An actor address.
-- `3`: A wallet address generated from BLS public key.
-- `4`: A delegated address for user-defined foreign actors:
-  - `410`: Ethereum-compatible address space managed by the Ethereum address manager (EAM). Each 410 address is equivalent to an 0x address.
+* `0`: An ID address.
+* `1`: A wallet address generated from a secp256k public key.
+* `2`: An actor address.
+* `3`: A wallet address generated from BLS public key.
+* `4`: A delegated address for user-defined foreign actors:
+  * `410`: Ethereum-compatible address space managed by the Ethereum address manager (EAM). Each 410 address is equivalent to an 0x address.
 
 Each address type is described below.
 
@@ -70,8 +70,8 @@ Public key addresses allow devices, like hardware wallets, to derive a valid Fil
 
 Filecoin supports two types of public key addresses:
 
-- [secp256k1 addresses](https://en.bitcoin.it/wiki/Secp256k1) that begin with the protocol indicator as `1`.
-- [BLS addresses](https://en.wikipedia.org/wiki/BLS_digital_signature) that begin with the protocol indicator as `3`.
+* [secp256k1 addresses](https://en.bitcoin.it/wiki/Secp256k1) that begin with the protocol indicator as `1`.
+* [BLS addresses](https://en.wikipedia.org/wiki/BLS\_digital\_signature) that begin with the protocol indicator as `3`.
 
 `t1iandfn6d...ddboqxbhoeva` - a testnet wallet address generated using secp256k1. `t3vxj34sbdr3...road7cbygq` - a testnet wallet address generated using BLS.
 
@@ -79,9 +79,9 @@ Filecoin supports two types of public key addresses:
 
 Filecoin supports extensible, user-defined actor addresses through the `4` address class, introduced in [Filecoin Improvement Proposal (FIP) 0048](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0048.md). The `4` address class provides the following benefits to the network:
 
-- Implement foreign addressing systems in Filecoin.
-- A predictable addressing scheme to support interactions with addresses that do not yet exist on-chain.
-- User-defined, programmable addressing systems without extensive changes and network upgrades.
+* Implement foreign addressing systems in Filecoin.
+* A predictable addressing scheme to support interactions with addresses that do not yet exist on-chain.
+* User-defined, programmable addressing systems without extensive changes and network upgrades.
 
 For example, a testnet delegated address using the Ethereum Addressing System is structured as follows:
 
@@ -145,16 +145,16 @@ The Filecoin EVM runtime introduces support for `0x` Ethereum-style addresses. F
 
 Addresses starting with `f0` can be converted to the `0x` format by:
 
-- Extracting the `actor_id` (e.g., the `1234` in `f01234`).
-- Hex encode with a `0xff` prefix: `sprintf("0xff0000000000000000000000%016x", actor_id)`.
+* Extracting the `actor_id` (e.g., the `1234` in `f01234`).
+* Hex encode with a `0xff` prefix: `sprintf("0xff0000000000000000000000%016x", actor_id)`.
 
 Addresses starting with `f410f` address can be converted to the `0x` format by:
 
-- Removing the `f410f` prefix.
-- Decoding the remainder as base 32 (RFC 4648 without padding).
-- Trim off the last 4 bytes. This is a _checksum_ that can optionally be verified, but that’s beyond the scope of this documentation.
-- Assert that the remaining address is 20 bytes long.
-- Hex-encode: `sprintf(0x%040x", actor_id)`.
+* Removing the `f410f` prefix.
+* Decoding the remainder as base 32 (RFC 4648 without padding).
+* Trim off the last 4 bytes. This is a _checksum_ that can optionally be verified, but that’s beyond the scope of this documentation.
+* Assert that the remaining address is 20 bytes long.
+* Hex-encode: `sprintf(0x%040x", actor_id)`.
 
 {% hint style="danger" %}
 `f0` addresses are **not** re-org stable and should not be used until the chain has settled.
@@ -166,7 +166,11 @@ On the flip side, Ethereum-style addresses can be converted to a Filecoin addres
 
 Addresses starting with `0xff0000000000000000000000` can be converted to a Filecoin address by:
 
-- Decoding the last 16 hex digits into a uint64
-- Format the address as `f0${decimal(id)}` where decimal(id) is the decimal representation of the decoded actor ID.
+* Decoding the last 16 hex digits into a uint64
+* Format the address as `f0${decimal(id)}` where decimal(id) is the decimal representation of the decoded actor ID.
 
 Otherwise, it maps to f410f…
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/address-types)

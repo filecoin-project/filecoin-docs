@@ -96,3 +96,7 @@ Developers can easily do so through the following block explorers:
 * [Beryx contract verifier](https://beryx.zondax.ch/contract\_verifier)
 
 You can find this tutorial in the [FEVM ERC-20 Quickstart](../fundamentals/erc-20-quickstart.md).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/best-practices)

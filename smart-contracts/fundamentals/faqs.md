@@ -112,3 +112,7 @@ The intent of FEVM/FVM is to compute over state data (the metadata of your store
 ## **How do I close a storage deal on Filecoin and stop storage providers (SP) from storing my data on-chain**
 
 It’s not impossible but storage providers are incentivized not to close the storage deal as they are slashed for not providing [Proof of Spacetime (PoSt)](../../reference/general/glossary.md#proof-of-spacetime-post). Someone has to pay for the broken promise a miner makes to the chain and you need a custom market actor for it most likely to make the deal. You need to make deals for a certain amount of time - right now the boundaries are 6-18 months. You cannot ask a storage provider to take down your data without contacting them off-chain.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/fundamentals/faqs)

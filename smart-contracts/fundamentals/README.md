@@ -45,8 +45,8 @@ Let’s get building. Choose one of the following APIs. These are all storage he
 Examples:
 
 * [Polygon tutorial](https://github.com/protocol/nft-website/blob/main/docs/tutorial/mint-nftstorage-polygon.md)
-* [Flow tutorial](https://github.com/protocol/nft-website/blob/main/docs/tutorial/flow-nft-marketplace.md) 
-* [Avalanche tutorial](https://github.com/protocol/nft-website/blob/main/docs/tutorial/avax-nft.md) 
+* [Flow tutorial](https://github.com/protocol/nft-website/blob/main/docs/tutorial/flow-nft-marketplace.md)
+* [Avalanche tutorial](https://github.com/protocol/nft-website/blob/main/docs/tutorial/avax-nft.md)
 * [Using IPFS & Filecoin on Harmony](https://docs.harmony.one/home/developers/tutorials/ipfs-filecoin)
 
 ## Additional resources
@@ -57,3 +57,7 @@ Examples:
 * [Developing on Filecoin](https://www.youtube.com/watch?v=aGCpq0Xf-w8) (video)
 * Textile tools: [video](https://www.youtube.com/watch?v=IZ8M9m9\_uJY) and [documentation](https://docs.textile.io/)
 * [Building decentralized apps using Fleek’s Space daemon](https://www.youtube.com/watch?v=pWJ5fty-7mA) (video)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/fundamentals)

@@ -114,3 +114,7 @@ The 0x protocol library provides a set of secure smart contracts that facilitate
 
 * [Documentation](https://docs.0x.org/introduction/introduction-to-0x)
 * [GitHub](https://github.com/0xProject)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/solidity-libraries)

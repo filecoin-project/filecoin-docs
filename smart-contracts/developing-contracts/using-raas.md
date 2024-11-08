@@ -69,3 +69,7 @@ async function initializeDealCreationListener() {
 To use this, call `yarn service` in the terminal and proceed through the frontend, as you normally would when uploading a file. Register the workers using the autocompleted CID that appears in the box.
 
 If you want to register the workers manually for a job that you didn't upload, paste in the known CID of your file into the box and register the jobs.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/using-raas)

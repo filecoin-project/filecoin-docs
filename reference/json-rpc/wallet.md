@@ -108,9 +108,7 @@ Response:
 
 ## WalletNew
 
-WalletNew creates a new address in the wallet with the given sigType.
-Available key types: bls, secp256k1, secp256k1-ledger
-Support for numerical types: 1 - secp256k1, 2 - BLS is deprecated
+WalletNew creates a new address in the wallet with the given sigType. Available key types: bls, secp256k1, secp256k1-ledger Support for numerical types: 1 - secp256k1, 2 - BLS is deprecated
 
 Perms: write
 
@@ -231,8 +229,7 @@ Response: `"f01234"`
 
 ## WalletVerify
 
-WalletVerify takes an address, a signature, and some bytes, and indicates whether the signature is valid.
-The address does not have to be in the wallet.
+WalletVerify takes an address, a signature, and some bytes, and indicates whether the signature is valid. The address does not have to be in the wallet.
 
 Perms: read
 
@@ -250,3 +247,7 @@ Inputs:
 ```
 
 Response: `true`
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/wallet)

@@ -1,7 +1,6 @@
 # Mpool
 
-The Mpool methods are for interacting with the message pool. The message pool
-manages all incoming and outgoing 'messages' going over the network.
+The Mpool methods are for interacting with the message pool. The message pool manages all incoming and outgoing 'messages' going over the network.
 
 ## MpoolBatchPush
 
@@ -303,9 +302,7 @@ Response:
 
 ## MpoolClear
 
-MpoolClear clears pending messages from the mpool.
-If clearLocal is true, ALL messages will be cleared.
-If clearLocal is false, local messages will be protected, all others will be cleared.
+MpoolClear clears pending messages from the mpool. If clearLocal is true, ALL messages will be cleared. If clearLocal is false, local messages will be protected, all others will be cleared.
 
 Perms: write
 
@@ -340,8 +337,7 @@ Response:
 
 ## MpoolGetNonce
 
-MpoolGetNonce gets next nonce for the specified sender.
-Note that this method may not be atomic. Use MpoolPushMessage instead.
+MpoolGetNonce gets next nonce for the specified sender. Note that this method may not be atomic. Use MpoolPushMessage instead.
 
 Perms: read
 
@@ -452,12 +448,9 @@ Response:
 
 ## MpoolPushMessage
 
-MpoolPushMessage atomically assigns a nonce, signs, and pushes a message
-to mempool.
-maxFee is only used when GasFeeCap/GasPremium fields aren't specified
+MpoolPushMessage atomically assigns a nonce, signs, and pushes a message to mempool. maxFee is only used when GasFeeCap/GasPremium fields aren't specified
 
-When maxFee is set to 0, MpoolPushMessage will guess appropriate fee
-based on current chain conditions
+When maxFee is set to 0, MpoolPushMessage will guess appropriate fee based on current chain conditions
 
 Perms: sign
 
@@ -674,3 +667,7 @@ Response:
   }
 }
 ```
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/mpool)

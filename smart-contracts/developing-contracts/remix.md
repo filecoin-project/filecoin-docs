@@ -92,3 +92,7 @@ Remix uses a default of 2.5 nanoFIL per gas as a priority fee, which is usually 
 
 1. When the deployment transaction confirmation pop-up window shows up, click on **Site suggested**.
 2. Switch to **Market**, **Aggressive**, or **Low**. The **Market** option is generally suitable for most situations.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/remix)

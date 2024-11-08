@@ -178,3 +178,7 @@ Note that there is an expected finality period when conducting inter-chain messa
 2. [Ready-to-use EC finality calculator](https://github.com/filecoin-project/FIPs/discussions/919)&#x20;
 
 Learn more about cross-chain bridges and which bridges are available on which networks in the Filecoin Docs [here](https://docs.filecoin.io/smart-contracts/advanced/cross-chain-bridges).&#x20;
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/builder-cookbook/dapps/cross-chain-bridges)

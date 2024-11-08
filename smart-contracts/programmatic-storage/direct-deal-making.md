@@ -1,6 +1,7 @@
 ---
 description: >-
-  This page explains the direct deal-making process in regards to the Filecoin network.
+  This page explains the direct deal-making process in regards to the Filecoin
+  network.
 ---
 
 # Direct deal-making
@@ -46,3 +47,7 @@ Here is a diagram showing each of these steps in turn:
 ## Next steps
 
 For a complete tutorial on how to use the client contract to initiate a deal from FVM, see our [client contract tutorial](../developing-contracts/client-contract-tutorial.md). A full explanation of the client contract in the context of a direct deal-making starter kit can be found [here](https://github.com/filecoin-project/fvm-starter-kit-deal-making/tree/main).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/programmatic-storage/direct-deal-making)

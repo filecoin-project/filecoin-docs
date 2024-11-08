@@ -79,7 +79,7 @@ The development environment we’re going to be using is called Remix, viewable 
 In Remix, workspaces are where you can create a contract, or group of contracts, for each project. Let’s create a new workspace to create our new ERC-20 token.
 
 1. Open [remix.ethereum.org](https://remix.ethereum.org).
-2. Open the dropdown menu and click **create a new workspace**.
+2.  Open the dropdown menu and click **create a new workspace**.
 
     ![Create a new workspace.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-dropdown.webp)
 3. In the **Choose a template** dropdown, select **ERC20**.
@@ -92,6 +92,7 @@ In Remix, workspaces are where you can create a contract, or group of contracts,
 ### Customize the contract
 
 The contract template we’re using is pretty simple. We just need to modify a couple of variables.
+
 1.  Click the compiler icon to open the compiler panel. Update the compiler version by selecting `0.8.20` from the compiler dropdown.
 
     ![Update the compiler version](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-compiler.webp)
@@ -139,7 +140,6 @@ Now that we’ve successfully compiled our contract, we need to deploy it somewh
 7.  Under the **Contract** dropdown, ensure the contract you created is selected.
 
     ![Select contract in Remix.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-deploy-select.webp)
-
 8.  Gather your MetaMask account address and populate the deploy field in Remix.
 
     ![Copy the address in MetaMask](../../.gitbook/assets/smart-contract-fundamentals-erc-20-quickstart-mm-account.webp)
@@ -207,3 +207,7 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 ### Share your tokens
 
 Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](erc-20-quickstart.md#create-a-wallet) and [Switch networks](erc-20-quickstart.md#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](../../basics/assets/metamask-setup.md) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can’t, it might be because they don’t have any `tFil`.
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart)

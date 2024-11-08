@@ -253,3 +253,7 @@ cd libs
 ### Call a built-in actor
 
 Once you’ve either imported particular contracts manually or simply installed `filecoin.sol` using npm, create a callable method to access the built-in actor methods the way you normally would in a Solidity smart contract. Working examples of smart contracts that call built-in actor methods are available in the [reference guide](call-built-in-actors.md#filecoin.sol).
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors)

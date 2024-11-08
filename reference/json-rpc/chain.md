@@ -1,7 +1,6 @@
 # Chain
 
-The Chain method group contains methods for interacting with the
-blockchain, but that do not require any form of state computation.
+The Chain method group contains methods for interacting with the blockchain, but that do not require any form of state computation.
 
 ## ChainBlockstoreInfo
 
@@ -21,8 +20,7 @@ Response:
 
 ## ChainCheckBlockstore
 
-ChainCheckBlockstore performs an (asynchronous) health check on the chain/state blockstore
-if supported by the underlying implementation.
+ChainCheckBlockstore performs an (asynchronous) health check on the chain/state blockstore if supported by the underlying implementation.
 
 Perms: admin
 
@@ -50,11 +48,7 @@ Response: `{}`
 
 ## ChainExport
 
-ChainExport returns a stream of bytes with CAR dump of chain data.
-The exported chain data includes the header chain from the given tipset
-back to genesis, the entire genesis state, and the most recent 'nroots'
-state trees.
-If oldmsgskip is set, messages from before the requested roots are also not included.
+ChainExport returns a stream of bytes with CAR dump of chain data. The exported chain data includes the header chain from the given tipset back to genesis, the entire genesis state, and the most recent 'nroots' state trees. If oldmsgskip is set, messages from before the requested roots are also not included.
 
 Perms: read
 
@@ -79,14 +73,7 @@ Response: `"Ynl0ZSBhcnJheQ=="`
 
 ## ChainExportRangeInternal
 
-ChainExportRangeInternal triggers the export of a chain
-CAR-snapshot directly to disk. It is similar to ChainExport,
-except, depending on options, the snapshot can include receipts,
-messages and stateroots for the length between the specified head
-and tail, thus producing "archival-grade" snapshots that include
-all the on-chain data. The header chain is included back to
-genesis and these snapshots can be used to initialize Filecoin
-nodes.
+ChainExportRangeInternal triggers the export of a chain CAR-snapshot directly to disk. It is similar to ChainExport, except, depending on options, the snapshot can include receipts, messages and stateroots for the length between the specified head and tail, thus producing "archival-grade" snapshots that include all the on-chain data. The header chain is included back to genesis and these snapshots can be used to initialize Filecoin nodes.
 
 Perms: admin
 
@@ -196,16 +183,11 @@ Response:
 
 ChainGetBlockMessages returns messages stored in the specified block.
 
-Note: If there are multiple blocks in a tipset, it's likely that some
-messages will be duplicated. It's also possible for blocks in a tipset to have
-different messages from the same sender at the same nonce. When that happens,
-only the first message (in a block with lowest ticket) will be considered
-for execution
+Note: If there are multiple blocks in a tipset, it's likely that some messages will be duplicated. It's also possible for blocks in a tipset to have different messages from the same sender at the same nonce. When that happens, only the first message (in a block with lowest ticket) will be considered for execution
 
 NOTE: THIS METHOD SHOULD ONLY BE USED FOR GETTING MESSAGES IN A SPECIFIC BLOCK
 
-DO NOT USE THIS METHOD TO GET MESSAGES INCLUDED IN A TIPSET
-Use ChainGetParentMessages, which will perform correct message deduplication
+DO NOT USE THIS METHOD TO GET MESSAGES INCLUDED IN A TIPSET Use ChainGetParentMessages, which will perform correct message deduplication
 
 Perms: read
 
@@ -328,8 +310,7 @@ Response:
 
 ## ChainGetMessage
 
-ChainGetMessage reads a message referenced by the specified CID from the
-chain blockstore.
+ChainGetMessage reads a message referenced by the specified CID from the chain blockstore.
 
 Perms: read
 
@@ -434,8 +415,7 @@ Response:
 
 ## ChainGetParentMessages
 
-ChainGetParentMessages returns messages stored in parent tipset of the
-specified block.
+ChainGetParentMessages returns messages stored in parent tipset of the specified block.
 
 Perms: read
 
@@ -478,9 +458,7 @@ Response:
 
 ## ChainGetParentReceipts
 
-ChainGetParentReceipts returns receipts for messages in parent tipset of
-the specified block. The receipts in the list returned is one-to-one with the
-messages returned by a call to ChainGetParentMessages with the same blockCid.
+ChainGetParentReceipts returns receipts for messages in parent tipset of the specified block. The receipts in the list returned is one-to-one with the messages returned by a call to ChainGetParentMessages with the same blockCid.
 
 Perms: read
 
@@ -511,8 +489,7 @@ Response:
 
 ## ChainGetPath
 
-ChainGetPath returns a set of revert/apply operations needed to get from
-one tipset to another, for example:
+ChainGetPath returns a set of revert/apply operations needed to get from one tipset to another, for example:
 
 ```
        to
@@ -600,9 +577,7 @@ Response:
 
 ## ChainGetTipSetAfterHeight
 
-ChainGetTipSetAfterHeight looks back for a tipset at the specified epoch.
-If there are no blocks at the specified epoch, the first non-nil tipset at a later epoch
-will be returned.
+ChainGetTipSetAfterHeight looks back for a tipset at the specified epoch. If there are no blocks at the specified epoch, the first non-nil tipset at a later epoch will be returned.
 
 Perms: read
 
@@ -634,9 +609,7 @@ Response:
 
 ## ChainGetTipSetByHeight
 
-ChainGetTipSetByHeight looks back for a tipset at the specified epoch.
-If there are no blocks at the specified epoch, a tipset at an earlier epoch
-will be returned.
+ChainGetTipSetByHeight looks back for a tipset at the specified epoch. If there are no blocks at the specified epoch, a tipset at an earlier epoch will be returned.
 
 Perms: read
 
@@ -704,8 +677,7 @@ Response:
 
 ## ChainHotGC
 
-ChainHotGC does online (badger) GC on the hot store; only supported if you are using
-the splitstore
+ChainHotGC does online (badger) GC on the hot store; only supported if you are using the splitstore
 
 Perms: admin
 
@@ -725,8 +697,7 @@ Response: `{}`
 
 ## ChainNotify
 
-ChainNotify returns channel with chain head updates.
-First message is guaranteed to be of len == 1, and type == 'current'.
+ChainNotify returns channel with chain head updates. First message is guaranteed to be of len == 1, and type == 'current'.
 
 Perms: read
 
@@ -749,8 +720,7 @@ Response:
 
 ## ChainPrune
 
-ChainPrune forces compaction on cold store and garbage collects; only supported if you
-are using the splitstore
+ChainPrune forces compaction on cold store and garbage collects; only supported if you are using the splitstore
 
 Perms: admin
 
@@ -783,8 +753,7 @@ Response: `{}`
 
 ## ChainReadObj
 
-ChainReadObj reads ipld nodes referenced by the specified CID from chain
-blockstore and returns raw bytes.
+ChainReadObj reads ipld nodes referenced by the specified CID from chain blockstore and returns raw bytes.
 
 Perms: read
 
@@ -825,9 +794,7 @@ Response: `{}`
 
 ## ChainStatObj
 
-ChainStatObj returns statistics about the graph referenced by 'obj'.
-If 'base' is also specified, then the returned stat will be a diff
-between the two objects.
+ChainStatObj returns statistics about the graph referenced by 'obj'. If 'base' is also specified, then the returned stat will be a diff between the two objects.
 
 Perms: read
 
@@ -875,3 +842,7 @@ Inputs:
 ```
 
 Response: `"0"`
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/json-rpc/chain)

@@ -110,3 +110,7 @@ echo $((16#31157))
   * [FIP 0037](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0037.md)
   * [FIP 0054](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0054.md)
 * [Primitive Gas Price list](https://github.com/filecoin-project/ref-fvm/blob/master/fvm/src/gas/price\_list.rs)
+
+
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/how-gas-works)
