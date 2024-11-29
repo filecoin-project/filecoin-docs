@@ -1,6 +1,6 @@
 ---
 description: >-
-    FEVM Indexers allow users and developers to query Ethereum chain data in an extremely quick manner. Learn what EVM indexers are available on Filecoin and how to use them through existing data providers.
+    FEVM Indexers allow users and developers to query Filecoin chain data in an extremely quick manner. Learn what FEVM indexers are available on Filecoin and how to use them through existing data providers.
 ---
 
 # FEVM Blockchain Indexers
@@ -20,16 +20,16 @@ Additionally, blockchain indexers provide a better developer experience by lever
 
 [The Graph](https://thegraph.com) is a decentralized protocol for indexing blockchain data. It enables developers to build and publish custom open APIs, known as subgraphs, that applications can query to retrieve blockchain data using GraphQL in a time-efficient manner.
 
-### Glossary
+#### Glossary
 
 - **Subgraphs**: Customizable schemas that define how to index data from specific blockchain smart contracts and events.
 - **GraphQL**: A query language that allows clients to request exactly the data they need, making data fetching more efficient.
 
-### Querying Subgraphs on Filecoin FEVM
+#### Querying Subgraphs on Filecoin FEVM
 
 There are many ways to query existing subgraphs, including numerous well-known libraries for [JavaScript](https://thegraph.com/docs/en/querying/querying-from-an-application/) and [Python](https://thegraph.com/docs/en/querying/querying-with-python/). But even without any third-party tooling, querying a subgraph is no more complicated than querying [RPC nodes](https://docs.filecoin.io/reference/json-rpc). The only complexity is that you have to know the schema of the subgraph beforehand, similar to knowing SQL database tables and columns before being able to query them. Luckily, The Graph provides several ways to discover the subgraph schema. The most convenient one is called the ["Playground"](https://graphql.org/blog/2020-04-03-graphiql-graphql-playground/), and it is available upon a GET request to the subgraph query URL. Alternatively, you may use the discovery method that exists on every subgraph, called the [Introspection Query](https://graphql.org/learn/introspection/).
 
-### Developing Subgraphs on Filecoin FEVM
+#### Developing Subgraphs on Filecoin FEVM
 
 Developing a subgraph requires specialized knowledge that can be obtained through [The Graph Academy](https://thegraph.academy). Although it is not very complicated, the exact structure of a subgraph is an ever-changing process, so the details will stay out of scope for this documentation.
 
@@ -42,10 +42,9 @@ Just as with database data queried through SQL, subgraphs have to be stored some
 [Protofire (aka Glif Nodes)](https://api.node.glif.io) offers public access to The Graph services, simplifying the process of deploying and managing subgraphs.
 
 1. **Connect Your Wallet**
-   - On the [Protofire (Glif Nodes) platform](https://api.node.glif.io), connect your [Filecoin-compatible wallet](https://docs.filecoin.io/basics/assets/wallets).
+   - On the [Protofire (Glif Nodes) platform - SUBGRAPHS](https://api.node.glif.io/graph), connect your [Filecoin-compatible wallet](https://docs.filecoin.io/basics/assets/wallets).
 
 2. **Create an API Key**
-   - Switch to the [**SUBGRAPHS** tab](https://api.node.glif.io/graph). 
    - Choose the **API keys** tab.
    - Click **Create new key**.
    - Generate an API key to authenticate your requests.
@@ -75,17 +74,38 @@ One of the popular subgraphs is a subgraph containing information about all the 
 - Visit the [Protofire (Glif Nodes) platform](https://api.node.glif.io).
 - Navigate to the **SUBGRAPHS** tab.
 - Select the **[blocks](https://api.node.glif.io/graph/21/mainnet%2Fblocks)** subgraph.
-- In the opened "Playground" tab, click the **Show GraphiQL Explorer** button (folder icon, 3rd from the top in the left bar) to verify the subgraph schema.
+- In the opened **Playground** tab, click the **Show GraphiQL Explorer** button (folder icon, 3rd from the top in the left bar) to verify the subgraph schema.
 - Click the elements that you are looking to query and adjust the query if necessary. For the sake of this example, let's query the first block this subgraph supports (#2867000). The resulting query should look like the following:
 
-```graphql
-  query MyQuery {
-    blocks(block: {number: 2867000}) {
-      number
+    ```graphql
+      query MyQuery {
+      blocks(block: {number: 2867000}) {
+        number
+        id
+        timestamp
+        gasLimit
+        gasUsed
+      }
     }
-  }
-```
+    ```
 
-- Click "Execute query" (alternatively Ctrl+Enter, the icon with white triangle in the red square) and adjust query if needed. 
-- Copy "Queries (HTTP)" URL on the top of the Playground as well as resulting query to your code. The subgraph querying is free so far, although it requires an API key.
+- Click **Execute query** (alternatively Ctrl+Enter, the icon with white triangle in the red square) and adjust query if needed.
+
+    ```json
+    {
+      "data": {
+        "blocks": [
+          {
+            "number": "2867000",
+            "id": "0x2df02173a94343c971733e0c94b854dee9100fbd37c70d69956bf35bca7020da",
+            "timestamp": "1684316400",
+            "gasLimit": "70000000000",
+            "gasUsed": "24086592799"
+          }
+        ]
+      }
+    }
+    ```
+
+- Copy **Queries (HTTP)** URL on the top of the Playground as well as resulting query to your code. The subgraph querying is free so far, although it requires an API key.
 
