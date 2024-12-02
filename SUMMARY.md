@@ -131,6 +131,7 @@
   * [Oracles](smart-contracts/advanced/oracles.md)
   * [Multicall](smart-contracts/advanced/multicall.md)
   * [Multisig](smart-contracts/advanced/multisig.md)
+  * [FEVM Indexers](smart-contracts/advanced/fevm-indexers.md)
   * [Cross-chain bridges](smart-contracts/advanced/cross-chain-bridges.md)
   * [Aggregated deal-making](smart-contracts/advanced/aggregated-deal-making.md)
 
