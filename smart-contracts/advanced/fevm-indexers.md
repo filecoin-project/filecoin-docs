@@ -31,7 +31,7 @@ There are many ways to query existing subgraphs, including numerous well-known l
 
 #### Developing Subgraphs on Filecoin FEVM
 
-Developing a subgraph requires specialized knowledge that can be obtained through [The Graph Academy](https://thegraph.academy). Although it is not very complicated, the exact structure of a subgraph is an ever-changing process, so the details will stay out of scope for this documentation.
+Developing a subgraph requires specialized knowledge that can be obtained through [The Graph Academy](https://thegraph.academy).
 
 ### Deploying Subgraphs
 
