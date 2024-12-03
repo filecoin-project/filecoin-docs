@@ -326,6 +326,7 @@ redirects:
   smart-contracts/advanced/wfil: smart-contracts/advanced/wrapped-fil.md
   smart-contracts/advanced/multicall: smart-contracts/advanced/multicall.md
   smart-contracts/advanced/multisig: smart-contracts/advanced/multisig.md
+  smart-contracts/advanced/fevm-indexers: smart-contracts/advanced/fevm-indexers.md
   smart-contracts/developing-contracts: smart-contracts/developing-contracts/best-practices.md
   smart-contracts/filecoin-evm-runtime/differences-with-ethereum: smart-contracts/fundamentals/README.md
   smart-contracts/filecoin-evm-runtime/filforwader: smart-contracts/filecoin-evm-runtime/filforwarder.md
