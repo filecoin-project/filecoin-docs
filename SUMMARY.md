@@ -134,6 +134,8 @@
   * [FEVM Indexers](smart-contracts/advanced/fevm-indexers.md)
   * [Cross-chain bridges](smart-contracts/advanced/cross-chain-bridges.md)
   * [Aggregated deal-making](smart-contracts/advanced/aggregated-deal-making.md)
+  * [Contract automation](smart-contracts/advanced/contract-automation.md)
+  * [Relay](smart-contracts/advanced/relay.md)
 
 ## Networks
 
