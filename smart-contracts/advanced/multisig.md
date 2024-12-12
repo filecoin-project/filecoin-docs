@@ -70,12 +70,9 @@ Safe’s multisig smart contracts are live on the Filecoin Mainnet and Calibrati
 | [SafeL2](https://filecoin.blockscout.com/address/0x29fcB43b46531BcA003ddC8FCB67FFE91900C762)                       | `0x29fcB43b46531BcA003ddC8FCB67FFE91900C762` | ✔️      | ✔️          |
 | [Safe](https://filecoin.blockscout.com/address/0x41675C099F32341bf84BFc5382aF534df5C7461a)                         | `0x41675C099F32341bf84BFc5382aF534df5C7461a` | ✔️      | ✔️          |
 
-#### **Further Gnosis Safe resources**
+#### **Further Safe resources**
 
-* [Safe Smart Account Docs](https://docs.safe.global/advanced/smart-account-overview)
-* [Create Your Own Multisig via. the Safe CLI](https://docs.safe.global/advanced/cli-overview)
-* [Safe - Deploy a Recovery Safe Example](https://docs.safe.global/advanced/cli-guides/recovery-safe-deployment)
-
+* [Safe Docs](https://docs.safe.global/home/what-is-safe)
 
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/advanced/multisig)
