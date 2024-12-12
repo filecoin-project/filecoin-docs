@@ -26,9 +26,9 @@ The Filecoin Native [MultisigActor](/basics/the-blockchain/actors#multisigactor)
 
 A [MultisigActor CLI](https://lotus.filecoin.io/lotus/manage/multisig/) is available from the Lotus CLI, and a web UI for MultisigActors is available at https://www.glif.io/en/multisig/.
 
-### [Safe](https://safe.global/) 
+### Safe multisig
 
-Safe is a popular smart EVM multisig account infrastructure provider that allows users to manage their digital assets securely. It is non-custodial, formally verified, secures over $100B in assets, and is used by more than 200 projects. Safe has been deployed to the Filecoin EVM.
+[Safe](https://safe.global/) is a popular smart EVM multisig account infrastructure provider that allows users to manage their digital assets securely. It is non-custodial, formally verified, secures over $100B in assets, and is used by more than 200 projects. Safe has been deployed to the Filecoin EVM.
 
 #### Safe UI
 
@@ -46,6 +46,11 @@ A web interface for the Safe multisig on Filecoin is available at:
 - **Due to transaction confirmation times** users may experience prolonged "processing" status in the UI.
    - See [finality](https://docs.filecoin.io/reference/general/glossary#finality) for more info on current finality (note that faster finality is coming to Filecoin in the near future).
 
+#### Safe Transaction Service
+
+The [Safe transaction service](https://docs.safe.global/core-api/api-safe-transaction-service) on Filecoin is available at:
+- https://transaction.safe.filecoin.io on [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
+- https://transaction-testnet.safe.filecoin.io on [Filecoin Calibration testnet](https://docs.filecoin.io/networks/calibration)
 
 #### Safe Smart Contracts
 
