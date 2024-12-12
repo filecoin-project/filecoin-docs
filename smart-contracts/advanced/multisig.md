@@ -18,17 +18,38 @@ Multisig wallets enable builders to integrate the following features into their 
 
 ## Available multisig wallet implementations
 
-There are several multisig wallet implementations built upon the FVM. Builders can integrate these multisig wallets into their applications today.
+There are several multisig wallet implementations on Filecoin. Builders can integrate these multisig wallets into their applications today.
 
-### [Safe](https://safe.global/)
+### Filecoin Native Multisig
 
-Safe is a popular smart account infrastructure provider that allows users to manage their digital assets securely. It is formally verified, secures over $100B in assets, and is used by more than 200 projects.
+The Filecoin Native [MultisigActor](/basics/the-blockchain/actors#multisigactor) is a built-in actor that does not interact directly with the Filecoin EVM. Like other Filecoin actors, native multisig addresses begin with `f2` and represent a group of transaction signers with a maximum of 256 signers. Signers may be external users or the MultisigActor itself and can include `f1` and `f3` [addresses](https://docs.filecoin.io/basics/the-blockchain/addresses).
 
-> **Note**: The Safe.global web UI does not currently support Filecoin. Users can only interact with Safe on the Filecoin network using the CLI and Filecoin explorers.
+A [MultisigActor CLI](https://lotus.filecoin.io/lotus/manage/multisig/) is available from the Lotus CLI, and a web UI for MultisigActors is available at https://www.glif.io/en/multisig/.
 
-**Safe Smart Contracts**
+### [Safe](https://safe.global/) 
 
-Gnosis Safe’s smart contracts are live on the Filecoin Mainnet and Calibration testnet.
+Safe is a popular smart EVM multisig account infrastructure provider that allows users to manage their digital assets securely. It is non-custodial, formally verified, secures over $100B in assets, and is used by more than 200 projects. Safe has been deployed to the Filecoin EVM.
+
+#### Safe UI
+
+A web interface for the Safe multisig on Filecoin is available at:
+- https://safe.filecoin.io on [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
+- https://staging.safe.filecoin.io on [Filecoin Calibration testnet](https://docs.filecoin.io/networks/calibration)
+
+![SafeUI](https://github.com/user-attachments/assets/450d925e-c280-4c0d-b5da-cdb148c146fd)
+
+
+#### Safe Troubleshooting
+
+- **Signing a transaction** from an *account with no previous activity* on the Filecoin blockchain will fail. You can send a transaction to this account with zero funds to initiate its on-chain activity and the issue will not persist anymore.
+- **Executing a transaction** can produce gas estimation issues for *accounts that have a very small amount of funds* (that would not or barely cover the transaction).
+- **Due to transaction confirmation times** users may experience prolonged "processing" status in the UI.
+   - See [finality](https://docs.filecoin.io/reference/general/glossary#finality) for more info on current finality (note that faster finality is coming to Filecoin in the near future).
+
+
+#### Safe Smart Contracts
+
+Safe’s multisig smart contracts are live on the Filecoin Mainnet and Calibration testnet.
 
 | Name                                                                                                               | Address                                      | Mainnet | Calibration |
 | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------- | ------- | ----------- |
