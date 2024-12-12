@@ -45,6 +45,7 @@ A web interface for the Safe multisig on Filecoin is available at:
 - **Executing a transaction** can produce gas estimation issues for *accounts that have a very small amount of funds* (that would not or barely cover the transaction).
 - **Due to transaction confirmation times** users may experience prolonged "processing" status in the UI.
    - See [finality](https://docs.filecoin.io/reference/general/glossary#finality) for more info on current finality (note that faster finality is coming to Filecoin in the near future).
+- Safe-related support can be found in the "Need Help?" section of the Safe web UI.
 
 #### Safe Transaction Service
 
