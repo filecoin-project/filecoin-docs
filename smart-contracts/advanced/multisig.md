@@ -50,8 +50,8 @@ A web UI for the Safe multisig on Filecoin is available at:
 #### Safe Transaction Service
 
 The [Safe transaction service](https://docs.safe.global/core-api/api-safe-transaction-service) on Filecoin is available at:
-- https://transaction.safe.filecoin.io on [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
-- https://transaction-testnet.safe.filecoin.io on [Filecoin Calibration testnet](https://docs.filecoin.io/networks/calibration)
+- [https://transaction.safe.filecoin.io](https://transaction.safe.filecoin.io) on [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
+- [https://transaction-testnet.safe.filecoin.io](https://transaction-testnet.safe.filecoin.io) on [Filecoin Calibration testnet](https://docs.filecoin.io/networks/calibration)
 
 - Note:
   - Faster finality is coming to Filecoin soon. For now, the Filecoin Safe transaction service sets `ETH_REORG_BLOCKS` to 60 blocks (i.e. Filecoin epochs) (30min) based on [FRC-0089](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0089.md) but users may want to wait 900 epochs (~7.5h) for full finality.
