@@ -33,12 +33,9 @@ A [MultisigActor CLI](https://lotus.filecoin.io/lotus/manage/multisig/) is avail
 #### Safe UI
 
 A web UI for the Safe multisig on Filecoin is available at:
+
 - https://safe.filecoin.io - the default network is set to [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
   
-- https://staging.safe.filecoin.io - the default network is set to [Filecoin Calibration testnet](https://docs.filecoin.io/networks/calibration)
-
-- Both web UIs can be used with other networks and any transactions on Filecoin Mainnet involve real funds
-
 ![SafeUI](https://github.com/user-attachments/assets/450d925e-c280-4c0d-b5da-cdb148c146fd)
 
 
@@ -47,7 +44,6 @@ A web UI for the Safe multisig on Filecoin is available at:
 - **Signing a transaction** from an *account with no previous activity* on the Filecoin blockchain will fail. You can send a transaction to this account with zero funds to initiate its on-chain activity and the issue will not persist anymore.
 - **Executing a transaction** can produce gas estimation issues for *accounts that have a very small amount of funds* (that would not or barely cover the transaction).
 - **Due to transaction confirmation times** users may experience prolonged "processing" status in the UI.
-   - See [finality](https://docs.filecoin.io/reference/general/glossary#finality) for more info on current finality (note that faster finality is coming to Filecoin in the near future).
 - **Migrating Safe addresses from other networks** is possible but if the previous address uses the L1 version of Safe Proxy a series of technical migration steps will be required. Contact support for more info.
 - **Safe-related support** can be found in the "Need Help?" section of the Safe web UI.
 
@@ -56,6 +52,10 @@ A web UI for the Safe multisig on Filecoin is available at:
 The [Safe transaction service](https://docs.safe.global/core-api/api-safe-transaction-service) on Filecoin is available at:
 - https://transaction.safe.filecoin.io on [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
 - https://transaction-testnet.safe.filecoin.io on [Filecoin Calibration testnet](https://docs.filecoin.io/networks/calibration)
+
+- Note:
+  - Faster finality is coming to Filecoin soon. For now, the Filecoin Safe transaction service sets `ETH_REORG_BLOCKS` to 60 blocks (i.e. Filecoin epochs) (30min) based on [FRC-0089](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0089.md) but users may want to wait 900 epochs (~7.5h) for full finality.
+
 
 #### Safe Smart Contracts
 
