@@ -41,10 +41,10 @@ A web UI for the Safe multisig on Filecoin is available at:
 
 #### Safe Troubleshooting
 
-- **Signing a transaction** from an *account with no previous activity* on the Filecoin blockchain will fail. You can send a transaction to this account with zero funds to initiate its on-chain activity and the issue will not persist anymore.
-- **Executing a transaction** can produce gas estimation issues for *accounts that have a very small amount of funds* (that would not or barely cover the transaction).
-- **Due to transaction confirmation times** users may experience prolonged "processing" status in the UI.
-- **Migrating Safe addresses from other networks** is possible but if the previous address uses the L1 version of Safe Proxy a series of technical migration steps will be required. Contact support for more info.
+- **Signing a transaction** from an account with no previous activity on the Filecoin blockchain will fail. You can send a transaction to this account with zero funds to initiate its on-chain activity to work around this issue.
+- **Executing a transaction** can produce gas estimation issues for accounts that have a very small amount of funds (that would not or would barely cover the transaction).
+- **Transaction confirmation times** may lead to prolonged "processing" status in the UI.
+- **Safe addresses from other networks** can be used but if the previous address uses the L1 version of Safe Proxy, a series of technical migration steps will be required to map to the L2 version on Filecoin. Contact support for more info.
 - **Safe-related support** can be found in the "Need Help?" section of the Safe web UI.
 
 #### Safe Transaction Service
