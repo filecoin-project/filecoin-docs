@@ -18,17 +18,48 @@ Multisig wallets enable builders to integrate the following features into their 
 
 ## Available multisig wallet implementations
 
-There are several multisig wallet implementations built upon the FVM. Builders can integrate these multisig wallets into their applications today.
+There are several multisig wallet implementations on Filecoin. Builders can integrate these multisig wallets into their applications today.
 
-### [Safe](https://safe.global/)
+### Filecoin Native Multisig
 
-Safe is a popular smart account infrastructure provider that allows users to manage their digital assets securely. It is formally verified, secures over $100B in assets, and is used by more than 200 projects.
+The Filecoin Native [MultisigActor](/basics/the-blockchain/actors#multisigactor) is a built-in actor that does not interact directly with the Filecoin EVM. Like other Filecoin actors, native multisig addresses begin with `f2` and represent a group of transaction signers with a maximum of 256 signers. Signers may be external users or the MultisigActor itself and can include `f1` and `f3` [addresses](https://docs.filecoin.io/basics/the-blockchain/addresses).
 
-> **Note**: The Safe.global web UI does not currently support Filecoin. Users can only interact with Safe on the Filecoin network using the CLI and Filecoin explorers.
+A [MultisigActor CLI](https://lotus.filecoin.io/lotus/manage/multisig/) is available from the Lotus CLI, and a web UI for MultisigActors is available at https://www.glif.io/en/multisig/.
 
-**Safe Smart Contracts**
+### Safe multisig
 
-Gnosis Safe’s smart contracts are live on the Filecoin Mainnet and Calibration testnet.
+[Safe](https://safe.global/) is a popular smart EVM multisig account infrastructure provider that allows users to manage their digital assets securely. It is non-custodial, formally verified, secures over $100B in assets, and is used by more than 200 projects. Safe has been deployed to the Filecoin EVM.
+
+#### Safe UI
+
+A web UI for the Safe multisig on Filecoin is available at:
+
+- https://safe.filecoin.io - the default network is set to [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
+  
+![SafeUI](https://github.com/user-attachments/assets/450d925e-c280-4c0d-b5da-cdb148c146fd)
+
+
+#### Safe Troubleshooting
+
+- **Signing a transaction** from an *account with no previous activity* on the Filecoin blockchain will fail. You can send a transaction to this account with zero funds to initiate its on-chain activity and the issue will not persist anymore.
+- **Executing a transaction** can produce gas estimation issues for *accounts that have a very small amount of funds* (that would not or barely cover the transaction).
+- **Due to transaction confirmation times** users may experience prolonged "processing" status in the UI.
+- **Migrating Safe addresses from other networks** is possible but if the previous address uses the L1 version of Safe Proxy a series of technical migration steps will be required. Contact support for more info.
+- **Safe-related support** can be found in the "Need Help?" section of the Safe web UI.
+
+#### Safe Transaction Service
+
+The [Safe transaction service](https://docs.safe.global/core-api/api-safe-transaction-service) on Filecoin is available at:
+- https://transaction.safe.filecoin.io on [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
+- https://transaction-testnet.safe.filecoin.io on [Filecoin Calibration testnet](https://docs.filecoin.io/networks/calibration)
+
+- Note:
+  - Faster finality is coming to Filecoin soon. For now, the Filecoin Safe transaction service sets `ETH_REORG_BLOCKS` to 60 blocks (i.e. Filecoin epochs) (30min) based on [FRC-0089](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0089.md) but users may want to wait 900 epochs (~7.5h) for full finality.
+
+
+#### Safe Smart Contracts
+
+Safe’s multisig smart contracts are live on the Filecoin Mainnet and Calibration testnet.
 
 | Name                                                                                                               | Address                                      | Mainnet | Calibration |
 | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------- | ------- | ----------- |
@@ -43,12 +74,9 @@ Gnosis Safe’s smart contracts are live on the Filecoin Mainnet and Calibration
 | [SafeL2](https://filecoin.blockscout.com/address/0x29fcB43b46531BcA003ddC8FCB67FFE91900C762)                       | `0x29fcB43b46531BcA003ddC8FCB67FFE91900C762` | ✔️      | ✔️          |
 | [Safe](https://filecoin.blockscout.com/address/0x41675C099F32341bf84BFc5382aF534df5C7461a)                         | `0x41675C099F32341bf84BFc5382aF534df5C7461a` | ✔️      | ✔️          |
 
-#### **Further Gnosis Safe resources**
+#### **Further Safe resources**
 
-* [Safe Smart Account Docs](https://docs.safe.global/advanced/smart-account-overview)
-* [Create Your Own Multisig via. the Safe CLI](https://docs.safe.global/advanced/cli-overview)
-* [Safe - Deploy a Recovery Safe Example](https://docs.safe.global/advanced/cli-guides/recovery-safe-deployment)
-
+* [Safe Docs](https://docs.safe.global/home/what-is-safe)
 
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/smart-contracts/advanced/multisig)
