@@ -78,7 +78,7 @@ First, we need to grab the FilFowarder kit and install the dependencies:
 1. Clone the FilForwarder repository and install the dependencies:
 
 ```
-git clone https://github.com/lotus-web3/FilForwarder
+git clone [https://github.com/FilOzone/FilForwarder](https://github.com/FilOzone/FilForwarder)
 cd FilForwarder
 ```
 
