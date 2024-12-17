@@ -34,7 +34,7 @@ A [MultisigActor CLI](https://lotus.filecoin.io/lotus/manage/multisig/) is avail
 
 A web UI for the Safe multisig on Filecoin is available at:
 
-- https://safe.filecoin.io - the default network is set to [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
+- [https://safe.filecoin.io](https://safe.filecoin.io) - the default network is set to [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
   
 ![SafeUI](https://github.com/user-attachments/assets/450d925e-c280-4c0d-b5da-cdb148c146fd)
 
