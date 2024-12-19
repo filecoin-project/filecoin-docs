@@ -51,8 +51,8 @@ A web UI for the Safe multisig on Filecoin is available at:
 - **Safe addresses from other networks** can sometimes be used but require additional technical steps.
   - In some cases the same Safe address and owner structure is not possible, learn more in [this article](https://help.safe.global/en/articles/40812-i-sent-assets-to-a-safe-address-on-the-wrong-network-any-chance-to-recover).
   - Confirm complete creation (not just as a Placeholder) of the Safe multisig as an EVM contract on Filecoin prior to sending major funds.
-  - Instructions for deploying a Safe at the same address on another chain are [available in this video](https://share.zight.com/z8uBKZYr).
-  - If the previous address and chain use the L1 version of Safe Proxy, more complex technical migration steps will be required to map to the L2 version on Filecoin. Contact Safe-related support for more info.
+  - Instructions for deploying a Safe at the same address on another chain are available in [this video](https://share.zight.com/z8uBKZYr). Note that a compatible version of the Safe Proxy on the original chain must exist on Filecoin. Contact Safe-related support for help.
+  - If the previous address and chain use the L1 implementation of Safe Proxy, more complex technical migration steps will be required to map to the L2 version on Filecoin. Contact Safe-related support for more info.
 - **Safe-related support** can be found in the "Need Help?" section of the Safe web UI.
 
 #### Safe Transaction Service
