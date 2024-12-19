@@ -24,11 +24,15 @@ There are several multisig wallet implementations on Filecoin. Builders can inte
 
 The Filecoin Native [MultisigActor](/basics/the-blockchain/actors#multisigactor) is a built-in actor that does not interact directly with the Filecoin EVM. Like other Filecoin actors, native multisig addresses begin with `f2` and represent a group of transaction signers with a maximum of 256 signers. Signers may be external users or the MultisigActor itself and can include `f1` and `f3` [addresses](https://docs.filecoin.io/basics/the-blockchain/addresses).
 
-A [MultisigActor CLI](https://lotus.filecoin.io/lotus/manage/multisig/) is available from the Lotus CLI, and a web UI for MultisigActors is available at https://www.glif.io/en/multisig/.
+#### Filecoin Native Multisig UIs
+
+- [Glif Multisig](https://www.glif.io/en/multisig/) is a non-custodial web UI for the Filecoin Native Multisig wallet
+- [MultisigActor CLI](https://lotus.filecoin.io/lotus/manage/multisig/) can also be used and is available from the Lotus CLI
+
 
 ### Safe multisig
 
-[Safe](https://safe.global/) is a popular smart EVM multisig account infrastructure provider that allows users to manage their digital assets securely. It is non-custodial, formally verified, secures over $100B in assets, and is used by more than 200 projects. Safe has been deployed to the Filecoin EVM.
+[Safe](https://safe.global/) is a popular smart EVM multisig account infrastructure provider that allows users to manage their digital assets securely and can be used with many popular EVM wallets. It is non-custodial, formally verified, secures over $100B in assets, and is used by more than 200 projects. Safe has been deployed to the Filecoin EVM.
 
 #### Safe UI
 
@@ -44,7 +48,11 @@ A web UI for the Safe multisig on Filecoin is available at:
 - **Signing a transaction** from an account with no previous activity on the Filecoin blockchain will fail. You can send a transaction to this account with zero funds to initiate its on-chain activity to work around this issue.
 - **Executing a transaction** can produce gas estimation issues for accounts that have a very small amount of funds (that would not or would barely cover the transaction).
 - **Transaction confirmation times** may lead to prolonged "processing" status in the UI.
-- **Safe addresses from other networks** can be used but if the previous address uses the L1 version of Safe Proxy, a series of technical migration steps will be required to map to the L2 version on Filecoin. Contact support for more info.
+- **Safe addresses from other networks** can sometimes be used but require additional technical steps.
+  - In some cases the same Safe address and owner structure is not possible, learn more in [this article](https://help.safe.global/en/articles/40812-i-sent-assets-to-a-safe-address-on-the-wrong-network-any-chance-to-recover).
+  - Confirm complete creation (not just as a Placeholder) of the Safe multisig as an EVM contract on Filecoin prior to sending major funds.
+  - Instructions for deploying a Safe at the same address on another chain are [available in this video](https://share.zight.com/z8uBKZYr).
+  - If the previous address and chain use the L1 version of Safe Proxy, more complex technical migration steps will be required to map to the L2 version on Filecoin. Contact Safe-related support for more info.
 - **Safe-related support** can be found in the "Need Help?" section of the Safe web UI.
 
 #### Safe Transaction Service
