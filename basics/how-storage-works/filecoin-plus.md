@@ -1,146 +1,223 @@
 ---
 description: >-
-  Learn how the Filecoin Plus program works, how DataCap is obtained and used by
-  clients, and how allocators verify that the data clients want to store with a
-  Filecoin storage provider is useful.
+  Discover the workings of the Filecoin Plus program: how DataCap is allocated, used by clients, and verified by allocators to ensure the storage of meaningful and valuable data on the Filecoin network.
 ---
 
-# Filecoin plus
+# Filecoin Plus
 
 ## What is Filecoin Plus?
 
-The goal of the Filecoin Plus program is to increase the amount of useful data stored with storage providers by clients on the Filecoin network.
+Filecoin Plus is a program designed to promote the storage of meaningful and valuable data on the Filecoin network. The program incentivizes clients to store datasets that are useful either to themselves or to others, ensuring the network focuses on hosting legitimate and impactful content.
 
-In short, this is achieved by appointing allocators responsible for assigning DataCap tokens to clients that are vetted by the allocator as trusted parties storing useful data. Clients then pay DataCap to storage providers as part of a storage deal, which increases a storage provider’s probability of earning block rewards. A full description of this mechanism is described below.
+At its core, Filecoin Plus operates through a system of [DataCap](#datacap). DataCap is distributed to clients by trusted allocators—individuals or organizations responsible for verifying that the clients intend to store data that meets the program’s usefulness criteria. Clients then use this DataCap to make storage deals with Filecoin storage providers, increasing the likelihood of the storage providers earning block rewards. This process aligns incentives for both clients and storage providers to prioritize quality over quantity in the data stored.
 
-Filecoin Plus creates demand on the Filecoin network, ensuring the datasets stored on the network are legitimate and useful to either the clients, or a third party.
+By encouraging the storage of useful datasets, Filecoin Plus helps create demand on the Filecoin network while ensuring the integrity and value of the stored data.
 
-## Storage Providers & DataCap
+## Filecoin Plus processes & participants
 
-Filecoin Plus introduces two concepts important to interactions on the Filecoin network – DataCap and Quality Adjusted Power (QAP).
+The Filecoin Plus program relies on interactions among several participants. Their roles and responsibilities are detailed below:
+
+- **Root-Key Holders**:
+
+  - Execute governance decisions for Filecoin Plus as determined through community-executed Filecoin Improvement Proposals (FIPs).
+  - Manage the granting and removal of DataCap batches to/from allocators.
+  - Serve as signers to a multisig wallet on-chain—most decisions require majority approval.
+  - Learn more about [Filecoin Plus governance](https://github.com/filecoin-project/allocator-governance/tree/main). For a list of FIPs, visit this [link](https://github.com/filecoin-project/FIPs).
+
+- **Allocators**:
+
+  - Perform due diligence on clients and their datasets to allocate DataCap to trusted clients.
+  - Facilitate dispute resolution processes as needed.
+  - Learn more about allocator selection and evaluation [here](https://blog.allocator.tech/2024/05/who-are-allocators.html).
+
+- **Clients**:
+
+  - Store data with Filecoin storage providers.
+  - Verified clients receive DataCap from allocators based on data legitimacy and value.
+  - Offer DataCap to storage providers as part of storage deals, enhancing the deal’s quality multiplier.
+
+- **Storage Providers**:
+  - Accept DataCap from clients as part of storage deals.
+  - Use received DataCap to increase their [**Quality Adjusted Power**](#quality-adjusted-power), improving their likelihood of earning block rewards.
+
+Decisions regarding participants and governance are made transparently via community-driven Filecoin Improvement Proposals.
+
+## Storage providers & DataCap
+
+Filecoin Plus introduces two key concepts that shape interactions on the Filecoin network: **DataCap** and **Quality Adjusted Power** (QAP).
 
 ### DataCap
 
-DataCap is a token paid to storage providers as part of a deal in which the client and the data they are storing is verified by a Filecoin Plus allocator. Batches of DataCap are granted to allocators by root-key holders, allocators give DataCap to verified clients, and clients pay DataCap to storage providers as part of a deal. The more DataCap a storage provider ends up with, the higher probability they have to earn block rewards. The role of each of these participants, and how DataCap is used in a Filecoin Plus deal, is described below in the "Filecoin Plus Processes & Participants" section.
+DataCap is a unique unit within the Filecoin Plus program designed to incentivize the storage of verified and valuable data. It is distributed through a structured flow among key participants in the network:
+
+1. **Root-Key Holders**: Trusted entities that manage the distribution of large DataCap batches to allocators as the first layer of verification.
+2. **Allocators**: Verified individuals or organizations tasked with evaluating clients and their data. They allocate smaller DataCap amounts to clients based on the data's legitimacy and utility.
+3. **Clients**: Users who store data on the Filecoin network. Verified clients use DataCap in storage deals with providers, increasing the attractiveness and quality rating of the deals.
+4. **Storage Providers**: Entities offering storage on the network. They receive DataCap as part of deals, which enhances their [Quality Adjusted Power](#quality-adjusted-power), improving their likelihood of earning block rewards.
+
+This flow ensures a transparent and efficient system for verifying and storing valuable data. By aligning incentives across all participants, Filecoin Plus prioritizes the quality and utility of the stored datasets.
+
+#### Visualizing the flow of DataCap
+
+The following diagram illustrates how DataCap moves through the Filecoin Plus system, with each participant playing a specific role:
+
+![Diagram showing participant interactions in a Filecoin Plus deal](https://github.com/filecoin-project/filecoin-docs/assets/46801006/efd006ae-ea6f-4851-b072-ae73787e6975)
+
+This flow represents not just the movement of DataCap but also the verification and trust-building process critical to the success of Filecoin Plus.
 
 ### Quality Adjusted Power
 
-Quality Adjusted Power is an assigned rating to a given [sector](https://spec.filecoin.io/systems/filecoin\_mining/sector/), the basic unit of storage on the Filecoin network. Quality Adjusted Power is a function of a number of features of the sector, including, but not limited to, the sector’s size and promised duration, and whether the sector includes a Filecoin+ deal. It's clear to the network that a sector includes a Filecoin Plus deal if a deal in that sector involves DataCap paid to the storage provider. The more Filecoin Plus verified data the storage provider has in a sector, the higher the Quality-Adjusted Power a storage provider has, which linearly increases the number of votes a miner has in the [Secret Leader Election](https://spec.filecoin.io/algorithms/expected\_consensus/), determining which storage provider gets to serve as the verifier for the next block in the blockchain, and thus increasing the probability the storage provider is afforded the opportunity to earn block rewards. For more details on Quality Adjusted Power, see the [Filecoin specification](https://spec.filecoin.io/systems/filecoin\_blockchain/storage\_power\_consensus/).
+QAP is a metric used to assess the quality of storage deals on the Filecoin network. Factors influencing QAP include:
 
-\[!IMPORTANT] There is a common misconception that a Filecoin Plus deal increases the miner’s reward paid to a Filecoin storage provider by a factor of ten. This is not true, Filecoin+ does not increase the amount of block rewards available to storage providers. Including Filecoin Plus deals in a sector increases the Quality Adjusted Power of a storage provider, which increases the probability a storage provider is selected as the block verifier for the next block on the Filecoin blockchain, and thus increases the probability they earn block rewards.
+- The size and promised duration of the [sector](https://spec.filecoin.io/systems/filecoin_mining/sector/), the basic unit of storage on the Filecoin network.
+- Whether the sector includes a Filecoin Plus deal. This is determined when:
+  - DataCap is paid to the storage provider for a deal in that sector.
+  - The more Filecoin Plus verified data in a sector, the higher the QAP.
 
-Consider first a network with ten storage providers. Initially, each storage provider has an equal 10% probability of winning available block rewards in a given period:
+**Key benefits of higher QAP:**
 
-![filecoinplus1](https://github.com/filecoin-project/filecoin-docs/assets/46801006/d577d1d7-5e4f-4b3d-9b60-f102b5ca27bb)
+- Increased probability of being selected as the block verifier in the [Secret Leader Election](https://spec.filecoin.io/algorithms/expected_consensus/).
+- Greater likelihood of earning block rewards.
 
-In the above visualization, "VD" means "verified deals", that is, deals that have been reviewed by allocators and have associated spending of datacap.
+As storage providers accumulate DataCap through deals with clients, their QAP increases. QAP directly affects their probability of earning block rewards, incentivizing them to store useful and verified data.
 
-If two of these storage providers begin filling their sectors with verified deals, their chances of winning a block reward increases by a factor of ten relative to their peers. Each one of these storage providers with verified deals in their sectors has a 36% chance of winning the block reward, while storage providers with only [regular deals](https://spec.filecoin.io/systems/filecoin\_blockchain/storage\_power\_consensus/#section-systems.filecoin\_mining.sector.sector\_quality) in their sectors have a 4% probability of winning the block rewards.
+For detailed information, refer to the [Filecoin specification](https://spec.filecoin.io/systems/filecoin_blockchain/storage_power_consensus/).
 
-![filecoinplus2](https://github.com/filecoin-project/filecoin-docs/assets/46801006/a13dcf38-0115-49b0-896c-11da82808d70)
+---
 
-Incentives for storage providers to accept verified deals is strongest initially. As more and more storage providers include verified deals in their sectors, the probability any one of them earns the block rewards returns to an equal chance.
+> Important clarification:
+>
+> A common misconception is that Filecoin Plus deals directly multiply a storage provider's rewards by ten. This is incorrect. Instead:
+>
+> - Filecoin Plus deals increase QAP.
+> - Higher QAP boosts the probability of being selected as the block verifier.
+> - This increases the likelihood of earning block rewards but does not change the total rewards available.
 
-![filecoinplus3](https://github.com/filecoin-project/filecoin-docs/assets/46801006/a7ec2921-ea7c-4c0b-94d8-94f8eb5a2824)
+---
 
-As seen in the diagrams above, Filecoin Plus increases the collateral requirements needed by a storage provider. As a higher percentage of storage providers include verified deals in their sectors, the collateral needed by each storage provider will increase. To learn more about storage provider collateral, see [this link](https://docs.filecoin.io/storage-providers/filecoin-economics/fil-collateral).
+#### Visualization of impact on block reward probabilities
 
-## Filecoin+ Processes & Participants
+1. **Equal opportunities for all storage providers**
+   In the absence of Filecoin Plus deals, all ten storage providers have an equal 10% chance of earning block rewards.
 
-The participants of the Filecoin+ program, along with how they interact with each other, is detailed here:
+   ![Equal distribution of block reward probabilities among ten storage provider](https://github.com/filecoin-project/filecoin-docs/assets/46801006/d577d1d7-5e4f-4b3d-9b60-f102b5ca27bb)
 
-* Decisions as to who the root-key holders should be, how they should grant and remove batches of DataCap to/from allocators, and other important decisions about the Filecoin+ program are determined through Filecoin Improvement Proposals (FIPs), the community governance process. Learn more about [Filecoin+ governance](https://github.com/filecoin-project/allocator-governance/tree/main). To see a list of FIPs, see this [link](https://github.com/filecoin-project/FIPs).
-* Root-key holders execute the governance process for Filecoin+ as determined through community executed Filecoin Improvement Proposals, their role is to grant and remove batches of DataCap to/from allocators. Root-key holders are signers to a multisig wallet on-chain –a majority of signers are needed for an allocator to be granted or removed.
-* Allocators perform due diligence on clients and the data they are storing, allocate DataCap to trusted clients, and facilitate predetermined dispute resolution processes. To learn more about how allocators are chosen and evaluated, see [this blog](https://blog.allocator.tech/2024/05/who-are-allocators.html).
-* Clients are participants in the Filecoin network who store data with a storage provider. A trusted client, as determined by an allocator who performs due diligence on the client and the data they are looking to store, will be given DataCap by the allocator. Clients offer to give this DataCap to a storage provider as part of a deal, which increases the “deal quality multiplier” of the deal, and in turn the likelihood a storage provider will accept the deal.
-* Storage providers who receive DataCap as part of a deal are able to use this DataCap to increase their “quality adjusted power” of the storage provider on the network by a factor of ten. As described above, this increases their probability of being selected as the verifier for a block, affording them the opportunity to earn block rewards.
+2. **Boosting probabilities with verified deals**
+   If two providers include verified deals in their sectors:
 
-A visualization of the interactions between parties involved in a Filecoin+ deal described above is shown below in Figure 1.
+   - Their probability increases to 36%.
+   - Providers without verified deals drop to 4%.
 
-![Screenshot 2024-06-28 at 12 11 23 AM](https://github.com/filecoin-project/filecoin-docs/assets/46801006/efd006ae-ea6f-4851-b072-ae73787e6975)
+   ![Increased block reward probabilities for providers with verified deals](https://github.com/filecoin-project/filecoin-docs/assets/46801006/a13dcf38-0115-49b0-896c-11da82808d70)
 
-Figure 1 | Diagram showing participant interactions in a Filecoin+ deal.
+3. **Network balance through verified deal adoption:**
+   As more storage providers adopt verified deals, the probabilities of earning block rewards gradually balance across the network.
 
-## Acquiring DataCap for Clients & Builders
+   ![Balanced block reward probabilities as verified deal adoption increases](https://github.com/filecoin-project/filecoin-docs/assets/46801006/a7ec2921-ea7c-4c0b-94d8-94f8eb5a2824)
 
-Clients can secure DataCap by making a request to an allocator. Each one of the allocators maintain their own applications for requesting DataCap.
+#### Additional notes
 
-One such allocator is [Filecoin Incentive Design Labs (FIDL)](https://www.fidl.tech). They maintain a [Github repository](https://github.com/fidlabs) that includes an [application](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose) where clients can make a request of FIDL for DataCap. Clients and builders looking to acquire DataCap may consider applying directly with FIDL, noting that all DataCap applications are transparent and open for public review on the [issues page](https://github.com/fidlabs/Open-Data-Pathway/issues).
+- **Incentives:** The benefits of adopting Filecoin Plus deals are strongest when few providers use them. Over time, as adoption increases, rewards probabilities normalize.
+- **Collateral requirements:** Including verified deals increases collateral requirements for storage providers. Learn more about this [here](https://docs.filecoin.io/storage-providers/filecoin-economics/fil-collateral).
 
-The steps a client should follow to acquire DataCap are as follows:
+## Acquiring DataCap for clients & builders
 
-1. Create a [Filecoin wallet](https://docs.filecoin.io/basics/assets/wallets).
-2. Choose an allocator from the [full list of active allocators](https://github.com/filecoin-project/Allocator-registry) or the [active list of allocators](https://allocator.tech/) who have verified public datasets.
-3. Check that you satisfy the requirements of the allocator. In the case of uploading open source datasets with FIDL as the allocator, the client will need to demonstrate to FIDL that they can (1) satisfy a third party Know Your Customer(KYC) identity check, (2) provide the details of storage provider (entity, storage location) where the data is intended to be stored, and (3) demonstrate proof that the dataset can be actively retrieved. You can learn more about [FIDL’s requirements and application process](https://www.fidl.tech/apply-for-datacap).
-4. Submit an application for DataCap from an allocator. You can submit a request to FIDL via their [Github application form](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose) or [Google Form](https://www.fidl.tech/apply-for-datacap).
-5. Use the DataCap in a storage deal.
+Clients can secure DataCap by making a request to an allocator. Each allocator manages its own process and application for requesting DataCap.
 
-For builders on the [Calibration testnet](../../networks/calibration/) who need testnet DataCap to test their applications, a faucet is available. The steps a builder should follow to acquire testnet DataCap are as follows:
+One such allocator is [Filecoin Incentive Design Labs (FIDL)](https://www.fidl.tech). They manage a [GitHub repository](https://github.com/fidlabs) with an [application](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose) for clients to request DataCap from FIDL. Clients and builders looking to acquire DataCap can apply directly with FIDL, noting that all DataCap applications are transparent and publicly available for review on the [issues page](https://github.com/fidlabs/Open-Data-Pathway/issues).
 
-1. Create a wallet on Filecoin Calibration testnet. For more information, see the [Calibration docs](../../networks/calibration/) or [Github](https://github.com/filecoin-project/testnet-calibration).
-2. Grant the wallet address DataCap by using this [faucet](https://faucet.calibnet.chainsafe-fil.io/datacap.html).
+### Steps to acquire DataCap for clients
 
-## **Smart contracts**
+1. **Create a [Filecoin wallet](https://docs.filecoin.io/basics/assets/wallets).**
+2. **Choose an allocator** from the [full list of active allocators](https://fil.org/filecoin-plus/allocators) or the [active list of allocators](https://allocator.tech/) who have verified public datasets.
+3. **Check the allocator's requirements.** For example, if you are uploading open-source datasets with FIDL as the allocator, you must:
+   - Complete a third-party Know Your Customer (KYC) identity check.
+   - Provide details about the storage provider (entity and location) where the data will be stored.
+   - Demonstrate proof that the dataset can be actively retrieved.
+     You can learn more about [FIDL’s requirements and application process](https://www.fidl.tech/apply-for-datacap).
+4. **Submit an application to request DataCap from an allocator.** For FIDL, you can submit your request via their [GitHub application form](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose) or [Google Form](https://www.fidl.tech/apply-for-datacap).
+5. **Use the DataCap** in a storage deal to store your data on the Filecoin network.
 
-Smart contracts can acquire and use DataCap just like any regular client. To do so, simply enter the `f410` address of the smart contract as the client address when making a request for DataCap.
+### Steps to Acquire Testnet DataCap for Builders
 
-\[!Important] It’s important to note that DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you need to redeploy the smart contract, you must request additional DataCap.
+Builders on the [Calibration testnet](../../networks/calibration/) who need testnet DataCap to test their applications can acquire it via a faucet. Follow these steps:
+
+1. **Create a wallet** on the Filecoin Calibration testnet. For more information, see the [Calibration docs](../../networks/calibration/) or [GitHub repository](https://github.com/filecoin-project/testnet-calibration).
+2. **Request testnet DataCap** by using this [faucet](https://faucet.calibnet.chainsafe-fil.io/datacap.html).
+
+### How to use DataCap
+
+Once DataCap has been acquired, it can be used to make storage deals with storage providers on the Filecoin network. DataCap ensures that the deals are verified, improving reliability and trust in the Filecoin ecosystem. To learn more, see the [Filecoin documentation on storage deals](https://docs.filecoin.io/store/estuary/).
+
+## Smart contracts
+
+Smart contracts can acquire and use DataCap just like any regular client. To do so, provide the `f410` address of the smart contract as the client address when requesting DataCap.
+
+> **Important**
+>
+> DataCap allocations are a one-time credit for a Filecoin address and cannot be transferred between smart contracts. If you redeploy the smart contract, you will need to request additional DataCap.
+
+---
 
 ## Spend DataCap
 
-Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because storage providers receive a deal quality multiplier for taking Filecoin+ deals, many storage providers offer special pricing and services to attract clients who use DataCap to make deals.
+Once an address has been allocated DataCap, you can use it to make storage deals. Because storage providers receive a deal quality multiplier for Filecoin Plus deals, many offer special pricing and services to attract clients using DataCap.
 
-By default, when you make a deal with an address with DataCap allocated, you will spend that DataCap when making the deal.
+By default, deals created with an address that has DataCap will spend the allocated DataCap during the deal.
 
-If making deals through the [API](https://github.com/filecoin-project/lotus/blob/master/documentation/en/api-v0-methods.md#ClientStartDeal), make sure that the `VerifiedDeal` parameter is set to `true` when calling `ClientStartDeal`.
+- **Using the [API](https://github.com/filecoin-project/lotus/blob/master/documentation/en/api-v0-methods.md#ClientStartDeal)**: Ensure the `VerifiedDeal` parameter is set to `true` when calling `ClientStartDeal`. Example API payload:
 
-```json
-[
-  {
-    "Data": {
-      "TransferType": "string value",
-      "Root": {
-        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+  ```json
+  [
+    {
+      "Data": {
+        "TransferType": "string value",
+        "Root": {
+          "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+        },
+        "PieceCid": null,
+        "PieceSize": 1024
       },
-      "PieceCid": null,
-      "PieceSize": 1024
-    },
-    "Wallet": "f01234",
-    "Miner": "f01234",
-    "EpochPrice": "0",
-    "MinBlocksDuration": 42,
-    "ProviderCollateral": "0",
-    "DealStartEpoch": 10101,
-    "FastRetrieval": true,
-    "VerifiedDeal": true
-  }
-]
-```
+      "Wallet": "f01234",
+      "Miner": "f01234",
+      "EpochPrice": "0",
+      "MinBlocksDuration": 42,
+      "ProviderCollateral": "0",
+      "DealStartEpoch": 10101,
+      "FastRetrieval": true,
+      "VerifiedDeal": true
+    }
+  ]
+  ```
 
-If making deals from the command line, make sure to pass the flag `--verified-deal=true` as a parameter.
+- **Using the Command Line**: Include the `--verified-deal=true` flag when running the `lotus client deal` command.
 
-```shell
- lotus client deal --verified-deal=true
-```
+  ```shell
+  lotus client deal --verified-deal=true
+  ```
+
+---
 
 ### Checking remaining DataCap balance
 
-Once you have received DataCap to an address, you can check the remaining balance by querying your address on a node.
+Once you have DataCap allocated to an address, you can check the remaining balance by querying your address on a node.
 
-#### With the lotus cli
+- **Using the Lotus CLI**: Run the following command, replacing `f00000` with your Filecoin address.
 
-```shell
-lotus filplus check-client-datacap f00000
-```
+  ```shell
+  lotus filplus check-client-datacap f00000
+  ```
 
-## Visualizing the Blockchain Data for Filecoin+
+---
 
-There are three resources you can use to check the current status of the Filecoin+ deals and participants:
+## Visualizing blockchain data for Filecoin Plus
 
-* The [Filecoin Pulse dashboard](https://filecoinpulse.pages.dev/allocators/) includes visualizations of and tables for data about Filecoin+ deals on the Filecoin blockchain, organized by Allocators, Clients, and Storage Providers.
-* The [Datacap Stats dashboard](https://datacapstats.io) shows DataCap allocations, including the number of allocators, clients, and storage providers. You can also see number and size of deals.
-* The [Starboard Dashboard](https://dashboard.starboard.ventures/market-deals) includes network health data related to Filecoin+ verified deals.
+You can track the status of Filecoin Plus deals and participants using the following resources:
 
+- **[Filecoin Pulse Dashboard](https://filecoinpulse.pages.dev/allocators/):** Provides visualizations and tables for Filecoin Plus deals on the blockchain, organized by Allocators, Clients, and Storage Providers.
+- **[Datacap Stats Dashboard](https://datacapstats.io):** Shows DataCap allocations, including the number of allocators, clients, storage providers, as well as deal count and size.
+- **[Starboard Dashboard](https://dashboard.starboard.ventures/market-deals):** Displays network health data related to Filecoin Plus verified deals.
 
+---
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/how-storage-works/filecoin-plus)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/basics/how-storage-works/filecoin-plus)
