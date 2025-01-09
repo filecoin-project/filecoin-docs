@@ -21,6 +21,7 @@ In order to check the current benchmarked performance of each of the below endpo
 | [Chainup Cloud](https://cloud.chainup.com/) | `https://filecoin.chainup.net/rpc/v1`                    | `wss://filecoin.chainup.net/rpc/v1`              | [Chainup Cloud Docs - Filecoin](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis) |                                                           |
 | [NOWNodes](https://nownodes.io/)            | `https://fil.nownodes.io` (Free for 1 month with signup) |                                                  | [NOWNodes - Docs](https://documenter.getpostman.com/view/13630829/TVmFkLwy)                        |                                                           |
 | [GetBlock](https://getblock.io/nodes/fil)   | `https://filecoin.getblock.io` (Free with signup)        |                                                  | [GetBlock - Docs](https://getblock.io/docs/getblock-explorer/get-started/)                         |                                                           |
+| [Lava](https://docs.lavanet.xyz/filecoin-dev)   | `https://filecoin.lava.build`                            |                                                  | [Docs](https://docs.lavanet.xyz/filecoin-dev)                                                          | JSON RPC                                                  |
 
 ## Additional Notes:
 
