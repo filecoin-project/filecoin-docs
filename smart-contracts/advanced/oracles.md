@@ -33,8 +33,8 @@ Pyth’s smart contracts are live on the Filecoin Mainnet and Calibration testne
 
 | Name                                                                                                              | Address                                      | Mainnet | Calibration |
 | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ------- | ----------- |
-| [Pyth - Mainnet](https://filecoin.blockscout.com/address/0xA2aa501b19aff244D90cc15a4Cf739D2725B5729?tab=contract) | `0x045CE60839d108B43dF9e703d4b25402a6a28a0d` | ✔️      |             |
-| [Pyth - Calibration](http://47.109.105.51/en/address/0xA2aa501b19aff244D90cc15a4Cf739D2725B5729)                  | `0x15e6Cc0D69A162151Cadfba035aa10b82b12b970` |         | ✔️          |
+| [Pyth - Mainnet](https://filecoin.blockscout.com/address/0xA2aa501b19aff244D90cc15a4Cf739D2725B5729?tab=contract) | `0xA2aa501b19aff244D90cc15a4Cf739D2725B5729` | ✔️      |             |
+| [Pyth - Calibration](http://47.109.105.51/en/address/0xA2aa501b19aff244D90cc15a4Cf739D2725B5729)                  | `0xA2aa501b19aff244D90cc15a4Cf739D2725B5729` |         | ✔️          |
 
 **Pyth x Filecoin Price Feed IDs**
 
