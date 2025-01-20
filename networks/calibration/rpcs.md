@@ -42,6 +42,10 @@ FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --
 * When using a lite-node, omit `/rpc/v1` from Glif’s WebSocket address.
 * [Glif documentation](https://hosting.glif.io/)
 
+## [Lava](https://docs.lavanet.xyz/filecoin)
+
+* HTTPS: `https://filecoin-testnet.lava.build`
+* [Lava documentation](https://docs.lavanet.xyz/filecoin-dev)
 
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/networks/calibration/rpcs)
