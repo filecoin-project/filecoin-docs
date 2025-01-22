@@ -21,5 +21,6 @@ The [Calibration](../../networks/calibration/) testnet offers the closest simula
 - [Blockchain explorer](https://calibration.filscan.io/)
 - [Calibration Faucet - Chainsafe](https://faucet.calibnet.chainsafe-fil.io)
 - [Calibration Faucet - Zondax](https://beryx.zondax.ch/faucet/)
+- [Calibration Faucet - Forest Explorer](https://forest-explorer.chainsafe.dev/faucet/calibnet)
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/networks)

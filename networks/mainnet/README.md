@@ -46,6 +46,7 @@ The latest Lotus release can be found at https://github.com/filecoin-project/lot
 * [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 * [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 * [Mainnet block explorer: FilFOX](https://filfox.info/en)
+* [Mainnet Faucet - Forest Explorer](https://forest-explorer.chainsafe.dev/faucet/mainnet)
 
 
 
