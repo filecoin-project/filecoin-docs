@@ -40,7 +40,7 @@ An actor is code that the Filecoin virtual machine can run. Actors are also refe
 
 ## **What are built-in actors**
 
-[Built-in actors](https://github.com/filecoin-project/builtin-actors) are code that come precompilied into the Filecoin clients and can be run using the FVM. They are similar to [Ethereum precompiles](https://www.evm.codes/precompiled?fork=merge).
+[Built-in actors](https://github.com/filecoin-project/builtin-actors) are code that come precompiled into the Filecoin clients and can be run using the FVM. They are similar to [Ethereum precompiles](https://www.evm.codes/precompiled?fork=merge).
 
 ## **Why use the FEVM vs any other EVM compatible chain**
 
