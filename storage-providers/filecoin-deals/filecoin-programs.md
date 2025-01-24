@@ -40,7 +40,7 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 [![Read the doc](https://img.shields.io/badge/docs-decentrally.cloud-blue?style=for-the-badge)](https://docs.decentrally.cloud) [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C07FN47FCFJ)
 
-Our Sync & Share platform a.k.a. DataDrop, empowered by Filecoin’s decentralized storage, transforms data management into an art. Creating paid deals for Storage Poviders and bringing more utility to the Filecoin ecosystem. It integrates with deal engines in the back-end such as [Boost](https://boost.filecoin.io).
+Our Sync & Share platform a.k.a. DataDrop, empowered by Filecoin’s decentralized storage, transforms data management into an art. Creating paid deals for Storage Providers and bringing more utility to the Filecoin ecosystem. It integrates with deal engines in the back-end such as [Boost](https://boost.filecoin.io).
 
 ### [CIDGravity](https://www.cidgravity.com/)
 
