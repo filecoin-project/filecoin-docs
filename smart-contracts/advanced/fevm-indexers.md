@@ -1,10 +1,13 @@
 ---
 description: >-
-    FEVM Indexers allow users and developers to query Filecoin chain data in an extremely quick manner. Learn what FEVM indexers are available on Filecoin and how to use them through existing data providers.
+  FEVM Indexers allow users and developers to query Filecoin chain data in an
+  extremely quick manner. Learn what FEVM indexers are available on Filecoin and
+  how to use them through existing data provide
 ---
 
-# FEVM Blockchain Indexers
-> *Not to be confused with [IPNI Indexer](https://docs.filecoin.io/storage-providers/architecture/network-indexer)*
+# FEVM Indexers
+
+> _Not to be confused with_ [_IPNI Indexer_](https://docs.filecoin.io/storage-providers/architecture/network-indexer)
 
 Blockchain indexers are used for accessing blockchain data efficiently. They process and organize storage-optimized raw blockchain data into retrieve-optimized and well-queryable formats. This benefits developers and users looking to retrieve specific information because they don't need to:
 
@@ -22,8 +25,8 @@ Additionally, blockchain indexers provide a better developer experience by lever
 
 #### Glossary
 
-- **Subgraphs**: Customizable schemas that define how to index data from specific blockchain smart contracts and events.
-- **GraphQL**: A query language that allows clients to request exactly the data they need, making data fetching more efficient.
+* **Subgraphs**: Customizable schemas that define how to index data from specific blockchain smart contracts and events.
+* **GraphQL**: A query language that allows clients to request exactly the data they need, making data fetching more efficient.
 
 #### Querying Subgraphs on Filecoin FEVM
 
@@ -42,40 +45,37 @@ Just as with database data queried through SQL, subgraphs have to be stored some
 [Protofire (aka Glif Nodes)](https://api.node.glif.io) offers public access to The Graph services, simplifying the process of deploying and managing subgraphs.
 
 1. **Connect Your Wallet**
-   - On the [Protofire (Glif Nodes) platform - SUBGRAPHS](https://api.node.glif.io/graph), connect your [Filecoin-compatible wallet](https://docs.filecoin.io/basics/assets/wallets).
-
+   * On the [Protofire (Glif Nodes) platform - SUBGRAPHS](https://api.node.glif.io/graph), connect your [Filecoin-compatible wallet](https://docs.filecoin.io/basics/assets/wallets).
 2. **Create an API Key**
-   - Choose the **API keys** tab.
-   - Click **Create new key**.
-   - Generate an API key to authenticate your requests.
-
+   * Choose the **API keys** tab.
+   * Click **Create new key**.
+   * Generate an API key to authenticate your requests.
 3. **Activate Your Free Subscription**
-   - Go to the **Subscription** tab.
-   - If you have created a key, you will see one The Graph subscription pending.
-   - Click **Pay** and proceed with providing your credit card details to activate a free subscription.
+   * Go to the **Subscription** tab.
+   * If you have created a key, you will see one The Graph subscription pending.
+   * Click **Pay** and proceed with providing your credit card details to activate a free subscription.
 
 {% hint style="warning" %}
 Glif Nodes currently offers this service completely **free of charge**. If this ever changes, you will be notified at least one month in advance. It is recommended to provide your contact details on the Glif Nodes website to receive updates. Credit card details are used solely for DDoS protection. No charges will be made without prior notification.
 {% endhint %}
 
 4. **Create a Subgraph**
-   - Switch back to the **Subgraphs** tab.
-   - Click on **Create a New Subgraph** to set up a new subgraph instance.
-
+   * Switch back to the **Subgraphs** tab.
+   * Click on **Create a New Subgraph** to set up a new subgraph instance.
 5. **Manage Your Subgraphs**
-   - Select **MY** in the subgraphs switcher.
-   - Select the subgraph you just created to access deployment instructions and endpoints.
-   - Should you have any additional inquiries, do not hesitate to contact the Glif Nodes team through the **Contact us** button in the website header.
+   * Select **MY** in the subgraphs switcher.
+   * Select the subgraph you just created to access deployment instructions and endpoints.
+   * Should you have any additional inquiries, do not hesitate to contact the Glif Nodes team through the **Contact us** button in the website header.
 
 ### Querying Existing Subgraphs
 
 One of the popular subgraphs is a subgraph containing information about all the blocks on the network, essentially providing an alternative to the `eth_getBlock...` subset of commands. Let's see how we can query the `eth_getBlockByNumber` using the Linux command-line interface and the Protofire (Glif Nodes) platform.
 
-- Visit the [Protofire (Glif Nodes) platform](https://api.node.glif.io).
-- Navigate to the **SUBGRAPHS** tab.
-- Select the **[blocks](https://api.node.glif.io/graph/21/mainnet%2Fblocks)** subgraph.
-- In the opened **Playground** tab, click the **Show GraphiQL Explorer** button (folder icon, 3rd from the top in the left bar) to verify the subgraph schema.
-- Click the elements that you are looking to query and adjust the query if necessary. For the sake of this example, let's query the first block this subgraph supports (#2867000). The resulting query should look like the following:
+* Visit the [Protofire (Glif Nodes) platform](https://api.node.glif.io).
+* Navigate to the **SUBGRAPHS** tab.
+* Select the [**blocks**](https://api.node.glif.io/graph/21/mainnet%2Fblocks) subgraph.
+* In the opened **Playground** tab, click the **Show GraphiQL Explorer** button (folder icon, 3rd from the top in the left bar) to verify the subgraph schema.
+*   Click the elements that you are looking to query and adjust the query if necessary. For the sake of this example, let's query the first block this subgraph supports (#2867000). The resulting query should look like the following:
 
     ```graphql
       query MyQuery {
@@ -88,8 +88,7 @@ One of the popular subgraphs is a subgraph containing information about all the 
       }
     }
     ```
-
-- Click **Execute query** (alternatively Ctrl+Enter, the icon with white triangle in the red square) and adjust query if needed.
+*   Click **Execute query** (alternatively Ctrl+Enter, the icon with white triangle in the red square) and adjust query if needed.
 
     ```json
     {
@@ -106,6 +105,4 @@ One of the popular subgraphs is a subgraph containing information about all the 
       }
     }
     ```
-
-- Copy **Queries (HTTP)** URL on the top of the Playground as well as resulting query to your code. The subgraph querying is free so far, although it requires an API key.
-
+* Copy **Queries (HTTP)** URL on the top of the Playground as well as resulting query to your code. The subgraph querying is free so far, although it requires an API key.
