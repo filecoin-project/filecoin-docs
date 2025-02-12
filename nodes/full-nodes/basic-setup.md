@@ -12,14 +12,14 @@ To install Lotus on your computer, follow these steps:
 2. Once you have downloaded the binary file, extract the contents to a directory of your choice. For example, if you are using Linux, you can extract the contents to the `/usr/local/bin directory` by running the command:
 
 ```sh
-sudo tar -C /usr/local/bin -xzf lotus-X.X.X-linux-amd64.tar.gz
+sudo tar -C /usr/local/bin -xzf lotus-1.31.1-linux-amd64.tar.gz
 ```
 
 3. Replace `X.X.X` with the version number of the release you downloaded.
 4. After extracting the contents, navigate to the `lotus` directory in your terminal. For example, if you extracted the contents to `/usr/local/bin`, you can navigate to the lotus directory by running the command:
 
 ```sh
-cd /usr/local/bin/lotus-X.X.X
+cd /usr/local/bin/lotus-1.31.1
 ```
 
 5. Again, replace `X.X.X` with the version number of the release you downloaded.
