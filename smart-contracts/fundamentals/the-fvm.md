@@ -33,7 +33,7 @@ FVM Actors enable a huge range of use cases to be built on Filecoin. Here are ju
 * Replication: In addition to allowing a client to store one data set with one storage provider in perpetuity, FVM Actors enable data resiliency by allowing a client to store one data set once manually and then have the Actor replicate that data with multiple other storage providers automatically. Additional conditions that can be set in an automated replication Actor include choices about the geographic region of the storage providers, latency, and deal price limits.
 * Leasing: FVM Actors enable a FIL token holder to provide collateral to clients looking to do a storage deal, and be repaid the principal and interest over time. FVM Actors can also trace the borrowing and repayment history of a given client, generating a community-developed reputation score.
 
-Additional use cases enabled by FVM include, but are not limited to, tokenized data sets, trustless reputation systems, NFTs, storage bounties and auctions, Layer 2 bridges, futures and derivatives, or conditional leasing. Visit the Protocol Labs [FVM Request for Startups](https://rfs.fvm.dev/) page to see in-depth descriptions of the use cases you may want to build and how Protocol Labs prioritizes them.
+Additional use cases enabled by FVM include, but are not limited to, tokenized data sets, trustless reputation systems, NFTs, storage bounties and auctions, Layer 2 bridges, futures and derivatives, or conditional leasing. 
 
 ### Start building on the FVM
 
