@@ -7,6 +7,8 @@ description: >-
 
 # The Filecoin Virtual Machine
 
+NOTE: As of January 2025, for builder support, please reaching out to the [FIL Builders](https://fil.builders/) team.  For Filecoin product updates, please reach out to the [FILOz](https://www.filoz.org/) team.  
+
 ## Introduction
 
 Filecoin’s storage and retrieval capabilities can be thought of as the base layer of the Filecoin blockchain, and [FVM](https://fvm.filecoin.io) can be thought of as a layer on top of Filecoin that unlocks programmability on the network (e.g. programmable storage primitives).
