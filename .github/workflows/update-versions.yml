@@ -19,8 +19,23 @@ jobs:
       - name: Get latest Lotus version
         id: get-version
         run: |
-          LATEST_VERSION=$(curl -s https://api.github.com/repos/filecoin-project/lotus/releases/latest | jq -r .tag_name | sed 's/^v//')
+          # Get the latest release info
+          RELEASE_INFO=$(curl -s https://api.github.com/repos/filecoin-project/lotus/releases/latest)
+          
+          # Extract the tag name
+          TAG_NAME=$(echo "$RELEASE_INFO" | jq -r .tag_name)
+          
+          # Handle different tag formats
+          if [[ $TAG_NAME == *"miner"* ]]; then
+            # For miner tags, extract everything after 'v'
+            LATEST_VERSION=$(echo $TAG_NAME | sed -E 's/.*v([^/]*).*/\1/')
+          else
+            # For standard tags (e.g., v1.31.1)
+            LATEST_VERSION=$(echo $TAG_NAME | sed 's/^v//')
+          fi
+          
           echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
 
       - name: Run update script
         run: |
@@ -33,6 +48,9 @@ jobs:
           title: 'chore: update Lotus version references to ${{ env.LATEST_VERSION }}'
           body: |
             Automated PR to update Lotus version references to ${{ env.LATEST_VERSION }}
+            
+            Original tag: ${{ env.TAG_NAME }}
+            Extracted version: ${{ env.LATEST_VERSION }}
             
             This PR updates all references of:
             - `lotus-X.X.X`

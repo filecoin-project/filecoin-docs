@@ -30,27 +30,55 @@ const getAllFiles = (dirPath, arrayOfFiles = []) => {
 
 function processFiles() {
     const files = getAllFiles('.');
-    // Regex patterns for both actual versions and X.X.X pattern
-    const versionRegex = /lotus-(\d+\.\d+\.\d+|X\.X\.X)/g;
+    let versionToUpdate = null;
 
+    // First pass: find the lotus-x.xx.x version
+    files.forEach(file => {
+        try {
+            const content = fs.readFileSync(file, 'utf8');
+            const lotusVersionMatch = content.match(/lotus-(\d+\.\d+\.\d+)/);
+            
+            if (lotusVersionMatch) {
+                versionToUpdate = lotusVersionMatch[1];
+                console.log(`Found lotus version to update: ${versionToUpdate}`);
+                return false; // Exit the forEach loop once we find a version
+            }
+        } catch (error) {
+            console.error(`Error reading ${file}:`, error);
+        }
+    });
+
+    if (!versionToUpdate) {
+        console.error('No lotus version found in files');
+        return;
+    }
+
+    // Second pass: update all occurrences of the version
     files.forEach(file => {
         try {
             const content = fs.readFileSync(file, 'utf8');
             let processed = content;
+
+            // Create regex to match the version with optional lotus- prefix
+            const versionRegex = new RegExp(`(lotus-)?${versionToUpdate.replace(/\./g, '\\.')}`, 'g');
             
-            // Find all version patterns in the file
             const matches = content.match(versionRegex);
             if (matches) {
-                matches.forEach(oldVersionString => {
-                    const newVersionString = `lotus-${NEW_VERSION}`;
-                    processed = processed.replace(oldVersionString, newVersionString);
+                matches.forEach(match => {
+                    // If match includes 'lotus-', replace with 'lotus-NEW_VERSION'
+                    // Otherwise just replace with NEW_VERSION
+                    const replacement = match.includes('lotus-') ? 
+                        `lotus-${NEW_VERSION}` : 
+                        NEW_VERSION;
+                    
+                    processed = processed.replace(match, replacement);
                 });
-                
+
                 if (content !== processed) {
                     fs.writeFileSync(file, processed);
-                    console.log(`Updated versions in: ${file}`);
+                    console.log(`Updated in ${file}:`);
                     console.log(`Found patterns: ${matches.join(', ')}`);
-                    console.log(`Updated to: lotus-${NEW_VERSION}`);
+                    console.log(`Updated to versions containing: ${NEW_VERSION}`);
                 }
             }
         } catch (error) {

@@ -12,31 +12,29 @@ To install Lotus on your computer, follow these steps:
 2. Once you have downloaded the binary file, extract the contents to a directory of your choice. For example, if you are using Linux, you can extract the contents to the `/usr/local/bin directory` by running the command:
 
 ```sh
-sudo tar -C /usr/local/bin -xzf lotus-1.31.3-linux-amd64.tar.gz
+sudo tar -C /usr/local/bin -xzf lotus-1.31.1-linux-amd64.tar.gz
 ```
 
-3. Replace `X.X.X` with the version number of the release you downloaded.
-4. After extracting the contents, navigate to the `lotus` directory in your terminal. For example, if you extracted the contents to `/usr/local/bin`, you can navigate to the lotus directory by running the command:
+3. After extracting the contents, navigate to the `lotus` directory in your terminal. For example, if you extracted the contents to `/usr/local/bin`, you can navigate to the lotus directory by running the command:
 
 ```sh
-cd /usr/local/bin/lotus-1.31.3
+cd /usr/local/bin/lotus-1.31.1
 ```
 
-5. Again, replace `X.X.X` with the version number of the release you downloaded.
-6. Run the `lotus` binary file to start the Lotus daemon. You can do this by running the command:
+4. Run the `lotus` binary file to start the Lotus daemon. You can do this by running the command:
 
 ```sh
 ./lotus daemon
 ```
 
-7. This will start the Lotus daemon, which will connect to the Filecoin network and start synchronizing with other nodes on the network.
-8. Optionally, you can also run the lotus-miner binary file if you want to participate in the Filecoin mining process. You can do this by running the command:
+5. This will start the Lotus daemon, which will connect to the Filecoin network and start synchronizing with other nodes on the network.
+6. Optionally, you can also run the lotus-miner binary file if you want to participate in the Filecoin mining process. You can do this by running the command:
 
 ```sh
 ./lotus-miner run
 ```
 
-9. This will start the Lotus miner, which will use your computer’s computing power to mine new blocks on the Filecoin network.
+7. This will start the Lotus miner, which will use your computer’s computing power to mine new blocks on the Filecoin network.
 
 
 
