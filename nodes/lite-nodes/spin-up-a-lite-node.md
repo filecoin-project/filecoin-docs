@@ -73,12 +73,12 @@ Before we can build the Lotus binaries, we need to follow a few pre-build steps.
     This should output something like:
 
     ```output
-    v1.29.0
+    v1.31.1
     ```
 3.  Using the value returned from the previous command, checkout to the latest release branch:
 
     ```shell
-    git checkout v1.29.0
+    git checkout v1.31.1
     ```
 4. Done! You can move on to the [Build](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary) section.
 {% endtab %}
@@ -99,12 +99,12 @@ Before we can build the Lotus binaries, we need to follow a few pre-build steps.
     This should output something like:
 
     ```output
-    v1.29.0
+    v1.31.1
     ```
 3.  Using the value returned from the previous command, checkout to the latest release branch:
 
     ```shell
-    git checkout v1.29.0
+    git checkout v1.31.1
     ```
 4.  Create the necessary environment variables to allow Lotus to run on M1 architecture:
 
@@ -132,12 +132,12 @@ Before we can build the Lotus binaries, we need to follow a few pre-build steps.
     This should output something like:
 
     ```output
-    v1.29.0
+    v1.31.1
     ```
 3.  Using the value returned from the previous command, checkout to the latest release branch:
 
     ```shell
-    git checkout v1.29.0
+    git checkout v1.31.1
     ```
 4.  If your processor was released later than an AMD Zen or Intel Ice Lake CPU, enable SHA extensions by adding these two environment variables. If in doubt, ignore this command and move on to [the next section](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary).
 
@@ -175,7 +175,7 @@ The last thing we need to do to get our node setup is to build the package. The 
     This will output something like:
 
     ```plaintext
-    lotus version 1.29.0+mainnet+git.1ff3b360b
+    lotus version 1.31.1+mainnet+git.1ff3b360b
     ```
 {% endtab %}
 
@@ -200,7 +200,7 @@ The last thing we need to do to get our node setup is to build the package. The 
     This will output something like:
 
     ```plaintext
-    lotus version 1.29.0+calibnet+git.1ff3b360b
+    lotus version 1.31.1+calibnet+git.1ff3b360b
     ```
 {% endtab %}
 {% endtabs %}
