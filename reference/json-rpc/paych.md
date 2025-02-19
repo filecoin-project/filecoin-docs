@@ -39,7 +39,7 @@ Response:
     "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
   },
   "QueuedAmt": "0",
-  "VoucherReedeemedAmt": "0"
+  "VoucherRedeemedAmt": "0"
 }
 ```
 
@@ -68,7 +68,7 @@ Response:
     "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
   },
   "QueuedAmt": "0",
-  "VoucherReedeemedAmt": "0"
+  "VoucherRedeemedAmt": "0"
 }
 ```
 

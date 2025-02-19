@@ -30,8 +30,8 @@ We will use `ethers.js` to establish a connection with the public Filecoin node 
 import { ethers } from "ethers"
 
 //The public Filecoin calibration URL
-const fielcoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
-const provider = new ethers.JsonRpcProvider(fielcoin_url)
+const filecoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
+const provider = new ethers.JsonRpcProvider(filecoin_url)
 
 const blockNumber = await provider.getBlockNumber()
 console.log("Block height: ", blockNumber)
@@ -69,8 +69,8 @@ import { ethers } from "ethers"
 const wFILAddress = "0xaC26a4Ab9cF2A8c5DBaB6fb4351ec0F4b07356c4" // wFIL Contract
 var abi = ["event Transfer(address indexed from, address indexed to, uint amount)"]
 
-const fielcoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
-const provider = new ethers.providers.JsonRpcProvider(fielcoin_url)
+const filecoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
+const provider = new ethers.providers.JsonRpcProvider(filecoin_url)
 
 //listen to the Transfer events in the Token contract
 const wFIL = new ethers.Contract(wFILAddress, abi, provider)
@@ -110,8 +110,8 @@ import { ethers } from "ethers"
 const wFILAddress = "0xaC26a4Ab9cF2A8c5DBaB6fb4351ec0F4b07356c4" // wFIL Contract
 var abi = ["event Transfer(address indexed from, address indexed to, uint amount)"]
 
-const fielcoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
-const provider = new ethers.providers.JsonRpcProvider(fielcoin_url)
+const filecoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
+const provider = new ethers.providers.JsonRpcProvider(filecoin_url)
 
 // Create a filter to list all token transfers from myAddress
 const filter = contract.filters.Transfer("0xd388aB098ed3E84c0D808776440B48F685198498");

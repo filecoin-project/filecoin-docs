@@ -1,6 +1,6 @@
 ---
 description: >-
-  The FilFowarder is a smart contract that lets users transfer FIL from an
+  The FilForwarder is a smart contract that lets users transfer FIL from an
   Ethereum-based f4 address to a Filecoin address of a different type.
 ---
 
@@ -73,7 +73,7 @@ This guide assumes you have the following installed:
 
 #### **Environment setup**
 
-First, we need to grab the FilFowarder kit and install the dependencies:
+First, we need to grab the FilForwarder kit and install the dependencies:
 
 1. Clone the FilForwarder repository and install the dependencies:
 
