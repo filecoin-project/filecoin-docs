@@ -96,7 +96,7 @@ Perms: read
 
 Inputs:
 
-```jsona
+```json
 [
   {
     "from": "0x5cbeecf99d3fdb3f25e309cc264f240bb0664031",

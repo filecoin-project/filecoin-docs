@@ -1181,7 +1181,7 @@ Results:
 
 ## Verified registry actor
 
-Verified registry actor is responsible for managing verified clients. The ActorCode for the verified registry built-in actor is `hex"0006"` which will be used to call the exported methods in the verified registry built-in actor. You need to specify the method number for the method you want to invoke. Please referer to each method for its method number.
+Verified registry actor is responsible for managing verified clients. The ActorCode for the verified registry built-in actor is `hex"0006"` which will be used to call the exported methods in the verified registry built-in actor. You need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
 
 ### AddVerifiedClient
 
@@ -1273,7 +1273,7 @@ Params:
 * `struct` ExtendClaimTermsParams
   * `struct ClaimTerm[]` Terms
     * `uint64` Provider - The provider address which stores the data.
-    * `uint64` CliamID - Claim ID.
+    * `uint64` ClaimID - Claim ID.
     * `int64` TermMax - The max chain epoch to extend.
 
 Results:
