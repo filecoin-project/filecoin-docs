@@ -73,8 +73,8 @@ One of the popular subgraphs is a subgraph containing information about all the 
 
 * Visit the [Protofire (Glif Nodes) platform](https://api.node.glif.io).
 * Navigate to the **SUBGRAPHS** tab.
-* Select the [**blocks**](https://api.node.glif.io/graph/21/mainnet%2Fblocks) subgraph.
-* In the opened **Playground** tab, click the **Show GraphiQL Explorer** button (folder icon, 3rd from the top in the left bar) to verify the subgraph schema.
+* Select the relevant subgraph from [Protofire](https://api.node.glif.io/graph).
+* In the opened **Playground** tab, click the **Show GraphQL Explorer** button (folder icon, 3rd from the top in the left bar) to verify the subgraph schema.
 *   Click the elements that you are looking to query and adjust the query if necessary. For the sake of this example, let's query the first block this subgraph supports (#2867000). The resulting query should look like the following:
 
     ```graphql
