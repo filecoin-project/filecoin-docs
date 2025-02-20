@@ -7,7 +7,7 @@ description: >-
 
 # The Filecoin Virtual Machine
 
-NOTE: As of January 2025, for builder support, please reaching out to the [FIL Builders](https://fil.builders/) team.  For Filecoin product updates, please reach out to the [FILOz](https://www.filoz.org/) team.  
+NOTE: As of January 2025, for developer support, please visit the [FILB](https://fil.builders/) website.  For Filecoin product updates, please visit the [FILOz](https://www.filoz.org/) website or see the Lotus [Github discussion page](https://github.com/filecoin-project/lotus/discussions).  
 
 ## Introduction
 
