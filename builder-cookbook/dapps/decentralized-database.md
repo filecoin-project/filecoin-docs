@@ -44,7 +44,7 @@ To track all the deal aggregation/RaaS requests submitted to the smart contract,
 
 ```solidity
 uint256 private tableId;
-string private constant _TABLE_PREFIX = "aggregaor_table"; // Custom table prefix
+string private constant _TABLE_PREFIX = "aggregator_table"; // Custom table prefix
 
 // Constructor that creates a table, sets the controller, and inserts data
 constructor() {

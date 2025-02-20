@@ -1,0 +1,21 @@
+{
+  "name": "filecoin-docs",
+  "version": "1.0.0",
+  "description": "<div align=center>",
+  "main": "update-versions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-versions": "node update-versions.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filecoin-project/filecoin-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filecoin-project/filecoin-docs/issues"
+  },
+  "homepage": "https://github.com/filecoin-project/filecoin-docs#readme"
+}

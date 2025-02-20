@@ -1,8 +1,6 @@
 ---
 description: >-
-  Filecoin built-in actors can be invoked in a smart contract using either the
-  Protocol API or the Filecoin.sol library. This page provides
-  instructions on how to use each method.
+  Filecoin built-in actors can be invoked in a smart contract using either the Protocol API or the Filecoin.sol library. This page provides instructions on how to use each method.
 ---
 
 # Call built-in actors

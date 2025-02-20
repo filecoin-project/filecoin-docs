@@ -1,7 +1,7 @@
 ---
 description: >-
   This page covers RAID configurations, performance implications and
-  availability, I/O behavior for sealed and unsealed sectors, andf read/write
+  availability, I/O behavior for sealed and unsealed sectors, and read/write
   performance considerations.
 ---
 
