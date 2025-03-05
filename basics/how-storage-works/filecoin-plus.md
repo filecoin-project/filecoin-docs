@@ -89,52 +89,6 @@ Once you have an address with DataCap, you can make deals using DataCap as a par
 
 By default, when you make a deal with an address with DataCap allocated, you will spend that DataCap when making the deal.
 
-### How to Use DataCap, using the API 
-
-If making deals through the [API](https://github.com/filecoin-project/lotus/blob/master/documentation/en/api-v0-methods.md#ClientStartDeal), make sure that the `VerifiedDeal` parameter is set to `true` when calling `ClientStartDeal`.
-
-```json
-[
-  {
-    "Data": {
-      "TransferType": "string value",
-      "Root": {
-        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
-      },
-      "PieceCid": null,
-      "PieceSize": 1024
-    },
-    "Wallet": "f01234",
-    "Miner": "f01234",
-    "EpochPrice": "0",
-    "MinBlocksDuration": 42,
-    "ProviderCollateral": "0",
-    "DealStartEpoch": 10101,
-    "FastRetrieval": true,
-    "VerifiedDeal": true
-  }
-]
-```
-
-### How to Use DataCap, using the Command Line 
-If making deals from the command line, make sure to pass the flag `--verified-deal=true` as a parameter.
-
-```shell
- lotus client deal --verified-deal=true
-```
-
-### Checking DataCap Balance
-
-Once you have received DataCap to an address, you can check the remaining balance by querying your address on a node.
-
-#### With the lotus cli
-
-Run the following command, replacing "f0000" with your Filecoin address. 
-
-```shell
-lotus filplus check-client-datacap f00000
-```
-
 ## Visualizing Blockchain Data for Filecoin+
 
 There are three resources you can use to check the current status of the Filecoin+ deals and participants:
