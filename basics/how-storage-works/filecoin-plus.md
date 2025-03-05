@@ -25,13 +25,13 @@ There is a common misconception that a Filecoin Plus deal increases the miner’
 
 Consider first a network with ten storage providers. Initially, each storage provider has an equal 10% probability of winning available block rewards in a given period:
 
-![filecoinplus1](https://github.com/filecoin-project/filecoin-docs/assets/46801006/d577d1d7-5e4f-4b3d-9b60-f102b5ca27bb)
+![verified-deals-impact-1](https://github.com/user-attachments/assets/bf496536-c8a6-4847-8474-f849bdc56c20)
 
 In the above visualization, "VD" means "verified deals", that is, deals that have been reviewed by allocators and have associated spending of datacap.
 
 If two of these storage providers begin filling their sectors with verified deals, their chances of winning a block reward increases by a factor of ten relative to their peers. Each one of these storage providers with verified deals in their sectors has a 36% chance of winning the block reward, while storage providers with only [regular deals](https://spec.filecoin.io/systems/filecoin\_blockchain/storage\_power\_consensus/#section-systems.filecoin\_mining.sector.sector\_quality) in their sectors have a 4% probability of winning the block rewards.
 
-![filecoinplus2](https://github.com/filecoin-project/filecoin-docs/assets/46801006/a13dcf38-0115-49b0-896c-11da82808d70)
+![verified-deals-impact-2](https://github.com/user-attachments/assets/ea79d2b1-2c65-47da-a09e-04af1aeb02bb)
 
 Incentives for storage providers to accept verified deals is strongest initially. As more and more storage providers include verified deals in their sectors, the probability any one of them earns the block rewards returns to an equal chance.
 
