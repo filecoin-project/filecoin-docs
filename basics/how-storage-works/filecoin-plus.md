@@ -1,5 +1,7 @@
 # Filecoin plus
 
+<meta name="description" content="Explain the stakeholders and processes of Filecoin Plus, a program to verifiy and increase the volume of useful data on Filecoin." />
+
 ## What is Filecoin Plus?
 
 The goal of the Filecoin Plus program is to increase the amount of useful data stored with storage providers by clients on the Filecoin network.
