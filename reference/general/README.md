@@ -49,7 +49,6 @@ Tools to check status and details of the network and chain.
 ### Chain data and monitoring
 
 * [Starboard](https://dashboard.starboard.ventures/) - network health monitoring
-* [Filstats.io](https://filstats.io) - node telemetry monitoring - add your node!
 * [Sentinel Project](https://lilium.sh/) - Filecoin Network Monitoring and Analysis System
 * [DataCapStats](https://datacapstats.io/) - data providing insight on the Filecoin Plus program.
 
