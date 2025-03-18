@@ -40,7 +40,9 @@ The `CALLCODE` opcode has not been implemented. Use the newer `DELEGATECALL` opc
 
 In Ethereum, `SELFDESTRUCT` is the only way to send funds to a smart contract without giving the target smart contract a chance to execute code.
 
-In Filecoin, any actor can use `method 0`, also called a bare-value send, to transfer funds to any other actor without invoking the target actor’s code. You can think of this behavior as having the suggested [`PAY` opcode](https://eips.ethereum.org/EIPS/eip-5920) already implemented in Filecoin.
+In Filecoin, any actor can use `method 0`, also called a bare-value send, to transfer funds to any other actor without invoking the target actor’s code. You can think of this behavior as having the suggested [`PAY` opcode](https://eips.ethereum.org/EIPS/eip-5920) already implemented in Filecoin. However by default, Solidity smart contracts do not accept bare value transfers, unless the author implements the [receive() or fallback() function](https://docs.soliditylang.org/en/v0.8.17/contracts.html#receive-ether-function). For more information see [FIP Discussion #592](https://github.com/filecoin-project/FIPs/discussions/592#discussioncomment-4819619).
+
+Therefore in case the recipient is a smart contract, **it is recommended to always use the `InvokeEVM` `method 3844450837` for sends to prevent loss of funds** when sending to an `f410f`/`0x` address recipient.
 
 ## Precompiles
 
