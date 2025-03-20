@@ -9,7 +9,7 @@ description: >-
 
 ## Tipsets
 
-A tipset is a set of blocks with the same height and parent tipset, allowing multiple storage providers to produce blocks in each epoch to increase network throughput.  The Filecoin blockchain consists of a chain of tipsets rather than individual blocks.  Each tipset is assigned a weight, enabling the consensus protocol to guide nodes to build on the heaviest chain and preventing interference from nodes attempting to produce invalid blocks.
+A tipset is a set of blocks with the same height, allowing multiple storage providers to produce blocks in each epoch, increasing network throughput.  The Filecoin blockchain consists of a chain of tipsets rather than individual blocks.  Each tipset is assigned a weight, enabling the consensus protocol to guide nodes to build on the heaviest chain and preventing interference from nodes attempting to produce invalid blocks.
 
 ## Actors
 
