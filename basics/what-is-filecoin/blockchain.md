@@ -3,23 +3,22 @@ description: >-
   A blockchain is a distributed database shared among nodes in a computer network. This page covers the design and functions of the Filecoin blockchain.
 ---
 
+<meta name="description" content="The filecoin blockchain and how it works." />
+
 # Blockchain
 
 ## Tipsets
 
-The Filecoin blockchain consists of a chain of tipsets rather than individual blocks. A tipset is a set of blocks with the same height and parent tipset, allowing multiple storage providers to produce blocks in each epoch to increase network throughput.
-
-Each tipset is assigned a weight, enabling the consensus protocol to guide nodes to build on the heaviest chain. This adds a level of security to the Filecoin network by preventing interference from nodes attempting to produce invalid blocks.
+A tipset is a set of blocks with the same height and parent tipset, allowing multiple storage providers to produce blocks in each epoch to increase network throughput.  The Filecoin blockchain consists of a chain of tipsets rather than individual blocks.  Each tipset is assigned a weight, enabling the consensus protocol to guide nodes to build on the heaviest chain and preventing interference from nodes attempting to produce invalid blocks.
 
 ## Actors
 
-An actor in the Filecoin blockchain is similar to a smart contract in the Ethereum Virtual Machine. It functions as an ‘object’ within the Filecoin network, with a state and a set of methods for interaction.
+Actors are ‘objects’ within the Filecoin network, each with a state and a set of methods for interaction, that pass messages to each other and ensure the system operates appropiately.
 
 ### Built-in actors
 
 Several built-in system actors power the Filecoin network as a decentralized storage network:
 
-- **System actor**: General system actor.
 - **Init actor**: Initializes new actors and records the network name.
 - **Cron actor**: Scheduler that runs critical functions at every epoch.
 - **Account actor**: Manages user accounts (non-singleton).
@@ -33,14 +32,7 @@ Several built-in system actors power the Filecoin network as a decentralized sto
 - **Verified registry actor**: Manages verified clients.
 - **Ethereum Address Manager (EAM) actor**: Assigns Ethereum-compatible addresses on Filecoin, including EVM smart contract addresses.
 - **Ethereum Virtual Machine (EVM) account actor**: Represents an external Ethereum identity backed by a secp256k1 key.
-
-### User-programmable actors
-
-With the maturity of the FVM, developers can write actors and deploy them on the Filecoin network, similar to other blockchains' smart contracts. User-programmable actors can interact with built-in actors via the exported API from built-in actors.
-
-## Distributed randomness
-
-Filecoin uses the [Drand](https://drand.love) protocol as a randomness beacon for leader election in the [expected consensus](blockchain.md#expected-consensus) process. This randomness ensures leader election is secret, fair, and verifiable.
+- **System actor**: General system actor.
 
 ## Nodes
 
@@ -58,7 +50,7 @@ In the Filecoin network, addresses identify actors in the Filecoin state. Each a
 
 - **`f0/t0`**: ID address for an actor in a human-readable format, such as `f0123261` for a storage provider.
 - **`f1/t1`**: secp256k1 wallet address, generated from an encrypted secp256k1 public key.
-- **`f2/t2`**: Address assigned to an actor (smart contract) in a way that ensures stability across network forks.
+- **`f2/t2`**: Address assigned to an actor in a way that ensures stability across network forks.
 - **`f3/t3`**: BLS wallet address, generated from a BLS public key.
 - **`f4/t4`**: Address created and assigned to user-defined actors by customizable "address management" actors. This address can receive funds before an actor is deployed.
 - **`f410/t410`**: Address space managed by the Ethereum Address Manager (EAM) actor, allowing Ethereum-compatible addresses to interact seamlessly with the Filecoin network. Ethereum addresses can be cast as `f410/t410` addresses and vice versa, enabling compatibility with existing Ethereum tools.
@@ -67,9 +59,11 @@ In the Filecoin network, addresses identify actors in the Filecoin state. Each a
 
 ### Expected consensus
 
-Expected Consensus (EC) is the consensus algorithm underlying Filecoin. EC is a probabilistic, Byzantine fault-tolerant protocol that conducts a leader election among storage providers each epoch to determine which provider submits a block. Similar to proof-of-stake, Filecoin’s leader election relies on proof-of-storage, meaning the probability of being elected depends on how much provable storage power a miner contributes to the network. This storage power is recorded in the storage power table, managed by the Storage Power Actor.
+Expected Consensus (EC) is the probabilistic, Byzantine fault-tolerant consensus algorithm underlying Filecoin. EC conducts a leader election among storage providers each epoch to determine which provider submits a block.  Similar to proof-of-stake, Filecoin’s leader election relies on proof-of-storage, meaning the probability of being elected depends on how much provable storage a miner contributes to the network --measured in something called "storage power".
 
-At a high level, the consensus process uses [Drand](https://drand.love) to provide distributed, verifiable randomness, ensuring that leader election is secret, fair, and unbiased. Election participants and their storage power are drawn from the Power Table, which is continuously calculated and maintained by the Storage Power Consensus subsystem. Ultimately, EC gathers all valid blocks produced in an epoch and applies a weighting function to select the heaviest chain, adding blocks accordingly.
+The consensus process uses [Drand](https://drand.love) as a randomness beacon for leader election, ensuring the leader election is secret, fair, and verifiable.  Election participants and their storage power are drawn from a data structure called the "Power Table", which is continuously calculated and maintained by the storage power actor. 
+
+Ultimately, the EC process ends by gathering all valid blocks produced in an epoch to a tipset, applying a weighting function to select the heaviest chain, and adding the tipset to the heaviest chain accordingly.
 
 ### Block production process
 
@@ -80,7 +74,7 @@ The block production process for each epoch is as follows:
 - Elected miners generate WinningPoSt using randomness.
 - Miners build and propagate a block.
 - Verify the winning miner and election.
-- Select the heaviest chain to add blocks.
+- Select the heaviest chain to add the tipset.
 
 ### Finality
 
