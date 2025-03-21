@@ -20,7 +20,7 @@ jobs:
         id: get-version
         run: |
           # Get all releases and find the first one starting with 'v'
-          RELEASE_INFO=$(curl -s "https://api.github.com/repos/filecoin-project/lotus/releases" | \
+          RELEASE_INFO=$(curl -s "https://api.github.com/repos/filecoin-project/lotus/releases/latest" | \
             jq -r '[.[] | select(.tag_name | startswith("v"))] | first')
           
           # Extract the tag name
