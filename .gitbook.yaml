@@ -75,6 +75,7 @@ redirects:
   build/get-building/storage-helpers: basics/how-storage-works/storage-onramps.md
   build/get-started: smart-contracts/fundamentals/the-fvm.md
   build/local-devnet: networks/local-testnet/README.md
+  build/lotus: nodes/implementations/lotus.md
   build/lotus/api-token-generation: reference/built-in-actors/protocol-api.md
   build/lotus/api-tokens: nodes/implementations/lotus.md
   build/overview: smart-contracts/fundamentals/the-fvm.md
@@ -203,6 +204,7 @@ redirects:
   get-started/go-filecoin-tutorial/Home: nodes/implementations/README.md
   get-started/go-filecoin-tutorial/Storing-on-Filecoin: nodes/implementations/lotus.md
   get-started/go-filecoin-tutorial/storing-on-filecoin: basics/what-is-filecoin/storage-market.md
+  get-started/go-filecoin-tutorial/troubleshooting-&-faq.html: nodes/implementations/lotus.md
   get-started/lotus/chain-snapshots: networks/mainnet/README.md
   get-started/lotus/chain: nodes/implementations/lotus.md
   get-started/lotus/configuration-and-advanced-usage: storage-providers/architecture/lotus-components.md
@@ -277,6 +279,7 @@ redirects:
   mine/lotus: nodes/implementations/lotus.md
   mine/mining-architectures: storage-providers/infrastructure/reference-architectures.md
   mine/mining-rewards: storage-providers/filecoin-economics/block-rewards.md
+  mine/mining-troubleshooting: storage-providers/basics/README.md
   mine/slashing: storage-providers/filecoin-economics/slashing.md
   mine/spacerace: storage-providers/basics/README.md
   mine: storage-providers/basics/README.md
@@ -348,6 +351,8 @@ redirects:
   storage-provider/basics/how-providing-storage-works: basics/what-is-filecoin/storage-model.md
   storage-provider/basics/overview: storage-providers/basics/README.md
   storage-provider/filecoin-deals/filecoin-programs: storage-providers/filecoin-deals/filecoin-programs.md
+  storage-providers/filecoin-deals/filecoin-programs/sign-in: storage-providers/filecoin-deals/filecoin-programs.md
+  storage-providers/filecoin-deals/filecoin-programs/sign-up: storage-providers/filecoin-deals/filecoin-programs.md
   storage-provider/hardware-requirements: storage-providers/skills/storage.md
   storage-provider/hardware/architectures: storage-providers/infrastructure/reference-architectures.md
   storage-provider/hardware/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
