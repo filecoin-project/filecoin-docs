@@ -5,7 +5,6 @@ structure:
   summary: SUMMARY.md
   
 redirects:
-  $: basics/what-is-filecoin/README.md
   about-filecoin/chat-and-discussion-forums: basics/project-and-community/chat-and-discussion-forums.md
   about-filecoin/contribution-tutorial: basics/project-and-community/ways-to-contribute.md
   about-filecoin/faq: smart-contracts/fundamentals/faqs.md
