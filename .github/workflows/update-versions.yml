@@ -23,7 +23,7 @@ jobs:
           RELEASE_INFO=$(curl -s "https://api.github.com/repos/filecoin-project/lotus/releases/latest")
           
           # Find first tag that starts with 'v' but not 'miner'
-          TAG_NAME=$(echo "$RELEASE_INFO" | jq -r '[.[] | select(.tag_name | startswith("v") and (contains("miner") | not))][0].tag_name')
+          TAG_NAME=$(echo "$RELEASE_INFO" | jq -r 'select(.tag_name | startswith("v") and (contains("miner") | not)) | .tag_name')
 
           # Extract version number (remove 'v' prefix)
           LATEST_VERSION=$(echo $TAG_NAME | sed 's/^v//')
