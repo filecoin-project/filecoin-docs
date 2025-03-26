@@ -1,7 +1,7 @@
 name: Update Lotus Version
 
 on:
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
   pull_request:
     types: [opened, reopened]
 
@@ -20,12 +20,11 @@ jobs:
         id: get-version
         run: |
           # Get all releases and find the first one starting with 'v'
-          RELEASE_INFO=$(curl -s "https://api.github.com/repos/filecoin-project/lotus/releases" | \
-            jq -r '[.[] | select(.tag_name | startswith("v"))] | first')
+          RELEASE_INFO=$(curl -s "https://api.github.com/repos/filecoin-project/lotus/releases/latest")
           
-          # Extract the tag name
-          TAG_NAME=$(echo "$RELEASE_INFO" | jq -r .tag_name)
-          
+          # Find first tag that starts with 'v' but not 'miner'
+          TAG_NAME=$(echo "$RELEASE_INFO" | jq -r 'select(.tag_name | startswith("v") and (contains("miner") | not)) | .tag_name')
+
           # Extract version number (remove 'v' prefix)
           LATEST_VERSION=$(echo $TAG_NAME | sed 's/^v//')
           
