@@ -7,30 +7,24 @@ description: >-
 
 The Filecoin storage model consists of three main components:
 
-- Providers
-- Deals
-- Sectors
+- Clients, who store their data with a Filecoin Storage Provider. 
+- Storage Providers, who operate data centers, compete to accept deals from Clients, provide cryptographic proofs they are storing said data, and earn block rewards and paid storage deals fees.  
+- [Deals](https://docs.filecoin.io/storage-providers/filecoin-deals/storage-deals), a data structure which details the terms of a storage arrangement between a client and a storage providor.  
+- Sectors, the [basic unit of storage on Filecoin](https://spec.filecoin.io/systems/filecoin_mining/sector/).
 
-## Providers
+## Clients
 
-Providers offer storage and retrieval services to network users. There are two types of providers:
+Clients have data they are looking to store with a cloud service.  
 
-- Storage Providers
-- Retrieval Providers
+## Storage Providers
 
-### Storage providers
-
-Storage providers, often called SPs, are responsible for storing files and data for clients on the network. They also provide cryptographic proofs to verify that data is stored securely. The majority of providers on the Filecoin network are SPs.
-
-### Retrieval providers
-
-Retrieval providers, or RPs, specialize in delivering quick access to data rather than long-term storage. While many storage providers also offer retrieval services, stand-alone RPs are increasingly joining the network to enhance data accessibility.
+Storage Providers offer storage and retrieval services to network users --they are effectively crypto miners with data centers. Storage providers, often called SPs, are responsible for storing files and data for clients on the network.
 
 ## Deals
 
-In the Filecoin network, SPs and RPs offer storage or retrieval services to clients through deals. These deals are negotiated between two parties and outline terms such as data size, price, duration, and collateral.
+In the Filecoin network, SPs offer storage or retrieval services to clients through deals. These deals are negotiated between two parties and outline terms such as data size, price, duration, and collateral.  The deal-making process initially occurs _off-chain_. Once both parties agree to the terms, the deal is published _on-chain_ for network-wide visibility and validation.
 
-The deal-making process initially occurs _off-chain_. Once both parties agree to the terms, the deal is published _on-chain_ for network-wide visibility and validation.
+Deals are a data structure.  You can think of them as being in the same class as a Bitcoin transaction, in that Bitcoin transactions detail the terms of the transaction and are added to a block by a miner.  Similarly, Filecoin deals detail the terms of the storage arrangement between a client and a storage provider, and are added to a block by the storage provider as they mine the Filecoin blockchain.  Unique information found in deals include the data size, usually one sector, the price for storage, and whether or not the deal is [verified](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus).
 
 ## Sectors
 
