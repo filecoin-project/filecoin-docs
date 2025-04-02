@@ -36,6 +36,13 @@ Filecoin EVM runtime emulates EVM self-destruct behavior but isn’t able to ent
 
 The `CALLCODE` opcode has not been implemented. Use the newer `DELEGATECALL` opcode.
 
+## BLOCKHASH
+
+Ethereum has one block at every height while Filecoin can have none, one, or many (usually around 4-5). This means that the `BLOCKHASH` instruction behaves a bit differently in the Filecoin EVM:
+
+- Because there can be multiple blocks at any given height, `BLOCKHASH` returns the hash of all the concatenation of the CIDs of all the blocks at the requested height.
+- Because there can be no blocks at any given height, if `BLOCKHASH` is called on a height with _no blocks_, it returns the `BLOCKHASH` of the first preceding height with blocks.
+
 ## Bare-value sends
 
 In Ethereum, `SELFDESTRUCT` is the only way to send funds to a smart contract without giving the target smart contract a chance to execute code.
