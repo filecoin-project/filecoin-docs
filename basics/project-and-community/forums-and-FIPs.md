@@ -18,18 +18,18 @@ For long-lived discussions and for support, please use the [discussion tab on Gi
 
 ### Filecoin improvement proposals
 
-Filecoin improvement proposals (FIPs) are design documents that propose changes and improvements to the Filecoin network, giving detailed specifications and their rational, and allowing the community to document their consensus or dissent.  All technial FIPs that are accepted are later reflected in the [Filecoin Spec](https://spec.filecoin.io/). 
+Filecoin improvement proposals (FIPs) are design documents that propose changes and improvements to the Filecoin network, giving detailed specifications and their rational, and allowing the community to document their consensus or dissent.  All technical FIPs that are accepted are later reflected in the [Filecoin Spec](https://spec.filecoin.io/). 
 
 There are three types of FIPs: 
 * Technical FIPs (FTP): protocol changes, standards, API changes.  They can include core (consensus-related changes, networking (network protocol improvements, interface (API/RPC or language-level updates), or can be informational (updates to general guidelines or documentation).
 * Organizational FIPs (FOP): changes to processes, tools, or governance.
 * Recovery FIPs (FRP): emergency fixes requiring state changes (e.g., major bugs).
 
-Typically, the FIP lifecylce looks something like this: 
+Typically, the FIP lifecycle looks something like this: 
 
 [ WIP ] -> [ DRAFT ] -> [ LAST CALL ] -> [ ACCEPTED ] -> [ FINAL ]
 
-1. WIP: A community member has an idea for a FIP, and begins discussing the idea publicly on the Filecoin Dicord, in the [Filecoin Slack channel for discussing FIPs](https://filecoinproject.slack.com/archives/C01EU76LPCJ), or in Github issues for the relevant repo.  
+1. WIP: A community member has an idea for a FIP, and begins discussing the idea publicly on the Filecoin Discord, in the [Filecoin Slack channel for discussing FIPs](https://filecoinproject.slack.com/archives/C01EU76LPCJ), or in Github issues for the relevant repo.  
 2. DRAFT: If there is a chance the FIP could be adopted, the author submits a draft for the FIP as a pull request in the [FIPs repo](https://github.com/filecoin-project/FIPs).
 3. LAST CALL: This status allows the community to submit final changes to the draft.
 4. ACCEPTED: Once the FIP is voted on and accepted, the core engineers will work to implement it.  
