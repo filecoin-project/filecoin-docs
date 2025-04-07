@@ -25,7 +25,9 @@ Additionally, 300 million FIL tokens are held in a mining reserve to incentivize
 
 ## Vesting
 
-Mining rewards are subject to a vesting schedule to support long-term network alignment. For instance, 75% of block rewards earned by miners vest linearly over 180 days, while 25% are immediately accessible, improving miner cash flow and profitability. Further, FIL tokens are vested to Protocol Labs teams and the Filecoin Foundation over six years and to SAFT investors over three years, as outlined in the vesting schedule.
+Mining rewards are subject to a vesting schedule to support long-term network alignment. For instance, 75% of block rewards earned by miners vest linearly over 180 days, while 25% are immediately accessible, improving miner cash flow and profitability. Note that if the miner has incurred "[fee debt](https://docs.filecoin.io/storage-providers/filecoin-economics/slashing)," the immediately accessible block rewards will automatically go towards paying down those fees. 
+
+A certain portion of initially printed FIL tokens are vested to Protocol Labs teams and the Filecoin Foundation over six years, and to SAFT investors over three years, as outlined in the [vesting schedule](https://observablehq.com/@starboard/a-primer-to-filecoin-circulating-supply/2).
 
 ## Collateral and slashing
 
