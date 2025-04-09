@@ -20,7 +20,7 @@ We’re going to be using MetaMask, a cryptocurrency wallet that lives in your b
 
 Before we can interact with the Filecoin network, we need funds. But before we can get any funds, we need somewhere to put them!
 
-1. Open your browser and visit the [MetaMask website](https://metamask.io/).
+1. Open your browser and visit the <a href="https://metamask.io/" target="_blank">MetaMask website</a>.
 2. Install the wallet by clicking the **Download for** button. MetaMask is available for Brave, Chrome, Edge, Firefox, and Opera.
 3.  Once you have installed MetaMask, it will open a **Get started** window.
 
@@ -41,7 +41,7 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
 You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet](../../networks/calibration/). We’ll use a website called [chainlist.org](https://chainlist.org) to give MetaMask the information it needs quickly.
 
-1. Go to [chainlist.org](https://chainlist.org).
+1. Go to <a href="https://chainlist.org" target="_blank">chainlist.org</a>.
 2.  Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
 
     ![Search for Filecoin testnets in Chainlist.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-chainlist-search.webp)
@@ -64,7 +64,7 @@ Nice! Now we’ve got the Filecoin Calibration testnet set up within MetaMask. Y
 1.  In your browser, open MetaMask and copy your address to your clipboard:
 
     ![Copy your address to your clipboard.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-faucet-get-address.webp)
-2. Go to [faucet.calibration.chainsafe-fil.io](https://faucet.calibnet.chainsafe-fil.io) and click **Send Funds.**
+2. Go to <a href="https://faucet.calibnet.chainsafe-fil.io" target="_blank">faucet.calibration.chainsafe-fil.io</a> and click **Send Funds.**
 3. Paste your address into the address field, and click **Send Funds**.
 4. The faucet will show a transaction ID. You can copy this ID into a Calibration testnet [block explorer](../../networks/calibration/explorers.md) to view your transaction. After a couple of minutes, you should see some `tFIL` transferred to your address.
 
@@ -78,7 +78,7 @@ The development environment we’re going to be using is called Remix, viewable 
 
 In Remix, workspaces are where you can create a contract, or group of contracts, for each project. Let’s create a new workspace to create our new ERC-20 token.
 
-1. Open [remix.ethereum.org](https://remix.ethereum.org).
+1. Open <a href="https://remix.ethereum.org" target="_blank">remix.ethereum.org</a>.
 2.  Open the dropdown menu and click **create a new workspace**.
 
     ![Create a new workspace.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-remix-dropdown.webp)
