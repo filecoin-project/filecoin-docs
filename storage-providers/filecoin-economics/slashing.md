@@ -21,6 +21,8 @@ This term encompasses a broad set of penalties which are to be paid by storage p
 Note that occasionally, storage providers may experience operational issues, such as downtime or bugs, that cause them to miss their delivery of a WindowPoSt.  To ensure reliability and to encourage smaller miners to join the network, there are built-in exceptions to the fault fees:  
 * If the Storage Provider has a history of acting honestly, there is no penalty in the current proving period for a faulted sector in the case of a missed WindowPoSt.
 * There are no fees if the sector is successfully recovered in a later proving period.
-* The fault fee applies only to the sectors already faulty, meaning, they are from a previous proving period, or marked for recovery.  Penalties are only applied to faulty sectors from previous proving periods, never the current proving period. 
+* The fault fee applies only to the sectors already faulty, meaning, they are from a previous proving period, or marked for recovery.  Penalties are only applied to faulty sectors from previous proving periods, never the current proving period.
+
+To learn more about fault fee exceptions, review [FIP002: Free Faults on Newly Faulted Sectors of a Missed WindowPoSt](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0002.md).  
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-economics/slashing)
