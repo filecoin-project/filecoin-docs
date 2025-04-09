@@ -29,6 +29,8 @@ Mining rewards are subject to a vesting schedule to support long-term network al
 
 A certain portion of initially printed FIL tokens are vested to Protocol Labs teams and the Filecoin Foundation over six years, and to SAFT investors over three years, as outlined in the [vesting schedule](https://observablehq.com/@starboard/a-primer-to-filecoin-circulating-supply/2).
 
+To learn more about Filecoin block rewards vesting, review [FIP004: Liquidity Improvement for Storage Miners](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0004.md).
+
 ## Collateral and slashing
 
 To ensure network security and reliable storage, storage providers must lock FIL as pledge collateral during block reward mining. Pledge collateral is based on projected block rewards a miner could earn. Collateral and all earned rewards are subject to slashing if the storage fails to meet reliability standards throughout a sector’s lifecycle.
