@@ -36,7 +36,7 @@ Singularity is an end-to-end solution for onboarding datasets to Filecoin storag
 
 Many other programs and tools exist in the Filecoin community, developed by partners or storage providers. We list some examples below.
 
-### [Decentrally](https://www.decentrally.cloud/)
+### Decentrally
 
 [![Read the doc](https://img.shields.io/badge/docs-decentrally.cloud-blue?style=for-the-badge)](https://docs.decentrally.cloud) [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C07FN47FCFJ)
 

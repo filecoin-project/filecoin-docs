@@ -35,17 +35,4 @@ These are some tools that developers will find useful when dealing with built-in
 * [FVM High-level Rust SDK](https://github.com/polyphene/fvm-rs-sdk) by Polyphene
 * [Tooling by Glif](https://glif.io/en)
 
-### Filecoin improvement proposals
-
-Filecoin improvement proposals (FIPs) are a way for the Filecoin community to discuss potential changes and improvements to the Filecoin network.
-
-* [About](https://github.com/filecoin-project/FIPs)
-* [Filecoin Slack channel for FIP discussion](https://filecoinproject.slack.com/archives/C01EU76LPCJ)
-* [Program Overview & Application](https://airtable.com/shr48kiPOqjwxzX6u)
-* [FVM Foundry Cohort Update Recordings](https://www.youtube.com/playlist?list=PL\_0VrY55uV18DBdFIkN0jdBMF8nadVxWQ)
-* [FVM Foundry Early Builders F/0 Cohort Showcase - Oct 3 2022](https://drive.google.com/file/d/1JLR45vSNScZX7edz9DxwlpYGnVfGm30Q/view?usp=sharing)
-* [FVM Foundry Early Builders F/1 Cohort Kick Off - Oct 5 2022](https://drive.google.com/file/d/1mV0PMunDUvIBqmuNw9VjUJIf4zE4z9LV/view?usp=sharing)
-
-
-
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/general/tools)

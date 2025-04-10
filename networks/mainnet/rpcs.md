@@ -20,7 +20,7 @@ In order to check the current benchmarked performance of each of the below endpo
 | [Ankr](https://ankr.com/)                   | `https://rpc.ankr.com/filecoin`                          | By request at: https://www.ankr.com/rpc/filecoin | [Ankr Docs - Filecoin](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)         | All Filecoin and Eth JSON RPC methods including MPoolPush |
 | [Chainup Cloud](https://cloud.chainup.com/) | `https://filecoin.chainup.net/rpc/v1`                    | `wss://filecoin.chainup.net/rpc/v1`              | [Chainup Cloud Docs - Filecoin](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis) |                                                           |
 | [NOWNodes](https://nownodes.io/)            | `https://fil.nownodes.io` (Free for 1 month with signup) |                                                  | [NOWNodes - Docs](https://documenter.getpostman.com/view/13630829/TVmFkLwy)                        |                                                           |
-| [Lava](https://docs.lavanet.xyz/filecoin-dev)   | `https://filecoin.lava.build`                            |                                                  | [Lava - Docs](https://docs.lavanet.xyz/filecoin-dev)                                                          | JSON RPC                                                  |
+
 
 ## Additional Notes:
 

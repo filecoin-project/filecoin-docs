@@ -12,6 +12,8 @@ WinningPoSt (short for [Winning Proof of SpaceTime](https://spec.filecoin.io/alg
 
 The election mechanism of the Filecoin network is based on the “storage power” of the storage providers. A minimum of 10 TiB in storage power is required to be eligible for WinningPoSt, and hence to earn block rewards. The more storage power a storage provider has, the more likely they will be elected to mine a block. This concept becomes incredibly advantageous in the context of [Filecoin Plus verified deals](../../basics/how-storage-works/filecoin-plus.md).
 
+Note that the deadline cron, a built-in actor that processes all miner actors every 60 epochs (every 30 minutes), is responsible for updating the rewards vesting table.  A miner operator wishing to process vesting manually, ahead of the per-deadline cron call, could do so by calling WithdrawFunds with an amount of zero. Such a call would require use of the miner's Owner address.  More details can be found in [FIP005: Remove ineffective reward vesting](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0005.md). 
+
 ## Filecoin’s storage capacity
 
 The Filecoin network is composed of storage providers who offer storage capacity to the network. This capacity is used to secure the network, as it takes a significant amount of storage to take part in the consensus mechanism. This large capacity makes it impractical for a single party to reach 51% of the network power, since an attacker would need 10 EiB in storage to control the network. Therefore, it is important that the raw capacity also referred to as _raw byte power_, remains high. The Filecoin spec also included a _baseline power_ above which the network yields maximum returns for the storage providers.

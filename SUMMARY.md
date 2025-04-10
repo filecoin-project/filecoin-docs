@@ -35,7 +35,7 @@
   * [Serving retrievals](basics/how-retrieval-works/serving-retrievals.md)
   * [Saturn](basics/how-retrieval-works/saturn.md)
 * [Project and community](basics/project-and-community/README.md)
-  * [Chat and discussion forums](basics/project-and-community/chat-and-discussion-forums.md)
+  * [Forums and FIPs](basics/project-and-community/forums-and-FIPs.md)
   * [Filecoin compared to](basics/project-and-community/filecoin-compared-to.md)
   * [Filecoin FAQs](basics/project-and-community/filecoin-faqs.md)
   * [Related projects](basics/project-and-community/related-projects.md)
