@@ -18,14 +18,7 @@ These endpoints are limited to [read-only Filecoin JSON RPC API calls](../../ref
 ## [ChainupCloud](https://cloud.chainup.com)
 
 * HTTPS: `https://filecoin-calibration.chainup.net/rpc/v1`
-* WebSocket: `wss://filecoin-calibration.chainup.net/rpc/v1`
 * [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
-
-## [dRPC](https://drpc.org/chainlist/filecoin)
-
-* HTTPS: `https://filecoin.drpc.org`
-* WebSocket: `wss://filecoin.drpc.org`
-* [dRPC documentation](https://docs.drpc.org/)
 
 ## [Glif](https://api.calibration.node.glif.io)
 
