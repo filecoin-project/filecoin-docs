@@ -80,6 +80,7 @@
   * [Storage](storage-providers/skills/storage.md)
   * [Sales](storage-providers/skills/sales.md)
   * [Industry](storage-providers/skills/industry.md)
+* [PDP](storage-providers/pdp.md)
 
 ## Nodes
 
