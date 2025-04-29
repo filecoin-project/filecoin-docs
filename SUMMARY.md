@@ -80,7 +80,9 @@
   * [Storage](storage-providers/skills/storage.md)
   * [Sales](storage-providers/skills/sales.md)
   * [Industry](storage-providers/skills/industry.md)
-* [PDP](storage-providers/pdp.md)
+* [PDP](storage-providers/pdp/README.md)
+  * [Prerequisites](storage-providers/pdp/prerequisites.md)
+  * [Installing and Running Lotus](storage-providers/pdp/installing-and-running-lotus.md)
 
 ## Nodes
 
