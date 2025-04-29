@@ -25,7 +25,7 @@ This ensures the increased limits are automatically applied to future sessions.
 
 ```sh
 ulimit -n 1048576
-# Verify:
+# Verify limit change:
 ulimit -n
 ```
 
