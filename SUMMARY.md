@@ -86,6 +86,7 @@
   * [Install & Run YugabyteDB](storage-providers/pdp/install-and-run-yugabytedb.md)
   * [Install & Run Curio](storage-providers/pdp/install-and-run-curio.md)
   * [Enable PDP](storage-providers/pdp/enable-pdp.md)
+  * [Use PDP](storage-providers/pdp/use-pdp.md)
 
 ## Nodes
 

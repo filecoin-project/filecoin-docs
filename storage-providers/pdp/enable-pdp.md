@@ -197,6 +197,6 @@ You’ve successfully launched a PDP-enabled Filecoin Storage Provider stack. Yo
 
 ### 🔜 Next Steps
 
-* 🚙 Take PDP for a test drive with the [Getting Started with PDP for Storage Clients](https://docs.google.com/document/d/1MTPVZVqNqB8symaiSe-FmBSqd4byl76q5rZ54vrOp9E/edit?tab=t.0#heading=h.7oxcvntk0n0d) guide
+* 🚙 Take PDP for a test drive with the [Use PDP](use-pdp.md) guide
 * 🧭 Monitor logs and metrics
 * 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)

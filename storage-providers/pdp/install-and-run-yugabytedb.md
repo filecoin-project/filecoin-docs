@@ -5,7 +5,7 @@
 ### Set ulimit configuration
 
 {% hint style="info" %}
-&#x20;Before starting Yugabyte, you must increase the default ulimit values to ensure system limits do not interfere with the database.
+&#x20;Before starting Yugabyte, you must increase the default `ulimit` values to ensure system limits do not interfere with the database.
 {% endhint %}
 
 To do this:
@@ -17,19 +17,19 @@ Add these lines to `/etc/security/limits.conf`:
 ```sh
 echo "$(whoami) soft nofile 1048576" | sudo tee -a /etc/security/limits.conf
 echo "$(whoami) hard nofile 1048576" | sudo tee -a /etc/security/limits.conf
-This ensures the increased limits are automatically applied to future sessions.
 ```
+
+This ensures the increased limits are automatically applied to future sessions.
 
 #### **Apply limit immediately (for current shell only)**
 
-```sh
-ulimit -n 1048576
-Verify:
-ulimit -n
-```
+<pre class="language-sh"><code class="lang-sh">ulimit -n 1048576
+<strong># Verify:
+</strong>ulimit -n
+</code></pre>
 
 {% hint style="success" %}
-This should output 1048576.
+This should output `1048576`.
 {% endhint %}
 
 ### Install Yugabyte
