@@ -23,10 +23,11 @@ This ensures the increased limits are automatically applied to future sessions.
 
 #### **Apply limit immediately (for current shell only)**
 
-<pre class="language-sh"><code class="lang-sh">ulimit -n 1048576
-<strong># Verify:
-</strong>ulimit -n
-</code></pre>
+```sh
+ulimit -n 1048576
+# Verify:
+ulimit -n
+```
 
 {% hint style="success" %}
 This should output `1048576`.
