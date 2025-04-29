@@ -84,6 +84,7 @@
   * [Prerequisites](storage-providers/pdp/prerequisites.md)
   * [Install & Run Lotus](storage-providers/pdp/install-and-run-lotus.md)
   * [Install & Run YugabyteDB](storage-providers/pdp/install-and-run-yugabytedb.md)
+  * [Install & Run Curio](storage-providers/pdp/install-and-run-curio.md)
 
 ## Nodes
 
