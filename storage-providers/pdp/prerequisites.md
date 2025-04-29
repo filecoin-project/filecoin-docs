@@ -7,7 +7,7 @@ description: >-
 # Prerequisites
 
 {% hint style="info" %}
-⚠️ Note: This guide is written specifically for Ubuntu 22.04. If you are using a different Linux distribution, refer to the relevant documentation for package installation and compatibility.
+This guide is written specifically for Ubuntu 22.04. If you are using a different Linux distribution, refer to the relevant documentation for package installation and compatibility.
 {% endhint %}
 
 Before starting, make sure you have a user with **sudo privileges**. This section prepares your system for the PDP stack.
@@ -34,7 +34,7 @@ go version
 ```
 
 {% hint style="success" %}
-You should see something like: go version go1.23.7 linux/amd64
+You should see something like: `go version go1.23.7 linux/amd64`
 {% endhint %}
 
 ***
@@ -55,7 +55,7 @@ rustc --version
 ```
 
 {% hint style="success" %}
-You should see something like: rustc 1.86.0 (05f9846f8 2025-03-31)
+You should see something like: `rustc 1.86.0 (05f9846f8 2025-03-31)`
 {% endhint %}
 
 ***
