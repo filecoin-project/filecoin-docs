@@ -86,85 +86,75 @@ Curio provides a utility to help you set up a new miner interactively. Run the f
 curio guided-setup
 ```
 
-{% stepper %}
-{% step %}
-#### **Select "Create a new miner"**
-
-Use the arrow keys to navigate the guided setup menu and select "Create a new miner".
-{% endstep %}
-
-{% step %}
-#### Enter Your YugabyteDB Connection Details
-
-
-{% endstep %}
-{% endstepper %}
-
 #### 1️⃣ Select "Create a new miner"
 
-Use the arrow keys to navigate the guided setup menu and select "Create a new miner".
+Use the arrow keys to navigate the guided setup menu and select "**Create a new miner**".
 
 #### 2️⃣ Enter Your YugabyteDB Connection Details
 
 If you used the default installation steps from this guide, the following values should work:
 
-* Host: 127.0.0.1
-* Port: 5433
-* Username: yugabyte
-* Password: yugabyte
-* Database: yugabyte
+* Host: `127.0.0.1`
+* Port: `5433`
+* Username: `yugabyte`
+* Password: `yugabyte`
+* Database: `yugabyte`
 
 You can verify these settings by running the following command from the Yugabyte directory:
 
+```sh
 ./bin/yugabyted status
+```
 
-After selecting "Continue to connect and update schema", Curio will automatically create the required tables and schema in the database.
+After selecting "**Continue to connect and update schema**", Curio will automatically create the required tables and schema in the database.
 
 #### 3️⃣ Set Wallet Addresses
 
 For this step, use the two BLS wallets you created earlier with Lotus:
 
-* Use wallet 1 for the Owner Address
-* Use wallet 2 for the Worker Address
-* Use wallet 1 again for the Sender Address
+* Use **wallet 1** for the **Owner Address**
+* Use **wallet 2** for the **Worker Address**
+* Use **wallet 1** again for the **Sender Address**
 
 These addresses must match the Lotus wallets created earlier.
 
-| 💡 You can display your Lotus wallets at any time by running: |
-| ------------------------------------------------------------- |
+{% hint style="info" %}
+You can display your Lotus wallets at any time by running:
+{% endhint %}
 
-\
-
-
+```sh
 lotus wallet list
+```
 
 #### 4️⃣ Choose Sector Size
 
 Choose sector size:
 
-* 64 GiB
+* `64 GiB`
 
-| 💡 Selecting a sector size is required during the Curio guided setup, but PDP itself doesn’t use sectors. Proof set sizes in PDP are arbitrary and fully flexible. |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+{% hint style="info" %}
+💡 Selecting a sector size is required during the Curio guided setup, but **PDP itself doesn’t use sectors**. Proof set sizes in PDP are **arbitrary and fully flexible.**
+{% endhint %}
 
 #### 5️⃣ Create Miner Actor
 
-Review the information to ensure all inputs are correct. Then select "Continue to verify the addresses and create a new miner actor" to proceed.
+Review the information to ensure all inputs are correct. Then select "**Continue to verify the addresses and create a new miner actor**" to proceed.
 
-| ⏱️ This step may take a few minutes to complete as Curio pushes the message and waits for it to land on-chain. |
-| -------------------------------------------------------------------------------------------------------------- |
+{% hint style="info" %}
+This step may take a few minutes to complete as Curio pushes the message and waits for it to land on-chain.
+{% endhint %}
 
 Once the actor is created, Curio will:
 
-* Register your miner ID
+* `Register your miner ID`
 
-| 💡 If the guided setup fails after creating the miner actor, run the following command to complete the installation: |
-| -------------------------------------------------------------------------------------------------------------------- |
+{% hint style="info" %}
+If the guided setup fails after creating the miner actor, run the following command to complete the installation:
+{% endhint %}
 
-\
-
-
-curio config new-cluster \<miner ID>
+```sh
+curio config new-cluster <miner ID>
+```
 
 #### 6️⃣ Telemetry (Optional)
 
@@ -178,7 +168,9 @@ At the final step of the guided setup, you’ll be prompted to choose where to s
 
 Use the arrow keys to select a location. A common default is:
 
+```sh
 /home/your-username/curio.env
+```
 
 Once selected, setup will complete, and the miner configuration will be stored.
 
@@ -186,12 +178,14 @@ Once selected, setup will complete, and the miner configuration will be stored.
 
 To explore the Curio interface visually, start the GUI layer:
 
+```sh
 curio run --layers=gui
+```
 
 Then, open your browser and go to:
 
+```sh
 http://127.0.0.1:4701
+```
 
 This will launch the Curio web GUI locally.
-
-\
