@@ -82,7 +82,8 @@
   * [Industry](storage-providers/skills/industry.md)
 * [PDP](storage-providers/pdp/README.md)
   * [Prerequisites](storage-providers/pdp/prerequisites.md)
-  * [Installing and Running Lotus](storage-providers/pdp/installing-and-running-lotus.md)
+  * [Install & Run Lotus](storage-providers/pdp/install-and-run-lotus.md)
+  * [Install & Run YugabyteDB](storage-providers/pdp/install-and-run-yugabytedb.md)
 
 ## Nodes
 

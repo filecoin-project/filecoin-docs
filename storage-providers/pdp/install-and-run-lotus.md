@@ -4,9 +4,9 @@ description: >-
   wallets, and is required for Curio to interact with your node.
 ---
 
-# Installing and Running Lotus
+# Install & Run Lotus
 
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><a href="https://lotus.filecoin.io/lotus/get-started/what-is-lotus/">Lotus Documentation</a></td><td></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/CPFTWMY7N">Filecoin Slack - #fil-lotus-help</a></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://lotus.filecoin.io/lotus/get-started/what-is-lotus/">Lotus Documentation</a></td><td></td><td><a href="../../.gitbook/assets/lotus-logo-big.png">lotus-logo-big.png</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/CPFTWMY7N">Filecoin Slack - #fil-lotus-help</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr></tbody></table>
 
 ### Build Lotus Daemon
 
@@ -69,7 +69,7 @@ nohup lotus daemon > ~/lotus.log 2>&1 &
 lotus sync wait
 ```
 
-#### To monitor continuously:
+To monitor continuously:
 
 ```sh
 lotus sync wait --watch
