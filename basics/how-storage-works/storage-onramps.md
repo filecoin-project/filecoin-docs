@@ -6,7 +6,7 @@ description: >-
 
 # Storage onramps
 
-Developers use web UIs, APIs, or libraries to send data to storage onramps. Behind the scenes, storage onramps receive the data and handle the underlying processes to store it in a reliable and decentralized storage way by saving it [IPFS](https://ipfs.tech) nodes, making deals with Filecoin storage providers – or both. You can use the same APIs or other tools to retrieve data quickly.
+Developers use web UIs, APIs, or libraries to send data to storage onramps. Behind the scenes, storage onramps receive the data and handle the underlying processes to store it in a reliable way, making deals with Filecoin storage providers.
 
 The available storage onramps are: 
 
