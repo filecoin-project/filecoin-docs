@@ -60,7 +60,7 @@ sudo locale-gen en_US.UTF-8
 ```
 
 {% hint style="success" %}
-Visit [http://127.0.0.1:15433](http://127.0.0.1:15433) to confirm successful installation. This is the YugabyteDB web UI — it should display the dashboard if the service is running correctly and all nodes are healthy.&#x20;
+Visit http://127.0.0.1:15433 to confirm successful installation. This is the YugabyteDB web UI — it should display the dashboard if the service is running correctly and all nodes are healthy.&#x20;
 {% endhint %}
 
 {% hint style="info" %}
