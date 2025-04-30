@@ -6,20 +6,15 @@ description: >-
 
 # Storage onramps
 
-Here’s how they work: Developers use APIs or libraries to send data to storage helpers. Behind the scenes, storage helpers receive the data and handle the underlying processes to store it in a reliable and decentralized storage way by saving it [IPFS](https://ipfs.tech) nodes, making deals with Filecoin storage providers – or both. You can use the same APIs or other tools to retrieve data quickly.
+Developers use web UIs, APIs, or libraries to send data to storage onramps. Behind the scenes, storage onramps receive the data and handle the underlying processes to store it in a reliable way, making deals with Filecoin storage providers.
 
-Storage helpers are available for NFTs (non-fungible tokens) or general data. If you are storing NFTs, check out [Storing NFTs](storage-onramps.md#storing-nfts). For general data, skip to [General data storage](storage-onramps.md#general-data-storage).
+The available storage onramps are: 
 
-#### Storing NFTs
-
-* [The NFT.Storage flagship product](https://nft.storage/nft-storage-flagship-product) focuses on the enduring preservation of NFTs with a low one-time fee per. First mint your NFTs, then send us the NFT data that we preserve in endowment-backed long-term Filecoin storage. As an NFT.Storage user, you support our platform when you choose Pinata and Lighthouse for hot storage and [use our referral links here](https://nft.storage/blog/announcing-our-new-partnerships-with-pinata-and-lighthouse), helping to sustain our valuable public goods. Your NFTs will also be included in the NFT Token Checker, a tool for block explorers, marketplaces and wallets to show verification that NFT collections, tokens, and CIDs are preserved by NFT.Storage.
-* [NFT.Storage Classic](https://nft.storage/nft-storage-classic) is a free service that provides hot data storage on the decentralized Filecoin network with fast retrieval through IPFS. As of June 30, 2024, we have officially decommissioned NFT.Storage Classic uploads, however retrieval of existing data remains operational. For NFT data already uploaded through NFT.Storage Classic, the NFT.Storage Gateway makes the data retrievable on block explorers, marketplaces and dapps.
-
-#### General data storage
-
-* [Chainsafe Storage API](https://docs.storage.chainsafe.io) is an underlayer to Chainsafe’s encrypted IPFS & Filecoin file storage system. It offers S3-compatible bucket-style APIs for easy migration of data. As of September 2022, it’s the only storage helper with built-in encryption.
-* [Web3.Storage](https://web3.storage/docs) is a fast and open developer platform for [storing and interacting with data](https://blog.web3.storage/). Upload any data and Web3.Storage will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There are JavaScript and Go libraries for the API, as well as a no-code web uploader. Free and paid plans are available.
-
-
+* [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
+* [Akave](https://www.akave.ai/) is "revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces."  
+* [Storacha](https://storacha.network/) is an open hot storage network scales IPFS and Filecoin. Upload any data and Storacha will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There Storacha [docs](https://docs.storacha.network/) detail the JavaScript and Go API libraries, and there is a no-code web uploader available as well.
+* [Singularity](https://singularity.storage/) "facilitates onboarding of large quantaties of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
+* [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
+* [Ramo](https://www.ramo.io/) is "a network coordinating people, hardware and capital to build a more open and resilient internet infrastructure for everyone."  
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/how-storage-works/storage-onramps)

@@ -23,7 +23,6 @@ description: >-
   * [Forest](https://github.com/ChainSafe/forest) - Rust.
 * Lotus Docker Hub Images (unofficial):
   * [`glif/lotus`](https://github.com/glifio/filecoin-docker)
-  * [`textile/lotus`](https://hub.docker.com/r/textile/lotus)
 
 ### Networks
 
@@ -58,11 +57,15 @@ Tools to check status and details of the network and chain.
 * [`filecoin.tools`](https://filecoin.tools) - check your CID’s storage deal status. Also provides an API - check [`filecoin.tools/docs`](https://filecoin.tools/docs) for reference
 * [Deals list at `Filfox.io`](https://filfox.info/en/deal)
 
-## Storage Web Applications
+## Storage Onramps
 
 Web-based applications that store your data on Filecoin. No command-line or coding experience required.
 
-* [ChainSafe Files](https://files.chainsafe.io/) - Dropbox-style UI, login with OAuth or general MetaMask
+* [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
+* [Storacha](https://storacha.network/) is an open hot storage network scales IPFS and Filecoin. Upload any data and Storacha will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There Storacha [docs](https://docs.storacha.network/) detail the JavaScript and Go API libraries, and there is a no-code web uploader available as well.
+* [Singularity](https://singularity.storage/) "facilitates onboarding of large quantaties of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
+* [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
+* [Ramo](https://www.ramo.io/) is "a network coordinating people, hardware and capital to build a more open and resilient internet infrastructure for everyone."  
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   * to securely capture, store and verify human history
   * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/) or the [Filecoin blog interview](https://filecoin.io/blog/starling-framework/)
@@ -75,12 +78,9 @@ Developer tools, API clients & storage services that developers can use to build
 ### Storage APIs for app builders
 
 * [Lighthouse](https://www.lighthouse.storage/) - Lighthouse offers a suite of tools to enable builders to store data on Filecoin when building apps.
-* [`NFT.storage`](https://nft.storage/) - Preserve your NFTs with our new low-cost, easy-to-use solution, ensuring verifiable long-term storage on Filecoin.
-* [`Web3.storage`](https://web3.storage/) - service from Protocol Labs for storing off-chain _dApp_ data on IPFS and Filecoin, with help from Pinata (a fast IPFS Pinning Service) to [distribute the content across IPFS](https://www.pinata.cloud/blog/protocol-labs-and-pinata)
-* [`Textile.io's tools`](https://docs.textile.io/) - suite of tools for interacting with IPFS and Filecoin, including [Tableland](https://tableland.xyz/) and Filecoin bridges to Polygon and NEAR.
-* [Fleek’s tools](https://fleek.co/) - provides access to Fleek’s hosted services using IPFS, Textile, Filecoin, Ethereum, etc. More Fleek developer resources are available at [Fleek.xyz](https://fleek.xyz/).
-  * [Space SDK](https://docs.fleek.co/space-sdk/overview/) - modular JavaScript/Typescript library and set of interfaces that packages tools and features enabled by Open Web protocols like IPFS, Textile, Filecoin, and Ethereum.
-  * [Space Daemon](https://docs.fleek.co/space-daemon/overview/) - packages together IPFS and tools from Textile into one easy to install background service.
+* [Fleek’s tools](https://fleek.xyz/) - provides access to Fleek’s hosted services using IPFS, Filecoin, Ethereum, etc.
+* [Akave](https://www.akave.ai/) is "revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces."  
+
 
 ### Message signing tools
 
@@ -91,7 +91,6 @@ Developer tools, API clients & storage services that developers can use to build
 
 ### Wallet-related tools
 
-* [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges.
 * [FilSnap MetaMask Plugin](https://metamask.io/flask/) - MetaMask has a new plugin system currently still in beta that developers can try out. The MM UI will not change but Filecoin keys are in the MM vault.
 
 ### Node Infrastructure & APIs
@@ -149,7 +148,6 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 ### Storage client and miner programs
 
-* [Destor Network](https://destor.com/destor-network/overview) - a white glove service for storage provider and large institutional client onboarding to Filecoin.
 * [Filecoin Plus Verified Data Program](https://www.fil.org/filecoin-plus)
   * Incentivizes valuable data stored on Filecoin with a social trust network for verified data.
   * Clients can apply to allocators to receive DataCap and incentivize storage providers at 10x to their quality-adjusted power, increasing probability of block rewards.
