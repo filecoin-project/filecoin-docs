@@ -96,7 +96,12 @@ You can now use MetaMask to interact with the Filecoin network.
 
 MetaMask is compatible with the Ledger hardware wallet. There are 2 options for Ledger apps that support Filecoin:
 - **Filecoin Ledger App** - compatible with MetaMask or the [Glif.io](https://glif.io/wallet) wallet 
-- **Ethereum Ledger App** - ***currently deprecated*** for Filecoin as of v1.15.0 (previous versions will work) until Ledger enables their upcoming Dynamic Networks feature (see [this Ledger issue](https://github.com/LedgerHQ/app-ethereum/issues/765#issuecomment-2813565683) for more info)
+- **Ethereum Ledger App** - ***currently deprecated*** for Filecoin as of v1.15.0 (previous versions will work) until Ledger releases their upcoming Dynamic Networks feature
+
+Note that MetaMask supports Filecoin EVM addresses that follow the Ethereum `0x` format (see [this section](https://docs.filecoin.io/basics/assets/transfer-fil) for more info on address types). To use native Filecoin address types that begin with `f`, you can use:
+- [Glif.io](https://glif.io/wallet) wallet ( usable with Ledger hardware),
+- [Filecoin MetaMask Wallet](https://snaps.metamask.io/snap/npm/filsnap/) that can be installed from MetaMask's built-in Snaps menu or
+- Ledger Live and the Filecoin Ledger App
 
 Follow the instructions below to connect your Filecoin addresses within MetaMask to your Ledger wallet. This guide assumes you have [Ledger Live](https://www.ledger.com/ledger-live) and [MetaMask](https://metamask.io/) installed on your computer.
 
