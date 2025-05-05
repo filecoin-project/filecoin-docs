@@ -98,16 +98,20 @@ MetaMask is compatible with the Ledger hardware wallet. There are 2 options for 
 - **Filecoin Ledger App** - compatible with MetaMask or the [Glif.io](https://glif.io/wallet) wallet 
 - **Ethereum Ledger App** - ***currently deprecated*** for Filecoin as of v1.15.0 (previous versions will work) until Ledger releases their upcoming Dynamic Networks feature
 
+#### Note on Filecoin EVM vs Native addresses
+
 Note that MetaMask supports Filecoin EVM addresses that follow the Ethereum `0x` format (see [this section](https://docs.filecoin.io/basics/assets/transfer-fil) for more info on address types). To use native Filecoin address types that begin with `f`, you can use:
 - [Glif.io](https://glif.io/wallet) wallet ( usable with Ledger hardware),
 - [Filecoin MetaMask Wallet](https://snaps.metamask.io/snap/npm/filsnap/) that can be installed from MetaMask's built-in Snaps menu or
 - Ledger Live and the Filecoin Ledger App
 
-Follow the instructions below to connect your Filecoin addresses within MetaMask to your Ledger wallet. This guide assumes you have [Ledger Live](https://www.ledger.com/ledger-live) and [MetaMask](https://metamask.io/) installed on your computer.
+Some exchanges only support specific address types (see [this table on FilecoinTl;dr](https://filecointldr.io/how-to-buy-filecoin#buy) for more info). Which address types are best to use may depend on your use case and goals.
 
 ### Install the Ledger app
 
-Before you can connect MetaMask to your Ledger, you must install the Filecoin Ledger app on your Ledger device.
+Follow these instructions to connect your Filecoin addresses within MetaMask to your Ledger wallet. This guide assumes you have [Ledger Live](https://www.ledger.com/ledger-live) and [MetaMask](https://metamask.io/) installed on your computer.
+
+Before you can connect MetaMask to your Ledger, you must install the Filecoin Ledger App on your Ledger device.
 
 1. Open Ledger Live and navigate to **My Ledger**.
 2. Connect your Ledger device and unlock it.
