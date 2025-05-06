@@ -9,7 +9,8 @@ jobs:
   update-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -24,23 +25,8 @@ jobs:
           echo "TAG_NAME=v$LATEST_VERSION" >> $GITHUB_ENV
 
       - name: Run update script
-        run: |
-          node update-versions.js ${{ env.LATEST_VERSION }}
+        run: node update-versions.js ${{ env.LATEST_VERSION }}
           
-      - name: Ensure branch exists
-        run: |
-          git fetch origin
-          if ! git show-ref --verify --quiet refs/heads/update-lotus-version; then
-            git checkout -b update-lotus-version
-          else
-            git checkout update-lotus-version
-          fi
-
-      - name: Configure Git
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
