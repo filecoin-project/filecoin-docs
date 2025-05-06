@@ -35,7 +35,7 @@ lotus --version
 ```
 
 {% hint style="success" %}
-You should see something like: `lotus version 1.32.2+mainnet+git.ff88d8269`
+You should see something like: `lotus version 1.32.3+mainnet+git.ff88d8269`
 {% endhint %}
 
 ***
