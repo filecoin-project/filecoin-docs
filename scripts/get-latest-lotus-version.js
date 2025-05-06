@@ -1,10 +1,5 @@
 const https = require('https');
 
-/**
- * Fetches the latest Lotus version from GitHub releases
- * @returns {Promise<string>} The latest version number without the 'v' prefix
- * @throws {Error} If the version cannot be fetched or parsed
- */
 async function getLatestLotusVersion() {
     return new Promise((resolve, reject) => {
         const options = {
@@ -44,29 +39,13 @@ async function getLatestLotusVersion() {
     });
 }
 
-// If this file is run directly (not imported)
 if (require.main === module) {
-    // Test mode
-    if (process.argv[2] === '--test') {
-        console.log('Testing getLatestLotusVersion function...');
-        getLatestLotusVersion()
-            .then(version => {
-                console.log('Success! Latest version:', version);
-            })
-            .catch(error => {
-                console.error('Test failed:', error.message);
-                process.exit(1);
-            });
-    } else {
-        // Normal mode - just output the version
-        getLatestLotusVersion()
-            .then(version => console.log(version))
-            .catch(error => {
-                console.error(error.message);
-                process.exit(1);
-            });
-    }
+    getLatestLotusVersion()
+        .then(version => console.log(version))
+        .catch(error => {
+            console.error(error.message);
+            process.exit(1);
+        });
 }
 
-// Export the function for use in other files
 module.exports = getLatestLotusVersion; 
