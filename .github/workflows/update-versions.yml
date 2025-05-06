@@ -3,7 +3,7 @@ name: Update Lotus Version
 on:
   workflow_dispatch:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, synchronize]
 
 jobs:
   update-version:
@@ -19,25 +19,32 @@ jobs:
       - name: Get latest Lotus version
         id: get-version
         run: |
-          # Get all releases and find the first one starting with 'v'
-          RELEASE_INFO=$(curl -s "https://api.github.com/repos/filecoin-project/lotus/releases/latest")
-          
-          # Find first tag that starts with 'v' but not 'miner'
-          TAG_NAME=$(echo "$RELEASE_INFO" | jq -r 'select(.tag_name | startswith("v") and (contains("miner") | not)) | .tag_name')
-
-          # Extract version number (remove 'v' prefix)
-          LATEST_VERSION=$(echo $TAG_NAME | sed 's/^v//')
-          
+          LATEST_VERSION=$(node scripts/get-latest-lotus-version.js)
           echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
-          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+          echo "TAG_NAME=v$LATEST_VERSION" >> $GITHUB_ENV
 
       - name: Run update script
         run: |
-          node update-versions.js ${{ env.LATEST_VERSION }}
+          node scripts/update-versions.js ${{ env.LATEST_VERSION }}
           
+      - name: Ensure branch exists
+        run: |
+          git fetch origin
+          if ! git show-ref --verify --quiet refs/heads/update-lotus-version; then
+            git checkout -b update-lotus-version
+          else
+            git checkout update-lotus-version
+          fi
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'Chore: update Lotus version references to ${{ env.LATEST_VERSION }}'
           title: 'Chore: update Lotus version references to ${{ env.LATEST_VERSION }}'
           body: |
