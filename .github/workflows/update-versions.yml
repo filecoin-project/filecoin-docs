@@ -20,11 +20,11 @@ jobs:
       - name: Get latest Lotus version
         id: get-version
         run: |
-          LATEST_VERSION=$(node get-latest-lotus-version.js)
+          LATEST_VERSION=$(node scripts/get-latest-lotus-version.js)
           echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
 
       - name: Run update script
-        run: node update-versions.js ${{ env.LATEST_VERSION }}
+        run: node scripts/update-versions.js ${{ env.LATEST_VERSION }}
           
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
