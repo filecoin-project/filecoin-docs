@@ -117,6 +117,7 @@
   * [How gas works](smart-contracts/filecoin-evm-runtime/how-gas-works.md)
   * [Precompiles](smart-contracts/filecoin-evm-runtime/precompiles.md)
 * [Programmatic storage](smart-contracts/programmatic-storage/README.md)
+  * [Cross-Chain Data Bridge(CCDB)](smart-contracts/programmatic-storage/ccdb.md)
   * [Aggregated deal-making](smart-contracts/programmatic-storage/aggregated-deal-making.md)
   * [Direct deal-making](smart-contracts/programmatic-storage/direct-deal-making.md)
   * [Data replication, renewal and repair (RaaS)](smart-contracts/programmatic-storage/raas.md)
