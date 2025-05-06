@@ -22,7 +22,6 @@ jobs:
         run: |
           LATEST_VERSION=$(node get-latest-lotus-version.js)
           echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
-          echo "TAG_NAME=v$LATEST_VERSION" >> $GITHUB_ENV
 
       - name: Run update script
         run: node update-versions.js ${{ env.LATEST_VERSION }}
