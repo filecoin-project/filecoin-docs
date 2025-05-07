@@ -19,6 +19,83 @@ Blockchain indexers are used for accessing blockchain data efficiently. They pro
 
 Additionally, blockchain indexers provide a better developer experience by leveraging well-known API standards and query languages like GraphQL.
 
+## Goldsky
+[Goldsky](https://goldsky.com/) offers high-performance subgraph hosting and realtime data indexing for blockchain data, which are GraphQL-based APIs built on top of smart contracts. With Goldsky, developers can access structured blockchain data quickly and efficiently, without needing to run their own nodes or build custom indexing backends.
+
+Goldsky officially supports the Filecoin, allowing developers to create subgraphs that index smart contract data from the Filecoin mainnet & testnet. 
+
+**Ways to Deploy a Subgraph with Goldsky**
+
+**1. Goldsky Web App (No-Code)**
+A visual interface that guides you step-by-step to configure and deploy a subgraph. Ideal for quick prototyping or less technical users.
+
+**2. Goldsky CLI (Developer Tooling)**
+A command-line interface for creating, editing, and deploying subgraphs programmatically. 
+- From Subgraph source code
+- Migrating from The Graph or any other subgraph host
+- Via instant, no-code subgraphs
+
+In tutorial, we will use no-code Goldsky’s deploy wizard to create subgragh for wFIl ERC-20 token on Filecoin testnet.
+
+#### Prerequisites
+Make sure you have the following tools and setup ready:
+- Node.js
+- Create a Goldsky account and generate Goldsky API key
+- Goldsky CLI installed
+  ```
+  curl https://goldsky.com | sh
+  ```
+- Authenticate Goldsky CLI with your API key
+  ```
+  goldsky login
+  ```
+- wFIl Contract information
+  - contract address: `0xaC26a4Ab9cF2A8c5DBaB6fb4351ec0F4b07356c4`
+  - [contract ABI](https://beryx.io/fil/calibration/address/0xaC26a4Ab9cF2A8c5DBaB6fb4351ec0F4b07356c4?tab=contract): saved it as `wfil_abi.json` locally.
+
+### Deploy a subgragh
+Goldsky’s Deploy Wizard simplifies the creation of subgraphs using a CLI-guided flow.
+#### 1. Initialize the Subgragh deployment
+Run:
+```
+goldsky subgraph init
+```
+Follow the prompts from Goldsky subgraph configuration wizard:
+- *Subgraph name*: wfil-subgraph
+- *Subgraph version*: 1.0.0
+- *Subgraph target path*: Choose default or specify your own
+- *Contract ABI source*: path/to/wfil_abi.json
+- *Contract Address*: `0xaC26a4Ab9cF2A8c5DBaB6fb4351ec0F4b07356c4`
+- *Contract network*: filecoin-testnet
+- *Start block*: which block is the wfil created, can be 0.
+- *Contract name*: wfil
+- *Enable subgraph call handlers?*: no
+
+Once you fill out the above information following the prompt, Goldsky wizard will guide you to build and deploy your subgragh. Goldsky will output a deployment URL (GraphQL endpoint) once the subgraph is successfully deployed.
+
+Once the subgragh is deployed, it will take time to index all the data for your smart contract. You can also check the indexing status of your subgragh from the [Goldsky dashboard](https://app.goldsky.com/). 
+
+### Query the Subgraph
+Use the provided GraphQL endpoint to query the subgraph. 
+
+For example:
+```
+{
+  transfers(
+    where: {from: "0xf49d33f54ce41354dcd7e698aa54256781a6dd30"}
+    orderBy: timestamp_
+    orderDirection: desc
+    first: 10
+  ) {
+    id
+    from
+    to
+    amount
+    timestamp_
+  }
+}
+```
+Use the Goldsky Playground or integrate it into your app to consume indexed data.
 ## The Graph
 
 [The Graph](https://thegraph.com) is a decentralized protocol for indexing blockchain data. It enables developers to build and publish custom open APIs, known as subgraphs, that applications can query to retrieve blockchain data using GraphQL in a time-efficient manner.
