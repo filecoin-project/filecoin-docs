@@ -103,7 +103,7 @@ MetaMask is compatible with the Ledger hardware wallet. There are 2 options for 
 Note that MetaMask supports Filecoin EVM addresses that follow the Ethereum `0x` format (see [this section](https://docs.filecoin.io/basics/assets/transfer-fil) for more info on address types). To use native Filecoin address types that begin with `f`, you can use:
 - [Glif.io](https://glif.io/en/wallet) wallet (also compatible with the Filecoin Ledger App),
 - Ledger Live and the Filecoin Ledger App or
-- [Filecoin MetaMask Wallet](https://snaps.metamask.io/snap/npm/filsnap/) which can be installed from MetaMask's built-in Snaps menu
+- [Filecoin MetaMask Wallet](https://snaps.metamask.io/snap/npm/filsnap/) installable from the right menu in Metamask under *Snaps*
 
 Some exchanges only support specific address types (see [this table on FilecoinTl;dr](https://filecointldr.io/how-to-buy-filecoin#buy) for more info). Which address types are best to use may depend on your use case and goals.
 
