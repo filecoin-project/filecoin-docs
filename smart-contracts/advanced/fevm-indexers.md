@@ -37,7 +37,7 @@ A command-line interface for creating, editing, and deploying subgraphs programm
 
 In this tutorial, we will use no-code Goldsky’s deploy wizard to create a subgraph for the wFIl ERC-20 token on the Filecoin testnet.
 
-#### Prerequisites
+### Prerequisites
 Make sure you have the following tools and setup ready:
 - Node.js
 - Create a Goldsky account and generate a Goldsky API key
@@ -55,7 +55,7 @@ Make sure you have the following tools and setup ready:
 
 ### Deploy a subgraph
 Goldsky’s Deploy Wizard simplifies the creation of subgraphs using a CLI-guided flow.
-#### 1. Initialize the Subgraph deployment
+
 Run:
 ```
 goldsky subgraph init
@@ -71,9 +71,9 @@ Follow the prompts from the Goldsky subgraph configuration wizard:
 - *Contract name*: wfil
 - *Enable subgraph call handlers?*: no
 
-Once you fill out the above information following the prompt, the Goldsky wizard will guide you through building and deploying your subgraph. Once the subgraph is successfully deployed, Goldsky will output a deployment URL (GraphQL endpoint).
+Once you complete the above information following the prompt, the Goldsky wizard will guide you through building and deploying your subgraph. Once the subgraph is successfully deployed, Goldsky will output a deployment URL (GraphQL endpoint).
 
-Once the subgraph is deployed, indexing all the data for your smart contract will take time. You can also check the indexing status of your subgraph from the [Goldsky dashboard](https://app.goldsky.com/). 
+Indexing all the data for your smart contract will take time after the subgraph is deployed. You can also check the indexing status of your subgraph from the [Goldsky dashboard](https://app.goldsky.com/). 
 
 ### Query the Subgraph
 You can use the provided GraphQL endpoint to query the subgraph. 
