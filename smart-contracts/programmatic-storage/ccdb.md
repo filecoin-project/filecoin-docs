@@ -20,30 +20,30 @@ This tutorial will guide you through:
 ## Architecture Overview
 A combination of on-chain contracts and off-chain services powers the cross-chain data bridge. At a high level, it consists of:
 1. [**Smart contracts**](https://github.com/FIL-Builders/onramp-contracts)
-    - **On-Ramp Contract (Source Chain – Any EVM Chain)**
+    - **OnRamp Contract (Source Chain – Any EVM Chain)**
         - This smart contract receives storage requests from users.
         - Verifies the data aggregation proof.
         - It holds the user’s payment in escrow and emits an event for off-chain agents.
     - **Oracle Contract (Source Chain – Same EVM Chain)**
         - Receives storage confirmations from Filecoin.
-        - Validates proofs and triggers the On-Ramp to release escrowed funds.
+        - Validates proofs and triggers the OnRamp to release escrowed funds.
     - **Prover Contract (Destination Chain – Filecoin Network)**
         - Verifies storage deals sealed on Filecoin.
         - Sends attestations (proofs) back to the source chain via a cross-chain messaging layer.
     - **Cross-Chain Messaging Bridge (e.g, Axelar)**
         - The system uses the Axelar network to transport messages between Avalanche and Filecoin.
 2. [**xChain Client (Off-Chain Agent)**](https://github.com/FIL-Builders/xchainClient)
-    - Monitors the On-Ramp contract for new data offers.
+    - Monitors the OnRamp contract for new data offers.
     - Handles file packaging (CAR file creation), CommP calculation, and deal submission to Filecoin.
     - It can also serve as a storage buffer for storage providers to retrieve data to make storage deals on Filecoin.
 ### High-Level Workflow
 ![](../../.gitbook/assets/CCDB.gif)
 The bridge’s workflow can be summarized in a multi-step process:
-1. **Store Data**: A user submits a storage offer to the On-Ramp contract on their EVM-compatible chain.
+1. **Upload Data**: A user submits a storage offer to the OnRamp contract on their EVM-compatible chain.
 1. **Data Aggregation**: The xChain client detects the offer from smart contract events, fetches the data, aggregates smaller data into a big piece, and sends the proof of aggregation back to the onramp contract.
 1. **Filecoin storage deal making**: The xChain client will send the storage deal proposal to the storage providers either through an on-chain smart contract or an off-chain process.
 1. **Bridging Proofs**: Once Filecoin confirms the data is stored, the Prover contract will receive the deal notification automatically and emit a proof via the Axelar cross-chain messaging network.
-1. **Payment Release**: The Oracle contract on the source chain verifies the proof and instructs the On-Ramp to release payment.
+1. **Payment Release**: The Oracle contract on the source chain verifies the proof and instructs the OnRamp to release payment.
 
 Each component plays a vital role in ensuring trust-minimized and seamless data storage between chains. This modular design also makes the bridge extensible—one could integrate a different messaging layer or deal aggregator without changing the overall flow.
 
@@ -53,7 +53,7 @@ Now that we understand the architecture, let’s see how to interact with the cr
 **Pre-Requisites**
 - **RPC endpoints** for your source EVM chain (e.g., Avalanche Fuji).
 - **Wallet** with enough native tokens (FIL & AVAX) and ERC-20 tokens for fees and storage payments.
-- Access to On-Ramp and Oracle contracts on Avalanche Fuji & Prover contract on the Filecoin network.
+- Access to OnRamp and Oracle contracts on Avalanche Fuji & Prover contract on the Filecoin network.
     - In this tutorial, we are going to use the pre-deployed contracts on Avalanche and Filecoin. The details are [here](#deployed-contracts-info).
     - In any case, if you need to deploy your version. Please follow the [deployment instructions](https://github.com/fil-builders/onramp-contracts?tab=readme-ov-file#-getting-started) on GitHub.
 
@@ -208,7 +208,7 @@ The storage should be completed after some time (depending on the speed of the F
     const status = await onRamp.getOfferStatus(offerId);
     ```
     
-ou can also refer to this [dataBridgeDemo repo](https://github.com/FIL-Builders/dataBridgeDemo) as a reference for the implementation of storing your application data on Avalanche to the Filecoin network.
+You can also refer to this [dataBridgeDemo repo](https://github.com/FIL-Builders/dataBridgeDemo) as a reference for the implementation of storing your application data on Avalanche to the Filecoin network.
 
 ## Best Practices
 
