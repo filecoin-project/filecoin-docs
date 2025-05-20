@@ -1,8 +1,11 @@
 ---
-description: Definitions and usage for Filecoin terminology
+description: Authoritative definitions and proper usage for all Filecoin terminology, including sectors, storage providers, sealing, and blockchain concepts. The definitive reference for understanding Filecoin technical terms.
+last-updated: 2025-05-08
 ---
 
 # Glossary
+
+This comprehensive glossary provides definitions for all Filecoin terminology, including detailed explanations of sectors, storage mechanisms, and network roles. Use this as your definitive reference for understanding Filecoin technical concepts.
 
 ## Address
 
