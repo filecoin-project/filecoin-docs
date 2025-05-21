@@ -36,7 +36,7 @@ You need to understand the various earning mechanisms in the Filecoin network.
 
 ### Daily fees and startup readiness (FIP-0100)
 
-With the activation of [FIP-0100](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0100.md) in network version 25, all new sectors - and any sectors that are extended or updated - incur a daily fee.
+With the activation of [FIP-0100](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0100.md) in network version 25, all new sectors — and any sectors that are extended or updated — incur a daily fee.
 
 This fee replaces the previous batch fee model and introduces a predictable cost structure tied to each sector’s quality-adjusted power and the network’s circulating supply.
 
@@ -48,6 +48,7 @@ Fee debt does not directly cause faults. However, it can impact operations:
 
 - A miner with fee debt may be blocked from submitting certain messages (e.g., pre-commits or recoveries).
 - If the balance is too low to pay for WindowPoSt messages, sectors may fault.
+- Critically, a miner with outstanding fee debt cannot win block rewards until the debt is repaid.
 
 To avoid this, storage providers should:
 
@@ -58,7 +59,7 @@ To avoid this, storage providers should:
 
 Miners become eligible to win block rewards once they reach **10 TiB of raw byte power (RBP)**.
 
-However, rewards are not guaranteed as soon as that threshold is met. Block production is probabilistic, and smaller miners may wait longer to win a block - especially when competing against larger ones.
+However, rewards are not guaranteed as soon as that threshold is met. Block production is probabilistic, and smaller miners may wait longer to win a block — especially when competing against larger ones.
 
 This creates a funding gap during the startup phase.
 
@@ -68,7 +69,9 @@ New storage providers must plan for this by funding their miner actor with enoug
 - Support message submission (like WindowPoSt),
 - And continue sealing until rewards start arriving.
 
-While the amount of FIL required is relatively small compared to overall infrastructure costs, it is operationally critical. Without it, the miner may become stuck - unable to seal new sectors or submit required messages due to fee debt or insufficient balance.
+While the amount of FIL required is relatively small compared to overall infrastructure costs, it is operationally critical. Without it, the miner may become stuck — unable to seal new sectors, submit required messages, or produce blocks and win block rewards due to fee debt or insufficient balance.
+
+To estimate how much FIL may be needed, review the [FIP-0100 discussion thread](https://github.com/filecoin-project/FIPs/discussions/1105) or use the [real-time fee calculator](https://penalty.660688.xyz/dailyfee) to model your expected onboarding rate.
 
 ## Make sure you have the right skills <a href="#make-sure-you-have-the-right-skills" id="make-sure-you-have-the-right-skills"></a>
 
