@@ -27,6 +27,10 @@ If you are already running your own lotus node, you can also [manage FIL wallets
 | [Trust wallet](https://trustwallet.com/)                                                       | A multi-currency wallet, the official wallet of Binance.                                          | Unknown |
 | [ImToken](https://token.im/)                                                                   | A multi-currency wallet.                                                                          | Unknown |
 | [MathWallet](https://mathwallet.org/en-us/)                                                    | A multi-currency wallet.                                                                          | Unknown |
+| [FoxWallet](https://foxwallet.com/)                                                            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                               | Yes     |
+| [FilSnap MetaMask Snap](https://snaps.metamask.io/snap/npm/filsnap/)                           | MetaMask has an extension system called [Snaps](https://metamask.io/snaps/).                      | Yes     |
+| [D'CENT Wallet](https://www.dcentwallet.com/en)                                                | A hardware and mobile wallet supporting Filecoin mainnet transactions, with f1 and f4 address support. | Yes |
+
 
 ### Hot versus cold
 
