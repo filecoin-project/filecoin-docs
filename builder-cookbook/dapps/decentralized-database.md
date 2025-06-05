@@ -26,7 +26,7 @@ Let's take storage deal aggregator/RaaS as an example to demonstrate how to inte
 
 When uploading data via aggregator/RaaS providers to the Filecoin network, you can choose to store its metadata in Tableland tables instead of storing it in the chain state. This metadata can then be easily accessed from the Tableland database and utilized directly within your application.
 
-If you require sample datasets to use, you can use the [Filecoin Dataset Explorer](https://dataset-explorer.vercel.app/).
+If you require sample datasets to use, you can use the [Filecoin Dataset Explorer](https://datasets.filecoin.io/).
 
 As an example, let's design the deal aggregator table as follows. However, you can certainly add more columns to this table to include additional information, such as RaaS registration.
 
@@ -129,7 +129,7 @@ function complete(
 }
 ```
 
-4. **Query aggregation records**&#x20;
+4. **Query aggregation records**
 
 By using the Tableland SDK, you can easily query the aggregation or RaaS status of all the data stored with the aggregator using SQL statements. For instance, you can retrieve all records associated with a specific CID by executing a SELECT statement.
 
@@ -143,6 +143,4 @@ console.log(results);
 
 To learn how to write different select statements using Tableland SDK, you can refer to [here](https://docs.tableland.xyz/sdk/database/prepared-statements).
 
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/builder-cookbook/dapps/decentralized-database)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/builder-cookbook/dapps/decentralized-database)

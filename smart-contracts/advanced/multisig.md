@@ -40,7 +40,8 @@ A web UI for the Safe multisig on Filecoin is available at:
 
 - [https://safe.filecoin.io](https://safe.filecoin.io) - the default network is set to [Filecoin Mainnet](https://docs.filecoin.io/networks/mainnet)
   
-![SafeUI](https://github.com/user-attachments/assets/7bb41259-ef5d-4060-9dbc-b688d44127d3)
+![FilecoinSafeUI](https://github.com/user-attachments/assets/60044b7a-e6fa-4085-bcd9-80bc186975c3)
+
 
 
 #### Safe Troubleshooting

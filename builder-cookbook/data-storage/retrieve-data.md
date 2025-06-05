@@ -123,8 +123,8 @@ const options = {
 
 ***
 
-For quick retrieval of existing datasets with the methods above, check out the [Filecoin Dataset Explorer](https://dataset-explorer.vercel.app/).
+For quick retrieval of existing datasets with the methods above, check out the [Filecoin Dataset Explorer](https://datasets.filecoin.io/).
 
 ***
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/builder-cookbook/data-storage/retrieve-data)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/builder-cookbook/data-storage/retrieve-data)

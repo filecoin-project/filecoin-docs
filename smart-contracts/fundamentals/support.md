@@ -8,7 +8,9 @@ description: >-
 
 ## Slack
 
-Like many other distributed teams, the FVM team works mostly on Slack. You can join the Filecoin Project Slack for free by going to [`filecoin.io/slack`](https://filecoin.io/slack/). The FVM team hangs out in the following channels:
+Like many other distributed teams, the Filecoin developer relations, lead by the [FIL Builders](https://fil.builders/) team, works mostly on Slack and Discord. You can join the Filecoin Project Slack for free by going to [`filecoin.io/slack`](https://filecoin.io/slack/) and the Discord by going to [https://discord.com/invite/filecoin](https://discord.com/invite/filecoin).  
+
+The following Slack channels are most relevant for Filecoin builders: 
 
 * [`#fil-builders`](https://filecoinproject.slack.com/archives/CRK2LKYHW) for building solutions on FVM and Filecoin
 * [`#fil-fvm-dev`](https://filecoinproject.slack.com/archives/C029MT4PQB1) for development of the FVM

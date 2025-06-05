@@ -18,14 +18,7 @@ These endpoints are limited to [read-only Filecoin JSON RPC API calls](../../ref
 ## [ChainupCloud](https://cloud.chainup.com)
 
 * HTTPS: `https://filecoin-calibration.chainup.net/rpc/v1`
-* WebSocket: `wss://filecoin-calibration.chainup.net/rpc/v1`
 * [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
-
-## [dRPC](https://drpc.org/chainlist/filecoin)
-
-* HTTPS: `https://filecoin.drpc.org`
-* WebSocket: `wss://filecoin.drpc.org`
-* [dRPC documentation](https://docs.drpc.org/)
 
 ## [Glif](https://api.calibration.node.glif.io)
 
@@ -41,11 +34,6 @@ FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --
 
 * When using a lite-node, omit `/rpc/v1` from Glif’s WebSocket address.
 * [Glif documentation](https://hosting.glif.io/)
-
-## [Lava](https://docs.lavanet.xyz/filecoin)
-
-* HTTPS: `https://filecoin-testnet.lava.build`
-* [Lava documentation](https://docs.lavanet.xyz/filecoin-dev)
 
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/networks/calibration/rpcs)

@@ -1,7 +1,7 @@
 name: Update Lotus Version
 
 on:
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
   pull_request:
     types: [opened, reopened]
 
@@ -9,7 +9,8 @@ jobs:
   update-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -19,26 +20,16 @@ jobs:
       - name: Get latest Lotus version
         id: get-version
         run: |
-          # Get all releases and find the first one starting with 'v'
-          RELEASE_INFO=$(curl -s "https://api.github.com/repos/filecoin-project/lotus/releases" | \
-            jq -r '[.[] | select(.tag_name | startswith("v"))] | first')
-          
-          # Extract the tag name
-          TAG_NAME=$(echo "$RELEASE_INFO" | jq -r .tag_name)
-          
-          # Extract version number (remove 'v' prefix)
-          LATEST_VERSION=$(echo $TAG_NAME | sed 's/^v//')
-          
+          LATEST_VERSION=$(node scripts/get-latest-lotus-version.js)
           echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
-          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
 
       - name: Run update script
-        run: |
-          node update-versions.js ${{ env.LATEST_VERSION }}
+        run: node scripts/update-versions.js ${{ env.LATEST_VERSION }}
           
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'Chore: update Lotus version references to ${{ env.LATEST_VERSION }}'
           title: 'Chore: update Lotus version references to ${{ env.LATEST_VERSION }}'
           body: |

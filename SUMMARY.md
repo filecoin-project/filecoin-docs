@@ -35,7 +35,7 @@
   * [Serving retrievals](basics/how-retrieval-works/serving-retrievals.md)
   * [Saturn](basics/how-retrieval-works/saturn.md)
 * [Project and community](basics/project-and-community/README.md)
-  * [Chat and discussion forums](basics/project-and-community/chat-and-discussion-forums.md)
+  * [Forums and FIPs](basics/project-and-community/forums-and-FIPs.md)
   * [Filecoin compared to](basics/project-and-community/filecoin-compared-to.md)
   * [Filecoin FAQs](basics/project-and-community/filecoin-faqs.md)
   * [Related projects](basics/project-and-community/related-projects.md)
@@ -80,6 +80,13 @@
   * [Storage](storage-providers/skills/storage.md)
   * [Sales](storage-providers/skills/sales.md)
   * [Industry](storage-providers/skills/industry.md)
+* [PDP](storage-providers/pdp/README.md)
+  * [Prerequisites](storage-providers/pdp/prerequisites.md)
+  * [Install & Run Lotus](storage-providers/pdp/install-and-run-lotus.md)
+  * [Install & Run YugabyteDB](storage-providers/pdp/install-and-run-yugabytedb.md)
+  * [Install & Run Curio](storage-providers/pdp/install-and-run-curio.md)
+  * [Enable PDP](storage-providers/pdp/enable-pdp.md)
+  * [Use PDP](storage-providers/pdp/use-pdp.md)
 
 ## Nodes
 
@@ -112,6 +119,7 @@
 * [Programmatic storage](smart-contracts/programmatic-storage/README.md)
   * [Aggregated deal-making](smart-contracts/programmatic-storage/aggregated-deal-making.md)
   * [Direct deal-making](smart-contracts/programmatic-storage/direct-deal-making.md)
+  * [Cross-Chain Data Bridge(CCDB)](smart-contracts/programmatic-storage/ccdb.md)
   * [Data replication, renewal and repair (RaaS)](smart-contracts/programmatic-storage/raas.md)
   * [RaaS interfaces](smart-contracts/programmatic-storage/raas-interfaces.md)
 * [Developing contracts](smart-contracts/developing-contracts/README.md)

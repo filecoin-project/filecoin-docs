@@ -6,7 +6,7 @@ description: >-
 
 # Drand
 
-This page covers how Drand is used within the Filecoin network. For more information on Drand generally, [take a look at the project’s documentation](https://drand.love/docs).
+This page covers how Drand is used within the Filecoin network. For more information on Drand generally, [take a look at the project’s documentation](https://www.drand.love/developers).
 
 ## Randomness outputs
 

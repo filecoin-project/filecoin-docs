@@ -107,6 +107,15 @@ When `GasFeeCap`, `GasPremium` and `MaxFee` are set to `0`, Lotus will do the ga
 
 Some JavaScript libraries attempt to estimate the gas fees before sending the transaction to the Filecoin network. However, they sometimes underestimate, leading to transactions getting stuck in the mempool. If you are noticing your transactions getting stuck in the mempool after sending them to the network using a JavaScript library, try `GasFeeCap`, `GasPremium`, and `MaxFee` to `0`.
 
+### Filecoin's EVM and Send method number
+
+A summary of the Filecoin's EVM differences with Ethereum is available in the [FEVM - Difference with Ethereum section](../../smart-contracts/filecoin-evm-runtime/difference-with-ethereum.md).
+
+{% hint style="danger" %}
+Note that when sending funds to a Filecoin EVM recipient address (f410f or 0x), it is recommended to always use the **InvokeEVM** **method 3844450837** to prevent possible loss of funds in case the recipient is a smart contract. The `lotus send 0x` CLI method always defaults to this method number.
+{% endhint %}
+
+
 ## Integration
 
 You can interact with the network by using Lotus CLI or using the [JSON-RPC APIs](https://lotus.filecoin.io/reference/basics/overview/). Follow the [API tokens guide](https://lotus.filecoin.io/docs/developers/api-access/) to set up API tokens on your node and grant necessary permissions. To find all CLI usage, run `lotus -h` in your lotus folder.
