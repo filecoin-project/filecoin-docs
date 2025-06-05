@@ -59,6 +59,7 @@ The following storage providers are running on the Calibration testnet.
 * [Calibration Faucet - Chainsafe](https://faucet.calibnet.chainsafe-fil.io)
 * [Calibration Faucet - Zondax](https://beryx.zondax.ch/faucet/)
 * [Calibration Faucet - Forest Explorer](https://forest-explorer.chainsafe.dev/faucet/calibnet)
+* [Calibration USDFC Faucet - Chainsafe](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
 * [DataCap allocation](https://faucet.calibnet.chainsafe-fil.io)
 * [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 * [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
