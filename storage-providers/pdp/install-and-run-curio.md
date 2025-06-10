@@ -31,11 +31,11 @@ Clone the repository and switch to the PDP branch:
 ```sh
 git clone https://github.com/filecoin-project/curio.git
 cd curio
-git checkout feat/pdp
+git checkout synapse
 ```
 
 {% hint style="info" %}
-Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.&#x20;
+Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.
 {% endhint %}
 
 ```sh

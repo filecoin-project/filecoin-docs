@@ -7,6 +7,15 @@ description: >-
 
 # Use PDP
 
+{% hint style="danger" %}
+DEPRECATED DEVELOPER TOOL
+
+This documentation refers to the legacy `pdptool`, which is intended only for low-level developer testing.\
+It is not the recommended method for onboarding or interacting with PDP Storage Providers.\
+\
+For current usage, including working with live PDP SPs and submitting real deals, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk) and [Synapse dApp Tutorial](https://github.com/FIL-Builders/fs-upload-dapp).
+{% endhint %}
+
 PDP ensures that your data is verifiably stored by a Filecoin Storage Provider using cryptographic proofs without needing to retrieve the file itself.
 
 ### Prerequisites
@@ -33,7 +42,7 @@ go build .
 
 ***
 
-### Authenticate Your Client  (JWT Token)
+### Authenticate Your Client (JWT Token)
 
 You first need to authenticate your pdptool with a PDP-enabled Storage Provider
 
@@ -95,7 +104,7 @@ Location: /pdp/proof-sets/created/0xf91617ef532748efb5a51e64391112e5328fbd9a5b9a
 Response: 
 ```
 
-Use the `0x`  transaction hash from the previous output to monitor proof set creation status:
+Use the `0x` transaction hash from the previous output to monitor proof set creation status:
 
 ```sh
 ./pdptool get-proof-set-create-status \
@@ -234,6 +243,6 @@ You’ve now:
 🧭 Next: Track your proof sets in the PDP Explorer
 
 * [Calibration PDP Explorer](https://calibration.pdp-explorer.eng.filoz.org)
-* [Mainnet PDP Explorer](https://pdp-explorer.eng.filoz.org)&#x20;
+* [Mainnet PDP Explorer](https://pdp-explorer.eng.filoz.org)
 
 💬 Questions? Join the conversation on Filecoin Slack: [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)
