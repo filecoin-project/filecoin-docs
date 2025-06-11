@@ -104,7 +104,7 @@ lotus wallet new bls  # Create worker wallet
 lotus wallet list     # List all created wallets
 ```
 
-Make sure to send a small amount of FIL to each wallet - we recommend 1 FIL per wallet to ensure the creation of your Storage Provider in Curio. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
+Make sure to send a small amount of FIL (Mainnet) or tFIL (Calibration) to each wallet - we recommend 1 FIL/tFIL per wallet to ensure the creation of your Storage Provider in Curio. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
 
 {% hint style="info" %}
 Both wallets will be used during Curio initialisation.
