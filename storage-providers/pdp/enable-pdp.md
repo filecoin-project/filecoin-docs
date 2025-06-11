@@ -7,6 +7,15 @@ description: >-
 
 # Enable PDP
 
+{% hint style="danger" %}
+**DEPRECATED DEVELOPER TOOL**\
+\
+This documentation refers to the legacy `pdptool`, which is intended only for low-level developer testing.\
+It is not the recommended method for onboarding or interacting with PDP Storage Providers.
+
+For current usage, including working with live PDP SPs and submitting real deals, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk) and [Synapse dApp Tutorial](https://github.com/FIL-Builders/fs-upload-dapp).
+{% endhint %}
+
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://docs.curiostorage.org/experimental-features/enable-pdp">PDP Documentation</a></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">Filecoin Slack - #fil-pdp</a></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="../../basics/assets/metamask-setup.md">Filecoin Wallet - MetaMask Setup</a></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr></tbody></table>
 
 ### Attach Storage Locations
@@ -52,7 +61,7 @@ In the HTTP section:
 * 📡 ListenAddress: `0.0.0.0:443`
 
 {% hint style="info" %}
-&#x20;You must point your domain’s A record to your server’s public IP address for Let’s Encrypt to issue a certificate.
+You must point your domain’s A record to your server’s public IP address for Let’s Encrypt to issue a certificate.
 {% endhint %}
 
 ***
@@ -116,7 +125,7 @@ You can display your Lotus wallets at any time by running:
 lotus wallet list
 ```
 
-Export & convert your new delegated wallet address private key:&#x20;
+Export & convert your new delegated wallet address private key:
 
 ```sh
 lotus wallet export <your-delegated-wallet-address> | xxd -r -p | jq -r '.PrivateKey' | base64 -d | xxd -p -c 32
@@ -135,7 +144,7 @@ Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section
 * Select **Import Key**
 
 {% hint style="success" %}
-Your 0x wallet address -  the delegated Ethereum address derived from your Filecoin Metamask private key - will be added to the **Owner Address** section of the Curio PDP page.
+Your 0x wallet address - the delegated Ethereum address derived from your Filecoin Metamask private key - will be added to the **Owner Address** section of the Curio PDP page.
 {% endhint %}
 
 Make sure to send a small amount of FIL to your 0x wallet - we recommend 5 FIL to ensure uninterrupted PDP operation during initial setup and testing.
@@ -155,7 +164,7 @@ curio run --layers=gui,pdp
 ```
 
 {% hint style="warning" %}
-&#x20;If you encounter errors binding to port 443  when starting Curio with the pdp configuration layer, run:
+If you encounter errors binding to port 443 when starting Curio with the pdp configuration layer, run:
 {% endhint %}
 
 ```sh
