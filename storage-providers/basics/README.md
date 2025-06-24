@@ -3,6 +3,7 @@ description: >-
   This page will help you understand how to plan a profitable business, design a
   suitable storage provider architecture, and make the right hardware
   investments.
+keywords: "earn FIL, Filecoin rewards, storage provider rewards, stake FIL, staking FIL, Filecoin staking, become storage provider, FIL staking alternative"
 ---
 
 # Basics
