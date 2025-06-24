@@ -2,6 +2,7 @@
 description: >-
   FIL is the cryptocurrency that powers the Filecoin network. This page explains
   what FIL is, how it can be used, and its denominations.
+keywords: "FIL token, FIL cryptocurrency, Filecoin token, what is FIL, FIL coin, get FIL"
 ---
 
 # The FIL token

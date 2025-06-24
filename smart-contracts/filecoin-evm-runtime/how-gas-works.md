@@ -3,6 +3,8 @@ description: >-
   Instead of assigning a fixed gas cost in each instruction, the Filecoin EVM
   runtime charges FIL gas based on the WASM code execution of the Filecoin EVM
   runtime interpreter.
+keywords: "filecoin gas, gas calculation, gas estimation, gas fees, how gas works, EVM gas"
+
 ---
 
 # How gas works
@@ -35,13 +37,13 @@ Let’s take a transaction as an example. Our gas parameters are:
 The total fee is `(GasUsage × BaseFee) + (Gaslimit x GasPremium)`:
 
 ```plaintext
-   1000 
+   1000
 x    20
 = 20000
 
-   2000 
-x     5 
-= 10000 
+   2000
+x     5
+= 10000
 
   20000
 + 10000

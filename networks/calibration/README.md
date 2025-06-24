@@ -10,6 +10,49 @@ description: >-
 Also see [Calibration RPCs](rpcs.md) and [Calibration Explorers](explorers.md).
 {% endhint %}
 
+The calibration network is the most realistic testnet simulation of the Filecoin mainnet.
+
+## Quick Start Commands
+
+### Download Latest Snapshot
+```bash
+# Fast download with aria2c (recommended)
+aria2c -x5 https://forest-archive.chainsafe.dev/latest/calibnet/
+
+# Alternative: wget method
+wget https://forest-archive.chainsafe.dev/latest/calibnet/
+```
+
+### Connect to Calibration Network
+
+```bash
+# Lite node (fastest startup)
+FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
+
+# Full node with snapshot import
+lotus daemon --import-snapshot <snapshot-file>
+
+# Connect to RPC endpoint
+curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"Filecoin.ChainHead","params":[],"id":1}' https://api.calibration.node.glif.io/rpc/v1
+```
+
+### Get Test FIL
+
+Quick access to faucets:
+
+* **Chainsafe**: https://faucet.calibnet.chainsafe-fil.io
+* **Zondax**: https://beryx.zondax.ch/faucet/
+* **Forest**: https://forest-explorer.chainsafe.dev/faucet/calibnet
+
+### Essential Network Info
+
+* **Chain ID**: `314159` (for MetaMask/wallets)
+* **RPC**: `https://api.calibration.node.glif.io/rpc/v1`
+* **WebSocket**: `wss://wss.calibration.node.glif.io/apigw/lotus/rpc/v1`
+* **Minimum Power**: `32 GiB`
+
+## About Calibration
+
 Prospective storage providers can experience more realistic sealing performance and hardware requirements using final proofs constructions and parameters. Storage clients can store and retrieve _real data_ on the network. Clients can also participate in deal-making workflows and storage and retrieval functionality. The sector size on the Calibration testnet is the same as on the Filecoin mainnet; 32 GiB and 64 GiB sectors are supported. This testnet also includes the Filecoin EVM-runtime features found on the Filecoin mainnet.
 
 Developers can reference pre-existing deals that are already available on the network. See the [`#fil-net-calibration-discuss` channel in the Filecoin Slack](https://filecoinproject.slack.com/archives/C01D42NNLMS) for support.
