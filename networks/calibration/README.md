@@ -30,7 +30,7 @@ wget https://forest-archive.chainsafe.dev/latest/calibnet/
 FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
 
 # Full node with snapshot import
-lotus daemon --import-snapshot <snapshot-file>
+lotus daemon --import-snapshot <calibnet-snapshot-file>
 
 # Connect to RPC endpoint
 curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"Filecoin.ChainHead","params":[],"id":1}' https://api.calibration.node.glif.io/rpc/v1
