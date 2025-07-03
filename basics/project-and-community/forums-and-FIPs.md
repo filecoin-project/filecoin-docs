@@ -37,4 +37,4 @@ Typically, the FIP lifecycle looks something like this:
 
 It is the authors' responsibility to request status updates for the FIP.  A more robust explainer of the FIP process can be found in [FIP001](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0001.md#what-is-a-fip).
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/project-and-community/chat-and-discussion-forums)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/project-and-community/forums-and-fips)
