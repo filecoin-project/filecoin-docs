@@ -2,6 +2,7 @@
 description: >-
   The calibration network is the most realistic testnet simulation of the
   Filecoin mainnet.
+keywords: "calibration testnet, calibnet, Filecoin testnet, test FIL, faucet, storage provider testing, deal making testnet, 32 GiB sectors, 64 GiB sectors, lotus daemon, bootstrap peers, genesis block, network parameters, WindowPoSt, sector sealing, snapshot, forest snapshot, calibration snapshot, download snapshot"
 ---
 
 # Calibration
