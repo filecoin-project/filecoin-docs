@@ -71,7 +71,7 @@ The code that runs both clients and storage providers is open-source. Storage pr
 
 #### Active community
 
-Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers, and storage providers. If you need help, you can reach the person who designed or built the system in question. Reach out on [Filecoin’s chat and forums](https://docs.filecoin.io/basics/project-and-community/chat-and-discussion-forums/).
+Filecoin has an active community of contributors to answer questions and help newcomers get started. There is an open dialog between users, developers, and storage providers. If you need help, you can reach the person who designed or built the system in question. Reach out on [Filecoin’s chat and forums](https://docs.filecoin.io/basics/project-and-community/forums-and-fips).
 
 
 
