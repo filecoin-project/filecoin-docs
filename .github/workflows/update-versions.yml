@@ -1,9 +1,10 @@
 name: Update Lotus Version
 
 on:
+  schedule:
+    # Run every 2 days at 03:47 UTC
+    - cron: '47 3 */2 * *'
   workflow_dispatch:
-  pull_request:
-    types: [opened, reopened]
 
 jobs:
   update-version:
