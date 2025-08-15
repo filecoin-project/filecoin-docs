@@ -8,7 +8,13 @@ jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code (merge of PR + base)
+        uses: actions/checkout@v4
+        with:
+          # For pull_request events, this is the "virtual" merge commit
+          # If the PR can't be merged (conflicts), this ref won't exist.
+          ref: ${{ github.event_name == 'pull_request' && format('refs/pull/{0}/merge', github.event.pull_request.number) || github.ref }}
+          fetch-depth: 0
 
       - name: Link Checker
         id: lychee
