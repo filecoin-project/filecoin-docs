@@ -21,10 +21,6 @@ Website: [filfox.info](https://filfox.info)
 
 Website: [filscan.io](https://filscan.io)
 
-### Filutils
-
-Website: [filutils.com](https://www.filutils.com/en)
-
 ### Starboard
 
 Website: [fvm.starboard.ventures](https://fvm.starboard.ventures/)
