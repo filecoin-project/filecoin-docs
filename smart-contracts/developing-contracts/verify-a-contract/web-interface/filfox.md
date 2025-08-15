@@ -78,7 +78,7 @@ Once submitted, Filfox will process your verification request. Upon successful v
    - Your contract's source code and ABI will now be publicly visible
 
 3. **Explore verified contracts:**
-   - Browse [other verified contracts on Filfox](https://filfox.info/en/stats/verified-contracts)
+   - Browse [other verified contracts on Filfox](https://filfox.info/en/fevm/verified-contracts)
    - Learn from verified contract examples in the ecosystem
 
 ![](../../../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-verified-contract-list.jpg)
