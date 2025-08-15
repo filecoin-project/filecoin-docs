@@ -81,17 +81,17 @@ Developer tools, API clients & storage services that developers can use to build
 * [Fleek’s tools](https://fleek.xyz/) - provides access to Fleek’s hosted services using IPFS, Filecoin, Ethereum, etc.
 * [Akave](https://www.akave.ai/) is "revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces."  
 
+### JavaScript tools
 
-### Message signing tools
+* [iso-filecoin](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin) - Filecoin Javascript Standard Library. Used by the [Metamask Filecoin Wallet](https://github.com/filecoin-project/filsnap) and [Ledger Live Filecoin app](https://www.ledger.com/coin/wallet/filecoin).
+* [iso-filecoin-react](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin-react) - React hooks and context to easily integrate Filecoin wallet interactions into your React applications. It works seamlessly with the wallet adapters from iso-filecoin-wallets.
 
-* [Filecoin Signing Tools](../built-in-actors/) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
-  * For an open source example of how to use it see the [Glif web wallet](https://github.com/glifio/wallet) on GitHub.
-* [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - \[_last update: June 2021_] pure TS / JS library for creating signed messages and interacting with Filecoin’s built-in Actors (like Payment Channel and Multisig), used by the [Filecoin Loans grant project](https://github.com/blitslabs/filecoin.loans-monorepo).
-  * On npm at [`@blitslabs/filecoin-js-signer`](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
+Check out the [documentation website](https://filecoin.hugomrdias.dev/) for more information.
 
 ### Wallet-related tools
 
-* [FilSnap MetaMask Plugin](https://metamask.io/flask/) - MetaMask has a new plugin system currently still in beta that developers can try out. The MM UI will not change but Filecoin keys are in the MM vault.
+* [Metamask Filecoin Wallet](https://github.com/filecoin-project/filsnap) - A MetaMask [Snap](https://snaps.metamask.io/snap/npm/filsnap/) to add Filecoin support to the MetaMask extension. Check out [filsnap.dev](https://filsnap.dev/) built with the [iso-filecoin](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin) and [filsnap](https://github.com/filecoin-project/filsnap) libraries.
+* [iso-filecoin-wallets](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin-wallets) - Filecoin wallet adapters to interact with different types of Filecoin wallets through a common interface. Supports Ledger, MetaMask Filecoin Wallet, and more.
 
 ### Node Infrastructure & APIs
 
@@ -110,9 +110,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 **Filecoin API clients**
 
-* [`Filecoin.js`](https://github.com/filecoin-shipyard/filecoin.js) (outdated) - higher-level JS library for interacting with Lotus via JSON-RPC API.
-* [`js-lotus-client`](https://github.com/filecoin-shipyard/js-lotus-client) - lower-level JS wrapper for basic parsing of the Lotus JSON RPC API.
-* [`lotus-json-rpc-provider`](https://www.npmjs.com/package/@coinsummer/lotus-jsonrpc-provider) (outdated) - wraps the Lotus API in TypeScript.
+* [iso-filecoin](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin) - Filecoin Javascript Standard Library includes an API client for the Lotus JSON-RPC API.
 
 **Storage provider index API**
 
