@@ -10,50 +10,15 @@ description: >-
 
 These infrastructure libraries and tools exist to speed up the development of software on top of the Filecoin network.
 
-#### Filecoin Javascript Standard Library
+#### Filecoin signing tools
 
-> Connect apps to the Filecoin blockchain with iso-filecoin.
+The [Filecoin signing tools](./) provide basic functionality for signing Filecoin transactions in pure JavaScript, WASM and Rust. Currently, the Rust and WASM implementations support:
 
-##### Features
+* Secp256k1
+* BLS
+* CBOR-JSON serialization of transactions
 
-- Lightweight, performant and type-safe
-- Support for RPC, Signature, Address, Token, Chain, Wallet and more.
-- React hooks and context to easily integrate Filecoin wallets
-- Wallet adapters for Ledger Filecoin App, MetaMask Filecoin Wallet, and more.
-
-##### Packages
-
-- [iso-filecoin](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin) - Core package
-- [iso-filecoin-react](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin-react) - React hooks and context
-- [iso-filecoin-wallets](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin-wallets) - Wallet adapters
-
-##### Resources
-
-- [Documentation](https://filecoin.hugomrdias.dev/)
-
-#### ⨎ Filsnap
-
-> A MetaMask [Snap](https://snaps.metamask.io/snap/npm/filsnap/) to add Filecoin support to the MetaMask extension.
-
-##### Features
-
-- Enables dapps access to Filecoin accounts using Metamask.
-- Manage Filecoin accounts, check balance, address, export private key and more.
-- Send and receive FIL from native and FEVM addresses.
-- Sign Filecoin messages and arbitrary data.
-- Send Filecoin messages and estimate gas fees.
-- Filecoin insights for FEVM transaction/signature requests.
-
-##### Resources
-
-- [Companion App](https://filsnap.dev/)
-- [Documentation](https://filecoin-project.github.io/filsnap/)
-
-##### Packages
-
-- [filsnap](https://github.com/filecoin-project/filsnap/tree/master/packages/snap) - Filecoin snap for Metamask
-- [filsnap-adapter](https://github.com/filecoin-project/filsnap/tree/master/packages/adapter) - Adapter to interact with Filsnap from a dapp
-- [filsnap-adapter-react](https://github.com/filecoin-project/filsnap/tree/master/packages/adapter-react) - React hooks to interact with Filsnap from a dapp
+Support for multisignature transaction signing is currently in progress, and the pure JavaScript implementation is less complete than the Rust and WASM implementations.
 
 #### Filecoin addresses
 
