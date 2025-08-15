@@ -57,7 +57,7 @@ sudo sysctl -p
 
 Diagnosing performance bottlenecks on a system is vital to keeping a well balanced [sealing pipeline](../architecture/sealing-pipeline.md).
 
-There are many good resources to check out when it comes to Linux performance troubleshooting. Brendan Gregg’s [Linux performance analysis in 60 seconds](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55) is an excellent introduction. Each one of these commands deserves a chapter on its own but can be further researched in their man pages.
+There are many good resources to check out when it comes to Linux performance troubleshooting. Brendan Gregg’s [Linux performance analysis in 60 seconds](https://www.brendangregg.com/blog/2015-12-03/linux-perf-60s-video.html) is an excellent introduction. Each one of these commands deserves a chapter on its own but can be further researched in their man pages.
 
 {% embed url="https://www.youtube.com/watch?v=ZdVpKx6Wmc8" %}
 
