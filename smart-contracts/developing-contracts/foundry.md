@@ -33,7 +33,7 @@ cd fevm-foundry-kit
 yarn install
 ```
 
-3. Export your private key from MetaMask. See the [MetaMask documentation](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) to find out how to export your private key.
+3. Export your private key from MetaMask. See the [MetaMask documentation](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/) to find out how to export your private key.
 
 4. Create your env file by running
 

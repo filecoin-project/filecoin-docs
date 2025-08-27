@@ -30,7 +30,7 @@ We recommend users resubmit the message with a higher gas fee or priority fee so
 
 #### **Metamask**
 
-If you are building your project using MetaMask, it would be easier to educate the users to speed up a transaction by increasing the gas fee directly in MetaMask. Refer to the [official MetaMask documentation](https://support.metamask.io/hc/en-us/articles/360015489251-How-to-speed-up-or-cancel-a-pending-transaction) for more details.
+If you are building your project using MetaMask, it would be easier to educate the users to speed up a transaction by increasing the gas fee directly in MetaMask. Refer to the [official MetaMask documentation](https://support.metamask.io/manage-crypto/transactions/how-to-speed-up-or-cancel-a-pending-transaction/) for more details.
 
 #### **Lotus**
 
