@@ -83,4 +83,4 @@ Once submitted, Filfox will process your verification request. Upon successful v
 
 ![](../../../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-verified-contract-list.jpg)
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/verify-a-contract)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/smart-contracts/developing-contracts/verify-a-contract/web-interface/filfox)

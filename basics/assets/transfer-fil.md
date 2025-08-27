@@ -26,10 +26,10 @@ Remember that Filecoin is fully compatible with Ethereum tools, like wallets. Bu
 
 If you want to transfer FIL tokens from one `f4` address to another `f4` address using their corresponding `0x` addresses, you need to understand how to convert between `f4` and `0x` addresses.
 
-* If you have `f4` address, you can convert it to `0x` address using [Beryx Address converter](https://beryx.zondax.ch/address\_converter).
-* If you have a `0x` address, you can directly search it on [Filfox Explorer](https://filfox.info/en), which will show the `0x` address and corresponding `f4` address.
+- If you have `f4` address, you can convert it to `0x` address using [Beryx Address converter](https://beryx.zondax.ch/address_converter).
+- If you have a `0x` address, you can directly search it on [Filfox Explorer](https://filfox.info/en), which will show the `0x` address and corresponding `f4` address.
 
-Apart from that, you just need to follow the standard process using your preferred Ethereum-compatible wallet, like MetaMask, MethWallet, etc. For instance, [MetaMask has a simple guide](https://support.metamask.io/hc/en-us/articles/360015488931-How-to-send-tokens-from-your-MetaMask-wallet) for how to send Ethereum from one account to another.
+Apart from that, you just need to follow the standard process using your preferred Ethereum-compatible wallet, like MetaMask, MethWallet, etc. For instance, [MetaMask has a simple guide](https://support.metamask.io/manage-crypto/move-crypto/send/how-to-send-tokens-from-your-metamask-wallet/) for how to send Ethereum from one account to another.
 
 ## 0x => f address
 
@@ -74,8 +74,8 @@ If you want to transfer your FIL tokens from the `f1\f3` to the `0x` address, bu
 8. Once the funds appear in the burner wallet, click on **Send FIL**.
 9. Enter the necessary information into the text fields:
 
-* In the **Recipient** field, enter your `0x` style address. GLIF automatically converts it to an `f4` address.
-* In the **Amount** field, enter the amount of FIL to send. Make sure you have enough FIL to cover the GAS cost.
+- In the **Recipient** field, enter your `0x` style address. GLIF automatically converts it to an `f4` address.
+- In the **Amount** field, enter the amount of FIL to send. Make sure you have enough FIL to cover the GAS cost.
 
 ![Fill out send detail](<../../.gitbook/assets/basics-assets-transfer-fil-send-detail-burner-wallet (1).webp>)
 
@@ -89,6 +89,4 @@ If you are transferring FIL from any exchange to your `0x` address on MetaMask, 
 
 There are no special steps or requirements for sending Filecoin from one Filecoin-style address to another on the Filecoin network.
 
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/assets/transfer-fil)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/basics/assets/transfer-fil)

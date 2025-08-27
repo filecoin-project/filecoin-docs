@@ -47,7 +47,7 @@ First, let’s grab the kit and set up the development environment.
     ```shell
     mv .env.example .env
     ```
-4. Within the `.env` file, replace the example private key with your actual private key. If you are using Metamask, follow [this tutorial to get your private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
+4. Within the `.env` file, replace the example private key with your actual private key. If you are using Metamask, follow [this tutorial to get your private key](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).
 
 {% hint style="info" %}
 Take precautions and never share your private key with anyone! Also make sure to not check your private key into Git. The `.gitignore` of the Hardhat kit is already set to ignore `.env` files.
