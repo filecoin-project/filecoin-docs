@@ -35,7 +35,7 @@ The FVM makes it possible to create and manage decentralized and autonomous orga
 
 The FVM allows users to store data once and use repair and replication bots to manage ongoing storage deals, ensuring perpetual data storage. Through smart contracts, users can fund a wallet with FIL, allowing storage providers to maintain data storage indefinitely. Repair bots monitor these storage deals and replicate data across providers as needed, offering long-term data permanence.
 
-### Financial services for miners
+### Financial services for storage providers
 
 The FVM can facilitate unique financial services tailored for storage providers (SPs) in the Filecoin ecosystem.
 
