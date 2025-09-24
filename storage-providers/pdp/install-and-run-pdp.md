@@ -17,25 +17,27 @@ For current usage, including working with live PDP SPs and submitting real deals
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://lotus.filecoin.io/lotus/get-started/what-is-lotus/">Lotus Documentation</a></td><td></td><td><a href="../../.gitbook/assets/lotus-logo-big.png">lotus-logo-big.png</a></td></tr><tr><td><a href="https://docs.yugabyte.com/preview/tutorials/quick-start/linux/">Yugabyte Documentation</a></td><td></td><td><a href="../../.gitbook/assets/yugabyte.svg">yugabyte.svg</a></td></tr><tr><td><a href="https://docs.curiostorage.org/">Curio Documentation</a></td><td></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td></tr><tr><td><a href="https://docs.curiostorage.org/experimental-features/enable-pdp">PDP Documentation</a></td><td></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">Filecoin Slack - #fil-pdp</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">Filecoin Slack - #fil-curio-help</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/CPFTWMY7N">Filecoin Slack - #fil-lotus-help</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="../../basics/assets/metamask-setup.md">Filecoin Wallet - MetaMask Setup</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="https://inviter.co/yugabytedb">Yugabyte Slack</a></td><td></td><td><a href="../../.gitbook/assets/yugabyte.svg">yugabyte.svg</a></td></tr></tbody></table>
 
-## Prerequisites
+## 🚀 Prerequisites
 
-{% hint style="info" %}
-This guide is written specifically for Ubuntu 22.04. If you are using a different Linux distribution, refer to the relevant documentation for package installation and compatibility.
+{% hint style="warning" %}
+**Note:** This guide is written specifically for **Ubuntu 22.04**. If you are using a different Linux distribution, refer to the relevant documentation for package installation and compatibility.
 {% endhint %}
 
 Before starting, make sure you have a user with **sudo privileges**. This section prepares your system for the PDP stack.
 
-### System Package Installation
+***
+
+### 🧰 System Package Installation
 
 ```sh
 sudo apt update && sudo apt upgrade -y && sudo apt install -y \
-mesa-opencl-icd ocl-icd-opencl-dev gcc git jq pkg-config curl clang \
-build-essential hwloc libhwloc-dev libarchive-dev wget ntp python-is-python3 aria2
+  mesa-opencl-icd ocl-icd-opencl-dev gcc git jq pkg-config curl clang \
+  build-essential hwloc libhwloc-dev libarchive-dev wget ntp python-is-python3 aria2
 ```
 
 ***
 
-### Install Go
+### 🐹 Install Go (v1.23.7)
 
 ```sh
 sudo rm -rf /usr/local/go
@@ -52,14 +54,14 @@ You should see something like: `go version go1.23.7 linux/amd64`
 
 ***
 
-### Install Rust
+### 🦀 Install Rust
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 {% hint style="info" %}
-When prompted, choose the option 1) Proceed with standard installation (default — just press Enter).
+💡 When prompted, choose the option 1) Proceed with standard installation (default — just press Enter).
 {% endhint %}
 
 ```sh
@@ -73,7 +75,7 @@ You should see something like: `rustc 1.86.0 (05f9846f8 2025-03-31)`
 
 ***
 
-### Add Go and Rust to Secure Sudo Path
+### 🔐 Add Go and Rust to Secure Sudo Path
 
 ```sh
 sudo tee /etc/sudoers.d/dev-paths <<EOF
@@ -81,11 +83,13 @@ Defaults secure_path="/usr/local/go/bin:$HOME/.cargo/bin:/usr/local/sbin:/usr/lo
 EOF
 ```
 
-## Install & Run Lotus
+***
 
-Lotus is your gateway to the Filecoin network. It syncs the chain, manages wallets, and is required for Curio to interact with your node.
+## ⛓️ Installing and Running Lotus - Calibration Testnet
 
-### Build Lotus Daemon
+🧠 Lotus is your gateway to the Filecoin network. It syncs the chain, manages wallets, and is required for Curio to interact with your node.
+
+### 🔧 Build Lotus Daemon
 
 Clone and check out Lotus:
 
@@ -95,15 +99,7 @@ cd lotus
 git checkout $(curl -s https://api.github.com/repos/filecoin-project/lotus/releases/latest | jq -r .tag_name)
 ```
 
-#### **Build and Install for Mainnet**
-
-```sh
-make clean lotus
-sudo make install-daemon
-lotus --version
-```
-
-#### **Build and Install for Calibration**
+**Build and Install for Calibration**
 
 ```sh
 make clean && make GOFLAGS="-tags=calibnet" lotus
@@ -112,43 +108,37 @@ lotus --version
 ```
 
 {% hint style="success" %}
-You should see something like: `lotus version 1.33.1+mainnet+git.ff88d8269`
+✅ You should see something like: `lotus version 1.32.2+calibnet+git.ff88d8269`
 {% endhint %}
 
 ***
 
-### Import a Snapshot and Start the Daemon
+### 📦 Import a Snapshot and Start the Daemon
 
 Download the Snapshot
 
-#### Mainnet:
-
-```sh
-aria2c -x5 -o snapshot.car.zst https://forest-archive.chainsafe.dev/latest/mainnet/
-```
-
-#### Calibration:
+**Calibration:**
 
 ```sh
 aria2c -x5 -o snapshot.car.zst https://forest-archive.chainsafe.dev/latest/calibnet/
 ```
 
-#### Import and Start the Daemon
+**Import and Start the Daemon**
 
 ```sh
 lotus daemon --import-snapshot snapshot.car.zst --remove-existing-chain --halt-after-import
 nohup lotus daemon > ~/lotus.log 2>&1 &
 ```
 
-{% hint style="warning" %}
-If you encounter errors related to `EnableEthRPC` or `EnableIndexer`, run the command below and restart Lotus
+{% hint style="info" %}
+💡 If you encounter errors related to `EnableEthRPC` or `EnableIndexer`, run the following command and restart Lotus
 {% endhint %}
 
 ```sh
 sed -i 's/EnableEthRPC = .*/EnableEthRPC = true/; s/EnableIndexer = .*/EnableIndexer = true/' ~/.lotus/config.toml
 ```
 
-#### **Monitor Sync Progress**
+**Monitor Sync Progress**
 
 ```sh
 lotus sync wait
@@ -160,7 +150,7 @@ To monitor continuously:
 lotus sync wait --watch
 ```
 
-#### **Monitor Logs**
+**Monitor Logs**
 
 ```sh
 tail -f ~/lotus.log
@@ -168,7 +158,7 @@ tail -f ~/lotus.log
 
 ***
 
-### Create Wallets
+### 🔐 Create Wallets
 
 You'll need to create **two BLS wallets**:
 
@@ -181,27 +171,31 @@ lotus wallet new bls  # Create worker wallet
 lotus wallet list     # List all created wallets
 ```
 
-Make sure to send a small amount of FIL (Mainnet) or tFIL (Calibration) to each wallet - we recommend 1 FIL/tFIL per wallet to ensure the creation of your Storage Provider in Curio. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
+Make sure to send a small amount of FIL to each wallet - we recommend 1 FIL per wallet to ensure the creation of your Storage Provider in Curio. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
 
-{% hint style="info" %}
-Both wallets will be used during Curio initialisation.
+{% hint style="success" %}
+✅ Both wallets will be used during Curio initialisation.
 {% endhint %}
 
-{% hint style="danger" %}
-[Back up](https://lotus.filecoin.io/lotus/manage/manage-fil/#exporting-and-importing-addresses) your wallet keys securely before continuing. Losing them will result in permanent loss of access to funds.
+{% hint style="warning" %}
+⚠️ **Tip:** [Back up](https://lotus.filecoin.io/lotus/manage/manage-fil/#exporting-and-importing-addresses) your wallet keys securely before continuing. Losing them will result in permanent loss of access to funds.
 {% endhint %}
 
-## Install & Run YugabyteDB
+***
 
-### Set ulimit configuration
+## 🐘 Running YugabyteDB
 
-{% hint style="info" %}
- Before starting Yugabyte, you must increase the default `ulimit` values to ensure system limits do not interfere with the database.
+🧠 Curio uses YugabyteDB to store metadata about deals, sealing operations, and PDP submissions.
+
+### 🛠 Set ulimit configuration
+
+{% hint style="warning" %}
+⚠️ Before starting Yugabyte, you must increase the default `ulimit` values to ensure system limits do not interfere with the database.
 {% endhint %}
 
 To do this:
 
-#### **Persist new limits across reboots**
+#### 🔁 **Persist new limits across reboots**
 
 Add these lines to `/etc/security/limits.conf`:
 
@@ -212,19 +206,23 @@ echo "$(whoami) hard nofile 1048576" | sudo tee -a /etc/security/limits.conf
 
 This ensures the increased limits are automatically applied to future sessions.
 
-#### **Apply limit immediately (for current shell only)**
+#### ⚡ **Apply limit immediately (for current shell only)**
 
 ```sh
 ulimit -n 1048576
-# Verify limit change:
+```
+
+Verify:
+
+```sh
 ulimit -n
 ```
 
 {% hint style="success" %}
-This should output `1048576`.
+✅ This should output `1048576`.
 {% endhint %}
 
-### Install Yugabyte
+### ⚙️ Install Yugabyte
 
 ```sh
 wget https://software.yugabyte.com/releases/2.25.1.0/yugabyte-2.25.1.0-b381-linux-x86_64.tar.gz
@@ -233,7 +231,7 @@ cd yugabyte-2.25.1.0
 ./bin/post_install.sh
 ```
 
-### Start the DB
+### 🚀 Start the DB
 
 ```sh
 ./bin/yugabyted start \
@@ -242,8 +240,8 @@ cd yugabyte-2.25.1.0
   --tserver_flags rpc_bind_addresses=127.0.0.1
 ```
 
-{% hint style="danger" %}
- If you encounter locale-related errors when starting Yugabyte for the first time, run:
+{% hint style="warning" %}
+⚠️ If you encounter locale-related errors when starting Yugabyte for the first time, run:
 {% endhint %}
 
 ```sh
@@ -251,22 +249,24 @@ sudo locale-gen en_US.UTF-8
 ```
 
 {% hint style="success" %}
-Visit `127.0.0.1:15433` to confirm successful installation. This is the YugabyteDB web UI — it should display the dashboard if the service is running correctly and all nodes are healthy.
+✅ Visit `http://127.0.0.1:15433` to confirm successful installation. This is the YugabyteDB web UI — it should display the dashboard if the service is running correctly and all nodes are healthy.
 {% endhint %}
 
 {% hint style="info" %}
-You can also check your Yugabyte cluster details directly in the CLI with:
+💡 You can also check your Yugabyte cluster details directly in the CLI with:
 {% endhint %}
 
 ```sh
 ./bin/yugabyted status
 ```
 
-## Install & Run Curio
+***
 
-Curio is the core PDP client that coordinates sealing, interacts with Lotus and submits PDP proofs.
+## 🧱 Installing and Configuring Curio
 
-### System Configuration
+🧠 Curio is the core PDP client that coordinates sealing, interacts with Lotus and submits PDP proofs.
+
+### ⚙️ System Configuration
 
 Before you proceed with the installation, you should increase the UDP buffer size:
 
@@ -282,33 +282,29 @@ echo 'net.core.rmem_max=2097152' | sudo tee -a /etc/sysctl.conf
 echo 'net.core.rmem_default=2097152' | sudo tee -a /etc/sysctl.conf
 ```
 
-### Build Curio
+### 🔬 Build Curio
 
 Clone the repository and switch to the PDP branch:
 
 ```sh
 git clone https://github.com/filecoin-project/curio.git
 cd curio
-git checkout synapse
+git checkout rename
 ```
 
 {% hint style="info" %}
-Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.
+🛠 Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.
+{% endhint %}
+
+{% hint style="info" %}
+⏱️ This step will take a few minutes to complete.
 {% endhint %}
 
 ```sh
-# For Filecoin Mainnet:
-make clean build
-
-# For Calibration Testnet:
 make clean calibnet
 ```
 
-{% hint style="success" %}
-This step will take a few minutes to complete.
-{% endhint %}
-
-### Install and Verify Curio
+### ✅ Install and Verify Curio
 
 Run the following to install the compiled binary:
 
@@ -320,23 +316,19 @@ This will place curio in `/usr/local/bin`
 
 Verify the installation:
 
-```shell
+```sh
 curio --version
 ```
 
-Expected output:
+Expected example output:
 
 ```sh
-# Example output for Mainnet:
-curio version 1.24.4+mainnet+git_f954c0a_2025-04-06T15:46:32-04:00
-
-# Example output for Calibration:
 curio version 1.24.4+calibnet+git_f954c0a_2025-04-06T15:46:32-04:00
 ```
 
 ***
 
-### Guided Setup
+### 🔧 Guided Setup
 
 Curio provides a utility to help you set up a new miner interactively. Run the following command:
 
@@ -377,7 +369,7 @@ For this step, use the two BLS wallets you created earlier with Lotus:
 These addresses must match the Lotus wallets created earlier.
 
 {% hint style="info" %}
-You can display your Lotus wallets at any time by running:
+💡 You can display your Lotus wallets at any time by running:
 {% endhint %}
 
 ```sh
@@ -399,15 +391,15 @@ Choose sector size:
 Review the information to ensure all inputs are correct. Then select "**Continue to verify the addresses and create a new miner actor**" to proceed.
 
 {% hint style="info" %}
-This step may take a few minutes to complete as Curio pushes the message and waits for it to land on-chain.
+⏱️ This step may take a few minutes to complete as Curio pushes the message and waits for it to land on-chain.
 {% endhint %}
 
 Once the actor is created, Curio will:
 
-* `Register your miner ID`
+* Register your miner ID
 
 {% hint style="info" %}
-If the guided setup fails after creating the miner actor, run the following command to complete the installation:
+💡 If the guided setup fails after creating the miner actor, run the following command to complete the installation:
 {% endhint %}
 
 ```sh
@@ -448,11 +440,13 @@ http://127.0.0.1:4701
 
 This will launch the Curio web GUI locally.
 
-## Enable PDP
+***
 
-This section enables Proof of Data Possession (PDP) for a Storage Provider node using Curio. These steps guide you through running a standalone PDP service using Curio and pdptool.
+## 🧪 Enabling FWSS PDP
 
-### Attach Storage Locations
+🧠 This section enables **FWSS Proof of Data Possession (PDP)** on your SP node using Curio. These steps guide you through running a standalone PDP service using Curio and pdptool.
+
+### 📦 Attach Storage Locations
 
 With Curio running with the GUI layer:
 
@@ -468,19 +462,19 @@ curio cli storage attach --init --store /long-term-storage/path
 ```
 
 {% hint style="info" %}
-Your fast-storage path should point to high-performance storage media such as NVMe or SSD
+💡 Your fast-storage path should point to high-performance storage media such as NVMe or SSD
 {% endhint %}
 
 ***
 
-### Add a PDP Configuration Layer
+### 🔧 Add a PDP Configuration Layer
 
-Browse to the Configurations page of the Curio GUI.
+Browse to the **Configurations** page of the Curio GUI.
 
-Create a new layer named pdp. Enable and set to `true` the following under Subsystems:
+Create a new layer named **pdp** and enable the following under Subsystems:
 
 {% hint style="info" %}
-You may find it helpful to search for the setting names in your browser.
+💡 You may find it helpful to search for the setting names in your browser.
 {% endhint %}
 
 * ✅ `EnableParkPiece`
@@ -488,55 +482,22 @@ You may find it helpful to search for the setting names in your browser.
 * ✅ `EnableCommP`
 * ✅ `EnableMoveStorage`
 
-In the HTTP section:
+In the **HTTP** section:
 
 * ✅ Enable: `true`
 * 🌐 DomainName: `your domain (e.g., pdp.mydomain.com)`
 * 📡 ListenAddress: `0.0.0.0:443`
 
 {% hint style="info" %}
-You must point your domain's A record to your server's public IP address for Let's Encrypt to issue a certificate.
+💡 **Tip:** You must point your domain's A record to your server's public IP address for Let's Encrypt to issue a certificate.
 {% endhint %}
 
 ***
 
-### Set Up PDP Service Keys
+### 💰 Import your Filecoin Wallet Private Key:
 
-Build the pdptool:
-
-```sh
-cd curio/cmd/pdptool
-go build .
-```
-
-Generate a service secret:
-
-```sh
-./pdptool create-service-secret
-```
-
-```sh
-# Example output:
-
------BEGIN PUBLIC KEY-----
-LxP9MzVmHdC7KwYBvNAo1jXuIRfGXqQyo2JzE4Uctn0a5eFZbs6Wlvq3dKYgphTD
-XAqRsm38LPt2iVcGb9MruZJxEkBhO71wDdNyaFMoXpCJnUqRAezvKlfbIg==
------END PUBLIC KEY-----
-```
-
-Browse to the **PDP** page of the Curio GUI and in the **Services** section:
-
-* Select **Add PDP Service**
-* Input a **Service Name** of your choice (e.g. `pdp-service`)
-* Copy the previously generated public key into the **Public Key** field.
-* Select **Add Service**
-
-***
-
-### Import your Filecoin Wallet Private Key:
-
-{% hint style="info" %}
-There are several ways to obtain private keys for Ethereum addresses. For this guide, we will use a new delegated Filecoin wallet address.
+{% hint style="warning" %}
+⚠️ There are several ways to obtain private keys for Ethereum addresses. In this guide, we will use a new delegated FIL wallet address.
 {% endhint %}
 
 Create a new delegated wallet:
@@ -547,12 +508,11 @@ lotus wallet new delegated
 
 ```sh
 # Example output:
-
 t410fuo4dghaeiqzokiqnxruzdr6e3cjktnxprrc56bi
 ```
 
 {% hint style="info" %}
-You can display your Lotus wallets at any time by running:
+💡 You can display your Lotus wallets at any time by running:
 {% endhint %}
 
 ```sh
@@ -567,8 +527,7 @@ lotus wallet export <your-delegated-wallet-address> | xxd -r -p | jq -r '.Privat
 
 ```sh
 # Example output:
-
-d4c2e3f9a716bb0e47fa91b2cf4a29870be3c5982fd6eafed71e8ac3f9c0b12
+d4c2e3f9a716bb0e47fa91b2cf4a29870be3c5982fd6eafed71e8ac3f9c0b127
 ```
 
 Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section:
@@ -578,18 +537,18 @@ Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section
 * Select **Import Key**
 
 {% hint style="success" %}
-Your 0x wallet address - the delegated Ethereum address derived from your Filecoin Metamask private key - will be added to the **Owner Address** section of the Curio PDP page.
+✅ Your 0x wallet address - the delegated Ethereum address derived from your Filecoin delegated wallet private key - will be added to the **Owner Address** section of the Curio PDP page.
 {% endhint %}
 
-Make sure to send a small amount of FIL to your 0x wallet - we recommend 5 FIL to ensure uninterrupted PDP operation during initial setup and testing.
+Make sure to send a small amount of tFIL to your 0x wallet - we recommend 5 tFIL to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
 
-{% hint style="danger" %}
-Important: Secure your private key material. Don't expose or store it in plain text without protection.
+{% hint style="warning" %}
+⚠️ **Important:** Secure your private key material. Don't expose or store it in plain text without protection.
 {% endhint %}
 
 ***
 
-### Restart and Verify
+### 🚀 Restart and Verify
 
 Restart Curio with both layers:
 
@@ -598,7 +557,7 @@ curio run --layers=gui,pdp
 ```
 
 {% hint style="warning" %}
-If you encounter errors binding to port 443 when starting Curio with the pdp configuration layer, run:
+⚠️ If you encounter errors binding to port 443 when starting Curio with the pdp configuration layer, run:
 {% endhint %}
 
 ```sh
@@ -607,55 +566,15 @@ sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/curio
 
 Test the PDP service:
 
-```sh
-./pdptool ping --service-url https://your-domain.com --service-name <ServiceName>
-```
-
-{% hint style="success" %}
-Use the service name specified in the **Service Name** field when you added your public **PDP Service** key - e.g. `pdp-service`
-{% endhint %}
-
-Expected output:
-
-```sh
-Ping successful: Service is reachable and JWT token is valid.
-```
-
 {% hint style="info" %}
-Note: The first ping often fails. Try again after a short delay.
+💡 If `pdptool` is not installed, clone and build Curio:
 {% endhint %}
 
-## Use PDP
-
-PDP ensures that your data is verifiably stored by a Filecoin Storage Provider using cryptographic proofs without needing to retrieve the file itself.
-
-### Prerequisites
-
-Before beginning, ensure:
-
-* You have access to a terminal with internet connectivity
-* Your system has pdptool installed (bundled with Curio)
-
-### If pdptool is not installed:
-
-* **Option 1**: Clone Curio and build pdptool:
-
 ```sh
-git clone
-https://github.com/filecoin-project/curio.git
-
-cd curio
-cd cmd/pdptool
+git clone https://github.com/filecoin-project/curio.git
+cd curio/cmd/pdptool
 go build .
 ```
-
-* **Option 2**: Install the [Docker version ](https://github.com/LesnyRumcajs/pdp)of pdptool - Provided by our friends at [ChainSafe](https://chainsafe.io/)
-
-***
-
-### Authenticate Your Client (JWT Token)
-
-You first need to authenticate your pdptool with a PDP-enabled Storage Provider
 
 Generate a service secret:
 
@@ -664,208 +583,40 @@ Generate a service secret:
 ```
 
 ```sh
-# Example output:
-
------BEGIN PUBLIC KEY-----
-LxP9MzVmHdC7KwYBvNAo1jXuIRfGXqQyo2JzE4Uctn0a5eFZbs6Wlvq3dKYgphTD
-XAqRsm38LPt2iVcGb9MruZJxEkBhO71wDdNyaFMoXpCJnUqRAezvKlfbIg==
------END PUBLIC KEY-----
+./pdptool ping --service-url https://your-domain.com --service-name public
 ```
 
-{% hint style="success" %}
-Reach out in the [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2) channel in Filecoin Slack to register your public key with a PDP-enabled Storage Provider
+{% hint style="info" %}
+💡 Always use `public` for the `--service-name` flag
 {% endhint %}
 
-***
-
-### Connect to a PDP Service
-
-Start by pinging the PDP service to confirm availability:
-
-```sh
-./pdptool ping --service-url https://yablu.net --service-name pdp-service
-```
-
 {% hint style="success" %}
-You should see something like:
+✅ Expected output:
 {% endhint %}
 
 ```sh
 Ping successful: Service is reachable and JWT token is valid.
 ```
 
-***
-
-### Create a Proof Set
-
-Start by creating an empty proof set. This step must happen **before** uploading files:
-
-```sh
-./pdptool create-proof-set \
-  --service-url https://yablu.net \
-  --service-name pdp-service \
-  --recordkeeper 0x6170dE2b09b404776197485F3dc6c968Ef948505
-```
-
-```sh
-# Example output:
-
-Proof set creation initiated successfully.
-Location: /pdp/proof-sets/created/0xf91617ef532748efb5a51e64391112e5328fbd9a5b9ac20e5127981cea0012a5
-Response:
-```
-
-Use the `0x` transaction hash from the previous output to monitor proof set creation status:
-
-```sh
-./pdptool get-proof-set-create-status \
-  --service-url https://yablu.net \
-  --service-name pdp-service \
-  --tx-hash 0xf91617ef532748efb5a51e64391112e5328fbd9a5b9ac20e5127981cea0012a5
-```
-
-{% hint style="success" %}
-You should see something like:
-{% endhint %}
-
-```sh
-Proof Set Creation Status:
-Transaction Hash: 0xf91617ef532748efb5a51e64391112e5328fbd9a5b9ac20e5127981cea0012a5
-Transaction Status: confirmed
-Transaction Successful: true
-Proofset Created: true
-ProofSet ID: 43
-```
-
 {% hint style="info" %}
-The proof set creation process can take a few seconds to complete
+💡 Note: The first ping often fails. Try again after a short delay.
 {% endhint %}
 
 ***
 
-### Upload Files to the Storage Provider
+## 🎉 You're Done!
 
-Once your proof set is ready, you can begin uploading files:
-
-```sh
-./pdptool upload-file --service-url https://yablu.net --service-name pdp-service /path/to/file.ext
-```
-
-{% hint style="success" %}
-Example output:
-{% endhint %}
-
-```sh
-0: pieceSize: 65536
-baga6ea4seaqhsevhssmv3j7jjavm4gzdckpjrvbwhhvn73sgibob5bdvtzoqkli:baga6ea4seaqhsevhssmv3j7jjavm4gzdckpjrvbwhhvn73sgibob5bdvtzoqkli
-```
-
-***
-
-### 🌳 Add File Roots to Proof Set
-
-After uploading each file, extract its CID and add it to your proof set:
-
-```sh
-./pdptool add-roots \
-  --service-url https://yablu.net \
-  --service-name pdp-service \
-  --proof-set-id <PROOF-SET-ID> \
-  --root <CID1>+<CID2>+<CID3>...
-```
-
-Example using the information returned in the previous steps:
-
-```sh
-./pdptool add-roots \
-  --service-url https://yablu.net \
-  --service-name pdp-service \
-  --proof-set-id 43 \
-  --root baga6ea4seaqhsevhssmv3j7jjavm4gzdckpjrvbwhhvn73sgibob5bdvtzoqkli:baga6ea4seaqhsevhssmv3j7jjavm4gzdckpjrvbwhhvn73sgibob5bdvtzoqkli
-```
-
-{% hint style="info" %}
-In the above example, `--proof-set-id` came from the Create Proof Set step, and `--root` from the Upload Files to the Storage Provider step.
-{% endhint %}
-
-{% hint style="success" %}
-Example output:
-{% endhint %}
-
-```sh
-Roots added to proof set ID 43 successfully.
-Response:
-```
-
-***
-
-### View a Piece or Proof Set
-
-You can retrieve a proof set or inspect a file root directly:
-
-```sh
-./pdptool get-proof-set \
-  --service-url https://yablu.net \
-  --service-name pdp-service 43
-```
-
-{% hint style="success" %}
-Example output:
-{% endhint %}
-
-```sh
-Proof Set ID: 43
-Next Challenge Epoch: 2577608
-Roots:
-  - Root ID: 0
-    Root CID: baga6ea4seaqhsevhssmv3j7jjavm4gzdckpjrvbwhhvn73sgibob5bdvtzoqkli
-    Subroot CID: baga6ea4seaqhsevhssmv3j7jjavm4gzdckpjrvbwhhvn73sgibob5bdvtzoqkli
-    Subroot Offset: 0
-```
-
-***
-
-### Retrieve From a Proof Set
-
-Download a file using an ordered chunks list:
-
-```sh
-./pdptool download-file \
-  --service-url https://yablu.net \
-  --chunk-file chunks.list \
-  --output-file file.ext
-```
-
-{% hint style="info" %}
-💡In the above example, `–chunk-file` and `–output-file` flags were defined in the Upload Files to the Storage Provider step
-{% endhint %}
-
-***
-
-## 🎉 You're Ready!
-
-You've successfully launched a PDP-enabled Filecoin Storage Provider stack. Your system is now:
+You've successfully launched a **PDP-enabled Filecoin Storage Provider** stack. Your system is now:
 
 * ✅ Syncing with the Filecoin network via Lotus
 * ✅ Recording deal and sector metadata in YugabyteDB
 * ✅ Operating Curio to manage sealing and coordination
-* ✅ Submitting Proof of Data Possession to verify storage integrity
-
-You've also:
-
-✅ Connected to a PDP-enabled storage provider
-✅ Created a proof set
-✅ Uploaded files and added file roots
-✅ Verified availability and proof status
+* ✅ Enabled Proof of Data Possession (PDP)
+* ✅ Connected to your PDP-enabled storage provider
 
 ***
 
 ## 🔜 Next Steps
 
 * 🧭 Monitor logs and metrics
-* 🧭 Track your proof sets in the PDP Explorer:
-  * [Calibration PDP Explorer](https://calibration.pdp-explorer.eng.filoz.org)
-  * [Mainnet PDP Explorer](https://pdp-explorer.eng.filoz.org)
-* 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)
-
-💬 Questions? Join the conversation on Filecoin Slack: [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)
+* 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2) [#spx-pdp](https://filecoinproject.slack.com/archives/C08JQBA7PEX)
