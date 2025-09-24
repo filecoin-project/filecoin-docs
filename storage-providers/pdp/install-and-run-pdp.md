@@ -84,7 +84,12 @@ EOF
 
 ## ⛓️ Installing and Running Lotus - Calibration Testnet
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://lotus.filecoin.io/lotus/get-started/what-is-lotus/">Lotus Documentation</a></td><td></td><td><a href="../../.gitbook/assets/lotus-logo-big.png">lotus-logo-big.png</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/CPFTWMY7N">Filecoin Slack - #fil-lotus-help</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr></tbody></table>
+<table style="background-color: #e3f2fd;">
+<tbody>
+<tr><td>Lotus Documentation</td><td><a href="https://lotus.filecoin.io/lotus/get-started/what-is-lotus/">https://lotus.filecoin.io/lotus/get-started/what-is-lotus/</a></td></tr>
+<tr><td>Lotus Support Channels</td><td><a href="https://filecoinproject.slack.com/archives/CPFTWMY7N">Filecoin Slack - #fil-lotus-help</a></td></tr>
+</tbody>
+</table>
 
 🧠 Lotus is your gateway to the Filecoin network. It syncs the chain, manages wallets, and is required for Curio to interact with your node.
 
@@ -184,7 +189,12 @@ Both wallets will be used during Curio initialisation.
 
 ## 🐘 Running YugabyteDB
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://docs.yugabyte.com/preview/tutorials/quick-start/linux/">Yugabyte Documentation</a></td><td></td><td><a href="../../.gitbook/assets/yugabyte.svg">yugabyte.svg</a></td></tr><tr><td><a href="https://inviter.co/yugabytedb">Yugabyte Slack</a></td><td></td><td><a href="../../.gitbook/assets/yugabyte.svg">yugabyte.svg</a></td></tr></tbody></table>
+<table style="background-color: #e3f2fd;">
+<tbody>
+<tr><td>Yugabyte Documentation</td><td><a href="https://docs.yugabyte.com/preview/tutorials/quick-start/linux/">https://docs.yugabyte.com/preview/tutorials/quick-start/linux/</a></td></tr>
+<tr><td>Yugabyte Support Channels</td><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">Filecoin Slack - #fil-curio-help</a> - <a href="https://inviter.co/yugabytedb">Yugabyte Slack</a></td></tr>
+</tbody>
+</table>
 
 🧠 Curio uses YugabyteDB to store metadata about deals, sealing operations, and PDP submissions.
 
@@ -265,7 +275,12 @@ You can also check your Yugabyte cluster details directly in the CLI with:
 
 ## 🧱 Installing and Configuring Curio
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://docs.curiostorage.org/">Curio Documentation</a></td><td></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td></tr><tr><td><a href="https://docs.curiostorage.org/experimental-features/enable-pdp">PDP Documentation</a></td><td></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">Filecoin Slack - #fil-curio-help</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">Filecoin Slack - #fil-pdp</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr></tbody></table>
+<table style="background-color: #e3f2fd;">
+<tbody>
+<tr><td>Curio Documentation</td><td><a href="https://docs.curiostorage.org/">https://docs.curiostorage.org/</a></td></tr>
+<tr><td>Curio Support Channels</td><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">Filecoin Slack - #fil-curio-help</a></td></tr>
+</tbody>
+</table>
 
 🧠 Curio is the core PDP client that coordinates sealing, interacts with Lotus and submits PDP proofs.
 
