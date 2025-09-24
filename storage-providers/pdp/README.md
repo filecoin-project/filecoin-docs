@@ -15,10 +15,9 @@ layout:
 # PDP
 
 {% hint style="danger" %}
-**DEPRECATED DEVELOPER TOOL**\
-\
-This documentation refers to the legacy `pdptool`, which is intended only for low-level developer testing.\
-It is not the recommended method for onboarding or interacting with PDP Storage Providers.
+**ALPHA FEATURE - UNDER DEVELOPMENT**
 
-For current usage, including working with live PDP SPs and submitting real deals, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk) and [Synapse dApp Tutorial](https://github.com/FIL-Builders/fs-upload-dapp).
+This documentation covers the PDP (Proof of Data Possession) feature, which is currently in alpha and under active development. This tool is intended for testing and experimental use only.
+
+For production use and submitting real deals with live PDP Storage Providers, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk).
 {% endhint %}
