@@ -34,12 +34,12 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y \
 
 ***
 
-### :hammer: Install Go (v1.23.7)
+### :hammer: Install Go (v1.24.0)
 
 ```sh
 sudo rm -rf /usr/local/go
-wget https://go.dev/dl/go1.23.7.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.23.7.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 source ~/.bashrc
 go version
