@@ -7,15 +7,13 @@ description: >-
 # Install & Run PDP
 
 {% hint style="danger" %}
-**DEPRECATED DEVELOPER TOOL**
+**ALPHA FEATURE - UNDER DEVELOPMENT**
 
-This documentation refers to the legacy `pdptool`, which is intended only for low-level developer testing.
-It is not the recommended method for onboarding or interacting with PDP Storage Providers.
+This documentation covers the PDP (Proof of Data Possession) feature, which is currently in alpha and under active development.
+This tool is intended for testing and experimental use only.
 
-For current usage, including working with live PDP SPs and submitting real deals, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk) and [Synapse dApp Tutorial](https://github.com/FIL-Builders/fs-upload-dapp).
+For production use and submitting real deals with live PDP Storage Providers, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk) and [Synapse dApp Tutorial](https://github.com/FIL-Builders/fs-upload-dapp).
 {% endhint %}
-
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://lotus.filecoin.io/lotus/get-started/what-is-lotus/">Lotus Documentation</a></td><td></td><td><a href="../../.gitbook/assets/lotus-logo-big.png">lotus-logo-big.png</a></td></tr><tr><td><a href="https://docs.yugabyte.com/preview/tutorials/quick-start/linux/">Yugabyte Documentation</a></td><td></td><td><a href="../../.gitbook/assets/yugabyte.svg">yugabyte.svg</a></td></tr><tr><td><a href="https://docs.curiostorage.org/">Curio Documentation</a></td><td></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td></tr><tr><td><a href="https://docs.curiostorage.org/experimental-features/enable-pdp">PDP Documentation</a></td><td></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">Filecoin Slack - #fil-pdp</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">Filecoin Slack - #fil-curio-help</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="https://filecoinproject.slack.com/archives/CPFTWMY7N">Filecoin Slack - #fil-lotus-help</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="../../basics/assets/metamask-setup.md">Filecoin Wallet - MetaMask Setup</a></td><td></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td></tr><tr><td><a href="https://inviter.co/yugabytedb">Yugabyte Slack</a></td><td></td><td><a href="../../.gitbook/assets/yugabyte.svg">yugabyte.svg</a></td></tr></tbody></table>
 
 ## 🚀 Prerequisites
 
