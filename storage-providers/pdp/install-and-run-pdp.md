@@ -61,7 +61,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 {% hint style="info" %}
-💡 When prompted, choose the option 1) Proceed with standard installation (default — just press Enter).
+When prompted, choose the option 1) Proceed with standard installation (default — just press Enter).
 {% endhint %}
 
 ```sh
@@ -108,7 +108,7 @@ lotus --version
 ```
 
 {% hint style="success" %}
-✅ You should see something like: `lotus version 1.32.2+calibnet+git.ff88d8269`
+You should see something like: `lotus version 1.32.2+calibnet+git.ff88d8269`
 {% endhint %}
 
 ***
@@ -131,7 +131,7 @@ nohup lotus daemon > ~/lotus.log 2>&1 &
 ```
 
 {% hint style="info" %}
-💡 If you encounter errors related to `EnableEthRPC` or `EnableIndexer`, run the following command and restart Lotus
+If you encounter errors related to `EnableEthRPC` or `EnableIndexer`, run the following command and restart Lotus
 {% endhint %}
 
 ```sh
@@ -174,11 +174,11 @@ lotus wallet list     # List all created wallets
 Make sure to send a small amount of FIL to each wallet - we recommend 1 FIL per wallet to ensure the creation of your Storage Provider in Curio. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
 
 {% hint style="success" %}
-✅ Both wallets will be used during Curio initialisation.
+Both wallets will be used during Curio initialisation.
 {% endhint %}
 
 {% hint style="warning" %}
-⚠️ **Tip:** [Back up](https://lotus.filecoin.io/lotus/manage/manage-fil/#exporting-and-importing-addresses) your wallet keys securely before continuing. Losing them will result in permanent loss of access to funds.
+**Tip:** [Back up](https://lotus.filecoin.io/lotus/manage/manage-fil/#exporting-and-importing-addresses) your wallet keys securely before continuing. Losing them will result in permanent loss of access to funds.
 {% endhint %}
 
 ***
@@ -190,7 +190,7 @@ Make sure to send a small amount of FIL to each wallet - we recommend 1 FIL per 
 ### 🛠 Set ulimit configuration
 
 {% hint style="warning" %}
-⚠️ Before starting Yugabyte, you must increase the default `ulimit` values to ensure system limits do not interfere with the database.
+Before starting Yugabyte, you must increase the default `ulimit` values to ensure system limits do not interfere with the database.
 {% endhint %}
 
 To do this:
@@ -219,7 +219,7 @@ ulimit -n
 ```
 
 {% hint style="success" %}
-✅ This should output `1048576`.
+This should output `1048576`.
 {% endhint %}
 
 ### ⚙️ Install Yugabyte
@@ -241,7 +241,7 @@ cd yugabyte-2.25.1.0
 ```
 
 {% hint style="warning" %}
-⚠️ If you encounter locale-related errors when starting Yugabyte for the first time, run:
+If you encounter locale-related errors when starting Yugabyte for the first time, run:
 {% endhint %}
 
 ```sh
@@ -249,11 +249,11 @@ sudo locale-gen en_US.UTF-8
 ```
 
 {% hint style="success" %}
-✅ Visit `http://127.0.0.1:15433` to confirm successful installation. This is the YugabyteDB web UI — it should display the dashboard if the service is running correctly and all nodes are healthy.
+Visit `http://127.0.0.1:15433` to confirm successful installation. This is the YugabyteDB web UI — it should display the dashboard if the service is running correctly and all nodes are healthy.
 {% endhint %}
 
 {% hint style="info" %}
-💡 You can also check your Yugabyte cluster details directly in the CLI with:
+You can also check your Yugabyte cluster details directly in the CLI with:
 {% endhint %}
 
 ```sh
@@ -293,11 +293,11 @@ git checkout rename
 ```
 
 {% hint style="info" %}
-🛠 Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.
+Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.
 {% endhint %}
 
 {% hint style="info" %}
-⏱️ This step will take a few minutes to complete.
+This step will take a few minutes to complete.
 {% endhint %}
 
 ```sh
@@ -369,7 +369,7 @@ For this step, use the two BLS wallets you created earlier with Lotus:
 These addresses must match the Lotus wallets created earlier.
 
 {% hint style="info" %}
-💡 You can display your Lotus wallets at any time by running:
+You can display your Lotus wallets at any time by running:
 {% endhint %}
 
 ```sh
@@ -383,7 +383,7 @@ Choose sector size:
 * `64 GiB`
 
 {% hint style="info" %}
-💡 Selecting a sector size is required during the Curio guided setup, but **PDP itself doesn't use sectors**. Proof set sizes in PDP are **arbitrary and fully flexible.**
+Selecting a sector size is required during the Curio guided setup, but **PDP itself doesn't use sectors**. Proof set sizes in PDP are **arbitrary and fully flexible.**
 {% endhint %}
 
 #### 5️⃣ Create Miner Actor
@@ -391,7 +391,7 @@ Choose sector size:
 Review the information to ensure all inputs are correct. Then select "**Continue to verify the addresses and create a new miner actor**" to proceed.
 
 {% hint style="info" %}
-⏱️ This step may take a few minutes to complete as Curio pushes the message and waits for it to land on-chain.
+This step may take a few minutes to complete as Curio pushes the message and waits for it to land on-chain.
 {% endhint %}
 
 Once the actor is created, Curio will:
@@ -399,7 +399,7 @@ Once the actor is created, Curio will:
 * Register your miner ID
 
 {% hint style="info" %}
-💡 If the guided setup fails after creating the miner actor, run the following command to complete the installation:
+If the guided setup fails after creating the miner actor, run the following command to complete the installation:
 {% endhint %}
 
 ```sh
@@ -462,7 +462,7 @@ curio cli storage attach --init --store /long-term-storage/path
 ```
 
 {% hint style="info" %}
-💡 Your fast-storage path should point to high-performance storage media such as NVMe or SSD
+Your fast-storage path should point to high-performance storage media such as NVMe or SSD
 {% endhint %}
 
 ***
@@ -474,7 +474,7 @@ Browse to the **Configurations** page of the Curio GUI.
 Create a new layer named **pdp** and enable the following under Subsystems:
 
 {% hint style="info" %}
-💡 You may find it helpful to search for the setting names in your browser.
+You may find it helpful to search for the setting names in your browser.
 {% endhint %}
 
 * ✅ `EnableParkPiece`
@@ -489,7 +489,7 @@ In the **HTTP** section:
 * 📡 ListenAddress: `0.0.0.0:443`
 
 {% hint style="info" %}
-💡 **Tip:** You must point your domain's A record to your server's public IP address for Let's Encrypt to issue a certificate.
+**Tip:** You must point your domain's A record to your server's public IP address for Let's Encrypt to issue a certificate.
 {% endhint %}
 
 ***
@@ -497,7 +497,7 @@ In the **HTTP** section:
 ### 💰 Import your Filecoin Wallet Private Key:
 
 {% hint style="warning" %}
-⚠️ There are several ways to obtain private keys for Ethereum addresses. In this guide, we will use a new delegated FIL wallet address.
+There are several ways to obtain private keys for Ethereum addresses. In this guide, we will use a new delegated FIL wallet address.
 {% endhint %}
 
 Create a new delegated wallet:
@@ -512,7 +512,7 @@ t410fuo4dghaeiqzokiqnxruzdr6e3cjktnxprrc56bi
 ```
 
 {% hint style="info" %}
-💡 You can display your Lotus wallets at any time by running:
+You can display your Lotus wallets at any time by running:
 {% endhint %}
 
 ```sh
@@ -537,13 +537,13 @@ Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section
 * Select **Import Key**
 
 {% hint style="success" %}
-✅ Your 0x wallet address - the delegated Ethereum address derived from your Filecoin delegated wallet private key - will be added to the **Owner Address** section of the Curio PDP page.
+Your 0x wallet address - the delegated Ethereum address derived from your Filecoin delegated wallet private key - will be added to the **Owner Address** section of the Curio PDP page.
 {% endhint %}
 
 Make sure to send a small amount of tFIL to your 0x wallet - we recommend 5 tFIL to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
 
 {% hint style="warning" %}
-⚠️ **Important:** Secure your private key material. Don't expose or store it in plain text without protection.
+**Important:** Secure your private key material. Don't expose or store it in plain text without protection.
 {% endhint %}
 
 ***
@@ -557,7 +557,7 @@ curio run --layers=gui,pdp
 ```
 
 {% hint style="warning" %}
-⚠️ If you encounter errors binding to port 443 when starting Curio with the pdp configuration layer, run:
+If you encounter errors binding to port 443 when starting Curio with the pdp configuration layer, run:
 {% endhint %}
 
 ```sh
@@ -567,7 +567,7 @@ sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/curio
 Test the PDP service:
 
 {% hint style="info" %}
-💡 If `pdptool` is not installed, clone and build Curio:
+If `pdptool` is not installed, clone and build Curio:
 {% endhint %}
 
 ```sh
@@ -587,11 +587,11 @@ Generate a service secret:
 ```
 
 {% hint style="info" %}
-💡 Always use `public` for the `--service-name` flag
+Always use `public` for the `--service-name` flag
 {% endhint %}
 
 {% hint style="success" %}
-✅ Expected output:
+Expected output:
 {% endhint %}
 
 ```sh
@@ -599,7 +599,7 @@ Ping successful: Service is reachable and JWT token is valid.
 ```
 
 {% hint style="info" %}
-💡 Note: The first ping often fails. Try again after a short delay.
+Note: The first ping often fails. Try again after a short delay.
 {% endhint %}
 
 ***
