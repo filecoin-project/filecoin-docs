@@ -9,10 +9,9 @@ description: >-
 {% hint style="danger" %}
 **ALPHA FEATURE - UNDER DEVELOPMENT**
 
-This documentation covers the PDP (Proof of Data Possession) feature, which is currently in alpha and under active development.
-This tool is intended for testing and experimental use only.
+This documentation covers the PDP (Proof of Data Possession) feature, which is currently in alpha and under active development. This tool is intended for testing and experimental use only.
 
-For production use and submitting real deals with live PDP Storage Providers, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk) and [Synapse dApp Tutorial](https://github.com/FIL-Builders/fs-upload-dapp).
+For production use and submitting real deals with live PDP Storage Providers, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk).
 {% endhint %}
 
 ## 🚀 Prerequisites
@@ -35,7 +34,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y \
 
 ***
 
-### 🐹 Install Go (v1.23.7)
+### :hammer: Install Go (v1.23.7)
 
 ```sh
 sudo rm -rf /usr/local/go
@@ -52,7 +51,7 @@ You should see something like: `go version go1.23.7 linux/amd64`
 
 ***
 
-### 🦀 Install Rust
+### :wrench: Install Rust
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
