@@ -82,7 +82,7 @@ EOF
 
 ***
 
-## ⛓️ Installing and Running Lotus - Calibration Testnet
+## ⛓️ Installing and Running Lotus
 
 🧠 Lotus is your gateway to the Filecoin network. It syncs the chain, manages wallets, and is required for Curio to interact with your node.
 
@@ -96,6 +96,14 @@ Clone and check out Lotus:
 git clone https://github.com/filecoin-project/lotus.git
 cd lotus
 git checkout $(curl -s https://api.github.com/repos/filecoin-project/lotus/releases/latest | jq -r .tag_name)
+```
+
+**Build and Install for Mainnet**
+
+```sh
+make clean && make lotus
+sudo make install-daemon
+lotus --version
 ```
 
 **Build and Install for Calibration**
@@ -115,6 +123,12 @@ You should see something like: `lotus version 1.32.2+calibnet+git.ff88d8269`
 ### 📦 Import a Snapshot and Start the Daemon
 
 Download the Snapshot
+
+**Mainnet:**
+
+```sh
+aria2c -x5 -o snapshot.car.zst https://forest-archive.chainsafe.dev/latest/mainnet/
+```
 
 **Calibration:**
 
@@ -299,13 +313,21 @@ git checkout rename
 Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.
 {% endhint %}
 
-{% hint style="info" %}
-This step will take a few minutes to complete.
-{% endhint %}
+Mainnet
+
+```sh
+make clean build
+```
+
+Calibration
 
 ```sh
 make clean calibnet
 ```
+
+{% hint style="info" %}
+This step will take a few minutes to complete.
+{% endhint %}
 
 ### ✅ Install and Verify Curio
 
@@ -449,6 +471,8 @@ This will launch the Curio web GUI locally.
 
 🧠 This section enables **FWSS Proof of Data Possession (PDP)** on your SP node using Curio. These steps guide you through running a standalone PDP service using Curio and pdptool.
 
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>PDP Support Channels</td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">https://filecoinproject.slack.com/archives/C0717TGU7V2</a></td></tr></tbody></table>
+
 ### 📦 Attach Storage Locations
 
 With Curio running with the GUI layer:
@@ -543,7 +567,7 @@ Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section
 Your 0x wallet address - the delegated Ethereum address derived from your Filecoin delegated wallet private key - will be added to the **Owner Address** section of the Curio PDP page.
 {% endhint %}
 
-Make sure to send a small amount of tFIL to your 0x wallet - we recommend 5 tFIL to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
+Make sure to send a small amount of FIL or tFIL (testnet FIL) to your 0x wallet - we recommend 8 FIL for Mainnet & 5 tFIL for Calibration to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
 
 {% hint style="warning" %}
 **Important:** Secure your private key material. Don't expose or store it in plain text without protection.
@@ -601,10 +625,6 @@ Expected output:
 Ping successful: Service is reachable and JWT token is valid.
 ```
 
-{% hint style="info" %}
-Note: The first ping often fails. Try again after a short delay.
-{% endhint %}
-
 ***
 
 ## 🎉 You're Done!
@@ -622,4 +642,4 @@ You've successfully launched a **PDP-enabled Filecoin Storage Provider** stack. 
 ## 🔜 Next Steps
 
 * 🧭 Monitor logs and metrics
-* 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2) [#spx-pdp](https://filecoinproject.slack.com/archives/C08JQBA7PEX)
+* 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)
