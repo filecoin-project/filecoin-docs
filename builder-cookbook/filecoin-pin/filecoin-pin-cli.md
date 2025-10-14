@@ -308,7 +308,7 @@ Data set inspection complete
 #### Links
 
 * FAQ: [Frequently Asked Questions](faq.md)
-* Filecoin Pin Docs:  [https://docs.filecoin.io/builder-cookbook/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-onchain-cloud/filecoin-pin)
+* Filecoin Pin Docs:  [https://docs.filecoin.io/builder-cookbook/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
 * Filecoin Pin CLI Repo: [https://github.com/filecoin-project/filecoin-pin](https://github.com/filecoin-project/filecoin-pin)
 * Filecoin Pin dApp Repo: [https://github.com/filecoin-project/filecoin-pin-website](https://github.com/filecoin-project/filecoin-pin-website)
 * Synapse SDK: [https://github.com/FilOzone/synapse-sdk](https://github.com/FilOzone/synapse-sdk)
