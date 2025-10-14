@@ -206,4 +206,5 @@
   * [Oracles](builder-cookbook/dapps/oracles.md)
   * [Cross-Chain Bridges](builder-cookbook/dapps/cross-chain-bridges.md)
   * [Decentralized Database](builder-cookbook/dapps/decentralized-database.md)
-* [Filecoin Pin](builder-cookbook/filecoin-pin.md)
+* [Filecoin Pin](builder-cookbook/filecoin-pin/README.md)
+  * [Filecoin Pin Launch -  FAQ](builder-cookbook/filecoin-pin/filecoin-pin-launch-faq.md)
