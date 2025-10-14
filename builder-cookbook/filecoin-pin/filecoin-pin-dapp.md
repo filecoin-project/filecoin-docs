@@ -4,6 +4,64 @@ description: How to use the Filecoin Pin CLI and creating GitHub Actions from th
 
 # Filecoin Pin
 
+### Get Started Now
+
+#### 1. Setup Payments
+
+Configure permissions for automatic payment handling:
+
+<figure><img src="../../../.gitbook/assets/1 (1).png" alt=""><figcaption></figcaption></figure>
+
+#### 2. Upload Data
+
+Upload your file with automatic funding:
+
+<figure><img src="../../../.gitbook/assets/2 (1).png" alt=""><figcaption></figcaption></figure>
+
+#### 3. Retrieve over an IPFS Gateway
+
+Retrieve your data using the IPFS gateway:
+
+<figure><img src="../../../.gitbook/assets/3 (1).png" alt=""><figcaption></figcaption></figure>
+
+#### 4. Prove Storage
+
+Verify your data is stored with cryptographic proofs:
+
+<figure><img src="../../../.gitbook/assets/4.png" alt=""><figcaption></figcaption></figure>
+
+***
+
+> NOTE! For demo purposes, I have created a THROWAWAY PRIVATE KEY. **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**. The repo references using your private key LOCALLY as an ENV VARIABLE. When you create a GITHUB ACTION, use GITHUB SECRETS to store your private key.
+
+### Who is this for
+
+1. Existing IPFS developers who want to use Filecoin to persist their data
+2. Technical users who want to use GitHub Actions to automate deployment of IPFS Files onto decentralized storage
+3. Agent builders that want to store their agent cards and validation materials on Filecoin for cryptographic proof of storage
+
+***
+
+### Prerequisites
+
+#### Install Required Tools
+
+```bash
+# Install Node.js 22+ (required for filecoin-pin)
+nvm install 22
+nvm use 22
+
+# Install filecoin-pin globally
+npm install -g filecoin-pin
+
+# Install ipfs-car (for CAR file operations)
+npm install -g @ipld/car-cli
+
+# Install GitHub CLI
+brew install gh  # macOS
+# or
+sudo apt install gh  # Ubuntu/Debian
+
 # Install Foundry (for wallet operations)
 curl -L https://foundry.paradigm.xyz | bash
 # Then run this in a new terminal:
