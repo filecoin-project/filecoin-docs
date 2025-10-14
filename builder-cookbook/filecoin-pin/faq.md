@@ -1,4 +1,4 @@
-# Filecoin Pin Launch -  FAQ
+# FAQ
 
 ### What is Filecoin Pin?
 
@@ -14,7 +14,7 @@ Two paths are available:
 2. **CLI**: Upload files from your terminal. Fund storage from your own wallet.
 
 {% hint style="info" %}
-**Both run on the Calibration testnet**. They use `tFIL` and `USDFC`.&#x20;
+**Both run on the Calibration testnet**. They use `tFIL` and `USDFC`.
 {% endhint %}
 
 {% hint style="danger" %}
@@ -111,5 +111,3 @@ See the repos as reference implementations and to fork for my own project?
 * Filecoin Pin dApp Repo: [https://github.com/filecoin-project/filecoin-pin-website](https://github.com/filecoin-project/filecoin-pin-website)
 * Synapse SDK: [https://github.com/FilOzone/synapse-sdk](https://github.com/FilOzone/synapse-sdk)
 * USDFC documentation: [https://usdfc.io/](https://usdfc.io/) (or project docs as available)
-
-\

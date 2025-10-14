@@ -4,6 +4,5 @@ description: How to use the Filecoin Pin CLI and creating GitHub Actions from th
 
 # Filecoin Pin
 
-
--  [Filecoin Pin CLI](/builder-cookbook/filecoin-pin/filecoin-pin-cli.md)
-- [Filecoin Pin dApp](/builder-cookbook/filecoin-pin/filecoin-pin-dapp.md)
+* [Filecoin Pin CLI](filecoin-pin-cli.md)
+* [Filecoin Pin dApp](host-a-website-with-filecoin-pin-using-github-actions.md)
