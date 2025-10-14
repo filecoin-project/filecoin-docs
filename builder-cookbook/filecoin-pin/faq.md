@@ -10,40 +10,35 @@ Filecoin Pin stores IPFS content on the Filecoin Network of decentralized Storag
 
 Two paths are available:
 
-1. **Website**: Upload files in your browser. Uses a pre-funded wallet.
-2. **CLI**: Upload files from your terminal. Fund storage from your own wallet.
+* **Website:** Upload files in your browser. Uses a pre-funded test wallet.
+* **CLI:** Upload files from your terminal. Fund storage from your own wallet.
 
 {% hint style="info" %}
-**Both run on the Calibration testnet**. They use `tFIL` and `USDFC`.
-{% endhint %}
-
-{% hint style="danger" %}
-Data has no persistence guarantees while on Calibnet.
+Both run on Calibration testnet. They use tFIL and USDFC. Data has no persistence guarantees while on Calibnet.
 {% endhint %}
 
 ***
 
 ### What do I need to get started?
 
-* Go to the Filecoin Pin dApp: [https://pin.filecoin.cloud/](https://pin.filecoin.cloud/) where you can upload Filecoin IPFS to the Filecoin Storage Network
-* CLI quickstart: [https://docs.filecoin.io/builder-cookbook/filecoin-onchain-cloud/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-onchain-cloud/filecoin-pin) (this is pending PR [https://github.com/filecoin-project/filecoin-docs/pulls](https://github.com/filecoin-project/filecoin-docs/pulls) )
+* You can find different links related to Filecoin Pin here: [https://docs.filecoin.io/builder-cookbook/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
 
 ***
 
 ### How do payments and approvals work?
 
-* **Website**: The demo wallet handles payments. It has been prefunded with testnet USDFC and tFIL. Users don't need to connect their own wallet.
-* **CLI**: Your test wallet handles payments. You approve and deposit funds through the Filecoin Pay smart contracts.
+* **Website:** The demo wallet handles payments. It has been prefunded with testnet USDFC and FIL. Users don't need to connect their own wallet.
+* **CLI:** Your test wallet handles payments. You approve and deposit funds through Filecoin Pay.
 
 {% hint style="info" %}
-Storage providers receive payment after cryptographically proving possession of your data.
+Storage providers receive payment after cryptographically proving data possession.
 {% endhint %}
 
 ***
 
 ### How does auto-funding work?
 
-Use `--auto-fund` when uploading with `add`. The CLI calculates storage costs automatically. It deposits the right amount of USDFC to your payment rail.
+Use `--auto-fund` when uploading. The CLI calculates storage costs automatically. It deposits the right amount of USDFC to your payment rail.
 
 {% hint style="info" %}
 No manual deposit calculations needed. The system handles it.
@@ -69,28 +64,36 @@ Check your Data Set with `filecoin-pin data-set <id>`.
 
 ### How do I retrieve my data?
 
-Three primary methods:
+Three methods:
 
-1. **IPFS Gateways**: Use public gateways with your root CID: `https://gateway.example.com/ipfs/<root-cid>`
-2. **Direct from Storage Provider**: Get the direct download URL from `filecoin-pin data-set <id>`
-3. **IPFS** Tools: Use Kubo, Helia, IPFS Desktop with your root CID.
+1. **IPFS Gateways:** Use public gateways with your root CID: `https://gateway.example.com/ipfs/<root-cid>`
+2. **Direct from Storage Provider:** Get the direct download URL from `filecoin-pin data-set <id>`
+3. **IPFS Tools:** Use Kubo, Helia, IPFS Desktop with your root CID.
 
 ***
 
 ### What is a piece CID vs root CID?
 
-* **Root CID** (bafybei...) is your IPFS content identifier. Use this to retrieve your data.
-* **Piece CID** (bafkzci...) is the Filecoin commitment. Storage Providers prove they store this piece.
+**Root CID** (bafybei...) is your IPFS content identifier. Use this to retrieve your data.
+
+**Piece CID** (bafkzci...) is the Filecoin commitment. Storage Providers prove they store this piece.
+
+{% hint style="info" %}
+Both are linked cryptographically on-chain.
+{% endhint %}
 
 ***
 
 ### How do I verify my data is actually stored?
 
-Run `filecoin-pin data-set <id>` to see on-chain verification. Check proof status and piece details.
+Two ways to verify:
 
-Every piece shows its CommP and proof state. This data comes directly from blockchain state.
+1. **CLI:** Run `filecoin-pin data-set <id>` to see on-chain verification. Check proof status and piece details.
+2. **PDP Explorer:** Visit `https://pdp.vxb.ai/calibration/dataset/{datasetID}` to view proofs in your browser.
 
-You can go to the Explorer with your data-set id: [https://pdp.vxb.ai/calibration/dataset/170](https://pdp.vxb.ai/calibration/dataset/170)
+{% hint style="info" %}
+Both methods show CommP and proof state directly from blockchain state.
+{% endhint %}
 
 ***
 
@@ -98,16 +101,14 @@ You can go to the Explorer with your data-set id: [https://pdp.vxb.ai/calibratio
 
 See the repos as reference implementations and to fork for my own project?
 
-* Website: [https://github.com/filecoin-project/filecoin-pin-website](https://github.com/filecoin-project/filecoin-pin-website)
-* CLI: [https://github.com/filecoin-project/filecoin-pin](https://github.com/filecoin-project/filecoin-pin)
+* **Website**: [https://github.com/filecoin-project/filecoin-pin-website](https://github.com/filecoin-project/filecoin-pin-website)
+* **CLI:** [https://github.com/filecoin-project/filecoin-pin](https://github.com/filecoin-project/filecoin-pin)
 
 ***
 
-### References
+## References
 
-* Filecoin Pin CLI Docs: [https://docs.filecoin.io/builder-cookbook/filecoin-onchain-cloud/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-onchain-cloud/filecoin-pin)
-* Filecoin Pin CLI Repo: [https://github.com/filecoin-project/filecoin-pin](https://github.com/filecoin-project/filecoin-pin)
-* Filecoin Pin Demo dApp: https://pin.filecoin.cloud/
+* Filecoin Pin CLI Docs: [https://docs.filecoin.io/builder-cookbook/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
 * Filecoin Pin dApp Repo: [https://github.com/filecoin-project/filecoin-pin-website](https://github.com/filecoin-project/filecoin-pin-website)
 * Synapse SDK: [https://github.com/FilOzone/synapse-sdk](https://github.com/FilOzone/synapse-sdk)
-* USDFC documentation: [https://usdfc.io/](https://usdfc.io/) (or project docs as available)
+* USDFC documentation: [https://docs.secured.finance/usdfc-stablecoin/getting-started](https://docs.secured.finance/usdfc-stablecoin/getting-started)
