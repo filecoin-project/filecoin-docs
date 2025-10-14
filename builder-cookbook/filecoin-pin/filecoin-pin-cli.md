@@ -1,8 +1,8 @@
 ---
-description: How to use the Filecoin Pin CLI and creating GitHub Actions from the terminal
+description: How to use the Filecoin Pin CLI to store IPFS data on Filecoin
 ---
 
-# Filecoin Pin
+# Filecoin Pin CLI
 
 ### Get Started Now
 
@@ -10,25 +10,25 @@ description: How to use the Filecoin Pin CLI and creating GitHub Actions from th
 
 Configure permissions for automatic payment handling:
 
-<figure><img src="../../../.gitbook/assets/1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/1 (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Upload Data
 
 Upload your file with automatic funding:
 
-<figure><img src="../../../.gitbook/assets/2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2 (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 3. Retrieve over an IPFS Gateway
 
 Retrieve your data using the IPFS gateway:
 
-<figure><img src="../../../.gitbook/assets/3 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/3 (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Prove Storage
 
 Verify your data is stored with cryptographic proofs:
 
-<figure><img src="../../../.gitbook/assets/4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/4 (1).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -294,7 +294,7 @@ Data set inspection complete
 **Provider Details:**
 
 * **Service URL**: Direct access to download pieces
-* **Storage price**: < 0.0001 USDFC/TiB/month (very low for testnet)
+* **Storage price**: < 0.0001 USDFC/TiB/month
 * **Min proving period: 30 epochs** - Proofs submitted every 15 minutes
 
 **Pieces:**
@@ -304,3 +304,12 @@ Data set inspection complete
 * Piece #1 = my-data/ (our directory upload)
 
 > 💡 **Note**: This command queries the smart contracts on-chain to retrieve all data set information. The data shown is live blockchain state, not cached data.
+
+#### Links
+
+* FAQ: [Frequently Asked Questions](faq.md)
+* Filecoin Pin CLI Docs:  [https://docs.filecoin.io/builder-cookbook/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-onchain-cloud/filecoin-pin)
+* Filecoin Pin CLI Repo: [https://github.com/filecoin-project/filecoin-pin](https://github.com/filecoin-project/filecoin-pin)
+* Filecoin Pin dApp Repo: [https://github.com/filecoin-project/filecoin-pin-website](https://github.com/filecoin-project/filecoin-pin-website)
+* Synapse SDK: [https://github.com/FilOzone/synapse-sdk](https://github.com/FilOzone/synapse-sdk)
+* USDFC documentation: [https://docs.secured.finance/usdfc-stablecoin/getting-started](https://docs.secured.finance/usdfc-stablecoin/getting-started)
