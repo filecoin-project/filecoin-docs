@@ -1,6 +1,9 @@
 ---
-description: Authoritative definitions and proper usage for all Filecoin terminology, including sectors, storage providers, sealing, and blockchain concepts. The definitive reference for understanding Filecoin technical terms.
-last-updated: 2025-05-08
+last-updated: 2025-05-08T00:00:00.000Z
+description: >-
+  Authoritative definitions and proper usage for all Filecoin terminology,
+  including sectors, storage providers, sealing, and blockchain concepts. The
+  definitive reference for understanding Filecoin tec
 ---
 
 # Glossary
@@ -187,6 +190,4 @@ _Winning Proof-of-Spacetime_ (WinningPoSt) is the mechanism by which [storage pr
 
 Storage providers who fail to do this in the necessary window will forfeit their opportunity to mine a block, but will not otherwise incur penalties for their failure to do so.
 
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/general/glossary)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/reference/general/glossary)
