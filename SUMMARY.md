@@ -207,7 +207,7 @@
   * [Cross-Chain Bridges](builder-cookbook/dapps/cross-chain-bridges.md)
   * [Decentralized Database](builder-cookbook/dapps/decentralized-database.md)
 * [Filecoin Pin](builder-cookbook/filecoin-pin/README.md)
-  * [Filecoin Pin CLI](/builder-cookbook/filecoin-pin/filecoin-pin-cli.md)
-  * [Filecoin Pin dApp](/builder-cookbook/filecoin-pin/filecoin-pin-dapp.md)
-  * [Filecoin Pin Launch -  FAQ](builder-cookbook/filecoin-pin/filecoin-pin-launch-faq.md)
-
+  * [Filecoin Pin CLI](builder-cookbook/filecoin-pin/filecoin-pin-cli.md)
+  * [Host a website with Filecoin Pin using Github Actions](builder-cookbook/filecoin-pin/host-a-website-with-filecoin-pin-using-github-actions.md)
+  * [Store IPFS Files on Filecoin: A Drag-and-Drop Guide](builder-cookbook/filecoin-pin/store-ipfs-files-on-filecoin-a-drag-and-drop-guide.md)
+  * [FAQ](builder-cookbook/filecoin-pin/faq.md)
