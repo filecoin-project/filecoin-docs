@@ -8,7 +8,7 @@ description: >-
 
 ### <mark style="color:blue;">Obtain Price Feeds with the Tellor Oracle</mark>&#x20;
 
-Tellor is an Oracle solution that enables price and Filecoin network data feeds for FVM dApps.  To see important disclaimers about the use of Tellor, please review the [Tellor Documentation](https://docs.tellor.io/tellor/getting-data/introduction), the [Tellor Contract Reference](https://docs.tellor.io/tellor/the-basics/contracts-reference#filecoin-fvm), and [this tutorial](https://youtu.be/AQIDqTLguyI?si=CuSY3uArgKJNVcYL).   &#x20;
+Tellor is an Oracle solution that enables price and Filecoin network data feeds for FVM dApps.  To see important disclaimers about the use of Tellor, please review the [Tellor Documentation](https://docs.tellor.io/), the [Tellor Contracts page](https://docs.tellor.io/tellor/the-basics/contracts-reference), and [this tutorial](https://youtu.be/AQIDqTLguyI?si=CuSY3uArgKJNVcYL).   &#x20;
 
 **Ingredients**
 

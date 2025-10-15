@@ -12,7 +12,8 @@ description: >-
 
 ## FILFOX
 
-[https://calibration.filfox.info/en](http://47.109.105.51/en)
+<!-- Note: Filfox calibration testnet explorer has intermittent availability issues -->
+[calibration.filfox.info/en](https://calibration.filfox.info/en)
 
 ## Filscan
 
