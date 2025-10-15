@@ -8,7 +8,7 @@ description: See an example of Filecoin Pin working end to end within a web cont
 
 In this walkthrough, you’ll build a simple drag-and-drop file uploader that:
 
-- Stores IPFS files directly on Filecoin with built-in payments, all in browser!
+- Stores IPFS files directly on Filecoin with built-in payments, all in the browser!
 - Tracks real-time upload progress through each step
 - Retrieves data easily from IPFS Mainnet and the underlying Filecoin Service Provider
 - Verifies persistent storage with on-chain Filecoin proofs
