@@ -52,7 +52,7 @@ If you are using your own wallet, you need to get test FIL and test USDFC to pay
 
 2. Visit the [Filecoin Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html) to get free test FIL (to pay for transaction gas).
 
-3. Visit the [Filecoin USDFC faucet]([https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc?__cf_chl_tk=qFwEfa7MNFkJlhKo32IUtR9rgP99qqf_XOmTs7qhusg-1758703656-1.0.1.1-gE8b6EQEmdp0lgg0gk5j2UZhF_69vRyYAAhtt..weyA))  to get test USDFC, which is a USD stable coin backed by FIL that can be used to pay for services.
+3. Visit the [Filecoin USDFC faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc])  to get test USDFC, which is a USD stable coin backed by FIL that can be used to pay for services.
 
 ### **Step 3: Run Your dApp**
 
