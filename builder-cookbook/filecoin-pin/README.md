@@ -6,7 +6,7 @@ description: Pin IPFS content to Filecoin using familiar IPFS tools and workflow
 
 ## Status
 
-Filecoin Pin is currently **alpha software** running on Filecoin Calibration testnet. As of 2025-10-15, It is not recommended for production use yet, but it is undergoing active development and will be ready for production later in 2025Q4.
+Filecoin Pin is currently **alpha software** running on the Filecoin Calibration testnet. As of 2025-10-15, it is undergoing active development and not yet recommended for production use. Please register for updates and GA announcement at [filecoin.cloud](https://www.filecoin.cloud/).
 
 ## What is Filecoin Pin?
 
