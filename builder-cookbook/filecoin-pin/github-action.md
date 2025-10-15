@@ -12,9 +12,7 @@ The example filecoin-pin upload action itself has a [usage example](https://gith
 
 Below is also a video walkthrough of the example GitHub Action in use!
 
-
-<!-- TODO: FIX THIS AFTER UPLOADING https://drive.google.com/drive/folders/1H6_g9Vvnh5RnzO7ymE3liLjNAL5hmpW2?usp=sharing to YouTube -->
-{% embed url="https://www.youtube.com/watch?v=D_uLM5i0Z4c=" %}
+{% embed url="https://www.youtube.com/watch?v=_2ZsMYXfgwI=" %}
 
 Note: there is more work coming soon to add "filecoin-pin functionality" directly to the robust [ipshipyard/ipfs-deploy-action](https://github.com/ipshipyard/ipfs-deploy-action) ([tracking issue](https://github.com/ipfs/ipfs-deploy-action/issues/39)).
 
