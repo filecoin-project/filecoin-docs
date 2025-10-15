@@ -1,5 +1,5 @@
 ---
-description: Learn about Filecoin Pin for easy storage in Filecoin with retrieval using standard IPFS Mainnet tooling.
+description: Learn about Filecoin Pin for easy storage in Filecoin with retrieval using standard [IPFS Mainnet](https://docs.ipfs.tech/concepts/glossary/#mainnet) tooling.
 ---
 
 # Filecoin Pin
