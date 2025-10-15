@@ -4,9 +4,11 @@ description: How to use the Filecoin Pin CLI to store and retrieve IPFS data on 
 
 # Filecoin Pin CLI
 
+> ⚠️ **SECURITY WARNING**: This tutorial uses throwaway private keys for demo purposes. **NEVER commit private keys to repositories or expose them publicly**. Use environment variables and GitHub secrets for production.
+
 ## Overview
 
-Follow these steps to get started using the Filecoin Pin CLI to store and retrieve IPFS data on Filecoin.
+Filecoin Pin CLI is a command-line tool that allows you to store IPFS data on the Filecoin network with cryptographic proofs of storage. This guide walks you through the complete setup and usage process.
 
 ### Setup Payments
 
@@ -90,11 +92,11 @@ cast --version
 
 > **Note**: The `filecoin-pin` CLI expects a `PRIVATE_KEY` for your Filecoin wallet to pay for storage service and transaction fees of using Filecoin warm storage service. 
 
-So the first step is to acquire some test FIL and USDFC on Filecoin calibration testnet into your ETH-compatable wallet.
+So the first step is to acquire some test FIL and USDFC on Filecoin calibration testnet into your ETH-compatible wallet.
 
 #### Generate a New Wallet
 
-If you do not have a ETH-compatable filecoin wallet, you can generate wallet using Foundry:
+If you do not have an ETH-compatible Filecoin wallet, you can generate one using Foundry:
 
 ```bash
 cast wallet new
@@ -116,7 +118,7 @@ Save the private key and wallet address.
 
 ### 2. Create Environment File
 
-> This PRIVATE_KEY is for testing purpose, pleasae **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**.
+> This PRIVATE_KEY is for testing purposes only. Please **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**.
 
 Save your credentials **locally** for easy reuse:
 
@@ -136,7 +138,7 @@ echo "Private Key: ${PRIVATE_KEY:0:10}..."
 
 ***
 
-### 3.Using the Filecoin Pin CLI
+### 3. Using the Filecoin Pin CLI
 
 #### Setup Payments
 
@@ -158,7 +160,7 @@ filecoin-pin payments setup --auto --private-key $PRIVATE_KEY
 
 #### Upload Data
 
-Use `--auto-fund` flag to automatically handle payment deposits (v0.7.0+).
+Use the `--auto-fund` flag to automatically handle payment deposits (v0.7.0+).
 
 **Upload a file:**
 
@@ -181,13 +183,13 @@ filecoin-pin add demo.txt --auto-fund --private-key $PRIVATE_KEY
 
 ✅ **Your file is now stored on Filecoin with ongoing proof of possession!**
 
-1. Your file will be accesssable via IPFS gateways, such as `https://ipfs.io/ipfs/<ROOT-CID>`
-1. It is also avaibale to download from Filecoin service provider using the **Direct Download URL**.
+1. Your file will be accessible via IPFS gateways, such as `https://ipfs.io/ipfs/<ROOT-CID>`
+1. It is also available to download from Filecoin service provider using the **Direct Download URL**.
 
 
 #### Upload Directory
 
-You can also upload a directly, it will package multiple files into a single CAR:
+You can also upload a directory - it will package multiple files into a single CAR:
 
 ```bash
 # Create test directory
@@ -317,9 +319,15 @@ Data set inspection complete
 
 ## Links
 
-* FAQ: [Frequently Asked Questions](faq.md)
-* Filecoin Pin Docs:  [https://docs.filecoin.io/builder-cookbook/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
-* Filecoin Pin CLI Repo: [https://github.com/filecoin-project/filecoin-pin](https://github.com/filecoin-project/filecoin-pin)
-* Filecoin Pin dApp Repo: [https://github.com/filecoin-project/filecoin-pin-website](https://github.com/filecoin-project/filecoin-pin-website)
-* Synapse SDK: [https://github.com/FilOzone/synapse-sdk](https://github.com/FilOzone/synapse-sdk)
-* USDFC documentation: [https://docs.secured.finance/usdfc-stablecoin/getting-started](https://docs.secured.finance/usdfc-stablecoin/getting-started)
+#### Documentation
+
+- [Frequently Asked Questions](faq.md)
+- [Filecoin Pin Documentation](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
+
+#### Repositories
+- [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin)
+- [Filecoin Pin dApp](https://github.com/filecoin-project/filecoin-pin-website)
+
+#### Related Tools
+- [Synapse SDK](https://github.com/FilOzone/synapse-sdk)
+- [USDFC Documentation](https://docs.secured.finance/usdfc-stablecoin/getting-started)
