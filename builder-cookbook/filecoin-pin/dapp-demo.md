@@ -8,7 +8,7 @@ description: See an example of Filecoin Pin working end to end within a web cont
 
 In this walkthrough, you’ll build a simple drag-and-drop file uploader that:
 
-- Stores IPFS files directly on Filecoin with built-in payments, all in the browser!
+- Stores IPFS files directly on Filecoin with built-in payments, all in browser!
 - Tracks real-time upload progress through each step
 - Retrieves data easily from IPFS Mainnet and the underlying Filecoin Service Provider
 - Verifies persistent storage with on-chain Filecoin proofs
@@ -93,11 +93,11 @@ Your data is available from both the IPFS Mainnet network using standard traditi
 
 ### **Step 4: Verify your data storage**
 
-Filecoin storage providers submit cryptographic proofs regularly onchain to prove that they are storing your data, and you can verify and see it for yourself [on PDP Scan](https://pdp.vxb.ai/calibration).
+Filecoin storage providers submit cryptographic proofs regularly onchain to prove that they are storing your data, and you can verify and see it for yourself [on the PDP Scan](https://pdp.vxb.ai/calibration).
 
     ![](./assets/pinapp-viewproof.gif)
 
-That is it - you now have a dapp with a drag-and-drop interface to store IPFS files on Filecoin! 🚀🚀🚀
+That is it - you now have a dapp with a drag-and-drop interface to store IPFS Files on Filecoin!
 
 ## Next Steps
 

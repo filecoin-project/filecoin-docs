@@ -208,6 +208,6 @@
   * [Decentralized Database](builder-cookbook/dapps/decentralized-database.md)
 * [Filecoin Pin](builder-cookbook/filecoin-pin/README.md)
   * [Filecoin Pin CLI](builder-cookbook/filecoin-pin/filecoin-pin-cli.md)
-  * [Filecoin Pin Github Action](builder-cookbook/filecoin-pin/pin-github-actions.md)
-  * [Filecoin Pin dApp Demo](builder-cookbook/filecoin-pin/pin-dapp.md)
+  * [Filecoin Pin Github Action](builder-cookbook/filecoin-pin/github-action.md)
+  * [Filecoin Pin dApp Demo](builder-cookbook/filecoin-pin/dapp-demo.md)
   * [FAQ](builder-cookbook/filecoin-pin/faq.md)
