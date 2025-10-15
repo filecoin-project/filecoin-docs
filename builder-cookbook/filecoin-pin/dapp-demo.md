@@ -15,6 +15,10 @@ In this walkthrough, you’ll build a simple drag-and-drop file uploader that:
 - Multi-user support with session-based authentication
 - Seamlessly integrates with React, TypeScript, and Vite
 
+## Walkthrough Recording 
+
+{% embed url="https://www.youtube.com/embed/UElx1_qF12o?si=ppmzrl6psMRqwNQh" %}
+
 ## Setup
 
 We will start building by [forking the *filecoin-pin-website demo repo](https://github.com/filecoin-project/filecoin-pin-website/fork).* Make sure you have **Node.js 18+** and **npm 9+** installed.  The dapp works with Filecoin Calibration testnet. 
