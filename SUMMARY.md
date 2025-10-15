@@ -208,6 +208,6 @@
   * [Decentralized Database](builder-cookbook/dapps/decentralized-database.md)
 * [Filecoin Pin](builder-cookbook/filecoin-pin/README.md)
   * [Filecoin Pin CLI](builder-cookbook/filecoin-pin/filecoin-pin-cli.md)
-  * [Host a website with Filecoin Pin using Github Actions](builder-cookbook/filecoin-pin/host-a-website-with-filecoin-pin-using-github-actions.md)
-  * [Store IPFS Files on Filecoin: A Drag-and-Drop Guide](builder-cookbook/filecoin-pin/store-ipfs-files-on-filecoin-a-drag-and-drop-guide.md)
+  * [Filecoin Pin Github Action](builder-cookbook/filecoin-pin/pin-github-actions.md)
+  * [Filecoin Pin dApp Demo](builder-cookbook/filecoin-pin/pin-dapp.md)
   * [FAQ](builder-cookbook/filecoin-pin/faq.md)
