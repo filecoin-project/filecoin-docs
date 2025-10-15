@@ -70,7 +70,7 @@ The magic happens in one key file [**`src/hooks/use-filecoin-upload.ts`**](https
 - **Create CAR** - Converts your file to an IPFS CAR (Content Addressed aRchive) file.
 - **Upload** - Sends the CAR file to a Filecoin Storage Provider (SP).
     
-    ![upload.gif](./assets/pinapp-upload.gif)
+    ![](./assets/pinapp-upload.gif)
     
 ### Step 2: Announce CIDs and confirm the transaction
 
@@ -79,20 +79,19 @@ The Filecoin SP:
 - indexes the IPFS CAR file and publishes all the contained CIDs to the IPFS network via IPNI.
 - commits to the Filecoin network via onchain transactions to store the data. Once the transaction is confirmed, your data is paid to be persisted on Filecoin.
     
-    ![publish.gif](./assets/pinapp-publish)
-    
+    ![](./assets/pinapp-publish.gif)
 
 ### Step 3: Download the data
 
 Your data is available from both the IPFS Mainnet network using standard traditional IPFS tooling and/or directly from Filecoin SPs.
 
-![download](./assets/pinapp-download.gif)
+    ![](./assets/pinapp-download.gif)
 
 ### **Step 4: Verify your data storage**
 
 Filecoin storage providers submit cryptographic proofs regularly onchain to prove that they are storing your data, and you can verify and see it for yourself [on the PDP Scan](https://pdp.vxb.ai/calibration).
 
-![viewproof.gif](./assets/pinapp-viewproof.gif)
+    ![](./assets/pinapp-viewproof.gif)
 
 That is it - you now have a dapp with a drag-and-drop interface to store IPFS Files on Filecoin!
 
