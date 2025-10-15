@@ -6,7 +6,7 @@ description: >-
 
 # Contract Verification with Filfox
 
-The following guide walks you through the process of contract verification using the [Filfox](https://filfox.info/en/contract) explorer.
+The following guide walks you through the process of contract verification using the [Filfox](https://filfox.info/contract) explorer.
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ The following guide walks you through the process of contract verification using
 ### Step 2: Submit for Verification
 
 6. **Access Filfox verification page:**
-   - Navigate to the [Filfox Contract Verification](https://filfox.info/en/contract) page
+   - Navigate to the [Filfox Contract Verification](https://filfox.info/contract) page
 7. **Fill in contract information:**
    - Enter your contract's deployment address
    - Select the appropriate license type
