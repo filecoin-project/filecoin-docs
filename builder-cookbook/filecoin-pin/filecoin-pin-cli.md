@@ -1,5 +1,5 @@
 ---
-description: How to use the Filecoin Pin CLI to store IPFS data on Filecoin
+description: How to use the Filecoin Pin CLI to store and retrieve IPFS data on Filecoin
 ---
 
 # Filecoin Pin CLI

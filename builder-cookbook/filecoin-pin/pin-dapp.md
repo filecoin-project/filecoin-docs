@@ -1,3 +1,7 @@
+---
+description: See an example of Filecoin Pin working end to end within a web context.
+---
+
 # Filecoin Pin dApp Demo
 
 ## What You'll Build

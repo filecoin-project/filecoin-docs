@@ -1,4 +1,8 @@
-# Host a website with Filecoin Pin using GitHub Actions
+---
+description: Host a static website with Filecoin Pin using GitHub Actions
+---
+ 
+# Filecoin Pin GitHub Action
 
 `filecoin-pin` can be used in CI pipelines like GitHub Actions to upload assets to the Filecoin decentralized storage network.  Static website assets are particularly good candidates, given the existing tooling within the IPFS ecosystem for static website retrieval.
 
