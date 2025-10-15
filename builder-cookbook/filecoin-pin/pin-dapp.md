@@ -93,7 +93,7 @@ Your data is available from both the IPFS Mainnet network using standard traditi
 
 ### **Step 4: Verify your data storage**
 
-Filecoin storage providers submit cryptographic proofs regularly onchain to prove that they are storing your data, and you can verify and see it for yourself [on the PDP Scan](https://pdp.vxb.ai/calibration).
+Filecoin storage providers submit cryptographic proofs regularly onchain to prove that they are storing your data, and you can verify and see it for yourself [on PDP Scan](https://pdp.vxb.ai/calibration).
 
     ![](./assets/pinapp-viewproof.gif)
 
