@@ -112,8 +112,6 @@ Save the private key and wallet address.
 
   Request test USDFC from [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
 
-Final state: \~2 tFIL (gas) + 200 USDFC (storage payments)
-
 ***
 
 ### 2. Create Environment File
