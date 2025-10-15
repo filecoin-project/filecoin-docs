@@ -97,7 +97,7 @@ Filecoin storage providers submit cryptographic proofs regularly onchain to prov
 
     ![](./assets/pinapp-viewproof.gif)
 
-That is it - you now have a dapp with a drag-and-drop interface to store IPFS Files on Filecoin!
+That is it - you now have a dapp with a drag-and-drop interface to store IPFS files on Filecoin! 🚀🚀🚀
 
 ## Next Steps
 
