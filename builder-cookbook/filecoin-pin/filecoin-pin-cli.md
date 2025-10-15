@@ -4,27 +4,27 @@ description: How to use the Filecoin Pin CLI to store and retrieve IPFS data on 
 
 # Filecoin Pin CLI
 
-### Get Started Now
+## Get Started Now
 
-#### 1. Setup Payments
+### 1. Setup Payments
 
 Configure permissions for automatic payment handling:
 
 <figure><img src="../../.gitbook/assets/1 (2).png" alt=""><figcaption></figcaption></figure>
 
-#### 2. Upload Data
+### 2. Upload Data
 
 Upload your file with automatic funding:
 
 <figure><img src="../../.gitbook/assets/2 (2).png" alt=""><figcaption></figcaption></figure>
 
-#### 3. Retrieve over an IPFS Gateway
+### 3. Retrieve over an IPFS Gateway
 
 Retrieve your data using the IPFS gateway:
 
 <figure><img src="../../.gitbook/assets/3 (2).png" alt=""><figcaption></figcaption></figure>
 
-#### 4. Prove Storage
+### 4. Prove Storage
 
 Verify your data is stored with cryptographic proofs:
 
@@ -34,7 +34,7 @@ Verify your data is stored with cryptographic proofs:
 
 > NOTE! For demo purposes, I have created a THROWAWAY PRIVATE KEY. **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**. The repo references using your private key LOCALLY as an ENV VARIABLE. When you create a GITHUB ACTION, use GITHUB SECRETS to store your private key.
 
-### Who is this for
+## Who is this for
 
 1. Existing IPFS developers who want to use Filecoin to persist their data
 2. Technical users who want to use GitHub Actions to automate deployment of IPFS Files onto decentralized storage
@@ -42,9 +42,9 @@ Verify your data is stored with cryptographic proofs:
 
 ***
 
-### Prerequisites
+## Prerequisites
 
-#### Install Required Tools
+### Install Required Tools
 
 ```bash
 # Install Node.js 22+ (required for filecoin-pin)
@@ -68,7 +68,7 @@ curl -L https://foundry.paradigm.xyz | bash
 foundryup
 ```
 
-#### Verify Installation
+### Verify Installation
 
 ```bash
 filecoin-pin --version
@@ -86,11 +86,11 @@ cast --version
 
 ***
 
-### Part 0: Wallet Setup from Scratch
+## Part 0: Wallet Setup from Scratch
 
 > **Note**: The `filecoin-pin` CLI expects a `PRIVATE_KEY` environment variable. This section shows initial setup.
 
-#### Step 0.1: Generate a New Wallet
+### Step 0.1: Generate a New Wallet
 
 Generate wallet using Foundry:
 
@@ -100,7 +100,7 @@ cast wallet new
 
 Save the private key and wallet address.
 
-#### Step 0.2: Get Testnet FIL
+### Step 0.2: Get Testnet FIL
 
 Get 100 tFIL from ChainSafe faucet (requires browser):
 
@@ -108,7 +108,7 @@ Get 100 tFIL from ChainSafe faucet (requires browser):
 open "https://faucet.calibnet.chainsafe-fil.io/funds.html"
 ```
 
-#### Step 0.3: Get USDFC Stablecoin
+### Step 0.3: Get USDFC Stablecoin
 
 1. [Setup MetaMask with Filecoin Calibration](https://docs.filecoin.io/basics/assets/metamask-setup) (1-click import available)
 2. Import your private key to MetaMask
@@ -119,7 +119,7 @@ Final state: \~2 tFIL (gas) + 200 USDFC (storage payments)
 
 ***
 
-#### Step 0.4: Create Environment File
+### Step 0.4: Create Environment File
 
 > I put my private key on this repo for DEMO purposes. It is a TESTNET KEY. **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**.
 
@@ -143,7 +143,7 @@ echo "RPC URL: $RPC_URL"
 
 ***
 
-### Step 1: Setup Payments
+## Step 1: Setup Payments
 
 All commands in this section use the environment variables set in Part 0 (Step 0.4). If you're starting a new terminal session, reload them:
 
@@ -165,7 +165,7 @@ filecoin-pin payments setup --auto
 
 ***
 
-#### Step 2: Upload Data
+### Step 2: Upload Data
 
 Use `--auto-fund` flag to automatically handle payment deposits (v0.7.0+).
 
@@ -192,7 +192,7 @@ filecoin-pin add demo.txt
 
 ***
 
-#### Step 4b: Upload Directory
+### Step 4b: Upload Directory
 
 Package multiple files into a single CAR:
 
@@ -218,7 +218,7 @@ filecoin-pin add --auto-fund my-data/
 
 ***
 
-#### Step 5: Prove Storage
+### Step 5: Prove Storage
 
 Get detailed information about a specific data set (this queries the blockchain directly) that includes proofs:
 
@@ -305,7 +305,7 @@ Data set inspection complete
 
 > 💡 **Note**: This command queries the smart contracts on-chain to retrieve all data set information. The data shown is live blockchain state, not cached data.
 
-#### Links
+### Links
 
 * FAQ: [Frequently Asked Questions](faq.md)
 * Filecoin Pin Docs:  [https://docs.filecoin.io/builder-cookbook/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-pin)

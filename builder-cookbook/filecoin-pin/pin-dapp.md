@@ -99,7 +99,7 @@ Filecoin storage providers submit cryptographic proofs regularly onchain to prov
 
 That is it - you now have a dapp with a drag-and-drop interface to store IPFS Files on Filecoin!
 
-# Next Steps
+## Next Steps
 
 1. Check back on the [filecoin-pin-website repo](https://github.com/filecoin-project/filecoin-pin-website) - it will continue to be updated as new functionality is brought to filecoin-pin.
 2. Feel free to report any issues with the dApp demo to https://github.com/filecoin-project/filecoin-pin-website/issues
