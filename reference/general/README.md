@@ -69,7 +69,6 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   * to securely capture, store and verify human history
   * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/) or the [Filecoin blog interview](https://filecoin.io/blog/starling-framework/)
-  <!-- TODO: Starlingstorage.io link is no longer accessible - API + CLI that simplified storing data to a local Lotus node for preservation use cases -->
 
 ## APIs & Developer tools
 
