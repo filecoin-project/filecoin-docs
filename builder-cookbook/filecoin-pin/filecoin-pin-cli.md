@@ -6,6 +6,8 @@ description: How to use the Filecoin Pin CLI to store and retrieve IPFS data on 
 
 ## Get Started Now
 
+Follow these steps to get started using the Filecoin Pin CLI to store and retrieve IPFS data on Filecoin.
+
 ### Setup Payments
 
 Configure permissions for automatic payment handling:
