@@ -4,9 +4,11 @@ description: How to use the Filecoin Pin CLI to store and retrieve IPFS data on 
 
 # Filecoin Pin CLI
 
-## Get Started Now
+> ⚠️ **SECURITY WARNING**: This tutorial uses throwaway private keys for demo purposes. **NEVER commit private keys to repositories or expose them publicly**. Use environment variables and GitHub secrets for production.
 
-Follow these steps to get started using the Filecoin Pin CLI to store and retrieve IPFS data on Filecoin.
+## Overview
+
+Filecoin Pin CLI is a command-line tool that allows you to store IPFS data on the Filecoin network with cryptographic proofs of storage. This guide walks you through the complete setup and usage process.
 
 ### Setup Payments
 
@@ -32,21 +34,19 @@ Verify your data is stored with cryptographic proofs:
 
 <figure><img src="../../.gitbook/assets/4 (1).png" alt=""><figcaption></figcaption></figure>
 
-***
 
-> NOTE! For demo purposes, this example uses a THROWAWAY PRIVATE KEY. **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**. The repo references using your private key LOCALLY as an ENV VARIABLE. When you create a GITHUB ACTION, use GITHUB SECRETS to store your private key.
-
-## Who is this for
+### Who is this for
 
 1. Existing IPFS developers who want to use Filecoin to persist their data
-2. Technical users who want to use GitHub Actions to automate deployment of IPFS Files onto decentralized storage
-3. Agent builders that want to store their agent cards and validation materials on Filecoin for cryptographic proof of storage
+1. Agent builders that want to store their agent cards and validation materials on Filecoin for cryptographic proof of storage
 
-***
 
-## Prerequisites
+## Getting started
+> NOTE! For demo purposes, this example uses a THROWAWAY PRIVATE KEY. **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**. The repo references using your private key LOCALLY as an ENV VARIABLE. When you create a GITHUB ACTION, use GITHUB SECRETS to store your private key.
 
-### Install Required Tools
+### Prerequisites
+
+#### Install Required Tools
 
 ```bash
 # Install Node.js 22+ (required for filecoin-pin)
@@ -70,7 +70,7 @@ curl -L https://foundry.paradigm.xyz | bash
 foundryup
 ```
 
-### Verify Installation
+#### Verify Installation
 
 ```bash
 filecoin-pin --version
@@ -88,13 +88,15 @@ cast --version
 
 ***
 
-## Wallet Setup from Scratch
+### 1. Wallet Setup
 
-> **Note**: The `filecoin-pin` CLI expects a `PRIVATE_KEY` environment variable. This section shows initial setup.
+> **Note**: The `filecoin-pin` CLI expects a `PRIVATE_KEY` for your Filecoin wallet to pay for storage service and transaction fees of using Filecoin warm storage service. 
 
-### Generate a New Wallet
+So the first step is to acquire some test FIL and USDFC on Filecoin calibration testnet into your ETH-compatible wallet.
 
-Generate wallet using Foundry:
+#### Generate a New Wallet
+
+If you do not have an ETH-compatible Filecoin wallet, you can generate one using Foundry:
 
 ```bash
 cast wallet new
@@ -102,36 +104,28 @@ cast wallet new
 
 Save the private key and wallet address.
 
-### Get Testnet FIL
+#### Get Testnet tokens
 
-Get 100 tFIL from ChainSafe faucet (requires browser):
+- **tFIL**
+  
+  Request 100 tFIL from [ChainSafe calibration faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html).
 
-```bash
-open "https://faucet.calibnet.chainsafe-fil.io/funds.html"
-```
+- **Test USDFC**
 
-### Get USDFC Stablecoin
-
-1. [Setup MetaMask with Filecoin Calibration](https://docs.filecoin.io/basics/assets/metamask-setup) (1-click import available)
-2. Import your private key to MetaMask
-3. Visit [USDFC minting app](https://stg.usdfc.net)
-4. Mint 200 USDFC using 98 FIL collateral
-
-Final state: \~2 tFIL (gas) + 200 USDFC (storage payments)
+  Request test USDFC from [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
 
 ***
 
-### Create Environment File
+### 2. Create Environment File
 
-> I put my private key on this repo for DEMO purposes. It is a TESTNET KEY. **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**.
+> This PRIVATE_KEY is for testing purposes only. Please **NEVER USE YOUR PRIVATE KEY IN A REPOSITORY OR EXPOSE IT**.
 
 Save your credentials **locally** for easy reuse:
 
 ```bash
 cat > ~/.filecoin-pin-env << 'EOF'
 export PRIVATE_KEY="0x8eef...c414"
-export WALLET_ADDRESS="0x5a0c7D45C3834E4eB18c26C60932B757A43B7B0B"
-export RPC_URL="https://api.calibration.node.glif.io/rpc/v1"
+export WALLET_ADDRESS="0x5a0...B7B0B"
 EOF
 
 # Load variables
@@ -140,14 +134,13 @@ source ~/.filecoin-pin-env
 # Verify
 echo "Wallet: $WALLET_ADDRESS"
 echo "Private Key: ${PRIVATE_KEY:0:10}..."
-echo "RPC URL: $RPC_URL"
 ```
 
 ***
 
-## Using the CLI
+### 3. Using the Filecoin Pin CLI
 
-### Setup Payments
+#### Setup Payments
 
 All commands in this section use the environment variables set in [Create Environment File](#create-environment-file). If you're starting a new terminal session, reload them:
 
@@ -155,23 +148,19 @@ All commands in this section use the environment variables set in [Create Enviro
 source ~/.filecoin-pin-env
 ```
 
-> **Note:** These commands work directly without running a server/daemon. The `PRIVATE_KEY` and `RPC_URL` environment variables must be set.
-
-***
+> **Note:** These commands work directly without running a server/daemon. The `PRIVATE_KEY` environment variable must be set.
 
 Configure payment approvals (permissions only - deposits handled automatically with `--auto-fund`):
 
 ```bash
-filecoin-pin payments setup --auto
+filecoin-pin payments setup --auto --private-key $PRIVATE_KEY
 ```
 
 > **What `--auto` does**: Configures WarmStorage contract permissions automatically. No deposit required at this step - use `--auto-fund` when uploading to handle deposits automatically.
 
-***
+#### Upload Data
 
-### Upload Data
-
-Use `--auto-fund` flag to automatically handle payment deposits (v0.7.0+).
+Use the `--auto-fund` flag to automatically handle payment deposits (v0.7.0+).
 
 **Upload a file:**
 
@@ -180,12 +169,12 @@ Use `--auto-fund` flag to automatically handle payment deposits (v0.7.0+).
 echo "Hello Filecoin from CLI!" > demo.txt
 
 # Upload to Filecoin
-filecoin-pin add demo.txt
+filecoin-pin add demo.txt --auto-fund --private-key $PRIVATE_KEY
 ```
 
 **Key values explained:**
 
-* **Root CID**: `bafybeibh422kjvgfmymx6nr7jandwngrown6ywomk4vplayl4de2x553t4` - IPFS content identifier for your data
+* **Root CID**: `bafybeibh422kjvgfmymx6nr7jandwngrown6ywomk4vplayl4de2x553t4` - IPFS CID for your data which you can access from IPFS gateways, such as **ipfs.io**.
 * **Piece CID**: `bafkzcibcfab4grpgq6e6rva4kfuxfcvibdzx3kn2jdw6q3zqgwt5cou7j6k4wfq` - Filecoin piece commitment (cryptographic proof)
 * **Piece ID**: `0` - Reference within the data set
 * **Data Set ID**: `325` - On-chain data set containing your upload
@@ -194,11 +183,13 @@ filecoin-pin add demo.txt
 
 ✅ **Your file is now stored on Filecoin with ongoing proof of possession!**
 
-***
+1. Your file will be accessible via IPFS gateways, such as `https://ipfs.io/ipfs/<ROOT-CID>`
+1. It is also available to download from Filecoin service provider using the **Direct Download URL**.
 
-### Upload Directory
 
-Package multiple files into a single CAR:
+#### Upload Directory
+
+You can also upload a directory - it will package multiple files into a single CAR:
 
 ```bash
 # Create test directory
@@ -208,23 +199,40 @@ echo "File 2" > my-data/file2.txt
 echo "File 3" > my-data/file3.txt
 
 # Upload entire directory with auto-funding
-filecoin-pin add --auto-fund my-data/
+filecoin-pin add my-data/ --auto-fund --private-key $PRIVATE_KEY
 ```
 
 **Key details:**
 
-* **Root CID**: `bafybeig27btater5fpt3l67gbme3sebqk3ynwdhlbrbuk3q7espiyplan4` - IPFS directory structure
+* **Root CID**: `bafybeig27btater5fpt3l67gbme3sebqk3ynwdhlbrbuk3q7espiyplan4` - IPFS CID for the directory structure
 * **Size**: 433.0 B - Includes all files plus directory metadata
 * **Piece ID**: `1` - Second piece in the same Data Set ID 325
 * **Data Set ID**: `325` - Same data set as the single file upload (multiple pieces grouped together)
 
 > 💡 **Note**: Multiple uploads to the same payment configuration are grouped into the same Data Set, with each upload assigned a unique Piece ID.
 
-***
 
-### Prove Storage
+#### Prove Storage
+Filecoin-pin CLI also provide commands to check the proof of your storage in data set. First, you can list the dataset associate to your wallet. 
 
-Get detailed information about a specific data set (this queries the blockchain directly) that includes proofs:
+```bash
+filecoin-pin data-set --ls
+
+//Expected Output
+━━━ Data Sets ━━━
+│
+│  Address: 0x5a0...B7B0B
+│  Network: calibration
+│  
+│  #325 • live • managed
+│    Provider: infrafolio-calib (ID 4)
+│    Pieces stored: 3
+│    ...
+│  
+└  Data set inspection complete
+```
+
+Then you can get detailed information about your data set (this queries the blockchain directly) that includes proofs:
 
 ```bash
 filecoin-pin data-set 325
@@ -311,9 +319,15 @@ Data set inspection complete
 
 ## Links
 
-* FAQ: [Frequently Asked Questions](faq.md)
-* Filecoin Pin Docs:  [https://docs.filecoin.io/builder-cookbook/filecoin-pin](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
-* Filecoin Pin CLI Repo: [https://github.com/filecoin-project/filecoin-pin](https://github.com/filecoin-project/filecoin-pin)
-* Filecoin Pin dApp Repo: [https://github.com/filecoin-project/filecoin-pin-website](https://github.com/filecoin-project/filecoin-pin-website)
-* Synapse SDK: [https://github.com/FilOzone/synapse-sdk](https://github.com/FilOzone/synapse-sdk)
-* USDFC documentation: [https://docs.secured.finance/usdfc-stablecoin/getting-started](https://docs.secured.finance/usdfc-stablecoin/getting-started)
+#### Documentation
+
+- [Frequently Asked Questions](faq.md)
+- [Filecoin Pin Documentation](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
+
+#### Repositories
+- [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin)
+- [Filecoin Pin dApp](https://github.com/filecoin-project/filecoin-pin-website)
+
+#### Related Tools
+- [Synapse SDK](https://github.com/FilOzone/synapse-sdk)
+- [USDFC Documentation](https://docs.secured.finance/usdfc-stablecoin/getting-started)
