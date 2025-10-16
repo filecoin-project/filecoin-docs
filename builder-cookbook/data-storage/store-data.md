@@ -119,7 +119,7 @@ A Javascript function to invoke the `makeDealProposal` method should be like:
         
         let cid = new CID(commP);
         const extraParamsV1 = [
-          "https://bafybeif74tokne4wvxsrcsxh6dhrzv6ys7mtifhwzaen7jfjuvltean32a.ipfs.dweb.link/ipfs/bafybeif74tokne4wvxsrcsxh6dhrzv6ys7mtifhwzaen7jfjuvltean32a/baga6ea4seaqesm5ghdwocotmdavlrrzssfl33xho6xtrr5grwyi5gj3vtairaoq.car",//carLink
+          "public http link to car file",//carLink
           236445, // carSize
           false, // skipIpniAnnounce,
           false, // removeUnsealedCopy
