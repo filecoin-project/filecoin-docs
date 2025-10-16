@@ -6,7 +6,7 @@ description: >-
 
 # Contract Verification with Filfox
 
-The following guide walks you through the process of contract verification using the [Filfox](https://filfox.info/en/contract) explorer.
+The following guide walks you through the process of contract verification using the [Filfox Contract Verification](https://filfox.info/en/contract) page.
 
 ## Prerequisites
 

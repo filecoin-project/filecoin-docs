@@ -5,12 +5,6 @@
 [![Backlog](https://img.shields.io/badge/backlog-Updated-blue?style=for-the-badge)](https://github.com/orgs/filecoin-project/projects/103/views/1)
 [![Check Links](https://img.shields.io/github/actions/workflow/status/filecoin-project/filecoin-docs/check-external-links.yml?style=for-the-badge&label=External%20link%20checker)](https://github.com/filecoin-project/filecoin-docs/actions/workflows/check-external-links.yml)
 
-<picture align=center>
-    <source media="(prefers-color-scheme: dark)" srcset="https://bafybeiaqdbd5zbl55x5vjmkwpjhqapt3ks3q4ykaclqkajhsdwyzlbz3g4.ipfs.w3s.link/Filecoin-logo-blue-white.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://bafybeihuk3hsy6d43dn36tqnvf6tvzleiijd5idbf2q7maw3nshnfm6wiu.ipfs.w3s.link/filecoin-logo-black-type.svg">
-    <img alt="The Filecoin project logo." src="https://bafybeihuk3hsy6d43dn36tqnvf6tvzleiijd5idbf2q7maw3nshnfm6wiu.ipfs.w3s.link/filecoin-logo-black-type.svg">
-</picture>
-
 </div>
 
 ## Table of contents <!-- omit in toc -->
