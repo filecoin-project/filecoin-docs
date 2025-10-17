@@ -23,10 +23,10 @@ curl --location --request POST '<NODE_ADDRESS>' \
 
 ## Step-by-step example
 
-1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io/en) node.\\
+1. In a terminal window, use Curl to request the current chain head from a public [Chain.Love](https://filecoin.chain.love) node.\\
 
 *   ```shell
-    curl -X POST 'https://api.node.glif.io' \
+    curl -X POST 'https://filecoin.chain.love' \
         -H 'Content-Type: application/json' \
         --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}'
     ```
@@ -42,7 +42,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
     ```
 
 1.  ```shell
-    curl -X POST 'https://api.node.glif.io' \
+    curl -X POST 'https://filecoin.chain.love' \
         -H 'Content-Type: application/json' \
         --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}' \
         | jq
@@ -83,7 +83,7 @@ Each node implementation has different ways to generate and manage authenticatio
 * [Lotus](https://lotus.filecoin.io)
 * [Venus](https://venus.filecoin.io)
 
-If you are using a node provider service like [Glif](https://glif.io/en), take a look at your providers documentation to find out how to manage authentication tokens.
+If you are using a node provider service like [Chain.Love](https://filecoin.chain.love/rpc), take a look at your providers documentation to find out how to manage authentication tokens.
 
 
 

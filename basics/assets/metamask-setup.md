@@ -73,11 +73,11 @@ The process for configuring MetaMask to use Filecoin is fairly simple but has so
 
 {% tabs %}
 {% tab title="Mainnet" %}
-<table><thead><tr><th width="159">Field</th><th>Value</th></tr></thead><tbody><tr><td>Network name</td><td><code>Filecoin</code></td></tr><tr><td>New RPC URL</td><td>Either:<br>- <code>https://api.node.glif.io/rpc/v1</code><br>- <code>https://filecoin.chainup.net/rpc/v1</code><br>- <code>https://rpc.ankr.com/filecoin</code></td></tr><tr><td>Chain ID</td><td><code>314</code></td></tr><tr><td>Currency symbol</td><td><code>FIL</code></td></tr></tbody></table>
+<table><thead><tr><th width="159">Field</th><th>Value</th></tr></thead><tbody><tr><td>Network name</td><td><code>Filecoin</code></td></tr><tr><td>New RPC URL</td><td>Either:<br>- <code>https://filecoin.chain.love/rpc/v1</code><br>- <code>https://filecoin.chainup.net/rpc/v1</code><br>- <code>https://rpc.ankr.com/filecoin</code></td></tr><tr><td>Chain ID</td><td><code>314</code></td></tr><tr><td>Currency symbol</td><td><code>FIL</code></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Calibration" %}
-<table><thead><tr><th width="176">Field</th><th>Value</th></tr></thead><tbody><tr><td>Network name</td><td><code>Filecoin Calibration testnet</code></td></tr><tr><td>New RPC URL</td><td>Either:<br>- <code>https://api.calibration.node.glif.io/rpc/v1</code><br>- <code>https://filecoin-calibration.chainup.net/rpc/v1</code></td></tr><tr><td>Chain ID</td><td><code>314159</code></td></tr><tr><td>Currency symbol</td><td><code>tFIL</code></td></tr></tbody></table>
+<table><thead><tr><th width="176">Field</th><th>Value</th></tr></thead><tbody><tr><td>Network name</td><td><code>Filecoin Calibration testnet</code></td></tr><tr><td>New RPC URL</td><td>Either:<br>- <code>https://calibration.filecoin.chain.love/rpc/v1</code><br>- <code>https://filecoin-calibration.chainup.net/rpc/v1</code></td></tr><tr><td>Chain ID</td><td><code>314159</code></td></tr><tr><td>Currency symbol</td><td><code>tFIL</code></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Local testnet" %}
