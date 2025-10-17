@@ -140,7 +140,7 @@ echo "Private Key: ${PRIVATE_KEY:0:10}..."
 
 #### Setup Payments
 
-All commands in this section use the environment variables set in [Create Environment File](filecoin-pin-cli.md#create-environment-file). If you're starting a new terminal session, reload them:
+All commands in this section use the environment variables set in [Create Environment File](filecoin-pin-cli.md#id-2.-create-environment-file). If you're starting a new terminal session, reload them:
 
 ```bash
 source ~/.filecoin-pin-env
