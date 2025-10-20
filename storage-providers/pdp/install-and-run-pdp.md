@@ -24,6 +24,18 @@ Before starting, make sure you have a user with **sudo privileges**. This sectio
 
 ***
 
+### ⚙️ Hardware requirements <a href="#hardware-requirements" id="hardware-requirements"></a>
+
+* **RAM**: 32 GiB+
+* **CPU**: 8 Core+
+* **Storage**:
+  * 1 TiB Fast storage (NVMe/SSD)
+  * 10 TiB Long-term storage (HDD)
+* **GPU**: Not required
+* **Connectivity**: Public HTTPS endpoint (domain)
+
+***
+
 ### 🧰 System Package Installation
 
 ```sh
@@ -148,7 +160,7 @@ If you encounter errors related to `EnableEthRPC` or `EnableIndexer`, run the fo
 {% endhint %}
 
 ```sh
-sed -i 's/EnableEthRPC = .*/EnableEthRPC = true/; s/EnableIndexer = .*/EnableIndexer = true/' ~/.lotus/config.toml
+sed -i 's/^\( *\)#*EnableEthRPC = .*/\1EnableEthRPC = true/; s/^\( *\)#*EnableIndexer = .*/\1EnableIndexer = true/' ~/.lotus/config.toml
 ```
 
 **Monitor Sync Progress**
@@ -168,31 +180,6 @@ lotus sync wait --watch
 ```sh
 tail -f ~/lotus.log
 ```
-
-***
-
-### 🔐 Create Wallets
-
-You'll need to create **two BLS wallets**:
-
-* One for **owner**: used to fund sector pledges and submit proofs
-* One for **worker**: used to publish and manage storage deals
-
-```sh
-lotus wallet new bls  # Create owner wallet
-lotus wallet new bls  # Create worker wallet
-lotus wallet list     # List all created wallets
-```
-
-Make sure to send a small amount of FIL to each wallet - we recommend 1 FIL per wallet to ensure the creation of your Storage Provider in Curio. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
-
-{% hint style="success" %}
-Both wallets will be used during Curio initialisation.
-{% endhint %}
-
-{% hint style="warning" %}
-**Tip:** [Back up](https://lotus.filecoin.io/lotus/manage/manage-fil/#exporting-and-importing-addresses) your wallet keys securely before continuing. Losing them will result in permanent loss of access to funds.
-{% endhint %}
 
 ***
 
@@ -361,9 +348,9 @@ Curio provides a utility to help you set up a new miner interactively. Run the f
 curio guided-setup
 ```
 
-#### 1️⃣ Select "Create a new miner"
+#### 1️⃣ Select Curio Installation Type
 
-Use the arrow keys to navigate the guided setup menu and select "**Create a new miner**".
+Use the arrow keys to navigate the guided setup menu and select "**Setup non-Storage Provider cluster**".
 
 #### 2️⃣ Enter Your YugabyteDB Connection Details
 
@@ -383,61 +370,13 @@ You can verify these settings by running the following command from the Yugabyte
 
 After selecting "**Continue to connect and update schema**", Curio will automatically create the required tables and schema in the database.
 
-#### 3️⃣ Set Wallet Addresses
-
-For this step, use the two BLS wallets you created earlier with Lotus:
-
-* Use **wallet 1** for the **Owner Address**
-* Use **wallet 2** for the **Worker Address**
-* Use **wallet 1** again for the **Sender Address**
-
-These addresses must match the Lotus wallets created earlier.
-
-{% hint style="info" %}
-You can display your Lotus wallets at any time by running:
-{% endhint %}
-
-```sh
-lotus wallet list
-```
-
-#### 4️⃣ Choose Sector Size
-
-Choose sector size:
-
-* `64 GiB`
-
-{% hint style="info" %}
-Selecting a sector size is required during the Curio guided setup, but **PDP itself doesn't use sectors**. Proof set sizes in PDP are **arbitrary and fully flexible.**
-{% endhint %}
-
-#### 5️⃣ Create Miner Actor
-
-Review the information to ensure all inputs are correct. Then select "**Continue to verify the addresses and create a new miner actor**" to proceed.
-
-{% hint style="info" %}
-This step may take a few minutes to complete as Curio pushes the message and waits for it to land on-chain.
-{% endhint %}
-
-Once the actor is created, Curio will:
-
-* Register your miner ID
-
-{% hint style="info" %}
-If the guided setup fails after creating the miner actor, run the following command to complete the installation:
-{% endhint %}
-
-```sh
-curio config new-cluster <miner ID>
-```
-
-#### 6️⃣ Telemetry (Optional)
+#### 3️⃣ Telemetry (Optional)
 
 You'll be asked whether to share anonymised or signed telemetry with the Curio team to help improve the software.
 
 Select your preference and continue.
 
-#### 7️⃣ Save Database Configuration
+#### 4️⃣ Save Database Configuration
 
 At the final step of the guided setup, you'll be prompted to choose where to save your database configuration file.
 
@@ -449,7 +388,7 @@ Use the arrow keys to select a location. A common default is:
 
 Once selected, setup will complete, and the miner configuration will be stored.
 
-#### 8️⃣ Launch the Curio Web GUI
+#### 5️⃣ Launch the Curio Web GUI
 
 To explore the Curio interface visually, start the GUI layer:
 
@@ -583,7 +522,15 @@ Restart Curio with both layers:
 curio run --layers=gui,pdp
 ```
 
-{% hint style="warning" %}
+{% hint style="info" %}
+If you encounter errors related to `EnableEthRPC` or `EnableIndexer`, run the following command and restart Lotus
+{% endhint %}
+
+```sh
+sed -i 's/^\( *\)#*EnableEthRPC = .*/\1EnableEthRPC = true/; s/^\( *\)#*EnableIndexer = .*/\1Enabl
+```
+
+{% hint style="info" %}
 If you encounter errors binding to port 443 when starting Curio with the pdp configuration layer, run:
 {% endhint %}
 
@@ -641,5 +588,6 @@ You've successfully launched a **PDP-enabled Filecoin Storage Provider** stack. 
 
 ## 🔜 Next Steps
 
-* 🧭 Monitor logs and metrics
+* :heavy\_check\_mark: Register your FWSS node
+* :link: Explore FWSS & PDP tools & resources at [https://www.filecoin.services](https://www.filecoin.services/)
 * 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)
