@@ -293,7 +293,7 @@ Clone the repository and switch to the PDP branch:
 ```sh
 git clone https://github.com/filecoin-project/curio.git
 cd curio
-git checkout pdpv0
+git checkout pdpM3d
 ```
 
 {% hint style="info" %}
