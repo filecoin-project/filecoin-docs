@@ -45,14 +45,14 @@ cp .env.example .env
 
 ```bash
 PRIVATE_KEY=eed8e9d727a647f7302bab440d405ea87d36726e7d9f233ab3ff88036cfbce9c
-CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+CALIBRATIONNET_RPC_URL=https://calibration.filecoin.chain.love/rpc/v1
 ```
 
 6. Inside the `src` folder in a contract called `SimpleCoin.sol`. Deploy this contract using Foundry:
 
 ```shell
 forge build
-forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY src/SimpleCoin.sol:SimpleCoin --broadcast
+forge create --rpc-url https://calibration.filecoin.chain.love/rpc/v1 --private-key $PRIVATE_KEY src/SimpleCoin.sol:SimpleCoin --broadcast
 ```
 
 7. You can now interact with your contract using the contract address given by Foundry.

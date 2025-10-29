@@ -17,20 +17,20 @@ To explore further details about the available public RPC providers supporting F
 
 #### **Ingredients**
 
-Let's use Glif nodes as an example to demonstrate how to connect to a public Filecoin RPC node provider. Additionally, we will utilize `ethers.js` to establish the connection with the RPC nodes.
+Let's use Chain.Love nodes as an example to demonstrate how to connect to a public Filecoin RPC node provider. Additionally, we will utilize `ethers.js` to establish the connection with the RPC nodes.
 
-* [Glif nodes](https://hosting.glif.io/)
+* [Chain.Love](https://filecoin.chain.love)
 * [ethers.js](https://docs.ethers.org/v5/)
 
 #### **Instructions**
 
-We will use `ethers.js` to establish a connection with the public Filecoin node provided by Glif.  The following code demonstrates connecting to the Filecoin Calibration testnet as an example.
+We will use `ethers.js` to establish a connection with the public Filecoin node provided by Chain.Love.  The following code demonstrates connecting to the Filecoin Calibration testnet as an example.
 
 ```javascript
 import { ethers } from "ethers"
 
 //The public Filecoin calibration URL
-const filecoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
+const filecoin_url = 'https://calibration.filecoin.chain.love/rpc/v1'
 const provider = new ethers.JsonRpcProvider(filecoin_url)
 
 const blockNumber = await provider.getBlockNumber()
@@ -52,9 +52,9 @@ Since the Filecoin Virtual Machine (FVM) is EVM-compatible, we can use `ethers.j
 
 #### **Ingredients**
 
-We will also use `ethers.js` to connect to the public Glif node to listen to the smart contract events.
+We will also use `ethers.js` to connect to the public Chain.Love node to listen to the smart contract events.
 
-* [Glif Nodes](https://hosting.glif.io/)
+* [Chain.Love](https://filecoin.chain.love)
 * [ethers.js](https://docs.ethers.org/v5/)
 
 #### **Instructions**
@@ -69,7 +69,7 @@ import { ethers } from "ethers"
 const wFILAddress = "0xaC26a4Ab9cF2A8c5DBaB6fb4351ec0F4b07356c4" // wFIL Contract
 var abi = ["event Transfer(address indexed from, address indexed to, uint amount)"]
 
-const filecoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
+const filecoin_url = 'https://calibration.filecoin.chain.love/rpc/v1'
 const provider = new ethers.providers.JsonRpcProvider(filecoin_url)
 
 //listen to the Transfer events in the Token contract
@@ -95,14 +95,14 @@ We can also use filters to retrieve specific smart contract transactions from th
 
 #### **Ingredients**
 
-We will also use `ethers.js` to connect to the public Glif node to filter the smart contract events by providing conditions.
+We will also use `ethers.js` to connect to the public Chain.Love node to filter the smart contract events by providing conditions.
 
-* [Glif nodes](https://hosting.glif.io/)
+* [Chain.Love](https://filecoin.chain.love)
 * [ethers.js](https://docs.ethers.org/v5/)
 
 #### **Instructions**
 
-Here's an example of how you can connect to a Glif node on the calibration network, create a filter to list all wFIL token transfers from your address, and execute the filter to look back 2000 blocks to find the matched transaction list:
+Here's an example of how you can connect to a Chain.Love node on the calibration network, create a filter to list all wFIL token transfers from your address, and execute the filter to look back 2000 blocks to find the matched transaction list:
 
 ```javascript
 import { ethers } from "ethers"
@@ -110,7 +110,7 @@ import { ethers } from "ethers"
 const wFILAddress = "0xaC26a4Ab9cF2A8c5DBaB6fb4351ec0F4b07356c4" // wFIL Contract
 var abi = ["event Transfer(address indexed from, address indexed to, uint amount)"]
 
-const filecoin_url = 'https://api.calibration.node.glif.io/rpc/v1'
+const filecoin_url = 'https://calibration.filecoin.chain.love/rpc/v1'
 const provider = new ethers.providers.JsonRpcProvider(filecoin_url)
 
 // Create a filter to list all token transfers from myAddress

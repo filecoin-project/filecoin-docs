@@ -17,11 +17,14 @@ Test networks, or testnets, are versions of the Filecoin network that simulate v
 
 The [Calibration](../../networks/calibration/) testnet offers the closest simulation of the mainnet. It provides realistic sealing performance and hardware requirements due to the use of finalized proofs and parameters, allowing prospective storage providers to test their setups. Storage clients can also store and retrieve real data on this network, participating in deal-making workflows and testing storage/retrieval functionalities. Calibration testnet uses the same sector size as the mainnet.
 
-- [Public endpoint](https://api.calibration.node.glif.io/rpc/v0)
+- [Public endpoint](https://calibration.filecoin.chain.love/rpc/v0)
 - [Blockchain explorer](https://calibration.filscan.io/)
 - [Calibration Faucet - Chainsafe](https://faucet.calibnet.chainsafe-fil.io)
 - [Calibration Faucet - Zondax](https://beryx.zondax.ch/faucet/)
 - [Calibration Faucet - Forest Explorer](https://forest-explorer.chainsafe.dev/faucet/calibnet)
 - [Calibration USDFC Faucet - Chainsafe](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
+
+More resources available on Calibration network:
+{% @chainlove-widget/chainlove-compare url="https://widget.docs.chain.love/?network=filecoin&chain=calibnet" %}
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/basics/what-is-filecoin/networks)
