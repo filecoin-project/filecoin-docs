@@ -686,3 +686,4 @@ Filecoin is offering a free tier for ERC-8004 builders during the initial rollou
 **Questions or feedback?** Open an issue on the [ERC-8004 GitHub repository](https://github.com/ethereum/EIPs/issues/8004) or reach out in the builder channels.
 
 **Happy building!** 🚀
+
