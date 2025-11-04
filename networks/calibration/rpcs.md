@@ -12,18 +12,18 @@ Chainlist also provides a dynamically updated list of [available Filecoin - Main
 
 These endpoints are limited to the read-only [Filecoin JSON RPC API](../../reference/json-rpc/) including read-only [Filecoin Eth RPC](../../reference/json-rpc/eth.md) methods, except for the write operations [`MPoolPush`](../../reference/json-rpc/mpool.md#mpoolpush) and [`EthSendRawTransaction`](../../reference/json-rpc/eth.md#ethsendrawtransaction) for sending already signed messages.
 
-## [Glif](https://api.calibration.node.glif.io)
+## [Chain.Love](https://filecoin.chain.love/)
 
-* HTTPS: `https://api.calibration.node.glif.io/rpc/v1`
-* WebSocket: `wss://wss.calibration.node.glif.io/apigw/lotus/rpc/v1`
+* HTTPS: `https://calibration.filecoin.chain.love/rpc/v1`
+* WebSocket: `wss://calibration.filecoin.chain.love/ws/rpc/v1`
 * Lotus lite-node command:
 
 ```
-FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
+FULLNODE_API_INFO=wss://calibration.filecoin.chain.love/ws lotus daemon --lite
 ```
 
-* When using a lite-node, omit `/rpc/v1` from Glif’s WebSocket address.
-* [Glif documentation](https://hosting.glif.io/)
+* When using a lite-node, omit `/rpc/v1` from Chain.Love’s WebSocket address.
+* [Chain.Love documentation](https://chain-love.gitbook.io/chain-love-docs/blockchains/filecoin)
 
 ## [Ankr](https://www.ankr.com/rpc/filecoin)
 
@@ -35,5 +35,8 @@ FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --
 * HTTPS: `https://filecoin-calibration.chainup.net/rpc/v1`
 * [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
 
+
+More RPCs available on the Calibration network:
+{% @chainlove-widget/chainlove-compare url="https://widget.docs.chain.love/?network=filecoin&chain=calibnet&category=rpc" %}
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/networks/calibration/rpcs)
