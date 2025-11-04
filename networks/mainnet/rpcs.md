@@ -8,13 +8,9 @@ To check the blockheight, health and availability of Filecoin RPC endpoints, vis
 
 Chainlist also provides a dynamically updated list of [available Filecoin - Mainnet RPCs](https://chainlist.org/?search=filecoin\&testnets=false).
 
+{% hint style="info" %} Please note that most publicly hosted endpoints only guarantee recent state, i.e. 2000 of the latest blocks (last 16.67 hours). To request an archival node you can contact a provider below. {% endhint %}
+
 These endpoints are limited to the read-only [Filecoin JSON RPC API](../../reference/json-rpc/) including read-only [Filecoin Eth RPC](../../reference/json-rpc/eth.md) methods, except for the write operations [`MPoolPush`](../../reference/json-rpc/mpool.md#mpoolpush) and [`EthSendRawTransaction`](../../reference/json-rpc/eth.md#ethsendrawtransaction) for sending already signed messages.
-
-{% hint style="info" %}
-Please note that most publicly hosted endpoints **only guarantee recent state, i.e. 2000 of the latest blocks (last 16.67 hours).** To request an archival node you can contact a provider below.
-{% endhint %}
-
-In order to check the current benchmarked performance of each of the below endpoints, please see the [Filecoin ETH RPC Benchmark app](https://benchmark-rpc.vercel.app/).
 
 | Provider                                    | HTTPS endpoint                                           | WSS endpoint                                     | Docs                                                                                               | API Support                                               |
 | ------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
@@ -38,5 +34,6 @@ In order to check the current benchmarked performance of each of the below endpo
     A Lotus Lite node is a stripped down version of a Lotus full-node capable of running on lower-end hardware. It also allows for local signing for storage deals without a full Lotus node.
 
 
+* Benchmarked performance of some of the above endpoints can be found at [Filecoin ETH RPC Benchmark app](https://benchmark-rpc.vercel.app/).
 
 [Was this page helpful?](https://docs.filecoin.io/networks/mainnet/rpcs)
