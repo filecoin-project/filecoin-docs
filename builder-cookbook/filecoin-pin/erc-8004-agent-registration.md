@@ -2,15 +2,15 @@
 description: How to use the Filecoin Pin CLI with ERC-8004 autonomous agents
 ---
 
-# Register an ERC-8004 Agent with Filecoin Pin Storage
+# Filecoin Pin for ERC-8004 Agents
 
-Learn how to register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage using Filecoin Pin.
+Learn how to register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage using Filecoin Pin for the agent registration file.
 
 ***
 
 ## Overview
 
-This tutorial walks you through registering an [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) compliant agent with cryptographically-verified persistent storage on Filecoin. You'll create an agent card (metadata describing your agent's capabilities), store it on Filecoin with daily PDP (Proof of Data Possession) proofs, and register it on-chain as an NFT on Base Sepolia.
+This tutorial walks you through registering an [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) compliant agent with cryptographically-verified persistent storage on Filecoin. You'll create an agent card (metadata describing your agent's capabilities), store it on Filecoin with daily PDP (Proof of Data Possession) storage proofs, and register it on-chain as an NFT on Base Sepolia.
 
 **What you'll learn:**
 - How to create an ERC-8004 compliant agent card
@@ -31,7 +31,8 @@ Agent cards need persistent storage with provable guarantees. Unlike generic IPF
 - ✅ **Ongoing verification** ensures storage persistence
 - ✅ **Decentralized** storage across a global network
 - ✅ **IPFS compatible** - works with existing tools and gateways
-- ✅ **Free tier** available for ERC-8004 builders
+- ✅ **Crypto payments** - onchain payments 
+- ✅ **Limited time - sponsered storage coming soon** available for ERC-8004 builders
 
 ***
 
@@ -280,11 +281,13 @@ You'll see output similar to:
 
 ```
 
+> **NOTE!** Data storage on the Calibration Testnet has a retention period of approximately 1 week. For production use and to ensure your data remains available, please switch to Filecoin mainnet.
+
 ### Save Important Values
 
 Copy these values from the output - you'll need them later:
 
-- **Root CID** - The IPFS content identifier (e.g., `bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di`)
+- **Root CID** - The IPFS content identifier (e.g., `bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di`).
 - **Dataset ID** - For checking PDP proof status (e.g., `933`)
 
 > **⚠️ IMPORTANT**: The Token URI for ERC-8004 registration must include the filename! Format it as:
@@ -667,13 +670,14 @@ Now that your agent is registered with verifiable persistent storage, you can:
 
 ### Join the Community
 
+- **Filecoin Builders**: [on telegram](https://t.me/+Xj6_zTPfcUA4MGQ1); [on Slack](https://filecoinproject.slack.com/archives/CRK2LKYHW)
 - **ERC-8004 Discussion**: [GitHub Discussions](https://github.com/ethereum/EIPs/issues/8004)
 - **Filecoin Pin**: [Documentation](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
 - **Builder Channels**: Join ERC-8004 builder communities
 
-### Free Tier for Builders
+### Sponsered Storage for ERC-8004 Builders
 
-Filecoin is offering a free tier for ERC-8004 builders during the initial rollout. Check the Filecoin Pin documentation for current offers.
+Coming soon, stay tuned!
 
 ***
 
@@ -686,8 +690,6 @@ Filecoin is offering a free tier for ERC-8004 builders during the initial rollou
 - **GitHub MCP Server**: https://github.com/github/github-mcp-server
 
 ***
-
-**Questions or feedback?** Open an issue on the [ERC-8004 GitHub repository](https://github.com/ethereum/EIPs/issues/8004) or reach out in the builder channels.
 
 **Happy building!** 🚀
 
