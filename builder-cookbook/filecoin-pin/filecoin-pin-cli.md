@@ -55,9 +55,6 @@ nvm use 22
 # Install filecoin-pin globally
 npm install -g filecoin-pin
 
-# Install ipfs-car (for CAR file operations)
-npm install -g @ipld/car-cli
-
 # Install GitHub CLI
 brew install gh  # macOS
 # or
