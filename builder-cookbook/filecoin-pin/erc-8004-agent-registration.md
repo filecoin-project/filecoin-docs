@@ -1,3 +1,7 @@
+---
+description: How to use the Filecoin Pin CLI with ERC-8004 autonomous agents
+---
+
 # Register an ERC-8004 Agent with Filecoin Pin Storage
 
 Learn how to register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage using Filecoin Pin.
