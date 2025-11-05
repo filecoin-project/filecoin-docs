@@ -23,6 +23,14 @@ A GitHub Integration Agent that references GitHub's official MCP server, demonst
 
 ***
 
+## Example Code and Scripts
+
+For example code and helper scripts to help with using Filecoin Pin and agent registration, check out the quickstart repository:
+
+**GitHub Repository**: [FilOzone/FilecoinPin-for-ERC8004](https://github.com/FilOzone/FilecoinPin-for-ERC8004)
+
+***
+
 ## Why Filecoin Pin for Agent Storage?
 
 Agent cards need persistent storage with provable guarantees. Unlike generic IPFS pinning services that may stop hosting your data without notice, Filecoin Pin provides:
