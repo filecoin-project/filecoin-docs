@@ -210,4 +210,5 @@
   * [Filecoin Pin CLI](builder-cookbook/filecoin-pin/filecoin-pin-cli.md)
   * [Filecoin Pin Github Action](builder-cookbook/filecoin-pin/github-action.md)
   * [Filecoin Pin dApp Demo](builder-cookbook/filecoin-pin/dapp-demo.md)
+  * [Filecoin Pin for ERC-8004 Agents](builder-cookbook/filecoin-pin/erc-8004-agent-registration.md)
   * [FAQ](builder-cookbook/filecoin-pin/faq.md)

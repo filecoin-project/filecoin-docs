@@ -30,6 +30,7 @@ Get started using Filecoin Pin today with:
 1. [Filecoin Pin CLI](filecoin-pin-cli.md) - Upload new or existing IPFS files directly to Filecoin via the command line. Perfect for developers who want to integrate Filecoin storage into scripts, workflows, or local development environments.
 2. [Filecoin Pin GitHub Actions](github-action.md) - Use GitHub Actions to automatically publish websites or build artifacts to IPFS and Filecoin as part of your CI/CD pipeline. Ideal for static websites, documentation sites, and automated deployment workflows.
 3. [Filecoin Pin dApp Demo](dapp-demo.md) - Run or fork a simple demo dApp that demonstrates Filecoin Pin in a browser-based application. Great for understanding how to integrate Filecoin Pin into web applications.
+4. [Filecoin Pin for ERC-8004 Agents](erc-8004-agent-registration.md) - Learn how to register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage for agent metadata using Filecoin Pin.
 
 
 ## Learn More
