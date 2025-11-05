@@ -75,16 +75,16 @@ You'll need testnet tokens on **two networks**:
 
 #### Filecoin Calibration Testnet
 - **tFIL** (testnet Filecoin) - For gas fees
-  - [Filecoin Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html)
+  - Request tFIL from [Filecoin Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html)
   - Amount requested: 100 tFIL
 - **USDFC** (Filecoin stablecoin) - For storage payments
-  - [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
+  - Request test USDFC from [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
   - Or Mint at [USDFC website](https://stg.usdfc.net) (requires at tFIL as collateral)
   - Amount needed: ~5 USDFC
 
 #### Base Sepolia Testnet
 - **Sepolia ETH** - For NFT minting and registration
-  - [Faucet](https://www.alchemy.com/faucets/base-sepolia)
+  - Request test ETH on Base Sepolia on [Faucet](https://www.alchemy.com/faucets/base-sepolia)
   - Amount needed: ~0.001 ETH
 
 > **NOTE!** The same Ethereum wallet works on both Filecoin Calibration and Base Sepolia. You only need one private key.
