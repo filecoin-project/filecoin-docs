@@ -511,7 +511,7 @@ Replace `<AGENT_ID_DECIMAL>` with your agent's ID (e.g., `56`).
 
 ***
 
-## Step 4: Verify Storage and PDP Proofs
+## Step 4: Check On-chain Storage Proofs
 
 Finally, let's verify that your agent card is persistently stored with cryptographic proofs.
 
