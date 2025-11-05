@@ -1,0 +1,37 @@
+{
+    "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+    "name": "GitHub Integration Agent",
+    "description": "AI agent providing GitHub repository, issue, and pull request management capabilities through GitHub's official MCP server. Enables automated code review, issue triage, PR management, and repository analysis.",
+    "image": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    "endpoints": [
+      {
+        "name": "MCP",
+        "endpoint": "https://api.githubcopilot.com/mcp/",
+        "version": "1.0.0",
+        "capabilities": {
+          "tools": [
+            {
+              "name": "repository_management",
+              "description": "Browse code, search files, analyze commits across GitHub repositories"
+            },
+            {
+              "name": "issue_management",
+              "description": "Create, update, search, and manage GitHub issues with AI assistance"
+            },
+            {
+              "name": "pull_request_management",
+              "description": "Review PRs, manage approvals, merge conflicts, and code reviews"
+            }
+          ]
+        }
+      },
+      {
+        "name": "agentWallet",
+        "endpoint": "eip155:84532:0x0000000000000000000000000000000000000000"
+      }
+    ],
+    "registrations": [],
+    "supportedTrust": [
+      "reputation"
+    ]
+  }

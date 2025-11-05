@@ -10,13 +10,13 @@ Learn how to register a trustless autonomous agent on the ERC-8004 Identity Regi
 
 ## Overview
 
-This tutorial walks you through registering an [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) compliant agent with cryptographically-verified persistent storage on Filecoin. You'll create an agent card (metadata describing your agent's capabilities), store it on Filecoin with daily PDP (Proof of Data Possession) storage proofs, and register it on-chain as an NFT on Base Sepolia.
+This tutorial walks you through registering an [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) compliant agent with cryptographically-verified persistent storage on Filecoin. You'll create an agent card (metadata describing your agent's capabilities), store it on Filecoin & IPFS using Filecoin Pin, and register it on-chain as an NFT on Base Sepolia.
 
 **What you'll learn:**
 - How to create an ERC-8004 compliant agent card
 - How to use Filecoin Pin for persistent, verifiable storage
 - How to register an agent on the ERC-8004 Identity Registry
-- How to verify PDP proofs and on-chain registration
+- How to verify Filecoin storage proofs and on-chain registration
 
 **What you'll build:**
 A GitHub Integration Agent that references GitHub's official MCP server, demonstrating how real-world services can be integrated with ERC-8004.
@@ -75,15 +75,16 @@ You'll need testnet tokens on **two networks**:
 
 #### Filecoin Calibration Testnet
 - **tFIL** (testnet Filecoin) - For gas fees
-  - Faucet: https://faucet.calibnet.chainsafe-fil.io/funds.html
-  - Amount needed: ~5 tFIL
+  - [Filecoin Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html)
+  - Amount requested: 100 tFIL
 - **USDFC** (Filecoin stablecoin) - For storage payments
-  - Mint at: https://stg.usdfc.net (requires tFIL as collateral)
+  - [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
+  - Or Mint at [USDFC website](https://stg.usdfc.net) (requires at tFIL as collateral)
   - Amount needed: ~5 USDFC
 
 #### Base Sepolia Testnet
 - **Sepolia ETH** - For NFT minting and registration
-  - Faucet: https://www.alchemy.com/faucets/base-sepolia
+  - [Faucet](https://www.alchemy.com/faucets/base-sepolia)
   - Amount needed: ~0.001 ETH
 
 > **NOTE!** The same Ethereum wallet works on both Filecoin Calibration and Base Sepolia. You only need one private key.
@@ -522,8 +523,6 @@ Use the Dataset ID from Step 2:
 filecoin-pin data-set 933  # Replace with your Dataset ID
 ```
 
-**Screenshot**: [Terminal showing PDP proof status with storage provider, last proof timestamp, and next proof time]
-
 You'll see output like:
 
 ```
@@ -598,8 +597,6 @@ echo "Token URI: $URI"
 curl -s "https://ipfs.io/ipfs/<ROOT_CID>/github-agent-card.json" | jq '.endpoints[]'
 ```
 
-**Screenshot**: [Terminal showing complete discovery workflow with agent card endpoints displayed]
-
 ### Summary
 
 ✅ Your agent is now:
@@ -622,7 +619,7 @@ npm install -g filecoin-pin
 
 ### Issue: `Insufficient USDFC`
 
-**Solution**: Mint more USDFC at https://stg.usdfc.net using tFIL as collateral.
+**Solution**: Request more test USDFC at [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
 
 ### Issue: `Transaction reverted` on Base Sepolia
 
@@ -630,7 +627,7 @@ npm install -g filecoin-pin
 ```bash
 cast balance <YOUR_ADDRESS> --rpc-url https://sepolia.base.org --ether
 ```
-Get more from the faucet if needed: https://www.alchemy.com/faucets/base-sepolia
+Get more from the [faucet](https://www.alchemy.com/faucets/base-sepolia) if needed.
 
 ### Issue: IPFS retrieval is slow or fails
 
@@ -691,11 +688,11 @@ Coming soon, stay tuned!
 
 ## Additional Resources
 
-- **ERC-8004 Specification**: https://eips.ethereum.org/EIPS/eip-8004
-- **Reference Implementation**: https://github.com/ChaosChain/trustless-agents-erc-ri
-- **Filecoin Pin CLI Tutorial**: https://docs.filecoin.io/builder-cookbook/filecoin-pin/filecoin-pin-cli
-- **Base Sepolia Explorer**: https://sepolia.basescan.org
-- **GitHub MCP Server**: https://github.com/github/github-mcp-server
+- [**ERC-8004 Specification**](https://eips.ethereum.org/EIPS/eip-8004)
+- [**Reference Implementation**](https://github.com/ChaosChain/trustless-agents-erc-ri)
+- [**Filecoin Pin CLI Tutorial**](https://docs.filecoin.io/builder-cookbook/filecoin-pin/filecoin-pin-cli)
+- [**Base Sepolia Explorer**](https://sepolia.basescan.org)
+- [**GitHub MCP Server**](https://github.com/github/github-mcp-server)
 
 ***
 
