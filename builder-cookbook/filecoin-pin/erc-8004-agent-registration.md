@@ -280,6 +280,8 @@ You'll see output similar to:
 
 ```
 
+> **NOTE!** Data storage on the Calibration Testnet has a retention period of approximately 1 week. For production use and to ensure your data remains available, please switch to Filecoin mainnet.
+
 ### Save Important Values
 
 Copy these values from the output - you'll need them later:
