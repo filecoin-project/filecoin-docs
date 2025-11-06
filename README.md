@@ -19,7 +19,14 @@
 
 ## About this repo
 
-This repository manages the documentation for the [Filecoin network](https://filecoin.io). The content is built and hosted by [GitBook](https://github.com). View the docs site at [docs.filecoin.io](https://docs.filecoin.io).
+This repository manages the documentation for the [Filecoin network](https://filecoin.io). The content is built and hosted by [GitBook](https://gitbook.com). View the docs site at [docs.filecoin.io](https://docs.filecoin.io).
+
+## Publishing
+This repo is synced to [GitBook](https://gitbook.com) using [GitBook's GitSync](https://gitbook.com/docs/getting-started/git-sync).  When a PR to `main` is merged, a new GitBook is published.  This happens as a result of the GitBook applicaiton, not a GitHub Action workflow in the repo.  
+
+PRs also generate preview links so one can preview the site before merging.  Per [GitBook GitSync integration](https://app.gitbook.com/o/NNmD4UvLc26b1TmEYgzE/s/xNWFG7bQkjLkl5BBGjbD/~/integrations/github), preview links from fork PRs have been enabled.  
+
+[SEAD](https://sead.ai/) has admin access to the Filecoin GitBook organization.  Access can be requested through the FIL Slack #sead-filecoinio-support.
 
 ## Contributing
 
@@ -31,6 +38,8 @@ Links are checked using [lychee-action](https://github.com/lycheeverse/lychee-ac
 1. wrap it in `` `backticks` `` OR
 2. wrap it in `<code>` blocks OR
 3. use [`.lycheeignore`](https://github.com/lycheeverse/lychee-action?tab=readme-ov-file#excluding-links-from-getting-checked) 
+
+
 
 ## Issues 
 
