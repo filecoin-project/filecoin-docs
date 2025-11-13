@@ -1,5 +1,6 @@
 ---
 layout:
+  width: default
   title:
     visible: true
   description:
@@ -10,14 +11,16 @@ layout:
     visible: true
   pagination:
     visible: true
+  metadata:
+    visible: true
 ---
 
 # PDP
 
 {% hint style="danger" %}
-**ALPHA FEATURE - UNDER DEVELOPMENT**
+**SOFT LAUNCH – LIMITED RELEASE**
 
-This documentation covers the PDP (Proof of Data Possession) feature, which is currently in alpha and under active development. This tool is intended for testing and experimental use only.
+This documentation covers the PDP (Proof of Data Possession) feature, which is now in soft launch and actively evolving. PDP is stable enough for early adopters and real-world integration testing, but changes may still occur as we finalise APIs and service behaviour.
 
-For production use and submitting real deals with live PDP Storage Providers, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk).
+For full production use and submitting live deals with PDP Storage Providers, please continue to use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk).
 {% endhint %}

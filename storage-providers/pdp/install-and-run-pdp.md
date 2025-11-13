@@ -7,11 +7,11 @@ description: >-
 # Install & Run PDP
 
 {% hint style="danger" %}
-**ALPHA FEATURE - UNDER DEVELOPMENT**
+**SOFT LAUNCH – LIMITED RELEASE**
 
-This documentation covers the PDP (Proof of Data Possession) feature, which is currently in alpha and under active development. This tool is intended for testing and experimental use only.
+This documentation covers the PDP (Proof of Data Possession) feature, which is now in soft launch and actively evolving. PDP is stable enough for early adopters and real-world integration testing, but changes may still occur as we finalise APIs and service behaviour.
 
-For production use and submitting real deals with live PDP Storage Providers, please use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk).
+For full production use and submitting live deals with PDP Storage Providers, please continue to use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk).
 {% endhint %}
 
 ## 🚀 Prerequisites
@@ -29,10 +29,10 @@ Before starting, make sure you have a user with **sudo privileges**. This sectio
 * **RAM**: 32 GiB+
 * **CPU**: 8 Core+
 * **Storage**:
-  * 1 TiB Fast storage (NVMe/SSD)
-  * 10 TiB Long-term storage (HDD)
+  * 500 GiB Fast storage (NVMe/SSD)
+  * 8 TiB Long-term storage (HDD)
 * **GPU**: Not required
-* **Connectivity**: Public HTTPS endpoint (domain)
+* **Connectivity**: Public HTTPS endpoint (domain) supporting HTTP2
 
 ***
 
@@ -58,7 +58,7 @@ go version
 ```
 
 {% hint style="success" %}
-You should see something like: `go version go1.23.7 linux/amd64`
+You should see something like: `go version go1.23.6 linux/amd6464`
 {% endhint %}
 
 ***
@@ -79,7 +79,7 @@ rustc --version
 ```
 
 {% hint style="success" %}
-You should see something like: `rustc 1.86.0 (05f9846f8 2025-03-31)`
+You should see something like: `rustc 1.83.0 (90b35a623 2024-11-26)`
 {% endhint %}
 
 ***
@@ -127,7 +127,7 @@ lotus --version
 ```
 
 {% hint style="success" %}
-You should see something like: `lotus version 1.32.2+calibnet+git.ff88d8269`
+You should see something like: `lotus version 1.34.1+mainnet+git.710b4ac66`
 {% endhint %}
 
 ***
@@ -293,7 +293,7 @@ Clone the repository and switch to the PDP branch:
 ```sh
 git clone https://github.com/filecoin-project/curio.git
 cd curio
-git checkout pdpM3d
+git checkout pdp/v1.0.3
 ```
 
 {% hint style="info" %}
@@ -335,7 +335,7 @@ curio --version
 Expected example output:
 
 ```sh
-curio version 1.24.4+calibnet+git_f954c0a_2025-04-06T15:46:32-04:00
+curio version 1.27.0+mainnet+git_e458639d_2025-11-03T10:51:55+01:00
 ```
 
 ***
@@ -447,6 +447,7 @@ You may find it helpful to search for the setting names in your browser.
 * ✅ `EnablePDP`
 * ✅ `EnableCommP`
 * ✅ `EnableMoveStorage`
+* ✅ `NoUnsealedDecode`
 
 In the **HTTP** section:
 
@@ -506,7 +507,10 @@ Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section
 Your 0x wallet address - the delegated Ethereum address derived from your Filecoin delegated wallet private key - will be added to the **Owner Address** section of the Curio PDP page.
 {% endhint %}
 
-Make sure to send a small amount of FIL or tFIL (testnet FIL) to your 0x wallet - we recommend 8 FIL for Mainnet & 5 tFIL for Calibration to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
+Make sure to send a small amount of FIL to your 0x wallet - we recommend:
+
+* 10 FIL for Mainnet to facilitate the 5 FIL SP creation fee and uninterrupted PDP operation during initial setup and testing.
+* 5 tFIL (testnet FIL) for Calibration - [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens)
 
 {% hint style="warning" %}
 **Important:** Secure your private key material. Don't expose or store it in plain text without protection.
@@ -538,38 +542,15 @@ If you encounter errors binding to port 443 when starting Curio with the pdp con
 sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/curio
 ```
 
-Test the PDP service:
+***
 
-{% hint style="info" %}
-If `pdptool` is not installed, clone and build Curio:
-{% endhint %}
+### 🔗 Test Connectivity
 
-```sh
-git clone https://github.com/filecoin-project/curio.git
-cd curio/cmd/pdptool
-go build .
+Browse to your PDP node’s domain name in your browser - you should see the following message in your browser window:
+
 ```
-
-Generate a service secret:
-
-```sh
-./pdptool create-service-secret
-```
-
-```sh
-./pdptool ping --service-url https://your-domain.com --service-name public
-```
-
-{% hint style="info" %}
-Always use `public` for the `--service-name` flag
-{% endhint %}
-
-{% hint style="success" %}
-Expected output:
-{% endhint %}
-
-```sh
-Ping successful: Service is reachable and JWT token is valid.
+Hello, World!
+ -Curio
 ```
 
 ***
@@ -579,7 +560,7 @@ Ping successful: Service is reachable and JWT token is valid.
 You've successfully launched a **PDP-enabled Filecoin Storage Provider** stack. Your system is now:
 
 * ✅ Syncing with the Filecoin network via Lotus
-* ✅ Recording deal and sector metadata in YugabyteDB
+* ✅ Recording deal and piece metadata in YugabyteDB
 * ✅ Operating Curio to manage sealing and coordination
 * ✅ Enabled Proof of Data Possession (PDP)
 * ✅ Connected to your PDP-enabled storage provider
