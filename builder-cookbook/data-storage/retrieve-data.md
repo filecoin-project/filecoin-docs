@@ -18,11 +18,10 @@ With a given CID, you can use any of the following retrieval clients to retrieve
 
 * [Lassie](https://github.com/filecoin-project/lassie): optimizes for most efficient available retrieval protocols.
   * [go-car](https://github.com/ipld/go-car): a content addressable archive utility.
-* [Saturn](https://saturn.tech/): a Web3 CDN in Filecoin’s retrieval market.
 
 #### **Instructions**
 
-1. **retrieving content with Lassie**
+**Retrieving content with Lassie**
 
 Lassie is designed to fetch content in the content-addressed archive (CAR) form. In most cases, you will require additional tooling, such as the go-car library, to work with CAR files effectively.
 
@@ -85,43 +84,6 @@ func main() {
 }
 
 ```
-
-2. **retrieving content with Saturn**
-
-{% hint style="info" %}
-[Saturn Javascript Client](https://github.com/filecoin-saturn/js-client) is still a work in progress and not recommended for use in production yet.
-{% endhint %}
-
-The following code example demonstrates how to use the Saturn in the Javascript program to fetch a CID.
-
-```javascript
-import { Saturn } from '@filecoin-saturn/js-client';
-// initialize a Saturn instance
-const saturn = new Saturn({
-    clientKey: "...", // Key used for verification
-    // ... other options
-});
-
-// fetch content using the client with given CID
-const cidPath = 'https://samplepath/ipfs/{cid}';
-const options = {
-  fallbackLimit: 5,
-  raceNodes: true,
-};
-
-(async () => {
-  try {
-    for await (const chunk of saturn.fetchContentWithFallback(cidPath, options)) {
-      // Process each chunk of data
-      console.log(chunk);
-    }
-  } catch (error) {
-    console.error('Error fetching content:', error);
-  }
-})();
-```
-
-***
 
 For quick retrieval of existing datasets with the methods above, check out the [Filecoin Dataset Explorer](https://datasets.filecoin.io/).
 

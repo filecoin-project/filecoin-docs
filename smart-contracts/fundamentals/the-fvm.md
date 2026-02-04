@@ -13,7 +13,7 @@ NOTE: As of January 2025, for developer support, please visit the [FILB](https:/
 
 Filecoin’s storage and retrieval capabilities can be thought of as the base layer of the Filecoin blockchain, and [FVM](https://fvm.filecoin.io) can be thought of as a layer on top of Filecoin that unlocks programmability on the network (e.g. programmable storage primitives).
 
-Whereas other blockchains do have smart contract capabilities, FVM’s smart contracts can use Filecoin storage and retrieval primitives with computational logic conditions. FVM will also enable Layer 2 capabilities, such as “compute over data” and [content delivery networks](https://saturn.tech/).
+Whereas other blockchains do have smart contract capabilities, FVM’s smart contracts can use Filecoin storage and retrieval primitives with computational logic conditions. FVM will also enable Layer 2 capabilities, such as “compute over data” and content delivery networks.
 
 Some additional notes about FVM’s technical specifications:
 
