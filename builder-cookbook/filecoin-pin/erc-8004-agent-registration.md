@@ -40,7 +40,7 @@ Agent cards need persistent storage with provable guarantees. Unlike generic IPF
 - ✅ **Decentralized** storage across a global network
 - ✅ **IPFS compatible** - works with existing tools and gateways
 - ✅ **Crypto payments** - onchain payments 
-- ✅ **Limited time - sponsered storage coming soon** available for ERC-8004 builders
+- ✅ **Limited time - sponsored storage coming soon** available for ERC-8004 builders
 
 ***
 
@@ -79,7 +79,7 @@ You'll need testnet tokens on **two networks**:
   - Amount requested: 100 tFIL
 - **USDFC** (Filecoin stablecoin) - For storage payments
   - Request test USDFC from [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
-  - Or Mint at [USDFC website](https://stg.usdfc.net) (requires at tFIL as collateral)
+  - Or Mint at [USDFC website](https://stg.usdfc.net) (requires tFIL as collateral)
   - Amount needed: ~5 USDFC
 
 #### Base Sepolia Testnet
@@ -93,7 +93,7 @@ You'll need testnet tokens on **two networks**:
 
 We'll be using the reference ERC-8004 Identity Registry deployed on the Base Sepolia testnet:
 ```
-0x7177a6867296406881E20d6647232314736Dd09A
+0x8004A818BFB912233c491871b3d84c89A494BD9e
 ```
 
 ***
@@ -306,7 +306,7 @@ Copy these values from the output - you'll need them later:
 
 ### Verify IPFS Retrieval
 
-Test that your agent card is accessible via IPFS (it may take a few minutes to propogate!):
+Test that your agent card is accessible via IPFS (it may take a few minutes to propagate!):
 
 ```bash
 # Replace <ROOT_CID> with your actual CID
@@ -367,7 +367,7 @@ Now we'll register the agent on-chain as an ERC-8004 NFT on Base Sepolia.
 ```bash
 export PRIVATE_KEY="0x..."  # Your wallet private key
 export TOKEN_URI="ipfs://<ROOT_CID>/github-agent-card.json"  # From Step 2
-export IDENTITY_REGISTRY="0x7177a6867296406881E20d6647232314736Dd09A"
+export IDENTITY_REGISTRY="0x8004A818BFB912233c491871b3d84c89A494BD9e"
 export BASE_SEPOLIA_RPC="https://sepolia.base.org"
 ```
 
@@ -411,7 +411,7 @@ cumulativeGasUsed    3223263
 effectiveGasPrice    1000100
 from                 0xDc3E85b5d25c9200F099Cc9d38769e9cCb445D8f
 gasUsed              176805
-logs                 [{"address":"0x7177a6867296406881e20d6647232314736dd09a","topics":["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef","0x0000000000000000000000000000000000000000000000000000000000000000","0x000000000000000000000000dc3e85b5d25c9200f099cc9d38769e9ccb445d8f","0x0000000000000000000000000000000000000000000000000000000000000038"],"data":"0x","blockHash":"0x54ee1b796e6062e6e78676dcb1cd59c200a80d710c42ebff09f720f3cdf8e4f4","blockNumber":"0x1fa64e2","blockTimestamp":"0x690828a4","transactionHash":"0x950c3df5003a5ac827edc2e6f806e91d3f45fb05e82a9defc5afb486bf1bd8bb","transactionIndex":"0xf","logIndex":"0x50","removed":false},{"address":"0x7177a6867296406881e20d6647232314736dd09a","topics":["0xca52e62c367d81bb2e328eb795f7c7ba24afb478408a26c0e201d155c449bc4a","0x0000000000000000000000000000000000000000000000000000000000000038","0x000000000000000000000000dc3e85b5d25c9200f099cc9d38769e9ccb445d8f"],"data":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006768747470733a2f2f697066732e696f2f697066732f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000000000000000000000000000000000000000","blockHash":"0x54ee1b796e6062e6e78676dcb1cd59c200a80d710c42ebff09f720f3cdf8e4f4","blockNumber":"0x1fa64e2","blockTimestamp":"0x690828a4","transactionHash":"0x950c3df5003a5ac827edc2e6f806e91d3f45fb05e82a9defc5afb486bf1bd8bb","transactionIndex":"0xf","logIndex":"0x51","removed":false}]
+logs                 [{"address":"0x8004A818BFB912233c491871b3d84c89A494BD9e","topics":["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef","0x0000000000000000000000000000000000000000000000000000000000000000","0x000000000000000000000000dc3e85b5d25c9200f099cc9d38769e9ccb445d8f","0x0000000000000000000000000000000000000000000000000000000000000038"],"data":"0x","blockHash":"0x54ee1b796e6062e6e78676dcb1cd59c200a80d710c42ebff09f720f3cdf8e4f4","blockNumber":"0x1fa64e2","blockTimestamp":"0x690828a4","transactionHash":"0x950c3df5003a5ac827edc2e6f806e91d3f45fb05e82a9defc5afb486bf1bd8bb","transactionIndex":"0xf","logIndex":"0x50","removed":false},{"address":"0x8004A818BFB912233c491871b3d84c89A494BD9e","topics":["0xca52e62c367d81bb2e328eb795f7c7ba24afb478408a26c0e201d155c449bc4a","0x0000000000000000000000000000000000000000000000000000000000000038","0x000000000000000000000000dc3e85b5d25c9200f099cc9d38769e9ccb445d8f"],"data":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006768747470733a2f2f697066732e696f2f697066732f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000000000000000000000000000000000000000","blockHash":"0x54ee1b796e6062e6e78676dcb1cd59c200a80d710c42ebff09f720f3cdf8e4f4","blockNumber":"0x1fa64e2","blockTimestamp":"0x690828a4","transactionHash":"0x950c3df5003a5ac827edc2e6f806e91d3f45fb05e82a9defc5afb486bf1bd8bb","transactionIndex":"0xf","logIndex":"0x51","removed":false}]
 logsBloom            0x00000000000000400000000000000000000000000000000000000000000000000000000000000000000020200000000000000000000000000000004000200000000000000000000000000008000000000000000000000000000000000000000000000000020000000000000000000800000000002000000000000010000000000000000000000000000000000000000080000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000002000000000000000000000000000000001000000000000000000020000000000000010000000000000000000000010000000000000200000000000000
 root                 
 status               1 (success)
@@ -420,7 +420,7 @@ transactionIndex     15
 type                 2
 blobGasPrice         
 blobGasUsed          
-to                   0x7177a6867296406881E20d6647232314736Dd09A
+to                   0x8004A818BFB912233c491871b3d84c89A494BD9e
 l1BaseFeeScalar      1101
 l1BlobBaseFee        1
 l1BlobBaseFeeScalar  659851
@@ -445,7 +445,7 @@ cast call $IDENTITY_REGISTRY \
 This returns the total number of registered agents. Your agent ID is this number (the latest registration):
 
 ```bash
-% cast call $IDENTITY_REGISTRY \
+cast call $IDENTITY_REGISTRY \
   "totalAgents()" \
   --rpc-url $BASE_SEPOLIA_RPC
 0x0000000000000000000000000000000000000000000000000000000000000038
@@ -472,12 +472,13 @@ cast call $IDENTITY_REGISTRY \
 
 You will get output similar to:
 
-```
-% cast call $IDENTITY_REGISTRY \
+```bash
+cast call $IDENTITY_REGISTRY \
   "totalAgents()" \
   --rpc-url $BASE_SEPOLIA_RPC
 0x0000000000000000000000000000000000000000000000000000000000000038
-matt@MacBook-Pro-2 demo1 % cast call $IDENTITY_REGISTRY \
+
+cast call $IDENTITY_REGISTRY \
   "tokenURI(uint256)" \
   56 \
   --rpc-url $BASE_SEPOLIA_RPC
@@ -493,7 +494,7 @@ cast --abi-decode "f()(string)" <OUTPUT_FROM_ABOVE>
 You should see your Token URI returned: `ipfs://<ROOT_CID>/github-agent-card.json`:
 
 ```bash
-% cast --abi-decode "f()(string)" 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006768747470733a2f2f697066732e696f2f697066732f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000000000000000000000000000000000000000
+cast --abi-decode "f()(string)" 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006768747470733a2f2f697066732e696f2f697066732f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000000000000000000000000000000000000000
 "https://ipfs.io/ipfs/bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di/github-agent-card.json"
 ```
 
@@ -502,7 +503,7 @@ You should see your Token URI returned: `ipfs://<ROOT_CID>/github-agent-card.jso
 Visit your agent on the Base Sepolia block explorer:
 
 ```
-https://sepolia.basescan.org/token/0x7177a6867296406881E20d6647232314736Dd09A?a=<AGENT_ID_DECIMAL>
+https://sepolia.basescan.org/token/0x8004A818BFB912233c491871b3d84c89A494BD9e?a=<AGENT_ID_DECIMAL>
 ```
 
 Replace `<AGENT_ID_DECIMAL>` with your agent's ID (e.g., `56`).
@@ -589,7 +590,7 @@ TOTAL=$(cast call $IDENTITY_REGISTRY "totalAgents()" --rpc-url $BASE_SEPOLIA_RPC
 echo "Total agents: $(printf "%d" $TOTAL)"
 
 # Step 2: Get your agent's Token URI
-URI_RAW=$(cast call $IDENTITY_REGISTRY "tokenURI(uint256)" 55 --rpc-url $BASE_SEPOLIA_RPC)
+URI_RAW=$(cast call $IDENTITY_REGISTRY "tokenURI(uint256)" 56 --rpc-url $BASE_SEPOLIA_RPC)
 URI=$(cast --abi-decode "f()(string)" $URI_RAW)
 echo "Token URI: $URI"
 
@@ -608,13 +609,94 @@ curl -s "https://ipfs.io/ipfs/<ROOT_CID>/github-agent-card.json" | jq '.endpoint
 
 ***
 
+## Step 5: Deploy on Mainnet
+
+Ready to move to production? This step covers deploying your agent on Filecoin mainnet and Base mainnet.
+
+### Required Tokens (Mainnet)
+
+You'll need real tokens on **two networks**:
+
+#### Filecoin Mainnet
+- **FIL** - For gas fees on Filecoin
+- **USDFC** - For storage payments
+
+Get FIL and USDFC via the [USDFC Bridge](https://app.usdfc.net/#/bridge) - bridge from any token on any network to FIL and USDFC on Filecoin mainnet. You can also use [Sushi](https://www.sushi.com/filecoin/swap?token0=NATIVE&token1=0x80b98d3aa09ffff255c3ba4a241111ff1262f045) to swap FIL for USDFC.
+
+#### Base Mainnet
+- **ETH** - For NFT minting and registration on Base
+
+### ERC-8004 Registry Address (Base Mainnet)
+
+```
+0x8004A169FB4a3325136EB29fA0ceB6D2e539a432
+```
+
+View on explorer: [Base Mainnet Registry](https://basescan.org/address/0x8004A169FB4a3325136EB29fA0ceB6D2e539a432)
+
+### Upload to Filecoin Mainnet
+ 
+All Filecoin Pin CLI commands use the `--mainnet` flag for mainnet operations.
+
+#### Setup Payment System (Mainnet)
+
+```bash
+export PRIVATE_KEY="0x..."  # Your wallet private key
+filecoin-pin payments setup --auto --mainnet
+```
+
+#### Upload Your Agent Card (Mainnet)
+
+```bash
+filecoin-pin add --auto-fund --mainnet github-agent-card.json
+```
+
+Save the **Root CID** and **Dataset ID** from the output.
+
+### Register on Base Mainnet
+
+#### Set Environment Variables
+
+```bash
+export PRIVATE_KEY="0x..."  # Your wallet private key
+export TOKEN_URI="ipfs://bafkzcibdricannieziik7jobrwqia4qfq6g7cwxfspsppv5aa76uev4u6ek7awz5/github-agent-card.json"  # From mainnet upload
+export IDENTITY_REGISTRY="0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
+export BASE_MAINNET_RPC="https://mainnet.base.org"
+```
+
+#### Register the Agent
+
+```bash
+cast send $IDENTITY_REGISTRY \
+  "register(string)" \
+  "$TOKEN_URI" \
+  --rpc-url $BASE_MAINNET_RPC \
+  --private-key $PRIVATE_KEY
+```
+
+#### Verify Registration
+
+```bash
+cast call $IDENTITY_REGISTRY \
+  "totalAgents()" \
+  --rpc-url $BASE_MAINNET_RPC
+```
+
+### Check Mainnet Storage Proofs
+
+```bash
+filecoin-pin data-set <YOUR_DATASET_ID> --mainnet
+```
+
+***
+
 ## Troubleshooting
 
 ### Issue: `filecoin-pin: command not found`
 
 **Solution**: Install the Filecoin Pin CLI:
 ```bash
-npm install -g filecoin-pin
+npm install -g filecoin-pin@latest
 ```
 
 ### Issue: `Insufficient USDFC`
@@ -680,7 +762,7 @@ Now that your agent is registered with verifiable persistent storage, you can:
 - **Filecoin Pin**: [Documentation](https://docs.filecoin.io/builder-cookbook/filecoin-pin)
 - **Builder Channels**: Join ERC-8004 builder communities
 
-### Sponsered Storage for ERC-8004 Builders
+### Sponsored Storage for ERC-8004 Builders
 
 Coming soon, stay tuned!
 
