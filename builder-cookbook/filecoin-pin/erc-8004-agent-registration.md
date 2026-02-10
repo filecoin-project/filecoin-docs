@@ -194,8 +194,8 @@ This may take a few minutes to complete.
 
 You'll see output similar to:
 
-```
-% filecoin-pin payments setup --auto                                                     
+```bash
+filecoin-pin payments setup --auto                                                     
 ┌  Filecoin Onchain Cloud Payment Setup
 │
 │  Running in auto mode...
@@ -205,28 +205,23 @@ You'll see output similar to:
 ◇  ✓ Balance check complete
 │
 │  Account:
-│    Wallet: 0xDc3E85b5d25c9200F099Cc9d38769e9cCb445D8f
+│    Wallet: 0x44896a716F7b5Ed343C6962b3D56FaA5377Cd052
 │    Network: calibration
 │  Balances:
-│    FIL: 100.0000 tFIL
-│    USDFC wallet: 9.0000 USDFC
-│    USDFC deposited: 0.9000 USDFC
+│    FIL: 354.9996 tFIL
+│    USDFC wallet: 199.6428 USDFC
+│    USDFC deposited: 0.0000 USDFC
 │
-◇  ✓ WarmStorage permissions configured
-│
-│  Transaction:
-│    0x3cda50059a974ee5534e585306cfb8675165597f11a997637e26e25ba4a98c5f
-│
-◇  ✓ Deposited 0.1000 USDFC
+◇  ✓ Deposited 1.0000 USDFC
 │
 │  Transaction details:
-│    Deposit: 0xfd7b1d2a8071f1e0bf3f576510f5eab38b9573327740ceac094f7c8f1aee179d
+│    Deposit: 0x3b9cb71e21c9df895c9a2f50df437e0dfa5cf00d20bff6cf6deea0c231b5b128
 │
 ◇  ━━━ Configuration Summary ━━━
 │
 │  Network: calibration
 │  Deposit: 1.0000 USDFC
-│  Storage: ~558.5 GiB for 1 month
+│  Storage: ~372.4 GiB for 1 month
 │  Status: Ready to upload
 │
 └  Payment setup completed successfully
@@ -246,45 +241,48 @@ The `--auto-fund` flag ensures your storage provider wallet has sufficient funds
 
 You'll see output similar to:
 
-```
-% filecoin-pin add --auto-fund github-agent-card.json
+```bash
+filecoin-pin add --auto-fund github-agent-card.json
 ┌  Filecoin Pin Add
 │
-◇  ✓ File validated (1.3 KB)
+◇  ✓ File validated (1.3 KiB)
 │
 ◇  ✓ Connected to calibration
 │
-◇  ✓ Payment capacity verified
+◇  ✓ Minimum payment setup verified (~0.066 USDFC required)
 │
 ◇  ✓ File packed with root CID: bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di
 │
-◇  ✓ IPFS content loaded (1.5 KB)
+◇  ✓ IPFS content loaded (1.5 KiB)
 │
 ◇  ✓ Funding requirements met
 │
+◑  Creating storage context..Provider 0xB709A785c765d7d3F7d94dbA367DA6a611D7972b failed ping test: fetch failed
 ◇  ✓ Storage context ready
+│
+│  Storage Context
+│
+│    Data Set ID: undefined
+│    Provider: pspsps-calibnet
 │
 ◇  ━━━ Add Complete ━━━
 │
 │  Network: calibration
-│  
+│
 │  Add Details
 │    File: github-agent-card.json
-│    Size: 1.5 KB
+│    Size: 1.5 KiB
 │    Root CID: bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di
-│  
+│
 │  Filecoin Storage
 │    Piece CID: bafkzcibdricannieziik7jobrwqia4qfq6g7cwxfspsppv5aa76uev4u6ek7awz5
 │    Piece ID: 0
-│    Data Set ID: 933
-│  
+│    Data Set ID: 11653
+│
 │  Storage Provider
-│    Provider ID: 23
-│    Name: Axiaoming
-│    Direct Download URL: https://pdp.oplian.com/piece/bafkzcibdricannieziik7jobrwqia4qfq6g7cwxfspsppv5aa76uev4u6ek7awz5
-│  
-│  Transaction
-│    Hash: 0x9ae009d53165b2a01c9ae2e3fb0a2d11da4b90dc5f9acc31e6c4660e3d89606f
+│    Provider ID: 11
+│    Name: pspsps-calibnet
+│    Direct Download URL: https://calibnet.pspsps.io/piece/bafkzcibdricannieziik7jobrwqia4qfq6g7cwxfspsppv5aa76uev4u6ek7awz5
 │
 └  Add completed successfully
 
@@ -315,8 +313,8 @@ curl -s "https://ipfs.io/ipfs/<ROOT_CID>/github-agent-card.json" | jq .
 
 You should see your agent card JSON returned:
 
-```
-% curl -s "https://ipfs.io/ipfs/bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di/github-agent-card.json" | jq .
+```bash
+curl -s "https://ipfs.io/ipfs/bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di/github-agent-card.json" | jq .
 {
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "name": "GitHub Integration Agent",
@@ -397,36 +395,37 @@ cast send $IDENTITY_REGISTRY \
 
 You'll see output similar to:
 
-```
-% cast send $IDENTITY_REGISTRY \
+```bash
+cast send $IDENTITY_REGISTRY \
   "register(string)" \
   "$TOKEN_URI" \
   --rpc-url $BASE_SEPOLIA_RPC \
   --private-key $PRIVATE_KEY
 
-blockHash            0x54ee1b796e6062e6e78676dcb1cd59c200a80d710c42ebff09f720f3cdf8e4f4
-blockNumber          33187042
+blockHash            0x8699f29397c8b6b921d5e3f754220fa84ba049a0cfed875dc5deffcfd5f5dcb9
+blockNumber          37478106
 contractAddress      
-cumulativeGasUsed    3223263
-effectiveGasPrice    1000100
-from                 0xDc3E85b5d25c9200F099Cc9d38769e9cCb445D8f
-gasUsed              176805
-logs                 [{"address":"0x8004A818BFB912233c491871b3d84c89A494BD9e","topics":["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef","0x0000000000000000000000000000000000000000000000000000000000000000","0x000000000000000000000000dc3e85b5d25c9200f099cc9d38769e9ccb445d8f","0x0000000000000000000000000000000000000000000000000000000000000038"],"data":"0x","blockHash":"0x54ee1b796e6062e6e78676dcb1cd59c200a80d710c42ebff09f720f3cdf8e4f4","blockNumber":"0x1fa64e2","blockTimestamp":"0x690828a4","transactionHash":"0x950c3df5003a5ac827edc2e6f806e91d3f45fb05e82a9defc5afb486bf1bd8bb","transactionIndex":"0xf","logIndex":"0x50","removed":false},{"address":"0x8004A818BFB912233c491871b3d84c89A494BD9e","topics":["0xca52e62c367d81bb2e328eb795f7c7ba24afb478408a26c0e201d155c449bc4a","0x0000000000000000000000000000000000000000000000000000000000000038","0x000000000000000000000000dc3e85b5d25c9200f099cc9d38769e9ccb445d8f"],"data":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006768747470733a2f2f697066732e696f2f697066732f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000000000000000000000000000000000000000","blockHash":"0x54ee1b796e6062e6e78676dcb1cd59c200a80d710c42ebff09f720f3cdf8e4f4","blockNumber":"0x1fa64e2","blockTimestamp":"0x690828a4","transactionHash":"0x950c3df5003a5ac827edc2e6f806e91d3f45fb05e82a9defc5afb486bf1bd8bb","transactionIndex":"0xf","logIndex":"0x51","removed":false}]
-logsBloom            0x00000000000000400000000000000000000000000000000000000000000000000000000000000000000020200000000000000000000000000000004000200000000000000000000000000008000000000000000000000000000000000000000000000000020000000000000000000800000000002000000000000010000000000000000000000000000000000000000080000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000002000000000000000000000000000000001000000000000000000020000000000000010000000000000000000000010000000000000200000000000000
+cumulativeGasUsed    6675540
+effectiveGasPrice    1200000
+from                 0x44896a716F7b5Ed343C6962b3D56FaA5377Cd052
+gasUsed              200928
+logs                 [{"address":"0x8004a818bfb912233c491871b3d84c89a494bd9e","topics":["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef","0x0000000000000000000000000000000000000000000000000000000000000000","0x00000000000000000000000044896a716f7b5ed343c6962b3d56faa5377cd052","0x000000000000000000000000000000000000000000000000000000000000018e"],"data":"0x","blockHash":"0x8699f29397c8b6b921d5e3f754220fa84ba049a0cfed875dc5deffcfd5f5dcb9","blockNumber":"0x23bdeda","blockTimestamp":"0x698b1c94","transactionHash":"0x0edda2928ec45aaa4091a2fa2cc863f249e78b86931aed31e2c5365d3b99175c","transactionIndex":"0x13","logIndex":"0xe0","removed":false},{"address":"0x8004a818bfb912233c491871b3d84c89a494bd9e","topics":["0xf8e1a15aba9398e019f0b49df1a4fde98ee17ae345cb5f6b5e2c27f5033e8ce7"],"data":"0x000000000000000000000000000000000000000000000000000000000000018e","blockHash":"0x8699f29397c8b6b921d5e3f754220fa84ba049a0cfed875dc5deffcfd5f5dcb9","blockNumber":"0x23bdeda","blockTimestamp":"0x698b1c94","transactionHash":"0x0edda2928ec45aaa4091a2fa2cc863f249e78b86931aed31e2c5365d3b99175c","transactionIndex":"0x13","logIndex":"0xe1","removed":false},{"address":"0x8004a818bfb912233c491871b3d84c89a494bd9e","topics":["0xca52e62c367d81bb2e328eb795f7c7ba24afb478408a26c0e201d155c449bc4a","0x000000000000000000000000000000000000000000000000000000000000018e","0x00000000000000000000000044896a716f7b5ed343c6962b3d56faa5377cd052"],"data":"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000059697066733a2f2f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000","blockHash":"0x8699f29397c8b6b921d5e3f754220fa84ba049a0cfed875dc5deffcfd5f5dcb9","blockNumber":"0x23bdeda","blockTimestamp":"0x698b1c94","transactionHash":"0x0edda2928ec45aaa4091a2fa2cc863f249e78b86931aed31e2c5365d3b99175c","transactionIndex":"0x13","logIndex":"0xe2","removed":false},{"address":"0x8004a818bfb912233c491871b3d84c89a494bd9e","topics":["0x2c149ed548c6d2993cd73efe187df6eccabe4538091b33adbd25fafdb8a1468b","0x000000000000000000000000000000000000000000000000000000000000018e","0x2ac6109326e720d1435c0db66f7e35eda7839f52b6f1f5520a60788e132b4e39"],"data":"0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000b6167656e7457616c6c6574000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001444896a716f7b5ed343c6962b3d56faa5377cd052000000000000000000000000","blockHash":"0x8699f29397c8b6b921d5e3f754220fa84ba049a0cfed875dc5deffcfd5f5dcb9","blockNumber":"0x23bdeda","blockTimestamp":"0x698b1c94","transactionHash":"0x0edda2928ec45aaa4091a2fa2cc863f249e78b86931aed31e2c5365d3b99175c","transactionIndex":"0x13","logIndex":"0xe3","removed":false}]
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000080000000001000000000010200000000000000000000000000000000000000000000000000000008000080000000000000000000000000000000000000000000a20000000000000008000800000000000000000000000010000000000000000000100000000000000000000080000000000000000000000000000000000000000000000040000000000000002000000000000000010000000000008000000002000000002000000000000000000000000000000000800000000020000000081000010000200000000000000000000000000000000000000004000000
 root                 
 status               1 (success)
-transactionHash      0x950c3df5003a5ac827edc2e6f806e91d3f45fb05e82a9defc5afb486bf1bd8bb
-transactionIndex     15
+transactionHash      0x0edda2928ec45aaa4091a2fa2cc863f249e78b86931aed31e2c5365d3b99175c
+transactionIndex     19
 type                 2
 blobGasPrice         
-blobGasUsed          
+blobGasUsed          46176
 to                   0x8004A818BFB912233c491871b3d84c89A494BD9e
+daFootprintGasScalar 312
 l1BaseFeeScalar      1101
-l1BlobBaseFee        1
+l1BlobBaseFee        63508363
 l1BlobBaseFeeScalar  659851
-l1Fee                86
-l1GasPrice           9
-l1GasUsed            2557
+l1Fee                8679909892
+l1GasPrice           928642664
+l1GasUsed            2383
 
 ```
 
@@ -434,55 +433,41 @@ A `status` of `1` means the transaction succeeded and your agent NFT was minted!
 
 ### Get Your Agent ID
 
-Query the registry to find your agent's ID:
+Your agent ID is the **token ID** of the ERC-721 NFT that was minted when you registered. You can extract it from the transaction logs with `cast` and `jq` (install `jq` if needed, e.g. `brew install jq` on macOS):
+
+1. Set `TX_HASH` to the `transactionHash` from your `cast send` output (e.g. `0x0edda2928ec45aaa4091a2fa2cc863f249e78b86931aed31e2c5365d3b99175c`).
+2. Get the receipt and read the **Transfer** event's `tokenId` (fourth topic):
 
 ```bash
-cast call $IDENTITY_REGISTRY \
-  "totalAgents()" \
-  --rpc-url $BASE_SEPOLIA_RPC
+export TX_HASH="0x..."   # from your cast send output
+
+# Extract agent ID (token ID) from the Transfer event in the receipt logs
+AGENT_ID=$(cast receipt $TX_HASH --rpc-url $BASE_SEPOLIA_RPC --json \
+  | jq -r '.logs[] | select(.topics[0] == "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef") | .topics[3]' \
+  | head -1 \
+  | xargs cast --to-dec)
+echo "Agent ID: $AGENT_ID"
 ```
 
-This returns the total number of registered agents. Your agent ID is this number (the latest registration):
+This filters logs for the ERC-721 **Transfer** event and converts the `tokenId` topic to decimal. Use `$AGENT_ID` in the [Verify Registration](#verify-registration) step below.
 
-```bash
-cast call $IDENTITY_REGISTRY \
-  "totalAgents()" \
-  --rpc-url $BASE_SEPOLIA_RPC
-0x0000000000000000000000000000000000000000000000000000000000000038
-```
-
-### Convert Agent ID to Decimal
-
-The query returns a hex value (e.g., `0x38`). Convert to decimal:
-
-```bash
-printf "%d\n" 0x38  # Returns: 56
-```
+**Alternative:** You can also look up the transaction on [BaseScan (Base Sepolia)](https://sepolia.basescan.org/) → **Logs** tab → **Transfer** or **Registered** event, and read the `tokenId` / `agentId` from the event (e.g. [example transaction](https://sepolia.basescan.org/tx/0x0edda2928ec45aaa4091a2fa2cc863f249e78b86931aed31e2c5365d3b99175c) shows token ID 398).
 
 ### Verify Registration
 
-Confirm your agent is registered correctly:
+Confirm your agent is registered correctly using the agent ID from the previous step (use `$AGENT_ID` if you extracted it with `cast`, or the value you read from BaseScan):
 
 ```bash
 cast call $IDENTITY_REGISTRY \
   "tokenURI(uint256)" \
-  56 \
+  $AGENT_ID \
   --rpc-url $BASE_SEPOLIA_RPC
 ```
 
-You will get output similar to:
+You will get ABI-encoded output similar to:
 
 ```bash
-cast call $IDENTITY_REGISTRY \
-  "totalAgents()" \
-  --rpc-url $BASE_SEPOLIA_RPC
-0x0000000000000000000000000000000000000000000000000000000000000038
-
-cast call $IDENTITY_REGISTRY \
-  "tokenURI(uint256)" \
-  56 \
-  --rpc-url $BASE_SEPOLIA_RPC
-0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006768747470733a2f2f697066732e696f2f697066732f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000000000000000000000000000000000000000
+0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000059697066733a2f2f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000
 ```
 
 The output is ABI-encoded. Decode it:
@@ -494,8 +479,8 @@ cast --abi-decode "f()(string)" <OUTPUT_FROM_ABOVE>
 You should see your Token URI returned: `ipfs://<ROOT_CID>/github-agent-card.json`:
 
 ```bash
-cast --abi-decode "f()(string)" 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006768747470733a2f2f697066732e696f2f697066732f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000000000000000000000000000000000000000
-"https://ipfs.io/ipfs/bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di/github-agent-card.json"
+cast --abi-decode "f()(string)" 0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000059697066733a2f2f626166796265696868616c35686c62796c6b69626e696967366a37327764726d376c72346e66367a34376e61746c6568326a6b796f7372673764692f6769746875622d6167656e742d636172642e6a736f6e00000000000000
+"ipfs://bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di/github-agent-card.json"
 ```
 
 ### View on Block Explorer
@@ -503,10 +488,10 @@ cast --abi-decode "f()(string)" 0x0000000000000000000000000000000000000000000000
 Visit your agent on the Base Sepolia block explorer:
 
 ```
-https://sepolia.basescan.org/token/0x8004A818BFB912233c491871b3d84c89A494BD9e?a=<AGENT_ID_DECIMAL>
+https://sepolia.basescan.org/nft/0x8004a818bfb912233c491871b3d84c89a494bd9e/<AGENT_ID_DECIMAL>
 ```
 
-Replace `<AGENT_ID_DECIMAL>` with your agent's ID (e.g., `56`).
+Replace `<AGENT_ID_DECIMAL>` with your agent's ID (e.g., `398`).
 
 <figure><img src="assets/eip8004-base-explorer-nft.png" alt=""><figcaption>Base Sepolia block explorer, showing NFT minted</figcaption></figure>
 
@@ -521,82 +506,60 @@ Finally, let's verify that your agent card is persistently stored with cryptogra
 Use the Dataset ID from Step 2:
 
 ```bash
-filecoin-pin data-set 933  # Replace with your Dataset ID
+filecoin-pin data-set show 11653  # Replace with your Dataset ID
 ```
 
 You'll see output like:
 
-```
-% filecoin-pin data-set 933
-┌  Filecoin Onchain Cloud Data Sets
+```bash
+filecoin-pin data-set show 11653
+┌  Filecoin Onchain Cloud Data Set Details for #11653
 │
-◇  ━━━ Data Sets ━━━
+◇  ━━━ Data Set ━━━
 │
-│  Data Set #933 • live
-│    Managed by Warm Storage: yes
+│  Network: calibration
+│  Client address: 0x44896a716F7b5Ed343C6962b3D56FaA5377Cd052
+│  
+│  #11653
+│    Status: live
 │    CDN add-on: disabled
-│    Pieces stored: 2
-│    Leaf count: 96
-│    Total size: 3.0 KB
-│    Client data set ID: 0
-│    PDP rail ID: 1529
-│    CDN rail ID: none
-│    Cache-miss rail ID: none
-│    Payer: 0xDc3E85b5d25c9200F099Cc9d38769e9cCb445D8f
-│    Payee: 0x6ABcF87adC44e27582a3e2bB5EDe97bcFe40043F
-│    Service provider: 0x6ABcF87adC44e27582a3e2bB5EDe97bcFe40043F
-│    Provider: Axiaoming (ID 23)
-│    Commission: 0.00%
 │  
-│  Provider Service
-│    Service URL: https://pdp.oplian.com
-│    Min piece size: 1.0 MB
-│    Max piece size: 1.0 GB
-│    Storage price: < 0.0001 USDFC/TiB/month
-│    Min proving period: 30 epochs
-│    Location: C=CN;ST=Hong Kong SAR;L=Hong Kong
-│    Payment token: USDFC (native)
+│    Provider
+│      ID: 11
+│      Address: 0x682467D59F5679cB0BF13115d4C94550b8218CF2
+│      Name: pspsps-calibnet
+│      Description: herding cats
+│      Service URL: https://calibnet.pspsps.io
+│      Active: yes
+│      Location: C=DE;ST=Bavaria;L=Nuremberg
 │  
-│  Metadata
-│      source: filecoin-pin
-│      withIPFSIndexing: (empty)
+│    Metadata
+│      source: "filecoin-pin"
+│      withIPFSIndexing: ""
 │  
+│    Payment
+│      PDP rail ID: 12908
+│      Payer: 0x44896a716F7b5Ed343C6962b3D56FaA5377Cd052
+│      Payee: 0x682467D59F5679cB0BF13115d4C94550b8218CF2
 │  
-│  Pieces
-│    Total pieces: 2
-│    Unique CommPs: 1
-│    Unique root CIDs: 1
+│    Pieces
+│      Total pieces: 1
+│      Total size: 1.5 KiB
+│      Unique PieceCIDs: 1
+│      Unique IPFS Root CIDs: 1
 │  
-│    #0
-│      CommP: bafkzcibdricannieziik7jobrwqia4qfq6g7cwxfspsppv5aa76uev4u6ek7awz5
-│      Root CID: bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di
-│    #1
-│      CommP: bafkzcibdricannieziik7jobrwqia4qfq6g7cwxfspsppv5aa76uev4u6ek7awz5
-│      Root CID: bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di
+│      #0 (active)
+│        PieceCID: bafkzcibdricannieziik7jobrwqia4qfq6g7cwxfspsppv5aa76uev4u6ek7awz5
+│        Size: 1.5 KiB
+│        Metadata
+│          ipfsRootCID: "bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di"
+│  
 │
 └  Data set inspection complete
 
 ```
 
 > **💡 Note**: PDP proofs may take up to 24 hours to begin after initial upload. This is normal.
-
-### Test Complete Workflow
-
-Simulate how another agent would discover and use your agent:
-
-```bash
-# Step 1: Query total agents
-TOTAL=$(cast call $IDENTITY_REGISTRY "totalAgents()" --rpc-url $BASE_SEPOLIA_RPC)
-echo "Total agents: $(printf "%d" $TOTAL)"
-
-# Step 2: Get your agent's Token URI
-URI_RAW=$(cast call $IDENTITY_REGISTRY "tokenURI(uint256)" 56 --rpc-url $BASE_SEPOLIA_RPC)
-URI=$(cast --abi-decode "f()(string)" $URI_RAW)
-echo "Token URI: $URI"
-
-# Step 3: Extract CID and fetch agent card
-curl -s "https://ipfs.io/ipfs/<ROOT_CID>/github-agent-card.json" | jq '.endpoints[]'
-```
 
 ### Summary
 
@@ -659,7 +622,7 @@ Save the **Root CID** and **Dataset ID** from the output.
 
 ```bash
 export PRIVATE_KEY="0x..."  # Your wallet private key
-export TOKEN_URI="ipfs://bafkzcibdricannieziik7jobrwqia4qfq6g7cwxfspsppv5aa76uev4u6ek7awz5/github-agent-card.json"  # From mainnet upload
+export TOKEN_URI="ipfs://<ROOT_CID>/github-agent-card.json"  # From previous step
 export IDENTITY_REGISTRY="0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
 export BASE_MAINNET_RPC="https://mainnet.base.org"
 ```
@@ -677,15 +640,20 @@ cast send $IDENTITY_REGISTRY \
 #### Verify Registration
 
 ```bash
-cast call $IDENTITY_REGISTRY \
-  "totalAgents()" \
-  --rpc-url $BASE_MAINNET_RPC
+export TX_HASH="0x..."   # from your cast send output
+
+# Extract agent ID (token ID) from the Transfer event in the receipt logs
+AGENT_ID=$(cast receipt $TX_HASH --rpc-url $BASE_MAINNET_RPC --json \
+  | jq -r '.logs[] | select(.topics[0] == "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef") | .topics[3]' \
+  | head -1 \
+  | xargs cast --to-dec)
+echo "Agent ID: $AGENT_ID"
 ```
 
 ### Check Mainnet Storage Proofs
 
 ```bash
-filecoin-pin data-set <YOUR_DATASET_ID> --mainnet
+filecoin-pin data-set show <YOUR_DATASET_ID> --mainnet
 ```
 
 ***
