@@ -295,7 +295,7 @@ filecoin-pin add --auto-fund github-agent-card.json
 Copy these values from the output - you'll need them later:
 
 - **Root CID** - The IPFS content identifier (e.g., `bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di`).
-- **Dataset ID** - For checking PDP proof status (e.g., `933`)
+- **Dataset ID** - For checking PDP proof status (e.g., `11653`)
 
 > **⚠️ IMPORTANT**: The Token URI for ERC-8004 registration must include the filename! Format it as:
 > ```
@@ -692,7 +692,7 @@ curl -s "https://cloudflare-ipfs.com/ipfs/<CID>/github-agent-card.json" | jq .
 
 **Solution**: PDP proofs can take up to 24 hours to begin after upload. This is normal - your data is still stored, proofs just take time to generate. Check back later with:
 ```bash
-filecoin-pin data-set <YOUR_DATASET_ID>
+filecoin-pin data-set show <YOUR_DATASET_ID>
 ```
 
 ### Issue: Token URI doesn't include filename
