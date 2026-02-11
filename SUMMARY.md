@@ -166,6 +166,8 @@
   * [Specifications](reference/general/specifications.md)
   * [Tools](reference/general/tools.md)
   * [Deprecation notices](reference/general/deprecation-notices.md)
+  * [Modern storage patterns](reference/general/modern-storage-patterns.md)
+  * [FOC documentation index](reference/general/foc-documentation-index.md)
 * [Exchanges](reference/exchanges/README.md)
   * [Exchange integration](reference/exchanges/exchange-integration.md)
 * [Built-in actors](reference/built-in-actors/README.md)
