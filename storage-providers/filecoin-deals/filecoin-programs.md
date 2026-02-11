@@ -48,14 +48,6 @@ Akave is revolutionizing data management with a decentralized, modular solution 
 
 CIDGravity is a software-as-a-service that allows storage providers to handle dynamic pricing and client management towards your solution. It integrates with deal engines such as [Boost](https://boost.filecoin.io).
 
-### [Swan (Filswan)](https://github.com/filswan)
-
-[![GitHub Org's stars](https://img.shields.io/github/stars/filswan?style=for-the-badge)](https://github.com/filswan) [![Read the doc](https://img.shields.io/badge/docs-filswan.com-blue?style=for-the-badge)](https://docs.filswan.com/) [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C04LBAMBDPD)
-
-Swan is a provider of cross-chain cloud computing solutions. Developers can use its suite of tools to access resources across multiple chains.
-
-Swan Cloud provides decentralized cloud computing solutions for Web3 projects by integrating storage, computing, and payment into one suite.
-
 ### [Open Panda](https://github.com/data-preservation-programs/open-panda)
 
 Open Panda was a platform for data researchers, analysts, students, and enthusiasts to interact with the largest open datasets in the world. Data available through the platform was stored on Filecoin, a decentralized storage network comprised of thousands of independent Storage Providers around the world.
