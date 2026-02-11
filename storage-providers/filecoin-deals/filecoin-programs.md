@@ -28,7 +28,7 @@ Spade automates the process of renewing storage deals on the Filecoin network, e
 
 ## [Singularity](https://github.com/data-preservation-programs/singularity)
 
-[![Github Repo stars](https://img.shields.io/github/stars/data-preservation-programs/singularity?style=for-the-badge)](https://github.com/data-preservation-programs/singularity) [![GitHub last commit](https://img.shields.io/github/last-commit/data-preservation-programs/singularity?style=for-the-badge)](https://github.com/data-preservation-programs/spade/graphs/commit-activity) [![Read the doc](https://img.shields.io/badge/docs-gitbook.io-blue?style=for-the-badge)](https://data-programs.gitbook.io/singularity) [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C05JABREATH)
+[![Github Repo stars](https://img.shields.io/github/stars/data-preservation-programs/singularity?style=for-the-badge)](https://github.com/data-preservation-programs/singularity) [![GitHub last commit](https://img.shields.io/github/last-commit/data-preservation-programs/singularity?style=for-the-badge)](https://github.com/data-preservation-programs/singularity/graphs/commit-activity) [![Read the doc](https://img.shields.io/badge/docs-gitbook.io-blue?style=for-the-badge)](https://data-programs.gitbook.io/singularity) [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C05JABREATH)
 
 Singularity is an end-to-end solution for onboarding datasets to Filecoin storage providers, supporting [PiB-scale data](https://stats.singularity.storage/). It offers modular compatibility with various data preparation and deal-making tools, allowing efficient processing from local or remote storage. Singularity integrates with over 40 storage solutions and introduces inline preparation, which links CAR files to their original data sources, preserving dataset hierarchies. It also supports content distribution and retrieval through multiple protocols and provides push and pull modes for deal making along with robust wallet management features.
 
@@ -40,7 +40,7 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C07FN47FCFJ)
 
-Akave is revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces.  Read more on the [Akave Docs](https://docs.akave.ai/). 
+Akave is revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces. Read more on the [Akave Docs](https://docs.akave.ai/). 
 
 ### [CIDGravity](https://www.cidgravity.com/)
 
@@ -50,7 +50,7 @@ CIDGravity is a software-as-a-service that allows storage providers to handle dy
 
 ### [Open Panda](https://github.com/data-preservation-programs/open-panda)
 
-Open Panda was a platform for data researchers, analysts, students, and enthusiasts to interact with the largest open datasets in the world. Data available through the platform was stored on Filecoin, a decentralized storage network comprised of thousands of independent Storage Providers around the world.
+Open Panda is a platform for data researchers, analysts, students, and enthusiasts to interact with large open datasets. Data available through the platform is stored on Filecoin, a decentralized storage network comprised of thousands of independent Storage Providers around the world.
 
 ## Former programs and tools
 
