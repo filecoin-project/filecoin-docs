@@ -92,7 +92,7 @@ Here are great existing and working Filecoin dashboards that cover similar topic
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/filecoin-project/slingshot?style=for-the-badge)](https://github.com/filecoin-project/slingshot) ![GitHub last commit](https://img.shields.io/github/last-commit/filecoin-project/slingshot?style=for-the-badge) ![](https://img.shields.io/badge/maintenance-deprecated-red.svg?style=for-the-badge) [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C01AZP8BKRQ)
 
-Slingshot was a program that united Data clients, Data preparers and storage providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Rather than providing a web interface like Estuary, Slingshot was a program that provides a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provided deals to registered and certified storage providers. The data was prepared and uploaded using a tool called [Singularity](filecoin-programs.md#singularity).
+Slingshot was a program that united Data clients, Data preparers and storage providers in a community to onboard data and share replicas of publicly valuable [_Open Datasets_](https://datasets.filecoin.io). Slingshot provided a workflow and tools for onboarding of large open datasets. The Slingshot Deal Engine provided deals to registered and certified storage providers. The data was prepared and uploaded using a tool called [Singularity](filecoin-programs.md#singularity).
 
 ### Dataprograms.org
 
@@ -113,14 +113,6 @@ Moon Landing was designed to ramp up storage providers in the Filecoin network b
 Filecoin Dataset Explorer showcased data stored on the Filecoin network between 2020 and 2022, including telemetry, historical archives, Creative Commons media, entertainment archives, scientific research, and machine learning datasets. It highlighted Filecoin's capability to store large datasets redundantly, ensuring availability from multiple Storage Providers worldwide. Each dataset is identified by a unique content identifier (CID). The platform aimed to make diverse datasets accessible to users globally.
 
 See also: Legacy Explorer (legacy.datasets.filecoin.io)
-
-## Estuary
-
-![](https://img.shields.io/badge/maintenance-deprecated\_07%2F2023-red.svg?style=for-the-badge)
-
-Estuary was an experimental software platform designed for sending public data to the Filecoin network, facilitating data retrieval from anywhere. It integrated IPFS and Filecoin technologies to provide a seamless end-to-end example for data storage and retrieval. When a file was uploaded, Estuary immediately made multiple storage deals with different providers to ensure redundancy and security. The software automated many aspects of deal making and retrieval, offering tools for managing connections, block storage, and deal tracking. Estuary aimed to simplify the use of decentralized storage networks for developers and users.
-
-Estuary was discontinued in July 2023, and the website shut down in April 2024.
 
 ### Big Data Exchange
 
