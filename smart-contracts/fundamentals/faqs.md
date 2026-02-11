@@ -73,10 +73,6 @@ Not necessarily. You can use any of the public RPC nodes on either [mainnet](../
 * `api.hyperspace.node.glif.io/rpc/v1`
 * `api.zondax.ch/fil/node/hyperspace/rpc/v1`
 
-## **What is the difference between the FVM and Bacalhau**
-
-They are synergistic. Compute over data solutions such as [Bacalhau](https://github.com/filecoin-project/bacalhau) can use the FVM.
-
 ## **Why does the FVM use WASM**
 
 Many [different languages](https://github.com/appcypher/awesome-wasm-langs) already compile to WASM so developers can pick their favorite.
