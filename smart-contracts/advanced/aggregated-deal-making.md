@@ -55,7 +55,7 @@ To request for aggregation and PoDSI off-chain, developers interact with an aggr
 
 On-chain aggregation and PoDSI requests go through aggregator oracle smart contracts:
 
-1. The client [prepares the data](../../storage-providers/filecoin-deals/storage-deals.md/#data-preparation) and generates the sub-piece CID, known as pCID (CommPc). Here is an easy [data preparation tool](https://data.lighthouse.storage/) by [lighthouse.storage](https://lighthouse.storage).
+1. The client [prepares the data](../../storage-providers/filecoin-deals/storage-deals.md/#data-preparation) and generates the sub-piece CID, known as pCID (CommPc).
 2. The client submits a sub-piece CID (CommPc) with metadata (e.g. URL to download the sub-piece CAR file) directly to the aggregation smart contract.
 3. The aggregator watches the aggregation contract, and when the aggregator decides there are enough sub-pieces, it downloads all sub-piece data, to generate the aggregated piece from the CAR file URL.
 4. The aggregator aggregates indexed data segments into a larger data file for deal-making (based on specs [here](https://github.com/filecoin-project/FIPs/discussions/512)).

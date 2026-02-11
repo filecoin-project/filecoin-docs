@@ -63,26 +63,22 @@ Take precautions and never share your private key with anyone! Also make sure to
 
 ### Preparing a file for storage
 
-Before storing a file with a storage provider it needs to be prepared by turning it into a `.car` file. The metadata also needs to be recorded. The Hardhat kit has a tool [which can do this for you](https://github.com/filecoin-project/fevm-hardhat-kit/tree/main/tools). However, to keep things nice and simple, we’re going to use the [FVM Data Depot website](https://data.lighthouse.storage/). This website will automatically convert files to the `.car` format, output all the necessary metadata, and act as an HTTP retrieval point for the storage providers.
+Before storing a file with a storage provider it needs to be prepared by turning it into a `.car` file. The metadata also needs to be recorded. Use the Hardhat kit tools (or other tooling) to generate a `.car` file and the required metadata, and make sure you have a URL where storage providers can fetch the `.car` file.
 
-1. Go to the [FVM Data Depot website](https://data.lighthouse.storage/) and create an account.
-2. Click **Upload File** and select a file you wish to upload.
-3.  Select the **File ID** of the file to read all the relevant metadata. Make a note of the:
+Make a note of the following values — you’ll use them in the next step when invoking the `MakeDealProposal` method:
 
-    * Piece CID
-    * Payload CID
-    * Car size
-    * Piece size
-    * URL
-
-    We’ll use this information in the next step when invoking the `MakeDealProposal` method.
+* Piece CID
+* Payload CID
+* Car size
+* Piece size
+* URL
 
 ### Invoke the `MakeDealProposal` method
 
-Now that we have the `.car` file prepared in the data depot, we can invoke the MakeDealProposal method on the smart contract we deployed earlier. To do this, we will run the `make-deal-proposal` task in Hardhat. There are quite a few parameters to include in this call:
+Now that we have the `.car` file prepared and a URL where it can be fetched, we can invoke the MakeDealProposal method on the smart contract we deployed earlier. To do this, we will run the `make-deal-proposal` task in Hardhat. There are quite a few parameters to include in this call:
 
 * `contract`: the address of your deployed `ClientContract.sol`.
-* \`piece-cid: gathered from the previous step.
+* `piece-cid`: gathered from the previous step.
 * `piece-size`: gathered from the previous step.
 * `car-size`: gathered from the previous step.
 * `start-epoch`: The block number you want the deal to begin on. It should be a block in the future. You can find the current block number on [Beryx](https://beryx.io/), making sure to select the correct network.

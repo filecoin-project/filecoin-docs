@@ -40,10 +40,10 @@ Storage deals for more than 4 GiB don't suffer from the limitations of small-sca
 
 The client contract performs _direct_ deal making to automatically finds an SP to store your data. There are other considerations an SP must make when deciding to pick up your data deal proposals from the client contract. For example, some SPs may only deal with clients with whom they have an existing relationship with. For more information regarding client contracts and how they work, checkout the [client contract tutorial](../developing-contracts/client-contract-tutorial.md).
 
-1. **Upload data to a data depot**: Data depots hold your data for the duration of this process so that you don't have to maintain your connection to the network. Once an SP verifiably holds your data, the data depot discards your data. After uploading your data to a depot, the depot will give you all the information you need to fill out the client contract.
+1. **Upload data to a staging location**: Host your data somewhere a storage provider can fetch it (for example, via IPFS or an HTTP endpoint). After uploading your data, the staging location should provide the information you need to fill out the client contract.
 2. **Deploy a client contract**: The deal client contract coordinates the handshaking required on FVM to load your data into the Filecoin network.
-3. **Create a deal-proposal payload**: Once your data is ready in the data depot and your client contract has been deployed, you can create your deal-proposal payload. This payload contains everything a storage provider needs to download and store a copy of your data.
-4. **Deal publication and activation**: An SP picks up your contract and downloads the data from the data depot.
+3. **Create a deal-proposal payload**: Once your data is staged and your client contract has been deployed, you can create your deal-proposal payload. This payload contains everything a storage provider needs to download and store a copy of your data.
+4. **Deal publication and activation**: An SP picks up your contract and downloads the data from the staging location.
 
 Check out the [Deal Making Starter Kit](https://github.com/filecoin-project/fvm-starter-kit-deal-making) for additional information on how this process works.
 
