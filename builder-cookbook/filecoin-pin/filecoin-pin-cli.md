@@ -53,7 +53,7 @@ nvm install 22
 nvm use 22
 
 # Install filecoin-pin globally
-npm install -g filecoin-pin
+npm install -g filecoin-pin@latest
 
 # Install GitHub CLI
 brew install gh  # macOS
