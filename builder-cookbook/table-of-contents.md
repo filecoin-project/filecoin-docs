@@ -10,9 +10,8 @@ description: >-
 
 * **Store Data**
   * [Prepare data for Filecoin storage](data-storage/store-data.md#prepare-data-for-filecoin-storage)
-  * [Store large data with smart contract](data-storage/store-data.md#store-large-data-with-the-smart-contract)
+  * [Store large data with smart contract](data-storage/store-data.md#store-large-data-with-modern-programmatic-patterns)
   * [Store small data with storage onramps](data-storage/store-data.md#store-small-data-with-storage-onramps)&#x20;
-  * [Manage storage deals with RaaS](data-storage/store-data.md#manage-storage-deals-with-raas)
   * [Monitor storage deal status from a smart contract](data-storage/store-data.md#monitor-storage-deal-status-from-a-smart-contract)
   * [Incentivized data storage](data-storage/store-data.md#incentivized-data-storage)
 * **Retrieve Data**

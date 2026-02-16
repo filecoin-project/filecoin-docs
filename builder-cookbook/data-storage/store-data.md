@@ -96,7 +96,7 @@ One of the storage onramps we can use is [Lighthouse.storage](https://lighthouse
 
 * [Lighthouse.storage](https://lighthouse.storage/)
   * [SDK](https://github.com/lighthouse-web3/lighthouse-package): a JavaScript library that allows you to upload files to the Filecoin network.
-  * [smart contract](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol): solidity contract to submit and process storage deal aggregation requests.
+  * [smart contract integration guide](https://docs.lighthouse.storage/how-to/using-pdp-with-lighthouse): guidance for submitting storage deal aggregation requests on-chain.
 
 #### Instructions
 
@@ -104,7 +104,7 @@ Lighthouse.storage provides users with two options for uploading data and making
 
 1. **store data with lighthouse SDK**
 
-By creating an account with Lighthouse storage and generating an API key, you can easily upload data to the Filecoin network using the Lighthouse SDK within any JavaScript application. Data stored using lighthouse SDK will be automatically registered for deal aggregation as well as RaaS(replication, renewal, and repair).
+By creating an account with Lighthouse storage and generating an API key, you can upload data to the Filecoin network using the Lighthouse SDK within any JavaScript application. Data stored using the Lighthouse SDK can be registered for deal aggregation workflows.
 
 First, install lighthouse SDK in your project with the command `npm install -g @lighthouse-web3/sdk`. Then use the following code to upload data to the lighthouse for deal aggregation.
 
@@ -129,7 +129,7 @@ The expected output of `uploadResponse`.
 
 2. **store data via lighthouse smart contract**
 
-Lighthouse has also implemented an aggregator smart contract based on [IAggregatorOracle](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/interfaces/IAggregatorOracle.sol). This smart contract is deployed on the Filecoin Calibration testnet, allowing users to submit deal aggregation requests on-chain.
+Lighthouse also provides aggregator smart contract examples for submitting deal aggregation requests on-chain on Filecoin Calibration.
 
 We can call the smart contract at `0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960` and submit a CID for aggregation via `submit(bytes memory _cid) external returns (uint256)` methods.
 
@@ -168,83 +168,6 @@ import CID from "cids";
 </code></pre>
 
 The full tutorial for uploading data using Lighthouse SDK and smart contract can be found [here](https://docs.lighthouse.storage/how-to/using-pdp-with-lighthouse).
-
-***
-
-### <mark style="color:blue;">Manage storage deals with RaaS</mark>
-
-RaaS (Replication, Renewal, and Repair as a Service) refers to the service provided for data stored in storage deals on the Filecoin network. When making storage deals with deal aggregators, such as lighthouse.storage, users have the option to register the RaaS job for the stored data. Subsequently, the aggregators monitor the status of the registered storage deals and initiate the necessary actions for replication, renewal, and repair as required.
-
-When storing data using either the Lighthouse SDK or smart contracts, we can register a RaaS job.
-
-* Lighthouse SDK: register replication, renew, and repair service by setting deal parameters when uploading data.
-* Lighthouse smart contract: calling `submitRaaS` attaching RaaS parameters for the storage deal aggregation.
-
-#### Ingredients
-
-* [Lighthouse.storage](https://www.lighthouse.storage/)
-  * [SDK](https://github.com/lighthouse-web3/lighthouse-package): a JavaScript library that allows you to upload files to the Filecoin network.
-  * [smart contract](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol): solidity contract to submit and process storage deal aggregation requests.
-
-#### Instructions
-
-1. **register RaaS job when uploading with lighthouse SDK**
-
-When uploading a file using the SDK, you have the flexibility to customize how it is stored in Lighthouse by adjusting the deal parameters.
-
-* **num\_copies**: Decide how many backup copies you want for your file. The Max limit is 3. For instance, if set to 3, your file will be stored by 3 different storage providers.
-* **repair\_threshold**: Determines when a storage sector is considered "broken" if a provider fails to confirm they still have your file. It's measured in "epochs", with 28800 epochs being roughly 10 days.
-* **renew\_threshold**: Specifies when your storage deal should be renewed. It's also measured in epochs.
-* **network**: This should always be set to 'calibration' (for RAAS services to function) unless you want to use the mainnet.
-
-```javascript
-// Sample JSON of deal parameters
-const dealParams = {
-  num_copies: 2,
-  repair_threshold: 28800,
-  renew_threshold: 28800,
-  network: 'calibration',
-};
-
-// register RaaS job with the aggregator SDK.
-const response = await lighthouse.upload(path, apiKey, false, dealParams);
-```
-
-2. **register RaaS job when proposal storage deal using lighthouse smart contract**
-
-Another way to register RaaS jobs is by interacting with the Lighthouse smart contract and submitting a CID of your choice to the `submitRaaS` function. This action creates a new deal request that will be picked up by the Lighthouse RaaS Worker, initiating the necessary replication, renewal, and repair processes.
-
-```javascript
-import contract from "../contracts/DealStatus.json";
-// ... other code
-const SubmitRaaS = async () => {
-    const contractAddress = '0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960'; // Deployed DealStatus contract address
-    const contractABI = contract.abi; // the path where the DealStatus.json is
-    const cid = 'baga6ea4seaqpi75umesad5vlyzyf66vbzntoave4bebmkcqu4f6nq6rchhx3ckq'; 
-    // This handles proposing storage deals
-    try {
-      const { ethereum } = window;
-      if (ethereum) {
-        const provider = new ethers.BrowserProvider(ethereum);
-        const signer = await provider.getSigner();
-        dealStatus = new ethers.Contract(
-          contractAddress,
-          contractABI,
-          signer
-        );
-        cid = new CID(commP)
-        const transaction = await dealStatus.submitRaaS(cid.bytes, 2, 4, 40);
-        const receipt = await transaction.wait();
-        console.log(receipt);
-      } else {
-        console.log("Ethereum object doesn't exist!");
-      }
-    } catch (error) {
-      console.log(error);
-      return;
-    }
-  };
-```
 
 ***
 
