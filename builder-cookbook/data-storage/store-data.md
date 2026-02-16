@@ -34,7 +34,7 @@ We will explain each option available for preparing your data into CAR files and
 
 1. [FVM Data Depot](https://data.lighthouse.storage/) - **recommended**
 
-Upload files, generate CAR, and get CAR links - we can do all these on the FVM Data Depot website. After logging in and uploading files following this [tutorial](https://docs.filecoin.io/smart-contracts/developing-contracts/client-contract-tutorial#preparing-a-file-for-storage), we will get the following information for proposing a storage deal via smart contract.
+Upload files, generate CAR, and get CAR links - we can do all these on the FVM Data Depot website. After logging in and uploading files, we will get the following information for proposing a storage deal via smart contract.
 
 * Piece CID & Payload CID
 * CAR size & piece size
@@ -71,99 +71,22 @@ Afterward, you can obtain the CID or URL of the uploaded data to propose storage
 
 ***
 
-### <mark style="color:blue;">Store large data with the smart contract</mark>
+### <mark style="color:blue;">Store large data with modern programmatic patterns</mark>
 
-With the support of FVM, applications can leverage the decentralized nature of the smart contract to store data on Filecoin in a more decentralized way. By initiating storage deals through smart contracts on the FVM, the Client Contract (CC) FRC is utilized to propose deals to the Filecoin network. Service Providers (SPs) running Boost can actively monitor and process these deal proposals by listening for specific smart contract events.
+Legacy Deal Client tutorials are deprecated and are not maintained in the Builder Cookbook.
 
-Client Contract serves as a crucial component in making on-chain storage deal proposals on the Filecoin network. To initialize a storage deal proposal via the Client Contract smart contract, we need to first pack your data into CAR files and obtain the following information before calling the CC smart contract.
+Use the maintained references below for current implementation paths:
 
-* pieceCID
-* CarLink
-* car size
-* piece Size
-* starting and ending epoch
+* [PDP documentation](../../storage-providers/pdp/README.md)
+* [Modern storage patterns](../../reference/general/modern-storage-patterns.md)
 
-#### Ingredients
-
-* Client Contract
-  * [FRC-0068](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0068.md)
-  * [Reference Implementation](https://github.com/filecoin-project/fevm-hardhat-kit/blob/main/contracts/basic-deal-client/DealClient.sol)
-
-#### Instructions
-
-The Client Contract library implements the basic functions to make storage deal proposals as well as callback functions for successful storage deal creation.
-
-One of the key methods within this library is the `makeDealProposal` method, which is responsible for initiating a fully on-chain storage deal proposal. To invoke the `makeDealProposal` method, you will need to interact with the deployed DealClient contract on Calibration. This method accepts the required parameters for the storage deal, such as the data CID or URL, car size, piece size, the duration of the deal, and any other relevant details specific to your use case.
-
-Additionally, the Client Contract library provides callback functions that can be used to handle successful storage deal creation events. These callbacks allow you to perform actions or trigger subsequent processes upon the successful establishment of a storage deal.
-
-A Javascript function to invoke the `makeDealProposal` method should be like:
-
-<pre class="language-javascript"><code class="lang-javascript">import contract from "../contracts/DealClient.json";
-// ... other code
-<strong>const handleSubmit = async () => {
-</strong>    const contractAddress = '0x0219eB1740C315fe5e20612D7E13AE2A883dB3f4'; // Deployed DealClient Contract address
-    const contractABI = contract.abi; // the path where the DealClient.json is
-    const commP = 'baga6ea4seaqpi75umesad5vlyzyf66vbzntoave4bebmkcqu4f6nq6rchhx3ckq'; 
-    // This handles proposing storage deals
-    try {
-      const { ethereum } = window;
-      if (ethereum) {
-        const provider = new ethers.BrowserProvider(ethereum);
-        const signer = await provider.getSigner();
-        dealClient = new ethers.Contract(
-          contractAddress,
-          contractABI,
-          signer
-        );
-        
-        let cid = new CID(commP);
-        const extraParamsV1 = [
-          "public http link to car file",//carLink
-          236445, // carSize
-          false, // skipIpniAnnounce,
-          false, // removeUnsealedCopy
-        ];
-        
-        const DealRequestStruct = [
-          cid.bytes, //cidHex
-          8388608, //pieceSize,
-          false, //verifiedDeal,
-          commP, //label,
-          520000, // startEpoch
-          1555200, // endEpoch
-          0, // storagePricePerEpoch,
-          0, // providerCollateral,
-          0, // clientCollateral,
-          1, // extraParamsVersion,
-          extraParamsV1,
-        ];
-        const transaction = await dealClient.makeDealProposal(DealRequestStruct);
-        const receipt = await transaction.wait();
-        console.log(receipt);
-
-        dealClient.on("DealProposalCreate", (id, size, verified, price)=>{
-          console.log(id, size, verified, price);
-        })
-
-        console.log("Deal proposed! CID: " + cid);
-      } else {
-        console.log("Ethereum object doesn't exist!");
-      }
-    } catch (error) {
-      console.log(error);
-      return;
-    }
-  };
-</code></pre>
-
-The full tutorial of proposal storage deals through the client contract can be found [here](https://docs.filecoin.io/smart-contracts/developing-contracts/client-contract-tutorial).
+Use the data preparation options above to generate CAR artifacts and CIDs, then follow the maintained docs for your selected workflow.
 
 ***
 
 ### <mark style="color:blue;">Store small data with storage onramps</mark>
 
-Filecoin is primarily designed for storing large data over extended periods. Due to economic considerations, it is generally not good for Service Providers (SPs) to accept small-scale datasets and allocate them to their 32 or 64 Gib storage sectors. As a result, it is unlikely that SPs will directly accept storage deals proposed by the client contract for small datasets.
+Filecoin is primarily designed for storing large data over extended periods. Due to economic considerations, it is generally not good for Service Providers (SPs) to accept small-scale datasets and allocate them to their 32 or 64 Gib storage sectors. As a result, directly submitting small datasets to SPs is usually inefficient.
 
 In the case of small datasets, a more viable option is to store them with [storage onramps](../../basics/how-storage-works/storage-onramps.md). Storage onramps combine multiple small datasets into a larger dataset and generate Proof of Deal Sub-piece Inclusion (PoDSI). PoDSI can be utilized to verify and provide evidence that the sub-piece datasets are included in a storage deal on the Filecoin network.
 
@@ -216,7 +139,7 @@ A Javascript function to invoke the `submit` method should be like:
 import CID from "cids";
 // ... other code
 <strong>const SubmitDealAggregation = async () => {
-</strong>    const contractAddress = '0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960'; // Deployed DealClient Contract address on calibration
+</strong>    const contractAddress = '0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960'; // Deployed DealStatus contract address on calibration
     const contractABI = contract.abi; // the path where the DealStatus.json is
     const cid = 'baga6ea4seaqpi75umesad5vlyzyf66vbzntoave4bebmkcqu4f6nq6rchhx3ckq'; 
     // This handles proposing storage deals
@@ -295,7 +218,7 @@ Another way to register RaaS jobs is by interacting with the Lighthouse smart co
 import contract from "../contracts/DealStatus.json";
 // ... other code
 const SubmitRaaS = async () => {
-    const contractAddress = '0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960'; // Deployed DealClient Contract address
+    const contractAddress = '0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960'; // Deployed DealStatus contract address
     const contractABI = contract.abi; // the path where the DealStatus.json is
     const cid = 'baga6ea4seaqpi75umesad5vlyzyf66vbzntoave4bebmkcqu4f6nq6rchhx3ckq'; 
     // This handles proposing storage deals

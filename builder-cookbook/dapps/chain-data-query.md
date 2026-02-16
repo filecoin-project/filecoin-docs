@@ -48,7 +48,7 @@ Block height:  1268350
 
 ### <mark style="color:blue;">Listen to smart contract events</mark>
 
-Since the Filecoin Virtual Machine (FVM) is EVM-compatible, we can use `ethers.js` to listen to smart contract events for specific contract actions on the Filecoin network. For instance, we can monitor ERC20 token `transfer` events or client contract `DealProposalCreate` events.
+Since the Filecoin Virtual Machine (FVM) is EVM-compatible, we can use `ethers.js` to listen to smart contract events for specific contract actions on the Filecoin network. For instance, we can monitor ERC20 token `transfer` events or app-specific contract events.
 
 #### **Ingredients**
 
