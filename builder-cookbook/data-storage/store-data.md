@@ -22,7 +22,7 @@ To provide the data to the SP which we make storage deals with, we need to prepa
 
 We can use the following tools to prepare your data into CAR for storage via FVM.
 
-* [FVM Data Depot](https://data.lighthouse.storage/) - powered by [lighthouse.storage](https://www.lighthouse.storage/)
+* [Lighthouse storage](https://www.lighthouse.storage/) - web app flow for preparing storage inputs
 * CAR libraries\
   `web3.storage/ipfs-car` or `ipld/car`
 * IPFS node\
@@ -32,9 +32,9 @@ We can use the following tools to prepare your data into CAR for storage via FVM
 
 We will explain each option available for preparing your data into CAR files and obtaining the necessary information to initialize storage deals via FVM, as there are multiple ways to accomplish this.
 
-1. [FVM Data Depot](https://data.lighthouse.storage/) - **recommended**
+1. [Lighthouse storage](https://www.lighthouse.storage/) - **recommended**
 
-Upload files, generate CAR, and get CAR links - we can do all these on the FVM Data Depot website. After logging in and uploading files, we will get the following information for proposing a storage deal via smart contract.
+Upload files, generate CAR, and get CAR links in the Lighthouse web app. After logging in and uploading files, we will get the following information for proposing a storage deal via smart contract.
 
 * Piece CID & Payload CID
 * CAR size & piece size
