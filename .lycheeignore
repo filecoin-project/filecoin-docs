@@ -16,3 +16,6 @@ https://docs.0x.org/introduction/introduction-to-0x
 
 # eOracle GitBook URL currently returns 404 from CI; keep temporary ignore.
 https://eoracle.gitbook.io/eoracle/price-feeds/integration-guide
+
+# WeChat mobile page intermittently times out from CI runners.
+https://www.wechat.com/mobile
