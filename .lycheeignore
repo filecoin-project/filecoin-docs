@@ -4,3 +4,18 @@ https://filfox.info
 
 # Saturn links are currently timing out from CI runners.
 https://saturn.tech
+
+# Airtable feedback links intermittently return 502 from CI runners.
+https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form
+
+# Known flaky or stale external endpoints referenced in historical docs.
+https://singularity.storage
+https://calc.filecoin.eu
+https://thegraph.academy
+https://docs.0x.org/introduction/introduction-to-0x
+
+# eOracle GitBook URL currently returns 404 from CI; keep temporary ignore.
+https://eoracle.gitbook.io/eoracle/price-feeds/integration-guide
+
+# WeChat mobile page intermittently times out from CI runners.
+https://www.wechat.com/mobile
