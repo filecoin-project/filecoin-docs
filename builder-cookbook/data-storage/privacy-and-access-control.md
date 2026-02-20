@@ -19,7 +19,7 @@ Use these official references for encryption workflows and secure upload pattern
 
 * [Lighthouse encryption docs](https://docs.lighthouse.storage/how-to/upload-encrypted-data)
 * [Lighthouse access-control conditions](https://docs.lighthouse.storage/how-to/encryption-features/access-control-conditions)
-* [Lighthouse SDK docs](https://docs.lighthouse.storage/sdk/javascript/)
+* [Lighthouse SDK docs](https://docs.lighthouse.storage)
 
 When building production flows, validate key management, signer auth, and recovery procedures in your own threat model.
 
