@@ -13,3 +13,6 @@ https://singularity.storage
 https://calc.filecoin.eu
 https://thegraph.academy
 https://docs.0x.org/introduction/introduction-to-0x
+
+# eOracle GitBook URL currently returns 404 from CI; keep temporary ignore.
+https://eoracle.gitbook.io/eoracle/price-feeds/integration-guide
