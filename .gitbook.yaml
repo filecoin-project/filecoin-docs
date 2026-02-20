@@ -410,3 +410,5 @@ redirects:
   mine/mining-rewards.html: storage-providers/filecoin-economics/block-rewards.md
   storage-provider/how-providing-works/storage-provider/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
   v: storage-providers/basics/quickstart-guide.md
+  basics/how-retrieval-works/saturn: deprecated/saturn.md
+  store-retrieve-data/how-retrieval-works/saturn: deprecated/saturn.md

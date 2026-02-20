@@ -214,3 +214,8 @@
   * [Filecoin Pin dApp Demo](builder-cookbook/filecoin-pin/dapp-demo.md)
   * [Filecoin Pin for ERC-8004 Agents](builder-cookbook/filecoin-pin/erc-8004-agent-registration.md)
   * [FAQ](builder-cookbook/filecoin-pin/faq.md)
+
+## Deprecated
+
+* [Deprecated content](deprecated/README.md)
+  * [Saturn](deprecated/saturn.md)
