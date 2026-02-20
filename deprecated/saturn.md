@@ -12,7 +12,7 @@ description: >-
 This page is retained for historical context only and is no longer maintained as
 active guidance.
 
-**Use instead:** [Basic retrieval](../basic-retrieval.md) and [Serving retrievals](../serving-retrievals.md)
+**Use instead:** [Basic retrieval](../basics/how-retrieval-works/basic-retrieval.md) and [Serving retrievals](../basics/how-retrieval-works/serving-retrievals.md)
 {% endhint %}
 
 Saturn was previously documented here as a retrieval-oriented workflow in the
@@ -22,4 +22,4 @@ This archived page intentionally omits external onboarding links and operational
 instructions. Current retrieval guidance lives in the standard retrieval docs
 linked above.
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/basics/how-retrieval-works/deprecated/saturn)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/deprecated/saturn)

@@ -50,7 +50,8 @@ redirects:
   archive: basics/what-is-filecoin/README.md
   basics/interplanetary-consensus/ipc-agent: basics/interplanetary-consensus/README.md
   basics/interplanetary-consensus/overview: basics/interplanetary-consensus/README.md
-  basics/how-retrieval-works/saturn: basics/how-retrieval-works/deprecated/saturn.md
+  basics/how-retrieval-works/saturn: deprecated/saturn.md
+  basics/how-retrieval-works/deprecated/saturn: deprecated/saturn.md
   basics/project-and-community/filecoin-faq: smart-contracts/fundamentals/faqs.md
   basics/the-blockchain/tipsets: basics/the-blockchain/blocks-and-tipsets.md
   basics/what-is-filecoin/overview: basics/what-is-filecoin/README.md
@@ -385,7 +386,7 @@ redirects:
   store/estuary: storage-providers/basics/quickstart-guide.md
   store/filecoin-plus/overview: basics/how-storage-works/filecoin-plus.md
   store/filecoin-plus: basics/how-storage-works/filecoin-plus.md
-  store-retrieve-data/how-retrieval-works/saturn: basics/how-retrieval-works/deprecated/saturn.md
+  store-retrieve-data/how-retrieval-works/saturn: deprecated/saturn.md
   store/lotus/retrieve-data: basics/how-retrieval-works/README.md
   store/lotus/store-data: basics/what-is-filecoin/storage-model.md
   store/lotus/very-large-files: basics/how-storage-works/filecoin-and-ipfs.md
