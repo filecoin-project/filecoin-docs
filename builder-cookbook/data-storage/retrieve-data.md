@@ -6,28 +6,86 @@ description: >-
 
 # Retrieve Data
 
-{% hint style="info" %}
-This page is reference-only.
-
-We do not maintain step-by-step third-party retrieval tutorials in Builder Cookbook.
-Use the official resources below for current retrieval implementation guidance.
-{% endhint %}
-
 ### <mark style="color:blue;">Retrieve data using retrieval clients</mark>
 
-Use these references for retrieval architecture and client implementations:
+To retrieve data stored on the Filecoin network, the basic process involves making retrieval requests to Service Providers (SPs) who initially stored the data, using either the Content ID (CID) or the storage deal ID.
 
-* [Basic retrieval on Filecoin](../../basics/how-retrieval-works/basic-retrieval.md)
-* [Serving retrievals](../../basics/how-retrieval-works/serving-retrievals.md)
-* [Lassie repository](https://github.com/filecoin-project/lassie)
-* [Saturn network overview](https://saturn.tech/)
+A programmatic option is to utilize Filecoin retrieval clients, which handle the intricate retrieval process behind the scenes. By simply providing a Content ID (CID), retrieval clients can efficiently return your data either via the command-line interface (CLI) or through the programmable method.
 
-For CAR handling and payload extraction:
+#### **Ingredients**
 
-* [go-car](https://github.com/ipld/go-car)
-* [IPFS documentation](https://docs.ipfs.tech/)
+With a given CID, you can use any of the following retrieval clients to retrieve content.
 
-For testing with public example data:
+* [Lassie](https://github.com/filecoin-project/lassie): optimizes for most efficient available retrieval protocols.
+  * [go-car](https://github.com/ipld/go-car): a content addressable archive utility.
+
+#### **Instructions**
+
+**Retrieving content with Lassie**
+
+Lassie is designed to fetch content in the content-addressed archive (CAR) form. In most cases, you will require additional tooling, such as the go-car library, to work with CAR files effectively.
+
+The Lassie command line interface (CLI) provides the simplest method for retrieving content from the Filecoin/IPFS network. By using the `lassie fetch` command and passing the CID as an argument, you can easily retrieve the desired content.
+
+<pre class="language-jsx"><code class="lang-jsx"><strong>lassie fetch -o - &#x3C;CID> | car extract
+</strong></code></pre>
+
+For example,
+
+```
+lassie fetch -p bafybeic56z3yccnla3cutmvqsn5zy3g24muupcsjtoyp3pu5pm5amurjx4 | car extract
+```
+
+Lassie can also serve as a go library within your Golang application when programmatically retrieving content from the network. To utilize Lassie in your code, you need to install the dependency and import it into your program following the instructions [here](https://github.com/filecoin-project/lassie?tab=readme-ov-file#golang-library).
+
+The following example demonstrates how to use the Lassie library to fetch a CID.
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/filecoin-project/lassie/pkg/lassie"
+	"github.com/filecoin-project/lassie/pkg/storage"
+	"github.com/filecoin-project/lassie/pkg/types"
+	"github.com/ipfs/go-cid"
+	trustlessutils "github.com/ipld/go-trustless-utils"
+)
+
+// main creates a default lassie instance and fetches a CID
+func main() {
+	ctx := context.Background()
+
+	// Create a default lassie instance
+	lassie, err := lassie.NewLassie(ctx)
+	if err != nil {
+		panic(err)
+	}
+
+	// Prepare the fetch
+	rootCid := cid.MustParse("bafybeic56z3yccnla3cutmvqsn5zy3g24muupcsjtoyp3pu5pm5amurjx4")       // The CID to fetch
+	store := storage.NewDeferredStorageCar(os.TempDir(), rootCid)                                 // The place to put the CAR file
+	request, err := types.NewRequestForPath(store, rootCid, "", trustlessutils.DagScopeAll, nil)  // The fetch request
+	if err != nil {
+		panic(err)
+	}
+
+	// Fetch the CID
+	stats, err := lassie.Fetch(ctx, request)
+	if err != nil {
+		panic(err)
+	}
+
+	// Print the stats
+	fmt.Printf("Fetched %d blocks in %d bytes\n", stats.Blocks, stats.Size)
+}
+
+```
+
+For quick retrieval of existing datasets with the methods above, check out the [Filecoin Dataset Explorer](https://datasets.filecoin.io/).
 
 * [Filecoin Dataset Explorer](https://datasets.filecoin.io/)
 
