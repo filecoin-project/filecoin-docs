@@ -10,9 +10,8 @@ description: >-
 
 * **Store Data**
   * [Prepare data for Filecoin storage](data-storage/store-data.md#prepare-data-for-filecoin-storage)
-  * [Store large data with smart contract](data-storage/store-data.md#store-large-data-with-the-smart-contract)
-  * [Store small data with storage onramps](data-storage/store-data.md#store-small-data-with-storage-onramps)&#x20;
-  * [Manage storage deals with RaaS](data-storage/store-data.md#manage-storage-deals-with-raas)
+  * [Store large data with modern programmatic patterns](data-storage/store-data.md#store-large-data-with-modern-programmatic-patterns)
+  * [Store small data with storage onramps](data-storage/store-data.md#store-small-data-with-storage-onramps)
   * [Monitor storage deal status from a smart contract](data-storage/store-data.md#monitor-storage-deal-status-from-a-smart-contract)
   * [Incentivized data storage](data-storage/store-data.md#incentivized-data-storage)
 * **Retrieve Data**
@@ -24,15 +23,13 @@ description: >-
 #### dApps Development
 
 * **Chain-Data Query**
-  * [Connecting to Filecoin networks via public RPC nodes](dapps/chain-data-query.md#connecting-to-filecoin-networks-via-public-rpc-nodes)
-  * [Listen to smart contract events](dapps/chain-data-query.md#listen-to-smart-contract-events)
-  * [Filter smart contract events](dapps/chain-data-query.md#filter-smart-contract-events)
+  * [Official references](dapps/chain-data-query.md)
 * **Oracle**
-  * [Feed token prices to smart contract](dapps/oracles.md#feed-token-prices-to-smart-contract)
+  * [Official references](dapps/oracles.md)
 * **Cross-Chain Bridge**
-  * [Bridge wFIL with Axelar](dapps/cross-chain-bridges.md#bridge-wfil-with-axelar)
+  * [Official references](dapps/cross-chain-bridges.md)
 * **Decentralized Database**
-  * [Store data with Tableland](dapps/decentralized-database.md#store-data-with-tableland)
+  * [Official references](dapps/decentralized-database.md)
 
 
 

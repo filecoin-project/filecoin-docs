@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to retrieve data for the Filecoin network with different approaches
-  as well as incentivize data retrievability.
+  Reference-only guide to official retrieval resources for accessing data stored
+  on Filecoin.
 ---
 
 # Retrieve Data
@@ -87,6 +87,6 @@ func main() {
 
 For quick retrieval of existing datasets with the methods above, check out the [Filecoin Dataset Explorer](https://datasets.filecoin.io/).
 
-***
+* [Filecoin Dataset Explorer](https://datasets.filecoin.io/)
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/builder-cookbook/data-storage/retrieve-data)
