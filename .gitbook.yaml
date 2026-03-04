@@ -413,6 +413,8 @@ redirects:
   mine/mining-rewards.html: storage-providers/filecoin-economics/block-rewards.md
   storage-provider/how-providing-works/storage-provider/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
   v: storage-providers/basics/quickstart-guide.md
+  basics/how-retrieval-works/saturn: deprecated/saturn.md
+  store-retrieve-data/how-retrieval-works/saturn: deprecated/saturn.md
   smart-contracts/developing-contracts/using-raas: deprecated/smart-contracts/developing-contracts/using-raas.md
   smart-contracts/programmatic-storage/raas: deprecated/smart-contracts/programmatic-storage/raas.md
   smart-contracts/programmatic-storage/raas-interfaces: deprecated/smart-contracts/programmatic-storage/raas-interfaces.md
