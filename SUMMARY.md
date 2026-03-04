@@ -114,8 +114,6 @@
   * [Aggregated deal-making](smart-contracts/programmatic-storage/aggregated-deal-making.md)
   * [Direct deal-making](smart-contracts/programmatic-storage/direct-deal-making.md)
   * [Cross-Chain Data Bridge(CCDB)](smart-contracts/programmatic-storage/ccdb.md)
-  * [Data replication, renewal and repair (RaaS)](smart-contracts/programmatic-storage/raas.md)
-  * [RaaS interfaces](smart-contracts/programmatic-storage/raas-interfaces.md)
 * [Developing contracts](smart-contracts/developing-contracts/README.md)
   * [Get test tokens](smart-contracts/developing-contracts/get-test-tokens.md)
   * [Remix](smart-contracts/developing-contracts/remix.md)
@@ -125,7 +123,6 @@
   * [Call built-in actors](smart-contracts/developing-contracts/call-built-in-actors.md)
   * [Filecoin.sol](smart-contracts/developing-contracts/filecoin.sol.md)
   * [Direct deal-making with Client contract](smart-contracts/developing-contracts/client-contract-tutorial.md)
-  * [Using RaaS](smart-contracts/developing-contracts/using-raas.md)
   * [Verify a contract](smart-contracts/developing-contracts/verify-a-contract/verify-a-contract.md)
     * [Programmatic](smart-contracts/developing-contracts/verify-a-contract/programmatic/programmatic.md)
       * [Hardhat](smart-contracts/developing-contracts/verify-a-contract/programmatic/hardhat.md)
@@ -218,4 +215,7 @@
 ## Deprecated
 
 * [Deprecated content](deprecated/README.md)
+  * [Using RaaS](deprecated/smart-contracts/developing-contracts/using-raas.md)
+  * [Data replication, renewal and repair (RaaS)](deprecated/smart-contracts/programmatic-storage/raas.md)
+  * [RaaS interfaces](deprecated/smart-contracts/programmatic-storage/raas-interfaces.md)
   * [Saturn](deprecated/saturn.md)
