@@ -1,6 +1,7 @@
 # Deprecated content
 
-This section contains archived pages that are no longer part of the recommended
+This folder contains archived pages that are no longer part of the recommended
 Filecoin docs path.
 
-Use these pages for historical context only.
+Pages here are kept for historical context and should include a deprecation
+notice with links to current guidance.

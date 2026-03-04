@@ -33,7 +33,6 @@
 * [How retrieval works](basics/how-retrieval-works/README.md)
   * [Basic retrieval](basics/how-retrieval-works/basic-retrieval.md)
   * [Serving retrievals](basics/how-retrieval-works/serving-retrievals.md)
-  * [Saturn](basics/how-retrieval-works/saturn.md)
 * [Project and community](basics/project-and-community/README.md)
   * [Forums and FIPs](basics/project-and-community/forums-and-FIPs.md)
   * [Filecoin compared to](basics/project-and-community/filecoin-compared-to.md)
@@ -219,3 +218,4 @@
   * [Using RaaS](deprecated/smart-contracts/developing-contracts/using-raas.md)
   * [Data replication, renewal and repair (RaaS)](deprecated/smart-contracts/programmatic-storage/raas.md)
   * [RaaS interfaces](deprecated/smart-contracts/programmatic-storage/raas-interfaces.md)
+  * [Saturn](deprecated/saturn.md)
