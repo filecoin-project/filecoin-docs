@@ -33,7 +33,6 @@
 * [How retrieval works](basics/how-retrieval-works/README.md)
   * [Basic retrieval](basics/how-retrieval-works/basic-retrieval.md)
   * [Serving retrievals](basics/how-retrieval-works/serving-retrievals.md)
-  * [Saturn](basics/how-retrieval-works/saturn.md)
 * [Project and community](basics/project-and-community/README.md)
   * [Forums and FIPs](basics/project-and-community/forums-and-FIPs.md)
   * [Filecoin compared to](basics/project-and-community/filecoin-compared-to.md)
@@ -215,3 +214,8 @@
   * [Filecoin Pin dApp Demo](builder-cookbook/filecoin-pin/dapp-demo.md)
   * [Filecoin Pin for ERC-8004 Agents](builder-cookbook/filecoin-pin/erc-8004-agent-registration.md)
   * [FAQ](builder-cookbook/filecoin-pin/faq.md)
+
+## Deprecated
+
+* [Deprecated content](deprecated/README.md)
+  * [Saturn](deprecated/saturn.md)

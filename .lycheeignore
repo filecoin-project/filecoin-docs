@@ -2,8 +2,10 @@
 # but links work fine in browsers
 https://filfox.info
 
-# Saturn links are currently timing out from CI runners.
-https://saturn.tech
+# Bacalhau sites currently fail intermittently from CI runners.
+# Keep links in docs, but don't fail PR CI on transient network errors.
+https://docs.bacalhau.org
+https://www.bacalhau.org
 
 # Airtable feedback links intermittently return 502 from CI runners.
 https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form

@@ -28,7 +28,7 @@ FVM can create incentives to solve problems that Filecoin participants face toda
 
 The FVM operates on blockchain state data — it does _not_ operate on data stored in the Filecoin network. This is because access to that data depends on network requests, an unsealed copy’s availability, and the SPs’ availability to supply that data.
 
-Access and manipulation of data stored in the network will happen via L2 solutions, for example, retrieval networks or compute-over-data networks, e.g., Saturn or CoD.
+Access and manipulation of data stored in the network will happen via L2 solutions, for example, retrieval networks or compute-over-data networks.
 
 ## **How do other EVMs compare to FEVM**
 

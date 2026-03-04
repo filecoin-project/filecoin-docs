@@ -9,7 +9,7 @@ description: >-
 
 ## Internet bandwidth
 
-The amount of internet bandwidth required for a network largely depends on the size of the organization and customer expectations. A bandwidth between 1 Gbps and 10 Gbps is generally sufficient for most organizations, but the specific requirements should be determined based on the expected traffic. A minimum bandwidth of 10 Gbps is recommended for setups that include a [Saturn](https://saturn.tech) node. Saturn requires a high-speed connection to handle large amounts of data.
+The amount of internet bandwidth required for a network largely depends on the size of the organization and customer expectations. A bandwidth between 1 Gbps and 10 Gbps is generally sufficient for most organizations, but the specific requirements should be determined based on the expected traffic. Workloads with high-throughput retrieval services may require 10 Gbps or more.
 
 ## LAN bandwidth
 
