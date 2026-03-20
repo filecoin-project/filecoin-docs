@@ -84,16 +84,6 @@ You should see something like: `rustc 1.86.0 (05f9846f8 2025-03-31)`
 
 ***
 
-### 🔐 Add Go and Rust to Secure Sudo Path
-
-```sh
-sudo tee /etc/sudoers.d/dev-paths <<EOF
-Defaults secure_path="/usr/local/go/bin:$HOME/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-EOF
-```
-
-***
-
 ## ⛓️ Installing and Running Lotus
 
 🧠 Lotus is your gateway to the Filecoin network. It syncs the chain, manages wallets, and is required for Curio to interact with your node.
