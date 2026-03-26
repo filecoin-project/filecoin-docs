@@ -94,9 +94,9 @@ The latest Lotus release can be found at https://github.com/filecoin-project/lot
 
 The following storage providers are running on the Calibration testnet.
 
-### [PiKNiK](https://github.com/benjaminh83/fvm-calib-deal-miners) <a href="#piknikhttpsgithubcombenjaminh83fvm-calib-deal-miners" id="piknikhttpsgithubcombenjaminh83fvm-calib-deal-miners"></a>
+### [Filecoin Foundation](https://fil.org) <a href="#filecoin-foundation" id="filecoin-foundation"></a>
 
-* **t017840**: Every deal accepted by this SP will be aggregated into 32 GiB sectors, which is the minimum size for calibration network. This miner has a preset sealing capacity of 2x 32 GiB sectors per day, defined as sectors in waitdeals will be flushed every 12 hours. [More information](https://github.com/benjaminh83/fvm-calib-deal-miners)
+* **t0178773**: Accepts both verified (DataCap) and unverified storage deals. Deals are aggregated into 32 GiB sectors. This SP stores the [Filecoin datasets](https://datasets.filecoin.io/) and is available for general calibnet testing. Deals can be proposed via Boost (MK12) or Direct Data Onboarding (DDO).
 
 ## Resources <a href="#resources" id="resources"></a>
 
