@@ -15,7 +15,7 @@ Because the Filecoin network needs consistency, meaning all data stored is still
 
 ## What’s next?
 
-Providing committed capacity is the easiest way to get started as a storage provider, but the economics are very dependent on the price of FIL. If the price of FIL is low, it can be unprofitable to provide only committed capacity. The optimal FIL-price your business needs to be profitable will depend on your setup. Profitability can be increased by utilizing [Filecoin Plus](../../basics/how-storage-works/filecoin-plus.md), along with [extra services you can charge for](../filecoin-deals/auxiliary-services.md).
+Providing committed capacity is the easiest way to get started as a storage provider, but the economics are very dependent on the price of FIL. If the price of FIL is low, it can be unprofitable to provide only committed capacity. The optimal FIL-price your business needs to be profitable will depend on your setup. Profitability can be increased by utilizing [Filecoin Plus](../../getting-started/how-storage-works/filecoin-plus.md), along with [extra services you can charge for](../filecoin-deals/auxiliary-services.md).
 
 Note that as of [FIP008: Add miner batched sector pre-commit method](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0008.md), storage providers can now batch pre-commit up to 256 sectors at once.  This change reduces gas costs, requires fewer reads/writes to the blockchain, and lowers transaction congestion.  Note that if anything in the batch is invalid, nothing in the batch is pre-committed. 
 

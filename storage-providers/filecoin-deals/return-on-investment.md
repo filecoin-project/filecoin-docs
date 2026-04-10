@@ -18,9 +18,9 @@ Calculating the Return-on-Investment (ROI) of your storage provider business is 
 
 **Finally**, the forecasted growth of the network and the demand for storage will also impact the ROI calculation. If the network and demand for storage grow rapidly, the ROI may increase. However, if the growth is slower than anticipated, the ROI may decrease.
 
-**Overall**, calculating the ROI of a storage provider business is complex and requires a thorough understanding of the costs and income streams involved. The storage provider Forecast Calculator can assist in determining the ROI by accounting for various factors such as hardware costs, token price, and expected growth of the network.
+**Overall**, calculating the ROI of a storage provider business is complex and requires a thorough understanding of the costs and income streams involved. A forecasting model or spreadsheet can help determine ROI by accounting for factors such as hardware costs, token price, and expected growth of the network.
 
-Calculating the ROI of your storage provider business is important. Check out the [Storage Provider Forecast Calculator](https://calc.filecoin.eu/) for more details.
+Calculating the ROI of your storage provider business is important. Use the considerations on this page as a checklist for the assumptions you need to model.
 
 For more information and context see the following video:
 
