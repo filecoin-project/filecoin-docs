@@ -109,7 +109,7 @@ Some JavaScript libraries attempt to estimate the gas fees before sending the tr
 
 ### Filecoin's EVM and Send method number
 
-A summary of the Filecoin's EVM differences with Ethereum is available in the [FEVM - Difference with Ethereum section](../../smart-contracts/filecoin-evm-runtime/difference-with-ethereum.md).
+A summary of the Filecoin's EVM differences with Ethereum is available in the [FEVM - Difference with Ethereum section](../../core-concepts/filecoin-evm-runtime/difference-with-ethereum.md).
 
 {% hint style="danger" %}
 Note that when sending funds to a Filecoin EVM recipient address (f410f or 0x), it is recommended to always use the **InvokeEVM** **method 3844450837** to prevent possible loss of funds in case the recipient is a smart contract. The `lotus send 0x` CLI method always defaults to this method number.
@@ -289,7 +289,7 @@ Join the [Filecoin Slack](https://filecoinproject.slack.com/signup) and post any
 * [Filecoin Specs](https://spec.filecoin.io)
 * [Filecoin Networks](https://status.filecoin.io)
 * [Lotus](https://github.com/filecoin-project/lotus) - the reference implementation for the Filecoin network
-* [Block Explorers](https://docs.filecoin.io/networks/mainnet/explorers/)
+* [Block Explorers](../../networks-and-tools/networks/mainnet/explorers.md)
 
 
 

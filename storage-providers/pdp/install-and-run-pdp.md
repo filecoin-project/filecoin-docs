@@ -496,7 +496,7 @@ Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section
 Your 0x wallet address - the delegated Ethereum address derived from your Filecoin delegated wallet private key - will be added to the **Owner Address** section of the Curio PDP page.
 {% endhint %}
 
-Make sure to send a small amount of FIL or tFIL (testnet FIL) to your 0x wallet - we recommend 8 FIL for Mainnet & 5 tFIL for Calibration to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
+Make sure to send a small amount of FIL or tFIL (testnet FIL) to your 0x wallet - we recommend 8 FIL for Mainnet & 5 tFIL for Calibration to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](../../build/developing-contracts/get-test-tokens.md).
 
 {% hint style="warning" %}
 **Important:** Secure your private key material. Don't expose or store it in plain text without protection.

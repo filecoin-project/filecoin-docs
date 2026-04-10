@@ -8,11 +8,11 @@ For conceptual information on built-in actors, including their purposes, how the
 
 ## Prerequisites
 
-Before you can call a built-in actor using the API, you must [import filecoin.solidity using one of the available methods](../../smart-contracts/developing-contracts/#call-built-in-actors/#using-filecoinsolidity).
+Before you can call a built-in actor using the API, you must [import filecoin.solidity using one of the available methods](../../build/developing-contracts/#call-built-in-actors/#using-filecoinsolidity).
 
 ## Call a built-in actor
 
-For available actors and methods see [Available actors and methods](../../smart-contracts/developing-contracts/#call-built-in-actors/#available-actors-and-methods).
+For available actors and methods see [Available actors and methods](../../build/developing-contracts/#call-built-in-actors/#available-actors-and-methods).
 
 Once you’ve either imported particular contracts manually or simply installed `filecoin-solidity` using `npm`, create a callable method to access the built-in actor methods the way you normally would in a Solidity smart contract. Working examples of smart contracts that call built-in actor methods are available below.
 

@@ -63,7 +63,7 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 
 * [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
 * [Storacha](https://storacha.network/) is an open hot storage network scales IPFS and Filecoin. Upload any data and Storacha will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There Storacha [docs](https://docs.storacha.network/) detail the JavaScript and Go API libraries, and there is a no-code web uploader available as well.
-* [Singularity](https://singularity.storage/) "facilitates onboarding of large quantaties of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
+* [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
 * [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
 * [Ramo](https://www.ramo.io/) is "a network coordinating people, hardware and capital to build a more open and resilient internet infrastructure for everyone."  
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
@@ -97,7 +97,7 @@ Check out the [documentation website](https://filecoin.hugomrdias.dev/) for more
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
 * [Chain.love](https://lotus.filecoin.io/lotus/developers/chain-love/) - A hosted endpoint to Filecoin mainnet and testnet. Note: as of Q1 2023, Infura no longer supports Filecoin.
-  * The GLIF endpoint supports read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Message signing tools](https://docs.filecoin.io/reference/general/overview/#message-signing-tools)).
+  * The GLIF endpoint supports read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using [tools like Filsnap](./tools.md)).
 * [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   * [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 
@@ -119,7 +119,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 * [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [building with the Lotus API](https://lotus.filecoin.io/tutorials/lotus/build-with-lotus-api/).
 * [`go-graphsplit`](https://github.com/filedrive-team/go-graphsplit) - FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
-* [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://docs.filecoin.io/builder-cookbook/data-storage/store-data).
+* [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](../../build/cookbook/store-data.md).
 
 ### Databases using IPFS and Filecoin
 
