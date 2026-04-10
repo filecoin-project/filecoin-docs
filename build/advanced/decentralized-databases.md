@@ -16,31 +16,30 @@ To learn more about what is tableland and how to use it, you can visit [https://
 
 Ensure that you install and import the necessary dependencies in your projects.
 
-* [Tableland](https://tableland.xyz/)
-* [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit)
-* [Openzeppelin](https://docs.openzeppelin.com/contracts/5.x/)
+- [Tableland](https://tableland.xyz/)
+- [Openzeppelin](https://docs.openzeppelin.com/contracts/5.x/)
 
 #### **Instructions**
 
-Let's take storage deal aggregator/RaaS as an example to demonstrate how to integrate it with Tableland.
+Let's take storage deal aggregation as an example to demonstrate how to integrate it with Tableland.
 
-When uploading data via aggregator/RaaS providers to the Filecoin network, you can choose to store its metadata in Tableland tables instead of storing it in the chain state. This metadata can then be easily accessed from the Tableland database and utilized directly within your application.
+When uploading data via storage aggregation providers to the Filecoin network, you can choose to store its metadata in Tableland tables instead of storing it in the chain state. This metadata can then be easily accessed from the Tableland database and utilized directly within your application.
 
 If you require sample datasets to use, you can use the [Filecoin Dataset Explorer](https://datasets.filecoin.io/).
 
-As an example, let's design the deal aggregator table as follows. However, you can certainly add more columns to this table to include additional information, such as RaaS registration.
+As an example, let's design the deal aggregator table as follows. You can add more columns to this table to include additional aggregation metadata.
 
-| column    | data Type    |
-| --------- | ------------ |
-| ID        | int          |
-| CID       | bytes/string |
-| deal\_ID  | int          |
-| miner\_ID | int          |
-| status    | string       |
+| column   | data Type    |
+| -------- | ------------ |
+| ID       | int          |
+| CID      | bytes/string |
+| deal_ID  | int          |
+| miner_ID | int          |
+| status   | string       |
 
 1. **Create aggregator table**
 
-To track all the deal aggregation/RaaS requests submitted to the smart contract, we need to create a database table. You can add the following code to create an aggregator table within the `constructor()` function of the aggregator contract. This way, when the aggregator/RaaS contract is deployed, an aggregator table will be created to store the metadata of the aggregation requests.
+To track all deal aggregation requests submitted to the smart contract, we need to create a database table. You can add the following code to create an aggregator table within the `constructor()` function of the aggregator contract. This way, when the aggregator contract is deployed, an aggregator table will be created to store the metadata of aggregation requests.
 
 ```solidity
 uint256 private tableId;
@@ -63,7 +62,7 @@ constructor() {
 
 ```solidity
 function insertRecord(uint256 id, string memory val, string memory status) external {
- 
+
     TablelandDeployments.get().mutate(
         address(this), // Table owner, i.e., this contract
         _tableId,
@@ -79,7 +78,7 @@ function insertRecord(uint256 id, string memory val, string memory status) exter
         ));}
 ```
 
-Whenever the `submit` or `submitRaaS` function is called, a record will be inserted into the aggregator table instead of being stored in the blockchain's state.
+Whenever the `submit` function is called, a record will be inserted into the aggregator table instead of being stored in the blockchain's state.
 
 <pre class="language-solidity"><code class="lang-solidity"><strong>function submit(bytes memory _cid) external returns (uint256) {
 </strong>        // Increment the transaction ID
@@ -131,16 +130,17 @@ function complete(
 
 4. **Query aggregation records**
 
-By using the Tableland SDK, you can easily query the aggregation or RaaS status of all the data stored with the aggregator using SQL statements. For instance, you can retrieve all records associated with a specific CID by executing a SELECT statement.
+By using the Tableland SDK, you can query the aggregation status of all data stored with the aggregator using SQL statements. For instance, you can retrieve all records associated with a specific CID by executing a SELECT statement.
 
 ```jsx
 const db = new Database();
 
-const { results } = await db.prepare(`SELECT * FROM ${tableName} WHERE cid = ?`)
-														.bind(cid);
+const { results } = await db
+  .prepare(`SELECT * FROM ${tableName} WHERE cid = ?`)
+  .bind(cid);
 console.log(results);
 ```
 
 To learn how to write different select statements using Tableland SDK, you can refer to [here](https://docs.tableland.xyz/sdk/database/prepared-statements).
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/builder-cookbook/dapps/decentralized-database)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build/advanced/decentralized-databases)
