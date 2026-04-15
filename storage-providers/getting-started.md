@@ -109,8 +109,6 @@ One of the enriching elements of the Filecoin ecosystem lies in its vibrant comm
 
 To run a successful storage provider business, it is crucial to understand the concept of Return on Investment (ROI) and the significance of collateral. By planning ahead and considering various factors, such as CAPEX, OPEX, network variables, and collateral requirements, you can make informed decisions that impact your business's profitability and desired capacity.
 
-[ROI calculator ->](https://calc.filecoin.eu)
-
 ## Get started with Lotus <a href="#get-started-with-lotus" id="get-started-with-lotus"></a>
 
 Lotus is the leading reference implementation of the Filecoin protocol and the most widely used software stack for interacting with the blockchain and operating a storage provider setup. Understanding Lotus is fundamental to navigating the Filecoin network and building a reliable storage operation.
