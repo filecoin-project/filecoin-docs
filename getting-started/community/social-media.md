@@ -27,7 +27,7 @@ Get your Filecoin news in tweet-sized bites. Follow these accounts for the lates
 
 ### WeChat
 
-Follow FilecoinOfficial on [WeChat](https://www.wechat.com/mobile) for project updates and announcements in Chinese.
+Follow FilecoinOfficial on [WeChat](https://www.wechat.com/) for project updates and announcements in Chinese.
 
 ![WeChat logo](../../.gitbook/assets/basics-project-and-community-social-media-wechat.webp)
 
