@@ -6,7 +6,7 @@ description: >-
 
 # Install & Run PDP
 
-{% hint style="danger" %}
+{% hint style="info" %}
 **ALPHA FEATURE - UNDER DEVELOPMENT**
 
 This documentation covers the PDP (Proof of Data Possession) feature, which is currently in alpha and under active development. This tool is intended for testing and experimental use only.
@@ -396,9 +396,9 @@ This will launch the Curio web GUI locally.
 
 ***
 
-## 🧪 Enabling FWSS PDP
+## 🧪 Enabling PDP
 
-🧠 This section enables **FWSS Proof of Data Possession (PDP)** on your SP node using Curio. These steps guide you through running a standalone PDP service using Curio and pdptool.
+🧠 This section enables **Proof of Data Possession (PDP)** on your storage provider node using Curio. PDP is the verification layer used by the [Filecoin Warm Storage Service (FWSS)](https://docs.filecoin.cloud/core-concepts/fwss-overview) within [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md). These steps guide you through running a standalone PDP service using Curio and pdptool.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>PDP Support Channels</td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">https://filecoinproject.slack.com/archives/C0717TGU7V2</a></td></tr></tbody></table>
 
@@ -578,6 +578,6 @@ You've successfully launched a **PDP-enabled Filecoin Storage Provider** stack. 
 
 ## 🔜 Next Steps
 
-* :heavy\_check\_mark: Register your FWSS node
-* :link: Explore FWSS & PDP tools & resources at [https://www.filecoin.services](https://www.filecoin.services/)
-* 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)
+* :heavy\_check\_mark: Register your node with the [Filecoin Warm Storage Service (FWSS)](https://www.filecoin.services/)
+* :link: Explore the [Filecoin Onchain Cloud documentation](https://docs.filecoin.cloud/)
+* 💬 Join the community on Filecoin Slack in [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)

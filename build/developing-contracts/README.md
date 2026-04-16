@@ -1,22 +1,20 @@
 ---
 description: >-
-  This section contains a wealth of information specifically about building
-  smart contracts on the Filecoin network.
+  Write, deploy, and test smart contracts on the Filecoin Virtual Machine.
 ---
 
 # Developing contracts
 
-This section covers how to build dApps by writing smart contracts in the Filecoin Virtual Machine.  The docs in this section explain: 
-- How to [get test tokens](./get-test-tokens.md), called tFIL, from a faucet.
-- How to set up [Remix](../development-frameworks/remix.md), to make use of Ethereum tooling while building Filecoin dApps.
-- How to set up [Hardhat](../development-frameworks/hardhat.md), to build FVM dApps in an environment familiar to Ethereum developers.
-- How to make use of [Foundry](../development-frameworks/foundry.md), expanding the utilities available for interacting with FVM contracts.
-- Where to [find contract templates](./solidity-libraries.md) from a range of third party Solidity libraries.
-- How to [Call built-in actors](./call-built-in-actors.md) using the Protocol API or the Solidity Library.
-- How to make use of the Filecoin [Solidity Libraries](./filecoin.sol.md) to build FVM dApps using a language familiar to Ethereum developers.
-- How to perform a storage deal using the [direct dealmaking client contract](../../legacy/README.md) (legacy content).
-- How to [verify a contract](../verification/README.md) using one of Filecoin's many block explorers.
-- The [best practices](./best-practices.md) for building FVM dApps.
+This section covers how to build dApps by writing smart contracts on the Filecoin Virtual Machine.
 
+## Table of contents
+
+* [Get test tokens](get-test-tokens.md) — obtain tFIL from a faucet for testing on Calibration
+* [ERC-20 quickstart](erc-20-quickstart.md) — deploy your first ERC-20 token on Filecoin
+* [Call built-in actors](call-built-in-actors.md) — interact with Filecoin system actors from your contracts
+* [Filecoin.sol](filecoin.sol.md) — Solidity libraries for accessing Filecoin storage primitives
+* [Solidity libraries](solidity-libraries.md) — third-party contract templates and libraries
+* [Best practices](best-practices.md) — guidelines for building reliable FVM dApps
+* [Support](support.md) — where to get help with contract development
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/build/developing-contracts)

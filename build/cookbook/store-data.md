@@ -28,10 +28,12 @@ Recommended outputs before proposing storage workflows:
 * CAR size and piece size
 * A durable retrieval URL or CID
 
-### <mark style="color:blue;">Store large data with modern programmatic patterns</mark>
+### <mark style="color:blue;">Store large data with Filecoin Onchain Cloud</mark>
 
-Use maintained Filecoin guidance for large-data programmatic storage:
+Use the FOC stack for programmatic, verifiable storage at scale:
 
+* [Filecoin Onchain Cloud overview](../../build/advanced/filecoin-onchain-cloud.md)
+* [FOC developer guides](https://docs.filecoin.cloud/developer-guides)
 * [PDP documentation](../../storage-providers/pdp/README.md)
 
 ### <mark style="color:blue;">Store small data with storage onramps</mark>
