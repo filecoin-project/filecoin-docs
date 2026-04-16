@@ -23,17 +23,18 @@ If you want to start contributing to the core of Filecoin, those repositories ar
 
 * [IPFS](https://github.com/ipfs)
 * [libp2p](https://github.com/libp2p)
-* [IPLD](https://github.com/libp2p)
+* [IPLD](https://github.com/ipld)
 * [Multiformats](https://github.com/multiformats)
 
 #### Documentation
 
 Filecoin is a huge project and undertaking, and with lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, any and all help is welcome!
 
-Before contributing to the Filecoin docs, please read these quick guides; they’ll save you time and help keep the docs accurate and consistent!
+Before contributing to the Filecoin docs, please read these quick guides; they'll save you time and help keep the docs accurate and consistent!
 
 1. [Style and formatting guide](ways-to-contribute.md#style)
 2. [Writing guide](ways-to-contribute.md#writing-guide)
+3. [GitBook documentation guide](ways-to-contribute.md#gitbook-documentation)
 
 If you have never contributed to an open-source project before, or just need a refresher, take a look at the [contribution tutorial](ways-to-contribute.md#contribution-tutorial).
 
@@ -45,7 +46,7 @@ If interacting with people is your favorite thing to do in this world, join the 
 
 Filecoin is designed for you to integrate into your own applications and services.
 
-Get started by looking at the list of projects currently built on Filecoin. Build anything you think is missing! If you’re unsure about something, you can join the chat and discussion forums to get help or feedback on your specific problem/idea. You can also join a Filecoin Hackathon, apply for a Filecoin Developer Grant or apply to the Filecoin accelerator program to support the development of your project.
+Get started by looking at the list of projects currently built on Filecoin. Build anything you think is missing! If you're unsure about something, you can join the chat and discussion forums to get help or feedback on your specific problem/idea. You can also join a Filecoin Hackathon, apply for a Filecoin Developer Grant or apply to the Filecoin accelerator program to support the development of your project.
 
 * [Filecoin Hackathons](https://hackathons.filecoin.io/)
 * [Filecoin Developer Grants](https://filecoin.io/grants/)
@@ -59,11 +60,164 @@ Filecoin is ultimately about building better protocols, and the community always
 
 #### Research
 
-Finally, we see Protocol Labs as a research lab, where YOUR ideas can become technologies that have a real impact on the world. If you’re interested in contributing to our research, please reach out to [research@protocol.ai](mailto:research@protocol.ai) for more information. Include what your interests are so we can make sure you get to work on something fun and valuable.
+Finally, we see Protocol Labs as a research lab, where YOUR ideas can become technologies that have a real impact on the world. If you're interested in contributing to our research, please reach out to [research@protocol.ai](mailto:research@protocol.ai) for more information. Include what your interests are so we can make sure you get to work on something fun and valuable.
+
+### GitBook documentation
+
+This site is built with [GitBook](https://www.gitbook.com/) and synced from a Git repository. You can contribute by editing markdown files directly in the repo or through the GitBook UI.
+
+#### Content structure
+
+GitBook organizes content through pages (markdown files), grouped into sections defined in `SUMMARY.md`. The key files are:
+
+* **`SUMMARY.md`** defines the table of contents and sidebar navigation.
+* **`WELCOME.md`** is the homepage.
+* **`.gitbook.yaml`** configures the space (root path, redirects).
+
+Every page is a markdown file with optional YAML frontmatter:
+
+```markdown
+---
+description: A short summary for SEO and link previews
+icon: book-open
+layout:
+  width: default
+---
+
+# Page title
+
+Content starts here.
+```
+
+#### Frontmatter fields
+
+<table><thead><tr><th width="200">Field</th><th>Purpose</th></tr></thead><tbody><tr><td><code>description</code></td><td>SEO description and link previews. Supports multiline with <code>>-</code>.</td></tr><tr><td><code>icon</code></td><td>Font Awesome icon name (e.g., <code>bolt</code>, <code>book-open</code>).</td></tr><tr><td><code>hidden: true</code></td><td>Hides page from the table of contents.</td></tr><tr><td><code>layout.width</code></td><td><code>default</code> or <code>wide</code> for broader content area.</td></tr></tbody></table>
+
+#### Internal links
+
+Always use relative file paths for links between documentation pages:
+
+```markdown
+[Networks overview](../what-is-filecoin/networks.md)
+[Getting started](../../getting-started/README.md)
+```
+
+External links use full URLs:
+
+```markdown
+[Filecoin GitHub](https://github.com/filecoin-project)
+```
+
+#### GitBook custom blocks
+
+This site uses several GitBook-specific markdown extensions. Here are the ones you will encounter most frequently.
+
+**Hints** draw attention to important information:
+
+```markdown
+{% raw %}
+{% hint style="info" %}
+This is an informational callout.
+{% endhint %}
+
+{% hint style="warning" %}
+Be careful when running this command in production.
+{% endhint %}
+
+{% hint style="danger" %}
+This action cannot be undone.
+{% endhint %}
+{% endraw %}
+```
+
+Supported styles: `info`, `warning`, `danger`, `success`.
+
+**Expandable sections** hide optional or lengthy content:
+
+````markdown
+<details>
+<summary>Advanced configuration</summary>
+
+Detailed information that most users do not need.
+
+```yaml
+advanced:
+  option1: value1
+```
+
+</details>
+````
+
+**Tabs** present alternative options (languages, platforms):
+
+````markdown
+{% raw %}
+{% tabs %}
+{% tab title="macOS" %}
+
+```shell
+brew install lotus
+```
+
+{% endtab %}
+{% tab title="Linux" %}
+
+```shell
+sudo apt install lotus
+```
+
+{% endtab %}
+{% endtabs %}
+{% endraw %}
+````
+
+**Cards** create visual navigation grids:
+
+```markdown
+<table data-view="cards">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th data-card-target data-type="content-ref">Target</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Getting started</td>
+            <td><a href="getting-started/README.md">Start here</a></td>
+        </tr>
+    </tbody>
+</table>
+```
+
+**Code blocks with titles** label file names or context:
+
+````markdown
+{% raw %}
+{% code title="hardhat.config.js" %}
+
+```javascript
+module.exports = {
+  solidity: "0.8.17",
+};
+```
+
+{% endcode %}
+{% endraw %}
+````
+
+#### Common pitfalls
+
+{% raw %}
+* Always close custom blocks properly (`{% endtab %}`, `{% endhint %}`, `{% endcode %}`).
+{% endraw %}
+* Do not reference the same markdown file twice in `SUMMARY.md`.
+* Keep `SUMMARY.md` synchronized with actual file paths.
+* Test custom blocks in GitBook after editing locally.
 
 ### Writing guide
 
-This guide explains things to keep in mind when writing for Filecoin’s documentation. While the [grammar, formatting, and style guide](ways-to-contribute.md#style) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
+This guide explains things to keep in mind when writing for Filecoin's documentation. While the [grammar, formatting, and style guide](ways-to-contribute.md#style) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
 #### Walkthroughs
 
@@ -79,7 +233,7 @@ Use the following goals when writing walkthroughs:
 
 **Function or process**
 
-The end goal of a walkthrough is for the reader to achieve a very particular function. _Installing the Filecoin Desktop application_ is an example. Following this walkthrough isn’t going to teach the reader much about working with the decentralized web or what Filecoin is. Still, by the end, they’ll have the Filecoin Desktop application installed on their computer.
+The end goal of a walkthrough is for the reader to achieve a very particular function. _Installing the Filecoin Desktop application_ is an example. Following this walkthrough isn't going to teach the reader much about working with the decentralized web or what Filecoin is. Still, by the end, they'll have the Filecoin Desktop application installed on their computer.
 
 **Short length**
 
@@ -91,13 +245,13 @@ If a walkthrough is converted into a video, that video should be no longer than 
 
 Walkthroughs are split into three major sections:
 
-1. What we’re about to do.
+1. What we're about to do.
 2. The steps we need to do.
 3. Summary of what we just did, and potential next steps.
 
 #### Conceptual articles
 
-Articles are written with the intent to inform and explain something. These articles don’t contain any steps or actions that the reader has to perform _right now_.
+Articles are written with the intent to inform and explain something. These articles don't contain any steps or actions that the reader has to perform _right now_.
 
 These articles are vastly different in tone when compared to walkthroughs. Some topics and concepts can be challenging to understand, so creative writing and interesting diagrams are highly sought-after for these articles. Whatever writers can do to make a subject more understandable, the better.
 
@@ -105,21 +259,21 @@ These articles are vastly different in tone when compared to walkthroughs. Some 
 
 Use the following goals when writing conceptual articles:
 
-<table><thead><tr><th width="130.33333333333331">Goal</th><th width="167">Keyword</th><th>Explanation</th></tr></thead><tbody><tr><td><strong>Audience</strong></td><td><em>Knowledgeable</em></td><td>Requires a certain amount of focus to understand.</td></tr><tr><td><strong>Formality</strong></td><td><em>Neutral</em></td><td>Slang is restricted, but standard casual expressions are allowed.</td></tr><tr><td><strong>Domain</strong></td><td><em>Any</em></td><td>Usually <em>technical</em>, but depends on the article.</td></tr><tr><td><strong>Tone</strong></td><td><em>Confident and friendly</em></td><td>The reader must feel confident that the writer knows what they’re talking about.</td></tr><tr><td><strong>Intent</strong></td><td><em>Describe</em></td><td>Tell the reader <em>why</em> something does the thing that it does, or why it exists.</td></tr></tbody></table>
+<table><thead><tr><th width="130.33333333333331">Goal</th><th width="167">Keyword</th><th>Explanation</th></tr></thead><tbody><tr><td><strong>Audience</strong></td><td><em>Knowledgeable</em></td><td>Requires a certain amount of focus to understand.</td></tr><tr><td><strong>Formality</strong></td><td><em>Neutral</em></td><td>Slang is restricted, but standard casual expressions are allowed.</td></tr><tr><td><strong>Domain</strong></td><td><em>Any</em></td><td>Usually <em>technical</em>, but depends on the article.</td></tr><tr><td><strong>Tone</strong></td><td><em>Confident and friendly</em></td><td>The reader must feel confident that the writer knows what they're talking about.</td></tr><tr><td><strong>Intent</strong></td><td><em>Describe</em></td><td>Tell the reader <em>why</em> something does the thing that it does, or why it exists.</td></tr></tbody></table>
 
 **Article structure**
 
 Articles are separated into five major sections:
 
-1. Introduction to the thing we’re about to explain.
+1. Introduction to the thing we're about to explain.
 2. What the thing is.
-3. Why it’s essential.
+3. Why it's essential.
 4. What other topics it relates to.
 5. Summary review of what we just read.
 
 #### Tutorials
 
-When writing a tutorial, you’re teaching a reader how to achieve a complex end-goal. Tutorials are a mix of walkthroughs and conceptual articles. Most tutorials will span several pages, and contain multiple walkthroughs within them.
+When writing a tutorial, you're teaching a reader how to achieve a complex end-goal. Tutorials are a mix of walkthroughs and conceptual articles. Most tutorials will span several pages, and contain multiple walkthroughs within them.
 
 Take the hypothetical tutorial _Get up and running with Filecoin_, for example. This tutorial will likely have the following pages:
 
@@ -148,14 +302,14 @@ While Filecoin is a global project, the fact is that American English is the mos
 
 In a list of three or more items, follow each item except the last with a comma `,`:
 
-| Use                           | Don’t use                    |
+| Use                           | Don't use                    |
 | ----------------------------- | ---------------------------- |
 | One, two, three, and four.    | One, two, three and four.    |
 | Henry, Elizabeth, and George. | Henry, Elizabeth and George. |
 
 #### References to Filecoin
 
-As a proper noun, the name “Filecoin” (capitalized) should be used only to refer to the overarching project, to the protocol, or to the project’s canonical network:
+As a proper noun, the name "Filecoin" (capitalized) should be used only to refer to the overarching project, to the protocol, or to the project's canonical network:
 
 > Filecoin \[the project] has attracted contributors from around the globe! Filecoin \[the protocol] rewards contributions of data storage instead of computation! Filecoin \[the network] is currently storing 50 PiB of data!
 
@@ -163,7 +317,7 @@ The name can also be used as an adjective:
 
 > The Filecoin ecosystem is thriving! I love contributing to Filecoin documentation!
 
-When referring to the token used as Filecoin’s currency, the name `FIL`, is preferred. It is alternatively denoted by the Unicode symbol for an integral with a double stroke ⨎:
+When referring to the token used as Filecoin's currency, the name `FIL`, is preferred. It is alternatively denoted by the Unicode symbol for an integral with a double stroke ⨎:
 
 * Unit prefix: **100 FIL**.
 * Symbol prefix: **⨎ 100**.
@@ -174,7 +328,7 @@ The smallest and most common denomination of FIL is the `attoFIL` (10^-18 FIL).
 
 Examples of discouraged usage:
 
-> Filecoin rewards storage providers with Filecoin. There are many ways to participate in the filecoin community. My wallet has thirty filecoins.
+> Filecoin rewards storage providers with Filecoin. There are many ways to participate in the Filecoin community. My wallet has thirty filecoins.
 
 Consistency in the usage of these terms helps keep these various concepts distinct.
 
@@ -198,7 +352,7 @@ Lotus is the main implementation of Filecoin. As such, it is frequently referenc
 
 #### Acronyms
 
-If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn’t necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside project documentation.
+If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside project documentation.
 
 > Virtual Machine (VM), Decentralized Web (DWeb).
 
@@ -214,7 +368,7 @@ The Filecoin Docs project follows the _GitHub Flavoured Markdown_ syntax for mar
 
 We use the rules set out in the [VSCode Markdownlint](https://github.com/DavidAnson/vscode-markdownlint) extension. You can import these rules into any text editor like Vim or Sublime. All rules are listed [within the Markdownlint repository](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md).
 
-We highly recommend installing [VSCode](https://code.visualstudio.com/) with the [Markdownlint](https://github.com/DavidAnson/vscode-markdownlint) extension to help with your writing. The extension shows warnings within your markdown whenever your copy doesn’t conform to a rule.
+We highly recommend installing [VSCode](https://code.visualstudio.com/) with the [Markdownlint](https://github.com/DavidAnson/vscode-markdownlint) extension to help with your writing. The extension shows warnings within your markdown whenever your copy doesn't conform to a rule.
 
 ### Style
 
@@ -235,7 +389,7 @@ The following rules apply to editing and styling text.
 ### The capital city of France is Paris
 </code></pre>
 
-2. Every article starts with a _front-matter_ title and description:
+1. Every article starts with a _front-matter_ title and description:
 
 ```markdown
 ---
@@ -250,7 +404,7 @@ Example body text.
 
 In the above example `title:` serves as a `<h1>` or `#` tag. There is only ever one title of this level in each article.
 
-3. Titles do not contain punctuation. If you have a question within your title, rephrase it as a statement:
+1. Titles do not contain punctuation. If you have a question within your title, rephrase it as a statement:
 
 ```markdown
 <!-- This title is wrong. -->
@@ -298,10 +452,10 @@ Tag code blocks with the syntax of the core they are presenting:
     ```
 ````
 
-Output from command-line actions can be displayed by adding another codeblock directly after the input codeblock. Here’s an example telling the use to run `go version` and then the output of that command in a separate codeblock immediately after the first:
+Output from command-line actions can be displayed by adding another codeblock directly after the input codeblock. Here's an example telling the use to run `go version` and then the output of that command in a separate codeblock immediately after the first:
 
 ````markdown
-    ```shell 
+    ```shell
     go version
     ```
 
@@ -354,13 +508,13 @@ List items end with a period `.`, or a colon `:` if the list item has a sub-list
 
 **Unordered lists**
 
-Use the dash character `-` for un-numbered list items:
+Use the asterisk character `*` for un-numbered list items:
 
 ```markdown
-- An apple.
-- Three oranges.
-- As many lemons as you can carry.
-- Half a lime.
+* An apple.
+* Three oranges.
+* As many lemons as you can carry.
+* Half a lime.
 ```
 
 **Special characters**
@@ -393,6 +547,4 @@ All images contain alt text so that screen-reading programs can describe the ima
 ![Screenshot of an image being uploaded through the Filecoin command line.](filecoin-image-upload-screen.png)
 ```
 
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/community/ways-to-contribute)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/getting-started/community/ways-to-contribute)
