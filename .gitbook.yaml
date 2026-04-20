@@ -180,6 +180,12 @@ redirects:
   builder-cookbook/dapps/oracles: build/cookbook/README.md
   builder-cookbook/overview: build/cookbook/README.md
   builder-cookbook/table-of-contents: build/cookbook/README.md
+  builder-cookbook/filecoin-pin/dapp-demo: build/cookbook/filecoin-pin/dapp-demo.md
+  builder-cookbook/filecoin-pin/erc-8004-agent-registration: build/cookbook/filecoin-pin/erc-8004-agent-registration.md
+  builder-cookbook/filecoin-pin/filecoin-pin-cli: build/cookbook/filecoin-pin/filecoin-pin-cli.md
+  builder-cookbook/filecoin-pin/github-action: build/cookbook/filecoin-pin/github-action.md
+  builder-cookbook/filecoin-pin/faq: build/cookbook/filecoin-pin/faq.md
+  builder-cookbook/filecoin-pin: build/cookbook/filecoin-pin/README.md
   community: getting-started/community/forums-and-FIPs.md
   community/chat-and-discussion-forums: getting-started/community/forums-and-FIPs.md
   community/contribute/contribution-tutorial: getting-started/community/ways-to-contribute.md

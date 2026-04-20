@@ -157,6 +157,12 @@
 * [Cookbook](build/cookbook/README.md)
   * [Store data](build/cookbook/store-data.md)
   * [Retrieve data](build/cookbook/retrieve-data.md)
+  * [Filecoin Pin](build/cookbook/filecoin-pin/README.md)
+    * [Filecoin Pin CLI](build/cookbook/filecoin-pin/filecoin-pin-cli.md)
+    * [Filecoin Pin GitHub Action](build/cookbook/filecoin-pin/github-action.md)
+    * [Filecoin Pin dApp Demo](build/cookbook/filecoin-pin/dapp-demo.md)
+    * [Filecoin Pin for ERC-8004 Agents](build/cookbook/filecoin-pin/erc-8004-agent-registration.md)
+    * [FAQ](build/cookbook/filecoin-pin/faq.md)
 
 ## Reference
 

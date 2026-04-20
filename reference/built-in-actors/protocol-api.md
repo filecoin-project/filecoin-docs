@@ -6,13 +6,13 @@ description: This page covers the Built-in actors Protocol API.
 
 The protocol level built-in actors API is split into the following sections:
 
-* [Account actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#account-actor)
-* [Datacap](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#datacap)
-* [Miner](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#miner)
-* [Multisig](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#multisig)
-* [Storage market actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#storage-market-actor)
-* [Storage power actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#storage-power-actor)
-* [Verified registry actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#verified-registry-actor)
+* [Account actor](#account-actor)
+* [Datacap](#datacap)
+* [Miner](#miner)
+* [Multisig](#multisig)
+* [Storage market actor](#storage-market-actor)
+* [Storage power actor](#storage-power-actor)
+* [Verified registry actor](#verified-registry-actor)
 
 ## Account actor
 

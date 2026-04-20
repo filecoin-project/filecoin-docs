@@ -31,7 +31,7 @@ The machine running the Lotus daemon must be connected to the public internet fo
 
 #### Syncing the chain <a href="#syncing-the-chain" id="syncing-the-chain"></a>
 
-Syncing the chain is a key role of the daemon. It communicates with the other nodes on the network by sending messages, which are, in turn, collected into [blocks](https://docs.filecoin.io/reference/general/glossary/#block). These blocks are then collected into [tipsets](https://docs.filecoin.io/reference/general/glossary/#tipset). Your Lotus daemon receives the messages on-chain, enabling you to maintain consensus about the state of the Filecoin network with all the other participants.
+Syncing the chain is a key role of the daemon. It communicates with the other nodes on the network by sending messages, which are, in turn, collected into [blocks](../../reference/general/glossary.md#block). These blocks are then collected into [tipsets](../../reference/general/glossary.md#tipset). Your Lotus daemon receives the messages on-chain, enabling you to maintain consensus about the state of the Filecoin network with all the other participants.
 
 Due to the growth in the size of the chain since its genesis, it is not advised for storage providers to sync the entire history of the network. Instead, providers should use the available [lightweight snapshots](https://forest-archive.chainsafe.dev/list) to import the most recent messages. One exception in which a provider would need to sync the entire chain would be to run a blockchain explorer.
 
@@ -92,7 +92,7 @@ Another key responsibility of the Lotus Miner is the scheduling of jobs for the 
 
 #### Storage proving <a href="#storage-proving" id="storage-proving"></a>
 
-One of the most important roles of `lotus-miner` is the Storage proving. Both [WindowPoSt](https://docs.filecoin.io/reference/general/glossary/#window-proof-of-spacetime-windowpost) and [WinningPoSt](https://docs.filecoin.io/reference/general/glossary/#winning-proof-of-spacetime-winningpost) processes are usually handled by the `lotus-miner` process. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (proving workers) instead of using the Lotus miner.
+One of the most important roles of `lotus-miner` is the Storage proving. Both [WindowPoSt](../../reference/general/glossary.md#window-proof-of-spacetime-windowpost) and [WinningPoSt](../../reference/general/glossary.md#winning-proof-of-spacetime-winningpost) processes are usually handled by the `lotus-miner` process. For scalability and reliability purposes it is now also possible to run these proving processes on dedicated servers (proving workers) instead of using the Lotus miner.
 
 The proving processes require low-latency access to sealed sectors. The proving challenge requires a GPU to run on. The resulting `zkProof` will be sent to the chain in a message. Messages must arrive within 30 minutes for WindowPoSt, and 30 seconds for WinningPoSt. It is extremely important that providers properly size and configure the proving workers, whether they are using just the Lotus miner or separate workers. Additionally, dedicated wallets, described in Control wallets, should be set up for these processes.
 
