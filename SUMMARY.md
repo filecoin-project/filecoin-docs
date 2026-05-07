@@ -207,6 +207,7 @@
   * [Cross-Chain Bridges](builder-cookbook/dapps/cross-chain-bridges.md)
   * [Decentralized Database](builder-cookbook/dapps/decentralized-database.md)
 * [Filecoin Pin](builder-cookbook/filecoin-pin/README.md)
+  * [Getting Started](builder-cookbook/filecoin-pin/getting-started.md)
   * [Filecoin Pin CLI](builder-cookbook/filecoin-pin/filecoin-pin-cli.md)
   * [Filecoin Pin Github Action](builder-cookbook/filecoin-pin/github-action.md)
   * [Filecoin Pin dApp Demo](builder-cookbook/filecoin-pin/dapp-demo.md)
