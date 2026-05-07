@@ -52,7 +52,7 @@ Before starting, you'll need:
 
 1. **Filecoin Pin CLI** - Follow the complete setup guide here:
    - [Filecoin Pin Getting Started](getting-started.md)
-   - This covers wallet creation, testnet tokens (tFIL and USDFC), and payment setup
+   - This covers wallet creation, funding your wallet with FIL and USDFC, and payment setup
 
 2. **Foundry** - Ethereum development toolkit for contract interactions
    ```bash

@@ -11,7 +11,7 @@ This guide walks you through pinning your first file to Filecoin using the Filec
 * ✅ Install the Filecoin Pin CLI
 * ✅ Connect your Ethereum-style wallet on Filecoin
 * ✅ Deposit storage credit on Filecoin Pay
-* ✅ Pin a file to Filecoin and retrieve it via IPFS standard tooling
+* ✅ Pin a file to Filecoin and retrieve it using standard IPFS tooling
 
 ***
 
@@ -241,7 +241,7 @@ You can also retrieve it programmatically using any IPFS-compatible client (Kubo
 
 ## 🛡️ Inspect your storage proofs
 
-Filecoin storage providers must cryptographically prove multiple times per day that they continue to store your data. You can inspect those proofs and the on-chain payment rails at any time.
+Filecoin storage providers must cryptographically prove daily that they continue to store your data. You can inspect those proofs and the on-chain payment rails at any time.
 
 List the data sets associated with your wallet:
 
