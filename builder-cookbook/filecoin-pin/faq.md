@@ -8,14 +8,11 @@ Filecoin Pin stores IPFS content on the Filecoin Network of decentralized Storag
 
 ### How can I use Filecoin Pin today?
 
-Two paths are available:
+Three paths are available:
 
-* **Website:** Upload files in your browser. Uses a pre-funded test wallet.
-* **CLI:** Upload files from your terminal. Fund storage from your own wallet.
-
-{% hint style="info" %}
-Both run on Calibration testnet. They use tFIL and USDFC. Data has no persistence guarantees while on Calibnet.
-{% endhint %}
+* **CLI:** Upload files from your terminal on Filecoin Mainnet. Fund storage from your own wallet. [Get started here](getting-started.md).
+* **GitHub Action:** Automate pinning of websites or build artifacts in your CI/CD pipeline.
+* **Website (demo):** Upload files in your browser using a pre-funded test wallet on Calibration testnet.
 
 ***
 
@@ -27,8 +24,8 @@ Both run on Calibration testnet. They use tFIL and USDFC. Data has no persistenc
 
 ### How do payments and approvals work?
 
-* **Website:** The demo wallet handles payments. It has been prefunded with testnet USDFC and FIL. Users don't need to connect their own wallet.
-* **CLI:** Your test wallet handles payments. You approve and deposit funds through Filecoin Pay.
+* **Website (demo):** The demo wallet handles payments. It has been prefunded with testnet USDFC and FIL. Users don't need to connect their own wallet.
+* **CLI / GitHub Action:** Your wallet handles payments on Mainnet. You approve and deposit USDFC funds through Filecoin Pay once, then the CLI manages payments automatically.
 
 {% hint style="info" %}
 Storage providers receive payment after cryptographically proving data possession.
@@ -48,9 +45,9 @@ No manual deposit calculations needed. The system handles it.
 
 ### How long is my data stored?
 
-This runs on Calibration testnet only. Treat it as a demo. No duration guarantees exist for Website or CLI.
+On **Mainnet** (the default), data persists as long as you maintain deposits in Filecoin Pay. Storage providers must prove they hold your data daily or they stop receiving payment. The CLI supports auto-funding to keep your runway healthy.
 
-Mainnet will offer persistence guarantees. Data persists while you maintain deposits. The CLI supports auto-funding for storage.
+On **Calibration testnet** (the demo website), data has no persistence guarantees. Treat it as a demo environment only.
 
 ***
 

@@ -11,7 +11,7 @@ This guide walks you through pinning your first file to Filecoin using the Filec
 * ✅ Install the Filecoin Pin CLI
 * ✅ Connect your Ethereum-style wallet on Filecoin
 * ✅ Deposit storage credit on Filecoin Pay
-* ✅ Pin a file to Filecoin and retrieve it via IPFS
+* ✅ Pin a file to Filecoin and retrieve it via IPFS standard tooling
 
 ***
 
@@ -22,7 +22,7 @@ Before starting, make sure you have:
 * **An Ethereum-style wallet on Filecoin** - MetaMask is the easiest option. If you don't have one set up, see [Wallets](../../basics/assets/wallets.md) and [Metamask setup](../../basics/assets/metamask-setup.md).
 * **FIL in your wallet** - to pay transaction gas fees on Filecoin.
 * **USDFC in your wallet** - to pay for storage. USDFC is the stablecoin used by Filecoin Onchain Cloud. The easiest way to get some is to [swap FIL for USDFC on Sushi](https://www.sushi.com/filecoin/swap?token0=NATIVE&token1=0x80b98d3aa09ffff255c3ba4a241111ff1262f045).
-* **Node.js 22 or later** - the Filecoin Pin CLI runs on Node.js. Install from [nodejs.org](https://nodejs.org/) or via your package manager.
+* **Node.js 24 or later** - the Filecoin Pin CLI runs on Node.js. Install from [nodejs.org](https://nodejs.org/) or via your package manager.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Filecoin Pin Repository</td><td><a href="https://github.com/filecoin-project/filecoin-pin">https://github.com/filecoin-project/filecoin-pin</a></td><td><a href="https://github.com/filecoin-project/filecoin-pin">https://github.com/filecoin-project/filecoin-pin</a></td></tr><tr><td>Filecoin Pin Support Channels</td><td><a href="https://filecoinproject.slack.com/archives/C07CGTXHHT4">Filecoin Slack - #fil-foc</a></td><td><a href="https://filecoinproject.slack.com/archives/C07CGTXHHT4">https://filecoinproject.slack.com/archives/C07CGTXHHT4</a></td></tr></tbody></table>
 
@@ -171,7 +171,7 @@ filecoin-pin payments status
 Now you're ready to pin. Create a test file:
 
 ```sh
-echo "Hello Filecoin Pin!" > demo.txt
+echo "Hello Filecoin Pin @ $(date)!" > demo.txt
 ```
 
 Pin it to Filecoin:
@@ -184,8 +184,8 @@ The CLI will:
 
 1. Pack your file into IPFS-compatible format (a CAR file).
 2. Select storage providers automatically.
-3. Upload your file to two providers for redundancy.
-4. Verify the upload was advertised on the IPFS network indexer.
+3. Store your file with two providers for redundancy.
+4. Verify the upload was advertised to [IPNI indexers](https://github.com/filecoin-project/filecoin-pin/blob/master/documentation/glossary.md#ipni).
 
 {% hint style="success" %}
 You should see something like:
@@ -221,7 +221,7 @@ filecoin-pin add my-data/
 
 ## 🌐 Retrieve your file
 
-Your file is now retrievable via any IPFS Mainnet gateway using its Root CID. For example:
+Your file is now retrievable via standard IPFS tooling using its Root CID. For example:
 
 ```
 https://<YOUR_ROOT_CID>.ipfs.inbrowser.link
@@ -241,7 +241,7 @@ You can also retrieve it programmatically using any IPFS-compatible client (Kubo
 
 ## 🛡️ Inspect your storage proofs
 
-Filecoin storage providers must cryptographically prove daily that they continue to store your data. You can inspect those proofs and the on-chain payment rails at any time.
+Filecoin storage providers must cryptographically prove multiple times per day that they continue to store your data. You can inspect those proofs and the on-chain payment rails at any time.
 
 List the data sets associated with your wallet:
 
@@ -307,6 +307,7 @@ You've successfully pinned your first file to Filecoin. You now have:
 ## 🔜 Next Steps
 
 * 📖 Run `filecoin-pin --help` to explore advanced usage, including auto-funding and custom provider selection.
+* 🔍 Want to understand what's happening behind the scenes? Read [Behind the Scenes of Adding a File](https://github.com/filecoin-project/filecoin-pin/blob/master/documentation/behind-the-scenes-of-adding-a-file.md) for a deep dive into each step.
 * 🤖 Automate pinning in your CI/CD pipeline with the [Filecoin Pin GitHub Action](github-action.md).
 * 💬 Join the community in Filecoin Slack [#fil-foc](https://filecoinproject.slack.com/archives/C07CGTXHHT4) for help, discussion, and updates.
 * 🐛 Found a bug or have a feature request? [Open an issue](https://github.com/filecoin-project/filecoin-pin/issues) on GitHub.
