@@ -239,6 +239,60 @@ You can also retrieve it programmatically using any IPFS-compatible client (Kubo
 
 ***
 
+## 🛡️ Inspect your storage proofs
+
+Filecoin storage providers must cryptographically prove daily that they continue to store your data. You can inspect those proofs and the on-chain payment rails at any time.
+
+List the data sets associated with your wallet:
+
+```sh
+filecoin-pin data-set --ls
+```
+
+Then get the full on-chain detail for a specific data set:
+
+```sh
+filecoin-pin data-set <DATASET_ID>
+```
+
+This queries the smart contracts directly, so the values are live blockchain state.
+
+{% hint style="success" %}
+You'll see something like:
+
+```
+Data Set #279 • live
+  Managed by Warm Storage: yes
+  Pieces stored: 2
+  Total size: 672.0 B
+  PDP rail ID: 631
+  Payer: 0xYOUR_WALLET_ADDRESS
+  Payee: 0xPROVIDER_ADDRESS
+
+Provider
+  Provider: <provider-name> (ID <N>)
+
+Provider Service
+  Service URL: https://<provider-service-url>
+  Min proving period: 30 epochs
+
+Pieces
+  #0
+    CommP: bafkzcib...
+    Root CID: bafybei...
+```
+{% endhint %}
+
+Key things to look for:
+
+* **Status: `live`** - your data set is active and being proved.
+* **PDP rail ID** - your active storage-proof payment rail.
+* **Min proving period** - how often the provider must submit a fresh proof.
+* **Provider Service URL** - direct retrieval endpoint for your pieces.
+* **CommP / Root CID** per piece - the piece CID is what the provider proves; the Root CID is what you use to retrieve.
+
+***
+
 ## 🎉 You're Done!
 
 You've successfully pinned your first file to Filecoin. You now have:

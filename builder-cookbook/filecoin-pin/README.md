@@ -38,10 +38,9 @@ Filecoin Pin is for anyone who needs reliable, verifiable IPFS pinning:
 The fastest path to pinning your first file is the **Getting Started** guide below. It walks you through installing the CLI, connecting your wallet, depositing storage credit, and pinning content - end to end.
 
 1. [**Getting Started**](getting-started.md) - Install Filecoin Pin and pin your first file in around 10 minutes. Start here.
-2. [Filecoin Pin CLI](filecoin-pin-cli.md) - Full reference for the command-line tool, including advanced usage and integration into scripts and workflows.
-3. [Filecoin Pin GitHub Actions](github-action.md) - Automate pinning of websites or build artifacts as part of your CI/CD pipeline.
-4. [Filecoin Pin dApp Demo](dapp-demo.md) - Run or fork a demo dApp showing browser-based file uploads to Filecoin.
-5. [Filecoin Pin for ERC-8004 Agents](erc-8004-agent-registration.md) - Register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage for agent metadata.
+2. [Filecoin Pin GitHub Actions](github-action.md) - Automate pinning of websites or build artifacts as part of your CI/CD pipeline.
+3. [Filecoin Pin dApp Demo](dapp-demo.md) - Run or fork a demo dApp showing browser-based file uploads to Filecoin.
+4. [Filecoin Pin for ERC-8004 Agents](erc-8004-agent-registration.md) - Register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage for agent metadata.
 
 ## Learn More
 
