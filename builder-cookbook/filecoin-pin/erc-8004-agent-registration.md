@@ -51,7 +51,7 @@ Agent cards need persistent storage with provable guarantees. Unlike generic IPF
 Before starting, you'll need:
 
 1. **Filecoin Pin CLI** - Follow the complete setup guide here:
-   - [Filecoin Pin CLI Tutorial](https://docs.filecoin.io/builder-cookbook/filecoin-pin/filecoin-pin-cli)
+   - [Filecoin Pin Getting Started](https://docs.filecoin.io/builder-cookbook/filecoin-pin/getting-started)
    - This covers wallet creation, testnet tokens (tFIL and USDFC), and payment setup
 
 2. **Foundry** - Ethereum development toolkit for contract interactions
@@ -740,7 +740,7 @@ Coming soon, stay tuned!
 
 - [**ERC-8004 Specification**](https://eips.ethereum.org/EIPS/eip-8004)
 - [**Reference Implementation**](https://github.com/ChaosChain/trustless-agents-erc-ri)
-- [**Filecoin Pin CLI Tutorial**](https://docs.filecoin.io/builder-cookbook/filecoin-pin/filecoin-pin-cli)
+- [**Filecoin Pin Getting Started**](https://docs.filecoin.io/builder-cookbook/filecoin-pin/getting-started)
 - [**Base Sepolia Explorer**](https://sepolia.basescan.org)
 - [**GitHub MCP Server**](https://github.com/github/github-mcp-server)
 
