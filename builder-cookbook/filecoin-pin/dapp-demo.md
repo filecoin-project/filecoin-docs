@@ -21,7 +21,7 @@ In this walkthrough, you’ll build a simple drag-and-drop file uploader that:
 
 ## Setup
 
-We will start building by [forking the *filecoin-pin-website demo repo](https://github.com/filecoin-project/filecoin-pin-website/fork).* Make sure you have **Node.js 18+** and **npm 9+** installed.  The dapp works with Filecoin Calibration testnet. 
+We will start building by [forking the *filecoin-pin-website demo repo](https://github.com/filecoin-project/filecoin-pin-website/fork).* Make sure you have **Node.js 24+** and **npm 9+** installed.  The dapp works with Filecoin Calibration testnet. 
 
 This will take ~10min. ⏲️
 
@@ -108,4 +108,4 @@ That is it - you now have a dapp with a drag-and-drop interface to store IPFS Fi
 1. Check back on the [filecoin-pin-website repo](https://github.com/filecoin-project/filecoin-pin-website) - it will continue to be updated as new functionality is brought to filecoin-pin.
 2. Feel free to report any issues with the dApp demo to https://github.com/filecoin-project/filecoin-pin-website/issues
 3. Check out the the [other example uses of filecoin-pin](../).
-4. Ask questions or get help with filecoin-pin in the [supported communcation channels](https://github.com/filecoin-project/filecoin-pin?tab=readme-ov-file#support-info).
+4. Ask questions or get help with filecoin-pin in the [supported communication channels](https://github.com/filecoin-project/filecoin-pin?tab=readme-ov-file#community-and-support).

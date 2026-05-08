@@ -51,8 +51,8 @@ Agent cards need persistent storage with provable guarantees. Unlike generic IPF
 Before starting, you'll need:
 
 1. **Filecoin Pin CLI** - Follow the complete setup guide here:
-   - [Filecoin Pin Getting Started](https://docs.filecoin.io/builder-cookbook/filecoin-pin/getting-started)
-   - This covers wallet creation, testnet tokens (tFIL and USDFC), and payment setup
+   - [Filecoin Pin Getting Started](getting-started.md)
+   - This covers wallet creation, funding your wallet with FIL and USDFC, and payment setup
 
 2. **Foundry** - Ethereum development toolkit for contract interactions
    ```bash
@@ -599,19 +599,19 @@ View on explorer: [Base Mainnet Registry](https://basescan.org/address/0x8004A16
 
 ### Upload to Filecoin Mainnet
  
-All Filecoin Pin CLI commands use the `--mainnet` flag for mainnet operations.
+Filecoin Pin defaults to Mainnet, so no extra flags are needed for mainnet operations.
 
 #### Setup Payment System (Mainnet)
 
 ```bash
 export PRIVATE_KEY="0x..."  # Your wallet private key
-filecoin-pin payments setup --auto --mainnet
+filecoin-pin payments setup --auto
 ```
 
 #### Upload Your Agent Card (Mainnet)
 
 ```bash
-filecoin-pin add --auto-fund --mainnet github-agent-card.json
+filecoin-pin add --auto-fund github-agent-card.json
 ```
 
 Save the **Root CID** and **Dataset ID** from the output.
@@ -653,7 +653,7 @@ echo "Agent ID: $AGENT_ID"
 ### Check Mainnet Storage Proofs
 
 ```bash
-filecoin-pin data-set show <YOUR_DATASET_ID> --mainnet
+filecoin-pin data-set show <YOUR_DATASET_ID>
 ```
 
 ***
