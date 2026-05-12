@@ -123,7 +123,7 @@ The subaddress of an `f410/t410` address is the original Ethereum address. Ether
 t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy
 ```
 
-If you have an Ethereum wallet address starting with `0x`, then the Ethereum Address Manager (EAM) will assign a corresponding `t410` Filecoin address to it. If you send 10 TFIL to `0xd388ab098ed3e84c0d808776440b48f685198498` using a wallet like MetaMask, you will receive 10 TFIL to your `t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy` address on Filecoin Calibration testnet.
+If you have an Ethereum wallet address starting with `0x`, then the Ethereum Address Manager (EAM) will assign a corresponding `t410` Filecoin address to it. If you send 10 tFIL to `0xd388ab098ed3e84c0d808776440b48f685198498` using a wallet like MetaMask, you will receive 10 tFIL to your `t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy` address on Filecoin Calibration testnet.
 
 ```plaintext
 # A Filecoin smart contract address.

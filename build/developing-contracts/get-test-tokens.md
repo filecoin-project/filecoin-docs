@@ -23,7 +23,7 @@ MetaMask is one of the easier ways to manage addresses on the Calibration testne
 
     ![A block explorer showing a pending transaction on the Calibration testnet.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-block-explorer.png)
 
-That’s all there is to it! Getting `tFil` is easy!
+That’s all there is to it! Getting `tFIL` is easy!
 
 ## Local testnet
 
