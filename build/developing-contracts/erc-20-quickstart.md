@@ -64,7 +64,7 @@ Nice! Now we’ve got the Filecoin Calibration testnet set up within MetaMask. Y
 1.  In your browser, open MetaMask and copy your address to your clipboard:
 
     ![Copy your address to your clipboard.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-faucet-get-address.webp)
-2. Go to <a href="https://faucet.calibnet.chainsafe-fil.io" target="_blank">faucet.calibration.chainsafe-fil.io</a> and click **Send Funds.**
+2. Go to <a href="https://faucet.calibnet.chainsafe-fil.io" target="_blank">faucet.calibnet.chainsafe-fil.io</a> and click **Send Funds.**
 3. Paste your address into the address field, and click **Send Funds**.
 4. The faucet will show a transaction ID. You can copy this ID into a Calibration testnet [block explorer](../../networks-and-tools/networks/calibration/explorers.md) to view your transaction. After a couple of minutes, you should see some `tFIL` transferred to your address.
 
