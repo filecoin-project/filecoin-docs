@@ -15,11 +15,6 @@ These endpoints are limited to [read-only Filecoin JSON RPC API calls](../../../
 * HTTPS: `https://rpc.ankr.com/filecoin_testnet`
 * [Ankr documentation](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
 
-## [ChainupCloud](https://cloud.chainup.com)
-
-* HTTPS: `https://filecoin-calibration.chainup.net/rpc/v1`
-* [ChainupCloud documentation](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)
-
 ## [Glif](https://api.calibration.node.glif.io)
 
 Please note that publicly available hosted endpoints **only guarantee 2000 of the latest blocks.**

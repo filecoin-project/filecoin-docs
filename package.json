@@ -8,6 +8,7 @@
     "build": "honkit build",
     "preview": "npx serve _book -p 4000",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "check:rpcs": "node scripts/check-rpc-endpoints.mjs",
     "update-versions": "node update-versions.js"
   },
   "repository": {
