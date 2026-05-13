@@ -13,11 +13,10 @@ Learn how to register a trustless autonomous agent on the ERC-8004 Identity Regi
 This tutorial walks you through registering an [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) compliant agent with cryptographically-verified persistent storage on Filecoin. You'll create an agent card (metadata describing your agent's capabilities), store it on Filecoin & IPFS using Filecoin Pin, and register it on-chain as an NFT on Base Sepolia.
 
 **What you'll learn:**
-
-* How to create an ERC-8004 compliant agent card
-* How to use Filecoin Pin for persistent, verifiable storage
-* How to register an agent on the ERC-8004 Identity Registry
-* How to verify Filecoin storage proofs and on-chain registration
+- How to create an ERC-8004 compliant agent card
+- How to use Filecoin Pin for persistent, verifiable storage
+- How to register an agent on the ERC-8004 Identity Registry
+- How to verify Filecoin storage proofs and on-chain registration
 
 **What you'll build:**
 A GitHub Integration Agent that references GitHub's official MCP server, demonstrating how real-world services can be integrated with ERC-8004.
@@ -36,12 +35,12 @@ For example code and helper scripts to help with using Filecoin Pin and agent re
 
 Agent cards need persistent storage with provable guarantees. Unlike generic IPFS pinning services that may stop hosting your data without notice, Filecoin Pin provides:
 
-* ✅ **Cryptographic proof** your data is stored (daily PDP proofs)
-* ✅ **Ongoing verification** ensures storage persistence
-* ✅ **Decentralized** storage across a global network
-* ✅ **IPFS compatible** - works with existing tools and gateways
-* ✅ **Crypto payments** - onchain payments
-* ✅ **Limited time - sponsored storage coming soon** available for ERC-8004 builders
+- ✅ **Cryptographic proof** your data is stored (daily PDP proofs)
+- ✅ **Ongoing verification** ensures storage persistence
+- ✅ **Decentralized** storage across a global network
+- ✅ **IPFS compatible** - works with existing tools and gateways
+- ✅ **Crypto payments** - onchain payments
+- ✅ **Limited time - sponsored storage coming soon** available for ERC-8004 builders
 
 ***
 
@@ -52,18 +51,16 @@ Agent cards need persistent storage with provable guarantees. Unlike generic IPF
 Before starting, you'll need:
 
 1. **Filecoin Pin CLI** - Follow the complete setup guide here:
-   * [Filecoin Pin CLI Tutorial](filecoin-pin-cli.md)
-   * This covers wallet creation, testnet tokens (tFIL and USDFC), and payment setup
+   - [Filecoin Pin Getting Started](getting-started.md)
+   - This covers wallet creation, funding your wallet with FIL and USDFC, and payment setup
 
 2. **Foundry** - Ethereum development toolkit for contract interactions
-
    ```bash
    curl -L https://foundry.paradigm.xyz | bash
    foundryup
    ```
 
 3. **jq** (optional but recommended) - JSON processor for viewing outputs
-
    ```bash
    # macOS
    brew install jq
@@ -77,28 +74,25 @@ Before starting, you'll need:
 You'll need testnet tokens on **two networks**:
 
 #### Filecoin Calibration Testnet
-
-* **tFIL** (testnet Filecoin) - For gas fees
-  * Request tFIL from [Filecoin Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html)
-  * Amount requested: 100 tFIL
-* **USDFC** (Filecoin stablecoin) - For storage payments
-  * Request test USDFC from [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
-  * Or Mint at [USDFC website](https://stg.usdfc.net) (requires tFIL as collateral)
-  * Amount needed: ~5 USDFC
+- **tFIL** (testnet Filecoin) - For gas fees
+  - Request tFIL from [Filecoin Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html)
+  - Amount requested: 100 tFIL
+- **USDFC** (Filecoin stablecoin) - For storage payments
+  - Request test USDFC from [Filecoin Calibnet USDFC Faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
+  - Or Mint at [USDFC website](https://stg.usdfc.net) (requires tFIL as collateral)
+  - Amount needed: ~5 USDFC
 
 #### Base Sepolia Testnet
-
-* **Sepolia ETH** - For NFT minting and registration
-  * Request test ETH on Base Sepolia on [Faucet](https://www.alchemy.com/faucets/base-sepolia)
-  * Amount needed: ~0.001 ETH
+- **Sepolia ETH** - For NFT minting and registration
+  - Request test ETH on Base Sepolia on [Faucet](https://www.alchemy.com/faucets/base-sepolia)
+  - Amount needed: ~0.001 ETH
 
 > **NOTE!** The same Ethereum wallet works on both Filecoin Calibration and Base Sepolia. You only need one private key.
 
 ### ERC-8004 Registry Address
 
 We'll be using the reference ERC-8004 Identity Registry deployed on the Base Sepolia testnet:
-
-```text
+```
 0x8004A818BFB912233c491871b3d84c89A494BD9e
 ```
 
@@ -168,15 +162,15 @@ You should see the formatted JSON output with syntax highlighting.
 
 Key fields in the agent card:
 
-* **`type`** - Links to the ERC-8004 specification version
-* **`name`** - Human-readable name for your agent
-* **`description`** - What the agent does
-* **`image`** - Avatar or logo URL
-* **`endpoints`** - Array of service endpoints:
-  * **MCP endpoint** - Points to GitHub's official MCP server
-  * **agentWallet** - The agent's wallet address (chain:chainId:address format)
-* **`capabilities`** - Tools and functions the agent provides
-* **`supportedTrust`** - Trust mechanisms (reputation, stake, etc.)
+- **`type`** - Links to the ERC-8004 specification version
+- **`name`** - Human-readable name for your agent
+- **`description`** - What the agent does
+- **`image`** - Avatar or logo URL
+- **`endpoints`** - Array of service endpoints:
+  - **MCP endpoint** - Points to GitHub's official MCP server
+  - **agentWallet** - The agent's wallet address (chain:chainId:address format)
+- **`capabilities`** - Tools and functions the agent provides
+- **`supportedTrust`** - Trust mechanisms (reputation, stake, etc.)
 
 > **💡 Note**: This example uses GitHub's real public MCP server at `https://api.githubcopilot.com/mcp/`. You can replace this with your own MCP server endpoint.
 
@@ -300,12 +294,11 @@ filecoin-pin add --auto-fund github-agent-card.json
 
 Copy these values from the output - you'll need them later:
 
-* **Root CID** - The IPFS content identifier (e.g., `bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di`).
-* **Dataset ID** - For checking PDP proof status (e.g., `11653`)
+- **Root CID** - The IPFS content identifier (e.g., `bafybeihhal5hlbylkibniig6j72wdrm7lr4nf6z47natleh2jkyosrg7di`).
+- **Dataset ID** - For checking PDP proof status (e.g., `11653`)
 
 > **⚠️ IMPORTANT**: The Token URI for ERC-8004 registration must include the filename! Format it as:
->
-> ```text
+> ```
 > ipfs://<ROOT_CID>/github-agent-card.json
 > ```
 
@@ -494,7 +487,7 @@ cast --abi-decode "f()(string)" 0x0000000000000000000000000000000000000000000000
 
 Visit your agent on the Base Sepolia block explorer:
 
-```text
+```
 https://sepolia.basescan.org/nft/0x8004a818bfb912233c491871b3d84c89a494bd9e/<AGENT_ID_DECIMAL>
 ```
 
@@ -571,12 +564,11 @@ filecoin-pin data-set show 11653
 ### Summary
 
 ✅ Your agent is now:
-
-* 🔒 **Persistently stored** on Filecoin with cryptographic PDP proofs
-* 🌐 **Registered on-chain** as an ERC-8004 NFT on Base Sepolia
-* 🔍 **Discoverable** via the Identity Registry by any third party
-* ✅ **Verifiable** - anyone can check storage proofs and on-chain data
-* 🚀 **Ready to use** by other agents and applications
+- 🔒 **Persistently stored** on Filecoin with cryptographic PDP proofs
+- 🌐 **Registered on-chain** as an ERC-8004 NFT on Base Sepolia
+- 🔍 **Discoverable** via the Identity Registry by any third party
+- ✅ **Verifiable** - anyone can check storage proofs and on-chain data
+- 🚀 **Ready to use** by other agents and applications
 
 ***
 
@@ -589,19 +581,17 @@ Ready to move to production? This step covers deploying your agent on Filecoin m
 You'll need real tokens on **two networks**:
 
 #### Filecoin Mainnet
-
-* **FIL** - For gas fees on Filecoin
-* **USDFC** - For storage payments
+- **FIL** - For gas fees on Filecoin
+- **USDFC** - For storage payments
 
 Get FIL and USDFC via the [USDFC Bridge](https://app.usdfc.net/#/bridge) - bridge from any token on any network to FIL and USDFC on Filecoin mainnet. You can also use [Sushi](https://www.sushi.com/filecoin/swap?token0=NATIVE&token1=0x80b98d3aa09ffff255c3ba4a241111ff1262f045) to swap FIL for USDFC.
 
 #### Base Mainnet
-
-* **ETH** - For NFT minting and registration on Base
+- **ETH** - For NFT minting and registration on Base
 
 ### ERC-8004 Registry Address (Base Mainnet)
 
-```text
+```
 0x8004A169FB4a3325136EB29fA0ceB6D2e539a432
 ```
 
@@ -609,19 +599,19 @@ View on explorer: [Base Mainnet Registry](https://basescan.org/address/0x8004A16
 
 ### Upload to Filecoin Mainnet
 
-All Filecoin Pin CLI commands use the `--mainnet` flag for mainnet operations.
+Filecoin Pin defaults to Mainnet, so no extra flags are needed for mainnet operations.
 
 #### Setup Payment System (Mainnet)
 
 ```bash
 export PRIVATE_KEY="0x..."  # Your wallet private key
-filecoin-pin payments setup --auto --mainnet
+filecoin-pin payments setup --auto
 ```
 
 #### Upload Your Agent Card (Mainnet)
 
 ```bash
-filecoin-pin add --auto-fund --mainnet github-agent-card.json
+filecoin-pin add --auto-fund github-agent-card.json
 ```
 
 Save the **Root CID** and **Dataset ID** from the output.
@@ -663,7 +653,7 @@ echo "Agent ID: $AGENT_ID"
 ### Check Mainnet Storage Proofs
 
 ```bash
-filecoin-pin data-set show <YOUR_DATASET_ID> --mainnet
+filecoin-pin data-set show <YOUR_DATASET_ID>
 ```
 
 ***
@@ -673,7 +663,6 @@ filecoin-pin data-set show <YOUR_DATASET_ID> --mainnet
 ### Issue: `filecoin-pin: command not found`
 
 **Solution**: Install the Filecoin Pin CLI:
-
 ```bash
 npm install -g filecoin-pin@latest
 ```
@@ -685,17 +674,14 @@ npm install -g filecoin-pin@latest
 ### Issue: `Transaction reverted` on Base Sepolia
 
 **Solution**: Check your Base Sepolia ETH balance:
-
 ```bash
 cast balance <YOUR_ADDRESS> --rpc-url https://sepolia.base.org --ether
 ```
-
 Get more from the [faucet](https://www.alchemy.com/faucets/base-sepolia) if needed.
 
 ### Issue: IPFS retrieval is slow or fails
 
 **Solution**: IPFS propagation can take a few minutes. Try different gateways:
-
 ```bash
 curl -s "https://ipfs.io/ipfs/<CID>/github-agent-card.json" | jq .
 curl -s "https://gateway.pinata.cloud/ipfs/<CID>/github-agent-card.json" | jq .
@@ -705,7 +691,6 @@ curl -s "https://cloudflare-ipfs.com/ipfs/<CID>/github-agent-card.json" | jq .
 ### Issue: PDP proofs not showing
 
 **Solution**: PDP proofs can take up to 24 hours to begin after upload. This is normal - your data is still stored, proofs just take time to generate. Check back later with:
-
 ```bash
 filecoin-pin data-set show <YOUR_DATASET_ID>
 ```
@@ -713,8 +698,7 @@ filecoin-pin data-set show <YOUR_DATASET_ID>
 ### Issue: Token URI doesn't include filename
 
 **Solution**: The Token URI must include the full path including filename. Correct format:
-
-```text
+```
 ipfs://<CID>/github-agent-card.json
 ```
 
@@ -735,16 +719,16 @@ Now that your agent is registered with verifiable persistent storage, you can:
 
 ### Explore ERC-8004 Features
 
-* **Reputation Registry** - Build reputation for your agents
-* **Validation Registry** - Add validators to verify agent behavior
-* **Multi-agent coordination** - Discover and compose multiple agents
+- **Reputation Registry** - Build reputation for your agents
+- **Validation Registry** - Add validators to verify agent behavior
+- **Multi-agent coordination** - Discover and compose multiple agents
 
 ### Join the Community
 
-* **Filecoin Builders**: [on telegram](https://t.me/+Xj6_zTPfcUA4MGQ1); [on Slack](https://filecoinproject.slack.com/archives/CRK2LKYHW)
-* **ERC-8004 Discussion**: [GitHub Discussions](https://github.com/ethereum/EIPs/issues/8004)
-* **Filecoin Pin**: [Documentation](README.md)
-* **Builder Channels**: Join ERC-8004 builder communities
+- **Filecoin Builders**: [on telegram](https://t.me/+Xj6_zTPfcUA4MGQ1); [on Slack](https://filecoinproject.slack.com/archives/CRK2LKYHW)
+- **ERC-8004 Discussion**: [GitHub Discussions](https://github.com/ethereum/EIPs/issues/8004)
+- **Filecoin Pin**: [Documentation](README.md)
+- **Builder Channels**: Join ERC-8004 builder communities
 
 ### Sponsored Storage for ERC-8004 Builders
 
@@ -754,11 +738,11 @@ Coming soon, stay tuned!
 
 ## Additional Resources
 
-* [**ERC-8004 Specification**](https://eips.ethereum.org/EIPS/eip-8004)
-* [**Reference Implementation**](https://github.com/ChaosChain/trustless-agents-erc-ri)
-* [**Filecoin Pin CLI Tutorial**](filecoin-pin-cli.md)
-* [**Base Sepolia Explorer**](https://sepolia.basescan.org)
-* [**GitHub MCP Server**](https://github.com/github/github-mcp-server)
+- [**ERC-8004 Specification**](https://eips.ethereum.org/EIPS/eip-8004)
+- [**Reference Implementation**](https://github.com/ChaosChain/trustless-agents-erc-ri)
+- [**Filecoin Pin Getting Started**](getting-started.md)
+- [**Base Sepolia Explorer**](https://sepolia.basescan.org)
+- [**GitHub MCP Server**](https://github.com/github/github-mcp-server)
 
 ***
 

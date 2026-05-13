@@ -4,37 +4,46 @@ description: Pin IPFS content to Filecoin using familiar IPFS tools and workflow
 
 # Filecoin Pin
 
-## Status
+{% hint style="success" %}
+**Production-ready on Filecoin Mainnet**
 
-Filecoin Pin is currently **alpha software** running on the Filecoin Calibration testnet. As of 2025-10-15, it is undergoing active development and not yet recommended for production use. Please register for updates and GA announcement at [filecoin.cloud](https://filecoin.cloud/).
+Filecoin Pin is live on Filecoin Mainnet and ready for use. Register for product updates and announcements at [filecoin.cloud](https://filecoin.cloud/).
+{% endhint %}
 
 ## What is Filecoin Pin?
 
-Filecoin Pin is a fully decentralized persistence layer for IPFS content using the global network of Filecoin storage providers with cryptographic guarantees.
+Filecoin Pin is a fully decentralised persistence layer for IPFS content, backed by the global network of Filecoin storage providers and cryptographic proofs of storage.
 
-When you use Filecoin Pin, your IPFS files gain:
+When you pin content with Filecoin Pin, your IPFS data gains:
 
-* **Verifiable persistence** - Storage providers must cryptographically prove daily that they continue to store and serve your data
-* **Economic incentives** - You only pay when storage proofs are successfully delivered and verified onchain
-* **Decentralized infrastructure** - Your data can be stored across a global network of independent storage providers
-* **Sovereign data** - Choose your providers, audit storage proofs and payments onchain, with no dependency on a single company
-* **Seamless IPFS integration** - Continue using standard [IPFS Mainnet](https://docs.ipfs.tech/concepts/glossary/#mainnet) tooling like Kubo, Helia, and IPFS HTTP Gateways while gaining Filecoin's persistence guarantees
+* **Verifiable persistence** - Storage providers must cryptographically prove daily that they continue to store and serve your data.
+* **Economic incentives** - You only pay when storage proofs are successfully delivered and verified onchain.
+* **Decentralised infrastructure** - Your data is stored across a global network of independent storage providers.
+* **Sovereign data** - Choose your providers, audit storage proofs and payments onchain, with no dependency on a single company.
+* **Seamless IPFS integration** - Keep using standard [IPFS Mainnet](https://docs.ipfs.tech/concepts/glossary/#mainnet) tooling like Kubo, Helia, and IPFS HTTP Gateways while gaining Filecoin's persistence guarantees.
 
 ## Who is Filecoin Pin for?
 
-Filecoin Pin is designed for developers building on IPFS who need trustless, economically-incentivized persistence for their content. Whether you're building dApps, workflows, websites, AI agents, or other applications, Filecoin Pin provides the missing persistence layer for IPFS.
+Filecoin Pin is for anyone who needs reliable, verifiable IPFS pinning:
+
+* **People moving from another pinning service** - If you're coming from Storacha, Pinata, or any other IPFS pinning service, Filecoin Pin gives you a place to keep your IPFS content pinned and accessible.
+* **Developers building on IPFS** - If you're building dApps, websites, AI agents, or other applications that rely on IPFS, Filecoin Pin provides the missing persistence layer with cryptographic guarantees.
+
+{% hint style="info" %}
+**Migrating existing pins from Storacha?** This guide focuses on pinning new content. For migrating data already pinned on Storacha, see the dedicated migration guide (coming soon).
+{% endhint %}
 
 ## How to Get Started
 
-Get started using Filecoin Pin today with:
+The fastest path to pinning your first file is the **Getting Started** guide below. It walks you through installing the CLI, connecting your wallet, depositing storage credit, and pinning content - end to end.
 
-1. [Filecoin Pin CLI](filecoin-pin-cli.md) - Upload new or existing IPFS files directly to Filecoin via the command line. Perfect for developers who want to integrate Filecoin storage into scripts, workflows, or local development environments.
-2. [Filecoin Pin GitHub Actions](github-action.md) - Use GitHub Actions to automatically publish websites or build artifacts to IPFS and Filecoin as part of your CI/CD pipeline. Ideal for static websites, documentation sites, and automated deployment workflows.
-3. [Filecoin Pin dApp Demo](dapp-demo.md) - Run or fork a simple demo dApp that demonstrates Filecoin Pin in a browser-based application. Great for understanding how to integrate Filecoin Pin into web applications.
-4. [Filecoin Pin for ERC-8004 Agents](erc-8004-agent-registration.md) - Learn how to register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage for agent metadata using Filecoin Pin.
+1. [**Getting Started**](getting-started.md) - Install Filecoin Pin and pin your first file in around 10 minutes. Start here.
+2. [Filecoin Pin GitHub Actions](github-action.md) - Automate pinning of websites or build artifacts as part of your CI/CD pipeline.
+3. [Filecoin Pin dApp Demo](dapp-demo.md) - Run or fork a demo dApp showing browser-based file uploads to Filecoin.
+4. [Filecoin Pin for ERC-8004 Agents](erc-8004-agent-registration.md) - Register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage for agent metadata.
 
 ## Learn More
 
-* **[FAQ](faq.md)** - Common questions about Filecoin Pin
-* **[Filecoin Pin GitHub Repository](https://github.com/filecoin-project/filecoin-pin)** - Source code and technical documentation
-* **[Community and Support](https://github.com/filecoin-project/filecoin-pin?tab=readme-ov-file#community-and-support)** - Join the community for real-time developer support and updates.
+* [**FAQ**](faq.md) - Common questions about Filecoin Pin.
+* [**Filecoin Pin GitHub Repository**](https://github.com/filecoin-project/filecoin-pin) - Source code and technical documentation.
+* [**Community and Support**](https://github.com/filecoin-project/filecoin-pin?tab=readme-ov-file#community-and-support) - Join the community for real-time developer support and updates.
