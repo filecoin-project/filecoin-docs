@@ -68,10 +68,7 @@ Yes.
 
 ## **Do I have to install Lotus to work with FVM**
 
-Not necessarily. You can use any of the public RPC nodes on either [mainnet](../../networks-and-tools/networks/mainnet/README.md) or the \[Calibration testnet]\(/networks/calibration/details/
-
-* `api.hyperspace.node.glif.io/rpc/v1`
-* `api.zondax.ch/fil/node/hyperspace/rpc/v1`
+Not necessarily. You can use public RPC nodes on either [mainnet](../../networks-and-tools/networks/mainnet/rpcs.md) or the [Calibration testnet](../../networks-and-tools/networks/calibration/rpcs.md).
 
 ## **Why does the FVM use WASM**
 
