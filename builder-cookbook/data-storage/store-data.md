@@ -244,7 +244,7 @@ import CID from "cids";
   };
 </code></pre>
 
-The full tutorial for uploading data using Lighthouse SDK and smart contract can be found [here](https://docs.lighthouse.storage/how-to/using-pdp-with-lighthouse).
+More information about Lighthouse storage tools is available in the [Lighthouse docs](https://docs.lighthouse.storage/).
 
 ***
 

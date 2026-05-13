@@ -9,7 +9,7 @@ description: >-
 ## About Filecoin
 
 * [**Filecoin Specification**](https://spec.filecoin.io/) - technical specification for Filecoin protocol and its associated subsystems.
-* [**Filecoin Slack**](https://filecoin.io/slack) - announcements and open discussion of Filecoin.
+* [**Filecoin Slack**](https://filecoinproject.slack.com/ssb/redirect) - announcements and open discussion of Filecoin.
 * [**Filecoin Orbit Community Program**](https://www.fil.org/orbit) - the Filecoin Orbit Community Program is an effort of dozens of volunteers around the world to organize meetups and hackathons in their local jurisdictions.
 * [**Filecoin YouTube channel**](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) - various Filecoin workshops, conference talks, and meetups.
 
@@ -32,7 +32,7 @@ description: >-
   * [Mainnet network status](https://filecoin.statuspage.io/) - reports the status and incident of the Filecoin Mainnet.
 * **Calibration**
   * Largest testnet which support 32 GiB and 64 GiB sectors.
-  * See [`#fil-net-calibration-discuss`](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack).
+  * See [`#fil-net-calibration-discuss`](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoinproject.slack.com/ssb/redirect).
 * **Local Devnet**
   * [Run a Local Devnet using Lotus](https://lotus.filecoin.io/lotus/developers/local-network/).
 
@@ -63,12 +63,12 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 
 * [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
 * [Storacha](https://storacha.network/) is an open hot storage network scales IPFS and Filecoin. Upload any data and Storacha will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There Storacha [docs](https://docs.storacha.network/) detail the JavaScript and Go API libraries, and there is a no-code web uploader available as well.
-* [Singularity](https://singularity.storage/) "facilitates onboarding of large quantaties of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
+* [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantaties of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
 * [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
-* [Ramo](https://www.ramo.io/) is "a network coordinating people, hardware and capital to build a more open and resilient internet infrastructure for everyone."  
+* [Ramo](https://use.ramo.computer/) provides Filecoin-based, S3-compatible storage for data on Filecoin.
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   * to securely capture, store and verify human history
-  * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/) or the [Filecoin blog interview](https://filecoin.io/blog/starling-framework/)
+  * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/)
 
 ## APIs & Developer tools
 

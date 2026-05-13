@@ -112,7 +112,7 @@ The DappSys library provides safe, simple, and flexible Ethereum contract buildi
 
 The 0x protocol library provides a set of secure smart contracts that facilitate peer-to-peer exchange of Ethereum-based assets.
 
-* [Documentation](https://docs.0x.org/introduction/introduction-to-0x)
+* [Documentation](https://0x.org/docs/introduction/0x-cheat-sheet)
 * [GitHub](https://github.com/0xProject)
 
 

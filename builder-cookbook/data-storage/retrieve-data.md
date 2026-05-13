@@ -18,7 +18,7 @@ With a given CID, you can use any of the following retrieval clients to retrieve
 
 * [Lassie](https://github.com/filecoin-project/lassie): optimizes for most efficient available retrieval protocols.
   * [go-car](https://github.com/ipld/go-car): a content addressable archive utility.
-* [Saturn](https://saturn.tech/): a Web3 CDN in Filecoin’s retrieval market.
+* [Saturn](https://github.com/filecoin-saturn): a Web3 CDN in Filecoin’s retrieval market.
 
 #### **Instructions**
 

@@ -16,7 +16,7 @@ Explore the latest news, events and other happenings on the official [Filecoin B
 
 ### Newsletter
 
-Subscribe to the [Filecoin newsletter](https://filecoin.io/build/#events) for official project updates sent straight to your inbox.
+Follow the [Filecoin blog](https://filecoin.io/blog/) and [Filecoin events](https://fil.org/events) for official project updates.
 
 ### Twitter
 

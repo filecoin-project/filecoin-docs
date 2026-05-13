@@ -7,7 +7,7 @@ description: >-
 
 ## Compute-over-data
 
-Beyond storage and retrieval, data often needs transformation. Compute-over-data protocols enable computations over IPLD, the data layer used by content-addressed systems like Filecoin. Working groups are developing compute solutions for Filecoin data, including large-scale parallel compute (e.g., [Bacalhau](https://www.bacalhau.org/)) and cryptographically verifiable compute (e.g., [Lurk](https://filecoin.io/blog/posts/introducing-lurk-a-programming-language-for-recursive-zk-snarks/)).
+Beyond storage and retrieval, data often needs transformation. Compute-over-data protocols enable computations over IPLD, the data layer used by content-addressed systems like Filecoin. Working groups are developing compute solutions for Filecoin data, including large-scale parallel compute (e.g., [Bacalhau](https://www.bacalhau.org/)) and cryptographically verifiable compute (e.g., [Lurk](https://filecoin.io/blog/introducing-lurk-a-programming-language-for-recursive-zk-snarks/)).
 
 For example, Bacalhau provides a platform for public, transparent, and verifiable distributed computation, allowing users to run Docker containers and WebAssembly (Wasm) images as tasks on data stored in InterPlanetary File System (IPFS).
 

@@ -12,11 +12,11 @@ Get ready to dive into the valuable resources of the [storage provider documenta
 
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Gain insights into ROI and collateral’s role
 
-To run a successful storage provider business, it’s crucial to understand the concept of [Return on Investment (ROI)](https://calc.filecoin.eu) and the significance of collateral. By planning ahead and considering various factors, such as CAPEX, OPEX, network variables, and collateral requirements, you can make informed decisions that impact your business’s profitability and desired capacity.
+To run a successful storage provider business, it’s crucial to understand the concept of [Return on Investment (ROI)](../filecoin-deals/return-on-investment.md) and the significance of collateral. By planning ahead and considering various factors, such as CAPEX, OPEX, network variables, and collateral requirements, you can make informed decisions that impact your business’s profitability and desired capacity.
 
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Get to know the ecosystem
 
-One of the truly enriching elements of the Filecoin ecosystem lies in its vibrant community. Meet the community on the [Filecoin Slack](https://filecoin.io/slack). Within this dynamic network, you’ll find a treasure trove of individuals who are eager to share their experiences and offer invaluable solutions to the challenges they’ve encountered along the way. Whether it’s navigating the intricacies of storage provider operations or overcoming hurdles on the blockchain, this supportive community stands ready to lend a helping hand. Embrace the spirit of collaboration and tap into this remarkable network.
+One of the truly enriching elements of the Filecoin ecosystem lies in its vibrant community. Meet the community on the [Filecoin Slack](https://filecoinproject.slack.com/ssb/redirect). Within this dynamic network, you’ll find a treasure trove of individuals who are eager to share their experiences and offer invaluable solutions to the challenges they’ve encountered along the way. Whether it’s navigating the intricacies of storage provider operations or overcoming hurdles on the blockchain, this supportive community stands ready to lend a helping hand. Embrace the spirit of collaboration and tap into this remarkable network.
 
 ## <img src="../../.gitbook/assets/storage-provider-basics-quickstart-guide-icon.png" alt="" data-size="line"> Unleash the Power of Filecoin’s Reference Implementation
 

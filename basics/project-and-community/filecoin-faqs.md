@@ -33,7 +33,7 @@ We think that the internet must return to its _decentralized roots_ to be resili
 
 We are still finalizing our cryptoeconomic parameters, and they will continue to evolve.
 
-Here is a blog about Filecoin economics from December 2020: [Filecoin network economics](https://filecoin.io/blog/posts/filecoin-network-economics/).
+Here is a blog about Filecoin economics from December 2020: [Filecoin network economics](https://filecoin.io/blog/filecoin-network-economics/).
 
 #### How expensive will Filecoin storage be at launch?
 
@@ -95,7 +95,7 @@ AMD may be optimal hardware for SDR. You can [see this description](https://gith
 
 #### How are you working on bootstrapping the demand side of the marketplace? The Discover program is nice, but who is the target market for users, and how do you get them?
 
-In addition to [Filecoin Discover](https://filecoin.io/blog/posts/introducing-filecoin-discover/), a number of groups are actively building tools and services to support the adoption of the Filecoin network with developers and clients. For example, check out the recordings from our [Virtual Community Meetup](https://filecoin.io/blog/filecoin-virtual-community-meetup-recap/) to see updates about Textile and Starling Storage. You can also read more about some of the teams building on Filecoin through HackFS in our [HackFS Week 1 Recap](https://filecoin.io/blog/hackfs-teams-vol-1/).
+In addition to [Filecoin Discover](https://filecoin.io/blog/introducing-filecoin-discover/), a number of groups are actively building tools and services to support the adoption of the Filecoin network with developers and clients. For example, check out the recordings from our [Virtual Community Meetup](https://filecoin.io/blog/filecoin-virtual-community-meetup-recap/) to see updates about Textile and Starling Storage. You can also read more about teams building on Filecoin through the [HackFS event](https://ethglobal.com/events/hackfs).
 
 #### Does Filecoin have an implementation of client and storage provider order matching through order books?
 
