@@ -29,8 +29,6 @@ Assuming the IPNI returns more than one storage provider, the client can select 
 
 The client then attempts to retrieve the data from the SP over Bitswap, Graphsync, or HTTP. Note that currently, clients can only get full-piece retrievals using HTTP.
 
-When attempting this retrieval deal using Graphsync, payment channels are used to pay FIL to the storage provider. These payment channels watch the data flow and pay the storage provider after each chunk of data is retrieved successfully.
-
 #### Finalize the retrieval
 
 Once the client has received the last chunk of data, the connection is closed.
