@@ -8,7 +8,7 @@ description: >-
 
 ## Slack
 
-Like many other distributed teams, the Filecoin developer relations, lead by the [FIL Builders](https://fil.builders/) team, works mostly on Slack and Discord. You can join the Filecoin Project Slack for free by going to [Filecoin Project Slack](https://filecoinproject.slack.com/ssb/redirect) and the Discord by going to [https://discord.com/invite/filecoin](https://discord.com/invite/filecoin).
+Like many other distributed teams, the Filecoin developer relations, led by the [FIL Builders](https://fil.builders/) team, works mostly on Slack and Discord. You can access the Filecoin Project Slack at [Filecoin Project Slack](https://filecoinproject.slack.com/ssb/redirect) and join the Discord at [https://discord.com/invite/filecoin](https://discord.com/invite/filecoin).
 
 The following Slack channels are most relevant for Filecoin builders:
 

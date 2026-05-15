@@ -13,7 +13,7 @@ The available storage onramps are:
 * [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
 * [Akave](https://www.akave.ai/) is "revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces."  
 * [Storacha](https://storacha.network/) is an open hot storage network scales IPFS and Filecoin. Upload any data and Storacha will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There Storacha [docs](https://docs.storacha.network/) detail the JavaScript and Go API libraries, and there is a no-code web uploader available as well.
-* [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantaties of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
+* [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
 * [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
 * [Ramo](https://use.ramo.computer/) provides Filecoin-based, S3-compatible storage for data on Filecoin.
 

@@ -14,7 +14,7 @@ The [Filecoin YouTube channel](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUy
 
 Explore the latest news, events and other happenings on the official [Filecoin Blog](https://filecoin.io/blog/).
 
-### Newsletter
+### Updates
 
 Follow the [Filecoin blog](https://filecoin.io/blog/) and [Filecoin events](https://fil.org/events) for official project updates.
 
