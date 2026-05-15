@@ -15,6 +15,6 @@ The available storage onramps are:
 * [Storacha](https://storacha.network/) is an open hot storage network scales IPFS and Filecoin. Upload any data and Storacha will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There Storacha [docs](https://docs.storacha.network/) detail the JavaScript and Go API libraries, and there is a no-code web uploader available as well.
 * [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
 * [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
-* [Ramo](https://www.ramo.io/) is "a network coordinating people, hardware and capital to build a more open and resilient internet infrastructure for everyone."  
+* [Ramo](https://use.ramo.computer/) provides Filecoin-based, S3-compatible storage for data on Filecoin.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-storage-works/storage-onramps)

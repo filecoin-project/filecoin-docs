@@ -67,8 +67,8 @@ The steps a client should follow to acquire DataCap are as follows:
 
 1. Create a [Filecoin wallet](../../networks-and-tools/assets/wallets.md).
 2. Choose an allocator from the [full list of active allocators](https://github.com/filecoin-project/Allocator-registry) or the [active list of allocators](https://allocator.tech/) who have verified public datasets.
-3. Check that you satisfy the requirements of the allocator. In the case of uploading open source datasets with FIDL as the allocator, the client will need to demonstrate to FIDL that they can (1) satisfy a third-party Know Your Customer (KYC) identity check, (2) provide the details of storage provider (entity, storage location) where the data is intended to be stored, and (3) demonstrate proof that the dataset can be actively retrieved. You can learn more about [FIDL’s application flow](https://www.fidl.tech/apply).
-4. Submit an application for DataCap from an allocator. You can submit a request to FIDL via their [GitHub application form](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose) or [Google Form](https://www.fidl.tech/apply).
+3. Check that you satisfy the requirements of the allocator. In the case of uploading open source datasets with FIDL as the allocator, the client will need to demonstrate to FIDL that they can (1) satisfy a third-party Know Your Customer (KYC) identity check, (2) provide the details of storage provider (entity, storage location) where the data is intended to be stored, and (3) demonstrate proof that the dataset can be actively retrieved. You can learn more about FIDL’s requirements and application process in their [GitHub application form](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose).
+4. Submit an application for DataCap from an allocator. You can submit a request to FIDL via their [GitHub application form](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose).
 5. Use the DataCap in a storage deal.
 
 ### Steps to Acquire Testnet DataCap as a Builder

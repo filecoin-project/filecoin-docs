@@ -103,7 +103,7 @@ Take availability and suitable redundancy into consideration when choosing your 
 
 One of the enriching elements of the Filecoin ecosystem lies in its vibrant community. Within this dynamic network, you will find individuals eager to share their experiences and offer solutions to the challenges they have encountered. Whether it is navigating the intricacies of storage provider operations or overcoming hurdles on the blockchain, this supportive community stands ready to help. Embrace the spirit of collaboration and tap into this remarkable network.
 
-[Filecoin Slack ->](https://filecoin.io/slack)
+[Filecoin Slack ->](https://filecoinproject.slack.com/ssb/redirect)
 
 ## Understand ROI and collateral <a href="#understand-roi-and-collateral" id="understand-roi-and-collateral"></a>
 

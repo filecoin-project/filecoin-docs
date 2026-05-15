@@ -40,7 +40,7 @@ If you have never contributed to an open-source project before, or just need a r
 
 #### Community
 
-If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums](forums-and-FIPs.md) to say hello, meet others who share your goals, and connect with other members of the community. You should also consider joining [Filecoin Slack](https://filecoin.io/slack).
+If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums](forums-and-FIPs.md) to say hello, meet others who share your goals, and connect with other members of the community. You should also consider joining [Filecoin Slack](https://filecoinproject.slack.com/ssb/redirect).
 
 #### Build Applications
 
@@ -49,7 +49,7 @@ Filecoin is designed for you to integrate into your own applications and service
 Get started by looking at the list of projects currently built on Filecoin. Build anything you think is missing! If you're unsure about something, you can join the chat and discussion forums to get help or feedback on your specific problem/idea. You can also join a Filecoin Hackathon, apply for a Filecoin Developer Grant or apply to the Filecoin accelerator program to support the development of your project.
 
 * [Filecoin Hackathons](https://hackathons.filecoin.io/)
-* [Filecoin Developer Grants](https://filecoin.io/grants/)
+* [Filecoin Developer Grants](https://www.fil.org/grants)
 * [Filecoin Accelerator Program](https://ecosystem-wg.notion.site/Protocol-Labs-Accelerator-Program-d45d8792a7d544eca9beb7d3e3d3b05d)
 
 #### Protocol Design
