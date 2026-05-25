@@ -117,7 +117,7 @@ lotus --version
 ```
 
 {% hint style="success" %}
-You should see something like: `lotus version 1.35.1+calibnet+git.baaf9888c`
+You should see something like: `lotus version 1.36.0+calibnet+git.154c0c3a4`
 {% endhint %}
 
 ***
@@ -278,17 +278,13 @@ echo 'net.core.rmem_default=2097152' | sudo tee -a /etc/sysctl.conf
 
 ### 🔬 Build Curio
 
-Clone the repository and switch to the PDP branch:
+Clone the repository and switch to the latest branch:
 
 ```sh
 git clone https://github.com/filecoin-project/curio.git
 cd curio
-git checkout pdpv0
+git checkout $(curl -s https://api.github.com/repos/filecoin-project/curio/releases/latest | jq -r .tag_name)
 ```
-
-{% hint style="warning" %}
-The `pdpv0` branch is used for PDP development and may change, be renamed, or become outdated as PDP matures. 
-{% endhint %}
 
 {% hint style="info" %}
 Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.
