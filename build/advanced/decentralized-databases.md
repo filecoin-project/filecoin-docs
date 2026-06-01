@@ -17,7 +17,9 @@ To learn more about what is tableland and how to use it, you can visit [https://
 Ensure that you install and import the necessary dependencies in your projects.
 
 - [Tableland](https://tableland.xyz/)
-- [Openzeppelin](https://docs.openzeppelin.com/contracts/5.x/)
+- [`@tableland/evm`](https://www.npmjs.com/package/@tableland/evm)
+- [`@tableland/sdk`](https://www.npmjs.com/package/@tableland/sdk)
+- [OpenZeppelin Contracts](https://docs.openzeppelin.com/contracts/5.x/)
 
 #### **Instructions**
 
@@ -39,30 +41,31 @@ As an example, let's design the deal aggregator table as follows. You can add mo
 
 1. **Create aggregator table**
 
-To track all deal aggregation requests submitted to the smart contract, we need to create a database table. You can add the following code to create an aggregator table within the `constructor()` function of the aggregator contract. This way, when the aggregator contract is deployed, an aggregator table will be created to store the metadata of aggregation requests.
+To track all deal aggregation requests submitted to the smart contract, we need to create a database table. The following Solidity excerpt assumes the contract imports `SQLHelpers`, `TablelandDeployments`, and OpenZeppelin's `Strings` utility. It creates an aggregator table in the contract constructor so the deployed contract owns the table.
 
 ```solidity
-uint256 private tableId;
-string private constant _TABLE_PREFIX = "aggregator_table"; // Custom table prefix
+import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
+import {SQLHelpers} from "@tableland/evm/contracts/utils/SQLHelpers.sol";
+import {TablelandDeployments} from "@tableland/evm/contracts/utils/TablelandDeployments.sol";
 
-// Constructor that creates a table, sets the controller, and inserts data
+uint256 private _tableId;
+string private constant _TABLE_PREFIX = "aggregator_table";
+
 constructor() {
-        // Create a table
-        tableId = TablelandDeployments.get().create(
-            address(this),
-            SQLHelpers.toCreateFromSchema(
-                "id int, cid string, deal_id string, miner_id string, status string",
-                _TABLE_PREFIX
-            )
-        );
-    }C
+    _tableId = TablelandDeployments.get().create(
+        address(this),
+        SQLHelpers.toCreateFromSchema(
+            "id integer primary key, cid text, deal_id integer, miner_id integer, status text",
+            _TABLE_PREFIX
+        )
+    );
+}
 ```
 
 2. We will create an `insert` function within the smart contract to add a record whenever an aggregation request is made.
 
 ```solidity
-function insertRecord(uint256 id, string memory val, string memory status) external {
-
+function insertRecord(uint256 id, string memory cid, string memory status) internal {
     TablelandDeployments.get().mutate(
         address(this), // Table owner, i.e., this contract
         _tableId,
@@ -71,60 +74,76 @@ function insertRecord(uint256 id, string memory val, string memory status) exter
             _tableId,
             "id,cid,status",
             string.concat(
-                Strings.toString(id), // Convert to a string
+                Strings.toString(id),
                 ",",
-                SQLHelpers.quote(val) // Wrap strings in single quotes with the `quote` method
+                SQLHelpers.quote(cid),
+                ",",
+                SQLHelpers.quote(status)
             )
-        ));}
+        )
+    );
+}
 ```
 
 Whenever the `submit` function is called, a record will be inserted into the aggregator table instead of being stored in the blockchain's state.
 
-<pre class="language-solidity"><code class="lang-solidity"><strong>function submit(bytes memory _cid) external returns (uint256) {
-</strong>        // Increment the transaction ID
-        transactionId++;
+```solidity
+function submit(string calldata cid) external returns (uint256) {
+    // Increment the transaction ID
+    transactionId++;
 
-        // Save _cid record to aggregator_table
-        insertRecord(transactionId, _cid, "PROPOSED");
+    // Save the CID record to aggregator_table
+    insertRecord(transactionId, cid, "PROPOSED");
 
-        // Emit the event
-        emit SubmitAggregatorRequest(transactionId, _cid);
-        return transactionId;
-    }
-</code></pre>
+    // Emit the event
+    emit SubmitAggregatorRequest(transactionId, cid);
+    return transactionId;
+}
+```
 
 3. we create an `updateRecord` function to modify an aggregator record once the `complete` function is called after the storage deal has been made on the Filecoin network.
 
 ```solidity
-// Update aggregation record in the table
-    function updateRecord(uint256 id, uint256 memory dealId, uint256 memory minerId, string memory status) external {
-        // Set the values to update
-        string memory setters = string.concat("deal_id=", Strings.toString(dealId),
-                                              "miner_id=", Strings.toString(minerId),
-                                              "status=", SQLHelpers.quote(status));
-        // Specify filters for which row to update
-        string memory filters = string.concat("id=",Strings.toString(id));
-        // Mutate a row at `id` with deal_id, miner_id, status
-        TablelandDeployments.get().mutate(
-            address(this),
-            _tableId,
-            SQLHelpers.toUpdate(_TABLE_PREFIX, _tableId, setters, filters)
-        );
-    }
+function updateRecord(
+    uint256 id,
+    uint256 dealId,
+    uint256 minerId,
+    string memory status
+) internal {
+    string memory setters = string.concat(
+        "deal_id=",
+        Strings.toString(dealId),
+        ",miner_id=",
+        Strings.toString(minerId),
+        ",status=",
+        SQLHelpers.quote(status)
+    );
+    string memory filters = string.concat("id=", Strings.toString(id));
+
+    TablelandDeployments.get().mutate(
+        address(this),
+        _tableId,
+        SQLHelpers.toUpdate(_TABLE_PREFIX, _tableId, setters, filters)
+    );
+}
 ```
 
-After SP finishes publishing the storage deal on-chain to include an aggregation request, a callback function `complete` will be called to notify the contract that a CID is packed into a storage deal. Then we can call `updateRecord` to update the details for this CID record in the Tableland database.
+After SP finishes publishing the storage deal on-chain to include an aggregation request, a callback function `complete` will be called to notify the contract that a CID is packed into a storage deal. Then we can call `updateRecord` to update the details for this CID record in the Tableland database. This is an excerpt from the broader aggregator contract; keep your existing proof verification and return-data logic around the table update.
 
 ```solidity
 function complete(
-        uint256 _id,
-        uint64 _dealId,
-        uint64 _minerId,
-        InclusionProof memory _proof,
-        InclusionVerifierData memory _verifierData
-    ) external returns (InclusionAuxData memory) {
-// other code
-	updateTable(_id, _dealId, _minerId, "FINISHED");
+    uint256 id,
+    uint64 dealId,
+    uint64 minerId,
+    InclusionProof memory proof,
+    InclusionVerifierData memory verifierData
+) external returns (InclusionAuxData memory) {
+    // Verify proof and update the storage-deal state.
+    InclusionAuxData memory auxData;
+    updateRecord(id, dealId, minerId, "FINISHED");
+
+    // Return the verifier data required by the full aggregator contract.
+    return auxData;
 }
 ```
 
@@ -132,15 +151,19 @@ function complete(
 
 By using the Tableland SDK, you can query the aggregation status of all data stored with the aggregator using SQL statements. For instance, you can retrieve all records associated with a specific CID by executing a SELECT statement.
 
-```jsx
+```typescript
+import { Database } from "@tableland/sdk";
+
 const db = new Database();
 
 const { results } = await db
-  .prepare(`SELECT * FROM ${tableName} WHERE cid = ?`)
-  .bind(cid);
+  .prepare(`SELECT * FROM ${tableName} WHERE cid = ?1`)
+  .bind(cid)
+  .all();
+
 console.log(results);
 ```
 
-To learn how to write different select statements using Tableland SDK, you can refer to [here](https://docs.tableland.xyz/sdk/database/prepared-statements).
+To learn how to write different select statements using Tableland SDK, see the [Tableland prepared statements guide](https://docs.tableland.xyz/sdk/database/prepared-statements). For current Solidity helper signatures, use the [Tableland SQL helpers library](https://docs.tableland.xyz/smart-contracts/sql-helpers).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build/advanced/decentralized-databases)

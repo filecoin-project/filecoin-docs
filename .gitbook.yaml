@@ -510,7 +510,7 @@ redirects:
   smart-contracts/fundamentals/roadmap: core-concepts/filecoin-virtual-machine/README.md
   smart-contracts/fundamentals/support: build/developing-contracts/support.md
   smart-contracts/fundamentals/the-fvm: core-concepts/filecoin-virtual-machine/README.md
-  smart-contracts/programmatic-storage: build/developing-contracts/best-practices.md
+  smart-contracts/programmatic-storage: reference/general/legacy-content.md
   smart-contracts/programmatic-storage/ccdb: reference/general/legacy-content.md
   smart-contracts/programmatic-storage/direct-deal-making: reference/general/legacy-content.md
   smart-contracts/programmatic-storage/raas: reference/general/legacy-content.md
