@@ -55,7 +55,7 @@ The following guide walks you through the process of contract verification using
    - Enter your contract's deployment address
    - Select the appropriate license type (optional)
    - Choose verification method: `Solidity (Single file)`
-   - Enter the compiler version used for deployment
+   - Select the compiler version used for deployment
    - Paste the source code from your `<contract-name>_flattened.sol` file
    - Configure the `Optimization enabled` checkbox to match your deployment settings
    - Enter optimizer runs, constructor arguments, and any advanced compiler settings if the form prompts for them

@@ -50,7 +50,7 @@ PRIVATE_KEY=your_private_key_here
 CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
 ```
 
-Load the variables in your current shell before running deployment commands:
+6. Load the variables in your current shell before running deployment commands:
 
 ```shell
 source .env
@@ -60,7 +60,7 @@ source .env
 Never commit `.env` files or real private keys. Anyone with access to the private key can spend funds from the account.
 {% endhint %}
 
-6. Deploy the kit’s `DealClient` example contract to Calibration:
+7. Deploy the kit’s `DealClient` example contract to Calibration:
 
 ```shell
 forge create \
@@ -72,7 +72,7 @@ forge create \
 
 The deployment output is environment-dependent. Record the `Deployed to` address from Foundry’s output; you will need it for contract interactions and verification.
 
-7. You can now interact with your contract using the contract address given by Foundry.
+8. You can now interact with your contract using the contract address given by Foundry.
 
 Done! For more information, see the [Foundry book](https://book.getfoundry.sh/).
 
