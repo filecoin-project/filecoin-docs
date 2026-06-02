@@ -47,7 +47,7 @@ We will require three simple steps to implement Gelato Relay. Here, we are going
 
 #### Step 1: Inherit Context Contract
 
-Depending on the method, you must inherit different contracts as they will provide other methods. In this case, we will have to inherit the `ERC2771Context`. The `ERC2771Context` provide us with the methods `_msgSender()` and `_msgData()` that will allow us to recover the original user sending the transaction.
+Depending on the method, you must inherit different contracts as they will provide other methods. In this case, we will have to inherit the `ERC2771Context`. The `ERC2771Context` provides us with the methods `_msgSender()` and `_msgData()` that will allow us to recover the original user sending the transaction.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -124,7 +124,7 @@ const request: CallWithERC2771Request = {
 };
 
 // Without a specific API key, the relay request will fail!
-// Go to https://app.gelato.cloud to get an API key with Gas Tank funding.
+// Go to https://app.gelato.cloud to get an API key with 1Balance funding.
 // Send a relay request using Gelato Relay!
 const relayResponse = await relay.sponsoredCallERC2771(request, provider, apiKey);
 ```

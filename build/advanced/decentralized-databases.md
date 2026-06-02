@@ -101,7 +101,7 @@ function submit(string calldata cid) external returns (uint256) {
 }
 ```
 
-3. we create an `updateRecord` function to modify an aggregator record once the `complete` function is called after the storage deal has been made on the Filecoin network.
+3. We create an `updateRecord` function to modify an aggregator record once the `complete` function is called after the storage deal has been made on the Filecoin network.
 
 ```solidity
 function updateRecord(
@@ -155,6 +155,8 @@ By using the Tableland SDK, you can query the aggregation status of all data sto
 import { Database } from "@tableland/sdk";
 
 const db = new Database();
+const tableName = "aggregator_314159_123";
+const cid = "bafy...";
 
 const { results } = await db
   .prepare(`SELECT * FROM ${tableName} WHERE cid = ?1`)
