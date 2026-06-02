@@ -40,7 +40,6 @@ Once installed, you can call built-in actors in the library after importing them
 pragma solidity ^0.8.18;
 
 import { MarketAPI } from "filecoin-solidity-api/contracts/v0.8/MarketAPI.sol";
-import { CommonTypes } from "filecoin-solidity-api/contracts/v0.8/types/CommonTypes.sol";
 import { MarketTypes } from "filecoin-solidity-api/contracts/v0.8/types/MarketTypes.sol";
 import { Errors } from "filecoin-solidity-api/contracts/v0.8/utils/Errors.sol";
 

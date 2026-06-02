@@ -44,7 +44,6 @@ cd ~/lotus-devnet
 3. Create the send request with `lotus send`, supplying a funded local wallet as the `--from` address, the receiving address, and the amount of FIL you want to send:
 
 ```shell
-./lotus wallet list
 ./lotus send --from <FUNDED_LOCAL_ADDRESS> <TO_ADDRESS> <VALUE>
 ```
 
