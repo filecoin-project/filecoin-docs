@@ -12,7 +12,7 @@ Best practices for transactions are described below.
 
 ### Consistently generating transaction receipts
 
-Since receipts in Filecoin are generated in the next tipset, depending on when a transaction is submitted to the mempool, the receipt may take between 30 and 90 seconds to return. To consistently return transaction receipts when deploying a transaction or awaiting confirmation, change the default transaction receipt timeout (60000 ms or 1 minute for many toolchains) to 90 seconds or more. An example that sets `timeout` to `180000` (3 minutes) for an Open Zeppelin upgradeable proxy is as follows:
+Since receipts in Filecoin are generated in the next tipset, depending on when a transaction is submitted to the mempool, the receipt may take between 30 and 90 seconds to return. To consistently return transaction receipts when deploying a transaction or awaiting confirmation, change the default transaction receipt timeout (60000 ms or 1 minute for many toolchains) to 90 seconds or more. In a Hardhat script that already defines `upgrades`, `contract`, and `preparedArguments`, the relevant option for an OpenZeppelin upgradeable proxy is:
 
 ```js
 const deployment = await upgrades.deployProxy(contract, preparedArguments, {
@@ -52,7 +52,7 @@ Developers should take the time to thoroughly read through the following summary
 * **All contracts** must [accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically, and use `CBOR (0x51)` in outputs](best-practices.md#accept-both-dag\_cbor-0x71-and-cbor-0x51-in-inputs-and-treat-them-identically).
 * If a contract uses the FRC42 hash of `GranularityExported`, it must be updated and redeployed.
 * If a contract sends funds to actors that are non-native, Ethereum, or EVM smart contract accounts, it [must use the `call_actor` precompile](best-practices.md#contracts-sending-funds-to-specific-actors).
-* If a contract is interacting with built-in actors, it must upgrade to the latest version of Filecoin Solidity library, currently `v0.8`.
+* If a contract is interacting with built-in actors, it must use the maintained `filecoin-solidity-api` package and the current `contracts/v0.8` imports.
 
 ### All contracts
 
@@ -82,7 +82,7 @@ Any contracts sending funds to actors that are not native accounts (`f1` or `f3`
 
 ### Contracts interacting with built-in actors
 
-All contracts interacting with built-in actors must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](https://github.com/filecoin-project/filecoin-solidity/tree/master/contracts/v0.8). The IPLD codec used in the `handle_filecoin_method` solidity entrypoint and the `call_actor` should now be `CBOR (0x51)`, not `DAG_CBOR (0x71)`, as previously used. The underlying encoding (i.e. the payload bytes) are the same, but the codec numbers are now different. `DAG_CBOR` support will be re-enabled in the future but the usage of the codec implies additional runtime guarantees that have not yet been implemented.
+All contracts interacting with built-in actors must use the maintained [`filecoin-solidity-api` package and its `contracts/v0.8` imports](https://github.com/filecoin-project/filecoin-solidity/tree/master/contracts/v0.8). The IPLD codec used in the `handle_filecoin_method` solidity entrypoint and the `call_actor` should now be `CBOR (0x51)`, not `DAG_CBOR (0x71)`, as previously used. The underlying encoding (i.e. the payload bytes) are the same, but the codec numbers are now different. `DAG_CBOR` support will be re-enabled in the future but the usage of the codec implies additional runtime guarantees that have not yet been implemented.
 
 ## Contract Verification
 

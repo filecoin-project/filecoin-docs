@@ -10,7 +10,7 @@ The Filecoin Solidity library allows developers to:
 
 * Interact with Filecoin built-in actors.
 * Simplify the interaction with the Filecoin storage market, miner actors, the verified registry for Filecoin Plus automation, and more.
-* Filecoin-specific data types such as `FilAddress`, `FilActorId`, `CIDs`, storage deals, and more.
+* Use Filecoin-specific data types such as `FilAddress`, `FilActorId`, `Cid`, storage deals, and more.
 * OpenZeppelin-like utilities specific to Filecoin.
 * CBOR serialization and deserialization for parameters and return data.
 
@@ -35,17 +35,20 @@ Filecoin.sol calls Filecoin built-in actors from contracts deployed to Filecoin 
 Once installed, you can call built-in actors in the library after importing them into your smart contract.
 
 ```solidity
-// contracts/MyNFT.sol
+// contracts/MyFilecoinContract.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
 import { MarketAPI } from "filecoin-solidity-api/contracts/v0.8/MarketAPI.sol";
-import { CommonTypes } from "filecoin-solidity-api/contracts/v0.8/types/CommonTypes.sol";
 import { MarketTypes } from "filecoin-solidity-api/contracts/v0.8/types/MarketTypes.sol";
 import { Errors } from "filecoin-solidity-api/contracts/v0.8/utils/Errors.sol";
 
 contract MyFilecoinContract {
-    ...
+    function getDealTerm(uint64 dealID) public view returns (MarketTypes.GetDealTermReturn memory) {
+        (int256 exitCode, MarketTypes.GetDealTermReturn memory result) = MarketAPI.getDealTerm(dealID);
+        Errors.revertOnError(exitCode);
+        return result;
+    }
 }
 ```
 
@@ -60,17 +63,30 @@ You can find the list of supported built-in actors and methods in the [Filecoin.
 Unlike OpenZeppelin contracts, you do not need to inherit contracts to use their features. With Filecoin.sol you just need to call the methods from those solidity contracts:
 
 ```solidity
-CommonTypes.FilActorId minerID = CommonTypes.FilActorId.wrap(1130);
-(int256 exitCode, MinerTypes.VestingFunds[] memory vestingFunds) = MinerAPI.getVestingFunds(minerID);
-Errors.revertOnError(exitCode);
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+import { MinerAPI } from "filecoin-solidity-api/contracts/v0.8/MinerAPI.sol";
+import { CommonTypes } from "filecoin-solidity-api/contracts/v0.8/types/CommonTypes.sol";
+import { MinerTypes } from "filecoin-solidity-api/contracts/v0.8/types/MinerTypes.sol";
+import { Errors } from "filecoin-solidity-api/contracts/v0.8/utils/Errors.sol";
+
+contract MinerQuery {
+    function getVestingFunds(uint64 minerActorID) public view returns (MinerTypes.VestingFunds[] memory) {
+        CommonTypes.FilActorId minerID = CommonTypes.FilActorId.wrap(minerActorID);
+        (int256 exitCode, MinerTypes.VestingFunds[] memory vestingFunds) = MinerAPI.getVestingFunds(minerID);
+        Errors.revertOnError(exitCode);
+        return vestingFunds;
+    }
+}
 ```
 
-Filecoin.sol also offers several utility libraries to help developers to convert data types for different variables, including FILAddress, BigIntegers, ActorID, and CBOR. You can import those libraries from the `utils` folder:
+Filecoin.sol also offers several utility libraries to help developers convert data types for different variables, including FIL addresses, big integers, actor IDs, and CBOR. Import only the utilities your contract uses. For example:
 
 ```solidity
-import "filecoin-solidity-api/contracts/v0.8/utils/Actor.sol";
-import "filecoin-solidity-api/contracts/v0.8/utils/BigInts.sol";
-import "filecoin-solidity-api/contracts/v0.8/utils/FilAddresses.sol";
+import { Actor } from "filecoin-solidity-api/contracts/v0.8/utils/Actor.sol";
+import { BigInts } from "filecoin-solidity-api/contracts/v0.8/utils/BigInts.sol";
+import { FilAddresses } from "filecoin-solidity-api/contracts/v0.8/utils/FilAddresses.sol";
 ```
 
 ## Example
@@ -117,7 +133,7 @@ Check out these links to learn more about the Filecoin.sol library.
 
 * [Filecoin-Solidity GitHub](https://github.com/filecoin-project/filecoin-solidity)
 * [Built-In Actor APIs](../../reference/built-in-actors/filecoin.sol.md)
-* [FEVM-Hardhat-K](https://github.com/filecoin-project/FEVM-Hardhat-Kit/)
+* [FEVM Hardhat Kit](https://github.com/filecoin-project/fevm-hardhat-kit/)
 
 
 
