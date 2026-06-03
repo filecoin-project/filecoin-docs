@@ -10,16 +10,18 @@ The following guide walks you through the process of contract verification using
 
 ## Prerequisites
 
-- A deployed smart contract on Filecoin
-- Your contract's source code (`.sol` file)
-- [Remix IDE](https://remix.ethereum.org/) for flattening contracts
-- Contract deployment details (address, compiler version, license)
+- A deployed smart contract on Filecoin mainnet or Calibration testnet
+- Your contract source code, either as a flattened `.sol` file or the source files requested by the Filfox form
+- The deployed contract address
+- The Solidity compiler version used for deployment
+- The license, optimization settings, optimizer runs, EVM version, and `viaIR` setting used for deployment
+- Constructor arguments, if the contract was deployed with any and the form prompts for them
 
 ## Step-by-Step Verification Process
 
 ### Step 1: Prepare Your Contract Source Code
 
-1. **Open Remix IDE:**
+1. **Open Remix IDE** if you are preparing a flattened source file for upload:
 
 ![](../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-remix.jpg)
 
@@ -40,15 +42,19 @@ The following guide walks you through the process of contract verification using
    - Contract deployment address
    - Contract license type (if any)
    - Solidity compiler version used for deployment
+   - Optimization settings, optimizer runs, EVM version, and `viaIR` setting
+   - Constructor arguments, if your contract constructor used arguments
 
 ### Step 2: Submit for Verification
 
 6. **Access Filfox verification page:**
-   - Navigate to the [Filfox Contract Verification](https://filfox.info/en/contract) page
+   - For Filecoin mainnet, navigate to the [Filfox Contract Verification](https://filfox.info/en/contract) page. Mainnet uses chain ID `314`.
+   - For Calibration testnet, navigate to the [Calibration Filfox Contract Verification](https://calibration.filfox.info/en/contract) page. Calibration uses chain ID `314159`.
 7. **Fill in contract information:**
    - Enter your contract's deployment address
    - Select the appropriate license type
    - Choose the compiler version used for deployment
+   - Match any prompted compiler and constructor settings to the original deployment
 
 ![](../../.gitbook/assets/smart-contracts-developing-contracts-verify-a-contract-filfox.jpg)
 

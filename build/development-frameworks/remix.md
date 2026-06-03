@@ -50,7 +50,7 @@ Now that we’ve successfully compiled our contract, we need to deploy it somewh
 6. Back in Remix, under the **Account** field, you’ll see that it says something like `0x11F... (5 ether)`. This value is 5 `tFIL`, but Remix doesn’t support the Filecoin network, so it doesn’t understand what `tFIL` is. This isn’t a problem; it’s just a little quirk of using Remix.
 7. Under the **Contract** dropdown, ensure the contract you created is selected.
 8. Click **Deploy**.
-9. MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract. If you’re deploying to mainnet, we advise you to [adjust your gas fees](remix.md#adjusting-your-gas-fees) for a cheaper deployment.
+9. MetaMask will open a window and ask you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract. If you’re deploying to mainnet, we advise you to [adjust your gas fees](remix.md#adjusting-your-gas-fees) for a cheaper deployment.
 10. Back in Remix, a message at the bottom of the screen shows that the creation of your token is pending.
 11. Wait around 90 seconds for the deployment to complete.
 
@@ -66,8 +66,8 @@ Let’s call a method within the deployed contract to mint some tokens.
 
 1. Back in Remix, open the **Deployed Contracts** dropdown, within the **Deploy** sidebar tab.
 2. Expand the `mint` method. You must fill in two fields here: `to` and `amount`.
-3. The `to` field specifies where address you want these initial tokens sent. Open MetaMask, copy your address, and paste it into this field.
-4. This field expects an `attoFil` value. 1 `FIL` is equal to 1,000,000,000,000,000,000 `attoFil`. So if you wanted to mint 100 `FIL`, you would enter `100` followed by 18 zeros: `100000000000000000000`.
+3. The `to` field specifies which address you want these initial tokens sent to. Open MetaMask, copy your address, and paste it into this field.
+4. The `amount` field expects the token’s smallest unit, not a `FIL` amount. The OpenZeppelin ERC-20 template uses 18 decimals by default, so minting `100` whole tokens means entering `100` followed by 18 zeros: `100000000000000000000`.
 5. Click **Transact**.
 6. MetaMask will open a window and ask you to confirm the transaction:
 

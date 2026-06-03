@@ -7,14 +7,15 @@ description: >-
 
 # Foundry
 
-The template repository contains submodules and remappings for ds-test assertions for testing, solmate building blocks for contracts, and forge-std to layer on top of EVM cheat codes to improve UX.
+The [FEVM Foundry Kit](https://github.com/filecoin-project/fevm-foundry-kit) is a Foundry template for Filecoin EVM projects. It includes Solidity examples, Filecoin API examples, Foundry remappings, and verification tooling for Filecoin explorers.
 
 ## Prerequisites
 
 You must have the following installed:
 
 - [Git](https://git-scm.com/)
-- [Yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/) and npm
+- [Foundry](https://getfoundry.sh/)
 
 You should also have an address on the Filecoin Calibration testnet. See the [MetaMask setup page](../../networks-and-tools/assets/metamask-setup.md) for information on how to get an address. You also need test `tFIL` in your wallet.
 
@@ -22,40 +23,56 @@ You should also have an address on the Filecoin Calibration testnet. See the [Me
 
 1. Clone the `filecoin-project/fevm-foundry-kit` repository and move into the `fevm-foundry-kit` directory:
 
-```
-git clone https://github.com/filecoin-project/fevm-foundry-kit/tree/main.git
+```shell
+git clone https://github.com/filecoin-project/fevm-foundry-kit
 cd fevm-foundry-kit
 ```
 
-2. Install the project dependencies with Yarn:
+2. Build the contracts and install the project’s npm dependencies:
 
-```
-yarn install
+```shell
+forge build
+npm install
 ```
 
 3. Export your private key from MetaMask. See the [MetaMask documentation](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/) to find out how to export your private key.
 
-4. Create your env file by running
+4. Create your env file by running:
 
-```
+```shell
 cp .env.example .env
 ```
 
-5. In your newly created`.env` replace `PRIVATE_KEY` with the one gathered from MetaMask. Also, do the same for the `CALIBRATIONNET_RPC_URL`.:
+5. In your newly created `.env`, replace `PRIVATE_KEY` with the private key exported from MetaMask. Keep the Calibration RPC URL or replace it with your preferred Filecoin Calibration RPC endpoint:
 
 ```bash
-PRIVATE_KEY=eed8e9d727a647f7302bab440d405ea87d36726e7d9f233ab3ff88036cfbce9c
+PRIVATE_KEY=your_private_key_here
 CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
 ```
 
-6. Inside the `src` folder in a contract called `SimpleCoin.sol`. Deploy this contract using Foundry:
+6. Load the variables in your current shell before running deployment commands:
 
 ```shell
-forge build
-forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY src/SimpleCoin.sol:SimpleCoin --broadcast
+source .env
 ```
 
-7. You can now interact with your contract using the contract address given by Foundry.
+{% hint style="info" %}
+Never commit `.env` files or real private keys. Anyone with access to the private key can spend funds from the account.
+{% endhint %}
+
+7. Deploy the kit’s `DealClient` example contract to Calibration:
+
+```shell
+forge create \
+  --rpc-url "$CALIBRATIONNET_RPC_URL" \
+  --private-key "$PRIVATE_KEY" \
+  --broadcast \
+  src/basic-deal-client/DealClient.sol:DealClient
+```
+
+The deployment output is environment-dependent. Record the `Deployed to` address from Foundry’s output; you will need it for contract interactions and verification.
+
+8. You can now interact with your contract using the contract address given by Foundry.
 
 Done! For more information, see the [Foundry book](https://book.getfoundry.sh/).
 
