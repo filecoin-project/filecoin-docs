@@ -42,11 +42,11 @@ Make sure you have the following tools and setup ready:
 - Node.js
 - Create a Goldsky account and generate a Goldsky API key
 - Goldsky CLI installed
-  ```
+  ```shell
   curl https://goldsky.com | sh
   ```
 - Authenticate Goldsky CLI with your API key
-  ```
+  ```shell
   goldsky login
   ```
 - wFIl Contract information
@@ -57,9 +57,11 @@ Make sure you have the following tools and setup ready:
 Goldsky’s Deploy Wizard simplifies the creation of subgraphs using a CLI-guided flow.
 
 Run:
-```
+
+```shell
 goldsky subgraph init
 ```
+
 Follow the prompts from the Goldsky subgraph configuration wizard:
 - *Subgraph name*: wfil-subgraph
 - *Subgraph version*: 1.0.0
@@ -79,7 +81,8 @@ Indexing all the data for your smart contract will take time after the subgraph 
 You can use the provided GraphQL endpoint to query the subgraph. 
 
 For example:
-```
+
+```graphql
 {
   transfers(
     where: {from: "0xf49d33f54ce41354dcd7e698aa54256781a6dd30"}
@@ -95,7 +98,9 @@ For example:
   }
 }
 ```
+
 Use the Goldsky Playground or integrate it into your app to consume indexed data.
+
 ## The Graph
 
 [The Graph](https://thegraph.com) is a decentralized protocol for indexing blockchain data. It enables developers to build and publish custom open APIs, known as subgraphs, that applications can query to retrieve blockchain data using GraphQL in a time-efficient manner.

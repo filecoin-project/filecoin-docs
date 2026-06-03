@@ -13,7 +13,7 @@ Meta transactions are a type of transaction that allows users to interact with t
 
 ## Available relayers
 
-There are several relayers available that support meta transactions on the Filecoin network. Builders can integrate these relayers into their applications today.
+Relayer support and contract addresses change over time. Before deploying a Filecoin Mainnet or Calibration integration, verify that your target network is listed in the relayer's current supported-network documentation and use the current trusted forwarder or relay contract address for that network.
 
 ### [Gelato](https://gelato.network/)
 
@@ -47,49 +47,69 @@ We will require three simple steps to implement Gelato Relay. Here, we are going
 
 #### Step 1: Inherit Context Contract
 
-Depending on the method, you must inherit different contracts as they will provide other methods. In this case, we will have to inherit the `ERC2771Context`. The `ERC2771Context` provide us with the methods `_msgSender()` and `_msgData()` that will allow us to recover the original user sending the transaction.
+Depending on the method, you must inherit different contracts as they will provide other methods. In this case, we will have to inherit the `ERC2771Context`. The `ERC2771Context` provides us with the methods `_msgSender()` and `_msgData()` that will allow us to recover the original user sending the transaction.
 
 ```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
+
 import {
     ERC2771Context
 } from "@gelatonetwork/relay-context/contracts/vendor/ERC2771Context.sol";
 
 contract CounterERC2771 is ERC2771Context {
+    mapping(address => uint256) public contextCounter;
+
+    event IncrementContextCounter(address indexed account, uint256 value);
 
     // ERC2771Context: setting the immutable trustedForwarder variable
     constructor(address trustedForwarder) ERC2771Context(trustedForwarder) {}
 
     function incrementContext() external {
+        address sender = _msgSender();
+        uint256 nextValue = contextCounter[sender] + 1;
 
         // Incrementing the counter mapped to the _msgSender!
-        contextCounter[_msgSender()]++;
+        contextCounter[sender] = nextValue;
 
         // Emitting an event for testing purposes
-        emit IncrementContextCounter(_msgSender());
+        emit IncrementContextCounter(sender, nextValue);
     }
 }
 ```
 
 #### Step 2: Import the relay SDK
 
-In your frontend/backend, you would need to import and instantiate the relay class.
+In your frontend or backend, import and instantiate the relay class. For ERC-2771 calls, deploy your contract with the trusted forwarder for the relay method and network you are targeting. Check Gelato's [supported networks](https://docs.gelato.cloud/relay/additional-resources/supported-networks) page before deploying.
 
-```
-import { GelatoRelay, SponsoredCallERC2771Request } from "@gelatonetwork/relay-sdk";
-const relay = new GelatoRelay(API_KEY);
+```typescript
+import {
+  GelatoRelay,
+  type CallWithERC2771Request,
+} from "@gelatonetwork/relay-sdk";
+
+const relay = new GelatoRelay();
 ```
 
 #### Step 3: Send the payload to Gelato
 
-This is an example using Gelato's CounterERC2771.sol, which is deployed on these networks.
+This is a TypeScript skeleton for sending a `sponsoredCallERC2771` request. Replace the counter address, trusted forwarder, and API key with values for your deployed contract and supported target network.
 
-```
+```typescript
+import { ethers } from "ethers";
+
 // Set up on-chain variables, such as target address
 const counter = "0x00172f67db60E5fA346e599cdE675f0ca213b47b";
-const abi = ["function incrementContext()"];
+const abi = ["function incrementContext() external"];
+const apiKey = process.env.NEXT_PUBLIC_GELATO_RELAY_API_KEY;
+
+if (!apiKey) {
+  throw new Error("Missing Gelato Relay API key");
+}
+
 const provider = new ethers.BrowserProvider(window.ethereum);
-const signer = provider.getSigner();
-const user = signer.getAddress();
+const signer = await provider.getSigner();
+const user = await signer.getAddress();
 
 // Generate the target payload
 const contract = new ethers.Contract(counter, abi, signer);
@@ -98,21 +118,21 @@ const { data } = await contract.incrementContext.populateTransaction();
 // Populate a relay request
 const request: CallWithERC2771Request = {
   chainId: (await provider.getNetwork()).chainId,
-  target: counter;
-  data: data;
-  user: user;
+  target: counter,
+  data,
+  user,
 };
 
 // Without a specific API key, the relay request will fail!
-// Go to https://relay.gelato.network to get a testnet API key with 1Balance.
+// Go to https://app.gelato.cloud to get an API key with 1Balance funding.
 // Send a relay request using Gelato Relay!
 const relayResponse = await relay.sponsoredCallERC2771(request, provider, apiKey);
 ```
 
 #### Further Gelato resources
 
-* [Gelato Relay Docs](https://docs.gelato.network/web3-services/relay)
-* [What is 1Balance?](https://docs.gelato.network/web3-services/1balance)
+* [Gelato Relay Docs](https://docs.gelato.cloud/relay/erc2771-recommended/sponsoredcall-erc2771)
+* [Gelato Supported Networks](https://docs.gelato.cloud/relay/additional-resources/supported-networks)
 * [YouTube - ERC2771](https://www.youtube.com/watch?v=P6LlzSzta1Q)
 * [YouTube - non-ERC2771](https://youtu.be/shqLPDerunY)
 * [GitHub Repository](https://github.com/gelatodigital/how-tos-5-6-7-8-relay-intro-methods)

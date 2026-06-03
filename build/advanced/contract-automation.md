@@ -50,38 +50,54 @@ For security reasons, during task creation, you will see an address that acts as
 
 ## Quick Start
 
-### Writing & Deploying Typescript Functions
+### Writing and deploying TypeScript functions
 
-1. Clone the hardhat-template repo
+1. Clone Gelato's maintained Web3 Functions template:
 
-```shell
-git clone web3-functions-hardhat-template
+```bash
+git clone https://github.com/gelatodigital/web3-functions-template.git
 ```
 
-2. CD into the folder and install
+2. Change into the template directory and install dependencies:
 
-```shell
-cd web3-functions-hardhat-template && yarn install
+```bash
+cd web3-functions-template && yarn install
 ```
 
-3. Update the `index.ts` in one of the examples
+3. Update `index.ts` in one of the examples.
+
+The following TypeScript block is a skeleton only. It shows the shape of a Gelato Web3 Function that checks whether an oracle should be updated, then returns encoded call data. Replace the oracle ABI, input arguments, and off-chain data lookup with your application's logic. For maintained end-to-end examples, use the [Gelato Web3 Functions template](https://github.com/gelatodigital/web3-functions-template) and the [Gelato TypeScript Functions guide](https://docs.gelato.cloud/web3-functions/how-to-guides/write-typescript-functions/getting-started).
 
 ```typescript
+import { Web3Function, Web3FunctionContext } from "@gelatonetwork/web3-functions-sdk";
+import { Contract } from "@ethersproject/contracts";
+
+const ORACLE_ABI = [
+  "function lastUpdated() external view returns (uint256)",
+  "function updatePrice(uint256)",
+];
+
 Web3Function.onRun(async (context: Web3FunctionContext) => {
   const { userArgs, multiChainProvider } = context;
-
   const provider = multiChainProvider.default();
-  // Retrieve Last oracle update time
+
   const oracleAddress =
     (userArgs.oracle as string) ?? "0x71B9B0F6C999CBbB0FeF9c92B80D54e4973214da";
+  const oracle = new Contract(oracleAddress, ORACLE_ABI, provider);
 
-  // YOUR CUSTOM LOGIC
-  .....
+  const lastUpdated = Number(await oracle.lastUpdated());
+  const latestBlock = await provider.getBlock("latest");
+  const nextUpdateTime = lastUpdated + 300;
 
-  // Return if nothing has to be pushed on-chain
-    return { canExec: false, message: `Coingecko call failed` };
+  if (!latestBlock || latestBlock.timestamp < nextUpdateTime) {
+    return { canExec: false, message: "Time not elapsed" };
+  }
 
-  // Return if tx has to be pushed on-chain
+  const price = Number(userArgs.price ?? 0);
+  if (!Number.isFinite(price) || price <= 0) {
+    return { canExec: false, message: "No valid price supplied" };
+  }
+
   return {
     canExec: true,
     callData: [
@@ -94,31 +110,27 @@ Web3Function.onRun(async (context: Web3FunctionContext) => {
 });
 ```
 
-4. Deploy the Web3 Function to IPFS and create the Task
+4. Test and deploy the Web3 Function to IPFS:
 
-```shell
+```bash
+npx w3f test web3-functions/YOUR-FUNCTION/index.ts --logs
 npx w3f deploy web3-functions/YOUR-FUNCTION/index.ts
 ```
 
-Result:
+Example output:
 
-```shell
-$ npx w3f deploy web3-functions/YOUR-FUNCTION/index.ts
- ✓ Web3Function deployed to ipfs.
- ✓ CID: QmYMysfAhYYYrdhVytSTiE9phuoT49kMByktXSbVp1aRPx
-
-To create a task that runs your Web3 Function every minute, visit:
-> https://beta.app.gelato.network/new-task?cid=QmYMysfAhYYYrdhVytSTiE9phuoT49kMByktXSbVp1aRPx
-✨  Done in 3.56s.
+```text
+✓ Web3Function deployed to IPFS.
+✓ CID: <ipfs-cid>
 ```
 
-Finally, go to the [Gelato App](https://app.gelato.network), create a new task, decide on the trigger, and input the CID.
+Finally, go to the [Gelato App](https://app.gelato.cloud), create a new task, decide on the trigger, and input the CID.
 
-For a detailed guide on creating and deploying Web3 Functions, including setting up your development environment, triggers, and security configurations, refer to the full developer guide [here](https://docs.gelato.network/web3-services/web3-functions/quick-start/writing-typescript-functions).
+For a detailed guide on creating and deploying Web3 Functions, including setting up your development environment, triggers, and security configurations, see the [Gelato Web3 Functions docs](https://docs.gelato.cloud/web3-functions/how-to-guides/write-typescript-functions/getting-started).
 
 #### **Further Resources**
 
-* [Gelato Web3 Functions Docs](https://docs.gelato.network/web3-services/web3-functions)
-* [What is 1Balance?](https://docs.gelato.network/web3-services/1balance)
-* [Github Repository](https://github.com/gelatodigital/how-tos-3-w3f-triggers)
+* [Gelato Web3 Functions Docs](https://docs.gelato.cloud/web3-functions/how-to-guides/write-typescript-functions/getting-started)
+* [Gelato Web3 Functions template](https://github.com/gelatodigital/web3-functions-template)
+* [Gelato Web3 Functions examples](https://github.com/gelatodigital/how-tos-3-w3f-triggers)
 * [YouTube - How to write Event driven Web3 Functions](https://www.youtube.com/watch?v=7UpqGsANsBQ\&ab_channel=JavierDonoso)
