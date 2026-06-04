@@ -21,6 +21,7 @@ In order to check the current benchmarked performance of each of the below endpo
 | [Chainup Cloud](https://cloud.chainup.com/) | `https://filecoin.chainup.net/rpc/v1`                    | `wss://filecoin.chainup.net/rpc/v1`              | [Chainup Cloud Docs - Filecoin](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis) |                                                           |
 | [NOWNodes](https://nownodes.io/)            | `https://fil.nownodes.io` (Free for 1 month with signup) |                                                  | [NOWNodes - Docs](https://nownodes.gitbook.io/documentation)                        |                                                           |
 | [Lava](https://www.lavanet.xyz/)            | `https://filecoin.lava.build`                            |                                                  | [Lava - Docs](https://docs.lavanet.xyz/iprpc#filecoin)                        | All Filecoin and Eth JSON RPC methods including MPoolPush                  |
+| [dRPC NodeCloud](https://drpc.org/nodecloud-multichain-rpc-management)     | `https://filecoin.drpc.org`                        | `wss://filecoin.drpc.org`      | [Filecoin page - Docs](https://drpc.org/chainlist/filecoin-mainnet-rpc)                                                     | All Filecoin and Eth JSON RPC methods including MPoolPush |
 
 
 ## Additional Notes:
