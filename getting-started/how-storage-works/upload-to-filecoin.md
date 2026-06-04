@@ -18,9 +18,9 @@ Developers interact with FOC through the [Synapse SDK](https://docs.filecoin.clo
 **Best for**: developers who want verifiable, programmable storage with minimal infrastructure.
 {% endhint %}
 
-## fil.one
+## Fil One
 
-[fil.one](https://fil.one/) is S3-compatible object storage backed by Filecoin. Point any S3 SDK or tool at its endpoint and store data with flat per-terabyte pricing, no egress fees, and cryptographic integrity proofs from the Filecoin network. It suits teams that want a drop-in S3 replacement without managing deals or running infrastructure. See the [fil.one documentation](https://docs.fil.one/) for the endpoint, SDKs, and API reference.
+[Fil One](https://fil.one/) is S3-compatible object storage backed by Filecoin. Point any S3 SDK or tool at its endpoint and store data with flat per-terabyte pricing, no egress fees, and cryptographic integrity proofs from the Filecoin network. It suits teams that want a drop-in S3 replacement without managing deals or running infrastructure. See the [Fil One documentation](https://docs.fil.one/) for the endpoint, SDKs, and API reference.
 
 {% hint style="success" %}
 **Best for**: teams that want a familiar S3 workflow with Filecoin-backed durability.
@@ -30,7 +30,7 @@ Developers interact with FOC through the [Synapse SDK](https://docs.filecoin.clo
 
 [Storage onramps](storage-onramps.md) are third-party services that handle Filecoin deal-making behind the scenes. You send data through a web UI, API, or SDK, and the onramp manages provider selection, deal negotiation, and data transfer. Services like [Pinata](https://pinata.cloud/) (IPFS pinning), [Lighthouse](https://lighthouse.storage/), and [Akave](https://www.akave.ai/) each offer different features. See the [storage onramps page](storage-onramps.md) for the full list with links to their documentation.
 
-{% hint style="info" %}
+{% hint style="success" %}
 **Best for**: teams who prefer a managed service and do not need direct on-chain control.
 {% endhint %}
 
@@ -44,9 +44,9 @@ Developers interact with FOC through the [Synapse SDK](https://docs.filecoin.clo
 
 ## Direct deal-making
 
-For full control over provider selection, pricing, and deal terms, you can negotiate storage deals directly. [Curio](https://curiostorage.org/) is the modern storage-provider stack for running this infrastructure — see the [Curio documentation](https://docs.curiostorage.org/) — with [Boost](https://boost.filecoin.io/) as the established deal engine and the [Lotus client](../../storage-providers/nodes/implementations/lotus.md) providing CLI tools for proposing and managing deals. This path requires running infrastructure and understanding the Filecoin deal lifecycle.
+For full control over provider selection, pricing, and deal terms, you can negotiate storage deals directly. [Curio](https://curiostorage.org/) is the modern storage-provider stack for running this infrastructure, see the [Curio documentation](https://docs.curiostorage.org/), with [Boost](https://boost.filecoin.io/) as the established deal engine and the [Lotus client](../../storage-providers/nodes/implementations/lotus.md) providing CLI tools for proposing and managing deals. This path requires running infrastructure and understanding the Filecoin deal lifecycle.
 
-{% hint style="info" %}
+{% hint style="success" %}
 **Best for**: storage providers, large-scale data onboarders, and users with custom deal requirements.
 {% endhint %}
 

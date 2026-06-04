@@ -12,7 +12,7 @@ Examples of maintained storage onramps include:
 
 * [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md) is a programmable, on-chain storage platform with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
 * [Filecoin Pin](../../build/cookbook/filecoin-pin/getting-started.md) is a CLI and API path for pinning IPFS-compatible content to Filecoin-backed storage with Filecoin Pay.
-* [fil.one](https://fil.one/) is S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees. Point any S3 SDK or tool at its endpoint to store data with cryptographic integrity proofs. See the [fil.one docs](https://docs.fil.one/).
+* [Fil One](https://fil.one/) is S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees. Point any S3 SDK or tool at its endpoint to store data with cryptographic integrity proofs. See the [Fil One docs](https://docs.fil.one/).
 * [Lighthouse](https://lighthouse.storage/) offers permanent, decentralized storage powered by Filecoin.
 * [Akave](https://www.akave.ai/) provides a decentralized data-lake and object-storage layer backed by Filecoin.
 * [Pinata](https://pinata.cloud/) is an IPFS pinning service for storing and serving files, media, and app data over IPFS. See the [Pinata docs](https://docs.pinata.cloud/).

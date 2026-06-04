@@ -63,7 +63,7 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 
 * [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md) - programmable, on-chain storage with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
 * [Filecoin Pin](../../build/cookbook/filecoin-pin/getting-started.md) - a CLI and API path for pinning IPFS-compatible content to Filecoin-backed storage with Filecoin Pay.
-* [fil.one](https://fil.one/) - S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees. Point any S3 SDK or tool at its endpoint; see the [fil.one docs](https://docs.fil.one/).
+* [Fil One](https://fil.one/) - S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees. Point any S3 SDK or tool at its endpoint; see the [Fil One docs](https://docs.fil.one/).
 * [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
 * [Pinata](https://pinata.cloud/) is an IPFS pinning service for storing and serving files, media, and app data over IPFS. See the [Pinata docs](https://docs.pinata.cloud/).
 * [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
