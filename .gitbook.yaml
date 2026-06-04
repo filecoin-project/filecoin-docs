@@ -178,6 +178,7 @@ redirects:
   builder-cookbook/dapps/cross-chain-bridges: build/advanced/cross-chain-bridges.md
   builder-cookbook/dapps/decentralized-database: build/advanced/decentralized-databases.md
   builder-cookbook/dapps/oracles: build/advanced/oracles.md
+  builder-cookbook/data-storage: build/cookbook/README.md
   builder-cookbook/data-storage/privacy-and-access-control: build/advanced/privacy-and-access-control.md
   builder-cookbook/data-storage/retrieve-data: build/cookbook/retrieve-data.md
   builder-cookbook/data-storage/store-data: build/cookbook/store-data.md
@@ -473,6 +474,7 @@ redirects:
   smart-contracts/developing-contracts: build/developing-contracts/best-practices.md
   smart-contracts/developing-contracts/best-practices: build/developing-contracts/best-practices.md
   smart-contracts/developing-contracts/call-built-in-actors: build/developing-contracts/call-built-in-actors.md
+  smart-contracts/developing-contracts/client-contract-tutorial: reference/general/legacy-content.md
   smart-contracts/developing-contracts/erc-20-quickstart: build/developing-contracts/erc-20-quickstart.md
   smart-contracts/developing-contracts/filecoin.sol: build/developing-contracts/filecoin.sol.md
   smart-contracts/developing-contracts/foundry: build/development-frameworks/foundry.md
@@ -486,10 +488,12 @@ redirects:
   smart-contracts/developing-contracts/verify-a-contract/programmatic: build/verification/README.md
   smart-contracts/developing-contracts/verify-a-contract/programmatic/foundry: build/verification/foundry.md
   smart-contracts/developing-contracts/verify-a-contract/programmatic/hardhat: build/verification/hardhat.md
+  smart-contracts/developing-contracts/verify-a-contract/programmatic/programmatic: build/verification/README.md
   smart-contracts/developing-contracts/verify-a-contract/verify-a-contract: build/verification/README.md
   smart-contracts/developing-contracts/verify-a-contract/web-interface: build/verification/README.md
   smart-contracts/developing-contracts/verify-a-contract/web-interface/blockscout: build/verification/blockscout.md
   smart-contracts/developing-contracts/verify-a-contract/web-interface/filfox: build/verification/filfox.md
+  smart-contracts/developing-contracts/verify-a-contract/web-interface/web-interface: build/verification/README.md
   smart-contracts/development-frameworks: build/development-frameworks/README.md
   smart-contracts/development-frameworks/foundry: build/development-frameworks/foundry.md
   smart-contracts/development-frameworks/hardhat: build/development-frameworks/hardhat.md
@@ -514,6 +518,7 @@ redirects:
   smart-contracts/fundamentals/support: build/developing-contracts/support.md
   smart-contracts/fundamentals/the-fvm: core-concepts/filecoin-virtual-machine/README.md
   smart-contracts/programmatic-storage: reference/general/legacy-content.md
+  smart-contracts/programmatic-storage/aggregated-deal-making: reference/general/legacy-content.md
   smart-contracts/programmatic-storage/ccdb: reference/general/legacy-content.md
   smart-contracts/programmatic-storage/direct-deal-making: reference/general/legacy-content.md
   smart-contracts/programmatic-storage/raas: reference/general/legacy-content.md
