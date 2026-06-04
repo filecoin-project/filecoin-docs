@@ -685,7 +685,7 @@ Get more from the [faucet](https://www.alchemy.com/faucets/base-sepolia) if need
 ```bash
 curl -s "https://ipfs.io/ipfs/<CID>/github-agent-card.json" | jq .
 curl -s "https://gateway.pinata.cloud/ipfs/<CID>/github-agent-card.json" | jq .
-curl -s "https://cloudflare-ipfs.com/ipfs/<CID>/github-agent-card.json" | jq .
+curl -s "https://dweb.link/ipfs/<CID>/github-agent-card.json" | jq .
 ```
 
 ### Issue: PDP proofs not showing

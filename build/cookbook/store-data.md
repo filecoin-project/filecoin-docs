@@ -18,8 +18,8 @@ Use the official resources below for implementation details.
 Use these resources to prepare CAR artifacts and storage inputs:
 
 * [Lighthouse documentation](https://docs.lighthouse.storage/)
-* [IPFS CAR tooling (`ipfs-car`)](https://github.com/web3-storage/ipfs-car)
-* [IPLD CAR specification and libraries](https://github.com/ipld/js-car)
+* [go-car command-line tooling](https://github.com/ipld/go-car)
+* [IPLD CAR specification and JavaScript libraries](https://github.com/ipld/js-car)
 * [IPFS Desktop / Kubo docs](https://docs.ipfs.tech/)
 
 Recommended outputs before proposing storage workflows:
@@ -41,6 +41,7 @@ Use the FOC stack for programmatic, verifiable storage at scale:
 For smaller datasets and managed ingestion paths:
 
 * [Storage onramps overview](../../getting-started/how-storage-works/storage-onramps.md)
+* [Filecoin Pin getting started](filecoin-pin/getting-started.md)
 * [Lighthouse documentation](https://docs.lighthouse.storage/)
 
 ### <mark style="color:blue;">Monitor storage deal status from a smart contract</mark>

@@ -55,7 +55,7 @@ On **Calibration testnet** (the demo website), data has no persistence guarantee
 
 A Data Set groups your uploads together. Each upload becomes a "piece" within the Data Set. Multiple files you upload share the same payment rail.
 
-Check your Data Set with `filecoin-pin data-set <id>`.
+Check your Data Set with `filecoin-pin data-set show <id>`.
 
 ***
 
@@ -64,7 +64,7 @@ Check your Data Set with `filecoin-pin data-set <id>`.
 Three methods:
 
 1. **IPFS Gateways:** Use public gateways with your root CID: `https://gateway.example.com/ipfs/<root-cid>`
-2. **Direct from Storage Provider:** Get the direct download URL from `filecoin-pin data-set <id>`
+2. **Direct from Storage Provider:** Get the direct download URL from `filecoin-pin data-set show <id>`
 3. **IPFS Tools:** Use Kubo, Helia, IPFS Desktop with your root CID.
 
 ***
@@ -85,7 +85,7 @@ Both are linked cryptographically on-chain.
 
 Two ways to verify:
 
-1. **CLI:** Run `filecoin-pin data-set <id>` to see on-chain verification. Check proof status and piece details.
+1. **CLI:** Run `filecoin-pin data-set show <id>` to see on-chain verification. Check proof status and piece details.
 2. **PDP Explorer:** Visit `https://pdp.vxb.ai/calibration/dataset/{datasetID}` to view proofs in your browser.
 
 {% hint style="info" %}

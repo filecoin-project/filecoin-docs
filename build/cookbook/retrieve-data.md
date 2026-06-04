@@ -8,82 +8,49 @@ description: >-
 
 ### <mark style="color:blue;">Retrieve data using retrieval clients</mark>
 
-To retrieve data stored on the Filecoin network, the basic process involves making retrieval requests to Service Providers (SPs) who initially stored the data, using either the Content ID (CID) or the storage deal ID.
+To retrieve data stored on the Filecoin network, the basic process involves making retrieval requests to storage providers or IPFS peers using the root Content ID (CID) for the data.
 
-A programmatic option is to utilize Filecoin retrieval clients, which handle the intricate retrieval process behind the scenes. By simply providing a Content ID (CID), retrieval clients can efficiently return your data either via the command-line interface (CLI) or through the programmable method.
+Filecoin retrieval clients handle provider discovery and transport selection behind the scenes. Provide the root CID, and the client returns the data through a command-line interface or a library integration.
 
 #### **Ingredients**
 
-With a given CID, you can use any of the following retrieval clients to retrieve content.
+With a given CID, you can use the following maintained retrieval tooling:
 
-* [Lassie](https://github.com/filecoin-project/lassie): optimizes for most efficient available retrieval protocols.
-  * [go-car](https://github.com/ipld/go-car): a content addressable archive utility.
+* [Lassie](https://github.com/filecoin-project/lassie): retrieves IPFS and Filecoin content over the best available protocols.
+* [go-car](https://github.com/ipld/go-car): reads, lists, and extracts content-addressed archive (CAR) files.
 
 #### **Instructions**
 
 **Retrieving content with Lassie**
 
-Lassie is designed to fetch content in the content-addressed archive (CAR) form. In most cases, you will require additional tooling, such as the go-car library, to work with CAR files effectively.
+Install the current Lassie and go-car command-line tools. Make sure [Go](https://go.dev/doc/install) is installed and that your Go binary directory is on your `PATH`, or download the latest binaries from the [Lassie releases](https://github.com/filecoin-project/lassie/releases/latest) and [go-car releases](https://github.com/ipld/go-car/releases/latest):
 
-The Lassie command line interface (CLI) provides the simplest method for retrieving content from the Filecoin/IPFS network. By using the `lassie fetch` command and passing the CID as an argument, you can easily retrieve the desired content.
-
-<pre class="language-jsx"><code class="lang-jsx"><strong>lassie fetch -o - &#x3C;CID> | car extract
-</strong></code></pre>
-
-For example,
-
-```
-lassie fetch -p bafybeic56z3yccnla3cutmvqsn5zy3g24muupcsjtoyp3pu5pm5amurjx4 | car extract
+```sh
+go install github.com/filecoin-project/lassie/cmd/lassie@latest
+go install github.com/ipld/go-car/cmd/car@latest
 ```
 
-Lassie can also serve as a go library within your Golang application when programmatically retrieving content from the network. To utilize Lassie in your code, you need to install the dependency and import it into your program following the instructions [here](https://github.com/filecoin-project/lassie?tab=readme-ov-file#golang-library).
+Lassie fetches content in CAR form. Stream the CAR to go-car when you want to extract the UnixFS files immediately:
 
-The following example demonstrates how to use the Lassie library to fetch a CID.
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-
-	"github.com/filecoin-project/lassie/pkg/lassie"
-	"github.com/filecoin-project/lassie/pkg/storage"
-	"github.com/filecoin-project/lassie/pkg/types"
-	"github.com/ipfs/go-cid"
-	trustlessutils "github.com/ipld/go-trustless-utils"
-)
-
-// main creates a default lassie instance and fetches a CID
-func main() {
-	ctx := context.Background()
-
-	// Create a default lassie instance
-	lassie, err := lassie.NewLassie(ctx)
-	if err != nil {
-		panic(err)
-	}
-
-	// Prepare the fetch
-	rootCid := cid.MustParse("bafybeic56z3yccnla3cutmvqsn5zy3g24muupcsjtoyp3pu5pm5amurjx4")       // The CID to fetch
-	store := storage.NewDeferredStorageCar(os.TempDir(), rootCid)                                 // The place to put the CAR file
-	request, err := types.NewRequestForPath(store, rootCid, "", trustlessutils.DagScopeAll, nil)  // The fetch request
-	if err != nil {
-		panic(err)
-	}
-
-	// Fetch the CID
-	stats, err := lassie.Fetch(ctx, request)
-	if err != nil {
-		panic(err)
-	}
-
-	// Print the stats
-	fmt.Printf("Fetched %d blocks in %d bytes\n", stats.Blocks, stats.Size)
-}
-
+```sh
+lassie fetch -o - <CID> | car extract -
 ```
+
+To save the CAR for later inspection or extraction:
+
+```sh
+lassie fetch -p -o <CID>.car <CID>
+car ls -f <CID>.car
+car extract -f <CID>.car
+```
+
+For example:
+
+```sh
+lassie fetch -o - bafybeic56z3yccnla3cutmvqsn5zy3g24muupcsjtoyp3pu5pm5amurjx4 | car extract -
+```
+
+For library integrations, use the current [Lassie Go library documentation](https://github.com/filecoin-project/lassie?tab=readme-ov-file#golang-library) instead of copying an example from this reference page.
 
 For quick retrieval of existing datasets with the methods above, check out the [Filecoin Dataset Explorer](https://datasets.filecoin.io/).
 

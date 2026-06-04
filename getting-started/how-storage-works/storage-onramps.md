@@ -8,13 +8,16 @@ description: >-
 
 Developers use web UIs, APIs, or libraries to send data to storage onramps. Behind the scenes, storage onramps receive the data and handle the underlying processes to store it in a reliable way, making deals with Filecoin storage providers.
 
-The available storage onramps are: 
+Examples of maintained storage onramps include:
 
-* [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
-* [Akave](https://www.akave.ai/) is "revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces."  
-* [Storacha](https://storacha.network/) is an open hot storage network scales IPFS and Filecoin. Upload any data and Storacha will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There Storacha [docs](https://docs.storacha.network/) detail the JavaScript and Go API libraries, and there is a no-code web uploader available as well.
-* [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
-* [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
+* [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md) is a programmable, on-chain storage platform with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
+* [Filecoin Pin](../../build/cookbook/filecoin-pin/getting-started.md) is a CLI and API path for pinning IPFS-compatible content to Filecoin-backed storage with Filecoin Pay.
+* [fil.one](https://fil.one/) is S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees. Point any S3 SDK or tool at its endpoint to store data with cryptographic integrity proofs. See the [fil.one docs](https://docs.fil.one/).
+* [Lighthouse](https://lighthouse.storage/) offers permanent, decentralized storage powered by Filecoin.
+* [Akave](https://www.akave.ai/) provides a decentralized data-lake and object-storage layer backed by Filecoin.
+* [Pinata](https://pinata.cloud/) is an IPFS pinning service for storing and serving files, media, and app data over IPFS. See the [Pinata docs](https://docs.pinata.cloud/).
+* [Singularity](https://data-programs.gitbook.io/singularity) facilitates onboarding large quantities of data to the Filecoin network.
+* [CID Gravity](https://www.cidgravity.com/) provides a web UI for uploading files to Filecoin and IPFS.
 * [Ramo](https://use.ramo.computer/) provides Filecoin-based, S3-compatible storage for data on Filecoin.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-storage-works/storage-onramps)

@@ -32,10 +32,12 @@ These storage helpers provide libraries that abstract the Filecoin deal-making p
 
 Available storage helpers include:
 
+- [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md): A programmable, on-chain storage platform with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
+- [Filecoin Pin](../../build/cookbook/filecoin-pin/getting-started.md): A CLI and API path for pinning IPFS-compatible content to Filecoin-backed storage with Filecoin Pay.
+- [fil.one](https://fil.one/): S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees.
 - [lighthouse.storage](https://www.lighthouse.storage/): An SDK for builders, providing tools for storing data from dApps.
-- [web3.storage](https://web3.storage/): A user-friendly client for accessing decentralized protocols like IPFS and UCAN.
 - [Akave](https://www.akave.ai/): A modular L2 solution for decentralized data management, combining Filecoin storage with encryption and easy-to-use interfaces.
-- [Storacha](https://storacha.network/): A decentralized hot storage network for scalable, user-owned data with decentralized permissions, leveraging Filecoin.
+- [Pinata](https://pinata.cloud/): An IPFS pinning service for storing and serving files, media, and app data over IPFS.
 - [Curio](https://curiostorage.org/): A next-gen platform within the Filecoin ecosystem, streamlining storage provider operations.
 - [boost.filecoin.io](https://boost.filecoin.io/): A tool for storage providers to manage data onboarding and retrieval on the Filecoin network.
 

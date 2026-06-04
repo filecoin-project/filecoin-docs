@@ -18,9 +18,17 @@ Developers interact with FOC through the [Synapse SDK](https://docs.filecoin.clo
 **Best for**: developers who want verifiable, programmable storage with minimal infrastructure.
 {% endhint %}
 
+## fil.one
+
+[fil.one](https://fil.one/) is S3-compatible object storage backed by Filecoin. Point any S3 SDK or tool at its endpoint and store data with flat per-terabyte pricing, no egress fees, and cryptographic integrity proofs from the Filecoin network. It suits teams that want a drop-in S3 replacement without managing deals or running infrastructure. See the [fil.one documentation](https://docs.fil.one/) for the endpoint, SDKs, and API reference.
+
+{% hint style="success" %}
+**Best for**: teams that want a familiar S3 workflow with Filecoin-backed durability.
+{% endhint %}
+
 ## Storage onramps
 
-[Storage onramps](storage-onramps.md) are third-party services that handle Filecoin deal-making behind the scenes. You send data through a web UI, API, or SDK, and the onramp manages provider selection, deal negotiation, and data transfer. Services like [Lighthouse](https://lighthouse.storage/), [Storacha](https://storacha.network/), and [Akave](https://www.akave.ai/) each offer different features. See the [storage onramps page](storage-onramps.md) for the full list with links to their documentation.
+[Storage onramps](storage-onramps.md) are third-party services that handle Filecoin deal-making behind the scenes. You send data through a web UI, API, or SDK, and the onramp manages provider selection, deal negotiation, and data transfer. Services like [Pinata](https://pinata.cloud/) (IPFS pinning), [Lighthouse](https://lighthouse.storage/), and [Akave](https://www.akave.ai/) each offer different features. See the [storage onramps page](storage-onramps.md) for the full list with links to their documentation.
 
 {% hint style="info" %}
 **Best for**: teams who prefer a managed service and do not need direct on-chain control.
