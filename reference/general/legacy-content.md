@@ -53,6 +53,10 @@ A tutorial on creating storage deals programmatically via FVM smart contracts us
 * [FVM deal-making kit](https://github.com/filecoin-project/fvm-starter-kit-deal-making)
 * [ETHGlobal walkthrough (YouTube)](https://www.youtube.com/watch?v=27EV3gQGY9k)
 
+### Chain data query
+
+A tutorial on querying Filecoin chain data from a dApp using ethers.js against a public Glif JSON-RPC endpoint. For current chain access, use the [Mainnet RPCs](../../networks-and-tools/networks/mainnet/rpcs.md) or [Calibration RPCs](../../networks-and-tools/networks/calibration/rpcs.md) and the [FEVM indexers](../../build/advanced/fevm-indexers.md) guidance.
+
 ## Projects
 
 ### Saturn

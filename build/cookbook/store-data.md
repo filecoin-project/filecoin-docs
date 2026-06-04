@@ -59,4 +59,4 @@ For incentive design and onboarding programs:
 * [Filecoin Data Onboarding](https://dataonboarding.filecoin.io/)
 * [Filecoin storage market basics](../../getting-started/what-is-filecoin/storage-market.md)
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/build/cookbook/data-storage/store-data)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/build/cookbook/store-data)

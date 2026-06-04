@@ -11,10 +11,10 @@ Filecoin Onchain Cloud (FOC) is a service layer built on the Filecoin Virtual Ma
 
 FOC is composed of four layers that work independently but integrate through on-chain contracts:
 
-* **FWSS (Filecoin Warm Storage Service)** — warm storage optimized for frequent retrieval and verifiable availability. Pricing starts at 2.5 USDFC/TiB/month with a minimum of 2 copies.
+* **FWSS (Filecoin Warm Storage Service)** — warm storage optimized for frequent retrieval and verifiable availability, with a minimum of 2 copies. See the [FOC docs](https://docs.filecoin.cloud/) for current pricing.
 * **PDP (Proof of Data Possession)** — a cryptographic challenge-response protocol that verifies storage providers still hold your data without re-downloading it. See [PDP documentation](../../storage-providers/pdp/README.md).
 * **Filecoin Pay** — the on-chain settlement engine that automates payments to providers through payment rails. Providers are paid only upon verified service delivery.
-* **Filecoin Beam** — the data delivery layer for fast content retrieval (up to 0.014 USDFC/GiB egress).
+* **Filecoin Beam** — the data delivery layer for fast content retrieval, with usage-based egress pricing. See the [FOC docs](https://docs.filecoin.cloud/) for current rates.
 
 ## Developer tools
 

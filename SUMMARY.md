@@ -170,7 +170,6 @@
   * [Glossary](reference/general/glossary.md)
   * [Specifications](reference/general/specifications.md)
   * [Tools](reference/general/tools.md)
-  * [Moved content](reference/general/moved-content.md)
   * [Legacy Content](reference/general/legacy-content.md)
 * [Exchanges](reference/exchanges/README.md)
   * [Exchange integration](reference/exchanges/exchange-integration.md)

@@ -44,7 +44,7 @@ Developers interact with FOC through the [Synapse SDK](https://docs.filecoin.clo
 
 ## Direct deal-making
 
-For full control over provider selection, pricing, and deal terms, you can negotiate storage deals directly. [Boost](https://boost.filecoin.io/) is the standard deal engine for storage providers, and the [Lotus client](../../storage-providers/nodes/implementations/lotus.md) provides CLI tools for proposing and managing deals. This path requires running infrastructure and understanding the Filecoin deal lifecycle.
+For full control over provider selection, pricing, and deal terms, you can negotiate storage deals directly. [Curio](https://curiostorage.org/) is the modern storage-provider stack for running this infrastructure — see the [Curio documentation](https://docs.curiostorage.org/) — with [Boost](https://boost.filecoin.io/) as the established deal engine and the [Lotus client](../../storage-providers/nodes/implementations/lotus.md) providing CLI tools for proposing and managing deals. This path requires running infrastructure and understanding the Filecoin deal lifecycle.
 
 {% hint style="info" %}
 **Best for**: storage providers, large-scale data onboarders, and users with custom deal requirements.
