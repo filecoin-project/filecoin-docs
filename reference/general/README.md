@@ -61,7 +61,7 @@ Tools to check status and details of the network and chain.
 
 Web-based applications that store your data on Filecoin. No command-line or coding experience required.
 
-* [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md) - programmable, on-chain storage with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
+* [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md) - programmable, on-chain storage with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
 * [Filecoin Pin](../../build/cookbook/filecoin-pin/getting-started.md) - a CLI and API path for pinning IPFS-compatible content to Filecoin-backed storage with Filecoin Pay.
 * [Fil One](https://fil.one/) - S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees. Point any S3 SDK or tool at its endpoint; see the [Fil One docs](https://docs.fil.one/).
 * [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."

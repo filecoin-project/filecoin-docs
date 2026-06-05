@@ -10,7 +10,7 @@ Developers use web UIs, APIs, or libraries to send data to storage onramps. Behi
 
 Examples of maintained storage onramps include:
 
-* [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md) is a programmable, on-chain storage platform with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
+* [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md) is a programmable, on-chain storage platform with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
 * [Filecoin Pin](../../build/cookbook/filecoin-pin/getting-started.md) is a CLI and API path for pinning IPFS-compatible content to Filecoin-backed storage with Filecoin Pay.
 * [Fil One](https://fil.one/) is S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees. Point any S3 SDK or tool at its endpoint to store data with cryptographic integrity proofs. See the [Fil One docs](https://docs.fil.one/).
 * [Lighthouse](https://lighthouse.storage/) offers permanent, decentralized storage powered by Filecoin.

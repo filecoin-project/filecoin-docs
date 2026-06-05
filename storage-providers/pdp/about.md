@@ -23,7 +23,7 @@ The protocol works in four steps:
 3. Providers submit Merkle inclusion proofs in response.
 4. The contract verifies the proofs on-chain.
 
-PDP is a core component of [Filecoin Onchain Cloud (FOC)](../../build/advanced/filecoin-onchain-cloud.md). Within FOC, the Filecoin Warm Storage Service (FWSS) uses PDP to verify provider availability and Filecoin Pay uses PDP results to adjust payments automatically.
+PDP is a core component of [Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md). Within FOC, the Filecoin Warm Storage Service (FWSS) uses PDP to verify provider availability and Filecoin Pay uses PDP results to adjust payments automatically.
 
 ## When to use PDP
 
@@ -36,7 +36,7 @@ PDP replaces older programmatic storage patterns built around direct Deal Client
 
 ## Getting started
 
-1. **Learn about FOC** at [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md).
+1. **Learn about FOC** at [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md).
 2. **Run PDP infrastructure** with [Install and run PDP](install-and-run-pdp.md).
 3. **Build with the Synapse SDK** using the [FOC developer guides](https://docs.filecoin.cloud/developer-guides).
 4. **Choose a storage path** via [Upload to Filecoin](../../getting-started/how-storage-works/upload-to-filecoin.md).
