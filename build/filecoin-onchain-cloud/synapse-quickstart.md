@@ -19,6 +19,10 @@ Before you start, make sure you have:
 * FIL for transaction gas. On Calibration testnet, use a [Calibration faucet](../../networks-and-tools/networks/calibration/README.md).
 * USDFC for storage payments. Check the [FOC docs](https://docs.filecoin.cloud/getting-started) for current testnet and mainnet funding guidance.
 
+{% hint style="info" %}
+The Synapse SDK defaults to Calibration testnet when no `chain` is passed. The snippets below use Calibration so the faucet funds above match the example transactions. To use Mainnet, import `mainnet` from `@filoz/synapse-sdk`, add `chain: mainnet` to `Synapse.create`, and fund the same wallet with Mainnet FIL and USDFC.
+{% endhint %}
+
 {% hint style="warning" %}
 Keep private keys out of source code, git history, shared terminals, and frontend bundles. The examples below use placeholders. For browser apps, prefer connecting to the user's wallet instead of handling a raw private key.
 {% endhint %}
@@ -44,7 +48,7 @@ bun add @filoz/synapse-sdk viem
 For a backend or local script, create an account from a private key that you load from your secret manager or local environment:
 
 ```ts
-import { Synapse, mainnet } from "@filoz/synapse-sdk";
+import { Synapse } from "@filoz/synapse-sdk";
 import { privateKeyToAccount } from "viem/accounts";
 
 const account = privateKeyToAccount(process.env.FOC_PRIVATE_KEY as `0x${string}`);
@@ -52,14 +56,13 @@ const account = privateKeyToAccount(process.env.FOC_PRIVATE_KEY as `0x${string}`
 const synapse = Synapse.create({
   account,
   source: "my-app",
-  chain: mainnet,
 });
 ```
 
 For a browser app, connect to the user's wallet:
 
 ```ts
-import { Synapse, mainnet } from "@filoz/synapse-sdk";
+import { Synapse } from "@filoz/synapse-sdk";
 import { custom } from "viem";
 import "viem/window";
 
@@ -71,7 +74,6 @@ const synapse = Synapse.create({
   account: address,
   transport: custom(window.ethereum!),
   source: "my-app",
-  chain: mainnet,
 });
 ```
 
