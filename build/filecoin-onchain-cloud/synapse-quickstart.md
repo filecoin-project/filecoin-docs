@@ -85,13 +85,27 @@ const synapse = Synapse.create({
 });
 ```
 
-To switch either snippet to Mainnet, import `mainnet` and pass it to `Synapse.create`:
+To switch the backend snippet to Mainnet, import `mainnet` and pass it to `Synapse.create`:
 
 ```ts
 import { Synapse, mainnet } from "@filoz/synapse-sdk";
 
 const synapse = Synapse.create({
   account,
+  source: "my-app",
+  chain: mainnet,
+});
+```
+
+For a browser app, keep the wallet transport and add `chain: mainnet` to the same options:
+
+```ts
+import { Synapse, mainnet } from "@filoz/synapse-sdk";
+import { custom } from "viem";
+
+const synapse = Synapse.create({
+  account: address,
+  transport: custom(window.ethereum!),
   source: "my-app",
   chain: mainnet,
 });
