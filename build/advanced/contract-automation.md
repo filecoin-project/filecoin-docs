@@ -133,4 +133,3 @@ For a detailed guide on creating and deploying Web3 Functions, including setting
 * [Gelato Web3 Functions Docs](https://docs.gelato.cloud/web3-functions/how-to-guides/write-typescript-functions/getting-started)
 * [Gelato Web3 Functions template](https://github.com/gelatodigital/web3-functions-template)
 * [Gelato Web3 Functions examples](https://github.com/gelatodigital/how-tos-3-w3f-triggers)
-* [YouTube - How to write Event driven Web3 Functions](https://www.youtube.com/watch?v=7UpqGsANsBQ\&ab_channel=JavierDonoso)

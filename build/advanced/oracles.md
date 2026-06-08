@@ -100,7 +100,6 @@ eOracle's smart contracts are live on the Filecoin Calibration testnet.
 
 #### **Further eOracle resources**
 
-* [eOracle docs](https://eoracle.gitbook.io/eoracle)
 * [eOracle GitHub](https://github.com/eoracle)
 
 
