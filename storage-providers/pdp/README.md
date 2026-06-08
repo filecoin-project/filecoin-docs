@@ -5,7 +5,7 @@ description: >-
 
 # PDP (Proof of Data Possession)
 
-PDP is a challenge-response protocol that lets applications verify storage providers still hold specific data without re-downloading it. It is a core component of [Filecoin Onchain Cloud (FOC)](../../build/advanced/filecoin-onchain-cloud.md), where it powers the verification layer for FWSS and Filecoin Pay.
+PDP is a challenge-response protocol that lets applications verify storage providers still hold specific data without re-downloading it. It is a core component of [Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md), where it powers the verification layer for FWSS and Filecoin Pay.
 
 ## Table of contents
 

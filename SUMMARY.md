@@ -51,6 +51,8 @@
 ## Build on Filecoin
 
 * [Getting started](build/getting-started.md)
+* [Filecoin Onchain Cloud](build/filecoin-onchain-cloud/README.md)
+  * [Quick start with Synapse SDK](build/filecoin-onchain-cloud/synapse-quickstart.md)
 * [Development Frameworks](build/development-frameworks/README.md)
   * [Remix](build/development-frameworks/remix.md)
   * [Hardhat](build/development-frameworks/hardhat.md)
@@ -72,7 +74,6 @@
   * [Verify using Filfox](build/verification/filfox.md)
 
 * [Advanced](build/advanced/README.md)
-  * [Filecoin Onchain Cloud](build/advanced/filecoin-onchain-cloud.md)
   * [Wrapped FIL](build/advanced/wrapped-fil.md)
   * [Oracles](build/advanced/oracles.md)
   * [Multicall](build/advanced/multicall.md)

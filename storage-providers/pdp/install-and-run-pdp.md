@@ -398,7 +398,7 @@ This will launch the Curio web GUI locally.
 
 ## 🧪 Enabling PDP
 
-🧠 This section enables **Proof of Data Possession (PDP)** on your storage provider node using Curio. PDP is the verification layer used by the [Filecoin Warm Storage Service (FWSS)](https://docs.filecoin.cloud/core-concepts/fwss-overview) within [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md). These steps guide you through running a standalone PDP service using Curio and pdptool.
+🧠 This section enables **Proof of Data Possession (PDP)** on your storage provider node using Curio. PDP is the verification layer used by the [Filecoin Warm Storage Service (FWSS)](https://docs.filecoin.cloud/core-concepts/fwss-overview) within [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md). These steps guide you through running a standalone PDP service using Curio and pdptool.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>PDP Support Channels</td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">https://filecoinproject.slack.com/archives/C0717TGU7V2</a></td></tr></tbody></table>
 

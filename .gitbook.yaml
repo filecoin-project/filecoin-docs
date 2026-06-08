@@ -138,6 +138,10 @@ redirects:
   build/filecoin-evm-runtime/filforwarder: core-concepts/filecoin-evm-runtime/filforwarder.md
   build/filecoin-evm-runtime/how-gas-works: core-concepts/filecoin-evm-runtime/how-gas-works.md
   build/filecoin-evm-runtime/precompiles: core-concepts/filecoin-evm-runtime/precompiles.md
+  build/advanced/filecoin-onchain-cloud: build/filecoin-onchain-cloud/README.md
+  build/filecoin-onchain-cloud/getting-started: build/filecoin-onchain-cloud/synapse-quickstart.md
+  build/filecoin-onchain-cloud/quick-start: build/filecoin-onchain-cloud/synapse-quickstart.md
+  build/filecoin-onchain-cloud/synapse: build/filecoin-onchain-cloud/synapse-quickstart.md
   build/core-products/filecoin-backed-pinning-services: core-concepts/filecoin-virtual-machine/README.md
   build/core-products/powergate: reference/general/README.md
   build/core-products/protocol-implementations: storage-providers/nodes/implementations/README.md

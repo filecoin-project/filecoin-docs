@@ -5,11 +5,10 @@ description: >-
 
 # Advanced
 
-This section covers advanced integrations and services available to smart contract developers on Filecoin, including bridges, oracles, databases, and automation tools.
+This section covers advanced integrations and services available to smart contract developers on Filecoin, including bridges, oracles, databases, and automation tools. For programmable storage, retrieval, and payments, start with [Filecoin Onchain Cloud](../filecoin-onchain-cloud/README.md).
 
 ## Table of contents
 
-* [Filecoin Onchain Cloud](filecoin-onchain-cloud.md) — programmable storage, retrieval, and payments through the FOC service layer
 * [Wrapped FIL](wrapped-fil.md) — ERC-20 token that bridges native FIL to other blockchains
 * [Oracles](oracles.md) — connect smart contracts to external data sources
 * [Multicall](multicall.md) — batch multiple contract calls into a single transaction

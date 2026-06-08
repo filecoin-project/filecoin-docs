@@ -32,7 +32,8 @@ Recommended outputs before proposing storage workflows:
 
 Use the FOC stack for programmatic, verifiable storage at scale:
 
-* [Filecoin Onchain Cloud overview](../../build/advanced/filecoin-onchain-cloud.md)
+* [Filecoin Onchain Cloud overview](../filecoin-onchain-cloud/README.md)
+* [Quick start with Synapse SDK](../filecoin-onchain-cloud/synapse-quickstart.md)
 * [FOC developer guides](https://docs.filecoin.cloud/developer-guides)
 * [PDP documentation](../../storage-providers/pdp/README.md)
 

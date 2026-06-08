@@ -10,7 +10,7 @@ Filecoin offers several ways to store data. Each path trades off simplicity agai
 
 ## Filecoin Onchain Cloud
 
-[Filecoin Onchain Cloud (FOC)](../../build/advanced/filecoin-onchain-cloud.md) is a programmable storage platform built on the Filecoin Virtual Machine. It handles the full lifecycle of storing data: the Filecoin Warm Storage Service (FWSS) stores your data with fast retrieval, Proof of Data Possession (PDP) cryptographically verifies providers still hold it, and Filecoin Pay settles payments automatically based on verified storage delivery. All operations are on-chain and auditable.
+[Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md) is a programmable storage platform built on the Filecoin Virtual Machine. It handles the full lifecycle of storing data: the Filecoin Warm Storage Service (FWSS) stores your data with fast retrieval, Proof of Data Possession (PDP) cryptographically verifies providers still hold it, and Filecoin Pay settles payments automatically based on verified storage delivery. All operations are on-chain and auditable.
 
 Developers interact with FOC through the [Synapse SDK](https://docs.filecoin.cloud/developer-guides/synapse), which provides a high-level API for uploads, payments, and provider discovery. See the [FOC documentation](https://docs.filecoin.cloud/) for setup guides and API reference.
 

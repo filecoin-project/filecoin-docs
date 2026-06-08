@@ -32,7 +32,7 @@ These storage helpers provide libraries that abstract the Filecoin deal-making p
 
 Available storage helpers include:
 
-- [Filecoin Onchain Cloud](../../build/advanced/filecoin-onchain-cloud.md): A programmable, on-chain storage platform with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
+- [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md): A programmable, on-chain storage platform with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
 - [Filecoin Pin](../../build/cookbook/filecoin-pin/getting-started.md): A CLI and API path for pinning IPFS-compatible content to Filecoin-backed storage with Filecoin Pay.
 - [fil.one](https://fil.one/): S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees.
 - [lighthouse.storage](https://www.lighthouse.storage/): An SDK for builders, providing tools for storing data from dApps.
