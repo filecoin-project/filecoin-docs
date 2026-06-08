@@ -85,6 +85,18 @@ const synapse = Synapse.create({
 });
 ```
 
+To switch either snippet to Mainnet, import `mainnet` and pass it to `Synapse.create`:
+
+```ts
+import { Synapse, mainnet } from "@filoz/synapse-sdk";
+
+const synapse = Synapse.create({
+  account,
+  source: "my-app",
+  chain: mainnet,
+});
+```
+
 The `source` value identifies your application in FOC metadata, which helps separate data sets created by different apps using the same wallet.
 
 ## Prepare storage payments
