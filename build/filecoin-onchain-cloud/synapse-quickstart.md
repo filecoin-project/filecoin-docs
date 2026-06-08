@@ -53,7 +53,13 @@ For a backend or local script, create an account from a private key that you loa
 import { Synapse } from "@filoz/synapse-sdk";
 import { privateKeyToAccount } from "viem/accounts";
 
-const account = privateKeyToAccount(process.env.FOC_PRIVATE_KEY as `0x${string}`);
+const privateKey = process.env.FOC_PRIVATE_KEY;
+
+if (!privateKey) {
+  throw new Error("FOC_PRIVATE_KEY is required");
+}
+
+const account = privateKeyToAccount(privateKey as `0x${string}`);
 
 const synapse = Synapse.create({
   account,
