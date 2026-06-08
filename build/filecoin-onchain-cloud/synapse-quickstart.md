@@ -103,6 +103,8 @@ The `source` value identifies your application in FOC metadata, which helps sepa
 
 FOC storage uses USDFC for storage payments. The `prepare()` call calculates the amount needed for a planned upload and returns a transaction when funding or approval is required.
 
+FOC uploads must be at least 127 bytes. The sample payload below is padded to satisfy that minimum.
+
 ```ts
 const file = new TextEncoder().encode(
   "Welcome to decentralized storage on Filecoin Onchain Cloud. This example is padded so it satisfies the minimum upload size for this quickstart."
