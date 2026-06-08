@@ -99,6 +99,8 @@ const synapse = Synapse.create({
 
 The `source` value identifies your application in FOC metadata, which helps separate data sets created by different apps using the same wallet.
 
+If your application needs Filecoin Beam retrieval, add `withCDN: true` to the same `Synapse.create` options.
+
 ## Prepare storage payments
 
 FOC storage uses USDFC for storage payments. The `prepare()` call calculates the amount needed for a planned upload and returns a transaction when funding or approval is required.
