@@ -43,6 +43,8 @@ yarn add @filoz/synapse-sdk viem
 bun add @filoz/synapse-sdk viem
 ```
 
+The snippets below use top-level `await`, so they assume an ESM TypeScript or JavaScript project. In a CommonJS project, wrap the calls in an `async` function instead.
+
 ## Initialize Synapse
 
 For a backend or local script, create an account from a private key that you load from your secret manager or local environment:
