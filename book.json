@@ -2,5 +2,5 @@
   "structure": {
     "readme": "WELCOME.md"
   },
-  "plugins": ["filecoin", "-highlight"]
+  "plugins": ["filecoin", "-highlight", "-search", "-lunr"]
 }

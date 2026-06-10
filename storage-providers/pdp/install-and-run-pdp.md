@@ -388,9 +388,9 @@ This will launch the Curio web GUI locally.
 
 ***
 
-## 🧪 Enabling FWSS PDP
+## 🧪 Enabling PDP
 
-🧠 This section enables **FWSS Proof of Data Possession (PDP)** on your SP node using Curio. These steps guide you through running a standalone PDP service using Curio and pdptool.
+🧠 This section enables **Proof of Data Possession (PDP)** on your storage provider node using Curio. PDP is the verification layer used by the [Filecoin Warm Storage Service (FWSS)](https://docs.filecoin.cloud/core-concepts/fwss-overview) within [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md). These steps guide you through running a standalone PDP service using Curio and pdptool.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>PDP Support Channels</td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">https://filecoinproject.slack.com/archives/C0717TGU7V2</a></td></tr></tbody></table>
 
@@ -489,7 +489,7 @@ Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section
 Your 0x wallet address - the delegated Ethereum address derived from your Filecoin delegated wallet private key - will be added to the **Owner Address** section of the Curio PDP page.
 {% endhint %}
 
-Make sure to send a small amount of FIL or tFIL (testnet FIL) to your 0x wallet - we recommend 8 FIL for Mainnet & 5 tFIL for Calibration to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens).
+Make sure to send a small amount of FIL or tFIL (testnet FIL) to your 0x wallet - we recommend 8 FIL for Mainnet & 5 tFIL for Calibration to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](../../build/developing-contracts/get-test-tokens.md).
 
 {% hint style="warning" %}
 **Important:** Secure your private key material. Don't expose or store it in plain text without protection.

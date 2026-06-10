@@ -44,7 +44,7 @@ Both storage providers and data owners (customers) should look at RPO and RTO op
 RTO for data owners is a matter of how fast the storage provider(s) can provide you the data.
 
 * Do your storage providers offer “fast retrieval” of the data through unsealed copies? If not, the unsealing process (typically multiple hours) must be calculated into the RTO.
-* Do your storage providers offer retrieval through [Saturn, (the Web3 CDN)](https://saturn.tech) for ultra-fast retrieval?
+* Do your storage providers offer dedicated retrieval infrastructure or caching for ultra-fast retrieval?
 * Do your storage providers pin your data on IPFS, in addition to storing it on Filecoin?
 
 RPO for data owners is less of a concern, especially once the data is sealed. The Filecoin blockchain will enforce availability and durability of the data being stored, once it is sealed. It is therefore important, as a data owner, to know how fast your storage provider can prove the data on-chain.
@@ -66,6 +66,7 @@ This helps to reduce the amount of manual tasks for a failover drastically. If t
 Having the services on a floating IP allows to assign this IP to another machine and start the service on it.
 
 ## No Penalty for Recovered Faults
-Note that as of [FIP006: No repay debt requirement for DeclareFaultsRecovered](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0006.md), storage providers are no longer required to pay [fee debt](https://docs.filecoin.io/storage-providers/filecoin-economics/slashing) prior to recovering a new storage fault. This enables a storage provider that currently has accrued fee debt to recover faults without being further penalized with additional fees.
+
+Note that as of [FIP006: No repay debt requirement for DeclareFaultsRecovered](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0006.md), storage providers are no longer required to pay [fee debt](../filecoin-economics/slashing.md) prior to recovering a new storage fault. This enables a storage provider that currently has accrued fee debt to recover faults without being further penalized with additional fees.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/infrastructure/backup-and-disaster-recovery)

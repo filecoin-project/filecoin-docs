@@ -1,15 +1,13 @@
 ---
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: >-
+  PDP is a cryptographic protocol that verifies storage providers hold client data. It is a core component of Filecoin Onchain Cloud.
 ---
 
-# PDP
+# PDP (Proof of Data Possession)
+
+PDP is a challenge-response protocol that lets applications verify storage providers still hold specific data without re-downloading it. It is a core component of [Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md), where it powers the verification layer for FWSS and Filecoin Pay.
+
+## Table of contents
+
+* [About PDP](about.md) — how the protocol works, when to use it, and what it replaces
+* [Install and run PDP](install-and-run-pdp.md) — set up a PDP-enabled storage provider with Lotus, YugabyteDB, and Curio

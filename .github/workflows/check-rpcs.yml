@@ -1,0 +1,25 @@
+name: Check RPC endpoints
+
+on:
+  schedule:
+    # Run every Monday at 06:17 UTC
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check-rpcs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check RPC endpoints
+        run: npm run check:rpcs

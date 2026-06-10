@@ -9,7 +9,7 @@ description: >-
 ## About Filecoin
 
 * [**Filecoin Specification**](https://spec.filecoin.io/) - technical specification for Filecoin protocol and its associated subsystems.
-* [**Filecoin Slack**](https://filecoin.io/slack) - announcements and open discussion of Filecoin.
+* [**Filecoin Slack**](https://filecoinproject.slack.com/ssb/redirect) - announcements and open discussion of Filecoin.
 * [**Filecoin Orbit Community Program**](https://www.fil.org/orbit) - the Filecoin Orbit Community Program is an effort of dozens of volunteers around the world to organize meetups and hackathons in their local jurisdictions.
 * [**Filecoin YouTube channel**](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) - various Filecoin workshops, conference talks, and meetups.
 
@@ -32,7 +32,7 @@ description: >-
   * [Mainnet network status](https://filecoin.statuspage.io/) - reports the status and incident of the Filecoin Mainnet.
 * **Calibration**
   * Largest testnet which support 32 GiB and 64 GiB sectors.
-  * See [`#fil-net-calibration-discuss`](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoin.io/slack).
+  * See [`#fil-net-calibration-discuss`](https://filecoinproject.slack.com/archives/C01D42NNLMS) for questions and discussion in [Filecoin Slack](https://filecoinproject.slack.com/ssb/redirect).
 * **Local Devnet**
   * [Run a Local Devnet using Lotus](https://lotus.filecoin.io/lotus/developers/local-network/).
 
@@ -61,14 +61,17 @@ Tools to check status and details of the network and chain.
 
 Web-based applications that store your data on Filecoin. No command-line or coding experience required.
 
+* [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md) - programmable, on-chain storage with verifiable storage proofs (PDP) and automatic payments (Filecoin Pay), accessed through the Synapse SDK.
+* [Filecoin Pin](../../build/cookbook/filecoin-pin/getting-started.md) - a CLI and API path for pinning IPFS-compatible content to Filecoin-backed storage with Filecoin Pay.
+* [Fil One](https://fil.one/) - S3-compatible object storage backed by Filecoin, with flat per-terabyte pricing and no egress fees. Point any S3 SDK or tool at its endpoint; see the [Fil One docs](https://docs.fil.one/).
 * [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
-* [Storacha](https://storacha.network/) is an open hot storage network scales IPFS and Filecoin. Upload any data and Storacha will ensure it ends up on a decentralized set of IPFS and Filecoin storage providers. There Storacha [docs](https://docs.storacha.network/) detail the JavaScript and Go API libraries, and there is a no-code web uploader available as well.
-* [Singularity](https://singularity.storage/) "facilitates onboarding of large quantaties of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
+* [Pinata](https://pinata.cloud/) is an IPFS pinning service for storing and serving files, media, and app data over IPFS. See the [Pinata docs](https://docs.pinata.cloud/).
+* [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
 * [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
-* [Ramo](https://www.ramo.io/) is "a network coordinating people, hardware and capital to build a more open and resilient internet infrastructure for everyone."  
+* [Ramo](https://use.ramo.computer/) provides Filecoin-based, S3-compatible storage for data on Filecoin.
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   * to securely capture, store and verify human history
-  * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/) or the [Filecoin blog interview](https://filecoin.io/blog/starling-framework/)
+  * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/)
 
 ## APIs & Developer tools
 
@@ -97,7 +100,7 @@ Check out the [documentation website](https://filecoin.hugomrdias.dev/) for more
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
 * [Chain.love](https://lotus.filecoin.io/lotus/developers/chain-love/) - A hosted endpoint to Filecoin mainnet and testnet. Note: as of Q1 2023, Infura no longer supports Filecoin.
-  * The GLIF endpoint supports read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using the [Message signing tools](https://docs.filecoin.io/reference/general/overview/#message-signing-tools)).
+  * The GLIF endpoint supports read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using [tools like Filsnap](./tools.md)).
 * [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   * [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 
@@ -119,7 +122,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 * [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [building with the Lotus API](https://lotus.filecoin.io/tutorials/lotus/build-with-lotus-api/).
 * [`go-graphsplit`](https://github.com/filedrive-team/go-graphsplit) - FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
-* [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://docs.filecoin.io/builder-cookbook/data-storage/store-data).
+* [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](../../build/cookbook/store-data.md).
 
 ### Databases using IPFS and Filecoin
 

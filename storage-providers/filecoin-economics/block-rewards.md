@@ -10,7 +10,7 @@ description: >-
 
 WinningPoSt (short for [Winning Proof of SpaceTime](https://spec.filecoin.io/algorithms/pos/post/)) is the cryptographic challenge through which storage providers are rewarded for their contributions to the network. At the beginning of each epoch (1 epoch = 30 seconds), a small number of storage providers are elected by the network to mine new [blocks](../../reference/general/glossary.md#block). Each elected storage provider who successfully creates a block is granted Filecoin tokens by means of a _block reward_. The amount of FIL per block reward varies over time and is listed on various blockchain explorers like [Filfox](https://filfox.info/en).
 
-The election mechanism of the Filecoin network is based on the “storage power” of the storage providers. A minimum of 10 TiB in storage power is required to be eligible for WinningPoSt, and hence to earn block rewards. The more storage power a storage provider has, the more likely they will be elected to mine a block. This concept becomes incredibly advantageous in the context of [Filecoin Plus verified deals](../../basics/how-storage-works/filecoin-plus.md).
+The election mechanism of the Filecoin network is based on the “storage power” of the storage providers. A minimum of 10 TiB in storage power is required to be eligible for WinningPoSt, and hence to earn block rewards. The more storage power a storage provider has, the more likely they will be elected to mine a block. This concept becomes incredibly advantageous in the context of [Filecoin Plus verified deals](../../getting-started/how-storage-works/filecoin-plus.md).
 
 Note that the deadline cron, a built-in actor that processes all miner actors every 60 epochs (every 30 minutes), is responsible for updating the rewards vesting table.  A miner operator wishing to process vesting manually, ahead of the per-deadline cron call, could do so by calling WithdrawFunds with an amount of zero. Such a call would require use of the miner's Owner address.  More details can be found in [FIP005: Remove ineffective reward vesting](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0005.md). 
 
@@ -36,7 +36,7 @@ The below graph shows the evolution of FIL per block reward over time:
 
 There is a positive side to releasing less FIL per block reward too. As Filecoin has a capped maximum token supply of 2 billion FIL, the slower minting rate allows for minting over a longer period. A lower circulating supply also has a positive effect on the price of FIL.
 
-See the [Crypto Economics](../../basics/what-is-filecoin/crypto-economics.md) page of this documentation and the [Filecoin spec](https://spec.filecoin.io/#section-systems.filecoin\_token.minting\_model) for more information.
+See the [Crypto Economics](../../getting-started/what-is-filecoin/crypto-economics.md) page of this documentation and the [Filecoin spec](https://spec.filecoin.io/#section-systems.filecoin\_token.minting\_model) for more information.
 
 
 

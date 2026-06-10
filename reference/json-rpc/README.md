@@ -26,7 +26,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
 1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io/en) node.\\
 
 *   ```shell
-    curl -X POST 'https://api.node.glif.io' \
+    curl -X POST 'https://api.node.glif.io/rpc/v1' \
         -H 'Content-Type: application/json' \
         --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}'
     ```
@@ -42,7 +42,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
     ```
 
 1.  ```shell
-    curl -X POST 'https://api.node.glif.io' \
+    curl -X POST 'https://api.node.glif.io/rpc/v1' \
         -H 'Content-Type: application/json' \
         --data '{"jsonrpc":"2.0","id":1,"method":"Filecoin.ChainHead","params":[]}' \
         | jq

@@ -28,9 +28,9 @@ As a storage provider, you play a crucial role in the ecosystem. Unlike miners i
 * Networking.
 * Relationship building.
 
-Acquiring data copies requires systems and infrastructure capable of ingesting large volumes of data, sometimes up to a PiB. This necessitates significant internet bandwidth, with a minimum of 10 GB. For instance, transferring 1 PiB of data takes approximately 240 hours on a 10 GB connection. However, many large storage providers use up to 100 GB internet connections. \`\`\`
+Acquiring data copies requires systems and infrastructure capable of ingesting large volumes of data, sometimes up to a PiB. This necessitates significant internet bandwidth, with a minimum of 10 Gbps. For instance, transferring 1 PiB of data takes approximately 240 hours on a 10 Gbps connection. However, many large storage providers use up to 100 Gbps internet connections.
 
-Data preparation, which involves separating files and folders in CAR files, is time-consuming and requires expertise. You can delegate this task to a Data Preparer for a fee or assume the role yourself. Tools like [Singularity](https://singularity.storage/) simplify this process.
+Data preparation, which involves separating files and folders in CAR files, is time-consuming and requires expertise. You can delegate this task to a Data Preparer for a fee or assume the role yourself. Tools like [Singularity](https://data-programs.gitbook.io/singularity) simplify this process.
 
 Once the data is sealed and you are proving your copies on-chain (i.e. on the blockchain), you will need to offer retrievals to your customer as well. This obviously requires network bandwidth once more, so you may need to charge for retrievals accordingly.
 

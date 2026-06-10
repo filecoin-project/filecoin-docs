@@ -11,11 +11,11 @@ Built-in actors are how the Filecoin network manages and updates _global state_.
 
 A basic example of how built-in actors are used in Filecoin is the process by which storage providers prove storage and are subsequently rewarded. The process is as follows:
 
-1. The [`StorageMinerActor`](https://docs.filecoin.io/reference/built-in-actors/overview/#storagemineractor) processes proof of storage from a storage provider.
+1. The [`StorageMinerActor`](#storagemineractor) processes proof of storage from a storage provider.
 2. The storage provider is awarded storage power based on whether the proof is valid or not.
-3. The [`StoragePowerActor`](https://docs.filecoin.io/reference/built-in-actors/overview/#storagepoweractor) accounts for the storage power.
+3. The [`StoragePowerActor`](#storagepoweractor) accounts for the storage power.
 4. During block validation, the `StoragePowerActor`’s state, which includes information on storage power allocated to each storage provider, is read.
-5. Using the state information, the consensus mechanism randomly awards blocks to the storage providers with the most power, and the [`RewardActor`](https://docs.filecoin.io/reference/built-in-actors/overview/#rewardactor) sends FIL to storage providers.
+5. Using the state information, the consensus mechanism randomly awards blocks to the storage providers with the most power, and the [`RewardActor`](#rewardactor) sends FIL to storage providers.
 
 ## Blocks
 
@@ -50,17 +50,17 @@ The code that defines an actor in the Filecoin network is separated into differe
 
 The 11 different types of built-in actors are as follows:
 
-* [CronActor](https://docs.filecoin.io/reference/built-in-actors/overview/#cronactor)
-* [InitActor](https://docs.filecoin.io/reference/built-in-actors/overview/#initactor)
-* [AccountActor](https://docs.filecoin.io/reference/built-in-actors/overview/#accountactor)
-* [RewardActor](https://docs.filecoin.io/reference/built-in-actors/overview/#rewardactor)
-* [StorageMarketActor](https://docs.filecoin.io/reference/built-in-actors/overview/#storagemarketactor)
-* [StorageMinerActor](https://docs.filecoin.io/reference/built-in-actors/overview/#storagemineractor)
-* [MultisigActor](https://docs.filecoin.io/reference/built-in-actors/overview/#multisigactor)
-* [PaymentChannelActor](https://docs.filecoin.io/reference/built-in-actors/overview/#paymentchannelactor)
-* [StoragePowerActor](https://docs.filecoin.io/reference/built-in-actors/overview/#storagepoweractor)
-* [VerifiedRegistryActor](https://docs.filecoin.io/reference/built-in-actors/overview/#verifiedregistryactor)
-* [SystemActor](https://docs.filecoin.io/reference/built-in-actors/overview/#systemactor)
+* [CronActor](#cronactor)
+* [InitActor](#initactor)
+* [AccountActor](#accountactor)
+* [RewardActor](#rewardactor)
+* [StorageMarketActor](#storagemarketactor)
+* [StorageMinerActor](#storagemineractor)
+* [MultisigActor](#multisigactor)
+* [PaymentChannelActor](#paymentchannelactor)
+* [StoragePowerActor](#storagepoweractor)
+* [VerifiedRegistryActor](#verifiedregistryactor)
+* [SystemActor](#systemactor)
 
 ### CronActor
 
@@ -118,7 +118,7 @@ For more information on `SystemActor`, see the [source code](https://github.com/
 * _Protocol API_, maintained by [Protocol Labs](https://protocol.ai/), …
 * _Filecoin.solidity_, maintained by [Protocol Labs](https://protocol.ai/), is a set of libraries that allows Solidity smart contracts to seamlessly call built-in actors methods. **Not all built-in actors and methods are supported** - for a complete list, see the [actors and methods supported](filecoin.sol.md).
 
-For information on how invoke and access built-in actors in your smart contracts, see the [developers guide](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/).
+For information on how invoke and access built-in actors in your smart contracts, see the [developers guide](../../build/developing-contracts/call-built-in-actors.md).
 
 
 
