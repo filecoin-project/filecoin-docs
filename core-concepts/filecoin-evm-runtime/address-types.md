@@ -70,7 +70,7 @@ Public key addresses allow devices, like hardware wallets, to derive a valid Fil
 
 Filecoin supports two types of public key addresses:
 
-* [secp256k1 addresses](https://en.bitcoin.it/wiki/Secp256k1) that begin with the protocol indicator as `1`.
+* [secp256k1 addresses](https://en.wikipedia.org/wiki/Secp256k1) that begin with the protocol indicator as `1`.
 * [BLS addresses](https://en.wikipedia.org/wiki/BLS\_digital\_signature) that begin with the protocol indicator as `3`.
 
 `t1iandfn6d...ddboqxbhoeva` - a testnet wallet address generated using secp256k1. `t3vxj34sbdr3...road7cbygq` - a testnet wallet address generated using BLS.

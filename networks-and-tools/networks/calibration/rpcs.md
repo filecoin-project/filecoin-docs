@@ -15,7 +15,7 @@ These endpoints are limited to [read-only Filecoin JSON RPC API calls](../../../
 * HTTPS: `https://rpc.ankr.com/filecoin_testnet`
 * [Ankr documentation](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)
 
-## [Glif](https://api.calibration.node.glif.io)
+## [Glif](https://hosting.glif.io/)
 
 Please note that publicly available hosted endpoints **only guarantee 2000 of the latest blocks.**
 
