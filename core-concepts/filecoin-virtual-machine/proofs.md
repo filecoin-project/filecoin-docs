@@ -33,7 +33,7 @@ In Filecoin, this process is known as _Proof-of-Storage_, and consists of two di
 
 In the Filecoin storage lifecycle process, _Proof-of-Replication (PoRep)_ is used when an SP agrees to store data on behalf of a client and receives a piece of client data. In this process:
 
-1. The data is placed into a [sector](./proofs.md).
+1. The data is placed into a [sector](../../reference/general/glossary.md#sector).
 2. The sector is sealed by the SP.
 3. A unique encoding, which serves as proof that the SP has replicated a copy of the data they agreed to store, is generated (described in [Sealing as proof](#sealing-as-proof)).
 4. The proof is compressed.
@@ -66,16 +66,16 @@ Because this method is concerned with proving that data is being stored in a par
 
 _WinningPoSt_ is used to prove that an SP selected via election has a replica of the data at the specific time that they were asked and is specifically used in Filecoin to determine which SPs may add blocks to the Filecoin blockchain.
 
-At the beginning of each [epoch](./proofs.md), a small number of SPs are elected to mine new blocks using the [Expected Consensus algorithm](https://spec.filecoin.io/algorithms/expected\_consensus/), which guarantees that validators will be chosen based on a probability proportional to their [power](./proofs.md). Each of the SPs selected must submit a WinningPoSt, proof that they have a sealed copy of the data that they have included in their proposed block. The deadline to submit this proof is the end of the current epoch and was intentionally designed to be short, making it impossible for the SP to fabricate the proof. Successful submission grants the SP:
+At the beginning of each [epoch](../../reference/general/glossary.md#epoch), a small number of SPs are elected to mine new blocks using the [Expected Consensus algorithm](https://spec.filecoin.io/algorithms/expected\_consensus/), which guarantees that validators will be chosen based on a probability proportional to their [storage power](../../reference/general/glossary.md#storage-power). Each of the SPs selected must submit a WinningPoSt, proof that they have a sealed copy of the data that they have included in their proposed block. The deadline to submit this proof is the end of the current epoch and was intentionally designed to be short, making it impossible for the SP to fabricate the proof. Successful submission grants the SP:
 
-* The [block reward](./proofs.md) .
+* The [block reward](../../storage-providers/filecoin-economics/block-rewards.md).
 * The opportunity to charge other nodes fees in order to include their messages in the block.
 
 If an SP misses the submission deadline, no penalty is incurred, but the SP misses the opportunity to mine a block and receive the block reward.
 
 ### WindowPoSt
 
-_WindowPoSt_ is used to prove that, for any and all SPs in the network, a copy of the data that was agreed to be stored is being continuously maintained over time and is used to audit SPs continuously. In WindowPoSt, all SPs must demonstrate the availability of all sectors claimed every [proving period](./proofs.md). Sector availability is not proved individually; rather, SPs must prove a whole [partition](./proofs.md) at once, and that sector must be proved by the deadline assigned (a 30-minute interval in the proving period).
+_WindowPoSt_ is used to prove that, for any and all SPs in the network, a copy of the data that was agreed to be stored is being continuously maintained over time and is used to audit SPs continuously. In WindowPoSt, all SPs must demonstrate the availability of all sectors claimed every [proving period](../../storage-providers/filecoin-economics/storage-proving.md#proving-deadlines). Sector availability is not proved individually; rather, SPs must prove a whole [partition](../../storage-providers/filecoin-economics/storage-proving.md#proving-deadlines) at once, and that sector must be proved by the deadline assigned (a 30-minute interval in the proving period).
 
 The more sectors an SP has pledged to store, the more the partitions of sectors that the SP will need to prove per deadline. As this requires that the SP has access to sealed copies of each of the requested sectors, it makes it irrational for the SP to seal data every time they need to provide a WindowPoSt proof, thus ensuring that SPs on the network are continuously maintaining the data agreed to. Additionally, failure to submit WindowPoSt for a sector will result in the SPs’ pledge collateral being forfeited and their storage power being reduced.
 
