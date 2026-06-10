@@ -6,12 +6,6 @@ description: >-
 
 # About PDP
 
-{% hint style="info" %}
-**ALPHA FEATURE**
-
-PDP is in alpha and under active development. For production use with live PDP storage providers, use the [Synapse SDK](https://github.com/FilOzone/synapse-sdk).
-{% endhint %}
-
 ## What PDP is
 
 Proof of Data Possession (PDP) is a cryptographic challenge-response protocol on Filecoin. It lets applications verify that a storage provider still holds specific data without downloading it.
