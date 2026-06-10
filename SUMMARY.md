@@ -52,7 +52,7 @@
 
 * [Getting started](build/getting-started.md)
 * [Filecoin Onchain Cloud](build/filecoin-onchain-cloud/README.md)
-  * [Quick start with Synapse SDK](build/filecoin-onchain-cloud/synapse-quickstart.md)
+  * [Synapse SDK quickstart](build/filecoin-onchain-cloud/synapse-quickstart.md)
 * [Development Frameworks](build/development-frameworks/README.md)
   * [Remix](build/development-frameworks/remix.md)
   * [Hardhat](build/development-frameworks/hardhat.md)

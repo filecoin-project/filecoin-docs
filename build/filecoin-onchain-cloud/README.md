@@ -8,7 +8,7 @@ description: >-
 
 Filecoin Onchain Cloud (FOC) is a programmable storage platform built on the Filecoin Virtual Machine. It combines warm storage, cryptographic storage verification, retrieval, and payments into one developer-facing stack.
 
-Use FOC when you want application-controlled storage on Filecoin without building the storage, payment, provider-selection, and proof flows yourself. The primary integration path is the [Synapse SDK](synapse-quickstart.md).
+Use FOC when you want application-controlled storage on Filecoin without building the storage, payment, provider-selection, and proof flows yourself. The primary integration path is the Synapse SDK; this section points to the maintained [FOC quickstart and Synapse docs](synapse-quickstart.md).
 
 ## When to use FOC
 
@@ -37,7 +37,7 @@ FOC is composed of services that can be used together through the Synapse SDK:
 
 | Path | Use when | Start here |
 | --- | --- | --- |
-| Synapse SDK | You are building a JavaScript or TypeScript application that stores and retrieves data with FOC. | [Quick start with Synapse SDK](synapse-quickstart.md) |
+| Synapse SDK | You are building a JavaScript or TypeScript application that stores and retrieves data with FOC. | [FOC quickstart and Synapse docs](synapse-quickstart.md) |
 | Filecoin Pin | You want a CLI or API-style path for pinning IPFS-compatible content to Filecoin-backed storage. | [Filecoin Pin](../cookbook/filecoin-pin/README.md) |
 | PDP provider | You want to run provider infrastructure that can participate in FOC storage. | [PDP](../../storage-providers/pdp/README.md) |
 | Full FOC docs | You need the complete FOC guides, API reference, architecture, pricing, or contract references. | [docs.filecoin.cloud](https://docs.filecoin.cloud/) |
