@@ -39,11 +39,10 @@ Different retrieval workflows use different tools:
 
 | Workflow | Maintained path |
 | --- | --- |
-| Serving retrievals as a storage provider | Use [Boost](https://boost.filecoin.io/) to serve retrievals. Boost supports Graphsync retrievals by default, and storage providers can run [`booster-http`](https://boost.filecoin.io/http-retrieval) for HTTP retrievals when configured. |
+| Serving PDP retrievals as a storage provider | Use [Curio](https://curiostorage.org/) for PDP retrievals. |
+| Serving PoRep retrievals as a storage provider | Use [Boost](https://boost.filecoin.io/) to serve retrievals. Boost supports Graphsync retrievals by default, and storage providers can run [`booster-http`](https://boost.filecoin.io/http-retrieval) for HTTP retrievals when configured. |
 | Retrieving data as a client | Use [Lassie](https://github.com/filecoin-project/lassie) to fetch content from Filecoin and IPFS using the best available retrieval path. |
-| Retrieving application data through Filecoin Onchain Cloud | Use the [Synapse SDK](https://docs.filecoin.cloud/getting-started/) for Filecoin Onchain Cloud storage and download flows. For app-facing fast delivery, [Filecoin Beam](https://docs.filbeam.com/) is available as a Filecoin Onchain Cloud delivery add-on for supported data. |
-
-Saturn content is preserved as [legacy reference material](../../reference/general/legacy-content.md) and is not the recommended path for new retrieval integrations.
+| Retrieving application data with Filecoin Onchain Cloud | See the [Filecoin Onchain Cloud documentation](https://docs.filecoin.cloud/getting-started/) for maintained Synapse SDK storage and download flows. |
 
 
 
