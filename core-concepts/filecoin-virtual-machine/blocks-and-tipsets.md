@@ -65,4 +65,4 @@ With the Ethereum JSON-RPC, we introduced the concept of the _tipset CID_ for th
 
 
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/build/architecture/concepts/blocks-and-tipsets)&#x20;
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/core-concepts/filecoin-virtual-machine/blocks-and-tipsets)
