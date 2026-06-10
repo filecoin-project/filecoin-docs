@@ -33,6 +33,18 @@ The client then attempts to retrieve the data from the SP over Bitswap, Graphsyn
 
 Once the client has received the last chunk of data, the connection is closed.
 
+### Implementation paths
+
+Different retrieval workflows use different tools:
+
+| Workflow | Maintained path |
+| --- | --- |
+| Serving retrievals as a storage provider | Use [Boost](https://boost.filecoin.io/) to serve retrievals. Boost supports Graphsync retrievals by default, and storage providers can run [`booster-http`](https://boost.filecoin.io/http-retrieval) for HTTP retrievals when configured. |
+| Retrieving data as a client | Use [Lassie](https://github.com/filecoin-project/lassie) to fetch content from Filecoin and IPFS using the best available retrieval path. |
+| Retrieving application data through Filecoin Onchain Cloud | Use the [Synapse SDK](https://docs.filecoin.cloud/getting-started/) for Filecoin Onchain Cloud storage and download flows. For app-facing fast delivery, [Filecoin Beam](https://docs.filbeam.com/) is available as a Filecoin Onchain Cloud delivery add-on for supported data. |
+
+Saturn content is preserved as [legacy reference material](../../reference/general/legacy-content.md) and is not the recommended path for new retrieval integrations.
+
 
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-retrieval-works/serving-retrievals)
