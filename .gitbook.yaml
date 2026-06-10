@@ -83,6 +83,7 @@ redirects:
   basics/how-storage-works/filecoin-and-ipfs: getting-started/how-storage-works/filecoin-and-ipfs.md
   basics/how-storage-works/filecoin-plus: getting-started/how-storage-works/filecoin-plus.md
   basics/how-storage-works/storage-onramps: getting-started/how-storage-works/storage-onramps.md
+  basics/how-storage-works/upload-to-filecoin: getting-started/how-storage-works/upload-to-filecoin.md
   basics/interplanetary-consensus: getting-started/interplanetary-consensus.md
   basics/interplanetary-consensus/ipc-agent: getting-started/interplanetary-consensus.md
   basics/interplanetary-consensus/overview: getting-started/interplanetary-consensus.md
