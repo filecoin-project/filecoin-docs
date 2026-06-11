@@ -42,7 +42,7 @@ Different retrieval workflows use different tools:
 | Serving PDP retrievals as a storage provider | Use [Curio](https://curiostorage.org/) for PDP retrievals. |
 | Serving PoRep retrievals as a storage provider | Use [Boost](https://boost.filecoin.io/) to serve retrievals. Boost supports Graphsync retrievals by default, and storage providers can run [`booster-http`](https://boost.filecoin.io/http-retrieval) for HTTP retrievals when configured. |
 | Retrieving data as a client | Use [Lassie](https://github.com/filecoin-project/lassie) to fetch content from Filecoin and IPFS using the best available retrieval path. |
-| Retrieving application data with Filecoin Onchain Cloud | See the [Filecoin Onchain Cloud documentation](https://docs.filecoin.cloud/getting-started/) for maintained Synapse SDK storage and download flows. |
+| Retrieving application data with Filecoin Onchain Cloud | See the [Filecoin Onchain Cloud retrieval docs](https://docs.filecoin.cloud/core-concepts/retrieval/) for maintained Synapse SDK retrieval flows. |
 
 
 
