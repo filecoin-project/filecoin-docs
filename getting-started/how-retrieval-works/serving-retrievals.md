@@ -33,6 +33,17 @@ The client then attempts to retrieve the data from the SP over Bitswap, Graphsyn
 
 Once the client has received the last chunk of data, the connection is closed.
 
+### Implementation paths
+
+Different retrieval workflows use different tools:
+
+| Workflow | Maintained path |
+| --- | --- |
+| Serving PDP retrievals as a storage provider | Use [Curio](https://curiostorage.org/) for PDP retrievals. |
+| Serving PoRep retrievals as a storage provider | Use [Boost](https://boost.filecoin.io/) to serve retrievals. Boost supports Graphsync retrievals by default, and storage providers can run [`booster-http`](https://boost.filecoin.io/http-retrieval) for HTTP retrievals when configured. |
+| Retrieving data as a client | Use [Lassie](https://github.com/filecoin-project/lassie) to fetch content from Filecoin and IPFS using the best available retrieval path. |
+| Retrieving application data with Filecoin Onchain Cloud | See the [Filecoin Onchain Cloud retrieval docs](https://docs.filecoin.cloud/core-concepts/retrieval/) for maintained Synapse SDK retrieval flows. |
+
 
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-retrieval-works/serving-retrievals)

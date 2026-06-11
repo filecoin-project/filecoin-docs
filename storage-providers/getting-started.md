@@ -20,10 +20,10 @@ Follow these steps to begin your storage provider journey:
 4. Build the right infrastructure
 5. Get to know the ecosystem
 6. Understand ROI and collateral
-7. Get started with Lotus
+7. Choose your provider software stack
 8. Set up a local development environment
 9. Become a storage provider
-10. Supercharge your mainnet experience with Boost
+10. Configure PoRep deal-making and retrieval services
 11. Explore verified deals and ecosystem tools
 
 ## Understand Filecoin economics
@@ -109,9 +109,19 @@ One of the enriching elements of the Filecoin ecosystem lies in its vibrant comm
 
 To run a successful storage provider business, it is crucial to understand the concept of Return on Investment (ROI) and the significance of collateral. By planning ahead and considering various factors, such as CAPEX, OPEX, network variables, and collateral requirements, you can make informed decisions that impact your business's profitability and desired capacity.
 
-## Get started with Lotus <a href="#get-started-with-lotus" id="get-started-with-lotus"></a>
+## Choose your provider software stack
 
-Lotus is the leading reference implementation of the Filecoin protocol and the most widely used software stack for interacting with the blockchain and operating a storage provider setup. Understanding Lotus is fundamental to navigating the Filecoin network and building a reliable storage operation.
+Storage providers usually run several pieces of software together. Start by understanding which component handles each part of the operation:
+
+| Component | Role |
+| --- | --- |
+| [Curio](https://curiostorage.org/) | Modern storage-provider stack for running provider operations, including PDP storage, proving, and retrieval, and PoRep sealing and proving workflows. |
+| [Lotus](https://lotus.filecoin.io) | Reference Filecoin implementation for chain sync, node operations, miner actor interactions, and client tooling. |
+| [Boost](https://boost.filecoin.io) | Deal-making and retrieval software for accepting PoRep storage deals and serving retrievals, including HTTP retrievals when configured. |
+
+For new storage-provider planning, treat Curio as the provider operations stack, Lotus as the underlying Filecoin node and chain tooling, and optionally Boost as the PoRep storage-deal and retrieval layer. Use each project's maintained documentation for installation and production configuration.
+
+[Curio documentation ->](https://docs.curiostorage.org/)
 
 [Lotus documentation ->](https://lotus.filecoin.io)
 
@@ -127,9 +137,11 @@ Once ready, determine your starting capacity and architect a solution to accommo
 
 [Reference architectures ->](./infrastructure/reference-architectures.md)
 
-## Supercharge your mainnet experience with Boost <a href="#supercharge-your-mainnet-experience-with-boost" id="supercharge-your-mainnet-experience-with-boost"></a>
+## Configure PoRep deal-making and retrieval services
 
-As you step into the mainnet, Boost is the software designed to help you secure storage deals and offer efficient data retrieval services to data owners. Deploying Boost unlocks your ability to participate in deal-making and serve clients across the Filecoin network.
+As you step into the mainnet, Boost helps you accept PoRep storage deals and offer data retrieval services to data owners. Deploying Boost unlocks your ability to participate in PoRep deal-making and serve clients across the Filecoin network.
+
+Boost is not used for PDP deals and retrieval.
 
 [Boost documentation ->](https://boost.filecoin.io)
 
