@@ -593,5 +593,6 @@ You've successfully launched a **PDP-enabled Filecoin Storage Provider** stack. 
 
 ## 🔜 Next Steps
 
+* 🔐 _(Optional)_ [Enable HTTPS for PDP](nginx-reverse-proxy.md) with an nginx reverse proxy — useful when running multiple nodes or centralising certificate management. A single node can rely on Curio's built-in TLS instead.
 * :link: Explore FWSS & PDP tools & resources at [https://www.filecoin.services](https://www.filecoin.services/)
 * 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)
