@@ -15,4 +15,4 @@ This section explains the financial mechanics of running a storage provider, inc
 * [Slashing](slashing.md) — penalties for failing to prove storage or acting maliciously
 * [Committed capacity](committed-capacity.md) — sectors filled with placeholder data to earn consensus power
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-economics)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/core-concepts/filecoin-economics)

@@ -50,7 +50,7 @@ Where PC1 is CPU-intensive, PC2 is executed on GPU. This task is also notably sh
 
 For best performance, compile Lotus with CUDA support instead of OpenCL. For further information, see the Lotus [CUDA Setup](https://lotus.filecoin.io/tutorials/lotus-miner/cuda/).
 
-In the case of a [Snap Deal](../filecoin-deals/snap-deals.md), an existing committed capacity sector is filled with data. When this happens, the entire PC1 task does not run again; however, the snapping process employs PC1’s `replica-update` and `prove-replica-update` to add the data to the sector. This can run on the PC2 worker or on a separate worker depending on your sealing pipeline capacity.
+In the case of a [Snap Deal](../../core-concepts/filecoin-deals/snap-deals.md), an existing committed capacity sector is filled with data. When this happens, the entire PC1 task does not run again; however, the snapping process employs PC1’s `replica-update` and `prove-replica-update` to add the data to the sector. This can run on the PC2 worker or on a separate worker depending on your sealing pipeline capacity.
 
 When PC2 has completed for a sector, a _precommit_ message is posted on-chain. If batching is configured, Lotus will batch these messages to avoid sending messages to the chain for every single sector. In addition, there is a configurable timeout interval, after which the message will be sent on-chain. This timeout is set to 24 hours by default. These configuration parameters are found in the `.lotusminer/config.toml` file.
 

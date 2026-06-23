@@ -8,7 +8,7 @@ description: >-
 
 Storage is a critical component of running a successful storage provider in the Filecoin network. While it may seem obvious that having strong storage skills is important, Filecoin requires a unique end-to-end skill set to run a 24/7 application.
 
-[Storage proving](../filecoin-economics/storage-proving.md) requires atypical read-behavior from a storage system. This means that the storage administrator must be able to design for this behavior and analyze the storage system accordingly.
+[Storage proving](../../core-concepts/filecoin-economics/storage-proving.md) requires atypical read-behavior from a storage system. This means that the storage administrator must be able to design for this behavior and analyze the storage system accordingly.
 
 In addition, it is important for storage providers to understand the importance of reliable and efficient storage. Filecoin is designed to incentivize storage providers to keep data safe and secure, and as such, the storage system must be able to maintain high levels of reliability and availability.
 

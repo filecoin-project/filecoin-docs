@@ -17,4 +17,4 @@ This section covers the different deal types available on Filecoin, how provider
 * [Auxiliary services](auxiliary-services.md) — additional services providers can offer beyond storage
 * [Return on investment](return-on-investment.md) — how to calculate costs, revenue, and profitability
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/core-concepts/filecoin-deals)

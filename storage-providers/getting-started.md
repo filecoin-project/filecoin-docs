@@ -14,17 +14,25 @@ To become a storage provider in the Filecoin network you need a range of technic
 
 Follow these steps to begin your storage provider journey:
 
-1. Understand Filecoin economics
-2. Plan your business
-3. Build the right core competencies
-4. Build the right infrastructure
-5. Get to know the ecosystem
-6. Understand ROI and collateral
-7. Choose your provider software stack
-8. Set up a local development environment
-9. Become a storage provider
-10. Configure PoRep deal-making and retrieval services
-11. Explore verified deals and ecosystem tools
+1. Choose between PoRep and PDP storage paths
+2. Understand Filecoin economics
+3. Plan your business
+4. Build the right core competencies
+5. Build the right infrastructure
+6. Get to know the ecosystem
+7. Understand ROI and collateral
+8. Choose your provider software stack
+9. Set up a local development environment
+10. Become a storage provider
+11. Configure PoRep deal-making and retrieval services
+12. Explore verified deals and ecosystem tools
+
+## Choose between PoRep and PDP storage paths
+
+Filecoin provider workflows now have two common starting points:
+
+* [Store with PoRep](store-with-porep.md) for sector sealing, storage power, PoRep deals, and traditional Filecoin proving.
+* [Store with PDP](store-with-pdp.md) for application-level storage verification used by Filecoin Onchain Cloud workflows.
 
 ## Understand Filecoin economics
 
@@ -32,7 +40,7 @@ To understand how you can run a profitable business as a Filecoin storage provid
 
 Storage providers can also add additional value to clients when they offer certain certifications. These can enable a storage provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
 
-[Filecoin economics ->](./filecoin-economics/storage-proving.md)
+[Filecoin economics ->](../core-concepts/filecoin-economics/storage-proving.md)
 
 ## Plan your business <a href="#plan-your-business" id="plan-your-business"></a>
 
@@ -40,7 +48,7 @@ The hardware and other requirements for running a Filecoin storage provider busi
 
 You need to understand the various earning mechanisms in the Filecoin network.
 
-[Filecoin deals ->](./filecoin-deals/storage-deals.md)
+[Filecoin deals ->](../core-concepts/filecoin-deals/storage-deals.md)
 
 ### Daily fees and startup readiness (FIP-0100)
 
@@ -115,13 +123,13 @@ Storage providers usually run several pieces of software together. Start by unde
 
 | Component | Role |
 | --- | --- |
-| [Curio](https://curiostorage.org/) | Modern storage-provider stack for running provider operations, including PDP storage, proving, and retrieval, and PoRep sealing and proving workflows. |
+| [Curio](nodes/implementations/curio.md) | Modern storage-provider stack for running provider operations, including PDP storage, proving, and retrieval, and PoRep sealing and proving workflows. |
 | [Lotus](https://lotus.filecoin.io) | Reference Filecoin implementation for chain sync, node operations, miner actor interactions, and client tooling. |
 | [Boost](https://boost.filecoin.io) | Deal-making and retrieval software for accepting PoRep storage deals and serving retrievals, including HTTP retrievals when configured. |
 
 For new storage-provider planning, treat Curio as the provider operations stack, Lotus as the underlying Filecoin node and chain tooling, and optionally Boost as the PoRep storage-deal and retrieval layer. Use each project's maintained documentation for installation and production configuration.
 
-[Curio documentation ->](https://docs.curiostorage.org/)
+[Curio ->](nodes/implementations/curio.md)
 
 [Lotus documentation ->](https://lotus.filecoin.io)
 
@@ -149,6 +157,6 @@ Boost is not used for PDP deals and retrieval.
 
 Within the Filecoin network there are many programs and tools designed to enhance your storage provider setup. Explore the documentation to gain insights into verified deals, client programs, and other resources that can improve your operations and expand your client base.
 
-[Filecoin programs ->](./filecoin-deals/filecoin-programs.md)
+[Filecoin programs ->](../core-concepts/filecoin-deals/filecoin-programs.md)
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/getting-started)

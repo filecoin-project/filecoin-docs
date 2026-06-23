@@ -5,12 +5,10 @@ description: >-
 
 # Architecture
 
-This section covers the software stack, sealing pipeline, and operational tooling that storage providers use to run their systems.
+This section covers the sealing pipeline and system design concerns that storage providers use to run their systems. For implementation-specific components, see [Nodes](../nodes/README.md).
 
 ## Table of contents
 
-* [Software components](lotus-components.md) — the major Lotus components in a storage provider setup
-* [Storage provider automation](lotus-automation.md) — one-click deployment tools for the Lotus and Boost stack
 * [Sealing pipeline](sealing-pipeline.md) — the step-by-step process of preparing sectors for storage
 * [Sealing rate](sealing-rate.md) — factors that determine how fast a provider can seal new sectors
 * [Sealing as a service](sealing-as-a-service.md) — outsourcing sector sealing to third-party providers
