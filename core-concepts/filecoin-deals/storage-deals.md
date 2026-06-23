@@ -25,7 +25,7 @@ Xinan Xu's presentation on Singularity
 
 ## Deal Market
 
-In order for storage providers to accept deals and set their deal terms, they need to install some market software, such as [Boost](https://boost.filecoin.io/). This component interacts with data owners, accepts deals if they meet the configured requirements, gets a copy of the prepared data (CAR files), and puts it through the [sealing pipeline](../architecture/sealing-pipeline.md), after which it is in the state required to be proven to the network.
+In order for storage providers to accept deals and set their deal terms, they need to install some market software, such as [Boost](https://boost.filecoin.io/). This component interacts with data owners, accepts deals if they meet the configured requirements, gets a copy of the prepared data (CAR files), and puts it through the [sealing pipeline](../../storage-providers/architecture/sealing-pipeline.md), after which it is in the state required to be proven to the network.
 
 The storage provider can (and should) keep unsealed data copies available for retrieval requests from the client. It is the same software component, Boost, that is responsible for HTTP retrievals from the client and for setting the price for retrievals.
 

@@ -36,7 +36,7 @@ It takes more variables than the cost vs. the income. In summary, the factors th
     How much of your total sealed capacity will be just committed capacity (CC) sectors (sometimes also called pledged capacity)? These deals give a lower return compared to verified deals but are an easy way to get started in the network. Relying solely on this to generate income is challenging though, especially when the price of FIL is low.
 *   **Sealing Capacity:**
 
-    How fast can you seal sectors? Faster sealing means you can start earning block rewards earlier and add more data faster. The downside is that it requires a lot of [hardware](../infrastructure/reference-architectures.md).
+    How fast can you seal sectors? Faster sealing means you can start earning block rewards earlier and add more data faster. The downside is that it requires a lot of [hardware](../../storage-providers/infrastructure/reference-architectures.md).
 *   **Deal Duration:**
 
     How long do you plan to run your storage provider? Are you taking short-term deals only, or are you in it for the long run? Taking long-term deals comes with an associated risk: if you can’t keep your storage provider online for the duration of the deals, you will get penalized. Short-term deals that require extension have the downside of higher operational costs to extend (which requires that the data be re-sealed.).
@@ -45,7 +45,7 @@ It takes more variables than the cost vs. the income. In summary, the factors th
     A substantial amount of FIL is needed to start accepting deals in the Filecoin network. Verified deals require more pledged collateral than CC-deals. Although the collateral is not lost if you run your storage provider business well, it does mean an upfront investment (or lending).
 *   **Hardware Investment:**
 
-    Sealing, storing, and proving the data does require a significant hardware investment as a storage provider. Although relying on services like [sealing-as-a-service](../architecture/sealing-as-a-service.md) can lower these requirements for you, it is still an investment in high-end hardware. Take the time to understand your requirements and your future plans so that you can invest in hardware that will support your business.
+    Sealing, storing, and proving the data does require a significant hardware investment as a storage provider. Although relying on services like [sealing-as-a-service](../../storage-providers/architecture/sealing-as-a-service.md) can lower these requirements for you, it is still an investment in high-end hardware. Take the time to understand your requirements and your future plans so that you can invest in hardware that will support your business.
 *   **Operational Costs:**
 
     Last but not least there’s the ongoing monthly cost of operating the storage provider business. Both the costs for technical operations as well as business operations need to be taken into consideration.
