@@ -41,7 +41,7 @@ Use the FOC stack for programmatic, verifiable storage at scale:
 
 For smaller datasets and managed ingestion paths:
 
-* [Storage onramps overview](../../getting-started/how-storage-works/storage-onramps.md)
+* [Storage onramps overview](../../store-on-filecoin/storage-onramps.md)
 * [Filecoin Pin getting started](filecoin-pin/getting-started.md)
 * [Lighthouse documentation](https://docs.lighthouse.storage/)
 

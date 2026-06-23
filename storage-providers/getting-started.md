@@ -149,6 +149,6 @@ Boost is not used for PDP deals and retrieval.
 
 Within the Filecoin network there are many programs and tools designed to enhance your storage provider setup. Explore the documentation to gain insights into verified deals, client programs, and other resources that can improve your operations and expand your client base.
 
-[Filecoin programs ->](./filecoin-deals/filecoin-programs.md)
+[Programmable storage ->](../store-on-filecoin/programmable-storage.md)
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/getting-started)

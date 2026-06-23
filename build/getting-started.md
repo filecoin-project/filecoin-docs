@@ -12,15 +12,15 @@ This guide helps you pick the right path based on what you want to build on File
 
 ### Store data on Filecoin
 
-Filecoin provides multiple storage paths depending on how much control you need. [Filecoin Onchain Cloud (FOC)](filecoin-onchain-cloud/README.md) is the recommended starting point. It provides a complete on-chain storage stack with warm storage, cryptographic verification, and automated payments through the [Synapse SDK](filecoin-onchain-cloud/synapse-quickstart.md). If you prefer a managed service, [storage onramps](../getting-started/how-storage-works/storage-onramps.md) let you store data through simple APIs or web UIs without managing infrastructure. For operators who want to run their own PDP-enabled storage provider, see the [PDP setup guide](../storage-providers/pdp/README.md).
+Filecoin provides multiple storage paths depending on how much control you need. [Filecoin Onchain Cloud (FOC)](filecoin-onchain-cloud/README.md) is the recommended starting point. It provides a complete on-chain storage stack with warm storage, cryptographic verification, and automated payments through the [Synapse SDK](filecoin-onchain-cloud/synapse-quickstart.md). If you prefer a managed service, [storage onramps](../store-on-filecoin/storage-onramps.md) let you store data through simple APIs or web UIs without managing infrastructure. For operators who want to run their own PDP-enabled storage provider, see the [PDP setup guide](../storage-providers/pdp/README.md).
 
 | Path | Best for | Complexity |
 |------|----------|------------|
 | [Filecoin Onchain Cloud (FOC)](filecoin-onchain-cloud/README.md) | Verifiable on-chain storage with FWSS, PDP, and Filecoin Pay via the Synapse SDK | Low |
-| [Storage onramps](../getting-started/how-storage-works/storage-onramps.md) | Managed services with simple APIs or drag-and-drop UIs | Low |
+| [Storage onramps](../store-on-filecoin/storage-onramps.md) | Managed services with simple APIs or drag-and-drop UIs | Low |
 | [PDP](../storage-providers/pdp/README.md) | Run your own PDP-enabled storage provider (part of the FOC stack) | Medium |
 
-*For a walkthrough of all storage options, see [Upload to Filecoin](../getting-started/how-storage-works/upload-to-filecoin.md).*
+*For a walkthrough of programmable storage options, see [Programmable storage](../store-on-filecoin/programmable-storage.md).*
 
 ### Deploy smart contracts
 

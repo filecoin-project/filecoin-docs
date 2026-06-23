@@ -11,7 +11,6 @@ This section covers the different deal types available on Filecoin, how provider
 
 * [Storage deals](storage-deals.md) — how providers accept and store client data in sectors
 * [Verified deals](verified-deals.md) — deals from Filecoin Plus clients that earn higher rewards
-* [Filecoin programs and tools](filecoin-programs.md) — platforms and programs that connect providers with clients
 * [Snap deals](snap-deals.md) — convert empty sectors into data sectors without re-sealing
 * [Charging for data](charging-for-data.md) — pricing strategies and revenue models for storage services
 * [Auxiliary services](auxiliary-services.md) — additional services providers can offer beyond storage

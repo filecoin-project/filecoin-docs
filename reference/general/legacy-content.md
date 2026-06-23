@@ -9,7 +9,7 @@ description: >-
 {% hint style="warning" %}
 The content on this page describes tools, workflows, and projects that are **no longer actively maintained**. It is preserved for historical reference only.
 
-For current guidance, see [Upload to Filecoin](../../getting-started/how-storage-works/upload-to-filecoin.md), [PDP](../../storage-providers/pdp/README.md), or [Build on Filecoin](../../build/getting-started.md).
+For current guidance, see [Programmable storage](../../store-on-filecoin/programmable-storage.md), [PDP](../../storage-providers/pdp/README.md), or [Build on Filecoin](../../build/getting-started.md).
 {% endhint %}
 
 ## Smart contracts
