@@ -12,3 +12,5 @@ PDP is a challenge-response protocol that lets applications verify storage provi
 * [Store with PDP](../store-with-pdp.md) — choose the PDP provider path from the Provide Storage getting-started flow
 * [About PDP](about.md) — how the protocol works, when to use it, and what it replaces
 * [Install and run PDP](install-and-run-pdp.md) — set up a PDP-enabled storage provider with Lotus, YugabyteDB, and Curio
+* [Withdraw funds from Filecoin Pay](withdraw-filecoin-pay.md) — withdraw available USDFC with filpay-cli or Foundry
+* [Advanced PDP operations](advanced.md) — configure nginx reverse proxying and LXD container isolation
