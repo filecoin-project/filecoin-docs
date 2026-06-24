@@ -76,8 +76,9 @@ redirects:
   basics/assets/the-fil-token: networks-and-tools/assets/the-fil-token.md
   basics/assets/transfer-fil: networks-and-tools/assets/transfer-fil.md
   basics/assets/wallets: networks-and-tools/assets/wallets.md
-  basics/how-retrieval-works: getting-started/how-retrieval-works/README.md
-  basics/how-retrieval-works/basic-retrieval: getting-started/how-retrieval-works/basic-retrieval.md
+  basics/how-retrieval-works: store-on-filecoin/how-retrieval-works/README.md
+  basics/how-retrieval-works/basic-retrieval: store-on-filecoin/how-retrieval-works/basic-retrieval.md
+  basics/how-retrieval-works/serving-retrievals: store-on-filecoin/how-retrieval-works/serving-retrievals.md
   basics/how-retrieval-works/saturn: reference/general/legacy-content.md
   basics/how-storage-works: store-on-filecoin/README.md
   basics/how-storage-works/filecoin-and-ipfs: store-on-filecoin/filecoin-and-ipfs.md
@@ -276,7 +277,7 @@ redirects:
   developers/storage-helpers/how-tos/blockchain-integration: getting-started/what-is-filecoin/README.md
   developers/storage-helpers/how-tos/data-encryption: store-on-filecoin/storage-onramps.md
   developers/storage-helpers/how-tos/permissions-and-access-control: reference/json-rpc/README.md
-  developers/storage-helpers/how-tos/retrieve-data: getting-started/how-retrieval-works/basic-retrieval.md
+  developers/storage-helpers/how-tos/retrieve-data: store-on-filecoin/how-retrieval-works/basic-retrieval.md
   developers/storage-helpers/nft-storage: store-on-filecoin/storage-onramps.md
   developers/storage-helpers/overview: store-on-filecoin/storage-onramps.md
   developers/storage-helpers/starling: store-on-filecoin/storage-onramps.md
@@ -336,12 +337,15 @@ redirects:
   getting-started/how-storage-works/filecoin-plus: store-on-filecoin/filecoin-plus.md
   getting-started/how-storage-works/storage-onramps: store-on-filecoin/storage-onramps.md
   getting-started/how-storage-works/upload-to-filecoin: store-on-filecoin/programmable-storage.md
+  getting-started/how-retrieval-works: store-on-filecoin/how-retrieval-works/README.md
+  getting-started/how-retrieval-works/basic-retrieval: store-on-filecoin/how-retrieval-works/basic-retrieval.md
+  getting-started/how-retrieval-works/serving-retrievals: store-on-filecoin/how-retrieval-works/serving-retrievals.md
   get-started/store-and-retrieve: getting-started/what-is-filecoin/storage-market.md
-  get-started/store-and-retrieve/conclusion: getting-started/how-retrieval-works/basic-retrieval.md
-  get-started/store-and-retrieve/introduction: getting-started/how-retrieval-works/basic-retrieval.md
-  get-started/store-and-retrieve/lotus-only-retrieval: getting-started/how-retrieval-works/basic-retrieval.md
-  get-started/store-and-retrieve/retrieve-data: getting-started/how-retrieval-works/basic-retrieval.md
-  get-started/store-and-retrieve/set-up: getting-started/how-retrieval-works/basic-retrieval.md
+  get-started/store-and-retrieve/conclusion: store-on-filecoin/how-retrieval-works/basic-retrieval.md
+  get-started/store-and-retrieve/introduction: store-on-filecoin/how-retrieval-works/basic-retrieval.md
+  get-started/store-and-retrieve/lotus-only-retrieval: store-on-filecoin/how-retrieval-works/basic-retrieval.md
+  get-started/store-and-retrieve/retrieve-data: store-on-filecoin/how-retrieval-works/basic-retrieval.md
+  get-started/store-and-retrieve/set-up: store-on-filecoin/how-retrieval-works/basic-retrieval.md
   get-started/store-and-retrieve/setup: getting-started/what-is-filecoin/README.md
   get-started/store-and-retrieve/store-data: store-on-filecoin/README.md
   get-started/store-and-retrieve/troubleshooting: storage-providers/core-competencies/storage.md
@@ -599,7 +603,7 @@ redirects:
   store/filecoin-plus: store-on-filecoin/filecoin-plus.md
   store/filecoin-plus/overview: store-on-filecoin/filecoin-plus.md
   store/lotus: storage-providers/nodes/implementations/lotus.md
-  store/lotus/retrieve-data: getting-started/how-retrieval-works/README.md
+  store/lotus/retrieve-data: store-on-filecoin/how-retrieval-works/README.md
   store/lotus/store-data: getting-started/what-is-filecoin/storage-model.md
   store/lotus/very-large-files: store-on-filecoin/filecoin-and-ipfs.md
   store/overview: getting-started/what-is-filecoin/storage-model.md

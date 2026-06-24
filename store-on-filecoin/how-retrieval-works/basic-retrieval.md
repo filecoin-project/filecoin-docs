@@ -152,4 +152,4 @@ Lassie only returns data in CAR format, specifically, [CARv1](https://ipld.io/sp
 
 
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-retrieval-works/basic-retrieval)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/store-on-filecoin/how-retrieval-works/basic-retrieval)

@@ -63,6 +63,6 @@ A tutorial on querying Filecoin chain data from a dApp using ethers.js against a
 
 Saturn was a Web3 CDN in the Filecoin retrieval market, enabling fast content delivery from Filecoin storage providers. The project is no longer active.
 
-For current retrieval guidance, see [Basic retrieval](../../getting-started/how-retrieval-works/basic-retrieval.md) and [Serving retrievals](../../getting-started/how-retrieval-works/serving-retrievals.md).
+For current retrieval guidance, see [Basic retrieval](../../store-on-filecoin/how-retrieval-works/basic-retrieval.md) and [Serving retrievals](../../store-on-filecoin/how-retrieval-works/serving-retrievals.md).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/general/legacy-content)

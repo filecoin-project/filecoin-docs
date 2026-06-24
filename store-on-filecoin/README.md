@@ -15,5 +15,6 @@ This section helps data owners, developers, and storage operators choose the rig
 * [Storage onramps](storage-onramps.md) - managed services for ingesting data into Filecoin
 * [Direct data onboarding](direct-data-onboarding.md) - how providers can onboard data without requiring a built-in market deal
 * [Filecoin Plus](filecoin-plus.md) - a program that subsidizes storage for verified clients
+* [How retrieval works](how-retrieval-works/README.md) - find providers and fetch content from Filecoin
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/store-on-filecoin)

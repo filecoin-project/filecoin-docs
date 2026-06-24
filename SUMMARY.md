@@ -12,9 +12,6 @@
   * [Retrieval market](getting-started/what-is-filecoin/retrieval-market.md)
   * [Programming on Filecoin](getting-started/what-is-filecoin/programming-on-filecoin.md)
   * [Networks](getting-started/what-is-filecoin/networks.md)
-* [How retrieval works](getting-started/how-retrieval-works/README.md)
-  * [Basic retrieval](getting-started/how-retrieval-works/basic-retrieval.md)
-  * [Serving retrievals](getting-started/how-retrieval-works/serving-retrievals.md)
 * [Interplanetary consensus](getting-started/interplanetary-consensus.md)
 * [Community](getting-started/community/README.md)
   * [Forums and FIPs](getting-started/community/forums-and-FIPs.md)
@@ -34,6 +31,9 @@
   * [Storage onramps](store-on-filecoin/storage-onramps.md)
   * [Direct data onboarding](store-on-filecoin/direct-data-onboarding.md)
   * [Filecoin Plus](store-on-filecoin/filecoin-plus.md)
+  * [How retrieval works](store-on-filecoin/how-retrieval-works/README.md)
+    * [Basic retrieval](store-on-filecoin/how-retrieval-works/basic-retrieval.md)
+    * [Serving retrievals](store-on-filecoin/how-retrieval-works/serving-retrievals.md)
 
 ## Build on Filecoin
 
