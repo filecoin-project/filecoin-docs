@@ -6,14 +6,14 @@ description: >-
 
 # Enable HTTPS for PDP
 
-This guide documents a working nginx setup on **Ubuntu 22.04** that provides HTTPS access to Filecoin PDP (Curio) services using Let's Encrypt certificates. The configuration is based on a production system serving `calib.ezpdpz.net` and `calib2.ezpdpz.net`.
+This guide documents a working nginx setup on **Ubuntu 22.04** that provides HTTPS access to Filecoin PDP (Curio) services using Let's Encrypt certificates. The examples use the placeholder domains `pdp.example.com` and `pdp2.example.com` — replace them with your own domains throughout.
 
 {% hint style="warning" %}
 **This setup is specific to one example environment.** You must adjust hostnames, internal IP addresses, and paths to match your own system and network configuration.
 {% endhint %}
 
 {% hint style="info" %}
-**Strong recommendation:** Before making any configuration changes, install an AI coding assistant such as Claude Code or OpenAI Codex. These tools can help you verify syntax, debug nginx and Certbot issues, and safely adapt the configuration to your own setup.
+**Before making any configuration changes,** back up your existing nginx configuration and validate every change with `sudo nginx -t` before reloading. This catches syntax errors before they take down the service.
 {% endhint %}
 
 ***
@@ -76,12 +76,12 @@ certbot --version
 
 ## 3️⃣ Configure the Virtual Host
 
-Create a configuration file for your domain. Replace `calib.ezpdpz.net` with your domain and `192.168.1.160` with your Curio service IP.
+Create a configuration file for your domain. Replace `pdp.example.com` with your domain and `192.168.1.160` with your Curio service IP.
 
 Create the file:
 
 ```sh
-sudo nano /etc/nginx/sites-available/calib.ezpdpz.net
+sudo nano /etc/nginx/sites-available/pdp.example.com
 ```
 
 Add this initial configuration (before SSL setup):
@@ -89,7 +89,7 @@ Add this initial configuration (before SSL setup):
 ```nginx
 server {
     listen 80;
-    server_name calib.ezpdpz.net;
+    server_name pdp.example.com;
 
     location / {
         return 200 "Server is ready for certbot";
@@ -100,7 +100,7 @@ server {
 Enable the site:
 
 ```sh
-sudo ln -s /etc/nginx/sites-available/calib.ezpdpz.net /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/pdp.example.com /etc/nginx/sites-enabled/
 ```
 
 Test the configuration and reload nginx:
@@ -117,7 +117,7 @@ sudo systemctl reload nginx
 Run Certbot with the nginx plugin:
 
 ```sh
-sudo certbot --nginx -d calib.ezpdpz.net
+sudo certbot --nginx -d pdp.example.com
 ```
 
 Follow the prompts:
@@ -139,7 +139,7 @@ Certbot will automatically:
 After Certbot completes, edit your site configuration:
 
 ```sh
-sudo nano /etc/nginx/sites-available/calib.ezpdpz.net
+sudo nano /etc/nginx/sites-available/pdp.example.com
 ```
 
 Replace the contents with the following. Substitute `YOUR_DOMAIN` and `YOUR_CURIO_IP` with your own values.
@@ -223,7 +223,7 @@ sudo systemctl reload nginx
 
 **Proxy settings**
 
-* `proxy_pass http://YOUR_CURIO_IP:443`: forward to the Curio service (note: HTTP, not HTTPS — Curio handles TLS internally via DelegateTLS).
+* `proxy_pass http://YOUR_CURIO_IP:443`: forward to the Curio service over plain HTTP. With `DelegateTLS = true`, Curio serves HTTP (even on port 443) and delegates TLS termination to nginx, so nginx is the only component encrypting traffic. Keep this link on a trusted LAN.
 * `proxy_set_header` directives: preserve client information (original host, real IP, forwarded chain, and scheme).
 
 ***
@@ -249,7 +249,7 @@ Restart Curio after making configuration changes.
 Test the HTTPS connection:
 
 ```sh
-curl -I https://calib.ezpdpz.net
+curl -I https://YOUR_DOMAIN
 ```
 
 You should see a response from your Curio service through nginx.
@@ -257,7 +257,7 @@ You should see a response from your Curio service through nginx.
 Check the SSL certificate:
 
 ```sh
-openssl s_client -connect calib.ezpdpz.net:443 -servername calib.ezpdpz.net
+openssl s_client -connect YOUR_DOMAIN:443 -servername YOUR_DOMAIN
 ```
 
 ***
@@ -267,13 +267,13 @@ openssl s_client -connect calib.ezpdpz.net:443 -servername calib.ezpdpz.net
 View nginx access logs:
 
 ```sh
-sudo tail -f /var/log/nginx/calib.ezpdpz.net.access.log
+sudo tail -f /var/log/nginx/YOUR_DOMAIN.access.log
 ```
 
 View nginx error logs:
 
 ```sh
-sudo tail -f /var/log/nginx/calib.ezpdpz.net.error.log
+sudo tail -f /var/log/nginx/YOUR_DOMAIN.error.log
 ```
 
 Check nginx status:
@@ -326,5 +326,3 @@ This will show specific syntax errors in your configuration.
 * Multiple domains supported (one per Curio instance).
 
 The key advantage is that nginx handles all SSL complexity while Curio services focus on PDP operations without needing to manage certificates.
-</content>
-</invoke>
