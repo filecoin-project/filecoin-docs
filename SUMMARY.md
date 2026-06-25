@@ -116,7 +116,6 @@
     * [About PDP](storage-providers/pdp/about.md)
     * [Install & Run PDP](storage-providers/pdp/install-and-run-pdp.md)
     * [Withdraw funds from Filecoin Pay](storage-providers/pdp/withdraw-filecoin-pay.md)
-    * [Advanced](storage-providers/pdp/advanced.md)
 * [Architecture](storage-providers/architecture/README.md)
   * [Sealing pipeline](storage-providers/architecture/sealing-pipeline.md)
   * [Sealing rate](storage-providers/architecture/sealing-rate.md)
