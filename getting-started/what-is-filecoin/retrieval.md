@@ -37,4 +37,4 @@ Use [Lassie](https://github.com/filecoin-project/lassie) for CID-based retrieval
 - [Basic retrieval](../how-retrieval-works/basic-retrieval.md) covers fetching CID-addressed data with Lassie.
 - [Serving retrievals](../how-retrieval-works/serving-retrievals.md) explains provider advertisements, IPNI, and retrieval protocols.
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/getting-started/what-is-filecoin/retrieval-market)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/getting-started/what-is-filecoin/retrieval)
