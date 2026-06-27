@@ -1,17 +1,23 @@
 ---
 description: >-
   Nodes are participants that contribute to the network’s operation and maintain
-  its integrity. There are two major node implementations running on the
-  Filecoin network today, with more in the works.
+  its integrity. Storage providers commonly combine provider operations,
+  chain-node, and deal-making software.
 ---
 
 # Implementations
+
+## Curio
+
+[Curio](curio.md) is the current storage-provider operations stack for running provider workflows. It coordinates sealing, proving, storage, and retrieval tasks for modern provider deployments, and is also the runtime path used by current PDP provider setup guidance.
+
+[Learn more about Curio](curio.md)
 
 ## Lotus
 
 ![The Lotus implementation logo.](../../../.gitbook/assets/nodes-implementations-overview-lotus-logo.webp)
 
-Lotus is the reference implementation of the Filecoin protocol, developed by Protocol Labs, the organization behind Filecoin. Lotus is a full-featured implementation of the Filecoin network, including the storage, retrieval, and mining functionalities. It is written in Go and is designed to be modular, extensible, and highly scalable.
+Lotus is the reference implementation of the Filecoin protocol, developed by Protocol Labs, the organization behind Filecoin. Lotus is a full-featured implementation of the Filecoin network, including chain sync, wallet, actor, and client tooling. It is written in Go and is designed to be modular, extensible, and highly scalable.
 
 [Learn more about Lotus](lotus.md)
 

@@ -7,7 +7,7 @@ description: >-
 
 # Committed capacity
 
-One way of participating in the Filecoin network is by providing [_Committed Capacity_ (CC) sectors](../../reference/general/glossary.md#capacity-commitment) to the network. CC sectors do not contain customer data but are filled with random data when they are created. The goal for the Filecoin network is to have a distributed network of verifiers and collaborators to the network in order to run and maintain a healthy blockchain. Any public blockchain network requires enough participants in the consensus mechanism of the blockchain, in order to guarantee that transactions being logged onto the blockchain are legitimate. Because Filecoin’s consensus mechanism is based on Proof-of-Storage, we need sufficient storage providers that pledge capacity to the network, and thus take part in the consensus process. This is done via Committed Capacity sectors. This can be done in sectors of 32 GiB or 64 GiB. For more detail, see the [architectural overview](../architecture/lotus-components.md).
+One way of participating in the Filecoin network is by providing [_Committed Capacity_ (CC) sectors](../../reference/general/glossary.md#capacity-commitment) to the network. CC sectors do not contain customer data but are filled with random data when they are created. The goal for the Filecoin network is to have a distributed network of verifiers and collaborators to the network in order to run and maintain a healthy blockchain. Any public blockchain network requires enough participants in the consensus mechanism of the blockchain, in order to guarantee that transactions being logged onto the blockchain are legitimate. Because Filecoin’s consensus mechanism is based on Proof-of-Storage, we need sufficient storage providers that pledge capacity to the network, and thus take part in the consensus process. This is done via Committed Capacity sectors. This can be done in sectors of 32 GiB or 64 GiB. For more detail, see the [architectural overview](../../storage-providers/architecture/lotus-components.md).
 
 ## Availability requirements
 
@@ -19,4 +19,4 @@ Providing committed capacity is the easiest way to get started as a storage prov
 
 Note that as of [FIP008: Add miner batched sector pre-commit method](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0008.md), storage providers can now batch pre-commit up to 256 sectors at once.  This change reduces gas costs, requires fewer reads/writes to the blockchain, and lowers transaction congestion.  Note that if anything in the batch is invalid, nothing in the batch is pre-committed. 
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-economics/committed-capacity)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/core-concepts/filecoin-economics/committed-capacity)

@@ -9,6 +9,6 @@ Filecoin nodes are the backbone of the network. They store and verify the blockc
 
 ## Table of contents
 
-* [Implementations](implementations/README.md) — available node software including Lotus and Venus
+* [Implementations](implementations/README.md) — available node software including Curio, Lotus, and Venus
 * [Lite nodes](lite-nodes/README.md) — lightweight nodes that rely on full nodes for chain data
 * [Full nodes](full-nodes/README.md) — complete nodes that store and validate the full blockchain

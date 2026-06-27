@@ -353,11 +353,11 @@ redirects:
   go-filecoin-tutorial/Storing-on-Filecoin: getting-started/how-storage-works/README.md
   go-filecoin-tutorial/Storing-on-Filecoin.html: getting-started/how-storage-works/storage-onramps.md
   go-filecoin-tutorial/getting-started: storage-providers/getting-started.md
-  go-filecoin-tutorial/storing-on-filecoin: storage-providers/filecoin-deals/storage-deals.md
+  go-filecoin-tutorial/storing-on-filecoin: core-concepts/filecoin-deals/storage-deals.md
   how-to/install-filecoin: storage-providers/getting-started.md
   how-to/join-a-network: networks-and-tools/networks/mainnet/README.md
   how-to/networks: networks-and-tools/networks/mainnet/README.md
-  how-to/store/prepare-data: storage-providers/filecoin-deals/storage-deals.md
+  how-to/store/prepare-data: core-concepts/filecoin-deals/storage-deals.md
   ine/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
   intro: getting-started/what-is-filecoin/README.md
   intro/intro-to-filecoin/blockchain: getting-started/what-is-filecoin/blockchain.md
@@ -396,10 +396,10 @@ redirects:
   mine/lotus/split-markets-miners: storage-providers/architecture/lotus-components.md
   mine/lotus/splitstore: storage-providers/architecture/lotus-components.md
   mine/mining-architectures: storage-providers/infrastructure/reference-architectures.md
-  mine/mining-rewards: storage-providers/filecoin-economics/block-rewards.md
-  mine/mining-rewards.html: storage-providers/filecoin-economics/block-rewards.md
+  mine/mining-rewards: core-concepts/filecoin-economics/block-rewards.md
+  mine/mining-rewards.html: core-concepts/filecoin-economics/block-rewards.md
   mine/mining-troubleshooting: storage-providers/getting-started.md
-  mine/slashing: storage-providers/filecoin-economics/slashing.md
+  mine/slashing: core-concepts/filecoin-economics/slashing.md
   mine/spacerace: storage-providers/getting-started.md
   networks: networks-and-tools/networks/mainnet/README.md
   networks/calibration: networks-and-tools/networks/calibration/README.md
@@ -540,25 +540,39 @@ redirects:
   smart-contracts/wallets/metamask: networks-and-tools/assets/metamask-setup.md
   smart-contracts/wallets/transfer-fil: networks-and-tools/assets/transfer-fil.md
   software: storage-providers/architecture/lotus-components.md
+  provide-storage/filecoin-deals: core-concepts/filecoin-deals/README.md
+  provide-storage/filecoin-deals/auxiliary-services: core-concepts/filecoin-deals/auxiliary-services.md
+  provide-storage/filecoin-deals/charging-for-data: core-concepts/filecoin-deals/charging-for-data.md
+  provide-storage/filecoin-deals/filecoin-programs: core-concepts/filecoin-deals/filecoin-programs.md
+  provide-storage/filecoin-deals/return-on-investment: core-concepts/filecoin-deals/return-on-investment.md
+  provide-storage/filecoin-deals/snap-deals: core-concepts/filecoin-deals/snap-deals.md
+  provide-storage/filecoin-deals/storage-deals: core-concepts/filecoin-deals/storage-deals.md
+  provide-storage/filecoin-deals/verified-deals: core-concepts/filecoin-deals/verified-deals.md
+  provide-storage/filecoin-economics: core-concepts/filecoin-economics/README.md
+  provide-storage/filecoin-economics/block-rewards: core-concepts/filecoin-economics/block-rewards.md
+  provide-storage/filecoin-economics/committed-capacity: core-concepts/filecoin-economics/committed-capacity.md
+  provide-storage/filecoin-economics/fil-collateral: core-concepts/filecoin-economics/fil-collateral.md
+  provide-storage/filecoin-economics/slashing: core-concepts/filecoin-economics/slashing.md
+  provide-storage/filecoin-economics/storage-proving: core-concepts/filecoin-economics/storage-proving.md
   storage-provider: storage-providers/getting-started.md
   storage-provider/architecture/Lotus-components: storage-providers/architecture/lotus-components.md
   storage-provider/architecture/lotus-automation: storage-providers/architecture/lotus-automation.md
   storage-provider/architectures: storage-providers/infrastructure/reference-architectures.md
   storage-provider/basics/how-providing-storage-works: getting-started/what-is-filecoin/storage-model.md
   storage-provider/basics/overview: storage-providers/getting-started.md
-  storage-provider/filecoin-deals/filecoin-programs: storage-providers/filecoin-deals/filecoin-programs.md
+  storage-provider/filecoin-deals/filecoin-programs: core-concepts/filecoin-deals/filecoin-programs.md
   storage-provider/hardware-requirements: storage-providers/core-competencies/storage.md
   storage-provider/hardware/architectures: storage-providers/infrastructure/reference-architectures.md
   storage-provider/hardware/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
   storage-provider/how-providing-works: getting-started/what-is-filecoin/storage-model.md
   storage-provider/how-providing-works/storage-provider/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
   storage-provider/overview: storage-providers/getting-started.md
-  storage-provider/rewards: storage-providers/filecoin-economics/block-rewards.md
-  storage-provider/rewards/slashing: storage-providers/filecoin-economics/slashing.md
-  storage-provider/rewards/storage-provider-rewards: storage-providers/filecoin-economics/block-rewards.md
-  storage-provider/slashing: storage-providers/filecoin-economics/slashing.md
+  storage-provider/rewards: core-concepts/filecoin-economics/block-rewards.md
+  storage-provider/rewards/slashing: core-concepts/filecoin-economics/slashing.md
+  storage-provider/rewards/storage-provider-rewards: core-concepts/filecoin-economics/block-rewards.md
+  storage-provider/slashing: core-concepts/filecoin-economics/slashing.md
   storage-provider/storage-provider-architectures: storage-providers/infrastructure/reference-architectures.md
-  storage-provider/storage-provider-rewards: storage-providers/filecoin-economics/block-rewards.md
+  storage-provider/storage-provider-rewards: core-concepts/filecoin-economics/block-rewards.md
   storage-provider/videos/actors: core-concepts/filecoin-virtual-machine/actors.md
   storage-provider/videos/cryptoecon: getting-started/what-is-filecoin/crypto-economics.md
   storage-provider/videos/fvm: core-concepts/filecoin-virtual-machine/README.md
@@ -576,8 +590,22 @@ redirects:
   storage-provider/videos/vc: getting-started/what-is-filecoin/README.md
   storage-provider/videos/virtual: getting-started/what-is-filecoin/README.md
   storage-provider/videos/why: getting-started/what-is-filecoin/README.md
-  storage-providers/filecoin-deals/filecoin-programs/sign-in: storage-providers/filecoin-deals/filecoin-programs.md
-  storage-providers/filecoin-deals/filecoin-programs/sign-up: storage-providers/filecoin-deals/filecoin-programs.md
+  storage-providers/filecoin-deals: core-concepts/filecoin-deals/README.md
+  storage-providers/filecoin-deals/auxiliary-services: core-concepts/filecoin-deals/auxiliary-services.md
+  storage-providers/filecoin-deals/charging-for-data: core-concepts/filecoin-deals/charging-for-data.md
+  storage-providers/filecoin-deals/filecoin-programs: core-concepts/filecoin-deals/filecoin-programs.md
+  storage-providers/filecoin-deals/filecoin-programs/sign-in: core-concepts/filecoin-deals/filecoin-programs.md
+  storage-providers/filecoin-deals/filecoin-programs/sign-up: core-concepts/filecoin-deals/filecoin-programs.md
+  storage-providers/filecoin-deals/return-on-investment: core-concepts/filecoin-deals/return-on-investment.md
+  storage-providers/filecoin-deals/snap-deals: core-concepts/filecoin-deals/snap-deals.md
+  storage-providers/filecoin-deals/storage-deals: core-concepts/filecoin-deals/storage-deals.md
+  storage-providers/filecoin-deals/verified-deals: core-concepts/filecoin-deals/verified-deals.md
+  storage-providers/filecoin-economics: core-concepts/filecoin-economics/README.md
+  storage-providers/filecoin-economics/block-rewards: core-concepts/filecoin-economics/block-rewards.md
+  storage-providers/filecoin-economics/committed-capacity: core-concepts/filecoin-economics/committed-capacity.md
+  storage-providers/filecoin-economics/fil-collateral: core-concepts/filecoin-economics/fil-collateral.md
+  storage-providers/filecoin-economics/slashing: core-concepts/filecoin-economics/slashing.md
+  storage-providers/filecoin-economics/storage-proving: core-concepts/filecoin-economics/storage-proving.md
   storage-providers/basics: storage-providers/getting-started.md
   storage-providers/basics/quickstart-guide: storage-providers/getting-started.md
   storage-providers/basics/quickstart-guide.html: storage-providers/getting-started.md

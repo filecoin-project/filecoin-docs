@@ -39,7 +39,7 @@ Incentives for storage providers to accept verified deals is strongest initially
 
 ![filecoinplus3](https://github.com/user-attachments/assets/634f96eb-c0b4-4230-95ca-b9a4875b180d)
 
-As seen in the diagrams above, Filecoin Plus increases the collateral requirements needed by a storage provider. As a higher percentage of storage providers include verified deals in their sectors, the collateral needed by each storage provider will increase. To learn more about storage provider collateral, see [this link](../../storage-providers/filecoin-economics/fil-collateral.md).
+As seen in the diagrams above, Filecoin Plus increases the collateral requirements needed by a storage provider. As a higher percentage of storage providers include verified deals in their sectors, the collateral needed by each storage provider will increase. To learn more about storage provider collateral, see [this link](../../core-concepts/filecoin-economics/fil-collateral.md).
 
 ## Filecoin+ Processes & Participants
 
@@ -87,7 +87,7 @@ It’s important to note that DataCap allocations are a one-time credit for a Fi
 ## How to Use DataCap
 Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because storage providers receive a deal quality multiplier for taking Filecoin+ deals, many storage providers offer special pricing and services to attract clients who use DataCap to make deals.
 
-[Learn more about Storage Deals.](../../storage-providers/filecoin-deals/storage-deals.md)
+[Learn more about Storage Deals.](../../core-concepts/filecoin-deals/storage-deals.md)
 
 By default, when you make a deal with an address with DataCap allocated, you will spend that DataCap when making the deal.
 

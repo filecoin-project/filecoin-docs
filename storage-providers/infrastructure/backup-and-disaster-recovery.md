@@ -67,6 +67,6 @@ Having the services on a floating IP allows to assign this IP to another machine
 
 ## No Penalty for Recovered Faults
 
-Note that as of [FIP006: No repay debt requirement for DeclareFaultsRecovered](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0006.md), storage providers are no longer required to pay [fee debt](../filecoin-economics/slashing.md) prior to recovering a new storage fault. This enables a storage provider that currently has accrued fee debt to recover faults without being further penalized with additional fees.
+Note that as of [FIP006: No repay debt requirement for DeclareFaultsRecovered](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0006.md), storage providers are no longer required to pay [fee debt](../../core-concepts/filecoin-economics/slashing.md) prior to recovering a new storage fault. This enables a storage provider that currently has accrued fee debt to recover faults without being further penalized with additional fees.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/infrastructure/backup-and-disaster-recovery)

@@ -25,4 +25,4 @@ Note that occasionally, storage providers may experience operational issues, suc
 
 To learn more about fault fee exceptions, review [FIP002: Free Faults on Newly Faulted Sectors of a Missed WindowPoSt](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0002.md).  
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-economics/slashing)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/core-concepts/filecoin-economics/slashing)

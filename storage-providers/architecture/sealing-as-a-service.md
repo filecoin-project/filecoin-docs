@@ -24,7 +24,7 @@ Sealing-as-a-service provides multiple benefits for storage providers:
 * Bigger deals can be onboarded, as Sealing-as-a-Service essentially offers a burst capability in your sealing capacity. Thus, storage providers can take on larger deals without worrying about sealing time and not meeting client expectations.
 * Storage capacity on the Filecoin network can be expanded without investing in a larger sealing pipeline.
 
-Other solutions are possible where the sealing partner seals committed capacity (CC) sectors for you, which you in turn [snap up](../filecoin-deals/snap-deals.md) to data sectors.
+Other solutions are possible where the sealing partner seals committed capacity (CC) sectors for you, which you in turn [snap up](../../core-concepts/filecoin-deals/snap-deals.md) to data sectors.
 
 See the following video from [Aligned](https://aligned.co/sealing-as-a-service) about their offering of Sealing-as-a-Service:
 

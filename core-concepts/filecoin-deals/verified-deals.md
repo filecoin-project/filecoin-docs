@@ -36,7 +36,7 @@ Once the data is sealed and you are proving your copies on-chain (i.e. on the bl
 
 ## Tools
 
-Tools and programs exist to support Filecoin Plus, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs](filecoin-programs.md) for more information on available programs. See [Architecture](../architecture/lotus-components.md) for more information on the tooling and software components.
+Tools and programs exist to support Filecoin Plus, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs](filecoin-programs.md) for more information on available programs. See [Architecture](../../storage-providers/architecture/lotus-components.md) for more information on the tooling and software components.
 
 ## Rewards & penalties
 
@@ -46,4 +46,4 @@ If the storage provider is then not capable of keeping the data and systems onli
 
 
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals/verified-deals)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/core-concepts/filecoin-deals/verified-deals)
