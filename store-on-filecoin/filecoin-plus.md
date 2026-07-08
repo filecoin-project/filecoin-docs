@@ -1,4 +1,4 @@
-# Filecoin plus
+# Filecoin Plus
 
 <meta name="description" content="Explain the stakeholders and processes of Filecoin Plus, a program to verifiy and increase the volume of useful data on Filecoin." />
 
@@ -39,7 +39,7 @@ Incentives for storage providers to accept verified deals is strongest initially
 
 ![filecoinplus3](https://github.com/user-attachments/assets/634f96eb-c0b4-4230-95ca-b9a4875b180d)
 
-As seen in the diagrams above, Filecoin Plus increases the collateral requirements needed by a storage provider. As a higher percentage of storage providers include verified deals in their sectors, the collateral needed by each storage provider will increase. To learn more about storage provider collateral, see [this link](../../storage-providers/filecoin-economics/fil-collateral.md).
+As seen in the diagrams above, Filecoin Plus increases the collateral requirements needed by a storage provider. As a higher percentage of storage providers include verified deals in their sectors, the collateral needed by each storage provider will increase. To learn more about storage provider collateral, see [this link](../storage-providers/filecoin-economics/fil-collateral.md).
 
 ## Filecoin+ Processes & Participants
 
@@ -65,16 +65,16 @@ One such allocator is [Filecoin Incentive Design Labs (FIDL)](https://www.fidl.t
 ### Steps to Acquire Mainnet DataCap as a Client
 The steps a client should follow to acquire DataCap are as follows:
 
-1. Create a [Filecoin wallet](../../networks-and-tools/assets/wallets.md).
+1. Create a [Filecoin wallet](../networks-and-tools/assets/wallets.md).
 2. Choose an allocator from the [full list of active allocators](https://github.com/filecoin-project/Allocator-registry) or the [active list of allocators](https://allocator.tech/) who have verified public datasets.
 3. Check that you satisfy the requirements of the allocator. In the case of uploading open source datasets with FIDL as the allocator, the client will need to demonstrate to FIDL that they can (1) satisfy a third-party Know Your Customer (KYC) identity check, (2) provide the details of storage provider (entity, storage location) where the data is intended to be stored, and (3) demonstrate proof that the dataset can be actively retrieved. You can learn more about FIDL’s requirements and application process in their [GitHub application form](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose).
 4. Submit an application for DataCap from an allocator. You can submit a request to FIDL via their [GitHub application form](https://github.com/fidlabs/Open-Data-Pathway/issues/new/choose).
 5. Use the DataCap in a storage deal.
 
 ### Steps to Acquire Testnet DataCap as a Builder
-For builders on the [Calibration testnet](../../networks-and-tools/networks/calibration/) who need testnet DataCap to test their applications, a faucet is available. The steps a builder should follow to acquire testnet DataCap are as follows:
+For builders on the [Calibration testnet](../networks-and-tools/networks/calibration/) who need testnet DataCap to test their applications, a faucet is available. The steps a builder should follow to acquire testnet DataCap are as follows:
 
-1. Create a wallet on Filecoin Calibration testnet. For more information, see the [Calibration docs](../../networks-and-tools/networks/calibration/) or [Github](https://github.com/filecoin-project/testnet-calibration).
+1. Create a wallet on Filecoin Calibration testnet. For more information, see the [Calibration docs](../networks-and-tools/networks/calibration/) or [Github](https://github.com/filecoin-project/testnet-calibration).
 2. Grant the wallet address DataCap by using this [faucet](https://faucet.calibnet.chainsafe-fil.io/datacap.html).
 
 ## **DataCap for Smart contracts**
@@ -87,7 +87,7 @@ It’s important to note that DataCap allocations are a one-time credit for a Fi
 ## How to Use DataCap
 Once you have an address with DataCap, you can make deals using DataCap as a part of the payment. Because storage providers receive a deal quality multiplier for taking Filecoin+ deals, many storage providers offer special pricing and services to attract clients who use DataCap to make deals.
 
-[Learn more about Storage Deals.](../../storage-providers/filecoin-deals/storage-deals.md)
+[Learn more about Storage Deals.](../storage-providers/filecoin-deals/storage-deals.md)
 
 By default, when you make a deal with an address with DataCap allocated, you will spend that DataCap when making the deal.
 
@@ -101,4 +101,4 @@ There are three resources you can use to check the current status of the Filecoi
 
 To learn more about Filecoin Plus, review [FIP003: Filecoin Plus Principles](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md). 
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-storage-works/filecoin-plus)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/store-on-filecoin/filecoin-plus)

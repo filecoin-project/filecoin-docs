@@ -7,7 +7,7 @@ description: >-
 
 Retrieval means fetching stored data back from Filecoin. The right retrieval path depends on how the data was stored, which identifiers you have, and whether you want a managed service API or direct storage-provider retrieval.
 
-Use this page as a starting point. For implementation details, see the [How retrieval works](../how-retrieval-works/README.md) section.
+Use this page as a starting point. For implementation details, see the [How retrieval works](../../store-on-filecoin/how-retrieval-works/README.md) section.
 
 ## Common retrieval paths
 
@@ -34,7 +34,7 @@ Use [Lassie](https://github.com/filecoin-project/lassie) for CID-based retrieval
 
 - [Filecoin Onchain Cloud retrieval](https://docs.filecoin.cloud/core-concepts/retrieval/) covers retrieval for data stored through Filecoin Onchain Cloud.
 - [Fil One docs](https://docs.fil.one/) cover retrieval through S3-compatible object storage APIs.
-- [Basic retrieval](../how-retrieval-works/basic-retrieval.md) covers fetching CID-addressed data with Lassie.
-- [Serving retrievals](../how-retrieval-works/serving-retrievals.md) explains provider advertisements, IPNI, and retrieval protocols.
+- [Basic retrieval](../../store-on-filecoin/how-retrieval-works/basic-retrieval.md) covers fetching CID-addressed data with Lassie.
+- [Serving retrievals](../../store-on-filecoin/how-retrieval-works/serving-retrievals.md) explains provider advertisements, IPNI, and retrieval protocols.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/getting-started/what-is-filecoin/retrieval)

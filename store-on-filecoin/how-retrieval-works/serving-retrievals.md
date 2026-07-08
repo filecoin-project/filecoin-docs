@@ -44,4 +44,4 @@ Different retrieval workflows use different tools:
 | Retrieving data as a client | Use [Lassie](https://github.com/filecoin-project/lassie) to fetch CID-addressed content from Filecoin and IPFS using the best available retrieval path. For whole-piece retrieval, use provider or service `/piece` endpoints. |
 | Retrieving application data with Filecoin Onchain Cloud | See the [Filecoin Onchain Cloud retrieval docs](https://docs.filecoin.cloud/core-concepts/retrieval/) for maintained Synapse SDK retrieval flows. |
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-retrieval-works/serving-retrievals)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/store-on-filecoin/how-retrieval-works/serving-retrievals)

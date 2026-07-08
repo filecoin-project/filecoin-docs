@@ -12,14 +12,6 @@
   * [Retrieval](getting-started/what-is-filecoin/retrieval.md)
   * [Programming on Filecoin](getting-started/what-is-filecoin/programming-on-filecoin.md)
   * [Networks](getting-started/what-is-filecoin/networks.md)
-* [How storage works](getting-started/how-storage-works/README.md)
-  * [Filecoin and IPFS](getting-started/how-storage-works/filecoin-and-ipfs.md)
-  * [Upload to Filecoin](getting-started/how-storage-works/upload-to-filecoin.md)
-  * [Storage onramps](getting-started/how-storage-works/storage-onramps.md)
-  * [Filecoin plus](getting-started/how-storage-works/filecoin-plus.md)
-* [How retrieval works](getting-started/how-retrieval-works/README.md)
-  * [Basic retrieval](getting-started/how-retrieval-works/basic-retrieval.md)
-  * [Serving retrievals](getting-started/how-retrieval-works/serving-retrievals.md)
 * [Interplanetary consensus](getting-started/interplanetary-consensus.md)
 * [Community](getting-started/community/README.md)
   * [Forums and FIPs](getting-started/community/forums-and-FIPs.md)
@@ -31,7 +23,23 @@
   * [The Filecoin project](getting-started/community/the-filecoin-project.md)
   * [Ways to contribute](getting-started/community/ways-to-contribute.md)
 
-## Core Concepts
+## Store on Filecoin
+
+* [Overview](store-on-filecoin/README.md)
+  * [Filecoin and IPFS](store-on-filecoin/filecoin-and-ipfs.md)
+  * [Programmable storage](store-on-filecoin/programmable-storage.md)
+  * [Storage onramps](store-on-filecoin/storage-onramps.md)
+  * [Direct data onboarding](store-on-filecoin/direct-data-onboarding.md)
+  * [Filecoin Plus](store-on-filecoin/filecoin-plus.md)
+  * [How retrieval works](store-on-filecoin/how-retrieval-works/README.md)
+    * [Basic retrieval](store-on-filecoin/how-retrieval-works/basic-retrieval.md)
+    * [Serving retrievals](store-on-filecoin/how-retrieval-works/serving-retrievals.md)
+
+## Build on Filecoin
+
+* [Getting started](build/getting-started.md)
+* [Filecoin Onchain Cloud](build/filecoin-onchain-cloud/README.md)
+  * [Synapse SDK quickstart](build/filecoin-onchain-cloud/synapse-quickstart.md)
 
 * [Filecoin Virtual Machine](core-concepts/filecoin-virtual-machine/README.md)
   * [Actors](core-concepts/filecoin-virtual-machine/actors.md)
@@ -47,12 +55,6 @@
   * [Difference with Ethereum](core-concepts/filecoin-evm-runtime/difference-with-ethereum.md)
   * [How gas works](core-concepts/filecoin-evm-runtime/how-gas-works.md)
   * [Precompiles](core-concepts/filecoin-evm-runtime/precompiles.md)
-
-## Build on Filecoin
-
-* [Getting started](build/getting-started.md)
-* [Filecoin Onchain Cloud](build/filecoin-onchain-cloud/README.md)
-  * [Synapse SDK quickstart](build/filecoin-onchain-cloud/synapse-quickstart.md)
 * [Development Frameworks](build/development-frameworks/README.md)
   * [Remix](build/development-frameworks/remix.md)
   * [Hardhat](build/development-frameworks/hardhat.md)
@@ -106,7 +108,6 @@
 * [Filecoin deals](storage-providers/filecoin-deals/README.md)
   * [Storage deals](storage-providers/filecoin-deals/storage-deals.md)
   * [Verified deals](storage-providers/filecoin-deals/verified-deals.md)
-  * [Filecoin programs and tools](storage-providers/filecoin-deals/filecoin-programs.md)
   * [Snap deals](storage-providers/filecoin-deals/snap-deals.md)
   * [Charging for data](storage-providers/filecoin-deals/charging-for-data.md)
   * [Auxiliary services](storage-providers/filecoin-deals/auxiliary-services.md)
