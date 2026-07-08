@@ -7,7 +7,7 @@ description: >-
 
 This section covers the implementation details behind Filecoin retrieval: finding providers, choosing a retrieval path, and fetching CID-addressed content.
 
-For a high-level overview of managed and direct retrieval paths, see [Retrieval](../what-is-filecoin/retrieval.md).
+For a high-level overview of managed and direct retrieval paths, see [Retrieval](../../getting-started/what-is-filecoin/retrieval.md).
 
 ## Table of contents
 

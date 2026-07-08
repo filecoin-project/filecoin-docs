@@ -1,3 +1,6 @@
 # Filfox.info blocks automated requests (returns 500/503)
 # but links work fine in browsers
 https://filfox.info
+
+# Ramo returns 402 to automated requests while the docs link is retained.
+https://use.ramo.computer/
