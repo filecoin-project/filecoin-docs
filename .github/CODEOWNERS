@@ -1,4 +1,4 @@
 # Codeowners per the FOC Engineering Workstreams proposal.
 # https://app.notion.com/p/filecoindev/FOC-Engineering-Workstreams-342dc41950c1818f99d2e857a7f3cb2e
-build/filecoin-onchain-cloud/** @jennijuju @BigLep @rjan90
-storage-providers/pdp/** @jennijuju @BigLep @rjan90
+/build/filecoin-onchain-cloud @jennijuju @BigLep @rjan90
+/storage-providers/pdp @jennijuju @BigLep @rjan90 @filecoin-project/curio
