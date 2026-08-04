@@ -22,6 +22,7 @@ In order to check the current benchmarked performance of each of the below endpo
 | [Lava](https://www.lavanet.xyz/)            | `https://filecoin.lava.build`         |                                                  | [Lava - Docs](https://docs.lavanet.xyz/iprpc#filecoin)                                            | All Filecoin and Eth JSON RPC methods including MPoolPush |
 | [NOWNodes](https://nownodes.io/)            | `https://fil.nownodes.io`             |                                                  | [NOWNodes - Docs](https://nownodes.gitbook.io/documentation)                                      | Requires an API key                                      |
 
+> Live latency benchmarks for these endpoints (p50/p90/p99, 3 regions, updated every 60 s): [OpenChainBench Filecoin RPC](https://openchainbench.com/benchmarks/filecoin-rpc)
 
 ## Additional Notes:
 
@@ -31,7 +32,7 @@ In order to check the current benchmarked performance of each of the below endpo
     FULLNODE_API_INFO=wss://wss.node.glif.io/apigw/lotus lotus daemon --lite
     ```
 
-    When using a Lotus Lite node, omit `/rpc/v1` from Glif’s WebSocket address.
+    When using a Lotus Lite node, omit `/rpc/v1` from Glif's WebSocket address.
 
     A Lotus Lite node is a stripped down version of a Lotus full-node capable of running on lower-end hardware. It also allows for local signing for storage deals without a full Lotus node.
 
