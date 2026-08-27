@@ -30,7 +30,7 @@ Filecoin Pin is for anyone who needs reliable, verifiable IPFS pinning:
 * **Developers building on IPFS** - If you're building dApps, websites, AI agents, or other applications that rely on IPFS, Filecoin Pin provides the missing persistence layer with cryptographic guarantees.
 
 {% hint style="info" %}
-**Migrating existing pins from Storacha?** This guide focuses on pinning new content. For migrating data already pinned on Storacha, see the dedicated migration guide (coming soon).
+**Already have content pinned elsewhere?** This guide focuses on pinning new content. To move CIDs you already have pinned on Pinata, Storacha, or any public IPFS gateway onto Filecoin - without changing those CIDs - see [Migrating IPFS pins to Filecoin Onchain Cloud](migrate-ipfs-pins/README.md).
 {% endhint %}
 
 ## How to Get Started
@@ -38,9 +38,10 @@ Filecoin Pin is for anyone who needs reliable, verifiable IPFS pinning:
 The fastest path to pinning your first file is the **Getting Started** guide below. It walks you through installing the CLI, connecting your wallet, depositing storage credit, and pinning content - end to end.
 
 1. [**Getting Started**](getting-started.md) - Install Filecoin Pin and pin your first file in around 10 minutes. Start here.
-2. [Filecoin Pin GitHub Actions](github-action.md) - Automate pinning of websites or build artifacts as part of your CI/CD pipeline.
-3. [Filecoin Pin dApp Demo](dapp-demo.md) - Run or fork a demo dApp showing browser-based file uploads to Filecoin.
-4. [Filecoin Pin for ERC-8004 Agents](erc-8004-agent-registration.md) - Register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage for agent metadata.
+2. [**Migrating IPFS pins to Filecoin Onchain Cloud**](migrate-ipfs-pins/README.md) - Bring CIDs you have already pinned on IPFS onto Filecoin Onchain Cloud, unchanged.
+3. [Filecoin Pin GitHub Actions](github-action.md) - Automate pinning of websites or build artifacts as part of your CI/CD pipeline.
+4. [Filecoin Pin dApp Demo](dapp-demo.md) - Run or fork a demo dApp showing browser-based file uploads to Filecoin.
+5. [Filecoin Pin for ERC-8004 Agents](erc-8004-agent-registration.md) - Register a trustless autonomous agent on the ERC-8004 Identity Registry with verifiable persistent storage for agent metadata.
 
 ## Learn More
 
