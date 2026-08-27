@@ -1,3 +1,7 @@
 # Filfox.info blocks automated requests (returns 500/503)
 # but links work fine in browsers
 https://filfox.info
+
+# tecadmin.net throttles automated requests (times out in CI)
+# but the page loads fine in browsers
+https://tecadmin.net
