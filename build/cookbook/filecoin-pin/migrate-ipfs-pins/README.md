@@ -17,7 +17,7 @@ IPFS2FOC exists to bring content you have already pinned on IPFS onto Filecoin O
 Once migrated, your data is paid for onchain and backed by Filecoin's ongoing cryptographic proofs of possession, ensuring verifiable, long-term persistence.
 
 {% hint style="info" %}
-**Ready to migrate?** Jump to [Three ways to migrate](#three-ways-to-migrate) and pick the path that fits your inventory.
+**IPFS2FOC is a bridge, and it is moving.** Bulk migration is actively being moved into a native `filecoin-pin migrate` subcommand, so that migrating an existing inventory and pinning new content end up in one tool. Until that lands, `ipfs2foc` is how you move an inventory across - [migrate from the command line](command-line.md) is the path to use today.
 {% endhint %}
 
 ### Key features and guarantees
@@ -31,9 +31,9 @@ Once migrated, your data is paid for onchain and backed by Filecoin's ongoing cr
 
 ## Who is IPFS2FOC for?
 
-IPFS2FOC is built for anyone who relies on IPFS for content addressing but needs the verifiable durability, cryptographic guarantees, and decentralized backing of Filecoin storage providers. That is the whole qualification - you have CIDs today, and you want them stored on Filecoin Onchain Cloud, in an efficient and resumable manner.
+IPFS2FOC is built for anyone who relies on IPFS for content addressing and wants to move that content wholesale onto Filecoin storage providers, for the verifiable durability, cryptographic guarantees, and decentralized backing they bring. That is the whole qualification - you have CIDs today, and you want all of them on Filecoin Onchain Cloud, migrated efficiently and resumably rather than one upload at a time.
 
-It is a one-time tool. Once the existing content you care about is on Filecoin Onchain Cloud, IPFS2FOC is no longer needed.
+It is a one-time tool. Once the existing IPFS content you care about is on Filecoin Onchain Cloud, IPFS2FOC is no longer needed.
 
 {% hint style="info" %}
 If you have no existing pins and simply want to start storing content on Filecoin, you do not need IPFS2FOC. Go straight to [Filecoin Pin](../README.md).
@@ -41,7 +41,7 @@ If you have no existing pins and simply want to start storing content on Filecoi
 
 ### Primary use cases
 
-* **Teams migrating pinning providers** - Built for teams offboarding from traditional pinning services. If your content is already public and addressable on IPFS, re-uploading everything from scratch wastes bandwidth and changes nothing except who gets the bill. IPFS2FOC migrates it directly.
+* **Teams migrating pinning providers** - Built for teams offboarding from traditional pinning services. If your content is already public and addressable on IPFS, re-uploading everything one-by-one is inefficient, time-consuming, and may end up storing the content using different hashing algorithms, resulting in broken links. IPFS2FOC manages this process for you.
 * **Projects with immutable CIDs** - Essential for projects where changing a content identifier is simply not an option, including:
   * **NFT metadata and media** - Smart contracts referencing fixed IPFS URIs that cannot be edited.
   * **Dataset releases and scientific archives** - Published research data that must remain byte-for-byte identical for citation and reproducibility.
@@ -65,9 +65,7 @@ The intended path is a single handoff:
 1. Move your existing pins across with **IPFS2FOC**.
 2. From that point forward, everything new goes through **Filecoin Pin**.
 
-{% hint style="info" %}
-`IPFS2FOC` serves as a bridge solution while bulk migration capability is actively being moved into the native `filecoin-pin migrate` subcommand for a more integrated experience.
-{% endhint %}
+That handoff is being collapsed into one tool: as noted above, bulk migration is moving into the native `filecoin-pin migrate` subcommand.
 
 ***
 
@@ -114,20 +112,8 @@ Data sets are created automatically during the run with IPFS indexing enabled, w
 
 ***
 
-## Three ways to migrate
-
-All three paths produce the same result. Pick based on the size of your inventory and whether you want to install anything.
-
-|                                                | Best for                                                | Install       | Handles small files |
-| ---------------------------------------------- | ------------------------------------------------------- | ------------- | ------------------- |
-| [**Command line**](command-line.md)            | Any serious migration. The recommended path.            | Node.js 24+   | Yes                 |
-| [**Browser console**](browser-console.md)      | A first run, or a modest inventory.                     | None          | No                  |
-| [**Local console**](local-console.md)          | A visual dashboard, large runs, self-hosting operators. | Node.js 24+   | Yes                 |
-
-***
-
 ## Next steps
 
-* [**Migrate from the command line**](command-line.md) - the recommended path. Start here unless you would rather not install anything, in which case use the [browser console](browser-console.md).
+* [**Migrate from the command line**](command-line.md) - the full walkthrough, from install through to onchain verification.
 * [**Filecoin Pin**](../README.md) - where all your new uploads should go once the migration is done.
 * [**IPFS2FOC on GitHub**](https://github.com/FilOzone/ipfs2foc) - source code and full command reference.

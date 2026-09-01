@@ -8,7 +8,11 @@ description: >-
 
 The `ipfs2foc` CLI migrates your pins in a single command. It handles files of any size, scales to large inventories, and requires nothing about your machine to be reachable from the internet.
 
-This is the recommended path for any serious migration. If you would rather not install anything, the [browser console](browser-console.md) covers smaller runs. If you want a visual dashboard, see the [local console](local-console.md).
+This is the recommended path for any serious migration.
+
+{% hint style="info" %}
+**`ipfs2foc` is a bridge.** This migration logic is actively being moved into a native `filecoin-pin migrate` subcommand. Everything on this page works today, but once that subcommand lands it becomes the supported path, and migrating will be one command inside the [Filecoin Pin](../README.md) tool you already use for new uploads.
+{% endhint %}
 
 ***
 
@@ -206,19 +210,6 @@ curl -sL -o /dev/null -w "%{http_code}\n" \
 
 ***
 
-## Watch a run in a dashboard
-
-If you would rather see progress visually than read log lines, run the console alongside your migration. It reads the same database:
-
-```bash
-ipfs2foc serve --db migrate.db
-# open http://localhost:4321
-```
-
-This is read-and-monitor only - you still submit with `upload` from your terminal. See the [local console guide](local-console.md) for the full dashboard workflow.
-
-***
-
 ## Now switch to Filecoin Pin
 
 Your existing pins are on Filecoin Onchain Cloud, and this migration is a one-time job.
@@ -229,6 +220,4 @@ Your existing pins are on Filecoin Onchain Cloud, and this migration is a one-ti
 
 ## Related
 
-* [Migrate in the browser](browser-console.md) - no install, for smaller runs.
-* [Migrate with the local console](local-console.md) - visual dashboard, self-hosting operators.
 * [About migrating IPFS pins](README.md) - what IPFS2FOC is and how a migration works.
