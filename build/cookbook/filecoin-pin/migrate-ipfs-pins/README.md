@@ -89,7 +89,7 @@ On w3up, your options are a self-hosted Kubo node, a Pinata account pinning the 
 
 ### Probe before you plan a run
 
-Provider behavior drifts, so confirm a gateway serves your content before spending anything. Check a single CID with `ipfs2foc probe <cid> --gateway <url>`, or pre-flight a whole list with `ipfs2foc analyze --cids cids.txt --gateway <url>` to get a pass rate.
+Confirm a gateway serves your content before spending anything. Check a single CID with `ipfs2foc probe <cid> --gateway <url>`, or pre-flight a whole list with `ipfs2foc analyze --cids cids.txt --gateway <url>` to get a pass rate.
 
 | Result | What it means                                                                                                                                                                                                                     |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -117,3 +117,4 @@ Data sets are created automatically during the run with IPFS indexing enabled, w
 * [**Migrate from the command line**](command-line.md) - the full walkthrough, from install through to onchain verification.
 * [**Filecoin Pin**](../README.md) - where all your new uploads should go once the migration is done.
 * [**IPFS2FOC on GitHub**](https://github.com/FilOzone/ipfs2foc) - source code and full command reference.
+* [**IPFS to Filecoin**](https://filecoin.cloud/ipfs2filecoin) - check a CID list and estimate what a migration costs before you install anything.
