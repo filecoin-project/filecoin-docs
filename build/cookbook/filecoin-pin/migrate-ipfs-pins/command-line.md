@@ -221,3 +221,4 @@ Your existing pins are on Filecoin Onchain Cloud, and this migration is a one-ti
 ## Related
 
 * [About migrating IPFS pins](README.md) - what IPFS2FOC is and how a migration works.
+* [IPFS to Filecoin](https://filecoin.cloud/ipfs2filecoin) - check a CID list and estimate what a migration costs before you install anything.
