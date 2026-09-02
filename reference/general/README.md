@@ -68,7 +68,6 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 * [Pinata](https://pinata.cloud/) is an IPFS pinning service for storing and serving files, media, and app data over IPFS. See the [Pinata docs](https://docs.pinata.cloud/).
 * [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
 * [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
-* [Ramo](https://use.ramo.computer/) provides Filecoin-based, S3-compatible storage for data on Filecoin.
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   * to securely capture, store and verify human history
   * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/)

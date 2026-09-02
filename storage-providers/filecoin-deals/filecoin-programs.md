@@ -18,7 +18,7 @@ Web3.storage runs on “Elastic IPFS” as the inbound storage protocol offering
 
 [![Read the doc](https://img.shields.io/badge/docs-gitbook.io-blue?style=for-the-badge)](https://filecoin-green.gitbook.io/) [![Join Slack](https://img.shields.io/badge/join-slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C02HZ215B7Y)
 
-Filecoin Green aims to measure the environmental impacts of Filecoin and verifiably drive them below zero, building infrastructure along the way that allows anyone to make transparent and substantive environmental claims. The team maintains the [Filecoin Energy Dashboard](https://filecoin.energy/) and works with storage providers to decarbonize their operations through the [Energy Validation Process](https://filecoin.energy/methodology). Connect with the team on Slack at [#fil-green](https://filecoinproject.slack.com/archives/C02HZ215B7Y), or via email at [green@filecoin.org](mailto:green@filecoin.org).
+Filecoin Green aims to measure the environmental impacts of Filecoin and verifiably drive them below zero, building infrastructure along the way that allows anyone to make transparent and substantive environmental claims. The team maintains the [Filecoin Energy Dashboard](https://filecoin.energy/) and works with storage providers to decarbonize their operations through its Energy Validation Process. Connect with the team on Slack at [#fil-green](https://filecoinproject.slack.com/archives/C02HZ215B7Y), or via email at [green@filecoin.org](mailto:green@filecoin.org).
 
 ## [Spade](https://github.com/data-preservation-programs/spade)
 
