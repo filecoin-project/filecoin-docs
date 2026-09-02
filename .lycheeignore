@@ -5,3 +5,11 @@ https://filfox.info
 # tecadmin.net throttles automated requests (times out in CI)
 # but the page loads fine in browsers
 https://tecadmin.net
+
+# docs.gelato.cloud returns 404 for every path, including its own root and
+# sitemap.xml (verified 2026-09 with a browser User-Agent). docs.gelato.network
+# redirects here and 404s too, so there is no working replacement URL to link.
+# Unlike the entries above, these links are genuinely dead rather than blocked
+# by bot protection -- the vendor's docs site is down, so this suppresses real
+# 404s until Gelato restores it.
+https://docs.gelato.cloud
