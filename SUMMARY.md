@@ -146,6 +146,7 @@
 * [PDP](storage-providers/pdp/README.md)
   * [About PDP](storage-providers/pdp/about.md)
   * [Install & Run PDP](storage-providers/pdp/install-and-run-pdp.md)
+  * [Enable HTTPS for PDP](storage-providers/pdp/nginx-reverse-proxy.md)
 
 ## Networks & Tools
 

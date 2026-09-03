@@ -11,3 +11,4 @@ PDP is a challenge-response protocol that lets applications verify storage provi
 
 * [About PDP](about.md) — how the protocol works, when to use it, and what it replaces
 * [Install and run PDP](install-and-run-pdp.md) — set up a PDP-enabled storage provider with Lotus, YugabyteDB, and Curio
+* [Enable HTTPS for PDP](nginx-reverse-proxy.md) — front your Curio PDP service with HTTPS using nginx and Let's Encrypt
