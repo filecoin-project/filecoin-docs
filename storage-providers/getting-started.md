@@ -10,9 +10,30 @@ keywords: "earn FIL, Filecoin rewards, storage provider rewards, stake FIL, stak
 
 The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 
-To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
+There are two ways to provide storage. Pick one before you buy a rack full of GPUs.
 
-Follow these steps to begin your storage provider journey:
+## Filecoin Onchain Cloud (PDP)
+
+If you want to serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) — warm storage, PDP proofs, FWSS, Filecoin Pay — you do **not** need a PoRep sealing pipeline.
+
+Clone [Curio](https://github.com/filecoin-project/curio), start Docker, and go do something else for a bit:
+
+```bash
+git clone https://github.com/filecoin-project/curio.git
+docker compose -f curio/docker/skiff/docker-compose.yaml up -d
+```
+
+That brings up Curio-PDP, YugabyteDB, and Forest. Hardware, disks, wallet, TLS, and FWSS registration are in the Curio docs, which is where the detailed operator guide lives:
+
+**[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** on [docs.curiostorage.org](https://docs.curiostorage.org/)
+
+Protocol background: [About PDP](./pdp/about.md). The rest of this page is the **PoRep** path.
+
+## PoRep (sealing)
+
+PoRep is the classic Filecoin storage-provider business: seal sectors, prove them over time, take FIL collateral, and (optionally) make storage deals. You need a range of technical, financial and business skills. The sections below cover architecture, hardware, and how to run that operation profitably.
+
+Follow these steps:
 
 1. Understand Filecoin economics
 2. Plan your business

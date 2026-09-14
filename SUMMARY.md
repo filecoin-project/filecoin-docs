@@ -145,7 +145,7 @@
   * [Industry](storage-providers/core-competencies/industry.md)
 * [PDP](storage-providers/pdp/README.md)
   * [About PDP](storage-providers/pdp/about.md)
-  * [Install & Run PDP](storage-providers/pdp/install-and-run-pdp.md)
+  * [Run a PDP provider](storage-providers/pdp/install-and-run-pdp.md)
 
 ## Networks & Tools
 
