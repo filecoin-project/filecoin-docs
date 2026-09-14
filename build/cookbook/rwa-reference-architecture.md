@@ -112,7 +112,7 @@ The implementation stores bytes with [Filecoin Onchain Cloud](https://docs.filec
 
 We're looking for RWA teams interested in applying this architecture to production data and helping shape the next generation of Filecoin + IPFS tooling.
 
-* [Talk to the Filecoin team](https://fil.org/contact)
+* [Talk to the Filecoin team](https://filecoin.cloud/contact)
 * [View the implementation](https://github.com/SgtPooki/Avalanche-IPFS-Filecoin-RWA-reference-Architecture)
 
 ### About the demo
