@@ -20,6 +20,8 @@ That leaves a simple infrastructure question: how can an application reference o
 
 ## A hybrid architecture for real-world assets
 
+![Architecture: a source record goes to IPFS for a CID, its bytes persist on Filecoin with storage proofs, an Avalanche application references the CID, and anyone can verify by re-hashing](./assets/rwa-architecture.png)
+
 | Component | What it does | Output |
 | --- | --- | --- |
 | **RWA source record** | Deed, title, appraisal, certification, disclosure | The document |
