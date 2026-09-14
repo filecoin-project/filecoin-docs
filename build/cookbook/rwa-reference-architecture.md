@@ -106,7 +106,7 @@ Explore the implementation, run the demo, or adapt the architecture for your own
 * [Run the demo](https://github.com/SgtPooki/Avalanche-IPFS-Filecoin-RWA-reference-Architecture#verify-the-example)
 * [Implementation guide](https://github.com/SgtPooki/Avalanche-IPFS-Filecoin-RWA-reference-Architecture#fork-map)
 
-The implementation stores bytes with [Filecoin Onchain Cloud](https://docs.filecoin.cloud/) through the Synapse SDK, anchors a manifest pointer in a plain EVM registry contract on Avalanche, and verifies by re-hashing retrieved bytes and reading data set proof state. It builds on the [Avalanche and Filecoin data bridge](https://www.avax.network/about/blog/avalanche-and-filecoin-launch-cross-chain-data-bridge) announced in May 2025.
+The implementation stores bytes with [Filecoin Onchain Cloud](https://docs.filecoin.cloud/) through the Synapse SDK, anchors a manifest pointer in a plain EVM registry contract on Avalanche, and verifies by re-hashing retrieved bytes and reading data set proof state. It builds on the [Avalanche and Filecoin data bridge](https://www.avalanche.com/about/blog/avalanche-and-filecoin-launch-cross-chain-data-bridge-for-scalable-web3) announced in May 2025.
 
 ## Building real-world assets on Avalanche?
 
