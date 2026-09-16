@@ -27,51 +27,35 @@ A few patterns come up often when agents use FC:
 * **Verifiable identity and provenance.** Agents that register a verifiable identity (for example, under [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004)) can back that identity with metadata stored on Filecoin, so other agents or services can verify both who an agent is and that its declared capabilities/data haven't disappeared. See [Filecoin Pin for ERC-8004 Agents](../build/cookbook/filecoin-pin/erc-8004-agent-registration.md) for a full walkthrough.
 * **IPFS-compatible by default.** If an agent (or the framework it's built on) already speaks IPFS, adding Filecoin persistence doesn't require new tooling. Content stays addressable by the same Content Identifier (CID).
 
-## Quickstart: pin an artifact
+## Quickstart: publish an artifact
 
-The fastest way to see this working end to end is to pin a file, the way an agent would pin an artifact it just produced. This uses the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin), which any agent (or the process running it) can call directly.
-
-{% hint style="info" %}
-**Agent-native workflow coming soon.** A packaged agent skill for pinning artifacts, so an agent can do this as a tool call instead of shelling out to the CLI, is in the works. This section will be updated with that flow once it ships; the CLI steps below work today and won't change underneath it.
-{% endhint %}
+The fastest way to see this working end to end is to have an agent publish a file using the `publish` skill, the way an agent would share an artifact it just produced. The skill drives the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin) underneath, so everything here works whether an agent invokes the skill or you run the CLI directly.
 
 Before you start, make sure you have:
 
-* **An Ethereum-style wallet on Filecoin.** See [Wallets](../networks-and-tools/assets/wallets.md).
+* **An Ethereum-style wallet on Filecoin.** See [Wallets](../networks-and-tools/assets/wallets.md). You'll use it to approve access from a browser, not to hand a key to the agent.
 * **FIL in that wallet,** to cover transaction fees.
-* **USDFC in that wallet,** to pay for storage. USDFC is Filecoin Cloud's storage-payment stablecoin.
+* **USDFC in that wallet,** to pay for storage. USDFC is Filecoin Cloud's storage-payment stablecoin. 5 USDFC is enough to start.
 * **Node.js 24 or later.**
 
-1. **Install the CLI:**
+1. **Install the skill and the CLI it drives:**
 
    ```sh
-   npm install -g filecoin-pin@latest
+   npx skills add filecoin-project/filecoin-skills --skill publish
+   npm install -g filecoin-pin
    ```
 
-2. **Connect a wallet.** Export a private key as an environment variable; the CLI never stores it. See the wallet setup steps in [Filecoin Pin: Getting Started](../build/cookbook/filecoin-pin/getting-started.md) for the safe way to do this.
-
-3. **Set up payments.** Authorize storage spending and deposit USDFC so providers can be paid:
+2. **Log in once.** Run `filecoin-pin login` and approve a scoped session key in the Filecoin Cloud console from your wallet. No private key ever touches the agent, and the key can be revoked from the console at any time.
 
    ```sh
-   filecoin-pin payments setup
+   filecoin-pin login
    ```
 
-4. **Pin the artifact:**
+3. **Set up payments in the console.** Authorize the Warm Storage Service to spend USDFC and deposit funds into Filecoin Pay, both in the console's Add Service flow, in a single wallet transaction. A session key can't move money, so this step is always a human's.
 
-   ```sh
-   filecoin-pin add ./path/to/artifact
-   ```
+4. **Ask the agent to publish something.** Say "publish this," "share this file," or "pin this." The agent hands back a link like `https://inbrowser.link/ipfs/<cid>`, first the moment the CID is known, then confirmed once verification passes.
 
-   The CLI packs the file, selects storage providers, stores it redundantly, and returns a Root CID you (or the agent) can use to retrieve it from any IPFS-compatible tool or gateway.
-
-5. **Verify it's still there.** Any time later, check the live proof status instead of trusting a cached "it worked" from step 4:
-
-   ```sh
-   filecoin-pin data-set list
-   filecoin-pin data-set show <DATASET_ID>
-   ```
-
-For the full walkthrough, including wallet setup, funding, and what each step returns, see [Filecoin Pin: Getting Started](../build/cookbook/filecoin-pin/getting-started.md).
+Prefer to drive the CLI directly instead of through the skill? The same `filecoin-pin add`, `filecoin-pin payments setup`, and `filecoin-pin data-set` commands work standalone, including a direct private-key mode. See [Filecoin Pin: Getting Started](../build/cookbook/filecoin-pin/getting-started.md) for that walkthrough.
 
 ## Common questions
 
@@ -85,7 +69,7 @@ Storage providers submit proof, on a recurring schedule, that they still hold th
 Yes, today. An agent's wallet needs FIL (for transaction fees) and USDFC (Filecoin Cloud's storage-payment stablecoin) for payments. Filecoin Pay is where those payments settle; the [Filecoin Pay Console](#filecoin-pay-console) is where a human operator can inspect or adjust what an agent's wallet is authorized to spend.
 
 **How does an agent authenticate for payments today?**
-By holding a wallet private key directly, the same credential used in the Quickstart above. A scoped, revocable session-key login (so an agent can be authorized for just what it needs, without holding full wallet access) is planned for the Pay Console; see the disclaimer under [Filecoin Pay Console](#filecoin-pay-console) below.
+By running `filecoin-pin login` (or using the `publish` skill in the Quickstart above, which calls it by default), which pairs the agent with a scoped, revocable session key instead of a raw wallet private key: a human approves a one-time pairing link from their wallet, and the agent holds only that limited key afterward. Direct private-key access still works as a fallback for the CLI; see [Filecoin Pay Console](#filecoin-pay-console) below for where session keys are managed.
 
 ## Resources
 
@@ -103,12 +87,12 @@ A community-built CLI (also installable as an agent skill and MCP server) for th
 
 ### Filecoin Pay Console
 
-A web console for managing the payment side of FC: connect a wallet to view and manage payment rails, deposits made in USDFC, and the services you've authorized to draw against them. It's most useful for a human operator who wants to inspect or adjust what an agent's wallet is authorized to spend, rather than something an agent calls directly.
+A web console for managing the payment side of FC: connect a wallet to view and manage payment rails, deposits made in USDFC, and the services you've authorized to draw against them. A human operator uses it directly to authorize spending and fund an agent's session; an agent-driven CLI also opens it briefly, for the one-time wallet approval a session-key login requires.
 
 The console is currently in beta and interacts directly with the underlying payment contracts. Verify transaction details before confirming anything.
 
 {% hint style="info" %}
-**Session-key login (coming soon).** A scoped, revocable session-key pairing flow, so an agent can be authorized for just what it needs without handing over full wallet access, is in development for this console. This section will be updated once it ships.
+**Session-key login.** Instead of connecting a full wallet, an agent (or the CLI it's driving) can authenticate with a scoped, revocable session key: it opens a one-time pairing link in a browser, a human approves it from their wallet, and the agent receives a key limited to just what it needs. Run this from the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin) with `filecoin-pin login`, or see the Quickstart above for the packaged agent skill that uses it by default.
 {% endhint %}
 
 [Filecoin Pay Console &rarr;](https://pay.filecoin.cloud/console)
