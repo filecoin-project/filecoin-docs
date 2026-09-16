@@ -1,22 +1,23 @@
 ---
 description: >-
-  A reference architecture and working example showing how RWA issuers can use
-  Avalanche, IPFS and Filecoin to connect onchain assets to durable,
-  content-addressed offchain records.
+  Verifiable data infrastructure for tokenized assets. Connect onchain assets
+  to the offchain records they depend on using IPFS + Filecoin to make deeds,
+  appraisals, certifications and other source data durable, content-addressed
+  and independently verifiable.
 ---
 
-# Verifiable offchain data for tokenized real-world assets
+# Verifiable data infrastructure for tokenized assets
 
-Tokenized assets depend on deeds, certifications, appraisals, disclosures and other records that don't belong onchain. This reference architecture shows how Avalanche, IPFS and Filecoin can connect onchain assets to durable, content-addressed source records.
+Connect onchain assets to the offchain records they depend on. Use IPFS + Filecoin to make deeds, appraisals, certifications and other source data durable, content-addressed and independently verifiable.
 
-* [Explore the working demo](https://sgtpooki.github.io/Avalanche-IPFS-Filecoin-RWA-reference-Architecture/) (runs live on Avalanche Fuji and Filecoin Calibration; no wallet needed)
-* [View the implementation on GitHub](https://github.com/SgtPooki/Avalanche-IPFS-Filecoin-RWA-reference-Architecture)
+* [Explore the working demo →](https://sgtpooki.github.io/Avalanche-IPFS-Filecoin-RWA-reference-Architecture/) (runs live on Avalanche Fuji and Filecoin Calibration; no wallet needed)
+* [View implementation →](https://github.com/SgtPooki/Avalanche-IPFS-Filecoin-RWA-reference-Architecture)
 
-## The asset is onchain. Its source records usually aren't.
+## Your asset is onchain. Its source of truth usually isn't.
 
-Tokenizing an asset creates an onchain representation of ownership and transactions. But the information that establishes what that asset represents, such as deeds, title records, certifications and valuations, often remains in conventional databases and cloud storage.
+Tokenized assets rely on offchain records to establish what they represent. If those records live only in an issuer's database or cloud account, applications depend on that infrastructure to preserve the data unchanged.
 
-That leaves a simple infrastructure question: how can an application reference offchain records while allowing anyone to verify that the underlying data hasn't changed and remains available?
+IPFS + Filecoin give RWA applications a verifiable data layer: **IPFS identifies the exact content, Filecoin persistently stores it with cryptographic proofs, and your onchain application references the CID.**
 
 ## A hybrid architecture for real-world assets
 
