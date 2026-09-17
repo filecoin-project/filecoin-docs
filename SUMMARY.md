@@ -33,6 +33,7 @@
 
 ## Core Concepts
 
+* [Filecoin for Agents](core-concepts/filecoin-for-agents.md)
 * [Filecoin Virtual Machine](core-concepts/filecoin-virtual-machine/README.md)
   * [Actors](core-concepts/filecoin-virtual-machine/actors.md)
   * [Addresses](core-concepts/filecoin-virtual-machine/addresses.md)
