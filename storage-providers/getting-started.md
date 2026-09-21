@@ -10,13 +10,16 @@ keywords: "earn FIL, Filecoin rewards, storage provider rewards, stake FIL, stak
 
 The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 
-There are two ways to provide storage. Pick one before you buy a rack full of GPUs.
+To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
+
+There are two ways to provide storage:
+
+* **PDP (recommended)** — serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) with warm storage, PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start.
+* **PoRep (legacy sealing)** — the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint.
 
 ## Filecoin Onchain Cloud (PDP)
 
-[Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) lets you sell warm storage from your own hardware — PDP proofs, FWSS, Filecoin Pay — and everything you need runs on a single machine. You do **not** need a PoRep sealing pipeline.
-
-Until recently, getting a PDP node running meant setting up a chain node, a database, and Curio yourself. That stack is packaged now: one Docker Compose command brings up Forest, Yugabyte, and Curio-PDP, and a web guide on `http://127.0.0.1:4701` walks you through wallet, storage, domain, and FOC registration. Downloads aside, setup takes about five minutes.
+FOC lets you sell warm storage from your own hardware without a PoRep sealing pipeline. One Docker Compose command brings up Forest, Yugabyte, and Curio-PDP, and a web guide on `http://127.0.0.1:4701` walks you through wallet, storage, domain, and FOC registration. Downloads aside, setup takes about five minutes.
 
 ```bash
 git clone https://github.com/filecoin-project/curio.git
@@ -31,11 +34,11 @@ docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
 
 Full walkthrough — what’s in the box, hardware, the PDP Guide steps, and what you earn: **[Run a PDP provider](./pdp/install-and-run-pdp.md)**. Deeper operator docs (custom disks, external chain nodes, troubleshooting): **[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** on [docs.curiostorage.org](https://docs.curiostorage.org/).
 
-Protocol background: [About PDP](./pdp/about.md). The rest of this page is the **PoRep** path.
+Protocol background: [About PDP](./pdp/about.md). The sections below cover the **PoRep** path.
 
 ## PoRep (sealing)
 
-PoRep is the classic Filecoin storage-provider business: seal sectors, prove them over time, take FIL collateral, and (optionally) make storage deals. You need a range of technical, financial and business skills. The sections below cover architecture, hardware, and how to run that operation profitably.
+PoRep is the classic Filecoin storage-provider business: seal sectors, prove them over time, take FIL collateral, and (optionally) make storage deals. The sections below cover architecture, hardware, and how to run that operation profitably.
 
 Follow these steps:
 

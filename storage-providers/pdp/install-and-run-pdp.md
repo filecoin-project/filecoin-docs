@@ -85,13 +85,9 @@ See the current schedule and how it was worked out in the [FOC pricing docs](htt
 
 ## Go deeper
 
-Hardware, custom storage paths, external chain nodes, TLS, and troubleshooting live in the Curio operator docs — this Filecoin docs page is the FOC entry point:
+Hardware, custom storage paths, external chain nodes, TLS, and troubleshooting:
 
 **[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** — [docs.curiostorage.org](https://docs.curiostorage.org/)
-
-{% hint style="info" %}
-Operator guides for Curio-PDP live in the [Curio repository](https://github.com/filecoin-project/curio) and are published at docs.curiostorage.org.
-{% endhint %}
 
 * See [About PDP](about.md) for how the protocol fits FOC
 * See [Provide Storage](../getting-started.md) if you wanted the PoRep sealing path instead
