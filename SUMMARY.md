@@ -33,6 +33,7 @@
 
 ## Core Concepts
 
+* [Filecoin for Agents](core-concepts/filecoin-for-agents.md)
 * [Filecoin Virtual Machine](core-concepts/filecoin-virtual-machine/README.md)
   * [Actors](core-concepts/filecoin-virtual-machine/actors.md)
   * [Addresses](core-concepts/filecoin-virtual-machine/addresses.md)
@@ -87,6 +88,7 @@
 * [Cookbook](build/cookbook/README.md)
   * [Store data](build/cookbook/store-data.md)
   * [Retrieve data](build/cookbook/retrieve-data.md)
+  * [Verifiable offchain data for tokenized assets](build/cookbook/rwa-reference-architecture.md)
   * [Filecoin Pin](build/cookbook/filecoin-pin/README.md)
     * [Getting Started](build/cookbook/filecoin-pin/getting-started.md)
     * [Migrating IPFS pins to Filecoin Onchain Cloud](build/cookbook/filecoin-pin/migrate-ipfs-pins/README.md)
