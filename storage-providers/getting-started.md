@@ -14,8 +14,8 @@ To become a storage provider in the Filecoin network you need a range of technic
 
 There are two ways to provide storage:
 
-* **PDP (recommended)** — serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) with warm storage, PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start.
-* **PoRep (legacy sealing)** — the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint.
+* **PDP (recommended)** — serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) with warm storage, PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start. Some data is provided by the network for you to store. 
+* **PoRep (legacy sealing)** — the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint. You manage your own data business relationships. 
 
 ## Filecoin Onchain Cloud (PDP)
 
