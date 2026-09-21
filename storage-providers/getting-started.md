@@ -14,18 +14,22 @@ There are two ways to provide storage. Pick one before you buy a rack full of GP
 
 ## Filecoin Onchain Cloud (PDP)
 
-If you want to serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) — warm storage, PDP proofs, FWSS, Filecoin Pay — you do **not** need a PoRep sealing pipeline.
+[Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) lets you sell warm storage from your own hardware — PDP proofs, FWSS, Filecoin Pay — and everything you need runs on a single machine. You do **not** need a PoRep sealing pipeline.
 
-Clone [Curio](https://github.com/filecoin-project/curio), start Docker, and go do something else for a bit:
+Until recently, getting a PDP node running meant setting up a chain node, a database, and Curio yourself. That stack is packaged now: one Docker Compose command brings up Forest, Yugabyte, and Curio-PDP, and a web guide on `http://127.0.0.1:4701` walks you through wallet, storage, domain, and FOC registration. Downloads aside, setup takes about five minutes.
 
 ```bash
 git clone https://github.com/filecoin-project/curio.git
+
+# Mainnet
 docker compose -f curio/docker/skiff/docker-compose.yaml up -d
+
+# Calibration test network (free test funds)
+cd curio/docker/skiff
+docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
 ```
 
-That brings up Curio-PDP, YugabyteDB, and Forest. Hardware, disks, wallet, TLS, and FWSS registration are in the Curio docs, which is where the detailed operator guide lives:
-
-**[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** on [docs.curiostorage.org](https://docs.curiostorage.org/)
+Full walkthrough — what’s in the box, hardware, the PDP Guide steps, and what you earn: **[Run a PDP provider](./pdp/install-and-run-pdp.md)**. Deeper operator docs (custom disks, external chain nodes, troubleshooting): **[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** on [docs.curiostorage.org](https://docs.curiostorage.org/).
 
 Protocol background: [About PDP](./pdp/about.md). The rest of this page is the **PoRep** path.
 
