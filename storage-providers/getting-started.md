@@ -12,6 +12,8 @@ The Filecoin network provides decentralized data storage and makes sure data is 
 
 To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
 
+In a hurry? The [storage provider quickstart](quickstart.md) takes you from zero to running as a PDP service provider or a consensus miner on a single page.
+
 Follow these steps to begin your storage provider journey:
 
 1. Understand Filecoin economics
