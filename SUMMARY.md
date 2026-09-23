@@ -10,7 +10,6 @@
   * [Storage model](getting-started/what-is-filecoin/storage-model.md)
   * [Storage market](getting-started/what-is-filecoin/storage-market.md)
   * [Retrieval](getting-started/what-is-filecoin/retrieval.md)
-  * [Programming on Filecoin](getting-started/what-is-filecoin/programming-on-filecoin.md)
   * [Networks](getting-started/what-is-filecoin/networks.md)
 * [How storage works](getting-started/how-storage-works/README.md)
   * [Filecoin and IPFS](getting-started/how-storage-works/filecoin-and-ipfs.md)

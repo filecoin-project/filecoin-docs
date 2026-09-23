@@ -109,7 +109,7 @@ redirects:
   basics/what-is-filecoin/crypto-economics: getting-started/what-is-filecoin/crypto-economics.md
   basics/what-is-filecoin/networks: getting-started/what-is-filecoin/networks.md
   basics/what-is-filecoin/overview: getting-started/what-is-filecoin/README.md
-  basics/what-is-filecoin/programming-on-filecoin: getting-started/what-is-filecoin/programming-on-filecoin.md
+  basics/what-is-filecoin/programming-on-filecoin: core-concepts/filecoin-virtual-machine/README.md
   basics/what-is-filecoin/retrieval-market: getting-started/what-is-filecoin/retrieval.md
   basics/what-is-filecoin/storage-market: getting-started/what-is-filecoin/storage-market.md
   basics/what-is-filecoin/storage-model: getting-started/what-is-filecoin/storage-model.md
@@ -329,6 +329,7 @@ redirects:
   get-started/lotus/tips-running-in-china: storage-providers/getting-started.md
   get-started/lotus/troubleshooting: storage-providers/nodes/implementations/lotus.md
   get-started/overview: getting-started/what-is-filecoin/README.md
+  getting-started/what-is-filecoin/programming-on-filecoin: core-concepts/filecoin-virtual-machine/README.md
   getting-started/what-is-filecoin/retrieval-market: getting-started/what-is-filecoin/retrieval.md
   get-started/overview/get-started: core-concepts/filecoin-virtual-machine/README.md
   get-started/resources: storage-providers/getting-started.md
@@ -363,7 +364,7 @@ redirects:
   intro/intro-to-filecoin/blockchain: getting-started/what-is-filecoin/blockchain.md
   intro/intro-to-filecoin/crypto-economics: getting-started/what-is-filecoin/crypto-economics.md
   intro/intro-to-filecoin/network: getting-started/what-is-filecoin/networks.md
-  intro/intro-to-filecoin/programming-on-filecoin: getting-started/what-is-filecoin/programming-on-filecoin.md
+  intro/intro-to-filecoin/programming-on-filecoin: core-concepts/filecoin-virtual-machine/README.md
   intro/intro-to-filecoin/retrieval-market: getting-started/what-is-filecoin/retrieval.md
   intro/intro-to-filecoin/storage-market: getting-started/what-is-filecoin/storage-market.md
   intro/intro-to-filecoin/storage-model: getting-started/what-is-filecoin/storage-model.md
