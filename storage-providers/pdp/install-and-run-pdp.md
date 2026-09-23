@@ -20,14 +20,15 @@ Curio-PDP ships as a single Docker Compose stack made up of three pieces:
 * **Yugabyte** — the database
 * **Curio-PDP** — the storage node itself, with a web dashboard
 
-They all run in Docker on their own private network. Only Curio-PDP faces the internet, on ports 80 and 443.
+They all run in Docker on their own private network. Only Curio-PDP faces the internet, on ports 80 and 443. An external Lotus or Forest node works instead of the bundled Forest, pointed at with `FULLNODE_API_INFO`.
 
 The first time you open the dashboard, it lands you on a setup guide. The guide checks your node and ticks off each step as it completes. Everything is set from the dashboard, so there’s no config file to edit.
 
 ## What you need
 
 * A Linux or macOS machine with Docker installed (Docker Compose comes with it)
-* 32 GiB+ RAM and an 8-core+ CPU (no GPU required)
+* 64 GB+ RAM and a 16-thread+ CPU (no GPU required)
+* NVMe or SSD for Yugabyte and Forest
 * About 100 GB of disk for the chain state and database, plus the storage you want to sell (the guide needs at least 20 GiB of that attached)
 * A reliable internet connection
 * A domain or subdomain you own
@@ -71,7 +72,7 @@ The guide is a checklist that the node verifies for you. The boxes tick themselv
 1. **Fund a wallet** — Click **Create wallet** to make a new signing key, or paste in one you already have. A hex private key or the output of `lotus wallet export` will both do. Keep the key safe: if you create it here, this is the only time it’s shown. Then send some FIL to the address on screen. Once it lands, the box ticks itself.
 2. **Attach your storage** — Open the Storage page and attach the folders Curio-PDP should use. The stack has already mounted a `/data` folder for you, and attaching that is the simplest option. If your disks are elsewhere, map them under `/data` in `docker/skiff/.env` before you start the stack.
 3. **Set your domain** — On the Configuration page, set `HTTP.DomainName` to a domain or subdomain you own and point its DNS at this machine. The guide then checks if it can reach your node at that address. Don’t want to open inbound ports? Create a tunnel in the Cloudflare Zero Trust dashboard and paste its token into the guide. It downloads `cloudflared` and starts the tunnel for you — entirely optional.
-4. **Register with FOC** — When the first three are green, the register button unlocks. One click adds you to the Filecoin Onchain Cloud service provider registry. After the network’s quality checks have approved you, data starts arriving.
+4. **Register with FOC** — When the first three are green, the register button unlocks. One click adds you to the Filecoin Onchain Cloud service provider registry. Once the working group approves you, data starts arriving.
 
 From then on, the PDP Overview is your home page: data under proof, proving success and net income over the last 30 days, chain status, wallet balance, and any open alerts, all on one screen.
 
@@ -79,9 +80,9 @@ From then on, the PDP Overview is your home page: data under proof, proving succ
 
 Customers pay in USDFC, a US dollar stablecoin on Filecoin, and the money streams to you through Filecoin Pay as you prove you’re holding their data. The price list is written into the storage contract, so every provider gets paid the same rates. There is no commission on the storage rate — a 0.5% network fee comes off at settlement, and that’s the only deduction.
 
-Registration gets you into the registry, but the network’s quality checks decide when data is routed to you. Keep the node up and proving, and the data will come.
+Registration gets you into the registry. Once the working group approves you, data is routed to you. Keep the node up and proving, and the data will come.
 
-See the current schedule and how it was worked out in the [FOC pricing docs](https://docs.filecoin.cloud/), and the [Medium walkthrough](https://medium.com/@filoz/become-a-filecoin-onchain-cloud-storage-provider-in-five-minutes-57abbcd95876) for worked examples.
+See the current schedule and how it was worked out in the [FOC pricing docs](https://docs.filecoin.cloud/introduction/about/#pricing), and the [Medium walkthrough](https://medium.com/@filoz/become-a-filecoin-onchain-cloud-storage-provider-in-five-minutes-57abbcd95876) for worked examples.
 
 ## Go deeper
 
