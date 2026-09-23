@@ -643,4 +643,52 @@ If you're automating either path, these are the minimum steps and the checks tha
 
 When you ask for help, include your Curio and Lotus versions (`curio --version`, `lotus --version`), which network you're on, the exact command you ran, and the relevant log lines.
 
+## Sources
+
+This page copies facts from other documentation instead of linking to it, so it can be followed on its own. The table lists each copied fact, where it came from, and when it was last checked against that source, so maintainers can spot drift. Rows marked **estimate, not sourced** are editorial judgment and weren't verified against any source. Curio paths are relative to `documentation/en/` in the `filecoin-project/curio` repository; other paths are in this repository.
+
+| Fact on this page | Source | Last verified |
+| --- | --- | --- |
+| Go version pin `1.26.8` (B3) | Curio `installation.md` and `experimental-features/Enable-PDP.md` (both defer to Curio's `go.mod`) | 2026-09-23 |
+| CUDA Toolkit 12.x+ required; Linux build uses CUDA by default (B3, B7) | Curio `installation.md` | 2026-09-23 |
+| Curio build flags, `make clean calibnet` / `make clean build`, Debian apt repository and `curio-cuda` / `curio-opencl` packages (B7) | Curio `installation.md` | 2026-09-23 |
+| System packages and UDP buffer `sysctl` values (B3) | Curio `installation.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
+| Lotus build commands and Forest snapshot URLs (B4) | `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
+| YugabyteDB `2.25.1.0` tarball, `ulimit` values, start flags, default connection values (B6) | Curio `setup.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
+| YugabyteDB: 3+ nodes for production, no ZFS for database disks (B2, B6) | Curio `getting-started.md`, `setup.md`, `best-practices.md` | 2026-09-23 |
+| Wallet roles (owner, worker, sender), 2 BLS wallets, about 5 FIL each, `curio guided-setup` flow, `curio config new-cluster` recovery (B5, B8) | Curio `setup.md` | 2026-09-23 |
+| `/etc/curio.env` variables and `curio.service` unit (B9) | Curio `curio-service.md` | 2026-09-23 |
+| Built-in config layers `post`, `seal`, `gui` (B9) | Curio `configuration/README.md` | 2026-09-23 |
+| `curio cli storage attach` commands, port `12300`, `AllowTypes`/`DenyTypes` (B10) | Curio `storage-configuration.md` | 2026-09-23 |
+| `curio seal start` flags and 1,278-day default duration; `curio test window-post task` (B11) | Curio `curio-cli/curio.md` | 2026-09-23 |
+| Market settings `EnableDealMarket`, `EnableCommP`, `HTTP.DomainName` in `base` (B12) | Curio `curio-market/storage-market.md` | 2026-09-23 |
+| `EnableParkPiece` in the market layer (B12) | Carried over from Curio's Boost-adapter and PDP layer docs. **Not** in the `storage-market.md` enable list; needs confirmation. | 2026-09-23 |
+| Boost no longer compatible with current Curio (Path B intro) | Curio `getting-started.md` | 2026-09-23 |
+| Sealing and PoSt hardware specs: PoSt 16 cores / 128 GiB / 10 GB GPU; PC1 32 cores with SHA extensions / 1 TiB RAM / about 450 GiB scratch per sector; PC2 512 GiB / 24 GB GPU; about 2 PC2 per PC1; RAIDZ2 12-disk vdevs with 20% headroom; about 7 TiB/day for 1 PiB; 1–10 Gbps for deals (B2) | `storage-providers/infrastructure/reference-architectures.md` | 2026-09-23 |
+| Run multiple PoSt nodes (B2) | Curio `best-practices.md` | 2026-09-23 |
+| **Chain node sizing: 8+ cores, 64 GiB+ RAM, 2 TB NVMe (B2)** | **Estimate, not sourced.** | n/a |
+| **Calibration uses the same sector sizes as mainnet, so it needs real sealing hardware (B2)** | **Estimate, not sourced** (general protocol knowledge, not checked against a source) | n/a |
+| **Comparison-table summaries: time to first proof, "good fit if you…", "many operators start with PDP" (Choose your path)** | **Estimate, not sourced** (editorial judgment) | n/a |
+| 10 TiB minimum raw power for block rewards (B1, B11) | `storage-providers/filecoin-economics/block-rewards.md`; `storage-providers/getting-started.md` | 2026-09-23 |
+| 25% of block rewards immediately available, 75% vesting over about 180 days (B1) | Curio `readme/filecoin-storage-provider.md` | 2026-09-23 |
+| **10× quality-adjusted power multiplier for verified deals (B1, B12)** | **Not checked against a source this session** (general protocol knowledge) | n/a |
+| Initial pledge rule of thumb and 640 FIL example (B1) | `storage-providers/filecoin-economics/fil-collateral.md` | 2026-09-23 |
+| WindowPoSt every 24 hours, 48 deadlines of 30 minutes (B1) | `storage-providers/filecoin-economics/storage-proving.md` | 2026-09-23 |
+| FIP-0100 daily fee, fee-debt effects, startup funding gap (B1) | `storage-providers/getting-started.md` | 2026-09-23 |
+| Fault fee, sector penalty, termination fee, consensus fault slashing (B1) | `storage-providers/filecoin-economics/slashing.md` | 2026-09-23 |
+| PDP hardware: 8+ cores, 32 GiB+ RAM, 1 TiB NVMe, 10 TiB HDD, no GPU, public HTTPS domain (Choose your path, A1) | Curio `experimental-features/Enable-PDP.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
+| PDP proving mechanics: Merkle trees, drand challenges, on-chain verification (Path A intro) | `storage-providers/pdp/about.md` | 2026-09-23 |
+| Curio-PDP stack contents, `.env` variables, image tags `filecoin/curio-pdp:latest` / `:calibnet`, compose commands, GUI on `127.0.0.1:4701`, ports 80/443 only (A3–A5) | Curio `curio-pdp.md`; Curio `docker/skiff/docker-compose.yaml`, `docker-compose.calibnet.yaml`, `.env` | 2026-09-23 |
+| `SKIFF_HTTP_DOMAIN` seeded into `base` on first start (A3) | Curio `docker/skiff/.env` (comment) | 2026-09-23 |
+| Curio-PDP reads only the `base` layer; `EnablePDP`, `EnableWebGui`, `GuiAddress`, `HTTP.Enable` settings (A8) | Curio `curio-pdp.md`, `skiff-binary.md` | 2026-09-23 |
+| `DelegateTLS = false` for Let's Encrypt on 443 and `docker compose restart skiff` (A8) | Inferred from the port labels and service name in Curio `docker/skiff/docker-compose.yaml`. **Not tested end to end.** | 2026-09-23 |
+| PDP wallet Create/Import, one key per cluster, key stored in YugabyteDB (A7) | Curio `curio-pdp.md` | 2026-09-23 |
+| PDP wallet funding: 5 tFIL (Calibration), 8 FIL (mainnet) (A7) | `storage-providers/pdp/install-and-run-pdp.md`; Curio `experimental-features/Enable-PDP.md` | 2026-09-23 |
+| FWSS registration fields and example values: name ≤ 128 chars, description ≤ 256 chars, piece sizes `1048576`–`1073741824`, price `0.833` USDFC/TiB/day, proving period `30`, location format, capabilities `serviceStatus=prod` and `capacityTib` (A9) | `storage-providers/pdp/install-and-run-pdp.md`. **Needs confirmation from the FWSS team that these are still current.** | 2026-09-23 |
+| "`0.833` is roughly USD 25 per TiB per month" (A9) | Arithmetic (0.833 × 30), assuming 1 USDFC ≈ 1 USD | 2026-09-23 |
+| Registration section labelled **Register** / **Filecoin Service Registry** (A9) | Curio `curio-pdp.md` ("Register tab"); `storage-providers/pdp/install-and-run-pdp.md` ("Filecoin Service Registry"). Current UI label not confirmed. | 2026-09-23 |
+| `pdptool ping` command and expected output (A9) | Curio `experimental-features/Enable-PDP.md` | 2026-09-23 |
+| Curio-PDP troubleshooting table (A10) | Curio `curio-pdp.md` | 2026-09-23 |
+| Slack channels `#fil-curio-help`, `#fil-pdp`, `#fil-lotus-help` (Before you start, Getting help) | `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
+
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/quickstart)
