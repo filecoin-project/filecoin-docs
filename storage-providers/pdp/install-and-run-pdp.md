@@ -1,597 +1,95 @@
 ---
 description: >-
-  This guide walks you through setting up a PDP-enabled Filecoin Storage
-  Provider using Lotus, YugabyteDB, and Curio
+  Become a Filecoin Onchain Cloud storage provider in about five minutes with
+  the Dockerized Curio-PDP stack.
 ---
 
-# Install & Run PDP
+# Run a PDP provider
 
-## 🚀 Prerequisites
+Storage is one of the most common things people buy online. [Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md) lets you sell it from your own hardware, and everything you need runs on a single machine. The chain proves you’re still holding the data, and the network sends paying customers your way.
 
-{% hint style="warning" %}
-**Note:** This guide is written specifically for **Ubuntu 22.04**. If you are using a different Linux distribution, refer to the relevant documentation for package installation and compatibility.
-{% endhint %}
+Until recently, getting a PDP node running meant setting up a chain node, a database, and Curio yourself, then wiring the three together. That part is packaged for you now. One command brings the stack up, and a web guide handles the rest. You do **not** need Lotus-miner, Boost, or a PoRep sealing pipeline.
 
-Before starting, make sure you have a user with **sudo privileges**. This section prepares your system for the PDP stack.
+Downloads aside, setup takes about five minutes.
 
-***
+## What’s in the box
 
-### ⚙️ Hardware requirements <a href="#hardware-requirements" id="hardware-requirements"></a>
+Curio-PDP ships as a single Docker Compose stack made up of three pieces:
 
-* **RAM**: 32 GiB+
-* **CPU**: 8 Core+
-* **Storage**:
-  * 1 TiB Fast storage (NVMe/SSD)
-  * 10 TiB Long-term storage (HDD)
-* **GPU**: Not required
-* **Connectivity**: Public HTTPS endpoint (domain)
+* **Forest** — the Filecoin chain daemon
+* **Yugabyte** — the database
+* **Curio-PDP** — the storage node itself, with a web dashboard
 
-***
+They all run in Docker on their own private network. Only Curio-PDP faces the internet, on ports 80 and 443. An external Lotus or Forest node works instead of the bundled Forest, pointed at with `FULLNODE_API_INFO`.
 
-### 🧰 System Package Installation
+The first time you open the dashboard, it lands you on a setup guide. The guide checks your node and ticks off each step as it completes. Everything is set from the dashboard, so there’s no config file to edit.
 
-```sh
-sudo apt update && sudo apt upgrade -y && sudo apt install -y \
-  mesa-opencl-icd ocl-icd-opencl-dev gcc git jq pkg-config curl clang \
-  build-essential hwloc libhwloc-dev libarchive-dev wget ntp python-is-python3 aria2
-```
+## What you need
 
-***
+* A Linux or macOS machine with Docker installed (Docker Compose comes with it)
+* 64 GB+ RAM and a 16-thread+ CPU (no GPU required)
+* NVMe or SSD for Yugabyte and Forest
+* About 100 GB of disk for the chain state and database, plus the storage you want to sell (the guide needs at least 20 GiB of that attached)
+* A reliable internet connection
+* A domain or subdomain you own
+* A little FIL to fund a wallet
 
-### :hammer: Install Go (v1.24.0)
+## Start the stack
 
-```sh
-sudo rm -rf /usr/local/go
-wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
-echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
-source ~/.bashrc
-go version
-```
+Run these on the machine that’s going to be the node. Use the mainnet lines to run for real, or the Calibration lines to try it on the test network first, where everything runs on free test funds:
 
-{% hint style="success" %}
-You should see something like: `go version go1.24.0 linux/amd64`
-{% endhint %}
-
-***
-
-### :wrench: Install Rust
-
-```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-{% hint style="info" %}
-When prompted, choose the option 1) Proceed with standard installation (default — just press Enter).
-{% endhint %}
-
-```sh
-source $HOME/.cargo/env
-rustc --version
-```
-
-{% hint style="success" %}
-You should see something like: `rustc 1.86.0 (05f9846f8 2025-03-31)`
-{% endhint %}
-
-***
-
-## ⛓️ Installing and Running Lotus
-
-🧠 Lotus is your gateway to the Filecoin network. It syncs the chain, manages wallets, and is required for Curio to interact with your node.
-
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Lotus Documentation</td><td><a href="https://lotus.filecoin.io/lotus/get-started/what-is-lotus/">https://lotus.filecoin.io/lotus/get-started/what-is-lotus/</a></td><td><a href="../../.gitbook/assets/lotus-logo-big.png">lotus-logo-big.png</a></td><td><a href="https://lotus.filecoin.io/lotus/get-started/what-is-lotus/">https://lotus.filecoin.io/lotus/get-started/what-is-lotus/</a></td></tr><tr><td>Lotus Support Channels</td><td><a href="https://filecoinproject.slack.com/archives/CPFTWMY7N">Filecoin Slack - #fil-lotus-help</a></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td><td><a href="https://filecoinproject.slack.com/archives/CPFTWMY7N">https://filecoinproject.slack.com/archives/CPFTWMY7N</a></td></tr></tbody></table>
-
-### 🔧 Build Lotus Daemon
-
-Clone and check out Lotus:
-
-```sh
-git clone https://github.com/filecoin-project/lotus.git
-cd lotus
-git checkout $(curl -s https://api.github.com/repos/filecoin-project/lotus/releases/latest | jq -r .tag_name)
-```
-
-**Build and Install for Mainnet**
-
-```sh
-make clean && make lotus
-sudo make install-daemon
-lotus --version
-```
-
-**Build and Install for Calibration**
-
-```sh
-make clean && make GOFLAGS="-tags=calibnet" lotus
-sudo make install-daemon
-lotus --version
-```
-
-{% hint style="success" %}
-You should see something like: `lotus version 1.36.0+calibnet+git.154c0c3a4`
-{% endhint %}
-
-***
-
-### 📦 Import a Snapshot and Start the Daemon
-
-Download the Snapshot
-
-**Mainnet:**
-
-```sh
-aria2c -x5 -o snapshot.car.zst https://forest-archive.chainsafe.dev/latest/mainnet/
-```
-
-**Calibration:**
-
-```sh
-aria2c -x5 -o snapshot.car.zst https://forest-archive.chainsafe.dev/latest/calibnet/
-```
-
-**Import and Start the Daemon**
-
-```sh
-lotus daemon --import-snapshot snapshot.car.zst --remove-existing-chain --halt-after-import
-nohup lotus daemon > ~/lotus.log 2>&1 &
-```
-
-{% hint style="info" %}
-If you encounter errors related to `EnableEthRPC` or `EnableIndexer`, run the following command and restart Lotus
-{% endhint %}
-
-```sh
-sed -i 's/^\( *\)#*EnableEthRPC = .*/\1EnableEthRPC = true/; s/^\( *\)#*EnableIndexer = .*/\1EnableIndexer = true/' ~/.lotus/config.toml
-```
-
-**Monitor Sync Progress**
-
-```sh
-lotus sync wait
-```
-
-To monitor continuously:
-
-```sh
-lotus sync wait --watch
-```
-
-**Monitor Logs**
-
-```sh
-tail -f ~/lotus.log
-```
-
-***
-
-## 🐘 Running YugabyteDB
-
-🧠 Curio uses YugabyteDB to store metadata about deals, sealing operations, and PDP submissions.
-
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Yugabyte Documentation</td><td><a href="https://docs.yugabyte.com/preview/tutorials/quick-start/linux/">https://docs.yugabyte.com/preview/tutorials/quick-start/linux/</a></td><td><a href="../../.gitbook/assets/yugabyte.svg">yugabyte.svg</a></td><td><a href="https://docs.yugabyte.com/preview/tutorials/quick-start/linux/">https://docs.yugabyte.com/preview/tutorials/quick-start/linux/</a></td></tr><tr><td>Yugabyte Support Channels</td><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">Filecoin Slack - #fil-curio-help</a> - <a href="https://inviter.co/yugabytedb">Yugabyte Slack</a></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">https://filecoinproject.slack.com/archives/C06LF5YP8S3</a></td></tr></tbody></table>
-
-### 🛠 Set ulimit configuration
-
-{% hint style="warning" %}
-Before starting Yugabyte, you must increase the default `ulimit` values to ensure system limits do not interfere with the database.
-{% endhint %}
-
-To do this:
-
-#### 🔁 **Persist new limits across reboots**
-
-Add these lines to `/etc/security/limits.conf`:
-
-```sh
-echo "$(whoami) soft nofile 1048576" | sudo tee -a /etc/security/limits.conf
-echo "$(whoami) hard nofile 1048576" | sudo tee -a /etc/security/limits.conf
-```
-
-This ensures the increased limits are automatically applied to future sessions.
-
-#### ⚡ **Apply limit immediately (for current shell only)**
-
-```sh
-ulimit -n 1048576
-```
-
-Verify:
-
-```sh
-ulimit -n
-```
-
-{% hint style="success" %}
-This should output `1048576`.
-{% endhint %}
-
-### ⚙️ Install Yugabyte
-
-```sh
-wget https://software.yugabyte.com/releases/2.25.1.0/yugabyte-2.25.1.0-b381-linux-x86_64.tar.gz
-tar xvfz yugabyte-2.25.1.0-b381-linux-x86_64.tar.gz
-cd yugabyte-2.25.1.0
-./bin/post_install.sh
-```
-
-### 🚀 Start the DB
-
-```sh
-./bin/yugabyted start \
-  --advertise_address 127.0.0.1 \
-  --master_flags rpc_bind_addresses=127.0.0.1 \
-  --tserver_flags rpc_bind_addresses=127.0.0.1
-```
-
-{% hint style="warning" %}
-If you encounter locale-related errors when starting Yugabyte for the first time, run:
-{% endhint %}
-
-```sh
-sudo locale-gen en_US.UTF-8
-```
-
-{% hint style="success" %}
-Visit `http://127.0.0.1:15433` to confirm successful installation. This is the YugabyteDB web UI — it should display the dashboard if the service is running correctly and all nodes are healthy.
-{% endhint %}
-
-{% hint style="info" %}
-You can also check your Yugabyte cluster details directly in the CLI with:
-{% endhint %}
-
-```sh
-./bin/yugabyted status
-```
-
-***
-
-## 🧱 Installing and Configuring Curio
-
-🧠 Curio is the core PDP client that coordinates sealing, interacts with Lotus and submits PDP proofs.
-
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Curio Documentation</td><td><a href="https://docs.curiostorage.org/">https://docs.curiostorage.org/</a></td><td><a href="../../.gitbook/assets/Curio_placeholder.webp">Curio_placeholder.webp</a></td><td><a href="https://docs.curiostorage.org/">https://docs.curiostorage.org/</a></td></tr><tr><td>Curio Support Channels</td><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">Filecoin Slack - #fil-curio-help</a></td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td><td><a href="https://filecoinproject.slack.com/archives/C06LF5YP8S3">https://filecoinproject.slack.com/archives/C06LF5YP8S3</a></td></tr></tbody></table>
-
-### ⚙️ System Configuration
-
-Before you proceed with the installation, you should increase the UDP buffer size:
-
-```sh
-sudo sysctl -w net.core.rmem_max=2097152
-sudo sysctl -w net.core.rmem_default=2097152
-```
-
-To make this change persistent across reboots:
-
-```sh
-echo 'net.core.rmem_max=2097152' | sudo tee -a /etc/sysctl.conf
-echo 'net.core.rmem_default=2097152' | sudo tee -a /etc/sysctl.conf
-```
-
-### 🔬 Build Curio
-
-Clone the repository and switch to the latest branch:
-
-```sh
+```bash
 git clone https://github.com/filecoin-project/curio.git
-cd curio
-git checkout $(curl -s https://api.github.com/repos/filecoin-project/curio/releases/latest | jq -r .tag_name)
+
+# Mainnet
+docker compose -f curio/docker/skiff/docker-compose.yaml up -d
+docker compose -f curio/docker/skiff/docker-compose.yaml logs -f
+
+# Calibration test network (free test funds, no real FIL)
+cd curio/docker/skiff
+docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
+docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml logs -f
 ```
 
-{% hint style="info" %}
-Curio is compiled for a specific Filecoin network at build time. Choose the appropriate build command below.
-{% endhint %}
+That brings up the node. Yugabyte is up in seconds. Forest downloads a chain snapshot the first time it starts, which takes about 20 minutes, and the first run also builds the Curio-PDP image. Curio-PDP starts as soon as Forest is accepting connections, although the wallet balance and registration checks wait for Forest to finish syncing. By default, everything lives under `curio/docker/skiff/data/`.
 
-Mainnet
+Now open `http://127.0.0.1:4701` in a browser. The dashboard only listens on localhost and has no login, so keep it that way. If you’re working on a remote box, forward the port over SSH:
 
-```sh
-make clean build
+```bash
+ssh -fN -L 4701:127.0.0.1:4701 you@your-host
 ```
 
-Calibration
-
-```sh
-make clean calibnet
-```
-
-{% hint style="info" %}
-This step will take a few minutes to complete.
-{% endhint %}
-
-### ✅ Install and Verify Curio
-
-Run the following to install the compiled binary:
-
-```sh
-sudo make install
-```
-
-This will place curio in `/usr/local/bin`
-
-Verify the installation:
-
-```sh
-curio --version
-```
-
-Expected example output:
-
-```sh
-curio version 1.24.4+calibnet+git_f954c0a_2025-04-06T15:46:32-04:00
-```
-
-***
-
-### 🔧 Guided Setup
-
-Curio provides a utility to help you set up a new miner interactively. Run the following command:
-
-```sh
-curio guided-setup
-```
-
-#### 1️⃣ Select Curio Installation Type
-
-Use the arrow keys to navigate the guided setup menu and select "**Setup non-Storage Provider cluster**".
-
-#### 2️⃣ Enter Your YugabyteDB Connection Details
-
-If you used the default installation steps from this guide, the following values should work:
-
-* Host: `127.0.0.1`
-* Port: `5433`
-* Username: `yugabyte`
-* Password: `yugabyte`
-* Database: `yugabyte`
-
-You can verify these settings by running the following command from the Yugabyte directory:
-
-```sh
-./bin/yugabyted status
-```
-
-After selecting "**Continue to connect and update schema**", Curio will automatically create the required tables and schema in the database.
-
-#### 3️⃣ Telemetry (Optional)
-
-You'll be asked whether to share anonymised or signed telemetry with the Curio team to help improve the software.
-
-Select your preference and continue.
-
-#### 4️⃣ Save Database Configuration
-
-At the final step of the guided setup, you'll be prompted to choose where to save your database configuration file.
-
-Use the arrow keys to select a location. A common default is:
-
-```sh
-/home/your-username/curio.env
-```
-
-Once selected, setup will complete, and the miner configuration will be stored.
-
-#### 5️⃣ Launch the Curio Web GUI
-
-To explore the Curio interface visually, start the GUI layer:
-
-```sh
-curio run --layers=gui
-```
-
-Then, open your browser and go to:
-
-```sh
-http://127.0.0.1:4701
-```
-
-This will launch the Curio web GUI locally.
-
-***
-
-## 🧪 Enabling PDP
-
-🧠 This section enables **Proof of Data Possession (PDP)** on your storage provider node using Curio. PDP is the verification layer used by the [Filecoin Warm Storage Service (FWSS)](https://docs.filecoin.cloud/core-concepts/fwss-overview) within [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md). These steps guide you through running a standalone PDP service using Curio and pdptool.
-
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>PDP Support Channels</td><td><a href="../../.gitbook/assets/Filecoin.svg.png">Filecoin.svg.png</a></td><td><a href="https://filecoinproject.slack.com/archives/C0717TGU7V2">https://filecoinproject.slack.com/archives/C0717TGU7V2</a></td></tr></tbody></table>
-
-### 📦 Attach Storage Locations
-
-With Curio running with the GUI layer:
-
-```sh
-curio run --layers=gui
-```
-
-Run the following commands in your Curio CLI to attach storage paths:
-
-```sh
-curio cli storage attach --init --seal /fast-storage/path
-curio cli storage attach --init --store /long-term-storage/path
-```
-
-{% hint style="info" %}
-Your fast-storage path should point to high-performance storage media such as NVMe or SSD
-{% endhint %}
-
-***
-
-### 🔧 Add a PDP Configuration Layer
-
-Browse to the **Configurations** page of the Curio GUI.
-
-Create a new layer named **pdp** and enable the following under Subsystems:
-
-{% hint style="info" %}
-You may find it helpful to search for the setting names in your browser.
-{% endhint %}
-
-* ✅ `EnableParkPiece`
-* ✅ `EnablePDP`
-* ✅ `EnableCommP`
-* ✅ `EnableMoveStorage`
-* ✅ `NoUnsealedDecode`
-
-In the **HTTP** section:
-
-* ✅ Enable: `true`
-* 🌐 DomainName: `your domain (e.g., pdp.mydomain.com)`
-* 📡 ListenAddress: `0.0.0.0:443`
-
-{% hint style="info" %}
-**Tip:** You must point your domain's A record to your server's public IP address for Let's Encrypt to issue a certificate.
-{% endhint %}
-
-***
-
-### 💰 Import your Filecoin Wallet Private Key:
+You’ll land on the PDP Guide page.
 
 {% hint style="warning" %}
-There are several ways to obtain private keys for Ethereum addresses. In this guide, we will use a new delegated FIL wallet address.
+Open only TCP 80 and 443 on your public firewall. Port `4701` is an unauthenticated admin GUI for local operator access — do not publish it to the internet.
 {% endhint %}
 
-Create a new delegated wallet:
+## The PDP Guide does the rest
 
-```sh
-lotus wallet new delegated
-```
+The guide is a checklist that the node verifies for you. The boxes tick themselves as each step is confirmed, and you can re-run the checks with the **Re-check** button.
 
-```sh
-# Example output:
-t410fuo4dghaeiqzokiqnxruzdr6e3cjktnxprrc56bi
-```
+1. **Fund a wallet** — Click **Create wallet** to make a new signing key, or paste in one you already have. A hex private key or the output of `lotus wallet export` will both do. Keep the key safe: if you create it here, this is the only time it’s shown. Then send some FIL to the address on screen. Once it lands, the box ticks itself.
+2. **Attach your storage** — Open the Storage page and attach the folders Curio-PDP should use. The stack has already mounted a `/data` folder for you, and attaching that is the simplest option. If your disks are elsewhere, map them under `/data` in `docker/skiff/.env` before you start the stack.
+3. **Set your domain** — On the Configuration page, set `HTTP.DomainName` to a domain or subdomain you own and point its DNS at this machine. The guide then checks if it can reach your node at that address. Don’t want to open inbound ports? Create a tunnel in the Cloudflare Zero Trust dashboard and paste its token into the guide. It downloads `cloudflared` and starts the tunnel for you — entirely optional.
+4. **Register with FOC** — When the first three are green, the register button unlocks. One click adds you to the Filecoin Onchain Cloud service provider registry. Once the working group approves you, data starts arriving.
 
-{% hint style="info" %}
-You can display your Lotus wallets at any time by running:
-{% endhint %}
+From then on, the PDP Overview is your home page: data under proof, proving success and net income over the last 30 days, chain status, wallet balance, and any open alerts, all on one screen.
 
-```sh
-lotus wallet list
-```
+## What you earn
 
-Export & convert your new delegated wallet address private key:
+Customers pay in USDFC, a US dollar stablecoin on Filecoin, and the money streams to you through Filecoin Pay as you prove you’re holding their data. The price list is written into the storage contract, so every provider gets paid the same rates. There is no commission on the storage rate — a 0.5% network fee comes off at settlement, and that’s the only deduction.
 
-```sh
-lotus wallet export <your-delegated-wallet-address> | xxd -r -p | jq -r '.PrivateKey' | base64 -d | xxd -p -c 32
-```
+Registration gets you into the registry. Once the working group approves you, data is routed to you. Keep the node up and proving, and the data will come.
 
-```sh
-# Example output:
-d4c2e3f9a716bb0e47fa91b2cf4a29870be3c5982fd6eafed71e8ac3f9c0b127
-```
+See the current schedule and how it was worked out in the [FOC pricing docs](https://docs.filecoin.cloud/introduction/about/#pricing), and the [Medium walkthrough](https://medium.com/@filoz/become-a-filecoin-onchain-cloud-storage-provider-in-five-minutes-57abbcd95876) for worked examples.
 
-Browse to the **PDP** page of the Curio GUI and in the **Owner Address** section:
+## Go deeper
 
-* Select **Import Key**
-* Copy the previously generated private wallet key into the **Private Key (Hex)** field.
-* Select **Import Key**
+Hardware, custom storage paths, external chain nodes, TLS, and troubleshooting:
 
-{% hint style="success" %}
-Your 0x wallet address - the delegated Ethereum address derived from your Filecoin delegated wallet private key - will be added to the **Owner Address** section of the Curio PDP page.
-{% endhint %}
+**[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** — [docs.curiostorage.org](https://docs.curiostorage.org/)
 
-Make sure to send a small amount of FIL or tFIL (testnet FIL) to your 0x wallet - we recommend 8 FIL for Mainnet & 5 tFIL for Calibration to ensure uninterrupted PDP operation during initial setup and testing. [Calibration test FIL faucet information](../../build/developing-contracts/get-test-tokens.md).
-
-{% hint style="warning" %}
-**Important:** Secure your private key material. Don't expose or store it in plain text without protection.
-{% endhint %}
-
-***
-
-### 🚀 Restart and Verify
-
-Restart Curio with both layers:
-
-```sh
-curio run --layers=gui,pdp
-```
-
-{% hint style="info" %}
-If you encounter errors related to `EnableEthRPC` or `EnableIndexer`, run the following command and restart Lotus
-{% endhint %}
-
-```sh
-sed -i 's/^\( *\)#*EnableEthRPC = .*/\1EnableEthRPC = true/; s/^\( *\)#*EnableIndexer = .*/\1EnableIndexer = true/' ~/.lotus/config.toml
-```
-
-{% hint style="info" %}
-If you encounter errors binding to port 443 when starting Curio with the pdp configuration layer, run:
-{% endhint %}
-
-```sh
-sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/curio
-```
-
-***
-
-### 🔗 Test Connectivity
-
-Browse to your PDP node's domain name in your browser. You should see the following message in your browser window:
-
-```
-Hello, World!
- -Curio
-```
-
-***
-
-### 🗳️ Register Your PDP Calibration Node With The Filecoin Warm Storage Service
-
-Browse to the **PDP** page of the Curio GUI and locate the **Filecoin Service Registry** section.
-
-#### STEP 1 — Update Details
-
-Select **Update Details** and fill in:
-
-| Field | Notes |
-| --- | --- |
-| Name | ≤ 128 chars |
-| Description | ≤ 256 chars |
-
-Select **Update** to submit your node details to the on-chain FWSS contract.
-
-{% hint style="info" %}
-You can review the names and descriptions of other FWSS providers at [https://filecoin.cloud/service-providers](https://filecoin.cloud/service-providers).
-{% endhint %}
-
-#### STEP 2 — Update PDP Offering
-
-Select **Update PDP Offering** and set:
-
-| Field | Recommended value |
-| --- | --- |
-| Minimum Piece Size (Bytes) | `1048576` |
-| Maximum Piece Size (Bytes) | `1073741824` |
-| Storage Price (USDFC per TiB per day) | `0.833` |
-| Minimum Proving Period (Epochs) | `30` |
-| Location | e.g. `C=US;ST=California;L=San Francisco` (only `C=` is required) |
-
-Then use **Add Capability** to add the following key/value pairs:
-
-| Key | Value |
-| --- | --- |
-| `serviceStatus` | `prod` |
-| `capacityTib` | your available storage capacity in TiB |
-
-Select **Update PDP** to submit your offering to the on-chain FWSS contract.
-
-You can revisit **Update PDP Offering** at any time to change the Service URL, piece size range, IPNI toggles, price, proving period, location, or custom capabilities.
-
-***
-
-## 🎉 You're Done!
-
-You've successfully launched a **PDP-enabled Filecoin Storage Provider** stack. Your system is now:
-
-* ✅ Syncing with the Filecoin network via Lotus
-* ✅ Recording deal and piece metadata in YugabyteDB
-* ✅ Operating Curio to manage sealing and coordination
-* ✅ Enabled Proof of Data Possession (PDP)
-* ✅ Connected to your PDP-enabled storage provider
-* ✅ Registered with the Filecoin Warm Storage Service onchain contract
-
-***
-
-## 🔜 Next Steps
-
-* :link: Explore FWSS & PDP tools & resources at [https://www.filecoin.services](https://www.filecoin.services/)
-* 💬 Join the community - Filecoin Slack - [#fil-pdp](https://filecoinproject.slack.com/archives/C0717TGU7V2)
+* See [About PDP](about.md) for how the protocol fits FOC
+* See [Provide Storage](../getting-started.md) if you wanted the PoRep sealing path instead
+* Come say hello in [#fil-curio-help](https://filecoinproject.slack.com/archives/C06LF5YP8S3) on Filecoin Slack if you get stuck

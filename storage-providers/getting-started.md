@@ -12,7 +12,35 @@ The Filecoin network provides decentralized data storage and makes sure data is 
 
 To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
 
-Follow these steps to begin your storage provider journey:
+There are two ways to provide storage:
+
+* **PDP (recommended)** — serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) with warm storage, PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start. Some data is provided by the network for you to store. 
+* **PoRep (consensus mining)** — the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint. You manage your own data business relationships. 
+
+## Filecoin Onchain Cloud (PDP)
+
+FOC lets you sell warm storage from your own hardware without a PoRep sealing pipeline. One Docker Compose command brings up Forest, Yugabyte, and Curio-PDP, and a web guide on `http://127.0.0.1:4701` walks you through wallet, storage, domain, and FOC registration. Downloads aside, setup takes about five minutes.
+
+```bash
+git clone https://github.com/filecoin-project/curio.git
+
+# Mainnet
+docker compose -f curio/docker/skiff/docker-compose.yaml up -d
+
+# Calibration test network (free test funds)
+cd curio/docker/skiff
+docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
+```
+
+Full walkthrough — what’s in the box, hardware, the PDP Guide steps, and what you earn: **[Run a PDP provider](./pdp/install-and-run-pdp.md)**. Deeper operator docs (custom disks, external chain nodes, troubleshooting): **[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** on [docs.curiostorage.org](https://docs.curiostorage.org/).
+
+Protocol background: [About PDP](./pdp/about.md). The sections below cover the **PoRep** path.
+
+## PoRep (consensus mining)
+
+PoRep is the classic Filecoin storage-provider business: seal sectors, prove them over time, take FIL collateral, and (optionally) make storage deals. The sections below cover architecture, hardware, and how to run that operation profitably.
+
+Follow these steps:
 
 1. Understand Filecoin economics
 2. Plan your business
