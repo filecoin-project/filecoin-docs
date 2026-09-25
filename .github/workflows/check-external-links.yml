@@ -8,11 +8,18 @@ jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@v2.0.2
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           args: --accept 200,429,403 --timeout 60 --retry-wait-time 15 --max-retries 10 '**/*.md'
-          fail: true
+          # v2.0.2 failed this composite step. GitHub then omitted the job
+          # summary, so the run Summary page had no report and no retry.
+          # Leave the step successful, publish the summary, and fail below.
+          fail: false
+
+      - name: Fail if links are broken
+        if: steps.lychee.outputs.exit_code != '0'
+        run: exit 1
