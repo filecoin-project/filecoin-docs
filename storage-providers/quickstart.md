@@ -1,7 +1,7 @@
 ---
 description: >-
-  One page covering everything you need to start providing storage on Filecoin,
-  either as a PDP service provider or as a consensus miner.
+  One page covering everything you need to start providing storage on Filecoin:
+  as a PDP service provider, a consensus miner, or both on one Curio cluster.
 keywords: "become storage provider, Filecoin storage provider quickstart, PDP service provider, Curio-PDP, Filecoin miner, consensus miner, Curio, Lotus, FWSS, Filecoin Onchain Cloud"
 ---
 
@@ -9,22 +9,28 @@ keywords: "become storage provider, Filecoin storage provider quickstart, PDP se
 
 This page walks you through becoming a Filecoin storage provider, from choosing a path to running your first proofs. It's written so that a person or an AI agent can follow it from top to bottom without needing any other page.
 
-There are two ways to provide storage on Filecoin today. Pick one before you buy hardware, because the two need very different machines, amounts of capital, and skills.
+There are two kinds of storage you can provide on Filecoin today: PDP service storage and consensus mining. You can run either one, or both on the same cluster, which gives three paths. Pick one before you buy hardware, because they need very different machines, amounts of capital, and skills.
 
 ## Choose your path
 
-| | **PDP service provider** | **Consensus miner** |
-| --- | --- | --- |
-| **What you do** | Store client data as-is and prove you still hold it using Proof of Data Possession (PDP). You serve it over HTTPS as part of Filecoin Onchain Cloud. | Seal data or empty capacity into sectors using Proof of Replication (PoRep). You prove the sectors every 24 hours, gain storage power, and compete to produce blocks. |
-| **How you earn** | Storage fees from clients, paid in USDFC through Filecoin Pay. | Block rewards (FIL) plus fees from storage deals. |
-| **Collateral** | No sector pledge. A small FIL balance pays for proof messages. | FIL initial pledge locked for each sector, plus a working balance for fees and messages. |
-| **Minimum hardware** | 1 server: 8+ cores, 32 GiB+ RAM, 1 TiB NVMe, 10 TiB+ HDD. No GPU. | A sealing and proving cluster: SHA-extension CPUs, 512 GiB–1 TiB RAM on sealing nodes, 10 GB+ GPUs, several TiB of NVMe scratch, and PiB-scale disk to be competitive. |
-| **Software** | Curio-PDP in Docker (bundles Forest and YugabyteDB). | Lotus + YugabyteDB + Curio. |
-| **Time to first proof** | Hours, mostly waiting for the chain to sync. | Days to weeks, including hardware setup, chain sync, and sealing. |
-| **Retrieval** | Data is always hot and served over HTTPS. | Sealed data must be unsealed (or kept unsealed) to serve retrievals. |
-| **Good fit if you…** | Run reliable, internet-facing servers and want a fast, low-capital start. | Run data-center infrastructure, can lock up FIL, and want to earn block rewards. |
+| | **A: PDP service provider** | **B: Consensus miner** | **C: Combined (one cluster, both)** |
+| --- | --- | --- | --- |
+| **What you do** | Store client data as-is and prove you still hold it using Proof of Data Possession (PDP). You serve it over HTTPS as part of Filecoin Onchain Cloud. | Seal data or empty capacity into sectors using Proof of Replication (PoRep). You prove the sectors every 24 hours, gain storage power, and compete to produce blocks. | Everything in B, plus PDP service storage for clients, all on the same Curio cluster. |
+| **How you earn** | Storage fees from clients, paid in USDFC through Filecoin Pay. | Block rewards (FIL) plus fees from storage deals. | Block rewards and PoRep deal fees (as in B), plus PDP storage fees in USDFC (as in A). |
+| **Collateral** | No sector pledge. A small FIL balance pays for proof messages. | FIL initial pledge locked for each sector, plus a working balance for fees and messages. | B's pledge and balances, plus a small FIL balance in a separate PDP wallet. |
+| **Minimum hardware** | 1 server: 8+ cores, 32 GiB+ RAM, 1 TiB NVMe, 10 TiB+ HDD. No GPU. | A sealing and proving cluster: SHA-extension CPUs, 512 GiB–1 TiB RAM on sealing nodes, 10 GB+ GPUs, several TiB of NVMe scratch, and PiB-scale disk to be competitive. | B's cluster, plus disk set aside for PDP pieces and a public HTTPS domain. |
+| **Software** | Curio-PDP in Docker (bundles Forest and YugabyteDB). | Lotus + YugabyteDB + Curio. | B's stack with PDP turned on in Curio. **Curio labels this alpha.** |
+| **Time to first proof** | Hours, mostly waiting for the chain to sync. | Days to weeks, including hardware setup, chain sync, and sealing. | Same as B for mining. PDP adds a few hours once B is running. |
+| **Retrieval** | Data is always hot and served over HTTPS. | Sealed data must be unsealed (or kept unsealed) to serve retrievals. | As in B for sealed sectors. PDP data is always hot. |
+| **Good fit if you…** | Run reliable, internet-facing servers and want a fast, low-capital start. | Run data-center infrastructure, can lock up FIL, and want to earn block rewards. | Already mine (or are building a mining cluster), want service-deal revenue on the same infrastructure, and accept an alpha feature. |
 
-Many operators start as a PDP service provider and add a consensus miner later. Both run on Curio, so the skills carry over.
+How to choose:
+
+* **Path A** if you want to be a service provider only, with no mining, pledge, or sealing hardware.
+* **Path B** if you want to be a consensus miner. Step B12 (optional) adds sealed PoRep storage deals through Curio's built-in market, but no PDP service deals.
+* **Path C** if you already run, or are setting up, a Path B cluster and also want PDP service deals on the same hardware without standing up a second Curio-PDP stack. You must be willing to run a feature that Curio labels alpha. If you'd rather avoid that, run Path A on separate hardware next to your Path B cluster.
+
+All three paths run on Curio, so skills carry over. Many operators start with Path A and add mining later.
 
 {% hint style="info" %}
 **Always start on the Calibration testnet.** Calibration is a full copy of the network that uses free test FIL (tFIL). Every step on this page works on Calibration first. Once your setup survives a few days of proving there, repeat the same steps on mainnet.
@@ -34,15 +40,16 @@ Jump to your path:
 
 * [Path A: PDP service provider](#path-a-pdp-service-provider)
 * [Path B: Consensus miner](#path-b-consensus-miner)
+* [Path C: Combined consensus miner + service provider](#path-c)
 
 ***
 
-## Before you start (both paths)
+## Before you start (all paths)
 
 You need the following no matter which path you choose:
 
 * **Linux admin skills.** You'll work in a terminal on Ubuntu or Debian (22.04 or newer recommended), manage systemd services or Docker containers, open firewall ports, and read logs.
-* **A machine that stays online.** Both paths prove to the chain on a fixed schedule. When your node is down, proofs are missed. On the consensus path, missed proofs cost you FIL (see [Know the penalties](#b1-understand-the-economics)).
+* **A machine that stays online.** Every path proves to the chain on a fixed schedule. When your node is down, proofs are missed. On the consensus path, missed proofs cost you FIL (see [Know the penalties](#b1-understand-the-economics)).
 * **A way to get FIL.** On Calibration, a faucet gives you tFIL for free. To find one, search "Filecoin Calibration faucet"; the ChainSafe faucet at `faucet.calibnet.chainsafe-fil.io` is a common choice. On mainnet you buy FIL.
 * **A place to ask for help.** In the Filecoin Slack, `#fil-curio-help` covers Curio, `#fil-pdp` covers PDP and FWSS, and `#fil-lotus-help` covers Lotus.
 
@@ -604,9 +611,114 @@ To find clients, look at Filecoin Plus programs and data onboarding programs. As
 
 ***
 
+## Path C: Combined consensus miner + service provider (one cluster, both) <a href="#path-c" id="path-c"></a>
+
+This path is for operators who run a consensus-mining Curio cluster (Path B) and also want to take PDP service deals on the same cluster. You don't need a second Curio-PDP stack.
+
+**Why this path exists.** Filecoin doesn't yet have an automated go-to-market or deal-matching pipeline that routes client demand to consensus miners. Today, a miner who wants revenue beyond block rewards takes deals directly on their own infrastructure. PDP service deals are one way to do that. Once you register with FWSS, clients find you in the on-chain registry and pay you in USDFC through Filecoin Pay. Turning on PDP in the Curio cluster you already run lets it reuse your chain node, database, storage, and HTTPS endpoint.
+
+{% hint style="danger" %}
+**Curio labels PDP on a full cluster as alpha.** Curio lists "Enable PDP" (running PDP on a full Curio cluster) under **Experimental Features**. Its banner reads "ALPHA FEATURE - UNDER DEVELOPMENT" and says the feature is "intended for testing and experimental use only." Curio's experimental-features section says these features are not recommended for production. The `EnablePDP` setting's own description calls it **BETA** and says to enable it only on nodes that are part of a PDP network. Only the Docker-based Curio-PDP in Path A is labelled a supported path.
+
+PDP runs in the same Curio processes and database that submit your WindowPoSt. Try this path on Calibration before you turn it on in a mainnet cluster that holds pledged sectors. If you don't want to run an alpha feature beside your mining, run Path A on separate hardware instead.
+{% endhint %}
+
+**What PDP adds and what it doesn't.** PDP data is stored unsealed as "piece" files under an internal placeholder actor (`f00`), not in your miner's sectors. It adds no storage power and doesn't improve your block-reward odds. It earns FWSS storage fees only. Your mining is unchanged.
+
+**Before you start Path C:**
+
+* Complete Path B steps **B1–B11**: economics, hardware, Lotus, wallets, YugabyteDB, Curio, miner, service, storage, and proving. B12 (PoRep deals) is optional. If you've done it, you already have the domain and HTTPS setup that C4 needs.
+* Have a **domain** with an A record pointing to the Curio node that will serve PDP, with **inbound TCP 80 and 443** open to that node.
+* Have **bulk disk** set aside for PDP pieces on a node running Curio.
+* Have **8 FIL** for mainnet, or **5 tFIL** for Calibration, to fund a new PDP wallet.
+
+The steps below are everything Path C adds on top of Path B.
+
+### C1. Turn on Lotus's Ethereum RPC and indexer
+
+PDP talks to its smart contracts through your Lotus node's Ethereum-compatible RPC. Curio's PDP guide says to turn these settings on if Curio reports errors about them. Turning them on now avoids that. On the Lotus node from B4:
+
+```sh
+sed -i 's/^\( *\)#*EnableEthRPC = .*/\1EnableEthRPC = true/; s/^\( *\)#*EnableIndexer = .*/\1EnableIndexer = true/' ~/.lotus/config.toml
+# then restart the Lotus daemon
+```
+
+### C2. Check your Curio build
+
+The standard Curio binary you installed in B7 includes the PDP code, and PDP turns on through configuration. You don't need a different build. Keep Curio on a recent release, because PDP's database tables are added by Curio's automatic schema migrations when it starts. After upgrading, check the Curio startup logs for the schema upgrade.
+
+{% hint style="warning" %}
+Curio's "Enable PDP" page tells you to build from a branch named `pdpM3d`. That branch no longer exists in the Curio repository (checked 2026-09-26). Use the release build from B7.
+{% endhint %}
+
+### C3. Attach PDP storage and keep it off your sealed disks
+
+PDP pieces are stored as the `piece` file type. They need a **store** path. A `--seal`-only path won't accept PDP uploads. On the node that owns the PDP disk:
+
+```sh
+curio cli storage attach --init --store --allow-types piece /mnt/pdp
+```
+
+To keep PDP pieces off the long-term paths that hold your sealed sectors, deny the `piece` type on those paths. Add `"DenyTypes": ["piece"]` to each path's `sectorstore.json` file, then restart Curio on that node. For new paths, attach them with `--deny-types piece` instead. Pieces parked by the storage market (B12) use the same `piece` type, so they also land on the PDP disks.
+
+### C4. Add a `pdp` configuration layer
+
+Create the layer with `curio config edit pdp` (or in the GUI under **Configurations**):
+
+```toml
+[Subsystems]
+EnableParkPiece = true
+EnablePDP = true
+EnableCommP = true
+EnableMoveStorage = true
+```
+
+PDP also needs Curio's HTTPS server. If you completed B12, HTTPS is already set up in `base` and one domain serves both the market and PDP. Otherwise, add the `[HTTP]` block from B12 step 2 to `base` (`Enable = true`, your `DomainName`, and `ListenAddress = "0.0.0.0:443"`).
+
+Add `pdp` to `CURIO_LAYERS` in `/etc/curio.env` on the node that serves HTTPS and can reach the PDP storage (for example `CURIO_LAYERS=gui,post,seal,pdp`). Then restart it:
+
+```sh
+sudo systemctl restart curio.service
+```
+
+If Curio can't bind port 443, run `sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/curio` and restart again.
+
+### C5. Create, import, and fund the PDP wallet
+
+PDP signs its messages with an Ethereum-style (0x) key. Create a new **delegated** wallet on your Lotus node for this purpose, separate from your owner and worker wallets:
+
+```sh
+lotus wallet new delegated          # prints a t410…/f410… address
+lotus wallet export <delegated-address> | xxd -r -p | jq -r '.PrivateKey' | base64 -d | xxd -p -c 32
+```
+
+The second command prints the key as 64 hex characters. In the Curio GUI, open **PDP** → **Owner Address** → **Import Key**, paste the key into **Private Key (Hex)**, and confirm. The matching 0x address appears on the page. Fund it with **8 FIL** on mainnet or **5 tFIL** on Calibration, and keep it topped up for proof messages.
+
+{% hint style="warning" %}
+The hex key you just printed controls the PDP wallet. Don't leave it in your shell history or in plain-text files. The imported key is stored in YugabyteDB, so keep backing up the database as B13 describes.
+{% endhint %}
+
+### C6. Verify and register with FWSS
+
+From outside your network, check that the endpoint answers:
+
+```sh
+curl https://pdp.example.com
+```
+
+Then register with FWSS in the GUI's **PDP** page. The fields and suggested values are the same as in [A9](#a9-register-with-the-filecoin-warm-storage-service): provider details, the PDP offering with your service URL and price, and the `serviceStatus` and `capacityTib` capabilities. Confirm reachability with `pdptool ping --service-url https://pdp.example.com --service-name public`. The A9 section shows how to build `pdptool`.
+
+**You're now running both.** Your cluster seals and proves sectors for block rewards and also stores and proves PDP data for FWSS clients. To operate it, follow B13 and add these checks:
+
+* Keep the PDP wallet funded.
+* Watch PDP proving in the GUI's **PDP** page alongside your WindowPoSt deadlines.
+* Upgrade Curio promptly, because this feature is changing quickly.
+
+***
+
 ## Quick reference for agents
 
-If you're automating either path, these are the minimum steps and the checks that must pass at each stage.
+If you're automating any path, these are the minimum steps and the checks that must pass at each stage.
 
 **PDP service provider (Curio-PDP)**
 
@@ -632,6 +744,15 @@ If you're automating either path, these are the minimum steps and the checks tha
 8. `curio cli storage attach --init --seal …` and `--store …`.
 9. Check: `curio test window-post task --addr <minerID>` succeeds.
 10. `curio seal start --now --cc --count 1 --actor <minerID>`. Check: the sector reaches the proving state and the miner has non-zero power.
+
+**Combined (Path B cluster + PDP, alpha)**
+
+1. Complete consensus miner steps 1–10 above. A domain points to the PDP-serving node, and inbound TCP 80 and 443 are open.
+2. Lotus `config.toml`: `EnableEthRPC = true`, `EnableIndexer = true`. Restart Lotus.
+3. `curio cli storage attach --init --store --allow-types piece /mnt/pdp`. Add `"DenyTypes": ["piece"]` to the sealed store paths' `sectorstore.json` and restart Curio.
+4. `pdp` layer: `EnableParkPiece`, `EnablePDP`, `EnableCommP`, `EnableMoveStorage`. `base`: `[HTTP] Enable = true`, `DomainName`, `ListenAddress = "0.0.0.0:443"`. Add `pdp` to `CURIO_LAYERS` and restart Curio. Check: external `curl https://<domain>` succeeds.
+5. `lotus wallet new delegated` → export as hex → GUI → PDP → Import Key → fund the 0x address (5 tFIL or 8 FIL).
+6. GUI → PDP → register with FWSS as in path A step 9. Check: `pdptool ping` succeeds.
 
 ***
 
@@ -689,6 +810,21 @@ This page copies facts from other documentation instead of linking to it, so it 
 | Registration section labelled **Register** / **Filecoin Service Registry** (A9) | Curio `curio-pdp.md` ("Register tab"); `storage-providers/pdp/install-and-run-pdp.md` ("Filecoin Service Registry"). Current UI label not confirmed. | 2026-09-23 |
 | `pdptool ping` command and expected output (A9) | Curio `experimental-features/Enable-PDP.md` | 2026-09-23 |
 | Curio-PDP troubleshooting table (A10) | Curio `curio-pdp.md` | 2026-09-23 |
+| PDP on a full Curio cluster is alpha and experimental ("ALPHA FEATURE - UNDER DEVELOPMENT", "intended for testing and experimental use only"; experimental features not recommended in production) (Choose your path, Path C) | Curio `experimental-features/Enable-PDP.md` and `experimental-features/README.md` | 2026-09-26 |
+| `EnablePDP` setting described as BETA, "should only be enabled on nodes which are part of a PDP network" (Path C) | Curio `deps/config/doc_gen.go` (the `EnablePDP` config comment) | 2026-09-26 |
+| Docker-based Curio-PDP is the supported PDP-only path (Path C) | Curio `getting-started.md`, `curio-pdp.md` | 2026-09-26 |
+| **No automated go-to-market or deal-matching pipeline for consensus miners yet; direct deal-taking is the current route to extra revenue (Path C intro)** | **Not from a document.** Ecosystem context from internal feedback on this draft. | n/a |
+| PDP pieces use the `piece` file type and placeholder actor `f00`, not the SP miner ID (Path C) | Curio `storage-configuration.md` | 2026-09-26 |
+| **PDP data adds no storage power or block-reward odds (Path C)** | **Inference, not sourced.** Follows from PDP pieces not being sealed into the miner's sectors, but not stated in Curio's docs. | n/a |
+| **Running PDP in the same processes and database as WindowPoSt is a reason to test on Calibration first (Path C)** | **Editorial judgment, not sourced.** | n/a |
+| Standard `curio` binary includes PDP, enabled by config (C2) | Curio `skiff-binary.md` ("When PDP is enabled in full `curio`…") | 2026-09-26 |
+| PDP schema added by HarmonyDB migrations on startup (C2) | Curio `experimental-features/Enable-PDP.md` | 2026-09-26 |
+| Branch `pdpM3d` named in Curio's Enable PDP build step no longer exists (C2) | Checked against the `filecoin-project/curio` repository's branch list (GitHub API returned 404) | 2026-09-26 |
+| `EnableEthRPC` / `EnableIndexer` `sed` fix for Lotus (C1) | Curio `experimental-features/Enable-PDP.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-26 |
+| `--allow-types piece` / `--deny-types piece` attach commands; PDP needs store paths, not seal-only; market parking shares the `piece` type (C3) | Curio `storage-configuration.md` | 2026-09-26 |
+| `pdp` layer subsystems `EnableParkPiece`, `EnablePDP`, `EnableCommP`, `EnableMoveStorage`; `HTTP` `Enable`, `DomainName`, `ListenAddress 0.0.0.0:443`; `setcap` fix for port 443 (C4) | Curio `experimental-features/Enable-PDP.md` | 2026-09-26 |
+| One domain can serve both market and PDP routes (C4) | Curio `experimental-features/Enable-PDP.md` ("Pattern A: single domain, one Curio HTTP server") | 2026-09-26 |
+| Delegated wallet creation, hex key export pipeline, GUI **Import Key** flow, 8 FIL / 5 tFIL funding (C5) | Curio `experimental-features/Enable-PDP.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-26 |
 | Slack channels `#fil-curio-help`, `#fil-pdp`, `#fil-lotus-help` (Before you start, Getting help) | `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/quickstart)
