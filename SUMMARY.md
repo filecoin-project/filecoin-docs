@@ -101,6 +101,7 @@
 ## Provide Storage
 
 * [Getting started](storage-providers/getting-started.md)
+* [Quickstart](storage-providers/quickstart.md)
 * [Filecoin economics](storage-providers/filecoin-economics/README.md)
   * [Storage proving](storage-providers/filecoin-economics/storage-proving.md)
   * [FIL collateral](storage-providers/filecoin-economics/fil-collateral.md)
