@@ -18,7 +18,7 @@ There are two kinds of storage you can provide on Filecoin today: PDP service st
 | **What you do** | Store client data as-is and prove you still hold it using Proof of Data Possession (PDP). You serve it over HTTPS as part of Filecoin Onchain Cloud. | Seal data or empty capacity into sectors using Proof of Replication (PoRep). You prove the sectors every 24 hours, gain storage power, and compete to produce blocks. | Everything in B, plus PDP service storage for clients, all on the same Curio cluster. |
 | **How you earn** | Storage fees from clients, paid in USDFC through Filecoin Pay. | Block rewards (FIL) plus fees from storage deals. | Block rewards and PoRep deal fees (as in B), plus PDP storage fees in USDFC (as in A). |
 | **Collateral** | No sector pledge. A small FIL balance pays for proof messages. | FIL initial pledge locked for each sector, plus a working balance for fees and messages. | B's pledge and balances, plus a small FIL balance in a separate PDP wallet. |
-| **Minimum hardware** | 1 server: 8+ cores, 32 GiB+ RAM, 1 TiB NVMe, 10 TiB+ HDD. No GPU. | A sealing and proving cluster: SHA-extension CPUs, 512 GiB–1 TiB RAM on sealing nodes, 10 GB+ GPUs, several TiB of NVMe scratch, and PiB-scale disk to be competitive. | B's cluster, plus disk set aside for PDP pieces and a public HTTPS domain. |
+| **Minimum hardware** | 1 server: 16+ threads, 64 GB+ RAM, 1 TiB NVMe, 10 TiB+ HDD. No GPU. | A sealing and proving cluster: SHA-extension CPUs, 512 GiB–1 TiB RAM on sealing nodes, 10 GB+ GPUs, several TiB of NVMe scratch, and PiB-scale disk to be competitive. | B's cluster, plus disk set aside for PDP pieces and a public HTTPS domain. |
 | **Software** | Curio-PDP in Docker (bundles Forest and YugabyteDB). | Lotus + YugabyteDB + Curio. | B's stack with PDP turned on in Curio. **Curio labels this alpha.** |
 | **Time to first proof** | Hours, mostly waiting for the chain to sync. | Days to weeks, including hardware setup, chain sync, and sealing. | Same as B for mining. PDP adds a few hours once B is running. |
 | **Retrieval** | Data is always hot and served over HTTPS. | Sealed data must be unsealed (or kept unsealed) to serve retrievals. | As in B for sealed sectors. PDP data is always hot. |
@@ -71,8 +71,8 @@ You'll run **Curio-PDP**, the Docker-based, PDP-only build of Curio. It is the s
 
 | Resource | Requirement |
 | --- | --- |
-| CPU | 8+ cores |
-| RAM | 32 GiB+ |
+| CPU | 16+ threads |
+| RAM | 64 GB+ |
 | Fast disk | 1 TiB+ NVMe or SSD for the chain, the database, and the Curio repo |
 | Bulk disk | 10 TiB+ HDD (or more) for client piece data |
 | GPU | Not required |
@@ -244,7 +244,6 @@ In the GUI, open **PDP** and find the registration section (labelled **Register*
    | Service URL | `https://pdp.example.com` |
    | Minimum piece size (bytes) | `1048576` (1 MiB) |
    | Maximum piece size (bytes) | `1073741824` (1 GiB) |
-   | Storage price (USDFC per TiB per day) | Your price. `0.833` is roughly USD 25 per TiB per month. |
    | Minimum proving period (epochs) | `30` |
    | Location | For example `C=US;ST=California;L=San Francisco`. Only `C=` is required. |
 
@@ -256,6 +255,10 @@ In the GUI, open **PDP** and find the registration section (labelled **Register*
    | `capacityTib` | Your available capacity in TiB |
 
 Each submission is an on-chain transaction paid from your PDP wallet. You can come back and change the offering at any time.
+
+**You don't set a price.** The FWSS contract fixes the price for every provider: **2.5 USDFC per TiB per month**, plus **0.12 USDFC per data set per month**, plus a **0.5% network fee** taken at settlement. There's no price field to fill in, and the offering can't change these rates.
+
+**Registering doesn't bring client data right away.** Registration puts you in the registry. Before any client data is sent to you, the network tests your node and the working group approves you. Expect a gap between registering and your first data. Keep the node online, proving, and reachable while you wait.
 
 Optionally, confirm end-to-end reachability with `pdptool`, which ships in the Curio repo and needs Go installed:
 
@@ -283,6 +286,8 @@ cd ~/curio/cmd/pdptool && go build .   # use the path where you cloned Curio in 
 ## Path B: Consensus miner
 
 A consensus miner (the traditional Filecoin storage provider) commits storage to the network in **sectors**. Each sector is 32 GiB or 64 GiB of data, or empty "committed capacity," sealed with Proof of Replication. The sectors you prove give you **storage power**. Every 30-second epoch, the network elects miners in proportion to their power to produce blocks and earn **block rewards**.
+
+A PoRep-backed provider can also add Filecoin Onchain Cloud (FOC) service revenue by running a combined cluster. See [Path C](#path-c).
 
 You'll run three pieces of software:
 
@@ -575,6 +580,8 @@ Once you have **10 TiB of power**, you become eligible for block rewards.
 
 Sealing client data earns deal fees, and verified deals give you a 10× power multiplier. Curio has a built-in storage market. You don't need Boost.
 
+Consensus miners take deals directly today. No automated deal-matching or go-to-market pipeline sends clients to you yet (see [Path C](#path-c)).
+
 1. Point a domain at the node that will run the market, and open port 443 on it.
 2. Put the domain in the `base` layer (`curio config edit base`):
 
@@ -706,7 +713,7 @@ From outside your network, check that the endpoint answers:
 curl https://pdp.example.com
 ```
 
-Then register with FWSS in the GUI's **PDP** page. The fields and suggested values are the same as in [A9](#a9-register-with-the-filecoin-warm-storage-service): provider details, the PDP offering with your service URL and price, and the `serviceStatus` and `capacityTib` capabilities. Confirm reachability with `pdptool ping --service-url https://pdp.example.com --service-name public`. The A9 section shows how to build `pdptool`.
+Then register with FWSS in the GUI's **PDP** page. The fields and suggested values are the same as in [A9](#a9-register-with-the-filecoin-warm-storage-service): provider details, the PDP offering with your service URL (pricing is set by the contract), and the `serviceStatus` and `capacityTib` capabilities. Confirm reachability with `pdptool ping --service-url https://pdp.example.com --service-name public`. The A9 section shows how to build `pdptool`.
 
 **You're now running both.** Your cluster seals and proves sectors for block rewards and also stores and proves PDP data for FWSS clients. To operate it, follow B13 and add these checks:
 
@@ -797,7 +804,8 @@ This page copies facts from other documentation instead of linking to it, so it 
 | WindowPoSt every 24 hours, 48 deadlines of 30 minutes (B1) | `storage-providers/filecoin-economics/storage-proving.md` | 2026-09-23 |
 | FIP-0100 daily fee, fee-debt effects, startup funding gap (B1) | `storage-providers/getting-started.md` | 2026-09-23 |
 | Fault fee, sector penalty, termination fee, consensus fault slashing (B1) | `storage-providers/filecoin-economics/slashing.md` | 2026-09-23 |
-| PDP hardware: 8+ cores, 32 GiB+ RAM, 1 TiB NVMe, 10 TiB HDD, no GPU, public HTTPS domain (Choose your path, A1) | Curio `experimental-features/Enable-PDP.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
+| PDP hardware floor: 16+ threads, 64 GB+ RAM (Choose your path, A1) | SP profile floor set 2026-09-28, measured with Lotus as the chain node; not yet measured for Forest | 2026-09-28 |
+| PDP hardware: 1 TiB NVMe, 10 TiB HDD, no GPU, public HTTPS domain (Choose your path, A1) | Curio `experimental-features/Enable-PDP.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
 | PDP proving mechanics: Merkle trees, drand challenges, on-chain verification (Path A intro) | `storage-providers/pdp/about.md` | 2026-09-23 |
 | Curio-PDP stack contents, `.env` variables, image tags `filecoin/curio-pdp:latest` / `:calibnet`, compose commands, GUI on `127.0.0.1:4701`, ports 80/443 only (A3–A5) | Curio `curio-pdp.md`; Curio `docker/skiff/docker-compose.yaml`, `docker-compose.calibnet.yaml`, `.env` | 2026-09-23 |
 | `SKIFF_HTTP_DOMAIN` seeded into `base` on first start (A3) | Curio `docker/skiff/.env` (comment) | 2026-09-23 |
@@ -805,8 +813,9 @@ This page copies facts from other documentation instead of linking to it, so it 
 | `DelegateTLS = false` for Let's Encrypt on 443 and `docker compose restart skiff` (A8) | Inferred from the port labels and service name in Curio `docker/skiff/docker-compose.yaml`. **Not tested end to end.** | 2026-09-23 |
 | PDP wallet Create/Import, one key per cluster, key stored in YugabyteDB (A7) | Curio `curio-pdp.md` | 2026-09-23 |
 | PDP wallet funding: 5 tFIL (Calibration), 8 FIL (mainnet) (A7) | `storage-providers/pdp/install-and-run-pdp.md`; Curio `experimental-features/Enable-PDP.md` | 2026-09-23 |
-| FWSS registration fields and example values: name ≤ 128 chars, description ≤ 256 chars, piece sizes `1048576`–`1073741824`, price `0.833` USDFC/TiB/day, proving period `30`, location format, capabilities `serviceStatus=prod` and `capacityTib` (A9) | `storage-providers/pdp/install-and-run-pdp.md`. **Needs confirmation from the FWSS team that these are still current.** | 2026-09-23 |
-| "`0.833` is roughly USD 25 per TiB per month" (A9) | Arithmetic (0.833 × 30), assuming 1 USDFC ≈ 1 USD | 2026-09-23 |
+| FWSS registration fields and example values: name ≤ 128 chars, description ≤ 256 chars, piece sizes `1048576`–`1073741824`, proving period `30`, location format, capabilities `serviceStatus=prod` and `capacityTib` (A9) | `storage-providers/pdp/install-and-run-pdp.md`. **Needs confirmation from the FWSS team that these are still current.** | 2026-09-23 |
+| FWSS pricing fixed by contract, not set by the SP: 2.5 USDFC per TiB per month, plus 0.12 USDFC per data set per month, plus a 0.5% network fee at settlement (A9) | Review, 2026-09-28 | 2026-09-28 |
+| Registration doesn't route client data right away; the network tests the SP and the working group approves it first (A9) | Review, 2026-09-28 | 2026-09-28 |
 | Registration section labelled **Register** / **Filecoin Service Registry** (A9) | Curio `curio-pdp.md` ("Register tab"); `storage-providers/pdp/install-and-run-pdp.md` ("Filecoin Service Registry"). Current UI label not confirmed. | 2026-09-23 |
 | `pdptool ping` command and expected output (A9) | Curio `experimental-features/Enable-PDP.md` | 2026-09-23 |
 | Curio-PDP troubleshooting table (A10) | Curio `curio-pdp.md` | 2026-09-23 |
