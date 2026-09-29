@@ -7,7 +7,7 @@ keywords: "become storage provider, Filecoin storage provider quickstart, PDP se
 
 # Storage provider quickstart
 
-This page walks you through becoming a Filecoin storage provider, from choosing a path to running your first proofs. It's written so that a person or an AI agent can follow it from top to bottom without needing any other page.
+This page walks you through becoming a Filecoin storage provider, from choosing a path to running your first proofs. It is optimized for agents, but a human should be able to follow, if you have read the [Planning the Storage Provider Journey](planning-sp-journey.md) .It's written so that a person or an AI agent can follow it from top to bottom without needing any other page.
 
 There are two kinds of storage you can provide on Filecoin today: PDP service storage and consensus mining. You can run either one, or both on the same cluster, which gives three paths. Pick one before you buy hardware, because they need very different machines, amounts of capital, and skills.
 
