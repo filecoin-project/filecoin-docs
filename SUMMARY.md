@@ -100,7 +100,7 @@
 
 ## Provide Storage
 
-* [Getting started](storage-providers/getting-started.md)
+* [Getting started](storage-providers/planning-sp-journey.md)
 * [Quickstart](storage-providers/quickstart.md)
 * [Filecoin economics](storage-providers/filecoin-economics/README.md)
   * [Storage proving](storage-providers/filecoin-economics/storage-proving.md)
