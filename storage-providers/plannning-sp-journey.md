@@ -6,13 +6,13 @@ description: >-
 keywords: "earn FIL, Filecoin rewards, storage provider rewards, stake FIL, staking FIL, Filecoin staking, become storage provider, FIL staking alternative"
 ---
 
-# Getting started
+# Planning your Storage Provider journey
 
 The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 
 To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
 
-In a hurry? The [storage provider quickstart](quickstart.md) takes you from zero to running as a PDP service provider or a consensus miner on a single page.
+In a hurry? The [storage provider quickstart](quickstart.md) takes you from zero to running as a PDP service provider or a consensus miner on a single page. Be warned: the page is mostly optimized for agents.
 
 Follow these steps to begin your storage provider journey:
 
