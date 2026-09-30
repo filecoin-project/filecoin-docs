@@ -100,7 +100,7 @@
 
 ## Provide Storage
 
-* [Getting started](storage-providers/planning-sp-journey.md)
+* [Plan your Filecoin storage provider business](storage-providers/getting-started.md)
 * [Agent quickstart](storage-providers/agent-quickstart.md)
 * [Filecoin economics](storage-providers/filecoin-economics/README.md)
   * [Storage proving](storage-providers/filecoin-economics/storage-proving.md)
