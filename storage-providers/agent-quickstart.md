@@ -7,7 +7,7 @@ keywords: "become storage provider, Filecoin storage provider quickstart, PDP se
 
 # Storage Provider Agent Quickstart
 
-Using an AI agent? Copy this prompt into it and it will walk you through the page:
+**Using an AI agent?** Copy this prompt into it and it will walk you through the page:
 
 ```text
 Help me become a Filecoin storage provider by following this page step by step:
@@ -20,7 +20,6 @@ Read the whole page before you start. Then:
 4. Stop and hand over to me for anything you can't or shouldn't do yourself: DNS records, buying or sending FIL, steps in the Curio web GUI, and creating or exporting private keys.
 5. Never ask me to paste a private key, seed phrase or wallet export into this chat.
 6. If a step fails or the page doesn't match what you see, stop and tell me what happened and which step it was.
-
 ```
 
 This page walks you through becoming a Filecoin storage provider, from choosing a path to running your first proofs. It is optimized for agents, but a human should be able to follow, if you have read [Plan Your Filecoin Storage Provider Business](getting-started.md). It's written so that a person or an AI agent can follow it from top to bottom without needing any other page.
