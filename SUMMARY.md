@@ -101,7 +101,7 @@
 ## Provide Storage
 
 * [Plan your Filecoin storage provider business](storage-providers/getting-started.md)
-* [Agent quickstart](storage-providers/agent-quickstart.md)
+* [Storage Provider Agent Quickstart](storage-providers/agent-quickstart.md)
 * [Filecoin economics](storage-providers/filecoin-economics/README.md)
   * [Storage proving](storage-providers/filecoin-economics/storage-proving.md)
   * [FIL collateral](storage-providers/filecoin-economics/fil-collateral.md)
