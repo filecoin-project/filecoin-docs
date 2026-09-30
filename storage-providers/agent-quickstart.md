@@ -51,7 +51,7 @@ You need the following no matter which path you choose:
 * **Linux admin skills.** You'll work in a terminal on Ubuntu or Debian (22.04 or newer recommended), manage systemd services or Docker containers, open firewall ports, and read logs.
 * **A machine that stays online.** Every path proves to the chain on a fixed schedule. When your node is down, proofs are missed. On the consensus path, missed proofs cost you FIL (see [Know the penalties](#b1-understand-the-economics)).
 * **A way to get FIL.** On Calibration, a faucet gives you tFIL for free. To find one, search "Filecoin Calibration faucet"; the ChainSafe faucet at `faucet.calibnet.chainsafe-fil.io` is a common choice. On mainnet you buy FIL.
-* **A place to ask for help.** In the Filecoin Slack, `#fil-curio-help` covers Curio, `#fil-pdp` covers PDP and FWSS, and `#fil-lotus-help` covers Lotus.
+* **A place to ask for help.** In the Filecoin Slack, `#fil-curio-help` covers Curio, `#fil-sp-help` covers PDP and FWSS, and `#fil-lotus-help` covers Lotus.
 
 ***
 
@@ -766,7 +766,7 @@ If you're automating any path, these are the minimum steps and the checks that m
 ## Getting help
 
 * **Curio, sealing, and proving:** Filecoin Slack `#fil-curio-help`
-* **PDP, FWSS, and Filecoin Onchain Cloud:** Filecoin Slack `#fil-pdp`
+* **PDP, FWSS, and Filecoin Onchain Cloud:** Filecoin Slack `#fil-sp-help`
 * **Lotus chain node:** Filecoin Slack `#fil-lotus-help`
 
 When you ask for help, include your Curio and Lotus versions (`curio --version`, `lotus --version`), which network you're on, the exact command you ran, and the relevant log lines.
@@ -834,6 +834,6 @@ This page copies facts from other documentation instead of linking to it, so it 
 | `pdp` layer subsystems `EnableParkPiece`, `EnablePDP`, `EnableCommP`, `EnableMoveStorage`; `HTTP` `Enable`, `DomainName`, `ListenAddress 0.0.0.0:443`; `setcap` fix for port 443 (C4) | Curio `experimental-features/Enable-PDP.md` | 2026-09-26 |
 | One domain can serve both market and PDP routes (C4) | Curio `experimental-features/Enable-PDP.md` ("Pattern A: single domain, one Curio HTTP server") | 2026-09-26 |
 | Delegated wallet creation, hex key export pipeline, GUI **Import Key** flow, 8 FIL / 5 tFIL funding (C5) | Curio `experimental-features/Enable-PDP.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-26 |
-| Slack channels `#fil-curio-help`, `#fil-pdp`, `#fil-lotus-help` (Before you start, Getting help) | `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
+| Slack channels `#fil-curio-help`, `#fil-sp-help`, `#fil-lotus-help` (Before you start, Getting help) | Filecoin Slack (`#fil-pdp` renamed `#fil-sp-help` on 2026-09-30) | 2026-09-30 |
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/agent-quickstart)
