@@ -5,7 +5,7 @@ description: >-
 keywords: "become storage provider, Filecoin storage provider quickstart, PDP service provider, Curio-PDP, Filecoin miner, consensus miner, Curio, Lotus, FWSS, Filecoin Onchain Cloud"
 ---
 
-# Storage provider quickstart
+# Storage Provider Agent Quickstart
 
 This page walks you through becoming a Filecoin storage provider, from choosing a path to running your first proofs. It is optimized for agents, but a human should be able to follow, if you have read the [Planning the Storage Provider Journey](planning-sp-journey.md) .It's written so that a person or an AI agent can follow it from top to bottom without needing any other page.
 
@@ -836,4 +836,4 @@ This page copies facts from other documentation instead of linking to it, so it 
 | Delegated wallet creation, hex key export pipeline, GUI **Import Key** flow, 8 FIL / 5 tFIL funding (C5) | Curio `experimental-features/Enable-PDP.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-26 |
 | Slack channels `#fil-curio-help`, `#fil-pdp`, `#fil-lotus-help` (Before you start, Getting help) | `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-23 |
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/quickstart)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/agent-quickstart)
