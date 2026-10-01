@@ -101,7 +101,7 @@ Curio-PDP gets a TLS certificate from Let's Encrypt automatically. For that to w
 
 #### Start at any size
 
-The table above is the floor for one node. How much storage you put behind it is up to you: you declare it as `capacityTib` when you register (A9) and can change it later.
+The table above is the floor for one node. How much storage you put behind it is up to you: you declare it as Storage Capacity (TiB) when you register (A9) and can change it later.
 
 | Size | What it looks like |
 | --- | --- |
@@ -263,23 +263,17 @@ Registration publishes your node to the on-chain FWSS service provider registry.
 
 In the GUI, open **PDP** and find the registration section (labelled **Register**, or **Filecoin Service Registry**):
 
-1. **Provider details.** Enter a **Name** (up to 128 characters) and a **Description** (up to 256 characters), then submit.
-2. **PDP offering.** Set the following fields, then submit:
+1. **Register Provider.** Fill in these fields, then submit:
 
-   | Field | Suggested starting value |
+   | Field | Value |
    | --- | --- |
-   | Service URL | `https://pdp.example.com` |
-   | Minimum piece size (bytes) | `1048576` (1 MiB) |
-   | Maximum piece size (bytes) | `1073741824` (1 GiB) |
-   | Minimum proving period (epochs) | `30` |
+   | Name | Up to 128 characters |
+   | Description | Up to 256 characters |
    | Location | For example `C=US;ST=California;L=San Francisco`. Only `C=` is required. |
+   | Storage Capacity (TiB) | Your available capacity, as a whole number of TiB |
 
-3. **Capabilities.** Add these key/value pairs:
-
-   | Key | Value |
-   | --- | --- |
-   | `serviceStatus` | `prod` |
-   | `capacityTib` | Your available capacity in TiB |
+   The **Register Provider** button stays disabled until your PDP wallet from A7 is set up and funded. Registration also publishes a default PDP offering: pieces from 1 MiB to 64 GiB, IPNI on, and the default proving period.
+2. **Update PDP Offering.** Set **Service URL** to `https://pdp.example.com` and check the location and capacity. Then use **Add Capability** to add the key `serviceStatus` with the value `prod`, and submit.
 
 Each submission is an on-chain transaction paid from your PDP wallet. You can come back and change the offering at any time.
 
@@ -740,7 +734,7 @@ From outside your network, check that the endpoint answers:
 curl https://pdp.example.com
 ```
 
-Then register with FWSS in the GUI's **PDP** page. The fields and suggested values are the same as in [A9](#a9-register-with-the-filecoin-warm-storage-service): provider details, the PDP offering with your service URL (pricing is set by the contract), and the `serviceStatus` and `capacityTib` capabilities. Confirm reachability with `pdptool ping --service-url https://pdp.example.com --service-name public`. The A9 section shows how to build `pdptool`.
+Then register with FWSS in the GUI's **PDP** page. The fields and suggested values are the same as in [A9](#a9-register-with-the-filecoin-warm-storage-service): Register Provider with your location and Storage Capacity (TiB), then Update PDP Offering with your service URL (pricing is set by the contract) and the `serviceStatus` capability. Confirm reachability with `pdptool ping --service-url https://pdp.example.com --service-name public`. The A9 section shows how to build `pdptool`.
 
 **You're now running both.** Your cluster seals and proves sectors for block rewards and also stores and proves PDP data for FWSS clients. To operate it, follow B13 and add these checks:
 
@@ -764,7 +758,7 @@ If you're automating any path, these are the minimum steps and the checks that m
 6. GUI (`127.0.0.1:4701` via SSH tunnel) → Storage → attach `/data/...`.
 7. GUI → PDP → Create or Import a key → fund the 0x address (5 tFIL or 8 FIL).
 8. GUI → Configurations → `base`: `HTTP.Enable = true`, `HTTP.DomainName` set. Then `docker compose restart skiff`. Check: external `curl https://<domain>` succeeds.
-9. GUI → PDP → Register: provider details, PDP offering, `serviceStatus=prod`, `capacityTib`. Check: `pdptool ping --service-url https://<domain> --service-name public` succeeds.
+9. GUI → PDP → Register Provider: name, description, location, Storage Capacity (TiB). Then Update PDP Offering: Service URL, `serviceStatus=prod`. Check: `pdptool ping --service-url https://<domain> --service-name public` succeeds.
 
 **Consensus miner (Lotus + YugabyteDB + Curio)**
 
@@ -840,7 +834,7 @@ This page copies facts from other documentation instead of linking to it, so it 
 | `DelegateTLS = false` for Let's Encrypt on 443 and `docker compose restart skiff` (A8) | Inferred from the port labels and service name in Curio `docker/skiff/docker-compose.yaml`. **Not tested end to end.** | 2026-09-23 |
 | PDP wallet Create/Import, one key per cluster, key stored in YugabyteDB (A7) | Curio `curio-pdp.md` | 2026-09-23 |
 | PDP wallet funding: 5 tFIL (Calibration), 8 FIL (mainnet) (A7) | `storage-providers/pdp/install-and-run-pdp.md`; Curio `experimental-features/Enable-PDP.md` | 2026-09-23 |
-| FWSS registration fields and example values: name ≤ 128 chars, description ≤ 256 chars, piece sizes `1048576`–`1073741824`, proving period `30`, location format, capabilities `serviceStatus=prod` and `capacityTib` (A9) | `storage-providers/pdp/install-and-run-pdp.md`. **Needs confirmation from the FWSS team that these are still current.** | 2026-09-23 |
+| FWSS registration fields: name ≤ 128 chars, description ≤ 256 chars, location format, Storage Capacity (TiB) as a whole number, default offering (1 MiB–64 GiB pieces, IPNI on), Service URL and capability `serviceStatus=prod` (A9) | Curio `web/static/pages/pdp/register.mjs` and `web/api/webrpc/pdp.go` at v1.29.0-rc1; `documentation/en/experimental-features/Enable-PDP.md` | 2026-10-01 |
 | FWSS pricing fixed by contract, not set by the SP: 2.5 USDFC per TiB per month, plus 0.12 USDFC per data set per month, plus a 0.5% network fee at settlement (A9) | Review, 2026-09-28 | 2026-09-28 |
 | Registration doesn't route client data right away; the network tests the SP and the working group approves it first (A9) | Review, 2026-09-28 | 2026-09-28 |
 | Registration section labelled **Register** / **Filecoin Service Registry** (A9) | Curio `curio-pdp.md` ("Register tab"); `storage-providers/pdp/install-and-run-pdp.md` ("Filecoin Service Registry"). Current UI label not confirmed. | 2026-09-23 |
