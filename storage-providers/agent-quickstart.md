@@ -316,6 +316,8 @@ You'll run three pieces of software:
 * **YugabyteDB**, the database that coordinates every Curio node in your cluster (Curio calls it HarmonyDB).
 * **Curio**, the storage provider software. It seals sectors, runs WindowPoSt and WinningPoSt, and runs the storage market. It replaces the older `lotus-miner`, `lotus-worker`, and Boost stack. Boost no longer works with current Curio releases.
 
+If you still run `lotus-miner` and Boost, move to Curio with **Migrate from existing Lotus-Miner** in [B8](#b8-create-your-miner). Docs for the older stack: [Boost](https://boost.filecoin.io).
+
 ### B1. Understand the economics
 
 Read this section before you buy anything. Consensus mining locks up capital, and penalties are automatic.
@@ -329,7 +331,8 @@ Read this section before you buy anything. Consensus mining locks up capital, an
 **How you earn:**
 
 * **Block rewards.** Your odds of winning a block are proportional to your share of network power. You need **at least 10 TiB of raw power** to be eligible at all. Even above that threshold, small miners may wait a long time for their first block. 25% of each reward is available immediately; the other 75% vests over about 180 days.
-* **Deal fees.** Clients can pay you to store their data in your sectors. Verified deals (Filecoin Plus) give those sectors a 10× quality-adjusted power multiplier, which raises your block-reward odds and your pledge by the same factor.
+* **Deal fees.** Clients can pay you to store their data in your sectors.
+* **Quality-adjusted power.** From the Solstice network upgrade ([FIP-0118](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0118.md)), every new sector gets 10× quality-adjusted power, with or without client data, and Filecoin Plus datacap is retired. Existing sectors can be upgraded to 10×. The multiplier raises your block-reward odds and your pledge by the same factor. Until Solstice reaches mainnet, only verified deals (Filecoin Plus) get it.
 
 **What you lock up and pay:**
 
@@ -349,7 +352,7 @@ Read this section before you buy anything. Consensus mining locks up capital, an
 **Plan for the startup gap.** Before your first block reward arrives, you pay pledge, gas, and daily fees out of pocket. Keep a FIL buffer in your miner actor for fees and WindowPoSt messages, and don't withdraw it all. An underfunded miner can get stuck: it can't seal new sectors, it can miss proofs, and it can't win blocks.
 {% endhint %}
 
-Committed capacity (CC) sectors, which are sealed with no client data, are the simplest way to start. Their profitability depends heavily on the FIL price. Most serious operators add verified client deals over time, either by sealing them into new sectors or by upgrading CC sectors in place with SnapDeals.
+Committed capacity (CC) sectors, which are sealed with no client data, are the simplest way to start. Their profitability depends heavily on the FIL price. Most serious operators add client deals over time, either by sealing them into new sectors or by upgrading CC sectors in place with SnapDeals.
 
 ### B2. Get the hardware
 
@@ -599,7 +602,7 @@ Once you have **10 TiB of power**, you become eligible for block rewards.
 
 ### B12. Take storage deals (optional)
 
-Sealing client data earns deal fees, and verified deals give you a 10× power multiplier. Curio has a built-in storage market. You don't need Boost.
+Sealing client data earns deal fees. From Solstice, the 10× power multiplier no longer depends on deals (see [B1](#b1-understand-the-economics)). Curio has a built-in storage market. You don't need Boost.
 
 Consensus miners take deals directly today. No automated deal-matching or go-to-market pipeline sends clients to you yet (see [Path C](#path-c)).
 
@@ -625,7 +628,7 @@ Consensus miners take deals directly today. No automated deal-matching or go-to-
 4. Restart Curio. If it fails to bind port 443, run `sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/curio` and restart again.
 5. From outside your network, run `curl https://market.example.com`. You should get a "Hello" response from Curio.
 
-To find clients, look at Filecoin Plus programs and data onboarding programs. Ask in `#fil-curio-help` for current options.
+To find clients, look at data onboarding programs. Ask in `#fil-curio-help` for current options.
 
 **You're now a consensus miner.** Your miner has an on-chain identity, proves its sectors every day, gains power as it seals, and becomes eligible to win blocks. When you're ready for mainnet, repeat B4–B11 with mainnet builds, new wallets, and real FIL.
 
@@ -820,7 +823,7 @@ This page copies facts from other documentation instead of linking to it, so it 
 | **Comparison-table summaries: time to first proof, "good fit if you…", "many operators start with PDP" (Choose your path)** | **Estimate, not sourced** (editorial judgment) | n/a |
 | 10 TiB minimum raw power for block rewards (B1, B11) | `storage-providers/filecoin-economics/block-rewards.md`; `storage-providers/getting-started.md` | 2026-09-23 |
 | 25% of block rewards immediately available, 75% vesting over about 180 days (B1) | Curio `readme/filecoin-storage-provider.md` | 2026-09-23 |
-| **10× quality-adjusted power multiplier for verified deals (B1, B12)** | **Not checked against a source this session** (general protocol knowledge) | n/a |
+| 10× quality-adjusted power: verified deals only until Solstice; every new sector from Solstice, datacap retired, existing sectors upgradable (B1, B12) | FIP-0118 (Accepted) | 2026-10-01 |
 | Initial pledge rule of thumb and 640 FIL example (B1) | `storage-providers/filecoin-economics/fil-collateral.md` | 2026-09-23 |
 | WindowPoSt every 24 hours, 48 deadlines of 30 minutes (B1) | `storage-providers/filecoin-economics/storage-proving.md` | 2026-09-23 |
 | FIP-0100 daily fee, fee-debt effects, startup funding gap (B1) | `storage-providers/getting-started.md` | 2026-09-23 |
