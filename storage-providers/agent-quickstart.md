@@ -35,7 +35,7 @@ There are two kinds of storage you can provide on Filecoin today: PDP service st
 | **What you do** | Store client data as-is and prove you still hold it using Proof of Data Possession (PDP). You serve it over HTTPS as part of Filecoin Onchain Cloud. | Seal data or empty capacity into sectors using Proof of Replication (PoRep). You prove the sectors every 24 hours, gain storage power, and compete to produce blocks. | Everything in B, plus PDP service storage for clients, all on the same Curio cluster. |
 | **How you earn** | Storage fees from clients, paid in USDFC through Filecoin Pay. | Block rewards (FIL) plus fees from storage deals. | Block rewards and PoRep deal fees (as in B), plus PDP storage fees in USDFC (as in A). |
 | **Collateral** | No sector pledge. A small FIL balance pays for proof messages. | FIL initial pledge locked for each sector, plus a working balance for fees and messages. | B's pledge and balances, plus a small FIL balance in a separate PDP wallet. |
-| **Minimum hardware** | 1 server: 16+ threads, 64 GB+ RAM, 1 TiB NVMe, 10 TiB+ HDD. No GPU. | A sealing and proving cluster: SHA-extension CPUs, 512 GiB–1 TiB RAM on sealing nodes, 10 GB+ GPUs, several TiB of NVMe scratch, and PiB-scale disk to be competitive. | B's cluster, plus disk set aside for PDP pieces and a public HTTPS domain. |
+| **Minimum hardware** | 1 server: 16+ threads, 64 GB+ RAM, 1 TiB NVMe for the chain and database, 10 TiB+ HDD for client data. No GPU. | A sealing and proving cluster: SHA-extension CPUs, 512 GiB–1 TiB RAM on sealing nodes, 10 GB+ GPUs, several TiB of NVMe scratch, and PiB-scale disk to be competitive. | B's cluster, plus disk set aside for PDP pieces and a public HTTPS domain. |
 | **Software** | Curio-PDP in Docker (bundles Forest and YugabyteDB). | Lotus + YugabyteDB + Curio. | B's stack with PDP turned on in Curio. **Curio labels this alpha.** |
 | **Time to first proof** | Hours, mostly waiting for the chain to sync. | Days to weeks, including hardware setup, chain sync, and sealing. | Same as B for mining. PDP adds a few hours once B is running. |
 | **Retrieval** | Data is always hot and served over HTTPS. | Sealed data must be unsealed (or kept unsealed) to serve retrievals. | As in B for sealed sectors. PDP data is always hot. |
@@ -98,6 +98,16 @@ You'll run **Curio-PDP**, the Docker-based, PDP-only build of Curio. It is the s
 | Firewall | Inbound **TCP 80 and 443 only**. Keep everything else closed. |
 
 Curio-PDP gets a TLS certificate from Let's Encrypt automatically. For that to work, your domain must already resolve to the server and port 443 must be reachable from the internet.
+
+#### Start at any size
+
+The table above is the floor for one node. How much storage you put behind it is up to you: you declare it as `capacityTib` when you register (A9) and can change it later.
+
+| Size | What it looks like |
+| --- | --- |
+| **Solo** | One machine at the floor above. Start with 10 TiB+ of HDD and add disks as you fill. Today's endorsed providers declare between 60 and 500 TiB. |
+| **Rented box** | A bare-metal storage server from a large host, 40 to 175 TiB raw per box before RAID. Take the 64 GB memory option if you run Lotus. |
+| **Enterprise** | 1 PiB and up: the floor above per head node, with JBOD shelves for piece data. Node counts and shelf sizing to follow. |
 
 ### A2. Install Docker
 
