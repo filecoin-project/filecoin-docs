@@ -19,7 +19,7 @@ FOC is a good fit when your application needs:
 * **Automated payments** through Filecoin Pay, so storage providers are paid through on-chain payment rails.
 * **Retrieval paths** for application data, with Filecoin Beam available for faster data delivery.
 
-If you only need a managed IPFS pinning-style workflow, start with [Filecoin Pin](../cookbook/filecoin-pin/README.md). If you want to run provider infrastructure for the FOC stack, start with the [PDP provider documentation](../../storage-providers/pdp/README.md).
+If you only need a managed IPFS pinning-style workflow, start with [Filecoin Pin](../cookbook/filecoin-pin/README.md). If you want to sell FOC storage from your own hardware, the Curio-PDP Docker stack brings up Forest, Yugabyte, and Curio-PDP in one command — about five minutes of setup, then a web guide for wallet, disks, domain, and registration: [Run a PDP provider](../../storage-providers/pdp/install-and-run-pdp.md) · [Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp).
 
 ## Core components
 
@@ -39,7 +39,7 @@ FOC is composed of services that can be used together through the Synapse SDK:
 | --- | --- | --- |
 | Synapse SDK | You are building a JavaScript or TypeScript application that stores and retrieves data with FOC. | [FOC quickstart and Synapse docs](synapse-quickstart.md) |
 | Filecoin Pin | You want a CLI or API-style path for pinning IPFS-compatible content to Filecoin-backed storage. | [Filecoin Pin](../cookbook/filecoin-pin/README.md) |
-| PDP provider | You want to run provider infrastructure that can participate in FOC storage. | [PDP](../../storage-providers/pdp/README.md) |
+| PDP provider | You want to sell FOC storage from your own hardware (≈5 min Docker setup). | [Run a PDP provider](../../storage-providers/pdp/install-and-run-pdp.md) · [Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp) |
 | Full FOC docs | You need the complete FOC guides, API reference, architecture, pricing, or contract references. | [docs.filecoin.cloud](https://docs.filecoin.cloud/) |
 
 ## Learn more

@@ -31,7 +31,7 @@ PDP replaces older programmatic storage patterns built around direct Deal Client
 ## Getting started
 
 1. **Learn about FOC** at [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md).
-2. **Run PDP infrastructure** with [Install and run PDP](install-and-run-pdp.md).
+2. **Run a PDP provider** — start the Curio-PDP Docker stack and follow the web guide ([Run a PDP provider](install-and-run-pdp.md) · [Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)).
 3. **Build with the Synapse SDK** using the [FOC developer guides](https://docs.filecoin.cloud/developer-guides).
 4. **Choose a storage path** via [Upload to Filecoin](../../getting-started/how-storage-works/upload-to-filecoin.md).
 
