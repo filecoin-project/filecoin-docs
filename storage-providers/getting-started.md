@@ -153,11 +153,11 @@ Storage providers usually run several pieces of software together. Start by unde
 
 | Component | Role |
 | --- | --- |
-| [Curio](https://curiostorage.org/) | Modern storage-provider stack for running provider operations, including PDP storage, proving, and retrieval, and PoRep sealing and proving workflows. |
+| [Curio](https://curiostorage.org/) | Modern storage-provider stack for running provider operations, including PDP storage, proving, and retrieval, and PoRep sealing and proving workflows. Its built-in [storage market](https://docs.curiostorage.org/curio-market/storage-market) handles PoRep storage deals and retrievals. |
 | [Lotus](https://lotus.filecoin.io) | Reference Filecoin implementation for chain sync, node operations, miner actor interactions, and client tooling. |
-| [Boost](https://boost.filecoin.io) | Deal-making and retrieval software for accepting PoRep storage deals and serving retrievals, including HTTP retrievals when configured. |
+| [Boost](https://boost.filecoin.io) | Deal-making and retrieval for the older `lotus-miner` stack. Not compatible with current Curio releases. |
 
-For new storage-provider planning, treat Curio as the provider operations stack, Lotus as the underlying Filecoin node and chain tooling, and optionally Boost as the PoRep storage-deal and retrieval layer. Use each project's maintained documentation for installation and production configuration.
+For new storage-provider planning, treat Curio as the provider operations stack, including deal-making through its built-in storage market, and Lotus as the underlying Filecoin node and chain tooling. If you run `lotus-miner` and Boost today, see [Migrating from Boost](https://docs.curiostorage.org/curio-market/migrating-from-boost). Use each project's maintained documentation for installation and production configuration.
 
 [Curio documentation ->](https://docs.curiostorage.org/)
 
@@ -177,11 +177,9 @@ Once ready, determine your starting capacity and architect a solution to accommo
 
 ## Configure PoRep deal-making and retrieval services
 
-As you step into the mainnet, Boost helps you accept PoRep storage deals and offer data retrieval services to data owners. Deploying Boost unlocks your ability to participate in PoRep deal-making and serve clients across the Filecoin network.
+As you step into the mainnet, Curio's built-in storage market lets you accept PoRep storage deals and serve retrievals to data owners. Boost is no longer compatible with current Curio releases.
 
-Boost is not used for PDP deals and retrieval.
-
-[Boost documentation ->](https://boost.filecoin.io)
+[Curio storage market ->](https://docs.curiostorage.org/curio-market/storage-market)
 
 ## Explore verified deals and ecosystem tools <a href="#explore-verified-deals-and-ecosystem-tools" id="explore-verified-deals-and-ecosystem-tools"></a>
 
