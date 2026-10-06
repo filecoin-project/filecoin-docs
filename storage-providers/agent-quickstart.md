@@ -76,11 +76,11 @@ You need the following no matter which path you choose:
 
 ## Path A: Storage Service (PDP) <a href="#path-a" id="path-a"></a>
 
-A PDP service provider stores client data and answers random, on-chain challenges that prove the data is stored. PDP is the verification layer of data storage. Clients pay providers through **Filecoin Pay**. Once you register your node with the SP registry, services can find you. You will get client deals if you meet the SLA requirements of services, like Filecoin Warm Storage Service(FWSS).
+A PDP service provider stores client data and answers random, on-chain challenges that prove the data is stored. PDP is the verification layer of data storage. Clients pay providers through **Filecoin Pay**. Once you register your node with the SP registry, services can find you. You will get client deals if you meet the SLA requirements of services, like Filecoin Warm Storage Service (FWSS).
 
-Here's how PDP proving works. You compute Merkle trees over the pieces you store. A smart contract uses the drand randomness beacon to challenge you at random. You answer with Merkle inclusion proofs, and the contract checks them on-chain. 
+Here's how PDP proving works. You compute Merkle trees over the pieces you store. A smart contract uses the drand randomness beacon to challenge you at random. You answer with Merkle inclusion proofs, and the contract checks them on-chain.
 
-You'll run **Curio-PDP**, the Docker-based, PDP-only build of Curio. It is the supported way to run a PDP-only provider. One `docker compose` stack runs three containers:
+You'll run **Curio-PDP**, the Docker-based, PDP-only build of Curio. Release images are published on Docker Hub as [`filecoin/curio-pdp`](https://hub.docker.com/r/filecoin/curio-pdp/tags). It is the supported way to run a PDP-only provider. One `docker compose` stack runs three containers:
 
 * **Forest**, a Filecoin chain node. It downloads a snapshot and syncs automatically.
 * **YugabyteDB**, which stores Curio's state, piece indexes, and your PDP wallet key.
