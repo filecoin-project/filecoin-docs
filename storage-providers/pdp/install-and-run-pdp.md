@@ -36,22 +36,22 @@ The first time you open the dashboard, it lands you on a setup guide. The guide 
 
 ## Start the stack
 
-Run these on the machine that’s going to be the node. Use the mainnet lines to run for real, or the Calibration lines to try it on the test network first, where everything runs on free test funds:
+Run these on the machine that’s going to be the node, from a folder on its NVMe or SSD. Use the mainnet lines to run for real, or the Calibration lines to try it on the test network first, where everything runs on free test funds:
 
 ```bash
 git clone https://github.com/filecoin-project/curio.git
+cd curio/docker/skiff
 
 # Mainnet
-docker compose -f curio/docker/skiff/docker-compose.yaml up -d
-docker compose -f curio/docker/skiff/docker-compose.yaml logs -f
+SKIFF_IMAGE=filecoin/curio-pdp:latest docker compose up -d
+docker compose logs -f
 
 # Calibration test network (free test funds, no real FIL)
-cd curio/docker/skiff
-docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
+SKIFF_IMAGE=filecoin/curio-pdp:calibnet docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
 docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml logs -f
 ```
 
-That brings up the node. Yugabyte is up in seconds. Forest downloads a chain snapshot the first time it starts, which takes about 20 minutes, and the first run also builds the Curio-PDP image. Curio-PDP starts as soon as Forest is accepting connections, although the wallet balance and registration checks wait for Forest to finish syncing. By default, everything lives under `curio/docker/skiff/data/`.
+That brings up the node. Yugabyte is up in seconds. Forest downloads a chain snapshot the first time it starts, which takes about 20 minutes. Curio-PDP starts as soon as Forest is accepting connections, although the wallet balance and registration checks wait for Forest to finish syncing. By default, everything lives under `curio/docker/skiff/data/`.
 
 Now open `http://127.0.0.1:4701` in a browser. The dashboard only listens on localhost and has no login, so keep it that way. If you’re working on a remote box, forward the port over SSH:
 
