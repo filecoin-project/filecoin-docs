@@ -80,7 +80,7 @@ A PDP service provider stores client data and answers random, on-chain challenge
 
 Here's how PDP proving works. You compute Merkle trees over the pieces you store. A smart contract uses the drand randomness beacon to challenge you at random. You answer with Merkle inclusion proofs, and the contract checks them on-chain.
 
-You'll run **Curio-PDP**, the Docker-based, PDP-only build of Curio. Release images are published on Docker Hub as [`filecoin/curio-pdp`](https://hub.docker.com/r/filecoin/curio-pdp/tags). It is the supported way to run a PDP-only provider. One `docker compose` stack runs three containers:
+You'll run **Curio-PDP**, the Docker-based, PDP-only build of Curio. Release images are published on Docker Hub as `filecoin/curio-pdp` ([tags and networks](https://github.com/filecoin-project/curio/blob/main/documentation/en/curio-pdp.md#published-images)). It is the supported way to run a PDP-only provider. One `docker compose` stack runs three containers:
 
 * **Forest**, a Filecoin chain node. It downloads a snapshot and syncs automatically.
 * **YugabyteDB**, which stores Curio's state, piece indexes, and your PDP wallet key.
