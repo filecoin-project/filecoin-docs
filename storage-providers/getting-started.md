@@ -16,10 +16,12 @@ In a hurry? The [storage provider agent quickstart](agent-quickstart.md) takes y
 
 There are two ways to provide storage:
 
-* **PDP (recommended)** — serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) with warm storage, PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start. Some data is provided by the network for you to store. 
-* **PoRep (consensus mining)** — the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint. You manage your own data business relationships. 
+* **Storage Service (PDP, recommended)** — serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) with warm storage, PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start. Some data is provided by the network for you to store. 
+* **Consensus Mining (PoRep)** — the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint. You manage your own data business relationships. 
 
-## Filecoin Onchain Cloud (PDP)
+Planning to become a storage provider? Tell us about your setup in the [storage provider interest form](https://docs.google.com/forms/d/e/1FAIpQLSdTd7Znz5uJeF8f98LccjZ-q7dq9Nh861t_rFkH_kcNO6HCtw/viewform).
+
+## Storage Service (PDP)
 
 FOC lets you sell warm storage from your own hardware without a PoRep sealing pipeline. One Docker Compose command brings up Forest, Yugabyte, and Curio-PDP, and a web guide on `http://127.0.0.1:4701` walks you through wallet, storage, domain, and FOC registration. Downloads aside, setup takes about five minutes.
 
@@ -36,9 +38,19 @@ docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
 
 Full walkthrough — what’s in the box, hardware, the PDP Guide steps, and what you earn: **[Run a PDP provider](./pdp/install-and-run-pdp.md)**. Deeper operator docs (custom disks, external chain nodes, troubleshooting): **[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** on [docs.curiostorage.org](https://docs.curiostorage.org/).
 
-Protocol background: [About PDP](./pdp/about.md). The sections below cover the **PoRep** path.
+### Choose your operation profile
 
-## PoRep (consensus mining)
+Storage providers run at three broad sizes. The sizes below are for Storage Service (PDP), and each starts from the per-node hardware floor in [Path A of the agent quickstart](agent-quickstart.md#path-a). Consensus Mining needs a sealing and proving cluster instead: see [Path B](agent-quickstart.md#path-b).
+
+| Profile | What it looks like |
+| --- | --- |
+| **Solo** | One machine at the hardware floor. Start with 10 TiB+ of HDD and add disks as you fill. Today's endorsed providers declare between 60 and 500 TiB. |
+| **Renting (colocation/DC operator)** | A bare-metal storage server from a large host, 40 to 175 TiB raw per box before RAID. |
+| **Enterprise Data Center Operator** | 1 PiB and up: the hardware floor per head node, with JBOD shelves for piece data. |
+
+Protocol background: [About PDP](./pdp/about.md). The sections below cover the **Consensus Mining** path.
+
+## Consensus Mining (PoRep)
 
 PoRep is the classic Filecoin storage-provider business: seal sectors, prove them over time, take FIL collateral, and (optionally) make storage deals. The sections below cover architecture, hardware, and how to run that operation profitably.
 
@@ -71,18 +83,6 @@ The hardware and other requirements for running a Filecoin storage provider busi
 You need to understand the various earning mechanisms in the Filecoin network.
 
 [Filecoin deals ->](./filecoin-deals/storage-deals.md)
-
-### Choose your operation profile
-
-Storage providers run at three broad sizes. The sizes below are for Storage Service (PDP), and each starts from the per-node hardware floor in [Path A of the agent quickstart](agent-quickstart.md#path-a). Consensus Mining needs a sealing and proving cluster instead: see [Path B](agent-quickstart.md#path-b).
-
-| Profile | What it looks like |
-| --- | --- |
-| **Solo** | One machine at the hardware floor. Start with 10 TiB+ of HDD and add disks as you fill. Today's endorsed providers declare between 60 and 500 TiB. |
-| **Renting (colocation/DC operator)** | A bare-metal storage server from a large host, 40 to 175 TiB raw per box before RAID. |
-| **Enterprise Data Center Operator** | 1 PiB and up: the hardware floor per head node, with JBOD shelves for piece data. |
-
-Planning to become a storage provider? Tell us about your setup in the [storage provider interest form](https://docs.google.com/forms/d/e/1FAIpQLSdTd7Znz5uJeF8f98LccjZ-q7dq9Nh861t_rFkH_kcNO6HCtw/viewform).
 
 ### Daily fees and startup readiness (FIP-0100)
 
