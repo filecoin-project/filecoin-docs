@@ -816,7 +816,7 @@ This page copies facts from other documentation instead of linking to it, so it 
 | `curio cli storage attach` commands, port `12300`, `AllowTypes`/`DenyTypes` (B10) | Curio `storage-configuration.md` | 2026-09-23 |
 | `curio seal start` flags and 1,278-day default duration; `curio test window-post task` (B11) | Curio `curio-cli/curio.md` | 2026-09-23 |
 | Market settings `EnableDealMarket`, `EnableCommP`, `HTTP.DomainName` in `base` (B12) | Curio `curio-market/storage-market.md` | 2026-09-23 |
-| `EnableParkPiece` in the market layer (B12) | Carried over from Curio's Boost-adapter and PDP layer docs. **Not** in the `storage-market.md` enable list; needs confirmation. | 2026-09-23 |
+| `EnableParkPiece` in the market layer (B12) | Curio `market/mk12/mk12.go` (online deals park their data as short-term pieces) and `cmd/curio/tasks/tasks.go` (the ParkPiece task only runs when `EnableParkPiece` is on). Not in `storage-market.md`'s enable list. | 2026-10-06 |
 | Boost no longer compatible with current Curio (Path B intro) | Curio `getting-started.md` | 2026-09-23 |
 | Sealing and PoSt hardware specs: PoSt 16 cores / 128 GiB / 10 GB GPU; PC1 32 cores with SHA extensions / 1 TiB RAM / about 450 GiB scratch per sector; PC2 512 GiB / 24 GB GPU; about 2 PC2 per PC1; RAIDZ2 12-disk vdevs with 20% headroom; about 7 TiB/day for 1 PiB; 1–10 Gbps for deals (B2) | `storage-providers/infrastructure/reference-architectures.md` | 2026-09-23 |
 | Run multiple PoSt nodes (B2) | Curio `best-practices.md` | 2026-09-23 |
