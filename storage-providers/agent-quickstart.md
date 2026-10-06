@@ -76,7 +76,7 @@ You need the following no matter which path you choose:
 
 ## Path A: Storage Service (PDP) <a href="#path-a" id="path-a"></a>
 
-A PDP service provider stores unsealed client data and answers random, on-chain challenges that prove the data is still there. PDP is the verification layer of **Filecoin Onchain Cloud (FOC)**. Clients store data through the **Filecoin Warm Storage Service (FWSS)** and pay providers through **Filecoin Pay**. Once you register your node with FWSS, clients can find you and send you data.
+A PDP service provider stores client data and answers random, on-chain challenges that prove the data is stored. PDP is the verification layer of data storage. Clients pay providers through **Filecoin Pay**. Once you register your node with the SP registry, services can find you. You will get client deals if you meet the SLA requirements of services, like Filecoin Warm Storage Service(FWSS).
 
 Here's how PDP proving works. You compute Merkle trees over the pieces you store. A smart contract uses the drand randomness beacon to challenge you at random. You answer with Merkle inclusion proofs, and the contract checks them on-chain. PDP needs no sealing, no GPU, and no sector collateral.
 
