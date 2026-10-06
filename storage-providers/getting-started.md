@@ -6,11 +6,13 @@ description: >-
 keywords: "earn FIL, Filecoin rewards, storage provider rewards, stake FIL, staking FIL, Filecoin staking, become storage provider, FIL staking alternative"
 ---
 
-# Getting started
+# Plan Your Filecoin Storage Provider Business
 
 The Filecoin network provides decentralized data storage and makes sure data is verified, always available, and immutable. Storage providers in the Filecoin network are in charge of storing, providing content and issuing new blocks.
 
 To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
+
+In a hurry? The [storage provider agent quickstart](agent-quickstart.md) takes you from zero to running Storage Service, Consensus Mining, or both, on a single page.
 
 Follow these steps to begin your storage provider journey:
 
@@ -42,15 +44,23 @@ You need to understand the various earning mechanisms in the Filecoin network.
 
 [Filecoin deals ->](./filecoin-deals/storage-deals.md)
 
+### Choose your operation profile
+
+Storage providers run at three broad sizes. The sizes below are for Storage Service (PDP), and each starts from the per-node hardware floor in [Path A of the agent quickstart](agent-quickstart.md#path-a). Consensus Mining needs a sealing and proving cluster instead: see [Path B](agent-quickstart.md#path-b).
+
+| Profile | What it looks like |
+| --- | --- |
+| **Solo** | One machine at the hardware floor. Start with 10 TiB+ of HDD and add disks as you fill. Today's endorsed providers declare between 60 and 500 TiB. |
+| **Renting (colocation/DC operator)** | A bare-metal storage server from a large host, 40 to 175 TiB raw per box before RAID. |
+| **Enterprise Data Center Operator** | 1 PiB and up: the hardware floor per head node, with JBOD shelves for piece data. |
+
+Planning to become a storage provider? Tell us about your setup in the [storage provider interest form](https://docs.google.com/forms/d/e/1FAIpQLSdTd7Znz5uJeF8f98LccjZ-q7dq9Nh861t_rFkH_kcNO6HCtw/viewform).
+
 ### Daily fees and startup readiness (FIP-0100)
 
-With the activation of [FIP-0100](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0100.md) in network version 25, all new sectors — and any sectors that are extended or updated — incur a daily fee.
+With the activation of [FIP-0100](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0100.md) in network version 25, all new sectors — and any sectors that are extended or updated — incur a daily fee. This fee replaces the previous batch fee model and introduces a predictable cost structure tied to each sector's quality-adjusted power and the network's circulating supply.
 
-This fee replaces the previous batch fee model and introduces a predictable cost structure tied to each sector's quality-adjusted power and the network's circulating supply.
-
-The fee begins accruing the day after a sector is committed or extended. It is deducted automatically at the end of each proving deadline.
-
-The network first draws from vesting block rewards. If those are insufficient, it draws from the miner's available balance. If both are empty, the unpaid amount becomes **fee debt**.
+The fee begins accruing the day after a sector is committed or extended. It is deducted automatically at the end of each proving deadline. The network first draws from vesting block rewards. If those are insufficient, it draws from the miner's available balance. If both are empty, the unpaid amount becomes **fee debt**.
 
 Fee debt does not directly cause faults. However, it can impact operations:
 
