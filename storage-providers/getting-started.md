@@ -12,7 +12,7 @@ The Filecoin network provides decentralized data storage and makes sure data is 
 
 To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
 
-In a hurry? The [storage provider agent quickstart](agent-quickstart.md) takes you from zero to running as a warm storage service provider or a consensus miner on a single page.
+In a hurry? The [storage provider agent quickstart](agent-quickstart.md) takes you from zero to running Storage Service, Consensus Mining, or both, on a single page.
 
 Follow these steps to begin your storage provider journey:
 
@@ -43,6 +43,18 @@ The hardware and other requirements for running a Filecoin storage provider busi
 You need to understand the various earning mechanisms in the Filecoin network.
 
 [Filecoin deals ->](./filecoin-deals/storage-deals.md)
+
+### Choose your operation profile
+
+Storage providers run at three broad sizes. The sizes below are for Storage Service (PDP), and each starts from the per-node hardware floor in [Path A of the agent quickstart](agent-quickstart.md#path-a). Consensus Mining needs a sealing and proving cluster instead: see [Path B](agent-quickstart.md#path-b).
+
+| Profile | What it looks like |
+| --- | --- |
+| **Solo** | One machine at the hardware floor. Start with 10 TiB+ of HDD and add disks as you fill. Today's endorsed providers declare between 60 and 500 TiB. |
+| **Renting (colocation/DC operator)** | A bare-metal storage server from a large host, 40 to 175 TiB raw per box before RAID. |
+| **Enterprise Data Center Operator** | 1 PiB and up: the hardware floor per head node, with JBOD shelves for piece data. |
+
+Planning to become a storage provider? Tell us about your setup in the [storage provider interest form](https://docs.google.com/forms/d/e/1FAIpQLSdTd7Znz5uJeF8f98LccjZ-q7dq9Nh861t_rFkH_kcNO6HCtw/viewform).
 
 ### Daily fees and startup readiness (FIP-0100)
 

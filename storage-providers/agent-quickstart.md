@@ -30,7 +30,7 @@ There are two kinds of storage you can provide on Filecoin today: PDP service st
 
 ## Choose your path
 
-| | **A: PDP service provider** | **B: Consensus miner** | **C: Combined (one cluster, both)** |
+| | **A: Storage Service (PDP)** | **B: Consensus Mining** | **C: Both (one cluster)** |
 | --- | --- | --- | --- |
 | **What you do** | Store client data as-is and prove you still hold it using Proof of Data Possession (PDP). You serve it over HTTPS as part of Filecoin Onchain Cloud. | Seal data or empty capacity into sectors using Proof of Replication (PoRep). You prove the sectors every 24 hours, gain storage power, and compete to produce blocks. | Everything in B, plus PDP service storage for clients, all on the same Curio cluster. |
 | **How you earn** | Storage fees from clients, paid in USDFC through Filecoin Pay. | Block rewards (FIL) plus fees from storage deals. | Block rewards and PoRep deal fees (as in B), plus PDP storage fees in USDFC (as in A). |
@@ -49,15 +49,17 @@ How to choose:
 
 All three paths run on Curio, so skills carry over. Many operators start with Path A and add mining later.
 
+Planning to become a storage provider? Tell us about your setup in the [storage provider interest form](https://docs.google.com/forms/d/e/1FAIpQLSdTd7Znz5uJeF8f98LccjZ-q7dq9Nh861t_rFkH_kcNO6HCtw/viewform).
+
 {% hint style="info" %}
 **Always start on the Calibration testnet.** Calibration is a full copy of the network that uses free test FIL (tFIL). Every step on this page works on Calibration first. Once your setup survives a few days of proving there, repeat the same steps on mainnet.
 {% endhint %}
 
 Jump to your path:
 
-* [Path A: PDP service provider](#path-a-pdp-service-provider)
-* [Path B: Consensus miner](#path-b-consensus-miner)
-* [Path C: Combined consensus miner + service provider](#path-c)
+* [Path A: Storage Service (PDP)](#path-a)
+* [Path B: Consensus Mining](#path-b)
+* [Path C: Both (one cluster)](#path-c)
 
 ***
 
@@ -72,7 +74,7 @@ You need the following no matter which path you choose:
 
 ***
 
-## Path A: PDP service provider
+## Path A: Storage Service (PDP) <a href="#path-a" id="path-a"></a>
 
 A PDP service provider stores unsealed client data and answers random, on-chain challenges that prove the data is still there. PDP is the verification layer of **Filecoin Onchain Cloud (FOC)**. Clients store data through the **Filecoin Warm Storage Service (FWSS)** and pay providers through **Filecoin Pay**. Once you register your node with FWSS, clients can find you and send you data.
 
@@ -106,8 +108,8 @@ The table above is the floor for one node. How much storage you put behind it is
 | Size | What it looks like |
 | --- | --- |
 | **Solo** | One machine at the floor above. Start with 10 TiB+ of HDD and add disks as you fill. Today's endorsed providers declare between 60 and 500 TiB. |
-| **Rented box** | A bare-metal storage server from a large host, 40 to 175 TiB raw per box before RAID. Take the 64 GB memory option if you run Lotus. |
-| **Enterprise** | 1 PiB and up: the floor above per head node, with JBOD shelves for piece data. Node counts and shelf sizing to follow. |
+| **Renting (colocation/DC operator)** | A bare-metal storage server from a large host, 40 to 175 TiB raw per box before RAID. Take the 64 GB memory option if you run Lotus. |
+| **Enterprise Data Center Operator** | 1 PiB and up: the floor above per head node, with JBOD shelves for piece data. Node counts and shelf sizing to follow. |
 
 ### A2. Install Docker
 
@@ -304,7 +306,7 @@ cd ~/curio/cmd/pdptool && go build .   # use the path where you cloned Curio in 
 
 ***
 
-## Path B: Consensus miner
+## Path B: Consensus Mining <a href="#path-b" id="path-b"></a>
 
 A consensus miner (the traditional Filecoin storage provider) commits storage to the network in **sectors**. Each sector is 32 GiB or 64 GiB of data, or empty "committed capacity," sealed with Proof of Replication. The sectors you prove give you **storage power**. Every 30-second epoch, the network elects miners in proportion to their power to produce blocks and earn **block rewards**.
 
@@ -642,7 +644,7 @@ To find clients, look at data onboarding programs. Ask in `#fil-curio-help` for 
 
 ***
 
-## Path C: Combined consensus miner + service provider (one cluster, both) <a href="#path-c" id="path-c"></a>
+## Path C: Both (Consensus Mining and Storage Service on one cluster) <a href="#path-c" id="path-c"></a>
 
 This path is for operators who run a consensus-mining Curio cluster (Path B) and also want to take PDP service deals on the same cluster. You don't need a second Curio-PDP stack.
 
@@ -751,7 +753,7 @@ Then register with FWSS in the GUI's **PDP** page. The fields and suggested valu
 
 If you're automating any path, these are the minimum steps and the checks that must pass at each stage.
 
-**PDP service provider (Curio-PDP)**
+**Storage Service (Curio-PDP)**
 
 1. The host meets A1. DNS A record → public IP. Inbound TCP 80 and 443 are open.
 2. `git clone https://github.com/filecoin-project/curio.git && cd curio/docker/skiff`
@@ -763,7 +765,7 @@ If you're automating any path, these are the minimum steps and the checks that m
 8. GUI → Configurations → `base`: `HTTP.Enable = true`, `HTTP.DomainName` set. Then `docker compose restart skiff`. Check: external `curl https://<domain>` succeeds.
 9. GUI → PDP → Register Provider: name, description, location, Storage Capacity (TiB). Then Update PDP Offering: Service URL, `serviceStatus=prod`. Check: `pdptool ping --service-url https://<domain> --service-name public` succeeds.
 
-**Consensus miner (Lotus + YugabyteDB + Curio)**
+**Consensus Mining (Lotus + YugabyteDB + Curio)**
 
 1. The host meets B2 and has the B3 packages. `sha_ni` is present on the SDR hosts.
 2. Lotus is built for the target network, imported from a snapshot, and running. Check: `lotus sync wait` returns.
@@ -776,7 +778,7 @@ If you're automating any path, these are the minimum steps and the checks that m
 9. Check: `curio test window-post task --addr <minerID>` succeeds.
 10. `curio seal start --now --cc --count 1 --actor <minerID>`. Check: the sector reaches the proving state and the miner has non-zero power.
 
-**Combined (Path B cluster + PDP, alpha)**
+**Both (Path B cluster + PDP, alpha)**
 
 1. Complete consensus miner steps 1–10 above. A domain points to the PDP-serving node, and inbound TCP 80 and 443 are open.
 2. Lotus `config.toml`: `EnableEthRPC = true`, `EnableIndexer = true`. Restart Lotus.
