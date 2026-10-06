@@ -43,15 +43,15 @@ git clone https://github.com/filecoin-project/curio.git
 cd curio/docker/skiff
 
 # Mainnet
-SKIFF_IMAGE=filecoin/curio-pdp:latest docker compose up -d
-docker compose logs -f
+SKIFF_IMAGE=filecoin/curio-pdp:latest docker compose -f docker-compose.yaml up -d
+docker compose -f docker-compose.yaml logs -f
 
 # Calibration test network (free test funds, no real FIL)
 SKIFF_IMAGE=filecoin/curio-pdp:calibnet docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
 docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml logs -f
 ```
 
-That brings up the node. Yugabyte is up in seconds. Forest downloads a chain snapshot the first time it starts, which takes about 20 minutes. Curio-PDP starts as soon as Forest is accepting connections, although the wallet balance and registration checks wait for Forest to finish syncing. By default, everything lives under `curio/docker/skiff/data/`.
+That brings up the node. Yugabyte is up in seconds. Forest downloads a chain snapshot the first time it starts, which takes about 20 minutes, and the first run also pulls the Curio-PDP image. Curio-PDP starts as soon as Forest is accepting connections, although the wallet balance and registration checks wait for Forest to finish syncing. By default, everything lives under `curio/docker/skiff/data/`.
 
 Now open `http://127.0.0.1:4701` in a browser. The dashboard only listens on localhost and has no login, so keep it that way. If you’re working on a remote box, forward the port over SSH:
 
