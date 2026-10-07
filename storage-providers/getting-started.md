@@ -14,7 +14,7 @@ To become a storage provider in the Filecoin network you need a range of technic
 
 In a hurry? The [storage provider agent quickstart](agent-quickstart.md) takes you from zero to running Storage Service, Consensus Mining, or both, on a single page.
 
-There are three ways to provide storage:
+There are two ways to participate in Filecoin:
 
 * **Serve Storage Service on Filecoin**
   * **Warm Storage (Recommended):** backed by PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start. Some data is provided by the network for you to store.
