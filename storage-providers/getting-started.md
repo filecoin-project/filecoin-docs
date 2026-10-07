@@ -14,10 +14,13 @@ To become a storage provider in the Filecoin network you need a range of technic
 
 In a hurry? The [storage provider agent quickstart](agent-quickstart.md) takes you from zero to running Storage Service, Consensus Mining, or both, on a single page.
 
-There are two ways to provide storage:
+There are three ways to provide storage:
 
-* **Storage Service (PDP, recommended)** — serve [Filecoin Onchain Cloud (FOC)](../build/filecoin-onchain-cloud/README.md) with warm storage, PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start. Some data is provided by the network for you to store. 
-* **Consensus Mining (PoRep)** — the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint. You manage your own data business relationships. 
+* **Serve Storage Service on Filecoin**
+  * **Warm Storage (Recommended):** backed by PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start. Some data is provided by the network for you to store.
+  * **Cold Storage:** the Filecoin Cold Storage Service (FCSS), sealed with PoRep, for archives of 1 TiB and up.
+* **Consensus Mining (PoRep):** the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint. You manage your own data business relationships.
+* **Both:** run Consensus Mining and Storage Service on one Curio cluster. See [Path C](agent-quickstart.md#path-c).
 
 Planning to become a storage provider? Tell us about your setup in the [storage provider interest form](https://docs.google.com/forms/d/e/1FAIpQLSdTd7Znz5uJeF8f98LccjZ-q7dq9Nh861t_rFkH_kcNO6HCtw/viewform).
 
@@ -27,14 +30,16 @@ FOC lets you sell warm storage from your own hardware without a PoRep sealing pi
 
 ```bash
 git clone https://github.com/filecoin-project/curio.git
+cd curio/docker/skiff
 
 # Mainnet
-docker compose -f curio/docker/skiff/docker-compose.yaml up -d
+SKIFF_IMAGE=filecoin/curio-pdp:latest docker compose -f docker-compose.yaml up -d
 
 # Calibration test network (free test funds)
-cd curio/docker/skiff
-docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
+SKIFF_IMAGE=filecoin/curio-pdp:calibnet docker compose -f docker-compose.yaml -f docker-compose.calibnet.yaml up -d
 ```
+
+Keep the `SKIFF_IMAGE=` prefix on any later `docker compose up`, or the stack falls back to building the `:dev` image.
 
 Full walkthrough — what’s in the box, hardware, the PDP Guide steps, and what you earn: **[Run a PDP provider](./pdp/install-and-run-pdp.md)**. Deeper operator docs (custom disks, external chain nodes, troubleshooting): **[Curio-PDP](https://docs.curiostorage.org/getting-started/curio-pdp)** on [docs.curiostorage.org](https://docs.curiostorage.org/).
 
