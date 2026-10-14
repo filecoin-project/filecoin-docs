@@ -1,12 +1,14 @@
 ---
 description: >-
-  Set up and fund your Filecoin Pay account in the console, then start storing
-  data with the CLI, the SDK, or an agent skill.
+  Start storing data on Filecoin in minutes. Set up and fund your account,
+  create a session key, and upload with the tool you prefer.
 ---
 
 # Quickstart
 
-**Storing data on Filecoin takes two steps: set up and fund your account in the Filecoin Pay console, then connect the tool you want to store data with.**
+**Storing data on Filecoin takes three steps: fund your account, create a session key, and connect the tool you want to store data with.**
+
+You'll need an email or Google account, or a wallet you already use, plus a payment card, USDC, or USDFC to add funds.
 
 ## 1. Set up and fund your account
 
@@ -18,11 +20,22 @@ description: >-
    * **Deposit token:** deposit USDFC you already hold on Filecoin.
 4. **Add the storage service.** Select **Deposit and Add Service**, choose **Filecoin Warm Storage**, enter a deposit amount, and confirm in your wallet. Funds stay in your account, and the service bills them as you use it. If you already deposited in step 3, leave the amount empty.
 
-> Your wallet also needs a little FIL for transaction fees. If it's short, the console shows how much to add and lets you add it.
+> Your wallet also needs a little FIL for transaction fees. Buying with a card or swapping to USDFC adds 0.05 FIL by default. If you deposit USDFC you already hold, the console shows how much FIL to add and lets you add it.
 
-## 2. Start storing data
+## 2. Create a session key
 
-Pick a tool. Each one connects to your account with a session key, so it can upload without holding your wallet key. You can create and revoke keys on the console's [Session keys](https://pay.filecoin.cloud/console/session-keys) page.
+A session key lets a tool upload data for you without holding your wallet key. It can't move your funds.
+
+1. Open [Session keys](https://pay.filecoin.cloud/console/session-keys) in the console and select **+ New session key**.
+2. Select the scopes **Create data set** and **Add pieces**, and pick an expiration (30 days by default).
+3. Select **Create session key** and confirm in your wallet.
+4. Copy the key or select **Download .env**. The key is shown only once, so save it before you close the dialog.
+
+You can revoke a key on the same page at any time.
+
+## 3. Start storing data
+
+Pick the tool that fits how you work, then use your session key to connect it.
 
 * **[CLI](https://github.com/filecoin-project/filecoin-pin):** store files from your terminal with Filecoin Pin.
 * **[SDK](https://docs.filecoin.cloud/getting-started/):** build storage into your app with the Synapse SDK.
