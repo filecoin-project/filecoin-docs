@@ -11,6 +11,10 @@ description: >-
 
 This page is a starting point for building agents that use FC. It links out to the CLIs, SDKs, and console you'll actually use, rather than repeating their full documentation here.
 
+{% hint style="info" %}
+**Building with the `filecoin` CLI?** The [Filecoin for Agents build guide](../build/filecoin-for-agents/README.md) covers the `filecoin` CLI, the agent plugin for Claude Code and Codex, the read-only MCP server, and the web app for approving agent session keys.
+{% endhint %}
+
 ## Overview
 
 Agents forget. When a session ends, a tool gets swapped, or a vendor shuts down, whatever an agent learned or produced usually disappears with it. Every skill built on Filecoin Cloud (FC), starting with `publish` below, aims to fix that around four ideas:
