@@ -21,7 +21,7 @@ Both services pay storage providers through Filecoin Pay, in USDFC, on on-chain 
 | **Best for** | Application data, media, agent artifacts, anything read often | Archives, research and enterprise datasets, backups, from 1 TiB up |
 | **Proof** | PDP: providers answer random on-chain challenges on the stored data | PoRep and Proof of Spacetime: providers seal a unique replica and prove it every day |
 | **Provider matching** | The FWSS contract selects providers from the on-chain registry | The PoRep Market matches each deal to a provider offer that meets the client's terms |
-| **Price** | Fixed by the FWSS contract | Set per deal, from provider offers in the PoRep Market |
+| **Price** | Fixed by the FWSS contract | One service price per TiB per month in the [FCSS client app](https://clients.fcss.fidl.tech/#pricing). Providers set their own offers in the PoRep Market |
 | **Terms the client sets** | Number of copies | Duration (6 months or more), price, retrievability, bandwidth, latency, and IPNI indexing |
 | **Copies** | One or more, chosen by the client | Two by default, with two separate providers |
 | **Retrieval** | Hot, over HTTPS, with Filecoin Beam for faster delivery | From the provider's unsealed copy. Free or paid per piece, and public or limited to the client |

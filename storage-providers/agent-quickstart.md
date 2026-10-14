@@ -73,7 +73,7 @@ You need the following no matter which path you choose:
 * **Linux admin skills.** You'll work in a terminal on Ubuntu or Debian (22.04 or newer recommended), manage systemd services or Docker containers, open firewall ports, and read logs.
 * **A machine that stays online.** Every path proves to the chain on a fixed schedule. When your node is down, proofs are missed. On the consensus path, missed proofs cost you FIL (see [Know the penalties](#b1-understand-the-economics)).
 * **A way to get FIL.** On Calibration, a faucet gives you tFIL for free. To find one, search "Filecoin Calibration faucet"; the ChainSafe faucet at `faucet.calibnet.chainsafe-fil.io` is a common choice. On mainnet you buy FIL.
-* **A place to ask for help.** In the Filecoin Slack, `#fil-curio-help` covers Curio, `#fil-sp-help` covers PDP and FWSS, `#TODO-FCSS-CHANNEL` covers FCSS and the PoRep Market, and `#fil-lotus-help` covers Lotus.
+* **A place to ask for help.** In the Filecoin Slack, `#fil-curio-help` covers Curio, `#fil-sp-help` covers Filecoin Onchain Cloud (PDP, FWSS, and FCSS), and `#fil-lotus-help` covers Lotus.
 
 ***
 
@@ -759,7 +759,7 @@ This path is for operators who run a consensus-mining Curio cluster (Path B) and
 **How FCSS deals work.** A client prepares a dataset, publishes its pieces and a manifest, and proposes a deal on the PoRep Market with its terms: duration, price, retrievability, bandwidth, latency, and IPNI indexing. The market matches the deal to a provider offer that meets those terms. You download the pieces, seal them, and claim the deal's DataCap allocations. While the deal is active, an oracle records your service-level indicators on chain, and Filecoin Pay pays you in USDFC according to how well you meet the deal's terms. See [Filecoin Cold Storage Service](../build/filecoin-onchain-cloud/fcss.md) for the client side.
 
 {% hint style="warning" %}
-**FCSS runs on mainnet.** The PoRep Market's client tooling targets mainnet today. Prove your cluster on Calibration with Path B first, then join FCSS with your mainnet miner.
+**FCSS runs on mainnet only.** Prove your cluster on Calibration with Path B first, then join FCSS with your mainnet miner.
 {% endhint %}
 
 **Before you start Path D:**
@@ -901,8 +901,7 @@ If you're automating any path, these are the minimum steps and the checks that m
 ## Getting help
 
 * **Curio, sealing, and proving:** Filecoin Slack `#fil-curio-help`
-* **PDP, FWSS, and Filecoin Onchain Cloud:** Filecoin Slack `#fil-sp-help`
-* **FCSS and the PoRep Market:** Filecoin Slack `#TODO-FCSS-CHANNEL`
+* **PDP, FWSS, FCSS, and Filecoin Onchain Cloud:** Filecoin Slack `#fil-sp-help`
 * **Lotus chain node:** Filecoin Slack `#fil-lotus-help`
 
 When you ask for help, include your Curio and Lotus versions (`curio --version`, `lotus --version`), which network you're on, the exact command you ran, and the relevant log lines.
@@ -977,6 +976,6 @@ This page copies facts from other documentation instead of linking to it, so it 
 | `--claim-allocations curio` runs `curio market ddo --actor <id> <adapter> <allocation>` (D5) | `fidlabs/filecoin-porep-market-tooling` `cli/commands/sp/claim_allocations.py` | 2026-10-14 |
 | Deal matching to offers, DataCap evidence, per-deal Filecoin Pay validator, SLI oracle and scorer (Path D intro) | `fidlabs/porep-market` `README.md` | 2026-10-14 |
 | `sp-proxy` paid retrievals, settle-before-serve through Filecoin Pay, private deals limited to the client (D6) | `fidlabs/large-paid-retrievals` `README.md` | 2026-10-14 |
-| **FCSS runs on mainnet; prove the cluster on Calibration first (Path D)** | `fidlabs/agent-skills` `fcss-client/SKILL.md` ("no testnet deployment today"). `fidlabs/porep-market` also lists a Calibration deployment. **Not confirmed which to recommend.** | 2026-10-14 |
+| FCSS runs on mainnet only (Path D) | Confirmed by FIDL; `fidlabs/agent-skills` `fcss-client/SKILL.md` | 2026-10-14 |
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/agent-quickstart)

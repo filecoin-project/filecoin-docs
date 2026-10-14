@@ -28,7 +28,7 @@ For data that applications read often, use the [Filecoin Warm Storage Service](R
 1. **Prepare the dataset.** [Singularity](https://github.com/data-preservation-programs/singularity) packs the raw files into CAR files. Each CAR file is a piece with a PieceCID. A manifest lists every piece in the dataset.
 2. **Publish the pieces.** The client uploads the pieces and the manifest to storage it controls, such as an S3, Cloudflare R2, or Google Cloud Storage bucket, so providers can download them. The client's machine can then go offline.
 3. **Propose a deal.** The client proposes a deal on the [PoRep Market](https://github.com/fidlabs/porep-market) with the manifest URL and the deal terms. The market matches the deal to a provider offer that meets those terms and reserves the provider's capacity.
-4. **Fund the deal.** Once a provider accepts, the client creates the deal's payment rail in Filecoin Pay, deposits USDFC, and allocates DataCap for the data.
+4. **Fund the deal.** Once the deal is matched to providers, the client creates the deal's payment rail in Filecoin Pay, deposits USDFC, and allocates DataCap for the data.
 5. **Store and prove.** The provider downloads the pieces, seals them into 32 GiB sectors, and claims the allocations. The deal becomes active, and payments start.
 6. **Get paid on service levels.** An oracle records each provider's service-level indicators on chain. When the payment rail settles, the deal's validator pays the provider according to how well it met the deal's terms.
 
@@ -41,13 +41,22 @@ FCSS has the same kinds of tools as warm storage, for clients, agents, and provi
 | Tool | What it does |
 | --- | --- |
 | [PoRep Market CLI](https://github.com/fidlabs/filecoin-porep-market-tooling) | Command-line deal making for clients, and onboarding and offer management for providers |
-| [FCSS client app](https://TODO-FCSS-CLIENT-UI) | A web app for clients to propose, fund, and track deals |
+| [FCSS client app](https://clients.fcss.fidl.tech) | A web app for clients: sign up, review and fund a storage term, follow deal status and storage proofs, and repair a dataset |
 | [`fcss-client` agent skill](https://github.com/fidlabs/agent-skills/tree/main/fcss-client) | Takes an AI agent from raw data to active deals: it runs Singularity in Docker, prepares and uploads the dataset, and proposes and funds the deals |
-| [Dataset dashboards](https://TODO-FCSS-DATASET-DASHBOARDS) | Review each dataset's deals, providers, and storage status |
+| [Dataset dashboards](https://status.fcss.fidl.tech) | Review each dataset's deals, providers, and storage status |
 | SLA dashboards | Track each provider's service levels against the deal terms. Coming soon |
 | [Paid retrievals](https://github.com/fidlabs/large-paid-retrievals) | A retrieval client for dataset consumers, and a proxy that lets providers charge per piece through Filecoin Pay |
-| [Repairs](https://TODO-FCSS-REPAIRS) | Restores a lost copy of a dataset with a new provider. Fully automated, and triggered manually for now |
+| Repairs | Moves a dataset to a new provider when its current provider stops delivering. Fully automated once triggered. Trigger it from the client app's dashboard or the PoRep Market CLI |
 | [Provider registration](https://peertopool.fidl.tech/) | Provider sign-up with KYC, and the public [directory of FCSS providers](https://peertopool.fidl.tech/directory) |
+
+## Pricing
+
+Through the [FCSS client app](https://clients.fcss.fidl.tech/#pricing), storage costs one price per TiB per month for a term of at least 6 months. Retrieval is billed per TiB retrieved, with one free full-dataset retrieval a year. Storage proofs and heartbeat checks are always free. The client app has two tiers today:
+
+* **Archive** for static data you rarely access.
+* **Backup**, which adds continuous heartbeat monitoring and a deal health dashboard.
+
+See the [client app](https://clients.fcss.fidl.tech/#pricing) for current prices.
 
 ## Store a dataset
 
@@ -63,7 +72,7 @@ You need:
 
 {% tabs %}
 {% tab title="AI agent" %}
-The `fcss-client` skill needs only Docker, Docker Compose, git, Python 3.10 or newer, curl, and jq. It installs Singularity, the PoRep Market CLI, and rclone on its own. Add it to your agent, then ask the agent to store your dataset on Filecoin cold storage:
+The `fcss-client` skill needs only Docker, Docker Compose, git, Python 3.10 or newer, curl, and jq. It installs Singularity, the PoRep Market CLI, and rclone on its own. Add it to your agent, then ask the agent to archive your dataset on Filecoin:
 
 ```sh
 npx skills add fidlabs/agent-skills --skill fcss-client
@@ -93,11 +102,16 @@ python3 ./porep_tooling_cli.py client init-deal <deal-id>
 python3 ./porep_tooling_cli.py client make-allocations <deal-id>
 ```
 
-Every transaction asks you to confirm before it is sent. Repeat for a second copy with another provider.
+Every transaction asks you to confirm before it is sent. `client get-deals` shows whether the market matched your deal; only the `ACTIVE` state means the data is stored.
+
+The CLI's `--price-per-tib-per-month` is the price paid to providers in the PoRep Market. Through the client app you pay the FCSS service price instead.
 {% endtab %}
 
 {% tab title="Web app" %}
-Open the [FCSS client app](https://TODO-FCSS-CLIENT-UI), connect your wallet, and follow the steps to propose and fund a deal for your published manifest.
+1. Create an account in the [FCSS client app](https://clients.fcss.fidl.tech/signup), verify your email, and complete identity verification.
+2. Prepare your dataset and publish its manifest, following the app's data preparation guide.
+3. Review the size and price of your storage term, then approve the deal from your wallet.
+4. Follow deal status and storage proofs from your dashboard for the life of the term.
 {% endtab %}
 {% endtabs %}
 
@@ -118,9 +132,9 @@ Add `--dry-run` to see the prices without paying. Anyone can retrieve a public d
 
 ## Monitor and repair
 
-* **Deals and datasets.** `client get-deals` in the CLI, or the [dataset dashboards](https://TODO-FCSS-DATASET-DASHBOARDS), show each deal's state and providers.
+* **Deals and datasets.** The client app's dashboard, the [dataset dashboards](https://status.fcss.fidl.tech), or `client get-deals` in the CLI show each deal's state, providers, and storage proofs.
 * **Service levels.** Each deal's payments already depend on the provider's service levels. SLA dashboards that show them over time are coming soon.
-* **Repairs.** If a provider loses a copy, a repair restores it with a new provider. Repairs are fully automated, and are triggered manually for now.
+* **Repairs.** If a provider stops delivering, a repair moves the dataset to a new provider. Trigger it from the client app's dashboard or the PoRep Market CLI. Once triggered, the repair runs automatically.
 
 ## Provide cold storage
 
