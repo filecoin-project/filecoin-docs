@@ -1,16 +1,15 @@
 ---
 description: >-
-  The explorer, wallet dashboard, and setup page where wallet owners approve
-  agent session keys and fund Filecoin storage.
+  The pdp.filecoin.io explorer, and the pay.filecoin.io dashboard and setup
+  page where wallet owners approve agent session keys and fund storage.
 ---
 
 # Web app
 
-The web app, at `https://DASHBOARD-HOST-TODO`, has three parts:
+The web app has two sites:
 
-* **Explorer** (`/mainnet`, `/calibration`): public pages for data sets, pieces, storage providers, Filecoin Pay rails and settlements, session keys, and each address. Search with `/` or ⌘K from any page.
-* **Dashboard** (`/dashboard`): connect a wallet to manage your Filecoin Pay account, the Warm Storage approval, data sets, uploads, rails, and session keys.
-* **Setup page** (`/dashboard/setup`): review and approve a request from `filecoin` or an agent.
+* **Explorer** at [pdp.filecoin.io](https://pdp.filecoin.io) (`/mainnet`, `/calibration`): public pages for data sets, pieces, storage providers, Filecoin Pay rails and settlements, session keys, and each address. Search with `/` or ⌘K from any page.
+* **Dashboard** at [pay.filecoin.io](https://pay.filecoin.io) (`/dashboard`): connect a wallet to manage your Filecoin Pay account, the Warm Storage approval, data sets, uploads, rails, and session keys. Its **setup page** (`/dashboard/setup`) is where you review and approve a request from `filecoin` or an agent.
 
 ## Session keys
 
