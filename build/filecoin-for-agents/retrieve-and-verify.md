@@ -39,7 +39,7 @@ Use `filecoin get` when the content must be intact. When you hand over a link th
 `filecoin ls` lists what this machine stored. The list lives in a local database, so a new machine, or a cloud sandbox that was reset, starts empty. The content is still on Filecoin, under the wallet that paid for it:
 
 * Over MCP, `list_pieces` with the wallet as `owner`. Over HTTP, `GET /{network}/pieces?owner=<wallet>` on the API.
-* In a browser, [PDP Explorer](https://pdp.filecoin.io) looks up a data set ID, provider ID, or PieceCID that you already have.
+* In a browser, [PDP Explorer](https://pdp.filecoin.cloud) looks up a data set ID, provider ID, or PieceCID that you already have.
 
 Each piece comes with a retrieval link. `filecoin get <PieceCID>` downloads and checks one with the same wallet's session key.
 

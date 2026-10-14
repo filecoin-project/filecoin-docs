@@ -8,14 +8,14 @@ description: >-
 
 `filecoin` relies on two web apps:
 
-* **The Filecoin Pay console** at [pay.filecoin.io/console](https://pay.filecoin.io/console). The wallet owner connects their wallet there to approve session keys, deposit USDFC, approve the Warm Storage service, and revoke keys.
-* **PDP Explorer** at [pdp.filecoin.io](https://pdp.filecoin.io). Public pages for storage providers, data sets, and pieces on mainnet and Calibration. Search by data set ID, provider ID, or PieceCID.
+* **The Filecoin Pay console** at [pay.filecoin.cloud/console](https://pay.filecoin.cloud/console). The wallet owner connects their wallet there to approve session keys, deposit USDFC, approve the Warm Storage service, and revoke keys.
+* **PDP Explorer** at [pdp.filecoin.cloud](https://pdp.filecoin.cloud). Public pages for storage providers, data sets, and pieces on mainnet and Calibration. Search by data set ID, provider ID, or PieceCID.
 
 ## Session keys
 
 A session key lets a tool sign storage requests for your wallet. It can create data sets, add pieces, schedule piece removals, and end service, but it can never move funds.
 
-The console's [Session keys page](https://pay.filecoin.io/console/session-keys) lists every key your wallet approved, with when each permission expires. Revoke a key there to stop the tool that holds it. You can also create a key there, approve it, and download its credentials, which is how a [cloud agent](connect-an-agent.md#cloud-agents) gets a key.
+The console's [Session keys page](https://pay.filecoin.cloud/console/session-keys) lists every key your wallet approved, with when each permission expires. Revoke a key there to stop the tool that holds it. You can also create a key there, approve it, and download its credentials, which is how a [cloud agent](connect-an-agent.md#cloud-agents) gets a key.
 
 Keys made by `filecoin login` stay on the agent's machine. The console only approves them.
 
