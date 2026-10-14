@@ -38,14 +38,14 @@ Use `filecoin get` when the content must be intact. When you hand over a link th
 
 `filecoin ls` lists what this machine stored. The list lives in a local database, so a new machine, or a cloud sandbox that was reset, starts empty. The content is still on Filecoin, under the wallet that paid for it:
 
-* In a browser, the web app dashboard's data sets page, or the WebMCP tools `list_data_sets` and `list_pieces`.
 * Over MCP, `list_pieces` with the wallet as `owner`. Over HTTP, `GET /{network}/pieces?owner=<wallet>` on the API.
+* In a browser, [PDP Explorer](https://pdp.filecoin.io) looks up a data set ID, provider ID, or PieceCID that you already have.
 
 Each piece comes with a retrieval link. `filecoin get <PieceCID>` downloads and checks one with the same wallet's session key.
 
 ## Store without the CLI
 
-The web app dashboard's [upload page](https://pay.filecoin.io/dashboard/upload) stores files in one of the wallet's data sets. The wallet signs each step, so a person must be at the browser. It stores files, not folders. The MCP server and the REST API cannot store anything.
+The MCP server and the REST API cannot store anything. To store content, use the CLI, or build on the [Synapse SDK](../filecoin-onchain-cloud/synapse-quickstart.md).
 
 For more on how retrieval works on Filecoin, see [How retrieval works](../../getting-started/how-retrieval-works/README.md).
 

@@ -1,7 +1,7 @@
 ---
 description: >-
   Give a local, cloud, browser, or chat agent access to Filecoin storage
-  through the filecoin plugin, agent skill, CLI, WebMCP tools, or MCP server.
+  through the filecoin plugin, agent skill, CLI, or MCP server.
 ---
 
 # Connect an agent
@@ -12,7 +12,7 @@ Pick the way in that matches what your agent can do. In every case, a person own
 | --- | --- | --- |
 | Local agent, such as Claude Code, Codex, or Cursor | Run a shell, keep files, and open pages for you | [Plugin, or CLI and agent skill](#local-agents) |
 | Cloud agent, such as a coding agent in a hosted sandbox | Run a shell, but its files are gone when the session ends | [CLI with a key from secrets](#cloud-agents) |
-| Browser agent | Read and use web pages in the browser that holds your wallet | [The web app's WebMCP tools](#browser-agents) |
+| Browser agent | Read and use web pages in the browser that holds your wallet | [Console links and PDP Explorer](#browser-agents), read-only |
 | Chat app with connectors, such as Claude or ChatGPT | Call remote tools | [MCP server](#mcp-server), read-only |
 
 [Retrieve and verify](retrieve-and-verify.md) compares what each way can store, retrieve, and check.
@@ -55,8 +55,8 @@ A cloud agent has a shell, so it uses the same skill and CLI as a local agent. I
 
 Give the agent a key that outlives the session instead:
 
-1. On the web app's [session keys page](https://pay.filecoin.io/dashboard/session-keys), generate a session key, authorize it, and export it.
-2. In the agent's environment settings, add the key as the secret `FILECOIN_SESSION_KEY`, and your wallet address as `FILECOIN_ROOT_ADDRESS`.
+1. On the Filecoin Pay console's [Session keys page](https://pay.filecoin.io/console/session-keys), create a session key, approve it, and download its credentials.
+2. In the agent's environment settings, add the session key's private key as the secret `FILECOIN_SESSION_KEY`, and your wallet address as `FILECOIN_ROOT_ADDRESS`.
 
 `filecoin` then skips `filecoin login`, and `filecoin status` confirms the key works. The key cannot move funds, and it expires. Revoke it on the same page to stop the agent.
 
@@ -68,9 +68,7 @@ Never paste the session key into a chat. Store it only as a secret in the agent'
 
 ## Browser agents
 
-The [web app](web-app.md) registers [WebMCP](https://webmachinelearning.github.io/webmcp/) tools. A browser agent can prepare a setup request without building a URL, and read the account, its data sets and pieces, and its session keys. The tools never sign anything, and they describe themselves to the agent. [WebMCP tools](web-app.md#webmcp-tools) lists them. WebMCP is an early preview that works in Chrome 149 and later. Without it, the agent opens a [setup link](web-app.md#setup-links).
-
-A browser agent cannot run the CLI. You can store files from the dashboard's upload page while it watches, and a folder's link verifies in the browser.
+A browser agent cannot run the CLI, so it cannot store content. It can open the [console links](console-and-explorer.md#links-from-the-cli) a wallet owner needs, look up data sets, providers, and pieces on [PDP Explorer](https://pdp.filecoin.io), and open a folder's link, which verifies in the browser.
 
 ## MCP server
 
@@ -102,10 +100,11 @@ In the Claude and ChatGPT apps, add the URL as a custom connector. [API and MCP]
 The agent never holds the wallet key. It gets a session key instead, and the wallet owner approves it:
 
 1. The agent runs `filecoin login`. It gets a `login_pending` error with an approval link, and relays the link to you.
-2. You open the link, connect your wallet, and review the request on the web app's setup page. Approve the session key, the Warm Storage approval, and a USDFC deposit if the page asks for them.
-3. The agent runs `filecoin login --check` to confirm, then `filecoin put`. `--check` never makes a new key, so it can't replace the one you approved.
+2. You open the link, which goes to the Filecoin Pay console's Session keys page with the key filled in. Connect your wallet, review the request, and approve it.
+3. The agent runs `filecoin login --check` to confirm. `--check` never makes a new key, so it can't replace the one you approved.
+4. If the account has no funds yet, the agent relays a funding link. It opens a console dialog that deposits USDFC and approves the Warm Storage service in one transaction.
 
-When the account runs low, `filecoin status` and `filecoin put` return `insufficient_funds` with a prefilled funding link for you. To stop the agent, revoke its key on the web app's [session keys page](https://pay.filecoin.io/dashboard/session-keys).
+When the account runs low, `filecoin status` and `filecoin put` return `insufficient_funds` with the same funding link. To stop the agent, revoke its key on the console's [Session keys page](https://pay.filecoin.io/console/session-keys).
 
 ## Docs for agents
 
@@ -118,6 +117,6 @@ These docs are published in formats agents can read directly:
 | [`/sitemap.xml`](https://docs.filecoin.io/sitemap.xml) | Every page |
 | `https://docs.filecoin.io/~gitbook/mcp` | An MCP server that searches and reads these docs, described at [`/.well-known/mcp/server-card.json`](https://docs.filecoin.io/.well-known/mcp/server-card.json). This is separate from the read-only [Filecoin MCP server](#mcp-server) |
 
-Every page also has a Markdown version. Add `.md` to the path, such as [`/build/filecoin-for-agents/cli.md`](https://docs.filecoin.io/build/filecoin-for-agents/cli.md), or send `Accept: text/markdown`.
+Every page also has a Markdown version. Add `.md` to the path, such as [`/build-on-filecoin/filecoin-for-agents/cli.md`](https://docs.filecoin.io/build-on-filecoin/filecoin-for-agents/cli.md), or send `Accept: text/markdown`.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build/filecoin-for-agents/connect-an-agent)

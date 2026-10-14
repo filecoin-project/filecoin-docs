@@ -63,7 +63,7 @@ filecoin --help
 filecoin login
 ```
 
-`filecoin login` makes a session key, saves it on your machine, and opens the web app's setup page. Connect your wallet there, review the request, and approve each step. The page can also approve Warm Storage and deposit USDFC. The private key never leaves your machine, and the CLI finds the approval on chain, so there is nothing to copy back.
+`filecoin login` makes a session key, saves it on your machine, and opens the Filecoin Pay console with the key filled in. Connect your wallet there, review the request, and approve it. The private key never leaves your machine, and the CLI finds the approval on chain, so there is nothing to copy back.
 
 Then check the account:
 
@@ -71,7 +71,7 @@ Then check the account:
 filecoin status
 ```
 
-`filecoin status` reports when each permission expires, your USDFC funds, and the Warm Storage approval. If the account needs a deposit, it also returns a funding link.
+`filecoin status` reports when each permission expires, your USDFC funds, and the Warm Storage approval. If the account needs a deposit, it also returns a funding link, which deposits USDFC and approves the Warm Storage service in one transaction.
 
 ## Store a file
 
