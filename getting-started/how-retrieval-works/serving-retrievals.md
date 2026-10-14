@@ -42,6 +42,8 @@ Different retrieval workflows use different tools:
 | Serving PDP retrievals as a storage provider | Use [Curio](https://curiostorage.org/) for PDP retrievals. |
 | Serving PoRep retrievals as a storage provider | Use [Boost](https://boost.filecoin.io/) to serve retrievals. Boost supports Graphsync retrievals by default, and storage providers can run [`booster-http`](https://boost.filecoin.io/http-retrieval) for HTTP retrievals when configured. |
 | Retrieving data as a client | Use [Lassie](https://github.com/filecoin-project/lassie) to fetch CID-addressed content from Filecoin and IPFS using the best available retrieval path. For whole-piece retrieval, use provider or service `/piece` endpoints. |
+| Serving paid FCSS retrievals as a storage provider | Put [`sp-proxy`](https://github.com/fidlabs/large-paid-retrievals#for-storage-providers) in front of your piece server. It quotes a price per piece and settles payment through Filecoin Pay before serving. |
+| Retrieving FCSS datasets as a client | Use [`retrieval-client`](https://github.com/fidlabs/large-paid-retrievals#for-dataset-consumers) to find providers, compare prices, pay when needed, and download pieces. |
 | Retrieving application data with Filecoin Onchain Cloud | See the [Filecoin Onchain Cloud retrieval docs](https://docs.filecoin.cloud/core-concepts/retrieval/) for maintained Synapse SDK retrieval flows. |
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-retrieval-works/serving-retrievals)

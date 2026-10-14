@@ -10,12 +10,20 @@ Filecoin offers several ways to store data. Each path trades off simplicity agai
 
 ## Filecoin Onchain Cloud
 
-[Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md) is a programmable storage platform built on the Filecoin Virtual Machine. It handles the full lifecycle of storing data: the Filecoin Warm Storage Service (FWSS) stores your data with fast retrieval, Proof of Data Possession (PDP) cryptographically verifies providers still hold it, and Filecoin Pay settles payments automatically based on verified storage delivery. All operations are on-chain and auditable.
+[Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md) is a programmable storage platform built on the Filecoin Virtual Machine. It handles the full lifecycle of storing data: the Filecoin Warm Storage Service (FWSS) stores your data with fast retrieval, the Filecoin Cold Storage Service (FCSS) preserves large datasets as sealed copies, Proof of Data Possession (PDP) cryptographically verifies providers still hold it, and Filecoin Pay settles payments automatically based on verified storage delivery. All operations are on-chain and auditable.
 
 Developers interact with FOC through the [Synapse SDK](https://docs.filecoin.cloud/developer-guides/synapse), which provides a high-level API for uploads, payments, and provider discovery. See the [FOC documentation](https://docs.filecoin.cloud/) for setup guides and API reference.
 
 {% hint style="success" %}
 **Best for**: developers who want verifiable, programmable storage with minimal infrastructure.
+{% endhint %}
+
+### Filecoin Cold Storage Service
+
+FOC also offers cold storage. The [Filecoin Cold Storage Service (FCSS)](../../build/filecoin-onchain-cloud/fcss.md) stores sealed copies of large datasets with separate storage providers, under on-chain deals with terms the client sets: duration, price, retrievability, bandwidth, latency, and indexing. Clients onboard with a CLI, a web app, or an AI agent skill that prepares the dataset with Singularity.
+
+{% hint style="success" %}
+**Best for**: archives and large datasets, from 1 TiB up, that must be preserved and verifiable but are read rarely.
 {% endhint %}
 
 ## Fil One
