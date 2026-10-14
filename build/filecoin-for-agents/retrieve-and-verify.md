@@ -45,7 +45,7 @@ Each piece comes with a retrieval link. `filecoin get <PieceCID>` downloads and 
 
 ## Store without the CLI
 
-The web app dashboard's [upload page](https://filecoin.io/agents/dashboard/upload) stores files in one of the wallet's data sets. The wallet signs each step, so a person must be at the browser. It stores files, not folders. The MCP server and the REST API cannot store anything.
+The web app dashboard's [upload page](https://DASHBOARD-HOST-TODO/dashboard/upload) stores files in one of the wallet's data sets. The wallet signs each step, so a person must be at the browser. It stores files, not folders. The MCP server and the REST API cannot store anything.
 
 For more on how retrieval works on Filecoin, see [How retrieval works](../../getting-started/how-retrieval-works/README.md).
 
