@@ -96,10 +96,10 @@ Each error has a stable `code`, and `filecoin schema <command>` lists the codes 
 | `FILECOIN_CONFIG_DIR` | Config directory. Default: the platform config directory for `filecoin` |
 | `FILECOIN_STATE_DIR` | Local state and staged folders. Default: the platform data directory for `filecoin` |
 | `FILECOIN_RPC_URL` | RPC endpoint |
-| `FILECOIN_CONSOLE_URL` | Web app origin for approval and funding links. Default: `https://DASHBOARD-HOST-TODO` |
+| `FILECOIN_CONSOLE_URL` | Web app origin for approval and funding links. Default: `https://pay.filecoin.io` |
 | `FILECOIN_API_URL` | API origin for retrieval links. Default: `https://api.filecoin.io` |
 | `FILECOIN_OUTPUT`, `FILECOIN_AGENT` | Override the output mode and agent detection |
 
-The prototype saves the session key in the config file, readable only by its owner. `filecoin logout` deletes the local key. The key stays authorized on chain until it expires or you revoke it on the web app's [session keys page](https://DASHBOARD-HOST-TODO/dashboard/session-keys).
+The prototype saves the session key in the config file, readable only by its owner. `filecoin logout` deletes the local key. The key stays authorized on chain until it expires or you revoke it on the web app's [session keys page](https://pay.filecoin.io/dashboard/session-keys).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build/filecoin-for-agents/cli)

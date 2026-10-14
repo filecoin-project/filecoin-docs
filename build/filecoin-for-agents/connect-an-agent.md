@@ -55,7 +55,7 @@ A cloud agent has a shell, so it uses the same skill and CLI as a local agent. I
 
 Give the agent a key that outlives the session instead:
 
-1. On the web app's [session keys page](https://DASHBOARD-HOST-TODO/dashboard/session-keys), generate a session key, authorize it, and export it.
+1. On the web app's [session keys page](https://pay.filecoin.io/dashboard/session-keys), generate a session key, authorize it, and export it.
 2. In the agent's environment settings, add the key as the secret `FILECOIN_SESSION_KEY`, and your wallet address as `FILECOIN_ROOT_ADDRESS`.
 
 `filecoin` then skips `filecoin login`, and `filecoin status` confirms the key works. The key cannot move funds, and it expires. Revoke it on the same page to stop the agent.
@@ -105,7 +105,7 @@ The agent never holds the wallet key. It gets a session key instead, and the wal
 2. You open the link, connect your wallet, and review the request on the web app's setup page. Approve the session key, the Warm Storage approval, and a USDFC deposit if the page asks for them.
 3. The agent runs `filecoin login --check` to confirm, then `filecoin put`. `--check` never makes a new key, so it can't replace the one you approved.
 
-When the account runs low, `filecoin status` and `filecoin put` return `insufficient_funds` with a prefilled funding link for you. To stop the agent, revoke its key on the web app's [session keys page](https://DASHBOARD-HOST-TODO/dashboard/session-keys).
+When the account runs low, `filecoin status` and `filecoin put` return `insufficient_funds` with a prefilled funding link for you. To stop the agent, revoke its key on the web app's [session keys page](https://pay.filecoin.io/dashboard/session-keys).
 
 ## Docs for agents
 

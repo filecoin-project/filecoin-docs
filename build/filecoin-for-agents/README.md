@@ -21,7 +21,7 @@ This is the main way for an agent to store data on Filecoin. For why agents use 
 | CLI | `filecoin put ./site` stores a folder and returns a browser link. `filecoin get` downloads and verifies it. | [CLI](cli.md) |
 | Agent plugin and skill | Teaches Claude Code, Codex, and other agents when and how to run `filecoin`. | [Connect an agent](connect-an-agent.md) |
 | MCP server | Read-only tools for storage providers, data sets, pieces, payment rails, and session keys. | [API and MCP](api-and-mcp.md) |
-| Web app | An explorer for that data, and a wallet dashboard for funding storage and approving keys. | [Web app](web-app.md) |
+| Web app | An explorer for that data at pdp.filecoin.io, and a wallet dashboard at pay.filecoin.io for funding storage and approving keys. | [Web app](web-app.md) |
 
 ## How an agent gets access
 
