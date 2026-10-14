@@ -6,11 +6,11 @@ description: >-
 
 # Web app
 
-The [web app](https://filecoin.io/agents) has three parts:
+The web app, at `https://DASHBOARD-HOST-TODO`, has three parts:
 
-* **Explorer** (`/agents/mainnet`, `/agents/calibration`): public pages for data sets, pieces, storage providers, Filecoin Pay rails and settlements, session keys, and each address. Search with `/` or ⌘K from any page.
-* **Dashboard** (`/agents/dashboard`): connect a wallet to manage your Filecoin Pay account, the Warm Storage approval, data sets, uploads, rails, and session keys.
-* **Setup page** (`/agents/dashboard/setup`): review and approve a request from `filecoin` or an agent.
+* **Explorer** (`/mainnet`, `/calibration`): public pages for data sets, pieces, storage providers, Filecoin Pay rails and settlements, session keys, and each address. Search with `/` or ⌘K from any page.
+* **Dashboard** (`/dashboard`): connect a wallet to manage your Filecoin Pay account, the Warm Storage approval, data sets, uploads, rails, and session keys.
+* **Setup page** (`/dashboard/setup`): review and approve a request from `filecoin` or an agent.
 
 ## Session keys
 
@@ -20,7 +20,7 @@ The session keys page lists every key your wallet approved, with when each permi
 
 ## Setup links
 
-`filecoin login`, `filecoin status`, and the `put` funding check send the wallet owner to `/agents/dashboard/setup`. The page fills in the request from the link, and you review it, change what you need, and approve each step with your wallet. Each step is its own transaction, so nothing is signed until you click.
+`filecoin login`, `filecoin status`, and the `put` funding check send the wallet owner to `/dashboard/setup`. The page fills in the request from the link, and you review it, change what you need, and approve each step with your wallet. Each step is its own transaction, so nothing is signed until you click.
 
 | Parameter | Meaning |
 | --- | --- |
@@ -40,7 +40,7 @@ The web app registers [WebMCP](https://webmachinelearning.github.io/webmcp/) too
 | Tool | Where | What it does |
 | --- | --- | --- |
 | `prepare_setup_request` | Every page | Checks a request with the parameters above and opens the prefilled setup page. It never signs anything |
-| `get_setup_status` | `/agents/dashboard/setup` | Reports whether a wallet is connected and on Filecoin, and which requested permissions are approved |
+| `get_setup_status` | `/dashboard/setup` | Reports whether a wallet is connected and on Filecoin, and which requested permissions are approved |
 | `get_account_summary` | Every page | Reports a wallet's Filecoin Pay funds, monthly spend, runway, and Warm Storage approval |
 | `list_data_sets` | Every page | Lists a wallet's data sets |
 | `list_pieces` | Every page | Lists a data set's pieces, each with a retrieval link |

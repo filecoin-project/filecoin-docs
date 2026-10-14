@@ -12,7 +12,7 @@ description: >-
 **Prototype.** `filecoin` and its services are a proof of concept. They run on the Calibration testnet unless you choose mainnet. The source is in [filecoin-project/agents](https://github.com/filecoin-project/agents).
 {% endhint %}
 
-This is the main way for an agent to store data on Filecoin. For specific workflows, such as pinning IPFS content with Filecoin Pin, see [Additional skills](../../core-concepts/filecoin-for-agents.md#additional-skills). For why agents use Filecoin at all, see [Filecoin for Agents](../../core-concepts/filecoin-for-agents.md) in Core Concepts.
+This is the main way for an agent to store data on Filecoin. For why agents use Filecoin at all, see [Filecoin for Agents](../../core-concepts/filecoin-for-agents.md) in Core Concepts.
 
 ## Ways to use it
 
