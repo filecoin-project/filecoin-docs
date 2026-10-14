@@ -88,7 +88,7 @@ A web console for managing the payment side of FC: connect a wallet to view and 
 
 The console is currently in beta and interacts directly with the underlying payment contracts. Verify transaction details before confirming anything.
 
-[Filecoin Pay Console &rarr;](https://pay.filecoin.io/console)
+[Filecoin Pay Console &rarr;](https://pay.filecoin.cloud/console)
 
 ***
 
