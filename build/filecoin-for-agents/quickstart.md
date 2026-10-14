@@ -43,7 +43,7 @@ npx skills add filecoin-project/agents
 Read-only tools for providers, data sets, and pieces. It cannot store files.
 
 ```sh
-npx -y add-mcp https://api.filecoin.TODO/mcp -g
+npx -y add-mcp https://mcp.filecoin.io -g
 ```
 {% endtab %}
 {% endtabs %}
