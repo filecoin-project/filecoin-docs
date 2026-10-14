@@ -60,7 +60,7 @@
   * [CLI](build/filecoin-for-agents/cli.md)
   * [Retrieve and verify](build/filecoin-for-agents/retrieve-and-verify.md)
   * [API and MCP](build/filecoin-for-agents/api-and-mcp.md)
-  * [Web app](build/filecoin-for-agents/web-app.md)
+  * [Console and explorer](build/filecoin-for-agents/console-and-explorer.md)
 * [Development Frameworks](build/development-frameworks/README.md)
   * [Remix](build/development-frameworks/remix.md)
   * [Hardhat](build/development-frameworks/hardhat.md)

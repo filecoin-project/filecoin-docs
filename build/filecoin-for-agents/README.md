@@ -1,6 +1,6 @@
 ---
 description: >-
-  The filecoin CLI, agent plugin, read-only MCP server, and web app let AI
+  The filecoin CLI, agent plugin, and read-only MCP server let AI
   agents store files and folders on Filecoin and return links they can share.
 ---
 
@@ -21,11 +21,11 @@ This is the main way for an agent to store data on Filecoin. For why agents use 
 | CLI | `filecoin put ./site` stores a folder and returns a browser link. `filecoin get` downloads and verifies it. | [CLI](cli.md) |
 | Agent plugin and skill | Teaches Claude Code, Codex, and other agents when and how to run `filecoin`. | [Connect an agent](connect-an-agent.md) |
 | MCP server | Read-only tools for storage providers, data sets, pieces, payment rails, and session keys. | [API and MCP](api-and-mcp.md) |
-| Web app | An explorer for that data at pdp.filecoin.io, and a wallet dashboard at pay.filecoin.io for funding storage and approving keys. | [Web app](web-app.md) |
+| Console and explorer | The Filecoin Pay console, where the wallet owner approves keys and funds storage, and PDP Explorer for looking up stored data. | [Console and explorer](console-and-explorer.md) |
 
 ## How an agent gets access
 
-The agent never holds the wallet key. It gets a session key, which the wallet owner approves in the web app and which cannot move funds. [Connect an agent](connect-an-agent.md) shows the way in for each kind of agent: local, cloud, browser, or chat app.
+The agent never holds the wallet key. It gets a session key, which the wallet owner approves in the Filecoin Pay console and which cannot move funds. [Connect an agent](connect-an-agent.md) shows the way in for each kind of agent: local, cloud, browser, or chat app.
 
 ## Start
 

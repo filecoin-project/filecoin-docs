@@ -66,7 +66,7 @@ The agent runs `filecoin login`, which makes a session key on the agent's machin
 
 ### filecoin CLI and plugin
 
-The CLI, agent plugin, and skill from the quickstart above, with a read-only REST API and MCP server and a web app for approving agent session keys. This is the starting point for any agent that needs to store and retrieve files or folders.
+The CLI, agent plugin, and skill from the quickstart above, with a read-only REST API and MCP server. This is the starting point for any agent that needs to store and retrieve files or folders.
 
 [Filecoin for Agents guide &rarr;](../build/filecoin-for-agents/README.md)
 
@@ -88,7 +88,7 @@ A web console for managing the payment side of FC: connect a wallet to view and 
 
 The console is currently in beta and interacts directly with the underlying payment contracts. Verify transaction details before confirming anything.
 
-[Filecoin Pay Console &rarr;](https://pay.filecoin.cloud/console)
+[Filecoin Pay Console &rarr;](https://pay.filecoin.io/console)
 
 ***
 
