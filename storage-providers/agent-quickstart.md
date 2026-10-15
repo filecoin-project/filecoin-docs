@@ -896,7 +896,7 @@ If you're automating any path, these are the minimum steps and the checks that m
 3. `lotus wallet new delegated`, fund it, and add it as a control address of each miner.
 4. Clone `fidlabs/filecoin-porep-market-tooling`, `pip install -r requirements.txt`, `cp .env.mainnet .env`. Set `SP_ORGANIZATION`, `SP_LOTUS_WALLET`, `SP_LOTUS_TOKEN`.
 5. `sp register-sp <f0-id> --available-capacity … --payee-address …`, then `sp register-offer …`. Check: `sp get-offers` lists the offer.
-6. `sp get-deals ACTIVE` → `sp onboard-data <deal-id> --output-dir <dir> --claim-allocations curio`. Check: `sp get-claims` lists the deal's claims.
+6. `sp get-deals AVAILABLE` → `sp onboard-data <deal-id> --output-dir <dir> --claim-allocations curio`. Check: `sp get-claims` lists the deal's claims.
 
 ***
 
