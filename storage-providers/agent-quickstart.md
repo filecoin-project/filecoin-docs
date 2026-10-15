@@ -810,7 +810,7 @@ And set it as SP_PRIVATE_KEY in your .env file. The value you store there must b
 Register each miner with the capacity you'll give to FCSS and the address that receives payments:
 
 ```bash
-python3 ./porep_tooling_cli.py sp register-sp <f0-miner-id> --available-capacity <capacity>--payee-address <payee-address>
+python3 ./porep_tooling_cli.py sp register-sp <f0-miner-id> --available-capacity <capacity> --payee-address <payee-address>
 ```
 
 Then publish an offer. It sets the deals the market may match to you: deal size, duration, minimum price per TiB per month, and the retrievability, bandwidth, latency, and IPNI indexing you guarantee. Run `sp register-offer --help` for every option. Deals last at least 6 months, and the market uses 32 GiB sectors only.
