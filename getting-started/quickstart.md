@@ -12,7 +12,7 @@ You'll need an email or Google account, or a wallet you already use, plus a paym
 
 ## 1. Set up and fund your account
 
-1. **Open the console.** Go to [pay.filecoin.cloud/console](https://pay.filecoin.cloud/console?utm_source=docs&utm_medium=quickstart&utm_campaign=relaunch).
+1. **Open the console.** Go to [pay.filecoin.cloud/console](https://pay.filecoin.cloud/console?utm_source=docs&utm_medium=quickstart&utm_campaign=relaunch&foc_ref=docs-quickstart).
 2. **Sign in.** New to crypto? Continue with email or Google, and the console creates a Filecoin Pay wallet for you. Already use MetaMask or another wallet? Connect it instead.
 3. **Add funds.** Select **Add funds** and choose a method:
    * **Buy USDC with card:** buy USDC on Base, then swap and deposit it into Filecoin Pay.
