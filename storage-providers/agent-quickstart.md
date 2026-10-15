@@ -822,7 +822,7 @@ Check what you published with `sp get-sps` and `sp get-offers`.
 List the deals matched to your miners, then download and seal one:
 
 ```bash
-python3 ./porep_tooling_cli.py sp get-deals ACTIVE
+python3 ./porep_tooling_cli.py sp get-deals ACCEPTED
 python3 ./porep_tooling_cli.py sp onboard-data <deal-id> --output-dir /mnt/fcss-downloads --claim-allocations curio
 ```
 
