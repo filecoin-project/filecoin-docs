@@ -4,6 +4,7 @@
 
 ## Getting Started
 
+* [Quickstart](getting-started/quickstart.md)
 * [What is Filecoin](getting-started/what-is-filecoin/README.md)
   * [Crypto-economics](getting-started/what-is-filecoin/crypto-economics.md)
   * [Blockchain](getting-started/what-is-filecoin/blockchain.md)
