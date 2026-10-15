@@ -23,7 +23,7 @@ Both services pay storage providers through Filecoin Pay, in USDFC, on on-chain 
 | **Provider matching** | The FWSS contract selects providers from the on-chain registry | The PoRep Market matches each deal to a provider offer that meets the client's terms |
 | **Price** | Fixed by the FWSS contract | One service price per TiB per month in the [FCSS client app](https://clients.fcss.fidl.tech/#pricing). Providers set their own offers in the PoRep Market |
 | **Terms the client sets** | Number of copies | Duration (6 months or more), price, retrievability, bandwidth, latency, and IPNI indexing |
-| **Copies** | One or more, chosen by the client | Two by default, with two separate providers |
+| **Copies** | One or more, chosen by the client |One or more, chosen by the client |
 | **Retrieval** | Hot, over HTTPS, with Filecoin Beam for faster delivery | From the provider's unsealed copy. Free or paid per piece, and public or limited to the client |
 | **Start with** | [Synapse SDK](synapse-quickstart.md) | [FCSS](fcss.md) |
 
