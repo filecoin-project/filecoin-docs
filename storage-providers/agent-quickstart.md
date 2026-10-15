@@ -795,20 +795,22 @@ cp .env.mainnet .env
 chmod 600 .env
 ```
 
-In `.env`, set `SP_ORGANIZATION` to your controller address. Then give the CLI a way to sign. A Lotus token keeps the private key in Lotus:
+The PoRep Market uses controller status to verify that the command sender is authorised to send commands on behalf of your miner.
+Follow the steps here to create a miner controller wallet: https://lotus.filecoin.io/storage-providers/operate/addresses/#control-addresses
 
+Export the private key of your newly created wallet:
 ```bash
-lotus auth create-token --perm sign --wallet <controller-address>
+lotus wallet export <your-controller-address> | xxd -r -p | jq -r '.PrivateKey' | base64 -d | xxd -p -c 32 | sed 's/^/0x/'
 ```
 
-Set the token as `SP_LOTUS_TOKEN` and the controller address as `SP_LOTUS_WALLET`. Every transaction asks you to confirm before it's sent.
+And set it as SP_PRIVATE_KEY in your .env file. The value you store there must be this exported private key in 32-byte hex format with a 0x prefix - not the wallet address you pass to lotus wallet export.
 
 ### D4. Register your miner and publish an offer
 
 Register each miner with the capacity you'll give to FCSS and the address that receives payments:
 
 ```bash
-python3 ./porep_tooling_cli.py sp register-sp <f0-miner-id> --available-capacity "500 TiB" --payee-address <payee-address>
+python3 ./porep_tooling_cli.py sp register-sp <f0-miner-id> --available-capacity <capacity>--payee-address <payee-address>
 ```
 
 Then publish an offer. It sets the deals the market may match to you: deal size, duration, minimum price per TiB per month, and the retrievability, bandwidth, latency, and IPNI indexing you guarantee. Run `sp register-offer --help` for every option. Deals last at least 6 months, and the market uses 32 GiB sectors only.
