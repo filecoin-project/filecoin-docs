@@ -12,13 +12,13 @@ The Filecoin network provides decentralized data storage and makes sure data is 
 
 To become a storage provider in the Filecoin network you need a range of technical, financial and business skills. We will explain all the key concepts you need to understand in order to design a suitable architecture, make the right hardware investments, and run a profitable storage provider business.
 
-In a hurry? The [storage provider agent quickstart](agent-quickstart.md) takes you from zero to running Storage Service, Consensus Mining, or both, on a single page.
+In a hurry? The [storage provider agent quickstart](agent-quickstart.md) takes you from zero to running warm storage, Consensus Mining, both, or cold storage, on a single page.
 
 There are two ways to participate in Filecoin:
 
 * **Serve Storage Service on Filecoin**
   * **Warm Storage (Recommended):** backed by PDP proofs, FWSS, and Filecoin Pay. No GPU required; a single-machine Docker stack is enough to start. Some data is provided by the network for you to store.
-  * **Cold Storage:** the Filecoin Cold Storage Service (FCSS), sealed with PoRep, for archives of 1 TiB and up.
+  * **Cold Storage:** the Filecoin Cold Storage Service (FCSS), sealed with PoRep, for archives of 1 TiB and up. Runs on a Consensus Mining cluster, and the PoRep Market matches client deals to your offers. See [Path D](agent-quickstart.md#path-d).
 * **Consensus Mining (PoRep):** the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint. You manage your own data business relationships.
 * **Both:** run Consensus Mining and Storage Service on one Curio cluster. See [Path C](agent-quickstart.md#path-c).
 
@@ -53,7 +53,21 @@ Storage providers run at three broad sizes. The sizes below are for Storage Serv
 | **Renting (colocation/DC operator)** | A bare-metal storage server from a large host, 40 to 175 TiB raw per box before RAID. |
 | **Enterprise Data Center Operator** | 1 PiB and up: the hardware floor per head node, with JBOD shelves for piece data. |
 
-Protocol background: [About PDP](./pdp/about.md). The sections below cover the **Consensus Mining** path.
+Protocol background: [About PDP](./pdp/about.md).
+
+## Cold Storage Service (FCSS)
+
+The Filecoin Cold Storage Service (FCSS) is the cold storage service of Filecoin Onchain Cloud, next to warm storage. Clients store sealed copies of large datasets under deals with terms they set: duration, price, retrievability, bandwidth, latency, and IPNI indexing. The [PoRep Market](https://github.com/fidlabs/porep-market) matches each deal to a provider offer that meets those terms, and Filecoin Pay pays the provider in USDFC according to how well it meets them.
+
+FCSS providers run a Consensus Mining cluster (below) with Curio's storage market turned on. On top of that, they:
+
+* Register and complete KYC at [peertopool.fidl.tech](https://peertopool.fidl.tech/), and are listed in the public [FCSS provider directory](https://peertopool.fidl.tech/directory).
+* Publish offers and onboard deals with the [PoRep Market CLI](https://github.com/fidlabs/filecoin-porep-market-tooling).
+* Keep unsealed copies of client data and serve retrievals, free or [paid per piece](https://github.com/fidlabs/large-paid-retrievals).
+
+Step-by-step setup: **[Path D of the agent quickstart](agent-quickstart.md#path-d)**. Client side: [Filecoin Cold Storage Service](../build/filecoin-onchain-cloud/fcss.md).
+
+The sections below cover the **Consensus Mining** path, which FCSS builds on.
 
 ## Consensus Mining (PoRep)
 

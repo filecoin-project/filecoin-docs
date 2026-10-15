@@ -1,8 +1,9 @@
 ---
 description: >-
   One page covering everything you need to start providing storage on Filecoin:
-  as a PDP service provider, a consensus miner, or both on one Curio cluster.
-keywords: "become storage provider, Filecoin storage provider quickstart, PDP service provider, Curio-PDP, Filecoin miner, consensus miner, Curio, Lotus, FWSS, Filecoin Onchain Cloud"
+  as a PDP service provider, a consensus miner, both on one Curio cluster, or a
+  cold storage (FCSS) provider.
+keywords: "become storage provider, Filecoin storage provider quickstart, PDP service provider, Curio-PDP, Filecoin miner, consensus miner, Curio, Lotus, FWSS, FCSS, Filecoin Cold Storage Service, PoRep Market, Filecoin Onchain Cloud"
 ---
 
 # Storage Provider Agent Quickstart
@@ -26,28 +27,29 @@ Read the whole page before you start. Then:
 
 This page walks you through becoming a Filecoin storage provider, from choosing a path to running your first proofs. It is optimized for agents, but a human should be able to follow, if you have read [Plan Your Filecoin Storage Provider Business](getting-started.md). It's written so that a person or an AI agent can follow it from top to bottom without needing any other page.
 
-There are two kinds of storage you can provide on Filecoin today: PDP service storage and consensus mining. You can run either one, or both on the same cluster, which gives three paths. Pick one before you buy hardware, because they need very different machines, amounts of capital, and skills.
+There are three kinds of storage you can provide on Filecoin today: warm storage for the Filecoin Warm Storage Service (FWSS), proven with PDP; consensus mining, sealed with PoRep; and cold storage for the Filecoin Cold Storage Service (FCSS), which seals client datasets with PoRep on a consensus-mining cluster. Both FWSS and FCSS are part of Filecoin Onchain Cloud. This page has four paths. Pick one before you buy hardware, because they need very different machines, amounts of capital, and skills.
 
 ## Choose your path
 
-| | **A: Storage Service (PDP)** | **B: Consensus Mining** | **C: Both (one cluster)** |
-| --- | --- | --- | --- |
-| **What you do** | Store client data as-is and prove you still hold it using Proof of Data Possession (PDP). You serve it over HTTPS as part of Filecoin Onchain Cloud. | Seal data or empty capacity into sectors using Proof of Replication (PoRep). You prove the sectors every 24 hours, gain storage power, and compete to produce blocks. | Everything in B, plus PDP service storage for clients, all on the same Curio cluster. |
-| **How you earn** | Storage fees from clients, paid in USDFC through Filecoin Pay. | Block rewards (FIL) plus fees from storage deals. | Block rewards and PoRep deal fees (as in B), plus PDP storage fees in USDFC (as in A). |
-| **Collateral** | No sector pledge. A small FIL balance pays for proof messages. | FIL initial pledge locked for each sector, plus a working balance for fees and messages. | B's pledge and balances, plus a small FIL balance in a separate PDP wallet. |
-| **Minimum hardware** | 1 server: 16+ threads, 64 GB+ RAM, 1 TiB NVMe for the chain and database, 10 TiB+ HDD for client data. No GPU. | A sealing and proving cluster: SHA-extension CPUs, 512 GiB–1 TiB RAM on sealing nodes, 10 GB+ GPUs, several TiB of NVMe scratch, and PiB-scale disk to be competitive. | B's cluster, plus disk set aside for PDP pieces and a public HTTPS domain. |
-| **Software** | Curio-PDP in Docker (bundles Forest and YugabyteDB). | Lotus + YugabyteDB + Curio. | B's stack with PDP turned on in Curio. **Curio labels this alpha.** |
-| **Time to first proof** | Hours, mostly waiting for the chain to sync. | Days to weeks, including hardware setup, chain sync, and sealing. | Same as B for mining. PDP adds a few hours once B is running. |
-| **Retrieval** | Data is always hot and served over HTTPS. | Sealed data must be unsealed (or kept unsealed) to serve retrievals. | As in B for sealed sectors. PDP data is always hot. |
-| **Good fit if you…** | Run reliable, internet-facing servers and want a fast, low-capital start. | Run data-center infrastructure, can lock up FIL, and want to earn block rewards. | Already mine (or are building a mining cluster), want service-deal revenue on the same infrastructure, and accept an alpha feature. |
+| | **A: Storage Service (PDP)** | **B: Consensus Mining** | **C: Both (one cluster)** | **D: Cold Storage Service (FCSS)** |
+| --- | --- | --- | --- | --- |
+| **What you do** | Store client data as-is and prove you still hold it using Proof of Data Possession (PDP). You serve it over HTTPS as part of Filecoin Onchain Cloud. | Seal data or empty capacity into sectors using Proof of Replication (PoRep). You prove the sectors every 24 hours, gain storage power, and compete to produce blocks. | Everything in B, plus PDP service storage for clients, all on the same Curio cluster. | Seal client datasets that the PoRep Market matches to your offers, prove them as in B, and serve them for retrieval. |
+| **How you earn** | Storage fees from clients, paid in USDFC through Filecoin Pay. | Block rewards (FIL) plus fees from storage deals. | Block rewards and PoRep deal fees (as in B), plus PDP storage fees in USDFC (as in A). | Block rewards (as in B), plus FCSS deal payments in USDFC through Filecoin Pay, scaled by how well you meet each deal's service levels. Optionally, paid retrievals. |
+| **Collateral** | No sector pledge. A small FIL balance pays for proof messages. | FIL initial pledge locked for each sector, plus a working balance for fees and messages. | B's pledge and balances, plus a small FIL balance in a separate PDP wallet. | As in B. |
+| **Minimum hardware** | 1 server: 16+ threads, 64 GB+ RAM, 1 TiB NVMe for the chain and database, 10 TiB+ HDD for client data. No GPU. | A sealing and proving cluster: SHA-extension CPUs, 512 GiB–1 TiB RAM on sealing nodes, 10 GB+ GPUs, several TiB of NVMe scratch, and PiB-scale disk to be competitive. | B's cluster, plus disk set aside for PDP pieces and a public HTTPS domain. | B's cluster, plus disk for unsealed copies of client data and bandwidth to download datasets and serve retrievals. |
+| **Software** | Curio-PDP in Docker (bundles Forest and YugabyteDB). | Lotus + YugabyteDB + Curio. | B's stack with PDP turned on in Curio. **Curio labels this alpha.** | B's stack with Curio's market turned on, plus the PoRep Market CLI. |
+| **Time to first proof** | Hours, mostly waiting for the chain to sync. | Days to weeks, including hardware setup, chain sync, and sealing. | Same as B for mining. PDP adds a few hours once B is running. | Same as B. Your first deal also needs FCSS registration and KYC, and a client whose terms match your offer. |
+| **Retrieval** | Data is always hot and served over HTTPS. | Sealed data must be unsealed (or kept unsealed) to serve retrievals. | As in B for sealed sectors. PDP data is always hot. | Keep an unsealed copy and serve pieces over HTTPS, free or paid per piece. Deals set retrievability, bandwidth, and latency terms. |
+| **Good fit if you…** | Run reliable, internet-facing servers and want a fast, low-capital start. | Run data-center infrastructure, can lock up FIL, and want to earn block rewards. | Already mine (or are building a mining cluster), want service-deal revenue on the same infrastructure, and accept an alpha feature. | Run (or are building) a PoRep cluster and want client datasets matched to you, with terms set up front and payment on chain. |
 
 How to choose:
 
 * **Path A** if you want to be a service provider only, with no mining, pledge, or sealing hardware.
 * **Path B** if you want to be a consensus miner. Step B12 (optional) adds sealed PoRep storage deals through Curio's built-in market, but no PDP service deals.
 * **Path C** if you already run, or are setting up, a Path B cluster and also want PDP service deals on the same hardware without standing up a second Curio-PDP stack. You must be willing to run a feature that Curio labels alpha. If you'd rather avoid that, run Path A on separate hardware next to your Path B cluster.
+* **Path D** if you run, or are setting up, a Path B cluster and want sealed client datasets from FCSS. The PoRep Market matches clients' deals to your offers, so you don't need to find clients yourself.
 
-All three paths run on Curio, so skills carry over. Many operators start with Path A and add mining later.
+All four paths run on Curio, so skills carry over. Many operators start with Path A and add mining later.
 
 Planning to become a storage provider? Tell us about your setup in the [storage provider interest form](https://docs.google.com/forms/d/e/1FAIpQLSdTd7Znz5uJeF8f98LccjZ-q7dq9Nh861t_rFkH_kcNO6HCtw/viewform).
 
@@ -60,6 +62,7 @@ Jump to your path:
 * [Path A: Storage Service (PDP)](#path-a)
 * [Path B: Consensus Mining](#path-b)
 * [Path C: Both (one cluster)](#path-c)
+* [Path D: Cold Storage Service (FCSS)](#path-d)
 
 ***
 
@@ -70,7 +73,7 @@ You need the following no matter which path you choose:
 * **Linux admin skills.** You'll work in a terminal on Ubuntu or Debian (22.04 or newer recommended), manage systemd services or Docker containers, open firewall ports, and read logs.
 * **A machine that stays online.** Every path proves to the chain on a fixed schedule. When your node is down, proofs are missed. On the consensus path, missed proofs cost you FIL (see [Know the penalties](#b1-understand-the-economics)).
 * **A way to get FIL.** On Calibration, a faucet gives you tFIL for free. To find one, search "Filecoin Calibration faucet"; the ChainSafe faucet at `faucet.calibnet.chainsafe-fil.io` is a common choice. On mainnet you buy FIL.
-* **A place to ask for help.** In the Filecoin Slack, `#fil-curio-help` covers Curio, `#fil-sp-help` covers PDP and FWSS, and `#fil-lotus-help` covers Lotus.
+* **A place to ask for help.** In the Filecoin Slack, `#fil-curio-help` covers Curio, `#fil-sp-help` covers Filecoin Onchain Cloud (PDP, FWSS, and FCSS), and `#fil-lotus-help` covers Lotus.
 
 ***
 
@@ -310,7 +313,7 @@ cd ~/curio/cmd/pdptool && go build .   # use the path where you cloned Curio in 
 
 A consensus miner (the traditional Filecoin storage provider) commits storage to the network in **sectors**. Each sector is 32 GiB or 64 GiB of data, or empty "committed capacity," sealed with Proof of Replication. The sectors you prove give you **storage power**. Every 30-second epoch, the network elects miners in proportion to their power to produce blocks and earn **block rewards**.
 
-A PoRep-backed provider can also add Filecoin Onchain Cloud (FOC) service revenue by running a combined cluster. See [Path C](#path-c).
+A PoRep-backed provider can also earn Filecoin Onchain Cloud (FOC) service revenue on the same cluster: sealed cold storage deals from FCSS (see [Path D](#path-d)), or PDP warm storage deals (see [Path C](#path-c)).
 
 You'll run three pieces of software:
 
@@ -606,7 +609,7 @@ Once you have **10 TiB of power**, you become eligible for block rewards.
 
 Sealing client data earns deal fees. From Solstice, the 10× power multiplier no longer depends on deals (see [B1](#b1-understand-the-economics)). Curio has a built-in storage market. You don't need Boost.
 
-Consensus miners take deals directly today. No automated deal-matching or go-to-market pipeline sends clients to you yet (see [Path C](#path-c)).
+To have client deals matched to you, join the Filecoin Cold Storage Service: [Path D](#path-d) builds on this step. You can also take deals directly from clients you find yourself.
 
 1. Point a domain at the node that will run the market, and open port 443 on it.
 2. Put the domain in the `base` layer (`curio config edit base`):
@@ -630,7 +633,7 @@ Consensus miners take deals directly today. No automated deal-matching or go-to-
 4. Restart Curio. If it fails to bind port 443, run `sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/curio` and restart again.
 5. From outside your network, run `curl https://market.example.com`. You should get a "Hello" response from Curio.
 
-To find clients, look at data onboarding programs. Ask in `#fil-curio-help` for current options.
+To find clients, join FCSS ([Path D](#path-d)), or look at data onboarding programs. Ask in `#fil-curio-help` for current options.
 
 **You're now a consensus miner.** Your miner has an on-chain identity, proves its sectors every day, gains power as it seals, and becomes eligible to win blocks. When you're ready for mainnet, repeat B4–B11 with mainnet builds, new wallets, and real FIL.
 
@@ -648,7 +651,7 @@ To find clients, look at data onboarding programs. Ask in `#fil-curio-help` for 
 
 This path is for operators who run a consensus-mining Curio cluster (Path B) and also want to take PDP service deals on the same cluster. You don't need a second Curio-PDP stack.
 
-**Why this path exists.** Filecoin doesn't yet have an automated go-to-market or deal-matching pipeline that routes client demand to consensus miners. Today, a miner who wants revenue beyond block rewards takes deals directly on their own infrastructure. PDP service deals are one way to do that. Once you register with FWSS, clients find you in the on-chain registry and pay you in USDFC through Filecoin Pay. Turning on PDP in the Curio cluster you already run lets it reuse your chain node, database, storage, and HTTPS endpoint.
+**Why this path exists.** A miner who wants revenue beyond block rewards can take sealed FCSS deals ([Path D](#path-d)), take deals directly, or add PDP service deals. This path covers PDP service deals. Once you register with FWSS, clients find you in the on-chain registry and pay you in USDFC through Filecoin Pay. Turning on PDP in the Curio cluster you already run lets it reuse your chain node, database, storage, and HTTPS endpoint.
 
 {% hint style="danger" %}
 **Curio labels PDP on a full cluster as alpha.** Curio lists "Enable PDP" (running PDP on a full Curio cluster) under **Experimental Features**. Its banner reads "ALPHA FEATURE - UNDER DEVELOPMENT" and says the feature is "intended for testing and experimental use only." Curio's experimental-features section says these features are not recommended for production. The `EnablePDP` setting's own description calls it **BETA** and says to enable it only on nodes that are part of a PDP network. Only the Docker-based Curio-PDP in Path A is labelled a supported path.
@@ -749,6 +752,105 @@ Then register with FWSS in the GUI's **PDP** page. The fields and suggested valu
 
 ***
 
+## Path D: Cold Storage Service (FCSS) <a href="#path-d" id="path-d"></a>
+
+This path is for operators who run a consensus-mining Curio cluster (Path B) and want sealed client datasets from the Filecoin Cold Storage Service (FCSS), the cold storage service of Filecoin Onchain Cloud.
+
+**How FCSS deals work.** A client prepares a dataset, publishes its pieces and a manifest, and proposes a deal on the PoRep Market with its terms: duration, price, retrievability, bandwidth, latency, and IPNI indexing. The market matches the deal to a provider offer that meets those terms. You download the pieces, seal them, and claim the deal's DataCap allocations. While the deal is active, an oracle records your service-level indicators on chain, and Filecoin Pay pays you in USDFC according to how well you meet the deal's terms. See [Filecoin Cold Storage Service](../build/filecoin-onchain-cloud/fcss.md) for the client side.
+
+{% hint style="warning" %}
+**FCSS runs on mainnet only.** Prove your cluster on Calibration with Path B first, then join FCSS with your mainnet miner.
+{% endhint %}
+
+**Before you start Path D:**
+
+* Complete Path B steps **B1–B12**, including Curio's storage market in B12, with a domain that serves `https://<domain>` from outside your network.
+* Have **disk for unsealed copies** of client data. Deals set retrievability, bandwidth, and latency terms, and you serve pieces from those copies.
+* Have **bandwidth** to download client datasets, which are often many TiB, and to serve retrievals.
+* Install **Python 3.10 or newer** and **`aria2`** (`sudo apt install aria2`) on the host that will download deal data.
+
+### D1. Register as an FCSS provider
+
+Register your organization at [peertopool.fidl.tech](https://peertopool.fidl.tech/): your name, server locations, miner IDs, and the client geographies you accept. Complete the KYC check that it emails you. Approved providers are listed in the public [FCSS provider directory](https://peertopool.fidl.tech/directory).
+
+The PoRep Market CLI can't register your first miner until this step is done.
+
+### D2. Create a controller wallet
+
+Don't use your miner's owner or worker wallet for the PoRep Market. Create a separate delegated wallet, fund it with a little FIL for gas, and add it as a control address of every miner you'll use in FCSS. The PoRep Market checks control-address status to confirm that you may act for a miner.
+
+```bash
+lotus wallet new delegated
+```
+
+See [Control addresses](https://lotus.filecoin.io/storage-providers/operate/addresses/#control-addresses) for how to add it to your miner.
+
+### D3. Install the PoRep Market CLI
+
+```bash
+git clone https://github.com/fidlabs/filecoin-porep-market-tooling
+cd filecoin-porep-market-tooling
+python3 -m pip install -r requirements.txt
+cp .env.mainnet .env
+chmod 600 .env
+```
+
+The PoRep Market uses controller status to verify that the command sender is authorised to send commands on behalf of your miner.
+Follow the steps here to create a miner controller wallet: https://lotus.filecoin.io/storage-providers/operate/addresses/#control-addresses
+
+Export the private key of your newly created wallet:
+```bash
+lotus wallet export <your-controller-address> | xxd -r -p | jq -r '.PrivateKey' | base64 -d | xxd -p -c 32 | sed 's/^/0x/'
+```
+
+And set it as SP_PRIVATE_KEY in your .env file. The value you store there must be this exported private key in 32-byte hex format with a 0x prefix - not the wallet address you pass to lotus wallet export. You then should set your SP_ORGANIZATION.
+
+### D4. Register your miner and publish an offer
+
+Register each miner with the capacity you'll give to FCSS and the address that receives payments:
+
+```bash
+python3 ./porep_tooling_cli.py sp register-sp <f0-miner-id> --available-capacity <capacity> --payee-address <payee-address>
+```
+
+Then publish an offer. It sets the deals the market may match to you: deal size, duration, minimum price per TiB per month, and the retrievability, bandwidth, latency, and IPNI indexing you guarantee. Run `sp register-offer --help` for every option. Deals last at least 6 months, and the market uses 32 GiB sectors only.
+
+Check what you published with `sp get-sps` and `sp get-offers`.
+
+### D5. Onboard deals
+
+List the deals matched to your miners, then download and seal one:
+
+```bash
+python3 ./porep_tooling_cli.py sp get-deals ACCEPTED
+python3 ./porep_tooling_cli.py sp onboard-data <deal-id> --output-dir /mnt/fcss-downloads --port 443 --claim-allocations curio
+```
+
+`onboard-data` reads the deal's manifest, downloads every piece with `aria2`, and with `--claim-allocations curio` hands each piece to Curio as a DDO deal (`curio market ddo`) to seal it and claim the deal's DataCap allocation. To claim later instead, run `sp claim-allocations curio <deal-id>`. `sp get-allocations <deal-id>` and `sp get-claims` show progress.
+
+### D6. Serve retrievals
+
+Keep an unsealed copy of every FCSS piece and serve it from Curio's market over `https://<domain>/piece/<pieceCid>`. FCSS measures retrievability, bandwidth, and latency against your deals' terms, and your payments depend on them.
+
+To charge for retrievals, put the paid-retrieval proxy `sp-proxy` from [large-paid-retrievals](https://github.com/fidlabs/large-paid-retrievals#for-storage-providers) in front of your piece server. It quotes a price per piece and settles each payment through Filecoin Pay before it serves the data. Private deals are served only to the client and the wallets it authorizes.
+
+### D7. Get paid
+
+Payments for each deal accrue on a Filecoin Pay rail and settle to your payee address. Check and withdraw them with the CLI:
+
+```bash
+python3 ./porep_tooling_cli.py sp get-filecoinpay-account
+python3 ./porep_tooling_cli.py sp withdraw-from-filecoinpay --help
+```
+
+**You're now an FCSS provider.** Your cluster mines as in Path B, and also seals and serves client datasets for FCSS. To operate it, follow B13 and add these checks:
+
+* Watch for newly matched deals and onboard them promptly.
+* Watch retrievals from outside your network: your payments depend on retrievability, bandwidth, and latency.
+* Keep your offers' capacity current with `sp register-sp` and `sp set-offer-active`.
+
+***
+
 ## Quick reference for agents
 
 If you're automating any path, these are the minimum steps and the checks that must pass at each stage.
@@ -787,12 +889,21 @@ If you're automating any path, these are the minimum steps and the checks that m
 5. `lotus wallet new delegated` → export as hex → GUI → PDP → Import Key → fund the 0x address (5 tFIL or 8 FIL).
 6. GUI → PDP → register with FWSS as in path A step 9. Check: `pdptool ping` succeeds.
 
+**Cold Storage Service (Path B cluster + FCSS, mainnet)**
+
+1. Complete consensus miner steps 1–10 above and B12's market. Check: external `curl https://<domain>` returns Curio's "Hello".
+2. Register the organization and complete KYC at `peertopool.fidl.tech`. A person must do this step.
+3. `lotus wallet new delegated`, fund it, and add it as a control address of each miner.
+4. Clone `fidlabs/filecoin-porep-market-tooling`, `pip install -r requirements.txt`, `cp .env.mainnet .env`. Set `SP_ORGANIZATION`, `SP_LOTUS_WALLET`, `SP_LOTUS_TOKEN`.
+5. `sp register-sp <f0-id> --available-capacity … --payee-address …`, then `sp register-offer …`. Check: `sp get-offers` lists the offer.
+6. `sp get-deals AVAILABLE` → `sp onboard-data <deal-id> --output-dir <dir> --claim-allocations curio`. Check: `sp get-claims` lists the deal's claims.
+
 ***
 
 ## Getting help
 
 * **Curio, sealing, and proving:** Filecoin Slack `#fil-curio-help`
-* **PDP, FWSS, and Filecoin Onchain Cloud:** Filecoin Slack `#fil-sp-help`
+* **PDP, FWSS, FCSS, and Filecoin Onchain Cloud:** Filecoin Slack `#fil-sp-help`
 * **Lotus chain node:** Filecoin Slack `#fil-lotus-help`
 
 When you ask for help, include your Curio and Lotus versions (`curio --version`, `lotus --version`), which network you're on, the exact command you ran, and the relevant log lines.
@@ -848,7 +959,6 @@ This page copies facts from other documentation instead of linking to it, so it 
 | PDP on a full Curio cluster is alpha and experimental ("ALPHA FEATURE - UNDER DEVELOPMENT", "intended for testing and experimental use only"; experimental features not recommended in production) (Choose your path, Path C) | Curio `experimental-features/Enable-PDP.md` and `experimental-features/README.md` | 2026-09-26 |
 | `EnablePDP` setting described as BETA, "should only be enabled on nodes which are part of a PDP network" (Path C) | Curio `deps/config/doc_gen.go` (the `EnablePDP` config comment) | 2026-09-26 |
 | Docker-based Curio-PDP is the supported PDP-only path (Path C) | Curio `getting-started.md`, `curio-pdp.md` | 2026-09-26 |
-| **No automated go-to-market or deal-matching pipeline for consensus miners yet; direct deal-taking is the current route to extra revenue (Path C intro)** | **Not from a document.** Ecosystem context from internal feedback on this draft. | n/a |
 | PDP pieces use the `piece` file type and placeholder actor `f00`, not the SP miner ID (Path C) | Curio `storage-configuration.md` | 2026-09-26 |
 | **PDP data adds no storage power or block-reward odds (Path C)** | **Inference, not sourced.** Follows from PDP pieces not being sealed into the miner's sectors, but not stated in Curio's docs. | n/a |
 | **Running PDP in the same processes and database as WindowPoSt is a reason to test on Calibration first (Path C)** | **Editorial judgment, not sourced.** | n/a |
@@ -861,5 +971,13 @@ This page copies facts from other documentation instead of linking to it, so it 
 | One domain can serve both market and PDP routes (C4) | Curio `experimental-features/Enable-PDP.md` ("Pattern A: single domain, one Curio HTTP server") | 2026-09-26 |
 | Delegated wallet creation, hex key export pipeline, GUI **Import Key** flow, 8 FIL / 5 tFIL funding (C5) | Curio `experimental-features/Enable-PDP.md`; `storage-providers/pdp/install-and-run-pdp.md` | 2026-09-26 |
 | Slack channels `#fil-curio-help`, `#fil-sp-help`, `#fil-lotus-help` (Before you start, Getting help) | Filecoin Slack (`#fil-pdp` renamed `#fil-sp-help` on 2026-09-30) | 2026-09-30 |
+| FCSS provider registration, KYC, and directory at `peertopool.fidl.tech`; first SP must be registered there before `sp register-sp` (D1, D4) | `fidlabs/filecoin-porep-market-tooling` `cli/commands/sp/register_sp.py`; `peertopool.fidl.tech` | 2026-10-14 |
+| Controller wallet as a miner control address, `SP_ORGANIZATION`, `SP_LOTUS_WALLET`, `SP_LOTUS_TOKEN`, `aria2`, `sp get-deals`, `sp onboard-data`, `sp get-allocations`, `sp claim-allocations {curio\|boost}`, Python 3.10+ (D2–D5) | `fidlabs/filecoin-porep-market-tooling` `README.md` and `.env.mainnet` | 2026-10-14 |
+| `sp register-sp` and `sp register-offer` options; 6-month minimum duration; price per TiB per month (D4) | `fidlabs/filecoin-porep-market-tooling` `cli/commands/sp/register_sp.py`, `register_offer.py` | 2026-10-14 |
+| 32 GiB sectors only (D4) | `fidlabs/filecoin-porep-market-tooling` `README.md` | 2026-10-14 |
+| `--claim-allocations curio` runs `curio market ddo --actor <id> <adapter> <allocation>` (D5) | `fidlabs/filecoin-porep-market-tooling` `cli/commands/sp/claim_allocations.py` | 2026-10-14 |
+| Deal matching to offers, DataCap evidence, per-deal Filecoin Pay validator, SLI oracle and scorer (Path D intro) | `fidlabs/porep-market` `README.md` | 2026-10-14 |
+| `sp-proxy` paid retrievals, settle-before-serve through Filecoin Pay, private deals limited to the client (D6) | `fidlabs/large-paid-retrievals` `README.md` | 2026-10-14 |
+| FCSS runs on mainnet only (Path D) | Confirmed by FIDL; `fidlabs/agent-skills` `fcss-client/SKILL.md` | 2026-10-14 |
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/agent-quickstart)

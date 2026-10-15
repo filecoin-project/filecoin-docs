@@ -15,6 +15,10 @@ Use this page as a starting point. For implementation details, see the [How retr
 
 Use the [Filecoin Onchain Cloud retrieval docs](https://docs.filecoin.cloud/core-concepts/retrieval/) when your data was stored through Filecoin Onchain Cloud or the Synapse SDK. Those docs cover the current FOC retrieval paths, SDK flows, and service-specific options.
 
+### Retrieve from the Filecoin Cold Storage Service
+
+Data stored through the [Filecoin Cold Storage Service (FCSS)](../../build/filecoin-onchain-cloud/fcss.md#retrieve-a-dataset) is served by its storage providers one piece at a time, by PieceCID. A piece is free or paid: [`retrieval-client`](https://github.com/fidlabs/large-paid-retrievals) finds the providers that store it, compares prices, pays through Filecoin Pay when needed, and downloads it. Private deals are served only to the client and the wallets it authorizes.
+
 ### Retrieve from Fil One
 
 [Fil One](https://docs.fil.one/) is an S3-compatible object storage service backed by Filecoin. If your data is stored in Fil One, retrieve it with the same S3-compatible tools, SDKs, or application paths you use for object storage.
@@ -33,6 +37,7 @@ Use [Lassie](https://github.com/filecoin-project/lassie) for CID-based retrieval
 ## Where to go next
 
 - [Filecoin Onchain Cloud retrieval](https://docs.filecoin.cloud/core-concepts/retrieval/) covers retrieval for data stored through Filecoin Onchain Cloud.
+- [FCSS retrieval](../../build/filecoin-onchain-cloud/fcss.md#retrieve-a-dataset) covers free and paid retrieval of cold storage datasets.
 - [Fil One docs](https://docs.fil.one/) cover retrieval through S3-compatible object storage APIs.
 - [Basic retrieval](../how-retrieval-works/basic-retrieval.md) covers fetching CID-addressed data with Lassie.
 - [Serving retrievals](../how-retrieval-works/serving-retrievals.md) explains provider advertisements, IPNI, and retrieval protocols.

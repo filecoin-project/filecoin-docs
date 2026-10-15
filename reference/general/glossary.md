@@ -70,6 +70,14 @@ When a [storage provider](#storage-provider) fails to complete [Window Proof-of-
 
 The term _Filecoin_ is used generically to refer to the Filecoin project, protocol, and network.
 
+## Filecoin Cold Storage Service (FCSS)
+
+The cold storage service of [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md). Storage providers seal client datasets with [Proof-of-Replication](#proof-of-replication-porep) under deals matched by the [PoRep Market](#porep-market), with service-level terms the client sets. See [Filecoin Cold Storage Service](../../build/filecoin-onchain-cloud/fcss.md).
+
+## Filecoin Warm Storage Service (FWSS)
+
+The warm storage service of [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md). Storage providers keep client data unsealed for fast retrieval, and prove they hold it with Proof of Data Possession (PDP).
+
 ## Finality
 
 Finality refers to the immutability of messages and state recorded to the Filecoin blockchain. As new blocks are added to the blockchain, it becomes more and more difficult for older blocks to be altered, until they become effectively impossible to modify. The _finality period_ is the amount of time that must elapse before a block is considered completely immutable. In the current [mainnet](#mainnet), this is configured as 900 [epochs](#epoch).
@@ -105,6 +113,10 @@ The Filecoin project uses the term _provider_ to refer to participants in the ne
 ## Pledged storage
 
 Storage capacity that a provider has promised to reserve for the Filecoin network via [Proof-of-Replication](#proof-of-replication-porep) is termed _pledged storage_.
+
+## PoRep Market
+
+On-chain contracts that match [FCSS](#filecoin-cold-storage-service-fcss) deals to storage provider offers, track provider capacity, and pay providers through Filecoin Pay according to how well they meet each deal's service levels. See the [PoRep Market contracts](https://github.com/fidlabs/porep-market).
 
 ## Proof-of-Storage
 
