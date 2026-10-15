@@ -823,7 +823,7 @@ List the deals matched to your miners, then download and seal one:
 
 ```bash
 python3 ./porep_tooling_cli.py sp get-deals ACCEPTED
-python3 ./porep_tooling_cli.py sp onboard-data <deal-id> --output-dir /mnt/fcss-downloads --claim-allocations curio
+python3 ./porep_tooling_cli.py sp onboard-data <deal-id> --output-dir /mnt/fcss-downloads --port 443 --claim-allocations curio
 ```
 
 `onboard-data` reads the deal's manifest, downloads every piece with `aria2`, and with `--claim-allocations curio` hands each piece to Curio as a DDO deal (`curio market ddo`) to seal it and claim the deal's DataCap allocation. To claim later instead, run `sp claim-allocations curio <deal-id>`. `sp get-allocations <deal-id>` and `sp get-claims` show progress.
