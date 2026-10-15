@@ -803,7 +803,7 @@ Export the private key of your newly created wallet:
 lotus wallet export <your-controller-address> | xxd -r -p | jq -r '.PrivateKey' | base64 -d | xxd -p -c 32 | sed 's/^/0x/'
 ```
 
-And set it as SP_PRIVATE_KEY in your .env file. The value you store there must be this exported private key in 32-byte hex format with a 0x prefix - not the wallet address you pass to lotus wallet export.
+And set it as SP_PRIVATE_KEY in your .env file. The value you store there must be this exported private key in 32-byte hex format with a 0x prefix - not the wallet address you pass to lotus wallet export. You then should set your SP_ORGANIZATION.
 
 ### D4. Register your miner and publish an offer
 
