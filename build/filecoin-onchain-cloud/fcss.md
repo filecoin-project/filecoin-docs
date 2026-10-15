@@ -17,7 +17,6 @@ Each dataset is stored as sealed copies with separate storage providers. The cli
 FCSS is a good fit when you need:
 
 * **Long-term preservation** of a large dataset, such as research data, media archives, or enterprise backups, that is read rarely.
-* **Several independent copies.** FCSS stores two copies with two separate providers by default.
 * **Enforceable service levels** written into an on-chain deal, not a vendor's promise.
 * **Control over access.** A deal is either public, so anyone can retrieve the data, or private, so only the client and the wallets it authorizes can.
 
