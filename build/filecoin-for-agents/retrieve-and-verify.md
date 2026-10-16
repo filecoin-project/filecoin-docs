@@ -28,7 +28,7 @@ While the commit confirms, `filecoin put` prints an early browser link to stderr
 | Way | Who can use it | Gets | Checks |
 | --- | --- | --- | --- |
 | `filecoin get <ref>` | Agents with a shell, and people | A file, or the folder, extracted | The bytes against the PieceCID, and for a folder the root CID. On a mismatch it keeps nothing and fails with `verification_failed` |
-| `filecoin get <PieceCID>` | Agents with a shell, and people | The stored bytes as one file. For a folder, that is the CAR | The bytes against the PieceCID |
+| `filecoin get <PieceCID>` | Agents with a shell, and people | When the PieceCID has no matching local resource record, it returns stored bytes as one file. For a folder, that is the CAR. If the CLI already knows the piece represents a folder, it extracts the folder even when called with its PieceCID. | The bytes against the PieceCID |
 | A folder's `urls.browser` | Browser agents, and people | The folder, rendered | Each block, in the browser |
 | A file's `urls.browser`, or `urls.piece` | Anything that speaks HTTP | The bytes | Nothing |
 
