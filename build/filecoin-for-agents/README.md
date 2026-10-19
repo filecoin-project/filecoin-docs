@@ -1,0 +1,37 @@
+---
+description: >-
+  The filecoin CLI, agent plugin, and read-only MCP server let AI
+  agents store files and folders on Filecoin and return links they can share.
+---
+
+# Filecoin for Agents
+
+`filecoin` stores files and folders on Filecoin and returns links you can share. People run it in a terminal, and agents run it in a shell. Every command writes one JSON result that an agent can act on.
+
+{% hint style="warning" %}
+**Prototype.** `filecoin` and its services are a proof of concept. They run on the Calibration testnet unless you choose mainnet. The source is in [filecoin-project/agents](https://github.com/filecoin-project/agents).
+{% endhint %}
+
+To pin IPFS content instead, use Filecoin Pin and its `publish` skill, described in [Filecoin for Agents](../../core-concepts/filecoin-for-agents.md) in Core Concepts, along with why agents use Filecoin at all.
+
+## Ways to use it
+
+| Tool | What it does | Docs |
+| --- | --- | --- |
+| CLI | `filecoin put ./site` stores a folder and returns a browser link. `filecoin get` downloads and verifies it. | [CLI](cli.md) |
+| Agent plugin and skill | Teaches Claude Code, Codex, and other agents when and how to run `filecoin`. | [Connect an agent](connect-an-agent.md) |
+| MCP server | Read-only tools for storage providers, data sets, pieces, payment rails, and session keys. | [API and MCP](api-and-mcp.md) |
+| Console and explorer | The filecoin-app dashboard, where the wallet owner approves keys and funds storage, and PDP Explorer for looking up stored data. | [Console and explorer](console-and-explorer.md) |
+
+## How an agent gets access
+
+The agent never holds the wallet key. It gets a session key, which the wallet owner approves in the filecoin-app dashboard and which cannot move funds. [Connect an agent](connect-an-agent.md) shows the way in for each kind of agent: local, cloud, browser, or chat app.
+
+## Start
+
+* [Quickstart](quickstart.md): install the CLI, log in, and store a file.
+* [Connect an agent](connect-an-agent.md): add `filecoin` to Claude, ChatGPT, or another agent.
+* [Retrieve and verify](retrieve-and-verify.md): what each retrieval link checks.
+* [Source code](https://github.com/filecoin-project/agents) on GitHub.
+
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build/filecoin-for-agents)

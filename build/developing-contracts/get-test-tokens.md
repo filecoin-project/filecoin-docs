@@ -11,6 +11,10 @@ description: >-
 
 MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask displays Filecoin EVM accounts in Ethereum `0x` format; on Filecoin testnets those accounts map to delegated `t4` [addresses](../../core-concepts/filecoin-evm-runtime/address-types.md). Follow the [MetaMask setup guide](../../networks-and-tools/assets/metamask-setup.md) if you haven’t set up an address in your MetaMask wallet yet.
 
+On Calibration, tFIL pays for gas and test USDFC pays for storage in applications such as the `filecoin` CLI. Request both tokens for the same wallet.
+
+### Get tFIL
+
 1. In your browser, open MetaMask and copy your address to your clipboard.
 2. Go to [faucet.calibnet.chainsafe-fil.io](https://faucet.calibnet.chainsafe-fil.io/funds.html) and click **Send Funds**.
 3.  Paste your address into the address field and click **Send funds**:
@@ -23,7 +27,11 @@ MetaMask is one of the easier ways to manage addresses on the Calibration testne
 
     ![A block explorer showing a pending transaction on the Calibration testnet.](../../.gitbook/assets/smart-contracts-developing-contracts-get-test-tokens-block-explorer.png)
 
-That’s all there is to it! Getting `tFIL` is easy!
+### Get test USDFC
+
+1. In MetaMask, select the **Filecoin Calibration** network and copy the same wallet's `0x` address used above.
+2. Open the [Filecoin Calibration USDFC faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc), paste your address, and click **Claim tUSDFC**.
+3. Wait for the transaction to be marked **confirmed** under **Transactions**. Follow its link to view the transfer in a block explorer.
 
 ## Local testnet
 
