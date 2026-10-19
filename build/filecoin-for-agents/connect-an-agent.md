@@ -12,7 +12,7 @@ Pick the way in that matches what your agent can do. In every case, a person own
 | --- | --- | --- |
 | Local agent, such as Claude Code, Codex, or Cursor | Run a shell, keep files, and open pages for you | [Plugin, or CLI and agent skill](#local-agents) |
 | Cloud agent, such as a coding agent in a hosted sandbox | Run a shell, but its files are gone when the session ends | [CLI with a key from secrets](#cloud-agents) |
-| Browser agent | Read and use web pages in the browser that holds your wallet | [Console links and PDP Explorer](#browser-agents), read-only |
+| Browser agent | Read and use web pages in the browser that holds your wallet | [Dashboard links and PDP Explorer](#browser-agents), read-only |
 | Chat app with connectors, such as Claude or ChatGPT | Call remote tools | [MCP server](#mcp-server), read-only |
 
 [Retrieve and verify](retrieve-and-verify.md) compares what each way can store, retrieve, and check.
@@ -55,7 +55,7 @@ A cloud agent has a shell, so it uses the same skill and CLI as a local agent. I
 
 Give the agent a key that outlives the session instead:
 
-1. On the Filecoin Pay console's [Session keys page](https://pay.filecoin.cloud/console/session-keys), create a session key, approve it, and download its credentials.
+1. On the filecoin-app dashboard's [Session keys page](https://poc.filecoin.cloud/dashboard/session-keys), generate a session key, authorize it with at least `createDataSet` and `addPieces`, and copy its private key with **Export key**.
 2. In the agent's environment settings, add the session key's private key as the secret `FILECOIN_SESSION_KEY`, and your wallet address as `FILECOIN_ROOT_ADDRESS`.
 
 `filecoin` then skips `filecoin login`, and `filecoin status` confirms the key works. The key cannot move funds, and it expires. Revoke it on the same page to stop the agent.
@@ -68,7 +68,7 @@ Never paste the session key into a chat. Store it only as a secret in the agent'
 
 ## Browser agents
 
-A browser agent cannot run the CLI, so it cannot store content. It can open the [console links](console-and-explorer.md#links-from-the-cli) a wallet owner needs, look up data sets, providers, and pieces on [PDP Explorer](https://pdp.filecoin.cloud), and open a folder's link, which verifies in the browser.
+A browser agent cannot run the CLI, so it cannot store content. It can open the [dashboard links](console-and-explorer.md#links-from-the-cli) a wallet owner needs, look up data sets, providers, and pieces on [PDP Explorer](https://pdp.filecoin.cloud), and open a folder's link, which verifies in the browser.
 
 ## MCP server
 
@@ -100,11 +100,11 @@ In the Claude and ChatGPT apps, add the URL as a custom connector. [API and MCP]
 The agent never holds the wallet key. It gets a session key instead, and the wallet owner approves it:
 
 1. The agent runs `filecoin login`. It gets a `login_pending` error with an approval link, and relays the link to you.
-2. You open the link, which goes to the Filecoin Pay console's Session keys page with the key filled in. Connect your wallet, review the request, and approve it.
+2. You open the link, which goes to the filecoin-app dashboard's setup page with the key filled in. Connect your wallet, review the request, and approve it.
 3. The agent runs `filecoin login --check` to confirm. `--check` never makes a new key, so it can't replace the one you approved.
-4. If the account has no funds yet, the agent relays a funding link. It opens a console dialog that deposits USDFC and approves the Warm Storage service in one transaction.
+4. If the account has no funds yet, the agent relays a funding link. It opens the same setup page, where you deposit USDFC and, if you haven't yet, approve the Warm Storage service, each as its own wallet transaction.
 
-When the account runs low, `filecoin status` and `filecoin put` return `insufficient_funds` with the same funding link. To stop the agent, revoke its key on the console's [Session keys page](https://pay.filecoin.cloud/console/session-keys).
+When the account runs low, `filecoin status` reports `ready: false` with the same funding link, and `filecoin put` fails with `insufficient_funds` and that link. To stop the agent, revoke its key on the dashboard's [Session keys page](https://poc.filecoin.cloud/dashboard/session-keys).
 
 ## Docs for agents
 

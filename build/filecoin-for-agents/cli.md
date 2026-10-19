@@ -25,13 +25,13 @@ This page explains how `filecoin` works. The CLI describes its own commands, whi
 filecoin login
 ```
 
-`filecoin login` makes a session key and saves it on your machine. It then opens the [Filecoin Pay console](console-and-explorer.md)'s Session keys page with the key's address and permissions filled in. The wallet owner reviews the request there and approves it with their wallet. The CLI finds the approval on chain, so there is nothing to copy back.
+`filecoin login` makes a session key and saves it on your machine. It then opens the setup page of the [filecoin-app dashboard](console-and-explorer.md) with the key's address and permissions filled in. The wallet owner reviews the request there and approves it with their wallet. The CLI finds the approval on chain, so there is nothing to copy back.
 
 By default, `filecoin login` asks for the `createDataSet`, `addPieces`, and `schedulePieceRemovals` permissions. Repeat `--scopes` to ask for others.
 
 The session key signs each request, the provider submits the transactions, and the wallet pays for storage.
 
-In a terminal, `filecoin login` opens the browser and waits for approval. An agent, or any run without a terminal, gets a `login_pending` error instead and never waits. The error's `next` steps are the approval link for the user and `filecoin login --check` for the agent to run after the user approves. `--check` only confirms the saved key and never makes a new one.
+In a terminal, `filecoin login` opens the browser and waits for approval, for up to 10 minutes by default (`--timeout`). If the wait runs out, it returns `login_pending` like a non-interactive run. An agent, or any run without a terminal, gets a `login_pending` error instead and never waits. The error's `next` steps are the approval link for the user and `filecoin login --check` for the agent to run after the user approves. `--check` only confirms the saved key and never makes a new one.
 
 Running `filecoin login` again never changes a saved key's request: flags you leave out keep its scopes. An interrupted login resumes with the same key, and an approved key is reused when it has the requested permissions. `filecoin login` replaces a saved key on its own only when the key has expired. If `--scopes` asks for more than a pending or valid key has, you get a `session_conflict` error and the key stays, because the owner may already have approved it. Pass `--fresh` to replace it.
 
@@ -39,7 +39,7 @@ For CI or a [cloud agent](connect-an-agent.md#cloud-agents), set `FILECOIN_SESSI
 
 ## Check the account
 
-The session key cannot fund the account. `filecoin status` reports when each permission expires, the USDFC funds, and the Warm Storage approval. When the account needs a deposit, it also returns a prefilled funding link to the Filecoin Pay console.
+The session key cannot fund the account. `filecoin status` reports when each permission expires, the USDFC funds, and the Warm Storage approval. When the account needs a deposit, it also returns a prefilled funding link to the dashboard's setup page.
 
 `filecoin doctor` shows the network, RPC, console and API origins, and state directory that `filecoin` uses, with where each value came from.
 
@@ -58,7 +58,7 @@ filecoin delete res_… --yes        # same as rm; schedules removal
 
 `put` returns `urls.browser`, the link to share, and `urls.piece`, the exact stored bytes. [Retrieve and verify](retrieve-and-verify.md) explains what each link and `filecoin get` check.
 
-Packing skips dotfiles and rejects symlinks. The file, or the packed folder, must be between 127 bytes and 1,065,353,216 bytes (1016 MiB).
+Packing skips dotfiles and rejects symlinks. The file, or the packed folder, must be between 127 bytes and 68,182,605,824 bytes (63.5 GiB).
 
 `delete` schedules removal, and the provider then deletes the stored copy. The content's state becomes `removal_pending`. Without `--yes`, `delete` asks a person at a terminal to confirm. Everyone else, including agents, gets `confirmation_required` with a step for the user.
 
@@ -79,13 +79,13 @@ A resumed put never stores or pays twice:
 * It fails with `source_changed` when the source file changed.
 * It returns the saved result of an operation that already completed.
 
-Ctrl+C stops the work at the next step and returns an `interrupted` result with the resume step.
+Ctrl+C stops the work at the next step and returns an `interrupted` result with the resume step. The process then exits by the signal, not with code `1`.
 
 ## Output and errors
 
 When an agent runs `filecoin`, or when you pass `--json` or redirect stdout, `filecoin` writes one JSON object to stdout: `data` on success or `error` on failure, then optional `next` steps. The exit code is `0` with `data` and `1` with `error`. Progress goes to stderr.
 
-Each error has a stable `code`, and `filecoin schema <command>` lists the codes the command returns and what they mean. Errors that need a person, such as `login_pending` and `insufficient_funds`, carry a `next` step with a console link for the user.
+Each error has a stable `code`, and `filecoin schema <command>` lists the codes the command returns and what they mean. Errors that need a person, such as `login_pending` and `insufficient_funds`, carry a `next` step with a dashboard link for the user.
 
 ## Configuration
 
@@ -96,10 +96,10 @@ Each error has a stable `code`, and `filecoin schema <command>` lists the codes 
 | `FILECOIN_CONFIG_DIR` | Config directory. Default: the platform config directory for `filecoin` |
 | `FILECOIN_STATE_DIR` | Local state and staged folders. Default: the platform data directory for `filecoin` |
 | `FILECOIN_RPC_URL` | RPC endpoint |
-| `FILECOIN_CONSOLE_URL` | Filecoin Pay console origin for approval, funding, and revoke links. Default: `https://pay.filecoin.cloud` |
+| `FILECOIN_CONSOLE_URL` | Dashboard origin for approval and funding links. Default: `https://poc.filecoin.cloud` |
 | `FILECOIN_API_URL` | API origin for retrieval links. Default: `https://api.filecoin.io` |
-| `FILECOIN_OUTPUT`, `FILECOIN_AGENT` | Override the output mode and agent detection |
+| `FIL_OUTPUT`, `FIL_AGENT` | Override the output mode (`json` or `human`) and agent detection (`1`, `0`, `true`, or `false`). `--json` and `--format` win over `FIL_OUTPUT` |
 
-The prototype saves the session key in the config file, readable only by its owner. `filecoin logout` deletes the local key. The key stays authorized on chain until it expires or you revoke it on the console's [Session keys page](https://pay.filecoin.cloud/console/session-keys).
+The prototype saves the session key in the config file, readable only by its owner. `filecoin logout` deletes the local key. The key stays authorized on chain until it expires or you revoke it on the dashboard's [Session keys page](https://poc.filecoin.cloud/dashboard/session-keys).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build/filecoin-for-agents/cli)

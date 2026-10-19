@@ -39,7 +39,7 @@ Legacy v1 PieceCIDs (`baga…`) and strings that aren't CIDs return `400`. If no
 
 ## MCP server
 
-The MCP server at `https://mcp.filecoin.io` offers one read-only tool for each data route. Each tool requires a `network` argument.
+The MCP server at `https://mcp.filecoin.io` offers one read-only tool for each data route, and each of those requires a `network` argument. A further tool, `search_docs`, searches these docs.
 
 | Tool | Reads |
 | --- | --- |
@@ -49,6 +49,7 @@ The MCP server at `https://mcp.filecoin.io` offers one read-only tool for each d
 | `list_data_set_pieces`, `get_piece`, `list_pieces` | Pieces |
 | `list_rails`, `get_rail`, `list_rail_settlements` | Filecoin Pay rails and settlements |
 | `list_session_keys`, `list_session_key_events` | Session keys and their history |
+| `search_docs` | Pages on docs.filecoin.io that match a query. Takes `query`, not `network` |
 
 [Connect an agent](connect-an-agent.md#mcp-server) shows how to add it to an agent.
 

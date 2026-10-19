@@ -18,7 +18,7 @@ Everything `filecoin` stores has a PieceCID, and a folder also has a root CID:
 
 The API finds providers through its indexer, so a new piece link returns `404` until the indexer has the piece. `filecoin inspect <ref> --check` reports when the piece link answers.
 
-While the commit confirms, `filecoin put` prints an early browser link to stderr as `filecoin: link: <url>`:
+While the commit confirms, `filecoin put` prints an early browser link to stderr. When an agent runs it, or stderr is not a terminal, the line reads `filecoin: link: <url>`. In a terminal, it shows as `link: <url>` on the status line:
 
 * **A file's early link** works as soon as the provider has the piece. It names the provider, so the API can redirect before its indexer catches up.
 * **A folder's early link** comes once the commit is sent. It starts working shortly after, when the provider has indexed the folder and announced it to IPFS.
