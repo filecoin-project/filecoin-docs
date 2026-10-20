@@ -56,16 +56,17 @@ Tellor supports a price feed oracle and a data oracle for the Filecoin network. 
 
 Tellor’s smart contracts are live on the Filecoin Mainnet and Calibration testnet.
 
-| Name             | Address                                      | Mainnet | Calibration |
-| ---------------- | -------------------------------------------- | ------- | ----------- |
-| Bridged TRB      | `0x045CE60839d108B43dF9e703d4b25402a6a28a0d` | ✔️      |             |
-| Playground/TRB   | `0x15e6Cc0D69A162151Cadfba035aa10b82b12b970` |         | ✔️          |
-| Oracle           | `0xb2CB696fE5244fB9004877e58dcB680cB86Ba444` | ✔️      | ✔️          |
-| Governance       | `0xb55bB55f7D8b4F26Bd18198088C96488D95cab39` | ✔️      | ✔️          |
-| Autopay          | `0x60cBf3991F05a0671250e673Aa166e9D1A0C662E` | ✔️      | ✔️          |
-| TellorFlex       | `0xb2CB696fE5244fB9004877e58dcB680cB86Ba444` | ✔️      | ✔️          |
-| QueryDataStorage | `0xf44166ca8bdB612268a4D401e4c5147968E5a190` | ✔️      | ✔️          |
-| Multisig         | `0x34Fae97547E990ef0E05e05286c51E4645bf1A85` | ✔️      | ✔️          |
+| Name                 | Filecoin Mainnet                             | Calibration                                  |
+| -------------------- | -------------------------------------------- | -------------------------------------------- |
+| Bridged TRB          | `0x045CE60839d108B43dF9e703d4b25402a6a28a0d` | —                                            |
+| Playground/TRB       | —                                            | `0x15e6Cc0D69A162151Cadfba035aa10b82b12b970` |
+| Tellor360 Oracle     | `0x8cFc184c877154a8F9ffE0fe75649dbe5e2DBEbf` | `0xb2CB696fE5244fB9004877e58dcB680cB86Ba444` |
+| Governance           | `0xB30b1B98d8276b80bC4f5aF9f9170ef3220EC27D` | `0xb55bB55f7D8b4F26Bd18198088C96488D95cab39` |
+| Autopay              | `0x3b50dEc3CA3d34d5346228D86D29CF679EAA0Ccb` | `0x60cBf3991F05a0671250e673Aa166e9D1A0C662E` |
+| QueryDataStorage (*) | `0xf44166ca8bdB612268a4D401e4c5147968E5a190` | `0xf44166ca8bdB612268a4D401e4c5147968E5a190` |
+| Multisig (*)         | `0x34Fae97547E990ef0E05e05286c51E4645bf1A85` | `0x34Fae97547E990ef0E05e05286c51E4645bf1A85` |
+
+(*) These contracts exist at the listed addresses on both networks, but they are not included in Tellor's current telliot-core contract directory.
 
 #### **Further Tellor resources**
 
