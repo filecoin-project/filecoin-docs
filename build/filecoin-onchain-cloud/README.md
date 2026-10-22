@@ -12,7 +12,7 @@ Filecoin Onchain Cloud (FOC) is a programmable storage platform built on the Fil
 * **Filecoin Warm Storage Service (FWSS)** for data that applications read often. Providers keep the data unsealed and hot, and prove it with Proof of Data Possession (PDP).
 * **Filecoin Cold Storage Service (FCSS)** for archives and large datasets that must be preserved and verifiable but are read rarely. Providers seal the data with Proof of Replication (PoRep) under deals with service-level terms the client sets.
 
-Both services pay storage providers through Filecoin Pay, in USDFC, on on-chain payment rails.
+Both services pay storage providers through Filecoin Pay, in USDFC, on on-chain payment rails. FWSS providers are PDP providers registered in a smart contract, while FCSS providers are PoRep providers with a miner actor. See [Storage providers: PoRep and PDP](../../core-concepts/storage-providers.md).
 
 ## Choose a service
 
