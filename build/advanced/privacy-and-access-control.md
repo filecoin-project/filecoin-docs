@@ -15,7 +15,7 @@ Use the official resources below for implementation details.
 
 ## <mark style="color:blue;">Encrypting data for storing on Filecoin</mark>
 
-For client-side encryption with the Synapse SDK, follow [Encrypt a file](https://docs.filecoin.cloud/developer-guides/encryption/encrypt-a-file/).
+For client-side encryption with recoverable keys, follow [Encryption](encryption/README.md).
 
 Use these official references for encryption workflows and secure upload patterns:
 

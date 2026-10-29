@@ -93,6 +93,8 @@
   * [Contract automation](build/advanced/contract-automation.md)
   * [Relay](build/advanced/relay.md)
   * [Decentralized databases](build/advanced/decentralized-databases.md)
+  * [Encryption](build/advanced/encryption/README.md)
+    * [Keys and sharing](build/advanced/encryption/keys-and-sharing.md)
   * [Privacy & Access Control](build/advanced/privacy-and-access-control.md)
 * [Cookbook](build/cookbook/README.md)
   * [Store data](build/cookbook/store-data.md)

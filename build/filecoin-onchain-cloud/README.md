@@ -41,8 +41,6 @@ If you only need a managed IPFS pinning-style workflow, start with [Filecoin Pin
 | Filecoin Beam | Retrieval infrastructure for fast delivery of warm data. |
 | Synapse SDK | TypeScript SDK for funding warm storage, selecting providers, uploading, downloading, and managing storage operations. |
 
-To encrypt files in your application before uploading with Synapse, follow [Encrypt a file](https://docs.filecoin.cloud/developer-guides/encryption/encrypt-a-file/).
-
 ## Developer paths
 
 | Path | Use when | Start here |

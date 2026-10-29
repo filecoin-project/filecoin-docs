@@ -13,7 +13,7 @@ We do not maintain step-by-step third-party storage tutorials in Builder Cookboo
 Use the official resources below for implementation details.
 {% endhint %}
 
-### <mark style="color:blue;">Prepare data for Filecoin storage</mark>
+## <mark style="color:blue;">Prepare data for Filecoin storage</mark>
 
 Use these resources to prepare CAR artifacts and storage inputs:
 
@@ -28,7 +28,9 @@ Recommended outputs before proposing storage workflows:
 * CAR size and piece size
 * A durable retrieval URL or CID
 
-### <mark style="color:blue;">Store large data with Filecoin Onchain Cloud</mark>
+For private files, [encrypt the data before upload](../advanced/encryption/README.md).
+
+## <mark style="color:blue;">Store large data with Filecoin Onchain Cloud</mark>
 
 Use the FOC stack for programmatic, verifiable storage at scale:
 
@@ -38,7 +40,7 @@ Use the FOC stack for programmatic, verifiable storage at scale:
 * [PDP documentation](../../storage-providers/pdp/README.md)
 * [Filecoin Cold Storage Service](../filecoin-onchain-cloud/fcss.md) for archives and datasets of 1 TiB and up
 
-### <mark style="color:blue;">Store small data with storage onramps</mark>
+## <mark style="color:blue;">Store small data with storage onramps</mark>
 
 For smaller datasets and managed ingestion paths:
 
@@ -46,7 +48,7 @@ For smaller datasets and managed ingestion paths:
 * [Filecoin Pin getting started](filecoin-pin/getting-started.md)
 * [Lighthouse documentation](https://docs.lighthouse.storage/)
 
-### <mark style="color:blue;">Monitor storage deal status from a smart contract</mark>
+## <mark style="color:blue;">Monitor storage deal status from a smart contract</mark>
 
 For actor-level deal status lookups and contract integration references:
 
@@ -54,7 +56,7 @@ For actor-level deal status lookups and contract integration references:
 * [Protocol API reference](../../reference/built-in-actors/protocol-api.md)
 * [Filecoin.sol reference](../../reference/built-in-actors/filecoin.sol.md)
 
-### <mark style="color:blue;">Incentivized data storage</mark>
+## <mark style="color:blue;">Incentivized data storage</mark>
 
 For incentive design and onboarding programs:
 
