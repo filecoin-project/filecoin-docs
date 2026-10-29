@@ -13,7 +13,9 @@ We do not maintain step-by-step third-party privacy/access-control tutorials in 
 Use the official resources below for implementation details.
 {% endhint %}
 
-### <mark style="color:blue;">Encrypting data for storing on Filecoin</mark>
+## <mark style="color:blue;">Encrypting data for storing on Filecoin</mark>
+
+For client-side encryption with the Synapse SDK, follow [Encrypt a file](https://docs.filecoin.cloud/developer-guides/encryption/encrypt-a-file/).
 
 Use these official references for encryption workflows and secure upload patterns:
 
@@ -23,7 +25,7 @@ Use these official references for encryption workflows and secure upload pattern
 
 When building production flows, validate key management, signer auth, and recovery procedures in your own threat model.
 
-### <mark style="color:blue;">Gated access to your dataset</mark>
+## <mark style="color:blue;">Gated access to your dataset</mark>
 
 For condition-based access control and policy design:
 

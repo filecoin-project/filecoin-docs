@@ -15,6 +15,7 @@ To avoid this page drifting from the maintained FOC guides, use it as a routing 
 * [FOC getting started](https://docs.filecoin.cloud/getting-started) - install the Synapse SDK, connect a wallet, fund storage, upload data, and retrieve it.
 * [Synapse SDK guide](https://docs.filecoin.cloud/developer-guides/synapse) - integrate the SDK into applications and review the current API surface.
 * [Storage operations](https://docs.filecoin.cloud/developer-guides/storage/storage-operations) - manage uploads, retrievals, data sets, and storage lifecycle operations.
+* [Encrypt a file](https://docs.filecoin.cloud/developer-guides/encryption/encrypt-a-file/) - encrypt a file before upload, then retrieve and decrypt it.
 * [Payment operations](https://docs.filecoin.cloud/developer-guides/payments/payment-operations) - understand deposits, approvals, withdrawals, and payment rails.
 * [Contract addresses](https://docs.filecoin.cloud/resources/contracts) - find current mainnet and testnet contract references.
 
