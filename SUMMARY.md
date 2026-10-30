@@ -2,34 +2,18 @@
 
 * [Welcome to Filecoin Docs](WELCOME.md)
 
-## Getting Started
+## Get Started
 
-* [Quickstart](getting-started/quickstart.md)
 * [What is Filecoin](getting-started/what-is-filecoin/README.md)
-  * [Crypto-economics](getting-started/what-is-filecoin/crypto-economics.md)
-  * [Blockchain](getting-started/what-is-filecoin/blockchain.md)
-  * [Storage model](getting-started/what-is-filecoin/storage-model.md)
-  * [Storage market](getting-started/what-is-filecoin/storage-market.md)
-  * [Retrieval](getting-started/what-is-filecoin/retrieval.md)
-  * [Programming on Filecoin](getting-started/what-is-filecoin/programming-on-filecoin.md)
-  * [Networks](getting-started/what-is-filecoin/networks.md)
-* [How storage works](getting-started/how-storage-works/README.md)
-  * [Filecoin and IPFS](getting-started/how-storage-works/filecoin-and-ipfs.md)
-  * [Upload to Filecoin](getting-started/how-storage-works/upload-to-filecoin.md)
-  * [Storage onramps](getting-started/how-storage-works/storage-onramps.md)
-* [How retrieval works](getting-started/how-retrieval-works/README.md)
-  * [Basic retrieval](getting-started/how-retrieval-works/basic-retrieval.md)
-  * [Serving retrievals](getting-started/how-retrieval-works/serving-retrievals.md)
-* [Interplanetary consensus](getting-started/interplanetary-consensus.md)
-* [Community](getting-started/community/README.md)
-  * [Forums and FIPs](getting-started/community/forums-and-FIPs.md)
-  * [Filecoin compared to](getting-started/community/filecoin-compared-to.md)
-  * [Filecoin FAQs](getting-started/community/filecoin-faqs.md)
-  * [FAQs](getting-started/community/faqs.md)
-  * [Related projects](getting-started/community/related-projects.md)
-  * [Social media](getting-started/community/social-media.md)
-  * [The Filecoin project](getting-started/community/the-filecoin-project.md)
-  * [Ways to contribute](getting-started/community/ways-to-contribute.md)
+* [How Filecoin works](getting-started/how-filecoin-works.md)
+* [Quickstart](getting-started/quickstart.md)
+* [Choose a storage option](getting-started/choose-a-storage-option.md)
+* [Paths](getting-started/paths/README.md)
+  * [AI developers](getting-started/paths/ai-developers.md)
+  * [Enterprise developers](getting-started/paths/enterprise-developers.md)
+  * [Storage platforms and resellers](getting-started/paths/storage-platforms.md)
+  * [Migrate from IPFS](getting-started/paths/migrate-from-ipfs.md)
+  * [Storage providers](getting-started/paths/storage-providers.md)
 
 ## Core Concepts
 
@@ -208,3 +192,15 @@
   * [Sync](reference/json-rpc/sync.md)
   * [Wallet](reference/json-rpc/wallet.md)
   * [Web3](reference/json-rpc/web3.md)
+
+## Moving to other sections
+
+* [Crypto-economics](getting-started/what-is-filecoin/crypto-economics.md)
+* [Blockchain](getting-started/what-is-filecoin/blockchain.md)
+* [Retrieval](getting-started/what-is-filecoin/retrieval.md)
+  * [Basic retrieval](getting-started/how-retrieval-works/basic-retrieval.md)
+  * [Serving retrievals](getting-started/how-retrieval-works/serving-retrievals.md)
+* [Programming on Filecoin](getting-started/what-is-filecoin/programming-on-filecoin.md)
+* [Networks](getting-started/what-is-filecoin/networks.md)
+* [Filecoin and IPFS](getting-started/how-storage-works/filecoin-and-ipfs.md)
+* [Interplanetary consensus](getting-started/interplanetary-consensus.md)

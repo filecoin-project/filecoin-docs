@@ -42,7 +42,7 @@ Use the FOC stack for programmatic, verifiable storage at scale:
 
 For smaller datasets and managed ingestion paths:
 
-* [Storage onramps overview](../../getting-started/how-storage-works/storage-onramps.md)
+* [Storage onramps overview](../../getting-started/choose-a-storage-option.md)
 * [Filecoin Pin getting started](filecoin-pin/getting-started.md)
 * [Lighthouse documentation](https://docs.lighthouse.storage/)
 
@@ -59,6 +59,6 @@ For actor-level deal status lookups and contract integration references:
 For incentive design and onboarding programs:
 
 * [Filecoin Data Onboarding](https://dataonboarding.filecoin.io/)
-* [Filecoin storage market basics](../../getting-started/what-is-filecoin/storage-market.md)
+* [Filecoin storage market basics](../../getting-started/choose-a-storage-option.md)
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/build/cookbook/store-data)
