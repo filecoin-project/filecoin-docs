@@ -109,17 +109,17 @@ Check out the [documentation website](https://filecoin.hugomrdias.dev/) for more
 * [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   * [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 
-#### Scalable endpoint hosting
+**Scalable endpoint hosting**
 
 For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 
 * [Filecoin-chart](https://github.com/glifio/filecoin-chart) (k8 cluster) - Helm chart for hosting Lotus Node clients.
 
-#### Filecoin API clients
+**Filecoin API clients**
 
 * [iso-filecoin](https://github.com/hugomrdias/filecoin/tree/main/packages/iso-filecoin) - Filecoin Javascript Standard Library includes an API client for the Lotus JSON-RPC API.
 
-#### Storage provider index API
+**Storage provider index API**
 
 * [Filrep.io API](https://filrep.io/api) - A suite of RESTFul JSON endpoints to discover the best storage provider to make deals with.
 
@@ -166,5 +166,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 ### Grants and accelerators
 
 * [**Filecoin Developer Grants**](https://www.fil.org/grants) - ongoing monthly developer grant program to support open source projects and new [Open Grants](https://github.com/filecoin-project/devgrants/blob/master/Program%20Resources/Open%20Grants%20README.md) on Filecoin.
+
+
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/reference/general)

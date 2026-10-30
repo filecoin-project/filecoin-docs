@@ -13,7 +13,7 @@ We do not maintain step-by-step third-party storage tutorials in Builder Cookboo
 Use the official resources below for implementation details.
 {% endhint %}
 
-## <mark style="color:blue;">Prepare data for Filecoin storage</mark>
+### <mark style="color:blue;">Prepare data for Filecoin storage</mark>
 
 Use these resources to prepare CAR artifacts and storage inputs:
 
@@ -28,9 +28,21 @@ Recommended outputs before proposing storage workflows:
 * CAR size and piece size
 * A durable retrieval URL or CID
 
-For private files, [encrypt the data before upload](../advanced/encryption/README.md).
+### <mark style="color:blue;">Encrypt private files</mark>
 
-## <mark style="color:blue;">Store large data with Filecoin Onchain Cloud</mark>
+Encrypt files before uploading them when their contents should be available only to selected users or services. Common examples include:
+
+* **User files:** private attachments, invoices, account exports and personal documents.
+* **Agent state:** conversation history, saved memory, task checkpoints and private tool results.
+* **Project data:** internal reports, contracts, unpublished datasets and confidential supporting records.
+
+Your application encrypts the file before passing it to the storage API. Providers can store the encrypted bytes and prove they hold them; reading the contents requires the decryption key. Keysmith provides wallet-derived key recovery and lets your application share access to individual files or collections.
+
+Keep data with different readers in separate encrypted files. Sharing the key to a single encrypted archive gives access to everything inside it.
+
+See [Encryption](../advanced/encryption/README.md) under Advanced for an upload and download example, recovery requirements, and instructions for sharing access.
+
+### <mark style="color:blue;">Store large data with Filecoin Onchain Cloud</mark>
 
 Use the FOC stack for programmatic, verifiable storage at scale:
 
@@ -40,7 +52,7 @@ Use the FOC stack for programmatic, verifiable storage at scale:
 * [PDP documentation](../../storage-providers/pdp/README.md)
 * [Filecoin Cold Storage Service](../filecoin-onchain-cloud/fcss.md) for archives and datasets of 1 TiB and up
 
-## <mark style="color:blue;">Store small data with storage onramps</mark>
+### <mark style="color:blue;">Store small data with storage onramps</mark>
 
 For smaller datasets and managed ingestion paths:
 
@@ -48,7 +60,7 @@ For smaller datasets and managed ingestion paths:
 * [Filecoin Pin getting started](filecoin-pin/getting-started.md)
 * [Lighthouse documentation](https://docs.lighthouse.storage/)
 
-## <mark style="color:blue;">Monitor storage deal status from a smart contract</mark>
+### <mark style="color:blue;">Monitor storage deal status from a smart contract</mark>
 
 For actor-level deal status lookups and contract integration references:
 
@@ -56,7 +68,7 @@ For actor-level deal status lookups and contract integration references:
 * [Protocol API reference](../../reference/built-in-actors/protocol-api.md)
 * [Filecoin.sol reference](../../reference/built-in-actors/filecoin.sol.md)
 
-## <mark style="color:blue;">Incentivized data storage</mark>
+### <mark style="color:blue;">Incentivized data storage</mark>
 
 For incentive design and onboarding programs:
 
