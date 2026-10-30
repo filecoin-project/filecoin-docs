@@ -31,6 +31,31 @@
   * [The Filecoin project](getting-started/community/the-filecoin-project.md)
   * [Ways to contribute](getting-started/community/ways-to-contribute.md)
 
+## Store Data
+
+* [Filecoin Cloud](store-data/README.md)
+* [How it works](store-data/overview/how-it-works.md)
+* [Pricing](store-data/overview/pricing.md)
+* [Security, privacy and data location](store-data/overview/security-privacy-and-data-location.md)
+* [Reliability and proofs](store-data/overview/reliability-and-proofs.md)
+* [Fund storage](store-data/warm-storage/fund-storage.md)
+* [Upload data](store-data/warm-storage/upload-data.md)
+* [Retrieve data](store-data/warm-storage/retrieve-data.md)
+* [Manage data sets](store-data/warm-storage/manage-data-sets.md)
+* [Monitor balance and proofs](store-data/warm-storage/monitor-balance-and-proofs.md)
+* [Delegate access with session keys](store-data/warm-storage/delegate-access-with-session-keys.md)
+* [Cold storage for archival data](store-data/cold-storage/cold-storage-for-archival-data.md)
+* [Filecoin SDK](store-data/tools/filecoin-sdk.md)
+* [Filecoin CLI](store-data/tools/filecoin-cli.md)
+* [Filecoin Pin](store-data/tools/filecoin-pin.md)
+* [Filecoin Pay](store-data/tools/filecoin-pay.md)
+* [Storage onramps](store-data/tools/storage-onramps.md)
+* [Local devnet](store-data/resources/local-devnet.md)
+* [Additional resources](store-data/resources/additional-resources.md)
+* [Errors and troubleshooting](store-data/resources/errors-and-troubleshooting.md)
+* [FAQ](store-data/resources/faq.md)
+* [Support](store-data/resources/support.md)
+
 ## Core Concepts
 
 * [Filecoin for Agents](core-concepts/filecoin-for-agents.md)
