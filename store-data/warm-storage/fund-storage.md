@@ -31,16 +31,16 @@ You don't have to work this out by hand. The CLI and SDK tell you how much to de
 
 ## Fund your account
 
-### Agent
-
+{% tabs %}
+{% tab title="Agent" %}
 Your agent never holds your wallet key, so you approve and pay yourself:
 
 1. Ask your agent to check your Filecoin account. It runs `filecoin status`.
 2. If the account needs funds, the agent gives you a funding link to the Filecoin dashboard, with the amount filled in.
 3. Open the link, connect your wallet, then approve the deposit and the Warm Storage service.
+{% endtab %}
 
-### CLI
-
+{% tab title="CLI" %}
 1. Check your account:
 
    ```sh
@@ -48,9 +48,9 @@ Your agent never holds your wallet key, so you approve and pay yourself:
    ```
 2. If it needs funds, `filecoin status` prints a funding link. Open it, connect your wallet, and approve the deposit and the Warm Storage service.
 3. Run `filecoin status` again to confirm.
+{% endtab %}
 
-### SDK
-
+{% tab title="SDK" %}
 `prepare()` works out the deposit for the data you plan to store and returns one transaction that deposits and approves together:
 
 ```ts
@@ -74,6 +74,8 @@ if (prep.transaction) {
 ```
 
 Keep your private key in an environment variable, never in your code.
+{% endtab %}
+{% endtabs %}
 
 ## Check that it worked
 

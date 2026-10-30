@@ -28,8 +28,8 @@ No permission lets a session key move funds. You fund your account from your own
 
 ## Create and approve a key
 
-### Agent
-
+{% tabs %}
+{% tab title="Agent" %}
 **Local agents** (Claude Code, Codex, Cursor): the first time the agent stores data, it runs `filecoin login`. This makes a key and opens a link on the Filecoin dashboard. Connect your wallet and approve the key there.
 
 **Cloud agents**, whose files are deleted when the session ends:
@@ -38,17 +38,17 @@ No permission lets a session key move funds. You fund your account from your own
 2. In the agent's environment settings, add the key as the secret `FILECOIN_SESSION_KEY`, and your wallet address as `FILECOIN_ROOT_ADDRESS`.
 
 Never paste a session key into a chat. Store it only as a secret.
+{% endtab %}
 
-### CLI
-
+{% tab title="CLI" %}
 ```sh
 filecoin login
 ```
 
 This makes a key, saves it on your machine, and opens the dashboard so you can approve it. By default it asks for `createDataSet`, `addPieces` and `schedulePieceRemovals`; add others with `--scopes`. `filecoin status` shows when each permission expires.
+{% endtab %}
 
-### SDK
-
+{% tab title="SDK" %}
 Create a key, approve it from the main wallet, then pass it to `Synapse`:
 
 ```ts
@@ -71,6 +71,8 @@ const synapse = Synapse.create({
   sessionKey,
 })
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Expiry
 

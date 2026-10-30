@@ -37,8 +37,8 @@ You need:
 * A bucket you control that can serve the pieces publicly (S3 or S3-compatible).
 * A wallet with FIL for gas and USDFC for storage.
 
-### Agent
-
+{% tabs %}
+{% tab title="Agent" %}
 Add the `fcss-client` skill to your agent, then ask it to archive your dataset on Filecoin:
 
 ```sh
@@ -46,9 +46,9 @@ npx skills add fidlabs/agent-skills --skill fcss-client
 ```
 
 The agent prepares and uploads the dataset, shows you the cost, and proposes deals only after you agree. It never asks for your private key: you set up the wallet yourself. The skill needs Docker, Docker Compose, git, Python 3.10 or newer, curl and jq.
+{% endtab %}
 
-### CLI
-
+{% tab title="CLI" %}
 Prepare the dataset and publish its pieces and manifest, following the data preparation guide in the [FCSS client app](https://clients.fcss.fidl.tech). Then install the [PoRep Market CLI](https://github.com/fidlabs/filecoin-porep-market-tooling) (Python 3.10 or newer):
 
 ```sh
@@ -70,13 +70,15 @@ python3 ./porep_tooling_cli.py client make-allocations <deal-id>
 ```
 
 The CLI asks you to confirm each transaction. `client get-deals` shows your deals; only `ACTIVE` means the data is stored.
+{% endtab %}
 
-### Web app
-
+{% tab title="Web app" %}
 1. Create an account in the [FCSS client app](https://clients.fcss.fidl.tech/signup) and verify your identity.
 2. Prepare your dataset and publish its manifest, following the app's guide.
 3. Review the size and price, then approve the deal from your wallet.
 4. Follow deal status and proofs from your dashboard.
+{% endtab %}
+{% endtabs %}
 
 ## Retrieve a dataset
 

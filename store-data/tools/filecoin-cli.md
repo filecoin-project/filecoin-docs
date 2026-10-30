@@ -9,7 +9,9 @@ description: >-
 
 **The Filecoin CLI, `filecoin`, stores files and folders on Filecoin Cloud and gives you links to share.** People run it in a terminal, and AI agents run it in a shell. It uses the Calibration testnet unless you choose mainnet.
 
-> **Beta.** The Filecoin CLI is a prototype. Its commands and services may change.
+{% hint style="warning" %}
+**Beta.** The Filecoin CLI is a prototype. Its commands and services may change.
+{% endhint %}
 
 ## Install
 

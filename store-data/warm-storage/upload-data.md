@@ -16,14 +16,14 @@ description: >-
 
 ## Upload
 
-### Agent
-
+{% tabs %}
+{% tab title="Agent" %}
 1. Install the Filecoin plugin or skill in your agent. See [Agents](../../core-concepts/filecoin-for-agents.md).
 2. Ask the agent to store a file or folder, for example: "Store `./report.pdf` on Filecoin."
 3. The agent runs `filecoin put` and gives you two links: one to share and one for the exact stored bytes.
+{% endtab %}
 
-### CLI
-
+{% tab title="CLI" %}
 ```sh
 filecoin put ./report.pdf          # a file, stored byte for byte
 filecoin put ./site                # a folder, packed into one CAR file
@@ -31,9 +31,9 @@ filecoin put ./site --dry-run      # shows size, provider and cost; stores nothi
 ```
 
 `put` returns `urls.browser`, the link to share, and `urls.piece`, the exact stored bytes. Folders skip dotfiles and can't contain symlinks.
+{% endtab %}
 
-### SDK
-
+{% tab title="SDK" %}
 ```ts
 const data = new TextEncoder().encode("Hello, Filecoin!")
 
@@ -43,6 +43,8 @@ console.log("PieceCID:", pieceCid.toString())
 console.log("Stored with", copies.length, "providers")
 if (!complete) console.warn("Not all copies were stored")
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Check the result
 

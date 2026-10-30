@@ -11,28 +11,30 @@ description: >-
 
 ## Retrieve
 
-### Agent
-
+{% tabs %}
+{% tab title="Agent" %}
 Ask your agent for the file by its PieceCID, or by the reference it saved when it stored the file. The agent runs `filecoin get` and tells you whether the check passed.
 
 Agents without a shell, such as chat apps, can't download files. They can still look up your stored pieces and give you their links through the read-only MCP server.
+{% endtab %}
 
-### CLI
-
+{% tab title="CLI" %}
 ```sh
 filecoin get res_… --output ./copy     # by the reference from filecoin put
 filecoin get bafkzcib… --output ./copy # or by PieceCID
 ```
 
 `get` checks the bytes against the PieceCID, and unpacks folders. If the check fails, it keeps nothing and returns an error.
+{% endtab %}
 
-### SDK
-
+{% tab title="SDK" %}
 ```ts
 const bytes = await synapse.storage.download({ pieceCid })
 ```
 
 The SDK finds which of your providers has the piece, downloads from the first one that answers, and checks the bytes against the PieceCID.
+{% endtab %}
+{% endtabs %}
 
 ## Share a link
 

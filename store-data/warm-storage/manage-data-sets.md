@@ -11,20 +11,20 @@ description: >-
 
 ## See your data sets
 
-### Agent
-
+{% tabs %}
+{% tab title="Agent" %}
 Ask your agent what you have stored. Agents with a shell run `filecoin ls` and `filecoin inspect`. Agents that use the read-only MCP server call `list_data_sets`, `get_data_set` and `list_data_set_pieces`.
+{% endtab %}
 
-### CLI
-
+{% tab title="CLI" %}
 ```sh
 filecoin ls                     # what you stored from this machine
 filecoin ls --all               # also shows files waiting to be removed
 filecoin inspect res_… --check  # details, and whether the link works
 ```
+{% endtab %}
 
-### SDK
-
+{% tab title="SDK" %}
 ```ts
 const dataSets = await synapse.storage.findDataSets()
 for (const ds of dataSets) {
@@ -37,6 +37,8 @@ for await (const piece of context.getPieces()) {
   console.log(piece.pieceCid.toString())
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Add files to a data set you already have
 
@@ -50,24 +52,26 @@ Each data set has a flat fee of $0.12 a month for the proving service, whatever 
 
 Deleting a file asks the provider to remove it. Billing for it stops, and the provider stops proving it. You can't undo a delete.
 
-### Agent
-
+{% tabs %}
+{% tab title="Agent" %}
 Ask your agent to delete the file. It runs `filecoin delete … --yes`.
+{% endtab %}
 
-### CLI
-
+{% tab title="CLI" %}
 ```sh
 filecoin delete res_… --yes
 ```
 
 The file's state becomes `removal_pending` until the provider removes it. Without `--yes`, the CLI asks you to confirm.
+{% endtab %}
 
-### SDK
-
+{% tab title="SDK" %}
 ```ts
 const context = await synapse.storage.createContext({ dataSetId: 1n })
 await context.deletePiece({ piece: "bafkzcib…" })
 ```
+{% endtab %}
+{% endtabs %}
 
 ## End a data set
 

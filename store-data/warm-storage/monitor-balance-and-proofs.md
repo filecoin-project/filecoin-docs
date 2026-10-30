@@ -11,20 +11,20 @@ description: >-
 
 ## Check your balance
 
-### Agent
-
+{% tabs %}
+{% tab title="Agent" %}
 Ask your agent to check your Filecoin account. It runs `filecoin status` and, if you're low, gives you a link to top up.
+{% endtab %}
 
-### CLI
-
+{% tab title="CLI" %}
 ```sh
 filecoin status
 ```
 
 It shows your USDFC funds and, when the account needs more, a prefilled funding link.
+{% endtab %}
 
-### SDK
-
+{% tab title="SDK" %}
 ```ts
 const summary = await synapse.payments.accountSummary()
 const daysLeft = epochsToDays(summary.runwayInEpochs)
@@ -32,6 +32,8 @@ const daysLeft = epochsToDays(summary.runwayInEpochs)
 console.log(`Your balance covers ${daysLeft} more days`)
 if (daysLeft < 7n) console.warn("Low balance: top up soon")
 ```
+{% endtab %}
+{% endtabs %}
 
 ## What happens if your balance runs out
 
