@@ -7,7 +7,7 @@ description: >-
 
 Retrieval means fetching stored data back from Filecoin. The right retrieval path depends on how the data was stored, which identifiers you have, and whether you want a managed service API or direct storage-provider retrieval.
 
-Use this page as a starting point. For implementation details, see the [How retrieval works](../how-retrieval-works/README.md) section.
+Use this page as a starting point. For implementation details, see the [How Filecoin works](../how-filecoin-works.md) section.
 
 ## Common retrieval paths
 
