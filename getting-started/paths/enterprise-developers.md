@@ -1,12 +1,12 @@
 ---
 description: >-
   Keep auditable records and archive large datasets on Filecoin, with storage
-  providers that prove on chain that they still hold your data.
+  providers that prove onchain that they still hold your data.
 ---
 
 # Enterprise developers
 
-**Filecoin stores your records and archives with independent storage providers that prove on chain that they still hold the data, so you can audit retention instead of relying on a vendor's word.**
+**Filecoin stores your records and archives with independent storage providers that prove onchain that they still hold the data, so you can audit retention instead of relying on a vendor's word.**
 
 ## What you can do
 
@@ -19,7 +19,7 @@ description: >-
 ## Common questions
 
 **Can we audit that our data is kept?**
-Yes. Storage providers' proofs are recorded on chain, so you, or an auditor, can check them at any time. See [Reliability and proofs](../../store-data/overview/reliability-and-proofs.md).
+Yes. Storage providers' proofs are recorded onchain, so you, or an auditor, can check them at any time. See [Reliability and proofs](../../store-data/overview/reliability-and-proofs.md).
 
 **Where does the data live?**
 With independent storage providers. See [Security, privacy and data location](../../store-data/overview/security-privacy-and-data-location.md) for how providers are chosen and where they operate.

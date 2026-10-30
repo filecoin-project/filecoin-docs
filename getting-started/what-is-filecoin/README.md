@@ -1,16 +1,16 @@
 ---
 description: >-
   Filecoin is a decentralized storage network. Independent storage providers
-  store data for clients and prove on chain that they still hold it.
+  store data for clients and prove onchain that they still hold it.
 ---
 
 # What is Filecoin
 
-**Filecoin is a decentralized storage network where independent storage providers store data for clients and regularly prove on chain that they still hold it.** Providers are paid for the storage they can prove, so you can check that your data is kept instead of taking a provider's word for it.
+**Filecoin is a decentralized storage network where independent storage providers store data for clients and regularly prove onchain that they still hold it.** Providers are paid for the storage they can prove, so you can check that your data is kept instead of taking a provider's word for it.
 
 ## Why use Filecoin
 
-* **Verifiable.** Storage providers submit cryptographic proofs on chain that they still hold your data, so you can check that it's kept. A provider that fails its proofs isn't paid for that storage.
+* **Verifiable.** Storage providers submit cryptographic proofs onchain that they still hold your data, so you can check that it's kept. A provider that fails its proofs isn't paid for that storage.
 * **No single vendor.** Storage comes from many independent providers around the world, so your data isn't tied to one company.
 * **Content-addressed.** Like IPFS, Filecoin identifies data by a content identifier (CID) derived from the data itself, not by where it's stored. You can check that what you retrieve is exactly what you stored.
 * **Programmable.** Storage and payments run on smart contracts, so an application or an AI agent can buy, fund, and manage storage in code.

@@ -6,7 +6,7 @@ description: >-
 
 # AI developers
 
-**Filecoin gives your agents and AI applications a place to keep memory, artifacts, and records that outlasts the session, the tool, and the vendor.** The data stays portable across agents and frameworks, and storage providers prove on chain that they still hold it.
+**Filecoin gives your agents and AI applications a place to keep memory, artifacts, and records that outlasts the session, the tool, and the vendor.** The data stays portable across agents and frameworks, and storage providers prove onchain that they still hold it.
 
 ## What you can do
 

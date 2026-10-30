@@ -1,12 +1,12 @@
 ---
 description: >-
   Build and sell your own storage service on Filecoin, with storage your
-  customers can verify and payments settled on chain through Filecoin Pay.
+  customers can verify and payments settled onchain through Filecoin Pay.
 ---
 
 # Storage platforms and resellers
 
-**You can build your own storage service on Filecoin: your customers get storage that providers prove on chain, and Filecoin Pay settles payments with the providers.**
+**You can build your own storage service on Filecoin: your customers get storage that providers prove onchain, and Filecoin Pay settles payments with the providers.**
 
 ## What you can do
 

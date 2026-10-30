@@ -1,13 +1,13 @@
 ---
 description: >-
   How storing data on Filecoin works: you pay storage providers to keep your
-  data, they prove on chain that they still hold it, and payments follow the
+  data, they prove onchain that they still hold it, and payments follow the
   proofs.
 ---
 
 # How Filecoin works
 
-**On Filecoin, you pay storage providers to keep your data, the providers prove on chain that they still hold it, and your payment only goes to storage that has been proven.**
+**On Filecoin, you pay storage providers to keep your data, the providers prove onchain that they still hold it, and your payment only goes to storage that has been proven.**
 
 ![How Filecoin works: you upload data to a storage provider and deposit USDFC into Filecoin Pay. The provider submits proofs, the storage service checks the results, and Filecoin Pay pays the provider for proven storage. You retrieve data from the provider, separately from the storage payment.](assets/how-filecoin-works.png)
 
@@ -26,7 +26,7 @@ Cold storage works with datasets of 1 TiB or more, under deals where you set the
 
 ## Prove
 
-Providers prove they still hold your data on a schedule, and the proofs are recorded on chain, where anyone can check them.
+Providers prove they still hold your data on a schedule, and the proofs are recorded onchain, where anyone can check them.
 
 * **Warm storage uses Proof of Data Possession (PDP).** Each proving period, the chain issues a random challenge, and the provider answers it with a small proof built from the challenged part of your data. Nobody has to download the data to check it. See [Proof of Data Possession](../core-concepts/proof-of-data-possession.md).
 * **Cold storage uses Proof of Replication (PoRep) and Proof of Spacetime.** The provider proves it sealed a unique copy of your data, then proves every day that it still stores it.
