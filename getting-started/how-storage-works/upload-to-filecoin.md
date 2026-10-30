@@ -10,7 +10,7 @@ Filecoin offers several ways to store data. Each path trades off simplicity agai
 
 ## Filecoin Onchain Cloud
 
-[Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md) is a programmable storage platform built on the Filecoin Virtual Machine. It handles the full lifecycle of storing data: the Filecoin Warm Storage Service (FWSS) stores your data with fast retrieval, the Filecoin Cold Storage Service (FCSS) preserves large datasets as sealed copies, Proof of Data Possession (PDP) cryptographically verifies providers still hold it, and Filecoin Pay settles payments automatically based on verified storage delivery. All operations are on-chain and auditable.
+[Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/) is a programmable storage platform built on the Filecoin Virtual Machine. It handles the full lifecycle of storing data: the Filecoin Warm Storage Service (FWSS) stores your data with fast retrieval, the Filecoin Cold Storage Service (FCSS) preserves large datasets as sealed copies, Proof of Data Possession (PDP) cryptographically verifies providers still hold it, and Filecoin Pay settles payments automatically based on verified storage delivery. All operations are on-chain and auditable.
 
 Developers interact with FOC through the [Synapse SDK](https://docs.filecoin.cloud/developer-guides/synapse), which provides a high-level API for uploads, payments, and provider discovery. See the [FOC documentation](https://docs.filecoin.cloud/) for setup guides and API reference.
 
@@ -44,7 +44,7 @@ FOC also offers cold storage. The [Filecoin Cold Storage Service (FCSS)](../../b
 
 ## Filecoin Plus
 
-[Filecoin Plus](filecoin-plus.md) is a program that subsidizes storage costs for verified clients storing useful data. Allocators vet clients and grant them DataCap tokens. When a client spends DataCap in a storage deal, the provider earns higher block rewards, which incentivizes storing verified data at reduced cost. See the [Filecoin Plus page](filecoin-plus.md) for how the allocator process works.
+[Filecoin Plus](/broken/pages/ONanf0Ny7ISDeH7beMKF) is a program that subsidizes storage costs for verified clients storing useful data. Allocators vet clients and grant them DataCap tokens. When a client spends DataCap in a storage deal, the provider earns higher block rewards, which incentivizes storing verified data at reduced cost. See the [Filecoin Plus page](/broken/pages/ONanf0Ny7ISDeH7beMKF) for how the allocator process works.
 
 {% hint style="success" %}
 **Best for**: large datasets where cost efficiency is a priority.
@@ -58,4 +58,4 @@ For full control over provider selection, pricing, and deal terms, you can negot
 **Best for**: storage providers, large-scale data onboarders, and users with custom deal requirements.
 {% endhint %}
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-storage-works/upload-to-filecoin)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/getting-started/how-storage-works/upload-to-filecoin)

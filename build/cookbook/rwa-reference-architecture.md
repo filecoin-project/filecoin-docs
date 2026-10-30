@@ -1,12 +1,11 @@
 ---
 description: >-
-  Verifiable data infrastructure for tokenized assets. Connect onchain assets
-  to the offchain records they depend on using IPFS + Filecoin to make deeds,
-  appraisals, certifications and other source data durable, content-addressed
-  and independently verifiable.
+  Verifiable data infrastructure for tokenized assets. Connect onchain assets to
+  the offchain records they depend on using IPFS + Filecoin to make deeds,
+  appraisals, certifications and other source data
 ---
 
-# Verifiable data infrastructure for tokenized assets
+# Real World Assets (RWAs)
 
 Connect onchain assets to the offchain records they depend on. Use IPFS + Filecoin to make deeds, appraisals, certifications and other source data durable, content-addressed and independently verifiable.
 
@@ -21,14 +20,14 @@ IPFS + Filecoin give RWA applications a verifiable data layer: **IPFS identifies
 
 ## A hybrid architecture for real-world assets
 
-![Architecture: a source record goes to IPFS for a CID, its bytes persist on Filecoin with storage proofs, an Avalanche application references the CID, and anyone can verify by re-hashing](./assets/rwa-architecture.png)
+![Architecture: a source record goes to IPFS for a CID, its bytes persist on Filecoin with storage proofs, an Avalanche application references the CID, and anyone can verify by re-hashing](../../.gitbook/assets/rwa-architecture.png)
 
-| Component | What it does | Output |
-| --- | --- | --- |
-| **RWA source record** | Deed, title, appraisal, certification, disclosure | The document |
-| **IPFS** | Content-addresses the record | A CID (content identifier) derived from the bytes |
-| **Filecoin** | Persists the underlying data | Verifiable storage, backed by cryptographic proofs |
-| **Avalanche** | References the CID from the onchain asset or application | Onchain state and transactions |
+| Component             | What it does                                             | Output                                             |
+| --------------------- | -------------------------------------------------------- | -------------------------------------------------- |
+| **RWA source record** | Deed, title, appraisal, certification, disclosure        | The document                                       |
+| **IPFS**              | Content-addresses the record                             | A CID (content identifier) derived from the bytes  |
+| **Filecoin**          | Persists the underlying data                             | Verifiable storage, backed by cryptographic proofs |
+| **Avalanche**         | References the CID from the onchain asset or application | Onchain state and transactions                     |
 
 The result is a durable link between an onchain asset and the exact offchain data it represents.
 
@@ -44,16 +43,16 @@ The result is a durable link between an onchain asset and the exact offchain dat
 
 The [working example](https://sgtpooki.github.io/Avalanche-IPFS-Filecoin-RWA-reference-Architecture/) publishes a synthetic property record set for 123 Main Street: a deed, a survey, a parcel file and two tax assessments, issued by a county recorder. Each file is content-addressed with IPFS, stored on Filecoin, and listed in a manifest whose CID is anchored on Avalanche.
 
-| Field | Value |
-| --- | --- |
-| Property | 123 Main Street, Fairview |
-| Record type | Property deed |
-| Parcel | 07-14-226-0031 |
-| Issuer | Fairview County Recorder |
-| IPFS CID of the deed | `bafkreidh5qsi5z6uo2thzvynr27ioajoviafqiveunrielhugyj65l6rzu` |
-| Filecoin status | Persisted, with a current storage proof |
-| Avalanche reference | [Registry on Fuji](https://testnet.snowtrace.io/address/0x7fdfdb7F166A3dEE947A5533e20B8E5Ce8c80863) |
-| Verification | Retrieved record matches the referenced CID |
+| Field                | Value                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------- |
+| Property             | 123 Main Street, Fairview                                                                           |
+| Record type          | Property deed                                                                                       |
+| Parcel               | 07-14-226-0031                                                                                      |
+| Issuer               | Fairview County Recorder                                                                            |
+| IPFS CID of the deed | `bafkreidh5qsi5z6uo2thzvynr27ioajoviafqiveunrielhugyj65l6rzu`                                       |
+| Filecoin status      | Persisted, with a current storage proof                                                             |
+| Avalanche reference  | [Registry on Fuji](https://testnet.snowtrace.io/address/0x7fdfdb7F166A3dEE947A5533e20B8E5Ce8c80863) |
+| Verification         | Retrieved record matches the referenced CID                                                         |
 
 Press **Verify now** in the demo, or run it from a terminal with no key:
 
@@ -68,20 +67,20 @@ npm run verify
 
 Because the CID is derived from the content, changing the underlying record produces a different identifier. Applications can therefore verify that the retrieved document is the exact record originally referenced.
 
-| Document | CID |
-| --- | --- |
-| `deed.pdf` (original) | `bafkreidh5qsi5z6uo2thzvynr27ioajoviafqiveunrielhugyj65l6rzu` |
+| Document                              | CID                                                           |
+| ------------------------------------- | ------------------------------------------------------------- |
+| `deed.pdf` (original)                 | `bafkreidh5qsi5z6uo2thzvynr27ioajoviafqiveunrielhugyj65l6rzu` |
 | `deed-tampered.pdf` (one line edited) | `bafkreiausintabvl4n4hvgv2jdmazvy35bg26gku2ufu2bosxhrd7dzxqi` |
 
 In the demo, open **Check a document** and drop in either file. The file is hashed in your browser and never uploaded; the edited copy is reported as not a document of record.
 
 ## What each layer provides
 
-| Layer | Role |
-| --- | --- |
-| **Avalanche** | Asset state, transactions and the onchain reference |
-| **IPFS** | Content addressing and integrity verification |
-| **Filecoin** | Durable storage backed by cryptographic proofs |
+| Layer           | Role                                                 |
+| --------------- | ---------------------------------------------------- |
+| **Avalanche**   | Asset state, transactions and the onchain reference  |
+| **IPFS**        | Content addressing and integrity verification        |
+| **Filecoin**    | Durable storage backed by cryptographic proofs       |
 | **Application** | Connects the onchain asset to its underlying records |
 
 Verification here means that particular content was persisted and that the retrieved content matches its CID. None of these layers judges whether a deed is legitimate.

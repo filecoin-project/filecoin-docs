@@ -17,7 +17,6 @@
   * [Filecoin and IPFS](getting-started/how-storage-works/filecoin-and-ipfs.md)
   * [Upload to Filecoin](getting-started/how-storage-works/upload-to-filecoin.md)
   * [Storage onramps](getting-started/how-storage-works/storage-onramps.md)
-  * [Filecoin plus](getting-started/how-storage-works/filecoin-plus.md)
 * [How retrieval works](getting-started/how-retrieval-works/README.md)
   * [Basic retrieval](getting-started/how-retrieval-works/basic-retrieval.md)
   * [Serving retrievals](getting-started/how-retrieval-works/serving-retrievals.md)
@@ -67,7 +66,6 @@
   * [Remix](build/development-frameworks/remix.md)
   * [Hardhat](build/development-frameworks/hardhat.md)
   * [Foundry](build/development-frameworks/foundry.md)
-
 * [Developing contracts](build/developing-contracts/README.md)
   * [Get test tokens](build/developing-contracts/get-test-tokens.md)
   * [ERC-20 quickstart](build/developing-contracts/erc-20-quickstart.md)
@@ -76,13 +74,11 @@
   * [Solidity libraries](build/developing-contracts/solidity-libraries.md)
   * [Best practices](build/developing-contracts/best-practices.md)
   * [Support](build/developing-contracts/support.md)
-
 * [Contract verification](build/verification/README.md)
   * [Verify using Hardhat](build/verification/hardhat.md)
   * [Verify using Foundry](build/verification/foundry.md)
   * [Verify using Blockscout](build/verification/blockscout.md)
   * [Verify using Filfox](build/verification/filfox.md)
-
 * [Advanced](build/advanced/README.md)
   * [Wrapped FIL](build/advanced/wrapped-fil.md)
   * [Oracles](build/advanced/oracles.md)
@@ -135,7 +131,6 @@
     * [Pre-requisites](storage-providers/nodes/full-nodes/pre-requisites.md)
     * [Basic setup](storage-providers/nodes/full-nodes/basic-setup.md)
     * [Node providers](storage-providers/nodes/full-nodes/node-providers.md)
-
 * [Architecture](storage-providers/architecture/README.md)
   * [Software components](storage-providers/architecture/lotus-components.md)
   * [Storage provider automation](storage-providers/architecture/lotus-automation.md)

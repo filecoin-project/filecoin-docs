@@ -2,13 +2,15 @@
 description: >-
   Filecoin is a decentralized, peer-to-peer network enabling anyone to store and
   retrieve data over the internet. Economic incentives are built in, ensuring
-  files are stored and accessible reliably over time.
+  files are stored and accessible reliably over
 cover: .gitbook/assets/FilecoinDocs.png
 coverY: 0
 layout:
+  width: default
   cover:
     visible: true
     size: full
+    mask: none
   title:
     visible: true
   description:
@@ -18,6 +20,14 @@ layout:
   outline:
     visible: true
   pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+  anchors:
     visible: true
 ---
 

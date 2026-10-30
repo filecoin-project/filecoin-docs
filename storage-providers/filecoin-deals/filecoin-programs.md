@@ -6,7 +6,7 @@ description: >-
 
 # Filecoin programs and tools
 
-Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know\_your\_customer)) to create verified deals for [Filecoin Plus](../../getting-started/how-storage-works/filecoin-plus.md), there are also programs and platforms that make it easier for storage providers to receive verified deals.
+Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know_your_customer)) to create verified deals for [Filecoin Plus](/broken/pages/ONanf0Ny7ISDeH7beMKF), there are also programs and platforms that make it easier for storage providers to receive verified deals.
 
 ## [Web3.storage](https://web3.storage/)
 
@@ -40,7 +40,7 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C07FN47FCFJ)
 
-Akave is revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces. Read more on the [Akave Docs](https://docs.akave.ai/). 
+Akave is revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces. Read more on the [Akave Docs](https://docs.akave.ai/).
 
 ### [CIDGravity](https://www.cidgravity.com/)
 
@@ -58,19 +58,19 @@ Here is a comprehensive list of legacy tools and projects that are no longer act
 
 ### Evergreen
 
-![](https://img.shields.io/badge/status-legacy\_04/2024-lightgrey.svg?style=for-the-badge)
+![](https://img.shields.io/badge/status-legacy_04/2024-lightgrey.svg?style=for-the-badge)
 
 Evergreen extended the [Slingshot](filecoin-programs.md#slingshot) program by aiming to store open datasets forever. Standard deals had a maximum duration of 540 days, which was not long enough for valuable, open datasets that might need to be stored forever. Evergreen used the [Spade](filecoin-programs.md#spade) deal engine, which automatically renewed deals to extend the lifetime of the dataset on-chain.
 
 ### CO2.Storage
 
-![](https://img.shields.io/badge/status-legacy\_04/2024-lightgrey.svg?style=for-the-badge)
+![](https://img.shields.io/badge/status-legacy_04/2024-lightgrey.svg?style=for-the-badge)
 
 CO2.Storage was a decentralized storage solution for structured data based on content-addressed data schemas. CO2.Storage primarily focused on structured data for environmental assets, such as Renewable Energy Credits, Carbon Offsets, and geospatial datasets, and mapped inputs to base data schemas (IPLD DAGs) for off-chain data (like metadata, images, attestation documents, and other assets) to promote the development of standard data schemas for environmental assets. This project was in alpha, and while many features could be considered stable, it was waiting until being feature complete to fully launch. The Filecoin Green team was actively working on this project and welcomed contributions from the community.
 
 ### Filecoin Tracker
 
-![](https://img.shields.io/badge/status-legacy\_04/2024-lightgrey.svg?style=for-the-badge)
+![](https://img.shields.io/badge/status-legacy_04/2024-lightgrey.svg?style=for-the-badge)
 
 Filecoin Tracker was retired on April 20, 2024.
 
@@ -88,19 +88,19 @@ Slingshot was a program that united Data clients, Data preparers and storage pro
 
 ### Dataprograms.org
 
-![](https://img.shields.io/badge/status-legacy\_04%2F2024-lightgrey.svg?style=for-the-badge)
+![](https://img.shields.io/badge/status-legacy_04%2F2024-lightgrey.svg?style=for-the-badge)
 
 dataprograms.org listed tools, products, and incentive programs designed to drive growth and make data storage on Filecoin more accessible. It was discontinued in April 2024.
 
 ### Moonlanding
 
-![](https://img.shields.io/badge/status-legacy\_04%2F2024-lightgrey.svg?style=for-the-badge)
+![](https://img.shields.io/badge/status-legacy_04%2F2024-lightgrey.svg?style=for-the-badge)
 
 Moon Landing was designed to ramp up storage providers in the Filecoin network by enabling them to serve verified deals at scale.
 
 ### Filecoin Dataset Explorer
 
-![](https://img.shields.io/badge/status-legacy\_04%2F2024-lightgrey.svg?style=for-the-badge)
+![](https://img.shields.io/badge/status-legacy_04%2F2024-lightgrey.svg?style=for-the-badge)
 
 Filecoin Dataset Explorer showcased data stored on the Filecoin network between 2020 and 2022, including telemetry, historical archives, Creative Commons media, entertainment archives, scientific research, and machine learning datasets. It highlighted Filecoin's capability to store large datasets redundantly, ensuring availability from multiple Storage Providers worldwide. Each dataset is identified by a unique content identifier (CID). The platform aimed to make diverse datasets accessible to users globally.
 
@@ -108,10 +108,8 @@ See also: Legacy Explorer (legacy.datasets.filecoin.io)
 
 ### Big Data Exchange
 
-![](https://img.shields.io/badge/status-legacy\_04%2F2024-lightgrey.svg?style=for-the-badge)
+![](https://img.shields.io/badge/status-legacy_04%2F2024-lightgrey.svg?style=for-the-badge)
 
 Big Data Exchange was a program that allowed storage providers easy access to Filecoin+ deals through an auction where Storage Providers could bid on datasets by offering to pay clients FIL to choose the bidder as their Storage Provider.
 
-
-
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals/filecoin-programs)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/storage-providers/filecoin-deals/filecoin-programs)
