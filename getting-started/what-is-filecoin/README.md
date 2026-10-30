@@ -1,22 +1,39 @@
 ---
 description: >-
-  This section offers a detailed overview of Filecoin for developers, serving as a go-to reference for their needs.
+  Filecoin is a decentralized storage network. Independent storage providers
+  store data for clients and prove on chain that they still hold it.
 ---
 
-<meta name="description" content="Introduction to Filecoin." />
+# What is Filecoin
 
-## Introduction to Filecoin
+**Filecoin is a decentralized storage network where independent storage providers store data for clients and regularly prove on chain that they still hold it.** Providers are paid for the storage they can prove, so you can check that your data is kept instead of taking a provider's word for it.
 
-Filecoin is a peer-to-peer network that enables reliable, decentralized file storage through built-in economic incentives and cryptographic proofs. Clients, or users, pay any number of storage providers, or data centers, to store the client's data --storage providers then provide cryptographic proofs daily as evidence to the clients that the data is still at the data center.  Storage providers lock a certain amount of Filecoin as collateral --should they repeatedly fail to provide a proof, their collateral gets burned, serving as a strong deterrent from the data center losing the data. 
+## Why use Filecoin
 
-Anyone can join Filecoin as a client looking to store their data, or as a storage provider offering storage services. Storage availability and pricing aren’t controlled by any single entity; instead, Filecoin fosters an open market for file storage and retrieval accessible to all.  Clients can review the history of each storage provider, along with their credentials and compliance record, before choosing to store their data with them.
+* **Verifiable.** Storage providers submit cryptographic proofs on chain that they still hold your data, so you can check that it's kept. A provider that fails its proofs isn't paid for that storage.
+* **No single vendor.** Storage comes from many independent providers around the world, so your data isn't tied to one company.
+* **Content-addressed.** Like IPFS, Filecoin identifies data by a content identifier (CID) derived from the data itself, not by where it's stored. You can check that what you retrieve is exactly what you stored.
+* **Programmable.** Storage and payments run on smart contracts, so an application or an AI agent can buy, fund, and manage storage in code.
 
-Note that most Filecoin nodes are [IPFS protocol](https://docs.ipfs.tech/) nodes.  IPFS is a open system, a hypermedia protocol, to manage data without a central server that makes use of [content addressing](https://docs.ipfs.tech/concepts/content-addressing/) to provide permanent data references without dependency on specific devices or cloud providers.  A client who knows the content address (CID) of their file can retrieve it from any IPFS node (or Filecoin storage provider) that currently has a copy and is able to serve it.  Given a CID, the [CID Contact](https://cid.contact/) network indexer will locate and providing routing details for the relevant file.   
+## What you can do with Filecoin
 
-Historically, IPFS node operators offered pinning services to the community out of interest and often for free, meaning there was no financial incentive for the IPFS node operators to stay online or keep a given file for a long period of time.  Filecoin solves this issue by introducing an incentive layer (clients pay storage providers for long term data center use) to ensure more reliable long term cold storage.  Since most Filecoin nodes are also IPFS nodes, they can pin a hot copy of the given file to the IPFS node to allow the client to easily retrieve the file later.
+| If you want to | Start here |
+| --- | --- |
+| Store app data, AI datasets, or agent memory that you read often | [Quickstart](../quickstart.md) for Filecoin Cloud warm storage |
+| Preserve a large archive or dataset for years | [Filecoin Cold Storage Service](../../store-data/cold-storage/cold-storage-for-archival-data.md) |
+| Give an AI agent storage that outlasts the session | [Filecoin for Agents](../../core-concepts/filecoin-for-agents.md) |
+| Keep your IPFS content and CIDs, stored on Filecoin | [Filecoin Pin](../../store-data/tools/filecoin-pin.md) |
+| Earn by providing storage | [Provide Storage](../../storage-providers/getting-started.md) |
+| Build smart contracts on the Filecoin chain | [Filecoin Virtual Machine](../../core-concepts/filecoin-virtual-machine/README.md) |
 
-Filecoin is used as a storage solution for a range of products, including from Web3-native NFT storage, incentivized permanent storage, and archival traditional Web2 datasets. For instance, [NFT.Storage](https://nft.storage/) leverages Filecoin for NFT content and metadata storage.  Organizations such as the [Shoah Foundation](https://sfi.usc.edu/) and the [Internet Archive](https://archive.org/) use Filecoin for content preservation and backup.
+## How it works, in brief
 
-Filecoin is compatible with various data types, including audio and video files. This versatility allows Web3 platforms like [Audius](https://audius.co/) and [Huddle01](https://huddle01.com/) to use Filecoin as a decentralized storage backend for music streaming and video conferencing.
+Warm storage keeps data ready to read, and providers prove it with Proof of Data Possession (PDP). Cold storage keeps sealed copies of archives, and providers prove it with Proof of Replication (PoRep) and Proof of Spacetime. [How Filecoin works](../how-filecoin-works.md) walks through storing, proving, paying, and retrieving.
+
+## Next steps
+
+* [How Filecoin works](../how-filecoin-works.md): what happens after you upload.
+* [Quickstart](../quickstart.md): fund an account and store your first file.
+* [Choose a storage option](../choose-a-storage-option.md): compare the ways to store data on Filecoin.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/getting-started/what-is-filecoin)
