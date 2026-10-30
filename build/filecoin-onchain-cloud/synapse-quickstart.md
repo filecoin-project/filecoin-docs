@@ -18,6 +18,8 @@ To avoid this page drifting from the maintained FOC guides, use it as a routing 
 * [Payment operations](https://docs.filecoin.cloud/developer-guides/payments/payment-operations) - understand deposits, approvals, withdrawals, and payment rails.
 * [Contract addresses](https://docs.filecoin.cloud/resources/contracts) - find current mainnet and testnet contract references.
 
+For private files, follow [Encryption](../advanced/encryption/README.md) in these docs to encrypt before upload, then retrieve and decrypt the file.
+
 For a CLI-oriented pinning workflow in these docs, use [Filecoin Pin](../cookbook/filecoin-pin/README.md).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build/filecoin-onchain-cloud/synapse-quickstart)

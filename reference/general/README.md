@@ -76,6 +76,12 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 
 Developer tools, API clients & storage services that developers can use to build on Filecoin.
 
+### Encryption
+
+* [Encryption guide](../../build/advanced/encryption/README.md) - encrypt, upload, retrieve, and decrypt a file.
+* [Keysmith API](https://github.com/FilOzone/synapse-sdk/blob/master/packages/keysmith/README.md#api) - derive and recover keys, create grants, and share access.
+* [Filecoin Encryption Envelope](https://github.com/FilOzone/synapse-sdk/blob/master/packages/filecoin-encryption-envelope/README.md) - encrypt and decrypt files, inspect envelopes, and read encrypted data by range.
+
 ### Storage APIs for app builders
 
 * [Lighthouse](https://www.lighthouse.storage/) - Lighthouse offers a suite of tools to enable builders to store data on Filecoin when building apps.
