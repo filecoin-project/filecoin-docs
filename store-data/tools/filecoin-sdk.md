@@ -66,7 +66,7 @@ In the browser, connect the user's wallet instead of a private key.
 
 ## Reference
 
-* Filecoin SDK reference: every class and method.
+* [Filecoin SDK reference](../../reference/filecoin-sdk/README.md): every class and method.
 * [Source on GitHub](https://github.com/FilOzone/synapse-sdk).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/tools/filecoin-sdk)

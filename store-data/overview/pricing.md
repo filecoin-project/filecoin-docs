@@ -64,7 +64,7 @@ Cold storage has one price per TiB per month, for a term of at least 6 months. R
 
 ## Learn more
 
-* Payments and runway: how the lockup works.
+* [Payments and runway](../../core-concepts/payments-and-runway.md): how the lockup works.
 * [Filecoin Pay](../tools/filecoin-pay.md).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/overview/pricing)

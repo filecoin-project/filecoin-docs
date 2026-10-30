@@ -36,12 +36,12 @@ Part of your deposit is locked to guarantee providers get paid, even if your acc
 | Deposit funds and approve storage | [Fund storage](../warm-storage/fund-storage.md) |
 | Check your balance | [Monitor balance and proofs](../warm-storage/monitor-balance-and-proofs.md) |
 | See your payment rails and payments | [Filecoin Pay Explorer](https://pay.filecoin.cloud) |
-| Charge your own customers with Filecoin Pay | Charge your customers with Filecoin Pay |
+| Charge your own customers with Filecoin Pay | [Charge your customers with Filecoin Pay](../../guides/charge-your-customers-with-filecoin-pay.md) |
 
 ## Learn more
 
-* Payments and runway: how rails, lockup and settlement work.
-* Filecoin Pay contract.
+* [Payments and runway](../../core-concepts/payments-and-runway.md): how rails, lockup and settlement work.
+* [Filecoin Pay contract](../../reference/contracts.md).
 * [Source on GitHub](https://github.com/FilOzone/filecoin-pay).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/tools/filecoin-pay)

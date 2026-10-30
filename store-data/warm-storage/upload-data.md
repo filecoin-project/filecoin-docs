@@ -18,7 +18,7 @@ description: >-
 
 ### Agent
 
-1. Install the Filecoin plugin or skill in your agent. See Agents.
+1. Install the Filecoin plugin or skill in your agent. See [Agents](../../core-concepts/filecoin-for-agents.md).
 2. Ask the agent to store a file or folder, for example: "Store `./report.pdf` on Filecoin."
 3. The agent runs `filecoin put` and gives you two links: one to share and one for the exact stored bytes.
 
@@ -88,6 +88,6 @@ await synapse.storage.upload(data, {
 
 * [Retrieve data](retrieve-data.md).
 * [Manage data sets](manage-data-sets.md).
-* To upload many files, or control each step, see Reference › Filecoin SDK.
+* To upload many files, or control each step, see the [Filecoin SDK reference](../../reference/filecoin-sdk/README.md).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/warm-storage/upload-data)

@@ -64,6 +64,6 @@ Subscribe to the [Filecoin Cloud status page](https://status.filecoin.cloud) for
 ## Next steps
 
 * [Reliability and proofs](../overview/reliability-and-proofs.md).
-* Payments and runway: how the lockup works.
+* [Payments and runway](../../core-concepts/payments-and-runway.md): how the lockup works.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/warm-storage/monitor-balance-and-proofs)

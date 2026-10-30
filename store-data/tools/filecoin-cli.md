@@ -45,7 +45,7 @@ Or run it without installing: `npx -y filecoin`.
 * `filecoin --help` lists commands, and `filecoin <command> --help` shows examples.
 * `filecoin schema <command>` prints a command's inputs, outputs and error codes as JSON Schema.
 
-See Agents to connect an agent.
+See [Agents](../../core-concepts/filecoin-for-agents.md) to connect an agent.
 
 ## Settings
 
@@ -59,7 +59,7 @@ See Agents to connect an agent.
 
 ## Reference
 
-* Filecoin CLI reference: every command and setting.
+* [Filecoin CLI reference](../../reference/filecoin-cli.md): every command and setting.
 * [Source on GitHub](https://github.com/filecoin-project/agents).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/tools/filecoin-cli)

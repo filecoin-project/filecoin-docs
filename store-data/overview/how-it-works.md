@@ -34,11 +34,11 @@ description: >-
 | Proof record | An onchain record that a provider proved it still has a data set. |
 | Payment rail | An onchain payment stream from you to one provider. |
 
-To go deeper, read Data sets and pieces and Payments and runway.
+To go deeper, read [Data sets and pieces](../../core-concepts/data-sets-and-pieces.md) and [Payments and runway](../../core-concepts/payments-and-runway.md).
 
 ## Built on open contracts
 
-The contracts run on the Filecoin Virtual Machine (FVM), so anyone can read them or build on them. A storage platform, for example, can use Filecoin Pay to charge its own customers. To build on them, start with FVM, then find the contract addresses in Reference › Contracts.
+The contracts run on the Filecoin Virtual Machine (FVM), so anyone can read them or build on them. A storage platform, for example, can use Filecoin Pay to charge its own customers. To build on them, start with [FVM](../../core-concepts/filecoin-virtual-machine/README.md), then find the contract addresses in [Contracts](../../reference/contracts.md).
 
 ## Next steps
 

@@ -33,7 +33,7 @@ Not sure which one you need? See [Choose a storage option](../getting-started/ch
 
 | Use case | Tool |
 | --- | --- |
-| Have an AI agent, such as Claude Code or Codex, store and fetch files for you | Agents |
+| Have an AI agent, such as Claude Code or Codex, store and fetch files for you | [Agents](../core-concepts/filecoin-for-agents.md) |
 | Store files from a terminal or a script | [Filecoin CLI](tools/filecoin-cli.md) |
 | Build storage into a JavaScript or TypeScript app | [Filecoin SDK](tools/filecoin-sdk.md) |
 | Keep IPFS content on Filecoin under the same CIDs | [Filecoin Pin](tools/filecoin-pin.md) |

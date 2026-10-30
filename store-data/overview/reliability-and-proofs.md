@@ -41,7 +41,7 @@ Proofs protect you from providers losing your data. They don't protect you from 
 
 ## Learn more
 
-* Proof of Data Possession: how the proofs work.
+* [Proof of Data Possession](../../core-concepts/proof-of-data-possession.md): how the proofs work.
 * [How it works](how-it-works.md): where proofs fit in Filecoin Cloud.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/overview/reliability-and-proofs)

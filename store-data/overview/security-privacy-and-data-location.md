@@ -28,7 +28,7 @@ Only your wallet can pay for storage. To let an app or agent store data for you,
 
 ## Where your data is stored
 
-Providers are independent operators, listed onchain in the Service Provider Registry. By default the SDK picks providers for you. You can choose specific providers instead, for example to keep copies in one region. See Select providers by region.
+Providers are independent operators, listed onchain in the Service Provider Registry. By default the SDK picks providers for you. You can choose specific providers instead, for example to keep copies in one region. See [Select providers by region](../../guides/select-providers-by-region.md).
 
 ## Proof that your data is intact
 

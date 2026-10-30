@@ -37,7 +37,7 @@ You need FIL for transaction fees and USDFC to pay for storage.
 | RPC endpoints | [chainlist.org/chain/314](https://chainlist.org/chain/314) | [chainlist.org/chain/314159](https://chainlist.org/chain/314159) |
 | Block explorers | [Blockscout](https://filecoin.blockscout.com), [Filfox](https://filfox.info), [Beryx](https://beryx.io) | [Blockscout](https://filecoin-testnet.blockscout.com), [Filfox](https://calibration.filfox.info), [Beryx](https://beryx.io) |
 
-For more on each network, see Networks.
+For more on each network, see [Networks](../../networks-and-tools/networks/README.md).
 
 ## Community tools
 

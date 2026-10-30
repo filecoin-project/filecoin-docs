@@ -85,6 +85,6 @@ Permissions expire. In the SDK the default is one hour. When a permission expire
 
 ## Next steps
 
-* Reference › Session keys: the full API, custom permissions and expiry tracking.
+* [Session keys reference](../../reference/filecoin-sdk/session-keys.md): the full API, custom permissions and expiry tracking.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/warm-storage/delegate-access-with-session-keys)

@@ -104,6 +104,6 @@ See [Pricing](../overview/pricing.md) and the [FCSS client app](https://clients.
 
 ## Manual storage deals
 
-To make Filecoin storage deals directly, without the PoRep Market, see Manual storage deals.
+To make Filecoin storage deals directly, without the PoRep Market, see [Manual storage deals](../../protocol/manual-storage-deals.md).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/store-data/cold-storage/cold-storage-for-archival-data)
