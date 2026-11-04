@@ -47,7 +47,7 @@ Your agent never holds your wallet key, so you approve and pay yourself:
    filecoin status
    ```
 2. If it needs funds, `filecoin status` prints a funding link. Open it, connect your wallet, and approve the deposit and the Warm Storage service.
-3. Run `filecoin status` again to confirm.
+3. Run `filecoin status` again to confirm. It shows `ready: yes` when the account can pay for a new upload.
 {% endtab %}
 
 {% tab title="SDK" %}

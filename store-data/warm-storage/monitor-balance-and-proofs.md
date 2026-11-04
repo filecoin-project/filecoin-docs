@@ -21,7 +21,7 @@ Ask your agent to check your Filecoin account. It runs `filecoin status` and, if
 filecoin status
 ```
 
-It shows your USDFC funds and, when the account needs more, a prefilled funding link.
+It shows your USDFC funds and, when the account needs more, a prefilled funding link. The `health` line reads `healthy`, `warning` when 14 days or less of funds are left, or `deficit`.
 {% endtab %}
 
 {% tab title="SDK" %}

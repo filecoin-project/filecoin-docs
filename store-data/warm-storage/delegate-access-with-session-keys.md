@@ -45,7 +45,7 @@ Never paste a session key into a chat. Store it only as a secret.
 filecoin login
 ```
 
-This makes a key, saves it on your machine, and opens the dashboard so you can approve it. By default it asks for `createDataSet`, `addPieces` and `schedulePieceRemovals`; add others with `--scopes`. `filecoin status` shows when each permission expires.
+This makes a key, saves it on your machine, and opens the dashboard so you can approve it. By default it asks for `createDataSet`, `addPieces` and `schedulePieceRemovals`; add others with `--scopes`. Once you approve, `filecoin login --check` reports `Logged in on <network> as <your wallet> with <permissions>`. `filecoin status` shows when each permission expires.
 {% endtab %}
 
 {% tab title="SDK" %}
