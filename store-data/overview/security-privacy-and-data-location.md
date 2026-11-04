@@ -39,7 +39,7 @@ See [Reliability and proofs](reliability-and-proofs.md).
 
 ## Deleting data
 
-When you delete a file, the provider is asked to remove it, and proofs and billing for it stop. Filecoin Cloud can't prove that a provider has erased the bytes. If data must be unreadable after you delete it, encrypt it before upload and destroy the key.
+You can delete one file or a whole data set. The provider records each deletion onchain and removes the files from its disks. See [Manage data sets](../warm-storage/manage-data-sets.md) for how to delete data and track each deletion.
 
 ## Common questions from security teams
 

@@ -75,7 +75,7 @@ await context.deletePiece({ piece: "bafkzcib…" })
 
 ## End a data set
 
-Ending a data set stops its service and its payments. The provider may then delete all of its data. **This can't be undone.**
+Ending a data set stops its service and its payments. The provider then deletes the data set and its files. **This can't be undone.**
 
 ```ts
 const result = await synapse.storage.terminateService({ dataSetId: 42n })
@@ -90,6 +90,10 @@ There are two ways to end a data set:
 | When service stops | Right away | At the end of the lockup, about 30 days |
 | Cost | A small fee in USDFC | Gas in FIL |
 | Use when | Normally | The provider is offline, or your account can't settle in full |
+
+## Track a deletion
+
+The provider records each deletion onchain, then removes the files from its disks. To see it, search [PDP Explorer](https://pdp.filecoin.cloud) for your data set ID. A deleted file shows as `schedulePieceDeletions` activity, and a deleted data set as `deleteDataSet`.
 
 ## Next steps
 
