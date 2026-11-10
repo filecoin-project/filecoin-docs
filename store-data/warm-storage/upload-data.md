@@ -35,7 +35,7 @@ filecoin put ./site --dry-run      # shows size, provider and cost; stores nothi
 
 {% tab title="SDK" %}
 ```ts
-const data = new TextEncoder().encode("Hello, Filecoin!")
+const data = new TextEncoder().encode("Hello, Filecoin!".repeat(8)) // 128 bytes; uploads must be at least 127
 
 const { pieceCid, copies, complete } = await synapse.storage.upload(data)
 

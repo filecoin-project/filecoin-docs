@@ -64,10 +64,14 @@ const sessionKey = SessionKey.fromSecp256k1({
 // The main wallet approves the key onchain
 await SessionKey.loginSync(rootClient, { address: sessionKey.address })
 
+// Load the permissions you just approved
+await sessionKey.syncExpirations()
+
 const synapse = Synapse.create({
   account: rootAccount,
   chain: calibration,
   transport: http(rpcUrl),
+  source: "my-app",
   sessionKey,
 })
 ```

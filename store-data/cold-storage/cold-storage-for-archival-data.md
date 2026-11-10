@@ -20,7 +20,7 @@ For data your app reads often, use [warm storage](../warm-storage/upload-data.md
 
 ## How it works
 
-1. **Prepare the dataset.** Pack your files into CAR files, called pieces, with a manifest that lists them. The FCSS client app and the `fcss-client` agent skill do this for you.
+1. **Prepare the dataset.** Pack your files into CAR files, called pieces, with a manifest that lists them. The FCSS client app and the `fcss-client` agent skill do this for you. If the data is sensitive, encrypt the files before you pack them: the pieces sit in a public bucket before any private deal exists.
 2. **Publish the pieces.** Upload the pieces and the manifest to storage you control, such as an S3, Cloudflare R2 or Google Cloud Storage bucket, so providers can download them.
 3. **Propose a deal.** Propose a deal on the [PoRep Market](https://github.com/fidlabs/porep-market) with your terms. The market matches it to providers that meet them.
 4. **Fund the deal.** Deposit USDFC in Filecoin Pay, and allocate DataCap for the data.
