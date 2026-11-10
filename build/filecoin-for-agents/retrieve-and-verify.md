@@ -11,7 +11,7 @@ Everything `filecoin` stores has a PieceCID, and a folder also has a root CID:
 * The **PieceCID** (`bafkzcib…`) identifies the exact stored bytes. The storage provider proves on chain that it still holds them.
 * The **root CID** identifies a folder on IPFS. `filecoin` packs a folder into a UnixFS CAR, and the PieceCID covers that CAR.
 
-`filecoin put` returns two links on the API's [`/get/{cid}` route](api-and-mcp.md#retrieval), which redirects to a provider that stores the content:
+`filecoin put` returns two links on the API's [`/get/{cid}` route](https://api.filecoin.io/docs), which redirects to a provider that stores the content:
 
 * `urls.browser` is the link to share. A browser renders a file straight from the provider, and opens a folder through [inbrowser.link](https://inbrowser.link).
 * `urls.piece` returns the exact stored bytes.
