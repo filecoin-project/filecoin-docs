@@ -31,6 +31,24 @@
   * [The Filecoin project](getting-started/community/the-filecoin-project.md)
   * [Ways to contribute](getting-started/community/ways-to-contribute.md)
 
+## Guides
+
+* [Overview](guides/README.md)
+* [Give an agent persistent memory](guides/give-an-agent-persistent-memory.md)
+* [Store datasets and model weights](guides/store-datasets-and-model-weights.md)
+* [Keep verifiable agent records](guides/keep-verifiable-agent-records.md)
+* [Register an agent with ERC-8004](guides/register-an-agent-with-erc-8004.md)
+* [Host a static website](guides/host-a-static-website.md)
+* [Pin a website with GitHub Actions](guides/pin-a-website-with-github-actions.md)
+* [Migrate pinned data with ipfs2foc](guides/migrate-pinned-data-with-ipfs2foc.md)
+* [Store RWAs with IPFS](guides/store-rwas-with-ipfs.md)
+* [Keep CIDs and IPNS names resolving](guides/keep-cids-and-ipns-names-resolving.md)
+* [Build a storage service](guides/build-a-storage-service.md)
+* [Charge your customers with Filecoin Pay](guides/charge-your-customers-with-filecoin-pay.md)
+* [Select providers by region](guides/select-providers-by-region.md)
+* [Keep immutable, auditable records](guides/keep-immutable-auditable-records.md)
+* [Archive large datasets](guides/archive-large-datasets.md)
+
 ## Core Concepts
 
 * [Filecoin for Agents](core-concepts/filecoin-for-agents.md)
