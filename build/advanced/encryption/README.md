@@ -187,3 +187,7 @@ Each run creates a new keyspace and new data sets. In an application, read and r
 - **Decryption fails:** check that the key and envelope belong to the same keyspace. Modified or truncated encrypted data also fails authentication; do not use partial output.
 
 For recovery, sharing, and storage permissions, see [Keys and sharing](keys-and-sharing.md).
+
+{% hint style="success" %}
+**Ready to store encrypted data on mainnet?** Open the [Filecoin Cloud console](https://pay.filecoin.cloud/console?utm_source=docs&utm_medium=encryption&utm_campaign=relaunch&foc_ref=docs-encryption) to fund your account and add the storage service. Encryption works the same way on mainnet: derive the key and encrypt each file before you upload it.
+{% endhint %}
