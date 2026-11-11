@@ -8,42 +8,42 @@ redirects:
   about: getting-started/what-is-filecoin/README.md
   about-Filecoin/ipfs-and-Filecoin: getting-started/how-storage-works/filecoin-and-ipfs.md
   about-filecoin: getting-started/what-is-filecoin/README.md
-  about-filecoin/chat-and-discussion-forums: getting-started/community/forums-and-FIPs.md
-  about-filecoin/contribution-tutorial: getting-started/community/ways-to-contribute.md
-  about-filecoin/faq: getting-started/community/faqs.md
-  about-filecoin/filecoin-compared-to: getting-started/community/filecoin-compared-to.md
-  about-filecoin/grammar-formatting-and-style: getting-started/community/ways-to-contribute.md
-  about-filecoin/how-filecoin-works: getting-started/what-is-filecoin/storage-model.md
+  about-filecoin/chat-and-discussion-forums: getting-started/what-is-filecoin/README.md
+  about-filecoin/contribution-tutorial: getting-started/what-is-filecoin/README.md
+  about-filecoin/faq: store-data/resources/faq.md
+  about-filecoin/filecoin-compared-to: getting-started/what-is-filecoin/README.md
+  about-filecoin/grammar-formatting-and-style: getting-started/what-is-filecoin/README.md
+  about-filecoin/how-filecoin-works: getting-started/how-filecoin-works.md
   about-filecoin/ipfs-and-filecoin: getting-started/how-storage-works/filecoin-and-ipfs.md
   about-filecoin/managing-assets: storage-providers/getting-started.md
   about-filecoin/network-performance: networks-and-tools/networks/mainnet/network-performance.md
-  about-filecoin/project: getting-started/community/the-filecoin-project.md
-  about-filecoin/related-projects: getting-started/community/related-projects.md
-  about-filecoin/social-media: getting-started/community/social-media.md
-  about-filecoin/ways-to-contribute: getting-started/community/ways-to-contribute.md
+  about-filecoin/project: getting-started/what-is-filecoin/README.md
+  about-filecoin/related-projects: getting-started/what-is-filecoin/README.md
+  about-filecoin/social-media: getting-started/what-is-filecoin/README.md
+  about-filecoin/ways-to-contribute: getting-started/what-is-filecoin/README.md
   about-filecoin/what-is-filecoin: getting-started/what-is-filecoin/README.md
   about-filecoin/what-is-filecoin/?ref=blog.dclimate.net: getting-started/what-is-filecoin/README.md
   about-filecoin/what-is-filecoin/?ref=infura.ghost.io: getting-started/what-is-filecoin/README.md
   about-filecoin/why-filecoin: getting-started/how-storage-works/filecoin-and-ipfs.md
   about-filecoin/wrapped-filecoin: build/advanced/wrapped-fil.md
-  about-filecoin/writing-guide: getting-started/community/ways-to-contribute.md
+  about-filecoin/writing-guide: getting-started/what-is-filecoin/README.md
   about/assets/fil-token: networks-and-tools/assets/the-fil-token.md
   about/assets/wrapped-filecoin: build/advanced/wrapped-fil.md
-  about/basics/filecoin-compared-to: getting-started/community/filecoin-compared-to.md
-  about/basics/filecoin-faq: getting-started/community/filecoin-faqs.md
+  about/basics/filecoin-compared-to: getting-started/what-is-filecoin/README.md
+  about/basics/filecoin-faq: store-data/resources/faq.md
   about/basics/how-filecoin-works: getting-started/what-is-filecoin/README.md
   about/basics/introduction: getting-started/what-is-filecoin/README.md
   about/basics/what-is-filecoin: getting-started/what-is-filecoin/README.md
-  about/community/chat-and-discussion-forums: getting-started/community/forums-and-FIPs.md
-  about/community/social-media: getting-started/community/social-media.md
-  about/contribute/contribution-tutorial: getting-started/community/ways-to-contribute.md
-  about/contribute/grammar-and-formatting: getting-started/community/ways-to-contribute.md
-  about/contribute/ways-to-contribute: getting-started/community/ways-to-contribute.md
-  about/contribute/writing-guide: getting-started/community/ways-to-contribute.md
-  about/project/related-projects: getting-started/community/related-projects.md
-  about/project/the-filecoin-project: getting-started/community/the-filecoin-project.md
+  about/community/chat-and-discussion-forums: getting-started/what-is-filecoin/README.md
+  about/community/social-media: getting-started/what-is-filecoin/README.md
+  about/contribute/contribution-tutorial: getting-started/what-is-filecoin/README.md
+  about/contribute/grammar-and-formatting: getting-started/what-is-filecoin/README.md
+  about/contribute/ways-to-contribute: getting-started/what-is-filecoin/README.md
+  about/contribute/writing-guide: getting-started/what-is-filecoin/README.md
+  about/project/related-projects: getting-started/what-is-filecoin/README.md
+  about/project/the-filecoin-project: getting-started/what-is-filecoin/README.md
   architecture: core-concepts/filecoin-virtual-machine/README.md
-  architecture/faqs: getting-started/community/faqs.md
+  architecture/faqs: store-data/resources/faq.md
   architecture/filecoin-evm-runtime: core-concepts/filecoin-evm-runtime/README.md
   architecture/filecoin-evm-runtime/actor-types: core-concepts/filecoin-evm-runtime/actor-types.md
   architecture/filecoin-evm-runtime/address-types: core-concepts/filecoin-evm-runtime/address-types.md
@@ -62,7 +62,7 @@ redirects:
   architecture/the-fvm: core-concepts/filecoin-virtual-machine/README.md
   archive: getting-started/what-is-filecoin/README.md
   archive/apps-and-filecoin: getting-started/what-is-filecoin/README.md
-  archive/archived-filecoin-backed-pinning-services: getting-started/community/filecoin-faqs.md
+  archive/archived-filecoin-backed-pinning-services: store-data/resources/faq.md
   archive/archived-get-started: storage-providers/getting-started.md
   archive/archived-infura-example: storage-providers/infrastructure/README.md
   archive/archived-powergate: reference/general/README.md
@@ -76,26 +76,26 @@ redirects:
   basics/assets/the-fil-token: networks-and-tools/assets/the-fil-token.md
   basics/assets/transfer-fil: networks-and-tools/assets/transfer-fil.md
   basics/assets/wallets: networks-and-tools/assets/wallets.md
-  basics/how-retrieval-works: getting-started/how-retrieval-works/README.md
+  basics/how-retrieval-works: getting-started/how-filecoin-works.md
   basics/how-retrieval-works/basic-retrieval: getting-started/how-retrieval-works/basic-retrieval.md
   basics/how-retrieval-works/saturn: reference/general/legacy-content.md
-  basics/how-storage-works: getting-started/how-storage-works/README.md
+  basics/how-storage-works: getting-started/how-filecoin-works.md
   basics/how-storage-works/filecoin-and-ipfs: getting-started/how-storage-works/filecoin-and-ipfs.md
-  basics/how-storage-works/filecoin-plus: getting-started/how-storage-works/filecoin-plus.md
-  basics/how-storage-works/storage-onramps: getting-started/how-storage-works/storage-onramps.md
-  basics/how-storage-works/upload-to-filecoin: getting-started/how-storage-works/upload-to-filecoin.md
+  basics/how-storage-works/filecoin-plus: getting-started/choose-a-storage-option.md
+  basics/how-storage-works/storage-onramps: getting-started/choose-a-storage-option.md
+  basics/how-storage-works/upload-to-filecoin: getting-started/choose-a-storage-option.md
   basics/interplanetary-consensus: getting-started/interplanetary-consensus.md
   basics/interplanetary-consensus/ipc-agent: getting-started/interplanetary-consensus.md
   basics/interplanetary-consensus/overview: getting-started/interplanetary-consensus.md
-  basics/project-and-community: getting-started/community/README.md
-  basics/project-and-community/filecoin-compared-to: getting-started/community/filecoin-compared-to.md
-  basics/project-and-community/filecoin-faq: getting-started/community/faqs.md
-  basics/project-and-community/filecoin-faqs: getting-started/community/filecoin-faqs.md
-  basics/project-and-community/forums-and-FIPs: getting-started/community/forums-and-FIPs.md
-  basics/project-and-community/related-projects: getting-started/community/related-projects.md
-  basics/project-and-community/social-media: getting-started/community/social-media.md
-  basics/project-and-community/the-filecoin-project: getting-started/community/the-filecoin-project.md
-  basics/project-and-community/ways-to-contribute: getting-started/community/ways-to-contribute.md
+  basics/project-and-community: getting-started/what-is-filecoin/README.md
+  basics/project-and-community/filecoin-compared-to: getting-started/what-is-filecoin/README.md
+  basics/project-and-community/filecoin-faq: store-data/resources/faq.md
+  basics/project-and-community/filecoin-faqs: store-data/resources/faq.md
+  basics/project-and-community/forums-and-FIPs: getting-started/what-is-filecoin/README.md
+  basics/project-and-community/related-projects: getting-started/what-is-filecoin/README.md
+  basics/project-and-community/social-media: getting-started/what-is-filecoin/README.md
+  basics/project-and-community/the-filecoin-project: getting-started/what-is-filecoin/README.md
+  basics/project-and-community/ways-to-contribute: getting-started/what-is-filecoin/README.md
   basics/the-blockchain: core-concepts/filecoin-virtual-machine/README.md
   basics/the-blockchain/actors: core-concepts/filecoin-virtual-machine/actors.md
   basics/the-blockchain/addresses: core-concepts/filecoin-virtual-machine/addresses.md
@@ -111,8 +111,8 @@ redirects:
   basics/what-is-filecoin/overview: getting-started/what-is-filecoin/README.md
   basics/what-is-filecoin/programming-on-filecoin: getting-started/what-is-filecoin/programming-on-filecoin.md
   basics/what-is-filecoin/retrieval-market: getting-started/what-is-filecoin/retrieval.md
-  basics/what-is-filecoin/storage-market: getting-started/what-is-filecoin/storage-market.md
-  basics/what-is-filecoin/storage-model: getting-started/what-is-filecoin/storage-model.md
+  basics/what-is-filecoin/storage-market: getting-started/choose-a-storage-option.md
+  basics/what-is-filecoin/storage-model: getting-started/how-filecoin-works.md
   build: core-concepts/filecoin-virtual-machine/README.md
   build/architecture: core-concepts/filecoin-virtual-machine/README.md
   build/architecture/concepts: core-concepts/filecoin-virtual-machine/README.md
@@ -157,22 +157,22 @@ redirects:
   build/examples/sample-architectures: storage-providers/infrastructure/reference-architectures.md
   build/examples/simple-pinning-service/overview: core-concepts/filecoin-virtual-machine/README.md
   build/examples/web-applications/overview: core-concepts/filecoin-virtual-machine/README.md
-  build/filecoin-pinning-services: getting-started/community/filecoin-faqs.md
+  build/filecoin-pinning-services: store-data/resources/faq.md
   build/fvm/basics/tools: reference/general/tools.md
-  build/get-building/get-started: getting-started/community/ways-to-contribute.md
+  build/get-building/get-started: getting-started/what-is-filecoin/README.md
   build/get-building/overview: core-concepts/filecoin-virtual-machine/README.md
-  build/get-building/storage-helpers: getting-started/how-storage-works/storage-onramps.md
+  build/get-building/storage-helpers: getting-started/choose-a-storage-option.md
   build/get-started: core-concepts/filecoin-virtual-machine/README.md
   build/local-devnet: networks-and-tools/networks/local-testnet/README.md
   build/lotus: storage-providers/nodes/implementations/lotus.md
   build/lotus/api-token-generation: reference/built-in-actors/protocol-api.md
   build/lotus/api-tokens: storage-providers/nodes/implementations/lotus.md
   build/overview: core-concepts/filecoin-virtual-machine/README.md
-  build/powergate: getting-started/how-storage-works/storage-onramps.md
+  build/powergate: getting-started/choose-a-storage-option.md
   build/signing-libraries: reference/general/README.md
   build/start-building/deploy-your-application-to-the-filecoin-testnet: networks-and-tools/networks/local-testnet/README.md
-  build/start-building/interacting-with-the-network: getting-started/community/ways-to-contribute.md
-  build/storage-helpers: getting-started/how-storage-works/storage-onramps.md
+  build/start-building/interacting-with-the-network: getting-started/what-is-filecoin/README.md
+  build/storage-helpers: getting-started/choose-a-storage-option.md
   build/textile-buckets: core-concepts/filecoin-virtual-machine/README.md
   build/the-filecoin-ecosystem: reference/general/README.md
   build/tools/filecoin-backed-pinning-services: core-concepts/filecoin-virtual-machine/README.md
@@ -197,16 +197,16 @@ redirects:
   builder-cookbook/filecoin-pin/faq: build/cookbook/filecoin-pin/faq.md
   builder-cookbook/filecoin-pin: build/cookbook/filecoin-pin/README.md
   build/cookbook/filecoin-pin/filecoin-pin-cli: build/cookbook/filecoin-pin/getting-started.md
-  community: getting-started/community/forums-and-FIPs.md
-  community/chat-and-discussion-forums: getting-started/community/forums-and-FIPs.md
-  community/contribute/contribution-tutorial: getting-started/community/ways-to-contribute.md
-  community/contribute/grammar-formatting-and-style: getting-started/community/ways-to-contribute.md
-  community/contribute/ways-to-contribute: getting-started/community/ways-to-contribute.md
-  community/contribute/writing-guide: getting-started/community/ways-to-contribute.md
-  community/social-media: getting-started/community/social-media.md
-  community/social-media/social-media: getting-started/community/social-media.md
-  contact: getting-started/community/README.md
-  developers: getting-started/community/filecoin-faqs.md
+  community: getting-started/what-is-filecoin/README.md
+  community/chat-and-discussion-forums: getting-started/what-is-filecoin/README.md
+  community/contribute/contribution-tutorial: getting-started/what-is-filecoin/README.md
+  community/contribute/grammar-formatting-and-style: getting-started/what-is-filecoin/README.md
+  community/contribute/ways-to-contribute: getting-started/what-is-filecoin/README.md
+  community/contribute/writing-guide: getting-started/what-is-filecoin/README.md
+  community/social-media: getting-started/what-is-filecoin/README.md
+  community/social-media/social-media: getting-started/what-is-filecoin/README.md
+  contact: getting-started/what-is-filecoin/README.md
+  developers: store-data/resources/faq.md
   developers/infrastructure/block-explorers: networks-and-tools/networks/mainnet/explorers.md
   developers/infrastructure/chain-indexers: storage-providers/architecture/network-indexer.md
   developers/infrastructure/development-wallets: networks-and-tools/assets/wallets.md
@@ -248,7 +248,7 @@ redirects:
   developers/reference/specification: reference/general/specifications.md
   developers/reference/tools: reference/general/tools.md
   developers/smart-contracts/about/blueprints: core-concepts/filecoin-virtual-machine/README.md
-  developers/smart-contracts/about/faqs: getting-started/community/faqs.md
+  developers/smart-contracts/about/faqs: store-data/resources/faq.md
   developers/smart-contracts/about/project: core-concepts/filecoin-virtual-machine/README.md
   developers/smart-contracts/about/support: build/developing-contracts/support.md
   developers/smart-contracts/about/use-cases: core-concepts/filecoin-virtual-machine/README.md
@@ -271,25 +271,25 @@ redirects:
   developers/smart-contracts/how-tos/test-a-contract: build/verification/README.md
   developers/smart-contracts/how-tos/use-a-faucet: build/developing-contracts/get-test-tokens.md
   developers/smart-contracts/quickstart: build/developing-contracts/erc-20-quickstart.md
-  developers/storage-helpers/ceramic: getting-started/how-storage-works/storage-onramps.md
-  developers/storage-helpers/estuary: getting-started/how-storage-works/storage-onramps.md
+  developers/storage-helpers/ceramic: getting-started/choose-a-storage-option.md
+  developers/storage-helpers/estuary: getting-started/choose-a-storage-option.md
   developers/storage-helpers/how-tos/blockchain-integration: getting-started/what-is-filecoin/README.md
-  developers/storage-helpers/how-tos/data-encryption: getting-started/how-storage-works/storage-onramps.md
+  developers/storage-helpers/how-tos/data-encryption: getting-started/choose-a-storage-option.md
   developers/storage-helpers/how-tos/permissions-and-access-control: reference/json-rpc/README.md
   developers/storage-helpers/how-tos/retrieve-data: getting-started/how-retrieval-works/basic-retrieval.md
-  developers/storage-helpers/nft-storage: getting-started/how-storage-works/storage-onramps.md
-  developers/storage-helpers/overview: getting-started/how-storage-works/storage-onramps.md
-  developers/storage-helpers/starling: getting-started/how-storage-works/storage-onramps.md
-  developers/storage-helpers/web3-storage: getting-started/how-storage-works/storage-onramps.md
+  developers/storage-helpers/nft-storage: getting-started/choose-a-storage-option.md
+  developers/storage-helpers/overview: getting-started/choose-a-storage-option.md
+  developers/storage-helpers/starling: getting-started/choose-a-storage-option.md
+  developers/storage-helpers/web3-storage: getting-started/choose-a-storage-option.md
   docs/apis/json-rpc: reference/json-rpc/README.md
   docs/developers/api-access: reference/built-in-actors/protocol-api.md
   docs/set-up/install: storage-providers/architecture/lotus-components.md
   docs/storage-providers/connectivity: storage-providers/infrastructure/network.md
   docs/storage-providers/lifecycle: storage-providers/getting-started.md
-  downloadtion/faq: getting-started/community/faqs.md
+  downloadtion/faq: store-data/resources/faq.md
   fvm: core-concepts/filecoin-virtual-machine/README.md
   fvm/basics: core-concepts/filecoin-virtual-machine/README.md
-  fvm/basics/faqs: getting-started/community/faqs.md
+  fvm/basics/faqs: store-data/resources/faq.md
   fvm/basics/introduction: core-concepts/filecoin-virtual-machine/README.md
   fvm/basics/quickstart: build/developing-contracts/erc-20-quickstart.md
   fvm/basics/support: build/developing-contracts/support.md
@@ -315,7 +315,7 @@ redirects:
   get-started/go-filecoin-tutorial/Home.html: storage-providers/getting-started.md
   get-started/go-filecoin-tutorial/Storing-on-Filecoin: storage-providers/nodes/implementations/lotus.md
   get-started/go-filecoin-tutorial/Storing-on-Filecoin.html: storage-providers/getting-started.md
-  get-started/go-filecoin-tutorial/storing-on-filecoin: getting-started/what-is-filecoin/storage-market.md
+  get-started/go-filecoin-tutorial/storing-on-filecoin: getting-started/choose-a-storage-option.md
   get-started/go-filecoin-tutorial/troubleshooting-&-faq.html: storage-providers/nodes/implementations/lotus.md
   get-started/lotus: storage-providers/nodes/implementations/lotus.md
   get-started/lotus/chain: storage-providers/nodes/implementations/lotus.md
@@ -332,14 +332,14 @@ redirects:
   getting-started/what-is-filecoin/retrieval-market: getting-started/what-is-filecoin/retrieval.md
   get-started/overview/get-started: core-concepts/filecoin-virtual-machine/README.md
   get-started/resources: storage-providers/getting-started.md
-  get-started/store-and-retrieve: getting-started/what-is-filecoin/storage-market.md
+  get-started/store-and-retrieve: getting-started/choose-a-storage-option.md
   get-started/store-and-retrieve/conclusion: getting-started/how-retrieval-works/basic-retrieval.md
   get-started/store-and-retrieve/introduction: getting-started/how-retrieval-works/basic-retrieval.md
   get-started/store-and-retrieve/lotus-only-retrieval: getting-started/how-retrieval-works/basic-retrieval.md
   get-started/store-and-retrieve/retrieve-data: getting-started/how-retrieval-works/basic-retrieval.md
   get-started/store-and-retrieve/set-up: getting-started/how-retrieval-works/basic-retrieval.md
   get-started/store-and-retrieve/setup: getting-started/what-is-filecoin/README.md
-  get-started/store-and-retrieve/store-data: getting-started/how-storage-works/README.md
+  get-started/store-and-retrieve/store-data: getting-started/how-filecoin-works.md
   get-started/store-and-retrieve/troubleshooting: storage-providers/core-competencies/storage.md
   getstarted/lotus/switing-networks: getting-started/what-is-filecoin/networks.md
   glossary: reference/general/glossary.md
@@ -348,10 +348,10 @@ redirects:
   go-filecoin-tutorial/Getting-Started.html: storage-providers/getting-started.md
   go-filecoin-tutorial/How-Filecoin-Works: getting-started/how-storage-works/filecoin-and-ipfs.md
   go-filecoin-tutorial/How-Filecoin-Works.html: getting-started/what-is-filecoin/README.md
-  go-filecoin-tutorial/Mining-Filecoin: getting-started/what-is-filecoin/storage-model.md
-  go-filecoin-tutorial/Mining-Filecoin.html: getting-started/what-is-filecoin/storage-model.md
-  go-filecoin-tutorial/Storing-on-Filecoin: getting-started/how-storage-works/README.md
-  go-filecoin-tutorial/Storing-on-Filecoin.html: getting-started/how-storage-works/storage-onramps.md
+  go-filecoin-tutorial/Mining-Filecoin: getting-started/how-filecoin-works.md
+  go-filecoin-tutorial/Mining-Filecoin.html: getting-started/how-filecoin-works.md
+  go-filecoin-tutorial/Storing-on-Filecoin: getting-started/how-filecoin-works.md
+  go-filecoin-tutorial/Storing-on-Filecoin.html: getting-started/choose-a-storage-option.md
   go-filecoin-tutorial/getting-started: storage-providers/getting-started.md
   go-filecoin-tutorial/storing-on-filecoin: storage-providers/filecoin-deals/storage-deals.md
   how-to/install-filecoin: storage-providers/getting-started.md
@@ -365,13 +365,13 @@ redirects:
   intro/intro-to-filecoin/network: getting-started/what-is-filecoin/networks.md
   intro/intro-to-filecoin/programming-on-filecoin: getting-started/what-is-filecoin/programming-on-filecoin.md
   intro/intro-to-filecoin/retrieval-market: getting-started/what-is-filecoin/retrieval.md
-  intro/intro-to-filecoin/storage-market: getting-started/what-is-filecoin/storage-market.md
-  intro/intro-to-filecoin/storage-model: getting-started/what-is-filecoin/storage-model.md
+  intro/intro-to-filecoin/storage-market: getting-started/choose-a-storage-option.md
+  intro/intro-to-filecoin/storage-model: getting-started/how-filecoin-works.md
   intro/intro-to-filecoin/what-is-filecoin: getting-started/what-is-filecoin/README.md
-  introduction/faq: getting-started/community/faqs.md
+  introduction/faq: store-data/resources/faq.md
   introduction/ipfs-and-filecoin: getting-started/how-storage-works/filecoin-and-ipfs.md
   introduction/what-is-filecoin: getting-started/what-is-filecoin/README.md
-  introduction/why-filecoin: getting-started/community/faqs.md
+  introduction/why-filecoin: store-data/resources/faq.md
   mine: storage-providers/getting-started.md
   mine/connectivity: storage-providers/getting-started.md
   mine/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
@@ -448,8 +448,8 @@ redirects:
   nodes/node-providers/chainstack: storage-providers/nodes/full-nodes/node-providers.md
   nodes/node-providers/glif: storage-providers/nodes/full-nodes/node-providers.md
   nodes/nodes: storage-providers/nodes/README.md
-  project: getting-started/community/the-filecoin-project.md
-  project/related-projects: getting-started/community/related-projects.md
+  project: getting-started/what-is-filecoin/README.md
+  project/related-projects: getting-started/what-is-filecoin/README.md
   reference: reference/general/README.md
   reference/built-in-actors: reference/built-in-actors/README.md
   reference/built-in-actors/filecoin-sol: reference/built-in-actors/README.md
@@ -517,7 +517,7 @@ redirects:
   smart-contracts/filforwarder: networks-and-tools/assets/transfer-fil.md
   smart-contracts/fundamentals: core-concepts/filecoin-virtual-machine/README.md
   smart-contracts/fundamentals/erc-20-quickstart: build/developing-contracts/erc-20-quickstart.md
-  smart-contracts/fundamentals/faqs: getting-started/community/faqs.md
+  smart-contracts/fundamentals/faqs: store-data/resources/faq.md
   smart-contracts/fundamentals/filecoin-evm-runtime: core-concepts/filecoin-evm-runtime/README.md
   smart-contracts/fundamentals/overview: build/getting-started.md
   smart-contracts/fundamentals/roadmap: core-concepts/filecoin-virtual-machine/README.md
@@ -544,13 +544,13 @@ redirects:
   storage-provider/architecture/Lotus-components: storage-providers/architecture/lotus-components.md
   storage-provider/architecture/lotus-automation: storage-providers/architecture/lotus-automation.md
   storage-provider/architectures: storage-providers/infrastructure/reference-architectures.md
-  storage-provider/basics/how-providing-storage-works: getting-started/what-is-filecoin/storage-model.md
+  storage-provider/basics/how-providing-storage-works: getting-started/how-filecoin-works.md
   storage-provider/basics/overview: storage-providers/getting-started.md
   storage-provider/filecoin-deals/filecoin-programs: storage-providers/filecoin-deals/filecoin-programs.md
   storage-provider/hardware-requirements: storage-providers/core-competencies/storage.md
   storage-provider/hardware/architectures: storage-providers/infrastructure/reference-architectures.md
   storage-provider/hardware/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
-  storage-provider/how-providing-works: getting-started/what-is-filecoin/storage-model.md
+  storage-provider/how-providing-works: getting-started/how-filecoin-works.md
   storage-provider/how-providing-works/storage-provider/hardware-requirements: storage-providers/infrastructure/reference-architectures.md
   storage-provider/overview: storage-providers/getting-started.md
   storage-provider/rewards: storage-providers/filecoin-economics/block-rewards.md
@@ -567,9 +567,9 @@ redirects:
   storage-provider/videos/hardware: storage-providers/infrastructure/reference-architectures.md
   storage-provider/videos/implementations: storage-providers/nodes/implementations/README.md
   storage-provider/videos/opendata: getting-started/what-is-filecoin/README.md
-  storage-provider/videos/pl: getting-started/community/ways-to-contribute.md
+  storage-provider/videos/pl: getting-started/what-is-filecoin/README.md
   storage-provider/videos/rclone: reference/general/README.md
-  storage-provider/videos/roadmap2022: getting-started/community/the-filecoin-project.md
+  storage-provider/videos/roadmap2022: getting-started/what-is-filecoin/README.md
   storage-provider/videos/seagate: getting-started/what-is-filecoin/README.md
   storage-provider/videos/supermicro: getting-started/what-is-filecoin/README.md
   storage-provider/videos/usecase: getting-started/what-is-filecoin/README.md
@@ -588,20 +588,39 @@ redirects:
   storage-providers/skills/storage: storage-providers/core-competencies/storage.md
   storage-providers/skills/sales: storage-providers/core-competencies/sales.md
   storage-providers/skills/industry: storage-providers/core-competencies/industry.md
-  store: getting-started/how-storage-works/storage-onramps.md
+  store: getting-started/choose-a-storage-option.md
   store-retrieve-data/how-retrieval-works/saturn: reference/general/legacy-content.md
   store/estuary: storage-providers/getting-started.md
-  store/filecoin-plus: getting-started/how-storage-works/filecoin-plus.md
-  store/filecoin-plus/overview: getting-started/how-storage-works/filecoin-plus.md
+  store/filecoin-plus: getting-started/choose-a-storage-option.md
+  store/filecoin-plus/overview: getting-started/choose-a-storage-option.md
   store/lotus: storage-providers/nodes/implementations/lotus.md
-  store/lotus/retrieve-data: getting-started/how-retrieval-works/README.md
-  store/lotus/store-data: getting-started/what-is-filecoin/storage-model.md
+  store/lotus/retrieve-data: getting-started/how-filecoin-works.md
+  store/lotus/store-data: getting-started/how-filecoin-works.md
   store/lotus/very-large-files: getting-started/how-storage-works/filecoin-and-ipfs.md
-  store/overview: getting-started/what-is-filecoin/storage-model.md
-  store/overview/start-storing: getting-started/how-storage-works/filecoin-plus.md
+  store/overview: getting-started/how-filecoin-works.md
+  store/overview/start-storing: getting-started/choose-a-storage-option.md
   store/slate: getting-started/what-is-filecoin/README.md
   store/starling: getting-started/what-is-filecoin/README.md
-  store/tools: getting-started/how-storage-works/storage-onramps.md
+  store/tools: getting-started/choose-a-storage-option.md
   store/tools/estuary: reference/general/README.md
-  store/tools/starling: getting-started/community/filecoin-faqs.md
+  store/tools/starling: store-data/resources/faq.md
   v: storage-providers/getting-started.md
+  getting-started/how-storage-works/README: getting-started/how-filecoin-works.md
+  getting-started/how-storage-works: getting-started/how-filecoin-works.md
+  getting-started/how-retrieval-works/README: getting-started/how-filecoin-works.md
+  getting-started/how-retrieval-works: getting-started/how-filecoin-works.md
+  getting-started/what-is-filecoin/storage-model: getting-started/how-filecoin-works.md
+  getting-started/how-storage-works/upload-to-filecoin: getting-started/choose-a-storage-option.md
+  getting-started/how-storage-works/storage-onramps: getting-started/choose-a-storage-option.md
+  getting-started/what-is-filecoin/storage-market: getting-started/choose-a-storage-option.md
+  getting-started/community/faqs: store-data/resources/faq.md
+  getting-started/community/filecoin-faqs: store-data/resources/faq.md
+  getting-started/community/README: getting-started/what-is-filecoin/README.md
+  getting-started/community: getting-started/what-is-filecoin/README.md
+  getting-started/community/filecoin-compared-to: getting-started/what-is-filecoin/README.md
+  getting-started/community/forums-and-FIPs: getting-started/what-is-filecoin/README.md
+  getting-started/community/related-projects: getting-started/what-is-filecoin/README.md
+  getting-started/community/social-media: getting-started/what-is-filecoin/README.md
+  getting-started/community/the-filecoin-project: getting-started/what-is-filecoin/README.md
+  getting-started/community/ways-to-contribute: getting-started/what-is-filecoin/README.md
+  getting-started/how-storage-works/filecoin-plus: getting-started/choose-a-storage-option.md

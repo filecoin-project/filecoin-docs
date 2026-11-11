@@ -47,6 +47,6 @@ Each piece comes with a retrieval link. `filecoin get <PieceCID>` downloads and 
 
 The MCP server and the REST API cannot store anything. To store content, use the CLI, or build on the [Synapse SDK](../filecoin-onchain-cloud/synapse-quickstart.md).
 
-For more on how retrieval works on Filecoin, see [How retrieval works](../../getting-started/how-retrieval-works/README.md).
+For more on how retrieval works on Filecoin, see [How Filecoin works](../../getting-started/how-filecoin-works.md).
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build/filecoin-for-agents/retrieve-and-verify)
