@@ -42,6 +42,10 @@ A self-describing format for referencing data in distributed information systems
 
 In order to enter into a [storage deal](#deal), a [storage provider](#storage-provider) is required to provide [FIL](#fil) as _collateral_, to be paid out as compensation to a client in the event that the provider fails to uphold their storage commitment.
 
+## Data set
+
+A group of unsealed pieces that a [PDP provider](#proof-of-data-possession-pdp) stores for a client and proves with the `PDPVerifier` contract. Data sets are the PDP counterpart of [sectors](#sector).
+
 ## Deal
 
 Two participants in the Filecoin network can enter into a _deal_ in which one party contracts the services of the other. The Filecoin specification currently details _storage deals_ (in which one party agrees to store data for the other for a specified length of time) and _retrieval deals_ (in which one party agrees to transmit specified data to the other).
@@ -108,7 +112,11 @@ Merkle DAGs are a fundamental component for the representation of relationships 
 
 ## Miner
 
-The Filecoin project uses the term _provider_ to refer to participants in the network who provide a service of value to a client. Other blockchains, like Ethereum and Bitcoin, use the term _miner_. At present, the Filecoin specification recognizes two provider types: [storage providers](#storage-provider) and [retrieval providers](#retrieval-provider).
+The Filecoin project uses the term _provider_ to refer to participants in the network who provide a service of value to a client. Other blockchains, like Ethereum and Bitcoin, use the term _miner_. At present, the Filecoin specification recognizes two provider types: [storage providers](#storage-provider) and [retrieval providers](#retrieval-provider). In practice, _miner_ usually refers to a PoRep storage provider and its [miner actor](#miner-actor).
+
+## Miner actor
+
+The built-in actor that represents a PoRep [storage provider](#storage-provider) on chain. It has an ID address (`f0…`), holds the provider's sectors, collateral, and [storage power](#storage-power), and receives block rewards. PDP providers don't have a miner actor.
 
 ## Pledged storage
 
@@ -117,6 +125,10 @@ Storage capacity that a provider has promised to reserve for the Filecoin networ
 ## PoRep Market
 
 On-chain contracts that match [FCSS](#filecoin-cold-storage-service-fcss) deals to storage provider offers, track provider capacity, and pay providers through Filecoin Pay according to how well they meet each deal's service levels. See the [PoRep Market contracts](https://github.com/fidlabs/porep-market).
+
+## Proof of Data Possession (PDP)
+
+A proof run by smart contracts that verifies a provider still holds specific unsealed data. Providers answer random challenges over each [data set](#data-set) with Merkle inclusion proofs. PDP doesn't create [storage power](#storage-power). See [About PDP](../../storage-providers/pdp/about.md).
 
 ## Proof-of-Storage
 
@@ -150,17 +162,23 @@ _Sealing_ is one of the fundamental building blocks of the Filecoin protocol. It
 
 Storage providers store data on behalf of the Filecoin network in fixed-size blocks of data called _sectors_.
 
+## Service Provider Registry
+
+The smart contract where PDP providers register. Each provider gets a numeric provider ID, separate from any [miner actor](#miner-actor) ID, and lists the services it offers.
+
 ## Slash
 
 When a [fault](#fault) is registered for a [sector](#sector), the Filecoin network will _slash_ the [storage provider](#storage-provider) that is supposed to be storing the sector; that is, it will assess penalties to the provider (to be paid out of the [collateral](#collateral) fronted by the provider) for their failure to uphold their pledge of storage. When slashing takes place, the power a provider earns for the associated sector is subtracted from the provider’s total power for the purposes of [election](#election).
 
 ## Storage provider
 
-A _storage provider_ is a Filecoin participant that stores data on behalf of the network. Storage providers are rewarded for this service through payments by clients that contract their services, as well as by periodic authorization to extend the Filecoin [blockchain](#blockchain) with [blocks](#block) of their own creation. When they create a block, storage providers are rewarded with newly minted [FIL](#fil), as well as the transaction fees they can levy on other participants seeking to include [messages](#message) in the block.
+A _storage provider_ is a Filecoin participant that stores data on behalf of the network. There are two kinds: PoRep providers, which run a [miner actor](#miner-actor) and earn [storage power](#storage-power), and PDP providers, which register in the [Service Provider Registry](#service-provider-registry) and are paid by the services they work for. See [Storage providers: PoRep and PDP](../../core-concepts/storage-providers.md).
+
+PoRep storage providers are rewarded for this service through payments by clients that contract their services, as well as by periodic authorization to extend the Filecoin [blockchain](#blockchain) with [blocks](#block) of their own creation. When they create a block, storage providers are rewarded with newly minted [FIL](#fil), as well as the transaction fees they can levy on other participants seeking to include [messages](#message) in the block.
 
 ## Storage power
 
-A [storage provider’s](#storage-provider) _storage power_ is a value roughly proportional to the amount of storage capacity they make available on behalf of the network via [capacity commitments](#capacity-commitment) or [storage deals](#deal). Storage power is used to select storage providers for rewards in proportion to their contributions to the total network storage capacity.
+A [storage provider’s](#storage-provider) _storage power_ is a value roughly proportional to the amount of storage capacity they make available on behalf of the network via [capacity commitments](#capacity-commitment) or [storage deals](#deal). Storage power is used to select storage providers for rewards in proportion to their contributions to the total network storage capacity. Only PoRep sectors count toward storage power. PDP data does not.
 
 ## Zero-knowledge succinct non-interactive argument of knowledge (zk-SNARK)
 

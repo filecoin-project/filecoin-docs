@@ -22,6 +22,8 @@ There are two ways to participate in Filecoin:
 * **Consensus Mining (PoRep):** the classic Filecoin sealing path: seal sectors, prove them over time, and take FIL collateral. GPU-heavy hardware and a larger operational footprint. You manage your own data business relationships.
 * **Both:** run Consensus Mining and Storage Service on one Curio cluster. See [Path C](agent-quickstart.md#path-c).
 
+PoRep providers (Consensus Mining and Cold Storage) and PDP providers (Warm Storage) have different on-chain identities, proofs, and economics. See [Storage providers: PoRep and PDP](../core-concepts/storage-providers.md).
+
 Planning to become a storage provider? Tell us about your setup in the [storage provider interest form](https://docs.google.com/forms/d/e/1FAIpQLSdTd7Znz5uJeF8f98LccjZ-q7dq9Nh861t_rFkH_kcNO6HCtw/viewform).
 
 ## Storage Service (PDP)
