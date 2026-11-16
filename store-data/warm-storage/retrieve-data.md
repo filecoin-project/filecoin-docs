@@ -58,7 +58,7 @@ When the content must be exactly right, use `filecoin get` or the SDK. If you ha
 
 ## Retrieve over IPFS
 
-Folders stored with the CLI, and content stored with Filecoin Pin, also have a root CID. Any IPFS tool or gateway can fetch them by that CID. See [Filecoin and IPFS](../../getting-started/how-storage-works/filecoin-and-ipfs.md).
+Folders stored with the CLI, and content stored with Filecoin Pin, also have a root CID. Any IPFS tool or gateway can fetch them by that CID. See [Filecoin and IPFS](../../core-concepts/filecoin-and-ipfs.md).
 
 ## Find what you stored
 

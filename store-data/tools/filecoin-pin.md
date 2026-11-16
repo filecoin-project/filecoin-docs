@@ -28,7 +28,7 @@ description: >-
 3. The upload is recorded onchain as a piece in your data set.
 4. Providers prove they still have it, and Filecoin Pay pays them as the proofs pass.
 
-For how Filecoin and IPFS fit together, see [Filecoin and IPFS](../../getting-started/how-storage-works/filecoin-and-ipfs.md).
+For how Filecoin and IPFS fit together, see [Filecoin and IPFS](../../core-concepts/filecoin-and-ipfs.md).
 
 ## Ways to use it
 
