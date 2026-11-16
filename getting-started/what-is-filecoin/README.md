@@ -23,7 +23,7 @@ description: >-
 | Preserve a large archive or dataset for years | [Filecoin Cold Storage Service](../../store-data/cold-storage/cold-storage-for-archival-data.md) |
 | Give an AI agent storage that outlasts the session | [Filecoin for Agents](../../core-concepts/filecoin-for-agents.md) |
 | Keep your IPFS content and CIDs, stored on Filecoin | [Filecoin Pin](../../store-data/tools/filecoin-pin.md) |
-| Earn by providing storage | [Provide Storage](../../storage-providers/getting-started.md) |
+| Earn by providing storage | [Provide Storage](../../provide-storage/overview.md) |
 | Build smart contracts on the Filecoin chain | [Filecoin Virtual Machine](../../core-concepts/filecoin-virtual-machine/README.md) |
 
 ## How it works, in brief
