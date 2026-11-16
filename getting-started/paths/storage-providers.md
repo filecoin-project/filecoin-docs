@@ -30,7 +30,7 @@ Warm storage and cold storage pay in USDFC, a US dollar stablecoin on Filecoin, 
 
 ## Start here
 
-* [Plan your storage provider business](../../storage-providers/getting-started.md): the options, economics, and hardware.
-* [Storage provider agent quickstart](../../storage-providers/agent-quickstart.md): from zero to running on a single page.
+* [Provide storage on Filecoin](../../provide-storage/overview.md): the options, earnings, and hardware.
+* [Provide warm storage with an agent](../../provide-storage/provide-warm-storage-with-an-agent.md): have an AI agent set up and run a provider for you.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/getting-started/paths/storage-providers)
