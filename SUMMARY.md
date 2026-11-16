@@ -17,6 +17,11 @@
 
 ## Core Concepts
 
+* [Data sets and pieces](core-concepts/data-sets-and-pieces.md)
+* [Payments and runway](core-concepts/payments-and-runway.md)
+* [Proof of Data Possession](core-concepts/proof-of-data-possession.md)
+* [Retrieval and CDN](core-concepts/retrieval-and-cdn.md)
+* [Filecoin and IPFS](core-concepts/filecoin-and-ipfs.md)
 * [Filecoin for Agents](core-concepts/filecoin-for-agents.md)
 * [Filecoin Virtual Machine](core-concepts/filecoin-virtual-machine/README.md)
   * [Actors](core-concepts/filecoin-virtual-machine/actors.md)
@@ -202,5 +207,4 @@
   * [Serving retrievals](getting-started/how-retrieval-works/serving-retrievals.md)
 * [Programming on Filecoin](getting-started/what-is-filecoin/programming-on-filecoin.md)
 * [Networks](getting-started/what-is-filecoin/networks.md)
-* [Filecoin and IPFS](getting-started/how-storage-works/filecoin-and-ipfs.md)
 * [Interplanetary consensus](getting-started/interplanetary-consensus.md)
