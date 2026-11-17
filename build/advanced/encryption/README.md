@@ -6,27 +6,23 @@ description: >-
 
 # Encryption
 
-Store private files on Filecoin while keeping control of who can read them. Client-side encryption lets storage providers hold and serve your data without access to its contents.
+Encrypt files in your application before you upload them, so your data is private from upload. Storage providers hold and serve the encrypted bytes and can prove they hold them, but cannot read them. Only someone with the key can decrypt a file.
 
-Your application encrypts each file before upload. Filecoin stores the encrypted bytes, and providers can prove they hold those bytes without decrypting them. A reader downloads the encrypted file and uses the appropriate key to restore its contents. This combines verifiable storage with confidentiality: providers can demonstrate that they are storing your data while the keys remain under your application's control.
+The encrypted bytes may be publicly retrievable, but reading your data requires the key. The owner address, keyspace identifier, and scope name stored with each file are visible without a key.
 
-Keysmith manages key derivation, recovery, and sharing. It derives file keys from a signature made by the owner's wallet. Public recovery metadata travels with each encrypted file, allowing the owner to regenerate its key using a compatible wallet rather than maintain a separate secret-key backup for every file. Your application can share access to individual files or groups of files without sharing the owner's wallet credentials.
+Use this guide if your application stores data that only selected people or services should read, such as user files or agent memory.
 
-This guide uses Keysmith to derive keys, Filecoin Encryption Envelope to encrypt and decrypt files, and the Synapse SDK to upload and retrieve the encrypted data.
-
-File contents are encrypted; public envelope metadata remains visible. Recovery requires a compatible owner wallet and access to the encrypted files.
-
-Encrypted bytes may be publicly retrievable; reading their contents requires the decryption key.
+This guide uses Keysmith to derive keys, Filecoin Encryption Envelope to encrypt and decrypt files, and the Synapse SDK to upload and retrieve the encrypted data. Keysmith derives the keys from a signature made by the owner's wallet, so the owner can derive them again with the same wallet. For how the keys work, see [Keysmith encryption keys](https://docs.filecoin.cloud/developer-guides/encryption/keysmith-encryption-keys/).
 
 ## Before you start
 
-This example uses **Node.js 24** and a dedicated owner account on **Calibration**. You'll need test FIL for transaction fees and test USDFC for storage. Follow [Get test tokens](../../developing-contracts/get-test-tokens.md) to fund the test account created below with both tokens. An upload session key cannot derive the owner's encryption keys.
+This example uses **Node.js 24** and a dedicated owner account on **Calibration**. You'll need test FIL for transaction fees and test USDFC for storage. Follow [Get test tokens](../../developing-contracts/get-test-tokens.md) to fund the test account created below with both tokens.
+
+Use the owner account, not a session key. A session key [cannot derive the owner's encryption keys](https://docs.filecoin.cloud/developer-guides/encryption/share-encrypted-data/#share-a-keyspace-or-scope-with-a-session-key).
 
 Add `@filoz/keysmith` and `filecoin-encryption-envelope` alongside your existing SDK dependencies. The setup below pins the package versions.
 
-Encrypt the file in your application before calling `synapse.storage.upload()`. Synapse uploads the bytes you provide.
-
-The complete example includes SDK initialization. When adapting it to an existing application, reuse your configured Synapse client and owner account. Key derivation and encryption belong before the upload; decryption belongs after the download.
+Synapse uploads the bytes you give it, so encrypt the file before calling `synapse.storage.upload()`. In an existing application, reuse your Synapse client and owner account: derive the key and encrypt before the upload, and decrypt after the download.
 
 The example buffers a small file, its encrypted bytes, and the decrypted result in memory. For larger files, use the [streaming encryption API](https://github.com/FilOzone/synapse-sdk/blob/master/packages/filecoin-encryption-envelope/README.md#encrypt-and-decrypt-a-stream).
 
@@ -177,12 +173,12 @@ node --env-file=.env encrypt-file.ts
 
 Success prints a PieceCID, the replica data set IDs, and a verification message. `restored.txt` matches `sample.txt` byte for byte. Keep the PieceCID and data set IDs to retrieve this upload later.
 
-Each run creates a new keyspace and new data sets. In an application, read and reuse existing data set metadata when adding files to that keyspace. Generate a fresh salt and piece key for every encryption attempt.
+Each run creates a new keyspace and new data sets. In an application, read the keyspace identifier and commitment back from the data set metadata when adding files to that keyspace, as described in [Recovery metadata](https://docs.filecoin.cloud/developer-guides/encryption/keysmith-encryption-keys/#recovery-metadata). Generate a fresh salt and piece key for every encryption attempt.
 
 ## If the example fails
 
 - **Funding or approval fails:** check the test account's FIL and USDFC balances and replenish them using the [Calibration faucets](../../developing-contracts/get-test-tokens.md#calibration-testnet).
-- **Only some copies succeed:** those copies are already stored and billed. Inspect `result.copies` and `result.failedAttempts` before retrying.
+- **Only some copies succeed:** those copies are already stored and billed. Inspect `result.copies` and `result.failedAttempts` before retrying. See [When upload returns](https://docs.filecoin.cloud/developer-guides/storage/upload-pipeline/#when-upload-returns).
 - **Decryption fails:** check that the key and envelope belong to the same keyspace. Modified or truncated encrypted data also fails authentication; do not use partial output.
 
 For recovery, sharing, and storage permissions, see [Keys and sharing](keys-and-sharing.md).
