@@ -22,7 +22,7 @@ Encrypted bytes may be publicly retrievable; reading their contents requires the
 
 This example uses **Node.js 24** and a dedicated owner account on **Calibration**. You'll need test FIL for transaction fees and test USDFC for storage. Follow [Get test tokens](../../developing-contracts/get-test-tokens.md) to fund the test account created below with both tokens. An upload session key cannot derive the owner's encryption keys.
 
-Add `@filoz/keysmith` and `filecoin-encryption-envelope` alongside your existing SDK dependencies. The setup below includes the tested versions and a required security override.
+Add `@filoz/keysmith` and `filecoin-encryption-envelope` alongside your existing SDK dependencies. The setup below pins the package versions.
 
 Encrypt the file in your application before calling `synapse.storage.upload()`. Synapse uploads the bytes you provide.
 
@@ -34,15 +34,14 @@ The example buffers a small file, its encrypted bytes, and the decrypted result 
 
 The setup commands use a POSIX shell, available on macOS, Linux, and Windows through WSL.
 
-Create an ESM project and install the packages. The override selects a [security-fixed version of Zod](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5), a validation dependency:
+Create an ESM project and install the packages:
 
 ```sh
 mkdir filecoin-encryption
 cd filecoin-encryption
 npm init -y
 npm pkg set type=module
-npm pkg set overrides.zod=4.6.6
-npm install @filoz/synapse-sdk@2.0.2 @filoz/keysmith@0.1.0 filecoin-encryption-envelope@0.1.0 viem@2.55.19
+npm install @filoz/synapse-sdk@3.0.0 @filoz/keysmith@0.1.0 filecoin-encryption-envelope@0.1.1 viem@2.57.20
 printf '.env\nnode_modules/\n' > .gitignore
 ```
 
