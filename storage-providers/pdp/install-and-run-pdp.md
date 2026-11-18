@@ -34,6 +34,8 @@ The first time you open the dashboard, it asks you to create an admin username a
 * A domain or subdomain you own
 * A little FIL to fund a wallet
 
+For production, use stable infrastructure with reliable storage, power, and network connectivity. You are holding customer data: restrict administrative access, keep the host updated, and use firewall rules to expose only the required public services. If you use a VPS, ensure it meets the same resource, durability, and security requirements.
+
 ## Start the stack
 
 Run these on the machine that’s going to be the node, from a folder on its NVMe or SSD. Use the mainnet lines to run for real, or the Calibration lines to try it on the test network first, where everything runs on free test funds:
@@ -66,7 +68,7 @@ If no admin account has been configured, create an admin username and a password
 If you are upgrading an existing installation that used HTTP without login, switch your browser URL to HTTPS and complete the admin account setup if prompted.
 
 {% hint style="warning" %}
-Open only TCP 80 and 443 on your public firewall. Port `4701` is the authenticated admin GUI for local operator access. Keep it bound to localhost and use an SSH tunnel for remote access — do not publish it to the internet.
+Open only TCP 80 and 443 on your public firewall. Port `4701` is the authenticated admin GUI for local operator access. Keep it bound to localhost and use an SSH tunnel for remote access — do not publish it to the internet. Unauthorized access to the admin GUI can expose private keys, allowing an attacker to steal funds and terminate your storage provider. HTTPS and login do not replace restricting network access to this interface.
 {% endhint %}
 
 ## The PDP Guide does the rest
