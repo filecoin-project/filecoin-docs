@@ -196,13 +196,13 @@ To stop the stack later, run `docker compose down`. Your data remains in the dir
 
 ### A5. Open the admin GUI
 
-The admin GUI listens on `127.0.0.1:4701` on the server. **It has no login.** Anyone who can reach it can manage your keys, so never expose port 4701 to the internet.
+The admin GUI listens on `127.0.0.1:4701` on the server. The GUI is HTTPS-only and asks you to create an admin username and password on first visit. Subsequent access requires login. A self-signed certificate warning is expected at the local address. Keep port 4701 bound to localhost and use SSH forwarding for remote access.
 
 From your laptop, open an SSH tunnel to the server and browse to it locally:
 
 ```sh
 ssh -fN -L 4701:127.0.0.1:4701 youruser@your-server
-# then open http://127.0.0.1:4701 in your browser
+# then open https://127.0.0.1:4701 in your browser
 ```
 
 ### A6. Attach piece storage
@@ -572,7 +572,7 @@ sudo systemctl enable --now curio.service
 systemctl status curio.service
 ```
 
-To reach the web GUI, open an SSH tunnel to port 4701 (`ssh -fN -L 4701:127.0.0.1:4701 youruser@your-server`) and browse to `http://127.0.0.1:4701`. The GUI has no login, so don't expose it publicly. To add more machines, install Curio on each one, give it the same `/etc/curio.env` with the `CURIO_LAYERS` that match its role, and start the service.
+To reach the web GUI, open an SSH tunnel to port 4701 (`ssh -fN -L 4701:127.0.0.1:4701 youruser@your-server`) and browse to `https://127.0.0.1:4701`. On first visit, create an admin username and password; subsequent access requires login. A self-signed certificate warning is expected at the local address. Keep the GUI bound to localhost and use the SSH tunnel for remote access. To add more machines, install Curio on each one, give it the same `/etc/curio.env` with the `CURIO_LAYERS` that match its role, and start the service.
 
 ### B10. Attach storage
 
