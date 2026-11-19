@@ -41,6 +41,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
     ```
     ```
 
+
 1.  ```shell
     curl -X POST 'https://api.node.glif.io/rpc/v1' \
         -H 'Content-Type: application/json' \
@@ -66,6 +67,8 @@ curl --location --request POST '<NODE_ADDRESS>' \
                     "Ticket": {
     ...
     ```
+
+For a broader view of Filecoin infrastructure providers, the [Filecoin Chain.Love API directory](https://mainnet.filecoin.chain.love/toolbox/apis) provides a network-specific catalogue for comparing public provider metadata before selecting an endpoint.
 
 ## Permissions
 
