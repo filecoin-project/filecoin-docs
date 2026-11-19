@@ -139,6 +139,12 @@ redirects:
   build/filecoin-evm-runtime/filforwarder: core-concepts/filecoin-evm-runtime/filforwarder.md
   build/filecoin-evm-runtime/how-gas-works: core-concepts/filecoin-evm-runtime/how-gas-works.md
   build/filecoin-evm-runtime/precompiles: core-concepts/filecoin-evm-runtime/precompiles.md
+  build/filecoin-for-agents/quickstart: build/filecoin-for-agents.md
+  build/filecoin-for-agents/connect-an-agent: build/filecoin-for-agents.md
+  build/filecoin-for-agents/cli: build/filecoin-for-agents.md
+  build/filecoin-for-agents/retrieve-and-verify: build/filecoin-for-agents.md
+  build/filecoin-for-agents/api-and-mcp: build/filecoin-for-agents.md
+  build/filecoin-for-agents/console-and-explorer: build/filecoin-for-agents.md
   build/advanced/filecoin-onchain-cloud: build/filecoin-onchain-cloud/README.md
   build/filecoin-onchain-cloud/getting-started: build/filecoin-onchain-cloud/synapse-quickstart.md
   build/filecoin-onchain-cloud/quick-start: build/filecoin-onchain-cloud/synapse-quickstart.md
@@ -197,6 +203,12 @@ redirects:
   builder-cookbook/filecoin-pin/faq: build/cookbook/filecoin-pin/faq.md
   builder-cookbook/filecoin-pin: build/cookbook/filecoin-pin/README.md
   build/cookbook/filecoin-pin/filecoin-pin-cli: build/cookbook/filecoin-pin/getting-started.md
+  build-on-filecoin/filecoin-for-agents/quickstart: build/filecoin-for-agents.md
+  build-on-filecoin/filecoin-for-agents/connect-an-agent: build/filecoin-for-agents.md
+  build-on-filecoin/filecoin-for-agents/cli: build/filecoin-for-agents.md
+  build-on-filecoin/filecoin-for-agents/retrieve-and-verify: build/filecoin-for-agents.md
+  build-on-filecoin/filecoin-for-agents/api-and-mcp: build/filecoin-for-agents.md
+  build-on-filecoin/filecoin-for-agents/console-and-explorer: build/filecoin-for-agents.md
   community: getting-started/community/forums-and-FIPs.md
   community/chat-and-discussion-forums: getting-started/community/forums-and-FIPs.md
   community/contribute/contribution-tutorial: getting-started/community/ways-to-contribute.md
@@ -206,6 +218,7 @@ redirects:
   community/social-media: getting-started/community/social-media.md
   community/social-media/social-media: getting-started/community/social-media.md
   contact: getting-started/community/README.md
+  core-concepts/filecoin-for-agents: build/filecoin-for-agents.md
   developers: getting-started/community/filecoin-faqs.md
   developers/infrastructure/block-explorers: networks-and-tools/networks/mainnet/explorers.md
   developers/infrastructure/chain-indexers: storage-providers/architecture/network-indexer.md

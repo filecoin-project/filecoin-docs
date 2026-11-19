@@ -33,7 +33,6 @@
 
 ## Core Concepts
 
-* [Filecoin for Agents](core-concepts/filecoin-for-agents.md)
 * [Filecoin Virtual Machine](core-concepts/filecoin-virtual-machine/README.md)
   * [Actors](core-concepts/filecoin-virtual-machine/actors.md)
   * [Addresses](core-concepts/filecoin-virtual-machine/addresses.md)
@@ -55,13 +54,7 @@
 * [Filecoin Onchain Cloud](build/filecoin-onchain-cloud/README.md)
   * [Synapse SDK quickstart](build/filecoin-onchain-cloud/synapse-quickstart.md)
   * [Filecoin Cold Storage Service](build/filecoin-onchain-cloud/fcss.md)
-* [Filecoin for Agents](build/filecoin-for-agents/README.md)
-  * [Quickstart](build/filecoin-for-agents/quickstart.md)
-  * [Connect an agent](build/filecoin-for-agents/connect-an-agent.md)
-  * [CLI](build/filecoin-for-agents/cli.md)
-  * [Retrieve and verify](build/filecoin-for-agents/retrieve-and-verify.md)
-  * [API and MCP](build/filecoin-for-agents/api-and-mcp.md)
-  * [Console and explorer](build/filecoin-for-agents/console-and-explorer.md)
+* [Filecoin for Agents (coming in Dec 🧑🏻‍🎄)](build/filecoin-for-agents.md)
 * [Development Frameworks](build/development-frameworks/README.md)
   * [Remix](build/development-frameworks/remix.md)
   * [Hardhat](build/development-frameworks/hardhat.md)
