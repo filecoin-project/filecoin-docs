@@ -59,6 +59,73 @@ A **grant** wraps a key for a recipient. Your application delivers and stores th
 
 Recipients need a local private key to unwrap grants. A browser wallet that keeps its private key inaccessible cannot unwrap one directly. Keep the complete grant alongside its key so Keysmith can check what the key covers. A bare grant does not prove who issued it; verify a received key's origin before using it for new uploads.
 
+## Share privately
+
+**Send an encrypted file or folder to one person, without writing code, using the `private-share` agent skill.** The skill drives the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin). It encrypts the data on your machine before upload, so the data is private from upload. The total size, the encrypted bytes and the on-chain record of your wallet storing them stay public. You get back a **Share link** and a separate **Access key**. The recipient needs both.
+
+To install the skill and check what you need, see [private-share](../../filecoin-for-agents/skills-catalog/private-share.md).
+
+### Send
+
+Ask your agent, for example:
+
+```text
+share ./report.pdf privately with Ana
+```
+
+A folder works the same way and becomes one share. The agent runs:
+
+```sh
+filecoin-pin add ./report.pdf --encrypt --get-share-link-restricted --egress-provider none --no-update-check
+```
+
+If the agent pays with your owner wallet, it first runs the same command with `--dry-run` and shows you the cost. Nothing uploads until you say yes. With a login, the CLI checks funding first and stops with a console funding link if the account can't pay. To see the cost in either case, ask for a dry run.
+
+Success prints a summary that includes `Root CID: <encrypted-root-cid>`, then `Add completed successfully` and the two items:
+
+```text
+Share link:
+https://viewer.filecoin.cloud/#v1/<encrypted-root-cid>&d=<...>
+
+Access key:
+fak1_<...>
+```
+
+* Send the Share link and the Access key by different channels, for example email and a chat message. Either one alone opens nothing. Whoever holds both can read the data for as long as it is stored, and a share can't be revoked.
+* Your agent's conversation history now holds the Access key. Anyone who can read that history can open the share.
+* Keep the Encrypted root CID, shown as `Root CID` in the summary. You need it to restore the upload, or to get a new link and key later by asking the agent to "make a share link for `<encrypted-root-cid>`". Making a link uploads nothing.
+* If the upload fails or stalls, don't run it again. Each run of `add --encrypt` uploads and pays again under a new CID. Let a slow upload finish. After a failure, the skill reads the output and tells you what was stored. The exception is a stop with `Account can't pay for this upload`: nothing was uploaded, so fund the account and run it again.
+
+### Open a share
+
+The recipient needs Node.js 24 or newer and `filecoin-pin` 2.3.0 or later (`npm install -g filecoin-pin@latest`). No wallet or login is needed. The recipient can also install the skill and give the link to their agent, or open the link in a browser. In a browser, the site before `#v1/` is the page the recipient trusts with the key, so a link that looks wrong should be opened with the CLI. Set the Access key without showing it on screen, paste it, and press Enter:
+
+```sh
+read -rs SHARE_ACCESS_KEY && export SHARE_ACCESS_KEY
+```
+
+Then open the share into a folder. Single-quote the link: it contains `#` and `&`.
+
+```sh
+filecoin-pin get --share '<share-link>' ./inbox --no-update-check
+```
+
+The CLI creates the folder if needed. Success ends with `Saved to` and the path of the saved file. If a file with that name exists, the CLI saves a numbered copy, such as `report(1).pdf`; it never overwrites. `get` checks every block against the CID, and decryption rejects any change, so the saved data is exactly what the link names. This proves integrity only: it does not prove who made the data.
+
+### Restore your own upload
+
+With your owner wallet or a login that can encrypt, restore an earlier encrypted upload by its Encrypted root CID:
+
+```sh
+filecoin-pin get <encrypted-root-cid> ./restored --no-update-check
+```
+
+Success ends with `Saved to` and the path. The data keeps its original name.
+
+{% hint style="info" %}
+The skill uses mainnet by default. To test on Calibration, ask the agent for it, and add `--network calibration` to every command, including the recipient's. The link doesn't name its network, so tell the recipient.
+{% endhint %}
+
 ## Permissions and access changes
 
 Holding a keyspace or scope key enables both encryption and decryption beneath it. Storage write permission is separate. When delegating uploads, align the session key's permissions with the encryption keys it receives.

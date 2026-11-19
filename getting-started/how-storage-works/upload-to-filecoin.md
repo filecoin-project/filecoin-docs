@@ -44,7 +44,7 @@ FOC also offers cold storage. The [Filecoin Cold Storage Service (FCSS)](../../b
 
 ## Filecoin Plus
 
-[Filecoin Plus](/broken/pages/ONanf0Ny7ISDeH7beMKF) is a program that subsidizes storage costs for verified clients storing useful data. Allocators vet clients and grant them DataCap tokens. When a client spends DataCap in a storage deal, the provider earns higher block rewards, which incentivizes storing verified data at reduced cost. See the [Filecoin Plus page](/broken/pages/ONanf0Ny7ISDeH7beMKF) for how the allocator process works.
+Filecoin Plus is a program that subsidizes storage costs for verified clients storing useful data. Allocators vet clients and grant them DataCap tokens. When a client spends DataCap in a storage deal, the provider earns higher block rewards, which incentivizes storing verified data at reduced cost.
 
 {% hint style="success" %}
 **Best for**: large datasets where cost efficiency is a priority.

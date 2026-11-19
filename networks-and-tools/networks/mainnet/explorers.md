@@ -21,10 +21,6 @@ Website: [filfox.info](https://filfox.info/en/)
 
 Website: [filscan.io](https://filscan.io)
 
-### Starboard
-
-Website: [fvm.starboard.ventures](https://fvm.starboard.ventures/)
-
 ### Blockscout Open-Source FEVM Explorer
 
 Website: [filecoin.blockscout.com](https://filecoin.blockscout.com/)
