@@ -39,6 +39,5 @@ Pick the tool that fits how you work, then use your session key to connect it.
 
 * **[CLI](https://github.com/filecoin-project/filecoin-pin):** store files from your terminal with Filecoin Pin.
 * **[SDK](https://docs.filecoin.cloud/getting-started/):** build storage into your app with the Synapse SDK.
-* **[Agent skill](../core-concepts/filecoin-for-agents.md):** let your AI agent store files for you.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/getting-started/quickstart)
