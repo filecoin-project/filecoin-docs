@@ -66,7 +66,7 @@ cd web3-functions-template && yarn install
 
 3. Update `index.ts` in one of the examples.
 
-The following TypeScript block is a skeleton only. It shows the shape of a Gelato Web3 Function that checks whether an oracle should be updated, then returns encoded call data. Replace the oracle ABI, input arguments, and off-chain data lookup with your application's logic. For maintained end-to-end examples, use the [Gelato Web3 Functions template](https://github.com/gelatodigital/web3-functions-template) and the [Gelato TypeScript Functions guide](https://docs.gelato.cloud/web3-functions/how-to-guides/write-typescript-functions/getting-started).
+The following TypeScript block is a skeleton only. It shows the shape of a Gelato Web3 Function that checks whether an oracle should be updated, then returns encoded call data. Replace the oracle ABI, input arguments, and off-chain data lookup with your application's logic. For maintained end-to-end examples, use the [Gelato TypeScript Functions guide](https://docs.gelato.cloud/web3-functions/how-to-guides/write-typescript-functions/getting-started).
 
 ```typescript
 import { Web3Function, Web3FunctionContext } from "@gelatonetwork/web3-functions-sdk";
@@ -131,5 +131,3 @@ For a detailed guide on creating and deploying Web3 Functions, including setting
 #### **Further Resources**
 
 * [Gelato Web3 Functions Docs](https://docs.gelato.cloud/web3-functions/how-to-guides/write-typescript-functions/getting-started)
-* [Gelato Web3 Functions template](https://github.com/gelatodigital/web3-functions-template)
-* [Gelato Web3 Functions examples](https://github.com/gelatodigital/how-tos-3-w3f-triggers)

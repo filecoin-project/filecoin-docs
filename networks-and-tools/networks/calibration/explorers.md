@@ -22,8 +22,4 @@ https://calibration.filscan.io/
 
 https://filecoin-testnet.blockscout.com
 
-## Starboard
-
-https://fvm.starboard.ventures/
-
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/networks-and-tools/networks/calibration/explorers)
