@@ -34,6 +34,7 @@
 ## Core Concepts
 
 * [Filecoin for Agents](core-concepts/filecoin-for-agents.md)
+* [Storage providers: PoRep and PDP](core-concepts/storage-providers.md)
 * [Filecoin Virtual Machine](core-concepts/filecoin-virtual-machine/README.md)
   * [Actors](core-concepts/filecoin-virtual-machine/actors.md)
   * [Addresses](core-concepts/filecoin-virtual-machine/addresses.md)

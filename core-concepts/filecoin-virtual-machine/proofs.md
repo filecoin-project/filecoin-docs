@@ -29,6 +29,8 @@ In Filecoin, this process is known as _Proof-of-Storage_, and consists of two di
 * [Proof of Replication (PoRep)](#proof-of-replication-porep): a procedure used at the time of initial data storage to validate that an SP has _created and stored_ a unique copy of some piece of data.
 * [Proof of Spacetime (PoST)](#proof-of-spacetime-post): a procedure to validate that an SP is _continuing to store_ a unique copy of some piece of data.
 
+Filecoin also supports [Proof of Data Possession (PDP)](../../storage-providers/pdp/about.md), which runs in smart contracts instead of the built-in actors. PDP proves that a provider still holds unsealed data, but it doesn't create storage power and is not used for consensus. See [Storage providers: PoRep and PDP](../storage-providers.md).
+
 ## Proof-of-Replication (PoRep)
 
 In the Filecoin storage lifecycle process, _Proof-of-Replication (PoRep)_ is used when an SP agrees to store data on behalf of a client and receives a piece of client data. In this process:

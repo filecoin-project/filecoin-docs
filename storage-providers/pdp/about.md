@@ -19,6 +19,8 @@ The protocol works in four steps:
 
 PDP is a core component of [Filecoin Onchain Cloud (FOC)](../../build/filecoin-onchain-cloud/README.md). Within FOC, the Filecoin Warm Storage Service (FWSS) uses PDP to verify provider availability and Filecoin Pay uses PDP results to adjust payments automatically.
 
+A PDP provider is not a miner. It registers in a smart contract instead of running a miner actor, has no storage power, and earns storage fees instead of block rewards. See [Storage providers: PoRep and PDP](../../core-concepts/storage-providers.md).
+
 ## When to use PDP
 
 * You need verifiable proof that your data is stored and available.
