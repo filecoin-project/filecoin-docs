@@ -6,50 +6,47 @@ description: >-
 
 # Keys and sharing
 
-Keysmith manages recoverable keys for encrypted files. The Filecoin Encryption Envelope library uses those keys to encrypt and decrypt file contents. Both run in your application before upload and after retrieval.
+Keysmith derives every encryption key from one signature made by the owner's wallet.
 
-Start with [Encryption](README.md) for the complete storage example.
+Start with [Encryption](README.md) for a working example.
 
 ## Keyspaces and scopes
 
-A **keyspace** is an application-chosen identifier for a tree of encryption keys. Keysmith derives its root key from the owner's wallet signature. Its identifier is independent of data set and provider identifiers, so copying an encrypted piece to another provider does not change its key.
+* A **keyspace** is an identifier your application chooses for one tree of keys. Its root key comes from the owner's wallet signature. The identifier does not depend on a data set or provider, so every copy of a piece opens with the same key.
+* A **scope** groups pieces within a keyspace. Scopes nest with `/`: a holder of the `app-data` key can derive the key for `app-data/notes`, but not for a parent or sibling scope.
+* Each **piece** gets its own key, derived from a random salt. Generate a fresh salt for every encrypted object, including a replacement for an existing file.
 
-An **encryption scope** groups pieces within a keyspace. Scopes can contain other scopes: a holder of `app-data` can derive keys for `app-data/notes`, but a holder of `app-data/notes` cannot derive keys for its parent or sibling scopes.
+Settle your scope names before you write data:
 
-Each **piece** gets its own key, derived from its scope key and a random salt. Generate a fresh salt and key for every new encrypted object, including a replacement for an existing file. A piece can also belong directly to the keyspace without a scope.
+* The scope path is part of the key. Names are case-sensitive, and renaming or moving a scope changes the keys beneath it.
+* Scope names are stored unencrypted with each piece. Use opaque identifiers when a descriptive name would reveal something sensitive.
 
-Scope paths affect key derivation. Keep identifiers stable, use `/` for nesting, and remember that case matters. Renaming or moving a scope changes its keys. Use opaque identifiers when descriptive names would expose sensitive information.
+For the full model and examples, see [A tree of keys](https://docs.filecoin.cloud/developer-guides/encryption/keysmith-encryption-keys/#a-tree-of-keys) and [Fine-tuning access to encryption keys](https://docs.filecoin.cloud/developer-guides/encryption/keysmith-encryption-keys/#fine-tuning-access-to-encryption-keys).
 
 ## Recovery metadata
 
-Encryption keys stay off chain. The application supplies two kinds of public metadata:
+Encryption keys stay off chain. Two public records let the owner find the right key again:
 
-| Location | What it records | Purpose |
-| --- | --- | --- |
-| Each piece's envelope | Owner, keyspace, scope, and salt | Identify the key needed to decrypt that piece. |
-| Data set metadata | Keyspace identifier and a public commitment | Select keys for new writes and check a recovered key. |
+* Each piece's envelope records the owner, keyspace, scope, and salt. It travels with the encrypted bytes.
+* Data set metadata records the keyspace identifier and a public commitment used to check a recovered key.
 
-Generate the envelope entries with [`pieceMetadata()`](https://github.com/FilOzone/synapse-sdk/blob/master/packages/keysmith/README.md#api). Pass the data set entries explicitly through the SDK's `metadata` option; Synapse does not derive or add them automatically.
+Synapse does not add the data set entries for you. Pass them through the SDK's `metadata` option, as the [example](README.md#encrypt-upload-and-decrypt) does. Anyone can read both records, so do not put secrets in them.
 
-The envelope travels with the encrypted piece and identifies its keyspace. Scope names, owner addresses, and salts are visible without a key. Do not put secrets in these fields.
+For the fields and the code that writes them, see [Recovery metadata](https://docs.filecoin.cloud/developer-guides/encryption/keysmith-encryption-keys/#recovery-metadata).
 
 ## Recover keys
 
-Recovery requires the owner's wallet, a compatible signer that produces the same signature for the same message, and access to the encrypted bytes and their envelopes. It cannot recover a lost wallet or missing stored data.
+Recovery needs the owner's wallet and the encrypted bytes. It cannot recover a lost wallet or deleted data.
 
-A compatible externally owned account (EOA) wallet can sign without exposing its private key. Keysmith requires ECDSA owner signatures; smart-contract accounts cannot initialize a keyspace.
+* The wallet must be an externally owned account (EOA) that produces the same signature every time it signs the same message. Smart-contract accounts cannot create a keyspace.
+* Approve key-derivation requests only in applications you trust. Anyone who obtains that signature can derive every key in the keyspace.
+* Pass the commitment from the data set metadata when you have it. The wallet then signs once, and Keysmith rejects a key that does not match. Without a commitment, the wallet signs twice.
 
-Approve key-derivation requests only in applications you trust; anyone who obtains that signature can derive the keyspace's keys.
-
-Read the keyspace from the piece's envelope and check that its owner matches the account you expect. Call [`keyspaceKeys()`](https://github.com/FilOzone/synapse-sdk/blob/master/packages/keysmith/README.md#api) with that keyspace and owner. Use a data set's commitment only when its keyspace matches the one in the envelope.
-
-With a commitment, Keysmith signs once and checks the derived key against it. Without one, it signs twice to check deterministic signing.
-
-Pass the recovered key to [`keyResolver()`](https://github.com/FilOzone/synapse-sdk/blob/master/packages/keysmith/README.md#api) when decrypting. Keysmith derives the piece key from that piece's metadata, even if its copy has moved to another data set.
+For the steps and code, see [Recover keys](https://docs.filecoin.cloud/developer-guides/encryption/keysmith-encryption-keys/#recover-keys).
 
 ## Share access
 
-A **grant** wraps a key for a recipient. Your application delivers and stores the grant; issuing one does not require rewriting the encrypted piece or storing a key on chain.
+To share encrypted data, give the recipient a key wrapped in a **grant**. Your application delivers and stores the grant. Nothing is written on chain, and the encrypted piece does not change.
 
 | Key shared | What the recipient can decrypt |
 | --- | --- |
@@ -57,12 +54,17 @@ A **grant** wraps a key for a recipient. Your application delivers and stores th
 | Scope key | Pieces in that scope and its descendants, including future pieces. |
 | Piece key | One piece. Keysmith refuses piece grants for writing new objects. |
 
-Recipients need a local private key to unwrap grants. A browser wallet that keeps its private key inaccessible cannot unwrap one directly. Keep the complete grant alongside its key so Keysmith can check what the key covers. A bare grant does not prove who issued it; verify a received key's origin before using it for new uploads.
+* A shared key cannot be taken back and does not expire. Share the narrowest key that does the job.
+* The recipient needs a local private key to open a grant. A browser wallet that keeps its private key inaccessible cannot open one directly.
+* Keep the complete grant with its key. Keysmith uses the grant to check what the key covers.
+* A grant does not prove who issued it. Check that it names the owner and keyspace you expect before you encrypt new data with its key.
+
+For the code, see [Share a keyspace or scope with a session key](https://docs.filecoin.cloud/developer-guides/encryption/share-encrypted-data/#share-a-keyspace-or-scope-with-a-session-key), [Encrypt and decrypt with a received grant](https://docs.filecoin.cloud/developer-guides/encryption/share-encrypted-data/#encrypt-and-decrypt-with-a-received-grant), and [Share one piece](https://docs.filecoin.cloud/developer-guides/encryption/share-encrypted-data/#share-one-piece).
 
 ## Permissions and access changes
 
-Holding a keyspace or scope key enables both encryption and decryption beneath it. Storage write permission is separate. When delegating uploads, align the session key's permissions with the encryption keys it receives.
+A keyspace or scope key lets its holder both encrypt and decrypt beneath it. Permission to store data is separate: a session key that uploads encrypted data needs [storage permissions](https://docs.filecoin.cloud/developer-guides/session-keys/#permissions) as well as a grant. Keep the two aligned.
 
-Revoking a session key does not erase encryption keys already shared. Creating a child scope also leaves an ancestor-key holder with access. To exclude that holder from new versions, create a new keyspace and re-encrypt the content with new keys. Previously shared keys and copies remain usable.
+Revoking a session key does not remove encryption keys already shared, and creating a child scope leaves an ancestor-key holder with access. To exclude a key holder from new versions of your data, create a new keyspace and encrypt the new versions with its keys. Keys and copies shared earlier remain usable. See [Limits](https://docs.filecoin.cloud/developer-guides/encryption/share-encrypted-data/#limits).
 
-For API details, see [Keysmith](https://github.com/FilOzone/synapse-sdk/blob/master/packages/keysmith/README.md#api) and the [encryption envelope](https://github.com/FilOzone/synapse-sdk/blob/master/packages/filecoin-encryption-envelope/README.md).
+For API details, see the [Keysmith reference](https://docs.filecoin.cloud/reference/filoz/keysmith/toc/) and the [encryption envelope](https://github.com/FilOzone/synapse-sdk/blob/master/packages/filecoin-encryption-envelope/README.md).
