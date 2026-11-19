@@ -19,7 +19,7 @@ The skill drives the [Filecoin Pin CLI](https://github.com/filecoin-project/file
 {% code overflow="wrap" %}
 ```text
 Help me save and share this agent session on Filecoin by following this page:
-https://docs.filecoin.io/build-on-filecoin/filecoin-for-agents/skills-catalog/session-share.md
+https://docs.filecoin.io/build-on-filecoin/skills/session-share.md
 
 1. Install the session-share skill and the Filecoin Pin CLI.
 2. This skill runs on mainnet by default and spends real tokens. Show me the cost before each upload.
@@ -34,7 +34,7 @@ https://docs.filecoin.io/build-on-filecoin/filecoin-for-agents/skills-catalog/se
 
 * Node.js 24 or newer
 * `filecoin-pin` 2.3.0 or later
-* To save a session: a funded Filecoin account, with FIL for transaction fees and USDFC for storage. See [Wallets](../../../networks-and-tools/assets/wallets.md)
+* To save a session: a funded Filecoin account, with FIL for transaction fees and USDFC for storage. See [Wallets](../../networks-and-tools/assets/wallets.md)
 * To save, share, or restore your own sessions: a login that can encrypt
 * To restore a session someone shared with you: this skill, Node.js and `filecoin-pin`. No wallet or login
 * An agent that can run shell commands, such as Claude Code or Codex
@@ -57,6 +57,6 @@ The skill runs on mainnet by default. To test on Calibration, ask the agent for 
 
 3. **Ask the agent to save the session.** Say "save this session". The agent asks whether to include files and the transcript, shows you the handoff, then uploads it. Its reply starts with `Session saved`.
 
-To share the session and restore it in another agent, follow [Save, share and restore a session](../share-a-session.md). For the skill's full safety rules and limits, see its [README](https://github.com/filecoin-project/filecoin-skills/blob/main/skills/session-share/README.md).
+To share the session and restore it in another agent, follow [Save, share and restore a session](share-a-session.md). For the skill's full safety rules and limits, see its [README](https://github.com/filecoin-project/filecoin-skills/blob/main/skills/session-share/README.md).
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build-on-filecoin/filecoin-for-agents/skills-catalog/session-share)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build-on-filecoin/skills/session-share)

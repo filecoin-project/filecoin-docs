@@ -6,7 +6,7 @@ description: >-
 
 # Save, share and restore a session
 
-**Save your agent session as an encrypted handoff on Filecoin, share it with another agent, and restore it there.** The [`session-share`](skills-catalog/session-share.md) skill does each step when you ask. It encrypts the save on your machine before upload, so the data is private from upload. The total size, the encrypted bytes and the on-chain record of your wallet storing them stay public. It drives the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin).
+**Save your agent session as an encrypted handoff on Filecoin, share it with another agent, and restore it there.** The [`session-share`](session-share.md) skill does each step when you ask. It encrypts the save on your machine before upload, so the data is private from upload. The total size, the encrypted bytes and the on-chain record of your wallet storing them stay public. It drives the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin).
 
 {% hint style="warning" %}
 **Preview.** The skill runs on mainnet by default. To test on Calibration, ask the agent for it, and pass `--network calibration` on every command, on both sides. A Share link doesn't name its network, so tell the recipient.
@@ -21,7 +21,7 @@ npx skills add filecoin-project/filecoin-skills --skill session-share
 npm install -g filecoin-pin@latest
 ```
 
-The skills installer ends with `Installed 1 skill` and puts the skill in `./.agents/skills/session-share`. To save sessions, you also need a funded account and a login that can encrypt: follow steps 2 and 3 in [private-share](skills-catalog/private-share.md#steps). Restoring a session someone shared with you needs neither.
+The skills installer ends with `Installed 1 skill` and puts the skill in `./.agents/skills/session-share`. To save sessions, you also need a funded account and a login that can encrypt: follow steps 2 and 3 in [private-share](private-share.md#steps). Restoring a session someone shared with you needs neither.
 
 ## Save a session
 
@@ -118,4 +118,4 @@ The agent reads `~/.filecoin-share/sessions.json`, picks the newest save for the
 * `No provider serves <cid> over IPFS. If it was uploaded in the last few minutes, try again in about 20 minutes`: the upload is new or the network is wrong. Wait a few minutes and retry. If it keeps failing, check that both sides use the same network.
 * `Account can't pay for this upload` or `Insufficient FIL for gas fees`: nothing was uploaded. Fund the account in the [Filecoin Pay Console](https://pay.filecoin.cloud/console), or on Calibration from the [faucets](../developing-contracts/get-test-tokens.md#calibration-testnet). On Calibration, add `--network calibration` to any command the CLI suggests.
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build-on-filecoin/filecoin-for-agents/share-a-session)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build-on-filecoin/skills/share-a-session)

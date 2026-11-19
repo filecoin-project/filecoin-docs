@@ -8,7 +8,7 @@ description: >-
 
 **The `private-share` skill lets an agent send an encrypted file or folder to one person, and open shares you receive.** This page walks you through installing the skill and sending your first share.
 
-The skill drives the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin). To run the CLI yourself, see the commands in [Share privately](../../advanced/encryption/keys-and-sharing.md#share-privately).
+The skill drives the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin). To run the CLI yourself, see the commands in [Share privately](../advanced/encryption/keys-and-sharing.md#share-privately).
 
 {% hint style="warning" %}
 **Preview.** This skill may change. The source is in [filecoin-project/filecoin-skills](https://github.com/filecoin-project/filecoin-skills/tree/main/skills/private-share).
@@ -19,7 +19,7 @@ The skill drives the [Filecoin Pin CLI](https://github.com/filecoin-project/file
 {% code overflow="wrap" %}
 ```text
 Help me share a file privately on Filecoin by following this page:
-https://docs.filecoin.io/build-on-filecoin/filecoin-for-agents/skills-catalog/private-share.md
+https://docs.filecoin.io/build-on-filecoin/skills/private-share.md
 
 1. Install the private-share skill and the Filecoin Pin CLI.
 2. This skill runs on mainnet by default and spends real tokens. Show me the cost before each upload.
@@ -34,7 +34,7 @@ https://docs.filecoin.io/build-on-filecoin/filecoin-for-agents/skills-catalog/pr
 
 * Node.js 24 or newer
 * `filecoin-pin` 2.3.0 or later
-* To send: a funded Filecoin account, with FIL for transaction fees and USDFC for storage, and a login that can encrypt. See [Wallets](../../../networks-and-tools/assets/wallets.md)
+* To send: a funded Filecoin account, with FIL for transaction fees and USDFC for storage, and a login that can encrypt. See [Wallets](../../networks-and-tools/assets/wallets.md)
 * To open a share you received: only Node.js and `filecoin-pin`. No wallet or login
 * An agent that can run shell commands, such as Claude Code or Codex
 {% endhint %}
@@ -74,6 +74,6 @@ The skill runs on mainnet by default. To test on Calibration, ask the agent for 
 
 4. **Ask the agent to share something.** Say "share ./report.pdf privately with Ana". The upload ends with `Add completed successfully`, and the agent hands back a Share link and an Access key. Send them by different channels.
 
-What comes back, how the recipient opens it, and how to restore your own upload are in [Share privately](../../advanced/encryption/keys-and-sharing.md#share-privately). For the skill's full safety rules and limits, see its [README](https://github.com/filecoin-project/filecoin-skills/blob/main/skills/private-share/README.md).
+What comes back, how the recipient opens it, and how to restore your own upload are in [Share privately](../advanced/encryption/keys-and-sharing.md#share-privately). For the skill's full safety rules and limits, see its [README](https://github.com/filecoin-project/filecoin-skills/blob/main/skills/private-share/README.md).
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build-on-filecoin/filecoin-for-agents/skills-catalog/private-share)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/build-on-filecoin/skills/private-share)

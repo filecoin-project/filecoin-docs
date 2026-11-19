@@ -63,7 +63,7 @@ Recipients need a local private key to unwrap grants. A browser wallet that keep
 
 **Send an encrypted file or folder to one person, without writing code, using the `private-share` agent skill.** The skill drives the [Filecoin Pin CLI](https://github.com/filecoin-project/filecoin-pin). It encrypts the data on your machine before upload, so the data is private from upload. The total size, the encrypted bytes and the on-chain record of your wallet storing them stay public. You get back a **Share link** and a separate **Access key**. The recipient needs both.
 
-To install the skill and check what you need, see [private-share](../../filecoin-for-agents/skills-catalog/private-share.md).
+To install the skill and check what you need, see [private-share](../../skills/private-share.md).
 
 ### Send
 
