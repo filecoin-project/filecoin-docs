@@ -52,7 +52,7 @@ This demo dapp supports two authentication methods:
 
 If you are using your own wallet, you need to get test FIL and test USDFC to pay for the Filecoin storage service and transactions.
 
-1. Create or use an existing Filecoin wallet on the **Calibration testnet** ([such as MetaMask](../../../networks-and-tools/assets/metamask-setup.md)).
+1. Create or use an existing Filecoin wallet on the **Calibration testnet** ([such as MetaMask](../../../protocol/fil/wallets.md)).
 2. Visit the [Filecoin Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html) to get free test FIL (to pay for transaction gas).
 3. Visit the [Filecoin USDFC faucet](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc) to get test USDFC, which is a USD stablecoin backed by FIL that can be used to pay for services.
 

@@ -39,7 +39,7 @@ A few patterns come up often when agents use FC:
 
 Before you start, make sure you have:
 
-* **An Ethereum-style wallet on Filecoin.** See [Wallets](../networks-and-tools/assets/wallets.md). You'll use it to approve access from a browser, not to hand a key to the agent.
+* **An Ethereum-style wallet on Filecoin.** See [Wallets](../protocol/fil/wallets.md). You'll use it to approve access from a browser, not to hand a key to the agent.
 * **FIL in that wallet,** to cover transaction fees.
 * **USDFC in that wallet,** to pay for storage. USDFC is Filecoin Cloud's storage-payment stablecoin. 5 USDFC is enough to start.
 * **Node.js 24 or later.**

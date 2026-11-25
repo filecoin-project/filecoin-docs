@@ -39,10 +39,10 @@ After you have a working contract, Filecoin supports deeper integrations. [Oracl
 
 | Resource | Description |
 |----------|-------------|
-| [Networks](../networks-and-tools/networks/README.md) | Mainnet, Calibration testnet, and local development |
-| [Metamask setup](../networks-and-tools/assets/metamask-setup.md) | Connect your wallet to Filecoin |
-| [FEVM vs Ethereum](../core-concepts/filecoin-evm-runtime/difference-with-ethereum.md) | Key differences for Ethereum developers |
-| [How gas works](../core-concepts/filecoin-evm-runtime/how-gas-works.md) | Filecoin gas model for transaction planning |
+| [Networks](../protocol/networks/README.md) | Mainnet, Calibration testnet, and local development |
+| [Metamask setup](../protocol/fil/wallets.md) | Connect your wallet to Filecoin |
+| [FEVM vs Ethereum](../protocol/fvm/filecoin-evm-runtime.md) | Key differences for Ethereum developers |
+| [How gas works](../protocol/fvm/gas.md) | Filecoin gas model for transaction planning |
 | [Support](developing-contracts/support.md) | Where to get help |
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/build/getting-started)

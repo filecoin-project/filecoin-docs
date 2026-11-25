@@ -19,6 +19,6 @@ This section covers advanced integrations and services available to smart contra
 * [Relay](relay.md) — meta-transactions that let users interact without paying gas
 * [Decentralized databases](decentralized-databases.md) — store application data using Tableland on Filecoin
 * [Privacy and access control](privacy-and-access-control.md) — tools for managing data access and privacy
-* [Interplanetary consensus](../../getting-started/interplanetary-consensus.md) — scalable consensus for cross-chain communication
+* [Interplanetary consensus](../../protocol/fvm/legacy/interplanetary-consensus.md) — scalable consensus for cross-chain communication
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/build/advanced)
