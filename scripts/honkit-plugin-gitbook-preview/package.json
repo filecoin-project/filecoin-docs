@@ -1,0 +1,8 @@
+{
+  "name": "honkit-plugin-gitbook-preview",
+  "version": "0.0.0",
+  "private": true,
+  "description": "GitBook-like theme and blocks for local HonKit previews. Hosted GitBook does not use this.",
+  "main": "index.js",
+  "engines": { "honkit": ">=6" }
+}

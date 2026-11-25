@@ -1,6 +1,7 @@
 {
+  "title": "Filecoin Docs",
   "structure": {
     "readme": "WELCOME.md"
   },
-  "plugins": ["filecoin", "-highlight", "-search", "-lunr"]
+  "plugins": ["gitbook-preview", "-fontsettings", "-highlight", "-search", "-lunr"]
 }

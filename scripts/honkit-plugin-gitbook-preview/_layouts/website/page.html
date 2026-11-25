@@ -1,0 +1,75 @@
+{% macro tree(articles) %}
+  {% for a in articles %}
+  {% set open = page.level and (page.level + ".").indexOf(a.level + ".") == 0 %}
+  <li class="{% if a.path == file.path and not a.anchor %}active {% endif %}{% if open %}open{% endif %}">
+    <div class="nav-row">
+      {% if a.path and getPageByPath(a.path) %}<a href="{{ a.path|resolveFile }}{{ a.anchor }}">{{ a.title }}</a>
+      {% elif a.url %}<a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
+      {% else %}<span>{{ a.title }}</span>{% endif %}
+      {% if a.articles.length %}<button class="nav-toggle" aria-label="Toggle {{ a.title }}"></button>{% endif %}
+    </div>
+    {% if a.articles.length %}<ul>{{ tree(a.articles) }}</ul>{% endif %}
+  </li>
+  {% endfor %}
+{% endmacro %}
+<!DOCTYPE html>
+<html lang="{{ config.language or 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ config.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <script>
+    (function () {
+      var t;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  {% for resource in plugins.resources.css %}
+  <link rel="stylesheet" href="{% if resource.url %}{{ resource.url }}{% else %}{{ resource.path|resolveAsset }}{% endif %}">
+  {% endfor %}
+</head>
+<body>
+  <header class="site-header">
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <a class="site-title" href="{{ '/'|resolveFile }}">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#0090ff"/><text x="16" y="22" font-size="18" text-anchor="middle" fill="#fff">⨎</text></svg>
+      {{ config.title }}
+    </a>
+    <span class="preview-badge">Local preview</span>
+    <button class="theme-toggle" aria-label="Switch between light and dark">◐</button>
+  </header>
+  {% if page.cover and not (page.layout and page.layout.cover and page.layout.cover.visible == false) %}
+  {% set cover = page.cover %}
+  {% endif %}
+  <div class="site">
+    <aside class="sidebar"><nav aria-label="Pages">
+      {% for part in summary.parts %}
+      {% if part.title %}<div class="nav-heading">{{ part.title }}</div>{% endif %}
+      <ul>{{ tree(part.articles) }}</ul>
+      {% endfor %}
+    </nav></aside>
+    <div class="page{% if cover %} has-cover{% endif %}">
+      {% if cover %}<img class="cover" src="{{ cover }}" alt="">{% endif %}
+      <div class="page-columns">
+        <main>
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <article class="content" {% if page.description %}data-description="{{ page.description }}"{% endif %}>
+            {{ page.content|safe }}
+          </article>
+          <nav class="pager" aria-label="Previous and next">
+            {% if page.previous and page.previous.path %}<a class="prev" href="{{ page.previous.path|resolveFile }}"><small>Previous</small>{{ page.previous.title }}</a>{% endif %}
+            {% if page.next and page.next.path %}<a class="next" href="{{ page.next.path|resolveFile }}"><small>Next</small>{{ page.next.title }}</a>{% endif %}
+          </nav>
+        </main>
+        <aside class="toc" aria-label="On this page"></aside>
+      </div>
+    </div>
+  </div>
+  {% for resource in plugins.resources.js %}
+  <script src="{% if resource.url %}{{ resource.url }}{% else %}{{ resource.path|resolveAsset }}{% endif %}"></script>
+  {% endfor %}
+</body>
+</html>
