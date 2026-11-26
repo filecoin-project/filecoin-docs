@@ -250,7 +250,7 @@ curl -X POST -H 'Content-Type: application/json'
 
 Use [WalletSign](https://lotus.filecoin.io/reference/lotus/wallet/#walletsign) to sign the message and send the signed message using [MpoolPush](https://lotus.filecoin.io/reference/lotus/mpool/#mpoolpush).
 
-You may also use this [Filecoin signing tool library](../general/tools.md).
+You may also use this [Filecoin signing tool library](../tools.md).
 
 ### How do I retrieve the gas fees of a message?
 

@@ -22,7 +22,7 @@ When a storage provider fails to answer to the WindowsPoSt challenges within the
 
 ## Commit Pledge
 
-The amount of required collateral depends on the amount of storage pledged to the Filecoin network. The bigger volume you store, the more collateral is required. Additionally, Filecoin Plus uses a [QAP](../../reference/general/glossary.md#quality-adjusted-storage-power) multiplier to increase the collateral requirement. See [Verified Deals with Filecoin Plus](../filecoin-deals/verified-deals.md) for more information.
+The amount of required collateral depends on the amount of storage pledged to the Filecoin network. The bigger volume you store, the more collateral is required. Additionally, Filecoin Plus uses a [QAP](../../reference/glossary.md#quality-adjusted-storage-power) multiplier to increase the collateral requirement. See [Verified Deals with Filecoin Plus](../filecoin-deals/verified-deals.md) for more information.
 
 The formula for the required collateral is as follows:
 

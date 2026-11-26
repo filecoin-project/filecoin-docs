@@ -26,7 +26,7 @@ PDP is a core component of [Filecoin Onchain Cloud (FOC)](../../build/filecoin-o
 
 ## What PDP replaces
 
-PDP replaces older programmatic storage patterns built around direct Deal Client contracts and RaaS. Those workflows are preserved as [legacy reference material](../../reference/general/legacy-content.md) only.
+PDP replaces older programmatic storage patterns built around direct Deal Client contracts and RaaS. Those workflows are preserved as [legacy reference material](../../store-data/README.md) only.
 
 ## Getting started
 

@@ -34,7 +34,7 @@ Each block in the Filecoin chain contains the following:
 
 ### State tree
 
-A [Merkle Directed Acyclic Graph (Merkle DAG)](../../reference/general/glossary.md#merkle-directed-acyclic-graph) is used to map the state tree and the set of messages. Nodes in the state tree contain information on:
+A [Merkle Directed Acyclic Graph (Merkle DAG)](../../reference/glossary.md#merkle-directed-acyclic-graph) is used to map the state tree and the set of messages. Nodes in the state tree contain information on:
 
 * Actors, like FIL balance, nonce, and a pointer (CID) to actor state data.
 * Messages in the current block

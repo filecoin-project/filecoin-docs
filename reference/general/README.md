@@ -99,7 +99,7 @@ Check out the [documentation website](https://filecoin.hugomrdias.dev/) for more
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
 * [Chain.love](https://lotus.filecoin.io/lotus/developers/chain-love/) - A hosted endpoint to Filecoin mainnet and testnet. Note: as of Q1 2023, Infura no longer supports Filecoin.
-  * The GLIF endpoint supports read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using [tools like Filsnap](./tools.md)).
+  * The GLIF endpoint supports read-only calls and `MPoolPush()` for sending signed transactions to the network (which can be signed using [tools like Filsnap](../tools.md)).
 * [**Lotus JSON-RPC API**](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/) - Lotus offers the full feature set of its capabilities through API.
   * [lotus API Postman sample](https://documenter.getpostman.com/view/4872192/SWLh5mUd?version=latest) - (shows sample wallet calls only)
 
