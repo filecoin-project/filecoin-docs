@@ -36,7 +36,7 @@ Before contributing to the Filecoin docs, please read these quick guides; they'l
 2. [Writing guide](ways-to-contribute.md#writing-guide)
 3. [GitBook documentation guide](ways-to-contribute.md#gitbook-documentation)
 
-If you have never contributed to an open-source project before, or just need a refresher, take a look at the [contribution tutorial](ways-to-contribute.md#contribution-tutorial).
+If you have never contributed to an open-source project before, or just need a refresher, take a look at the [GitHub guide to contributing to a project](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project).
 
 #### Community
 

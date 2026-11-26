@@ -17,3 +17,9 @@ https://docs.gelato.cloud
 # app.goldsky.com loads in browsers and curl, but lychee's HTTP client fails
 # every request with "HTTP/2 protocol error" (verified 2026-11 with lychee 0.24).
 https://app.goldsky.com
+
+# GitBook keeps dots in heading IDs ("Filecoin vs. ..." -> "#filecoin-vs.-..."),
+# and the live site uses exactly these IDs, but lychee's fragment check drops
+# the dot and reports them missing. The links are correct.
+filecoin-compared-to\.md#filecoin-vs\.-amazon-s3-google-cloud-storage
+filecoin-compared-to\.md#filecoin-tokens-fil-vs\.-bitcoin-tokens-btc
