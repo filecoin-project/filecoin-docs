@@ -6,8 +6,9 @@
 // `code` for every fenced block. So page:before parses the tags, renders each
 // block to HTML and leaves a placeholder; page swaps the HTML back in after
 // Markdown has run.
+const fs = require("fs");
+const { execFileSync } = require("child_process");
 const path = require("path").posix;
-const hljs = require("highlight.js");
 const katex = require("katex");
 
 const esc = (s) =>
@@ -120,7 +121,7 @@ function plainText(text, hold) {
       const after = text.slice(at + whole.length).match(/^[^\n]*/)[0];
       const displayMode = !before.trim() && !after.trim();
       const html = katex
-        .renderToString(tex.trim(), { output: "mathml", displayMode, throwOnError: false })
+        .renderToString(tex.trim(), { displayMode, throwOnError: false })
         .replace(/<annotation[\s\S]*?<\/annotation>/g, "");
       return displayMode ? `\n${before}${hold("block", `<div class="gb-math">${html}</div>`)}\n` : hold("inline", html);
     })
@@ -172,6 +173,16 @@ const fileName = (url) => {
   }
 };
 
+function fileSize(src, env) {
+  if (/^[a-z]+:/i.test(src)) return "";
+  try {
+    const { size } = fs.statSync(env.book.resolve(path.join(path.dirname(env.page.path), decodeURIComponent(src))));
+    return size < 1e3 ? `${size}B` : size < 1e6 ? `${Math.round(size / 1e3)}KB` : `${Math.round(size / 1e6)}MB`;
+  } catch {
+    return "";
+  }
+}
+
 // GitBook shows the title of the linked page.
 function pageTitle(url, env) {
   if (/^[a-z]+:/i.test(url)) return undefined;
@@ -181,17 +192,78 @@ function pageTitle(url, env) {
   return article && article.title;
 }
 
-const HINT_ICONS = { info: "i", warning: "!", danger: "!", success: "✓" };
+const icon = (shapes) =>
+  `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${shapes}</svg>`;
+// GitBook icons are Font Awesome Pro. This uses the free set, as close as it
+// gets to the "regular" style of docs.filecoin.io, or nothing.
+const FA = path.dirname(require.resolve("@fortawesome/fontawesome-free/package.json"));
+const faIcons = {};
+function faIcon(name) {
+  if (!/^[a-z0-9-]+$/.test(name || "")) return "";
+  if (faIcons[name] === undefined) {
+    const files = ["regular", "solid", "brands"].map((style) => path.join(FA, "svgs", style, `${name}.svg`));
+    const file = files.find((f) => fs.existsSync(f));
+    faIcons[name] = file ? fs.readFileSync(file, "utf8").trim().replace("<svg", '<svg class="gb-icon" aria-hidden="true"') : "";
+  }
+  return faIcons[name];
+}
+
+const FA_STYLES = /^fa-(solid|regular|light|thin|duotone|brands|sharp.*)$/;
+function addIcons(html, pageIcon) {
+  return html
+    .replace(/<i class="([^"]*)"[^>]*>[^<]*<\/i>/g, (whole, classes) => {
+      const name = classes.split(/\s+/).find((c) => c.startsWith("fa-") && !FA_STYLES.test(c));
+      return (name && faIcon(name.slice(3))) || whole;
+    })
+    .replace(/<(?:a|button)\b[^>]*\bdata-icon="([^"]*)"[^>]*>/g, (tag, name) => tag + faIcon(name))
+    .replace(/<h1([^>]*)>([\s\S]*?)<\/h1>/, (whole, attrs, title) => (pageIcon ? `<h1${attrs}>${pageIcon}<span>${title}</span></h1>` : whole));
+}
+
+// Path -> icon from the front matter, for the title and the sidebar.
+function pageIcons(book) {
+  const icons = {};
+  book.summary.walk(({ path: file }) => {
+    if (!file) return;
+    try {
+      const matter = fs.readFileSync(book.resolve(file), "utf8").match(/^---\r?\n([\s\S]*?)\r?\n---/);
+      const icon = matter && matter[1].match(/^icon:\s*["']?([\w-]+)/m);
+      if (icon && faIcon(icon[1])) icons[file] = faIcon(icon[1]);
+    } catch {
+      // Not a file in the repository.
+    }
+  });
+  return icons;
+}
+
+const ICONS = {
+  file: icon('<path d="M9 1.5H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8zM9 1.5v4h4"/>'),
+  download: icon('<path d="M8 1.5v9M4.5 7 8 10.5 11.5 7M2 11v2a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-2"/>'),
+  open: icon('<path d="M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9M9.5 1.5h5v5M14.5 1.5 7.5 8.5"/>'),
+  copy: icon('<rect x="5.5" y="1.5" width="8.5" height="9.5" rx="1"/><path d="M10.5 13.5a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1"/>'),
+  prompt: icon('<rect x="1" y="2" width="14" height="12" rx="1.5"/><path d="m4 5.5 2.5 2.5L4 10.5M8 10.5h4"/>'),
+};
+const HINT_ICONS = {
+  info: icon('<circle cx="8" cy="8" r="7"/><path d="M6.7 7.3h1.5v3.5M6.5 10.9h3.2M8 4.9v.1"/>'),
+  success: icon('<circle cx="8" cy="8" r="7"/><path d="m5.2 8.2 2 2 3.6-4"/>'),
+  warning: icon('<circle cx="8" cy="8" r="7"/><path d="M8 4.4v4.2M8 11.2v.1"/>'),
+  danger: icon('<path d="M8 1.8 15 14H1z"/><path d="M8 6.2v3.4M8 11.8v.1"/>'),
+};
+
+const DATES = {
+  full: { year: "numeric", month: "long", day: "numeric" },
+  short: { year: "numeric", month: "short", day: "numeric" },
+  numeric: { year: "numeric", month: "numeric", day: "numeric" },
+};
 
 const BLOCKS = {
   async hint({ attrs, children }, env) {
     const style = attrs.style in HINT_ICONS ? attrs.style : "info";
-    return `<div class="hint hint-${style}"><div class="hint-icon">${HINT_ICONS[style]}</div><div class="hint-content">${await body(children, env)}</div></div>`;
+    return `<div class="hint hint-${style}"><div class="hint-icon">${faIcon(attrs.icon) || HINT_ICONS[style]}</div><div class="hint-content">${await body(children, env)}</div></div>`;
   },
   async tabs(node, env) {
     const tabs = await items(node, "tab", env);
     const active = (i) => (i === 0 ? " active" : "");
-    const header = tabs.map((t, i) => `<button class="tab${active(i)}" role="tab" aria-selected="${i === 0}">${esc(t.attrs.title || `Tab ${i + 1}`)}</button>`);
+    const header = tabs.map((t, i) => `<button class="tab${active(i)}" role="tab" aria-selected="${i === 0}">${faIcon(t.attrs.icon)}${esc(t.attrs.title || `Tab ${i + 1}`)}</button>`);
     const panes = tabs.map((t, i) => `<div class="tab-content${active(i)}" role="tabpanel">${t.html}</div>`);
     return `<div class="tabs-container"><div class="tabs-header" role="tablist">${header.join("")}</div><div class="tabs-body">${panes.join("")}</div></div>`;
   },
@@ -203,32 +275,44 @@ const BLOCKS = {
   async embed({ attrs, children }, env) {
     const url = attrs.url || "";
     const id = youtubeId(url);
+    const [, host, rest] = url.match(/^\w+:\/\/(?:www\.)?([^/?#]+)\/?(.*)/) || [null, "", url];
     const main = id
       ? `<iframe src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen></iframe>`
-      : `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a>`;
+      : `<a class="gb-ref" href="${esc(url)}" target="_blank" rel="noopener"><span><small>${esc(host)}</small>${esc(rest || host)}</span></a>`;
     const caption = await body(children, env);
-    return `<div class="embed-container ${id ? "youtube" : "generic"}">${main}${caption && `<div class="embed-caption">${caption}</div>`}</div>`;
+    return `<div class="embed-container${id ? " youtube" : ""}">${main}${caption && `<div class="caption">${caption}</div>`}</div>`;
   },
   async file({ attrs, children }, env) {
     const src = attrs.src || "";
-    return `<div class="gb-card"><a href="${esc(src)}" download>📎 ${esc(fileName(src))}</a>${await body(children, env)}</div>`;
+    const name = fileName(src);
+    const info = [path.extname(name).slice(1).toUpperCase(), fileSize(src, env)].filter(Boolean).join(" · ");
+    const caption = await body(children, env);
+    return (
+      `<div class="gb-file"><div class="gb-file-card"><span class="gb-file-icon">${ICONS.file}</span>` +
+      `<div class="gb-file-name"><a href="${esc(src)}" target="_blank" rel="noopener">${esc(name)}</a><small>${info}</small></div>` +
+      `<a class="gb-button" href="${esc(src)}" download>${ICONS.download}Download</a>` +
+      `<a class="gb-button" href="${esc(src)}" target="_blank" rel="noopener">${ICONS.open}Open</a></div>` +
+      `${caption && `<div class="caption">${caption}</div>`}</div>`
+    );
   },
   async "content-ref"({ attrs, children }, env) {
     const url = attrs.url || "";
-    const title = pageTitle(url, env);
-    const html = await body(children, env);
-    const link = !title && /<a /.test(html) ? html : `<a href="${esc(url)}">${esc(title || url)}</a>`;
-    return `<div class="gb-card gb-ref">${link}</div>`;
+    const label = (await body(children, env)).replace(/<[^>]+>/g, "").trim();
+    return `<a class="gb-ref" href="${esc(url)}"><span>${esc(pageTitle(url, env) || "") || label || esc(url)}</span></a>`;
   },
   async prompt({ attrs, children }, env) {
     const open = attrs.defaultExpanded ? " open" : "";
-    return `<details class="gb-prompt"${open}><summary>${esc(attrs.description || "Prompt")}</summary>${await body(children, env)}</details>`;
+    // Prompts are shown as written.
+    const text = dedent(children.map((c) => c.text ?? c.code ?? "").join(""));
+    const prompt = text.replace(/^(`{3,}|~{3,})[^\n]*\n([\s\S]*?)\n?\1$/, "$2");
+    const copy = `<button class="gb-button" data-copy>${ICONS.copy}Copy prompt</button>`;
+    return `<details class="gb-prompt"${open}><summary>${faIcon(attrs.icon) || ICONS.prompt}<span>${esc(attrs.description || "Prompt")}</span>${copy}</summary><pre>${esc(prompt)}</pre></details>`;
   },
   async details({ attrs, children }, env) {
     const summary = children.find((c) => c.name === "summary");
     const rest = children.filter((c) => c !== summary);
     const title = summary ? (await body(summary.children, env)).replace(/^<p>([\s\S]*)<\/p>\s*$/, "$1") : "Details";
-    return `<details class="gb-details"${attrs.open ? " open" : ""}><summary>${title}</summary>${await body(rest, env)}</details>`;
+    return `<details class="gb-details"${attrs.open ? " open" : ""}><summary>${title}</summary><div class="gb-body">${await body(rest, env)}</div></details>`;
   },
   async stepper(node, env) {
     const steps = (await items(node, "step", env)).map(
@@ -238,16 +322,26 @@ const BLOCKS = {
   },
   async columns(node, env) {
     const columns = (await items(node, "column", env)).map(({ attrs, html }) => {
-      const width = /^[\d.]+(%|px)$/.test(attrs.width || "") ? ` style="flex: 0 1 ${attrs.width}"` : "";
-      return `<div class="gb-column gb-body"${width}>${html}</div>`;
+      // GitBook snaps columns to a 12-part grid.
+      const percent = /^[\d.]+%$/.test(attrs.width || "") ? parseFloat(attrs.width) : 50;
+      return { html, span: Math.min(11, Math.max(1, Math.round((percent * 12) / 100))), sized: Boolean(attrs.width) };
     });
-    return `<div class="gb-columns">${columns.join("")}</div>`;
+    // Columns without a width share what is left.
+    const free = columns.filter((c) => !c.sized);
+    const left = 12 - columns.reduce((sum, c) => sum + (c.sized ? c.span : 0), 0);
+    const span = (c) => (c.sized ? c.span : Math.max(1, Math.round(left / free.length)));
+    return `<div class="gb-columns">${columns
+      .map((c) => `<div class="gb-column gb-body" style="--span: ${span(c)}">${c.html}</div>`)
+      .join("")}</div>`;
   },
   async updates(node, env) {
     const updates = (await items(node, "update", env)).map(({ attrs, html }) => {
       const tags = (attrs.tags || "").split(",").map((t) => t.trim()).filter(Boolean);
-      const pills = tags.map((t) => `<span class="gb-tag">${esc(t)}</span>`).join("");
-      return `<div class="gb-update"><div class="gb-update-meta"><time>${esc(attrs.date)}</time>${pills}</div><div class="gb-body">${html}</div></div>`;
+      const pills = tags.map((t) => `<span class="gb-tag">${esc(t[0].toUpperCase() + t.slice(1))}</span>`).join("");
+      const date = new Date(`${attrs.date}T00:00Z`);
+      const style = DATES[node.attrs.format] || DATES.full;
+      const shown = isNaN(date) ? attrs.date : date.toLocaleDateString("en-US", { ...style, timeZone: "UTC" });
+      return `<div class="gb-update"><div class="gb-update-meta"><time>${esc(shown)}</time>${pills && `<div class="gb-tags">${pills}</div>`}</div><div class="gb-body">${html}</div></div>`;
     });
     return `<div class="gb-updates">${updates.join("")}</div>`;
   },
@@ -262,7 +356,61 @@ async function renderNode(node, env) {
   return `<div class="gb-warning">Not supported in local preview: ${esc(node.name)} block</div>${await body(node.children, env)}`;
 }
 
+/* ---------- Code highlighting ---------- */
+
+// Shiki with CSS variables, as GitBook does. Colours are in theme.css.
+let shiki;
+async function highlight(code, language) {
+  shiki ??= import("shiki");
+  const { bundledLanguages, codeToTokensBase, createCssVariablesTheme } = await shiki;
+  if (!(language in bundledLanguages)) return undefined;
+  if (!highlight.theme) {
+    const theme = (highlight.theme = createCssVariablesTheme());
+    const rule = (name, scope) => ({ scope, settings: { foreground: `var(--shiki-token-${name})` } });
+    theme.tokenColors.push(
+      // Shell flags, pipes and quotes, coloured as on docs.filecoin.io.
+      rule("constant", ["constant.other.option"]),
+      rule("punctuation", ["keyword.operator.pipe", "keyword.operator.redirect", "keyword.operator.logical.shell", "punctuation.definition.string"])
+    );
+  }
+  const lines = await codeToTokensBase(code.replace(/\n$/, ""), { lang: language, theme: highlight.theme });
+  return lines
+    .map((line) => {
+      const tokens = line.map(({ content, color }) =>
+        !color || color === "var(--shiki-foreground)" ? esc(content) : `<span style="color:${color}">${esc(content)}</span>`
+      );
+      return `<span class="line">${tokens.join("")}</span>`;
+    })
+    .join("\n");
+}
+
 /* ---------- Plugin ---------- */
+
+const FONTS = {
+  "inter.woff2": "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
+  "inter-italic.woff2": "@fontsource-variable/inter/files/inter-latin-wght-italic.woff2",
+  "plex-mono.woff2": "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2",
+  "plex-mono-bold.woff2": "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-700-normal.woff2",
+};
+
+// Path -> date of the last commit that changed it. Commits without parents are
+// skipped: in a shallow clone they list every file, whenever it changed.
+function lastUpdated(root) {
+  const dates = {};
+  let log;
+  try {
+    const args = ["-c", "core.quotePath=false", "log", "--format=%x00%cI %p", "--name-only", "--relative", "--", "*.md"];
+    log = execFileSync("git", args, { cwd: root, encoding: "utf8", maxBuffer: 1 << 28, stdio: ["ignore", "pipe", "ignore"] });
+  } catch {
+    return dates;
+  }
+  for (const commit of log.split("\0").slice(1)) {
+    const [head, ...files] = commit.split("\n");
+    const [date, parent] = head.split(" ");
+    if (parent) for (const file of files) if (file) dates[file] ??= date;
+  }
+  return dates;
+}
 
 const stashes = new Map();
 
@@ -270,13 +418,26 @@ module.exports = {
   book: { assets: "./assets", css: ["theme.css"], js: ["theme.js"] },
   blocks: {
     // HonKit calls this for every code element, inline ones included.
-    code: function ({ body, kwargs = {} }) {
-      const language = (kwargs.language || "").replace(/^(console|shell-session)$/, "shell");
-      if (!hljs.getLanguage(language)) return { body, html: false };
-      return { body: hljs.highlight(body, { language, ignoreIllegals: true }).value, html: true };
+    code: async function ({ body, kwargs = {} }) {
+      const html = kwargs.language && (await highlight(body, kwargs.language.toLowerCase()));
+      return html ? { body: html, html: true } : { body, html: false };
     },
   },
   hooks: {
+    init: function () {
+      this.config.set("pluginsConfig.gitbook-preview.updated", lastUpdated(this.resolve("")));
+      this.config.set("pluginsConfig.gitbook-preview.icons", pageIcons(this));
+    },
+    "finish:before": function () {
+      const dir = path.join(this.output.root(), "gitbook/fonts");
+      fs.mkdirSync(dir, { recursive: true });
+      for (const name in FONTS) fs.copyFileSync(require.resolve(FONTS[name]), path.join(dir, name));
+      const katexDir = path.join(this.output.root(), "gitbook/katex");
+      fs.cpSync(path.dirname(require.resolve("katex/dist/katex.min.css")), katexDir, {
+        recursive: true,
+        filter: (src) => /dist$|fonts$|katex\.min\.css$|\.woff2$/.test(src),
+      });
+    },
     "page:before": async function (page) {
       const stash = [];
       stashes.set(page.path, stash);
@@ -286,7 +447,8 @@ module.exports = {
       return page;
     },
     page: function (page) {
-      page.content = fill(page.content, stashes.get(page.path) || []);
+      const icons = this.config.get("pluginsConfig.gitbook-preview.icons", {});
+      page.content = addIcons(fill(page.content, stashes.get(page.path) || []), icons[page.path]);
       return page;
     },
   },

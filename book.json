@@ -3,5 +3,37 @@
   "structure": {
     "readme": "WELCOME.md"
   },
-  "plugins": ["gitbook-preview", "-fontsettings", "-highlight", "-search", "-lunr"]
+  "plugins": ["gitbook-preview", "-fontsettings", "-highlight", "-search", "-lunr"],
+  "pluginsConfig": {
+    "gitbook-preview": {
+      "footer": [
+        {
+          "title": "Basics",
+          "links": [
+            { "title": "Overview", "href": "#" },
+            { "title": "Crypto-economics", "href": "getting-started/what-is-filecoin/crypto-economics.md" },
+            { "title": "Storage model", "href": "getting-started/what-is-filecoin/storage-model.md" },
+            { "title": "Reference", "href": "reference/general/README.md" }
+          ]
+        },
+        {
+          "title": "Developers",
+          "links": [
+            { "title": "The FVM", "href": "#" },
+            { "title": "EVM-runtime", "href": "#" },
+            { "title": "Quickstart", "href": "build/developing-contracts/erc-20-quickstart.md" },
+            { "title": "Transfer FIL", "href": "networks-and-tools/assets/transfer-fil.md" }
+          ]
+        },
+        {
+          "title": "Contact",
+          "links": [
+            { "title": "GitHub", "href": "https://github.com/filecoin-project" },
+            { "title": "Slack", "href": "https://filecoin.io/slack" },
+            { "title": "Twitter", "href": "https://twitter.com/Filecoin" }
+          ]
+        }
+      ]
+    }
+  }
 }
