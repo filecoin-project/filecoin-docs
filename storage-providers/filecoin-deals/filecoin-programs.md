@@ -6,7 +6,7 @@ description: >-
 
 # Filecoin programs and tools
 
-Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know_your_customer)) to create verified deals for [Filecoin Plus](/broken/pages/ONanf0Ny7ISDeH7beMKF), there are also programs and platforms that make it easier for storage providers to receive verified deals.
+Although it is possible to find your own data storage customers with valuable datasets they want to store, and have them verified through KYC ([Know Your Customer](https://en.wikipedia.org/wiki/Know_your_customer)) to create verified deals for [Filecoin Plus](verified-deals.md), there are also programs and platforms that make it easier for storage providers to receive verified deals.
 
 ## [Web3.storage](https://web3.storage/)
 
@@ -42,7 +42,7 @@ Many other programs and tools exist in the Filecoin community, developed by part
 
 Akave is revolutionizing data management with a decentralized, modular solution that combines the robust storage of Filecoin with cutting-edge encryption and easy-to-use interfaces. Read more on the [Akave Docs](https://docs.akave.ai/).
 
-### [CIDGravity](https://www.cidgravity.com/)
+### [CIDGravity](https://docs.cidgravity.com/)
 
 [![Read the doc](https://img.shields.io/badge/docs-cidgravity.com-blue?style=for-the-badge)](https://docs.cidgravity.com) [![Join Slack](https://img.shields.io/badge/join-Slack-purple?style=for-the-badge)](https://filecoinproject.slack.com/archives/C04SCAG37FH)
 
