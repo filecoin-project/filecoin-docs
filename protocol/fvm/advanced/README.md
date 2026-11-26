@@ -1,14 +1,14 @@
 ---
 description: >-
   Index of tools and services for FVM developers: wrapped FIL, oracles,
-  multicall, multisig, indexers, bridges, automation and relay.
+  multicall, multisig, indexers and bridges.
 ---
 
 # FVM advanced
 
 **These guides cover the tools and services you can combine with contracts on the Filecoin Virtual Machine. Each page explains what a tool does, lists the contract addresses on Mainnet and Calibration, and links to the tool's own documentation.**
 
-Most of these pages describe third-party services, so check each service's own documentation before you rely on it. The Oracles, FEVM indexers and Cross-chain bridges pages are pending a review of whether they are still current.
+Most of these pages describe third-party services, so check each service's own documentation before you rely on it.
 
 | Page | What it covers |
 | --- | --- |
@@ -18,8 +18,6 @@ Most of these pages describe third-party services, so check each service's own d
 | [Multisig](multisig.md) | Wallets that need several approvals to send a transaction |
 | [FEVM indexers](fevm-indexers.md) | Query chain data without running a node |
 | [Cross-chain bridges](cross-chain-bridges.md) | Move assets between Filecoin and other networks |
-| [Contract automation](contract-automation.md) | Trigger contract calls on a schedule or on an event |
-| [Relay](relay.md) | Let users send transactions without paying gas |
 
 For storage, retrieval and payments from a contract, see [Filecoin Cloud](../../../store-data/overview/filecoin-cloud.md).
 
