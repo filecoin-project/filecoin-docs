@@ -1,18 +1,20 @@
 ---
-last-updated: 2025-05-08T00:00:00.000Z
 description: >-
-  Authoritative definitions and proper usage for all Filecoin terminology,
-  including sectors, storage providers, sealing, and blockchain concepts. The
-  definitive reference for understanding Filecoin tec
+  Definitions of Filecoin terms, from Filecoin Cloud storage and payments to
+  sectors, proofs and the blockchain.
 ---
 
 # Glossary
 
-This comprehensive glossary provides definitions for all Filecoin terminology, including detailed explanations of sectors, storage mechanisms, and network roles. Use this as your definitive reference for understanding Filecoin technical concepts.
+**Definitions of Filecoin terms**, from Filecoin Cloud storage and payments to sectors, proofs and network roles.
 
 ## Address
 
 In the Filecoin network, an _address_ is a unique cryptographic value that serves to publicly identify a user. This value, a public key, is paired with a corresponding private key. The mathematical relationship between the two keys is such that access to the private key allows the creation of a signature that can be verified with the public key. Filecoin specifically employs the Boneh–Lynn–Shacham (BLS) signature scheme for this purpose.
+
+## Archival storage
+
+Sealed storage for large datasets, proven with [PoRep](#proof-of-replication-porep), offered through [FCSS](#filecoin-cold-storage-service-fcss).
 
 ## Block
 
@@ -26,13 +28,17 @@ Fundamentally, a _blockchain_ is a system of record in which new records, or [bl
 
 The _height_ of a [block](#block) corresponds to the number of [epochs](#epoch) elapsed before the block was added to the blockchain. The height of the Filecoin [blockchain](#blockchain) is defined to be the maximum height of any block in the blockchain.
 
+## Calibration Testnet
+
+Filecoin's test network. FIL there is free.
+
 ## Capacity commitment
 
 If a storage provider doesn’t find any available deal proposals appealing, they can alternatively make a _capacity commitment_, filling a [sector](#sector) with arbitrary data, rather than with client data. Maintaining this sector allows the storage provider to provably demonstrate that they are reserving space on behalf of the network.
 
 ## CommP
 
-The commitment phase of the Proof-of-Replication (PoRep) process. PoRep is a mechanism used to verify that a storage provider is storing data on behalf of a client by requiring the provider to prove that they have replicated the client’s data to their storage space.
+Another name for [PieceCID](#piececid): the ID of a piece, made from its content.
 
 ## Content IDentifier (CID)
 
@@ -41,6 +47,14 @@ A self-describing format for referencing data in distributed information systems
 ## Collateral
 
 In order to enter into a [storage deal](#deal), a [storage provider](#storage-provider) is required to provide [FIL](#fil) as _collateral_, to be paid out as compensation to a client in the event that the provider fails to uphold their storage commitment.
+
+## Curio
+
+The software storage providers run.
+
+## Data set
+
+A group of [pieces](#piece) one provider stores and proves together.
 
 ## Deal
 
@@ -70,13 +84,25 @@ When a [storage provider](#storage-provider) fails to complete [Window Proof-of-
 
 The term _Filecoin_ is used generically to refer to the Filecoin project, protocol, and network.
 
+## Filecoin Cloud
+
+Filecoin's storage service: warm storage ([FWSS](#filecoin-warm-storage-service-fwss)), archival storage ([FCSS](#filecoin-cold-storage-service-fcss)) and payments ([Filecoin Pay](#filecoin-pay)), all onchain.
+
 ## Filecoin Cold Storage Service (FCSS)
 
-The cold storage service of [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md). Storage providers seal client datasets with [Proof-of-Replication](#proof-of-replication-porep) under deals matched by the [PoRep Market](#porep-market), with service-level terms the client sets. See [Filecoin Cold Storage Service](../../build/filecoin-onchain-cloud/fcss.md).
+The archival storage service of [Filecoin Cloud](../store-data/README.md). Storage providers seal client datasets with [Proof-of-Replication](#proof-of-replication-porep) under deals matched by the [PoRep Market](#porep-market), with service-level terms the client sets. See [Cold storage for archival data](../store-data/cold-storage/cold-storage-for-archival-data.md).
+
+## Filecoin Pay
+
+The contract that holds payers' funds and pays providers through [payment rails](#payment-rail).
+
+## Filecoin Pin
+
+A tool that stores IPFS content on Filecoin Cloud.
 
 ## Filecoin Warm Storage Service (FWSS)
 
-The warm storage service of [Filecoin Onchain Cloud](../../build/filecoin-onchain-cloud/README.md). Storage providers keep client data unsealed for fast retrieval, and prove they hold it with Proof of Data Possession (PDP).
+The warm storage service of [Filecoin Cloud](../store-data/README.md). Storage providers keep client data unsealed for fast retrieval, and prove they hold it with [Proof of Data Possession (PDP)](#proof-of-data-possession-pdp).
 
 ## Finality
 
@@ -85,6 +111,10 @@ Finality refers to the immutability of messages and state recorded to the Fileco
 ## Gas
 
 _Gas_ is a property of a [message](#message), corresponding to the resources involved in including that message in a given [block](#block). For each message included in a block, the block’s creator extracts a fee from the message’s sender; this fee is proportional to the message’s gas.
+
+## Lockup
+
+Funds held back so a provider is still paid for a time after a [payment rail](#payment-rail) ends.
 
 ## Mainnet
 
@@ -110,6 +140,18 @@ Merkle DAGs are a fundamental component for the representation of relationships 
 
 The Filecoin project uses the term _provider_ to refer to participants in the network who provide a service of value to a client. Other blockchains, like Ethereum and Bitcoin, use the term _miner_. At present, the Filecoin specification recognizes two provider types: [storage providers](#storage-provider) and [retrieval providers](#retrieval-provider).
 
+## Payment rail
+
+A payment stream from a payer to a provider at a set rate.
+
+## Piece
+
+One stored item in a [data set](#data-set), such as a file.
+
+## PieceCID
+
+The ID of a [piece](#piece), made from its content. It is the same as [CommP](#commp).
+
 ## Pledged storage
 
 Storage capacity that a provider has promised to reserve for the Filecoin network via [Proof-of-Replication](#proof-of-replication-porep) is termed _pledged storage_.
@@ -117,6 +159,10 @@ Storage capacity that a provider has promised to reserve for the Filecoin networ
 ## PoRep Market
 
 On-chain contracts that match [FCSS](#filecoin-cold-storage-service-fcss) deals to storage provider offers, track provider capacity, and pay providers through Filecoin Pay according to how well they meet each deal's service levels. See the [PoRep Market contracts](https://github.com/fidlabs/porep-market).
+
+## Proof of Data Possession (PDP)
+
+A check where a provider answers random challenges to show it still holds the data.
 
 ## Proof-of-Storage
 
@@ -150,6 +196,10 @@ _Sealing_ is one of the fundamental building blocks of the Filecoin protocol. It
 
 Storage providers store data on behalf of the Filecoin network in fixed-size blocks of data called _sectors_.
 
+## Session key
+
+A key you approve to upload for your wallet. It can't move funds.
+
 ## Slash
 
 When a [fault](#fault) is registered for a [sector](#sector), the Filecoin network will _slash_ the [storage provider](#storage-provider) that is supposed to be storing the sector; that is, it will assess penalties to the provider (to be paid out of the [collateral](#collateral) fronted by the provider) for their failure to uphold their pledge of storage. When slashing takes place, the power a provider earns for the associated sector is subtracted from the provider’s total power for the purposes of [election](#election).
@@ -161,6 +211,14 @@ A _storage provider_ is a Filecoin participant that stores data on behalf of the
 ## Storage power
 
 A [storage provider’s](#storage-provider) _storage power_ is a value roughly proportional to the amount of storage capacity they make available on behalf of the network via [capacity commitments](#capacity-commitment) or [storage deals](#deal). Storage power is used to select storage providers for rewards in proportion to their contributions to the total network storage capacity.
+
+## USDFC
+
+A US dollar stablecoin on Filecoin, used to pay for storage.
+
+## Warm storage
+
+Storage you can download from right away, proven with [PDP](#proof-of-data-possession-pdp).
 
 ## Zero-knowledge succinct non-interactive argument of knowledge (zk-SNARK)
 
@@ -190,6 +248,8 @@ By basing its blockchain on tipsets, Filecoin can allow multiple [storage provid
 
 To further incentivize the storage of “useful” data over simple [capacity commitments](#capacity-commitment), [storage providers](#storage-provider) have the additional opportunity to compete for special [deals](#deal) offered by [verified clients](#verified-client). Such clients are certified with respect to their intent to offer deals involving the storage of meaningful data, and the power a storage provider earns for these deals is augmented by a multiplier.
 
+Filecoin Plus, the program that certified verified clients, ended with the Solstice upgrade in October 2026.
+
 ## Window Proof-of-Spacetime (WindowPoSt)
 
 _Window Proof-of-Spacetime_ (WindowPoSt) is the mechanism by which the commitments made by [storage providers](#storage-provider) are audited. It sees each 24 hour period broken down into a series of windows. Correspondingly, each storage provider’s set of pledged [sectors](#sector) is partitioned into subsets, one subset for each window. Within a given window, each storage provider must submit a [Proof-of-Spacetime](#proof-of-spacetime-post) for each sector in their respective subset. This requires ready access to each of the challenged sectors, and will result in a proof compressed via [zk-SNARK](#zero-knowledge-succinct-non-interactive-argument-of-knowledge-zk-snark) being published to the Filecoin [blockchain](#blockchain) as a [message](#message) in a [block](#block). In this way, every sector of [pledged storage](#pledged-storage) is audited at least once in any 24 hour period, and a permanent, verifiable, and public record attesting to each storage provider’s continued commitment is kept.
@@ -202,4 +262,4 @@ _Winning Proof-of-Spacetime_ (WinningPoSt) is the mechanism by which [storage pr
 
 Storage providers who fail to do this in the necessary window will forfeit their opportunity to mine a block, but will not otherwise incur penalties for their failure to do so.
 
-[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/reference/general/glossary)
+[Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill_Page+URL=https://docs.filecoin.io/reference/glossary)
