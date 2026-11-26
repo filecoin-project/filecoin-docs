@@ -3,7 +3,7 @@
   {% set open = page.level and (page.level + ".").indexOf(a.level + ".") == 0 %}
   <li class="{% if a.path == file.path and not a.anchor %}active {% endif %}{% if open %}open{% endif %}">
     <div class="nav-row">
-      {% if a.path and getPageByPath(a.path) %}<a href="{{ a.path|resolveFile }}{{ a.anchor }}">{{ a.title }}</a>
+      {% if a.path and getPageByPath(a.path) %}<a href="{{ a.path|resolveFile }}{{ a.anchor }}">{% if not a.anchor %}{{ config.pluginsConfig["gitbook-preview"].icons[a.path]|safe }}{% endif %}{{ a.title }}</a>
       {% elif a.url %}<a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
       {% else %}<span>{{ a.title }}</span>{% endif %}
       {% if a.articles.length %}<button class="nav-toggle" aria-label="Toggle {{ a.title }}"></button>{% endif %}
@@ -12,6 +12,7 @@
   </li>
   {% endfor %}
 {% endmacro %}
+{% set preview = config.pluginsConfig["gitbook-preview"] or {} %}
 <!DOCTYPE html>
 <html lang="{{ config.language or 'en' }}">
 <head>
@@ -23,23 +24,24 @@
     (function () {
       var t;
       try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      document.documentElement.dataset.theme = t;
+      // docs.filecoin.io opens in light mode unless the reader picks another.
+      if (t === "system") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t === "dark" ? "dark" : "light";
     })();
   </script>
+  <link rel="icon" type="image/png" href="{{ 'honkit-plugin-gitbook-preview/logo.png'|resolveAsset }}">
   {% for resource in plugins.resources.css %}
   <link rel="stylesheet" href="{% if resource.url %}{{ resource.url }}{% else %}{{ resource.path|resolveAsset }}{% endif %}">
   {% endfor %}
+  {% if 'class="katex' in page.content %}<link rel="stylesheet" href="{{ 'katex/katex.min.css'|resolveAsset }}">{% endif %}
 </head>
 <body>
   <header class="site-header">
     <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
     <a class="site-title" href="{{ '/'|resolveFile }}">
-      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#0090ff"/><text x="16" y="22" font-size="18" text-anchor="middle" fill="#fff">⨎</text></svg>
+      <img src="{{ 'honkit-plugin-gitbook-preview/logo.png'|resolveAsset }}" width="32" height="32" alt="">
       {{ config.title }}
     </a>
-    <span class="preview-badge">Local preview</span>
-    <button class="theme-toggle" aria-label="Switch between light and dark">◐</button>
   </header>
   {% if page.cover and not (page.layout and page.layout.cover and page.layout.cover.visible == false) %}
   {% set cover = page.cover %}
@@ -50,7 +52,7 @@
       {% if part.title %}<div class="nav-heading">{{ part.title }}</div>{% endif %}
       <ul>{{ tree(part.articles) }}</ul>
       {% endfor %}
-    </nav></aside>
+    </nav><div class="preview-badge">Local preview</div></aside>
     <div class="page{% if cover %} has-cover{% endif %}">
       {% if cover %}<img class="cover" src="{{ cover }}" alt="">{% endif %}
       <div class="page-columns">
@@ -60,14 +62,34 @@
             {{ page.content|safe }}
           </article>
           <nav class="pager" aria-label="Previous and next">
-            {% if page.previous and page.previous.path %}<a class="prev" href="{{ page.previous.path|resolveFile }}"><small>Previous</small>{{ page.previous.title }}</a>{% endif %}
-            {% if page.next and page.next.path %}<a class="next" href="{{ page.next.path|resolveFile }}"><small>Next</small>{{ page.next.title }}</a>{% endif %}
+            {% if page.previous and page.previous.path %}<a class="prev" href="{{ page.previous.path|resolveFile }}"><span><small>Previous</small>{{ page.previous.title }}</span></a>{% endif %}
+            {% if page.next and page.next.path %}<a class="next" href="{{ page.next.path|resolveFile }}"><span><small>Next</small>{{ page.next.title }}</span></a>{% endif %}
           </nav>
+          {% set updated = preview.updated[file.path] %}
+          {% if updated %}<p class="last-updated">Last updated <time datetime="{{ updated }}">{{ updated }}</time></p>{% endif %}
         </main>
         <aside class="toc" aria-label="On this page"></aside>
       </div>
     </div>
   </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img class="footer-logo" src="{{ 'honkit-plugin-gitbook-preview/logo.png'|resolveAsset }}" width="48" height="48" alt="{{ config.title }}">
+      <div class="theme-switch" role="group" aria-label="Theme">
+        <button data-theme-value="light" aria-label="Light"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="2.6"/><path d="M8 1.5v1.2M8 13.3v1.2M1.5 8h1.2M13.3 8h1.2M3.4 3.4l.9.9M11.7 11.7l.9.9M3.4 12.6l.9-.9M11.7 4.3l.9-.9"/></svg></button>
+        <button data-theme-value="system" aria-label="System"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="1.8" y="2.5" width="12.4" height="8.5" rx="1.2"/><path d="M5 13.8h6M8 11v2.6"/></svg></button>
+        <button data-theme-value="dark" aria-label="Dark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M9.8 2A6.1 6.1 0 1 0 14 10.6 5 5 0 0 1 9.8 2z"/></svg></button>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        {% for group in preview.footer %}
+        <div>
+          <h4>{{ group.title }}</h4>
+          {% for link in group.links %}<a href="{% if getPageByPath(link.href) %}{{ link.href|resolveFile }}{% else %}{{ link.href }}{% endif %}">{{ link.title }}</a>{% endfor %}
+        </div>
+        {% endfor %}
+      </nav>
+    </div>
+  </footer>
   {% for resource in plugins.resources.js %}
   <script src="{% if resource.url %}{{ resource.url }}{% else %}{{ resource.path|resolveAsset }}{% endif %}"></script>
   {% endfor %}
