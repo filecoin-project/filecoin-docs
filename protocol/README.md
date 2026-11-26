@@ -81,15 +81,13 @@ description: >-
 
 | Page | What it covers |
 | --- | --- |
-| [FVM advanced](fvm/advanced/README.md) | Index of tools and services for FVM developers: wrapped FIL, oracles, multicall, multisig, indexers, bridges, automation, relay and databases. |
+| [FVM advanced](fvm/advanced/README.md) | Index of tools and services for FVM developers: wrapped FIL, oracles, multicall, multisig, indexers and bridges. |
 | [Wrapped FIL](fvm/advanced/wrapped-fil.md) | Wrapped FIL (wFIL) is an ERC-20 version of FIL. Contract addresses, how to wrap and unwrap, and when you need it. |
-| [Oracles](fvm/advanced/oracles.md) | Oracle networks with contracts on Filecoin (Pyth, Tellor, eOracle) and their contract addresses. |
+| [Oracles](fvm/advanced/oracles.md) | Oracle networks with contracts on Filecoin (RedStone and Tellor) and their contract addresses. |
 | [Multicall](fvm/advanced/multicall.md) | Batch contract reads and writes with Multicall3 on Filecoin. Same address on Mainnet and Calibration, with ethers and cast examples. |
 | [Multisig](fvm/advanced/multisig.md) | The native multisig actor and Safe on the FEVM, with Safe contract addresses and troubleshooting. |
 | [FEVM indexers](fvm/advanced/fevm-indexers.md) | Index and query Filecoin contract events with Goldsky or The Graph instead of scanning tipsets yourself. |
 | [Cross-chain bridges](fvm/advanced/cross-chain-bridges.md) | Bridges with contracts on Filecoin: Axelar and Celer, their token addresses on Mainnet, and wrapped FIL. |
-| [Contract automation](fvm/advanced/contract-automation.md) | Trigger smart contracts on a schedule or onchain event with Gelato Web3 Functions on Filecoin. |
-| [Relay](fvm/advanced/relay.md) | Send gasless transactions with Gelato Relay using sponsoredCallERC2771, so your users don't need FIL. |
 
 ### FVM legacy
 
