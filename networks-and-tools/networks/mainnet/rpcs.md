@@ -21,6 +21,7 @@ In order to check the current benchmarked performance of each of the below endpo
 | [Chainup Cloud](https://cloud.chainup.com/) | `https://filecoin.chainup.net/rpc/v1` | `wss://filecoin.chainup.net/rpc/v1`              | [Chainup Cloud Docs - Filecoin](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis) |                                                           |
 | [Lava](https://www.lavanet.xyz/)            | `https://filecoin.lava.build`         |                                                  | [Lava - Docs](https://docs.lavanet.xyz/iprpc#filecoin)                                            | All Filecoin and Eth JSON RPC methods including MPoolPush |
 | [NOWNodes](https://nownodes.io/)            | `https://fil.nownodes.io`             |                                                  | [NOWNodes - Docs](https://docs.nownodes.io/fil/)                                                  | Requires an API key                                      |
+| [Spectrum Nodes](https://spectrumnodes.com/networks/filecoin-rpc) | Created in the [Spectrum dashboard](https://dashboard.spectrumnodes.com/auth/signup) | | [Spectrum Nodes Filecoin RPC](https://spectrumnodes.com/networks/filecoin-rpc) | Requires a free account |
 
 
 ## Additional Notes:
