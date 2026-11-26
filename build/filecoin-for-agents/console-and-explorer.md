@@ -11,6 +11,26 @@ description: >-
 * **The filecoin-app dashboard** at [poc.filecoin.cloud/dashboard](https://poc.filecoin.cloud/dashboard). The wallet owner connects their wallet there to approve session keys, deposit USDFC, approve the Warm Storage service, and revoke keys. While `filecoin` is a prototype, it uses this app instead of the [Filecoin Pay console](https://pay.filecoin.cloud/console).
 * **PDP Explorer** at [pdp.filecoin.cloud](https://pdp.filecoin.cloud). Public pages for storage providers, data sets, and pieces on mainnet and Calibration. Search by data set ID, provider ID, or PieceCID.
 
+## Check balances, messages and contracts
+
+PDP Explorer is for storage providers, data sets and pieces. For general chain activity, choose a block explorer or a read-only JSON-RPC endpoint for the same network as the operation you are investigating.
+
+| Network | EVM chain ID | Native Filecoin explorer | FEVM explorer | JSON-RPC endpoints |
+| --- | --- | --- | --- | --- |
+| Mainnet | `314` | [Filfox](https://filfox.info/en/) | [Blockscout](https://filecoin.blockscout.com/) | [Mainnet RPCs](../../networks-and-tools/networks/mainnet/rpcs.md) |
+| Calibration | `314159` | [Filfox](https://calibration.filfox.info) | [Blockscout](https://filecoin-testnet.blockscout.com) | [Calibration RPCs](../../networks-and-tools/networks/calibration/rpcs.md) |
+
+More options are listed in the [mainnet explorer directory](../../networks-and-tools/networks/mainnet/explorers.md) and [Calibration explorer directory](../../networks-and-tools/networks/calibration/explorers.md). These are third-party services; features, availability and historical coverage vary.
+
+Use the identifier returned by the original operation, not a transaction or address from another network:
+
+* For a native Filecoin address, use a native explorer or the read-only [`Filecoin.WalletBalance`](../../reference/json-rpc/wallet.md#walletbalance) method. Its balance is in attoFIL, not USDFC or another token.
+* For a native message CID, use a native explorer or [`Filecoin.ChainGetMessage`](../../reference/json-rpc/chain.md#chaingetmessage). The message contents alone do not establish execution success.
+* For an EVM address, use the FEVM explorer or [`Filecoin.EthGetBalance`](../../reference/json-rpc/eth.md#ethgetbalance) for the native FIL balance, and [`Filecoin.EthGetCode`](../../reference/json-rpc/eth.md#ethgetcode) to inspect deployed bytecode at the selected block.
+* For an EVM transaction hash, use the FEVM explorer or [`Filecoin.EthGetTransactionReceipt`](../../reference/json-rpc/eth.md#ethgettransactionreceipt). Inspect the receipt status, not just the presence of a transaction hash. An absent receipt is not evidence of success or failure.
+
+Before an automated FEVM lookup, compare [`Filecoin.EthChainId`](../../reference/json-rpc/eth.md#ethchainid) with the expected chain ID above. Public RPC endpoints can have limited historical coverage; an unavailable old result may require an archival provider. No wallet connection, private key, session key or transaction submission is necessary for these public read-only checks.
+
 ## Session keys
 
 A session key lets a tool sign storage requests for your wallet. It can create data sets, add pieces, schedule piece removals, and end service, but it can never move funds.
