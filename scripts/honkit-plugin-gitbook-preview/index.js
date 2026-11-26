@@ -10,6 +10,10 @@ const fs = require("fs");
 const { execFileSync } = require("child_process");
 const path = require("path").posix;
 const katex = require("katex");
+// HonKit's own modules, so heading IDs come out as HonKit makes them.
+const fromHonkit = { paths: [require.resolve("honkit")] };
+const slugid = require(require.resolve("github-slugid", fromHonkit));
+const cheerio = require(require.resolve("cheerio", fromHonkit));
 
 const esc = (s) =>
   String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -217,6 +221,20 @@ function addIcons(html, pageIcon) {
     })
     .replace(/<(?:a|button)\b[^>]*\bdata-icon="([^"]*)"[^>]*>/g, (tag, name) => tag + faIcon(name))
     .replace(/<h1([^>]*)>([\s\S]*?)<\/h1>/, (whole, attrs, title) => (pageIcon ? `<h1${attrs}>${pageIcon}<span>${title}</span></h1>` : whole));
+}
+
+// HonKit gives repeated headings the same ID, so outline and anchor links
+// land on the first one. Number the repeats as GitBook does: "setup",
+// "setup-1", "setup-2". The first keeps the ID HonKit adds later.
+function uniqueHeadingIds(html) {
+  const seen = new Map();
+  return html.replace(/<h([1-6])\b([^>]*)>([\s\S]*?)<\/h\1>/g, (whole, level, attrs, inner) => {
+    const own = attrs.match(/\sid="([^"]*)"/);
+    const id = own ? own[1] : slugid(cheerio.load(inner, null, false).text());
+    const n = seen.get(id) || 0;
+    seen.set(id, n + 1);
+    return own || !n ? whole : `<h${level}${attrs} id="${id}-${n}">${inner}</h${level}>`;
+  });
 }
 
 // Path -> icon from the front matter, for the title and the sidebar.
@@ -448,7 +466,7 @@ module.exports = {
     },
     page: function (page) {
       const icons = this.config.get("pluginsConfig.gitbook-preview.icons", {});
-      page.content = addIcons(fill(page.content, stashes.get(page.path) || []), icons[page.path]);
+      page.content = uniqueHeadingIds(addIcons(fill(page.content, stashes.get(page.path) || []), icons[page.path]));
       return page;
     },
   },
