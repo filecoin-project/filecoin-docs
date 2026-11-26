@@ -13,3 +13,7 @@ https://tecadmin.net
 # by bot protection -- the vendor's docs site is down, so this suppresses real
 # 404s until Gelato restores it.
 https://docs.gelato.cloud
+
+# app.goldsky.com loads in browsers and curl, but lychee's HTTP client fails
+# every request with "HTTP/2 protocol error" (verified 2026-11 with lychee 0.24).
+https://app.goldsky.com

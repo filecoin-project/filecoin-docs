@@ -17,6 +17,6 @@ Examples of maintained storage onramps include:
 * [Akave](https://www.akave.ai/) provides a decentralized data-lake and object-storage layer backed by Filecoin.
 * [Pinata](https://pinata.cloud/) is an IPFS pinning service for storing and serving files, media, and app data over IPFS. See the [Pinata docs](https://docs.pinata.cloud/).
 * [Singularity](https://data-programs.gitbook.io/singularity) facilitates onboarding large quantities of data to the Filecoin network.
-* [CID Gravity](https://www.cidgravity.com/) provides a web UI for uploading files to Filecoin and IPFS.
+* [CID Gravity](https://app.cidgravity.com/) provides a web UI for uploading files to Filecoin and IPFS.
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/getting-started/how-storage-works/storage-onramps)

@@ -11,7 +11,7 @@ Block explorers allow you to view the details of the Filecoin network on a singl
 
 ### Beryx
 
-Website [beryx.zondax.ch](https://beryx.zondax.ch/)
+Website [beryx.io](https://beryx.io/)
 
 ### Filfox
 
@@ -20,10 +20,6 @@ Website: [filfox.info](https://filfox.info/en/)
 ### Filscan
 
 Website: [filscan.io](https://filscan.io)
-
-### Starboard
-
-Website: [fvm.starboard.ventures](https://fvm.starboard.ventures/)
 
 ### Blockscout Open-Source FEVM Explorer
 
