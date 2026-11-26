@@ -18,7 +18,7 @@ jobs:
           # v2.0.2 failed this composite step. GitHub then omitted the job
           # summary, so the run Summary page had no report and no retry.
           # Leave the step successful, publish the summary, and fail below.
-          fail: false
+          fail: true
 
       # Heading (#fragment) links between docs pages. Offline, so only local
       # files are checked: anchors on external pages are often added by
@@ -29,7 +29,7 @@ jobs:
         with:
           args: --offline --include-fragments '**/*.md'
           output: lychee/fragments.md
-          fail: false
+          fail: true
 
       - name: Fail if links are broken
         if: steps.lychee.outputs.exit_code != '0' || steps.lychee_fragments.outputs.exit_code != '0'

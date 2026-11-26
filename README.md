@@ -91,3 +91,5 @@ We use `p` tags to define the priority of an issue. The priority is defined by t
 ## License
 
 Dual-licensed: MIT, Apache Software License v2, by way of the [Permissive License Stack](https://protocol.ai/blog/announcing-the-permissive-license-stack/).
+
+[lychee summary test](https://github.com/filecoin-project/filecoin-docs/blob/main/this-file-does-not-exist-lychee-test.md)
