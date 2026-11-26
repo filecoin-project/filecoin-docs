@@ -6,17 +6,17 @@ const endpoints = [
   {
     network: "Filecoin mainnet",
     source: "networks-and-tools/networks/mainnet/rpcs.md",
-    url: "https://api.node.glif.io/rpc/v1",
+    url: "https://filecoin.chain.love/rpc/v1",
   },
   {
     network: "Filecoin mainnet",
     source: "networks-and-tools/networks/mainnet/rpcs.md",
-    url: "wss://wss.node.glif.io/apigw/lotus/rpc/v1",
+    url: "wss://filecoin.chain.love/ws/rpc/v1",
   },
   {
     network: "Filecoin mainnet lite-node",
     source: "networks-and-tools/networks/mainnet/rpcs.md",
-    url: "wss://wss.node.glif.io/apigw/lotus",
+    url: "wss://filecoin.chain.love/ws",
     expected: "lotus-lite",
     note: "Used as FULLNODE_API_INFO for Lotus lite nodes, not as a direct JSON-RPC URL.",
   },
@@ -55,17 +55,17 @@ const endpoints = [
   {
     network: "Filecoin Calibration",
     source: "networks-and-tools/networks/calibration/rpcs.md",
-    url: "https://api.calibration.node.glif.io/rpc/v1",
+    url: "https://calibration.filecoin.chain.love/rpc/v1",
   },
   {
     network: "Filecoin Calibration",
     source: "networks-and-tools/networks/calibration/rpcs.md",
-    url: "wss://wss.calibration.node.glif.io/apigw/lotus/rpc/v1",
+    url: "wss://calibration.filecoin.chain.love/ws/rpc/v1",
   },
   {
     network: "Filecoin Calibration lite-node",
     source: "networks-and-tools/networks/calibration/rpcs.md",
-    url: "wss://wss.calibration.node.glif.io/apigw/lotus",
+    url: "wss://calibration.filecoin.chain.love/ws",
     expected: "lotus-lite",
     note: "Used as FULLNODE_API_INFO for Lotus lite nodes, not as a direct JSON-RPC URL.",
   },

@@ -58,7 +58,7 @@ Many libraries and tools such as [ethers-rs](https://docs.rs/ethers/latest/ether
 
 Batching contract reads, one of the most common use cases, allows a single `eth_call` JSON RPC request to return the results of multiple contract function calls. It has many benefits:
 
-1. **Reduced JSON RPC Requests**: Multicall reduces the number of separate JSON RPC requests that need to be sent. This is particularly useful when using remote nodes, such as GLIF. By aggregating multiple contract reads into a single JSON-RPC request, Multicall (1) reduces RPC usage and therefore costs, and (2) reduces the number of round trips between the client and the node, which can significantly improve performance
+1. **Reduced JSON RPC Requests**: Multicall reduces the number of separate JSON RPC requests that need to be sent. This is particularly useful when using remote nodes, such as Chain.Love. By aggregating multiple contract reads into a single JSON-RPC request, Multicall (1) reduces RPC usage and therefore costs, and (2) reduces the number of round trips between the client and the node, which can significantly improve performance
 2. **Consistent Data from the Same Block**: Multicall guarantees that all values returned are from the same block. This ensures data consistency and reliability, as all the read operations are performed on the same state of the blockchain.
 3. **Detection of Stale Data**: Multicall enables the block number or timestamp to be returned with the read data. This feature helps in detecting stale data, as developers can compare the block number or timestamp with the current state of the blockchain to ensure the data is up-to-date.
 
@@ -87,7 +87,7 @@ When directly interacting with the Multicall3 contract to batch calls, you'll ty
     ```javascript
     const { ethers } = require("ethers");
 
-    const provider = new ethers.providers.JsonRpcProvider("https://api.node.glif.io/rpc/v1");
+    const provider = new ethers.providers.JsonRpcProvider("https://filecoin.chain.love/rpc/v1");
     const multicallAddress = "0xcA11bde05977b3631167028862bE2a173976CA11";
     const multicallAbi = [/* Multicall3 ABI */];
     const multicall = new ethers.Contract(multicallAddress, multicallAbi, provider);

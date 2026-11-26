@@ -22,8 +22,8 @@ This guide shows you how to verify your smart contracts using Foundry on the Fil
 Set RPC URLs in your shell before running the examples:
 
 ```bash
-export FILECOIN_RPC_URL=https://api.node.glif.io/rpc/v1
-export CALIBRATION_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+export FILECOIN_RPC_URL=https://filecoin.chain.love/rpc/v1
+export CALIBRATION_RPC_URL=https://calibration.filecoin.chain.love/rpc/v1
 ```
 
 ### Blockscout Verification

@@ -47,7 +47,7 @@ cp .env.example .env
 
 ```bash
 PRIVATE_KEY=your_private_key_here
-CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+CALIBRATIONNET_RPC_URL=https://calibration.filecoin.chain.love/rpc/v1
 ```
 
 6. Load the variables in your current shell before running deployment commands:

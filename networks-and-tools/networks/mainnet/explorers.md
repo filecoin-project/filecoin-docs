@@ -36,7 +36,7 @@ If you have access to a Filecoin node, you can send a JSON-RPC request to get bl
 To get the head tipset:
 
 ```shell
-curl --location --request POST 'https://api.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://filecoin.chain.love/rpc/v1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -49,7 +49,7 @@ curl --location --request POST 'https://api.node.glif.io/rpc/v1' \
 Print a block:
 
 ```shell
-curl --location --request POST 'https://api.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://filecoin.chain.love/rpc/v1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
@@ -62,7 +62,7 @@ curl --location --request POST 'https://api.node.glif.io/rpc/v1' \
 Print message information:
 
 ```shell
-curl --location --request POST 'https://api.node.glif.io/rpc/v1' \
+curl --location --request POST 'https://filecoin.chain.love/rpc/v1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc":"2.0",
