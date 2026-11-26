@@ -127,8 +127,6 @@
     * [Multisig](protocol/fvm/advanced/multisig.md)
     * [FEVM indexers](protocol/fvm/advanced/fevm-indexers.md)
     * [Cross-chain bridges](protocol/fvm/advanced/cross-chain-bridges.md)
-    * [Contract automation](protocol/fvm/advanced/contract-automation.md)
-    * [Relay](protocol/fvm/advanced/relay.md)
   * [Legacy FVM](protocol/fvm/legacy/README.md)
     * [Decentralized databases](protocol/fvm/legacy/decentralized-databases.md)
     * [Interplanetary consensus](protocol/fvm/legacy/interplanetary-consensus.md)
