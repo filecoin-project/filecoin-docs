@@ -141,10 +141,10 @@ Just as with database data queried through SQL, subgraphs have to be stored some
 Chain.Love currently offers this service completely **free of charge**. If this ever changes, you will be notified at least one month in advance. It is recommended to provide your contact details on the Chain.Love website to receive updates. Credit card details are used solely for DDoS protection. No charges will be made without prior notification.
 {% endhint %}
 
-1. **Create a Subgraph**
+4. **Create a Subgraph**
    * Switch back to the **Subgraphs** tab.
    * Click on **Create a New Subgraph** to set up a new subgraph instance.
-2. **Manage Your Subgraphs**
+5. **Manage Your Subgraphs**
    * Select **MY** in the subgraphs switcher.
    * Select the subgraph you just created to access deployment instructions and endpoints.
    * Should you have any additional inquiries, do not hesitate to contact the Chain.Love team through the **Contact us** button in the website header.
