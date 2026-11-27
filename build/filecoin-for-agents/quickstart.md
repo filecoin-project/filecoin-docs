@@ -11,7 +11,7 @@ This guide installs `filecoin`, logs in, stores a file, and downloads it again. 
 You need:
 
 * Node.js 24 or newer.
-* A browser wallet, such as [MetaMask](../../networks-and-tools/assets/metamask-setup.md), with Calibration tFIL for gas and test USDFC. See [Get test tokens](../developing-contracts/get-test-tokens.md).
+* A browser wallet, such as [MetaMask](../../protocol/fil/wallets.md), with Calibration tFIL for gas and test USDFC. See [Get test tokens](../developing-contracts/get-test-tokens.md).
 
 ## Hand it to an agent
 

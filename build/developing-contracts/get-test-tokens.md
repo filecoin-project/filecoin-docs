@@ -9,7 +9,7 @@ description: >-
 
 ## Calibration testnet
 
-MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask displays Filecoin EVM accounts in Ethereum `0x` format; on Filecoin testnets those accounts map to delegated `t4` [addresses](../../core-concepts/filecoin-evm-runtime/address-types.md). Follow the [MetaMask setup guide](../../networks-and-tools/assets/metamask-setup.md) if you haven’t set up an address in your MetaMask wallet yet.
+MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask displays Filecoin EVM accounts in Ethereum `0x` format; on Filecoin testnets those accounts map to delegated `t4` [addresses](../../protocol/concepts/addresses.md). Follow the [MetaMask setup guide](../../protocol/fil/wallets.md) if you haven’t set up an address in your MetaMask wallet yet.
 
 On Calibration, tFIL pays for gas and test USDFC pays for storage in applications such as the `filecoin` CLI. Request both tokens for the same wallet.
 
@@ -35,9 +35,9 @@ On Calibration, tFIL pays for gas and test USDFC pays for storage in application
 
 ## Local testnet
 
-Before we begin, you must have a local testnet running. Follow the [Run a local network guide](../../networks-and-tools/networks/local-testnet/README.md) if you haven’t got a local testnet set up yet. Run the commands below from the directory that contains your local `lotus` binary, and replace the placeholder addresses with addresses from your local node.
+Before we begin, you must have a local testnet running. Follow the [Run a local network guide](../../protocol/networks/local-testnet.md) if you haven’t got a local testnet set up yet. Run the commands below from the directory that contains your local `lotus` binary, and replace the placeholder addresses with addresses from your local node.
 
-1. Change directory to where you created the `lotus` and `lotus-miner` binaries. If you followed the [Run a local network guide](../../networks-and-tools/networks/local-testnet/README.md) these binaries will be in `~/lotus-devnet`:
+1. Change directory to where you created the `lotus` and `lotus-miner` binaries. If you followed the [Run a local network guide](../../protocol/networks/local-testnet.md) these binaries will be in `~/lotus-devnet`:
 
 ```shell
 cd ~/lotus-devnet
@@ -67,7 +67,7 @@ To create a delegated address for local Filecoin EVM testing, run:
 ./lotus wallet balance <ADDRESS>
 ```
 
-If you want to manage your local testnet tokens in MetaMask, use a delegated address and [connect MetaMask to your local testnet](../../networks-and-tools/assets/metamask-setup.md) to see the new balance within the MetaMask extension.
+If you want to manage your local testnet tokens in MetaMask, use a delegated address and [connect MetaMask to your local testnet](../../protocol/fil/wallets.md) to see the new balance within the MetaMask extension.
 
 
 

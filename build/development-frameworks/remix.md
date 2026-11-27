@@ -10,7 +10,7 @@ description: >-
 
 As a simple introduction, we’re going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we’re using the Calibration testnet, but this process is the same for mainnet.
 
-This guide assumes you’ve already connected your [MetaMask extension to a Filecoin network](../../networks-and-tools/assets/metamask-setup.md).
+This guide assumes you’ve already connected your [MetaMask extension to a Filecoin network](../../protocol/fil/wallets.md).
 
 ### Create a workspace
 

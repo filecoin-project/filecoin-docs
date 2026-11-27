@@ -17,7 +17,7 @@ You must have the following installed:
 - [Node.js](https://nodejs.org/) and npm
 - [Foundry](https://getfoundry.sh/)
 
-You should also have an address on the Filecoin Calibration testnet. See the [MetaMask setup page](../../networks-and-tools/assets/metamask-setup.md) for information on how to get an address. You also need test `tFIL` in your wallet.
+You should also have an address on the Filecoin Calibration testnet. See the [MetaMask setup page](../../protocol/fil/wallets.md) for information on how to get an address. You also need test `tFIL` in your wallet.
 
 ## Steps
 

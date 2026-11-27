@@ -22,7 +22,7 @@ There are several multisig wallet implementations on Filecoin. Builders can inte
 
 ### Filecoin Native Multisig
 
-The Filecoin Native [MultisigActor](../../core-concepts/filecoin-virtual-machine/actors.md#multisigactor) is a built-in actor that does not interact directly with the Filecoin EVM. Like other Filecoin actors, native multisig addresses begin with `f2` and represent a group of transaction signers with a maximum of 256 signers. Signers may be external users or the MultisigActor itself and can include `f1` and `f3` [addresses](../../core-concepts/filecoin-virtual-machine/addresses.md).
+The Filecoin Native [MultisigActor](../../protocol/concepts/actors.md) is a built-in actor that does not interact directly with the Filecoin EVM. Like other Filecoin actors, native multisig addresses begin with `f2` and represent a group of transaction signers with a maximum of 256 signers. Signers may be external users or the MultisigActor itself and can include `f1` and `f3` [addresses](../../protocol/concepts/addresses.md).
 
 #### Filecoin Native Multisig UIs
 
@@ -38,7 +38,7 @@ The Filecoin Native [MultisigActor](../../core-concepts/filecoin-virtual-machine
 
 A web UI for the Safe multisig on Filecoin is available at:
 
-- [https://safe.filecoin.io](https://safe.filecoin.io) - the default network is set to [Filecoin Mainnet](../../networks-and-tools/networks/mainnet/README.md)
+- [https://safe.filecoin.io](https://safe.filecoin.io) - the default network is set to [Filecoin Mainnet](../../protocol/networks/mainnet.md)
   
 ![FilecoinSafeUI](https://github.com/user-attachments/assets/60044b7a-e6fa-4085-bcd9-80bc186975c3)
 
@@ -59,8 +59,8 @@ A web UI for the Safe multisig on Filecoin is available at:
 #### Safe Transaction Service
 
 The [Safe transaction service](https://docs.safe.global/core-api/api-safe-transaction-service) on Filecoin is available at:
-- [https://transaction.safe.filecoin.io](https://transaction.safe.filecoin.io) on [Filecoin Mainnet](../../networks-and-tools/networks/mainnet/README.md)
-- [https://transaction-testnet.safe.filecoin.io](https://transaction-testnet.safe.filecoin.io) on [Filecoin Calibration testnet](../../networks-and-tools/networks/calibration/README.md)
+- [https://transaction.safe.filecoin.io](https://transaction.safe.filecoin.io) on [Filecoin Mainnet](../../protocol/networks/mainnet.md)
+- [https://transaction-testnet.safe.filecoin.io](https://transaction-testnet.safe.filecoin.io) on [Filecoin Calibration testnet](../../protocol/networks/calibration.md)
 
 - Note:
   - Faster finality is coming to Filecoin soon. For now, the Filecoin Safe transaction service sets `ETH_REORG_BLOCKS` to 60 blocks (i.e. Filecoin epochs) (30min) based on [FRC-0089](https://github.com/filecoin-project/FIPs/blob/master/FRCs/frc-0089.md) but users may want to wait 900 epochs (~7.5h) for full finality.

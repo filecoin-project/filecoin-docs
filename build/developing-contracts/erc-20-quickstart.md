@@ -66,7 +66,7 @@ Nice! Now we’ve got the Filecoin Calibration testnet set up within MetaMask. Y
     ![Copy your address to your clipboard.](../../.gitbook/assets/smart-contracts-fundamentals-erc-20-quickstart-faucet-get-address.webp)
 2. Go to <a href="https://faucet.calibnet.chainsafe-fil.io" target="_blank">faucet.calibnet.chainsafe-fil.io</a> and click **Send Funds.**
 3. Paste your address into the address field, and click **Send Funds**.
-4. The faucet will show a transaction ID. You can copy this ID into a Calibration testnet [block explorer](../../networks-and-tools/networks/calibration/explorers.md) to view your transaction. After a couple of minutes, you should see some `tFIL` transferred to your address.
+4. The faucet will show a transaction ID. You can copy this ID into a Calibration testnet [block explorer](../../protocol/networks/calibration.md) to view your transaction. After a couple of minutes, you should see some `tFIL` transferred to your address.
 
 That’s all there is to it! Getting `tFIL` is easy!
 
@@ -206,7 +206,7 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 
 ### Share your tokens
 
-Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](erc-20-quickstart.md#create-a-wallet) and [Switch networks](erc-20-quickstart.md#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](../../networks-and-tools/assets/metamask-setup.md) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can’t, it might be because they don’t have any `tFIL`.
+Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](erc-20-quickstart.md#create-a-wallet) and [Switch networks](erc-20-quickstart.md#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](../../protocol/fil/wallets.md) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can’t, it might be because they don’t have any `tFIL`.
 
 
 

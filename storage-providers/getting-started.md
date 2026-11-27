@@ -93,7 +93,7 @@ To understand how you can run a profitable business as a Filecoin storage provid
 
 Storage providers can also add additional value to clients when they offer certain certifications. These can enable a storage provider to charge customers additional fees for storing data in compliance with those standards, for example, HIPAA, SOC2, PCI, GDPR and others.
 
-[Filecoin economics ->](./filecoin-economics/storage-proving.md)
+[Filecoin economics ->](../protocol/economics/storage-proving.md)
 
 ## Plan your business <a href="#plan-your-business" id="plan-your-business"></a>
 

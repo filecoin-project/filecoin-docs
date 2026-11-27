@@ -19,7 +19,7 @@ This guide walks you through pinning your first file to Filecoin using the Filec
 
 Before starting, make sure you have:
 
-* **An Ethereum-style wallet on Filecoin** - MetaMask is the easiest option. If you don't have one set up, see [Wallets](../../../networks-and-tools/assets/wallets.md) and [Metamask setup](../../../networks-and-tools/assets/metamask-setup.md).
+* **An Ethereum-style wallet on Filecoin** - MetaMask is the easiest option. If you don't have one set up, see [Wallets](../../../protocol/fil/wallets.md) and [Metamask setup](../../../protocol/fil/wallets.md).
 * **FIL in your wallet** - to pay transaction gas fees on Filecoin.
 * **USDFC in your wallet** - to pay for storage. USDFC is the stablecoin used by Filecoin Onchain Cloud. The easiest way to get some is to [swap FIL for USDFC on Sushi](https://www.sushi.com/filecoin/swap?token0=NATIVE&token1=0x80b98d3aa09ffff255c3ba4a241111ff1262f045).
 * **Node.js 24 or later** - the Filecoin Pin CLI runs on Node.js. Install from [nodejs.org](https://nodejs.org/) or via your package manager.

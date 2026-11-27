@@ -19,7 +19,7 @@ This guide assumes you have the following installed:
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/)
-* A Filecoin address stored in [MetaMask](../../networks-and-tools/assets/metamask-setup.md)
+* A Filecoin address stored in [MetaMask](../../protocol/fil/wallets.md)
 * Calibration testnet `tFIL` or mainnet `FIL` for the account you will deploy from
 
 ### Environment setup

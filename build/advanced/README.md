@@ -20,6 +20,6 @@ This section covers tools and integrations for applications and smart contracts 
 * [Decentralized databases](decentralized-databases.md) — store application data using Tableland on Filecoin
 * [Encryption](encryption/README.md) — encrypt files before upload and manage key recovery and sharing
 * [Privacy and access control](privacy-and-access-control.md) — tools for managing data access and privacy
-* [Interplanetary consensus](../../getting-started/interplanetary-consensus.md) — scalable consensus for cross-chain communication
+* [Interplanetary consensus](../../protocol/fvm/legacy/interplanetary-consensus.md) — scalable consensus for cross-chain communication
 
 [Was this page helpful?](https://airtable.com/apppq4inOe4gmSSlk/pagoZHC2i1iqgphgl/form?prefill\_Page+URL=https://docs.filecoin.io/build/advanced)

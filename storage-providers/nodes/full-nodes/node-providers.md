@@ -22,7 +22,7 @@ Node providers often limit the specifications of the nodes that they offer. Some
 
 ### Node providers
 
-There are multiple node providers for the Filecoin mainnet and each of the testnets. Check out the [Mainnet RPCs page](../../../networks-and-tools/networks/mainnet/rpcs.md) for details on current public node providers.
+There are multiple node providers for the Filecoin mainnet and each of the testnets. Check out the [Mainnet RPCs page](../../../protocol/networks/mainnet.md) for details on current public node providers.
 
 
 

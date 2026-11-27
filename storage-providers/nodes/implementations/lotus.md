@@ -29,7 +29,7 @@ If you are interested in contributing to the development of Lotus itself, you ca
 
 ## Hosted nodes
 
-Many hosting service provide access to Lotus nodes on the Filecoin network. Check out the [RPC section for more information](../../../networks-and-tools/networks/mainnet/rpcs.md)
+Many hosting service provide access to Lotus nodes on the Filecoin network. Check out the [RPC section for more information](../../../protocol/networks/mainnet.md)
 
 ## More information
 
