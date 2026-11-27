@@ -11,15 +11,17 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Link Checker
-        id: lychee
         uses: lycheeverse/lychee-action@v2.9.0
         with:
           args: --accept 200,429,403 --timeout 60 --retry-wait-time 15 --max-retries 10 '**/*.md'
-          # v2.0.2 failed this composite step. GitHub then omitted the job
-          # summary, so the run Summary page had no report and no retry.
-          # Leave the step successful, publish the summary, and fail below.
-          fail: false
 
-      - name: Fail if links are broken
-        if: steps.lychee.outputs.exit_code != '0'
-        run: exit 1
+      # Heading (#fragment) links between docs pages. Offline, so only local
+      # files are checked: anchors on external pages are often added by
+      # JavaScript or are SPA routes (#/...), which lychee reports as missing.
+      # Runs even if the external check failed, so both reports are published.
+      - name: Heading Link Checker
+        if: ${{ !cancelled() }}
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: --offline --include-fragments '**/*.md'
+          output: lychee/fragments.md

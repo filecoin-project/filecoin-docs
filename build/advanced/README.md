@@ -1,11 +1,11 @@
 ---
 description: >-
-  Advanced tools and integrations for smart contract developers building on Filecoin.
+  Encryption, privacy, and advanced integrations for applications and smart contracts on Filecoin.
 ---
 
 # Advanced
 
-This section covers advanced integrations and services available to smart contract developers on Filecoin, including bridges, oracles, databases, and automation tools. For programmable storage, retrieval, and payments, start with [Filecoin Onchain Cloud](../filecoin-onchain-cloud/README.md).
+This section covers tools and integrations for applications and smart contracts on Filecoin, including encryption, bridges, oracles, databases, and automation tools. For programmable storage, retrieval, and payments, start with [Filecoin Onchain Cloud](../filecoin-onchain-cloud/README.md).
 
 ## Table of contents
 
@@ -18,6 +18,7 @@ This section covers advanced integrations and services available to smart contra
 * [Contract automation](contract-automation.md) — trigger smart contract actions based on off-chain events
 * [Relay](relay.md) — meta-transactions that let users interact without paying gas
 * [Decentralized databases](decentralized-databases.md) — store application data using Tableland on Filecoin
+* [Encryption](encryption/README.md) — encrypt files before upload and manage key recovery and sharing
 * [Privacy and access control](privacy-and-access-control.md) — tools for managing data access and privacy
 * [Interplanetary consensus](../../getting-started/interplanetary-consensus.md) — scalable consensus for cross-chain communication
 

@@ -26,7 +26,7 @@ Planning to become a storage provider? Tell us about your setup in the [storage 
 
 ## Storage Service (PDP)
 
-FOC lets you sell warm storage from your own hardware without a PoRep sealing pipeline. One Docker Compose command brings up Forest, Yugabyte, and Curio-PDP, and a web guide on `http://127.0.0.1:4701` walks you through wallet, storage, domain, and FOC registration. Downloads aside, setup takes about five minutes.
+FOC lets you sell warm storage from your own hardware without a PoRep sealing pipeline. One Docker Compose command brings up Forest, Yugabyte, and Curio-PDP, and a web guide on `https://127.0.0.1:4701` asks you to create an admin username and password on first visit, then walks you through wallet, storage, domain, and FOC registration. Downloads aside, setup takes about five minutes.
 
 ```bash
 git clone https://github.com/filecoin-project/curio.git

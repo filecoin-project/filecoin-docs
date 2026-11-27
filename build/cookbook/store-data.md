@@ -28,6 +28,20 @@ Recommended outputs before proposing storage workflows:
 * CAR size and piece size
 * A durable retrieval URL or CID
 
+### <mark style="color:blue;">Encrypt private files</mark>
+
+Encrypt files before uploading them when their contents should be available only to selected users or services. Common examples include:
+
+* **User files:** private attachments, invoices, account exports and personal documents.
+* **Agent state:** conversation history, saved memory, task checkpoints and private tool results.
+* **Project data:** internal reports, contracts, unpublished datasets and confidential supporting records.
+
+Your application encrypts the file before passing it to the storage API. Providers can store the encrypted bytes and prove they hold them; reading the contents requires the decryption key. Keysmith provides wallet-derived key recovery and lets your application share access to individual files or collections.
+
+Keep data with different readers in separate encrypted files. Sharing the key to a single encrypted archive gives access to everything inside it.
+
+See [Encryption](../advanced/encryption/README.md) under Advanced for an upload and download example, recovery requirements, and instructions for sharing access.
+
 ### <mark style="color:blue;">Store large data with Filecoin Onchain Cloud</mark>
 
 Use the FOC stack for programmatic, verifiable storage at scale:

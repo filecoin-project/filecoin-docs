@@ -36,7 +36,7 @@ These services store data on Filecoin for you:
 * [Fil One](https://fil.one/): S3-compatible object storage backed by Filecoin. See the [Fil One docs](https://docs.fil.one/).
 * [Akave](https://www.akave.ai/): a decentralized data lake and object storage layer backed by Filecoin.
 * [Lighthouse](https://lighthouse.storage/): permanent, decentralized storage powered by Filecoin.
-* [CID Gravity](https://www.cidgravity.com/): a web UI for uploading files to Filecoin and IPFS.
+* [CID Gravity](https://app.cidgravity.com/): a web UI for uploading files to Filecoin and IPFS.
 
 ## Make deals directly
 

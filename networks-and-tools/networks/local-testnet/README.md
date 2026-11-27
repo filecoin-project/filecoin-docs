@@ -564,7 +564,7 @@ You may encounter the following error message:
 ERROR: could not get API info for FullNode: could not get api endpoint: API not running (no endpoint
 ```
 
-If you receive this error when trying to call your Lotus daemon, either your `lotus daemon` isn’t running (see [Restart the devnet](./#stop-and-restart)) or you haven’t re-exported the necessary variables (see the [Build section](./#build)).
+If you receive this error when trying to call your Lotus daemon, either your `lotus daemon` isn’t running (see [Restart the devnet](README.md#stop-and-restart)) or you haven’t re-exported the necessary variables (see the [Build section](README.md#build)).
 
 
 

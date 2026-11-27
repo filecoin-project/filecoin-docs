@@ -20,7 +20,7 @@ The [Calibration](../../networks-and-tools/networks/calibration/) testnet offers
 - [Public RPC endpoints](../../networks-and-tools/networks/calibration/rpcs.md)
 - [Blockchain explorer](https://calibration.filscan.io/)
 - [Calibration Faucet - Chainsafe](https://faucet.calibnet.chainsafe-fil.io)
-- [Calibration Faucet - Zondax](https://beryx.zondax.ch/faucet/)
+- [Calibration Faucet - Zondax](https://beryx.io/faucet)
 - [Calibration Faucet - Forest Explorer](https://forest-explorer.chainsafe.dev/faucet/calibnet)
 - [Calibration USDFC Faucet - Chainsafe](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
 

@@ -133,4 +133,3 @@ const relayResponse = await relay.sponsoredCallERC2771(request, provider, apiKey
 
 * [Gelato Relay Docs](https://docs.gelato.cloud/relay/erc2771-recommended/sponsoredcall-erc2771)
 * [Gelato Supported Networks](https://docs.gelato.cloud/relay/additional-resources/supported-networks)
-* [GitHub Repository](https://github.com/gelatodigital/how-tos-5-6-7-8-relay-intro-methods)

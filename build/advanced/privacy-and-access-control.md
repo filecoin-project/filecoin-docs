@@ -15,6 +15,8 @@ Use the official resources below for implementation details.
 
 ### <mark style="color:blue;">Encrypting data for storing on Filecoin</mark>
 
+For client-side encryption with recoverable keys, follow [Encryption](encryption/README.md).
+
 Use these official references for encryption workflows and secure upload patterns:
 
 * [Lighthouse encryption docs](https://docs.lighthouse.storage/how-to/upload-encrypted-data)

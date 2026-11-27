@@ -42,7 +42,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"
 Quick access to faucets:
 
 * **Chainsafe**: https://faucet.calibnet.chainsafe-fil.io
-* **Zondax**: https://beryx.zondax.ch/faucet/
+* **Zondax**: https://beryx.io/faucet
 * **Forest**: https://forest-explorer.chainsafe.dev/faucet/calibnet
 
 ### Essential Network Info
@@ -101,7 +101,7 @@ The following storage providers are running on the Calibration testnet.
 ## Resources <a href="#resources" id="resources"></a>
 
 * [Calibration Faucet - Chainsafe](https://faucet.calibnet.chainsafe-fil.io)
-* [Calibration Faucet - Zondax](https://beryx.zondax.ch/faucet/)
+* [Calibration Faucet - Zondax](https://beryx.io/faucet)
 * [Calibration Faucet - Forest Explorer](https://forest-explorer.chainsafe.dev/faucet/calibnet)
 * [Calibration USDFC Faucet - Chainsafe](https://forest-explorer.chainsafe.dev/faucet/calibnet_usdfc)
 * [DataCap allocation](https://faucet.calibnet.chainsafe-fil.io/datacap.html)

@@ -196,13 +196,13 @@ To stop the stack later, run `docker compose down`. Your data remains in the dir
 
 ### A5. Open the admin GUI
 
-The admin GUI listens on `127.0.0.1:4701` on the server. **It has no login.** Anyone who can reach it can manage your keys, so never expose port 4701 to the internet.
+The admin GUI listens on `127.0.0.1:4701` on the server. The GUI is HTTPS-only and asks you to create an admin username and password on first visit. Subsequent access requires login. A self-signed certificate warning is expected at the local address. Keep port 4701 bound to localhost and use SSH forwarding for remote access. Unauthorized access to the admin GUI can expose private keys, allowing an attacker to steal funds and terminate your storage provider.
 
 From your laptop, open an SSH tunnel to the server and browse to it locally:
 
 ```sh
 ssh -fN -L 4701:127.0.0.1:4701 youruser@your-server
-# then open http://127.0.0.1:4701 in your browser
+# then open https://127.0.0.1:4701 in your browser
 ```
 
 ### A6. Attach piece storage
@@ -572,7 +572,7 @@ sudo systemctl enable --now curio.service
 systemctl status curio.service
 ```
 
-To reach the web GUI, open an SSH tunnel to port 4701 (`ssh -fN -L 4701:127.0.0.1:4701 youruser@your-server`) and browse to `http://127.0.0.1:4701`. The GUI has no login, so don't expose it publicly. To add more machines, install Curio on each one, give it the same `/etc/curio.env` with the `CURIO_LAYERS` that match its role, and start the service.
+To reach the web GUI, open an SSH tunnel to port 4701 (`ssh -fN -L 4701:127.0.0.1:4701 youruser@your-server`) and browse to `https://127.0.0.1:4701`. On first visit, create an admin username and password; subsequent access requires login. A self-signed certificate warning is expected at the local address. Keep the GUI bound to localhost and use the SSH tunnel for remote access. To add more machines, install Curio on each one, give it the same `/etc/curio.env` with the `CURIO_LAYERS` that match its role, and start the service.
 
 ### B10. Attach storage
 
@@ -643,7 +643,8 @@ To find clients, join FCSS ([Path D](#path-d)), or look at data onboarding progr
 * **Keep balances funded.** Keep enough FIL in your worker and sender wallets for messages, and in the miner actor for FIP-0100 daily fees. Fee debt blocks block rewards.
 * **Keep the database healthy.** Losing YugabyteDB stops Curio, so run a multi-node cluster and back it up regularly.
 * **Upgrade on time.** Network upgrades have hard deadlines, and outdated Lotus or Curio builds stop working at the upgrade epoch.
-* **Protect your keys.** Store the owner key offline, restrict SSH access, and never expose ports 4701 (GUI) or 12300 (Curio API) to the internet.
+* **Protect your keys.** Store the owner key offline, restrict SSH access, and never expose ports 4701 (GUI) or 12300 (Curio API) to the internet. Unauthorized administrative access can expose private keys, allowing an attacker to steal funds and terminate your storage provider.
+* **Use stable infrastructure.** Customer data needs reliable storage, power, and network connectivity. Keep hosts updated, restrict administrative access, and expose only required public services through your firewall. If you use a VPS, ensure it meets the same resource, durability, and security requirements.
 
 ***
 

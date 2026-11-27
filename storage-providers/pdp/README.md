@@ -9,7 +9,7 @@ PDP is a challenge-response protocol that lets applications verify storage provi
 
 ## Run a PDP provider
 
-FOC lets you sell storage from your own hardware, and everything you need runs on a single machine. The Curio-PDP Docker stack packages Forest (chain), Yugabyte (database), and Curio-PDP (the storage node with a web dashboard). One command brings it up; a web guide on `http://127.0.0.1:4701` handles wallet, disks, domain, and FOC registration. Downloads aside, setup takes about five minutes.
+FOC lets you sell storage from your own hardware, and everything you need runs on a single machine. The Curio-PDP Docker stack packages Forest (chain), Yugabyte (database), and Curio-PDP (the storage node with a web dashboard). One command brings it up; an HTTPS admin dashboard at `https://127.0.0.1:4701` asks you to create an admin username and password on first visit, then its web guide handles wallet, disks, domain, and FOC registration. Downloads aside, setup takes about five minutes.
 
 ```bash
 git clone https://github.com/filecoin-project/curio.git

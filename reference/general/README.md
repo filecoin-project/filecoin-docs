@@ -67,7 +67,7 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 * [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
 * [Pinata](https://pinata.cloud/) is an IPFS pinning service for storing and serving files, media, and app data over IPFS. See the [Pinata docs](https://docs.pinata.cloud/).
 * [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
-* [CID Gravity](https://www.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
+* [CID Gravity](https://app.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   * to securely capture, store and verify human history
   * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/)
@@ -75,6 +75,12 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 ## APIs & Developer tools
 
 Developer tools, API clients & storage services that developers can use to build on Filecoin.
+
+### Encryption
+
+* [Encryption guide](../../build/advanced/encryption/README.md) - encrypt, upload, retrieve, and decrypt a file.
+* [Keysmith API](https://github.com/FilOzone/synapse-sdk/blob/master/packages/keysmith/README.md#api) - derive and recover keys, create grants, and share access.
+* [Filecoin Encryption Envelope](https://github.com/FilOzone/synapse-sdk/blob/master/packages/filecoin-encryption-envelope/README.md) - encrypt and decrypt files, inspect envelopes, and read encrypted data by range.
 
 ### Storage APIs for app builders
 

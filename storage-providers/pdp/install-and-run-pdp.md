@@ -22,7 +22,7 @@ Curio-PDP ships as a single Docker Compose stack made up of three pieces:
 
 They all run in Docker on their own private network. Only Curio-PDP faces the internet, on ports 80 and 443. An external Lotus or Forest node works instead of the bundled Forest, pointed at with `FULLNODE_API_INFO`.
 
-The first time you open the dashboard, it lands you on a setup guide. The guide checks your node and ticks off each step as it completes. Everything is set from the dashboard, so there’s no config file to edit.
+The first time you open the dashboard, it asks you to create an admin username and password before you can access the setup guide. The guide checks your node and ticks off each step as it completes. Everything is set from the dashboard, so there’s no config file to edit.
 
 ## What you need
 
@@ -33,6 +33,8 @@ The first time you open the dashboard, it lands you on a setup guide. The guide 
 * A reliable internet connection
 * A domain or subdomain you own
 * A little FIL to fund a wallet
+
+For production, use stable infrastructure with reliable storage, power, and network connectivity. You are holding customer data: restrict administrative access, keep the host updated, and use firewall rules to expose only the required public services. If you use a VPS, ensure it meets the same resource, durability, and security requirements.
 
 ## Start the stack
 
@@ -55,16 +57,18 @@ Keep the `SKIFF_IMAGE=` prefix on any later `docker compose up`, or the stack fa
 
 That brings up the node. Yugabyte is up in seconds. Forest downloads a chain snapshot the first time it starts, which takes about 20 minutes, and the first run also pulls the Curio-PDP image. Curio-PDP starts as soon as Forest is accepting connections, although the wallet balance and registration checks wait for Forest to finish syncing. By default, everything lives under `curio/docker/skiff/data/`.
 
-Now open `http://127.0.0.1:4701` in a browser. The dashboard only listens on localhost and has no login, so keep it that way. If you’re working on a remote box, forward the port over SSH:
+Open `https://127.0.0.1:4701` in a browser. The admin dashboard is HTTPS-only; a self-signed certificate warning is expected when accessing this local address. The Docker Compose stack binds the dashboard to localhost. If you’re working on a remote box, forward the port over SSH, then open the same HTTPS address on your local machine:
 
 ```bash
 ssh -fN -L 4701:127.0.0.1:4701 you@your-host
 ```
 
-You’ll land on the PDP Guide page.
+If no admin account has been configured, create an admin username and a password of at least 12 characters. Setup signs you in automatically; use those credentials for subsequent sign-ins to the dashboard. Administrative API requests also require an authenticated session. You can change your password from the sidebar.
+
+If you are upgrading an existing installation that used HTTP without login, switch your browser URL to HTTPS and complete the admin account setup if prompted.
 
 {% hint style="warning" %}
-Open only TCP 80 and 443 on your public firewall. Port `4701` is an unauthenticated admin GUI for local operator access — do not publish it to the internet.
+Open only TCP 80 and 443 on your public firewall. Port `4701` is the authenticated admin GUI for local operator access. Keep it bound to localhost and use an SSH tunnel for remote access — do not publish it to the internet. Unauthorized access to the admin GUI can expose private keys, allowing an attacker to steal funds and terminate your storage provider. HTTPS and login do not replace restricting network access to this interface.
 {% endhint %}
 
 ## The PDP Guide does the rest
