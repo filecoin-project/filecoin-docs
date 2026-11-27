@@ -114,6 +114,13 @@ redirects:
   basics/what-is-filecoin/storage-market: getting-started/choose-a-storage-option.md
   basics/what-is-filecoin/storage-model: getting-started/how-filecoin-works.md
   build: core-concepts/filecoin-virtual-machine/README.md
+  build/filecoin-for-agents: build/agents/README.md
+  build/filecoin-for-agents/api-and-mcp: build/agents/README.md
+  build/filecoin-for-agents/cli: build/agents/README.md
+  build/filecoin-for-agents/connect-an-agent: build/agents/README.md
+  build/filecoin-for-agents/console-and-explorer: build/agents/README.md
+  build/filecoin-for-agents/quickstart: build/agents/README.md
+  build/filecoin-for-agents/retrieve-and-verify: build/agents/README.md
   build/architecture: core-concepts/filecoin-virtual-machine/README.md
   build/architecture/concepts: core-concepts/filecoin-virtual-machine/README.md
   build/architecture/concepts/actors: core-concepts/filecoin-virtual-machine/actors.md
