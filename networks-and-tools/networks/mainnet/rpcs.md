@@ -20,6 +20,7 @@ In order to check the current benchmarked performance of each of the below endpo
 | [Ankr](https://ankr.com/)                   | `https://rpc.ankr.com/filecoin`       | By request at: https://www.ankr.com/rpc/filecoin | [Ankr Docs - Filecoin](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)         | All Filecoin and Eth JSON RPC methods including MPoolPush |
 | [Lava](https://www.lavanet.xyz/)            | `https://filecoin.lava.build`         |                                                  | [Lava - Docs](https://docs.lavanet.xyz/iprpc#filecoin)                                            | All Filecoin and Eth JSON RPC methods including MPoolPush |
 | [NOWNodes](https://nownodes.io/)            | `https://fil.nownodes.io`             |                                                  | [NOWNodes - Docs](https://docs.nownodes.io/fil/)                                                  | Requires an API key                                      |
+| [Spectrum Nodes](https://spectrumnodes.com/networks/filecoin-rpc) | Created in the [Spectrum dashboard](https://dashboard.spectrumnodes.com/auth/signup) | | [Spectrum Nodes Filecoin RPC](https://spectrumnodes.com/networks/filecoin-rpc) | Requires a free account |
 
 
 ## Additional Notes:
