@@ -15,9 +15,19 @@
   * [Migrate from IPFS](getting-started/paths/migrate-from-ipfs.md)
   * [Storage providers](getting-started/paths/storage-providers.md)
 
+## Agents
+
+* [Overview](core-concepts/filecoin-for-agents.md)
+* [Filecoin Skill](agents/filecoin-skill/README.md)
+  * [Filecoin CLI agent mode](agents/filecoin-skill/filecoin-cli-agent-mode.md)
+  * [Skills Catalog](agents/filecoin-skill/skills-catalog/README.md)
+    * [publish](agents/filecoin-skill/skills-catalog/publish.md)
+* [MCP server](agents/mcp-server.md)
+* [Agent wallets and funding](agents/agent-wallets-and-funding.md)
+* [llms.txt and markdown docs](agents/llms-txt.md)
+
 ## Core Concepts
 
-* [Filecoin for Agents](core-concepts/filecoin-for-agents.md)
 * [Filecoin Virtual Machine](core-concepts/filecoin-virtual-machine/README.md)
   * [Actors](core-concepts/filecoin-virtual-machine/actors.md)
   * [Addresses](core-concepts/filecoin-virtual-machine/addresses.md)
@@ -39,13 +49,6 @@
 * [Filecoin Onchain Cloud](build/filecoin-onchain-cloud/README.md)
   * [Synapse SDK quickstart](build/filecoin-onchain-cloud/synapse-quickstart.md)
   * [Filecoin Cold Storage Service](build/filecoin-onchain-cloud/fcss.md)
-* [Filecoin for Agents](build/filecoin-for-agents/README.md)
-  * [Quickstart](build/filecoin-for-agents/quickstart.md)
-  * [Connect an agent](build/filecoin-for-agents/connect-an-agent.md)
-  * [CLI](build/filecoin-for-agents/cli.md)
-  * [Retrieve and verify](build/filecoin-for-agents/retrieve-and-verify.md)
-  * [API and MCP](build/filecoin-for-agents/api-and-mcp.md)
-  * [Console and explorer](build/filecoin-for-agents/console-and-explorer.md)
 * [Development Frameworks](build/development-frameworks/README.md)
   * [Remix](build/development-frameworks/remix.md)
   * [Hardhat](build/development-frameworks/hardhat.md)

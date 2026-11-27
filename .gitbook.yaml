@@ -138,6 +138,21 @@ redirects:
   build/filecoin-evm-runtime/difference-with-ethereum: core-concepts/filecoin-evm-runtime/difference-with-ethereum.md
   build/filecoin-evm-runtime/filforwarder: core-concepts/filecoin-evm-runtime/filforwarder.md
   build/filecoin-evm-runtime/how-gas-works: core-concepts/filecoin-evm-runtime/how-gas-works.md
+  build/filecoin-for-agents: core-concepts/filecoin-for-agents.md
+  build/filecoin-for-agents/README: core-concepts/filecoin-for-agents.md
+  build/filecoin-for-agents/quickstart: agents/filecoin-skill/README.md
+  build/filecoin-for-agents/connect-an-agent: agents/filecoin-skill/README.md
+  build/filecoin-for-agents/cli: agents/filecoin-skill/filecoin-cli-agent-mode.md
+  build/filecoin-for-agents/api-and-mcp: agents/mcp-server.md
+  build/filecoin-for-agents/console-and-explorer: agents/agent-wallets-and-funding.md
+  build-on-filecoin/filecoin-for-agents: core-concepts/filecoin-for-agents.md
+  build-on-filecoin/filecoin-for-agents/README: core-concepts/filecoin-for-agents.md
+  build-on-filecoin/filecoin-for-agents/quickstart: agents/filecoin-skill/README.md
+  build-on-filecoin/filecoin-for-agents/connect-an-agent: agents/filecoin-skill/README.md
+  build-on-filecoin/filecoin-for-agents/cli: agents/filecoin-skill/filecoin-cli-agent-mode.md
+  build-on-filecoin/filecoin-for-agents/api-and-mcp: agents/mcp-server.md
+  build-on-filecoin/filecoin-for-agents/console-and-explorer: agents/agent-wallets-and-funding.md
+  core-concepts/filecoin-for-agents: core-concepts/filecoin-for-agents.md
   build/filecoin-evm-runtime/precompiles: core-concepts/filecoin-evm-runtime/precompiles.md
   build/advanced/filecoin-onchain-cloud: build/filecoin-onchain-cloud/README.md
   build/filecoin-onchain-cloud/getting-started: build/filecoin-onchain-cloud/synapse-quickstart.md
