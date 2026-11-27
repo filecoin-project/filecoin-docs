@@ -41,6 +41,12 @@ If you only need a managed IPFS pinning-style workflow, start with [Filecoin Pin
 | Filecoin Beam | Retrieval infrastructure for fast delivery of warm data. |
 | Synapse SDK | TypeScript SDK for funding warm storage, selecting providers, uploading, downloading, and managing storage operations. |
 
+## Inspect warm storage by payer
+
+Use the payer's Filecoin EVM address and the network where the data was stored. With a public client, [getPdpDataSets](https://docs.filecoin.cloud/reference/filoz/synapse-core/warm-storage/functions/getpdpdatasets/) lists the payer's data-set IDs, provider IDs, and current storage state. Follow the pagination example to read every page. Use each returned data-set ID with [getActivePiecesByCursor](https://docs.filecoin.cloud/reference/filoz/synapse-core/pdp-verifier/functions/getactivepiecesbycursor/) to list its currently active PieceCIDs.
+
+For upload timestamps, use the block timestamps of the corresponding [PDP Verifier piece-addition events](https://github.com/FilOzone/pdp/blob/main/src/PDPVerifier.sol). To track successful downloads, record retrievals in your application or use request logs from your retrieval provider.
+
 ## Developer paths
 
 | Path | Use when | Start here |
