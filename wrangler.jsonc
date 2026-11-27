@@ -1,0 +1,12 @@
+{
+	"name": "filecoin-docs",
+	"compatibility_date": "2026-11-27",
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": "_book"
+	},
+	// Lets Workers Builds run `wrangler preview` for pull request branches.
+	"previews": {}
+}
