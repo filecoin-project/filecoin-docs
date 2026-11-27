@@ -67,7 +67,7 @@ Web-based applications that store your data on Filecoin. No command-line or codi
 * [Lighthouse](https://lighthouse.storage/) "offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
 * [Pinata](https://pinata.cloud/) is an IPFS pinning service for storing and serving files, media, and app data over IPFS. See the [Pinata docs](https://docs.pinata.cloud/).
 * [Singularity](https://data-programs.gitbook.io/singularity) "facilitates onboarding of large quantities of data (PB-scale) to the Filecoin network in an efficient, secure, and flexible way."
-* [CID Gravity](https://app.cidgravity.com/) is a "seamless gateway to the decentralized web", allowing you to drag and drop files through an easy-to-use UI that uploads files to Filecoin and IPFS.  
+* [CIDgravity Nextcloud](https://docs.cidgravity.com/nextcloud/get-started/store-and-retrieve-files/) provides a Files interface for uploading and downloading data after the client sets up a Nextcloud instance.
 * [Starling Framework for Data Integrity](https://www.starlinglab.org/)
   * to securely capture, store and verify human history
   * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/)
