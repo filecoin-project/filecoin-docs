@@ -39,11 +39,11 @@ const config: HardhatUserConfig = {
   },
   networks: {
     filecoin: {
-      url: process.env.FILECOIN_RPC_URL ?? "https://api.node.glif.io/rpc/v1",
+      url: process.env.FILECOIN_RPC_URL ?? "https://filecoin.chain.love/rpc/v1",
       chainId: 314,
     },
     calibration: {
-      url: process.env.CALIBRATION_RPC_URL ?? "https://api.calibration.node.glif.io/rpc/v1",
+      url: process.env.CALIBRATION_RPC_URL ?? "https://calibration.filecoin.chain.love/rpc/v1",
       chainId: 314159,
     },
   },
@@ -79,8 +79,8 @@ export default config;
 Set RPC URLs in your shell or `.env` if you do not want to use the example defaults:
 
 ```bash
-export FILECOIN_RPC_URL=https://api.node.glif.io/rpc/v1
-export CALIBRATION_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+export FILECOIN_RPC_URL=https://filecoin.chain.love/rpc/v1
+export CALIBRATION_RPC_URL=https://calibration.filecoin.chain.love/rpc/v1
 ```
 
 Compile with the same settings used for deployment, then verify the deployed address. Put constructor arguments after the address and omit them if the constructor had no arguments.

@@ -120,14 +120,14 @@ Developing a subgraph requires specialized knowledge that can be obtained throug
 
 ### Deploying Subgraphs
 
-Just as with database data queried through SQL, subgraphs have to be stored somewhere. You may run a self-hosted instance as described in [The Graph Academy examples](https://thegraph.academy/developers/local-development/) and deploy a subgraph there. However, as with RPC nodes and databases, running subgraphs locally in production is not recommended from an uptime standpoint. For hosting the subgraph, it is reasonable to use online web services such as AWS or refer to professional subgraph providers such as [Protofire (aka Glif Nodes)](https://api.node.glif.io/graph).
+Just as with database data queried through SQL, subgraphs have to be stored somewhere. You may run a self-hosted instance as described in [The Graph Academy examples](https://thegraph.academy/developers/local-development/) and deploy a subgraph there. However, as with RPC nodes and databases, running subgraphs locally in production is not recommended from an uptime standpoint. For hosting the subgraph, it is reasonable to use online web services such as AWS or refer to professional subgraph providers such as [Chain.Love](https://filecoin.chain.love/graph).
 
-#### Example: Deploying a Subgraph with Glif Nodes (Protofire)
+#### Example: Deploying a Subgraph with Chain.Love
 
-[Protofire (aka Glif Nodes)](https://api.node.glif.io) offers public access to The Graph services, simplifying the process of deploying and managing subgraphs.
+[Chain.Love](https://filecoin.chain.love) offers public access to The Graph services, simplifying the process of deploying and managing subgraphs.
 
 1. **Connect Your Wallet**
-   * On the [Protofire (Glif Nodes) platform - SUBGRAPHS](https://api.node.glif.io/graph), connect your [Filecoin-compatible wallet](../../networks-and-tools/assets/wallets.md).
+   * On the [Chain.Love platform - SUBGRAPHS](https://filecoin.chain.love/graph), connect your [Filecoin-compatible wallet](../../networks-and-tools/assets/wallets.md).
 2. **Create an API Key**
    * Choose the **API keys** tab.
    * Click **Create new key**.
@@ -138,7 +138,7 @@ Just as with database data queried through SQL, subgraphs have to be stored some
    * Click **Pay** and proceed with providing your credit card details to activate a free subscription.
 
 {% hint style="warning" %}
-Glif Nodes currently offers this service completely **free of charge**. If this ever changes, you will be notified at least one month in advance. It is recommended to provide your contact details on the Glif Nodes website to receive updates. Credit card details are used solely for DDoS protection. No charges will be made without prior notification.
+Chain.Love currently offers this service completely **free of charge**. If this ever changes, you will be notified at least one month in advance. It is recommended to provide your contact details on the Chain.Love website to receive updates. Credit card details are used solely for DDoS protection. No charges will be made without prior notification.
 {% endhint %}
 
 4. **Create a Subgraph**
@@ -147,15 +147,15 @@ Glif Nodes currently offers this service completely **free of charge**. If this 
 5. **Manage Your Subgraphs**
    * Select **MY** in the subgraphs switcher.
    * Select the subgraph you just created to access deployment instructions and endpoints.
-   * Should you have any additional inquiries, do not hesitate to contact the Glif Nodes team through the **Contact us** button in the website header.
+   * Should you have any additional inquiries, do not hesitate to contact the Chain.Love team through the **Contact us** button in the website header.
 
 ### Querying Existing Subgraphs
 
-One of the popular subgraphs is a subgraph containing information about all the blocks on the network, essentially providing an alternative to the `eth_getBlock...` subset of commands. Let's see how we can query the `eth_getBlockByNumber` using the Linux command-line interface and the Protofire (Glif Nodes) platform.
+One of the popular subgraphs is a subgraph containing information about all the blocks on the network, essentially providing an alternative to the `eth_getBlock...` subset of commands. Let's see how we can query the `eth_getBlockByNumber` using the Linux command-line interface and the Chain.Love platform.
 
-* Visit the [Protofire (Glif Nodes) platform](https://api.node.glif.io).
+* Visit the [Chain.Love platform](https://filecoin.chain.love).
 * Navigate to the **SUBGRAPHS** tab.
-* Select the relevant subgraph from [Protofire](https://api.node.glif.io/graph).
+* Select the relevant subgraph from [Chain.Love](https://filecoin.chain.love/graph).
 * In the opened **Playground** tab, click the **Show GraphQL Explorer** button (folder icon, 3rd from the top in the left bar) to verify the subgraph schema.
 *   Click the elements that you are looking to query and adjust the query if necessary. For the sake of this example, let's query the first block this subgraph supports (#2867000). The resulting query should look like the following:
 

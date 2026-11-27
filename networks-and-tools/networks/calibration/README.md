@@ -28,13 +28,13 @@ wget https://forest-archive.chainsafe.dev/latest/calibnet/
 
 ```bash
 # Lite node (fastest startup)
-FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
+FULLNODE_API_INFO=wss://calibration.filecoin.chain.love/ws lotus daemon --lite
 
 # Full node with snapshot import
 lotus daemon --import-snapshot <calibnet-snapshot-file>
 
 # Connect to RPC endpoint
-curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"Filecoin.ChainHead","params":[],"id":1}' https://api.calibration.node.glif.io/rpc/v1
+curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"Filecoin.ChainHead","params":[],"id":1}' https://calibration.filecoin.chain.love/rpc/v1
 ```
 
 ### Get Test FIL
@@ -48,8 +48,8 @@ Quick access to faucets:
 ### Essential Network Info
 
 * **Chain ID**: `314159` (for MetaMask/wallets)
-* **RPC**: `https://api.calibration.node.glif.io/rpc/v1`
-* **WebSocket**: `wss://wss.calibration.node.glif.io/apigw/lotus/rpc/v1`
+* **RPC**: `https://calibration.filecoin.chain.love/rpc/v1`
+* **WebSocket**: `wss://calibration.filecoin.chain.love/ws/rpc/v1`
 * **Minimum Power**: `32 GiB`
 
 ## About Calibration
