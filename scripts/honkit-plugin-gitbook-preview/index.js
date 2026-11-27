@@ -238,19 +238,24 @@ function uniqueHeadingIds(html) {
 }
 
 // Path -> icon from the front matter, for the title and the sidebar.
-function pageIcons(book) {
+// Front matter the sidebar needs: each page's icon, and the pages GitBook
+// hides from navigation with `hidden: true`.
+function pageMeta(book) {
   const icons = {};
+  const hidden = {};
   book.summary.walk(({ path: file }) => {
     if (!file) return;
     try {
       const matter = fs.readFileSync(book.resolve(file), "utf8").match(/^---\r?\n([\s\S]*?)\r?\n---/);
-      const icon = matter && matter[1].match(/^icon:\s*["']?([\w-]+)/m);
+      if (!matter) return;
+      const icon = matter[1].match(/^icon:\s*["']?([\w-]+)/m);
       if (icon && faIcon(icon[1])) icons[file] = faIcon(icon[1]);
+      if (/^hidden:\s*true\s*$/m.test(matter[1])) hidden[file] = true;
     } catch {
       // Not a file in the repository.
     }
   });
-  return icons;
+  return { icons, hidden };
 }
 
 const ICONS = {
@@ -444,7 +449,9 @@ module.exports = {
   hooks: {
     init: function () {
       this.config.set("pluginsConfig.gitbook-preview.updated", lastUpdated(this.resolve("")));
-      this.config.set("pluginsConfig.gitbook-preview.icons", pageIcons(this));
+      const { icons, hidden } = pageMeta(this);
+      this.config.set("pluginsConfig.gitbook-preview.icons", icons);
+      this.config.set("pluginsConfig.gitbook-preview.hidden", hidden);
     },
     "finish:before": function () {
       const dir = path.join(this.output.root(), "gitbook/fonts");
@@ -454,6 +461,17 @@ module.exports = {
       fs.cpSync(path.dirname(require.resolve("katex/dist/katex.min.css")), katexDir, {
         recursive: true,
         filter: (src) => /dist$|fonts$|katex\.min\.css$|\.woff2$/.test(src),
+      });
+      // GitBook serves each page as Markdown at its path plus `.md`:
+      // build/agents/cli.md for cli.md, and build/agents.md for a README.
+      const root = this.output.root();
+      this.summary.walk(({ path: file }) => {
+        if (!file || !file.endsWith(".md") || !fs.existsSync(this.resolve(file))) return;
+        const dir = path.posix.dirname(file);
+        const url = path.posix.basename(file) === "README.md" && dir !== "." ? `${dir}.md` : file;
+        const out = path.join(root, url);
+        fs.mkdirSync(path.dirname(out), { recursive: true });
+        fs.copyFileSync(this.resolve(file), out);
       });
     },
     "page:before": async function (page) {

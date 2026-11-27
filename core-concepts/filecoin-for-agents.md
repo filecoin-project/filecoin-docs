@@ -12,7 +12,7 @@ description: >-
 This page is a starting point for building agents that use FC. It links out to the CLIs, SDKs, and console you'll actually use, rather than repeating their full documentation here.
 
 {% hint style="info" %}
-**Storing files and folders with the `filecoin` CLI?** The [Filecoin for Agents build guide](../build/filecoin-for-agents/README.md) covers the `filecoin` CLI, its agent plugin and skill for Claude Code, Codex, and other agents, and a read-only MCP server. The `publish` skill below is for pinning with Filecoin Pin.
+**Storing files and folders with the `filecoin` CLI?** The [Agents](../build/agents/README.md) section of Build covers the `filecoin` CLI, its agent plugin and skill for Claude Code, Codex, and other agents, and a read-only MCP server. The `publish` skill below is for pinning with Filecoin Pin.
 {% endhint %}
 
 ## Overview

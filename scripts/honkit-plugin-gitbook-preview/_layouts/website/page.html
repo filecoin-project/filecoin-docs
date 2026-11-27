@@ -1,5 +1,6 @@
 {% macro tree(articles) %}
   {% for a in articles %}
+  {% if not config.pluginsConfig["gitbook-preview"].hidden[a.path] %}
   {% set open = page.level and (page.level + ".").indexOf(a.level + ".") == 0 %}
   <li class="{% if a.path == file.path and not a.anchor %}active {% endif %}{% if open %}open{% endif %}">
     <div class="nav-row">
@@ -10,6 +11,7 @@
     </div>
     {% if a.articles.length %}<ul>{{ tree(a.articles) }}</ul>{% endif %}
   </li>
+  {% endif %}
   {% endfor %}
 {% endmacro %}
 {% set preview = config.pluginsConfig["gitbook-preview"] or {} %}
