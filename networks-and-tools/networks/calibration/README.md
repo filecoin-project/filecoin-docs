@@ -109,6 +109,7 @@ The following storage providers are running on the Calibration testnet.
 * [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
 * [Latest lightweight snapshot](https://forest-archive.chainsafe.dev/latest/calibnet/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
 * [Complete calibration net archival data](https://forest-archive.chainsafe.dev/list/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
+* [Forest archival snapshot guide](https://docs.forest.chainsafe.io/guides/advanced/archival_snapshots/) — choose a base lite snapshot and the consecutive diffs for the epoch you need.
 
 
 

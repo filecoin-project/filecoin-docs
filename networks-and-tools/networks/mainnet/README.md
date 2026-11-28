@@ -42,6 +42,7 @@ The latest Lotus release can be found at https://github.com/filecoin-project/lot
 
 * [Latest lightweight snapshot](https://forest-archive.chainsafe.dev/latest/mainnet/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
 * [Complete Filecoin blockchain archival data](https://forest-archive.chainsafe.dev/list/) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)
+* [Forest archival snapshot guide](https://docs.forest.chainsafe.io/guides/advanced/archival_snapshots/) — choose a base lite snapshot and the consecutive diffs for the epoch you need.
 * [Status page and incidents](https://filecoin.statuspage.io/)
 * [Slack Channel for Updates: #fil-network-announcements](https://filecoinproject.slack.com/archives/C01AC6999KQ)
 * [Slack Channel for Questions: #fil-help](https://filecoinproject.slack.com/archives/CEGN061C5)
