@@ -8,7 +8,9 @@ description: >-
 
 ## Beryx
 
-https://beryx.io
+https://beryx.io/fil/calibration
+
+Select **Filecoin Calibration** in the network selector before searching for a testnet transaction or address.
 
 ## FILFOX
 
