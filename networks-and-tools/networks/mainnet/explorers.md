@@ -25,6 +25,8 @@ Website: [filscan.io](https://filscan.io)
 
 Website: [filecoin.blockscout.com](https://filecoin.blockscout.com/)
 
+Use the [Blockscout multichain API](https://docs.blockscout.com/devs/blockscout-api) to query indexed addresses, blocks, and transactions. Get an API key from the [Blockscout Developer Portal](https://dev.blockscout.com/). For REST requests, use `https://api.blockscout.com/{chain_id}/api/v2/` with chain ID `314` for Filecoin mainnet or `314159` for Calibration.
+
 ## API requests
 
 If you have access to a Filecoin node, you can send a JSON-RPC request to get block information.
